@@ -1,0 +1,8 @@
+{{#if parameters}}
+#### Parameters:
+| Name  | Type                | Description  |
+| ------ | ------------------- | ------------ |
+{{#each parameters}}
+| {{ name }}  | {{#with type}}{{>type}}{{/with}} | {{ getComment comment.text }} |
+{{/each}}
+{{/if}}

@@ -1,0 +1,74 @@
+
+{{#if model.displayReadme }}
+{{{model.readme}}}
+___
+{{/if}}
+
+{{#unless model.displayReadme}}
+# {{model.kindString }} {{ model.name }}
+{{/unless}}
+
+{{#with model}}
+{{#if hasComment}}
+{{> comment}}
+{{/if}}
+{{/with}}
+
+{{#if model.typeParameters}}
+  
+ ### Type parameters
+{{#with model}}{{> typeParameters}}{{/with}}
+{{/if}}
+
+{{#if model.typeHierarchy}}
+
+### Hierarchy
+{{#with model.typeHierarchy}}{{> hierarchy}}{{/with}}
+{{/if}}
+
+{{#if model.implementedTypes}}
+
+### Implements
+{{#each model.implementedTypes}}
+* {{> type}}
+{{/each}}
+ 
+{{/if}}
+
+{{#if model.implementedBy}}
+
+### Implemented by
+ 
+{{#each model.implementedBy}}
+* {{> type}}
+{{/each}}
+ 
+{{/if}}
+
+{{#if model.signatures}}
+
+ ### Callable
+{{#with model}}{{> member.signatures}}{{/with}}
+
+{{/if}}
+
+{{#if model.indexSignature}}
+
+### Indexable
+
+[{{#each model.indexSignature.parameters}} {{name}}: {{#with type}}{{>type}}{{/with}}{{/each}}]: 
+{{#with model.indexSignature.type}}{{>type}}{{/with}}
+{{#with model.indexSignature}}
+{{> comment}}
+{{/with}}
+{{#if model.indexSignature.type.declaration}}
+{{#with model.indexSignature.type.declaration}}
+{{> parameter}}
+{{/with}}
+{{/if}}
+{{/if}}
+
+{{#with model}}
+{{ compileIndex this }}
+{{> members}}
+{{/with}}

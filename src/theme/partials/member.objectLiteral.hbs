@@ -1,0 +1,9 @@
+### {{name}}: {{kindString}}
+
+{{> comment }}
+
+| Name  | Type                | Default |
+| ------ | ------------------- | ------------ |
+{{#each this.children }}
+| {{ name }}  | {{ type.name }} | {{ defaultValue }}
+{{/each}}

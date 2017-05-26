@@ -1,0 +1,15 @@
+
+{{> comment}}
+
+**{{ name }}**: {{#if isOptional}}?{{/if}} {{#with type}}{{>type}}{{/with}} {{#if defaultValue}} = _{{defaultValue}}_{{/if}}
+
+{{> member.sources}}
+
+{{#if type.declaration}}
+#### Type declaration
+
+{{#with type.declaration}}
+{{> parameter}}
+{{/with}}
+
+{{/if}}

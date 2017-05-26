@@ -1,0 +1,6 @@
+# {{kindString }} {{ name }}
+{{#each groups}}
+{{#unless allChildrenHaveOwnDocument}}
+{{> members.group }}
+{{/unless}}
+{{/each}}

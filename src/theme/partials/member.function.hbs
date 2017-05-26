@@ -1,0 +1,11 @@
+
+{{#each signatures}}
+### {{#if flags}}_{{#each flags}}{{this}}{{/each}}_{{/if}} {{name}}(): {{ type.name }}
+
+{{> member.signatures}}
+
+{{ comment.shortText }}
+
+{{> member.parameters}}
+
+{{/each}}

@@ -1,0 +1,10 @@
+{{#if groups}}
+{{#each groups}}
+### {{title}}
+{{#each children}}
+* [{{#if name}}{{{name}}}{{else}}{{{kindString}}}{{/if}}](./{{url}})
+{{/each}}
+{{/each}}
+{{/if}}
+---
+

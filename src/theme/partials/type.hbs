@@ -1,0 +1,45 @@
+{{#compact}}
+{{#if this}}
+{{#if reflection}}
+[{{reflection.name}}](reflection.url)
+{{#if typeArguments}}
+{{#each typeArguments}}
+{{#if @index}}, {{/if}}{{> type}}{{/each}}{{/if}}
+{{else}}
+{{#if elementType}}
+{{#with elementType}}
+{{#if types}}({{/if}}{{> type}}{{#if types}}){{/if}}[]
+{{/with}}
+{{else}}
+{{#if types}}
+{{#each types}}
+{{#if @index}}
+{{#ifCond ../type '==' 'intersection'}}{{else}}|{{/ifCond}}
+{{/if}}
+{{> type}}
+{{/each}}
+{{else}}
+{{#if elements}}
+[{{#each elements}}{{#if @index}},{{/if}}{{> type}}{{/each}}]
+{{else}}
+{{#if name}}
+{{name}}
+{{else}}
+{{#if value}}
+"{{value}}"
+{{else}}
+{{this}}
+{{/if}}
+{{/if}}
+{{#if typeArguments}}
+{{#each typeArguments}}
+{{#if @index}},{{/if}}{{> type}} {{/each}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{else}}
+void
+{{/if}}
+{{/compact}}

@@ -1,0 +1,41 @@
+{{#unless hideSources}}
+    {{> member.sources}}
+{{/unless}}
+
+{{> comment}}
+
+{{#if typeParameters}}
+Type parameters:
+{{> typeParameters}}
+{{/if}}
+
+{{> member.parameters}}
+
+{{#if parameters}}
+
+
+{{#each parameters}}
+
+{{> comment}}
+
+{{#if type.declaration}}
+{{#with type.declaration}}
+{{> parameter}}
+{{/with}}
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{#if type}}
+
+Returns {{#with type}}{{>type}}{{/with}}
+
+{{#if comment.returns}}
+{{{comment.returns}}}
+{{/if}}
+
+
+{{/if}}
+
+
+

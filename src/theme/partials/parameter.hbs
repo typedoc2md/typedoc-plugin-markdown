@@ -1,0 +1,68 @@
+{{#if signatures}}
+{{#each signatures}}
+{{> member.signature.title hideName=true }}
+{{/each}}
+
+{{#each signatures}}
+{{> member.signature.body hideSources=true }}
+{{/each}}
+
+{{/if}}
+{{#if indexSignature}}
+
+{{#compact}}
+[
+{{#each indexSignature.parameters}}
+ {{#if flags.isRest}}...{{/if}}{{name}}:&nbsp;{{#with type}}{{>type}}{{/with}}
+{{/each}}
+  ]:&nbsp;
+{{#with indexSignature.type}}{{>type}}{{/with}}
+{{/compact}}
+
+{{#with indexSignature}}
+{{> comment}}
+{{/with}}
+
+{{#if indexSignature.type.declaration}}
+{{#with indexSignature.type.declaration}}
+{{> parameter}}
+{{/with}}
+{{/if}}
+{{/if}}
+{{#each children}}
+{{#if signatures}}
+{{#compact}}
+{{#if flags.isRest}}...{{/if}}
+{{{ name}}}
+{{#if isOptional}}?{{/if}}
+ :
+function
+{{/compact}}
+
+{{> member.signatures}}
+{{else}}
+{{#compact}}
+{{#each flags}}
+{{this}}
+{{/each}}
+{{#if flags.isRest}}...{{/if}}
+{{{ name}}}
+
+{{#if flags.isOptional}}?{{/if}}
+:
+{{#with type}}{{>type}}{{/with}}
+{{/compact}}
+
+{{> comment}}
+
+{{#if children}}
+{{> parameter}}
+{{/if}}
+
+{{#if type.declaration}}
+{{#with type.declaration}}
+{{> parameter}}
+{{/with}}
+{{/if}}
+{{/if}}
+{{/each}}
