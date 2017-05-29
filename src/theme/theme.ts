@@ -5,21 +5,10 @@
 /**
  * Typedoc imports
  */
-import {
-  DeclarationReflection,
-  ParameterReflection,
-  ProjectReflection,
-} from 'typedoc/dist/lib/models/reflections/index';
+import { DeclarationReflection, ProjectReflection } from 'typedoc/dist/lib/models/reflections/index';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-
-/**
- * Other libs
- */
-import * as fs from 'fs';
-import * as Handlebars from 'handlebars';
-import * as path from 'path';
 
 interface IOptions {
   isSinglePage: boolean;
@@ -50,16 +39,6 @@ export class MarkdownTheme extends DefaultTheme {
     return urls;
   }
 
-  private static templateToString(template: string) {
-    return fs.readFileSync(path.join(__dirname, `/${template}`)).toString();
-  }
-
-  private static compileTemplate(template: string, data: {}): string {
-    const source = MarkdownTheme.templateToString(template);
-    const md: HandlebarsTemplateDelegate = Handlebars.compile(source);
-    return md(data);
-  }
-
   private options: IOptions;
 
   constructor(renderer: Renderer, basePath: string, options: IOptions) {
@@ -72,52 +51,7 @@ export class MarkdownTheme extends DefaultTheme {
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('navigation');
     renderer.removeComponent('toc');
-
-    // define handlebars helpers
-    Handlebars.registerHelper('safeText', (text: string) => {
-      return new Handlebars.SafeString(text);
-    });
-
-    Handlebars.registerHelper('compileIndex', (member: DeclarationReflection) => {
-      let md = '';
-      if (member.kindString !== 'Interface') {
-        md = MarkdownTheme.compileTemplate('partials/index.hbs', member);
-      }
-      return new Handlebars.SafeString(md);
-    });
-
-    Handlebars.registerHelper('compileMember', (member: DeclarationReflection) => {
-
-      // console.log(member.kindString);
-
-      let md = '';
-      switch (member.kindString) {
-
-        case 'External module':
-          md = MarkdownTheme.compileTemplate('templates/reflection.hbs', { model: member });
-          break;
-
-        case 'Class':
-          md = MarkdownTheme.compileTemplate('templates/reflection.hbs', { model: member });
-          break;
-
-        default:
-          const templateRef = member.kindString.replace(' ', '').toLowerCase();
-          md = MarkdownTheme.compileTemplate(`partials/member.${templateRef}.hbs`, member);
-
-      }
-
-      return new Handlebars.SafeString(md);
-    });
-
-    Handlebars.registerHelper('getComment', (comment: string) => {
-      let newComment: string = '';
-      if (comment) {
-        newComment = comment.replace('\n', '');
-      }
-
-      return newComment;
-    });
+    renderer.removeComponent('pretty-print');
 
   }
 
@@ -128,17 +62,20 @@ export class MarkdownTheme extends DefaultTheme {
   public getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    const additionalContext = { displayReadme: this.application.options.getValue('readme') !== 'none' };
+    const additionalContext = {
+      displayReadme: this.application.options.getValue('readme') !== 'none',
+      hideBack: true,
+    };
     const context = Object.assign(entryPoint, additionalContext);
-    if (this.options.isSinglePage) {
-      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-    } else {
-      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-      if (entryPoint.children) {
-        entryPoint.children.forEach((child: DeclarationReflection) => {
-          MarkdownTheme.buildUrls(child, urls);
-        });
-      }
+    // if (this.options.isSinglePage) {
+    // urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+    // } else {
+    urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+    if (entryPoint.children) {
+      entryPoint.children.forEach((child: DeclarationReflection) => {
+        MarkdownTheme.buildUrls(child, urls);
+      });
+      //   }
     }
 
     return urls;

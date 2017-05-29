@@ -1,9 +1,15 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+import { MarkdownPlugin } from './plugin';
 
-var plugin = require("./plugin");
-module.exports = function (PluginHost: Application) {
-  var app = PluginHost.owner;
-  app.options.addDeclaration({ name: 'markdownSinglePage', type: ParameterType.Boolean, component:'markdown', help:'Markdown Plugin: Export to single document.' });
-  app.converter.addComponent('markdown', plugin.MarkdownPlugin);
+module.exports = (PluginHost: Application) => {
+  const app = PluginHost.owner;
+  const options = {
+    component: 'markdown',
+    help: 'Markdown Plugin: Export to single document.',
+    name: 'markdownSinglePage',
+    type: ParameterType.Boolean,
+    };
+  app.options.addDeclaration(options);
+  app.converter.addComponent('markdown', MarkdownPlugin);
 };
