@@ -1,15 +1,16 @@
 {
   "name": "typedoc-plugin-markdown",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.0",
   "description": "",
   "main": "dist/index.js",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc && npm run copy-templates",
-    "copy-templates": "cpx 'src/theme/**/*.hbs' dist/theme",
+    "build": "tsc && npm run copy-hbs",
+    "copy-hbs": "cpx src/**/*.hbs dist/",
     "lint": "tslint --type-check --project tsconfig.json",
+    "prepublish": "rm -rf dist && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
