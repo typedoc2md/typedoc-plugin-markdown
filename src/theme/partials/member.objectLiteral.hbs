@@ -1,9 +1,14 @@
-### {{name}}: {{kindString}}
 
-{{> comment }}
+{{#if name}}
+<a id="{{name}}"></a>
+## {{{name}}}: {{#with type}}{{>type}}{{/with}}
+{{/if}}
 
-| Name  | Type                | Default |
-| ------ | ------------------- | ------------ |
-{{#each this.children }}
-| {{ name }}  | {{ type.name }} | {{ defaultValue }}
+{{#each groups}}
+{{#each children}}
+{{#unless hasOwnDocument}}
+{{compileMember this}}
+{{/unless}}
 {{/each}}
+{{/each}}
+

@@ -1,7 +1,7 @@
 {{#compact}}
 {{#if this}}
 {{#if reflection}}
-[{{reflection.name}}](reflection.url)
+[{{reflection.name}}](../{{ reflection.url }})
 {{#if typeArguments}}
 {{#each typeArguments}}
 {{#if @index}}, {{/if}}{{> type}}{{/each}}{{/if}}

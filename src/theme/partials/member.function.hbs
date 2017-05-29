@@ -1,11 +1,9 @@
-
-{{#each signatures}}
-### {{#if flags}}_{{#each flags}}{{this}}{{/each}}_{{/if}} {{name}}(): {{ type.name }}
-
+<a id="{{anchor}}"></a>
+{{#if signatures}}
 {{> member.signatures}}
+{{else}}{{#if hasGetterOrSetter}}
+{{> member.getterSetter}}
+{{else}}
+{{> member.declaration}}
+{{/if}}{{/if}}
 
-{{ comment.shortText }}
-
-{{> member.parameters}}
-
-{{/each}}

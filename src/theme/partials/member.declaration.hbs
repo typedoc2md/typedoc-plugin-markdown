@@ -1,9 +1,7 @@
 
 {{> comment}}
 
-**{{ name }}**: {{#if isOptional}}?{{/if}} {{#with type}}{{>type}}{{/with}} {{#if defaultValue}} = _{{defaultValue}}_{{/if}}
-
-{{> member.sources}}
+### **{{ name }}**: {{#if isOptional}}?{{/if}} *{{#with type}}{{>type}}{{/with}}* {{#if defaultValue}} = {{defaultValue}}{{/if}}
 
 {{#if type.declaration}}
 #### Type declaration
@@ -13,3 +11,5 @@
 {{/with}}
 
 {{/if}}
+
+{{> member.sources}}

@@ -2,19 +2,17 @@
 
 {{#if signatures}}
 {{> member.signatures}}
-{{else}}
-{{#if hasGetterOrSetter}}
+{{else}}{{#if hasGetterOrSetter}}
 {{> member.getterSetter}}
 {{else}}
+{{> member.declaration}}
+{{/if}}{{/if}}
 
-{{> member.declaration}} 
-
-{{/if}}
-{{/if}}
 {{#each groups}}
 {{#each children}}
 {{#unless hasOwnDocument}}
-{{> member}}
+{{compileMember this}}
 {{/unless}}
 {{/each}}
 {{/each}}
+

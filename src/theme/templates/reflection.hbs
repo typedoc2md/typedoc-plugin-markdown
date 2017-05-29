@@ -1,19 +1,16 @@
-
+{{#unless model.hideBack}}[{{project.name}}](../index.md) {{#with model}}{{> breadcrumb}}{{/with}}{{/unless}}
+{{> header}}
 {{#if model.displayReadme }}
 {{{model.readme}}}
-___
 {{/if}}
-
 {{#unless model.displayReadme}}
 # {{model.kindString }} {{ model.name }}
 {{/unless}}
-
 {{#with model}}
 {{#if hasComment}}
 {{> comment}}
 {{/if}}
 {{/with}}
-
 {{#if model.typeParameters}}
   
  ### Type parameters
@@ -70,5 +67,6 @@ ___
 
 {{#with model}}
 {{ compileIndex this }}
+
 {{> members}}
 {{/with}}

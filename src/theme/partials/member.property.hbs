@@ -1,22 +1,3 @@
-
-{{#if name}}
-### {{#each flags}}{{this}}{{/each}} {{ kindString }}
-{{/if}}
-{{#if signatures}}
-{{> member.signatures}}
-{{else}}
-{{#if hasGetterOrSetter}}
-{{> member.getterSetter}}
-{{else}}
-
+# member.property Property
 {{> member.declaration}} 
 
-{{/if}}
-{{/if}}
-{{#each groups}}
-{{#each children}}
-{{#unless hasOwnDocument}}
-{{> member}}
-{{/unless}}
-{{/each}}
-{{/each}}

@@ -1,10 +1,11 @@
 {{#if groups}}
 {{#each groups}}
-### {{title}}
+
+## {{title}}
 {{#each children}}
-* [{{#if name}}{{{name}}}{{else}}{{{kindString}}}{{/if}}](./{{url}})
+* [{{#if name}}{{{name}}}{{else}}{{{kindString}}}{{/if}}]({{@root.urlPrefix}}{{url}})
 {{/each}}
 {{/each}}
 {{/if}}
----
 
+---
