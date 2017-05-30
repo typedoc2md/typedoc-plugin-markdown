@@ -1,9 +1,14 @@
+{{#unless flags.isPrivate}}
 <a id="{{anchor}}"></a>
+
 {{#if signatures}}
+
 {{> member.signatures}}
+
 {{else}}{{#if hasGetterOrSetter}}
 {{> member.getterSetter}}
 {{else}}
 {{> member.declaration}}
 {{/if}}{{/if}}
+{{/unless}}
 

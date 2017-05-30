@@ -3,7 +3,9 @@
 
 ## {{title}}
 {{#each children}}
+{{#unless flags.isPrivate}}
 * [{{#if name}}{{{name}}}{{else}}{{{kindString}}}{{/if}}]({{@root.urlPrefix}}{{url}})
+{{/unless}}
 {{/each}}
 {{/each}}
 {{/if}}

@@ -1,9 +1,9 @@
 
 {{#if name}}
-<a id="{{name}}"></a>
-## {{{name}}}: {{#with type}}{{>type}}{{/with}}
+<a id="{{ getAnchorName name}}"></a>
+### {{{name}}}: {{#with type}}{{>type}}{{/with}}
 {{/if}}
-
+{{> comment }}
 {{#each groups}}
 {{#each children}}
 {{#unless hasOwnDocument}}
