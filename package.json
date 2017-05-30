@@ -7,11 +7,12 @@
     "dist/"
   ],
   "scripts": {
-    "build": "tsc && npm run copy-hbs",
-    "copy-hbs": "cpx src/**/*.hbs dist/",
+    "build": "tsc && npm run copy:hbs",
+    "copy:hbs": "cpx src/**/*.hbs dist/",
     "lint": "tslint --type-check --project tsconfig.json",
     "prepublish": "rm -rf dist && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:hbs": "onchange 'src/**/*.hbs' -- npm run copy:hbs"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "cpx": "1.5.0",
+    "onchange": "3.2.1",
     "tslint": "5.3.2"
   }
 }
