@@ -67,17 +67,16 @@ export class MarkdownTheme extends DefaultTheme {
       hideBack: true,
     };
     const context = Object.assign(entryPoint, additionalContext);
-    // if (this.options.isSinglePage) {
-    // urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-    // } else {
-    urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-    if (entryPoint.children) {
-      entryPoint.children.forEach((child: DeclarationReflection) => {
-        MarkdownTheme.buildUrls(child, urls);
-      });
-      //   }
+    if (this.options.isSinglePage) {
+      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+    } else {
+      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+      if (entryPoint.children) {
+        entryPoint.children.forEach((child: DeclarationReflection) => {
+          MarkdownTheme.buildUrls(child, urls);
+        });
+      }
     }
-
     return urls;
   }
 

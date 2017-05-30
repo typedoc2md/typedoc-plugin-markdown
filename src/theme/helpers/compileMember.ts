@@ -10,10 +10,11 @@ export function compileMember(member: DeclarationReflection) {
     member.kindString === 'Constructor' ||
     member.kindString === 'Method' ||
     member.kindString === 'Variable' ||
-    member.kindString === 'Function') {
-    const templateRef = member.kindString.replace(' ', '').toLowerCase();
+    member.kindString === 'Function' ||
+    member.kindString === 'External module') {
+    const templateRef = member.kindString.replace(' ', '').toLowerCase().replace(' ', '');
     md = compileTemplate(`partials/member.${templateRef}.hbs`, member);
-  } else {
+  }else {
     md = compileTemplate('partials/member.hbs', member);
   }
 
