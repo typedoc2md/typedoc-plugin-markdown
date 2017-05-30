@@ -27,7 +27,7 @@ export class MarkdownPlugin extends ConverterComponent {
   }
 
   private getThemeDirectory() {
-    return path.join(__dirname, '../theme/');
+    return path.join(__dirname, '../dist/theme/');
   }
 
   private onBegin(context: Context, reflection: Reflection) {
