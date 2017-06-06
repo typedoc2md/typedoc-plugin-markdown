@@ -13,13 +13,16 @@ import * as path from 'path';
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
 
-  private isSinglePage: boolean;
+  // private isSinglePage: boolean;
+  private options: any;
 
   public initialize() {
 
     const options: Options = this.application.options;
     options.read({}, OptionsReadMode.Prefetch);
-    this.isSinglePage = (options.getValue('markdownSinglePage'));
+    console.log(options.getRawValues());
+    // this.isSinglePage = (options.getValue('markdownSinglePage'));
+    this.options = options.getRawValues();
 
     this.listenTo(this.owner, {
       [Converter.EVENT_RESOLVE_BEGIN]: this.onBegin,
@@ -35,12 +38,12 @@ export class MarkdownPlugin extends ConverterComponent {
     const renderer = this.application.renderer;
     const theme = this.application.options.getValue('theme');
     const themePath = this.getThemeDirectory();
-    const options = { isSinglePage: this.isSinglePage };
 
     // apply the theme
     if (theme === 'markdown') {
-      renderer.theme = renderer.addComponent('theme', new MarkdownTheme(this.application.renderer, themePath, options));
- } else {
+      const markdownTheme = new MarkdownTheme(this.application.renderer, themePath, this.options);
+      renderer.theme = renderer.addComponent('theme', markdownTheme);
+    } else {
       this.application.logger.log('To generate markdown please set option --theme markdown');
     }
   }

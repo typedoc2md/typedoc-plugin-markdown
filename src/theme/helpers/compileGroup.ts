@@ -1,6 +1,7 @@
+
 import { compileTemplate } from '../utils';
 
-export function compileGroup(group: any) {
+export function compileGroup(group: any, options: any) {
 
     let md: hbs.SafeString = '';
     // console.log(group.title);

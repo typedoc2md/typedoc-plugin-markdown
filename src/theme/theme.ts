@@ -9,9 +9,12 @@ import { DeclarationReflection, ProjectReflection } from 'typedoc/dist/lib/model
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+import { Options } from './options';
 
 interface IOptions {
-  isSinglePage: boolean;
+  markdownSinglePage?: string;
+  markdownRepoHost: string;
+  markdownRepoRoot: string;
 }
 
 export class MarkdownTheme extends DefaultTheme {
@@ -46,6 +49,11 @@ export class MarkdownTheme extends DefaultTheme {
 
     this.options = options;
 
+    Options.markdownRepoHost = options.markdownRepoHost;
+    Options.markdownRepoRoot = options.markdownRepoRoot;
+
+    console.log('theme options', options);
+
     // remove uneccessary plugins
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
@@ -65,9 +73,10 @@ export class MarkdownTheme extends DefaultTheme {
     const additionalContext = {
       displayReadme: this.application.options.getValue('readme') !== 'none',
       hideBack: true,
+      options: this.options,
     };
     const context = Object.assign(entryPoint, additionalContext);
-    if (this.options.isSinglePage) {
+    if (this.options.markdownSinglePage) {
       urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
     } else {
       urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));

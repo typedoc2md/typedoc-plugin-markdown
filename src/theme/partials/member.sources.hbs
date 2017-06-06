@@ -8,12 +8,17 @@ Inherited from {{#with inheritedFrom}}{{> typeAndParent}}{{/with}}
 Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}
 {{/if}}
 {{#if sources}}
-
+# hello
+{{@root.options.markdownRepoRoot}}
 {{#each sources}}
 {{#if url}}
 * Defined in [{{fileName}}:{{line}}]({{url}})
 {{else}}
 * Defined in {{fileName}}:{{line}}
+* Defined in [{{fileName}}:{{line}}](https://bitbucket.org/maplesyrupgroup/fe-analytics/src/master/src/{{fileName}}?fileviewer=file-view-default#{{fileName}}-{{line}})
 {{/if}}
 {{/each}}
 {{/if}}
+
+
+
