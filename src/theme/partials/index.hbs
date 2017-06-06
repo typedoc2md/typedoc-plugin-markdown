@@ -5,7 +5,7 @@
 {{#each children}}
 {{#unless flags.isPrivate}}
 {{#ifDisplayIndexItem this }}
-* [{{#if name}}{{{name}}}{{else}}{{{kindString}}}{{/if}}]({{@root.urlPrefix}}{{url}})
+* {{ getIndexItem this @root.urlPrefix}}
 {{/ifDisplayIndexItem}}
 {{/unless}}
 {{/each}}

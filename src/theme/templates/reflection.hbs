@@ -4,7 +4,7 @@
 {{{model.readme}}}
 {{/if}}
 {{#unless model.displayReadme}}
-# {{model.kindString }} {{ model.name }}
+# {{model.kindString }} {{ safeText model.name }}
 {{/unless}}
 {{#with model}}
 {{#if hasComment}}
