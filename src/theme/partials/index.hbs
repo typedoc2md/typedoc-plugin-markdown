@@ -5,7 +5,7 @@
 {{#each children}}
 {{#unless flags.isPrivate}}
 {{#ifDisplayIndexItem this }}
-* {{ getIndexItem this @root.urlPrefix}}
+* {{ displayIndexItem this @root.urlPrefix}}
 {{/ifDisplayIndexItem}}
 {{/unless}}
 {{/each}}

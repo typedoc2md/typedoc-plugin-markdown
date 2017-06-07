@@ -3,6 +3,6 @@
 | Name  | Type                | Default value  | Description
 | ------ | ------------------- | ------------ | ------------ |
 {{#each children}}
-| {{ name }}  | {{#with type}}{{>type}}{{/with}} | {{#if defaultValue}} _{{defaultValue}}_{{/if}} | {{ getComment comment.text }} |
+| {{ name }}  | {{#with type}}{{>type}}{{/with}} | {{#if defaultValue}} _{{defaultValue}}_{{/if}} | {{ displayComment comment.text }} |
 {{/each}}
 

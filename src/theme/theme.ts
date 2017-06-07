@@ -63,8 +63,6 @@ export class MarkdownTheme extends DefaultTheme {
     Options.markdownRepoHost = options.markdownRepoHost || 'github';
     Options.markdownRepoRoot = options.markdownRepoRoot;
 
-    // console.log('theme options', options);
-
     // remove uneccessary plugins
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');

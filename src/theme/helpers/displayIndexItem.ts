@@ -1,6 +1,6 @@
 import * as Handlebars from 'handlebars';
 import { Options } from '../options';
-export function getIndexItem(item: any, urlPrefix: string) {
+export function displayIndexItem(item: any, urlPrefix: string) {
 
   const isFile = item.url.split('.').pop() === 'md';
   let url = urlPrefix + item.url;

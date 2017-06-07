@@ -13,15 +13,14 @@ import * as path from 'path';
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
 
-  // private isSinglePage: boolean;
   private options: any;
 
   public initialize() {
 
     const options: Options = this.application.options;
+
     options.read({}, OptionsReadMode.Prefetch);
 
-    // this.isSinglePage = (options.getValue('markdownSinglePage'));
     this.options = options.getRawValues();
 
     this.listenTo(this.owner, {
