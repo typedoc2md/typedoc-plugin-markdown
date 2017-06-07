@@ -7,7 +7,7 @@ export function displayIndexItem(item: any, urlPrefix: string) {
 
   if (!isFile) {
 
-    if (Options.markdownRepoHost === 'bitbucket') {
+    if (Options.markdownFlavour === 'bitbucket') {
 
       const ref = item.kindString.split(' ')[0].toLowerCase();
       const urlSplit = item.url.split('#');

@@ -15,15 +15,15 @@ module.exports = (PluginHost: Application) => {
   app.options.addDeclaration({
     component: 'markdown',
     defaultValue: 'github',
-    help: 'Markdown Plugin: Repository host - "github" or "bitbucket"',
-    name: 'markdownRepoHost',
+    help: 'Markdown Plugin: Flavour - "github" or "bitbucket"',
+    name: 'markdownFlavour',
     type: ParameterType.String,
   });
   app.options.addDeclaration({
     component: 'markdown',
     defaultValue: '',
-    help: 'Markdown Plugin: Repository root',
-    name: 'markdownRepoRoot',
+    help: 'Markdown Plugin: Repository source file foott',
+    name: 'markdownSourcefilePrefix',
     type: ParameterType.String,
   });
   app.converter.addComponent('markdown', MarkdownPlugin);

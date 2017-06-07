@@ -1,4 +1,4 @@
 export class Options {
-  public static markdownRepoHost: string;
-  public static markdownRepoRoot: string;
+  public static markdownFlavour: string;
+  public static markdownSourcefilePrefix: string;
 }

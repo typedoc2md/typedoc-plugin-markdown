@@ -1,8 +1,8 @@
 ## Properties
 
-| Name  | Type                | Default value  | Description
-| ------ | ------------------- | ------------ | ------------ |
+| Name  | Type                
+| ------ | ------------------- 
 {{#each children}}
-| {{ name }}  | {{#with type}}{{>type}}{{/with}} | {{#if defaultValue}} _{{defaultValue}}_{{/if}} | {{ displayComment comment.text }} |
+| {{ name }}  | {{#with type}}{{>type}}{{/with}} {{#if defaultValue}} =_{{defaultValue}}_{{/if}} 
 {{/each}}
 

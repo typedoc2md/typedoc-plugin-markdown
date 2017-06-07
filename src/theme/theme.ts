@@ -12,9 +12,8 @@ import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 import { Options } from './options';
 
 interface IOptions {
-  markdownSinglePage: string;
-  markdownRepoHost: string;
-  markdownRepoRoot: string;
+  markdownFlavour: string;
+  markdownSourcefilePrefix: string;
 }
 
 export class MarkdownTheme extends DefaultTheme {
@@ -60,8 +59,8 @@ export class MarkdownTheme extends DefaultTheme {
 
     this.options = options;
 
-    Options.markdownRepoHost = options.markdownRepoHost || 'github';
-    Options.markdownRepoRoot = options.markdownRepoRoot;
+    Options.markdownFlavour = options.markdownFlavour || 'github';
+    Options.markdownSourcefilePrefix = options.markdownSourcefilePrefix;
 
     // remove uneccessary plugins
     renderer.removeComponent('assets');

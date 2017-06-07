@@ -14,7 +14,7 @@ export function compileMember(member: DeclarationReflection) {
     member.kindString === 'External module') {
     const templateRef = member.kindString.replace(' ', '').toLowerCase().replace(' ', '');
     md = compileTemplate(`partials/member.${templateRef}.hbs`, member);
-  }else {
+  } else {
     md = compileTemplate('partials/member.hbs', member);
   }
 
