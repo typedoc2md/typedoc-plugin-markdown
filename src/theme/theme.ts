@@ -84,15 +84,15 @@ export class MarkdownTheme extends DefaultTheme {
       options: this.options,
     };
     const context = Object.assign(entryPoint, additionalContext);
-    if (this.options.markdownSinglePage) {
-      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-    } else {
-      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-      if (entryPoint.children) {
+    // if (this.options.markdownSinglePage) {
+    //  urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+    // } else {
+    urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+    if (entryPoint.children) {
         entryPoint.children.forEach((child: DeclarationReflection) => {
           MarkdownTheme.buildUrls(child, urls);
         });
-      }
+      // }
     }
     return urls;
   }
