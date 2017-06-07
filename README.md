@@ -7,10 +7,6 @@
 
 A plugin for [Typedoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
 
-*Why not just create a typedoc theme?* 
-
-Easy to implement (don't have to worry about theme locations) with the further abilty to pass in further options. 
-
 ## Installation
 ```javascript
 npm install --save-dev typedoc-plugin-markdown
