@@ -5,14 +5,14 @@
 /**
  * Typedoc imports
  */
-import { DeclarationReflection, ProjectReflection } from 'typedoc/dist/lib/models/reflections/index';
+import { DeclarationReflection, ProjectReflection, Reflection } from 'typedoc/dist/lib/models/reflections/index';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 import { Options } from './options';
 
 interface IOptions {
-  markdownSinglePage?: string;
+  markdownSinglePage: string;
   markdownRepoHost: string;
   markdownRepoRoot: string;
 }
@@ -42,6 +42,17 @@ export class MarkdownTheme extends DefaultTheme {
     return urls;
   }
 
+  public static getUrl(reflection: Reflection, relative?: Reflection, separator: string = '.'): string {
+
+    let url = reflection.getAlias();
+
+    if (reflection.parent && reflection.parent !== relative && !(reflection.parent instanceof ProjectReflection)) {
+      url = MarkdownTheme.getUrl(reflection.parent, relative, separator) + separator + url;
+    }
+
+    return url;
+  }
+
   private options: IOptions;
 
   constructor(renderer: Renderer, basePath: string, options: IOptions) {
@@ -49,10 +60,10 @@ export class MarkdownTheme extends DefaultTheme {
 
     this.options = options;
 
-    Options.markdownRepoHost = options.markdownRepoHost;
+    Options.markdownRepoHost = options.markdownRepoHost || 'github';
     Options.markdownRepoRoot = options.markdownRepoRoot;
 
-    console.log('theme options', options);
+    // console.log('theme options', options);
 
     // remove uneccessary plugins
     renderer.removeComponent('assets');

@@ -21,7 +21,7 @@ module.exports = (PluginHost: Application) => {
   });
   app.options.addDeclaration({
     component: 'markdown',
-    defaultValue: 'github',
+    defaultValue: '',
     help: 'Markdown Plugin: Repository root',
     name: 'markdownRepoRoot',
     type: ParameterType.String,

@@ -20,7 +20,7 @@ export class MarkdownPlugin extends ConverterComponent {
 
     const options: Options = this.application.options;
     options.read({}, OptionsReadMode.Prefetch);
-    console.log(options.getRawValues());
+
     // this.isSinglePage = (options.getValue('markdownSinglePage'));
     this.options = options.getRawValues();
 

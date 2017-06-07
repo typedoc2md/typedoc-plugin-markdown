@@ -12,6 +12,8 @@
     "lint": "tslint --type-check --project tsconfig.json",
     "prepublish": "rm -rf dist && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run watch:tsc && npm run watch:hbs",
+    "watch:tsc": "tsc -w",
     "watch:hbs": "onchange 'src/**/*.hbs' -- npm run copy:hbs"
   },
   "repository": {

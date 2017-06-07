@@ -26,7 +26,7 @@ Type parameters:
 
 {{#if type}}
 
-Returns {{#with type}}{{>type}}{{/with}}
+**Returns:** {{#with type}}{{>type}}{{/with}}
 
 {{#if comment.returns}}
 {{{comment.returns}}}
@@ -36,7 +36,7 @@ Returns {{#with type}}{{>type}}{{/with}}
 {{/if}}
 
 {{#unless hideSources}}
-    {{> member.sources}}
+{{compileSources this}}
 {{/unless}}
 
 

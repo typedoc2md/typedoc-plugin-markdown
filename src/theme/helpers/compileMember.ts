@@ -4,7 +4,7 @@ import { compileTemplate } from '../utils';
 export function compileMember(member: DeclarationReflection) {
 
   let md: hbs.SafeString = '';
-  // console.log(member.kindString);
+
   if (
     member.kindString === 'Object literal' ||
     member.kindString === 'Constructor' ||
