@@ -1,8 +1,15 @@
 # typedoc-plugin-markdown
 
-*Alpha version under development. Please feel free to use - feedback welcome.*
+![npm](https://img.shields.io/npm/dt/typedoc-plugin-markdown.svg)
+![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)
 
-A plugin [typeoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
+*Alpha version under development. Please feel free to use with this caveat - feedback welcome.*
+
+A plugin for [Typedoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
+
+*Why not just create a typedoc theme?* 
+
+Easy to implement (don't have to worry about theme locations) with the further abilty to pass in further options. 
 
 ## Installation
 ```javascript
@@ -34,6 +41,10 @@ typedoc --theme markdown --markdownFlavour bitbucket markdownSourcefilePrefix 'h
  ## Samples
 
 * [Microsoft TypeScript Sample: Raytracer](samples/raytracer/index.md)
+
+## Acknowledgements
+
+* Thanks to kimamula ([typedoc-markdown-theme](https://github.com/kimamula/typedoc-markdown-theme)) for the inspiration behind this package.
 
 
  
