@@ -12,7 +12,10 @@
     "lint": "tslint --type-check --project tsconfig.json",
     "prepublish": "rm -rf dist && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm run watch:tsc && npm run watch:hbs",
+    "samples":"npm run samples:microsoft && npm run samples:typedoc",
+    "samples:microsoft": "typedoc --theme markdown --name 'Microsoft TypeScriptSamples' --tsconfig samples/src/microsoft/tsconfig.json --out samples/out/microsoft",
+    "samples:typedoc": "typedoc --theme markdown --readme samples/src/typedocExamples/README.md --name 'Typedoc Examples' --tsconfig samples/src/typedoc/tsconfig.json --out samples/out/typedoc",
+    "watch": "concurrently \"npm run watch:tsc\" \"npm run watch:hbs\"",
     "watch:tsc": "tsc -w",
     "watch:hbs": "onchange 'src/**/*.hbs' -- npm run copy:hbs"
   },
@@ -30,6 +33,7 @@
     "typedoc": "0.7.1"
   },
   "devDependencies": {
+    "concurrently": "3.4.0",
     "cpx": "1.5.0",
     "onchange": "3.2.1",
     "tslint": "5.4.3"
