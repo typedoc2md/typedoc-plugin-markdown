@@ -5,7 +5,7 @@
 
 *Alpha version under development. Please feel free to use with this caveat - feedback welcome.*
 
-A plugin for [Typedoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
 
 ## Installation
 ```javascript
@@ -30,17 +30,23 @@ Markdown engines render markdown in different ways. By default typedoc supports 
 markdownFlavour | The markdown rendering engine. Supports "github" or "bitbucket" | github
 markdownSourcefilePrefix | The prefix to use for sourcefiles. | Supports github source files as default.
 
+#### Example options
 ```javascript
-typedoc --theme markdown --markdownFlavour bitbucket markdownSourcefilePrefix 'https://bitbucket.org/owner/repository_name/src/master/src/'
+--markdownFlavour bitbucket
+
+--markdownSourcefilePrefix https://bitbucket.org/owner/repository_name/src/master/src/
 ```
  
- ## Samples
+## Samples
 
-* [Microsoft TypeScript Sample: Raytracer](samples/raytracer/index.md)
+* [TypeDoc Examples](samples/out/typedoc/index.md)
+* [Microsoft TypeScript Samples](samples/out/microsoft/index.md)
 
 ## Acknowledgements
 
-* Thanks to kimamula ([typedoc-markdown-theme](https://github.com/kimamula/typedoc-markdown-theme)) for the inspiration behind this package.
+* Thanks to kimamula's [typedoc-markdown-theme](https://github.com/kimamula/typedoc-markdown-theme) for the inspiration behind this package.
+
+
 
 
  
