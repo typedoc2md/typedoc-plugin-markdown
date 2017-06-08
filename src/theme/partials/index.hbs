@@ -1,5 +1,6 @@
 {{#if groups}}
 {{#each groups}}
+{{#ifGroupContainesVisibleItems this }}
 
 ## {{title}}
 {{#each children}}
@@ -9,6 +10,7 @@
 {{/ifDisplayIndexItem}}
 {{/unless}}
 {{/each}}
+{{/ifGroupContainesVisibleItems}}
 {{/each}}
 {{/if}}
 

@@ -8,24 +8,26 @@
 {{/unless}}
 {{#with model}}
 {{#if hasComment}}
+
 {{> comment}}
+
 {{/if}}
 {{/with}}
 {{#if model.typeParameters}}
   
- ### Type parameters
+ ## Type parameters
 {{#with model}}{{> typeParameters}}{{/with}}
 {{/if}}
 
 {{#if model.typeHierarchy}}
 
-### Hierarchy
+## Hierarchy
 {{#with model.typeHierarchy}}{{> hierarchy}}{{/with}}
 {{/if}}
 
 {{#if model.implementedTypes}}
 
-### Implements
+## Implements
 {{#each model.implementedTypes}}
 * {{> type}}
 {{/each}}
@@ -66,6 +68,7 @@
 {{/if}}
 
 {{#with model}}
+
 {{ compileIndex this }}
 
 {{> members}}

@@ -1,8 +1,15 @@
 
-export function displayComment(comment: string) {
+export function displayComment(comment: any) {
   let newComment: string = '';
   if (comment) {
-    newComment = comment.replace('\n', '');
+  if (comment.text) {
+    newComment += comment.text.replace('\n', '');
+  }
+
+  if (comment.shortText) {
+    newComment += comment.shortText.replace('\n', '');
+  }
+
   }
 
   return newComment === '' ? '-' : newComment;

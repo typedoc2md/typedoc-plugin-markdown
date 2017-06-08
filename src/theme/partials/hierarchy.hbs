@@ -1,13 +1,13 @@
 {{#each types}}
 {{#if ../isTarget}}
-* {{this}}
+**{{this}}**
 {{else}}
 * {{> type}}
 {{/if}}
 {{#if @last}}
 {{#with ../next}}
-* {{> hierarchy}}
+
+{{> hierarchy}}
 {{/with}}
 {{/if}}
 {{/each}}
-{{newLine}}{{newLine}}

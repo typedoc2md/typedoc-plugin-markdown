@@ -9,7 +9,7 @@ export function displayIndexItem(item: any, urlPrefix: string) {
 
     if (Options.markdownFlavour === 'bitbucket') {
 
-      const ref = item.kindString.split(' ')[0].toLowerCase();
+      const ref = item.kindString.replace(' ', '-').toLowerCase();
       const urlSplit = item.url.split('#');
 
       url = '#' + 'markdown-header-' + urlSplit[1] + '-' + ref;

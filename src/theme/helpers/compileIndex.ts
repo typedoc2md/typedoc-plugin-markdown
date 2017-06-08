@@ -10,8 +10,9 @@ export function compileIndex(member: DeclarationReflection) {
     urlPrefix = '';
   }
 
-  if (member.kindString !== 'Interface' && member.kindString !== 'Class') {
+  if (member.kindString !== 'Interface') {
     md = compileTemplate('partials/index.hbs', Object.assign(member, { urlPrefix }));
   }
+
   return md;
 }

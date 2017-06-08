@@ -11,6 +11,7 @@ export function compileMember(member: DeclarationReflection) {
     member.kindString === 'Method' ||
     member.kindString === 'Variable' ||
     member.kindString === 'Function' ||
+    member.kindString === 'Property' ||
     member.kindString === 'External module') {
     const templateRef = member.kindString.replace(' ', '').toLowerCase().replace(' ', '');
     md = compileTemplate(`partials/member.${templateRef}.hbs`, member);
