@@ -38,7 +38,7 @@ This comment is ignored, as the enumeration is already defined.</p>
 ## Large: Enumeration member
 
 
-### **Large**:  ** 
+###  Large:  ** 
 
 
 <p>A simple enum member.</p>
@@ -52,19 +52,20 @@ This comment is ignored, as the enumeration is already defined.</p>
 
 
 
-* Defined in enumerations.ts:58
+* Defined in [enumerations.ts:58](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L58)
 
 
 
 
 
 
+----
 
 
 ## Medium: Enumeration member
 
 
-### **Medium**:  ** 
+###  Medium:  ** 
 
 
 <p>A simple enum member.</p>
@@ -78,19 +79,20 @@ This comment is ignored, as the enumeration is already defined.</p>
 
 
 
-* Defined in enumerations.ts:53
+* Defined in [enumerations.ts:53](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L53)
 
 
 
 
 
 
+----
 
 
 ## Small: Enumeration member
 
 
-### **Small**:  ** 
+###  Small:  ** 
 
 
 <p>A simple enum member.</p>
@@ -104,13 +106,14 @@ This comment is ignored, as the enumeration is already defined.</p>
 
 
 
-* Defined in enumerations.ts:48
+* Defined in [enumerations.ts:48](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L48)
 
 
 
 
 
 
+----
 
 
 
@@ -118,7 +121,7 @@ This comment is ignored, as the enumeration is already defined.</p>
 
 <a id="defaultsize"></a>
 
-### **defaultSize**:  *[Size](../enums/_enumerations_.size.md)*  =  Size.Medium
+###  defaultSize:  *[Size](../enums/_enumerations_.size.md)*  =  Size.Medium
 
 
 <p>A variable that is attached to an enumeration.</p>
@@ -132,13 +135,14 @@ This comment is ignored, as the enumeration is already defined.</p>
 
 
 
-* Defined in enumerations.ts:70
+* Defined in [enumerations.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L70)
 
 
 
 
 
 
+----
 
 
 
@@ -146,8 +150,9 @@ This comment is ignored, as the enumeration is already defined.</p>
 
 
 <a id="issmall"></a>
-### isSmall(value:[Size](../enums/_enumerations_.size.md)):boolean
+###  isSmall: Function
 
+► isSmall(value: *[Size](../enums/_enumerations_.size.md)*): boolean
 
 
 <p>A function that is attached to an enumeration.</p>
@@ -165,9 +170,6 @@ This comment is ignored, as the enumeration is already defined.</p>
 
 
 
-
-
-
 **Returns:** boolean
 
 TRUE when the given value equals Size.Small.
@@ -178,7 +180,7 @@ TRUE when the given value equals Size.Small.
 
 
 
-* Defined in enumerations.ts:79
+* Defined in [enumerations.ts:79](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L79)
 
 
 

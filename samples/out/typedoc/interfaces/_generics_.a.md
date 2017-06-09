@@ -41,8 +41,9 @@ T
 ## Methods
 
 <a id="gett"></a>
-### getT():T
+###  getT: Method
 
+► getT(): T
 
 
 <p>A generic member function.</p>
@@ -66,7 +67,7 @@ A generic return value.
 
 
 
-* Defined in generics.ts:24
+* Defined in [generics.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L24)
 
 
 

@@ -18,13 +18,15 @@
 
 <a id="diffuse"></a>
 
-### **diffuse**:  *function* 
+###  diffuse:  *function* 
 
 
 
 #### Type declaration
 
-(pos:[Vector](../classes/_raytracer_.vector.md)):[Color](../classes/_raytracer_.color.md)
+
+
+(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -33,9 +35,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | pos  | [Vector](../classes/_raytracer_.vector.md) | - |
-
-
-
 
 
 
@@ -53,22 +52,27 @@
 
 
 
-* Defined in raytracer.ts:72
+
+
+* Defined in [raytracer.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L72)
 
 
 
 
 
 
+----
 <a id="reflect"></a>
 
-### **reflect**:  *function* 
+###  reflect:  *function* 
 
 
 
 #### Type declaration
 
-(pos:[Vector](../classes/_raytracer_.vector.md)):number
+
+
+(pos: *[Vector](../classes/_raytracer_.vector.md)*): number
 
 
 
@@ -77,9 +81,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | pos  | [Vector](../classes/_raytracer_.vector.md) | - |
-
-
-
 
 
 
@@ -97,16 +98,19 @@
 
 
 
-* Defined in raytracer.ts:74
+
+
+* Defined in [raytracer.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L74)
 
 
 
 
 
 
+----
 <a id="roughness"></a>
 
-### **roughness**:  *number* 
+###  roughness:  *number* 
 
 
 
@@ -114,22 +118,25 @@
 
 
 
-* Defined in raytracer.ts:75
+* Defined in [raytracer.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L75)
 
 
 
 
 
 
+----
 <a id="specular"></a>
 
-### **specular**:  *function* 
+###  specular:  *function* 
 
 
 
 #### Type declaration
 
-(pos:[Vector](../classes/_raytracer_.vector.md)):[Color](../classes/_raytracer_.color.md)
+
+
+(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -138,9 +145,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | pos  | [Vector](../classes/_raytracer_.vector.md) | - |
-
-
-
 
 
 
@@ -158,12 +162,15 @@
 
 
 
-* Defined in raytracer.ts:73
+
+
+* Defined in [raytracer.ts:73](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L73)
 
 
 
 
 
 
+----
 
 

@@ -54,8 +54,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new AppView():[AppView](../classes/_todos_.appview.md)
 
+⊕ new AppView(): [AppView](../classes/_todos_.appview.md)
 
 
 
@@ -68,11 +68,11 @@
 
 
 
-Overrides View.constructor
+Overrides [View](_todos_.backbone.view.md).[constructor](_todos_.backbone.view.md#constructor)
 
 
 
-* Defined in todos.ts:278
+* Defined in [todos.ts:278](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L278)
 
 
 
@@ -89,25 +89,26 @@ Overrides View.constructor
 
 <a id="_el"></a>
 
-### **$el**:  *[JQuery](../interfaces/_todos_.jquery.md)* 
+###  $el:  *[JQuery](../interfaces/_todos_.jquery.md)* 
 
 
 
 
-Inherited from View.$el
+Inherited from [View](_todos_.backbone.view.md).[$el](_todos_.backbone.view.md#_el)
 
 
 
-* Defined in todos.ts:75
+* Defined in [todos.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L75)
 
 
 
 
 
 
+----
 <a id="allcheckbox"></a>
 
-### **allCheckbox**:  *HTMLInputElement* 
+###  allCheckbox:  *HTMLInputElement* 
 
 
 
@@ -115,52 +116,55 @@ Inherited from View.$el
 
 
 
-* Defined in todos.ts:277
+* Defined in [todos.ts:277](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L277)
 
 
 
 
 
 
+----
 <a id="delegateevents"></a>
 
-### **delegateEvents**:  *any* 
+###  delegateEvents:  *any* 
 
 
 
 
-Inherited from View.delegateEvents
+Inherited from [View](_todos_.backbone.view.md).[delegateEvents](_todos_.backbone.view.md#delegateevents)
 
 
 
-* Defined in todos.ts:78
+* Defined in [todos.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L78)
 
 
 
 
 
 
+----
 <a id="el"></a>
 
-### **el**:  *HTMLElement* 
+###  el:  *HTMLElement* 
 
 
 
 
-Inherited from View.el
+Inherited from [View](_todos_.backbone.view.md).[el](_todos_.backbone.view.md#el)
 
 
 
-* Defined in todos.ts:74
+* Defined in [todos.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L74)
 
 
 
 
 
 
+----
 <a id="input"></a>
 
-### **input**:  *[JQuery](../interfaces/_todos_.jquery.md)* 
+###  input:  *[JQuery](../interfaces/_todos_.jquery.md)* 
 
 
 
@@ -168,40 +172,44 @@ Inherited from View.el
 
 
 
-* Defined in todos.ts:276
+* Defined in [todos.ts:276](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L276)
 
 
 
 
 
 
+----
 <a id="model"></a>
 
-### **model**:  *[Model](../classes/_todos_.backbone.model.md)* 
+###  model:  *[Model](../classes/_todos_.backbone.model.md)* 
 
 
 
 
-Inherited from View.model
+Inherited from [View](_todos_.backbone.view.md).[model](_todos_.backbone.view.md#model)
 
 
 
-* Defined in todos.ts:76
+* Defined in [todos.ts:76](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L76)
 
 
 
 
 
 
+----
 <a id="statstemplate"></a>
 
-### **statsTemplate**:  *function* 
+###  statsTemplate:  *function* 
 
 
 
 #### Type declaration
 
-(params:any):string
+
+
+(params: *any*): string
 
 
 
@@ -210,9 +218,6 @@ Inherited from View.model
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | params  | any | - |
-
-
-
 
 
 
@@ -230,34 +235,38 @@ Inherited from View.model
 
 
 
-* Defined in todos.ts:278
+
+
+* Defined in [todos.ts:278](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L278)
 
 
 
 
 
 
+----
 <a id="tagname"></a>
 
-### **tagName**:  *string* 
+###  tagName:  *string* 
 
 
 
 
-Inherited from View.tagName
+Inherited from [View](_todos_.backbone.view.md).[tagName](_todos_.backbone.view.md#tagname)
 
 
 
-* Defined in todos.ts:82
+* Defined in [todos.ts:82](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L82)
 
 
 
 
 
 
+----
 <a id="tooltiptimeout"></a>
 
-### **tooltipTimeout**:  *number*  =  null
+###  tooltipTimeout:  *number*  =  null
 
 
 
@@ -265,38 +274,41 @@ Inherited from View.tagName
 
 
 
-* Defined in todos.ts:352
+* Defined in [todos.ts:352](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L352)
 
 
 
 
 
 
+----
 <a id="extend"></a>
 
-### **extend**:  *any* 
+### «Static» extend:  *any* 
 
 
 
 
-Inherited from View.extend
+Inherited from [View](_todos_.backbone.view.md).[extend](_todos_.backbone.view.md#extend)
 
 
 
-* Defined in todos.ts:85
+* Defined in [todos.ts:85](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L85)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="_"></a>
-### $(selector:string):[JQuery](../interfaces/_todos_.jquery.md)
+###  $: Method
 
+► $(selector: *string*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -308,19 +320,16 @@ Inherited from View.extend
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
 
-Inherited from View.$
+Inherited from [View](_todos_.backbone.view.md).[$](_todos_.backbone.view.md#_)
 
 
 
-* Defined in todos.ts:73
+* Defined in [todos.ts:73](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L73)
 
 
 
@@ -333,8 +342,9 @@ Inherited from View.$
 ---
 
 <a id="addall"></a>
-### addAll():void
+###  addAll: Method
 
+► addAll(): void
 
 
 
@@ -350,7 +360,7 @@ Inherited from View.$
 
 
 
-* Defined in todos.ts:325
+* Defined in [todos.ts:325](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L325)
 
 
 
@@ -363,8 +373,9 @@ Inherited from View.$
 ---
 
 <a id="addone"></a>
-### addOne(todo:any):void
+###  addOne: Method
 
+► addOne(todo: *any*): void
 
 
 
@@ -376,9 +387,6 @@ Inherited from View.$
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -387,7 +395,7 @@ Inherited from View.$
 
 
 
-* Defined in todos.ts:319
+* Defined in [todos.ts:319](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L319)
 
 
 
@@ -400,8 +408,9 @@ Inherited from View.$
 ---
 
 <a id="clearcompleted"></a>
-### clearCompleted():boolean
+###  clearCompleted: Method
 
+► clearCompleted(): boolean
 
 
 
@@ -417,7 +426,7 @@ Inherited from View.$
 
 
 
-* Defined in todos.ts:347
+* Defined in [todos.ts:347](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L347)
 
 
 
@@ -430,8 +439,9 @@ Inherited from View.$
 ---
 
 <a id="createonenter"></a>
-### createOnEnter(e:any):void
+###  createOnEnter: Method
 
+► createOnEnter(e: *any*): void
 
 
 
@@ -443,9 +453,6 @@ Inherited from View.$
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -454,7 +461,7 @@ Inherited from View.$
 
 
 
-* Defined in todos.ts:340
+* Defined in [todos.ts:340](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L340)
 
 
 
@@ -467,8 +474,9 @@ Inherited from View.$
 ---
 
 <a id="make"></a>
-### make(tagName:string, attrs?:any, opts?:any):[View](../classes/_todos_.backbone.view.md)
+###  make: Method
 
+► make(tagName: *string*, attrs?: *any*, opts?: *any*): [View](../classes/_todos_.backbone.view.md)
 
 
 
@@ -482,21 +490,16 @@ Inherited from View.$
 
 
 
-
-
-
-
-
 **Returns:** [View](../classes/_todos_.backbone.view.md)
 
 
 
 
-Inherited from View.make
+Inherited from [View](_todos_.backbone.view.md).[make](_todos_.backbone.view.md#make)
 
 
 
-* Defined in todos.ts:79
+* Defined in [todos.ts:79](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L79)
 
 
 
@@ -509,8 +512,9 @@ Inherited from View.make
 ---
 
 <a id="newattributes"></a>
-### newAttributes():object
+###  newAttributes: Method
 
+► newAttributes(): object
 
 
 
@@ -526,7 +530,7 @@ Inherited from View.make
 
 
 
-* Defined in todos.ts:330
+* Defined in [todos.ts:330](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L330)
 
 
 
@@ -539,8 +543,9 @@ Inherited from View.make
 ---
 
 <a id="remove"></a>
-### remove():void
+###  remove: Method
 
+► remove(): void
 
 
 
@@ -553,11 +558,11 @@ Inherited from View.make
 
 
 
-Inherited from View.remove
+Inherited from [View](_todos_.backbone.view.md).[remove](_todos_.backbone.view.md#remove)
 
 
 
-* Defined in todos.ts:77
+* Defined in [todos.ts:77](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L77)
 
 
 
@@ -570,8 +575,9 @@ Inherited from View.remove
 ---
 
 <a id="render"></a>
-### render():void
+###  render: Method
 
+► render(): void
 
 
 
@@ -587,7 +593,7 @@ Inherited from View.remove
 
 
 
-* Defined in todos.ts:304
+* Defined in [todos.ts:304](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L304)
 
 
 
@@ -600,9 +606,10 @@ Inherited from View.remove
 ---
 
 <a id="setelement"></a>
-### setElement(element:HTMLElement, delegate?:boolean):void
-### setElement(element:[JQuery](../interfaces/_todos_.jquery.md), delegate?:boolean):void
+###  setElement: Method
 
+► setElement(element: *HTMLElement*, delegate?: *boolean*): void
+► setElement(element: *[JQuery](../interfaces/_todos_.jquery.md)*, delegate?: *boolean*): void
 
 
 
@@ -615,20 +622,16 @@ Inherited from View.remove
 
 
 
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from View.setElement
+Inherited from [View](_todos_.backbone.view.md).[setElement](_todos_.backbone.view.md#setelement)
 
 
 
-* Defined in todos.ts:80
+* Defined in [todos.ts:80](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L80)
 
 
 
@@ -650,20 +653,16 @@ Inherited from View.setElement
 
 
 
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from View.setElement
+Inherited from [View](_todos_.backbone.view.md).[setElement](_todos_.backbone.view.md#setelement)
 
 
 
-* Defined in todos.ts:81
+* Defined in [todos.ts:81](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L81)
 
 
 
@@ -676,8 +675,9 @@ Inherited from View.setElement
 ---
 
 <a id="showtooltip"></a>
-### showTooltip(e:any):void
+###  showTooltip: Method
 
+► showTooltip(e: *any*): void
 
 
 
@@ -689,9 +689,6 @@ Inherited from View.setElement
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -700,7 +697,7 @@ Inherited from View.setElement
 
 
 
-* Defined in todos.ts:355
+* Defined in [todos.ts:355](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L355)
 
 
 
@@ -713,8 +710,9 @@ Inherited from View.setElement
 ---
 
 <a id="toggleallcomplete"></a>
-### toggleAllComplete():void
+###  toggleAllComplete: Method
 
+► toggleAllComplete(): void
 
 
 
@@ -730,7 +728,7 @@ Inherited from View.setElement
 
 
 
-* Defined in todos.ts:364
+* Defined in [todos.ts:364](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L364)
 
 
 
@@ -751,7 +749,7 @@ Inherited from View.setElement
 
 <a id="events.click__mark_all_done"></a>
 
-### **click .mark-all-done**:  *string*  = "toggleAllComplete"
+###  click .mark-all-done:  *string*  = "toggleAllComplete"
 
 
 
@@ -759,19 +757,20 @@ Inherited from View.setElement
 
 
 
-* Defined in todos.ts:273
+* Defined in [todos.ts:273](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L273)
 
 
 
 
 
 
+----
 
 
 
 <a id="events.click__todo_clear_a"></a>
 
-### **click .todo-clear a**:  *string*  = "clearCompleted"
+###  click .todo-clear a:  *string*  = "clearCompleted"
 
 
 
@@ -779,19 +778,20 @@ Inherited from View.setElement
 
 
 
-* Defined in todos.ts:272
+* Defined in [todos.ts:272](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L272)
 
 
 
 
 
 
+----
 
 
 
 <a id="events.keypress__new_todo"></a>
 
-### **keypress #new-todo**:  *string*  = "createOnEnter"
+###  keypress #new-todo:  *string*  = "createOnEnter"
 
 
 
@@ -799,19 +799,20 @@ Inherited from View.setElement
 
 
 
-* Defined in todos.ts:270
+* Defined in [todos.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L270)
 
 
 
 
 
 
+----
 
 
 
 <a id="events.keyup__new_todo"></a>
 
-### **keyup #new-todo**:  *string*  = "showTooltip"
+###  keyup #new-todo:  *string*  = "showTooltip"
 
 
 
@@ -819,13 +820,14 @@ Inherited from View.setElement
 
 
 
-* Defined in todos.ts:271
+* Defined in [todos.ts:271](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L271)
 
 
 
 
 
 
+----
 
 
 

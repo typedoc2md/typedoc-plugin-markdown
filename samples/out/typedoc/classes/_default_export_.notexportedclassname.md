@@ -41,8 +41,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new NotExportedClassName():[NotExportedClassName](../classes/_default_export_.notexportedclassname.md)
 
+⊕ new NotExportedClassName(): [NotExportedClassName](../classes/_default_export_.notexportedclassname.md)
 
 
 <p>This is the constructor of the NotExportedClassName class.</p>
@@ -64,7 +64,7 @@
 
 
 
-* Defined in default-export.ts:14
+* Defined in [default-export.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/default-export.ts#L14)
 
 
 
@@ -81,7 +81,7 @@
 
 <a id="notexportedproperty"></a>
 
-### **notExportedProperty**:  *string* 
+###  notExportedProperty:  *string* 
 
 
 <p>Property of NotExportedClassName class.</p>
@@ -95,20 +95,22 @@
 
 
 
-* Defined in default-export.ts:14
+* Defined in [default-export.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/default-export.ts#L14)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="getnotexportedproperty"></a>
-### getNotExportedProperty():string
+###  getNotExportedProperty: Method
 
+► getNotExportedProperty(): string
 
 
 <p>Method of NotExportedClassName class.</p>
@@ -130,7 +132,7 @@
 
 
 
-* Defined in default-export.ts:26
+* Defined in [default-export.ts:26](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/default-export.ts#L26)
 
 
 

@@ -24,13 +24,15 @@
 
 <a id="intersect"></a>
 
-### **intersect**:  *function* 
+###  intersect:  *function* 
 
 
 
 #### Type declaration
 
-(ray:[Ray](../interfaces/_raytracer_.ray.md)):[Intersection](../interfaces/_raytracer_.intersection.md)
+
+
+(ray: *[Ray](../interfaces/_raytracer_.ray.md)*): [Intersection](../interfaces/_raytracer_.intersection.md)
 
 
 
@@ -39,9 +41,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | ray  | [Ray](../interfaces/_raytracer_.ray.md) | - |
-
-
-
 
 
 
@@ -59,22 +58,27 @@
 
 
 
-* Defined in raytracer.ts:79
+
+
+* Defined in [raytracer.ts:79](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L79)
 
 
 
 
 
 
+----
 <a id="normal"></a>
 
-### **normal**:  *function* 
+###  normal:  *function* 
 
 
 
 #### Type declaration
 
-(pos:[Vector](../classes/_raytracer_.vector.md)):[Vector](../classes/_raytracer_.vector.md)
+
+
+(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -83,9 +87,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | pos  | [Vector](../classes/_raytracer_.vector.md) | - |
-
-
-
 
 
 
@@ -103,16 +104,19 @@
 
 
 
-* Defined in raytracer.ts:80
+
+
+* Defined in [raytracer.ts:80](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L80)
 
 
 
 
 
 
+----
 <a id="surface"></a>
 
-### **surface**:  *[Surface](../interfaces/_raytracer_.surface.md)* 
+###  surface:  *[Surface](../interfaces/_raytracer_.surface.md)* 
 
 
 
@@ -120,12 +124,13 @@
 
 
 
-* Defined in raytracer.ts:81
+* Defined in [raytracer.ts:81](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L81)
 
 
 
 
 
 
+----
 
 

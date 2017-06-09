@@ -38,8 +38,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new NotExportedClass():[NotExportedClass](../classes/_single_export_.notexportedclass.md)
 
+⊕ new NotExportedClass(): [NotExportedClass](../classes/_single_export_.notexportedclass.md)
 
 
 <p>This is the constructor of the not exported class.</p>
@@ -61,7 +61,7 @@
 
 
 
-* Defined in single-export.ts:9
+* Defined in [single-export.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/single-export.ts#L9)
 
 
 
@@ -78,7 +78,7 @@
 
 <a id="notexportedproperty"></a>
 
-### **notExportedProperty**:  *string* 
+###  notExportedProperty:  *string* 
 
 
 <p>Property of not exported class.</p>
@@ -92,20 +92,22 @@
 
 
 
-* Defined in single-export.ts:9
+* Defined in [single-export.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/single-export.ts#L9)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="getnotexportedproperty"></a>
-### getNotExportedProperty():string
+###  getNotExportedProperty: Method
 
+► getNotExportedProperty(): string
 
 
 <p>Method of not exported class.</p>
@@ -127,7 +129,7 @@
 
 
 
-* Defined in single-export.ts:21
+* Defined in [single-export.ts:21](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/single-export.ts#L21)
 
 
 

@@ -37,8 +37,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new Todo(attr?:any, opts?:any):[Todo](../classes/_todos_.todo.md)
 
+⊕ new Todo(attr?: *any*, opts?: *any*): [Todo](../classes/_todos_.todo.md)
 
 
 
@@ -51,20 +51,16 @@
 
 
 
-
-
-
-
 **Returns:** [Todo](../classes/_todos_.todo.md)
 
 
 
 
-Inherited from Model.constructor
+Inherited from [Model](_todos_.backbone.model.md).[constructor](_todos_.backbone.model.md#constructor)
 
 
 
-* Defined in todos.ts:49
+* Defined in [todos.ts:49](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L49)
 
 
 
@@ -80,8 +76,9 @@ Inherited from Model.constructor
 ## Methods
 
 <a id="bind"></a>
-### bind(ev:string, f:Function, ctx?:any):void
+###  bind: Method
 
+► bind(ev: *string*, f: *Function*, ctx?: *any*): void
 
 
 
@@ -95,21 +92,16 @@ Inherited from Model.constructor
 
 
 
-
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from Model.bind
+Inherited from [Model](_todos_.backbone.model.md).[bind](_todos_.backbone.model.md#bind)
 
 
 
-* Defined in todos.ts:56
+* Defined in [todos.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L56)
 
 
 
@@ -122,8 +114,9 @@ Inherited from Model.bind
 ---
 
 <a id="clear"></a>
-### clear():void
+###  clear: Method
 
+► clear(): void
 
 
 
@@ -139,7 +132,7 @@ Inherited from Model.bind
 
 
 
-* Defined in todos.ts:143
+* Defined in [todos.ts:143](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L143)
 
 
 
@@ -152,8 +145,9 @@ Inherited from Model.bind
 ---
 
 <a id="defaults"></a>
-### defaults():object
+###  defaults: Method
 
+► defaults(): object
 
 
 
@@ -169,7 +163,7 @@ Inherited from Model.bind
 
 
 
-* Defined in todos.ts:123
+* Defined in [todos.ts:123](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L123)
 
 
 
@@ -182,8 +176,9 @@ Inherited from Model.bind
 ---
 
 <a id="destroy"></a>
-### destroy():void
+###  destroy: Method
 
+► destroy(): void
 
 
 
@@ -196,11 +191,11 @@ Inherited from Model.bind
 
 
 
-Inherited from Model.destroy
+Inherited from [Model](_todos_.backbone.model.md).[destroy](_todos_.backbone.model.md#destroy)
 
 
 
-* Defined in todos.ts:55
+* Defined in [todos.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L55)
 
 
 
@@ -213,8 +208,9 @@ Inherited from Model.destroy
 ---
 
 <a id="get"></a>
-### get(name:string):any
+###  get: Method
 
+► get(name: *string*): any
 
 
 
@@ -226,19 +222,16 @@ Inherited from Model.destroy
 
 
 
-
-
-
 **Returns:** any
 
 
 
 
-Inherited from Model.get
+Inherited from [Model](_todos_.backbone.model.md).[get](_todos_.backbone.model.md#get)
 
 
 
-* Defined in todos.ts:51
+* Defined in [todos.ts:51](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L51)
 
 
 
@@ -251,8 +244,9 @@ Inherited from Model.get
 ---
 
 <a id="initialize"></a>
-### initialize():void
+###  initialize: Method
 
+► initialize(): void
 
 
 
@@ -268,7 +262,7 @@ Inherited from Model.get
 
 
 
-* Defined in todos.ts:131
+* Defined in [todos.ts:131](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L131)
 
 
 
@@ -281,8 +275,9 @@ Inherited from Model.get
 ---
 
 <a id="save"></a>
-### save(attr?:any, opts?:any):void
+###  save: Method
 
+► save(attr?: *any*, opts?: *any*): void
 
 
 
@@ -295,20 +290,16 @@ Inherited from Model.get
 
 
 
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from Model.save
+Inherited from [Model](_todos_.backbone.model.md).[save](_todos_.backbone.model.md#save)
 
 
 
-* Defined in todos.ts:54
+* Defined in [todos.ts:54](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L54)
 
 
 
@@ -321,9 +312,10 @@ Inherited from Model.save
 ---
 
 <a id="set"></a>
-### set(name:string, val:any):void
-### set(obj:any):void
+###  set: Method
 
+► set(name: *string*, val: *any*): void
+► set(obj: *any*): void
 
 
 
@@ -336,20 +328,16 @@ Inherited from Model.save
 
 
 
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from Model.set
+Inherited from [Model](_todos_.backbone.model.md).[set](_todos_.backbone.model.md#set)
 
 
 
-* Defined in todos.ts:52
+* Defined in [todos.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L52)
 
 
 
@@ -370,19 +358,16 @@ Inherited from Model.set
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from Model.set
+Inherited from [Model](_todos_.backbone.model.md).[set](_todos_.backbone.model.md#set)
 
 
 
-* Defined in todos.ts:53
+* Defined in [todos.ts:53](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L53)
 
 
 
@@ -395,8 +380,9 @@ Inherited from Model.set
 ---
 
 <a id="tojson"></a>
-### toJSON():any
+###  toJSON: Method
 
+► toJSON(): any
 
 
 
@@ -409,11 +395,11 @@ Inherited from Model.set
 
 
 
-Inherited from Model.toJSON
+Inherited from [Model](_todos_.backbone.model.md).[toJSON](_todos_.backbone.model.md#tojson)
 
 
 
-* Defined in todos.ts:57
+* Defined in [todos.ts:57](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L57)
 
 
 
@@ -426,8 +412,9 @@ Inherited from Model.toJSON
 ---
 
 <a id="toggle"></a>
-### toggle():void
+###  toggle: Method
 
+► toggle(): void
 
 
 
@@ -443,7 +430,7 @@ Inherited from Model.toJSON
 
 
 
-* Defined in todos.ts:138
+* Defined in [todos.ts:138](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L138)
 
 
 

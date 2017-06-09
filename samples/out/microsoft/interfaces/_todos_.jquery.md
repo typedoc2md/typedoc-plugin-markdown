@@ -17,8 +17,9 @@
 ## Methods
 
 <a id="addclass"></a>
-### addClass(className:string):[JQuery](../interfaces/_todos_.jquery.md)
+###  addClass: Method
 
+► addClass(className: *string*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -30,9 +31,6 @@
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -41,7 +39,7 @@
 
 
 
-* Defined in todos.ts:95
+* Defined in [todos.ts:95](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L95)
 
 
 
@@ -54,8 +52,9 @@
 ---
 
 <a id="append"></a>
-### append(el:HTMLElement):[JQuery](../interfaces/_todos_.jquery.md)
+###  append: Method
 
+► append(el: *HTMLElement*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -67,9 +66,6 @@
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -78,7 +74,7 @@
 
 
 
-* Defined in todos.ts:97
+* Defined in [todos.ts:97](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L97)
 
 
 
@@ -91,8 +87,9 @@
 ---
 
 <a id="attr"></a>
-### attr(attrName:string):string
+###  attr: Method
 
+► attr(attrName: *string*): string
 
 
 
@@ -104,9 +101,6 @@
 
 
 
-
-
-
 **Returns:** string
 
 
@@ -115,7 +109,7 @@
 
 
 
-* Defined in todos.ts:100
+* Defined in [todos.ts:100](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L100)
 
 
 
@@ -128,8 +122,9 @@
 ---
 
 <a id="fadein"></a>
-### fadeIn():[JQuery](../interfaces/_todos_.jquery.md)
+###  fadeIn: Method
 
+► fadeIn(): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -145,7 +140,7 @@
 
 
 
-* Defined in todos.ts:89
+* Defined in [todos.ts:89](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L89)
 
 
 
@@ -158,8 +153,9 @@
 ---
 
 <a id="fadeout"></a>
-### fadeOut():[JQuery](../interfaces/_todos_.jquery.md)
+###  fadeOut: Method
 
+► fadeOut(): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -175,7 +171,7 @@
 
 
 
-* Defined in todos.ts:90
+* Defined in [todos.ts:90](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L90)
 
 
 
@@ -188,8 +184,9 @@
 ---
 
 <a id="focus"></a>
-### focus():[JQuery](../interfaces/_todos_.jquery.md)
+###  focus: Method
 
+► focus(): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -205,7 +202,7 @@
 
 
 
-* Defined in todos.ts:91
+* Defined in [todos.ts:91](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L91)
 
 
 
@@ -218,9 +215,10 @@
 ---
 
 <a id="html"></a>
-### html():string
-### html(val:string):[JQuery](../interfaces/_todos_.jquery.md)
+###  html: Method
 
+► html(): string
+► html(val: *string*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -236,7 +234,7 @@
 
 
 
-* Defined in todos.ts:92
+* Defined in [todos.ts:92](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L92)
 
 
 
@@ -257,9 +255,6 @@
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -268,7 +263,7 @@
 
 
 
-* Defined in todos.ts:93
+* Defined in [todos.ts:93](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L93)
 
 
 
@@ -281,8 +276,9 @@
 ---
 
 <a id="removeclass"></a>
-### removeClass(className:string):[JQuery](../interfaces/_todos_.jquery.md)
+###  removeClass: Method
 
+► removeClass(className: *string*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -294,9 +290,6 @@
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -305,7 +298,7 @@
 
 
 
-* Defined in todos.ts:96
+* Defined in [todos.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L96)
 
 
 
@@ -318,8 +311,9 @@
 ---
 
 <a id="show"></a>
-### show():[JQuery](../interfaces/_todos_.jquery.md)
+###  show: Method
 
+► show(): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -335,7 +329,7 @@
 
 
 
-* Defined in todos.ts:94
+* Defined in [todos.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L94)
 
 
 
@@ -348,9 +342,10 @@
 ---
 
 <a id="val"></a>
-### val():string
-### val(value:string):[JQuery](../interfaces/_todos_.jquery.md)
+###  val: Method
 
+► val(): string
+► val(value: *string*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -366,7 +361,7 @@
 
 
 
-* Defined in todos.ts:98
+* Defined in [todos.ts:98](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L98)
 
 
 
@@ -387,9 +382,6 @@
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -398,7 +390,7 @@
 
 
 
-* Defined in todos.ts:99
+* Defined in [todos.ts:99](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L99)
 
 
 

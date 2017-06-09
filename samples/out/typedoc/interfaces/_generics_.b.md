@@ -50,8 +50,9 @@ C
 ## Methods
 
 <a id="getc"></a>
-### getC():C
+###  getC: Method
 
+► getC(): C
 
 
 <p>A generic member function.</p>
@@ -75,7 +76,7 @@ A generic return value.
 
 
 
-* Defined in generics.ts:48
+* Defined in [generics.ts:48](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L48)
 
 
 
@@ -88,8 +89,9 @@ A generic return value.
 ---
 
 <a id="sett"></a>
-### setT(value:T):void
+###  setT: Method
 
+► setT(value: *T*): void
 
 
 <p>A generic member function.</p>
@@ -107,9 +109,6 @@ A generic return value.
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -118,7 +117,7 @@ A generic return value.
 
 
 
-* Defined in generics.ts:41
+* Defined in [generics.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L41)
 
 
 

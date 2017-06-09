@@ -43,8 +43,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new TodoList(models?:any, opts?:any):[TodoList](../classes/_todos_.todolist.md)
 
+⊕ new TodoList(models?: *any*, opts?: *any*): [TodoList](../classes/_todos_.todolist.md)
 
 
 
@@ -57,20 +57,16 @@
 
 
 
-
-
-
-
 **Returns:** [TodoList](../classes/_todos_.todolist.md)
 
 
 
 
-Inherited from Collection.constructor
+Inherited from [Collection](_todos_.backbone.collection.md).[constructor](_todos_.backbone.collection.md#constructor)
 
 
 
-* Defined in todos.ts:59
+* Defined in [todos.ts:59](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L59)
 
 
 
@@ -87,25 +83,26 @@ Inherited from Collection.constructor
 
 <a id="length"></a>
 
-### **length**:  *number* 
+###  length:  *number* 
 
 
 
 
-Inherited from Collection.length
+Inherited from [Collection](_todos_.backbone.collection.md).[length](_todos_.backbone.collection.md#length)
 
 
 
-* Defined in todos.ts:62
+* Defined in [todos.ts:62](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L62)
 
 
 
 
 
 
+----
 <a id="localstorage"></a>
 
-### **localStorage**:  *any*  =  new Store("todos-backbone")
+###  localStorage:  *any*  =  new Store("todos-backbone")
 
 
 
@@ -113,16 +110,17 @@ Inherited from Collection.length
 
 
 
-* Defined in todos.ts:160
+* Defined in [todos.ts:160](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L160)
 
 
 
 
 
 
+----
 <a id="model"></a>
 
-### **model**:  *[Todo](../classes/_todos_.todo.md)*  =  Todo
+###  model:  *[Todo](../classes/_todos_.todo.md)*  =  Todo
 
 
 
@@ -130,20 +128,22 @@ Inherited from Collection.length
 
 
 
-* Defined in todos.ts:157
+* Defined in [todos.ts:157](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L157)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="bind"></a>
-### bind(ev:string, f:Function, ctx?:any):void
+###  bind: Method
 
+► bind(ev: *string*, f: *Function*, ctx?: *any*): void
 
 
 
@@ -157,21 +157,16 @@ Inherited from Collection.length
 
 
 
-
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from Collection.bind
+Inherited from [Collection](_todos_.backbone.collection.md).[bind](_todos_.backbone.collection.md#bind)
 
 
 
-* Defined in todos.ts:61
+* Defined in [todos.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L61)
 
 
 
@@ -184,8 +179,9 @@ Inherited from Collection.bind
 ---
 
 <a id="comparator"></a>
-### comparator(todo:[Todo](../classes/_todos_.todo.md)):any
+###  comparator: Method
 
+► comparator(todo: *[Todo](../classes/_todos_.todo.md)*): any
 
 
 
@@ -197,9 +193,6 @@ Inherited from Collection.bind
 
 
 
-
-
-
 **Returns:** any
 
 
@@ -208,7 +201,7 @@ Inherited from Collection.bind
 
 
 
-* Defined in todos.ts:180
+* Defined in [todos.ts:180](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L180)
 
 
 
@@ -221,8 +214,9 @@ Inherited from Collection.bind
 ---
 
 <a id="create"></a>
-### create(attrs:any, opts?:any):any
+###  create: Method
 
+► create(attrs: *any*, opts?: *any*): any
 
 
 
@@ -235,20 +229,16 @@ Inherited from Collection.bind
 
 
 
-
-
-
-
 **Returns:** any
 
 
 
 
-Inherited from Collection.create
+Inherited from [Collection](_todos_.backbone.collection.md).[create](_todos_.backbone.collection.md#create)
 
 
 
-* Defined in todos.ts:63
+* Defined in [todos.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L63)
 
 
 
@@ -261,8 +251,9 @@ Inherited from Collection.create
 ---
 
 <a id="done"></a>
-### done():[Todo](../classes/_todos_.todo.md)[]
+###  done: Method
 
+► done(): [Todo](../classes/_todos_.todo.md)[]
 
 
 
@@ -278,7 +269,7 @@ Inherited from Collection.create
 
 
 
-* Defined in todos.ts:163
+* Defined in [todos.ts:163](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L163)
 
 
 
@@ -291,8 +282,9 @@ Inherited from Collection.create
 ---
 
 <a id="each"></a>
-### each(f:function):void
+###  each: Method
 
+► each(f: *function*): void
 
 
 
@@ -304,43 +296,16 @@ Inherited from Collection.create
 
 
 
-
-(elem:[Todo](../classes/_todos_.todo.md)):void
-
-
-
-
-#### Parameters:
-| Name  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| elem  | [Todo](../classes/_todos_.todo.md) | - |
-
-
-
-
-
-
 **Returns:** void
 
 
 
 
+Inherited from [Collection](_todos_.backbone.collection.md).[each](_todos_.backbone.collection.md#each)
 
 
 
-
-
-
-**Returns:** void
-
-
-
-
-Inherited from Collection.each
-
-
-
-* Defined in todos.ts:64
+* Defined in [todos.ts:64](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L64)
 
 
 
@@ -353,8 +318,9 @@ Inherited from Collection.each
 ---
 
 <a id="fetch"></a>
-### fetch(opts?:any):void
+###  fetch: Method
 
+► fetch(opts?: *any*): void
 
 
 
@@ -366,19 +332,16 @@ Inherited from Collection.each
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from Collection.fetch
+Inherited from [Collection](_todos_.backbone.collection.md).[fetch](_todos_.backbone.collection.md#fetch)
 
 
 
-* Defined in todos.ts:65
+* Defined in [todos.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L65)
 
 
 
@@ -391,8 +354,9 @@ Inherited from Collection.fetch
 ---
 
 <a id="filter"></a>
-### filter(f:function):[Todo](../classes/_todos_.todo.md)[]
+###  filter: Method
 
+► filter(f: *function*): [Todo](../classes/_todos_.todo.md)[]
 
 
 
@@ -404,43 +368,16 @@ Inherited from Collection.fetch
 
 
 
-
-(elem:[Todo](../classes/_todos_.todo.md)):boolean
-
-
-
-
-#### Parameters:
-| Name  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| elem  | [Todo](../classes/_todos_.todo.md) | - |
-
-
-
-
-
-
-**Returns:** boolean
-
-
-
-
-
-
-
-
-
-
 **Returns:** [Todo](../classes/_todos_.todo.md)[]
 
 
 
 
-Inherited from Collection.filter
+Inherited from [Collection](_todos_.backbone.collection.md).[filter](_todos_.backbone.collection.md#filter)
 
 
 
-* Defined in todos.ts:68
+* Defined in [todos.ts:68](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L68)
 
 
 
@@ -453,9 +390,10 @@ Inherited from Collection.filter
 ---
 
 <a id="last"></a>
-### last():[Todo](../classes/_todos_.todo.md)
-### last(n:number):[Todo](../classes/_todos_.todo.md)[]
+###  last: Method
 
+► last(): [Todo](../classes/_todos_.todo.md)
+► last(n: *number*): [Todo](../classes/_todos_.todo.md)[]
 
 
 
@@ -468,11 +406,11 @@ Inherited from Collection.filter
 
 
 
-Inherited from Collection.last
+Inherited from [Collection](_todos_.backbone.collection.md).[last](_todos_.backbone.collection.md#last)
 
 
 
-* Defined in todos.ts:66
+* Defined in [todos.ts:66](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L66)
 
 
 
@@ -493,19 +431,16 @@ Inherited from Collection.last
 
 
 
-
-
-
 **Returns:** [Todo](../classes/_todos_.todo.md)[]
 
 
 
 
-Inherited from Collection.last
+Inherited from [Collection](_todos_.backbone.collection.md).[last](_todos_.backbone.collection.md#last)
 
 
 
-* Defined in todos.ts:67
+* Defined in [todos.ts:67](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L67)
 
 
 
@@ -518,8 +453,9 @@ Inherited from Collection.last
 ---
 
 <a id="nextorder"></a>
-### nextOrder():any
+###  nextOrder: Method
 
+► nextOrder(): any
 
 
 
@@ -535,7 +471,7 @@ Inherited from Collection.last
 
 
 
-* Defined in todos.ts:174
+* Defined in [todos.ts:174](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L174)
 
 
 
@@ -548,8 +484,9 @@ Inherited from Collection.last
 ---
 
 <a id="remaining"></a>
-### remaining():any
+###  remaining: Method
 
+► remaining(): any
 
 
 
@@ -565,7 +502,7 @@ Inherited from Collection.last
 
 
 
-* Defined in todos.ts:168
+* Defined in [todos.ts:168](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L168)
 
 
 
@@ -578,8 +515,9 @@ Inherited from Collection.last
 ---
 
 <a id="without"></a>
-### without(...values:[Todo](../classes/_todos_.todo.md)[]):[Todo](../classes/_todos_.todo.md)[]
+###  without: Method
 
+► without(...values: *[Todo](../classes/_todos_.todo.md)[]*): [Todo](../classes/_todos_.todo.md)[]
 
 
 
@@ -591,19 +529,16 @@ Inherited from Collection.last
 
 
 
-
-
-
 **Returns:** [Todo](../classes/_todos_.todo.md)[]
 
 
 
 
-Inherited from Collection.without
+Inherited from [Collection](_todos_.backbone.collection.md).[without](_todos_.backbone.collection.md#without)
 
 
 
-* Defined in todos.ts:69
+* Defined in [todos.ts:69](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L69)
 
 
 

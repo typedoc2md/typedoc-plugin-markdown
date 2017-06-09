@@ -28,7 +28,7 @@
 
 <a id="a"></a>
 
-### **a**:  *string* 
+###  a:  *string* 
 
 
 
@@ -36,19 +36,20 @@
 
 
 
-* Defined in modules.ts:31
+* Defined in [modules.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/modules.ts#L31)
 
 
 
 
 
 
+----
 
 
 
 <a id="b"></a>
 
-### **b**:  *string* 
+###  b:  *string* 
 
 
 
@@ -56,13 +57,14 @@
 
 
 
-* Defined in modules.ts:48
+* Defined in [modules.ts:48](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/modules.ts#L48)
 
 
 
 
 
 
+----
 
 
 

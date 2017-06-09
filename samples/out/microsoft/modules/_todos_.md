@@ -33,13 +33,17 @@
 
 <a id="_"></a>
 
-### **$**:  *function* 
+###  $:  *function* 
 
 
 
 #### Type declaration
 
-(el:HTMLElement):[JQuery](../interfaces/_todos_.jquery.md)(selector:string):[JQuery](../interfaces/_todos_.jquery.md)(readyCallback:function):[JQuery](../interfaces/_todos_.jquery.md)
+
+
+(el: *HTMLElement*): [JQuery](../interfaces/_todos_.jquery.md)
+(selector: *string*): [JQuery](../interfaces/_todos_.jquery.md)
+(readyCallback: *function*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -48,9 +52,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | el  | HTMLElement | - |
-
-
-
 
 
 
@@ -73,9 +74,6 @@
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -95,26 +93,6 @@
 
 
 
-
-():void
-
-
-
-
-
-
-
-**Returns:** void
-
-
-
-
-
-
-
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -129,19 +107,22 @@
 
 
 
-* Defined in todos.ts:102
+
+
+* Defined in [todos.ts:102](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L102)
 
 
 
 
 
 
+----
 
 
 
 <a id="store"></a>
 
-### **Store**:  *any* 
+###  Store:  *any* 
 
 
 
@@ -149,19 +130,20 @@
 
 
 
-* Defined in todos.ts:113
+* Defined in [todos.ts:113](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L113)
 
 
 
 
 
 
+----
 
 
 
 <a id="todos"></a>
 
-### **Todos**:  *[TodoList](../classes/_todos_.todolist.md)*  =  new TodoList()
+###  Todos:  *[TodoList](../classes/_todos_.todolist.md)*  =  new TodoList()
 
 
 
@@ -169,27 +151,31 @@
 
 
 
-* Defined in todos.ts:187
+* Defined in [todos.ts:187](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L187)
 
 
 
 
 
 
+----
 
 
 
 <a id="_-1"></a>
 
-### **_**:  *object* 
+###  _:  *object* 
 
 
 
 #### Type declaration
 
-bindAll:function
-### bindAll(object:any, ...methodNames:string[]):void
 
+
+
+bindAll: function
+
+► bindAll(object: *any*, ...methodNames: *string[]*): void
 
 
 
@@ -202,10 +188,6 @@ bindAll:function
 
 
 
-
-
-
-
 **Returns:** void
 
 
@@ -214,7 +196,7 @@ bindAll:function
 
 
 
-* Defined in todos.ts:111
+* Defined in [todos.ts:111](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L111)
 
 
 
@@ -224,9 +206,10 @@ bindAll:function
 
 
 
-delay:function
-### delay(f:Function, wait:number, ...arguments:any[]):number
 
+delay: function
+
+► delay(f: *Function*, wait: *number*, ...arguments: *any[]*): number
 
 
 
@@ -240,11 +223,6 @@ delay:function
 
 
 
-
-
-
-
-
 **Returns:** number
 
 
@@ -253,7 +231,7 @@ delay:function
 
 
 
-* Defined in todos.ts:109
+* Defined in [todos.ts:109](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L109)
 
 
 
@@ -263,9 +241,10 @@ delay:function
 
 
 
-each:function
-### eachT,U(arr:T[], f:function):U[]
 
+each: function
+
+► eachT,U(arr: *T[]*, f: *function*): U[]
 
 
 
@@ -284,34 +263,6 @@ Type parameters:
 
 
 
-
-
-(elem:T):U
-
-
-
-
-#### Parameters:
-| Name  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| elem  | T | - |
-
-
-
-
-
-
-**Returns:** U
-
-
-
-
-
-
-
-
-
-
 **Returns:** U[]
 
 
@@ -320,7 +271,7 @@ Type parameters:
 
 
 
-* Defined in todos.ts:108
+* Defined in [todos.ts:108](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L108)
 
 
 
@@ -330,9 +281,10 @@ Type parameters:
 
 
 
-template:function
-### template(template:string):function
 
+template: function
+
+► template(template: *string*): function
 
 
 
@@ -344,9 +296,6 @@ template:function
 
 
 
-
-
-
 **Returns:** function
 
 
@@ -355,7 +304,7 @@ template:function
 
 
 
-* Defined in todos.ts:110
+* Defined in [todos.ts:110](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L110)
 
 
 
@@ -370,13 +319,15 @@ template:function
 
 
 
-* Defined in todos.ts:107
+
+* Defined in [todos.ts:107](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L107)
 
 
 
 
 
 
+----
 
 
 

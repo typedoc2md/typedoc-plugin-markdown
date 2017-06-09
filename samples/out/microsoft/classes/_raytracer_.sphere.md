@@ -36,8 +36,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new Sphere(center:[Vector](../classes/_raytracer_.vector.md), radius:number, surface:[Surface](../interfaces/_raytracer_.surface.md)):[Sphere](../classes/_raytracer_.sphere.md)
 
+⊕ new Sphere(center: *[Vector](../classes/_raytracer_.vector.md)*, radius: *number*, surface: *[Surface](../interfaces/_raytracer_.surface.md)*): [Sphere](../classes/_raytracer_.sphere.md)
 
 
 
@@ -51,11 +51,6 @@
 
 
 
-
-
-
-
-
 **Returns:** [Sphere](../classes/_raytracer_.sphere.md)
 
 
@@ -64,7 +59,7 @@
 
 
 
-* Defined in raytracer.ts:96
+* Defined in [raytracer.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L96)
 
 
 
@@ -81,7 +76,7 @@
 
 <a id="center"></a>
 
-### **center**:  *[Vector](../classes/_raytracer_.vector.md)* 
+###  center:  *[Vector](../classes/_raytracer_.vector.md)* 
 
 
 
@@ -89,16 +84,17 @@
 
 
 
-* Defined in raytracer.ts:98
+* Defined in [raytracer.ts:98](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L98)
 
 
 
 
 
 
+----
 <a id="radius2"></a>
 
-### **radius2**:  *number* 
+###  radius2:  *number* 
 
 
 
@@ -106,38 +102,41 @@
 
 
 
-* Defined in raytracer.ts:96
+* Defined in [raytracer.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L96)
 
 
 
 
 
 
+----
 <a id="surface"></a>
 
-### **surface**:  *[Surface](../interfaces/_raytracer_.surface.md)* 
+###  surface:  *[Surface](../interfaces/_raytracer_.surface.md)* 
 
 
 
 
-Implementation of Thing.surface
+*Implementation of [Thing](../interfaces/_raytracer_.thing.md).[surface](../interfaces/_raytracer_.thing.md#surface)*
 
 
 
-* Defined in raytracer.ts:98
+* Defined in [raytracer.ts:98](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L98)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="intersect"></a>
-### intersect(ray:[Ray](../interfaces/_raytracer_.ray.md)):object
+###  intersect: Method
 
+► intersect(ray: *[Ray](../interfaces/_raytracer_.ray.md)*): object
 
 
 
@@ -149,9 +148,6 @@ Implementation of Thing.surface
 
 
 
-
-
-
 **Returns:** object
 
 
@@ -160,7 +156,7 @@ Implementation of Thing.surface
 
 
 
-* Defined in raytracer.ts:102
+* Defined in [raytracer.ts:102](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L102)
 
 
 
@@ -173,8 +169,9 @@ Implementation of Thing.surface
 ---
 
 <a id="normal"></a>
-### normal(pos:[Vector](../classes/_raytracer_.vector.md)):[Vector](../classes/_raytracer_.vector.md)
+###  normal: Method
 
+► normal(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -186,9 +183,6 @@ Implementation of Thing.surface
 
 
 
-
-
-
 **Returns:** [Vector](../classes/_raytracer_.vector.md)
 
 
@@ -197,7 +191,7 @@ Implementation of Thing.surface
 
 
 
-* Defined in raytracer.ts:101
+* Defined in [raytracer.ts:101](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L101)
 
 
 

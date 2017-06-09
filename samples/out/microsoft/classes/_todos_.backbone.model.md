@@ -33,8 +33,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new Model(attr?:any, opts?:any):[Model](../classes/_todos_.backbone.model.md)
 
+⊕ new Model(attr?: *any*, opts?: *any*): [Model](../classes/_todos_.backbone.model.md)
 
 
 
@@ -47,10 +47,6 @@
 
 
 
-
-
-
-
 **Returns:** [Model](../classes/_todos_.backbone.model.md)
 
 
@@ -59,7 +55,7 @@
 
 
 
-* Defined in todos.ts:49
+* Defined in [todos.ts:49](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L49)
 
 
 
@@ -75,8 +71,9 @@
 ## Methods
 
 <a id="bind"></a>
-### bind(ev:string, f:Function, ctx?:any):void
+###  bind: Method
 
+► bind(ev: *string*, f: *Function*, ctx?: *any*): void
 
 
 
@@ -90,11 +87,6 @@
 
 
 
-
-
-
-
-
 **Returns:** void
 
 
@@ -103,7 +95,7 @@
 
 
 
-* Defined in todos.ts:56
+* Defined in [todos.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L56)
 
 
 
@@ -116,8 +108,9 @@
 ---
 
 <a id="destroy"></a>
-### destroy():void
+###  destroy: Method
 
+► destroy(): void
 
 
 
@@ -133,7 +126,7 @@
 
 
 
-* Defined in todos.ts:55
+* Defined in [todos.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L55)
 
 
 
@@ -146,8 +139,9 @@
 ---
 
 <a id="get"></a>
-### get(name:string):any
+###  get: Method
 
+► get(name: *string*): any
 
 
 
@@ -159,9 +153,6 @@
 
 
 
-
-
-
 **Returns:** any
 
 
@@ -170,7 +161,7 @@
 
 
 
-* Defined in todos.ts:51
+* Defined in [todos.ts:51](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L51)
 
 
 
@@ -183,8 +174,9 @@
 ---
 
 <a id="save"></a>
-### save(attr?:any, opts?:any):void
+###  save: Method
 
+► save(attr?: *any*, opts?: *any*): void
 
 
 
@@ -197,10 +189,6 @@
 
 
 
-
-
-
-
 **Returns:** void
 
 
@@ -209,7 +197,7 @@
 
 
 
-* Defined in todos.ts:54
+* Defined in [todos.ts:54](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L54)
 
 
 
@@ -222,9 +210,10 @@
 ---
 
 <a id="set"></a>
-### set(name:string, val:any):void
-### set(obj:any):void
+###  set: Method
 
+► set(name: *string*, val: *any*): void
+► set(obj: *any*): void
 
 
 
@@ -237,10 +226,6 @@
 
 
 
-
-
-
-
 **Returns:** void
 
 
@@ -249,7 +234,7 @@
 
 
 
-* Defined in todos.ts:52
+* Defined in [todos.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L52)
 
 
 
@@ -270,9 +255,6 @@
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -281,7 +263,7 @@
 
 
 
-* Defined in todos.ts:53
+* Defined in [todos.ts:53](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L53)
 
 
 
@@ -294,8 +276,9 @@
 ---
 
 <a id="tojson"></a>
-### toJSON():any
+###  toJSON: Method
 
+► toJSON(): any
 
 
 
@@ -311,7 +294,7 @@
 
 
 
-* Defined in todos.ts:57
+* Defined in [todos.ts:57](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L57)
 
 
 

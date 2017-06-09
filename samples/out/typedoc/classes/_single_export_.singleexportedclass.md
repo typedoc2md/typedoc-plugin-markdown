@@ -39,8 +39,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new SingleExportedClass():[SingleExportedClass](../classes/_single_export_.singleexportedclass.md)
 
+⊕ new SingleExportedClass(): [SingleExportedClass](../classes/_single_export_.singleexportedclass.md)
 
 
 <p>This is the constructor of the exported class.</p>
@@ -62,7 +62,7 @@
 
 
 
-* Defined in single-export.ts:39
+* Defined in [single-export.ts:39](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/single-export.ts#L39)
 
 
 
@@ -79,7 +79,7 @@
 
 <a id="exportedproperty"></a>
 
-### **exportedProperty**:  *string* 
+###  exportedProperty:  *string* 
 
 
 <p>Property of exported class.</p>
@@ -93,20 +93,22 @@
 
 
 
-* Defined in single-export.ts:39
+* Defined in [single-export.ts:39](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/single-export.ts#L39)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="getexportedproperty"></a>
-### getExportedProperty():string
+###  getExportedProperty: Method
 
+► getExportedProperty(): string
 
 
 <p>Method of exported class.</p>
@@ -128,7 +130,7 @@
 
 
 
-* Defined in single-export.ts:51
+* Defined in [single-export.ts:51](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/single-export.ts#L51)
 
 
 
