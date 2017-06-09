@@ -28,7 +28,7 @@ Markdown engines render markdown in different ways. By default typedoc supports 
 | Name      | Description | Default value               
 | --------- | ----------- | ----
 markdownFlavour | The markdown rendering engine. Supports "github" or "bitbucket" | github
-markdownSourcefilePrefix | The prefix to use for sourcefiles. | Supports github source files as default.
+markdownSourcefilePrefix | The prefix to use for sourcefiles. | github source file path
 
 #### Example options
 ```javascript
@@ -44,7 +44,7 @@ markdownSourcefilePrefix | The prefix to use for sourcefiles. | Supports github 
 
 ## Acknowledgements
 
-* Thanks to kimamula's [typedoc-markdown-theme](https://github.com/kimamula/typedoc-markdown-theme) for the inspiration behind this package.
+* Thanks to kimamula's [typedoc-markdown-theme](https://github.com/kimamula/typedoc-markdown-theme) for the inspiration behind this project.
 
 
 
