@@ -28,8 +28,9 @@
 ## Methods
 
 <a id="getc"></a>
-### getC():boolean
+###  getC: Method
 
+► getC(): boolean
 
 
 <p>A generic member function.</p>
@@ -50,11 +51,11 @@ A generic return value.
 
 
 
-Inherited from B.getC
+Inherited from [B](_generics_.b.md).[getC](_generics_.b.md#getc)
 
 
 
-* Defined in generics.ts:48
+* Defined in [generics.ts:48](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L48)
 
 
 
@@ -67,8 +68,9 @@ Inherited from B.getC
 ---
 
 <a id="gett"></a>
-### getT():string
+###  getT: Method
 
+► getT(): string
 
 
 <p>A generic member function.</p>
@@ -89,11 +91,11 @@ A generic return value.
 
 
 
-Inherited from A.getT
+Inherited from [A](_generics_.a.md).[getT](_generics_.a.md#gett)
 
 
 
-* Defined in generics.ts:24
+* Defined in [generics.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L24)
 
 
 
@@ -106,8 +108,9 @@ Inherited from A.getT
 ---
 
 <a id="sett"></a>
-### setT(value:string):void
+###  setT: Method
 
+► setT(value: *string*): void
 
 
 <p>A generic member function.</p>
@@ -125,19 +128,16 @@ Inherited from A.getT
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from B.setT
+Inherited from [B](_generics_.b.md).[setT](_generics_.b.md#sett)
 
 
 
-* Defined in generics.ts:41
+* Defined in [generics.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L41)
 
 
 

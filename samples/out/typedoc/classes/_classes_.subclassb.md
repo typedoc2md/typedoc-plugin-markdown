@@ -54,8 +54,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new SubClassB(name:string):[SubClassB](../classes/_classes_.subclassb.md)
 
+⊕ new SubClassB(name: *string*): [SubClassB](../classes/_classes_.subclassb.md)
 
 
 
@@ -67,19 +67,16 @@
 
 
 
-
-
-
 **Returns:** [SubClassB](../classes/_classes_.subclassb.md)
 
 
 
 
-Overrides BaseClass.constructor
+Overrides [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)
 
 
 
-* Defined in classes.ts:262
+* Defined in [classes.ts:262](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L262)
 
 
 
@@ -96,7 +93,7 @@ Overrides BaseClass.constructor
 
 <a id="kind"></a>
 
-### **kind**:  *number* 
+### «Protected» kind:  *number* 
 
 
 <p>This is a simple protected member.</p>
@@ -107,20 +104,21 @@ Overrides BaseClass.constructor
 
 
 
-Inherited from BaseClass.kind
+Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)
 
 
 
-* Defined in classes.ts:63
+* Defined in [classes.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L63)
 
 
 
 
 
 
+----
 <a id="name"></a>
 
-### **name**:  *string* 
+###  name:  *string* 
 
 
 <p>This is a simple public member.</p>
@@ -131,21 +129,22 @@ Inherited from BaseClass.kind
 
 
 
-Implementation of INameInterface.name
-Inherited from BaseClass.name
+*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
+Inherited from [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)
 
 
 
-* Defined in classes.ts:58
+* Defined in [classes.ts:58](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L58)
 
 
 
 
 
 
+----
 <a id="instance"></a>
 
-### **instance**:  *[BaseClass](../classes/_classes_.baseclass.md)* 
+### «Static» instance:  *[BaseClass](../classes/_classes_.baseclass.md)* 
 
 
 <p>This is a static member.</p>
@@ -157,42 +156,45 @@ Inherited from BaseClass.name
 
 
 
-Inherited from BaseClass.instance
+Inherited from [BaseClass](_classes_.baseclass.md).[instance](_classes_.baseclass.md#instance)
 
 
 
-* Defined in classes.ts:70
+* Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L70)
 
 
 
 
 
 
+----
 <a id="instances"></a>
 
-### **instances**:  *[BaseClass](../classes/_classes_.baseclass.md)[]* 
+### «Static» instances:  *[BaseClass](../classes/_classes_.baseclass.md)[]* 
 
 
 
 
-Inherited from BaseClass.instances
+Inherited from [BaseClass](_classes_.baseclass.md).[instances](_classes_.baseclass.md#instances)
 
 
 
-* Defined in classes.ts:71
+* Defined in [classes.ts:71](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L71)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="arrowfunction"></a>
-### arrowFunction(param2:string, param1:number):void
+###  arrowFunction: Method
 
+► arrowFunction(param2: *string*, param1: *number*): void
 
 
 <p>This is a simple fat arrow function.</p>
@@ -211,20 +213,16 @@ Inherited from BaseClass.instances
 
 
 
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from BaseClass.arrowFunction
+Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)
 
 
 
-* Defined in classes.ts:140
+* Defined in [classes.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L140)
 
 
 
@@ -237,8 +235,9 @@ Inherited from BaseClass.arrowFunction
 ---
 
 <a id="dosomething"></a>
-### doSomething(value:[string,[SubClassA](../classes/_classes_.subclassa.md),[SubClassB](../classes/_classes_.subclassb.md)]):void
+###  doSomething: Method
 
+► doSomething(value: *[string,[SubClassA](../classes/_classes_.subclassa.md),[SubClassB](../classes/_classes_.subclassb.md)]*): void
 
 
 
@@ -250,9 +249,6 @@ Inherited from BaseClass.arrowFunction
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -261,7 +257,7 @@ Inherited from BaseClass.arrowFunction
 
 
 
-* Defined in classes.ts:267
+* Defined in [classes.ts:267](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L267)
 
 
 
@@ -274,8 +270,9 @@ Inherited from BaseClass.arrowFunction
 ---
 
 <a id="getname"></a>
-### getName():string
+###  getName: Method
 
+► getName(): string
 
 
 <p>This is a simple member function.</p>
@@ -298,12 +295,12 @@ Return the name.
 
 
 
-Implementation of INameInterface.getName
-Inherited from BaseClass.getName
+*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
+Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)
 
 
 
-* Defined in classes.ts:102
+* Defined in [classes.ts:102](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L102)
 
 
 
@@ -316,8 +313,9 @@ Inherited from BaseClass.getName
 ---
 
 <a id="setname"></a>
-### setName(name:string):void
+###  setName: Method
 
+► setName(name: *string*): void
 
 
 <p>This is a simple member function.</p>
@@ -336,19 +334,16 @@ Inherited from BaseClass.getName
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from BaseClass.setName
+Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)
 
 
 
-* Defined in classes.ts:127
+* Defined in [classes.ts:127](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L127)
 
 
 
@@ -361,8 +356,9 @@ Inherited from BaseClass.setName
 ---
 
 <a id="catest"></a>
-### caTest(originalValues:[BaseClass](../classes/_classes_.baseclass.md), newRecord:any, fieldNames:string[], mandatoryFields:string[]):string
-(*Static*)
+### «Static» caTest: Method
+
+► caTest(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -383,22 +379,16 @@ Inherited from BaseClass.setName
 
 
 
-
-
-
-
-
-
 **Returns:** string
 
 
 
 
-Inherited from BaseClass.caTest
+Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)
 
 
 
-* Defined in classes.ts:167
+* Defined in [classes.ts:167](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L167)
 
 
 
@@ -411,8 +401,9 @@ Inherited from BaseClass.caTest
 ---
 
 <a id="getinstance"></a>
-### getInstance():[BaseClass](../classes/_classes_.baseclass.md)
-(*Static*)
+### «Static» getInstance: Method
+
+► getInstance(): [BaseClass](../classes/_classes_.baseclass.md)
 
 
 <p>This is a static function.</p>
@@ -434,11 +425,11 @@ An instance of BaseClass.
 
 
 
-Inherited from BaseClass.getInstance
+Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)
 
 
 
-* Defined in classes.ts:159
+* Defined in [classes.ts:159](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L159)
 
 
 
@@ -451,8 +442,9 @@ Inherited from BaseClass.getInstance
 ---
 
 <a id="getname-1"></a>
-### getName():string
-(*Static*)
+### «Static» getName: Method
+
+► getName(): string
 
 
 <p>This is a simple static member function.</p>
@@ -475,11 +467,11 @@ Return the name.
 
 
 
-Inherited from BaseClass.getName
+Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)
 
 
 
-* Defined in classes.ts:115
+* Defined in [classes.ts:115](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L115)
 
 
 

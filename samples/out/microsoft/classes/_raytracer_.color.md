@@ -39,8 +39,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new Color(r:number, g:number, b:number):[Color](../classes/_raytracer_.color.md)
 
+⊕ new Color(r: *number*, g: *number*, b: *number*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -54,11 +54,6 @@
 
 
 
-
-
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -67,7 +62,7 @@
 
 
 
-* Defined in raytracer.ts:24
+* Defined in [raytracer.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L24)
 
 
 
@@ -84,7 +79,7 @@
 
 <a id="b"></a>
 
-### **b**:  *number* 
+###  b:  *number* 
 
 
 
@@ -92,16 +87,17 @@
 
 
 
-* Defined in raytracer.ts:27
+* Defined in [raytracer.ts:27](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L27)
 
 
 
 
 
 
+----
 <a id="g"></a>
 
-### **g**:  *number* 
+###  g:  *number* 
 
 
 
@@ -109,16 +105,17 @@
 
 
 
-* Defined in raytracer.ts:26
+* Defined in [raytracer.ts:26](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L26)
 
 
 
 
 
 
+----
 <a id="r"></a>
 
-### **r**:  *number* 
+###  r:  *number* 
 
 
 
@@ -126,16 +123,17 @@
 
 
 
-* Defined in raytracer.ts:25
+* Defined in [raytracer.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L25)
 
 
 
 
 
 
+----
 <a id="background"></a>
 
-### **background**:  *[Color](../classes/_raytracer_.color.md)*  =  Color.black
+### «Static» background:  *[Color](../classes/_raytracer_.color.md)*  =  Color.black
 
 
 
@@ -143,16 +141,17 @@
 
 
 
-* Defined in raytracer.ts:35
+* Defined in [raytracer.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L35)
 
 
 
 
 
 
+----
 <a id="black"></a>
 
-### **black**:  *[Color](../classes/_raytracer_.color.md)*  =  new Color(0.0, 0.0, 0.0)
+### «Static» black:  *[Color](../classes/_raytracer_.color.md)*  =  new Color(0.0, 0.0, 0.0)
 
 
 
@@ -160,16 +159,17 @@
 
 
 
-* Defined in raytracer.ts:34
+* Defined in [raytracer.ts:34](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L34)
 
 
 
 
 
 
+----
 <a id="defaultcolor"></a>
 
-### **defaultColor**:  *[Color](../classes/_raytracer_.color.md)*  =  Color.black
+### «Static» defaultColor:  *[Color](../classes/_raytracer_.color.md)*  =  Color.black
 
 
 
@@ -177,16 +177,17 @@
 
 
 
-* Defined in raytracer.ts:36
+* Defined in [raytracer.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L36)
 
 
 
 
 
 
+----
 <a id="grey"></a>
 
-### **grey**:  *[Color](../classes/_raytracer_.color.md)*  =  new Color(0.5, 0.5, 0.5)
+### «Static» grey:  *[Color](../classes/_raytracer_.color.md)*  =  new Color(0.5, 0.5, 0.5)
 
 
 
@@ -194,16 +195,17 @@
 
 
 
-* Defined in raytracer.ts:33
+* Defined in [raytracer.ts:33](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L33)
 
 
 
 
 
 
+----
 <a id="white"></a>
 
-### **white**:  *[Color](../classes/_raytracer_.color.md)*  =  new Color(1.0, 1.0, 1.0)
+### «Static» white:  *[Color](../classes/_raytracer_.color.md)*  =  new Color(1.0, 1.0, 1.0)
 
 
 
@@ -211,20 +213,22 @@
 
 
 
-* Defined in raytracer.ts:32
+* Defined in [raytracer.ts:32](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L32)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="plus"></a>
-### plus(v1:[Color](../classes/_raytracer_.color.md), v2:[Color](../classes/_raytracer_.color.md)):[Color](../classes/_raytracer_.color.md)
-(*Static*)
+### «Static» plus: Method
+
+► plus(v1: *[Color](../classes/_raytracer_.color.md)*, v2: *[Color](../classes/_raytracer_.color.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -237,10 +241,6 @@
 
 
 
-
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -249,7 +249,7 @@
 
 
 
-* Defined in raytracer.ts:30
+* Defined in [raytracer.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L30)
 
 
 
@@ -262,8 +262,9 @@
 ---
 
 <a id="scale"></a>
-### scale(k:number, v:[Color](../classes/_raytracer_.color.md)):[Color](../classes/_raytracer_.color.md)
-(*Static*)
+### «Static» scale: Method
+
+► scale(k: *number*, v: *[Color](../classes/_raytracer_.color.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -276,10 +277,6 @@
 
 
 
-
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -288,7 +285,7 @@
 
 
 
-* Defined in raytracer.ts:29
+* Defined in [raytracer.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L29)
 
 
 
@@ -301,8 +298,9 @@
 ---
 
 <a id="times"></a>
-### times(v1:[Color](../classes/_raytracer_.color.md), v2:[Color](../classes/_raytracer_.color.md)):[Color](../classes/_raytracer_.color.md)
-(*Static*)
+### «Static» times: Method
+
+► times(v1: *[Color](../classes/_raytracer_.color.md)*, v2: *[Color](../classes/_raytracer_.color.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -315,10 +313,6 @@
 
 
 
-
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -327,7 +321,7 @@
 
 
 
-* Defined in raytracer.ts:31
+* Defined in [raytracer.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L31)
 
 
 
@@ -340,8 +334,9 @@
 ---
 
 <a id="todrawingcolor"></a>
-### toDrawingColor(c:[Color](../classes/_raytracer_.color.md)):object
-(*Static*)
+### «Static» toDrawingColor: Method
+
+► toDrawingColor(c: *[Color](../classes/_raytracer_.color.md)*): object
 
 
 
@@ -353,9 +348,6 @@
 
 
 
-
-
-
 **Returns:** object
 
 
@@ -364,7 +356,7 @@
 
 
 
-* Defined in raytracer.ts:37
+* Defined in [raytracer.ts:37](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L37)
 
 
 

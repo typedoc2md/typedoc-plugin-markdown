@@ -33,7 +33,7 @@
 ## Bottom: Enumeration member
 
 
-### **Bottom**:  ** 
+###  Bottom:  ** 
 
 
 <p>A simple enum member.</p>
@@ -47,19 +47,20 @@
 
 
 
-* Defined in enumerations.ts:19
+* Defined in [enumerations.ts:19](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L19)
 
 
 
 
 
 
+----
 
 
 ## Left: Enumeration member
 
 
-### **Left**:  ** 
+###  Left:  ** 
 
 
 <p>A simple enum member.</p>
@@ -73,19 +74,20 @@
 
 
 
-* Defined in enumerations.ts:24
+* Defined in [enumerations.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L24)
 
 
 
 
 
 
+----
 
 
 ## Right: Enumeration member
 
 
-### **Right**:  ** 
+###  Right:  ** 
 
 
 <p>A simple enum member.</p>
@@ -99,19 +101,20 @@
 
 
 
-* Defined in enumerations.ts:14
+* Defined in [enumerations.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L14)
 
 
 
 
 
 
+----
 
 
 ## Top: Enumeration member
 
 
-### **Top**:  ** 
+###  Top:  ** 
 
 
 <p>A simple enum member.</p>
@@ -125,19 +128,20 @@
 
 
 
-* Defined in enumerations.ts:9
+* Defined in [enumerations.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L9)
 
 
 
 
 
 
+----
 
 
 ## TopLeft: Enumeration member
 
 
-### **TopLeft**:  **  =  Top | Left
+###  TopLeft:  **  =  Top | Left
 
 
 <p>A composite enum member.</p>
@@ -151,19 +155,20 @@
 
 
 
-* Defined in enumerations.ts:29
+* Defined in [enumerations.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L29)
 
 
 
 
 
 
+----
 
 
 ## TopRight: Enumeration member
 
 
-### **TopRight**:  **  =  Top | Right
+###  TopRight:  **  =  Top | Right
 
 
 <p>A composite enum member.</p>
@@ -177,13 +182,14 @@
 
 
 
-* Defined in enumerations.ts:34
+* Defined in [enumerations.ts:34](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/enumerations.ts#L34)
 
 
 
 
 
 
+----
 
 
 

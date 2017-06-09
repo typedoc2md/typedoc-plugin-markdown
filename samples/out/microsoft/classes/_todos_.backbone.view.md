@@ -41,8 +41,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new View(options?:any):[View](../classes/_todos_.backbone.view.md)
 
+⊕ new View(options?: *any*): [View](../classes/_todos_.backbone.view.md)
 
 
 
@@ -54,9 +54,6 @@
 
 
 
-
-
-
 **Returns:** [View](../classes/_todos_.backbone.view.md)
 
 
@@ -65,7 +62,7 @@
 
 
 
-* Defined in todos.ts:71
+* Defined in [todos.ts:71](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L71)
 
 
 
@@ -82,7 +79,7 @@
 
 <a id="_el"></a>
 
-### **$el**:  *[JQuery](../interfaces/_todos_.jquery.md)* 
+###  $el:  *[JQuery](../interfaces/_todos_.jquery.md)* 
 
 
 
@@ -90,16 +87,17 @@
 
 
 
-* Defined in todos.ts:75
+* Defined in [todos.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L75)
 
 
 
 
 
 
+----
 <a id="delegateevents"></a>
 
-### **delegateEvents**:  *any* 
+###  delegateEvents:  *any* 
 
 
 
@@ -107,16 +105,17 @@
 
 
 
-* Defined in todos.ts:78
+* Defined in [todos.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L78)
 
 
 
 
 
 
+----
 <a id="el"></a>
 
-### **el**:  *HTMLElement* 
+###  el:  *HTMLElement* 
 
 
 
@@ -124,16 +123,17 @@
 
 
 
-* Defined in todos.ts:74
+* Defined in [todos.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L74)
 
 
 
 
 
 
+----
 <a id="events"></a>
 
-### **events**:  *any* 
+###  events:  *any* 
 
 
 
@@ -141,16 +141,17 @@
 
 
 
-* Defined in todos.ts:83
+* Defined in [todos.ts:83](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L83)
 
 
 
 
 
 
+----
 <a id="model"></a>
 
-### **model**:  *[Model](../classes/_todos_.backbone.model.md)* 
+###  model:  *[Model](../classes/_todos_.backbone.model.md)* 
 
 
 
@@ -158,16 +159,17 @@
 
 
 
-* Defined in todos.ts:76
+* Defined in [todos.ts:76](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L76)
 
 
 
 
 
 
+----
 <a id="tagname"></a>
 
-### **tagName**:  *string* 
+###  tagName:  *string* 
 
 
 
@@ -175,16 +177,17 @@
 
 
 
-* Defined in todos.ts:82
+* Defined in [todos.ts:82](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L82)
 
 
 
 
 
 
+----
 <a id="extend"></a>
 
-### **extend**:  *any* 
+### «Static» extend:  *any* 
 
 
 
@@ -192,20 +195,22 @@
 
 
 
-* Defined in todos.ts:85
+* Defined in [todos.ts:85](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L85)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="_"></a>
-### $(selector:string):[JQuery](../interfaces/_todos_.jquery.md)
+###  $: Method
 
+► $(selector: *string*): [JQuery](../interfaces/_todos_.jquery.md)
 
 
 
@@ -217,9 +222,6 @@
 
 
 
-
-
-
 **Returns:** [JQuery](../interfaces/_todos_.jquery.md)
 
 
@@ -228,7 +230,7 @@
 
 
 
-* Defined in todos.ts:73
+* Defined in [todos.ts:73](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L73)
 
 
 
@@ -241,8 +243,9 @@
 ---
 
 <a id="make"></a>
-### make(tagName:string, attrs?:any, opts?:any):[View](../classes/_todos_.backbone.view.md)
+###  make: Method
 
+► make(tagName: *string*, attrs?: *any*, opts?: *any*): [View](../classes/_todos_.backbone.view.md)
 
 
 
@@ -256,11 +259,6 @@
 
 
 
-
-
-
-
-
 **Returns:** [View](../classes/_todos_.backbone.view.md)
 
 
@@ -269,7 +267,7 @@
 
 
 
-* Defined in todos.ts:79
+* Defined in [todos.ts:79](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L79)
 
 
 
@@ -282,8 +280,9 @@
 ---
 
 <a id="remove"></a>
-### remove():void
+###  remove: Method
 
+► remove(): void
 
 
 
@@ -299,7 +298,7 @@
 
 
 
-* Defined in todos.ts:77
+* Defined in [todos.ts:77](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L77)
 
 
 
@@ -312,9 +311,10 @@
 ---
 
 <a id="setelement"></a>
-### setElement(element:HTMLElement, delegate?:boolean):void
-### setElement(element:[JQuery](../interfaces/_todos_.jquery.md), delegate?:boolean):void
+###  setElement: Method
 
+► setElement(element: *HTMLElement*, delegate?: *boolean*): void
+► setElement(element: *[JQuery](../interfaces/_todos_.jquery.md)*, delegate?: *boolean*): void
 
 
 
@@ -327,10 +327,6 @@
 
 
 
-
-
-
-
 **Returns:** void
 
 
@@ -339,7 +335,7 @@
 
 
 
-* Defined in todos.ts:80
+* Defined in [todos.ts:80](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L80)
 
 
 
@@ -361,10 +357,6 @@
 
 
 
-
-
-
-
 **Returns:** void
 
 
@@ -373,7 +365,7 @@
 
 
 
-* Defined in todos.ts:81
+* Defined in [todos.ts:81](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L81)
 
 
 

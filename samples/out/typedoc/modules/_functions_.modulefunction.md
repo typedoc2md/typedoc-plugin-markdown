@@ -15,8 +15,8 @@
 
 
  ### Callable
-### moduleFunction(arg:string):string
 
+► moduleFunction(arg: *string*): string
 
 
 <p>This is a function that is extended by a module.</p>
@@ -34,9 +34,6 @@
 
 
 
-
-
-
 **Returns:** string
 
 
@@ -45,7 +42,7 @@
 
 
 
-* Defined in functions.ts:141
+* Defined in [functions.ts:141](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L141)
 
 
 
@@ -75,7 +72,7 @@
 
 <a id="functionvariable"></a>
 
-### **functionVariable**:  *string* 
+###  functionVariable:  *string* 
 
 
 <p>This variable is appended to a function.</p>
@@ -89,13 +86,14 @@
 
 
 
-* Defined in functions.ts:152
+* Defined in [functions.ts:152](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L152)
 
 
 
 
 
 
+----
 
 
 
@@ -103,8 +101,9 @@
 
 
 <a id="append"></a>
-### append():void
+###  append: Function
 
+► append(): void
 
 
 <p>This function is appended to another function.</p>
@@ -126,7 +125,7 @@
 
 
 
-* Defined in functions.ts:158
+* Defined in [functions.ts:158](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L158)
 
 
 
@@ -138,8 +137,9 @@
 
 
 <a id="prepend"></a>
-### prepend():void
+###  prepend: Function
 
+► prepend(): void
 
 
 <p>This function is appended to another function.</p>
@@ -161,7 +161,7 @@
 
 
 
-* Defined in functions.ts:165
+* Defined in [functions.ts:165](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L165)
 
 
 

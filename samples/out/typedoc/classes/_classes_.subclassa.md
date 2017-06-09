@@ -62,9 +62,9 @@ from BaseClass.</p>
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new SubClassA(name:string):[SubClassA](../classes/_classes_.subclassa.md)
-### new SubClassA(source:[BaseClass](../classes/_classes_.baseclass.md)):[SubClassA](../classes/_classes_.subclassa.md)
 
+⊕ new SubClassA(name: *string*): [SubClassA](../classes/_classes_.subclassa.md)
+⊕ new SubClassA(source: *[BaseClass](../classes/_classes_.baseclass.md)*): [SubClassA](../classes/_classes_.subclassa.md)
 
 
 
@@ -76,19 +76,16 @@ from BaseClass.</p>
 
 
 
-
-
-
 **Returns:** [SubClassA](../classes/_classes_.subclassa.md)
 
 
 
 
-Inherited from BaseClass.constructor
+Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)
 
 
 
-* Defined in classes.ts:76
+* Defined in [classes.ts:76](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L76)
 
 
 
@@ -109,19 +106,16 @@ Inherited from BaseClass.constructor
 
 
 
-
-
-
 **Returns:** [SubClassA](../classes/_classes_.subclassa.md)
 
 
 
 
-Inherited from BaseClass.constructor
+Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)
 
 
 
-* Defined in classes.ts:79
+* Defined in [classes.ts:79](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L79)
 
 
 
@@ -138,7 +132,7 @@ Inherited from BaseClass.constructor
 
 <a id="kind"></a>
 
-### **kind**:  *number* 
+### «Protected» kind:  *number* 
 
 
 <p>This is a simple protected member.</p>
@@ -149,20 +143,21 @@ Inherited from BaseClass.constructor
 
 
 
-Inherited from BaseClass.kind
+Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)
 
 
 
-* Defined in classes.ts:63
+* Defined in [classes.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L63)
 
 
 
 
 
 
+----
 <a id="name"></a>
 
-### **name**:  *string* 
+###  name:  *string* 
 
 
 <p>This is a simple public member.</p>
@@ -173,21 +168,22 @@ Inherited from BaseClass.kind
 
 
 
-Implementation of IPrintNameInterface.name
-Inherited from BaseClass.name
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[name](../interfaces/_classes_.iprintnameinterface.md#name)*
+Inherited from [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)
 
 
 
-* Defined in classes.ts:58
+* Defined in [classes.ts:58](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L58)
 
 
 
 
 
 
+----
 <a id="instance"></a>
 
-### **instance**:  *[BaseClass](../classes/_classes_.baseclass.md)* 
+### «Static» instance:  *[BaseClass](../classes/_classes_.baseclass.md)* 
 
 
 <p>This is a static member.</p>
@@ -199,42 +195,44 @@ Inherited from BaseClass.name
 
 
 
-Inherited from BaseClass.instance
+Inherited from [BaseClass](_classes_.baseclass.md).[instance](_classes_.baseclass.md#instance)
 
 
 
-* Defined in classes.ts:70
+* Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L70)
 
 
 
 
 
 
+----
 <a id="instances"></a>
 
-### **instances**:  *[BaseClass](../classes/_classes_.baseclass.md)[]* 
+### «Static» instances:  *[BaseClass](../classes/_classes_.baseclass.md)[]* 
 
 
 
 
-Inherited from BaseClass.instances
+Inherited from [BaseClass](_classes_.baseclass.md).[instances](_classes_.baseclass.md#instances)
 
 
 
-* Defined in classes.ts:71
+* Defined in [classes.ts:71](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L71)
 
 
 
 
 
 
+----
 
 
 
 ## nameProperty: Accessor
 
 
-getnameProperty():stringsetnameProperty(value:string):void
+getnameProperty(): stringsetnameProperty(value: *string*): void
 
 
 <p>Returns the name. See <a href="_classes_.baseclass.md#name">BaseClass.name</a>.</p>
@@ -258,7 +256,7 @@ The return value.
 
 
 
-* Defined in classes.ts:219
+* Defined in [classes.ts:219](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L219)
 
 
 
@@ -285,9 +283,6 @@ The return value.
 
 
 
-
-
-
 **Returns:** void
 
 The return value.
@@ -298,7 +293,7 @@ The return value.
 
 
 
-* Defined in classes.ts:229
+* Defined in [classes.ts:229](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L229)
 
 
 
@@ -314,7 +309,7 @@ The return value.
 ## readOnlyNameProperty: Accessor
 
 
-getreadOnlyNameProperty():string
+getreadOnlyNameProperty(): string
 
 
 <p>Returns the name. See <a href="_classes_.baseclass.md#name">BaseClass.name</a>.</p>
@@ -338,7 +333,7 @@ The return value.
 
 
 
-* Defined in classes.ts:239
+* Defined in [classes.ts:239](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L239)
 
 
 
@@ -354,7 +349,7 @@ The return value.
 ## writeOnlyNameProperty: Accessor
 
 
-setwriteOnlyNameProperty(value:string):void
+setwriteOnlyNameProperty(value: *string*): void
 
 
 <p>Sets the name. See <a href="_classes_.baseclass.md#name">BaseClass.name</a>.</p>
@@ -372,9 +367,6 @@ setwriteOnlyNameProperty(value:string):void
 
 
 
-
-
-
 **Returns:** void
 
 The return value.
@@ -385,7 +377,7 @@ The return value.
 
 
 
-* Defined in classes.ts:250
+* Defined in [classes.ts:250](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L250)
 
 
 
@@ -403,8 +395,9 @@ The return value.
 ## Methods
 
 <a id="arrowfunction"></a>
-### arrowFunction(param2:string, param1:number):void
+###  arrowFunction: Method
 
+► arrowFunction(param2: *string*, param1: *number*): void
 
 
 <p>This is a simple fat arrow function.</p>
@@ -423,20 +416,16 @@ The return value.
 
 
 
-
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from BaseClass.arrowFunction
+Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)
 
 
 
-* Defined in classes.ts:140
+* Defined in [classes.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L140)
 
 
 
@@ -449,8 +438,9 @@ Inherited from BaseClass.arrowFunction
 ---
 
 <a id="getname"></a>
-### getName():string
+###  getName: Method
 
+► getName(): string
 
 
 <p>This is a simple member function.</p>
@@ -473,12 +463,12 @@ Return the name.
 
 
 
-Implementation of IPrintNameInterface.getName
-Inherited from BaseClass.getName
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[getName](../interfaces/_classes_.iprintnameinterface.md#getname)*
+Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)
 
 
 
-* Defined in classes.ts:102
+* Defined in [classes.ts:102](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L102)
 
 
 
@@ -491,8 +481,9 @@ Inherited from BaseClass.getName
 ---
 
 <a id="print"></a>
-### print(value:string):void
+###  print: Method
 
+► print(value: *string*): void
 
 
 <p>This is a simple interface function.</p>
@@ -510,19 +501,16 @@ Inherited from BaseClass.getName
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Implementation of IPrintNameInterface.print
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[print](../interfaces/_classes_.iprintnameinterface.md#print)*
 
 
 
-* Defined in classes.ts:203
+* Defined in [classes.ts:203](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L203)
 
 
 
@@ -535,8 +523,9 @@ Implementation of IPrintNameInterface.print
 ---
 
 <a id="printname"></a>
-### printName():void
+###  printName: Method
 
+► printName(): void
 
 
 <p>This is a interface function of IPrintNameInterface</p>
@@ -555,11 +544,11 @@ Implementation of IPrintNameInterface.print
 
 
 
-Implementation of IPrintNameInterface.printName
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[printName](../interfaces/_classes_.iprintnameinterface.md#printname)*
 
 
 
-* Defined in classes.ts:209
+* Defined in [classes.ts:209](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L209)
 
 
 
@@ -572,8 +561,9 @@ Implementation of IPrintNameInterface.printName
 ---
 
 <a id="setname"></a>
-### setName(name:string):void
+###  setName: Method
 
+► setName(name: *string*): void
 
 
 <p>This is a simple member function.</p>
@@ -592,19 +582,16 @@ Implementation of IPrintNameInterface.printName
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from BaseClass.setName
+Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)
 
 
 
-* Defined in classes.ts:127
+* Defined in [classes.ts:127](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L127)
 
 
 
@@ -617,8 +604,9 @@ Inherited from BaseClass.setName
 ---
 
 <a id="catest"></a>
-### caTest(originalValues:[BaseClass](../classes/_classes_.baseclass.md), newRecord:any, fieldNames:string[], mandatoryFields:string[]):string
-(*Static*)
+### «Static» caTest: Method
+
+► caTest(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -639,22 +627,16 @@ Inherited from BaseClass.setName
 
 
 
-
-
-
-
-
-
 **Returns:** string
 
 
 
 
-Inherited from BaseClass.caTest
+Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)
 
 
 
-* Defined in classes.ts:167
+* Defined in [classes.ts:167](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L167)
 
 
 
@@ -667,8 +649,9 @@ Inherited from BaseClass.caTest
 ---
 
 <a id="getinstance"></a>
-### getInstance():[BaseClass](../classes/_classes_.baseclass.md)
-(*Static*)
+### «Static» getInstance: Method
+
+► getInstance(): [BaseClass](../classes/_classes_.baseclass.md)
 
 
 <p>This is a static function.</p>
@@ -690,11 +673,11 @@ An instance of BaseClass.
 
 
 
-Inherited from BaseClass.getInstance
+Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)
 
 
 
-* Defined in classes.ts:159
+* Defined in [classes.ts:159](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L159)
 
 
 
@@ -707,8 +690,9 @@ Inherited from BaseClass.getInstance
 ---
 
 <a id="getname-1"></a>
-### getName():string
-(*Static*)
+### «Static» getName: Method
+
+► getName(): string
 
 
 <p>This is a simple static member function.</p>
@@ -731,11 +715,11 @@ Return the name.
 
 
 
-Inherited from BaseClass.getName
+Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)
 
 
 
-* Defined in classes.ts:115
+* Defined in [classes.ts:115](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L115)
 
 
 

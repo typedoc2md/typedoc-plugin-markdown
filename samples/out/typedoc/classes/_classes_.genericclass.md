@@ -56,8 +56,8 @@ T
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new GenericClass(p1:any, p2:T, p3:number, p4:number):[GenericClass](../classes/_classes_.genericclass.md)
 
+⊕ new GenericClass(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](../classes/_classes_.genericclass.md)
 
 
 <p>Constructor short text.</p>
@@ -78,12 +78,6 @@ T
 
 
 
-
-
-
-
-
-
 **Returns:** [GenericClass](../classes/_classes_.genericclass.md)
 
 
@@ -92,7 +86,7 @@ T
 
 
 
-* Defined in classes.ts:279
+* Defined in [classes.ts:279](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L279)
 
 
 
@@ -109,7 +103,7 @@ T
 
 <a id="p2"></a>
 
-### **p2**:  *T* 
+### «Protected» p2:  *T* 
 
 
 <p>Private string property</p>
@@ -123,16 +117,17 @@ T
 
 
 
-* Defined in classes.ts:290
+* Defined in [classes.ts:290](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L290)
 
 
 
 
 
 
+----
 <a id="p3"></a>
 
-### **p3**:  *number* 
+###  p3:  *number* 
 
 
 <p>Public number property</p>
@@ -146,16 +141,17 @@ T
 
 
 
-* Defined in classes.ts:290
+* Defined in [classes.ts:290](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L290)
 
 
 
 
 
 
+----
 <a id="p4"></a>
 
-### **p4**:  *number* 
+### «Private» p4:  *number* 
 
 
 <p>Public implicit any property</p>
@@ -169,16 +165,17 @@ T
 
 
 
-* Defined in classes.ts:290
+* Defined in [classes.ts:290](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L290)
 
 
 
 
 
 
+----
 <a id="value"></a>
 
-### **value**:  *T* 
+###  value:  *T* 
 
 
 
@@ -186,20 +183,22 @@ T
 
 
 
-* Defined in classes.ts:279
+* Defined in [classes.ts:279](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L279)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="getvalue"></a>
-### getValue():T
+###  getValue: Method
 
+► getValue(): T
 
 
 
@@ -215,7 +214,7 @@ T
 
 
 
-* Defined in classes.ts:302
+* Defined in [classes.ts:302](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L302)
 
 
 
@@ -228,8 +227,9 @@ T
 ---
 
 <a id="setvalue"></a>
-### setValue(value:T):void
+###  setValue: Method
 
+► setValue(value: *T*): void
 
 
 
@@ -246,9 +246,6 @@ T
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -257,7 +254,7 @@ T
 
 
 
-* Defined in classes.ts:297
+* Defined in [classes.ts:297](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L297)
 
 
 

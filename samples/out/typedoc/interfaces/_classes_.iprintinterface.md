@@ -28,8 +28,9 @@
 ## Methods
 
 <a id="print"></a>
-### print(value:string):void
+###  print: Method
 
+► print(value: *string*): void
 
 
 <p>This is a interface function of IPrintInterface</p>
@@ -48,9 +49,6 @@
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -59,7 +57,7 @@
 
 
 
-* Defined in classes.ts:32
+* Defined in [classes.ts:32](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L32)
 
 
 

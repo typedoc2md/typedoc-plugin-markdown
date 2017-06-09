@@ -1,0 +1,10 @@
+
+{{#each groups}}
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+{{#each children}}
+| {{ name }}  | {{#with type}}{{>type}}{{/with}} {{#if defaultValue}} =_{{defaultValue}}_{{/if}} 
+{{/each}}
+{{/each}}

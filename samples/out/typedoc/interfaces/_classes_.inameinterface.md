@@ -36,7 +36,7 @@
 
 <a id="name"></a>
 
-### **name**:  *string* 
+###  name:  *string* 
 
 
 <p>This is a interface member of INameInterface.</p>
@@ -51,20 +51,22 @@
 
 
 
-* Defined in classes.ts:11
+* Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L11)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="getname"></a>
-### getName():string
+###  getName: Method
 
+► getName(): string
 
 
 <p>This is a interface function of INameInterface.</p>
@@ -87,7 +89,7 @@
 
 
 
-* Defined in classes.ts:18
+* Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L18)
 
 
 

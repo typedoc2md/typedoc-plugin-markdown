@@ -32,8 +32,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new InternalClass(options:object):[InternalClass](../classes/_classes_.internalclass.md)
 
+⊕ new InternalClass(options: *object*): [InternalClass](../classes/_classes_.internalclass.md)
 
 
 
@@ -45,13 +45,6 @@
 
 
 
-
-name:string
-
-
-
-
-
 **Returns:** [InternalClass](../classes/_classes_.internalclass.md)
 
 
@@ -60,7 +53,7 @@ name:string
 
 
 
-* Defined in classes.ts:185
+* Defined in [classes.ts:185](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L185)
 
 
 

@@ -44,8 +44,8 @@ T
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new Collection(models?:any, opts?:any):[Collection](../classes/_todos_.backbone.collection.md)
 
+⊕ new Collection(models?: *any*, opts?: *any*): [Collection](../classes/_todos_.backbone.collection.md)
 
 
 
@@ -58,10 +58,6 @@ T
 
 
 
-
-
-
-
 **Returns:** [Collection](../classes/_todos_.backbone.collection.md)
 
 
@@ -70,7 +66,7 @@ T
 
 
 
-* Defined in todos.ts:59
+* Defined in [todos.ts:59](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L59)
 
 
 
@@ -87,7 +83,7 @@ T
 
 <a id="length"></a>
 
-### **length**:  *number* 
+###  length:  *number* 
 
 
 
@@ -95,20 +91,22 @@ T
 
 
 
-* Defined in todos.ts:62
+* Defined in [todos.ts:62](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L62)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="bind"></a>
-### bind(ev:string, f:Function, ctx?:any):void
+###  bind: Method
 
+► bind(ev: *string*, f: *Function*, ctx?: *any*): void
 
 
 
@@ -122,11 +120,6 @@ T
 
 
 
-
-
-
-
-
 **Returns:** void
 
 
@@ -135,7 +128,7 @@ T
 
 
 
-* Defined in todos.ts:61
+* Defined in [todos.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L61)
 
 
 
@@ -148,8 +141,9 @@ T
 ---
 
 <a id="create"></a>
-### create(attrs:any, opts?:any):any
+###  create: Method
 
+► create(attrs: *any*, opts?: *any*): any
 
 
 
@@ -162,10 +156,6 @@ T
 
 
 
-
-
-
-
 **Returns:** any
 
 
@@ -174,7 +164,7 @@ T
 
 
 
-* Defined in todos.ts:63
+* Defined in [todos.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L63)
 
 
 
@@ -187,8 +177,9 @@ T
 ---
 
 <a id="each"></a>
-### each(f:function):void
+###  each: Method
 
+► each(f: *function*): void
 
 
 
@@ -200,22 +191,6 @@ T
 
 
 
-
-(elem:T):void
-
-
-
-
-#### Parameters:
-| Name  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| elem  | T | - |
-
-
-
-
-
-
 **Returns:** void
 
 
@@ -224,18 +199,7 @@ T
 
 
 
-
-
-
-**Returns:** void
-
-
-
-
-
-
-
-* Defined in todos.ts:64
+* Defined in [todos.ts:64](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L64)
 
 
 
@@ -248,8 +212,9 @@ T
 ---
 
 <a id="fetch"></a>
-### fetch(opts?:any):void
+###  fetch: Method
 
+► fetch(opts?: *any*): void
 
 
 
@@ -261,9 +226,6 @@ T
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -272,7 +234,7 @@ T
 
 
 
-* Defined in todos.ts:65
+* Defined in [todos.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L65)
 
 
 
@@ -285,8 +247,9 @@ T
 ---
 
 <a id="filter"></a>
-### filter(f:function):T[]
+###  filter: Method
 
+► filter(f: *function*): T[]
 
 
 
@@ -298,33 +261,6 @@ T
 
 
 
-
-(elem:T):boolean
-
-
-
-
-#### Parameters:
-| Name  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| elem  | T | - |
-
-
-
-
-
-
-**Returns:** boolean
-
-
-
-
-
-
-
-
-
-
 **Returns:** T[]
 
 
@@ -333,7 +269,7 @@ T
 
 
 
-* Defined in todos.ts:68
+* Defined in [todos.ts:68](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L68)
 
 
 
@@ -346,9 +282,10 @@ T
 ---
 
 <a id="last"></a>
-### last():T
-### last(n:number):T[]
+###  last: Method
 
+► last(): T
+► last(n: *number*): T[]
 
 
 
@@ -364,7 +301,7 @@ T
 
 
 
-* Defined in todos.ts:66
+* Defined in [todos.ts:66](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L66)
 
 
 
@@ -385,9 +322,6 @@ T
 
 
 
-
-
-
 **Returns:** T[]
 
 
@@ -396,7 +330,7 @@ T
 
 
 
-* Defined in todos.ts:67
+* Defined in [todos.ts:67](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L67)
 
 
 
@@ -409,8 +343,9 @@ T
 ---
 
 <a id="without"></a>
-### without(...values:T[]):T[]
+###  without: Method
 
+► without(...values: *T[]*): T[]
 
 
 
@@ -422,9 +357,6 @@ T
 
 
 
-
-
-
 **Returns:** T[]
 
 
@@ -433,7 +365,7 @@ T
 
 
 
-* Defined in todos.ts:69
+* Defined in [todos.ts:69](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/todos.ts#L69)
 
 
 

@@ -22,8 +22,9 @@
 
 
 <a id="flattenedcallback"></a>
-### flattenedCallback(callback:function):void
+###  flattenedCallback: Function
 
+► flattenedCallback(callback: *function*): void
 
 
 <p>A function that has a parameter that requires a typed function callback.</p>
@@ -41,35 +42,6 @@
 
 
 
-
-(param:number, optionalParam?:string):string
-
-
-
-
-#### Parameters:
-| Name  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| param  | number | A parameter of the typed function callback. |
-| optionalParam  | string | An optional parameter of the typed function callback. |
-
-
-
-
-
-
-
-**Returns:** string
-
-
-
-
-
-
-
-
-
-
 **Returns:** void
 
 
@@ -78,7 +50,7 @@
 
 
 
-* Defined in flattened.ts:86
+* Defined in [flattened.ts:86](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L86)
 
 
 
@@ -90,8 +62,9 @@
 
 
 <a id="flattenedindexsignature"></a>
-### flattenedIndexSignature(indexed:object):void
+###  flattenedIndexSignature: Function
 
+► flattenedIndexSignature(indexed: *object*): void
 
 
 <p>A function that accepts an index signature parameter.</p>
@@ -109,31 +82,6 @@
 
 
 
-
-
-[index: number]: object
-
-
-name:string
-
-
-
-Optionalvalue?:number
-
-
-
-test:string
-
-
-
-<p>A property of the index signature instance.</p>
-
-
-
-
-
-
-
 **Returns:** void
 
 
@@ -142,7 +90,7 @@ test:string
 
 
 
-* Defined in flattened.ts:115
+* Defined in [flattened.ts:115](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L115)
 
 
 
@@ -154,8 +102,9 @@ test:string
 
 
 <a id="flattenedparameter"></a>
-### flattenedParameter(options:object):void
+###  flattenedParameter: Function
 
+► flattenedParameter(options: *object*): void
 
 
 <p>A function that accepts an option object defined inline.</p>
@@ -173,53 +122,6 @@ test:string
 
 
 
-
-
-[name: string]: any
-
-
-OptionalanotherValue?:string
-
-
-
-<p>Another value on the options object parameter.</p>
-
-
-
-
-
-OptionalmoreOptions?:object
-
-
-
-<p>A typed child object of the options object.</p>
-
-
-
-
-
-moreValues:number
-
-
-
-<p>A value of the typed child object.</p>
-
-
-
-
-
-Optionalvalue?:string
-
-
-
-<p>A value on the options object parameter.</p>
-
-
-
-
-
-
-
 **Returns:** void
 
 
@@ -228,7 +130,7 @@ Optionalvalue?:string
 
 
 
-* Defined in flattened.ts:98
+* Defined in [flattened.ts:98](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L98)
 
 
 

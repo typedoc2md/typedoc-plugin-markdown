@@ -23,7 +23,7 @@
 
 <a id="checkerboard.roughness"></a>
 
-### **roughness**:  *number*  = 150
+###  roughness:  *number*  = 150
 
 
 
@@ -31,19 +31,21 @@
 
 
 
-* Defined in raytracer.ts:160
+* Defined in [raytracer.ts:160](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L160)
 
 
 
 
 
 
+----
 
 
 
 <a id="checkerboard.diffuse"></a>
-### diffuse(pos:[Vector](../classes/_raytracer_.vector.md)):[Color](../classes/_raytracer_.color.md)
+###  diffuse: Function
 
+► diffuse(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -55,9 +57,6 @@
 
 
 
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -66,7 +65,7 @@
 
 
 
-* Defined in raytracer.ts:145
+* Defined in [raytracer.ts:145](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L145)
 
 
 
@@ -78,8 +77,9 @@
 
 
 <a id="checkerboard.reflect"></a>
-### reflect(pos:[Vector](../classes/_raytracer_.vector.md)):0.7⎮0.1
+###  reflect: Function
 
+► reflect(pos: *[Vector](../classes/_raytracer_.vector.md)*): 0.7⎮0.1
 
 
 
@@ -88,9 +88,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | pos  | [Vector](../classes/_raytracer_.vector.md) | - |
-
-
-
 
 
 
@@ -102,7 +99,7 @@
 
 
 
-* Defined in raytracer.ts:153
+* Defined in [raytracer.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L153)
 
 
 
@@ -114,8 +111,9 @@
 
 
 <a id="checkerboard.specular"></a>
-### specular(pos:[Vector](../classes/_raytracer_.vector.md)):[Color](../classes/_raytracer_.color.md)
+###  specular: Function
 
+► specular(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -127,9 +125,6 @@
 
 
 
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -138,7 +133,7 @@
 
 
 
-* Defined in raytracer.ts:152
+* Defined in [raytracer.ts:152](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L152)
 
 
 
@@ -157,7 +152,7 @@
 
 <a id="shiny.roughness-1"></a>
 
-### **roughness**:  *number*  = 250
+###  roughness:  *number*  = 250
 
 
 
@@ -165,19 +160,21 @@
 
 
 
-* Defined in raytracer.ts:142
+* Defined in [raytracer.ts:142](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L142)
 
 
 
 
 
 
+----
 
 
 
 <a id="shiny.diffuse-1"></a>
-### diffuse(pos:[Vector](../classes/_raytracer_.vector.md)):[Color](../classes/_raytracer_.color.md)
+###  diffuse: Function
 
+► diffuse(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -189,9 +186,6 @@
 
 
 
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -200,7 +194,7 @@
 
 
 
-* Defined in raytracer.ts:139
+* Defined in [raytracer.ts:139](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L139)
 
 
 
@@ -212,8 +206,9 @@
 
 
 <a id="shiny.reflect-1"></a>
-### reflect(pos:[Vector](../classes/_raytracer_.vector.md)):number
+###  reflect: Function
 
+► reflect(pos: *[Vector](../classes/_raytracer_.vector.md)*): number
 
 
 
@@ -222,9 +217,6 @@
 | Name  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 | pos  | [Vector](../classes/_raytracer_.vector.md) | - |
-
-
-
 
 
 
@@ -236,7 +228,7 @@
 
 
 
-* Defined in raytracer.ts:141
+* Defined in [raytracer.ts:141](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L141)
 
 
 
@@ -248,8 +240,9 @@
 
 
 <a id="shiny.specular-1"></a>
-### specular(pos:[Vector](../classes/_raytracer_.vector.md)):[Color](../classes/_raytracer_.color.md)
+###  specular: Function
 
+► specular(pos: *[Vector](../classes/_raytracer_.vector.md)*): [Color](../classes/_raytracer_.color.md)
 
 
 
@@ -261,9 +254,6 @@
 
 
 
-
-
-
 **Returns:** [Color](../classes/_raytracer_.color.md)
 
 
@@ -272,7 +262,7 @@
 
 
 
-* Defined in raytracer.ts:140
+* Defined in [raytracer.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L140)
 
 
 

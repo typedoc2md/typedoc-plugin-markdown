@@ -35,7 +35,7 @@
 
 <a id="name"></a>
 
-### **name**:  *string* 
+###  name:  *string* 
 
 
 <p>This is a interface member of INameInterface.</p>
@@ -47,24 +47,26 @@
 
 
 
-Inherited from INameInterface.name
+Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)
 
 
 
-* Defined in classes.ts:11
+* Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L11)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="getname"></a>
-### getName():string
+###  getName: Method
 
+► getName(): string
 
 
 <p>This is a interface function of INameInterface.</p>
@@ -84,11 +86,11 @@ Inherited from INameInterface.name
 
 
 
-Inherited from INameInterface.getName
+Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)
 
 
 
-* Defined in classes.ts:18
+* Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L18)
 
 
 
@@ -101,8 +103,9 @@ Inherited from INameInterface.getName
 ---
 
 <a id="print"></a>
-### print(value:string):void
+###  print: Method
 
+► print(value: *string*): void
 
 
 <p>This is a interface function of IPrintInterface</p>
@@ -121,19 +124,16 @@ Inherited from INameInterface.getName
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from IPrintInterface.print
+Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)
 
 
 
-* Defined in classes.ts:32
+* Defined in [classes.ts:32](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L32)
 
 
 
@@ -146,8 +146,9 @@ Inherited from IPrintInterface.print
 ---
 
 <a id="printname"></a>
-### printName():void
+###  printName: Method
 
+► printName(): void
 
 
 <p>This is a interface function of IPrintNameInterface</p>
@@ -169,7 +170,7 @@ Inherited from IPrintInterface.print
 
 
 
-* Defined in classes.ts:44
+* Defined in [classes.ts:44](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L44)
 
 
 

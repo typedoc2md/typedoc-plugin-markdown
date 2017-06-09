@@ -1,3 +1,4 @@
+
 {{#if signatures}}
 {{#each signatures}}
 {{> member.signature.title hideName=true }}
@@ -8,6 +9,7 @@
 {{/each}}
 
 {{/if}}
+
 {{#if indexSignature}}
 
 {{#compact}}
@@ -29,13 +31,14 @@
 {{/with}}
 {{/if}}
 {{/if}}
+
 {{#each children}}
 {{#if signatures}}
 {{#compact}}
 {{#if flags.isRest}}...{{/if}}
 {{{ name}}}
 {{#if isOptional}}?{{/if}}
- :
+:&nbsp;
 function
 {{/compact}}
 
@@ -45,11 +48,12 @@ function
 {{#each flags}}
 {{this}}
 {{/each}}
+
 {{#if flags.isRest}}...{{/if}}
 {{{ name}}}
 
 {{#if flags.isOptional}}?{{/if}}
-:
+:&nbsp;
 {{#with type}}{{>type}}{{/with}}
 {{/compact}}
 
@@ -65,4 +69,5 @@ function
 {{/with}}
 {{/if}}
 {{/if}}
+
 {{/each}}

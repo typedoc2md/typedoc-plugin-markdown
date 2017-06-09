@@ -37,8 +37,9 @@
 
 
 <a id="defaultscene"></a>
-### defaultScene():[Scene](../interfaces/_raytracer_.scene.md)
+###  defaultScene: Function
 
+► defaultScene(): [Scene](../interfaces/_raytracer_.scene.md)
 
 
 
@@ -54,7 +55,7 @@
 
 
 
-* Defined in raytracer.ts:254
+* Defined in [raytracer.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L254)
 
 
 
@@ -66,8 +67,9 @@
 
 
 <a id="exec"></a>
-### exec():void
+###  exec: Function
 
+► exec(): void
 
 
 
@@ -83,7 +85,7 @@
 
 
 
-* Defined in raytracer.ts:267
+* Defined in [raytracer.ts:267](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L267)
 
 
 

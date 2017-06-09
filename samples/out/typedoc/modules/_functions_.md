@@ -30,8 +30,9 @@
 
 
 <a id="createsomething"></a>
-### createSomething():object
+###  createSomething: Function
 
+► createSomething(): object
 
 
 <p>A function that returns an object.
@@ -54,7 +55,7 @@ Also no type information is given, the object should be correctly reflected.</p>
 
 
 
-* Defined in functions.ts:175
+* Defined in [functions.ts:175](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L175)
 
 
 
@@ -66,8 +67,9 @@ Also no type information is given, the object should be correctly reflected.</p>
 
 
 <a id="exportedfunction"></a>
-### exportedFunction():void
+###  exportedFunction: Function
 
+► exportedFunction(): void
 
 
 <p>This is a simple exported function.</p>
@@ -89,7 +91,7 @@ Also no type information is given, the object should be correctly reflected.</p>
 
 
 
-* Defined in functions.ts:12
+* Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L12)
 
 
 
@@ -101,8 +103,9 @@ Also no type information is given, the object should be correctly reflected.</p>
 
 
 <a id="functionwitharguments"></a>
-### functionWithArguments(paramZ:string, paramG:any, paramA:[INameInterface](../interfaces/_classes_.inameinterface.md)):number
+###  functionWithArguments: Function
 
+► functionWithArguments(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
 
 
 <p>This is a function with multiple arguments and a return value.</p>
@@ -130,11 +133,6 @@ functionWithArguments(&#x27;arg&#x27;, 0, value);
 
 
 
-
-
-
-
-
 **Returns:** number
 
 
@@ -143,7 +141,7 @@ functionWithArguments(&#x27;arg&#x27;, 0, value);
 
 
 
-* Defined in functions.ts:50
+* Defined in [functions.ts:50](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L50)
 
 
 
@@ -155,8 +153,9 @@ functionWithArguments(&#x27;arg&#x27;, 0, value);
 
 
 <a id="functionwithdefaults"></a>
-### functionWithDefaults(valueA?:string, valueB?:number, valueC?:number, valueD?:boolean, valueE?:boolean):string
+###  functionWithDefaults: Function
 
+► functionWithDefaults(valueA?: *string*, valueB?: *number*, valueC?: *number*, valueD?: *boolean*, valueE?: *boolean*): string
 
 
 <p>This is a function with a parameter that has a default value.</p>
@@ -178,13 +177,6 @@ functionWithArguments(&#x27;arg&#x27;, 0, value);
 
 
 
-
-
-
-
-
-
-
 **Returns:** string
 
 The input value or the default value.
@@ -195,7 +187,7 @@ The input value or the default value.
 
 
 
-* Defined in functions.ts:70
+* Defined in [functions.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L70)
 
 
 
@@ -207,8 +199,9 @@ The input value or the default value.
 
 
 <a id="functionwithdoclink"></a>
-### functionWithDocLink():void
+###  functionWithDocLink: Function
 
+► functionWithDocLink(): void
 
 
 <p>See <a href="../interfaces/_classes_.inameinterface.md"><code>INameInterface</code></a> and <a href="../interfaces/_classes_.inameinterface.md#name">INameInterface&#39;s name property</a>.
@@ -233,7 +226,7 @@ Also, check out <a href="http://www.google.com" class="external">Google</a> and
 
 
 
-* Defined in functions.ts:191
+* Defined in [functions.ts:191](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L191)
 
 
 
@@ -245,8 +238,9 @@ Also, check out <a href="http://www.google.com" class="external">Google</a> and
 
 
 <a id="functionwithoptionalvalue"></a>
-### functionWithOptionalValue(requiredParam:string, optionalParam?:string):void
+###  functionWithOptionalValue: Function
 
+► functionWithOptionalValue(requiredParam: *string*, optionalParam?: *string*): void
 
 
 <p>This is a function with a parameter that is optional.</p>
@@ -265,10 +259,6 @@ Also, check out <a href="http://www.google.com" class="external">Google</a> and
 
 
 
-
-
-
-
 **Returns:** void
 
 
@@ -277,7 +267,7 @@ Also, check out <a href="http://www.google.com" class="external">Google</a> and
 
 
 
-* Defined in functions.ts:61
+* Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L61)
 
 
 
@@ -289,8 +279,9 @@ Also, check out <a href="http://www.google.com" class="external">Google</a> and
 
 
 <a id="functionwithrest"></a>
-### functionWithRest(...rest:string[]):string
+###  functionWithRest: Function
 
+► functionWithRest(...rest: *string[]*): string
 
 
 <p>This is a function with rest parameter.</p>
@@ -308,9 +299,6 @@ Also, check out <a href="http://www.google.com" class="external">Google</a> and
 
 
 
-
-
-
 **Returns:** string
 
 The combined string.
@@ -321,7 +309,7 @@ The combined string.
 
 
 
-* Defined in functions.ts:87
+* Defined in [functions.ts:87](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L87)
 
 
 
@@ -333,8 +321,9 @@ The combined string.
 
 
 <a id="genericfunction"></a>
-### genericFunctionT(value:T):T
+###  genericFunction: Function
 
+► genericFunctionT(value: *T*): T
 
 
 <p>This is a generic function.</p>
@@ -362,9 +351,6 @@ Type parameters:
 
 
 
-
-
-
 **Returns:** T
 
 Returns the typed value.
@@ -375,7 +361,7 @@ Returns the typed value.
 
 
 
-* Defined in functions.ts:131
+* Defined in [functions.ts:131](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L131)
 
 
 
@@ -387,8 +373,9 @@ Returns the typed value.
 
 
 <a id="internalfunction"></a>
-### internalFunction():void
+###  internalFunction: Function
 
+► internalFunction(): void
 
 
 <p>This is an internal function.</p>
@@ -410,7 +397,7 @@ Returns the typed value.
 
 
 
-* Defined in functions.ts:6
+* Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L6)
 
 
 
@@ -422,9 +409,10 @@ Returns the typed value.
 
 
 <a id="multiplesignatures"></a>
-### multipleSignatures(value:string):string
-### multipleSignatures(value:object):string
+###  multipleSignatures: Function
 
+► multipleSignatures(value: *string*): string
+► multipleSignatures(value: *object*): string
 
 
 <p>This is the first signature of a function with multiple signatures.</p>
@@ -442,9 +430,6 @@ Returns the typed value.
 
 
 
-
-
-
 **Returns:** string
 
 
@@ -453,7 +438,7 @@ Returns the typed value.
 
 
 
-* Defined in functions.ts:97
+* Defined in [functions.ts:97](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L97)
 
 
 
@@ -480,19 +465,6 @@ Returns the typed value.
 
 
 
-
-name:string
-
-
-
-<p>A value of the object.</p>
-
-
-
-
-
-
-
 **Returns:** string
 
 
@@ -501,7 +473,7 @@ name:string
 
 
 
-* Defined in functions.ts:105
+* Defined in [functions.ts:105](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L105)
 
 
 
@@ -513,8 +485,9 @@ name:string
 
 
 <a id="variablefunction"></a>
-### variableFunction(paramZ:string, paramG:any, paramA:[INameInterface](../interfaces/_classes_.inameinterface.md)):number
+###  variableFunction: Function
 
+► variableFunction(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
 
 
 <p>This is a function with multiple arguments and a return value.</p>
@@ -542,11 +515,6 @@ functionWithArguments(&#x27;arg&#x27;, 0, value);
 
 
 
-
-
-
-
-
 **Returns:** number
 
 
@@ -555,7 +523,7 @@ functionWithArguments(&#x27;arg&#x27;, 0, value);
 
 
 
-* Defined in functions.ts:30
+* Defined in [functions.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/functions.ts#L30)
 
 
 

@@ -37,8 +37,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new Vector(x:number, y:number, z:number):[Vector](../classes/_raytracer_.vector.md)
 
+⊕ new Vector(x: *number*, y: *number*, z: *number*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -52,11 +52,6 @@
 
 
 
-
-
-
-
-
 **Returns:** [Vector](../classes/_raytracer_.vector.md)
 
 
@@ -65,7 +60,7 @@
 
 
 
-* Defined in raytracer.ts:2
+* Defined in [raytracer.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L2)
 
 
 
@@ -82,7 +77,7 @@
 
 <a id="x"></a>
 
-### **x**:  *number* 
+###  x:  *number* 
 
 
 
@@ -90,16 +85,17 @@
 
 
 
-* Defined in raytracer.ts:3
+* Defined in [raytracer.ts:3](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L3)
 
 
 
 
 
 
+----
 <a id="y"></a>
 
-### **y**:  *number* 
+###  y:  *number* 
 
 
 
@@ -107,16 +103,17 @@
 
 
 
-* Defined in raytracer.ts:4
+* Defined in [raytracer.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L4)
 
 
 
 
 
 
+----
 <a id="z"></a>
 
-### **z**:  *number* 
+###  z:  *number* 
 
 
 
@@ -124,20 +121,22 @@
 
 
 
-* Defined in raytracer.ts:5
+* Defined in [raytracer.ts:5](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L5)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="cross"></a>
-### cross(v1:[Vector](../classes/_raytracer_.vector.md), v2:[Vector](../classes/_raytracer_.vector.md)):[Vector](../classes/_raytracer_.vector.md)
-(*Static*)
+### «Static» cross: Method
+
+► cross(v1: *[Vector](../classes/_raytracer_.vector.md)*, v2: *[Vector](../classes/_raytracer_.vector.md)*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -150,10 +149,6 @@
 
 
 
-
-
-
-
 **Returns:** [Vector](../classes/_raytracer_.vector.md)
 
 
@@ -162,7 +157,7 @@
 
 
 
-* Defined in raytracer.ts:17
+* Defined in [raytracer.ts:17](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L17)
 
 
 
@@ -175,8 +170,9 @@
 ---
 
 <a id="dot"></a>
-### dot(v1:[Vector](../classes/_raytracer_.vector.md), v2:[Vector](../classes/_raytracer_.vector.md)):number
-(*Static*)
+### «Static» dot: Method
+
+► dot(v1: *[Vector](../classes/_raytracer_.vector.md)*, v2: *[Vector](../classes/_raytracer_.vector.md)*): number
 
 
 
@@ -189,10 +185,6 @@
 
 
 
-
-
-
-
 **Returns:** number
 
 
@@ -201,7 +193,7 @@
 
 
 
-* Defined in raytracer.ts:10
+* Defined in [raytracer.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L10)
 
 
 
@@ -214,8 +206,9 @@
 ---
 
 <a id="mag"></a>
-### mag(v:[Vector](../classes/_raytracer_.vector.md)):number
-(*Static*)
+### «Static» mag: Method
+
+► mag(v: *[Vector](../classes/_raytracer_.vector.md)*): number
 
 
 
@@ -227,9 +220,6 @@
 
 
 
-
-
-
 **Returns:** number
 
 
@@ -238,7 +228,7 @@
 
 
 
-* Defined in raytracer.ts:11
+* Defined in [raytracer.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L11)
 
 
 
@@ -251,8 +241,9 @@
 ---
 
 <a id="minus"></a>
-### minus(v1:[Vector](../classes/_raytracer_.vector.md), v2:[Vector](../classes/_raytracer_.vector.md)):[Vector](../classes/_raytracer_.vector.md)
-(*Static*)
+### «Static» minus: Method
+
+► minus(v1: *[Vector](../classes/_raytracer_.vector.md)*, v2: *[Vector](../classes/_raytracer_.vector.md)*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -265,10 +256,6 @@
 
 
 
-
-
-
-
 **Returns:** [Vector](../classes/_raytracer_.vector.md)
 
 
@@ -277,7 +264,7 @@
 
 
 
-* Defined in raytracer.ts:8
+* Defined in [raytracer.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L8)
 
 
 
@@ -290,8 +277,9 @@
 ---
 
 <a id="norm"></a>
-### norm(v:[Vector](../classes/_raytracer_.vector.md)):[Vector](../classes/_raytracer_.vector.md)
-(*Static*)
+### «Static» norm: Method
+
+► norm(v: *[Vector](../classes/_raytracer_.vector.md)*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -303,9 +291,6 @@
 
 
 
-
-
-
 **Returns:** [Vector](../classes/_raytracer_.vector.md)
 
 
@@ -314,7 +299,7 @@
 
 
 
-* Defined in raytracer.ts:12
+* Defined in [raytracer.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L12)
 
 
 
@@ -327,8 +312,9 @@
 ---
 
 <a id="plus"></a>
-### plus(v1:[Vector](../classes/_raytracer_.vector.md), v2:[Vector](../classes/_raytracer_.vector.md)):[Vector](../classes/_raytracer_.vector.md)
-(*Static*)
+### «Static» plus: Method
+
+► plus(v1: *[Vector](../classes/_raytracer_.vector.md)*, v2: *[Vector](../classes/_raytracer_.vector.md)*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -341,10 +327,6 @@
 
 
 
-
-
-
-
 **Returns:** [Vector](../classes/_raytracer_.vector.md)
 
 
@@ -353,7 +335,7 @@
 
 
 
-* Defined in raytracer.ts:9
+* Defined in [raytracer.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L9)
 
 
 
@@ -366,8 +348,9 @@
 ---
 
 <a id="times"></a>
-### times(k:number, v:[Vector](../classes/_raytracer_.vector.md)):[Vector](../classes/_raytracer_.vector.md)
-(*Static*)
+### «Static» times: Method
+
+► times(k: *number*, v: *[Vector](../classes/_raytracer_.vector.md)*): [Vector](../classes/_raytracer_.vector.md)
 
 
 
@@ -380,10 +363,6 @@
 
 
 
-
-
-
-
 **Returns:** [Vector](../classes/_raytracer_.vector.md)
 
 
@@ -392,7 +371,7 @@
 
 
 
-* Defined in raytracer.ts:7
+* Defined in [raytracer.ts:7](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/microsoft/raytracer.ts#L7)
 
 
 

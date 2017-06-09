@@ -38,8 +38,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new flattenedClass(options:object):[flattenedClass](../classes/_flattened_.flattenedclass.md)
 
+⊕ new flattenedClass(options: *object*): [flattenedClass](../classes/_flattened_.flattenedclass.md)
 
 
 <p>A constructor that accepts an option object defined inline.</p>
@@ -57,49 +57,6 @@
 
 
 
-
-OptionalanotherValue?:string
-
-
-
-<p>Another value on the options object parameter.</p>
-
-
-
-
-
-OptionalmoreOptions?:object
-
-
-
-<p>A typed child object of the options object.</p>
-
-
-
-
-
-moreValues:number
-
-
-
-<p>A value of the typed child object.</p>
-
-
-
-
-
-Optionalvalue?:string
-
-
-
-<p>A value on the options object parameter.</p>
-
-
-
-
-
-
-
 **Returns:** [flattenedClass](../classes/_flattened_.flattenedclass.md)
 
 
@@ -108,7 +65,7 @@ Optionalvalue?:string
 
 
 
-* Defined in flattened.ts:57
+* Defined in [flattened.ts:57](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L57)
 
 
 
@@ -125,7 +82,7 @@ Optionalvalue?:string
 
 <a id="callback"></a>
 
-### **callback**:  *function* 
+###  callback:  *function* 
 
 
 <p>A member that holds a callback that requires a typed function signature.</p>
@@ -137,7 +94,9 @@ Optionalvalue?:string
 
 #### Type declaration
 
-(param:number, optionalParam?:string):string
+
+
+(param: *number*, optionalParam?: *string*): string
 
 
 
@@ -147,10 +106,6 @@ Optionalvalue?:string
 | ------ | ------------------- | ------------ |
 | param  | number | A parameter of the typed function callback. |
 | optionalParam  | string | An optional parameter of the typed function callback. |
-
-
-
-
 
 
 
@@ -168,16 +123,19 @@ Optionalvalue?:string
 
 
 
-* Defined in flattened.ts:28
+
+
+* Defined in [flattened.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L28)
 
 
 
 
 
 
+----
 <a id="indexed"></a>
 
-### **indexed**:  *object* 
+###  indexed:  *object* 
 
 
 <p>A member that holds an index signature.</p>
@@ -190,18 +148,26 @@ Optionalvalue?:string
 #### Type declaration
 
 
+
+
 [index: number]: object
 
 
-name:string
 
 
 
-Optionalvalue?:number
+name: string
 
 
 
-test:string
+
+Optionalvalue?: number
+
+
+
+
+
+test: string
 
 
 
@@ -216,16 +182,18 @@ test:string
 
 
 
-* Defined in flattened.ts:36
+
+* Defined in [flattened.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L36)
 
 
 
 
 
 
+----
 <a id="multiplecallsignatures"></a>
 
-### **multipleCallSignatures**:  *function* 
+###  multipleCallSignatures:  *function* 
 
 
 <p>An object with multiple call signatures.</p>
@@ -238,7 +206,10 @@ test:string
 
 #### Type declaration
 
-():number(value:number):[flattenedClass](../classes/_flattened_.flattenedclass.md)
+
+
+(): number
+(value: *number*): [flattenedClass](../classes/_flattened_.flattenedclass.md)
 
 
 <p>Simple call signature.</p>
@@ -279,9 +250,6 @@ The current value.
 
 
 
-
-
-
 **Returns:** [flattenedClass](../classes/_flattened_.flattenedclass.md)
 
 The calling Foo.
@@ -298,16 +266,19 @@ The calling Foo.
 
 
 
-* Defined in flattened.ts:45
+
+
+* Defined in [flattened.ts:45](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L45)
 
 
 
 
 
 
+----
 <a id="options"></a>
 
-### **options**:  *object* 
+###  options:  *object* 
 
 
 <p>A member that accepts an option object defined inline.</p>
@@ -319,7 +290,10 @@ The calling Foo.
 
 #### Type declaration
 
-OptionalanotherValue?:string
+
+
+
+OptionalanotherValue?: string
 
 
 
@@ -329,7 +303,8 @@ OptionalanotherValue?:string
 
 
 
-OptionalmoreOptions?:object
+
+OptionalmoreOptions?: object
 
 
 
@@ -339,7 +314,10 @@ OptionalmoreOptions?:object
 
 
 
-moreValues:number
+
+
+
+moreValues: number
 
 
 
@@ -349,7 +327,9 @@ moreValues:number
 
 
 
-Optionalvalue?:string
+
+
+Optionalvalue?: string
 
 
 
@@ -364,12 +344,14 @@ Optionalvalue?:string
 
 
 
-* Defined in flattened.ts:14
+
+* Defined in [flattened.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/flattened.ts#L14)
 
 
 
 
 
 
+----
 
 

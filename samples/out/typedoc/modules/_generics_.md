@@ -25,8 +25,9 @@
 
 
 <a id="getgenericarray"></a>
-### getGenericArray():Arraystring
+###  getGenericArray: Function
 
+► getGenericArray(): Arraystring
 
 
 <p>A function returning a generic array with type parameters.</p>
@@ -50,7 +51,7 @@ The return value with type arguments.
 
 
 
-* Defined in generics.ts:78
+* Defined in [generics.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L78)
 
 
 
@@ -62,8 +63,9 @@ The return value with type arguments.
 
 
 <a id="testfunction"></a>
-### testFunctionT(value:T):T
+###  testFunction: Function
 
+► testFunctionT(value: *T*): T
 
 
 <p>A generic function</p>
@@ -91,9 +93,6 @@ Type parameters:
 
 
 
-
-
-
 **Returns:** T
 
 A generic return value.
@@ -104,7 +103,7 @@ A generic return value.
 
 
 
-* Defined in generics.ts:8
+* Defined in [generics.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/generics.ts#L8)
 
 
 

@@ -9,25 +9,25 @@
 {{#if reflection}}
 {{#ifSignature reflection}}
 {{#if reflection.parent.parent.url}}
-{{reflection.parent.parent.name}}
+[{{reflection.parent.parent.name}}]({{relativeURL reflection.parent.parent.url}})
 {{else}}
 {{reflection.parent.parent.name}}
 {{/if}}
 .
 {{#if reflection.parent.url}}
-{{reflection.parent.name}}
+[{{reflection.parent.name}}]({{relativeURL reflection.parent.url}})
 {{else}}
 {{reflection.parent.name}}
 {{/if}}
 {{else}}
 {{#if reflection.parent.url}}
-{{reflection.parent.name}}
+[{{reflection.parent.name}}]({{relativeURL reflection.parent.url}})
 {{else}}
 {{reflection.parent.name}}
 {{/if}}
 .
 {{#if reflection.url}}
-{{reflection.name}}
+[{{reflection.name}}]({{relativeURL reflection.url}})
 {{else}}
 {{reflection.name}}
 {{/if}}

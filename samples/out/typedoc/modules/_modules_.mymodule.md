@@ -35,7 +35,7 @@
 
 <a id="exportedmodulevariable"></a>
 
-### **exportedModuleVariable**:  *string*  = "foo"
+###  exportedModuleVariable:  *string*  = "foo"
 
 
 
@@ -43,19 +43,20 @@
 
 
 
-* Defined in modules.ts:35
+* Defined in [modules.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/modules.ts#L35)
 
 
 
 
 
 
+----
 
 
 
 <a id="modulevariable"></a>
 
-### **moduleVariable**:  *number[]*  =  [100, 200]
+###  moduleVariable:  *number[]*  =  [100, 200]
 
 
 
@@ -63,19 +64,20 @@
 
 
 
-* Defined in modules.ts:37
+* Defined in [modules.ts:37](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/modules.ts#L37)
 
 
 
 
 
 
+----
 
 
 
 <a id="modulevariable2"></a>
 
-### **moduleVariable2**:  *number[]* 
+###  moduleVariable2:  *number[]* 
 
 
 
@@ -83,13 +85,14 @@
 
 
 
-* Defined in modules.ts:39
+* Defined in [modules.ts:39](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/modules.ts#L39)
 
 
 
 
 
 
+----
 
 
 
@@ -108,7 +111,7 @@
 
 <a id="object.name"></a>
 
-### **name**:  *string*  = "Test"
+###  name:  *string*  = "Test"
 
 
 <p>An object literal value.</p>
@@ -122,19 +125,21 @@
 
 
 
-* Defined in modules.ts:17
+* Defined in [modules.ts:17](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/modules.ts#L17)
 
 
 
 
 
 
+----
 
 
 
 <a id="object.print"></a>
-### print(value:string):void
+###  print: Function
 
+► print(value: *string*): void
 
 
 <p>An object literal function.</p>
@@ -152,9 +157,6 @@
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -163,7 +165,7 @@
 
 
 
-* Defined in modules.ts:22
+* Defined in [modules.ts:22](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/modules.ts#L22)
 
 
 

@@ -43,8 +43,8 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new NonGenericClass(p1:any, p2:[SubClassB](../classes/_classes_.subclassb.md), p3:number, p4:number):[NonGenericClass](../classes/_classes_.nongenericclass.md)
 
+⊕ new NonGenericClass(p1: *any*, p2: *[SubClassB](../classes/_classes_.subclassb.md)*, p3: *number*, p4: *number*): [NonGenericClass](../classes/_classes_.nongenericclass.md)
 
 
 <p>Constructor short text.</p>
@@ -65,22 +65,16 @@
 
 
 
-
-
-
-
-
-
 **Returns:** [NonGenericClass](../classes/_classes_.nongenericclass.md)
 
 
 
 
-Inherited from GenericClass.constructor
+Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)
 
 
 
-* Defined in classes.ts:279
+* Defined in [classes.ts:279](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L279)
 
 
 
@@ -97,7 +91,7 @@ Inherited from GenericClass.constructor
 
 <a id="p2"></a>
 
-### **p2**:  *[SubClassB](../classes/_classes_.subclassb.md)* 
+### «Protected» p2:  *[SubClassB](../classes/_classes_.subclassb.md)* 
 
 
 <p>Private string property</p>
@@ -108,20 +102,21 @@ Inherited from GenericClass.constructor
 
 
 
-Inherited from GenericClass.p2
+Inherited from [GenericClass](_classes_.genericclass.md).[p2](_classes_.genericclass.md#p2)
 
 
 
-* Defined in classes.ts:290
+* Defined in [classes.ts:290](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L290)
 
 
 
 
 
 
+----
 <a id="p3"></a>
 
-### **p3**:  *number* 
+###  p3:  *number* 
 
 
 <p>Public number property</p>
@@ -132,42 +127,45 @@ Inherited from GenericClass.p2
 
 
 
-Inherited from GenericClass.p3
+Inherited from [GenericClass](_classes_.genericclass.md).[p3](_classes_.genericclass.md#p3)
 
 
 
-* Defined in classes.ts:290
+* Defined in [classes.ts:290](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L290)
 
 
 
 
 
 
+----
 <a id="value"></a>
 
-### **value**:  *[SubClassB](../classes/_classes_.subclassb.md)* 
+###  value:  *[SubClassB](../classes/_classes_.subclassb.md)* 
 
 
 
 
-Inherited from GenericClass.value
+Inherited from [GenericClass](_classes_.genericclass.md).[value](_classes_.genericclass.md#value)
 
 
 
-* Defined in classes.ts:279
+* Defined in [classes.ts:279](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L279)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="getvalue"></a>
-### getValue():[SubClassB](../classes/_classes_.subclassb.md)
+###  getValue: Method
 
+► getValue(): [SubClassB](../classes/_classes_.subclassb.md)
 
 
 
@@ -180,11 +178,11 @@ Inherited from GenericClass.value
 
 
 
-Inherited from GenericClass.getValue
+Inherited from [GenericClass](_classes_.genericclass.md).[getValue](_classes_.genericclass.md#getvalue)
 
 
 
-* Defined in classes.ts:302
+* Defined in [classes.ts:302](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L302)
 
 
 
@@ -197,8 +195,9 @@ Inherited from GenericClass.getValue
 ---
 
 <a id="setvalue"></a>
-### setValue(value:[SubClassB](../classes/_classes_.subclassb.md)):void
+###  setValue: Method
 
+► setValue(value: *[SubClassB](../classes/_classes_.subclassb.md)*): void
 
 
 
@@ -215,19 +214,16 @@ Inherited from GenericClass.getValue
 
 
 
-
-
-
 **Returns:** void
 
 
 
 
-Inherited from GenericClass.setValue
+Inherited from [GenericClass](_classes_.genericclass.md).[setValue](_classes_.genericclass.md#setvalue)
 
 
 
-* Defined in classes.ts:297
+* Defined in [classes.ts:297](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L297)
 
 
 

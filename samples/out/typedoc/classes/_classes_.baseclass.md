@@ -55,9 +55,9 @@
 <a id="constructor"></a>
 ## constructor: Constructor
 
-### new BaseClass(name:string):[BaseClass](../classes/_classes_.baseclass.md)
-### new BaseClass(source:[BaseClass](../classes/_classes_.baseclass.md)):[BaseClass](../classes/_classes_.baseclass.md)
 
+⊕ new BaseClass(name: *string*): [BaseClass](../classes/_classes_.baseclass.md)
+⊕ new BaseClass(source: *[BaseClass](../classes/_classes_.baseclass.md)*): [BaseClass](../classes/_classes_.baseclass.md)
 
 
 
@@ -69,9 +69,6 @@
 
 
 
-
-
-
 **Returns:** [BaseClass](../classes/_classes_.baseclass.md)
 
 
@@ -80,7 +77,7 @@
 
 
 
-* Defined in classes.ts:76
+* Defined in [classes.ts:76](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L76)
 
 
 
@@ -101,9 +98,6 @@
 
 
 
-
-
-
 **Returns:** [BaseClass](../classes/_classes_.baseclass.md)
 
 
@@ -112,7 +106,7 @@
 
 
 
-* Defined in classes.ts:79
+* Defined in [classes.ts:79](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L79)
 
 
 
@@ -129,7 +123,7 @@
 
 <a id="internalclass"></a>
 
-### **internalClass**:  *[InternalClass](../classes/_classes_.internalclass.md)* 
+### «Private» internalClass:  *[InternalClass](../classes/_classes_.internalclass.md)* 
 
 
 <p>This is an instance member of an internal class.</p>
@@ -143,16 +137,17 @@
 
 
 
-* Defined in classes.ts:76
+* Defined in [classes.ts:76](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L76)
 
 
 
 
 
 
+----
 <a id="kind"></a>
 
-### **kind**:  *number* 
+### «Protected» kind:  *number* 
 
 
 <p>This is a simple protected member.</p>
@@ -166,16 +161,17 @@
 
 
 
-* Defined in classes.ts:63
+* Defined in [classes.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L63)
 
 
 
 
 
 
+----
 <a id="name"></a>
 
-### **name**:  *string* 
+###  name:  *string* 
 
 
 <p>This is a simple public member.</p>
@@ -186,20 +182,21 @@
 
 
 
-Implementation of INameInterface.name
+*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
 
 
-* Defined in classes.ts:58
+* Defined in [classes.ts:58](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L58)
 
 
 
 
 
 
+----
 <a id="instance"></a>
 
-### **instance**:  *[BaseClass](../classes/_classes_.baseclass.md)* 
+### «Static» instance:  *[BaseClass](../classes/_classes_.baseclass.md)* 
 
 
 <p>This is a static member.</p>
@@ -214,16 +211,17 @@ Implementation of INameInterface.name
 
 
 
-* Defined in classes.ts:70
+* Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L70)
 
 
 
 
 
 
+----
 <a id="instances"></a>
 
-### **instances**:  *[BaseClass](../classes/_classes_.baseclass.md)[]* 
+### «Static» instances:  *[BaseClass](../classes/_classes_.baseclass.md)[]* 
 
 
 
@@ -231,20 +229,22 @@ Implementation of INameInterface.name
 
 
 
-* Defined in classes.ts:71
+* Defined in [classes.ts:71](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L71)
 
 
 
 
 
 
+----
 
 
 ## Methods
 
 <a id="arrowfunction"></a>
-### arrowFunction(param2:string, param1:number):void
+###  arrowFunction: Method
 
+► arrowFunction(param2: *string*, param1: *number*): void
 
 
 <p>This is a simple fat arrow function.</p>
@@ -263,10 +263,6 @@ Implementation of INameInterface.name
 
 
 
-
-
-
-
 **Returns:** void
 
 
@@ -275,7 +271,7 @@ Implementation of INameInterface.name
 
 
 
-* Defined in classes.ts:140
+* Defined in [classes.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L140)
 
 
 
@@ -288,8 +284,9 @@ Implementation of INameInterface.name
 ---
 
 <a id="checkname"></a>
-### checkName():boolean
-(*Private*)
+### «Private» checkName: Method
+
+► checkName(): boolean
 
 
 <p>This is a private function.</p>
@@ -311,7 +308,7 @@ Implementation of INameInterface.name
 
 
 
-* Defined in classes.ts:147
+* Defined in [classes.ts:147](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L147)
 
 
 
@@ -324,8 +321,9 @@ Implementation of INameInterface.name
 ---
 
 <a id="getname"></a>
-### getName():string
+###  getName: Method
 
+► getName(): string
 
 
 <p>This is a simple member function.</p>
@@ -348,11 +346,11 @@ Return the name.
 
 
 
-Implementation of INameInterface.getName
+*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
 
 
-* Defined in classes.ts:102
+* Defined in [classes.ts:102](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L102)
 
 
 
@@ -365,8 +363,9 @@ Implementation of INameInterface.getName
 ---
 
 <a id="setname"></a>
-### setName(name:string):void
+###  setName: Method
 
+► setName(name: *string*): void
 
 
 <p>This is a simple member function.</p>
@@ -385,9 +384,6 @@ Implementation of INameInterface.getName
 
 
 
-
-
-
 **Returns:** void
 
 
@@ -396,7 +392,7 @@ Implementation of INameInterface.getName
 
 
 
-* Defined in classes.ts:127
+* Defined in [classes.ts:127](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L127)
 
 
 
@@ -409,8 +405,9 @@ Implementation of INameInterface.getName
 ---
 
 <a id="catest"></a>
-### caTest(originalValues:[BaseClass](../classes/_classes_.baseclass.md), newRecord:any, fieldNames:string[], mandatoryFields:string[]):string
-(*Static*)
+### «Static» caTest: Method
+
+► caTest(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -431,12 +428,6 @@ Implementation of INameInterface.getName
 
 
 
-
-
-
-
-
-
 **Returns:** string
 
 
@@ -445,7 +436,7 @@ Implementation of INameInterface.getName
 
 
 
-* Defined in classes.ts:167
+* Defined in [classes.ts:167](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L167)
 
 
 
@@ -458,8 +449,9 @@ Implementation of INameInterface.getName
 ---
 
 <a id="getinstance"></a>
-### getInstance():[BaseClass](../classes/_classes_.baseclass.md)
-(*Static*)
+### «Static» getInstance: Method
+
+► getInstance(): [BaseClass](../classes/_classes_.baseclass.md)
 
 
 <p>This is a static function.</p>
@@ -484,7 +476,7 @@ An instance of BaseClass.
 
 
 
-* Defined in classes.ts:159
+* Defined in [classes.ts:159](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L159)
 
 
 
@@ -497,8 +489,9 @@ An instance of BaseClass.
 ---
 
 <a id="getname-1"></a>
-### getName():string
-(*Static*)
+### «Static» getName: Method
+
+► getName(): string
 
 
 <p>This is a simple static member function.</p>
@@ -524,7 +517,7 @@ Return the name.
 
 
 
-* Defined in classes.ts:115
+* Defined in [classes.ts:115](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/04105dc/samples/src/typedoc/classes.ts#L115)
 
 
 
