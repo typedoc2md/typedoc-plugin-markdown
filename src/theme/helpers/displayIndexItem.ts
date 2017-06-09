@@ -16,22 +16,13 @@ export function displayIndexItem(item: any, urlPrefix: string) {
 
       if (item.kindString === 'Function') {
         const funcParams: any = [];
-        let returnType = 'void';
-        item.signatures.forEach((signature: any) => {
-
-          if (signature.parameters) {
-            signature.parameters.forEach((param: any) => {
-              funcParams.push(param.name + param.type);
-            });
-          }
-
-          if (signature.type.reflection) {
-            returnType = signature.type.reflection.name.toLowerCase();
-          }
-
-          url = '#' + 'markdown-header-' + item.name.toLowerCase() + funcParams.join('-').toLowerCase() + returnType;
-
+        item.flags.forEach((flag: string) => {
+          funcParams.push(flag);
         });
+        funcParams.push(item.name);
+        funcParams.push(item.kindString);
+
+        url = '#' + 'markdown-header-' + funcParams.join('-').toLowerCase();
 
       }
 

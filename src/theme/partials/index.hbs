@@ -4,14 +4,10 @@
 
 ## {{title}}
 {{#each children}}
-{{#unless flags.isPrivate}}
 {{#ifDisplayIndexItem this }}
 * {{ displayIndexItem this @root.urlPrefix}}
 {{/ifDisplayIndexItem}}
-{{/unless}}
 {{/each}}
 {{/ifGroupContainesVisibleItems}}
 {{/each}}
 {{/if}}
-
----
