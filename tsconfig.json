@@ -7,7 +7,7 @@
     "importHelpers": false,
     "module": "commonjs",
     "moduleResolution": "node",
-    "noEmitHelpers": true,
+    "noEmitHelpers": false,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "outDir": "./dist",
