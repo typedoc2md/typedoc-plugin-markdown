@@ -1,7 +1,5 @@
 # typedoc-plugin-markdown
-
-![npm](https://img.shields.io/npm/dt/typedoc-plugin-markdown.svg)
-![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)
+[![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 
 *Alpha version under development. Please feel free to use with this caveat - feedback welcome.*
 
@@ -39,8 +37,6 @@ markdownSourcefilePrefix | The prefix to use for sourcefiles. | github source fi
  
 ## Samples
 
-* [TypeDoc Examples](samples/out/typedoc/index.md)
-* [Microsoft TypeScript Samples](samples/out/microsoft/index.md)
 
 ## Acknowledgements
 
