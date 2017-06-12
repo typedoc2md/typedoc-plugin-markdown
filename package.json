@@ -34,6 +34,7 @@
     "cpx": "1.5.0",
     "onchange": "3.2.1",
     "tslint": "5.4.3",
-    "typedoc": "^0.7.1"
+    "typedoc": "^0.7.1",
+    "typescript": "2.3.4"
   }
 }

@@ -6,12 +6,12 @@ import { Context } from 'typedoc/dist/lib/converter/context';
 import { Converter } from 'typedoc/dist/lib/converter/converter';
 import { Reflection } from 'typedoc/dist/lib/models/reflections/abstract';
 import { Options, OptionsReadMode } from 'typedoc/dist/lib/utils/options';
-import { MarkdownTheme } from './theme/theme';
+import { MarkdownTheme } from '../theme/theme';
 
 import * as path from 'path';
 
-@Component({ name: 'markdown' })
-export class MarkdownPlugin extends ConverterComponent {
+@Component({ name: 'markdown-converter' })
+export class MarkdownConverterPlugin extends ConverterComponent {
 
   private options: any;
 
@@ -29,7 +29,7 @@ export class MarkdownPlugin extends ConverterComponent {
   }
 
   private getThemeDirectory() {
-    return path.join(__dirname, '../dist/theme/');
+    return path.join(__dirname, '../../dist/theme/');
   }
 
   private onBegin(context: Context, reflection: Reflection) {

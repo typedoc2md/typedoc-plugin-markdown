@@ -14,6 +14,9 @@ import { Options } from './options';
 interface IOptions {
   markdownFlavour: string;
   markdownSourcefilePrefix: string;
+  includes: string;
+  media: string;
+  out: string;
 }
 
 export class MarkdownTheme extends DefaultTheme {
@@ -61,8 +64,12 @@ export class MarkdownTheme extends DefaultTheme {
 
     Options.markdownFlavour = options.markdownFlavour || 'github';
     Options.markdownSourcefilePrefix = options.markdownSourcefilePrefix;
+    Options.includes = options.includes;
+    Options.media = options.media;
 
     // remove uneccessary plugins
+    renderer.removeComponent('marked');
+    renderer.removeComponent('marked-links');
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('navigation');

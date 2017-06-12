@@ -1,6 +1,7 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
-import { MarkdownPlugin } from './plugin';
+import { MarkdownConverterPlugin } from './plugin/converterPlugin';
+import { MarkdownRendererPlugin } from './plugin/rendererPlugin';
 
 module.exports = (PluginHost: Application) => {
   const app = PluginHost.owner;
@@ -26,5 +27,7 @@ module.exports = (PluginHost: Application) => {
     name: 'markdownSourcefilePrefix',
     type: ParameterType.String,
   });
-  app.converter.addComponent('markdown', MarkdownPlugin);
+  app.converter.addComponent('markdown-converter', MarkdownConverterPlugin);
+  app.renderer.addComponent('markdown-renderer', MarkdownRendererPlugin);
+
 };

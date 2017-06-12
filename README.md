@@ -37,6 +37,11 @@ markdownSourcefilePrefix | The prefix to use for sourcefiles. | github source fi
  
 ## Samples
 
+Samples of generated output.
+
+* [Generated output from TypeDoc's examples directory](https://github.com/tgreyuk/typedoc-plugin-markdown-samples/blob/master/out/typedoc/index.md) 
+* [Generated from a selection of Microsoft TypeScriptSamples](https://github.com/tgreyuk/typedoc-plugin-markdown-samples/blob/master/out/microsoft/index.md) 
+
 
 ## Acknowledgements
 
