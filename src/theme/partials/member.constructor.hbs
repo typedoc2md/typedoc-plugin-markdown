@@ -1,8 +1,18 @@
 {{{displayAnchor name}}}
-## {{{name}}}: {{kindString}}
+## Constructor
 
 {{#if signatures}}
-{{> member.signatures}}
+{{#each signatures}}
+
+{{#compact}}
+###&nbsp;{{> member.signature.title }}
+{{/compact}}
+
+{{/each}}
+
+{{#each signatures}}
+{{> member.signature.body }}
+{{/each}}
 {{else}}
 {{#if hasGetterOrSetter}}
 {{> member.getterSetter}}

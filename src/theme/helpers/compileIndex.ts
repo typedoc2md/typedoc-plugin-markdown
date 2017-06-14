@@ -4,15 +4,16 @@ import { compileTemplate } from '../utils';
 export function compileIndex(member: DeclarationReflection) {
 
   let md: hbs.SafeString = '';
-  let urlPrefix = '../';
 
-  if (!member.kindString) {
-    urlPrefix = '';
+  if (member.kindString === 'Class') {
+    member.groups.map((el) => {
+
+      return el.title === 'Constructors' ? Object.assign(el, {isConstructors: true}) : el;
+    });
+
   }
 
-  if (member.kindString !== 'Interface') {
-    md = compileTemplate('partials/index.hbs', Object.assign(member, { urlPrefix }));
-  }
-
+  md = compileTemplate('partials/index.hbs', Object.assign(member));
+ 
   return md;
 }

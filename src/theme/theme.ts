@@ -14,6 +14,7 @@ import { Options } from './options';
 interface IOptions {
   markdownFlavour: string;
   markdownSourcefilePrefix: string;
+  markdownSinglePage: boolean;
   includes: string;
   media: string;
   out: string;
@@ -44,6 +45,29 @@ export class MarkdownTheme extends DefaultTheme {
     return urls;
   }
 
+  public static buildAnchors(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
+    const mapping = DefaultTheme.getMapping(reflection);
+    if (mapping) {
+      const url = [mapping.directory, MarkdownTheme.getUrl(reflection) + '.md'].join('/');
+      urls.push(new UrlMapping(url, reflection, mapping.template));
+      reflection.url = url;
+      reflection.hasOwnDocument = true;
+      for (const key in reflection.children) {
+        if (reflection.children.hasOwnProperty(key)) {
+          const child = reflection.children[key];
+          if (mapping.isLeaf) {
+            DefaultTheme.applyAnchorUrl(child, reflection);
+          } else {
+            // MarkdownTheme.buildUrls(child, urls);
+          }
+        }
+      }
+    } else {
+      DefaultTheme.applyAnchorUrl(reflection, reflection.parent);
+    }
+    return urls;
+  }
+
   public static getUrl(reflection: Reflection, relative?: Reflection, separator: string = '.'): string {
 
     let url = reflection.getAlias();
@@ -64,6 +88,7 @@ export class MarkdownTheme extends DefaultTheme {
 
     Options.markdownFlavour = options.markdownFlavour || 'github';
     Options.markdownSourcefilePrefix = options.markdownSourcefilePrefix;
+    Options.markdownSinglePage = options.markdownSinglePage;
     Options.includes = options.includes;
     Options.media = options.media;
 
@@ -86,20 +111,23 @@ export class MarkdownTheme extends DefaultTheme {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
     const additionalContext = {
+      displayIndexTitle: true,
       displayReadme: this.application.options.getValue('readme') !== 'none',
       hideBack: true,
-      options: this.options,
+      isSinglePage: this.options.markdownSinglePage,
+
     };
     const context = Object.assign(entryPoint, additionalContext);
-    // if (this.options.markdownSinglePage) {
-    //  urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-    // } else {
+    if (this.options.markdownSinglePage) {
+      Object.assign(entryPoint, additionalContext);
+      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+     } else {
     urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
     if (entryPoint.children) {
         entryPoint.children.forEach((child: DeclarationReflection) => {
           MarkdownTheme.buildUrls(child, urls);
         });
-      // }
+      }
     }
     return urls;
   }

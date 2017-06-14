@@ -5,14 +5,14 @@ import { MarkdownRendererPlugin } from './plugin/rendererPlugin';
 
 module.exports = (PluginHost: Application) => {
   const app = PluginHost.owner;
-  /*
+
   app.options.addDeclaration({
     component: 'markdown',
     help: 'Markdown Plugin: Export to single document.',
     name: 'markdownSinglePage',
     type: ParameterType.Boolean,
   });
-  */
+
   app.options.addDeclaration({
     component: 'markdown',
     defaultValue: 'github',
@@ -20,6 +20,7 @@ module.exports = (PluginHost: Application) => {
     name: 'markdownFlavour',
     type: ParameterType.String,
   });
+
   app.options.addDeclaration({
     component: 'markdown',
     defaultValue: '',
@@ -27,7 +28,9 @@ module.exports = (PluginHost: Application) => {
     name: 'markdownSourcefilePrefix',
     type: ParameterType.String,
   });
+
   app.converter.addComponent('markdown-converter', MarkdownConverterPlugin);
+
   app.renderer.addComponent('markdown-renderer', MarkdownRendererPlugin);
 
 };

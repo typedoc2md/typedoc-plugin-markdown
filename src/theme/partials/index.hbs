@@ -1,13 +1,20 @@
+
 {{#if groups}}
 {{#each groups}}
+{{#unless isConstructors}}
 {{#ifGroupContainesVisibleItems this }}
 
-## {{title}}
+### {{title}}
 {{#each children}}
 {{#ifDisplayIndexItem this }}
-* {{ displayIndexItem this @root.urlPrefix}}
+{{#if url }}
+* [{{name}}]({{relativeURL url}})
+{{else}}
+* [{{name}}]({{getAnchor this}})
+{{/if}}
 {{/ifDisplayIndexItem}}
 {{/each}}
 {{/ifGroupContainesVisibleItems}}
+{{/unless}}
 {{/each}}
 {{/if}}

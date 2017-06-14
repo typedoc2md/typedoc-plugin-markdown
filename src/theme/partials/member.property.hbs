@@ -1,2 +1,17 @@
 {{{displayAnchor anchor}}}
-{{>member.declaration}}
+### {{#each flags}}«{{this}}»{{/each}} {{ name }}{{#if isOptional}}?{{/if}}: {{kindString}}
+{{#if signatures}}
+{{> member.signatures}}
+{{else}}{{#if hasGetterOrSetter}}
+{{> member.getterSetter}}
+{{else}}
+{{> member.declaration}}
+{{/if}}{{/if}}
+
+{{#each groups}}
+{{#each children}}
+{{#unless hasOwnDocument}}
+{{> member}}
+{{/unless}}
+{{/each}}
+{{/each}}

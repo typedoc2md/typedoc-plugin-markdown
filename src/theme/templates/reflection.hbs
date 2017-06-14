@@ -4,15 +4,22 @@
 {{{model.readme}}}
 {{/if}}
 {{#unless model.displayReadme}}
-# {{model.kindString }} {{ displaySafeText model.name }}
+# {{model.kindString }}: {{ displaySafeText model.name }}
 {{/unless}}
 {{#with model}}
+{{#unless displayIndexTitle}}
+{{#if isSinglePage}}
+{{ getBackLink this }}
+{{/if}}
+{{/unless}}
+
 {{#if hasComment}}
 
 {{> comment}}
 
 {{/if}}
 {{/with}}
+
 {{#if model.typeParameters}}
   
  ## Type parameters
@@ -67,7 +74,15 @@
 {{/if}}
 {{/if}}
 
+
 {{#with model}}
+{{ compileConstructors this}}
+{{/with}}
+
+
+{{#with model}}
+
+## Index
 
 {{ compileIndex this }}
 

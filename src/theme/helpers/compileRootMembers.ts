@@ -4,11 +4,11 @@ export function compileRootMembers(member: any) {
 
   let md: hbs.SafeString = '';
 
-  if (member.kindString === 'Interface') {
-    md = compileTemplate('partials/members.interface.hbs', member);
-  } else {
+ // if (member.kindString === 'Interface') {
+  //  md = compileTemplate('partials/members.interface.hbs', member);
+  // } else {
   md = compileTemplate('partials/members.hbs', member);
-  }
+  // }
 
   return md;
 }
