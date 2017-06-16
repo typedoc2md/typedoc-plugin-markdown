@@ -1,12 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "quotemark": [
-      true,
-      "single"
-    ]
-  },
-  "jsRules": {
+    "max-classes-per-file": [false],
     "quotemark": [
       true,
       "single"

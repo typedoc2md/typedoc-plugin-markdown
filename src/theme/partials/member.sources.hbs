@@ -1,36 +1,29 @@
-{{#if implementationOf}}
+{{~#if implementationOf~}}
 *Implementation of {{#with implementationOf}}{{> typeAndParent}}{{/with}}*
-{{/if}}
-{{#if inheritedFrom}}
-Inherited from {{#with inheritedFrom}}{{> typeAndParent}}{{/with}}
-{{/if}}
-{{#if overwrites}}
-Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}
-{{/if}}
-{{#if sources}}
-
-{{#each sources}}
-
-{{#if @root.isBitbucket}}
-
-{{#if @root.sourceRoot}}
-* Defined in [{{fileName}}:{{line}}]({{@root.sourceRoot}}{{fileName}}?fileviewer=file-view-default#{{fileName}}-{{line}})
+{{newLine}}
+{{~/if~}}
+{{~#if inheritedFrom~}}
+*Inherited from {{#with inheritedFrom}}{{> typeAndParent}}{{/with}}*
+{{newLine}}
+{{~/if~}}
+{{~#if overwrites~}}
+*Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}*
+{{newLine}}
+{{~/if~}}
+{{~#if sources~}}
+{{~#each sources~}}
+{{~#if @root.isBitbucket}}
+{{~#if @root.sourceRoot}}
+*Defined in [{{fileName}}:{{line}}]({{@root.sourceRoot}}{{fileName}}?fileviewer=file-view-default#{{fileName}}-{{line}})*
+{{~else~}}
+*Defined in {{fileName}}:{{line}}*
+{{~/if~}}
+{{~else~}}
+{{~#if url~}}
+*Defined in [{{fileName}}:{{line}}]({{url}})*
 {{else}}
-* Defined in {{fileName}}:{{line}}
-{{/if}}
-
-{{else}}
-
-{{#if url}}
-* Defined in [{{fileName}}:{{line}}]({{url}})
-{{else}}
-* Defined in {{fileName}}:{{line}}
-{{/if}}
-
-{{/if}}
-
-{{/each}}
-{{/if}}
-
-
-
+*Defined in {{fileName}}:{{line}}*
+{{~/if~}}
+{{~/if~}}
+{{~/each~}}
+{{~/if~}}

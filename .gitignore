@@ -3,8 +3,9 @@
 # compiled output
 /dist
 /tmp
-/samples/out/*.json
-/samples/html
+/tests/*.json
+/tests/compiledHtml
+/tests/compiled
 
 # dependencies
 /node_modules

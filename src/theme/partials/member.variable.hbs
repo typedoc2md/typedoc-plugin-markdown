@@ -1,18 +1,20 @@
 {{{displayAnchor anchor}}}
-### {{#each flags}}«{{this}}»{{/each}} {{name}}: {{kindString}}
-{{#if signatures}}
+
+### {{#each flags}}«{{this}}»{{/each}} {{name}}
+
+{{#if signatures~}}
 {{> member.signatures}}
-{{else}}{{#if hasGetterOrSetter}}
+{{~else~}}
+{{~#if hasGetterOrSetter~}}
 {{> member.getterSetter}}
-{{else}}
+{{~else~}}
 {{> member.declaration}}
-{{/if}}{{/if}}
-
-{{#each groups}}
-{{#each children}}
-{{#unless hasOwnDocument}}
+{{~/if}}
+{{~/if}}
+{{~#each groups~}}
+{{~#each children~}}
+{{~#unless hasOwnDocument~}}
 {{compileMember this}}
-{{/unless}}
-{{/each}}
-{{/each}}
-
+{{~/unless}}
+{{~/each}}
+{{~/each}}

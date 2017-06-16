@@ -1,1 +1,17 @@
-
+{{!-- {{ breadcrumbs }} --}}
+{{#unless model.hideBack}}[{{project.name}}](../index.md){{~#with model~}}{{> breadcrumb}}{{/with}}{{newLine}}{{/unless}}
+{{!-- {{ readme }} --}}
+{{~#if model.displayReadme ~}}
+{{{model.readme}}}
+{{~/if~}}
+{{!-- {{ title }} --}}
+# {{#unless model.isIndex }}{{model.kindString }}:{{/unless}} {{ displaySafeText model.name }}
+{{#compact}}
+{{~#with model~}}
+{{~#unless displayIndexTitle~}}
+{{~#if isSinglePage}}
+{{ getBackLink this }}
+{{~/if}}
+{{~/unless}}
+{{~/with}}
+{{/compact}}

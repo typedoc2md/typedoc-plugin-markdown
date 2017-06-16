@@ -1,8 +1,1 @@
-{{#compact}}
-{{#if parent}}
-{{#with parent}}{{> breadcrumb}}{{/with}}
-{{#if url}}>  [{{displaySafeText name}}](../{{url}}){{/if}}
-{{else}}
-{{#if url}}[Globals]({{url}}){{/if}}
-{{/if}}
-{{/compact}}
+{{#if parent}}{{#with parent}}{{> breadcrumb}}{{/with}}{{#if url}} > [{{displaySafeText name}}](../{{url}}){{/if}}{{else}}{{#if url}}[Globals]({{url}}){{/if}}{{/if}}

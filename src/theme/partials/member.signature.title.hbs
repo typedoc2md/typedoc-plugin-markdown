@@ -1,4 +1,3 @@
-
 {{#compact}}
 {{#unless hideName}}{{displaySymbol kindString}}**{{{name}}}**{{/unless}}
 {{#if typeParameters}}
@@ -6,7 +5,6 @@
 {{#if @index}}, {{/if}}
 {{name}}
 {{/each}}
-
 {{/if}}
 (
 {{#each parameters}}
@@ -23,5 +21,4 @@
 :&nbsp;
 {{#with type}}{{>type}}{{/with}}
 {{/if}}
-
 {{/compact}}

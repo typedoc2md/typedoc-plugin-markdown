@@ -1,15 +1,13 @@
 {{{displayAnchor name}}}
-## Constructor
+
+## Constructors
 
 {{#if signatures}}
 {{#each signatures}}
 
-{{#compact}}
-###&nbsp;{{> member.signature.title }}
-{{/compact}}
+## {{> member.signature.title }}
 
 {{/each}}
-
 {{#each signatures}}
 {{> member.signature.body }}
 {{/each}}
@@ -17,9 +15,7 @@
 {{#if hasGetterOrSetter}}
 {{> member.getterSetter}}
 {{else}}
-
 {{> member.declaration}} 
-
 {{/if}}
 {{/if}}
 {{#each groups}}

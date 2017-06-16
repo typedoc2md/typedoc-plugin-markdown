@@ -7,11 +7,15 @@
     "dist/"
   ],
   "scripts": {
-    "build": "tsc && npm run copy:hbs",
     "copy:hbs": "cpx src/**/*.hbs dist/",
+    "copy:pkg": "copyfiles package.json dist/index.js dist/**/*.hbs dist/**/*.js dist/theme/helpers/*.js node_modules/typedoc-plugin-markdown",
     "lint": "tslint --type-check --project tsconfig.json",
-    "prepublish": "rm -rf dist && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "tsc && npm run copy:hbs",
+    "prepublishOnly": "rm -rf dist && npm run prepare",
+    "samples": "typedoc --theme markdown --readme none --tsconfig tests/src/tsconfig.json --out tests/compiled",
+    "samples:html": "typedoc --readme none --tsconfig tests/tsconfig.json --out tests/compiledHtml",
+    "pretest": "npm run prepare && npm run copy:pkg && npm run samples",
+    "test": "mocha -r ts-node/register tests/tests.js",
     "watch": "concurrently \"npm run watch:tsc\" \"npm run watch:hbs\"",
     "watch:tsc": "tsc -w",
     "watch:hbs": "onchange 'src/**/*.hbs' -- npm run copy:hbs"
@@ -27,14 +31,23 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": "^0.7.1"
+    "typedoc": "^0.7.0"
   },
   "devDependencies": {
+    "@types/chai": "4.0.0",
+    "@types/mocha": "2.2.41",
+    "chai": "4.0.2",
+    "chai-files": "^1.4.0",
     "concurrently": "3.4.0",
+    "copyfiles": "^1.2.0",
     "cpx": "1.5.0",
+    "install": "^0.10.1",
+    "mocha": "3.4.2",
+    "npm": "^5.0.3",
     "onchange": "3.2.1",
+    "ts-node": "^3.0.6",
     "tslint": "5.4.3",
-    "typedoc": "^0.7.1",
+    "typedoc": "0.7.1",
     "typescript": "2.3.4"
   }
 }

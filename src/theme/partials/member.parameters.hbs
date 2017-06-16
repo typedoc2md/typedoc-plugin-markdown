@@ -1,9 +1,10 @@
 {{#if parameters}}
 #### Parameters:
-| Name  | Type                | Description  |
-| ------ | ------------------- | ------------ |
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
 {{#each parameters}}
-| {{ name }}  | {{#with type}}{{>type}}{{/with}} | {{ displayComment comment }} |
+| {{ name }}  | {{#with type}}{{>type}}{{/with}} | {{#if defaultValue}}{{defaultValue}}{{else}}-{{/if}} | {{ displayComment comment }} |
 {{/each}}
 {{/if}}
 

@@ -25,9 +25,9 @@ Markdown engines render markdown in different ways. By default typedoc supports 
 
 | Name      | Description | Default value               
 | --------- | ----------- | ----
-markdownFlavour | The markdown rendering engine. Supports "github" or "bitbucket" | github
-markdownSourcefilePrefix | The prefix to use for sourcefiles. | github source file path
-markdownSinglePage | Export to a single file | -
+| markdownFlavour | The markdown rendering engine. Supports "github" or "bitbucket" | github
+| markdownSourcefilePrefix | The prefix to use for sourcefiles. | github source file path
+| markdownSinglePage | Export to a single file | -
 
 #### Example options
 ```javascript
