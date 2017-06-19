@@ -1,0 +1,434 @@
+[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [SubClassA](../classes/_classes_.subclassa.md)
+
+# Class: SubClassA
+
+
+This is a class that extends another class.
+
+This class has no own constructor, so its constructor should be inherited
+from BaseClass.
+
+
+## Hierarchy
+
+
+ [BaseClass](../classes/_classes_.baseclass.md)
+
+**↳ SubClassA**
+
+
+
+
+
+
+## Implements
+
+* [INameInterface](../interfaces/_classes_.inameinterface.md)
+* [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+
+## Index
+
+### Constructors
+
+* [constructor](_classes_.subclassa.md#constructor)
+
+
+### Properties
+
+* [kind](_classes_.subclassa.md#kind)
+* [name](_classes_.subclassa.md#name)
+
+
+### Accessors
+
+* [nameProperty](_classes_.subclassa.md#nameproperty)
+* [readOnlyNameProperty](_classes_.subclassa.md#readonlynameproperty)
+* [writeOnlyNameProperty](_classes_.subclassa.md#writeonlynameproperty)
+
+
+### Methods
+
+* [arrowFunction](_classes_.subclassa.md#arrowfunction)
+* [getName](_classes_.subclassa.md#getname)
+* [print](_classes_.subclassa.md#print)
+* [printName](_classes_.subclassa.md#printname)
+* [setName](_classes_.subclassa.md#setname)
+* [caTest](_classes_.subclassa.md#catest)
+* [getInstance](_classes_.subclassa.md#getinstance)
+* [getName](_classes_.subclassa.md#getname-1)
+
+
+
+<a id="constructor"></a>
+
+## Constructors
+
+
+## ⊕ **new SubClassA**(name: *string*): [SubClassA](../classes/_classes_.subclassa.md)
+
+
+## ⊕ **new SubClassA**(source: *[BaseClass](../classes/_classes_.baseclass.md)*): [SubClassA](../classes/_classes_.subclassa.md)
+
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
+
+*Defined in classes.ts:70*
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| name  | string | - | - |
+
+
+
+
+
+**Returns:** [SubClassA](../classes/_classes_.subclassa.md)
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
+
+*Defined in classes.ts:72*
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| source  | [BaseClass](../classes/_classes_.baseclass.md) | - | - |
+
+
+
+
+
+**Returns:** [SubClassA](../classes/_classes_.subclassa.md)
+
+
+## Properties
+
+<a id="kind"></a>
+### «Protected» kind
+**kind**:  *number* 
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
+
+*Defined in classes.ts:65*
+
+
+This is a simple protected member.
+
+
+
+
+<a id="name"></a>
+###  name
+**name**:  *string* 
+
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[name](../interfaces/_classes_.iprintnameinterface.md#name)*
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)*
+
+*Defined in classes.ts:60*
+
+
+This is a simple public member.
+
+
+
+
+
+
+## nameProperty
+
+
+getnameProperty(): stringsetnameProperty(value: *string*): void
+
+*Defined in classes.ts:199*
+
+Returns the name. See [[BaseClass.name]].
+
+
+
+
+**Returns:** string
+The return value.
+
+
+*Defined in classes.ts:209*
+
+Sets the name. See [[BaseClass.name]].
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| value  | string | - | The new name. |
+
+
+
+
+
+**Returns:** void
+The return value.
+
+
+
+
+## readOnlyNameProperty
+
+
+getreadOnlyNameProperty(): string
+
+*Defined in classes.ts:218*
+
+Returns the name. See [[BaseClass.name]].
+
+
+
+
+**Returns:** string
+The return value.
+
+
+
+
+## writeOnlyNameProperty
+
+
+setwriteOnlyNameProperty(value: *string*): void
+
+*Defined in classes.ts:228*
+
+Sets the name. See [[BaseClass.name]].
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| value  | string | - | The new name. |
+
+
+
+
+
+**Returns:** void
+The return value.
+
+
+
+
+
+## Methods
+
+<a id="arrowfunction"></a>
+
+###  arrowFunction
+
+► **arrowFunction**(param2: *string*, param1: *number*): void
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
+
+*Defined in classes.ts:129*
+
+This is a simple fat arrow function.
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| param2  | string | - | The second parameter needed by this function. |
+| param1  | number | - | The first parameter needed by this function. |
+
+
+
+
+
+**Returns:** void
+
+---
+
+<a id="getname"></a>
+
+###  getName
+
+► **getName**(): string
+
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[getName](../interfaces/_classes_.iprintnameinterface.md#getname)*
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)*
+
+*Defined in classes.ts:94*
+
+This is a simple member function.
+
+It should be inherited by all subclasses. This class has a static
+member with the same name, both should be documented.
+
+
+
+
+
+**Returns:** string
+Return the name.
+
+
+---
+
+<a id="print"></a>
+
+###  print
+
+► **print**(value: *string*): void
+
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[print](../interfaces/_classes_.iprintnameinterface.md#print)*
+
+*Defined in classes.ts:185*
+
+This is a simple interface function.
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| value  | string | - | - |
+
+
+
+
+
+**Returns:** void
+
+---
+
+<a id="printname"></a>
+
+###  printName
+
+► **printName**(): void
+
+*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[printName](../interfaces/_classes_.iprintnameinterface.md#printname)*
+
+*Defined in classes.ts:190*
+
+This is a interface function of IPrintNameInterface
+
+
+
+
+**Returns:** void
+
+---
+
+<a id="setname"></a>
+
+###  setName
+
+► **setName**(name: *string*): void
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)*
+
+*Defined in classes.ts:117*
+
+This is a simple member function.
+
+It should be inherited by all subclasses.
+
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| name  | string | - | The new name. |
+
+
+
+
+
+**Returns:** void
+
+---
+
+<a id="catest"></a>
+
+### «Static» caTest
+
+► **caTest**(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)*
+
+*Defined in classes.ts:153*
+**see**: https://github.com/sebastian-lenz/typedoc/issues/42
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| originalValues  | [BaseClass](../classes/_classes_.baseclass.md) | - | - |
+| newRecord  | any | - | - |
+| fieldNames  | string[] | - | - |
+| mandatoryFields  | string[] | - | - |
+
+
+
+
+
+**Returns:** string
+
+---
+
+<a id="getinstance"></a>
+
+### «Static» getInstance
+
+► **getInstance**(): [BaseClass](../classes/_classes_.baseclass.md)
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
+
+*Defined in classes.ts:146*
+
+This is a static function.
+
+Static functions should not be inherited.
+
+
+
+
+
+**Returns:** [BaseClass](../classes/_classes_.baseclass.md)
+An instance of BaseClass.
+
+
+---
+
+<a id="getname-1"></a>
+
+### «Static» getName
+
+► **getName**(): string
+
+*Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)*
+
+*Defined in classes.ts:106*
+
+This is a simple static member function.
+
+Static functions should not be inherited. This class has a
+member with the same name, both should be documented.
+
+
+
+
+
+**Returns:** string
+Return the name.
+
+
+---
+
+
+

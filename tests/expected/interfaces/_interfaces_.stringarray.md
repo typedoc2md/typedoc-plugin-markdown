@@ -10,6 +10,7 @@
 
 
 ### Indexable
+
 [ index: number]:string## Index
 
 

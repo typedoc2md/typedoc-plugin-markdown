@@ -15,22 +15,28 @@
 {{~/if}}
 {{~#if model.implementedTypes}}
 ## Implements
-{{~#each model.implementedTypes}}
+
+{{#each model.implementedTypes}}
 * {{> type}}
-{{~/each}}
+{{/each}}
+{{newLine}}
 {{~/if}}
 {{~#if model.implementedBy}}
 ### Implemented by
-{{~#each model.implementedBy}}
+
+{{#each model.implementedBy}}
 * {{> type}}
-{{~/each}}
+{{/each}}
+{{newLine}}
 {{~/if}}
 {{~#if model.signatures}}
 ### Callable
-{{~#with model}}{{> member.signatures}}{{/with}}
+{{#with model}}{{> member.signatures}}{{/with}}
+{{newLine}}
 {{~/if}}
 {{~#if model.indexSignature}}
 ### Indexable
+
 [{{~#each model.indexSignature.parameters}} {{name}}: {{#with type}}{{>type}}{{/with}}{{/each}}]: 
 {{~#with model.indexSignature.type}}{{>type}}{{/with}}
 {{~#with model.indexSignature}}

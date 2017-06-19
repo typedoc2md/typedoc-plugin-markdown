@@ -6,5 +6,6 @@
 {{#each parameters}}
 | {{ name }}  | {{#with type}}{{>type}}{{/with}} | {{#if defaultValue}}{{defaultValue}}{{else}}-{{/if}} | {{ displayComment comment }} |
 {{/each}}
+{{newLine}}{{newLine}}
 {{/if}}
 

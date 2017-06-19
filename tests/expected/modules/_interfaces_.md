@@ -67,6 +67,9 @@
 | minute  | number | - | - |
 
 
+
+
+
 **Returns:** [ClockInterface](../interfaces/_interfaces_.clockinterface.md)
 
 ----

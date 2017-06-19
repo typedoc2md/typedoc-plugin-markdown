@@ -1,0 +1,137 @@
+[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+
+# Interface: IPrintNameInterface
+
+
+This is a interface inheriting from two other interfaces.
+
+## Hierarchy
+
+
+ [INameInterface](../interfaces/_classes_.inameinterface.md)
+
+
+
+
+ [IPrintInterface](../interfaces/_classes_.iprintinterface.md)
+
+**↳ IPrintNameInterface**
+
+
+
+
+
+
+### Implemented by
+
+* [SubClassA](../classes/_classes_.subclassa.md)
+
+## Index
+
+### Properties
+
+* [name](_classes_.iprintnameinterface.md#name)
+
+
+### Methods
+
+* [getName](_classes_.iprintnameinterface.md#getname)
+* [print](_classes_.iprintnameinterface.md#print)
+* [printName](_classes_.iprintnameinterface.md#printname)
+
+
+
+## Properties
+
+<a id="name"></a>
+###  name
+**name**:  *string* 
+
+*Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)*
+
+*Defined in classes.ts:11*
+
+
+This is a interface member of INameInterface.
+
+It should be inherited by all subinterfaces.
+
+
+
+
+
+
+
+## Methods
+
+<a id="getname"></a>
+
+###  getName
+
+► **getName**(): string
+
+*Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
+
+*Defined in classes.ts:18*
+
+This is a interface function of INameInterface.
+
+It should be inherited by all subinterfaces.
+
+
+
+
+
+**Returns:** string
+
+---
+
+<a id="print"></a>
+
+###  print
+
+► **print**(value: *string*): void
+
+*Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)*
+
+*Defined in classes.ts:30*
+
+This is a interface function of IPrintInterface
+
+It should be inherited by all subinterfaces.
+
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| value  | string | - | - |
+
+
+
+
+
+**Returns:** void
+
+---
+
+<a id="printname"></a>
+
+###  printName
+
+► **printName**(): void
+
+*Defined in classes.ts:40*
+
+This is a interface function of IPrintNameInterface
+
+
+
+
+**Returns:** void
+
+---
+
+
+
