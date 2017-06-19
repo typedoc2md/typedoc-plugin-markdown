@@ -59,7 +59,8 @@ The constructor of the original class should be overwritten.
 
 *Overrides [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
-*Defined in classes.ts:238*
+*Defined in [classes.ts:238](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L238)*
+
 
 #### Parameters:
 
@@ -82,7 +83,8 @@ The constructor of the original class should be overwritten.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
 
-*Defined in classes.ts:65*
+*Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
+
 
 
 This is a simple protected member.
@@ -98,7 +100,8 @@ This is a simple protected member.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)*
 
-*Defined in classes.ts:60*
+*Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
+
 
 
 This is a simple public member.
@@ -118,7 +121,8 @@ This is a simple public member.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
 
-*Defined in classes.ts:129*
+*Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
+
 
 This is a simple fat arrow function.
 
@@ -144,7 +148,8 @@ This is a simple fat arrow function.
 
 ► **doSomething**(value: *[string,[SubClassA](../classes/_classes_.subclassa.md),[SubClassB](../classes/_classes_.subclassb.md)]*): void
 
-*Defined in classes.ts:243*
+*Defined in [classes.ts:243](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L243)*
+
 
 #### Parameters:
 
@@ -170,7 +175,8 @@ This is a simple fat arrow function.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)*
 
-*Defined in classes.ts:94*
+*Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
+
 
 This is a simple member function.
 
@@ -195,7 +201,8 @@ Return the name.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)*
 
-*Defined in classes.ts:117*
+*Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
+
 
 This is a simple member function.
 
@@ -225,7 +232,8 @@ It should be inherited by all subclasses.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)*
 
-*Defined in classes.ts:153*
+*Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
+
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
@@ -254,7 +262,8 @@ It should be inherited by all subclasses.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
 
-*Defined in classes.ts:146*
+*Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
+
 
 This is a static function.
 
@@ -278,7 +287,8 @@ An instance of BaseClass.
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)*
 
-*Defined in classes.ts:106*
+*Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
+
 
 This is a simple static member function.
 

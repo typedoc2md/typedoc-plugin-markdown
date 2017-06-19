@@ -13,9 +13,9 @@ This a type parameter.
 
 ## Hierarchy
 
-** GenericClass**
+**GenericClass**
 
-↳ [NonGenericClass](../classes/_classes_.nongenericclass.md)
+↳  [NonGenericClass](../classes/_classes_.nongenericclass.md)
 
 
 
@@ -53,7 +53,8 @@ This a type parameter.
 ## ⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](../classes/_classes_.genericclass.md)
 
 
-*Defined in classes.ts:254*
+*Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
+
 
 Constructor short text.
 
@@ -80,7 +81,8 @@ Constructor short text.
 ### «Protected» p2
 **p2**:  *T* 
 
-*Defined in classes.ts:264*
+*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
+
 
 
 Private string property
@@ -92,7 +94,8 @@ Private string property
 ###  p3
 **p3**:  *number* 
 
-*Defined in classes.ts:264*
+*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
+
 
 
 Public number property
@@ -104,7 +107,8 @@ Public number property
 ### «Private» p4
 **p4**:  *number* 
 
-*Defined in classes.ts:264*
+*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
+
 
 
 Public implicit any property
@@ -117,7 +121,8 @@ Public implicit any property
 ###  value
 **value**:  *T* 
 
-*Defined in classes.ts:254*
+*Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
+
 
 
 
@@ -132,7 +137,8 @@ Public implicit any property
 
 ► **getValue**(): T
 
-*Defined in classes.ts:274*
+*Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
+
 
 
 
@@ -146,7 +152,8 @@ Public implicit any property
 
 ► **setValue**(value: *T*): void
 
-*Defined in classes.ts:270*
+*Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
+
 
 
 #### Parameters:

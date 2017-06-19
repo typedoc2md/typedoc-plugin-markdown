@@ -7,9 +7,9 @@ This is a simple interface.
 
 ## Hierarchy
 
-** INameInterface**
+**INameInterface**
 
-↳ [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+↳  [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
 
 
 
@@ -42,7 +42,8 @@ This is a simple interface.
 ###  name
 **name**:  *string* 
 
-*Defined in classes.ts:11*
+*Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
+
 
 
 This is a interface member of INameInterface.
@@ -63,7 +64,8 @@ It should be inherited by all subinterfaces.
 
 ► **getName**(): string
 
-*Defined in classes.ts:18*
+*Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
+
 
 This is a interface function of INameInterface.
 

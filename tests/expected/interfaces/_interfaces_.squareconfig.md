@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-** SquareConfig**
+**SquareConfig**
 
 
 

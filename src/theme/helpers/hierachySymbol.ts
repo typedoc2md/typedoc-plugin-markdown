@@ -4,7 +4,7 @@ import { compileTemplate } from '../utils';
 export function hierachySymbol(item: any) {
   let symbol = '';
 
-  symbol = item.reflection.extendedTypes ? '↳' : '';
+  symbol = item.reflection.extendedTypes ? '↳ ' : '';
 
   return symbol;
 }

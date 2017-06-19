@@ -7,9 +7,9 @@ This is a simple interface.
 
 ## Hierarchy
 
-** IPrintInterface**
+**IPrintInterface**
 
-↳ [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+↳  [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
 
 
 
@@ -33,7 +33,8 @@ This is a simple interface.
 
 ► **print**(value: *string*): void
 
-*Defined in classes.ts:30*
+*Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
+
 
 This is a interface function of IPrintInterface
 

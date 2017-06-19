@@ -7,7 +7,7 @@ This is an internal class, it is not exported.
 
 ## Hierarchy
 
-** InternalClass**
+**InternalClass**
 
 
 
@@ -28,7 +28,8 @@ This is an internal class, it is not exported.
 ## ⊕ **new InternalClass**(options: *object*): [InternalClass](../classes/_classes_.internalclass.md)
 
 
-*Defined in classes.ts:169*
+*Defined in [classes.ts:169](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
+
 
 #### Parameters:
 

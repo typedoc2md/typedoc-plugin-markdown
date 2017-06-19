@@ -32,7 +32,8 @@
 
 ► **createSomething**(): object
 
-*Defined in functions.ts:161*
+*Defined in [functions.ts:161](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L161)*
+
 
 A function that returns an object.
 Also no type information is given, the object should be correctly reflected.
@@ -50,7 +51,8 @@ Also no type information is given, the object should be correctly reflected.
 
 ► **exportedFunction**(): void
 
-*Defined in functions.ts:12*
+*Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L12)*
+
 
 This is a simple exported function.
 
@@ -67,7 +69,8 @@ This is a simple exported function.
 
 ► **functionWithArguments**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
 
-*Defined in functions.ts:41*
+*Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L41)*
+
 
 This is a function with multiple arguments and a return value.
 
@@ -94,7 +97,8 @@ This is a function with multiple arguments and a return value.
 
 ► **functionWithDefaults**(valueA?: *string*, valueB?: *number*, valueC?: *number*, valueD?: *boolean*, valueE?: *boolean*): string
 
-*Defined in functions.ts:61*
+*Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L61)*
+
 
 This is a function with a parameter that has a default value.
 
@@ -125,7 +129,8 @@ The input value or the default value.
 
 ► **functionWithDocLink**(): void
 
-*Defined in functions.ts:176*
+*Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
+
 
 See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
 Also, check out {@link http://www.google.com|Google} and
@@ -147,7 +152,8 @@ Taken from http://usejsdoc.org/tags-inline-link.html.
 
 ► **functionWithOptionalValue**(requiredParam: *string*, optionalParam?: *string*): void
 
-*Defined in functions.ts:52*
+*Defined in [functions.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L52)*
+
 
 This is a function with a parameter that is optional.
 
@@ -173,7 +179,8 @@ This is a function with a parameter that is optional.
 
 ► **functionWithRest**(...rest: *string[]*): string
 
-*Defined in functions.ts:78*
+*Defined in [functions.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L78)*
+
 
 This is a function with rest parameter.
 
@@ -200,7 +207,8 @@ The combined string.
 
 ► **genericFunction**T(value: *T*): T
 
-*Defined in functions.ts:121*
+*Defined in [functions.ts:121](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L121)*
+
 
 This is a generic function.
 
@@ -233,7 +241,8 @@ Returns the typed value.
 
 ► **internalFunction**(): void
 
-*Defined in functions.ts:6*
+*Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
+
 
 This is an internal function.
 
@@ -250,7 +259,8 @@ This is an internal function.
 
 ► **multipleSignatures**(value: *string*): string► **multipleSignatures**(value: *object*): string
 
-*Defined in functions.ts:88*
+*Defined in [functions.ts:88](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L88)*
+
 
 This is the first signature of a function with multiple signatures.
 
@@ -267,7 +277,8 @@ This is the first signature of a function with multiple signatures.
 
 **Returns:** string
 
-*Defined in functions.ts:96*
+*Defined in [functions.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L96)*
+
 
 This is the second signature of a function with multiple signatures.
 
@@ -292,7 +303,8 @@ This is the second signature of a function with multiple signatures.
 
 ► **variableFunction**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
 
-*Defined in functions.ts:25*
+*Defined in [functions.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L25)*
+
 
 This is a function with multiple arguments and a return value.
 

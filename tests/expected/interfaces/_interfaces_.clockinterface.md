@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-** ClockInterface**
+**ClockInterface**
 
 
 

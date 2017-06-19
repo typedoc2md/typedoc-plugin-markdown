@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-** ClockConstructor**
+**ClockConstructor**
 
 
 

@@ -4,9 +4,9 @@
 
 ## Hierarchy
 
-** Shape**
+**Shape**
 
-↳ [Square](../interfaces/_interfaces_.square.md)
+↳  [Square](../interfaces/_interfaces_.square.md)
 
 
 

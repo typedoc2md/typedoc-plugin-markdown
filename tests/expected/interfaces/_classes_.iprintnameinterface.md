@@ -49,7 +49,8 @@ This is a interface inheriting from two other interfaces.
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)*
 
-*Defined in classes.ts:11*
+*Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
+
 
 
 This is a interface member of INameInterface.
@@ -72,7 +73,8 @@ It should be inherited by all subinterfaces.
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
 
-*Defined in classes.ts:18*
+*Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
+
 
 This is a interface function of INameInterface.
 
@@ -94,7 +96,8 @@ It should be inherited by all subinterfaces.
 
 *Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)*
 
-*Defined in classes.ts:30*
+*Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
+
 
 This is a interface function of IPrintInterface
 
@@ -122,7 +125,8 @@ It should be inherited by all subinterfaces.
 
 ► **printName**(): void
 
-*Defined in classes.ts:40*
+*Defined in [classes.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
+
 
 This is a interface function of IPrintNameInterface
 

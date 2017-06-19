@@ -10,14 +10,14 @@ This is a simple base class.
 
 ## Hierarchy
 
-** BaseClass**
+**BaseClass**
 
-↳ [SubClassA](../classes/_classes_.subclassa.md)
-
-
+↳  [SubClassA](../classes/_classes_.subclassa.md)
 
 
-↳ [SubClassB](../classes/_classes_.subclassb.md)
+
+
+↳  [SubClassB](../classes/_classes_.subclassb.md)
 
 
 
@@ -68,7 +68,8 @@ This is a simple base class.
 ## ⊕ **new BaseClass**(source: *[BaseClass](../classes/_classes_.baseclass.md)*): [BaseClass](../classes/_classes_.baseclass.md)
 
 
-*Defined in classes.ts:70*
+*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
+
 
 #### Parameters:
 
@@ -82,7 +83,8 @@ This is a simple base class.
 
 **Returns:** [BaseClass](../classes/_classes_.baseclass.md)
 
-*Defined in classes.ts:72*
+*Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
+
 
 #### Parameters:
 
@@ -103,7 +105,8 @@ This is a simple base class.
 ### «Private» internalClass
 **internalClass**:  *[InternalClass](../classes/_classes_.internalclass.md)* 
 
-*Defined in classes.ts:70*
+*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
+
 
 
 This is an instance member of an internal class.
@@ -115,7 +118,8 @@ This is an instance member of an internal class.
 ### «Protected» kind
 **kind**:  *number* 
 
-*Defined in classes.ts:65*
+*Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
+
 
 
 This is a simple protected member.
@@ -129,7 +133,8 @@ This is a simple protected member.
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
-*Defined in classes.ts:60*
+*Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
+
 
 
 This is a simple public member.
@@ -141,7 +146,8 @@ This is a simple public member.
 ### «Static»«Private» instance
 **instance**:  *[BaseClass](../classes/_classes_.baseclass.md)* 
 
-*Defined in classes.ts:55*
+*Defined in [classes.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
+
 
 
 This is a static member.
@@ -156,7 +162,8 @@ Static members should not be inherited.
 ### «Static»«Private» instances
 **instances**:  *[BaseClass](../classes/_classes_.baseclass.md)[]* 
 
-*Defined in classes.ts:56*
+*Defined in [classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L56)*
+
 
 
 
@@ -171,7 +178,8 @@ Static members should not be inherited.
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void
 
-*Defined in classes.ts:129*
+*Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
+
 
 This is a simple fat arrow function.
 
@@ -197,7 +205,8 @@ This is a simple fat arrow function.
 
 ► **checkName**(): boolean
 
-*Defined in classes.ts:135*
+*Defined in [classes.ts:135](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L135)*
+
 
 This is a private function.
 
@@ -216,7 +225,8 @@ This is a private function.
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
-*Defined in classes.ts:94*
+*Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
+
 
 This is a simple member function.
 
@@ -239,7 +249,8 @@ Return the name.
 
 ► **setName**(name: *string*): void
 
-*Defined in classes.ts:117*
+*Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
+
 
 This is a simple member function.
 
@@ -267,7 +278,8 @@ It should be inherited by all subclasses.
 
 ► **caTest**(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
-*Defined in classes.ts:153*
+*Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
+
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
@@ -294,7 +306,8 @@ It should be inherited by all subclasses.
 
 ► **getInstance**(): [BaseClass](../classes/_classes_.baseclass.md)
 
-*Defined in classes.ts:146*
+*Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
+
 
 This is a static function.
 
@@ -316,7 +329,8 @@ An instance of BaseClass.
 
 ► **getName**(): string
 
-*Defined in classes.ts:106*
+*Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
+
 
 This is a simple static member function.
 
