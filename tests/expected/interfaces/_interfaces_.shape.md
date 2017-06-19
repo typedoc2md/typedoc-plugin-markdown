@@ -28,7 +28,8 @@
 ###  color
 **color**:  *string* 
 
-*Defined in interfaces.ts:39*
+*Defined in [interfaces.ts:39](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L39)*
+
 
 
 

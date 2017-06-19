@@ -20,7 +20,8 @@
 
 **G**:    =  "123".length
 
-*Defined in enums.ts:15*
+*Defined in [enums.ts:15](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L15)*
+
 
 
 
@@ -29,7 +30,8 @@
 
 **None**:   
 
-*Defined in enums.ts:10*
+*Defined in [enums.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L10)*
+
 
 
 
@@ -38,7 +40,8 @@
 
 **Read**:    =  1 << 1
 
-*Defined in enums.ts:11*
+*Defined in [enums.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L11)*
+
 
 
 
@@ -47,7 +50,8 @@
 
 **ReadWrite**:    =  Read | Write
 
-*Defined in enums.ts:13*
+*Defined in [enums.ts:13](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L13)*
+
 
 
 
@@ -56,7 +60,8 @@
 
 **Write**:    =  1 << 2
 
-*Defined in enums.ts:12*
+*Defined in [enums.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L12)*
+
 
 
 

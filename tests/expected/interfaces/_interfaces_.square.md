@@ -29,7 +29,10 @@
 ###  color
 **color**:  *string* 
 
-Inherited from [Shape](_interfaces_.shape.md).[color](_interfaces_.shape.md#color)*Defined in interfaces.ts:39*
+*Inherited from [Shape](_interfaces_.shape.md).[color](_interfaces_.shape.md#color)*
+
+*Defined in [interfaces.ts:39](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L39)*
+
 
 
 
@@ -38,7 +41,8 @@ Inherited from [Shape](_interfaces_.shape.md).[color](_interfaces_.shape.md#colo
 ###  sideLength
 **sideLength**:  *number* 
 
-*Defined in interfaces.ts:43*
+*Defined in [interfaces.ts:43](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L43)*
+
 
 
 

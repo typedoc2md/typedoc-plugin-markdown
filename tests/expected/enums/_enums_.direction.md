@@ -19,7 +19,8 @@
 
 **Down**:   
 
-*Defined in enums.ts:3*
+*Defined in [enums.ts:3](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L3)*
+
 
 
 
@@ -28,7 +29,8 @@
 
 **Left**:   
 
-*Defined in enums.ts:4*
+*Defined in [enums.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L4)*
+
 
 
 
@@ -37,7 +39,8 @@
 
 **Right**:   
 
-*Defined in enums.ts:5*
+*Defined in [enums.ts:5](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L5)*
+
 
 
 
@@ -46,7 +49,8 @@
 
 **Up**:    = 1
 
-*Defined in enums.ts:2*
+*Defined in [enums.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L2)*
+
 
 
 

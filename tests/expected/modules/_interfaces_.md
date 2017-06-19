@@ -33,7 +33,8 @@
 
 **mySearch**:  *[SearchFunc](../interfaces/_interfaces_.searchfunc.md)* 
 
-*Defined in interfaces.ts:11*
+*Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
+
 
 
 <a id="square-1"></a>
@@ -42,7 +43,8 @@
 
 **square**:  *[Square](../interfaces/_interfaces_.square.md)*  =  <Square>{}
 
-*Defined in interfaces.ts:46*
+*Defined in [interfaces.ts:46](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L46)*
+
 
 
 
@@ -53,7 +55,8 @@
 
 ► **createClock**(ctor: *[ClockConstructor](../interfaces/_interfaces_.clockconstructor.md)*, hour: *number*, minute: *number*): [ClockInterface](../interfaces/_interfaces_.clockinterface.md)
 
-*Defined in interfaces.ts:34*
+*Defined in [interfaces.ts:34](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L34)*
+
 
 #### Parameters:
 

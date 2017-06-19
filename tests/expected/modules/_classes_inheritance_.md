@@ -26,7 +26,8 @@
 
 **sam**:  *[Snake](../classes/_classes_inheritance_.snake.md)*  =  new Snake('Sammy the Python')
 
-*Defined in classes/inheritance.ts:25*
+*Defined in [classes/inheritance.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/inheritance.ts#L25)*
+
 
 
 <a id="tom"></a>
@@ -35,7 +36,8 @@
 
 **tom**:  *[Animal](../classes/_classes_inheritance_.animal.md)*  =  new Horse('Tommy the Palomino')
 
-*Defined in classes/inheritance.ts:26*
+*Defined in [classes/inheritance.ts:26](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/inheritance.ts#L26)*
+
 
 
 

@@ -23,7 +23,8 @@
 
 **greeter**:  *[Greeter](../classes/_classes_basic_class_.greeter.md)*  =  new Greeter('world')
 
-*Defined in classes/basic-class.ts:32*
+*Defined in [classes/basic-class.ts:32](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/basic-class.ts#L32)*
+
 
 
 A new instance of our class

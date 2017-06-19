@@ -12,7 +12,7 @@
     "lint": "tslint --type-check --project tsconfig.json",
     "prepare": "tsc && npm run copy:hbs",
     "prepublishOnly": "rm -rf dist && npm run prepare",
-    "samples": "typedoc --theme markdown --readme none --tsconfig tests/src/tsconfig.json --out tests/compiled",
+    "samples": "typedoc --theme markdown --readme none --gitRevision master --tsconfig tests/src/tsconfig.json --out tests/compiled",
     "samples:html": "typedoc --readme none --tsconfig tests/tsconfig.json --out tests/compiledHtml",
     "pretest": "npm run prepare && npm run copy:pkg && npm run samples",
     "test": "mocha -r ts-node/register tests/tests.js",

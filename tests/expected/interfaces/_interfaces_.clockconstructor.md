@@ -25,7 +25,8 @@
 ## ⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](../interfaces/_interfaces_.clockinterface.md)
 
 
-*Defined in interfaces.ts:27*
+*Defined in [interfaces.ts:27](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L27)*
+
 
 #### Parameters:
 

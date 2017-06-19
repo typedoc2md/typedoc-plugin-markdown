@@ -33,7 +33,8 @@ Let’s take a look at a simple class-based example:
 ## ⊕ **new Greeter**(message: *string*): [Greeter](../classes/_classes_basic_class_.greeter.md)
 
 
-*Defined in classes/basic-class.ts:8*
+*Defined in [classes/basic-class.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/basic-class.ts#L8)*
+
 
 Document a constructor
 
@@ -54,7 +55,8 @@ Document a constructor
 ### «Private» greeting
 **greeting**:  *string* 
 
-*Defined in classes/basic-class.ts:8*
+*Defined in [classes/basic-class.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/basic-class.ts#L8)*
+
 
 
 A private property
@@ -72,7 +74,8 @@ A private property
 
 ► **greet**(): string
 
-*Defined in classes/basic-class.ts:21*
+*Defined in [classes/basic-class.ts:21](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/basic-class.ts#L21)*
+
 
 A public method
 

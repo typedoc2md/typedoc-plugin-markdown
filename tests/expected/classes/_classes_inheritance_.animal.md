@@ -40,7 +40,8 @@
 ## ⊕ **new Animal**(theName: *string*): [Animal](../classes/_classes_inheritance_.animal.md)
 
 
-*Defined in classes/inheritance.ts:2*
+*Defined in [classes/inheritance.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/inheritance.ts#L2)*
+
 
 #### Parameters:
 
@@ -58,7 +59,8 @@
 ### «Private» name
 **name**:  *string* 
 
-*Defined in classes/inheritance.ts:2*
+*Defined in [classes/inheritance.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/inheritance.ts#L2)*
+
 
 
 
@@ -73,7 +75,8 @@
 
 ► **move**(distanceInMeters?: *number*): void
 
-*Defined in classes/inheritance.ts:4*
+*Defined in [classes/inheritance.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/inheritance.ts#L4)*
+
 
 #### Parameters:
 

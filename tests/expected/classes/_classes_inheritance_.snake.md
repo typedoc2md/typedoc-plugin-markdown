@@ -37,7 +37,8 @@
 
 *Overrides [Animal](_classes_inheritance_.animal.md).[constructor](_classes_inheritance_.animal.md#constructor)*
 
-*Defined in classes/inheritance.ts:9*
+*Defined in [classes/inheritance.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/inheritance.ts#L9)*
+
 
 #### Parameters:
 
@@ -59,7 +60,8 @@
 
 *Overrides [Animal](_classes_inheritance_.animal.md).[move](_classes_inheritance_.animal.md#move)*
 
-*Defined in classes/inheritance.ts:11*
+*Defined in [classes/inheritance.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes/inheritance.ts#L11)*
+
 
 #### Parameters:
 

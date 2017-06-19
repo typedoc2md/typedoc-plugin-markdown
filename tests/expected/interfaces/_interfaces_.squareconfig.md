@@ -24,7 +24,8 @@
 ### «Optional» color
 **color**:  *string* 
 
-*Defined in interfaces.ts:2*
+*Defined in [interfaces.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L2)*
+
 
 
 
@@ -33,7 +34,8 @@
 ### «Optional» width
 **width**:  *number* 
 
-*Defined in interfaces.ts:3*
+*Defined in [interfaces.ts:3](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L3)*
+
 
 
 

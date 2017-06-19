@@ -29,7 +29,8 @@
 ###  currentTime
 **currentTime**:  *Date* 
 
-*Defined in interfaces.ts:22*
+*Defined in [interfaces.ts:22](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L22)*
+
 
 
 
@@ -44,7 +45,8 @@
 
 ► **setTime**(d: *Date*): any
 
-*Defined in interfaces.ts:23*
+*Defined in [interfaces.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L23)*
+
 
 #### Parameters:
 
@@ -63,7 +65,8 @@
 
 ► **tick**(): any
 
-*Defined in interfaces.ts:31*
+*Defined in [interfaces.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L31)*
+
 
 
 
