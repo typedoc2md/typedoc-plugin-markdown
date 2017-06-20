@@ -45,6 +45,8 @@
 
 ► **setTime**(d: *Date*): any
 
+
+
 *Defined in [interfaces.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L23)*
 
 
@@ -60,6 +62,8 @@
 
 **Returns:** any
 
+
+
 ---
 
 <a id="tick"></a>
@@ -68,12 +72,16 @@
 
 ► **tick**(): any
 
+
+
 *Defined in [interfaces.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L31)*
 
 
 
 
 **Returns:** any
+
+
 
 ---
 

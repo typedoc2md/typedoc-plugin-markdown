@@ -8,6 +8,8 @@ This is the module extending the function moduleFunction().
 ### Callable
 ► **moduleFunction**(arg: *string*): string
 
+
+
 *Defined in [functions.ts:130](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L130)*
 
 
@@ -25,6 +27,8 @@ This is a function that is extended by a module.
 
 
 **Returns:** string
+
+
 
 
 ## Index
@@ -64,6 +68,8 @@ This variable is appended to a function.
 
 ► **append**(): void
 
+
+
 *Defined in [functions.ts:145](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L145)*
 
 
@@ -74,6 +80,8 @@ This function is appended to another function.
 
 **Returns:** void
 
+
+
 ----
 
 
@@ -81,6 +89,8 @@ This function is appended to another function.
 ###  prepend
 
 ► **prepend**(): void
+
+
 
 *Defined in [functions.ts:152](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L152)*
 
@@ -91,6 +101,8 @@ This function is appended to another function.
 
 
 **Returns:** void
+
+
 
 ----
 

@@ -4,8 +4,7 @@
 /dist
 /tmp
 /tests/*.json
-/tests/compiledHtml
-/tests/compiled
+/tests/out
 
 # dependencies
 /node_modules

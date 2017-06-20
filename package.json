@@ -13,7 +13,7 @@
     "prepare": "tsc && npm run copy:hbs",
     "prepublishOnly": "rm -rf dist && npm run test",
     "pretest": "npm run prepare && npm run copy:pkg",
-    "test": "mocha tests/tests.js",
+    "test": "mocha tests/index.js",
     "watch": "concurrently \"npm run watch:tsc\" \"npm run watch:hbs\"",
     "watch:tsc": "tsc -w",
     "watch:hbs": "onchange 'src/**/*.hbs' -- npm run copy:hbs"

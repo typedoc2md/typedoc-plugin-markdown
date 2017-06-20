@@ -141,7 +141,7 @@ This is a simple public member.
 
 
 
-## nameProperty
+### nameProperty
 
 
 getnameProperty(): stringsetnameProperty(value: *string*): void
@@ -180,7 +180,7 @@ The return value.
 
 
 
-## readOnlyNameProperty
+### readOnlyNameProperty
 
 
 getreadOnlyNameProperty(): string
@@ -199,7 +199,7 @@ The return value.
 
 
 
-## writeOnlyNameProperty
+### writeOnlyNameProperty
 
 
 setwriteOnlyNameProperty(value: *string*): void
@@ -235,6 +235,8 @@ The return value.
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void
 
+
+
 *Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
@@ -256,6 +258,8 @@ This is a simple fat arrow function.
 
 **Returns:** void
 
+
+
 ---
 
 <a id="getname"></a>
@@ -263,6 +267,8 @@ This is a simple fat arrow function.
 ###  getName
 
 ► **getName**(): string
+
+
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[getName](../interfaces/_classes_.iprintnameinterface.md#getname)*
 
@@ -284,6 +290,8 @@ member with the same name, both should be documented.
 Return the name.
 
 
+
+
 ---
 
 <a id="print"></a>
@@ -291,6 +299,8 @@ Return the name.
 ###  print
 
 ► **print**(value: *string*): void
+
+
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[print](../interfaces/_classes_.iprintnameinterface.md#print)*
 
@@ -312,6 +322,8 @@ This is a simple interface function.
 
 **Returns:** void
 
+
+
 ---
 
 <a id="printname"></a>
@@ -319,6 +331,8 @@ This is a simple interface function.
 ###  printName
 
 ► **printName**(): void
+
+
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[printName](../interfaces/_classes_.iprintnameinterface.md#printname)*
 
@@ -332,6 +346,8 @@ This is a interface function of IPrintNameInterface
 
 **Returns:** void
 
+
+
 ---
 
 <a id="setname"></a>
@@ -339,6 +355,8 @@ This is a interface function of IPrintNameInterface
 ###  setName
 
 ► **setName**(name: *string*): void
+
+
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)*
 
@@ -363,6 +381,8 @@ It should be inherited by all subclasses.
 
 **Returns:** void
 
+
+
 ---
 
 <a id="catest"></a>
@@ -370,6 +390,8 @@ It should be inherited by all subclasses.
 ### «Static» caTest
 
 ► **caTest**(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+
+
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)*
 
@@ -393,6 +415,8 @@ It should be inherited by all subclasses.
 
 **Returns:** string
 
+
+
 ---
 
 <a id="getinstance"></a>
@@ -400,6 +424,8 @@ It should be inherited by all subclasses.
 ### «Static» getInstance
 
 ► **getInstance**(): [BaseClass](../classes/_classes_.baseclass.md)
+
+
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
 
@@ -418,6 +444,8 @@ Static functions should not be inherited.
 An instance of BaseClass.
 
 
+
+
 ---
 
 <a id="getname-1"></a>
@@ -425,6 +453,8 @@ An instance of BaseClass.
 ### «Static» getName
 
 ► **getName**(): string
+
+
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)*
 
@@ -442,6 +472,8 @@ member with the same name, both should be documented.
 
 **Returns:** string
 Return the name.
+
+
 
 
 ---
