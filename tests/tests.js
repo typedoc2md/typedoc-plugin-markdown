@@ -12,6 +12,19 @@ chai.use(chaiFiles);
 
 describe('Compilation', () => {
 
+  var typedoc = require('typedoc');
+  const app = new typedoc.Application({
+    theme: 'markdown',
+    tsconfig: 'tests/src/tsconfig.json',
+    out: 'tests/compiled',
+    readme: 'none'
+  });
+
+  const result = app.options.read(app.options.getRawValues());
+  const src = app.expandInputFiles(result.inputFiles);
+  const project = app.convert(src);
+  app.generateDocs(project, app.options.getRawValues().out);
+
   it('should compile index', () => {
     expectFile('index.md');
   });
