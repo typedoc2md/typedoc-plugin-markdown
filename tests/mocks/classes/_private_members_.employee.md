@@ -42,7 +42,8 @@
 
 *Overrides [Person](_private_members_.person.md).[constructor](_private_members_.person.md#constructor)*
 
-*Defined in private-members.ts:29*
+*Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
+
 
 #### Parameters:
 
@@ -66,7 +67,8 @@
 
 *Inherited from [Person](_private_members_.person.md).[name](_private_members_.person.md#name)*
 
-*Defined in private-members.ts:23*
+*Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
+
 
 
 
@@ -83,7 +85,8 @@
 
 
 
-*Defined in private-members.ts:36*
+*Defined in [private-members.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L36)*
+
 
 
 

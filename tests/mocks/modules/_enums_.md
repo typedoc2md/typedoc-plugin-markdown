@@ -4,10 +4,9 @@
 
 ## Index
 
-### Enumerations
+### Modules
 
-* [Direction](../enums/_enums_.direction.md)
-* [FileAccess](../enums/_enums_.fileaccess.md)
+* [Enums](_enums_.enums.md)
 
 
 

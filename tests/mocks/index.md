@@ -10,6 +10,7 @@
 * [&quot;enums&quot;](modules/_enums_.md)
 * [&quot;functions&quot;](modules/_functions_.md)
 * [&quot;interfaces&quot;](modules/_interfaces_.md)
+* [&quot;internal&quot;](modules/_internal_.md)
 * [&quot;private-members&quot;](modules/_private_members_.md)
 
 

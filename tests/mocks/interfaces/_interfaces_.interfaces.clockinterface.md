@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [ClockInterface](../interfaces/_interfaces_.clockinterface.md)
+[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
 
 # Interface: ClockInterface
 
@@ -13,13 +13,13 @@
 
 ### Properties
 
-* [currentTime](_interfaces_.clockinterface.md#currenttime)
+* [currentTime](_interfaces_.interfaces.clockinterface.md#currenttime)
 
 
 ### Methods
 
-* [setTime](_interfaces_.clockinterface.md#settime)
-* [tick](_interfaces_.clockinterface.md#tick)
+* [setTime](_interfaces_.interfaces.clockinterface.md#settime)
+* [tick](_interfaces_.interfaces.clockinterface.md#tick)
 
 
 
@@ -74,7 +74,7 @@
 
 
 
-*Defined in [interfaces.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L31)*
+*Defined in [interfaces.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L30)*
 
 
 
