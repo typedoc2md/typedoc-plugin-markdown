@@ -28,7 +28,8 @@ The plugin exposes the following additional options;
 | markdownFlavour | The markdown rendering engine. "github" or "bitbucket" | github
 | markdownSourcefilePrefix* | The prefix to use for sourcefiles. | github source file path
 
-* For Bitbucket use 
+*Examples*:
+
 ```
 --markdownSourcefilePrefix https://bitbucket.org/owner/repository_name/src/master/src/
 ```
