@@ -99,15 +99,16 @@ export class MarkdownTheme extends DefaultTheme {
       isIndex: true,
       isSinglePage: this.options.markdownSinglePage,
     };
+
     const context = Object.assign(entryPoint, additionalContext);
+
     if (this.options.markdownSinglePage) {
       Object.assign(entryPoint, additionalContext);
       urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
      } else {
-      // console.log(context);
-      // fs.writeFile(path.join(__dirname, 'message.txt'), context, 'utf8');
-       // console.log(context);
+
       urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+
       if (entryPoint.children) {
         entryPoint.children.forEach((child: DeclarationReflection) => {
           MarkdownTheme.buildUrls(child, urls);

@@ -10,15 +10,16 @@ const expectedDir = 'tests/mocks/';
 
 chai.use(chaiFiles);
 
-describe('Generate Tests', () => {
+describe('Compile Markdown:', () => {
 
   var typedoc = require('typedoc');
   const app = new typedoc.Application({
     theme: 'markdown',
     tsconfig: 'tests/src/tsconfig.json',
-    out: 'tests/out',
+    out: compiledDir,
     readme: 'none',
     excludePrivate: true,
+    excludeExternals: false,
     gitRevision: 'master'
   });
 

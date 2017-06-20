@@ -26,6 +26,9 @@
     "typedocplugin",
     "typedoc"
   ],
+  "bugs": {
+    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+  },
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
