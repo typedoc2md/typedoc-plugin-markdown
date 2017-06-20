@@ -34,3 +34,14 @@ export const color: string = 'blue';
  * ```
  */
 export const numbers: number[] = [1, 2, 3];
+
+/**
+ * This is an object with various types
+ */
+export const aMixedObject = {
+    someFunction: () => {
+        return 'hello';
+    },
+    someNumber: 10,
+    someString: 'hello',
+};
