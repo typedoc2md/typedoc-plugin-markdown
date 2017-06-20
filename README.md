@@ -20,19 +20,16 @@ typedoc --theme markdown
 
 ### Markdown options
 
-Markdown engines render markdown in different ways. By default typedoc supports github flavoured markdown. For others additional options are required.
-
+The plugin exposes the following additional options;
 
 | Name      | Description | Default value               
 | --------- | ----------- | ----
-| markdownFlavour | The markdown rendering engine. Supports "github" or "bitbucket" | github
-| markdownSourcefilePrefix | The prefix to use for sourcefiles. | github source file path
-| markdownSinglePage | Export to a single file | -
+| markdownSinglePage | Export to a single file | off
+| markdownFlavour | The markdown rendering engine. "github" or "bitbucket" | github
+| markdownSourcefilePrefix* | The prefix to use for sourcefiles. | github source file path
 
-#### Example options
-```javascript
---markdownFlavour bitbucket
-
+* For Bitbucket use 
+```
 --markdownSourcefilePrefix https://bitbucket.org/owner/repository_name/src/master/src/
 ```
  
