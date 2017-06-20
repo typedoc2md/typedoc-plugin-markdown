@@ -23,7 +23,7 @@ export function compileMember(member: DeclarationReflection) {
       member.kindString === 'Module' ||
       member.kindString === 'External module' ||
       member.kindString === 'Interface') {
-      Object.assign(member, { isSinglePage: Options.markdownSinglePage });
+      Object.assign(member, { hideBreadcrumbs: true, isSinglePage: Options.markdownSinglePage });
       md = compileTemplate('templates/reflection.hbs', { model: member });
     } else {
       md = compileTemplate('partials/member.hbs', member);

@@ -1,5 +1,5 @@
 {{!-- {{ breadcrumbs }} --}}
-{{#unless model.hideBack}}[{{project.name}}](../index.md){{~#with model~}}{{> breadcrumb}}{{/with}}{{newLine}}{{/unless}}
+{{#unless model.hideBreadcrumbs}}[{{project.name}}](../index.md){{~#with model~}}{{> breadcrumb}}{{/with}}{{newLine}}{{/unless}}
 {{!-- {{ readme }} --}}
 {{~#if model.displayReadme ~}}
 {{{model.readme}}}
@@ -9,9 +9,6 @@
 {{#compact}}
 {{~#with model~}}
 {{~#unless displayIndexTitle~}}
-{{~#if isSinglePage}}
-{{ getBackLink this }}
-{{~/if}}
 {{~/unless}}
 {{~/with}}
 {{/compact}}

@@ -6,6 +6,8 @@
  * Typedoc imports
  */
 import { DeclarationReflection, ProjectReflection, Reflection } from 'typedoc/dist/lib/models/reflections/index';
+import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
+import { ReflectionType } from 'typedoc/dist/lib/models/types/reflection';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
@@ -38,14 +40,14 @@ export class MarkdownTheme extends DefaultTheme {
         if (reflection.children.hasOwnProperty(key)) {
           const child = reflection.children[key];
           if (mapping.isLeaf) {
-            DefaultTheme.applyAnchorUrl(child, reflection);
+            MarkdownTheme.applyAnchorUrl(child, reflection);
           } else {
             MarkdownTheme.buildUrls(child, urls);
           }
         }
       }
     } else {
-      DefaultTheme.applyAnchorUrl(reflection, reflection.parent);
+      MarkdownTheme.applyAnchorUrl(reflection, reflection.parent);
     }
     return urls;
   }
@@ -61,8 +63,50 @@ export class MarkdownTheme extends DefaultTheme {
     return url;
   }
 
-  private options: IOptions;
+  public static applyAnchorUrl(reflection: any, container: Reflection) {
+    let anchor = DefaultTheme.getUrl(reflection, container, '.');
+    if (reflection.isStatic) {
+      anchor = 'static-' + anchor;
+    }
+    if (container.url === undefined) {
+      reflection.url = '#' + this.getAnchor(reflection, anchor);
+    } else {
+      reflection.url = container.url + '#' + anchor;
+    }
+    reflection.anchor = anchor;
+    reflection.hasOwnDocument = false;
 
+    reflection.traverse((child: any) => {
+      if (child instanceof DeclarationReflection) {
+        MarkdownTheme.applyAnchorUrl(child, container);
+      }
+    });
+  }
+
+  public static getAnchor(item: Reflection, anchor: string) {
+
+    const anchorRef = item.name.replace(/_/g, '-').replace(/"/g, '');
+
+    switch (item.kind) {
+      case ReflectionKind.ExternalModule:
+        anchor = `external-module-${anchorRef}-`;
+        break;
+      case ReflectionKind.Class:
+        anchor = `class-${anchorRef}`;
+        break;
+      case ReflectionKind.Interface:
+        anchor = `interface-${anchorRef}`;
+        break;
+      case ReflectionKind.Module:
+        anchor = `module-${anchorRef}`;
+        break;
+      default:
+        anchor = anchorRef;
+    }
+    return anchor;
+  }
+
+  private options: IOptions;
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath);
 
@@ -95,7 +139,8 @@ export class MarkdownTheme extends DefaultTheme {
     const entryPoint = this.getEntryPoint(project);
     const additionalContext = {
       displayReadme: this.application.options.getValue('readme') !== 'none',
-      hideBack: true,
+      hideBreadcrumbs: true,
+
       isIndex: true,
       isSinglePage: this.options.markdownSinglePage,
     };
@@ -103,9 +148,12 @@ export class MarkdownTheme extends DefaultTheme {
     const context = Object.assign(entryPoint, additionalContext);
 
     if (this.options.markdownSinglePage) {
-      Object.assign(entryPoint, additionalContext);
+
       urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
-     } else {
+      entryPoint.children.forEach((child: DeclarationReflection) => {
+        MarkdownTheme.applyAnchorUrl(child, child.parent);
+      });
+    } else {
 
       urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
 

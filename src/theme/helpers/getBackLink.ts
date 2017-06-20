@@ -7,13 +7,19 @@ export function getBackLink(item: DeclarationReflection) {
 
   const parent = item.parent;
 
-  let label = 'Back to ';
-  if (parent !== null && parent.kindString) {
-    anchor = Utils.getAnchor(parent);
+  let label = '';
+
+  if (parent) {
+
+  label = 'Back to ';
+  if (parent.kindString) {
+    anchor = '#' + parent.anchor;
     label += `${parent.kindString} ${parent.name}`;
   } else {
     anchor = '#index';
     label += 'Index';
+  }
+
   }
 
   return `↩ [${label}](${anchor})`;

@@ -9,7 +9,7 @@ export function getTypeLink(item: DeclarationReflection, url: any) {
   if (item.url) {
     link = '../' + item.url;
   } else {
-    link = Utils.getAnchor(item);
+    link = '#' + item.anchor;
   }
 
   return link;
