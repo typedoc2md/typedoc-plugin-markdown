@@ -1,0 +1,8 @@
+{
+  "theme": "markdown",
+  "out": "tests/out/",
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeExternals": false,
+  "gitRevision": "master"
+}

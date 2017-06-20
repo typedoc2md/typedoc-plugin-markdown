@@ -12,22 +12,6 @@ chai.use(chaiFiles);
 
 describe('Compile Markdown:', () => {
 
-  var typedoc = require('typedoc');
-  const app = new typedoc.Application({
-    theme: 'markdown',
-    tsconfig: 'tests/src/tsconfig.json',
-    out: compiledDir,
-    readme: 'none',
-    excludePrivate: true,
-    excludeExternals: false,
-    gitRevision: 'master'
-  });
-
-  const result = app.options.read(app.options.getRawValues());
-  const src = app.expandInputFiles(result.inputFiles);
-  const project = app.convert(src);
-  app.generateDocs(project, app.options.getRawValues().out);
-
   it('should compile index', () => {
     expectFile('index.md');
   });
@@ -82,7 +66,6 @@ describe('Compile Markdown:', () => {
   });
 
 });
-
 
 function expectFile(fileName) {
   expect(file(`${compiledDir}${fileName}`)).to.equal(file(`${expectedDir}${fileName}`));

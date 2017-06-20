@@ -7,12 +7,13 @@
     "dist/"
   ],
   "scripts": {
+    "compileTestOutput":"rm -rf tests/out && typedoc --tsconfig tests/src/tsconfig.json --options tests/config.default.json && typedoc --tsconfig tests/src/tsconfig.json --options tests/config.singlepage.json",
     "copy:hbs": "cpx src/**/*.hbs dist/",
     "copy:pkg": "copyfiles package.json dist/index.js dist/**/*.hbs dist/**/*.js dist/theme/helpers/*.js node_modules/typedoc-plugin-markdown",
     "lint": "tslint --type-check --project tsconfig.json",
     "prepare": "tsc && npm run copy:hbs",
     "prepublishOnly": "rm -rf dist && npm run test",
-    "pretest": "npm run prepare && npm run copy:pkg",
+    "pretest": "npm run prepare && npm run copy:pkg && npm run compileTestOutput",
     "test": "mocha tests/index.js",
     "watch": "concurrently \"npm run watch:tsc\" \"npm run watch:hbs\"",
     "watch:tsc": "tsc -w",

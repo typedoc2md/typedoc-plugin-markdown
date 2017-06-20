@@ -1,0 +1,9 @@
+{
+  "theme": "markdown",
+  "tsconfig": "tests/src/tsconfig.json",
+  "out": "tests/out/singlepage",
+  "readme": "none",
+  "excludeExternals": false,
+  "gitRevision": "master",
+  "markdownSinglePage": true
+}

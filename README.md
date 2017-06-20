@@ -18,7 +18,7 @@ The plugin provides an additional markdown theme.
 typedoc --theme markdown
 ```
 
-### Markdown options
+### Markdown options (experimental)
 
 The plugin exposes the following additional options;
 
