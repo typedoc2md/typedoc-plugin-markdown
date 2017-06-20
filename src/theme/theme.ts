@@ -22,6 +22,7 @@ interface IOptions {
   includes: string;
   media: string;
   out: string;
+  excludePrivate: boolean;
 }
 
 export class MarkdownTheme extends DefaultTheme {
@@ -72,6 +73,7 @@ export class MarkdownTheme extends DefaultTheme {
     Options.markdownSinglePage = options.markdownSinglePage;
     Options.includes = options.includes;
     Options.media = options.media;
+    Options.excludePrivate = options.excludePrivate;
 
     // remove uneccessary plugins
     renderer.removeComponent('marked');

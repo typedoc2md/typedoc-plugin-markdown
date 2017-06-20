@@ -1,8 +1,11 @@
 import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections';
+import { Options } from '../options';
+
 export function ifDisplayIndexItem(item: DeclarationReflection, opts: any) {
-  if (!item.hasOwnDocument || (item.hasOwnDocument && item.children)) {
-    return opts.fn(this);
-  } else {
+
+  if ((Options.excludePrivate && item.flags.isPrivate)) {
     return opts.inverse(this);
+  } else {
+    return opts.fn(this);
   }
 }

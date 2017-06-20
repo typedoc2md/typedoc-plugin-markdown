@@ -4,4 +4,5 @@ export class Options {
   public static markdownSinglePage: boolean;
   public static includes: string;
   public static media: string;
+  public static excludePrivate: boolean;
 }
