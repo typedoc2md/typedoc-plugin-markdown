@@ -26,7 +26,7 @@ The plugin exposes the following additional options;
 | --------- | ----------- | ----
 | markdownSinglePage | Export to a single file | off
 | markdownFlavour | The markdown rendering engine. "github" or "bitbucket" | github
-| markdownSourcefilePrefix* | The prefix to use for sourcefiles. | github source file path
+| markdownSourcefilePrefix | The prefix to use for sourcefiles. | github source file path
 
 *Examples*:
 
