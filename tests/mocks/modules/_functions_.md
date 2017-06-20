@@ -32,6 +32,8 @@
 
 ► **createSomething**(): object
 
+
+
 *Defined in [functions.ts:161](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L161)*
 
 
@@ -43,6 +45,8 @@ Also no type information is given, the object should be correctly reflected.
 
 **Returns:** object
 
+
+
 ----
 
 
@@ -50,6 +54,8 @@ Also no type information is given, the object should be correctly reflected.
 ###  exportedFunction
 
 ► **exportedFunction**(): void
+
+
 
 *Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L12)*
 
@@ -61,6 +67,8 @@ This is a simple exported function.
 
 **Returns:** void
 
+
+
 ----
 
 
@@ -68,6 +76,8 @@ This is a simple exported function.
 ###  functionWithArguments
 
 ► **functionWithArguments**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
+
+
 
 *Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L41)*
 
@@ -89,6 +99,8 @@ This is a function with multiple arguments and a return value.
 
 **Returns:** number
 
+
+
 ----
 
 
@@ -96,6 +108,8 @@ This is a function with multiple arguments and a return value.
 ###  functionWithDefaults
 
 ► **functionWithDefaults**(valueA?: *string*, valueB?: *number*, valueC?: *number*, valueD?: *boolean*, valueE?: *boolean*): string
+
+
 
 *Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L61)*
 
@@ -121,6 +135,8 @@ This is a function with a parameter that has a default value.
 The input value or the default value.
 
 
+
+
 ----
 
 
@@ -128,6 +144,8 @@ The input value or the default value.
 ###  functionWithDocLink
 
 ► **functionWithDocLink**(): void
+
+
 
 *Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
 
@@ -144,6 +162,8 @@ Taken from http://usejsdoc.org/tags-inline-link.html.
 
 **Returns:** void
 
+
+
 ----
 
 
@@ -151,6 +171,8 @@ Taken from http://usejsdoc.org/tags-inline-link.html.
 ###  functionWithOptionalValue
 
 ► **functionWithOptionalValue**(requiredParam: *string*, optionalParam?: *string*): void
+
+
 
 *Defined in [functions.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L52)*
 
@@ -171,6 +193,8 @@ This is a function with a parameter that is optional.
 
 **Returns:** void
 
+
+
 ----
 
 
@@ -178,6 +202,8 @@ This is a function with a parameter that is optional.
 ###  functionWithRest
 
 ► **functionWithRest**(...rest: *string[]*): string
+
+
 
 *Defined in [functions.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L78)*
 
@@ -199,6 +225,8 @@ This is a function with rest parameter.
 The combined string.
 
 
+
+
 ----
 
 
@@ -206,6 +234,8 @@ The combined string.
 ###  genericFunction
 
 ► **genericFunction**T(value: *T*): T
+
+
 
 *Defined in [functions.ts:121](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L121)*
 
@@ -233,6 +263,8 @@ The type parameter.
 Returns the typed value.
 
 
+
+
 ----
 
 
@@ -240,6 +272,8 @@ Returns the typed value.
 ###  internalFunction
 
 ► **internalFunction**(): void
+
+
 
 *Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
 
@@ -251,13 +285,19 @@ This is an internal function.
 
 **Returns:** void
 
+
+
 ----
 
 
 <a id="multiplesignatures"></a>
 ###  multipleSignatures
 
-► **multipleSignatures**(value: *string*): string► **multipleSignatures**(value: *object*): string
+► **multipleSignatures**(value: *string*): string
+
+► **multipleSignatures**(value: *object*): string
+
+
 
 *Defined in [functions.ts:88](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L88)*
 
@@ -277,6 +317,8 @@ This is the first signature of a function with multiple signatures.
 
 **Returns:** string
 
+
+
 *Defined in [functions.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L96)*
 
 
@@ -295,6 +337,8 @@ This is the second signature of a function with multiple signatures.
 
 **Returns:** string
 
+
+
 ----
 
 
@@ -302,6 +346,8 @@ This is the second signature of a function with multiple signatures.
 ###  variableFunction
 
 ► **variableFunction**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
+
+
 
 *Defined in [functions.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L25)*
 
@@ -322,6 +368,8 @@ This is a function with multiple arguments and a return value.
 
 
 **Returns:** number
+
+
 
 ----
 

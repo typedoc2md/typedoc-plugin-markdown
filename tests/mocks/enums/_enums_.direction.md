@@ -15,7 +15,7 @@
 
 ## Enumeration members
 
-## Down
+### Down
 
 **Down**:   
 
@@ -25,7 +25,7 @@
 
 
 
-## Left
+### Left
 
 **Left**:   
 
@@ -35,7 +35,7 @@
 
 
 
-## Right
+### Right
 
 **Right**:   
 
@@ -45,7 +45,7 @@
 
 
 
-## Up
+### Up
 
 **Up**:    = 1
 

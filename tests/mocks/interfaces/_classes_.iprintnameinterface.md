@@ -71,6 +71,8 @@ It should be inherited by all subinterfaces.
 
 ► **getName**(): string
 
+
+
 *Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
@@ -86,6 +88,8 @@ It should be inherited by all subinterfaces.
 
 **Returns:** string
 
+
+
 ---
 
 <a id="print"></a>
@@ -93,6 +97,8 @@ It should be inherited by all subinterfaces.
 ###  print
 
 ► **print**(value: *string*): void
+
+
 
 *Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)*
 
@@ -117,6 +123,8 @@ It should be inherited by all subinterfaces.
 
 **Returns:** void
 
+
+
 ---
 
 <a id="printname"></a>
@@ -124,6 +132,8 @@ It should be inherited by all subinterfaces.
 ###  printName
 
 ► **printName**(): void
+
+
 
 *Defined in [classes.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
 
@@ -134,6 +144,8 @@ This is a interface function of IPrintNameInterface
 
 
 **Returns:** void
+
+
 
 ---
 

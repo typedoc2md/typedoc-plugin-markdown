@@ -5,12 +5,27 @@ const chai = require('chai');
 const chaiFiles = require('chai-files');
 const file = chaiFiles.file;
 const expect = chai.expect;
-const compiledDir = 'tests/compiled/';
-const expectedDir = 'tests/expected/';
+const compiledDir = 'tests/out/';
+const expectedDir = 'tests/mocks/';
 
 chai.use(chaiFiles);
 
-describe('Compilation', () => {
+describe('Generate Tests', () => {
+
+  var typedoc = require('typedoc');
+  const app = new typedoc.Application({
+    theme: 'markdown',
+    tsconfig: 'tests/src/tsconfig.json',
+    out: 'tests/out',
+    readme: 'none',
+    excludePrivate: true,
+    gitRevision: 'master'
+  });
+
+  const result = app.options.read(app.options.getRawValues());
+  const src = app.expandInputFiles(result.inputFiles);
+  const project = app.convert(src);
+  app.generateDocs(project, app.options.getRawValues().out);
 
   it('should compile index', () => {
     expectFile('index.md');
@@ -18,7 +33,7 @@ describe('Compilation', () => {
 
   it('should compile modules', () => {
 
-    const files = fs.readdirSync(path.join(__dirname, 'expected/modules'));
+    const files = fs.readdirSync(path.join(__dirname, 'mocks/modules'));
 
     files.forEach((filename) => {
       if (!/^\..*/.test(filename)) {
@@ -30,7 +45,7 @@ describe('Compilation', () => {
 
   it('should compile classes', () => {
 
-    const files = fs.readdirSync(path.join(__dirname, 'expected/classes'));
+    const files = fs.readdirSync(path.join(__dirname, 'mocks/classes'));
 
     files.forEach((filename) => {
       if (!/^\..*/.test(filename)) {
@@ -42,7 +57,7 @@ describe('Compilation', () => {
 
   it('should compile interfaces', () => {
 
-    const files = fs.readdirSync(path.join(__dirname, 'expected/interfaces'));
+    const files = fs.readdirSync(path.join(__dirname, 'mocks/interfaces'));
 
     files.forEach((filename) => {
       if (!/^\..*/.test(filename)) {
@@ -55,7 +70,7 @@ describe('Compilation', () => {
 
   it('should compile enums', () => {
 
-    const files = fs.readdirSync(path.join(__dirname, 'expected/enums'));
+    const files = fs.readdirSync(path.join(__dirname, 'mocks/enums'));
 
     files.forEach((filename) => {
       if (!/^\..*/.test(filename)) {
@@ -66,6 +81,7 @@ describe('Compilation', () => {
   });
 
 });
+
 
 function expectFile(fileName) {
   expect(file(`${compiledDir}${fileName}`)).to.equal(file(`${expectedDir}${fileName}`));

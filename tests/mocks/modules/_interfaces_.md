@@ -8,9 +8,11 @@
 
 * [ClockConstructor](../interfaces/_interfaces_.clockconstructor.md)
 * [ClockInterface](../interfaces/_interfaces_.clockinterface.md)
+* [SearchFunc](../interfaces/_interfaces_.searchfunc.md)
 * [Shape](../interfaces/_interfaces_.shape.md)
 * [Square](../interfaces/_interfaces_.square.md)
 * [SquareConfig](../interfaces/_interfaces_.squareconfig.md)
+* [StringArray](../interfaces/_interfaces_.stringarray.md)
 
 
 ### Variables
@@ -55,6 +57,8 @@
 
 ► **createClock**(ctor: *[ClockConstructor](../interfaces/_interfaces_.clockconstructor.md)*, hour: *number*, minute: *number*): [ClockInterface](../interfaces/_interfaces_.clockinterface.md)
 
+
+
 *Defined in [interfaces.ts:34](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L34)*
 
 
@@ -71,6 +75,8 @@
 
 
 **Returns:** [ClockInterface](../interfaces/_interfaces_.clockinterface.md)
+
+
 
 ----
 

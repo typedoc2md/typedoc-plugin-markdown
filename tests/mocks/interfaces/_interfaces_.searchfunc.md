@@ -12,6 +12,8 @@
 ### Callable
 ► **__call**(source: *string*, subString: *string*): boolean
 
+
+
 *Defined in [interfaces.ts:7](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L7)*
 
 
@@ -27,6 +29,8 @@
 
 
 **Returns:** boolean
+
+
 
 
 ## Index

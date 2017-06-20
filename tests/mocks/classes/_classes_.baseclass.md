@@ -1,19 +1,24 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [SubClassB](../classes/_classes_.subclassb.md)
+[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [BaseClass](../classes/_classes_.baseclass.md)
 
-# Class: SubClassB
+# Class: BaseClass
 
 
-This is a class that extends another class.
+This is a simple base class.
 
-The constructor of the original class should be overwritten.
+[[include:class-example.md]]
 
 
 ## Hierarchy
 
+**BaseClass**
 
- [BaseClass](../classes/_classes_.baseclass.md)
+↳  [SubClassA](../classes/_classes_.subclassa.md)
 
-**↳ SubClassB**
+
+
+
+↳  [SubClassB](../classes/_classes_.subclassb.md)
+
 
 
 
@@ -28,24 +33,23 @@ The constructor of the original class should be overwritten.
 
 ### Constructors
 
-* [constructor](_classes_.subclassb.md#constructor)
+* [constructor](_classes_.baseclass.md#constructor)
 
 
 ### Properties
 
-* [kind](_classes_.subclassb.md#kind)
-* [name](_classes_.subclassb.md#name)
+* [kind](_classes_.baseclass.md#kind)
+* [name](_classes_.baseclass.md#name)
 
 
 ### Methods
 
-* [arrowFunction](_classes_.subclassb.md#arrowfunction)
-* [doSomething](_classes_.subclassb.md#dosomething)
-* [getName](_classes_.subclassb.md#getname)
-* [setName](_classes_.subclassb.md#setname)
-* [caTest](_classes_.subclassb.md#catest)
-* [getInstance](_classes_.subclassb.md#getinstance)
-* [getName](_classes_.subclassb.md#getname-1)
+* [arrowFunction](_classes_.baseclass.md#arrowfunction)
+* [getName](_classes_.baseclass.md#getname)
+* [setName](_classes_.baseclass.md#setname)
+* [caTest](_classes_.baseclass.md#catest)
+* [getInstance](_classes_.baseclass.md#getinstance)
+* [getName](_classes_.baseclass.md#getname-1)
 
 
 
@@ -54,12 +58,13 @@ The constructor of the original class should be overwritten.
 ## Constructors
 
 
-## ⊕ **new SubClassB**(name: *string*): [SubClassB](../classes/_classes_.subclassb.md)
+## ⊕ **new BaseClass**(name: *string*): [BaseClass](../classes/_classes_.baseclass.md)
 
 
-*Overrides [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
+## ⊕ **new BaseClass**(source: *[BaseClass](../classes/_classes_.baseclass.md)*): [BaseClass](../classes/_classes_.baseclass.md)
 
-*Defined in [classes.ts:238](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L238)*
+
+*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
 #### Parameters:
@@ -72,7 +77,22 @@ The constructor of the original class should be overwritten.
 
 
 
-**Returns:** [SubClassB](../classes/_classes_.subclassb.md)
+**Returns:** [BaseClass](../classes/_classes_.baseclass.md)
+
+*Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
+
+
+#### Parameters:
+
+| Name  | Type                | Default | Description  |
+| ------ | ------------------- | ------------ | ------------ |
+| source  | [BaseClass](../classes/_classes_.baseclass.md) | - | - |
+
+
+
+
+
+**Returns:** [BaseClass](../classes/_classes_.baseclass.md)
 
 
 ## Properties
@@ -80,8 +100,6 @@ The constructor of the original class should be overwritten.
 <a id="kind"></a>
 ### «Protected» kind
 **kind**:  *number* 
-
-*Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
@@ -97,8 +115,6 @@ This is a simple protected member.
 **name**:  *string* 
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
-
-*Inherited from [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
@@ -119,7 +135,7 @@ This is a simple public member.
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
+
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
@@ -140,28 +156,7 @@ This is a simple fat arrow function.
 
 **Returns:** void
 
----
 
-<a id="dosomething"></a>
-
-###  doSomething
-
-► **doSomething**(value: *[string,[SubClassA](../classes/_classes_.subclassa.md),[SubClassB](../classes/_classes_.subclassb.md)]*): void
-
-*Defined in [classes.ts:243](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L243)*
-
-
-#### Parameters:
-
-| Name  | Type                | Default | Description  |
-| ------ | ------------------- | ------------ | ------------ |
-| value  | [string,[SubClassA](../classes/_classes_.subclassa.md),[SubClassB](../classes/_classes_.subclassb.md)] | - | - |
-
-
-
-
-
-**Returns:** void
 
 ---
 
@@ -171,9 +166,9 @@ This is a simple fat arrow function.
 
 ► **getName**(): string
 
-*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)*
+
+*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
@@ -191,6 +186,8 @@ member with the same name, both should be documented.
 Return the name.
 
 
+
+
 ---
 
 <a id="setname"></a>
@@ -199,7 +196,7 @@ Return the name.
 
 ► **setName**(name: *string*): void
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)*
+
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
@@ -222,6 +219,8 @@ It should be inherited by all subclasses.
 
 **Returns:** void
 
+
+
 ---
 
 <a id="catest"></a>
@@ -230,7 +229,7 @@ It should be inherited by all subclasses.
 
 ► **caTest**(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)*
+
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
@@ -252,6 +251,8 @@ It should be inherited by all subclasses.
 
 **Returns:** string
 
+
+
 ---
 
 <a id="getinstance"></a>
@@ -260,7 +261,7 @@ It should be inherited by all subclasses.
 
 ► **getInstance**(): [BaseClass](../classes/_classes_.baseclass.md)
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
+
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
@@ -277,6 +278,8 @@ Static functions should not be inherited.
 An instance of BaseClass.
 
 
+
+
 ---
 
 <a id="getname-1"></a>
@@ -285,7 +288,7 @@ An instance of BaseClass.
 
 ► **getName**(): string
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)*
+
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
@@ -301,6 +304,8 @@ member with the same name, both should be documented.
 
 **Returns:** string
 Return the name.
+
+
 
 
 ---

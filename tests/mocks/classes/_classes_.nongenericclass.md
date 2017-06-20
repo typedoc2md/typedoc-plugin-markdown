@@ -124,6 +124,8 @@ Public number property
 
 ► **getValue**(): [SubClassB](../classes/_classes_.subclassb.md)
 
+
+
 *Inherited from [GenericClass](_classes_.genericclass.md).[getValue](_classes_.genericclass.md#getvalue)*
 
 *Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
@@ -133,6 +135,8 @@ Public number property
 
 **Returns:** [SubClassB](../classes/_classes_.subclassb.md)
 
+
+
 ---
 
 <a id="setvalue"></a>
@@ -140,6 +144,8 @@ Public number property
 ###  setValue
 
 ► **setValue**(value: *[SubClassB](../classes/_classes_.subclassb.md)*): void
+
+
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[setValue](_classes_.genericclass.md#setvalue)*
 
@@ -158,6 +164,8 @@ Public number property
 
 
 **Returns:** void
+
+
 
 ---
 

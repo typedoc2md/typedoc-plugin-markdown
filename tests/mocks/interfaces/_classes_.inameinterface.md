@@ -64,6 +64,8 @@ It should be inherited by all subinterfaces.
 
 ► **getName**(): string
 
+
+
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
 
@@ -76,6 +78,8 @@ It should be inherited by all subinterfaces.
 
 
 **Returns:** string
+
+
 
 ---
 

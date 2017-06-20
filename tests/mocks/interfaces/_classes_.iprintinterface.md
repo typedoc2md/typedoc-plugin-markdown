@@ -33,6 +33,8 @@ This is a simple interface.
 
 ► **print**(value: *string*): void
 
+
+
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
 
@@ -53,6 +55,8 @@ It should be inherited by all subinterfaces.
 
 
 **Returns:** void
+
+
 
 ---
 
