@@ -1,6 +1,6 @@
 {{{displayAnchor anchor}}}
 
-### {{#each flags}}«{{this}}»{{/each}} {{name}}
+### {{#if flags}}{{#each flags}}«{{this}}»{{/each}}{{/if}} {{name}}
 
 {{#if signatures}}
 {{> member.signatures}}
