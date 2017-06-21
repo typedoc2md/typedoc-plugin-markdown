@@ -1,7 +1,7 @@
 {{#compact}}
 {{#if this}}
 {{#if reflection}}
-[{{reflection.name}}]({{ getTypeLink reflection  }})
+[{{reflection.name}}]({{ relativeURL reflection.url }})
 {{#if typeArguments}}
 {{#each typeArguments}}
 {{#if @index}}, {{/if}}{{> type}}{{/each}}{{/if}}
@@ -15,7 +15,7 @@
 {{#each types}}
 {{#if @index}}
 {{#ifCond ../type '==' 'intersection'}}{{else}}⎮{{/ifCond}}
- {{/if}}
+{{/if}}
 {{> type}}
 {{/each}}
 {{else}}
@@ -33,7 +33,7 @@
 {{/if}}
 {{#if typeArguments}}
 {{#each typeArguments}}
-{{#if @index}},{{/if}}{{> type}} {{/each}}
+{{#if @index}},{{/if}}<{{> type}}>{{/each}}
 {{/if}}
 {{/if}}
 {{/if}}

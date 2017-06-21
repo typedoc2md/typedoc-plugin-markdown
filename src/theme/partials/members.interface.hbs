@@ -1,5 +1,6 @@
-
 {{#each groups}}
+{{#unless allChildrenHaveOwnDocument}}
+{{#ifPropertiesGroup this}}
 ## Properties
 
 | Name  | Type                
@@ -7,4 +8,8 @@
 {{#each children}}
 | {{ name }}  | {{#with type}}{{>type}}{{/with}} {{#if defaultValue}} =_{{defaultValue}}_{{/if}} 
 {{/each}}
+{{else}}
+{{{ compileGroup this}}}
+{{/ifPropertiesGroup}}
+{{/unless}}
 {{/each}}
