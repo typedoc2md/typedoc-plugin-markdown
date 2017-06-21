@@ -9,32 +9,12 @@
 
 
 
-## Index
-
-### Properties
-
-* [currentTime](_interfaces_.interfaces.clockinterface.md#currenttime)
-
-
-### Methods
-
-* [setTime](_interfaces_.interfaces.clockinterface.md#settime)
-* [tick](_interfaces_.interfaces.clockinterface.md#tick)
-
-
 
 ## Properties
-###  currentTime
 
-**currentTime**:  *Date* 
-
-*Defined in [interfaces.ts:22](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L22)*
-
-
-
-
-
-
+| Name  | Type                
+| ------ | ------------------- 
+| currentTime  | Date  
 ## Methods
 ###  setTime
 

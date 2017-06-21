@@ -9,19 +9,12 @@ This is a simple interface.
 
 **IPrintInterface**
 
-↳  [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+↳  [IPrintNameInterface](_classes_.iprintnameinterface.md)
 
 
 
 
 
-
-
-## Index
-
-### Methods
-
-* [print](_classes_.iprintinterface.md#print)
 
 
 

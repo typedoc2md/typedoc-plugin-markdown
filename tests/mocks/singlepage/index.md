@@ -162,9 +162,9 @@ This is a simple base class.
 
 ###  constructor
 
-⊕ **new BaseClass**(name: *string*): [BaseClass](../#class-BaseClass)
+⊕ **new BaseClass**(name: *string*): [BaseClass](#class-BaseClass)
 
-⊕ **new BaseClass**(source: *[BaseClass](../#class-BaseClass)*): [BaseClass](../#class-BaseClass)
+⊕ **new BaseClass**(source: *[BaseClass](#class-BaseClass)*): [BaseClass](#class-BaseClass)
 
 
 
@@ -181,7 +181,7 @@ This is a simple base class.
 
 
 
-**Returns:** [BaseClass](../#class-BaseClass)
+**Returns:** [BaseClass](#class-BaseClass)
 
 
 
@@ -192,20 +192,20 @@ This is a simple base class.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| source  | [BaseClass](../#class-BaseClass) | - | - |
+| source  | [BaseClass](#class-BaseClass) | - | - |
 
 
 
 
 
-**Returns:** [BaseClass](../#class-BaseClass)
+**Returns:** [BaseClass](#class-BaseClass)
 
 
 
 
 ### «Private» internalClass
 
-**internalClass**:  *[InternalClass](../#class-InternalClass)* 
+**internalClass**:  *[InternalClass](#class-InternalClass)* 
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
@@ -243,7 +243,7 @@ This is a simple public member.
 
 ### «Static»«Private» instance
 
-**instance**:  *[BaseClass](../#class-BaseClass)* 
+**instance**:  *[BaseClass](#class-BaseClass)* 
 
 *Defined in [classes.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
 
@@ -258,7 +258,7 @@ Static members should not be inherited.
 
 ### «Static»«Private» instances
 
-**instances**:  *[BaseClass](../#class-BaseClass)[]* 
+**instances**:  *[BaseClass](#class-BaseClass)[]* 
 
 *Defined in [classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L56)*
 
@@ -371,7 +371,7 @@ It should be inherited by all subclasses.
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](../#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -384,7 +384,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](../#class-BaseClass) | - | - |
+| originalValues  | [BaseClass](#class-BaseClass) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -400,7 +400,7 @@ It should be inherited by all subclasses.
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](../#class-BaseClass)
+► **getInstance**(): [BaseClass](#class-BaseClass)
 
 
 
@@ -415,7 +415,7 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](../#class-BaseClass)
+**Returns:** [BaseClass](#class-BaseClass)
 An instance of BaseClass.
 
 
@@ -461,7 +461,7 @@ This is a generic class.
 
 ###  constructor
 
-⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](../#class-GenericClass)
+⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](#class-GenericClass)
 
 
 
@@ -484,7 +484,7 @@ Constructor short text.
 
 
 
-**Returns:** [GenericClass](../#class-GenericClass)
+**Returns:** [GenericClass](#class-GenericClass)
 
 
 
@@ -590,7 +590,7 @@ This is an internal class, it is not exported.
 
 ###  constructor
 
-⊕ **new InternalClass**(options: *object*): [InternalClass](../#class-InternalClass)
+⊕ **new InternalClass**(options: *object*): [InternalClass](#class-InternalClass)
 
 
 
@@ -607,7 +607,7 @@ This is an internal class, it is not exported.
 
 
 
-**Returns:** [InternalClass](../#class-InternalClass)
+**Returns:** [InternalClass](#class-InternalClass)
 
 
 
@@ -626,7 +626,7 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 ###  constructor
 
-⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](../#class-SubClassB)*, p3: *number*, p4: *number*): [NonGenericClass](../#class-NonGenericClass)
+⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](#class-SubClassB)*, p3: *number*, p4: *number*): [NonGenericClass](#class-NonGenericClass)
 
 
 
@@ -643,7 +643,7 @@ Constructor short text.
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
 | p1  | any | - | Constructor param |
-| p2  | [SubClassB](../#class-SubClassB) | - | Private string property |
+| p2  | [SubClassB](#class-SubClassB) | - | Private string property |
 | p3  | number | - | Public number property |
 | p4  | number | - | Public implicit any property |
 
@@ -651,14 +651,14 @@ Constructor short text.
 
 
 
-**Returns:** [NonGenericClass](../#class-NonGenericClass)
+**Returns:** [NonGenericClass](#class-NonGenericClass)
 
 
 
 
 ### «Protected» p2
 
-**p2**:  *[SubClassB](../#class-SubClassB)* 
+**p2**:  *[SubClassB](#class-SubClassB)* 
 
 *Inherited from [GenericClass](#class-GenericClass).[p2](#p2)*
 
@@ -686,7 +686,7 @@ Public number property
 
 ###  value
 
-**value**:  *[SubClassB](../#class-SubClassB)* 
+**value**:  *[SubClassB](#class-SubClassB)* 
 
 *Inherited from [GenericClass](#class-GenericClass).[value](#value)*
 
@@ -697,7 +697,7 @@ Public number property
 
 ###  getValue
 
-► **getValue**(): [SubClassB](../#class-SubClassB)
+► **getValue**(): [SubClassB](#class-SubClassB)
 
 
 
@@ -708,14 +708,14 @@ Public number property
 
 
 
-**Returns:** [SubClassB](../#class-SubClassB)
+**Returns:** [SubClassB](#class-SubClassB)
 
 
 
 
 ###  setValue
 
-► **setValue**(value: *[SubClassB](../#class-SubClassB)*): void
+► **setValue**(value: *[SubClassB](#class-SubClassB)*): void
 
 
 
@@ -729,7 +729,7 @@ Public number property
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| value  | [SubClassB](../#class-SubClassB) | - | [[getValue]] is the counterpart. |
+| value  | [SubClassB](#class-SubClassB) | - | [[getValue]] is the counterpart. |
 
 
 
@@ -758,9 +758,9 @@ from BaseClass.
 
 ###  constructor
 
-⊕ **new SubClassA**(name: *string*): [SubClassA](../#class-SubClassA)
+⊕ **new SubClassA**(name: *string*): [SubClassA](#class-SubClassA)
 
-⊕ **new SubClassA**(source: *[BaseClass](../#class-BaseClass)*): [SubClassA](../#class-SubClassA)
+⊕ **new SubClassA**(source: *[BaseClass](#class-BaseClass)*): [SubClassA](#class-SubClassA)
 
 
 
@@ -779,7 +779,7 @@ from BaseClass.
 
 
 
-**Returns:** [SubClassA](../#class-SubClassA)
+**Returns:** [SubClassA](#class-SubClassA)
 
 
 
@@ -792,13 +792,13 @@ from BaseClass.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| source  | [BaseClass](../#class-BaseClass) | - | - |
+| source  | [BaseClass](#class-BaseClass) | - | - |
 
 
 
 
 
-**Returns:** [SubClassA](../#class-SubClassA)
+**Returns:** [SubClassA](#class-SubClassA)
 
 
 
@@ -1058,7 +1058,7 @@ It should be inherited by all subclasses.
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](../#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -1073,7 +1073,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](../#class-BaseClass) | - | - |
+| originalValues  | [BaseClass](#class-BaseClass) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -1089,7 +1089,7 @@ It should be inherited by all subclasses.
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](../#class-BaseClass)
+► **getInstance**(): [BaseClass](#class-BaseClass)
 
 
 
@@ -1106,7 +1106,7 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](../#class-BaseClass)
+**Returns:** [BaseClass](#class-BaseClass)
 An instance of BaseClass.
 
 
@@ -1157,7 +1157,7 @@ The constructor of the original class should be overwritten.
 
 ###  constructor
 
-⊕ **new SubClassB**(name: *string*): [SubClassB](../#class-SubClassB)
+⊕ **new SubClassB**(name: *string*): [SubClassB](#class-SubClassB)
 
 
 
@@ -1176,7 +1176,7 @@ The constructor of the original class should be overwritten.
 
 
 
-**Returns:** [SubClassB](../#class-SubClassB)
+**Returns:** [SubClassB](#class-SubClassB)
 
 
 
@@ -1243,7 +1243,7 @@ This is a simple fat arrow function.
 
 ###  doSomething
 
-► **doSomething**(value: *[string,[SubClassA](../#class-SubClassA),[SubClassB](../#class-SubClassB)]*): void
+► **doSomething**(value: *[string,[SubClassA](#class-SubClassA),[SubClassB](#class-SubClassB)]*): void
 
 
 
@@ -1254,7 +1254,7 @@ This is a simple fat arrow function.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| value  | [string,[SubClassA](../#class-SubClassA),[SubClassB](../#class-SubClassB)] | - | - |
+| value  | [string,[SubClassA](#class-SubClassA),[SubClassB](#class-SubClassB)] | - | - |
 
 
 
@@ -1328,7 +1328,7 @@ It should be inherited by all subclasses.
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](../#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -1343,7 +1343,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](../#class-BaseClass) | - | - |
+| originalValues  | [BaseClass](#class-BaseClass) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -1359,7 +1359,7 @@ It should be inherited by all subclasses.
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](../#class-BaseClass)
+► **getInstance**(): [BaseClass](#class-BaseClass)
 
 
 
@@ -1376,7 +1376,7 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](../#class-BaseClass)
+**Returns:** [BaseClass](#class-BaseClass)
 An instance of BaseClass.
 
 
@@ -1851,7 +1851,7 @@ This is a simple exported function.
 
 ###  functionWithArguments
 
-► **functionWithArguments**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../#interface-INameInterface)*): number
+► **functionWithArguments**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](#interface-INameInterface)*): number
 
 
 
@@ -1867,7 +1867,7 @@ This is a function with multiple arguments and a return value.
 | ------ | ------------------- | ------------ | ------------ |
 | paramZ  | string | - | This is a string parameter. |
 | paramG  | any | - | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA  | [INameInterface](../#interface-INameInterface) | - | This is a **parameter** pointing to an interface. |
+| paramA  | [INameInterface](#interface-INameInterface) | - | This is a **parameter** pointing to an interface. |
 
 
 
@@ -2097,7 +2097,7 @@ This is the second signature of a function with multiple signatures.
 
 ###  variableFunction
 
-► **variableFunction**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../#interface-INameInterface)*): number
+► **variableFunction**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](#interface-INameInterface)*): number
 
 
 
@@ -2113,7 +2113,7 @@ This is a function with multiple arguments and a return value.
 | ------ | ------------------- | ------------ | ------------ |
 | paramZ  | string | - | This is a string parameter. |
 | paramG  | any | - | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA  | [INameInterface](../#interface-INameInterface) | - | This is a **parameter** pointing to an interface. |
+| paramA  | [INameInterface](#interface-INameInterface) | - | This is a **parameter** pointing to an interface. |
 
 
 
@@ -2154,7 +2154,7 @@ This is a function with multiple arguments and a return value.
 
 ###  constructor
 
-⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](../#interface-ClockInterface)
+⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](#interface-ClockInterface)
 
 
 
@@ -2172,7 +2172,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [ClockInterface](../#interface-ClockInterface)
+**Returns:** [ClockInterface](#interface-ClockInterface)
 
 
 
@@ -2349,7 +2349,7 @@ This is a function with multiple arguments and a return value.
 
 ###  mySearch
 
-**mySearch**:  *[SearchFunc](../#SearchFunc)* 
+**mySearch**:  *[SearchFunc](#SearchFunc)* 
 
 *Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
 
@@ -2358,7 +2358,7 @@ This is a function with multiple arguments and a return value.
 
 ###  square
 
-**square**:  *[Square](../#interface-Square)*  =  {} as Square
+**square**:  *[Square](#interface-Square)*  =  {} as Square
 
 *Defined in [interfaces.ts:45](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L45)*
 
@@ -2367,7 +2367,7 @@ This is a function with multiple arguments and a return value.
 
 ###  createClock
 
-► **createClock**(ctor: *[ClockConstructor](../#interface-ClockConstructor)*, hour: *number*, minute: *number*): [ClockInterface](../#interface-ClockInterface)
+► **createClock**(ctor: *[ClockConstructor](#interface-ClockConstructor)*, hour: *number*, minute: *number*): [ClockInterface](#interface-ClockInterface)
 
 
 
@@ -2378,7 +2378,7 @@ This is a function with multiple arguments and a return value.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| ctor  | [ClockConstructor](../#interface-ClockConstructor) | - | - |
+| ctor  | [ClockConstructor](#interface-ClockConstructor) | - | - |
 | hour  | number | - | - |
 | minute  | number | - | - |
 
@@ -2386,7 +2386,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [ClockInterface](../#interface-ClockInterface)
+**Returns:** [ClockInterface](#interface-ClockInterface)
 
 
 
@@ -2412,7 +2412,7 @@ This is a function with multiple arguments and a return value.
 
 ###  constructor
 
-⊕ **new Greeter**(message: *string*): [Greeter](../#class-Greeter)
+⊕ **new Greeter**(message: *string*): [Greeter](#class-Greeter)
 
 
 
@@ -2429,7 +2429,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [Greeter](../#class-Greeter)
+**Returns:** [Greeter](#class-Greeter)
 
 
 
@@ -2461,7 +2461,7 @@ This is a function with multiple arguments and a return value.
 
 ###  greeter
 
-**greeter**:  *[Greeter](../#class-Greeter)*  =  new Greeter('world')
+**greeter**:  *[Greeter](#class-Greeter)*  =  new Greeter('world')
 
 *Defined in [internal.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L18)*
 
@@ -2489,7 +2489,7 @@ This is a function with multiple arguments and a return value.
 
 ###  constructor
 
-⊕ **new Employee**(name: *string*, department: *string*): [Employee](../#class-Employee)
+⊕ **new Employee**(name: *string*, department: *string*): [Employee](#class-Employee)
 
 
 
@@ -2509,7 +2509,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [Employee](../#class-Employee)
+**Returns:** [Employee](#class-Employee)
 
 
 
@@ -2577,7 +2577,7 @@ This is a function with multiple arguments and a return value.
 
 ###  constructor
 
-⊕ **new Person**(name: *string*): [Person](../#class-Person)
+⊕ **new Person**(name: *string*): [Person](#class-Person)
 
 
 
@@ -2594,7 +2594,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [Person](../#class-Person)
+**Returns:** [Person](#class-Person)
 
 
 

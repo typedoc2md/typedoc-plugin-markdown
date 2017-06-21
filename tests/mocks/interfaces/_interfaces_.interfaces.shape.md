@@ -6,31 +6,17 @@
 
 **Shape**
 
-↳  [Square](../interfaces/_interfaces_.interfaces.square.md)
+↳  [Square](_interfaces_.interfaces.square.md)
 
 
-
-
-
-
-
-## Index
-
-### Properties
-
-* [color](_interfaces_.interfaces.shape.md#color)
-
-
-
-## Properties
-###  color
-
-**color**:  *string* 
-
-*Defined in [interfaces.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L38)*
 
 
 
 
 
 
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+| color  | string  

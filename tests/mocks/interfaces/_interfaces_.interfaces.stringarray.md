@@ -11,6 +11,4 @@
 
 ### Indexable
 
-[ index: number]:string## Index
-
-
+[ index: number]:string

@@ -65,7 +65,7 @@
 ## Variables
 ###  mySearch
 
-**mySearch**:  *[SearchFunc](../modules/_interfaces_.interfaces.md#searchfunc)* 
+**mySearch**:  *[SearchFunc](_interfaces_.interfaces.md#searchfunc)* 
 
 *Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
 

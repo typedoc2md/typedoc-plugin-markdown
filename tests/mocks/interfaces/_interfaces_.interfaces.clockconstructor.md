@@ -9,19 +9,12 @@
 
 
 
-## Index
-
-### Constructors
-
-* [constructor](_interfaces_.interfaces.clockconstructor.md#constructor)
-
-
 
 ## Constructors
 <a id="constructor"></a>
 
 
-## ⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
+## ⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](_interfaces_.interfaces.clockinterface.md)
 
 
 *Defined in [interfaces.ts:26](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L26)*
@@ -38,6 +31,6 @@
 
 
 
-**Returns:** [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
+**Returns:** [ClockInterface](_interfaces_.interfaces.clockinterface.md)
 
 

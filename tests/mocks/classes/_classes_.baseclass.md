@@ -12,12 +12,12 @@ This is a simple base class.
 
 **BaseClass**
 
-↳  [SubClassA](../classes/_classes_.subclassa.md)
+↳  [SubClassA](_classes_.subclassa.md)
 
 
 
 
-↳  [SubClassB](../classes/_classes_.subclassb.md)
+↳  [SubClassB](_classes_.subclassb.md)
 
 
 
@@ -57,10 +57,10 @@ This is a simple base class.
 <a id="constructor"></a>
 
 
-## ⊕ **new BaseClass**(name: *string*): [BaseClass](../classes/_classes_.baseclass.md)
+## ⊕ **new BaseClass**(name: *string*): [BaseClass](_classes_.baseclass.md)
 
 
-## ⊕ **new BaseClass**(source: *[BaseClass](../classes/_classes_.baseclass.md)*): [BaseClass](../classes/_classes_.baseclass.md)
+## ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
 
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
@@ -76,7 +76,7 @@ This is a simple base class.
 
 
 
-**Returns:** [BaseClass](../classes/_classes_.baseclass.md)
+**Returns:** [BaseClass](_classes_.baseclass.md)
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
@@ -85,13 +85,13 @@ This is a simple base class.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| source  | [BaseClass](../classes/_classes_.baseclass.md) | - | - |
+| source  | [BaseClass](_classes_.baseclass.md) | - | - |
 
 
 
 
 
-**Returns:** [BaseClass](../classes/_classes_.baseclass.md)
+**Returns:** [BaseClass](_classes_.baseclass.md)
 
 
 ## Properties
@@ -215,7 +215,7 @@ It should be inherited by all subclasses.
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -228,7 +228,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](../classes/_classes_.baseclass.md) | - | - |
+| originalValues  | [BaseClass](_classes_.baseclass.md) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -245,7 +245,7 @@ It should be inherited by all subclasses.
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](../classes/_classes_.baseclass.md)
+► **getInstance**(): [BaseClass](_classes_.baseclass.md)
 
 
 
@@ -260,7 +260,7 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](../classes/_classes_.baseclass.md)
+**Returns:** [BaseClass](_classes_.baseclass.md)
 An instance of BaseClass.
 
 

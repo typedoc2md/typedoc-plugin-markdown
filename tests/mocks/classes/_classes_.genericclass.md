@@ -6,7 +6,7 @@
 This is a generic class.
 
 ## Type parameters
-#### T :  [BaseClass](../classes/_classes_.baseclass.md)
+#### T :  [BaseClass](_classes_.baseclass.md)
 
 This a type parameter.
 
@@ -15,7 +15,7 @@ This a type parameter.
 
 **GenericClass**
 
-↳  [NonGenericClass](../classes/_classes_.nongenericclass.md)
+↳  [NonGenericClass](_classes_.nongenericclass.md)
 
 
 
@@ -48,7 +48,7 @@ This a type parameter.
 <a id="constructor"></a>
 
 
-## ⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](../classes/_classes_.genericclass.md)
+## ⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](_classes_.genericclass.md)
 
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
@@ -70,7 +70,7 @@ Constructor short text.
 
 
 
-**Returns:** [GenericClass](../classes/_classes_.genericclass.md)
+**Returns:** [GenericClass](_classes_.genericclass.md)
 
 
 ## Properties

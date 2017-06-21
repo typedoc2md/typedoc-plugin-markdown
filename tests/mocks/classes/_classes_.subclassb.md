@@ -11,7 +11,7 @@ The constructor of the original class should be overwritten.
 ## Hierarchy
 
 
- [BaseClass](../classes/_classes_.baseclass.md)
+ [BaseClass](_classes_.baseclass.md)
 
 **↳ SubClassB**
 
@@ -53,7 +53,7 @@ The constructor of the original class should be overwritten.
 <a id="constructor"></a>
 
 
-## ⊕ **new SubClassB**(name: *string*): [SubClassB](../classes/_classes_.subclassb.md)
+## ⊕ **new SubClassB**(name: *string*): [SubClassB](_classes_.subclassb.md)
 
 
 *Overrides [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
@@ -71,7 +71,7 @@ The constructor of the original class should be overwritten.
 
 
 
-**Returns:** [SubClassB](../classes/_classes_.subclassb.md)
+**Returns:** [SubClassB](_classes_.subclassb.md)
 
 
 ## Properties
@@ -142,7 +142,7 @@ This is a simple fat arrow function.
 
 ###  doSomething
 
-► **doSomething**(value: *[string,[SubClassA](../classes/_classes_.subclassa.md),[SubClassB](../classes/_classes_.subclassb.md)]*): void
+► **doSomething**(value: *[string,[SubClassA](_classes_.subclassa.md),[SubClassB](_classes_.subclassb.md)]*): void
 
 
 
@@ -153,7 +153,7 @@ This is a simple fat arrow function.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| value  | [string,[SubClassA](../classes/_classes_.subclassa.md),[SubClassB](../classes/_classes_.subclassb.md)] | - | - |
+| value  | [string,[SubClassA](_classes_.subclassa.md),[SubClassB](_classes_.subclassb.md)] | - | - |
 
 
 
@@ -230,7 +230,7 @@ It should be inherited by all subclasses.
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](../classes/_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -245,7 +245,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](../classes/_classes_.baseclass.md) | - | - |
+| originalValues  | [BaseClass](_classes_.baseclass.md) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -262,7 +262,7 @@ It should be inherited by all subclasses.
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](../classes/_classes_.baseclass.md)
+► **getInstance**(): [BaseClass](_classes_.baseclass.md)
 
 
 
@@ -279,7 +279,7 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](../classes/_classes_.baseclass.md)
+**Returns:** [BaseClass](_classes_.baseclass.md)
 An instance of BaseClass.
 
 

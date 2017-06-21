@@ -6,7 +6,7 @@
 
 **Person**
 
-↳  [Employee](../classes/_private_members_.employee.md)
+↳  [Employee](_private_members_.employee.md)
 
 
 
@@ -31,7 +31,7 @@
 <a id="constructor"></a>
 
 
-## ⊕ **new Person**(name: *string*): [Person](../classes/_private_members_.person.md)
+## ⊕ **new Person**(name: *string*): [Person](_private_members_.person.md)
 
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
@@ -47,7 +47,7 @@
 
 
 
-**Returns:** [Person](../classes/_private_members_.person.md)
+**Returns:** [Person](_private_members_.person.md)
 
 
 ## Properties

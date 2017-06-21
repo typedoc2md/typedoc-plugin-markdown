@@ -8,12 +8,12 @@ This is a interface inheriting from two other interfaces.
 ## Hierarchy
 
 
- [INameInterface](../interfaces/_classes_.inameinterface.md)
+ [INameInterface](_classes_.inameinterface.md)
 
 
 
 
- [IPrintInterface](../interfaces/_classes_.iprintinterface.md)
+ [IPrintInterface](_classes_.iprintinterface.md)
 
 **↳ IPrintNameInterface**
 
@@ -26,41 +26,12 @@ This is a interface inheriting from two other interfaces.
 
 * [SubClassA](../classes/_classes_.subclassa.md)
 
-## Index
-
-### Properties
-
-* [name](_classes_.iprintnameinterface.md#name)
-
-
-### Methods
-
-* [getName](_classes_.iprintnameinterface.md#getname)
-* [print](_classes_.iprintnameinterface.md#print)
-* [printName](_classes_.iprintnameinterface.md#printname)
-
-
 
 ## Properties
-###  name
 
-**name**:  *string* 
-
-*Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)*
-
-*Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
-
-
-
-This is a interface member of INameInterface.
-
-It should be inherited by all subinterfaces.
-
-
-
-
-
-
+| Name  | Type                
+| ------ | ------------------- 
+| name  | string  
 ## Methods
 ###  getName
 

@@ -9,7 +9,7 @@ This is a simple interface.
 
 **INameInterface**
 
-↳  [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+↳  [IPrintNameInterface](_classes_.iprintnameinterface.md)
 
 
 
@@ -23,37 +23,12 @@ This is a simple interface.
 * [SubClassA](../classes/_classes_.subclassa.md)
 * [SubClassB](../classes/_classes_.subclassb.md)
 
-## Index
-
-### Properties
-
-* [name](_classes_.inameinterface.md#name)
-
-
-### Methods
-
-* [getName](_classes_.inameinterface.md#getname)
-
-
 
 ## Properties
-###  name
 
-**name**:  *string* 
-
-*Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
-
-
-
-This is a interface member of INameInterface.
-
-It should be inherited by all subinterfaces.
-
-
-
-
-
-
+| Name  | Type                
+| ------ | ------------------- 
+| name  | string  
 ## Methods
 ###  getName
 

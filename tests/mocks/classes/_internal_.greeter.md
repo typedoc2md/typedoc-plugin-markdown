@@ -31,7 +31,7 @@
 <a id="constructor"></a>
 
 
-## ⊕ **new Greeter**(message: *string*): [Greeter](../classes/_internal_.greeter.md)
+## ⊕ **new Greeter**(message: *string*): [Greeter](_internal_.greeter.md)
 
 
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
@@ -47,7 +47,7 @@
 
 
 
-**Returns:** [Greeter](../classes/_internal_.greeter.md)
+**Returns:** [Greeter](_internal_.greeter.md)
 
 
 ## Properties

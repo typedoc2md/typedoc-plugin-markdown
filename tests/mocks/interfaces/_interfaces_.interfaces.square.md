@@ -5,7 +5,7 @@
 ## Hierarchy
 
 
- [Shape](../interfaces/_interfaces_.interfaces.shape.md)
+ [Shape](_interfaces_.interfaces.shape.md)
 
 **↳ Square**
 
@@ -14,36 +14,10 @@
 
 
 
-## Index
-
-### Properties
-
-* [color](_interfaces_.interfaces.square.md#color)
-* [sideLength](_interfaces_.interfaces.square.md#sidelength)
-
-
 
 ## Properties
-###  color
 
-**color**:  *string* 
-
-*Inherited from [Shape](_interfaces_.interfaces.shape.md).[color](_interfaces_.interfaces.shape.md#color)*
-
-*Defined in [interfaces.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L38)*
-
-
-
-
-
-###  sideLength
-
-**sideLength**:  *number* 
-
-*Defined in [interfaces.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L42)*
-
-
-
-
-
-
+| Name  | Type                
+| ------ | ------------------- 
+| color  | string  
+| sideLength  | number  

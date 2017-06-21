@@ -5,7 +5,7 @@
 ## Hierarchy
 
 
- [Person](../classes/_private_members_.person.md)
+ [Person](_private_members_.person.md)
 
 **↳ Employee**
 
@@ -36,7 +36,7 @@
 <a id="constructor"></a>
 
 
-## ⊕ **new Employee**(name: *string*, department: *string*): [Employee](../classes/_private_members_.employee.md)
+## ⊕ **new Employee**(name: *string*, department: *string*): [Employee](_private_members_.employee.md)
 
 
 *Overrides [Person](_private_members_.person.md).[constructor](_private_members_.person.md#constructor)*
@@ -55,7 +55,7 @@
 
 
 
-**Returns:** [Employee](../classes/_private_members_.employee.md)
+**Returns:** [Employee](_private_members_.employee.md)
 
 
 ## Properties

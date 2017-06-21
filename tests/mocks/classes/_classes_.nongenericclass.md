@@ -8,7 +8,7 @@ This a non generic class derived from a [[GenericClass|generic class]].
 ## Hierarchy
 
 
- [GenericClass](../classes/_classes_.genericclass.md)[SubClassB](../classes/_classes_.subclassb.md)
+ [GenericClass](_classes_.genericclass.md)[SubClassB](_classes_.subclassb.md)
 
 **↳ NonGenericClass**
 
@@ -42,7 +42,7 @@ This a non generic class derived from a [[GenericClass|generic class]].
 <a id="constructor"></a>
 
 
-## ⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](../classes/_classes_.subclassb.md)*, p3: *number*, p4: *number*): [NonGenericClass](../classes/_classes_.nongenericclass.md)
+## ⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](_classes_.subclassb.md)*, p3: *number*, p4: *number*): [NonGenericClass](_classes_.nongenericclass.md)
 
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)*
@@ -58,7 +58,7 @@ Constructor short text.
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
 | p1  | any | - | Constructor param |
-| p2  | [SubClassB](../classes/_classes_.subclassb.md) | - | Private string property |
+| p2  | [SubClassB](_classes_.subclassb.md) | - | Private string property |
 | p3  | number | - | Public number property |
 | p4  | number | - | Public implicit any property |
 
@@ -66,13 +66,13 @@ Constructor short text.
 
 
 
-**Returns:** [NonGenericClass](../classes/_classes_.nongenericclass.md)
+**Returns:** [NonGenericClass](_classes_.nongenericclass.md)
 
 
 ## Properties
 ### «Protected» p2
 
-**p2**:  *[SubClassB](../classes/_classes_.subclassb.md)* 
+**p2**:  *[SubClassB](_classes_.subclassb.md)* 
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p2](_classes_.genericclass.md#p2)*
 
@@ -102,7 +102,7 @@ Public number property
 
 ###  value
 
-**value**:  *[SubClassB](../classes/_classes_.subclassb.md)* 
+**value**:  *[SubClassB](_classes_.subclassb.md)* 
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[value](_classes_.genericclass.md#value)*
 
@@ -116,7 +116,7 @@ Public number property
 ## Methods
 ###  getValue
 
-► **getValue**(): [SubClassB](../classes/_classes_.subclassb.md)
+► **getValue**(): [SubClassB](_classes_.subclassb.md)
 
 
 
@@ -127,7 +127,7 @@ Public number property
 
 
 
-**Returns:** [SubClassB](../classes/_classes_.subclassb.md)
+**Returns:** [SubClassB](_classes_.subclassb.md)
 
 
 
@@ -135,7 +135,7 @@ Public number property
 
 ###  setValue
 
-► **setValue**(value: *[SubClassB](../classes/_classes_.subclassb.md)*): void
+► **setValue**(value: *[SubClassB](_classes_.subclassb.md)*): void
 
 
 
@@ -149,7 +149,7 @@ Public number property
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| value  | [SubClassB](../classes/_classes_.subclassb.md) | - | [[getValue]] is the counterpart. |
+| value  | [SubClassB](_classes_.subclassb.md) | - | [[getValue]] is the counterpart. |
 
 
 
