@@ -60,7 +60,6 @@ from BaseClass.
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 
@@ -106,7 +105,6 @@ from BaseClass.
 
 
 ## Properties
-
 ### «Protected» kind
 
 **kind**:  *number* 
@@ -141,7 +139,6 @@ This is a simple public member.
 
 
 ## Accessors
-
 ###  nameProperty
 
 
@@ -229,7 +226,6 @@ The return value.
 
 
 ## Methods
-
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void

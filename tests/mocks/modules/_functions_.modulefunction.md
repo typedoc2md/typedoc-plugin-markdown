@@ -46,7 +46,6 @@ This is a function that is extended by a module.
 
 
 ## Variables
-
 ###  functionVariable
 
 **functionVariable**:  *string* 
@@ -62,7 +61,6 @@ This variable is appended to a function.
 
 
 ## Functions
-
 ###  append
 
 ► **append**(): void

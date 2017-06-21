@@ -21,7 +21,6 @@ This is an internal class, it is not exported.
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 

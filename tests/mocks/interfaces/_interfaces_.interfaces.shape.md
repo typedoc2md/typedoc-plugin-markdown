@@ -23,7 +23,6 @@
 
 
 ## Properties
-
 ###  color
 
 **color**:  *string* 

@@ -42,7 +42,6 @@ This is a interface inheriting from two other interfaces.
 
 
 ## Properties
-
 ###  name
 
 **name**:  *string* 
@@ -63,7 +62,6 @@ It should be inherited by all subinterfaces.
 
 
 ## Methods
-
 ###  getName
 
 ► **getName**(): string

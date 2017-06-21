@@ -28,7 +28,6 @@
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 
@@ -52,7 +51,6 @@
 
 
 ## Properties
-
 ###  greeting
 
 **greeting**:  *string* 
@@ -65,7 +63,6 @@
 
 
 ## Methods
-
 ###  greet
 
 ► **greet**(): string

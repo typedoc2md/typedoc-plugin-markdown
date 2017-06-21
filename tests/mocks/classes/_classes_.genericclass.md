@@ -45,7 +45,6 @@ This a type parameter.
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 
@@ -75,7 +74,6 @@ Constructor short text.
 
 
 ## Properties
-
 ### «Protected» p2
 
 **p2**:  *T* 
@@ -114,7 +112,6 @@ Public number property
 
 
 ## Methods
-
 ###  getValue
 
 ► **getValue**(): T

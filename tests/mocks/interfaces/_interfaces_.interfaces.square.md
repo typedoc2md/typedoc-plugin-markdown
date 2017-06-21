@@ -24,7 +24,6 @@
 
 
 ## Properties
-
 ###  color
 
 **color**:  *string* 

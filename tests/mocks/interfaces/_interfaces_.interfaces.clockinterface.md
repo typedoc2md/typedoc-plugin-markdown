@@ -24,7 +24,6 @@
 
 
 ## Properties
-
 ###  currentTime
 
 **currentTime**:  *Date* 
@@ -37,7 +36,6 @@
 
 
 ## Methods
-
 ###  setTime
 
 ► **setTime**(d: *Date*): any

@@ -28,7 +28,6 @@
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 
@@ -52,7 +51,6 @@
 
 
 ## Properties
-
 ### «Protected» name
 
 **name**:  *string* 

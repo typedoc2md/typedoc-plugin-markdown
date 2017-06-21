@@ -19,7 +19,6 @@
 
 
 ## Properties
-
 ### «Optional» color
 
 **color**:  *string* 

@@ -16,7 +16,6 @@
 
 
 ## Variables
-
 ###  greeter
 
 **greeter**:  *[Greeter](../classes/_internal_.greeter.md)*  =  new Greeter('world')

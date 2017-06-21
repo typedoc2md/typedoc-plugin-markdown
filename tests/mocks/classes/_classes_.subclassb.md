@@ -50,7 +50,6 @@ The constructor of the original class should be overwritten.
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 
@@ -76,7 +75,6 @@ The constructor of the original class should be overwritten.
 
 
 ## Properties
-
 ### «Protected» kind
 
 **kind**:  *number* 
@@ -111,7 +109,6 @@ This is a simple public member.
 
 
 ## Methods
-
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void

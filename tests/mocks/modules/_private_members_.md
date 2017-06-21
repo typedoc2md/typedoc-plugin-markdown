@@ -23,7 +23,6 @@
 
 ## Variables
 
-
 ###  publicVar
 
 **publicVar**:  *"public variable"*  = "public variable"
@@ -36,7 +35,6 @@
 
 
 ## Functions
-
 
 ###  publicFunction
 

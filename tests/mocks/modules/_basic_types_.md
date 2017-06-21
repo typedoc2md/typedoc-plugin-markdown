@@ -23,7 +23,6 @@ numbers, strings, structures, boolean values, and the like.
 
 
 ## Variables
-
 ###  amount
 
 **amount**:  *number*  = 6
@@ -89,19 +88,9 @@ const numbers: number[] = [1, 2, 3];
 
 
 
-## Object literals
+<a id="amixedobject"></a>
 
-###  aMixedObject
-
-**aMixedObject**:  *object* 
-
-*Defined in [basic-types.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L41)*
-
-
-
-This is an object with various types
-
-
+## Object literal: aMixedObject
 
 ###  someNumber
 

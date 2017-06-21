@@ -26,7 +26,6 @@ This is a simple interface.
 
 
 ## Methods
-
 ###  print
 
 ► **print**(value: *string*): void

@@ -54,7 +54,6 @@ This is a simple base class.
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 
@@ -96,7 +95,6 @@ This is a simple base class.
 
 
 ## Properties
-
 ### «Protected» kind
 
 **kind**:  *number* 
@@ -127,7 +125,6 @@ This is a simple public member.
 
 
 ## Methods
-
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void

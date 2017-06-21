@@ -32,7 +32,6 @@
 
 
 ## Type aliases
-
 ###  SearchFunc
 
 **SearchFunc**:  *function* 
@@ -64,7 +63,6 @@
 
 
 ## Variables
-
 ###  mySearch
 
 **mySearch**:  *[SearchFunc](../modules/_interfaces_.interfaces.md#searchfunc)* 
@@ -87,7 +85,6 @@
 
 
 ## Functions
-
 ###  createClock
 
 ► **createClock**(ctor: *[ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md)*, hour: *number*, minute: *number*): [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)

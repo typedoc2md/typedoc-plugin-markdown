@@ -15,7 +15,6 @@
 
 
 ## Enumeration members
-
 ###  G
 
 **G**:    =  '123'.length

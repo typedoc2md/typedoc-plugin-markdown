@@ -39,7 +39,6 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 
 ## Constructors
-
 <a id="constructor"></a>
 
 
@@ -71,7 +70,6 @@ Constructor short text.
 
 
 ## Properties
-
 ### «Protected» p2
 
 **p2**:  *[SubClassB](../classes/_classes_.subclassb.md)* 
@@ -116,7 +114,6 @@ Public number property
 
 
 ## Methods
-
 ###  getValue
 
 ► **getValue**(): [SubClassB](../classes/_classes_.subclassb.md)

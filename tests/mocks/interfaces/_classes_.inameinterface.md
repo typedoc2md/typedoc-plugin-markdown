@@ -37,7 +37,6 @@ This is a simple interface.
 
 
 ## Properties
-
 ###  name
 
 **name**:  *string* 
@@ -56,7 +55,6 @@ It should be inherited by all subinterfaces.
 
 
 ## Methods
-
 ###  getName
 
 ► **getName**(): string

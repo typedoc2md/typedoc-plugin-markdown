@@ -26,7 +26,6 @@
 
 
 ## Functions
-
 ###  createSomething
 
 ► **createSomething**(): object
