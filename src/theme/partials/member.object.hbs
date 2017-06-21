@@ -1,0 +1,11 @@
+{{{displayAnchor name}}}
+
+## {{kindString}}: {{name}}
+
+{{#each groups}}
+{{#each children}}
+{{#unless hasOwnDocument}}
+{{> member}}
+{{/unless}}
+{{/each}}
+{{/each}}

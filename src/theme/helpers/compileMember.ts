@@ -8,17 +8,20 @@ export function compileMember(member: DeclarationReflection) {
   let md: hbs.SafeString = '';
 
   if (!(Options.excludePrivate && member.flags.isPrivate)) {
-    if (member.kind === ReflectionKind.Constructor) {
-      md = compileTemplate('partials/member.constructor.hbs', member);
-    } else if (
-      member.kind === ReflectionKind.Class ||
-      member.kind === ReflectionKind.Module ||
-      member.kind === ReflectionKind.ExternalModule ||
-      member.kind === ReflectionKind.Interface) {
-      Object.assign(member, { hideBreadcrumbs: true, isSinglePage: Options.markdownSinglePage });
-      md = compileTemplate('templates/reflection.hbs', { model: member });
-    } else {
-      md = compileTemplate('partials/member.hbs', member);
+
+    switch (member.kind) {
+      case ReflectionKind.Class || ReflectionKind.Module || ReflectionKind.ExternalModule || ReflectionKind.Interface:
+        Object.assign(member, { hideBreadcrumbs: true, isSinglePage: Options.markdownSinglePage });
+        md = compileTemplate('templates/reflection.hbs', { model: member });
+        break;
+      case ReflectionKind.Constructor:
+        md = compileTemplate('partials/member.constructor.hbs', member);
+        break;
+      case ReflectionKind.ObjectLiteral:
+        md = compileTemplate('partials/member.object.hbs', member);
+        break;
+      default:
+        md = compileTemplate('partials/member.hbs', member);
     }
   }
 
