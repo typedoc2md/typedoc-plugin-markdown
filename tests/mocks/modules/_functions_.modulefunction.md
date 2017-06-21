@@ -47,8 +47,6 @@ This is a function that is extended by a module.
 
 ## Variables
 
-<a id="functionvariable"></a>
-
 ###  functionVariable
 
 **functionVariable**:  *string* 
@@ -61,9 +59,10 @@ This variable is appended to a function.
 
 
 
+
+
 ## Functions
 
-<a id="append"></a>
 ###  append
 
 ► **append**(): void
@@ -82,10 +81,8 @@ This function is appended to another function.
 
 
 
-----
 
 
-<a id="prepend"></a>
 ###  prepend
 
 ► **prepend**(): void
@@ -103,8 +100,6 @@ This function is appended to another function.
 **Returns:** void
 
 
-
-----
 
 
 

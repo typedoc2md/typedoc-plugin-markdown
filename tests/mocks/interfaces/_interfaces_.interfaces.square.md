@@ -25,8 +25,8 @@
 
 ## Properties
 
-<a id="color"></a>
 ###  color
+
 **color**:  *string* 
 
 *Inherited from [Shape](_interfaces_.interfaces.shape.md).[color](_interfaces_.interfaces.shape.md#color)*
@@ -37,12 +37,11 @@
 
 
 
-<a id="sidelength"></a>
 ###  sideLength
+
 **sideLength**:  *number* 
 
 *Defined in [interfaces.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L42)*
-
 
 
 

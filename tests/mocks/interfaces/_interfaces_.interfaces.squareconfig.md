@@ -20,8 +20,8 @@
 
 ## Properties
 
-<a id="color"></a>
 ### «Optional» color
+
 **color**:  *string* 
 
 *Defined in [interfaces.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L4)*
@@ -30,12 +30,11 @@
 
 
 
-<a id="width"></a>
 ### «Optional» width
+
 **width**:  *number* 
 
 *Defined in [interfaces.ts:5](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L5)*
-
 
 
 

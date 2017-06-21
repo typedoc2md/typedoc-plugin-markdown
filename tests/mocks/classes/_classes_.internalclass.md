@@ -20,9 +20,9 @@ This is an internal class, it is not exported.
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new InternalClass**(options: *object*): [InternalClass](../classes/_classes_.internalclass.md)

@@ -59,9 +59,9 @@ from BaseClass.
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new SubClassA**(name: *string*): [SubClassA](../classes/_classes_.subclassa.md)
@@ -107,8 +107,8 @@ from BaseClass.
 
 ## Properties
 
-<a id="kind"></a>
 ### «Protected» kind
+
 **kind**:  *number* 
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
@@ -122,8 +122,8 @@ This is a simple protected member.
 
 
 
-<a id="name"></a>
 ###  name
+
 **name**:  *string* 
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[name](../interfaces/_classes_.iprintnameinterface.md#name)*
@@ -140,8 +140,9 @@ This is a simple public member.
 
 
 
+## Accessors
 
-### nameProperty
+###  nameProperty
 
 
 getnameProperty(): stringsetnameProperty(value: *string*): void
@@ -180,7 +181,7 @@ The return value.
 
 
 
-### readOnlyNameProperty
+###  readOnlyNameProperty
 
 
 getreadOnlyNameProperty(): string
@@ -199,7 +200,7 @@ The return value.
 
 
 
-### writeOnlyNameProperty
+###  writeOnlyNameProperty
 
 
 setwriteOnlyNameProperty(value: *string*): void
@@ -228,8 +229,6 @@ The return value.
 
 
 ## Methods
-
-<a id="arrowfunction"></a>
 
 ###  arrowFunction
 
@@ -260,9 +259,7 @@ This is a simple fat arrow function.
 
 
 
----
 
-<a id="getname"></a>
 
 ###  getName
 
@@ -292,9 +289,7 @@ Return the name.
 
 
 
----
 
-<a id="print"></a>
 
 ###  print
 
@@ -324,9 +319,7 @@ This is a simple interface function.
 
 
 
----
 
-<a id="printname"></a>
 
 ###  printName
 
@@ -348,9 +341,7 @@ This is a interface function of IPrintNameInterface
 
 
 
----
 
-<a id="setname"></a>
 
 ###  setName
 
@@ -383,9 +374,7 @@ It should be inherited by all subclasses.
 
 
 
----
 
-<a id="catest"></a>
 
 ### «Static» caTest
 
@@ -417,9 +406,7 @@ It should be inherited by all subclasses.
 
 
 
----
 
-<a id="getinstance"></a>
 
 ### «Static» getInstance
 
@@ -446,9 +433,7 @@ An instance of BaseClass.
 
 
 
----
 
-<a id="getname-1"></a>
 
 ### «Static» getName
 
@@ -476,7 +461,6 @@ Return the name.
 
 
 
----
 
 
 

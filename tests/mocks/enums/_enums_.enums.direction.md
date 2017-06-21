@@ -15,7 +15,7 @@
 
 ## Enumeration members
 
-### Down
+###  Down
 
 **Down**:   
 
@@ -25,7 +25,7 @@
 
 
 
-### Left
+###  Left
 
 **Left**:   
 
@@ -35,7 +35,7 @@
 
 
 
-### Right
+###  Right
 
 **Right**:   
 
@@ -45,12 +45,11 @@
 
 
 
-### Up
+###  Up
 
 **Up**:    = 1
 
 *Defined in [enums.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L4)*
-
 
 
 

@@ -1,6 +1,6 @@
 
 #  typedoc-plugin-markdown
-↩ [Back to Index](#index)
+
 ## Index
 
 ### External modules
@@ -15,6 +15,11 @@
 
 
 
+## External modules
+
+
+# External module: "basic-types"
+
 
 For programs to be useful, we need to be able to work with some of the simplest units of data:
 numbers, strings, structures, boolean values, and the like.
@@ -23,21 +28,19 @@ numbers, strings, structures, boolean values, and the like.
 
 ### Variables
 
-* [amount](#amount-variable)
-* [color](#color-variable)
-* [isDone](#isdone-variable)
-* [numbers](#numbers-variable)
+* [amount](#amount)
+* [color](#color)
+* [isDone](#isDone)
+* [numbers](#numbers)
 
 
 ### Object literals
 
-* [aMixedObject](#amixedobject-object literal)
+* [aMixedObject](#aMixedObject)
 
 
 
 ## Variables
-
-
 
 ###  amount
 
@@ -103,8 +106,16 @@ const numbers: number[] = [1, 2, 3];
 
 
 
-<a id="amixedobject"></a>
-## Object literal: aMixedObject
+
+## Object literals
+
+###  aMixedObject
+
+**aMixedObject**:  *object* 
+
+*Defined in [basic-types.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L41)*
+
+
 
 This is an object with various types
 
@@ -115,7 +126,6 @@ This is an object with various types
 **someNumber**:  *number*  = 10
 
 *Defined in [basic-types.ts:45](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L45)*
-
 
 
 
@@ -144,32 +154,37 @@ This is an object with various types
 
 
 
-----
 
 
 
 
 
+# External module: "classes"
 
 ## Index
 
 ### Classes
 
-* [BaseClass](#class-baseclass)
-* [GenericClass](#class-genericclass)
-* [InternalClass](#class-internalclass)
-* [NonGenericClass](#class-nongenericclass)
-* [SubClassA](#class-subclassa)
-* [SubClassB](#class-subclassb)
+* [BaseClass](#class-BaseClass)
+* [GenericClass](#class-GenericClass)
+* [InternalClass](#class-InternalClass)
+* [NonGenericClass](#class-NonGenericClass)
+* [SubClassA](#class-SubClassA)
+* [SubClassB](#class-SubClassB)
 
 
 ### Interfaces
 
-* [INameInterface](#interface-inameinterface)
-* [IPrintInterface](#interface-iprintinterface)
-* [IPrintNameInterface](#interface-iprintnameinterface)
+* [INameInterface](#interface-INameInterface)
+* [IPrintInterface](#interface-IPrintInterface)
+* [IPrintNameInterface](#interface-IPrintNameInterface)
 
 
+
+## Classes
+
+
+# Class: BaseClass
 
 
 This is a simple base class.
@@ -181,12 +196,12 @@ This is a simple base class.
 
 **BaseClass**
 
-↳  [SubClassA](#class-subclassa)
+↳  [SubClassA](../#class-SubClassA)
 
 
 
 
-↳  [SubClassB](#class-subclassb)
+↳  [SubClassB](../#class-SubClassB)
 
 
 
@@ -196,45 +211,45 @@ This is a simple base class.
 
 ## Implements
 
-* [INameInterface](#interface-inameinterface)
+* [INameInterface](../#interface-INameInterface)
 
 ## Index
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [internalClass](#-private-internalclass-property)
-* [kind](#-protected-kind-property)
-* [name](#name-property)
-* [instance](#-private-instance-property)
-* [instances](#-private-instances-property)
+* [internalClass](#internalClass)
+* [kind](#kind)
+* [name](#name)
+* [instance](#instance)
+* [instances](#instances)
 
 
 ### Methods
 
-* [arrowFunction](#arrowfunction-method)
-* [checkName](#-private-checkname-method)
-* [getName](#getname-method)
-* [setName](#setname-method)
-* [caTest](#-static-catest-method)
-* [getInstance](#-static-getinstance-method)
-* [getName](#-static-getname-method)
+* [arrowFunction](#arrowFunction)
+* [checkName](#checkName)
+* [getName](#getName)
+* [setName](#setName)
+* [caTest](#caTest)
+* [getInstance](#getInstance)
+* [getName](#getName)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new BaseClass**(name: *string*): [BaseClass](#class-baseclass)
+
+## ⊕ **new BaseClass**(name: *string*): [BaseClass](../#class-BaseClass)
 
 
-## ⊕ **new BaseClass**(source: *[BaseClass](#class-baseclass)*): [BaseClass](#class-baseclass)
+## ⊕ **new BaseClass**(source: *[BaseClass](../#class-BaseClass)*): [BaseClass](../#class-BaseClass)
 
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
@@ -250,7 +265,7 @@ This is a simple base class.
 
 
 
-**Returns:** [BaseClass](#class-baseclass)
+**Returns:** [BaseClass](../#class-BaseClass)
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
@@ -259,20 +274,20 @@ This is a simple base class.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| source  | [BaseClass](#class-baseclass) | - | - |
+| source  | [BaseClass](../#class-BaseClass) | - | - |
 
 
 
 
 
-**Returns:** [BaseClass](#class-baseclass)
+**Returns:** [BaseClass](../#class-BaseClass)
 
 
 ## Properties
 
-
 ### «Private» internalClass
-**internalClass**:  *[InternalClass](#class-internalclass)* 
+
+**internalClass**:  *[InternalClass](../#class-InternalClass)* 
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
@@ -283,8 +298,8 @@ This is an instance member of an internal class.
 
 
 
-
 ### «Protected» kind
+
 **kind**:  *number* 
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
@@ -296,11 +311,11 @@ This is a simple protected member.
 
 
 
-
 ###  name
+
 **name**:  *string* 
 
-*Implementation of INameInterface.name*
+*Implementation of [INameInterface](#interface-INameInterface).[name](#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
@@ -311,9 +326,9 @@ This is a simple public member.
 
 
 
-
 ### «Static»«Private» instance
-**instance**:  *[BaseClass](#class-baseclass)* 
+
+**instance**:  *[BaseClass](../#class-BaseClass)* 
 
 *Defined in [classes.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
 
@@ -327,9 +342,9 @@ Static members should not be inherited.
 
 
 
-
 ### «Static»«Private» instances
-**instances**:  *[BaseClass](#class-baseclass)[]* 
+
+**instances**:  *[BaseClass](../#class-BaseClass)[]* 
 
 *Defined in [classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L56)*
 
@@ -338,10 +353,7 @@ Static members should not be inherited.
 
 
 
-
 ## Methods
-
-
 
 ###  arrowFunction
 
@@ -370,8 +382,6 @@ This is a simple fat arrow function.
 
 
 
----
-
 
 
 ### «Private» checkName
@@ -392,8 +402,6 @@ This is a private function.
 
 
 
----
-
 
 
 ###  getName
@@ -402,7 +410,7 @@ This is a private function.
 
 
 
-*Implementation of INameInterface.getName*
+*Implementation of [INameInterface](#interface-INameInterface).[getName](#getName)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
@@ -421,8 +429,6 @@ Return the name.
 
 
 
-
----
 
 
 
@@ -455,13 +461,11 @@ It should be inherited by all subclasses.
 
 
 
----
-
 
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](#class-baseclass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](../#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -474,7 +478,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](#class-baseclass) | - | - |
+| originalValues  | [BaseClass](../#class-BaseClass) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -487,13 +491,11 @@ It should be inherited by all subclasses.
 
 
 
----
-
 
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](#class-baseclass)
+► **getInstance**(): [BaseClass](../#class-BaseClass)
 
 
 
@@ -508,13 +510,11 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](#class-baseclass)
+**Returns:** [BaseClass](../#class-BaseClass)
 An instance of BaseClass.
 
 
 
-
----
 
 
 
@@ -542,16 +542,18 @@ Return the name.
 
 
 
----
 
 
 
+
+
+# Class: GenericClass
 
 
 This is a generic class.
 
 ## Type parameters
-#### T :  [BaseClass](#class-baseclass)
+#### T :  [BaseClass](../#class-BaseClass)
 
 This a type parameter.
 
@@ -560,7 +562,7 @@ This a type parameter.
 
 **GenericClass**
 
-↳  [NonGenericClass](#class-nongenericclass)
+↳  [NonGenericClass](../#class-NonGenericClass)
 
 
 
@@ -572,30 +574,30 @@ This a type parameter.
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [p2](#-protected-p2-property)
-* [p3](#p3-property)
-* [p4](#-private-p4-property)
-* [value](#value-property)
+* [p2](#p2)
+* [p3](#p3)
+* [p4](#p4)
+* [value](#value)
 
 
 ### Methods
 
-* [getValue](#getvalue-method)
-* [setValue](#setvalue-method)
+* [getValue](#getValue)
+* [setValue](#setValue)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](#class-genericclass)
+
+## ⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](../#class-GenericClass)
 
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
@@ -617,13 +619,13 @@ Constructor short text.
 
 
 
-**Returns:** [GenericClass](#class-genericclass)
+**Returns:** [GenericClass](../#class-GenericClass)
 
 
 ## Properties
 
-
 ### «Protected» p2
+
 **p2**:  *T* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
@@ -635,8 +637,8 @@ Private string property
 
 
 
-
 ###  p3
+
 **p3**:  *number* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
@@ -648,8 +650,8 @@ Public number property
 
 
 
-
 ### «Private» p4
+
 **p4**:  *number* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
@@ -662,8 +664,8 @@ Public implicit any property
 
 
 
-
 ###  value
+
 **value**:  *T* 
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
@@ -673,10 +675,7 @@ Public implicit any property
 
 
 
-
 ## Methods
-
-
 
 ###  getValue
 
@@ -692,8 +691,6 @@ Public implicit any property
 **Returns:** T
 
 
-
----
 
 
 
@@ -721,10 +718,12 @@ Public implicit any property
 
 
 
----
 
 
 
+
+
+# Class: InternalClass
 
 
 This is an internal class, it is not exported.
@@ -740,16 +739,16 @@ This is an internal class, it is not exported.
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new InternalClass**(options: *object*): [InternalClass](#class-internalclass)
+
+## ⊕ **new InternalClass**(options: *object*): [InternalClass](../#class-InternalClass)
 
 
 *Defined in [classes.ts:169](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
@@ -765,9 +764,12 @@ This is an internal class, it is not exported.
 
 
 
-**Returns:** [InternalClass](#class-internalclass)
+**Returns:** [InternalClass](../#class-InternalClass)
 
 
+
+
+# Class: NonGenericClass
 
 
 This a non generic class derived from a [[GenericClass|generic class]].
@@ -775,7 +777,7 @@ This a non generic class derived from a [[GenericClass|generic class]].
 ## Hierarchy
 
 
- [GenericClass](#class-genericclass)[SubClassB](#class-subclassb)
+ [GenericClass](../#class-GenericClass)[SubClassB](../#class-SubClassB)
 
 **↳ NonGenericClass**
 
@@ -788,32 +790,32 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [p2](#-protected-p2-property)
-* [p3](#p3-property)
-* [value](#value-property)
+* [p2](#p2)
+* [p3](#p3)
+* [value](#value)
 
 
 ### Methods
 
-* [getValue](#getvalue-method)
-* [setValue](#setvalue-method)
+* [getValue](#getValue)
+* [setValue](#setValue)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](#class-subclassb)*, p3: *number*, p4: *number*): [NonGenericClass](#class-nongenericclass)
+
+## ⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](../#class-SubClassB)*, p3: *number*, p4: *number*): [NonGenericClass](../#class-NonGenericClass)
 
 
-*Inherited from GenericClass.constructor*
+*Inherited from [GenericClass](#class-GenericClass).[constructor](#constructor)*
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
@@ -826,7 +828,7 @@ Constructor short text.
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
 | p1  | any | - | Constructor param |
-| p2  | [SubClassB](#class-subclassb) | - | Private string property |
+| p2  | [SubClassB](../#class-SubClassB) | - | Private string property |
 | p3  | number | - | Public number property |
 | p4  | number | - | Public implicit any property |
 
@@ -834,16 +836,16 @@ Constructor short text.
 
 
 
-**Returns:** [NonGenericClass](#class-nongenericclass)
+**Returns:** [NonGenericClass](../#class-NonGenericClass)
 
 
 ## Properties
 
-
 ### «Protected» p2
-**p2**:  *[SubClassB](#class-subclassb)* 
 
-*Inherited from GenericClass.p2*
+**p2**:  *[SubClassB](../#class-SubClassB)* 
+
+*Inherited from [GenericClass](#class-GenericClass).[p2](#p2)*
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
@@ -854,11 +856,11 @@ Private string property
 
 
 
-
 ###  p3
+
 **p3**:  *number* 
 
-*Inherited from GenericClass.p3*
+*Inherited from [GenericClass](#class-GenericClass).[p3](#p3)*
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
@@ -869,11 +871,11 @@ Public number property
 
 
 
-
 ###  value
-**value**:  *[SubClassB](#class-subclassb)* 
 
-*Inherited from GenericClass.value*
+**value**:  *[SubClassB](../#class-SubClassB)* 
+
+*Inherited from [GenericClass](#class-GenericClass).[value](#value)*
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
@@ -882,39 +884,34 @@ Public number property
 
 
 
-
 ## Methods
-
-
 
 ###  getValue
 
-► **getValue**(): [SubClassB](#class-subclassb)
+► **getValue**(): [SubClassB](../#class-SubClassB)
 
 
 
-*Inherited from GenericClass.getValue*
+*Inherited from [GenericClass](#class-GenericClass).[getValue](#getValue)*
 
 *Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
 
 
 
 
-**Returns:** [SubClassB](#class-subclassb)
+**Returns:** [SubClassB](../#class-SubClassB)
 
 
-
----
 
 
 
 ###  setValue
 
-► **setValue**(value: *[SubClassB](#class-subclassb)*): void
+► **setValue**(value: *[SubClassB](../#class-SubClassB)*): void
 
 
 
-*Inherited from GenericClass.setValue*
+*Inherited from [GenericClass](#class-GenericClass).[setValue](#setValue)*
 
 *Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
@@ -924,7 +921,7 @@ Public number property
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| value  | [SubClassB](#class-subclassb) | - | [[getValue]] is the counterpart. |
+| value  | [SubClassB](../#class-SubClassB) | - | [[getValue]] is the counterpart. |
 
 
 
@@ -934,10 +931,12 @@ Public number property
 
 
 
----
 
 
 
+
+
+# Class: SubClassA
 
 
 This is a class that extends another class.
@@ -949,7 +948,7 @@ from BaseClass.
 ## Hierarchy
 
 
- [BaseClass](#class-baseclass)
+ [BaseClass](../#class-BaseClass)
 
 **↳ SubClassA**
 
@@ -960,54 +959,54 @@ from BaseClass.
 
 ## Implements
 
-* [INameInterface](#interface-inameinterface)
-* [IPrintNameInterface](#interface-iprintnameinterface)
+* [INameInterface](../#interface-INameInterface)
+* [IPrintNameInterface](../#interface-IPrintNameInterface)
 
 ## Index
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [kind](#-protected-kind-property)
-* [name](#name-property)
+* [kind](#kind)
+* [name](#name)
 
 
 ### Accessors
 
-* [nameProperty](#nameproperty-accessor)
-* [readOnlyNameProperty](#readonlynameproperty-accessor)
-* [writeOnlyNameProperty](#writeonlynameproperty-accessor)
+* [nameProperty](#nameProperty)
+* [readOnlyNameProperty](#readOnlyNameProperty)
+* [writeOnlyNameProperty](#writeOnlyNameProperty)
 
 
 ### Methods
 
-* [arrowFunction](#arrowfunction-method)
-* [getName](#getname-method)
-* [print](#print-method)
-* [printName](#printname-method)
-* [setName](#setname-method)
-* [caTest](#-static-catest-method)
-* [getInstance](#-static-getinstance-method)
-* [getName](#-static-getname-method)
+* [arrowFunction](#arrowFunction)
+* [getName](#getName)
+* [print](#print)
+* [printName](#printName)
+* [setName](#setName)
+* [caTest](#caTest)
+* [getInstance](#getInstance)
+* [getName](#getName)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
-
-## ⊕ **new SubClassA**(name: *string*): [SubClassA](#class-subclassa)
-
-
-## ⊕ **new SubClassA**(source: *[BaseClass](#class-baseclass)*): [SubClassA](#class-subclassa)
+<a id="constructor"></a>
 
 
-*Inherited from BaseClass.constructor*
+## ⊕ **new SubClassA**(name: *string*): [SubClassA](../#class-SubClassA)
+
+
+## ⊕ **new SubClassA**(source: *[BaseClass](../#class-BaseClass)*): [SubClassA](../#class-SubClassA)
+
+
+*Inherited from [BaseClass](#class-BaseClass).[constructor](#constructor)*
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
@@ -1022,9 +1021,9 @@ from BaseClass.
 
 
 
-**Returns:** [SubClassA](#class-subclassa)
+**Returns:** [SubClassA](../#class-SubClassA)
 
-*Inherited from BaseClass.constructor*
+*Inherited from [BaseClass](#class-BaseClass).[constructor](#constructor)*
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
@@ -1033,22 +1032,22 @@ from BaseClass.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| source  | [BaseClass](#class-baseclass) | - | - |
+| source  | [BaseClass](../#class-BaseClass) | - | - |
 
 
 
 
 
-**Returns:** [SubClassA](#class-subclassa)
+**Returns:** [SubClassA](../#class-SubClassA)
 
 
 ## Properties
 
-
 ### «Protected» kind
+
 **kind**:  *number* 
 
-*Inherited from BaseClass.kind*
+*Inherited from [BaseClass](#class-BaseClass).[kind](#kind)*
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
@@ -1059,13 +1058,13 @@ This is a simple protected member.
 
 
 
-
 ###  name
+
 **name**:  *string* 
 
-*Implementation of IPrintNameInterface.name*
+*Implementation of [IPrintNameInterface](#interface-IPrintNameInterface).[name](#name)*
 
-*Inherited from BaseClass.name*
+*Inherited from [BaseClass](#class-BaseClass).[name](#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
@@ -1077,8 +1076,9 @@ This is a simple public member.
 
 
 
+## Accessors
 
-### nameProperty
+###  nameProperty
 
 
 getnameProperty(): stringsetnameProperty(value: *string*): void
@@ -1117,7 +1117,7 @@ The return value.
 
 
 
-### readOnlyNameProperty
+###  readOnlyNameProperty
 
 
 getreadOnlyNameProperty(): string
@@ -1136,7 +1136,7 @@ The return value.
 
 
 
-### writeOnlyNameProperty
+###  writeOnlyNameProperty
 
 
 setwriteOnlyNameProperty(value: *string*): void
@@ -1166,15 +1166,13 @@ The return value.
 
 ## Methods
 
-
-
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void
 
 
 
-*Inherited from BaseClass.arrowFunction*
+*Inherited from [BaseClass](#class-BaseClass).[arrowFunction](#arrowFunction)*
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
@@ -1197,8 +1195,6 @@ This is a simple fat arrow function.
 
 
 
----
-
 
 
 ###  getName
@@ -1207,9 +1203,9 @@ This is a simple fat arrow function.
 
 
 
-*Implementation of IPrintNameInterface.getName*
+*Implementation of [IPrintNameInterface](#interface-IPrintNameInterface).[getName](#getName)*
 
-*Inherited from BaseClass.getName*
+*Inherited from [BaseClass](#class-BaseClass).[getName](#getName)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
@@ -1229,8 +1225,6 @@ Return the name.
 
 
 
----
-
 
 
 ###  print
@@ -1239,7 +1233,7 @@ Return the name.
 
 
 
-*Implementation of IPrintNameInterface.print*
+*Implementation of [IPrintNameInterface](#interface-IPrintNameInterface).[print](#print)*
 
 *Defined in [classes.ts:185](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L185)*
 
@@ -1261,8 +1255,6 @@ This is a simple interface function.
 
 
 
----
-
 
 
 ###  printName
@@ -1271,7 +1263,7 @@ This is a simple interface function.
 
 
 
-*Implementation of IPrintNameInterface.printName*
+*Implementation of [IPrintNameInterface](#interface-IPrintNameInterface).[printName](#printName)*
 
 *Defined in [classes.ts:190](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L190)*
 
@@ -1285,8 +1277,6 @@ This is a interface function of IPrintNameInterface
 
 
 
----
-
 
 
 ###  setName
@@ -1295,7 +1285,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-*Inherited from BaseClass.setName*
+*Inherited from [BaseClass](#class-BaseClass).[setName](#setName)*
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
@@ -1320,17 +1310,15 @@ It should be inherited by all subclasses.
 
 
 
----
-
 
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](#class-baseclass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](../#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
-*Inherited from BaseClass.caTest*
+*Inherited from [BaseClass](#class-BaseClass).[caTest](#caTest)*
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
@@ -1341,7 +1329,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](#class-baseclass) | - | - |
+| originalValues  | [BaseClass](../#class-BaseClass) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -1354,17 +1342,15 @@ It should be inherited by all subclasses.
 
 
 
----
-
 
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](#class-baseclass)
+► **getInstance**(): [BaseClass](../#class-BaseClass)
 
 
 
-*Inherited from BaseClass.getInstance*
+*Inherited from [BaseClass](#class-BaseClass).[getInstance](#getInstance)*
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
@@ -1377,13 +1363,11 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](#class-baseclass)
+**Returns:** [BaseClass](../#class-BaseClass)
 An instance of BaseClass.
 
 
 
-
----
 
 
 
@@ -1393,7 +1377,7 @@ An instance of BaseClass.
 
 
 
-*Inherited from BaseClass.getName*
+*Inherited from [BaseClass](#class-BaseClass).[getName](#getName)*
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
@@ -1413,10 +1397,12 @@ Return the name.
 
 
 
----
 
 
 
+
+
+# Class: SubClassB
 
 
 This is a class that extends another class.
@@ -1427,7 +1413,7 @@ The constructor of the original class should be overwritten.
 ## Hierarchy
 
 
- [BaseClass](#class-baseclass)
+ [BaseClass](../#class-BaseClass)
 
 **↳ SubClassB**
 
@@ -1438,42 +1424,42 @@ The constructor of the original class should be overwritten.
 
 ## Implements
 
-* [INameInterface](#interface-inameinterface)
+* [INameInterface](../#interface-INameInterface)
 
 ## Index
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [kind](#-protected-kind-property)
-* [name](#name-property)
+* [kind](#kind)
+* [name](#name)
 
 
 ### Methods
 
-* [arrowFunction](#arrowfunction-method)
-* [doSomething](#dosomething-method)
-* [getName](#getname-method)
-* [setName](#setname-method)
-* [caTest](#-static-catest-method)
-* [getInstance](#-static-getinstance-method)
-* [getName](#-static-getname-method)
+* [arrowFunction](#arrowFunction)
+* [doSomething](#doSomething)
+* [getName](#getName)
+* [setName](#setName)
+* [caTest](#caTest)
+* [getInstance](#getInstance)
+* [getName](#getName)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new SubClassB**(name: *string*): [SubClassB](#class-subclassb)
+
+## ⊕ **new SubClassB**(name: *string*): [SubClassB](../#class-SubClassB)
 
 
-*Overrides BaseClass.constructor*
+*Overrides [BaseClass](#class-BaseClass).[constructor](#constructor)*
 
 *Defined in [classes.ts:238](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L238)*
 
@@ -1488,16 +1474,16 @@ The constructor of the original class should be overwritten.
 
 
 
-**Returns:** [SubClassB](#class-subclassb)
+**Returns:** [SubClassB](../#class-SubClassB)
 
 
 ## Properties
 
-
 ### «Protected» kind
+
 **kind**:  *number* 
 
-*Inherited from BaseClass.kind*
+*Inherited from [BaseClass](#class-BaseClass).[kind](#kind)*
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
@@ -1508,13 +1494,13 @@ This is a simple protected member.
 
 
 
-
 ###  name
+
 **name**:  *string* 
 
-*Implementation of INameInterface.name*
+*Implementation of [INameInterface](#interface-INameInterface).[name](#name)*
 
-*Inherited from BaseClass.name*
+*Inherited from [BaseClass](#class-BaseClass).[name](#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
@@ -1526,10 +1512,7 @@ This is a simple public member.
 
 
 
-
 ## Methods
-
-
 
 ###  arrowFunction
 
@@ -1537,7 +1520,7 @@ This is a simple public member.
 
 
 
-*Inherited from BaseClass.arrowFunction*
+*Inherited from [BaseClass](#class-BaseClass).[arrowFunction](#arrowFunction)*
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
@@ -1560,13 +1543,11 @@ This is a simple fat arrow function.
 
 
 
----
-
 
 
 ###  doSomething
 
-► **doSomething**(value: *[string,[SubClassA](#class-subclassa),[SubClassB](#class-subclassb)]*): void
+► **doSomething**(value: *[string,[SubClassA](../#class-SubClassA),[SubClassB](../#class-SubClassB)]*): void
 
 
 
@@ -1577,7 +1558,7 @@ This is a simple fat arrow function.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| value  | [string,[SubClassA](#class-subclassa),[SubClassB](#class-subclassb)] | - | - |
+| value  | [string,[SubClassA](../#class-SubClassA),[SubClassB](../#class-SubClassB)] | - | - |
 
 
 
@@ -1587,8 +1568,6 @@ This is a simple fat arrow function.
 
 
 
----
-
 
 
 ###  getName
@@ -1597,9 +1576,9 @@ This is a simple fat arrow function.
 
 
 
-*Implementation of INameInterface.getName*
+*Implementation of [INameInterface](#interface-INameInterface).[getName](#getName)*
 
-*Inherited from BaseClass.getName*
+*Inherited from [BaseClass](#class-BaseClass).[getName](#getName)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
@@ -1619,8 +1598,6 @@ Return the name.
 
 
 
----
-
 
 
 ###  setName
@@ -1629,7 +1606,7 @@ Return the name.
 
 
 
-*Inherited from BaseClass.setName*
+*Inherited from [BaseClass](#class-BaseClass).[setName](#setName)*
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
@@ -1654,17 +1631,15 @@ It should be inherited by all subclasses.
 
 
 
----
-
 
 
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](#class-baseclass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](../#class-BaseClass)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
-*Inherited from BaseClass.caTest*
+*Inherited from [BaseClass](#class-BaseClass).[caTest](#caTest)*
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
@@ -1675,7 +1650,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](#class-baseclass) | - | - |
+| originalValues  | [BaseClass](../#class-BaseClass) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -1688,17 +1663,15 @@ It should be inherited by all subclasses.
 
 
 
----
-
 
 
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](#class-baseclass)
+► **getInstance**(): [BaseClass](../#class-BaseClass)
 
 
 
-*Inherited from BaseClass.getInstance*
+*Inherited from [BaseClass](#class-BaseClass).[getInstance](#getInstance)*
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
@@ -1711,13 +1684,11 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](#class-baseclass)
+**Returns:** [BaseClass](../#class-BaseClass)
 An instance of BaseClass.
 
 
 
-
----
 
 
 
@@ -1727,7 +1698,7 @@ An instance of BaseClass.
 
 
 
-*Inherited from BaseClass.getName*
+*Inherited from [BaseClass](#class-BaseClass).[getName](#getName)*
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
@@ -1747,11 +1718,15 @@ Return the name.
 
 
 
----
 
 
 
 
+
+## Interfaces
+
+
+# Interface: INameInterface
 
 
 This is a simple interface.
@@ -1760,7 +1735,7 @@ This is a simple interface.
 
 **INameInterface**
 
-↳  [IPrintNameInterface](#interface-iprintnameinterface)
+↳  [IPrintNameInterface](../#interface-IPrintNameInterface)
 
 
 
@@ -1770,27 +1745,27 @@ This is a simple interface.
 
 ### Implemented by
 
-* [BaseClass](#class-baseclass)
-* [SubClassA](#class-subclassa)
-* [SubClassB](#class-subclassb)
+* [BaseClass](../#class-BaseClass)
+* [SubClassA](../#class-SubClassA)
+* [SubClassB](../#class-SubClassB)
 
 ## Index
 
 ### Properties
 
-* [name](#name-property)
+* [name](#name)
 
 
 ### Methods
 
-* [getName](#getname-method)
+* [getName](#getName)
 
 
 
 ## Properties
 
-
 ###  name
+
 **name**:  *string* 
 
 *Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
@@ -1806,10 +1781,7 @@ It should be inherited by all subinterfaces.
 
 
 
-
 ## Methods
-
-
 
 ###  getName
 
@@ -1832,10 +1804,12 @@ It should be inherited by all subinterfaces.
 
 
 
----
 
 
 
+
+
+# Interface: IPrintInterface
 
 
 This is a simple interface.
@@ -1844,7 +1818,7 @@ This is a simple interface.
 
 **IPrintInterface**
 
-↳  [IPrintNameInterface](#interface-iprintnameinterface)
+↳  [IPrintNameInterface](../#interface-IPrintNameInterface)
 
 
 
@@ -1856,13 +1830,11 @@ This is a simple interface.
 
 ### Methods
 
-* [print](#print-method)
+* [print](#print)
 
 
 
 ## Methods
-
-
 
 ###  print
 
@@ -1893,10 +1865,12 @@ It should be inherited by all subinterfaces.
 
 
 
----
 
 
 
+
+
+# Interface: IPrintNameInterface
 
 
 This is a interface inheriting from two other interfaces.
@@ -1904,12 +1878,12 @@ This is a interface inheriting from two other interfaces.
 ## Hierarchy
 
 
- [INameInterface](#interface-inameinterface)
+ [INameInterface](../#interface-INameInterface)
 
 
 
 
- [IPrintInterface](#interface-iprintinterface)
+ [IPrintInterface](../#interface-IPrintInterface)
 
 **↳ IPrintNameInterface**
 
@@ -1920,30 +1894,30 @@ This is a interface inheriting from two other interfaces.
 
 ### Implemented by
 
-* [SubClassA](#class-subclassa)
+* [SubClassA](../#class-SubClassA)
 
 ## Index
 
 ### Properties
 
-* [name](#name-property)
+* [name](#name)
 
 
 ### Methods
 
-* [getName](#getname-method)
-* [print](#print-method)
-* [printName](#printname-method)
+* [getName](#getName)
+* [print](#print)
+* [printName](#printName)
 
 
 
 ## Properties
 
-
 ###  name
+
 **name**:  *string* 
 
-*Inherited from INameInterface.name*
+*Inherited from [INameInterface](#interface-INameInterface).[name](#name)*
 
 *Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
 
@@ -1958,10 +1932,7 @@ It should be inherited by all subinterfaces.
 
 
 
-
 ## Methods
-
-
 
 ###  getName
 
@@ -1969,7 +1940,7 @@ It should be inherited by all subinterfaces.
 
 
 
-*Inherited from INameInterface.getName*
+*Inherited from [INameInterface](#interface-INameInterface).[getName](#getName)*
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
@@ -1986,8 +1957,6 @@ It should be inherited by all subinterfaces.
 
 
 
----
-
 
 
 ###  print
@@ -1996,7 +1965,7 @@ It should be inherited by all subinterfaces.
 
 
 
-*Inherited from IPrintInterface.print*
+*Inherited from [IPrintInterface](#interface-IPrintInterface).[print](#print)*
 
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
@@ -2020,8 +1989,6 @@ It should be inherited by all subinterfaces.
 **Returns:** void
 
 
-
----
 
 
 
@@ -2043,31 +2010,40 @@ This is a interface function of IPrintNameInterface
 
 
 
----
 
 
 
 
 
+
+
+# External module: "enums"
 
 ## Index
 
 ### Modules
 
-* [Enums](#module-enums)
+* [Enums](#module-Enums)
 
 
+
+## Modules
+
+
+# Module: Enums
 
 ## Index
 
 ### Enumerations
 
-* [Direction](#direction-enumeration)
-* [FileAccess](#fileaccess-enumeration)
+* [Direction](#Direction)
+* [FileAccess](#FileAccess)
 
 
 
-### Direction
+## Enumerations
+
+###  Direction
 
 **Direction**:   
 
@@ -2076,7 +2052,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### Down
+###  Down
 
 **Down**:   
 
@@ -2085,7 +2061,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### Left
+###  Left
 
 **Left**:   
 
@@ -2094,7 +2070,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### Right
+###  Right
 
 **Right**:   
 
@@ -2103,7 +2079,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### Up
+###  Up
 
 **Up**:    = 1
 
@@ -2113,7 +2089,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### FileAccess
+###  FileAccess
 
 **FileAccess**:   
 
@@ -2122,7 +2098,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### G
+###  G
 
 **G**:    =  '123'.length
 
@@ -2131,7 +2107,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### None
+###  None
 
 **None**:   
 
@@ -2140,7 +2116,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### Read
+###  Read
 
 **Read**:    =  1 << 1
 
@@ -2149,7 +2125,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### ReadWrite
+###  ReadWrite
 
 **ReadWrite**:    =  Read | Write
 
@@ -2158,7 +2134,7 @@ This is a interface function of IPrintNameInterface
 
 
 
-### Write
+###  Write
 
 **Write**:    =  1 << 2
 
@@ -2172,28 +2148,36 @@ This is a interface function of IPrintNameInterface
 
 
 
+
+# External module: "functions"
+
 ## Index
 
 ### Modules
 
-* [moduleFunction](#module-modulefunction)
+* [moduleFunction](#module-moduleFunction)
 
 
 ### Functions
 
-* [createSomething](#createsomething-function)
-* [exportedFunction](#exportedfunction-function)
-* [functionWithArguments](#functionwitharguments-function)
-* [functionWithDefaults](#functionwithdefaults-function)
-* [functionWithDocLink](#functionwithdoclink-function)
-* [functionWithOptionalValue](#functionwithoptionalvalue-function)
-* [functionWithRest](#functionwithrest-function)
-* [genericFunction](#genericfunction-function)
-* [internalFunction](#internalfunction-function)
-* [multipleSignatures](#multiplesignatures-function)
-* [variableFunction](#variablefunction-function)
+* [createSomething](#createSomething)
+* [exportedFunction](#exportedFunction)
+* [functionWithArguments](#functionWithArguments)
+* [functionWithDefaults](#functionWithDefaults)
+* [functionWithDocLink](#functionWithDocLink)
+* [functionWithOptionalValue](#functionWithOptionalValue)
+* [functionWithRest](#functionWithRest)
+* [genericFunction](#genericFunction)
+* [internalFunction](#internalFunction)
+* [multipleSignatures](#multipleSignatures)
+* [variableFunction](#variableFunction)
 
 
+
+## Modules
+
+
+# Module: moduleFunction
 
 
 This is the module extending the function moduleFunction().
@@ -2228,19 +2212,17 @@ This is a function that is extended by a module.
 
 ### Variables
 
-* [functionVariable](#functionvariable-variable)
+* [functionVariable](#functionVariable)
 
 
 ### Functions
 
-* [append](#append-function)
-* [prepend](#prepend-function)
+* [append](#append)
+* [prepend](#prepend)
 
 
 
 ## Variables
-
-
 
 ###  functionVariable
 
@@ -2254,8 +2236,9 @@ This variable is appended to a function.
 
 
 
-## Functions
 
+
+## Functions
 
 ###  append
 
@@ -2274,8 +2257,6 @@ This function is appended to another function.
 **Returns:** void
 
 
-
-----
 
 
 
@@ -2297,15 +2278,12 @@ This function is appended to another function.
 
 
 
-----
-
 
 
 
 
 
 ## Functions
-
 
 ###  createSomething
 
@@ -2325,8 +2303,6 @@ Also no type information is given, the object should be correctly reflected.
 **Returns:** object
 
 
-
-----
 
 
 
@@ -2348,13 +2324,11 @@ This is a simple exported function.
 
 
 
-----
-
 
 
 ###  functionWithArguments
 
-► **functionWithArguments**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](#interface-inameinterface)*): number
+► **functionWithArguments**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../#interface-INameInterface)*): number
 
 
 
@@ -2370,7 +2344,7 @@ This is a function with multiple arguments and a return value.
 | ------ | ------------------- | ------------ | ------------ |
 | paramZ  | string | - | This is a string parameter. |
 | paramG  | any | - | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA  | [INameInterface](#interface-inameinterface) | - | This is a **parameter** pointing to an interface. |
+| paramA  | [INameInterface](../#interface-INameInterface) | - | This is a **parameter** pointing to an interface. |
 
 
 
@@ -2379,8 +2353,6 @@ This is a function with multiple arguments and a return value.
 **Returns:** number
 
 
-
-----
 
 
 
@@ -2416,8 +2388,6 @@ The input value or the default value.
 
 
 
-----
-
 
 
 ###  functionWithDocLink
@@ -2442,8 +2412,6 @@ Taken from http://usejsdoc.org/tags-inline-link.html.
 **Returns:** void
 
 
-
-----
 
 
 
@@ -2474,8 +2442,6 @@ This is a function with a parameter that is optional.
 
 
 
-----
-
 
 
 ###  functionWithRest
@@ -2505,8 +2471,6 @@ The combined string.
 
 
 
-
-----
 
 
 
@@ -2544,8 +2508,6 @@ Returns the typed value.
 
 
 
-----
-
 
 
 ###  internalFunction
@@ -2565,8 +2527,6 @@ This is an internal function.
 **Returns:** void
 
 
-
-----
 
 
 
@@ -2618,13 +2578,11 @@ This is the second signature of a function with multiple signatures.
 
 
 
-----
-
 
 
 ###  variableFunction
 
-► **variableFunction**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](#interface-inameinterface)*): number
+► **variableFunction**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../#interface-INameInterface)*): number
 
 
 
@@ -2640,7 +2598,7 @@ This is a function with multiple arguments and a return value.
 | ------ | ------------------- | ------------ | ------------ |
 | paramZ  | string | - | This is a string parameter. |
 | paramG  | any | - | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA  | [INameInterface](#interface-inameinterface) | - | This is a **parameter** pointing to an interface. |
+| paramA  | [INameInterface](../#interface-INameInterface) | - | This is a **parameter** pointing to an interface. |
 
 
 
@@ -2650,11 +2608,12 @@ This is a function with multiple arguments and a return value.
 
 
 
-----
 
 
 
 
+
+# External module: "interfaces"
 
 ## Index
 
@@ -2664,34 +2623,44 @@ This is a function with multiple arguments and a return value.
 
 
 
+## Modules
+
+
+# Module: interfaces
+
 ## Index
 
 ### Interfaces
 
-* [ClockConstructor](#interface-clockconstructor)
-* [ClockInterface](#interface-clockinterface)
-* [Shape](#interface-shape)
-* [Square](#interface-square)
-* [SquareConfig](#interface-squareconfig)
-* [StringArray](#interface-stringarray)
+* [ClockConstructor](#interface-ClockConstructor)
+* [ClockInterface](#interface-ClockInterface)
+* [Shape](#interface-Shape)
+* [Square](#interface-Square)
+* [SquareConfig](#interface-SquareConfig)
+* [StringArray](#interface-StringArray)
 
 
 ### Type aliases
 
-* [SearchFunc](#searchfunc-type alias)
+* [SearchFunc](#SearchFunc)
 
 
 ### Variables
 
-* [mySearch](#mysearch-variable)
-* [square](#square-variable)
+* [mySearch](#mySearch)
+* [square](#square)
 
 
 ### Functions
 
-* [createClock](#createclock-function)
+* [createClock](#createClock)
 
 
+
+## Interfaces
+
+
+# Interface: ClockConstructor
 
 ## Hierarchy
 
@@ -2704,16 +2673,16 @@ This is a function with multiple arguments and a return value.
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](#interface-clockinterface)
+
+## ⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](../#interface-ClockInterface)
 
 
 *Defined in [interfaces.ts:26](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L26)*
@@ -2730,9 +2699,12 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [ClockInterface](#interface-clockinterface)
+**Returns:** [ClockInterface](../#interface-ClockInterface)
 
 
+
+
+# Interface: ClockInterface
 
 ## Hierarchy
 
@@ -2745,20 +2717,20 @@ This is a function with multiple arguments and a return value.
 
 ### Properties
 
-* [currentTime](#currenttime-property)
+* [currentTime](#currentTime)
 
 
 ### Methods
 
-* [setTime](#settime-method)
-* [tick](#tick-method)
+* [setTime](#setTime)
+* [tick](#tick)
 
 
 
 ## Properties
 
-
 ###  currentTime
+
 **currentTime**:  *Date* 
 
 *Defined in [interfaces.ts:22](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L22)*
@@ -2768,10 +2740,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-
 ## Methods
-
-
 
 ###  setTime
 
@@ -2796,8 +2765,6 @@ This is a function with multiple arguments and a return value.
 
 
 
----
-
 
 
 ###  tick
@@ -2815,16 +2782,18 @@ This is a function with multiple arguments and a return value.
 
 
 
----
 
 
 
+
+
+# Interface: Shape
 
 ## Hierarchy
 
 **Shape**
 
-↳  [Square](#interface-square)
+↳  [Square](../#interface-Square)
 
 
 
@@ -2836,14 +2805,14 @@ This is a function with multiple arguments and a return value.
 
 ### Properties
 
-* [color](#color-property)
+* [color](#color)
 
 
 
 ## Properties
 
-
 ###  color
+
 **color**:  *string* 
 
 *Defined in [interfaces.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L38)*
@@ -2855,10 +2824,12 @@ This is a function with multiple arguments and a return value.
 
 
 
+# Interface: Square
+
 ## Hierarchy
 
 
- [Shape](#interface-shape)
+ [Shape](../#interface-Shape)
 
 **↳ Square**
 
@@ -2871,18 +2842,18 @@ This is a function with multiple arguments and a return value.
 
 ### Properties
 
-* [color](#color-property)
-* [sideLength](#sidelength-property)
+* [color](#color)
+* [sideLength](#sideLength)
 
 
 
 ## Properties
 
-
 ###  color
+
 **color**:  *string* 
 
-*Inherited from Shape.color*
+*Inherited from [Shape](#interface-Shape).[color](#color)*
 
 *Defined in [interfaces.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L38)*
 
@@ -2890,8 +2861,8 @@ This is a function with multiple arguments and a return value.
 
 
 
-
 ###  sideLength
+
 **sideLength**:  *number* 
 
 *Defined in [interfaces.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L42)*
@@ -2902,6 +2873,8 @@ This is a function with multiple arguments and a return value.
 
 
 
+
+# Interface: SquareConfig
 
 ## Hierarchy
 
@@ -2914,15 +2887,15 @@ This is a function with multiple arguments and a return value.
 
 ### Properties
 
-* [color](#-optional-color-property)
-* [width](#-optional-width-property)
+* [color](#color)
+* [width](#width)
 
 
 
 ## Properties
 
-
 ### «Optional» color
+
 **color**:  *string* 
 
 *Defined in [interfaces.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L4)*
@@ -2931,8 +2904,8 @@ This is a function with multiple arguments and a return value.
 
 
 
-
 ### «Optional» width
+
 **width**:  *number* 
 
 *Defined in [interfaces.ts:5](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L5)*
@@ -2943,6 +2916,8 @@ This is a function with multiple arguments and a return value.
 
 
 
+
+# Interface: StringArray
 
 ## Hierarchy
 
@@ -2958,7 +2933,9 @@ This is a function with multiple arguments and a return value.
 
 
 
-### SearchFunc
+## Type aliases
+
+###  SearchFunc
 
 **SearchFunc**:  *function* 
 
@@ -2990,11 +2967,9 @@ This is a function with multiple arguments and a return value.
 
 ## Variables
 
-
-
 ###  mySearch
 
-**mySearch**:  *[SearchFunc](#searchfunc-type alias)* 
+**mySearch**:  *[SearchFunc](../#SearchFunc)* 
 
 *Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
 
@@ -3004,19 +2979,20 @@ This is a function with multiple arguments and a return value.
 
 ###  square
 
-**square**:  *[Square](#interface-square)*  =  {} as Square
+**square**:  *[Square](../#interface-Square)*  =  {} as Square
 
 *Defined in [interfaces.ts:45](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L45)*
 
 
 
 
-## Functions
 
+
+## Functions
 
 ###  createClock
 
-► **createClock**(ctor: *[ClockConstructor](#interface-clockconstructor)*, hour: *number*, minute: *number*): [ClockInterface](#interface-clockinterface)
+► **createClock**(ctor: *[ClockConstructor](../#interface-ClockConstructor)*, hour: *number*, minute: *number*): [ClockInterface](../#interface-ClockInterface)
 
 
 
@@ -3027,7 +3003,7 @@ This is a function with multiple arguments and a return value.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| ctor  | [ClockConstructor](#interface-clockconstructor) | - | - |
+| ctor  | [ClockConstructor](../#interface-ClockConstructor) | - | - |
 | hour  | number | - | - |
 | minute  | number | - | - |
 
@@ -3035,30 +3011,36 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [ClockInterface](#interface-clockinterface)
-
-
-
-----
+**Returns:** [ClockInterface](../#interface-ClockInterface)
 
 
 
 
 
 
+
+
+
+
+# External module: "internal"
 
 ## Index
 
 ### Classes
 
-* [Greeter](#class-greeter)
+* [Greeter](#class-Greeter)
 
 
 ### Variables
 
-* [greeter](#greeter-variable)
+* [greeter](#greeter)
 
 
+
+## Classes
+
+
+# Class: Greeter
 
 ## Hierarchy
 
@@ -3071,26 +3053,26 @@ This is a function with multiple arguments and a return value.
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [greeting](#greeting-property)
+* [greeting](#greeting)
 
 
 ### Methods
 
-* [greet](#greet-method)
+* [greet](#greet)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new Greeter**(message: *string*): [Greeter](#class-greeter)
+
+## ⊕ **new Greeter**(message: *string*): [Greeter](../#class-Greeter)
 
 
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
@@ -3106,13 +3088,13 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [Greeter](#class-greeter)
+**Returns:** [Greeter](../#class-Greeter)
 
 
 ## Properties
 
-
 ###  greeting
+
 **greeting**:  *string* 
 
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
@@ -3122,10 +3104,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-
 ## Methods
-
-
 
 ###  greet
 
@@ -3142,7 +3121,6 @@ This is a function with multiple arguments and a return value.
 
 
 
----
 
 
 
@@ -3150,11 +3128,9 @@ This is a function with multiple arguments and a return value.
 
 ## Variables
 
-
-
 ###  greeter
 
-**greeter**:  *[Greeter](#class-greeter)*  =  new Greeter('world')
+**greeter**:  *[Greeter](../#class-Greeter)*  =  new Greeter('world')
 
 *Defined in [internal.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L18)*
 
@@ -3162,31 +3138,41 @@ This is a function with multiple arguments and a return value.
 
 
 
+
+
+
+# External module: "private-members"
+
 ## Index
 
 ### Classes
 
-* [Employee](#class-employee)
-* [Person](#class-person)
+* [Employee](#class-Employee)
+* [Person](#class-Person)
 
 
 ### Variables
 
-* [privateVar](#-private-privatevar-variable)
-* [publicVar](#publicvar-variable)
+* [privateVar](#privateVar)
+* [publicVar](#publicVar)
 
 
 ### Functions
 
-* [privateFunction](#-private-privatefunction-function)
-* [publicFunction](#publicfunction-function)
+* [privateFunction](#privateFunction)
+* [publicFunction](#publicFunction)
 
 
+
+## Classes
+
+
+# Class: Employee
 
 ## Hierarchy
 
 
- [Person](#class-person)
+ [Person](../#class-Person)
 
 **↳ Employee**
 
@@ -3199,31 +3185,31 @@ This is a function with multiple arguments and a return value.
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [department](#-private-department-property)
-* [name](#-protected-name-property)
+* [department](#department)
+* [name](#name)
 
 
 ### Methods
 
-* [getElevatorPitch](#getelevatorpitch-method)
-* [getPrivateDetails](#-private-getprivatedetails-method)
+* [getElevatorPitch](#getElevatorPitch)
+* [getPrivateDetails](#getPrivateDetails)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new Employee**(name: *string*, department: *string*): [Employee](#class-employee)
+
+## ⊕ **new Employee**(name: *string*, department: *string*): [Employee](../#class-Employee)
 
 
-*Overrides Person.constructor*
+*Overrides [Person](#class-Person).[constructor](#constructor)*
 
 *Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
 
@@ -3239,13 +3225,13 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [Employee](#class-employee)
+**Returns:** [Employee](../#class-Employee)
 
 
 ## Properties
 
-
 ### «Private» department
+
 **department**:  *string* 
 
 *Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
@@ -3254,11 +3240,11 @@ This is a function with multiple arguments and a return value.
 
 
 
-
 ### «Protected» name
+
 **name**:  *string* 
 
-*Inherited from Person.name*
+*Inherited from [Person](#class-Person).[name](#name)*
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
 
@@ -3267,10 +3253,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-
 ## Methods
-
-
 
 ###  getElevatorPitch
 
@@ -3286,8 +3269,6 @@ This is a function with multiple arguments and a return value.
 **Returns:** string
 
 
-
----
 
 
 
@@ -3306,16 +3287,18 @@ This is a function with multiple arguments and a return value.
 
 
 
----
 
 
 
+
+
+# Class: Person
 
 ## Hierarchy
 
 **Person**
 
-↳  [Employee](#class-employee)
+↳  [Employee](../#class-Employee)
 
 
 
@@ -3327,21 +3310,21 @@ This is a function with multiple arguments and a return value.
 
 ### Constructors
 
-* [constructor](#constructor-constructor)
+* [constructor](#constructor)
 
 
 ### Properties
 
-* [name](#-protected-name-property)
+* [name](#name)
 
 
-
-<a id="constructor"></a>
 
 ## Constructors
 
+<a id="constructor"></a>
 
-## ⊕ **new Person**(name: *string*): [Person](#class-person)
+
+## ⊕ **new Person**(name: *string*): [Person](../#class-Person)
 
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
@@ -3357,13 +3340,13 @@ This is a function with multiple arguments and a return value.
 
 
 
-**Returns:** [Person](#class-person)
+**Returns:** [Person](../#class-Person)
 
 
 ## Properties
 
-
 ### «Protected» name
+
 **name**:  *string* 
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
@@ -3375,10 +3358,7 @@ This is a function with multiple arguments and a return value.
 
 
 
-
 ## Variables
-
-
 
 ### «Private» privateVar
 
@@ -3402,8 +3382,9 @@ Marked as private
 
 
 
-## Functions
 
+
+## Functions
 
 ### «Private» privateFunction
 
@@ -3423,8 +3404,6 @@ Marked as private
 
 
 
-----
-
 
 
 ###  publicFunction
@@ -3441,8 +3420,6 @@ Marked as private
 **Returns:** string
 
 
-
-----
 
 
 

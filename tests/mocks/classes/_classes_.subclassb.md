@@ -49,9 +49,9 @@ The constructor of the original class should be overwritten.
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new SubClassB**(name: *string*): [SubClassB](../classes/_classes_.subclassb.md)
@@ -77,8 +77,8 @@ The constructor of the original class should be overwritten.
 
 ## Properties
 
-<a id="kind"></a>
 ### «Protected» kind
+
 **kind**:  *number* 
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
@@ -92,8 +92,8 @@ This is a simple protected member.
 
 
 
-<a id="name"></a>
 ###  name
+
 **name**:  *string* 
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
@@ -110,10 +110,7 @@ This is a simple public member.
 
 
 
-
 ## Methods
-
-<a id="arrowfunction"></a>
 
 ###  arrowFunction
 
@@ -144,9 +141,7 @@ This is a simple fat arrow function.
 
 
 
----
 
-<a id="dosomething"></a>
 
 ###  doSomething
 
@@ -171,9 +166,7 @@ This is a simple fat arrow function.
 
 
 
----
 
-<a id="getname"></a>
 
 ###  getName
 
@@ -203,9 +196,7 @@ Return the name.
 
 
 
----
 
-<a id="setname"></a>
 
 ###  setName
 
@@ -238,9 +229,7 @@ It should be inherited by all subclasses.
 
 
 
----
 
-<a id="catest"></a>
 
 ### «Static» caTest
 
@@ -272,9 +261,7 @@ It should be inherited by all subclasses.
 
 
 
----
 
-<a id="getinstance"></a>
 
 ### «Static» getInstance
 
@@ -301,9 +288,7 @@ An instance of BaseClass.
 
 
 
----
 
-<a id="getname-1"></a>
 
 ### «Static» getName
 
@@ -331,7 +316,6 @@ Return the name.
 
 
 
----
 
 
 

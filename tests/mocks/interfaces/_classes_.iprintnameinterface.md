@@ -43,8 +43,8 @@ This is a interface inheriting from two other interfaces.
 
 ## Properties
 
-<a id="name"></a>
 ###  name
+
 **name**:  *string* 
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)*
@@ -62,10 +62,7 @@ It should be inherited by all subinterfaces.
 
 
 
-
 ## Methods
-
-<a id="getname"></a>
 
 ###  getName
 
@@ -90,9 +87,7 @@ It should be inherited by all subinterfaces.
 
 
 
----
 
-<a id="print"></a>
 
 ###  print
 
@@ -125,9 +120,7 @@ It should be inherited by all subinterfaces.
 
 
 
----
 
-<a id="printname"></a>
 
 ###  printName
 
@@ -147,7 +140,6 @@ This is a interface function of IPrintNameInterface
 
 
 
----
 
 
 

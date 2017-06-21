@@ -32,9 +32,9 @@
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new Employee**(name: *string*, department: *string*): [Employee](../classes/_private_members_.employee.md)
@@ -61,8 +61,8 @@
 
 ## Properties
 
-<a id="name"></a>
 ### «Protected» name
+
 **name**:  *string* 
 
 *Inherited from [Person](_private_members_.person.md).[name](_private_members_.person.md#name)*
@@ -74,10 +74,7 @@
 
 
 
-
 ## Methods
-
-<a id="getelevatorpitch"></a>
 
 ###  getElevatorPitch
 
@@ -94,7 +91,6 @@
 
 
 
----
 
 
 

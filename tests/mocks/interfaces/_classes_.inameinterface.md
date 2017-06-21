@@ -38,8 +38,8 @@ This is a simple interface.
 
 ## Properties
 
-<a id="name"></a>
 ###  name
+
 **name**:  *string* 
 
 *Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
@@ -55,10 +55,7 @@ It should be inherited by all subinterfaces.
 
 
 
-
 ## Methods
-
-<a id="getname"></a>
 
 ###  getName
 
@@ -81,7 +78,6 @@ It should be inherited by all subinterfaces.
 
 
 
----
 
 
 

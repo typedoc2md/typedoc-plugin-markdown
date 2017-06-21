@@ -24,8 +24,6 @@
 ## Variables
 
 
-<a id="publicvar"></a>
-
 ###  publicVar
 
 **publicVar**:  *"public variable"*  = "public variable"
@@ -35,10 +33,11 @@
 
 
 
+
+
 ## Functions
 
 
-<a id="publicfunction"></a>
 ###  publicFunction
 
 ► **publicFunction**(): string
@@ -53,8 +52,6 @@
 **Returns:** string
 
 
-
-----
 
 
 

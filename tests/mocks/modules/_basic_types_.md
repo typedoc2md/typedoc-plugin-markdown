@@ -24,8 +24,6 @@ numbers, strings, structures, boolean values, and the like.
 
 ## Variables
 
-<a id="amount"></a>
-
 ###  amount
 
 **amount**:  *number*  = 6
@@ -40,7 +38,7 @@ const decimal: number = 6;
 ```
 
 
-<a id="color"></a>
+
 
 ###  color
 
@@ -56,7 +54,7 @@ const color: string = "blue";
 ```
 
 
-<a id="isdone"></a>
+
 
 ###  isDone
 
@@ -72,7 +70,7 @@ const isDone: boolean = false;
 ```
 
 
-<a id="numbers"></a>
+
 
 ###  numbers
 
@@ -90,12 +88,20 @@ const numbers: number[] = [1, 2, 3];
 
 
 
-<a id="amixedobject"></a>
-## Object literal: aMixedObject
+
+## Object literals
+
+###  aMixedObject
+
+**aMixedObject**:  *object* 
+
+*Defined in [basic-types.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L41)*
+
+
 
 This is an object with various types
 
-<a id="amixedobject.somenumber"></a>
+
 
 ###  someNumber
 
@@ -105,7 +111,6 @@ This is an object with various types
 
 
 
-<a id="amixedobject.somestring"></a>
 
 ###  someString
 
@@ -115,7 +120,7 @@ This is an object with various types
 
 
 
-<a id="amixedobject.somefunction"></a>
+
 ###  someFunction
 
 ► **someFunction**(): string
@@ -129,9 +134,6 @@ This is an object with various types
 
 **Returns:** string
 
-
-
-----
 
 
 

@@ -24,12 +24,11 @@
 
 ## Properties
 
-<a id="color"></a>
 ###  color
+
 **color**:  *string* 
 
 *Defined in [interfaces.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L38)*
-
 
 
 

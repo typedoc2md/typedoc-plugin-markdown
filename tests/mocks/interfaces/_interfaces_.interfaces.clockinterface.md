@@ -25,8 +25,8 @@
 
 ## Properties
 
-<a id="currenttime"></a>
 ###  currentTime
+
 **currentTime**:  *Date* 
 
 *Defined in [interfaces.ts:22](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L22)*
@@ -36,10 +36,7 @@
 
 
 
-
 ## Methods
-
-<a id="settime"></a>
 
 ###  setTime
 
@@ -64,9 +61,7 @@
 
 
 
----
 
-<a id="tick"></a>
 
 ###  tick
 
@@ -83,7 +78,6 @@
 
 
 
----
 
 
 

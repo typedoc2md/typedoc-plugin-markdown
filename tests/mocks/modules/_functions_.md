@@ -27,7 +27,6 @@
 
 ## Functions
 
-<a id="createsomething"></a>
 ###  createSomething
 
 ► **createSomething**(): object
@@ -47,10 +46,8 @@ Also no type information is given, the object should be correctly reflected.
 
 
 
-----
 
 
-<a id="exportedfunction"></a>
 ###  exportedFunction
 
 ► **exportedFunction**(): void
@@ -69,10 +66,8 @@ This is a simple exported function.
 
 
 
-----
 
 
-<a id="functionwitharguments"></a>
 ###  functionWithArguments
 
 ► **functionWithArguments**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
@@ -101,10 +96,8 @@ This is a function with multiple arguments and a return value.
 
 
 
-----
 
 
-<a id="functionwithdefaults"></a>
 ###  functionWithDefaults
 
 ► **functionWithDefaults**(valueA?: *string*, valueB?: *number*, valueC?: *number*, valueD?: *boolean*, valueE?: *boolean*): string
@@ -137,10 +130,8 @@ The input value or the default value.
 
 
 
-----
 
 
-<a id="functionwithdoclink"></a>
 ###  functionWithDocLink
 
 ► **functionWithDocLink**(): void
@@ -164,10 +155,8 @@ Taken from http://usejsdoc.org/tags-inline-link.html.
 
 
 
-----
 
 
-<a id="functionwithoptionalvalue"></a>
 ###  functionWithOptionalValue
 
 ► **functionWithOptionalValue**(requiredParam: *string*, optionalParam?: *string*): void
@@ -195,10 +184,8 @@ This is a function with a parameter that is optional.
 
 
 
-----
 
 
-<a id="functionwithrest"></a>
 ###  functionWithRest
 
 ► **functionWithRest**(...rest: *string[]*): string
@@ -227,10 +214,8 @@ The combined string.
 
 
 
-----
 
 
-<a id="genericfunction"></a>
 ###  genericFunction
 
 ► **genericFunction**T(value: *T*): T
@@ -265,10 +250,8 @@ Returns the typed value.
 
 
 
-----
 
 
-<a id="internalfunction"></a>
 ###  internalFunction
 
 ► **internalFunction**(): void
@@ -287,10 +270,8 @@ This is an internal function.
 
 
 
-----
 
 
-<a id="multiplesignatures"></a>
 ###  multipleSignatures
 
 ► **multipleSignatures**(value: *string*): string
@@ -339,10 +320,8 @@ This is the second signature of a function with multiple signatures.
 
 
 
-----
 
 
-<a id="variablefunction"></a>
 ###  variableFunction
 
 ► **variableFunction**(paramZ: *string*, paramG: *any*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): number
@@ -370,8 +349,6 @@ This is a function with multiple arguments and a return value.
 **Returns:** number
 
 
-
-----
 
 
 

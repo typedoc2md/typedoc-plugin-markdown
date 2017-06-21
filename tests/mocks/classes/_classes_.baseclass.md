@@ -53,9 +53,9 @@ This is a simple base class.
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new BaseClass**(name: *string*): [BaseClass](../classes/_classes_.baseclass.md)
@@ -97,8 +97,8 @@ This is a simple base class.
 
 ## Properties
 
-<a id="kind"></a>
 ### «Protected» kind
+
 **kind**:  *number* 
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
@@ -110,8 +110,8 @@ This is a simple protected member.
 
 
 
-<a id="name"></a>
 ###  name
+
 **name**:  *string* 
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
@@ -126,10 +126,7 @@ This is a simple public member.
 
 
 
-
 ## Methods
-
-<a id="arrowfunction"></a>
 
 ###  arrowFunction
 
@@ -158,9 +155,7 @@ This is a simple fat arrow function.
 
 
 
----
 
-<a id="getname"></a>
 
 ###  getName
 
@@ -188,9 +183,7 @@ Return the name.
 
 
 
----
 
-<a id="setname"></a>
 
 ###  setName
 
@@ -221,9 +214,7 @@ It should be inherited by all subclasses.
 
 
 
----
 
-<a id="catest"></a>
 
 ### «Static» caTest
 
@@ -253,9 +244,7 @@ It should be inherited by all subclasses.
 
 
 
----
 
-<a id="getinstance"></a>
 
 ### «Static» getInstance
 
@@ -280,9 +269,7 @@ An instance of BaseClass.
 
 
 
----
 
-<a id="getname-1"></a>
 
 ### «Static» getName
 
@@ -308,7 +295,6 @@ Return the name.
 
 
 
----
 
 
 

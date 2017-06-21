@@ -27,9 +27,9 @@
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new Greeter**(message: *string*): [Greeter](../classes/_internal_.greeter.md)
@@ -53,8 +53,8 @@
 
 ## Properties
 
-<a id="greeting"></a>
 ###  greeting
+
 **greeting**:  *string* 
 
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
@@ -64,10 +64,7 @@
 
 
 
-
 ## Methods
-
-<a id="greet"></a>
 
 ###  greet
 
@@ -84,7 +81,6 @@
 
 
 
----
 
 
 

@@ -31,7 +31,9 @@
 
 
 
-### SearchFunc
+## Type aliases
+
+###  SearchFunc
 
 **SearchFunc**:  *function* 
 
@@ -63,8 +65,6 @@
 
 ## Variables
 
-<a id="mysearch"></a>
-
 ###  mySearch
 
 **mySearch**:  *[SearchFunc](../modules/_interfaces_.interfaces.md#searchfunc)* 
@@ -73,7 +73,7 @@
 
 
 
-<a id="square-1"></a>
+
 
 ###  square
 
@@ -84,9 +84,10 @@
 
 
 
+
+
 ## Functions
 
-<a id="createclock"></a>
 ###  createClock
 
 ► **createClock**(ctor: *[ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md)*, hour: *number*, minute: *number*): [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
@@ -111,8 +112,6 @@
 **Returns:** [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
 
 
-
-----
 
 
 

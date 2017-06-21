@@ -27,9 +27,9 @@
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new Person**(name: *string*): [Person](../classes/_private_members_.person.md)
@@ -53,12 +53,11 @@
 
 ## Properties
 
-<a id="name"></a>
 ### «Protected» name
+
 **name**:  *string* 
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
-
 
 
 

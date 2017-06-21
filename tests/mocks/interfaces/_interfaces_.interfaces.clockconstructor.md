@@ -17,9 +17,9 @@
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new ClockConstructor**(hour: *number*, minute: *number*): [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)

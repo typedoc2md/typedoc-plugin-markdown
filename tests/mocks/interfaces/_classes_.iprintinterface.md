@@ -27,8 +27,6 @@ This is a simple interface.
 
 ## Methods
 
-<a id="print"></a>
-
 ###  print
 
 ► **print**(value: *string*): void
@@ -58,7 +56,6 @@ It should be inherited by all subinterfaces.
 
 
 
----
 
 
 

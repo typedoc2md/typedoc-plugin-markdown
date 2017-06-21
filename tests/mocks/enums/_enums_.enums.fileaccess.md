@@ -16,7 +16,7 @@
 
 ## Enumeration members
 
-### G
+###  G
 
 **G**:    =  '123'.length
 
@@ -26,7 +26,7 @@
 
 
 
-### None
+###  None
 
 **None**:   
 
@@ -36,7 +36,7 @@
 
 
 
-### Read
+###  Read
 
 **Read**:    =  1 << 1
 
@@ -46,7 +46,7 @@
 
 
 
-### ReadWrite
+###  ReadWrite
 
 **ReadWrite**:    =  Read | Write
 
@@ -56,12 +56,11 @@
 
 
 
-### Write
+###  Write
 
 **Write**:    =  1 << 2
 
 *Defined in [enums.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L14)*
-
 
 
 

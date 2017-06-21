@@ -44,9 +44,9 @@ This a type parameter.
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new GenericClass**(p1: *any*, p2: *T*, p3: *number*, p4: *number*): [GenericClass](../classes/_classes_.genericclass.md)
@@ -76,8 +76,8 @@ Constructor short text.
 
 ## Properties
 
-<a id="p2"></a>
 ### «Protected» p2
+
 **p2**:  *T* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
@@ -89,8 +89,8 @@ Private string property
 
 
 
-<a id="p3"></a>
 ###  p3
+
 **p3**:  *number* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
@@ -102,8 +102,8 @@ Public number property
 
 
 
-<a id="value"></a>
 ###  value
+
 **value**:  *T* 
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
@@ -113,10 +113,7 @@ Public number property
 
 
 
-
 ## Methods
-
-<a id="getvalue"></a>
 
 ###  getValue
 
@@ -133,9 +130,7 @@ Public number property
 
 
 
----
 
-<a id="setvalue"></a>
 
 ###  setValue
 
@@ -161,7 +156,6 @@ Public number property
 
 
 
----
 
 
 

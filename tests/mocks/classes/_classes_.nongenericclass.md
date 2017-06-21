@@ -38,9 +38,9 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 
 
-<a id="constructor"></a>
-
 ## Constructors
+
+<a id="constructor"></a>
 
 
 ## ⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](../classes/_classes_.subclassb.md)*, p3: *number*, p4: *number*): [NonGenericClass](../classes/_classes_.nongenericclass.md)
@@ -72,8 +72,8 @@ Constructor short text.
 
 ## Properties
 
-<a id="p2"></a>
 ### «Protected» p2
+
 **p2**:  *[SubClassB](../classes/_classes_.subclassb.md)* 
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p2](_classes_.genericclass.md#p2)*
@@ -87,8 +87,8 @@ Private string property
 
 
 
-<a id="p3"></a>
 ###  p3
+
 **p3**:  *number* 
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p3](_classes_.genericclass.md#p3)*
@@ -102,8 +102,8 @@ Public number property
 
 
 
-<a id="value"></a>
 ###  value
+
 **value**:  *[SubClassB](../classes/_classes_.subclassb.md)* 
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[value](_classes_.genericclass.md#value)*
@@ -115,10 +115,7 @@ Public number property
 
 
 
-
 ## Methods
-
-<a id="getvalue"></a>
 
 ###  getValue
 
@@ -137,9 +134,7 @@ Public number property
 
 
 
----
 
-<a id="setvalue"></a>
 
 ###  setValue
 
@@ -167,7 +162,6 @@ Public number property
 
 
 
----
 
 
 

@@ -17,13 +17,13 @@
 
 ## Variables
 
-<a id="greeter-1"></a>
-
 ###  greeter
 
 **greeter**:  *[Greeter](../classes/_internal_.greeter.md)*  =  new Greeter('world')
 
 *Defined in [internal.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L18)*
+
+
 
 
 
