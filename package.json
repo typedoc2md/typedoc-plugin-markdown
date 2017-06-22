@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-markdown",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A plugin for Typedoc that exposes themes and options for rendering markdown.",
   "main": "dist/index.js",
   "files": [
@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "compileTests": "npm run compileTests:md && npm run compileTests:mdSingleFile",
-    "compileTests:md":"typedoc --tsconfig tests/src/tsconfig.json --options tests/config.markdown.json",
-    "compileTests:mdSingleFile":"typedoc --tsconfig  tests/src/tsconfig.json --options tests/config.markdown.singlePage.json",
+    "compileTests:md": "typedoc --tsconfig tests/src/tsconfig.json --options tests/config.markdown.json",
+    "compileTests:mdSingleFile": "typedoc --tsconfig  tests/src/tsconfig.json --options tests/config.markdown.singlePage.json",
     "copy:hbs": "cpx src/**/*.hbs dist/",
     "copy:pkg": "copyfiles package.json dist/index.js dist/**/*.hbs dist/**/*.js dist/theme/helpers/*.js node_modules/typedoc-plugin-markdown",
     "clean": "rm -rf dist && rm -rf test/out",
