@@ -6,7 +6,7 @@
 | Name  | Type                
 | ------ | ------------------- 
 {{#each children}}
-| {{ name }}  | {{#with type}}{{>type}}{{/with}} {{#if defaultValue}} =_{{defaultValue}}_{{/if}} 
+| {{ name }} | {{#with type}}{{>type}}{{/with}}{{#with type.declaration}} {{#if signatures}}{{#each signatures}}{{> member.signature.title hideName=true }}{{/each}}{{/if}}{{/with}}
 {{/each}}
 {{else}}
 {{{ compileGroup this}}}

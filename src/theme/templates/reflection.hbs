@@ -24,7 +24,7 @@
 {{newLine}}
 {{~/if}}
 {{~#if model.implementedBy}}
-### Implemented by
+## Implemented by
 
 {{#each model.implementedBy}}
 * {{> type}}
@@ -32,14 +32,14 @@
 {{newLine}}
 {{~/if}}
 {{~#if model.signatures}}
-### Callable
+## Callable
 {{#with model}}{{> member.signatures}}{{/with}}
 {{newLine}}
 {{~/if}}
 {{~#if model.indexSignature}}
-### Indexable
+## Indexable
 
-[{{~#each model.indexSignature.parameters}} {{name}}: {{#with type}}{{>type}}{{/with}}{{/each}}]: 
+\[{{~#each model.indexSignature.parameters}}{{name}}: {{#with type}}{{>type}}{{/with}}{{/each}}\]:&nbsp;
 {{~#with model.indexSignature.type}}{{>type}}{{/with}}
 {{~#with model.indexSignature}}
 {{> comment}}
