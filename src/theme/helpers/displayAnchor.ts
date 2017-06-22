@@ -1,13 +1,5 @@
 import { Options } from '../options';
-export function displayAnchor(ref: string) {
+export function displayAnchor(anchor: string) {
 
-  const isGithub = Options.markdownFlavour === 'github';
-  let md = '';
-  if (isGithub) {
-
-    if (ref) {
-    md = `<a id="${ref.toLowerCase()}"></a>`;
-    }
-  }
-  return md;
+  return `<a id="${anchor}"></a>`;
 }
