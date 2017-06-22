@@ -9,6 +9,14 @@ export function compileTemplate(template: string, data: {}) {
   return new Handlebars.SafeString(md(data));
 }
 
+export function safeString(data: string) {
+  return new Handlebars.SafeString(data);
+}
+
+export function getAnchorRef(ref: string) {
+    return ref.replace(/_/g, '-').replace(/"/g, '').replace(/\//g, '-').replace(/ /g, '-').toLowerCase();
+  }
+
 function templateToString(template: string) {
   return fs.readFileSync(path.join(__dirname, `/${template}`)).toString();
 }

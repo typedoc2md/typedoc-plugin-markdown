@@ -1,9 +1,10 @@
 {
   "theme": "markdown",
-  "tsconfig": "tests/src/tsconfig.json",
   "out": "tests/out/singlepage",
+  "mode": "file",
   "readme": "none",
   "excludeExternals": false,
   "gitRevision": "master",
-  "markdownSinglePage": true
+  "name": "Typedoc Plugin Markdown API",
+  "markdownOutFile": "API.md"
 }

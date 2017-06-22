@@ -1,6 +1,6 @@
 {
-  "theme": "markdown",
-  "out": "tests/out/",
+  "theme": "default",
+  "out": "tests/html/",
   "readme": "none",
   "excludePrivate": true,
   "excludeExternals": false,
