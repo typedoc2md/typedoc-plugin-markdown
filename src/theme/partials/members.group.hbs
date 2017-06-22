@@ -1,8 +1,17 @@
 {{#if displayTitle}}
+{{#if isMainTitle}}
+# {{title}}
+{{else}}
 ## {{title}}
+{{/if}}
 {{/if}}
 {{#each children}}
 {{#unless hasOwnDocument}}
 {{{ compileMember this}}}
 {{/unless}}
 {{/each}}
+{{#if displayBackLink}}
+{{> backLink}}
+{{newLine}}
+---
+{{/if}}

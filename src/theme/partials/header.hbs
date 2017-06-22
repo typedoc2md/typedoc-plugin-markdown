@@ -4,6 +4,7 @@
 {{~#if model.displayReadme ~}}
 {{{model.readme}}}
 {{~/if~}}
+{{newLine}}
 {{!-- {{ title }} --}}
 # {{#unless model.isIndex }}{{model.kindString }}:{{/unless}} {{ displaySafeText model.name }}
 {{#compact}}

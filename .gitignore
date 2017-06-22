@@ -4,6 +4,7 @@
 /dist
 /tmp
 /tests/out
+/tests/html
 
 # dependencies
 /node_modules

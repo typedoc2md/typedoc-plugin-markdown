@@ -1,0 +1,10 @@
+{
+  "theme": "markdown",
+  "out": "tests/out/",
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeExternals": false,
+  "mode":"file",
+  "gitRevision": "master",
+  "json":"tests/out/output.json"
+}
