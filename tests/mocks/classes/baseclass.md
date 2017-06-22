@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [BaseClass](../classes/_classes_.baseclass.md)
+[typedoc-plugin-markdown](../index.md) > [BaseClass](../classes/baseclass.md)
+
+
 
 # Class: BaseClass
 
@@ -12,12 +14,12 @@ This is a simple base class.
 
 **BaseClass**
 
-↳  [SubClassA](_classes_.subclassa.md)
+↳  [SubClassA](subclassa.md)
 
 
 
 
-↳  [SubClassB](_classes_.subclassb.md)
+↳  [SubClassB](subclassb.md)
 
 
 
@@ -27,29 +29,29 @@ This is a simple base class.
 
 ## Implements
 
-* [INameInterface](../interfaces/_classes_.inameinterface.md)
+* [INameInterface](../interfaces/inameinterface.md)
 
 ## Index
 
 ### Constructors
 
-* [constructor](_classes_.baseclass.md#constructor)
+* [constructor](baseclass.md#constructor)
 
 
 ### Properties
 
-* [kind](_classes_.baseclass.md#kind)
-* [name](_classes_.baseclass.md#name)
+* [kind](baseclass.md#kind)
+* [name](baseclass.md#name)
 
 
 ### Methods
 
-* [arrowFunction](_classes_.baseclass.md#arrowfunction)
-* [getName](_classes_.baseclass.md#getname)
-* [setName](_classes_.baseclass.md#setname)
-* [caTest](_classes_.baseclass.md#catest)
-* [getInstance](_classes_.baseclass.md#getinstance)
-* [getName](_classes_.baseclass.md#getname-1)
+* [arrowFunction](baseclass.md#arrowfunction)
+* [getName](baseclass.md#getname)
+* [setName](baseclass.md#setname)
+* [caTest](baseclass.md#catest)
+* [getInstance](baseclass.md#getinstance)
+* [getName](baseclass.md#getname-1)
 
 
 
@@ -57,10 +59,10 @@ This is a simple base class.
 <a id="constructor"></a>
 
 
-## ⊕ **new BaseClass**(name: *string*): [BaseClass](_classes_.baseclass.md)
+### ⊕ **new BaseClass**(name: *string*): [BaseClass](baseclass.md)
 
 
-## ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
+### ⊕ **new BaseClass**(source: *[BaseClass](baseclass.md)*): [BaseClass](baseclass.md)
 
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
@@ -76,7 +78,7 @@ This is a simple base class.
 
 
 
-**Returns:** [BaseClass](_classes_.baseclass.md)
+**Returns:** [BaseClass](baseclass.md)
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
@@ -85,16 +87,20 @@ This is a simple base class.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| source  | [BaseClass](_classes_.baseclass.md) | - | - |
+| source  | [BaseClass](baseclass.md) | - | - |
 
 
 
 
 
-**Returns:** [BaseClass](_classes_.baseclass.md)
+**Returns:** [BaseClass](baseclass.md)
+
+---
 
 
 ## Properties
+<a id="kind"></a>
+
 ### «Protected» kind
 
 **kind**:  *number* 
@@ -108,11 +114,15 @@ This is a simple protected member.
 
 
 
+___
+
+<a id="name"></a>
+
 ###  name
 
 **name**:  *string* 
 
-*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
+*Implementation of [INameInterface](../interfaces/inameinterface.md).[name](../interfaces/inameinterface.md#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
@@ -123,8 +133,12 @@ This is a simple public member.
 
 
 
+___
+
 
 ## Methods
+<a id="arrowfunction"></a>
+
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void
@@ -154,13 +168,17 @@ This is a simple fat arrow function.
 
 
 
+___
+
+<a id="getname"></a>
+
 ###  getName
 
 ► **getName**(): string
 
 
 
-*Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
+*Implementation of [INameInterface](../interfaces/inameinterface.md).[getName](../interfaces/inameinterface.md#getname)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
@@ -181,6 +199,10 @@ Return the name.
 
 
 
+
+___
+
+<a id="setname"></a>
 
 ###  setName
 
@@ -213,9 +235,13 @@ It should be inherited by all subclasses.
 
 
 
+___
+
+<a id="catest"></a>
+
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
@@ -228,7 +254,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](_classes_.baseclass.md) | - | - |
+| originalValues  | [BaseClass](baseclass.md) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -243,9 +269,13 @@ It should be inherited by all subclasses.
 
 
 
+___
+
+<a id="getinstance"></a>
+
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](_classes_.baseclass.md)
+► **getInstance**(): [BaseClass](baseclass.md)
 
 
 
@@ -260,13 +290,17 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](_classes_.baseclass.md)
+**Returns:** [BaseClass](baseclass.md)
 An instance of BaseClass.
 
 
 
 
 
+
+___
+
+<a id="getname-1"></a>
 
 ### «Static» getName
 
@@ -293,5 +327,7 @@ Return the name.
 
 
 
+
+___
 
 

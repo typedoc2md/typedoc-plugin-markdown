@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["internal"](../modules/_internal_.md) > [Greeter](../classes/_internal_.greeter.md)
+[typedoc-plugin-markdown](../index.md) > [Greeter](../classes/greeter.md)
+
+
 
 # Class: Greeter
 
@@ -13,17 +15,17 @@
 
 ### Constructors
 
-* [constructor](_internal_.greeter.md#constructor)
+* [constructor](greeter.md#constructor)
 
 
 ### Properties
 
-* [greeting](_internal_.greeter.md#greeting)
+* [greeting](greeter.md#greeting)
 
 
 ### Methods
 
-* [greet](_internal_.greeter.md#greet)
+* [greet](greeter.md#greet)
 
 
 
@@ -31,7 +33,7 @@
 <a id="constructor"></a>
 
 
-## ⊕ **new Greeter**(message: *string*): [Greeter](_internal_.greeter.md)
+### ⊕ **new Greeter**(message: *string*): [Greeter](greeter.md)
 
 
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
@@ -47,10 +49,14 @@
 
 
 
-**Returns:** [Greeter](_internal_.greeter.md)
+**Returns:** [Greeter](greeter.md)
+
+---
 
 
 ## Properties
+<a id="greeting"></a>
+
 ###  greeting
 
 **greeting**:  *string* 
@@ -61,8 +67,12 @@
 
 
 
+___
+
 
 ## Methods
+<a id="greet"></a>
+
 ###  greet
 
 ► **greet**(): string
@@ -79,5 +89,7 @@
 
 
 
+
+___
 
 

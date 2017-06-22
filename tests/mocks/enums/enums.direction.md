@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["enums"](../modules/_enums_.md) > [Enums](../modules/_enums_.enums.md) > [Direction](../enums/_enums_.enums.direction.md)
+[typedoc-plugin-markdown](../index.md) > [Enums](../modules/enums.md) > [Direction](../enums/enums.direction.md)
+
+
 
 # Enumeration: Direction
 
@@ -6,14 +8,16 @@
 
 ### Enumeration members
 
-* [Down](_enums_.enums.direction.md#down)
-* [Left](_enums_.enums.direction.md#left)
-* [Right](_enums_.enums.direction.md#right)
-* [Up](_enums_.enums.direction.md#up)
+* [Down](enums.direction.md#down)
+* [Left](enums.direction.md#left)
+* [Right](enums.direction.md#right)
+* [Up](enums.direction.md#up)
 
 
 
 ## Enumeration members
+<a id="down"></a>
+
 ###  Down
 
 **Down**:   
@@ -23,6 +27,10 @@
 
 
 
+
+___
+
+<a id="left"></a>
 
 ###  Left
 
@@ -34,6 +42,10 @@
 
 
 
+___
+
+<a id="right"></a>
+
 ###  Right
 
 **Right**:   
@@ -44,6 +56,10 @@
 
 
 
+___
+
+<a id="up"></a>
+
 ###  Up
 
 **Up**:    = 1
@@ -53,5 +69,7 @@
 
 
 
+
+___
 
 

@@ -1,11 +1,13 @@
-[typedoc-plugin-markdown](../index.md) > ["private-members"](../modules/_private_members_.md) > [Employee](../classes/_private_members_.employee.md)
+[typedoc-plugin-markdown](../index.md) > [Employee](../classes/employee.md)
+
+
 
 # Class: Employee
 
 ## Hierarchy
 
 
- [Person](_private_members_.person.md)
+ [Person](person.md)
 
 **↳ Employee**
 
@@ -18,17 +20,17 @@
 
 ### Constructors
 
-* [constructor](_private_members_.employee.md#constructor)
+* [constructor](employee.md#constructor)
 
 
 ### Properties
 
-* [name](_private_members_.employee.md#name)
+* [name](employee.md#name)
 
 
 ### Methods
 
-* [getElevatorPitch](_private_members_.employee.md#getelevatorpitch)
+* [getElevatorPitch](employee.md#getelevatorpitch)
 
 
 
@@ -36,10 +38,10 @@
 <a id="constructor"></a>
 
 
-## ⊕ **new Employee**(name: *string*, department: *string*): [Employee](_private_members_.employee.md)
+### ⊕ **new Employee**(name: *string*, department: *string*): [Employee](employee.md)
 
 
-*Overrides [Person](_private_members_.person.md).[constructor](_private_members_.person.md#constructor)*
+*Overrides [Person](person.md).[constructor](person.md#constructor)*
 
 *Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
 
@@ -55,15 +57,19 @@
 
 
 
-**Returns:** [Employee](_private_members_.employee.md)
+**Returns:** [Employee](employee.md)
+
+---
 
 
 ## Properties
+<a id="name"></a>
+
 ### «Protected» name
 
 **name**:  *string* 
 
-*Inherited from [Person](_private_members_.person.md).[name](_private_members_.person.md#name)*
+*Inherited from [Person](person.md).[name](person.md#name)*
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
 
@@ -71,8 +77,12 @@
 
 
 
+___
+
 
 ## Methods
+<a id="getelevatorpitch"></a>
+
 ###  getElevatorPitch
 
 ► **getElevatorPitch**(): string
@@ -89,5 +99,7 @@
 
 
 
+
+___
 
 

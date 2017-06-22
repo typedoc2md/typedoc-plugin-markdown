@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [IPrintInterface](../interfaces/_classes_.iprintinterface.md)
+[typedoc-plugin-markdown](../index.md) > [IPrintInterface](../interfaces/iprintinterface.md)
+
+
 
 # Interface: IPrintInterface
 
@@ -9,7 +11,7 @@ This is a simple interface.
 
 **IPrintInterface**
 
-↳  [IPrintNameInterface](_classes_.iprintnameinterface.md)
+↳  [IPrintNameInterface](iprintnameinterface.md)
 
 
 
@@ -19,6 +21,8 @@ This is a simple interface.
 
 
 ## Methods
+<a id="print"></a>
+
 ###  print
 
 ► **print**(value: *string*): void
@@ -49,5 +53,7 @@ It should be inherited by all subinterfaces.
 
 
 
+
+___
 
 

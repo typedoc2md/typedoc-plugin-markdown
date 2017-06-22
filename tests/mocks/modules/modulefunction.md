@@ -1,11 +1,13 @@
-[typedoc-plugin-markdown](../index.md) > ["functions"](../modules/_functions_.md) > [moduleFunction](../modules/_functions_.modulefunction.md)
+[typedoc-plugin-markdown](../index.md) > [moduleFunction](../modules/modulefunction.md)
+
+
 
 # Module: moduleFunction
 
 
 This is the module extending the function moduleFunction().
 
-### Callable
+## Callable
 ► **moduleFunction**(arg: *string*): string
 
 
@@ -35,17 +37,19 @@ This is a function that is extended by a module.
 
 ### Variables
 
-* [functionVariable](_functions_.modulefunction.md#functionvariable)
+* [functionVariable](modulefunction.md#functionvariable)
 
 
 ### Functions
 
-* [append](_functions_.modulefunction.md#append)
-* [prepend](_functions_.modulefunction.md#prepend)
+* [append](modulefunction.md#append)
+* [prepend](modulefunction.md#prepend)
 
 
 
 ## Variables
+<a id="functionvariable"></a>
+
 ###  functionVariable
 
 **functionVariable**:  *string* 
@@ -59,8 +63,12 @@ This variable is appended to a function.
 
 
 
+___
+
 
 ## Functions
+<a id="append"></a>
+
 ###  append
 
 ► **append**(): void
@@ -81,6 +89,10 @@ This function is appended to another function.
 
 
 
+___
+
+<a id="prepend"></a>
+
 ###  prepend
 
 ► **prepend**(): void
@@ -100,5 +112,7 @@ This function is appended to another function.
 
 
 
+
+___
 
 

@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [SubClassA](../classes/_classes_.subclassa.md)
+[typedoc-plugin-markdown](../index.md) > [SubClassA](../classes/subclassa.md)
+
+
 
 # Class: SubClassA
 
@@ -12,7 +14,7 @@ from BaseClass.
 ## Hierarchy
 
 
- [BaseClass](_classes_.baseclass.md)
+ [BaseClass](baseclass.md)
 
 **↳ SubClassA**
 
@@ -23,39 +25,39 @@ from BaseClass.
 
 ## Implements
 
-* [INameInterface](../interfaces/_classes_.inameinterface.md)
-* [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+* [INameInterface](../interfaces/inameinterface.md)
+* [IPrintNameInterface](../interfaces/iprintnameinterface.md)
 
 ## Index
 
 ### Constructors
 
-* [constructor](_classes_.subclassa.md#constructor)
+* [constructor](subclassa.md#constructor)
 
 
 ### Properties
 
-* [kind](_classes_.subclassa.md#kind)
-* [name](_classes_.subclassa.md#name)
+* [kind](subclassa.md#kind)
+* [name](subclassa.md#name)
 
 
 ### Accessors
 
-* [nameProperty](_classes_.subclassa.md#nameproperty)
-* [readOnlyNameProperty](_classes_.subclassa.md#readonlynameproperty)
-* [writeOnlyNameProperty](_classes_.subclassa.md#writeonlynameproperty)
+* [nameProperty](subclassa.md#nameproperty)
+* [readOnlyNameProperty](subclassa.md#readonlynameproperty)
+* [writeOnlyNameProperty](subclassa.md#writeonlynameproperty)
 
 
 ### Methods
 
-* [arrowFunction](_classes_.subclassa.md#arrowfunction)
-* [getName](_classes_.subclassa.md#getname)
-* [print](_classes_.subclassa.md#print)
-* [printName](_classes_.subclassa.md#printname)
-* [setName](_classes_.subclassa.md#setname)
-* [caTest](_classes_.subclassa.md#catest)
-* [getInstance](_classes_.subclassa.md#getinstance)
-* [getName](_classes_.subclassa.md#getname-1)
+* [arrowFunction](subclassa.md#arrowfunction)
+* [getName](subclassa.md#getname)
+* [print](subclassa.md#print)
+* [printName](subclassa.md#printname)
+* [setName](subclassa.md#setname)
+* [caTest](subclassa.md#catest)
+* [getInstance](subclassa.md#getinstance)
+* [getName](subclassa.md#getname-1)
 
 
 
@@ -63,13 +65,13 @@ from BaseClass.
 <a id="constructor"></a>
 
 
-## ⊕ **new SubClassA**(name: *string*): [SubClassA](_classes_.subclassa.md)
+### ⊕ **new SubClassA**(name: *string*): [SubClassA](subclassa.md)
 
 
-## ⊕ **new SubClassA**(source: *[BaseClass](_classes_.baseclass.md)*): [SubClassA](_classes_.subclassa.md)
+### ⊕ **new SubClassA**(source: *[BaseClass](baseclass.md)*): [SubClassA](subclassa.md)
 
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
+*Inherited from [BaseClass](baseclass.md).[constructor](baseclass.md#constructor)*
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
@@ -84,9 +86,9 @@ from BaseClass.
 
 
 
-**Returns:** [SubClassA](_classes_.subclassa.md)
+**Returns:** [SubClassA](subclassa.md)
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
+*Inherited from [BaseClass](baseclass.md).[constructor](baseclass.md#constructor)*
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
@@ -95,21 +97,25 @@ from BaseClass.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| source  | [BaseClass](_classes_.baseclass.md) | - | - |
+| source  | [BaseClass](baseclass.md) | - | - |
 
 
 
 
 
-**Returns:** [SubClassA](_classes_.subclassa.md)
+**Returns:** [SubClassA](subclassa.md)
+
+---
 
 
 ## Properties
+<a id="kind"></a>
+
 ### «Protected» kind
 
 **kind**:  *number* 
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
+*Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#kind)*
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
@@ -120,13 +126,17 @@ This is a simple protected member.
 
 
 
+___
+
+<a id="name"></a>
+
 ###  name
 
 **name**:  *string* 
 
-*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[name](../interfaces/_classes_.iprintnameinterface.md#name)*
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[name](../interfaces/iprintnameinterface.md#name)*
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)*
+*Inherited from [BaseClass](baseclass.md).[name](baseclass.md#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
@@ -137,8 +147,12 @@ This is a simple public member.
 
 
 
+___
+
 
 ## Accessors
+<a id="nameproperty"></a>
+
 ###  nameProperty
 
 
@@ -178,6 +192,10 @@ The return value.
 
 
 
+___
+
+<a id="readonlynameproperty"></a>
+
 ###  readOnlyNameProperty
 
 
@@ -196,6 +214,10 @@ The return value.
 
 
 
+
+___
+
+<a id="writeonlynameproperty"></a>
 
 ###  writeOnlyNameProperty
 
@@ -224,15 +246,19 @@ The return value.
 
 
 
+___
+
 
 ## Methods
+<a id="arrowfunction"></a>
+
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *string*, param1: *number*): void
 
 
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
+*Inherited from [BaseClass](baseclass.md).[arrowFunction](baseclass.md#arrowfunction)*
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
@@ -257,15 +283,19 @@ This is a simple fat arrow function.
 
 
 
+___
+
+<a id="getname"></a>
+
 ###  getName
 
 ► **getName**(): string
 
 
 
-*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[getName](../interfaces/_classes_.iprintnameinterface.md#getname)*
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[getName](../interfaces/iprintnameinterface.md#getname)*
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)*
+*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#getname)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
@@ -287,13 +317,17 @@ Return the name.
 
 
 
+___
+
+<a id="print"></a>
+
 ###  print
 
 ► **print**(value: *string*): void
 
 
 
-*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[print](../interfaces/_classes_.iprintnameinterface.md#print)*
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[print](../interfaces/iprintnameinterface.md#print)*
 
 *Defined in [classes.ts:185](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L185)*
 
@@ -317,13 +351,17 @@ This is a simple interface function.
 
 
 
+___
+
+<a id="printname"></a>
+
 ###  printName
 
 ► **printName**(): void
 
 
 
-*Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[printName](../interfaces/_classes_.iprintnameinterface.md#printname)*
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[printName](../interfaces/iprintnameinterface.md#printname)*
 
 *Defined in [classes.ts:190](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L190)*
 
@@ -339,13 +377,17 @@ This is a interface function of IPrintNameInterface
 
 
 
+___
+
+<a id="setname"></a>
+
 ###  setName
 
 ► **setName**(name: *string*): void
 
 
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)*
+*Inherited from [BaseClass](baseclass.md).[setName](baseclass.md#setname)*
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
@@ -372,13 +414,17 @@ It should be inherited by all subclasses.
 
 
 
+___
+
+<a id="catest"></a>
+
 ### «Static» caTest
 
-► **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
+► **caTest**(originalValues: *[BaseClass](baseclass.md)*, newRecord: *any*, fieldNames: *string[]*, mandatoryFields: *string[]*): string
 
 
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)*
+*Inherited from [BaseClass](baseclass.md).[caTest](baseclass.md#catest)*
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
@@ -389,7 +435,7 @@ It should be inherited by all subclasses.
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
-| originalValues  | [BaseClass](_classes_.baseclass.md) | - | - |
+| originalValues  | [BaseClass](baseclass.md) | - | - |
 | newRecord  | any | - | - |
 | fieldNames  | string[] | - | - |
 | mandatoryFields  | string[] | - | - |
@@ -404,13 +450,17 @@ It should be inherited by all subclasses.
 
 
 
+___
+
+<a id="getinstance"></a>
+
 ### «Static» getInstance
 
-► **getInstance**(): [BaseClass](_classes_.baseclass.md)
+► **getInstance**(): [BaseClass](baseclass.md)
 
 
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
+*Inherited from [BaseClass](baseclass.md).[getInstance](baseclass.md#getinstance)*
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
@@ -423,7 +473,7 @@ Static functions should not be inherited.
 
 
 
-**Returns:** [BaseClass](_classes_.baseclass.md)
+**Returns:** [BaseClass](baseclass.md)
 An instance of BaseClass.
 
 
@@ -431,13 +481,17 @@ An instance of BaseClass.
 
 
 
+___
+
+<a id="getname-1"></a>
+
 ### «Static» getName
 
 ► **getName**(): string
 
 
 
-*Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)*
+*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#getname-1)*
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
@@ -458,5 +512,7 @@ Return the name.
 
 
 
+
+___
 
 

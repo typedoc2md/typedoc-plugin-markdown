@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["private-members"](../modules/_private_members_.md) > [Person](../classes/_private_members_.person.md)
+[typedoc-plugin-markdown](../index.md) > [Person](../classes/person.md)
+
+
 
 # Class: Person
 
@@ -6,7 +8,7 @@
 
 **Person**
 
-↳  [Employee](_private_members_.employee.md)
+↳  [Employee](employee.md)
 
 
 
@@ -18,12 +20,12 @@
 
 ### Constructors
 
-* [constructor](_private_members_.person.md#constructor)
+* [constructor](person.md#constructor)
 
 
 ### Properties
 
-* [name](_private_members_.person.md#name)
+* [name](person.md#name)
 
 
 
@@ -31,7 +33,7 @@
 <a id="constructor"></a>
 
 
-## ⊕ **new Person**(name: *string*): [Person](_private_members_.person.md)
+### ⊕ **new Person**(name: *string*): [Person](person.md)
 
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
@@ -47,10 +49,14 @@
 
 
 
-**Returns:** [Person](_private_members_.person.md)
+**Returns:** [Person](person.md)
+
+---
 
 
 ## Properties
+<a id="name"></a>
+
 ### «Protected» name
 
 **name**:  *string* 
@@ -60,5 +66,7 @@
 
 
 
+
+___
 
 

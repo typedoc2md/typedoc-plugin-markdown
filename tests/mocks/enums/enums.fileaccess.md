@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["enums"](../modules/_enums_.md) > [Enums](../modules/_enums_.enums.md) > [FileAccess](../enums/_enums_.enums.fileaccess.md)
+[typedoc-plugin-markdown](../index.md) > [Enums](../modules/enums.md) > [FileAccess](../enums/enums.fileaccess.md)
+
+
 
 # Enumeration: FileAccess
 
@@ -6,15 +8,17 @@
 
 ### Enumeration members
 
-* [G](_enums_.enums.fileaccess.md#g)
-* [None](_enums_.enums.fileaccess.md#none)
-* [Read](_enums_.enums.fileaccess.md#read)
-* [ReadWrite](_enums_.enums.fileaccess.md#readwrite)
-* [Write](_enums_.enums.fileaccess.md#write)
+* [G](enums.fileaccess.md#g)
+* [None](enums.fileaccess.md#none)
+* [Read](enums.fileaccess.md#read)
+* [ReadWrite](enums.fileaccess.md#readwrite)
+* [Write](enums.fileaccess.md#write)
 
 
 
 ## Enumeration members
+<a id="g"></a>
+
 ###  G
 
 **G**:    =  '123'.length
@@ -24,6 +28,10 @@
 
 
 
+
+___
+
+<a id="none"></a>
 
 ###  None
 
@@ -35,6 +43,10 @@
 
 
 
+___
+
+<a id="read"></a>
+
 ###  Read
 
 **Read**:    =  1 << 1
@@ -44,6 +56,10 @@
 
 
 
+
+___
+
+<a id="readwrite"></a>
 
 ###  ReadWrite
 
@@ -55,6 +71,10 @@
 
 
 
+___
+
+<a id="write"></a>
+
 ###  Write
 
 **Write**:    =  1 << 2
@@ -64,5 +84,7 @@
 
 
 
+
+___
 
 

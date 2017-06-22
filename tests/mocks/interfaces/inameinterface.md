@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [INameInterface](../interfaces/_classes_.inameinterface.md)
+[typedoc-plugin-markdown](../index.md) > [INameInterface](../interfaces/inameinterface.md)
+
+
 
 # Interface: INameInterface
 
@@ -9,7 +11,7 @@ This is a simple interface.
 
 **INameInterface**
 
-↳  [IPrintNameInterface](_classes_.iprintnameinterface.md)
+↳  [IPrintNameInterface](iprintnameinterface.md)
 
 
 
@@ -17,19 +19,21 @@ This is a simple interface.
 
 
 
-### Implemented by
+## Implemented by
 
-* [BaseClass](../classes/_classes_.baseclass.md)
-* [SubClassA](../classes/_classes_.subclassa.md)
-* [SubClassB](../classes/_classes_.subclassb.md)
+* [BaseClass](../classes/baseclass.md)
+* [SubClassA](../classes/subclassa.md)
+* [SubClassB](../classes/subclassb.md)
 
 
 ## Properties
 
 | Name  | Type                
 | ------ | ------------------- 
-| name  | string  
+| name | string
 ## Methods
+<a id="getname"></a>
+
 ###  getName
 
 ► **getName**(): string
@@ -52,5 +56,7 @@ It should be inherited by all subinterfaces.
 
 
 
+
+___
 
 

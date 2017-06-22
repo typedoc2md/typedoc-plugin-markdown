@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [InternalClass](../classes/_classes_.internalclass.md)
+[typedoc-plugin-markdown](../index.md) > [InternalClass](../classes/internalclass.md)
+
+
 
 # Class: InternalClass
 
@@ -16,7 +18,7 @@ This is an internal class, it is not exported.
 
 ### Constructors
 
-* [constructor](_classes_.internalclass.md#constructor)
+* [constructor](internalclass.md#constructor)
 
 
 
@@ -24,7 +26,7 @@ This is an internal class, it is not exported.
 <a id="constructor"></a>
 
 
-## ⊕ **new InternalClass**(options: *object*): [InternalClass](_classes_.internalclass.md)
+### ⊕ **new InternalClass**(options: *object*): [InternalClass](internalclass.md)
 
 
 *Defined in [classes.ts:169](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
@@ -40,6 +42,8 @@ This is an internal class, it is not exported.
 
 
 
-**Returns:** [InternalClass](_classes_.internalclass.md)
+**Returns:** [InternalClass](internalclass.md)
+
+---
 
 

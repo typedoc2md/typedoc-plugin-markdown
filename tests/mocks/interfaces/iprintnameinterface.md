@@ -1,4 +1,6 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+[typedoc-plugin-markdown](../index.md) > [IPrintNameInterface](../interfaces/iprintnameinterface.md)
+
+
 
 # Interface: IPrintNameInterface
 
@@ -8,12 +10,12 @@ This is a interface inheriting from two other interfaces.
 ## Hierarchy
 
 
- [INameInterface](_classes_.inameinterface.md)
+ [INameInterface](inameinterface.md)
 
 
 
 
- [IPrintInterface](_classes_.iprintinterface.md)
+ [IPrintInterface](iprintinterface.md)
 
 **↳ IPrintNameInterface**
 
@@ -22,24 +24,26 @@ This is a interface inheriting from two other interfaces.
 
 
 
-### Implemented by
+## Implemented by
 
-* [SubClassA](../classes/_classes_.subclassa.md)
+* [SubClassA](../classes/subclassa.md)
 
 
 ## Properties
 
 | Name  | Type                
 | ------ | ------------------- 
-| name  | string  
+| name | string
 ## Methods
+<a id="getname"></a>
+
 ###  getName
 
 ► **getName**(): string
 
 
 
-*Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
+*Inherited from [INameInterface](inameinterface.md).[getName](inameinterface.md#getname)*
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
@@ -58,13 +62,17 @@ It should be inherited by all subinterfaces.
 
 
 
+___
+
+<a id="print"></a>
+
 ###  print
 
 ► **print**(value: *string*): void
 
 
 
-*Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)*
+*Inherited from [IPrintInterface](iprintinterface.md).[print](iprintinterface.md#print)*
 
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
@@ -91,6 +99,10 @@ It should be inherited by all subinterfaces.
 
 
 
+___
+
+<a id="printname"></a>
+
 ###  printName
 
 ► **printName**(): void
@@ -110,5 +122,7 @@ This is a interface function of IPrintNameInterface
 
 
 
+
+___
 
 

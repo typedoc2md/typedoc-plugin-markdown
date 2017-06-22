@@ -1,0 +1,7535 @@
+{
+	"id": 0,
+	"name": "typedoc-plugin-markdown",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 160,
+			"name": "Enums",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"children": [
+				{
+					"id": 161,
+					"name": "Direction",
+					"kind": 4,
+					"kindString": "Enumeration",
+					"flags": {
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 163,
+							"name": "Down",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 5,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 164,
+							"name": "Left",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 6,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 165,
+							"name": "Right",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 7,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 162,
+							"name": "Up",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 4,
+									"character": 10
+								}
+							],
+							"defaultValue": "1"
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration members",
+							"kind": 16,
+							"children": [
+								163,
+								164,
+								165,
+								162
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "enums.ts",
+							"line": 3,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 166,
+					"name": "FileAccess",
+					"kind": 4,
+					"kindString": "Enumeration",
+					"flags": {
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 171,
+							"name": "G",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 17,
+									"character": 9
+								}
+							],
+							"defaultValue": " '123'.length"
+						},
+						{
+							"id": 167,
+							"name": "None",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 12,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 168,
+							"name": "Read",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"defaultValue": " 1 << 1"
+						},
+						{
+							"id": 170,
+							"name": "ReadWrite",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 15,
+									"character": 17
+								}
+							],
+							"defaultValue": " Read | Write"
+						},
+						{
+							"id": 169,
+							"name": "Write",
+							"kind": 16,
+							"kindString": "Enumeration member",
+							"flags": {
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "enums.ts",
+									"line": 14,
+									"character": 13
+								}
+							],
+							"defaultValue": " 1 << 2"
+						}
+					],
+					"groups": [
+						{
+							"title": "Enumeration members",
+							"kind": 16,
+							"children": [
+								171,
+								167,
+								168,
+								170,
+								169
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "enums.ts",
+							"line": 10,
+							"character": 19
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumerations",
+					"kind": 4,
+					"children": [
+						161,
+						166
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "enums.ts",
+					"line": 1,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 298,
+			"name": "interfaces",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"children": [
+				{
+					"id": 324,
+					"name": "ClockConstructor",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 325,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 326,
+									"name": "new ClockConstructor",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 327,
+											"name": "hour",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 328,
+											"name": "minute",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "ClockInterface",
+										"id": 319
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 78,
+									"character": 40
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								325
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 78,
+							"character": 38
+						}
+					]
+				},
+				{
+					"id": 319,
+					"name": "ClockInterface",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 320,
+							"name": "currentTime",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 74,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Date"
+							}
+						},
+						{
+							"id": 321,
+							"name": "setTime",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 322,
+									"name": "setTime",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 323,
+											"name": "d",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Date"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 75,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 329,
+							"name": "tick",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"signatures": [
+								{
+									"id": 330,
+									"name": "tick",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 82,
+									"character": 12
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								320
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								321,
+								329
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 73,
+							"character": 35
+						},
+						{
+							"fileName": "interfaces.ts",
+							"line": 81,
+							"character": 36
+						}
+					]
+				},
+				{
+					"id": 331,
+					"name": "Shape",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 332,
+							"name": "color",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 90,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								332
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 89,
+							"character": 27
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "Square",
+							"id": 333
+						}
+					]
+				},
+				{
+					"id": 333,
+					"name": "Square",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 335,
+							"name": "color",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 90,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Shape.color",
+								"id": 332
+							}
+						},
+						{
+							"id": 334,
+							"name": "sideLength",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 94,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								335,
+								334
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 93,
+							"character": 27
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "Shape",
+							"id": 331
+						}
+					]
+				},
+				{
+					"id": 313,
+					"name": "SquareConfig",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 314,
+							"name": "color",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 56,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 315,
+							"name": "width",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 57,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								314,
+								315
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 55,
+							"character": 33
+						}
+					]
+				},
+				{
+					"id": 316,
+					"name": "StringArray",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"indexSignature": [
+						{
+							"id": 317,
+							"name": "__index",
+							"kind": 8192,
+							"kindString": "Index signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 318,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 69,
+							"character": 33
+						}
+					]
+				},
+				{
+					"id": 299,
+					"name": "Surface",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"children": [
+						{
+							"id": 300,
+							"name": "diffuse",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 49,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 301,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 302,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 303,
+													"name": "pos",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"name": "Vector",
+														"id": 230
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Color",
+												"id": 265
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "interfaces.ts",
+											"line": 49,
+											"character": 16
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 308,
+							"name": "reflect",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 51,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 309,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 310,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 311,
+													"name": "pos",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"name": "Vector",
+														"id": 230
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "interfaces.ts",
+											"line": 51,
+											"character": 16
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 312,
+							"name": "roughness",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 52,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 304,
+							"name": "specular",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isExternal": true
+							},
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 50,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 305,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 306,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 307,
+													"name": "pos",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"name": "Vector",
+														"id": 230
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Color",
+												"id": 265
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "interfaces.ts",
+											"line": 50,
+											"character": 17
+										}
+									]
+								}
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								300,
+								308,
+								312,
+								304
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 48,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 336,
+					"name": "SearchFunc",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 61,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 337,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 338,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 339,
+											"name": "source",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 340,
+											"name": "subString",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "interfaces.ts",
+									"line": 61,
+									"character": 29
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 341,
+					"name": "mySearch",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 63,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "SearchFunc",
+						"id": 336
+					}
+				},
+				{
+					"id": 347,
+					"name": "square",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 97,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Square",
+						"id": 333
+					},
+					"defaultValue": " {} as Square"
+				},
+				{
+					"id": 342,
+					"name": "createClock",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 343,
+							"name": "createClock",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 344,
+									"name": "ctor",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ClockConstructor",
+										"id": 324
+									}
+								},
+								{
+									"id": 345,
+									"name": "hour",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 346,
+									"name": "minute",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ClockInterface",
+								"id": 319
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 85,
+							"character": 32
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						324,
+						319,
+						331,
+						333,
+						313,
+						316,
+						299
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						336
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						341,
+						347
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						342
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "interfaces.ts",
+					"line": 46,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 211,
+			"name": "moduleFunction",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is the module extending the function moduleFunction()."
+			},
+			"signatures": [
+				{
+					"id": 212,
+					"name": "moduleFunction",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a function that is extended by a module."
+					},
+					"parameters": [
+						{
+							"id": 213,
+							"name": "arg",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "An argument.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 214,
+					"name": "functionVariable",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "This variable is appended to a function."
+					},
+					"sources": [
+						{
+							"fileName": "functions.ts",
+							"line": 140,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 215,
+					"name": "append",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 216,
+							"name": "append",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This function is appended to another function."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "functions.ts",
+							"line": 145,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 217,
+					"name": "prepend",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 218,
+							"name": "prepend",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This function is appended to another function."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "functions.ts",
+							"line": 152,
+							"character": 20
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						214
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						215,
+						217
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 130,
+					"character": 30
+				},
+				{
+					"fileName": "functions.ts",
+					"line": 135,
+					"character": 28
+				}
+			]
+		},
+		{
+			"id": 27,
+			"name": "BaseClass",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a simple base class.",
+				"text": "[[include:class-example.md]]\n"
+			},
+			"children": [
+				{
+					"id": 30,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 31,
+							"name": "new BaseClass",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 32,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "BaseClass",
+								"id": 27
+							}
+						},
+						{
+							"id": 33,
+							"name": "new BaseClass",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 34,
+									"name": "source",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseClass",
+										"id": 27
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "BaseClass",
+								"id": 27
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 70,
+							"character": 41
+						},
+						{
+							"fileName": "classes.ts",
+							"line": 72,
+							"character": 30
+						},
+						{
+							"fileName": "classes.ts",
+							"line": 73,
+							"character": 35
+						}
+					]
+				},
+				{
+					"id": 29,
+					"name": "kind",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isProtected": true
+					},
+					"comment": {
+						"shortText": "This is a simple protected member."
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 65,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 28,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "This is a simple public member."
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 60,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "INameInterface.name",
+						"id": 11
+					}
+				},
+				{
+					"id": 42,
+					"name": "arrowFunction",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "This is a simple fat arrow function.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "https://github.com/sebastian-lenz/typedoc/issues/37\n"
+							}
+						]
+					},
+					"signatures": [
+						{
+							"id": 43,
+							"name": "arrowFunction",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple fat arrow function."
+							},
+							"parameters": [
+								{
+									"id": 44,
+									"name": "param2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The second parameter needed by this function."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 45,
+									"name": "param1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The first parameter needed by this function."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 129,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 35,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 36,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple member function.",
+								"text": "It should be inherited by all subclasses. This class has a static\nmember with the same name, both should be documented.\n",
+								"returns": "Return the name.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "INameInterface.getName",
+								"id": 13
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 94,
+							"character": 18
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "INameInterface.getName",
+						"id": 12
+					}
+				},
+				{
+					"id": 39,
+					"name": "setName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 40,
+							"name": "setName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple member function.",
+								"text": "It should be inherited by all subclasses.\n"
+							},
+							"parameters": [
+								{
+									"id": 41,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "The new name.\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 117,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 48,
+					"name": "caTest",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 49,
+							"name": "caTest",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"tags": [
+									{
+										"tag": "see",
+										"text": "https://github.com/sebastian-lenz/typedoc/issues/42\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 50,
+									"name": "originalValues",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseClass",
+										"id": 27
+									}
+								},
+								{
+									"id": 51,
+									"name": "newRecord",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 52,
+									"name": "fieldNames",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								},
+								{
+									"id": 53,
+									"name": "mandatoryFields",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 153,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 46,
+					"name": "getInstance",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 47,
+							"name": "getInstance",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a static function.",
+								"text": "Static functions should not be inherited.\n",
+								"returns": "An instance of BaseClass.\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "BaseClass",
+								"id": 27
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 146,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 37,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 38,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple static member function.",
+								"text": "Static functions should not be inherited. This class has a\nmember with the same name, both should be documented.\n",
+								"returns": "Return the name.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 106,
+							"character": 18
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						30
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						29,
+						28
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						42,
+						35,
+						39,
+						48,
+						46,
+						37
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 48,
+					"character": 22
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"name": "SubClassA",
+					"id": 60
+				},
+				{
+					"type": "reference",
+					"name": "SubClassB",
+					"id": 101
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "INameInterface",
+					"id": 10
+				}
+			]
+		},
+		{
+			"id": 265,
+			"name": "Color",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"children": [
+				{
+					"id": 266,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 270,
+							"name": "new Color",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 271,
+									"name": "r",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 272,
+									"name": "g",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 273,
+									"name": "b",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Color",
+								"id": 265
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 23,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 269,
+					"name": "b",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 26,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 268,
+					"name": "g",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 25,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 267,
+					"name": "r",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 24,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 289,
+					"name": "background",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 34,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Color",
+						"id": 265
+					},
+					"defaultValue": " Color.black"
+				},
+				{
+					"id": 288,
+					"name": "black",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 33,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Color",
+						"id": 265
+					},
+					"defaultValue": " new Color(0.0, 0.0, 0.0)"
+				},
+				{
+					"id": 290,
+					"name": "defaultColor",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 35,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Color",
+						"id": 265
+					},
+					"defaultValue": " Color.black"
+				},
+				{
+					"id": 287,
+					"name": "grey",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 32,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Color",
+						"id": 265
+					},
+					"defaultValue": " new Color(0.5, 0.5, 0.5)"
+				},
+				{
+					"id": 286,
+					"name": "white",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 31,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Color",
+						"id": 265
+					},
+					"defaultValue": " new Color(1.0, 1.0, 1.0)"
+				},
+				{
+					"id": 278,
+					"name": "plus",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 279,
+							"name": "plus",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 280,
+									"name": "v1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Color",
+										"id": 265
+									}
+								},
+								{
+									"id": 281,
+									"name": "v2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Color",
+										"id": 265
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Color",
+								"id": 265
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 29,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 274,
+					"name": "scale",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 275,
+							"name": "scale",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 276,
+									"name": "k",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 277,
+									"name": "v",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Color",
+										"id": 265
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Color",
+								"id": 265
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 28,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 282,
+					"name": "times",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 283,
+							"name": "times",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 284,
+									"name": "v1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Color",
+										"id": 265
+									}
+								},
+								{
+									"id": 285,
+									"name": "v2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Color",
+										"id": 265
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Color",
+								"id": 265
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 30,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 291,
+					"name": "toDrawingColor",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 292,
+							"name": "toDrawingColor",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 293,
+									"name": "c",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Color",
+										"id": 265
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 294,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 297,
+											"name": "b",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExternal": true
+											},
+											"sources": [
+												{
+													"fileName": "interfaces.ts",
+													"line": 41,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " Math.floor(legalize(c.b) * 255)"
+										},
+										{
+											"id": 296,
+											"name": "g",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExternal": true
+											},
+											"sources": [
+												{
+													"fileName": "interfaces.ts",
+													"line": 40,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " Math.floor(legalize(c.g) * 255)"
+										},
+										{
+											"id": 295,
+											"name": "r",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExternal": true
+											},
+											"sources": [
+												{
+													"fileName": "interfaces.ts",
+													"line": 39,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " Math.floor(legalize(c.r) * 255)"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												297,
+												296,
+												295
+											]
+										}
+									]
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 36,
+							"character": 25
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						266
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						269,
+						268,
+						267,
+						289,
+						288,
+						290,
+						287,
+						286
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						278,
+						274,
+						282,
+						291
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "interfaces.ts",
+					"line": 23,
+					"character": 18
+				}
+			]
+		},
+		{
+			"id": 353,
+			"name": "Employee",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"children": [
+				{
+					"id": 354,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 355,
+							"name": "new Employee",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 356,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 357,
+									"name": "department",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Employee",
+								"id": 353
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "Person.__constructor",
+								"id": 350
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "private-members.ts",
+							"line": 29,
+							"character": 31
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "Person.__constructor",
+						"id": 350
+					}
+				},
+				{
+					"id": 360,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "private-members.ts",
+							"line": 23,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Person.name",
+						"id": 349
+					}
+				},
+				{
+					"id": 358,
+					"name": "getElevatorPitch",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 359,
+							"name": "getElevatorPitch",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "private-members.ts",
+							"line": 36,
+							"character": 27
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						354
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						360
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						358
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "private-members.ts",
+					"line": 27,
+					"character": 21
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "Person",
+					"id": 348
+				}
+			]
+		},
+		{
+			"id": 129,
+			"name": "GenericClass",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a generic class."
+			},
+			"typeParameter": [
+				{
+					"id": 130,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {},
+					"comment": {
+						"shortText": "This a type parameter.\n"
+					},
+					"type": {
+						"type": "reference",
+						"name": "BaseClass",
+						"id": 27
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 132,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "Constructor short text."
+					},
+					"signatures": [
+						{
+							"id": 135,
+							"name": "new GenericClass",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructor short text."
+							},
+							"parameters": [
+								{
+									"id": 136,
+									"name": "p1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Constructor param"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 137,
+									"name": "p2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Private string property"
+									},
+									"type": {
+										"type": "typeParameter",
+										"name": "T",
+										"constraint": {
+											"type": "reference",
+											"name": "BaseClass",
+											"id": 27
+										}
+									}
+								},
+								{
+									"id": 138,
+									"name": "p3",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Public number property"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 139,
+									"name": "p4",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Public implicit any property\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GenericClass",
+								"id": 129
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 254,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 133,
+					"name": "p2",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isProtected": true
+					},
+					"comment": {
+						"shortText": "Private string property"
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 264,
+							"character": 32
+						}
+					],
+					"type": {
+						"type": "typeParameter",
+						"name": "T",
+						"constraint": {
+							"type": "reference",
+							"name": "BaseClass",
+							"id": 27
+						}
+					}
+				},
+				{
+					"id": 134,
+					"name": "p3",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Public number property"
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 264,
+							"character": 46
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 131,
+					"name": "value",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 254,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "typeParameter",
+						"name": "T",
+						"constraint": {
+							"type": "reference",
+							"name": "BaseClass",
+							"id": 27
+						}
+					}
+				},
+				{
+					"id": 143,
+					"name": "getValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 144,
+							"name": "getValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "typeParameter",
+								"name": "T",
+								"constraint": {
+									"type": "reference",
+									"name": "BaseClass",
+									"id": 27
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 274,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 140,
+					"name": "setValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 141,
+							"name": "setValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {},
+							"parameters": [
+								{
+									"id": 142,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "[[getValue]] is the counterpart.\n"
+									},
+									"type": {
+										"type": "typeParameter",
+										"name": "T",
+										"constraint": {
+											"type": "reference",
+											"name": "BaseClass",
+											"id": 27
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 270,
+							"character": 19
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						132
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						133,
+						134,
+						131
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						143,
+						140
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 252,
+					"character": 25
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"name": "NonGenericClass",
+					"id": 145
+				}
+			]
+		},
+		{
+			"id": 367,
+			"name": "Greeter",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 369,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 370,
+							"name": "new Greeter",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 371,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Greeter",
+								"id": 367
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "internal.ts",
+							"line": 9,
+							"character": 21
+						}
+					]
+				},
+				{
+					"id": 368,
+					"name": "greeting",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "internal.ts",
+							"line": 9,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 372,
+					"name": "greet",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 373,
+							"name": "greet",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "internal.ts",
+							"line": 13,
+							"character": 9
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						369
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						368
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						372
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "internal.ts",
+					"line": 8,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 54,
+			"name": "InternalClass",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is an internal class, it is not exported."
+			},
+			"children": [
+				{
+					"id": 55,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 56,
+							"name": "new InternalClass",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 57,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 58,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 59,
+													"name": "name",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isExternal": true
+													},
+													"sources": [
+														{
+															"fileName": "classes.ts",
+															"line": 170,
+															"character": 31
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														59
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "classes.ts",
+													"line": 170,
+													"character": 24
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "InternalClass",
+								"id": 54
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 169,
+							"character": 21
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						55
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 169,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 145,
+			"name": "NonGenericClass",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This a non generic class derived from a [[GenericClass|generic class]]."
+			},
+			"children": [
+				{
+					"id": 147,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "Constructor short text."
+					},
+					"signatures": [
+						{
+							"id": 150,
+							"name": "new NonGenericClass",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Constructor short text."
+							},
+							"parameters": [
+								{
+									"id": 151,
+									"name": "p1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Constructor param"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 152,
+									"name": "p2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Private string property"
+									},
+									"type": {
+										"type": "reference",
+										"name": "SubClassB",
+										"id": 101
+									}
+								},
+								{
+									"id": 153,
+									"name": "p3",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Public number property"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 154,
+									"name": "p4",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Public implicit any property\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "NonGenericClass",
+								"id": 145
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "GenericClass.__constructor",
+								"id": 132
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 254,
+							"character": 20
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "GenericClass.__constructor",
+						"id": 132
+					}
+				},
+				{
+					"id": 148,
+					"name": "p2",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isProtected": true
+					},
+					"comment": {
+						"shortText": "Private string property"
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 264,
+							"character": 32
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "SubClassB",
+						"id": 101
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "GenericClass.p2",
+						"id": 133
+					}
+				},
+				{
+					"id": 149,
+					"name": "p3",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Public number property"
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 264,
+							"character": 46
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "GenericClass.p3",
+						"id": 134
+					}
+				},
+				{
+					"id": 146,
+					"name": "value",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 254,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "SubClassB",
+						"id": 101
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "GenericClass.value",
+						"id": 131
+					}
+				},
+				{
+					"id": 158,
+					"name": "getValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 159,
+							"name": "getValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "SubClassB",
+								"id": 101
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "GenericClass.getValue",
+								"id": 143
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 274,
+							"character": 19
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "GenericClass.getValue",
+						"id": 143
+					}
+				},
+				{
+					"id": 155,
+					"name": "setValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 156,
+							"name": "setValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {},
+							"parameters": [
+								{
+									"id": 157,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "[[getValue]] is the counterpart.\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "SubClassB",
+										"id": 101
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "GenericClass.setValue",
+								"id": 140
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 270,
+							"character": 19
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "GenericClass.setValue",
+						"id": 140
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						147
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						148,
+						149,
+						146
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						158,
+						155
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 282,
+					"character": 28
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "GenericClass",
+					"id": 129,
+					"typeArguments": [
+						{
+							"type": "reference",
+							"name": "SubClassB",
+							"id": 101
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 348,
+			"name": "Person",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"children": [
+				{
+					"id": 350,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 351,
+							"name": "new Person",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 352,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Person",
+								"id": 348
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "private-members.ts",
+							"line": 23,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 349,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "private-members.ts",
+							"line": 23,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						350
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						349
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "private-members.ts",
+					"line": 22,
+					"character": 19
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"name": "Employee",
+					"id": 353
+				}
+			]
+		},
+		{
+			"id": 60,
+			"name": "SubClassA",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a class that extends another class.",
+				"text": "This class has no own constructor, so its constructor should be inherited\nfrom BaseClass.\n"
+			},
+			"children": [
+				{
+					"id": 77,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 78,
+							"name": "new SubClassA",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 79,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "SubClassA",
+								"id": 60
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.__constructor",
+								"id": 30
+							}
+						},
+						{
+							"id": 80,
+							"name": "new SubClassA",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 81,
+									"name": "source",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseClass",
+										"id": 27
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "SubClassA",
+								"id": 60
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.__constructor",
+								"id": 30
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 70,
+							"character": 41
+						},
+						{
+							"fileName": "classes.ts",
+							"line": 72,
+							"character": 30
+						},
+						{
+							"fileName": "classes.ts",
+							"line": 73,
+							"character": 35
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.__constructor",
+						"id": 30
+					}
+				},
+				{
+					"id": 76,
+					"name": "kind",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isProtected": true
+					},
+					"comment": {
+						"shortText": "This is a simple protected member."
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 65,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.kind",
+						"id": 29
+					}
+				},
+				{
+					"id": 75,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "This is a simple public member."
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 60,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.name",
+						"id": 28
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPrintNameInterface.name",
+						"id": 21
+					}
+				},
+				{
+					"id": 66,
+					"name": "nameProperty",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Returns the name. See [[BaseClass.name]].\nSets the name. See [[BaseClass.name]].",
+						"returns": "The return value.\n"
+					},
+					"getSignature": [
+						{
+							"id": 67,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the name. See [[BaseClass.name]].",
+								"returns": "The return value.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"setSignature": [
+						{
+							"id": 68,
+							"name": "__set",
+							"kind": 1048576,
+							"kindString": "Set signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Sets the name. See [[BaseClass.name]].",
+								"returns": "The return value.\n"
+							},
+							"parameters": [
+								{
+									"id": 69,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The new name."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 199,
+							"character": 27
+						},
+						{
+							"fileName": "classes.ts",
+							"line": 209,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 70,
+					"name": "readOnlyNameProperty",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Returns the name. See [[BaseClass.name]].",
+						"returns": "The return value.\n"
+					},
+					"getSignature": [
+						{
+							"id": 71,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns the name. See [[BaseClass.name]].",
+								"returns": "The return value.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 218,
+							"character": 35
+						}
+					]
+				},
+				{
+					"id": 72,
+					"name": "writeOnlyNameProperty",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Sets the name. See [[BaseClass.name]].",
+						"returns": "The return value.\n"
+					},
+					"setSignature": [
+						{
+							"id": 73,
+							"name": "__set",
+							"kind": 1048576,
+							"kindString": "Set signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Sets the name. See [[BaseClass.name]].",
+								"returns": "The return value.\n"
+							},
+							"parameters": [
+								{
+									"id": 74,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The new name."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 228,
+							"character": 36
+						}
+					]
+				},
+				{
+					"id": 89,
+					"name": "arrowFunction",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "This is a simple fat arrow function.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "https://github.com/sebastian-lenz/typedoc/issues/37\n"
+							}
+						]
+					},
+					"signatures": [
+						{
+							"id": 90,
+							"name": "arrowFunction",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple fat arrow function."
+							},
+							"parameters": [
+								{
+									"id": 91,
+									"name": "param2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The second parameter needed by this function."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 92,
+									"name": "param1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The first parameter needed by this function."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "(Anonymous function)",
+								"id": 43
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 129,
+							"character": 24
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.arrowFunction",
+						"id": 42
+					}
+				},
+				{
+					"id": 82,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 83,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple member function.",
+								"text": "It should be inherited by all subclasses. This class has a static\nmember with the same name, both should be documented.\n",
+								"returns": "Return the name.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.getName",
+								"id": 35
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPrintNameInterface.getName",
+								"id": 23
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 94,
+							"character": 18
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.getName",
+						"id": 35
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPrintNameInterface.getName",
+						"id": 22
+					}
+				},
+				{
+					"id": 61,
+					"name": "print",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 62,
+							"name": "print",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple interface function."
+							},
+							"parameters": [
+								{
+									"id": 63,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPrintNameInterface.print",
+								"id": 25
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 185,
+							"character": 16
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPrintNameInterface.print",
+						"id": 24
+					}
+				},
+				{
+					"id": 64,
+					"name": "printName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 65,
+							"name": "printName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a interface function of IPrintNameInterface"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPrintNameInterface.printName",
+								"id": 20
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 190,
+							"character": 20
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPrintNameInterface.printName",
+						"id": 19
+					}
+				},
+				{
+					"id": 86,
+					"name": "setName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 87,
+							"name": "setName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple member function.",
+								"text": "It should be inherited by all subclasses.\n"
+							},
+							"parameters": [
+								{
+									"id": 88,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "The new name.\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.setName",
+								"id": 39
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 117,
+							"character": 18
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.setName",
+						"id": 39
+					}
+				},
+				{
+					"id": 95,
+					"name": "caTest",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 96,
+							"name": "caTest",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"tags": [
+									{
+										"tag": "see",
+										"text": "https://github.com/sebastian-lenz/typedoc/issues/42\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 97,
+									"name": "originalValues",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseClass",
+										"id": 27
+									}
+								},
+								{
+									"id": 98,
+									"name": "newRecord",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 99,
+									"name": "fieldNames",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								},
+								{
+									"id": 100,
+									"name": "mandatoryFields",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.caTest",
+								"id": 48
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 153,
+							"character": 24
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.caTest",
+						"id": 48
+					}
+				},
+				{
+					"id": 93,
+					"name": "getInstance",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 94,
+							"name": "getInstance",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a static function.",
+								"text": "Static functions should not be inherited.\n",
+								"returns": "An instance of BaseClass.\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "BaseClass",
+								"id": 27
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.getInstance",
+								"id": 46
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 146,
+							"character": 22
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.getInstance",
+						"id": 46
+					}
+				},
+				{
+					"id": 84,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 85,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple static member function.",
+								"text": "Static functions should not be inherited. This class has a\nmember with the same name, both should be documented.\n",
+								"returns": "Return the name.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.getName",
+								"id": 37
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 106,
+							"character": 18
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.getName",
+						"id": 37
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						77
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						76,
+						75
+					]
+				},
+				{
+					"title": "Accessors",
+					"kind": 262144,
+					"children": [
+						66,
+						70,
+						72
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						89,
+						82,
+						61,
+						64,
+						86,
+						95,
+						93,
+						84
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 181,
+					"character": 22
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "BaseClass",
+					"id": 27
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "INameInterface",
+					"id": 10
+				},
+				{
+					"type": "reference",
+					"name": "IPrintNameInterface",
+					"id": 18
+				}
+			]
+		},
+		{
+			"id": 101,
+			"name": "SubClassB",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a class that extends another class.",
+				"text": "The constructor of the original class should be overwritten.\n"
+			},
+			"children": [
+				{
+					"id": 102,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 103,
+							"name": "new SubClassB",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 104,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "SubClassB",
+								"id": 101
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "BaseClass.__constructor",
+								"id": 30
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 238,
+							"character": 42
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "BaseClass.__constructor",
+						"id": 30
+					}
+				},
+				{
+					"id": 109,
+					"name": "kind",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isProtected": true
+					},
+					"comment": {
+						"shortText": "This is a simple protected member."
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 65,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.kind",
+						"id": 29
+					}
+				},
+				{
+					"id": 108,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "This is a simple public member."
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 60,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.name",
+						"id": 28
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "INameInterface.name",
+						"id": 11
+					}
+				},
+				{
+					"id": 117,
+					"name": "arrowFunction",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "This is a simple fat arrow function.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "https://github.com/sebastian-lenz/typedoc/issues/37\n"
+							}
+						]
+					},
+					"signatures": [
+						{
+							"id": 118,
+							"name": "arrowFunction",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple fat arrow function."
+							},
+							"parameters": [
+								{
+									"id": 119,
+									"name": "param2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The second parameter needed by this function."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 120,
+									"name": "param1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "The first parameter needed by this function."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "(Anonymous function)",
+								"id": 43
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 129,
+							"character": 24
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.arrowFunction",
+						"id": 42
+					}
+				},
+				{
+					"id": 105,
+					"name": "doSomething",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 106,
+							"name": "doSomething",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 107,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "tuple",
+										"elements": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "reference",
+												"name": "SubClassA",
+												"id": 60
+											},
+											{
+												"type": "reference",
+												"name": "SubClassB",
+												"id": 101
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 243,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 110,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 111,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple member function.",
+								"text": "It should be inherited by all subclasses. This class has a static\nmember with the same name, both should be documented.\n",
+								"returns": "Return the name.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.getName",
+								"id": 35
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "INameInterface.getName",
+								"id": 13
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 94,
+							"character": 18
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.getName",
+						"id": 35
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "INameInterface.getName",
+						"id": 12
+					}
+				},
+				{
+					"id": 114,
+					"name": "setName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 115,
+							"name": "setName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple member function.",
+								"text": "It should be inherited by all subclasses.\n"
+							},
+							"parameters": [
+								{
+									"id": 116,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "The new name.\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.setName",
+								"id": 39
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 117,
+							"character": 18
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.setName",
+						"id": 39
+					}
+				},
+				{
+					"id": 123,
+					"name": "caTest",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 124,
+							"name": "caTest",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"tags": [
+									{
+										"tag": "see",
+										"text": "https://github.com/sebastian-lenz/typedoc/issues/42\n"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 125,
+									"name": "originalValues",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BaseClass",
+										"id": 27
+									}
+								},
+								{
+									"id": 126,
+									"name": "newRecord",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 127,
+									"name": "fieldNames",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								},
+								{
+									"id": 128,
+									"name": "mandatoryFields",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.caTest",
+								"id": 48
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 153,
+							"character": 24
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.caTest",
+						"id": 48
+					}
+				},
+				{
+					"id": 121,
+					"name": "getInstance",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 122,
+							"name": "getInstance",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a static function.",
+								"text": "Static functions should not be inherited.\n",
+								"returns": "An instance of BaseClass.\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "BaseClass",
+								"id": 27
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.getInstance",
+								"id": 46
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 146,
+							"character": 22
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.getInstance",
+						"id": 46
+					}
+				},
+				{
+					"id": 112,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 113,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a simple static member function.",
+								"text": "Static functions should not be inherited. This class has a\nmember with the same name, both should be documented.\n",
+								"returns": "Return the name.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "BaseClass.getName",
+								"id": 37
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 106,
+							"character": 18
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "BaseClass.getName",
+						"id": 37
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						102
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						109,
+						108
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						117,
+						105,
+						110,
+						114,
+						123,
+						121,
+						112
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 238,
+					"character": 22
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "BaseClass",
+					"id": 27
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "INameInterface",
+					"id": 10
+				}
+			]
+		},
+		{
+			"id": 230,
+			"name": "Vector",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"children": [
+				{
+					"id": 231,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 235,
+							"name": "new Vector",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 236,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 237,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 238,
+									"name": "z",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Vector",
+								"id": 230
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 1,
+							"character": 21
+						}
+					]
+				},
+				{
+					"id": 232,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 2,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 233,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 3,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 234,
+					"name": "z",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isConstructorProperty": true,
+						"isExported": true,
+						"isExternal": true,
+						"isPublic": true
+					},
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 4,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 261,
+					"name": "cross",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 262,
+							"name": "cross",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 263,
+									"name": "v1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								},
+								{
+									"id": 264,
+									"name": "v2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Vector",
+								"id": 230
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 16,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 251,
+					"name": "dot",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 252,
+							"name": "dot",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 253,
+									"name": "v1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								},
+								{
+									"id": 254,
+									"name": "v2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 9,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 255,
+					"name": "mag",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 256,
+							"name": "mag",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 257,
+									"name": "v",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 10,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 243,
+					"name": "minus",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 244,
+							"name": "minus",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 245,
+									"name": "v1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								},
+								{
+									"id": 246,
+									"name": "v2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Vector",
+								"id": 230
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 7,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 258,
+					"name": "norm",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 259,
+							"name": "norm",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 260,
+									"name": "v",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Vector",
+								"id": 230
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 11,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 247,
+					"name": "plus",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 248,
+							"name": "plus",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 249,
+									"name": "v1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								},
+								{
+									"id": 250,
+									"name": "v2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Vector",
+								"id": 230
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 8,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 239,
+					"name": "times",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 240,
+							"name": "times",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 241,
+									"name": "k",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 242,
+									"name": "v",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector",
+										"id": 230
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Vector",
+								"id": 230
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "interfaces.ts",
+							"line": 6,
+							"character": 16
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						231
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						232,
+						233,
+						234
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						261,
+						251,
+						255,
+						243,
+						258,
+						247,
+						239
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "interfaces.ts",
+					"line": 1,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 10,
+			"name": "INameInterface",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a simple interface."
+			},
+			"children": [
+				{
+					"id": 11,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "This is a interface member of INameInterface.",
+						"text": "It should be inherited by all subinterfaces.\n"
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 11,
+							"character": 8
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 12,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 13,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a interface function of INameInterface.",
+								"text": "It should be inherited by all subinterfaces.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 18,
+							"character": 11
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						11
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						12
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 5,
+					"character": 31
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"name": "IPrintNameInterface",
+					"id": 18
+				}
+			],
+			"implementedBy": [
+				{
+					"type": "reference",
+					"name": "BaseClass",
+					"id": 27
+				},
+				{
+					"type": "reference",
+					"name": "SubClassA",
+					"id": 60
+				},
+				{
+					"type": "reference",
+					"name": "SubClassB",
+					"id": 101
+				}
+			]
+		},
+		{
+			"id": 14,
+			"name": "IPrintInterface",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a simple interface."
+			},
+			"children": [
+				{
+					"id": 15,
+					"name": "print",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 16,
+							"name": "print",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a interface function of IPrintInterface",
+								"text": "It should be inherited by all subinterfaces.\n"
+							},
+							"parameters": [
+								{
+									"id": 17,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 30,
+							"character": 9
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						15
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 24,
+					"character": 32
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"name": "IPrintNameInterface",
+					"id": 18
+				}
+			]
+		},
+		{
+			"id": 18,
+			"name": "IPrintNameInterface",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a interface inheriting from two other interfaces."
+			},
+			"children": [
+				{
+					"id": 21,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "This is a interface member of INameInterface.",
+						"text": "It should be inherited by all subinterfaces.\n"
+					},
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 11,
+							"character": 8
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "INameInterface.name",
+						"id": 11
+					}
+				},
+				{
+					"id": 22,
+					"name": "getName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 23,
+							"name": "getName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a interface function of INameInterface.",
+								"text": "It should be inherited by all subinterfaces.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "INameInterface.getName",
+								"id": 12
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 18,
+							"character": 11
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "INameInterface.getName",
+						"id": 12
+					}
+				},
+				{
+					"id": 24,
+					"name": "print",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 25,
+							"name": "print",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a interface function of IPrintInterface",
+								"text": "It should be inherited by all subinterfaces.\n"
+							},
+							"parameters": [
+								{
+									"id": 26,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "IPrintInterface.print",
+								"id": 15
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 30,
+							"character": 9
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "IPrintInterface.print",
+						"id": 15
+					}
+				},
+				{
+					"id": 19,
+					"name": "printName",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 20,
+							"name": "printName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a interface function of IPrintNameInterface"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "classes.ts",
+							"line": 40,
+							"character": 13
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						21
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						22,
+						24,
+						19
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "classes.ts",
+					"line": 36,
+					"character": 36
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "INameInterface",
+					"id": 10
+				},
+				{
+					"type": "reference",
+					"name": "IPrintInterface",
+					"id": 14
+				}
+			],
+			"implementedBy": [
+				{
+					"type": "reference",
+					"name": "SubClassA",
+					"id": 60
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "amount",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a number type\n```\nconst decimal: number = 6;\n```"
+			},
+			"sources": [
+				{
+					"fileName": "basic-types.ts",
+					"line": 20,
+					"character": 19
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "number"
+			},
+			"defaultValue": "6"
+		},
+		{
+			"id": 3,
+			"name": "color",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a string type\n```\nconst color: string = \"blue\";\n```"
+			},
+			"sources": [
+				{
+					"fileName": "basic-types.ts",
+					"line": 28,
+					"character": 18
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "string"
+			},
+			"defaultValue": "\"blue\""
+		},
+		{
+			"id": 374,
+			"name": "greeter",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "internal.ts",
+					"line": 18,
+					"character": 13
+				}
+			],
+			"type": {
+				"type": "reference",
+				"name": "Greeter",
+				"id": 367
+			},
+			"defaultValue": " new Greeter('world')"
+		},
+		{
+			"id": 1,
+			"name": "isDone",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a boolean type\n```\nconst isDone: boolean = false;\n```"
+			},
+			"sources": [
+				{
+					"fileName": "basic-types.ts",
+					"line": 12,
+					"character": 19
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "boolean"
+			},
+			"defaultValue": "false"
+		},
+		{
+			"id": 4,
+			"name": "numbers",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is an array type\n```\nconst numbers: number[] = [1, 2, 3];\n```"
+			},
+			"sources": [
+				{
+					"fileName": "basic-types.ts",
+					"line": 36,
+					"character": 20
+				}
+			],
+			"type": {
+				"type": "array",
+				"elementType": {
+					"type": "intrinsic",
+					"name": "number"
+				}
+			},
+			"defaultValue": " [1, 2, 3]"
+		},
+		{
+			"id": 362,
+			"name": "privateVar",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isPrivate": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "Marked as private"
+			},
+			"sources": [
+				{
+					"fileName": "private-members.ts",
+					"line": 8,
+					"character": 16
+				}
+			],
+			"type": {
+				"type": "stringLiteral",
+				"value": "marked private variable"
+			},
+			"defaultValue": "\"marked private variable\""
+		},
+		{
+			"id": 361,
+			"name": "publicVar",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExternal": true
+			},
+			"sources": [
+				{
+					"fileName": "private-members.ts",
+					"line": 2,
+					"character": 15
+				}
+			],
+			"type": {
+				"type": "stringLiteral",
+				"value": "public variable"
+			},
+			"defaultValue": "\"public variable\""
+		},
+		{
+			"id": 219,
+			"name": "createSomething",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 220,
+					"name": "createSomething",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "A function that returns an object.\nAlso no type information is given, the object should be correctly reflected."
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 221,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 222,
+									"name": "foo",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "functions.ts",
+											"line": 163,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"bar\""
+								},
+								{
+									"id": 226,
+									"name": "doAnotherThing",
+									"kind": 64,
+									"kindString": "Function",
+									"flags": {
+										"isExternal": true
+									},
+									"signatures": [
+										{
+											"id": 227,
+											"name": "doAnotherThing",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "functions.ts",
+											"line": 165,
+											"character": 22
+										}
+									]
+								},
+								{
+									"id": 223,
+									"name": "doSomething",
+									"kind": 64,
+									"kindString": "Function",
+									"flags": {
+										"isExternal": true
+									},
+									"signatures": [
+										{
+											"id": 224,
+											"name": "doSomething",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 225,
+													"name": "a",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "functions.ts",
+											"line": 164,
+											"character": 19
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										222
+									]
+								},
+								{
+									"title": "Functions",
+									"kind": 64,
+									"children": [
+										226,
+										223
+									]
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 161,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 174,
+			"name": "exportedFunction",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 175,
+					"name": "exportedFunction",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a simple exported function."
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 12,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 181,
+			"name": "functionWithArguments",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 182,
+					"name": "functionWithArguments",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a function with multiple arguments and a return value."
+					},
+					"parameters": [
+						{
+							"id": 183,
+							"name": "paramZ",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "This is a string parameter."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 184,
+							"name": "paramG",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "This is a parameter flagged with any.\n    This sentence is placed in the next line.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 185,
+							"name": "paramA",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\nThis is a **parameter** pointing to an interface.\n\n\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "INameInterface",
+								"id": 10
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 41,
+					"character": 37
+				}
+			]
+		},
+		{
+			"id": 190,
+			"name": "functionWithDefaults",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 191,
+					"name": "functionWithDefaults",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a function with a parameter that has a default value.",
+						"returns": "The input value or the default value.\n"
+					},
+					"parameters": [
+						{
+							"id": 192,
+							"name": "valueA",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"defaultValue\""
+						},
+						{
+							"id": 193,
+							"name": "valueB",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"defaultValue": "100"
+						},
+						{
+							"id": 194,
+							"name": "valueC",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"defaultValue": " Number.NaN"
+						},
+						{
+							"id": 195,
+							"name": "valueD",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 196,
+							"name": "valueE",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 61,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 228,
+			"name": "functionWithDocLink",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 229,
+					"name": "functionWithDocLink",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.\nAlso, check out {@link http://www.google.com|Google} and\n{@link https://github.com GitHub}.",
+						"text": "Taken from http://usejsdoc.org/tags-inline-link.html.\n"
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 176,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 186,
+			"name": "functionWithOptionalValue",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 187,
+					"name": "functionWithOptionalValue",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a function with a parameter that is optional."
+					},
+					"parameters": [
+						{
+							"id": 188,
+							"name": "requiredParam",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "A normal parameter."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 189,
+							"name": "optionalParam",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"text": "An optional parameter.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 52,
+					"character": 41
+				}
+			]
+		},
+		{
+			"id": 197,
+			"name": "functionWithRest",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 198,
+					"name": "functionWithRest",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a function with rest parameter.",
+						"returns": "The combined string.\n"
+					},
+					"parameters": [
+						{
+							"id": 199,
+							"name": "rest",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isRest": true
+							},
+							"comment": {
+								"text": "Multiple strings."
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 78,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 207,
+			"name": "genericFunction",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 208,
+					"name": "genericFunction",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a generic function.",
+						"returns": "Returns the typed value.\n"
+					},
+					"typeParameter": [
+						{
+							"id": 209,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"comment": {
+								"text": "The type parameter."
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 210,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "The typed value."
+							},
+							"type": {
+								"type": "typeParameter",
+								"name": "T"
+							}
+						}
+					],
+					"type": {
+						"type": "typeParameter",
+						"name": "T"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 121,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 172,
+			"name": "internalFunction",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 173,
+					"name": "internalFunction",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is an internal function."
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 6,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 200,
+			"name": "multipleSignatures",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is the actual implementation, this comment will not be visible\nin the generated documentation."
+			},
+			"signatures": [
+				{
+					"id": 201,
+					"name": "multipleSignatures",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is the first signature of a function with multiple signatures."
+					},
+					"parameters": [
+						{
+							"id": 202,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "The name value.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 203,
+					"name": "multipleSignatures",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is the second signature of a function with multiple signatures."
+					},
+					"parameters": [
+						{
+							"id": 204,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "An object containing the name value."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 205,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 206,
+											"name": "name",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExternal": true
+											},
+											"comment": {
+												"text": "A value of the object.\n"
+											},
+											"sources": [
+												{
+													"fileName": "functions.ts",
+													"line": 96,
+													"character": 47
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												206
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "functions.ts",
+											"line": 96,
+											"character": 41
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 88,
+					"character": 34
+				},
+				{
+					"fileName": "functions.ts",
+					"line": 96,
+					"character": 34
+				},
+				{
+					"fileName": "functions.ts",
+					"line": 102,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 365,
+			"name": "privateFunction",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isPrivate": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 366,
+					"name": "privateFunction",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isPrivate": true
+					},
+					"comment": {
+						"shortText": "Marked as private"
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "private-members.ts",
+					"line": 18,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 363,
+			"name": "publicFunction",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 364,
+					"name": "publicFunction",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "private-members.ts",
+					"line": 10,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 176,
+			"name": "variableFunction",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is a function with multiple arguments and a return value."
+			},
+			"signatures": [
+				{
+					"id": 177,
+					"name": "variableFunction",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "This is a function with multiple arguments and a return value."
+					},
+					"parameters": [
+						{
+							"id": 178,
+							"name": "paramZ",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a string parameter."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 179,
+							"name": "paramG",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"shortText": "This is a parameter flagged with any.\n    This sentence is placed in the next line.\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 180,
+							"name": "paramA",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"shortText": "\nThis is a **parameter** pointing to an interface.\n\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "INameInterface",
+								"id": 10
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions.ts",
+					"line": 25,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 5,
+			"name": "aMixedObject",
+			"kind": 2097152,
+			"kindString": "Object literal",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "This is an object with various types"
+			},
+			"children": [
+				{
+					"id": 8,
+					"name": "someNumber",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "basic-types.ts",
+							"line": 45,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "10"
+				},
+				{
+					"id": 9,
+					"name": "someString",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "basic-types.ts",
+							"line": 46,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"defaultValue": "\"hello\""
+				},
+				{
+					"id": 6,
+					"name": "someFunction",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 7,
+							"name": "someFunction",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "basic-types.ts",
+							"line": 42,
+							"character": 16
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						8,
+						9
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						6
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "basic-types.ts",
+					"line": 41,
+					"character": 25
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "object"
+			}
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"kind": 2,
+			"children": [
+				160,
+				298,
+				211
+			]
+		},
+		{
+			"title": "Classes",
+			"kind": 128,
+			"children": [
+				27,
+				265,
+				353,
+				129,
+				367,
+				54,
+				145,
+				348,
+				60,
+				101,
+				230
+			]
+		},
+		{
+			"title": "Interfaces",
+			"kind": 256,
+			"children": [
+				10,
+				14,
+				18
+			]
+		},
+		{
+			"title": "Variables",
+			"kind": 32,
+			"children": [
+				2,
+				3,
+				374,
+				1,
+				4,
+				362,
+				361
+			]
+		},
+		{
+			"title": "Functions",
+			"kind": 64,
+			"children": [
+				219,
+				174,
+				181,
+				190,
+				228,
+				186,
+				197,
+				207,
+				172,
+				200,
+				365,
+				363,
+				176
+			]
+		},
+		{
+			"title": "Object literals",
+			"kind": 2097152,
+			"children": [
+				5
+			]
+		}
+	]
+}
