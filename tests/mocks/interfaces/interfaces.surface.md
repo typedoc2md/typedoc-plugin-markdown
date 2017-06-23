@@ -13,3 +13,4 @@
 | reflect | function (pos: *[Vector](../classes/vector.md)*): number
 | roughness | number
 | specular | function (pos: *[Vector](../classes/vector.md)*): [Color](../classes/color.md)
+

@@ -27,7 +27,7 @@ The plugin provides an additional markdown theme.
 typedoc --theme markdown
 ```
 
-### Additional argumentsd
+### Additional arguments
 
 The plugin exposes the following additional arguments:
 

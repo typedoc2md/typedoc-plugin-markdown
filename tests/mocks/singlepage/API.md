@@ -317,7 +317,6 @@ ___
 
 ---
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -384,7 +383,6 @@ ___
 
 ---
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -411,7 +409,6 @@ ___
 | Name  | Type                
 | ------ | ------------------- 
 | color | string
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -439,7 +436,6 @@ ___
 | ------ | ------------------- 
 | color | string
 | sideLength | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -454,7 +450,6 @@ ___
 | ------ | ------------------- 
 | color | string
 | width | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -465,7 +460,6 @@ ___
 ## Indexable
 
 \[index: number\]:&nbsp;string
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -482,7 +476,6 @@ ___
 | reflect | function (pos: *[Vector](#class-vector)*): number
 | roughness | number
 | specular | function (pos: *[Vector](#class-vector)*): [Color](#class-color)
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -3995,7 +3988,6 @@ ___
 
 ---
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -4059,7 +4051,6 @@ ___
 
 ---
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -4190,7 +4181,6 @@ ___
 
 ---
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 

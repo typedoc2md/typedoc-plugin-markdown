@@ -7,19 +7,20 @@ export function compileMember(member: DeclarationReflection) {
 
   let md: hbs.SafeString = '';
 
-  // console.log('compile member', member.kindString, member.kind === ReflectionKind.ExternalModule);
-
   if (!(Options.excludePrivate && member.flags.isPrivate)) {
 
     switch (member.kind) {
       case ReflectionKind.Class:
       case ReflectionKind.Module:
       case ReflectionKind.ExternalModule:
-      case ReflectionKind.Interface:
       case ReflectionKind.Enum:
-         Object.assign(member, {displayBackLink: true, hideBreadcrumbs: true});
-         md = compileTemplate('templates/reflection.hbs', { model: member});
-         break;
+        Object.assign(member, { displayBackLink: true, hideBreadcrumbs: true });
+        md = compileTemplate('templates/reflection.hbs', { model: member });
+        break;
+      case ReflectionKind.Interface:
+        Object.assign(member, { displayBackLink: Options.mode === 1 ? true : false, hideBreadcrumbs: true });
+        md = compileTemplate('templates/reflection.hbs', { model: member });
+        break;
       case ReflectionKind.Constructor:
         md = compileTemplate('partials/member.constructor.hbs', member);
         break;
@@ -27,7 +28,7 @@ export function compileMember(member: DeclarationReflection) {
         md = compileTemplate('partials/member.object.hbs', member);
         break;
       default:
-      md = compileTemplate('partials/member.hbs', member);
+        md = compileTemplate('partials/member.hbs', member);
     }
   }
 
