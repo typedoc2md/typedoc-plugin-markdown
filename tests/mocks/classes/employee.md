@@ -16,6 +16,7 @@
 
 
 
+
 ## Index
 
 ### Constructors
@@ -45,8 +46,7 @@
 
 *Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -76,7 +76,6 @@
 
 
 
-
 ___
 
 
@@ -90,7 +89,6 @@ ___
 
 
 *Defined in [private-members.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L36)*
-
 
 
 

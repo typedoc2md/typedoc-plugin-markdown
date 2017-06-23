@@ -1,6 +1,3 @@
-{{~#if model.isSinglePage ~}}
-<span id="typedoc-plugin-markdown"></span>
-{{~/if~}}
 {{> header}}
 {{newLine}}
 {{~#with model~}}
@@ -12,12 +9,14 @@
 ## Type parameters
 {{~#with model}}{{> typeParameters}}{{/with}}
 {{~/if}}
-{{~#if model.typeHierarchy}}
+{{~#if model.typeHierarchy~}}
+{{# ifDisplayTypeHierarchy model.typeHierarchy }}
 ## Hierarchy
 
 {{#with model.typeHierarchy~}}{{> hierarchy}}{{/with}}
 {{newLine}}
-{{~/if}}
+{{/ifDisplayTypeHierarchy}}
+{{~/if~}}
 {{~#if model.implementedTypes}}
 ## Implements
 

@@ -4,13 +4,6 @@
 
 # Interface: SquareConfig
 
-## Hierarchy
-
-**SquareConfig**
-
-
-
-
 
 ## Properties
 

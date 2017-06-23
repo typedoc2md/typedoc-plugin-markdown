@@ -14,11 +14,10 @@ This is the module extending the function moduleFunction().
 
 *Defined in [functions.ts:130](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L130)*
 
-
 This is a function that is extended by a module.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -57,7 +56,6 @@ This is a function that is extended by a module.
 *Defined in [functions.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L140)*
 
 
-
 This variable is appended to a function.
 
 
@@ -76,7 +74,6 @@ ___
 
 
 *Defined in [functions.ts:145](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L145)*
-
 
 This function is appended to another function.
 
@@ -100,7 +97,6 @@ ___
 
 
 *Defined in [functions.ts:152](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L152)*
-
 
 This function is appended to another function.
 

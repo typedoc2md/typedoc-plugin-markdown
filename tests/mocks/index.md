@@ -76,7 +76,6 @@
 *Defined in [basic-types.ts:20](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L20)*
 
 
-
 This is a number type
 ```
 const decimal: number = 6;
@@ -94,7 +93,6 @@ ___
 **color**:  *string*  = "blue"
 
 *Defined in [basic-types.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L28)*
-
 
 
 This is a string type
@@ -118,7 +116,6 @@ ___
 
 
 
-
 ___
 
 <a id="isdone"></a>
@@ -128,7 +125,6 @@ ___
 **isDone**:  *boolean*  = false
 
 *Defined in [basic-types.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L12)*
-
 
 
 This is a boolean type
@@ -148,7 +144,6 @@ ___
 **numbers**:  *number[]*  =  [1, 2, 3]
 
 *Defined in [basic-types.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L36)*
-
 
 
 This is an array type
@@ -173,7 +168,6 @@ ___
 
 
 
-
 ___
 
 
@@ -187,7 +181,6 @@ ___
 
 
 *Defined in [functions.ts:161](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L161)*
-
 
 A function that returns an object.
 Also no type information is given, the object should be correctly reflected.
@@ -213,7 +206,6 @@ ___
 
 *Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L12)*
 
-
 This is a simple exported function.
 
 
@@ -237,11 +229,10 @@ ___
 
 *Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L41)*
 
-
 This is a function with multiple arguments and a return value.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -271,11 +262,10 @@ ___
 
 *Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L61)*
 
-
 This is a function with a parameter that has a default value.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -309,7 +299,6 @@ ___
 
 *Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
 
-
 See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
 Also, check out {@link http://www.google.com|Google} and
 {@link https://github.com GitHub}.
@@ -338,11 +327,10 @@ ___
 
 *Defined in [functions.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L52)*
 
-
 This is a function with a parameter that is optional.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -371,11 +359,10 @@ ___
 
 *Defined in [functions.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L78)*
 
-
 This is a function with rest parameter.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -405,7 +392,6 @@ ___
 
 *Defined in [functions.ts:121](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L121)*
 
-
 This is a generic function.
 
 
@@ -415,7 +401,7 @@ This is a generic function.
 
 The type parameter.
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -445,7 +431,6 @@ ___
 
 *Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
 
-
 This is an internal function.
 
 
@@ -471,11 +456,10 @@ ___
 
 *Defined in [functions.ts:88](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L88)*
 
-
 This is the first signature of a function with multiple signatures.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -491,11 +475,10 @@ This is the first signature of a function with multiple signatures.
 
 *Defined in [functions.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L96)*
 
-
 This is the second signature of a function with multiple signatures.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -526,7 +509,6 @@ ___
 
 
 
-
 **Returns:** string
 
 
@@ -545,11 +527,10 @@ ___
 
 *Defined in [functions.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L25)*
 
-
 This is a function with multiple arguments and a return value.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -585,7 +566,6 @@ ___
 
 
 
-
 ___
 <a id="amixedobject.somestring"></a>
 
@@ -594,7 +574,6 @@ ___
 **someString**:  *string*  = "hello"
 
 *Defined in [basic-types.ts:46](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L46)*
-
 
 
 
@@ -609,7 +588,6 @@ ___
 
 
 *Defined in [basic-types.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L42)*
-
 
 
 

@@ -28,7 +28,6 @@
 
 
 
-
 ___
 
 <a id="none"></a>
@@ -38,7 +37,6 @@ ___
 **None**:   
 
 *Defined in [enums.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L12)*
-
 
 
 
@@ -56,7 +54,6 @@ ___
 
 
 
-
 ___
 
 <a id="readwrite"></a>
@@ -70,7 +67,6 @@ ___
 
 
 
-
 ___
 
 <a id="write"></a>
@@ -80,7 +76,6 @@ ___
 **Write**:    =  1 << 2
 
 *Defined in [enums.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L14)*
-
 
 
 

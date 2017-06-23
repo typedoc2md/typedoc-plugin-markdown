@@ -10,20 +10,8 @@
 *Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}*
 {{newLine}}
 {{~/if~}}
-{{~#if sources~}}
-{{~#each sources~}}
-{{~#if @root.isBitbucket}}
-{{~#if @root.sourceRoot}}
-*Defined in [{{fileName}}:{{line}}]({{@root.sourceRoot}}{{fileName}}?fileviewer=file-view-default#{{fileName}}-{{line}})*
-{{~else~}}
-*Defined in {{fileName}}:{{line}}*
-{{~/if~}}
-{{~else~}}
-{{~#if url~}}
-*Defined in [{{fileName}}:{{line}}]({{url}})*
-{{else}}
-*Defined in {{fileName}}:{{line}}*
-{{~/if~}}
-{{~/if~}}
-{{~/each~}}
-{{~/if~}}
+{{#if sources}}
+{{#each sources}}
+*{{getSourceFile fileName line url}}*
+{{/each}}
+{{/if}}

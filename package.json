@@ -7,6 +7,7 @@
     "dist/"
   ],
   "scripts": {
+    "cleanInstall": "rm -rf node_modules && rm -rf package-lock.json && npm install",
     "compileTests": "npm run compileTests:md && npm run compileTests:mdSingleFile",
     "compileTests:md": "typedoc --tsconfig tests/src/tsconfig.json --options tests/config.markdown.json",
     "compileTests:mdSingleFile": "typedoc --tsconfig  tests/src/tsconfig.json --options tests/config.markdown.singlePage.json",
@@ -42,8 +43,8 @@
     "@types/chai": "4.0.0",
     "@types/mocha": "2.2.41",
     "chai": "4.0.2",
-    "chai-files": "11.4.0",
-    "concurrently": "3.4.0",
+    "chai-files": "1.4.0",
+    "concurrently": "3.5.0",
     "copyfiles": "1.2.0",
     "cpx": "1.5.0",
     "mocha": "3.4.2",

@@ -43,12 +43,11 @@
 
 *Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
-
 #### Type declaration
 (source: *string*, subString: *string*): boolean
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -81,7 +80,6 @@ ___
 
 
 
-
 ___
 
 <a id="square-1"></a>
@@ -91,7 +89,6 @@ ___
 **square**:  *[Square](../interfaces/interfaces.square.md)*  =  {} as Square
 
 *Defined in [interfaces.ts:97](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L97)*
-
 
 
 
@@ -110,8 +107,7 @@ ___
 
 *Defined in [interfaces.ts:85](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L85)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |

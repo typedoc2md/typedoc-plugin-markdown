@@ -4,13 +4,6 @@
 
 # Class: Color
 
-## Hierarchy
-
-**Color**
-
-
-
-
 ## Index
 
 ### Constructors
@@ -48,8 +41,7 @@
 
 *Defined in [interfaces.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L23)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -78,7 +70,6 @@
 
 
 
-
 ___
 
 <a id="g"></a>
@@ -88,7 +79,6 @@ ___
 **g**:  *number* 
 
 *Defined in [interfaces.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L25)*
-
 
 
 
@@ -106,7 +96,6 @@ ___
 
 
 
-
 ___
 
 <a id="background"></a>
@@ -116,7 +105,6 @@ ___
 **background**:  *[Color](color.md)*  =  Color.black
 
 *Defined in [interfaces.ts:34](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L34)*
-
 
 
 
@@ -134,7 +122,6 @@ ___
 
 
 
-
 ___
 
 <a id="defaultcolor"></a>
@@ -144,7 +131,6 @@ ___
 **defaultColor**:  *[Color](color.md)*  =  Color.black
 
 *Defined in [interfaces.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L35)*
-
 
 
 
@@ -162,7 +148,6 @@ ___
 
 
 
-
 ___
 
 <a id="white"></a>
@@ -172,7 +157,6 @@ ___
 **white**:  *[Color](color.md)*  =  new Color(1.0, 1.0, 1.0)
 
 *Defined in [interfaces.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L31)*
-
 
 
 
@@ -191,8 +175,7 @@ ___
 
 *Defined in [interfaces.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L29)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -221,8 +204,7 @@ ___
 
 *Defined in [interfaces.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L28)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -251,8 +233,7 @@ ___
 
 *Defined in [interfaces.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L30)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -281,8 +262,7 @@ ___
 
 *Defined in [interfaces.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L36)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |

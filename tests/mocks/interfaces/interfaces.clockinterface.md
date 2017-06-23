@@ -4,13 +4,6 @@
 
 # Interface: ClockInterface
 
-## Hierarchy
-
-**ClockInterface**
-
-
-
-
 
 ## Properties
 
@@ -28,8 +21,7 @@
 
 *Defined in [interfaces.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -56,7 +48,6 @@ ___
 
 
 *Defined in [interfaces.ts:82](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L82)*
-
 
 
 

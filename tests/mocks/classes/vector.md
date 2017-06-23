@@ -4,13 +4,6 @@
 
 # Class: Vector
 
-## Hierarchy
-
-**Vector**
-
-
-
-
 ## Index
 
 ### Constructors
@@ -46,8 +39,7 @@
 
 *Defined in [interfaces.ts:1](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L1)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -76,7 +68,6 @@
 
 
 
-
 ___
 
 <a id="y"></a>
@@ -90,7 +81,6 @@ ___
 
 
 
-
 ___
 
 <a id="z"></a>
@@ -100,7 +90,6 @@ ___
 **z**:  *number* 
 
 *Defined in [interfaces.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L4)*
-
 
 
 
@@ -119,8 +108,7 @@ ___
 
 *Defined in [interfaces.ts:16](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L16)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -149,8 +137,7 @@ ___
 
 *Defined in [interfaces.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L9)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -179,8 +166,7 @@ ___
 
 *Defined in [interfaces.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L10)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -208,8 +194,7 @@ ___
 
 *Defined in [interfaces.ts:7](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L7)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -238,8 +223,7 @@ ___
 
 *Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -267,8 +251,7 @@ ___
 
 *Defined in [interfaces.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L8)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -297,8 +280,7 @@ ___
 
 *Defined in [interfaces.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L6)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |

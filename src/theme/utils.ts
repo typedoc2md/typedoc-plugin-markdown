@@ -14,7 +14,7 @@ export function safeString(data: string) {
 }
 
 export function getAnchorRef(ref: string) {
-    return ref.replace(/_/g, '-').replace(/"/g, '').replace(/\//g, '-').replace(/ /g, '-').toLowerCase();
+    return ref.replace(/_|\/|\.| /g, '-').replace(/"/g, '').replace(/ /g, '-').toLowerCase();
   }
 
 function templateToString(template: string) {

@@ -24,6 +24,7 @@ This is a interface inheriting from two other interfaces.
 
 
 
+
 ## Implemented by
 
 * [SubClassA](../classes/subclassa.md)
@@ -46,7 +47,6 @@ This is a interface inheriting from two other interfaces.
 *Inherited from [INameInterface](inameinterface.md).[getName](inameinterface.md#getname)*
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
-
 
 This is a interface function of INameInterface.
 
@@ -76,14 +76,13 @@ ___
 
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
-
 This is a interface function of IPrintInterface
 
 It should be inherited by all subinterfaces.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -110,7 +109,6 @@ ___
 
 
 *Defined in [classes.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
-
 
 This is a interface function of IPrintNameInterface
 

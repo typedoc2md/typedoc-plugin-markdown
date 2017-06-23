@@ -1,5 +1,7 @@
-<span id="typedoc-plugin-markdown"></span>
 
+
+
+<span id="typedoc-plugin-markdown"></span>
 
 #  Typedoc Plugin Markdown API
 
@@ -110,7 +112,6 @@
 
 
 
-
 ___
 
 <a id="enums.direction.left"></a>
@@ -120,7 +121,6 @@ ___
 **Left**:   
 
 *Defined in [enums.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L6)*
-
 
 
 
@@ -138,7 +138,6 @@ ___
 
 
 
-
 ___
 
 <a id="enums.direction.up"></a>
@@ -148,7 +147,6 @@ ___
 **Up**:    = 1
 
 *Defined in [enums.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L4)*
-
 
 
 
@@ -189,7 +187,6 @@ ___
 
 
 
-
 ___
 
 <a id="enums.fileaccess.none"></a>
@@ -199,7 +196,6 @@ ___
 **None**:   
 
 *Defined in [enums.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L12)*
-
 
 
 
@@ -217,7 +213,6 @@ ___
 
 
 
-
 ___
 
 <a id="enums.fileaccess.readwrite"></a>
@@ -231,7 +226,6 @@ ___
 
 
 
-
 ___
 
 <a id="enums.fileaccess.write"></a>
@@ -241,7 +235,6 @@ ___
 **Write**:    =  1 << 2
 
 *Defined in [enums.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L14)*
-
 
 
 
@@ -295,13 +288,6 @@ ___
 
 # Interface: ClockConstructor
 
-## Hierarchy
-
-**ClockConstructor**
-
-
-
-
 
 ## Constructors
 <a id="interfaces.clockconstructor.constructor"></a>
@@ -312,8 +298,7 @@ ___
 
 *Defined in [interfaces.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L78)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -332,18 +317,13 @@ ___
 
 ---
 
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
 
 
 
 
 # Interface: ClockInterface
-
-## Hierarchy
-
-**ClockInterface**
-
-
-
 
 
 ## Properties
@@ -362,8 +342,7 @@ ___
 
 *Defined in [interfaces.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -393,7 +372,6 @@ ___
 
 
 
-
 **Returns:** any
 
 
@@ -405,6 +383,8 @@ ___
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 ---
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -425,11 +405,14 @@ ___
 
 
 
+
 ## Properties
 
 | Name  | Type                
 | ------ | ------------------- 
 | color | string
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
 
 
 
@@ -449,24 +432,20 @@ ___
 
 
 
+
 ## Properties
 
 | Name  | Type                
 | ------ | ------------------- 
 | color | string
 | sideLength | number
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
 
 
 
 
 # Interface: SquareConfig
-
-## Hierarchy
-
-**SquareConfig**
-
-
-
 
 
 ## Properties
@@ -475,34 +454,24 @@ ___
 | ------ | ------------------- 
 | color | string
 | width | number
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
 
 
 
 
 # Interface: StringArray
 
-## Hierarchy
-
-**StringArray**
-
-
-
-
 ## Indexable
 
 \[index: number\]:&nbsp;string
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
 
 
 
 
 # Interface: Surface
-
-## Hierarchy
-
-**Surface**
-
-
-
 
 
 ## Properties
@@ -513,6 +482,8 @@ ___
 | reflect | function (pos: *[Vector](#class-vector)*): number
 | roughness | number
 | specular | function (pos: *[Vector](#class-vector)*): [Color](#class-color)
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
 
 
 ## Type aliases
@@ -524,12 +495,11 @@ ___
 
 *Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
-
 #### Type declaration
 (source: *string*, subString: *string*): boolean
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -565,7 +535,6 @@ ___
 
 
 
-
 ___
 
 <a id="interfaces.square-1"></a>
@@ -575,7 +544,6 @@ ___
 **square**:  *[Square](#interface-square)*  =  {} as Square
 
 *Defined in [interfaces.ts:97](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L97)*
-
 
 
 
@@ -597,8 +565,7 @@ ___
 
 *Defined in [interfaces.ts:85](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L85)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -638,11 +605,10 @@ This is the module extending the function moduleFunction().
 
 *Defined in [functions.ts:130](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L130)*
 
-
 This is a function that is extended by a module.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -681,7 +647,6 @@ This is a function that is extended by a module.
 *Defined in [functions.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L140)*
 
 
-
 This variable is appended to a function.
 
 
@@ -703,7 +668,6 @@ ___
 
 
 *Defined in [functions.ts:145](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L145)*
-
 
 This function is appended to another function.
 
@@ -727,7 +691,6 @@ ___
 
 
 *Defined in [functions.ts:152](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L152)*
-
 
 This function is appended to another function.
 
@@ -769,6 +732,7 @@ This is a simple base class.
 
 
 ↳  [SubClassB](#class-subclassb)
+
 
 
 
@@ -820,8 +784,7 @@ This is a simple base class.
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -835,8 +798,7 @@ This is a simple base class.
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -864,7 +826,6 @@ This is a simple base class.
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
-
 This is an instance member of an internal class.
 
 
@@ -879,7 +840,6 @@ ___
 **kind**:  *number* 
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
-
 
 
 This is a simple protected member.
@@ -900,7 +860,6 @@ ___
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
 
-
 This is a simple public member.
 
 
@@ -915,7 +874,6 @@ ___
 **instance**:  *[BaseClass](#class-baseclass)* 
 
 *Defined in [classes.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
-
 
 
 This is a static member.
@@ -939,7 +897,6 @@ ___
 
 
 
-
 ___
 
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
@@ -957,11 +914,10 @@ ___
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
-
 This is a simple fat arrow function.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -990,7 +946,6 @@ ___
 
 *Defined in [classes.ts:135](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L135)*
 
-
 This is a private function.
 
 
@@ -1015,7 +970,6 @@ ___
 *Implementation of [INameInterface](#interface-inameinterface).[getName](#inameinterface.getname)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
-
 
 This is a simple member function.
 
@@ -1046,14 +1000,13 @@ ___
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1080,11 +1033,10 @@ ___
 
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
-
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1115,7 +1067,6 @@ ___
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
-
 This is a static function.
 
 Static functions should not be inherited.
@@ -1143,7 +1094,6 @@ ___
 
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
-
 
 This is a simple static member function.
 
@@ -1173,13 +1123,6 @@ ___
 
 
 # Class: Color
-
-## Hierarchy
-
-**Color**
-
-
-
 
 ## Index
 
@@ -1218,8 +1161,7 @@ ___
 
 *Defined in [interfaces.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L23)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1251,7 +1193,6 @@ ___
 
 
 
-
 ___
 
 <a id="color.g-1"></a>
@@ -1261,7 +1202,6 @@ ___
 **g**:  *number* 
 
 *Defined in [interfaces.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L25)*
-
 
 
 
@@ -1279,7 +1219,6 @@ ___
 
 
 
-
 ___
 
 <a id="color.background"></a>
@@ -1289,7 +1228,6 @@ ___
 **background**:  *[Color](#class-color)*  =  Color.black
 
 *Defined in [interfaces.ts:34](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L34)*
-
 
 
 
@@ -1307,7 +1245,6 @@ ___
 
 
 
-
 ___
 
 <a id="color.defaultcolor"></a>
@@ -1317,7 +1254,6 @@ ___
 **defaultColor**:  *[Color](#class-color)*  =  Color.black
 
 *Defined in [interfaces.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L35)*
-
 
 
 
@@ -1335,7 +1271,6 @@ ___
 
 
 
-
 ___
 
 <a id="color.white"></a>
@@ -1345,7 +1280,6 @@ ___
 **white**:  *[Color](#class-color)*  =  new Color(1.0, 1.0, 1.0)
 
 *Defined in [interfaces.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L31)*
-
 
 
 
@@ -1367,8 +1301,7 @@ ___
 
 *Defined in [interfaces.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L29)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1397,8 +1330,7 @@ ___
 
 *Defined in [interfaces.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L28)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1427,8 +1359,7 @@ ___
 
 *Defined in [interfaces.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L30)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1457,8 +1388,7 @@ ___
 
 *Defined in [interfaces.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L36)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1498,6 +1428,7 @@ ___
 
 
 
+
 ## Index
 
 ### Constructors
@@ -1529,8 +1460,7 @@ ___
 
 *Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1561,7 +1491,6 @@ ___
 
 
 
-
 ___
 
 <a id="employee.name-1"></a>
@@ -1573,7 +1502,6 @@ ___
 *Inherited from [Person](#class-person).[name](#person.name-1)*
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
-
 
 
 
@@ -1597,7 +1525,6 @@ ___
 
 
 
-
 **Returns:** string
 
 
@@ -1615,7 +1542,6 @@ ___
 
 
 *Defined in [private-members.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L40)*
-
 
 
 
@@ -1658,6 +1584,7 @@ This a type parameter.
 
 
 
+
 ## Index
 
 ### Constructors
@@ -1689,11 +1616,10 @@ This a type parameter.
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
-
 Constructor short text.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1724,7 +1650,6 @@ Constructor short text.
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
-
 Private string property
 
 
@@ -1739,7 +1664,6 @@ ___
 **p3**:  *number* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
-
 
 
 Public number property
@@ -1758,7 +1682,6 @@ ___
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
-
 Public implicit any property
 
 
@@ -1774,7 +1697,6 @@ ___
 **value**:  *T* 
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
-
 
 
 
@@ -1798,7 +1720,6 @@ ___
 
 
 
-
 **Returns:** T
 
 
@@ -1818,8 +1739,7 @@ ___
 *Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1846,13 +1766,6 @@ ___
 
 
 # Class: Greeter
-
-## Hierarchy
-
-**Greeter**
-
-
-
 
 ## Index
 
@@ -1881,8 +1794,7 @@ ___
 
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -1912,7 +1824,6 @@ ___
 
 
 
-
 ___
 
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
@@ -1929,7 +1840,6 @@ ___
 
 
 *Defined in [internal.ts:13](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L13)*
-
 
 
 
@@ -1954,13 +1864,6 @@ ___
 
 This is an internal class, it is not exported.
 
-## Hierarchy
-
-**InternalClass**
-
-
-
-
 ## Index
 
 ### Constructors
@@ -1978,8 +1881,7 @@ This is an internal class, it is not exported.
 
 *Defined in [classes.ts:169](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2018,6 +1920,7 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 
 
+
 ## Index
 
 ### Constructors
@@ -2050,11 +1953,10 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
-
 Constructor short text.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2087,7 +1989,6 @@ Constructor short text.
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
-
 Private string property
 
 
@@ -2106,7 +2007,6 @@ ___
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
-
 Public number property
 
 
@@ -2123,7 +2023,6 @@ ___
 *Inherited from [GenericClass](#class-genericclass).[value](#genericclass.value)*
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
-
 
 
 
@@ -2149,7 +2048,6 @@ ___
 
 
 
-
 **Returns:** [SubClassB](#class-subclassb)
 
 
@@ -2171,8 +2069,7 @@ ___
 *Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2212,6 +2109,7 @@ ___
 
 
 
+
 ## Index
 
 ### Constructors
@@ -2234,8 +2132,7 @@ ___
 
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2265,7 +2162,6 @@ ___
 
 
 
-
 ___
 
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
@@ -2291,6 +2187,7 @@ from BaseClass.
  [BaseClass](#class-baseclass)
 
 **↳ SubClassA**
+
 
 
 
@@ -2349,8 +2246,7 @@ from BaseClass.
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2366,8 +2262,7 @@ from BaseClass.
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2397,7 +2292,6 @@ from BaseClass.
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
-
 This is a simple protected member.
 
 
@@ -2416,7 +2310,6 @@ ___
 *Inherited from [BaseClass](#class-baseclass).[name](#baseclass.name-1)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
-
 
 
 This is a simple public member.
@@ -2440,7 +2333,6 @@ getnameProperty(): stringsetnameProperty(value: *string*): void
 
 *Defined in [classes.ts:199](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L199)*
 
-
 Returns the name. See [[BaseClass.name]].
 
 
@@ -2452,11 +2344,10 @@ The return value.
 
 *Defined in [classes.ts:209](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L209)*
 
-
 Sets the name. See [[BaseClass.name]].
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2483,7 +2374,6 @@ getreadOnlyNameProperty(): string
 
 *Defined in [classes.ts:218](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L218)*
 
-
 Returns the name. See [[BaseClass.name]].
 
 
@@ -2506,11 +2396,10 @@ setwriteOnlyNameProperty(value: *string*): void
 
 *Defined in [classes.ts:228](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L228)*
 
-
 Sets the name. See [[BaseClass.name]].
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2545,11 +2434,10 @@ ___
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
-
 This is a simple fat arrow function.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2582,7 +2470,6 @@ ___
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses. This class has a static
@@ -2614,11 +2501,10 @@ ___
 
 *Defined in [classes.ts:185](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L185)*
 
-
 This is a simple interface function.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2648,7 +2534,6 @@ ___
 
 *Defined in [classes.ts:190](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L190)*
 
-
 This is a interface function of IPrintNameInterface
 
 
@@ -2674,14 +2559,13 @@ ___
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2710,11 +2594,10 @@ ___
 *Inherited from [BaseClass](#class-baseclass).[caTest](#baseclass.catest)*
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
-
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2747,7 +2630,6 @@ ___
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
-
 This is a static function.
 
 Static functions should not be inherited.
@@ -2777,7 +2659,6 @@ ___
 *Inherited from [BaseClass](#class-baseclass).[getName](#baseclass.getname-2)*
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
-
 
 This is a simple static member function.
 
@@ -2826,6 +2707,7 @@ The constructor of the original class should be overwritten.
 
 
 
+
 ## Implements
 
 * [INameInterface](#interface-inameinterface)
@@ -2866,8 +2748,7 @@ The constructor of the original class should be overwritten.
 
 *Defined in [classes.ts:238](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L238)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2897,7 +2778,6 @@ The constructor of the original class should be overwritten.
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
-
 This is a simple protected member.
 
 
@@ -2916,7 +2796,6 @@ ___
 *Inherited from [BaseClass](#class-baseclass).[name](#baseclass.name-1)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
-
 
 
 This is a simple public member.
@@ -2943,11 +2822,10 @@ ___
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
-
 This is a simple fat arrow function.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -2976,8 +2854,7 @@ ___
 
 *Defined in [classes.ts:243](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L243)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3008,7 +2885,6 @@ ___
 *Inherited from [BaseClass](#class-baseclass).[getName](#baseclass.getname)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
-
 
 This is a simple member function.
 
@@ -3041,14 +2917,13 @@ ___
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3077,11 +2952,10 @@ ___
 *Inherited from [BaseClass](#class-baseclass).[caTest](#baseclass.catest)*
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
-
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3114,7 +2988,6 @@ ___
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
-
 This is a static function.
 
 Static functions should not be inherited.
@@ -3145,7 +3018,6 @@ ___
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
-
 This is a simple static member function.
 
 Static functions should not be inherited. This class has a
@@ -3174,13 +3046,6 @@ ___
 
 
 # Class: Vector
-
-## Hierarchy
-
-**Vector**
-
-
-
 
 ## Index
 
@@ -3217,8 +3082,7 @@ ___
 
 *Defined in [interfaces.ts:1](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L1)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3250,7 +3114,6 @@ ___
 
 
 
-
 ___
 
 <a id="vector.y-1"></a>
@@ -3264,7 +3127,6 @@ ___
 
 
 
-
 ___
 
 <a id="vector.z-1"></a>
@@ -3274,7 +3136,6 @@ ___
 **z**:  *number* 
 
 *Defined in [interfaces.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L4)*
-
 
 
 
@@ -3296,8 +3157,7 @@ ___
 
 *Defined in [interfaces.ts:16](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L16)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3326,8 +3186,7 @@ ___
 
 *Defined in [interfaces.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L9)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3356,8 +3215,7 @@ ___
 
 *Defined in [interfaces.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L10)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3385,8 +3243,7 @@ ___
 
 *Defined in [interfaces.ts:7](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L7)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3415,8 +3272,7 @@ ___
 
 *Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3444,8 +3300,7 @@ ___
 
 *Defined in [interfaces.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L8)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3474,8 +3329,7 @@ ___
 
 *Defined in [interfaces.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L6)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3510,7 +3364,6 @@ ___
 *Defined in [basic-types.ts:20](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L20)*
 
 
-
 This is a number type
 ```
 const decimal: number = 6;
@@ -3528,7 +3381,6 @@ ___
 **color**:  *string*  = "blue"
 
 *Defined in [basic-types.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L28)*
-
 
 
 This is a string type
@@ -3552,7 +3404,6 @@ ___
 
 
 
-
 ___
 
 <a id="isdone"></a>
@@ -3562,7 +3413,6 @@ ___
 **isDone**:  *boolean*  = false
 
 *Defined in [basic-types.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L12)*
-
 
 
 This is a boolean type
@@ -3584,7 +3434,6 @@ ___
 *Defined in [basic-types.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L36)*
 
 
-
 This is an array type
 ```
 const numbers: number[] = [1, 2, 3];
@@ -3602,7 +3451,6 @@ ___
 **privateVar**:  *"marked private variable"*  = "marked private variable"
 
 *Defined in [private-members.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L8)*
-
 
 
 Marked as private
@@ -3623,7 +3471,6 @@ ___
 
 
 
-
 ___
 
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
@@ -3640,7 +3487,6 @@ ___
 
 
 *Defined in [functions.ts:161](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L161)*
-
 
 A function that returns an object.
 Also no type information is given, the object should be correctly reflected.
@@ -3666,7 +3512,6 @@ ___
 
 *Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L12)*
 
-
 This is a simple exported function.
 
 
@@ -3690,11 +3535,10 @@ ___
 
 *Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L41)*
 
-
 This is a function with multiple arguments and a return value.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3724,11 +3568,10 @@ ___
 
 *Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L61)*
 
-
 This is a function with a parameter that has a default value.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3762,7 +3605,6 @@ ___
 
 *Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
 
-
 See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
 Also, check out {@link http://www.google.com|Google} and
 {@link https://github.com GitHub}.
@@ -3791,11 +3633,10 @@ ___
 
 *Defined in [functions.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L52)*
 
-
 This is a function with a parameter that is optional.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3824,11 +3665,10 @@ ___
 
 *Defined in [functions.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L78)*
 
-
 This is a function with rest parameter.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3858,7 +3698,6 @@ ___
 
 *Defined in [functions.ts:121](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L121)*
 
-
 This is a generic function.
 
 
@@ -3868,7 +3707,7 @@ This is a generic function.
 
 The type parameter.
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3898,7 +3737,6 @@ ___
 
 *Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
 
-
 This is an internal function.
 
 
@@ -3924,11 +3762,10 @@ ___
 
 *Defined in [functions.ts:88](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L88)*
 
-
 This is the first signature of a function with multiple signatures.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3944,11 +3781,10 @@ This is the first signature of a function with multiple signatures.
 
 *Defined in [functions.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L96)*
 
-
 This is the second signature of a function with multiple signatures.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -3976,7 +3812,6 @@ ___
 
 *Defined in [private-members.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L18)*
 
-
 Marked as private
 
 
@@ -4002,7 +3837,6 @@ ___
 
 
 
-
 **Returns:** string
 
 
@@ -4021,11 +3855,10 @@ ___
 
 *Defined in [functions.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L25)*
 
-
 This is a function with multiple arguments and a return value.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -4064,7 +3897,6 @@ ___
 
 
 
-
 ___
 <a id="amixedobject.somestring"></a>
 
@@ -4073,7 +3905,6 @@ ___
 **someString**:  *string*  = "hello"
 
 *Defined in [basic-types.ts:46](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L46)*
-
 
 
 
@@ -4088,7 +3919,6 @@ ___
 
 
 *Defined in [basic-types.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L42)*
-
 
 
 
@@ -4121,6 +3951,7 @@ This is a simple interface.
 
 
 
+
 ## Implemented by
 
 * [BaseClass](#class-baseclass)
@@ -4144,7 +3975,6 @@ This is a simple interface.
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
-
 This is a interface function of INameInterface.
 
 It should be inherited by all subinterfaces.
@@ -4164,6 +3994,8 @@ ___
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 ---
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 
@@ -4187,6 +4019,7 @@ This is a simple interface.
 
 
 
+
 ## Methods
 <a id="iprintinterface.print"></a>
 
@@ -4198,14 +4031,13 @@ This is a simple interface.
 
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
-
 This is a interface function of IPrintInterface
 
 It should be inherited by all subinterfaces.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -4227,6 +4059,8 @@ ___
 
 ---
 
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
 
 
 
@@ -4247,6 +4081,7 @@ This is a interface inheriting from two other interfaces.
  [IPrintInterface](#interface-iprintinterface)
 
 **↳ IPrintNameInterface**
+
 
 
 
@@ -4276,7 +4111,6 @@ This is a interface inheriting from two other interfaces.
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
-
 This is a interface function of INameInterface.
 
 It should be inherited by all subinterfaces.
@@ -4305,14 +4139,13 @@ ___
 
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
-
 This is a interface function of IPrintInterface
 
 It should be inherited by all subinterfaces.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -4340,7 +4173,6 @@ ___
 
 *Defined in [classes.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
 
-
 This is a interface function of IPrintNameInterface
 
 
@@ -4357,6 +4189,8 @@ ___
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 ---
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
 
 
 

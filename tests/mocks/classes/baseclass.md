@@ -27,6 +27,7 @@ This is a simple base class.
 
 
 
+
 ## Implements
 
 * [INameInterface](../interfaces/inameinterface.md)
@@ -67,8 +68,7 @@ This is a simple base class.
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -82,8 +82,7 @@ This is a simple base class.
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -108,7 +107,6 @@ This is a simple base class.
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
-
 This is a simple protected member.
 
 
@@ -125,7 +123,6 @@ ___
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[name](../interfaces/inameinterface.md#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
-
 
 
 This is a simple public member.
@@ -147,11 +144,10 @@ ___
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
-
 This is a simple fat arrow function.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -182,7 +178,6 @@ ___
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses. This class has a static
@@ -212,14 +207,13 @@ ___
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -246,11 +240,10 @@ ___
 
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
-
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -281,7 +274,6 @@ ___
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
-
 This is a static function.
 
 Static functions should not be inherited.
@@ -309,7 +301,6 @@ ___
 
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
-
 
 This is a simple static member function.
 

@@ -27,7 +27,6 @@
 
 
 
-
 ___
 
 <a id="left"></a>
@@ -37,7 +36,6 @@ ___
 **Left**:   
 
 *Defined in [enums.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L6)*
-
 
 
 
@@ -55,7 +53,6 @@ ___
 
 
 
-
 ___
 
 <a id="up"></a>
@@ -65,7 +62,6 @@ ___
 **Up**:    = 1
 
 *Defined in [enums.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L4)*
-
 
 
 

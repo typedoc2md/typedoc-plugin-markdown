@@ -19,6 +19,7 @@ This is a simple interface.
 
 
 
+
 ## Implemented by
 
 * [BaseClass](../classes/baseclass.md)
@@ -41,7 +42,6 @@ This is a simple interface.
 
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
-
 
 This is a interface function of INameInterface.
 

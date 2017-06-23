@@ -7,13 +7,6 @@
 
 This is an internal class, it is not exported.
 
-## Hierarchy
-
-**InternalClass**
-
-
-
-
 ## Index
 
 ### Constructors
@@ -31,8 +24,7 @@ This is an internal class, it is not exported.
 
 *Defined in [classes.ts:169](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |

@@ -23,6 +23,7 @@ from BaseClass.
 
 
 
+
 ## Implements
 
 * [INameInterface](../interfaces/inameinterface.md)
@@ -75,8 +76,7 @@ from BaseClass.
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -92,8 +92,7 @@ from BaseClass.
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -120,7 +119,6 @@ from BaseClass.
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
-
 This is a simple protected member.
 
 
@@ -141,7 +139,6 @@ ___
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
 
-
 This is a simple public member.
 
 
@@ -160,7 +157,6 @@ getnameProperty(): stringsetnameProperty(value: *string*): void
 
 *Defined in [classes.ts:199](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L199)*
 
-
 Returns the name. See [[BaseClass.name]].
 
 
@@ -172,11 +168,10 @@ The return value.
 
 *Defined in [classes.ts:209](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L209)*
 
-
 Sets the name. See [[BaseClass.name]].
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -203,7 +198,6 @@ getreadOnlyNameProperty(): string
 
 *Defined in [classes.ts:218](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L218)*
 
-
 Returns the name. See [[BaseClass.name]].
 
 
@@ -226,11 +220,10 @@ setwriteOnlyNameProperty(value: *string*): void
 
 *Defined in [classes.ts:228](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L228)*
 
-
 Sets the name. See [[BaseClass.name]].
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -262,11 +255,10 @@ ___
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
-
 This is a simple fat arrow function.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -299,7 +291,6 @@ ___
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses. This class has a static
@@ -331,11 +322,10 @@ ___
 
 *Defined in [classes.ts:185](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L185)*
 
-
 This is a simple interface function.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -365,7 +355,6 @@ ___
 
 *Defined in [classes.ts:190](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L190)*
 
-
 This is a interface function of IPrintNameInterface
 
 
@@ -391,14 +380,13 @@ ___
 
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
-
 This is a simple member function.
 
 It should be inherited by all subclasses.
 
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -427,11 +415,10 @@ ___
 *Inherited from [BaseClass](baseclass.md).[caTest](baseclass.md#catest)*
 
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
-
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -464,7 +451,6 @@ ___
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
-
 This is a static function.
 
 Static functions should not be inherited.
@@ -494,7 +480,6 @@ ___
 *Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#getname-1)*
 
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
-
 
 This is a simple static member function.
 

@@ -4,13 +4,6 @@
 
 # Interface: ClockConstructor
 
-## Hierarchy
-
-**ClockConstructor**
-
-
-
-
 
 ## Constructors
 <a id="constructor"></a>
@@ -21,8 +14,7 @@
 
 *Defined in [interfaces.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L78)*
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |

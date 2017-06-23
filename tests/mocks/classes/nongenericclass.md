@@ -19,6 +19,7 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 
 
+
 ## Index
 
 ### Constructors
@@ -51,11 +52,10 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
-
 Constructor short text.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -85,7 +85,6 @@ Constructor short text.
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
-
 Private string property
 
 
@@ -102,7 +101,6 @@ ___
 *Inherited from [GenericClass](genericclass.md).[p3](genericclass.md#p3)*
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
-
 
 
 Public number property
@@ -125,7 +123,6 @@ ___
 
 
 
-
 ___
 
 
@@ -141,7 +138,6 @@ ___
 *Inherited from [GenericClass](genericclass.md).[getValue](genericclass.md#getvalue)*
 
 *Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
-
 
 
 
@@ -166,8 +162,7 @@ ___
 *Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |

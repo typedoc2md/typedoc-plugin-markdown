@@ -25,6 +25,7 @@ This a type parameter.
 
 
 
+
 ## Index
 
 ### Constructors
@@ -55,11 +56,10 @@ This a type parameter.
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
-
 Constructor short text.
 
 
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |
@@ -87,7 +87,6 @@ Constructor short text.
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
-
 Private string property
 
 
@@ -102,7 +101,6 @@ ___
 **p3**:  *number* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
-
 
 
 Public number property
@@ -123,7 +121,6 @@ ___
 
 
 
-
 ___
 
 
@@ -137,7 +134,6 @@ ___
 
 
 *Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
-
 
 
 
@@ -160,8 +156,7 @@ ___
 *Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
-
-#### Parameters:
+**Parameters:**
 
 | Name  | Type                | Default | Description  |
 | ------ | ------------------- | ------------ | ------------ |

@@ -4,13 +4,6 @@
 
 # Interface: Surface
 
-## Hierarchy
-
-**Surface**
-
-
-
-
 
 ## Properties
 

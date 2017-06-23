@@ -17,7 +17,7 @@ module.exports = (PluginHost: Application) => {
   app.options.addDeclaration({
     component: 'markdown',
     help: 'Markdown Plugin: Remove index from output.',
-    name: 'markdownRemoveIndex',
+    name: 'markdownSuppressIndexes',
     type: ParameterType.Boolean,
   });
 
@@ -31,8 +31,8 @@ module.exports = (PluginHost: Application) => {
   app.options.addDeclaration({
     component: 'markdown',
     defaultValue: '',
-    help: 'Markdown Plugin: Repository source file root',
-    name: 'markdownSourcefilePrefix',
+    help: 'The repository to use for source files (ignored unless markdownFlavour is set)',
+    name: 'markdownSourceRepo',
     type: ParameterType.String,
   });
 

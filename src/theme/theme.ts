@@ -122,13 +122,13 @@ export class MarkdownTheme extends DefaultTheme {
     this.options = options;
 
     Options.markdownFlavour = options.markdownFlavour || 'github';
-    Options.markdownSourcefilePrefix = options.markdownSourcefilePrefix;
+    Options.markdownSourceRepo = options.markdownSourceRepo;
     Options.markdownOutFile = options.markdownOutFile;
     Options.includes = options.includes;
     Options.media = options.media;
     Options.excludePrivate = options.excludePrivate;
     Options.mode = options.mode;
-    Options.markdowndownRemoveIndex = options.markdownRemoveIndex;
+    Options.markdownSuppressIndexes = options.markdownSuppressIndexes;
     Options.projectName = options.name;
 
     // remove uneccessary plugins
