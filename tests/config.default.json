@@ -1,8 +1,0 @@
-{
-  "theme": "default",
-  "out": "tests/html/",
-  "readme": "none",
-  "excludePrivate": true,
-  "excludeExternals": false,
-  "gitRevision": "master"
-}

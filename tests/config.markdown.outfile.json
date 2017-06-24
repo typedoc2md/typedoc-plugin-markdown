@@ -1,10 +1,11 @@
 {
   "theme": "markdown",
-  "out": "tests/out/test1",
+  "out": "tests/out/test2",
+  "mode": "file",
   "readme": "none",
-  "excludePrivate": true,
   "excludeExternals": false,
-  "mode":"modules",
   "gitRevision": "master",
+  "name": "Typedoc Plugin Markdown API",
+  "markdownOutFile": "API.md",
   "tsconfig":"tests/src/tsconfig.json"
 }

@@ -1,7 +1,7 @@
 # typedoc-plugin-markdown
 
-[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
-[![npm version](https://badge.fury.io/js/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
+[![Build Status](https://travis-ci.org/tgreyuk/typeddoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
+[![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 
 *Alpha version under development. Please feel free to use with this caveat - feedback welcome.*
 
