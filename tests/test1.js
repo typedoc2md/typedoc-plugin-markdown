@@ -16,13 +16,14 @@ const expectedDir = 'tests/mocks/test1/';
 
 describe('Compile Markdown', () => {
 
-  it('should compile markdown', () => {
+  it('should compile markdown', (done) => {
     console.log('config', config);
     const app = new typedoc.Application(config);
     const result = app.options.read(app.options.getRawValues());
     const src = app.expandInputFiles(result.inputFiles);
     const project = app.convert(src);
     app.generateDocs(project, app.options.getRawValues().out);
+    done();
   });
 
   it('should compile index', () => {

@@ -14,7 +14,7 @@ var typedoc = require('typedoc');
 
 describe('Compile markdown to single file', () => {
 
-  it('should compile', () => {
+  it('should compile', (done) => {
 
     console.log('config', config);
 
@@ -24,6 +24,7 @@ describe('Compile markdown to single file', () => {
     const src = app.expandInputFiles(result.inputFiles);
     const project = app.convert(src);
     app.generateDocs(project, app.options.getRawValues().out);
+    done();
 
   });
 

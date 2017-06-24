@@ -13,7 +13,7 @@
     "prepare": "rm -rf dist && tsc && npm run copy:static",
     "prepublish":"npm run prepare && npm run lint && npm run test",
     "pretest": "rm -rf tests/out && npm run copy:plugin",
-    "test": "mocha tests/test1.js --timeout 5000 && mocha tests/test2.js --timeout 5000",
+    "test": "mocha tests/test1.js --timeout 15000 && mocha tests/test2.js --timeout 15000",
     "watch": "concurrently \"tsc -w\" \"onchange 'src/**/*.hbs' -- npm run copy:static\""
   },
   "repository": {
