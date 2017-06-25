@@ -35,6 +35,7 @@
 
 
 
+---
 ## Constructors
 <a id="constructor"></a>
 
@@ -42,9 +43,12 @@
 ### ⊕ **new Employee**(name: *string*, department: *string*): [Employee](_private_members_.employee.md)
 
 
+
 *Overrides [Person](_private_members_.person.md).[constructor](_private_members_.person.md#constructor)*
 
 *Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
+
+
 
 **Parameters:**
 
@@ -76,6 +80,7 @@
 
 
 
+
 ___
 
 
@@ -88,7 +93,10 @@ ___
 
 
 
+
 *Defined in [private-members.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L36)*
+
+
 
 
 

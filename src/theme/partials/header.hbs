@@ -6,10 +6,6 @@
 {{~/if~}}
 {{newLine}}
 {{!-- {{ title }} --}}
-{{~#if model.isSinglePage ~}}
-<span id="typedoc-plugin-markdown"></span>
-{{newLine}}
-{{~/if~}}
 # {{#unless model.isIndex }}{{model.kindString }}:{{/unless}} {{ displaySafeText model.name }}
 {{#compact}}
 {{~#with model~}}

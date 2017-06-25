@@ -10,11 +10,12 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
 
   if (!group.allChildrenArePrivate) {
     let displayTitle = true;
-    const isSinglePage = Options.markdownOutFile !== undefined;
+    const isSinglePage = Options.mdOutFile !== undefined;
     let displayBackLink = isSinglePage;
     const isMainTitle = Options.mode === 0 && parent === undefined;
 
-    if (group.kind === ReflectionKind.ObjectLiteral ||
+    if (
+      group.kind === ReflectionKind.ObjectLiteral ||
       isSinglePage && group.kind === ReflectionKind.ExternalModule ||
       isSinglePage && group.kind === ReflectionKind.Module ||
       isSinglePage && group.kind === ReflectionKind.Interface ||

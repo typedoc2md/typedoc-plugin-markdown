@@ -1,10 +1,9 @@
 # typedoc-plugin-markdown
 
-[![Build Status](https://travis-ci.org/tgreyuk/typeddoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
+[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 
-*Alpha version under development. Please feel free to use with this caveat - feedback welcome.*
-
+*Alpha version under development. 
 ## What
 
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
@@ -15,6 +14,7 @@ Creating a pluign that exposes a theme provides a mechanism to offer a feature r
 In addition it simplifies the implementation as we can call the theme by name rather than path. 
 
 ## Getting started
+
 ```javascript
 npm install --save-dev typedoc-plugin-markdown
 ```
@@ -31,13 +31,15 @@ typedoc --theme markdown
 
 The plugin exposes the following additional arguments:
 
-* `--markdownOutFile <fileName.md>`<br />
-Compiles output to a single file
-* `--markdownSuppressIndexes`<br />
-Suppress indexes from output - useful to reduce noise on small projects
-* `--markdownFlavour<github|bitbucket>`<br />
+* `--mdFlavour<github|bitbucket>`<br />
 Specifies the markdown rendering engine.  Defaults to `github`.
-* `--markdownSourceRepo<path.to.repo>`<br />
+* `--mdOutFile <fileName.md>`<br />
+Compiles output to a single file
+* `--mdHideIndexes`<br />
+Suppress indexes from output - useful to reduce noise on small projects
+* `--mdHideSources`<br />
+Suppress sources from output 
+* `--mdSourceRepo<path.to.repo>`<br />
 Will be ignored on github flavoured projects.<br />
 For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 

@@ -41,6 +41,7 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 
 
+---
 ## Constructors
 <a id="constructor"></a>
 
@@ -48,9 +49,12 @@ This a non generic class derived from a [[GenericClass|generic class]].
 ### ⊕ **new NonGenericClass**(p1: *any*, p2: *[SubClassB](_classes_.subclassb.md)*, p3: *number*, p4: *number*): [NonGenericClass](_classes_.nongenericclass.md)
 
 
+
 *Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)*
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
+
+
 
 Constructor short text.
 
@@ -85,6 +89,7 @@ Constructor short text.
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
+
 Private string property
 
 
@@ -101,6 +106,7 @@ ___
 *Inherited from [GenericClass](_classes_.genericclass.md).[p3](_classes_.genericclass.md#p3)*
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
+
 
 
 Public number property
@@ -123,6 +129,7 @@ ___
 
 
 
+
 ___
 
 
@@ -135,9 +142,12 @@ ___
 
 
 
+
 *Inherited from [GenericClass](_classes_.genericclass.md).[getValue](_classes_.genericclass.md#getvalue)*
 
 *Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
+
+
 
 
 
@@ -157,9 +167,12 @@ ___
 
 
 
+
 *Inherited from [GenericClass](_classes_.genericclass.md).[setValue](_classes_.genericclass.md#setvalue)*
 
 *Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
+
+
 
 
 **Parameters:**

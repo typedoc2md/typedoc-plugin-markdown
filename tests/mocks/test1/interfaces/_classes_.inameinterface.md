@@ -32,6 +32,8 @@ This is a simple interface.
 | Name  | Type                
 | ------ | ------------------- 
 | name | string
+
+
 ## Methods
 <a id="getname"></a>
 
@@ -41,7 +43,10 @@ This is a simple interface.
 
 
 
+
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
+
+
 
 This is a interface function of INameInterface.
 
@@ -58,6 +63,5 @@ It should be inherited by all subinterfaces.
 
 
 ___
-
 
 

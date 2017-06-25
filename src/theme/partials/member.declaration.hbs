@@ -1,8 +1,6 @@
 **{{ name }}**: {{#if isOptional}}?{{/if}} {{#if type}}*{{#with type}}{{>type}}{{/with}}*{{/if}} {{#if defaultValue}} = {{ displaySafeText defaultValue}}{{/if}}
 
-{{#unless hideSources}}
-{{> member.sources}}
-{{/unless}}
+{{ compileSources this}}
 
 {{> comment}}
 

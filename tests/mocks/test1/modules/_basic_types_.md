@@ -24,6 +24,7 @@ numbers, strings, structures, boolean values, and the like.
 
 
 
+---
 ## Variables
 <a id="amount"></a>
 
@@ -32,6 +33,7 @@ numbers, strings, structures, boolean values, and the like.
 **amount**:  *number*  = 6
 
 *Defined in [basic-types.ts:20](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L20)*
+
 
 
 This is a number type
@@ -53,6 +55,7 @@ ___
 *Defined in [basic-types.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L28)*
 
 
+
 This is a string type
 ```
 const color: string = "blue";
@@ -72,6 +75,7 @@ ___
 *Defined in [basic-types.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L12)*
 
 
+
 This is a boolean type
 ```
 const isDone: boolean = false;
@@ -89,6 +93,7 @@ ___
 **numbers**:  *number[]*  =  [1, 2, 3]
 
 *Defined in [basic-types.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L36)*
+
 
 
 This is an array type
@@ -117,6 +122,7 @@ ___
 
 
 
+
 ___
 <a id="amixedobject.somestring"></a>
 
@@ -125,6 +131,7 @@ ___
 **someString**:  *string*  = "hello"
 
 *Defined in [basic-types.ts:46](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L46)*
+
 
 
 
@@ -138,7 +145,10 @@ ___
 
 
 
+
 *Defined in [basic-types.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L42)*
+
+
 
 
 

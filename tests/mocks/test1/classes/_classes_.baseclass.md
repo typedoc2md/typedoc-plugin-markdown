@@ -7,7 +7,9 @@
 
 This is a simple base class.
 
-[[include:class-example.md]]
+This is a simple example on how to use BaseClass.
+
+![My image alt text](../media/logo-128.png)
 
 
 ## Hierarchy
@@ -56,6 +58,7 @@ This is a simple base class.
 
 
 
+---
 ## Constructors
 <a id="constructor"></a>
 
@@ -66,7 +69,10 @@ This is a simple base class.
 ### ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
 
 
+
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
+
+
 
 **Parameters:**
 
@@ -80,7 +86,10 @@ This is a simple base class.
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
+
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
+
+
 
 **Parameters:**
 
@@ -107,6 +116,7 @@ This is a simple base class.
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
+
 This is a simple protected member.
 
 
@@ -123,6 +133,7 @@ ___
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
 *Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
+
 
 
 This is a simple public member.
@@ -142,7 +153,10 @@ ___
 
 
 
+
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
+
+
 
 This is a simple fat arrow function.
 
@@ -174,9 +188,12 @@ ___
 
 
 
+
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
 *Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
+
+
 
 This is a simple member function.
 
@@ -205,7 +222,10 @@ ___
 
 
 
+
 *Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
+
+
 
 This is a simple member function.
 
@@ -239,7 +259,10 @@ ___
 
 
 
+
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
+
+
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
 
 
@@ -272,7 +295,10 @@ ___
 
 
 
+
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
+
+
 
 This is a static function.
 
@@ -300,7 +326,10 @@ ___
 
 
 
+
 *Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
+
+
 
 This is a simple static member function.
 

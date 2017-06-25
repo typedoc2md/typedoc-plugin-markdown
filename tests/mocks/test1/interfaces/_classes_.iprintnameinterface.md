@@ -35,6 +35,8 @@ This is a interface inheriting from two other interfaces.
 | Name  | Type                
 | ------ | ------------------- 
 | name | string
+
+
 ## Methods
 <a id="getname"></a>
 
@@ -44,9 +46,12 @@ This is a interface inheriting from two other interfaces.
 
 
 
+
 *Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
+
+
 
 This is a interface function of INameInterface.
 
@@ -72,9 +77,12 @@ ___
 
 
 
+
 *Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)*
 
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
+
+
 
 This is a interface function of IPrintInterface
 
@@ -108,7 +116,10 @@ ___
 
 
 
+
 *Defined in [classes.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
+
+
 
 This is a interface function of IPrintNameInterface
 
@@ -122,6 +133,5 @@ This is a interface function of IPrintNameInterface
 
 
 ___
-
 
 

@@ -9,11 +9,14 @@
   "scripts": {
     "copy:static": "copyfiles --up 1 src/**/*.hbs dist/",
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
+    "compiletests": "npm run compiletest:1 && npm run compiletest:2",
+    "compiletest:1": "typedoc --tsconfig tests/src/tsconfig.json --hideGenerator --excludePrivate --options tests/config.core.json --out tests/out/test1",
+    "compiletest:2": "typedoc --tsconfig  tests/src/tsconfig.json --mode file --mdOutFile API.md --options tests/config.core.json --out tests/out/test2",
     "lint": "tslint --type-check --project tsconfig.json",
     "prepare": "rm -rf dist && tsc && npm run copy:static",
     "prepublish": "npm run prepare && npm run lint && npm run test",
-    "pretest": "rm -rf tests/out && npm run copy:plugin",
-    "test": "mocha tests/test1.js --timeout 15000 && mocha tests/test2.js --timeout 15000",
+    "pretest": "rm -rf tests/out && npm run copy:plugin && npm run compiletests",
+    "test": "mocha tests/test.js",
     "watch": "concurrently \"tsc -w\" \"onchange 'src/**/*.hbs' -- npm run copy:static\""
   },
   "repository": {
@@ -21,19 +24,20 @@
     "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git"
   },
   "keywords": [
+    "markdown",
     "typedocplugin",
     "typedoc"
   ],
   "bugs": {
     "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
-  },
+  },  
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
     "typedoc": "^0.7.0"
   },
   "devDependencies": {
-    "@types/chai": "4.0.0",
+    "@types/chai": "4.0.1",
     "@types/mocha": "2.2.41",
     "chai": "4.0.2",
     "chai-files": "1.4.0",

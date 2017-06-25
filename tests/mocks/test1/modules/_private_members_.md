@@ -23,6 +23,7 @@
 
 
 
+---
 ## Variables
 
 <a id="publicvar"></a>
@@ -32,6 +33,7 @@
 **publicVar**:  *"public variable"*  = "public variable"
 
 *Defined in [private-members.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L2)*
+
 
 
 
@@ -49,7 +51,10 @@ ___
 
 
 
+
 *Defined in [private-members.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L10)*
+
+
 
 
 

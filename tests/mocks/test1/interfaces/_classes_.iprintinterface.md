@@ -30,7 +30,10 @@ This is a simple interface.
 
 
 
+
 *Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
+
+
 
 This is a interface function of IPrintInterface
 
@@ -55,6 +58,5 @@ It should be inherited by all subinterfaces.
 
 
 ___
-
 
 

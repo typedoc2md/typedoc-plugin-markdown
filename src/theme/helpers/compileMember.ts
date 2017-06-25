@@ -18,9 +18,9 @@ export function compileMember(member: DeclarationReflection) {
         md = compileTemplate('templates/reflection.hbs', { model: member });
         break;
       case ReflectionKind.Interface:
-        Object.assign(member, { displayBackLink: Options.mode === 1 ? true : false, hideBreadcrumbs: true });
-        md = compileTemplate('templates/reflection.hbs', { model: member });
-        break;
+      Object.assign(member, { displayBackLink: Options.mode === 0 ? true : false, hideBreadcrumbs: true });
+      md = compileTemplate('templates/reflection.hbs', { model: member });
+      break;
       case ReflectionKind.Constructor:
         md = compileTemplate('partials/member.constructor.hbs', member);
         break;

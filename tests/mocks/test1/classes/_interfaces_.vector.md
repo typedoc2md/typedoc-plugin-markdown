@@ -30,6 +30,7 @@
 
 
 
+---
 ## Constructors
 <a id="constructor"></a>
 
@@ -37,7 +38,10 @@
 ### ⊕ **new Vector**(x: *number*, y: *number*, z: *number*): [Vector](_interfaces_.vector.md)
 
 
+
 *Defined in [interfaces.ts:1](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L1)*
+
+
 
 **Parameters:**
 
@@ -68,6 +72,7 @@
 
 
 
+
 ___
 
 <a id="y"></a>
@@ -77,6 +82,7 @@ ___
 **y**:  *number* 
 
 *Defined in [interfaces.ts:3](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L3)*
+
 
 
 
@@ -94,6 +100,7 @@ ___
 
 
 
+
 ___
 
 
@@ -106,7 +113,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:16](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L16)*
+
+
 
 **Parameters:**
 
@@ -135,7 +145,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L9)*
+
+
 
 **Parameters:**
 
@@ -164,7 +177,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L10)*
+
+
 
 **Parameters:**
 
@@ -192,7 +208,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:7](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L7)*
+
+
 
 **Parameters:**
 
@@ -221,7 +240,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
+
+
 
 **Parameters:**
 
@@ -249,7 +271,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L8)*
+
+
 
 **Parameters:**
 
@@ -278,7 +303,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L6)*
+
+
 
 **Parameters:**
 

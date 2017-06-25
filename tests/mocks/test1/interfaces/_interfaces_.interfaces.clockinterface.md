@@ -10,6 +10,8 @@
 | Name  | Type                
 | ------ | ------------------- 
 | currentTime | Date
+
+
 ## Methods
 <a id="settime"></a>
 
@@ -19,7 +21,10 @@
 
 
 
+
 *Defined in [interfaces.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
+
+
 
 **Parameters:**
 
@@ -47,7 +52,10 @@ ___
 
 
 
+
 *Defined in [interfaces.ts:82](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L82)*
+
+
 
 
 
@@ -58,6 +66,5 @@ ___
 
 
 ___
-
 
 

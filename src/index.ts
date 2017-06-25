@@ -10,21 +10,28 @@ module.exports = (PluginHost: Application) => {
   app.options.addDeclaration({
     component: 'markdown',
     help: 'Markdown Plugin: Export to single document.',
-    name: 'markdownOutFile',
+    name: 'mdOutFile',
     type: ParameterType.String,
   });
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: Remove index from output.',
-    name: 'markdownSuppressIndexes',
+    help: 'Markdown Plugin: Suppress index from output.',
+    name: 'mdHideIndexes',
+    type: ParameterType.Boolean,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
+    help: 'Markdown Plugin: Suppress file sources from output.',
+    name: 'mdHideSources',
     type: ParameterType.Boolean,
   });
 
   app.options.addDeclaration({
     component: 'markdown',
     help: 'Markdown Plugin: Markdown parser ie: "bitbucket"',
-    name: 'markdownFlavour',
+    name: 'mdFlavour',
     type: ParameterType.String,
   });
 
@@ -32,7 +39,7 @@ module.exports = (PluginHost: Application) => {
     component: 'markdown',
     defaultValue: '',
     help: 'The repository to use for source files (ignored unless markdownFlavour is set)',
-    name: 'markdownSourceRepo',
+    name: 'mdSourceRepo',
     type: ParameterType.String,
   });
 

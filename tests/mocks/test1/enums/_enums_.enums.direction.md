@@ -15,6 +15,7 @@
 
 
 
+---
 ## Enumeration members
 <a id="down"></a>
 
@@ -23,6 +24,7 @@
 **Down**:   
 
 *Defined in [enums.ts:5](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L5)*
+
 
 
 
@@ -40,6 +42,7 @@ ___
 
 
 
+
 ___
 
 <a id="right"></a>
@@ -53,6 +56,7 @@ ___
 
 
 
+
 ___
 
 <a id="up"></a>
@@ -62,6 +66,7 @@ ___
 **Up**:    = 1
 
 *Defined in [enums.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L4)*
+
 
 
 

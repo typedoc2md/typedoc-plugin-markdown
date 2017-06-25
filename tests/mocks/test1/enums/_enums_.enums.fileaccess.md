@@ -16,6 +16,7 @@
 
 
 
+---
 ## Enumeration members
 <a id="g"></a>
 
@@ -24,6 +25,7 @@
 **G**:    =  '123'.length
 
 *Defined in [enums.ts:17](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L17)*
+
 
 
 
@@ -41,6 +43,7 @@ ___
 
 
 
+
 ___
 
 <a id="read"></a>
@@ -50,6 +53,7 @@ ___
 **Read**:    =  1 << 1
 
 *Defined in [enums.ts:13](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L13)*
+
 
 
 
@@ -67,6 +71,7 @@ ___
 
 
 
+
 ___
 
 <a id="write"></a>
@@ -76,6 +81,7 @@ ___
 **Write**:    =  1 << 2
 
 *Defined in [enums.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L14)*
+
 
 
 

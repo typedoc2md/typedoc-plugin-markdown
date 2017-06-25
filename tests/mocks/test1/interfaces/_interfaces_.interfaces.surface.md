@@ -14,3 +14,4 @@
 | roughness | number
 | specular | function (pos: *[Vector](../classes/_interfaces_.vector.md)*): [Color](../classes/_interfaces_.color.md)
 
+

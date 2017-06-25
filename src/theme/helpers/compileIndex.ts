@@ -7,8 +7,8 @@ export function compileIndex(member: DeclarationReflection) {
 
   let md: hbs.SafeString = '';
 
-  if (!Options.markdownSuppressIndexes && (member.kind !== ReflectionKind.Interface)) {
-    if (Options.markdownFlavour === 'bitbucket') {
+  if ((!member.parent && !Options.mdOutFile) || !Options.mdHideIndexes && (member.kind !== ReflectionKind.Interface)) {
+    if (Options.mdFlavour === 'bitbucket') {
       md = '[TOC]\n';
     } else {
     md = compileTemplate('partials/index.hbs', Object.assign(member));

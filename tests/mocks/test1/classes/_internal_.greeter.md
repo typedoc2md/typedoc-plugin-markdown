@@ -22,6 +22,7 @@
 
 
 
+---
 ## Constructors
 <a id="constructor"></a>
 
@@ -29,7 +30,10 @@
 ### ⊕ **new Greeter**(message: *string*): [Greeter](_internal_.greeter.md)
 
 
+
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
+
+
 
 **Parameters:**
 
@@ -58,6 +62,7 @@
 
 
 
+
 ___
 
 
@@ -70,7 +75,10 @@ ___
 
 
 
+
 *Defined in [internal.ts:13](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L13)*
+
+
 
 
 

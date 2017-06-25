@@ -12,23 +12,23 @@ import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 import { Options } from './options';
-import {getAnchorRef} from './utils';
+import { getAnchorRef } from './utils';
 
 import * as fs from 'fs';
-
 import * as path from 'path';
 
 interface IOptions {
-  markdownFlavour: string;
-  markdownSourcefilePrefix: string;
-  markdownOutFile: string;
   includes: string;
   media: string;
   out: string;
+  projectName: string;
   excludePrivate: boolean;
   mode: boolean;
-  markdowndownRemoveIndex: boolean;
-  projectName: string;
+  mdFlavour: string;
+  mdSourcefilePrefix: string;
+  mdOutFile: string;
+  mdRemoveIndex: boolean;
+  mdHideSources: boolean;
 }
 
 export class MarkdownTheme extends DefaultTheme {
@@ -109,27 +109,28 @@ export class MarkdownTheme extends DefaultTheme {
     reflection.hasOwnDocument = false;
 
     reflection.traverse((child: any) => {
-      if (child instanceof DeclarationReflection || Options.markdownOutFile) {
+      if (child instanceof DeclarationReflection || Options.mdOutFile) {
         MarkdownTheme.applyAnchorUrl(child, container);
       }
     });
   }
 
   private options: IOptions;
+
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath);
 
     this.options = options;
 
-    Options.markdownFlavour = options.markdownFlavour || 'github';
-    Options.markdownSourceRepo = options.markdownSourceRepo;
-    Options.markdownOutFile = options.markdownOutFile;
+    Options.mdFlavour = options.mdFlavour || 'github';
+    Options.mdSourceRepo = options.dSourceRepo;
+    Options.mdOutFile = options.mdOutFile;
     Options.includes = options.includes;
     Options.media = options.media;
     Options.excludePrivate = options.excludePrivate;
     Options.mode = options.mode;
-    Options.markdownSuppressIndexes = options.markdownSuppressIndexes;
-    Options.projectName = options.name;
+    Options.mdHideIndexes = options.mdHideIndexes;
+    Options.mdHideSources = options.mdHideSources;
 
     // remove uneccessary plugins
     renderer.removeComponent('marked');
@@ -142,21 +143,26 @@ export class MarkdownTheme extends DefaultTheme {
 
   }
 
-  public isOutputDirectory(path: string): boolean {
-    return true;
+  public isOutputDirectory(outPath: string): boolean {
+    const files = fs.readdirSync(outPath);
+    return fs.existsSync(path.join(outPath, 'index.md')) || (files.length === 1 && path.extname(files[0]) === '.md');
   }
 
   public getUrls(project: ProjectReflection): UrlMapping[] {
+
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
+
+    Options.projectName = entryPoint.name;
+
     const additionalContext = {
       displayReadme: this.application.options.getValue('readme') !== 'none',
       hideBreadcrumbs: true,
       isIndex: true,
-      isSinglePage: this.options.markdownOutFile,
+      isSinglePage: this.options.mdOutFile,
     };
 
-    if (Options.markdownOutFile && Options.mode === 0) {
+    if (Options.mdOutFile && Options.mode === 0) {
       entryPoint.groups.forEach((group: any, i: number) => {
         if (group.kind === ReflectionKind.Interface) {
           entryPoint.groups.push(entryPoint.groups.splice(i, 1)[0]);
@@ -166,8 +172,8 @@ export class MarkdownTheme extends DefaultTheme {
 
     const context = Object.assign(entryPoint, additionalContext);
 
-    if (this.options.markdownOutFile) {
-      urls.push(new UrlMapping(this.options.markdownOutFile, context, 'reflection.hbs'));
+    if (this.options.mdOutFile) {
+      urls.push(new UrlMapping(this.options.mdOutFile, context, 'reflection.hbs'));
 
       entryPoint.children.forEach((child: DeclarationReflection) => {
         MarkdownTheme.applyAnchorUrl(child, child.parent);

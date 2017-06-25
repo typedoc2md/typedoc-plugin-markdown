@@ -8,13 +8,17 @@
 {{#each children}}
 | {{ name }} | {{#with type}}{{>type}}{{/with}}{{#with type.declaration}} {{#if signatures}}{{#each signatures}}{{> member.signature.title hideName=true }}{{/each}}{{/if}}{{/with}}
 {{/each}}
+{{#if ../displayBackLink}}
+----
+{{newLine}}
+{{> backLink}}
+{{newLine}}
+----
+{{newLine}}
+{{/if}}
+{{newLine}}
 {{else}}
 {{{ compileGroup this}}}
 {{/ifPropertiesGroup}}
 {{/unless}}
 {{/each}}
-
-{{#if displayBackLink}}
-{{> backLink}}
-{{newLine}}
-{{/if}}

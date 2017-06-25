@@ -27,6 +27,7 @@
 
 
 
+---
 ## Functions
 <a id="createsomething"></a>
 
@@ -36,7 +37,10 @@
 
 
 
+
 *Defined in [functions.ts:161](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L161)*
+
+
 
 A function that returns an object.
 Also no type information is given, the object should be correctly reflected.
@@ -60,7 +64,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L12)*
+
+
 
 This is a simple exported function.
 
@@ -83,7 +90,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L41)*
+
+
 
 This is a function with multiple arguments and a return value.
 
@@ -116,7 +126,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L61)*
+
+
 
 This is a function with a parameter that has a default value.
 
@@ -153,7 +166,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
+
+
 
 See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
 Also, check out {@link http://www.google.com|Google} and
@@ -181,7 +197,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L52)*
+
+
 
 This is a function with a parameter that is optional.
 
@@ -213,7 +232,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L78)*
+
+
 
 This is a function with rest parameter.
 
@@ -246,7 +268,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:121](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L121)*
+
+
 
 This is a generic function.
 
@@ -285,7 +310,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
+
+
 
 This is an internal function.
 
@@ -310,7 +338,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:88](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L88)*
+
+
 
 This is the first signature of a function with multiple signatures.
 
@@ -329,7 +360,10 @@ This is the first signature of a function with multiple signatures.
 
 
 
+
 *Defined in [functions.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L96)*
+
+
 
 This is the second signature of a function with multiple signatures.
 
@@ -360,7 +394,10 @@ ___
 
 
 
+
 *Defined in [functions.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L25)*
+
+
 
 This is a function with multiple arguments and a return value.
 
