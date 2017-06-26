@@ -1,6 +1,4 @@
-import { SourceReference } from 'typedoc/dist/lib/models/sources/file';
 import { Options } from '../options';
-import { compileTemplate } from '../utils';
 
 export function getSourceFile(fileName: string, line: string, url: string) {
 

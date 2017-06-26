@@ -1,13 +1,5 @@
-/**
- * Theme definition
- */
-
-/**
- * Typedoc imports
- */
 import { DeclarationReflection, ProjectReflection, Reflection } from 'typedoc/dist/lib/models/reflections/index';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { ReflectionType } from 'typedoc/dist/lib/models/types/reflection';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
@@ -100,7 +92,20 @@ export class MarkdownTheme extends DefaultTheme {
         }
         break;
       default:
+
+        if (Options.mdFlavour === 'bitbucket') {
+          let anchorPrefix = '';
+          if (reflection.kind === ReflectionKind.ObjectLiteral) {
+            anchorPrefix += 'object-literal-';
+          }
+          reflection.flags.forEach((flag) => {
+            anchorPrefix += `${flag}-`;
+          });
+
+          anchorRef = `markdown-header-${getAnchorRef(anchorPrefix)}${getAnchorRef(reflection.name)}`;
+        } else {
         anchorRef = anchor;
+        }
     }
 
     reflection.url = (container.url !== undefined ? container.url : '') + '#' + anchorRef;
@@ -131,6 +136,7 @@ export class MarkdownTheme extends DefaultTheme {
     Options.mode = options.mode;
     Options.mdHideIndexes = options.mdHideIndexes;
     Options.mdHideSources = options.mdHideSources;
+    Options.theme = this;
 
     // remove uneccessary plugins
     renderer.removeComponent('marked');

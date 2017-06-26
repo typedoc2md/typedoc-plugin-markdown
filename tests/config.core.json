@@ -1,7 +1,6 @@
 {
   "theme": "markdown",
   "readme": "none",
-  "excludeExternals": false,
   "gitRevision": "master",
   "media": "tests/src/media/",
   "includes":"tests/src/inc/"

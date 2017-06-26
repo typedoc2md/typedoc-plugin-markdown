@@ -9,14 +9,14 @@ module.exports = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: Export to single document.',
+    help: 'Markdown Plugin: Export to single file.',
     name: 'mdOutFile',
     type: ParameterType.String,
   });
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: Suppress index from output.',
+    help: 'Markdown Plugin: Suppress indexes from single file output.',
     name: 'mdHideIndexes',
     type: ParameterType.Boolean,
   });

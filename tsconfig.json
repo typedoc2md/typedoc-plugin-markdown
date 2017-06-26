@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "noEmitHelpers": false,
     "noImplicitAny": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "outDir": "./dist",
     "removeComments": true,
     "rootDir": "./src",

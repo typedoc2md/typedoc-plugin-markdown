@@ -2,10 +2,20 @@
 export function displaySymbol(kindString: string) {
 
   let symbol = '';
-  if (kindString === 'Constructor signature') {
-    symbol = '⊕ ';
-  } else {
-    symbol = '► ';
+
+  switch (kindString) {
+    case 'Constructor signature':
+      symbol = '⊕ ';
+      break;
+    case 'Call signature':
+      symbol = '► ';
+      break;
+    case 'Property':
+    case 'Variable':
+      symbol = '● ';
+      break;
+    default:
+
   }
 
   return symbol;

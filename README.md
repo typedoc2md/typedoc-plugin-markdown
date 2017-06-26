@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 
-*Alpha version under development*. 
 ## What
 
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
@@ -34,8 +33,6 @@ The plugin exposes the following additional arguments:
 Specifies the markdown rendering engine.  Defaults to `github`.
 * `--mdOutFile <fileName.md>`<br />
 Compiles output to a single file
-* `--mdHideIndexes`<br />
-Suppress indexes from output - useful to reduce noise on small projects
 * `--mdHideSources`<br />
 Suppress sources from output 
 * `--mdSourceRepo<path.to.repo>`<br />

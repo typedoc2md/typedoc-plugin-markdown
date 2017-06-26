@@ -1,12 +1,11 @@
 import { ReflectionGroup } from 'typedoc/dist/lib/models/ReflectionGroup';
-import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections/index';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { Options } from '../options';
-import { compileTemplate } from '../utils';
+import { compilePartial } from '../utils';
 
 export function compileGroup(group: ReflectionGroup, parent: any) {
 
-  let md: hbs.SafeString = '';
+  let md = '';
 
   if (!group.allChildrenArePrivate) {
     let displayTitle = true;
@@ -25,7 +24,7 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
       displayBackLink = false;
     }
 
-    md = compileTemplate(`partials/members.group.hbs`,
+    md = compilePartial(`members.group.hbs`,
     Object.assign(group, { displayTitle, isMainTitle, displayBackLink }));
   }
 

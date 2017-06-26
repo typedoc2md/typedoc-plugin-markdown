@@ -5,6 +5,7 @@
 /tmp
 /tests/out
 /tests/html
+.nyc_output/
 
 # dependencies
 /node_modules

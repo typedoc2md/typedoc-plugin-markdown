@@ -9,4 +9,5 @@ export class Options {
   public static projectName: string;
   public static mdHideIndexes: boolean;
   public static mdHideSources: boolean;
+  public static theme: any;
 }
