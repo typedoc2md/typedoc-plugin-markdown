@@ -3,13 +3,7 @@
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 
-## What
-
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
-
-### Why not just create a theme?
-
-Creating a pluign that exposes a theme provides a mechanism to offer a feature rich set of additional options.
 
 ## Getting started
 
@@ -39,6 +33,9 @@ Suppress sources from output
 The source repo to use for source file linking. Will be ignored on github flavoured projects.<br />
 For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 
+### Why not just create a theme?
+
+Creating a pluign that exposes a theme provides a mechanism to offer a feature rich set of additional options.
 
 ## Samples
 
@@ -51,11 +48,3 @@ Samples of generated output.
 ## Acknowledgements
 
 * Thanks to kimamula's [typedoc-markdown-theme](https://github.com/kimamula/typedoc-markdown-theme) for the inspiration behind this project.
-
-
-
-
- 
-
-
-
