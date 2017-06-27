@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["enums"](../modules/_enums_.md) > [Enums](../modules/_enums_.enums.md) > [FileAccess](../enums/_enums_.enums.fileaccess.md)
+[typedoc-plugin-markdown](../README.md) > ["enums"](../modules/_enums_.md) > [Enums](../modules/_enums_.enums.md) > [FileAccess](../enums/_enums_.enums.fileaccess.md)
 
 
 

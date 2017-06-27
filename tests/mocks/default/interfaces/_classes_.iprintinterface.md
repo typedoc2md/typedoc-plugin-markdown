@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [IPrintInterface](../interfaces/_classes_.iprintinterface.md)
+[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [IPrintInterface](../interfaces/_classes_.iprintinterface.md)
 
 
 
@@ -20,15 +20,7 @@ This is a simple interface.
 
 
 
-## Index
 
-### Methods
-
-* [print](_classes_.iprintinterface.md#print)
-
-
-
----
 ## Methods
 <a id="print"></a>
 

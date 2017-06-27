@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [Color](../classes/_interfaces_.color.md)
+[typedoc-plugin-markdown](../README.md) > ["interfaces"](../modules/_interfaces_.md) > [Color](../classes/_interfaces_.color.md)
 
 
 

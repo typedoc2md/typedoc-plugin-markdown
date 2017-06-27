@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [SubClassA](../classes/subclassa.md)
+[typedoc-plugin-markdown](../README.md) > [SubClassA](../classes/subclassa.md)
 
 
 
@@ -74,6 +74,9 @@ from BaseClass.
 
 
 
+*Inherited from [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
+
+*Defined in [classes.ts:70](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-70)*
 
 
 
@@ -90,6 +93,9 @@ from BaseClass.
 **Returns:** [SubClassA](subclassa.md)
 
 
+*Inherited from [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
+
+*Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
 
 
 
@@ -115,6 +121,9 @@ from BaseClass.
 
 ** ●  kind**:  *`number`* 
 
+*Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#markdown-header-protected-kind)*
+
+*Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
 
 
 
@@ -131,6 +140,11 @@ ___
 
 ** ●  name**:  *`string`* 
 
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[name](../interfaces/iprintnameinterface.md#markdown-header-name)*
+
+*Inherited from [BaseClass](baseclass.md).[name](baseclass.md#markdown-header-name)*
+
+*Defined in [classes.ts:60](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-60)*
 
 
 
@@ -151,6 +165,7 @@ ___
 getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
 
 
+*Defined in [classes.ts:199](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-199)*
 
 
 
@@ -164,6 +179,7 @@ The return value.
 
 
 
+*Defined in [classes.ts:209](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-209)*
 
 
 
@@ -196,6 +212,7 @@ ___
 getreadOnlyNameProperty(): `string`
 
 
+*Defined in [classes.ts:218](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-218)*
 
 
 
@@ -220,6 +237,7 @@ ___
 setwriteOnlyNameProperty(value: *`string`*): `void`
 
 
+*Defined in [classes.ts:228](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-228)*
 
 
 
@@ -255,6 +273,9 @@ ___
 
 
 
+*Inherited from [BaseClass](baseclass.md).[arrowFunction](baseclass.md#markdown-header-arrowfunction)*
+
+*Defined in [classes.ts:129](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-129)*
 
 
 
@@ -289,6 +310,11 @@ ___
 
 
 
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[getName](../interfaces/iprintnameinterface.md#markdown-header-getname)*
+
+*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-getname)*
+
+*Defined in [classes.ts:94](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-94)*
 
 
 
@@ -320,6 +346,9 @@ ___
 
 
 
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[print](../interfaces/iprintnameinterface.md#markdown-header-print)*
+
+*Defined in [classes.ts:185](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-185)*
 
 
 
@@ -353,6 +382,9 @@ ___
 
 
 
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[printName](../interfaces/iprintnameinterface.md#markdown-header-printname)*
+
+*Defined in [classes.ts:190](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-190)*
 
 
 
@@ -378,6 +410,9 @@ ___
 
 
 
+*Inherited from [BaseClass](baseclass.md).[setName](baseclass.md#markdown-header-setname)*
+
+*Defined in [classes.ts:117](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-117)*
 
 
 
@@ -414,6 +449,9 @@ ___
 
 
 
+*Inherited from [BaseClass](baseclass.md).[caTest](baseclass.md#markdown-header-static-catest)*
+
+*Defined in [classes.ts:153](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-153)*
 
 
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
@@ -449,6 +487,9 @@ ___
 
 
 
+*Inherited from [BaseClass](baseclass.md).[getInstance](baseclass.md#markdown-header-static-getinstance)*
+
+*Defined in [classes.ts:146](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-146)*
 
 
 
@@ -479,6 +520,9 @@ ___
 
 
 
+*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-static-getname)*
+
+*Defined in [classes.ts:106](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-106)*
 
 
 

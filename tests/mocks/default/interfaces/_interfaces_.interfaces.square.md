@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [Square](../interfaces/_interfaces_.interfaces.square.md)
+[typedoc-plugin-markdown](../README.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [Square](../interfaces/_interfaces_.interfaces.square.md)
 
 
 
@@ -17,16 +17,7 @@
 
 
 
-## Index
 
-### Properties
-
-* [color](_interfaces_.interfaces.square.md#color)
-* [sideLength](_interfaces_.interfaces.square.md#sidelength)
-
-
-
----
 ## Properties
 
 | Name  | Type                

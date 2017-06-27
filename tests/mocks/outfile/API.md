@@ -62,6 +62,11 @@
 
 ### Interfaces
 
+* [IApiElementType](#interface-iapielementtype)
+* [IApiGameEvent](#interface-iapigameevent)
+* [IApiGameFormations](#interface-iapigameformations)
+* [IApiGameSettings](#interface-iapigamesettings)
+* [IApiLeaguePositions](#interface-iapileaguepositions)
 * [INameInterface](#interface-inameinterface)
 * [IPrintInterface](#interface-iprintinterface)
 * [IPrintNameInterface](#interface-iprintnameinterface)
@@ -108,7 +113,6 @@
 
 **  Down**:   
 
-*Defined in [enums.ts:5](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L5)*
 
 
 
@@ -122,7 +126,6 @@ ___
 
 **  Left**:   
 
-*Defined in [enums.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L6)*
 
 
 
@@ -136,7 +139,6 @@ ___
 
 **  Right**:   
 
-*Defined in [enums.ts:7](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L7)*
 
 
 
@@ -150,7 +152,6 @@ ___
 
 **  Up**:    = 1
 
-*Defined in [enums.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L4)*
 
 
 
@@ -188,7 +189,6 @@ ___
 
 **  G**:    =  '123'.length
 
-*Defined in [enums.ts:17](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L17)*
 
 
 
@@ -202,7 +202,6 @@ ___
 
 **  None**:   
 
-*Defined in [enums.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L12)*
 
 
 
@@ -216,7 +215,6 @@ ___
 
 **  Read**:    =  1 << 1
 
-*Defined in [enums.ts:13](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L13)*
 
 
 
@@ -230,7 +228,6 @@ ___
 
 **  ReadWrite**:    =  Read | Write
 
-*Defined in [enums.ts:15](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L15)*
 
 
 
@@ -244,7 +241,6 @@ ___
 
 **  Write**:    =  1 << 2
 
-*Defined in [enums.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L14)*
 
 
 
@@ -309,7 +305,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L78)*
 
 
 
@@ -364,7 +359,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
 
 
 
@@ -395,7 +389,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:82](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L82)*
 
 
 
@@ -520,6 +513,7 @@ ___
 
 
 
+
 # Interface: Surface
 
 
@@ -550,14 +544,12 @@ ___
 
 **  SearchFunc**:  *function* 
 
-*Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
 
 #### Type declaration
 (source: *`string`*, subString: *`string`*): `boolean`
 
 
-*Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
 
 
@@ -592,7 +584,6 @@ ___
 
 ** ●  mySearch**:  *[SearchFunc](#interfaces.searchfunc)* 
 
-*Defined in [interfaces.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L63)*
 
 
 
@@ -606,7 +597,6 @@ ___
 
 ** ●  square**:  *[Square](#interface-square)*  =  {} as Square
 
-*Defined in [interfaces.ts:97](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L97)*
 
 
 
@@ -628,7 +618,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:85](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L85)*
 
 
 
@@ -671,7 +660,6 @@ This is the module extending the function moduleFunction().
 
 
 
-*Defined in [functions.ts:130](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L130)*
 
 
 
@@ -715,7 +703,6 @@ This is a function that is extended by a module.
 
 ** ●  functionVariable**:  *`string`* 
 
-*Defined in [functions.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L140)*
 
 
 
@@ -740,7 +727,6 @@ ___
 
 
 
-*Defined in [functions.ts:145](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L145)*
 
 
 
@@ -766,7 +752,6 @@ ___
 
 
 
-*Defined in [functions.ts:152](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L152)*
 
 
 
@@ -864,7 +849,6 @@ This is a simple example on how to use BaseClass.
 
 
 
-*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
 
@@ -881,7 +865,6 @@ This is a simple example on how to use BaseClass.
 **Returns:** [BaseClass](#class-baseclass)
 
 
-*Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
 
 
@@ -910,7 +893,6 @@ This is a simple example on how to use BaseClass.
 
 ** ●  internalClass**:  *[InternalClass](#class-internalclass)* 
 
-*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
 
@@ -927,7 +909,6 @@ ___
 
 ** ●  kind**:  *`number`* 
 
-*Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
 
@@ -944,9 +925,6 @@ ___
 
 ** ●  name**:  *`string`* 
 
-*Implementation of [INameInterface](#interface-inameinterface).[name](#inameinterface.name)*
-
-*Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
 
 
@@ -963,7 +941,6 @@ ___
 
 ** ●  instance**:  *[BaseClass](#class-baseclass)* 
 
-*Defined in [classes.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
 
 
 
@@ -983,7 +960,6 @@ ___
 
 ** ●  instances**:  *[BaseClass](#class-baseclass)[]* 
 
-*Defined in [classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L56)*
 
 
 
@@ -1005,7 +981,6 @@ ___
 
 
 
-*Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
 
 
@@ -1040,7 +1015,6 @@ ___
 
 
 
-*Defined in [classes.ts:135](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L135)*
 
 
 
@@ -1066,9 +1040,6 @@ ___
 
 
 
-*Implementation of [INameInterface](#interface-inameinterface).[getName](#inameinterface.getname)*
-
-*Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
 
 
@@ -1100,7 +1071,6 @@ ___
 
 
 
-*Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
 
 
@@ -1137,7 +1107,6 @@ ___
 
 
 
-*Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
 
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
@@ -1173,7 +1142,6 @@ ___
 
 
 
-*Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
 
 
@@ -1204,7 +1172,6 @@ ___
 
 
 
-*Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
 
 
@@ -1274,7 +1241,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L23)*
 
 
 
@@ -1305,7 +1271,6 @@ ___
 
 ** ●  b**:  *`number`* 
 
-*Defined in [interfaces.ts:26](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L26)*
 
 
 
@@ -1319,7 +1284,6 @@ ___
 
 ** ●  g**:  *`number`* 
 
-*Defined in [interfaces.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L25)*
 
 
 
@@ -1333,7 +1297,6 @@ ___
 
 ** ●  r**:  *`number`* 
 
-*Defined in [interfaces.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L24)*
 
 
 
@@ -1347,7 +1310,6 @@ ___
 
 ** ●  background**:  *[Color](#class-color)*  =  Color.black
 
-*Defined in [interfaces.ts:34](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L34)*
 
 
 
@@ -1361,7 +1323,6 @@ ___
 
 ** ●  black**:  *[Color](#class-color)*  =  new Color(0.0, 0.0, 0.0)
 
-*Defined in [interfaces.ts:33](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L33)*
 
 
 
@@ -1375,7 +1336,6 @@ ___
 
 ** ●  defaultColor**:  *[Color](#class-color)*  =  Color.black
 
-*Defined in [interfaces.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L35)*
 
 
 
@@ -1389,7 +1349,6 @@ ___
 
 ** ●  grey**:  *[Color](#class-color)*  =  new Color(0.5, 0.5, 0.5)
 
-*Defined in [interfaces.ts:32](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L32)*
 
 
 
@@ -1403,7 +1362,6 @@ ___
 
 ** ●  white**:  *[Color](#class-color)*  =  new Color(1.0, 1.0, 1.0)
 
-*Defined in [interfaces.ts:31](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L31)*
 
 
 
@@ -1425,7 +1383,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L29)*
 
 
 
@@ -1457,7 +1414,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L28)*
 
 
 
@@ -1489,7 +1445,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L30)*
 
 
 
@@ -1521,7 +1476,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L36)*
 
 
 
@@ -1595,9 +1549,6 @@ ___
 
 
 
-*Overrides [Person](#class-person).[constructor](#person.constructor)*
-
-*Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
 
 
 
@@ -1627,7 +1578,6 @@ ___
 
 ** ●  department**:  *`string`* 
 
-*Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
 
 
 
@@ -1641,9 +1591,6 @@ ___
 
 ** ●  name**:  *`string`* 
 
-*Inherited from [Person](#class-person).[name](#person.name-1)*
-
-*Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
 
 
 
@@ -1665,7 +1612,6 @@ ___
 
 
 
-*Defined in [private-members.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L36)*
 
 
 
@@ -1688,7 +1634,6 @@ ___
 
 
 
-*Defined in [private-members.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L40)*
 
 
 
@@ -1765,7 +1710,6 @@ This a type parameter.
 
 
 
-*Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -1800,7 +1744,6 @@ Constructor short text.
 
 ** ●  p2**:  *`T`* 
 
-*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -1817,7 +1760,6 @@ ___
 
 ** ●  p3**:  *`number`* 
 
-*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -1834,7 +1776,6 @@ ___
 
 ** ●  p4**:  *`number`* 
 
-*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -1852,7 +1793,6 @@ ___
 
 ** ●  value**:  *`T`* 
 
-*Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -1874,7 +1814,6 @@ ___
 
 
 
-*Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
 
 
 
@@ -1897,7 +1836,6 @@ ___
 
 
 
-*Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
 
@@ -1957,7 +1895,6 @@ ___
 
 
 
-*Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
 
 
 
@@ -1986,7 +1923,6 @@ ___
 
 ** ●  greeting**:  *`string`* 
 
-*Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
 
 
 
@@ -2008,7 +1944,6 @@ ___
 
 
 
-*Defined in [internal.ts:13](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L13)*
 
 
 
@@ -2052,7 +1987,6 @@ This is an internal class, it is not exported.
 
 
 
-*Defined in [classes.ts:169](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
 
 
 
@@ -2126,9 +2060,6 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 
 
-*Inherited from [GenericClass](#class-genericclass).[constructor](#genericclass.constructor)*
-
-*Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -2163,9 +2094,6 @@ Constructor short text.
 
 ** ●  p2**:  *[SubClassB](#class-subclassb)* 
 
-*Inherited from [GenericClass](#class-genericclass).[p2](#genericclass.p2-1)*
-
-*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -2182,9 +2110,6 @@ ___
 
 ** ●  p3**:  *`number`* 
 
-*Inherited from [GenericClass](#class-genericclass).[p3](#genericclass.p3-1)*
-
-*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -2201,9 +2126,6 @@ ___
 
 ** ●  value**:  *[SubClassB](#class-subclassb)* 
 
-*Inherited from [GenericClass](#class-genericclass).[value](#genericclass.value)*
-
-*Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -2225,9 +2147,6 @@ ___
 
 
 
-*Inherited from [GenericClass](#class-genericclass).[getValue](#genericclass.getvalue)*
-
-*Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
 
 
 
@@ -2250,9 +2169,6 @@ ___
 
 
 
-*Inherited from [GenericClass](#class-genericclass).[setValue](#genericclass.setvalue)*
-
-*Defined in [classes.ts:270](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
 
@@ -2320,7 +2236,6 @@ ___
 
 
 
-*Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
 
 
 
@@ -2349,7 +2264,6 @@ ___
 
 ** ●  name**:  *`string`* 
 
-*Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
 
 
 
@@ -2437,9 +2351,6 @@ from BaseClass.
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[constructor](#baseclass.constructor)*
-
-*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
 
@@ -2456,9 +2367,6 @@ from BaseClass.
 **Returns:** [SubClassA](#class-subclassa)
 
 
-*Inherited from [BaseClass](#class-baseclass).[constructor](#baseclass.constructor)*
-
-*Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
 
 
@@ -2487,9 +2395,6 @@ from BaseClass.
 
 ** ●  kind**:  *`number`* 
 
-*Inherited from [BaseClass](#class-baseclass).[kind](#baseclass.kind)*
-
-*Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
 
@@ -2506,11 +2411,6 @@ ___
 
 ** ●  name**:  *`string`* 
 
-*Implementation of [IPrintNameInterface](#interface-iprintnameinterface).[name](#iprintnameinterface.name)*
-
-*Inherited from [BaseClass](#class-baseclass).[name](#baseclass.name-1)*
-
-*Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
 
 
@@ -2534,7 +2434,6 @@ ___
 getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
 
 
-*Defined in [classes.ts:199](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L199)*
 
 
 
@@ -2548,7 +2447,6 @@ The return value.
 
 
 
-*Defined in [classes.ts:209](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L209)*
 
 
 
@@ -2581,7 +2479,6 @@ ___
 getreadOnlyNameProperty(): `string`
 
 
-*Defined in [classes.ts:218](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L218)*
 
 
 
@@ -2606,7 +2503,6 @@ ___
 setwriteOnlyNameProperty(value: *`string`*): `void`
 
 
-*Defined in [classes.ts:228](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L228)*
 
 
 
@@ -2645,9 +2541,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[arrowFunction](#baseclass.arrowfunction)*
-
-*Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
 
 
@@ -2682,11 +2575,6 @@ ___
 
 
 
-*Implementation of [IPrintNameInterface](#interface-iprintnameinterface).[getName](#iprintnameinterface.getname)*
-
-*Inherited from [BaseClass](#class-baseclass).[getName](#baseclass.getname)*
-
-*Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
 
 
@@ -2718,9 +2606,6 @@ ___
 
 
 
-*Implementation of [IPrintNameInterface](#interface-iprintnameinterface).[print](#iprintnameinterface.print)*
-
-*Defined in [classes.ts:185](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L185)*
 
 
 
@@ -2754,9 +2639,6 @@ ___
 
 
 
-*Implementation of [IPrintNameInterface](#interface-iprintnameinterface).[printName](#iprintnameinterface.printname)*
-
-*Defined in [classes.ts:190](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L190)*
 
 
 
@@ -2782,9 +2664,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[setName](#baseclass.setname)*
-
-*Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
 
 
@@ -2821,9 +2700,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[caTest](#baseclass.catest)*
-
-*Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
 
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
@@ -2859,9 +2735,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[getInstance](#baseclass.getinstance)*
-
-*Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
 
 
@@ -2892,9 +2765,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[getName](#baseclass.getname-2)*
-
-*Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
 
 
@@ -2984,9 +2854,6 @@ The constructor of the original class should be overwritten.
 
 
 
-*Overrides [BaseClass](#class-baseclass).[constructor](#baseclass.constructor)*
-
-*Defined in [classes.ts:238](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L238)*
 
 
 
@@ -3015,9 +2882,6 @@ The constructor of the original class should be overwritten.
 
 ** ●  kind**:  *`number`* 
 
-*Inherited from [BaseClass](#class-baseclass).[kind](#baseclass.kind)*
-
-*Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
 
@@ -3034,11 +2898,6 @@ ___
 
 ** ●  name**:  *`string`* 
 
-*Implementation of [INameInterface](#interface-inameinterface).[name](#inameinterface.name)*
-
-*Inherited from [BaseClass](#class-baseclass).[name](#baseclass.name-1)*
-
-*Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
 
 
@@ -3063,9 +2922,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[arrowFunction](#baseclass.arrowfunction)*
-
-*Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
 
 
@@ -3100,7 +2956,6 @@ ___
 
 
 
-*Defined in [classes.ts:243](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L243)*
 
 
 
@@ -3131,11 +2986,6 @@ ___
 
 
 
-*Implementation of [INameInterface](#interface-inameinterface).[getName](#inameinterface.getname)*
-
-*Inherited from [BaseClass](#class-baseclass).[getName](#baseclass.getname)*
-
-*Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
 
 
@@ -3167,9 +3017,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[setName](#baseclass.setname)*
-
-*Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
 
 
@@ -3206,9 +3053,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[caTest](#baseclass.catest)*
-
-*Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
 
 **see**: https://github.com/sebastian-lenz/typedoc/issues/42
@@ -3244,9 +3088,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[getInstance](#baseclass.getinstance)*
-
-*Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
 
 
@@ -3277,9 +3118,6 @@ ___
 
 
 
-*Inherited from [BaseClass](#class-baseclass).[getName](#baseclass.getname-2)*
-
-*Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
 
 
@@ -3347,7 +3185,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:1](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L1)*
 
 
 
@@ -3378,7 +3215,6 @@ ___
 
 ** ●  x**:  *`number`* 
 
-*Defined in [interfaces.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L2)*
 
 
 
@@ -3392,7 +3228,6 @@ ___
 
 ** ●  y**:  *`number`* 
 
-*Defined in [interfaces.ts:3](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L3)*
 
 
 
@@ -3406,7 +3241,6 @@ ___
 
 ** ●  z**:  *`number`* 
 
-*Defined in [interfaces.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L4)*
 
 
 
@@ -3428,7 +3262,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:16](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L16)*
 
 
 
@@ -3460,7 +3293,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L9)*
 
 
 
@@ -3492,7 +3324,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L10)*
 
 
 
@@ -3523,7 +3354,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:7](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L7)*
 
 
 
@@ -3555,7 +3385,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
 
 
 
@@ -3586,7 +3415,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L8)*
 
 
 
@@ -3618,7 +3446,6 @@ ___
 
 
 
-*Defined in [interfaces.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L6)*
 
 
 
@@ -3654,7 +3481,6 @@ ___
 
 ** ●  amount**:  *`number`*  = 6
 
-*Defined in [basic-types.ts:20](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L20)*
 
 
 
@@ -3674,7 +3500,6 @@ ___
 
 ** ●  color**:  *`string`*  = "blue"
 
-*Defined in [basic-types.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L28)*
 
 
 
@@ -3694,7 +3519,6 @@ ___
 
 ** ●  greeter**:  *[Greeter](#class-greeter)*  =  new Greeter('world')
 
-*Defined in [internal.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L18)*
 
 
 
@@ -3708,7 +3532,6 @@ ___
 
 ** ●  isDone**:  *`boolean`*  = false
 
-*Defined in [basic-types.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L12)*
 
 
 
@@ -3728,7 +3551,6 @@ ___
 
 ** ●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
-*Defined in [basic-types.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L36)*
 
 
 
@@ -3748,7 +3570,6 @@ ___
 
 ** ●  privateVar**:  *"marked private variable"*  = "marked private variable"
 
-*Defined in [private-members.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L8)*
 
 
 
@@ -3765,7 +3586,6 @@ ___
 
 ** ●  publicVar**:  *"public variable"*  = "public variable"
 
-*Defined in [private-members.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L2)*
 
 
 
@@ -3787,7 +3607,6 @@ ___
 
 
 
-*Defined in [functions.ts:161](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L161)*
 
 
 
@@ -3814,7 +3633,6 @@ ___
 
 
 
-*Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L12)*
 
 
 
@@ -3840,7 +3658,6 @@ ___
 
 
 
-*Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L41)*
 
 
 
@@ -3876,7 +3693,6 @@ ___
 
 
 
-*Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L61)*
 
 
 
@@ -3916,7 +3732,6 @@ ___
 
 
 
-*Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
 
 
 
@@ -3947,7 +3762,6 @@ ___
 
 
 
-*Defined in [functions.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L52)*
 
 
 
@@ -3982,7 +3796,6 @@ ___
 
 
 
-*Defined in [functions.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L78)*
 
 
 
@@ -4018,7 +3831,6 @@ ___
 
 
 
-*Defined in [functions.ts:121](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L121)*
 
 
 
@@ -4060,7 +3872,6 @@ ___
 
 
 
-*Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
 
 
 
@@ -4088,7 +3899,6 @@ ___
 
 
 
-*Defined in [functions.ts:88](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L88)*
 
 
 
@@ -4110,7 +3920,6 @@ This is the first signature of a function with multiple signatures.
 
 
 
-*Defined in [functions.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L96)*
 
 
 
@@ -4144,7 +3953,6 @@ ___
 
 
 
-*Defined in [private-members.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L18)*
 
 
 
@@ -4170,7 +3978,6 @@ ___
 
 
 
-*Defined in [private-members.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L10)*
 
 
 
@@ -4193,7 +4000,6 @@ ___
 
 
 
-*Defined in [functions.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L25)*
 
 
 
@@ -4234,7 +4040,6 @@ ___
 
 ** ●  someNumber**:  *`number`*  = 10
 
-*Defined in [basic-types.ts:45](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L45)*
 
 
 
@@ -4247,7 +4052,6 @@ ___
 
 ** ●  someString**:  *`string`*  = "hello"
 
-*Defined in [basic-types.ts:46](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L46)*
 
 
 
@@ -4263,7 +4067,6 @@ ___
 
 
 
-*Defined in [basic-types.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L42)*
 
 
 
@@ -4276,6 +4079,155 @@ ___
 
 
 ___
+
+
+
+
+
+# Interface: IApiElementType
+
+
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+| id | `number`
+| plural_name | `string`
+| plural_name_short | `string`
+| singular_name | `string`
+| singular_name_short | `string`
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+
+
+
+
+
+
+# Interface: IApiGameEvent
+
+
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+| average_entry_score | `number`
+| data_checked | `boolean`
+| deadline_time | `Date`
+| deadline_time_epoch | `number`
+| deadline_time_formatted | `string`
+| deadline_time_game_offset | `number`
+| finished | `boolean`
+| highest_score | `number`
+| highest_scoring_entry | `number`
+| id | `number`
+| is_current | `boolean`
+| is_next | `boolean`
+| is_previous | `boolean`
+| name | `string`
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+
+
+
+
+
+
+# Interface: IApiGameFormations
+
+
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+| 1-2-5-3 | `number`[][]
+| 1-3-4-3 | `number`[][]
+| 1-3-5-2 | `number`[][]
+| 1-4-3-3 | `number`[][]
+| 1-4-4-2 | `number`[][]
+| 1-4-5-1 | `number`[][]
+| 1-5-2-3 | `number`[][]
+| 1-5-3-2 | `number`[][]
+| 1-5-4-1 | `number`[][]
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+
+
+
+
+
+
+# Interface: IApiGameSettings
+
+
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+| element_formations | [IApiGameFormations](#interface-iapigameformations)
+| game_event | [IApiGameEvent](#interface-iapigameevent)
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+
+
+
+
+
+
+# Interface: IApiLeaguePositions
+
+
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+| entry | `number`
+| entry_name | `string`
+| event_total | `number`
+| id | `number`
+| last_rank | `number`
+| league | `number`
+| movement | `string`
+| own_entry | `boolean`
+| player_name | `string`
+| rank | `number`
+| rank_sort | `number`
+| start_event | `number`
+| stop_event | `number`
+| total | `number`
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+
 
 
 
@@ -4331,7 +4283,6 @@ This is a simple interface.
 
 
 
-*Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
 
 
@@ -4388,7 +4339,6 @@ This is a simple interface.
 
 
 
-*Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
 
 
@@ -4477,9 +4427,6 @@ This is a interface inheriting from two other interfaces.
 
 
 
-*Inherited from [INameInterface](#interface-inameinterface).[getName](#inameinterface.getname)*
-
-*Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
 
 
@@ -4508,9 +4455,6 @@ ___
 
 
 
-*Inherited from [IPrintInterface](#interface-iprintinterface).[print](#iprintinterface.print)*
-
-*Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
 
 
@@ -4547,7 +4491,6 @@ ___
 
 
 
-*Defined in [classes.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
 
 
 

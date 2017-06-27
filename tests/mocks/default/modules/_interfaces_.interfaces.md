@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md)
+[typedoc-plugin-markdown](../README.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md)
 
 
 

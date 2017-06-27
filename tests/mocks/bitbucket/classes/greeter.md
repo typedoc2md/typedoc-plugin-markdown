@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [Greeter](../classes/greeter.md)
+[typedoc-plugin-markdown](../README.md) > [Greeter](../classes/greeter.md)
 
 
 
@@ -31,6 +31,7 @@
 
 
 
+*Defined in [internal.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/internal.ts?fileviewer&amp;#x3D;file-view-default#internal.ts-9)*
 
 
 
@@ -56,6 +57,7 @@
 
 ** ●  greeting**:  *`string`* 
 
+*Defined in [internal.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/internal.ts?fileviewer&amp;#x3D;file-view-default#internal.ts-9)*
 
 
 
@@ -74,6 +76,7 @@ ___
 
 
 
+*Defined in [internal.ts:13](https://bitbucket.org/owner/repository_name/src/master/src/internal.ts?fileviewer&amp;#x3D;file-view-default#internal.ts-13)*
 
 
 

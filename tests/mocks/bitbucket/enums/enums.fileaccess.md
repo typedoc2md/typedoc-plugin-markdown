@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [Enums](../modules/enums.md) > [FileAccess](../enums/enums.fileaccess.md)
+[typedoc-plugin-markdown](../README.md) > [Enums](../modules/enums.md) > [FileAccess](../enums/enums.fileaccess.md)
 
 
 
@@ -24,6 +24,7 @@
 
 **  G**:    =  '123'.length
 
+*Defined in [enums.ts:17](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-17)*
 
 
 
@@ -37,6 +38,7 @@ ___
 
 **  None**:   
 
+*Defined in [enums.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-12)*
 
 
 
@@ -50,6 +52,7 @@ ___
 
 **  Read**:    =  1 << 1
 
+*Defined in [enums.ts:13](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-13)*
 
 
 
@@ -63,6 +66,7 @@ ___
 
 **  ReadWrite**:    =  Read | Write
 
+*Defined in [enums.ts:15](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-15)*
 
 
 
@@ -76,6 +80,7 @@ ___
 
 **  Write**:    =  1 << 2
 
+*Defined in [enums.ts:14](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-14)*
 
 
 

@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["basic-types"](../modules/_basic_types_.md)
+[typedoc-plugin-markdown](../README.md) > ["basic-types"](../modules/_basic_types_.md)
 
 
 

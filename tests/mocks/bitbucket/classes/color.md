@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [Color](../classes/color.md)
+[typedoc-plugin-markdown](../README.md) > [Color](../classes/color.md)
 
 
 
@@ -41,6 +41,7 @@
 
 
 
+*Defined in [interfaces.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-23)*
 
 
 
@@ -68,6 +69,7 @@
 
 ** ●  b**:  *`number`* 
 
+*Defined in [interfaces.ts:26](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-26)*
 
 
 
@@ -81,6 +83,7 @@ ___
 
 ** ●  g**:  *`number`* 
 
+*Defined in [interfaces.ts:25](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-25)*
 
 
 
@@ -94,6 +97,7 @@ ___
 
 ** ●  r**:  *`number`* 
 
+*Defined in [interfaces.ts:24](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-24)*
 
 
 
@@ -107,6 +111,7 @@ ___
 
 ** ●  background**:  *[Color](color.md)*  =  Color.black
 
+*Defined in [interfaces.ts:34](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-34)*
 
 
 
@@ -120,6 +125,7 @@ ___
 
 ** ●  black**:  *[Color](color.md)*  =  new Color(0.0, 0.0, 0.0)
 
+*Defined in [interfaces.ts:33](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-33)*
 
 
 
@@ -133,6 +139,7 @@ ___
 
 ** ●  defaultColor**:  *[Color](color.md)*  =  Color.black
 
+*Defined in [interfaces.ts:35](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-35)*
 
 
 
@@ -146,6 +153,7 @@ ___
 
 ** ●  grey**:  *[Color](color.md)*  =  new Color(0.5, 0.5, 0.5)
 
+*Defined in [interfaces.ts:32](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-32)*
 
 
 
@@ -159,6 +167,7 @@ ___
 
 ** ●  white**:  *[Color](color.md)*  =  new Color(1.0, 1.0, 1.0)
 
+*Defined in [interfaces.ts:31](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-31)*
 
 
 
@@ -177,6 +186,7 @@ ___
 
 
 
+*Defined in [interfaces.ts:29](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-29)*
 
 
 
@@ -208,6 +218,7 @@ ___
 
 
 
+*Defined in [interfaces.ts:28](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-28)*
 
 
 
@@ -239,6 +250,7 @@ ___
 
 
 
+*Defined in [interfaces.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-30)*
 
 
 
@@ -270,6 +282,7 @@ ___
 
 
 
+*Defined in [interfaces.ts:36](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-36)*
 
 
 

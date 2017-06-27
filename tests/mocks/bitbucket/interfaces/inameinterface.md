@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [INameInterface](../interfaces/inameinterface.md)
+[typedoc-plugin-markdown](../README.md) > [INameInterface](../interfaces/inameinterface.md)
 
 
 
@@ -26,20 +26,7 @@ This is a simple interface.
 * [SubClassA](../classes/subclassa.md)
 * [SubClassB](../classes/subclassb.md)
 
-## Index
 
-### Properties
-
-* [name](inameinterface.md#markdown-header-name)
-
-
-### Methods
-
-* [getName](inameinterface.md#markdown-header-getname)
-
-
-
----
 ## Properties
 
 | Name  | Type                
@@ -57,6 +44,7 @@ This is a simple interface.
 
 
 
+*Defined in [classes.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-18)*
 
 
 

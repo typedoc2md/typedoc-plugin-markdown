@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [INameInterface](../interfaces/_classes_.inameinterface.md)
+[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [INameInterface](../interfaces/_classes_.inameinterface.md)
 
 
 
@@ -26,20 +26,7 @@ This is a simple interface.
 * [SubClassA](../classes/_classes_.subclassa.md)
 * [SubClassB](../classes/_classes_.subclassb.md)
 
-## Index
 
-### Properties
-
-* [name](_classes_.inameinterface.md#name)
-
-
-### Methods
-
-* [getName](_classes_.inameinterface.md#getname)
-
-
-
----
 ## Properties
 
 | Name  | Type                

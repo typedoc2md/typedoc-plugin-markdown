@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [interfaces](../modules/interfaces.md) > [Shape](../interfaces/interfaces.shape.md)
+[typedoc-plugin-markdown](../README.md) > [interfaces](../modules/interfaces.md) > [Shape](../interfaces/interfaces.shape.md)
 
 
 
@@ -17,15 +17,7 @@
 
 
 
-## Index
 
-### Properties
-
-* [color](interfaces.shape.md#markdown-header-color)
-
-
-
----
 ## Properties
 
 | Name  | Type                

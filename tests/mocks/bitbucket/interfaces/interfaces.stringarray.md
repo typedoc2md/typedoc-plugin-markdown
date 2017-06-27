@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [interfaces](../modules/interfaces.md) > [StringArray](../interfaces/interfaces.stringarray.md)
+[typedoc-plugin-markdown](../README.md) > [interfaces](../modules/interfaces.md) > [StringArray](../interfaces/interfaces.stringarray.md)
 
 
 
@@ -6,7 +6,5 @@
 
 ## Indexable
 
-\[index: `number`\]:&nbsp;`string`## Index
+\[index: `number`\]:&nbsp;`string`
 
-
----

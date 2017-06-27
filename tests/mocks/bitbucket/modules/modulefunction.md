@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [moduleFunction](../modules/modulefunction.md)
+[typedoc-plugin-markdown](../README.md) > [moduleFunction](../modules/modulefunction.md)
 
 
 
@@ -13,6 +13,7 @@ This is the module extending the function moduleFunction().
 
 
 
+*Defined in [functions.ts:130](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-130)*
 
 
 
@@ -56,6 +57,7 @@ This is a function that is extended by a module.
 
 ** ●  functionVariable**:  *`string`* 
 
+*Defined in [functions.ts:140](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-140)*
 
 
 
@@ -77,6 +79,7 @@ ___
 
 
 
+*Defined in [functions.ts:145](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-145)*
 
 
 
@@ -102,6 +105,7 @@ ___
 
 
 
+*Defined in [functions.ts:152](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-152)*
 
 
 

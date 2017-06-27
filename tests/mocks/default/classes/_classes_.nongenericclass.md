@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [NonGenericClass](../classes/_classes_.nongenericclass.md)
+[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [NonGenericClass](../classes/_classes_.nongenericclass.md)
 
 
 

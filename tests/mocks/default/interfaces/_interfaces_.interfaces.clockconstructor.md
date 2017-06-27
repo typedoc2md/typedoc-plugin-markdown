@@ -1,18 +1,10 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md)
+[typedoc-plugin-markdown](../README.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md)
 
 
 
 # Interface: ClockConstructor
 
-## Index
 
-### Constructors
-
-* [constructor](_interfaces_.interfaces.clockconstructor.md#constructor)
-
-
-
----
 ## Constructors
 <a id="constructor"></a>
 

@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [GenericClass](../classes/genericclass.md)
+[typedoc-plugin-markdown](../README.md) > [GenericClass](../classes/genericclass.md)
 
 
 
@@ -57,6 +57,7 @@ This a type parameter.
 
 
 
+*Defined in [classes.ts:254](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-254)*
 
 
 
@@ -88,6 +89,7 @@ Constructor short text.
 
 ** ●  p2**:  *`T`* 
 
+*Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
 
 
@@ -104,6 +106,7 @@ ___
 
 ** ●  p3**:  *`number`* 
 
+*Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
 
 
@@ -120,6 +123,7 @@ ___
 
 ** ●  p4**:  *`number`* 
 
+*Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
 
 
@@ -137,6 +141,7 @@ ___
 
 ** ●  value**:  *`T`* 
 
+*Defined in [classes.ts:254](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-254)*
 
 
 
@@ -155,6 +160,7 @@ ___
 
 
 
+*Defined in [classes.ts:274](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-274)*
 
 
 
@@ -177,6 +183,7 @@ ___
 
 
 
+*Defined in [classes.ts:270](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-270)*
 
 
 

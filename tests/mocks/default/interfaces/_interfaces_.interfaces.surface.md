@@ -1,21 +1,10 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [Surface](../interfaces/_interfaces_.interfaces.surface.md)
+[typedoc-plugin-markdown](../README.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [Surface](../interfaces/_interfaces_.interfaces.surface.md)
 
 
 
 # Interface: Surface
 
-## Index
 
-### Properties
-
-* [diffuse](_interfaces_.interfaces.surface.md#diffuse)
-* [reflect](_interfaces_.interfaces.surface.md#reflect)
-* [roughness](_interfaces_.interfaces.surface.md#roughness)
-* [specular](_interfaces_.interfaces.surface.md#specular)
-
-
-
----
 ## Properties
 
 | Name  | Type                

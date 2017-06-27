@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["private-members"](../modules/_private_members_.md)
+[typedoc-plugin-markdown](../README.md) > ["private-members"](../modules/_private_members_.md)
 
 
 

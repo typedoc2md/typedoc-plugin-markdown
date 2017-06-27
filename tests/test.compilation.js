@@ -12,10 +12,10 @@ const expectedDirRoot = 'tests/mocks';
 
 chai.use(chaiFiles);
 
-describe('Compile Markdown', () => {
+describe('Compile Default Markdown', () => {
 
   it('should compile index', () => {
-    expectFileToEqualMock('index.md', 'default');
+    expectFileToEqualMock('README.md', 'default');
   });
 
   it('should compile modules', () => {
@@ -32,6 +32,30 @@ describe('Compile Markdown', () => {
 
   it('should compile enums', () => {
     expectOutputFilesToEqualMocks('enums', 'default');
+  });
+
+});
+
+describe('Compile Bitbucket Flavoured Markdown', () => {
+
+  it('should compile index', () => {
+    expectFileToEqualMock('README.md', 'bitbucket');
+  });
+
+  it('should compile modules', () => {
+    expectOutputFilesToEqualMocks('modules', 'bitbucket');
+  });
+
+  it('should compile classes', () => {
+    expectOutputFilesToEqualMocks('classes', 'bitbucket');
+  });
+
+  it('should compile interfaces', () => {
+    expectOutputFilesToEqualMocks('interfaces', 'bitbucket');
+  });
+
+  it('should compile enums', () => {
+    expectOutputFilesToEqualMocks('enums', 'bitbucket');
   });
 
 });

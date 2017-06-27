@@ -29,6 +29,11 @@
 
 ### Interfaces
 
+* [IApiElementType](interfaces/iapielementtype.md)
+* [IApiGameEvent](interfaces/iapigameevent.md)
+* [IApiGameFormations](interfaces/iapigameformations.md)
+* [IApiGameSettings](interfaces/iapigamesettings.md)
+* [IApiLeaguePositions](interfaces/iapileaguepositions.md)
 * [INameInterface](interfaces/inameinterface.md)
 * [IPrintInterface](interfaces/iprintinterface.md)
 * [IPrintNameInterface](interfaces/iprintnameinterface.md)
@@ -76,6 +81,7 @@
 
 ** ●  amount**:  *`number`*  = 6
 
+*Defined in [basic-types.ts:20](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-20)*
 
 
 
@@ -95,6 +101,7 @@ ___
 
 ** ●  color**:  *`string`*  = "blue"
 
+*Defined in [basic-types.ts:28](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-28)*
 
 
 
@@ -114,6 +121,7 @@ ___
 
 ** ●  greeter**:  *[Greeter](classes/greeter.md)*  =  new Greeter('world')
 
+*Defined in [internal.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/internal.ts?fileviewer&amp;#x3D;file-view-default#internal.ts-18)*
 
 
 
@@ -127,6 +135,7 @@ ___
 
 ** ●  isDone**:  *`boolean`*  = false
 
+*Defined in [basic-types.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-12)*
 
 
 
@@ -146,6 +155,7 @@ ___
 
 ** ●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
+*Defined in [basic-types.ts:36](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-36)*
 
 
 
@@ -165,6 +175,7 @@ ___
 
 ** ●  privateVar**:  *"marked private variable"*  = "marked private variable"
 
+*Defined in [private-members.ts:8](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-8)*
 
 
 
@@ -181,6 +192,7 @@ ___
 
 ** ●  publicVar**:  *"public variable"*  = "public variable"
 
+*Defined in [private-members.ts:2](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-2)*
 
 
 
@@ -199,6 +211,7 @@ ___
 
 
 
+*Defined in [functions.ts:161](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-161)*
 
 
 
@@ -225,6 +238,7 @@ ___
 
 
 
+*Defined in [functions.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-12)*
 
 
 
@@ -250,6 +264,7 @@ ___
 
 
 
+*Defined in [functions.ts:41](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-41)*
 
 
 
@@ -285,6 +300,7 @@ ___
 
 
 
+*Defined in [functions.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-61)*
 
 
 
@@ -324,6 +340,7 @@ ___
 
 
 
+*Defined in [functions.ts:176](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-176)*
 
 
 
@@ -354,6 +371,7 @@ ___
 
 
 
+*Defined in [functions.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-52)*
 
 
 
@@ -388,6 +406,7 @@ ___
 
 
 
+*Defined in [functions.ts:78](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-78)*
 
 
 
@@ -423,6 +442,7 @@ ___
 
 
 
+*Defined in [functions.ts:121](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-121)*
 
 
 
@@ -464,6 +484,7 @@ ___
 
 
 
+*Defined in [functions.ts:6](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-6)*
 
 
 
@@ -491,6 +512,7 @@ ___
 
 
 
+*Defined in [functions.ts:88](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-88)*
 
 
 
@@ -512,6 +534,7 @@ This is the first signature of a function with multiple signatures.
 
 
 
+*Defined in [functions.ts:96](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-96)*
 
 
 
@@ -545,6 +568,7 @@ ___
 
 
 
+*Defined in [private-members.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-18)*
 
 
 
@@ -570,6 +594,7 @@ ___
 
 
 
+*Defined in [private-members.ts:10](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-10)*
 
 
 
@@ -592,6 +617,7 @@ ___
 
 
 
+*Defined in [functions.ts:25](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-25)*
 
 
 
@@ -629,6 +655,7 @@ ___
 
 ** ●  someNumber**:  *`number`*  = 10
 
+*Defined in [basic-types.ts:45](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-45)*
 
 
 
@@ -641,6 +668,7 @@ ___
 
 ** ●  someString**:  *`string`*  = "hello"
 
+*Defined in [basic-types.ts:46](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-46)*
 
 
 
@@ -656,6 +684,7 @@ ___
 
 
 
+*Defined in [basic-types.ts:42](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-42)*
 
 
 

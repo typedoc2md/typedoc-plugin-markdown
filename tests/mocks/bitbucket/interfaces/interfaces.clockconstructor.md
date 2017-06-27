@@ -1,18 +1,10 @@
-[typedoc-plugin-markdown](../index.md) > [interfaces](../modules/interfaces.md) > [ClockConstructor](../interfaces/interfaces.clockconstructor.md)
+[typedoc-plugin-markdown](../README.md) > [interfaces](../modules/interfaces.md) > [ClockConstructor](../interfaces/interfaces.clockconstructor.md)
 
 
 
 # Interface: ClockConstructor
 
-## Index
 
-### Constructors
-
-* [constructor](interfaces.clockconstructor.md#markdown-header-constructor)
-
-
-
----
 ## Constructors
 
 
@@ -21,6 +13,7 @@
 
 
 
+*Defined in [interfaces.ts:78](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-78)*
 
 
 

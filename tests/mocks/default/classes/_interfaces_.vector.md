@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [Vector](../classes/_interfaces_.vector.md)
+[typedoc-plugin-markdown](../README.md) > ["interfaces"](../modules/_interfaces_.md) > [Vector](../classes/_interfaces_.vector.md)
 
 
 

@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["classes"](../modules/_classes_.md) > [SubClassB](../classes/_classes_.subclassb.md)
+[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [SubClassB](../classes/_classes_.subclassb.md)
 
 
 

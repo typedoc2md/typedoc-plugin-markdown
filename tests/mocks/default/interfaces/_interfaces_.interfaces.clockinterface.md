@@ -1,24 +1,10 @@
-[typedoc-plugin-markdown](../index.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
+[typedoc-plugin-markdown](../README.md) > ["interfaces"](../modules/_interfaces_.md) > [interfaces](../modules/_interfaces_.interfaces.md) > [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
 
 
 
 # Interface: ClockInterface
 
-## Index
 
-### Properties
-
-* [currentTime](_interfaces_.interfaces.clockinterface.md#currenttime)
-
-
-### Methods
-
-* [setTime](_interfaces_.interfaces.clockinterface.md#settime)
-* [tick](_interfaces_.interfaces.clockinterface.md#tick)
-
-
-
----
 ## Properties
 
 | Name  | Type                

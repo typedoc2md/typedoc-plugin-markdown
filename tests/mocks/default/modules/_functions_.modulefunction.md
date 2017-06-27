@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["functions"](../modules/_functions_.md) > [moduleFunction](../modules/_functions_.modulefunction.md)
+[typedoc-plugin-markdown](../README.md) > ["functions"](../modules/_functions_.md) > [moduleFunction](../modules/_functions_.modulefunction.md)
 
 
 

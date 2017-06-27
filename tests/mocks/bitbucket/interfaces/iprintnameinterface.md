@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [IPrintNameInterface](../interfaces/iprintnameinterface.md)
+[typedoc-plugin-markdown](../README.md) > [IPrintNameInterface](../interfaces/iprintnameinterface.md)
 
 
 
@@ -29,22 +29,7 @@ This is a interface inheriting from two other interfaces.
 
 * [SubClassA](../classes/subclassa.md)
 
-## Index
 
-### Properties
-
-* [name](iprintnameinterface.md#markdown-header-name)
-
-
-### Methods
-
-* [getName](iprintnameinterface.md#markdown-header-getname)
-* [print](iprintnameinterface.md#markdown-header-print)
-* [printName](iprintnameinterface.md#markdown-header-printname)
-
-
-
----
 ## Properties
 
 | Name  | Type                
@@ -62,6 +47,9 @@ This is a interface inheriting from two other interfaces.
 
 
 
+*Inherited from [INameInterface](inameinterface.md).[getName](inameinterface.md#markdown-header-getname)*
+
+*Defined in [classes.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-18)*
 
 
 
@@ -90,6 +78,9 @@ ___
 
 
 
+*Inherited from [IPrintInterface](iprintinterface.md).[print](iprintinterface.md#markdown-header-print)*
+
+*Defined in [classes.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-30)*
 
 
 
@@ -126,6 +117,7 @@ ___
 
 
 
+*Defined in [classes.ts:40](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-40)*
 
 
 

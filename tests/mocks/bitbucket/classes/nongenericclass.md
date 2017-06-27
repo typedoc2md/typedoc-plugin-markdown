@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [NonGenericClass](../classes/nongenericclass.md)
+[typedoc-plugin-markdown](../README.md) > [NonGenericClass](../classes/nongenericclass.md)
 
 
 
@@ -50,6 +50,9 @@ This a non generic class derived from a [[GenericClass|generic class]].
 
 
 
+*Inherited from [GenericClass](genericclass.md).[constructor](genericclass.md#markdown-header-constructor)*
+
+*Defined in [classes.ts:254](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-254)*
 
 
 
@@ -81,6 +84,9 @@ Constructor short text.
 
 ** ●  p2**:  *[SubClassB](subclassb.md)* 
 
+*Inherited from [GenericClass](genericclass.md).[p2](genericclass.md#markdown-header-protected-p2)*
+
+*Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
 
 
@@ -97,6 +103,9 @@ ___
 
 ** ●  p3**:  *`number`* 
 
+*Inherited from [GenericClass](genericclass.md).[p3](genericclass.md#markdown-header-p3)*
+
+*Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
 
 
@@ -113,6 +122,9 @@ ___
 
 ** ●  value**:  *[SubClassB](subclassb.md)* 
 
+*Inherited from [GenericClass](genericclass.md).[value](genericclass.md#markdown-header-value)*
+
+*Defined in [classes.ts:254](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-254)*
 
 
 
@@ -131,6 +143,9 @@ ___
 
 
 
+*Inherited from [GenericClass](genericclass.md).[getValue](genericclass.md#markdown-header-getvalue)*
+
+*Defined in [classes.ts:274](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-274)*
 
 
 
@@ -153,6 +168,9 @@ ___
 
 
 
+*Inherited from [GenericClass](genericclass.md).[setValue](genericclass.md#markdown-header-setvalue)*
+
+*Defined in [classes.ts:270](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-270)*
 
 
 

@@ -1,24 +1,10 @@
-[typedoc-plugin-markdown](../index.md) > [interfaces](../modules/interfaces.md) > [ClockInterface](../interfaces/interfaces.clockinterface.md)
+[typedoc-plugin-markdown](../README.md) > [interfaces](../modules/interfaces.md) > [ClockInterface](../interfaces/interfaces.clockinterface.md)
 
 
 
 # Interface: ClockInterface
 
-## Index
 
-### Properties
-
-* [currentTime](interfaces.clockinterface.md#markdown-header-currenttime)
-
-
-### Methods
-
-* [setTime](interfaces.clockinterface.md#markdown-header-settime)
-* [tick](interfaces.clockinterface.md#markdown-header-tick)
-
-
-
----
 ## Properties
 
 | Name  | Type                
@@ -36,6 +22,7 @@
 
 
 
+*Defined in [interfaces.ts:75](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-75)*
 
 
 
@@ -66,6 +53,7 @@ ___
 
 
 
+*Defined in [interfaces.ts:82](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-82)*
 
 
 

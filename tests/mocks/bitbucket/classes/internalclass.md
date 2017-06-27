@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [InternalClass](../classes/internalclass.md)
+[typedoc-plugin-markdown](../README.md) > [InternalClass](../classes/internalclass.md)
 
 
 
@@ -24,6 +24,7 @@ This is an internal class, it is not exported.
 
 
 
+*Defined in [classes.ts:169](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-169)*
 
 
 

@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [Employee](../classes/employee.md)
+[typedoc-plugin-markdown](../README.md) > [Employee](../classes/employee.md)
 
 
 
@@ -46,6 +46,9 @@
 
 
 
+*Overrides [Person](person.md).[constructor](person.md#markdown-header-constructor)*
+
+*Defined in [private-members.ts:29](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-29)*
 
 
 
@@ -72,6 +75,7 @@
 
 ** ●  department**:  *`string`* 
 
+*Defined in [private-members.ts:29](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-29)*
 
 
 
@@ -85,6 +89,9 @@ ___
 
 ** ●  name**:  *`string`* 
 
+*Inherited from [Person](person.md).[name](person.md#markdown-header-protected-name)*
+
+*Defined in [private-members.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-23)*
 
 
 
@@ -103,6 +110,7 @@ ___
 
 
 
+*Defined in [private-members.ts:36](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-36)*
 
 
 
@@ -125,6 +133,7 @@ ___
 
 
 
+*Defined in [private-members.ts:40](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-40)*
 
 
 

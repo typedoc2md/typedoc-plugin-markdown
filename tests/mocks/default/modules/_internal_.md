@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > ["internal"](../modules/_internal_.md)
+[typedoc-plugin-markdown](../README.md) > ["internal"](../modules/_internal_.md)
 
 
 

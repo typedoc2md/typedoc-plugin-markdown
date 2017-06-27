@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [IPrintInterface](../interfaces/iprintinterface.md)
+[typedoc-plugin-markdown](../README.md) > [IPrintInterface](../interfaces/iprintinterface.md)
 
 
 
@@ -20,15 +20,7 @@ This is a simple interface.
 
 
 
-## Index
 
-### Methods
-
-* [print](iprintinterface.md#markdown-header-print)
-
-
-
----
 ## Methods
 
 
@@ -39,6 +31,7 @@ This is a simple interface.
 
 
 
+*Defined in [classes.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-30)*
 
 
 

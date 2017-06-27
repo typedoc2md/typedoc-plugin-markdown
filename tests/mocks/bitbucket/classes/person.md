@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [Person](../classes/person.md)
+[typedoc-plugin-markdown](../README.md) > [Person](../classes/person.md)
 
 
 
@@ -39,6 +39,7 @@
 
 
 
+*Defined in [private-members.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-23)*
 
 
 
@@ -64,6 +65,7 @@
 
 ** ●  name**:  *`string`* 
 
+*Defined in [private-members.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-23)*
 
 
 

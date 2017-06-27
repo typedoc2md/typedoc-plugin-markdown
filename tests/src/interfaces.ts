@@ -97,3 +97,64 @@ export namespace interfaces {
     export const square = {} as Square;
 
 }
+
+// game interfaces
+
+export interface IApiGameSettings {
+  game_event: IApiGameEvent;
+  element_formations: IApiGameFormations;
+}
+
+export interface IApiGameEvent {
+  id: number;
+  name: string;
+  deadline_time: Date;
+  average_entry_score: number;
+  finished: boolean;
+  data_checked: boolean;
+  highest_scoring_entry?: number;
+  deadline_time_epoch: number;
+  deadline_time_game_offset: number;
+  deadline_time_formatted: string;
+  highest_score?: number;
+  is_previous: boolean;
+  is_current: boolean;
+  is_next: boolean;
+}
+
+export interface IApiGameFormations {
+  '1-5-2-3': number[][];
+  '1-5-3-2': number[][];
+  '1-3-5-2': number[][];
+  '1-2-5-3': number[][];
+  '1-4-5-1': number[][];
+  '1-5-4-1': number[][];
+  '1-4-3-3': number[][];
+  '1-3-4-3': number[][];
+  '1-4-4-2': number[][];
+}
+
+export interface IApiElementType {
+  id: number;
+  singular_name: string;
+  singular_name_short: string;
+  plural_name: string;
+  plural_name_short: string;
+}
+
+export interface IApiLeaguePositions {
+  id: number;
+  entry_name: string;
+  event_total: number;
+  player_name: string;
+  movement: string;
+  own_entry: boolean;
+  rank: number;
+  last_rank: number;
+  rank_sort: number;
+  total: number;
+  entry: number;
+  league: number;
+  start_event: number;
+  stop_event: number;
+}

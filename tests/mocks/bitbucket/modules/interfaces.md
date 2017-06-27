@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [interfaces](../modules/interfaces.md)
+[typedoc-plugin-markdown](../README.md) > [interfaces](../modules/interfaces.md)
 
 
 
@@ -42,12 +42,14 @@
 
 **  SearchFunc**:  *function* 
 
+*Defined in [interfaces.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-61)*
 
 
 #### Type declaration
 (source: *`string`*, subString: *`string`*): `boolean`
 
 
+*Defined in [interfaces.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-61)*
 
 
 
@@ -79,6 +81,7 @@ ___
 
 ** ●  mySearch**:  *[SearchFunc](interfaces.md#markdown-header-searchfunc)* 
 
+*Defined in [interfaces.ts:63](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-63)*
 
 
 
@@ -92,6 +95,7 @@ ___
 
 ** ●  square**:  *[Square](../interfaces/interfaces.square.md)*  =  {} as Square
 
+*Defined in [interfaces.ts:97](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-97)*
 
 
 
@@ -110,6 +114,7 @@ ___
 
 
 
+*Defined in [interfaces.ts:85](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-85)*
 
 
 

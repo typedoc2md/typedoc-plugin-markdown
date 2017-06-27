@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../index.md) > [Enums](../modules/enums.md) > [Direction](../enums/enums.direction.md)
+[typedoc-plugin-markdown](../README.md) > [Enums](../modules/enums.md) > [Direction](../enums/enums.direction.md)
 
 
 
@@ -23,6 +23,7 @@
 
 **  Down**:   
 
+*Defined in [enums.ts:5](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-5)*
 
 
 
@@ -36,6 +37,7 @@ ___
 
 **  Left**:   
 
+*Defined in [enums.ts:6](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-6)*
 
 
 
@@ -49,6 +51,7 @@ ___
 
 **  Right**:   
 
+*Defined in [enums.ts:7](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-7)*
 
 
 
@@ -62,6 +65,7 @@ ___
 
 **  Up**:    = 1
 
+*Defined in [enums.ts:4](https://bitbucket.org/owner/repository_name/src/master/src/enums.ts?fileviewer&amp;#x3D;file-view-default#enums.ts-4)*
 
 
 
