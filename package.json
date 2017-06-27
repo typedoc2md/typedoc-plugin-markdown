@@ -17,8 +17,7 @@
     "prepare": "rm -rf dist && tsc && npm run copy:static",
     "prepublish": "npm run prepare && npm run lint && npm run test",
     "pretest": "rm -rf tests/out && npm run copy:plugin && npm run compiletests",
-    "test": "mocha tests/**/test.*.js",
-    "watch": "concurrently \"tsc -w\" \"onchange 'src/**/*.hbs' -- npm run copy:static\""
+    "test": "mocha tests/**/test.*.js"
   },
   "repository": {
     "type": "git",
@@ -42,12 +41,10 @@
     "@types/mocha": "2.2.41",
     "chai": "4.0.2",
     "chai-files": "1.4.0",
-    "concurrently": "3.5.0",
     "copyfiles": "1.2.0",
     "mocha": "3.4.2",
-    "onchange": "3.2.1",
     "tslint": "5.4.3",
     "typedoc": "0.7.1",
-    "typescript": "2.3.4"
+    "typescript": "2.4.1"
   }
 }
