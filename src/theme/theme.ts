@@ -17,7 +17,7 @@ interface IOptions {
   excludePrivate: boolean;
   mode: boolean;
   mdFlavour: string;
-  mdSourcefilePrefix: string;
+  mdSourceRepo: string;
   mdOutFile: string;
   mdRemoveIndex: boolean;
   mdHideSources: boolean;
@@ -105,7 +105,8 @@ export class MarkdownTheme extends DefaultTheme {
           anchorRef = `markdown-header-${getAnchorRef(anchorPrefix)}${getAnchorRef(reflection.name)}`;
         } else {
         anchorRef = anchor;
-        }
+      }
+
     }
 
     reflection.url = (container.url !== undefined ? container.url : '') + '#' + anchorRef;
@@ -128,7 +129,7 @@ export class MarkdownTheme extends DefaultTheme {
     this.options = options;
 
     Options.mdFlavour = options.mdFlavour || 'github';
-    Options.mdSourceRepo = options.dSourceRepo;
+    Options.mdSourceRepo = options.mdSourceRepo;
     Options.mdOutFile = options.mdOutFile;
     Options.includes = options.includes;
     Options.media = options.media;
@@ -151,7 +152,7 @@ export class MarkdownTheme extends DefaultTheme {
 
   public isOutputDirectory(outPath: string): boolean {
     const files = fs.readdirSync(outPath);
-    return fs.existsSync(path.join(outPath, 'index.md')) || (files.length === 1 && path.extname(files[0]) === '.md');
+    return fs.existsSync(path.join(outPath, 'README.md')) || (files.length === 1 && path.extname(files[0]) === '.md');
   }
 
   public getUrls(project: ProjectReflection): UrlMapping[] {
@@ -186,7 +187,7 @@ export class MarkdownTheme extends DefaultTheme {
       });
     } else {
 
-      urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
+      urls.push(new UrlMapping('README.md', context, 'reflection.hbs'));
 
       if (entryPoint.children) {
         entryPoint.children.forEach((child: DeclarationReflection) => {

@@ -14,7 +14,7 @@ Creating a pluign that exposes a theme provides a mechanism to offer a feature r
 ## Getting started
 
 ```javascript
-npm install --save-dev typedoc-plugin-markdown
+npm install --save-dev typedoc typedoc-plugin-markdown
 ```
 
 ### How to use
@@ -22,7 +22,7 @@ npm install --save-dev typedoc-plugin-markdown
 The plugin provides an additional markdown theme.
 
 ```javascript
-typedoc --theme markdown
+node_modules/.bin/typedoc --theme markdown
 ```
 
 ### Additional arguments

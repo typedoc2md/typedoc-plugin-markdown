@@ -7,11 +7,11 @@ export function compileIndex(member: DeclarationReflection) {
 
   let md = '';
 
-  if (
-    !Options.mdOutFile ||
-    (Options.mdOutFile && !Options.mdHideIndexes) &&
-    (member.kind !== ReflectionKind.Interface)) {
-    md = compilePartial('index.hbs', Object.assign(member));
+  if (member.kind !== ReflectionKind.Interface) {
+
+    if (!Options.mdOutFile || (Options.mdOutFile && !Options.mdHideIndexes)) {
+      md = compilePartial('index.hbs', Object.assign(member));
+    }
   }
 
   return md;
