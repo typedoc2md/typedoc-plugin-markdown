@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
+[![Greenkeeper badge](https://badges.greenkeeper.io/tgreyuk/typedoc-plugin-markdown.svg)](https://greenkeeper.io/)
 
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
 
