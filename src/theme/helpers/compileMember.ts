@@ -1,13 +1,15 @@
 import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections/index';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { Options } from '../options';
+import { ThemeService } from '../service';
 import { compilePartial, compileTemplate } from '../utils';
 
 export function compileMember(member: DeclarationReflection) {
 
+  const options = ThemeService.getOptions();
+
   let md = '';
 
-  if (!(Options.excludePrivate && member.flags.isPrivate)) {
+  if (!(options.excludePrivate && member.flags.isPrivate)) {
 
     switch (member.kind) {
       case ReflectionKind.Class:
@@ -18,7 +20,7 @@ export function compileMember(member: DeclarationReflection) {
         md = compileTemplate('reflection.hbs', { model: member });
         break;
       case ReflectionKind.Interface:
-      Object.assign(member, { displayBackLink: Options.mode === 0 ? true : false, hideBreadcrumbs: true });
+      Object.assign(member, { displayBackLink: options.mode === 0 ? true : false, hideBreadcrumbs: true });
       md = compileTemplate('reflection.hbs', { model: member });
       break;
       case ReflectionKind.Constructor:

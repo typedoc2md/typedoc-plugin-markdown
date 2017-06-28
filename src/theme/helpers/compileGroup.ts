@@ -1,17 +1,19 @@
 import { ReflectionGroup } from 'typedoc/dist/lib/models/ReflectionGroup';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { Options } from '../options';
+import { ThemeService } from '../service';
 import { compilePartial } from '../utils';
 
 export function compileGroup(group: ReflectionGroup, parent: any) {
+
+  const options = ThemeService.getOptions();
 
   let md = '';
 
   if (!group.allChildrenArePrivate) {
     let displayTitle = true;
-    const isSinglePage = Options.mdOutFile !== undefined;
+    const isSinglePage = options.mdOutFile !== undefined;
     let displayBackLink = isSinglePage;
-    const isMainTitle = Options.mode === 0 && parent === undefined;
+    const isMainTitle = options.mode === 0 && parent === undefined;
 
     if (
       group.kind === ReflectionKind.ObjectLiteral ||

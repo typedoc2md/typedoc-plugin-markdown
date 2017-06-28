@@ -1,12 +1,12 @@
-import { Options } from './options';
+import { ThemeService } from './service';
 
 export function compilePartial(partialName: string, data: {}) {
-  const template = Options.theme.resources.partials.getResource(partialName).getTemplate();
+  const template = ThemeService.getResources().partials.getResource(partialName).getTemplate();
   return template(data);
 }
 
 export function compileTemplate(templateName: string, data: {}) {
-  const template = Options.theme.resources.templates.getResource(templateName).getTemplate();
+  const template = ThemeService.getResources().templates.getResource(templateName).getTemplate();
   return template(data);
 }
 

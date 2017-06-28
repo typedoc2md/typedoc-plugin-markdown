@@ -3,25 +3,11 @@ import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-import { Options } from './options';
+import { ThemeService } from './service';
 import { getAnchorRef } from './utils';
 
 import * as fs from 'fs';
 import * as path from 'path';
-
-interface IOptions {
-  includes: string;
-  media: string;
-  out: string;
-  projectName: string;
-  excludePrivate: boolean;
-  mode: boolean;
-  mdFlavour: string;
-  mdSourceRepo: string;
-  mdOutFile: string;
-  mdRemoveIndex: boolean;
-  mdHideSources: boolean;
-}
 
 export class MarkdownTheme extends DefaultTheme {
 
@@ -64,6 +50,8 @@ export class MarkdownTheme extends DefaultTheme {
 
   public static applyAnchorUrl(reflection: Reflection, container: Reflection) {
 
+    const options = ThemeService.getOptions();
+
     let anchor = DefaultTheme.getUrl(reflection, container, '.');
     /* tslint:disable */
     if (reflection['isStatic']) {
@@ -94,7 +82,7 @@ export class MarkdownTheme extends DefaultTheme {
         break;
       default:
 
-        if (Options.mdFlavour === 'bitbucket') {
+        if (options.mdFlavour === 'bitbucket') {
           let anchorPrefix = '';
           if (reflection.kind === ReflectionKind.ObjectLiteral) {
             anchorPrefix += 'object-literal-';
@@ -116,37 +104,25 @@ export class MarkdownTheme extends DefaultTheme {
     reflection.hasOwnDocument = false;
 
     reflection.traverse((child: any) => {
-      if (child instanceof DeclarationReflection || Options.mdOutFile) {
+      if (child instanceof DeclarationReflection || options.mdOutFile) {
         MarkdownTheme.applyAnchorUrl(child, container);
       }
     });
   }
 
-  private options: IOptions;
-
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath);
 
-    this.options = options;
-
-    Options.mdFlavour = options.mdFlavour || 'github';
-    Options.mdSourceRepo = options.mdSourceRepo;
-    Options.mdOutFile = options.mdOutFile;
-    Options.includes = options.includes;
-    Options.media = options.media;
-    Options.excludePrivate = options.excludePrivate;
-    Options.mode = options.mode;
-    Options.mdHideIndexes = options.mdHideIndexes;
-    Options.mdHideSources = options.mdHideSources;
-    Options.theme = this;
-
     // remove uneccessary plugins
-
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('navigation');
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
+
+    // assign global theme service props
+    ThemeService.options = options;
+    ThemeService.resources = this.resources;
 
   }
 
@@ -157,19 +133,21 @@ export class MarkdownTheme extends DefaultTheme {
 
   public getUrls(project: ProjectReflection): UrlMapping[] {
 
+    const options = ThemeService.getOptions();
+
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
 
-    Options.projectName = entryPoint.name;
+    ThemeService.projectName = entryPoint.name;
 
     const additionalContext = {
       displayReadme: this.application.options.getValue('readme') !== 'none',
       hideBreadcrumbs: true,
       isIndex: true,
-      isSinglePage: this.options.mdOutFile,
+      isSinglePage: options.mdOutFile,
     };
 
-    if (Options.mdOutFile && Options.mode === 0) {
+    if (options.mdOutFile && options.mode === 0) {
       entryPoint.groups.forEach((group: any, i: number) => {
         if (group.kind === ReflectionKind.Interface) {
           entryPoint.groups.push(entryPoint.groups.splice(i, 1)[0]);
@@ -179,8 +157,8 @@ export class MarkdownTheme extends DefaultTheme {
 
     const context = Object.assign(entryPoint, additionalContext);
 
-    if (this.options.mdOutFile) {
-      urls.push(new UrlMapping(this.options.mdOutFile, context, 'reflection.hbs'));
+    if (options.mdOutFile) {
+      urls.push(new UrlMapping(options.mdOutFile, context, 'reflection.hbs'));
 
       entryPoint.children.forEach((child: DeclarationReflection) => {
         MarkdownTheme.applyAnchorUrl(child, child.parent);

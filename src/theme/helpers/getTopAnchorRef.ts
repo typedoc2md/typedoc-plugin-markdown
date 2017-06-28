@@ -1,6 +1,6 @@
-import { Options } from '../options';
+import { ThemeService } from '../service';
 import { getAnchorRef } from '../utils';
 
 export function getTopAnchorRef() {
-  return getAnchorRef(Options.projectName);
+  return getAnchorRef(ThemeService.projectName);
 }

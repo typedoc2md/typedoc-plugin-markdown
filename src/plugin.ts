@@ -1,50 +1,58 @@
-/**
- * Plugin definition
- */
+import * as path from 'path';
+
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components';
 import { Context } from 'typedoc/dist/lib/converter/context';
 import { Converter } from 'typedoc/dist/lib/converter/converter';
 import { Reflection } from 'typedoc/dist/lib/models/reflections/abstract';
-import { Options, OptionsReadMode } from 'typedoc/dist/lib/utils/options';
+import { OptionsReadMode } from 'typedoc/dist/lib/utils/options';
 import { MarkdownTheme } from './theme/theme';
 
-import * as path from 'path';
-
-@Component({ name: 'markdown-converter' })
+/**
+ * Markdown plugin component that exposes the MarkdownTheme to the application.
+ */
+@Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
 
-  private options: any;
+  // the expected name of the theme
+  private THEME_NAME = 'markdown';
 
+  // listen to event on initialisation
   public initialize() {
-
-    const options: Options = this.application.options;
-
-    options.read({}, OptionsReadMode.Prefetch);
-
-    this.options = options.getRawValues();
-
     this.listenTo(this.owner, {
       [Converter.EVENT_RESOLVE_BEGIN]: this.onBegin,
     });
   }
 
-  private getThemeDirectory() {
-    return path.join(__dirname, '../dist/theme/');
-  }
-
+  /**
+   * * Triggered when the converter begins converting a project.
+   */
   private onBegin(context: Context, reflection: Reflection) {
 
+    // renderer
     const renderer = this.application.renderer;
-    const theme = this.application.options.getValue('theme');
+
+    // store options
+    const options = this.application.options;
+    options.read({}, OptionsReadMode.Prefetch);
+
+    // assign the theme
+    const themeName = options.getValue('theme');
     const themePath = this.getThemeDirectory();
 
     // apply the theme
-    if (theme === 'markdown') {
-      const markdownTheme = new MarkdownTheme(this.application.renderer, themePath, this.options);
+    if (themeName === this.THEME_NAME) {
+      const markdownTheme = new MarkdownTheme(renderer, themePath, options.getRawValues());
       renderer.theme = renderer.addComponent('theme', markdownTheme);
     } else {
       this.application.logger.log('To generate markdown please set option --theme markdown');
     }
+  }
+
+  /**
+   * Returns the theme directory
+   */
+  private getThemeDirectory() {
+    return path.join(__dirname, './theme/');
   }
 
 }

@@ -6,6 +6,10 @@ module.exports = (PluginHost: Application) => {
 
   const app = PluginHost.owner;
 
+  /**
+   * Expose additional options for consumption.
+   */
+
   app.options.addDeclaration({
     component: 'markdown',
     help: 'Markdown Plugin: Export to single file.',
@@ -42,5 +46,9 @@ module.exports = (PluginHost: Application) => {
     type: ParameterType.String,
   });
 
-  app.converter.addComponent('markdown-converter', MarkdownPlugin);
+  /**
+   * Add the plugin to the converter instance
+   */
+  app.converter.addComponent('markdown', MarkdownPlugin);
+
 };

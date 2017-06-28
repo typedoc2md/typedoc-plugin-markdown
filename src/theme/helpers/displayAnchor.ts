@@ -1,5 +1,6 @@
-import { Options } from '../options';
+import { ThemeService } from '../service';
 
 export function displayAnchor(anchor: string) {
-  return Options.mdFlavour === 'bitbucket' ? '' : `<a id="${anchor}"></a>`;
+  const options = ThemeService.getOptions();
+  return options.mdFlavour === 'bitbucket' ? '' : `<a id="${anchor}"></a>`;
 }
