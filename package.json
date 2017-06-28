@@ -42,6 +42,7 @@
   "devDependencies": {
     "@types/chai": "^4.0.1",
     "@types/mocha": "^2.2.41",
+    "@types/to-markdown": "^3.0.0",
     "chai": "^4.0.2",
     "chai-files": "^1.4.0",
     "copyfiles": "^1.2.0",
@@ -49,5 +50,8 @@
     "tslint": "^5.4.3",
     "typedoc": "^0.7.1",
     "typescript": "2.3.4"
+  },
+  "dependencies": {
+    "to-markdown": "^3.0.4"
   }
 }

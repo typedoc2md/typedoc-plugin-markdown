@@ -47,6 +47,7 @@ export class MarkdownTheme extends DefaultTheme {
     } else {
       MarkdownTheme.applyAnchorUrl(reflection, reflection.parent);
     }
+
     return urls;
   }
 
@@ -140,8 +141,7 @@ export class MarkdownTheme extends DefaultTheme {
     Options.theme = this;
 
     // remove uneccessary plugins
-    renderer.removeComponent('marked');
-    renderer.removeComponent('marked-links');
+
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('navigation');

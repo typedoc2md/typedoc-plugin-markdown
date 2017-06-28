@@ -1,7 +1,6 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
-import { MarkdownConverterPlugin } from './plugin/converterPlugin';
-import { MarkdownRendererPlugin } from './plugin/rendererPlugin';
+import { MarkdownPlugin } from './plugin';
 
 module.exports = (PluginHost: Application) => {
 
@@ -43,7 +42,5 @@ module.exports = (PluginHost: Application) => {
     type: ParameterType.String,
   });
 
-  app.converter.addComponent('markdown-converter', MarkdownConverterPlugin);
-  app.renderer.addComponent('markdown-renderer', MarkdownRendererPlugin);
-
+  app.converter.addComponent('markdown-converter', MarkdownPlugin);
 };
