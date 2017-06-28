@@ -12,7 +12,6 @@ This is a generic class.
 
 This a type parameter.
 
-
 ## Hierarchy
 
 **GenericClass**

@@ -60,7 +60,6 @@ It should be inherited by all subinterfaces.
 
 
 
-
 **Returns:** `string`
 
 
@@ -87,7 +86,6 @@ ___
 This is a interface function of IPrintInterface
 
 It should be inherited by all subinterfaces.
-
 
 
 **Parameters:**

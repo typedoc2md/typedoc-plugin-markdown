@@ -5,7 +5,7 @@
 # Class: NonGenericClass
 
 
-This a non generic class derived from a [[GenericClass|generic class]].
+This a non generic class derived from a [generic class](genericclass.md).
 
 ## Hierarchy
 

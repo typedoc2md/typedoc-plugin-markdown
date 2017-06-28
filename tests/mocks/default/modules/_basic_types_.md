@@ -5,8 +5,7 @@
 # External module: "basic-types"
 
 
-For programs to be useful, we need to be able to work with some of the simplest units of data:
-numbers, strings, structures, boolean values, and the like.
+For programs to be useful, we need to be able to work with some of the simplest units of data: numbers, strings, structures, boolean values, and the like.
 
 ## Index
 
@@ -37,9 +36,8 @@ numbers, strings, structures, boolean values, and the like.
 
 
 This is a number type
-```
-const decimal: number = 6;
-```
+
+    const decimal: number = 6;
 
 
 
@@ -57,9 +55,8 @@ ___
 
 
 This is a string type
-```
-const color: string = "blue";
-```
+
+    const color: string = "blue";
 
 
 
@@ -77,9 +74,8 @@ ___
 
 
 This is a boolean type
-```
-const isDone: boolean = false;
-```
+
+    const isDone: boolean = false;
 
 
 
@@ -97,9 +93,8 @@ ___
 
 
 This is an array type
-```
-const numbers: number[] = [1, 2, 3];
-```
+
+    const numbers: number[] = [1, 2, 3];
 
 
 

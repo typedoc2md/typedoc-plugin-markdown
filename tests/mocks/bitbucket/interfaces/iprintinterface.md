@@ -40,7 +40,6 @@ This is a interface function of IPrintInterface
 It should be inherited by all subinterfaces.
 
 
-
 **Parameters:**
 
 | Param  | Type                | Description  |

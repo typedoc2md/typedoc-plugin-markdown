@@ -11,7 +11,6 @@ This is a simple example on how to use BaseClass.
 
 ![My image alt text](../media/logo-128.png)
 
-
 ## Hierarchy
 
 **BaseClass**
@@ -181,7 +180,6 @@ Static members should not be inherited.
 
 
 
-
 ___
 
 
@@ -278,9 +276,7 @@ ___
 
 This is a simple member function.
 
-It should be inherited by all subclasses. This class has a static
-member with the same name, both should be documented.
-
+It should be inherited by all subclasses. This class has a static member with the same name, both should be documented.
 
 
 
@@ -311,7 +307,6 @@ ___
 This is a simple member function.
 
 It should be inherited by all subclasses.
-
 
 
 **Parameters:**
@@ -388,7 +383,6 @@ Static functions should not be inherited.
 
 
 
-
 **Returns:** [BaseClass](baseclass.md)
 An instance of BaseClass.
 
@@ -414,9 +408,7 @@ ___
 
 This is a simple static member function.
 
-Static functions should not be inherited. This class has a
-member with the same name, both should be documented.
-
+Static functions should not be inherited. This class has a member with the same name, both should be documented.
 
 
 

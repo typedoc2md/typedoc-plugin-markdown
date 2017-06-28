@@ -12,7 +12,6 @@ This is a generic class.
 
 This a type parameter.
 
-
 ## Hierarchy
 
 **GenericClass**
@@ -128,7 +127,6 @@ ___
 
 
 Public implicit any property
-
 
 
 

@@ -7,9 +7,7 @@
 
 This is a class that extends another class.
 
-This class has no own constructor, so its constructor should be inherited
-from BaseClass.
-
+This class has no own constructor, so its constructor should be inherited from BaseClass.
 
 ## Hierarchy
 
@@ -169,7 +167,7 @@ getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
 
 
 
-Returns the name. See [[BaseClass.name]].
+Returns the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 
 
@@ -183,7 +181,7 @@ The return value.
 
 
 
-Sets the name. See [[BaseClass.name]].
+Sets the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 
 **Parameters:**
@@ -216,7 +214,7 @@ getreadOnlyNameProperty(): `string`
 
 
 
-Returns the name. See [[BaseClass.name]].
+Returns the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 
 
@@ -241,7 +239,7 @@ setwriteOnlyNameProperty(value: *`string`*): `void`
 
 
 
-Sets the name. See [[BaseClass.name]].
+Sets the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 
 **Parameters:**
@@ -320,9 +318,7 @@ ___
 
 This is a simple member function.
 
-It should be inherited by all subclasses. This class has a static
-member with the same name, both should be documented.
-
+It should be inherited by all subclasses. This class has a static member with the same name, both should be documented.
 
 
 
@@ -421,7 +417,6 @@ This is a simple member function.
 It should be inherited by all subclasses.
 
 
-
 **Parameters:**
 
 | Param  | Type                | Description  |
@@ -500,7 +495,6 @@ Static functions should not be inherited.
 
 
 
-
 **Returns:** [BaseClass](_classes_.baseclass.md)
 An instance of BaseClass.
 
@@ -528,9 +522,7 @@ ___
 
 This is a simple static member function.
 
-Static functions should not be inherited. This class has a
-member with the same name, both should be documented.
-
+Static functions should not be inherited. This class has a member with the same name, both should be documented.
 
 
 

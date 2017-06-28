@@ -55,7 +55,6 @@ It should be inherited by all subinterfaces.
 
 
 
-
 **Returns:** `string`
 
 

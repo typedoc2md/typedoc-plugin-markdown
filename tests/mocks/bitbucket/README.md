@@ -86,9 +86,8 @@
 
 
 This is a number type
-```
-const decimal: number = 6;
-```
+
+    const decimal: number = 6;
 
 
 
@@ -106,9 +105,8 @@ ___
 
 
 This is a string type
-```
-const color: string = "blue";
-```
+
+    const color: string = "blue";
 
 
 
@@ -140,9 +138,8 @@ ___
 
 
 This is a boolean type
-```
-const isDone: boolean = false;
-```
+
+    const isDone: boolean = false;
 
 
 
@@ -160,9 +157,8 @@ ___
 
 
 This is an array type
-```
-const numbers: number[] = [1, 2, 3];
-```
+
+    const numbers: number[] = [1, 2, 3];
 
 
 
@@ -215,8 +211,7 @@ ___
 
 
 
-A function that returns an object.
-Also no type information is given, the object should be correctly reflected.
+A function that returns an object. Also no type information is given, the object should be correctly reflected.
 
 
 
@@ -344,12 +339,9 @@ ___
 
 
 
-See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
-Also, check out {@link http://www.google.com|Google} and
-{@link https://github.com GitHub}.
+See [`INameInterface`](interfaces/inameinterface.md) and [INameInterface's name property](interfaces/inameinterface.md#markdown-header-name). Also, check out [Google](http://www.google.com) and [GitHub](https://github.com).
 
-Taken from http://usejsdoc.org/tags-inline-link.html.
-
+Taken from [http://usejsdoc.org/tags-inline-link.html](http://usejsdoc.org/tags-inline-link.html).
 
 
 

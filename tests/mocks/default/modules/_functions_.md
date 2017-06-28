@@ -42,8 +42,7 @@
 
 
 
-A function that returns an object.
-Also no type information is given, the object should be correctly reflected.
+A function that returns an object. Also no type information is given, the object should be correctly reflected.
 
 
 
@@ -171,12 +170,9 @@ ___
 
 
 
-See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
-Also, check out {@link http://www.google.com|Google} and
-{@link https://github.com GitHub}.
+See [`INameInterface`](../interfaces/_classes_.inameinterface.md) and [INameInterface's name property](../interfaces/_classes_.inameinterface.md#name). Also, check out [Google](http://www.google.com) and [GitHub](https://github.com).
 
-Taken from http://usejsdoc.org/tags-inline-link.html.
-
+Taken from [http://usejsdoc.org/tags-inline-link.html](http://usejsdoc.org/tags-inline-link.html).
 
 
 

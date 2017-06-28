@@ -786,7 +786,6 @@ This is a simple example on how to use BaseClass.
 
 ![My image alt text](media/logo-128.png)
 
-
 ## Hierarchy
 
 **BaseClass**
@@ -951,7 +950,6 @@ Static members should not be inherited.
 
 
 
-
 ___
 
 <a id="baseclass.instances"></a>
@@ -1045,9 +1043,7 @@ ___
 
 This is a simple member function.
 
-It should be inherited by all subclasses. This class has a static
-member with the same name, both should be documented.
-
+It should be inherited by all subclasses. This class has a static member with the same name, both should be documented.
 
 
 
@@ -1077,7 +1073,6 @@ ___
 This is a simple member function.
 
 It should be inherited by all subclasses.
-
 
 
 **Parameters:**
@@ -1152,7 +1147,6 @@ Static functions should not be inherited.
 
 
 
-
 **Returns:** [BaseClass](#class-baseclass)
 An instance of BaseClass.
 
@@ -1177,9 +1171,7 @@ ___
 
 This is a simple static member function.
 
-Static functions should not be inherited. This class has a
-member with the same name, both should be documented.
-
+Static functions should not be inherited. This class has a member with the same name, both should be documented.
 
 
 
@@ -1665,7 +1657,6 @@ This is a generic class.
 
 This a type parameter.
 
-
 ## Hierarchy
 
 **GenericClass**
@@ -1780,7 +1771,6 @@ ___
 
 
 Public implicit any property
-
 
 
 
@@ -2015,7 +2005,7 @@ This is an internal class, it is not exported.
 # Class: NonGenericClass
 
 
-This a non generic class derived from a [[GenericClass|generic class]].
+This a non generic class derived from a [generic class](#class-genericclass).
 
 ## Hierarchy
 
@@ -2284,9 +2274,7 @@ ___
 
 This is a class that extends another class.
 
-This class has no own constructor, so its constructor should be inherited
-from BaseClass.
-
+This class has no own constructor, so its constructor should be inherited from BaseClass.
 
 ## Hierarchy
 
@@ -2437,7 +2425,7 @@ getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
 
 
 
-Returns the name. See [[BaseClass.name]].
+Returns the name. See [BaseClass.name](#baseclass.name-1).
 
 
 
@@ -2450,7 +2438,7 @@ The return value.
 
 
 
-Sets the name. See [[BaseClass.name]].
+Sets the name. See [BaseClass.name](#baseclass.name-1).
 
 
 **Parameters:**
@@ -2482,7 +2470,7 @@ getreadOnlyNameProperty(): `string`
 
 
 
-Returns the name. See [[BaseClass.name]].
+Returns the name. See [BaseClass.name](#baseclass.name-1).
 
 
 
@@ -2506,7 +2494,7 @@ setwriteOnlyNameProperty(value: *`string`*): `void`
 
 
 
-Sets the name. See [[BaseClass.name]].
+Sets the name. See [BaseClass.name](#baseclass.name-1).
 
 
 **Parameters:**
@@ -2580,9 +2568,7 @@ ___
 
 This is a simple member function.
 
-It should be inherited by all subclasses. This class has a static
-member with the same name, both should be documented.
-
+It should be inherited by all subclasses. This class has a static member with the same name, both should be documented.
 
 
 
@@ -2672,7 +2658,6 @@ This is a simple member function.
 It should be inherited by all subclasses.
 
 
-
 **Parameters:**
 
 | Param  | Type                | Description  |
@@ -2745,7 +2730,6 @@ Static functions should not be inherited.
 
 
 
-
 **Returns:** [BaseClass](#class-baseclass)
 An instance of BaseClass.
 
@@ -2770,9 +2754,7 @@ ___
 
 This is a simple static member function.
 
-Static functions should not be inherited. This class has a
-member with the same name, both should be documented.
-
+Static functions should not be inherited. This class has a member with the same name, both should be documented.
 
 
 
@@ -2801,7 +2783,6 @@ ___
 This is a class that extends another class.
 
 The constructor of the original class should be overwritten.
-
 
 ## Hierarchy
 
@@ -2991,9 +2972,7 @@ ___
 
 This is a simple member function.
 
-It should be inherited by all subclasses. This class has a static
-member with the same name, both should be documented.
-
+It should be inherited by all subclasses. This class has a static member with the same name, both should be documented.
 
 
 
@@ -3023,7 +3002,6 @@ ___
 This is a simple member function.
 
 It should be inherited by all subclasses.
-
 
 
 **Parameters:**
@@ -3098,7 +3076,6 @@ Static functions should not be inherited.
 
 
 
-
 **Returns:** [BaseClass](#class-baseclass)
 An instance of BaseClass.
 
@@ -3123,9 +3100,7 @@ ___
 
 This is a simple static member function.
 
-Static functions should not be inherited. This class has a
-member with the same name, both should be documented.
-
+Static functions should not be inherited. This class has a member with the same name, both should be documented.
 
 
 
@@ -3485,9 +3460,8 @@ ___
 
 
 This is a number type
-```
-const decimal: number = 6;
-```
+
+    const decimal: number = 6;
 
 
 
@@ -3504,9 +3478,8 @@ ___
 
 
 This is a string type
-```
-const color: string = "blue";
-```
+
+    const color: string = "blue";
 
 
 
@@ -3536,9 +3509,8 @@ ___
 
 
 This is a boolean type
-```
-const isDone: boolean = false;
-```
+
+    const isDone: boolean = false;
 
 
 
@@ -3555,9 +3527,8 @@ ___
 
 
 This is an array type
-```
-const numbers: number[] = [1, 2, 3];
-```
+
+    const numbers: number[] = [1, 2, 3];
 
 
 
@@ -3610,8 +3581,7 @@ ___
 
 
 
-A function that returns an object.
-Also no type information is given, the object should be correctly reflected.
+A function that returns an object. Also no type information is given, the object should be correctly reflected.
 
 
 
@@ -3735,12 +3705,9 @@ ___
 
 
 
-See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
-Also, check out {@link http://www.google.com|Google} and
-{@link https://github.com GitHub}.
+See [`INameInterface`](#interface-inameinterface) and [INameInterface's name property](#inameinterface.name). Also, check out [Google](http://www.google.com) and [GitHub](https://github.com).
 
-Taken from http://usejsdoc.org/tags-inline-link.html.
-
+Taken from [http://usejsdoc.org/tags-inline-link.html](http://usejsdoc.org/tags-inline-link.html).
 
 
 
@@ -4293,7 +4260,6 @@ It should be inherited by all subinterfaces.
 
 
 
-
 **Returns:** `string`
 
 
@@ -4345,7 +4311,6 @@ This is a simple interface.
 This is a interface function of IPrintInterface
 
 It should be inherited by all subinterfaces.
-
 
 
 **Parameters:**
@@ -4437,7 +4402,6 @@ It should be inherited by all subinterfaces.
 
 
 
-
 **Returns:** `string`
 
 
@@ -4461,7 +4425,6 @@ ___
 This is a interface function of IPrintInterface
 
 It should be inherited by all subinterfaces.
-
 
 
 **Parameters:**
