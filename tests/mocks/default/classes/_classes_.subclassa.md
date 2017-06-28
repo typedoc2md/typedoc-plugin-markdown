@@ -119,7 +119,7 @@ from BaseClass.
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
 
@@ -138,7 +138,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[name](../interfaces/_classes_.iprintnameinterface.md#name)*
 

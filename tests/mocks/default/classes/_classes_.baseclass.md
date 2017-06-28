@@ -111,7 +111,7 @@ This is a simple example on how to use BaseClass.
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 *Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
@@ -128,7 +128,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 

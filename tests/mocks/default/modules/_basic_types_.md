@@ -30,7 +30,7 @@ numbers, strings, structures, boolean values, and the like.
 
 ###  amount
 
-** ●  amount**:  *`number`*  = 6
+**●  amount**:  *`number`*  = 6
 
 *Defined in [basic-types.ts:20](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L20)*
 
@@ -50,7 +50,7 @@ ___
 
 ###  color
 
-** ●  color**:  *`string`*  = "blue"
+**●  color**:  *`string`*  = "blue"
 
 *Defined in [basic-types.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L28)*
 
@@ -70,7 +70,7 @@ ___
 
 ###  isDone
 
-** ●  isDone**:  *`boolean`*  = false
+**●  isDone**:  *`boolean`*  = false
 
 *Defined in [basic-types.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L12)*
 
@@ -90,7 +90,7 @@ ___
 
 ###  numbers
 
-** ●  numbers**:  *`number`[]*  =  [1, 2, 3]
+**●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
 *Defined in [basic-types.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L36)*
 
@@ -115,7 +115,7 @@ ___
 
 ###  someNumber
 
-** ●  someNumber**:  *`number`*  = 10
+**●  someNumber**:  *`number`*  = 10
 
 *Defined in [basic-types.ts:45](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L45)*
 
@@ -128,7 +128,7 @@ ___
 
 ###  someString
 
-** ●  someString**:  *`string`*  = "hello"
+**●  someString**:  *`string`*  = "hello"
 
 *Defined in [basic-types.ts:46](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L46)*
 

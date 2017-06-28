@@ -55,7 +55,7 @@ This is a function that is extended by a module.
 
 ###  functionVariable
 
-** ●  functionVariable**:  *`string`* 
+**●  functionVariable**:  *`string`* 
 
 *Defined in [functions.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L140)*
 

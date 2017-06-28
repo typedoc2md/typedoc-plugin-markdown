@@ -40,7 +40,7 @@
 
 ###  SearchFunc
 
-**  SearchFunc**:  *function* 
+** SearchFunc**:  *function* 
 
 *Defined in [interfaces.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-61)*
 
@@ -79,7 +79,7 @@ ___
 
 ###  mySearch
 
-** ●  mySearch**:  *[SearchFunc](interfaces.md#markdown-header-searchfunc)* 
+**●  mySearch**:  *[SearchFunc](interfaces.md#markdown-header-searchfunc)* 
 
 *Defined in [interfaces.ts:63](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-63)*
 
@@ -93,7 +93,7 @@ ___
 
 ###  square
 
-** ●  square**:  *[Square](../interfaces/interfaces.square.md)*  =  {} as Square
+**●  square**:  *[Square](../interfaces/interfaces.square.md)*  =  {} as Square
 
 *Defined in [interfaces.ts:97](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-97)*
 

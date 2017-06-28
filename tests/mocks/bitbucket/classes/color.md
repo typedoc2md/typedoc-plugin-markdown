@@ -67,7 +67,7 @@
 
 ###  b
 
-** ●  b**:  *`number`* 
+**●  b**:  *`number`* 
 
 *Defined in [interfaces.ts:26](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-26)*
 
@@ -81,7 +81,7 @@ ___
 
 ###  g
 
-** ●  g**:  *`number`* 
+**●  g**:  *`number`* 
 
 *Defined in [interfaces.ts:25](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-25)*
 
@@ -95,7 +95,7 @@ ___
 
 ###  r
 
-** ●  r**:  *`number`* 
+**●  r**:  *`number`* 
 
 *Defined in [interfaces.ts:24](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-24)*
 
@@ -109,7 +109,7 @@ ___
 
 ### «Static» background
 
-** ●  background**:  *[Color](color.md)*  =  Color.black
+**●  background**:  *[Color](color.md)*  =  Color.black
 
 *Defined in [interfaces.ts:34](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-34)*
 
@@ -123,7 +123,7 @@ ___
 
 ### «Static» black
 
-** ●  black**:  *[Color](color.md)*  =  new Color(0.0, 0.0, 0.0)
+**●  black**:  *[Color](color.md)*  =  new Color(0.0, 0.0, 0.0)
 
 *Defined in [interfaces.ts:33](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-33)*
 
@@ -137,7 +137,7 @@ ___
 
 ### «Static» defaultColor
 
-** ●  defaultColor**:  *[Color](color.md)*  =  Color.black
+**●  defaultColor**:  *[Color](color.md)*  =  Color.black
 
 *Defined in [interfaces.ts:35](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-35)*
 
@@ -151,7 +151,7 @@ ___
 
 ### «Static» grey
 
-** ●  grey**:  *[Color](color.md)*  =  new Color(0.5, 0.5, 0.5)
+**●  grey**:  *[Color](color.md)*  =  new Color(0.5, 0.5, 0.5)
 
 *Defined in [interfaces.ts:32](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-32)*
 
@@ -165,7 +165,7 @@ ___
 
 ### «Static» white
 
-** ●  white**:  *[Color](color.md)*  =  new Color(1.0, 1.0, 1.0)
+**●  white**:  *[Color](color.md)*  =  new Color(1.0, 1.0, 1.0)
 
 *Defined in [interfaces.ts:31](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-31)*
 

@@ -30,7 +30,7 @@
 
 ###  publicVar
 
-** ●  publicVar**:  *"public variable"*  = "public variable"
+**●  publicVar**:  *"public variable"*  = "public variable"
 
 *Defined in [private-members.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L2)*
 

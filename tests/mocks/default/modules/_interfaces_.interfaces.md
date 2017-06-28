@@ -40,7 +40,7 @@
 
 ###  SearchFunc
 
-**  SearchFunc**:  *function* 
+** SearchFunc**:  *function* 
 
 *Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
@@ -79,7 +79,7 @@ ___
 
 ###  mySearch
 
-** ●  mySearch**:  *[SearchFunc](_interfaces_.interfaces.md#searchfunc)* 
+**●  mySearch**:  *[SearchFunc](_interfaces_.interfaces.md#searchfunc)* 
 
 *Defined in [interfaces.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L63)*
 
@@ -93,7 +93,7 @@ ___
 
 ###  square
 
-** ●  square**:  *[Square](../interfaces/_interfaces_.interfaces.square.md)*  =  {} as Square
+**●  square**:  *[Square](../interfaces/_interfaces_.interfaces.square.md)*  =  {} as Square
 
 *Defined in [interfaces.ts:97](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L97)*
 

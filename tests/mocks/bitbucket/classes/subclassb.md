@@ -87,7 +87,7 @@ The constructor of the original class should be overwritten.
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 *Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#markdown-header-protected-kind)*
 
@@ -106,7 +106,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[name](../interfaces/inameinterface.md#markdown-header-name)*
 

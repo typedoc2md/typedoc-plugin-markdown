@@ -115,7 +115,7 @@ This is a simple example on how to use BaseClass.
 
 ### «Private» internalClass
 
-** ●  internalClass**:  *[InternalClass](internalclass.md)* 
+**●  internalClass**:  *[InternalClass](internalclass.md)* 
 
 *Defined in [classes.ts:70](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-70)*
 
@@ -132,7 +132,7 @@ ___
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 *Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
 
@@ -149,7 +149,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[name](../interfaces/inameinterface.md#markdown-header-name)*
 
@@ -168,7 +168,7 @@ ___
 
 ### «Static»«Private» instance
 
-** ●  instance**:  *[BaseClass](baseclass.md)* 
+**●  instance**:  *[BaseClass](baseclass.md)* 
 
 *Defined in [classes.ts:55](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-55)*
 
@@ -188,7 +188,7 @@ ___
 
 ### «Static»«Private» instances
 
-** ●  instances**:  *[BaseClass](baseclass.md)[]* 
+**●  instances**:  *[BaseClass](baseclass.md)[]* 
 
 *Defined in [classes.ts:56](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-56)*
 

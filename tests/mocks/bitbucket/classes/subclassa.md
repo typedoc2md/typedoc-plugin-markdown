@@ -119,7 +119,7 @@ from BaseClass.
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 *Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#markdown-header-protected-kind)*
 
@@ -138,7 +138,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 *Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[name](../interfaces/iprintnameinterface.md#markdown-header-name)*
 

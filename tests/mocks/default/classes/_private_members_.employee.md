@@ -71,7 +71,7 @@
 
 ### «Protected» name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 *Inherited from [Person](_private_members_.person.md).[name](_private_members_.person.md#name)*
 

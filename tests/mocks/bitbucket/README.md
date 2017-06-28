@@ -79,7 +79,7 @@
 
 ###  amount
 
-** ●  amount**:  *`number`*  = 6
+**●  amount**:  *`number`*  = 6
 
 *Defined in [basic-types.ts:20](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-20)*
 
@@ -99,7 +99,7 @@ ___
 
 ###  color
 
-** ●  color**:  *`string`*  = "blue"
+**●  color**:  *`string`*  = "blue"
 
 *Defined in [basic-types.ts:28](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-28)*
 
@@ -119,7 +119,7 @@ ___
 
 ###  greeter
 
-** ●  greeter**:  *[Greeter](classes/greeter.md)*  =  new Greeter('world')
+**●  greeter**:  *[Greeter](classes/greeter.md)*  =  new Greeter('world')
 
 *Defined in [internal.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/internal.ts?fileviewer&amp;#x3D;file-view-default#internal.ts-18)*
 
@@ -133,7 +133,7 @@ ___
 
 ###  isDone
 
-** ●  isDone**:  *`boolean`*  = false
+**●  isDone**:  *`boolean`*  = false
 
 *Defined in [basic-types.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-12)*
 
@@ -153,7 +153,7 @@ ___
 
 ###  numbers
 
-** ●  numbers**:  *`number`[]*  =  [1, 2, 3]
+**●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
 *Defined in [basic-types.ts:36](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-36)*
 
@@ -173,7 +173,7 @@ ___
 
 ### «Private» privateVar
 
-** ●  privateVar**:  *"marked private variable"*  = "marked private variable"
+**●  privateVar**:  *"marked private variable"*  = "marked private variable"
 
 *Defined in [private-members.ts:8](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-8)*
 
@@ -190,7 +190,7 @@ ___
 
 ###  publicVar
 
-** ●  publicVar**:  *"public variable"*  = "public variable"
+**●  publicVar**:  *"public variable"*  = "public variable"
 
 *Defined in [private-members.ts:2](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-2)*
 
@@ -653,7 +653,7 @@ ___
 
 ###  someNumber
 
-** ●  someNumber**:  *`number`*  = 10
+**●  someNumber**:  *`number`*  = 10
 
 *Defined in [basic-types.ts:45](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-45)*
 
@@ -666,7 +666,7 @@ ___
 
 ###  someString
 
-** ●  someString**:  *`string`*  = "hello"
+**●  someString**:  *`string`*  = "hello"
 
 *Defined in [basic-types.ts:46](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-46)*
 

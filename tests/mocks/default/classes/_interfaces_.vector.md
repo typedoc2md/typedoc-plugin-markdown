@@ -65,7 +65,7 @@
 
 ###  x
 
-** ●  x**:  *`number`* 
+**●  x**:  *`number`* 
 
 *Defined in [interfaces.ts:2](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L2)*
 
@@ -79,7 +79,7 @@ ___
 
 ###  y
 
-** ●  y**:  *`number`* 
+**●  y**:  *`number`* 
 
 *Defined in [interfaces.ts:3](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L3)*
 
@@ -93,7 +93,7 @@ ___
 
 ###  z
 
-** ●  z**:  *`number`* 
+**●  z**:  *`number`* 
 
 *Defined in [interfaces.ts:4](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L4)*
 

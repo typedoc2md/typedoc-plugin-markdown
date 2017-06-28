@@ -65,7 +65,7 @@
 
 ###  x
 
-** ●  x**:  *`number`* 
+**●  x**:  *`number`* 
 
 *Defined in [interfaces.ts:2](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-2)*
 
@@ -79,7 +79,7 @@ ___
 
 ###  y
 
-** ●  y**:  *`number`* 
+**●  y**:  *`number`* 
 
 *Defined in [interfaces.ts:3](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-3)*
 
@@ -93,7 +93,7 @@ ___
 
 ###  z
 
-** ●  z**:  *`number`* 
+**●  z**:  *`number`* 
 
 *Defined in [interfaces.ts:4](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-4)*
 

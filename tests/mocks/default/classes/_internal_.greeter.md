@@ -55,7 +55,7 @@
 
 ###  greeting
 
-** ●  greeting**:  *`string`* 
+**●  greeting**:  *`string`* 
 
 *Defined in [internal.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
 

@@ -111,7 +111,7 @@
 
 ###  Down
 
-**  Down**:   
+** Down**:   
 
 
 
@@ -124,7 +124,7 @@ ___
 
 ###  Left
 
-**  Left**:   
+** Left**:   
 
 
 
@@ -137,7 +137,7 @@ ___
 
 ###  Right
 
-**  Right**:   
+** Right**:   
 
 
 
@@ -150,7 +150,7 @@ ___
 
 ###  Up
 
-**  Up**:    = 1
+** Up**:    = 1
 
 
 
@@ -187,7 +187,7 @@ ___
 
 ###  G
 
-**  G**:    =  '123'.length
+** G**:    =  '123'.length
 
 
 
@@ -200,7 +200,7 @@ ___
 
 ###  None
 
-**  None**:   
+** None**:   
 
 
 
@@ -213,7 +213,7 @@ ___
 
 ###  Read
 
-**  Read**:    =  1 << 1
+** Read**:    =  1 << 1
 
 
 
@@ -226,7 +226,7 @@ ___
 
 ###  ReadWrite
 
-**  ReadWrite**:    =  Read | Write
+** ReadWrite**:    =  Read | Write
 
 
 
@@ -239,7 +239,7 @@ ___
 
 ###  Write
 
-**  Write**:    =  1 << 2
+** Write**:    =  1 << 2
 
 
 
@@ -542,7 +542,7 @@ ___
 
 ###  SearchFunc
 
-**  SearchFunc**:  *function* 
+** SearchFunc**:  *function* 
 
 
 
@@ -582,7 +582,7 @@ ___
 
 ###  mySearch
 
-** ●  mySearch**:  *[SearchFunc](#interfaces.searchfunc)* 
+**●  mySearch**:  *[SearchFunc](#interfaces.searchfunc)* 
 
 
 
@@ -595,7 +595,7 @@ ___
 
 ###  square
 
-** ●  square**:  *[Square](#interface-square)*  =  {} as Square
+**●  square**:  *[Square](#interface-square)*  =  {} as Square
 
 
 
@@ -701,7 +701,7 @@ This is a function that is extended by a module.
 
 ###  functionVariable
 
-** ●  functionVariable**:  *`string`* 
+**●  functionVariable**:  *`string`* 
 
 
 
@@ -891,7 +891,7 @@ This is a simple example on how to use BaseClass.
 
 ### «Private» internalClass
 
-** ●  internalClass**:  *[InternalClass](#class-internalclass)* 
+**●  internalClass**:  *[InternalClass](#class-internalclass)* 
 
 
 
@@ -907,7 +907,7 @@ ___
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 
 
@@ -923,7 +923,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 
 
@@ -939,7 +939,7 @@ ___
 
 ### «Static»«Private» instance
 
-** ●  instance**:  *[BaseClass](#class-baseclass)* 
+**●  instance**:  *[BaseClass](#class-baseclass)* 
 
 
 
@@ -958,7 +958,7 @@ ___
 
 ### «Static»«Private» instances
 
-** ●  instances**:  *[BaseClass](#class-baseclass)[]* 
+**●  instances**:  *[BaseClass](#class-baseclass)[]* 
 
 
 
@@ -1269,7 +1269,7 @@ ___
 
 ###  b
 
-** ●  b**:  *`number`* 
+**●  b**:  *`number`* 
 
 
 
@@ -1282,7 +1282,7 @@ ___
 
 ###  g
 
-** ●  g**:  *`number`* 
+**●  g**:  *`number`* 
 
 
 
@@ -1295,7 +1295,7 @@ ___
 
 ###  r
 
-** ●  r**:  *`number`* 
+**●  r**:  *`number`* 
 
 
 
@@ -1308,7 +1308,7 @@ ___
 
 ### «Static» background
 
-** ●  background**:  *[Color](#class-color)*  =  Color.black
+**●  background**:  *[Color](#class-color)*  =  Color.black
 
 
 
@@ -1321,7 +1321,7 @@ ___
 
 ### «Static» black
 
-** ●  black**:  *[Color](#class-color)*  =  new Color(0.0, 0.0, 0.0)
+**●  black**:  *[Color](#class-color)*  =  new Color(0.0, 0.0, 0.0)
 
 
 
@@ -1334,7 +1334,7 @@ ___
 
 ### «Static» defaultColor
 
-** ●  defaultColor**:  *[Color](#class-color)*  =  Color.black
+**●  defaultColor**:  *[Color](#class-color)*  =  Color.black
 
 
 
@@ -1347,7 +1347,7 @@ ___
 
 ### «Static» grey
 
-** ●  grey**:  *[Color](#class-color)*  =  new Color(0.5, 0.5, 0.5)
+**●  grey**:  *[Color](#class-color)*  =  new Color(0.5, 0.5, 0.5)
 
 
 
@@ -1360,7 +1360,7 @@ ___
 
 ### «Static» white
 
-** ●  white**:  *[Color](#class-color)*  =  new Color(1.0, 1.0, 1.0)
+**●  white**:  *[Color](#class-color)*  =  new Color(1.0, 1.0, 1.0)
 
 
 
@@ -1576,7 +1576,7 @@ ___
 
 ### «Private» department
 
-** ●  department**:  *`string`* 
+**●  department**:  *`string`* 
 
 
 
@@ -1589,7 +1589,7 @@ ___
 
 ### «Protected» name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 
 
@@ -1742,7 +1742,7 @@ Constructor short text.
 
 ### «Protected» p2
 
-** ●  p2**:  *`T`* 
+**●  p2**:  *`T`* 
 
 
 
@@ -1758,7 +1758,7 @@ ___
 
 ###  p3
 
-** ●  p3**:  *`number`* 
+**●  p3**:  *`number`* 
 
 
 
@@ -1774,7 +1774,7 @@ ___
 
 ### «Private» p4
 
-** ●  p4**:  *`number`* 
+**●  p4**:  *`number`* 
 
 
 
@@ -1791,7 +1791,7 @@ ___
 
 ###  value
 
-** ●  value**:  *`T`* 
+**●  value**:  *`T`* 
 
 
 
@@ -1921,7 +1921,7 @@ ___
 
 ###  greeting
 
-** ●  greeting**:  *`string`* 
+**●  greeting**:  *`string`* 
 
 
 
@@ -2092,7 +2092,7 @@ Constructor short text.
 
 ### «Protected» p2
 
-** ●  p2**:  *[SubClassB](#class-subclassb)* 
+**●  p2**:  *[SubClassB](#class-subclassb)* 
 
 
 
@@ -2108,7 +2108,7 @@ ___
 
 ###  p3
 
-** ●  p3**:  *`number`* 
+**●  p3**:  *`number`* 
 
 
 
@@ -2124,7 +2124,7 @@ ___
 
 ###  value
 
-** ●  value**:  *[SubClassB](#class-subclassb)* 
+**●  value**:  *[SubClassB](#class-subclassb)* 
 
 
 
@@ -2262,7 +2262,7 @@ ___
 
 ### «Protected» name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 
 
@@ -2393,7 +2393,7 @@ from BaseClass.
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 
 
@@ -2409,7 +2409,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 
 
@@ -2880,7 +2880,7 @@ The constructor of the original class should be overwritten.
 
 ### «Protected» kind
 
-** ●  kind**:  *`number`* 
+**●  kind**:  *`number`* 
 
 
 
@@ -2896,7 +2896,7 @@ ___
 
 ###  name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 
 
@@ -3213,7 +3213,7 @@ ___
 
 ###  x
 
-** ●  x**:  *`number`* 
+**●  x**:  *`number`* 
 
 
 
@@ -3226,7 +3226,7 @@ ___
 
 ###  y
 
-** ●  y**:  *`number`* 
+**●  y**:  *`number`* 
 
 
 
@@ -3239,7 +3239,7 @@ ___
 
 ###  z
 
-** ●  z**:  *`number`* 
+**●  z**:  *`number`* 
 
 
 
@@ -3479,7 +3479,7 @@ ___
 
 ###  amount
 
-** ●  amount**:  *`number`*  = 6
+**●  amount**:  *`number`*  = 6
 
 
 
@@ -3498,7 +3498,7 @@ ___
 
 ###  color
 
-** ●  color**:  *`string`*  = "blue"
+**●  color**:  *`string`*  = "blue"
 
 
 
@@ -3517,7 +3517,7 @@ ___
 
 ###  greeter
 
-** ●  greeter**:  *[Greeter](#class-greeter)*  =  new Greeter('world')
+**●  greeter**:  *[Greeter](#class-greeter)*  =  new Greeter('world')
 
 
 
@@ -3530,7 +3530,7 @@ ___
 
 ###  isDone
 
-** ●  isDone**:  *`boolean`*  = false
+**●  isDone**:  *`boolean`*  = false
 
 
 
@@ -3549,7 +3549,7 @@ ___
 
 ###  numbers
 
-** ●  numbers**:  *`number`[]*  =  [1, 2, 3]
+**●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
 
 
@@ -3568,7 +3568,7 @@ ___
 
 ### «Private» privateVar
 
-** ●  privateVar**:  *"marked private variable"*  = "marked private variable"
+**●  privateVar**:  *"marked private variable"*  = "marked private variable"
 
 
 
@@ -3584,7 +3584,7 @@ ___
 
 ###  publicVar
 
-** ●  publicVar**:  *"public variable"*  = "public variable"
+**●  publicVar**:  *"public variable"*  = "public variable"
 
 
 
@@ -4038,7 +4038,7 @@ ___
 
 ###  someNumber
 
-** ●  someNumber**:  *`number`*  = 10
+**●  someNumber**:  *`number`*  = 10
 
 
 
@@ -4050,7 +4050,7 @@ ___
 
 ###  someString
 
-** ●  someString**:  *`string`*  = "hello"
+**●  someString**:  *`string`*  = "hello"
 
 
 

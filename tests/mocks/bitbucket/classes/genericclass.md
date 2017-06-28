@@ -87,7 +87,7 @@ Constructor short text.
 
 ### «Protected» p2
 
-** ●  p2**:  *`T`* 
+**●  p2**:  *`T`* 
 
 *Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
@@ -104,7 +104,7 @@ ___
 
 ###  p3
 
-** ●  p3**:  *`number`* 
+**●  p3**:  *`number`* 
 
 *Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
@@ -121,7 +121,7 @@ ___
 
 ### «Private» p4
 
-** ●  p4**:  *`number`* 
+**●  p4**:  *`number`* 
 
 *Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
 
@@ -139,7 +139,7 @@ ___
 
 ###  value
 
-** ●  value**:  *`T`* 
+**●  value**:  *`T`* 
 
 *Defined in [classes.ts:254](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-254)*
 

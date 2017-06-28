@@ -73,7 +73,7 @@
 
 ### «Private» department
 
-** ●  department**:  *`string`* 
+**●  department**:  *`string`* 
 
 *Defined in [private-members.ts:29](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-29)*
 
@@ -87,7 +87,7 @@ ___
 
 ### «Protected» name
 
-** ●  name**:  *`string`* 
+**●  name**:  *`string`* 
 
 *Inherited from [Person](person.md).[name](person.md#markdown-header-protected-name)*
 

@@ -82,7 +82,7 @@ Constructor short text.
 
 ### «Protected» p2
 
-** ●  p2**:  *[SubClassB](subclassb.md)* 
+**●  p2**:  *[SubClassB](subclassb.md)* 
 
 *Inherited from [GenericClass](genericclass.md).[p2](genericclass.md#markdown-header-protected-p2)*
 
@@ -101,7 +101,7 @@ ___
 
 ###  p3
 
-** ●  p3**:  *`number`* 
+**●  p3**:  *`number`* 
 
 *Inherited from [GenericClass](genericclass.md).[p3](genericclass.md#markdown-header-p3)*
 
@@ -120,7 +120,7 @@ ___
 
 ###  value
 
-** ●  value**:  *[SubClassB](subclassb.md)* 
+**●  value**:  *[SubClassB](subclassb.md)* 
 
 *Inherited from [GenericClass](genericclass.md).[value](genericclass.md#markdown-header-value)*
 

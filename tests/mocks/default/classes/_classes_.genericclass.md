@@ -86,7 +86,7 @@ Constructor short text.
 
 ### «Protected» p2
 
-** ●  p2**:  *`T`* 
+**●  p2**:  *`T`* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
@@ -103,7 +103,7 @@ ___
 
 ###  p3
 
-** ●  p3**:  *`number`* 
+**●  p3**:  *`number`* 
 
 *Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
@@ -120,7 +120,7 @@ ___
 
 ###  value
 
-** ●  value**:  *`T`* 
+**●  value**:  *`T`* 
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 

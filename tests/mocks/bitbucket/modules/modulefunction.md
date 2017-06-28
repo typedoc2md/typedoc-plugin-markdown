@@ -55,7 +55,7 @@ This is a function that is extended by a module.
 
 ###  functionVariable
 
-** ●  functionVariable**:  *`string`* 
+**●  functionVariable**:  *`string`* 
 
 *Defined in [functions.ts:140](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-140)*
 
