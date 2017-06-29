@@ -39,7 +39,7 @@ For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 
 ## Example output
 
-```
+<pre>
 /**
  * This is a function with multiple arguments and a return value.
  * @param paramZ  This is a string parameter.
@@ -49,9 +49,8 @@ For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 export function functionWithArguments(paramZ:string, paramG:any):number {
     return 0;
 }
- ```
+ </pre>
  
- ###  functionWithArguments
 
 ► **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*): `number`
 
