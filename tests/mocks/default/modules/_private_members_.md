@@ -14,17 +14,35 @@
 
 ### Variables
 
+* [privateVar](_private_members_.md#privatevar)
 * [publicVar](_private_members_.md#publicvar)
 
 
 ### Functions
 
+* [privateFunction](_private_members_.md#privatefunction)
 * [publicFunction](_private_members_.md#publicfunction)
 
 
 
 ---
 ## Variables
+<a id="privatevar"></a>
+
+### «Private» privateVar
+
+**●  privateVar**:  *"marked private variable"*  = "marked private variable"
+
+*Defined in [private-members.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L8)*
+
+
+
+Marked as private
+
+
+
+
+___
 
 <a id="publicvar"></a>
 
@@ -42,6 +60,31 @@ ___
 
 
 ## Functions
+<a id="privatefunction"></a>
+
+### «Private» privateFunction
+
+► **privateFunction**(): `string`
+
+
+
+
+*Defined in [private-members.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L18)*
+
+
+
+Marked as private
+
+
+
+
+**Returns:** `string`
+
+
+
+
+
+___
 
 <a id="publicfunction"></a>
 

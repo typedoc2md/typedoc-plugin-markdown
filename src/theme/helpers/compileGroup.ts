@@ -1,8 +1,12 @@
 import { ReflectionGroup } from 'typedoc/dist/lib/models/ReflectionGroup';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { ThemeService } from '../service';
-import { compilePartial } from '../utils';
 
+/**
+ * Sets relevant context for member.groups and compiles partial
+ * @param group
+ * @param parent
+ */
 export function compileGroup(group: ReflectionGroup, parent: any) {
 
   const options = ThemeService.getOptions();
@@ -26,7 +30,7 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
       displayBackLink = false;
     }
 
-    md = compilePartial(`members.group.hbs`,
+    md = ThemeService.compilePartial(`members.group.hbs`,
     Object.assign(group, { displayTitle, isMainTitle, displayBackLink }));
   }
 

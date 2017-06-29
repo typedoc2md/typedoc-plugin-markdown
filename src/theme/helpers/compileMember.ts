@@ -1,8 +1,11 @@
 import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections/index';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { ThemeService } from '../service';
-import { compilePartial, compileTemplate } from '../utils';
 
+/**
+ * Compiles relevant member partial
+ * @param member
+ */
 export function compileMember(member: DeclarationReflection) {
 
   const options = ThemeService.getOptions();
@@ -17,20 +20,20 @@ export function compileMember(member: DeclarationReflection) {
       case ReflectionKind.ExternalModule:
       case ReflectionKind.Enum:
         Object.assign(member, { displayBackLink: true, hideBreadcrumbs: true });
-        md = compileTemplate('reflection.hbs', { model: member });
+        md = ThemeService.compileTemplate('reflection.hbs', { model: member });
         break;
       case ReflectionKind.Interface:
       Object.assign(member, { displayBackLink: options.mode === 0 ? true : false, hideBreadcrumbs: true });
-      md = compileTemplate('reflection.hbs', { model: member });
+      md = ThemeService.compileTemplate('reflection.hbs', { model: member });
       break;
       case ReflectionKind.Constructor:
-        md = compilePartial('member.constructor.hbs', member);
+        md = ThemeService.compilePartial('member.constructor.hbs', member);
         break;
       case ReflectionKind.ObjectLiteral:
-        md = compilePartial('member.object.hbs', member);
+        md = ThemeService.compilePartial('member.object.hbs', member);
         break;
       default:
-        md = compilePartial('member.hbs', member);
+        md = ThemeService.compilePartial('member.hbs', member);
     }
   }
 

@@ -1,10 +1,10 @@
 {{!-- {{ breadcrumbs }} --}}
-{{#unless model.hideBreadcrumbs}}[{{project.name}}](../README.md){{~#with model~}}{{> breadcrumb}}{{/with}}{{newLine}}{{/unless}}
+{{#unless model.hideBreadcrumbs}}[{{project.name}}](../README.md){{~#with model~}}{{> breadcrumb}}{{/with}}{{getNewLine}}{{/unless}}
 {{!-- {{ readme }} --}}
 {{~#if model.displayReadme ~}}
 {{{model.readme}}}
 {{~/if~}}
-{{newLine}}
+{{getNewLine}}
 {{!-- {{ title }} --}}
 {{~#unless model.displayReadme ~}}
 # {{#unless model.isIndex }}{{model.kindString }}:{{/unless}} {{{ model.name }}}

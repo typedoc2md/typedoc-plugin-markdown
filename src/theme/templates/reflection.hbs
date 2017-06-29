@@ -1,5 +1,5 @@
 {{> header}}
-{{newLine}}
+{{getNewLine}}
 {{~#with model~}}
 {{~#if hasComment~}}
 {{> comment}}
@@ -14,7 +14,7 @@
 ## Hierarchy
 
 {{#with model.typeHierarchy~}}{{> hierarchy}}{{/with}}
-{{newLine}}
+{{getNewLine}}
 {{/ifDisplayTypeHierarchy}}
 {{~/if~}}
 {{~#if model.implementedTypes}}
@@ -23,7 +23,7 @@
 {{#each model.implementedTypes}}
 * {{> type}}
 {{/each}}
-{{newLine}}
+{{getNewLine}}
 {{~/if}}
 {{~#if model.implementedBy}}
 ## Implemented by
@@ -31,12 +31,12 @@
 {{#each model.implementedBy}}
 * {{> type}}
 {{/each}}
-{{newLine}}
+{{getNewLine}}
 {{~/if}}
 {{~#if model.signatures}}
 ## Callable
 {{#with model}}{{> member.signatures}}{{/with}}
-{{newLine}}
+{{getNewLine}}
 {{~/if}}
 {{~#if model.indexSignature}}
 ## Indexable
@@ -51,7 +51,7 @@
 {{> parameter}}
 {{~/with}}
 {{~/if}}
-{{newLine}}
+{{getNewLine}}
 {{~/if}}
 {{~#with model}}
 {{{ compileIndex this }}}

@@ -26,12 +26,14 @@
 
 ### Properties
 
+* [department](_private_members_.employee.md#department)
 * [name](_private_members_.employee.md#name)
 
 
 ### Methods
 
 * [getElevatorPitch](_private_members_.employee.md#getelevatorpitch)
+* [getPrivateDetails](_private_members_.employee.md#getprivatedetails)
 
 
 
@@ -67,6 +69,20 @@
 
 
 ## Properties
+<a id="department"></a>
+
+### «Private» department
+
+**●  department**:  *`string`* 
+
+*Defined in [private-members.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L29)*
+
+
+
+
+
+___
+
 <a id="name"></a>
 
 ### «Protected» name
@@ -95,6 +111,29 @@ ___
 
 
 *Defined in [private-members.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L36)*
+
+
+
+
+
+**Returns:** `string`
+
+
+
+
+
+___
+
+<a id="getprivatedetails"></a>
+
+### «Private» getPrivateDetails
+
+► **getPrivateDetails**(): `string`
+
+
+
+
+*Defined in [private-members.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L40)*
 
 
 

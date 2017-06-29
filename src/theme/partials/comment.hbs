@@ -2,11 +2,11 @@
 {{#if hasVisibleComponent}}
 {{#if shortText}}
 
-{{#htmlToMarkdown}}{{#markdown}}{{{shortText}}}{{/markdown}}{{/htmlToMarkdown}}
+{{#getMarkdownFromHtml}}{{#markdown}}{{{shortText}}}{{/markdown}}{{/getMarkdownFromHtml}}
 {{/if}}
 {{#if text}}
 
-{{#htmlToMarkdown}}{{#markdown}}{{{text}}}{{/markdown}}{{/htmlToMarkdown}}
+{{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
 {{/if}}
 {{~#if tags}}{{#each tags}}**{{tagName}}**: {{{text}}}{{/each}}{{~/if}}
 {{/if}}

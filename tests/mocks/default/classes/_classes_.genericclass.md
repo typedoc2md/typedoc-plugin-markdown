@@ -36,6 +36,7 @@ This a type parameter.
 
 * [p2](_classes_.genericclass.md#p2)
 * [p3](_classes_.genericclass.md#p3)
+* [p4](_classes_.genericclass.md#p4)
 * [value](_classes_.genericclass.md#value)
 
 
@@ -109,6 +110,23 @@ ___
 
 
 Public number property
+
+
+
+
+___
+
+<a id="p4"></a>
+
+### «Private» p4
+
+**●  p4**:  *`number`* 
+
+*Defined in [classes.ts:264](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
+
+
+
+Public implicit any property
 
 
 

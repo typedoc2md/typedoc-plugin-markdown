@@ -36,7 +36,6 @@ This a type parameter.
 
 * [p2](genericclass.md#markdown-header-protected-p2)
 * [p3](genericclass.md#markdown-header-p3)
-* [p4](genericclass.md#markdown-header-private-p4)
 * [value](genericclass.md#markdown-header-value)
 
 
@@ -110,23 +109,6 @@ ___
 
 
 Public number property
-
-
-
-
-___
-
-
-
-### «Private» p4
-
-**●  p4**:  *`number`* 
-
-*Defined in [classes.ts:264](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-264)*
-
-
-
-Public implicit any property
 
 
 

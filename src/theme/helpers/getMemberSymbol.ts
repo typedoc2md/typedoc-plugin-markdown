@@ -1,8 +1,9 @@
-
-export function displaySymbol(kindString: string) {
-
+/**
+ * Returns the member symbol
+ * @param kindString
+ */
+export function getMemberSymbol(kindString: string) {
   let symbol = '';
-
   switch (kindString) {
     case 'Constructor signature':
       symbol = '⊕ ';
@@ -15,8 +16,6 @@ export function displaySymbol(kindString: string) {
       symbol = '● ';
       break;
     default:
-
   }
-
   return symbol;
 }

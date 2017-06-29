@@ -42,17 +42,13 @@ This is a simple example on how to use BaseClass.
 
 ### Properties
 
-* [internalClass](baseclass.md#markdown-header-private-internalclass)
 * [kind](baseclass.md#markdown-header-protected-kind)
 * [name](baseclass.md#markdown-header-name)
-* [instance](baseclass.md#markdown-header-static-private-instance)
-* [instances](baseclass.md#markdown-header-static-private-instances)
 
 
 ### Methods
 
 * [arrowFunction](baseclass.md#markdown-header-arrowfunction)
-* [checkName](baseclass.md#markdown-header-private-checkname)
 * [getName](baseclass.md#markdown-header-getname)
 * [setName](baseclass.md#markdown-header-setname)
 * [caTest](baseclass.md#markdown-header-static-catest)
@@ -112,23 +108,6 @@ This is a simple example on how to use BaseClass.
 ## Properties
 
 
-### «Private» internalClass
-
-**●  internalClass**:  *[InternalClass](internalclass.md)* 
-
-*Defined in [classes.ts:70](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-70)*
-
-
-
-This is an instance member of an internal class.
-
-
-
-
-___
-
-
-
 ### «Protected» kind
 
 **●  kind**:  *`number`* 
@@ -157,39 +136,6 @@ ___
 
 
 This is a simple public member.
-
-
-
-
-___
-
-
-
-### «Static»«Private» instance
-
-**●  instance**:  *[BaseClass](baseclass.md)* 
-
-*Defined in [classes.ts:55](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-55)*
-
-
-
-This is a static member.
-
-Static members should not be inherited.
-
-
-
-
-___
-
-
-
-### «Static»«Private» instances
-
-**●  instances**:  *[BaseClass](baseclass.md)[]* 
-
-*Defined in [classes.ts:56](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-56)*
-
 
 
 
@@ -226,32 +172,6 @@ This is a simple fat arrow function.
 
 
 **Returns:** `void`
-
-
-
-
-
-___
-
-
-
-### «Private» checkName
-
-► **checkName**(): `boolean`
-
-
-
-
-*Defined in [classes.ts:135](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-135)*
-
-
-
-This is a private function.
-
-
-
-
-**Returns:** `boolean`
 
 
 

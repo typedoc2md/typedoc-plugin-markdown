@@ -46,7 +46,6 @@
 * [greeter](#markdown-header-greeter)
 * [isDone](#markdown-header-isdone)
 * [numbers](#markdown-header-numbers)
-* [privateVar](#markdown-header-private-privatevar)
 * [publicVar](#markdown-header-publicvar)
 
 
@@ -62,7 +61,6 @@
 * [genericFunction](#markdown-header-genericfunction)
 * [internalFunction](#markdown-header-internalfunction)
 * [multipleSignatures](#markdown-header-multiplesignatures)
-* [privateFunction](#markdown-header-private-privatefunction)
 * [publicFunction](#markdown-header-publicfunction)
 * [variableFunction](#markdown-header-variablefunction)
 
@@ -165,22 +163,6 @@ This is an array type
 
 ___
 
-
-
-### «Private» privateVar
-
-**●  privateVar**:  *"marked private variable"*  = "marked private variable"
-
-*Defined in [private-members.ts:8](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-8)*
-
-
-
-Marked as private
-
-
-
-
-___
 
 
 
@@ -551,31 +533,6 @@ This is the second signature of a function with multiple signatures.
 
 ___
 
-
-
-### «Private» privateFunction
-
-► **privateFunction**(): `string`
-
-
-
-
-*Defined in [private-members.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-18)*
-
-
-
-Marked as private
-
-
-
-
-**Returns:** `string`
-
-
-
-
-
-___
 
 
 

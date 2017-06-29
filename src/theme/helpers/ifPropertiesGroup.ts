@@ -1,9 +1,14 @@
 import { ReflectionGroup } from 'typedoc/dist/lib/models/ReflectionGroup';
 
+/**
+ * Returns true if properties group
+ * @param group
+ * @param opts
+ */
 export function ifPropertiesGroup(group: ReflectionGroup, opts: any) {
-  if ((group.title !== 'Properties')) {
-    return opts.inverse(this);
+  if ((group.title === 'Properties')) {
+   return opts.fn(this);
   } else {
-    return opts.fn(this);
+    return opts.inverse(this);
   }
 }

@@ -1,6 +1,8 @@
+/**
+ * Returns the anchor ref of the top element
+ */
 import { ThemeService } from '../service';
-import { getAnchorRef } from '../utils';
 
 export function getTopAnchorRef() {
-  return getAnchorRef(ThemeService.projectName);
+  return ThemeService.getAnchorRef(ThemeService.projectName);
 }

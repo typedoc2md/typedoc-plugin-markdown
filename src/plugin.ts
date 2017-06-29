@@ -5,7 +5,7 @@ import { Context } from 'typedoc/dist/lib/converter/context';
 import { Converter } from 'typedoc/dist/lib/converter/converter';
 import { Reflection } from 'typedoc/dist/lib/models/reflections/abstract';
 import { OptionsReadMode } from 'typedoc/dist/lib/utils/options';
-import { MarkdownTheme } from './theme/theme';
+import { MarkdownTheme } from './theme/';
 
 /**
  * Markdown plugin component that exposes the MarkdownTheme to the application.

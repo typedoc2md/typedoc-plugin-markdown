@@ -42,13 +42,17 @@ This is a simple example on how to use BaseClass.
 
 ### Properties
 
+* [internalClass](_classes_.baseclass.md#internalclass)
 * [kind](_classes_.baseclass.md#kind)
 * [name](_classes_.baseclass.md#name)
+* [instance](_classes_.baseclass.md#instance)
+* [instances](_classes_.baseclass.md#instances)
 
 
 ### Methods
 
 * [arrowFunction](_classes_.baseclass.md#arrowfunction)
+* [checkName](_classes_.baseclass.md#checkname)
 * [getName](_classes_.baseclass.md#getname)
 * [setName](_classes_.baseclass.md#setname)
 * [caTest](_classes_.baseclass.md#catest)
@@ -106,6 +110,23 @@ This is a simple example on how to use BaseClass.
 
 
 ## Properties
+<a id="internalclass"></a>
+
+### «Private» internalClass
+
+**●  internalClass**:  *[InternalClass](_classes_.internalclass.md)* 
+
+*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
+
+
+
+This is an instance member of an internal class.
+
+
+
+
+___
+
 <a id="kind"></a>
 
 ### «Protected» kind
@@ -142,6 +163,39 @@ This is a simple public member.
 
 ___
 
+<a id="instance"></a>
+
+### «Static»«Private» instance
+
+**●  instance**:  *[BaseClass](_classes_.baseclass.md)* 
+
+*Defined in [classes.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
+
+
+
+This is a static member.
+
+Static members should not be inherited.
+
+
+
+
+___
+
+<a id="instances"></a>
+
+### «Static»«Private» instances
+
+**●  instances**:  *[BaseClass](_classes_.baseclass.md)[]* 
+
+*Defined in [classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L56)*
+
+
+
+
+
+___
+
 
 ## Methods
 <a id="arrowfunction"></a>
@@ -172,6 +226,32 @@ This is a simple fat arrow function.
 
 
 **Returns:** `void`
+
+
+
+
+
+___
+
+<a id="checkname"></a>
+
+### «Private» checkName
+
+► **checkName**(): `boolean`
+
+
+
+
+*Defined in [classes.ts:135](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L135)*
+
+
+
+This is a private function.
+
+
+
+
+**Returns:** `boolean`
 
 
 

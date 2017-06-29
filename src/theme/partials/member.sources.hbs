@@ -1,14 +1,14 @@
 {{~#if implementationOf~}}
 *Implementation of {{#with implementationOf}}{{> typeAndParent}}{{/with}}*
-{{newLine}}
+{{getNewLine}}
 {{~/if~}}
 {{~#if inheritedFrom~}}
 *Inherited from {{#with inheritedFrom}}{{> typeAndParent}}{{/with}}*
-{{newLine}}
+{{getNewLine}}
 {{~/if~}}
 {{~#if overwrites~}}
 *Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}*
-{{newLine}}
+{{getNewLine}}
 {{~/if~}}
 {{#if sources}}
 {{#each sources}}

@@ -24,12 +24,12 @@ node_modules/.bin/typedoc --theme markdown
 
 The plugin exposes the following additional arguments:
 
-* `--mdFlavour<github|bitbucket>`<br />
-Specifies the markdown rendering engine.  Defaults to `github`.
 * `--mdOutFile <fileName.md>`<br />
 Compiles output to a single file
 * `--mdHideSources`<br />
 Suppress sources from output 
+* `--mdFlavour<github|bitbucket>`<br />
+Specifies the markdown rendering engine.  Defaults to `github`.
 * `--mdSourceRepo<path.to.repo>`<br />
 The source repo to use for source file linking. Will be ignored on github flavoured projects.<br />
 For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
@@ -38,13 +38,38 @@ For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 
 Creating a pluign that exposes a theme provides a mechanism to offer a feature rich set of additional options.
 
-## Samples
+## Example output
 
-Samples of generated output.
+<pre>
+/**
+ * This is a function with multiple arguments and a return value.
+ * @param paramZ  This is a string parameter.
+ * @param paramG  This is a parameter flagged with any.
+ */
 
-* [Generated output from TypeDoc's examples directory](https://github.com/tgreyuk/typedoc-plugin-markdown-samples/blob/master/out/typedoc/README.md) 
-* [Generated from a selection of Microsoft TypeScriptSamples](https://github.com/tgreyuk/typedoc-plugin-markdown-samples/blob/master/out/microsoft/README.md) 
+export function functionWithArguments(paramZ:string, paramG:any):number {
+    return 0;
+}
+ </pre>
 
+ ###  functionWithArguments
+
+► **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*): `number`
+
+*Defined in functions.ts:41*
+
+This is a function with multiple arguments and a return value.
+
+**Parameters:**
+
+| Param  | Type                | Description  |
+| ------ | ------------------- | ------------ |
+| paramZ | `string` | This is a string parameter. |
+| paramG | `any` | This is a parameter flagged with any.|
+
+**Returns:** `number`
+
+Browse the <a href="https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/tests/mocks/default">test mocks</a> to view further examples. 
 
 ## Acknowledgements
 

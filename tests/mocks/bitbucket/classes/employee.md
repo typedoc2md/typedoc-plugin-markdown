@@ -26,14 +26,12 @@
 
 ### Properties
 
-* [department](employee.md#markdown-header-private-department)
 * [name](employee.md#markdown-header-protected-name)
 
 
 ### Methods
 
 * [getElevatorPitch](employee.md#markdown-header-getelevatorpitch)
-* [getPrivateDetails](employee.md#markdown-header-private-getprivatedetails)
 
 
 
@@ -71,20 +69,6 @@
 ## Properties
 
 
-### «Private» department
-
-**●  department**:  *`string`* 
-
-*Defined in [private-members.ts:29](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-29)*
-
-
-
-
-
-___
-
-
-
 ### «Protected» name
 
 **●  name**:  *`string`* 
@@ -111,29 +95,6 @@ ___
 
 
 *Defined in [private-members.ts:36](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-36)*
-
-
-
-
-
-**Returns:** `string`
-
-
-
-
-
-___
-
-
-
-### «Private» getPrivateDetails
-
-► **getPrivateDetails**(): `string`
-
-
-
-
-*Defined in [private-members.ts:40](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-40)*
 
 
 

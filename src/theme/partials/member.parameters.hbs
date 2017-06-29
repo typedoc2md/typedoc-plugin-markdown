@@ -4,8 +4,8 @@
 | Param  | Type                | Description  |
 | ------ | ------------------- | ------------ |
 {{#each parameters}}
-| {{ name }} | {{#with type}}{{>type}}{{/with}} | {{#if defaultValue}}Default value = {{defaultValue}}.{{/if}}{{ displayComment comment }} |
+| {{ name }} | {{#with type}}{{>type}}{{/with}} | {{#if defaultValue}}Default value = {{defaultValue}}.{{/if}}{{ getStrippedComment comment }} |
 {{/each}}
-{{newLine}}{{newLine}}
+{{getNewLine}}{{getNewLine}}
 {{/if}}
 

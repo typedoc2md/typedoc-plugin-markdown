@@ -1,6 +1,10 @@
 import { ThemeService } from '../service';
 
-export function displayAnchor(anchor: string) {
+/**
+ * Returns the anchor element
+ * @param anchor
+ */
+export function getAnchor(anchor: string) {
   const options = ThemeService.getOptions();
   return options.mdFlavour === 'bitbucket' ? '' : `<a id="${anchor}"></a>`;
 }

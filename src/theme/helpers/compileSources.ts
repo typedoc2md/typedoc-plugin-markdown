@@ -1,18 +1,14 @@
-
 import { ThemeService } from '../service';
-import { compilePartial } from '../utils';
 
+/**
+ * Compiles sources
+ * @param sources
+ */
 export function compileSources(sources: any) {
-
-    const options = ThemeService.getOptions();
-
-    let md = '';
-
-    if (!options.mdHideSources) {
-
-        md = compilePartial('member.sources.hbs', sources);
-
-    }
-
-    return md;
+  const options = ThemeService.getOptions();
+  let md = '';
+  if (!options.mdHideSources) {
+    md = ThemeService.compilePartial('member.sources.hbs', sources);
+  }
+  return md;
 }
