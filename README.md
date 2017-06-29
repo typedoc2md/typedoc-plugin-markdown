@@ -8,6 +8,8 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes theme
 
 ## Getting started
 
+### Installation
+
 ```javascript
 npm install --save-dev typedoc typedoc-plugin-markdown
 ```
@@ -20,7 +22,7 @@ The plugin provides an additional markdown theme.
 node_modules/.bin/typedoc --theme markdown
 ```
 
-### Additional arguments
+## Additional arguments
 
 The plugin exposes the following additional arguments:
 
@@ -34,13 +36,10 @@ Specifies the markdown rendering engine.  Defaults to `github`.
 The source repo to use for source file linking. Will be ignored on github flavoured projects.<br />
 For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 
-### Why not just create a theme?
-
-Creating a pluign that exposes a theme provides a mechanism to offer a feature rich set of additional options.
 
 ## Example output
 
-<pre>
+```
 /**
  * This is a function with multiple arguments and a return value.
  * @param paramZ  This is a string parameter.
@@ -50,8 +49,8 @@ Creating a pluign that exposes a theme provides a mechanism to offer a feature r
 export function functionWithArguments(paramZ:string, paramG:any):number {
     return 0;
 }
- </pre>
-
+ ```
+ 
  ###  functionWithArguments
 
 ► **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*): `number`
