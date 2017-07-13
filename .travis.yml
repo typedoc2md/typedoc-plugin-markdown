@@ -11,8 +11,7 @@ node_js:
 before_script:
   - npm prune
 script:
-  - npm run prepare
-  - npm test
+  - npm run prepublish
 after_success:
 
 branches:
