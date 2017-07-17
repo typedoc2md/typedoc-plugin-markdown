@@ -38,7 +38,7 @@
 
 
 
-*Defined in [functions.ts:161](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L161)*
+*Defined in [functions.ts:163](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L163)*
 
 
 
@@ -121,12 +121,12 @@ ___
 
 ###  functionWithDefaults
 
-► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE?: *`boolean`*): `string`
+► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE: *`any`*): `string`
 
 
 
 
-*Defined in [functions.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L61)*
+*Defined in [functions.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L63)*
 
 
 
@@ -137,11 +137,11 @@ This is a function with a parameter that has a default value.
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| valueA | `string`  | &quot;defaultValue&quot; |   - |
+| valueA | `string`  | &quot;defaultValue&quot; |   Comment for value A. |
 | valueB | `number`  | 100 |   - |
-| valueC | `number`  |  Number.NaN |   - |
+| valueC | `number`  |  Number.NaN |   Comment for value C |
 | valueD | `boolean`  | true |   - |
-| valueE | `boolean`  | false |   - |
+| valueE | `any`  | - |   Comment for value E |
 
 
 
@@ -166,7 +166,7 @@ ___
 
 
 
-*Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
+*Defined in [functions.ts:178](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L178)*
 
 
 
@@ -229,7 +229,7 @@ ___
 
 
 
-*Defined in [functions.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L78)*
+*Defined in [functions.ts:80](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L80)*
 
 
 
@@ -265,7 +265,7 @@ ___
 
 
 
-*Defined in [functions.ts:121](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L121)*
+*Defined in [functions.ts:123](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L123)*
 
 
 
@@ -335,7 +335,7 @@ ___
 
 
 
-*Defined in [functions.ts:88](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L88)*
+*Defined in [functions.ts:90](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L90)*
 
 
 
@@ -357,7 +357,7 @@ This is the first signature of a function with multiple signatures.
 
 
 
-*Defined in [functions.ts:96](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L96)*
+*Defined in [functions.ts:98](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L98)*
 
 
 

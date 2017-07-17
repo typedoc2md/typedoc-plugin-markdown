@@ -13,7 +13,7 @@ This is the module extending the function moduleFunction().
 
 
 
-*Defined in [functions.ts:130](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L130)*
+*Defined in [functions.ts:132](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L132)*
 
 
 
@@ -57,7 +57,7 @@ This is a function that is extended by a module.
 
 **●  functionVariable**:  *`string`* 
 
-*Defined in [functions.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L140)*
+*Defined in [functions.ts:142](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L142)*
 
 
 
@@ -79,7 +79,7 @@ ___
 
 
 
-*Defined in [functions.ts:145](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L145)*
+*Defined in [functions.ts:147](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L147)*
 
 
 
@@ -105,7 +105,7 @@ ___
 
 
 
-*Defined in [functions.ts:152](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L152)*
+*Defined in [functions.ts:154](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L154)*
 
 
 

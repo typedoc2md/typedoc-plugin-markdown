@@ -55,7 +55,9 @@ export function functionWithOptionalValue(requiredParam:string, optionalParam?:s
 /**
  * This is a function with a parameter that has a default value.
  *
- * @param value  An optional return value.
+ * @param valueA  Comment for value A.
+ * @param valueC Comment for value C
+ * @param valueE Comment for value E
  * @returns The input value or the default value.
  */
 export function functionWithDefaults(
@@ -63,7 +65,7 @@ export function functionWithDefaults(
     valueB:number = 100,
     valueC:number = Number.NaN,
     valueD:boolean = true,
-    valueE:boolean = false
+    valueE
 ):string {
     return valueA;
 }
@@ -99,7 +101,7 @@ export function multipleSignatures(value: {name:string}): string;
  * This is the actual implementation, this comment will not be visible
  * in the generated documentation.
  */
-export function multipleSignatures():string {
+export function multipleSignatures(): string {
     if (arguments.length > 0) {
         if (typeof arguments[0] == 'object') {
             return arguments[0].name;
@@ -118,7 +120,7 @@ export function multipleSignatures():string {
  * @param value  The typed value.
  * @return  Returns the typed value.
  */
-export function genericFunction<T>(value:T):T {
+export function genericFunction<T>(value: T): T {
     return value;
 }
 
@@ -127,17 +129,17 @@ export function genericFunction<T>(value:T):T {
  *
  * @param arg An argument.
  */
-export function moduleFunction(arg:string):string { return ''; }
+export function moduleFunction(arg:string): string { return ''; }
 
 /**
  * This is the module extending the function moduleFunction().
  */
-export module moduleFunction
+export namespace moduleFunction
 {
     /**
      * This variable is appended to a function.
      */
-    var functionVariable:string;
+    let functionVariable: string;
 
     /**
      * This function is appended to another function.
@@ -161,8 +163,8 @@ export module moduleFunction
 export function createSomething() {
     return {
         foo: 'bar',
-        doSomething: (a:number) => a + 1,
-        doAnotherThing: () => {}
+        doSomething: (a: number) => a + 1,
+        doAnotherThing: () => {},
     };
 }
 

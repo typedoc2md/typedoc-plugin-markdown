@@ -189,7 +189,7 @@ ___
 
 
 
-*Defined in [functions.ts:161](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-161)*
+*Defined in [functions.ts:163](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-163)*
 
 
 
@@ -272,12 +272,12 @@ ___
 
 ###  functionWithDefaults
 
-► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE?: *`boolean`*): `string`
+► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE: *`any`*): `string`
 
 
 
 
-*Defined in [functions.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-61)*
+*Defined in [functions.ts:63](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-63)*
 
 
 
@@ -288,11 +288,11 @@ This is a function with a parameter that has a default value.
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| valueA | `string`  | &quot;defaultValue&quot; |   - |
+| valueA | `string`  | &quot;defaultValue&quot; |   Comment for value A. |
 | valueB | `number`  | 100 |   - |
-| valueC | `number`  |  Number.NaN |   - |
+| valueC | `number`  |  Number.NaN |   Comment for value C |
 | valueD | `boolean`  | true |   - |
-| valueE | `boolean`  | false |   - |
+| valueE | `any`  | - |   Comment for value E |
 
 
 
@@ -317,7 +317,7 @@ ___
 
 
 
-*Defined in [functions.ts:176](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-176)*
+*Defined in [functions.ts:178](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-178)*
 
 
 
@@ -380,7 +380,7 @@ ___
 
 
 
-*Defined in [functions.ts:78](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-78)*
+*Defined in [functions.ts:80](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-80)*
 
 
 
@@ -416,7 +416,7 @@ ___
 
 
 
-*Defined in [functions.ts:121](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-121)*
+*Defined in [functions.ts:123](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-123)*
 
 
 
@@ -486,7 +486,7 @@ ___
 
 
 
-*Defined in [functions.ts:88](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-88)*
+*Defined in [functions.ts:90](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-90)*
 
 
 
@@ -508,7 +508,7 @@ This is the first signature of a function with multiple signatures.
 
 
 
-*Defined in [functions.ts:96](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-96)*
+*Defined in [functions.ts:98](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-98)*
 
 
 

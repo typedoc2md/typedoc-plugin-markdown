@@ -13,6 +13,9 @@ export function getParametersTableHeaders(parameters: any) {
   let headers;
   if (hasDefaultValues) {
     headers = ['Param', 'Type', 'Default value', 'Description'];
+    parameters.forEach((param: any) => {
+      param.defaultValue = param.defaultValue ? param.defaultValue : '-';
+     });
   } else {
     headers = ['Param', 'Type', 'Description'];
   }

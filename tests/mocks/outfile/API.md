@@ -3658,7 +3658,7 @@ ___
 
 ###  functionWithDefaults
 
-► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE?: *`boolean`*): `string`
+► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE: *`any`*): `string`
 
 
 
@@ -3673,11 +3673,11 @@ This is a function with a parameter that has a default value.
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| valueA | `string`  | &quot;defaultValue&quot; |   - |
+| valueA | `string`  | &quot;defaultValue&quot; |   Comment for value A. |
 | valueB | `number`  | 100 |   - |
-| valueC | `number`  |  Number.NaN |   - |
+| valueC | `number`  |  Number.NaN |   Comment for value C |
 | valueD | `boolean`  | true |   - |
-| valueE | `boolean`  | false |   - |
+| valueE | `any`  | - |   Comment for value E |
 
 
 
