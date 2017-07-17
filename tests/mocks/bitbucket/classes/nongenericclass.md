@@ -61,12 +61,12 @@ Constructor short text.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| p1 | `any` | Constructor param |
-| p2 | [SubClassB](subclassb.md) | Private string property |
-| p3 | `number` | Public number property |
-| p4 | `number` | Public implicit any property |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| p1 | `any`   |  Constructor param |
+| p2 | [SubClassB](subclassb.md)   |  Private string property |
+| p3 | `number`   |  Public number property |
+| p4 | `number`   |  Public implicit any property |
 
 
 
@@ -177,9 +177,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | [SubClassB](subclassb.md) | [[getValue]] is the counterpart. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | [SubClassB](subclassb.md)   |  [[getValue]] is the counterpart. |
 
 
 

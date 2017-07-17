@@ -40,7 +40,7 @@
 
 ###  SearchFunc
 
-** SearchFunc**:  *function* 
+**Τ SearchFunc**:  *function* 
 
 *Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
@@ -55,10 +55,10 @@
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| source | `string` | - |
-| subString | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| source | `string`   |  - |
+| subString | `string`   |  - |
 
 
 
@@ -120,11 +120,11 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| ctor | [ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md) | - |
-| hour | `number` | - |
-| minute | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| ctor | [ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md)   |  - |
+| hour | `number`   |  - |
+| minute | `number`   |  - |
 
 
 

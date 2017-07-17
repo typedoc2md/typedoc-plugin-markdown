@@ -54,10 +54,10 @@
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
-| department | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
+| department | `string`   |  - |
 
 
 

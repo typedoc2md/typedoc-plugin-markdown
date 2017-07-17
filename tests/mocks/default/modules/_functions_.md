@@ -99,11 +99,11 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| paramZ | `string` | This is a string parameter. |
-| paramG | `any` | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md) | This is a **parameter** pointing to an interface. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| paramZ | `string`   |  This is a string parameter. |
+| paramG | `any`   |  This is a parameter flagged with any.    This sentence is placed in the next line. |
+| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md)   |  This is a **parameter** pointing to an interface. |
 
 
 
@@ -135,13 +135,13 @@ This is a function with a parameter that has a default value.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| valueA | `string` | Default value = &quot;defaultValue&quot;.- |
-| valueB | `number` | Default value = 100.- |
-| valueC | `number` | Default value =  Number.NaN.- |
-| valueD | `boolean` | Default value = true.- |
-| valueE | `boolean` | Default value = false.- |
+| Param | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| valueA | `string`  | &quot;defaultValue&quot; |   - |
+| valueB | `number`  | 100 |   - |
+| valueC | `number`  |  Number.NaN |   - |
+| valueD | `boolean`  | true |   - |
+| valueE | `boolean`  | false |   - |
 
 
 
@@ -203,10 +203,10 @@ This is a function with a parameter that is optional.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| requiredParam | `string` | A normal parameter. |
-| optionalParam | `string` | An optional parameter. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| requiredParam | `string`   |  A normal parameter. |
+| optionalParam | `string`   |  An optional parameter. |
 
 
 
@@ -238,9 +238,9 @@ This is a function with rest parameter.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| rest | `string`[] | Multiple strings. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| rest | `string`[]   |  Multiple strings. |
 
 
 
@@ -280,9 +280,9 @@ The type parameter.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `T` | The typed value. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `T`   |  The typed value. |
 
 
 
@@ -344,9 +344,9 @@ This is the first signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | The name value. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  The name value. |
 
 
 
@@ -366,9 +366,9 @@ This is the second signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | object | An object containing the name value. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | object   |  An object containing the name value. |
 
 
 
@@ -400,11 +400,11 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| paramZ | `string` | This is a string parameter. |
-| paramG | `any` | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md) | This is a **parameter** pointing to an interface. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| paramZ | `string`   |  This is a string parameter. |
+| paramG | `any`   |  This is a parameter flagged with any.    This sentence is placed in the next line. |
+| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md)   |  This is a **parameter** pointing to an interface. |
 
 
 

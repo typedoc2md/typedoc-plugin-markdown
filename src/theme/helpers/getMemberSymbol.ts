@@ -11,6 +11,9 @@ export function getMemberSymbol(kindString: string) {
     case 'Call signature':
       symbol = '► ';
       break;
+    case 'Type alias':
+      symbol = 'Τ';
+      break;
     case 'Property':
     case 'Variable':
       symbol = '● ';

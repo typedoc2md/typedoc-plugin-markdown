@@ -40,7 +40,7 @@
 
 ###  SearchFunc
 
-** SearchFunc**:  *function* 
+**Τ SearchFunc**:  *function* 
 
 *Defined in [interfaces.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-61)*
 
@@ -55,10 +55,10 @@
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| source | `string` | - |
-| subString | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| source | `string`   |  - |
+| subString | `string`   |  - |
 
 
 
@@ -120,11 +120,11 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| ctor | [ClockConstructor](../interfaces/interfaces.clockconstructor.md) | - |
-| hour | `number` | - |
-| minute | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| ctor | [ClockConstructor](../interfaces/interfaces.clockconstructor.md)   |  - |
+| hour | `number`   |  - |
+| minute | `number`   |  - |
 
 
 

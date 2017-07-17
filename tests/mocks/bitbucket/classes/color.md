@@ -47,11 +47,11 @@
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| r | `number` | - |
-| g | `number` | - |
-| b | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| r | `number`   |  - |
+| g | `number`   |  - |
+| b | `number`   |  - |
 
 
 
@@ -192,10 +192,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Color](color.md) | - |
-| v2 | [Color](color.md) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Color](color.md)   |  - |
+| v2 | [Color](color.md)   |  - |
 
 
 
@@ -224,10 +224,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| k | `number` | - |
-| v | [Color](color.md) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| k | `number`   |  - |
+| v | [Color](color.md)   |  - |
 
 
 
@@ -256,10 +256,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Color](color.md) | - |
-| v2 | [Color](color.md) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Color](color.md)   |  - |
+| v2 | [Color](color.md)   |  - |
 
 
 
@@ -288,9 +288,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| c | [Color](color.md) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| c | [Color](color.md)   |  - |
 
 
 

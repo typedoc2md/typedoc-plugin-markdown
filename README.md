@@ -39,7 +39,9 @@ For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 
 ## Example output
 
-<pre>
+### The following DocComments:
+
+```javascript
 /**
  * This is a function with multiple arguments and a return value.
  * @param paramZ  This is a string parameter.
@@ -49,8 +51,9 @@ For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 export function functionWithArguments(paramZ:string, paramG:any):number {
     return 0;
 }
- </pre>
+```
  
+### Will generate the following output:
 
 ► **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*): `number`
 
@@ -67,7 +70,9 @@ This is a function with multiple arguments and a return value.
 
 **Returns:** `number`
 
-Browse the <a href="https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/tests/mocks/default">test mocks</a> to view further examples. 
+## Samples
+
+Browse some <a href="https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/tests/mocks/default">mocked samples</a> to view further examples of generated output. 
 
 ## Acknowledgements
 

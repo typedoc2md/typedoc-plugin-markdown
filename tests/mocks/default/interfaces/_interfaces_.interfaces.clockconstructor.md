@@ -19,10 +19,10 @@
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| hour | `number` | - |
-| minute | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| hour | `number`   |  - |
+| minute | `number`   |  - |
 
 
 

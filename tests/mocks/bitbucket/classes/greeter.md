@@ -37,9 +37,9 @@
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| message | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| message | `string`   |  - |
 
 
 

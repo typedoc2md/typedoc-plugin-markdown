@@ -106,6 +106,10 @@ ___
 
 ## Object literal: aMixedObject
 
+
+This is an object with various types
+
+
 <a id="amixedobject.somenumber"></a>
 
 ###  someNumber
