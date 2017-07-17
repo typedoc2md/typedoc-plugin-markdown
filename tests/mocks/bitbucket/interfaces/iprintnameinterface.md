@@ -90,9 +90,9 @@ It should be inherited by all subinterfaces.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  - |
 
 
 

@@ -30,9 +30,9 @@ This is an internal class, it is not exported.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| options | object | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| options | object   |  - |
 
 
 

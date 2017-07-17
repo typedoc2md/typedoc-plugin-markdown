@@ -75,9 +75,9 @@ This is a simple example on how to use BaseClass.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
@@ -92,9 +92,9 @@ This is a simple example on how to use BaseClass.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| source | [BaseClass](baseclass.md) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| source | [BaseClass](baseclass.md)   |  - |
 
 
 
@@ -162,10 +162,10 @@ This is a simple fat arrow function.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| param2 | `string` | The second parameter needed by this function. |
-| param1 | `number` | The first parameter needed by this function. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| param2 | `string`   |  The second parameter needed by this function. |
+| param1 | `number`   |  The first parameter needed by this function. |
 
 
 
@@ -231,9 +231,9 @@ It should be inherited by all subclasses.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | The new name. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  The new name. |
 
 
 
@@ -264,12 +264,12 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| originalValues | [BaseClass](baseclass.md) | - |
-| newRecord | `any` | - |
-| fieldNames | `string`[] | - |
-| mandatoryFields | `string`[] | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| originalValues | [BaseClass](baseclass.md)   |  - |
+| newRecord | `any`   |  - |
+| fieldNames | `string`[]   |  - |
+| mandatoryFields | `string`[]   |  - |
 
 
 

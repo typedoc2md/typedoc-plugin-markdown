@@ -310,10 +310,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| hour | `number` | - |
-| minute | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| hour | `number`   |  - |
+| minute | `number`   |  - |
 
 
 
@@ -364,9 +364,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| d | `Date` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| d | `Date`   |  - |
 
 
 
@@ -542,7 +542,7 @@ ___
 
 ###  SearchFunc
 
-** SearchFunc**:  *function* 
+**Τ SearchFunc**:  *function* 
 
 
 
@@ -555,10 +555,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| source | `string` | - |
-| subString | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| source | `string`   |  - |
+| subString | `string`   |  - |
 
 
 
@@ -623,11 +623,11 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| ctor | [ClockConstructor](#interface-clockconstructor) | - |
-| hour | `number` | - |
-| minute | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| ctor | [ClockConstructor](#interface-clockconstructor)   |  - |
+| hour | `number`   |  - |
+| minute | `number`   |  - |
 
 
 
@@ -668,9 +668,9 @@ This is a function that is extended by a module.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| arg | `string` | An argument. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| arg | `string`   |  An argument. |
 
 
 
@@ -853,9 +853,9 @@ This is a simple example on how to use BaseClass.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
@@ -869,9 +869,9 @@ This is a simple example on how to use BaseClass.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| source | [BaseClass](#class-baseclass) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| source | [BaseClass](#class-baseclass)   |  - |
 
 
 
@@ -987,10 +987,10 @@ This is a simple fat arrow function.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| param2 | `string` | The second parameter needed by this function. |
-| param1 | `number` | The first parameter needed by this function. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| param2 | `string`   |  The second parameter needed by this function. |
+| param1 | `number`   |  The first parameter needed by this function. |
 
 
 
@@ -1077,9 +1077,9 @@ It should be inherited by all subclasses.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | The new name. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  The new name. |
 
 
 
@@ -1109,12 +1109,12 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| originalValues | [BaseClass](#class-baseclass) | - |
-| newRecord | `any` | - |
-| fieldNames | `string`[] | - |
-| mandatoryFields | `string`[] | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| originalValues | [BaseClass](#class-baseclass)   |  - |
+| newRecord | `any`   |  - |
+| fieldNames | `string`[]   |  - |
+| mandatoryFields | `string`[]   |  - |
 
 
 
@@ -1238,11 +1238,11 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| r | `number` | - |
-| g | `number` | - |
-| b | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| r | `number`   |  - |
+| g | `number`   |  - |
+| b | `number`   |  - |
 
 
 
@@ -1380,10 +1380,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Color](#class-color) | - |
-| v2 | [Color](#class-color) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Color](#class-color)   |  - |
+| v2 | [Color](#class-color)   |  - |
 
 
 
@@ -1411,10 +1411,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| k | `number` | - |
-| v | [Color](#class-color) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| k | `number`   |  - |
+| v | [Color](#class-color)   |  - |
 
 
 
@@ -1442,10 +1442,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Color](#class-color) | - |
-| v2 | [Color](#class-color) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Color](#class-color)   |  - |
+| v2 | [Color](#class-color)   |  - |
 
 
 
@@ -1473,9 +1473,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| c | [Color](#class-color) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| c | [Color](#class-color)   |  - |
 
 
 
@@ -1546,10 +1546,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
-| department | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
+| department | `string`   |  - |
 
 
 
@@ -1709,12 +1709,12 @@ Constructor short text.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| p1 | `any` | Constructor param |
-| p2 | `T` | Private string property |
-| p3 | `number` | Public number property |
-| p4 | `number` | Public implicit any property |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| p1 | `any`   |  Constructor param |
+| p2 | `T`   |  Private string property |
+| p3 | `number`   |  Public number property |
+| p4 | `number`   |  Public implicit any property |
 
 
 
@@ -1832,9 +1832,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `T` | [[getValue]] is the counterpart. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `T`   |  [[getValue]] is the counterpart. |
 
 
 
@@ -1890,9 +1890,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| message | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| message | `string`   |  - |
 
 
 
@@ -1982,9 +1982,9 @@ This is an internal class, it is not exported.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| options | object | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| options | object   |  - |
 
 
 
@@ -2058,12 +2058,12 @@ Constructor short text.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| p1 | `any` | Constructor param |
-| p2 | [SubClassB](#class-subclassb) | Private string property |
-| p3 | `number` | Public number property |
-| p4 | `number` | Public implicit any property |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| p1 | `any`   |  Constructor param |
+| p2 | [SubClassB](#class-subclassb)   |  Private string property |
+| p3 | `number`   |  Public number property |
+| p4 | `number`   |  Public implicit any property |
 
 
 
@@ -2165,9 +2165,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | [SubClassB](#class-subclassb) | [[getValue]] is the counterpart. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | [SubClassB](#class-subclassb)   |  [[getValue]] is the counterpart. |
 
 
 
@@ -2231,9 +2231,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
@@ -2344,9 +2344,9 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
@@ -2360,9 +2360,9 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| source | [BaseClass](#class-baseclass) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| source | [BaseClass](#class-baseclass)   |  - |
 
 
 
@@ -2443,9 +2443,9 @@ Sets the name. See [BaseClass.name](#baseclass.name-1).
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | The new name. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  The new name. |
 
 
 
@@ -2499,9 +2499,9 @@ Sets the name. See [BaseClass.name](#baseclass.name-1).
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | The new name. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  The new name. |
 
 
 
@@ -2537,10 +2537,10 @@ This is a simple fat arrow function.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| param2 | `string` | The second parameter needed by this function. |
-| param1 | `number` | The first parameter needed by this function. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| param2 | `string`   |  The second parameter needed by this function. |
+| param1 | `number`   |  The first parameter needed by this function. |
 
 
 
@@ -2600,9 +2600,9 @@ This is a simple interface function.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  - |
 
 
 
@@ -2660,9 +2660,9 @@ It should be inherited by all subclasses.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | The new name. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  The new name. |
 
 
 
@@ -2692,12 +2692,12 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| originalValues | [BaseClass](#class-baseclass) | - |
-| newRecord | `any` | - |
-| fieldNames | `string`[] | - |
-| mandatoryFields | `string`[] | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| originalValues | [BaseClass](#class-baseclass)   |  - |
+| newRecord | `any`   |  - |
+| fieldNames | `string`[]   |  - |
+| mandatoryFields | `string`[]   |  - |
 
 
 
@@ -2840,9 +2840,9 @@ The constructor of the original class should be overwritten.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
@@ -2911,10 +2911,10 @@ This is a simple fat arrow function.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| param2 | `string` | The second parameter needed by this function. |
-| param1 | `number` | The first parameter needed by this function. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| param2 | `string`   |  The second parameter needed by this function. |
+| param1 | `number`   |  The first parameter needed by this function. |
 
 
 
@@ -2942,9 +2942,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | [`string`,[SubClassA](#class-subclassa),[SubClassB](#class-subclassb)] | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | [`string`,[SubClassA](#class-subclassa),[SubClassB](#class-subclassb)]   |  - |
 
 
 
@@ -3006,9 +3006,9 @@ It should be inherited by all subclasses.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | The new name. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  The new name. |
 
 
 
@@ -3038,12 +3038,12 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| originalValues | [BaseClass](#class-baseclass) | - |
-| newRecord | `any` | - |
-| fieldNames | `string`[] | - |
-| mandatoryFields | `string`[] | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| originalValues | [BaseClass](#class-baseclass)   |  - |
+| newRecord | `any`   |  - |
+| fieldNames | `string`[]   |  - |
+| mandatoryFields | `string`[]   |  - |
 
 
 
@@ -3165,11 +3165,11 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| x | `number` | - |
-| y | `number` | - |
-| z | `number` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| x | `number`   |  - |
+| y | `number`   |  - |
+| z | `number`   |  - |
 
 
 
@@ -3242,10 +3242,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Vector](#class-vector) | - |
-| v2 | [Vector](#class-vector) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Vector](#class-vector)   |  - |
+| v2 | [Vector](#class-vector)   |  - |
 
 
 
@@ -3273,10 +3273,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Vector](#class-vector) | - |
-| v2 | [Vector](#class-vector) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Vector](#class-vector)   |  - |
+| v2 | [Vector](#class-vector)   |  - |
 
 
 
@@ -3304,9 +3304,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v | [Vector](#class-vector) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v | [Vector](#class-vector)   |  - |
 
 
 
@@ -3334,10 +3334,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Vector](#class-vector) | - |
-| v2 | [Vector](#class-vector) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Vector](#class-vector)   |  - |
+| v2 | [Vector](#class-vector)   |  - |
 
 
 
@@ -3365,9 +3365,9 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v | [Vector](#class-vector) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v | [Vector](#class-vector)   |  - |
 
 
 
@@ -3395,10 +3395,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| v1 | [Vector](#class-vector) | - |
-| v2 | [Vector](#class-vector) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| v1 | [Vector](#class-vector)   |  - |
+| v2 | [Vector](#class-vector)   |  - |
 
 
 
@@ -3426,10 +3426,10 @@ ___
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| k | `number` | - |
-| v | [Vector](#class-vector) | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| k | `number`   |  - |
+| v | [Vector](#class-vector)   |  - |
 
 
 
@@ -3636,11 +3636,11 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| paramZ | `string` | This is a string parameter. |
-| paramG | `any` | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA | [INameInterface](#interface-inameinterface) | This is a **parameter** pointing to an interface. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| paramZ | `string`   |  This is a string parameter. |
+| paramG | `any`   |  This is a parameter flagged with any.    This sentence is placed in the next line. |
+| paramA | [INameInterface](#interface-inameinterface)   |  This is a **parameter** pointing to an interface. |
 
 
 
@@ -3671,13 +3671,13 @@ This is a function with a parameter that has a default value.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| valueA | `string` | Default value = &quot;defaultValue&quot;.- |
-| valueB | `number` | Default value = 100.- |
-| valueC | `number` | Default value =  Number.NaN.- |
-| valueD | `boolean` | Default value = true.- |
-| valueE | `boolean` | Default value = false.- |
+| Param | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| valueA | `string`  | &quot;defaultValue&quot; |   - |
+| valueB | `number`  | 100 |   - |
+| valueC | `number`  |  Number.NaN |   - |
+| valueD | `boolean`  | true |   - |
+| valueE | `boolean`  | false |   - |
 
 
 
@@ -3737,10 +3737,10 @@ This is a function with a parameter that is optional.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| requiredParam | `string` | A normal parameter. |
-| optionalParam | `string` | An optional parameter. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| requiredParam | `string`   |  A normal parameter. |
+| optionalParam | `string`   |  An optional parameter. |
 
 
 
@@ -3771,9 +3771,9 @@ This is a function with rest parameter.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| rest | `string`[] | Multiple strings. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| rest | `string`[]   |  Multiple strings. |
 
 
 
@@ -3812,9 +3812,9 @@ The type parameter.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `T` | The typed value. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `T`   |  The typed value. |
 
 
 
@@ -3874,9 +3874,9 @@ This is the first signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | The name value. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  The name value. |
 
 
 
@@ -3895,9 +3895,9 @@ This is the second signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | object | An object containing the name value. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | object   |  An object containing the name value. |
 
 
 
@@ -3975,11 +3975,11 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| paramZ | `string` | This is a string parameter. |
-| paramG | `any` | This is a parameter flagged with any.    This sentence is placed in the next line. |
-| paramA | [INameInterface](#interface-inameinterface) | This is a **parameter** pointing to an interface. |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| paramZ | `string`   |  This is a string parameter. |
+| paramG | `any`   |  This is a parameter flagged with any.    This sentence is placed in the next line. |
+| paramA | [INameInterface](#interface-inameinterface)   |  This is a **parameter** pointing to an interface. |
 
 
 
@@ -4000,6 +4000,10 @@ ___
 <a id="amixedobject"></a>
 
 ## Object literal: aMixedObject
+
+
+This is an object with various types
+
 
 <a id="amixedobject.somenumber"></a>
 
@@ -4315,9 +4319,9 @@ It should be inherited by all subinterfaces.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  - |
 
 
 
@@ -4429,9 +4433,9 @@ It should be inherited by all subinterfaces.
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| value | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value | `string`   |  - |
 
 
 

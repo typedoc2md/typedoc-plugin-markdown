@@ -45,9 +45,9 @@
 
 **Parameters:**
 
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| name | `string` | - |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
