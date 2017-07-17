@@ -4,6 +4,7 @@
     "quotemark": [
       true,
       "single"
-    ]
+    ],
+    "no-console": [false]
   }
 }
