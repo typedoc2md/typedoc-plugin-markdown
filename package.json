@@ -53,5 +53,10 @@
   },
   "dependencies": {
     "to-markdown": "^3.0.4"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "typescript"
+    ]
   }
 }
