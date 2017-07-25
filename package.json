@@ -9,9 +9,8 @@
   "scripts": {
     "copy:static": "copyfiles --up 1 src/**/*.hbs dist/",
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
-    "compiletests": "npm run compiletest:default && npm run compiletest:outfile && npm run compiletest:bitbucket",
+    "compiletests": "npm run compiletest:default && npm run compiletest:bitbucket",
     "compiletest:default": "typedoc  --tsconfig tests/src/tsconfig.json --options tests/config.core.json --out tests/out/default",
-    "compiletest:outfile": "typedoc --tsconfig  tests/src/tsconfig.json --readme none --mode file --mdOutFile API.md --mdHideSources --options tests/config.core.json --out tests/out/outfile",
     "compiletest:bitbucket": "typedoc --tsconfig  tests/src/tsconfig.json --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name' --options tests/config.core.json --out tests/out/bitbucket",
     "lint": "tslint --type-check --project tsconfig.json",
     "prepare": "rm -rf dist && tsc && npm run copy:static",

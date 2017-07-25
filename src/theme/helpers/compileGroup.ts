@@ -15,23 +15,16 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
 
   if (!group.allChildrenArePrivate) {
     let displayTitle = true;
-    const isSinglePage = options.mdOutFile !== undefined;
-    let displayBackLink = isSinglePage;
+
     const isMainTitle = options.mode === 0 && parent === undefined;
 
     if (
-      group.kind === ReflectionKind.ObjectLiteral ||
-      isSinglePage && group.kind === ReflectionKind.ExternalModule ||
-      isSinglePage && group.kind === ReflectionKind.Module ||
-      isSinglePage && group.kind === ReflectionKind.Interface ||
-      isSinglePage && group.kind === ReflectionKind.Class ||
-      isSinglePage && group.kind === ReflectionKind.Enum) {
+      group.kind === ReflectionKind.ObjectLiteral) {
       displayTitle = false;
-      displayBackLink = false;
     }
 
     md = ThemeService.compilePartial(`members.group.hbs`,
-    Object.assign(group, { displayTitle, isMainTitle, displayBackLink }));
+    Object.assign(group, { displayTitle, isMainTitle }));
   }
 
   return md;

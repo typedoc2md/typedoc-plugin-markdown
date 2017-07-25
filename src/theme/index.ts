@@ -106,7 +106,7 @@ export class MarkdownTheme extends DefaultTheme {
     reflection.hasOwnDocument = false;
 
     reflection.traverse((child: any) => {
-      if (child instanceof DeclarationReflection || options.mdOutFile) {
+      if (child instanceof DeclarationReflection) {
         MarkdownTheme.applyAnchorUrl(child, container);
       }
     });
@@ -149,7 +149,6 @@ export class MarkdownTheme extends DefaultTheme {
    */
   public getUrls(project: ProjectReflection): UrlMapping[] {
 
-    const options = ThemeService.getOptions();
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
 
@@ -160,35 +159,18 @@ export class MarkdownTheme extends DefaultTheme {
       displayReadme: this.application.options.getValue('readme') !== 'none',
       hideBreadcrumbs: true,
       isIndex: true,
-      isSinglePage: options.mdOutFile,
     };
-
-    if (options.mdOutFile && options.mode === 0) {
-      entryPoint.groups.forEach((group: any, i: number) => {
-        if (group.kind === ReflectionKind.Interface) {
-          entryPoint.groups.push(entryPoint.groups.splice(i, 1)[0]);
-        }
-      });
-    }
 
     const context = Object.assign(entryPoint, additionalContext);
 
-    if (options.mdOutFile) {
-      urls.push(new UrlMapping(options.mdOutFile, context, 'reflection.hbs'));
+    urls.push(new UrlMapping('README.md', context, 'reflection.hbs'));
 
-      entryPoint.children.forEach((child: DeclarationReflection) => {
-        MarkdownTheme.applyAnchorUrl(child, child.parent);
-      });
-    } else {
-
-      urls.push(new UrlMapping('README.md', context, 'reflection.hbs'));
-
-      if (entryPoint.children) {
+    if (entryPoint.children) {
         entryPoint.children.forEach((child: DeclarationReflection) => {
           MarkdownTheme.buildUrls(child, urls);
         });
       }
-    }
+
     return urls;
   }
 

@@ -7,14 +7,9 @@ import { ThemeService } from '../service';
  * @param member
  */
 export function compileIndex(member: DeclarationReflection) {
-
-  const options = ThemeService.getOptions();
   let md = '';
   if (member.kind !== ReflectionKind.Interface) {
-    if (!options.mdOutFile || (options.mdOutFile && !options.mdHideIndexes)) {
       md = ThemeService.compilePartial('index.hbs', Object.assign(member));
-    }
   }
-
   return md;
 }

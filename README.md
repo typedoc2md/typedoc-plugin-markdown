@@ -28,8 +28,6 @@ The plugin exposes the following additional arguments:
 
 * `--mdFlavour<github|bitbucket>`<br />
 Specifies the markdown rendering engine.  Defaults to `github`.
-* `--mdOutFile <fileName.md>`<br />
-Compiles output to a single file (only suitable for small scripts). Defaults to multi file output.
 * `--mdHideSources`<br />
 Suppress sources from output 
 * `--mdSourceRepo<path.to.repo>`<br />

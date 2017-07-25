@@ -60,14 +60,6 @@ describe('Compile Bitbucket Flavoured Markdown', () => {
 
 });
 
-describe('Compile Markdown To Single File', () => {
-
-  it('should compile', () => {
-    expectFileToEqualMock('API.md', 'outfile');
-  });
-
-});
-
 function expectFileToEqualMock(fileName, testNum) {
   expect(file(`${compiledDirRoot}/${testNum}/${fileName}`)).to.equal(file(`${expectedDirRoot}/${testNum}/${fileName}`));
 }

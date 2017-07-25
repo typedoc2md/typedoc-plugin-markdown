@@ -8,14 +8,6 @@
 {{#each children}}
 | {{ name }} | {{#with type}}{{>type}}{{/with}}{{#with type.declaration}} {{#if signatures}}{{#each signatures}}{{> member.signature.title hideName=true }}{{/each}}{{/if}}{{/with}}
 {{/each}}
-{{#if ../displayBackLink}}
-----
-{{getNewLine}}
-{{> backLink}}
-{{getNewLine}}
-----
-{{getNewLine}}
-{{/if}}
 {{getNewLine}}
 {{else}}
 {{{ compileGroup this}}}
