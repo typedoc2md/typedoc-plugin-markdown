@@ -13,7 +13,7 @@ This is the module extending the function moduleFunction().
 
 
 
-*Defined in [functions.ts:132](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-132)*
+*Defined in [functions.ts:125](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-125)*
 
 
 
@@ -57,7 +57,7 @@ This is a function that is extended by a module.
 
 **●  functionVariable**:  *`string`* 
 
-*Defined in [functions.ts:142](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-142)*
+*Defined in [functions.ts:134](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-134)*
 
 
 
@@ -79,7 +79,7 @@ ___
 
 
 
-*Defined in [functions.ts:147](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-147)*
+*Defined in [functions.ts:139](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-139)*
 
 
 
@@ -105,7 +105,7 @@ ___
 
 
 
-*Defined in [functions.ts:154](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-154)*
+*Defined in [functions.ts:146](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-146)*
 
 
 

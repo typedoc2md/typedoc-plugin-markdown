@@ -11,6 +11,16 @@
 * [moduleFunction](_functions_.modulefunction.md)
 
 
+### Interfaces
+
+* [IGameEvent](../interfaces/_functions_.igameevent.md)
+
+
+### Variables
+
+* [Promise](_functions_.md#promise)
+
+
 ### Functions
 
 * [createSomething](_functions_.md#createsomething)
@@ -23,11 +33,31 @@
 * [genericFunction](_functions_.md#genericfunction)
 * [internalFunction](_functions_.md#internalfunction)
 * [multipleSignatures](_functions_.md#multiplesignatures)
+* [returnTypeAny](_functions_.md#returntypeany)
+* [returnTypeInterface](_functions_.md#returntypeinterface)
+* [returnTypeInterfaceWithPromise](_functions_.md#returntypeinterfacewithpromise)
+* [returnTypeObject](_functions_.md#returntypeobject)
 * [variableFunction](_functions_.md#variablefunction)
 
 
 
 ---
+## Variables
+<a id="promise"></a>
+
+###  Promise
+
+**●  Promise**:  *`any`* 
+
+*Defined in [functions.ts:176](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
+
+
+
+
+
+___
+
+
 ## Functions
 <a id="createsomething"></a>
 
@@ -38,7 +68,7 @@
 
 
 
-*Defined in [functions.ts:163](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L163)*
+*Defined in [functions.ts:155](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L155)*
 
 
 
@@ -64,7 +94,7 @@ ___
 
 
 
-*Defined in [functions.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L12)*
+*Defined in [functions.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L11)*
 
 
 
@@ -90,7 +120,7 @@ ___
 
 
 
-*Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L41)*
+*Defined in [functions.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L38)*
 
 
 
@@ -126,7 +156,7 @@ ___
 
 
 
-*Defined in [functions.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L63)*
+*Defined in [functions.ts:58](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L58)*
 
 
 
@@ -166,7 +196,7 @@ ___
 
 
 
-*Defined in [functions.ts:178](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L178)*
+*Defined in [functions.ts:170](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L170)*
 
 
 
@@ -194,7 +224,7 @@ ___
 
 
 
-*Defined in [functions.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L52)*
+*Defined in [functions.ts:48](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L48)*
 
 
 
@@ -229,7 +259,7 @@ ___
 
 
 
-*Defined in [functions.ts:80](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L80)*
+*Defined in [functions.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L74)*
 
 
 
@@ -265,7 +295,7 @@ ___
 
 
 
-*Defined in [functions.ts:123](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L123)*
+*Defined in [functions.ts:116](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L116)*
 
 
 
@@ -335,7 +365,7 @@ ___
 
 
 
-*Defined in [functions.ts:90](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L90)*
+*Defined in [functions.ts:83](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L83)*
 
 
 
@@ -357,7 +387,7 @@ This is the first signature of a function with multiple signatures.
 
 
 
-*Defined in [functions.ts:98](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L98)*
+*Defined in [functions.ts:91](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L91)*
 
 
 
@@ -382,6 +412,106 @@ This is the second signature of a function with multiple signatures.
 
 ___
 
+<a id="returntypeany"></a>
+
+###  returnTypeAny
+
+► **returnTypeAny**(): `Promise`.<`any`>
+
+
+
+
+*Defined in [functions.ts:191](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L191)*
+
+
+
+
+
+**Returns:** `Promise`.<`any`>
+
+
+
+
+
+___
+
+<a id="returntypeinterface"></a>
+
+###  returnTypeInterface
+
+► **returnTypeInterface**(): [IGameEvent](../interfaces/_functions_.igameevent.md)
+
+
+
+
+*Defined in [functions.ts:177](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L177)*
+
+
+
+
+
+**Returns:** [IGameEvent](../interfaces/_functions_.igameevent.md)
+
+
+
+
+
+___
+
+<a id="returntypeinterfacewithpromise"></a>
+
+###  returnTypeInterfaceWithPromise
+
+► **returnTypeInterfaceWithPromise**(): `Promise`.<[IGameEvent](../interfaces/_functions_.igameevent.md)>
+
+
+
+
+*Defined in [functions.ts:183](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L183)*
+
+
+
+
+
+**Returns:** `Promise`.<[IGameEvent](../interfaces/_functions_.igameevent.md)>
+
+
+
+
+
+___
+
+<a id="returntypeobject"></a>
+
+###  returnTypeObject
+
+► **returnTypeObject**(properties: *`object`*): object
+
+
+
+
+*Defined in [functions.ts:201](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L201)*
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| properties | `object`   |  - |
+
+
+
+
+
+**Returns:** object
+
+
+
+
+
+___
+
 <a id="variablefunction"></a>
 
 ###  variableFunction
@@ -391,7 +521,7 @@ ___
 
 
 
-*Defined in [functions.ts:25](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L25)*
+*Defined in [functions.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L23)*
 
 
 

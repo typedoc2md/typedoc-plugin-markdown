@@ -34,6 +34,7 @@
 * [IApiGameFormations](interfaces/iapigameformations.md)
 * [IApiGameSettings](interfaces/iapigamesettings.md)
 * [IApiLeaguePositions](interfaces/iapileaguepositions.md)
+* [IGameEvent](interfaces/igameevent.md)
 * [INameInterface](interfaces/inameinterface.md)
 * [IPrintInterface](interfaces/iprintinterface.md)
 * [IPrintNameInterface](interfaces/iprintnameinterface.md)
@@ -41,6 +42,7 @@
 
 ### Variables
 
+* [Promise](#markdown-header-promise)
 * [amount](#markdown-header-amount)
 * [color](#markdown-header-color)
 * [greeter](#markdown-header-greeter)
@@ -62,6 +64,10 @@
 * [internalFunction](#markdown-header-internalfunction)
 * [multipleSignatures](#markdown-header-multiplesignatures)
 * [publicFunction](#markdown-header-publicfunction)
+* [returnTypeAny](#markdown-header-returntypeany)
+* [returnTypeInterface](#markdown-header-returntypeinterface)
+* [returnTypeInterfaceWithPromise](#markdown-header-returntypeinterfacewithpromise)
+* [returnTypeObject](#markdown-header-returntypeobject)
 * [variableFunction](#markdown-header-variablefunction)
 
 
@@ -73,6 +79,20 @@
 
 ---
 # Variables
+
+
+###  Promise
+
+**●  Promise**:  *`any`* 
+
+*Defined in [functions.ts:176](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-176)*
+
+
+
+
+
+___
+
 
 
 ###  amount
@@ -189,7 +209,7 @@ ___
 
 
 
-*Defined in [functions.ts:163](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-163)*
+*Defined in [functions.ts:155](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-155)*
 
 
 
@@ -215,7 +235,7 @@ ___
 
 
 
-*Defined in [functions.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-12)*
+*Defined in [functions.ts:11](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-11)*
 
 
 
@@ -241,7 +261,7 @@ ___
 
 
 
-*Defined in [functions.ts:41](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-41)*
+*Defined in [functions.ts:38](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-38)*
 
 
 
@@ -277,7 +297,7 @@ ___
 
 
 
-*Defined in [functions.ts:63](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-63)*
+*Defined in [functions.ts:58](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-58)*
 
 
 
@@ -317,7 +337,7 @@ ___
 
 
 
-*Defined in [functions.ts:178](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-178)*
+*Defined in [functions.ts:170](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-170)*
 
 
 
@@ -345,7 +365,7 @@ ___
 
 
 
-*Defined in [functions.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-52)*
+*Defined in [functions.ts:48](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-48)*
 
 
 
@@ -380,7 +400,7 @@ ___
 
 
 
-*Defined in [functions.ts:80](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-80)*
+*Defined in [functions.ts:74](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-74)*
 
 
 
@@ -416,7 +436,7 @@ ___
 
 
 
-*Defined in [functions.ts:123](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-123)*
+*Defined in [functions.ts:116](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-116)*
 
 
 
@@ -486,7 +506,7 @@ ___
 
 
 
-*Defined in [functions.ts:90](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-90)*
+*Defined in [functions.ts:83](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-83)*
 
 
 
@@ -508,7 +528,7 @@ This is the first signature of a function with multiple signatures.
 
 
 
-*Defined in [functions.ts:98](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-98)*
+*Defined in [functions.ts:91](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-91)*
 
 
 
@@ -559,6 +579,106 @@ ___
 
 
 
+###  returnTypeAny
+
+► **returnTypeAny**(): `Promise`.<`any`>
+
+
+
+
+*Defined in [functions.ts:191](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-191)*
+
+
+
+
+
+**Returns:** `Promise`.<`any`>
+
+
+
+
+
+___
+
+
+
+###  returnTypeInterface
+
+► **returnTypeInterface**(): [IGameEvent](interfaces/igameevent.md)
+
+
+
+
+*Defined in [functions.ts:177](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-177)*
+
+
+
+
+
+**Returns:** [IGameEvent](interfaces/igameevent.md)
+
+
+
+
+
+___
+
+
+
+###  returnTypeInterfaceWithPromise
+
+► **returnTypeInterfaceWithPromise**(): `Promise`.<[IGameEvent](interfaces/igameevent.md)>
+
+
+
+
+*Defined in [functions.ts:183](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-183)*
+
+
+
+
+
+**Returns:** `Promise`.<[IGameEvent](interfaces/igameevent.md)>
+
+
+
+
+
+___
+
+
+
+###  returnTypeObject
+
+► **returnTypeObject**(properties: *`object`*): object
+
+
+
+
+*Defined in [functions.ts:201](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-201)*
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| properties | `object`   |  - |
+
+
+
+
+
+**Returns:** object
+
+
+
+
+
+___
+
+
+
 ###  variableFunction
 
 ► **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
@@ -566,7 +686,7 @@ ___
 
 
 
-*Defined in [functions.ts:25](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-25)*
+*Defined in [functions.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-23)*
 
 
 

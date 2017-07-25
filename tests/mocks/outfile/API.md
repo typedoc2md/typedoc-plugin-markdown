@@ -29,6 +29,7 @@
 
 ### Variables
 
+* [Promise](#promise)
 * [amount](#amount)
 * [color](#color)
 * [greeter](#greeter)
@@ -52,6 +53,10 @@
 * [multipleSignatures](#multiplesignatures)
 * [privateFunction](#privatefunction)
 * [publicFunction](#publicfunction)
+* [returnTypeAny](#returntypeany)
+* [returnTypeInterface](#returntypeinterface)
+* [returnTypeInterfaceWithPromise](#returntypeinterfacewithpromise)
+* [returnTypeObject](#returntypeobject)
 * [variableFunction](#variablefunction)
 
 
@@ -67,6 +72,7 @@
 * [IApiGameFormations](#interface-iapigameformations)
 * [IApiGameSettings](#interface-iapigamesettings)
 * [IApiLeaguePositions](#interface-iapileaguepositions)
+* [IGameEvent](#interface-igameevent)
 * [INameInterface](#interface-inameinterface)
 * [IPrintInterface](#interface-iprintinterface)
 * [IPrintNameInterface](#interface-iprintnameinterface)
@@ -3450,6 +3456,19 @@ ___
 
 
 # Variables
+<a id="promise"></a>
+
+###  Promise
+
+**●  Promise**:  *`any`* 
+
+
+
+
+
+
+___
+
 <a id="amount"></a>
 
 ###  amount
@@ -3958,6 +3977,102 @@ ___
 
 ___
 
+<a id="returntypeany"></a>
+
+###  returnTypeAny
+
+► **returnTypeAny**(): `Promise`.<`any`>
+
+
+
+
+
+
+
+
+
+**Returns:** `Promise`.<`any`>
+
+
+
+
+
+___
+
+<a id="returntypeinterface"></a>
+
+###  returnTypeInterface
+
+► **returnTypeInterface**(): [IGameEvent](#interface-igameevent)
+
+
+
+
+
+
+
+
+
+**Returns:** [IGameEvent](#interface-igameevent)
+
+
+
+
+
+___
+
+<a id="returntypeinterfacewithpromise"></a>
+
+###  returnTypeInterfaceWithPromise
+
+► **returnTypeInterfaceWithPromise**(): `Promise`.<[IGameEvent](#interface-igameevent)>
+
+
+
+
+
+
+
+
+
+**Returns:** `Promise`.<[IGameEvent](#interface-igameevent)>
+
+
+
+
+
+___
+
+<a id="returntypeobject"></a>
+
+###  returnTypeObject
+
+► **returnTypeObject**(properties: *`object`*): object
+
+
+
+
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| properties | `object`   |  - |
+
+
+
+
+
+**Returns:** object
+
+
+
+
+
+___
+
 <a id="variablefunction"></a>
 
 ###  variableFunction
@@ -4190,6 +4305,29 @@ ___
 | start_event | `number`
 | stop_event | `number`
 | total | `number`
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+
+
+
+
+
+
+# Interface: IGameEvent
+
+
+## Properties
+
+| Name  | Type                
+| ------ | ------------------- 
+| id | `number`
+| name | `string`
 ----
 
 
