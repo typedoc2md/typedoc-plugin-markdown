@@ -26,12 +26,12 @@ node_modules/.bin/typedoc --theme markdown
 
 The plugin exposes the following additional arguments:
 
-* `--mdOutFile <fileName.md>`<br />
-Compiles output to a single file
-* `--mdHideSources`<br />
-Suppress sources from output 
 * `--mdFlavour<github|bitbucket>`<br />
 Specifies the markdown rendering engine.  Defaults to `github`.
+* `--mdOutFile <fileName.md>`<br />
+Compiles output to a single file (only suitable for small scripts). Defaults to multi file output.
+* `--mdHideSources`<br />
+Suppress sources from output 
 * `--mdSourceRepo<path.to.repo>`<br />
 The source repo to use for source file linking. Will be ignored on github flavoured projects.<br />
 For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
