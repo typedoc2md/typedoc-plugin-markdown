@@ -6,10 +6,19 @@
 
 
 ## Properties
+<a id="currenttime"></a>
 
-| Name  | Type                
-| ------ | ------------------- 
-| currentTime | `Date`
+###  currentTime
+
+**●  currentTime**:  *`Date`* 
+
+*Defined in [interfaces.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L74)*
+
+
+
+
+
+___
 
 
 ## Methods

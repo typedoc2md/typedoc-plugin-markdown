@@ -19,10 +19,34 @@
 
 
 ## Properties
+<a id="color"></a>
 
-| Name  | Type                
-| ------ | ------------------- 
-| color | `string`
-| sideLength | `number`
+###  color
+
+**●  color**:  *`string`* 
+
+*Inherited from [Shape](_interfaces_.interfaces.shape.md).[color](_interfaces_.interfaces.shape.md#color)*
+
+*Defined in [interfaces.ts:90](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L90)*
+
+
+
+
+
+___
+
+<a id="sidelength"></a>
+
+###  sideLength
+
+**●  sideLength**:  *`number`* 
+
+*Defined in [interfaces.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L94)*
+
+
+
+
+
+___
 
 

@@ -29,9 +29,23 @@ This is a simple interface.
 
 ## Properties
 
-| Name  | Type                
-| ------ | ------------------- 
-| name | `string`
+
+###  name
+
+**●  name**:  *`string`* 
+
+*Defined in [classes.ts:11](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-11)*
+
+
+
+This is a interface member of INameInterface.
+
+It should be inherited by all subinterfaces.
+
+
+
+
+___
 
 
 ## Methods

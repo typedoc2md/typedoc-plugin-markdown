@@ -6,10 +6,32 @@
 
 
 ## Properties
+<a id="element_formations"></a>
 
-| Name  | Type                
-| ------ | ------------------- 
-| element_formations | [IApiGameFormations](_interfaces_.iapigameformations.md)
-| game_event | [IApiGameEvent](_interfaces_.iapigameevent.md)
+###  element_formations
+
+**●  element_formations**:  *[IApiGameFormations](_interfaces_.iapigameformations.md)* 
+
+*Defined in [interfaces.ts:105](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L105)*
+
+
+
+
+
+___
+
+<a id="game_event"></a>
+
+###  game_event
+
+**●  game_event**:  *[IApiGameEvent](_interfaces_.iapigameevent.md)* 
+
+*Defined in [interfaces.ts:104](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L104)*
+
+
+
+
+
+___
 
 

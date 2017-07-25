@@ -19,9 +19,18 @@
 
 
 ## Properties
+<a id="color"></a>
 
-| Name  | Type                
-| ------ | ------------------- 
-| color | `string`
+###  color
+
+**●  color**:  *`string`* 
+
+*Defined in [interfaces.ts:90](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L90)*
+
+
+
+
+
+___
 
 

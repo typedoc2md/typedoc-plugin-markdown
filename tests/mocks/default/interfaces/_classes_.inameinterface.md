@@ -28,10 +28,24 @@ This is a simple interface.
 
 
 ## Properties
+<a id="name"></a>
 
-| Name  | Type                
-| ------ | ------------------- 
-| name | `string`
+###  name
+
+**●  name**:  *`string`* 
+
+*Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
+
+
+
+This is a interface member of INameInterface.
+
+It should be inherited by all subinterfaces.
+
+
+
+
+___
 
 
 ## Methods

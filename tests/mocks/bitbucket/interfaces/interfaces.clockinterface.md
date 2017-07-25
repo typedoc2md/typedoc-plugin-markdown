@@ -7,9 +7,18 @@
 
 ## Properties
 
-| Name  | Type                
-| ------ | ------------------- 
-| currentTime | `Date`
+
+###  currentTime
+
+**●  currentTime**:  *`Date`* 
+
+*Defined in [interfaces.ts:74](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-74)*
+
+
+
+
+
+___
 
 
 ## Methods

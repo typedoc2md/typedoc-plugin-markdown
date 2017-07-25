@@ -32,9 +32,25 @@ This is a interface inheriting from two other interfaces.
 
 ## Properties
 
-| Name  | Type                
-| ------ | ------------------- 
-| name | `string`
+
+###  name
+
+**●  name**:  *`string`* 
+
+*Inherited from [INameInterface](inameinterface.md).[name](inameinterface.md#markdown-header-name)*
+
+*Defined in [classes.ts:11](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-11)*
+
+
+
+This is a interface member of INameInterface.
+
+It should be inherited by all subinterfaces.
+
+
+
+
+___
 
 
 ## Methods
