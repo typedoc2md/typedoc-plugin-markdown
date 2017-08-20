@@ -70,7 +70,7 @@ This is a function with multiple arguments and a return value.
 
 ## Samples
 
-Browse some <a href="https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/tests/mocks/default">mocked samples</a> to view further examples of generated output. 
+Browse some <a href="https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/tests/mocks/default/README.md">mocked samples</a> to view further examples of generated output. 
 
 ## Acknowledgements
 
