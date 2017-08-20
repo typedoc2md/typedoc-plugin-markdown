@@ -20,7 +20,7 @@
 
 **●  anything**:  *`boolean`*  = false
 
-*Defined in doc-comments.ts:9*
+*Defined in [doc-comments.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/doc-comments.ts#L9)*
 
 
 
