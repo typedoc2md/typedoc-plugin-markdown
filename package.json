@@ -12,6 +12,7 @@
     "compiletests": "npm run compiletest:default && npm run compiletest:bitbucket",
     "compiletest:default": "typedoc  --tsconfig tests/src/tsconfig.json --options tests/config.core.json --out tests/out/default",
     "compiletest:bitbucket": "typedoc --tsconfig  tests/src/tsconfig.json --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name' --options tests/config.core.json --out tests/out/bitbucket",
+    "html":"typedoc --tsconfig tests/src/tsconfig.json --out tests/html",
     "lint": "tslint --type-check --project tsconfig.json",
     "prepare": "rm -rf dist && tsc && npm run copy:static",
     "prepublishOnly": "npm run lint && npm run test",

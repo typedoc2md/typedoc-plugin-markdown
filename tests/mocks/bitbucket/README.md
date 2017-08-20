@@ -44,6 +44,7 @@
 
 * [Promise](#markdown-header-promise)
 * [amount](#markdown-header-amount)
+* [anything](#markdown-header-anything)
 * [color](#markdown-header-color)
 * [greeter](#markdown-header-greeter)
 * [isDone](#markdown-header-isdone)
@@ -106,6 +107,25 @@ ___
 This is a number type
 
     const decimal: number = 6;
+
+
+
+
+___
+
+
+
+###  anything
+
+**●  anything**:  *`boolean`*  = false
+
+*Defined in [doc-comments.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-9)*
+
+
+
+Additionally you can link to other classes, members or functions using double square brackets.
+
+Link to a class: [BaseClass](classes/baseclass.md) Link to a function: [createSomething](#markdown-header-createsomething) Link to a function: [color](#markdown-header-color)
 
 
 

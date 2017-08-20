@@ -10,6 +10,7 @@ Some mock output of the plugin. The "classes" and "functions" modules are the ge
 
 * ["basic-types"](modules/_basic_types_.md)
 * ["classes"](modules/_classes_.md)
+* ["doc-comments"](modules/_doc_comments_.md)
 * ["enums"](modules/_enums_.md)
 * ["functions"](modules/_functions_.md)
 * ["interfaces"](modules/_interfaces_.md)
