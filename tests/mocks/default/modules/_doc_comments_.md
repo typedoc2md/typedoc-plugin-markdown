@@ -25,6 +25,7 @@
 
 
 *__name__*: AbstractMetadataModule
+
 *__description__*: Provides the module for the [BaseClass](../classes/_classes_.baseclass.md)
 
     {
@@ -36,6 +37,7 @@
      ],
      providers: [],
     }
+
 
 
 
