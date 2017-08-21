@@ -8,17 +8,45 @@
 
 ### Variables
 
-* [anything](_doc_comments_.md#anything)
+* [commentsWithTags](_doc_comments_.md#commentswithtags)
+* [generalComments](_doc_comments_.md#generalcomments)
 
 
 
 ---
 ## Variables
-<a id="anything"></a>
+<a id="commentswithtags"></a>
 
-###  anything
+###  commentsWithTags
 
-**●  anything**:  *`boolean`*  = false
+**●  commentsWithTags**:  *`boolean`*  = false
+
+*Defined in [doc-comments.ts:27](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/doc-comments.ts#L27)*
+
+
+*__name__*: AbstractMetadataModule
+*__description__*: Provides the module for the [BaseClass](../classes/_classes_.baseclass.md)
+
+    {
+     declarations: [AbstractMetadataComponent],
+     exports: [AbstractMetadataComponent],
+     imports: [
+       IonicModule,
+       StackIonSelectModule,
+     ],
+     providers: [],
+    }
+
+
+
+
+___
+
+<a id="generalcomments"></a>
+
+###  generalComments
+
+**●  generalComments**:  *`boolean`*  = false
 
 *Defined in [doc-comments.ts:9](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/doc-comments.ts#L9)*
 

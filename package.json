@@ -9,13 +9,15 @@
   "scripts": {
     "copy:static": "copyfiles --up 1 src/**/*.hbs dist/",
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
-    "compiletests": "npm run compiletest:default && npm run compiletest:bitbucket",
-    "compiletest:default": "typedoc  --tsconfig tests/src/tsconfig.json --options tests/config.core.json --out tests/out/default",
-    "compiletest:bitbucket": "typedoc --tsconfig  tests/src/tsconfig.json --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name' --options tests/config.core.json --out tests/out/bitbucket",
-    "html":"typedoc --tsconfig tests/src/tsconfig.json --out tests/html",
+    "compile:tests": "npm run compile:default && npm run compile:bitbucket",
+    "compile:default": "typedoc  --tsconfig tests/src/tsconfig.json --options tests/config.core.json --out tests/out/default",
+    "compile:bitbucket": "typedoc --tsconfig  tests/src/tsconfig.json --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name' --options tests/config.core.json --out tests/out/bitbucket",
+    "compile:toh": "typedoc --options ../toh/typedoc-md.json --tsconfig ../toh/tsconfig.json --exclude '**/*.spec.ts' ./app/",
+    "html": "typedoc --tsconfig tests/src/tsconfig.json --out tests/html",
     "lint": "tslint --type-check --project tsconfig.json",
-    "prepare": "rm -rf dist && tsc && npm run copy:static && npm run lint && npm run test",
-    "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run compiletests",
+    "prepare": "rm -rf dist && tsc && npm run copy:static",
+    "prepublishOnly": "npm run prepare && npm run lint && npm run test",
+    "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run compile:tests",
     "test": "mocha tests/**/test.*.js"
   },
   "author": "Thomas Grey",
@@ -39,8 +41,8 @@
     "typedoc": ">=0.8.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.3",
-    "@types/mocha": "^2.2.41",
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.42",
     "@types/to-markdown": "^3.0.0",
     "chai": "^4.1.1",
     "chai-files": "^1.4.0",

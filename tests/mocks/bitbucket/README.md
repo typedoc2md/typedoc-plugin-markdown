@@ -44,8 +44,9 @@
 
 * [Promise](#markdown-header-promise)
 * [amount](#markdown-header-amount)
-* [anything](#markdown-header-anything)
 * [color](#markdown-header-color)
+* [commentsWithTags](#markdown-header-commentswithtags)
+* [generalComments](#markdown-header-generalcomments)
 * [greeter](#markdown-header-greeter)
 * [isDone](#markdown-header-isdone)
 * [numbers](#markdown-header-numbers)
@@ -115,25 +116,6 @@ ___
 
 
 
-###  anything
-
-**●  anything**:  *`boolean`*  = false
-
-*Defined in [doc-comments.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-9)*
-
-
-
-Additionally you can link to other classes, members or functions using double square brackets.
-
-Link to a class: [BaseClass](classes/baseclass.md) Link to a function: [createSomething](#markdown-header-createsomething) Link to a function: [color](#markdown-header-color)
-
-
-
-
-___
-
-
-
 ###  color
 
 **●  color**:  *`string`*  = "blue"
@@ -145,6 +127,52 @@ ___
 This is a string type
 
     const color: string = "blue";
+
+
+
+
+___
+
+
+
+###  commentsWithTags
+
+**●  commentsWithTags**:  *`boolean`*  = false
+
+*Defined in [doc-comments.ts:27](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-27)*
+
+
+*__name__*: AbstractMetadataModule
+*__description__*: Provides the module for the [BaseClass](classes/baseclass.md)
+
+    {
+     declarations: [AbstractMetadataComponent],
+     exports: [AbstractMetadataComponent],
+     imports: [
+       IonicModule,
+       StackIonSelectModule,
+     ],
+     providers: [],
+    }
+
+
+
+
+___
+
+
+
+###  generalComments
+
+**●  generalComments**:  *`boolean`*  = false
+
+*Defined in [doc-comments.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-9)*
+
+
+
+Additionally you can link to other classes, members or functions using double square brackets.
+
+Link to a class: [BaseClass](classes/baseclass.md) Link to a function: [createSomething](#markdown-header-createsomething) Link to a function: [color](#markdown-header-color)
 
 
 

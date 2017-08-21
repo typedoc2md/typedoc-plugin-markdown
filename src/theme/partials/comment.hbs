@@ -8,6 +8,11 @@
 
 {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
 {{/if}}
-{{~#if tags}}{{#each tags}}**{{tagName}}**: {{{text}}}{{/each}}{{~/if}}
+{{~#if tags}}
+{{#each tags}}
+*__{{tagName}}__*: {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
+{{/each}}
+{{~/if}}
+
 {{/if}}
 {{/with}}

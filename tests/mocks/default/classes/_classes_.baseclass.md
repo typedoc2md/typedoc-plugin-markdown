@@ -339,7 +339,7 @@ ___
 *Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
 
-**see**: https://github.com/sebastian-lenz/typedoc/issues/42
+*__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
 
 **Parameters:**

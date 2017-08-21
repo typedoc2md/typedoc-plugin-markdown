@@ -6,4 +6,22 @@
  * Link to a function: [[color]]
  */
 
-export const anything: boolean = false;
+export const generalComments: boolean = false;
+
+/**
+ * @name AbstractMetadataModule
+ * @description
+ * Provides the module for the [[BaseClass]]
+ * ```json
+ * {
+ *  declarations: [AbstractMetadataComponent],
+ *  exports: [AbstractMetadataComponent],
+ *  imports: [
+ *    IonicModule,
+ *    StackIonSelectModule,
+ *  ],
+ *  providers: [],
+ * }
+ * ```
+ */
+export const commentsWithTags: boolean = false;

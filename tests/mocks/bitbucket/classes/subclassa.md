@@ -449,7 +449,7 @@ ___
 *Defined in [classes.ts:153](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-153)*
 
 
-**see**: https://github.com/sebastian-lenz/typedoc/issues/42
+*__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
 
 **Parameters:**
