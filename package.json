@@ -9,15 +9,14 @@
   "scripts": {
     "copy:static": "copyfiles --up 1 src/**/*.hbs dist/",
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
-    "compile:tests": "npm run compile:default && npm run compile:bitbucket",
-    "compile:default": "typedoc  --tsconfig tests/src/tsconfig.json --options tests/config.core.json --out tests/out/default",
-    "compile:bitbucket": "typedoc --tsconfig  tests/src/tsconfig.json --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name' --options tests/config.core.json --out tests/out/bitbucket",
-    "compile:toh": "typedoc --options ../toh/typedoc-md.json --tsconfig ../toh/tsconfig.json --exclude '**/*.spec.ts' ./app/",
+    "mocks": "npm run mocks:default && npm run mocks:bitbucket",
+    "mocks:default": "typedoc  --tsconfig tests/src/tsconfig.json --options tests/config.core.json --out tests/out/default",
+    "mocks:bitbucket": "typedoc --tsconfig  tests/src/tsconfig.json --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name' --options tests/config.core.json --out tests/out/bitbucket",
     "html": "typedoc --tsconfig tests/src/tsconfig.json --out tests/html",
     "lint": "tslint --type-check --project tsconfig.json",
     "prepare": "rm -rf dist && tsc && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",
-    "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run compile:tests",
+    "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run mocks",
     "test": "mocha tests/**/test.*.js"
   },
   "author": "Thomas Grey",
@@ -42,15 +41,15 @@
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.42",
+    "@types/mocha": "^2.2.43",
     "@types/to-markdown": "^3.0.0",
-    "chai": "^4.1.1",
+    "chai": "^4.1.2",
     "chai-files": "^1.4.0",
     "copyfiles": "^1.2.0",
-    "mocha": "^3.5.0",
-    "tslint": "^5.6.0",
+    "mocha": "^3.5.3",
+    "tslint": "^5.7.0",
     "typedoc": "^0.8.0",
-    "typescript": "2.4.2"
+    "typescript": "2.5.3"
   },
   "dependencies": {
     "to-markdown": "^3.1.0"
