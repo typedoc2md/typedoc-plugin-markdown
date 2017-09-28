@@ -362,7 +362,7 @@ This is a function with multiple arguments and a return value.
 | Param | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string`   |  This is a string parameter. |
-| paramG | `any`   |  This is a parameter flagged with any.    This sentence is placed in the next line. |
+| paramG | `any`   |  This is a parameter flagged with any. This sentence is placed in the next line. |
 | paramA | [INameInterface](interfaces/inameinterface.md)   |  This is a **parameter** pointing to an interface. |
 
 
@@ -773,7 +773,7 @@ This is a function with multiple arguments and a return value.
 | Param | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string`   |  This is a string parameter. |
-| paramG | `any`   |  This is a parameter flagged with any.    This sentence is placed in the next line. |
+| paramG | `any`   |  This is a parameter flagged with any. This sentence is placed in the next line. |
 | paramA | [INameInterface](interfaces/inameinterface.md)   |  This is a **parameter** pointing to an interface. |
 
 

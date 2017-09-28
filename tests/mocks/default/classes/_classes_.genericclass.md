@@ -187,7 +187,7 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  [[getValue]] is the counterpart. |
+| value | `T`   |  [getValue](_classes_.genericclass.md#getvalue) is the counterpart. |
 
 
 

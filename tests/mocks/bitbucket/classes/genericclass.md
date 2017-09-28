@@ -169,7 +169,7 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  [[getValue]] is the counterpart. |
+| value | `T`   |  [getValue](genericclass.md#markdown-header-getvalue) is the counterpart. |
 
 
 

@@ -176,7 +176,7 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | [SubClassB](subclassb.md)   |  [[getValue]] is the counterpart. |
+| value | [SubClassB](subclassb.md)   |  [getValue](nongenericclass.md#markdown-header-getvalue) is the counterpart. |
 
 
 

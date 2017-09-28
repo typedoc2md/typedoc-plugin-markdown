@@ -176,7 +176,7 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | [SubClassB](_classes_.subclassb.md)   |  [[getValue]] is the counterpart. |
+| value | [SubClassB](_classes_.subclassb.md)   |  [getValue](_classes_.nongenericclass.md#getvalue) is the counterpart. |
 
 
 
