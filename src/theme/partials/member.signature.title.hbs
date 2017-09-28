@@ -1,5 +1,5 @@
 {{#compact}}
-{{#unless hideName}}{{getMemberSymbol kindString}}**{{{name}}}**{{/unless}}
+{{getMemberSymbol kindString}}{{#unless hideName}}**{{{name}}}**{{/unless}}
 {{#if typeParameters}}
 {{#each typeParameters}}
 {{#if @index}}, {{/if}}

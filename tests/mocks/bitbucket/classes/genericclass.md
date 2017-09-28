@@ -54,7 +54,6 @@ This a type parameter.
 ### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*): [GenericClass](genericclass.md)
 
 
-
 *Defined in [classes.ts:254](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-254)*
 
 
@@ -139,7 +138,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:274](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-274)*
 
 
@@ -159,7 +157,6 @@ ___
 ###  setValue
 
 ► **setValue**(value: *`T`*): `void`
-
 
 
 

@@ -68,7 +68,6 @@ This is a simple example on how to use BaseClass.
 ### ⊕ **new BaseClass**(source: *[BaseClass](baseclass.md)*): [BaseClass](baseclass.md)
 
 
-
 *Defined in [classes.ts:70](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-70)*
 
 
@@ -84,7 +83,6 @@ This is a simple example on how to use BaseClass.
 
 
 **Returns:** [BaseClass](baseclass.md)
-
 
 *Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
 
@@ -152,7 +150,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:129](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-129)*
 
 
@@ -187,7 +184,6 @@ ___
 
 
 
-
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[getName](../interfaces/inameinterface.md#markdown-header-getname)*
 
 *Defined in [classes.ts:94](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-94)*
@@ -216,7 +212,6 @@ ___
 ###  setName
 
 ► **setName**(name: *`string`*): `void`
-
 
 
 
@@ -252,7 +247,6 @@ ___
 ### «Static» caTest
 
 ► **caTest**(originalValues: *[BaseClass](baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
-
 
 
 
@@ -292,7 +286,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:146](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-146)*
 
 
@@ -319,7 +312,6 @@ ___
 ### «Static» getName
 
 ► **getName**(): `string`
-
 
 
 

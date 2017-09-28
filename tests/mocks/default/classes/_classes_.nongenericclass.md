@@ -49,7 +49,6 @@ This a non generic class derived from a [generic class](_classes_.genericclass.m
 ### ⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](_classes_.subclassb.md)*, p3: *`number`*, p4: *`number`*): [NonGenericClass](_classes_.nongenericclass.md)
 
 
-
 *Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)*
 
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
@@ -142,7 +141,6 @@ ___
 
 
 
-
 *Inherited from [GenericClass](_classes_.genericclass.md).[getValue](_classes_.genericclass.md#getvalue)*
 
 *Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
@@ -164,7 +162,6 @@ ___
 ###  setValue
 
 ► **setValue**(value: *[SubClassB](_classes_.subclassb.md)*): `void`
-
 
 
 

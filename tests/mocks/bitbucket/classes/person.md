@@ -38,7 +38,6 @@
 ### ⊕ **new Person**(name: *`string`*): [Person](person.md)
 
 
-
 *Defined in [private-members.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-23)*
 
 

@@ -40,16 +40,13 @@
 
 ###  SearchFunc
 
-**Τ SearchFunc**:  *function* 
+**Τ SearchFunc**:  *`function`* 
 
 *Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
 
 #### Type declaration
-(source: *`string`*, subString: *`string`*): `boolean`
-
-
-*Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
+►(source: *`string`*, subString: *`string`*): `boolean`
 
 
 
@@ -110,7 +107,6 @@ ___
 ###  createClock
 
 ► **createClock**(ctor: *[ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md)*, hour: *`number`*, minute: *`number`*): [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
-
 
 
 

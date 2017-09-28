@@ -49,7 +49,6 @@ This a non generic class derived from a [generic class](genericclass.md).
 ### ⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](subclassb.md)*, p3: *`number`*, p4: *`number`*): [NonGenericClass](nongenericclass.md)
 
 
-
 *Inherited from [GenericClass](genericclass.md).[constructor](genericclass.md#markdown-header-constructor)*
 
 *Defined in [classes.ts:254](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-254)*
@@ -142,7 +141,6 @@ ___
 
 
 
-
 *Inherited from [GenericClass](genericclass.md).[getValue](genericclass.md#markdown-header-getvalue)*
 
 *Defined in [classes.ts:274](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-274)*
@@ -164,7 +162,6 @@ ___
 ###  setValue
 
 ► **setValue**(value: *[SubClassB](subclassb.md)*): `void`
-
 
 
 

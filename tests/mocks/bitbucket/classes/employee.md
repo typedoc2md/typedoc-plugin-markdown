@@ -43,7 +43,6 @@
 ### ⊕ **new Employee**(name: *`string`*, department: *`string`*): [Employee](employee.md)
 
 
-
 *Overrides [Person](person.md).[constructor](person.md#markdown-header-constructor)*
 
 *Defined in [private-members.ts:29](https://bitbucket.org/owner/repository_name/src/master/src/private-members.ts?fileviewer&amp;#x3D;file-view-default#private-members.ts-29)*
@@ -90,7 +89,6 @@ ___
 ###  getElevatorPitch
 
 ► **getElevatorPitch**(): `string`
-
 
 
 

@@ -68,7 +68,6 @@ ___
 
 
 
-
 *Defined in [private-members.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L18)*
 
 
@@ -91,7 +90,6 @@ ___
 ###  publicFunction
 
 ► **publicFunction**(): `string`
-
 
 
 

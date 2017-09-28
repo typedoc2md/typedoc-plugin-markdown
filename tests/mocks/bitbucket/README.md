@@ -40,6 +40,11 @@
 * [IPrintNameInterface](interfaces/iprintnameinterface.md)
 
 
+### Type aliases
+
+* [SomeOptions](#markdown-header-someoptions)
+
+
 ### Variables
 
 * [Promise](#markdown-header-promise)
@@ -80,6 +85,43 @@
 
 
 ---
+# Type aliases
+
+
+###  SomeOptions
+
+**Τ SomeOptions**:  *`object`* 
+
+*Defined in [basic-types.ts:49](https://bitbucket.org/owner/repository_name/src/master/src/basic-types.ts?fileviewer&amp;#x3D;file-view-default#basic-types.ts-49)*
+
+
+#### Type declaration
+
+
+
+
+«Optional»  aFunction?: `function`
+
+
+
+
+►(): `void`
+
+
+
+
+
+**Returns:** `void`
+
+
+
+
+
+
+
+___
+
+
 # Variables
 
 
@@ -254,8 +296,7 @@ ___
 
 ###  createSomething
 
-► **createSomething**(): object
-
+► **createSomething**(): `object`
 
 
 
@@ -268,7 +309,7 @@ A function that returns an object. Also no type information is given, the object
 
 
 
-**Returns:** object
+**Returns:** `object`
 
 
 
@@ -281,7 +322,6 @@ ___
 ###  exportedFunction
 
 ► **exportedFunction**(): `void`
-
 
 
 
@@ -307,7 +347,6 @@ ___
 ###  functionWithArguments
 
 ► **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
-
 
 
 
@@ -343,7 +382,6 @@ ___
 ###  functionWithDefaults
 
 ► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE: *`any`*): `string`
-
 
 
 
@@ -386,7 +424,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:170](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-170)*
 
 
@@ -411,7 +448,6 @@ ___
 ###  functionWithOptionalValue
 
 ► **functionWithOptionalValue**(requiredParam: *`string`*, optionalParam?: *`string`*): `void`
-
 
 
 
@@ -449,7 +485,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:74](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-74)*
 
 
@@ -482,7 +517,6 @@ ___
 ###  genericFunction
 
 ► **genericFunction**T(value: *`T`*): `T`
-
 
 
 
@@ -527,7 +561,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:6](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-6)*
 
 
@@ -551,8 +584,7 @@ ___
 
 ► **multipleSignatures**(value: *`string`*): `string`
 
-► **multipleSignatures**(value: *object*): `string`
-
+► **multipleSignatures**(value: *`object`*): `string`
 
 
 
@@ -577,7 +609,6 @@ This is the first signature of a function with multiple signatures.
 
 
 
-
 *Defined in [functions.ts:91](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-91)*
 
 
@@ -589,7 +620,7 @@ This is the second signature of a function with multiple signatures.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | object   |  An object containing the name value. |
+| value | `object`   |  An object containing the name value. |
 
 
 
@@ -609,7 +640,6 @@ ___
 ###  publicFunction
 
 ► **publicFunction**(): `string`
-
 
 
 
@@ -635,7 +665,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:191](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-191)*
 
 
@@ -655,7 +684,6 @@ ___
 ###  returnTypeInterface
 
 ► **returnTypeInterface**(): [IGameEvent](interfaces/igameevent.md)
-
 
 
 
@@ -681,7 +709,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:183](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-183)*
 
 
@@ -700,8 +727,7 @@ ___
 
 ###  returnTypeObject
 
-► **returnTypeObject**(properties: *`object`*): object
-
+► **returnTypeObject**(properties: *`object`*): `object`
 
 
 
@@ -719,7 +745,7 @@ ___
 
 
 
-**Returns:** object
+**Returns:** `object`
 
 
 
@@ -732,7 +758,6 @@ ___
 ###  variableFunction
 
 ► **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
-
 
 
 
@@ -803,7 +828,6 @@ ___
 ###  someFunction
 
 ► **someFunction**(): `string`
-
 
 
 

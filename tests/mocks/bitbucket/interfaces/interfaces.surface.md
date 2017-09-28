@@ -10,16 +10,13 @@
 
 ###  diffuse
 
-**●  diffuse**:  *function* 
+**●  diffuse**:  *`function`* 
 
 *Defined in [interfaces.ts:49](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-49)*
 
 
 #### Type declaration
-(pos: *[Vector](../classes/vector.md)*): [Color](../classes/color.md)
-
-
-*Defined in [interfaces.ts:49](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-49)*
+►(pos: *[Vector](../classes/vector.md)*): [Color](../classes/color.md)
 
 
 
@@ -46,16 +43,13 @@ ___
 
 ###  reflect
 
-**●  reflect**:  *function* 
+**●  reflect**:  *`function`* 
 
 *Defined in [interfaces.ts:51](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-51)*
 
 
 #### Type declaration
-(pos: *[Vector](../classes/vector.md)*): `number`
-
-
-*Defined in [interfaces.ts:51](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-51)*
+►(pos: *[Vector](../classes/vector.md)*): `number`
 
 
 
@@ -96,16 +90,13 @@ ___
 
 ###  specular
 
-**●  specular**:  *function* 
+**●  specular**:  *`function`* 
 
 *Defined in [interfaces.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-50)*
 
 
 #### Type declaration
-(pos: *[Vector](../classes/vector.md)*): [Color](../classes/color.md)
-
-
-*Defined in [interfaces.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-50)*
+►(pos: *[Vector](../classes/vector.md)*): [Color](../classes/color.md)
 
 
 

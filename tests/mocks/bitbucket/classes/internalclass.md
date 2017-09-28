@@ -20,8 +20,7 @@ This is an internal class, it is not exported.
 
 
 
-### ⊕ **new InternalClass**(options: *object*): [InternalClass](internalclass.md)
-
+### ⊕ **new InternalClass**(options: *`object`*): [InternalClass](internalclass.md)
 
 
 *Defined in [classes.ts:169](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-169)*
@@ -32,7 +31,7 @@ This is an internal class, it is not exported.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| options | object   |  - |
+| options | `object`   |  - |
 
 
 

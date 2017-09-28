@@ -55,7 +55,6 @@ This a type parameter.
 ### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*): [GenericClass](_classes_.genericclass.md)
 
 
-
 *Defined in [classes.ts:254](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
@@ -157,7 +156,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:274](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
 
 
@@ -177,7 +175,6 @@ ___
 ###  setValue
 
 ► **setValue**(value: *`T`*): `void`
-
 
 
 

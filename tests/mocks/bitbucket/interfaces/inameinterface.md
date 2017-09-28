@@ -57,7 +57,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-18)*
 
 

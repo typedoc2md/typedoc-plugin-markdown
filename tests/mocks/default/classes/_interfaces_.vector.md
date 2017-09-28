@@ -38,7 +38,6 @@
 ### ⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](_interfaces_.vector.md)
 
 
-
 *Defined in [interfaces.ts:1](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L1)*
 
 
@@ -113,7 +112,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:16](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L16)*
 
 
@@ -142,7 +140,6 @@ ___
 ### «Static» dot
 
 ► **dot**(v1: *[Vector](_interfaces_.vector.md)*, v2: *[Vector](_interfaces_.vector.md)*): `number`
-
 
 
 
@@ -177,7 +174,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:10](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L10)*
 
 
@@ -205,7 +201,6 @@ ___
 ### «Static» minus
 
 ► **minus**(v1: *[Vector](_interfaces_.vector.md)*, v2: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
-
 
 
 
@@ -240,7 +235,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
 
 
@@ -268,7 +262,6 @@ ___
 ### «Static» plus
 
 ► **plus**(v1: *[Vector](_interfaces_.vector.md)*, v2: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
-
 
 
 
@@ -300,7 +293,6 @@ ___
 ### «Static» times
 
 ► **times**(k: *`number`*, v: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
-
 
 
 

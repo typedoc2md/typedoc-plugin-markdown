@@ -12,7 +12,6 @@ This is the module extending the function moduleFunction().
 
 
 
-
 *Defined in [functions.ts:125](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L125)*
 
 
@@ -78,7 +77,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:139](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L139)*
 
 
@@ -101,7 +99,6 @@ ___
 ###  prepend
 
 ► **prepend**(): `void`
-
 
 
 

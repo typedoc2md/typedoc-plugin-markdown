@@ -72,7 +72,6 @@ This is a simple example on how to use BaseClass.
 ### ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
 
 
-
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
@@ -88,7 +87,6 @@ This is a simple example on how to use BaseClass.
 
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
-
 
 *Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
@@ -206,7 +204,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
 
@@ -241,7 +238,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:135](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L135)*
 
 
@@ -264,7 +260,6 @@ ___
 ###  getName
 
 ► **getName**(): `string`
-
 
 
 
@@ -296,7 +291,6 @@ ___
 ###  setName
 
 ► **setName**(name: *`string`*): `void`
-
 
 
 
@@ -332,7 +326,6 @@ ___
 ### «Static» caTest
 
 ► **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
-
 
 
 
@@ -372,7 +365,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
 
@@ -399,7 +391,6 @@ ___
 ### «Static» getName
 
 ► **getName**(): `string`
-
 
 
 

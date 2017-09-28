@@ -38,7 +38,6 @@
 ### ⊕ **new Person**(name: *`string`*): [Person](_private_members_.person.md)
 
 
-
 *Defined in [private-members.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L23)*
 
 

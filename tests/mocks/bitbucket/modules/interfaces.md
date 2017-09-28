@@ -40,16 +40,13 @@
 
 ###  SearchFunc
 
-**Τ SearchFunc**:  *function* 
+**Τ SearchFunc**:  *`function`* 
 
 *Defined in [interfaces.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-61)*
 
 
 #### Type declaration
-(source: *`string`*, subString: *`string`*): `boolean`
-
-
-*Defined in [interfaces.ts:61](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-61)*
+►(source: *`string`*, subString: *`string`*): `boolean`
 
 
 
@@ -110,7 +107,6 @@ ___
 ###  createClock
 
 ► **createClock**(ctor: *[ClockConstructor](../interfaces/interfaces.clockconstructor.md)*, hour: *`number`*, minute: *`number`*): [ClockInterface](../interfaces/interfaces.clockinterface.md)
-
 
 
 

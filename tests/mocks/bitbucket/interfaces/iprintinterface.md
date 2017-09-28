@@ -30,7 +30,6 @@ This is a simple interface.
 
 
 
-
 *Defined in [classes.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-30)*
 
 

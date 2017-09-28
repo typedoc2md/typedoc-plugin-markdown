@@ -45,3 +45,7 @@ export const aMixedObject = {
     someNumber: 10,
     someString: 'hello',
 };
+
+export type SomeOptions = {
+    aFunction?: () => void,
+};

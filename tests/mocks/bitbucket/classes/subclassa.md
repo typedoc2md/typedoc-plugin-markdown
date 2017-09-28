@@ -71,7 +71,6 @@ This class has no own constructor, so its constructor should be inherited from B
 ### ⊕ **new SubClassA**(source: *[BaseClass](baseclass.md)*): [SubClassA](subclassa.md)
 
 
-
 *Inherited from [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
 
 *Defined in [classes.ts:70](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-70)*
@@ -89,7 +88,6 @@ This class has no own constructor, so its constructor should be inherited from B
 
 
 **Returns:** [SubClassA](subclassa.md)
-
 
 *Inherited from [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
 
@@ -162,7 +160,6 @@ ___
 
 getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
 
-
 *Defined in [classes.ts:199](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-199)*
 
 
@@ -174,7 +171,6 @@ Returns the name. See [BaseClass.name](baseclass.md#markdown-header-name).
 
 **Returns:** `string`
 The return value.
-
 
 
 *Defined in [classes.ts:209](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-209)*
@@ -209,7 +205,6 @@ ___
 
 getreadOnlyNameProperty(): `string`
 
-
 *Defined in [classes.ts:218](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-218)*
 
 
@@ -233,7 +228,6 @@ ___
 
 
 setwriteOnlyNameProperty(value: *`string`*): `void`
-
 
 *Defined in [classes.ts:228](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-228)*
 
@@ -267,7 +261,6 @@ ___
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *`string`*, param1: *`number`*): `void`
-
 
 
 
@@ -307,7 +300,6 @@ ___
 
 
 
-
 *Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[getName](../interfaces/iprintnameinterface.md#markdown-header-getname)*
 
 *Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-getname)*
@@ -338,7 +330,6 @@ ___
 ###  print
 
 ► **print**(value: *`string`*): `void`
-
 
 
 
@@ -377,7 +368,6 @@ ___
 
 
 
-
 *Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[printName](../interfaces/iprintnameinterface.md#markdown-header-printname)*
 
 *Defined in [classes.ts:190](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-190)*
@@ -402,7 +392,6 @@ ___
 ###  setName
 
 ► **setName**(name: *`string`*): `void`
-
 
 
 
@@ -440,7 +429,6 @@ ___
 ### «Static» caTest
 
 ► **caTest**(originalValues: *[BaseClass](baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
-
 
 
 
@@ -482,7 +470,6 @@ ___
 
 
 
-
 *Inherited from [BaseClass](baseclass.md).[getInstance](baseclass.md#markdown-header-static-getinstance)*
 
 *Defined in [classes.ts:146](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-146)*
@@ -511,7 +498,6 @@ ___
 ### «Static» getName
 
 ► **getName**(): `string`
-
 
 
 

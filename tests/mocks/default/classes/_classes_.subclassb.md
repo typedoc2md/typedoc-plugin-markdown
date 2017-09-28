@@ -59,7 +59,6 @@ The constructor of the original class should be overwritten.
 ### ⊕ **new SubClassB**(name: *`string`*): [SubClassB](_classes_.subclassb.md)
 
 
-
 *Overrides [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
 *Defined in [classes.ts:238](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L238)*
@@ -132,7 +131,6 @@ ___
 
 
 
-
 *Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
 
 *Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
@@ -169,7 +167,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:243](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L243)*
 
 
@@ -197,7 +194,6 @@ ___
 ###  getName
 
 ► **getName**(): `string`
-
 
 
 
@@ -231,7 +227,6 @@ ___
 ###  setName
 
 ► **setName**(name: *`string`*): `void`
-
 
 
 
@@ -269,7 +264,6 @@ ___
 ### «Static» caTest
 
 ► **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
-
 
 
 
@@ -311,7 +305,6 @@ ___
 
 
 
-
 *Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
@@ -340,7 +333,6 @@ ___
 ### «Static» getName
 
 ► **getName**(): `string`
-
 
 
 

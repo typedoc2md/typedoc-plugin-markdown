@@ -71,7 +71,6 @@ This class has no own constructor, so its constructor should be inherited from B
 ### ⊕ **new SubClassA**(source: *[BaseClass](_classes_.baseclass.md)*): [SubClassA](_classes_.subclassa.md)
 
 
-
 *Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
 *Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
@@ -89,7 +88,6 @@ This class has no own constructor, so its constructor should be inherited from B
 
 
 **Returns:** [SubClassA](_classes_.subclassa.md)
-
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
@@ -162,7 +160,6 @@ ___
 
 getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
 
-
 *Defined in [classes.ts:199](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L199)*
 
 
@@ -174,7 +171,6 @@ Returns the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 **Returns:** `string`
 The return value.
-
 
 
 *Defined in [classes.ts:209](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L209)*
@@ -209,7 +205,6 @@ ___
 
 getreadOnlyNameProperty(): `string`
 
-
 *Defined in [classes.ts:218](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L218)*
 
 
@@ -233,7 +228,6 @@ ___
 
 
 setwriteOnlyNameProperty(value: *`string`*): `void`
-
 
 *Defined in [classes.ts:228](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L228)*
 
@@ -267,7 +261,6 @@ ___
 ###  arrowFunction
 
 ► **arrowFunction**(param2: *`string`*, param1: *`number`*): `void`
-
 
 
 
@@ -307,7 +300,6 @@ ___
 
 
 
-
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[getName](../interfaces/_classes_.iprintnameinterface.md#getname)*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)*
@@ -338,7 +330,6 @@ ___
 ###  print
 
 ► **print**(value: *`string`*): `void`
-
 
 
 
@@ -377,7 +368,6 @@ ___
 
 
 
-
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[printName](../interfaces/_classes_.iprintnameinterface.md#printname)*
 
 *Defined in [classes.ts:190](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L190)*
@@ -402,7 +392,6 @@ ___
 ###  setName
 
 ► **setName**(name: *`string`*): `void`
-
 
 
 
@@ -440,7 +429,6 @@ ___
 ### «Static» caTest
 
 ► **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
-
 
 
 
@@ -482,7 +470,6 @@ ___
 
 
 
-
 *Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
 
 *Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
@@ -511,7 +498,6 @@ ___
 ### «Static» getName
 
 ► **getName**(): `string`
-
 
 
 

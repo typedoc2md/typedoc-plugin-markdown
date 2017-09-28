@@ -12,14 +12,7 @@
 
 {{#if indexSignature}}
 
-{{#compact}}
-[
-{{#each indexSignature.parameters}}
- {{#if flags.isRest}}...{{/if}}{{name}}:&nbsp;{{#with type}}{{>type}}{{/with}}
-{{/each}}
-  ]:&nbsp;
-{{#with indexSignature.type}}{{>type}}{{/with}}
-{{/compact}}
+[{{#each indexSignature.parameters}}{{#if flags.isRest}}...{{/if}}{{name}}:&nbsp;{{#with type}}{{>type}}{{/with}}{{/each}}]: {{#with indexSignature.type}}{{>type}}{{/with}}
 
 {{#with indexSignature}}
 {{> comment}}
@@ -33,29 +26,14 @@
 {{/if}}
 
 {{#each children}}
+
 {{#if signatures}}
-{{#compact}}
-{{#if flags.isRest}}...{{/if}}
-{{{ name}}}
-{{#if isOptional}}?{{/if}}
-:&nbsp;
-function
-{{/compact}}
-
+{{#if flags.isRest}}...{{/if}} {{{ name}}} {{#if isOptional}}?{{/if}}: function
 {{> member.signatures}}
+
 {{else}}
-{{#compact}}
-{{#each flags}}
-{{this}}
-{{/each}}
 
-{{#if flags.isRest}}...{{/if}}
-{{{ name}}}
-
-{{#if flags.isOptional}}?{{/if}}
-:&nbsp;
-{{#with type}}{{>type}}{{/with}}
-{{/compact}}
+{{#each flags}}«{{this}}» {{/each}} {{#if flags.isRest}}...{{/if}}{{{ name}}}{{#if flags.isOptional}}?{{/if}}: {{#with type}}{{>type}}{{/with}}
 
 {{> comment}}
 

@@ -9,6 +9,11 @@ For programs to be useful, we need to be able to work with some of the simplest 
 
 ## Index
 
+### Type aliases
+
+* [SomeOptions](_basic_types_.md#someoptions)
+
+
 ### Variables
 
 * [amount](_basic_types_.md#amount)
@@ -24,6 +29,43 @@ For programs to be useful, we need to be able to work with some of the simplest 
 
 
 ---
+## Type aliases
+<a id="someoptions"></a>
+
+###  SomeOptions
+
+**Τ SomeOptions**:  *`object`* 
+
+*Defined in [basic-types.ts:49](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L49)*
+
+
+#### Type declaration
+
+
+
+
+«Optional»  aFunction?: `function`
+
+
+
+
+►(): `void`
+
+
+
+
+
+**Returns:** `void`
+
+
+
+
+
+
+
+___
+
+
 ## Variables
 <a id="amount"></a>
 
@@ -141,7 +183,6 @@ ___
 ###  someFunction
 
 ► **someFunction**(): `string`
-
 
 
 

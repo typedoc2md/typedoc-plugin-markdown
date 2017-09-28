@@ -40,7 +40,6 @@
 ### ⊕ **new Color**(r: *`number`*, g: *`number`*, b: *`number`*): [Color](color.md)
 
 
-
 *Defined in [interfaces.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-23)*
 
 
@@ -185,7 +184,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:29](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-29)*
 
 
@@ -214,7 +212,6 @@ ___
 ### «Static» scale
 
 ► **scale**(k: *`number`*, v: *[Color](color.md)*): [Color](color.md)
-
 
 
 
@@ -249,7 +246,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-30)*
 
 
@@ -277,8 +273,7 @@ ___
 
 ### «Static» toDrawingColor
 
-► **toDrawingColor**(c: *[Color](color.md)*): object
-
+► **toDrawingColor**(c: *[Color](color.md)*): `object`
 
 
 
@@ -296,7 +291,7 @@ ___
 
 
 
-**Returns:** object
+**Returns:** `object`
 
 
 

@@ -30,7 +30,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:75](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
 
 
@@ -58,7 +57,6 @@ ___
 ###  tick
 
 ► **tick**(): `any`
-
 
 
 

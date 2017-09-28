@@ -62,7 +62,6 @@ ___
 
 
 
-
 *Inherited from [INameInterface](inameinterface.md).[getName](inameinterface.md#markdown-header-getname)*
 
 *Defined in [classes.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-18)*
@@ -89,7 +88,6 @@ ___
 ###  print
 
 ► **print**(value: *`string`*): `void`
-
 
 
 
@@ -127,7 +125,6 @@ ___
 ###  printName
 
 ► **printName**(): `void`
-
 
 
 

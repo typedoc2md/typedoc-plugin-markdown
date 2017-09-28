@@ -62,7 +62,6 @@ ___
 
 
 
-
 *Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
 
 *Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
@@ -89,7 +88,6 @@ ___
 ###  print
 
 ► **print**(value: *`string`*): `void`
-
 
 
 
@@ -127,7 +125,6 @@ ___
 ###  printName
 
 ► **printName**(): `void`
-
 
 
 

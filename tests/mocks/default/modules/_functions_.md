@@ -63,8 +63,7 @@ ___
 
 ###  createSomething
 
-► **createSomething**(): object
-
+► **createSomething**(): `object`
 
 
 
@@ -77,7 +76,7 @@ A function that returns an object. Also no type information is given, the object
 
 
 
-**Returns:** object
+**Returns:** `object`
 
 
 
@@ -90,7 +89,6 @@ ___
 ###  exportedFunction
 
 ► **exportedFunction**(): `void`
-
 
 
 
@@ -116,7 +114,6 @@ ___
 ###  functionWithArguments
 
 ► **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): `number`
-
 
 
 
@@ -152,7 +149,6 @@ ___
 ###  functionWithDefaults
 
 ► **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE: *`any`*): `string`
-
 
 
 
@@ -195,7 +191,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:170](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L170)*
 
 
@@ -220,7 +215,6 @@ ___
 ###  functionWithOptionalValue
 
 ► **functionWithOptionalValue**(requiredParam: *`string`*, optionalParam?: *`string`*): `void`
-
 
 
 
@@ -258,7 +252,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L74)*
 
 
@@ -291,7 +284,6 @@ ___
 ###  genericFunction
 
 ► **genericFunction**T(value: *`T`*): `T`
-
 
 
 
@@ -336,7 +328,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:6](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
 
 
@@ -360,8 +351,7 @@ ___
 
 ► **multipleSignatures**(value: *`string`*): `string`
 
-► **multipleSignatures**(value: *object*): `string`
-
+► **multipleSignatures**(value: *`object`*): `string`
 
 
 
@@ -386,7 +376,6 @@ This is the first signature of a function with multiple signatures.
 
 
 
-
 *Defined in [functions.ts:91](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L91)*
 
 
@@ -398,7 +387,7 @@ This is the second signature of a function with multiple signatures.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | object   |  An object containing the name value. |
+| value | `object`   |  An object containing the name value. |
 
 
 
@@ -417,7 +406,6 @@ ___
 ###  returnTypeAny
 
 ► **returnTypeAny**(): `Promise`.<`any`>
-
 
 
 
@@ -443,7 +431,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:177](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L177)*
 
 
@@ -466,7 +453,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:183](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L183)*
 
 
@@ -485,8 +471,7 @@ ___
 
 ###  returnTypeObject
 
-► **returnTypeObject**(properties: *`object`*): object
-
+► **returnTypeObject**(properties: *`object`*): `object`
 
 
 
@@ -504,7 +489,7 @@ ___
 
 
 
-**Returns:** object
+**Returns:** `object`
 
 
 
@@ -517,7 +502,6 @@ ___
 ###  variableFunction
 
 ► **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): `number`
-
 
 
 

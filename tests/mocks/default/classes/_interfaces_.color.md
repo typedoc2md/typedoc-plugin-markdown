@@ -40,7 +40,6 @@
 ### ⊕ **new Color**(r: *`number`*, g: *`number`*, b: *`number`*): [Color](_interfaces_.color.md)
 
 
-
 *Defined in [interfaces.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L23)*
 
 
@@ -185,7 +184,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L29)*
 
 
@@ -214,7 +212,6 @@ ___
 ### «Static» scale
 
 ► **scale**(k: *`number`*, v: *[Color](_interfaces_.color.md)*): [Color](_interfaces_.color.md)
-
 
 
 
@@ -249,7 +246,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L30)*
 
 
@@ -277,8 +273,7 @@ ___
 
 ### «Static» toDrawingColor
 
-► **toDrawingColor**(c: *[Color](_interfaces_.color.md)*): object
-
+► **toDrawingColor**(c: *[Color](_interfaces_.color.md)*): `object`
 
 
 
@@ -296,7 +291,7 @@ ___
 
 
 
-**Returns:** object
+**Returns:** `object`
 
 
 

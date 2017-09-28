@@ -59,7 +59,6 @@ The constructor of the original class should be overwritten.
 ### ⊕ **new SubClassB**(name: *`string`*): [SubClassB](subclassb.md)
 
 
-
 *Overrides [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
 
 *Defined in [classes.ts:238](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-238)*
@@ -132,7 +131,6 @@ ___
 
 
 
-
 *Inherited from [BaseClass](baseclass.md).[arrowFunction](baseclass.md#markdown-header-arrowfunction)*
 
 *Defined in [classes.ts:129](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-129)*
@@ -169,7 +167,6 @@ ___
 
 
 
-
 *Defined in [classes.ts:243](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-243)*
 
 
@@ -197,7 +194,6 @@ ___
 ###  getName
 
 ► **getName**(): `string`
-
 
 
 
@@ -231,7 +227,6 @@ ___
 ###  setName
 
 ► **setName**(name: *`string`*): `void`
-
 
 
 
@@ -269,7 +264,6 @@ ___
 ### «Static» caTest
 
 ► **caTest**(originalValues: *[BaseClass](baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
-
 
 
 
@@ -311,7 +305,6 @@ ___
 
 
 
-
 *Inherited from [BaseClass](baseclass.md).[getInstance](baseclass.md#markdown-header-static-getinstance)*
 
 *Defined in [classes.ts:146](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-146)*
@@ -340,7 +333,6 @@ ___
 ### «Static» getName
 
 ► **getName**(): `string`
-
 
 
 

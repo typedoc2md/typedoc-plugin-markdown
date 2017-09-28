@@ -38,7 +38,6 @@
 ### ⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](vector.md)
 
 
-
 *Defined in [interfaces.ts:1](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-1)*
 
 
@@ -113,7 +112,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:16](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-16)*
 
 
@@ -142,7 +140,6 @@ ___
 ### «Static» dot
 
 ► **dot**(v1: *[Vector](vector.md)*, v2: *[Vector](vector.md)*): `number`
-
 
 
 
@@ -177,7 +174,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:10](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-10)*
 
 
@@ -205,7 +201,6 @@ ___
 ### «Static» minus
 
 ► **minus**(v1: *[Vector](vector.md)*, v2: *[Vector](vector.md)*): [Vector](vector.md)
-
 
 
 
@@ -240,7 +235,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:11](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-11)*
 
 
@@ -268,7 +262,6 @@ ___
 ### «Static» plus
 
 ► **plus**(v1: *[Vector](vector.md)*, v2: *[Vector](vector.md)*): [Vector](vector.md)
-
 
 
 
@@ -300,7 +293,6 @@ ___
 ### «Static» times
 
 ► **times**(k: *`number`*, v: *[Vector](vector.md)*): [Vector](vector.md)
-
 
 
 

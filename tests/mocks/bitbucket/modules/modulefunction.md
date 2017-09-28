@@ -12,7 +12,6 @@ This is the module extending the function moduleFunction().
 
 
 
-
 *Defined in [functions.ts:125](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-125)*
 
 
@@ -78,7 +77,6 @@ ___
 
 
 
-
 *Defined in [functions.ts:139](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-139)*
 
 
@@ -101,7 +99,6 @@ ___
 ###  prepend
 
 ► **prepend**(): `void`
-
 
 
 

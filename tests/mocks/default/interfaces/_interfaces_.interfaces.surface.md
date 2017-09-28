@@ -10,16 +10,13 @@
 
 ###  diffuse
 
-**●  diffuse**:  *function* 
+**●  diffuse**:  *`function`* 
 
 *Defined in [interfaces.ts:49](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L49)*
 
 
 #### Type declaration
-(pos: *[Vector](../classes/_interfaces_.vector.md)*): [Color](../classes/_interfaces_.color.md)
-
-
-*Defined in [interfaces.ts:49](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L49)*
+►(pos: *[Vector](../classes/_interfaces_.vector.md)*): [Color](../classes/_interfaces_.color.md)
 
 
 
@@ -46,16 +43,13 @@ ___
 
 ###  reflect
 
-**●  reflect**:  *function* 
+**●  reflect**:  *`function`* 
 
 *Defined in [interfaces.ts:51](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L51)*
 
 
 #### Type declaration
-(pos: *[Vector](../classes/_interfaces_.vector.md)*): `number`
-
-
-*Defined in [interfaces.ts:51](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L51)*
+►(pos: *[Vector](../classes/_interfaces_.vector.md)*): `number`
 
 
 
@@ -96,16 +90,13 @@ ___
 
 ###  specular
 
-**●  specular**:  *function* 
+**●  specular**:  *`function`* 
 
 *Defined in [interfaces.ts:50](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L50)*
 
 
 #### Type declaration
-(pos: *[Vector](../classes/_interfaces_.vector.md)*): [Color](../classes/_interfaces_.color.md)
-
-
-*Defined in [interfaces.ts:50](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L50)*
+►(pos: *[Vector](../classes/_interfaces_.vector.md)*): [Color](../classes/_interfaces_.color.md)
 
 
 

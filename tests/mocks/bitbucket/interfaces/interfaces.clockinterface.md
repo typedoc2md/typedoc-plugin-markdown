@@ -30,7 +30,6 @@ ___
 
 
 
-
 *Defined in [interfaces.ts:75](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-75)*
 
 
@@ -58,7 +57,6 @@ ___
 ###  tick
 
 ► **tick**(): `any`
-
 
 
 
