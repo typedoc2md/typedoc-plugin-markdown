@@ -12,7 +12,7 @@
 
 {{#if indexSignature}}
 
-[{{#each indexSignature.parameters}}{{#if flags.isRest}}...{{/if}}{{name}}:&nbsp;{{#with type}}{{>type}}{{/with}}{{/each}}]: {{#with indexSignature.type}}{{>type}}{{/with}}
+[{{#each indexSignature.parameters}}{{#if flags.isRest}}...{{/if}}{{name}}: {{#with type}}{{>type}}{{/with}}{{/each}}]: {{#with indexSignature.type}}{{>type}}{{/with}}
 
 {{#with indexSignature}}
 {{> comment}}
@@ -33,7 +33,7 @@
 
 {{else}}
 
-{{#each flags}}«{{this}}» {{/each}} {{#if flags.isRest}}...{{/if}}{{{ name}}}{{#if flags.isOptional}}?{{/if}}: {{#with type}}{{>type}}{{/with}}
+{{#each flags}}«{{this}}» {{/each}} {{#if flags.isRest}}...{{/if}}{{{ name}}}: {{#with type}}{{>type}}{{/with}}
 
 {{> comment}}
 

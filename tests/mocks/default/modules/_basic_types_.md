@@ -44,7 +44,7 @@ For programs to be useful, we need to be able to work with some of the simplest 
 
 
 
-«Optional»  aFunction?: `function`
+«Optional»  aFunction: `function`
 
 
 

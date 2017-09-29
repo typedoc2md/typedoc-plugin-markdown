@@ -100,7 +100,7 @@
 
 
 
-«Optional»  aFunction?: `function`
+«Optional»  aFunction: `function`
 
 
 
