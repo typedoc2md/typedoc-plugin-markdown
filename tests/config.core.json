@@ -1,6 +1,0 @@
-{
-  "theme": "markdown",
-  "gitRevision": "master",
-  "media": "tests/src/media/",
-  "includes":"tests/src/inc/"
-}

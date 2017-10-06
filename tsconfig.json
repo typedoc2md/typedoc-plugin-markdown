@@ -8,13 +8,8 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitHelpers": false,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "outDir": "./dist",
     "removeComments": true,
-    "rootDir": "./src",
     "sourceMap": false,
-    "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
     "lib": [
@@ -27,11 +22,5 @@
     "types": [
       "node"
     ]
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../dist",
+    "rootDir": "./",
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  }
+}

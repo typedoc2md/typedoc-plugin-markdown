@@ -7,14 +7,14 @@
     "dist/"
   ],
   "scripts": {
-    "copy:static": "copyfiles --up 1 src/**/*.hbs dist/",
+    "copy:static": "copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
     "mocks": "npm run mocks:default && npm run mocks:bitbucket",
-    "mocks:default": "typedoc  --tsconfig tests/src/tsconfig.json --options tests/config.core.json --out tests/out/default",
-    "mocks:bitbucket": "typedoc --tsconfig  tests/src/tsconfig.json --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name' --options tests/config.core.json --out tests/out/bitbucket",
-    "html": "typedoc --tsconfig tests/src/tsconfig.json --out tests/html",
-    "lint": "tslint --type-check --project tsconfig.json",
-    "prepare": "rm -rf dist && tsc && npm run copy:static",
+    "mocks:default": "typedoc ./tests/src --out ./tests/out/default --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/",
+    "mocks:bitbucket": "typedoc  ./tests/src --out ./tests/out/bitbucket --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
+    "mocks:html": "typedoc --mode modules --out tests/html tests",
+    "lint": "tslint --type-check --project ./src/tsconfig.json",
+    "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",
     "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run mocks",
     "test": "mocha tests/**/test.*.js"
@@ -37,7 +37,7 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.8.0"
+    "typedoc": ">=0.9.0"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
@@ -46,9 +46,9 @@
     "chai": "^4.1.2",
     "chai-files": "^1.4.0",
     "copyfiles": "^1.2.0",
-    "mocha": "^3.5.3",
+    "mocha": "^4.0.1",
     "tslint": "^5.7.0",
-    "typedoc": "^0.8.0",
+    "typedoc": "^0.9.0",
     "typescript": "2.5.3"
   },
   "dependencies": {
