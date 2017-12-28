@@ -23,10 +23,12 @@ export class MarkdownTheme extends DefaultTheme {
     const mapping = DefaultTheme.getMapping(reflection);
 
     if (mapping) {
-      const url = [mapping.directory, MarkdownTheme.getUrl(reflection) + '.md'].join('/');
-      urls.push(new UrlMapping(url, reflection, mapping.template));
-      reflection.url = url;
-      reflection.hasOwnDocument = true;
+      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
+        const url = [mapping.directory, DefaultTheme.getUrl(reflection) + '.md'].join('/');
+        urls.push(new UrlMapping(url, reflection, mapping.template));
+        reflection.url = url;
+        reflection.hasOwnDocument = true;
+      }
       for (const key in reflection.children) {
         if (reflection.children.hasOwnProperty(key)) {
           const child = reflection.children[key];
@@ -55,55 +57,59 @@ export class MarkdownTheme extends DefaultTheme {
 
     const options = ThemeService.getOptions();
 
-    let anchor = DefaultTheme.getUrl(reflection, container, '.');
-    /* tslint:disable */
-    if (reflection['isStatic']) {
-      anchor = 'static-' + anchor;
-    }
-    /* tslint:enable */
+    if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
 
-    let anchorRef = '';
+      let anchor = DefaultTheme.getUrl(reflection, container, '.');
+      /* tslint:disable */
+      if (reflection['isStatic']) {
+        anchor = 'static-' + anchor;
+      }
+      /* tslint:enable */
 
-    switch (reflection.kind) {
-      case ReflectionKind.ExternalModule:
-        anchorRef = `external-module-${ThemeService.getAnchorRef(reflection.name)}-`;
-        break;
-      case ReflectionKind.Class:
-        anchorRef = `class-${ThemeService.getAnchorRef(reflection.name)}`;
-        break;
-      case ReflectionKind.Interface:
-        anchorRef = `interface-${ThemeService.getAnchorRef(reflection.name)}`;
-        break;
-      case ReflectionKind.Module:
-        anchorRef = `module-${ThemeService.getAnchorRef(reflection.name)}`;
-      case ReflectionKind.Enum:
-        if (reflection.parent.kind === 0 || reflection.parent.kind === ReflectionKind.ExternalModule) {
+      let anchorRef = '';
+
+      switch (reflection.kind) {
+        case ReflectionKind.ExternalModule:
+          anchorRef = `external-module-${ThemeService.getAnchorRef(reflection.name)}-`;
+          break;
+        case ReflectionKind.Class:
+          anchorRef = `class-${ThemeService.getAnchorRef(reflection.name)}`;
+          break;
+        case ReflectionKind.Interface:
+          anchorRef = `interface-${ThemeService.getAnchorRef(reflection.name)}`;
+          break;
+        case ReflectionKind.Module:
           anchorRef = `module-${ThemeService.getAnchorRef(reflection.name)}`;
-        } else {
-          anchorRef = `enumeration-${ThemeService.getAnchorRef(reflection.name)}`;
-        }
-        break;
-      default:
-        if (options.mdFlavour === 'bitbucket') {
-          let anchorPrefix = '';
-          if (reflection.kind === ReflectionKind.ObjectLiteral) {
-            anchorPrefix += 'object-literal-';
+        case ReflectionKind.Enum:
+          if (reflection.parent.kind === 0 || reflection.parent.kind === ReflectionKind.ExternalModule) {
+            anchorRef = `module-${ThemeService.getAnchorRef(reflection.name)}`;
+          } else {
+            anchorRef = `enumeration-${ThemeService.getAnchorRef(reflection.name)}`;
           }
-          reflection.flags.forEach((flag) => {
-            anchorPrefix += `${flag}-`;
-          });
-          const prefixRef = ThemeService.getAnchorRef(anchorPrefix);
-          const reflectionRef = ThemeService.getAnchorRef(reflection.name);
-          anchorRef = `markdown-header-${prefixRef}${reflectionRef}`;
-        } else {
-          anchorRef = anchor;
-        }
+          break;
+        default:
+          if (options.mdFlavour === 'bitbucket') {
+            let anchorPrefix = '';
+            if (reflection.kind === ReflectionKind.ObjectLiteral) {
+              anchorPrefix += 'object-literal-';
+            }
+            reflection.flags.forEach((flag) => {
+              anchorPrefix += `${flag}-`;
+            });
+            const prefixRef = ThemeService.getAnchorRef(anchorPrefix);
+            const reflectionRef = ThemeService.getAnchorRef(reflection.name);
+            anchorRef = `markdown-header-${prefixRef}${reflectionRef}`;
+          } else {
+            anchorRef = anchor;
+          }
+
+      }
+
+      reflection.url = (container.url !== undefined ? container.url : '') + '#' + anchorRef;
+      reflection.anchor = anchor;
+      reflection.hasOwnDocument = false;
 
     }
-
-    reflection.url = (container.url !== undefined ? container.url : '') + '#' + anchorRef;
-    reflection.anchor = anchor;
-    reflection.hasOwnDocument = false;
 
     reflection.traverse((child: any) => {
       if (child instanceof DeclarationReflection) {
@@ -166,10 +172,10 @@ export class MarkdownTheme extends DefaultTheme {
     urls.push(new UrlMapping('README.md', context, 'reflection.hbs'));
 
     if (entryPoint.children) {
-        entryPoint.children.forEach((child: DeclarationReflection) => {
-          MarkdownTheme.buildUrls(child, urls);
-        });
-      }
+      entryPoint.children.forEach((child: DeclarationReflection) => {
+        MarkdownTheme.buildUrls(child, urls);
+      });
+    }
 
     return urls;
   }
