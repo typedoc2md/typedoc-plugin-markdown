@@ -13,7 +13,7 @@
     "mocks:default": "typedoc ./tests/src --out ./tests/out/default --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/",
     "mocks:bitbucket": "typedoc  ./tests/src --out ./tests/out/bitbucket --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
     "mocks:html": "typedoc --mode modules --out tests/html tests",
-    "lint": "tslint --type-check --project ./src/tsconfig.json",
+    "lint": "tslint --project ./src/tsconfig.json",
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",
     "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run mocks",
@@ -40,19 +40,19 @@
     "typedoc": ">=0.9.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.43",
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^2.2.45",
     "@types/to-markdown": "^3.0.0",
     "chai": "^4.1.2",
     "chai-files": "^1.4.0",
     "copyfiles": "^1.2.0",
     "mocha": "^4.0.1",
-    "tslint": "^5.7.0",
+    "tslint": "^5.8.0",
     "typedoc": "^0.9.0",
     "typescript": "2.5.3"
   },
   "dependencies": {
-    "to-markdown": "^3.1.0"
+    "to-markdown": "^3.1.1"
   },
   "greenkeeper": {
     "ignore": [
