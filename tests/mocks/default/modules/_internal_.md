@@ -21,7 +21,7 @@
 ## Variables
 <a id="greeter-1"></a>
 
-###  greeter
+### «Const» greeter
 
 **●  greeter**:  *[Greeter](../classes/_internal_.greeter.md)*  =  new Greeter('world')
 

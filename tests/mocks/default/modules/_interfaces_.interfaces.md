@@ -74,7 +74,7 @@ ___
 ## Variables
 <a id="mysearch"></a>
 
-###  mySearch
+### «Let» mySearch
 
 **●  mySearch**:  *[SearchFunc](_interfaces_.interfaces.md#searchfunc)* 
 
@@ -88,7 +88,7 @@ ___
 
 <a id="square-1"></a>
 
-###  square
+### «Const» square
 
 **●  square**:  *[Square](../interfaces/_interfaces_.interfaces.square.md)*  =  {} as Square
 

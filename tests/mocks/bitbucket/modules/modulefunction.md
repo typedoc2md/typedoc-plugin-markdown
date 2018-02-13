@@ -38,7 +38,7 @@ This is a function that is extended by a module.
 
 ### Variables
 
-* [functionVariable](modulefunction.md#markdown-header-functionvariable)
+* [functionVariable](modulefunction.md#markdown-header-let-functionvariable)
 
 
 ### Functions
@@ -52,7 +52,7 @@ This is a function that is extended by a module.
 ## Variables
 
 
-###  functionVariable
+### «Let» functionVariable
 
 **●  functionVariable**:  *`string`* 
 

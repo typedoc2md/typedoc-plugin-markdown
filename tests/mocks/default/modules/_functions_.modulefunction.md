@@ -52,7 +52,7 @@ This is a function that is extended by a module.
 ## Variables
 <a id="functionvariable"></a>
 
-###  functionVariable
+### «Let» functionVariable
 
 **●  functionVariable**:  *`string`* 
 

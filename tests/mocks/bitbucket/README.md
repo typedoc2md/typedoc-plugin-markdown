@@ -16,6 +16,7 @@
 
 * [BaseClass](classes/baseclass.md)
 * [Color](classes/color.md)
+* [DatabaseProviderBase](classes/databaseproviderbase.md)
 * [Employee](classes/employee.md)
 * [GenericClass](classes/genericclass.md)
 * [Greeter](classes/greeter.md)
@@ -48,14 +49,14 @@
 ### Variables
 
 * [Promise](#markdown-header-promise)
-* [amount](#markdown-header-amount)
-* [color](#markdown-header-color)
-* [commentsWithTags](#markdown-header-commentswithtags)
-* [generalComments](#markdown-header-generalcomments)
-* [greeter](#markdown-header-greeter)
-* [isDone](#markdown-header-isdone)
-* [numbers](#markdown-header-numbers)
-* [publicVar](#markdown-header-publicvar)
+* [amount](#markdown-header-const-amount)
+* [color](#markdown-header-const-color)
+* [commentsWithTags](#markdown-header-const-commentswithtags)
+* [generalComments](#markdown-header-const-generalcomments)
+* [greeter](#markdown-header-const-greeter)
+* [isDone](#markdown-header-const-isdone)
+* [numbers](#markdown-header-const-numbers)
+* [publicVar](#markdown-header-const-publicvar)
 
 
 ### Functions
@@ -75,12 +76,12 @@
 * [returnTypeInterface](#markdown-header-returntypeinterface)
 * [returnTypeInterfaceWithPromise](#markdown-header-returntypeinterfacewithpromise)
 * [returnTypeObject](#markdown-header-returntypeobject)
-* [variableFunction](#markdown-header-variablefunction)
+* [variableFunction](#markdown-header-const-variablefunction)
 
 
 ### Object literals
 
-* [aMixedObject](#markdown-header-object-literal-amixedobject)
+* [aMixedObject](#markdown-header-object-literal-const-amixedobject)
 
 
 
@@ -139,7 +140,7 @@ ___
 
 
 
-###  amount
+### «Const» amount
 
 **●  amount**:  *`number`*  = 6
 
@@ -158,7 +159,7 @@ ___
 
 
 
-###  color
+### «Const» color
 
 **●  color**:  *`string`*  = "blue"
 
@@ -177,7 +178,7 @@ ___
 
 
 
-###  commentsWithTags
+### «Const» commentsWithTags
 
 **●  commentsWithTags**:  *`boolean`*  = false
 
@@ -206,7 +207,7 @@ ___
 
 
 
-###  generalComments
+### «Const» generalComments
 
 **●  generalComments**:  *`boolean`*  = false
 
@@ -216,7 +217,7 @@ ___
 
 Additionally you can link to other classes, members or functions using double square brackets.
 
-Link to a class: [BaseClass](classes/baseclass.md) Link to a function: [createSomething](#markdown-header-createsomething) Link to a function: [color](#markdown-header-color)
+Link to a class: [BaseClass](classes/baseclass.md) Link to a function: [createSomething](#markdown-header-createsomething) Link to a function: [color](#markdown-header-const-color)
 
 
 
@@ -225,7 +226,7 @@ ___
 
 
 
-###  greeter
+### «Const» greeter
 
 **●  greeter**:  *[Greeter](classes/greeter.md)*  =  new Greeter('world')
 
@@ -239,7 +240,7 @@ ___
 
 
 
-###  isDone
+### «Const» isDone
 
 **●  isDone**:  *`boolean`*  = false
 
@@ -258,7 +259,7 @@ ___
 
 
 
-###  numbers
+### «Const» numbers
 
 **●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
@@ -278,7 +279,7 @@ ___
 
 
 
-###  publicVar
+### «Const» publicVar
 
 **●  publicVar**:  *"public variable"*  = "public variable"
 
@@ -755,7 +756,7 @@ ___
 
 
 
-###  variableFunction
+### «Const» variableFunction
 
 ► **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
 

@@ -69,7 +69,7 @@ ___
 ## Variables
 <a id="amount"></a>
 
-###  amount
+### «Const» amount
 
 **●  amount**:  *`number`*  = 6
 
@@ -88,7 +88,7 @@ ___
 
 <a id="color"></a>
 
-###  color
+### «Const» color
 
 **●  color**:  *`string`*  = "blue"
 
@@ -107,7 +107,7 @@ ___
 
 <a id="isdone"></a>
 
-###  isDone
+### «Const» isDone
 
 **●  isDone**:  *`boolean`*  = false
 
@@ -126,7 +126,7 @@ ___
 
 <a id="numbers"></a>
 
-###  numbers
+### «Const» numbers
 
 **●  numbers**:  *`number`[]*  =  [1, 2, 3]
 

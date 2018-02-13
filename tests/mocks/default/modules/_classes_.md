@@ -9,6 +9,7 @@
 ### Classes
 
 * [BaseClass](../classes/_classes_.baseclass.md)
+* [DatabaseProviderBase](../classes/_classes_.databaseproviderbase.md)
 * [GenericClass](../classes/_classes_.genericclass.md)
 * [InternalClass](../classes/_classes_.internalclass.md)
 * [NonGenericClass](../classes/_classes_.nongenericclass.md)

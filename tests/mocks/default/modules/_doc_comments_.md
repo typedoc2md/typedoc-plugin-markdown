@@ -17,7 +17,7 @@
 ## Variables
 <a id="commentswithtags"></a>
 
-###  commentsWithTags
+### «Const» commentsWithTags
 
 **●  commentsWithTags**:  *`boolean`*  = false
 
@@ -46,7 +46,7 @@ ___
 
 <a id="generalcomments"></a>
 
-###  generalComments
+### «Const» generalComments
 
 **●  generalComments**:  *`boolean`*  = false
 

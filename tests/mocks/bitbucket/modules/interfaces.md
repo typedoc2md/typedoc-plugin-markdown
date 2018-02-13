@@ -24,8 +24,8 @@
 
 ### Variables
 
-* [mySearch](interfaces.md#markdown-header-mysearch)
-* [square](interfaces.md#markdown-header-square)
+* [mySearch](interfaces.md#markdown-header-let-mysearch)
+* [square](interfaces.md#markdown-header-const-square)
 
 
 ### Functions
@@ -74,7 +74,7 @@ ___
 ## Variables
 
 
-###  mySearch
+### «Let» mySearch
 
 **●  mySearch**:  *[SearchFunc](interfaces.md#markdown-header-searchfunc)* 
 
@@ -88,7 +88,7 @@ ___
 
 
 
-###  square
+### «Const» square
 
 **●  square**:  *[Square](../interfaces/interfaces.square.md)*  =  {} as Square
 

@@ -29,7 +29,7 @@
 ## Variables
 <a id="privatevar"></a>
 
-### «Private» privateVar
+### «Private»«Const» privateVar
 
 **●  privateVar**:  *"marked private variable"*  = "marked private variable"
 
@@ -46,7 +46,7 @@ ___
 
 <a id="publicvar"></a>
 
-###  publicVar
+### «Const» publicVar
 
 **●  publicVar**:  *"public variable"*  = "public variable"
 

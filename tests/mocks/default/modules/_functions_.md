@@ -499,7 +499,7 @@ ___
 
 <a id="variablefunction"></a>
 
-###  variableFunction
+### «Const» variableFunction
 
 ► **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): `number`
 
