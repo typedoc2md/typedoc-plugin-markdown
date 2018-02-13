@@ -13,7 +13,7 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
 
   let md = '';
 
-  if (!group.allChildrenArePrivate) {
+  if (!options.excludePrivate || !group.allChildrenArePrivate) {
     let displayTitle = true;
 
     const isMainTitle = options.mode === 0 && parent === undefined;
@@ -24,7 +24,7 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
     }
 
     md = ThemeService.compilePartial(`members.group.hbs`,
-    Object.assign(group, { displayTitle, isMainTitle }));
+      Object.assign(group, { displayTitle, isMainTitle }));
   }
 
   return md;
