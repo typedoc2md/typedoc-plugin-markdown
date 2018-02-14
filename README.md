@@ -1,8 +1,8 @@
 # typedoc-plugin-markdown
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
-[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
-[![Greenkeeper badge](https://badges.greenkeeper.io/tgreyuk/typedoc-plugin-markdown.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown)
+[![Greenkeeper badge](https://badges.greenkeeper.io/tgreyjs/typedoc-plugin-markdown.svg)](https://greenkeeper.io/)
 
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
 
@@ -70,7 +70,7 @@ This is a function with multiple arguments and a return value.
 
 ## Samples
 
-Browse some <a href="https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/tests/mocks/default/README.md">mocked samples</a> to view further examples of generated output. 
+Browse some <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/tests/mocks/default/README.md">mocked samples</a> to view further examples of generated output. 
 
 ## Acknowledgements
 

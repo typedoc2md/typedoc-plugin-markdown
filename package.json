@@ -25,11 +25,11 @@
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+    "url": "https://github.com/tgreyjs/typedoc-plugin-markdown/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git"
+    "url": "git+https://github.com/tgreyjs/typedoc-plugin-markdown.git"
   },
   "keywords": [
     "markdown",
