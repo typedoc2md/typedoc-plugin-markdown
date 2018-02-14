@@ -72,7 +72,7 @@ This is a simple example on how to use BaseClass.
 ### ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
 
 
-*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
+*Defined in [classes.ts:70](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
 
@@ -88,7 +88,7 @@ This is a simple example on how to use BaseClass.
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
-*Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
+*Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
 
 
@@ -114,7 +114,7 @@ This is a simple example on how to use BaseClass.
 
 **●  internalClass**:  *[InternalClass](_classes_.internalclass.md)* 
 
-*Defined in [classes.ts:70](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
+*Defined in [classes.ts:70](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
 
@@ -131,7 +131,7 @@ ___
 
 **●  kind**:  *`number`* 
 
-*Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
+*Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
 
@@ -150,7 +150,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
-*Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
+*Defined in [classes.ts:60](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
 
 
@@ -167,7 +167,7 @@ ___
 
 **●  instance**:  *[BaseClass](_classes_.baseclass.md)* 
 
-*Defined in [classes.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
+*Defined in [classes.ts:55](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L55)*
 
 
 
@@ -186,7 +186,7 @@ ___
 
 **●  instances**:  *[BaseClass](_classes_.baseclass.md)[]* 
 
-*Defined in [classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L56)*
+*Defined in [classes.ts:56](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L56)*
 
 
 
@@ -204,7 +204,7 @@ ___
 
 
 
-*Defined in [classes.ts:129](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
+*Defined in [classes.ts:129](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
 
 
@@ -238,7 +238,7 @@ ___
 
 
 
-*Defined in [classes.ts:135](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L135)*
+*Defined in [classes.ts:135](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L135)*
 
 
 
@@ -265,7 +265,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
-*Defined in [classes.ts:94](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
+*Defined in [classes.ts:94](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
 
 
@@ -294,7 +294,7 @@ ___
 
 
 
-*Defined in [classes.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
+*Defined in [classes.ts:117](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
 
 
@@ -329,7 +329,7 @@ ___
 
 
 
-*Defined in [classes.ts:153](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
+*Defined in [classes.ts:153](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
@@ -365,7 +365,7 @@ ___
 
 
 
-*Defined in [classes.ts:146](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
+*Defined in [classes.ts:146](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
 
 
@@ -394,7 +394,7 @@ ___
 
 
 
-*Defined in [classes.ts:106](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
+*Defined in [classes.ts:106](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
 
 

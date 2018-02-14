@@ -12,7 +12,7 @@
 
 **●  id**:  *`number`* 
 
-*Defined in [interfaces.ts:138](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L138)*
+*Defined in [interfaces.ts:138](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L138)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  plural_name**:  *`string`* 
 
-*Defined in [interfaces.ts:141](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L141)*
+*Defined in [interfaces.ts:141](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L141)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  plural_name_short**:  *`string`* 
 
-*Defined in [interfaces.ts:142](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L142)*
+*Defined in [interfaces.ts:142](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L142)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  singular_name**:  *`string`* 
 
-*Defined in [interfaces.ts:139](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L139)*
+*Defined in [interfaces.ts:139](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L139)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  singular_name_short**:  *`string`* 
 
-*Defined in [interfaces.ts:140](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L140)*
+*Defined in [interfaces.ts:140](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L140)*
 
 
 

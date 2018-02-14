@@ -39,7 +39,7 @@ This is a interface inheriting from two other interfaces.
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)*
 
-*Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
+*Defined in [classes.ts:11](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
 
 
 
@@ -64,7 +64,7 @@ ___
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
 
-*Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
+*Defined in [classes.ts:18](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
 
 
@@ -93,7 +93,7 @@ ___
 
 *Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)*
 
-*Defined in [classes.ts:30](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
+*Defined in [classes.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
 
 
@@ -128,7 +128,7 @@ ___
 
 
 
-*Defined in [classes.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
+*Defined in [classes.ts:40](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L40)*
 
 
 

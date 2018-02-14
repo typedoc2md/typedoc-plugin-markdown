@@ -42,7 +42,7 @@
 
 **Τ SearchFunc**:  *`function`* 
 
-*Defined in [interfaces.ts:61](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
+*Defined in [interfaces.ts:61](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L61)*
 
 
 #### Type declaration
@@ -78,7 +78,7 @@ ___
 
 **●  mySearch**:  *[SearchFunc](_interfaces_.interfaces.md#searchfunc)* 
 
-*Defined in [interfaces.ts:63](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L63)*
+*Defined in [interfaces.ts:63](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L63)*
 
 
 
@@ -92,7 +92,7 @@ ___
 
 **●  square**:  *[Square](../interfaces/_interfaces_.interfaces.square.md)*  =  {} as Square
 
-*Defined in [interfaces.ts:97](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L97)*
+*Defined in [interfaces.ts:97](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L97)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:85](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L85)*
+*Defined in [interfaces.ts:85](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L85)*
 
 
 

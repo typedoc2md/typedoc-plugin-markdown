@@ -36,7 +36,7 @@ For programs to be useful, we need to be able to work with some of the simplest 
 
 **Τ SomeOptions**:  *`object`* 
 
-*Defined in [basic-types.ts:49](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L49)*
+*Defined in [basic-types.ts:49](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L49)*
 
 
 #### Type declaration
@@ -73,7 +73,7 @@ ___
 
 **●  amount**:  *`number`*  = 6
 
-*Defined in [basic-types.ts:20](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L20)*
+*Defined in [basic-types.ts:20](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L20)*
 
 
 
@@ -92,7 +92,7 @@ ___
 
 **●  color**:  *`string`*  = "blue"
 
-*Defined in [basic-types.ts:28](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L28)*
+*Defined in [basic-types.ts:28](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L28)*
 
 
 
@@ -111,7 +111,7 @@ ___
 
 **●  isDone**:  *`boolean`*  = false
 
-*Defined in [basic-types.ts:12](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L12)*
+*Defined in [basic-types.ts:12](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L12)*
 
 
 
@@ -130,7 +130,7 @@ ___
 
 **●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
-*Defined in [basic-types.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L36)*
+*Defined in [basic-types.ts:36](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L36)*
 
 
 
@@ -158,7 +158,7 @@ This is an object with various types
 
 **●  someNumber**:  *`number`*  = 10
 
-*Defined in [basic-types.ts:45](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L45)*
+*Defined in [basic-types.ts:45](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L45)*
 
 
 
@@ -171,7 +171,7 @@ ___
 
 **●  someString**:  *`string`*  = "hello"
 
-*Defined in [basic-types.ts:46](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L46)*
+*Defined in [basic-types.ts:46](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L46)*
 
 
 
@@ -186,7 +186,7 @@ ___
 
 
 
-*Defined in [basic-types.ts:42](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L42)*
+*Defined in [basic-types.ts:42](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/basic-types.ts#L42)*
 
 
 

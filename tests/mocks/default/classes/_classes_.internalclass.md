@@ -23,7 +23,7 @@ This is an internal class, it is not exported.
 ### ⊕ **new InternalClass**(options: *`object`*): [InternalClass](_classes_.internalclass.md)
 
 
-*Defined in [classes.ts:169](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
+*Defined in [classes.ts:169](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
 
 
 

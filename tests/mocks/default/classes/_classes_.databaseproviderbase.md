@@ -31,7 +31,7 @@
 ### ⊕ **new DatabaseProviderBase**(): [DatabaseProviderBase](_classes_.databaseproviderbase.md)
 
 
-*Defined in [classes.ts:290](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L290)*
+*Defined in [classes.ts:290](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L290)*
 
 
 
@@ -49,7 +49,7 @@
 
 **●  base**:  *`any`* 
 
-*Defined in [classes.ts:290](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L290)*
+*Defined in [classes.ts:290](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L290)*
 
 
 
@@ -63,7 +63,7 @@ ___
 
 **●  webSQLBase**:  *`any`* 
 
-*Defined in [classes.ts:289](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L289)*
+*Defined in [classes.ts:289](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L289)*
 
 
 
@@ -81,7 +81,7 @@ ___
 
 
 
-*Defined in [classes.ts:296](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L296)*
+*Defined in [classes.ts:296](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L296)*
 
 
 

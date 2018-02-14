@@ -34,7 +34,7 @@ This is a simple interface.
 
 **●  name**:  *`string`* 
 
-*Defined in [classes.ts:11](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
+*Defined in [classes.ts:11](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L11)*
 
 
 
@@ -57,7 +57,7 @@ ___
 
 
 
-*Defined in [classes.ts:18](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
+*Defined in [classes.ts:18](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L18)*
 
 
 

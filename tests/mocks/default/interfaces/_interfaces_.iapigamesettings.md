@@ -12,7 +12,7 @@
 
 **●  element_formations**:  *[IApiGameFormations](_interfaces_.iapigameformations.md)* 
 
-*Defined in [interfaces.ts:105](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L105)*
+*Defined in [interfaces.ts:105](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L105)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  game_event**:  *[IApiGameEvent](_interfaces_.iapigameevent.md)* 
 
-*Defined in [interfaces.ts:104](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L104)*
+*Defined in [interfaces.ts:104](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L104)*
 
 
 
