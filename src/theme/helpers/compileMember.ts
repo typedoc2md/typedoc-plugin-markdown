@@ -1,5 +1,4 @@
-import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections/index';
-import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
+import { DeclarationReflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { ThemeService } from '../service';
 
 /**

@@ -1,8 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { DeclarationReflection, ProjectReflection, Reflection } from 'typedoc/dist/lib/models/reflections/index';
-import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
+import { DeclarationReflection, ProjectReflection, Reflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
@@ -80,11 +79,10 @@ export class MarkdownTheme extends DefaultTheme {
         case ReflectionKind.Module:
           anchorRef = `module-${ThemeService.getAnchorRef(reflection.name)}`;
         case ReflectionKind.Enum:
-          if (reflection.parent.kind === 0 || reflection.parent.kind === ReflectionKind.ExternalModule) {
-            anchorRef = `module-${ThemeService.getAnchorRef(reflection.name)}`;
-          } else {
-            anchorRef = `enumeration-${ThemeService.getAnchorRef(reflection.name)}`;
-          }
+          const isModule = reflection.parent.kind === 0 || reflection.parent.kind === ReflectionKind.ExternalModule;
+          anchorRef = isModule ?
+            `module-${ThemeService.getAnchorRef(reflection.name)}` :
+            `enumeration-${ThemeService.getAnchorRef(reflection.name)}`;
           break;
         default:
           if (options.mdFlavour === 'bitbucket') {
@@ -166,7 +164,7 @@ export class MarkdownTheme extends DefaultTheme {
       isIndex: true,
     };
 
-    const context = Object.assign(entryPoint, additionalContext);
+    const context = { ...entryPoint, ...additionalContext };
 
     urls.push(new UrlMapping('README.md', context, 'reflection.hbs'));
 

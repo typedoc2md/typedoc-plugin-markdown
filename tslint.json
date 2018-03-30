@@ -1,5 +1,5 @@
 {
-  "extends": "tslint:recommended",
+  "extends": "tslint:latest",
   "rules": {
     "quotemark": [
       true,
@@ -15,6 +15,13 @@
       false
     ],
     "no-var-requires": [
+      false
+    ],
+    "max-line-length": [
+      true,
+      140
+    ],
+    "no-submodule-imports": [
       false
     ]
   }

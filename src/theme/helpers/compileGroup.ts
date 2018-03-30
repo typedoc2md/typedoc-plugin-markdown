@@ -24,7 +24,7 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
     }
 
     md = ThemeService.compilePartial(`members.group.hbs`,
-      Object.assign(group, { displayTitle, isMainTitle }));
+      {...group,  displayTitle, isMainTitle});
   }
 
   return md;

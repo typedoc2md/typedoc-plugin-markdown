@@ -1,5 +1,4 @@
-import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections/index';
-import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
+import { DeclarationReflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { ThemeService } from '../service';
 
 /**
@@ -9,7 +8,7 @@ import { ThemeService } from '../service';
 export function compileIndex(member: DeclarationReflection) {
   let md = '';
   if (member.kind !== ReflectionKind.Interface) {
-      md = ThemeService.compilePartial('index.hbs', Object.assign(member));
+    md = ThemeService.compilePartial('index.hbs', { ...member });
   }
   return md;
 }
