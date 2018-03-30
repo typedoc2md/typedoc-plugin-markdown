@@ -60,11 +60,10 @@ export class MarkdownTheme extends DefaultTheme {
     if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
 
       let anchor = DefaultTheme.getUrl(reflection, container, '.');
-      /* tslint:disable */
+
       if (reflection['isStatic']) {
         anchor = 'static-' + anchor;
       }
-      /* tslint:enable */
 
       let anchorRef = '';
 

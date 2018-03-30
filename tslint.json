@@ -5,7 +5,14 @@
       true,
       "single"
     ],
-    "interface-over-type-literal": [false],
-    "no-console": [false]
+    "interface-over-type-literal": [
+      false
+    ],
+    "no-string-literal": [
+      false
+    ],
+    "no-console": [
+      false
+    ]
   }
 }
