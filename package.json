@@ -9,15 +9,16 @@
   "scripts": {
     "copy:static": "copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
-    "mocks": "npm run mocks:default && npm run mocks:bitbucket",
-    "mocks:default": "typedoc ./tests/src --out ./tests/out/default --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/",
+    "mocks": "npm run mocks:github && npm run mocks:bitbucket && npm run mocks:gitbook",
+    "mocks:github": "typedoc  ./tests/src --out ./tests/out/github --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/",
     "mocks:bitbucket": "typedoc  ./tests/src --out ./tests/out/bitbucket --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
-    "mocks:html": "typedoc --mode modules --out tests/html tests",
+    "mocks:gitbook": "typedoc  ./tests/src --out ./tests/out/gitbook --theme markdown --mdFlavour gitbook --media tests/src/media/ --includes tests/src/inc/",
+    "mocks:html": "typedoc --out tests/html tests --media tests/src/media/ --includes tests/src/inc/",
     "lint": "tslint --project ./src/tsconfig.json",
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",
     "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run mocks",
-    "test": "mocha tests/**/test.*.js"
+    "test": "mocha tests/index.js"
   },
   "author": "Thomas Grey",
   "license": "MIT",

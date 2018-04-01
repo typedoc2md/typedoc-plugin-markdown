@@ -1,0 +1,14 @@
+
+{{#each model.navigation}}
+{{#if isLabel}}
+{{{title}}}
+{{else}}
+* [{{title}}]({{relativeURL url}})
+{{#if subNavigation}}
+{{#each subNavigation}}
+ * [{{title}}]({{relativeURL url}})
+{{/each}}
+{{/if}}
+{{/if}}
+{{/each}}
+
