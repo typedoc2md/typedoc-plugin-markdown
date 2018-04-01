@@ -1,5 +1,5 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { ThemeService } from '../service';
+import { ThemeService } from '../theme.service';
 
 /**
  * Compiles index partial or an empty string if nothing to show

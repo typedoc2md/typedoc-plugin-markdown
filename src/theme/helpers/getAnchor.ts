@@ -1,4 +1,5 @@
-import { ThemeService } from '../service';
+import { Flavour } from '../enums/flavour.enum';
+import { ThemeService } from '../theme.service';
 
 /**
  * Returns the anchor element
@@ -6,5 +7,5 @@ import { ThemeService } from '../service';
  */
 export function getAnchor(anchor: string) {
   const options = ThemeService.getOptions();
-  return options.mdFlavour === 'bitbucket' ? '' : `<a id="${anchor}"></a>`;
+  return options.mdFlavour === Flavour.BITBUCKET ? '' : `<a id="${anchor}"></a>`;
 }

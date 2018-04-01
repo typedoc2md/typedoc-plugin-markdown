@@ -5,7 +5,9 @@ import { DeclarationReflection, ProjectReflection, Reflection, ReflectionKind } 
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-import { ThemeService } from './service';
+
+import { Flavour } from './enums/flavour.enum';
+import { ThemeService } from './theme.service';
 
 export class MarkdownTheme extends DefaultTheme {
 
@@ -85,7 +87,7 @@ export class MarkdownTheme extends DefaultTheme {
             `enumeration-${ThemeService.getAnchorRef(reflection.name)}`;
           break;
         default:
-          if (options.mdFlavour === 'bitbucket') {
+          if (options.mdFlavour === Flavour.BITBUCKET) {
             let anchorPrefix = '';
             if (reflection.kind === ReflectionKind.ObjectLiteral) {
               anchorPrefix += 'object-literal-';
@@ -113,6 +115,7 @@ export class MarkdownTheme extends DefaultTheme {
         MarkdownTheme.applyAnchorUrl(child, container);
       }
     });
+
   }
 
   constructor(renderer: Renderer, basePath: string, options: any) {
@@ -121,7 +124,7 @@ export class MarkdownTheme extends DefaultTheme {
     // remove uneccessary plugins
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
-    renderer.removeComponent('navigation');
+    // renderer.removeComponent('navigation');
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
 
@@ -152,29 +155,51 @@ export class MarkdownTheme extends DefaultTheme {
    */
   public getUrls(project: ProjectReflection): UrlMapping[] {
 
-    const urls: UrlMapping[] = [];
+    const options = ThemeService.getOptions();
+
+    const urlMappings: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
 
     ThemeService.projectName = entryPoint.name;
 
-    // pass in additional context
-    const additionalContext = {
-      displayReadme: this.application.options.getValue('readme') !== 'none',
-      hideBreadcrumbs: true,
-      isIndex: true,
-    };
+    // write home file with additional context
+    urlMappings.push(new UrlMapping('README.md', {
+      ...entryPoint, ...{
+        displayReadme: this.application.options.getValue('readme') !== 'none',
+        hideBreadcrumbs: true,
+        isIndex: true,
+      },
+    }, 'reflection.hbs'));
 
-    const context = { ...entryPoint, ...additionalContext };
-
-    urls.push(new UrlMapping('README.md', context, 'reflection.hbs'));
-
+    // write children
     if (entryPoint.children) {
       entryPoint.children.forEach((child: DeclarationReflection) => {
-        MarkdownTheme.buildUrls(child, urls);
+        MarkdownTheme.buildUrls(child, urlMappings);
       });
     }
 
-    return urls;
+    // write gitbook summary
+    if (options.mdFlavour === Flavour.GITBOOK) {
+
+      const navigation = this.getNavigation(project).children.map((navigationItem) => {
+        const subNavigation = navigationItem.dedicatedUrls ? navigationItem.dedicatedUrls.map((url) => {
+          return {
+            title: () => {
+              const urlMapping = urlMappings.find((item) => {
+                return item.url === url;
+              });
+              return urlMapping ? urlMapping.model.name : null;
+            },
+            url,
+          };
+        }) : null;
+
+        return { ...navigationItem, subNavigation };
+      });
+
+      urlMappings.push(new UrlMapping('SUMMARY.md', { navigation }, 'navigation.hbs'));
+    }
+    return urlMappings;
   }
 
 }

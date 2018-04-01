@@ -1,4 +1,4 @@
-import { ThemeService } from '../service';
+import { ThemeService } from '../theme.service';
 
 /**
  * Compiles sources

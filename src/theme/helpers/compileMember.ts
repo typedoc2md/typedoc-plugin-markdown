@@ -1,5 +1,5 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { ThemeService } from '../service';
+import { ThemeService } from '../theme.service';
 
 /**
  * Compiles relevant member partial

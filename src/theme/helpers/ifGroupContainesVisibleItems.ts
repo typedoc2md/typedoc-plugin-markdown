@@ -1,5 +1,5 @@
 import { ReflectionGroup } from 'typedoc/dist/lib/models/ReflectionGroup';
-import { ThemeService } from '../service';
+import { ThemeService } from '../theme.service';
 
 /**
  * Returns true if group contains visible items

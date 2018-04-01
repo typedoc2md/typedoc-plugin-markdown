@@ -1,6 +1,6 @@
 import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { ThemeService } from '../service';
+import { ThemeService } from '../theme.service';
 
 /**
  * Return true if index item should be displayed

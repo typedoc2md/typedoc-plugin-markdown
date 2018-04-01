@@ -1,6 +1,6 @@
 import { ReflectionGroup } from 'typedoc/dist/lib/models/ReflectionGroup';
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { ThemeService } from '../service';
+import { ThemeService } from '../theme.service';
 
 /**
  * Sets relevant context for member.groups and compiles partial

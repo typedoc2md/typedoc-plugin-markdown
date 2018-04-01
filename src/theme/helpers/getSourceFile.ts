@@ -1,7 +1,7 @@
 /**
  * Returns the source file definition
  */
-import { ThemeService } from '../service';
+import { ThemeService } from '../theme.service';
 
 export function getSourceFile(fileName: string, line: string, url: string) {
   const options = ThemeService.getOptions();
