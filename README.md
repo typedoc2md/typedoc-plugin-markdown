@@ -16,17 +16,23 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 
 ### How to use
 
-The plugin provides an additional markdown theme.
+The plugin provides an additional markdown theme:
 
-```javascript
+```
 node_modules/.bin/typedoc --theme markdown
+```
+
+npm script:
+```
+"scripts": {
+ "docs": "typedoc --theme markdown"
 ```
 
 ## Additional arguments
 
 The plugin exposes the following additional arguments:
 
-* `--mdFlavour<github|bitbucket>`<br />
+* `--mdFlavour<github|bitbucket|gitbook>`<br />
 Specifies the markdown rendering engine.  Defaults to `github`.
 * `--mdHideSources`<br />
 Suppress sources from output 
@@ -70,7 +76,7 @@ This is a function with multiple arguments and a return value.
 
 ## Samples
 
-Browse some <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/tests/mocks/default/README.md">mocked samples</a> to view further examples of generated output. 
+Browse some <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/samples/default/README.md">mocked samples</a> to view further examples of generated output. 
 
 ## Acknowledgements
 

@@ -30,11 +30,6 @@
 
 ### Interfaces
 
-* [IApiElementType](interfaces/iapielementtype.md)
-* [IApiGameEvent](interfaces/iapigameevent.md)
-* [IApiGameFormations](interfaces/iapigameformations.md)
-* [IApiGameSettings](interfaces/iapigamesettings.md)
-* [IApiLeaguePositions](interfaces/iapileaguepositions.md)
 * [IGameEvent](interfaces/igameevent.md)
 * [INameInterface](interfaces/inameinterface.md)
 * [IPrintInterface](interfaces/iprintinterface.md)
