@@ -73,7 +73,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
-*Defined in [classes.ts:70](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L70)*
+*Defined in [classes.ts:70](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L70)*
 
 
 
@@ -91,7 +91,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
-*Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L72)*
+*Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
 
 
 
@@ -119,7 +119,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
 
-*Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L65)*
+*Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
 
 
 
@@ -140,7 +140,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)*
 
-*Defined in [classes.ts:60](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L60)*
+*Defined in [classes.ts:60](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
 
 
 
@@ -160,7 +160,7 @@ ___
 
 getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
 
-*Defined in [classes.ts:199](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L199)*
+*Defined in [classes.ts:199](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L199)*
 
 
 
@@ -173,7 +173,7 @@ Returns the name. See [BaseClass.name](_classes_.baseclass.md#name).
 The return value.
 
 
-*Defined in [classes.ts:209](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L209)*
+*Defined in [classes.ts:209](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L209)*
 
 
 
@@ -205,7 +205,7 @@ ___
 
 getreadOnlyNameProperty(): `string`
 
-*Defined in [classes.ts:218](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L218)*
+*Defined in [classes.ts:218](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L218)*
 
 
 
@@ -229,7 +229,7 @@ ___
 
 setwriteOnlyNameProperty(value: *`string`*): `void`
 
-*Defined in [classes.ts:228](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L228)*
+*Defined in [classes.ts:228](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L228)*
 
 
 
@@ -266,7 +266,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
 
-*Defined in [classes.ts:129](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L129)*
+*Defined in [classes.ts:129](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L129)*
 
 
 
@@ -304,7 +304,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)*
 
-*Defined in [classes.ts:94](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L94)*
+*Defined in [classes.ts:94](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L94)*
 
 
 
@@ -335,7 +335,7 @@ ___
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[print](../interfaces/_classes_.iprintnameinterface.md#print)*
 
-*Defined in [classes.ts:185](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L185)*
+*Defined in [classes.ts:185](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L185)*
 
 
 
@@ -370,7 +370,7 @@ ___
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[printName](../interfaces/_classes_.iprintnameinterface.md#printname)*
 
-*Defined in [classes.ts:190](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L190)*
+*Defined in [classes.ts:190](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L190)*
 
 
 
@@ -397,7 +397,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)*
 
-*Defined in [classes.ts:117](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L117)*
+*Defined in [classes.ts:117](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L117)*
 
 
 
@@ -434,7 +434,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)*
 
-*Defined in [classes.ts:153](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L153)*
+*Defined in [classes.ts:153](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L153)*
 
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
@@ -472,7 +472,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
 
-*Defined in [classes.ts:146](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L146)*
+*Defined in [classes.ts:146](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L146)*
 
 
 
@@ -503,7 +503,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)*
 
-*Defined in [classes.ts:106](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L106)*
+*Defined in [classes.ts:106](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L106)*
 
 
 

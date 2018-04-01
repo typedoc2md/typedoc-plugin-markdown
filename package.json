@@ -12,7 +12,7 @@
     "mocks": "npm run mocks:github && npm run mocks:bitbucket && npm run mocks:gitbook",
     "mocks:github": "typedoc  ./tests/src --out ./tests/out/github --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/",
     "mocks:bitbucket": "typedoc  ./tests/src --out ./tests/out/bitbucket --theme markdown --gitRevision master --media tests/src/media/ --includes tests/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
-    "mocks:gitbook": "typedoc  ./tests/src --out ./tests/out/gitbook --theme markdown --mdFlavour gitbook --media tests/src/media/ --includes tests/src/inc/",
+    "mocks:gitbook": "typedoc  ./tests/src --out ./tests/out/gitbook --theme markdown --gitRevision master --mdFlavour gitbook --media tests/src/media/ --includes tests/src/inc/",
     "mocks:html": "typedoc --out tests/html tests --media tests/src/media/ --includes tests/src/inc/",
     "lint": "tslint --project ./src/tsconfig.json",
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",

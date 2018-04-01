@@ -51,7 +51,7 @@ This a non generic class derived from a [generic class](_classes_.genericclass.m
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)*
 
-*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L254)*
+*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -85,7 +85,7 @@ Constructor short text.
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p2](_classes_.genericclass.md#p2)*
 
-*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L264)*
+*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -104,7 +104,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p3](_classes_.genericclass.md#p3)*
 
-*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L264)*
+*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -123,7 +123,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[value](_classes_.genericclass.md#value)*
 
-*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L254)*
+*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -143,7 +143,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[getValue](_classes_.genericclass.md#getvalue)*
 
-*Defined in [classes.ts:274](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L274)*
+*Defined in [classes.ts:274](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
 
 
 
@@ -167,7 +167,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[setValue](_classes_.genericclass.md#setvalue)*
 
-*Defined in [classes.ts:270](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L270)*
+*Defined in [classes.ts:270](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
 

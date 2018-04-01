@@ -3,12 +3,14 @@
 {{#if isLabel}}
 {{{title}}}
 {{else}}
+{{#unless isGlobals}}
 * [{{title}}]({{relativeURL url}})
 {{#if subNavigation}}
 {{#each subNavigation}}
  * [{{title}}]({{relativeURL url}})
 {{/each}}
 {{/if}}
+{{/unless}}
 {{/if}}
 {{/each}}
 

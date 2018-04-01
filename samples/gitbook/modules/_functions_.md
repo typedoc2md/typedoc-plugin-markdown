@@ -49,7 +49,7 @@
 
 **●  Promise**:  *`any`* 
 
-*Defined in [functions.ts:176](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L176)*
+*Defined in [functions.ts:176](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L176)*
 
 
 
@@ -67,7 +67,7 @@ ___
 
 
 
-*Defined in [functions.ts:155](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L155)*
+*Defined in [functions.ts:155](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L155)*
 
 
 
@@ -92,7 +92,7 @@ ___
 
 
 
-*Defined in [functions.ts:11](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L11)*
+*Defined in [functions.ts:11](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L11)*
 
 
 
@@ -117,7 +117,7 @@ ___
 
 
 
-*Defined in [functions.ts:38](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L38)*
+*Defined in [functions.ts:38](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L38)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 
 
-*Defined in [functions.ts:58](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L58)*
+*Defined in [functions.ts:58](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L58)*
 
 
 
@@ -191,7 +191,7 @@ ___
 
 
 
-*Defined in [functions.ts:170](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L170)*
+*Defined in [functions.ts:170](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L170)*
 
 
 
@@ -218,7 +218,7 @@ ___
 
 
 
-*Defined in [functions.ts:48](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L48)*
+*Defined in [functions.ts:48](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L48)*
 
 
 
@@ -252,7 +252,7 @@ ___
 
 
 
-*Defined in [functions.ts:74](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L74)*
+*Defined in [functions.ts:74](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L74)*
 
 
 
@@ -287,7 +287,7 @@ ___
 
 
 
-*Defined in [functions.ts:116](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L116)*
+*Defined in [functions.ts:116](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L116)*
 
 
 
@@ -328,7 +328,7 @@ ___
 
 
 
-*Defined in [functions.ts:6](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L6)*
+*Defined in [functions.ts:6](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L6)*
 
 
 
@@ -355,7 +355,7 @@ ___
 
 
 
-*Defined in [functions.ts:83](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L83)*
+*Defined in [functions.ts:83](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L83)*
 
 
 
@@ -376,7 +376,7 @@ This is the first signature of a function with multiple signatures.
 
 
 
-*Defined in [functions.ts:91](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L91)*
+*Defined in [functions.ts:91](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L91)*
 
 
 
@@ -409,7 +409,7 @@ ___
 
 
 
-*Defined in [functions.ts:191](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L191)*
+*Defined in [functions.ts:191](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L191)*
 
 
 
@@ -431,7 +431,7 @@ ___
 
 
 
-*Defined in [functions.ts:177](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L177)*
+*Defined in [functions.ts:177](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L177)*
 
 
 
@@ -453,7 +453,7 @@ ___
 
 
 
-*Defined in [functions.ts:183](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L183)*
+*Defined in [functions.ts:183](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L183)*
 
 
 
@@ -475,7 +475,7 @@ ___
 
 
 
-*Defined in [functions.ts:201](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L201)*
+*Defined in [functions.ts:201](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L201)*
 
 
 
@@ -505,7 +505,7 @@ ___
 
 
 
-*Defined in [functions.ts:23](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L23)*
+*Defined in [functions.ts:23](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L23)*
 
 
 

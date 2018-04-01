@@ -12,7 +12,7 @@
 
 **●  1-2-5-3**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:129](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L129)*
+*Defined in [interfaces.ts:129](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L129)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  1-3-4-3**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:133](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L133)*
+*Defined in [interfaces.ts:133](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L133)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  1-3-5-2**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:128](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L128)*
+*Defined in [interfaces.ts:128](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L128)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  1-4-3-3**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:132](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L132)*
+*Defined in [interfaces.ts:132](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L132)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  1-4-4-2**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:134](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L134)*
+*Defined in [interfaces.ts:134](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L134)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  1-4-5-1**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:130](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L130)*
+*Defined in [interfaces.ts:130](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L130)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  1-5-2-3**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:126](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L126)*
+*Defined in [interfaces.ts:126](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L126)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  1-5-3-2**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:127](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L127)*
+*Defined in [interfaces.ts:127](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L127)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  1-5-4-1**:  *`number`[][]* 
 
-*Defined in [interfaces.ts:131](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L131)*
+*Defined in [interfaces.ts:131](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L131)*
 
 
 

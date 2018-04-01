@@ -21,7 +21,7 @@
 
 **●  commentsWithTags**:  *`boolean`*  = false
 
-*Defined in [doc-comments.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/doc-comments.ts#L27)*
+*Defined in [doc-comments.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/doc-comments.ts#L27)*
 
 
 *__name__*: AbstractMetadataModule
@@ -50,7 +50,7 @@ ___
 
 **●  generalComments**:  *`boolean`*  = false
 
-*Defined in [doc-comments.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/doc-comments.ts#L9)*
+*Defined in [doc-comments.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/doc-comments.ts#L9)*
 
 
 

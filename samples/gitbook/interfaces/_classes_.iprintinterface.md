@@ -30,7 +30,7 @@ This is a simple interface.
 
 
 
-*Defined in [classes.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L30)*
+*Defined in [classes.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
 
 
 

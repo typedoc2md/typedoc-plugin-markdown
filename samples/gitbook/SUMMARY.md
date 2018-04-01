@@ -1,5 +1,4 @@
 
-* [Globals](globals.html)
 * [&quot;basic-types&quot;](modules/_basic_types_.md)
 * [&quot;classes&quot;](modules/_classes_.md)
  * [BaseClass](classes/_classes_.baseclass.md)

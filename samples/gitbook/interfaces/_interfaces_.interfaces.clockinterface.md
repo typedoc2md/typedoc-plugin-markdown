@@ -12,7 +12,7 @@
 
 **●  currentTime**:  *`Date`* 
 
-*Defined in [interfaces.ts:74](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L74)*
+*Defined in [interfaces.ts:74](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L74)*
 
 
 
@@ -30,7 +30,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:75](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L75)*
+*Defined in [interfaces.ts:75](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
 
 
 
@@ -60,7 +60,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:82](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L82)*
+*Defined in [interfaces.ts:82](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L82)*
 
 
 

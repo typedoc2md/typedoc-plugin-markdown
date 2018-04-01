@@ -12,7 +12,7 @@
 
 **●  entry**:  *`number`* 
 
-*Defined in [interfaces.ts:156](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L156)*
+*Defined in [interfaces.ts:156](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L156)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  entry_name**:  *`string`* 
 
-*Defined in [interfaces.ts:147](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L147)*
+*Defined in [interfaces.ts:147](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L147)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  event_total**:  *`number`* 
 
-*Defined in [interfaces.ts:148](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L148)*
+*Defined in [interfaces.ts:148](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L148)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  id**:  *`number`* 
 
-*Defined in [interfaces.ts:146](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L146)*
+*Defined in [interfaces.ts:146](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L146)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  last_rank**:  *`number`* 
 
-*Defined in [interfaces.ts:153](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L153)*
+*Defined in [interfaces.ts:153](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L153)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  league**:  *`number`* 
 
-*Defined in [interfaces.ts:157](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L157)*
+*Defined in [interfaces.ts:157](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L157)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  movement**:  *`string`* 
 
-*Defined in [interfaces.ts:150](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L150)*
+*Defined in [interfaces.ts:150](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L150)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  own_entry**:  *`boolean`* 
 
-*Defined in [interfaces.ts:151](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L151)*
+*Defined in [interfaces.ts:151](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L151)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  player_name**:  *`string`* 
 
-*Defined in [interfaces.ts:149](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L149)*
+*Defined in [interfaces.ts:149](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L149)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  rank**:  *`number`* 
 
-*Defined in [interfaces.ts:152](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L152)*
+*Defined in [interfaces.ts:152](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L152)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  rank_sort**:  *`number`* 
 
-*Defined in [interfaces.ts:154](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L154)*
+*Defined in [interfaces.ts:154](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L154)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  start_event**:  *`number`* 
 
-*Defined in [interfaces.ts:158](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L158)*
+*Defined in [interfaces.ts:158](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L158)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  stop_event**:  *`number`* 
 
-*Defined in [interfaces.ts:159](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L159)*
+*Defined in [interfaces.ts:159](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L159)*
 
 
 
@@ -194,7 +194,7 @@ ___
 
 **●  total**:  *`number`* 
 
-*Defined in [interfaces.ts:155](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L155)*
+*Defined in [interfaces.ts:155](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L155)*
 
 
 

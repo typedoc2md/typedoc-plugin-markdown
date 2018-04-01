@@ -33,7 +33,7 @@
 
 **●  privateVar**:  *"marked private variable"*  = "marked private variable"
 
-*Defined in [private-members.ts:8](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/private-members.ts#L8)*
+*Defined in [private-members.ts:8](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L8)*
 
 
 
@@ -50,7 +50,7 @@ ___
 
 **●  publicVar**:  *"public variable"*  = "public variable"
 
-*Defined in [private-members.ts:2](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/private-members.ts#L2)*
+*Defined in [private-members.ts:2](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L2)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 
 
-*Defined in [private-members.ts:18](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/private-members.ts#L18)*
+*Defined in [private-members.ts:18](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L18)*
 
 
 
@@ -93,7 +93,7 @@ ___
 
 
 
-*Defined in [private-members.ts:10](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/private-members.ts#L10)*
+*Defined in [private-members.ts:10](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/private-members.ts#L10)*
 
 
 

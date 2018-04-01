@@ -6,6 +6,7 @@
 /tests/out
 /tests/html
 .nyc_output/
+/samples/gitbook/_book
 
 # dependencies
 /node_modules

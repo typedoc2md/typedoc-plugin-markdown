@@ -25,7 +25,7 @@
 
 **●  color**:  *`string`* 
 
-*Defined in [interfaces.ts:90](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/interfaces.ts#L90)*
+*Defined in [interfaces.ts:90](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L90)*
 
 
 

@@ -30,7 +30,7 @@
 ### ⊕ **new Greeter**(message: *`string`*): [Greeter](_internal_.greeter.md)
 
 
-*Defined in [internal.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/internal.ts#L9)*
+*Defined in [internal.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
 
 
 
@@ -56,7 +56,7 @@
 
 **●  greeting**:  *`string`* 
 
-*Defined in [internal.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/internal.ts#L9)*
+*Defined in [internal.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L9)*
 
 
 
@@ -74,7 +74,7 @@ ___
 
 
 
-*Defined in [internal.ts:13](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/internal.ts#L13)*
+*Defined in [internal.ts:13](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L13)*
 
 
 

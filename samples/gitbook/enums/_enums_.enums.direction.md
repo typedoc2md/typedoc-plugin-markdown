@@ -23,7 +23,7 @@
 
 ** Down**:   
 
-*Defined in [enums.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/enums.ts#L5)*
+*Defined in [enums.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L5)*
 
 
 
@@ -37,7 +37,7 @@ ___
 
 ** Left**:   
 
-*Defined in [enums.ts:6](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/enums.ts#L6)*
+*Defined in [enums.ts:6](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L6)*
 
 
 
@@ -51,7 +51,7 @@ ___
 
 ** Right**:   
 
-*Defined in [enums.ts:7](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/enums.ts#L7)*
+*Defined in [enums.ts:7](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L7)*
 
 
 
@@ -65,7 +65,7 @@ ___
 
 ** Up**:    = 1
 
-*Defined in [enums.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/enums.ts#L4)*
+*Defined in [enums.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enums.ts#L4)*
 
 
 

@@ -55,7 +55,7 @@ This a type parameter.
 ### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*): [GenericClass](_classes_.genericclass.md)
 
 
-*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L254)*
+*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -87,7 +87,7 @@ Constructor short text.
 
 **●  p2**:  *`T`* 
 
-*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L264)*
+*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -104,7 +104,7 @@ ___
 
 **●  p3**:  *`number`* 
 
-*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L264)*
+*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -121,7 +121,7 @@ ___
 
 **●  p4**:  *`number`* 
 
-*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L264)*
+*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  value**:  *`T`* 
 
-*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L254)*
+*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
 
 
 
@@ -156,7 +156,7 @@ ___
 
 
 
-*Defined in [classes.ts:274](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L274)*
+*Defined in [classes.ts:274](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
 
 
 
@@ -178,7 +178,7 @@ ___
 
 
 
-*Defined in [classes.ts:270](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/classes.ts#L270)*
+*Defined in [classes.ts:270](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
 
 
 

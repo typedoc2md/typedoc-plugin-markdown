@@ -12,7 +12,7 @@
 
 **●  id**:  *`number`* 
 
-*Defined in [functions.ts:173](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L173)*
+*Defined in [functions.ts:173](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L173)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  name**:  *`string`* 
 
-*Defined in [functions.ts:174](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/functions.ts#L174)*
+*Defined in [functions.ts:174](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L174)*
 
 
 

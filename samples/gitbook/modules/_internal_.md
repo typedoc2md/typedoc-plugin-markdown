@@ -25,7 +25,7 @@
 
 **●  greeter**:  *[Greeter](../classes/_internal_.greeter.md)*  =  new Greeter('world')
 
-*Defined in [internal.ts:18](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/bb94e89/tests/src/internal.ts#L18)*
+*Defined in [internal.ts:18](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/internal.ts#L18)*
 
 
 
