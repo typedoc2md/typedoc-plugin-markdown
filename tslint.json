@@ -23,6 +23,12 @@
     ],
     "no-submodule-imports": [
       false
+    ],
+    "align": [
+      false
+    ],
+    "no-unused-expression": [
+      false
     ]
   }
 }
