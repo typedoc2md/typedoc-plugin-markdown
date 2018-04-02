@@ -34,11 +34,13 @@ npm script:
 The plugin exposes the following additional arguments:
 
 * `--mdFlavour<github|bitbucket|gitbook>`<br />
- * `github` - default output.
- * `bitbucket` - renders markdown to support bitbucket anchor linking and more.
- * `gitbook` - adds SUMMARY.md file to generate a book's table of contents.
+  * `github`: Default output.
+  * `bitbucket`: Renders markdown to support bitbucket anchor linking and more.
+  * `gitbook`: Adds SUMMARY.md file to generate a book's table of contents.
+
 * `--mdHideSources`<br />
 Suppress source file linking from output.
+
 * `--mdSourceRepo<path.to.repo>`<br />
 The source repo to use for source file linking. Will be ignored on github flavoured projects.<br />
 For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
