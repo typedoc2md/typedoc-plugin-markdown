@@ -19,13 +19,14 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 The plugin provides an additional markdown theme:
 
 ```
-node_modules/.bin/typedoc --theme markdown
+$ node_modules/.bin/typedoc --theme markdown
 ```
 
 npm script:
 ```
 "scripts": {
  "docs": "typedoc --theme markdown"
+}
 ```
 
 ## Additional arguments
@@ -33,15 +34,17 @@ npm script:
 The plugin exposes the following additional arguments:
 
 * `--mdFlavour<github|bitbucket|gitbook>`<br />
-Specifies the markdown rendering engine.  Defaults to `github`.
+ * `github` - default output.
+ * `bitbucket` - renders markdown to support bitbucket anchor linking and more.
+ * `gitbook` - adds SUMMARY.md file to generate a book's table of contents.
 * `--mdHideSources`<br />
-Suppress sources from output 
+Suppress source file linking from output.
 * `--mdSourceRepo<path.to.repo>`<br />
 The source repo to use for source file linking. Will be ignored on github flavoured projects.<br />
 For bitbucket use: `https://bitbucket.org/owner/repository_name`.<br />
 
 
-## Example output
+## Sample output
 
 ### The following DocComments:
 
@@ -76,7 +79,7 @@ This is a function with multiple arguments and a return value.
 
 ## Samples
 
-Browse some <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/samples/default/README.md">mocked samples</a> to view further examples of generated output. 
+Browse some <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/samples/github/README.md">mocked samples</a> to view further examples of generated output. 
 
 ## Acknowledgements
 
