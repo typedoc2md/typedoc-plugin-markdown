@@ -27,7 +27,7 @@
 
 *Inherited from [Shape](_interfaces_.interfaces.shape.md).[color](_interfaces_.interfaces.shape.md#color)*
 
-*Defined in [interfaces.ts:90](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L90)*
+*Defined in [interfaces.ts:91](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L91)*
 
 
 
@@ -41,7 +41,7 @@ ___
 
 **●  sideLength**:  *`number`* 
 
-*Defined in [interfaces.ts:94](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L94)*
+*Defined in [interfaces.ts:95](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L95)*
 
 
 

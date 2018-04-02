@@ -25,7 +25,7 @@
 
 **●  color**:  *`string`* 
 
-*Defined in [interfaces.ts:90](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-90)*
+*Defined in [interfaces.ts:91](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-91)*
 
 
 

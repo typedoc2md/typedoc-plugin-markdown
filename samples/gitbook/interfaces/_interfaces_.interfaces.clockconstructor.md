@@ -12,7 +12,7 @@
 ### ⊕ **new ClockConstructor**(hour: *`number`*, minute: *`number`*): [ClockInterface](_interfaces_.interfaces.clockinterface.md)
 
 
-*Defined in [interfaces.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L78)*
+*Defined in [interfaces.ts:79](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L79)*
 
 
 

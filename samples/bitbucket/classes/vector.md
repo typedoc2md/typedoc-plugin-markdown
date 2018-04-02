@@ -38,7 +38,7 @@
 ### ⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](vector.md)
 
 
-*Defined in [interfaces.ts:1](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-1)*
+*Defined in [interfaces.ts:2](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-2)*
 
 
 
@@ -66,7 +66,7 @@
 
 **●  x**:  *`number`* 
 
-*Defined in [interfaces.ts:2](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-2)*
+*Defined in [interfaces.ts:3](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-3)*
 
 
 
@@ -80,7 +80,7 @@ ___
 
 **●  y**:  *`number`* 
 
-*Defined in [interfaces.ts:3](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-3)*
+*Defined in [interfaces.ts:4](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-4)*
 
 
 
@@ -94,7 +94,7 @@ ___
 
 **●  z**:  *`number`* 
 
-*Defined in [interfaces.ts:4](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-4)*
+*Defined in [interfaces.ts:5](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-5)*
 
 
 
@@ -112,7 +112,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:16](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-16)*
+*Defined in [interfaces.ts:17](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-17)*
 
 
 
@@ -143,7 +143,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-9)*
+*Defined in [interfaces.ts:10](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-10)*
 
 
 
@@ -174,7 +174,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:10](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-10)*
+*Defined in [interfaces.ts:11](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-11)*
 
 
 
@@ -204,7 +204,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:7](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-7)*
+*Defined in [interfaces.ts:8](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-8)*
 
 
 
@@ -235,7 +235,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:11](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-11)*
+*Defined in [interfaces.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-12)*
 
 
 
@@ -265,7 +265,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:8](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-8)*
+*Defined in [interfaces.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-9)*
 
 
 
@@ -296,7 +296,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:6](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-6)*
+*Defined in [interfaces.ts:7](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-7)*
 
 
 

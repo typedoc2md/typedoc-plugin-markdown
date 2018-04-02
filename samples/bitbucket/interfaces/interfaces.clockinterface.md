@@ -12,7 +12,7 @@
 
 **●  currentTime**:  *`Date`* 
 
-*Defined in [interfaces.ts:74](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-74)*
+*Defined in [interfaces.ts:75](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-75)*
 
 
 
@@ -30,7 +30,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:75](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-75)*
+*Defined in [interfaces.ts:76](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-76)*
 
 
 
@@ -60,7 +60,7 @@ ___
 
 
 
-*Defined in [interfaces.ts:82](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-82)*
+*Defined in [interfaces.ts:83](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-83)*
 
 
 

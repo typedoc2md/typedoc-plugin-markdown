@@ -12,7 +12,7 @@
 
 **●  diffuse**:  *`function`* 
 
-*Defined in [interfaces.ts:49](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L49)*
+*Defined in [interfaces.ts:50](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L50)*
 
 
 #### Type declaration
@@ -45,7 +45,7 @@ ___
 
 **●  reflect**:  *`function`* 
 
-*Defined in [interfaces.ts:51](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L51)*
+*Defined in [interfaces.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L52)*
 
 
 #### Type declaration
@@ -78,7 +78,7 @@ ___
 
 **●  roughness**:  *`number`* 
 
-*Defined in [interfaces.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L52)*
+*Defined in [interfaces.ts:53](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L53)*
 
 
 
@@ -92,7 +92,7 @@ ___
 
 **●  specular**:  *`function`* 
 
-*Defined in [interfaces.ts:50](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L50)*
+*Defined in [interfaces.ts:51](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L51)*
 
 
 #### Type declaration

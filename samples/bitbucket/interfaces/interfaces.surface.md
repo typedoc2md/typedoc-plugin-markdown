@@ -12,7 +12,7 @@
 
 **●  diffuse**:  *`function`* 
 
-*Defined in [interfaces.ts:49](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-49)*
+*Defined in [interfaces.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-50)*
 
 
 #### Type declaration
@@ -45,7 +45,7 @@ ___
 
 **●  reflect**:  *`function`* 
 
-*Defined in [interfaces.ts:51](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-51)*
+*Defined in [interfaces.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-52)*
 
 
 #### Type declaration
@@ -78,7 +78,7 @@ ___
 
 **●  roughness**:  *`number`* 
 
-*Defined in [interfaces.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-52)*
+*Defined in [interfaces.ts:53](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-53)*
 
 
 
@@ -92,7 +92,7 @@ ___
 
 **●  specular**:  *`function`* 
 
-*Defined in [interfaces.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-50)*
+*Defined in [interfaces.ts:51](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-51)*
 
 
 #### Type declaration
