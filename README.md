@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown)
 [![Greenkeeper badge](https://badges.greenkeeper.io/tgreyjs/typedoc-plugin-markdown.svg)](https://greenkeeper.io/)
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes themes and options for rendering markdown.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes a theme and options for rendering markdown, supporting Github, Bitbucket and Gitbook..
 
 ## Getting started
 
@@ -34,6 +34,7 @@ npm script:
 The plugin exposes the following additional arguments:
 
 * `--mdFlavour<github|bitbucket|gitbook>`<br />
+The markdown rendering engine:
   * `github`: Default output.
   * `bitbucket`: Renders markdown to support bitbucket anchor linking and more.
   * `gitbook`: Adds SUMMARY.md file to generate a book's table of contents.
