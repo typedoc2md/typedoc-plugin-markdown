@@ -124,7 +124,6 @@ export class MarkdownTheme extends DefaultTheme {
     // remove uneccessary plugins
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
-    // renderer.removeComponent('navigation');
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
 
@@ -182,7 +181,8 @@ export class MarkdownTheme extends DefaultTheme {
     if (options.mdFlavour === Flavour.GITBOOK) {
 
       const navigation = this.getNavigation(project).children.map((navigationItem) => {
-        const subNavigation = navigationItem.dedicatedUrls ? navigationItem.dedicatedUrls.map((url) => {
+
+        const dedicatedUrls = navigationItem.dedicatedUrls ? navigationItem.dedicatedUrls.map((url) => {
           return {
             title: () => {
               const urlMapping = urlMappings.find((item) => {
@@ -194,10 +194,9 @@ export class MarkdownTheme extends DefaultTheme {
           };
         }) : null;
 
-        return { ...navigationItem, subNavigation };
+        return { ...navigationItem, dedicatedUrls };
       });
-
-      urlMappings.push(new UrlMapping('SUMMARY.md', { navigation }, 'navigation.hbs'));
+      urlMappings.push(new UrlMapping('SUMMARY.md', { navigation }, 'summary.hbs'));
     }
     return urlMappings;
   }
