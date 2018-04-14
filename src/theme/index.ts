@@ -165,7 +165,6 @@ export class MarkdownTheme extends DefaultTheme {
     urlMappings.push(new UrlMapping('README.md', {
       ...entryPoint, ...{
         displayReadme: this.application.options.getValue('readme') !== 'none',
-        hideBreadcrumbs: true,
         isIndex: true,
       },
     }, 'reflection.hbs'));

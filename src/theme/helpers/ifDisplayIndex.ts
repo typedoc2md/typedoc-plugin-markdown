@@ -1,4 +1,4 @@
-import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections';
+
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { Flavour } from '../enums/flavour.enum';
 import { ThemeService } from '../theme.service';
@@ -8,12 +8,13 @@ import { ThemeService } from '../theme.service';
  * @param item
  * @param opts
  */
-export function ifDisplayIndex(member: DeclarationReflection, opts: any) {
+export function ifDisplayIndex(member: any, opts: any) {
   const options = ThemeService.getOptions();
   const classModule = member.children ? member.children[0].kind === ReflectionKind.Class : false;
   const enumModule = member.children ? member.children[0].kind === ReflectionKind.Enum : false;
   if (
     member.kind === ReflectionKind.Interface ||
+    member.displayReadme && options.mdFlavour === Flavour.GITBOOK ||
     (options.mdFlavour === Flavour.GITBOOK && member.kind === ReflectionKind.Class) ||
     (
       (options.mdFlavour === Flavour.GITBOOK && member.kind === ReflectionKind.ExternalModule && !classModule) &&
