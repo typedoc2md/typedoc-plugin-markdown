@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [INameInterface](../interfaces/_classes_.inameinterface.md)
+
 
 This is a simple interface.
 

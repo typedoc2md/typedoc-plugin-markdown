@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md)
+
 
 Examples taken from the TypeDoc 'classes' examples directory ([https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/classes.ts](https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/classes.ts))
 

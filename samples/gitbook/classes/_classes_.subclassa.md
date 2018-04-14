@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [SubClassA](../classes/_classes_.subclassa.md)
+
 
 This is a class that extends another class.
 

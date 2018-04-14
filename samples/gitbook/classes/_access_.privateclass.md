@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["access"](../modules/_access_.md) > [PrivateClass](../classes/_access_.privateclass.md)
+
 
 A class that is documented as being private.
 
@@ -9,7 +9,7 @@ A class that is documented as being private.
 
 **●  fakePrivateVariable**:  *`string`* 
 
-*Defined in access.ts:41*
+*Defined in [access.ts:41](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/access.ts#L41)*
 
 A variable that is made private via comment.
 
@@ -21,7 +21,7 @@ ___
 
 **●  fakeProtectedVariable**:  *`string`* 
 
-*Defined in access.ts:47*
+*Defined in [access.ts:47](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/access.ts#L47)*
 
 A variable that is made protected via comment.
 
@@ -34,7 +34,7 @@ ___
 
 ▸ **fakePrivateFunction**(): `void`
 
-*Defined in access.ts:53*
+*Defined in [access.ts:53](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/access.ts#L53)*
 
 A function that is made private via comment.
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **fakeProtectedFunction**(): `void`
 
-*Defined in access.ts:59*
+*Defined in [access.ts:59](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/access.ts#L59)*
 
 A function that is made protected via comment.
 

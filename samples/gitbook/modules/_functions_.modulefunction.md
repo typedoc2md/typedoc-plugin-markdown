@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["functions"](../modules/_functions_.md) > [moduleFunction](../modules/_functions_.modulefunction.md)
+
 
 This is the module extending the function moduleFunction().
 

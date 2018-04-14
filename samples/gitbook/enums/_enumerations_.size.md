@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["enumerations"](../modules/_enumerations_.md) > [Size](../enums/_enumerations_.size.md)
+
 
 This comment is ignored, as the enumeration is already defined.
 
@@ -27,7 +27,7 @@ This comment is ignored, as the enumeration is already defined.
 
 ** Large**:   
 
-*Defined in enumerations.ts:57*
+*Defined in [enumerations.ts:57](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L57)*
 
 A simple enum member.
 
@@ -39,7 +39,7 @@ ___
 
 ** Medium**:   
 
-*Defined in enumerations.ts:52*
+*Defined in [enumerations.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L52)*
 
 A simple enum member.
 
@@ -51,7 +51,7 @@ ___
 
 ** Small**:   
 
-*Defined in enumerations.ts:47*
+*Defined in [enumerations.ts:47](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L47)*
 
 A simple enum member.
 
@@ -64,7 +64,7 @@ ___
 
 **●  defaultSize**:  *[Size](_enumerations_.size.md)*  =  Size.Medium
 
-*Defined in enumerations.ts:68*
+*Defined in [enumerations.ts:68](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L68)*
 
 A variable that is attached to an enumeration.
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **isSmall**(value: *[Size](_enumerations_.size.md)*): `boolean`
 
-*Defined in enumerations.ts:77*
+*Defined in [enumerations.ts:77](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L77)*
 
 A function that is attached to an enumeration.
 

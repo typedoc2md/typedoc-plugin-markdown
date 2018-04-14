@@ -20,7 +20,7 @@
 
 **●  amount**:  *`number`*  = 6
 
-*Defined in variables.ts:9*
+*Defined in [variables.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/variables.ts#L9)*
 
 This is a number type
 
@@ -32,7 +32,7 @@ ___
 
 **●  color**:  *`string`*  = "blue"
 
-*Defined in variables.ts:14*
+*Defined in [variables.ts:14](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/variables.ts#L14)*
 
 This is a string type
 
@@ -44,7 +44,7 @@ ___
 
 **●  isDone**:  *`boolean`*  = false
 
-*Defined in variables.ts:4*
+*Defined in [variables.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/variables.ts#L4)*
 
 This is a boolean type
 
@@ -56,7 +56,7 @@ ___
 
 **●  numbers**:  *`number`[]*  =  [1, 2, 3]
 
-*Defined in variables.ts:19*
+*Defined in [variables.ts:19](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/variables.ts#L19)*
 
 This is an array type
 

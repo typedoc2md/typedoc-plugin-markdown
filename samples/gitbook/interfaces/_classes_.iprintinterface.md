@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [IPrintInterface](../interfaces/_classes_.iprintinterface.md)
+
 
 This is a simple interface.
 

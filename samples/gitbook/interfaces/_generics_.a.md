@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["generics"](../modules/_generics_.md) > [A](../interfaces/_generics_.a.md)
+
 
 A generic interface.
 
@@ -20,7 +20,7 @@ The generic type parameter.
 
 ▸ **getT**(): `T`
 
-*Defined in generics.ts:30*
+*Defined in [generics.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/generics.ts#L30)*
 
 A generic member function.
 

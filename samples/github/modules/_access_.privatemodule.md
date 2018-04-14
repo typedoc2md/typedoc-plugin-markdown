@@ -19,7 +19,7 @@ A module that is documented as being private.
 
 ▸ **functionInsidePrivateModule**(): `void`
 
-*Defined in access.ts:67*
+*Defined in [access.ts:67](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/access.ts#L67)*
 
 **Returns:** `void`
 

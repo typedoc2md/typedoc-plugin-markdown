@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
+
 
 This is a interface inheriting from two other interfaces.
 

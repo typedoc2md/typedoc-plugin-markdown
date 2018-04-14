@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["functions"](../modules/_functions_.md)
+
 
 # Functions
 <a id="createsomething"></a>

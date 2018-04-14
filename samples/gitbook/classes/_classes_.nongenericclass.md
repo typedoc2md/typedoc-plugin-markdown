@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [NonGenericClass](../classes/_classes_.nongenericclass.md)
+
 
 This a non generic class derived from a [generic class](_classes_.genericclass.md).
 

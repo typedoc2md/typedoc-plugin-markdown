@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [GenericClass](../classes/_classes_.genericclass.md)
+
 
 This is a generic class.
 

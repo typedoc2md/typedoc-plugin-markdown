@@ -1,4 +1,4 @@
-[typedoc-plugin-markdown](../README.md) > ["access"](../modules/_access_.md) > [PrivateModule](../modules/_access_.privatemodule.md)
+
 
 A module that is documented as being private.
 
@@ -17,7 +17,7 @@ A module that is documented as being private.
 
 ▸ **functionInsidePrivateModule**(): `void`
 
-*Defined in access.ts:67*
+*Defined in [access.ts:67](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/access.ts#L67)*
 
 **Returns:** `void`
 
