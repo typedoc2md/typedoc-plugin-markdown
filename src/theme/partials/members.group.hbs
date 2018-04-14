@@ -1,10 +1,4 @@
-{{#if displayTitle}}
-{{#if isMainTitle}}
-# {{title}}
-{{else}}
-## {{title}}
-{{/if}}
-{{/if}}
+{{#getMemberGroupHeadingLevel}}{{/getMemberGroupHeadingLevel}} {{title}}
 {{#each children}}
 {{#unless hasOwnDocument}}
 {{{ compileMember this}}}

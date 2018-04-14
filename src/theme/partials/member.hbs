@@ -1,7 +1,7 @@
 {{{getAnchor anchor}}}
 
 {{#if name}}
-### {{#each flags}}«{{this}}»{{/each}} {{name}}
+{{#getMemberHeadingLevel this}}{{/getMemberHeadingLevel}} {{#each flags}}`<{{this}}>`{{/each}} {{name}}
 {{/if}}
 
 {{#if signatures}}

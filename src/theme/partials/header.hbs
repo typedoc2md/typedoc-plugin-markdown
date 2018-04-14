@@ -6,9 +6,9 @@
 {{~/if~}}
 {{getNewLine}}
 {{!-- {{ title }} --}}
-{{~#unless model.displayReadme ~}}
+{{~#ifDisplayMainTitle this ~}}
 # {{#unless model.isIndex }}{{model.kindString }}:{{/unless}} {{{ model.name }}}
-{{/unless}}
+{{/ifDisplayMainTitle}}
 {{#compact}}
 {{~#with model~}}
 {{~#unless displayIndexTitle~}}

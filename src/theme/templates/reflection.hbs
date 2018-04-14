@@ -6,19 +6,19 @@
 {{~/if~}}
 {{~/with}}
 {{~#if model.typeParameters}}
-## Type parameters
+{{#getHeadingLevel '##'}}{{/getHeadingLevel}} Type parameters
 {{~#with model}}{{> typeParameters}}{{/with}}
 {{~/if}}
 {{~#if model.typeHierarchy~}}
 {{# ifDisplayTypeHierarchy model.typeHierarchy }}
-## Hierarchy
+{{#getHeadingLevel '##'}}{{/getHeadingLevel}} Hierarchy
 
 {{#with model.typeHierarchy~}}{{> hierarchy}}{{/with}}
 {{getNewLine}}
 {{/ifDisplayTypeHierarchy}}
 {{~/if~}}
 {{~#if model.implementedTypes}}
-## Implements
+{{#getHeadingLevel '##'}}{{/getHeadingLevel}} Implements
 
 {{#each model.implementedTypes}}
 * {{> type}}
@@ -26,7 +26,7 @@
 {{getNewLine}}
 {{~/if}}
 {{~#if model.implementedBy}}
-## Implemented by
+{{#getHeadingLevel '##'}}{{/getHeadingLevel}} Implemented by
 
 {{#each model.implementedBy}}
 * {{> type}}
@@ -34,12 +34,12 @@
 {{getNewLine}}
 {{~/if}}
 {{~#if model.signatures}}
-## Callable
+{{#getHeadingLevel '##'}}{{/getHeadingLevel}} Callable
 {{#with model}}{{> member.signatures}}{{/with}}
 {{getNewLine}}
 {{~/if}}
 {{~#if model.indexSignature}}
-## Indexable
+{{#getHeadingLevel '##'}}{{/getHeadingLevel}} Indexable
 
 \[{{~#each model.indexSignature.parameters}}{{name}}: {{#with type}}{{>type}}{{/with}}{{/each}}\]:&nbsp;
 {{~#with model.indexSignature.type}}{{>type}}{{/with}}
@@ -54,6 +54,8 @@
 {{getNewLine}}
 {{~/if}}
 {{~#with model}}
-{{{ compileIndex this }}}
+{{#ifDisplayIndex this}}
+{{> index}}
+{{/ifDisplayIndex}}
 {{> members}}
 {{~/with}}

@@ -33,7 +33,7 @@
 
 {{else}}
 
-{{#each flags}}«{{this}}» {{/each}} {{#if flags.isRest}}...{{/if}}{{{ name}}}: {{#with type}}{{>type}}{{/with}}
+{{#each flags}}`{{this}}` {{/each}} {{#if flags.isRest}}...{{/if}}{{{ name}}}: {{#with type}}{{>type}}{{/with}}
 
 {{> comment}}
 
