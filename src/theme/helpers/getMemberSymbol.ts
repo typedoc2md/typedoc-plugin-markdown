@@ -9,7 +9,7 @@ export function getMemberSymbol(kindString: string) {
       symbol = '⊕ ';
       break;
     case 'Call signature':
-      symbol = '► ';
+      symbol = '▸ ';
       break;
     case 'Type alias':
       symbol = 'Τ';

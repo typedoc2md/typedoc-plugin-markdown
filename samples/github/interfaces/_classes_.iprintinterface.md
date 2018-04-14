@@ -1,9 +1,6 @@
 [typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [IPrintInterface](../interfaces/_classes_.iprintinterface.md)
 
-
-
 # Interface: IPrintInterface
-
 
 This is a simple interface.
 
@@ -13,31 +10,18 @@ This is a simple interface.
 
 ↳  [IPrintNameInterface](_classes_.iprintnameinterface.md)
 
-
-
-
-
-
-
-
-
 ## Methods
 <a id="print"></a>
 
 ###  print
 
-► **print**(value: *`string`*): `void`
+▸ **print**(value: *`string`*): `void`
 
-
-
-*Defined in [classes.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L30)*
-
-
+*Defined in [classes.ts:36](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L36)*
 
 This is a interface function of IPrintInterface
 
 It should be inherited by all subinterfaces.
-
 
 **Parameters:**
 
@@ -45,16 +29,7 @@ It should be inherited by all subinterfaces.
 | ------ | ------ | ------ |
 | value | `string`   |  - |
 
-
-
-
-
 **Returns:** `void`
 
-
-
-
-
 ___
-
 

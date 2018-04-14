@@ -1,3 +1,10 @@
+/**
+ * Examples taken from the TypeDoc 'functions' examples directory
+ * (https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/functions.ts)
+ */
+
+/* tslint:disable */
+
 import classes = require('./classes');
 
 /**
@@ -5,24 +12,12 @@ import classes = require('./classes');
  */
 function internalFunction(): void { }
 
+
 /**
  * This is a simple exported function.
  */
 export function exportedFunction(): void { }
 
-/**
- * This is a function with multiple arguments and a return value.
- * @param paramZ  This is a string parameter.
- * @param paramG  This is a parameter flagged with any.
- *     This sentence is placed in the next line.
- *
- * @param paramA
- * This is a **parameter** pointing to an interface.
- *
- */
-const variableFunction = function(paramZ: string, paramG: any, paramA: classes.INameInterface): number {
-  return 0;
-};
 
 /**
  * This is a function with multiple arguments and a return value.
@@ -33,11 +28,36 @@ const variableFunction = function(paramZ: string, paramG: any, paramA: classes.I
  * @param paramA
  * This is a **parameter** pointing to an interface.
  *
+ * ~~~
+ * var value:BaseClass = new BaseClass('test');
+ * functionWithArguments('arg', 0, value);
+ * ~~~
+ *
+ */
+var variableFunction = function (paramZ: string, paramG: any, paramA: classes.INameInterface): number {
+  return 0;
+};
+
+
+/**
+ * This is a function with multiple arguments and a return value.
+ * @param paramZ  This is a string parameter.
+ * @param paramG  This is a parameter flagged with any.
+ *     This sentence is placed in the next line.
+ *
+ * @param paramA
+ * This is a **parameter** pointing to an interface.
+ *
+ * ~~~
+ * var value:BaseClass = new BaseClass('test');
+ * functionWithArguments('arg', 0, value);
+ * ~~~
  *
  */
 export function functionWithArguments(paramZ: string, paramG: any, paramA: classes.INameInterface): number {
   return 0;
 }
+
 
 /**
  * This is a function with a parameter that is optional.
@@ -47,12 +67,11 @@ export function functionWithArguments(paramZ: string, paramG: any, paramA: class
  */
 export function functionWithOptionalValue(requiredParam: string, optionalParam?: string) { }
 
+
 /**
  * This is a function with a parameter that has a default value.
  *
- * @param valueA  Comment for value A.
- * @param valueC Comment for value C
- * @param valueE Comment for value E
+ * @param value  An optional return value.
  * @returns The input value or the default value.
  */
 export function functionWithDefaults(
@@ -60,10 +79,11 @@ export function functionWithDefaults(
   valueB: number = 100,
   valueC: number = Number.NaN,
   valueD: boolean = true,
-  valueE,
+  valueE: boolean = false
 ): string {
   return valueA;
 }
+
 
 /**
  * This is a function with rest parameter.
@@ -74,6 +94,7 @@ export function functionWithDefaults(
 function functionWithRest(...rest: string[]): string {
   return rest.join(', ');
 }
+
 
 /**
  * This is the first signature of a function with multiple signatures.
@@ -96,7 +117,7 @@ export function multipleSignatures(value: { name: string }): string;
  */
 export function multipleSignatures(): string {
   if (arguments.length > 0) {
-    if (typeof arguments[0] === 'object') {
+    if (typeof arguments[0] == 'object') {
       return arguments[0].name;
     } else {
       return arguments[0];
@@ -105,6 +126,7 @@ export function multipleSignatures(): string {
 
   return '';
 }
+
 
 /**
  * This is a generic function.
@@ -117,6 +139,7 @@ export function genericFunction<T>(value: T): T {
   return value;
 }
 
+
 /**
  * This is a function that is extended by a module.
  *
@@ -124,14 +147,16 @@ export function genericFunction<T>(value: T): T {
  */
 export function moduleFunction(arg: string): string { return ''; }
 
+
 /**
  * This is the module extending the function moduleFunction().
  */
-export namespace moduleFunction {
+export module moduleFunction {
   /**
    * This variable is appended to a function.
    */
-  let functionVariable: string;
+  var functionVariable: string;
+
 
   /**
    * This function is appended to another function.
@@ -148,6 +173,7 @@ export namespace moduleFunction {
   }
 }
 
+
 /**
  * A function that returns an object.
  * Also no type information is given, the object should be correctly reflected.
@@ -156,9 +182,10 @@ export function createSomething() {
   return {
     foo: 'bar',
     doSomething: (a: number) => a + 1,
-    doAnotherThing: () => { },
+    doAnotherThing: () => { }
   };
 }
+
 
 /**
  * See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
@@ -169,35 +196,4 @@ export function createSomething() {
  */
 export function functionWithDocLink(): void { }
 
-export interface IGameEvent {
-  id: number;
-  name: string;
-}
-declare var Promise: any;
-export function returnTypeInterface(): IGameEvent {
-  return {
-    id: 1,
-    name: 'name',
-  };
-}
-export function returnTypeInterfaceWithPromise(): Promise<IGameEvent> {
-  return new Promise((resolve: any, reject: any) => {
-    return {
-      id: 1,
-      name: 'name',
-    };
-  });
-}
-export function returnTypeAny(): Promise<any> {
-  return new Promise((resolve: any, reject: any) => {
-    return {
-      id: 1,
-      name: 'name',
-    };
-  });
-
-}
-
-export function returnTypeObject(properties: object) {
-  return {};
-}
+ /* tslint:enable */

@@ -1,24 +1,14 @@
 [typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [NonGenericClass](../classes/_classes_.nongenericclass.md)
 
-
-
 # Class: NonGenericClass
-
 
 This a non generic class derived from a [generic class](_classes_.genericclass.md).
 
 ## Hierarchy
 
-
  [GenericClass](_classes_.genericclass.md)[SubClassB](_classes_.subclassb.md)
 
 **↳ NonGenericClass**
-
-
-
-
-
-
 
 ## Index
 
@@ -26,37 +16,30 @@ This a non generic class derived from a [generic class](_classes_.genericclass.m
 
 * [constructor](_classes_.nongenericclass.md#constructor)
 
-
 ### Properties
 
 * [p2](_classes_.nongenericclass.md#p2)
 * [p3](_classes_.nongenericclass.md#p3)
+* [p5](_classes_.nongenericclass.md#p5)
 * [value](_classes_.nongenericclass.md#value)
-
 
 ### Methods
 
 * [getValue](_classes_.nongenericclass.md#getvalue)
 * [setValue](_classes_.nongenericclass.md#setvalue)
 
-
-
 ---
+
 ## Constructors
 <a id="constructor"></a>
 
-
-### ⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](_classes_.subclassb.md)*, p3: *`number`*, p4: *`number`*): [NonGenericClass](_classes_.nongenericclass.md)
-
+### ⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](_classes_.subclassb.md)*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [NonGenericClass](_classes_.nongenericclass.md)
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)*
 
-*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
-
-
+*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L284)*
 
 Constructor short text.
-
 
 **Parameters:**
 
@@ -66,33 +49,24 @@ Constructor short text.
 | p2 | [SubClassB](_classes_.subclassb.md)   |  Private string property |
 | p3 | `number`   |  Public number property |
 | p4 | `number`   |  Public implicit any property |
-
-
-
-
+| p5 | `string`   |  Readonly property |
 
 **Returns:** [NonGenericClass](_classes_.nongenericclass.md)
 
 ---
 
-
 ## Properties
 <a id="p2"></a>
 
-### «Protected» p2
+### `<Protected>` p2
 
 **●  p2**:  *[SubClassB](_classes_.subclassb.md)* 
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p2](_classes_.genericclass.md#p2)*
 
-*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
-
-
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
 
 Private string property
-
-
-
 
 ___
 
@@ -104,14 +78,23 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p3](_classes_.genericclass.md#p3)*
 
-*Defined in [classes.ts:264](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L264)*
-
-
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
 
 Public number property
 
+___
 
+<a id="p5"></a>
 
+###  p5
+
+**●  p5**:  *`string`* 
+
+*Inherited from [GenericClass](_classes_.genericclass.md).[p5](_classes_.genericclass.md#p5)*
+
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+
+Readonly property
 
 ___
 
@@ -123,37 +106,22 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[value](_classes_.genericclass.md#value)*
 
-*Defined in [classes.ts:254](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L254)*
-
-
-
-
+*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L284)*
 
 ___
-
 
 ## Methods
 <a id="getvalue"></a>
 
 ###  getValue
 
-► **getValue**(): [SubClassB](_classes_.subclassb.md)
-
-
+▸ **getValue**(): [SubClassB](_classes_.subclassb.md)
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[getValue](_classes_.genericclass.md#getvalue)*
 
-*Defined in [classes.ts:274](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L274)*
-
-
-
-
+*Defined in [classes.ts:305](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L305)*
 
 **Returns:** [SubClassB](_classes_.subclassb.md)
-
-
-
-
 
 ___
 
@@ -161,16 +129,11 @@ ___
 
 ###  setValue
 
-► **setValue**(value: *[SubClassB](_classes_.subclassb.md)*): `void`
-
-
+▸ **setValue**(value: *[SubClassB](_classes_.subclassb.md)*): `void`
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[setValue](_classes_.genericclass.md#setvalue)*
 
-*Defined in [classes.ts:270](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L270)*
-
-
-
+*Defined in [classes.ts:301](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L301)*
 
 **Parameters:**
 
@@ -178,16 +141,7 @@ ___
 | ------ | ------ | ------ |
 | value | [SubClassB](_classes_.subclassb.md)   |  [getValue](_classes_.nongenericclass.md#getvalue) is the counterpart. |
 
-
-
-
-
 **Returns:** `void`
 
-
-
-
-
 ___
-
 

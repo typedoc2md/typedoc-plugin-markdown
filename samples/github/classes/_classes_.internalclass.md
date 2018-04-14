@@ -1,31 +1,25 @@
 [typedoc-plugin-markdown](../README.md) > ["classes"](../modules/_classes_.md) > [InternalClass](../classes/_classes_.internalclass.md)
 
-
-
 # Class: InternalClass
-
 
 This is an internal class, it is not exported.
 
+## Type parameters
+#### TTT :  `keyof BaseClass`
 ## Index
 
 ### Constructors
 
 * [constructor](_classes_.internalclass.md#constructor)
 
-
-
 ---
+
 ## Constructors
 <a id="constructor"></a>
 
-
 ### ⊕ **new InternalClass**(options: *`object`*): [InternalClass](_classes_.internalclass.md)
 
-
-*Defined in [classes.ts:169](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L169)*
-
-
+*Defined in [classes.ts:187](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L187)*
 
 **Parameters:**
 
@@ -33,12 +27,7 @@ This is an internal class, it is not exported.
 | ------ | ------ | ------ |
 | options | `object`   |  - |
 
-
-
-
-
 **Returns:** [InternalClass](_classes_.internalclass.md)
 
 ---
-
 

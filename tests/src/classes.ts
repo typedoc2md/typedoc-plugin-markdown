@@ -1,3 +1,8 @@
+/**
+ * Examples taken from the TypeDoc 'classes' examples directory
+ * (https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/classes.ts)
+ */
+
 /* tslint:disable */
 /**
  * This is a simple interface.
@@ -18,6 +23,7 @@ export interface INameInterface {
   getName(): string;
 }
 
+
 /**
  * This is a simple interface.
  */
@@ -30,6 +36,7 @@ export interface IPrintInterface {
   print(value: string): void;
 }
 
+
 /**
  * This is a interface inheriting from two other interfaces.
  */
@@ -40,20 +47,13 @@ export interface IPrintNameInterface extends INameInterface, IPrintInterface {
   printName(): void;
 }
 
+
 /**
  * This is a simple base class.
  *
  * [[include:class-example.md]]
  */
-export class BaseClass implements INameInterface {
-
-  /**
-   * This is a static member.
-   *
-   * Static members should not be inherited.
-   */
-  private static instance: BaseClass;
-  private static instances: BaseClass[];
+export abstract class BaseClass implements INameInterface {
   /**
    * This is a simple public member.
    */
@@ -65,15 +65,24 @@ export class BaseClass implements INameInterface {
   protected kind: number;
 
   /**
+   * This is a static member.
+   *
+   * Static members should not be inherited.
+   */
+  static instance: BaseClass;
+  static instances: BaseClass[];
+
+  /**
    * This is an instance member of an internal class.
    */
-  private internalClass: InternalClass;
+  private internalClass: InternalClass<keyof BaseClass>;
+
 
   constructor(name: string);
   constructor(source: BaseClass);
   constructor() {
     if (arguments.length > 0) {
-      if (typeof arguments[0] === 'string') {
+      if (typeof arguments[0] == 'string') {
         this.name = arguments[0];
       } else if (arguments[0] instanceof BaseClass) {
         this.name = arguments[0].name;
@@ -82,6 +91,8 @@ export class BaseClass implements INameInterface {
 
     this.checkName();
   }
+
+  public abstract abstractMethod(): void;
 
   /**
    * This is a simple member function.
@@ -95,6 +106,7 @@ export class BaseClass implements INameInterface {
     return this.name;
   }
 
+
   /**
    * This is a simple static member function.
    *
@@ -106,6 +118,7 @@ export class BaseClass implements INameInterface {
   static getName(): string {
     return 'A name';
   }
+
 
   /**
    * This is a simple member function.
@@ -119,6 +132,7 @@ export class BaseClass implements INameInterface {
     this.checkName();
   }
 
+
   /**
    * This is a simple fat arrow function.
    *
@@ -127,7 +141,8 @@ export class BaseClass implements INameInterface {
    * @see https://github.com/sebastian-lenz/typedoc/issues/37
    */
   public arrowFunction = (param2: string, param1: number): void => {
-  }
+  };
+
 
   /**
    * This is a private function.
@@ -135,6 +150,7 @@ export class BaseClass implements INameInterface {
   private checkName() {
     return true;
   }
+
 
   /**
    * This is a static function.
@@ -147,17 +163,18 @@ export class BaseClass implements INameInterface {
     return BaseClass.instance;
   }
 
+
   /**
    * @see https://github.com/sebastian-lenz/typedoc/issues/42
    */
   public static caTest(originalValues: BaseClass, newRecord: any, fieldNames: string[], mandatoryFields: string[]): string {
-    const returnval = '';
-    const updates: string[] = [];
-    const allFields: string[] = fieldNames;
-    for (let j = 0; j < allFields.length; j++) {
-      const field = allFields[j];
-      const oldValue = originalValues[field];
-      const newValue = newRecord[field];
+    var returnval = "";
+    var updates: string[] = [];
+    var allFields: string[] = fieldNames;
+    for (var j = 0; j < allFields.length; j++) {
+      var field = allFields[j];
+      var oldValue = originalValues[field];
+      var newValue = newRecord[field];
     }
     return returnval;
   }
@@ -166,7 +183,8 @@ export class BaseClass implements INameInterface {
 /**
  * This is an internal class, it is not exported.
  */
-class InternalClass {
+class InternalClass<TTT extends keyof BaseClass>
+{
   constructor(options: { name: string }) {
 
   }
@@ -179,6 +197,8 @@ class InternalClass {
  * from BaseClass.
  */
 export class SubClassA extends BaseClass implements IPrintNameInterface {
+  public name: string;
+
   /**
    * This is a simple interface function.
    */
@@ -228,6 +248,10 @@ export class SubClassA extends BaseClass implements IPrintNameInterface {
   public set writeOnlyNameProperty(value: string) {
     this.name = value;
   }
+
+  public abstractMethod(): void {
+
+  }
 }
 
 /**
@@ -236,8 +260,14 @@ export class SubClassA extends BaseClass implements IPrintNameInterface {
  * The constructor of the original class should be overwritten.
  */
 export class SubClassB extends BaseClass {
+  public name: string;
+
   constructor(name: string) {
     super(name);
+  }
+
+  abstractMethod(): void {
+
   }
 
   doSomething(value: [string, SubClassA, SubClassB]) {
@@ -260,8 +290,9 @@ export class GenericClass<T extends BaseClass>
    * @param p2 Private string property
    * @param p3 Public number property
    * @param p4 Public implicit any property
+   * @param p5 Readonly property
    */
-  constructor(p1, protected p2: T, public p3: number, private p4: number) {
+  constructor(p1, protected p2: T, public p3: number, private p4: number, readonly p5: string) {
   }
 
   /**
@@ -279,23 +310,8 @@ export class GenericClass<T extends BaseClass>
 /**
  * This a non generic class derived from a [[GenericClass|generic class]].
  */
-export class NonGenericClass extends GenericClass<SubClassB>
-{
+export class NonGenericClass extends GenericClass<SubClassB> {
 
-}
-
-export class DatabaseProviderBase {
-
-  private webSQLBase: any;
-  private base: any;
-
-  constructor() {
-
-  }
-
-  createDB() {
-
-  }
 }
 
  /* tslint:enable */
