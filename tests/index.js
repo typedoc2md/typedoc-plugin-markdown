@@ -8,7 +8,7 @@ const file = chaiFiles.file;
 const expect = chai.expect;
 
 const compiledDirRoot = 'tests/out';
-const expectedDirRoot = 'samples';
+const expectedDirRoot = 'tests/fixtures';
 
 chai.use(chaiFiles);
 
@@ -51,11 +51,11 @@ function compareOutputToMocks(flavour) {
 }
 
 function expectFileToEqualMock(fileName, testNum) {
-  expect(file(`${compiledDirRoot}/${testNum}/${fileName}`)).to.equal(file(path.join(__dirname, '..', `samples/${testNum}/${fileName}`)));
+  expect(file(`${compiledDirRoot}/${testNum}/${fileName}`)).to.equal(file(path.join(__dirname, '..', `tests/fixtures/${testNum}/${fileName}`)));
 }
 
 function expectOutputFilesToEqualMocks(ref, testNum) {
-  const files = fs.readdirSync(path.join(__dirname, '..', `samples/${testNum}/${ref}`));
+  const files = fs.readdirSync(path.join(__dirname, '..', `tests/fixtures/${testNum}/${ref}`));
   files.forEach((filename) => {
     if (!/^\..*/.test(filename)) {
       expectFileToEqualMock(`${ref}/${filename}`, testNum);

@@ -50,7 +50,7 @@ For bitbucket use: `https://bitbucket.org/owner/repository_name`.
 
 ## Example output
 
-* <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/samples/github/README.md">Sample output taken from TypeDoc's examples directory</a> . 
+* <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/examples/README.md">Some general example output.</a>
 
 ## Acknowledgements
 
