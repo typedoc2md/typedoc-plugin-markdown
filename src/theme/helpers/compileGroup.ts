@@ -1,4 +1,5 @@
 import { ReflectionGroup } from 'typedoc/dist/lib/models/ReflectionGroup';
+import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
 import { ThemeService } from '../theme.service';
 
 /**
@@ -6,16 +7,15 @@ import { ThemeService } from '../theme.service';
  * @param group
  * @param parent
  */
-export function compileGroup(group: ReflectionGroup, parent: any) {
+export function compileGroup(group: ReflectionGroup, parentKind: ReflectionKind) {
 
   const options = ThemeService.getOptions();
 
   let md = '';
 
   if (!options.excludePrivate || !group.allChildrenArePrivate) {
-
-    md = ThemeService.compilePartial(`members.group.hbs`,
-      { ...group });
+    const displayPropertyTable = parentKind && parentKind === ReflectionKind.Interface && group.title === 'Properties';
+    md = ThemeService.compilePartial('members.group.hbs', { ...group, displayPropertyTable });
   }
 
   return md;

@@ -1,4 +1,13 @@
 {{#getMemberGroupHeadingLevel}}{{/getMemberGroupHeadingLevel}} {{title}}
+
+{{#if displayPropertyTable}}
+|Property|Type|
+|--------|----|
+{{#each children}}
+|[{{{name}}}]({{relativeURL url}}) {{#each flags}}`<{{this}}>`{{/each}}| {{#if type}}*{{#with type}}{{>type}}{{/with}}*{{/if}}|
+{{/each}}
+{{/if}}
+
 {{#each children}}
 {{#unless hasOwnDocument}}
 {{{ compileMember this}}}
