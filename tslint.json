@@ -29,6 +29,9 @@
     ],
     "no-unused-expression": [
       false
+    ],
+    "interface-name": [
+      false
     ]
   }
 }
