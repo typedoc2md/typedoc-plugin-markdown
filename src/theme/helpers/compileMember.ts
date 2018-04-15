@@ -16,9 +16,6 @@ export function compileMember(member: DeclarationReflection) {
       case ReflectionKind.Constructor:
         md = ThemeService.compilePartial('member.constructor.hbs', member);
         break;
-      // case ReflectionKind.ObjectLiteral:
-      // md = ThemeService.compilePartial('member.object.hbs', member);
-      // break;
       default:
         md = ThemeService.compilePartial('member.hbs', member);
     }

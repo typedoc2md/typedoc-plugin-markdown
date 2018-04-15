@@ -2,7 +2,6 @@
 
 {{#if groups}}
 {{#each groups}}
-{{#unless isConstructors}}
 {{#ifGroupContainesVisibleItems this }}
 ### {{title}}
 
@@ -13,7 +12,6 @@
 {{/each}}
 {{getNewLine}}
 {{/ifGroupContainesVisibleItems}}
-{{/unless}}
 {{/each}}
 {{/if}}
 

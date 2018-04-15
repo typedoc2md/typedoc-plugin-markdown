@@ -10,12 +10,10 @@
 {{~#with model}}{{> typeParameters}}{{/with}}
 {{~/if}}
 {{~#if model.typeHierarchy~}}
-{{# ifDisplayTypeHierarchy model.typeHierarchy }}
 {{#getHeadingLevel '##'}}{{/getHeadingLevel}} Hierarchy
 
 {{#with model.typeHierarchy~}}{{> hierarchy}}{{/with}}
 {{getNewLine}}
-{{/ifDisplayTypeHierarchy}}
 {{~/if~}}
 {{~#if model.implementedTypes}}
 {{#getHeadingLevel '##'}}{{/getHeadingLevel}} Implements
