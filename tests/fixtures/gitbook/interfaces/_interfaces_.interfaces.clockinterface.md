@@ -1,0 +1,54 @@
+
+
+# Hierarchy
+
+**ClockInterface**
+
+# Properties
+
+|Property|Type|
+|--------|----|
+|[currentTime](_interfaces_.interfaces.clockinterface.md#currenttime) | *`Date`*|
+
+<a id="currenttime"></a>
+
+##  currentTime
+
+**●  currentTime**:  *`Date`* 
+
+*Defined in [interfaces.ts:75](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
+
+___
+
+# Methods
+
+<a id="settime"></a>
+
+##  setTime
+
+▸ **setTime**(d: *`Date`*): `any`
+
+*Defined in [interfaces.ts:76](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L76)*
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| d | `Date`   |  - |
+
+**Returns:** `any`
+
+___
+
+<a id="tick"></a>
+
+##  tick
+
+▸ **tick**(): `any`
+
+*Defined in [interfaces.ts:83](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L83)*
+
+**Returns:** `any`
+
+___
+

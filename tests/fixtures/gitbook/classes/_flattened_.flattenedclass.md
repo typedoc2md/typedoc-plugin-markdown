@@ -2,7 +2,12 @@
 
 A class that contains members with flattened properties.
 
+# Hierarchy
+
+**flattenedClass**
+
 # Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new flattenedClass**(options: *`object`*): [flattenedClass](_flattened_.flattenedclass.md)
@@ -22,6 +27,7 @@ A constructor that accepts an option object defined inline.
 ---
 
 # Properties
+
 <a id="callback"></a>
 
 ##  callback

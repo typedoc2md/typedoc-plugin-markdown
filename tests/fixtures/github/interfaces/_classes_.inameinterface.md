@@ -17,6 +17,11 @@ This is a simple interface.
 * [SubClassB](../classes/_classes_.subclassb.md)
 
 ## Properties
+
+|Property|Type|
+|--------|----|
+|[name](_classes_.inameinterface.md#name) | *`string`*|
+
 <a id="name"></a>
 
 ###  name
@@ -32,6 +37,7 @@ It should be inherited by all subinterfaces.
 ___
 
 ## Methods
+
 <a id="getname"></a>
 
 ###  getName

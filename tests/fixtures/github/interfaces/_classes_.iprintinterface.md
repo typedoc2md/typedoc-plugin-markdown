@@ -11,6 +11,7 @@ This is a simple interface.
 ↳  [IPrintNameInterface](_classes_.iprintnameinterface.md)
 
 ## Methods
+
 <a id="print"></a>
 
 ###  print

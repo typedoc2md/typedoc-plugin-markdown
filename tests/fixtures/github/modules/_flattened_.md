@@ -19,6 +19,7 @@ Examples taken from the TypeDoc 'flattened' examples directory ([https://github.
 ---
 
 ## Functions
+
 <a id="flattenedcallback"></a>
 
 ###  flattenedCallback

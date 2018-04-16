@@ -18,6 +18,10 @@ This is a interface inheriting from two other interfaces.
 
 ## Properties
 
+|Property|Type|
+|--------|----|
+|[name](iprintnameinterface.md#markdown-header-name) | *`string`*|
+
 ###  name
 
 **●  name**:  *`string`* 

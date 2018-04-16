@@ -13,6 +13,7 @@ A module that is documented as being private.
 ---
 
 ## Functions
+
 <a id="functioninsideprivatemodule"></a>
 
 ###  functionInsidePrivateModule

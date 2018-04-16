@@ -1,6 +1,7 @@
 
 
 # Variables
+
 <a id="amount"></a>
 
 ## `<Const>` amount

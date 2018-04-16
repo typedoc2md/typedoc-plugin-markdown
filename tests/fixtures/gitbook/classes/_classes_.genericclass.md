@@ -14,6 +14,7 @@ This a type parameter.
 ↳  [NonGenericClass](_classes_.nongenericclass.md)
 
 # Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](_classes_.genericclass.md)
@@ -37,6 +38,7 @@ Constructor short text.
 ---
 
 # Properties
+
 <a id="p2"></a>
 
 ## `<Protected>` p2
@@ -96,6 +98,7 @@ ___
 ___
 
 # Methods
+
 <a id="getvalue"></a>
 
 ##  getValue

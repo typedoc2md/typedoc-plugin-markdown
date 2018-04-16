@@ -15,6 +15,11 @@ This is a interface inheriting from two other interfaces.
 * [SubClassA](../classes/_classes_.subclassa.md)
 
 # Properties
+
+|Property|Type|
+|--------|----|
+|[name](_classes_.iprintnameinterface.md#name) | *`string`*|
+
 <a id="name"></a>
 
 ##  name
@@ -32,6 +37,7 @@ It should be inherited by all subinterfaces.
 ___
 
 # Methods
+
 <a id="getname"></a>
 
 ##  getName

@@ -20,6 +20,7 @@ The leftover generic type parameter.
 ↳  [ABNumber](_generics_.abnumber.md)
 
 # Methods
+
 <a id="getc"></a>
 
 ##  getC

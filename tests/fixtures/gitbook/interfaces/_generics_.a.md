@@ -14,6 +14,7 @@ The generic type parameter.
 ↳  [AB](_generics_.ab.md)
 
 # Methods
+
 <a id="gett"></a>
 
 ##  getT

@@ -27,6 +27,7 @@ Examples taken from the TypeDoc 'access' examples directory ([https://github.com
 ---
 
 ## Variables
+
 <a id="fakeprivatevariable"></a>
 
 ### `<Private>` fakePrivateVariable
@@ -52,6 +53,7 @@ A variable that is made protected via comment.
 ___
 
 ## Functions
+
 <a id="fakeprivatefunction"></a>
 
 ### `<Private>` fakePrivateFunction

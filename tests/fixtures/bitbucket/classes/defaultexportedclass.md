@@ -6,6 +6,10 @@ This class is exported via es6 export syntax.
 
     export default class DefaultExportedClass
 
+## Hierarchy
+
+**DefaultExportedClass**
+
 ## Index
 
 ### Constructors

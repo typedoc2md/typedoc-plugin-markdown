@@ -6,6 +6,10 @@ This class is exported via es6 export syntax.
 
     export default class DefaultExportedClass
 
+## Hierarchy
+
+**DefaultExportedClass**
+
 ## Index
 
 ### Constructors
@@ -23,6 +27,7 @@ This class is exported via es6 export syntax.
 ---
 
 ## Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new DefaultExportedClass**(): [DefaultExportedClass](_default_export_.defaultexportedclass.md)
@@ -36,6 +41,7 @@ This is the constructor of the default exported class.
 ---
 
 ## Properties
+
 <a id="exportedproperty"></a>
 
 ###  exportedProperty
@@ -49,6 +55,7 @@ Property of default exported class.
 ___
 
 ## Methods
+
 <a id="getexportedproperty"></a>
 
 ###  getExportedProperty
