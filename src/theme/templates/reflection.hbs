@@ -1,4 +1,7 @@
 {{> header}}
+{{~#if model.displayReadme ~}}
+{{#markdown}}{{{model.readme}}}{{/markdown}}
+{{~/if~}}
 {{getNewLine}}
 {{~#with model~}}
 {{~#if hasComment~}}
