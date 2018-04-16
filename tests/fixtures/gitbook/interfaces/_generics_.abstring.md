@@ -9,6 +9,7 @@ An interface extending a generic interface and setting its type parameter.
 **↳ ABString**
 
 # Methods
+
 <a id="getc"></a>
 
 ##  getC

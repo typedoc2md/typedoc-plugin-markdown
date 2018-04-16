@@ -4,6 +4,10 @@
 
 A class that is documented as being private.
 
+## Hierarchy
+
+**PrivateClass**
+
 ## Index
 
 ### Properties

@@ -18,6 +18,7 @@ The second generic type parameter.
 ↳  [AB](_generics_.ab.md)
 
 # Methods
+
 <a id="getc"></a>
 
 ##  getC

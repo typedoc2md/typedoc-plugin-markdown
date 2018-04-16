@@ -4,6 +4,10 @@
 
 A class that contains members with flattened properties.
 
+## Hierarchy
+
+**flattenedClass**
+
 ## Index
 
 ### Constructors

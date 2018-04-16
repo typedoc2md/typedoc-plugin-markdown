@@ -19,6 +19,7 @@ This is a simple example on how to use BaseClass.
 * [INameInterface](../interfaces/_classes_.inameinterface.md)
 
 # Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new BaseClass**(name: *`string`*): [BaseClass](_classes_.baseclass.md)
@@ -48,6 +49,7 @@ This is a simple example on how to use BaseClass.
 ---
 
 # Properties
+
 <a id="internalclass"></a>
 
 ## `<Private>` internalClass
@@ -111,6 +113,7 @@ ___
 ___
 
 # Methods
+
 <a id="abstractmethod"></a>
 
 ## `<Abstract>` abstractMethod

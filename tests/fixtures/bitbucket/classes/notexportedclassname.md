@@ -6,6 +6,10 @@ This class is exported under a different name. The exported name is "ExportedCla
 
     export {NotExportedClassName as ExportedClassName};
 
+## Hierarchy
+
+**NotExportedClassName**
+
 ## Index
 
 ### Constructors

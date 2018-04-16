@@ -1,11 +1,11 @@
 
-
 #  typedoc-plugin-markdown
 
 ## Index
 
 ### Modules
 
+* [interfaces](modules/interfaces.md)
 * [moduleFunction](modules/modulefunction.md)
 
 ### Enumerations
@@ -16,6 +16,7 @@
 ### Classes
 
 * [BaseClass](classes/baseclass.md)
+* [Color](classes/color.md)
 * [DefaultExportedClass](classes/defaultexportedclass.md)
 * [GenericClass](classes/genericclass.md)
 * [InternalClass](classes/internalclass.md)
@@ -23,6 +24,7 @@
 * [NotExportedClassName](classes/notexportedclassname.md)
 * [SubClassA](classes/subclassa.md)
 * [SubClassB](classes/subclassb.md)
+* [Vector](classes/vector.md)
 * [flattenedClass](classes/flattenedclass.md)
 
 ### Interfaces
@@ -40,7 +42,9 @@
 
 * [amount](#markdown-header-const-amount)
 * [color](#markdown-header-const-color)
+* [commentsWithTags](#markdown-header-const-commentswithtags)
 * [fakeProtectedVariable](#markdown-header-protected-fakeprotectedvariable)
+* [generalComments](#markdown-header-const-generalcomments)
 * [isDone](#markdown-header-const-isdone)
 * [numbers](#markdown-header-const-numbers)
 
@@ -88,6 +92,28 @@ This is a string type
 
 ___
 
+### `<Const>` commentsWithTags
+
+**●  commentsWithTags**:  *`boolean`*  = false
+
+*Defined in [doc-comments.ts:27](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-27)*
+
+*__name__*: AbstractMetadataModule
+
+*__description__*: Provides the module for the [BaseClass](classes/baseclass.md)
+
+    {
+     declarations: [AbstractMetadataComponent],
+     exports: [AbstractMetadataComponent],
+     imports: [
+       IonicModule,
+       StackIonSelectModule,
+     ],
+     providers: [],
+    }
+
+___
+
 ### `<Protected>` fakeProtectedVariable
 
 **●  fakeProtectedVariable**:  *`string`*  = "test"
@@ -95,6 +121,18 @@ ___
 *Defined in [access.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-18)*
 
 A variable that is made protected via comment.
+
+___
+
+### `<Const>` generalComments
+
+**●  generalComments**:  *`boolean`*  = false
+
+*Defined in [doc-comments.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-9)*
+
+Additionally you can link to other classes, members or functions using double square brackets.
+
+Link to a class: [BaseClass](classes/baseclass.md) Link to a function: [createSomething](#markdown-header-createsomething) Link to a function: [color](interfaces/interfaces.squareconfig.md#markdown-header-optional-color)
 
 ___
 
@@ -124,7 +162,7 @@ ___
 
 ▸ **createSomething**(): `object`
 
-*Defined in [functions.ts:181](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-181)*
+*Defined in [functions.ts:183](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-183)*
 
 A function that returns an object. Also no type information is given, the object should be correctly reflected.
 
@@ -214,7 +252,7 @@ ___
 
 ▸ **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
 
-*Defined in [functions.ts:57](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-57)*
+*Defined in [functions.ts:59](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-59)*
 
 This is a function with multiple arguments and a return value.
 
@@ -224,7 +262,7 @@ This is a function with multiple arguments and a return value.
 | ------ | ------ | ------ |
 | paramZ | `string`   |  This is a string parameter. |
 | paramG | `any`   |  This is a parameter flagged with any. This sentence is placed in the next line. |
-| paramA | [INameInterface](interfaces/inameinterface.md)   |  This is a **parameter** pointing to an interface.~var value:BaseClass = new BaseClass('test');functionWithArguments('arg', 0, value);~ |
+| paramA | [INameInterface](interfaces/inameinterface.md)   |  This is a **parameter** pointing to an interface. ``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ``` |
 
 **Returns:** `number`
 
@@ -234,7 +272,7 @@ ___
 
 ▸ **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE?: *`boolean`*): `string`
 
-*Defined in [functions.ts:77](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-77)*
+*Defined in [functions.ts:79](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-79)*
 
 This is a function with a parameter that has a default value.
 
@@ -257,7 +295,7 @@ ___
 
 ▸ **functionWithDocLink**(): `void`
 
-*Defined in [functions.ts:197](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-197)*
+*Defined in [functions.ts:199](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-199)*
 
 See [`INameInterface`](interfaces/inameinterface.md) and [INameInterface's name property](interfaces/inameinterface.md#markdown-header-name). Also, check out [Google](http://www.google.com) and [GitHub](https://github.com).
 
@@ -271,7 +309,7 @@ ___
 
 ▸ **functionWithOptionalValue**(requiredParam: *`string`*, optionalParam?: *`string`*): `void`
 
-*Defined in [functions.ts:68](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-68)*
+*Defined in [functions.ts:70](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-70)*
 
 This is a function with a parameter that is optional.
 
@@ -290,7 +328,7 @@ ___
 
 ▸ **functionWithRest**(...rest: *`string`[]*): `string`
 
-*Defined in [functions.ts:94](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-94)*
+*Defined in [functions.ts:96](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-96)*
 
 This is a function with rest parameter.
 
@@ -309,7 +347,7 @@ ___
 
 ▸ **genericFunction**T(value: *`T`*): `T`
 
-*Defined in [functions.ts:138](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-138)*
+*Defined in [functions.ts:140](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-140)*
 
 This is a generic function.
 
@@ -361,7 +399,7 @@ ___
 
 ▸ **multipleSignatures**(value: *`object`*): `string`
 
-*Defined in [functions.ts:104](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-104)*
+*Defined in [functions.ts:106](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-106)*
 
 This is the first signature of a function with multiple signatures.
 
@@ -373,7 +411,7 @@ This is the first signature of a function with multiple signatures.
 
 **Returns:** `string`
 
-*Defined in [functions.ts:112](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-112)*
+*Defined in [functions.ts:114](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-114)*
 
 This is the second signature of a function with multiple signatures.
 
@@ -416,7 +454,7 @@ ___
 
 ▸ **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
 
-*Defined in [functions.ts:37](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-37)*
+*Defined in [functions.ts:38](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-38)*
 
 This is a function with multiple arguments and a return value.
 
@@ -426,7 +464,7 @@ This is a function with multiple arguments and a return value.
 | ------ | ------ | ------ |
 | paramZ | `string`   |  This is a string parameter. |
 | paramG | `any`   |  This is a parameter flagged with any. This sentence is placed in the next line. |
-| paramA | [INameInterface](interfaces/inameinterface.md)   |  This is a **parameter** pointing to an interface.~var value:BaseClass = new BaseClass('test');functionWithArguments('arg', 0, value);~ |
+| paramA | [INameInterface](interfaces/inameinterface.md)   |  This is a **parameter** pointing to an interface. ``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ``` |
 
 **Returns:** `number`
 

@@ -11,6 +11,7 @@ An interface extending a generic interface and setting its type parameter.
 **↳ ABNumber**
 
 ## Methods
+
 <a id="getc"></a>
 
 ###  getC

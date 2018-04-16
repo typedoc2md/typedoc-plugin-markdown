@@ -16,6 +16,7 @@ This is a simple Enumeration.
 ---
 
 # Enumeration members
+
 <a id="bottom"></a>
 
 ##  Bottom

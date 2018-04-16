@@ -16,6 +16,7 @@ This class has no own constructor, so its constructor should be inherited from B
 * [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md)
 
 # Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new SubClassA**(name: *`string`*): [SubClassA](_classes_.subclassa.md)
@@ -49,6 +50,7 @@ This class has no own constructor, so its constructor should be inherited from B
 ---
 
 # Properties
+
 <a id="kind"></a>
 
 ## `<Protected>` kind
@@ -106,6 +108,7 @@ ___
 ___
 
 # Accessors
+
 <a id="nameproperty"></a>
 
 ##  nameProperty
@@ -171,6 +174,7 @@ The return value.
 ___
 
 # Methods
+
 <a id="abstractmethod"></a>
 
 ##  abstractMethod

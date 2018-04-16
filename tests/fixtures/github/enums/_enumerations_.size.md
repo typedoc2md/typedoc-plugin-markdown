@@ -23,6 +23,7 @@ This comment is ignored, as the enumeration is already defined.
 ---
 
 ## Enumeration members
+
 <a id="large"></a>
 
 ###  Large
@@ -60,6 +61,7 @@ A simple enum member.
 ___
 
 ## Variables
+
 <a id="defaultsize"></a>
 
 ###  defaultSize
@@ -73,6 +75,7 @@ A variable that is attached to an enumeration.
 ___
 
 ## Functions
+
 <a id="issmall"></a>
 
 ###  isSmall

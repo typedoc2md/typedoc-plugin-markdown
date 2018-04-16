@@ -15,6 +15,7 @@ The constructor of the original class should be overwritten.
 * [INameInterface](../interfaces/_classes_.inameinterface.md)
 
 # Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new SubClassB**(name: *`string`*): [SubClassB](_classes_.subclassb.md)
@@ -34,6 +35,7 @@ The constructor of the original class should be overwritten.
 ---
 
 # Properties
+
 <a id="kind"></a>
 
 ## `<Protected>` kind
@@ -91,6 +93,7 @@ ___
 ___
 
 # Methods
+
 <a id="abstractmethod"></a>
 
 ##  abstractMethod

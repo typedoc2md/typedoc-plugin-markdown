@@ -6,6 +6,10 @@ This is an internal class, it is not exported.
 
 ## Type parameters
 #### TTT :  `keyof BaseClass`
+## Hierarchy
+
+**InternalClass**
+
 ## Index
 
 ### Constructors

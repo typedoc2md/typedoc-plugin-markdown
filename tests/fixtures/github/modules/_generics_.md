@@ -22,6 +22,7 @@ Examples taken from the TypeDoc 'generics' examples directory ([https://github.c
 ---
 
 ## Functions
+
 <a id="getgenericarray"></a>
 
 ###  getGenericArray

@@ -3,6 +3,7 @@
 Examples taken from the TypeDoc 'generics' examples directory ([https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/generics.ts](https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/generics.ts))
 
 # Functions
+
 <a id="getgenericarray"></a>
 
 ##  getGenericArray

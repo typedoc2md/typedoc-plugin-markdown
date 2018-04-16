@@ -18,6 +18,10 @@ This is a simple interface.
 
 ## Properties
 
+|Property|Type|
+|--------|----|
+|[name](inameinterface.md#markdown-header-name) | *`string`*|
+
 ###  name
 
 **●  name**:  *`string`* 

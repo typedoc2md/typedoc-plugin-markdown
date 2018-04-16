@@ -6,6 +6,10 @@ This class is exported under a different name. The exported name is "ExportedCla
 
     export {NotExportedClassName as ExportedClassName};
 
+## Hierarchy
+
+**NotExportedClassName**
+
 ## Index
 
 ### Constructors
@@ -23,6 +27,7 @@ This class is exported under a different name. The exported name is "ExportedCla
 ---
 
 ## Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new NotExportedClassName**(): [NotExportedClassName](_default_export_.notexportedclassname.md)
@@ -36,6 +41,7 @@ This is the constructor of the NotExportedClassName class.
 ---
 
 ## Properties
+
 <a id="notexportedproperty"></a>
 
 ###  notExportedProperty
@@ -49,6 +55,7 @@ Property of NotExportedClassName class.
 ___
 
 ## Methods
+
 <a id="getnotexportedproperty"></a>
 
 ###  getNotExportedProperty
