@@ -3,7 +3,7 @@
 # compiled output
 /dist
 /tmp
-/tests/out
+/test/out
 .nyc_output/
 
 # dependencies
