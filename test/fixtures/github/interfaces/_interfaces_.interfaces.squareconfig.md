@@ -23,7 +23,7 @@
 
 **●  color**:  *`string`* 
 
-*Defined in [interfaces.ts:57](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L57)*
+*Defined in [interfaces.ts:57](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L57)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 **●  width**:  *`number`* 
 
-*Defined in [interfaces.ts:58](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L58)*
+*Defined in [interfaces.ts:58](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L58)*
 
 ___
 

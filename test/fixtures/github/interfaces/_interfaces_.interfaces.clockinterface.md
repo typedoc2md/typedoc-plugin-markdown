@@ -27,7 +27,7 @@
 
 **●  currentTime**:  *`Date`* 
 
-*Defined in [interfaces.ts:75](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L75)*
+*Defined in [interfaces.ts:75](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L75)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 ▸ **setTime**(d: *`Date`*): `any`
 
-*Defined in [interfaces.ts:76](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L76)*
+*Defined in [interfaces.ts:76](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L76)*
 
 **Parameters:**
 
@@ -57,7 +57,7 @@ ___
 
 ▸ **tick**(): `any`
 
-*Defined in [interfaces.ts:83](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L83)*
+*Defined in [interfaces.ts:83](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L83)*
 
 **Returns:** `any`
 

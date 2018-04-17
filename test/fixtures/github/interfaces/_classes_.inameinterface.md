@@ -36,7 +36,7 @@ This is a simple interface.
 
 **●  name**:  *`string`* 
 
-*Defined in [classes.ts:16](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L16)*
+*Defined in [classes.ts:16](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L16)*
 
 This is a interface member of INameInterface.
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Defined in [classes.ts:23](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L23)*
+*Defined in [classes.ts:23](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L23)*
 
 This is a interface function of INameInterface.
 

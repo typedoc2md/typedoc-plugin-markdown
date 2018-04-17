@@ -35,7 +35,7 @@
 
 **Τ SearchFunc**:  *`function`* 
 
-*Defined in [interfaces.ts:62](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L62)*
+*Defined in [interfaces.ts:62](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L62)*
 
 #### Type declaration
 ▸(source: *`string`*, subString: *`string`*): `boolean`
@@ -59,7 +59,7 @@ ___
 
 **●  mySearch**:  *[SearchFunc](_interfaces_.interfaces.md#searchfunc)* 
 
-*Defined in [interfaces.ts:64](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L64)*
+*Defined in [interfaces.ts:64](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L64)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 **●  square**:  *[Square](../interfaces/_interfaces_.interfaces.square.md)*  =  {} as Square
 
-*Defined in [interfaces.ts:98](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L98)*
+*Defined in [interfaces.ts:98](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L98)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **createClock**(ctor: *[ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md)*, hour: *`number`*, minute: *`number`*): [ClockInterface](../interfaces/_interfaces_.interfaces.clockinterface.md)
 
-*Defined in [interfaces.ts:86](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L86)*
+*Defined in [interfaces.ts:86](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L86)*
 
 **Parameters:**
 

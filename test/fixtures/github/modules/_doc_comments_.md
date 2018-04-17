@@ -19,7 +19,7 @@
 
 **●  commentsWithTags**:  *`boolean`*  = false
 
-*Defined in [doc-comments.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/doc-comments.ts#L27)*
+*Defined in [doc-comments.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/doc-comments.ts#L27)*
 
 *__name__*: AbstractMetadataModule
 
@@ -43,7 +43,7 @@ ___
 
 **●  generalComments**:  *`boolean`*  = false
 
-*Defined in [doc-comments.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/doc-comments.ts#L9)*
+*Defined in [doc-comments.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/doc-comments.ts#L9)*
 
 Additionally you can link to other classes, members or functions using double square brackets.
 

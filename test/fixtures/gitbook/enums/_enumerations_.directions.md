@@ -23,7 +23,7 @@ This is a simple Enumeration.
 
 ** Bottom**:   
 
-*Defined in [enumerations.ts:25](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L25)*
+*Defined in [enumerations.ts:25](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L25)*
 
 A simple enum member.
 
@@ -35,7 +35,7 @@ ___
 
 ** Left**:   
 
-*Defined in [enumerations.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L30)*
+*Defined in [enumerations.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L30)*
 
 A simple enum member.
 
@@ -47,7 +47,7 @@ ___
 
 ** Right**:   
 
-*Defined in [enumerations.ts:20](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L20)*
+*Defined in [enumerations.ts:20](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L20)*
 
 A simple enum member.
 
@@ -59,7 +59,7 @@ ___
 
 ** Top**:   
 
-*Defined in [enumerations.ts:15](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L15)*
+*Defined in [enumerations.ts:15](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L15)*
 
 A simple enum member.
 
@@ -71,7 +71,7 @@ ___
 
 ** TopLeft**:    =  Top | Left
 
-*Defined in [enumerations.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L35)*
+*Defined in [enumerations.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L35)*
 
 A composite enum member.
 
@@ -83,7 +83,7 @@ ___
 
 ** TopRight**:    =  Top | Right
 
-*Defined in [enumerations.ts:40](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/enumerations.ts#L40)*
+*Defined in [enumerations.ts:40](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L40)*
 
 A composite enum member.
 

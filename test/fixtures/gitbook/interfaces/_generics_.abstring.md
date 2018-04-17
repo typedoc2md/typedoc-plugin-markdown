@@ -18,7 +18,7 @@ An interface extending a generic interface and setting its type parameter.
 
 *Inherited from [B](_generics_.b.md).[getC](_generics_.b.md#getc)*
 
-*Defined in [generics.ts:53](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/generics.ts#L53)*
+*Defined in [generics.ts:53](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L53)*
 
 A generic member function.
 
@@ -35,7 +35,7 @@ ___
 
 *Inherited from [A](_generics_.a.md).[getT](_generics_.a.md#gett)*
 
-*Defined in [generics.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/generics.ts#L30)*
+*Defined in [generics.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L30)*
 
 A generic member function.
 
@@ -52,7 +52,7 @@ ___
 
 *Inherited from [B](_generics_.b.md).[setT](_generics_.b.md#sett)*
 
-*Defined in [generics.ts:46](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/generics.ts#L46)*
+*Defined in [generics.ts:46](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L46)*
 
 A generic member function.
 

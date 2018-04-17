@@ -10,7 +10,7 @@
 
 ### ⊕ **new Color**(r: *`number`*, g: *`number`*, b: *`number`*): [Color](_interfaces_.color.md)
 
-*Defined in [interfaces.ts:24](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L24)*
+*Defined in [interfaces.ts:24](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L24)*
 
 **Parameters:**
 
@@ -32,7 +32,7 @@
 
 **●  b**:  *`number`* 
 
-*Defined in [interfaces.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L27)*
+*Defined in [interfaces.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L27)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 **●  g**:  *`number`* 
 
-*Defined in [interfaces.ts:26](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L26)*
+*Defined in [interfaces.ts:26](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L26)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 **●  r**:  *`number`* 
 
-*Defined in [interfaces.ts:25](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L25)*
+*Defined in [interfaces.ts:25](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L25)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 **●  background**:  *[Color](_interfaces_.color.md)*  =  Color.black
 
-*Defined in [interfaces.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L35)*
+*Defined in [interfaces.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L35)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 **●  black**:  *[Color](_interfaces_.color.md)*  =  new Color(0.0, 0.0, 0.0)
 
-*Defined in [interfaces.ts:34](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L34)*
+*Defined in [interfaces.ts:34](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L34)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 **●  defaultColor**:  *[Color](_interfaces_.color.md)*  =  Color.black
 
-*Defined in [interfaces.ts:36](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L36)*
+*Defined in [interfaces.ts:36](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L36)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 **●  grey**:  *[Color](_interfaces_.color.md)*  =  new Color(0.5, 0.5, 0.5)
 
-*Defined in [interfaces.ts:33](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L33)*
+*Defined in [interfaces.ts:33](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L33)*
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 **●  white**:  *[Color](_interfaces_.color.md)*  =  new Color(1.0, 1.0, 1.0)
 
-*Defined in [interfaces.ts:32](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L32)*
+*Defined in [interfaces.ts:32](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L32)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **plus**(v1: *[Color](_interfaces_.color.md)*, v2: *[Color](_interfaces_.color.md)*): [Color](_interfaces_.color.md)
 
-*Defined in [interfaces.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L30)*
+*Defined in [interfaces.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L30)*
 
 **Parameters:**
 
@@ -133,7 +133,7 @@ ___
 
 ▸ **scale**(k: *`number`*, v: *[Color](_interfaces_.color.md)*): [Color](_interfaces_.color.md)
 
-*Defined in [interfaces.ts:29](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L29)*
+*Defined in [interfaces.ts:29](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L29)*
 
 **Parameters:**
 
@@ -152,7 +152,7 @@ ___
 
 ▸ **times**(v1: *[Color](_interfaces_.color.md)*, v2: *[Color](_interfaces_.color.md)*): [Color](_interfaces_.color.md)
 
-*Defined in [interfaces.ts:31](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L31)*
+*Defined in [interfaces.ts:31](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L31)*
 
 **Parameters:**
 
@@ -171,7 +171,7 @@ ___
 
 ▸ **toDrawingColor**(c: *[Color](_interfaces_.color.md)*): `object`
 
-*Defined in [interfaces.ts:37](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L37)*
+*Defined in [interfaces.ts:37](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L37)*
 
 **Parameters:**
 

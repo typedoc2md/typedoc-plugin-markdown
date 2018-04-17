@@ -38,7 +38,7 @@ This a non generic class derived from a [generic class](_classes_.genericclass.m
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)*
 
-*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L284)*
+*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L284)*
 
 Constructor short text.
 
@@ -66,7 +66,7 @@ Constructor short text.
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p2](_classes_.genericclass.md#p2)*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
 
 Private string property
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p3](_classes_.genericclass.md#p3)*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
 
 Public number property
 
@@ -94,7 +94,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p5](_classes_.genericclass.md#p5)*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
 
 Readonly property
 
@@ -108,7 +108,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[value](_classes_.genericclass.md#value)*
 
-*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L284)*
+*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L284)*
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[getValue](_classes_.genericclass.md#getvalue)*
 
-*Defined in [classes.ts:305](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L305)*
+*Defined in [classes.ts:305](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L305)*
 
 **Returns:** [SubClassB](_classes_.subclassb.md)
 
@@ -136,7 +136,7 @@ ___
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[setValue](_classes_.genericclass.md#setvalue)*
 
-*Defined in [classes.ts:301](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L301)*
+*Defined in [classes.ts:301](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L301)*
 
 **Parameters:**
 

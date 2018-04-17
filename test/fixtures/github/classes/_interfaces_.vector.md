@@ -36,7 +36,7 @@
 
 ### ⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](_interfaces_.vector.md)
 
-*Defined in [interfaces.ts:2](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L2)*
+*Defined in [interfaces.ts:2](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L2)*
 
 **Parameters:**
 
@@ -58,7 +58,7 @@
 
 **●  x**:  *`number`* 
 
-*Defined in [interfaces.ts:3](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L3)*
+*Defined in [interfaces.ts:3](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L3)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 **●  y**:  *`number`* 
 
-*Defined in [interfaces.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L4)*
+*Defined in [interfaces.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L4)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 **●  z**:  *`number`* 
 
-*Defined in [interfaces.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L5)*
+*Defined in [interfaces.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L5)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 ▸ **cross**(v1: *[Vector](_interfaces_.vector.md)*, v2: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
 
-*Defined in [interfaces.ts:17](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L17)*
+*Defined in [interfaces.ts:17](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L17)*
 
 **Parameters:**
 
@@ -109,7 +109,7 @@ ___
 
 ▸ **dot**(v1: *[Vector](_interfaces_.vector.md)*, v2: *[Vector](_interfaces_.vector.md)*): `number`
 
-*Defined in [interfaces.ts:10](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L10)*
+*Defined in [interfaces.ts:10](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L10)*
 
 **Parameters:**
 
@@ -128,7 +128,7 @@ ___
 
 ▸ **mag**(v: *[Vector](_interfaces_.vector.md)*): `number`
 
-*Defined in [interfaces.ts:11](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L11)*
+*Defined in [interfaces.ts:11](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L11)*
 
 **Parameters:**
 
@@ -146,7 +146,7 @@ ___
 
 ▸ **minus**(v1: *[Vector](_interfaces_.vector.md)*, v2: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
 
-*Defined in [interfaces.ts:8](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L8)*
+*Defined in [interfaces.ts:8](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L8)*
 
 **Parameters:**
 
@@ -165,7 +165,7 @@ ___
 
 ▸ **norm**(v: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
 
-*Defined in [interfaces.ts:12](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L12)*
+*Defined in [interfaces.ts:12](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L12)*
 
 **Parameters:**
 
@@ -183,7 +183,7 @@ ___
 
 ▸ **plus**(v1: *[Vector](_interfaces_.vector.md)*, v2: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
 
-*Defined in [interfaces.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L9)*
+*Defined in [interfaces.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L9)*
 
 **Parameters:**
 
@@ -202,7 +202,7 @@ ___
 
 ▸ **times**(k: *`number`*, v: *[Vector](_interfaces_.vector.md)*): [Vector](_interfaces_.vector.md)
 
-*Defined in [interfaces.ts:7](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/interfaces.ts#L7)*
+*Defined in [interfaces.ts:7](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L7)*
 
 **Parameters:**
 
