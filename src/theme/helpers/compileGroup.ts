@@ -14,8 +14,7 @@ export function compileGroup(group: ReflectionGroup, parentKind: ReflectionKind)
   let md = '';
 
   if (!options.excludePrivate || !group.allChildrenArePrivate) {
-    const displayPropertyTable = parentKind && parentKind === ReflectionKind.Interface && group.title === 'Properties';
-    md = ThemeService.compilePartial('members.group.hbs', { ...group, displayPropertyTable });
+    md = ThemeService.compilePartial('members.group.hbs', { ...group });
   }
 
   return md;
