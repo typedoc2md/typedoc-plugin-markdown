@@ -66,7 +66,7 @@ export class MarkdownTheme extends DefaultTheme {
         anchor = 'static-' + anchor;
       }
 
-      let anchorRef = '';
+      let anchorRef = anchor;
 
       if (options.mdFlavour === Flavour.BITBUCKET) {
         let anchorPrefix = '';
@@ -79,8 +79,6 @@ export class MarkdownTheme extends DefaultTheme {
         const prefixRef = ThemeService.getAnchorRef(anchorPrefix);
         const reflectionRef = ThemeService.getAnchorRef(reflection.name);
         anchorRef = `markdown-header-${prefixRef}${reflectionRef}`;
-      } else {
-        anchorRef = anchor;
       }
 
       reflection.url = (container.url !== undefined ? container.url : '') + '#' + anchorRef;
