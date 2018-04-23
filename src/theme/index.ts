@@ -68,40 +68,19 @@ export class MarkdownTheme extends DefaultTheme {
 
       let anchorRef = '';
 
-      switch (reflection.kind) {
-        case ReflectionKind.ExternalModule:
-          anchorRef = `external-module-${ThemeService.getAnchorRef(reflection.name)}-`;
-          break;
-        case ReflectionKind.Class:
-          anchorRef = `class-${ThemeService.getAnchorRef(reflection.name)}`;
-          break;
-        case ReflectionKind.Interface:
-          anchorRef = `interface-${ThemeService.getAnchorRef(reflection.name)}`;
-          break;
-        case ReflectionKind.Module:
-          anchorRef = `module-${ThemeService.getAnchorRef(reflection.name)}`;
-        case ReflectionKind.Enum:
-          const isModule = reflection.parent.kind === 0 || reflection.parent.kind === ReflectionKind.ExternalModule;
-          anchorRef = isModule ?
-            `module-${ThemeService.getAnchorRef(reflection.name)}` :
-            `enumeration-${ThemeService.getAnchorRef(reflection.name)}`;
-          break;
-        default:
-          if (options.mdFlavour === Flavour.BITBUCKET) {
-            let anchorPrefix = '';
-            if (reflection.kind === ReflectionKind.ObjectLiteral) {
-              anchorPrefix += 'object-literal-';
-            }
-            reflection.flags.forEach((flag) => {
-              anchorPrefix += `${flag}-`;
-            });
-            const prefixRef = ThemeService.getAnchorRef(anchorPrefix);
-            const reflectionRef = ThemeService.getAnchorRef(reflection.name);
-            anchorRef = `markdown-header-${prefixRef}${reflectionRef}`;
-          } else {
-            anchorRef = anchor;
-          }
-
+      if (options.mdFlavour === Flavour.BITBUCKET) {
+        let anchorPrefix = '';
+        if (reflection.kind === ReflectionKind.ObjectLiteral) {
+          anchorPrefix += 'object-literal-';
+        }
+        reflection.flags.forEach((flag) => {
+          anchorPrefix += `${flag}-`;
+        });
+        const prefixRef = ThemeService.getAnchorRef(anchorPrefix);
+        const reflectionRef = ThemeService.getAnchorRef(reflection.name);
+        anchorRef = `markdown-header-${prefixRef}${reflectionRef}`;
+      } else {
+        anchorRef = anchor;
       }
 
       reflection.url = (container.url !== undefined ? container.url : '') + '#' + anchorRef;

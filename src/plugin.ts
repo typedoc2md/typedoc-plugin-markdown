@@ -1,10 +1,10 @@
 import * as path from 'path';
 
-import { PageEvent } from 'typedoc/dist//lib/output/events';
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components';
 import { Context } from 'typedoc/dist/lib/converter/context';
 import { Converter } from 'typedoc/dist/lib/converter/converter';
 import { Reflection } from 'typedoc/dist/lib/models/reflections/abstract';
+import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { OptionsReadMode } from 'typedoc/dist/lib/utils/options';
 
 import { MarkdownTheme } from './theme/';

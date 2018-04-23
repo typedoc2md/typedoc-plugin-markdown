@@ -18,6 +18,7 @@ module.exports = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     component: 'markdown',
+    defaultValue: 'github',
     help: 'Markdown Plugin: (github|bitbucket|gitbook) Specifies the markdown rendering engine.',
     name: 'mdFlavour',
     type: ParameterType.String,
@@ -25,7 +26,6 @@ module.exports = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     component: 'markdown',
-    defaultValue: '',
     help: 'The repository to use for source files (ignored unless markdownFlavour is set)',
     name: 'mdSourceRepo',
     type: ParameterType.String,
