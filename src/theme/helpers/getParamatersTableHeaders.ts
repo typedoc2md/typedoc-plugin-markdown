@@ -3,22 +3,33 @@
  * @param parameters
  */
 export function getParametersTableHeaders(parameters: any) {
-  let hasDefaultValues = false;
-  parameters.forEach((param: any) => {
-    if (param.defaultValue) {
-      hasDefaultValues = true;
-      return;
-    }
+
+  let headers = ['Param', 'Type', 'Default value', 'Description'];
+
+  const hasDefaultValues = parameters.find((param: any) => {
+    return param.defaultValue;
   });
-  let headers;
-  if (hasDefaultValues) {
-    headers = ['Param', 'Type', 'Default value', 'Description'];
+
+  const hasComments = parameters.find((param: any) => {
+    return param.comment;
+  });
+
+  if (!hasDefaultValues) {
+    headers = headers.filter((header) => {
+      return header !== 'Default value';
+    });
+  } else {
     parameters.forEach((param: any) => {
       param.defaultValue = param.defaultValue ? param.defaultValue : '-';
-     });
-  } else {
-    headers = ['Param', 'Type', 'Description'];
+    });
   }
+
+  if (!hasComments) {
+    headers = headers.filter((header) => {
+      return header !== 'Description';
+    });
+  }
+
   let md = '|';
   headers.forEach((header) => {
     md += ` ${header} |`;

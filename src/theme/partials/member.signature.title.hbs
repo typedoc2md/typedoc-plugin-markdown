@@ -13,12 +13,10 @@
 {{name}}
 {{#if flags.isOptional}}?{{/if}}
 {{#if defaultValue}}?{{/if}}
-:&nbsp;
-*{{#with type}}{{>type}}{{/with}}*
+: *{{#with type}}{{>type}}{{/with}}*
 {{/each}}
 )
 {{#if type}}
-:&nbsp;
-{{#with type}}{{>type}}{{/with}}
+: {{#with type}}{{>type}}{{/with}}
 {{/if}}
 {{/compact}}

@@ -3,8 +3,7 @@
 
 {{getParametersTableHeaders parameters}}
 {{#each parameters}}
-| {{ name }} | {{#with type}}{{>type}}{{/with}} {{#if defaultValue}} | {{defaultValue}} | {{/if}} {{#unless defaultValue}} | {{/unless}} {{#getMarkdownFromHtml}}{{#markdown}}{{ getStrippedComment comment }}{{/markdown}}{{/getMarkdownFromHtml}} |
+| {{#each flags}}`{{this}}` {{/each}}{{ name }} | {{#with type}}{{>type}}{{/with}}{{#if defaultValue}} | {{defaultValue}} | {{else}} | {{/if}}{{#if comment}} {{#getMarkdownFromHtml}}{{#markdown}}{{ getStrippedComment comment }}{{/markdown}}{{/getMarkdownFromHtml}} |{{/if}}
 {{/each}}
 {{getNewLine}}{{getNewLine}}
 {{/if}}
-
