@@ -36,7 +36,6 @@ The plugin exposes the following additional arguments:
 
  * `--mdEngine<github|bitbucket|gitbook>`<br />
  The markdown rendering engine:
-
   * "github": Optimised for GitHub/CommonMark (Default). 
   * "bitbucket": Renders markdown to support Bitbucket anchor linking and more.<br />
   * "gitbook": Adds SUMMARY.md file to generate a book's table of contents and sets header levels to display correct sub-navigation menu. (*Optimised for newest version of GitBook*).
@@ -44,7 +43,6 @@ The plugin exposes the following additional arguments:
 * `--mdHideSources`<br />
   Suppress source file linking from output.
   
-
 * `--mdSourceRepo<path.to.repo>`(*Will be ignored on GitHub repositories*)<br />
   The source repo to use for source file linking.<br />
   For bitbucket use: `https://bitbucket.org/owner/repository_name`. 
