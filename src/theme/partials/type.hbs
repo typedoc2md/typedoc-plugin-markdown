@@ -3,8 +3,7 @@
 {{#if reflection}}
 [{{reflection.name}}]({{ relativeURL reflection.url }})
 {{#if typeArguments}}
-{{#each typeArguments}}
-{{#if @index}}, {{/if}}{{> type}}{{/each}}{{/if}}
+{{#each typeArguments}}{{#if @index}}, {{/if}}<{{> type}}>{{/each}}{{/if}}
 {{else}}
 {{#if elementType}}
 {{#with elementType}}
