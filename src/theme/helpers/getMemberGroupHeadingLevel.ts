@@ -1,7 +1,6 @@
-import { Flavour } from '../enums/flavour.enum';
+import { MarkdownEngine } from '../enums/markdown-engine.enum';
 import { ThemeService } from '../theme.service';
 
 export function getMemberGroupHeadingLevel() {
-  const options = ThemeService.getOptions();
-  return options.mdFlavour === Flavour.GITBOOK ? '#' : '##';
+  return ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK ? '#' : '##';
 }

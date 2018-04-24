@@ -1,4 +1,4 @@
-import { Flavour } from '../enums/flavour.enum';
+import { MarkdownEngine } from '../enums/markdown-engine.enum';
 import { ThemeService } from '../theme.service';
 
 /**
@@ -6,8 +6,7 @@ import { ThemeService } from '../theme.service';
  * @param comment
  */
 export function getStrippedComment(comment: any) {
-  const options = ThemeService.getOptions();
-  const lineBreak = options.mdFlavour === Flavour.BITBUCKET ? ' ' : '<br><br>';
+  const lineBreak = ThemeService.getMarkdownEngine() === MarkdownEngine.BITBUCKET ? ' ' : '<br><br>';
   let newComment: string = '';
   if (comment) {
     if (comment.text) {

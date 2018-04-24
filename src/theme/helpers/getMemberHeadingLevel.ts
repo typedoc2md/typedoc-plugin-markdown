@@ -1,10 +1,9 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { Flavour } from '../enums/flavour.enum';
+import { MarkdownEngine } from '../enums/markdown-engine.enum';
 import { ThemeService } from '../theme.service';
 
 export function getMemberHeadingLevel(member: DeclarationReflection) {
-  const options = ThemeService.getOptions();
-  let headingLevel = options.mdFlavour === Flavour.GITBOOK ? '##' : '###';
+  let headingLevel = ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK ? '##' : '###';
   if (member.parent.kind === ReflectionKind.ObjectLiteral) {
     headingLevel = headingLevel + '#';
   }

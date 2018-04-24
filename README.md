@@ -4,53 +4,56 @@
 [![Build Status](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown)
 [![Greenkeeper badge](https://badges.greenkeeper.io/tgreyjs/typedoc-plugin-markdown.svg)](https://greenkeeper.io/)
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes a theme and options for rendering markdown.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes a theme and additional arguments for rendering markdown.
 
-## Getting started
-
-### Installation
+## Installation
 
 ```javascript
 npm install --save-dev typedoc typedoc-plugin-markdown
 ```
 
-### How to use
+## Usage
+
+### Specify the theme
 
 The plugin provides an additional markdown theme:
 
+*shell:*
 ```
 $ node_modules/.bin/typedoc --theme markdown
 ```
 
-npm script:
+*npm script:*
 ```
 "scripts": {
  "docs": "typedoc --theme markdown"
 }
 ```
 
-## Additional arguments
+### Additional arguments
 
 The plugin exposes the following additional arguments:
 
- `--mdFlavour<github|bitbucket|gitbook>`
+ * `--mdEngine<github|bitbucket|gitbook>`<br />
+ The markdown rendering engine:
 
-The markdown rendering engine: 
+  * "github": Optimised for GitHub/CommonMark (Default). 
+  * "bitbucket": Renders markdown to support Bitbucket anchor linking and more.<br />
+  * "gitbook": Adds SUMMARY.md file to generate a book's table of contents and sets header levels to display correct sub-navigation menu. (*Optimised for newest version of GitBook*).
 
-* `github`: Optimised for GitHub (default). 
-* `bitbucket`: Renders markdown to support Bitbucket anchor linking and more.<br />
-* `gitbook`: Adds SUMMARY.md file to generate a book's table of contents and sets header levels to display correct sub-navigation menu. (*Optimised for newest version of GitBook*).
+* `--mdHideSources`<br />
+  Suppress source file linking from output.
+  
 
-`--mdHideSources`<br />
-Suppress source file linking from output.
-
-`--mdSourceRepo<path.to.repo>`<br />
-The source repo to use for source file linking. (*Will be ignored on GitHub repositories*)<br />
-For bitbucket use: `https://bitbucket.org/owner/repository_name`. 
+* `--mdSourceRepo<path.to.repo>`(*Will be ignored on GitHub repositories*)<br />
+  The source repo to use for source file linking.<br />
+  For bitbucket use: `https://bitbucket.org/owner/repository_name`. 
 
 ## Example output
 
-* <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/examples/README.md">Some general example output.</a>
+* <a href="https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/examples/out/README.md">Some general example output.</a>
+
+
 
 ## Acknowledgements
 

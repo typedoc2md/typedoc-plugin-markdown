@@ -1,6 +1,6 @@
 
 import { ReflectionKind } from 'typedoc/dist/lib/models/reflections/index';
-import { Flavour } from '../enums/flavour.enum';
+import { MarkdownEngine } from '../enums/markdown-engine.enum';
 import { ThemeService } from '../theme.service';
 
 /**
@@ -9,17 +9,17 @@ import { ThemeService } from '../theme.service';
  * @param opts
  */
 export function ifDisplayIndex(member: any, opts: any) {
-  const options = ThemeService.getOptions();
+  const isGitBook = ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK;
   const classModule = member.children ? member.children[0].kind === ReflectionKind.Class : false;
   const enumModule = member.children ? member.children[0].kind === ReflectionKind.Enum : false;
   if (
-    member.displayReadme && options.mdFlavour === Flavour.GITBOOK ||
-    (options.mdFlavour === Flavour.GITBOOK && member.kind === ReflectionKind.Class) ||
-    (options.mdFlavour === Flavour.GITBOOK && member.kind === ReflectionKind.Interface)
+    member.displayReadme && isGitBook ||
+    (isGitBook && member.kind === ReflectionKind.Class) ||
+    (isGitBook && member.kind === ReflectionKind.Interface)
     ||
     (
-      (options.mdFlavour === Flavour.GITBOOK && member.kind === ReflectionKind.ExternalModule && !classModule) &&
-      (options.mdFlavour === Flavour.GITBOOK && member.kind === ReflectionKind.ExternalModule && !enumModule))
+      (isGitBook && member.kind === ReflectionKind.ExternalModule && !classModule) &&
+      (isGitBook && member.kind === ReflectionKind.ExternalModule && !enumModule))
   ) {
     return opts.inverse(this);
   } else {

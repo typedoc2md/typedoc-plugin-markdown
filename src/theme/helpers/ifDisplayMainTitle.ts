@@ -1,4 +1,4 @@
-import { Flavour } from '../enums/flavour.enum';
+import { MarkdownEngine } from '../enums/markdown-engine.enum';
 import { ThemeService } from '../theme.service';
 
 /**
@@ -7,8 +7,7 @@ import { ThemeService } from '../theme.service';
  * @param opts
  */
 export function ifDisplayMainTitle(item: any, opts: any) {
-  const options = ThemeService.getOptions();
-  if (options.mdFlavour === Flavour.GITBOOK || item.model.displayReadme) {
+  if (ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK || item.model.displayReadme) {
     return opts.inverse(this);
   } else {
     return opts.fn(this);

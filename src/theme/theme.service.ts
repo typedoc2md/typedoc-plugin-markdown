@@ -1,3 +1,5 @@
+import { MarkdownEngine } from './enums/markdown-engine.enum';
+
 /**
  * Global props and util methods
  */
@@ -19,6 +21,14 @@ export class ThemeService {
    */
   public static getResources() {
     return this.resources;
+  }
+
+  /**
+   * Returns the specified markdown engine
+   */
+  public static getMarkdownEngine() {
+    const specifiedEngine = this.options.mdEngine || this.options.mdFlavour || MarkdownEngine.GITHUB;
+    return specifiedEngine;
   }
 
   /**

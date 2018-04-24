@@ -1,4 +1,4 @@
-import { Flavour } from '../enums/flavour.enum';
+import { MarkdownEngine } from '../enums/markdown-engine.enum';
 import { ThemeService } from '../theme.service';
 
 /**
@@ -6,6 +6,5 @@ import { ThemeService } from '../theme.service';
  * @param opts
  */
 export function ifDisplayBreadcrumbs(opts: any) {
-  const options = ThemeService.getOptions();
-  return options.mdFlavour === Flavour.GITBOOK ? opts.inverse(this) : opts.fn(this);
+  return ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK ? opts.inverse(this) : opts.fn(this);
 }

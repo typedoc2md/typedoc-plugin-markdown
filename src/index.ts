@@ -20,6 +20,14 @@ module.exports = (PluginHost: Application) => {
     component: 'markdown',
     defaultValue: 'github',
     help: 'Markdown Plugin: (github|bitbucket|gitbook) Specifies the markdown rendering engine.',
+    name: 'mdEngine',
+    type: ParameterType.String,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
+    defaultValue: 'github',
+    help: 'Markdown Plugin: Deprectated - use --mdEngine.',
     name: 'mdFlavour',
     type: ParameterType.String,
   });

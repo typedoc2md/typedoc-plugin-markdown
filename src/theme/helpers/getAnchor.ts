@@ -1,4 +1,4 @@
-import { Flavour } from '../enums/flavour.enum';
+import { MarkdownEngine } from '../enums/markdown-engine.enum';
 import { ThemeService } from '../theme.service';
 
 /**
@@ -6,6 +6,5 @@ import { ThemeService } from '../theme.service';
  * @param anchor
  */
 export function getAnchor(anchor: string) {
-  const options = ThemeService.getOptions();
-  return options.mdFlavour === Flavour.BITBUCKET ? '' : `<a id="${anchor}"></a>`;
+  return ThemeService.getMarkdownEngine() === MarkdownEngine.BITBUCKET ? '' : `<a id="${anchor}"></a>`;
 }

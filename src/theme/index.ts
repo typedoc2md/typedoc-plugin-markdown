@@ -6,7 +6,7 @@ import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { Flavour } from './enums/flavour.enum';
+import { MarkdownEngine } from './enums/markdown-engine.enum';
 import { ThemeService } from './theme.service';
 
 export class MarkdownTheme extends DefaultTheme {
@@ -56,8 +56,6 @@ export class MarkdownTheme extends DefaultTheme {
    */
   public static applyAnchorUrl(reflection: Reflection, container: Reflection) {
 
-    const options = ThemeService.getOptions();
-
     if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
 
       let anchor = DefaultTheme.getUrl(reflection, container, '.');
@@ -68,7 +66,7 @@ export class MarkdownTheme extends DefaultTheme {
 
       let anchorRef = anchor;
 
-      if (options.mdFlavour === Flavour.BITBUCKET) {
+      if (ThemeService.getMarkdownEngine() === MarkdownEngine.BITBUCKET) {
         let anchorPrefix = '';
         if (reflection.kind === ReflectionKind.ObjectLiteral) {
           anchorPrefix += 'object-literal-';
@@ -131,8 +129,6 @@ export class MarkdownTheme extends DefaultTheme {
    */
   public getUrls(project: ProjectReflection): UrlMapping[] {
 
-    const options = ThemeService.getOptions();
-
     const urlMappings: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
 
@@ -154,7 +150,7 @@ export class MarkdownTheme extends DefaultTheme {
     }
 
     // write gitbook summary
-    if (options.mdFlavour === Flavour.GITBOOK) {
+    if (ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK) {
 
       const navigation = this.getNavigation(project).children.map((navigationItem) => {
 
