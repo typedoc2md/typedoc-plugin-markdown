@@ -35,10 +35,10 @@ $ node_modules/.bin/typedoc --theme markdown
 The plugin exposes the following additional arguments:
 
  * `--mdEngine<github|bitbucket|gitbook>`<br />
- The markdown rendering engine:
-  * "github": Optimised for GitHub/CommonMark (Default). 
-  * "bitbucket": Renders markdown to support Bitbucket anchor linking and more.<br />
-  * "gitbook": Adds SUMMARY.md file to generate a book's table of contents and sets header levels to display correct sub-navigation menu. (*Optimised for newest version of GitBook*).
+ The markdown rendering engine:<br /> 
+ **"github":** Optimised for GitHub/CommonMark (Default).<br /> 
+ **"bitbucket":** Renders markdown to support Bitbucket anchor linking and more.<br /> 
+ **"gitbook":** Adds SUMMARY.md file to generate a book's table of contents and sets header levels to display correct sub-navigation menu. (*Optimised for newest version of GitBook*).
 
 * `--mdHideSources`<br />
   Suppress source file linking from output.
