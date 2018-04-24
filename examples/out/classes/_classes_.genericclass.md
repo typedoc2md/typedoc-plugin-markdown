@@ -37,11 +37,12 @@ This a type parameter.
 ---
 
 ## Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](_classes_.genericclass.md)
 
-*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L284)*
+*Defined in classes.ts:284*
 
 Constructor short text.
 
@@ -49,24 +50,25 @@ Constructor short text.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| p1 | `any`   |  Constructor param |
-| p2 | `T`   |  Private string property |
-| p3 | `number`   |  Public number property |
-| p4 | `number`   |  Public implicit any property |
-| p5 | `string`   |  Readonly property |
+| p1 | `any` |  Constructor param |
+| p2 | `T` |  Private string property |
+| p3 | `number` |  Public number property |
+| p4 | `number` |  Public implicit any property |
+| p5 | `string` |  Readonly property |
 
 **Returns:** [GenericClass](_classes_.genericclass.md)
 
 ---
 
 ## Properties
+
 <a id="p2"></a>
 
 ### `<Protected>` p2
 
-**●  p2**:  *`T`* 
+**● p2**: *`T`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+*Defined in classes.ts:295*
 
 Private string property
 
@@ -76,9 +78,9 @@ ___
 
 ###  p3
 
-**●  p3**:  *`number`* 
+**● p3**: *`number`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+*Defined in classes.ts:295*
 
 Public number property
 
@@ -88,9 +90,9 @@ ___
 
 ### `<Private>` p4
 
-**●  p4**:  *`number`* 
+**● p4**: *`number`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+*Defined in classes.ts:295*
 
 Public implicit any property
 
@@ -100,9 +102,9 @@ ___
 
 ###  p5
 
-**●  p5**:  *`string`* 
+**● p5**: *`string`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L295)*
+*Defined in classes.ts:295*
 
 Readonly property
 
@@ -112,20 +114,21 @@ ___
 
 ###  value
 
-**●  value**:  *`T`* 
+**● value**: *`T`*
 
-*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L284)*
+*Defined in classes.ts:284*
 
 ___
 
 ## Methods
+
 <a id="getvalue"></a>
 
 ###  getValue
 
 ▸ **getValue**(): `T`
 
-*Defined in [classes.ts:305](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L305)*
+*Defined in classes.ts:305*
 
 **Returns:** `T`
 
@@ -137,13 +140,13 @@ ___
 
 ▸ **setValue**(value: *`T`*): `void`
 
-*Defined in [classes.ts:301](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L301)*
+*Defined in classes.ts:301*
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  [getValue](_classes_.genericclass.md#getvalue) is the counterpart. |
+| value | `T` |  [getValue](_classes_.genericclass.md#getvalue) is the counterpart. |
 
 **Returns:** `void`
 

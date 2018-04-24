@@ -2,6 +2,8 @@
 
 # External module: "functions"
 
+Examples taken from the TypeDoc 'functions' examples directory ([https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/functions.ts](https://github.com/TypeStrong/typedoc/blob/master/examples/basic/src/functions.ts))
+
 ## Index
 
 ### Modules
@@ -25,13 +27,14 @@
 ---
 
 ## Functions
+
 <a id="createsomething"></a>
 
 ###  createSomething
 
 ▸ **createSomething**(): `object`
 
-*Defined in [functions.ts:181](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L181)*
+*Defined in functions.ts:186*
 
 A function that returns an object. Also no type information is given, the object should be correctly reflected.
 
@@ -45,7 +48,7 @@ ___
 
 ▸ **exportedFunction**(): `void`
 
-*Defined in [functions.ts:19](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L19)*
+*Defined in functions.ts:22*
 
 This is a simple exported function.
 
@@ -59,7 +62,7 @@ ___
 
 ▸ **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): `number`
 
-*Defined in [functions.ts:57](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L57)*
+*Defined in functions.ts:62*
 
 This is a function with multiple arguments and a return value.
 
@@ -67,9 +70,9 @@ This is a function with multiple arguments and a return value.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| paramZ | `string`   |  This is a string parameter. |
-| paramG | `any`   |  This is a parameter flagged with any. This sentence is placed in the next line. |
-| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md)   |  This is a **parameter** pointing to an interface.~var value:BaseClass = new BaseClass('test');functionWithArguments('arg', 0, value);~ |
+| paramZ | `string` |  This is a string parameter. |
+| paramG | `any` |  This is a parameter flagged with any.<br><br> This sentence is placed in the next line. |
+| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md) |  This is a **parameter** pointing to an interface.<br><br>``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ```<br><br> |
 
 **Returns:** `number`
 
@@ -81,19 +84,19 @@ ___
 
 ▸ **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE?: *`boolean`*): `string`
 
-*Defined in [functions.ts:77](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L77)*
+*Defined in functions.ts:82*
 
 This is a function with a parameter that has a default value.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| valueA | `string`  | &quot;defaultValue&quot; |   - |
-| valueB | `number`  | 100 |   - |
-| valueC | `number`  |  Number.NaN |   - |
-| valueD | `boolean`  | true |   - |
-| valueE | `boolean`  | false |   - |
+| Param | Type | Default value |
+| ------ | ------ | ------ |
+| `Default value` valueA | `string` | &quot;defaultValue&quot; | 
+| `Default value` valueB | `number` | 100 | 
+| `Default value` valueC | `number` |  Number.NaN | 
+| `Default value` valueD | `boolean` | true | 
+| `Default value` valueE | `boolean` | false | 
 
 **Returns:** `string`
 The input value or the default value.
@@ -106,7 +109,7 @@ ___
 
 ▸ **functionWithDocLink**(): `void`
 
-*Defined in [functions.ts:197](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L197)*
+*Defined in functions.ts:202*
 
 See [`INameInterface`](../interfaces/_classes_.inameinterface.md) and [INameInterface's name property](../interfaces/_classes_.inameinterface.md#name). Also, check out [Google](http://www.google.com) and [GitHub](https://github.com).
 
@@ -122,7 +125,7 @@ ___
 
 ▸ **functionWithOptionalValue**(requiredParam: *`string`*, optionalParam?: *`string`*): `void`
 
-*Defined in [functions.ts:68](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L68)*
+*Defined in functions.ts:73*
 
 This is a function with a parameter that is optional.
 
@@ -130,8 +133,8 @@ This is a function with a parameter that is optional.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| requiredParam | `string`   |  A normal parameter. |
-| optionalParam | `string`   |  An optional parameter. |
+| requiredParam | `string` |  A normal parameter. |
+| `Optional` optionalParam | `string` |  An optional parameter. |
 
 **Returns:** `void`
 
@@ -143,7 +146,7 @@ ___
 
 ▸ **functionWithRest**(...rest: *`string`[]*): `string`
 
-*Defined in [functions.ts:94](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L94)*
+*Defined in functions.ts:99*
 
 This is a function with rest parameter.
 
@@ -151,7 +154,7 @@ This is a function with rest parameter.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| rest | `string`[]   |  Multiple strings. |
+| `Rest` rest | `string`[] |  Multiple strings. |
 
 **Returns:** `string`
 The combined string.
@@ -164,7 +167,7 @@ ___
 
 ▸ **genericFunction**T(value: *`T`*): `T`
 
-*Defined in [functions.ts:138](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L138)*
+*Defined in functions.ts:143*
 
 This is a generic function.
 
@@ -178,7 +181,7 @@ The type parameter.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  The typed value. |
+| value | `T` |  The typed value. |
 
 **Returns:** `T`
 Returns the typed value.
@@ -191,7 +194,7 @@ ___
 
 ▸ **internalFunction**(): `void`
 
-*Defined in [functions.ts:13](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L13)*
+*Defined in functions.ts:16*
 
 This is an internal function.
 
@@ -207,7 +210,7 @@ ___
 
 ▸ **multipleSignatures**(value: *`object`*): `string`
 
-*Defined in [functions.ts:104](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L104)*
+*Defined in functions.ts:109*
 
 This is the first signature of a function with multiple signatures.
 
@@ -215,11 +218,11 @@ This is the first signature of a function with multiple signatures.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `string`   |  The name value. |
+| value | `string` |  The name value. |
 
 **Returns:** `string`
 
-*Defined in [functions.ts:112](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L112)*
+*Defined in functions.ts:117*
 
 This is the second signature of a function with multiple signatures.
 
@@ -227,7 +230,7 @@ This is the second signature of a function with multiple signatures.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `object`   |  An object containing the name value. |
+| value | `object` |  An object containing the name value. |
 
 **Returns:** `string`
 
@@ -239,7 +242,7 @@ ___
 
 ▸ **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): `number`
 
-*Defined in [functions.ts:37](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/functions.ts#L37)*
+*Defined in functions.ts:41*
 
 This is a function with multiple arguments and a return value.
 
@@ -247,9 +250,9 @@ This is a function with multiple arguments and a return value.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| paramZ | `string`   |  This is a string parameter. |
-| paramG | `any`   |  This is a parameter flagged with any. This sentence is placed in the next line. |
-| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md)   |  This is a **parameter** pointing to an interface.~var value:BaseClass = new BaseClass('test');functionWithArguments('arg', 0, value);~ |
+| paramZ | `string` |  This is a string parameter. |
+| paramG | `any` |  This is a parameter flagged with any.<br><br>This sentence is placed in the next line. |
+| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md) |  This is a **parameter** pointing to an interface.<br><br>``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ```<br><br> |
 
 **Returns:** `number`
 

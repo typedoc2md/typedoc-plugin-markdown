@@ -16,16 +16,31 @@ This is a interface inheriting from two other interfaces.
 
 * [SubClassA](../classes/_classes_.subclassa.md)
 
+## Index
+
+### Properties
+
+* [name](_classes_.iprintnameinterface.md#name)
+
+### Methods
+
+* [getName](_classes_.iprintnameinterface.md#getname)
+* [print](_classes_.iprintnameinterface.md#print)
+* [printName](_classes_.iprintnameinterface.md#printname)
+
+---
+
 ## Properties
+
 <a id="name"></a>
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)*
 
-*Defined in [classes.ts:16](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L16)*
+*Defined in classes.ts:16*
 
 This is a interface member of INameInterface.
 
@@ -34,6 +49,7 @@ It should be inherited by all subinterfaces.
 ___
 
 ## Methods
+
 <a id="getname"></a>
 
 ###  getName
@@ -42,7 +58,7 @@ ___
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[getName](_classes_.inameinterface.md#getname)*
 
-*Defined in [classes.ts:23](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L23)*
+*Defined in classes.ts:23*
 
 This is a interface function of INameInterface.
 
@@ -60,7 +76,7 @@ ___
 
 *Inherited from [IPrintInterface](_classes_.iprintinterface.md).[print](_classes_.iprintinterface.md#print)*
 
-*Defined in [classes.ts:36](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L36)*
+*Defined in classes.ts:36*
 
 This is a interface function of IPrintInterface
 
@@ -68,9 +84,9 @@ It should be inherited by all subinterfaces.
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| value | `string`   |  - |
+| Param | Type |
+| ------ | ------ |
+| value | `string` | 
 
 **Returns:** `void`
 
@@ -82,7 +98,7 @@ ___
 
 ▸ **printName**(): `void`
 
-*Defined in [classes.ts:47](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L47)*
+*Defined in classes.ts:47*
 
 This is a interface function of IPrintNameInterface
 

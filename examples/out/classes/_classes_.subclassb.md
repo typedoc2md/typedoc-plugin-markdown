@@ -43,34 +43,36 @@ The constructor of the original class should be overwritten.
 ---
 
 ## Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new SubClassB**(name: *`string`*): [SubClassB](_classes_.subclassb.md)
 
 *Overrides [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
-*Defined in [classes.ts:263](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L263)*
+*Defined in classes.ts:263*
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| name | `string`   |  - |
+| Param | Type |
+| ------ | ------ |
+| name | `string` | 
 
 **Returns:** [SubClassB](_classes_.subclassb.md)
 
 ---
 
 ## Properties
+
 <a id="kind"></a>
 
 ### `<Protected>` kind
 
-**●  kind**:  *`number`* 
+**● kind**: *`number`*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
 
-*Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
+*Defined in classes.ts:65*
 
 This is a simple protected member.
 
@@ -80,13 +82,13 @@ ___
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
 *Overrides [BaseClass](_classes_.baseclass.md).[name](_classes_.baseclass.md#name)*
 
-*Defined in [classes.ts:263](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L263)*
+*Defined in classes.ts:263*
 
 ___
 
@@ -94,11 +96,11 @@ ___
 
 ### `<Static>` instance
 
-**●  instance**:  *[BaseClass](_classes_.baseclass.md)* 
+**● instance**: *[BaseClass](_classes_.baseclass.md)*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[instance](_classes_.baseclass.md#instance)*
 
-*Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
+*Defined in classes.ts:72*
 
 This is a static member.
 
@@ -110,15 +112,16 @@ ___
 
 ### `<Static>` instances
 
-**●  instances**:  *[BaseClass](_classes_.baseclass.md)[]* 
+**● instances**: *[BaseClass](_classes_.baseclass.md)[]*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[instances](_classes_.baseclass.md#instances)*
 
-*Defined in [classes.ts:73](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L73)*
+*Defined in classes.ts:73*
 
 ___
 
 ## Methods
+
 <a id="abstractmethod"></a>
 
 ###  abstractMethod
@@ -127,7 +130,7 @@ ___
 
 *Overrides [BaseClass](_classes_.baseclass.md).[abstractMethod](_classes_.baseclass.md#abstractmethod)*
 
-*Defined in [classes.ts:269](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L269)*
+*Defined in classes.ts:269*
 
 **Returns:** `void`
 
@@ -141,7 +144,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[arrowFunction](_classes_.baseclass.md#arrowfunction)*
 
-*Defined in [classes.ts:143](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L143)*
+*Defined in classes.ts:143*
 
 This is a simple fat arrow function.
 
@@ -149,8 +152,8 @@ This is a simple fat arrow function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| param2 | `string`   |  The second parameter needed by this function. |
-| param1 | `number`   |  The first parameter needed by this function. |
+| param2 | `string` |  The second parameter needed by this function. |
+| param1 | `number` |  The first parameter needed by this function. |
 
 **Returns:** `void`
 
@@ -162,13 +165,13 @@ ___
 
 ▸ **doSomething**(value: *[`string`,[SubClassA](_classes_.subclassa.md),[SubClassB](_classes_.subclassb.md)]*): `void`
 
-*Defined in [classes.ts:273](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L273)*
+*Defined in classes.ts:273*
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| value | [`string`,[SubClassA](_classes_.subclassa.md),[SubClassB](_classes_.subclassb.md)]   |  - |
+| Param | Type |
+| ------ | ------ |
+| value | [`string`,[SubClassA](_classes_.subclassa.md),[SubClassB](_classes_.subclassb.md)] | 
 
 **Returns:** `void`
 
@@ -184,7 +187,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname)*
 
-*Defined in [classes.ts:105](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L105)*
+*Defined in classes.ts:105*
 
 This is a simple member function.
 
@@ -203,7 +206,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[setName](_classes_.baseclass.md#setname)*
 
-*Defined in [classes.ts:130](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L130)*
+*Defined in classes.ts:130*
 
 This is a simple member function.
 
@@ -213,7 +216,7 @@ It should be inherited by all subclasses.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The new name. |
+| name | `string` |  The new name. |
 
 **Returns:** `void`
 
@@ -227,18 +230,18 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[caTest](_classes_.baseclass.md#catest)*
 
-*Defined in [classes.ts:170](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L170)*
+*Defined in classes.ts:170*
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| originalValues | [BaseClass](_classes_.baseclass.md)   |  - |
-| newRecord | `any`   |  - |
-| fieldNames | `string`[]   |  - |
-| mandatoryFields | `string`[]   |  - |
+| Param | Type |
+| ------ | ------ |
+| originalValues | [BaseClass](_classes_.baseclass.md) | 
+| newRecord | `any` | 
+| fieldNames | `string`[] | 
+| mandatoryFields | `string`[] | 
 
 **Returns:** `string`
 
@@ -252,7 +255,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getInstance](_classes_.baseclass.md#getinstance)*
 
-*Defined in [classes.ts:162](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L162)*
+*Defined in classes.ts:162*
 
 This is a static function.
 
@@ -271,7 +274,7 @@ ___
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[getName](_classes_.baseclass.md#getname-1)*
 
-*Defined in [classes.ts:118](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L118)*
+*Defined in classes.ts:118*
 
 This is a simple static member function.
 

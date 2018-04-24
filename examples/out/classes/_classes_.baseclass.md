@@ -48,42 +48,44 @@ This is a simple example on how to use BaseClass.
 ---
 
 ## Constructors
+
 <a id="constructor"></a>
 
 ### ⊕ **new BaseClass**(name: *`string`*): [BaseClass](_classes_.baseclass.md)
 
 ### ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
 
-*Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L78)*
+*Defined in classes.ts:78*
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| name | `string`   |  - |
+| Param | Type |
+| ------ | ------ |
+| name | `string` | 
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
-*Defined in [classes.ts:81](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L81)*
+*Defined in classes.ts:81*
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| source | [BaseClass](_classes_.baseclass.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| source | [BaseClass](_classes_.baseclass.md) | 
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
 ---
 
 ## Properties
+
 <a id="internalclass"></a>
 
 ### `<Private>` internalClass
 
-**●  internalClass**:  *[InternalClass](_classes_.internalclass.md)`keyof BaseClass`* 
+**● internalClass**: *[InternalClass](_classes_.internalclass.md)<`keyof BaseClass`>*
 
-*Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L78)*
+*Defined in classes.ts:78*
 
 This is an instance member of an internal class.
 
@@ -93,9 +95,9 @@ ___
 
 ### `<Protected>` kind
 
-**●  kind**:  *`number`* 
+**● kind**: *`number`*
 
-*Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L65)*
+*Defined in classes.ts:65*
 
 This is a simple protected member.
 
@@ -105,11 +107,11 @@ ___
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
-*Defined in [classes.ts:60](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L60)*
+*Defined in classes.ts:60*
 
 This is a simple public member.
 
@@ -119,9 +121,9 @@ ___
 
 ### `<Static>` instance
 
-**●  instance**:  *[BaseClass](_classes_.baseclass.md)* 
+**● instance**: *[BaseClass](_classes_.baseclass.md)*
 
-*Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L72)*
+*Defined in classes.ts:72*
 
 This is a static member.
 
@@ -133,20 +135,21 @@ ___
 
 ### `<Static>` instances
 
-**●  instances**:  *[BaseClass](_classes_.baseclass.md)[]* 
+**● instances**: *[BaseClass](_classes_.baseclass.md)[]*
 
-*Defined in [classes.ts:73](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L73)*
+*Defined in classes.ts:73*
 
 ___
 
 ## Methods
+
 <a id="abstractmethod"></a>
 
 ### `<Abstract>` abstractMethod
 
 ▸ **abstractMethod**(): `void`
 
-*Defined in [classes.ts:95](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L95)*
+*Defined in classes.ts:95*
 
 **Returns:** `void`
 
@@ -158,7 +161,7 @@ ___
 
 ▸ **arrowFunction**(param2: *`string`*, param1: *`number`*): `void`
 
-*Defined in [classes.ts:143](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L143)*
+*Defined in classes.ts:143*
 
 This is a simple fat arrow function.
 
@@ -166,8 +169,8 @@ This is a simple fat arrow function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| param2 | `string`   |  The second parameter needed by this function. |
-| param1 | `number`   |  The first parameter needed by this function. |
+| param2 | `string` |  The second parameter needed by this function. |
+| param1 | `number` |  The first parameter needed by this function. |
 
 **Returns:** `void`
 
@@ -179,7 +182,7 @@ ___
 
 ▸ **checkName**(): `boolean`
 
-*Defined in [classes.ts:150](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L150)*
+*Defined in classes.ts:150*
 
 This is a private function.
 
@@ -195,7 +198,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
-*Defined in [classes.ts:105](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L105)*
+*Defined in classes.ts:105*
 
 This is a simple member function.
 
@@ -212,7 +215,7 @@ ___
 
 ▸ **setName**(name: *`string`*): `void`
 
-*Defined in [classes.ts:130](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L130)*
+*Defined in classes.ts:130*
 
 This is a simple member function.
 
@@ -222,7 +225,7 @@ It should be inherited by all subclasses.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The new name. |
+| name | `string` |  The new name. |
 
 **Returns:** `void`
 
@@ -234,18 +237,18 @@ ___
 
 ▸ **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
 
-*Defined in [classes.ts:170](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L170)*
+*Defined in classes.ts:170*
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| originalValues | [BaseClass](_classes_.baseclass.md)   |  - |
-| newRecord | `any`   |  - |
-| fieldNames | `string`[]   |  - |
-| mandatoryFields | `string`[]   |  - |
+| Param | Type |
+| ------ | ------ |
+| originalValues | [BaseClass](_classes_.baseclass.md) | 
+| newRecord | `any` | 
+| fieldNames | `string`[] | 
+| mandatoryFields | `string`[] | 
 
 **Returns:** `string`
 
@@ -257,7 +260,7 @@ ___
 
 ▸ **getInstance**(): [BaseClass](_classes_.baseclass.md)
 
-*Defined in [classes.ts:162](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L162)*
+*Defined in classes.ts:162*
 
 This is a static function.
 
@@ -274,7 +277,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Defined in [classes.ts:118](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/tests/src/classes.ts#L118)*
+*Defined in classes.ts:118*
 
 This is a simple static member function.
 
