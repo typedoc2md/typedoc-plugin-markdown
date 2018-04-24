@@ -13,7 +13,7 @@
     "mocks:github": "typedoc ./test/src --out ./test/out/github --theme markdown --gitRevision master --media test/src/media/ --includes test/src/inc/",
     "mocks:bitbucket": "typedoc ./test/src --out ./test/out/bitbucket --theme markdown --gitRevision master --media test/src/media/ --includes test/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
     "mocks:gitbook": "typedoc ./test/src --out ./test/out/gitbook --theme markdown --gitRevision master --mdFlavour gitbook --media test/src/media/ --includes test/src/inc/",
-    "mocks:html": "typedoc --out test/out/html tests --media tests/src/media/ --includes test/src/inc/",
+    "mocks:html": "typedoc ./test/src --out test/out/html --media test/src/media/ --includes test/src/inc/",
     "lint": "tslint --project ./src/tsconfig.json",
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",
@@ -41,12 +41,12 @@
     "typedoc": ">=0.9.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.2",
-    "@types/mocha": "^5.0.0",
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
     "chai": "^4.1.2",
     "chai-files": "^1.4.0",
     "copyfiles": "^2.0.0",
-    "mocha": "^5.1.0",
+    "mocha": "^5.1.1",
     "tslint": "^5.9.1",
     "typedoc": "^0.11.1",
     "typescript": "2.7.2"
