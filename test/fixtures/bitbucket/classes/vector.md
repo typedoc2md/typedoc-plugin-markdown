@@ -38,11 +38,11 @@
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| x | `number`   |  - |
-| y | `number`   |  - |
-| z | `number`   |  - |
+| Param | Type |
+| ------ | ------ |
+| x | `number` | 
+| y | `number` | 
+| z | `number` | 
 
 **Returns:** [Vector](vector.md)
 
@@ -84,10 +84,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Vector](vector.md)   |  - |
-| v2 | [Vector](vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Vector](vector.md) | 
+| v2 | [Vector](vector.md) | 
 
 **Returns:** [Vector](vector.md)
 
@@ -101,10 +101,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Vector](vector.md)   |  - |
-| v2 | [Vector](vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Vector](vector.md) | 
+| v2 | [Vector](vector.md) | 
 
 **Returns:** `number`
 
@@ -118,9 +118,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v | [Vector](vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v | [Vector](vector.md) | 
 
 **Returns:** `number`
 
@@ -134,10 +134,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Vector](vector.md)   |  - |
-| v2 | [Vector](vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Vector](vector.md) | 
+| v2 | [Vector](vector.md) | 
 
 **Returns:** [Vector](vector.md)
 
@@ -151,9 +151,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v | [Vector](vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v | [Vector](vector.md) | 
 
 **Returns:** [Vector](vector.md)
 
@@ -167,10 +167,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Vector](vector.md)   |  - |
-| v2 | [Vector](vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Vector](vector.md) | 
+| v2 | [Vector](vector.md) | 
 
 **Returns:** [Vector](vector.md)
 
@@ -184,10 +184,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| k | `number`   |  - |
-| v | [Vector](vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| k | `number` | 
+| v | [Vector](vector.md) | 
 
 **Returns:** [Vector](vector.md)
 

@@ -27,11 +27,11 @@ Constructor short text.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| p1 | `any`   |  Constructor param |
-| p2 | `T`   |  Private string property |
-| p3 | `number`   |  Public number property |
-| p4 | `number`   |  Public implicit any property |
-| p5 | `string`   |  Readonly property |
+| p1 | `any` |  Constructor param |
+| p2 | `T` |  Private string property |
+| p3 | `number` |  Public number property |
+| p4 | `number` |  Public implicit any property |
+| p5 | `string` |  Readonly property |
 
 **Returns:** [GenericClass](_classes_.genericclass.md)
 
@@ -123,7 +123,7 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  [getValue](_classes_.genericclass.md#getvalue) is the counterpart. |
+| value | `T` |  [getValue](_classes_.genericclass.md#getvalue) is the counterpart. |
 
 **Returns:** `void`
 

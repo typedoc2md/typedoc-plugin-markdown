@@ -9,9 +9,9 @@ The leftover generic type parameter.
 
 # Hierarchy
 
- [A](_generics_.a.md)`T`
+ [A](_generics_.a.md)<`T`>
 
- [B](_generics_.b.md)`T`, `boolean`
+ [B](_generics_.b.md)<`T`>, <`boolean`>
 
 **↳ AB**
 
@@ -71,7 +71,7 @@ A generic member function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  A generic parameter. |
+| value | `T` |  A generic parameter. |
 
 **Returns:** `void`
 

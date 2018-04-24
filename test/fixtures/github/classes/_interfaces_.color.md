@@ -42,11 +42,11 @@
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| r | `number`   |  - |
-| g | `number`   |  - |
-| b | `number`   |  - |
+| Param | Type |
+| ------ | ------ |
+| r | `number` | 
+| g | `number` | 
+| b | `number` | 
 
 **Returns:** [Color](_interfaces_.color.md)
 
@@ -146,10 +146,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Color](_interfaces_.color.md)   |  - |
-| v2 | [Color](_interfaces_.color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Color](_interfaces_.color.md) | 
+| v2 | [Color](_interfaces_.color.md) | 
 
 **Returns:** [Color](_interfaces_.color.md)
 
@@ -165,10 +165,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| k | `number`   |  - |
-| v | [Color](_interfaces_.color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| k | `number` | 
+| v | [Color](_interfaces_.color.md) | 
 
 **Returns:** [Color](_interfaces_.color.md)
 
@@ -184,10 +184,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Color](_interfaces_.color.md)   |  - |
-| v2 | [Color](_interfaces_.color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Color](_interfaces_.color.md) | 
+| v2 | [Color](_interfaces_.color.md) | 
 
 **Returns:** [Color](_interfaces_.color.md)
 
@@ -203,9 +203,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| c | [Color](_interfaces_.color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| c | [Color](_interfaces_.color.md) | 
 
 **Returns:** `object`
 

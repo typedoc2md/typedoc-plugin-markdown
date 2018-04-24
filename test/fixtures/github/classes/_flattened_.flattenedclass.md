@@ -37,7 +37,7 @@ A constructor that accepts an option object defined inline.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| options | `object`   |  The inline typed options object. |
+| options | `object` |  The inline typed options object. |
 
 **Returns:** [flattenedClass](_flattened_.flattenedclass.md)
 
@@ -62,8 +62,8 @@ A member that holds a callback that requires a typed function signature.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| param | `number`   |  A parameter of the typed function callback. |
-| optionalParam | `string`   |  An optional parameter of the typed function callback. |
+| param | `number` |  A parameter of the typed function callback. |
+| `Optional` optionalParam | `string` |  An optional parameter of the typed function callback. |
 
 **Returns:** `string`
 
@@ -118,7 +118,7 @@ Call signature with parameters.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `number`   |  The desired value. |
+| value | `number` |  The desired value. |
 
 **Returns:** [flattenedClass](_flattened_.flattenedclass.md)
 The calling Foo.

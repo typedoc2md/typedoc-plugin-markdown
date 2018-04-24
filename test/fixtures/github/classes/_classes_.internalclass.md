@@ -28,9 +28,9 @@ This is an internal class, it is not exported.
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| options | `object`   |  - |
+| Param | Type |
+| ------ | ------ |
+| options | `object` | 
 
 **Returns:** [InternalClass](_classes_.internalclass.md)
 

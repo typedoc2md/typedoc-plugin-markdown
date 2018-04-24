@@ -88,7 +88,7 @@ A function that is attached to an enumeration.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | [Size](_enumerations_.size.md)   |  The value that should be tested. |
+| value | [Size](_enumerations_.size.md) |  The value that should be tested. |
 
 **Returns:** `boolean`
 TRUE when the given value equals Size.Small.

@@ -42,10 +42,10 @@
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| source | `string`   |  - |
-| subString | `string`   |  - |
+| Param | Type |
+| ------ | ------ |
+| source | `string` | 
+| subString | `string` | 
 
 **Returns:** `boolean`
 
@@ -79,11 +79,11 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| ctor | [ClockConstructor](../interfaces/interfaces.clockconstructor.md)   |  - |
-| hour | `number`   |  - |
-| minute | `number`   |  - |
+| Param | Type |
+| ------ | ------ |
+| ctor | [ClockConstructor](../interfaces/interfaces.clockconstructor.md) | 
+| hour | `number` | 
+| minute | `number` | 
 
 **Returns:** [ClockInterface](../interfaces/interfaces.clockinterface.md)
 

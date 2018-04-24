@@ -22,10 +22,10 @@
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| hour | `number`   |  - |
-| minute | `number`   |  - |
+| Param | Type |
+| ------ | ------ |
+| hour | `number` | 
+| minute | `number` | 
 
 **Returns:** [ClockInterface](interfaces.clockinterface.md)
 

@@ -32,7 +32,7 @@ A function that has a parameter that requires a typed function callback.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| callback | `function`   |  The typed function callback. |
+| callback | `function` |  The typed function callback. |
 
 **Returns:** `void`
 
@@ -52,7 +52,7 @@ A function that accepts an index signature parameter.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| indexed | `object`   |  The index signature parameter. |
+| indexed | `object` |  The index signature parameter. |
 
 **Returns:** `void`
 
@@ -72,7 +72,7 @@ A function that accepts an option object defined inline.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| options | `object`   |  The inline typed options object. |
+| options | `object` |  The inline typed options object. |
 
 **Returns:** `void`
 

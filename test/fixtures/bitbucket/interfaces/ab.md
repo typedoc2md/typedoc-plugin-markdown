@@ -11,9 +11,9 @@ The leftover generic type parameter.
 
 ## Hierarchy
 
- [A](a.md)`T`
+ [A](a.md)<`T`>
 
- [B](b.md)`T`, `boolean`
+ [B](b.md)<`T`>, <`boolean`>
 
 **↳ AB**
 
@@ -77,7 +77,7 @@ A generic member function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  A generic parameter. |
+| value | `T` |  A generic parameter. |
 
 **Returns:** `void`
 

@@ -30,9 +30,9 @@ This is a simple example on how to use BaseClass.
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| name | `string`   |  - |
+| Param | Type |
+| ------ | ------ |
+| name | `string` | 
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
@@ -40,9 +40,9 @@ This is a simple example on how to use BaseClass.
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| source | [BaseClass](_classes_.baseclass.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| source | [BaseClass](_classes_.baseclass.md) | 
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
@@ -54,7 +54,7 @@ This is a simple example on how to use BaseClass.
 
 ## `<Private>` internalClass
 
-**●  internalClass**:  *[InternalClass](_classes_.internalclass.md)`keyof BaseClass`* 
+**●  internalClass**:  *[InternalClass](_classes_.internalclass.md)<`keyof BaseClass`>* 
 
 *Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L78)*
 
@@ -140,8 +140,8 @@ This is a simple fat arrow function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| param2 | `string`   |  The second parameter needed by this function. |
-| param1 | `number`   |  The first parameter needed by this function. |
+| param2 | `string` |  The second parameter needed by this function. |
+| param1 | `number` |  The first parameter needed by this function. |
 
 **Returns:** `void`
 
@@ -196,7 +196,7 @@ It should be inherited by all subclasses.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The new name. |
+| name | `string` |  The new name. |
 
 **Returns:** `void`
 
@@ -214,12 +214,12 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| originalValues | [BaseClass](_classes_.baseclass.md)   |  - |
-| newRecord | `any`   |  - |
-| fieldNames | `string`[]   |  - |
-| mandatoryFields | `string`[]   |  - |
+| Param | Type |
+| ------ | ------ |
+| originalValues | [BaseClass](_classes_.baseclass.md) | 
+| newRecord | `any` | 
+| fieldNames | `string`[] | 
+| mandatoryFields | `string`[] | 
 
 **Returns:** `string`
 

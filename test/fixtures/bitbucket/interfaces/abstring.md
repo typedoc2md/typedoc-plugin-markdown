@@ -6,7 +6,7 @@ An interface extending a generic interface and setting its type parameter.
 
 ## Hierarchy
 
-↳  [AB](ab.md)`string`
+↳  [AB](ab.md)<`string`>
 
 **↳ ABString**
 
@@ -66,7 +66,7 @@ A generic member function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `string`   |  A generic parameter. |
+| value | `string` |  A generic parameter. |
 
 **Returns:** `void`
 

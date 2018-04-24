@@ -6,6 +6,12 @@ Examples taken from the TypeDoc 'generics' examples directory ([https://github.c
 
 ## Index
 
+### Classes
+
+* [MyFirstClass](../classes/_generics_.myfirstclass.md)
+* [MySecondClass](../classes/_generics_.mysecondclass.md)
+* [MyThirdClass](../classes/_generics_.mythirdclass.md)
+
 ### Interfaces
 
 * [A](../interfaces/_generics_.a.md)
@@ -58,7 +64,7 @@ The generic type parameter.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  A generic parameter. |
+| value | `T` |  A generic parameter. |
 
 **Returns:** `T`
 A generic return value.

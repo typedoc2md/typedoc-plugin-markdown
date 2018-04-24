@@ -32,9 +32,9 @@
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| pos | [Vector](../classes/_interfaces_.vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| pos | [Vector](../classes/_interfaces_.vector.md) | 
 
 **Returns:** [Color](../classes/_interfaces_.color.md)
 
@@ -53,9 +53,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| pos | [Vector](../classes/_interfaces_.vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| pos | [Vector](../classes/_interfaces_.vector.md) | 
 
 **Returns:** `number`
 
@@ -84,9 +84,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| pos | [Vector](../classes/_interfaces_.vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| pos | [Vector](../classes/_interfaces_.vector.md) | 
 
 **Returns:** [Color](../classes/_interfaces_.color.md)
 

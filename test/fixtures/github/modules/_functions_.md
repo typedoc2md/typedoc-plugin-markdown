@@ -68,9 +68,9 @@ This is a function with multiple arguments and a return value.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| paramZ | `string`   |  This is a string parameter. |
-| paramG | `any`   |  This is a parameter flagged with any.<br><br> This sentence is placed in the next line. |
-| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md)   |  This is a **parameter** pointing to an interface.<br><br>``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ```<br><br> |
+| paramZ | `string` |  This is a string parameter. |
+| paramG | `any` |  This is a parameter flagged with any.<br><br> This sentence is placed in the next line. |
+| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md) |  This is a **parameter** pointing to an interface.<br><br>``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ```<br><br> |
 
 **Returns:** `number`
 
@@ -88,13 +88,13 @@ This is a function with a parameter that has a default value.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| valueA | `string`  | &quot;defaultValue&quot; |   - |
-| valueB | `number`  | 100 |   - |
-| valueC | `number`  |  Number.NaN |   - |
-| valueD | `boolean`  | true |   - |
-| valueE | `boolean`  | false |   - |
+| Param | Type | Default value |
+| ------ | ------ | ------ |
+| `Default value` valueA | `string` | &quot;defaultValue&quot; | 
+| `Default value` valueB | `number` | 100 | 
+| `Default value` valueC | `number` |  Number.NaN | 
+| `Default value` valueD | `boolean` | true | 
+| `Default value` valueE | `boolean` | false | 
 
 **Returns:** `string`
 The input value or the default value.
@@ -131,8 +131,8 @@ This is a function with a parameter that is optional.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| requiredParam | `string`   |  A normal parameter. |
-| optionalParam | `string`   |  An optional parameter. |
+| requiredParam | `string` |  A normal parameter. |
+| `Optional` optionalParam | `string` |  An optional parameter. |
 
 **Returns:** `void`
 
@@ -152,7 +152,7 @@ This is a function with rest parameter.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| rest | `string`[]   |  Multiple strings. |
+| `Rest` rest | `string`[] |  Multiple strings. |
 
 **Returns:** `string`
 The combined string.
@@ -179,7 +179,7 @@ The type parameter.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  The typed value. |
+| value | `T` |  The typed value. |
 
 **Returns:** `T`
 Returns the typed value.
@@ -216,7 +216,7 @@ This is the first signature of a function with multiple signatures.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `string`   |  The name value. |
+| value | `string` |  The name value. |
 
 **Returns:** `string`
 
@@ -228,7 +228,7 @@ This is the second signature of a function with multiple signatures.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `object`   |  An object containing the name value. |
+| value | `object` |  An object containing the name value. |
 
 **Returns:** `string`
 
@@ -248,9 +248,9 @@ This is a function with multiple arguments and a return value.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| paramZ | `string`   |  This is a string parameter. |
-| paramG | `any`   |  This is a parameter flagged with any.<br><br>This sentence is placed in the next line. |
-| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md)   |  This is a **parameter** pointing to an interface.<br><br>``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ```<br><br> |
+| paramZ | `string` |  This is a string parameter. |
+| paramG | `any` |  This is a parameter flagged with any.<br><br>This sentence is placed in the next line. |
+| paramA | [INameInterface](../interfaces/_classes_.inameinterface.md) |  This is a **parameter** pointing to an interface.<br><br>``` var value:BaseClass = new BaseClass('test'); functionWithArguments('arg', 0, value); ```<br><br> |
 
 **Returns:** `number`
 

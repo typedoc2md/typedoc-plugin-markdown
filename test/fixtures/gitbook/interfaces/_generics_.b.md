@@ -48,7 +48,7 @@ A generic member function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `T`   |  A generic parameter. |
+| value | `T` |  A generic parameter. |
 
 **Returns:** `void`
 

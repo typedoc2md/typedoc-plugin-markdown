@@ -6,7 +6,7 @@ This a non generic class derived from a [generic class](genericclass.md).
 
 ## Hierarchy
 
- [GenericClass](genericclass.md)[SubClassB](subclassb.md)
+ [GenericClass](genericclass.md)<[SubClassB](subclassb.md)>
 
 **↳ NonGenericClass**
 
@@ -44,11 +44,11 @@ Constructor short text.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| p1 | `any`   |  Constructor param |
-| p2 | [SubClassB](subclassb.md)   |  Private string property |
-| p3 | `number`   |  Public number property |
-| p4 | `number`   |  Public implicit any property |
-| p5 | `string`   |  Readonly property |
+| p1 | `any` |  Constructor param |
+| p2 | [SubClassB](subclassb.md) |  Private string property |
+| p3 | `number` |  Public number property |
+| p4 | `number` |  Public implicit any property |
+| p5 | `string` |  Readonly property |
 
 **Returns:** [NonGenericClass](nongenericclass.md)
 
@@ -128,7 +128,7 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | [SubClassB](subclassb.md)   |  [getValue](nongenericclass.md#markdown-header-getvalue) is the counterpart. |
+| value | [SubClassB](subclassb.md) |  [getValue](nongenericclass.md#markdown-header-getvalue) is the counterpart. |
 
 **Returns:** `void`
 

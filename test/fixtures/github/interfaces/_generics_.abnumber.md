@@ -6,7 +6,7 @@ An interface extending a generic interface and setting its type parameter.
 
 ## Hierarchy
 
-↳  [AB](_generics_.ab.md)`number`
+↳  [AB](_generics_.ab.md)<`number`>
 
 **↳ ABNumber**
 
@@ -72,7 +72,7 @@ A generic member function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `number`   |  A generic parameter. |
+| value | `number` |  A generic parameter. |
 
 **Returns:** `void`
 

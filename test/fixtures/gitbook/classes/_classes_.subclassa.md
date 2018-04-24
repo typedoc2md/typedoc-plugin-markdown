@@ -29,9 +29,9 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| name | `string`   |  - |
+| Param | Type |
+| ------ | ------ |
+| name | `string` | 
 
 **Returns:** [SubClassA](_classes_.subclassa.md)
 
@@ -41,9 +41,9 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| source | [BaseClass](_classes_.baseclass.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| source | [BaseClass](_classes_.baseclass.md) | 
 
 **Returns:** [SubClassA](_classes_.subclassa.md)
 
@@ -130,7 +130,7 @@ Sets the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `string`   |  The new name. |
+| value | `string` |  The new name. |
 
 **Returns:** `void`
 The return value.
@@ -166,7 +166,7 @@ Sets the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `string`   |  The new name. |
+| value | `string` |  The new name. |
 
 **Returns:** `void`
 The return value.
@@ -205,8 +205,8 @@ This is a simple fat arrow function.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| param2 | `string`   |  The second parameter needed by this function. |
-| param1 | `number`   |  The first parameter needed by this function. |
+| param2 | `string` |  The second parameter needed by this function. |
+| param1 | `number` |  The first parameter needed by this function. |
 
 **Returns:** `void`
 
@@ -247,9 +247,9 @@ This is a simple interface function.
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| value | `string`   |  - |
+| Param | Type |
+| ------ | ------ |
+| value | `string` | 
 
 **Returns:** `void`
 
@@ -289,7 +289,7 @@ It should be inherited by all subclasses.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The new name. |
+| name | `string` |  The new name. |
 
 **Returns:** `void`
 
@@ -309,12 +309,12 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| originalValues | [BaseClass](_classes_.baseclass.md)   |  - |
-| newRecord | `any`   |  - |
-| fieldNames | `string`[]   |  - |
-| mandatoryFields | `string`[]   |  - |
+| Param | Type |
+| ------ | ------ |
+| originalValues | [BaseClass](_classes_.baseclass.md) | 
+| newRecord | `any` | 
+| fieldNames | `string`[] | 
+| mandatoryFields | `string`[] | 
 
 **Returns:** `string`
 

@@ -40,11 +40,11 @@
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| r | `number`   |  - |
-| g | `number`   |  - |
-| b | `number`   |  - |
+| Param | Type |
+| ------ | ------ |
+| r | `number` | 
+| g | `number` | 
+| b | `number` | 
 
 **Returns:** [Color](color.md)
 
@@ -126,10 +126,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Color](color.md)   |  - |
-| v2 | [Color](color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Color](color.md) | 
+| v2 | [Color](color.md) | 
 
 **Returns:** [Color](color.md)
 
@@ -143,10 +143,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| k | `number`   |  - |
-| v | [Color](color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| k | `number` | 
+| v | [Color](color.md) | 
 
 **Returns:** [Color](color.md)
 
@@ -160,10 +160,10 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| v1 | [Color](color.md)   |  - |
-| v2 | [Color](color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| v1 | [Color](color.md) | 
+| v2 | [Color](color.md) | 
 
 **Returns:** [Color](color.md)
 
@@ -177,9 +177,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| c | [Color](color.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| c | [Color](color.md) | 
 
 **Returns:** `object`
 

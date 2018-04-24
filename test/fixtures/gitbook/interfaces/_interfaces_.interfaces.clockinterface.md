@@ -28,9 +28,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| d | `Date`   |  - |
+| Param | Type |
+| ------ | ------ |
+| d | `Date` | 
 
 **Returns:** `any`
 

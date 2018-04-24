@@ -30,9 +30,9 @@
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| pos | [Vector](../classes/vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| pos | [Vector](../classes/vector.md) | 
 
 **Returns:** [Color](../classes/color.md)
 
@@ -49,9 +49,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| pos | [Vector](../classes/vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| pos | [Vector](../classes/vector.md) | 
 
 **Returns:** `number`
 
@@ -76,9 +76,9 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| pos | [Vector](../classes/vector.md)   |  - |
+| Param | Type |
+| ------ | ------ |
+| pos | [Vector](../classes/vector.md) | 
 
 **Returns:** [Color](../classes/color.md)
 

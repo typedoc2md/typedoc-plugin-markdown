@@ -15,7 +15,7 @@ This is a function that is extended by a module.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| arg | `string`   |  An argument. |
+| arg | `string` |  An argument. |
 
 **Returns:** `string`
 
