@@ -36,7 +36,7 @@ This is a interface inheriting from two other interfaces.
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Inherited from [INameInterface](_classes_.inameinterface.md).[name](_classes_.inameinterface.md#name)*
 

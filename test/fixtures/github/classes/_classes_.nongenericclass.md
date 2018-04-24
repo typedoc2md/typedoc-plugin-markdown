@@ -62,7 +62,7 @@ Constructor short text.
 
 ### `<Protected>` p2
 
-**●  p2**:  *[SubClassB](_classes_.subclassb.md)* 
+**● p2**: *[SubClassB](_classes_.subclassb.md)*
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p2](_classes_.genericclass.md#p2)*
 
@@ -76,7 +76,7 @@ ___
 
 ###  p3
 
-**●  p3**:  *`number`* 
+**● p3**: *`number`*
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p3](_classes_.genericclass.md#p3)*
 
@@ -90,7 +90,7 @@ ___
 
 ###  p5
 
-**●  p5**:  *`string`* 
+**● p5**: *`string`*
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[p5](_classes_.genericclass.md#p5)*
 
@@ -104,7 +104,7 @@ ___
 
 ###  value
 
-**●  value**:  *[SubClassB](_classes_.subclassb.md)* 
+**● value**: *[SubClassB](_classes_.subclassb.md)*
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[value](_classes_.genericclass.md#value)*
 

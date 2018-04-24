@@ -6,7 +6,7 @@
 
 ## `<Const>` amount
 
-**●  amount**:  *`number`*  = 6
+**● amount**: *`number`* = 6
 
 *Defined in [variables.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/variables.ts#L9)*
 
@@ -18,7 +18,7 @@ ___
 
 ## `<Const>` color
 
-**●  color**:  *`string`*  = "blue"
+**● color**: *`string`* = "blue"
 
 *Defined in [variables.ts:14](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/variables.ts#L14)*
 
@@ -30,7 +30,7 @@ ___
 
 ## `<Const>` isDone
 
-**●  isDone**:  *`boolean`*  = false
+**● isDone**: *`boolean`* = false
 
 *Defined in [variables.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/variables.ts#L4)*
 
@@ -42,7 +42,7 @@ ___
 
 ## `<Const>` numbers
 
-**●  numbers**:  *`number`[]*  =  [1, 2, 3]
+**● numbers**: *`number`[]* =  [1, 2, 3]
 
 *Defined in [variables.ts:19](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/variables.ts#L19)*
 

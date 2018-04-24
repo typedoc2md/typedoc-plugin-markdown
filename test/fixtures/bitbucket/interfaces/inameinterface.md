@@ -32,7 +32,7 @@ This is a simple interface.
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Defined in [classes.ts:16](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-16)*
 

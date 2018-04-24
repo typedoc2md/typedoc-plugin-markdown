@@ -21,7 +21,7 @@
 
 ###  diffuse
 
-**●  diffuse**:  *`function`* 
+**● diffuse**: *`function`*
 
 *Defined in [interfaces.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-50)*
 
@@ -40,7 +40,7 @@ ___
 
 ###  reflect
 
-**●  reflect**:  *`function`* 
+**● reflect**: *`function`*
 
 *Defined in [interfaces.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-52)*
 
@@ -59,7 +59,7 @@ ___
 
 ###  roughness
 
-**●  roughness**:  *`number`* 
+**● roughness**: *`number`*
 
 *Defined in [interfaces.ts:53](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-53)*
 
@@ -67,7 +67,7 @@ ___
 
 ###  specular
 
-**●  specular**:  *`function`* 
+**● specular**: *`function`*
 
 *Defined in [interfaces.ts:51](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-51)*
 

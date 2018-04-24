@@ -66,7 +66,7 @@ Constructor short text.
 
 ### `<Protected>` p2
 
-**●  p2**:  *`T`* 
+**● p2**: *`T`*
 
 *Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
 
@@ -78,7 +78,7 @@ ___
 
 ###  p3
 
-**●  p3**:  *`number`* 
+**● p3**: *`number`*
 
 *Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
 
@@ -90,7 +90,7 @@ ___
 
 ### `<Private>` p4
 
-**●  p4**:  *`number`* 
+**● p4**: *`number`*
 
 *Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
 
@@ -102,7 +102,7 @@ ___
 
 ###  p5
 
-**●  p5**:  *`string`* 
+**● p5**: *`string`*
 
 *Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
 
@@ -114,7 +114,7 @@ ___
 
 ###  value
 
-**●  value**:  *`T`* 
+**● value**: *`T`*
 
 *Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L284)*
 

@@ -35,7 +35,7 @@
 
 ###  SearchFunc
 
-**Τ SearchFunc**:  *`function`* 
+**ΤSearchFunc**: *`function`*
 
 *Defined in [interfaces.ts:62](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L62)*
 
@@ -59,7 +59,7 @@ ___
 
 ### `<Let>` mySearch
 
-**●  mySearch**:  *[SearchFunc](_interfaces_.interfaces.md#searchfunc)* 
+**● mySearch**: *[SearchFunc](_interfaces_.interfaces.md#searchfunc)*
 
 *Defined in [interfaces.ts:64](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L64)*
 
@@ -69,7 +69,7 @@ ___
 
 ### `<Const>` square
 
-**●  square**:  *[Square](../interfaces/_interfaces_.interfaces.square.md)*  =  {} as Square
+**● square**: *[Square](../interfaces/_interfaces_.interfaces.square.md)* =  {} as Square
 
 *Defined in [interfaces.ts:98](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L98)*
 

@@ -38,7 +38,7 @@ This is a function that is extended by a module.
 
 ###  functionVariable
 
-**●  functionVariable**:  *`string`* 
+**● functionVariable**: *`string`*
 
 *Defined in [functions.ts:160](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L160)*
 

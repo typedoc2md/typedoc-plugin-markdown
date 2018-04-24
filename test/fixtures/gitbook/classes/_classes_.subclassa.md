@@ -55,7 +55,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 ## `<Protected>` kind
 
-**●  kind**:  *`number`* 
+**● kind**: *`number`*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
 
@@ -69,7 +69,7 @@ ___
 
 ##  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Implementation of [IPrintNameInterface](../interfaces/_classes_.iprintnameinterface.md).[name](../interfaces/_classes_.iprintnameinterface.md#name)*
 
@@ -83,7 +83,7 @@ ___
 
 ## `<Static>` instance
 
-**●  instance**:  *[BaseClass](_classes_.baseclass.md)* 
+**● instance**: *[BaseClass](_classes_.baseclass.md)*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[instance](_classes_.baseclass.md#instance)*
 
@@ -99,7 +99,7 @@ ___
 
 ## `<Static>` instances
 
-**●  instances**:  *[BaseClass](_classes_.baseclass.md)[]* 
+**● instances**: *[BaseClass](_classes_.baseclass.md)[]*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[instances](_classes_.baseclass.md#instances)*
 

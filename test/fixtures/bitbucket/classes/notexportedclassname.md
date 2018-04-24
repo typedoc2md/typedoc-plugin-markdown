@@ -42,7 +42,7 @@ This is the constructor of the NotExportedClassName class.
 
 ###  notExportedProperty
 
-**●  notExportedProperty**:  *`string`* 
+**● notExportedProperty**: *`string`*
 
 *Defined in [default-export.ts:21](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-21)*
 

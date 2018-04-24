@@ -32,7 +32,7 @@ A constructor that accepts an option object defined inline.
 
 ##  callback
 
-**●  callback**:  *`function`* 
+**● callback**: *`function`*
 
 *Defined in [flattened.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L35)*
 
@@ -56,7 +56,7 @@ ___
 
 ##  indexed
 
-**●  indexed**:  *`object`* 
+**● indexed**: *`object`*
 
 *Defined in [flattened.ts:43](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L43)*
 
@@ -80,7 +80,7 @@ ___
 
 ##  multipleCallSignatures
 
-**●  multipleCallSignatures**:  *`function`* 
+**● multipleCallSignatures**: *`function`*
 
 *Defined in [flattened.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L52)*
 
@@ -112,7 +112,7 @@ ___
 
 ##  options
 
-**●  options**:  *`object`* 
+**● options**: *`object`*
 
 *Defined in [flattened.ts:21](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L21)*
 

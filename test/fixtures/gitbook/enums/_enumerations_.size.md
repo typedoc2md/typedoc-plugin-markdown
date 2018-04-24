@@ -26,7 +26,7 @@ This comment is ignored, as the enumeration is already defined.
 
 ##  Large
 
-** Large**:   
+**Large**: 
 
 *Defined in [enumerations.ts:57](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L57)*
 
@@ -38,7 +38,7 @@ ___
 
 ##  Medium
 
-** Medium**:   
+**Medium**: 
 
 *Defined in [enumerations.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L52)*
 
@@ -50,7 +50,7 @@ ___
 
 ##  Small
 
-** Small**:   
+**Small**: 
 
 *Defined in [enumerations.ts:47](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L47)*
 
@@ -64,7 +64,7 @@ ___
 
 ##  defaultSize
 
-**●  defaultSize**:  *[Size](_enumerations_.size.md)*  =  Size.Medium
+**● defaultSize**: *[Size](_enumerations_.size.md)* =  Size.Medium
 
 *Defined in [enumerations.ts:68](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L68)*
 

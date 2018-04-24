@@ -45,7 +45,7 @@ A constructor that accepts an option object defined inline.
 
 ###  callback
 
-**●  callback**:  *`function`* 
+**● callback**: *`function`*
 
 *Defined in [flattened.ts:35](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-35)*
 
@@ -67,7 +67,7 @@ ___
 
 ###  indexed
 
-**●  indexed**:  *`object`* 
+**● indexed**: *`object`*
 
 *Defined in [flattened.ts:43](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-43)*
 
@@ -89,7 +89,7 @@ ___
 
 ###  multipleCallSignatures
 
-**●  multipleCallSignatures**:  *`function`* 
+**● multipleCallSignatures**: *`function`*
 
 *Defined in [flattened.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-52)*
 
@@ -119,7 +119,7 @@ ___
 
 ###  options
 
-**●  options**:  *`object`* 
+**● options**: *`object`*
 
 *Defined in [flattened.ts:21](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-21)*
 

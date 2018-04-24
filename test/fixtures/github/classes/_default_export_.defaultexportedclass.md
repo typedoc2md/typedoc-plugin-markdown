@@ -46,7 +46,7 @@ This is the constructor of the default exported class.
 
 ###  exportedProperty
 
-**●  exportedProperty**:  *`string`* 
+**● exportedProperty**: *`string`*
 
 *Defined in [default-export.ts:50](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L50)*
 

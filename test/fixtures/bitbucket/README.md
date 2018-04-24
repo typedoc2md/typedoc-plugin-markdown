@@ -77,7 +77,7 @@
 
 ### `<Const>` amount
 
-**●  amount**:  *`number`*  = 6
+**● amount**: *`number`* = 6
 
 *Defined in [variables.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-9)*
 
@@ -87,7 +87,7 @@ ___
 
 ### `<Const>` color
 
-**●  color**:  *`string`*  = "blue"
+**● color**: *`string`* = "blue"
 
 *Defined in [variables.ts:14](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-14)*
 
@@ -97,7 +97,7 @@ ___
 
 ### `<Const>` commentsWithTags
 
-**●  commentsWithTags**:  *`boolean`*  = false
+**● commentsWithTags**: *`boolean`* = false
 
 *Defined in [doc-comments.ts:27](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-27)*
 
@@ -119,7 +119,7 @@ ___
 
 ### `<Protected>` fakeProtectedVariable
 
-**●  fakeProtectedVariable**:  *`string`*  = "test"
+**● fakeProtectedVariable**: *`string`* = "test"
 
 *Defined in [access.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-18)*
 
@@ -129,7 +129,7 @@ ___
 
 ### `<Const>` generalComments
 
-**●  generalComments**:  *`boolean`*  = false
+**● generalComments**: *`boolean`* = false
 
 *Defined in [doc-comments.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-9)*
 
@@ -141,7 +141,7 @@ ___
 
 ### `<Const>` isDone
 
-**●  isDone**:  *`boolean`*  = false
+**● isDone**: *`boolean`* = false
 
 *Defined in [variables.ts:4](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-4)*
 
@@ -151,7 +151,7 @@ ___
 
 ### `<Const>` numbers
 
-**●  numbers**:  *`number`[]*  =  [1, 2, 3]
+**● numbers**: *`number`[]* =  [1, 2, 3]
 
 *Defined in [variables.ts:19](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-19)*
 

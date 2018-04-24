@@ -54,7 +54,7 @@ This is a simple example on how to use BaseClass.
 
 ## `<Private>` internalClass
 
-**●  internalClass**:  *[InternalClass](_classes_.internalclass.md)<`keyof BaseClass`>* 
+**● internalClass**: *[InternalClass](_classes_.internalclass.md)<`keyof BaseClass`>*
 
 *Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L78)*
 
@@ -66,7 +66,7 @@ ___
 
 ## `<Protected>` kind
 
-**●  kind**:  *`number`* 
+**● kind**: *`number`*
 
 *Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L65)*
 
@@ -78,7 +78,7 @@ ___
 
 ##  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
@@ -92,7 +92,7 @@ ___
 
 ## `<Static>` instance
 
-**●  instance**:  *[BaseClass](_classes_.baseclass.md)* 
+**● instance**: *[BaseClass](_classes_.baseclass.md)*
 
 *Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L72)*
 
@@ -106,7 +106,7 @@ ___
 
 ## `<Static>` instances
 
-**●  instances**:  *[BaseClass](_classes_.baseclass.md)[]* 
+**● instances**: *[BaseClass](_classes_.baseclass.md)[]*
 
 *Defined in [classes.ts:73](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L73)*
 

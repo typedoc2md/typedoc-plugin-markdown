@@ -64,7 +64,7 @@ The constructor of the original class should be overwritten.
 
 ### `<Protected>` kind
 
-**●  kind**:  *`number`* 
+**● kind**: *`number`*
 
 *Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#markdown-header-protected-kind)*
 
@@ -76,7 +76,7 @@ ___
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[name](../interfaces/inameinterface.md#markdown-header-name)*
 
@@ -88,7 +88,7 @@ ___
 
 ### `<Static>` instance
 
-**●  instance**:  *[BaseClass](baseclass.md)* 
+**● instance**: *[BaseClass](baseclass.md)*
 
 *Inherited from [BaseClass](baseclass.md).[instance](baseclass.md#markdown-header-static-instance)*
 
@@ -102,7 +102,7 @@ ___
 
 ### `<Static>` instances
 
-**●  instances**:  *[BaseClass](baseclass.md)[]* 
+**● instances**: *[BaseClass](baseclass.md)[]*
 
 *Inherited from [BaseClass](baseclass.md).[instances](baseclass.md#markdown-header-static-instances)*
 

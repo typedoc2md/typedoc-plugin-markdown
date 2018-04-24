@@ -26,7 +26,7 @@ This comment is ignored, as the enumeration is already defined.
 
 ###  Large
 
-** Large**:   
+**Large**: 
 
 *Defined in [enumerations.ts:57](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-57)*
 
@@ -36,7 +36,7 @@ ___
 
 ###  Medium
 
-** Medium**:   
+**Medium**: 
 
 *Defined in [enumerations.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-52)*
 
@@ -46,7 +46,7 @@ ___
 
 ###  Small
 
-** Small**:   
+**Small**: 
 
 *Defined in [enumerations.ts:47](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-47)*
 
@@ -58,7 +58,7 @@ ___
 
 ###  defaultSize
 
-**●  defaultSize**:  *[Size](size.md)*  =  Size.Medium
+**● defaultSize**: *[Size](size.md)* =  Size.Medium
 
 *Defined in [enumerations.ts:68](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-68)*
 

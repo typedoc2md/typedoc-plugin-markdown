@@ -23,7 +23,7 @@
 
 ###  diffuse
 
-**●  diffuse**:  *`function`* 
+**● diffuse**: *`function`*
 
 *Defined in [interfaces.ts:50](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L50)*
 
@@ -44,7 +44,7 @@ ___
 
 ###  reflect
 
-**●  reflect**:  *`function`* 
+**● reflect**: *`function`*
 
 *Defined in [interfaces.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L52)*
 
@@ -65,7 +65,7 @@ ___
 
 ###  roughness
 
-**●  roughness**:  *`number`* 
+**● roughness**: *`number`*
 
 *Defined in [interfaces.ts:53](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L53)*
 
@@ -75,7 +75,7 @@ ___
 
 ###  specular
 
-**●  specular**:  *`function`* 
+**● specular**: *`function`*
 
 *Defined in [interfaces.ts:51](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L51)*
 

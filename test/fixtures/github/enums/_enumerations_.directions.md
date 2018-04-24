@@ -23,7 +23,7 @@ This is a simple Enumeration.
 
 ###  Bottom
 
-** Bottom**:   
+**Bottom**: 
 
 *Defined in [enumerations.ts:25](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L25)*
 
@@ -35,7 +35,7 @@ ___
 
 ###  Left
 
-** Left**:   
+**Left**: 
 
 *Defined in [enumerations.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L30)*
 
@@ -47,7 +47,7 @@ ___
 
 ###  Right
 
-** Right**:   
+**Right**: 
 
 *Defined in [enumerations.ts:20](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L20)*
 
@@ -59,7 +59,7 @@ ___
 
 ###  Top
 
-** Top**:   
+**Top**: 
 
 *Defined in [enumerations.ts:15](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L15)*
 
@@ -71,7 +71,7 @@ ___
 
 ###  TopLeft
 
-** TopLeft**:    =  Top | Left
+**TopLeft**:  =  Top | Left
 
 *Defined in [enumerations.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L35)*
 
@@ -83,7 +83,7 @@ ___
 
 ###  TopRight
 
-** TopRight**:    =  Top | Right
+**TopRight**:  =  Top | Right
 
 *Defined in [enumerations.ts:40](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/enumerations.ts#L40)*
 

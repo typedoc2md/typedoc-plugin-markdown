@@ -21,7 +21,7 @@ This is a simple Enumeration.
 
 ###  Bottom
 
-** Bottom**:   
+**Bottom**: 
 
 *Defined in [enumerations.ts:25](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-25)*
 
@@ -31,7 +31,7 @@ ___
 
 ###  Left
 
-** Left**:   
+**Left**: 
 
 *Defined in [enumerations.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-30)*
 
@@ -41,7 +41,7 @@ ___
 
 ###  Right
 
-** Right**:   
+**Right**: 
 
 *Defined in [enumerations.ts:20](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-20)*
 
@@ -51,7 +51,7 @@ ___
 
 ###  Top
 
-** Top**:   
+**Top**: 
 
 *Defined in [enumerations.ts:15](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-15)*
 
@@ -61,7 +61,7 @@ ___
 
 ###  TopLeft
 
-** TopLeft**:    =  Top | Left
+**TopLeft**:  =  Top | Left
 
 *Defined in [enumerations.ts:35](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-35)*
 
@@ -71,7 +71,7 @@ ___
 
 ###  TopRight
 
-** TopRight**:    =  Top | Right
+**TopRight**:  =  Top | Right
 
 *Defined in [enumerations.ts:40](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-40)*
 

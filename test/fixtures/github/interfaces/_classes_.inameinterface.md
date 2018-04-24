@@ -34,7 +34,7 @@ This is a simple interface.
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Defined in [classes.ts:16](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L16)*
 

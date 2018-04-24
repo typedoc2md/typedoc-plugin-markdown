@@ -21,7 +21,7 @@
 
 ###  color
 
-**●  color**:  *`string`* 
+**● color**: *`string`*
 
 *Inherited from [Shape](interfaces.shape.md).[color](interfaces.shape.md#markdown-header-color)*
 
@@ -31,7 +31,7 @@ ___
 
 ###  sideLength
 
-**●  sideLength**:  *`number`* 
+**● sideLength**: *`number`*
 
 *Defined in [interfaces.ts:95](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-95)*
 

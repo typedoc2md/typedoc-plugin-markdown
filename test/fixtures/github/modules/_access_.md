@@ -32,7 +32,7 @@ Examples taken from the TypeDoc 'access' examples directory ([https://github.com
 
 ### `<Private>` fakePrivateVariable
 
-**●  fakePrivateVariable**:  *`string`*  = "test"
+**● fakePrivateVariable**: *`string`* = "test"
 
 *Defined in [access.ts:12](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/access.ts#L12)*
 
@@ -44,7 +44,7 @@ ___
 
 ### `<Protected>` fakeProtectedVariable
 
-**●  fakeProtectedVariable**:  *`string`*  = "test"
+**● fakeProtectedVariable**: *`string`* = "test"
 
 *Defined in [access.ts:18](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/access.ts#L18)*
 

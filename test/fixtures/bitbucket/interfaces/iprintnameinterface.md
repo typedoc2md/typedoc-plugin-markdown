@@ -34,7 +34,7 @@ This is a interface inheriting from two other interfaces.
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Inherited from [INameInterface](inameinterface.md).[name](inameinterface.md#markdown-header-name)*
 

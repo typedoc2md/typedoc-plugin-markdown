@@ -10,7 +10,7 @@
 
 ##  currentTime
 
-**●  currentTime**:  *`Date`* 
+**● currentTime**: *`Date`*
 
 *Defined in [interfaces.ts:75](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L75)*
 

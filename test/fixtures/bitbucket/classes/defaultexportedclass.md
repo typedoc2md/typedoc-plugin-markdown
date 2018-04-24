@@ -42,7 +42,7 @@ This is the constructor of the default exported class.
 
 ###  exportedProperty
 
-**●  exportedProperty**:  *`string`* 
+**● exportedProperty**: *`string`*
 
 *Defined in [default-export.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-50)*
 

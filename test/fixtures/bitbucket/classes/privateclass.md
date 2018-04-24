@@ -24,7 +24,7 @@ A class that is documented as being private.
 
 ### `<Protected>` fakeProtectedVariable
 
-**●  fakeProtectedVariable**:  *`string`* 
+**● fakeProtectedVariable**: *`string`*
 
 *Defined in [access.ts:47](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-47)*
 

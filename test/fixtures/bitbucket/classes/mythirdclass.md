@@ -38,7 +38,7 @@
 
 ###  arg
 
-**●  arg**:  *`Array`.<[MySecondClass](mysecondclass.md)<[MyFirstClass](myfirstclass.md)>>* 
+**● arg**: *`Array`.<[MySecondClass](mysecondclass.md)<[MyFirstClass](myfirstclass.md)>>*
 
 *Defined in [generics.ts:94](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-94)*
 

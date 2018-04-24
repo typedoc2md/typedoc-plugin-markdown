@@ -77,7 +77,7 @@ This is a simple example on how to use BaseClass.
 
 ### `<Protected>` kind
 
-**●  kind**:  *`number`* 
+**● kind**: *`number`*
 
 *Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
 
@@ -87,7 +87,7 @@ ___
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[name](../interfaces/inameinterface.md#markdown-header-name)*
 
@@ -99,7 +99,7 @@ ___
 
 ### `<Static>` instance
 
-**●  instance**:  *[BaseClass](baseclass.md)* 
+**● instance**: *[BaseClass](baseclass.md)*
 
 *Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
 
@@ -111,7 +111,7 @@ ___
 
 ### `<Static>` instances
 
-**●  instances**:  *[BaseClass](baseclass.md)[]* 
+**● instances**: *[BaseClass](baseclass.md)[]*
 
 *Defined in [classes.ts:73](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-73)*
 

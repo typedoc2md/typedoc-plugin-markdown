@@ -6,7 +6,7 @@
 
 ## `<Const>` commentsWithTags
 
-**●  commentsWithTags**:  *`boolean`*  = false
+**● commentsWithTags**: *`boolean`* = false
 
 *Defined in [doc-comments.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/doc-comments.ts#L27)*
 
@@ -30,7 +30,7 @@ ___
 
 ## `<Const>` generalComments
 
-**●  generalComments**:  *`boolean`*  = false
+**● generalComments**: *`boolean`* = false
 
 *Defined in [doc-comments.ts:9](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/doc-comments.ts#L9)*
 

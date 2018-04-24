@@ -28,7 +28,7 @@
 
 ##  arg
 
-**●  arg**:  *`Array`.<[MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>>* 
+**● arg**: *`Array`.<[MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>>*
 
 *Defined in [generics.ts:94](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L94)*
 

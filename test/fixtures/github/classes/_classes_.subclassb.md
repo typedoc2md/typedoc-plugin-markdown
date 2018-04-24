@@ -68,7 +68,7 @@ The constructor of the original class should be overwritten.
 
 ### `<Protected>` kind
 
-**●  kind**:  *`number`* 
+**● kind**: *`number`*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[kind](_classes_.baseclass.md#kind)*
 
@@ -82,7 +82,7 @@ ___
 
 ###  name
 
-**●  name**:  *`string`* 
+**● name**: *`string`*
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
@@ -96,7 +96,7 @@ ___
 
 ### `<Static>` instance
 
-**●  instance**:  *[BaseClass](_classes_.baseclass.md)* 
+**● instance**: *[BaseClass](_classes_.baseclass.md)*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[instance](_classes_.baseclass.md#instance)*
 
@@ -112,7 +112,7 @@ ___
 
 ### `<Static>` instances
 
-**●  instances**:  *[BaseClass](_classes_.baseclass.md)[]* 
+**● instances**: *[BaseClass](_classes_.baseclass.md)[]*
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[instances](_classes_.baseclass.md#instances)*
 

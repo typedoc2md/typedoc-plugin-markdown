@@ -12,7 +12,7 @@ A class that is documented as being private.
 
 ## `<Private>` fakePrivateVariable
 
-**●  fakePrivateVariable**:  *`string`* 
+**● fakePrivateVariable**: *`string`*
 
 *Defined in [access.ts:41](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/access.ts#L41)*
 
@@ -24,7 +24,7 @@ ___
 
 ## `<Protected>` fakeProtectedVariable
 
-**●  fakeProtectedVariable**:  *`string`* 
+**● fakeProtectedVariable**: *`string`*
 
 *Defined in [access.ts:47](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/access.ts#L47)*
 

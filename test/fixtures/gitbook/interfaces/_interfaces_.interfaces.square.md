@@ -12,7 +12,7 @@
 
 ##  color
 
-**●  color**:  *`string`* 
+**● color**: *`string`*
 
 *Inherited from [Shape](_interfaces_.interfaces.shape.md).[color](_interfaces_.interfaces.shape.md#color)*
 
@@ -24,7 +24,7 @@ ___
 
 ##  sideLength
 
-**●  sideLength**:  *`number`* 
+**● sideLength**: *`number`*
 
 *Defined in [interfaces.ts:95](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L95)*
 

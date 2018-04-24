@@ -30,7 +30,7 @@
 
 ##  x
 
-**●  x**:  *`number`* 
+**● x**: *`number`*
 
 *Defined in [interfaces.ts:3](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L3)*
 
@@ -40,7 +40,7 @@ ___
 
 ##  y
 
-**●  y**:  *`number`* 
+**● y**: *`number`*
 
 *Defined in [interfaces.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L4)*
 
@@ -50,7 +50,7 @@ ___
 
 ##  z
 
-**●  z**:  *`number`* 
+**● z**: *`number`*
 
 *Defined in [interfaces.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L5)*
 
