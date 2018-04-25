@@ -1,26 +1,36 @@
-{{#compact}}
 {{#if this}}
 {{#if reflection}}
-[{{reflection.name}}]({{ relativeURL reflection.url }})
+{{#compact}}
+[{{reflection.name}}]({{relativeURL reflection.url}})
 {{#if typeArguments}}
-{{#each typeArguments}}{{#if @index}}, {{/if}}<{{> type}}>{{/each}}{{/if}}
+<{{#each typeArguments}}{{#if @index}}, {{/if}}{{> type}}{{/each}}>
+{{/if}}
+{{/compact}}
 {{else}}
 {{#if elementType}}
 {{#with elementType}}
-{{#if types}}({{/if}}{{> type}}{{#if types}}){{/if}}[]
+{{#compact}}
+{{#if types}}
+({{/if}}{{> type}}
+{{#if types}}){{/if}}[]
+{{/compact}}
 {{/with}}
 {{else}}
 {{#if types}}
 {{#each types}}
-{{#if @index}}
-{{#ifCond ../type '==' 'intersection'}}{{else}}⎮{{/ifCond}}
-{{/if}}
-{{> type}}
+{{#if @index}} {{#ifCond ../type '==' 'intersection'}}&{{else}}|{{/ifCond}}
+{{/if}}{{> type}}{{/each}}
+{{else}}
+{{#if elements}} 
+{{#compact}}
+[
+{{#each elements}}
+{{#if @index}}, {{/if}}{{> type}}
 {{/each}}
+]
+{{/compact}}
 {{else}}
-{{#if elements}}
-[{{#each elements}}{{#if @index}},{{/if}}{{> type}}{{/each}}]
-{{else}}
+{{#compact}}
 {{#if name}}
 `{{name}}`
 {{else}}
@@ -31,14 +41,13 @@
 {{/if}}
 {{/if}}
 {{#if typeArguments}}
-{{#each typeArguments}}
-{{#if @index}},{{/if}}.<{{> type}}>{{/each}}
+<{{#each typeArguments}}{{#if @index}}, {{/if}}{{> type}}{{/each}}>
 {{/if}}
+{{/compact}}
 {{/if}}
 {{/if}}
 {{/if}}
 {{/if}}
 {{else}}
-void
+void   
 {{/if}}
-{{/compact}}
