@@ -40,9 +40,11 @@ This a type parameter.
 
 <a id="constructor"></a>
 
-### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](_classes_.genericclass.md)
+###  constructor
 
-*Defined in classes.ts:284*
+⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](_classes_.genericclass.md)
+
+*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L284)*
 
 Constructor short text.
 
@@ -58,7 +60,7 @@ Constructor short text.
 
 **Returns:** [GenericClass](_classes_.genericclass.md)
 
----
+___
 
 ## Properties
 
@@ -68,55 +70,51 @@ Constructor short text.
 
 **● p2**: *`T`*
 
-*Defined in classes.ts:295*
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L295)*
 
 Private string property
 
 ___
-
 <a id="p3"></a>
 
 ###  p3
 
 **● p3**: *`number`*
 
-*Defined in classes.ts:295*
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L295)*
 
 Public number property
 
 ___
-
 <a id="p4"></a>
 
 ### `<Private>` p4
 
 **● p4**: *`number`*
 
-*Defined in classes.ts:295*
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L295)*
 
 Public implicit any property
 
 ___
-
 <a id="p5"></a>
 
 ###  p5
 
 **● p5**: *`string`*
 
-*Defined in classes.ts:295*
+*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L295)*
 
 Readonly property
 
 ___
-
 <a id="value"></a>
 
 ###  value
 
 **● value**: *`T`*
 
-*Defined in classes.ts:284*
+*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L284)*
 
 ___
 
@@ -128,19 +126,18 @@ ___
 
 ▸ **getValue**(): `T`
 
-*Defined in classes.ts:305*
+*Defined in [classes.ts:305](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L305)*
 
 **Returns:** `T`
 
 ___
-
 <a id="setvalue"></a>
 
 ###  setValue
 
 ▸ **setValue**(value: *`T`*): `void`
 
-*Defined in classes.ts:301*
+*Defined in [classes.ts:301](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L301)*
 
 **Parameters:**
 

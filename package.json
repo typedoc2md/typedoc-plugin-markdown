@@ -14,7 +14,7 @@
     "mocks:bitbucket": "typedoc ./test/src --out ./test/out/bitbucket --theme markdown --gitRevision master --media test/src/media/ --includes test/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
     "mocks:gitbook": "typedoc ./test/src --out ./test/out/gitbook --theme markdown --gitRevision master --mdEngine gitbook --media test/src/media/ --includes test/src/inc/",
     "mocks:html": "typedoc ./test/src --out test/out/html --media test/src/media/ --includes test/src/inc/",
-    "examples": "typedoc ./examples/src --out ./examples/out --theme markdown --gitRevision master --readme none --media test/src/media/ --includes test/src/inc/",
+    "examples": "rm -rf examples/out && typedoc ./examples/src --out ./examples/out --theme markdown --gitRevision master --readme none --media test/src/media/ --includes test/src/inc/",
     "lint": "tslint --project ./src/tsconfig.json",
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",

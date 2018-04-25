@@ -51,11 +51,13 @@ This is a simple example on how to use BaseClass.
 
 <a id="constructor"></a>
 
-### ⊕ **new BaseClass**(name: *`string`*): [BaseClass](_classes_.baseclass.md)
+###  constructor
 
-### ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
+⊕ **new BaseClass**(name: *`string`*): [BaseClass](_classes_.baseclass.md)
 
-*Defined in classes.ts:78*
+⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
+
+*Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L78)*
 
 **Parameters:**
 
@@ -65,7 +67,7 @@ This is a simple example on how to use BaseClass.
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
-*Defined in classes.ts:81*
+*Defined in [classes.ts:81](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L81)*
 
 **Parameters:**
 
@@ -75,7 +77,7 @@ This is a simple example on how to use BaseClass.
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
----
+___
 
 ## Properties
 
@@ -85,24 +87,22 @@ This is a simple example on how to use BaseClass.
 
 **● internalClass**: *[InternalClass](_classes_.internalclass.md)<`keyof BaseClass`>*
 
-*Defined in classes.ts:78*
+*Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L78)*
 
 This is an instance member of an internal class.
 
 ___
-
 <a id="kind"></a>
 
 ### `<Protected>` kind
 
 **● kind**: *`number`*
 
-*Defined in classes.ts:65*
+*Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L65)*
 
 This is a simple protected member.
 
 ___
-
 <a id="name"></a>
 
 ###  name
@@ -111,33 +111,31 @@ ___
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
-*Defined in classes.ts:60*
+*Defined in [classes.ts:60](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L60)*
 
 This is a simple public member.
 
 ___
-
 <a id="instance"></a>
 
 ### `<Static>` instance
 
 **● instance**: *[BaseClass](_classes_.baseclass.md)*
 
-*Defined in classes.ts:72*
+*Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L72)*
 
 This is a static member.
 
 Static members should not be inherited.
 
 ___
-
 <a id="instances"></a>
 
 ### `<Static>` instances
 
 **● instances**: *[BaseClass](_classes_.baseclass.md)[]*
 
-*Defined in classes.ts:73*
+*Defined in [classes.ts:73](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L73)*
 
 ___
 
@@ -149,19 +147,18 @@ ___
 
 ▸ **abstractMethod**(): `void`
 
-*Defined in classes.ts:95*
+*Defined in [classes.ts:95](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L95)*
 
 **Returns:** `void`
 
 ___
-
 <a id="arrowfunction"></a>
 
 ###  arrowFunction
 
 ▸ **arrowFunction**(param2: *`string`*, param1: *`number`*): `void`
 
-*Defined in classes.ts:143*
+*Defined in [classes.ts:143](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L143)*
 
 This is a simple fat arrow function.
 
@@ -175,21 +172,19 @@ This is a simple fat arrow function.
 **Returns:** `void`
 
 ___
-
 <a id="checkname"></a>
 
 ### `<Private>` checkName
 
 ▸ **checkName**(): `boolean`
 
-*Defined in classes.ts:150*
+*Defined in [classes.ts:150](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L150)*
 
 This is a private function.
 
 **Returns:** `boolean`
 
 ___
-
 <a id="getname"></a>
 
 ###  getName
@@ -198,7 +193,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
-*Defined in classes.ts:105*
+*Defined in [classes.ts:105](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L105)*
 
 This is a simple member function.
 
@@ -208,14 +203,13 @@ It should be inherited by all subclasses. This class has a static member with th
 Return the name.
 
 ___
-
 <a id="setname"></a>
 
 ###  setName
 
 ▸ **setName**(name: *`string`*): `void`
 
-*Defined in classes.ts:130*
+*Defined in [classes.ts:130](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L130)*
 
 This is a simple member function.
 
@@ -230,14 +224,13 @@ It should be inherited by all subclasses.
 **Returns:** `void`
 
 ___
-
 <a id="catest"></a>
 
 ### `<Static>` caTest
 
 ▸ **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
 
-*Defined in classes.ts:170*
+*Defined in [classes.ts:170](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L170)*
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
@@ -253,14 +246,13 @@ ___
 **Returns:** `string`
 
 ___
-
 <a id="getinstance"></a>
 
 ### `<Static>` getInstance
 
 ▸ **getInstance**(): [BaseClass](_classes_.baseclass.md)
 
-*Defined in classes.ts:162*
+*Defined in [classes.ts:162](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L162)*
 
 This is a static function.
 
@@ -270,14 +262,13 @@ Static functions should not be inherited.
 An instance of BaseClass.
 
 ___
-
 <a id="getname-1"></a>
 
 ### `<Static>` getName
 
 ▸ **getName**(): `string`
 
-*Defined in classes.ts:118*
+*Defined in [classes.ts:118](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L118)*
 
 This is a simple static member function.
 

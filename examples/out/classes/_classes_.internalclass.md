@@ -22,9 +22,11 @@ This is an internal class, it is not exported.
 
 <a id="constructor"></a>
 
-### ⊕ **new InternalClass**(options: *`object`*): [InternalClass](_classes_.internalclass.md)
+###  constructor
 
-*Defined in classes.ts:187*
+⊕ **new InternalClass**(options: *`object`*): [InternalClass](_classes_.internalclass.md)
+
+*Defined in [classes.ts:187](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/classes.ts#L187)*
 
 **Parameters:**
 
@@ -34,5 +36,5 @@ This is an internal class, it is not exported.
 
 **Returns:** [InternalClass](_classes_.internalclass.md)
 
----
+___
 
