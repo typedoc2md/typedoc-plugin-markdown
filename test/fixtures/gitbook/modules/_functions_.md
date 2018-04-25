@@ -15,7 +15,6 @@ A function that returns an object. Also no type information is given, the object
 **Returns:** `object`
 
 ___
-
 <a id="exportedfunction"></a>
 
 ##  exportedFunction
@@ -29,7 +28,6 @@ This is a simple exported function.
 **Returns:** `void`
 
 ___
-
 <a id="functionwitharguments"></a>
 
 ##  functionWithArguments
@@ -51,7 +49,6 @@ This is a function with multiple arguments and a return value.
 **Returns:** `number`
 
 ___
-
 <a id="functionwithdefaults"></a>
 
 ##  functionWithDefaults
@@ -76,7 +73,6 @@ This is a function with a parameter that has a default value.
 The input value or the default value.
 
 ___
-
 <a id="functionwithdoclink"></a>
 
 ##  functionWithDocLink
@@ -92,7 +88,6 @@ Taken from [http://usejsdoc.org/tags-inline-link.html](http://usejsdoc.org/tags-
 **Returns:** `void`
 
 ___
-
 <a id="functionwithoptionalvalue"></a>
 
 ##  functionWithOptionalValue
@@ -113,7 +108,6 @@ This is a function with a parameter that is optional.
 **Returns:** `void`
 
 ___
-
 <a id="functionwithrest"></a>
 
 ##  functionWithRest
@@ -134,7 +128,6 @@ This is a function with rest parameter.
 The combined string.
 
 ___
-
 <a id="genericfunction"></a>
 
 ##  genericFunction
@@ -161,7 +154,6 @@ The type parameter.
 Returns the typed value.
 
 ___
-
 <a id="internalfunction"></a>
 
 ##  internalFunction
@@ -175,7 +167,6 @@ This is an internal function.
 **Returns:** `void`
 
 ___
-
 <a id="multiplesignatures"></a>
 
 ##  multipleSignatures
@@ -209,7 +200,6 @@ This is the second signature of a function with multiple signatures.
 **Returns:** `string`
 
 ___
-
 <a id="variablefunction"></a>
 
 ##  variableFunction

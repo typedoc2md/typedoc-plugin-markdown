@@ -8,7 +8,9 @@
 
 <a id="constructor"></a>
 
-### ⊕ **new MyThirdClass**(arg: *`Array`.<[MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>>*): [MyThirdClass](_generics_.mythirdclass.md)
+##  constructor
+
+⊕ **new MyThirdClass**(arg: *[MyFourthClass](_generics_.myfourthclass.md)<[MyFirstClass](_generics_.myfirstclass.md), [MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>>*): [MyThirdClass](_generics_.mythirdclass.md)
 
 *Defined in [generics.ts:93](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L93)*
 
@@ -16,11 +18,11 @@
 
 | Param | Type |
 | ------ | ------ |
-| arg | `Array`.<[MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>> | 
+| arg | [MyFourthClass](_generics_.myfourthclass.md)<[MyFirstClass](_generics_.myfirstclass.md), [MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>> | 
 
 **Returns:** [MyThirdClass](_generics_.mythirdclass.md)
 
----
+___
 
 # Properties
 
@@ -28,7 +30,7 @@
 
 ##  arg
 
-**● arg**: *`Array`.<[MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>>*
+**● arg**: *[MyFourthClass](_generics_.myfourthclass.md)<[MyFirstClass](_generics_.myfirstclass.md), [MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>>*
 
 *Defined in [generics.ts:94](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L94)*
 

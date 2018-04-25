@@ -30,7 +30,9 @@ This class is exported via es6 export syntax.
 
 <a id="constructor"></a>
 
-### ⊕ **new DefaultExportedClass**(): [DefaultExportedClass](_default_export_.defaultexportedclass.md)
+###  constructor
+
+⊕ **new DefaultExportedClass**(): [DefaultExportedClass](_default_export_.defaultexportedclass.md)
 
 *Defined in [default-export.ts:50](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L50)*
 
@@ -38,7 +40,7 @@ This is the constructor of the default exported class.
 
 **Returns:** [DefaultExportedClass](_default_export_.defaultexportedclass.md)
 
----
+___
 
 ## Properties
 

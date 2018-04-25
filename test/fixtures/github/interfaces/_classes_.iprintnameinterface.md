@@ -67,7 +67,6 @@ It should be inherited by all subinterfaces.
 **Returns:** `string`
 
 ___
-
 <a id="print"></a>
 
 ###  print
@@ -91,7 +90,6 @@ It should be inherited by all subinterfaces.
 **Returns:** `void`
 
 ___
-
 <a id="printname"></a>
 
 ###  printName

@@ -59,7 +59,6 @@ This function is appended to another function.
 **Returns:** `void`
 
 ___
-
 <a id="prepend"></a>
 
 ##  prepend

@@ -22,6 +22,7 @@
 * [&quot;functions&quot;](modules/_functions_.md)
 * [&quot;generics&quot;](modules/_generics_.md)
   * [MyFirstClass](classes/_generics_.myfirstclass.md)
+  * [MyFourthClass](classes/_generics_.myfourthclass.md)
   * [MySecondClass](classes/_generics_.mysecondclass.md)
   * [MyThirdClass](classes/_generics_.mythirdclass.md)
   * [A](interfaces/_generics_.a.md)

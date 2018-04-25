@@ -28,7 +28,9 @@ This class is exported under a different name. The exported name is "ExportedCla
 
 ## Constructors
 
-### ⊕ **new NotExportedClassName**(): [NotExportedClassName](notexportedclassname.md)
+###  constructor
+
+⊕ **new NotExportedClassName**(): [NotExportedClassName](notexportedclassname.md)
 
 *Defined in [default-export.ts:21](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-21)*
 
@@ -36,7 +38,7 @@ This is the constructor of the NotExportedClassName class.
 
 **Returns:** [NotExportedClassName](notexportedclassname.md)
 
----
+___
 
 ## Properties
 

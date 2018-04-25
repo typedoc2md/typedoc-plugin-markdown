@@ -12,7 +12,9 @@ This a non generic class derived from a [generic class](_classes_.genericclass.m
 
 <a id="constructor"></a>
 
-### ⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](_classes_.subclassb.md)*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [NonGenericClass](_classes_.nongenericclass.md)
+##  constructor
+
+⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](_classes_.subclassb.md)*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [NonGenericClass](_classes_.nongenericclass.md)
 
 *Inherited from [GenericClass](_classes_.genericclass.md).[constructor](_classes_.genericclass.md#constructor)*
 
@@ -32,7 +34,7 @@ Constructor short text.
 
 **Returns:** [NonGenericClass](_classes_.nongenericclass.md)
 
----
+___
 
 # Properties
 
@@ -49,7 +51,6 @@ Constructor short text.
 Private string property
 
 ___
-
 <a id="p3"></a>
 
 ##  p3
@@ -63,7 +64,6 @@ ___
 Public number property
 
 ___
-
 <a id="p5"></a>
 
 ##  p5
@@ -77,7 +77,6 @@ ___
 Readonly property
 
 ___
-
 <a id="value"></a>
 
 ##  value
@@ -105,7 +104,6 @@ ___
 **Returns:** [SubClassB](_classes_.subclassb.md)
 
 ___
-
 <a id="setvalue"></a>
 
 ##  setValue

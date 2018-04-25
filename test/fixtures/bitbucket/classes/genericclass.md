@@ -37,7 +37,9 @@ This a type parameter.
 
 ## Constructors
 
-### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](genericclass.md)
+###  constructor
+
+⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](genericclass.md)
 
 *Defined in [classes.ts:284](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-284)*
 
@@ -55,7 +57,7 @@ Constructor short text.
 
 **Returns:** [GenericClass](genericclass.md)
 
----
+___
 
 ## Properties
 

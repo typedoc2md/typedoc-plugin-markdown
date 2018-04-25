@@ -38,7 +38,6 @@ A generic member function.
 A generic return value.
 
 ___
-
 <a id="gett"></a>
 
 ###  getT
@@ -55,7 +54,6 @@ A generic member function.
 A generic return value.
 
 ___
-
 <a id="sett"></a>
 
 ###  setT

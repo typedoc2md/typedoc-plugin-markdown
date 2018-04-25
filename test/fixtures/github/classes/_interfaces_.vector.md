@@ -34,7 +34,9 @@
 
 <a id="constructor"></a>
 
-### ⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](_interfaces_.vector.md)
+###  constructor
+
+⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](_interfaces_.vector.md)
 
 *Defined in [interfaces.ts:2](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L2)*
 
@@ -48,7 +50,7 @@
 
 **Returns:** [Vector](_interfaces_.vector.md)
 
----
+___
 
 ## Properties
 
@@ -61,7 +63,6 @@
 *Defined in [interfaces.ts:3](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L3)*
 
 ___
-
 <a id="y"></a>
 
 ###  y
@@ -71,7 +72,6 @@ ___
 *Defined in [interfaces.ts:4](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L4)*
 
 ___
-
 <a id="z"></a>
 
 ###  z
@@ -102,7 +102,6 @@ ___
 **Returns:** [Vector](_interfaces_.vector.md)
 
 ___
-
 <a id="dot"></a>
 
 ### `<Static>` dot
@@ -121,7 +120,6 @@ ___
 **Returns:** `number`
 
 ___
-
 <a id="mag"></a>
 
 ### `<Static>` mag
@@ -139,7 +137,6 @@ ___
 **Returns:** `number`
 
 ___
-
 <a id="minus"></a>
 
 ### `<Static>` minus
@@ -158,7 +155,6 @@ ___
 **Returns:** [Vector](_interfaces_.vector.md)
 
 ___
-
 <a id="norm"></a>
 
 ### `<Static>` norm
@@ -176,7 +172,6 @@ ___
 **Returns:** [Vector](_interfaces_.vector.md)
 
 ___
-
 <a id="plus"></a>
 
 ### `<Static>` plus
@@ -195,7 +190,6 @@ ___
 **Returns:** [Vector](_interfaces_.vector.md)
 
 ___
-
 <a id="times"></a>
 
 ### `<Static>` times

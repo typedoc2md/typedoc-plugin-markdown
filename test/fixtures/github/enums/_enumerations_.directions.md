@@ -30,7 +30,6 @@ This is a simple Enumeration.
 A simple enum member.
 
 ___
-
 <a id="left"></a>
 
 ###  Left
@@ -42,7 +41,6 @@ ___
 A simple enum member.
 
 ___
-
 <a id="right"></a>
 
 ###  Right
@@ -54,7 +52,6 @@ ___
 A simple enum member.
 
 ___
-
 <a id="top"></a>
 
 ###  Top
@@ -66,7 +63,6 @@ ___
 A simple enum member.
 
 ___
-
 <a id="topleft"></a>
 
 ###  TopLeft
@@ -78,7 +74,6 @@ ___
 A composite enum member.
 
 ___
-
 <a id="topright"></a>
 
 ###  TopRight

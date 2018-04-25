@@ -27,7 +27,9 @@ A class that contains members with flattened properties.
 
 <a id="constructor"></a>
 
-### ⊕ **new flattenedClass**(options: *`object`*): [flattenedClass](_flattened_.flattenedclass.md)
+###  constructor
+
+⊕ **new flattenedClass**(options: *`object`*): [flattenedClass](_flattened_.flattenedclass.md)
 
 *Defined in [flattened.ts:64](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L64)*
 
@@ -41,7 +43,7 @@ A constructor that accepts an option object defined inline.
 
 **Returns:** [flattenedClass](_flattened_.flattenedclass.md)
 
----
+___
 
 ## Properties
 
@@ -68,7 +70,6 @@ A member that holds a callback that requires a typed function signature.
 **Returns:** `string`
 
 ___
-
 <a id="indexed"></a>
 
 ###  indexed
@@ -92,7 +93,6 @@ A member that holds an index signature.
 A property of the index signature instance.
 
 ___
-
 <a id="multiplecallsignatures"></a>
 
 ###  multipleCallSignatures
@@ -124,7 +124,6 @@ Call signature with parameters.
 The calling Foo.
 
 ___
-
 <a id="options"></a>
 
 ###  options

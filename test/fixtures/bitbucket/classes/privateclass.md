@@ -22,6 +22,16 @@ A class that is documented as being private.
 
 ## Properties
 
+### `<Private>` fakePrivateVariable
+
+**● fakePrivateVariable**: *`string`*
+
+*Defined in [access.ts:41](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-41)*
+
+A variable that is made private via comment.
+
+___
+
 ### `<Protected>` fakeProtectedVariable
 
 **● fakeProtectedVariable**: *`string`*
@@ -33,6 +43,18 @@ A variable that is made protected via comment.
 ___
 
 ## Methods
+
+### `<Private>` fakePrivateFunction
+
+▸ **fakePrivateFunction**(): `void`
+
+*Defined in [access.ts:53](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-53)*
+
+A function that is made private via comment.
+
+**Returns:** `void`
+
+___
 
 ### `<Protected>` fakeProtectedFunction
 

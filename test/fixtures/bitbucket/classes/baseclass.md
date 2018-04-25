@@ -47,9 +47,11 @@ This is a simple example on how to use BaseClass.
 
 ## Constructors
 
-### ⊕ **new BaseClass**(name: *`string`*): [BaseClass](baseclass.md)
+###  constructor
 
-### ⊕ **new BaseClass**(source: *[BaseClass](baseclass.md)*): [BaseClass](baseclass.md)
+⊕ **new BaseClass**(name: *`string`*): [BaseClass](baseclass.md)
+
+⊕ **new BaseClass**(source: *[BaseClass](baseclass.md)*): [BaseClass](baseclass.md)
 
 *Defined in [classes.ts:78](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-78)*
 
@@ -71,7 +73,7 @@ This is a simple example on how to use BaseClass.
 
 **Returns:** [BaseClass](baseclass.md)
 
----
+___
 
 ## Properties
 

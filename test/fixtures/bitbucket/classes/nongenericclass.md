@@ -32,7 +32,9 @@ This a non generic class derived from a [generic class](genericclass.md).
 
 ## Constructors
 
-### ⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](subclassb.md)*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [NonGenericClass](nongenericclass.md)
+###  constructor
+
+⊕ **new NonGenericClass**(p1: *`any`*, p2: *[SubClassB](subclassb.md)*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [NonGenericClass](nongenericclass.md)
 
 *Inherited from [GenericClass](genericclass.md).[constructor](genericclass.md#markdown-header-constructor)*
 
@@ -52,7 +54,7 @@ Constructor short text.
 
 **Returns:** [NonGenericClass](nongenericclass.md)
 
----
+___
 
 ## Properties
 

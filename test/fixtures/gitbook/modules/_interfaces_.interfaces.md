@@ -62,7 +62,6 @@ ___
 *Defined in [interfaces.ts:64](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L64)*
 
 ___
-
 <a id="square-1"></a>
 
 ## `<Const>` square

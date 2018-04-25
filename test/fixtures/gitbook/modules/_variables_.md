@@ -13,7 +13,6 @@
 This is a number type
 
 ___
-
 <a id="color"></a>
 
 ## `<Const>` color
@@ -25,7 +24,6 @@ ___
 This is a string type
 
 ___
-
 <a id="isdone"></a>
 
 ## `<Const>` isDone
@@ -37,7 +35,6 @@ ___
 This is a boolean type
 
 ___
-
 <a id="numbers"></a>
 
 ## `<Const>` numbers

@@ -54,9 +54,11 @@ This class has no own constructor, so its constructor should be inherited from B
 
 <a id="constructor"></a>
 
-### ⊕ **new SubClassA**(name: *`string`*): [SubClassA](_classes_.subclassa.md)
+###  constructor
 
-### ⊕ **new SubClassA**(source: *[BaseClass](_classes_.baseclass.md)*): [SubClassA](_classes_.subclassa.md)
+⊕ **new SubClassA**(name: *`string`*): [SubClassA](_classes_.subclassa.md)
+
+⊕ **new SubClassA**(source: *[BaseClass](_classes_.baseclass.md)*): [SubClassA](_classes_.subclassa.md)
 
 *Inherited from [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
@@ -82,7 +84,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Returns:** [SubClassA](_classes_.subclassa.md)
 
----
+___
 
 ## Properties
 
@@ -99,7 +101,6 @@ This class has no own constructor, so its constructor should be inherited from B
 This is a simple protected member.
 
 ___
-
 <a id="name"></a>
 
 ###  name
@@ -113,7 +114,6 @@ ___
 *Defined in [classes.ts:200](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L200)*
 
 ___
-
 <a id="instance"></a>
 
 ### `<Static>` instance
@@ -129,7 +129,6 @@ This is a static member.
 Static members should not be inherited.
 
 ___
-
 <a id="instances"></a>
 
 ### `<Static>` instances
@@ -171,7 +170,6 @@ Sets the name. See [BaseClass.name](_classes_.baseclass.md#name).
 The return value.
 
 ___
-
 <a id="readonlynameproperty"></a>
 
 ###  readOnlyNameProperty
@@ -186,7 +184,6 @@ Returns the name. See [BaseClass.name](_classes_.baseclass.md#name).
 The return value.
 
 ___
-
 <a id="writeonlynameproperty"></a>
 
 ###  writeOnlyNameProperty
@@ -223,7 +220,6 @@ ___
 **Returns:** `void`
 
 ___
-
 <a id="arrowfunction"></a>
 
 ###  arrowFunction
@@ -246,7 +242,6 @@ This is a simple fat arrow function.
 **Returns:** `void`
 
 ___
-
 <a id="getname"></a>
 
 ###  getName
@@ -267,7 +262,6 @@ It should be inherited by all subclasses. This class has a static member with th
 Return the name.
 
 ___
-
 <a id="print"></a>
 
 ###  print
@@ -289,7 +283,6 @@ This is a simple interface function.
 **Returns:** `void`
 
 ___
-
 <a id="printname"></a>
 
 ###  printName
@@ -305,7 +298,6 @@ This is a interface function of IPrintNameInterface
 **Returns:** `void`
 
 ___
-
 <a id="setname"></a>
 
 ###  setName
@@ -329,7 +321,6 @@ It should be inherited by all subclasses.
 **Returns:** `void`
 
 ___
-
 <a id="catest"></a>
 
 ### `<Static>` caTest
@@ -354,7 +345,6 @@ ___
 **Returns:** `string`
 
 ___
-
 <a id="getinstance"></a>
 
 ### `<Static>` getInstance
@@ -373,7 +363,6 @@ Static functions should not be inherited.
 An instance of BaseClass.
 
 ___
-
 <a id="getname-1"></a>
 
 ### `<Static>` getName

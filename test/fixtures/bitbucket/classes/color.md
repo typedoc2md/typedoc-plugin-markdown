@@ -34,7 +34,9 @@
 
 ## Constructors
 
-### ⊕ **new Color**(r: *`number`*, g: *`number`*, b: *`number`*): [Color](color.md)
+###  constructor
+
+⊕ **new Color**(r: *`number`*, g: *`number`*, b: *`number`*): [Color](color.md)
 
 *Defined in [interfaces.ts:24](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-24)*
 
@@ -48,7 +50,7 @@
 
 **Returns:** [Color](color.md)
 
----
+___
 
 ## Properties
 

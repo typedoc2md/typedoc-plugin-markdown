@@ -26,7 +26,6 @@
 **Returns:** [Color](../classes/_interfaces_.color.md)
 
 ___
-
 <a id="reflect"></a>
 
 ##  reflect
@@ -47,7 +46,6 @@ ___
 **Returns:** `number`
 
 ___
-
 <a id="roughness"></a>
 
 ##  roughness
@@ -57,7 +55,6 @@ ___
 *Defined in [interfaces.ts:53](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L53)*
 
 ___
-
 <a id="specular"></a>
 
 ##  specular

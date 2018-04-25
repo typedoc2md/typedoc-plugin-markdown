@@ -30,7 +30,9 @@ This class is exported under a different name. The exported name is "ExportedCla
 
 <a id="constructor"></a>
 
-### ⊕ **new NotExportedClassName**(): [NotExportedClassName](_default_export_.notexportedclassname.md)
+###  constructor
+
+⊕ **new NotExportedClassName**(): [NotExportedClassName](_default_export_.notexportedclassname.md)
 
 *Defined in [default-export.ts:21](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L21)*
 
@@ -38,7 +40,7 @@ This is the constructor of the NotExportedClassName class.
 
 **Returns:** [NotExportedClassName](_default_export_.notexportedclassname.md)
 
----
+___
 
 ## Properties
 

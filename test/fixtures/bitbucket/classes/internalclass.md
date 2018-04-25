@@ -20,7 +20,9 @@ This is an internal class, it is not exported.
 
 ## Constructors
 
-### ⊕ **new InternalClass**(options: *`object`*): [InternalClass](internalclass.md)
+###  constructor
+
+⊕ **new InternalClass**(options: *`object`*): [InternalClass](internalclass.md)
 
 *Defined in [classes.ts:187](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-187)*
 
@@ -32,5 +34,5 @@ This is an internal class, it is not exported.
 
 **Returns:** [InternalClass](internalclass.md)
 
----
+___
 

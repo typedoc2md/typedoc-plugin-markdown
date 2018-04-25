@@ -21,6 +21,7 @@
 * [GenericClass](classes/genericclass.md)
 * [InternalClass](classes/internalclass.md)
 * [MyFirstClass](classes/myfirstclass.md)
+* [MyFourthClass](classes/myfourthclass.md)
 * [MySecondClass](classes/mysecondclass.md)
 * [MyThirdClass](classes/mythirdclass.md)
 * [NonGenericClass](classes/nongenericclass.md)
@@ -117,6 +118,16 @@ ___
 
 ___
 
+### `<Private>` fakePrivateVariable
+
+**● fakePrivateVariable**: *`string`* = "test"
+
+*Defined in [access.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-12)*
+
+A variable that is made private via comment.
+
+___
+
 ### `<Protected>` fakeProtectedVariable
 
 **● fakeProtectedVariable**: *`string`* = "test"
@@ -180,6 +191,18 @@ ___
 *Defined in [functions.ts:19](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-19)*
 
 This is a simple exported function.
+
+**Returns:** `void`
+
+___
+
+### `<Private>` fakePrivateFunction
+
+▸ **fakePrivateFunction**(): `void`
+
+*Defined in [access.ts:24](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-24)*
+
+A function that is made private via comment.
 
 **Returns:** `void`
 
@@ -373,13 +396,13 @@ ___
 
 ###  getGenericArray
 
-▸ **getGenericArray**(): `Array`.<`string`>
+▸ **getGenericArray**(): `Array`<`string`>
 
 *Defined in [generics.ts:83](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-83)*
 
 A function returning a generic array with type parameters.
 
-**Returns:** `Array`.<`string`>
+**Returns:** `Array`<`string`>
 The return value with type arguments.
 
 ___

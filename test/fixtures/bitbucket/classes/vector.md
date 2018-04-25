@@ -32,7 +32,9 @@
 
 ## Constructors
 
-### ⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](vector.md)
+###  constructor
+
+⊕ **new Vector**(x: *`number`*, y: *`number`*, z: *`number`*): [Vector](vector.md)
 
 *Defined in [interfaces.ts:2](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-2)*
 
@@ -46,7 +48,7 @@
 
 **Returns:** [Vector](vector.md)
 
----
+___
 
 ## Properties
 

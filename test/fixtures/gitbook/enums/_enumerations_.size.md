@@ -33,7 +33,6 @@ This comment is ignored, as the enumeration is already defined.
 A simple enum member.
 
 ___
-
 <a id="medium"></a>
 
 ##  Medium
@@ -45,7 +44,6 @@ ___
 A simple enum member.
 
 ___
-
 <a id="small"></a>
 
 ##  Small

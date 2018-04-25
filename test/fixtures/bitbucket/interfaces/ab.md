@@ -13,7 +13,7 @@ The leftover generic type parameter.
 
  [A](a.md)<`T`>
 
- [B](b.md)<`T`>, <`boolean`>
+ [B](b.md)<`T`, `boolean`>
 
 **↳ AB**
 

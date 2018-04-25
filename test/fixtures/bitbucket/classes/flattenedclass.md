@@ -25,7 +25,9 @@ A class that contains members with flattened properties.
 
 ## Constructors
 
-### ⊕ **new flattenedClass**(options: *`object`*): [flattenedClass](flattenedclass.md)
+###  constructor
+
+⊕ **new flattenedClass**(options: *`object`*): [flattenedClass](flattenedclass.md)
 
 *Defined in [flattened.ts:64](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-64)*
 
@@ -39,7 +41,7 @@ A constructor that accepts an option object defined inline.
 
 **Returns:** [flattenedClass](flattenedclass.md)
 
----
+___
 
 ## Properties
 

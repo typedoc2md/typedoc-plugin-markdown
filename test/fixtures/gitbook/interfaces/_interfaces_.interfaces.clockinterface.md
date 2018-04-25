@@ -35,7 +35,6 @@ ___
 **Returns:** `any`
 
 ___
-
 <a id="tick"></a>
 
 ##  tick

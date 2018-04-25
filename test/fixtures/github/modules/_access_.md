@@ -39,7 +39,6 @@ Examples taken from the TypeDoc 'access' examples directory ([https://github.com
 A variable that is made private via comment.
 
 ___
-
 <a id="fakeprotectedvariable"></a>
 
 ### `<Protected>` fakeProtectedVariable
@@ -67,7 +66,6 @@ A function that is made private via comment.
 **Returns:** `void`
 
 ___
-
 <a id="fakeprotectedfunction"></a>
 
 ### `<Protected>` fakeProtectedFunction

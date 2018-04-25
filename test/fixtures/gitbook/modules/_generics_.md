@@ -7,6 +7,7 @@ Examples taken from the TypeDoc 'generics' examples directory ([https://github.c
 ### Classes
 
 * [MyFirstClass](../classes/_generics_.myfirstclass.md)
+* [MyFourthClass](../classes/_generics_.myfourthclass.md)
 * [MySecondClass](../classes/_generics_.mysecondclass.md)
 * [MyThirdClass](../classes/_generics_.mythirdclass.md)
 
@@ -31,17 +32,16 @@ Examples taken from the TypeDoc 'generics' examples directory ([https://github.c
 
 ##  getGenericArray
 
-▸ **getGenericArray**(): `Array`.<`string`>
+▸ **getGenericArray**(): `Array`<`string`>
 
 *Defined in [generics.ts:83](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L83)*
 
 A function returning a generic array with type parameters.
 
-**Returns:** `Array`.<`string`>
+**Returns:** `Array`<`string`>
 The return value with type arguments.
 
 ___
-
 <a id="testfunction"></a>
 
 ##  testFunction

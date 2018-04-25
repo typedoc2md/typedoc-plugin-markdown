@@ -44,7 +44,9 @@ The constructor of the original class should be overwritten.
 
 ## Constructors
 
-### ⊕ **new SubClassB**(name: *`string`*): [SubClassB](subclassb.md)
+###  constructor
+
+⊕ **new SubClassB**(name: *`string`*): [SubClassB](subclassb.md)
 
 *Overrides [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
 
@@ -58,7 +60,7 @@ The constructor of the original class should be overwritten.
 
 **Returns:** [SubClassB](subclassb.md)
 
----
+___
 
 ## Properties
 
@@ -147,7 +149,7 @@ ___
 
 ###  doSomething
 
-▸ **doSomething**(value: *[`string`,[SubClassA](subclassa.md),[SubClassB](subclassb.md)]*): `void`
+▸ **doSomething**(value: *[`string`, [SubClassA](subclassa.md), [SubClassB](subclassb.md)]*): `void`
 
 *Defined in [classes.ts:273](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-273)*
 
@@ -155,7 +157,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| value | [`string`,[SubClassA](subclassa.md),[SubClassB](subclassb.md)] | 
+| value | [`string`, [SubClassA](subclassa.md), [SubClassB](subclassb.md)] | 
 
 **Returns:** `void`
 

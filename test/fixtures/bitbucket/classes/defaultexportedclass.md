@@ -28,7 +28,9 @@ This class is exported via es6 export syntax.
 
 ## Constructors
 
-### ⊕ **new DefaultExportedClass**(): [DefaultExportedClass](defaultexportedclass.md)
+###  constructor
+
+⊕ **new DefaultExportedClass**(): [DefaultExportedClass](defaultexportedclass.md)
 
 *Defined in [default-export.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-50)*
 
@@ -36,7 +38,7 @@ This is the constructor of the default exported class.
 
 **Returns:** [DefaultExportedClass](defaultexportedclass.md)
 
----
+___
 
 ## Properties
 

@@ -36,7 +36,9 @@
 
 <a id="constructor"></a>
 
-### ⊕ **new Color**(r: *`number`*, g: *`number`*, b: *`number`*): [Color](_interfaces_.color.md)
+###  constructor
+
+⊕ **new Color**(r: *`number`*, g: *`number`*, b: *`number`*): [Color](_interfaces_.color.md)
 
 *Defined in [interfaces.ts:24](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L24)*
 
@@ -50,7 +52,7 @@
 
 **Returns:** [Color](_interfaces_.color.md)
 
----
+___
 
 ## Properties
 
@@ -63,7 +65,6 @@
 *Defined in [interfaces.ts:27](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L27)*
 
 ___
-
 <a id="g"></a>
 
 ###  g
@@ -73,7 +74,6 @@ ___
 *Defined in [interfaces.ts:26](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L26)*
 
 ___
-
 <a id="r"></a>
 
 ###  r
@@ -83,7 +83,6 @@ ___
 *Defined in [interfaces.ts:25](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L25)*
 
 ___
-
 <a id="background"></a>
 
 ### `<Static>` background
@@ -93,7 +92,6 @@ ___
 *Defined in [interfaces.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L35)*
 
 ___
-
 <a id="black"></a>
 
 ### `<Static>` black
@@ -103,7 +101,6 @@ ___
 *Defined in [interfaces.ts:34](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L34)*
 
 ___
-
 <a id="defaultcolor"></a>
 
 ### `<Static>` defaultColor
@@ -113,7 +110,6 @@ ___
 *Defined in [interfaces.ts:36](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L36)*
 
 ___
-
 <a id="grey"></a>
 
 ### `<Static>` grey
@@ -123,7 +119,6 @@ ___
 *Defined in [interfaces.ts:33](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L33)*
 
 ___
-
 <a id="white"></a>
 
 ### `<Static>` white
@@ -154,7 +149,6 @@ ___
 **Returns:** [Color](_interfaces_.color.md)
 
 ___
-
 <a id="scale"></a>
 
 ### `<Static>` scale
@@ -173,7 +167,6 @@ ___
 **Returns:** [Color](_interfaces_.color.md)
 
 ___
-
 <a id="times"></a>
 
 ### `<Static>` times
@@ -192,7 +185,6 @@ ___
 **Returns:** [Color](_interfaces_.color.md)
 
 ___
-
 <a id="todrawingcolor"></a>
 
 ### `<Static>` toDrawingColor

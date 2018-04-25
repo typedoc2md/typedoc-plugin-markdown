@@ -52,9 +52,11 @@ This class has no own constructor, so its constructor should be inherited from B
 
 ## Constructors
 
-### ⊕ **new SubClassA**(name: *`string`*): [SubClassA](subclassa.md)
+###  constructor
 
-### ⊕ **new SubClassA**(source: *[BaseClass](baseclass.md)*): [SubClassA](subclassa.md)
+⊕ **new SubClassA**(name: *`string`*): [SubClassA](subclassa.md)
+
+⊕ **new SubClassA**(source: *[BaseClass](baseclass.md)*): [SubClassA](subclassa.md)
 
 *Inherited from [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
 
@@ -80,7 +82,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Returns:** [SubClassA](subclassa.md)
 
----
+___
 
 ## Properties
 

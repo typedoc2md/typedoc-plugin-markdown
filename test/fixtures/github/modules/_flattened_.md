@@ -39,7 +39,6 @@ A function that has a parameter that requires a typed function callback.
 **Returns:** `void`
 
 ___
-
 <a id="flattenedindexsignature"></a>
 
 ###  flattenedIndexSignature
@@ -59,7 +58,6 @@ A function that accepts an index signature parameter.
 **Returns:** `void`
 
 ___
-
 <a id="flattenedparameter"></a>
 
 ###  flattenedParameter

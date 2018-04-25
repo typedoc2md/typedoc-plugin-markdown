@@ -51,9 +51,11 @@ This is a simple example on how to use BaseClass.
 
 <a id="constructor"></a>
 
-### ⊕ **new BaseClass**(name: *`string`*): [BaseClass](_classes_.baseclass.md)
+###  constructor
 
-### ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
+⊕ **new BaseClass**(name: *`string`*): [BaseClass](_classes_.baseclass.md)
+
+⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
 
 *Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L78)*
 
@@ -75,7 +77,7 @@ This is a simple example on how to use BaseClass.
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
----
+___
 
 ## Properties
 
@@ -90,7 +92,6 @@ This is a simple example on how to use BaseClass.
 This is an instance member of an internal class.
 
 ___
-
 <a id="kind"></a>
 
 ### `<Protected>` kind
@@ -102,7 +103,6 @@ ___
 This is a simple protected member.
 
 ___
-
 <a id="name"></a>
 
 ###  name
@@ -116,7 +116,6 @@ ___
 This is a simple public member.
 
 ___
-
 <a id="instance"></a>
 
 ### `<Static>` instance
@@ -130,7 +129,6 @@ This is a static member.
 Static members should not be inherited.
 
 ___
-
 <a id="instances"></a>
 
 ### `<Static>` instances
@@ -154,7 +152,6 @@ ___
 **Returns:** `void`
 
 ___
-
 <a id="arrowfunction"></a>
 
 ###  arrowFunction
@@ -175,7 +172,6 @@ This is a simple fat arrow function.
 **Returns:** `void`
 
 ___
-
 <a id="checkname"></a>
 
 ### `<Private>` checkName
@@ -189,7 +185,6 @@ This is a private function.
 **Returns:** `boolean`
 
 ___
-
 <a id="getname"></a>
 
 ###  getName
@@ -208,7 +203,6 @@ It should be inherited by all subclasses. This class has a static member with th
 Return the name.
 
 ___
-
 <a id="setname"></a>
 
 ###  setName
@@ -230,7 +224,6 @@ It should be inherited by all subclasses.
 **Returns:** `void`
 
 ___
-
 <a id="catest"></a>
 
 ### `<Static>` caTest
@@ -253,7 +246,6 @@ ___
 **Returns:** `string`
 
 ___
-
 <a id="getinstance"></a>
 
 ### `<Static>` getInstance
@@ -270,7 +262,6 @@ Static functions should not be inherited.
 An instance of BaseClass.
 
 ___
-
 <a id="getname-1"></a>
 
 ### `<Static>` getName

@@ -18,7 +18,9 @@ The constructor of the original class should be overwritten.
 
 <a id="constructor"></a>
 
-### ⊕ **new SubClassB**(name: *`string`*): [SubClassB](_classes_.subclassb.md)
+##  constructor
+
+⊕ **new SubClassB**(name: *`string`*): [SubClassB](_classes_.subclassb.md)
 
 *Overrides [BaseClass](_classes_.baseclass.md).[constructor](_classes_.baseclass.md#constructor)*
 
@@ -32,7 +34,7 @@ The constructor of the original class should be overwritten.
 
 **Returns:** [SubClassB](_classes_.subclassb.md)
 
----
+___
 
 # Properties
 
@@ -49,7 +51,6 @@ The constructor of the original class should be overwritten.
 This is a simple protected member.
 
 ___
-
 <a id="name"></a>
 
 ##  name
@@ -63,7 +64,6 @@ ___
 *Defined in [classes.ts:263](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L263)*
 
 ___
-
 <a id="instance"></a>
 
 ## `<Static>` instance
@@ -79,7 +79,6 @@ This is a static member.
 Static members should not be inherited.
 
 ___
-
 <a id="instances"></a>
 
 ## `<Static>` instances
@@ -107,7 +106,6 @@ ___
 **Returns:** `void`
 
 ___
-
 <a id="arrowfunction"></a>
 
 ##  arrowFunction
@@ -130,12 +128,11 @@ This is a simple fat arrow function.
 **Returns:** `void`
 
 ___
-
 <a id="dosomething"></a>
 
 ##  doSomething
 
-▸ **doSomething**(value: *[`string`,[SubClassA](_classes_.subclassa.md),[SubClassB](_classes_.subclassb.md)]*): `void`
+▸ **doSomething**(value: *[`string`, [SubClassA](_classes_.subclassa.md), [SubClassB](_classes_.subclassb.md)]*): `void`
 
 *Defined in [classes.ts:273](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L273)*
 
@@ -143,12 +140,11 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| value | [`string`,[SubClassA](_classes_.subclassa.md),[SubClassB](_classes_.subclassb.md)] | 
+| value | [`string`, [SubClassA](_classes_.subclassa.md), [SubClassB](_classes_.subclassb.md)] | 
 
 **Returns:** `void`
 
 ___
-
 <a id="getname"></a>
 
 ##  getName
@@ -169,7 +165,6 @@ It should be inherited by all subclasses. This class has a static member with th
 Return the name.
 
 ___
-
 <a id="setname"></a>
 
 ##  setName
@@ -193,7 +188,6 @@ It should be inherited by all subclasses.
 **Returns:** `void`
 
 ___
-
 <a id="catest"></a>
 
 ## `<Static>` caTest
@@ -218,7 +212,6 @@ ___
 **Returns:** `string`
 
 ___
-
 <a id="getinstance"></a>
 
 ## `<Static>` getInstance
@@ -237,7 +230,6 @@ Static functions should not be inherited.
 An instance of BaseClass.
 
 ___
-
 <a id="getname-1"></a>
 
 ## `<Static>` getName

@@ -13,7 +13,7 @@ The leftover generic type parameter.
 
  [A](_generics_.a.md)<`T`>
 
- [B](_generics_.b.md)<`T`>, <`boolean`>
+ [B](_generics_.b.md)<`T`, `boolean`>
 
 **↳ AB**
 
@@ -49,7 +49,6 @@ A generic member function.
 A generic return value.
 
 ___
-
 <a id="gett"></a>
 
 ###  getT
@@ -66,7 +65,6 @@ A generic member function.
 A generic return value.
 
 ___
-
 <a id="sett"></a>
 
 ###  setT

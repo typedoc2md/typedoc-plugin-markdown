@@ -17,7 +17,9 @@ This a type parameter.
 
 <a id="constructor"></a>
 
-### ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](_classes_.genericclass.md)
+##  constructor
+
+⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](_classes_.genericclass.md)
 
 *Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L284)*
 
@@ -35,7 +37,7 @@ Constructor short text.
 
 **Returns:** [GenericClass](_classes_.genericclass.md)
 
----
+___
 
 # Properties
 
@@ -50,7 +52,6 @@ Constructor short text.
 Private string property
 
 ___
-
 <a id="p3"></a>
 
 ##  p3
@@ -62,7 +63,6 @@ ___
 Public number property
 
 ___
-
 <a id="p4"></a>
 
 ## `<Private>` p4
@@ -74,7 +74,6 @@ ___
 Public implicit any property
 
 ___
-
 <a id="p5"></a>
 
 ##  p5
@@ -86,7 +85,6 @@ ___
 Readonly property
 
 ___
-
 <a id="value"></a>
 
 ##  value
@@ -110,7 +108,6 @@ ___
 **Returns:** `T`
 
 ___
-
 <a id="setvalue"></a>
 
 ##  setValue
