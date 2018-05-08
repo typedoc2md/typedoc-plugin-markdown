@@ -6,5 +6,7 @@ const turndownService = new TurndownService();
  * @param options
  */
 export function getMarkdownFromHtml(options: any) {
-  return turndownService.turndown(options.fn(this));
+  return turndownService.turndown(options.fn(this), {
+    codeBlockStyle: 'fenced',
+  });
 }
