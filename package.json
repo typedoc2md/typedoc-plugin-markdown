@@ -49,12 +49,12 @@
     "chai-files": "^1.4.0",
     "copyfiles": "^2.0.0",
     "mocha": "^5.1.1",
-    "tslint": "^5.9.1",
+    "tslint": "^5.10.0",
     "typedoc": "^0.11.1",
     "typescript": "2.7.2"
   },
   "dependencies": {
-    "turndown": "^4.0.1"
+    "turndown": "^4.0.2"
   },
   "greenkeeper": {
     "ignore": [
