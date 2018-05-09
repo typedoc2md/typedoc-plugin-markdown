@@ -10,7 +10,7 @@
  * This class is exported under a different name. The exported name is
  * "ExportedClassName"
  *
- * ```JavaScript
+ * ```js
  * export {NotExportedClassName as ExportedClassName};
  * ```
  */
@@ -39,8 +39,8 @@ class NotExportedClassName {
 /**
  * This class is exported via es6 export syntax.
  *
- * ```
- * export default class DefaultExportedClass
+ * ```js
+ * export default class DefaultExportedClass {}
  * ```
  */
 export default class DefaultExportedClass {

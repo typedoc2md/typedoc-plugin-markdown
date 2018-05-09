@@ -4,7 +4,9 @@
 
 This class is exported under a different name. The exported name is "ExportedClassName"
 
-    export {NotExportedClassName as ExportedClassName};
+```js
+export {NotExportedClassName as ExportedClassName};
+```
 
 ## Hierarchy
 
