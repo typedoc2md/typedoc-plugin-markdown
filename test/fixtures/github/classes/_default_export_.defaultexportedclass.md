@@ -4,7 +4,9 @@
 
 This class is exported via es6 export syntax.
 
-    export default class DefaultExportedClass
+```js
+export default class DefaultExportedClass {}
+```
 
 ## Hierarchy
 

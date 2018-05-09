@@ -54,7 +54,7 @@
     "typescript": "2.7.2"
   },
   "dependencies": {
-    "turndown": "^4.0.2"
+    "@forked/turndown": "^4.0.4"
   },
   "greenkeeper": {
     "ignore": [
