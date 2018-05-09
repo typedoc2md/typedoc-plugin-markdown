@@ -14,13 +14,13 @@ export const generalComments: boolean = false;
  * Provides the module for the [[BaseClass]]
  * ```json
  * {
- *  declarations: [AbstractMetadataComponent],
- *  exports: [AbstractMetadataComponent],
- *  imports: [
- *    IonicModule,
- *    StackIonSelectModule,
+ *  "declarations": ["AbstractMetadataComponent"],
+ *  "exports": ["AbstractMetadataComponent"],
+ *  "imports": [
+ *    "IonicModule",
+ *    "StackIonSelectModule"
  *  ],
- *  providers: [],
+ *  "providers": []
  * }
  * ```
  */
