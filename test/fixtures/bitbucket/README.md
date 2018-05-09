@@ -106,15 +106,17 @@ ___
 
 *__description__*: Provides the module for the [BaseClass](classes/baseclass.md)
 
-    {
-     declarations: [AbstractMetadataComponent],
-     exports: [AbstractMetadataComponent],
-     imports: [
-       IonicModule,
-       StackIonSelectModule,
-     ],
-     providers: [],
-    }
+```json
+{
+ "declarations": ["AbstractMetadataComponent"],
+ "exports": ["AbstractMetadataComponent"],
+ "imports": [
+   "IonicModule",
+   "StackIonSelectModule"
+ ],
+ "providers": []
+}
+```
 
 ___
 

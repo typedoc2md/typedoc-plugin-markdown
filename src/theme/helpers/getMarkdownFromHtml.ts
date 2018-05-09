@@ -1,4 +1,4 @@
-const TurndownService = require('turndown');
+const TurndownService = require('@forked/turndown');
 const turndownService = new TurndownService({
   codeBlockStyle: 'fenced',
 });
