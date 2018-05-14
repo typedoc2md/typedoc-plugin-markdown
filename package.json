@@ -50,7 +50,7 @@
     "copyfiles": "^2.0.0",
     "mocha": "^5.1.1",
     "tslint": "^5.10.0",
-    "typedoc": "^0.11.1",
+    "typedoc": "git+https://github.com/archfz/typedoc.git#develop",
     "typescript": "2.7.2"
   },
   "dependencies": {

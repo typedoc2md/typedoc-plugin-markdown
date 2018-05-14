@@ -149,6 +149,23 @@ export class MarkdownTheme extends DefaultTheme {
       });
     }
 
+    if (project.readmePages) {
+      // Since the primary readme is rendered in index we have to update
+      // it's URL.
+      project.readmePages.updatePath(project.readmePages.getRoot(), 'README.md');
+
+      project.readmePages.getDefinitions().forEach((readme) => {
+          if (readme.isRoot) {
+              return;
+          }
+
+          urlMappings.push(new UrlMapping(readme.path, readme, 'readme.hbs'));
+      });
+
+      // For backward compatibility.
+      project.readme = project.readmePages.getRoot().content;
+  }
+
     // write gitbook summary
     if (ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK) {
 
