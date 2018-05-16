@@ -30,7 +30,7 @@ The constructor of the original class should be overwritten.
 
 | Param | Type |
 | ------ | ------ |
-| name | `string` | 
+| name | `string` |
 
 **Returns:** [SubClassB](_classes_.subclassb.md)
 
@@ -128,6 +128,26 @@ This is a simple fat arrow function.
 **Returns:** `void`
 
 ___
+<a id="dootherthings"></a>
+
+##  doOtherThings
+
+▸ **doOtherThings**(value: * `string` &#124; `number` &#124; [SubClassA](_classes_.subclassa.md)*, secondValue?: *[SubClassA](_classes_.subclassa.md)*): `void`
+
+*Defined in [classes.ts:282](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L282)*
+
+Description for doOtherThings.
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value |  `string` &#124; `number` &#124; [SubClassA](_classes_.subclassa.md)|  Description for value |
+| `Optional` secondValue | [SubClassA](_classes_.subclassa.md) |  Description for optional value |
+
+**Returns:** `void`
+
+___
 <a id="dosomething"></a>
 
 ##  doSomething
@@ -140,7 +160,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| value | [`string`, [SubClassA](_classes_.subclassa.md), [SubClassB](_classes_.subclassb.md)] | 
+| value | [`string`, [SubClassA](_classes_.subclassa.md), [SubClassB](_classes_.subclassb.md)] |
 
 **Returns:** `void`
 
@@ -204,10 +224,10 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| originalValues | [BaseClass](_classes_.baseclass.md) | 
-| newRecord | `any` | 
-| fieldNames | `string`[] | 
-| mandatoryFields | `string`[] | 
+| originalValues | [BaseClass](_classes_.baseclass.md) |
+| newRecord | `any` |
+| fieldNames | `string`[] |
+| mandatoryFields | `string`[] |
 
 **Returns:** `string`
 

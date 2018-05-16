@@ -30,7 +30,7 @@ This is an internal class, it is not exported.
 
 | Param | Type |
 | ------ | ------ |
-| options | `object` | 
+| options | `object` |
 
 **Returns:** [InternalClass](internalclass.md)
 

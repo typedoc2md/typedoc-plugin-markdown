@@ -26,8 +26,8 @@
 
 | Param | Type |
 | ------ | ------ |
-| hour | `number` | 
-| minute | `number` | 
+| hour | `number` |
+| minute | `number` |
 
 **Returns:** [ClockInterface](interfaces.clockinterface.md)
 

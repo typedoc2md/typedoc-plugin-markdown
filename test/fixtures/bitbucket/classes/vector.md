@@ -42,9 +42,9 @@
 
 | Param | Type |
 | ------ | ------ |
-| x | `number` | 
-| y | `number` | 
-| z | `number` | 
+| x | `number` |
+| y | `number` |
+| z | `number` |
 
 **Returns:** [Vector](vector.md)
 
@@ -88,8 +88,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](vector.md) | 
-| v2 | [Vector](vector.md) | 
+| v1 | [Vector](vector.md) |
+| v2 | [Vector](vector.md) |
 
 **Returns:** [Vector](vector.md)
 
@@ -105,8 +105,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](vector.md) | 
-| v2 | [Vector](vector.md) | 
+| v1 | [Vector](vector.md) |
+| v2 | [Vector](vector.md) |
 
 **Returns:** `number`
 
@@ -122,7 +122,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v | [Vector](vector.md) | 
+| v | [Vector](vector.md) |
 
 **Returns:** `number`
 
@@ -138,8 +138,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](vector.md) | 
-| v2 | [Vector](vector.md) | 
+| v1 | [Vector](vector.md) |
+| v2 | [Vector](vector.md) |
 
 **Returns:** [Vector](vector.md)
 
@@ -155,7 +155,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v | [Vector](vector.md) | 
+| v | [Vector](vector.md) |
 
 **Returns:** [Vector](vector.md)
 
@@ -171,8 +171,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](vector.md) | 
-| v2 | [Vector](vector.md) | 
+| v1 | [Vector](vector.md) |
+| v2 | [Vector](vector.md) |
 
 **Returns:** [Vector](vector.md)
 
@@ -188,8 +188,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| k | `number` | 
-| v | [Vector](vector.md) | 
+| k | `number` |
+| v | [Vector](vector.md) |
 
 **Returns:** [Vector](vector.md)
 

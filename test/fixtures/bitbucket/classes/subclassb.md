@@ -33,6 +33,7 @@ The constructor of the original class should be overwritten.
 
 * [abstractMethod](subclassb.md#markdown-header-abstractmethod)
 * [arrowFunction](subclassb.md#markdown-header-arrowfunction)
+* [doOtherThings](subclassb.md#markdown-header-dootherthings)
 * [doSomething](subclassb.md#markdown-header-dosomething)
 * [getName](subclassb.md#markdown-header-getname)
 * [setName](subclassb.md#markdown-header-setname)
@@ -56,7 +57,7 @@ The constructor of the original class should be overwritten.
 
 | Param | Type |
 | ------ | ------ |
-| name | `string` | 
+| name | `string` |
 
 **Returns:** [SubClassB](subclassb.md)
 
@@ -147,6 +148,25 @@ This is a simple fat arrow function.
 
 ___
 
+###  doOtherThings
+
+▸ **doOtherThings**(value: * `string` &#124; `number` &#124; [SubClassA](subclassa.md)*, secondValue?: *[SubClassA](subclassa.md)*): `void`
+
+*Defined in [classes.ts:282](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-282)*
+
+Description for doOtherThings.
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| value |  `string` &#124; `number` &#124; [SubClassA](subclassa.md)|  Description for value |
+| `Optional` secondValue | [SubClassA](subclassa.md) |  Description for optional value |
+
+**Returns:** `void`
+
+___
+
 ###  doSomething
 
 ▸ **doSomething**(value: *[`string`, [SubClassA](subclassa.md), [SubClassB](subclassb.md)]*): `void`
@@ -157,7 +177,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| value | [`string`, [SubClassA](subclassa.md), [SubClassB](subclassb.md)] | 
+| value | [`string`, [SubClassA](subclassa.md), [SubClassB](subclassb.md)] |
 
 **Returns:** `void`
 
@@ -218,10 +238,10 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| originalValues | [BaseClass](baseclass.md) | 
-| newRecord | `any` | 
-| fieldNames | `string`[] | 
-| mandatoryFields | `string`[] | 
+| originalValues | [BaseClass](baseclass.md) |
+| newRecord | `any` |
+| fieldNames | `string`[] |
+| mandatoryFields | `string`[] |
 
 **Returns:** `string`
 

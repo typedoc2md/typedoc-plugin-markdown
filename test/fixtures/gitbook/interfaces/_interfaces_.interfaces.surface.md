@@ -21,7 +21,7 @@
 
 | Param | Type |
 | ------ | ------ |
-| pos | [Vector](../classes/_interfaces_.vector.md) | 
+| pos | [Vector](../classes/_interfaces_.vector.md) |
 
 **Returns:** [Color](../classes/_interfaces_.color.md)
 
@@ -41,7 +41,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| pos | [Vector](../classes/_interfaces_.vector.md) | 
+| pos | [Vector](../classes/_interfaces_.vector.md) |
 
 **Returns:** `number`
 
@@ -70,7 +70,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| pos | [Vector](../classes/_interfaces_.vector.md) | 
+| pos | [Vector](../classes/_interfaces_.vector.md) |
 
 **Returns:** [Color](../classes/_interfaces_.color.md)
 

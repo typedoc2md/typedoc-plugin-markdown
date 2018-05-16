@@ -308,11 +308,11 @@ This is a function with a parameter that has a default value.
 
 | Param | Type | Default value |
 | ------ | ------ | ------ |
-| `Default value` valueA | `string` | &quot;defaultValue&quot; | 
-| `Default value` valueB | `number` | 100 | 
-| `Default value` valueC | `number` |  Number.NaN | 
-| `Default value` valueD | `boolean` | true | 
-| `Default value` valueE | `boolean` | false | 
+| `Default value` valueA | `string` | &quot;defaultValue&quot; |
+| `Default value` valueB | `number` | 100 |
+| `Default value` valueC | `number` |  Number.NaN |
+| `Default value` valueD | `boolean` | true |
+| `Default value` valueE | `boolean` | false |
 
 **Returns:** `string`
 The input value or the default value.

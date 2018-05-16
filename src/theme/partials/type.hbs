@@ -17,9 +17,7 @@
 {{/with}}
 {{else}}
 {{#if types}}
-{{#each types}}
-{{#if @index}} {{#ifCond ../type '==' 'intersection'}}&{{else}}|{{/ifCond}}
-{{/if}}{{> type}}{{/each}}
+{{#each types}}{{#if @index}} {{#ifCond ../type '==' 'intersection'}}&{{else}}&#124;{{/ifCond}}{{/if}} {{> type}}{{/each}}
 {{else}}
 {{#if elements}} 
 {{#compact}}

@@ -32,7 +32,7 @@
 
 | Param | Type |
 | ------ | ------ |
-| pos | [Vector](../classes/vector.md) | 
+| pos | [Vector](../classes/vector.md) |
 
 **Returns:** [Color](../classes/color.md)
 
@@ -51,7 +51,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| pos | [Vector](../classes/vector.md) | 
+| pos | [Vector](../classes/vector.md) |
 
 **Returns:** `number`
 
@@ -78,7 +78,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| pos | [Vector](../classes/vector.md) | 
+| pos | [Vector](../classes/vector.md) |
 
 **Returns:** [Color](../classes/color.md)
 
