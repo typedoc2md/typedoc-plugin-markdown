@@ -18,7 +18,7 @@
 
 | Param | Type |
 | ------ | ------ |
-| arg | [MyFourthClass](_generics_.myfourthclass.md)<[MyFirstClass](_generics_.myfirstclass.md), [MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>> | 
+| arg | [MyFourthClass](_generics_.myfourthclass.md)<[MyFirstClass](_generics_.myfirstclass.md), [MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>> |
 
 **Returns:** [MyThirdClass](_generics_.mythirdclass.md)
 

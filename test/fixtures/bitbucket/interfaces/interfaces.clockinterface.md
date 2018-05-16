@@ -41,7 +41,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| d | `Date` | 
+| d | `Date` |
 
 **Returns:** `any`
 

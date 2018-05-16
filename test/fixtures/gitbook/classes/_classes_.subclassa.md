@@ -33,7 +33,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 | Param | Type |
 | ------ | ------ |
-| name | `string` | 
+| name | `string` |
 
 **Returns:** [SubClassA](_classes_.subclassa.md)
 
@@ -45,7 +45,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 | Param | Type |
 | ------ | ------ |
-| source | [BaseClass](_classes_.baseclass.md) | 
+| source | [BaseClass](_classes_.baseclass.md) |
 
 **Returns:** [SubClassA](_classes_.subclassa.md)
 
@@ -243,7 +243,7 @@ This is a simple interface function.
 
 | Param | Type |
 | ------ | ------ |
-| value | `string` | 
+| value | `string` |
 
 **Returns:** `void`
 
@@ -302,10 +302,10 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| originalValues | [BaseClass](_classes_.baseclass.md) | 
-| newRecord | `any` | 
-| fieldNames | `string`[] | 
-| mandatoryFields | `string`[] | 
+| originalValues | [BaseClass](_classes_.baseclass.md) |
+| newRecord | `any` |
+| fieldNames | `string`[] |
+| mandatoryFields | `string`[] |
 
 **Returns:** `string`
 

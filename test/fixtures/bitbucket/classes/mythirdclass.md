@@ -30,7 +30,7 @@
 
 | Param | Type |
 | ------ | ------ |
-| arg | [MyFourthClass](myfourthclass.md)<[MyFirstClass](myfirstclass.md), [MySecondClass](mysecondclass.md)<[MyFirstClass](myfirstclass.md)>> | 
+| arg | [MyFourthClass](myfourthclass.md)<[MyFirstClass](myfirstclass.md), [MySecondClass](mysecondclass.md)<[MyFirstClass](myfirstclass.md)>> |
 
 **Returns:** [MyThirdClass](mythirdclass.md)
 
