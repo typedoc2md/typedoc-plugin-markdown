@@ -44,7 +44,7 @@ This a type parameter.
 
 ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](_classes_.genericclass.md)
 
-*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L284)*
+*Defined in [classes.ts:293](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L293)*
 
 Constructor short text.
 
@@ -70,7 +70,7 @@ ___
 
 **● p2**: *`T`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
+*Defined in [classes.ts:304](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L304)*
 
 Private string property
 
@@ -81,7 +81,7 @@ ___
 
 **● p3**: *`number`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
+*Defined in [classes.ts:304](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L304)*
 
 Public number property
 
@@ -92,7 +92,7 @@ ___
 
 **● p4**: *`number`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
+*Defined in [classes.ts:304](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L304)*
 
 Public implicit any property
 
@@ -103,7 +103,7 @@ ___
 
 **● p5**: *`string`*
 
-*Defined in [classes.ts:295](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L295)*
+*Defined in [classes.ts:304](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L304)*
 
 Readonly property
 
@@ -114,7 +114,7 @@ ___
 
 **● value**: *`T`*
 
-*Defined in [classes.ts:284](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L284)*
+*Defined in [classes.ts:293](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L293)*
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **getValue**(): `T`
 
-*Defined in [classes.ts:305](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L305)*
+*Defined in [classes.ts:314](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L314)*
 
 **Returns:** `T`
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **setValue**(value: *`T`*): `void`
 
-*Defined in [classes.ts:301](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L301)*
+*Defined in [classes.ts:310](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L310)*
 
 **Parameters:**
 

@@ -18,9 +18,9 @@
 
 | Param | Type |
 | ------ | ------ |
-| x | `number` | 
-| y | `number` | 
-| z | `number` | 
+| x | `number` |
+| y | `number` |
+| z | `number` |
 
 **Returns:** [Vector](_interfaces_.vector.md)
 
@@ -70,8 +70,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](_interfaces_.vector.md) | 
-| v2 | [Vector](_interfaces_.vector.md) | 
+| v1 | [Vector](_interfaces_.vector.md) |
+| v2 | [Vector](_interfaces_.vector.md) |
 
 **Returns:** [Vector](_interfaces_.vector.md)
 
@@ -88,8 +88,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](_interfaces_.vector.md) | 
-| v2 | [Vector](_interfaces_.vector.md) | 
+| v1 | [Vector](_interfaces_.vector.md) |
+| v2 | [Vector](_interfaces_.vector.md) |
 
 **Returns:** `number`
 
@@ -106,7 +106,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v | [Vector](_interfaces_.vector.md) | 
+| v | [Vector](_interfaces_.vector.md) |
 
 **Returns:** `number`
 
@@ -123,8 +123,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](_interfaces_.vector.md) | 
-| v2 | [Vector](_interfaces_.vector.md) | 
+| v1 | [Vector](_interfaces_.vector.md) |
+| v2 | [Vector](_interfaces_.vector.md) |
 
 **Returns:** [Vector](_interfaces_.vector.md)
 
@@ -141,7 +141,7 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v | [Vector](_interfaces_.vector.md) | 
+| v | [Vector](_interfaces_.vector.md) |
 
 **Returns:** [Vector](_interfaces_.vector.md)
 
@@ -158,8 +158,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| v1 | [Vector](_interfaces_.vector.md) | 
-| v2 | [Vector](_interfaces_.vector.md) | 
+| v1 | [Vector](_interfaces_.vector.md) |
+| v2 | [Vector](_interfaces_.vector.md) |
 
 **Returns:** [Vector](_interfaces_.vector.md)
 
@@ -176,8 +176,8 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| k | `number` | 
-| v | [Vector](_interfaces_.vector.md) | 
+| k | `number` |
+| v | [Vector](_interfaces_.vector.md) |
 
 **Returns:** [Vector](_interfaces_.vector.md)
 

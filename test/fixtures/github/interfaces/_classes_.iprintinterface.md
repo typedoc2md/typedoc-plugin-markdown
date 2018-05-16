@@ -36,7 +36,7 @@ It should be inherited by all subinterfaces.
 
 | Param | Type |
 | ------ | ------ |
-| value | `string` | 
+| value | `string` |
 
 **Returns:** `void`
 
