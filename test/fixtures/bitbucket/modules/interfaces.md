@@ -44,8 +44,8 @@
 
 | Param | Type |
 | ------ | ------ |
-| source | `string` | 
-| subString | `string` | 
+| source | `string` |
+| subString | `string` |
 
 **Returns:** `boolean`
 
@@ -81,9 +81,9 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| ctor | [ClockConstructor](../interfaces/interfaces.clockconstructor.md) | 
-| hour | `number` | 
-| minute | `number` | 
+| ctor | [ClockConstructor](../interfaces/interfaces.clockconstructor.md) |
+| hour | `number` |
+| minute | `number` |
 
 **Returns:** [ClockInterface](../interfaces/interfaces.clockinterface.md)
 

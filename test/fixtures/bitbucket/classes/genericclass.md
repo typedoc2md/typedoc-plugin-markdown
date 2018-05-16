@@ -41,7 +41,7 @@ This a type parameter.
 
 ⊕ **new GenericClass**(p1: *`any`*, p2: *`T`*, p3: *`number`*, p4: *`number`*, p5: *`string`*): [GenericClass](genericclass.md)
 
-*Defined in [classes.ts:284](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-284)*
+*Defined in [classes.ts:293](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-293)*
 
 Constructor short text.
 
@@ -65,7 +65,7 @@ ___
 
 **● p2**: *`T`*
 
-*Defined in [classes.ts:295](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-295)*
+*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
 
 Private string property
 
@@ -75,7 +75,7 @@ ___
 
 **● p3**: *`number`*
 
-*Defined in [classes.ts:295](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-295)*
+*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
 
 Public number property
 
@@ -85,7 +85,7 @@ ___
 
 **● p5**: *`string`*
 
-*Defined in [classes.ts:295](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-295)*
+*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
 
 Readonly property
 
@@ -95,7 +95,7 @@ ___
 
 **● value**: *`T`*
 
-*Defined in [classes.ts:284](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-284)*
+*Defined in [classes.ts:293](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-293)*
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 ▸ **getValue**(): `T`
 
-*Defined in [classes.ts:305](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-305)*
+*Defined in [classes.ts:314](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-314)*
 
 **Returns:** `T`
 
@@ -115,7 +115,7 @@ ___
 
 ▸ **setValue**(value: *`T`*): `void`
 
-*Defined in [classes.ts:301](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-301)*
+*Defined in [classes.ts:310](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-310)*
 
 **Parameters:**
 

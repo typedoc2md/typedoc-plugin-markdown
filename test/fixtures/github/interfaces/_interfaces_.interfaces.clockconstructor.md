@@ -28,8 +28,8 @@
 
 | Param | Type |
 | ------ | ------ |
-| hour | `number` | 
-| minute | `number` | 
+| hour | `number` |
+| minute | `number` |
 
 **Returns:** [ClockInterface](_interfaces_.interfaces.clockinterface.md)
 

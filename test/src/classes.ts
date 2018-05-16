@@ -272,6 +272,15 @@ export class SubClassB extends BaseClass {
 
   doSomething(value: [string, SubClassA, SubClassB]) {
   }
+
+  /**
+   * Description for doOtherThings.
+   *
+   * @param value Description for value
+   * @param secondValue Description for optional value
+   */
+  doOtherThings(value: string | number | SubClassA, secondValue?: SubClassA) {
+  }
 }
 
 /**

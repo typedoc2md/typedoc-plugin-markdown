@@ -59,7 +59,7 @@ This is a simple example on how to use BaseClass.
 
 | Param | Type |
 | ------ | ------ |
-| name | `string` | 
+| name | `string` |
 
 **Returns:** [BaseClass](baseclass.md)
 
@@ -69,7 +69,7 @@ This is a simple example on how to use BaseClass.
 
 | Param | Type |
 | ------ | ------ |
-| source | [BaseClass](baseclass.md) | 
+| source | [BaseClass](baseclass.md) |
 
 **Returns:** [BaseClass](baseclass.md)
 
@@ -199,10 +199,10 @@ ___
 
 | Param | Type |
 | ------ | ------ |
-| originalValues | [BaseClass](baseclass.md) | 
-| newRecord | `any` | 
-| fieldNames | `string`[] | 
-| mandatoryFields | `string`[] | 
+| originalValues | [BaseClass](baseclass.md) |
+| newRecord | `any` |
+| fieldNames | `string`[] |
+| mandatoryFields | `string`[] |
 
 **Returns:** `string`
 
