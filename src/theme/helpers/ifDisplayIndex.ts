@@ -10,8 +10,8 @@ import { ThemeService } from '../theme.service';
  */
 export function ifDisplayIndex(member: any, opts: any) {
   const isGitBook = ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK;
-  const classModule = member.children ? member.children[0].kind === ReflectionKind.Class : false;
-  const enumModule = member.children ? member.children[0].kind === ReflectionKind.Enum : false;
+  const classModule = member.children && member.children.length ? member.children[0].kind === ReflectionKind.Class : false;
+  const enumModule = member.children && member.children.length ? member.children[0].kind === ReflectionKind.Enum : false;
   if (
     member.displayReadme && isGitBook ||
     (isGitBook && member.kind === ReflectionKind.Class) ||

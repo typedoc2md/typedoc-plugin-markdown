@@ -8,7 +8,7 @@ import { ThemeService } from '../theme.service';
  */
 export function ifDisplayIndexItem(item: DeclarationReflection, opts: any) {
   const options = ThemeService.getOptions();
-  if (options.excludePrivate && item.flags.isPrivate) {
+  if ((item.children && item.children.length === 0) || (options.excludePrivate && item.flags.isPrivate)) {
     return opts.inverse(this);
   } else {
     return opts.fn(this);
