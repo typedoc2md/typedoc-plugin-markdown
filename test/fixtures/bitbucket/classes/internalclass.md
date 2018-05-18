@@ -24,7 +24,7 @@ This is an internal class, it is not exported.
 
 ⊕ **new InternalClass**(options: *`object`*): [InternalClass](internalclass.md)
 
-*Defined in [classes.ts:187](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-187)*
+*Defined in [classes.ts:187](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-187)*
 
 **Parameters:**
 

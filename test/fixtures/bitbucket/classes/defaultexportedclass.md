@@ -34,7 +34,7 @@ export default class DefaultExportedClass {}
 
 ⊕ **new DefaultExportedClass**(): [DefaultExportedClass](defaultexportedclass.md)
 
-*Defined in [default-export.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-50)*
+*Defined in [default-export.ts:50](https://bitbucket.org/owner/repository_name/src/master/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-50)*
 
 This is the constructor of the default exported class.
 
@@ -48,7 +48,7 @@ ___
 
 **● exportedProperty**: *`string`*
 
-*Defined in [default-export.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-50)*
+*Defined in [default-export.ts:50](https://bitbucket.org/owner/repository_name/src/master/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-50)*
 
 Property of default exported class.
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **getExportedProperty**(): `string`
 
-*Defined in [default-export.ts:62](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-62)*
+*Defined in [default-export.ts:62](https://bitbucket.org/owner/repository_name/src/master/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-62)*
 
 Method of default exported class.
 
