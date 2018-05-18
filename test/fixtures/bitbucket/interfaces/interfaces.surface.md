@@ -23,7 +23,7 @@
 
 **● diffuse**: *`function`*
 
-*Defined in [interfaces.ts:50](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-50)*
+*Defined in [interfaces.ts:50](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-50)*
 
 #### Type declaration
 ▸(pos: *[Vector](../classes/vector.md)*): [Color](../classes/color.md)
@@ -42,7 +42,7 @@ ___
 
 **● reflect**: *`function`*
 
-*Defined in [interfaces.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-52)*
+*Defined in [interfaces.ts:52](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-52)*
 
 #### Type declaration
 ▸(pos: *[Vector](../classes/vector.md)*): `number`
@@ -61,7 +61,7 @@ ___
 
 **● roughness**: *`number`*
 
-*Defined in [interfaces.ts:53](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-53)*
+*Defined in [interfaces.ts:53](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-53)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 **● specular**: *`function`*
 
-*Defined in [interfaces.ts:51](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-51)*
+*Defined in [interfaces.ts:51](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-51)*
 
 #### Type declaration
 ▸(pos: *[Vector](../classes/vector.md)*): [Color](../classes/color.md)

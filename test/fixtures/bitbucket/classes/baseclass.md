@@ -53,7 +53,7 @@ This is a simple example on how to use BaseClass.
 
 ⊕ **new BaseClass**(source: *[BaseClass](baseclass.md)*): [BaseClass](baseclass.md)
 
-*Defined in [classes.ts:78](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-78)*
+*Defined in [classes.ts:78](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-78)*
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ This is a simple example on how to use BaseClass.
 
 **Returns:** [BaseClass](baseclass.md)
 
-*Defined in [classes.ts:81](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-81)*
+*Defined in [classes.ts:81](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-81)*
 
 **Parameters:**
 
@@ -81,7 +81,7 @@ ___
 
 **● kind**: *`number`*
 
-*Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
+*Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
 
 This is a simple protected member.
 
@@ -93,7 +93,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[name](../interfaces/inameinterface.md#markdown-header-name)*
 
-*Defined in [classes.ts:60](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-60)*
+*Defined in [classes.ts:60](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-60)*
 
 This is a simple public member.
 
@@ -103,7 +103,7 @@ ___
 
 **● instance**: *[BaseClass](baseclass.md)*
 
-*Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
+*Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
 
 This is a static member.
 
@@ -115,7 +115,7 @@ ___
 
 **● instances**: *[BaseClass](baseclass.md)[]*
 
-*Defined in [classes.ts:73](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-73)*
+*Defined in [classes.ts:73](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-73)*
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 ▸ **abstractMethod**(): `void`
 
-*Defined in [classes.ts:95](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-95)*
+*Defined in [classes.ts:95](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-95)*
 
 **Returns:** `void`
 
@@ -135,7 +135,7 @@ ___
 
 ▸ **arrowFunction**(param2: *`string`*, param1: *`number`*): `void`
 
-*Defined in [classes.ts:143](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-143)*
+*Defined in [classes.ts:143](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-143)*
 
 This is a simple fat arrow function.
 
@@ -156,7 +156,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/inameinterface.md).[getName](../interfaces/inameinterface.md#markdown-header-getname)*
 
-*Defined in [classes.ts:105](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-105)*
+*Defined in [classes.ts:105](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-105)*
 
 This is a simple member function.
 
@@ -171,7 +171,7 @@ ___
 
 ▸ **setName**(name: *`string`*): `void`
 
-*Defined in [classes.ts:130](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-130)*
+*Defined in [classes.ts:130](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-130)*
 
 This is a simple member function.
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **caTest**(originalValues: *[BaseClass](baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
 
-*Defined in [classes.ts:170](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-170)*
+*Defined in [classes.ts:170](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-170)*
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
@@ -212,7 +212,7 @@ ___
 
 ▸ **getInstance**(): [BaseClass](baseclass.md)
 
-*Defined in [classes.ts:162](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-162)*
+*Defined in [classes.ts:162](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-162)*
 
 This is a static function.
 
@@ -227,7 +227,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Defined in [classes.ts:118](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-118)*
+*Defined in [classes.ts:118](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-118)*
 
 This is a simple static member function.
 

@@ -23,7 +23,7 @@ This is a simple Enumeration.
 
 **Bottom**: 
 
-*Defined in [enumerations.ts:25](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-25)*
+*Defined in [enumerations.ts:25](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-25)*
 
 A simple enum member.
 
@@ -33,7 +33,7 @@ ___
 
 **Left**: 
 
-*Defined in [enumerations.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-30)*
+*Defined in [enumerations.ts:30](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-30)*
 
 A simple enum member.
 
@@ -43,7 +43,7 @@ ___
 
 **Right**: 
 
-*Defined in [enumerations.ts:20](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-20)*
+*Defined in [enumerations.ts:20](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-20)*
 
 A simple enum member.
 
@@ -53,7 +53,7 @@ ___
 
 **Top**: 
 
-*Defined in [enumerations.ts:15](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-15)*
+*Defined in [enumerations.ts:15](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-15)*
 
 A simple enum member.
 
@@ -63,7 +63,7 @@ ___
 
 **TopLeft**:  =  Top | Left
 
-*Defined in [enumerations.ts:35](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-35)*
+*Defined in [enumerations.ts:35](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-35)*
 
 A composite enum member.
 
@@ -73,7 +73,7 @@ ___
 
 **TopRight**:  =  Top | Right
 
-*Defined in [enumerations.ts:40](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-40)*
+*Defined in [enumerations.ts:40](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-40)*
 
 A composite enum member.
 

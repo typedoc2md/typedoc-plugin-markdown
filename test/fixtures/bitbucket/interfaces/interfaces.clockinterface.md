@@ -25,7 +25,7 @@
 
 **● currentTime**: *`Date`*
 
-*Defined in [interfaces.ts:75](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-75)*
+*Defined in [interfaces.ts:75](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-75)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 ▸ **setTime**(d: *`Date`*): `any`
 
-*Defined in [interfaces.ts:76](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-76)*
+*Defined in [interfaces.ts:76](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-76)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ ___
 
 ▸ **tick**(): `any`
 
-*Defined in [interfaces.ts:83](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-83)*
+*Defined in [interfaces.ts:83](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-83)*
 
 **Returns:** `any`
 
