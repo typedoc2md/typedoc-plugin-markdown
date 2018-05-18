@@ -7,7 +7,7 @@ This is the module extending the function moduleFunction().
 ## Callable
 ▸ **moduleFunction**(arg: *`string`*): `string`
 
-*Defined in [functions.ts:150](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-150)*
+*Defined in [functions.ts:150](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-150)*
 
 This is a function that is extended by a module.
 
@@ -38,7 +38,7 @@ This is a function that is extended by a module.
 
 **● functionVariable**: *`string`*
 
-*Defined in [functions.ts:160](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-160)*
+*Defined in [functions.ts:160](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-160)*
 
 This variable is appended to a function.
 
@@ -50,7 +50,7 @@ ___
 
 ▸ **append**(): `void`
 
-*Defined in [functions.ts:166](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-166)*
+*Defined in [functions.ts:166](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-166)*
 
 This function is appended to another function.
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **prepend**(): `void`
 
-*Defined in [functions.ts:173](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-173)*
+*Defined in [functions.ts:173](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-173)*
 
 This function is appended to another function.
 

@@ -24,7 +24,7 @@
 
 ⊕ **new MyThirdClass**(arg: *[MyFourthClass](myfourthclass.md)<[MyFirstClass](myfirstclass.md), [MySecondClass](mysecondclass.md)<[MyFirstClass](myfirstclass.md)>>*): [MyThirdClass](mythirdclass.md)
 
-*Defined in [generics.ts:93](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-93)*
+*Defined in [generics.ts:93](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-93)*
 
 **Parameters:**
 
@@ -42,7 +42,7 @@ ___
 
 **● arg**: *[MyFourthClass](myfourthclass.md)<[MyFirstClass](myfirstclass.md), [MySecondClass](mysecondclass.md)<[MyFirstClass](myfirstclass.md)>>*
 
-*Defined in [generics.ts:94](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-94)*
+*Defined in [generics.ts:94](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-94)*
 
 ___
 

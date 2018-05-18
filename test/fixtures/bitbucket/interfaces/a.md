@@ -29,7 +29,7 @@ The generic type parameter.
 
 ▸ **getT**(): `T`
 
-*Defined in [generics.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-30)*
+*Defined in [generics.ts:30](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-30)*
 
 A generic member function.
 

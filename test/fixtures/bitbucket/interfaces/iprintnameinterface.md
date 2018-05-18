@@ -38,7 +38,7 @@ This is a interface inheriting from two other interfaces.
 
 *Inherited from [INameInterface](inameinterface.md).[name](inameinterface.md#markdown-header-name)*
 
-*Defined in [classes.ts:16](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-16)*
+*Defined in [classes.ts:16](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-16)*
 
 This is a interface member of INameInterface.
 
@@ -54,7 +54,7 @@ ___
 
 *Inherited from [INameInterface](inameinterface.md).[getName](inameinterface.md#markdown-header-getname)*
 
-*Defined in [classes.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-23)*
+*Defined in [classes.ts:23](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-23)*
 
 This is a interface function of INameInterface.
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [IPrintInterface](iprintinterface.md).[print](iprintinterface.md#markdown-header-print)*
 
-*Defined in [classes.ts:36](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-36)*
+*Defined in [classes.ts:36](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-36)*
 
 This is a interface function of IPrintInterface
 
@@ -90,7 +90,7 @@ ___
 
 ▸ **printName**(): `void`
 
-*Defined in [classes.ts:47](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-47)*
+*Defined in [classes.ts:47](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-47)*
 
 This is a interface function of IPrintNameInterface
 

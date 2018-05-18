@@ -34,7 +34,7 @@ The second generic type parameter.
 
 ▸ **getC**(): `C`
 
-*Defined in [generics.ts:53](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-53)*
+*Defined in [generics.ts:53](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-53)*
 
 A generic member function.
 
@@ -47,7 +47,7 @@ ___
 
 ▸ **setT**(value: *`T`*): `void`
 
-*Defined in [generics.ts:46](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-46)*
+*Defined in [generics.ts:46](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-46)*
 
 A generic member function.
 
