@@ -24,7 +24,7 @@ This is a simple interface.
 
 ▸ **print**(value: *`string`*): `void`
 
-*Defined in [classes.ts:36](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-36)*
+*Defined in [classes.ts:36](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-36)*
 
 This is a interface function of IPrintInterface
 

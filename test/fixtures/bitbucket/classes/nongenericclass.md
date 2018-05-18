@@ -38,7 +38,7 @@ This a non generic class derived from a [generic class](genericclass.md).
 
 *Inherited from [GenericClass](genericclass.md).[constructor](genericclass.md#markdown-header-constructor)*
 
-*Defined in [classes.ts:293](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-293)*
+*Defined in [classes.ts:293](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-293)*
 
 Constructor short text.
 
@@ -64,7 +64,7 @@ ___
 
 *Inherited from [GenericClass](genericclass.md).[p2](genericclass.md#markdown-header-protected-p2)*
 
-*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
+*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
 
 Private string property
 
@@ -76,7 +76,7 @@ ___
 
 *Inherited from [GenericClass](genericclass.md).[p3](genericclass.md#markdown-header-p3)*
 
-*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
+*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
 
 Public number property
 
@@ -88,7 +88,7 @@ ___
 
 *Inherited from [GenericClass](genericclass.md).[p5](genericclass.md#markdown-header-p5)*
 
-*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
+*Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
 
 Readonly property
 
@@ -100,7 +100,7 @@ ___
 
 *Inherited from [GenericClass](genericclass.md).[value](genericclass.md#markdown-header-value)*
 
-*Defined in [classes.ts:293](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-293)*
+*Defined in [classes.ts:293](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-293)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 *Inherited from [GenericClass](genericclass.md).[getValue](genericclass.md#markdown-header-getvalue)*
 
-*Defined in [classes.ts:314](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-314)*
+*Defined in [classes.ts:314](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-314)*
 
 **Returns:** [SubClassB](subclassb.md)
 
@@ -124,7 +124,7 @@ ___
 
 *Inherited from [GenericClass](genericclass.md).[setValue](genericclass.md#markdown-header-setvalue)*
 
-*Defined in [classes.ts:310](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-310)*
+*Defined in [classes.ts:310](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-310)*
 
 **Parameters:**
 
