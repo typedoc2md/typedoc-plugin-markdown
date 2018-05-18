@@ -18,7 +18,7 @@ A module that is documented as being private.
 
 ▸ **functionInsidePrivateModule**(): `void`
 
-*Defined in [access.ts:67](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-67)*
+*Defined in [access.ts:67](https://bitbucket.org/owner/repository_name/src/master/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-67)*
 
 **Returns:** `void`
 

@@ -51,7 +51,7 @@ The constructor of the original class should be overwritten.
 
 *Overrides [BaseClass](baseclass.md).[constructor](baseclass.md#markdown-header-constructor)*
 
-*Defined in [classes.ts:263](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-263)*
+*Defined in [classes.ts:263](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-263)*
 
 **Parameters:**
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#markdown-header-protected-kind)*
 
-*Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
+*Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
 
 This is a simple protected member.
 
@@ -85,7 +85,7 @@ ___
 
 *Overrides [BaseClass](baseclass.md).[name](baseclass.md#markdown-header-name)*
 
-*Defined in [classes.ts:263](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-263)*
+*Defined in [classes.ts:263](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-263)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[instance](baseclass.md#markdown-header-static-instance)*
 
-*Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
+*Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
 
 This is a static member.
 
@@ -109,7 +109,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[instances](baseclass.md#markdown-header-static-instances)*
 
-*Defined in [classes.ts:73](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-73)*
+*Defined in [classes.ts:73](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-73)*
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 *Overrides [BaseClass](baseclass.md).[abstractMethod](baseclass.md#markdown-header-abstract-abstractmethod)*
 
-*Defined in [classes.ts:269](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-269)*
+*Defined in [classes.ts:269](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-269)*
 
 **Returns:** `void`
 
@@ -133,7 +133,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[arrowFunction](baseclass.md#markdown-header-arrowfunction)*
 
-*Defined in [classes.ts:143](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-143)*
+*Defined in [classes.ts:143](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-143)*
 
 This is a simple fat arrow function.
 
@@ -152,7 +152,7 @@ ___
 
 ▸ **doOtherThings**(value: * `string` &#124; `number` &#124; [SubClassA](subclassa.md)*, secondValue?: *[SubClassA](subclassa.md)*): `void`
 
-*Defined in [classes.ts:282](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-282)*
+*Defined in [classes.ts:282](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-282)*
 
 Description for doOtherThings.
 
@@ -171,7 +171,7 @@ ___
 
 ▸ **doSomething**(value: *[`string`, [SubClassA](subclassa.md), [SubClassB](subclassb.md)]*): `void`
 
-*Defined in [classes.ts:273](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-273)*
+*Defined in [classes.ts:273](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-273)*
 
 **Parameters:**
 
@@ -191,7 +191,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-getname)*
 
-*Defined in [classes.ts:105](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-105)*
+*Defined in [classes.ts:105](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-105)*
 
 This is a simple member function.
 
@@ -208,7 +208,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[setName](baseclass.md#markdown-header-setname)*
 
-*Defined in [classes.ts:130](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-130)*
+*Defined in [classes.ts:130](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-130)*
 
 This is a simple member function.
 
@@ -230,7 +230,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[caTest](baseclass.md#markdown-header-static-catest)*
 
-*Defined in [classes.ts:170](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-170)*
+*Defined in [classes.ts:170](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-170)*
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
@@ -253,7 +253,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[getInstance](baseclass.md#markdown-header-static-getinstance)*
 
-*Defined in [classes.ts:162](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-162)*
+*Defined in [classes.ts:162](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-162)*
 
 This is a static function.
 
@@ -270,7 +270,7 @@ ___
 
 *Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-static-getname)*
 
-*Defined in [classes.ts:118](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-118)*
+*Defined in [classes.ts:118](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-118)*
 
 This is a simple static member function.
 
