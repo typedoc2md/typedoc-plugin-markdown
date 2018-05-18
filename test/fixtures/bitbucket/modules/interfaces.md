@@ -35,7 +35,7 @@
 
 **ΤSearchFunc**: *`function`*
 
-*Defined in [interfaces.ts:62](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-62)*
+*Defined in [interfaces.ts:62](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-62)*
 
 #### Type declaration
 ▸(source: *`string`*, subString: *`string`*): `boolean`
@@ -57,7 +57,7 @@ ___
 
 **● mySearch**: *[SearchFunc](interfaces.md#markdown-header-searchfunc)*
 
-*Defined in [interfaces.ts:64](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-64)*
+*Defined in [interfaces.ts:64](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-64)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 **● square**: *[Square](../interfaces/interfaces.square.md)* =  {} as Square
 
-*Defined in [interfaces.ts:98](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-98)*
+*Defined in [interfaces.ts:98](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-98)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **createClock**(ctor: *[ClockConstructor](../interfaces/interfaces.clockconstructor.md)*, hour: *`number`*, minute: *`number`*): [ClockInterface](../interfaces/interfaces.clockinterface.md)
 
-*Defined in [interfaces.ts:86](https://bitbucket.org/owner/repository_name/src/master/src/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-86)*
+*Defined in [interfaces.ts:86](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-86)*
 
 **Parameters:**
 

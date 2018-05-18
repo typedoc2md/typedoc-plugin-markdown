@@ -28,7 +28,7 @@ This comment is ignored, as the enumeration is already defined.
 
 **Large**: 
 
-*Defined in [enumerations.ts:57](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-57)*
+*Defined in [enumerations.ts:57](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-57)*
 
 A simple enum member.
 
@@ -38,7 +38,7 @@ ___
 
 **Medium**: 
 
-*Defined in [enumerations.ts:52](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-52)*
+*Defined in [enumerations.ts:52](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-52)*
 
 A simple enum member.
 
@@ -48,7 +48,7 @@ ___
 
 **Small**: 
 
-*Defined in [enumerations.ts:47](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-47)*
+*Defined in [enumerations.ts:47](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-47)*
 
 A simple enum member.
 
@@ -60,7 +60,7 @@ ___
 
 **● defaultSize**: *[Size](size.md)* =  Size.Medium
 
-*Defined in [enumerations.ts:68](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-68)*
+*Defined in [enumerations.ts:68](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-68)*
 
 A variable that is attached to an enumeration.
 
@@ -72,7 +72,7 @@ ___
 
 ▸ **isSmall**(value: *[Size](size.md)*): `boolean`
 
-*Defined in [enumerations.ts:77](https://bitbucket.org/owner/repository_name/src/master/src/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-77)*
+*Defined in [enumerations.ts:77](https://bitbucket.org/owner/repository_name/src/master/enumerations.ts?fileviewer&amp;#x3D;file-view-default#enumerations.ts-77)*
 
 A function that is attached to an enumeration.
 

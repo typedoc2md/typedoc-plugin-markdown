@@ -80,7 +80,7 @@
 
 **● amount**: *`number`* = 6
 
-*Defined in [variables.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-9)*
+*Defined in [variables.ts:9](https://bitbucket.org/owner/repository_name/src/master/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-9)*
 
 This is a number type
 
@@ -90,7 +90,7 @@ ___
 
 **● color**: *`string`* = "blue"
 
-*Defined in [variables.ts:14](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-14)*
+*Defined in [variables.ts:14](https://bitbucket.org/owner/repository_name/src/master/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-14)*
 
 This is a string type
 
@@ -100,7 +100,7 @@ ___
 
 **● commentsWithTags**: *`boolean`* = false
 
-*Defined in [doc-comments.ts:27](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-27)*
+*Defined in [doc-comments.ts:27](https://bitbucket.org/owner/repository_name/src/master/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-27)*
 
 *__name__*: AbstractMetadataModule
 
@@ -124,7 +124,7 @@ ___
 
 **● fakePrivateVariable**: *`string`* = "test"
 
-*Defined in [access.ts:12](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-12)*
+*Defined in [access.ts:12](https://bitbucket.org/owner/repository_name/src/master/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-12)*
 
 A variable that is made private via comment.
 
@@ -134,7 +134,7 @@ ___
 
 **● fakeProtectedVariable**: *`string`* = "test"
 
-*Defined in [access.ts:18](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-18)*
+*Defined in [access.ts:18](https://bitbucket.org/owner/repository_name/src/master/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-18)*
 
 A variable that is made protected via comment.
 
@@ -144,7 +144,7 @@ ___
 
 **● generalComments**: *`boolean`* = false
 
-*Defined in [doc-comments.ts:9](https://bitbucket.org/owner/repository_name/src/master/src/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-9)*
+*Defined in [doc-comments.ts:9](https://bitbucket.org/owner/repository_name/src/master/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-9)*
 
 Additionally you can link to other classes, members or functions using double square brackets.
 
@@ -156,7 +156,7 @@ ___
 
 **● isDone**: *`boolean`* = false
 
-*Defined in [variables.ts:4](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-4)*
+*Defined in [variables.ts:4](https://bitbucket.org/owner/repository_name/src/master/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-4)*
 
 This is a boolean type
 
@@ -166,7 +166,7 @@ ___
 
 **● numbers**: *`number`[]* =  [1, 2, 3]
 
-*Defined in [variables.ts:19](https://bitbucket.org/owner/repository_name/src/master/src/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-19)*
+*Defined in [variables.ts:19](https://bitbucket.org/owner/repository_name/src/master/variables.ts?fileviewer&amp;#x3D;file-view-default#variables.ts-19)*
 
 This is an array type
 
@@ -178,7 +178,7 @@ ___
 
 ▸ **createSomething**(): `object`
 
-*Defined in [functions.ts:183](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-183)*
+*Defined in [functions.ts:183](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-183)*
 
 A function that returns an object. Also no type information is given, the object should be correctly reflected.
 
@@ -190,7 +190,7 @@ ___
 
 ▸ **exportedFunction**(): `void`
 
-*Defined in [functions.ts:19](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-19)*
+*Defined in [functions.ts:19](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-19)*
 
 This is a simple exported function.
 
@@ -202,7 +202,7 @@ ___
 
 ▸ **fakePrivateFunction**(): `void`
 
-*Defined in [access.ts:24](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-24)*
+*Defined in [access.ts:24](https://bitbucket.org/owner/repository_name/src/master/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-24)*
 
 A function that is made private via comment.
 
@@ -214,7 +214,7 @@ ___
 
 ▸ **fakeProtectedFunction**(): `void`
 
-*Defined in [access.ts:30](https://bitbucket.org/owner/repository_name/src/master/src/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-30)*
+*Defined in [access.ts:30](https://bitbucket.org/owner/repository_name/src/master/access.ts?fileviewer&amp;#x3D;file-view-default#access.ts-30)*
 
 A function that is made protected via comment.
 
@@ -226,7 +226,7 @@ ___
 
 ▸ **flattenedCallback**(callback: *`function`*): `void`
 
-*Defined in [flattened.ts:93](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-93)*
+*Defined in [flattened.ts:93](https://bitbucket.org/owner/repository_name/src/master/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-93)*
 
 A function that has a parameter that requires a typed function callback.
 
@@ -244,7 +244,7 @@ ___
 
 ▸ **flattenedIndexSignature**(indexed: *`object`*): `void`
 
-*Defined in [flattened.ts:122](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-122)*
+*Defined in [flattened.ts:122](https://bitbucket.org/owner/repository_name/src/master/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-122)*
 
 A function that accepts an index signature parameter.
 
@@ -262,7 +262,7 @@ ___
 
 ▸ **flattenedParameter**(options: *`object`*): `void`
 
-*Defined in [flattened.ts:105](https://bitbucket.org/owner/repository_name/src/master/src/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-105)*
+*Defined in [flattened.ts:105](https://bitbucket.org/owner/repository_name/src/master/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-105)*
 
 A function that accepts an option object defined inline.
 
@@ -280,7 +280,7 @@ ___
 
 ▸ **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
 
-*Defined in [functions.ts:59](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-59)*
+*Defined in [functions.ts:59](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-59)*
 
 This is a function with multiple arguments and a return value.
 
@@ -300,7 +300,7 @@ ___
 
 ▸ **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE?: *`boolean`*): `string`
 
-*Defined in [functions.ts:79](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-79)*
+*Defined in [functions.ts:79](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-79)*
 
 This is a function with a parameter that has a default value.
 
@@ -323,7 +323,7 @@ ___
 
 ▸ **functionWithDocLink**(): `void`
 
-*Defined in [functions.ts:199](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-199)*
+*Defined in [functions.ts:199](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-199)*
 
 See [`INameInterface`](interfaces/inameinterface.md) and [INameInterface's name property](interfaces/inameinterface.md#markdown-header-name). Also, check out [Google](http://www.google.com) and [GitHub](https://github.com).
 
@@ -337,7 +337,7 @@ ___
 
 ▸ **functionWithOptionalValue**(requiredParam: *`string`*, optionalParam?: *`string`*): `void`
 
-*Defined in [functions.ts:70](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-70)*
+*Defined in [functions.ts:70](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-70)*
 
 This is a function with a parameter that is optional.
 
@@ -356,7 +356,7 @@ ___
 
 ▸ **functionWithRest**(...rest: *`string`[]*): `string`
 
-*Defined in [functions.ts:96](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-96)*
+*Defined in [functions.ts:96](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-96)*
 
 This is a function with rest parameter.
 
@@ -375,7 +375,7 @@ ___
 
 ▸ **genericFunction**T(value: *`T`*): `T`
 
-*Defined in [functions.ts:140](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-140)*
+*Defined in [functions.ts:140](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-140)*
 
 This is a generic function.
 
@@ -400,7 +400,7 @@ ___
 
 ▸ **getGenericArray**(): `Array`<`string`>
 
-*Defined in [generics.ts:83](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-83)*
+*Defined in [generics.ts:83](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-83)*
 
 A function returning a generic array with type parameters.
 
@@ -413,7 +413,7 @@ ___
 
 ▸ **internalFunction**(): `void`
 
-*Defined in [functions.ts:13](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-13)*
+*Defined in [functions.ts:13](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-13)*
 
 This is an internal function.
 
@@ -427,7 +427,7 @@ ___
 
 ▸ **multipleSignatures**(value: *`object`*): `string`
 
-*Defined in [functions.ts:106](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-106)*
+*Defined in [functions.ts:106](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-106)*
 
 This is the first signature of a function with multiple signatures.
 
@@ -439,7 +439,7 @@ This is the first signature of a function with multiple signatures.
 
 **Returns:** `string`
 
-*Defined in [functions.ts:114](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-114)*
+*Defined in [functions.ts:114](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-114)*
 
 This is the second signature of a function with multiple signatures.
 
@@ -457,7 +457,7 @@ ___
 
 ▸ **testFunction**T(value: *`T`*): `T`
 
-*Defined in [generics.ts:15](https://bitbucket.org/owner/repository_name/src/master/src/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-15)*
+*Defined in [generics.ts:15](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-15)*
 
 A generic function
 
@@ -482,7 +482,7 @@ ___
 
 ▸ **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](interfaces/inameinterface.md)*): `number`
 
-*Defined in [functions.ts:38](https://bitbucket.org/owner/repository_name/src/master/src/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-38)*
+*Defined in [functions.ts:38](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-38)*
 
 This is a function with multiple arguments and a return value.
 

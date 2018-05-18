@@ -34,7 +34,7 @@ export {NotExportedClassName as ExportedClassName};
 
 ⊕ **new NotExportedClassName**(): [NotExportedClassName](notexportedclassname.md)
 
-*Defined in [default-export.ts:21](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-21)*
+*Defined in [default-export.ts:21](https://bitbucket.org/owner/repository_name/src/master/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-21)*
 
 This is the constructor of the NotExportedClassName class.
 
@@ -48,7 +48,7 @@ ___
 
 **● notExportedProperty**: *`string`*
 
-*Defined in [default-export.ts:21](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-21)*
+*Defined in [default-export.ts:21](https://bitbucket.org/owner/repository_name/src/master/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-21)*
 
 Property of NotExportedClassName class.
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **getNotExportedProperty**(): `string`
 
-*Defined in [default-export.ts:33](https://bitbucket.org/owner/repository_name/src/master/src/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-33)*
+*Defined in [default-export.ts:33](https://bitbucket.org/owner/repository_name/src/master/default-export.ts?fileviewer&amp;#x3D;file-view-default#default-export.ts-33)*
 
 Method of NotExportedClassName class.
 

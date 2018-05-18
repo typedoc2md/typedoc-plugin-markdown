@@ -34,7 +34,7 @@ This is a simple interface.
 
 **● name**: *`string`*
 
-*Defined in [classes.ts:16](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-16)*
+*Defined in [classes.ts:16](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-16)*
 
 This is a interface member of INameInterface.
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Defined in [classes.ts:23](https://bitbucket.org/owner/repository_name/src/master/src/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-23)*
+*Defined in [classes.ts:23](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-23)*
 
 This is a interface function of INameInterface.
 
