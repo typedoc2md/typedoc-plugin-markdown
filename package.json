@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-markdown",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "A plugin for Typedoc that exposes a theme and additional arguments for rendering markdown.",
   "main": "dist/index.js",
   "files": [
