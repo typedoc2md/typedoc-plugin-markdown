@@ -8,7 +8,6 @@
   ],
   "scripts": {
     "copy:static": "copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
     "mocks": "npm run mocks:github && npm run mocks:bitbucket && npm run mocks:gitbook",
     "mocks:github": "typedoc ./test/src --out ./test/out/github --theme markdown --gitRevision master --media test/src/media/ --includes test/src/inc/",
     "mocks:bitbucket": "typedoc ./test/src --out ./test/out/bitbucket --theme markdown --gitRevision master --media test/src/media/ --includes test/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
@@ -16,9 +15,10 @@
     "examples": "rm -rf examples/out && typedoc ./examples/src --out ./examples/out --theme markdown --gitRevision master --readme none --media test/src/media/ --includes test/src/inc/",
     "lint": "tslint --project ./src/tsconfig.json",
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
-    "prepublishOnly": "npm run prepare && npm run lint && npm run test",
-    "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run mocks",
-    "test": "mocha test/test.js"
+    "prepublishOnly": "npm install && npm run lint && npm run test",
+    "pretest": "npm run link && rm -rf tests/out && npm run mocks",
+    "test": "mocha test/test.js",
+    "link": "npm link && npm link typedoc-plugin-markdown"
   },
   "author": "Thomas Grey",
   "license": "MIT",
