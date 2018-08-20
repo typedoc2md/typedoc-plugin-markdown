@@ -9,13 +9,14 @@ node_js:
   - '9'
   - '8'
   - '7'
-  - '6'
 before_script:
-  - npm prune
 script:
-  - npm run prepublishOnly
+  - npm run test
 after_success:
-
+install:
+  - rm -rf node_modules/typedoc-plugin-markdown
+  - npm prune
+  - npm install
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
