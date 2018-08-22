@@ -33,7 +33,7 @@
 
 ###  SearchFunc
 
-**ΤSearchFunc**: *`function`*
+**Ƭ SearchFunc**: *`function`*
 
 *Defined in [interfaces.ts:62](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-62)*
 
