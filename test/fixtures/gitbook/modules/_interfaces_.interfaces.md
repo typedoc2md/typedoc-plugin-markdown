@@ -33,7 +33,7 @@
 
 ##  SearchFunc
 
-**ΤSearchFunc**: *`function`*
+**Ƭ SearchFunc**: *`function`*
 
 *Defined in [interfaces.ts:62](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L62)*
 

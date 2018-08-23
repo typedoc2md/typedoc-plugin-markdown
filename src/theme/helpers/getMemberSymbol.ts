@@ -12,7 +12,7 @@ export function getMemberSymbol(kindString: string) {
       symbol = '▸ ';
       break;
     case 'Type alias':
-      symbol = 'Τ';
+      symbol = 'Ƭ ';
       break;
     case 'Property':
     case 'Variable':
