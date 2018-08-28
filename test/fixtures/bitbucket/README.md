@@ -373,7 +373,7 @@ ___
 
 ###  genericFunction
 
-▸ **genericFunction**T(value: *`T`*): `T`
+▸ **genericFunction**<`T`>(value: *`T`*): `T`
 
 *Defined in [functions.ts:140](https://bitbucket.org/owner/repository_name/src/master/functions.ts?fileviewer&amp;#x3D;file-view-default#functions.ts-140)*
 
@@ -455,7 +455,7 @@ ___
 
 ###  testFunction
 
-▸ **testFunction**T(value: *`T`*): `T`
+▸ **testFunction**<`T`>(value: *`T`*): `T`
 
 *Defined in [generics.ts:15](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-15)*
 

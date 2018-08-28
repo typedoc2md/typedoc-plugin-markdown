@@ -48,7 +48,7 @@ ___
 
 ###  testFunction
 
-▸ **testFunction**T(value: *`T`*): `T`
+▸ **testFunction**<`T`>(value: *`T`*): `T`
 
 *Defined in [generics.ts:15](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/generics.ts#L15)*
 
