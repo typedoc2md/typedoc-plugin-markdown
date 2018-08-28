@@ -132,7 +132,7 @@ ___
 
 ##  genericFunction
 
-▸ **genericFunction**T(value: *`T`*): `T`
+▸ **genericFunction**<`T`>(value: *`T`*): `T`
 
 *Defined in [functions.ts:140](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L140)*
 
