@@ -13,6 +13,7 @@
 * [&quot;default-export&quot;](modules/_default_export_.md)
   * [DefaultExportedClass](classes/_default_export_.defaultexportedclass.md)
   * [NotExportedClassName](classes/_default_export_.notexportedclassname.md)
+* [&quot;destructuring&quot;](modules/_destructuring_.md)
 * [&quot;doc-comments&quot;](modules/_doc_comments_.md)
 * [&quot;enumerations&quot;](modules/_enumerations_.md)
   * [Directions](enums/_enumerations_.directions.md)

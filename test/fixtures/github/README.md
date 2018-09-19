@@ -11,6 +11,7 @@ Some example output of the plugin.
 * ["access"](modules/_access_.md)
 * ["classes"](modules/_classes_.md)
 * ["default-export"](modules/_default_export_.md)
+* ["destructuring"](modules/_destructuring_.md)
 * ["doc-comments"](modules/_doc_comments_.md)
 * ["enumerations"](modules/_enumerations_.md)
 * ["flattened"](modules/_flattened_.md)

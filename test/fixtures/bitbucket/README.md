@@ -47,6 +47,17 @@
 * [amount](#markdown-header-const-amount)
 * [color](#markdown-header-const-color)
 * [commentsWithTags](#markdown-header-const-commentswithtags)
+* [destructArrayA](#markdown-header-destructarraya)
+* [destructArrayB](#markdown-header-destructarrayb)
+* [destructArrayC](#markdown-header-destructarrayc)
+* [destructArrayWithIgnoresA](#markdown-header-destructarraywithignoresa)
+* [destructArrayWithIgnoresRest](#markdown-header-destructarraywithignoresrest)
+* [destructArrayWithRest](#markdown-header-destructarraywithrest)
+* [destructArrayWithRestA](#markdown-header-destructarraywithresta)
+* [destructArrayWithRestB](#markdown-header-destructarraywithrestb)
+* [destructObjectA](#markdown-header-destructobjecta)
+* [destructObjectB](#markdown-header-destructobjectb)
+* [destructObjectC](#markdown-header-destructobjectc)
 * [fakeProtectedVariable](#markdown-header-protected-fakeprotectedvariable)
 * [generalComments](#markdown-header-const-generalcomments)
 * [isDone](#markdown-header-const-isdone)
@@ -55,6 +66,8 @@
 ### Functions
 
 * [createSomething](#markdown-header-createsomething)
+* [dest](#markdown-header-dest)
+* [drawText](#markdown-header-drawtext)
 * [exportedFunction](#markdown-header-exportedfunction)
 * [fakeProtectedFunction](#markdown-header-protected-fakeprotectedfunction)
 * [flattenedCallback](#markdown-header-flattenedcallback)
@@ -117,6 +130,94 @@ ___
  "providers": []
 }
 ```
+
+___
+
+###  destructArrayA
+
+**● destructArrayA**: *`number`*
+
+*Defined in [destructuring.ts:10](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-10)*
+
+___
+
+###  destructArrayB
+
+**● destructArrayB**: *`string`*
+
+*Defined in [destructuring.ts:10](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-10)*
+
+___
+
+###  destructArrayC
+
+**● destructArrayC**: *`number`* = 10
+
+*Defined in [destructuring.ts:10](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-10)*
+
+___
+
+###  destructArrayWithIgnoresA
+
+**● destructArrayWithIgnoresA**: *`number`*
+
+*Defined in [destructuring.ts:20](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-20)*
+
+___
+
+###  destructArrayWithIgnoresRest
+
+**● destructArrayWithIgnoresRest**: *`number`[]*
+
+*Defined in [destructuring.ts:20](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-20)*
+
+___
+
+###  destructArrayWithRest
+
+**● destructArrayWithRest**: *`number`[]*
+
+*Defined in [destructuring.ts:15](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-15)*
+
+___
+
+###  destructArrayWithRestA
+
+**● destructArrayWithRestA**: *`number`*
+
+*Defined in [destructuring.ts:15](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-15)*
+
+___
+
+###  destructArrayWithRestB
+
+**● destructArrayWithRestB**: *`number`*
+
+*Defined in [destructuring.ts:15](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-15)*
+
+___
+
+###  destructObjectA
+
+**● destructObjectA**: *`number`*
+
+*Defined in [destructuring.ts:5](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-5)*
+
+___
+
+###  destructObjectB
+
+**● destructObjectB**: *`string`*
+
+*Defined in [destructuring.ts:5](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-5)*
+
+___
+
+###  destructObjectC
+
+**● destructObjectC**: *`number`*
+
+*Defined in [destructuring.ts:5](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-5)*
 
 ___
 
@@ -186,6 +287,59 @@ A function that returns an object. Also no type information is given, the object
 
 ___
 
+###  dest
+
+▸ **dest**(__namedParameters: *`object`*): `string`
+
+*Defined in [destructuring.ts:34](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-34)*
+
+**Parameters:**
+
+**__namedParameters: `object`**
+
+| Param | Type |
+| ------ | ------ |
+| b | `string` |
+| c | `number` |
+
+**Returns:** `string`
+
+___
+
+###  drawText
+
+▸ **drawText**(a: *`any`*, __namedParameters: *`object`*, __namedParameters: *`object`*, b: *`any`*): `number`
+
+*Defined in [destructuring.ts:30](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-30)*
+
+Destructuring function parameters.
+
+**Parameters:**
+
+**a: `any`**
+
+This is a normal param
+
+**__namedParameters: `object`**
+
+| Param | Type | Default value |
+| ------ | ------ | ------ |
+| n | `boolean` | true |
+
+**__namedParameters: `object`**
+
+| Param | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| bold | `boolean` | false |  Should it be bold? |
+| location | [`number`, `number`] |  [0, 0] |  This is the location |
+| text | `string` | &quot;&quot; |  This is the text |
+
+**b: `any`**
+
+**Returns:** `number`
+
+___
+
 ###  exportedFunction
 
 ▸ **exportedFunction**(): `void`
@@ -250,9 +404,13 @@ A function that accepts an index signature parameter.
 
 **Parameters:**
 
+**indexed: `object`**
+
+The index signature parameter.
+
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| indexed | `object` |  The index signature parameter. |
+| test | `string` |  A property of the index signature instance. |
 
 **Returns:** `void`
 
@@ -268,9 +426,15 @@ A function that accepts an option object defined inline.
 
 **Parameters:**
 
+**options: `object`**
+
+The inline typed options object.
+
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| options | `object` |  The inline typed options object. |
+| `Optional` anotherValue | `string` |  Another value on the options object parameter. |
+| `Optional` moreOptions | `object` |  A typed child object of the options object. |
+| `Optional` value | `string` |  A value on the options object parameter. |
 
 **Returns:** `void`
 
@@ -445,9 +609,13 @@ This is the second signature of a function with multiple signatures.
 
 **Parameters:**
 
+**value: `object`**
+
+An object containing the name value.
+
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `object` |  An object containing the name value. |
+| name | `string` |  A value of the object. |
 
 **Returns:** `string`
 

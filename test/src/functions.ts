@@ -198,4 +198,4 @@ export function createSomething() {
  */
 export function functionWithDocLink(): void { }
 
- /* tslint:enable */
+/* tslint:enable */

@@ -193,9 +193,13 @@ This is the second signature of a function with multiple signatures.
 
 **Parameters:**
 
+**value: `object`**
+
+An object containing the name value.
+
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| value | `object` |  An object containing the name value. |
+| name | `string` |  A value of the object. |
 
 **Returns:** `string`
 

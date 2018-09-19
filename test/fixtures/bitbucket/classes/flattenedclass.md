@@ -35,9 +35,15 @@ A constructor that accepts an option object defined inline.
 
 **Parameters:**
 
+**options: `object`**
+
+The inline typed options object.
+
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| options | `object` |  The inline typed options object. |
+| `Optional` anotherValue | `string` |  Another value on the options object parameter. |
+| `Optional` moreOptions | `object` |  A typed child object of the options object. |
+| `Optional` value | `string` |  A value on the options object parameter. |
 
 **Returns:** [flattenedClass](flattenedclass.md)
 
