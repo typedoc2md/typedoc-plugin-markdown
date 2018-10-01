@@ -33,7 +33,7 @@
 
 **● destructArrayA**: *`number`*
 
-*Defined in destructuring.ts:10*
+*Defined in [destructuring.ts:10](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L10)*
 
 ___
 <a id="destructarrayb"></a>
@@ -42,7 +42,7 @@ ___
 
 **● destructArrayB**: *`string`*
 
-*Defined in destructuring.ts:10*
+*Defined in [destructuring.ts:10](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L10)*
 
 ___
 <a id="destructarrayc"></a>
@@ -51,7 +51,7 @@ ___
 
 **● destructArrayC**: *`number`* = 10
 
-*Defined in destructuring.ts:10*
+*Defined in [destructuring.ts:10](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L10)*
 
 ___
 <a id="destructarraywithignoresa"></a>
@@ -60,7 +60,7 @@ ___
 
 **● destructArrayWithIgnoresA**: *`number`*
 
-*Defined in destructuring.ts:20*
+*Defined in [destructuring.ts:20](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L20)*
 
 ___
 <a id="destructarraywithignoresrest"></a>
@@ -69,7 +69,7 @@ ___
 
 **● destructArrayWithIgnoresRest**: *`number`[]*
 
-*Defined in destructuring.ts:20*
+*Defined in [destructuring.ts:20](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L20)*
 
 ___
 <a id="destructarraywithrest"></a>
@@ -78,7 +78,7 @@ ___
 
 **● destructArrayWithRest**: *`number`[]*
 
-*Defined in destructuring.ts:15*
+*Defined in [destructuring.ts:15](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L15)*
 
 ___
 <a id="destructarraywithresta"></a>
@@ -87,7 +87,7 @@ ___
 
 **● destructArrayWithRestA**: *`number`*
 
-*Defined in destructuring.ts:15*
+*Defined in [destructuring.ts:15](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L15)*
 
 ___
 <a id="destructarraywithrestb"></a>
@@ -96,7 +96,7 @@ ___
 
 **● destructArrayWithRestB**: *`number`*
 
-*Defined in destructuring.ts:15*
+*Defined in [destructuring.ts:15](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L15)*
 
 ___
 <a id="destructobjecta"></a>
@@ -105,7 +105,7 @@ ___
 
 **● destructObjectA**: *`number`*
 
-*Defined in destructuring.ts:5*
+*Defined in [destructuring.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L5)*
 
 ___
 <a id="destructobjectb"></a>
@@ -114,7 +114,7 @@ ___
 
 **● destructObjectB**: *`string`*
 
-*Defined in destructuring.ts:5*
+*Defined in [destructuring.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L5)*
 
 ___
 <a id="destructobjectc"></a>
@@ -123,7 +123,7 @@ ___
 
 **● destructObjectC**: *`number`*
 
-*Defined in destructuring.ts:5*
+*Defined in [destructuring.ts:5](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L5)*
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 ▸ **dest**(__namedParameters: *`object`*): `string`
 
-*Defined in destructuring.ts:34*
+*Defined in [destructuring.ts:34](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L34)*
 
 **Parameters:**
 
@@ -155,7 +155,7 @@ ___
 
 ▸ **drawText**(a: *`any`*, __namedParameters: *`object`*, __namedParameters: *`object`*, b: *`any`*): `number`
 
-*Defined in destructuring.ts:30*
+*Defined in [destructuring.ts:30](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L30)*
 
 Destructuring function parameters.
 
