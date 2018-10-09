@@ -1,8 +1,8 @@
 # typedoc-plugin-markdown
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
-[![Build Status](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyjs/typedoc-plugin-markdown)
-[![Greenkeeper badge](https://badges.greenkeeper.io/tgreyjs/typedoc-plugin-markdown.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
+[![Greenkeeper badge](https://badges.greenkeeper.io/tgreyuk/typedoc-plugin-markdown.svg)](https://greenkeeper.io/)
 
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes a theme and additional arguments for rendering markdown.
 
@@ -18,13 +18,13 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 
 The plugin provides an additional markdown theme:
 
-*shell:*
+#### shell
 
 ```bash
 $ node_modules/.bin/typedoc --theme markdown
 ```
 
-*npm script:*
+#### npm script
 
 ```json
 "scripts": {
