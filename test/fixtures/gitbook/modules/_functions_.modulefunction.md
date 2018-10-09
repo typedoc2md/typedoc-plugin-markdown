@@ -5,7 +5,7 @@ This is the module extending the function moduleFunction().
 # Callable
 ▸ **moduleFunction**(arg: *`string`*): `string`
 
-*Defined in [functions.ts:150](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L150)*
+*Defined in [functions.ts:150](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L150)*
 
 This is a function that is extended by a module.
 
@@ -38,7 +38,7 @@ This is a function that is extended by a module.
 
 **● functionVariable**: *`string`*
 
-*Defined in [functions.ts:160](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L160)*
+*Defined in [functions.ts:160](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L160)*
 
 This variable is appended to a function.
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **append**(): `void`
 
-*Defined in [functions.ts:166](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L166)*
+*Defined in [functions.ts:166](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L166)*
 
 This function is appended to another function.
 
@@ -65,7 +65,7 @@ ___
 
 ▸ **prepend**(): `void`
 
-*Defined in [functions.ts:173](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L173)*
+*Defined in [functions.ts:173](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/functions.ts#L173)*
 
 This function is appended to another function.
 

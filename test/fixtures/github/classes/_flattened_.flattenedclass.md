@@ -31,7 +31,7 @@ A class that contains members with flattened properties.
 
 ⊕ **new flattenedClass**(options: *`object`*): [flattenedClass](_flattened_.flattenedclass.md)
 
-*Defined in [flattened.ts:64](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L64)*
+*Defined in [flattened.ts:64](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L64)*
 
 A constructor that accepts an option object defined inline.
 
@@ -59,7 +59,7 @@ ___
 
 **● callback**: *`function`*
 
-*Defined in [flattened.ts:35](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L35)*
+*Defined in [flattened.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L35)*
 
 A member that holds a callback that requires a typed function signature.
 
@@ -82,7 +82,7 @@ ___
 
 **● indexed**: *`object`*
 
-*Defined in [flattened.ts:43](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L43)*
+*Defined in [flattened.ts:43](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L43)*
 
 A member that holds an index signature.
 
@@ -105,7 +105,7 @@ ___
 
 **● multipleCallSignatures**: *`function`*
 
-*Defined in [flattened.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L52)*
+*Defined in [flattened.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L52)*
 
 An object with multiple call signatures.
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/27](https://github.com/sebastian-lenz/typedoc/issues/27)
@@ -136,7 +136,7 @@ ___
 
 **● options**: *`object`*
 
-*Defined in [flattened.ts:21](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L21)*
+*Defined in [flattened.ts:21](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L21)*
 
 A member that accepts an option object defined inline.
 

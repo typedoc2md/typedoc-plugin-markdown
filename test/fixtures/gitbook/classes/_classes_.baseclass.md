@@ -28,7 +28,7 @@ This is a simple example on how to use BaseClass.
 
 ⊕ **new BaseClass**(source: *[BaseClass](_classes_.baseclass.md)*): [BaseClass](_classes_.baseclass.md)
 
-*Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L78)*
+*Defined in [classes.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L78)*
 
 **Parameters:**
 
@@ -38,7 +38,7 @@ This is a simple example on how to use BaseClass.
 
 **Returns:** [BaseClass](_classes_.baseclass.md)
 
-*Defined in [classes.ts:81](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L81)*
+*Defined in [classes.ts:81](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L81)*
 
 **Parameters:**
 
@@ -58,7 +58,7 @@ ___
 
 **● internalClass**: *[InternalClass](_classes_.internalclass.md)<`keyof BaseClass`>*
 
-*Defined in [classes.ts:78](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L78)*
+*Defined in [classes.ts:78](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L78)*
 
 This is an instance member of an internal class.
 
@@ -69,7 +69,7 @@ ___
 
 **● kind**: *`number`*
 
-*Defined in [classes.ts:65](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L65)*
+*Defined in [classes.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L65)*
 
 This is a simple protected member.
 
@@ -82,7 +82,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[name](../interfaces/_classes_.inameinterface.md#name)*
 
-*Defined in [classes.ts:60](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L60)*
+*Defined in [classes.ts:60](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L60)*
 
 This is a simple public member.
 
@@ -93,7 +93,7 @@ ___
 
 **● instance**: *[BaseClass](_classes_.baseclass.md)*
 
-*Defined in [classes.ts:72](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L72)*
+*Defined in [classes.ts:72](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L72)*
 
 This is a static member.
 
@@ -106,7 +106,7 @@ ___
 
 **● instances**: *[BaseClass](_classes_.baseclass.md)[]*
 
-*Defined in [classes.ts:73](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L73)*
+*Defined in [classes.ts:73](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L73)*
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 ▸ **abstractMethod**(): `void`
 
-*Defined in [classes.ts:95](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L95)*
+*Defined in [classes.ts:95](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L95)*
 
 **Returns:** `void`
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **arrowFunction**(param2: *`string`*, param1: *`number`*): `void`
 
-*Defined in [classes.ts:143](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L143)*
+*Defined in [classes.ts:143](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L143)*
 
 This is a simple fat arrow function.
 
@@ -149,7 +149,7 @@ ___
 
 ▸ **checkName**(): `boolean`
 
-*Defined in [classes.ts:150](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L150)*
+*Defined in [classes.ts:150](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L150)*
 
 This is a private function.
 
@@ -164,7 +164,7 @@ ___
 
 *Implementation of [INameInterface](../interfaces/_classes_.inameinterface.md).[getName](../interfaces/_classes_.inameinterface.md#getname)*
 
-*Defined in [classes.ts:105](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L105)*
+*Defined in [classes.ts:105](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L105)*
 
 This is a simple member function.
 
@@ -180,7 +180,7 @@ ___
 
 ▸ **setName**(name: *`string`*): `void`
 
-*Defined in [classes.ts:130](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L130)*
+*Defined in [classes.ts:130](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L130)*
 
 This is a simple member function.
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **caTest**(originalValues: *[BaseClass](_classes_.baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
 
-*Defined in [classes.ts:170](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L170)*
+*Defined in [classes.ts:170](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L170)*
 
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/42](https://github.com/sebastian-lenz/typedoc/issues/42)
 
@@ -223,7 +223,7 @@ ___
 
 ▸ **getInstance**(): [BaseClass](_classes_.baseclass.md)
 
-*Defined in [classes.ts:162](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L162)*
+*Defined in [classes.ts:162](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L162)*
 
 This is a static function.
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Defined in [classes.ts:118](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L118)*
+*Defined in [classes.ts:118](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L118)*
 
 This is a simple static member function.
 

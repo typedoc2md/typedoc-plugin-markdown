@@ -34,7 +34,7 @@ Examples taken from the TypeDoc 'functions' examples directory ([https://github.
 
 ▸ **createSomething**(): `object`
 
-*Defined in [functions.ts:186](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L186)*
+*Defined in [functions.ts:186](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L186)*
 
 A function that returns an object. Also no type information is given, the object should be correctly reflected.
 
@@ -47,7 +47,7 @@ ___
 
 ▸ **exportedFunction**(): `void`
 
-*Defined in [functions.ts:22](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L22)*
+*Defined in [functions.ts:22](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L22)*
 
 This is a simple exported function.
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **functionWithArguments**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): `number`
 
-*Defined in [functions.ts:62](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L62)*
+*Defined in [functions.ts:62](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L62)*
 
 This is a function with multiple arguments and a return value.
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **functionWithDefaults**(valueA?: *`string`*, valueB?: *`number`*, valueC?: *`number`*, valueD?: *`boolean`*, valueE?: *`boolean`*): `string`
 
-*Defined in [functions.ts:82](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L82)*
+*Defined in [functions.ts:82](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L82)*
 
 This is a function with a parameter that has a default value.
 
@@ -105,7 +105,7 @@ ___
 
 ▸ **functionWithDocLink**(): `void`
 
-*Defined in [functions.ts:202](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L202)*
+*Defined in [functions.ts:202](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L202)*
 
 See [`INameInterface`](../interfaces/_classes_.inameinterface.md) and [INameInterface's name property](../interfaces/_classes_.inameinterface.md#name). Also, check out [Google](http://www.google.com) and [GitHub](https://github.com).
 
@@ -120,7 +120,7 @@ ___
 
 ▸ **functionWithOptionalValue**(requiredParam: *`string`*, optionalParam?: *`string`*): `void`
 
-*Defined in [functions.ts:73](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L73)*
+*Defined in [functions.ts:73](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L73)*
 
 This is a function with a parameter that is optional.
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **functionWithRest**(...rest: *`string`[]*): `string`
 
-*Defined in [functions.ts:99](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L99)*
+*Defined in [functions.ts:99](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L99)*
 
 This is a function with rest parameter.
 
@@ -160,7 +160,7 @@ ___
 
 ▸ **genericFunction**T(value: *`T`*): `T`
 
-*Defined in [functions.ts:143](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L143)*
+*Defined in [functions.ts:143](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L143)*
 
 This is a generic function.
 
@@ -186,7 +186,7 @@ ___
 
 ▸ **internalFunction**(): `void`
 
-*Defined in [functions.ts:16](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L16)*
+*Defined in [functions.ts:16](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L16)*
 
 This is an internal function.
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **multipleSignatures**(value: *`object`*): `string`
 
-*Defined in [functions.ts:109](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L109)*
+*Defined in [functions.ts:109](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L109)*
 
 This is the first signature of a function with multiple signatures.
 
@@ -213,7 +213,7 @@ This is the first signature of a function with multiple signatures.
 
 **Returns:** `string`
 
-*Defined in [functions.ts:117](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L117)*
+*Defined in [functions.ts:117](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L117)*
 
 This is the second signature of a function with multiple signatures.
 
@@ -232,7 +232,7 @@ ___
 
 ▸ **variableFunction**(paramZ: *`string`*, paramG: *`any`*, paramA: *[INameInterface](../interfaces/_classes_.inameinterface.md)*): `number`
 
-*Defined in [functions.ts:41](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L41)*
+*Defined in [functions.ts:41](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L41)*
 
 This is a function with multiple arguments and a return value.
 

@@ -26,7 +26,7 @@ This is a simple interface.
 
 ▸ **print**(value: *`string`*): `void`
 
-*Defined in [classes.ts:36](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L36)*
+*Defined in [classes.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L36)*
 
 This is a interface function of IPrintInterface
 
