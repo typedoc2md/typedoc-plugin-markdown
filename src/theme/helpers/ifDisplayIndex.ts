@@ -12,6 +12,7 @@ export function ifDisplayIndex(member: any, opts: any) {
   const isGitBook = ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK;
   const classModule = member.children && member.children.length ? member.children[0].kind === ReflectionKind.Class : false;
   const enumModule = member.children && member.children.length ? member.children[0].kind === ReflectionKind.Enum : false;
+  const interfaceModule = member.children && member.children.length ? member.children[0].kind === ReflectionKind.Interface : false;
   if (
     member.displayReadme && isGitBook ||
     (isGitBook && member.kind === ReflectionKind.Class) ||
@@ -19,7 +20,8 @@ export function ifDisplayIndex(member: any, opts: any) {
     ||
     (
       (isGitBook && member.kind === ReflectionKind.ExternalModule && !classModule) &&
-      (isGitBook && member.kind === ReflectionKind.ExternalModule && !enumModule))
+      (isGitBook && member.kind === ReflectionKind.ExternalModule && !enumModule) &&
+      (isGitBook && member.kind === ReflectionKind.ExternalModule && !interfaceModule))
   ) {
     return opts.inverse(this);
   } else {
