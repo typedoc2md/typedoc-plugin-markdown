@@ -25,7 +25,7 @@
 
 **● diffuse**: *`function`*
 
-*Defined in [interfaces.ts:50](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L50)*
+*Defined in [interfaces.ts:50](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L50)*
 
 #### Type declaration
 ▸(pos: *[Vector](../classes/_interfaces_.vector.md)*): [Color](../classes/_interfaces_.color.md)
@@ -45,7 +45,7 @@ ___
 
 **● reflect**: *`function`*
 
-*Defined in [interfaces.ts:52](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L52)*
+*Defined in [interfaces.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L52)*
 
 #### Type declaration
 ▸(pos: *[Vector](../classes/_interfaces_.vector.md)*): `number`
@@ -65,7 +65,7 @@ ___
 
 **● roughness**: *`number`*
 
-*Defined in [interfaces.ts:53](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L53)*
+*Defined in [interfaces.ts:53](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L53)*
 
 ___
 <a id="specular"></a>
@@ -74,7 +74,7 @@ ___
 
 **● specular**: *`function`*
 
-*Defined in [interfaces.ts:51](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L51)*
+*Defined in [interfaces.ts:51](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L51)*
 
 #### Type declaration
 ▸(pos: *[Vector](../classes/_interfaces_.vector.md)*): [Color](../classes/_interfaces_.color.md)

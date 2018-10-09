@@ -36,7 +36,7 @@ export {NotExportedClassName as ExportedClassName};
 
 ⊕ **new NotExportedClassName**(): [NotExportedClassName](_default_export_.notexportedclassname.md)
 
-*Defined in [default-export.ts:21](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L21)*
+*Defined in [default-export.ts:21](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L21)*
 
 This is the constructor of the NotExportedClassName class.
 
@@ -52,7 +52,7 @@ ___
 
 **● notExportedProperty**: *`string`*
 
-*Defined in [default-export.ts:21](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L21)*
+*Defined in [default-export.ts:21](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L21)*
 
 Property of NotExportedClassName class.
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **getNotExportedProperty**(): `string`
 
-*Defined in [default-export.ts:33](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L33)*
+*Defined in [default-export.ts:33](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/default-export.ts#L33)*
 
 Method of NotExportedClassName class.
 

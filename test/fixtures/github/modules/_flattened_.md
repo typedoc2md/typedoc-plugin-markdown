@@ -26,7 +26,7 @@ Examples taken from the TypeDoc 'flattened' examples directory ([https://github.
 
 ▸ **flattenedCallback**(callback: *`function`*): `void`
 
-*Defined in [flattened.ts:93](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L93)*
+*Defined in [flattened.ts:93](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L93)*
 
 A function that has a parameter that requires a typed function callback.
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **flattenedIndexSignature**(indexed: *`object`*): `void`
 
-*Defined in [flattened.ts:122](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L122)*
+*Defined in [flattened.ts:122](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L122)*
 
 A function that accepts an index signature parameter.
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **flattenedParameter**(options: *`object`*): `void`
 
-*Defined in [flattened.ts:105](https://github.com/tgreyjs/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L105)*
+*Defined in [flattened.ts:105](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L105)*
 
 A function that accepts an option object defined inline.
 

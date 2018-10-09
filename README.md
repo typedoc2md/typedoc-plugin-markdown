@@ -51,7 +51,7 @@ The plugin exposes the following additional arguments:
 
 ## Example output
 
-* [Some general example output](https://github.com/tgreyjs/typedoc-plugin-markdown/tree/master/examples/out/README.md).
+* [Some general example output](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/examples/out/README.md).
 
 ## Acknowledgements
 
