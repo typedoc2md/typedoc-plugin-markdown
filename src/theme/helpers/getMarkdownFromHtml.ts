@@ -1,4 +1,4 @@
-const TurndownService = require('@forked/turndown');
+const TurndownService = require('turndown');
 const turndownService = new TurndownService({
   codeBlockStyle: 'fenced',
 });
@@ -8,5 +8,5 @@ const turndownService = new TurndownService({
  * @param options
  */
 export function getMarkdownFromHtml(options: any) {
-  return turndownService.turndown(options.fn(this));
+  return turndownService.turndown(options.fn(this)).replace(/\\`\\`\\`/g, '```');
 }

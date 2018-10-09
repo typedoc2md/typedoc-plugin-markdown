@@ -19,8 +19,7 @@
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",
     "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run mocks",
-    "test": "mocha test/test.js",
-    "link": "npm link && npm link typedoc-plugin-markdown"
+    "test": "mocha test/test.js"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -28,11 +27,11 @@
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/tgreyjs/typedoc-plugin-markdown/issues"
+    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyjs/typedoc-plugin-markdown.git"
+    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git"
   },
   "keywords": [
     "markdown",
@@ -51,11 +50,11 @@
     "copyfiles": "^2.1.0",
     "mocha": "^5.2.0",
     "tslint": "^5.11.0",
-    "typedoc": "^0.12.0",
-    "typescript": "3.0.x"
+    "typedoc": "^0.13.0-0",
+    "typescript": "3.1.x"
   },
   "dependencies": {
-    "@forked/turndown": "^4.0.4"
+    "turndown": "^5.0.1"
   },
   "greenkeeper": {
     "ignore": [
