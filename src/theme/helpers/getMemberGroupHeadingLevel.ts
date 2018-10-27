@@ -1,6 +1,5 @@
-import { MarkdownEngine } from '../enums/markdown-engine.enum';
-import { ThemeService } from '../theme.service';
+import { getMarkdownEngine } from '../utils';
 
 export function getMemberGroupHeadingLevel() {
-  return ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK ? '#' : '##';
+  return getMarkdownEngine() === 'gitbook' ? '#' : '##';
 }
