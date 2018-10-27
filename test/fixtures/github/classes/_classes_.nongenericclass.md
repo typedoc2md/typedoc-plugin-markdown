@@ -46,7 +46,7 @@ Constructor short text.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | p1 | `any` |  Constructor param |
 | p2 | [SubClassB](_classes_.subclassb.md) |  Private string property |
@@ -138,7 +138,7 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | [SubClassB](_classes_.subclassb.md) |  [getValue](_classes_.nongenericclass.md#getvalue) is the counterpart. |
 

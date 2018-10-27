@@ -41,7 +41,7 @@ A constructor that accepts an option object defined inline.
 
 The inline typed options object.
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Optional` anotherValue | `string` |  Another value on the options object parameter. |
 | `Optional` moreOptions | `object` |  A typed child object of the options object. |
@@ -68,7 +68,7 @@ A member that holds a callback that requires a typed function signature.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | param | `number` |  A parameter of the typed function callback. |
 | `Optional` optionalParam | `string` |  An optional parameter of the typed function callback. |
@@ -122,7 +122,7 @@ Call signature with parameters.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `number` |  The desired value. |
 

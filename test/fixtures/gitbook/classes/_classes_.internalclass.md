@@ -22,7 +22,7 @@ This is an internal class, it is not exported.
 
 **options: `object`**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | name | `string` |
 

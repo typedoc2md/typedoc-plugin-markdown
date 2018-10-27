@@ -66,7 +66,7 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string` |  This is a string parameter. |
 | paramG | `any` |  This is a parameter flagged with any.<br><br> This sentence is placed in the next line. |
@@ -87,13 +87,13 @@ This is a function with a parameter that has a default value.
 
 **Parameters:**
 
-| Param | Type | Default value |
+| Name | Type | Default value |
 | ------ | ------ | ------ |
-| `Default value` valueA | `string` | &quot;defaultValue&quot; | 
-| `Default value` valueB | `number` | 100 | 
-| `Default value` valueC | `number` |  Number.NaN | 
-| `Default value` valueD | `boolean` | true | 
-| `Default value` valueE | `boolean` | false | 
+| `Default value` valueA | `string` | &quot;defaultValue&quot; |
+| `Default value` valueB | `number` | 100 |
+| `Default value` valueC | `number` |  Number.NaN |
+| `Default value` valueD | `boolean` | true |
+| `Default value` valueE | `boolean` | false |
 
 **Returns:** `string`
 The input value or the default value.
@@ -126,7 +126,7 @@ This is a function with a parameter that is optional.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | requiredParam | `string` |  A normal parameter. |
 | `Optional` optionalParam | `string` |  An optional parameter. |
@@ -146,7 +146,7 @@ This is a function with rest parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Rest` rest | `string`[] |  Multiple strings. |
 
@@ -158,7 +158,7 @@ ___
 
 ###  genericFunction
 
-▸ **genericFunction**T(value: *`T`*): `T`
+▸ **genericFunction**<`T`>(value: *`T`*): `T`
 
 *Defined in [functions.ts:143](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/examples/src/functions.ts#L143)*
 
@@ -172,7 +172,7 @@ The type parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `T` |  The typed value. |
 
@@ -207,7 +207,7 @@ This is the first signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `string` |  The name value. |
 
@@ -219,9 +219,13 @@ This is the second signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param | Type | Description |
+**value: `object`**
+
+An object containing the name value.
+
+| Name | Type | Description |
 | ------ | ------ | ------ |
-| value | `object` |  An object containing the name value. |
+| name | `string` |  A value of the object. |
 
 **Returns:** `string`
 
@@ -238,7 +242,7 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string` |  This is a string parameter. |
 | paramG | `any` |  This is a parameter flagged with any.<br><br>This sentence is placed in the next line. |

@@ -44,7 +44,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | source | `string` |
 | subString | `string` |
@@ -86,7 +86,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | ctor | [ClockConstructor](../interfaces/_interfaces_.interfaces.clockconstructor.md) |
 | hour | `number` |

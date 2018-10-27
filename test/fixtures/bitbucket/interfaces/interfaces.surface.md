@@ -30,7 +30,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | pos | [Vector](../classes/vector.md) |
 
@@ -49,7 +49,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | pos | [Vector](../classes/vector.md) |
 
@@ -76,7 +76,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | pos | [Vector](../classes/vector.md) |
 

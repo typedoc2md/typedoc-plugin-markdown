@@ -78,7 +78,7 @@ A function that is attached to an enumeration.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | [Size](size.md) |  The value that should be tested. |
 

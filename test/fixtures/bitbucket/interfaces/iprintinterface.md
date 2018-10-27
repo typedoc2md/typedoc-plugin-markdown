@@ -32,7 +32,7 @@ It should be inherited by all subinterfaces.
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | value | `string` |
 

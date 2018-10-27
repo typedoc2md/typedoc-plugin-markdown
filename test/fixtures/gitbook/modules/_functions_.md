@@ -40,7 +40,7 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string` |  This is a string parameter. |
 | paramG | `any` |  This is a parameter flagged with any.<br><br> This sentence is placed in the next line. |
@@ -61,7 +61,7 @@ This is a function with a parameter that has a default value.
 
 **Parameters:**
 
-| Param | Type | Default value |
+| Name | Type | Default value |
 | ------ | ------ | ------ |
 | `Default value` valueA | `string` | &quot;defaultValue&quot; |
 | `Default value` valueB | `number` | 100 |
@@ -100,7 +100,7 @@ This is a function with a parameter that is optional.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | requiredParam | `string` |  A normal parameter. |
 | `Optional` optionalParam | `string` |  An optional parameter. |
@@ -120,7 +120,7 @@ This is a function with rest parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Rest` rest | `string`[] |  Multiple strings. |
 
@@ -146,7 +146,7 @@ The type parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `T` |  The typed value. |
 
@@ -181,7 +181,7 @@ This is the first signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `string` |  The name value. |
 
@@ -197,7 +197,7 @@ This is the second signature of a function with multiple signatures.
 
 An object containing the name value.
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  A value of the object. |
 
@@ -216,7 +216,7 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string` |  This is a string parameter. |
 | paramG | `any` |  This is a parameter flagged with any.<br><br>This sentence is placed in the next line. |

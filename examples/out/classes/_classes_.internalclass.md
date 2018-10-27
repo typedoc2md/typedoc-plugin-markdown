@@ -30,9 +30,11 @@ This is an internal class, it is not exported.
 
 **Parameters:**
 
-| Param | Type |
+**options: `object`**
+
+| Name | Type |
 | ------ | ------ |
-| options | `object` | 
+| name | `string` |
 
 **Returns:** [InternalClass](_classes_.internalclass.md)
 

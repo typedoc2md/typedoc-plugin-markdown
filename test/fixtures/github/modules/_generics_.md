@@ -62,7 +62,7 @@ The generic type parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `T` |  A generic parameter. |
 

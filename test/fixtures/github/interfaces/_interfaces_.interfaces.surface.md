@@ -32,7 +32,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | pos | [Vector](../classes/_interfaces_.vector.md) |
 
@@ -52,7 +52,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | pos | [Vector](../classes/_interfaces_.vector.md) |
 
@@ -81,7 +81,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | pos | [Vector](../classes/_interfaces_.vector.md) |
 

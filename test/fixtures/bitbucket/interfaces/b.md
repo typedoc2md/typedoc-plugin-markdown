@@ -53,7 +53,7 @@ A generic member function.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `T` |  A generic parameter. |
 

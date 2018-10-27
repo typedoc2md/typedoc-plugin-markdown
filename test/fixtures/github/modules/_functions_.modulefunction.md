@@ -13,7 +13,7 @@ This is a function that is extended by a module.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | arg | `string` |  An argument. |
 
