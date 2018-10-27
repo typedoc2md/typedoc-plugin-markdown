@@ -16,7 +16,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | arg | [MyFourthClass](_generics_.myfourthclass.md)<[MyFirstClass](_generics_.myfirstclass.md), [MySecondClass](_generics_.mysecondclass.md)<[MyFirstClass](_generics_.myfirstclass.md)>> |
 

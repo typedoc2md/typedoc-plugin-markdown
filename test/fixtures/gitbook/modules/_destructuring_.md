@@ -116,7 +116,7 @@ ___
 
 **__namedParameters: `object`**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | b | `string` |
 | c | `number` |
@@ -142,13 +142,13 @@ This is a normal param
 
 **__namedParameters: `object`**
 
-| Param | Type | Default value |
+| Name | Type | Default value |
 | ------ | ------ | ------ |
 | n | `boolean` | true |
 
 **__namedParameters: `object`**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | bold | `boolean` | false |  Should it be bold? |
 | location | [`number`, `number`] |  [0, 0] |  This is the location |

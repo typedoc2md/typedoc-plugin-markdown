@@ -56,9 +56,9 @@ The constructor of the original class should be overwritten.
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
-| name | `string` | 
+| name | `string` |
 
 **Returns:** [SubClassB](_classes_.subclassb.md)
 
@@ -148,7 +148,7 @@ This is a simple fat arrow function.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | param2 | `string` |  The second parameter needed by this function. |
 | param1 | `number` |  The first parameter needed by this function. |
@@ -166,9 +166,9 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
-| value | [`string`, [SubClassA](_classes_.subclassa.md), [SubClassB](_classes_.subclassb.md)] | 
+| value | [`string`, [SubClassA](_classes_.subclassa.md), [SubClassB](_classes_.subclassb.md)] |
 
 **Returns:** `void`
 
@@ -209,7 +209,7 @@ It should be inherited by all subclasses.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The new name. |
 
@@ -230,12 +230,12 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
-| originalValues | [BaseClass](_classes_.baseclass.md) | 
-| newRecord | `any` | 
-| fieldNames | `string`[] | 
-| mandatoryFields | `string`[] | 
+| originalValues | [BaseClass](_classes_.baseclass.md) |
+| newRecord | `any` |
+| fieldNames | `string`[] |
+| mandatoryFields | `string`[] |
 
 **Returns:** `string`
 

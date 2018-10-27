@@ -55,7 +55,7 @@ The constructor of the original class should be overwritten.
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | name | `string` |
 
@@ -139,7 +139,7 @@ This is a simple fat arrow function.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | param2 | `string` |  The second parameter needed by this function. |
 | param1 | `number` |  The first parameter needed by this function. |
@@ -158,7 +158,7 @@ Description for doOtherThings.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value |  `string` &#124; `number` &#124; [SubClassA](subclassa.md)|  Description for value |
 | `Optional` secondValue | [SubClassA](subclassa.md) |  Description for optional value |
@@ -175,7 +175,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | value | [`string`, [SubClassA](subclassa.md), [SubClassB](subclassb.md)] |
 
@@ -216,7 +216,7 @@ It should be inherited by all subclasses.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The new name. |
 
@@ -236,7 +236,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | originalValues | [BaseClass](baseclass.md) |
 | newRecord | `any` |

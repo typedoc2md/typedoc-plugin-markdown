@@ -40,7 +40,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | x | `number` |
 | y | `number` |
@@ -86,7 +86,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](vector.md) |
 | v2 | [Vector](vector.md) |
@@ -103,7 +103,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](vector.md) |
 | v2 | [Vector](vector.md) |
@@ -120,7 +120,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v | [Vector](vector.md) |
 
@@ -136,7 +136,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](vector.md) |
 | v2 | [Vector](vector.md) |
@@ -153,7 +153,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v | [Vector](vector.md) |
 
@@ -169,7 +169,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](vector.md) |
 | v2 | [Vector](vector.md) |
@@ -186,7 +186,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | k | `number` |
 | v | [Vector](vector.md) |

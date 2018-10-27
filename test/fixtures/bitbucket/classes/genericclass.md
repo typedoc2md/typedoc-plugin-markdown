@@ -47,7 +47,7 @@ Constructor short text.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | p1 | `any` |  Constructor param |
 | p2 | `T` |  Private string property |
@@ -119,7 +119,7 @@ ___
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `T` |  [getValue](genericclass.md#markdown-header-getvalue) is the counterpart. |
 

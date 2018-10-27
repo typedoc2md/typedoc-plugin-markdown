@@ -66,7 +66,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | name | `string` |
 
@@ -78,7 +78,7 @@ This class has no own constructor, so its constructor should be inherited from B
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | source | [BaseClass](_classes_.baseclass.md) |
 
@@ -162,7 +162,7 @@ Sets the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `string` |  The new name. |
 
@@ -196,7 +196,7 @@ Sets the name. See [BaseClass.name](_classes_.baseclass.md#name).
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `string` |  The new name. |
 
@@ -234,7 +234,7 @@ This is a simple fat arrow function.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | param2 | `string` |  The second parameter needed by this function. |
 | param1 | `number` |  The first parameter needed by this function. |
@@ -276,7 +276,7 @@ This is a simple interface function.
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | value | `string` |
 
@@ -314,7 +314,7 @@ It should be inherited by all subclasses.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The new name. |
 
@@ -335,7 +335,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | originalValues | [BaseClass](_classes_.baseclass.md) |
 | newRecord | `any` |

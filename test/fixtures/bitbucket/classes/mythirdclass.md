@@ -28,7 +28,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | arg | [MyFourthClass](myfourthclass.md)<[MyFirstClass](myfirstclass.md), [MySecondClass](mysecondclass.md)<[MyFirstClass](myfirstclass.md)>> |
 

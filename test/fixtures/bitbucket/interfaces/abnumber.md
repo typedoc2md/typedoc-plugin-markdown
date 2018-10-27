@@ -64,7 +64,7 @@ A generic member function.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `number` |  A generic parameter. |
 

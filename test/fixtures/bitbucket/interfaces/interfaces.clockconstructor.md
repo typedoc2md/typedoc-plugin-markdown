@@ -24,7 +24,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | hour | `number` |
 | minute | `number` |

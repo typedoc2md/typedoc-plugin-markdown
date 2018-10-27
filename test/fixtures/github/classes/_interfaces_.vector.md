@@ -42,7 +42,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | x | `number` |
 | y | `number` |
@@ -94,7 +94,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](_interfaces_.vector.md) |
 | v2 | [Vector](_interfaces_.vector.md) |
@@ -112,7 +112,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](_interfaces_.vector.md) |
 | v2 | [Vector](_interfaces_.vector.md) |
@@ -130,7 +130,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v | [Vector](_interfaces_.vector.md) |
 
@@ -147,7 +147,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](_interfaces_.vector.md) |
 | v2 | [Vector](_interfaces_.vector.md) |
@@ -165,7 +165,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v | [Vector](_interfaces_.vector.md) |
 
@@ -182,7 +182,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Vector](_interfaces_.vector.md) |
 | v2 | [Vector](_interfaces_.vector.md) |
@@ -200,7 +200,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | k | `number` |
 | v | [Vector](_interfaces_.vector.md) |

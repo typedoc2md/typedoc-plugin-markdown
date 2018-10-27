@@ -44,7 +44,7 @@
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | r | `number` |
 | g | `number` |
@@ -141,7 +141,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Color](_interfaces_.color.md) |
 | v2 | [Color](_interfaces_.color.md) |
@@ -159,7 +159,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | k | `number` |
 | v | [Color](_interfaces_.color.md) |
@@ -177,7 +177,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | v1 | [Color](_interfaces_.color.md) |
 | v2 | [Color](_interfaces_.color.md) |
@@ -195,7 +195,7 @@ ___
 
 **Parameters:**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | c | [Color](_interfaces_.color.md) |
 

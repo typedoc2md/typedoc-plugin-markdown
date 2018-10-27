@@ -30,7 +30,7 @@ A function that has a parameter that requires a typed function callback.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | callback | `function` |  The typed function callback. |
 
@@ -53,7 +53,7 @@ A function that accepts an index signature parameter.
 
 The index signature parameter.
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | test | `string` |  A property of the index signature instance. |
 
@@ -76,7 +76,7 @@ A function that accepts an option object defined inline.
 
 The inline typed options object.
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Optional` anotherValue | `string` |  Another value on the options object parameter. |
 | `Optional` moreOptions | `object` |  A typed child object of the options object. |

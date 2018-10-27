@@ -297,7 +297,7 @@ ___
 
 **__namedParameters: `object`**
 
-| Param | Type |
+| Name | Type |
 | ------ | ------ |
 | b | `string` |
 | c | `number` |
@@ -322,13 +322,13 @@ This is a normal param
 
 **__namedParameters: `object`**
 
-| Param | Type | Default value |
+| Name | Type | Default value |
 | ------ | ------ | ------ |
 | n | `boolean` | true |
 
 **__namedParameters: `object`**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | bold | `boolean` | false |  Should it be bold? |
 | location | [`number`, `number`] |  [0, 0] |  This is the location |
@@ -386,7 +386,7 @@ A function that has a parameter that requires a typed function callback.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | callback | `function` |  The typed function callback. |
 
@@ -408,7 +408,7 @@ A function that accepts an index signature parameter.
 
 The index signature parameter.
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | test | `string` |  A property of the index signature instance. |
 
@@ -430,7 +430,7 @@ A function that accepts an option object defined inline.
 
 The inline typed options object.
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Optional` anotherValue | `string` |  Another value on the options object parameter. |
 | `Optional` moreOptions | `object` |  A typed child object of the options object. |
@@ -450,7 +450,7 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string` |  This is a string parameter. |
 | paramG | `any` |  This is a parameter flagged with any. This sentence is placed in the next line. |
@@ -470,7 +470,7 @@ This is a function with a parameter that has a default value.
 
 **Parameters:**
 
-| Param | Type | Default value |
+| Name | Type | Default value |
 | ------ | ------ | ------ |
 | `Default value` valueA | `string` | &quot;defaultValue&quot; |
 | `Default value` valueB | `number` | 100 |
@@ -507,7 +507,7 @@ This is a function with a parameter that is optional.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | requiredParam | `string` |  A normal parameter. |
 | `Optional` optionalParam | `string` |  An optional parameter. |
@@ -526,7 +526,7 @@ This is a function with rest parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Rest` rest | `string`[] |  Multiple strings. |
 
@@ -551,7 +551,7 @@ The type parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `T` |  The typed value. |
 
@@ -597,7 +597,7 @@ This is the first signature of a function with multiple signatures.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `string` |  The name value. |
 
@@ -613,7 +613,7 @@ This is the second signature of a function with multiple signatures.
 
 An object containing the name value.
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  A value of the object. |
 
@@ -637,7 +637,7 @@ The generic type parameter.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `T` |  A generic parameter. |
 
@@ -656,7 +656,7 @@ This is a function with multiple arguments and a return value.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | paramZ | `string` |  This is a string parameter. |
 | paramG | `any` |  This is a parameter flagged with any. This sentence is placed in the next line. |
