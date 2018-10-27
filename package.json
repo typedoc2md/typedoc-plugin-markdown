@@ -9,17 +9,12 @@
   "scripts": {
     "copy:static": "copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
-    "mocks": "npm run mocks:github && npm run mocks:bitbucket && npm run mocks:gitbook",
-    "mocks:github": "typedoc ./test/src --out ./test/out/github --theme markdown --gitRevision master --media test/src/media/ --includes test/src/inc/",
-    "mocks:bitbucket": "typedoc ./test/src --out ./test/out/bitbucket --theme markdown --gitRevision master --media test/src/media/ --includes test/src/inc/ --excludePrivate --readme none --mode file --mdFlavour bitbucket --mdSourceRepo 'https://bitbucket.org/owner/repository_name'",
-    "mocks:gitbook": "typedoc ./test/src --out ./test/out/gitbook --theme markdown --gitRevision master --mdEngine gitbook --media test/src/media/ --includes test/src/inc/",
-    "mocks:html": "typedoc ./test/src --out test/out/html --media test/src/media/ --includes test/src/inc/",
     "examples": "rm -rf examples/out && typedoc ./examples/src --out ./examples/out --theme markdown --gitRevision master --readme none --media test/src/media/ --includes test/src/inc/",
     "lint": "tslint --project ./src/tsconfig.json",
     "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
     "prepublishOnly": "npm run prepare && npm run lint && npm run test",
-    "pretest": "rm -rf tests/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin && npm run mocks",
-    "test": "mocha test/test.js"
+    "pretest": "rm -rf test/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin",
+    "test": "jest"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -43,12 +38,10 @@
     "typedoc": ">=0.9.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.6",
-    "@types/mocha": "^5.2.5",
-    "chai": "^4.2.0",
-    "chai-files": "^1.4.0",
+    "@types/jest": "^23.3.7",
     "copyfiles": "^2.1.0",
-    "mocha": "^5.2.0",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "typedoc": "^0.13.0-0",
     "typescript": "3.1.x"

@@ -12,15 +12,7 @@
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
-    "lib": [
-      "es2016",
-      "dom"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ]
+    "lib": ["es2016", "dom"],
+    "typeRoots": ["node_modules/@types"]
   }
 }
