@@ -1,10 +1,9 @@
-import { MarkdownEngine } from '../enums/markdown-engine.enum';
-import { ThemeService } from '../theme.service';
+import { getMarkdownEngine } from '../utils';
 
 /**
  * Returns the anchor element
  * @param anchor
  */
 export function getAnchor(anchor: string) {
-  return ThemeService.getMarkdownEngine() === MarkdownEngine.BITBUCKET ? '' : `<a id="${anchor}"></a>`;
+  return getMarkdownEngine() === 'bitbucket' ? '' : `<a id="${anchor}"></a>`;
 }

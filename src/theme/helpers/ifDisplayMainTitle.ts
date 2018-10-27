@@ -1,5 +1,4 @@
-import { MarkdownEngine } from '../enums/markdown-engine.enum';
-import { ThemeService } from '../theme.service';
+import { getMarkdownEngine } from '../utils';
 
 /**
  * Return true if index item should be displayed
@@ -7,7 +6,7 @@ import { ThemeService } from '../theme.service';
  * @param opts
  */
 export function ifDisplayMainTitle(item: any, opts: any) {
-  if (ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK || item.model.displayReadme) {
+  if (getMarkdownEngine() === 'gitbook' || item.model.displayReadme) {
     return opts.inverse(this);
   } else {
     return opts.fn(this);

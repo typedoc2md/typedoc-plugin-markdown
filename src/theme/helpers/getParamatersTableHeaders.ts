@@ -3,8 +3,7 @@
  * @param parameters
  */
 export function getParametersTableHeaders(parameters: any) {
-
-  let headers = ['Param', 'Type', 'Default value', 'Description'];
+  let headers = ['Name', 'Type', 'Default value', 'Description'];
 
   const hasDefaultValues = parameters.find((param: any) => {
     return param.defaultValue;

@@ -1,13 +1,14 @@
 /**
  * Returns the source file definition
  */
-import { MarkdownEngine } from '../enums/markdown-engine.enum';
-import { ThemeService } from '../theme.service';
+
+import { getOptions } from '../props';
+import { getMarkdownEngine } from '../utils';
 
 export function getSourceFile(fileName: string, line: string, url: string) {
-  const options = ThemeService.getOptions();
+  const options = getOptions();
   let md = 'Defined in ';
-  if (ThemeService.getMarkdownEngine() === MarkdownEngine.BITBUCKET && options.mdSourceRepo) {
+  if (getMarkdownEngine() === 'bitbucket' && options.mdSourceRepo) {
     const bitbucketUrl = `${options.mdSourceRepo}/src/master/${fileName}`;
     const bitbucketParams = `fileviewer=file-view-default#${fileName}-${line}`;
     md += `[${fileName}:${line}](${bitbucketUrl}?${bitbucketParams})`;

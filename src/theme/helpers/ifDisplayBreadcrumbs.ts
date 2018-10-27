@@ -1,10 +1,9 @@
-import { MarkdownEngine } from '../enums/markdown-engine.enum';
-import { ThemeService } from '../theme.service';
+import { getMarkdownEngine } from '../utils';
 
 /**
  * Return true if breadcrumbs should be displayed
  * @param opts
  */
 export function ifDisplayBreadcrumbs(opts: any) {
-  return ThemeService.getMarkdownEngine() === MarkdownEngine.GITBOOK ? opts.inverse(this) : opts.fn(this);
+  return getMarkdownEngine() === 'gitbook' ? opts.inverse(this) : opts.fn(this);
 }

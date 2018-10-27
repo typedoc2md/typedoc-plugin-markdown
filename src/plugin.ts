@@ -15,9 +15,6 @@ import { MarkdownTheme } from './theme/';
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
 
-  // the expected name of the theme
-  private THEME_NAME = 'markdown';
-
   // listen to event on initialisation
   public initialize() {
     this.listenTo(this.owner, {
@@ -45,7 +42,7 @@ export class MarkdownPlugin extends ConverterComponent {
     const themePath = this.getThemeDirectory();
 
     // apply the theme
-    if (themeName === this.THEME_NAME) {
+    if (themeName === 'markdown') {
       const markdownTheme = new MarkdownTheme(renderer, themePath, options.getRawValues());
       renderer.theme = renderer.addComponent('theme', markdownTheme);
     } else {

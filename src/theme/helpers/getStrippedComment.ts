@@ -1,12 +1,11 @@
-import { MarkdownEngine } from '../enums/markdown-engine.enum';
-import { ThemeService } from '../theme.service';
+import { getMarkdownEngine } from '../utils';
 
 /**
  * Returns comments block with new lines stripped
  * @param comment
  */
 export function getStrippedComment(comment: any) {
-  const lineBreak = ThemeService.getMarkdownEngine() === MarkdownEngine.BITBUCKET ? ' ' : '<br><br>';
+  const lineBreak = getMarkdownEngine() === 'bitbucket' ? ' ' : '<br><br>';
   let newComment: string = '';
   if (comment) {
     if (comment.text) {
