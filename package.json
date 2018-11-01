@@ -1,7 +1,7 @@
 {
   "name": "typedoc-plugin-markdown",
   "version": "1.1.18",
-  "description": "A plugin for Typedoc that exposes a theme and additional arguments for rendering markdown.",
+  "description": "A plugin for TypeDoc that exposes a theme and additional arguments for rendering markdown.",
   "main": "dist/index.js",
   "files": [
     "dist/"
@@ -11,8 +11,8 @@
     "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
     "examples": "rm -rf examples/out && typedoc ./examples/src --out ./examples/out --theme markdown --gitRevision master --readme none --media test/src/media/ --includes test/src/inc/",
     "lint": "tslint --project ./src/tsconfig.json",
-    "prepare": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
-    "prepublishOnly": "npm run prepare && npm run lint && npm run test",
+    "build": "rm -rf dist && tsc -p ./src/tsconfig.json && npm run copy:static",
+    "prepare": "npm run lint && npm run build && npm run test",
     "pretest": "rm -rf test/out && rm -rf node_modules/typedoc-plugin-markdown && npm run copy:plugin",
     "test": "jest"
   },
@@ -38,7 +38,7 @@
     "typedoc": ">=0.9.0"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.7",
+    "@types/jest": "^23.3.9",
     "copyfiles": "^2.1.0",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.4",
