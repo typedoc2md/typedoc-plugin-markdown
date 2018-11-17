@@ -10,8 +10,8 @@
 
 ### Properties
 
-* [color](interfaces.squareconfig.md#markdown-header-optional-color)
-* [width](interfaces.squareconfig.md#markdown-header-optional-width)
+* [color](interfaces.squareconfig.md#markdown-header-Optional-color)
+* [width](interfaces.squareconfig.md#markdown-header-Optional-width)
 
 ---
 

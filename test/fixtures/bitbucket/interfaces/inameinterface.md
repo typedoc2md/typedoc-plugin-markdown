@@ -24,7 +24,7 @@ This is a simple interface.
 
 ### Methods
 
-* [getName](inameinterface.md#markdown-header-getname)
+* [getName](inameinterface.md#markdown-header-getName)
 
 ---
 

@@ -20,11 +20,11 @@ export {NotExportedClassName as ExportedClassName};
 
 ### Properties
 
-* [notExportedProperty](notexportedclassname.md#markdown-header-notexportedproperty)
+* [notExportedProperty](notexportedclassname.md#markdown-header-notExportedProperty)
 
 ### Methods
 
-* [getNotExportedProperty](notexportedclassname.md#markdown-header-getnotexportedproperty)
+* [getNotExportedProperty](notexportedclassname.md#markdown-header-getNotExportedProperty)
 
 ---
 

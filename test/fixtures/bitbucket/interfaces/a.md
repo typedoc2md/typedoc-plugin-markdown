@@ -19,7 +19,7 @@ The generic type parameter.
 
 ### Methods
 
-* [getT](a.md#markdown-header-gett)
+* [getT](a.md#markdown-header-getT)
 
 ---
 

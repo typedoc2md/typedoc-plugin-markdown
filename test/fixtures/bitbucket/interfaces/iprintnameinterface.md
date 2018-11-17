@@ -24,9 +24,9 @@ This is a interface inheriting from two other interfaces.
 
 ### Methods
 
-* [getName](iprintnameinterface.md#markdown-header-getname)
+* [getName](iprintnameinterface.md#markdown-header-getName)
 * [print](iprintnameinterface.md#markdown-header-print)
-* [printName](iprintnameinterface.md#markdown-header-printname)
+* [printName](iprintnameinterface.md#markdown-header-printName)
 
 ---
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Inherited from [INameInterface](inameinterface.md).[getName](inameinterface.md#markdown-header-getname)*
+*Inherited from [INameInterface](inameinterface.md).[getName](inameinterface.md#markdown-header-getName)*
 
 *Defined in [classes.ts:23](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-23)*
 

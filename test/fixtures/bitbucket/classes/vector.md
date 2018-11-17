@@ -20,13 +20,13 @@
 
 ### Methods
 
-* [cross](vector.md#markdown-header-static-cross)
-* [dot](vector.md#markdown-header-static-dot)
-* [mag](vector.md#markdown-header-static-mag)
-* [minus](vector.md#markdown-header-static-minus)
-* [norm](vector.md#markdown-header-static-norm)
-* [plus](vector.md#markdown-header-static-plus)
-* [times](vector.md#markdown-header-static-times)
+* [cross](vector.md#markdown-header-Static-cross)
+* [dot](vector.md#markdown-header-Static-dot)
+* [mag](vector.md#markdown-header-Static-mag)
+* [minus](vector.md#markdown-header-Static-minus)
+* [norm](vector.md#markdown-header-Static-norm)
+* [plus](vector.md#markdown-header-Static-plus)
+* [times](vector.md#markdown-header-Static-times)
 
 ---
 

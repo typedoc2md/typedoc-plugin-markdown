@@ -13,7 +13,7 @@
 ### Properties
 
 * [color](interfaces.square.md#markdown-header-color)
-* [sideLength](interfaces.square.md#markdown-header-sidelength)
+* [sideLength](interfaces.square.md#markdown-header-sideLength)
 
 ---
 

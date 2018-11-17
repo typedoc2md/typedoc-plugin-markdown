@@ -23,7 +23,7 @@ This is a function that is extended by a module.
 
 ### Variables
 
-* [functionVariable](modulefunction.md#markdown-header-functionvariable)
+* [functionVariable](modulefunction.md#markdown-header-functionVariable)
 
 ### Functions
 

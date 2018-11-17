@@ -23,8 +23,8 @@ The second generic type parameter.
 
 ### Methods
 
-* [getC](b.md#markdown-header-getc)
-* [setT](b.md#markdown-header-sett)
+* [getC](b.md#markdown-header-getC)
+* [setT](b.md#markdown-header-setT)
 
 ---
 

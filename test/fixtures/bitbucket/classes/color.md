@@ -17,18 +17,18 @@
 * [b](color.md#markdown-header-b)
 * [g](color.md#markdown-header-g)
 * [r](color.md#markdown-header-r)
-* [background](color.md#markdown-header-static-background)
-* [black](color.md#markdown-header-static-black)
-* [defaultColor](color.md#markdown-header-static-defaultcolor)
-* [grey](color.md#markdown-header-static-grey)
-* [white](color.md#markdown-header-static-white)
+* [background](color.md#markdown-header-Static-background)
+* [black](color.md#markdown-header-Static-black)
+* [defaultColor](color.md#markdown-header-Static-defaultColor)
+* [grey](color.md#markdown-header-Static-grey)
+* [white](color.md#markdown-header-Static-white)
 
 ### Methods
 
-* [plus](color.md#markdown-header-static-plus)
-* [scale](color.md#markdown-header-static-scale)
-* [times](color.md#markdown-header-static-times)
-* [toDrawingColor](color.md#markdown-header-static-todrawingcolor)
+* [plus](color.md#markdown-header-Static-plus)
+* [scale](color.md#markdown-header-Static-scale)
+* [times](color.md#markdown-header-Static-times)
+* [toDrawingColor](color.md#markdown-header-Static-toDrawingColor)
 
 ---
 

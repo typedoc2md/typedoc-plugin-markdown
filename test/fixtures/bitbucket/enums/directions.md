@@ -8,12 +8,12 @@ This is a simple Enumeration.
 
 ### Enumeration members
 
-* [Bottom](directions.md#markdown-header-bottom)
-* [Left](directions.md#markdown-header-left)
-* [Right](directions.md#markdown-header-right)
-* [Top](directions.md#markdown-header-top)
-* [TopLeft](directions.md#markdown-header-topleft)
-* [TopRight](directions.md#markdown-header-topright)
+* [Bottom](directions.md#markdown-header-Bottom)
+* [Left](directions.md#markdown-header-Left)
+* [Right](directions.md#markdown-header-Right)
+* [Top](directions.md#markdown-header-Top)
+* [TopLeft](directions.md#markdown-header-TopLeft)
+* [TopRight](directions.md#markdown-header-TopRight)
 
 ---
 

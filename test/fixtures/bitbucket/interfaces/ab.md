@@ -25,9 +25,9 @@ The leftover generic type parameter.
 
 ### Methods
 
-* [getC](ab.md#markdown-header-getc)
-* [getT](ab.md#markdown-header-gett)
-* [setT](ab.md#markdown-header-sett)
+* [getC](ab.md#markdown-header-getC)
+* [getT](ab.md#markdown-header-getT)
+* [setT](ab.md#markdown-header-setT)
 
 ---
 
@@ -37,7 +37,7 @@ The leftover generic type parameter.
 
 ▸ **getC**(): `boolean`
 
-*Inherited from [B](b.md).[getC](b.md#markdown-header-getc)*
+*Inherited from [B](b.md).[getC](b.md#markdown-header-getC)*
 
 *Defined in [generics.ts:53](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-53)*
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **getT**(): `T`
 
-*Inherited from [A](a.md).[getT](a.md#markdown-header-gett)*
+*Inherited from [A](a.md).[getT](a.md#markdown-header-getT)*
 
 *Defined in [generics.ts:30](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-30)*
 
@@ -67,7 +67,7 @@ ___
 
 ▸ **setT**(value: *`T`*): `void`
 
-*Inherited from [B](b.md).[setT](b.md#markdown-header-sett)*
+*Inherited from [B](b.md).[setT](b.md#markdown-header-setT)*
 
 *Defined in [generics.ts:46](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-46)*
 

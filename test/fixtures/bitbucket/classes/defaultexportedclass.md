@@ -20,11 +20,11 @@ export default class DefaultExportedClass {}
 
 ### Properties
 
-* [exportedProperty](defaultexportedclass.md#markdown-header-exportedproperty)
+* [exportedProperty](defaultexportedclass.md#markdown-header-exportedProperty)
 
 ### Methods
 
-* [getExportedProperty](defaultexportedclass.md#markdown-header-getexportedproperty)
+* [getExportedProperty](defaultexportedclass.md#markdown-header-getExportedProperty)
 
 ---
 

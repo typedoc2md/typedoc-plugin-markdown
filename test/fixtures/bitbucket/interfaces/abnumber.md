@@ -14,9 +14,9 @@ An interface extending a generic interface and setting its type parameter.
 
 ### Methods
 
-* [getC](abnumber.md#markdown-header-getc)
-* [getT](abnumber.md#markdown-header-gett)
-* [setT](abnumber.md#markdown-header-sett)
+* [getC](abnumber.md#markdown-header-getC)
+* [getT](abnumber.md#markdown-header-getT)
+* [setT](abnumber.md#markdown-header-setT)
 
 ---
 
@@ -26,7 +26,7 @@ An interface extending a generic interface and setting its type parameter.
 
 ▸ **getC**(): `boolean`
 
-*Inherited from [B](b.md).[getC](b.md#markdown-header-getc)*
+*Inherited from [B](b.md).[getC](b.md#markdown-header-getC)*
 
 *Defined in [generics.ts:53](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-53)*
 
@@ -41,7 +41,7 @@ ___
 
 ▸ **getT**(): `number`
 
-*Inherited from [A](a.md).[getT](a.md#markdown-header-gett)*
+*Inherited from [A](a.md).[getT](a.md#markdown-header-getT)*
 
 *Defined in [generics.ts:30](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-30)*
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **setT**(value: *`number`*): `void`
 
-*Inherited from [B](b.md).[setT](b.md#markdown-header-sett)*
+*Inherited from [B](b.md).[setT](b.md#markdown-header-setT)*
 
 *Defined in [generics.ts:46](https://bitbucket.org/owner/repository_name/src/master/generics.ts?fileviewer&amp;#x3D;file-view-default#generics.ts-46)*
 
