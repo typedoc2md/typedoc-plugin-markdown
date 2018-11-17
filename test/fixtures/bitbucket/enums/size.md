@@ -8,17 +8,17 @@ This comment is ignored, as the enumeration is already defined.
 
 ### Enumeration members
 
-* [Large](size.md#markdown-header-large)
-* [Medium](size.md#markdown-header-medium)
-* [Small](size.md#markdown-header-small)
+* [Large](size.md#markdown-header-Large)
+* [Medium](size.md#markdown-header-Medium)
+* [Small](size.md#markdown-header-Small)
 
 ### Variables
 
-* [defaultSize](size.md#markdown-header-defaultsize)
+* [defaultSize](size.md#markdown-header-defaultSize)
 
 ### Functions
 
-* [isSmall](size.md#markdown-header-issmall)
+* [isSmall](size.md#markdown-header-isSmall)
 
 ---
 

@@ -10,11 +10,11 @@
 
 ### Properties
 
-* [currentTime](interfaces.clockinterface.md#markdown-header-currenttime)
+* [currentTime](interfaces.clockinterface.md#markdown-header-currentTime)
 
 ### Methods
 
-* [setTime](interfaces.clockinterface.md#markdown-header-settime)
+* [setTime](interfaces.clockinterface.md#markdown-header-setTime)
 * [tick](interfaces.clockinterface.md#markdown-header-tick)
 
 ---

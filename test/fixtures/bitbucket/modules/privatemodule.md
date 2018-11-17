@@ -8,7 +8,7 @@ A module that is documented as being private.
 
 ### Functions
 
-* [functionInsidePrivateModule](privatemodule.md#markdown-header-functioninsideprivatemodule)
+* [functionInsidePrivateModule](privatemodule.md#markdown-header-functionInsidePrivateModule)
 
 ---
 

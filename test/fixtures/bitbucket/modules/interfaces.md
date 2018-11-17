@@ -16,16 +16,16 @@
 
 ### Type aliases
 
-* [SearchFunc](interfaces.md#markdown-header-searchfunc)
+* [SearchFunc](interfaces.md#markdown-header-SearchFunc)
 
 ### Variables
 
-* [mySearch](interfaces.md#markdown-header-let-mysearch)
-* [square](interfaces.md#markdown-header-const-square)
+* [mySearch](interfaces.md#markdown-header-Let-mySearch)
+* [square](interfaces.md#markdown-header-Const-square)
 
 ### Functions
 
-* [createClock](interfaces.md#markdown-header-createclock)
+* [createClock](interfaces.md#markdown-header-createClock)
 
 ---
 
@@ -55,7 +55,7 @@ ___
 
 ### `<Let>` mySearch
 
-**● mySearch**: *[SearchFunc](interfaces.md#markdown-header-searchfunc)*
+**● mySearch**: *[SearchFunc](interfaces.md#markdown-header-SearchFunc)*
 
 *Defined in [interfaces.ts:64](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-64)*
 

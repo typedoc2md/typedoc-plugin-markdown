@@ -23,15 +23,15 @@ This a type parameter.
 
 ### Properties
 
-* [p2](genericclass.md#markdown-header-protected-p2)
+* [p2](genericclass.md#markdown-header-Protected-p2)
 * [p3](genericclass.md#markdown-header-p3)
 * [p5](genericclass.md#markdown-header-p5)
 * [value](genericclass.md#markdown-header-value)
 
 ### Methods
 
-* [getValue](genericclass.md#markdown-header-getvalue)
-* [setValue](genericclass.md#markdown-header-setvalue)
+* [getValue](genericclass.md#markdown-header-getValue)
+* [setValue](genericclass.md#markdown-header-setValue)
 
 ---
 
@@ -121,7 +121,7 @@ ___
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| value | `T` |  [getValue](genericclass.md#markdown-header-getvalue) is the counterpart. |
+| value | `T` |  [getValue](genericclass.md#markdown-header-getValue) is the counterpart. |
 
 **Returns:** `void`
 

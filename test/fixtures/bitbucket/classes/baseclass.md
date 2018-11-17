@@ -28,20 +28,20 @@ This is a simple example on how to use BaseClass.
 
 ### Properties
 
-* [kind](baseclass.md#markdown-header-protected-kind)
+* [kind](baseclass.md#markdown-header-Protected-kind)
 * [name](baseclass.md#markdown-header-name)
-* [instance](baseclass.md#markdown-header-static-instance)
-* [instances](baseclass.md#markdown-header-static-instances)
+* [instance](baseclass.md#markdown-header-Static-instance)
+* [instances](baseclass.md#markdown-header-Static-instances)
 
 ### Methods
 
-* [abstractMethod](baseclass.md#markdown-header-abstract-abstractmethod)
-* [arrowFunction](baseclass.md#markdown-header-arrowfunction)
-* [getName](baseclass.md#markdown-header-getname)
-* [setName](baseclass.md#markdown-header-setname)
-* [caTest](baseclass.md#markdown-header-static-catest)
-* [getInstance](baseclass.md#markdown-header-static-getinstance)
-* [getName](baseclass.md#markdown-header-static-getname)
+* [abstractMethod](baseclass.md#markdown-header-Abstract-abstractMethod)
+* [arrowFunction](baseclass.md#markdown-header-arrowFunction)
+* [getName](baseclass.md#markdown-header-getName)
+* [setName](baseclass.md#markdown-header-setName)
+* [caTest](baseclass.md#markdown-header-Static-caTest)
+* [getInstance](baseclass.md#markdown-header-Static-getInstance)
+* [getName](baseclass.md#markdown-header-Static-getName)
 
 ---
 
@@ -154,7 +154,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Implementation of [INameInterface](../interfaces/inameinterface.md).[getName](../interfaces/inameinterface.md#markdown-header-getname)*
+*Implementation of [INameInterface](../interfaces/inameinterface.md).[getName](../interfaces/inameinterface.md#markdown-header-getName)*
 
 *Defined in [classes.ts:105](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-105)*
 

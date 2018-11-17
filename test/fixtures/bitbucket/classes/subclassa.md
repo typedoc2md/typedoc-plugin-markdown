@@ -25,28 +25,28 @@ This class has no own constructor, so its constructor should be inherited from B
 
 ### Properties
 
-* [kind](subclassa.md#markdown-header-protected-kind)
+* [kind](subclassa.md#markdown-header-Protected-kind)
 * [name](subclassa.md#markdown-header-name)
-* [instance](subclassa.md#markdown-header-static-instance)
-* [instances](subclassa.md#markdown-header-static-instances)
+* [instance](subclassa.md#markdown-header-Static-instance)
+* [instances](subclassa.md#markdown-header-Static-instances)
 
 ### Accessors
 
-* [nameProperty](subclassa.md#markdown-header-nameproperty)
-* [readOnlyNameProperty](subclassa.md#markdown-header-readonlynameproperty)
-* [writeOnlyNameProperty](subclassa.md#markdown-header-writeonlynameproperty)
+* [nameProperty](subclassa.md#markdown-header-nameProperty)
+* [readOnlyNameProperty](subclassa.md#markdown-header-readOnlyNameProperty)
+* [writeOnlyNameProperty](subclassa.md#markdown-header-writeOnlyNameProperty)
 
 ### Methods
 
-* [abstractMethod](subclassa.md#markdown-header-abstractmethod)
-* [arrowFunction](subclassa.md#markdown-header-arrowfunction)
-* [getName](subclassa.md#markdown-header-getname)
+* [abstractMethod](subclassa.md#markdown-header-abstractMethod)
+* [arrowFunction](subclassa.md#markdown-header-arrowFunction)
+* [getName](subclassa.md#markdown-header-getName)
 * [print](subclassa.md#markdown-header-print)
-* [printName](subclassa.md#markdown-header-printname)
-* [setName](subclassa.md#markdown-header-setname)
-* [caTest](subclassa.md#markdown-header-static-catest)
-* [getInstance](subclassa.md#markdown-header-static-getinstance)
-* [getName](subclassa.md#markdown-header-static-getname)
+* [printName](subclassa.md#markdown-header-printName)
+* [setName](subclassa.md#markdown-header-setName)
+* [caTest](subclassa.md#markdown-header-Static-caTest)
+* [getInstance](subclassa.md#markdown-header-Static-getInstance)
+* [getName](subclassa.md#markdown-header-Static-getName)
 
 ---
 
@@ -90,7 +90,7 @@ ___
 
 **● kind**: *`number`*
 
-*Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#markdown-header-protected-kind)*
+*Inherited from [BaseClass](baseclass.md).[kind](baseclass.md#markdown-header-Protected-kind)*
 
 *Defined in [classes.ts:65](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-65)*
 
@@ -114,7 +114,7 @@ ___
 
 **● instance**: *[BaseClass](baseclass.md)*
 
-*Inherited from [BaseClass](baseclass.md).[instance](baseclass.md#markdown-header-static-instance)*
+*Inherited from [BaseClass](baseclass.md).[instance](baseclass.md#markdown-header-Static-instance)*
 
 *Defined in [classes.ts:72](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-72)*
 
@@ -128,7 +128,7 @@ ___
 
 **● instances**: *[BaseClass](baseclass.md)[]*
 
-*Inherited from [BaseClass](baseclass.md).[instances](baseclass.md#markdown-header-static-instances)*
+*Inherited from [BaseClass](baseclass.md).[instances](baseclass.md#markdown-header-Static-instances)*
 
 *Defined in [classes.ts:73](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-73)*
 
@@ -200,7 +200,7 @@ ___
 
 ▸ **abstractMethod**(): `void`
 
-*Overrides [BaseClass](baseclass.md).[abstractMethod](baseclass.md#markdown-header-abstract-abstractmethod)*
+*Overrides [BaseClass](baseclass.md).[abstractMethod](baseclass.md#markdown-header-Abstract-abstractMethod)*
 
 *Defined in [classes.ts:252](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-252)*
 
@@ -212,7 +212,7 @@ ___
 
 ▸ **arrowFunction**(param2: *`string`*, param1: *`number`*): `void`
 
-*Inherited from [BaseClass](baseclass.md).[arrowFunction](baseclass.md#markdown-header-arrowfunction)*
+*Inherited from [BaseClass](baseclass.md).[arrowFunction](baseclass.md#markdown-header-arrowFunction)*
 
 *Defined in [classes.ts:143](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-143)*
 
@@ -233,9 +233,9 @@ ___
 
 ▸ **getName**(): `string`
 
-*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[getName](../interfaces/iprintnameinterface.md#markdown-header-getname)*
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[getName](../interfaces/iprintnameinterface.md#markdown-header-getName)*
 
-*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-getname)*
+*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-getName)*
 
 *Defined in [classes.ts:105](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-105)*
 
@@ -272,7 +272,7 @@ ___
 
 ▸ **printName**(): `void`
 
-*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[printName](../interfaces/iprintnameinterface.md#markdown-header-printname)*
+*Implementation of [IPrintNameInterface](../interfaces/iprintnameinterface.md).[printName](../interfaces/iprintnameinterface.md#markdown-header-printName)*
 
 *Defined in [classes.ts:210](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-210)*
 
@@ -286,7 +286,7 @@ ___
 
 ▸ **setName**(name: *`string`*): `void`
 
-*Inherited from [BaseClass](baseclass.md).[setName](baseclass.md#markdown-header-setname)*
+*Inherited from [BaseClass](baseclass.md).[setName](baseclass.md#markdown-header-setName)*
 
 *Defined in [classes.ts:130](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-130)*
 
@@ -308,7 +308,7 @@ ___
 
 ▸ **caTest**(originalValues: *[BaseClass](baseclass.md)*, newRecord: *`any`*, fieldNames: *`string`[]*, mandatoryFields: *`string`[]*): `string`
 
-*Inherited from [BaseClass](baseclass.md).[caTest](baseclass.md#markdown-header-static-catest)*
+*Inherited from [BaseClass](baseclass.md).[caTest](baseclass.md#markdown-header-Static-caTest)*
 
 *Defined in [classes.ts:170](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-170)*
 
@@ -331,7 +331,7 @@ ___
 
 ▸ **getInstance**(): [BaseClass](baseclass.md)
 
-*Inherited from [BaseClass](baseclass.md).[getInstance](baseclass.md#markdown-header-static-getinstance)*
+*Inherited from [BaseClass](baseclass.md).[getInstance](baseclass.md#markdown-header-Static-getInstance)*
 
 *Defined in [classes.ts:162](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-162)*
 
@@ -348,7 +348,7 @@ ___
 
 ▸ **getName**(): `string`
 
-*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-static-getname)*
+*Inherited from [BaseClass](baseclass.md).[getName](baseclass.md#markdown-header-Static-getName)*
 
 *Defined in [classes.ts:118](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-118)*
 

@@ -12,11 +12,11 @@ A class that is documented as being private.
 
 ### Properties
 
-* [fakeProtectedVariable](privateclass.md#markdown-header-protected-fakeprotectedvariable)
+* [fakeProtectedVariable](privateclass.md#markdown-header-Protected-fakeProtectedVariable)
 
 ### Methods
 
-* [fakeProtectedFunction](privateclass.md#markdown-header-protected-fakeprotectedfunction)
+* [fakeProtectedFunction](privateclass.md#markdown-header-Protected-fakeProtectedFunction)
 
 ---
 

@@ -18,7 +18,7 @@ A class that contains members with flattened properties.
 
 * [callback](flattenedclass.md#markdown-header-callback)
 * [indexed](flattenedclass.md#markdown-header-indexed)
-* [multipleCallSignatures](flattenedclass.md#markdown-header-multiplecallsignatures)
+* [multipleCallSignatures](flattenedclass.md#markdown-header-multipleCallSignatures)
 * [options](flattenedclass.md#markdown-header-options)
 
 ---

@@ -18,15 +18,15 @@ This a non generic class derived from a [generic class](genericclass.md).
 
 ### Properties
 
-* [p2](nongenericclass.md#markdown-header-protected-p2)
+* [p2](nongenericclass.md#markdown-header-Protected-p2)
 * [p3](nongenericclass.md#markdown-header-p3)
 * [p5](nongenericclass.md#markdown-header-p5)
 * [value](nongenericclass.md#markdown-header-value)
 
 ### Methods
 
-* [getValue](nongenericclass.md#markdown-header-getvalue)
-* [setValue](nongenericclass.md#markdown-header-setvalue)
+* [getValue](nongenericclass.md#markdown-header-getValue)
+* [setValue](nongenericclass.md#markdown-header-setValue)
 
 ---
 
@@ -62,7 +62,7 @@ ___
 
 **● p2**: *[SubClassB](subclassb.md)*
 
-*Inherited from [GenericClass](genericclass.md).[p2](genericclass.md#markdown-header-protected-p2)*
+*Inherited from [GenericClass](genericclass.md).[p2](genericclass.md#markdown-header-Protected-p2)*
 
 *Defined in [classes.ts:304](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-304)*
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **getValue**(): [SubClassB](subclassb.md)
 
-*Inherited from [GenericClass](genericclass.md).[getValue](genericclass.md#markdown-header-getvalue)*
+*Inherited from [GenericClass](genericclass.md).[getValue](genericclass.md#markdown-header-getValue)*
 
 *Defined in [classes.ts:314](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-314)*
 
@@ -122,7 +122,7 @@ ___
 
 ▸ **setValue**(value: *[SubClassB](subclassb.md)*): `void`
 
-*Inherited from [GenericClass](genericclass.md).[setValue](genericclass.md#markdown-header-setvalue)*
+*Inherited from [GenericClass](genericclass.md).[setValue](genericclass.md#markdown-header-setValue)*
 
 *Defined in [classes.ts:310](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-310)*
 
@@ -130,7 +130,7 @@ ___
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| value | [SubClassB](subclassb.md) |  [getValue](nongenericclass.md#markdown-header-getvalue) is the counterpart. |
+| value | [SubClassB](subclassb.md) |  [getValue](nongenericclass.md#markdown-header-getValue) is the counterpart. |
 
 **Returns:** `void`
 
