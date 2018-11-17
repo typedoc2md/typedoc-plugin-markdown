@@ -45,6 +45,5 @@ export function getAnchorRef(ref: string) {
   return ref
     .replace(/_|\/|\.| /g, '-')
     .replace(/"/g, '')
-    .replace(/ /g, '-')
-    .toLowerCase();
+    .replace(/ /g, '-');
 }
