@@ -1,7 +1,5 @@
 # typedoc-plugin-markdown
 
-![typedoc-plugin-markdown](logos.png)
-
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes a theme and additional arguments for rendering markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)

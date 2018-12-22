@@ -34,7 +34,7 @@ ___
 
 ###  sideLength
 
-**● sideLength**: *`number`*
+**● sideLength**: *`string` | `number`*
 
 *Defined in [interfaces.ts:95](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/interfaces.ts#L95)*
 
