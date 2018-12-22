@@ -92,7 +92,7 @@ export namespace interfaces {
   }
 
   export interface Square extends Shape {
-    sideLength: number;
+    sideLength: string | number;
   }
 
   export const square = {} as Square;
