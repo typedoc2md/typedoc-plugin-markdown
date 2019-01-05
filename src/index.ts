@@ -3,7 +3,6 @@ import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
 import { MarkdownPlugin } from './plugin';
 
 module.exports = (PluginHost: Application) => {
-
   const app = PluginHost.owner;
 
   if (app.converter.hasComponent('markdown')) {
@@ -23,7 +22,8 @@ module.exports = (PluginHost: Application) => {
   app.options.addDeclaration({
     component: 'markdown',
     defaultValue: 'github',
-    help: 'Markdown Plugin: (github|bitbucket|gitbook) Specifies the markdown rendering engine.',
+    help:
+      'Markdown Plugin: (github|bitbucket|gitbook) Specifies the markdown rendering engine.',
     name: 'mdEngine',
     type: ParameterType.String,
   });
@@ -38,7 +38,8 @@ module.exports = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'The repository to use for source files (ignored unless markdownFlavour is set)',
+    help:
+      'The repository to use for source files (ignored unless markdownFlavour is set)',
     name: 'mdSourceRepo',
     type: ParameterType.String,
   });
@@ -46,6 +47,5 @@ module.exports = (PluginHost: Application) => {
   /**
    * Add the plugin to the converter instance
    */
-  app.converter.addComponent('markdown', MarkdownPlugin);
-
+  app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };
