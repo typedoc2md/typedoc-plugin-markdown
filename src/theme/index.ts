@@ -1,6 +1,5 @@
 import * as fs from 'fs';
 import * as path from 'path';
-
 import {
   DeclarationReflection,
   ProjectReflection,
@@ -10,7 +9,6 @@ import {
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-
 import { setProps } from './props';
 import { getAnchorRef, getMarkdownEngine } from './utils';
 
@@ -31,25 +29,26 @@ export class MarkdownTheme extends DefaultTheme {
 
     if (mapping) {
       if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-        const url = [
-          mapping.directory,
-          DefaultTheme.getUrl(reflection) + '.md',
-        ].join('/');
+        const url = [mapping.directory, DefaultTheme.getUrl(reflection) + '.md'].join(
+          '/',
+        );
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
         reflection.hasOwnDocument = true;
       }
-      for (const key in reflection.children) {
-        if (reflection.children.hasOwnProperty(key)) {
-          const child = reflection.children[key];
-          if (mapping.isLeaf) {
-            MarkdownTheme.applyAnchorUrl(child, reflection);
-          } else {
-            MarkdownTheme.buildUrls(child, urls);
+      if (reflection.children) {
+        for (const key in reflection.children) {
+          if (reflection.children.hasOwnProperty(key)) {
+            const child = reflection.children[key];
+            if (mapping.isLeaf) {
+              MarkdownTheme.applyAnchorUrl(child, reflection);
+            } else {
+              MarkdownTheme.buildUrls(child, urls);
+            }
           }
         }
       }
-    } else {
+    } else if (reflection.parent) {
       MarkdownTheme.applyAnchorUrl(reflection, reflection.parent);
     }
 
@@ -78,7 +77,7 @@ export class MarkdownTheme extends DefaultTheme {
         if (reflection.kind === ReflectionKind.ObjectLiteral) {
           anchorPrefix += 'object-literal-';
         }
-        reflection.flags.forEach((flag) => {
+        reflection.flags.forEach(flag => {
           anchorPrefix += `${flag}-`;
         });
         const prefixRef = getAnchorRef(anchorPrefix);
@@ -145,8 +144,7 @@ export class MarkdownTheme extends DefaultTheme {
         {
           ...entryPoint,
           ...{
-            displayReadme:
-              this.application.options.getValue('readme') !== 'none',
+            displayReadme: this.application.options.getValue('readme') !== 'none',
             isIndex: true,
           },
         },
@@ -163,13 +161,14 @@ export class MarkdownTheme extends DefaultTheme {
 
     // write gitbook summary
     if (getMarkdownEngine() === 'gitbook') {
-      const navigation = this.getNavigation(project).children.map(
-        (navigationItem) => {
+      const navigationChildren = this.getNavigation(project).children;
+      if (navigationChildren) {
+        const navigation = navigationChildren.map(navigationItem => {
           const dedicatedUrls = navigationItem.dedicatedUrls
-            ? navigationItem.dedicatedUrls.map((url) => {
+            ? navigationItem.dedicatedUrls.map(url => {
                 return {
                   title: () => {
-                    const urlMapping = urlMappings.find((item) => {
+                    const urlMapping = urlMappings.find(item => {
                       return item.url === url;
                     });
                     return urlMapping ? urlMapping.model.name : null;
@@ -180,11 +179,9 @@ export class MarkdownTheme extends DefaultTheme {
             : null;
 
           return { ...navigationItem, dedicatedUrls };
-        },
-      );
-      urlMappings.push(
-        new UrlMapping('SUMMARY.md', { navigation }, 'summary.hbs'),
-      );
+        });
+        urlMappings.push(new UrlMapping('SUMMARY.md', { navigation }, 'summary.hbs'));
+      }
     }
     return urlMappings;
   }
