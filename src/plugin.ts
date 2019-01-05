@@ -1,12 +1,10 @@
 import * as path from 'path';
-
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components';
 import { Context } from 'typedoc/dist/lib/converter/context';
 import { Converter } from 'typedoc/dist/lib/converter/converter';
 import { Reflection } from 'typedoc/dist/lib/models/reflections/abstract';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { OptionsReadMode } from 'typedoc/dist/lib/utils/options';
-
 import { MarkdownTheme } from './theme/';
 
 /**
@@ -14,7 +12,6 @@ import { MarkdownTheme } from './theme/';
  */
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
-
   // listen to event on initialisation
   public initialize() {
     this.listenTo(this.owner, {
@@ -29,7 +26,6 @@ export class MarkdownPlugin extends ConverterComponent {
    * * Triggered when the converter begins converting a project.
    */
   private onBegin(context: Context, reflection: Reflection) {
-
     // renderer
     const renderer = this.application.renderer;
 
@@ -43,10 +39,12 @@ export class MarkdownPlugin extends ConverterComponent {
 
     // apply the theme
     if (themeName === 'markdown') {
-      const markdownTheme = new MarkdownTheme(renderer, themePath, options.getRawValues());
+      const markdownTheme = new MarkdownTheme(
+        renderer,
+        themePath,
+        options.getRawValues(),
+      );
       renderer.theme = renderer.addComponent('theme', markdownTheme);
-    } else {
-      this.application.logger.log('To generate markdown please set option --theme markdown');
     }
   }
 
@@ -55,7 +53,7 @@ export class MarkdownPlugin extends ConverterComponent {
    * Remove duplicate lines to tidy up output
    */
   private onPageEnd(page: PageEvent) {
-    page.contents = page.contents.replace(/\n{3,}/g, '\n\n');
+    page.contents = page.contents ? page.contents.replace(/\n{3,}/g, '\n\n') : '';
   }
 
   /**
@@ -64,5 +62,4 @@ export class MarkdownPlugin extends ConverterComponent {
   private getThemeDirectory() {
     return path.join(__dirname, './theme/');
   }
-
 }
