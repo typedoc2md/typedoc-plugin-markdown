@@ -167,7 +167,7 @@ ___
 
 ###  destructArrayWithIgnoresRest
 
-**● destructArrayWithIgnoresRest**: *`number`[]*
+**● destructArrayWithIgnoresRest**: *[`number`, `number`]*
 
 *Defined in [destructuring.ts:20](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-20)*
 
@@ -175,7 +175,7 @@ ___
 
 ###  destructArrayWithRest
 
-**● destructArrayWithRest**: *`number`[]*
+**● destructArrayWithRest**: *[`number`, `number`]*
 
 *Defined in [destructuring.ts:15](https://bitbucket.org/owner/repository_name/src/master/destructuring.ts?fileviewer&amp;#x3D;file-view-default#destructuring.ts-15)*
 

@@ -67,7 +67,7 @@ ___
 
 ###  destructArrayWithIgnoresRest
 
-**● destructArrayWithIgnoresRest**: *`number`[]*
+**● destructArrayWithIgnoresRest**: *[`number`, `number`]*
 
 *Defined in [destructuring.ts:20](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L20)*
 
@@ -76,7 +76,7 @@ ___
 
 ###  destructArrayWithRest
 
-**● destructArrayWithRest**: *`number`[]*
+**● destructArrayWithRest**: *[`number`, `number`]*
 
 *Defined in [destructuring.ts:15](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/destructuring.ts#L15)*
 
