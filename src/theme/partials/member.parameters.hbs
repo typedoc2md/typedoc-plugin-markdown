@@ -9,7 +9,7 @@
 
 {{> comment}}
 
-{{#if type.declaration}}
+{{#if type.declaration.children}}
 {{getParametersTableHeaders type.declaration.children}}
 {{#each type.declaration.children}}
 | {{#compact}}{{#each flags}}`{{this}}` {{/each}}{{ name }} | {{#with type}}{{>type}}{{/with}}{{#if defaultValue}} | {{defaultValue}} | {{else}} | {{/if}}{{#if comment}} {{#getMarkdownFromHtml}}{{#markdown}}{{ getStrippedComment comment }}{{/markdown}}{{/getMarkdownFromHtml}} |{{/if}}{{/compact}}
