@@ -132,7 +132,7 @@ ___
 
 ##  doOtherThings
 
-▸ **doOtherThings**(value: *`string` | `number` | [SubClassA](_classes_.subclassa.md)*, secondValue?: *[SubClassA](_classes_.subclassa.md)*): `void`
+▸ **doOtherThings**(value: *`string` \| `number` \| [SubClassA](_classes_.subclassa.md)*, secondValue?: *[SubClassA](_classes_.subclassa.md)*): `void`
 
 *Defined in [classes.ts:282](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L282)*
 
@@ -142,7 +142,7 @@ Description for doOtherThings.
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| value | `string` | `number` | [SubClassA](_classes_.subclassa.md) |  Description for value |
+| value | `string` \| `number` \| [SubClassA](_classes_.subclassa.md) |  Description for value |
 | `Optional` secondValue | [SubClassA](_classes_.subclassa.md) |  Description for optional value |
 
 **Returns:** `void`
