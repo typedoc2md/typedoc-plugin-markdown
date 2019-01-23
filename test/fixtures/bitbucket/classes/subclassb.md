@@ -150,7 +150,7 @@ ___
 
 ###  doOtherThings
 
-▸ **doOtherThings**(value: *`string` | `number` | [SubClassA](subclassa.md)*, secondValue?: *[SubClassA](subclassa.md)*): `void`
+▸ **doOtherThings**(value: *`string` \| `number` \| [SubClassA](subclassa.md)*, secondValue?: *[SubClassA](subclassa.md)*): `void`
 
 *Defined in [classes.ts:282](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-282)*
 
@@ -160,7 +160,7 @@ Description for doOtherThings.
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| value | `string` | `number` | [SubClassA](subclassa.md) |  Description for value |
+| value | `string` \| `number` \| [SubClassA](subclassa.md) |  Description for value |
 | `Optional` secondValue | [SubClassA](subclassa.md) |  Description for optional value |
 
 **Returns:** `void`

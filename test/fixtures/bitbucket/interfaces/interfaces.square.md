@@ -31,7 +31,7 @@ ___
 
 ###  sideLength
 
-**● sideLength**: *`string` | `number`*
+**● sideLength**: *`string` \| `number`*
 
 *Defined in [interfaces.ts:95](https://bitbucket.org/owner/repository_name/src/master/interfaces.ts?fileviewer&amp;#x3D;file-view-default#interfaces.ts-95)*
 
