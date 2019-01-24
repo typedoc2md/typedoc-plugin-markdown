@@ -8,5 +8,5 @@ const turndownService = new TurndownService({
  * @param options
  */
 export function getMarkdownFromHtml(options: any) {
-  return turndownService.turndown(options.fn(this)).replace(/\\`\\`\\`/g, '```');
+  return turndownService.turndown(options.fn(this)).replace(/\\`\\`\\`/g, '```').replace(/[|]/g, '\\|');
 }
