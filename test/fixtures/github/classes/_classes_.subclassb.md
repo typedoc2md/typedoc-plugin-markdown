@@ -172,7 +172,7 @@ Description for doOtherThings.
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `string` \| `number` \| [SubClassA](_classes_.subclassa.md) |  Description for value |
-| `Optional` secondValue | [SubClassA](_classes_.subclassa.md) |  Description for optional value |
+| `Optional` secondValue | [SubClassA](_classes_.subclassa.md) |  Description with \| in description |
 
 **Returns:** `void`
 

@@ -277,7 +277,7 @@ export class SubClassB extends BaseClass {
    * Description for doOtherThings.
    *
    * @param value Description for value
-   * @param secondValue Description for optional value
+   * @param secondValue Description with | in description
    */
   doOtherThings(value: string | number | SubClassA, secondValue?: SubClassA) {
   }

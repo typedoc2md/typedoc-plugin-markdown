@@ -161,7 +161,7 @@ Description for doOtherThings.
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `string` \| `number` \| [SubClassA](subclassa.md) |  Description for value |
-| `Optional` secondValue | [SubClassA](subclassa.md) |  Description for optional value |
+| `Optional` secondValue | [SubClassA](subclassa.md) |  Description with \| in description |
 
 **Returns:** `void`
 
