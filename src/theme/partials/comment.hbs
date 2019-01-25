@@ -9,8 +9,9 @@
 {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
 {{/if}}
 {{~#if tags}}
+
 {{#each tags}}
-*__{{tagName}}__*: {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
+{{getCommentTag tagName}} {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
 
 {{/each}}
 {{~/if}}
