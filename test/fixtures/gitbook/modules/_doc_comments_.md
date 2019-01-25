@@ -12,7 +12,8 @@
 
 *__name__*: AbstractMetadataModule
 
-*__description__*: Provides the module for the [BaseClass](../classes/_classes_.baseclass.md)
+*__description__*:
+ Provides the module for the [BaseClass](../classes/_classes_.baseclass.md)
 
 ```json
 {
@@ -38,6 +39,27 @@ ___
 Additionally you can link to other classes, members or functions using double square brackets.
 
 Link to a class: [BaseClass](../classes/_classes_.baseclass.md) Link to a function: [createSomething](_functions_.md#createsomething) Link to a function: [color](../interfaces/_interfaces_.interfaces.squareconfig.md#color)
+
+___
+
+# Functions
+
+<a id="foo"></a>
+
+##  foo
+
+▸ **foo**(): `void`
+
+*Defined in [doc-comments.ts:36](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/doc-comments.ts#L36)*
+
+Some deprecation
+
+*__deprecated__*:
+ ```typescript
+somethingElse();
+```
+
+**Returns:** `void`
 
 ___
 

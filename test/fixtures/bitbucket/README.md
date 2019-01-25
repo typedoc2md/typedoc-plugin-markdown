@@ -73,6 +73,7 @@
 * [flattenedCallback](#markdown-header-flattenedCallback)
 * [flattenedIndexSignature](#markdown-header-flattenedIndexSignature)
 * [flattenedParameter](#markdown-header-flattenedParameter)
+* [foo](#markdown-header-foo)
 * [functionWithArguments](#markdown-header-functionWithArguments)
 * [functionWithDefaults](#markdown-header-functionWithDefaults)
 * [functionWithDocLink](#markdown-header-functionWithDocLink)
@@ -117,7 +118,8 @@ ___
 
 *__name__*: AbstractMetadataModule
 
-*__description__*: Provides the module for the [BaseClass](classes/baseclass.md)
+*__description__*:
+ Provides the module for the [BaseClass](classes/baseclass.md)
 
 ```json
 {
@@ -435,6 +437,23 @@ The inline typed options object.
 | `Optional` anotherValue | `string` |  Another value on the options object parameter. |
 | `Optional` moreOptions | `object` |  A typed child object of the options object. |
 | `Optional` value | `string` |  A value on the options object parameter. |
+
+**Returns:** `void`
+
+___
+
+###  foo
+
+▸ **foo**(): `void`
+
+*Defined in [doc-comments.ts:36](https://bitbucket.org/owner/repository_name/src/master/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-36)*
+
+Some deprecation
+
+*__deprecated__*:
+ ```typescript
+somethingElse();
+```
 
 **Returns:** `void`
 

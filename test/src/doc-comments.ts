@@ -25,3 +25,14 @@ export const generalComments: boolean = false;
  * ```
  */
 export const commentsWithTags: boolean = false;
+
+/**
+ * Some deprecation
+ * @deprecated
+ * ```typescript
+ * somethingElse();
+ * ```
+ */
+export function foo(): void {
+  return;
+}
