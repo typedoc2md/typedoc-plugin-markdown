@@ -91,6 +91,7 @@ ___
 *Defined in [flattened.ts:52](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/flattened.ts#L52)*
 
 An object with multiple call signatures.
+
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/27](https://github.com/sebastian-lenz/typedoc/issues/27)
 
 #### Type declaration

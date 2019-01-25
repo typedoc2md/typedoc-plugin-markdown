@@ -102,6 +102,7 @@ ___
 *Defined in [flattened.ts:52](https://bitbucket.org/owner/repository_name/src/master/flattened.ts?fileviewer&amp;#x3D;file-view-default#flattened.ts-52)*
 
 An object with multiple call signatures.
+
 *__see__*: [https://github.com/sebastian-lenz/typedoc/issues/27](https://github.com/sebastian-lenz/typedoc/issues/27)
 
 #### Type declaration
