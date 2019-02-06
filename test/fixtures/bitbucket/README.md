@@ -118,8 +118,7 @@ ___
 
 *__name__*: AbstractMetadataModule
 
-*__description__*:
- Provides the module for the [BaseClass](classes/baseclass.md)
+*__description__*: Provides the module for the [BaseClass](classes/baseclass.md)
 
 ```json
 {
