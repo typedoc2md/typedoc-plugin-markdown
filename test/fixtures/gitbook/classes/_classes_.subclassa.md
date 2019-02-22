@@ -112,7 +112,9 @@ ___
 
 ##  nameProperty
 
-getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
+**get nameProperty**(): `string`
+
+**set nameProperty**(value: *`string`*): `void`
 
 *Defined in [classes.ts:219](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L219)*
 
@@ -139,7 +141,7 @@ ___
 
 ##  readOnlyNameProperty
 
-getreadOnlyNameProperty(): `string`
+**get readOnlyNameProperty**(): `string`
 
 *Defined in [classes.ts:238](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L238)*
 
@@ -153,7 +155,7 @@ ___
 
 ##  writeOnlyNameProperty
 
-setwriteOnlyNameProperty(value: *`string`*): `void`
+**set writeOnlyNameProperty**(value: *`string`*): `void`
 
 *Defined in [classes.ts:248](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/classes.ts#L248)*
 
