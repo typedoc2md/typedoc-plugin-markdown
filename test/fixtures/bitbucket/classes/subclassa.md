@@ -138,7 +138,9 @@ ___
 
 ###  nameProperty
 
-getnameProperty(): `string`setnameProperty(value: *`string`*): `void`
+**get nameProperty**(): `string`
+
+**set nameProperty**(value: *`string`*): `void`
 
 *Defined in [classes.ts:219](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-219)*
 
@@ -164,7 +166,7 @@ ___
 
 ###  readOnlyNameProperty
 
-getreadOnlyNameProperty(): `string`
+**get readOnlyNameProperty**(): `string`
 
 *Defined in [classes.ts:238](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-238)*
 
@@ -177,7 +179,7 @@ ___
 
 ###  writeOnlyNameProperty
 
-setwriteOnlyNameProperty(value: *`string`*): `void`
+**set writeOnlyNameProperty**(value: *`string`*): `void`
 
 *Defined in [classes.ts:248](https://bitbucket.org/owner/repository_name/src/master/classes.ts?fileviewer&amp;#x3D;file-view-default#classes.ts-248)*
 
