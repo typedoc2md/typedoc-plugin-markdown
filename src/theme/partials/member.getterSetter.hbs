@@ -1,17 +1,18 @@
 {{#if getSignature}}
 {{#with getSignature}}
 {{#compact}}
-get
-{{../name}}
+**get {{../name}}**
 {{> member.signature.title hideName=true }}
 {{/compact}}
 {{/with}}
 {{/if}}
 {{#if setSignature}}
+{{#if getSignature}}
+{{getNewLine}}
+{{/if}}
 {{#with setSignature}}
 {{#compact}}
-set 
-{{../name}}
+**set {{../name}}**
 {{> member.signature.title hideName=true }}
 {{/compact}}
 {{/with}}
