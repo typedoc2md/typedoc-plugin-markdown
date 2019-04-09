@@ -43,6 +43,10 @@ The target markdown rendering engine:
 | bitbucket        | Renders markdown to support Bitbucket's internal anchor linking.    |
 | gitbook          | Generates additional SUMMARY.md file to enable a table of contents. |
 
+### --mdDocusaurus
+
+Flatten the output and make it suitable for direct use in Docusaurus.
+
 ### --mdHideSources
 
 Suppress source file linking from output.
