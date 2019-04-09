@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "copy:static": "copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "copy:plugin": "copyfiles package.json ./dist/**/* node_modules/typedoc-plugin-markdown/",
+    "copy:plugin": "copyfiles package.json './dist/**/*' node_modules/typedoc-plugin-markdown/",
     "examples": "rimraf examples/out && typedoc ./examples/src --out ./examples/out --theme markdown --gitRevision master --readme none --media test/src/media/ --includes test/src/inc/",
     "html": "typedoc ./test/src --out test/out/html",
     "lint": "tslint --project ./src/tsconfig.json",
