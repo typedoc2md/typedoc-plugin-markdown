@@ -29,7 +29,7 @@ export class MarkdownTheme extends DefaultTheme {
 
     if (IsDocusaurusEnabled()) {
       reflection.name = reflection.name.replace(/^\"/, '[').replace(/\"$/, ' Module]');
-      if(reflection.kindString){
+      if (reflection.kindString) {
         reflection.kindString = reflection.kindString.replace(/External module/, 'Module');
       }
     }
@@ -144,7 +144,7 @@ export class MarkdownTheme extends DefaultTheme {
   }
 
   private get readMeName(): string {
-    return (IsDocusaurusEnabled()?'api-readme.md':'README.md');
+    return (IsDocusaurusEnabled() ? 'api-readme.md' : 'README.md');
   }
 
   /**
