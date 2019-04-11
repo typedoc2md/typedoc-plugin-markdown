@@ -1,4 +1,4 @@
-{{#ifDocusaurusIsEnabled}}{{> metadata}}{{/ifDocusaurusIsEnabled}}
+{{~#ifDocusaurusIsEnabled~}}{{> metadata}}{{~/ifDocusaurusIsEnabled~}}
 {{!-- {{ breadcrumbs }} --}}
 {{#ifDisplayBreadcrumbs}}{{#unless model.isIndex}}[{{project.name}}]({{{ getReadMeName }}}){{~#with model~}}{{> breadcrumb}}{{/with}}{{getNewLine}}{{/unless}}{{/ifDisplayBreadcrumbs}}
 {{!-- {{ title }} --}}

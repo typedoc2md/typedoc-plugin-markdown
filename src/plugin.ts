@@ -53,7 +53,7 @@ export class MarkdownPlugin extends ConverterComponent {
    * Remove duplicate lines to tidy up output
    */
   private onPageEnd(page: PageEvent) {
-    page.contents = page.contents ? page.contents.replace(/\n{3,}/g, '\n\n') : '';
+    page.contents = page.contents ? page.contents.replace(/[\r?\n]{3,}/g, '\n\n') : '';
   }
 
   /**
