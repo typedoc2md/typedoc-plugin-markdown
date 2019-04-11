@@ -14,6 +14,13 @@ export function getMarkdownEngine() {
 }
 
 /**
+ * Returns true if Docusaurus support is enabled
+ */
+export function IsDocusaurusEnabled() {
+  return getOptions().mdDocusaurus;
+}
+
+/**
  * Returns a compiled partial
  * @param partialName
  * @param data

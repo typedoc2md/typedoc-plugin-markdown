@@ -8,9 +8,9 @@ import {
 } from 'typedoc/dist/lib/models/reflections/index';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
-import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+import { DefaultTheme, TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 import { setProps } from './props';
-import { getAnchorRef, getMarkdownEngine } from './utils';
+import { getAnchorRef, getMarkdownEngine, IsDocusaurusEnabled } from './utils';
 
 export class MarkdownTheme extends DefaultTheme {
   /**
@@ -27,11 +27,16 @@ export class MarkdownTheme extends DefaultTheme {
   ): UrlMapping[] {
     const mapping = DefaultTheme.getMapping(reflection);
 
+    if (IsDocusaurusEnabled()) {
+      reflection.name = reflection.name.replace(/^\"/, '[').replace(/\"$/, ' Module]');
+      if (reflection.kindString) {
+        reflection.kindString = reflection.kindString.replace(/External module/, 'Module');
+      }
+    }
+
     if (mapping) {
       if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-        const url = [mapping.directory, DefaultTheme.getUrl(reflection) + '.md'].join(
-          '/',
-        );
+        const url = MarkdownTheme.buildUrl(mapping, reflection);
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
         reflection.hasOwnDocument = true;
@@ -53,6 +58,17 @@ export class MarkdownTheme extends DefaultTheme {
     }
 
     return urls;
+  }
+
+  public static buildUrl(mapping: TemplateMapping, reflection: DeclarationReflection): string {
+    if (IsDocusaurusEnabled()) {
+      return  'api-' + mapping.directory + '-' + DefaultTheme.getUrl(reflection).replace(/\_/g, '-').replace(/-\./g, '-')
+      .replace(/^-/, '').replace(/-$/g, '').replace(/-module-/g, '-') + '.md';
+    } else {
+      return [mapping.directory, DefaultTheme.getUrl(reflection) + '.md'].join(
+        '/',
+      );
+    }
   }
 
   /**
@@ -120,10 +136,15 @@ export class MarkdownTheme extends DefaultTheme {
    */
   public isOutputDirectory(outPath: string): boolean {
     const files = fs.readdirSync(outPath);
+
     return (
-      fs.existsSync(path.join(outPath, 'README.md')) ||
-      (files.length === 1 && path.extname(files[0]) === '.md')
-    );
+        fs.existsSync(path.join(outPath, this.readMeName)) ||
+        (files.length === 1 && path.extname(files[0]) === '.md')
+      );
+  }
+
+  private get readMeName(): string {
+    return (IsDocusaurusEnabled() ? 'api-readme.md' : 'README.md');
   }
 
   /**
@@ -140,7 +161,7 @@ export class MarkdownTheme extends DefaultTheme {
     // write home file with additional context
     urlMappings.push(
       new UrlMapping(
-        'README.md',
+        this.readMeName,
         {
           ...entryPoint,
           ...{

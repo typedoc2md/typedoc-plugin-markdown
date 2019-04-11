@@ -44,6 +44,14 @@ module.exports = (PluginHost: Application) => {
     type: ParameterType.String,
   });
 
+  app.options.addDeclaration({
+    component: 'markdown',
+    defaultValue: false,
+    help: 'Markdown Plugin: Flatten the output and make it suitable for direct use in Docusaurus.',
+    name: 'mdDocusaurus',
+    type: ParameterType.Boolean,
+  });
+
   /**
    * Add the plugin to the converter instance
    */
