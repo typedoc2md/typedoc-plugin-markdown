@@ -42,6 +42,10 @@
 * [IPrintInterface](interfaces/iprintinterface.md)
 * [IPrintNameInterface](interfaces/iprintnameinterface.md)
 
+### Type aliases
+
+* [Option](#markdown-header-Option)
+
 ### Variables
 
 * [amount](#markdown-header-Const-amount)
@@ -65,6 +69,7 @@
 
 ### Functions
 
+* [bar](#markdown-header-bar)
 * [createSomething](#markdown-header-createSomething)
 * [dest](#markdown-header-dest)
 * [drawText](#markdown-header-drawText)
@@ -87,6 +92,18 @@
 * [variableFunction](#markdown-header-variableFunction)
 
 ---
+
+## Type aliases
+
+###  Option
+
+**Ƭ Option**: *"One" \| "Two"*
+
+*Defined in [doc-comments.ts:55](https://bitbucket.org/owner/repository_name/src/master/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-55)*
+
+Option for bar()
+
+___
 
 ## Variables
 
@@ -275,6 +292,33 @@ This is an array type
 ___
 
 ## Functions
+
+###  bar
+
+▸ **bar**(o: *[Option](#markdown-header-Option)*): `void`
+
+*Defined in [doc-comments.ts:51](https://bitbucket.org/owner/repository_name/src/master/doc-comments.ts?fileviewer&amp;#x3D;file-view-default#doc-comments.ts-51)*
+
+bar method.
+
+Doc outside tag
+
+*   Line 1 [Option](#markdown-header-Option)
+*   Line 2 [Option](#markdown-header-Option)
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| o | [Option](#markdown-header-Option) |
+
+**Returns:** `void`
+Doc inside tag
+
+*   Line 1 [Option](#markdown-header-Option)
+*   Line 2 [Option](#markdown-header-Option)
+
+___
 
 ###  createSomething
 

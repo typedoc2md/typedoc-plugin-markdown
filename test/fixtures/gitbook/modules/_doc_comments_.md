@@ -1,5 +1,19 @@
 
 
+# Type aliases
+
+<a id="option"></a>
+
+##  Option
+
+**Ƭ Option**: *"One" \| "Two"*
+
+*Defined in [doc-comments.ts:55](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/doc-comments.ts#L55)*
+
+Option for bar()
+
+___
+
 # Variables
 
 <a id="commentswithtags"></a>
@@ -43,6 +57,34 @@ ___
 
 # Functions
 
+<a id="bar"></a>
+
+##  bar
+
+▸ **bar**(o: *[Option](_doc_comments_.md#option)*): `void`
+
+*Defined in [doc-comments.ts:51](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/test/src/doc-comments.ts#L51)*
+
+bar method.
+
+Doc outside tag
+
+*   Line 1 [Option](_doc_comments_.md#option)
+*   Line 2 [Option](_doc_comments_.md#option)
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| o | [Option](_doc_comments_.md#option) |
+
+**Returns:** `void`
+Doc inside tag
+
+*   Line 1 [Option](_doc_comments_.md#option)
+*   Line 2 [Option](_doc_comments_.md#option)
+
+___
 <a id="foo"></a>
 
 ##  foo

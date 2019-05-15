@@ -14,6 +14,6 @@
 
 **Returns:** {{#with type}}{{>type}}{{/with}}
 {{#if comment.returns}}
-{{{comment.returns}}}
+{{#getMarkdownFromHtml}}{{#markdown}}{{{comment.returns}}}{{/markdown}}{{/getMarkdownFromHtml}}
 {{/if}}
 {{/if}}

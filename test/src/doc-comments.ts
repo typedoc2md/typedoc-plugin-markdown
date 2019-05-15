@@ -36,3 +36,20 @@ export const commentsWithTags: boolean = false;
 export function foo(): void {
   return;
 }
+
+/**
+ * bar method.
+ *
+ * Doc outside tag
+ * - Line 1 [[Option]]
+ * - Line 2 [[Option]]
+ *
+ * @returns Doc inside tag
+ * - Line 1 [[Option]]
+ * - Line 2 [[Option]]
+ */
+function bar (o: Option): void {
+}
+
+/** Option for bar() */
+type Option = 'One' | 'Two';
