@@ -4,7 +4,10 @@
 /dist
 /tmp
 /test/out
+/out
 .nyc_output/
+.vscode
+
 
 # dependencies
 /node_modules
