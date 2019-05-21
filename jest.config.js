@@ -1,8 +1,13 @@
 module.exports = {
-  roots: ['<rootDir>/test'],
+  roots: ['<rootDir>/src'],
   transform: {
-    '^.+\\.ts?$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
-  testRegex: '(/__tests__/.*|(spec))\\.ts?$',
+
+  //setupFiles: ['./test/setup.js'],
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*ts'],
+  coverageReporters: ['json', 'lcov', 'text', 'text-summary'],
 };

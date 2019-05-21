@@ -1,10 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "esModuleInterop": true,
     "outDir": "../dist",
     "rootDir": "./",
     "noUnusedLocals": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true
-  }
+    "noImplicitAny": false,
+    "strictNullChecks": false
+  },
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
