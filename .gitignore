@@ -6,7 +6,6 @@
 /test/out
 /out
 .nyc_output/
-.vscode
 
 
 # dependencies

@@ -3,11 +3,9 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-
-  //setupFiles: ['./test/setup.js'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*ts'],
+  collectCoverageFrom: ['src/**/*ts', '!src/test/**/*'],
   coverageReporters: ['json', 'lcov', 'text', 'text-summary'],
 };

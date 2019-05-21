@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gitbook theme summary should create correct summary output 1`] = `
+"* [Globals](globals.md)
+* [Section](README.md)
+  * [Subsection 1](sub-section-1.md)
+  * [Subsection 2](sub-section-2.md)"
+`;

@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`signatureTitle helper should compile 1`] = `
+"**functionWithParameters**(\`paramZ\`: \`[object Object]\`, \`paramG\`: \`[object Object]\`, \`paramA\`: \`[object Object]\`): *\`[object Object]\`*
+"
+`;

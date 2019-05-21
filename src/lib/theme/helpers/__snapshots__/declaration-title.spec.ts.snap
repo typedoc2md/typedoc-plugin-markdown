@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`declarationTitle helper should compile 1`] = `"**myConst**: *\`[object Object]\`* = 15"`;

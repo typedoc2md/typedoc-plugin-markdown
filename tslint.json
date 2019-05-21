@@ -15,6 +15,7 @@
     "arrow-parens": false,
     "member-ordering": false,
     "member-access": false,
-    "object-literal-key-quotes": false
+    "object-literal-key-quotes": false,
+    "max-classes-per-file": false
   }
 }

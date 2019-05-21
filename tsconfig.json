@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
     "declaration": false,
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": false,
+    "lib": ["es2016", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "noEmitHelpers": false,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "outDir": "./dist",
     "removeComments": true,
     "sourceMap": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "es2015",
-    "lib": ["es2016", "dom"],
-    "typeRoots": ["node_modules/@types"]
-  }
+    "strictNullChecks": false,
+    "target": "es2015"
+  },
+  "exclude": ["node_modules", "./src/test", "typedoc", "**/*.spec.ts"]
 }

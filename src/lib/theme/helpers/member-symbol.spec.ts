@@ -1,0 +1,11 @@
+import { Fixture, getFixture, getReflectionByName } from '../../../test/test.utils';
+import { MarkdownPlugin } from '../../plugin';
+import { memberSymbol } from './member-symbol';
+
+describe(`memberSymbol helper`, () => {
+  test(`should compile`, () => {
+    const data = getReflectionByName(getFixture(Fixture.Variable), 'myConst');
+    const result = MarkdownPlugin.formatContents(memberSymbol.call(data));
+    expect(result).toMatchSnapshot();
+  });
+});

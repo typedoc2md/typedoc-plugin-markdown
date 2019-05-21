@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "*.ts": "typescript",
+    "*.hbs": "handlebars"
+  },
+  "html.format.enable": true,
+  "html.format.indentHandlebars": true,
+  "html.format.maxPreserveNewLines": 1,
+  "html.format.wrapLineLength": 200,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.disableLanguages": ["hbs", "handlebars"],
+  "prettier.printWidth": 140
+}

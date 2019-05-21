@@ -1,6 +1,8 @@
+<img align="right" alt="" width="105" src="https://raw.githubusercontent.com/dcurtis/markdown-mark/master/png/208x128.png">
+
 # typedoc-plugin-markdown
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that exposes a theme and additional arguments for rendering markdown.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeScript API documentation to be generated in Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -33,33 +35,35 @@ $ node_modules/.bin/typedoc --theme markdown
 
 The plugin exposes the following arguments in addition to TypeDoc's defaults:
 
-### --mdEngine `<github|bitbucket|gitbook>`
+| Name            | Description                                       |
+| --------------- | ------------------------------------------------- |
+| `--platform`    | Target a specific documentation/hosting platform. |
+| `--hideSources` | Suppress source file linking from output.         |
 
-The target markdown rendering engine:
+### Targeting specific platforms
 
-| Engine           | Description                                                         |
-| ---------------- | ------------------------------------------------------------------- |
-| github (default) | Optimized for GitHub Flavored markdown.                             |
-| bitbucket        | Renders markdown to support Bitbucket's internal anchor linking.    |
-| gitbook          | Generates additional SUMMARY.md file to enable a table of contents. |
+By default the theme will render standard **GitHub Flavored Markdown** / CommonMark suitable for the majority of markdown engines.
 
-### --mdDocusaurus
+The plugin also attempts to target the following platforms:
 
-Flatten the output and make it suitable for direct use in Docusaurus.
+#### GitBook (`--platform gitbook`)
 
-### --mdHideSources
+- Generates additional `SUMMARY.md` file to enable a books's table of contents / navigation.
 
-Suppress source file linking from output.
+#### Docusaurus (`--platform docusaurus`)
 
-### --mdSourceRepo `<path.to.repo>`(_Ignored on GitHub repositories_)
+- Adds metadata to rendered Markdown.
+- If the out directory is recognised as a docusaurus `/docs` directory, the plugin will update `website/sidebars.json` so pages are accessible in the sidebar.
 
-For projects hosted on GitHub TypeDoc resolves source files. This argument allows targeting of source files hosted on other environments.
+#### Bitbucket (`--platform bitbucket`)
 
-For Bitbucket use: `https://bitbucket.org/owner/repository_name`.
+- Support Bitbucket's internal/anchor links in rendered Markdown.
 
-## What does it look like?
+## Version 2 (June 2019)
 
-The markdown theme aims to provide the same functionality as the default theme with a simple breadcrumb navigation. To get an idea of the output view [some generic example output](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/examples/out/README.md).
+Version 2 contains many code and UI improvements. Please raise an issue if anything has broken and suggestions for improvements.
+
+Further documentation and examples to follow.
 
 ## Acknowledgements
 

@@ -1,0 +1,37 @@
+{{#with comment}}
+
+  {{#if hasVisibleComponent}}
+
+    {{#if shortText}}
+
+      {{#with shortText}}
+
+        {{{comment}}}
+
+      {{/with}}
+
+    {{/if}}
+
+    {{#if text}}
+
+      {{#with text}}
+
+        {{{comment}}}
+
+      {{/with}}
+
+    {{/if}}
+
+    {{#if tags}}
+
+      {{#with tags}}
+
+        {{{commentTags}}}
+
+      {{/with}}
+
+    {{/if}}
+
+  {{/if}}
+
+{{/with}}
