@@ -1,4 +1,5 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { GitbookTheme } from '../theme.gitbook';
@@ -6,15 +7,15 @@ import { heading } from './heading';
 import { reflectionTitle } from './reflection-title';
 
 export function mainTitle(this: PageEvent) {
-  if (!isVisible()) {
+  if (!isVisible(this)) {
     return '';
   }
   return `${prefix()} ${reflectionTitle.call(this)}`;
 }
 
-function isVisible() {
-  if (MarkdownPlugin.theme instanceof DocusaurusTheme) {
-    return true;
+function isVisible(page: PageEvent) {
+  if (page.url === MarkdownPlugin.theme.indexName) {
+    return false;
   }
   return true;
 }

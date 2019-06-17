@@ -6,7 +6,7 @@ import {
   ProjectReflection,
   Reflection,
   ReflectionKind,
-} from 'typedoc/dist/lib/models/reflections/index';
+} from 'typedoc/dist/lib/models/reflections';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
@@ -14,6 +14,7 @@ import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 export class MarkdownTheme extends Theme {
   navigation: NavigationItem;
   navigationTitlesMap = {};
+  hasGlobalsFile = false;
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath);
     renderer.removeComponent('navigation');
@@ -48,13 +49,14 @@ export class MarkdownTheme extends Theme {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
 
-    if (this.application.options.getValue('readme') === 'none') {
-      entryPoint.url = this.indexName;
-      urls.push(new UrlMapping(this.indexName, entryPoint, 'reflection.hbs'));
-    } else {
+    if (project.readme && this.application.options.getValue('readme') !== 'none') {
       entryPoint.url = this.globalsName;
       urls.push(new UrlMapping(this.globalsName, entryPoint, 'reflection.hbs'));
       urls.push(new UrlMapping(this.indexName, entryPoint, 'index.hbs'));
+      this.hasGlobalsFile = true;
+    } else {
+      entryPoint.url = this.indexName;
+      urls.push(new UrlMapping(this.indexName, entryPoint, 'reflection.hbs'));
     }
 
     if (entryPoint.children) {
