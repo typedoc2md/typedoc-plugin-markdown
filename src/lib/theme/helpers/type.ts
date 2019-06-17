@@ -9,6 +9,7 @@ import {
   TypeOperatorType,
   UnionType,
 } from 'typedoc/dist/lib/models/types';
+
 import { relativeUrl } from './relative-url';
 
 export function type(
@@ -78,5 +79,5 @@ function getIntrinsicType(model: IntrinsicType) {
 }
 
 function getStringLiteralType(model: StringLiteralType) {
-  return model.value;
+  return `"${model.value}"`;
 }

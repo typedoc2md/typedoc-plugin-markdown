@@ -6,6 +6,7 @@ import { Reflection } from 'typedoc/dist/lib/models/reflections/abstract';
 import { PageEvent, RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { Options } from 'typedoc/dist/lib/utils/options';
+
 import { MarkdownTheme } from './theme/theme';
 import { BitbucketTheme } from './theme/theme.bitbucket';
 import { DocusaurusTheme } from './theme/theme.docusaurus';
@@ -25,6 +26,7 @@ export class MarkdownPlugin extends ConverterComponent {
     readme?: string;
     includes?: string;
     media?: string;
+    mode?: string;
     mdHideSources?: boolean;
     mdSourceRepo?: string;
   };

@@ -1,5 +1,3 @@
-<img align="right" alt="" width="105" src="https://raw.githubusercontent.com/dcurtis/markdown-mark/master/png/208x128.png">
-
 # typedoc-plugin-markdown
 
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeScript API documentation to be generated in Markdown.

@@ -1,4 +1,5 @@
 import { ParameterReflection } from 'typedoc';
+
 import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
@@ -13,7 +14,7 @@ export function parameterTable(this: ParameterReflection[]) {
   const headers = ['Name', 'Type'];
 
   if (hasDefaultValues) {
-    headers.push('Default value');
+    headers.push('Default');
   }
 
   if (hasComments) {
@@ -22,7 +23,12 @@ export function parameterTable(this: ParameterReflection[]) {
 
   const rows = this.map(parameter => {
     const isOptional = parameter.flags.includes('Optional');
-    const row = [`\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${isOptional ? '?' : ''}\``, type.call(parameter.type)];
+    const typeOut = type.call(parameter.type);
+
+    const row = [
+      `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${isOptional ? '?' : ''}\``,
+      typeOut.toString().replace(/\|/g, '\\|'),
+    ];
     if (hasDefaultValues) {
       row.push(parameter.defaultValue ? parameter.defaultValue : '-');
     }

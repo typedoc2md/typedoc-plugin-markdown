@@ -2,7 +2,7 @@
 
 exports[`parameterTable helper should compile 1`] = `
 "
-Name | Type | Default value | Description |
+Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
 \`valueA\` | \`[object Object]\` | \\"defaultValue\\" | A parameter with a default string value. |
 \`valueB\` | \`[object Object]\` | 100 | A parameter with a default numeric value. |
