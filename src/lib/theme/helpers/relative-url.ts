@@ -1,7 +1,11 @@
 import * as path from 'path';
+
 import { MarkdownPlugin } from '../../plugin';
 
 export function relativeUrl(absolute: string) {
+  if (!absolute) {
+    return '';
+  }
   const urlPrefix: RegExp = /^(http|ftp)s?:\/\//;
   if (!MarkdownPlugin.location || urlPrefix.test(absolute)) {
     return absolute;
