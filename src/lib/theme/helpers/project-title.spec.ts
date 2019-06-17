@@ -1,5 +1,6 @@
 import { mocked } from 'ts-jest/utils';
 import { Renderer } from 'typedoc';
+
 import { MarkdownPlugin } from '../../plugin';
 import { MarkdownTheme } from '../theme';
 import { GitbookTheme } from '../theme.gitbook';
@@ -10,7 +11,7 @@ jest.mock('../theme');
 
 describe(`projectTitle helper`, () => {
   test(`should compile`, () => {
-    mocked(MarkdownPlugin).theme = {} as MarkdownTheme;
+    mocked(MarkdownPlugin).theme = { indexName: 'pagex.md' } as MarkdownTheme;
     const data = {
       project: {
         name: 'Project title',

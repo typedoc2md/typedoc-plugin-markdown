@@ -1,4 +1,5 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { GitbookTheme } from '../theme.gitbook';
