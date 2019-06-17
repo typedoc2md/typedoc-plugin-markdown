@@ -28,10 +28,10 @@ export function parameterTable(this: ParameterReflection[]) {
     }
     if (hasComments) {
       const commentsText = [];
-      if (parameter.comment.shortText) {
+      if (parameter.comment && parameter.comment.shortText) {
         commentsText.push(comment.call(stripLineBreaks.call(parameter.comment.shortText)));
       }
-      if (parameter.comment.text) {
+      if (parameter.comment && parameter.comment.text) {
         commentsText.push(comment.call(stripLineBreaks.call(parameter.comment.text)));
       }
       row.push(commentsText.length > 0 ? commentsText.join(' ') : '-');
@@ -40,8 +40,6 @@ export function parameterTable(this: ParameterReflection[]) {
   });
 
   const output = `\n${headers.join(' | ')} |\n${headers.map(() => '------').join(' | ')} |\n${rows.join('')}`;
-
-  // output = output.replace(/\n/g, '\n > ');
 
   return output;
 }
