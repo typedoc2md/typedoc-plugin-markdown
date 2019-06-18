@@ -5,6 +5,7 @@ import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { GitbookTheme } from '../theme.gitbook';
 import { relativeUrl } from './relative-url';
+import { VuePressTheme } from '../theme.vuepress';
 
 export function breadcrumbs(this: PageEvent) {
   if (!isVisible()) {
@@ -25,7 +26,11 @@ function breadcrumb(model: Reflection, md: string[]) {
 }
 
 function isVisible() {
-  if (MarkdownPlugin.theme instanceof DocusaurusTheme || MarkdownPlugin.theme instanceof GitbookTheme) {
+  if (
+    MarkdownPlugin.theme instanceof DocusaurusTheme ||
+    MarkdownPlugin.theme instanceof GitbookTheme ||
+    MarkdownPlugin.theme instanceof VuePressTheme
+  ) {
     return false;
   }
   return true;

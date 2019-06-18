@@ -11,6 +11,7 @@ import { MarkdownTheme } from './theme/theme';
 import { BitbucketTheme } from './theme/theme.bitbucket';
 import { DocusaurusTheme } from './theme/theme.docusaurus';
 import { GitbookTheme } from './theme/theme.gitbook';
+import { VuePressTheme } from './theme/theme.vuepress';
 
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
@@ -21,7 +22,7 @@ export class MarkdownPlugin extends ConverterComponent {
   static location: string;
   static page: PageEvent;
   static settings: {
-    platform?: 'gitbook' | 'ducusaurus' | 'bitbucket';
+    platform?: 'gitbook' | 'ducusaurus' | 'bitbucket' | 'vuepress';
     hideSources?: boolean;
     readme?: string;
     includes?: string;
@@ -96,6 +97,9 @@ export class MarkdownPlugin extends ConverterComponent {
       }
       if (platform === 'bitbucket') {
         return new BitbucketTheme(renderer, themePath, options);
+      }
+      if (platform === 'vuepress') {
+        return new VuePressTheme(renderer, themePath, options);
       }
     }
     return new MarkdownTheme(renderer, themePath, options);

@@ -5,6 +5,7 @@ import { DocusaurusTheme } from '../theme.docusaurus';
 import { GitbookTheme } from '../theme.gitbook';
 import { heading } from './heading';
 import { relativeUrl } from './relative-url';
+import { VuePressTheme } from '../theme.vuepress';
 
 export function projectTitle(this: PageEvent) {
   if (!isVisible()) {
@@ -14,7 +15,11 @@ export function projectTitle(this: PageEvent) {
 }
 
 function isVisible() {
-  if (MarkdownPlugin.theme instanceof DocusaurusTheme || MarkdownPlugin.theme instanceof GitbookTheme) {
+  if (
+    MarkdownPlugin.theme instanceof DocusaurusTheme ||
+    MarkdownPlugin.theme instanceof GitbookTheme ||
+    MarkdownPlugin.theme instanceof VuePressTheme
+  ) {
     return false;
   }
   return true;
