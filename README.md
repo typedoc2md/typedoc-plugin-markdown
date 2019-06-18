@@ -53,6 +53,11 @@ The plugin also attempts to target the following platforms:
 - Adds metadata to rendered Markdown.
 - If the out directory is recognised as a docusaurus `/docs` directory, the plugin will update `website/sidebars.json` so pages are accessible in the sidebar.
 
+#### VuePress (`--platform vuepress`)
+
+- Adds metadata to rendered Markdown.
+- If the out directory is recognised as a vuepress `/docs` directory, the plugin will create `.vuepress/api-sidebar.json` so pages are accessible in the sidebar.
+
 #### Bitbucket (`--platform bitbucket`)
 
 - Support Bitbucket's internal/anchor links in rendered Markdown.
