@@ -4,8 +4,8 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { GitbookTheme } from '../theme.gitbook';
-import { relativeUrl } from './relative-url';
 import { VuePressTheme } from '../theme.vuepress';
+import { relativeUrl } from './relative-url';
 
 export function breadcrumbs(this: PageEvent) {
   if (!isVisible()) {

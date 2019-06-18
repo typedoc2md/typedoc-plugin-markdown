@@ -3,9 +3,9 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { GitbookTheme } from '../theme.gitbook';
+import { VuePressTheme } from '../theme.vuepress';
 import { heading } from './heading';
 import { relativeUrl } from './relative-url';
-import { VuePressTheme } from '../theme.vuepress';
 
 export function projectTitle(this: PageEvent) {
   if (!isVisible()) {
