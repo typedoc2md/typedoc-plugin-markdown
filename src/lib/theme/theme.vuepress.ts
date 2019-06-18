@@ -66,8 +66,9 @@ export class VuePressTheme extends MarkdownTheme {
     if (MarkdownPlugin.project.url === this.globalsName) {
       projectUrls.push(docsRoot + 'globals');
     }
-    const packageName = MarkdownPlugin.project.packageInfo.name;
-    const navObject: any = [{ title: packageName, children: projectUrls }];
+
+    // const packageName = MarkdownPlugin.project.packageInfo.name;
+    const navObject = []; // [{ title: packageName, children: projectUrls }]
 
     this.navigation.children.forEach(rootNavigation => {
       navObject.push({
