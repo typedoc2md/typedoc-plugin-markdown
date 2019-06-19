@@ -3,7 +3,7 @@
  * May be used in `.vuepress/config.json` as follows:
  * @example
  * const apiSideBar = require("./api-sidebar.json");
- * // Wiyhout groups
+ * // Without groups
  * module.exports = {
  *   themeConfig: {
  *     sidebar: ["some-content", ...apiSideBar]

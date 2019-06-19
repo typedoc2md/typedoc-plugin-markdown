@@ -58,6 +58,26 @@ The plugin also attempts to target the following platforms:
 - Adds metadata to rendered Markdown.
 - If the out directory is recognised as a vuepress `/docs` directory, the plugin will create `.vuepress/api-sidebar.json` so pages are accessible in the sidebar.
 
+`.vuepress/config.json`
+
+```js
+const apiSideBar = require('./api-sidebar.json');
+
+// Without groups
+module.exports = {
+  themeConfig: {
+    sidebar: ['some-content', ...apiSideBar],
+  },
+};
+
+// With groups
+module.exports = {
+  themeConfig: {
+    sidebar: ['some-content', { title: 'API', children: apiSideBar }],
+  },
+};
+```
+
 #### Bitbucket (`--platform bitbucket`)
 
 - Support Bitbucket's internal/anchor links in rendered Markdown.
