@@ -3,6 +3,8 @@
  * May be used in `.vuepress/config.json` as follows:
  * @example
  * const apiSideBar = require("./api-sidebar.json");
+ * const apiSideBarRelative = require('./api-sidebar-relative.json');
+ *
  * // Without groups
  * module.exports = {
  *   themeConfig: {
@@ -15,6 +17,17 @@
  *   themeConfig: {
  *     sidebar: ["some-content", { title: "API", children: apiSideBar }]
  *   }
+ * };
+ *
+ * // Multiple Sidebar
+ * module.exports = {
+ *   themeConfig: {
+ *     sidebar: {
+ *       '/guide/': ['some-content'],
+ *       '/api/': apiSideBarRelative,
+ *       '/': ['other'],
+ *     },
+ *   },
  * };
  */
 
@@ -48,6 +61,8 @@ export class VuePressTheme extends MarkdownTheme {
     const vuePressRoot = root + 'docs/.vuepress';
     const navObject = this.getNavObject(docsRoot);
     const sidebarPath = vuePressRoot + '/api-sidebar.json';
+    const relativeNavObject = this.getNavObject();
+    const relativeSidebarPath = vuePressRoot + '/api-sidebar-relative.json';
 
     if (!fs.existsSync(vuePressRoot)) {
       fs.mkdirSync(vuePressRoot);
@@ -55,13 +70,14 @@ export class VuePressTheme extends MarkdownTheme {
 
     try {
       fs.writeFileSync(sidebarPath, JSON.stringify(navObject, null, 2));
+      fs.writeFileSync(relativeSidebarPath, JSON.stringify(relativeNavObject, null, 2));
       this.application.logger.write(`[typedoc-plugin-markdown] sidebars.json updated at ${sidebarPath}`);
     } catch (e) {
       this.application.logger.write(`[typedoc-plugin-markdown] failed to update sidebars.json at ${sidebarPath}`);
     }
   }
 
-  getNavObject(docsRoot: string) {
+  getNavObject(docsRoot: string = '') {
     const projectUrls = [docsRoot + this.indexName.replace('.md', '')];
     if (MarkdownPlugin.project.url === this.globalsName) {
       projectUrls.push(docsRoot + 'globals');
