@@ -118,6 +118,6 @@ export class VuePressTheme extends MarkdownTheme {
   }
 
   get indexName() {
-    return 'index.md';
+    return 'README.md';
   }
 }
