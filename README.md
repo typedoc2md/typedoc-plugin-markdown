@@ -15,89 +15,18 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 
 The plugin provides an additional theme named 'markdown' that can be referenced by name:
 
-#### shell
-
 ```bash
-$ node_modules/.bin/typedoc --theme markdown
+$ typedoc --theme markdown [plugin args] [typedoc args]
 ```
 
-#### npm script
+### Arguments
 
-```json
-"scripts": {
- "docs": "typedoc --theme markdown"
-}
-```
+The plugin exposes the following additional arguments:
 
-## Arguments
-
-The plugin exposes the following arguments in addition to TypeDoc's defaults:
-
-| Name            | Description                                       |
-| --------------- | ------------------------------------------------- |
-| `--platform`    | Target a specific documentation/hosting platform. |
-| `--hideSources` | Suppress source file linking from output.         |
-
-### Targeting specific platforms
-
-By default the theme will render standard **GitHub Flavored Markdown** / CommonMark suitable for the majority of markdown engines.
-
-The plugin also attempts to target the following platforms:
-
-#### GitBook (`--platform gitbook`)
-
-- Generates additional `SUMMARY.md` file to enable a books's table of contents / navigation.
-
-#### Docusaurus (`--platform docusaurus`)
-
-- Adds metadata to rendered Markdown.
-- If the out directory is recognised as a docusaurus `/docs` directory, the plugin will update `website/sidebars.json` so pages are accessible in the sidebar.
-
-#### VuePress (`--platform vuepress`)
-
-- Adds metadata to rendered Markdown.
-- If the out directory is recognised as a VuePress `/docs` directory, the plugin will create
-  - `.vuepress/api-sidebar.json` to be used with [sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar).
-  - `.vuepress/api-sidebar-relative.json` to be used with [multiple sidebars](https://vuepress.vuejs.org/default-theme-config/#multiple-sidebars).
-
-`.vuepress/config.json`
-
-```js
-const apiSideBar = require('./api-sidebar.json');
-
-// Without groups
-module.exports = {
-  themeConfig: {
-    sidebar: ['some-content', ...apiSideBar],
-  },
-};
-
-// With groups
-module.exports = {
-  themeConfig: {
-    sidebar: ['some-content', { title: 'API', children: apiSideBar }],
-  },
-};
-```
-
-```js
-const apiSideBarRelative = require('./api-sidebar-relative.json');
-
-// Multiple sidebars
-module.exports = {
-  themeConfig: {
-    sidebar: {
-      '/guide/': ['some-content'],
-      '/api/': apiSideBarRelative,
-      '/': ['other'],
-    },
-  },
-};
-```
-
-#### Bitbucket (`--platform bitbucket`)
-
-- Support Bitbucket's internal/anchor links in rendered Markdown.
+- `--platform <docusaurus|gitbook|vuepress|bitbucket>`<br>
+  Target a specific documentation/hosting platform (see [Wiki page](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki/1.-Targeting-Platforms) for further documentation),
+- `--hideSources`<br>
+  Suppress source file linking from output.
 
 ## Version 2 (June 2019)
 
