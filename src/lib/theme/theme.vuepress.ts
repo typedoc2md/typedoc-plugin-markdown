@@ -30,13 +30,14 @@
  *   },
  * };
  */
-
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
+
 import { MarkdownPlugin } from '../plugin';
 import { MarkdownTheme } from './theme';
+
 
 export class VuePressTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string, options: any) {
@@ -115,9 +116,5 @@ export class VuePressTheme extends MarkdownTheme {
       return itdoes ? p : testDir(parts.slice(0, -1));
     }
     return testDir(splitPath(outputDirectory));
-  }
-
-  get indexName() {
-    return 'README.md';
   }
 }
