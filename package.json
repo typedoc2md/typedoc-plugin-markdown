@@ -9,7 +9,8 @@
   "scripts": {
     "lint": "tslint --project ./tsconfig.json",
     "build": "rimraf dist && tsc && copyfiles --up 2 ./src/**/*.hbs ./dist/",
-    "prepare": "npm run lint && npm run test && npm run build",
+    "prepare": "npm run test && npm run build",
+    "pretest": "npm run lint",
     "test": "jest",
     "examples": "npm run build && node ./tasks/examples.js",
     "fixtures": "rimraf ./src/test/fixtures/ts && node ./tasks/fixtures.js"

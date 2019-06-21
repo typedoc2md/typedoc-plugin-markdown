@@ -38,7 +38,6 @@ import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { MarkdownPlugin } from '../plugin';
 import { MarkdownTheme } from './theme';
 
-
 export class VuePressTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath, options);
