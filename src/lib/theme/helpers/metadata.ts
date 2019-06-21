@@ -1,6 +1,7 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
+import { VuePressTheme } from '../theme.vuepress';
 
 export function metadata(this: PageEvent) {
   if (!isVisible()) {
@@ -41,7 +42,7 @@ function getTitle(page: PageEvent) {
 }
 
 function isVisible() {
-  if (MarkdownPlugin.theme instanceof DocusaurusTheme) {
+  if (MarkdownPlugin.theme instanceof DocusaurusTheme || MarkdownPlugin.theme instanceof VuePressTheme) {
     return true;
   }
   return false;

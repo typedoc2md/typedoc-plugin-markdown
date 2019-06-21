@@ -82,7 +82,9 @@
 
 {{#with model}}
 
-  {{> index}}
+  {{#ifDisplayIndex}}
+    {{> index}}
+  {{/ifDisplayIndex}}
 
   {{> members}}
 
