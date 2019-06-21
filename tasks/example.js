@@ -10,10 +10,11 @@ const platform = args['--platform'];
 const out = args['--out'];
 
 const app = new Application({
-  mode: 'modules',
+  mode: 'file',
   module: 'CommonJS',
   target: 'ES5',
   name: 'My API',
+  readme: 'none',
   includes: './src/test/fixtures/inc/',
   media: './src/test/fixtures/media/',
   theme,
@@ -23,8 +24,9 @@ const app = new Application({
   excludePrivate: true,
 });
 
-const inputFiles = [...app.expandInputFiles(['../typedoc/src/test/converter/']), ...['../typedoc/examples/basic/src/classes.ts']];
+// const inputFiles = [...app.expandInputFiles(['../typedoc/src/test/converter/']), ...['../typedoc/examples/basic/src/classes.ts']];
 // const inputFiles = [...app.expandInputFiles(['./src/test/issues/'])];
+const inputFiles = [...app.expandInputFiles(['./src/test/examples/'])];
 app.options.setValue('platform', platform);
 
 app.generateDocs(inputFiles, join(__dirname, `../out/${out}`));
