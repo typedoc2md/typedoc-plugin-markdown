@@ -15,7 +15,7 @@ exports[`literal helper should compile object literal 1`] = `
 
   * **valueZ**: *\`[object Object]\`* = \\"foo\\"
 
-  * **valueY**(\`z\`: \`[object Object]\`): *\`[object Object]\`*"
+  * **valueY**(\`z\`: *\`[object Object]\`*): *\`[object Object]\`*"
 `;
 
 exports[`literal helper should compile type literal 1`] = `""`;
