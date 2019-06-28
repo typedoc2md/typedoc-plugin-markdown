@@ -1,35 +1,35 @@
 {{#if implementationOf}}
 
-  *Implementation of {{#with implementationOf}}{{typeAndParent}}{{/with}}*
+*Implementation of {{#with implementationOf}}{{typeAndParent}}{{/with}}*
 
 {{/if}}
 
 {{#if inheritedFrom}}
 
-  *Inherited from {{#with inheritedFrom}}{{{typeAndParent}}}{{/with}}*
+*Inherited from {{#with inheritedFrom}}{{{typeAndParent}}}{{/with}}*
 
 {{/if}}
 
 {{#if overwrites}}
 
-  *Overrides {{#with overwrites}}{{typeAndParent}}{{/with}}*
+*Overrides {{#with overwrites}}{{typeAndParent}}{{/with}}*
 
 {{/if}}
 
 {{#ifDisplaySourceFiles}}
 
-  {{#each sources}}
+{{#each sources}}
 
-    {{#if url}}
+{{#if url}}
 
-      *Defined in [{{fileName}}:{{line}}]({{url}})*
+*Defined in [{{fileName}}:{{line}}]({{url}})*
 
-    {{else}}
+{{else}}
 
-      Defined in {{fileName}}:{{line}}
+Defined in {{fileName}}:{{line}}
 
-    {{/if}}
+{{/if}}
 
-  {{/each}}
+{{/each}}
 
 {{/ifDisplaySourceFiles}}

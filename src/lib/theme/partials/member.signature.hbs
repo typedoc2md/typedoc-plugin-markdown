@@ -2,7 +2,7 @@
 
 {{#unless hideSources}}
 
-  {{> member.sources}}
+{{> member.sources}}
 
 {{/unless}}
 
@@ -10,86 +10,86 @@
 
 {{#if typeParameters}}
 
-  **Type parameters:**
+**Type parameters:**
 
-  {{> typeParameters}}
+{{> typeParameters}}
 
 {{/if}}
 
 {{#if parameters}}
 
-  **Parameters:**
+**Parameters:**
 
-  {{#ifHasTypeDeclarations true}}
+{{#ifHasTypeDeclarations true}}
 
-    {{#each parameters}}
+{{#each parameters}}
 
-      {{{parameterNameAndType}}}
+{{{parameterNameAndType}}}
 
-      {{> comment}}
+{{> comment}}
 
-      {{#if type.declaration}}
+{{#if type.declaration}}
 
-        {{#if type.declaration.children}}
+{{#if type.declaration.children}}
 
-          {{#with type.declaration.children}}
+{{#with type.declaration.children}}
 
-            {{{parameterTable}}}
+{{{parameterTable}}}
 
-          {{/with}}
+{{/with}}
 
-        {{/if}}
+{{/if}}
 
-        {{#if type.declaration.signatures}}
+{{#if type.declaration.signatures}}
 
-          {{#with type.declaration}}
+{{#with type.declaration}}
 
-            {{> parameter}}
+{{> parameter}}
 
-          {{/with}}
+{{/with}}
 
-        {{/if}}
+{{/if}}
 
-      {{/if}}
+{{/if}}
 
-    {{/each}}
+{{/each}}
 
-  {{/ifHasTypeDeclarations}}
+{{/ifHasTypeDeclarations}}
 
-  {{#ifHasTypeDeclarations false}}
+{{#ifHasTypeDeclarations false}}
 
-    {{#with parameters}}
+{{#with parameters}}
 
-      {{{parameterTable}}}
+{{{parameterTable}}}
 
-    {{/with}}
+{{/with}}
 
-  {{/ifHasTypeDeclarations}}
+{{/ifHasTypeDeclarations}}
 
 {{/if}}
 
 {{#if type}}
 
-  {{#unless hideSources}}
+{{#unless hideSources}}
 
-    **Returns:** {{#with type}}*{{{type}}}*{{/with}}
+**Returns:** {{#with type}}*{{{type}}}*{{/with}}
 
-    {{#if comment.returns}}
+{{#if comment.returns}}
 
-      {{{comment.returns}}}
+{{{comment.returns}}}
 
-    {{/if}}
+{{/if}}
 
-  {{/unless}}
+{{/unless}}
 
-  {{#if type.declaration}}
+{{#if type.declaration}}
 
-    {{#with type.declaration}}
+{{#with type.declaration}}
 
-      {{> parameter}}
+{{> parameter}}
 
-    {{/with}}
+{{/with}}
 
-  {{/if}}
+{{/if}}
 
 {{/if}}

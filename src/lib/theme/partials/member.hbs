@@ -1,57 +1,59 @@
 {{#if name}}
 
-  {{{ memberTitle }}}
+{{{ memberTitle }}}
 
 {{/if}}
 
 {{#if signatures}}
 
-  {{#each signatures}}
+{{#each signatures}}
 
-    {{> member.signature }}
+{{> member.signature }}
 
-  {{/each}}
+{{/each}}
 
 {{else}}
 
-  {{#if hasGetterOrSetter}}
+{{#if hasGetterOrSetter}}
 
-    {{> member.getterSetter}}
+{{> member.getterSetter}}
 
-  {{else}}
+{{else}}
 
-    {{> member.declaration}}
+{{> member.declaration}}
 
-  {{/if}}
+{{/if}}
 
 {{/if}}
 
 {{#each groups}}
 
-  {{#each children}}
+{{#each children}}
 
-    {{#unless hasOwnDocument}}
+{{#unless hasOwnDocument}}
 
-      {{#ifIsLiteralType true}}
+{{#ifIsLiteralType true}}
 
-        {{> member.declaration}}
+{{> member.declaration}}
 
-        {{{literal}}}
+{{{literal}}}
 
-      {{/ifIsLiteralType}}
+{{/ifIsLiteralType}}
 
-      {{#ifIsLiteralType false}}
+{{#ifIsLiteralType false}}
 
-        {{> member hideHr=true}}
+{{> member hideHr=true}}
 
-      {{/ifIsLiteralType}}
+{{/ifIsLiteralType}}
 
-    {{/unless}}
-
-  {{/each}}
+{{/unless}}
 
 {{/each}}
 
+{{/each}}
+
+{{#unless @last}}
 {{#unless hideHr}}
-  ___
+___
+{{/unless}}
 {{/unless}}

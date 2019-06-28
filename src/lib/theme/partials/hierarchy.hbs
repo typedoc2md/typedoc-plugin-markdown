@@ -1,23 +1,23 @@
 {{#each types}}
 
-  {{#if ../isTarget}}
+{{#if ../isTarget}}
 
-    {{hierachyLevel}} **{{this}}**
+{{hierachyLevel}} **{{this}}**
 
-  {{else}}
+{{else}}
 
-    {{hierachyLevel}} {{{type}}}
+{{hierachyLevel}} {{{type}}}
 
-  {{/if}}
+{{/if}}
 
-  {{#if @last}}
+{{#if @last}}
 
-    {{#with ../next}}
+{{#with ../next}}
 
-      {{> hierarchy}}
+{{> hierarchy}}
 
-    {{/with}}
+{{/with}}
 
-  {{/if}}
+{{/if}}
 
 {{/each}}

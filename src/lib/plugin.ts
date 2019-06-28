@@ -13,9 +13,11 @@ import { DocusaurusTheme } from './theme/theme.docusaurus';
 import { GitbookTheme } from './theme/theme.gitbook';
 import { VuePressTheme } from './theme/theme.vuepress';
 
+type ThemeInstance = MarkdownTheme | DocusaurusTheme | VuePressTheme | BitbucketTheme | GitbookTheme;
+
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
-  static theme: MarkdownTheme | DocusaurusTheme;
+  static theme: ThemeInstance;
   static disableOutputCheck: boolean;
   static application: Application;
   static reflection: Reflection;
@@ -27,7 +29,7 @@ export class MarkdownPlugin extends ConverterComponent {
     readme?: string;
     includes?: string;
     media?: string;
-    mode?: string;
+    mode?: number;
     mdHideSources?: boolean;
     mdSourceRepo?: string;
   };
@@ -76,18 +78,16 @@ export class MarkdownPlugin extends ConverterComponent {
     const platform = options.getValue('platform') || options.getValue('mdEngine');
     const theme = themeName === 'markdown' ? this.getTheme(platform, renderer, themePath, options) : null;
     if (theme) {
-      if (media && (theme instanceof DocusaurusTheme || theme instanceof GitbookTheme)) {
+      if (media && (theme instanceof DocusaurusTheme || theme instanceof GitbookTheme || theme instanceof VuePressTheme)) {
         MarkdownPlugin.application.logger.warn(`[typedoc-markdown-plugin] media option is currently not supported in ${platform} theme`);
         options.setValue('media', null);
       }
       renderer.theme = renderer.addComponent('theme', theme);
       MarkdownPlugin.theme = theme;
-    } else {
-      MarkdownPlugin.application.logger.write('Markdown theme not set');
     }
   }
 
-  static getTheme(platform: string, renderer: Renderer, themePath: string, options: any) {
+  static getTheme(platform: string, renderer: Renderer, themePath: string, options: any): ThemeInstance {
     if (platform) {
       if (platform === 'gitbook') {
         return new GitbookTheme(renderer, themePath, options);
@@ -107,7 +107,6 @@ export class MarkdownPlugin extends ConverterComponent {
 
   static formatContents(contents: string) {
     return contents
-      .replace(/^ +/gm, '')
       .replace(/[\r\n]{3,}/g, '\n\n')
       .replace(/!spaces/g, '')
       .trim();

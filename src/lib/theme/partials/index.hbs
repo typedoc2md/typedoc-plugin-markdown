@@ -1,15 +1,15 @@
 {{#if groups}}
 
-  {{heading 3}} Index
+{{heading 3}} Index
 
-  {{#each groups}}
+{{#each groups}}
 
-    {{heading 4}} {{title}}
+{{heading 4}} {{title}}
 
-    {{#each children}}
-      * [{{{name}}}]({{relativeUrl url}})
-    {{/each}}
+{{#each children}}
+* [{{{name}}}]({{relativeUrl url}})
+{{/each}}
 
-  {{/each}}
+{{/each}}
 
 {{/if}}

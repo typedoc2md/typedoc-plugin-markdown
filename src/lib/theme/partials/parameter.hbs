@@ -1,75 +1,75 @@
 {{#if signatures}}
 
-  {{#each signatures}}
+{{#each signatures}}
 
-    {{> member.signature hideSources=true }}
+{{> member.signature hideSources=true }}
 
-  {{/each}}
+{{/each}}
 
 {{/if}}
 
 {{#if indexSignature}}
 
-  {{> member.indexSignatures}}
+{{> member.indexSignatures}}
 
 {{/if}}
 
 {{#ifIsLiteralType true}}
 
-  {{{literal}}}
+{{{literal}}}
 
 {{/ifIsLiteralType}}
 
 {{#ifIsLiteralType false}}
 
-  {{#each children}}
+{{#each children}}
 
-    {{#if signatures}}
+{{#if signatures}}
 
-      {{#if flags.isRest}}...{{/if}} {{{ name}}} {{#if isOptional}}?{{/if}}: function
+{{#if flags.isRest}}...{{/if}} {{{ name}}} {{#if isOptional}}?{{/if}}: function
 
-      {{#each signatures}}
+{{#each signatures}}
 
-        {{> member.signature}}
+{{> member.signature}}
 
-      {{/each}}
+{{/each}}
 
-    {{else}}
+{{else}}
 
-      {{{parameterNameAndType}}}
+{{{parameterNameAndType}}}
 
-      {{> comment}}
+{{> comment}}
 
-      {{#if children}}
+{{#if children}}
 
-        {{> parameter}}
+{{> parameter}}
 
-      {{/if}}
+{{/if}}
 
-      {{#if type.declaration}}
+{{#if type.declaration}}
 
-        {{#with type.declaration}}
+{{#with type.declaration}}
 
-          ## type.declaration
+## type.declaration
 
-          {{#ifIsLiteralType true}}
+{{#ifIsLiteralType true}}
 
-            {{{literal}}}
+{{{literal}}}
 
-          {{/ifIsLiteralType}}
+{{/ifIsLiteralType}}
 
-          {{#ifIsLiteralType false}}
+{{#ifIsLiteralType false}}
 
-            {{> parameter}}
+{{> parameter}}
 
-          {{/ifIsLiteralType}}
+{{/ifIsLiteralType}}
 
-        {{/with}}
+{{/with}}
 
-      {{/if}}
+{{/if}}
 
-    {{/if}}
+{{/if}}
 
-  {{/each}}
+{{/each}}
 
 {{/ifIsLiteralType}}

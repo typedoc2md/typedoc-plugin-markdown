@@ -2,90 +2,90 @@
 
 {{#with model}}
 
-  {{#if hasComment}}
+{{#if hasComment}}
 
-    {{> comment}}
+{{> comment}}
 
-  {{/if}}
+{{/if}}
 
 {{/with}}
 
 {{#if model.typeParameters}}
 
-  {{heading 2}} Type parameters
+{{heading 2}} Type parameters
 
-  {{#with model}}
-    {{> typeParameters}}
-  {{/with}}
+{{#with model}}
+{{> typeParameters}}
+{{/with}}
 
 {{/if}}
 
 {{#if model.typeHierarchy}}
 
-  {{heading 2}} Hierarchy
+{{heading 2}} Hierarchy
 
-  {{#with model.typeHierarchy}}
+{{#with model.typeHierarchy}}
 
-    {{> hierarchy}}
+{{> hierarchy}}
 
-  {{/with}}
+{{/with}}
 
 {{/if}}
 
 {{#if model.implementedTypes}}
 
-  {{heading 2}} Implements
+{{heading 2}} Implements
 
-  {{#each model.implementedTypes}}
-    * {{{type}}}
-  {{/each}}
+{{#each model.implementedTypes}}
+* {{{type}}}
+{{/each}}
 
 {{/if}}
 
 {{#if model.implementedBy}}
 
-  {{heading 2}} Implemented by
+{{heading 2}} Implemented by
 
-  {{#each model.implementedBy}}
-    * {{{type}}}
-  {{/each}}
+{{#each model.implementedBy}}
+* {{{type}}}
+{{/each}}
 
 {{/if}}
 
 {{#if model.signatures}}
 
-  {{{heading 2}}} Callable
+{{{heading 2}}} Callable
 
-  {{#with model}}
+{{#with model}}
 
-    {{#each signatures}}
+{{#each signatures}}
 
-      {{> member.signature  }}
+{{> member.signature  }}
 
-    {{/each}}
+{{/each}}
 
-  {{/with}}
+{{/with}}
 
 {{/if}}
 
 {{#if model.indexSignature}}
 
-  {{heading 2}} Indexable
+{{heading 2}} Indexable
 
-  {{#with model}}
+{{#with model}}
 
-    {{> member.indexSignatures}}
+{{> member.indexSignatures}}
 
-  {{/with}}
+{{/with}}
 
 {{/if}}
 
 {{#with model}}
 
-  {{#ifDisplayIndex}}
-    {{> index}}
-  {{/ifDisplayIndex}}
+{{#ifDisplayIndex}}
+{{> index}}
+{{/ifDisplayIndex}}
 
-  {{> members}}
+{{> members}}
 
 {{/with}}
