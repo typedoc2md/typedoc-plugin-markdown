@@ -11,7 +11,12 @@ export function breadcrumbs(this: PageEvent) {
   if (!isVisible()) {
     return '';
   }
-  const md = MarkdownPlugin.theme.hasGlobalsFile ? [`[Globals](${relativeUrl(this.project.url)}) /`] : [];
+  const mode = MarkdownPlugin.settings.mode;
+  const hasGlobalsFile = MarkdownPlugin.theme.hasGlobalsFile;
+  const md =
+    mode === undefined || mode === 1 || hasGlobalsFile
+      ? [`[Globals](${relativeUrl(this.project.url)}) /`]
+      : [];
   return breadcrumb(this.model, md);
 }
 

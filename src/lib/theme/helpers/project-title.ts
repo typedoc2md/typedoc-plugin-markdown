@@ -4,14 +4,13 @@ import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { GitbookTheme } from '../theme.gitbook';
 import { VuePressTheme } from '../theme.vuepress';
-import { heading } from './heading';
 import { relativeUrl } from './relative-url';
 
 export function projectTitle(this: PageEvent) {
   if (!isVisible()) {
     return '';
   }
-  return `> ${heading(2)} [${this.project.name}](${relativeUrl(MarkdownPlugin.theme.indexName)})`;
+  return `> **[${this.project.name}](${relativeUrl(MarkdownPlugin.theme.indexName)})**`;
 }
 
 function isVisible() {

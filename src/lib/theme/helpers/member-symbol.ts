@@ -2,7 +2,7 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 export function memberSymbol(this: DeclarationReflection) {
   const isStatic = this.flags.map(flag => flag).includes('Static');
-  const symbol = '●';
+  const symbol = '•';
   if (this.kind === ReflectionKind.ConstructorSignature) {
     return '\\+';
   }
@@ -13,10 +13,10 @@ export function memberSymbol(this: DeclarationReflection) {
     return 'Ƭ';
   }
   if (this.kind === ReflectionKind.ObjectLiteral) {
-    return '■';
+    return '▪';
   }
   if (this.kind === ReflectionKind.Property && isStatic) {
-    return '■';
+    return '▪';
   }
   return symbol;
 }

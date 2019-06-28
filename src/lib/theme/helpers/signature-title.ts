@@ -1,4 +1,5 @@
 import { SignatureReflection } from 'typedoc';
+
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
@@ -30,7 +31,7 @@ export function signatureTitle(this: SignatureReflection, showSymbol: boolean) {
           if (param.flags.isOptional) {
             paramsmd.push('?');
           }
-          paramsmd.push(`\`: ${type.call(param.type)}`);
+          paramsmd.push(`\`: *${type.call(param.type)}*`);
           return paramsmd.join('');
         })
         .join(', ')
