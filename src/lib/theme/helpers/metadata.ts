@@ -33,7 +33,8 @@ function getLabel(page: PageEvent) {
 
 function getTitle(page: PageEvent) {
   if (page.url === MarkdownPlugin.theme.indexName) {
-    return page.project.name;
+    // If package.json has `label`, use that, otherwise use project name. YAML parser throws if project name contains `@` like @someuser/project-name, so replace username.
+    return (page.project.packageInfo && page.project.packageInfo.label) || page.project.name.replace(/^@.+?\//, '');
   }
   if (page.url === MarkdownPlugin.theme.globalsName) {
     return 'Globals';
