@@ -14,16 +14,13 @@ export function mainTitle(this: PageEvent) {
 }
 
 function isVisible(page: PageEvent) {
-  if (page.url === MarkdownPlugin.theme.indexName) {
+  if (MarkdownPlugin.theme instanceof DocusaurusTheme || page.url === MarkdownPlugin.theme.indexName) {
     return false;
   }
   return true;
 }
 
 function prefix() {
-  if (MarkdownPlugin.theme instanceof DocusaurusTheme) {
-    return `> ${heading(3)}`;
-  }
   if (MarkdownPlugin.theme instanceof GitbookTheme) {
     return `> ${heading(1)}`;
   }
