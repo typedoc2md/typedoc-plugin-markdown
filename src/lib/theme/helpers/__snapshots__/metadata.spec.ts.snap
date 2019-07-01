@@ -2,9 +2,9 @@
 
 exports[`metadata helper should compile 1`] = `
 "---
-  id: xyz
-  title: xyx title
-  sidebar_label: xyx title
-  ---
+id: xyz
+title: External module: \\"variable\\"
+sidebar_label: xyx title
+---
 "
 `;
