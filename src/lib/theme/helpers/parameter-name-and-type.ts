@@ -1,10 +1,12 @@
 import { ParameterReflection } from 'typedoc';
-
 import { type } from './type';
 
-export function parameterNameAndType(this: ParameterReflection) {
+
+export function parameterNameAndType(this: ParameterReflection, displaySymbol = true) {
   const md = [];
-  md.push('▪');
+  if (displaySymbol) {
+    md.push('▪');
+  }
   if (this.flags && !this.flags.isRest) {
     md.push(this.flags.map(flag => `\`${flag}\` `));
   }
