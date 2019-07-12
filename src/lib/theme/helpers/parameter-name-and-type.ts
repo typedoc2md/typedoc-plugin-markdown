@@ -1,7 +1,6 @@
 import { ParameterReflection } from 'typedoc';
 import { type } from './type';
 
-
 export function parameterNameAndType(this: ParameterReflection, displaySymbol = true) {
   const md = [];
   if (displaySymbol) {
