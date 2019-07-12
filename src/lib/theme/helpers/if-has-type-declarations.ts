@@ -1,6 +1,6 @@
 import { ReflectionType, SignatureReflection } from 'typedoc/dist/lib/models';
 
-export function ifHasTypeDeclarations(this: SignatureReflection, truthy: boolean, options: Handlebars.HelperOptions) {
+export function ifHasTypeDeclarations(this: SignatureReflection, truthy: boolean, options: any) {
   const parameterDeclarations =
     this.parameters &&
     this.parameters.map(parameter => {

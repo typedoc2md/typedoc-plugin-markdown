@@ -86,7 +86,7 @@ export function getExpectedUrls(urlMappings: UrlMapping[]) {
   return expectedUrls;
 }
 
-export const handlebarsHelpersOptionsStub: Handlebars.HelperOptions = {
+export const handlebarsHelpersOptionsStub = {
   fn: () => 'true',
   inverse: () => 'false',
   hash: {},

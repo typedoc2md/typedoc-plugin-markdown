@@ -1,7 +1,7 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownPlugin } from '../../plugin';
 
-export function ifDisplaySourceFiles(this: DeclarationReflection, options: Handlebars.HelperOptions) {
+export function ifDisplaySourceFiles(this: DeclarationReflection, options: any) {
   if (!this.sources || MarkdownPlugin.settings.hideSources || MarkdownPlugin.settings.mdHideSources) {
     return options.inverse(this);
   }
