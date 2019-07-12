@@ -1,9 +1,7 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { VuePressTheme } from '../theme.vuepress';
-import { reflectionTitle } from './reflection-title';
 
 export function metadata(this: PageEvent) {
   if (!isVisible()) {
@@ -12,7 +10,7 @@ export function metadata(this: PageEvent) {
 
   const md = `---
 id: ${getId(this)}
-title: ${getReflectionTitle(this)}
+title: ${getTitle(this)}
 sidebar_label: ${getLabel(this)}
 ---\n`;
   return md;
@@ -33,9 +31,6 @@ function getLabel(page: PageEvent) {
   return getTitle(page);
 }
 
-function getReflectionTitle(page: PageEvent) {
-  return reflectionTitle.call(page).replace(/\*/g, '');
-}
 
 function getTitle(page: PageEvent) {
   if (page.url === MarkdownPlugin.theme.indexName) {
