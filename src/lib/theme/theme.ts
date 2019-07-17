@@ -26,9 +26,19 @@ export class MarkdownTheme extends Theme {
 
   isOutputDirectory(outputDirectory: string): boolean {
     let isOutputDirectory = true;
-    const allowedListings = [this.indexName, 'globals.md', 'SUMMARY.md', 'classes', 'enums', 'interfaces', 'media', 'modules'];
+    const allowedListings = [
+      this.indexName,
+      'globals.md',
+      'SUMMARY.md',
+      'classes',
+      'enums',
+      'interfaces',
+      'media',
+      'modules',
+      '.DS_Store',
+    ];
 
-    const listings = fs.readdirSync(outputDirectory).filter(listing => !/(^|\/)\.[^\/\.]/g.test(listing));
+    const listings = fs.readdirSync(outputDirectory);
 
     if (!listings.includes(this.indexName)) {
       isOutputDirectory = false;

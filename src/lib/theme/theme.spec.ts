@@ -1,5 +1,6 @@
 import * as fs from 'fs-extra';
 import { UrlMapping } from 'typedoc';
+
 import { bootstrapTheme, getExpectedUrls } from '../../test/test.utils';
 import { MarkdownTheme } from './theme';
 
@@ -31,7 +32,16 @@ describe(`markdown theme`, () => {
     });
 
     test(`should test output directory true with all allowed files and directories`, () => {
-      directoryListingSpy.mockReturnValue(['.DS_Store', 'README.md', 'globals.md', 'classes', 'enums', 'interfaces', 'media', 'modules']);
+      directoryListingSpy.mockReturnValue([
+        '.DS_Store',
+        'README.md',
+        'globals.md',
+        'classes',
+        'enums',
+        'interfaces',
+        'media',
+        'modules',
+      ]);
       expect(theme.isOutputDirectory('/path')).toBeTruthy();
     });
 
@@ -47,6 +57,11 @@ describe(`markdown theme`, () => {
 
     test(`should test output directory false with unkown index`, () => {
       directoryListingSpy.mockReturnValue(['Unrecognised.md', 'classes', 'enums', 'interfaces', 'media', 'modules']);
+      expect(theme.isOutputDirectory('/path')).toBeFalsy();
+    });
+
+    test(`should test output directory false with hidden files`, () => {
+      directoryListingSpy.mockReturnValue(['.git', 'classes', 'enums', 'interfaces', 'media', 'modules']);
       expect(theme.isOutputDirectory('/path')).toBeFalsy();
     });
 
