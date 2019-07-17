@@ -8,12 +8,12 @@
   ],
   "scripts": {
     "lint": "tslint --project ./tsconfig.json",
-    "build": "rimraf dist && tsc && copyfiles --up 2 ./src/**/*.hbs ./dist/",
+    "build": "rm -rf dist && tsc && copyfiles --up 2 ./src/**/*.hbs ./dist/",
     "prepare": "npm run test && npm run build",
     "pretest": "npm run lint",
     "test": "jest",
     "examples": "npm run build && node ./tasks/examples.js",
-    "fixtures": "rimraf ./src/test/fixtures/ts && node ./tasks/fixtures.js"
+    "fixtures": "rm -rf ./src/test/fixtures/ts && node ./tasks/fixtures.js"
   },
   "author": "Tom Grey",
   "license": "MIT",
@@ -46,7 +46,6 @@
     "cross-spawn": "^6.0.5",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
-    "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
     "typedoc": "0.14.2",
