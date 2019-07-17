@@ -23,16 +23,10 @@ $ typedoc --theme markdown [plugin args] [typedoc args]
 
 The plugin exposes the following additional arguments:
 
-- `--platform <docusaurus|gitbook|vuepress|bitbucket>`<br>
+- `--platform <docusaurus|vuepress|gitbook|bitbucket>`<br>
   Target a specific documentation/hosting platform (see [Wiki page](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki/1.-Targeting-Platforms) for further documentation),
 - `--hideSources`<br>
   Suppress source file linking from output.
-
-## Version 2 (June 2019)
-
-Version 2 contains many code and UI improvements. Please raise an issue if anything has broken and suggestions for improvements.
-
-Further documentation and examples to follow.
 
 ## Acknowledgements
 
