@@ -1,5 +1,7 @@
 import { ParameterReflection } from 'typedoc';
 
+import { MarkdownPlugin } from '../../plugin';
+import { DocusaurusTheme } from '../theme.docusaurus';
 import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
@@ -8,7 +10,9 @@ export function parameterTable(this: ParameterReflection[]) {
   const defaultValues = this.map(param => !!param.defaultValue);
   const hasDefaultValues = !defaultValues.every(value => !value);
 
-  const comments = this.map(param => (param.comment && !!param.comment.text) || (param.comment && !!param.comment.shortText));
+  const comments = this.map(
+    param => (param.comment && !!param.comment.text) || (param.comment && !!param.comment.shortText),
+  );
   const hasComments = !comments.every(value => !value);
 
   const headers = ['Name', 'Type'];
@@ -27,7 +31,7 @@ export function parameterTable(this: ParameterReflection[]) {
 
     const row = [
       `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${isOptional ? '?' : ''}\``,
-      typeOut.toString().replace(/\|/g, '&#124;'),
+      typeOut.toString().replace(/\|/g, MarkdownPlugin.theme instanceof DocusaurusTheme ? '&#124;' : '\\|'),
     ];
     if (hasDefaultValues) {
       row.push(parameter.defaultValue ? parameter.defaultValue : '-');
