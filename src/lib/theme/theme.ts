@@ -240,6 +240,7 @@ export class MarkdownTheme extends Theme {
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
     if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
       reflection.url = container.url + '#' + this.getAnchor(reflection);
+      reflection.anchor = this.getAnchor(reflection);
       reflection.hasOwnDocument = false;
     }
     reflection.traverse(child => {

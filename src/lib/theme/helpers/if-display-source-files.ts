@@ -1,4 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
+
 import { MarkdownPlugin } from '../../plugin';
 
 export function ifDisplaySourceFiles(this: DeclarationReflection, options: any) {

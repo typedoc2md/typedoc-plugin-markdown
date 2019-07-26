@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`memberTitle helper should compile 1`] = `"### \`Const\` myConst"`;
+
+exports[`memberTitle helper should compile 2`] = `"### <a name=\\"undefined\\"></a> \`Const\` myConst"`;

@@ -26,6 +26,9 @@ export class MarkdownPlugin extends ConverterComponent {
   static settings: {
     platform?: 'gitbook' | 'ducusaurus' | 'bitbucket' | 'vuepress';
     hideSources?: boolean;
+    hideBreadcrumbs?: boolean;
+    hideIndexes?: boolean;
+    namedAnchors?: boolean;
     readme?: string;
     includes?: string;
     media?: string;
@@ -78,8 +81,13 @@ export class MarkdownPlugin extends ConverterComponent {
     const platform = options.getValue('platform') || options.getValue('mdEngine');
     const theme = themeName === 'markdown' ? this.getTheme(platform, renderer, themePath, options) : null;
     if (theme) {
-      if (media && (theme instanceof DocusaurusTheme || theme instanceof GitbookTheme || theme instanceof VuePressTheme)) {
-        MarkdownPlugin.application.logger.warn(`[typedoc-markdown-plugin] media option is currently not supported in ${platform} theme`);
+      if (
+        media &&
+        (theme instanceof DocusaurusTheme || theme instanceof GitbookTheme || theme instanceof VuePressTheme)
+      ) {
+        MarkdownPlugin.application.logger.warn(
+          `[typedoc-markdown-plugin] media option is currently not supported in ${platform} theme`,
+        );
         options.setValue('media', null);
       }
       renderer.theme = renderer.addComponent('theme', theme);

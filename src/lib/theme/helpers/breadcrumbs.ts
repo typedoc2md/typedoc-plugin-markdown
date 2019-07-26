@@ -28,7 +28,11 @@ function breadcrumb(model: Reflection, md: string[]) {
 }
 
 function isVisible() {
-  if (MarkdownPlugin.theme instanceof GitbookTheme || MarkdownPlugin.theme instanceof VuePressTheme) {
+  if (
+    MarkdownPlugin.settings.hideBreadcrumbs ||
+    MarkdownPlugin.theme instanceof GitbookTheme ||
+    MarkdownPlugin.theme instanceof VuePressTheme
+  ) {
     return false;
   }
   return true;

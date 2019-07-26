@@ -1,5 +1,6 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -19,6 +20,28 @@ export = (PluginHost: Application) => {
     component: 'markdown',
     help: 'Markdown Plugin: Suppress file sources from output.',
     name: 'hideSources',
+    type: ParameterType.Boolean,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
+    help: 'Markdown Plugin: Prevent breadcrumbs from rendering in output.',
+    name: 'hideBreadcrumbs',
+    type: ParameterType.Boolean,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
+    help: 'Markdown Plugin: Prevent indexes from rendering in output.',
+    name: 'hideIndexes',
+    type: ParameterType.Boolean,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
+    help:
+      'Markdown Plugin: Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.',
+    name: 'namedAnchors',
     type: ParameterType.Boolean,
   });
 
