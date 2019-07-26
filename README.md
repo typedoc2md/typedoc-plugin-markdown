@@ -24,9 +24,15 @@ $ typedoc --theme markdown [plugin args] [typedoc args]
 The plugin exposes the following additional arguments:
 
 - `--platform <docusaurus|vuepress|gitbook|bitbucket>`<br>
-  Target a specific documentation/hosting platform (see [Wiki page](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki/1.-Targeting-Platforms) for further documentation),
+  Attempt to target a specific documentation/hosting platform (see [Wiki page](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki/1.-Targeting-Platforms)) for further docs.
 - `--hideSources`<br>
   Suppress source file linking from output.
+- `--hideBreadcrumbs`<br>
+  Prevent breadcrumbs from rendering in output.
+- `--hideIndexes`<br>
+  Prevent indexes from rendering in output.
+- `--namedAnchors`<br>
+  Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
 
 ## Acknowledgements
 
