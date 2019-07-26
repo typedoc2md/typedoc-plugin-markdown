@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.8",
     "arg": "^4.1.1",
     "chalk": "^2.4.2",
     "copyfiles": "^2.1.1",
@@ -48,8 +49,8 @@
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
-    "typedoc": "0.14.2",
-    "typescript": "3.4.x"
+    "typedoc": "0.15.0",
+    "typescript": "3.5.x"
   },
   "dependencies": {}
 }
