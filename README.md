@@ -21,18 +21,20 @@ $ typedoc --theme markdown [plugin args] [typedoc args]
 
 ### Arguments
 
+By default the theme will render standard GitHub Flavored Markdown suitable for the majority of markdown engines.
+
 The plugin exposes the following additional arguments:
 
 - `--platform <docusaurus|vuepress|gitbook|bitbucket>`<br>
   Attempt to target a specific documentation/hosting platform (see [Wiki page](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki/1.-Targeting-Platforms)) for further docs.
-- `--hideSources`<br>
-  Suppress source file linking from output.
-- `--hideBreadcrumbs`<br>
-  Prevent breadcrumbs from rendering in output.
-- `--hideIndexes`<br>
-  Prevent indexes from rendering in output.
 - `--namedAnchors`<br>
   Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
+- `--hideSources`<br>
+  Suppress source file links from rendering from output.
+- `--hideBreadcrumbs`<br>
+  Suppress breadcrumbs from rendering in output.
+- `--hideIndexes`<br>
+  Suppress indexes from rendering in output.
 
 ## Acknowledgements
 
