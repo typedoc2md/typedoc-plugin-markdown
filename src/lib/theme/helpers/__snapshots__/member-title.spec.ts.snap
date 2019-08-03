@@ -2,4 +2,4 @@
 
 exports[`memberTitle helper should compile 1`] = `"### \`Const\` myConst"`;
 
-exports[`memberTitle helper should compile 2`] = `"### <a name=\\"undefined\\"></a> \`Const\` myConst"`;
+exports[`memberTitle helper should compile 2`] = `"### <a id=\\"undefined\\" name=\\"undefined\\"></a> \`Const\` myConst"`;
