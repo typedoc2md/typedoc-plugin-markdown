@@ -28,6 +28,7 @@ export class MarkdownPlugin extends ConverterComponent {
     hideSources?: boolean;
     hideBreadcrumbs?: boolean;
     hideIndexes?: boolean;
+    hideProjectTitle?: boolean;
     namedAnchors?: boolean;
     readme?: string;
     includes?: string;

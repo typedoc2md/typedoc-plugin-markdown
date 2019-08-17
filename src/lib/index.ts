@@ -18,6 +18,13 @@ export = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     component: 'markdown',
+    help: 'Markdown Plugin: Suppress project title (Home/README link) rendering.',
+    name: 'hideProjectTitle',
+    type: ParameterType.Boolean,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
     help: 'Markdown Plugin: Suppress file sources from output.',
     name: 'hideSources',
     type: ParameterType.Boolean,

@@ -10,11 +10,12 @@ export function projectTitle(this: PageEvent) {
   if (!isVisible()) {
     return '';
   }
-  return `> **[${this.project.name}](${relativeUrl(MarkdownPlugin.theme.indexName)})**`;
+  return `**[${this.project.name}](${relativeUrl(MarkdownPlugin.theme.indexName)})**`;
 }
 
 function isVisible() {
   if (
+    MarkdownPlugin.settings.hideProjectTitle ||
     MarkdownPlugin.theme instanceof DocusaurusTheme ||
     MarkdownPlugin.theme instanceof GitbookTheme ||
     MarkdownPlugin.theme instanceof VuePressTheme
