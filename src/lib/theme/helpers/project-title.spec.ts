@@ -11,6 +11,7 @@ jest.mock('../theme');
 
 describe(`projectTitle helper`, () => {
   test(`should compile`, () => {
+    mocked(MarkdownPlugin).settings = { hideProjectTitle: false };
     mocked(MarkdownPlugin).theme = { indexName: 'pagex.md' } as MarkdownTheme;
     const data = {
       project: {
