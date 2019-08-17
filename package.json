@@ -15,7 +15,7 @@
     "examples": "npm run build && node ./tasks/examples.js",
     "fixtures": "rm -rf ./src/test/fixtures/ts && node ./tasks/fixtures.js"
   },
-  "author": "Tom Grey",
+  "author": "Thomas Grey",
   "license": "MIT",
   "engines": {
     "node": ">=6"
@@ -39,13 +39,13 @@
     "typedoc": ">=0.10.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.6.8",
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.2",
     "arg": "^4.1.1",
     "chalk": "^2.4.2",
     "copyfiles": "^2.1.1",
     "cross-spawn": "^6.0.5",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
