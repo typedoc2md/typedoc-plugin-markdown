@@ -13,9 +13,17 @@ import {
 import { relativeUrl } from './relative-url';
 
 export function type(
-  this: ArrayType | IntersectionType | IntrinsicType | ReferenceType | StringLiteralType | TupleType | UnionType | TypeOperatorType,
+  this:
+    | ArrayType
+    | IntersectionType
+    | IntrinsicType
+    | ReferenceType
+    | StringLiteralType
+    | TupleType
+    | UnionType
+    | TypeOperatorType,
 ) {
-  if (this instanceof ReferenceType && this.reflection) {
+  if (this instanceof ReferenceType && (this.reflection || this.name)) {
     return getReferenceType(this);
   }
 
@@ -47,13 +55,15 @@ export function type(
     return this;
   }
 
-  return `\`${this}\``;
+  return this;
 }
 
 function getReferenceType(model: ReferenceType) {
-  const reflection = [`[${model.reflection.name}](${relativeUrl(model.reflection.url)})`];
+  const reflection = model.reflection
+    ? [`[${model.reflection.name}](${relativeUrl(model.reflection.url)})`]
+    : [model.name];
   if (model.typeArguments) {
-    reflection.push(`‹${model.typeArguments.map(typeArgument => `*${type.call(typeArgument)}*`).join(', ')}›`);
+    reflection.push(`‹${model.typeArguments.map(typeArgument => `${type.call(typeArgument)}`).join(', ')}›`);
   }
   return reflection.join('');
 }
