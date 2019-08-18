@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`literal helper should compile object literal 1`] = `
-"* **valueA**: *\`[object Object]\`* = 100
+"* **valueA**: *[object Object]* = 100
 
-* **valueB**: *\`[object Object]\`* = true
+* **valueB**: *[object Object]* = true
 
-* **valueZ**: *\`[object Object]\`* = \\"foo\\"
+* **valueZ**: *[object Object]* = \\"foo\\"
 
-* **valueY**(): *\`[object Object]\`*
+* **valueY**(): *[object Object]*
 
-* **valueX**: *\`[object Object]\`*
+* **valueX**: *[object Object]*
 
-  * **valueA**: *\`[object Object]\`* =  [100, 200, 300]
+  * **valueA**: *[object Object]* =  [100, 200, 300]
 
-  * **valueZ**: *\`[object Object]\`* = \\"foo\\"
+  * **valueZ**: *[object Object]* = \\"foo\\"
 
-  * **valueY**(\`z\`: \`[object Object]\`): *\`[object Object]\`*"
+  * **valueY**(\`z\`: [object Object]): *[object Object]*"
 `;
 
 exports[`literal helper should compile type literal 1`] = `""`;

@@ -4,10 +4,10 @@ exports[`parameterTable helper should compile 1`] = `
 "
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
-\`valueA\` | \`[object Object]\` | \\"defaultValue\\" | A parameter with a default string value. |
-\`valueB\` | \`[object Object]\` | 100 | A parameter with a default numeric value. |
-\`valueC\` | \`[object Object]\` |  Number.NaN | A parameter with a default NaN value. |
-\`valueD\` | \`[object Object]\` | true | A parameter with a default boolean value. |
-\`valueE\` | \`[object Object]\` |  null | A parameter with a default null value. |
+\`valueA\` | [object Object] | \\"defaultValue\\" | A parameter with a default string value. |
+\`valueB\` | [object Object] | 100 | A parameter with a default numeric value. |
+\`valueC\` | [object Object] |  Number.NaN | A parameter with a default NaN value. |
+\`valueD\` | [object Object] | true | A parameter with a default boolean value. |
+\`valueE\` | [object Object] |  null | A parameter with a default null value. |
 "
 `;
