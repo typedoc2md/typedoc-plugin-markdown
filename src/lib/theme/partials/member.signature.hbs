@@ -76,7 +76,11 @@
 
 {{#if comment.returns}}
 
-{{{comment.returns}}}
+{{#with comment.returns}}
+
+{{{comment}}}
+
+{{/with}}
 
 {{/if}}
 
