@@ -11,7 +11,7 @@ describe(`metadata helper`, () => {
   test(`should compile`, () => {
     MarkdownPlugin.theme = new DocusaurusTheme({} as Renderer, '/', {});
     MarkdownPlugin.theme.navigationTitlesMap = {
-      ['xyz.md']: 'xyx title',
+      ['xyz.md']: `xyx's title`,
     };
     MarkdownPlugin.project = {
       packageInfo: { name: 'typedoc-test' },
