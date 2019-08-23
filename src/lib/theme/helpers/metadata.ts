@@ -9,37 +9,45 @@ export function metadata(this: PageEvent) {
   }
 
   const md = `---
-id: ${getId(this)}
-title: ${getTitle(this)}
-sidebar_label: ${getLabel(this)}
+id: '${getId(this)}'
+title: '${getTitle(this)}'
+sidebar_label: '${getLabel(this)}'
 ---\n`;
   return md;
 }
 
+function escapeYAMLString(str: string = '') {
+  return str.replace(/([^\\])'/g, '$1\\\'');
+}
+
 function getId(page: PageEvent) {
   const urlSplit = page.url.split('/');
-  return urlSplit[urlSplit.length - 1].replace('.md', '');
+  return escapeYAMLString(urlSplit[urlSplit.length - 1].replace('.md', ''));
 }
 
 function getLabel(page: PageEvent) {
+  let label: string;
   if (page.url === MarkdownPlugin.theme.indexName) {
-    return MarkdownPlugin.settings.readme === 'none' ? 'Globals' : 'README';
+    label = MarkdownPlugin.settings.readme === 'none' ? 'Globals' : 'README';
+  } else if (page.url === MarkdownPlugin.theme.globalsName) {
+    label = 'Globals';
+  } else {
+    label = getTitle(page);
   }
-  if (page.url === MarkdownPlugin.theme.globalsName) {
-    return 'Globals';
-  }
-  return getTitle(page);
+  return escapeYAMLString(label);
 }
 
 function getTitle(page: PageEvent) {
+  let title: string;
   if (page.url === MarkdownPlugin.theme.indexName) {
-    // If package.json has `label`, use that, otherwise use project name. YAML parser throws if project name contains `@` like @someuser/project-name, so replace username.
-    return (page.project.packageInfo && page.project.packageInfo.label) || page.project.name.replace(/^@.+?\//, '');
+    // If package.json has `label`, use that, otherwise use project name.
+    title = (page.project.packageInfo && page.project.packageInfo.label) || page.project.name;
+  } else if (page.url === MarkdownPlugin.theme.globalsName) {
+    title = 'Globals';
+  } else {
+    title = MarkdownPlugin.theme.navigationTitlesMap[page.url];
   }
-  if (page.url === MarkdownPlugin.theme.globalsName) {
-    return 'Globals';
-  }
-  return MarkdownPlugin.theme.navigationTitlesMap[page.url];
+  return escapeYAMLString(title);
 }
 
 function isVisible() {
