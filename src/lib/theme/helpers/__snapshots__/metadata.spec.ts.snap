@@ -2,9 +2,9 @@
 
 exports[`metadata helper should compile 1`] = `
 "---
-id: 'xyz'
-title: 'xyx\\\\'s title'
-sidebar_label: 'xyx\\\\'s title'
+id: xyz
+title: xyx title
+sidebar_label: xyx title
 ---
 "
 `;
