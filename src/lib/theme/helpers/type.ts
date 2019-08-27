@@ -23,7 +23,7 @@ export function type(
     | UnionType
     | TypeOperatorType,
 ) {
-  if (this instanceof ReferenceType && (this.reflection || this.name)) {
+  if (this instanceof ReferenceType && (this.reflection || (this.name && this.typeArguments))) {
     return getReferenceType(this);
   }
 
