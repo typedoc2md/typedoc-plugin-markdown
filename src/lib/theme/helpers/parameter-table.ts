@@ -31,7 +31,9 @@ export function parameterTable(this: ParameterReflection[]) {
 
     const row = [
       `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${isOptional ? '?' : ''}\``,
-      typeOut.toString().replace(/\|/g, MarkdownPlugin.theme instanceof DocusaurusTheme ? '&#124;' : '\\|'),
+      typeOut
+        ? typeOut.toString().replace(/\|/g, MarkdownPlugin.theme instanceof DocusaurusTheme ? '&#124;' : '\\|')
+        : '',
     ];
     if (hasDefaultValues) {
       row.push(parameter.defaultValue ? parameter.defaultValue : '-');
