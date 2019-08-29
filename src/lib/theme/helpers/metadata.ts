@@ -9,7 +9,7 @@ export function metadata(this: PageEvent) {
   }
 
   const md = `---
-id: '${getId(this)}'
+id: ${getId(this)}
 title: '${getTitle(this)}'
 sidebar_label: '${getLabel(this)}'
 ---\n`;
@@ -22,7 +22,7 @@ function escapeYAMLString(str: string = '') {
 
 function getId(page: PageEvent) {
   const urlSplit = page.url.split('/');
-  return escapeYAMLString(urlSplit[urlSplit.length - 1].replace('.md', ''));
+  return urlSplit[urlSplit.length - 1].replace('.md', '');
 }
 
 function getLabel(page: PageEvent) {
