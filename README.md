@@ -25,8 +25,6 @@ By default the theme will render standard GitHub Flavored Markdown suitable for 
 
 **Configuring output**
 
-- `--platform <docusaurus|vuepress|gitbook|bitbucket>`<br>
-  Attempt to target a specific documentation/hosting platform (see [Wiki page](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki/1.-Targeting-Platforms)) for further docs.
 - `--namedAnchors`<br>
   Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
 
