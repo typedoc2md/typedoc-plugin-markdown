@@ -1,4 +1,5 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
 import { VuePressTheme } from '../theme.vuepress';
@@ -22,7 +23,7 @@ function escapeYAMLString(str: string = '') {
 
 function getId(page: PageEvent) {
   const urlSplit = page.url.split('/');
-  return urlSplit[urlSplit.length - 1].replace('.md', '');
+  return escapeYAMLString(urlSplit[urlSplit.length - 1].replace('.md', ''));
 }
 
 function getLabel(page: PageEvent) {
