@@ -3,8 +3,17 @@
 exports[`metadata helper should compile 1`] = `
 "---
 id: xyz
-title: 'xyx\\\\'s title'
-sidebar_label: 'xyx\\\\'s title'
+title: xyx's title
+sidebar_label: xyx's title
+---
+"
+`;
+
+exports[`metadata helper should escape strings that start with an @ 1`] = `
+"---
+id: xyz
+title: '@scoped/package\\\\'s title'
+sidebar_label: '@scoped/package\\\\'s title'
 ---
 "
 `;

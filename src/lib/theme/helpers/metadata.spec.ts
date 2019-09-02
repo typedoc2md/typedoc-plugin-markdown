@@ -24,4 +24,21 @@ describe(`metadata helper`, () => {
     const result = metadata.call(data);
     expect(result).toMatchSnapshot();
   });
+
+  test(`should escape strings that start with an @`, () => {
+    MarkdownPlugin.theme = new DocusaurusTheme({} as Renderer, '/', {});
+    MarkdownPlugin.theme.navigationTitlesMap = {
+      ['xyz.md']: `@scoped/package's title`,
+    };
+    MarkdownPlugin.project = {
+      packageInfo: { name: 'typedoc-test' },
+    } as ProjectReflection;
+    MarkdownPlugin.settings = { readme: 'none' };
+    const data = {
+      url: 'xyz.md',
+      model: getFixture(Fixture.Variable).children[0],
+    };
+    const result = metadata.call(data);
+    expect(result).toMatchSnapshot();
+  });
 });
