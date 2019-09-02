@@ -18,20 +18,18 @@ sidebar_label: ${getLabel(this)}
 }
 
 /**
- * Enclose strings in quotes (and escape included quotes) if it's a Yaml indicator
+ * Enclose strings in quotes (and escape included quotes) in case it's a Yaml indicator
  *
  * See https://github.com/tgreyuk/typedoc-plugin-markdown/issues/80 and
  * https://github.com/tgreyuk/typedoc-plugin-markdown/issues/86.
  */
-function escapeYAMLStringIfNecessary(str: string = '') {
-  return str.charAt(0) === '@'
-    ? `'${str.replace(/([^\\])'/g, '$1\\\'')}'`
-    : str;
+function toYamlString(str: string = '') {
+  return `"${str.replace(/([^\\])"/g, '$1\\"')}"`;
 }
 
 function getId(page: PageEvent) {
   const urlSplit = page.url.split('/');
-  return escapeYAMLStringIfNecessary(urlSplit[urlSplit.length - 1].replace('.md', ''));
+  return toYamlString(urlSplit[urlSplit.length - 1].replace('.md', ''));
 }
 
 function getLabel(page: PageEvent) {
@@ -43,7 +41,7 @@ function getLabel(page: PageEvent) {
   } else {
     label = getTitle(page);
   }
-  return escapeYAMLStringIfNecessary(label);
+  return toYamlString(label);
 }
 
 function getTitle(page: PageEvent) {
@@ -56,7 +54,7 @@ function getTitle(page: PageEvent) {
   } else {
     title = MarkdownPlugin.theme.navigationTitlesMap[page.url];
   }
-  return escapeYAMLStringIfNecessary(title);
+  return toYamlString(title);
 }
 
 function isVisible() {

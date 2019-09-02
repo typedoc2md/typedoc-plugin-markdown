@@ -1,4 +1,5 @@
 import { ProjectReflection, Renderer } from 'typedoc';
+
 import { Fixture, getFixture } from '../../../test/test.utils';
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
@@ -11,7 +12,7 @@ describe(`metadata helper`, () => {
   test(`should compile`, () => {
     MarkdownPlugin.theme = new DocusaurusTheme({} as Renderer, '/', {});
     MarkdownPlugin.theme.navigationTitlesMap = {
-      ['xyz.md']: `xyx's title`,
+      ['xyz.md']: `xyx's "quoted" title`,
     };
     MarkdownPlugin.project = {
       packageInfo: { name: 'typedoc-test' },
@@ -28,7 +29,7 @@ describe(`metadata helper`, () => {
   test(`should escape strings that start with an @`, () => {
     MarkdownPlugin.theme = new DocusaurusTheme({} as Renderer, '/', {});
     MarkdownPlugin.theme.navigationTitlesMap = {
-      ['xyz.md']: `@scoped/package's title`,
+      ['xyz.md']: `@scoped/package's "quoted" title`,
     };
     MarkdownPlugin.project = {
       packageInfo: { name: 'typedoc-test' },
