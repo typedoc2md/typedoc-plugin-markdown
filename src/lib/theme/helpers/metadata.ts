@@ -11,19 +11,27 @@ export function metadata(this: PageEvent) {
 
   const md = `---
 id: ${getId(this)}
-title: '${getTitle(this)}'
-sidebar_label: '${getLabel(this)}'
+title: ${getTitle(this)}
+sidebar_label: ${getLabel(this)}
 ---\n`;
   return md;
 }
 
-function escapeYAMLString(str: string = '') {
-  return str.replace(/([^\\])'/g, '$1\\\'');
+/**
+ * Enclose strings in quotes (and escape included quotes) if it's a Yaml indicator
+ *
+ * See https://github.com/tgreyuk/typedoc-plugin-markdown/issues/80 and
+ * https://github.com/tgreyuk/typedoc-plugin-markdown/issues/86.
+ */
+function escapeYAMLStringIfNecessary(str: string = '') {
+  return str.charAt(0) === '@'
+    ? `'${str.replace(/([^\\])'/g, '$1\\\'')}'`
+    : str;
 }
 
 function getId(page: PageEvent) {
   const urlSplit = page.url.split('/');
-  return escapeYAMLString(urlSplit[urlSplit.length - 1].replace('.md', ''));
+  return escapeYAMLStringIfNecessary(urlSplit[urlSplit.length - 1].replace('.md', ''));
 }
 
 function getLabel(page: PageEvent) {
@@ -35,7 +43,7 @@ function getLabel(page: PageEvent) {
   } else {
     label = getTitle(page);
   }
-  return escapeYAMLString(label);
+  return escapeYAMLStringIfNecessary(label);
 }
 
 function getTitle(page: PageEvent) {
@@ -48,7 +56,7 @@ function getTitle(page: PageEvent) {
   } else {
     title = MarkdownPlugin.theme.navigationTitlesMap[page.url];
   }
-  return escapeYAMLString(title);
+  return escapeYAMLStringIfNecessary(title);
 }
 
 function isVisible() {
