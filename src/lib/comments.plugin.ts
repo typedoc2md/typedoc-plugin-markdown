@@ -4,7 +4,6 @@ import * as Path from 'path';
 import { MarkedLinksPlugin, Reflection } from 'typedoc';
 import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
-import { Event } from 'typedoc/dist/lib/utils/events';
 
 @Component({ name: 'comments' })
 export class CommentsPlugin extends ContextAwareRendererComponent {
@@ -195,35 +194,5 @@ export class CommentsPlugin extends ContextAwareRendererComponent {
         this.application.logger.write('  ' + warning);
       }
     }
-  }
-}
-
-/**
- * An event emitted by the [[MarkedPlugin]] on the [[Renderer]] after a chunk of
- * markdown has been processed. Allows other plugins to manipulate the result.
- *
- * @see [[CommentsPlugin.EVENT_PARSE_COMMENTS]]
- */
-export class CommentEvent extends Event {
-  /**
-   * The unparsed original text.
-   */
-  readonly originalText: string;
-
-  /**
-   * The parsed output.
-   */
-  parsedText: string;
-
-  /**
-   * Triggered on the renderer when this plugin parses a markdown string.
-   * @event
-   */
-  static PARSE = 'parseComments';
-
-  constructor(name: string, originalText: string, parsedText: string) {
-    super(name);
-    this.originalText = originalText;
-    this.parsedText = parsedText;
   }
 }
