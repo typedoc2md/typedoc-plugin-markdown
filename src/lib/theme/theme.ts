@@ -7,9 +7,12 @@ import {
   Reflection,
   ReflectionKind,
 } from 'typedoc/dist/lib/models/reflections';
+import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+
+import { CommentsPlugin } from '../comments.plugin';
 
 export class MarkdownTheme extends Theme {
   navigation: NavigationItem;
@@ -17,6 +20,9 @@ export class MarkdownTheme extends Theme {
   hasGlobalsFile = false;
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath);
+    this.listenTo(renderer, PageEvent.END, this.onPageEnd, 1024);
+    renderer.addComponent('comments', new CommentsPlugin(renderer));
+
     renderer.removeComponent('navigation');
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
@@ -272,5 +278,16 @@ export class MarkdownTheme extends Theme {
 
   get globalsName() {
     return 'globals.md';
+  }
+
+  private onPageEnd(page: PageEvent) {
+    page.contents = page.contents ? MarkdownTheme.formatContents(page.contents) : '';
+  }
+
+  static formatContents(contents: string) {
+    return contents
+      .replace(/[\r\n]{3,}/g, '\n\n')
+      .replace(/!spaces/g, '')
+      .replace(/^\s+|\s+$/g, '');
   }
 }
