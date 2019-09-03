@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentsPlugin should convert comments with includes' 1`] = `
+"This is a simple example on how to use BaseClass.
+
+![My image alt text](../media/logo.png)
+
+"
+`;
+
+exports[`CommentsPlugin should convert symbols brackets to symbol links' 1`] = `
+"- Link to a class: [Animal](../classes/_classes_.animal.md)
+- Link to a function: [buildName](../modules/_functions_.md#buildname)
+"
+`;

@@ -1,8 +1,8 @@
+import * as Handlebars from 'handlebars';
 import { ParameterReflection } from 'typedoc';
 
 import { MarkdownPlugin } from '../../plugin';
 import { DocusaurusTheme } from '../theme.docusaurus';
-import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
@@ -41,10 +41,10 @@ export function parameterTable(this: ParameterReflection[]) {
     if (hasComments) {
       const commentsText = [];
       if (parameter.comment && parameter.comment.shortText) {
-        commentsText.push(comment.call(stripLineBreaks.call(parameter.comment.shortText)));
+        commentsText.push(Handlebars.helpers.comment.call(stripLineBreaks.call(parameter.comment.shortText)));
       }
       if (parameter.comment && parameter.comment.text) {
-        commentsText.push(comment.call(stripLineBreaks.call(parameter.comment.text)));
+        commentsText.push(Handlebars.helpers.comment.call(stripLineBreaks.call(parameter.comment.text)));
       }
       row.push(commentsText.length > 0 ? commentsText.join(' ') : '-');
     }
