@@ -1,3 +1,4 @@
+import * as Handlebars from 'handlebars';
 import { mocked } from 'ts-jest/utils';
 import { Renderer } from 'typedoc';
 
@@ -8,9 +9,13 @@ import { projectTitle } from './project-title';
 
 jest.mock('../../plugin');
 jest.mock('../theme');
+jest.mock('handlebars');
 
 describe(`projectTitle helper`, () => {
   test(`should compile`, () => {
+    mocked(Handlebars).helpers.relativeURL = () => {
+      return 'url';
+    };
     mocked(MarkdownPlugin).settings = { hideProjectTitle: false };
     mocked(MarkdownPlugin).theme = { indexName: 'pagex.md' } as MarkdownTheme;
     const data = {

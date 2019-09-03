@@ -1,3 +1,4 @@
+import * as Handlebars from 'handlebars';
 import {
   ArrayType,
   IntersectionType,
@@ -9,8 +10,6 @@ import {
   TypeOperatorType,
   UnionType,
 } from 'typedoc/dist/lib/models/types';
-
-import { relativeUrl } from './relative-url';
 
 export function type(
   this:
@@ -60,7 +59,7 @@ export function type(
 
 function getReferenceType(model: ReferenceType) {
   const reflection = model.reflection
-    ? [`[${model.reflection.name}](${relativeUrl(model.reflection.url)})`]
+    ? [`[${model.reflection.name}](${Handlebars.helpers.relativeURL.call(this, model.reflection.url)})`]
     : [model.name];
   if (model.typeArguments) {
     reflection.push(`‹${model.typeArguments.map(typeArgument => `${type.call(typeArgument)}`).join(', ')}›`);

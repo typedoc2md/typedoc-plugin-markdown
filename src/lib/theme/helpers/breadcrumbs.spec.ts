@@ -1,3 +1,4 @@
+import * as Handlebars from 'handlebars';
 import { mocked } from 'ts-jest/utils';
 
 import { MarkdownPlugin } from '../../plugin';
@@ -5,9 +6,13 @@ import { MarkdownTheme } from '../theme';
 import { breadcrumbs } from './breadcrumbs';
 
 jest.mock('../../plugin');
+jest.mock('handlebars');
 
 describe(`breadcrumbs helper`, () => {
   test(`should compie`, () => {
+    mocked(Handlebars).helpers.relativeURL = () => {
+      return 'url';
+    };
     mocked(MarkdownPlugin).settings = {};
     mocked(MarkdownPlugin).theme = { hasGlobalsFile: true } as MarkdownTheme;
     const page = {
