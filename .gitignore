@@ -3,7 +3,7 @@
 # compiled output
 /dist
 /tmp
-/test/out
+/src/test/out
 /out
 .nyc_output/
 
