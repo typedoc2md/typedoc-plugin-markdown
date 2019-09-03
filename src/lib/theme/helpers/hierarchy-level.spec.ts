@@ -1,4 +1,3 @@
-import { MarkdownPlugin } from '../../plugin';
 import { hierachyLevel } from './hierarchy-level';
 
 describe(`hierachyLevel helper`, () => {
@@ -16,7 +15,7 @@ describe(`hierachyLevel helper`, () => {
     const data = {
       reflection: {},
     };
-    const result = MarkdownPlugin.formatContents(hierachyLevel.call(data));
+    const result = hierachyLevel.call(data);
     expect(result).toMatchSnapshot();
   });
 });

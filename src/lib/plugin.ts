@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { Application, DeclarationReflection, ProjectReflection } from 'typedoc';
+import { Application, ProjectReflection } from 'typedoc';
 import { Converter } from 'typedoc/dist/lib/converter';
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components';
 import { Reflection } from 'typedoc/dist/lib/models/reflections/abstract';
@@ -18,7 +18,6 @@ type ThemeInstance = MarkdownTheme | DocusaurusTheme | VuePressTheme | Bitbucket
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
   static theme: ThemeInstance;
-  static disableOutputCheck: boolean;
   static application: Application;
   static reflection: Reflection;
   static location: string;
@@ -31,11 +30,6 @@ export class MarkdownPlugin extends ConverterComponent {
     hideProjectTitle?: boolean;
     namedAnchors?: boolean;
     readme?: string;
-    includes?: string;
-    media?: string;
-    mode?: number;
-    mdHideSources?: boolean;
-    mdSourceRepo?: string;
   };
   static project: ProjectReflection;
 
@@ -44,14 +38,11 @@ export class MarkdownPlugin extends ConverterComponent {
       [Converter.EVENT_RESOLVE_BEGIN]: this.onBegin,
     });
     this.listenTo(this.application.renderer, {
-      [PageEvent.BEGIN]: this.onPageBegin,
-      [PageEvent.END]: this.onPageEnd,
       [RendererEvent.BEGIN]: this.onRenderBegin,
     });
   }
 
   onBegin() {
-    MarkdownPlugin.application = this.application;
     MarkdownPlugin.settings = this.application.options.getRawValues();
     MarkdownPlugin.setTheme(this.application.renderer, this.application.options);
   }
@@ -62,35 +53,13 @@ export class MarkdownPlugin extends ConverterComponent {
     }
   }
 
-  onPageBegin(page: PageEvent) {
-    if (MarkdownPlugin.theme) {
-      MarkdownPlugin.reflection = page.model instanceof DeclarationReflection ? page.model : undefined;
-      MarkdownPlugin.location = page.model.url ? page.model.url : '';
-    }
-  }
-
-  onPageEnd(page: PageEvent) {
-    if (MarkdownPlugin.theme) {
-      page.contents = page.contents ? MarkdownPlugin.formatContents(page.contents) : '';
-    }
-  }
-
   static setTheme(renderer: Renderer, options: Options) {
     const themeName = options.getValue('theme');
     const themePath = path.join(__dirname, './theme/');
-    const media = options.getValue('media');
-    const platform = options.getValue('platform') || options.getValue('mdEngine');
+    const platform = options.getValue('platform');
+
     const theme = themeName === 'markdown' ? this.getTheme(platform, renderer, themePath, options) : null;
     if (theme) {
-      if (
-        media &&
-        (theme instanceof DocusaurusTheme || theme instanceof GitbookTheme || theme instanceof VuePressTheme)
-      ) {
-        MarkdownPlugin.application.logger.warn(
-          `[typedoc-markdown-plugin] media option is currently not supported in ${platform} theme`,
-        );
-        options.setValue('media', null);
-      }
       renderer.theme = renderer.addComponent('theme', theme);
       MarkdownPlugin.theme = theme;
     }
@@ -112,12 +81,5 @@ export class MarkdownPlugin extends ConverterComponent {
       }
     }
     return new MarkdownTheme(renderer, themePath, options);
-  }
-
-  static formatContents(contents: string) {
-    return contents
-      .replace(/[\r\n]{3,}/g, '\n\n')
-      .replace(/!spaces/g, '')
-      .trim();
   }
 }

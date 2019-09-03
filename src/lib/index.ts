@@ -52,19 +52,5 @@ export = (PluginHost: Application) => {
     type: ParameterType.Boolean,
   });
 
-  app.options.addDeclaration({
-    component: 'markdown',
-    help: 'Markdown Plugin: Deprectated - use --platform.',
-    name: 'mdEngine',
-    type: ParameterType.String,
-  });
-
-  app.options.addDeclaration({
-    component: 'markdown',
-    help: 'Markdown Plugin: Deprectated - use --hideSources.',
-    name: 'mdHideSources',
-    type: ParameterType.Boolean,
-  });
-
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };
