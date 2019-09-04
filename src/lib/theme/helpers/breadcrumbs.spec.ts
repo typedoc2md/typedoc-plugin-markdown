@@ -2,7 +2,6 @@ import * as Handlebars from 'handlebars';
 import { mocked } from 'ts-jest/utils';
 
 import { MarkdownPlugin } from '../../plugin';
-import { MarkdownTheme } from '../theme';
 import { breadcrumbs } from './breadcrumbs';
 
 jest.mock('../../plugin');
@@ -14,7 +13,7 @@ describe(`breadcrumbs helper`, () => {
       return 'url';
     };
     mocked(MarkdownPlugin).settings = {};
-    mocked(MarkdownPlugin).theme = { hasGlobalsFile: true } as MarkdownTheme;
+
     const page = {
       project: { name: 'typedoc-plugin-markdown', url: 'globals.md' },
       model: {
