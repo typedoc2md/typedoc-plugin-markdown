@@ -41,7 +41,7 @@ function getLabel(page: PageEvent) {
   } else {
     label = getTitle(page);
   }
-  return toYamlString(label);
+  return label;
 }
 
 function getTitle(page: PageEvent) {
