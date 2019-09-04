@@ -11,7 +11,7 @@
     "build": "rm -rf dist && tsc && copyfiles --up 2 ./src/**/*.hbs ./dist/",
     "prepublishOnly": "npm run test && npm run build",
     "pretest": "npm run lint",
-    "test": "jest --updateSnapshot",
+    "test": "jest",
     "examples": "npm run build && node ./tasks/examples.js",
     "fixtures": "rm -rf ./src/test/fixtures/ts && node ./tasks/fixtures.js"
   },

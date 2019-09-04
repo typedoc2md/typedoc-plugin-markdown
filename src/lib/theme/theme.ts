@@ -13,21 +13,28 @@ import { Theme } from 'typedoc/dist/lib/output/theme';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
 import { CommentsPlugin } from '../comments.plugin';
+import { FrontMatterPlugin } from '../front-matter.plugin';
 
 export class MarkdownTheme extends Theme {
   navigation: NavigationItem;
-  navigationTitlesMap = {};
-  hasGlobalsFile = false;
+
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath);
     this.listenTo(renderer, PageEvent.END, this.onPageEnd, 1024);
-    renderer.addComponent('comments', new CommentsPlugin(renderer));
 
-    renderer.removeComponent('navigation');
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
+
+    renderer.addComponent('comments', new CommentsPlugin(renderer));
+
+    if (
+      this.application.options.getValue('platform') === 'docusaurus' ||
+      this.application.options.getValue('platform') === 'vuepress'
+    ) {
+      renderer.addComponent('frontmatter', new FrontMatterPlugin(renderer));
+    }
   }
 
   isOutputDirectory(outputDirectory: string): boolean {
@@ -69,7 +76,6 @@ export class MarkdownTheme extends Theme {
       entryPoint.url = this.globalsName;
       urls.push(new UrlMapping(this.globalsName, entryPoint, 'reflection.hbs'));
       urls.push(new UrlMapping(this.indexName, entryPoint, 'index.hbs'));
-      this.hasGlobalsFile = true;
     } else {
       entryPoint.url = this.indexName;
       urls.push(new UrlMapping(this.indexName, entryPoint, 'reflection.hbs'));
@@ -84,13 +90,6 @@ export class MarkdownTheme extends Theme {
     }
 
     this.navigation = this.getNavigation(project);
-    if (this.navigation.children) {
-      this.navigation.children.forEach(navItem => {
-        navItem.children.forEach(navItemChild => {
-          this.navigationTitlesMap[navItemChild.url] = navItemChild.title;
-        });
-      });
-    }
 
     return urls;
   }

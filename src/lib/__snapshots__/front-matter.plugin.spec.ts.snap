@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`front matter plugin should  set correct label for globals file 1`] = `"Globals"`;
+
+exports[`front matter plugin should compile set correct label for index without a README 1`] = `"Globals"`;
+
+exports[`front matter plugin should parse a quoted string 1`] = `"xyx\\\\'s \\"quoted\\" title"`;
+
+exports[`front matter plugin should prepend YAML block to start of page 1`] = `
+"---
+id: \\"_access_access_\\"
+title: \\"Page title\\"
+sidebar_label: \\"Page title\\"
+---
+
+[CONTENT]"
+`;
+
+exports[`front matter plugin should set correct label for index with a README 1`] = `"README"`;
+
+exports[`front matter plugin should set correct title for index page 1`] = `"Project name"`;
+
+exports[`front matter plugin should set correct title for index page if packageInfo label available 1`] = `"Package Label"`;
+
+exports[`front matter plugin should set correct title for pages without a navigation match 1`] = `"Project name"`;
+
+exports[`front matter plugin should set id 1`] = `"_access_access_"`;
