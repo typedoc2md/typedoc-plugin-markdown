@@ -43,7 +43,6 @@ export class MarkdownPlugin extends ConverterComponent {
   }
 
   onBegin() {
-    MarkdownPlugin.settings = this.application.options.getRawValues();
     MarkdownPlugin.setTheme(this.application.renderer, this.application.options);
   }
 

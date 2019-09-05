@@ -14,6 +14,7 @@ import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
 import { CommentsPlugin } from '../comments.plugin';
 import { FrontMatterPlugin } from '../front-matter.plugin';
+import { OptionsPlugin } from '../options.plugin';
 
 export class MarkdownTheme extends Theme {
   navigation: NavigationItem;
@@ -28,6 +29,7 @@ export class MarkdownTheme extends Theme {
     renderer.removeComponent('pretty-print');
 
     renderer.addComponent('comments', new CommentsPlugin(renderer));
+    renderer.addComponent('options', new OptionsPlugin(renderer));
 
     if (
       this.application.options.getValue('platform') === 'docusaurus' ||
