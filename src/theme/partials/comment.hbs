@@ -24,11 +24,11 @@
 
 {{#if tags}}
 
-{{#with tags}}
+{{#each tags}}
 
-{{{commentTags}}}
+**`{{tagName}}`** {{#if text}}{{#with text}}{{#comment}}{{text}}{{/comment}}{{/with}}{{/if}}
 
-{{/with}}
+{{/each}}
 
 {{/if}}
 
