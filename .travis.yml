@@ -11,7 +11,7 @@ node_js:
   - '7'
 before_script:
 script:
-  - npm run prepublishOnly
+  - npm run test
 after_success:
 install:
   - npm prune
