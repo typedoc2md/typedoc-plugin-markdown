@@ -8,12 +8,18 @@
   ],
   "scripts": {
     "lint": "tslint --project ./tsconfig.json",
-    "build": "rm -rf dist && tsc && copyfiles --up 2 ./src/**/*.hbs ./dist/",
-    "prepublishOnly": "npm run test && npm run build",
-    "pretest": "npm run lint",
+    "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "prepublishOnly": "npm run test",
+    "pretest": "npm run lint && npm run build",
     "test": "jest",
-    "examples": "npm run build && node ./tasks/examples.js",
-    "fixtures": "rm -rf ./src/test/fixtures/ts && node ./tasks/fixtures.js"
+    "fixtures": "rm -rf ./test/fixtures && node ./tasks/fixtures.js",
+    "examples": "npm-run-all build examples:*",
+    "examples:html": "node ./tasks/example.js -t default -o typedoc-html",
+    "examples:markdown": "node ./tasks/example.js -t markdown -o typedoc-markdown",
+    "examples:docusaurus": "node ./tasks/example.js -t markdown -p docusaurus -o typedoc-docusaurus/docs/myapi",
+    "examples:vuepress": "node ./tasks/example.js -t markdown -p vuepress -o typedoc-vuepress/docs",
+    "examples:gitbook": "node ./tasks/example.js -t markdown -p gitbook -o typedoc-gitbook/docs",
+    "examples:bitbucket": "node ./tasks/example.js -t markdown -p bitbucket -o typedoc-bitbucket"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -39,16 +45,13 @@
     "typedoc": ">=0.10.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.17",
-    "@types/node": "^12.7.2",
+    "@types/node": "^12.7.4",
     "arg": "^4.1.1",
     "chalk": "^2.4.2",
     "copyfiles": "^2.1.1",
-    "cross-spawn": "^7.0.0",
     "jest": "^24.9.0",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.18.0",
+    "npm-run-all": "^4.1.5",
+    "tslint": "^5.19.0",
     "typedoc": "0.15.0",
     "typescript": "3.5.x"
   },
