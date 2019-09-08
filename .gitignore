@@ -3,8 +3,8 @@
 # compiled output
 /dist
 /tmp
-/src/test/out
 /out
+/test/fixtures
 .nyc_output/
 
 
