@@ -13,5 +13,5 @@
     "strictNullChecks": false,
     "target": "es2015"
   },
-  "exclude": ["node_modules", "./src/test", "typedoc", "**/*.spec.ts"]
+  "exclude": ["node_modules", "./src/test", "./test"]
 }
