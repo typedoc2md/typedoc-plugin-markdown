@@ -11,8 +11,8 @@ const app = new Application({
   target: 'es2015',
 });
 
-const fixturesDir = './src/test/fixtures/ts';
-const inputFiles = [...app.expandInputFiles(['../typedoc/src/test/converter/']), ...['../../typedoc/examples/basic/src/classes.ts']];
+const fixturesDir = './test/fixtures';
+const inputFiles = app.expandInputFiles(['./test/stubs']);
 
 if (!fs.existsSync(fixturesDir)) {
   fs.mkdirSync(fixturesDir);
