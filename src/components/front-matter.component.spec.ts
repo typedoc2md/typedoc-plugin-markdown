@@ -1,11 +1,22 @@
-const { FrontMatterComponent } = require('components/front-matter.component');
+import * as path from 'path';
+import { Application } from 'typedoc';
 
+const { FrontMatterComponent } = require('components/front-matter.component');
 describe(`FrontMatterComponent`, () => {
   let frontMatterComponent;
   let app;
+
   beforeAll(() => {
-    app = bootstrapApp({ mode: 'file' });
-    project = app.convert(['./test/stubs/functions.ts']);
+    app = new Application({
+      mode: 'file',
+      module: 'CommonJS',
+      target: 'ES5',
+      readme: 'none',
+      theme: 'markdown',
+      logger: 'none',
+      plugin: path.join(__dirname, '../../../dist/index'),
+    });
+    app.convert(['./test/stubs/functions.ts']);
     app.renderer.addComponent('frontmatter', new FrontMatterComponent(app.renderer));
     frontMatterComponent = app.renderer.getComponent('frontmatter');
   });

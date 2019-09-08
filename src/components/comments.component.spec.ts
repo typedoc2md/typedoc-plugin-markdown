@@ -1,6 +1,7 @@
-const Handlebars = require('handlebars');
-const path = require('path');
-const fs = require('fs-extra');
+import * as fs from 'fs-extra';
+import * as Handlebars from 'handlebars';
+import * as path from 'path';
+import { Application } from 'typedoc';
 
 describe(`CommentsComponent`, () => {
   let app;
@@ -8,12 +9,18 @@ describe(`CommentsComponent`, () => {
   let pluginInstance;
   const out = path.join(__dirname, 'tmp');
   beforeAll(() => {
-    app = bootstrapApp({
+    app = new Application({
+      module: 'CommonJS',
+      target: 'ES5',
+      readme: 'none',
+      theme: 'markdown',
+      logger: 'none',
       includes: './test/stubs/inc/',
       media: './test/stubs/media/',
       listInvalidSymbolLinks: true,
+      plugin: path.join(__dirname, '../../dist/index'),
     });
-    project = app.convert(app.expandInputFiles([stubsDirectory]));
+    project = app.convert(app.expandInputFiles(['./test/stubs/']));
     app.generateDocs(project, out);
     pluginInstance = app.renderer.getComponent('comments');
   });

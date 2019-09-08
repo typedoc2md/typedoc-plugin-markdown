@@ -1,11 +1,33 @@
-const fs = require('fs-extra');
+import * as fs from 'fs-extra';
+import * as path from 'path';
+import { Application, UrlMapping } from 'typedoc';
+
 describe(`MarkdownTheme modules`, () => {
+  function getExpectedUrls(urlMappings: UrlMapping[]) {
+    const expectedUrls = [];
+    urlMappings.forEach(urlMapping => {
+      expectedUrls.push(urlMapping.url);
+      urlMapping.model.children.forEach(reflection => {
+        expectedUrls.push(reflection.url);
+      });
+    });
+    return expectedUrls;
+  }
+
   let app;
   let project;
   let theme;
+
   beforeAll(() => {
-    app = bootstrapApp();
-    project = app.convert(app.expandInputFiles([stubsDirectory]));
+    app = new Application({
+      module: 'CommonJS',
+      target: 'ES5',
+      readme: 'none',
+      theme: 'markdown',
+      logger: 'none',
+      plugin: path.join(__dirname, '../../dist/index'),
+    });
+    project = app.convert(app.expandInputFiles(['./test/stubs/']));
     theme = app.renderer.theme;
   });
 
