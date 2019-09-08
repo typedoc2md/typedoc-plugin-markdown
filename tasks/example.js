@@ -22,23 +22,18 @@ const app = new Application({
   target: 'ES5',
   name: 'My API',
   readme: 'none',
-  includes: './src/test/fixtures/inc/',
-  media: './src/test/fixtures/media/',
+  includes: './test/stubs/inc/',
+  media: './test/stubs/media/',
   theme,
   plugin: join(__dirname, '../dist/index'),
   experimentalDecorators: true,
   jsx: true,
   excludePrivate: true,
-  listInvalidSymbolLinks: true,
+  listInvalidSymbolLinks: false,
 });
 
-const inputFiles = [
-  ...app.expandInputFiles(['../typedoc/src/test/converter/']),
-  ...['../typedoc/examples/basic/src/classes.ts'],
-];
-
-// const inputFiles = [...app.expandInputFiles(['./src/test/examples/'])];
+const inputFiles = app.expandInputFiles(['./test/stubs']);
 app.options.setValue('platform', platform);
 
 app.generateDocs(inputFiles, join(__dirname, `../out/${out}`));
-console.log(green(`[typedoc-plugin-markdown:task:examples] writing ${theme}`));
+console.log(green(`[typedoc-plugin-markdown:task:examples] writing ${theme} ${platform}`));
