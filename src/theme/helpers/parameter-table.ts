@@ -1,8 +1,6 @@
 import * as Handlebars from 'handlebars';
 import { ParameterReflection } from 'typedoc';
 
-import { MarkdownPlugin } from '../../plugin';
-import { DocusaurusTheme } from '../theme.docusaurus';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
@@ -31,9 +29,7 @@ export function parameterTable(this: ParameterReflection[]) {
 
     const row = [
       `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${isOptional ? '?' : ''}\``,
-      typeOut
-        ? typeOut.toString().replace(/\|/g, MarkdownPlugin.theme instanceof DocusaurusTheme ? '&#124;' : '\\|')
-        : '',
+      typeOut ? typeOut.toString().replace(/\|/g, '&#124;') : '',
     ];
     if (hasDefaultValues) {
       row.push(parameter.defaultValue ? parameter.defaultValue : '-');
