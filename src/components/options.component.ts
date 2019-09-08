@@ -2,7 +2,7 @@ import * as Handlebars from 'handlebars';
 import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
 
 @Component({ name: 'options' })
-export class OptionsPlugin extends ContextAwareRendererComponent {
+export class OptionsComponent extends ContextAwareRendererComponent {
   initialize() {
     super.initialize();
 
@@ -18,6 +18,13 @@ export class OptionsPlugin extends ContextAwareRendererComponent {
         return options.fn(this);
       }
       return options.inverse(this);
+    });
+
+    Handlebars.registerHelper('ifMainTitle', function(options) {
+      if (platform === 'docusaurus') {
+        return options.inverse(this);
+      }
+      return options.fn(this);
     });
 
     Handlebars.registerHelper('ifBreadcrumbs', function(options) {

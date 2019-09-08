@@ -1,12 +1,18 @@
-import * as FS from 'fs-extra';
+import * as fs from 'fs-extra';
 import * as Handlebars from 'handlebars';
-import * as Path from 'path';
+import * as path from 'path';
 import { MarkedLinksPlugin, Reflection } from 'typedoc';
 import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
+import * as Util from 'util';
+
+/**
+ * This component is essentially a combination of TypeDoc's 'MarkedPlugin' and 'MarkedLinksPlugin'.
+ * The options are unchanged , but strips out all of the html configs.
+ */
 
 @Component({ name: 'comments' })
-export class CommentsPlugin extends ContextAwareRendererComponent {
+export class CommentsComponent extends ContextAwareRendererComponent {
   /**
    * The path referenced files are located in.
    */
@@ -37,15 +43,16 @@ export class CommentsPlugin extends ContextAwareRendererComponent {
    */
   private inlineTag: RegExp = /(?:\[(.+?)\])?\{@(link|linkcode|linkplain)\s+((?:.|\n)+?)\}/gi;
 
-  listInvalidSymbolLinks: boolean;
+  private listInvalidSymbolLinks: boolean;
 
   private warnings: string[] = [];
 
-  /**
-   * Create a new MarkedPlugin instance.
-   */
   initialize() {
     super.initialize();
+
+    this.includes = this.application.options.getValue('includes');
+    this.mediaDirectory = this.application.options.getValue('media');
+    this.listInvalidSymbolLinks = this.application.options.getValue('listInvalidSymbolLinks');
 
     this.listenTo(
       this.owner,
@@ -56,33 +63,29 @@ export class CommentsPlugin extends ContextAwareRendererComponent {
       100,
     );
 
-    const that = this;
+    const component = this;
 
     Handlebars.registerHelper('comment', function(this: string) {
-      return that.parseMarkdown(this);
+      return component.parseComments(this);
     });
   }
 
   /**
-   * Parse the given markdown string and return the resulting html.
+   * Parse the given comemnts string and return the resulting html.
    *
    * @param text  The markdown string that should be parsed.
    * @param context  The current handlebars context.
    * @returns The resulting html string.
    */
-  public parseMarkdown(text: string) {
+  public parseComments(text: string) {
     const context = Object.assign(text, '');
 
-    this.includes = this.application.options.getValue('includes');
-    this.mediaDirectory = this.application.options.getValue('media');
-    this.listInvalidSymbolLinks = this.application.options.getValue('listInvalidSymbolLinks');
-
     if (this.includes) {
-      text = text.replace(this.includePattern, (match: string, path: string) => {
-        path = Path.join(this.includes!, path.trim());
-        if (FS.existsSync(path) && FS.statSync(path).isFile()) {
-          const contents = FS.readFileSync(path, 'utf-8');
-          if (path.substr(-4).toLocaleLowerCase() === '.hbs') {
+      text = text.replace(this.includePattern, (match: string, includesPath: string) => {
+        includesPath = path.join(this.includes!, includesPath.trim());
+        if (fs.existsSync(includesPath) && fs.statSync(includesPath).isFile()) {
+          const contents = fs.readFileSync(includesPath, 'utf-8');
+          if (includesPath.substr(-4).toLocaleLowerCase() === '.hbs') {
             const template = Handlebars.compile(contents);
             return template(context);
           } else {
@@ -95,9 +98,9 @@ export class CommentsPlugin extends ContextAwareRendererComponent {
     }
 
     if (this.mediaDirectory) {
-      text = text.replace(this.mediaPattern, (match: string, path: string) => {
-        if (FS.existsSync(Path.join(this.mediaDirectory!, path))) {
-          return this.getRelativeUrl('media') + '/' + path;
+      text = text.replace(this.mediaPattern, (match: string, mediaPath: string) => {
+        if (fs.existsSync(path.join(this.mediaDirectory!, mediaPath))) {
+          return this.getRelativeUrl('media') + '/' + mediaPath;
         } else {
           return match;
         }
@@ -152,31 +155,32 @@ export class CommentsPlugin extends ContextAwareRendererComponent {
    * @returns A html link tag.
    */
   private buildLink(original: string, target: string, caption: string, monospace?: boolean): string {
-    let reflection: Reflection | undefined;
-
-    if (this.reflection) {
-      reflection = this.reflection.findReflectionByName(target);
-    } else if (this.project) {
-      reflection = this.project.findReflectionByName(target);
-    }
-
-    if (reflection && reflection.url) {
-      if (this.urlPrefix.test(reflection.url)) {
-        target = reflection.url;
-      } else {
-        target = this.getRelativeUrl(reflection.url);
+    if (!this.urlPrefix.test(target)) {
+      let reflection: Reflection | undefined;
+      if (this.reflection) {
+        reflection = this.reflection.findReflectionByName(target);
+      } else if (this.project) {
+        reflection = this.project.findReflectionByName(target);
       }
-    } else {
-      const fullName = (this.reflection || this.project)!.getFullName();
-      this.warnings.push(`In ${fullName}: ${original}`);
-      return original;
+
+      if (reflection && reflection.url) {
+        if (this.urlPrefix.test(reflection.url)) {
+          target = reflection.url;
+        } else {
+          target = this.getRelativeUrl(reflection.url);
+        }
+      } else {
+        const fullName = (this.reflection || this.project)!.getFullName();
+        this.warnings.push(`In ${fullName}: ${original}`);
+        return original;
+      }
     }
 
     if (monospace) {
       caption = '`' + caption + '`';
     }
 
-    return `[${caption}](${target})`;
+    return Util.format('[%s](%s)', caption, target);
   }
 
   /**

@@ -4,7 +4,7 @@ import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/outpu
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 @Component({ name: 'frontmatter' })
-export class FrontMatterPlugin extends ContextAwareRendererComponent {
+export class FrontMatterComponent extends ContextAwareRendererComponent {
   initialize() {
     super.initialize();
 
