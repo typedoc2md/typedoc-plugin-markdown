@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`parameterNameAndType helper should compile 1`] = `"▪\`Const\`  **objectLiteral**: *[object Object]*"`;

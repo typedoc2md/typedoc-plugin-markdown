@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`breadcrumbs helper should compie 1`] = `"[Globals](url) › [Classes](url) › [Animal](url)"`;

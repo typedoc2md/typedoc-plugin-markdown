@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`hierachyLevel helper should compile with extendedType 1`] = `"!spaces  *"`;
-
-exports[`hierachyLevel helper should compile without extended types 1`] = `"*"`;

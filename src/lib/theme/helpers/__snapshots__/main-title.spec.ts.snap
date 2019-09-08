@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`mainTitle helper should compile 1`] = `"# Reflection title"`;
