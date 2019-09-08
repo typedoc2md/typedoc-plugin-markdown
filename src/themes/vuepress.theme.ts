@@ -1,3 +1,10 @@
+import * as fs from 'fs-extra';
+import * as path from 'path';
+import { RendererEvent } from 'typedoc/dist/lib/output/events';
+import { Renderer } from 'typedoc/dist/lib/output/renderer';
+
+import { MarkdownTheme } from './markdown.theme';
+
 /**
  * Creates `api-sidebar.json` in `.vuepress` directory.
  * May be used in `.vuepress/config.json` as follows:
@@ -30,14 +37,6 @@
  *   },
  * };
  */
-import * as fs from 'fs-extra';
-import * as path from 'path';
-import { RendererEvent } from 'typedoc/dist/lib/output/events';
-import { Renderer } from 'typedoc/dist/lib/output/renderer';
-
-import { MarkdownPlugin } from '../plugin';
-import { MarkdownTheme } from './theme';
-
 export class VuePressTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string, options: any) {
     super(renderer, basePath, options);
@@ -52,16 +51,16 @@ export class VuePressTheme extends MarkdownTheme {
       );
       return;
     }
-    this.writeSideBar(renderer.outputDirectory, root);
+    this.writeSideBar(renderer, root);
   }
 
-  writeSideBar(outputDirectory: string, root: string) {
-    const childDirectory = outputDirectory.split(root + 'docs/')[1];
+  writeSideBar(renderer: RendererEvent, root: string) {
+    const childDirectory = renderer.outputDirectory.split(root + 'docs/')[1];
     const docsRoot = childDirectory ? childDirectory + '/' : '';
     const vuePressRoot = root + 'docs/.vuepress';
-    const navObject = this.getNavObject(docsRoot);
+    const navObject = this.getNavObject(renderer, docsRoot);
     const sidebarPath = vuePressRoot + '/api-sidebar.json';
-    const relativeNavObject = this.getNavObject();
+    const relativeNavObject = this.getNavObject(renderer);
     const relativeSidebarPath = vuePressRoot + '/api-sidebar-relative.json';
 
     if (!fs.existsSync(vuePressRoot)) {
@@ -77,9 +76,9 @@ export class VuePressTheme extends MarkdownTheme {
     }
   }
 
-  getNavObject(docsRoot: string = '') {
+  getNavObject(renderer: RendererEvent, docsRoot: string = '') {
     const projectUrls = [docsRoot + this.indexName.replace('.md', '')];
-    if (MarkdownPlugin.project.url === this.globalsName) {
+    if (renderer.project.url === this.globalsName) {
       projectUrls.push(docsRoot + 'globals');
     }
 

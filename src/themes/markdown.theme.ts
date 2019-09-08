@@ -12,9 +12,9 @@ import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { CommentsPlugin } from '../comments.plugin';
-import { FrontMatterPlugin } from '../front-matter.plugin';
-import { OptionsPlugin } from '../options.plugin';
+import { CommentsComponent } from '../components/comments.component';
+import { FrontMatterComponent } from '../components/front-matter.component';
+import { OptionsComponent } from '../components/options.component';
 
 export class MarkdownTheme extends Theme {
   navigation: NavigationItem;
@@ -28,14 +28,14 @@ export class MarkdownTheme extends Theme {
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
 
-    renderer.addComponent('comments', new CommentsPlugin(renderer));
-    renderer.addComponent('options', new OptionsPlugin(renderer));
+    renderer.addComponent('comments', new CommentsComponent(renderer));
+    renderer.addComponent('options', new OptionsComponent(renderer));
 
     if (
       this.application.options.getValue('platform') === 'docusaurus' ||
       this.application.options.getValue('platform') === 'vuepress'
     ) {
-      renderer.addComponent('frontmatter', new FrontMatterPlugin(renderer));
+      renderer.addComponent('frontmatter', new FrontMatterComponent(renderer));
     }
   }
 
@@ -48,8 +48,8 @@ export class MarkdownTheme extends Theme {
       'classes',
       'enums',
       'interfaces',
-      'media',
       'modules',
+      'media',
       '.DS_Store',
     ];
 
@@ -74,13 +74,13 @@ export class MarkdownTheme extends Theme {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
 
-    if (project.readme && this.application.options.getValue('readme') !== 'none') {
-      entryPoint.url = this.globalsName;
-      urls.push(new UrlMapping(this.globalsName, entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(this.indexName, entryPoint, 'index.hbs'));
-    } else {
+    if (this.application.options.getValue('readme') === 'none') {
       entryPoint.url = this.indexName;
       urls.push(new UrlMapping(this.indexName, entryPoint, 'reflection.hbs'));
+    } else {
+      entryPoint.url = this.globalsName;
+      urls.push(new UrlMapping(this.globalsName, entryPoint, 'reflection.hbs'));
+      urls.push(new UrlMapping(this.indexName, project, 'index.hbs'));
     }
 
     if (entryPoint.children) {
@@ -222,6 +222,15 @@ export class MarkdownTheme extends Theme {
     return project;
   }
 
+  /**
+   * This is mostly a copy of the DefaultTheme method with .html ext switched to .md
+   * Builds the url for the the given reflection and all of its children.
+   *
+   * @param reflection  The reflection the url should be created for.
+   * @param urls The array the url should be appended to.
+   * @returns The altered urls array.
+   */
+
   buildUrls(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
     const mapping = DefaultTheme.getMapping(reflection);
     if (mapping) {
@@ -243,6 +252,14 @@ export class MarkdownTheme extends Theme {
     }
     return urls;
   }
+
+  /**
+   * Similar to DefaultTheme method with added functionality to cater for bitbucket heading and single file anchors
+   * Generate an anchor url for the given reflection and all of its children.
+   *
+   * @param reflection  The reflection an anchor url should be created for.
+   * @param container   The nearest reflection having an own document.
+   */
 
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
     if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {

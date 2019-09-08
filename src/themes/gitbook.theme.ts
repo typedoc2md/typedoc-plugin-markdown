@@ -2,7 +2,8 @@ import * as fs from 'fs-extra';
 import { NavigationItem } from 'typedoc';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
-import { MarkdownTheme } from './theme';
+
+import { MarkdownTheme } from './markdown.theme';
 
 export class GitbookTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string, options: any) {

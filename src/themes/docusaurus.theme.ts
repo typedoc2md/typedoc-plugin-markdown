@@ -2,8 +2,8 @@ import * as fs from 'fs-extra';
 import * as path from 'path';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
-import { MarkdownPlugin } from '../plugin';
-import { MarkdownTheme } from './theme';
+
+import { MarkdownTheme } from './markdown.theme';
 
 export class DocusaurusTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string, options: any) {
@@ -19,15 +19,15 @@ export class DocusaurusTheme extends MarkdownTheme {
       );
       return;
     }
-    this.writeSideBar(renderer.outputDirectory, docusarusRoot);
+    this.writeSideBar(renderer, docusarusRoot);
   }
 
-  writeSideBar(outputDirectory: string, docusarusRoot: string) {
-    const childDirectory = outputDirectory.split(docusarusRoot + 'docs/')[1];
+  writeSideBar(renderer: RendererEvent, docusarusRoot: string) {
+    const childDirectory = renderer.outputDirectory.split(docusarusRoot + 'docs/')[1];
     const docsRoot = childDirectory ? childDirectory + '/' : '';
     const websitePath = docusarusRoot + 'website';
-    const packageName = MarkdownPlugin.project.packageInfo.name;
-    const navObject = this.getNavObject(docsRoot);
+    const packageName = renderer.project.packageInfo.name;
+    const navObject = this.getNavObject(renderer, docsRoot);
     const sidebarPath = websitePath + '/sidebars.json';
     let contents: any;
     if (!fs.existsSync(sidebarPath)) {
@@ -51,9 +51,9 @@ export class DocusaurusTheme extends MarkdownTheme {
     }
   }
 
-  getNavObject(docsRoot: string) {
+  getNavObject(renderer: RendererEvent, docsRoot: string) {
     const projectUrls = [docsRoot + this.indexName.replace('.md', '')];
-    if (MarkdownPlugin.project.url === this.globalsName) {
+    if (renderer.project.url === this.globalsName) {
       projectUrls.push(docsRoot + 'globals');
     }
     const navObject = {
