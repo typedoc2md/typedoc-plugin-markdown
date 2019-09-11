@@ -1,4 +1,3 @@
-const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
 const { Application } = require('typedoc');
@@ -21,7 +20,7 @@ if (!fs.existsSync(fixturesDir)) {
 inputFiles.forEach(file => {
   const result = app.convert(app.expandInputFiles([file]));
   fs.writeFileSync(`${fixturesDir}/${path.basename(file)}.json`, JSON.stringify(result, replacer));
-  console.log(chalk.green(`[typedoc-plugin-markdown(task:fixtures)] writing ${path.basename(file)}.json fixture`));
+  console.log(`[typedoc-plugin-markdown(task:fixtures)] writing ${path.basename(file)}.json fixture`);
 });
 
 function replacer(key, value) {

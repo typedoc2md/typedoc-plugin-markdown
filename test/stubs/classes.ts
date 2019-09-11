@@ -63,25 +63,6 @@ export abstract class BaseClass implements INameInterface {
   static instance: BaseClass;
   static instances: BaseClass[];
 
-  /**
-   * This is an instance member of an internal class.
-   */
-  private internalClass: InternalClass<keyof BaseClass>;
-
-  constructor(name: string);
-  constructor(source: BaseClass);
-  constructor() {
-    if (arguments.length > 0) {
-      if (typeof arguments[0] == 'string') {
-        this.name = arguments[0];
-      } else if (arguments[0] instanceof BaseClass) {
-        this.name = arguments[0].name;
-      }
-    }
-
-    this.checkName();
-  }
-
   public abstract abstractMethod(): void;
 
   /**
@@ -146,33 +127,6 @@ export abstract class BaseClass implements INameInterface {
   static getInstance(): BaseClass {
     return BaseClass.instance;
   }
-
-  /**
-   * @see https://github.com/sebastian-lenz/typedoc/issues/42
-   */
-  public static caTest(
-    originalValues: BaseClass,
-    newRecord: any,
-    fieldNames: string[],
-    mandatoryFields: string[],
-  ): string {
-    var returnval = '';
-    var updates: string[] = [];
-    var allFields: string[] = fieldNames;
-    for (var j = 0; j < allFields.length; j++) {
-      var field = allFields[j];
-      var oldValue = originalValues[field];
-      var newValue = newRecord[field];
-    }
-    return returnval;
-  }
-}
-
-/**
- * This is an internal class, it is not exported.
- */
-class InternalClass<TTT extends keyof BaseClass> {
-  constructor(options: { name: string }) {}
 }
 
 /**
@@ -246,7 +200,7 @@ export class SubClassB extends BaseClass {
   public name: string;
 
   constructor(name: string) {
-    super(name);
+    super();
   }
 
   abstractMethod(): void {}
@@ -278,6 +232,7 @@ export class GenericClass<T extends BaseClass> {
    */
   public setValue(value: T) {
     this.value = value;
+    console.log(this.p4);
   }
 
   public getValue(): T {

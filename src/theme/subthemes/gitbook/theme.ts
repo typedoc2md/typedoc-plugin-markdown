@@ -5,18 +5,6 @@ import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import MarkdownTheme from '../../theme';
 
 export default class GitbookTheme extends MarkdownTheme {
-  allowedDirectoryListing = [
-    this.indexName,
-    'globals.md',
-    'classes',
-    'enums',
-    'interfaces',
-    'modules',
-    'media',
-    '.DS_Store',
-    'SUMMARY.md',
-  ];
-
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     this.listenTo(renderer, RendererEvent.END, this.writeSummary, 1024);
@@ -45,5 +33,19 @@ export default class GitbookTheme extends MarkdownTheme {
       }
     });
     return md.join('\n');
+  }
+
+  allowedDirectoryListings() {
+    return [
+      this.indexName,
+      'globals.md',
+      'classes',
+      'enums',
+      'interfaces',
+      'modules',
+      'media',
+      '.DS_Store',
+      'SUMMARY.md',
+    ];
   }
 }

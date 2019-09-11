@@ -1,4 +1,4 @@
-function buildName(firstName: string, lastName?: string) {
+export function buildName(firstName: string, lastName?: string) {
   if (lastName) {
     return firstName + ' ' + lastName;
   } else {
@@ -9,7 +9,7 @@ function buildName(firstName: string, lastName?: string) {
 /**
  * This is an internal function.
  */
-function internalFunction(): void {}
+export function internalFunction(): void {}
 
 /**
  * This is a simple exported function.
@@ -81,7 +81,7 @@ export function functionWithDefaults(
  * @param rest  The rest parameter.
  * @return This is the return value of the function.
  */
-function functionWithRest(...rest: string[]): string {
+export function functionWithRest(...rest: string[]): string {
   return rest.join(', ');
 }
 
@@ -134,15 +134,15 @@ export module moduleFunction {
   /**
    * This variable is appended to a function.
    */
-  let functionVariable: string;
+  export let functionVariable: string;
 
   /**
    * This function is appended to another function.
    */
-  function append() {}
+  export function append() {}
 
   /**
    * This function is appended to another function.
    */
-  function prepend() {}
+  export function prepend() {}
 }
