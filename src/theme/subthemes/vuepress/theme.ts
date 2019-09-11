@@ -3,7 +3,7 @@ import * as path from 'path';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
-import { MarkdownTheme } from './markdown.theme';
+import MarkdownTheme from '../../theme';
 
 /**
  * Creates `api-sidebar.json` in `.vuepress` directory.
@@ -37,9 +37,9 @@ import { MarkdownTheme } from './markdown.theme';
  *   },
  * };
  */
-export class VuePressTheme extends MarkdownTheme {
-  constructor(renderer: Renderer, basePath: string, options: any) {
-    super(renderer, basePath, options);
+export default class VuePressTheme extends MarkdownTheme {
+  constructor(renderer: Renderer, basePath: string) {
+    super(renderer, basePath);
     this.listenTo(renderer, RendererEvent.END, this.onRendererEnd, 1024);
   }
 
@@ -78,14 +78,14 @@ export class VuePressTheme extends MarkdownTheme {
 
   getNavObject(renderer: RendererEvent, docsRoot: string = '') {
     const projectUrls = [docsRoot + this.indexName.replace('.md', '')];
-    if (renderer.project.url === this.globalsName) {
+    if (renderer.project.url === 'globals.md') {
       projectUrls.push(docsRoot + 'globals');
     }
 
     // const packageName = MarkdownPlugin.project.packageInfo.name;
     const navObject = []; // [{ title: packageName, children: projectUrls }]
 
-    this.navigation.children.forEach(rootNavigation => {
+    this.getNavigation(renderer.project).children.forEach(rootNavigation => {
       navObject.push({
         title: rootNavigation.title,
         children: rootNavigation.children.map(item => {

@@ -1,19 +1,30 @@
 import * as fs from 'fs-extra';
-import { NavigationItem } from 'typedoc';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
-import { MarkdownTheme } from './markdown.theme';
+import MarkdownTheme from '../../theme';
 
-export class GitbookTheme extends MarkdownTheme {
-  constructor(renderer: Renderer, basePath: string, options: any) {
-    super(renderer, basePath, options);
+export default class GitbookTheme extends MarkdownTheme {
+  allowedDirectoryListing = [
+    this.indexName,
+    'globals.md',
+    'classes',
+    'enums',
+    'interfaces',
+    'modules',
+    'media',
+    '.DS_Store',
+    'SUMMARY.md',
+  ];
+
+  constructor(renderer: Renderer, basePath: string) {
+    super(renderer, basePath);
     this.listenTo(renderer, RendererEvent.END, this.writeSummary, 1024);
   }
 
   writeSummary(renderer: RendererEvent) {
     const outputDirectory = renderer.outputDirectory;
-    const summaryMarkdown = this.getSummaryMarkdown(this.navigation);
+    const summaryMarkdown = this.getSummaryMarkdown(renderer);
     try {
       fs.writeFileSync(`${outputDirectory}/SUMMARY.md`, summaryMarkdown);
       this.application.logger.write(`[typedoc-plugin-markdown] SUMMARY.md written to ${outputDirectory}`);
@@ -22,10 +33,10 @@ export class GitbookTheme extends MarkdownTheme {
     }
   }
 
-  getSummaryMarkdown(navigation: NavigationItem) {
+  getSummaryMarkdown(renderer: RendererEvent) {
     const md = [];
     md.push(`* [Globals](globals.md)`);
-    navigation.children.forEach(rootNavigation => {
+    this.getNavigation(renderer.project).children.forEach(rootNavigation => {
       if (rootNavigation.children) {
         md.push(`* [${rootNavigation.title}](${rootNavigation.url})`);
         rootNavigation.children.forEach(item => {

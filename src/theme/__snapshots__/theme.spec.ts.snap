@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MarkdownTheme modules getUrls should get navigation 1`] = `
+exports[`MarkdownTheme getUrls should get navigation 1`] = `
 NavigationItem {
   "children": Array [
     NavigationItem {
@@ -2002,7 +2002,7 @@ NavigationItem {
 }
 `;
 
-exports[`MarkdownTheme modules getUrls should getUrls when readme is defined 1`] = `
+exports[`MarkdownTheme getUrls should getUrls when readme is defined 1`] = `
 Array [
   "globals.md",
   "modules/_classes_.md",
@@ -2157,7 +2157,7 @@ Array [
 ]
 `;
 
-exports[`MarkdownTheme modules getUrls should getUrls' 1`] = `
+exports[`MarkdownTheme getUrls should getUrls' 1`] = `
 Array [
   "README.md",
   "modules/_classes_.md",

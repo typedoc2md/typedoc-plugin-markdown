@@ -2,7 +2,7 @@ import * as fs from 'fs-extra';
 import * as path from 'path';
 import { Application, UrlMapping } from 'typedoc';
 
-describe(`MarkdownTheme modules`, () => {
+describe(`MarkdownTheme`, () => {
   function getExpectedUrls(urlMappings: UrlMapping[]) {
     const expectedUrls = [];
     urlMappings.forEach(urlMapping => {
@@ -17,7 +17,7 @@ describe(`MarkdownTheme modules`, () => {
   let app;
   let project;
   let theme;
-
+  const out = path.join(__dirname, 'tmp');
   beforeAll(() => {
     app = new Application({
       module: 'CommonJS',
@@ -28,7 +28,12 @@ describe(`MarkdownTheme modules`, () => {
       plugin: path.join(__dirname, '../../dist/index'),
     });
     project = app.convert(app.expandInputFiles(['./test/stubs/']));
+    app.generateDocs(project, out);
     theme = app.renderer.theme;
+  });
+
+  afterAll(() => {
+    fs.removeSync(out);
   });
 
   describe(`getUrls`, () => {

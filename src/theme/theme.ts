@@ -1,57 +1,46 @@
 import * as fs from 'fs-extra';
-import { NavigationItem, Renderer } from 'typedoc';
 import {
   ContainerReflection,
   DeclarationReflection,
+  DefaultTheme,
+  NavigationItem,
   ProjectReflection,
   Reflection,
   ReflectionKind,
-} from 'typedoc/dist/lib/models/reflections';
+  Renderer,
+  UrlMapping,
+} from 'typedoc';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-import { UrlMapping } from 'typedoc/dist/lib/output/models/UrlMapping';
 import { Theme } from 'typedoc/dist/lib/output/theme';
-import { DefaultTheme } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
 import { CommentsComponent } from '../components/comments.component';
-import { FrontMatterComponent } from '../components/front-matter.component';
 import { OptionsComponent } from '../components/options.component';
 
-export class MarkdownTheme extends Theme {
-  navigation: NavigationItem;
+export default class MarkdownTheme extends Theme {
+  // The name of the index file
+  indexName = 'README.md';
 
-  constructor(renderer: Renderer, basePath: string, options: any) {
+  constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     this.listenTo(renderer, PageEvent.END, this.onPageEnd, 1024);
 
+    // cleanup html specific components
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
 
+    // add markdown related componenets
     renderer.addComponent('comments', new CommentsComponent(renderer));
     renderer.addComponent('options', new OptionsComponent(renderer));
-
-    if (
-      this.application.options.getValue('platform') === 'docusaurus' ||
-      this.application.options.getValue('platform') === 'vuepress'
-    ) {
-      renderer.addComponent('frontmatter', new FrontMatterComponent(renderer));
-    }
   }
 
+  /**
+   * Test if directory is output directory
+   * @param outputDirectory
+   */
   isOutputDirectory(outputDirectory: string): boolean {
     let isOutputDirectory = true;
-    const allowedListings = [
-      this.indexName,
-      'globals.md',
-      'SUMMARY.md',
-      'classes',
-      'enums',
-      'interfaces',
-      'modules',
-      'media',
-      '.DS_Store',
-    ];
 
     const listings = fs.readdirSync(outputDirectory);
 
@@ -61,7 +50,7 @@ export class MarkdownTheme extends Theme {
     }
 
     listings.forEach(listing => {
-      if (!allowedListings.includes(listing)) {
+      if (!this.allowedDirectoryListings().includes(listing)) {
         isOutputDirectory = false;
         return;
       }
@@ -70,19 +59,22 @@ export class MarkdownTheme extends Theme {
     return isOutputDirectory;
   }
 
+  // The allowed directory and files listing used to check the output directory
+  allowedDirectoryListings() {
+    return [this.indexName, 'globals.md', 'classes', 'enums', 'interfaces', 'modules', 'media', '.DS_Store'];
+  }
+
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-
     if (this.application.options.getValue('readme') === 'none') {
       entryPoint.url = this.indexName;
       urls.push(new UrlMapping(this.indexName, entryPoint, 'reflection.hbs'));
     } else {
-      entryPoint.url = this.globalsName;
-      urls.push(new UrlMapping(this.globalsName, entryPoint, 'reflection.hbs'));
+      entryPoint.url = 'globals.md';
+      urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
       urls.push(new UrlMapping(this.indexName, project, 'index.hbs'));
     }
-
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
         if (child instanceof DeclarationReflection) {
@@ -90,10 +82,96 @@ export class MarkdownTheme extends Theme {
         }
       });
     }
-
-    this.navigation = this.getNavigation(project);
-
     return urls;
+  }
+
+  /**
+   * This is mostly a copy of the DefaultTheme method with .html ext switched to .md
+   * Builds the url for the the given reflection and all of its children.
+   *
+   * @param reflection  The reflection the url should be created for.
+   * @param urls The array the url should be appended to.
+   * @returns The altered urls array.
+   */
+
+  buildUrls(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
+    const mapping = DefaultTheme.getMapping(reflection);
+    if (mapping) {
+      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
+        const url = `${mapping.directory}/${DefaultTheme.getUrl(reflection)}.md`;
+        urls.push(new UrlMapping(url, reflection, mapping.template));
+        reflection.url = url;
+        reflection.hasOwnDocument = true;
+      }
+      for (const child of reflection.children || []) {
+        if (mapping.isLeaf) {
+          this.applyAnchorUrl(child, reflection);
+        } else {
+          this.buildUrls(child, urls);
+        }
+      }
+    } else if (reflection.parent) {
+      this.applyAnchorUrl(reflection, reflection.parent);
+    }
+    return urls;
+  }
+
+  /**
+   * Similar to DefaultTheme method with added functionality to cater for bitbucket heading and single file anchors
+   * Generate an anchor url for the given reflection and all of its children.
+   *
+   * @param reflection  The reflection an anchor url should be created for.
+   * @param container   The nearest reflection having an own document.
+   */
+  applyAnchorUrl(reflection: Reflection, container: Reflection) {
+    if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
+      const anchor = this.toAnchorRef(reflection);
+      reflection.url = container.url + '#' + anchor;
+      reflection.anchor = anchor;
+      reflection.hasOwnDocument = false;
+    }
+    reflection.traverse(child => {
+      if (child instanceof DeclarationReflection) {
+        this.applyAnchorUrl(child, container);
+      }
+    });
+  }
+
+  /**
+   * Converts a reflection to anchor ref
+   * @param reflection
+   */
+  toAnchorRef(reflection: Reflection) {
+    function parseAnchorRef(ref: string) {
+      return ref.replace(/"/g, '').replace(/ /g, '-');
+    }
+    let anchorPrefix = '';
+    reflection.flags.forEach(flag => (anchorPrefix += `${flag}-`));
+    const prefixRef = parseAnchorRef(anchorPrefix);
+    const reflectionRef = parseAnchorRef(reflection.name);
+    const anchorRef = prefixRef + reflectionRef;
+    return anchorRef.toLowerCase();
+  }
+
+  /**
+   * Copy of default theme
+   * @param project
+   */
+  getEntryPoint(project: ProjectReflection): ContainerReflection {
+    const entryPoint = this.owner.entryPoint;
+    if (entryPoint) {
+      const reflection = project.getChildByName(entryPoint);
+      if (reflection) {
+        if (reflection instanceof ContainerReflection) {
+          return reflection;
+        } else {
+          this.application.logger.warn('The given entry point `%s` is not a container.', entryPoint);
+        }
+      } else {
+        this.application.logger.warn('The entry point `%s` could not be found.', entryPoint);
+      }
+    }
+    return project;
   }
 
   getNavigation(project: ProjectReflection) {
@@ -202,100 +280,6 @@ export class MarkdownTheme extends Theme {
     }
 
     return navigation;
-  }
-
-  getEntryPoint(project: ProjectReflection): ContainerReflection {
-    const entryPoint = this.owner.entryPoint;
-    if (entryPoint) {
-      const reflection = project.getChildByName(entryPoint);
-      if (reflection) {
-        if (reflection instanceof ContainerReflection) {
-          return reflection;
-        } else {
-          this.application.logger.warn('The given entry point `%s` is not a container.', entryPoint);
-        }
-      } else {
-        this.application.logger.warn('The entry point `%s` could not be found.', entryPoint);
-      }
-    }
-
-    return project;
-  }
-
-  /**
-   * This is mostly a copy of the DefaultTheme method with .html ext switched to .md
-   * Builds the url for the the given reflection and all of its children.
-   *
-   * @param reflection  The reflection the url should be created for.
-   * @param urls The array the url should be appended to.
-   * @returns The altered urls array.
-   */
-
-  buildUrls(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
-    const mapping = DefaultTheme.getMapping(reflection);
-    if (mapping) {
-      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-        const url = `${mapping.directory}/${DefaultTheme.getUrl(reflection)}.md`;
-        urls.push(new UrlMapping(url, reflection, mapping.template));
-        reflection.url = url;
-        reflection.hasOwnDocument = true;
-      }
-      for (const child of reflection.children || []) {
-        if (mapping.isLeaf) {
-          this.applyAnchorUrl(child, reflection);
-        } else {
-          this.buildUrls(child, urls);
-        }
-      }
-    } else if (reflection.parent) {
-      this.applyAnchorUrl(reflection, reflection.parent);
-    }
-    return urls;
-  }
-
-  /**
-   * Similar to DefaultTheme method with added functionality to cater for bitbucket heading and single file anchors
-   * Generate an anchor url for the given reflection and all of its children.
-   *
-   * @param reflection  The reflection an anchor url should be created for.
-   * @param container   The nearest reflection having an own document.
-   */
-
-  applyAnchorUrl(reflection: Reflection, container: Reflection) {
-    if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-      reflection.url = container.url + '#' + this.getAnchor(reflection);
-      reflection.anchor = this.getAnchor(reflection);
-      reflection.hasOwnDocument = false;
-    }
-    reflection.traverse(child => {
-      if (child instanceof DeclarationReflection) {
-        this.applyAnchorUrl(child, container);
-      }
-    });
-  }
-
-  getAnchor(reflection: Reflection) {
-    return MarkdownTheme.getAnchorRef(reflection);
-  }
-
-  static getAnchorRef(reflection: Reflection) {
-    function parseAnchorRef(ref: string) {
-      return ref.replace(/"/g, '').replace(/ /g, '-');
-    }
-    let anchorPrefix = '';
-    reflection.flags.forEach(flag => (anchorPrefix += `${flag}-`));
-    const prefixRef = parseAnchorRef(anchorPrefix);
-    const reflectionRef = parseAnchorRef(reflection.name);
-    const anchorRef = prefixRef + reflectionRef;
-    return anchorRef.toLowerCase();
-  }
-
-  get indexName() {
-    return 'README.md';
-  }
-
-  get globalsName() {
-    return 'globals.md';
   }
 
   private onPageEnd(page: PageEvent) {

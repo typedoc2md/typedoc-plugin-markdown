@@ -3,11 +3,14 @@ import * as path from 'path';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
-import { MarkdownTheme } from './markdown.theme';
+import { FrontMatterComponent } from '../../../components/front-matter.component';
+import MarkdownTheme from '../../theme';
 
-export class DocusaurusTheme extends MarkdownTheme {
-  constructor(renderer: Renderer, basePath: string, options: any) {
-    super(renderer, basePath, options);
+export default class DocusaurusTheme extends MarkdownTheme {
+  constructor(renderer: Renderer, basePath: string) {
+    super(renderer, basePath);
+    this.indexName = 'index.md';
+    renderer.addComponent('frontmatter', new FrontMatterComponent(renderer));
     this.listenTo(renderer, RendererEvent.END, this.onRendererEnd, 1024);
   }
 
@@ -53,14 +56,14 @@ export class DocusaurusTheme extends MarkdownTheme {
 
   getNavObject(renderer: RendererEvent, docsRoot: string) {
     const projectUrls = [docsRoot + this.indexName.replace('.md', '')];
-    if (renderer.project.url === this.globalsName) {
+    if (renderer.project.url === 'globals.md') {
       projectUrls.push(docsRoot + 'globals');
     }
     const navObject = {
       ['Introduction']: projectUrls,
     };
 
-    this.navigation.children.forEach(rootNavigation => {
+    this.getNavigation(renderer.project).children.forEach(rootNavigation => {
       navObject[rootNavigation.title] = rootNavigation.children.map(item => {
         return docsRoot + item.url.replace('.md', '');
       });
@@ -87,9 +90,5 @@ export class DocusaurusTheme extends MarkdownTheme {
       return itdoes ? p : testDir(parts.slice(0, -1));
     }
     return testDir(splitPath(outputDirectory));
-  }
-
-  get indexName() {
-    return 'index.md';
   }
 }
