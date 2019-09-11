@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "declaration": false,
+    "declaration": true,
     "experimentalDecorators": true,
     "lib": ["es2016", "dom"],
     "module": "commonjs",
@@ -13,5 +13,5 @@
     "strictNullChecks": false,
     "target": "es2015"
   },
-  "exclude": ["node_modules", "./test", "**/*.spec.ts"]
+  "exclude": ["./dist", "./test", "**/*.spec.ts"]
 }
