@@ -36,16 +36,6 @@ export default class GitbookTheme extends MarkdownTheme {
   }
 
   allowedDirectoryListings() {
-    return [
-      this.indexName,
-      'globals.md',
-      'classes',
-      'enums',
-      'interfaces',
-      'modules',
-      'media',
-      '.DS_Store',
-      'SUMMARY.md',
-    ];
+    return ['README.md', 'globals.md', 'classes', 'enums', 'interfaces', 'modules', 'media', '.DS_Store', 'SUMMARY.md'];
   }
 }
