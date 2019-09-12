@@ -4,11 +4,27 @@
 
 {{#each groups}}
 
+{{#if categories}}
+
+{{#each categories}}
+
+{{heading 3}} {{title}} {{../title}}
+
+{{#each children}}
+* [{{{name}}}]({{relativeURL url}})
+{{/each}}
+
+{{/each}}
+
+{{else}}
+
 {{heading 3}} {{title}}
 
 {{#each children}}
 * [{{{name}}}]({{relativeURL url}})
 {{/each}}
+
+{{/if}}
 
 {{/each}}
 
