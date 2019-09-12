@@ -24,8 +24,11 @@ import { OptionsComponent } from './components/options.component';
  */
 
 export default class MarkdownTheme extends Theme {
-  // The name of the index file
+  // The root of generated docs
   indexName = 'README';
+
+  // The file extension of the generated docs
+  fileExt = '.md';
 
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
@@ -52,7 +55,7 @@ export default class MarkdownTheme extends Theme {
 
     const listings = fs.readdirSync(outputDirectory);
 
-    if (!listings.includes(this.indexName + '.md')) {
+    if (!listings.includes(this.indexName + this.fileExt)) {
       isOutputDirectory = false;
       return;
     }
@@ -69,7 +72,16 @@ export default class MarkdownTheme extends Theme {
 
   // The allowed directory and files listing used to check the output directory
   allowedDirectoryListings() {
-    return [this.indexName + '.md', 'globals.md', 'classes', 'enums', 'interfaces', 'modules', 'media', '.DS_Store'];
+    return [
+      this.indexName + this.fileExt,
+      'globals' + this.fileExt,
+      'classes',
+      'enums',
+      'interfaces',
+      'modules',
+      'media',
+      '.DS_Store',
+    ];
   }
 
   /**
@@ -84,12 +96,12 @@ export default class MarkdownTheme extends Theme {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
     if (this.application.options.getValue('readme') === 'none') {
-      entryPoint.url = this.indexName + '.md';
-      urls.push(new UrlMapping(this.indexName + '.md', entryPoint, 'reflection.hbs'));
+      entryPoint.url = this.indexName + this.fileExt;
+      urls.push(new UrlMapping(this.indexName + this.fileExt, entryPoint, 'reflection.hbs'));
     } else {
-      entryPoint.url = 'globals.md';
-      urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(this.indexName + '.md', project, 'index.hbs'));
+      entryPoint.url = 'globals' + this.fileExt;
+      urls.push(new UrlMapping('globals' + this.fileExt, entryPoint, 'reflection.hbs'));
+      urls.push(new UrlMapping(this.indexName + this.fileExt, project, 'index.hbs'));
     }
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
@@ -114,7 +126,7 @@ export default class MarkdownTheme extends Theme {
     const mapping = DefaultTheme.getMapping(reflection);
     if (mapping) {
       if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-        const url = `${mapping.directory}/${DefaultTheme.getUrl(reflection)}.md`;
+        const url = mapping.directory + '/' + DefaultTheme.getUrl(reflection) + this.fileExt;
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
         reflection.hasOwnDocument = true;
@@ -249,7 +261,7 @@ export default class MarkdownTheme extends Theme {
     }
     const isModules = this.application.options.getValue('mode') === 1;
 
-    const navigation = createNavigationGroup(project.name, this.indexName + '.md');
+    const navigation = createNavigationGroup(project.name, this.indexName + this.fileExt);
     const externalModulesNavigation = createNavigationGroup('External Modules');
     const modulesNavigation = createNavigationGroup('Modules');
     const classesNavigation = createNavigationGroup('Classes');

@@ -28,7 +28,7 @@ export class BreadcrumbsComponent extends ContextAwareRendererComponent {
       }
     } else {
       if (!!project.readme) {
-        md.push(`[${project.name}](${Handlebars.helpers.relativeURL.call(this, theme.indexName + '.md')})`);
+        md.push(`[${project.name}](${Handlebars.helpers.relativeURL.call(this, theme.indexName + theme.fileExt)})`);
       }
       md.push(
         `[${project.readme ? 'Globals' : project.name}](${Handlebars.helpers.relativeURL.call(this, project.url)})`,
