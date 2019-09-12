@@ -16,9 +16,15 @@ import { Theme } from 'typedoc/dist/lib/output/theme';
 import { CommentsComponent } from '../components/comments.component';
 import { OptionsComponent } from '../components/options.component';
 
+/**
+ * The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/DefaultTheme.ts.
+ * - html specific components are removed from the renderer
+ * - markdown specefic components have been added
+ */
+
 export default class MarkdownTheme extends Theme {
   // The name of the index file
-  indexName = 'README.md';
+  indexName = 'README';
 
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
@@ -44,7 +50,7 @@ export default class MarkdownTheme extends Theme {
 
     const listings = fs.readdirSync(outputDirectory);
 
-    if (!listings.includes(this.indexName)) {
+    if (!listings.includes(this.indexName + '.md')) {
       isOutputDirectory = false;
       return;
     }
@@ -61,19 +67,27 @@ export default class MarkdownTheme extends Theme {
 
   // The allowed directory and files listing used to check the output directory
   allowedDirectoryListings() {
-    return [this.indexName, 'globals.md', 'classes', 'enums', 'interfaces', 'modules', 'media', '.DS_Store'];
+    return [this.indexName + '.md', 'globals.md', 'classes', 'enums', 'interfaces', 'modules', 'media', '.DS_Store'];
   }
 
+  /**
+   * This method is essentially a copy of the TypeDocs DefaultTheme.getUrls with extensions swapped out to .md
+   * Map the models of the given project to the desired output files.
+   *
+   * @param project  The project whose urls should be generated.
+   * @returns        A list of [[UrlMapping]] instances defining which models
+   *                 should be rendered to which files.
+   */
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
     if (this.application.options.getValue('readme') === 'none') {
-      entryPoint.url = this.indexName;
-      urls.push(new UrlMapping(this.indexName, entryPoint, 'reflection.hbs'));
+      entryPoint.url = this.indexName + '.md';
+      urls.push(new UrlMapping(this.indexName + '.md', entryPoint, 'reflection.hbs'));
     } else {
       entryPoint.url = 'globals.md';
       urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(this.indexName, project, 'index.hbs'));
+      urls.push(new UrlMapping(this.indexName + '.md', project, 'index.hbs'));
     }
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
@@ -86,7 +100,7 @@ export default class MarkdownTheme extends Theme {
   }
 
   /**
-   * This is mostly a copy of the DefaultTheme method with .html ext switched to .md
+   * This is mostly a copy of the TypeDoc DefaultTheme.buildUrls method with .html ext switched to .md
    * Builds the url for the the given reflection and all of its children.
    *
    * @param reflection  The reflection the url should be created for.
@@ -117,7 +131,7 @@ export default class MarkdownTheme extends Theme {
   }
 
   /**
-   * Similar to DefaultTheme method with added functionality to cater for bitbucket heading and single file anchors
+   * Similar to DefaultTheme.applyAnchorUrl method with added but the anchors are computed from the reflection structure
    * Generate an anchor url for the given reflection and all of its children.
    *
    * @param reflection  The reflection an anchor url should be created for.
@@ -154,7 +168,7 @@ export default class MarkdownTheme extends Theme {
   }
 
   /**
-   * Copy of default theme
+   * Copy of default theme DefaultTheme.getEntryPoint
    * @param project
    */
   getEntryPoint(project: ProjectReflection): ContainerReflection {
@@ -233,7 +247,7 @@ export default class MarkdownTheme extends Theme {
     }
     const isModules = this.application.options.getValue('mode') === 1;
 
-    const navigation = createNavigationGroup(project.name, this.indexName);
+    const navigation = createNavigationGroup(project.name, this.indexName + '.md');
     const externalModulesNavigation = createNavigationGroup('External Modules');
     const modulesNavigation = createNavigationGroup('Modules');
     const classesNavigation = createNavigationGroup('Classes');

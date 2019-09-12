@@ -9,7 +9,7 @@ import MarkdownTheme from '../../theme';
 export default class DocusaurusTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
-    this.indexName = 'index.md';
+    this.indexName = 'index';
     renderer.addComponent('frontmatter', new FrontMatterComponent(renderer));
     this.listenTo(renderer, RendererEvent.END, this.onRendererEnd, 1024);
   }
