@@ -11,35 +11,35 @@ export = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: (docusaurus|gitbook|bitbucket) Specifies the markdown target.',
+    help: 'Markdown Plugin: Deprecated in favour of theme.',
     name: 'platform',
     type: ParameterType.String,
   });
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: Suppress project title (Home/README link) rendering.',
+    help: 'Markdown Plugin: Deprecated.',
     name: 'hideProjectTitle',
     type: ParameterType.Boolean,
   });
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: Suppress file sources from output.',
+    help: 'Markdown Plugin: Do not print source file link rendering.',
     name: 'hideSources',
     type: ParameterType.Boolean,
   });
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: Prevent breadcrumbs from rendering in output.',
+    help: 'Markdown Plugin: Do not print breadcrumbs.',
     name: 'hideBreadcrumbs',
     type: ParameterType.Boolean,
   });
 
   app.options.addDeclaration({
     component: 'markdown',
-    help: 'Markdown Plugin: Prevent indexes from rendering in output.',
+    help: 'Markdown Plugin: Do not print indexes.',
     name: 'hideIndexes',
     type: ParameterType.Boolean,
   });
