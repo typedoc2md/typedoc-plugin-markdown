@@ -4,8 +4,8 @@ const { join } = require('path');
 
 const args = [
   './test/stubs',
-  '--plugin',
-  join(__dirname, '../dist/index.js'),
+  '--tsconfig',
+  './test/stubs/tsconfig.json',
   '--target',
   'ES5',
   '--name',
@@ -18,8 +18,10 @@ const args = [
   './test/stubs/media/',
 ];
 
-spawn('typedoc', ['./test/stubs', '-out', 'out/default'], options);
-spawn('typedoc', [...args, ...['--theme', 'markdown', '--out', 'out/markdown']], options);
-spawn('typedoc', [...args, ...['--theme', 'docusaurus', '--out', 'out/docusaurus/docs/myapi']], options);
-spawn('typedoc', [...args, ...['--theme', 'bitbucket', '-out', 'out/bitbucket/docs']], options);
-spawn('typedoc', [...args, ...['--theme', 'gitbook', '-out', 'out/gitbook/docs']], options);
+const argsWithPlugin = [...args, ...['--plugin', join(__dirname, '../dist/index.js')]];
+
+spawn('typedoc', [...args, ...['--out', 'out/default']], options);
+spawn('typedoc', [...argsWithPlugin, ...['--theme', 'markdown', '--out', 'out/markdown']], options);
+spawn('typedoc', [...argsWithPlugin, ...['--theme', 'docusaurus', '--out', 'out/docusaurus/docs/myapi']], options);
+spawn('typedoc', [...argsWithPlugin, ...['--theme', 'bitbucket', '-out', 'out/bitbucket/docs']], options);
+spawn('typedoc', [...argsWithPlugin, ...['--theme', 'gitbook', '-out', 'out/gitbook/docs']], options);
