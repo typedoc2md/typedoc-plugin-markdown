@@ -1,5 +1,7 @@
-**[{{project.name}}]({{relativeURL 'README.md'}})**
+{{#ifBreadcrumbs}}
+{{{breadcrumbs}}}
+{{/ifBreadcrumbs}}
 
-{{#with model}}{{> breadcrumb}}{{/with}}
-
+{{#ifMainTitle}}
 {{heading 1}} {{{reflectionTitle}}}
+{{/ifMainTitle}}

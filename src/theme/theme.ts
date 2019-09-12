@@ -13,6 +13,7 @@ import {
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 
+import { BreadcrumbsComponent } from '../components/breadcrumbs.component';
 import { CommentsComponent } from '../components/comments.component';
 import { OptionsComponent } from '../components/options.component';
 
@@ -37,6 +38,7 @@ export default class MarkdownTheme extends Theme {
     renderer.removeComponent('pretty-print');
 
     // add markdown related componenets
+    renderer.addComponent('breadcrumbs', new BreadcrumbsComponent(renderer));
     renderer.addComponent('comments', new CommentsComponent(renderer));
     renderer.addComponent('options', new OptionsComponent(renderer));
   }
