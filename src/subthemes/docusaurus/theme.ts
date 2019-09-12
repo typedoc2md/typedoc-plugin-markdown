@@ -3,7 +3,7 @@ import * as path from 'path';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
-import { FrontMatterComponent } from '../../../components/front-matter.component';
+import { FrontMatterComponent } from '../../components/front-matter.component';
 import MarkdownTheme from '../../theme';
 
 export default class DocusaurusTheme extends MarkdownTheme {

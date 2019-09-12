@@ -16,7 +16,7 @@ export class MarkdownPlugin extends ConverterComponent {
    * Overide the default assets for any custom themes to inherit
    */
   onBegin() {
-    Renderer.getDefaultTheme = () => path.join(__dirname, 'theme', 'resources');
+    Renderer.getDefaultTheme = () => path.join(__dirname, 'resources');
   }
 
   /**
@@ -29,13 +29,13 @@ export class MarkdownPlugin extends ConverterComponent {
 
     // if the theme is 'markdown' load the base markdown theme
     if (!theme || theme === 'markdown') {
-      options.setValue('theme', path.join(__dirname, 'theme'));
+      options.setValue('theme', path.join(__dirname));
     }
 
     // load any built in sub themes
     const subThemes = ['docusaurus', 'vuepress', 'gitbook', 'bitbucket'];
     if (subThemes.includes(theme)) {
-      options.setValue('theme', path.join(__dirname, 'theme', 'subthemes', theme));
+      options.setValue('theme', path.join(__dirname, 'subthemes', theme));
     }
   }
 }

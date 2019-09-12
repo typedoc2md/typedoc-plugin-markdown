@@ -3,7 +3,7 @@ import { ProjectReflection, Reflection } from 'typedoc';
 import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
-import MarkdownTheme from '../theme/theme';
+import MarkdownTheme from '../theme';
 
 @Component({ name: 'breadcrumbs' })
 export class BreadcrumbsComponent extends ContextAwareRendererComponent {

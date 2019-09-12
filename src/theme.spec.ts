@@ -25,7 +25,7 @@ describe(`MarkdownTheme`, () => {
       readme: 'none',
       theme: 'markdown',
       logger: 'none',
-      plugin: path.join(__dirname, '../../dist/index'),
+      plugin: path.join(__dirname, '../dist/index'),
     });
     project = app.convert(app.expandInputFiles(['./test/stubs/']));
     app.generateDocs(project, out);

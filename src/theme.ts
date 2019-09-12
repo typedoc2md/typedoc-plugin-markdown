@@ -13,9 +13,9 @@ import {
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 
-import { BreadcrumbsComponent } from '../components/breadcrumbs.component';
-import { CommentsComponent } from '../components/comments.component';
-import { OptionsComponent } from '../components/options.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs.component';
+import { CommentsComponent } from './components/comments.component';
+import { OptionsComponent } from './components/options.component';
 
 /**
  * The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/DefaultTheme.ts.
