@@ -57,5 +57,7 @@
     "typedoc": "0.15.0",
     "typescript": "3.5.x"
   },
-  "dependencies": {}
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  }
 }
