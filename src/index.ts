@@ -52,5 +52,13 @@ export = (PluginHost: Application) => {
     type: ParameterType.Boolean,
   });
 
+  app.options.addDeclaration({
+    component: 'markdown',
+    help:
+      'Markdown Plugin: Use short title instead of default long one.',
+    name: 'shortTitle',
+    type: ParameterType.Boolean,
+  });
+
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };
