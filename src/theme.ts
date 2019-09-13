@@ -230,7 +230,7 @@ export default class MarkdownTheme extends Theme {
       return null;
     }
 
-    function addNavigationItem(isShortTitle: boolean, reflection: DeclarationReflection, parentNavigationItem?: NavigationItem, group?) {
+    function addNavigationItem(shortTitle: boolean, reflection: DeclarationReflection, parentNavigationItem?: NavigationItem, group?) {
       let navigationGroup: NavigationItem;
       if (group) {
         navigationGroup = group;
@@ -238,7 +238,7 @@ export default class MarkdownTheme extends Theme {
         navigationGroup = getNavigationGroup(reflection);
       }
       let titlePrefix = '';
-      if (!isShortTitle && parentNavigationItem && parentNavigationItem.title) {
+      if (!shortTitle && parentNavigationItem && parentNavigationItem.title) {
         titlePrefix = parentNavigationItem.title.replace(/\"/g, '') + '.';
       }
 
@@ -251,7 +251,7 @@ export default class MarkdownTheme extends Theme {
       if (reflection.children) {
         reflection.children.forEach(reflectionChild => {
           if (reflectionChild.hasOwnDocument) {
-            addNavigationItem(isShortTitle, reflectionChild as DeclarationReflection, nav, navigationGroup);
+            addNavigationItem(shortTitle, reflectionChild as DeclarationReflection, nav, navigationGroup);
           }
         });
       }
