@@ -230,7 +230,7 @@ export default class MarkdownTheme extends Theme {
       return null;
     }
 
-    function addNavigationItem(shortTitle: boolean, reflection: DeclarationReflection, parentNavigationItem?: NavigationItem, group?) {
+    function addNavigationItem(longTitle: boolean, reflection: DeclarationReflection, parentNavigationItem?: NavigationItem, group?) {
       let navigationGroup: NavigationItem;
       if (group) {
         navigationGroup = group;
@@ -238,7 +238,7 @@ export default class MarkdownTheme extends Theme {
         navigationGroup = getNavigationGroup(reflection);
       }
       let titlePrefix = '';
-      if (!shortTitle && parentNavigationItem && parentNavigationItem.title) {
+      if (longTitle && parentNavigationItem && parentNavigationItem.title) {
         titlePrefix = parentNavigationItem.title.replace(/\"/g, '') + '.';
       }
 
@@ -251,7 +251,7 @@ export default class MarkdownTheme extends Theme {
       if (reflection.children) {
         reflection.children.forEach(reflectionChild => {
           if (reflectionChild.hasOwnDocument) {
-            addNavigationItem(shortTitle, reflectionChild as DeclarationReflection, nav, navigationGroup);
+            addNavigationItem(longTitle, reflectionChild as DeclarationReflection, nav, navigationGroup);
           }
         });
       }
@@ -260,7 +260,7 @@ export default class MarkdownTheme extends Theme {
       return nav;
     }
     const isModules = this.application.options.getValue('mode') === 1;
-    const isShortTitle = this.application.options.getValue('shortTitle');
+    const isLongTitle = this.application.options.getValue('longTitle');
 
     const navigation = createNavigationGroup(project.name, this.indexName + this.fileExt);
     const externalModulesNavigation = createNavigationGroup('External Modules');
@@ -273,7 +273,7 @@ export default class MarkdownTheme extends Theme {
       project.groups.forEach(group => {
         group.children.forEach(reflection => {
           if (reflection.hasOwnDocument) {
-            addNavigationItem(isShortTitle, reflection as DeclarationReflection);
+            addNavigationItem(isLongTitle, reflection as DeclarationReflection);
           }
         });
       });
@@ -281,11 +281,11 @@ export default class MarkdownTheme extends Theme {
 
     if (isModules) {
       project.groups[0].children.forEach(module => {
-        const moduleNavigation = addNavigationItem(isShortTitle, module as DeclarationReflection);
+        const moduleNavigation = addNavigationItem(isLongTitle, module as DeclarationReflection);
         if ((module as DeclarationReflection).children) {
           (module as DeclarationReflection).children.forEach(reflection => {
             if (reflection.hasOwnDocument) {
-              addNavigationItem(isShortTitle, reflection, moduleNavigation);
+              addNavigationItem(isLongTitle, reflection, moduleNavigation);
             }
           });
         }

@@ -51,8 +51,8 @@ The theme can also be extended with a custom Markdown theme using the standard T
   Do not print source file link rendering.
 - `--hideBreadcrumbs`<br>
   Do not print breadcrumbs.
-- `--shortTitle`<br>
-  Use short title instead of default long one.
+- `--longTitle`<br>
+  Use long title instead of default short one.
 
 ## License
 
