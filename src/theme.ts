@@ -2,7 +2,6 @@ import * as fs from 'fs-extra';
 import {
   ContainerReflection,
   DeclarationReflection,
-  DefaultTheme,
   NavigationItem,
   ProjectReflection,
   Reflection,
@@ -12,6 +11,7 @@ import {
 } from 'typedoc';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
+import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
 import { BreadcrumbsComponent } from './components/breadcrumbs.component';
 import { CommentsComponent } from './components/comments.component';
@@ -24,6 +24,41 @@ import { OptionsComponent } from './components/options.component';
  */
 
 export default class MarkdownTheme extends Theme {
+  /**
+   * @See DefaultTheme.MAPPINGS
+   */
+  static MAPPINGS: TemplateMapping[] = [
+    {
+      kind: [ReflectionKind.Class],
+      isLeaf: false,
+      directory: 'classes',
+      template: 'reflection.hbs',
+    },
+    {
+      kind: [ReflectionKind.Interface],
+      isLeaf: false,
+      directory: 'interfaces',
+      template: 'reflection.hbs',
+    },
+    {
+      kind: [ReflectionKind.Enum],
+      isLeaf: false,
+      directory: 'enums',
+      template: 'reflection.hbs',
+    },
+    {
+      kind: [ReflectionKind.Module, ReflectionKind.ExternalModule],
+      isLeaf: false,
+      directory: 'modules',
+      template: 'reflection.hbs',
+    },
+  ];
+
+  /**
+   * @See DefaultTheme.URL_PREFIX
+   */
+  static URL_PREFIX: RegExp = /^(http|ftp)s?:\/\//;
+
   // The root of generated docs
   indexName = 'README';
 
@@ -123,10 +158,10 @@ export default class MarkdownTheme extends Theme {
    */
 
   buildUrls(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
-    const mapping = DefaultTheme.getMapping(reflection);
+    const mapping = MarkdownTheme.getMapping(reflection);
     if (mapping) {
-      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-        const url = mapping.directory + '/' + DefaultTheme.getUrl(reflection) + this.fileExt;
+      if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
+        const url = this.toUrl(mapping, reflection);
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
         reflection.hasOwnDocument = true;
@@ -145,6 +180,34 @@ export default class MarkdownTheme extends Theme {
   }
 
   /**
+   * Returns the full url of a given mapping and reflection
+   * @param mapping
+   * @param reflection
+   */
+  toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
+    return mapping.directory + '/' + this.getUrl(reflection) + this.fileExt;
+  }
+
+  /**
+   * @see DefaultTheme.getUrl
+   * Return a url for the given reflection.
+   *
+   * @param reflection  The reflection the url should be generated for.
+   * @param relative    The parent reflection the url generation should stop on.
+   * @param separator   The separator used to generate the url.
+   * @returns           The generated url.
+   */
+  getUrl(reflection: Reflection, relative?: Reflection, separator: string = '.'): string {
+    let url = reflection.getAlias();
+
+    if (reflection.parent && reflection.parent !== relative && !(reflection.parent instanceof ProjectReflection)) {
+      url = this.getUrl(reflection.parent, relative, separator) + separator + url;
+    }
+
+    return url;
+  }
+
+  /**
    * Similar to DefaultTheme.applyAnchorUrl method with added but the anchors are computed from the reflection structure
    * Generate an anchor url for the given reflection and all of its children.
    *
@@ -152,7 +215,7 @@ export default class MarkdownTheme extends Theme {
    * @param container   The nearest reflection having an own document.
    */
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
-    if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
+    if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
       const anchor = this.toAnchorRef(reflection);
       reflection.url = container.url + '#' + anchor;
       reflection.anchor = anchor;
@@ -230,7 +293,12 @@ export default class MarkdownTheme extends Theme {
       return null;
     }
 
-    function addNavigationItem(longTitle: boolean, reflection: DeclarationReflection, parentNavigationItem?: NavigationItem, group?) {
+    function addNavigationItem(
+      longTitle: boolean,
+      reflection: DeclarationReflection,
+      parentNavigationItem?: NavigationItem,
+      group?,
+    ) {
       let navigationGroup: NavigationItem;
       if (group) {
         navigationGroup = group;
@@ -313,6 +381,17 @@ export default class MarkdownTheme extends Theme {
 
   private onPageEnd(page: PageEvent) {
     page.contents = page.contents ? MarkdownTheme.formatContents(page.contents) : '';
+  }
+
+  /**
+   * @see DefaultTheme.getMapping
+   * Return the template mapping fore the given reflection.
+   *
+   * @param reflection  The reflection whose mapping should be resolved.
+   * @returns           The found mapping or undefined if no mapping could be found.
+   */
+  static getMapping(reflection: DeclarationReflection): TemplateMapping | undefined {
+    return MarkdownTheme.MAPPINGS.find(mapping => reflection.kindOf(mapping.kind));
   }
 
   static formatContents(contents: string) {
