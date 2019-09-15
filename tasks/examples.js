@@ -22,6 +22,6 @@ const argsWithPlugin = [...args, ...['--plugin', join(__dirname, '../dist/index.
 
 spawn('typedoc', [...args, ...['--out', 'out/default']], options);
 spawn('typedoc', [...argsWithPlugin, ...['--out', 'out/markdown']], options);
-spawn('typedoc', [...argsWithPlugin, ...['--theme', 'custom', '--out', 'out/docusaurus/docs/myapi']], options);
+spawn('typedoc', [...argsWithPlugin, ...['--theme', 'docusaurus', '--out', 'out/docusaurus/docs/myapi']], options);
 spawn('typedoc', [...argsWithPlugin, ...['--theme', 'bitbucket', '-out', 'out/bitbucket/docs']], options);
 spawn('typedoc', [...argsWithPlugin, ...['--theme', 'gitbook', '-out', 'out/gitbook/docs']], options);
