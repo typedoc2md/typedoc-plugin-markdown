@@ -5,5 +5,6 @@ module.exports = {
   },
   verbose: true,
   collectCoverage: true,
+  coverageReporters: ['text-summary'],
   collectCoverageFrom: ['<rootDir>/dist/**/*js'],
 };
