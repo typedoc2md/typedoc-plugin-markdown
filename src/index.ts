@@ -55,7 +55,7 @@ export = (PluginHost: Application) => {
   app.options.addDeclaration({
     component: 'markdown',
     help:
-      'Markdown Plugin: Use long title instead of default short one.',
+      'Markdown Plugin: Use long navigation title instead of default short one (applicable to navigation / front-matter only).',
     name: 'longTitle',
     type: ParameterType.Boolean,
   });
