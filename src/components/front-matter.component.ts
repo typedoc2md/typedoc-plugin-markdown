@@ -14,7 +14,7 @@ export class FrontMatterComponent extends ContextAwareRendererComponent {
   }
 
   onPageEnd(page: PageEvent) {
-    page.contents = page.contents.replace(/^/, this.getYamlString(page) + '\n\n');
+    page.contents = page.contents.replace(/^/, this.getYamlString(page) + '\n\n').replace(/[\r\n]{3,}/g, '\n\n');
   }
 
   getYamlString(page: PageEvent) {
