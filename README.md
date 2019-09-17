@@ -33,14 +33,14 @@ $ node_modules/.bin/typedoc --plugin typedoc-plugin-markdown [args]
 **Configuring a theme**
 
 By default, the Markdown theme will attempt to render standard CommonMark, suitable for the majority of Markdown engines.
-It follows the same structure and file patterns as the default HTML theme. The plugin also comes packaged with some additional built-in extended themes.
+It follows the same structure and file patterns as the default HTML theme. The plugin also comes packaged with some additional built-in themes and can be extended with a custom theme. Please visit the [Wiki](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki) for further details.
 
 - `--theme`<br>
   - `markdown` Standard Markdown theme (default).
   - `docusaurus` Adds Front Matter header tp pages, and attempts to update sidebars.json.
   - `vuepress` Adds Front Matter header to pages, and configures vuepress configs.
-  - `gitbook` Generates additional SUMMARY.md file to enable Book's table of contents.
   - `bitbucket` Parses internal anchor links to support Bitbucket's internal anchor linking.
+  - `path/to/theme` Path to a custom theme.
 
 **Configuring output**
 
