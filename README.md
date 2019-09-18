@@ -27,7 +27,6 @@ $ node_modules/.bin/typedoc --plugin typedoc-plugin-markdown [args]
 
 - The `--plugin` arg is optional - if omitted all installed plugins will run.
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- If running directly from the shell, ensure locally installed typedoc is run `node_modules/.bin/typedoc`
 
 ## Arguments
 
