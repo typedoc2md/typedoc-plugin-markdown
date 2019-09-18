@@ -39,6 +39,7 @@ Please visit the [Wiki](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki)
 - `--theme`<br>
   - `markdown` Standard Markdown theme (default).
   - `docusaurus` Adds Front Matter header to pages, and attempts to update sidebars.json.
+  - `docusaurus2` Adds Front Matter header to pages, and attempts to update sidebars.js.
   - `vuepress` Adds Front Matter header to pages, and configures vuepress configs.
   - `bitbucket` Parses internal anchor links to support Bitbucket's internal anchor linking.
   - `path/to/theme` Path to a custom theme.
