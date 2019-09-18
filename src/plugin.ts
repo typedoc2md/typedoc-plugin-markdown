@@ -33,7 +33,7 @@ export class MarkdownPlugin extends ConverterComponent {
     }
 
     // load any built in sub themes
-    const subThemes = ['docusaurus', 'vuepress', 'gitbook', 'bitbucket'];
+    const subThemes = ['docusaurus', 'docusaurus2', 'vuepress', 'gitbook', 'bitbucket'];
     if (subThemes.includes(theme)) {
       options.setValue('theme', path.join(__dirname, 'subthemes', theme));
     }

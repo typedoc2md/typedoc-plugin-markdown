@@ -20,7 +20,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
     });
 
     Handlebars.registerHelper('ifMainTitle', function(options) {
-      if (platform === 'docusaurus') {
+      if (platform === 'docusaurus' || platform === 'docusaurus2') {
         return options.inverse(this);
       }
       return options.fn(this);
