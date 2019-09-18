@@ -1,18 +1,20 @@
 import * as fs from 'fs-extra';
 import * as Handlebars from 'handlebars';
 import * as path from 'path';
-import { MarkedLinksPlugin, Reflection } from 'typedoc';
+import { MarkedLinksPlugin, ProjectReflection, Reflection } from 'typedoc';
 import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
-import { RendererEvent } from 'typedoc/dist/lib/output/events';
+import { PageEvent, RendererEvent } from 'typedoc/dist/lib/output/events';
 import * as Util from 'util';
+
+import MarkdownTheme from '../theme';
 
 /**
  * This component is essentially a combination of TypeDoc's 'MarkedPlugin' and 'MarkedLinksPlugin'.
  * The options are unchanged , but strips out all of the html configs.
  */
 
-@Component({ name: 'comments' })
-export class CommentsComponent extends ContextAwareRendererComponent {
+@Component({ name: 'helpers' })
+export class ContextAwareHelpersComponent extends ContextAwareRendererComponent {
   /**
    * The path referenced files are located in.
    */
@@ -68,6 +70,32 @@ export class CommentsComponent extends ContextAwareRendererComponent {
     Handlebars.registerHelper('comment', function(this: string) {
       return component.parseComments(this);
     });
+
+    Handlebars.registerHelper('breadcrumbs', function(this: PageEvent) {
+      return component.breadcrumb(this.model, this.project, []);
+    });
+
+    Handlebars.registerHelper('relativeURL', (url: string) => (url ? this.getRelativeUrl(url) : url));
+  }
+
+  public breadcrumb(model: Reflection, project: ProjectReflection, md: string[]) {
+    const theme = this.application.renderer.theme as MarkdownTheme;
+    if (model && model.parent) {
+      this.breadcrumb(model.parent, project, md);
+      if (model.url) {
+        md.push(`[${model.name}](${Handlebars.helpers.relativeURL.call(this, model.url)})`);
+      } else {
+        md.push(model.url);
+      }
+    } else {
+      if (!!project.readme) {
+        md.push(`[${project.name}](${Handlebars.helpers.relativeURL.call(this, theme.indexName + theme.fileExt)})`);
+      }
+      md.push(
+        `[${project.readme ? 'Globals' : project.name}](${Handlebars.helpers.relativeURL.call(this, project.url)})`,
+      );
+    }
+    return md.join(' › ');
   }
 
   /**

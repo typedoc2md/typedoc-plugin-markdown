@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CommentsComponent should build @link references' 1`] = `
+exports[`HelpersComponent should build @link references' 1`] = `
 "Taken from http://usejsdoc.org/tags-inline-link.html.
 "
 `;
 
-exports[`CommentsComponent should convert comments with includes' 1`] = `
+exports[`HelpersComponent should convert comments with includes' 1`] = `
 "This is a simple example on how to use include.
 
 ![My image alt text](../media/logo.png)
@@ -19,7 +19,7 @@ This is a simple example on a handlebars file.
 "
 `;
 
-exports[`CommentsComponent should convert symbols brackets to symbol links' 1`] = `
+exports[`HelpersComponent should convert symbols brackets to symbol links' 1`] = `
 "- Link to an external reflection: [BaseClass](../classes/_classes_.baseclass.md)
 - Link to an internal reflection: [commentsInReturn](_comments_.md#commentsinreturn)
 - Link to an undefined reflection: [[VOID]]

@@ -3,7 +3,7 @@ import * as Handlebars from 'handlebars';
 import * as path from 'path';
 import { Application } from 'typedoc';
 
-describe(`CommentsComponent`, () => {
+describe(`HelpersComponent`, () => {
   let app;
   let project;
   let pluginInstance;
@@ -22,7 +22,7 @@ describe(`CommentsComponent`, () => {
     });
     project = app.convert(app.expandInputFiles(['./test/stubs/']));
     app.generateDocs(project, out);
-    pluginInstance = app.renderer.getComponent('comments');
+    pluginInstance = app.renderer.getComponent('helpers');
   });
 
   afterAll(() => {
