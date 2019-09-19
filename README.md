@@ -11,6 +11,9 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeS
 
 The plugin will replace the default HTML theme with a built-in Markdown theme, and expose some additional arguments.
 
+By default, the Markdown theme will attempt to render standard CommonMark, suitable for the majority of Markdown engines.
+It follows the same structure and file patterns as the default HTML theme.
+
 ## Installation
 
 ```bash
@@ -20,7 +23,7 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 ## Usage
 
 ```bash
-$ node_modules/.bin/typedoc --plugin typedoc-plugin-markdown [args]
+$ typedoc --plugin typedoc-plugin-markdown [args]
 ```
 
 ### Note:
@@ -30,22 +33,10 @@ $ node_modules/.bin/typedoc --plugin typedoc-plugin-markdown [args]
 
 ## Arguments
 
-**Configuring a theme**
+The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
-By default, the Markdown theme will attempt to render standard CommonMark, suitable for the majority of Markdown engines.
-It follows the same structure and file patterns as the default HTML theme. The plugin also comes packaged with some additional built-in themes and can be extended with a custom theme.
-Please visit the [Wiki](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki) for further details.
-
-- `--theme`<br>
-  - `markdown` Standard Markdown theme (default).
-  - `docusaurus` Adds Front Matter header to pages, and attempts to update sidebars.json.
-  - `docusaurus2` Adds Front Matter header to pages, and attempts to update sidebars.js.
-  - `vuepress` Adds Front Matter header to pages, and configures vuepress configs.
-  - `bitbucket` Parses internal anchor links to support Bitbucket's internal anchor linking.
-  - `path/to/theme` Path to a custom theme.
-
-**Configuring output**
-
+- `--theme <markdown|docusaurus|docusaurus2|vuepress|bitbucket|path/to/theme>`<br>
+  Specify the theme that should be used. Defaults to `markdown`. Please read the [theming guide](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/THEMES.md) for further details.
 - `--namedAnchors`<br>
   Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
 - `--hideSources`<br>
@@ -55,4 +46,4 @@ Please visit the [Wiki](https://github.com/tgreyuk/typedoc-plugin-markdown/wiki)
 
 ## License
 
-MIT
+[MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/LICENSE)
