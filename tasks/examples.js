@@ -26,3 +26,4 @@ spawn('typedoc', [...argsWithPlugin, ...['--theme', 'docusaurus', '--out', 'out/
 spawn('typedoc', [...argsWithPlugin, ...['--theme', 'docusaurus2', '--out', 'out/docusaurus2/docs/myapi']], options);
 spawn('typedoc', [...argsWithPlugin, ...['--theme', 'bitbucket', '-out', 'out/bitbucket/docs']], options);
 spawn('typedoc', [...argsWithPlugin, ...['--theme', 'gitbook', '-out', 'out/gitbook/docs']], options);
+spawn('typedoc', [...argsWithPlugin, ...['--theme', 'vuepress', '-out', 'out/vuepress/docs']], options);
