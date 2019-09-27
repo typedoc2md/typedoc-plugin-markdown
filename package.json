@@ -13,7 +13,9 @@
     "pretest": "npm run lint && npm run build",
     "test": "jest",
     "fixtures": "rm -rf ./test/fixtures && node ./tasks/fixtures.js",
-    "examples": "npm run build && node tasks/examples.js"
+    "examples": "npm run build && rm -rf out && node ./tasks/link-plugin.js && npm run examples:html && npm run examples:md",
+    "examples:html": "typedoc --tsconfig ./test/stubs/tsconfig.json --options ./test/options.json --plugin none --out ./out/html",
+    "examples:md": "typedoc --tsconfig ./test/stubs/tsconfig.json --options ./test/options.json --out ./out/md"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -40,17 +42,17 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
-    "@types/jest": "^24.0.17",
-    "@types/node": "^12.7.4",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.8",
     "copyfiles": "^2.1.1",
-    "cross-spawn": "^7.0.0",
     "jest": "^24.9.0",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.19.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
     "typedoc": "0.15.0",
-    "typescript": "3.5.x"
+    "typescript": "3.6.x"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "handlebars": "^4.1.2"
   }
 }
