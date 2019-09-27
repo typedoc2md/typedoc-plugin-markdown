@@ -74,8 +74,6 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
     Handlebars.registerHelper('breadcrumbs', function(this: PageEvent) {
       return component.breadcrumb(this.model, this.project, []);
     });
-
-    Handlebars.registerHelper('relativeURL', (url: string) => (url ? this.getRelativeUrl(url) : url));
   }
 
   public breadcrumb(model: Reflection, project: ProjectReflection, md: string[]) {

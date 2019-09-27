@@ -1,4 +1,5 @@
 import * as fs from 'fs-extra';
+import * as Handlebars from 'handlebars';
 import {
   ContainerReflection,
   DeclarationReflection,
@@ -67,6 +68,15 @@ export default class MarkdownTheme extends Theme {
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     this.listenTo(renderer, PageEvent.END, this.onPageEnd, 1024);
+
+    // check if plugin is using same Handlebars instance as typedoc
+    if (!('relativeURL' in Handlebars.helpers)) {
+      this.application.logger.error(
+        '"typedoc-plugin-markdown" needs to be executed from the same location as "typedoc".\n' +
+          'Please make sure to run "npx typedoc" or alternatively install the plugin globally.',
+      );
+      return process.exit();
+    }
 
     // cleanup html specific components
     renderer.removeComponent('assets');
@@ -376,6 +386,8 @@ export default class MarkdownTheme extends Theme {
 
     return navigation;
   }
+
+  // private onRendererBegin(renderer: RendererEvent) {}
 
   private onPageEnd(page: PageEvent) {
     page.contents = page.contents ? MarkdownTheme.formatContents(page.contents) : '';
