@@ -1,7 +1,5 @@
 # typedoc-plugin-markdown
 
-<img align="right" width="160" src="https://github.com/tgreyuk/typedoc-plugin-markdown/raw/master/logos.png">
-
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeScript API documentation to be generated in Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
@@ -23,20 +21,21 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 ## Usage
 
 ```bash
-$ typedoc --plugin typedoc-plugin-markdown [args]
+$ npx typedoc --plugin typedoc-plugin-markdown [args]
 ```
 
 ### Note:
 
 - The `--plugin` arg is optional - if omitted all installed plugins will run.
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
+- The plugin needs to be executed from the same location as `typedoc`. Either a) run as an npm script; b) make sure to run `npx typedoc` c) install the plugin globally.
 
 ## Arguments
 
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
 - `--theme <markdown|docusaurus|docusaurus2|vuepress|bitbucket|path/to/theme>`<br>
-  Specify the theme that should be used. Defaults to `markdown`. Please read the [theming guide](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/THEMES.md) for further details.
+  Specify the theme that should be used. Defaults to `markdown`. Please read [Markdown Themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/THEMES.md) for further details.
 - `--namedAnchors`<br>
   Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
 - `--hideSources`<br>
