@@ -28,7 +28,7 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 - The `--plugin` arg is optional - if omitted all installed plugins will run.
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- The plugin needs to be executed from the same location as `typedoc`. Either a) run as an npm script; b) make sure to run `npx typedoc` c) install the plugin globally.
+- The plugin needs to be executed from the same location as `typedoc`. Either run as an npm script or make sure to run `npx typedoc`.
 
 ## Arguments
 

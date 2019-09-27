@@ -73,7 +73,7 @@ export default class MarkdownTheme extends Theme {
     if (!('relativeURL' in Handlebars.helpers)) {
       this.application.logger.error(
         '"typedoc-plugin-markdown" needs to be executed from the same location as "typedoc".\n' +
-          'Please make sure to run "npx typedoc" or alternatively install the plugin globally.',
+          'Either run as an npm script or make sure to run `npx typedoc`.',
       );
       return process.exit();
     }
