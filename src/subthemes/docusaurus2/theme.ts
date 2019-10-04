@@ -56,20 +56,22 @@ export default class Docusaurus2Theme extends MarkdownTheme {
   }
 
   getNavObject(renderer: RendererEvent, docsRoot: string) {
-    const projectUrls = [docsRoot + this.indexName.replace('.md', '')];
-    if (renderer.project.url === 'globals.md') {
-      projectUrls.push(docsRoot + 'globals');
-    }
-    const navObject = {
-      ['Introduction']: projectUrls,
-    };
-
+    const navObject = {};
+    let url = "";
+    let navKey = "";
     this.getNavigation(renderer.project).children.forEach(rootNavigation => {
-      navObject[rootNavigation.title] = rootNavigation.children.map(item => {
-        return docsRoot + item.url.replace('.md', '');
+      rootNavigation.children.map(item => {
+        url = item.url.replace('.md', '');
+        navKey = url.substr(0, url.indexOf('/'));
+        if (navKey !== undefined && navKey.length) {
+          navKey = navKey[0].toUpperCase() + navKey.slice(1);
+        }
+        if (navObject[navKey] === undefined) {
+          navObject[navKey] = [];
+        }
+        navObject[navKey].push(docsRoot + url);
       });
     });
-
     return navObject;
   }
 
