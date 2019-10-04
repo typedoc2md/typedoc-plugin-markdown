@@ -57,8 +57,8 @@ export default class Docusaurus2Theme extends MarkdownTheme {
 
   getNavObject(renderer: RendererEvent, docsRoot: string) {
     const navObject = {};
-    let url = "";
-    let navKey = "";
+    let url = '';
+    let navKey = '';
     this.getNavigation(renderer.project).children.forEach(rootNavigation => {
       rootNavigation.children.map(item => {
         url = item.url.replace('.md', '');
