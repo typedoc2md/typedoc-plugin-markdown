@@ -3,7 +3,7 @@
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeScript API documentation to be generated in Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
-[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
+[![Build Status](https://travis-ci.org/thomas-grey/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/thomas-grey/typedoc-plugin-markdown)
 
 ## What it does?
 
@@ -35,7 +35,7 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
 - `--theme <markdown|docusaurus|docusaurus2|vuepress|bitbucket|path/to/theme>`<br>
-  Specify the theme that should be used. Defaults to `markdown`. Please read [Markdown Themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/THEMES.md) for further details.
+  Specify the theme that should be used. Defaults to `markdown`. Please read [Markdown Themes](https://github.com/thomas-grey/typedoc-plugin-markdown/blob/master/THEMES.md) for further details.
 - `--namedAnchors`<br>
   Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
 - `--hideSources`<br>
@@ -45,4 +45,4 @@ The following arguments can be used in addition to the default [TypeDoc argument
 
 ## License
 
-[MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/LICENSE)
+[MIT](https://github.com/thomas-grey/typedoc-plugin-markdown/blob/master/LICENSE)
