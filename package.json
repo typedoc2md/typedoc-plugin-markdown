@@ -23,11 +23,11 @@
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+    "url": "https://github.com/tom-grey/typedoc-plugin-markdown/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git"
+    "url": "git+https://github.com/tom-grey/typedoc-plugin-markdown.git"
   },
   "keywords": [
     "markdown",
@@ -52,7 +52,6 @@
     "typescript": "3.6.x"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0",
-    "handlebars": "^4.1.2"
+    "fs-extra": "^8.1.0"
   }
 }
