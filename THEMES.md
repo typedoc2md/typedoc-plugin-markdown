@@ -32,7 +32,7 @@ exports.default = CustomMarkdownTheme;
 
 ### Theme resources
 
-By default the theme will inherit the resources of the Markdown theme (https://github.com/thomas-grey/typedoc-plugin-markdown/tree/master/src/resources).
+By default the theme will inherit the resources of the Markdown theme (https://github.com/tom-grey/typedoc-plugin-markdown/tree/master/src/resources).
 
 These can be replaced and updated as required.
 
