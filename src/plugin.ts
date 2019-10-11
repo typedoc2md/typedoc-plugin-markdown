@@ -1,7 +1,9 @@
 import * as path from 'path';
 import { Renderer } from 'typedoc';
+import { Context } from 'typedoc/dist/lib/context';
 import { Converter } from 'typedoc/dist/lib/converter';
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components';
+import { Reflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/abstract';
 
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
@@ -9,6 +11,7 @@ export class MarkdownPlugin extends ConverterComponent {
     this.listenTo(this.owner, {
       [Converter.EVENT_BEGIN]: this.onBegin,
       [Converter.EVENT_RESOLVE_BEGIN]: this.onResolveBegin,
+      [Converter.EVENT_CREATE_DECLARATION]: this.onDeclaration,
     });
   }
 
@@ -36,6 +39,17 @@ export class MarkdownPlugin extends ConverterComponent {
     const subThemes = ['docusaurus', 'docusaurus2', 'vuepress', 'gitbook', 'bitbucket'];
     if (subThemes.includes(theme)) {
       options.setValue('theme', path.join(__dirname, 'subthemes', theme));
+    }
+  }
+
+  /**
+   * Trim quotation marks from module names.
+   */
+  private onDeclaration(context: Context, reflection: Reflection) {
+    if (reflection.kindOf(ReflectionKind.Module)) {
+        let name = reflection.name;
+        name = name.replace(/"/g, '');
+        reflection.name = name;
     }
   }
 }
