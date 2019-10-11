@@ -1,7 +1,6 @@
 import * as path from 'path';
 import { Renderer } from 'typedoc';
-import { Context } from 'typedoc/dist/lib/context';
-import { Converter } from 'typedoc/dist/lib/converter';
+import { Context, Converter } from 'typedoc/dist/lib/converter';
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components';
 import { Reflection, ReflectionKind } from 'typedoc/dist/lib/models/reflections/abstract';
 
