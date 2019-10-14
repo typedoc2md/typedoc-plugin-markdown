@@ -1,3 +1,11 @@
+{{#if_eq kindString 'Module'}}
 {{> index}}
 
 {{> members}}
+{{else}}
+{{#ifIndexes}}
+{{> index}}
+
+{{/ifIndexes}}
+{{> members}}
+{{/if_eq}}

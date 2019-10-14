@@ -8,6 +8,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
 
     const namedAnchors = this.application.options.getValue('namedAnchors');
     const hideBreadcrumbs = this.application.options.getValue('hideBreadcrumbs');
+    const hideIndexes = this.application.options.getValue('hideIndexes');
     const hideSourceFiles = this.application.options.getValue('hideSources');
 
     Handlebars.registerHelper('ifNamedAnchors', function(options) {
@@ -16,6 +17,10 @@ export class OptionsComponent extends ContextAwareRendererComponent {
 
     Handlebars.registerHelper('ifBreadcrumbs', function(options) {
       return hideBreadcrumbs ? options.inverse(this) : options.fn(this);
+    });
+
+    Handlebars.registerHelper('ifIndexes', function (options) {
+      return hideIndexes ? options.inverse(this) : options.fn(this);
     });
 
     Handlebars.registerHelper('ifSources', function(options) {
