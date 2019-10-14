@@ -19,7 +19,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
       return hideBreadcrumbs ? options.inverse(this) : options.fn(this);
     });
 
-    Handlebars.registerHelper('ifIndexes', function (options) {
+    Handlebars.registerHelper('ifIndexes', function(options) {
       return hideIndexes ? options.inverse(this) : options.fn(this);
     });
 
