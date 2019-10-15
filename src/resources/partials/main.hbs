@@ -1,4 +1,4 @@
-{{#if_eq kindString 'Module'}}
+{{#ifCond kindString '==' 'Module'}}
 {{> index}}
 
 {{> members}}
@@ -8,4 +8,4 @@
 
 {{/ifIndexes}}
 {{> members}}
-{{/if_eq}}
+{{/ifCond}}
