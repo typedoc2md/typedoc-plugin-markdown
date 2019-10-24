@@ -60,5 +60,12 @@ export = (PluginHost: Application) => {
     type: ParameterType.Boolean,
   });
 
+  app.options.addDeclaration({
+    component: 'markdown',
+    help: 'Skips updating of the sidebar.json file when used with docusaurus theme',
+    name: 'skipSidebar',
+    type: ParameterType.Boolean,
+  });
+
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };
