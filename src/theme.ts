@@ -72,15 +72,6 @@ export default class MarkdownTheme extends Theme {
     super(renderer, basePath);
     this.listenTo(renderer, PageEvent.END, this.onPageEnd, 1024);
 
-    // check if plugin is using same Handlebars instance as typedoc
-    if (!('relativeURL' in Handlebars.helpers)) {
-      this.application.logger.error(
-        '"typedoc-plugin-markdown" needs to be executed from the same location as "typedoc".\n' +
-          'Either run as an npm script or make sure to run `npx typedoc`.',
-      );
-      return process.exit();
-    }
-
     // cleanup html specific components
     renderer.removeComponent('assets');
     renderer.removeComponent('javascript-index');
@@ -155,6 +146,15 @@ export default class MarkdownTheme extends Theme {
           this.buildUrls(child, urls);
         }
       });
+    }
+
+    // compilation check
+    if (urls.length <= 1) {
+      this.application.logger.error(
+        '"typedoc-plugin-markdown" needs to be executed from the same location as "typedoc".\n' +
+          'Either run as an npm script or make sure to run `npx typedoc`.',
+      );
+      return process.exit();
     }
     return urls;
   }
