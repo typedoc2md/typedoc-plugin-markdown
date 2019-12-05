@@ -41,17 +41,18 @@
     "typedoc": ">=0.10.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.0.0",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.8",
+    "@types/fs-extra": "^8.0.1",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
     "copyfiles": "^2.1.1",
     "jest": "^24.9.0",
-    "ts-jest": "^24.1.0",
-    "tslint": "^5.20.0",
-    "typedoc": "0.15.0",
-    "typescript": "3.6.x"
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "typedoc": "0.15.3",
+    "typescript": "3.7.x"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "handlebars": "^4.5.3"
   }
 }
