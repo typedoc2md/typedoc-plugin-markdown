@@ -147,15 +147,6 @@ export default class MarkdownTheme extends Theme {
         }
       });
     }
-
-    // compilation check
-    if (urls.length <= 1) {
-      this.application.logger.error(
-        '"typedoc-plugin-markdown" needs to be executed from the same location as "typedoc".\n' +
-          'Either run as an npm script or make sure to run `npx typedoc`.',
-      );
-      return process.exit();
-    }
     return urls;
   }
 
