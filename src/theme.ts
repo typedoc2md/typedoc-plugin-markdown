@@ -59,6 +59,9 @@ export default class MarkdownTheme extends Theme {
    */
   static URL_PREFIX: RegExp = /^(http|ftp)s?:\/\//;
 
+  // creates an isolated Handlebars environment to store context aware helpers
+  static handlebars = Handlebars.create();
+
   // The root of generated docs
   indexName = 'README';
 
@@ -386,8 +389,6 @@ export default class MarkdownTheme extends Theme {
 
     return navigation;
   }
-
-  // private onRendererBegin(renderer: RendererEvent) {}
 
   private onPageEnd(page: PageEvent) {
     page.contents = page.contents ? MarkdownTheme.formatContents(page.contents) : '';

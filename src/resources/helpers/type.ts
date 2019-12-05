@@ -1,4 +1,3 @@
-import * as Handlebars from 'handlebars';
 import {
   ArrayType,
   IntersectionType,
@@ -10,6 +9,8 @@ import {
   TypeOperatorType,
   UnionType,
 } from 'typedoc/dist/lib/models/types';
+
+import MarkdownTheme from '../../theme';
 
 export function type(
   this:
@@ -58,9 +59,10 @@ export function type(
 }
 
 function getReferenceType(model: ReferenceType) {
-  const reflection = model.reflection
-    ? [`[${model.reflection.name}](${Handlebars.helpers.relativeURL.call(this, model.reflection.url)})`]
-    : [model.name];
+  const reflection =
+    model.reflection && model.reflection.url
+      ? [`[${model.reflection.name}](${MarkdownTheme.handlebars.helpers.relativeURL(model.reflection.url)})`]
+      : [model.name];
   if (model.typeArguments) {
     reflection.push(`‹${model.typeArguments.map(typeArgument => `${type.call(typeArgument)}`).join(', ')}›`);
   }
