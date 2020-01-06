@@ -62,10 +62,13 @@ export default class MarkdownTheme extends Theme {
   // creates an isolated Handlebars environment to store context aware helpers
   static handlebars = Handlebars.create();
 
-  // The root of generated docs
+  // is documentation generated as a single output file
+  static isSingleFile = false;
+
+  // the root of generated docs
   indexName = 'README';
 
-  // The file extension of the generated docs
+  // the file extension of the generated docs
   fileExt = '.md';
 
   constructor(renderer: Renderer, basePath: string) {
@@ -132,9 +135,21 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    if (this.application.options.getValue('readme') === 'none') {
+    const omitReadme = this.application.options.getValue('readme') === 'none';
+    const inlineGroupTitles = ['Functions', 'Variables', 'Object literals'];
+
+    MarkdownTheme.isSingleFile =
+      project.groups && project.groups.every(group => inlineGroupTitles.includes(group.title));
+
+    if (omitReadme || MarkdownTheme.isSingleFile) {
       entryPoint.url = this.indexName + this.fileExt;
-      urls.push(new UrlMapping(this.indexName + this.fileExt, entryPoint, 'reflection.hbs'));
+      urls.push(
+        new UrlMapping(
+          this.indexName + this.fileExt,
+          { ...entryPoint, displayReadme: MarkdownTheme.isSingleFile },
+          'reflection.hbs',
+        ),
+      );
     } else {
       entryPoint.url = 'globals' + this.fileExt;
       urls.push(new UrlMapping('globals' + this.fileExt, entryPoint, 'reflection.hbs'));
