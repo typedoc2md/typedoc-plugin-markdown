@@ -251,7 +251,7 @@ export default class MarkdownTheme extends Theme {
    */
   toAnchorRef(reflection: Reflection) {
     function parseAnchorRef(ref: string) {
-      return ref.replace(/"/g, '').replace(/ /g, '-');
+      return ref.replace(/["\$]/g, '').replace(/ /g, '-');
     }
     let anchorPrefix = '';
     reflection.flags.forEach(flag => (anchorPrefix += `${flag}-`));
