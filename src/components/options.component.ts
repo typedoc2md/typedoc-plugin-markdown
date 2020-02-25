@@ -1,5 +1,6 @@
-import * as Handlebars from 'handlebars';
 import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
+
+import MarkdownTheme from '../theme';
 
 @Component({ name: 'options' })
 export class OptionsComponent extends ContextAwareRendererComponent {
@@ -11,19 +12,19 @@ export class OptionsComponent extends ContextAwareRendererComponent {
     const hideIndexes = this.application.options.getValue('hideIndexes');
     const hideSourceFiles = this.application.options.getValue('hideSources');
 
-    Handlebars.registerHelper('ifNamedAnchors', function(options) {
+    MarkdownTheme.handlebars.registerHelper('ifNamedAnchors', function(options) {
       return namedAnchors ? options.fn(this) : options.inverse(this);
     });
 
-    Handlebars.registerHelper('ifBreadcrumbs', function(options) {
+    MarkdownTheme.handlebars.registerHelper('ifBreadcrumbs', function(options) {
       return hideBreadcrumbs ? options.inverse(this) : options.fn(this);
     });
 
-    Handlebars.registerHelper('ifIndexes', function(options) {
+    MarkdownTheme.handlebars.registerHelper('ifIndexes', function(options) {
       return hideIndexes ? options.inverse(this) : options.fn(this);
     });
 
-    Handlebars.registerHelper('ifSources', function(options) {
+    MarkdownTheme.handlebars.registerHelper('ifSources', function(options) {
       return hideSourceFiles ? options.inverse(this) : options.fn(this);
     });
   }

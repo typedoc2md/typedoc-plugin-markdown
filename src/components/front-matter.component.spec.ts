@@ -7,7 +7,8 @@ describe(`FrontMatterComponent`, () => {
   let app;
 
   beforeAll(() => {
-    app = new Application({
+    app = new Application();
+    app.bootstrap({
       mode: 'file',
       module: 'CommonJS',
       target: 'ES5',

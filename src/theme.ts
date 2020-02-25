@@ -59,24 +59,21 @@ export default class MarkdownTheme extends Theme {
    */
   static URL_PREFIX: RegExp = /^(http|ftp)s?:\/\//;
 
-  // The root of generated docs
+  // creates an isolated Handlebars environment to store context aware helpers
+  static handlebars = Handlebars.create();
+
+  // is documentation generated as a single output file
+  static isSingleFile = false;
+
+  // the root of generated docs
   indexName = 'README';
 
-  // The file extension of the generated docs
+  // the file extension of the generated docs
   fileExt = '.md';
 
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     this.listenTo(renderer, PageEvent.END, this.onPageEnd, 1024);
-
-    // check if plugin is using same Handlebars instance as typedoc
-    if (!('relativeURL' in Handlebars.helpers)) {
-      this.application.logger.error(
-        '"typedoc-plugin-markdown" needs to be executed from the same location as "typedoc".\n' +
-          'Either run as an npm script or make sure to run `npx typedoc`.',
-      );
-      return process.exit();
-    }
 
     // cleanup html specific components
     renderer.removeComponent('assets');
@@ -138,9 +135,21 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    if (this.application.options.getValue('readme') === 'none') {
+    const omitReadme = this.application.options.getValue('readme') === 'none';
+    const inlineGroupTitles = ['Functions', 'Variables', 'Object literals'];
+
+    MarkdownTheme.isSingleFile =
+      project.groups && project.groups.every(group => inlineGroupTitles.includes(group.title));
+
+    if (omitReadme || MarkdownTheme.isSingleFile) {
       entryPoint.url = this.indexName + this.fileExt;
-      urls.push(new UrlMapping(this.indexName + this.fileExt, entryPoint, 'reflection.hbs'));
+      urls.push(
+        new UrlMapping(
+          this.indexName + this.fileExt,
+          { ...entryPoint, displayReadme: MarkdownTheme.isSingleFile },
+          'reflection.hbs',
+        ),
+      );
     } else {
       entryPoint.url = 'globals' + this.fileExt;
       urls.push(new UrlMapping('globals' + this.fileExt, entryPoint, 'reflection.hbs'));
@@ -242,7 +251,7 @@ export default class MarkdownTheme extends Theme {
    */
   toAnchorRef(reflection: Reflection) {
     function parseAnchorRef(ref: string) {
-      return ref.replace(/"/g, '').replace(/ /g, '-');
+      return ref.replace(/["\$]/g, '').replace(/ /g, '-');
     }
     let anchorPrefix = '';
     reflection.flags.forEach(flag => (anchorPrefix += `${flag}-`));
@@ -336,7 +345,7 @@ export default class MarkdownTheme extends Theme {
       return nav;
     }
     const isModules = this.application.options.getValue('mode') === 1;
-    const isLongTitle = this.application.options.getValue('longTitle');
+    const isLongTitle = this.application.options.getValue('longTitle') as boolean;
 
     const navigation = createNavigationGroup(project.name, this.indexName + this.fileExt);
     const externalModulesNavigation = createNavigationGroup('External Modules');
@@ -386,8 +395,6 @@ export default class MarkdownTheme extends Theme {
 
     return navigation;
   }
-
-  // private onRendererBegin(renderer: RendererEvent) {}
 
   private onPageEnd(page: PageEvent) {
     page.contents = page.contents ? MarkdownTheme.formatContents(page.contents) : '';

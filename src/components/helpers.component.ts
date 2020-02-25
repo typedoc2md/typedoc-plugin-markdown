@@ -67,12 +67,16 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
 
     const component = this;
 
-    Handlebars.registerHelper('comment', function(this: string) {
+    MarkdownTheme.handlebars.registerHelper('comment', function(this: string) {
       return component.parseComments(this);
     });
 
-    Handlebars.registerHelper('breadcrumbs', function(this: PageEvent) {
+    MarkdownTheme.handlebars.registerHelper('breadcrumbs', function(this: PageEvent) {
       return component.breadcrumb(this.model, this.project, []);
+    });
+
+    MarkdownTheme.handlebars.registerHelper('relativeURL', (url: string) => {
+      return url ? this.getRelativeUrl(url) : url;
     });
   }
 
@@ -81,17 +85,15 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
     if (model && model.parent) {
       this.breadcrumb(model.parent, project, md);
       if (model.url) {
-        md.push(`[${model.name}](${Handlebars.helpers.relativeURL.call(this, model.url)})`);
+        md.push(`[${model.name}](${this.getRelativeUrl(model.url)})`);
       } else {
         md.push(model.url);
       }
     } else {
       if (!!project.readme) {
-        md.push(`[${project.name}](${Handlebars.helpers.relativeURL.call(this, theme.indexName + theme.fileExt)})`);
+        md.push(`[${project.name}](${this.getRelativeUrl(theme.indexName + theme.fileExt)})`);
       }
-      md.push(
-        `[${project.readme ? 'Globals' : project.name}](${Handlebars.helpers.relativeURL.call(this, project.url)})`,
-      );
+      md.push(`[${project.readme ? 'Globals' : project.name}](${this.getRelativeUrl(project.url)})`);
     }
     return md.join(' › ');
   }

@@ -10,12 +10,13 @@ const handlebarsHelpersOptionsStub = {
 };
 
 describe(`Helpers`, () => {
-  let app: Application;
+  let app;
   let project: any;
   const out = path.join(__dirname, 'tmp');
 
   beforeAll(() => {
-    app = new Application({
+    app = new Application();
+    app.bootstrap({
       module: 'CommonJS',
       target: 'ES5',
       readme: 'none',
