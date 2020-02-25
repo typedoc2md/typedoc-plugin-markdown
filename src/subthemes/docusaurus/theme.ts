@@ -22,7 +22,7 @@ export default class DocusaurusTheme extends MarkdownTheme {
       );
       return;
     }
-    this.writeSideBar(renderer, docusarusRoot);
+    if (!this.application.options.getValue('skipSidebar')) { this.writeSideBar(renderer, docusarusRoot); }
   }
 
   writeSideBar(renderer: RendererEvent, docusarusRoot: string) {
