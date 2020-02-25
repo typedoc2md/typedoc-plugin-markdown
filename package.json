@@ -39,7 +39,7 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.10.0"
+    "typedoc": ">=0.16.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
