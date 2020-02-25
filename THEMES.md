@@ -5,8 +5,8 @@ It follows the same structure and file patterns as the default HTML theme (see [
 
 The plugin also comes packaged with some additional built-in themes and can also be extended with a custom theme.
 
-- [Writing a custom Markdown theme](#writing-a-custom-markdown-theme)
 - [Built-in themes](#built-in-themes)
+- [Writing a custom Markdown theme](#writing-a-custom-markdown-theme)
 
 ## Writing a custom markdown theme
 
@@ -50,7 +50,8 @@ npx typedoc ./src --plugin typedoc-plugin-markdown --theme ./mytheme/custom-them
 const { Application } = require('typedoc');
 const path = require('path');
 
-const app = new Application({
+const app = new Application();
+app.bootstrap({
   module: 'CommonJS',
   target: 'ES5',
   readme: 'none',
