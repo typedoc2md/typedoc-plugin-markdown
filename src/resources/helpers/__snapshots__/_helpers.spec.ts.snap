@@ -14,7 +14,7 @@ exports[`Helpers literal helper should compile object literal 1`] = `
 
 !spaces* **valueX**: *object*
 
-!spaces  * **valueA**: *number[]* =  [100, 200, 300]
+!spaces  * **valueA**: *number[]* = [100, 200, 300]
 
 !spaces  * **valueZ**: *string* = \\"foo\\"
 
@@ -23,7 +23,7 @@ exports[`Helpers literal helper should compile object literal 1`] = `
 
 !spaces    * **a**: *string* = \\"test\\"
 
-!spaces    * **b**: *string* =  z
+!spaces    * **b**: *string* = z
 
 
 "
@@ -42,9 +42,9 @@ Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
 \`valueA\` | string | \\"defaultValue\\" | A parameter with a default string value. |
 \`valueB\` | number | 100 | A parameter with a default numeric value. |
-\`valueC\` | number |  Number.NaN | A parameter with a default NaN value. |
+\`valueC\` | number | Number.NaN | A parameter with a default NaN value. |
 \`valueD\` | boolean | true | A parameter with a default boolean value. |
-\`valueE\` | boolean |  null | A parameter with a default null value. |
+\`valueE\` | boolean | null | A parameter with a default null value. |
 "
 `;
 

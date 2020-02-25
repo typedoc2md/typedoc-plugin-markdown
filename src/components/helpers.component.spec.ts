@@ -9,7 +9,8 @@ describe(`HelpersComponent`, () => {
   let pluginInstance;
   const out = path.join(__dirname, 'tmp');
   beforeAll(() => {
-    app = new Application({
+    app = new Application();
+    app.bootstrap({
       module: 'CommonJS',
       target: 'ES5',
       readme: 'none',

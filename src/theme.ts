@@ -345,7 +345,7 @@ export default class MarkdownTheme extends Theme {
       return nav;
     }
     const isModules = this.application.options.getValue('mode') === 1;
-    const isLongTitle = this.application.options.getValue('longTitle');
+    const isLongTitle = this.application.options.getValue('longTitle') as boolean;
 
     const navigation = createNavigationGroup(project.name, this.indexName + this.fileExt);
     const externalModulesNavigation = createNavigationGroup('External Modules');

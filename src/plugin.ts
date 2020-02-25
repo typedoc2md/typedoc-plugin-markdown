@@ -25,7 +25,7 @@ export class MarkdownPlugin extends ConverterComponent {
    */
   onResolveBegin() {
     const options = this.application.options;
-    const theme = options.getValue('platform') || options.getValue('theme');
+    const theme = (options.getValue('platform') as string) || (options.getValue('theme') as string);
 
     // if the theme is 'default' or 'markdown' load the base markdown theme
     if (theme === 'default' || theme === 'markdown') {
