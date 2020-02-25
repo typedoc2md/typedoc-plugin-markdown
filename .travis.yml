@@ -8,7 +8,6 @@ node_js:
   - '10'
   - '9'
   - '8'
-  - '7'
 before_script:
 script:
   - npm run test

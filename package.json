@@ -21,7 +21,7 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "engines": {
-    "node": ">=6"
+    "node": ">= 8.0.0"
   },
   "bugs": {
     "url": "https://github.com/tom-grey/typedoc-plugin-markdown/issues"
