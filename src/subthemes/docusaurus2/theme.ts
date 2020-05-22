@@ -17,14 +17,16 @@ export default class Docusaurus2Theme extends MarkdownTheme {
   }
 
   onRendererEnd(renderer: RendererEvent) {
-    const docusarusRoot = this.findDocusaurus2Root(renderer.outputDirectory);
-    if (docusarusRoot === null) {
-      this.application.logger.warn(
-        `[typedoc-markdown-plugin] ${this.sidebarName} not written as could not locate docusaurus root directory. In order to to implemnent ${this.sidebarName} functionality, the output directory must be a child of a 'docs' directory.`,
-      );
-      return;
+    if (!this.application.options.getValue('skipSidebar')) {
+      const docusarusRoot = this.findDocusaurus2Root(renderer.outputDirectory);
+      if (docusarusRoot === null) {
+        this.application.logger.warn(
+          `[typedoc-markdown-plugin] ${this.sidebarName} not written as could not locate docusaurus root directory. In order to to implemnent ${this.sidebarName} functionality, the output directory must be a child of a 'docs' directory.`,
+        );
+        return;
+      }
+      this.writeSideBar(renderer, docusarusRoot);
     }
-    this.writeSideBar(renderer, docusarusRoot);
   }
 
   writeSideBar(renderer: RendererEvent, docusarusRoot: string) {
