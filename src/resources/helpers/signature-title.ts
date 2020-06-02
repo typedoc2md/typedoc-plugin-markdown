@@ -18,11 +18,11 @@ export function signatureTitle(this: SignatureReflection, showSymbol: boolean) {
     md.push(`**${this.name}**`);
   }
   if (this.typeParameters) {
-    md.push(`<${this.typeParameters.map(typeParameter => `**${typeParameter.name}**`).join(', ')}>`);
+    md.push(`‹${this.typeParameters.map((typeParameter) => `**${typeParameter.name}**`).join(', ')}›`);
   }
   const params = this.parameters
     ? this.parameters
-        .map(param => {
+        .map((param) => {
           const paramsmd = [];
           if (param.flags.isRest) {
             paramsmd.push('...');

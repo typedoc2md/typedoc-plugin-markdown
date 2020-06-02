@@ -7,8 +7,8 @@ export function reflectionTitle(this: PageEvent) {
   }
   title.push(this.model.name);
   if (this.model.typeParameters) {
-    const typeParameters = this.model.typeParameters.map(typeParameter => typeParameter.name).join(', ');
-    title.push(`<**${typeParameters}**>`);
+    const typeParameters = this.model.typeParameters.map((typeParameter) => typeParameter.name).join(', ');
+    title.push(`‹**${typeParameters}**›`);
   }
   return title.join(' ');
 }
