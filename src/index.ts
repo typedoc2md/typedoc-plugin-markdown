@@ -54,7 +54,7 @@ export = (PluginHost: Application) => {
   });
 
   app.options.addDeclaration({
-    help: 'Skips updating of the sidebar.json file when used with docusaurus theme',
+    help: 'Skips updating of the sidebar.json file when used with docusaurus or docusaurus2 theme',
     name: 'skipSidebar',
     type: ParameterType.Boolean,
   });

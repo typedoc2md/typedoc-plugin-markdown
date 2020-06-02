@@ -43,7 +43,7 @@ The following arguments can be used in addition to the default [TypeDoc argument
 - `--hideBreadcrumbs`<br>
   Do not print breadcrumbs.
 - `--skipSidebar`<br>
-  Do not update the `sidebar.json` file when used with `docusaurus` theme.
+  Do not update the `sidebar.json` file when used with `docusaurus` or `docusaurus2` theme.
 
 ## License
 
