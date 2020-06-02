@@ -1,5 +1,5 @@
 {
-  "src": "./test/stubs/src",
+  "inputFiles": "./test/stubs/src",
   "target": "ES5",
   "name": "My API",
   "readme": "none",
