@@ -47,7 +47,7 @@ export default class MarkdownTheme extends Theme {
       template: 'reflection.hbs',
     },
     {
-      kind: [ReflectionKind.Module, ReflectionKind.ExternalModule],
+      kind: [ReflectionKind.Namespace, ReflectionKind.Module],
       isLeaf: false,
       directory: 'modules',
       template: 'reflection.hbs',
@@ -100,7 +100,7 @@ export default class MarkdownTheme extends Theme {
       return;
     }
 
-    listings.forEach(listing => {
+    listings.forEach((listing) => {
       if (!this.allowedDirectoryListings().includes(listing)) {
         isOutputDirectory = false;
         return;
@@ -138,9 +138,10 @@ export default class MarkdownTheme extends Theme {
     const omitReadme = this.application.options.getValue('readme') === 'none';
     const inlineGroupTitles = ['Functions', 'Variables', 'Object literals'];
 
-    MarkdownTheme.isSingleFile =
-      project.groups && project.groups.every(group => inlineGroupTitles.includes(group.title));
-
+    if (project.groups) {
+      MarkdownTheme.isSingleFile =
+        project.groups && project.groups.every((group) => inlineGroupTitles.includes(group.title));
+    }
     if (omitReadme || MarkdownTheme.isSingleFile) {
       entryPoint.url = this.indexName + this.fileExt;
       urls.push(
@@ -238,7 +239,7 @@ export default class MarkdownTheme extends Theme {
       reflection.anchor = anchor;
       reflection.hasOwnDocument = false;
     }
-    reflection.traverse(child => {
+    reflection.traverse((child) => {
       if (child instanceof DeclarationReflection) {
         this.applyAnchorUrl(child, container);
       }
@@ -254,7 +255,7 @@ export default class MarkdownTheme extends Theme {
       return ref.replace(/["\$]/g, '').replace(/ /g, '-');
     }
     let anchorPrefix = '';
-    reflection.flags.forEach(flag => (anchorPrefix += `${flag}-`));
+    reflection.flags.forEach((flag) => (anchorPrefix += `${flag}-`));
     const prefixRef = parseAnchorRef(anchorPrefix);
     const reflectionRef = parseAnchorRef(reflection.name);
     const anchorRef = prefixRef + reflectionRef;
@@ -292,8 +293,8 @@ export default class MarkdownTheme extends Theme {
     }
 
     function getNavigationGroup(reflection: DeclarationReflection) {
-      if (reflection.kind === ReflectionKind.ExternalModule) {
-        return externalModulesNavigation;
+      if (reflection.kind === ReflectionKind.Namespace) {
+        return namespacesNavigation;
       }
       if (reflection.kind === ReflectionKind.Module) {
         return modulesNavigation;
@@ -334,7 +335,7 @@ export default class MarkdownTheme extends Theme {
 
       navigationGroup.children.push(nav);
       if (reflection.children) {
-        reflection.children.forEach(reflectionChild => {
+        reflection.children.forEach((reflectionChild) => {
           if (reflectionChild.hasOwnDocument) {
             addNavigationItem(longTitle, reflectionChild as DeclarationReflection, nav, navigationGroup);
           }
@@ -350,31 +351,34 @@ export default class MarkdownTheme extends Theme {
     const navigation = createNavigationGroup(project.name, this.indexName + this.fileExt);
     const externalModulesNavigation = createNavigationGroup('External Modules');
     const modulesNavigation = createNavigationGroup('Modules');
+    const namespacesNavigation = createNavigationGroup('Namespaces');
     const classesNavigation = createNavigationGroup('Classes');
     const enumsNavigation = createNavigationGroup('Enums');
     const interfacesNavigation = createNavigationGroup('Interfaces');
 
-    if (!isModules) {
-      project.groups.forEach(group => {
-        group.children.forEach(reflection => {
-          if (reflection.hasOwnDocument) {
-            addNavigationItem(isLongTitle, reflection as DeclarationReflection);
-          }
-        });
-      });
-    }
-
-    if (isModules) {
-      project.groups[0].children.forEach(module => {
-        const moduleNavigation = addNavigationItem(isLongTitle, module as DeclarationReflection);
-        if ((module as DeclarationReflection).children) {
-          (module as DeclarationReflection).children.forEach(reflection => {
+    if (project.groups) {
+      if (!isModules) {
+        project.groups.forEach((group) => {
+          group.children.forEach((reflection) => {
             if (reflection.hasOwnDocument) {
-              addNavigationItem(isLongTitle, reflection, moduleNavigation);
+              addNavigationItem(isLongTitle, reflection as DeclarationReflection);
             }
           });
-        }
-      });
+        });
+      }
+
+      if (isModules) {
+        project.groups[0].children.forEach((module) => {
+          const moduleNavigation = addNavigationItem(isLongTitle, module as DeclarationReflection);
+          if ((module as DeclarationReflection).children) {
+            (module as DeclarationReflection).children.forEach((reflection) => {
+              if (reflection.hasOwnDocument) {
+                addNavigationItem(isLongTitle, reflection, moduleNavigation);
+              }
+            });
+          }
+        });
+      }
     }
 
     if (externalModulesNavigation.children.length) {
@@ -408,7 +412,7 @@ export default class MarkdownTheme extends Theme {
    * @returns           The found mapping or undefined if no mapping could be found.
    */
   static getMapping(reflection: DeclarationReflection): TemplateMapping | undefined {
-    return MarkdownTheme.MAPPINGS.find(mapping => reflection.kindOf(mapping.kind));
+    return MarkdownTheme.MAPPINGS.find((mapping) => reflection.kindOf(mapping.kind));
   }
 
   static formatContents(contents: string) {
