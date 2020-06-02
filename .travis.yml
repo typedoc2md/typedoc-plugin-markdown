@@ -6,8 +6,8 @@ notifications:
   email: false
 node_js:
   - '10'
-  - '9'
-  - '8'
+#  - '9'
+#  - '8'
 before_script:
 script:
   - npm run test
