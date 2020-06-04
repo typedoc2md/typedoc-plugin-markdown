@@ -32,9 +32,9 @@ export default class Docusaurus2Theme extends MarkdownTheme {
   writeSideBar(renderer: RendererEvent, docusarusRoot: string) {
     const childDirectory = renderer.outputDirectory.split(docusarusRoot + 'docs/')[1];
     const docsRoot = childDirectory ? childDirectory + '/' : '';
-    const websitePath = docusarusRoot + 'website';
+    const websitePath = docusarusRoot;
     const navObject = this.getNavObject(renderer, docsRoot);
-    const sidebarPath = websitePath + '/' + this.sidebarName;
+    const sidebarPath = websitePath + this.sidebarName;
     let jsonContent: any;
     if (!fs.existsSync(sidebarPath)) {
       if (!fs.existsSync(websitePath)) {
