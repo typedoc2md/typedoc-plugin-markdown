@@ -420,6 +420,8 @@ export default class MarkdownTheme extends Theme {
       contents
         .replace(/[\r\n]{3,}/g, '\n\n')
         .replace(/!spaces/g, '')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
         .replace(/^\s+|\s+$/g, '') + '\n'
     );
   }
