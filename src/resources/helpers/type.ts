@@ -55,7 +55,7 @@ export function type(
     return this;
   }
 
-  return this;
+  return this.toString().replace(/</g, '‹').replace(/>/g, '›');
 }
 
 function getReferenceType(model: ReferenceType) {
