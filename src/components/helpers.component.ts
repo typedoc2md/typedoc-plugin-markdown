@@ -1,10 +1,11 @@
+import * as path from 'path';
+import * as Util from 'util';
+
 import * as fs from 'fs-extra';
 import * as Handlebars from 'handlebars';
-import * as path from 'path';
 import { MarkedLinksPlugin, ProjectReflection, Reflection } from 'typedoc';
 import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
 import { PageEvent, RendererEvent } from 'typedoc/dist/lib/output/events';
-import * as Util from 'util';
 
 import MarkdownTheme from '../theme';
 
@@ -49,12 +50,15 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
 
   private warnings: string[] = [];
 
+  private publicPath: string;
+
   initialize() {
     super.initialize();
 
     this.includes = this.application.options.getValue('includes');
     this.mediaDirectory = this.application.options.getValue('media');
     this.listInvalidSymbolLinks = this.application.options.getValue('listInvalidSymbolLinks');
+    this.publicPath = this.application.options.getValue('publicPath') as string;
 
     this.listenTo(
       this.owner,
@@ -67,16 +71,16 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
 
     const component = this;
 
-    MarkdownTheme.handlebars.registerHelper('comment', function(this: string) {
+    MarkdownTheme.handlebars.registerHelper('comment', function (this: string) {
       return component.parseComments(this);
     });
 
-    MarkdownTheme.handlebars.registerHelper('breadcrumbs', function(this: PageEvent) {
+    MarkdownTheme.handlebars.registerHelper('breadcrumbs', function (this: PageEvent) {
       return component.breadcrumb(this.model, this.project, []);
     });
 
     MarkdownTheme.handlebars.registerHelper('relativeURL', (url: string) => {
-      return url ? this.getRelativeUrl(url) : url;
+      return url ? (this.publicPath ? this.publicPath + url : this.getRelativeUrl(url)) : url;
     });
   }
 
@@ -85,15 +89,17 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
     if (model && model.parent) {
       this.breadcrumb(model.parent, project, md);
       if (model.url) {
-        md.push(`[${model.name}](${this.getRelativeUrl(model.url)})`);
+        md.push(`[${model.name}](${MarkdownTheme.handlebars.helpers.relativeURL(model.url)})`);
       } else {
         md.push(model.url);
       }
     } else {
       if (!!project.readme) {
-        md.push(`[${project.name}](${this.getRelativeUrl(theme.indexName + theme.fileExt)})`);
+        md.push(`[${project.name}](${MarkdownTheme.handlebars.helpers.relativeURL(theme.indexName + theme.fileExt)})`);
       }
-      md.push(`[${project.readme ? 'Globals' : project.name}](${this.getRelativeUrl(project.url)})`);
+      md.push(
+        `[${project.readme ? 'Globals' : project.name}](${MarkdownTheme.handlebars.helpers.relativeURL(project.url)})`,
+      );
     }
     return md.join(' › ');
   }
@@ -128,7 +134,7 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
     if (this.mediaDirectory) {
       text = text.replace(this.mediaPattern, (match: string, mediaPath: string) => {
         if (fs.existsSync(path.join(this.mediaDirectory!, mediaPath))) {
-          return this.getRelativeUrl('media') + '/' + mediaPath;
+          return MarkdownTheme.handlebars.helpers.relativeURL('media') + '/' + mediaPath;
         } else {
           return match;
         }

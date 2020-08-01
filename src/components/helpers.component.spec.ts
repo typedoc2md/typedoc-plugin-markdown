@@ -1,6 +1,7 @@
+import * as path from 'path';
+
 import * as fs from 'fs-extra';
 import * as Handlebars from 'handlebars';
-import * as path from 'path';
 import { Application } from 'typedoc';
 
 describe(`HelpersComponent`, () => {
@@ -19,6 +20,7 @@ describe(`HelpersComponent`, () => {
       includes: './test/stubs/inc/',
       media: './test/stubs/media/',
       listInvalidSymbolLinks: true,
+      publicPath: '/lib/',
       plugin: path.join(__dirname, '../../dist/index'),
     });
     project = app.convert(app.expandInputFiles(['./test/stubs/']));

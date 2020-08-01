@@ -8,7 +8,7 @@ exports[`HelpersComponent should build @link references' 1`] = `
 exports[`HelpersComponent should convert comments with includes' 1`] = `
 "This is a simple example on how to use include.
 
-![My image alt text](../media/logo.png)
+![My image alt text](/lib/media/logo.png)
 
 ![My not found image](media://VOID.png)
  
