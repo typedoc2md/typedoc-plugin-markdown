@@ -64,25 +64,26 @@ function getReferenceType(model: ReferenceType) {
       ? [`[${model.reflection.name}](${MarkdownTheme.handlebars.helpers.relativeURL(model.reflection.url)})`]
       : [model.name];
   if (model.typeArguments) {
-    reflection.push(`‹${model.typeArguments.map(typeArgument => `${type.call(typeArgument)}`).join(', ')}›`);
+    reflection.push(`‹${model.typeArguments.map((typeArgument) => `${type.call(typeArgument)}`).join(', ')}›`);
   }
   return reflection.join('');
 }
 
 function getArrayType(model: ArrayType) {
-  return `${type.call(model.elementType)}[]`;
+  const arrayType = type.call(model.elementType);
+  return model.elementType.type === 'union' ? `(${arrayType})[]` : `${arrayType}[]`;
 }
 
 function getUnionType(model: UnionType) {
-  return model.types.map(unionType => type.call(unionType)).join(' | ');
+  return model.types.map((unionType) => type.call(unionType)).join(' | ');
 }
 
 function getIntersectionType(model: IntersectionType) {
-  return model.types.map(intersectionType => type.call(intersectionType)).join(' & ');
+  return model.types.map((intersectionType) => type.call(intersectionType)).join(' & ');
 }
 
 function getTupleType(model: TupleType) {
-  return `[${model.elements.map(element => type.call(element)).join(', ')}]`;
+  return `[${model.elements.map((element) => type.call(element)).join(', ')}]`;
 }
 
 function getIntrinsicType(model: IntrinsicType) {
@@ -90,5 +91,5 @@ function getIntrinsicType(model: IntrinsicType) {
 }
 
 function getStringLiteralType(model: StringLiteralType) {
-  return `"${model.value}"`;
+  return `\"${model.value}\"`;
 }

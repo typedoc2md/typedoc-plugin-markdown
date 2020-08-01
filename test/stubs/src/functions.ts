@@ -43,7 +43,7 @@ export function functionWithParameters(paramZ: string, paramG: any, paramA: Obje
  * @param someParam  This is some numeric parameter.
  * @return This is the return value of the function.
  */
-export const variableFunction = function(someParam: number): number {
+export const variableFunction = (someParam: number) => {
   return 0;
 };
 
@@ -127,10 +127,14 @@ export function moduleFunction(arg: string): string {
   return '';
 }
 
+export function restUntionTypes(arg: boolean[] | number, ...args: (string | number)[]): any {
+  return null;
+}
+
 /**
  * This is the module extending the function moduleFunction().
  */
-export module moduleFunction {
+export namespace moduleFunction {
   /**
    * This variable is appended to a function.
    */
