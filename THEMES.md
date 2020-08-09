@@ -107,9 +107,10 @@ headerLinks: [
 
   - `.vuepress/api-sidebar.json` to be used with [sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar).
   - `.vuepress/api-sidebar-relative.json` to be used with [multiple sidebars](https://vuepress.vuejs.org/default-theme-config/#multiple-sidebars).
-  - `.vuepress/config.json`
 
 #### Examples
+
+May be used in `.vuepress/config.js` as follows:
 
 ```js
 const apiSideBar = require('./api-sidebar.json');
