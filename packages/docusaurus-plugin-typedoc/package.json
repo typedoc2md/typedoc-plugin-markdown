@@ -1,0 +1,26 @@
+{
+  "name": "docusaurus-plugin-typedoc",
+  "version": "0.0.0",
+  "description": "A plugin for Docusaurus to build pages from TypeDoc.",
+  "peerDependencies": {
+    "typedoc": ">=0.17.0",
+    "typedoc-plugin-markdown": ">=2.4.1"
+  },
+  "dependencies": {
+    "fs-extra": "^9.0.1"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "^2.0.0-alpha.37",
+    "typedoc": "^0.18.0",
+    "typedoc-plugin-markdown": "^2.4.1",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "start": "npm run build && cd typedoc-sample && npm run start",
+    "init": "rm -rf typedoc-sample && npx @docusaurus/init@next init typedoc-sample classic",
+    "build": "rm -rf ./dist && tsc",
+    "testx": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Grey",
+  "license": "MIT"
+}
