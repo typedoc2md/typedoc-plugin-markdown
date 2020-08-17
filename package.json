@@ -1,45 +1,11 @@
 {
-  "name": "typedoc-plugin-markdown",
-  "version": "2.4.1",
-  "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
-  "main": "dist/index.js",
-  "files": [
-    "dist/"
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
-    "lint": "eslint ./src --ext .ts",
-    "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "prepublishOnly": "npm run test",
-    "pretest": "npm run lint && npm run build",
-    "test": "jest",
-    "test:updateSnapshot": "jest --updateSnapshot",
-    "fixtures": "rm -rf ./test/fixtures && node ./tasks/fixtures.js",
-    "examples": "npm run build && rm -rf out && node ./tasks/link-plugin.js && npm run examples:html && npm run examples:md",
-    "examples:html": "typedoc --tsconfig ./test/stubs/tsconfig.json --options ./test/options.json --plugin none --out ./out/html",
-    "examples:md": "typedoc --tsconfig ./test/stubs/tsconfig.json --options ./test/options.json --out ./out/md"
-  },
-  "author": "Thomas Grey",
-  "license": "MIT",
-  "engines": {
-    "node": ">= 8.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git"
-  },
-  "keywords": [
-    "markdown",
-    "typescript",
-    "documentation",
-    "api",
-    "typedocplugin",
-    "typedoc"
-  ],
-  "peerDependencies": {
-    "typedoc": ">=0.17.0"
+    "build": "lerna run build",
+    "test": "lerna run test --stream"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.1",
@@ -48,14 +14,9 @@
     "@typescript-eslint/eslint-plugin": "^3.8.0",
     "@typescript-eslint/parser": "^3.8.0",
     "copyfiles": "^2.3.0",
-    "eslint": "^7.6.0",
     "jest": "^26.2.2",
-    "ts-jest": "^26.1.4",
-    "typedoc": "0.17.8",
-    "typescript": "3.9.x"
-  },
-  "dependencies": {
-    "fs-extra": "^9.0.1",
-    "handlebars": "^4.7.6"
+    "lerna": "^3.5.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.4"
   }
 }

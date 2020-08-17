@@ -1,0 +1,50 @@
+{
+  "name": "typedoc-plugin-markdown",
+  "version": "2.4.1",
+  "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run lint && npm run build && npm run test",
+    "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "test": "jest --colors",
+    "test:update": "jest --updateSnapshot",
+    "build-and-test": "npm run build && npm run test",
+    "samples": "rm -rf ./samples && npm run sample:md & npm run sample:html",
+    "sample:md": "typedoc --name typedoc-sample --out ./samples/md ../../ts-samples/src",
+    "sample:html": "typedoc --name typedoc-sample --mode file --plugin none --out ./samples/html ../../ts-samples/src"
+  },
+  "author": "Thomas Grey",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git"
+  },
+  "keywords": [
+    "markdown",
+    "typescript",
+    "documentation",
+    "api",
+    "typedocplugin",
+    "typedoc"
+  ],
+  "peerDependencies": {
+    "typedoc": ">=0.17.0"
+  },
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "handlebars": "^4.7.6"
+  },
+  "devDependencies": {
+    "typedoc": "^0.18.0",
+    "typescript": "^3.9.7"
+  }
+}
