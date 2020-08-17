@@ -1,5 +1,6 @@
-import * as fs from 'fs-extra';
 import * as path from 'path';
+
+import * as fs from 'fs-extra';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
@@ -76,7 +77,7 @@ export default class VuePressTheme extends MarkdownTheme {
     }
   }
 
-  getNavObject(renderer: RendererEvent, docsRoot: string = '') {
+  getNavObject(renderer: RendererEvent, docsRoot = '') {
     const projectUrls = [docsRoot + this.indexName.replace('.md', '')];
     if (renderer.project.url === 'globals.md') {
       projectUrls.push(docsRoot + 'globals');
@@ -85,10 +86,10 @@ export default class VuePressTheme extends MarkdownTheme {
     // const packageName = MarkdownPlugin.project.packageInfo.name;
     const navObject = []; // [{ title: packageName, children: projectUrls }]
 
-    this.getNavigation(renderer.project).children.forEach(rootNavigation => {
+    this.getNavigation(renderer.project).children.forEach((rootNavigation) => {
       navObject.push({
         title: rootNavigation.title,
-        children: rootNavigation.children.map(item => {
+        children: rootNavigation.children.map((item) => {
           return docsRoot + item.url.replace('.md', '');
         }),
       });

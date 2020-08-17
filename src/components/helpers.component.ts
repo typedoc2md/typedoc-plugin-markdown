@@ -29,22 +29,22 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
   /**
    * The pattern used to find references in markdown.
    */
-  private includePattern: RegExp = /\[\[include:([^\]]+?)\]\]/g;
+  private includePattern = /\[\[include:([^\]]+?)\]\]/g;
 
   /**
    * The pattern used to find media links.
    */
-  private mediaPattern: RegExp = /media:\/\/([^ "\)\]\}]+)/g;
+  private mediaPattern = /media:\/\/([^ "\)\]\}]+)/g;
 
   /**
    * Regular expression for detecting bracket links.
    */
-  private brackets: RegExp = /\[\[([^\]]+)\]\]/g;
+  private brackets = /\[\[([^\]]+)\]\]/g;
 
   /**
    * Regular expression for detecting inline tags like {@link ...}.
    */
-  private inlineTag: RegExp = /(?:\[(.+?)\])?\{@(link|linkcode|linkplain)\s+((?:.|\n)+?)\}/gi;
+  private inlineTag = /(?:\[(.+?)\])?\{@(link|linkcode|linkplain)\s+((?:.|\n)+?)\}/gi;
 
   private listInvalidSymbolLinks: boolean;
 

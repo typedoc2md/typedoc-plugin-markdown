@@ -57,7 +57,7 @@ export default class MarkdownTheme extends Theme {
   /**
    * @See DefaultTheme.URL_PREFIX
    */
-  static URL_PREFIX: RegExp = /^(http|ftp)s?:\/\//;
+  static URL_PREFIX = /^(http|ftp)s?:\/\//;
 
   // creates an isolated Handlebars environment to store context aware helpers
   static handlebars = Handlebars.create();
@@ -215,7 +215,7 @@ export default class MarkdownTheme extends Theme {
    * @param separator   The separator used to generate the url.
    * @returns           The generated url.
    */
-  getUrl(reflection: Reflection, relative?: Reflection, separator: string = '.'): string {
+  getUrl(reflection: Reflection, relative?: Reflection, separator = '.'): string {
     let url = reflection.getAlias();
 
     if (reflection.parent && reflection.parent !== relative && !(reflection.parent instanceof ProjectReflection)) {
