@@ -48,3 +48,10 @@ module.exports = {
   ],
 };
 ```
+
+To render as the default document set the homePageId to `index` in `docusaurus.config.js`:
+
+```js
+docs: {
+  homePageId: "index",
+```
