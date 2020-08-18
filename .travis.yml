@@ -1,19 +1,18 @@
 language: node_js
 cache:
+  yarn: true
   directories:
     - node_modules
 notifications:
   email: false
 node_js:
   - '10'
-#  - '9'
-#  - '8'
 before_script:
 script:
-  - npm run test
+  - lerna run prepublishOnly --stream
 after_success:
 install:
-  - npm install
+  - lerna bootstrsp
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
