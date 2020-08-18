@@ -2,7 +2,7 @@
 
 A Docusaurus v2 plugin to build api documentation with TypeDoc.
 
-[![npm](https://img.shields.io/npm/v/docusaurus-typedoc-plugin.svg)](https://www.npmjs.com/package/docusaurus-typedoc-plugin)
+[![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
 
 ## What it does?
 
