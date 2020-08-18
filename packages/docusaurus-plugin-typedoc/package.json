@@ -30,6 +30,8 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
+    "lint": "eslint ./src --ext .ts",
+    "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "demo:start": "npm run build && cd samples && npm run start",
     "demo:build-and-serve": "npm run build && cd samples && npm run build && npm run serve",
