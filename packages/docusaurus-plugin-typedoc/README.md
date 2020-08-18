@@ -1,13 +1,50 @@
-start a new project
+# docusaurus-plugin-typedoc (beta)
 
-```
-npx @docusaurus/init@next init typedoc-example classic
+A Docusaurus v2 plugin to build api documentation with TypeDoc.
+
+[![npm](https://img.shields.io/npm/v/docusaurus-typedoc-plugin.svg)](https://www.npmjs.com/package/docusaurus-typedoc-plugin)
+
+## What it does?
+
+- Generates pages as part of the build.
+- Adds Front Matter to pages.
+- Appends releavant JSON to sidebars.js for navigation.
+
+## Installation
+
+This guide assumes that Docusaurus has already been locally installed. See [installation docs](https://v2.docusaurus.io/docs/installation).
+
+```shell
+npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
 ```
 
-```
-npm install typedoc typedoc-plugin-markdown docusarus-plugin-typedoc
-```
+## Usage
 
-cd typedoc-example
+Add the plugin to `docusaurus.config.js`:
 
-plugins: [path.resolve(__dirname, "..", "dist", "plugin")],
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+
+      // plugin options
+      {
+        // list of input files relative to docusaurus.config.js
+        inputFiles: ['../../src/'],
+
+        // docs directory (defaults to `docs`)
+        out: 'docs',
+
+        // Skip updating of sidebars.json (defaults to `false`).
+        skipSidebar: true,
+
+        // Pass in any additional TypeDoc options `(see typedoc --help)`.
+        name: 'My API',
+        excludeExternals: true,
+        //...etc
+      },
+    ],
+  ],
+};
+```
