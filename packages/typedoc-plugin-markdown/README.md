@@ -34,8 +34,8 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
-- `--theme <markdown|docusaurus|docusaurus2|vuepress|bitbucket|path/to/theme>`<br>
-  Specify the theme that should be used. Defaults to `markdown`. Please read [Markdown Themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/THEMES.md) for further details.
+- `--theme <markdown|path/to/custom/theme>`<br>
+  Defaults to `markdown`. See [markdown themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/THEMES.md) for further details.
 - `--namedAnchors`<br>
   Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
 - `--hideSources`<br>
@@ -44,8 +44,6 @@ The following arguments can be used in addition to the default [TypeDoc argument
   Do not print breadcrumbs.
 - `--publicPath`<br>
 - Specifies the base path for all urls. If omitted urls will be relative.
-- `--skipSidebar`<br>
-  Do not update the `sidebar.json` file when used with `docusaurus` or `docusaurus2` theme.
 
 ## License
 
