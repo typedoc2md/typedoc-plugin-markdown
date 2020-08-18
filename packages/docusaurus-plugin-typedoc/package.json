@@ -1,7 +1,21 @@
 {
   "name": "docusaurus-plugin-typedoc",
   "version": "0.0.0",
-  "description": "A plugin for Docusaurus to build pages from TypeDoc.",
+  "description": "A Docusaurus v2 plugin to build api documentation with TypeDoc.",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "bugs": {
+    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
+    "directory": "packages/docusaurus-plugin-typedoc"
+  },
+  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc",
+  "keywords": [],
   "peerDependencies": {
     "typedoc": ">=0.17.0",
     "typedoc-plugin-markdown": ">=2.4.1"
@@ -16,10 +30,11 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "start": "npm run build && cd typedoc-sample && npm run start",
-    "init": "rm -rf typedoc-sample && npx @docusaurus/init@next init typedoc-sample classic",
-    "build": "rm -rf ./dist && tsc",
-    "testx": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "demo:start": "npm run build && cd samples && npm run start",
+    "demo:build-and-serve": "npm run build && cd samples && npm run build && npm run serve",
+    "demo:init": "rm -rf samples && npx @docusaurus/init@next init samples classic",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thomas Grey",
   "license": "MIT"
