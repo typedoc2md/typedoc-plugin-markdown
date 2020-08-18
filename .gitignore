@@ -7,11 +7,10 @@ tmp
 /test/fixtures
 .nyc_output/
 html
+samples
 
 # dependencies
 node_modules
-
-
 
 # IDEs and editors
 /.idea
