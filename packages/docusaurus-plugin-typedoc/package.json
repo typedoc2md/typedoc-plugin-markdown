@@ -33,9 +33,9 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "demo:start": "npm run build && cd samples && npm run start",
-    "demo:build-and-serve": "npm run build && cd samples && npm run build && npm run serve",
-    "demo:init": "rm -rf samples && npx @docusaurus/init@next init samples classic",
+    "demo:start": "npm run build && cd demo && npm run start",
+    "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
+    "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thomas Grey",
