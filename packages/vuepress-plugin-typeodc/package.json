@@ -31,8 +31,8 @@
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "demo:start": "npm run build && cd demo && npm run dev",
-    "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
-    "demo:init": "rm -rf samples && npx @docusaurus/init@next init samples classic",
+    "demo:build": "npm run build && cd demo && npm run build",
+    "demo:init": "rm -rf demo && npx create-vuepress demo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thomas Grey",

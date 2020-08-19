@@ -6,6 +6,7 @@
   "scripts": {
     "build": "lerna run build",
     "test": "lerna run test --stream",
+    "deploy": "lerna publish from-package",
     "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
