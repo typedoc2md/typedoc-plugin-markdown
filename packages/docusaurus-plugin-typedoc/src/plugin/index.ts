@@ -12,7 +12,9 @@ export default function pluginDocusaurus(
   const { siteDir } = context;
 
   const inputFiles = options.inputFiles;
-  const out = options.out || path.resolve(siteDir, 'docs');
+  const docsRoot = path.resolve(siteDir, 'docs');
+  const outFolder = options.out ? options.out : undefined;
+  const out = docsRoot + (options.out ? '/' + options.out : '');
   const skipSidebar = options.skipSidebar || false;
 
   delete options.skipSidebar;
@@ -23,30 +25,33 @@ export default function pluginDocusaurus(
     name: 'docusaurus-plugin-typedoc',
 
     async loadContent() {
-      const app = new Application();
-      app.bootstrap({
-        module: ModuleKind.CommonJS,
-        target: ScriptTarget.ES5,
-        disableOutputCheck: true,
-        readme: 'none',
-        plugin: ['typedoc-plugin-markdown'],
-        theme: path.resolve(__dirname, '..', 'theme'),
-        ...options,
-      });
-
-      const project = app.convert(app.expandInputFiles(inputFiles));
-      app.generateDocs(project, out);
-      if (!skipSidebar) {
-        const sidebarPath = path.resolve(siteDir, 'sidebars.js');
-        const navigation = app.renderer.theme.getNavigation(project);
-        const sidebarContent = getNavObject(navigation);
-        writeSideBar(sidebarContent, sidebarPath);
+      try {
+        const app = new Application();
+        app.bootstrap({
+          module: ModuleKind.CommonJS,
+          target: ScriptTarget.ES5,
+          disableOutputCheck: true,
+          readme: 'none',
+          plugin: ['typedoc-plugin-markdown'],
+          theme: path.resolve(__dirname, '..', 'theme'),
+          ...options,
+        });
+        const project = app.convert(app.expandInputFiles(inputFiles));
+        app.generateDocs(project, out);
+        if (!skipSidebar) {
+          const sidebarPath = path.resolve(siteDir, 'sidebars.js');
+          const navigation = app.renderer.theme.getNavigation(project);
+          const sidebarContent = getNavObject(outFolder, navigation);
+          writeSideBar(sidebarContent, sidebarPath);
+        }
+      } catch (e) {
+        return;
       }
     },
   };
 }
 
-function getNavObject(navigation) {
+function getNavObject(outFolder, navigation) {
   const navObject = {};
   let url = '';
   let navKey = '';
@@ -60,8 +65,9 @@ function getNavObject(navigation) {
       if (navObject[navKey] === undefined) {
         navObject[navKey] = [];
       }
-      if (!navObject[navKey].includes(url)) {
-        navObject[navKey].push(url);
+      const pageUrl = outFolder ? outFolder + '/' + url : url;
+      if (!navObject[navKey].includes(pageUrl)) {
+        navObject[navKey].push(pageUrl);
       }
     });
   });

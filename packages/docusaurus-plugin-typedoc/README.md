@@ -33,8 +33,8 @@ module.exports = {
         // list of input files relative to docusaurus.config.js
         inputFiles: ['../../src/'],
 
-        // docs directory (defaults to `docs`)
-        out: 'docs',
+        // directory relative to docs dir (defaults to `''` the docs root)
+        out: 'api',
 
         // Skip updating of sidebars.json (defaults to `false`).
         skipSidebar: true,
@@ -47,11 +47,4 @@ module.exports = {
     ],
   ],
 };
-```
-
-To render as the default document set the homePageId to `index` in `docusaurus.config.js`:
-
-```js
-docs: {
-  homePageId: "index",
 ```
