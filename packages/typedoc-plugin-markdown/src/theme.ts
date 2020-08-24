@@ -10,6 +10,7 @@ import {
   Renderer,
   UrlMapping,
 } from 'typedoc';
+import { ReflectionGroup } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
@@ -395,6 +396,64 @@ export default class MarkdownTheme extends Theme {
     }
     if (interfacesNavigation.children.length) {
       navigation.children.push(interfacesNavigation);
+    }
+
+    return navigation;
+  }
+
+  getNavigationV3(project: ProjectReflection): NavigationItem {
+    const entryPoint = this.getEntryPoint(project);
+    const navigation = createNavigationItem(project.name);
+    const hasSeperateGlobals = this.application.options.getValue('readme') !== 'none';
+
+    navigation.children.push(
+      createNavigationItem(hasSeperateGlobals ? 'README' : 'Globals', this.indexName + this.fileExt),
+    );
+    if (hasSeperateGlobals) {
+      navigation.children.push(createNavigationItem('Globals', 'globals.md'));
+    }
+    buildGroups(entryPoint.groups);
+    navigation.children.sort(sortCallback);
+
+    function buildGroups(groups: ReflectionGroup[], level = 0) {
+      groups.forEach((reflectionGroup) => {
+        if (reflectionGroup.allChildrenHaveOwnDocument()) {
+          let reflectionGroupItem = navigation.children.find((child) => child.title === reflectionGroup.title);
+          if (!reflectionGroupItem) {
+            reflectionGroupItem = createNavigationItem(reflectionGroup.title);
+            navigation.children.push(reflectionGroupItem);
+          }
+          reflectionGroup.children.forEach((reflectionGroupChild) => {
+            const reflectionGroupChildItem = createNavigationItem(reflectionGroupChild.name, reflectionGroupChild.url);
+            reflectionGroupItem.children.push(reflectionGroupChildItem);
+            const reflection = reflectionGroupChild as ContainerReflection;
+            if (reflection.groups) {
+              buildGroups(reflection.groups, level + 1);
+            }
+          });
+        }
+      });
+    }
+
+    function createNavigationItem(title: string, url?: string) {
+      const navigationItem = new NavigationItem(title.replace(/\"/g, ''), url);
+      navigationItem.children = [];
+      delete navigationItem.cssClasses;
+      delete navigationItem.reflection;
+      delete navigationItem.isLabel;
+      return navigationItem;
+    }
+
+    function sortCallback(a: NavigationItem, b: NavigationItem): number {
+      const weights = {
+        Namespaces: 1,
+        Enumerations: 2,
+        Classes: 3,
+        Interfaces: 4,
+      };
+      const aWeight = weights[a.title] || 0;
+      const bWeight = weights[b.title] || 0;
+      return aWeight - bWeight;
     }
 
     return navigation;
