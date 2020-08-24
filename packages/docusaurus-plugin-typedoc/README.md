@@ -30,21 +30,29 @@ module.exports = {
 
       // plugin options
       {
-        // list of input files relative to docusaurus.config.js
+        // list of input files relative to project (required).
         inputFiles: ['../../src/'],
 
-        // directory relative to docs dir (defaults to `''` the docs root)
+        // docs directory relative to the site directory (defaults to docs).
+        docsRoot: 'docs',
+
+        // output directory relative to docs directory - use '' for docs root (defaults to 'api').
         out: 'api',
 
-        // Skip updating of sidebars.json (defaults to `false`).
-        skipSidebar: true,
+        // Skip updating of sidebars.json (defaults to false).
+        skipSidebar: false,
 
-        // Pass in any additional TypeDoc options `(see typedoc --help)`.
-        name: 'My API',
-        excludeExternals: true,
+        // Pass in any additional Typescript/TypeDoc options (see typedoc --help).
+        mode: 'file',
+        target: 'ES5',
         //...etc
       },
     ],
   ],
 };
 ```
+
+### Notes
+
+- Once built the docs will be available at `/docs/api/index` or equivalent out directory.
+- By default TypeDoc will attempt to clean-up the output directory and will error if the directory contains un-recognised documents. To skip this step and copy files on-top of the output directory use the `disableOutputCheck: true` option.

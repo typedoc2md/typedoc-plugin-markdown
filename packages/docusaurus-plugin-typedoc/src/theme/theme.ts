@@ -1,11 +1,15 @@
-import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter.component';
 import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
+
+import { DocsaurusFrontMatterComponent } from './front-matter-component';
 
 export default class DocusaurusTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     this.indexName = 'index';
-    renderer.addComponent('frontmatter', new FrontMatterComponent(renderer));
+    renderer.addComponent(
+      'docusaurus-frontmatter',
+      new DocsaurusFrontMatterComponent(renderer),
+    );
   }
 }

@@ -2,20 +2,19 @@ import * as path from 'path';
 
 import { LoadContext, Plugin } from '@docusaurus/types';
 import * as fs from 'fs-extra';
-import { Application } from 'typedoc';
-import { ModuleKind, ScriptTarget } from 'typescript';
+import { Application, NavigationItem } from 'typedoc';
 
 export default function pluginDocusaurus(
   context: LoadContext,
   options: Partial<any>,
 ): Plugin<any> {
   const { siteDir } = context;
-
   const inputFiles = options.inputFiles;
-  const docsRoot = path.resolve(siteDir, 'docs');
-  const outFolder = options.out ? options.out : undefined;
-  const out = docsRoot + (options.out ? '/' + options.out : '');
+  const docsRoot = path.resolve(siteDir, options.docsRoot || 'docs');
+  const outFolder = options.out !== undefined ? options.out : 'api';
+  const out = docsRoot + (outFolder ? '/' + outFolder : '');
   const skipSidebar = options.skipSidebar || false;
+  options.hideBreadcrumbs = true;
 
   delete options.skipSidebar;
   delete options.inputFiles;
@@ -28,53 +27,69 @@ export default function pluginDocusaurus(
       try {
         const app = new Application();
         app.bootstrap({
-          module: ModuleKind.CommonJS,
-          target: ScriptTarget.ES5,
-          disableOutputCheck: true,
-          readme: 'none',
           plugin: ['typedoc-plugin-markdown'],
           theme: path.resolve(__dirname, '..', 'theme'),
           ...options,
         });
         const project = app.convert(app.expandInputFiles(inputFiles));
         app.generateDocs(project, out);
-        if (!skipSidebar) {
+
+        if (app.renderer.theme!.isOutputDirectory(out) && !skipSidebar) {
           const sidebarPath = path.resolve(siteDir, 'sidebars.js');
-          const navigation = app.renderer.theme.getNavigation(project);
-          const sidebarContent = getNavObject(outFolder, navigation);
+          const theme = app.renderer.theme as any;
+          const navigation = theme.getNavigationV3(project);
+          const sidebarContent = getSidebarJson(navigation, outFolder);
           writeSideBar(sidebarContent, sidebarPath);
         }
       } catch (e) {
+        // console.log(e);
         return;
       }
     },
   };
 }
 
-function getNavObject(outFolder, navigation) {
-  const navObject = {};
-  let url = '';
-  let navKey = '';
-  navigation.children.forEach((rootNavigation) => {
-    rootNavigation.children.forEach((item) => {
-      url = item.url.replace('.md', '');
-      navKey = url.substr(0, url.indexOf('/'));
-      if (navKey !== undefined && navKey.length) {
-        navKey = navKey[0].toUpperCase() + navKey.slice(1);
-      }
-      if (navObject[navKey] === undefined) {
-        navObject[navKey] = [];
-      }
-      const pageUrl = outFolder ? outFolder + '/' + url : url;
-      if (!navObject[navKey].includes(pageUrl)) {
-        navObject[navKey].push(pageUrl);
-      }
-    });
+function getSidebarJson(navigation: NavigationItem, outFolder: string) {
+  const navJson = [];
+
+  navigation.children.forEach((navigationItem) => {
+    if (navigationItem.url && navigationItem.children.length === 0) {
+      navJson.push(getUrlKey(outFolder, navigationItem.url));
+    } else {
+      const category = {
+        type: 'category',
+        label: navigationItem.title,
+        items: navigationItem.children.map((navItem) => {
+          const url = getUrlKey(outFolder, navItem.url);
+          if (navItem.children.length > 0) {
+            const childGroups = navItem.children.map((child) => {
+              return {
+                type: 'category',
+                label: child.title,
+                items: child.children.map((c) => getUrlKey(outFolder, c.url)),
+              };
+            });
+            return {
+              type: 'category',
+              label: navItem.title,
+              items: [url, ...childGroups],
+            };
+          }
+          return url;
+        }),
+      };
+      navJson.push(category);
+    }
   });
-  return { typedoc: navObject };
+  return { typedocSidebar: navJson };
 }
 
-function writeSideBar(navObject: any, sidebarPath: string) {
+function getUrlKey(outFolder: string, url: string) {
+  const urlKey = url.replace('.md', '');
+  return outFolder ? outFolder + '/' + urlKey : urlKey;
+}
+
+function writeSideBar(navigationJson: any, sidebarPath: string) {
   let jsonContent: any;
   if (!fs.existsSync(sidebarPath)) {
     jsonContent = JSON.parse('{}');
@@ -82,7 +97,7 @@ function writeSideBar(navObject: any, sidebarPath: string) {
     jsonContent = require(sidebarPath);
   }
 
-  jsonContent = Object.assign({}, jsonContent, navObject);
+  jsonContent = Object.assign({}, jsonContent, navigationJson);
   try {
     fs.outputFileSync(
       sidebarPath,
