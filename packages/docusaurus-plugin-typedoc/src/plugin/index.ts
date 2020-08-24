@@ -1,13 +1,10 @@
+import * as fs from 'fs';
 import * as path from 'path';
 
 import { LoadContext, Plugin } from '@docusaurus/types';
-import * as fs from 'fs-extra';
 import { Application, NavigationItem } from 'typedoc';
 
-export default function pluginDocusaurus(
-  context: LoadContext,
-  options: Partial<any>,
-): Plugin<any> {
+export default function pluginDocusaurus(context: LoadContext, options: Partial<any>): Plugin<any> {
   const { siteDir } = context;
   const inputFiles = options.inputFiles;
   const docsRoot = path.resolve(siteDir, options.docsRoot || 'docs');
@@ -99,16 +96,9 @@ function writeSideBar(navigationJson: any, sidebarPath: string) {
 
   jsonContent = Object.assign({}, jsonContent, navigationJson);
   try {
-    fs.outputFileSync(
-      sidebarPath,
-      'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';',
-    );
-    console.log(
-      `[docusaurus-plugin-typedoc] sidebar updated at ${sidebarPath}`,
-    );
+    fs.writeFileSync(sidebarPath, 'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';');
+    console.log(`[docusaurus-plugin-typedoc] sidebar updated at ${sidebarPath}`);
   } catch (e) {
-    console.log(
-      `[docusaurus-plugin-typedoc] failed to update sidebar at ${sidebarPath}`,
-    );
+    console.log(`[docusaurus-plugin-typedoc] failed to update sidebar at ${sidebarPath}`);
   }
 }
