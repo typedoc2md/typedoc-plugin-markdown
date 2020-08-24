@@ -35,7 +35,7 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
 - `--theme <markdown|path/to/custom/theme>`<br>
-  Defaults to `markdown`. See [markdown themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/THEMES.md) for further details.
+  Defaults to `markdown`. See [custom themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/THEMES.md) for further details.
 - `--namedAnchors`<br>
   Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
 - `--hideSources`<br>

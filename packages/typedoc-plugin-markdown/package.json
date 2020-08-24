@@ -13,9 +13,9 @@
     "test": "jest --colors",
     "test:update": "jest --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
-    "samples": "rm -rf ./samples && npm run sample:md & npm run sample:html",
-    "sample:md": "typedoc --name typedoc-sample --out ./samples/md ../../ts-samples/src",
-    "sample:html": "typedoc --name typedoc-sample --mode file --plugin none --out ./samples/html ../../ts-samples/src"
+    "demos": "rm -rf ./demo && yarn run build && npm-run-all demo:*",
+    "demo:md": "typedoc --ignoreCompilerErrors  --name typedoc-demo --out ./demo/md ../../ts-samples/demo/basic/src",
+    "demo:html": "typedoc --ignoreCompilerErrors --name typedoc-demo --plugin none --out ./demo/html ../../ts-samples/demo/basic/src"
   },
   "author": "Thomas Grey",
   "license": "MIT",

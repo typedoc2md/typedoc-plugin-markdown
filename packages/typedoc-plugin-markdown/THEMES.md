@@ -58,7 +58,3 @@ app.generateDocs(app.expandInputFiles(['./src']), 'docs');
 ```
 
 See https://typedoc.org/guides/installation/#node-module
-
-## Additional themes
-
-- [docusaurus-typedoc-plugin](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-typedoc-plugin)
