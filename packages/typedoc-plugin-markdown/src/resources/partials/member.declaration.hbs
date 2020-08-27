@@ -1,17 +1,33 @@
-{{{declarationTitle true}}}
-
-{{> member.sources}}
+{{{declarationTitle false}}}
 
 {{> comment}}
 
 {{#if type.declaration}}
 
+{{#if type.declaration.children}}
+
 {{heading 4}} Type declaration:
 
-{{#with type.declaration}}
+{{#with type.declaration.children}}
 
-{{> parameter}}
+{{{propertyTable}}}
 
 {{/with}}
 
 {{/if}}
+
+{{/if}}
+
+{{#ifIsObjectLiteralType true}}
+
+{{heading 4}} Properties:
+
+{{#with children}}
+
+{{{propertyTable}}}
+
+{{/with}}
+
+{{/ifIsObjectLiteralType}}
+
+{{> member.sources}}

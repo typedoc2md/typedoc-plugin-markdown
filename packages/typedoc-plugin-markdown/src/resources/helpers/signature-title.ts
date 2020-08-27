@@ -1,13 +1,12 @@
 import { SignatureReflection } from 'typedoc';
 
-import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
-export function signatureTitle(this: SignatureReflection, showSymbol: boolean) {
+export function signatureTitle(this: SignatureReflection) {
   const md = [];
 
-  if (showSymbol) {
-    md.push(`${memberSymbol.call(this)} `);
+  if (this.parent && this.parent.flags) {
+    md.push(this.parent.flags.map((flag) => `\`${flag}\``).join(' '));
   }
 
   if (this.name === '__get') {
@@ -31,14 +30,14 @@ export function signatureTitle(this: SignatureReflection, showSymbol: boolean) {
           if (param.flags.isOptional) {
             paramsmd.push('?');
           }
-          paramsmd.push(`\`: ${type.call(param.type)}`);
+          paramsmd.push(`\`: ${type.call(param.type, false)}`);
           return paramsmd.join('');
         })
         .join(', ')
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(`: *${type.call(this.type)}*`);
+    md.push(`: *${type.call(this.type, false)}*`);
   }
   return md.join('') + '\n';
 }

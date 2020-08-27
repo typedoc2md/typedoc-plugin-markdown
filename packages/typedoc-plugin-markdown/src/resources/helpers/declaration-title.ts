@@ -1,28 +1,37 @@
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
-import { heading } from './heading';
-import { memberSymbol } from './member-symbol';
+import { DeclarationReflection, ParameterReflection } from 'typedoc';
+import { IntrinsicType } from 'typedoc/dist/lib/models';
+
 import { type } from './type';
 
-export function declarationTitle(this: DeclarationReflection, showSymbol: boolean) {
-  const isOptional = this.flags.map(flag => flag).includes('Optional');
+export function declarationTitle(
+  this: ParameterReflection | DeclarationReflection,
 
+  expandType = true,
+) {
   const md = [];
 
-  if (this.parent && this.parent.kind !== ReflectionKind.ObjectLiteral && this.kind === ReflectionKind.ObjectLiteral) {
-    md.push(heading(3));
+  if (this.flags && !this.flags.isRest) {
+    md.push(this.flags.map((flag) => `\`${flag}\` `).join(' '));
   }
 
-  if (showSymbol) {
-    md.push(memberSymbol.call(this));
-  }
+  md.push(`${this.flags.isRest ? '...' : ''} **${this.name}**`);
 
-  md.push(`**${this.name}**${isOptional ? '? ' : ''}:`);
-
-  if (this.type) {
-    md.push(`*${type.call(this.type)}*`);
+  const type = getType(this, expandType);
+  if (type) {
+    md.push(`: ${type}`);
   }
   if (this.defaultValue) {
-    md.push(`= ${this.defaultValue}`);
+    md.push(` = ${this.defaultValue}`);
   }
-  return md.join(' ');
+  return md.join('');
+}
+
+function getType(reflection: ParameterReflection | DeclarationReflection, expandType: boolean) {
+  if (reflection.type instanceof IntrinsicType && reflection.type.name === 'object') {
+    return type.call(reflection, expandType);
+  }
+  if (reflection instanceof DeclarationReflection && reflection.signatures) {
+    return type.call(reflection, expandType);
+  }
+  return type.call(reflection.type, expandType);
 }

@@ -5,13 +5,13 @@ import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
 export function parameterTable(this: ParameterReflection[]) {
-  const defaultValues = this.map(param => !!param.defaultValue);
-  const hasDefaultValues = !defaultValues.every(value => !value);
+  const defaultValues = this.map((param) => !!param.defaultValue);
+  const hasDefaultValues = !defaultValues.every((value) => !value);
 
   const comments = this.map(
-    param => (param.comment && !!param.comment.text) || (param.comment && !!param.comment.shortText),
+    (param) => (param.comment && !!param.comment.text) || (param.comment && !!param.comment.shortText),
   );
-  const hasComments = !comments.every(value => !value);
+  const hasComments = !comments.every((value) => !value);
 
   const headers = ['Name', 'Type'];
 
@@ -23,7 +23,7 @@ export function parameterTable(this: ParameterReflection[]) {
     headers.push('Description');
   }
 
-  const rows = this.map(parameter => {
+  const rows = this.map((parameter) => {
     const isOptional = parameter.flags.includes('Optional');
     const typeOut = type.call(parameter.type);
 

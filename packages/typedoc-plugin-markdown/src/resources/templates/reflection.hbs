@@ -94,6 +94,12 @@
 
 {{#with model}}
 
-{{> main}}
+{{#ifIndex}}
+
+{{> index}}
+
+{{/ifIndex}}
+
+{{> members}}
 
 {{/with}}

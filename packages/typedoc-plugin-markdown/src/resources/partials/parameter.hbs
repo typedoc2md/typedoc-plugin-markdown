@@ -14,14 +14,6 @@
 
 {{/if}}
 
-{{#ifIsLiteralType true}}
-
-{{{literal}}}
-
-{{/ifIsLiteralType}}
-
-{{#ifIsLiteralType false}}
-
 {{#each children}}
 
 {{#if signatures}}
@@ -36,40 +28,10 @@
 
 {{else}}
 
-{{{parameterNameAndType}}}
+{{{declarationTitle}}}
 
 {{> comment}}
-
-{{#if children}}
-
-{{> parameter}}
-
-{{/if}}
-
-{{#if type.declaration}}
-
-{{#with type.declaration}}
-
-## type.declaration
-
-{{#ifIsLiteralType true}}
-
-{{{literal}}}
-
-{{/ifIsLiteralType}}
-
-{{#ifIsLiteralType false}}
-
-{{> parameter}}
-
-{{/ifIsLiteralType}}
-
-{{/with}}
-
-{{/if}}
 
 {{/if}}
 
 {{/each}}
-
-{{/ifIsLiteralType}}
