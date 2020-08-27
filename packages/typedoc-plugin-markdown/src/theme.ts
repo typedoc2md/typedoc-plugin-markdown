@@ -255,12 +255,8 @@ export default class MarkdownTheme extends Theme {
     function parseAnchorRef(ref: string) {
       return ref.replace(/["\$]/g, '').replace(/ /g, '-');
     }
-    let anchorPrefix = '';
-    reflection.flags.forEach((flag) => (anchorPrefix += `${flag}-`));
-    const prefixRef = parseAnchorRef(anchorPrefix);
     const reflectionRef = parseAnchorRef(reflection.name);
-    const anchorRef = prefixRef + reflectionRef;
-    return anchorRef.toLowerCase();
+    return reflectionRef.toLowerCase();
   }
 
   /**
