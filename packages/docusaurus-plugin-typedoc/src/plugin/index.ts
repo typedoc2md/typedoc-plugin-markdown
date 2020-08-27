@@ -22,6 +22,10 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
 
     async loadContent() {
       try {
+        const sidebarPath = path.resolve(siteDir, 'sidebars.js');
+
+        cleanSideBar(sidebarPath);
+
         const app = new Application();
         app.bootstrap({
           plugin: ['typedoc-plugin-markdown'],
@@ -32,7 +36,6 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
         app.generateDocs(project, out);
 
         if (app.renderer.theme!.isOutputDirectory(out) && !skipSidebar) {
-          const sidebarPath = path.resolve(siteDir, 'sidebars.js');
           const theme = app.renderer.theme as any;
           const navigation = theme.getNavigationV3(project);
           const sidebarContent = getSidebarJson(navigation, outFolder);
@@ -84,6 +87,17 @@ function getSidebarJson(navigation: NavigationItem, outFolder: string) {
 function getUrlKey(outFolder: string, url: string) {
   const urlKey = url.replace('.md', '');
   return outFolder ? outFolder + '/' + urlKey : urlKey;
+}
+
+function cleanSideBar(sidebarPath: string) {
+  let jsonContent: any;
+  if (fs.existsSync(sidebarPath)) {
+    jsonContent = require(sidebarPath);
+    if (jsonContent.typedocSidebar) {
+      delete jsonContent.typedocSidebar;
+      fs.writeFileSync(sidebarPath, 'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';');
+    }
+  }
 }
 
 function writeSideBar(navigationJson: any, sidebarPath: string) {
