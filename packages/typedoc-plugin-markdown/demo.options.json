@@ -1,0 +1,9 @@
+{
+  "inputFiles": "../../ts-samples/demo/basic/src",
+  "target": "ES5",
+  "name": "My API",
+  "readme": "none",
+  "includes": "./test/stubs/inc/",
+  "media": "./test/stubs/media/",
+  "ignoreCompilerErrors": true
+}

@@ -13,9 +13,10 @@
     "test": "jest --colors",
     "test:update": "jest --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
+    "fixtures": "node ./tasks/fixtures.js",
     "demos": "rm -rf ./demo && yarn run build && npm-run-all demo:*",
-    "demo:md": "typedoc --ignoreCompilerErrors  --name typedoc-demo --out ./demo/md ../../ts-samples/demo/basic/src",
-    "demo:html": "typedoc --ignoreCompilerErrors --name typedoc-demo --plugin none --out ./demo/html ../../ts-samples/demo/basic/src"
+    "demo:md": "typedoc --options ./demo.options.json --out ./demo/md ",
+    "demo:html": "typedoc --options ./demo.options.json --plugin none --out ./demo/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",
