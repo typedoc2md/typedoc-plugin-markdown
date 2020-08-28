@@ -10,18 +10,6 @@ export = (PluginHost: Application) => {
   }
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Deprecated in favour of theme.',
-    name: 'platform',
-    type: ParameterType.String,
-  });
-
-  app.options.addDeclaration({
-    help: 'Markdown Plugin: Deprecated.',
-    name: 'hideProjectTitle',
-    type: ParameterType.Boolean,
-  });
-
-  app.options.addDeclaration({
     help: 'Markdown Plugin: Do not print source file link rendering.',
     name: 'hideSources',
     type: ParameterType.Boolean,
@@ -34,22 +22,15 @@ export = (PluginHost: Application) => {
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Do not print indexes.',
-    name: 'hideIndexes',
-    type: ParameterType.Boolean,
-  });
-
-  app.options.addDeclaration({
     help:
-      'Markdown Plugin: Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.',
+      'Markdown Plugin: Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
     name: 'namedAnchors',
     type: ParameterType.Boolean,
   });
 
   app.options.addDeclaration({
-    help:
-      'Markdown Plugin: Use long navigation title instead of default short one (applicable to navigation / front-matter only).',
-    name: 'longTitle',
+    help: 'Markdown Plugin: Prefix to attach to anchor links.',
+    name: 'bitbucketCloudAnchors',
     type: ParameterType.Boolean,
   });
 
@@ -58,12 +39,6 @@ export = (PluginHost: Application) => {
       'Markdown Plugin: Specifies the base path that all links to be served from. If omitted all urls will be relative.',
     name: 'publicPath',
     type: ParameterType.String,
-  });
-
-  app.options.addDeclaration({
-    help: 'Skips updating of the sidebar.json file when used with docusaurus or docusaurus2 theme',
-    name: 'skipSidebar',
-    type: ParameterType.Boolean,
   });
 
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));

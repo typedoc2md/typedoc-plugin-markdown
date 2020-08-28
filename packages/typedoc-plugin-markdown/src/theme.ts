@@ -63,9 +63,6 @@ export default class MarkdownTheme extends Theme {
   // creates an isolated Handlebars environment to store context aware helpers
   static handlebars = Handlebars.create();
 
-  // is documentation generated as a single output file
-  static isSingleFile = false;
-
   // the root of generated docs
   indexName = 'README';
 
@@ -137,21 +134,10 @@ export default class MarkdownTheme extends Theme {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
     const omitReadme = this.application.options.getValue('readme') === 'none';
-    const inlineGroupTitles = ['Functions', 'Variables', 'Object literals'];
 
-    if (project.groups) {
-      MarkdownTheme.isSingleFile =
-        project.groups && project.groups.every((group) => inlineGroupTitles.includes(group.title));
-    }
-    if (omitReadme || MarkdownTheme.isSingleFile) {
+    if (omitReadme) {
       entryPoint.url = this.indexName + this.fileExt;
-      urls.push(
-        new UrlMapping(
-          this.indexName + this.fileExt,
-          { ...entryPoint, displayReadme: MarkdownTheme.isSingleFile },
-          'reflection.hbs',
-        ),
-      );
+      urls.push(new UrlMapping(this.indexName + this.fileExt, { ...entryPoint }, 'reflection.hbs'));
     } else {
       entryPoint.url = 'globals' + this.fileExt;
       urls.push(new UrlMapping('globals' + this.fileExt, entryPoint, 'reflection.hbs'));
@@ -235,7 +221,10 @@ export default class MarkdownTheme extends Theme {
    */
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
     if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
-      const anchor = this.toAnchorRef(reflection);
+      const reflectionName = reflection.name.toLowerCase();
+      const anchor = this.application.options.getValue('bitbucketCloudAnchors')
+        ? 'markdown-header-' + reflectionName
+        : reflectionName;
       reflection.url = container.url + '#' + anchor;
       reflection.anchor = anchor;
       reflection.hasOwnDocument = false;
@@ -245,18 +234,6 @@ export default class MarkdownTheme extends Theme {
         this.applyAnchorUrl(child, container);
       }
     });
-  }
-
-  /**
-   * Converts a reflection to anchor ref
-   * @param reflection
-   */
-  toAnchorRef(reflection: Reflection) {
-    function parseAnchorRef(ref: string) {
-      return ref.replace(/["\$]/g, '').replace(/ /g, '-');
-    }
-    const reflectionRef = parseAnchorRef(reflection.name);
-    return reflectionRef.toLowerCase();
   }
 
   /**
@@ -280,124 +257,7 @@ export default class MarkdownTheme extends Theme {
     return project;
   }
 
-  getNavigation(project: ProjectReflection) {
-    function createNavigationGroup(name: string, url = null) {
-      const navigationGroup = new NavigationItem(name, url);
-      navigationGroup.children = [];
-      delete navigationGroup.cssClasses;
-      delete navigationGroup.reflection;
-      return navigationGroup;
-    }
-
-    function getNavigationGroup(reflection: DeclarationReflection) {
-      if (reflection.kind === ReflectionKind.Namespace) {
-        return namespacesNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Module) {
-        return modulesNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Class) {
-        return classesNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Enum) {
-        return enumsNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Interface) {
-        return interfacesNavigation;
-      }
-      return null;
-    }
-
-    function addNavigationItem(
-      longTitle: boolean,
-      reflection: DeclarationReflection,
-      parentNavigationItem?: NavigationItem,
-      group?,
-    ) {
-      let navigationGroup: NavigationItem;
-      if (group) {
-        navigationGroup = group;
-      } else {
-        navigationGroup = getNavigationGroup(reflection);
-      }
-      let titlePrefix = '';
-      if (longTitle && parentNavigationItem && parentNavigationItem.title) {
-        titlePrefix = parentNavigationItem.title.replace(/\"/g, '') + '.';
-      }
-
-      const title = titlePrefix + reflection.name.replace(/\"/g, '');
-      const url = reflection.url;
-      const nav = new NavigationItem(title, url, parentNavigationItem);
-      nav.parent = parentNavigationItem;
-
-      navigationGroup.children.push(nav);
-      if (reflection.children) {
-        reflection.children.forEach((reflectionChild) => {
-          if (reflectionChild.hasOwnDocument) {
-            addNavigationItem(longTitle, reflectionChild as DeclarationReflection, nav, navigationGroup);
-          }
-        });
-      }
-      delete nav.cssClasses;
-      delete nav.reflection;
-      return nav;
-    }
-    const isModules = this.application.options.getValue('mode') === 1;
-    const isLongTitle = this.application.options.getValue('longTitle') as boolean;
-
-    const navigation = createNavigationGroup(project.name, this.indexName + this.fileExt);
-    const externalModulesNavigation = createNavigationGroup('External Modules');
-    const modulesNavigation = createNavigationGroup('Modules');
-    const namespacesNavigation = createNavigationGroup('Namespaces');
-    const classesNavigation = createNavigationGroup('Classes');
-    const enumsNavigation = createNavigationGroup('Enums');
-    const interfacesNavigation = createNavigationGroup('Interfaces');
-
-    if (project.groups) {
-      if (!isModules) {
-        project.groups.forEach((group) => {
-          group.children.forEach((reflection) => {
-            if (reflection.hasOwnDocument) {
-              addNavigationItem(isLongTitle, reflection as DeclarationReflection);
-            }
-          });
-        });
-      }
-
-      if (isModules) {
-        project.groups[0].children.forEach((module) => {
-          const moduleNavigation = addNavigationItem(isLongTitle, module as DeclarationReflection);
-          if ((module as DeclarationReflection).children) {
-            (module as DeclarationReflection).children.forEach((reflection) => {
-              if (reflection.hasOwnDocument) {
-                addNavigationItem(isLongTitle, reflection, moduleNavigation);
-              }
-            });
-          }
-        });
-      }
-    }
-
-    if (externalModulesNavigation.children.length) {
-      navigation.children.push(externalModulesNavigation);
-    }
-    if (modulesNavigation.children.length) {
-      navigation.children.push(modulesNavigation);
-    }
-    if (classesNavigation.children.length) {
-      navigation.children.push(classesNavigation);
-    }
-    if (enumsNavigation.children.length) {
-      navigation.children.push(enumsNavigation);
-    }
-    if (interfacesNavigation.children.length) {
-      navigation.children.push(interfacesNavigation);
-    }
-
-    return navigation;
-  }
-
-  getNavigationV3(project: ProjectReflection): NavigationItem {
+  getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
     const navigation = createNavigationItem(project.name);
     const hasSeperateGlobals = this.application.options.getValue('readme') !== 'none';

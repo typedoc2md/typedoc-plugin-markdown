@@ -1,4 +1,5 @@
 import * as path from 'path';
+
 import { Renderer } from 'typedoc';
 import { Converter } from 'typedoc/dist/lib/converter';
 import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/components';
@@ -25,17 +26,33 @@ export class MarkdownPlugin extends ConverterComponent {
    */
   onResolveBegin() {
     const options = this.application.options;
-    const theme = (options.getValue('platform') as string) || (options.getValue('theme') as string);
+    const theme = options.getValue('theme') as string;
 
-    // if the theme is 'default' or 'markdown' load the base markdown theme
-    if (theme === 'default' || theme === 'markdown') {
-      options.setValue('theme', path.join(__dirname));
+    // messaging regarding refactored themes
+    const messagePrefix = (theme: string) => {
+      return `[typedoc-plugin-markdown] Please note the ${theme} theme is no longer supported in v3. `;
+    };
+
+    if (['docusaurus', 'docusaurus2'].includes(theme)) {
+      this.application.logger.warn(messagePrefix('docusaurus') + 'Please use docusaurus-plugin-typedoc.');
+    }
+    if (theme === 'vuepress') {
+      this.application.logger.warn(messagePrefix('vuepress') + 'Please use vuepress-plugin-typedoc.');
+    }
+    if (theme === 'bitbucket') {
+      this.application.logger.warn(
+        messagePrefix('bitbucket') + 'Please use --bitbucketCloudAnchors option to fix anchor links.',
+      );
+    }
+    if (theme === 'gitbook') {
+      this.application.logger.warn(messagePrefix('gitbook'));
     }
 
-    // load any built in sub themes
-    const subThemes = ['docusaurus', 'docusaurus2', 'vuepress', 'gitbook', 'bitbucket'];
-    if (subThemes.includes(theme)) {
-      options.setValue('theme', path.join(__dirname, 'subthemes', theme));
+    const themes = ['default', 'markdown', 'docusaurus', 'docusaurus2', 'bitbucket', 'vuepress', 'gitbook'];
+
+    // if the theme is 'default' or 'markdown' load the base markdown theme
+    if (themes.includes(theme)) {
+      options.setValue('theme', path.join(__dirname));
     }
   }
 }
