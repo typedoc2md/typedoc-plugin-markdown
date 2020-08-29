@@ -63,12 +63,6 @@ export default class MarkdownTheme extends Theme {
   // creates an isolated Handlebars environment to store context aware helpers
   static handlebars = Handlebars.create();
 
-  // the root of generated docs
-  indexName = 'README';
-
-  // the file extension of the generated docs
-  fileExt = '.md';
-
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     this.listenTo(renderer, PageEvent.END, this.onPageEnd, 1024);
@@ -89,17 +83,13 @@ export default class MarkdownTheme extends Theme {
    * @param outputDirectory
    */
   isOutputDirectory(outputDirectory: string): boolean {
+    const defaultFileName = (this.application.options.getValue('defaultFileName') as string) + '.md';
     let isOutputDirectory = true;
 
     const listings = fs.readdirSync(outputDirectory);
 
-    if (!listings.includes(this.indexName + this.fileExt)) {
-      isOutputDirectory = false;
-      return;
-    }
-
     listings.forEach((listing) => {
-      if (!this.allowedDirectoryListings().includes(listing)) {
+      if (!this.allowedDirectoryListings(defaultFileName).includes(listing)) {
         isOutputDirectory = false;
         return;
       }
@@ -109,10 +99,11 @@ export default class MarkdownTheme extends Theme {
   }
 
   // The allowed directory and files listing used to check the output directory
-  allowedDirectoryListings() {
+  allowedDirectoryListings(defaultFileName: string) {
     return [
-      this.indexName + this.fileExt,
-      'globals' + this.fileExt,
+      defaultFileName,
+      'README.md',
+      'globals.md',
       'classes',
       'enums',
       'interfaces',
@@ -133,15 +124,16 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
+    const defaultFileName = (this.application.options.getValue('defaultFileName') as string) + '.md';
     const omitReadme = this.application.options.getValue('readme') === 'none';
 
     if (omitReadme) {
-      entryPoint.url = this.indexName + this.fileExt;
-      urls.push(new UrlMapping(this.indexName + this.fileExt, { ...entryPoint }, 'reflection.hbs'));
+      entryPoint.url = defaultFileName;
+      urls.push(new UrlMapping(defaultFileName, { ...entryPoint }, 'reflection.hbs'));
     } else {
-      entryPoint.url = 'globals' + this.fileExt;
-      urls.push(new UrlMapping('globals' + this.fileExt, entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(this.indexName + this.fileExt, project, 'index.hbs'));
+      entryPoint.url = 'globals.md';
+      urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
+      urls.push(new UrlMapping(defaultFileName, project, 'index.hbs'));
     }
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
@@ -190,7 +182,7 @@ export default class MarkdownTheme extends Theme {
    * @param reflection
    */
   toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
-    return mapping.directory + '/' + this.getUrl(reflection) + this.fileExt;
+    return mapping.directory + '/' + this.getUrl(reflection) + '.md';
   }
 
   /**
@@ -259,12 +251,12 @@ export default class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
-    const navigation = createNavigationItem(project.name);
+    const defaultFileName = (this.application.options.getValue('defaultFileName') as string) + '.md';
     const hasSeperateGlobals = this.application.options.getValue('readme') !== 'none';
+    const longNavigationTitles = this.application.options.getValue('longSidebarLabels');
+    const navigation = createNavigationItem(project.name);
 
-    navigation.children.push(
-      createNavigationItem(hasSeperateGlobals ? 'README' : 'Globals', this.indexName + this.fileExt),
-    );
+    navigation.children.push(createNavigationItem(hasSeperateGlobals ? 'README' : 'Globals', defaultFileName));
     if (hasSeperateGlobals) {
       navigation.children.push(createNavigationItem('Globals', 'globals.md'));
     }
@@ -280,7 +272,25 @@ export default class MarkdownTheme extends Theme {
             navigation.children.push(reflectionGroupItem);
           }
           reflectionGroup.children.forEach((reflectionGroupChild) => {
-            const reflectionGroupChildItem = createNavigationItem(reflectionGroupChild.name, reflectionGroupChild.url);
+            let title = reflectionGroupChild.name;
+            const reflectionLongTitle = (model: Reflection) => {
+              const paths = [];
+              const addPath = (model: any) => {
+                if (model.parent && model.parent.parent) {
+                  addPath(model.parent);
+                  paths.push(model.parent.name.replace(/\"/g, ''));
+                }
+              };
+              if (model && model.kind !== ReflectionKind.Module) {
+                addPath(model);
+              }
+              return paths.length > 0 ? `${paths.join('.')}.${model.name}` : null;
+            };
+            if (longNavigationTitles) {
+              const longTitle = reflectionLongTitle(reflectionGroupChild);
+              title = longTitle ? longTitle : title;
+            }
+            const reflectionGroupChildItem = createNavigationItem(title, reflectionGroupChild.url);
             reflectionGroupItem.children.push(reflectionGroupChildItem);
             const reflection = reflectionGroupChild as ContainerReflection;
             if (reflection.groups) {

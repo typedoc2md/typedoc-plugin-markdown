@@ -85,7 +85,7 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
   }
 
   public breadcrumb(model: Reflection, project: ProjectReflection, md: string[]) {
-    const theme = this.application.renderer.theme as MarkdownTheme;
+    const defaultFileName = (this.application.options.getValue('defaultFileName') as string) + '.md';
     if (model && model.parent) {
       this.breadcrumb(model.parent, project, md);
       if (model.url) {
@@ -95,7 +95,7 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
       }
     } else {
       if (!!project.readme) {
-        md.push(`[${project.name}](${MarkdownTheme.handlebars.helpers.relativeURL(theme.indexName + theme.fileExt)})`);
+        md.push(`[${project.name}](${MarkdownTheme.handlebars.helpers.relativeURL(defaultFileName)})`);
       }
       md.push(
         `[${project.readme ? 'Globals' : project.name}](${MarkdownTheme.handlebars.helpers.relativeURL(project.url)})`,

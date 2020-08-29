@@ -41,5 +41,19 @@ export = (PluginHost: Application) => {
     type: ParameterType.String,
   });
 
+  app.options.addDeclaration({
+    help: 'Markdown Plugin: The filename of the index/entry page (ext not required). Defaults to "README"',
+    name: 'defaultFileName',
+    type: ParameterType.String,
+    defaultValue: 'README',
+  });
+
+  app.options.addDeclaration({
+    help:
+      'Markdown Plugin: Include full module paths in sidebars/navigation (only applicable for themes utilising navigation).',
+    name: 'longSidebarLabels',
+    type: ParameterType.Boolean,
+  });
+
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };
