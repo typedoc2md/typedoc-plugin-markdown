@@ -11,11 +11,12 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
   const outFolder = options.out !== undefined ? options.out : 'api';
   const out = docsRoot + (outFolder ? '/' + outFolder : '');
   const skipSidebar = options.skipSidebar || false;
-  options.hideBreadcrumbs = true;
+  const sidebarParentCategory = options.sidebarParentCategory || undefined;
 
   delete options.skipSidebar;
   delete options.inputFiles;
   delete options.out;
+  delete options.sidebarParentCategory;
 
   return {
     name: 'docusaurus-plugin-typedoc',
@@ -37,8 +38,8 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
 
         if (app.renderer.theme!.isOutputDirectory(out) && !skipSidebar) {
           const theme = app.renderer.theme as any;
-          const navigation = theme.getNavigationV3(project);
-          const sidebarContent = getSidebarJson(navigation, outFolder);
+          const navigation = theme.getNavigation(project);
+          const sidebarContent = getSidebarJson(navigation, outFolder, sidebarParentCategory);
           writeSideBar(sidebarContent, sidebarPath);
         }
       } catch (e) {
@@ -49,7 +50,7 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
   };
 }
 
-function getSidebarJson(navigation: NavigationItem, outFolder: string) {
+function getSidebarJson(navigation: NavigationItem, outFolder: string, parentCategory: string) {
   const navJson = [];
 
   navigation.children.forEach((navigationItem) => {
@@ -81,6 +82,11 @@ function getSidebarJson(navigation: NavigationItem, outFolder: string) {
       navJson.push(category);
     }
   });
+
+  if (parentCategory) {
+    return { typedocSidebar: [{ type: 'category', label: parentCategory, items: navJson }] };
+  }
+
   return { typedocSidebar: navJson };
 }
 

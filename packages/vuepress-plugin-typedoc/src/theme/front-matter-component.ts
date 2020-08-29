@@ -1,9 +1,9 @@
-import { FrontMatterComponentV3 } from 'typedoc-plugin-markdown/dist/components/front-matter-v3.component';
+import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter.component';
 import { Component } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 @Component({ name: 'vuepress-frontmatter' })
-export class VuepressFrontMatterComponent extends FrontMatterComponentV3 {
+export class VuepressFrontMatterComponent extends FrontMatterComponent {
   getYamlItems(page: PageEvent) {
     return {
       ...this.getDefaultValues(page),

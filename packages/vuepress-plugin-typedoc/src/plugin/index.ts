@@ -1,6 +1,4 @@
 import * as path from 'path';
-
-import * as fs from 'fs-extra';
 import { Application, NavigationItem } from 'typedoc';
 
 export const typedocPlugin = (options, ctx) => {
@@ -17,12 +15,14 @@ export const typedocPlugin = (options, ctx) => {
         const inputFiles = options.inputFiles;
         outFolder = options.out ? options.out : 'api';
         const out = sourceDir + '/' + outFolder;
+        const sidebarParentCategory = options.sidebarParentCategory || undefined;
+
         skipSidebar = options.skipSidebar || false;
-        options.hideBreadcrumbs = true;
 
         delete options.skipSidebar;
         delete options.inputFiles;
         delete options.out;
+        delete options.sidebarParentCategory;
 
         const app = new Application();
         app.bootstrap({
@@ -34,11 +34,11 @@ export const typedocPlugin = (options, ctx) => {
         const project = app.convert(app.expandInputFiles(inputFiles));
         app.generateDocs(project, out);
         const theme = app.renderer.theme as any;
-        const navigation = theme.getNavigationV3(project);
+        const navigation = theme.getNavigation(project);
         generateSidebar = app.renderer.theme!.isOutputDirectory(out) && !skipSidebar;
-        sidebarJson = getSidebarJson(navigation, outFolder);
+        sidebarJson = getSidebarJson(navigation, outFolder, sidebarParentCategory);
       } catch (e) {
-        //console.log(e);
+        // console.log(e);
         return;
       }
     },
@@ -61,7 +61,7 @@ export const typedocPlugin = (options, ctx) => {
   };
 };
 
-function getSidebarJson(navigation: NavigationItem, outFolder: string) {
+function getSidebarJson(navigation: NavigationItem, outFolder: string, sidebarParentCategory: string) {
   const navJson = [];
 
   navigation.children.forEach((navigationItem) => {
@@ -77,7 +77,9 @@ function getSidebarJson(navigation: NavigationItem, outFolder: string) {
       });
     }
   });
-  fs.outputFileSync('sidebars.json', JSON.stringify(navJson, null, 2));
+  if (sidebarParentCategory) {
+    return [{ title: sidebarParentCategory, children: navJson }];
+  }
   return navJson;
 }
 function getUrlKey(url: string) {
