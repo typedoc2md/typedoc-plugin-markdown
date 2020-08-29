@@ -9,12 +9,13 @@ ___
 {{heading 2}} {{title}} {{../title}}
 
 {{#each children}}
-
-{{#unless hasOwnDocument}}
+{{#if hasOwnDocument}}
+* [{{{name}}}]({{relativeURL url}})
+{{else}}
 
 {{> member}}
 
-{{/unless}}
+{{/if}}
 
 {{/each}}
 
@@ -25,12 +26,13 @@ ___
 {{heading 2}} {{title}}
 
 {{#each children}}
-
-{{#unless hasOwnDocument}}
+{{#if hasOwnDocument}}
+* [{{{name}}}]({{relativeURL url}})
+{{else}}
 
 {{> member}}
 
-{{/unless}}
+{{/if}}
 
 {{/each}}
 
