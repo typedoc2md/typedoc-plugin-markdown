@@ -1,0 +1,19 @@
+{{#each children}}
+
+{{#ifShowIndexes}}
+
+{{> member}}
+
+{{else}}
+
+{{#if hasOwnDocument}}
+* [{{{name}}}]({{relativeURL url}})
+{{else}}
+
+{{> member}}
+
+{{/if}}
+
+{{/ifShowIndexes}}
+
+{{/each}}

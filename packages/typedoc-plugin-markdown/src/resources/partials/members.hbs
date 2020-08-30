@@ -8,11 +8,19 @@
 
 {{#each children}}
 
+{{#ifShowIndexes}}
+
 {{#unless hasOwnDocument}}
 
 {{> member}}
 
 {{/unless}}
+
+{{else}}
+
+{{> member}}
+
+{{/ifShowIndexes}}
 
 {{/each}}
 
@@ -24,7 +32,19 @@
 
 {{#each groups}}
 
+{{#ifShowIndexes}}
+
+{{#unless allChildrenHaveOwnDocument}}
+
 {{> members.group}}
+
+{{/unless}}
+
+{{else}}
+
+{{> members.group}}
+
+{{/ifShowIndexes}}
 
 {{/each}}
 

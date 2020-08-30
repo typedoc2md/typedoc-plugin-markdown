@@ -8,16 +8,7 @@ ___
 
 {{heading 2}} {{title}} {{../title}}
 
-{{#each children}}
-{{#if hasOwnDocument}}
-* [{{{name}}}]({{relativeURL url}})
-{{else}}
-
-{{> member}}
-
-{{/if}}
-
-{{/each}}
+{{> members.group.children}}
 
 {{/each}}
 
@@ -25,15 +16,6 @@ ___
 
 {{heading 2}} {{title}}
 
-{{#each children}}
-{{#if hasOwnDocument}}
-* [{{{name}}}]({{relativeURL url}})
-{{else}}
-
-{{> member}}
-
-{{/if}}
-
-{{/each}}
+{{> members.group.children}}
 
 {{/if}}
