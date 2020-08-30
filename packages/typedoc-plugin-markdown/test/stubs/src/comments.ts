@@ -1,23 +1,32 @@
 /**
+ * See {@linkcode Greeter} and [Greeters's greeting property]{@link Greeter.greeting}.
+ * Also, check out {@link https://www.google.com|Google} and
+ * {@link https://github.com GitHub}.
+ *
+ * Taken from http://usejsdoc.org/tags-inline-link.html.
+ */
+export const commentWithDocLinks = true;
+
+/**
  * Additionally you can link to other classes, members or functions using double square brackets.
  *
- * - Link to an external reflection: [[BaseClass]]
+ * - Link to an external reflection: [[Greeter]]
  * - Link to an internal reflection: [[commentsInReturn]]
  * - Link to an undefined reflection: [[VOID]]
  */
 
-export let commentsWithSymbolLinks = true;
+export const commentsWithSymbolLinks = true;
 
 /**
  * This is an example of include
  *
- * [[include:class-example.md]] [[include:VOID]]
+ * [[include:class-example.md]]
  *
  * This is an example of handlebars include
  *
  * [[include:class-example.hbs]]
  */
-export let commentsWithIncludes = true;
+export const commentsWithIncludes = true;
 
 /**
  * @name Tag description on same line
@@ -28,7 +37,7 @@ export let commentsWithIncludes = true;
  * @deprecated
  * Another tag description
  */
-export let commentsWithTags = true;
+export const commentsWithTags = true;
 
 /**
  * Some comments with fence blocks
@@ -39,23 +48,12 @@ export let commentsWithTags = true;
  * anotherFunction()
  * ```
  */
-export let commentsWithFencedBlock = true;
+export const commentsWithFencedBlock = true;
 
 /**
  * Comments with a return definition
  * @returns Return comments
  */
 export function commentsInReturn() {
-  return;
-}
-
-/**
- * See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
- * Also, check out {@link https://www.google.com|Google} and
- * {@link https://github.com GitHub}.
- *
- * Taken from http://usejsdoc.org/tags-inline-link.html.
- */
-export function functionWithDocLink() {
   return;
 }
