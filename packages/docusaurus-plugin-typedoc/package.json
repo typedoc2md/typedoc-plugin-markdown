@@ -17,15 +17,15 @@
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc",
   "keywords": [],
   "peerDependencies": {
-    "typedoc": ">=0.17.0",
+    "typedoc": ">=0.19.0",
     "typedoc-plugin-markdown": ">=2.4.2"
   },
   "dependencies": {},
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37",
-    "typedoc": "^0.18.0",
-    "typedoc-plugin-markdown": "^2.4.1",
-    "typescript": "^3.9.7"
+    "typedoc": "^0.19.0",
+    "typedoc-plugin-markdown": "*",
+    "typescript": "^4.0.2"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
