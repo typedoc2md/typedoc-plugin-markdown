@@ -20,7 +20,7 @@ npm install typedoc typedoc-plugin-markdown vuepress-plugin-typedoc --save-dev
 
 ## Usage
 
-Add the plugin to `./vuepress/config.js`:
+Add the plugin to `.vuepress/config.js`:
 
 ```js
 module.exports = {

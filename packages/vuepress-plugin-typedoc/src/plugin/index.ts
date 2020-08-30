@@ -15,7 +15,8 @@ export const typedocPlugin = (options, ctx) => {
         const inputFiles = options.inputFiles;
         outFolder = options.out ? options.out : 'api';
         const out = sourceDir + '/' + outFolder;
-        const sidebarParentCategory = options.sidebarParentCategory || undefined;
+        const sidebarParentCategory =
+          options.sidebarParentCategory || undefined;
 
         skipSidebar = options.skipSidebar || false;
 
@@ -23,6 +24,8 @@ export const typedocPlugin = (options, ctx) => {
         delete options.inputFiles;
         delete options.out;
         delete options.sidebarParentCategory;
+        options.hideBreadcrumbs = true;
+        options.hideIndexes = true;
 
         const app = new Application();
         app.bootstrap({
@@ -35,8 +38,13 @@ export const typedocPlugin = (options, ctx) => {
         app.generateDocs(project, out);
         const theme = app.renderer.theme as any;
         const navigation = theme.getNavigation(project);
-        generateSidebar = app.renderer.theme!.isOutputDirectory(out) && !skipSidebar;
-        sidebarJson = getSidebarJson(navigation, outFolder, sidebarParentCategory);
+        generateSidebar =
+          app.renderer.theme!.isOutputDirectory(out) && !skipSidebar;
+        sidebarJson = getSidebarJson(
+          navigation,
+          outFolder,
+          sidebarParentCategory,
+        );
       } catch (e) {
         // console.log(e);
         return;
@@ -61,13 +69,20 @@ export const typedocPlugin = (options, ctx) => {
   };
 };
 
-function getSidebarJson(navigation: NavigationItem, outFolder: string, sidebarParentCategory: string) {
+function getSidebarJson(
+  navigation: NavigationItem,
+  outFolder: string,
+  sidebarParentCategory: string,
+) {
   const navJson = [];
 
   navigation.children.forEach((navigationItem) => {
     if (navigationItem.url && navigationItem.children.length === 0) {
       const urlKey = navigationItem.url.replace('.md', '');
-      navJson.push([urlKey === 'README' ? `/${outFolder}/` : 'globals', navigationItem.title]);
+      navJson.push([
+        urlKey === 'README' ? `/${outFolder}/` : 'globals',
+        navigationItem.title,
+      ]);
     } else {
       navJson.push({
         title: navigationItem.title,

@@ -10,7 +10,8 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
       ...this.getDefaultValues(page),
       ...{
         sidebar_label: this.getSidebarLabel(page),
-        hide_title: 'true',
+        hide_title: true,
+        hide_table_of_contents: page.url === page.project.url,
       },
     };
   }

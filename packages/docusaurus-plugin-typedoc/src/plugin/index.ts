@@ -1,7 +1,6 @@
+import { LoadContext, Plugin } from '@docusaurus/types';
 import * as fs from 'fs';
 import * as path from 'path';
-
-import { LoadContext, Plugin } from '@docusaurus/types';
 import { Application, NavigationItem } from 'typedoc';
 
 export default function pluginDocusaurus(context: LoadContext, options: Partial<any>): Plugin<any> {
@@ -12,6 +11,8 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
   const out = docsRoot + (outFolder ? '/' + outFolder : '');
   const skipSidebar = options.skipSidebar || false;
   const sidebarParentCategory = options.sidebarParentCategory || undefined;
+  options.hideBreadcrumbs = true;
+  options.hideIndexes = true;
 
   delete options.skipSidebar;
   delete options.inputFiles;
@@ -43,7 +44,7 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
           writeSideBar(sidebarContent, sidebarPath);
         }
       } catch (e) {
-        // console.log(e);
+        console.log(e);
         return;
       }
     },
