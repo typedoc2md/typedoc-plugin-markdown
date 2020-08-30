@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[helpers] comment should build @link references' 1`] = `
+"Taken from http://usejsdoc.org/tags-inline-link.html.
+"
+`;
+
+exports[`[helpers] comment should convert comments with includes' 1`] = `
+"[[include:class-example.md]]
+
+This is an example of handlebars include
+
+[[include:class-example.hbs]]
+"
+`;
+
+exports[`[helpers] comment should convert symbols brackets to symbol links' 1`] = `
+"- Link to an external reflection: [Greeter](../classes/_classes_.greeter.md)
+- Link to an internal reflection: [commentsInReturn](_comments_.md#commentsinreturn)
+- Link to an undefined reflection: [[VOID]]
+"
+`;

@@ -1,57 +1,33 @@
 import * as fs from 'fs-extra';
-import * as path from 'path';
-import { Application, UrlMapping } from 'typedoc';
+import { UrlMapping } from 'typedoc';
+import { setup } from '../test/utils';
 
-describe(`MarkdownTheme`, () => {
+describe(`theme`, () => {
   function getExpectedUrls(urlMappings: UrlMapping[]) {
     const expectedUrls = [];
-    urlMappings.forEach(urlMapping => {
+    urlMappings.forEach((urlMapping) => {
       expectedUrls.push(urlMapping.url);
-      urlMapping.model.children.forEach(reflection => {
-        expectedUrls.push(reflection.url);
-      });
+      if (urlMapping.model.children) {
+        urlMapping.model.children.forEach((reflection) => {
+          expectedUrls.push(reflection.url);
+        });
+      }
     });
     return expectedUrls;
   }
 
-  let app;
-  let project;
-  let theme;
-  const out = path.join(__dirname, 'tmp');
+  let app: any;
+  let project: any;
+  let theme: any;
   beforeAll(() => {
-    app = new Application();
-    app.bootstrap({
-      module: 'CommonJS',
-      target: 'ES5',
-      readme: 'none',
-      theme: 'markdown',
-      logger: 'none',
-      plugin: path.join(__dirname, '../dist/index'),
-    });
-    project = app.convert(app.expandInputFiles(['./test/stubs/']));
-    app.generateDocs(project, out);
+    ({ app, project } = setup());
     theme = app.renderer.theme;
-  });
-
-  afterAll(() => {
-    fs.removeSync(out);
   });
 
   describe(`getUrls`, () => {
     test(`should getUrls'`, () => {
-      const urlMappings = theme.getUrls(project);
+      const urlMappings = app.renderer.theme.getUrls(project);
       expect(getExpectedUrls(urlMappings)).toMatchSnapshot();
-    });
-
-    test(`should getUrls when readme is defined`, () => {
-      const spy = jest.spyOn(app.options, 'getValue').mockReturnValue('./README.md');
-      const urlMappings = theme.getUrls(project);
-      expect(getExpectedUrls(urlMappings)).toMatchSnapshot();
-      spy.mockRestore();
-    });
-
-    test(`should get navigation`, () => {
-      expect(theme.getNavigation(project)).toMatchSnapshot();
     });
   });
 
@@ -93,11 +69,6 @@ describe(`MarkdownTheme`, () => {
 
     test(`should test output directory false with hidden files`, () => {
       directoryListingSpy.mockReturnValue(['.git', 'classes', 'enums', 'interfaces', 'media', 'modules']);
-      expect(theme.isOutputDirectory('/path')).toBeFalsy();
-    });
-
-    test(`should test output directory false without an index`, () => {
-      directoryListingSpy.mockReturnValue(['globals.md', 'classes', 'enums', 'interfaces', 'media', 'modules']);
       expect(theme.isOutputDirectory('/path')).toBeFalsy();
     });
 
@@ -144,11 +115,6 @@ describe(`MarkdownTheme`, () => {
 
     test(`should test output directory false with hidden files`, () => {
       directoryListingSpy.mockReturnValue(['.git', 'classes', 'enums', 'interfaces', 'media', 'modules']);
-      expect(theme.isOutputDirectory('/path')).toBeFalsy();
-    });
-
-    test(`should test output directory false without an index`, () => {
-      directoryListingSpy.mockReturnValue(['globals.md', 'classes', 'enums', 'interfaces', 'media', 'modules']);
       expect(theme.isOutputDirectory('/path')).toBeFalsy();
     });
 

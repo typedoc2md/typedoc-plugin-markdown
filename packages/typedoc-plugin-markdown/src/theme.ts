@@ -74,7 +74,10 @@ export default class MarkdownTheme extends Theme {
     renderer.removeComponent('pretty-print');
 
     // add markdown related componenets
-    renderer.addComponent('helpers', new ContextAwareHelpersComponent(renderer));
+    renderer.addComponent(
+      'helpers',
+      new ContextAwareHelpersComponent(renderer),
+    );
     renderer.addComponent('options', new OptionsComponent(renderer));
   }
 
@@ -83,7 +86,8 @@ export default class MarkdownTheme extends Theme {
    * @param outputDirectory
    */
   isOutputDirectory(outputDirectory: string): boolean {
-    const defaultFileName = (this.application.options.getValue('defaultFileName') as string) + '.md';
+    const defaultFileName =
+      (this.application.options.getValue('defaultFileName') as string) + '.md';
     let isOutputDirectory = true;
 
     const listings = fs.readdirSync(outputDirectory);
@@ -124,12 +128,15 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    const defaultFileName = (this.application.options.getValue('defaultFileName') as string) + '.md';
+    const defaultFileName =
+      (this.application.options.getValue('defaultFileName') as string) + '.md';
     const omitReadme = this.application.options.getValue('readme') === 'none';
 
     if (omitReadme) {
       entryPoint.url = defaultFileName;
-      urls.push(new UrlMapping(defaultFileName, { ...entryPoint }, 'reflection.hbs'));
+      urls.push(
+        new UrlMapping(defaultFileName, { ...entryPoint }, 'reflection.hbs'),
+      );
     } else {
       entryPoint.url = 'globals.md';
       urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
@@ -154,7 +161,10 @@ export default class MarkdownTheme extends Theme {
    * @returns The altered urls array.
    */
 
-  buildUrls(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
+  buildUrls(
+    reflection: DeclarationReflection,
+    urls: UrlMapping[],
+  ): UrlMapping[] {
     const mapping = MarkdownTheme.getMapping(reflection);
     if (mapping) {
       if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
@@ -194,11 +204,20 @@ export default class MarkdownTheme extends Theme {
    * @param separator   The separator used to generate the url.
    * @returns           The generated url.
    */
-  getUrl(reflection: Reflection, relative?: Reflection, separator = '.'): string {
+  getUrl(
+    reflection: Reflection,
+    relative?: Reflection,
+    separator = '.',
+  ): string {
     let url = reflection.getAlias();
 
-    if (reflection.parent && reflection.parent !== relative && !(reflection.parent instanceof ProjectReflection)) {
-      url = this.getUrl(reflection.parent, relative, separator) + separator + url;
+    if (
+      reflection.parent &&
+      reflection.parent !== relative &&
+      !(reflection.parent instanceof ProjectReflection)
+    ) {
+      url =
+        this.getUrl(reflection.parent, relative, separator) + separator + url;
     }
 
     return url;
@@ -240,10 +259,16 @@ export default class MarkdownTheme extends Theme {
         if (reflection instanceof ContainerReflection) {
           return reflection;
         } else {
-          this.application.logger.warn('The given entry point `%s` is not a container.', entryPoint);
+          this.application.logger.warn(
+            'The given entry point `%s` is not a container.',
+            entryPoint,
+          );
         }
       } else {
-        this.application.logger.warn('The entry point `%s` could not be found.', entryPoint);
+        this.application.logger.warn(
+          'The entry point `%s` could not be found.',
+          entryPoint,
+        );
       }
     }
     return project;
@@ -251,12 +276,18 @@ export default class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
-    const defaultFileName = (this.application.options.getValue('defaultFileName') as string) + '.md';
-    const hasSeperateGlobals = this.application.options.getValue('readme') !== 'none';
-    const longNavigationTitles = this.application.options.getValue('longSidebarLabels');
+    const defaultFileName =
+      (this.application.options.getValue('defaultFileName') as string) + '.md';
+    const hasSeperateGlobals =
+      this.application.options.getValue('readme') !== 'none';
     const navigation = createNavigationItem(project.name);
 
-    navigation.children.push(createNavigationItem(hasSeperateGlobals ? 'README' : 'Globals', defaultFileName));
+    navigation.children.push(
+      createNavigationItem(
+        hasSeperateGlobals ? 'README' : 'Globals',
+        defaultFileName,
+      ),
+    );
     if (hasSeperateGlobals) {
       navigation.children.push(createNavigationItem('Globals', 'globals.md'));
     }
@@ -266,31 +297,18 @@ export default class MarkdownTheme extends Theme {
     function buildGroups(groups: ReflectionGroup[], level = 0) {
       groups.forEach((reflectionGroup) => {
         if (reflectionGroup.allChildrenHaveOwnDocument()) {
-          let reflectionGroupItem = navigation.children.find((child) => child.title === reflectionGroup.title);
+          let reflectionGroupItem = navigation.children.find(
+            (child) => child.title === reflectionGroup.title,
+          );
           if (!reflectionGroupItem) {
             reflectionGroupItem = createNavigationItem(reflectionGroup.title);
             navigation.children.push(reflectionGroupItem);
           }
           reflectionGroup.children.forEach((reflectionGroupChild) => {
-            let title = reflectionGroupChild.name;
-            const reflectionLongTitle = (model: Reflection) => {
-              const paths = [];
-              const addPath = (model: any) => {
-                if (model.parent && model.parent.parent) {
-                  addPath(model.parent);
-                  paths.push(model.parent.name.replace(/\"/g, ''));
-                }
-              };
-              if (model && model.kind !== ReflectionKind.Module) {
-                addPath(model);
-              }
-              return paths.length > 0 ? `${paths.join('.')}.${model.name}` : null;
-            };
-            if (longNavigationTitles) {
-              const longTitle = reflectionLongTitle(reflectionGroupChild);
-              title = longTitle ? longTitle : title;
-            }
-            const reflectionGroupChildItem = createNavigationItem(title, reflectionGroupChild.url);
+            const reflectionGroupChildItem = createNavigationItem(
+              reflectionGroupChild.getFullName().replace(/\"/g, ''),
+              reflectionGroupChild.url,
+            );
             reflectionGroupItem.children.push(reflectionGroupChildItem);
             const reflection = reflectionGroupChild as ContainerReflection;
             if (reflection.groups) {
@@ -326,7 +344,9 @@ export default class MarkdownTheme extends Theme {
   }
 
   private onPageEnd(page: PageEvent) {
-    page.contents = page.contents ? MarkdownTheme.formatContents(page.contents) : '';
+    page.contents = page.contents
+      ? MarkdownTheme.formatContents(page.contents)
+      : '';
   }
 
   /**
@@ -336,8 +356,12 @@ export default class MarkdownTheme extends Theme {
    * @param reflection  The reflection whose mapping should be resolved.
    * @returns           The found mapping or undefined if no mapping could be found.
    */
-  static getMapping(reflection: DeclarationReflection): TemplateMapping | undefined {
-    return MarkdownTheme.MAPPINGS.find((mapping) => reflection.kindOf(mapping.kind));
+  static getMapping(
+    reflection: DeclarationReflection,
+  ): TemplateMapping | undefined {
+    return MarkdownTheme.MAPPINGS.find((mapping) =>
+      reflection.kindOf(mapping.kind),
+    );
   }
 
   static formatContents(contents: string) {
