@@ -29,7 +29,10 @@ export function type(
     | QueryType,
   expandType = true,
 ) {
-  if (this instanceof ReferenceType && (this.reflection || (this.name && this.typeArguments))) {
+  if (
+    this instanceof ReferenceType &&
+    (this.reflection || (this.name && this.typeArguments))
+  ) {
     return getReferenceType(this);
   }
 
@@ -57,7 +60,10 @@ export function type(
     return getStringLiteralType(this);
   }
 
-  if (this instanceof ReflectionType && (this.declaration.children || this.declaration.indexSignature)) {
+  if (
+    this instanceof ReflectionType &&
+    (this.declaration.children || this.declaration.indexSignature)
+  ) {
     return expandType ? getLiteralType(this.declaration) : 'object';
   }
 
@@ -87,14 +93,18 @@ export function type(
 function getReferenceType(model: ReferenceType) {
   const reflection =
     model.reflection && model.reflection.url
-      ? [`[${model.reflection.name}](${MarkdownTheme.handlebars.helpers.relativeURL(model.reflection.url)})`]
+      ? [
+          `[${
+            model.reflection.name
+          }](${MarkdownTheme.handlebars.helpers.relativeURL(
+            model.reflection.url,
+          )})`,
+        ]
       : [model.name];
-  if (model.typeArguments) {
+  if (model.typeArguments && model.typeArguments.length > 0) {
     reflection.push(
       `‹${model.typeArguments
-        .map((typeArgument) => {
-          return `${type.call(typeArgument)}`;
-        })
+        .map((typeArgument) => `${type.call(typeArgument)}`)
         .join(', ')}›`,
     );
   }
@@ -103,7 +113,9 @@ function getReferenceType(model: ReferenceType) {
 
 function getArrayType(model: ArrayType) {
   const arrayType = type.call(model.elementType);
-  return model.elementType.type === 'union' ? `(${arrayType})[]` : `${arrayType}[]`;
+  return model.elementType.type === 'union'
+    ? `(${arrayType})[]`
+    : `${arrayType}[]`;
 }
 
 function getUnionType(model: UnionType) {
@@ -111,7 +123,9 @@ function getUnionType(model: UnionType) {
 }
 
 function getIntersectionType(model: IntersectionType) {
-  return model.types.map((intersectionType) => type.call(intersectionType)).join(' & ');
+  return model.types
+    .map((intersectionType) => type.call(intersectionType))
+    .join(' & ');
 }
 
 function getTupleType(model: TupleType) {
@@ -129,20 +143,28 @@ function getStringLiteralType(model: StringLiteralType) {
 function getLiteralType(declarationReflection: DeclarationReflection) {
   let indexSignature;
   if (declarationReflection.indexSignature) {
-    const key = declarationReflection.indexSignature.parameters.map((param) => `[${param.name}:${param.type}]`);
+    const key = declarationReflection.indexSignature.parameters.map(
+      (param) => `[${param.name}:${param.type}]`,
+    );
     const obj = type.call(declarationReflection.indexSignature.type);
     indexSignature = `${key}: ${obj}; `;
   }
   let types;
   if (declarationReflection.children) {
     types = declarationReflection.children.map((obj) => {
-      return `${obj.name}${obj.flags.includes('Optional') ? '?' : ''}: ${type.call(
-        obj.signatures || obj.children ? obj : obj.type,
-      )} ${obj.defaultValue ? ` = ${obj.defaultValue}` : ''}`;
+      return `${obj.name}${
+        obj.flags.includes('Optional') ? '?' : ''
+      }: ${type.call(obj.signatures || obj.children ? obj : obj.type)} ${
+        obj.defaultValue ? ` = ${obj.defaultValue}` : ''
+      }`;
     });
   }
-  return `{ ${indexSignature ? indexSignature : ''}${types ? types.join('; ') : ''} }${
-    declarationReflection.defaultValue ? ` = ${declarationReflection.defaultValue}` : ''
+  return `{ ${indexSignature ? indexSignature : ''}${
+    types ? types.join('; ') : ''
+  } }${
+    declarationReflection.defaultValue
+      ? ` = ${declarationReflection.defaultValue}`
+      : ''
   }`;
 }
 
@@ -150,9 +172,9 @@ export function getFunctionType(signatures: SignatureReflection[]) {
   const functions = signatures.map((fn) => {
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          return `${param.flags.isRest ? '...' : ''}${param.name}${param.flags.isOptional ? '?' : ''}: ${type.call(
-            param.type ? param.type : param,
-          )}`;
+          return `${param.flags.isRest ? '...' : ''}${param.name}${
+            param.flags.isOptional ? '?' : ''
+          }: ${type.call(param.type ? param.type : param)}`;
         })
       : [];
     const returns = type.call(fn.type);
