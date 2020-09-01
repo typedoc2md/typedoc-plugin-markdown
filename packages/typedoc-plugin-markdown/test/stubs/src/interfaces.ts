@@ -33,11 +33,3 @@ class Clock implements ClockInterface {
   }
   constructor(h: number, m: number) {}
 }
-
-interface LabeledValue {
-  label: string;
-}
-
-function printLabel(labeledObj: LabeledValue) {
-  console.log(labeledObj.label);
-}

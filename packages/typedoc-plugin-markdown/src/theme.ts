@@ -15,7 +15,7 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { ContextAwareHelpersComponent } from './components/helpers.component';
+import { ContextAwareHelpersComponent } from './components/context-aware-helpers.component';
 import { OptionsComponent } from './components/options.component';
 
 /**
@@ -75,7 +75,7 @@ export default class MarkdownTheme extends Theme {
 
     // add markdown related componenets
     renderer.addComponent(
-      'helpers',
+      'contextAwareHelpers',
       new ContextAwareHelpersComponent(renderer),
     );
     renderer.addComponent('options', new OptionsComponent(renderer));

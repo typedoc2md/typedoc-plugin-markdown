@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FrontMatterComponent should prepend YAML block to start of page 1`] = `
+"---
+id: \\"_access_access_\\"
+title: \\"access/access\\"
+---
+
+[CONTENT]"
+`;

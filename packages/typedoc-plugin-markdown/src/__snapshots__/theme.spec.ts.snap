@@ -5,6 +5,7 @@ Array [
   "README.md",
   "modules/_classes_.md",
   "modules/_comments_.md",
+  "modules/_variables_.md",
   "modules/_classes_.md",
   "classes/_classes_.greeter.md",
   "modules/_classes_.md#greeter",
@@ -19,5 +20,14 @@ Array [
   "modules/_comments_.md#commentswithsymbollinks",
   "modules/_comments_.md#commentswithtags",
   "modules/_comments_.md#commentsinreturn",
+  "modules/_variables_.md",
+  "modules/_variables_.md#color",
+  "modules/_variables_.md#decimal",
+  "modules/_variables_.md#isdone",
+  "modules/_variables_.md#list",
+  "modules/_variables_.md#n",
+  "modules/_variables_.md#notsure",
+  "modules/_variables_.md#u",
+  "modules/_variables_.md#x",
 ]
 `;
