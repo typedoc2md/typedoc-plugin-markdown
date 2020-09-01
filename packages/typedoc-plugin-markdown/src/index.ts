@@ -1,15 +1,18 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
   const app = PluginHost.owner;
+
   if (app.converter.hasComponent('markdown')) {
     return;
   }
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: The filename of the index/entry page (ext not required). Defaults to "README"',
+    help:
+      'Markdown Plugin: The filename of the index/entry page (ext not required). Defaults to "README"',
     name: 'defaultFileName',
     type: ParameterType.String,
     defaultValue: 'README',
@@ -30,7 +33,7 @@ export = (PluginHost: Application) => {
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Do not print source file link rendering.',
+    help: 'Markdown Plugin: DEPRECATED - use --disableSources',
     name: 'hideSources',
     type: ParameterType.Boolean,
     defaultValue: false,
