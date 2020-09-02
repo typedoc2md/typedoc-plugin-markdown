@@ -366,10 +366,7 @@ export default class MarkdownTheme extends Theme {
 
   static formatContents(contents: string) {
     return (
-      contents
-        .replace(/[\r\n]{3,}/g, '\n\n')
-        .replace(/!spaces/g, '')
-        .replace(/^\s+|\s+$/g, '') + '\n'
+      contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
     );
   }
 }
