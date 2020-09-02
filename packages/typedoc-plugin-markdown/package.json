@@ -10,7 +10,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "test": "jest --colors",
+    "test": "jest --updateSnapshot --colors",
     "test:update": "jest --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
     "fixtures": "node ./tasks/fixtures.js",
@@ -21,7 +21,7 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "engines": {
-    "node": ">= 8.0.0"
+    "node": ">=10.0.0"
   },
   "bugs": {
     "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
@@ -41,14 +41,14 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.17.0"
+    "typedoc": ">=0.19.0"
   },
   "dependencies": {
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6"
   },
   "devDependencies": {
-    "typedoc": "^0.18.0",
-    "typescript": "^3.9.7"
+    "typedoc": "^0.19.0",
+    "typescript": "^4.0.2"
   }
 }

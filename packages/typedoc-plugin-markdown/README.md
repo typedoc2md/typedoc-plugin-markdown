@@ -9,8 +9,7 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeS
 
 The plugin will replace the default HTML theme with a built-in Markdown theme, and expose some additional arguments.
 
-By default, the Markdown theme will attempt to render standard CommonMark, suitable for the majority of Markdown engines.
-It follows the same structure and file patterns as the default HTML theme.
+Please not if using Docusaurus or Vuepress xxx.
 
 ## Installation
 
@@ -34,16 +33,32 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
-- `--theme <markdown|path/to/custom/theme>`<br>
-  Defaults to `markdown`. See [custom themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/THEMES.md) for further details.
-- `--namedAnchors`<br>
-  Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
-- `--hideSources`<br>
-  Do not print source file link rendering.
-- `--hideBreadcrumbs`<br>
-  Do not print breadcrumbs.
-- `--publicPath`<br>
-- Specifies the base path for all urls. If omitted urls will be relative.
+- `--defaultFileName<string>`<br>
+  Specify the filename of the index/entry page (ext not required). Defaults to `README`.
+- `--hideBreadcrumbs<boolean>`<br>
+  Do not render breadcrumbs. Defaults to `false`.
+- `--hideIndexes<boolean>`<br>
+  Do not render page indexes. Defaults to `false`.
+- `--publicPath<string>`<br>
+  Specify the base path for all urls. If undefined urls will be relative. Defaults to `undefined`.
+
+**Anchor links**
+
+The following options can be ignored with the majority of implementations.
+
+- `--namedAnchors<boolean>`<br>
+  Use HTML named anchors tags for implementations that do not automatically assign header ids.
+- `--bitbucketCloudAnchors<boolean>`<br>
+  Fix anchors in Bitbucket Cloud which escapes all HTML and implements a proprietry anchor linking implementation.
+
+## Additional plugins
+
+- docusaurus-plugin-typedoc
+- vuepress-plugin-typedoc
+
+## Theme customisation
+
+## Version 3
 
 ## License
 

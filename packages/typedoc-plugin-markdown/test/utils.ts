@@ -1,9 +1,14 @@
 import * as path from 'path';
 
+import * as fs from 'fs-extra';
+import * as Handlebars from 'handlebars';
+import * as tmp from 'tmp';
 import { Application, ProjectReflection, Renderer } from 'typedoc';
 import { ModuleKind, ScriptTarget } from 'typescript';
 
 import MarkdownTheme from '../src/theme';
+
+tmp.setGracefulCleanup();
 
 export class TestApp {
   app: Application;
@@ -11,15 +16,17 @@ export class TestApp {
   project: ProjectReflection;
   renderer: Renderer;
   theme: MarkdownTheme;
+  outDir: string;
+  tmpobj: tmp.DirResult;
 
   constructor(files?: string[]) {
     this.app = new Application();
     this.inputFiles = files
-      ? files.map((file) => './test/stubs/src/' + file + '.ts')
+      ? files.map((file) => './test/stubs/src/')
       : ['./test/stubs/'];
   }
 
-  bootstrap(options = {}) {
+  bootstrap(options = {}, generate = true) {
     this.app.bootstrap({
       module: ModuleKind.CommonJS,
       target: ScriptTarget.ES5,
@@ -29,12 +36,14 @@ export class TestApp {
       plugin: [path.join(__dirname, '../dist/index')],
       ...options,
     });
+
     this.project = this.app.convert(this.app.expandInputFiles(this.inputFiles));
-    //if (generate) {
-    this.app.generateDocs(this.project, path.join(__dirname, 'tmp'));
-    //}
-    this.theme = this.app.renderer.theme as MarkdownTheme;
-    this.renderer = this.app.renderer;
+    if (generate) {
+      this.tmpobj = tmp.dirSync();
+      this.app.generateDocs(this.project, this.tmpobj.name);
+      this.theme = this.app.renderer.theme as MarkdownTheme;
+      this.renderer = this.app.renderer;
+    }
   }
 
   convert() {
@@ -44,6 +53,11 @@ export class TestApp {
   getComponent(component: string) {
     return this.app.renderer.getComponent(component);
   }
+
+  getDoc(file: string) {
+    const result = fs.readFileSync(this.tmpobj.name + file);
+    return result.toString();
+  }
 }
 
 export const handlebarsOptionsStub = {
@@ -51,3 +65,33 @@ export const handlebarsOptionsStub = {
   inverse: () => false,
   hash: {},
 };
+
+export const stubPartials = () => {
+  [
+    'index',
+    'comment',
+    'hierarchy',
+    'members',
+    'implements',
+    'member.signature',
+    'member.indexSignatures',
+    'typeParameters',
+  ].forEach((partial) => {
+    Handlebars.registerPartial(partial, `[partial: ${partial}]`);
+  });
+};
+
+export const stubHelpers = () => {
+  Handlebars.registerHelper('type', () => '[helper: type]');
+};
+
+export const compileHandlabrs = (template, model) =>
+  MarkdownTheme.formatContents(
+    template(
+      { model },
+      {
+        allowProtoMethodsByDefault: true,
+        allowProtoPropertiesByDefault: true,
+      },
+    ),
+  );
