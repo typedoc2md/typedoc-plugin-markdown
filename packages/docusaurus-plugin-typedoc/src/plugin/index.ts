@@ -16,6 +16,8 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
   delete options.skipSidebar;
   delete options.inputFiles;
   delete options.out;
+  delete options.id;
+  delete options.docsRoot;
 
   return {
     name: 'docusaurus-plugin-typedoc',
