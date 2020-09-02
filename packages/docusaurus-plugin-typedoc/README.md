@@ -42,6 +42,9 @@ module.exports = {
         // Skip updating of sidebars.json (defaults to false).
         skipSidebar: false,
 
+        // The parent category label for sidebar - (defaults to 'none')
+        sidebarParentCategory: 'API',
+
         // Pass in any additional Typescript/TypeDoc options (see typedoc --help).
         mode: 'file',
         target: 'ES5',

@@ -1,9 +1,13 @@
-import { LoadContext, Plugin } from '@docusaurus/types';
 import * as fs from 'fs';
 import * as path from 'path';
+
+import { LoadContext, Plugin } from '@docusaurus/types';
 import { Application, NavigationItem } from 'typedoc';
 
-export default function pluginDocusaurus(context: LoadContext, options: Partial<any>): Plugin<any> {
+export default function pluginDocusaurus(
+  context: LoadContext,
+  options: Partial<any>,
+): Plugin<any> {
   const { siteDir } = context;
   const inputFiles = options.inputFiles;
   const docsRoot = path.resolve(siteDir, options.docsRoot || 'docs');
@@ -40,7 +44,11 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
         if (app.renderer.theme!.isOutputDirectory(out) && !skipSidebar) {
           const theme = app.renderer.theme as any;
           const navigation = theme.getNavigation(project);
-          const sidebarContent = getSidebarJson(navigation, outFolder, sidebarParentCategory);
+          const sidebarContent = getSidebarJson(
+            navigation,
+            outFolder,
+            sidebarParentCategory,
+          );
           writeSideBar(sidebarContent, sidebarPath);
         }
       } catch (e) {
@@ -51,7 +59,11 @@ export default function pluginDocusaurus(context: LoadContext, options: Partial<
   };
 }
 
-function getSidebarJson(navigation: NavigationItem, outFolder: string, parentCategory: string) {
+function getSidebarJson(
+  navigation: NavigationItem,
+  outFolder: string,
+  parentCategory: string,
+) {
   const navJson = [];
 
   navigation.children.forEach((navigationItem) => {
@@ -85,7 +97,11 @@ function getSidebarJson(navigation: NavigationItem, outFolder: string, parentCat
   });
 
   if (parentCategory) {
-    return { typedocSidebar: [{ type: 'category', label: parentCategory, items: navJson }] };
+    return {
+      typedocSidebar: [
+        { type: 'category', label: parentCategory, items: navJson },
+      ],
+    };
   }
 
   return { typedocSidebar: navJson };
@@ -102,7 +118,10 @@ function cleanSideBar(sidebarPath: string) {
     jsonContent = require(sidebarPath);
     if (jsonContent.typedocSidebar) {
       delete jsonContent.typedocSidebar;
-      fs.writeFileSync(sidebarPath, 'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';');
+      fs.writeFileSync(
+        sidebarPath,
+        'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';',
+      );
     }
   }
 }
@@ -117,9 +136,16 @@ function writeSideBar(navigationJson: any, sidebarPath: string) {
 
   jsonContent = Object.assign({}, jsonContent, navigationJson);
   try {
-    fs.writeFileSync(sidebarPath, 'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';');
-    console.log(`[docusaurus-plugin-typedoc] sidebar updated at ${sidebarPath}`);
+    fs.writeFileSync(
+      sidebarPath,
+      'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';',
+    );
+    console.log(
+      `[docusaurus-plugin-typedoc] sidebar updated at ${sidebarPath}`,
+    );
   } catch (e) {
-    console.log(`[docusaurus-plugin-typedoc] failed to update sidebar at ${sidebarPath}`);
+    console.log(
+      `[docusaurus-plugin-typedoc] failed to update sidebar at ${sidebarPath}`,
+    );
   }
 }
