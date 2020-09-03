@@ -21,6 +21,8 @@ export default function pluginDocusaurus(
   delete options.skipSidebar;
   delete options.inputFiles;
   delete options.out;
+  delete options.id;
+  delete options.docsRoot;
   delete options.sidebarParentCategory;
 
   return {
