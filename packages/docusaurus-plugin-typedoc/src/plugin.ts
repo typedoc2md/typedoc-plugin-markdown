@@ -1,61 +1,97 @@
+import { LoadContext, Plugin } from '@docusaurus/types';
 import * as fs from 'fs';
 import * as path from 'path';
-
-import { LoadContext, Plugin } from '@docusaurus/types';
 import { Application, NavigationItem } from 'typedoc';
+import { DocsaurusFrontMatterComponent } from './components/front-matter-component';
+import { MdxComponent } from './components/mdx-component';
+import { LoadedContent, PluginOptions } from './types';
+
+const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
+  inputFiles: [],
+  docsRoot: 'docs',
+  out: 'api',
+  entryFileName: 'index',
+  hideBreadcrumbs: true,
+  hideIndexes: true,
+  skipSidebar: false,
+  sidebar: {
+    parentCategory: 'none',
+    fullNames: false,
+  },
+};
+
+const app = new Application();
 
 export default function pluginDocusaurus(
   context: LoadContext,
-  options: Partial<any>,
-): Plugin<any> {
+  pluginOptions: Partial<PluginOptions>,
+): Plugin<LoadedContent> {
   const { siteDir } = context;
+
+  const options = { ...DEFAULT_PLUGIN_OPTIONS, ...pluginOptions };
+
   const inputFiles = options.inputFiles;
-  const docsRoot = path.resolve(siteDir, options.docsRoot || 'docs');
+  const sidebar = options.skipSidebar ? null : options.sidebar;
+  const docsRoot = path.resolve(siteDir, options.docsRoot);
   const outFolder = options.out !== undefined ? options.out : 'api';
   const out = docsRoot + (outFolder ? '/' + outFolder : '');
-  const skipSidebar = options.skipSidebar || false;
-  const sidebarParentCategory = options.sidebarParentCategory || undefined;
-  options.hideBreadcrumbs = true;
-  options.hideIndexes = true;
 
+  // remove docusaurus props (everything else is passed to renderer)
+  delete options.id;
+  delete options.sidebar;
   delete options.skipSidebar;
   delete options.inputFiles;
   delete options.out;
-  delete options.id;
   delete options.docsRoot;
-  delete options.sidebarParentCategory;
 
   return {
     name: 'docusaurus-plugin-typedoc',
 
     async loadContent() {
-      try {
-        const sidebarPath = path.resolve(siteDir, 'sidebars.js');
-
-        cleanSideBar(sidebarPath);
-
-        const app = new Application();
-        app.bootstrap({
-          plugin: ['typedoc-plugin-markdown'],
-          theme: path.resolve(__dirname, '..', 'theme'),
-          ...options,
-        });
-        const project = app.convert(app.expandInputFiles(inputFiles));
-        app.generateDocs(project, out);
-
-        if (app.renderer.theme!.isOutputDirectory(out) && !skipSidebar) {
-          const theme = app.renderer.theme as any;
-          const navigation = theme.getNavigation(project);
-          const sidebarContent = getSidebarJson(
-            navigation,
-            outFolder,
-            sidebarParentCategory,
-          );
-          writeSideBar(sidebarContent, sidebarPath);
-        }
-      } catch (e) {
-        console.log(e);
+      // re-compiling will cause an infinate render loop with dev server
+      if (app.renderer.theme) {
         return;
+      }
+
+      app.renderer.addComponent(
+        'docusaurus-frontmatter',
+        new DocsaurusFrontMatterComponent(app.renderer, sidebar),
+      );
+
+      app.renderer.addComponent(
+        'docusaurus-mdx',
+        new MdxComponent(app.renderer),
+      );
+
+      // bootstrap
+      app.bootstrap({
+        plugin: ['typedoc-plugin-markdown'],
+        ...options,
+      });
+
+      // render project
+      const project = app.convert(app.expandInputFiles(inputFiles));
+
+      app.generateDocs(project, out);
+      return {
+        app,
+        project,
+      };
+    },
+
+    async contentLoaded({ content }) {
+      const { app, project } = content;
+
+      const sidebarPath = path.resolve(siteDir, 'sidebars.js');
+      if (sidebar && content) {
+        const theme = app.renderer.theme as any;
+        const navigation = theme.getNavigation(project);
+        const sidebarContent = getSidebarJson(
+          navigation,
+          outFolder,
+          sidebar.parentCategory,
+        );
+        writeSideBar(sidebarContent, sidebarPath, options.logger !== 'none');
       }
     },
   };
@@ -114,21 +150,7 @@ function getUrlKey(outFolder: string, url: string) {
   return outFolder ? outFolder + '/' + urlKey : urlKey;
 }
 
-function cleanSideBar(sidebarPath: string) {
-  let jsonContent: any;
-  if (fs.existsSync(sidebarPath)) {
-    jsonContent = require(sidebarPath);
-    if (jsonContent.typedocSidebar) {
-      delete jsonContent.typedocSidebar;
-      fs.writeFileSync(
-        sidebarPath,
-        'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';',
-      );
-    }
-  }
-}
-
-function writeSideBar(navigationJson: any, sidebarPath: string) {
+function writeSideBar(navigationJson: any, sidebarPath: string, log: boolean) {
   let jsonContent: any;
   if (!fs.existsSync(sidebarPath)) {
     jsonContent = JSON.parse('{}');
@@ -142,9 +164,11 @@ function writeSideBar(navigationJson: any, sidebarPath: string) {
       sidebarPath,
       'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';',
     );
-    console.log(
-      `[docusaurus-plugin-typedoc] sidebar updated at ${sidebarPath}`,
-    );
+    if (log) {
+      console.log(
+        `[docusaurus-plugin-typedoc] sidebar updated at ${sidebarPath}`,
+      );
+    }
   } catch (e) {
     console.log(
       `[docusaurus-plugin-typedoc] failed to update sidebar at ${sidebarPath}`,

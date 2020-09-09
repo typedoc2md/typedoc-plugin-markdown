@@ -36,14 +36,17 @@ module.exports = {
         // docs directory relative to the site directory (defaults to docs).
         docsRoot: 'docs',
 
-        // output directory relative to docs directory - use '' for docs root (defaults to 'api').
+        // output directory relative to docs directory - use '' for docs root (defaults to 'api'
         out: 'api',
 
-        // Skip updating of sidebars.json (defaults to false).
-        skipSidebar: false,
-
-        // The parent category label for sidebar - (defaults to 'none')
-        sidebarParentCategory: 'API',
+        // boolean or sidebar config object.
+        // Use 'false' to skip sidebar (defaults to true)
+        sidebar: {
+          // display full names with module path if applicable - (defaults to 'false')
+          fullNames: true,
+          // the parent category label for sidebar - (defaults to 'none' / no parent category)
+          parentCategory: 'API',
+        },
 
         // Pass in any additional Typescript/TypeDoc options (see typedoc --help).
         mode: 'file',
