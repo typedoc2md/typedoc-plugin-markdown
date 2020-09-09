@@ -12,28 +12,28 @@ export = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     help:
-      'Markdown Plugin: The filename of the index/entry page (ext not required). Defaults to "README"',
-    name: 'defaultFileName',
+      '[Markdown Plugin] The filename of the index/entry page (ext not required). Defaults to "README"',
+    name: 'entryFileName',
     type: ParameterType.String,
     defaultValue: 'README',
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Do not print breadcrumbs.',
+    help: '[Markdown Plugin] Do not print breadcrumbs.',
     name: 'hideBreadcrumbs',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Do not render the index for globals and modules.',
+    help: '[Markdown Plugin] Do not render the index for globals and modules.',
     name: 'hideIndexes',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: DEPRECATED - use --disableSources',
+    help: '[Markdown Plugin] DEPRECATED - use --disableSources',
     name: 'hideSources',
     type: ParameterType.Boolean,
     defaultValue: false,
@@ -41,21 +41,21 @@ export = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     help:
-      'Markdown Plugin: Specifies the base path that all links to be served from. If omitted all urls will be relative.',
+      '[Markdown Plugin] Specifies the base path that all links to be served from. If omitted all urls will be relative.',
     name: 'publicPath',
     type: ParameterType.String,
   });
 
   app.options.addDeclaration({
     help:
-      'Markdown Plugin: Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
+      '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
     name: 'namedAnchors',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Prefix to attach to anchor links.',
+    help: '[Markdown Plugin] Prefix to attach to anchor links.',
     name: 'bitbucketCloudAnchors',
     type: ParameterType.Boolean,
     defaultValue: false,

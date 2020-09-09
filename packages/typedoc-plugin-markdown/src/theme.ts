@@ -6,14 +6,16 @@ import {
   NavigationItem,
   ProjectReflection,
   Reflection,
-  ReflectionKind,
   Renderer,
   UrlMapping,
 } from 'typedoc';
 import { ReflectionGroup } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
-import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+import {
+  DefaultTheme,
+  TemplateMapping,
+} from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
 import { ContextAwareHelpersComponent } from './components/context-aware-helpers.component';
 import { OptionsComponent } from './components/options.component';
@@ -25,43 +27,8 @@ import { OptionsComponent } from './components/options.component';
  */
 
 export default class MarkdownTheme extends Theme {
-  /**
-   * @See DefaultTheme.MAPPINGS
-   */
-  static MAPPINGS: TemplateMapping[] = [
-    {
-      kind: [ReflectionKind.Class],
-      isLeaf: false,
-      directory: 'classes',
-      template: 'reflection.hbs',
-    },
-    {
-      kind: [ReflectionKind.Interface],
-      isLeaf: false,
-      directory: 'interfaces',
-      template: 'reflection.hbs',
-    },
-    {
-      kind: [ReflectionKind.Enum],
-      isLeaf: false,
-      directory: 'enums',
-      template: 'reflection.hbs',
-    },
-    {
-      kind: [ReflectionKind.Namespace, ReflectionKind.Module],
-      isLeaf: false,
-      directory: 'modules',
-      template: 'reflection.hbs',
-    },
-  ];
-
-  /**
-   * @See DefaultTheme.URL_PREFIX
-   */
-  static URL_PREFIX = /^(http|ftp)s?:\/\//;
-
   // creates an isolated Handlebars environment to store context aware helpers
-  static handlebars = Handlebars.create();
+  static HANDLEBARS = Handlebars.create();
 
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
@@ -86,14 +53,14 @@ export default class MarkdownTheme extends Theme {
    * @param outputDirectory
    */
   isOutputDirectory(outputDirectory: string): boolean {
-    const defaultFileName =
-      (this.application.options.getValue('defaultFileName') as string) + '.md';
+    const entryFileName =
+      (this.application.options.getValue('entryFileName') as string) + '.md';
     let isOutputDirectory = true;
 
     const listings = fs.readdirSync(outputDirectory);
 
     listings.forEach((listing) => {
-      if (!this.allowedDirectoryListings(defaultFileName).includes(listing)) {
+      if (!this.allowedDirectoryListings(entryFileName).includes(listing)) {
         isOutputDirectory = false;
         return;
       }
@@ -103,9 +70,9 @@ export default class MarkdownTheme extends Theme {
   }
 
   // The allowed directory and files listing used to check the output directory
-  allowedDirectoryListings(defaultFileName: string) {
+  allowedDirectoryListings(entryFileName: string) {
     return [
-      defaultFileName,
+      entryFileName,
       'README.md',
       'globals.md',
       'classes',
@@ -128,19 +95,19 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    const defaultFileName =
-      (this.application.options.getValue('defaultFileName') as string) + '.md';
+    const entryFileName =
+      (this.application.options.getValue('entryFileName') as string) + '.md';
     const omitReadme = this.application.options.getValue('readme') === 'none';
 
     if (omitReadme) {
-      entryPoint.url = defaultFileName;
+      entryPoint.url = entryFileName;
       urls.push(
-        new UrlMapping(defaultFileName, { ...entryPoint }, 'reflection.hbs'),
+        new UrlMapping(entryFileName, { ...entryPoint }, 'reflection.hbs'),
       );
     } else {
       entryPoint.url = 'globals.md';
       urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(defaultFileName, project, 'index.hbs'));
+      urls.push(new UrlMapping(entryFileName, project, 'index.hbs'));
     }
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
@@ -165,9 +132,9 @@ export default class MarkdownTheme extends Theme {
     reflection: DeclarationReflection,
     urls: UrlMapping[],
   ): UrlMapping[] {
-    const mapping = MarkdownTheme.getMapping(reflection);
+    const mapping = DefaultTheme.getMapping(reflection);
     if (mapping) {
-      if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
+      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
         const url = this.toUrl(mapping, reflection);
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
@@ -231,7 +198,7 @@ export default class MarkdownTheme extends Theme {
    * @param container   The nearest reflection having an own document.
    */
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
-    if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
+    if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
       const reflectionName = reflection.name.toLowerCase();
       const anchor = this.application.options.getValue('bitbucketCloudAnchors')
         ? 'markdown-header-' + reflectionName
@@ -276,8 +243,8 @@ export default class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
-    const defaultFileName =
-      (this.application.options.getValue('defaultFileName') as string) + '.md';
+    const entryFileName =
+      (this.application.options.getValue('entryFileName') as string) + '.md';
     const hasSeperateGlobals =
       this.application.options.getValue('readme') !== 'none';
     const navigation = createNavigationItem(project.name);
@@ -285,7 +252,7 @@ export default class MarkdownTheme extends Theme {
     navigation.children.push(
       createNavigationItem(
         hasSeperateGlobals ? 'README' : 'Globals',
-        defaultFileName,
+        entryFileName,
       ),
     );
     if (hasSeperateGlobals) {
@@ -349,24 +316,12 @@ export default class MarkdownTheme extends Theme {
       : '';
   }
 
-  /**
-   * @see DefaultTheme.getMapping
-   * Return the template mapping fore the given reflection.
-   *
-   * @param reflection  The reflection whose mapping should be resolved.
-   * @returns           The found mapping or undefined if no mapping could be found.
-   */
-  static getMapping(
-    reflection: DeclarationReflection,
-  ): TemplateMapping | undefined {
-    return MarkdownTheme.MAPPINGS.find((mapping) =>
-      reflection.kindOf(mapping.kind),
-    );
-  }
-
   static formatContents(contents: string) {
     return (
-      contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
+      contents
+        .replace(/[\r\n]{3,}/g, '\n\n')
+        .replace(/!spaces/g, '')
+        .replace(/^\s+|\s+$/g, '') + '\n'
     );
   }
 }
