@@ -11,7 +11,6 @@
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "test": "jest --updateSnapshot --colors",
-    "test:update": "jest --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
     "fixtures": "node ./tasks/fixtures.js",
     "demos": "rm -rf ./demo && yarn run build && npm-run-all demo:*",
