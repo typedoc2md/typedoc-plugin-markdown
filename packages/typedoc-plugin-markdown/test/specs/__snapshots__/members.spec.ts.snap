@@ -5,8 +5,7 @@ exports[`Members: (member) should compile a signature members' 1`] = `
 
 ▸ **signatureMember**(): *void*
 
-*Defined in members.ts:3*
-
+[partial: member.sources]
 **Returns:** *void*
 
 ___
@@ -18,7 +17,7 @@ exports[`Members: (member) should compile declaration members' 1`] = `
 
 • \`Let\`  **declarationMember**: string
 
-*Defined in members.ts:1*
+[partial: member.sources]
 
 ___
 "
@@ -29,8 +28,7 @@ exports[`Members: (member) should compile members with getter' 1`] = `
 
 • get **getter**(): *string*
 
-*Defined in members.ts:11*
-
+[partial: member.sources]
 **Returns:** *string*
 
 ___
@@ -48,8 +46,7 @@ Name | Type |
 ------ | ------ |
 \`value\` | string |
 
-*Defined in members.ts:15*
-
+[partial: member.sources]
 **Returns:** *void*
 
 ___

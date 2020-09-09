@@ -9,7 +9,7 @@ describe(`Signatures:`, () => {
   beforeAll(() => {
     testApp = new TestApp(['signatures.ts']);
     testApp.bootstrap();
-    TestApp.stubPartials(['comment']);
+    TestApp.stubPartials(['comment', 'member.sources']);
     partial = TestApp.getPartial('member.signature');
   });
 

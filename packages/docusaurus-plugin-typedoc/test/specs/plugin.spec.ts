@@ -1,11 +1,12 @@
 import { LoadContext, PluginContentLoadedActions } from '@docusaurus/types';
 import * as fs from 'fs-extra';
 import * as tmp from 'tmp';
+
 import plugin from '../../dist';
 
 tmp.setGracefulCleanup();
 
-const tmpobj = tmp.dirSync;
+const tmpobj = tmp.dirSync();
 
 const bootstrap = (context, content, options) => {
   plugin(context, options).contentLoaded({

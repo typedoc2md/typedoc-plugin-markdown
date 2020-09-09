@@ -10,7 +10,7 @@ describe(`Reflections:`, () => {
   beforeAll(() => {
     testApp = new TestApp(['declarations.ts']);
     testApp.bootstrap();
-    TestApp.stubPartials([]);
+    TestApp.stubPartials(['member.sources']);
     TestApp.stubHelpers([]);
 
     template = TestApp.getPartial('member.declaration');

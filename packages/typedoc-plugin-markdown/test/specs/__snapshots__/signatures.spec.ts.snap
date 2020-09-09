@@ -5,8 +5,7 @@ exports[`Signatures: should compile callable signature' 1`] = `
 
 [partial: comment]
 
-*Defined in signatures.ts:99*
-
+[partial: member.sources]
 **Returns:** *string*
 "
 `;
@@ -23,8 +22,7 @@ Name | Type |
 \`arg\` | boolean[] &#124; number |
 \`...args\` | (string &#124; number)[] |
 
-*Defined in signatures.ts:92*
-
+[partial: member.sources]
 **Returns:** *any*
 "
 `;
@@ -41,8 +39,7 @@ Name | Type | Description |
 \`requiredParam\` | string | A normal parameter. |
 \`optionalParam?\` | string | An optional parameter.  |
 
-*Defined in signatures.ts:35*
-
+[partial: member.sources]
 **Returns:** *void*
 "
 `;
@@ -60,8 +57,7 @@ Name | Type | Description |
 \`paramG\` | any | This is a parameter flagged with any.     This sentence is placed in the next line.  |
 \`paramA\` | any |    This is a **parameter** pointing to an interface.   |
 
-*Defined in signatures.ts:12*
-
+[partial: member.sources]
 **Returns:** *number*
 "
 `;
@@ -77,8 +73,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 \`...rest\` | string[] | The rest parameter.  |
 
-*Defined in signatures.ts:64*
-
+[partial: member.sources]
 **Returns:** *string*
 "
 `;
@@ -95,8 +90,7 @@ Name | Type |
 \`arg\` | boolean[] &#124; number |
 \`...args\` | (string &#124; number)[] |
 
-*Defined in signatures.ts:92*
-
+[partial: member.sources]
 **Returns:** *any*
 "
 `;

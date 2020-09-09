@@ -3,14 +3,14 @@
 exports[`Reflections: should compile a an udefined 1`] = `
 "• \`Let\`  **undefinedNumber**: number
 
-*Defined in declarations.ts:2*
+[partial: member.sources]
 "
 `;
 
 exports[`Reflections: should compile a variable with default value 1`] = `
 "• \`Const\`  **stringWithDefaultValue**: \\"variable\\"  = \\"variable\\"
 
-*Defined in declarations.ts:1*
+[partial: member.sources]
 "
 `;
 
@@ -27,7 +27,7 @@ Name | Type | Description |
 \`valueY\` | () => string | Comment for value Y |
 \`valueX\` | { valueA: number[]  = [100, 200, 300]; valueZ: string  = \\"foo\\"; valueY: (z: string) => { a: string  = \\"test\\"; b: string  = z }  } | - |
 
-*Defined in declarations.ts:4*
+[partial: member.sources]
 "
 `;
 
@@ -44,6 +44,6 @@ Name | Type | Description |
 \`valueY\` | () => string | - |
 \`valueZ\` | string | Comment for valueZ |
 
-*Defined in declarations.ts:30*
+[partial: member.sources]
 "
 `;

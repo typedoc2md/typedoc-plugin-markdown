@@ -2,10 +2,10 @@
 
 exports[`Plugin: (render) should write docs 1`] = `
 Array [
-  "README.md",
   "classes",
   "enums",
   "globals.md",
+  "index.md",
   "interfaces",
   "modules",
 ]
@@ -13,20 +13,12 @@ Array [
 
 exports[`Plugin: (sidebars) should generate sidebars.js' 1`] = `
 "module.exports = {
-  \\"someSidebar\\": {
-    \\"Docusaurus\\": [
-      \\"doc1\\"
-    ],
-    \\"Features\\": [
-      \\"mdx\\"
-    ]
-  },
   \\"typedocSidebar\\": [
     {
       \\"type\\": \\"category\\",
       \\"label\\": \\"none\\",
       \\"items\\": [
-        \\"api/README\\",
+        \\"api/index\\",
         \\"api/globals\\",
         {
           \\"type\\": \\"category\\",
@@ -75,20 +67,12 @@ exports[`Plugin: (sidebars) should generate sidebars.js' 1`] = `
 
 exports[`Plugin: (sidebars) should update sidebars.js' 1`] = `
 "module.exports = {
-  \\"someSidebar\\": {
-    \\"Docusaurus\\": [
-      \\"doc1\\"
-    ],
-    \\"Features\\": [
-      \\"mdx\\"
-    ]
-  },
   \\"typedocSidebar\\": [
     {
       \\"type\\": \\"category\\",
       \\"label\\": \\"none\\",
       \\"items\\": [
-        \\"api/README\\",
+        \\"api/index\\",
         \\"api/globals\\",
         {
           \\"type\\": \\"category\\",

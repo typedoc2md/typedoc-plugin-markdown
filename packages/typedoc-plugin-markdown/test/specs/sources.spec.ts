@@ -1,6 +1,16 @@
 import * as Handlebars from 'handlebars';
+import { DeclarationReflection } from 'typedoc';
 
 import { TestApp } from '../test-app';
+
+const getProp = (reflection: DeclarationReflection) => {
+  const prop = reflection.findReflectionByName('prop');
+  prop.sources = prop.sources.map((source) => {
+    delete source.url;
+    return source;
+  });
+  return prop;
+};
 
 describe(`Sources:`, () => {
   let testApp: TestApp;
@@ -15,7 +25,7 @@ describe(`Sources:`, () => {
     expect(
       TestApp.compileTemplate(
         partial,
-        testApp.findReflection('SomeClass').findReflectionByName('prop'),
+        getProp(testApp.findReflection('SomeClass')),
       ),
     ).toMatchSnapshot();
   });
@@ -24,7 +34,7 @@ describe(`Sources:`, () => {
     expect(
       TestApp.compileTemplate(
         partial,
-        testApp.findReflection('AnotherInterface').findReflectionByName('prop'),
+        getProp(testApp.findReflection('AnotherInterface')),
       ),
     ).toMatchSnapshot();
   });

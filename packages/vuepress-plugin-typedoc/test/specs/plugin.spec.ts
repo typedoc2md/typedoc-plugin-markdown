@@ -2,7 +2,7 @@ import * as tmp from 'tmp';
 
 tmp.setGracefulCleanup();
 
-const tmpobj = tmp.dirSync;
+const tmpobj = tmp.dirSync();
 
 describe(`Plugin:`, () => {
   beforeAll(async () => {});
