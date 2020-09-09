@@ -12,7 +12,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
 
     const application = this.application;
 
-    MarkdownTheme.handlebars.registerHelper('ifShowNamedAnchors', function (
+    MarkdownTheme.HANDLEBARS.registerHelper('ifShowNamedAnchors', function (
       options,
     ) {
       return application.options.getValue('namedAnchors')
@@ -20,7 +20,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
         : options.inverse(this);
     });
 
-    MarkdownTheme.handlebars.registerHelper('ifShowBreadcrumbs', function (
+    MarkdownTheme.HANDLEBARS.registerHelper('ifShowBreadcrumbs', function (
       options,
     ) {
       return application.options.getValue('hideBreadcrumbs')
@@ -28,7 +28,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
         : options.fn(this);
     });
 
-    MarkdownTheme.handlebars.registerHelper('ifShowIndexes', function (
+    MarkdownTheme.HANDLEBARS.registerHelper('ifShowIndexes', function (
       options,
     ) {
       return application.options.getValue('hideIndexes')
@@ -36,7 +36,7 @@ export class OptionsComponent extends ContextAwareRendererComponent {
         : options.fn(this);
     });
 
-    MarkdownTheme.handlebars.registerHelper('ifShowSources', function (
+    MarkdownTheme.HANDLEBARS.registerHelper('ifShowSources', function (
       options,
     ) {
       return application.options.getValue('hideSources')

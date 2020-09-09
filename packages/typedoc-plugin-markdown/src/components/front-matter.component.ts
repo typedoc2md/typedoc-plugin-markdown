@@ -1,8 +1,9 @@
 import * as path from 'path';
-
-import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
+import {
+  Component,
+  ContextAwareRendererComponent,
+} from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { reflectionTitle } from '../resources/helpers/reflection-title';
 
 @Component({ name: 'frontmatter' })
@@ -23,7 +24,12 @@ export class FrontMatterComponent extends ContextAwareRendererComponent {
   getYamlString(yamlItems: { [key: string]: string | number | boolean }) {
     const yaml = `---
 ${Object.entries(yamlItems)
-  .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${this.escapeYAMLString(value)}"` : value}`)
+  .map(
+    ([key, value]) =>
+      `${key}: ${
+        typeof value === 'string' ? `"${this.escapeYAMLString(value)}"` : value
+      }`,
+  )
   .join('\n')}
 ---`;
     return yaml;

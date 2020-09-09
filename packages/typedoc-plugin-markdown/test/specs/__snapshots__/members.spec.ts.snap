@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Members: (member) should compile a signature members' 1`] = `
+"### signatureMember
+
+▸ **signatureMember**(): *void*
+
+*Defined in members.ts:3*
+
+**Returns:** *void*
+
+___
+"
+`;
+
+exports[`Members: (member) should compile declaration members' 1`] = `
+"### declarationMember
+
+• \`Let\`  **declarationMember**: string
+
+*Defined in members.ts:1*
+
+___
+"
+`;
+
+exports[`Members: (member) should compile members with getter' 1`] = `
+"### getter
+
+• get **getter**(): *string*
+
+*Defined in members.ts:11*
+
+**Returns:** *string*
+
+___
+"
+`;
+
+exports[`Members: (member) should compile members with setter' 1`] = `
+"### setter
+
+• set **setter**(\`value\`: string): *void*
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+\`value\` | string |
+
+*Defined in members.ts:15*
+
+**Returns:** *void*
+
+___
+"
+`;
+
+exports[`Members: (member) should compile reference members' 1`] = `
+"### ReferenceMember
+
+*Renames and exports: [NotExportedClass]([helper: relativeURL])*
+
+___
+"
+`;
+
+exports[`Members: (members) should compile class members' 1`] = `
+"## Properties
+
+[partial: member]
+
+## Accessors
+
+[partial: member]
+
+[partial: member]
+"
+`;
+
+exports[`Members: (members) should compile module members without index' 1`] = `
+"## References
+
+[partial: member]
+
+## Classes
+
+* [ClassWithAccessorMembers]([helper: relativeURL])
+
+* [NotExportedClass]([helper: relativeURL])
+
+## Variables
+
+[partial: member]
+
+## Functions
+
+[partial: member]
+"
+`;
+
+exports[`Members: (members) should compile module members' 1`] = `
+"## References
+
+[partial: member]
+
+## Variables
+
+[partial: member]
+
+## Functions
+
+[partial: member]
+"
+`;

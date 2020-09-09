@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reflections: should compile a callable reflection 1`] = `
+"## Hierarchy
+
+[helper: hierarchy]
+
+## Callable
+
+[partial: member.signature]
+
+[partial: index]
+
+[partial: members]
+"
+`;
+
+exports[`Reflections: should compile an indexable reflection 1`] = `
+"## Hierarchy
+
+[helper: hierarchy]
+
+## Indexable
+
+▪ \\\\[index: *number*\\\\]: *string*
+
+[partial: comment]
+
+[partial: index]
+
+[partial: members]
+"
+`;
+
+exports[`Reflections: should compile default layout with breadcrumbs 1`] = `
+"[helper: breadcrumbs]
+
+# Class: ReflectionClass
+
+CONTENTS
+"
+`;
+
+exports[`Reflections: should compile default layout with type params in title 1`] = `
+"[helper: breadcrumbs]
+
+# Interface: ReflectionWithTypeParams ‹**T, V**›
+
+CONTENTS
+"
+`;
+
+exports[`Reflections: should compile default layout without breadcrumbs 1`] = `
+"# Class: ReflectionClass
+
+CONTENTS
+"
+`;
+
+exports[`Reflections: should compile reflection with comment and without index 1`] = `
+"[partial: comment]
+
+## Hierarchy
+
+[helper: hierarchy]
+
+[partial: members]
+"
+`;
+
+exports[`Reflections: should compile reflection with type params 1`] = `
+"## Type parameters
+
+* T
+* V
+
+## Hierarchy
+
+[helper: hierarchy]
+
+[partial: index]
+
+[partial: members]
+"
+`;

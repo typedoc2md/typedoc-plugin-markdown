@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plugin: (render) should write docs 1`] = `
+Array [
+  "README.md",
+  "classes",
+  "enums",
+  "globals.md",
+  "interfaces",
+  "modules",
+]
+`;
+
+exports[`Plugin: (sidebars) should generate sidebars.js' 1`] = `
+"module.exports = {
+  \\"someSidebar\\": {
+    \\"Docusaurus\\": [
+      \\"doc1\\"
+    ],
+    \\"Features\\": [
+      \\"mdx\\"
+    ]
+  },
+  \\"typedocSidebar\\": [
+    {
+      \\"type\\": \\"category\\",
+      \\"label\\": \\"none\\",
+      \\"items\\": [
+        \\"api/README\\",
+        \\"api/globals\\",
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Modules\\",
+          \\"items\\": [
+            \\"api/modules/_theme_\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Namespaces\\",
+          \\"items\\": [
+            \\"api/modules/_theme_.namespacea\\",
+            \\"api/modules/_theme_.namespaceb\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Enumerations\\",
+          \\"items\\": [
+            \\"api/enums/_theme_.enumitema\\",
+            \\"api/enums/_theme_.enumitemb\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Classes\\",
+          \\"items\\": [
+            \\"api/classes/_theme_.classitema\\",
+            \\"api/classes/_theme_.classitemb\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Interfaces\\",
+          \\"items\\": [
+            \\"api/interfaces/_theme_.interfaceitema\\",
+            \\"api/interfaces/_theme_.interfaceitemb\\"
+          ]
+        }
+      ]
+    }
+  ]
+};"
+`;
+
+exports[`Plugin: (sidebars) should update sidebars.js' 1`] = `
+"module.exports = {
+  \\"someSidebar\\": {
+    \\"Docusaurus\\": [
+      \\"doc1\\"
+    ],
+    \\"Features\\": [
+      \\"mdx\\"
+    ]
+  },
+  \\"typedocSidebar\\": [
+    {
+      \\"type\\": \\"category\\",
+      \\"label\\": \\"none\\",
+      \\"items\\": [
+        \\"api/README\\",
+        \\"api/globals\\",
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Modules\\",
+          \\"items\\": [
+            \\"api/modules/_theme_\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Namespaces\\",
+          \\"items\\": [
+            \\"api/modules/_theme_.namespacea\\",
+            \\"api/modules/_theme_.namespaceb\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Enumerations\\",
+          \\"items\\": [
+            \\"api/enums/_theme_.enumitema\\",
+            \\"api/enums/_theme_.enumitemb\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Classes\\",
+          \\"items\\": [
+            \\"api/classes/_theme_.classitema\\",
+            \\"api/classes/_theme_.classitemb\\"
+          ]
+        },
+        {
+          \\"type\\": \\"category\\",
+          \\"label\\": \\"Interfaces\\",
+          \\"items\\": [
+            \\"api/interfaces/_theme_.interfaceitema\\",
+            \\"api/interfaces/_theme_.interfaceitemb\\"
+          ]
+        }
+      ]
+    }
+  ]
+};"
+`;

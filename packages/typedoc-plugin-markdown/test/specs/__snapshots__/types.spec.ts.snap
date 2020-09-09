@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Types: should compile 'array' type' 1`] = `
+"string[]
+"
+`;
+
+exports[`Types: should compile 'intersection' type' 1`] = `
+"[IntersectionClassA](_types_.intersectionclassa.md) & [IntersectionClassB](_types_.intersectionclassb.md)
+"
+`;
+
+exports[`Types: should compile 'literal' type' 1`] = `
+"{ a: string ; b: number  }
+"
+`;
+
+exports[`Types: should compile 'stringLiteral' type' 1`] = `
+"\\"blue\\"
+"
+`;
+
+exports[`Types: should compile 'tuple' type' 1`] = `
+"[string, number]
+"
+`;
+
+exports[`Types: should compile 'union' of string literals types' 1`] = `
+"\\"ease-in\\"  | \\"ease-out\\"  | \\"ease-in-out\\"
+"
+`;
+
+exports[`Types: should compile intrinsic type' 1`] = `
+"string
+"
+`;

@@ -1,5 +1,5 @@
 import MarkdownTheme from '../../theme';
 
 export function comment(this: string) {
-  return MarkdownTheme.handlebars.helpers.comment.call(this);
+  return MarkdownTheme.HANDLEBARS.helpers.comment.call(this);
 }

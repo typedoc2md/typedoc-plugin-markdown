@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FrontMatter: should return front matter with full names 1`] = `
+"---
+id: \\"_frontmatter_.frontmatterclass\\"
+title: \\"Class: FrontMatterClass\\"
+sidebar_label: \\"frontmatter.FrontMatterClass\\"
+hide_title: true
+hide_table_of_contents: false
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: should return front matter without sidebar 1`] = `
+"---
+id: \\"_frontmatter_.frontmatterclass\\"
+title: \\"Class: FrontMatterClass\\"
+hide_title: true
+hide_table_of_contents: false
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: should return front with short names 1`] = `
+"---
+id: \\"_frontmatter_.frontmatterclass\\"
+title: \\"Class: FrontMatterClass\\"
+sidebar_label: \\"FrontMatterClass\\"
+hide_title: true
+hide_table_of_contents: false
+---
+
+CONTENTS"
+`;

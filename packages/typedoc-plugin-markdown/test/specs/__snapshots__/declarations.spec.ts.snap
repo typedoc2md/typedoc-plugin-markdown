@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reflections: should compile a an udefined 1`] = `
+"• \`Let\`  **undefinedNumber**: number
+
+*Defined in declarations.ts:2*
+"
+`;
+
+exports[`Reflections: should compile a variable with default value 1`] = `
+"• \`Const\`  **stringWithDefaultValue**: \\"variable\\"  = \\"variable\\"
+
+*Defined in declarations.ts:1*
+"
+`;
+
+exports[`Reflections: should compile object literal declaration 1`] = `
+"▪ \`Const\`  **objectLiteral**: object
+
+#### Properties:
+
+Name | Type | Description |
+------ | ------ | ------ |
+\`valueA\` | number | Comment for valueA |
+\`valueB\` | boolean | - |
+\`valueZ\` | string | - |
+\`valueY\` | () => string | Comment for value Y |
+\`valueX\` | { valueA: number[]  = [100, 200, 300]; valueZ: string  = \\"foo\\"; valueY: (z: string) => { a: string  = \\"test\\"; b: string  = z }  } | - |
+
+*Defined in declarations.ts:4*
+"
+`;
+
+exports[`Reflections: should compile type literal declaration 1`] = `
+"• \`Let\`  **typeLiteral**: object
+
+#### Type declaration:
+
+Name | Type | Description |
+------ | ------ | ------ |
+**\`Optional\`** \`valueA\` | number | Comments for valueA |
+**\`Optional\`** \`valueB\` | boolean | - |
+\`valueX\` | { valueA: number[] ; valueY: (z: string) => { a: string ; b: string  } ; valueZ: string  } | - |
+\`valueY\` | () => string | - |
+\`valueZ\` | string | Comment for valueZ |
+
+*Defined in declarations.ts:30*
+"
+`;

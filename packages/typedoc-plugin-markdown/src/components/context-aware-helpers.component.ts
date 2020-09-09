@@ -75,17 +75,17 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
 
     const component = this;
 
-    MarkdownTheme.handlebars.registerHelper('comment', function (this: string) {
+    MarkdownTheme.HANDLEBARS.registerHelper('comment', function (this: string) {
       return component.parseComments(this);
     });
 
-    MarkdownTheme.handlebars.registerHelper('breadcrumbs', function (
+    MarkdownTheme.HANDLEBARS.registerHelper('breadcrumbs', function (
       this: PageEvent,
     ) {
       return component.breadcrumb(this.model, this.project, [], application);
     });
 
-    MarkdownTheme.handlebars.registerHelper('relativeURL', (url: string) => {
+    MarkdownTheme.HANDLEBARS.registerHelper('relativeURL', (url: string) => {
       const publicPath = application.options.getValue('publicPath') as string;
       return url
         ? publicPath
@@ -101,31 +101,29 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
     md: string[],
     application,
   ) {
-    const defaultFileName =
-      (application.options.getValue('defaultFileName') as string) + '.md';
+    const entryFileName =
+      (application.options.getValue('entryFileName') as string) + '.md';
     if (model && model.parent) {
       this.breadcrumb(model.parent, project, md, application);
       if (model.url) {
         md.push(
-          `[${model.name}](${MarkdownTheme.handlebars.helpers.relativeURL(
+          `[${model.name}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
             model.url,
           )})`,
         );
-      } else {
-        md.push(model.url);
       }
     } else {
       if (!!project.readme) {
         md.push(
-          `[${project.name}](${MarkdownTheme.handlebars.helpers.relativeURL(
-            defaultFileName,
+          `[${project.name}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            entryFileName,
           )})`,
         );
       }
       md.push(
         `[${
           project.readme ? 'Globals' : project.name
-        }](${MarkdownTheme.handlebars.helpers.relativeURL(project.url)})`,
+        }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(project.url)})`,
       );
     }
     return md.join(' › ');
@@ -170,7 +168,7 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
         (match: string, mediaPath: string) => {
           if (fs.existsSync(path.join(this.mediaDirectory!, mediaPath))) {
             return (
-              MarkdownTheme.handlebars.helpers.relativeURL('media') +
+              MarkdownTheme.HANDLEBARS.helpers.relativeURL('media') +
               '/' +
               mediaPath
             );

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs: should compile breadcrumbs with readme' 1`] = `
+"[typedoc-plugin-markdown](../README.md) › [Globals](../globals.md)
+"
+`;
+
+exports[`Breadcrumbs: should compile breadcrumbs without a readme' 1`] = `
+"[typedoc-plugin-markdown](../README.md)
+"
+`;

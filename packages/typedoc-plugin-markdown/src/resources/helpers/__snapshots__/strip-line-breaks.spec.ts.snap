@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`[helpers] stripLineBreaks should compile : line 1  line2 1`] = `"line 1  line2 "`;

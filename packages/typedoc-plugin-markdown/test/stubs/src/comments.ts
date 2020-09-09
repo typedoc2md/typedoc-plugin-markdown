@@ -1,5 +1,5 @@
 /**
- * See {@linkcode Greeter} and [Greeters's greeting property]{@link Greeter.greeting}.
+ * See {@linkcode CommentClass} and [CommentClass's comment property]{@link CommentClass.comment}.
  * Also, check out {@link https://www.google.com|Google} and
  * {@link https://github.com GitHub}.
  *
@@ -10,7 +10,7 @@ export const commentWithDocLinks = true;
 /**
  * Additionally you can link to other classes, members or functions using double square brackets.
  *
- * - Link to an external reflection: [[Greeter]]
+ * - Link to an external reflection: [[CommentClass]]
  * - Link to an internal reflection: [[commentsInReturn]]
  * - Link to an undefined reflection: [[VOID]]
  */
@@ -56,4 +56,26 @@ export const commentsWithFencedBlock = true;
  */
 export function commentsInReturn() {
   return;
+}
+
+/**
+ * Comment for class
+ */
+export class CommentClass {
+  /**
+   * Comment for property
+   */
+  comment: string;
+  /**
+   * Comment for constructor
+   */
+  constructor(comment: string) {
+    this.comment = comment;
+  }
+  /**
+   * Comment for method
+   */
+  getComment() {
+    return 'Comment';
+  }
 }

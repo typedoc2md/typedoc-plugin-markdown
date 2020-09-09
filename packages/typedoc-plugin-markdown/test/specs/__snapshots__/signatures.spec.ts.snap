@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signatures: should compile callable signature' 1`] = `
+"▸ (): *string*
+
+[partial: comment]
+
+*Defined in signatures.ts:99*
+
+**Returns:** *string*
+"
+`;
+
+exports[`Signatures: should compile signature with default values' 1`] = `
+"▸ **functionWithUnionTypes**(\`arg\`: boolean[] | number, ...\`args\`: (string | number)[]): *any*
+
+[partial: comment]
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+\`arg\` | boolean[] &#124; number |
+\`...args\` | (string &#124; number)[] |
+
+*Defined in signatures.ts:92*
+
+**Returns:** *any*
+"
+`;
+
+exports[`Signatures: should compile signature with optional params' 1`] = `
+"▸ **functionWithOptionalParam**(\`requiredParam\`: string, \`optionalParam?\`: string): *void*
+
+[partial: comment]
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+\`requiredParam\` | string | A normal parameter. |
+\`optionalParam?\` | string | An optional parameter.  |
+
+*Defined in signatures.ts:35*
+
+**Returns:** *void*
+"
+`;
+
+exports[`Signatures: should compile signature with params' 1`] = `
+"▸ **functionWithParameters**(\`paramZ\`: string, \`paramG\`: any, \`paramA\`: any): *number*
+
+[partial: comment]
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+\`paramZ\` | string | This is a string parameter. |
+\`paramG\` | any | This is a parameter flagged with any.     This sentence is placed in the next line.  |
+\`paramA\` | any |    This is a **parameter** pointing to an interface.   |
+
+*Defined in signatures.ts:12*
+
+**Returns:** *number*
+"
+`;
+
+exports[`Signatures: should compile signature with rest params' 1`] = `
+"▸ **functionWithRest**(...\`rest\`: string[]): *string*
+
+[partial: comment]
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+\`...rest\` | string[] | The rest parameter.  |
+
+*Defined in signatures.ts:64*
+
+**Returns:** *string*
+"
+`;
+
+exports[`Signatures: should compile signature with union types' 1`] = `
+"▸ **functionWithUnionTypes**(\`arg\`: boolean[] | number, ...\`args\`: (string | number)[]): *any*
+
+[partial: comment]
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+\`arg\` | boolean[] &#124; number |
+\`...args\` | (string &#124; number)[] |
+
+*Defined in signatures.ts:92*
+
+**Returns:** *any*
+"
+`;

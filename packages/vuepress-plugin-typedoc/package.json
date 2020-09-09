@@ -33,7 +33,8 @@
     "demo:start": "npm run build && cd demo && npm run dev",
     "demo:build": "npm run build && cd demo && npm run build",
     "demo:init": "rm -rf demo && npx create-vuepress demo",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --updateSnapshot --colors",
+    "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
   "license": "MIT"
