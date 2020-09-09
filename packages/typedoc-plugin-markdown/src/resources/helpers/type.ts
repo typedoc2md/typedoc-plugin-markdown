@@ -96,7 +96,7 @@ function getReferenceType(model: ReferenceType) {
       ? [
           `[${
             model.reflection.name
-          }](${MarkdownTheme.handlebars.helpers.relativeURL(
+          }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
             model.reflection.url,
           )})`,
         ]

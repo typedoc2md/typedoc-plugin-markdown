@@ -9,7 +9,9 @@ export function parameterTable(this: ParameterReflection[]) {
   const hasDefaultValues = !defaultValues.every((value) => !value);
 
   const comments = this.map(
-    (param) => (param.comment && !!param.comment.text) || (param.comment && !!param.comment.shortText),
+    (param) =>
+      (param.comment && !!param.comment.text) ||
+      (param.comment && !!param.comment.shortText),
   );
   const hasComments = !comments.every((value) => !value);
 
@@ -28,7 +30,9 @@ export function parameterTable(this: ParameterReflection[]) {
     const typeOut = type.call(parameter.type);
 
     const row = [
-      `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${isOptional ? '?' : ''}\``,
+      `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${
+        isOptional ? '?' : ''
+      }\``,
       typeOut ? typeOut.toString().replace(/\|/g, '&#124;') : '',
     ];
     if (hasDefaultValues) {
@@ -38,18 +42,26 @@ export function parameterTable(this: ParameterReflection[]) {
       const commentsText = [];
       if (parameter.comment && parameter.comment.shortText) {
         commentsText.push(
-          MarkdownTheme.handlebars.helpers.comment.call(stripLineBreaks.call(parameter.comment.shortText)),
+          MarkdownTheme.HANDLEBARS.helpers.comment.call(
+            stripLineBreaks.call(parameter.comment.shortText),
+          ),
         );
       }
       if (parameter.comment && parameter.comment.text) {
-        commentsText.push(MarkdownTheme.handlebars.helpers.comment.call(stripLineBreaks.call(parameter.comment.text)));
+        commentsText.push(
+          MarkdownTheme.HANDLEBARS.helpers.comment.call(
+            stripLineBreaks.call(parameter.comment.text),
+          ),
+        );
       }
       row.push(commentsText.length > 0 ? commentsText.join(' ') : '-');
     }
     return `${row.join(' | ')} |\n`;
   });
 
-  const output = `\n${headers.join(' | ')} |\n${headers.map(() => '------').join(' | ')} |\n${rows.join('')}`;
+  const output = `\n${headers.join(' | ')} |\n${headers
+    .map(() => '------')
+    .join(' | ')} |\n${rows.join('')}`;
 
   return output;
 }

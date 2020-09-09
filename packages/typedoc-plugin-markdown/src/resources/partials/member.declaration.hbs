@@ -18,7 +18,7 @@
 
 {{/if}}
 
-{{#ifIsObjectLiteralType true}}
+{{#ifCond kindString '==' 'Object literal'}}
 
 #### Properties:
 
@@ -28,6 +28,6 @@
 
 {{/with}}
 
-{{/ifIsObjectLiteralType}}
+{{/ifCond }}
 
 {{> member.sources}}

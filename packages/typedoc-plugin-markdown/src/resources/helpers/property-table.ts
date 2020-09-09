@@ -7,7 +7,9 @@ import { type } from './type';
 
 export function propertyTable(this: DeclarationReflection[]) {
   const comments = this.map(
-    (param) => (param.comment && !!param.comment.text) || (param.comment && !!param.comment.shortText),
+    (param) =>
+      (param.comment && !!param.comment.text) ||
+      (param.comment && !!param.comment.shortText),
   );
   const hasComments = !comments.every((value) => !value);
 
@@ -18,7 +20,10 @@ export function propertyTable(this: DeclarationReflection[]) {
   }
 
   const rows = this.map((property) => {
-    const typeOut = property.signatures || property.children ? type.call(property) : type.call(property.type);
+    const typeOut =
+      property.signatures || property.children
+        ? type.call(property)
+        : type.call(property.type);
     const row = [];
     const nameCol = [];
     if (property.flags.length) {
@@ -36,11 +41,17 @@ export function propertyTable(this: DeclarationReflection[]) {
       const commentsText = [];
       if (property.comment && property.comment.shortText) {
         commentsText.push(
-          MarkdownTheme.handlebars.helpers.comment.call(stripLineBreaks.call(property.comment.shortText)),
+          MarkdownTheme.HANDLEBARS.helpers.comment.call(
+            stripLineBreaks.call(property.comment.shortText),
+          ),
         );
       }
       if (property.comment && property.comment.text) {
-        commentsText.push(MarkdownTheme.handlebars.helpers.comment.call(stripLineBreaks.call(property.comment.text)));
+        commentsText.push(
+          MarkdownTheme.HANDLEBARS.helpers.comment.call(
+            stripLineBreaks.call(property.comment.text),
+          ),
+        );
       }
 
       row.push(commentsText.length > 0 ? commentsText.join(' ') : '-');
@@ -49,7 +60,9 @@ export function propertyTable(this: DeclarationReflection[]) {
     return `${row.join(' | ')} |\n`;
   });
 
-  const output = `\n${headers.join(' | ')} |\n${headers.map(() => '------').join(' | ')} |\n${rows.join('')}`;
+  const output = `\n${headers.join(' | ')} |\n${headers
+    .map(() => '------')
+    .join(' | ')} |\n${rows.join('')}`;
 
   return output;
 }

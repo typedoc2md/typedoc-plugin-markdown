@@ -12,9 +12,9 @@
 
 ## Type parameters
 
-{{#with model}}
-{{> typeParameters}}
-{{/with}}
+{{#each model.typeParameters}}
+* {{name}}
+{{/each}}
 
 {{/if}}
 
@@ -24,7 +24,7 @@
 
 {{#with model.typeHierarchy}}
 
-{{> hierarchy}}
+{{{hierarchy 0}}}
 
 {{/with}}
 

@@ -9,7 +9,9 @@ export function typeAndParent(this: ArrayType | ReferenceType) {
     if (this.reflection instanceof SignatureReflection) {
       if (this.reflection.parent.parent.url) {
         md.push(
-          `[${this.reflection.parent.parent.name}](${MarkdownTheme.handlebars.helpers.relativeURL(
+          `[${
+            this.reflection.parent.parent.name
+          }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
             this.reflection.parent.parent.url,
           )})`,
         );
@@ -19,7 +21,9 @@ export function typeAndParent(this: ArrayType | ReferenceType) {
     } else {
       if (this.reflection.parent.url) {
         md.push(
-          `[${this.reflection.parent.name}](${MarkdownTheme.handlebars.helpers.relativeURL(
+          `[${
+            this.reflection.parent.name
+          }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
             this.reflection.parent.url,
           )})`,
         );
@@ -27,7 +31,13 @@ export function typeAndParent(this: ArrayType | ReferenceType) {
         md.push(this.reflection.parent.name);
       }
       if (this.reflection.url) {
-        md.push(`[${this.reflection.name}](${MarkdownTheme.handlebars.helpers.relativeURL(this.reflection.url)})`);
+        md.push(
+          `[${
+            this.reflection.name
+          }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            this.reflection.url,
+          )})`,
+        );
       } else {
         md.push(this.reflection.name);
       }
