@@ -8,7 +8,6 @@ export interface PluginOptions {
   docsRoot: string;
   out: string;
   hideBreadcrumbs: boolean;
-  hideIndexes: boolean;
   skipSidebar: boolean;
   sidebar: SidebarOptions;
 }

@@ -26,9 +26,6 @@ describe(`Reflections:`, () => {
   });
 
   beforeEach(() => {
-    Handlebars.registerHelper('ifShowIndexes', function (options) {
-      return options.fn(this);
-    });
     Handlebars.registerHelper('ifShowBreadcrumbs', function (options) {
       return options.fn(this);
     });
@@ -90,17 +87,6 @@ describe(`Reflections:`, () => {
     expect(
       TestApp.compileTemplate(reflectionTemplate, {
         model: testApp.findReflection('IndexableReflection'),
-      }),
-    ).toMatchSnapshot();
-  });
-
-  test(`should compile reflection with comment and without index`, () => {
-    Handlebars.registerHelper('ifShowIndexes', function (options) {
-      return options.inverse(this);
-    });
-    expect(
-      TestApp.compileTemplate(reflectionTemplate, {
-        model: testApp.findReflection('ReflectionClass'),
       }),
     ).toMatchSnapshot();
   });

@@ -8,7 +8,11 @@ ___
 
 ## {{title}} {{../title}}
 
-{{> members.group.children}}
+{{#each children}}
+
+{{> member}}
+
+{{/each}}
 
 {{/each}}
 
@@ -16,6 +20,10 @@ ___
 
 ## {{title}}
 
-{{> members.group.children}}
+{{#each children}}
+
+{{> member}}
+
+{{/each}}
 
 {{/if}}

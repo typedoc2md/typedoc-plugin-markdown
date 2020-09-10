@@ -28,14 +28,6 @@ export class OptionsComponent extends ContextAwareRendererComponent {
         : options.fn(this);
     });
 
-    MarkdownTheme.HANDLEBARS.registerHelper('ifShowIndexes', function (
-      options,
-    ) {
-      return application.options.getValue('hideIndexes')
-        ? options.inverse(this)
-        : options.fn(this);
-    });
-
     MarkdownTheme.HANDLEBARS.registerHelper('ifShowSources', function (
       options,
     ) {

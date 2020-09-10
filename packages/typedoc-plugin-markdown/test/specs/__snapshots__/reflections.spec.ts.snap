@@ -9,8 +9,6 @@ exports[`Reflections: should compile a callable reflection 1`] = `
 
 [partial: member.signature]
 
-[partial: index]
-
 [partial: members]
 "
 `;
@@ -25,8 +23,6 @@ exports[`Reflections: should compile an indexable reflection 1`] = `
 ▪ \\\\[index: *number*\\\\]: *string*
 
 [partial: comment]
-
-[partial: index]
 
 [partial: members]
 "
@@ -57,17 +53,6 @@ CONTENTS
 "
 `;
 
-exports[`Reflections: should compile reflection with comment and without index 1`] = `
-"[partial: comment]
-
-## Hierarchy
-
-[helper: hierarchy]
-
-[partial: members]
-"
-`;
-
 exports[`Reflections: should compile reflection with type params 1`] = `
 "## Type parameters
 
@@ -77,8 +62,6 @@ exports[`Reflections: should compile reflection with type params 1`] = `
 ## Hierarchy
 
 [helper: hierarchy]
-
-[partial: index]
 
 [partial: members]
 "

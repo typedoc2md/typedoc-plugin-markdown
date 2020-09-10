@@ -15,23 +15,8 @@ describe(`Members:`, () => {
     memberPartial = TestApp.getPartial('member');
   });
 
-  beforeEach(() => {
-    Handlebars.registerHelper('ifShowIndexes', function (options) {
-      return options.fn(this);
-    });
-  });
-
   describe(`(members)`, () => {
     test(`should compile module members'`, () => {
-      expect(
-        TestApp.compileTemplate(membersPartial, testApp.findModule('members')),
-      ).toMatchSnapshot();
-    });
-
-    test(`should compile module members without index'`, () => {
-      Handlebars.registerHelper('ifShowIndexes', function (options) {
-        return options.inverse(this);
-      });
       expect(
         TestApp.compileTemplate(membersPartial, testApp.findModule('members')),
       ).toMatchSnapshot();

@@ -26,13 +26,6 @@ export = (PluginHost: Application) => {
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Do not render the index for globals and modules.',
-    name: 'hideIndexes',
-    type: ParameterType.Boolean,
-    defaultValue: false,
-  });
-
-  app.options.addDeclaration({
     help: '[Markdown Plugin] DEPRECATED - use --disableSources',
     name: 'hideSources',
     type: ParameterType.Boolean,

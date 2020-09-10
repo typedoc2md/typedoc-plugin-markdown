@@ -75,27 +75,6 @@ exports[`Members: (members) should compile class members' 1`] = `
 "
 `;
 
-exports[`Members: (members) should compile module members without index' 1`] = `
-"## References
-
-[partial: member]
-
-## Classes
-
-* [ClassWithAccessorMembers]([helper: relativeURL])
-
-* [NotExportedClass]([helper: relativeURL])
-
-## Variables
-
-[partial: member]
-
-## Functions
-
-[partial: member]
-"
-`;
-
 exports[`Members: (members) should compile module members' 1`] = `
 "## References
 

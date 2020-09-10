@@ -12,7 +12,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   out: 'api',
   entryFileName: 'index',
   hideBreadcrumbs: true,
-  hideIndexes: true,
   skipSidebar: false,
   sidebar: {
     parentCategory: 'none',

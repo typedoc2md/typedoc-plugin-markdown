@@ -16,25 +16,18 @@ describe(`Options:`, () => {
     expect(
       Handlebars.helpers.ifShowBreadcrumbs(TestApp.handlebarsOptionsStub),
     ).toBeTruthy();
-    expect(
-      Handlebars.helpers.ifShowIndexes(TestApp.handlebarsOptionsStub),
-    ).toBeTruthy();
   });
 
   test(`should setup option helpers with options set to true'`, () => {
     testApp.bootstrap({
       namedAnchors: true,
       hideBreadcrumbs: true,
-      hideIndexes: true,
     });
     expect(
       Handlebars.helpers.ifShowNamedAnchors(TestApp.handlebarsOptionsStub),
     ).toBeTruthy();
     expect(
       Handlebars.helpers.ifShowBreadcrumbs(TestApp.handlebarsOptionsStub),
-    ).toBeFalsy();
-    expect(
-      Handlebars.helpers.ifShowIndexes(TestApp.handlebarsOptionsStub),
     ).toBeFalsy();
   });
 });
