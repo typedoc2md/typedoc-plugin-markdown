@@ -4,7 +4,7 @@ import { TestApp } from '../test-app';
 
 describe(`Reflections:`, () => {
   let testApp: TestApp;
-  let layoutTemplate: Handlebars.TemplateDelegate;
+
   let reflectionTemplate: Handlebars.TemplateDelegate;
 
   beforeAll(() => {
@@ -19,9 +19,6 @@ describe(`Reflections:`, () => {
     ]);
     TestApp.stubHelpers(['breadcrumbs', 'hierarchy']);
 
-    layoutTemplate = testApp.theme.resources.layouts
-      .getResource('default')
-      .getTemplate();
     reflectionTemplate = TestApp.getTemplate('reflection');
   });
 
@@ -31,38 +28,13 @@ describe(`Reflections:`, () => {
     });
   });
 
-  test(`should compile default layout with breadcrumbs`, () => {
-    const reflection = testApp.findReflection('ReflectionClass');
-    expect(
-      TestApp.compileTemplate(layoutTemplate, {
-        project: testApp.project,
-        model: reflection,
-        contents: 'CONTENTS',
-      }),
-    ).toMatchSnapshot();
-  });
-
-  test(`should compile default layout without breadcrumbs`, () => {
+  test(`should compile module without breadcrumbs`, () => {
     Handlebars.registerHelper('ifShowBreadcrumbs', function (options) {
       return options.inverse(this);
     });
-    const reflection = testApp.findReflection('ReflectionClass');
     expect(
-      TestApp.compileTemplate(layoutTemplate, {
-        project: testApp.project,
-        model: reflection,
-        contents: 'CONTENTS',
-      }),
-    ).toMatchSnapshot();
-  });
-
-  test(`should compile default layout with type params in title`, () => {
-    const reflection = testApp.findReflection('ReflectionWithTypeParams');
-    expect(
-      TestApp.compileTemplate(layoutTemplate, {
-        project: testApp.project,
-        model: reflection,
-        contents: 'CONTENTS',
+      TestApp.compileTemplate(reflectionTemplate, {
+        model: testApp.findModule('reflections'),
       }),
     ).toMatchSnapshot();
   });
