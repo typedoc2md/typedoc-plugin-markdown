@@ -82,6 +82,9 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
     MarkdownTheme.HANDLEBARS.registerHelper('breadcrumbs', function (
       this: PageEvent,
     ) {
+      if (!this.project.readme && this.url == this.project.url) {
+        return null;
+      }
       return component.breadcrumb(this.model, this.project, [], application);
     });
 
