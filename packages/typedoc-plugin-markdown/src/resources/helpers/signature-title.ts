@@ -1,14 +1,11 @@
 import { SignatureReflection } from 'typedoc';
-
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
 export function signatureTitle(this: SignatureReflection) {
   const md = [];
 
-  //if (showSymbol) {
   md.push(`${memberSymbol.call(this)} `);
-  //}
 
   if (this.name === '__get') {
     md.push(`get **${this.parent.name}**`);
@@ -20,9 +17,9 @@ export function signatureTitle(this: SignatureReflection) {
 
   if (this.typeParameters) {
     md.push(
-      `‹${this.typeParameters
+      `\\<${this.typeParameters
         .map((typeParameter) => `**${typeParameter.name}**`)
-        .join(', ')}›`,
+        .join(', ')}>`,
     );
   }
 
@@ -44,7 +41,7 @@ export function signatureTitle(this: SignatureReflection) {
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(`: *${type.call(this.type, false)}*`);
+    md.push(`: ${type.call(this.type, false)}`);
   }
   return md.join('') + '\n';
 }

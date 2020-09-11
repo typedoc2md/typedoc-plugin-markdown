@@ -1,5 +1,4 @@
 import { ParameterReflection } from 'typedoc';
-
 import MarkdownTheme from '../../theme';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
@@ -27,13 +26,12 @@ export function parameterTable(this: ParameterReflection[]) {
 
   const rows = this.map((parameter) => {
     const isOptional = parameter.flags.includes('Optional');
-    const typeOut = type.call(parameter.type);
 
     const row = [
       `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${
         isOptional ? '?' : ''
       }\``,
-      typeOut ? typeOut.toString().replace(/\|/g, '&#124;') : '',
+      type.call(parameter.type),
     ];
     if (hasDefaultValues) {
       row.push(parameter.defaultValue ? parameter.defaultValue : '-');

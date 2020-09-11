@@ -1,6 +1,5 @@
 import { DeclarationReflection, ParameterReflection } from 'typedoc';
 import { IntrinsicType } from 'typedoc/dist/lib/models';
-
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
@@ -11,10 +10,10 @@ export function declarationTitle(
   const md = [memberSymbol.call(this) + ' '];
 
   if (this.flags && !this.flags.isRest) {
-    md.push(this.flags.map((flag) => `\`${flag}\` `).join(''));
+    md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
   }
 
-  md.push(`${this.flags.isRest ? '...' : ''} **${this.name}**`);
+  md.push(`${this.flags.isRest ? '... ' : ' '}**${this.name}**`);
 
   const type = getType(this, expandType);
   if (type) {

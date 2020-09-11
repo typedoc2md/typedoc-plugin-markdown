@@ -51,7 +51,7 @@ ${Object.entries(yamlItems)
   }
 
   getTitle(page: PageEvent) {
-    return reflectionTitle.call(page);
+    return reflectionTitle.call(page, false);
   }
 
   // prettier-ignore

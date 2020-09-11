@@ -12,8 +12,9 @@ export class MdxComponent extends ContextAwareRendererComponent {
       [PageEvent.END]: this.onPageEnd,
     });
   }
-
   onPageEnd(page: PageEvent) {
-    page.contents = page.contents.replace(/</g, '‹').replace(/>/g, '›');
+    page.contents = page.contents
+      .replace(/\\</g, '&#60;')
+      .replace(/>/g, '&#62;');
   }
 }

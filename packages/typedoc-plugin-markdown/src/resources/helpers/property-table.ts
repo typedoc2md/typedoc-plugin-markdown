@@ -1,6 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
 import { ReflectionType } from 'typedoc/dist/lib/models';
-
 import MarkdownTheme from '../../theme';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
@@ -33,7 +32,7 @@ export function propertyTable(this: DeclarationReflection[]) {
 
     nameCol.push(`\`${property.name}\``);
     row.push(nameCol.join(' '));
-    row.push(typeOut ? typeOut.toString().replace(/\|/g, '&#124;') : '');
+    row.push(typeOut);
 
     const hasTypeDeclarations = property.type instanceof ReflectionType;
 

@@ -12,7 +12,6 @@ import {
   TypeParameterType,
   UnionType,
 } from 'typedoc/dist/lib/models/types';
-
 import MarkdownTheme from '../../theme';
 
 export function type(
@@ -87,7 +86,7 @@ export function type(
     return getQueryType(this);
   }
 
-  return this ? this.toString().replace(/</g, '‹').replace(/>/g, '›') : '';
+  return this ? this.toString() : '';
 }
 
 function getReferenceType(model: ReferenceType) {
@@ -103,9 +102,9 @@ function getReferenceType(model: ReferenceType) {
       : [model.name];
   if (model.typeArguments && model.typeArguments.length > 0) {
     reflection.push(
-      `‹${model.typeArguments
+      `\\<${model.typeArguments
         .map((typeArgument) => `${type.call(typeArgument)}`)
-        .join(', ')}›`,
+        .join(', ')}>`,
     );
   }
   return reflection.join('');
@@ -119,7 +118,7 @@ function getArrayType(model: ArrayType) {
 }
 
 function getUnionType(model: UnionType) {
-  return model.types.map((unionType) => type.call(unionType)).join(' | ');
+  return model.types.map((unionType) => type.call(unionType)).join(' \\| ');
 }
 
 function getIntersectionType(model: IntersectionType) {
@@ -137,7 +136,7 @@ function getIntrinsicType(model: IntrinsicType) {
 }
 
 function getStringLiteralType(model: StringLiteralType) {
-  return `\"${model.value}\" `;
+  return `\"${model.value}\"`;
 }
 
 function getLiteralType(declarationReflection: DeclarationReflection) {
@@ -170,6 +169,11 @@ function getLiteralType(declarationReflection: DeclarationReflection) {
 
 export function getFunctionType(signatures: SignatureReflection[]) {
   const functions = signatures.map((fn) => {
+    const typeParams = fn.typeParameters
+      ? `\\<${fn.typeParameters
+          .map((typeParameter) => typeParameter.name)
+          .join(', ')}>`
+      : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
           return `${param.flags.isRest ? '...' : ''}${param.name}${
@@ -178,9 +182,10 @@ export function getFunctionType(signatures: SignatureReflection[]) {
         })
       : [];
     const returns = type.call(fn.type);
-    return `(${params.join(',')}) => ${returns}`;
+
+    return typeParams + `(${params.join(',')}) => ${returns}`;
   });
-  return functions;
+  return functions.join('');
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {
