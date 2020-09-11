@@ -18,6 +18,16 @@ export const commentWithDocLinks = true;
 export const commentsWithSymbolLinks = true;
 
 /**
+ * <p>
+ * You can write <strong>HTML</strong> tags directly in comments
+ * </p>
+ * <ul>
+ * <li>List item</li>
+ * </ul>
+ */
+export const commentsWithHTML = true;
+
+/**
  * This is an example of include
  *
  * [[include:class-example.md]]

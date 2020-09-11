@@ -32,7 +32,7 @@ _\\"reflections\\".IndexableReflection_
 
 ## Indexable
 
-▪ \\\\[index: *number*\\\\]: *string*
+▪ \\\\[index: number\\\\]: string
 
 [partial: comment]
 
@@ -52,7 +52,7 @@ exports[`Reflections: should compile module without breadcrumbs 1`] = `
 exports[`Reflections: should compile reflection with type params 1`] = `
 "[helper: breadcrumbs]
 
-# Interface: ReflectionWithTypeParams ‹**T, V**›
+# Interface: ReflectionWithTypeParams\\\\<**T, V**>
 
 _\\"reflections\\".ReflectionWithTypeParams_
 

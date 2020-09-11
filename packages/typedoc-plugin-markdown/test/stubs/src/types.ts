@@ -14,3 +14,16 @@ class IntersectionClassB {}
 type intersectionType = IntersectionClassA & IntersectionClassB;
 
 const arrayType: string[] = ['Apple', 'Orange', 'Banana'];
+
+export function restUntionTypes(
+  arg: boolean[] | number,
+  ...args: (string | number)[]
+): any {
+  return null;
+}
+
+function generic<T>(arg: T): T {
+  return arg;
+}
+
+const functionReflectionType: <T>(arg: T) => T = generic;

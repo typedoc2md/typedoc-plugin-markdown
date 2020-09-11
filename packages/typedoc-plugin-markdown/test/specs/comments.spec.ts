@@ -1,5 +1,4 @@
 import * as Handlebars from 'handlebars';
-
 import { TestApp } from '../test-app';
 
 describe(`Comments:`, () => {
@@ -55,6 +54,15 @@ describe(`Comments:`, () => {
       TestApp.compileTemplate(
         partial,
         testApp.findReflection('commentsWithTags'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should allow html in comments'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('commentsWithHTML'),
       ),
     ).toMatchSnapshot();
   });

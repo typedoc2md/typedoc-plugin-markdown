@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Reflections: should compile a an udefined 1`] = `
-"• \`Let\`  **undefinedNumber**: number
+"• \`Let\` **undefinedNumber**: number
 
 [partial: member.sources]
 "
 `;
 
 exports[`Reflections: should compile a variable with default value 1`] = `
-"• \`Const\`  **stringWithDefaultValue**: \\"variable\\"  = \\"variable\\"
+"• \`Const\` **stringWithDefaultValue**: \\"variable\\" = \\"variable\\"
 
 [partial: member.sources]
 "
 `;
 
 exports[`Reflections: should compile object literal declaration 1`] = `
-"▪ \`Const\`  **objectLiteral**: object
+"▪ \`Const\` **objectLiteral**: object
 
 #### Properties:
 
@@ -32,7 +32,7 @@ Name | Type | Description |
 `;
 
 exports[`Reflections: should compile type literal declaration 1`] = `
-"• \`Let\`  **typeLiteral**: object
+"• \`Let\` **typeLiteral**: object
 
 #### Type declaration:
 

@@ -1,5 +1,4 @@
 import * as Handlebars from 'handlebars';
-
 import { TestApp } from '../test-app';
 
 describe(`Types:`, () => {
@@ -7,10 +6,10 @@ describe(`Types:`, () => {
 
   beforeAll(() => {
     testApp = new TestApp(['types.ts']);
+    testApp.bootstrap();
   });
 
   test(`should compile 'array' type'`, () => {
-    testApp.bootstrap();
     expect(
       TestApp.compileHelper(
         Handlebars.helpers.type,
@@ -20,7 +19,6 @@ describe(`Types:`, () => {
   });
 
   test(`should compile 'stringLiteral' type'`, () => {
-    testApp.bootstrap();
     expect(
       TestApp.compileHelper(
         Handlebars.helpers.type,
@@ -30,7 +28,6 @@ describe(`Types:`, () => {
   });
 
   test(`should compile 'union' of string literals types'`, () => {
-    testApp.bootstrap();
     expect(
       TestApp.compileHelper(
         Handlebars.helpers.type,
@@ -40,41 +37,35 @@ describe(`Types:`, () => {
   });
 
   test(`should compile intrinsic type'`, () => {
-    testApp.bootstrap();
     expect(
-      TestApp.compileHelper(
-        Handlebars.helpers.type,
-        testApp.findReflection('stringType').type,
-      ),
+      Handlebars.helpers.type.call(testApp.findReflection('stringType').type),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'literal' type'`, () => {
-    testApp.bootstrap();
     expect(
-      TestApp.compileHelper(
-        Handlebars.helpers.type,
-        testApp.findReflection('literalType').type,
-      ),
+      Handlebars.helpers.type.call(testApp.findReflection('literalType').type),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'tuple' type'`, () => {
-    testApp.bootstrap();
     expect(
-      TestApp.compileHelper(
-        Handlebars.helpers.type,
-        testApp.findReflection('tupleType').type,
-      ),
+      Handlebars.helpers.type.call(testApp.findReflection('tupleType').type),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'intersection' type'`, () => {
-    testApp.bootstrap();
     expect(
-      TestApp.compileHelper(
-        Handlebars.helpers.type,
+      Handlebars.helpers.type.call(
         testApp.findReflection('intersectionType').type,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile reflection 'function' type '`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('functionReflectionType').type,
       ),
     ).toMatchSnapshot();
   });

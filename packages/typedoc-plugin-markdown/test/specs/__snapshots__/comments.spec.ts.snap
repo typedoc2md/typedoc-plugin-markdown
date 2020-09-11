@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Comments: should allow html in comments' 1`] = `
+"<p>
+You can write <strong>HTML</strong> tags directly in comments
+</p>
+<ul>
+<li>List item</li>
+</ul>
+"
+`;
+
 exports[`Comments: should build @link references' 1`] = `
 "See [\`CommentClass\`](_comments_.commentclass.md) and [CommentClass's comment property](_comments_.commentclass.md#comment).
 Also, check out [Google](https://www.google.com) and

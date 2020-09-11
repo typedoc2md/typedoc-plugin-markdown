@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signatures: should compile callable signature' 1`] = `
-"▸ (): *string*
+"▸ (): string
 
 [partial: comment]
 
@@ -11,7 +11,7 @@ exports[`Signatures: should compile callable signature' 1`] = `
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`: boolean[] | number, ...\`args\`: (string | number)[]): *any*
+"▸ **functionWithUnionTypes**(\`arg\`: boolean[] \\\\| number, ...\`args\`: (string \\\\| number)[]): any
 
 [partial: comment]
 
@@ -19,8 +19,8 @@ exports[`Signatures: should compile signature with default values' 1`] = `
 
 Name | Type |
 ------ | ------ |
-\`arg\` | boolean[] &#124; number |
-\`...args\` | (string &#124; number)[] |
+\`arg\` | boolean[] \\\\| number |
+\`...args\` | (string \\\\| number)[] |
 
 [partial: member.sources]
 **Returns:** *any*
@@ -28,7 +28,7 @@ Name | Type |
 `;
 
 exports[`Signatures: should compile signature with optional params' 1`] = `
-"▸ **functionWithOptionalParam**(\`requiredParam\`: string, \`optionalParam?\`: string): *void*
+"▸ **functionWithOptionalParam**(\`requiredParam\`: string, \`optionalParam?\`: string): void
 
 [partial: comment]
 
@@ -45,7 +45,7 @@ Name | Type | Description |
 `;
 
 exports[`Signatures: should compile signature with params' 1`] = `
-"▸ **functionWithParameters**(\`paramZ\`: string, \`paramG\`: any, \`paramA\`: any): *number*
+"▸ **functionWithParameters**(\`paramZ\`: string, \`paramG\`: any, \`paramA\`: any): number
 
 [partial: comment]
 
@@ -54,7 +54,7 @@ exports[`Signatures: should compile signature with params' 1`] = `
 Name | Type | Description |
 ------ | ------ | ------ |
 \`paramZ\` | string | This is a string parameter. |
-\`paramG\` | any | This is a parameter flagged with any.     This sentence is placed in the next line.  |
+\`paramG\` | any | This is a parameter flagged with any.<br />     This sentence is placed in the next line.  |
 \`paramA\` | any |    This is a **parameter** pointing to an interface.   |
 
 [partial: member.sources]
@@ -63,7 +63,7 @@ Name | Type | Description |
 `;
 
 exports[`Signatures: should compile signature with rest params' 1`] = `
-"▸ **functionWithRest**(...\`rest\`: string[]): *string*
+"▸ **functionWithRest**(...\`rest\`: string[]): string
 
 [partial: comment]
 
@@ -79,7 +79,7 @@ Name | Type | Description |
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`: boolean[] | number, ...\`args\`: (string | number)[]): *any*
+"▸ **functionWithUnionTypes**(\`arg\`: boolean[] \\\\| number, ...\`args\`: (string \\\\| number)[]): any
 
 [partial: comment]
 
@@ -87,8 +87,8 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 
 Name | Type |
 ------ | ------ |
-\`arg\` | boolean[] &#124; number |
-\`...args\` | (string &#124; number)[] |
+\`arg\` | boolean[] \\\\| number |
+\`...args\` | (string \\\\| number)[] |
 
 [partial: member.sources]
 **Returns:** *any*
