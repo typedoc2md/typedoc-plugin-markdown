@@ -1,7 +1,5 @@
 import * as path from 'path';
-
-import * as fs from 'fs-extra';
-import { Renderer } from 'typedoc';
+import { BindOption, Renderer } from 'typedoc';
 import { Converter } from 'typedoc/dist/lib/converter';
 import {
   Component,
@@ -10,6 +8,9 @@ import {
 
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
+  @BindOption('theme')
+  theme!: string;
+
   initialize() {
     this.listenTo(this.owner, {
       [Converter.EVENT_BEGIN]: this.onBegin,
@@ -29,46 +30,27 @@ export class MarkdownPlugin extends ConverterComponent {
    * Otherwise pass the path through to the Renderer
    */
   onResolveBegin() {
-    const theme = this.application.options.getValue('theme') as string;
+    // legacy theme upgrade messages (can be removed in future)
+    const legacyThemes = [
+      'bitbucket',
+      'docusaurus',
+      'docusaurus2',
+      'vuepress',
+      'gitbook',
+    ];
+    this.legacyMessages(legacyThemes, this.theme);
 
-    // leagcy theme upgrade messages (can be removed in future)
-    const legacyThemes = ['docusaurus', 'docusaurus2', 'vuepress', 'gitbook'];
-    this.legacyMessages(legacyThemes, theme);
-
-    // if the theme is 'default' or 'markdown' load the base markdown theme
+    // load the base markdown theme
     const markdownThemes = ['default', 'markdown'];
-    if ([...markdownThemes, ...legacyThemes].includes(theme)) {
-      this.setBaseTheme();
-    }
-
-    // check for other supported markdown themes
-    if (theme === 'bitbucket') {
-      this.setBitbucketTheme();
-    }
-  }
-
-  // set default/base markdown theme
-  setBaseTheme() {
-    this.application.options.setValue('theme', path.join(__dirname));
-  }
-
-  // set 'bitbucket' theme
-  setBitbucketTheme() {
-    const bitbucketThemePath =
-      path.dirname(require.resolve('typedoc-bitbucket-theme')) + '/dist';
-    if (fs.existsSync(bitbucketThemePath)) {
-      this.application.options.setValue('theme', bitbucketThemePath);
-    } else {
-      this.application.logger.warn(
-        '[typedoc-plugin-markdown] Please npm install typedoc-bitbucket-theme to use the Bitbucket theme',
-      );
+    if ([...markdownThemes, ...legacyThemes].includes(this.theme)) {
+      this.application.options.setValue('theme', path.join(__dirname));
     }
   }
 
   legacyMessages(legacyThemes: string[], theme: string) {
     if (legacyThemes.includes(theme)) {
       this.application.logger.warn(
-        `[typedoc-plugin-markdown] Please note the ${theme} theme is no longer supported.`,
+        `[typedoc-plugin-markdown] Please note the ${theme} theme is no longer supported as of v3.0.0.`,
       );
     }
     if (theme.startsWith('docusaurus')) {
@@ -79,6 +61,11 @@ export class MarkdownPlugin extends ConverterComponent {
     if (theme === 'vuepress') {
       this.application.logger.warn(
         `[typedoc-plugin-markdown] Please use https://www.npmjs.com/package/vuepress-plugin-typedoc`,
+      );
+    }
+    if (theme === 'bitbucket') {
+      this.application.logger.warn(
+        '[typedoc-plugin-markdown] Please use https://www.npmjs.com/package/typedoc-bitbucket-theme',
       );
     }
   }

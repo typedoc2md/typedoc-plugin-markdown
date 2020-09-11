@@ -15,5 +15,5 @@ npm install typedoc typedoc-plugin-markdown typedoc-bitbucket-theme --save-dev
 ### Usage
 
 ```bash
-$ npx typedoc --plugin typedoc-plugin-markdown --theme bitbucket [args]
+$ npx typedoc --plugin typedoc-plugin-markdown --theme ./node_modules/typedoc-bitbucket-theme/dist [args]
 ```
