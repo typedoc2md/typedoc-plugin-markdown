@@ -1,15 +1,13 @@
-import * as path from 'path';
-import * as Util from 'util';
-
 import * as fs from 'fs-extra';
 import * as Handlebars from 'handlebars';
-import { MarkedLinksPlugin, ProjectReflection, Reflection } from 'typedoc';
+import * as path from 'path';
+import { BindOption, MarkedLinksPlugin, Reflection } from 'typedoc';
 import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
-import { PageEvent, RendererEvent } from 'typedoc/dist/lib/output/events';
-
+import { RendererEvent } from 'typedoc/dist/lib/output/events';
+import * as Util from 'util';
 import MarkdownTheme from '../theme';
 
 /**
@@ -17,17 +15,16 @@ import MarkdownTheme from '../theme';
  * The options are unchanged , but strips out all of the html configs.
  */
 
-@Component({ name: 'contextAwareHelpers' })
-export class ContextAwareHelpersComponent extends ContextAwareRendererComponent {
-  /**
-   * The path referenced files are located in.
-   */
-  private includes?: string;
+@Component({ name: 'comments' })
+export class CommentsComponent extends ContextAwareRendererComponent {
+  @BindOption('includes')
+  includes!: string;
 
-  /**
-   * Path to the output media directory.
-   */
-  private mediaDirectory?: string;
+  @BindOption('media')
+  mediaDirectory!: string;
+
+  @BindOption('listInvalidSymbolLinks')
+  listInvalidSymbolLinks!: boolean;
 
   /**
    * The pattern used to find references in markdown.
@@ -49,20 +46,10 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
    */
   private inlineTag = /(?:\[(.+?)\])?\{@(link|linkcode|linkplain)\s+((?:.|\n)+?)\}/gi;
 
-  private listInvalidSymbolLinks: boolean;
-
   private warnings: string[] = [];
 
   initialize() {
     super.initialize();
-
-    const application = this.application;
-
-    this.includes = this.application.options.getValue('includes');
-    this.mediaDirectory = this.application.options.getValue('media');
-    this.listInvalidSymbolLinks = this.application.options.getValue(
-      'listInvalidSymbolLinks',
-    );
 
     this.listenTo(
       this.owner,
@@ -78,58 +65,6 @@ export class ContextAwareHelpersComponent extends ContextAwareRendererComponent 
     MarkdownTheme.HANDLEBARS.registerHelper('comment', function (this: string) {
       return component.parseComments(this);
     });
-
-    MarkdownTheme.HANDLEBARS.registerHelper('breadcrumbs', function (
-      this: PageEvent,
-    ) {
-      if (!this.project.readme && this.url == this.project.url) {
-        return null;
-      }
-      return component.breadcrumb(this.model, this.project, [], application);
-    });
-
-    MarkdownTheme.HANDLEBARS.registerHelper('relativeURL', (url: string) => {
-      const publicPath = application.options.getValue('publicPath') as string;
-      return url
-        ? publicPath
-          ? publicPath + url
-          : this.getRelativeUrl(url)
-        : url;
-    });
-  }
-
-  public breadcrumb(
-    model: Reflection,
-    project: ProjectReflection,
-    md: string[],
-    application,
-  ) {
-    const entryFileName =
-      (application.options.getValue('entryFileName') as string) + '.md';
-    if (model && model.parent) {
-      this.breadcrumb(model.parent, project, md, application);
-      if (model.url) {
-        md.push(
-          `[${model.name}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
-            model.url,
-          )})`,
-        );
-      }
-    } else {
-      if (!!project.readme) {
-        md.push(
-          `[${project.name}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
-            entryFileName,
-          )})`,
-        );
-      }
-      md.push(
-        `[${
-          project.readme ? 'Globals' : project.name
-        }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(project.url)})`,
-      );
-    }
-    return md.join(' › ');
   }
 
   /**

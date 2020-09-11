@@ -1,6 +1,7 @@
 import * as fs from 'fs-extra';
 import * as Handlebars from 'handlebars';
 import {
+  BindOption,
   ContainerReflection,
   DeclarationReflection,
   NavigationItem,
@@ -16,9 +17,9 @@ import {
   DefaultTheme,
   TemplateMapping,
 } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-
-import { ContextAwareHelpersComponent } from './components/context-aware-helpers.component';
-import { OptionsComponent } from './components/options.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs.component';
+import { CommentsComponent } from './components/comments.component';
+import { HelperUtilsComponent } from './components/utils.component';
 
 /**
  * The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/DefaultTheme.ts.
@@ -27,6 +28,12 @@ import { OptionsComponent } from './components/options.component';
  */
 
 export default class MarkdownTheme extends Theme {
+  @BindOption('entryFileName')
+  entryFileName!: string;
+
+  @BindOption('readme')
+  readme!: string;
+
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
 
@@ -41,11 +48,9 @@ export default class MarkdownTheme extends Theme {
     renderer.removeComponent('pretty-print');
 
     // add markdown related componenets
-    renderer.addComponent(
-      'contextAwareHelpers',
-      new ContextAwareHelpersComponent(renderer),
-    );
-    renderer.addComponent('options', new OptionsComponent(renderer));
+    renderer.addComponent('comments', new CommentsComponent(renderer));
+    renderer.addComponent('breadcrumbs', new BreadcrumbsComponent(renderer));
+    renderer.addComponent('utils', new HelperUtilsComponent(renderer));
   }
 
   /**
@@ -53,14 +58,13 @@ export default class MarkdownTheme extends Theme {
    * @param outputDirectory
    */
   isOutputDirectory(outputDirectory: string): boolean {
-    const entryFileName =
-      (this.application.options.getValue('entryFileName') as string) + '.md';
+    const entryFile = this.entryFileName + '.md';
     let isOutputDirectory = true;
 
     const listings = fs.readdirSync(outputDirectory);
 
     listings.forEach((listing) => {
-      if (!this.allowedDirectoryListings(entryFileName).includes(listing)) {
+      if (!this.allowedDirectoryListings(entryFile).includes(listing)) {
         isOutputDirectory = false;
         return;
       }
@@ -95,19 +99,16 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    const entryFileName =
-      (this.application.options.getValue('entryFileName') as string) + '.md';
-    const omitReadme = this.application.options.getValue('readme') === 'none';
+    const entryFile = this.entryFileName + '.md';
+    const omitReadme = this.readme === 'none';
 
     if (omitReadme) {
-      entryPoint.url = entryFileName;
-      urls.push(
-        new UrlMapping(entryFileName, { ...entryPoint }, 'reflection.hbs'),
-      );
+      entryPoint.url = entryFile;
+      urls.push(new UrlMapping(entryFile, { ...entryPoint }, 'reflection.hbs'));
     } else {
       entryPoint.url = 'globals.md';
       urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(entryFileName, project, 'index.hbs'));
+      urls.push(new UrlMapping(entryFile, project, 'index.hbs'));
     }
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
@@ -245,8 +246,7 @@ export default class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
-    const entryFileName =
-      (this.application.options.getValue('entryFileName') as string) + '.md';
+    const entryFile = this.entryFileName + '.md';
     const hasSeperateGlobals =
       this.application.options.getValue('readme') !== 'none';
     const navigation = createNavigationItem(project.name);
@@ -254,7 +254,7 @@ export default class MarkdownTheme extends Theme {
     navigation.children.push(
       createNavigationItem(
         hasSeperateGlobals ? 'README' : 'Globals',
-        entryFileName,
+        entryFile,
       ),
     );
     if (hasSeperateGlobals) {
