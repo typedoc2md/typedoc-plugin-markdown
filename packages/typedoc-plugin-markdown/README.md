@@ -9,8 +9,6 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeS
 
 The plugin will replace the default HTML theme with a built-in Markdown theme, and expose some additional arguments.
 
-Please not if using Docusaurus or Vuepress xxx.
-
 ## Installation
 
 ```bash
@@ -33,32 +31,23 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
-- `--defaultFileName<string>`<br>
+- `--entryFileName<string>`<br>
   Specify the filename of the index/entry page (ext not required). Defaults to `README`.
 - `--hideBreadcrumbs<boolean>`<br>
   Do not render breadcrumbs. Defaults to `false`.
-- `--hideIndexes<boolean>`<br>
-  Do not render page indexes. Defaults to `false`.
 - `--publicPath<string>`<br>
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `undefined`.
-
-**Anchor links**
-
-The following options can be ignored with the majority of implementations.
-
 - `--namedAnchors<boolean>`<br>
-  Use HTML named anchors tags for implementations that do not automatically assign header ids.
-- `--bitbucketCloudAnchors<boolean>`<br>
-  Fix anchors in Bitbucket Cloud which escapes all HTML and implements a proprietry anchor linking implementation.
+  Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 
 ## Additional plugins
 
 - docusaurus-plugin-typedoc
 - vuepress-plugin-typedoc
 
-## Theme customisation
+## What does it look like
 
-## Version 3
+## Theme customisation
 
 ## License
 
