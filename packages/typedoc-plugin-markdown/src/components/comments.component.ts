@@ -1,4 +1,4 @@
-import * as fs from 'fs-extra';
+import * as fs from 'fs';
 import * as Handlebars from 'handlebars';
 import * as path from 'path';
 import { BindOption, MarkedLinksPlugin, Reflection } from 'typedoc';

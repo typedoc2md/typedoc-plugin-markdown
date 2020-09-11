@@ -1,4 +1,4 @@
-import * as fs from 'fs-extra';
+import * as fs from 'fs';
 import * as Handlebars from 'handlebars';
 import {
   BindOption,
@@ -60,7 +60,6 @@ export default class MarkdownTheme extends Theme {
   isOutputDirectory(outputDirectory: string): boolean {
     const entryFile = this.entryFileName + '.md';
     let isOutputDirectory = true;
-
     const listings = fs.readdirSync(outputDirectory);
 
     listings.forEach((listing) => {
