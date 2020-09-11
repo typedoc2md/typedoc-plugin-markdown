@@ -47,12 +47,5 @@ export = (PluginHost: Application) => {
     defaultValue: false,
   });
 
-  app.options.addDeclaration({
-    help: '[Markdown Plugin] Prefix to attach to anchor links.',
-    name: 'bitbucketCloudAnchors',
-    type: ParameterType.Boolean,
-    defaultValue: false,
-  });
-
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };

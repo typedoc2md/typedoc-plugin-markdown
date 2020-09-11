@@ -199,10 +199,8 @@ export default class MarkdownTheme extends Theme {
    */
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
     if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-      const reflectionName = reflection.name.toLowerCase();
-      const anchor = this.application.options.getValue('bitbucketCloudAnchors')
-        ? 'markdown-header-' + reflectionName
-        : reflectionName;
+      const reflectionId = reflection.name.toLowerCase();
+      const anchor = this.toAnchorRef(reflectionId);
       reflection.url = container.url + '#' + anchor;
       reflection.anchor = anchor;
       reflection.hasOwnDocument = false;
@@ -212,6 +210,10 @@ export default class MarkdownTheme extends Theme {
         this.applyAnchorUrl(child, container);
       }
     });
+  }
+
+  toAnchorRef(reflectionId: string) {
+    return reflectionId;
   }
 
   /**
@@ -258,7 +260,9 @@ export default class MarkdownTheme extends Theme {
     if (hasSeperateGlobals) {
       navigation.children.push(createNavigationItem('Globals', 'globals.md'));
     }
-    buildGroups(entryPoint.groups);
+    if (entryPoint.groups) {
+      buildGroups(entryPoint.groups);
+    }
     navigation.children.sort(sortCallback);
 
     function buildGroups(groups: ReflectionGroup[], level = 0) {
