@@ -22,7 +22,15 @@
 
 {{#each sources}}
 
-*{{{sourceFile fileName line url}}}*
+{{#if url}}
+
+*Defined in [{{fileName}}:{{line}}]({{url}})*
+
+{{else}}
+
+*Defined in {{fileName}}:{{line}}*
+
+{{/if}}
 
 {{/each}}
 
