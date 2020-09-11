@@ -7,11 +7,9 @@
     "moduleResolution": "node",
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "outDir": "./dist",
     "removeComments": true,
     "sourceMap": false,
-    "strictNullChecks": false,
-    "target": "es2015"
-  },
-  "exclude": ["./dist", "./test", "**/*.spec.ts"]
+    "strictNullChecks": true,
+    "target": "es2017"
+  }
 }

@@ -1,17 +1,7 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "experimentalDecorators": true,
-    "lib": ["es2016", "dom"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "outDir": "./dist",
-    "removeComments": true,
-    "sourceMap": false,
-    "strictNullChecks": false,
-    "target": "es2015"
+    "outDir": "./dist"
   },
   "exclude": ["./dist", "./test", "**/*.spec.ts"]
 }
