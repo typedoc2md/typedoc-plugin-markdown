@@ -1,16 +1,15 @@
 import * as fs from 'fs';
-import * as path from 'path';
-
 import * as Handlebars from 'handlebars';
+import * as path from 'path';
 import * as tmp from 'tmp';
 import {
   Application,
   DeclarationReflection,
   ProjectReflection,
   Renderer,
+  UrlMapping,
 } from 'typedoc';
 import { ModuleKind, ScriptTarget } from 'typescript';
-
 import MarkdownTheme from '../src/theme';
 
 tmp.setGracefulCleanup();
@@ -81,6 +80,21 @@ export class TestApp {
     helpers.forEach((helper) => {
       Handlebars.registerHelper(helper, () => `[helper: ${helper}]`);
     });
+  }
+
+  static getExpectedUrls(urlMappings: UrlMapping[]) {
+    const expectedUrls = [];
+    urlMappings.forEach((urlMapping) => {
+      expectedUrls.push(urlMapping.url);
+      if (urlMapping.model.children) {
+        urlMapping.model.children.forEach((reflection) => {
+          if (!reflection.hasOwnDocument) {
+            expectedUrls.push(reflection.url);
+          }
+        });
+      }
+    });
+    return expectedUrls;
   }
 
   constructor(inputFiles?: string[]) {

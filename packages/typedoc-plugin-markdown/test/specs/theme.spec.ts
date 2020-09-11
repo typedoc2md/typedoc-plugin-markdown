@@ -1,24 +1,7 @@
 import * as fs from 'fs-extra';
-import { UrlMapping } from 'typedoc';
-
 import { TestApp } from '../test-app';
 
 describe(`Theme:`, () => {
-  function getExpectedUrls(urlMappings: UrlMapping[]) {
-    const expectedUrls = [];
-    urlMappings.forEach((urlMapping) => {
-      expectedUrls.push(urlMapping.url);
-      if (urlMapping.model.children) {
-        urlMapping.model.children.forEach((reflection) => {
-          if (!reflection.hasOwnDocument) {
-            expectedUrls.push(reflection.url);
-          }
-        });
-      }
-    });
-    return expectedUrls;
-  }
-
   let testApp: TestApp;
 
   beforeAll(() => {
@@ -29,13 +12,13 @@ describe(`Theme:`, () => {
     test(`should getUrls'`, () => {
       testApp.bootstrap();
       const urlMappings = testApp.theme.getUrls(testApp.project);
-      expect(getExpectedUrls(urlMappings)).toMatchSnapshot();
+      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
 
     test(`should getUrls with readme 'none'`, () => {
       testApp.bootstrap({ readme: 'none' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
-      expect(getExpectedUrls(urlMappings)).toMatchSnapshot();
+      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
   });
 
