@@ -30,7 +30,7 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "build": "rm -rf ./dist && tsc",
     "demo:start": "npm run build && cd demo && npm run start",
     "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
     "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",

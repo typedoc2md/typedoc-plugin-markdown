@@ -4,7 +4,7 @@ import { spaces } from './spaces';
 import { type } from './type';
 
 export function hierarchy(this: DeclarationHierarchy, level: number) {
-  const md = [];
+  const md: string[] = [];
 
   const space = level > 0 ? level * 2 : 0;
   this.types.forEach((hierarchyType) => {

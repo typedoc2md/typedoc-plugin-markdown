@@ -4,6 +4,7 @@ import {
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import MarkdownTheme from '../theme';
 
 @Component({ name: 'breadcrumbs' })
@@ -46,7 +47,7 @@ export class BreadcrumbsComponent extends ContextAwareRendererComponent {
       }
       md.push(
         `[${project.readme ? 'Globals' : project.name}](${this.getRelativeUrl(
-          project.url,
+          project.url as string,
         )})`,
       );
     }

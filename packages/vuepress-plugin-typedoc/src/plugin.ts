@@ -18,7 +18,7 @@ const app = new Application();
 let done = false;
 
 export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
-  let project: ProjectReflection;
+  let project: ProjectReflection | undefined;
   const sourceDir = ctx.sourceDir;
 
   const options = { ...DEFAULT_PLUGIN_OPTIONS, ...pluginOptions };
@@ -55,8 +55,9 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
       );
 
       project = app.convert(app.expandInputFiles(inputFiles));
-
-      app.generateDocs(project, out);
+      if (project) {
+        app.generateDocs(project, out);
+      }
     },
 
     async enhanceAppFiles() {
@@ -96,15 +97,15 @@ function getSidebarJson(
   outFolder: string,
   sidebar: SidebarOptions,
 ) {
-  const navJson = [];
+  const navJson: any[] = [];
 
   const getShortName = (title: string) => {
     const longTitle = title.split('.');
     return longTitle[longTitle.length - 1];
   };
 
-  navigation.children.forEach((navigationItem) => {
-    if (navigationItem.url && navigationItem.children.length === 0) {
+  navigation.children?.forEach((navigationItem) => {
+    if (navigationItem.url && navigationItem.children?.length === 0) {
       const urlKey = navigationItem.url.replace('.md', '');
       navJson.push([
         urlKey === 'README' ? `/${outFolder}/` : 'globals',
@@ -113,7 +114,7 @@ function getSidebarJson(
     } else {
       navJson.push({
         title: navigationItem.title,
-        children: navigationItem.children.map((navItem) => {
+        children: navigationItem.children?.map((navItem) => {
           return [
             getUrlKey(navItem.url),
             sidebar.fullNames ? navItem.title : getShortName(navItem.title),

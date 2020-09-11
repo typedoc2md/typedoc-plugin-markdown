@@ -1,9 +1,11 @@
 import * as path from 'path';
+
 import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { reflectionTitle } from '../resources/helpers/reflection-title';
 
 @Component({ name: 'frontmatter' })
@@ -16,9 +18,11 @@ export class FrontMatterComponent extends ContextAwareRendererComponent {
   }
 
   onPageEnd(page: PageEvent) {
-    page.contents = page.contents
-      .replace(/^/, this.getYamlString(this.getYamlItems(page)) + '\n\n')
-      .replace(/[\r\n]{3,}/g, '\n\n');
+    if (page.contents) {
+      page.contents = page.contents
+        .replace(/^/, this.getYamlString(this.getYamlItems(page)) + '\n\n')
+        .replace(/[\r\n]{3,}/g, '\n\n');
+    }
   }
 
   getYamlString(yamlItems: { [key: string]: string | number | boolean }) {

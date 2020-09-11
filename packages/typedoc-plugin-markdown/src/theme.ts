@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+
 import * as Handlebars from 'handlebars';
 import {
   BindOption,
@@ -17,6 +18,7 @@ import {
   DefaultTheme,
   TemplateMapping,
 } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+
 import { BreadcrumbsComponent } from './components/breadcrumbs.component';
 import { CommentsComponent } from './components/comments.component';
 import { HelperUtilsComponent } from './components/utils.component';
@@ -250,36 +252,38 @@ export default class MarkdownTheme extends Theme {
       this.application.options.getValue('readme') !== 'none';
     const navigation = createNavigationItem(project.name);
 
-    navigation.children.push(
+    navigation.children?.push(
       createNavigationItem(
         hasSeperateGlobals ? 'README' : 'Globals',
         entryFile,
       ),
     );
     if (hasSeperateGlobals) {
-      navigation.children.push(createNavigationItem('Globals', 'globals.md'));
+      navigation.children?.push(createNavigationItem('Globals', 'globals.md'));
     }
     if (entryPoint.groups) {
       buildGroups(entryPoint.groups);
     }
-    navigation.children.sort(sortCallback);
+    navigation.children?.sort(sortCallback);
 
     function buildGroups(groups: ReflectionGroup[], level = 0) {
       groups.forEach((reflectionGroup) => {
         if (reflectionGroup.allChildrenHaveOwnDocument()) {
-          let reflectionGroupItem = navigation.children.find(
+          let reflectionGroupItem = navigation.children?.find(
             (child) => child.title === reflectionGroup.title,
           );
           if (!reflectionGroupItem) {
             reflectionGroupItem = createNavigationItem(reflectionGroup.title);
-            navigation.children.push(reflectionGroupItem);
+            navigation.children?.push(reflectionGroupItem);
           }
           reflectionGroup.children.forEach((reflectionGroupChild) => {
             const reflectionGroupChildItem = createNavigationItem(
               reflectionGroupChild.getFullName().replace(/\"/g, ''),
               reflectionGroupChild.url,
             );
-            reflectionGroupItem.children.push(reflectionGroupChildItem);
+            if (reflectionGroupItem) {
+              reflectionGroupItem.children?.push(reflectionGroupChildItem);
+            }
             const reflection = reflectionGroupChild as ContainerReflection;
             if (reflection.groups) {
               buildGroups(reflection.groups, level + 1);
@@ -292,7 +296,6 @@ export default class MarkdownTheme extends Theme {
     function createNavigationItem(title: string, url?: string) {
       const navigationItem = new NavigationItem(title.replace(/\"/g, ''), url);
       navigationItem.children = [];
-      delete navigationItem.cssClasses;
       delete navigationItem.reflection;
       delete navigationItem.isLabel;
       return navigationItem;

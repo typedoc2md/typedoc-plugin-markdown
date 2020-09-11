@@ -12,6 +12,7 @@ import {
   TypeParameterType,
   UnionType,
 } from 'typedoc/dist/lib/models/types';
+
 import MarkdownTheme from '../../theme';
 
 export function type(
@@ -140,22 +141,23 @@ function getStringLiteralType(model: StringLiteralType) {
 }
 
 function getLiteralType(declarationReflection: DeclarationReflection) {
-  let indexSignature;
-  if (declarationReflection.indexSignature) {
-    const key = declarationReflection.indexSignature.parameters.map(
-      (param) => `[${param.name}:${param.type}]`,
-    );
-    const obj = type.call(declarationReflection.indexSignature.type);
+  let indexSignature = '';
+  const declarationIndexSignature = declarationReflection.indexSignature;
+  if (declarationIndexSignature) {
+    const key = declarationIndexSignature.parameters
+      ? declarationIndexSignature.parameters.map(
+          (param) => `[${param.name}:${param.type}]`,
+        )
+      : '';
+    const obj = type.call(declarationIndexSignature.type);
     indexSignature = `${key}: ${obj}; `;
   }
   let types;
   if (declarationReflection.children) {
     types = declarationReflection.children.map((obj) => {
-      return `${obj.name}${
-        obj.flags.includes('Optional') ? '?' : ''
-      }: ${type.call(obj.signatures || obj.children ? obj : obj.type)} ${
-        obj.defaultValue ? ` = ${obj.defaultValue}` : ''
-      }`;
+      return `${obj.name}${obj.flags.isOptional ? '?' : ''}: ${type.call(
+        obj.signatures || obj.children ? obj : obj.type,
+      )} ${obj.defaultValue ? ` = ${obj.defaultValue}` : ''}`;
     });
   }
   return `{ ${indexSignature ? indexSignature : ''}${

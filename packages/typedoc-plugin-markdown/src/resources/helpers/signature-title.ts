@@ -1,15 +1,16 @@
 import { SignatureReflection } from 'typedoc';
+
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
 export function signatureTitle(this: SignatureReflection) {
-  const md = [];
+  const md: string[] = [];
 
   md.push(`${memberSymbol.call(this)} `);
 
-  if (this.name === '__get') {
+  if (this.name === '__get' && this.parent) {
     md.push(`get **${this.parent.name}**`);
-  } else if (this.name === '__set') {
+  } else if (this.name === '__set' && this.parent) {
     md.push(`set **${this.parent.name}**`);
   } else if (this.name !== '__call') {
     md.push(`**${this.name}**`);
@@ -26,7 +27,7 @@ export function signatureTitle(this: SignatureReflection) {
   const params = this.parameters
     ? this.parameters
         .map((param) => {
-          const paramsmd = [];
+          const paramsmd: string[] = [];
           if (param.flags.isRest) {
             paramsmd.push('...');
           }

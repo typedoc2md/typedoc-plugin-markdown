@@ -7,9 +7,11 @@ import { SidebarOptions } from '../types';
 @Component({ name: 'docusaurus-frontmatter' })
 export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
   sidebar: SidebarOptions;
-  constructor(owner: Renderer, sidebar: SidebarOptions) {
+  constructor(owner: Renderer, sidebar?: SidebarOptions) {
     super(owner);
-    this.sidebar = sidebar;
+    if (sidebar) {
+      this.sidebar = sidebar;
+    }
   }
   getYamlItems(page: PageEvent) {
     return {
@@ -29,11 +31,10 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
       return page.url === page.project.url ? 'Globals' : 'README';
     }
 
-    const item = this.findNavigationItem(
-      page.navigation.children,
-      page.url,
-      null,
-    );
+    const item =
+      page.navigation && page.navigation.children
+        ? this.findNavigationItem(page.navigation.children, page.url)
+        : undefined;
 
     const getShortName = (title: string) => {
       const longTitle = title.split('.');
@@ -49,7 +50,7 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
   findNavigationItem(
     navigation: NavigationItem[],
     url: string,
-    item: NavigationItem,
+    item?: NavigationItem,
   ) {
     navigation.forEach((navigationChild) => {
       if (navigationChild.url === url) {

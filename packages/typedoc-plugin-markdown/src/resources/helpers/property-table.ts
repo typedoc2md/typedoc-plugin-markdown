@@ -1,5 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { ReflectionType } from 'typedoc/dist/lib/models';
+
 import MarkdownTheme from '../../theme';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
@@ -23,8 +24,8 @@ export function propertyTable(this: DeclarationReflection[]) {
       property.signatures || property.children
         ? type.call(property)
         : type.call(property.type);
-    const row = [];
-    const nameCol = [];
+    const row: string[] = [];
+    const nameCol: string[] = [];
     if (property.flags.length) {
       const flags = property.flags.map((flag) => `**\`${flag}\`**`);
       nameCol.push(flags.join(' '));
@@ -37,7 +38,7 @@ export function propertyTable(this: DeclarationReflection[]) {
     const hasTypeDeclarations = property.type instanceof ReflectionType;
 
     if (hasComments || hasTypeDeclarations) {
-      const commentsText = [];
+      const commentsText: string[] = [];
       if (property.comment && property.comment.shortText) {
         commentsText.push(
           MarkdownTheme.HANDLEBARS.helpers.comment.call(

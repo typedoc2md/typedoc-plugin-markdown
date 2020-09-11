@@ -13,8 +13,10 @@ export class MdxComponent extends ContextAwareRendererComponent {
     });
   }
   onPageEnd(page: PageEvent) {
-    page.contents = page.contents
-      .replace(/\\</g, '&#60;')
-      .replace(/>/g, '&#62;');
+    if (page.contents) {
+      page.contents = page.contents
+        .replace(/\\</g, '&#60;')
+        .replace(/>/g, '&#62;');
+    }
   }
 }

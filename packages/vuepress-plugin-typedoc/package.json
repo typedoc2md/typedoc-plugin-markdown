@@ -29,7 +29,7 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "build": "rm -rf ./dist && tsc",
     "demo:start": "npm run build && cd demo && npm run dev",
     "demo:build": "npm run build && cd demo && npm run build",
     "demo:init": "rm -rf demo && npx create-vuepress demo",

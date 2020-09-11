@@ -3,13 +3,13 @@ import { Application, ProjectReflection } from 'typedoc';
 export interface PluginOptions {
   id?: string;
   logger?: string;
-  inputFiles: string[];
+  inputFiles?: string[];
   entryFileName: string;
-  docsRoot: string;
-  out: string;
+  docsRoot?: string;
+  out?: string;
   hideBreadcrumbs: boolean;
-  skipSidebar: boolean;
-  sidebar: SidebarOptions;
+  skipSidebar?: boolean;
+  sidebar?: SidebarOptions;
 }
 
 export interface SidebarOptions {
@@ -19,5 +19,5 @@ export interface SidebarOptions {
 
 export interface LoadedContent {
   app: Application;
-  project: ProjectReflection;
+  project?: ProjectReflection | undefined;
 }

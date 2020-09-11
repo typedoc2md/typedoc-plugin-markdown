@@ -1,4 +1,5 @@
 import { ParameterReflection } from 'typedoc';
+
 import MarkdownTheme from '../../theme';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
@@ -37,7 +38,7 @@ export function parameterTable(this: ParameterReflection[]) {
       row.push(parameter.defaultValue ? parameter.defaultValue : '-');
     }
     if (hasComments) {
-      const commentsText = [];
+      const commentsText: string[] = [];
       if (parameter.comment && parameter.comment.shortText) {
         commentsText.push(
           MarkdownTheme.HANDLEBARS.helpers.comment.call(

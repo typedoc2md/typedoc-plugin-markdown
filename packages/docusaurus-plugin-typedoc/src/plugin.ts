@@ -30,8 +30,11 @@ export default function pluginDocusaurus(
   const options = { ...DEFAULT_PLUGIN_OPTIONS, ...pluginOptions };
 
   const inputFiles = options.inputFiles;
-  const sidebar = options.skipSidebar ? null : options.sidebar;
-  const docsRoot = path.resolve(siteDir, options.docsRoot);
+  const sidebar = options.skipSidebar ? undefined : options.sidebar;
+  const docsRoot = path.resolve(
+    siteDir,
+    options.docsRoot ? options.docsRoot : '',
+  );
   const outFolder = options.out !== undefined ? options.out : 'api';
   const out = docsRoot + (outFolder ? '/' + outFolder : '');
 
@@ -46,10 +49,12 @@ export default function pluginDocusaurus(
   return {
     name: 'docusaurus-plugin-typedoc',
 
-    async loadContent() {
+    async loadContent(): Promise<LoadedContent> {
       // re-compiling will cause an infinate render loop with dev server
       if (app.renderer.theme) {
-        return;
+        return {
+          app,
+        };
       }
 
       app.renderer.addComponent(
@@ -70,8 +75,9 @@ export default function pluginDocusaurus(
 
       // render project
       const project = app.convert(app.expandInputFiles(inputFiles));
-
-      app.generateDocs(project, out);
+      if (project) {
+        app.generateDocs(project, out);
+      }
       return {
         app,
         project,
@@ -80,17 +86,18 @@ export default function pluginDocusaurus(
 
     async contentLoaded({ content }) {
       const { app, project } = content;
-
-      const sidebarPath = path.resolve(siteDir, 'sidebars.js');
-      if (sidebar && content) {
-        const theme = app.renderer.theme as any;
-        const navigation = theme.getNavigation(project);
-        const sidebarContent = getSidebarJson(
-          navigation,
-          outFolder,
-          sidebar.parentCategory,
-        );
-        writeSideBar(sidebarContent, sidebarPath, options.logger !== 'none');
+      if (project) {
+        const sidebarPath = path.resolve(siteDir, 'sidebars.js');
+        if (sidebar && content) {
+          const theme = app.renderer.theme as any;
+          const navigation = theme.getNavigation(project);
+          const sidebarContent = getSidebarJson(
+            navigation,
+            outFolder,
+            sidebar.parentCategory,
+          );
+          writeSideBar(sidebarContent, sidebarPath, options.logger !== 'none');
+        }
       }
     },
   };
@@ -101,23 +108,23 @@ function getSidebarJson(
   outFolder: string,
   parentCategory: string,
 ) {
-  const navJson = [];
+  const navJson: any[] = [];
 
-  navigation.children.forEach((navigationItem) => {
-    if (navigationItem.url && navigationItem.children.length === 0) {
+  navigation.children?.forEach((navigationItem) => {
+    if (navigationItem.url && navigationItem.children?.length === 0) {
       navJson.push(getUrlKey(outFolder, navigationItem.url));
     } else {
       const category = {
         type: 'category',
         label: navigationItem.title,
-        items: navigationItem.children.map((navItem) => {
+        items: navigationItem.children?.map((navItem) => {
           const url = getUrlKey(outFolder, navItem.url);
-          if (navItem.children.length > 0) {
+          if (navItem && navItem.children && navItem.children.length > 0) {
             const childGroups = navItem.children.map((child) => {
               return {
                 type: 'category',
                 label: child.title,
-                items: child.children.map((c) => getUrlKey(outFolder, c.url)),
+                items: child.children?.map((c) => getUrlKey(outFolder, c.url)),
               };
             });
             return {
