@@ -13,6 +13,9 @@ export class HelperUtilsComponent extends ContextAwareRendererComponent {
   @BindOption('namedAnchors')
   namedAnchors!: boolean;
 
+  @BindOption('hideProjectName')
+  hideProjectName!: boolean;
+
   @BindOption('hideBreadcrumbs')
   hideBreadcrumbs!: boolean;
 
@@ -50,6 +53,14 @@ export class HelperUtilsComponent extends ContextAwareRendererComponent {
       options,
     ) {
       return component.hideSources ? options.inverse(this) : options.fn(this);
+    });
+
+    MarkdownTheme.HANDLEBARS.registerHelper('ifShowProjectName', function (
+      options,
+    ) {
+      return component.hideProjectName
+        ? options.inverse(this)
+        : options.fn(this);
     });
   }
 }

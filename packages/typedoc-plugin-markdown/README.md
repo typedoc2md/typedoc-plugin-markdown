@@ -33,8 +33,10 @@ The following arguments can be used in addition to the default [TypeDoc argument
 
 - `--entryFileName<string>`<br>
   Specify the filename of the index/entry page (ext not required). Defaults to `README`.
+- `--hideProjectName<boolean>`<br>
+  Do not render project name in template header. Defaults to `false`.
 - `--hideBreadcrumbs<boolean>`<br>
-  Do not render breadcrumbs. Defaults to `false`.
+  Do not render breadcrumbs in template. Defaults to `false`.
 - `--publicPath<string>`<br>
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `undefined`.
 - `--namedAnchors<boolean>`<br>

@@ -1,6 +1,5 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
-
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -19,7 +18,14 @@ export = (PluginHost: Application) => {
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Do not print breadcrumbs.',
+    help: '[Markdown Plugin] Do not render project name in template header.',
+    name: 'hideProjectName',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Do not render breadcrumbs in template.',
     name: 'hideBreadcrumbs',
     type: ParameterType.Boolean,
     defaultValue: false,
