@@ -124,11 +124,13 @@ export class TestApp {
   }
 
   findModule(name: string) {
-    return this.theme
-      .getEntryPoint(this.project)
-      .groups[0].children.find(
-        (child) => child.name.replace(/\"/g, '') === name,
-      );
+    return this.findEntryPoint().groups[0].children.find(
+      (child) => child.name.replace(/\"/g, '') === name,
+    );
+  }
+
+  findEntryPoint() {
+    return this.theme.getEntryPoint(this.project);
   }
 
   findReflection(name: string) {

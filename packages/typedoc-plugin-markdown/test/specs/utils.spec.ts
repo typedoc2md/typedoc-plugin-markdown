@@ -21,6 +21,11 @@ describe(`Options:`, () => {
         Handlebars.helpers.ifShowBreadcrumbs(TestApp.handlebarsOptionsStub),
       ).toBeTruthy();
     });
+    test(`should set project name to 'true' by default`, () => {
+      expect(
+        Handlebars.helpers.ifShowProjectName(TestApp.handlebarsOptionsStub),
+      ).toBeTruthy();
+    });
     test(`should compile relativeURL helper`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
       expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
@@ -33,6 +38,7 @@ describe(`Options:`, () => {
         publicPath: 'test-public-path',
         namedAnchors: true,
         hideBreadcrumbs: true,
+        hideProjectName: true,
       });
     });
     test(`should set named anchors to 'true'`, () => {
@@ -43,6 +49,11 @@ describe(`Options:`, () => {
     test(`should set breadcrumbs to 'false'`, () => {
       expect(
         Handlebars.helpers.ifShowBreadcrumbs(TestApp.handlebarsOptionsStub),
+      ).toBeFalsy();
+    });
+    test(`should set project name to 'false'`, () => {
+      expect(
+        Handlebars.helpers.ifShowProjectName(TestApp.handlebarsOptionsStub),
       ).toBeFalsy();
     });
     test(`should compile relativeURL helper with public path`, () => {

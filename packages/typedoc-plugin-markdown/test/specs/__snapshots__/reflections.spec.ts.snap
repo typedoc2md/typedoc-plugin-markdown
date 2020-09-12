@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Reflections: should compile a callable reflection 1`] = `
-"[helper: breadcrumbs]
+exports[`Reflections: (header) should compile template with breadcrumbs and project title 1`] = `
+"**typedoc-plugin-markdown**
 
-# Interface: CallableReflection
+[helper: breadcrumbs]
+
+# Module: \\"reflections\\"
+
+[partial: index]
+
+[partial: members]
+"
+`;
+
+exports[`Reflections: (template) should compile a callable reflection 1`] = `
+"# Interface: CallableReflection
 
 _\\"reflections\\".CallableReflection_
 
@@ -19,10 +30,8 @@ _\\"reflections\\".CallableReflection_
 "
 `;
 
-exports[`Reflections: should compile an indexable reflection 1`] = `
-"[helper: breadcrumbs]
-
-# Interface: IndexableReflection
+exports[`Reflections: (template) should compile an indexable reflection 1`] = `
+"# Interface: IndexableReflection
 
 _\\"reflections\\".IndexableReflection_
 
@@ -40,7 +49,7 @@ _\\"reflections\\".IndexableReflection_
 "
 `;
 
-exports[`Reflections: should compile module without breadcrumbs 1`] = `
+exports[`Reflections: (template) should compile module with breadcrumbs and project title 1`] = `
 "# Module: \\"reflections\\"
 
 [partial: index]
@@ -49,10 +58,8 @@ exports[`Reflections: should compile module without breadcrumbs 1`] = `
 "
 `;
 
-exports[`Reflections: should compile reflection with type params 1`] = `
-"[helper: breadcrumbs]
-
-# Interface: ReflectionWithTypeParams\\\\<**T, V**>
+exports[`Reflections: (template) should compile reflection with type params 1`] = `
+"# Interface: ReflectionWithTypeParams\\\\<**T, V**>
 
 _\\"reflections\\".ReflectionWithTypeParams_
 

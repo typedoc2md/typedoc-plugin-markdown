@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs: should compile breadcrumbs with readme' 1`] = `
-"[typedoc-plugin-markdown](../README.md) › [Globals](../globals.md)
-"
-`;
+exports[`Breadcrumbs: (with readme) should compile README breadcrumbs' 1`] = `"README / [Globals](../globals.md)"`;
 
-exports[`Breadcrumbs: should compile breadcrumbs without a readme' 1`] = `
-"[typedoc-plugin-markdown](../README.md)
-"
-`;
+exports[`Breadcrumbs: (with readme) should compile class breadcrumbs' 1`] = `"[README](../README.md) / [Globals](../globals.md) / [\\"breadcrumbs\\"](../modules/_breadcrumbs_.md) / Breadcrumbs"`;
+
+exports[`Breadcrumbs: (with readme) should compile entryPoint (globals) breadcrumbs' 1`] = `"[README](../README.md) / Globals"`;
+
+exports[`Breadcrumbs: (with readme) should compile module breadcrumbs' 1`] = `"[README](../README.md) / [Globals](../globals.md) / \\"breadcrumbs\\""`;
+
+exports[`Breadcrumbs: (without readme) should compile class breadcrumbs' 1`] = `"[Globals](../README.md) / [\\"breadcrumbs\\"](../modules/_breadcrumbs_.md) / Breadcrumbs"`;
+
+exports[`Breadcrumbs: (without readme) should compile module breadcrumbs' 1`] = `"[Globals](../README.md) / \\"breadcrumbs\\""`;
