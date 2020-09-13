@@ -1,29 +1,31 @@
 import { DeclarationReflection } from 'typedoc';
-import { ReflectionType } from 'typedoc/dist/lib/models';
-
-import MarkdownTheme from '../../theme';
+import { ReflectionKind } from 'typedoc/dist/lib/models';
+import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
-export function propertyTable(this: DeclarationReflection[]) {
-  const comments = this.map(
+export function propertyTable(
+  this: DeclarationReflection[],
+  kind: ReflectionKind,
+) {
+  const commentsMap = this.map(
     (param) =>
       (param.comment && !!param.comment.text) ||
       (param.comment && !!param.comment.shortText),
   );
-  const hasComments = !comments.every((value) => !value);
-
+  const hasComments = !commentsMap.every((value) => !value);
+  const hasValues = kind === ReflectionKind.ObjectLiteral;
   const headers = ['Name', 'Type'];
-
+  if (hasValues) {
+    headers.push('Value');
+  }
   if (hasComments) {
     headers.push('Description');
   }
 
   const rows = this.map((property) => {
-    const typeOut =
-      property.signatures || property.children
-        ? type.call(property)
-        : type.call(property.type);
+    const propertyType =
+      property.signatures || property.children ? property : property.type;
     const row: string[] = [];
     const nameCol: string[] = [];
     if (property.flags.length) {
@@ -33,30 +35,23 @@ export function propertyTable(this: DeclarationReflection[]) {
 
     nameCol.push(`\`${property.name}\``);
     row.push(nameCol.join(' '));
-    row.push(typeOut);
+    row.push(type.call(propertyType, kind !== ReflectionKind.ObjectLiteral));
 
-    const hasTypeDeclarations = property.type instanceof ReflectionType;
-
-    if (hasComments || hasTypeDeclarations) {
-      const commentsText: string[] = [];
-      if (property.comment && property.comment.shortText) {
-        commentsText.push(
-          MarkdownTheme.HANDLEBARS.helpers.comment.call(
-            stripLineBreaks.call(property.comment.shortText),
-          ),
-        );
-      }
-      if (property.comment && property.comment.text) {
-        commentsText.push(
-          MarkdownTheme.HANDLEBARS.helpers.comment.call(
-            stripLineBreaks.call(property.comment.text),
-          ),
-        );
-      }
-
-      row.push(commentsText.length > 0 ? commentsText.join(' ') : '-');
+    if (hasValues) {
+      row.push(
+        property.defaultValue
+          ? stripLineBreaks(property.defaultValue)
+          : type.call(propertyType, true),
+      );
     }
 
+    if (hasComments) {
+      if (property.comment) {
+        row.push(stripLineBreaks(comment.call(property.comment)));
+      } else {
+        row.push('-');
+      }
+    }
     return `${row.join(' | ')} |\n`;
   });
 

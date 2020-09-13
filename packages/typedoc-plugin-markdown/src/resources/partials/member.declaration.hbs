@@ -1,5 +1,7 @@
 {{{declarationTitle false}}}
 
+{{> member.sources}}
+
 {{> comment}}
 
 {{#if type.declaration}}
@@ -10,7 +12,7 @@
 
 {{#with type.declaration.children}}
 
-{{{propertyTable}}}
+{{{propertyTable ../kind}}}
 
 {{/with}}
 
@@ -24,10 +26,8 @@
 
 {{#with children}}
 
-{{{propertyTable}}}
+{{{propertyTable ../kind}}}
 
 {{/with}}
 
 {{/ifCond }}
-
-{{> member.sources}}

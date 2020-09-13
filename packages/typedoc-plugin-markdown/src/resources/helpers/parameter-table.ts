@@ -1,6 +1,5 @@
 import { ParameterReflection } from 'typedoc';
-
-import MarkdownTheme from '../../theme';
+import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
@@ -38,22 +37,11 @@ export function parameterTable(this: ParameterReflection[]) {
       row.push(parameter.defaultValue ? parameter.defaultValue : '-');
     }
     if (hasComments) {
-      const commentsText: string[] = [];
-      if (parameter.comment && parameter.comment.shortText) {
-        commentsText.push(
-          MarkdownTheme.HANDLEBARS.helpers.comment.call(
-            stripLineBreaks.call(parameter.comment.shortText),
-          ),
-        );
+      if (parameter.comment) {
+        row.push(stripLineBreaks(comment.call(parameter.comment)));
+      } else {
+        row.push('-');
       }
-      if (parameter.comment && parameter.comment.text) {
-        commentsText.push(
-          MarkdownTheme.HANDLEBARS.helpers.comment.call(
-            stripLineBreaks.call(parameter.comment.text),
-          ),
-        );
-      }
-      row.push(commentsText.length > 0 ? commentsText.join(' ') : '-');
     }
     return `${row.join(' | ')} |\n`;
   });

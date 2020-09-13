@@ -12,7 +12,6 @@ import {
   TypeParameterType,
   UnionType,
 } from 'typedoc/dist/lib/models/types';
-
 import MarkdownTheme from '../../theme';
 
 export function type(
@@ -27,7 +26,7 @@ export function type(
     | TypeOperatorType
     | TypeParameterType
     | QueryType,
-  expandType = true,
+  expandType = false,
 ) {
   if (
     this instanceof ReferenceType &&
@@ -72,11 +71,13 @@ export function type(
   }
 
   if (this instanceof ReflectionType && this.declaration.signatures) {
-    return getFunctionType(this.declaration.signatures);
+    return expandType
+      ? getFunctionType(this.declaration.signatures)
+      : 'function';
   }
 
   if (this instanceof DeclarationReflection && this.signatures) {
-    return getFunctionType(this.signatures);
+    return expandType ? getFunctionType(this.signatures) : 'function';
   }
 
   if (this instanceof TypeOperatorType) {
@@ -140,37 +141,34 @@ function getStringLiteralType(model: StringLiteralType) {
   return `\"${model.value}\"`;
 }
 
-function getLiteralType(declarationReflection: DeclarationReflection) {
+function getLiteralType(model: DeclarationReflection) {
   let indexSignature = '';
-  const declarationIndexSignature = declarationReflection.indexSignature;
+  const declarationIndexSignature = model.indexSignature;
   if (declarationIndexSignature) {
     const key = declarationIndexSignature.parameters
       ? declarationIndexSignature.parameters.map(
           (param) => `[${param.name}:${param.type}]`,
         )
       : '';
-    const obj = type.call(declarationIndexSignature.type);
+    const obj = type.call(declarationIndexSignature.type, true);
     indexSignature = `${key}: ${obj}; `;
   }
   let types;
-  if (declarationReflection.children) {
-    types = declarationReflection.children.map((obj) => {
+  if (model.children) {
+    types = model.children.map((obj) => {
       return `${obj.name}${obj.flags.isOptional ? '?' : ''}: ${type.call(
         obj.signatures || obj.children ? obj : obj.type,
+        true,
       )} ${obj.defaultValue ? ` = ${obj.defaultValue}` : ''}`;
     });
   }
   return `{ ${indexSignature ? indexSignature : ''}${
     types ? types.join('; ') : ''
-  } }${
-    declarationReflection.defaultValue
-      ? ` = ${declarationReflection.defaultValue}`
-      : ''
-  }`;
+  } }${model.defaultValue ? ` = ${model.defaultValue}` : ''}`;
 }
 
-export function getFunctionType(signatures: SignatureReflection[]) {
-  const functions = signatures.map((fn) => {
+export function getFunctionType(modelSignatures: SignatureReflection[]) {
+  const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
       ? `\\<${fn.typeParameters
           .map((typeParameter) => typeParameter.name)
@@ -183,7 +181,7 @@ export function getFunctionType(signatures: SignatureReflection[]) {
           }: ${type.call(param.type ? param.type : param)}`;
         })
       : [];
-    const returns = type.call(fn.type);
+    const returns = type.call(fn.type, true);
 
     return typeParams + `(${params.join(',')}) => ${returns}`;
   });
@@ -191,9 +189,9 @@ export function getFunctionType(signatures: SignatureReflection[]) {
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {
-  return 'keyof ' + type.call(model.target);
+  return `*keyof* ${model.operator} ${type.call(model.target)}`;
 }
 
 function getQueryType(model: QueryType) {
-  return 'typeof ' + type.call(model.queryType);
+  return `*typeof* ${type.call(model.queryType)}`;
 }

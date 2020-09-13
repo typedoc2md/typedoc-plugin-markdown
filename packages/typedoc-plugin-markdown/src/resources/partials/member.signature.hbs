@@ -1,5 +1,7 @@
 {{{signatureTitle}}}
 
+{{> member.sources}}
+
 {{> comment}}
 
 {{#if typeParameters}}
@@ -24,10 +26,6 @@
 
 {{#if type}}
 
-{{#unless hideSources}}
-
-{{> member.sources}}
-
 **Returns:** {{#with type}}*{{{type}}}*{{/with}}
 
 {{#if comment.returns}}
@@ -39,7 +37,5 @@
 {{/with}}
 
 {{/if}}
-
-{{/unless}}
 
 {{/if}}
