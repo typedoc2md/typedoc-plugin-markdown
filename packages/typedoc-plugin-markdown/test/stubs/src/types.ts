@@ -4,7 +4,33 @@ const stringLiteralType = 'blue';
 
 type unionType = 'ease-in' | 'ease-out' | 'ease-in-out';
 
-let literalType: { a: string; b: number };
+let literalType: {
+  valueZ: string;
+  valueY: { (): string };
+  valueX: {
+    valueZ: string;
+    valueY: { (z: string): { a: string; b: string } };
+    valueA: number[];
+  };
+  valueA?: number;
+  valueB?: boolean;
+};
+
+const objectLiteralType = {
+  valueZ: 'foo',
+  valueY: function () {
+    return 'foo';
+  },
+  valueX: {
+    valueZ: 'foo',
+    valueY: (z: string) => {
+      return { a: 'test', b: z };
+    },
+    valueA: [100, 200, 300],
+  },
+  valueA: 100,
+  valueB: true,
+};
 
 let tupleType: [string, number];
 
@@ -27,3 +53,5 @@ function generic<T>(arg: T): T {
 }
 
 const functionReflectionType: <T>(arg: T) => T = generic;
+
+export const typeOperatorType: unique symbol = Symbol.for('__type__');

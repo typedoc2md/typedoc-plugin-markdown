@@ -1,7 +1,10 @@
-const stringWithDefaultValue = 'variable';
-let undefinedNumber: number;
+const stringWithDefaultValueDeclaration = 'variable';
+let undefinedNumberDeclaration: number;
 
-const objectLiteral = {
+const objectLiteralDeclaration = {
+  /**
+   * Comment for valueZ
+   */
   valueZ: 'foo',
   /**
    * Comment for value Y
@@ -9,11 +12,11 @@ const objectLiteral = {
   valueY: function () {
     return 'foo';
   },
+  /**
+   * Comment for valueX
+   */
   valueX: {
     valueZ: 'foo',
-    valueY: (z: string) => {
-      return { a: 'test', b: z };
-    },
     valueA: [100, 200, 300],
   },
   /**
@@ -23,16 +26,19 @@ const objectLiteral = {
   valueB: true,
 };
 
-const objectLiteral2 = {
+const objectLiteral2Declaration = {
   valueA: () => {},
 };
 
-let typeLiteral: {
+let typeLiteralDeclaration: {
   /**
    * Comment for valueZ
    */
   valueZ: string;
   valueY: { (): string };
+  /**
+   * Comment for valueX
+   */
   valueX: {
     /**
      * Nested comment for valueZ
@@ -51,3 +57,20 @@ let typeLiteral: {
 let typeLiteral2: {
   prop: string;
 };
+
+const objectLiteralAsConstDeclaration = {
+  /**
+   * comments
+   */
+  Prop1: 'Prop1',
+  /**
+   * comments
+   */
+  Prop2: 'Prop1',
+  /**
+   * comments
+   */
+  Prop3: 'Prop1',
+} as const;
+
+export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');

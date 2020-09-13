@@ -89,3 +89,14 @@ export class CommentClass {
     return 'Comment';
   }
 }
+
+const objectWithBlockComments = {
+  /**
+   * Comment 1
+   *
+   * @tag Tag description
+   *
+   * Comment 2
+   */
+  prop: 'prop',
+};
