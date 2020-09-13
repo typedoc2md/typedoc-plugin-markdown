@@ -3,9 +3,9 @@
 exports[`Signatures: should compile callable signature' 1`] = `
 "▸ (): string
 
+[partial: member.sources]
 [partial: comment]
 
-[partial: member.sources]
 **Returns:** *string*
 "
 `;
@@ -13,6 +13,7 @@ exports[`Signatures: should compile callable signature' 1`] = `
 exports[`Signatures: should compile signature with default values' 1`] = `
 "▸ **functionWithUnionTypes**(\`arg\`: boolean[] \\\\| number, ...\`args\`: (string \\\\| number)[]): any
 
+[partial: member.sources]
 [partial: comment]
 
 #### Parameters:
@@ -22,7 +23,6 @@ Name | Type |
 \`arg\` | boolean[] \\\\| number |
 \`...args\` | (string \\\\| number)[] |
 
-[partial: member.sources]
 **Returns:** *any*
 "
 `;
@@ -30,6 +30,7 @@ Name | Type |
 exports[`Signatures: should compile signature with optional params' 1`] = `
 "▸ **functionWithOptionalParam**(\`requiredParam\`: string, \`optionalParam?\`: string): void
 
+[partial: member.sources]
 [partial: comment]
 
 #### Parameters:
@@ -39,7 +40,6 @@ Name | Type | Description |
 \`requiredParam\` | string | A normal parameter. |
 \`optionalParam?\` | string | An optional parameter.  |
 
-[partial: member.sources]
 **Returns:** *void*
 "
 `;
@@ -47,6 +47,7 @@ Name | Type | Description |
 exports[`Signatures: should compile signature with params' 1`] = `
 "▸ **functionWithParameters**(\`paramZ\`: string, \`paramG\`: any, \`paramA\`: any): number
 
+[partial: member.sources]
 [partial: comment]
 
 #### Parameters:
@@ -57,7 +58,6 @@ Name | Type | Description |
 \`paramG\` | any | This is a parameter flagged with any.<br />     This sentence is placed in the next line.  |
 \`paramA\` | any |    This is a **parameter** pointing to an interface.   |
 
-[partial: member.sources]
 **Returns:** *number*
 "
 `;
@@ -65,6 +65,7 @@ Name | Type | Description |
 exports[`Signatures: should compile signature with rest params' 1`] = `
 "▸ **functionWithRest**(...\`rest\`: string[]): string
 
+[partial: member.sources]
 [partial: comment]
 
 #### Parameters:
@@ -73,7 +74,6 @@ Name | Type | Description |
 ------ | ------ | ------ |
 \`...rest\` | string[] | The rest parameter.  |
 
-[partial: member.sources]
 **Returns:** *string*
 "
 `;
@@ -81,6 +81,7 @@ Name | Type | Description |
 exports[`Signatures: should compile signature with union types' 1`] = `
 "▸ **functionWithUnionTypes**(\`arg\`: boolean[] \\\\| number, ...\`args\`: (string \\\\| number)[]): any
 
+[partial: member.sources]
 [partial: comment]
 
 #### Parameters:
@@ -90,7 +91,6 @@ Name | Type |
 \`arg\` | boolean[] \\\\| number |
 \`...args\` | (string \\\\| number)[] |
 
-[partial: member.sources]
 **Returns:** *any*
 "
 `;

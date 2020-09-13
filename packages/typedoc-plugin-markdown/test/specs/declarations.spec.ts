@@ -1,5 +1,4 @@
 import * as Handlebars from 'handlebars';
-
 import { TestApp } from '../test-app';
 
 describe(`Reflections:`, () => {
@@ -20,7 +19,7 @@ describe(`Reflections:`, () => {
     expect(
       TestApp.compileTemplate(
         template,
-        testApp.findReflection('stringWithDefaultValue'),
+        testApp.findReflection('stringWithDefaultValueDeclaration'),
       ),
     ).toMatchSnapshot();
   });
@@ -29,7 +28,7 @@ describe(`Reflections:`, () => {
     expect(
       TestApp.compileTemplate(
         template,
-        testApp.findReflection('undefinedNumber'),
+        testApp.findReflection('undefinedNumberDeclaration'),
       ),
     ).toMatchSnapshot();
   });
@@ -38,14 +37,35 @@ describe(`Reflections:`, () => {
     expect(
       TestApp.compileTemplate(
         template,
-        testApp.findReflection('objectLiteral'),
+        testApp.findReflection('objectLiteralDeclaration'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile object literal cast as a const`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('objectLiteralAsConstDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile type literal declaration`, () => {
     expect(
-      TestApp.compileTemplate(template, testApp.findReflection('typeLiteral')),
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('typeLiteralDeclaration'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should declaration with double underscores in name and value`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('__DOUBLE_UNDERSCORES_DECLARATION__'),
+      ),
     ).toMatchSnapshot();
   });
 });

@@ -48,6 +48,30 @@ describe(`Types:`, () => {
     ).toMatchSnapshot();
   });
 
+  test(`should compile expanded 'literal' type'`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('literalType').type,
+        true,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile 'objectLiteralType' type'`, () => {
+    expect(
+      Handlebars.helpers.type.call(testApp.findReflection('objectLiteralType')),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile expanded 'objectLiteralType' type'`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('objectLiteralType'),
+        true,
+      ),
+    ).toMatchSnapshot();
+  });
+
   test(`should compile 'tuple' type'`, () => {
     expect(
       Handlebars.helpers.type.call(testApp.findReflection('tupleType').type),
@@ -66,6 +90,23 @@ describe(`Types:`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('functionReflectionType').type,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile expanded 'function' type '`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('functionReflectionType').type,
+        true,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile 'typeOperator' type '`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('typeOperatorType').type,
       ),
     ).toMatchSnapshot();
   });
