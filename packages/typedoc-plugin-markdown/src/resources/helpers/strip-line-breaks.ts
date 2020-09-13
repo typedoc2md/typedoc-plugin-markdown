@@ -1,3 +1,3 @@
-export function stripLineBreaks(this: string) {
-  return this.replace(/\n/g, ' ');
+export function stripLineBreaks(str: string) {
+  return str ? str.replace(/\n/g, ' ') : '';
 }

@@ -1,6 +1,9 @@
 import { DeclarationReflection, ParameterReflection } from 'typedoc';
 import { IntrinsicType } from 'typedoc/dist/lib/models';
+import { escape } from './escape';
 import { memberSymbol } from './member-symbol';
+import { stripComments } from './strip-comments';
+import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
 export function declarationTitle(
@@ -13,14 +16,14 @@ export function declarationTitle(
     md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
   }
 
-  md.push(`${this.flags.isRest ? '... ' : ' '}**${this.name}**`);
+  md.push(`${this.flags.isRest ? '... ' : ' '}**${escape(this.name)}**`);
 
   const type = getType(this, expandType);
   if (type) {
     md.push(`: ${type}`);
   }
   if (this.defaultValue) {
-    md.push(` = ${this.defaultValue}`);
+    md.push(` = ${stripLineBreaks(stripComments(escape(this.defaultValue)))}`);
   }
   return md.join('');
 }
