@@ -11,7 +11,7 @@
 ### {{title}} {{../title}}
 
 {{#each children}}
-* [{{{name}}}]({{relativeURL url}})
+* [{{{escape name}}}]({{relativeURL url}})
 {{/each}}
 
 {{/each}}
@@ -21,7 +21,7 @@
 ### {{title}}
 
 {{#each children}}
-* [{{{name}}}]({{relativeURL url}})
+* [{{{escape name}}}]({{relativeURL url}})
 {{/each}}
 
 {{/if}}
