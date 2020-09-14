@@ -1,40 +1,51 @@
-import { ParameterReflection } from 'typedoc';
+import { ParameterReflection, TypeParameterReflection } from 'typedoc';
 import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
-export function parameterTable(this: ParameterReflection[]) {
-  const defaultValues = this.map((param) => !!param.defaultValue);
-  const hasDefaultValues = !defaultValues.every((value) => !value);
-
-  const comments = this.map(
+export function parameterTable(
+  this: ParameterReflection[] | TypeParameterReflection[],
+  kind: 'typeParameters' | 'parameters',
+) {
+  const showDefaults = hasDefaultValues(kind, this);
+  const showType = kind === 'parameters';
+  const parameters = this as ParameterReflection[];
+  const comments = parameters.map(
     (param) =>
       (param.comment && !!param.comment.text) ||
       (param.comment && !!param.comment.shortText),
   );
   const hasComments = !comments.every((value) => !value);
 
-  const headers = ['Name', 'Type'];
+  const headers = ['Name'];
 
-  if (hasDefaultValues) {
-    headers.push('Default');
+  if (showType) {
+    headers.push('Type');
+  }
+
+  if (showDefaults) {
+    headers.push(kind === 'parameters' ? 'Default value' : 'Default');
   }
 
   if (hasComments) {
     headers.push('Description');
   }
 
-  const rows = this.map((parameter) => {
-    const isOptional = parameter.flags.includes('Optional');
+  const rows = parameters.map((parameter) => {
+    const row: string[] = [];
 
-    const row = [
+    row.push(
       `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${
-        isOptional ? '?' : ''
+        parameter.flags.isOptional ? '?' : ''
       }\``,
-      type.call(parameter.type),
-    ];
-    if (hasDefaultValues) {
-      row.push(parameter.defaultValue ? parameter.defaultValue : '-');
+    );
+
+    if (showType) {
+      row.push(type.call(parameter.type, true));
+    }
+
+    if (showDefaults) {
+      row.push(getDefaultValue(parameter));
     }
     if (hasComments) {
       if (parameter.comment) {
@@ -51,4 +62,28 @@ export function parameterTable(this: ParameterReflection[]) {
     .join(' | ')} |\n${rows.join('')}`;
 
   return output;
+}
+
+function getDefaultValue(
+  parameter: ParameterReflection | TypeParameterReflection,
+) {
+  if (parameter instanceof TypeParameterReflection) {
+    return parameter.default ? parameter.default.toString() : '-';
+  }
+  return parameter.defaultValue ? parameter.defaultValue : '-';
+}
+
+function hasDefaultValues(
+  kind: 'typeParameters' | 'parameters',
+  parameters: ParameterReflection[] | TypeParameterReflection[],
+) {
+  const defaultValues =
+    kind === 'parameters'
+      ? (parameters as ParameterReflection[]).map(
+          (param) => !!param.defaultValue,
+        )
+      : (parameters as TypeParameterReflection[]).map(
+          (param) => !!param.default,
+        );
+  return !defaultValues.every((value) => !value);
 }

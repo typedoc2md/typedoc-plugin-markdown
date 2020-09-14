@@ -8,7 +8,11 @@
 
 #### Type parameters:
 
-{{> typeParameters}}
+{{#with typeParameters}}
+
+{{{parameterTable 'typeParameters'}}}
+
+{{/with}}
 
 {{/if}}
 
@@ -18,7 +22,7 @@
 
 {{#with parameters}}
 
-{{{parameterTable}}}
+{{{parameterTable 'parameters'}}}
 
 {{/with}}
 
@@ -26,7 +30,7 @@
 
 {{#if type}}
 
-**Returns:** {{#with type}}*{{{type}}}*{{/with}}
+**Returns:** {{#with type}}{{{type}}}{{/with}}
 
 {{#if comment.returns}}
 
