@@ -20,7 +20,7 @@ export function declarationTitle(
     md.push(`: ${type}`);
   }
   if (this.defaultValue) {
-    md.push(` = ${stripLineBreaks(stripComments(escape(this.defaultValue)))}`);
+    md.push(` = ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
   }
   return md.join('');
 }

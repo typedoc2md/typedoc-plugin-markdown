@@ -25,5 +25,5 @@ export function comment(this: Comment) {
     );
     md.push(tags.join('\n\n'));
   }
-  return md.join('\n');
+  return md.join('\n\n');
 }
