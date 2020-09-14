@@ -6,7 +6,6 @@ id: \\"_frontmatter_.frontmatterclass\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"frontmatter.FrontMatterClass\\"
 hide_title: true
-hide_table_of_contents: true
 ---
 
 CONTENTS"
@@ -17,7 +16,6 @@ exports[`FrontMatter: should return front matter without sidebar 1`] = `
 id: \\"_frontmatter_.frontmatterclass\\"
 title: \\"Class: FrontMatterClass\\"
 hide_title: true
-hide_table_of_contents: true
 ---
 
 CONTENTS"
@@ -29,7 +27,6 @@ id: \\"_frontmatter_.frontmatterclass\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"FrontMatterClass\\"
 hide_title: true
-hide_table_of_contents: true
 ---
 
 CONTENTS"

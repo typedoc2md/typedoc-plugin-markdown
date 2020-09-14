@@ -1,9 +1,10 @@
-import { LoadContext, Plugin } from '@docusaurus/types';
 import * as fs from 'fs';
 import * as path from 'path';
+
+import { LoadContext, Plugin } from '@docusaurus/types';
 import { Application, NavigationItem } from 'typedoc';
+
 import { DocsaurusFrontMatterComponent } from './components/front-matter-component';
-import { MdxComponent } from './components/mdx-component';
 import { LoadedContent, PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
@@ -12,6 +13,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   out: 'api',
   entryFileName: 'index',
   hideBreadcrumbs: true,
+  hideProjectName: true,
   skipSidebar: false,
   sidebar: {
     parentCategory: 'none',
@@ -62,14 +64,10 @@ export default function pluginDocusaurus(
         new DocsaurusFrontMatterComponent(app.renderer, sidebar),
       );
 
-      app.renderer.addComponent(
-        'docusaurus-mdx',
-        new MdxComponent(app.renderer),
-      );
-
       // bootstrap
       app.bootstrap({
         plugin: ['typedoc-plugin-markdown'],
+        theme: path.resolve(__dirname, 'theme'),
         ...options,
       });
 

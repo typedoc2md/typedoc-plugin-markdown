@@ -2,6 +2,7 @@ import { NavigationItem, Renderer } from 'typedoc';
 import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter.component';
 import { Component } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { SidebarOptions } from '../types';
 
 @Component({ name: 'docusaurus-frontmatter' })
@@ -21,7 +22,6 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
           sidebar_label: this.getSidebarLabel(page),
         }),
         hide_title: true,
-        hide_table_of_contents: true,
       },
     };
   }
