@@ -43,7 +43,7 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 
 ## Indexable
 
-▪ \\\\[index: number\\\\]: string
+▪ [index: number]: string
 
 [partial: comment]
 

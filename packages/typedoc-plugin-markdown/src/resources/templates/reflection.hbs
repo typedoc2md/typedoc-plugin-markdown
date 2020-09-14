@@ -78,7 +78,13 @@
 
 {{#with model}}
 
-{{> member.indexSignatures}}
+{{#with indexSignature}}
+
+{{{indexSignatureTitle}}}
+
+{{> comment}}
+
+{{/with}}
 
 {{/with}}
 
