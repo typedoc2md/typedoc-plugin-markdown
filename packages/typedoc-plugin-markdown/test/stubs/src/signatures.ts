@@ -99,3 +99,9 @@ export function functionWithUnionTypes(
 export interface CallableSignature {
   (): string;
 }
+
+function functionWithNamedParams({ x: number, b: string }) {
+  return '';
+}
+
+export const functionWithTypeParams = <Item = any>() => true;

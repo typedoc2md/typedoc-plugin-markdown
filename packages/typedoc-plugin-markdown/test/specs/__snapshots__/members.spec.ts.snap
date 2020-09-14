@@ -7,7 +7,7 @@ exports[`Members: (member) should compile a signature members' 1`] = `
 
 [partial: member.sources]
 
-**Returns:** *void*
+**Returns:** void
 
 ___
 "
@@ -31,7 +31,7 @@ exports[`Members: (member) should compile members with getter' 1`] = `
 
 [partial: member.sources]
 
-**Returns:** *string*
+**Returns:** string
 
 ___
 "
@@ -50,7 +50,7 @@ Name | Type |
 ------ | ------ |
 \`value\` | string |
 
-**Returns:** *void*
+**Returns:** void
 
 ___
 "
@@ -59,7 +59,7 @@ ___
 exports[`Members: (member) should compile reference members' 1`] = `
 "### ReferenceMember
 
-*Renames and exports*: [NotExportedClass]([helper: relativeURL])
+**Renames and exports**: [NotExportedClass]([helper: relativeURL])
 
 ___
 "

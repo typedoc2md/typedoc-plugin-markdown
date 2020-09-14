@@ -16,7 +16,7 @@ exports[`Reflections: (header) should compile template with breadcrumbs and proj
 exports[`Reflections: (template) should compile a callable reflection 1`] = `
 "# Interface: CallableReflection
 
-_\\"reflections\\".CallableReflection_
+> \\"reflections\\".CallableReflection
 
 ## Hierarchy
 
@@ -26,6 +26,8 @@ _\\"reflections\\".CallableReflection_
 
 [partial: member.signature]
 
+[partial: index]
+
 [partial: members]
 "
 `;
@@ -33,7 +35,7 @@ _\\"reflections\\".CallableReflection_
 exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 "# Interface: IndexableReflection
 
-_\\"reflections\\".IndexableReflection_
+> \\"reflections\\".IndexableReflection
 
 ## Hierarchy
 
@@ -44,6 +46,8 @@ _\\"reflections\\".IndexableReflection_
 ▪ \\\\[index: number\\\\]: string
 
 [partial: comment]
+
+[partial: index]
 
 [partial: members]
 "
@@ -61,7 +65,7 @@ exports[`Reflections: (template) should compile module with breadcrumbs and proj
 exports[`Reflections: (template) should compile reflection with type params 1`] = `
 "# Interface: ReflectionWithTypeParams\\\\<**T, V**>
 
-_\\"reflections\\".ReflectionWithTypeParams_
+> \\"reflections\\".ReflectionWithTypeParams
 
 ## Type parameters
 
@@ -71,6 +75,8 @@ _\\"reflections\\".ReflectionWithTypeParams_
 ## Hierarchy
 
 [helper: hierarchy]
+
+[partial: index]
 
 [partial: members]
 "

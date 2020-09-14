@@ -6,24 +6,27 @@ exports[`Signatures: should compile callable signature' 1`] = `
 [partial: member.sources]
 [partial: comment]
 
-**Returns:** *string*
+**Returns:** string
 "
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`: boolean[] \\\\| number, ...\`args\`: (string \\\\| number)[]): any
+"▸ **functionWithDefaults**(\`valueA\`: string, \`valueB\`: number, \`valueC\`: number, \`valueD\`: boolean, \`valueE\`: boolean): string
 
 [partial: member.sources]
 [partial: comment]
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-\`arg\` | boolean[] \\\\| number |
-\`...args\` | (string \\\\| number)[] |
+Name | Type | Default value | Description |
+------ | ------ | ------ | ------ |
+\`valueA\` | string | \\"defaultValue\\" | A parameter with a default string value. |
+\`valueB\` | number | 100 | A parameter with a default numeric value. |
+\`valueC\` | number | Number.NaN | A parameter with a default NaN value. |
+\`valueD\` | boolean | true | A parameter with a default boolean value. |
+\`valueE\` | boolean | null | A parameter with a default null value.  |
 
-**Returns:** *any*
+**Returns:** string
 "
 `;
 
@@ -40,7 +43,7 @@ Name | Type | Description |
 \`requiredParam\` | string | A normal parameter. |
 \`optionalParam?\` | string | An optional parameter.  |
 
-**Returns:** *void*
+**Returns:** void
 "
 `;
 
@@ -58,7 +61,7 @@ Name | Type | Description |
 \`paramG\` | any | This is a parameter flagged with any.<br />     This sentence is placed in the next line.  |
 \`paramA\` | any |    This is a **parameter** pointing to an interface.   |
 
-**Returns:** *number*
+**Returns:** number
 "
 `;
 
@@ -74,7 +77,23 @@ Name | Type | Description |
 ------ | ------ | ------ |
 \`...rest\` | string[] | The rest parameter.  |
 
-**Returns:** *string*
+**Returns:** string
+"
+`;
+
+exports[`Signatures: should compile signature with type params' 1`] = `
+"▸ **functionWithTypeParams**\\\\<**Item**>(): boolean
+
+[partial: member.sources]
+[partial: comment]
+
+#### Type parameters:
+
+Name | Default |
+------ | ------ |
+\`Item\` | any |
+
+**Returns:** boolean
 "
 `;
 
@@ -91,6 +110,6 @@ Name | Type |
 \`arg\` | boolean[] \\\\| number |
 \`...args\` | (string \\\\| number)[] |
 
-**Returns:** *any*
+**Returns:** any
 "
 `;

@@ -8,7 +8,7 @@ exports[`Reflections: should compile a an udefined 1`] = `
 `;
 
 exports[`Reflections: should compile a variable with default value 1`] = `
-"• \`Const\` **stringWithDefaultValueDeclaration**: \\"variable\\" = \\"variable\\"
+"• \`Const\` **stringWithDefaultValueDeclaration**: \\\\\\"variable\\\\\\" = \\"variable\\"
 
 [partial: member.sources]
 "
@@ -23,9 +23,9 @@ exports[`Reflections: should compile object literal cast as a const 1`] = `
 
 Name | Type | Description |
 ------ | ------ | ------ |
-\`Prop1\` | \\"Prop1\\" | comments |
-\`Prop2\` | \\"Prop1\\" | comments |
-\`Prop3\` | \\"Prop1\\" | comments |
+\`Prop1\` | \\\\\\"Prop1\\\\\\" | comments |
+\`Prop2\` | \\\\\\"Prop1\\\\\\" | comments |
+\`Prop3\` | \\\\\\"Prop1\\\\\\" | comments |
 "
 `;
 

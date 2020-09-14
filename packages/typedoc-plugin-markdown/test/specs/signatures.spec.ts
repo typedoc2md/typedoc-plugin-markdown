@@ -1,6 +1,5 @@
 import * as Handlebars from 'handlebars';
 import { SignatureReflection } from 'typedoc';
-
 import { TestApp } from '../test-app';
 
 describe(`Signatures:`, () => {
@@ -27,6 +26,16 @@ describe(`Signatures:`, () => {
       TestApp.compileTemplate(
         partial,
         testApp.findReflection('functionWithParameters')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile signature with type params'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('functionWithTypeParams')
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -66,7 +75,7 @@ describe(`Signatures:`, () => {
     expect(
       TestApp.compileTemplate(
         partial,
-        testApp.findReflection('functionWithUnionTypes')
+        testApp.findReflection('functionWithDefaults')
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
