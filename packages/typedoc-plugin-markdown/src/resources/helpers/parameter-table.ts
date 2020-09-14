@@ -68,7 +68,7 @@ function getDefaultValue(
   parameter: ParameterReflection | TypeParameterReflection,
 ) {
   if (parameter instanceof TypeParameterReflection) {
-    return parameter.default ? parameter.default.toString() : '-';
+    return parameter.default ? type.call(parameter.default) : '-';
   }
   return parameter.defaultValue ? parameter.defaultValue : '-';
 }

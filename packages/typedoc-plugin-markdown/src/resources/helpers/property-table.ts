@@ -1,6 +1,7 @@
 import { DeclarationReflection } from 'typedoc';
 import { ReflectionKind } from 'typedoc/dist/lib/models';
 import { comment } from './comment';
+import { escape } from './escape';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
@@ -28,19 +29,20 @@ export function propertyTable(
       property.signatures || property.children ? property : property.type;
     const row: string[] = [];
     const nameCol: string[] = [];
-    if (property.flags.length) {
-      const flags = property.flags.map((flag) => `**\`${flag}\`**`);
-      nameCol.push(flags.join(' '));
-    }
-
-    nameCol.push(`\`${property.name}\``);
+    const ignored = ['`', '~', '_', '|'];
+    const name =
+      ignored.includes(property.name) || property.name.startsWith('<')
+        ? property.name === '`'
+          ? '`'
+          : escape(getName(property))
+        : `\`${escape(getName(property))}\``;
+    nameCol.push(name);
     row.push(nameCol.join(' '));
     row.push(type.call(propertyType, kind !== ReflectionKind.ObjectLiteral));
-
     if (hasValues) {
       row.push(
         property.defaultValue
-          ? stripLineBreaks(property.defaultValue)
+          ? stripLineBreaks(escape(property.defaultValue))
           : type.call(propertyType, true),
       );
     }
@@ -60,4 +62,16 @@ export function propertyTable(
     .join(' | ')} |\n${rows.join('')}`;
 
   return output;
+}
+
+function getName(property: DeclarationReflection) {
+  const md: string[] = [];
+  if (property.flags.isRest) {
+    md.push('...');
+  }
+  md.push(property.name);
+  if (property.flags.isOptional) {
+    md.push('?');
+  }
+  return md.join('');
 }

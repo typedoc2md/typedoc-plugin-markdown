@@ -160,12 +160,12 @@ function getLiteralType(model: DeclarationReflection) {
       return `${obj.name}${obj.flags.isOptional ? '?' : ''}: ${type.call(
         obj.signatures || obj.children ? obj : obj.type,
         true,
-      )} ${obj.defaultValue ? ` = ${obj.defaultValue}` : ''}`;
+      )} ${obj.defaultValue ? `= ${escape(obj.defaultValue)}` : ''}`;
     });
   }
   return `{ ${indexSignature ? indexSignature : ''}${
     types ? types.join('; ') : ''
-  } }${model.defaultValue ? ` = ${model.defaultValue}` : ''}`;
+  } }${model.defaultValue ? `= ${escape(model.defaultValue)}` : ''}`;
 }
 
 export function getFunctionType(modelSignatures: SignatureReflection[]) {
