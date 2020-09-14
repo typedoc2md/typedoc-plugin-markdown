@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 import { Application, NavigationItem, ProjectReflection } from 'typedoc';
 import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter.component';
 
@@ -7,6 +9,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   inputFiles: [],
   out: 'api',
   hideBreadcrumbs: true,
+  hideProjectName: true,
   skipSidebar: false,
   sidebar: {
     parentCategory: 'none',
@@ -46,6 +49,7 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
 
       app.bootstrap({
         plugin: ['typedoc-plugin-markdown'],
+        theme: path.resolve(__dirname, 'theme'),
         ...options,
       });
 
@@ -72,7 +76,7 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
       return {
         name: 'typedoc-sidebar',
         content: `export default ({ siteData, options }) => {
-          siteData.themeConfig.sidebarDepth = 0;
+          siteData.themeConfig.sidebarDepth = 2;
           siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,${JSON.stringify(
             {
               [`/${outFolder}/`]: getSidebarJson(
