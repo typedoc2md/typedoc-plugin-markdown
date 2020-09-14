@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-typedoc",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A Docusaurus v2 plugin to build api documentation with TypeDoc.",
   "main": "dist/index.js",
   "files": [
@@ -15,7 +15,6 @@
     "directory": "packages/docusaurus-plugin-typedoc"
   },
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc",
-  "keywords": [],
   "peerDependencies": {
     "typedoc": ">=0.19.0",
     "typedoc-plugin-markdown": ">=3.0.0"
@@ -23,14 +22,14 @@
   "dependencies": {},
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37",
-    "typedoc": "^0.19.0",
+    "typedoc": "^0.19.1",
     "typedoc-plugin-markdown": "*",
     "typescript": "^4.0.2"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "demo:start": "npm run build && cd demo && npm run start",
     "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
     "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",
@@ -38,5 +37,13 @@
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "docusaurus",
+    "typedoc",
+    "plugin",
+    "markdown",
+    "typescript",
+    "api"
+  ]
 }
