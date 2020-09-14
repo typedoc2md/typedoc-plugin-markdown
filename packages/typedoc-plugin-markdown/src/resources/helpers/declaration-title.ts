@@ -11,13 +11,10 @@ export function declarationTitle(
   expandType = true,
 ) {
   const md = [memberSymbol.call(this) + ' '];
-
   if (this.flags && !this.flags.isRest) {
     md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
   }
-
   md.push(`${this.flags.isRest ? '... ' : ' '}**${escape(this.name)}**`);
-
   const type = getType(this, expandType);
   if (type) {
     md.push(`: ${type}`);

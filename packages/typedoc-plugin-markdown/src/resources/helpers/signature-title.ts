@@ -1,5 +1,4 @@
 import { SignatureReflection } from 'typedoc';
-
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
@@ -35,14 +34,14 @@ export function signatureTitle(this: SignatureReflection) {
           if (param.flags.isOptional) {
             paramsmd.push('?');
           }
-          paramsmd.push(`\`: ${type.call(param.type, false)}`);
+          paramsmd.push(`\`: ${type.call(param.type, true)}`);
           return paramsmd.join('');
         })
         .join(', ')
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(`: ${type.call(this.type, false)}`);
+    md.push(`: ${type.call(this.type)}`);
   }
   return md.join('') + '\n';
 }

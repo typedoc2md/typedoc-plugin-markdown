@@ -1,3 +1,3 @@
 export function escape(str: string) {
-  return str.replace(/_/g, '\\_');
+  return str.replace(/</g, '\\<').replace(/_/g, '\\_').replace(/`/g, '\\`');
 }

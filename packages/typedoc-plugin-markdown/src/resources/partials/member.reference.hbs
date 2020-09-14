@@ -2,20 +2,20 @@
 
 {{#ifCond ../name '===' name}}
 
-*Re-exports*: [{{escape name}}]({{relativeURL url}})
+**Re-exports**: [{{escape name}}]({{relativeURL url}})
 
 {{else if flags.isExported}}
 
-*Renames and re-exports*: [{{escape name}}]({{relativeURL url}})
+**Renames and re-exports**: [{{escape name}}]({{relativeURL url}})
 
 {{else}}
 
-*Renames and exports*: [{{escape name}}]({{relativeURL url}})
+**Renames and exports**: [{{escape name}}]({{relativeURL url}})
 
 {{/ifCond}}
 
 {{else}}
 
-*Re-exports*: {{escape name}}
+**Re-exports**: {{escape name}}
 
 {{/with}}

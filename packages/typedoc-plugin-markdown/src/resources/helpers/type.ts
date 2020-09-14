@@ -13,6 +13,7 @@ import {
   UnionType,
 } from 'typedoc/dist/lib/models/types';
 import MarkdownTheme from '../../theme';
+import { escape } from './escape';
 
 export function type(
   this:
@@ -88,7 +89,7 @@ export function type(
     return getQueryType(this);
   }
 
-  return this ? this.toString() : '';
+  return this ? escape(this.toString()) : '';
 }
 
 function getReferenceType(model: ReferenceType) {
@@ -138,7 +139,7 @@ function getIntrinsicType(model: IntrinsicType) {
 }
 
 function getStringLiteralType(model: StringLiteralType) {
-  return `\"${model.value}\"`;
+  return `\\"${escape(model.value)}\\"`;
 }
 
 function getLiteralType(model: DeclarationReflection) {
@@ -189,9 +190,9 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {
-  return `*keyof* ${model.operator} ${type.call(model.target)}`;
+  return `${model.operator} ${type.call(model.target)}`;
 }
 
 function getQueryType(model: QueryType) {
-  return `*typeof* ${type.call(model.queryType)}`;
+  return `typeof ${type.call(model.queryType)}`;
 }

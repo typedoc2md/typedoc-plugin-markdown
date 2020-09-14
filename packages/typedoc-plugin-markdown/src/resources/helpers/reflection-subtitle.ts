@@ -12,7 +12,7 @@ export function reflectionSubtitle(this: PageEvent) {
         title.push(this.model.parent.name);
       }
       title.push(this.model.name);
-      return title.length > 1 ? `_${title.join('.')}_` : null;
+      return title.length > 1 ? `> ${title.join('.')}` : null;
     }
   }
   return '';
