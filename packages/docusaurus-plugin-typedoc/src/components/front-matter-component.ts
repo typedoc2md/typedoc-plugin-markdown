@@ -7,12 +7,10 @@ import { SidebarOptions } from '../types';
 
 @Component({ name: 'docusaurus-frontmatter' })
 export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
-  sidebar: SidebarOptions;
-  constructor(owner: Renderer, sidebar?: SidebarOptions) {
+  sidebar: SidebarOptions | null;
+  constructor(owner: Renderer, sidebar: SidebarOptions | null) {
     super(owner);
-    if (sidebar) {
-      this.sidebar = sidebar;
-    }
+    this.sidebar = sidebar;
   }
   getYamlItems(page: PageEvent) {
     return {
@@ -42,7 +40,9 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
     };
 
     if (item) {
-      return this.sidebar.fullNames ? item.title : getShortName(item.title);
+      return this.sidebar && this.sidebar.fullNames
+        ? item.title
+        : getShortName(item.title);
     }
     return page.model.name;
   }

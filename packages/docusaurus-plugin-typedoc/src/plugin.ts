@@ -14,7 +14,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   entryFileName: 'index',
   hideBreadcrumbs: true,
   hideProjectName: true,
-  skipSidebar: false,
   sidebar: {
     parentCategory: 'none',
     fullNames: false,
@@ -32,7 +31,7 @@ export default function pluginDocusaurus(
   const options = { ...DEFAULT_PLUGIN_OPTIONS, ...pluginOptions };
 
   const inputFiles = options.inputFiles;
-  const sidebar = options.skipSidebar ? undefined : options.sidebar;
+  const sidebar = options.sidebar;
   const docsRoot = path.resolve(
     siteDir,
     options.docsRoot ? options.docsRoot : '',
@@ -43,7 +42,6 @@ export default function pluginDocusaurus(
   // remove docusaurus props (everything else is passed to renderer)
   delete options.id;
   delete options.sidebar;
-  delete options.skipSidebar;
   delete options.inputFiles;
   delete options.out;
   delete options.docsRoot;
@@ -61,7 +59,10 @@ export default function pluginDocusaurus(
 
       app.renderer.addComponent(
         'docusaurus-frontmatter',
-        new DocsaurusFrontMatterComponent(app.renderer, sidebar),
+        new DocsaurusFrontMatterComponent(
+          app.renderer,
+          sidebar ? sidebar : null,
+        ),
       );
 
       // bootstrap
@@ -86,6 +87,7 @@ export default function pluginDocusaurus(
       const { app, project } = content;
       if (project) {
         const sidebarPath = path.resolve(siteDir, 'sidebars.js');
+        cleanSideBar(sidebarPath);
         if (sidebar && content) {
           const theme = app.renderer.theme as any;
           const navigation = theme.getNavigation(project);
@@ -99,6 +101,20 @@ export default function pluginDocusaurus(
       }
     },
   };
+}
+
+function cleanSideBar(sidebarPath: string) {
+  let jsonContent: any;
+  if (fs.existsSync(sidebarPath)) {
+    jsonContent = require(sidebarPath);
+    if (jsonContent.typedoc) {
+      delete jsonContent.typedoc;
+      fs.writeFileSync(
+        sidebarPath,
+        'module.exports = ' + JSON.stringify(jsonContent, null, 2) + ';',
+      );
+    }
+  }
 }
 
 function getSidebarJson(
@@ -140,13 +156,11 @@ function getSidebarJson(
 
   if (parentCategory) {
     return {
-      typedocSidebar: [
-        { type: 'category', label: parentCategory, items: navJson },
-      ],
+      typedoc: [{ type: 'category', label: parentCategory, items: navJson }],
     };
   }
 
-  return { typedocSidebar: navJson };
+  return { typedoc: navJson };
 }
 
 function getUrlKey(outFolder: string, url: string) {

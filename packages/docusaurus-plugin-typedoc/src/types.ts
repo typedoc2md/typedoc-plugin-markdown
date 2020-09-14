@@ -9,8 +9,7 @@ export interface PluginOptions {
   out?: string;
   hideBreadcrumbs: boolean;
   hideProjectName: boolean;
-  skipSidebar?: boolean;
-  sidebar?: SidebarOptions;
+  sidebar?: SidebarOptions | null;
 }
 
 export interface SidebarOptions {

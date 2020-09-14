@@ -1,14 +1,15 @@
-# docusaurus-plugin-typedoc (beta)
+# docusaurus-plugin-typedoc
 
-A Docusaurus v2 plugin to build api documentation with TypeDoc.
+A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build api documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
+[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 
 ## What it does?
 
 - Generates pages as part of the build.
 - Adds Front Matter to pages.
-- Appends releavant JSON to sidebars.js for navigation.
+- Appends JSON to sidebars.js to enable navigation.
 
 ## Installation
 
@@ -30,28 +31,26 @@ module.exports = {
 
       // plugin options
       {
-        // list of input files relative to project (required).
+        // list of input files relative to project (required)
         inputFiles: ['../../src/'],
 
-        // docs directory relative to the site directory (defaults to docs).
+        // docs directory relative to the site directory (defaults to `docs`)
         docsRoot: 'docs',
 
-        // output directory relative to docs directory - use '' for docs root (defaults to 'api'
+        // output directory relative to docs directory - use '' for docs root (defaults to `api`
         out: 'api',
 
-        // boolean or sidebar config object.
-        // Use 'false' to skip sidebar (defaults to true)
+        // options for auto generated sidebars.json (pass `null` to skip generation completely)
         sidebar: {
           // display full names with module path if applicable - (defaults to 'false')
-          fullNames: true,
-          // the parent category label for sidebar - (defaults to 'none' / no parent category)
-          parentCategory: 'API',
+          fullNames: false,
+          // the parent category label for sidebar - (defaults to `none` - no parent category)
+          parentCategory: 'none',
         },
 
-        // Pass in any additional Typescript/TypeDoc options (see typedoc --help).
+        // Pass in any additional Typescript/TypeDoc options (see typedoc --help)
         mode: 'file',
-        target: 'ES5',
-        //...etc
+        target: 'ES2017',
       },
     ],
   ],

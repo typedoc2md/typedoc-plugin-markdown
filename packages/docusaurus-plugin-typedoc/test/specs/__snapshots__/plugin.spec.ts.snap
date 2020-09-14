@@ -13,7 +13,7 @@ Array [
 
 exports[`Plugin: (sidebars) should generate sidebars.js' 1`] = `
 "module.exports = {
-  \\"typedocSidebar\\": [
+  \\"typedoc\\": [
     {
       \\"type\\": \\"category\\",
       \\"label\\": \\"none\\",
@@ -67,7 +67,7 @@ exports[`Plugin: (sidebars) should generate sidebars.js' 1`] = `
 
 exports[`Plugin: (sidebars) should update sidebars.js' 1`] = `
 "module.exports = {
-  \\"typedocSidebar\\": [
+  \\"typedoc\\": [
     {
       \\"type\\": \\"category\\",
       \\"label\\": \\"none\\",

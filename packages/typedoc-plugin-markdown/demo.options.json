@@ -1,8 +1,9 @@
 {
-  "inputFiles": "./test/demo",
+  "inputFiles": "./test/stubs/src",
+
   "target": "ES5",
-  "name": "My API",
   "includes": "./test/stubs/inc/",
   "media": "./test/stubs/media/",
-  "ignoreCompilerErrors": true
+  "ignoreCompilerErrors": true,
+  "readme": "none"
 }

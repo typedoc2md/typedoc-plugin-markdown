@@ -48,7 +48,7 @@ describe(`Plugin:`, () => {
     });
 
     test(`should skip sidebar`, async () => {
-      await bootstrap({ skipSidebar: true });
+      await bootstrap({ sidebar: null });
       const enhancedFiles = await plugin.enhanceAppFiles();
       expect(enhancedFiles).toBeUndefined();
     });

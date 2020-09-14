@@ -10,7 +10,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   out: 'api',
   hideBreadcrumbs: true,
   hideProjectName: true,
-  skipSidebar: false,
   sidebar: {
     parentCategory: 'none',
     fullNames: false,
@@ -29,12 +28,11 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
   const inputFiles = options.inputFiles;
   const outFolder = options.out ? options.out : 'api';
   const out = sourceDir + '/' + outFolder;
-  const sidebar = options.skipSidebar ? null : options.sidebar;
+  const sidebar = options.sidebar;
 
   // remove docusaurus props (everything else is passed to renderer)
   delete options.id;
   delete options.sidebar;
-  delete options.skipSidebar;
   delete options.inputFiles;
   delete options.out;
 
