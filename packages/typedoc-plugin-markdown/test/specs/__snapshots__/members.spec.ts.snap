@@ -59,7 +59,7 @@ ___
 exports[`Members: (member) should compile reference members' 1`] = `
 "### ReferenceMember
 
-**Renames and exports**: [NotExportedClass]([helper: relativeURL])
+Renames and exports: [NotExportedClass]([helper: relativeURL])
 
 ___
 "

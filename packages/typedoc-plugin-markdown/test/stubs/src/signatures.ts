@@ -104,4 +104,4 @@ function functionWithNamedParams({ x: number, b: string }) {
   return '';
 }
 
-export const functionWithTypeParams = <Item = any>() => true;
+export const functionWithTypeParams = <Item = boolean | string>() => true;

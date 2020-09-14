@@ -17,6 +17,13 @@ let literalType: {
 };
 
 const objectLiteralType = {
+  '<': '<foo>',
+  '<foo>': 'foo',
+  '\n': 'foo',
+  '|': 'foo',
+  '`': 'foo',
+  '~': 'foo',
+  _: 'foo',
   valueZ: 'foo',
   valueY: function () {
     return 'foo';

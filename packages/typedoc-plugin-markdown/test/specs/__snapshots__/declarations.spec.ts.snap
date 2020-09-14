@@ -15,7 +15,7 @@ exports[`Reflections: should compile a variable with default value 1`] = `
 `;
 
 exports[`Reflections: should compile object literal cast as a const 1`] = `
-"• \`Const\` **objectLiteralAsConstDeclaration**: object = { Prop1: 'Prop1', Prop2: 'Prop1', Prop3: 'Prop1', } as const
+"• \`Const\` **objectLiteralAsConstDeclaration**: object = { Prop1: 'Prop1', Prop2: 'Prop1', Prop3: 'Prop1',} as const
 
 [partial: member.sources]
 
@@ -42,7 +42,7 @@ Name | Type | Value | Description |
 \`valueB\` | boolean | true | - |
 \`valueZ\` | string | \\"foo\\" | Comment for valueZ |
 \`valueY\` | function | () => string | Comment for value Y |
-\`valueX\` | object | { valueA: number[]  = [100, 200, 300]; valueZ: string  = \\"foo\\" } | Comment for valueX |
+\`valueX\` | object | { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\" } | Comment for valueX |
 "
 `;
 
@@ -55,8 +55,8 @@ exports[`Reflections: should compile type literal declaration 1`] = `
 
 Name | Type | Description |
 ------ | ------ | ------ |
-**\`Optional\`** \`valueA\` | number | Comments for valueA |
-**\`Optional\`** \`valueB\` | boolean | - |
+\`valueA?\` | number | Comments for valueA |
+\`valueB?\` | boolean | - |
 \`valueX\` | { valueA: number[] ; valueY: (z: string) => { a: string ; b: string  } ; valueZ: string  } | Comment for valueX |
 \`valueY\` | () => string | - |
 \`valueZ\` | string | Comment for valueZ |

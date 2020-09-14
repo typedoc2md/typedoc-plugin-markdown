@@ -91,7 +91,7 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 
 Name | Default |
 ------ | ------ |
-\`Item\` | any |
+\`Item\` | boolean \\\\| string |
 
 **Returns:** boolean
 "

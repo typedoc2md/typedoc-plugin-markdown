@@ -29,7 +29,10 @@ exports[`Types: should compile expanded 'function' type ' 1`] = `"\\\\<T>(arg: T
 
 exports[`Types: should compile expanded 'literal' type' 1`] = `"{ valueA?: number ; valueB?: boolean ; valueX: { valueA: number[] ; valueY: (z: string) => { a: string ; b: string  } ; valueZ: string  } ; valueY: () => string ; valueZ: string  }"`;
 
-exports[`Types: should compile expanded 'objectLiteralType' type' 1`] = `"{ valueA: number  = 100; valueB: boolean  = true; valueZ: string  = \\"foo\\"; valueY: () => string ; valueX: { valueA: number[]  = [100, 200, 300]; valueZ: string  = \\"foo\\"; valueY: (z: string) => { a: string  = \\"test\\"; b: string  = z }  }  }"`;
+exports[`Types: should compile expanded 'objectLiteralType' type' 1`] = `
+"{ 
+: string = \\"foo\\"; <: string = \\"\\\\<foo>\\"; <foo>: string = \\"foo\\"; _: string = \\"foo\\"; \`: string = \\"foo\\"; valueA: number = 100; valueB: boolean = true; valueZ: string = \\"foo\\"; |: string = \\"foo\\"; ~: string = \\"foo\\"; valueY: () => string ; valueX: { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\"; valueY: (z: string) => { a: string = \\"test\\"; b: string = z }  }  }"
+`;
 
 exports[`Types: should compile intrinsic type' 1`] = `"string"`;
 
