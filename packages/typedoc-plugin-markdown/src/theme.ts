@@ -30,14 +30,21 @@ import { HelperUtilsComponent } from './components/utils.component';
  */
 
 export default class MarkdownTheme extends Theme {
-  @BindOption('entryFileName')
-  entryFileName!: string;
-
   @BindOption('readme')
   readme!: string;
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
+  t;
+  // formarts page content after render
+  static formatContents(contents: string) {
+    return (
+      contents
+        .replace(/[\r\n]{3,}/g, '\n\n')
+        .replace(/!spaces/g, '')
+        .replace(/^\s+|\s+$/g, '') + '\n'
+    );
+  }
 
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
@@ -60,12 +67,11 @@ export default class MarkdownTheme extends Theme {
    * @param outputDirectory
    */
   isOutputDirectory(outputDirectory: string): boolean {
-    const entryFile = this.entryFileName + '.md';
     let isOutputDirectory = true;
     const listings = fs.readdirSync(outputDirectory);
 
     listings.forEach((listing) => {
-      if (!this.allowedDirectoryListings(entryFile).includes(listing)) {
+      if (!this.allowedDirectoryListings(this.entryFile).includes(listing)) {
         isOutputDirectory = false;
         return;
       }
@@ -100,16 +106,17 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    const entryFile = this.entryFileName + '.md';
     const omitReadme = this.readme === 'none';
 
     if (omitReadme) {
-      entryPoint.url = entryFile;
-      urls.push(new UrlMapping(entryFile, { ...entryPoint }, 'reflection.hbs'));
+      entryPoint.url = this.entryFile;
+      urls.push(
+        new UrlMapping(this.entryFile, { ...entryPoint }, 'reflection.hbs'),
+      );
     } else {
       entryPoint.url = 'globals.md';
       urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(entryFile, project, 'index.hbs'));
+      urls.push(new UrlMapping(this.entryFile, project, 'index.hbs'));
     }
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
@@ -247,7 +254,6 @@ export default class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
-    const entryFile = this.entryFileName + '.md';
     const hasSeperateGlobals =
       this.application.options.getValue('readme') !== 'none';
     const navigation = createNavigationItem(project.name);
@@ -255,7 +261,7 @@ export default class MarkdownTheme extends Theme {
     navigation.children?.push(
       createNavigationItem(
         hasSeperateGlobals ? 'README' : 'Globals',
-        entryFile,
+        this.entryFile,
       ),
     );
     if (hasSeperateGlobals) {
@@ -322,12 +328,8 @@ export default class MarkdownTheme extends Theme {
       : '';
   }
 
-  static formatContents(contents: string) {
-    return (
-      contents
-        .replace(/[\r\n]{3,}/g, '\n\n')
-        .replace(/!spaces/g, '')
-        .replace(/^\s+|\s+$/g, '') + '\n'
-    );
+  // the entry file name
+  get entryFile() {
+    return 'README.md';
   }
 }

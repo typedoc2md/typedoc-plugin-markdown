@@ -15,4 +15,8 @@ export default class DocusaurusTheme extends MarkdownTheme {
         .replace(/\\"/g, '&#34;');
     }
   }
+
+  get entryFile() {
+    return 'index.md';
+  }
 }

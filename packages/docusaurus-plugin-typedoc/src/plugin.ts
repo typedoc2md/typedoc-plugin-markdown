@@ -11,7 +11,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   inputFiles: [],
   docsRoot: 'docs',
   out: 'api',
-  entryFileName: 'index',
   hideBreadcrumbs: true,
   hideProjectName: true,
   sidebar: {

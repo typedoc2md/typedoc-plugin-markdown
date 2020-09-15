@@ -1,16 +1,14 @@
-import { BindOption, Reflection } from 'typedoc';
+import { Reflection } from 'typedoc';
 import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import MarkdownTheme from '../theme';
 
 @Component({ name: 'breadcrumbs' })
 export class BreadcrumbsComponent extends ContextAwareRendererComponent {
-  @BindOption('entryFileName')
-  entryFileName!: string;
-
   initialize() {
     super.initialize();
 
@@ -19,15 +17,16 @@ export class BreadcrumbsComponent extends ContextAwareRendererComponent {
     MarkdownTheme.HANDLEBARS.registerHelper(
       'breadcrumbs',
       (page: PageEvent) => {
+        const theme = this.application.renderer.theme as MarkdownTheme;
         if (!this.project?.readme && page.model.url == this.project?.url) {
           return null;
         }
         const breadcrumbs: string[] = [];
         if (this.project?.readme) {
           breadcrumbs.push(
-            page.url === this.entryFileName + '.md'
+            page.url === theme.entryFile
               ? 'README'
-              : `[README](${this.getRelativeUrl(this.entryFileName + '.md')})`,
+              : `[README](${this.getRelativeUrl(theme.entryFile)})`,
           );
         }
         breadcrumbs.push(

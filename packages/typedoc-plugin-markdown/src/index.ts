@@ -1,5 +1,6 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -8,14 +9,6 @@ export = (PluginHost: Application) => {
   if (app.converter.hasComponent('markdown')) {
     return;
   }
-
-  app.options.addDeclaration({
-    help:
-      '[Markdown Plugin] The filename of the index/entry page (ext not required). Defaults to "README"',
-    name: 'entryFileName',
-    type: ParameterType.String,
-    defaultValue: 'README',
-  });
 
   app.options.addDeclaration({
     help: '[Markdown Plugin] Do not render project name in template header.',

@@ -4,7 +4,6 @@ export interface PluginOptions {
   id?: string;
   logger?: string;
   inputFiles?: string[];
-  entryFileName: string;
   docsRoot?: string;
   out?: string;
   hideBreadcrumbs: boolean;
