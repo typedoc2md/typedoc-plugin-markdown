@@ -23,34 +23,32 @@ const bootstrap = async (customOptions = {}) => {
   await plugin.ready();
 };
 
-describe(`Plugin:`, () => {
-  describe(`(render)`, () => {
-    test(`should write docs`, async () => {
-      await bootstrap();
-      const files = fs.readdirSync(tmpobj.name + '/api');
-      expect(files).toMatchSnapshot();
-    });
+describe(`(render)`, () => {
+  test(`should write docs`, async () => {
+    await bootstrap();
+    const files = fs.readdirSync(tmpobj.name + '/api');
+    expect(files).toMatchSnapshot();
+  });
+});
+
+describe(`(sidebars)`, () => {
+  test(`should generate default`, async () => {
+    await bootstrap();
+    const enhancedFiles = await plugin.enhanceAppFiles();
+    expect(enhancedFiles).toMatchSnapshot();
   });
 
-  describe(`(sidebars)`, () => {
-    test(`should generate default`, async () => {
-      await bootstrap();
-      const enhancedFiles = await plugin.enhanceAppFiles();
-      expect(enhancedFiles).toMatchSnapshot();
+  test(`should generate with parent category and fullNames`, async () => {
+    await bootstrap({
+      sidebar: { parentCategory: 'Parent Category', fullNames: true },
     });
+    const enhancedFiles = await plugin.enhanceAppFiles();
+    expect(enhancedFiles).toMatchSnapshot();
+  });
 
-    test(`should generate with parent category and fullNames`, async () => {
-      await bootstrap({
-        sidebar: { parentCategory: 'Parent Category', fullNames: true },
-      });
-      const enhancedFiles = await plugin.enhanceAppFiles();
-      expect(enhancedFiles).toMatchSnapshot();
-    });
-
-    test(`should skip sidebar`, async () => {
-      await bootstrap({ sidebar: null });
-      const enhancedFiles = await plugin.enhanceAppFiles();
-      expect(enhancedFiles).toBeUndefined();
-    });
+  test(`should skip sidebar`, async () => {
+    await bootstrap({ sidebar: null });
+    const enhancedFiles = await plugin.enhanceAppFiles();
+    expect(enhancedFiles).toBeUndefined();
   });
 });

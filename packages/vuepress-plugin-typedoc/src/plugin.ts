@@ -14,7 +14,10 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     parentCategory: 'none',
     fullNames: false,
   },
+  plugin: [],
 };
+
+const TYPDOC_PLUGIN_NAME = 'typedoc-plugin-markdown';
 
 const app = new Application();
 let done = false;
@@ -40,15 +43,19 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
     name: 'vuepress-plugin-typedoc',
 
     async ready() {
-      // don't re-compile
+      // don't re-compile on dev server
       if (done) {
         return;
       }
 
+      // bootstrap
       app.bootstrap({
-        plugin: ['typedoc-plugin-markdown'],
-        theme: path.resolve(__dirname, 'theme'),
         ...options,
+        plugin: [
+          ...options.plugin.filter((name) => name !== TYPDOC_PLUGIN_NAME),
+          ...[TYPDOC_PLUGIN_NAME],
+        ],
+        theme: path.resolve(__dirname, 'theme'),
       });
 
       app.renderer.addComponent(
@@ -57,6 +64,7 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
       );
 
       project = app.convert(app.expandInputFiles(inputFiles));
+
       if (project) {
         app.generateDocs(project, out);
       }

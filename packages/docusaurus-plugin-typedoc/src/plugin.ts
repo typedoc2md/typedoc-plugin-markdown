@@ -17,7 +17,10 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     parentCategory: 'none',
     fullNames: false,
   },
+  plugin: [],
 };
+
+const TYPDOC_PLUGIN_NAME = 'typedoc-plugin-markdown';
 
 const app = new Application();
 
@@ -56,6 +59,16 @@ export default function pluginDocusaurus(
         };
       }
 
+      // bootstrap
+      app.bootstrap({
+        ...options,
+        plugin: [
+          ...options.plugin.filter((name) => name !== TYPDOC_PLUGIN_NAME),
+          ...[TYPDOC_PLUGIN_NAME],
+        ],
+        theme: path.resolve(__dirname, 'theme'),
+      });
+
       app.renderer.addComponent(
         'docusaurus-frontmatter',
         new DocsaurusFrontMatterComponent(
@@ -63,13 +76,6 @@ export default function pluginDocusaurus(
           sidebar ? sidebar : null,
         ),
       );
-
-      // bootstrap
-      app.bootstrap({
-        plugin: ['typedoc-plugin-markdown'],
-        theme: path.resolve(__dirname, 'theme'),
-        ...options,
-      });
 
       // render project
       const project = app.convert(app.expandInputFiles(inputFiles));

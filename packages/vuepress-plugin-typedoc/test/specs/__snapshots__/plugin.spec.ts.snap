@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Plugin: (render) should write docs 1`] = `
+exports[`(render) should write docs 1`] = `
 Array [
   "README.md",
   "classes",
@@ -11,7 +11,7 @@ Array [
 ]
 `;
 
-exports[`Plugin: (sidebars) should generate default 1`] = `
+exports[`(sidebars) should generate default 1`] = `
 Object {
   "content": "export default ({ siteData, options }) => {
           siteData.themeConfig.sidebarDepth = 2;
@@ -21,7 +21,7 @@ Object {
 }
 `;
 
-exports[`Plugin: (sidebars) should generate with parent category and fullNames 1`] = `
+exports[`(sidebars) should generate with parent category and fullNames 1`] = `
 Object {
   "content": "export default ({ siteData, options }) => {
           siteData.themeConfig.sidebarDepth = 2;

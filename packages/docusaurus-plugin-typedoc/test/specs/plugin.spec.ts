@@ -6,9 +6,23 @@ import plugin from '../../dist';
 
 tmp.setGracefulCleanup();
 
-const tmpobj = tmp.dirSync();
+const loadContent = async (additionalOptions = {}) => {
+  const options = {
+    inputFiles: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
+    target: 'ESNext',
+    moduleResolution: 'node',
+    logger: 'none',
+  };
+  const tmpobj = tmp.dirSync();
+  const context = { siteDir: tmpobj.name } as LoadContext;
+  const content = await plugin(context, {
+    ...options,
+    ...additionalOptions,
+  }).loadContent();
+  return { content, context, tmpobj, options };
+};
 
-const bootstrap = (context, content, options) => {
+const contentLoaded = (context, content, options) => {
   plugin(context, options).contentLoaded({
     content,
     actions: {} as PluginContentLoadedActions,
@@ -16,37 +30,40 @@ const bootstrap = (context, content, options) => {
 };
 
 describe(`Plugin:`, () => {
-  let options: any;
-  let content: any;
-  let context: any;
-
-  beforeAll(async () => {
-    options = {
-      inputFiles: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
-      target: 'ESNext',
-      moduleResolution: 'node',
-      logger: 'none',
-    };
-    context = { siteDir: tmpobj.name } as LoadContext;
-    content = await plugin(context, options).loadContent();
-  });
-
   describe(`(render)`, () => {
-    test(`should write docs`, () => {
-      bootstrap(context, content, options);
+    test(`should write docs`, async () => {
+      const { content, tmpobj } = await loadContent();
       const files = fs.readdirSync(tmpobj.name + '/docs/api');
       expect(files).toMatchSnapshot();
+      content.app.renderer.theme = undefined;
+    });
+  });
+
+  describe(`(options)`, () => {
+    test(`should set default plugin to 'typedoc-plugin-markdown'`, async () => {
+      const { content } = await loadContent();
+      expect(content.app.options.getValue('plugin')).toMatchSnapshot();
+      content.app.renderer.theme = undefined;
+    });
+    test(`should merge another plugin`, async () => {
+      const { content } = await loadContent({
+        plugin: ['typedoc-test-plugin-1', 'typedoc-test-plugin-2'],
+      });
+      expect(content.app.options.getValue('plugin')).toMatchSnapshot();
+      content.app.renderer.theme = undefined;
+    });
+    test(`should not duplicate markdown plugin`, async () => {
+      const { content } = await loadContent({
+        plugin: ['typedoc-test-plugin', 'typedoc-plugin-markdown'],
+      });
+      expect(content.app.options.getValue('plugin')).toMatchSnapshot();
+      content.app.renderer.theme = undefined;
     });
   });
 
   describe(`(sidebars)`, () => {
-    test(`should generate sidebars.js'`, () => {
-      bootstrap(context, content, options);
-      const sidebars = fs.readFileSync(tmpobj.name + '/sidebars.js');
-      expect(sidebars.toString()).toMatchSnapshot();
-    });
-
-    test(`should update sidebars.js'`, () => {
+    test(`should update sidebars.js'`, async () => {
+      const { content, context, tmpobj, options } = await loadContent();
       const sidebarsContent = `module.exports = {
       "someSidebar": {
         "Docusaurus": [
@@ -58,9 +75,10 @@ describe(`Plugin:`, () => {
       }
     };`;
       fs.writeFileSync(tmpobj.name + '/sidebars.js', sidebarsContent);
-      bootstrap(context, content, options);
+      contentLoaded(context, content, options);
       const sidebars = fs.readFileSync(tmpobj.name + '/sidebars.js');
       expect(sidebars.toString()).toMatchSnapshot();
+      content.app.renderer.theme = undefined;
     });
   });
 });
