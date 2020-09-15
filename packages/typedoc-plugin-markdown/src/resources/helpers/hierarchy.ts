@@ -5,17 +5,20 @@ import { type } from './type';
 
 export function hierarchy(this: DeclarationHierarchy, level: number) {
   const md: string[] = [];
-
-  const space = level > 0 ? level * 2 : 0;
+  const symbol = level > 0 ? getSymbol(level) : '*';
   this.types.forEach((hierarchyType) => {
     if (this.isTarget) {
-      md.push(`${spaces(space)}* **${hierarchyType}**`);
+      md.push(`${symbol} **${hierarchyType}**`);
     } else {
-      md.push(`${spaces(space)}* ${type.call(hierarchyType)}`);
+      md.push(`${symbol} ${type.call(hierarchyType)}`);
     }
   });
   if (this.next) {
     md.push(hierarchy.call(this.next, level + 1));
   }
   return md.join('\n\n');
+}
+
+function getSymbol(level: number) {
+  return spaces(2) + [...Array(level)].map(() => '↳').join('');
 }

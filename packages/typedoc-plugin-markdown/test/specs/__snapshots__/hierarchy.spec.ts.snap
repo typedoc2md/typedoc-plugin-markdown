@@ -3,17 +3,17 @@
 exports[`Hierarchy: should compile nested type hierarchy 1`] = `
 "* [ParentClass](_hierarchy_.parentclass.md)
 
-  * **ChildClassA**
+  ↳ **ChildClassA**
 
-    * [GrandChildClassA](_hierarchy_.grandchildclassa.md)
+  ↳↳ [GrandChildClassA](_hierarchy_.grandchildclassa.md)
 "
 `;
 
 exports[`Hierarchy: should compile type hierarchy 1`] = `
 "* **ParentClass**
 
-  * [ChildClassA](_hierarchy_.childclassa.md)
+  ↳ [ChildClassA](_hierarchy_.childclassa.md)
 
-  * [ChildClassB](_hierarchy_.childclassb.md)
+  ↳ [ChildClassB](_hierarchy_.childclassb.md)
 "
 `;
