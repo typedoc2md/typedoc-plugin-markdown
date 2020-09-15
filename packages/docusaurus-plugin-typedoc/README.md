@@ -48,7 +48,7 @@ module.exports = {
           parentCategory: 'none',
         },
 
-        // Pass in any additional Typescript/TypeDoc options (see typedoc --help)
+        // Pass in any additional TypeDoc options (see typedoc --help)
         mode: 'file',
         target: 'ES2017',
       },

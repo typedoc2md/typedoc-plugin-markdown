@@ -7,7 +7,7 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeS
 
 ## What it does?
 
-The plugin will replace the default HTML theme with a built-in Markdown theme, and expose some additional arguments.
+The plugin will replaces the default HTML theme with a built-in Markdown theme.
 
 ## Installation
 
@@ -31,12 +31,10 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
-- `--entryFileName<string>`<br>
-  Specify the filename of the index/entry page (ext not required). Defaults to `README`.
 - `--hideProjectName<boolean>`<br>
   Do not render project name in template header. Defaults to `false`.
 - `--hideBreadcrumbs<boolean>`<br>
-  Do not render breadcrumbs in template. Defaults to `false`.
+  Do not render breadcrumbs in template header. Defaults to `false`.
 - `--publicPath<string>`<br>
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `undefined`.
 - `--namedAnchors<boolean>`<br>
@@ -44,12 +42,10 @@ The following arguments can be used in addition to the default [TypeDoc argument
 
 ## Additional plugins
 
-- docusaurus-plugin-typedoc
-- vuepress-plugin-typedoc
+If using specifically for [Docusaurus v2](https://v2.docusaurus.io/) or [VuePress](https://vuepress.vuejs.org/) check out the respective plugin for the platform:
 
-## What does it look like
-
-## Theme customisation
+- [docusaurus-plugin-typedoc](../docusaurus-plugin-typedoc)
+- [vuepress-plugin-typedoc](../vuepress-plugin-typedoc)
 
 ## License
 
