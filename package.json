@@ -4,6 +4,7 @@
     "packages/*"
   ],
   "scripts": {
+    "lint": "lerna run lint",
     "build": "lerna run build",
     "pretest": "lerna run build",
     "test": "lerna run test --parallel",

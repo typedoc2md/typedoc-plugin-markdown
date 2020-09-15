@@ -7,9 +7,11 @@ notifications:
   email: false
 node_js:
   - '10'
+  - '12'
+  - '14'
 before_script:
 script:
-  - yarn run lerna run prepublishOnly --stream
+  - yarn run lint && yarn run test
 after_success:
 install:
   - yarn install

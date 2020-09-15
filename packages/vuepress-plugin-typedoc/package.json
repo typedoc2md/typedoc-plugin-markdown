@@ -27,7 +27,7 @@
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "npm run lint && npm run build",
+    "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "demo:start": "npm run build && cd demo && npm run dev",
     "demo:build": "npm run build && cd demo && npm run build",
