@@ -1,6 +1,6 @@
 # vuepress-plugin-typedoc
 
-A [VuePress](https://vuepress.vuejs.org/) plugin to build api documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
+A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-typedoc.svg)](https://www.npmjs.com/package/vuepress-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -45,9 +45,11 @@ module.exports = {
           parentCategory: 'none',
         },
 
-        // Pass in any additional TypeDoc options (see typedoc --help).
-        mode: 'file',
-        target: 'ES5',
+        // include additional TypeDoc plugins in addition to the markdown plugin (optional)
+        plugin: ['typedoc-plugin-xyz'],
+
+        // Pass in any additional TypeDoc options (see typedoc --help)
+        mode: 'modules',
       },
     ],
   ],

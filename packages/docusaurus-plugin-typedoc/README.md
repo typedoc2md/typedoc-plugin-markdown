@@ -1,6 +1,6 @@
 # docusaurus-plugin-typedoc
 
-A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build api documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
+A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -48,9 +48,11 @@ module.exports = {
           parentCategory: 'none',
         },
 
+        // include additional TypeDoc plugins in addition to the markdown plugin (optional)
+        plugin: ['typedoc-plugin-xyz'],
+
         // Pass in any additional TypeDoc options (see typedoc --help)
-        mode: 'file',
-        target: 'ES2017',
+        mode: 'modules',
       },
     ],
   ],

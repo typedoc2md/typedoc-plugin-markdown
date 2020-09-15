@@ -44,8 +44,8 @@ The following arguments can be used in addition to the default [TypeDoc argument
 
 If using specifically for [Docusaurus v2](https://v2.docusaurus.io/) or [VuePress](https://vuepress.vuejs.org/) check out the respective plugin for the platform:
 
-- [docusaurus-plugin-typedoc](../docusaurus-plugin-typedoc)
-- [vuepress-plugin-typedoc](../vuepress-plugin-typedoc)
+- [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
+- [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
 
 ## License
 
