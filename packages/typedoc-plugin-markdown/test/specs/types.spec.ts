@@ -1,4 +1,5 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../test-app';
 
 describe(`Types:`, () => {
@@ -107,6 +108,14 @@ describe(`Types:`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('typeOperatorType').type,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile unionType with object literal type '`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('objectLiteralUnionType').type,
       ),
     ).toMatchSnapshot();
   });

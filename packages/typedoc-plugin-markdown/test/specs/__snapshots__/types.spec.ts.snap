@@ -37,3 +37,5 @@ exports[`Types: should compile expanded 'objectLiteralType' type' 1`] = `
 exports[`Types: should compile intrinsic type' 1`] = `"string"`;
 
 exports[`Types: should compile reflection 'function' type ' 1`] = `"function"`;
+
+exports[`Types: should compile unionType with object literal type ' 1`] = `"string \\\\| { z: string  }"`;

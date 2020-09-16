@@ -62,3 +62,5 @@ function generic<T>(arg: T): T {
 const functionReflectionType: <T>(arg: T) => T = generic;
 
 export const typeOperatorType: unique symbol = Symbol.for('__type__');
+
+export type objectLiteralUnionType = string | { z: string };
