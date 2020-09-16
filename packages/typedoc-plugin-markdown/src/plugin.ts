@@ -1,10 +1,14 @@
+import * as fs from 'fs';
 import * as path from 'path';
+
 import { BindOption, Renderer } from 'typedoc';
 import { Converter } from 'typedoc/dist/lib/converter';
 import {
   Component,
   ConverterComponent,
 } from 'typedoc/dist/lib/converter/components';
+
+import MarkdownTheme from './theme';
 
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
@@ -19,18 +23,17 @@ export class MarkdownPlugin extends ConverterComponent {
   }
 
   /**
-   * Overide the default assets for any custom themes to inherit
+   * Overide default assets
    */
   onBegin() {
     Renderer.getDefaultTheme = () => path.join(__dirname, 'resources');
   }
 
   /**
-   * Read the theme option and load the paths of any recognised built in themes
-   * Otherwise pass the path through to the Renderer
+   * Load markdown theme and perform additional checks
    */
   onResolveBegin() {
-    // legacy theme upgrade messages (can be removed in future)
+    // v2 legacy markdown themes
     const legacyThemes = [
       'bitbucket',
       'docusaurus',
@@ -38,21 +41,43 @@ export class MarkdownPlugin extends ConverterComponent {
       'vuepress',
       'gitbook',
     ];
-    this.legacyMessages(legacyThemes, this.theme);
+    if (![...legacyThemes, ...['default', 'markdown']].includes(this.theme)) {
+      // For custom themes check that the theme is a markdown theme
+      // If it is return and pass through to renderer
+      const themeFileName = path.resolve(path.join(this.theme, 'theme.js'));
+      if (fs.existsSync(themeFileName) && this.isMarkdownTheme(themeFileName)) {
+        return;
+      }
+      this.application.logger.warn(
+        `[typedoc-plugin-markdown] '${this.theme}' is not a recognised markdown theme. If an html theme is required, please disable this plugin.`,
+      );
+    }
 
-    // load the base markdown theme
-    const markdownThemes = ['default', 'markdown'];
-    if ([...markdownThemes, ...legacyThemes].includes(this.theme)) {
-      this.application.options.setValue('theme', path.join(__dirname));
+    // Graceful upgrade for legacy themes
+    if (legacyThemes.includes(this.theme)) {
+      this.application.logger.warn(
+        `[typedoc-plugin-markdown] Please note the ${this.theme} theme is no longer supported as of v3.0.0.`,
+      );
+      this.upgradeMessages(this.theme);
+    }
+
+    // Set the default markdown theme
+    this.application.options.setValue('theme', path.join(__dirname));
+  }
+
+  /**
+   * Checks if the custom theme class is initiated from markdown theme
+   */
+  isMarkdownTheme(themeFileName: string) {
+    try {
+      const ThemeClass = require(themeFileName).default;
+      return ThemeClass.prototype instanceof MarkdownTheme;
+    } catch (e) {
+      return false;
     }
   }
 
-  legacyMessages(legacyThemes: string[], theme: string) {
-    if (legacyThemes.includes(theme)) {
-      this.application.logger.warn(
-        `[typedoc-plugin-markdown] Please note the ${theme} theme is no longer supported as of v3.0.0.`,
-      );
-    }
+  upgradeMessages(theme: string) {
     if (theme.startsWith('docusaurus')) {
       this.application.logger.warn(
         `[typedoc-plugin-markdown] Please use https://www.npmjs.com/package/docusaurus-plugin-typedoc`,
