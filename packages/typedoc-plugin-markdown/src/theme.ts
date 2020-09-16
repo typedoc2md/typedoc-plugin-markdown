@@ -55,6 +55,9 @@ export default class MarkdownTheme extends Theme {
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
+    renderer.removeComponent('marked-links');
+    renderer.removeComponent('legend');
+    renderer.removeComponent('navigation');
 
     // add markdown related componenets
     renderer.addComponent('comments', new CommentsComponent(renderer));
