@@ -3,17 +3,25 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
 export default class DocusaurusTheme extends MarkdownTheme {
+  /**
+   * Escape characters for mdx support after render
+   */
+  static formatContents(contents: string) {
+    return contents
+      .replace(/\\</g, '&#60;')
+      .replace(/\>/g, '&#62;')
+      .replace(/\\"/g, '&#34;');
+  }
+
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     this.listenTo(renderer, PageEvent.END, this.onDocusaurusPageEnd, 1024);
   }
 
   private onDocusaurusPageEnd(page: PageEvent) {
-    if (page.contents) {
-      page.contents = page.contents
-        .replace(/\\</g, '&#60;')
-        .replace(/\\"/g, '&#34;');
-    }
+    page.contents = page.contents
+      ? DocusaurusTheme.formatContents(page.contents)
+      : '';
   }
 
   get entryFile() {
