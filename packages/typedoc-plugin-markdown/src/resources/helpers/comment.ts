@@ -1,11 +1,8 @@
 import { Comment } from 'typedoc/dist/lib/models';
+
 import MarkdownTheme from '../../theme';
 
 export function comment(this: Comment) {
-  if (!this.shortText && !this.text && !this.tags) {
-    return MarkdownTheme.HANDLEBARS.helpers.comment.call(this);
-  }
-
   const md: string[] = [];
 
   if (this.shortText) {
