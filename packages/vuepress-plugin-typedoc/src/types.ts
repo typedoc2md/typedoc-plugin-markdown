@@ -5,8 +5,6 @@ export interface PluginOptions {
   logger?: string;
   inputFiles?: string[];
   out?: string;
-  hideBreadcrumbs: boolean;
-  hideProjectName: boolean;
   sidebar?: SidebarOptions | null;
   plugin: string[];
 }

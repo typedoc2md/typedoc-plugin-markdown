@@ -8,8 +8,6 @@ import { PluginOptions, SidebarOptions } from './types';
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   inputFiles: [],
   out: 'api',
-  hideBreadcrumbs: true,
-  hideProjectName: true,
   sidebar: {
     parentCategory: 'none',
     fullNames: false,

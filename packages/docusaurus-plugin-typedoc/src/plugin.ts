@@ -11,8 +11,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   inputFiles: [],
   docsRoot: 'docs',
   out: 'api',
-  hideBreadcrumbs: true,
-  hideProjectName: true,
   sidebar: {
     parentCategory: 'none',
     fullNames: false,
