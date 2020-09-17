@@ -1,6 +1,7 @@
 import * as fs from 'fs';
-import * as Handlebars from 'handlebars';
 import * as path from 'path';
+
+import * as Handlebars from 'handlebars';
 import * as tmp from 'tmp';
 import {
   Application,
@@ -10,6 +11,7 @@ import {
   UrlMapping,
 } from 'typedoc';
 import { ModuleKind, ScriptTarget } from 'typescript';
+
 import MarkdownTheme from '../src/theme';
 
 tmp.setGracefulCleanup();
@@ -104,7 +106,7 @@ export class TestApp {
       : ['./test/stubs/src'];
   }
 
-  bootstrap(options = {}, generate = true) {
+  bootstrap(options = {}) {
     this.app.bootstrap({
       module: ModuleKind.CommonJS,
       target: ScriptTarget.ES5,
@@ -116,11 +118,9 @@ export class TestApp {
 
     this.project = this.app.convert(this.app.expandInputFiles(this.inputFiles));
     this.renderer = this.app.renderer;
-    if (generate) {
-      this.tmpobj = tmp.dirSync();
-      this.app.generateDocs(this.project, this.tmpobj.name);
-      this.theme = this.app.renderer.theme as MarkdownTheme;
-    }
+    this.tmpobj = tmp.dirSync();
+    this.app.generateDocs(this.project, this.tmpobj.name);
+    this.theme = this.app.renderer.theme as MarkdownTheme;
   }
 
   findModule(name: string) {

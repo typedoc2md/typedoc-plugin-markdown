@@ -23,8 +23,6 @@ Array [
 
 exports[`Plugin: (render) should write docs 1`] = `
 Array [
-  "classes",
-  "enums",
   "globals.md",
   "index.md",
   "interfaces",
@@ -58,34 +56,9 @@ exports[`Plugin: (sidebars) should update sidebars.js' 1`] = `
         },
         {
           \\"type\\": \\"category\\",
-          \\"label\\": \\"Namespaces\\",
-          \\"items\\": [
-            \\"api/modules/_theme_.namespacea\\",
-            \\"api/modules/_theme_.namespaceb\\"
-          ]
-        },
-        {
-          \\"type\\": \\"category\\",
-          \\"label\\": \\"Enumerations\\",
-          \\"items\\": [
-            \\"api/enums/_theme_.enumitema\\",
-            \\"api/enums/_theme_.enumitemb\\"
-          ]
-        },
-        {
-          \\"type\\": \\"category\\",
-          \\"label\\": \\"Classes\\",
-          \\"items\\": [
-            \\"api/classes/_theme_.classitema\\",
-            \\"api/classes/_theme_.classitemb\\"
-          ]
-        },
-        {
-          \\"type\\": \\"category\\",
           \\"label\\": \\"Interfaces\\",
           \\"items\\": [
-            \\"api/interfaces/_theme_.interfaceitema\\",
-            \\"api/interfaces/_theme_.interfaceitemb\\"
+            \\"api/interfaces/_theme_.interfaceitema\\"
           ]
         }
       ]

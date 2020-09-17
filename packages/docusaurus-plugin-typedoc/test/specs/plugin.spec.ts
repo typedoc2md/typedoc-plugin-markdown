@@ -8,7 +8,7 @@ tmp.setGracefulCleanup();
 
 const loadContent = async (additionalOptions = {}) => {
   const options = {
-    inputFiles: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
+    inputFiles: ['./test/stubs/src/theme.ts'],
     target: 'ESNext',
     moduleResolution: 'node',
     logger: 'none',

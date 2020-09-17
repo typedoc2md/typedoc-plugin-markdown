@@ -10,6 +10,16 @@ exports[`Signatures: should compile callable signature' 1`] = `
 "
 `;
 
+exports[`Signatures: should compile signature with a flag' 1`] = `
+"▸ \`Private\`**privateFunction**(): string
+
+[partial: member.sources]
+[partial: comment]
+
+**Returns:** string
+"
+`;
+
 exports[`Signatures: should compile signature with default values' 1`] = `
 "▸ **functionWithDefaults**(\`valueA\`: string, \`valueB\`: number, \`valueC\`: number, \`valueD\`: boolean, \`valueE\`: boolean): string
 

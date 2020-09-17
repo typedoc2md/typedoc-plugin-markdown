@@ -1,5 +1,6 @@
 import * as Handlebars from 'handlebars';
 import { SignatureReflection } from 'typedoc';
+
 import { TestApp } from '../test-app';
 
 describe(`Signatures:`, () => {
@@ -17,6 +18,16 @@ describe(`Signatures:`, () => {
       TestApp.compileTemplate(
         partial,
         testApp.findReflection('CallableSignature').signatures[0],
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile signature with a flag'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('privateFunction')
+          .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
   });
