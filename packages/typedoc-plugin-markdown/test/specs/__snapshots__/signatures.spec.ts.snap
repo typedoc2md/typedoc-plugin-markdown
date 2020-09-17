@@ -10,6 +10,21 @@ exports[`Signatures: should compile callable signature' 1`] = `
 "
 `;
 
+exports[`Signatures: should compile function that returns an object' 1`] = `
+"▸ **functionReturningAnObject**(): object
+
+[partial: member.sources]
+[partial: comment]
+
+**Returns:** object
+
+Name | Type |
+------ | ------ |
+\`x\` | number |
+\`y\` | number |
+"
+`;
+
 exports[`Signatures: should compile signature with a flag' 1`] = `
 "▸ \`Private\`**privateFunction**(): string
 
@@ -92,7 +107,7 @@ Name | Type | Description |
 `;
 
 exports[`Signatures: should compile signature with type params' 1`] = `
-"▸ **functionWithTypeParams**\\\\<**Item**>(): boolean
+"▸ \`Const\`**functionWithTypeParams**\\\\<Item>(): boolean
 
 [partial: member.sources]
 [partial: comment]

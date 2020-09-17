@@ -54,8 +54,9 @@ let typeLiteralDeclaration: {
   valueB?: boolean;
 };
 
-let typeLiteral2: {
-  prop: string;
+let typeLiteralDeclarationWithFunction: {
+  (): string;
+  valueZ: string;
 };
 
 const objectLiteralAsConstDeclaration = {
@@ -74,3 +75,5 @@ const objectLiteralAsConstDeclaration = {
 } as const;
 
 export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');
+
+export type AnyFunctionType<A = any> = (...input: any[]) => A;

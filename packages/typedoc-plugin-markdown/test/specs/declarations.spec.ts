@@ -1,4 +1,5 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../test-app';
 
 describe(`Reflections:`, () => {
@@ -60,11 +61,29 @@ describe(`Reflections:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should declaration with double underscores in name and value`, () => {
+  test(`should compile type literal declaration`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('typeLiteralDeclarationWithFunction'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile declaration with double underscores in name and value`, () => {
     expect(
       TestApp.compileTemplate(
         template,
         testApp.findReflection('__DOUBLE_UNDERSCORES_DECLARATION__'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile any function type`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('AnyFunctionType'),
       ),
     ).toMatchSnapshot();
   });

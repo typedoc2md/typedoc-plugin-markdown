@@ -43,13 +43,7 @@ describe(`Types:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile 'literal' type'`, () => {
-    expect(
-      Handlebars.helpers.type.call(testApp.findReflection('literalType').type),
-    ).toMatchSnapshot();
-  });
-
-  test(`should compile expanded 'literal' type'`, () => {
+  test(`should compile collapsed 'literal' type'`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('literalType').type,
@@ -58,18 +52,24 @@ describe(`Types:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile 'objectLiteralType' type'`, () => {
+  test(`should compile expanded 'literal' type'`, () => {
     expect(
-      Handlebars.helpers.type.call(testApp.findReflection('objectLiteralType')),
+      Handlebars.helpers.type.call(testApp.findReflection('literalType').type),
     ).toMatchSnapshot();
   });
 
-  test(`should compile expanded 'objectLiteralType' type'`, () => {
+  test(`should compile collapsed 'objectLiteralType' type'`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('objectLiteralType'),
         true,
       ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile expanded 'objectLiteralType' type'`, () => {
+    expect(
+      Handlebars.helpers.type.call(testApp.findReflection('objectLiteralType')),
     ).toMatchSnapshot();
   });
 
@@ -87,10 +87,11 @@ describe(`Types:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile reflection 'function' type '`, () => {
+  test(`should compile collapsed 'function' type '`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('functionReflectionType').type,
+        true,
       ),
     ).toMatchSnapshot();
   });
@@ -99,7 +100,6 @@ describe(`Types:`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('functionReflectionType').type,
-        true,
       ),
     ).toMatchSnapshot();
   });
