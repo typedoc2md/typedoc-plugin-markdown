@@ -35,7 +35,7 @@ export default class MarkdownTheme extends Theme {
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
-  t;
+
   // formarts page content after render
   static formatContents(contents: string) {
     return (
