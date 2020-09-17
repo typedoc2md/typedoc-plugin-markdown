@@ -1,5 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { ReflectionKind } from 'typedoc/dist/lib/models';
+
 import { comment } from './comment';
 import { escape } from './escape';
 import { stripLineBreaks } from './strip-line-breaks';
@@ -38,12 +39,13 @@ export function propertyTable(
         : `\`${escape(getName(property))}\``;
     nameCol.push(name);
     row.push(nameCol.join(' '));
-    row.push(type.call(propertyType, kind !== ReflectionKind.ObjectLiteral));
+
+    row.push(type.call(propertyType, kind === ReflectionKind.ObjectLiteral));
     if (hasValues) {
       row.push(
         property.defaultValue
           ? stripLineBreaks(escape(property.defaultValue))
-          : type.call(propertyType, true),
+          : type.call(propertyType),
       );
     }
 

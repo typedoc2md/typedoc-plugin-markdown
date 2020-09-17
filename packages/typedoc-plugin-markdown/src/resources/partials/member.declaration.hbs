@@ -1,8 +1,20 @@
-{{{declarationTitle false}}}
+{{{declarationTitle}}}
 
 {{> member.sources}}
 
 {{> comment}}
+
+{{#if typeParameters}}
+
+#### Type parameters:
+
+{{#with typeParameters}}
+
+{{{parameterTable 'typeParameters'}}}
+
+{{/with}}
+
+{{/if}}
 
 {{#if type.declaration}}
 

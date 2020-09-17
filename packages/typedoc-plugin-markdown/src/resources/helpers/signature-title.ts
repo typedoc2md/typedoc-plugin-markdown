@@ -8,7 +8,9 @@ export function signatureTitle(this: SignatureReflection) {
 
   md.push(`${memberSymbol.call(this)} `);
 
-  md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
+  if (this.parent && this.parent.flags) {
+    md.push(this.parent.flags.map((flag) => `\`${flag}\``).join(' '));
+  }
 
   if (this.name === '__get' && this.parent) {
     md.push(`get **${this.parent.name}**`);
@@ -21,7 +23,7 @@ export function signatureTitle(this: SignatureReflection) {
   if (this.typeParameters) {
     md.push(
       `\\<${this.typeParameters
-        .map((typeParameter) => `**${typeParameter.name}**`)
+        .map((typeParameter) => typeParameter.name)
         .join(', ')}>`,
     );
   }
@@ -37,14 +39,14 @@ export function signatureTitle(this: SignatureReflection) {
           if (param.flags.isOptional) {
             paramsmd.push('?');
           }
-          paramsmd.push(`\`: ${type.call(param.type, true)}`);
+          paramsmd.push(`\`: ${type.call(param.type)}`);
           return paramsmd.join('');
         })
         .join(', ')
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(`: ${type.call(this.type)}`);
+    md.push(`: ${type.call(this.type, true)}`);
   }
   return md.join('') + '\n';
 }

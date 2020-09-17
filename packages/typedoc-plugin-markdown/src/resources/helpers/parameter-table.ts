@@ -1,4 +1,5 @@
 import { ParameterReflection, TypeParameterReflection } from 'typedoc';
+
 import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
@@ -8,7 +9,7 @@ export function parameterTable(
   kind: 'typeParameters' | 'parameters',
 ) {
   const showDefaults = hasDefaultValues(kind, this);
-  const showType = kind === 'parameters';
+  const showTypes = kind === 'parameters' ? true : hasTypes(this);
   const parameters = this as ParameterReflection[];
   const comments = parameters.map(
     (param) =>
@@ -19,7 +20,7 @@ export function parameterTable(
 
   const headers = ['Name'];
 
-  if (showType) {
+  if (showTypes) {
     headers.push('Type');
   }
 
@@ -40,8 +41,8 @@ export function parameterTable(
       }\``,
     );
 
-    if (showType) {
-      row.push(type.call(parameter.type, true));
+    if (showTypes) {
+      row.push(parameter.type ? type.call(parameter.type) : '-');
     }
 
     if (showDefaults) {
@@ -86,4 +87,13 @@ function hasDefaultValues(
           (param) => !!param.default,
         );
   return !defaultValues.every((value) => !value);
+}
+
+function hasTypes(
+  parameters: TypeParameterReflection[] | ParameterReflection[],
+) {
+  const types = (parameters as TypeParameterReflection[]).map(
+    (param) => !!param.type,
+  );
+  return !types.every((value) => !value);
 }

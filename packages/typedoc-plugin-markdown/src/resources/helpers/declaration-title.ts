@@ -1,5 +1,10 @@
-import { DeclarationReflection, ParameterReflection } from 'typedoc';
-import { IntrinsicType } from 'typedoc/dist/lib/models';
+import {
+  DeclarationReflection,
+  ParameterReflection,
+  ReflectionKind,
+} from 'typedoc';
+import { ReflectionType } from 'typedoc/dist/lib/models';
+
 import { escape } from './escape';
 import { memberSymbol } from './member-symbol';
 import { stripComments } from './strip-comments';
@@ -8,35 +13,47 @@ import { type } from './type';
 
 export function declarationTitle(
   this: ParameterReflection | DeclarationReflection,
-  expandType = true,
 ) {
   const md = [memberSymbol.call(this) + ' '];
   if (this.flags && !this.flags.isRest) {
     md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
   }
   md.push(`${this.flags.isRest ? '... ' : ' '}**${escape(this.name)}**`);
-  const type = getType(this, expandType);
-  if (type) {
-    md.push(`: ${type}`);
+  if (this instanceof DeclarationReflection && this.typeParameters) {
+    md.push(
+      `\\<${this.typeParameters
+        .map((typeParameter) => typeParameter.name)
+        .join(', ')}>`,
+    );
   }
+
+  md.push(`: ${getType(this)}`);
+
   if (this.defaultValue) {
     md.push(` = ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
   }
   return md.join('');
 }
 
-function getType(
+function getType(reflection: ParameterReflection | DeclarationReflection) {
+  return type.call(
+    reflection.type ? reflection.type : reflection,
+    shouldCollapse(reflection),
+  );
+}
+
+function shouldCollapse(
   reflection: ParameterReflection | DeclarationReflection,
-  expandType: boolean,
 ) {
-  if (
-    reflection.type instanceof IntrinsicType &&
-    reflection.type.name === 'object'
-  ) {
-    return type.call(reflection, expandType);
+  if (reflection.kind === ReflectionKind.ObjectLiteral) {
+    return true;
   }
-  if (reflection instanceof DeclarationReflection && reflection.signatures) {
-    return type.call(reflection, expandType);
+  if (reflection.kind === ReflectionKind.Variable) {
+    const type = reflection.type as ReflectionType;
+    if (type.declaration && type.declaration.signatures) {
+      return false;
+    }
+    return true;
   }
-  return type.call(reflection.type, expandType);
+  return false;
 }
