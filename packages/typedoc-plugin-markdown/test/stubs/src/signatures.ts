@@ -104,4 +104,11 @@ function functionWithNamedParams({ x: number, b: string }) {
   return '';
 }
 
+/**
+ * @private
+ */
+function privateFunction() {
+  return '';
+}
+
 export const functionWithTypeParams = <Item = boolean | string>() => true;

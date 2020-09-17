@@ -1,4 +1,5 @@
 import { SignatureReflection } from 'typedoc';
+
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
@@ -6,6 +7,8 @@ export function signatureTitle(this: SignatureReflection) {
   const md: string[] = [];
 
   md.push(`${memberSymbol.call(this)} `);
+
+  md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
 
   if (this.name === '__get' && this.parent) {
     md.push(`get **${this.parent.name}**`);
