@@ -7,10 +7,7 @@ export default class DocusaurusTheme extends MarkdownTheme {
    * Escape characters for mdx support after render
    */
   static formatContents(contents: string) {
-    return contents
-      .replace(/\\</g, '&#60;')
-      .replace(/\>/g, '&#62;')
-      .replace(/\\"/g, '&#34;');
+    return contents.replace(/\\</g, '&#60;').replace(/\\"/g, '&#34;');
   }
 
   constructor(renderer: Renderer, basePath: string) {
