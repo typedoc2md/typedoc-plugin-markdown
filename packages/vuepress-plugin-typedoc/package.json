@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-typedoc",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A VuePress plugin to build api documentation with TypeDoc.",
   "main": "dist/index.js",
   "files": [
@@ -32,7 +32,7 @@
     "demo:start": "npm run build && cd demo && npm run dev",
     "demo:build": "npm run build && cd demo && npm run build",
     "demo:init": "rm -rf demo && npx create-vuepress demo",
-    "test": "jest --updateSnapshot --colors",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",

@@ -10,10 +10,10 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "test": "jest --updateSnapshot --colors",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "fixtures": "node ./tasks/fixtures.js",
-    "demos": "npm run build && npm-run-all demo:*",
+    "demos": "rm -rf ./demo && npm run build && npm-run-all demo:*",
     "demo:md": "typedoc --options ./demo.options.json --out ./demo/md ",
     "demo:html": "typedoc --options ./demo.options.json --plugin none --out ./demo/html"
   },

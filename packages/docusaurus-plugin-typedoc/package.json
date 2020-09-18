@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-typedoc",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A Docusaurus v2 plugin to build API documentation with TypeDoc.",
   "main": "dist/index.js",
   "files": [
@@ -33,7 +33,7 @@
     "demo:start": "npm run build && cd demo && npm run start",
     "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
     "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",
-    "test": "jest --updateSnapshot --colors",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",

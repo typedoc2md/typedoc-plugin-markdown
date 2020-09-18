@@ -19,8 +19,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf ./dist && tsc",
-    "demo": "typedoc --theme ./dist ../typedoc-plugin-markdown/test/stubs/src --out demo",
-    "test": "jest --updateSnapshot --colors",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
