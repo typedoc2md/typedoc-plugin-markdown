@@ -1,9 +1,8 @@
 {
-  "inputFiles": "./test/stubs/src",
-
+  "inputFiles": "./test/stubs",
   "target": "ES5",
   "includes": "./test/stubs/inc/",
   "media": "./test/stubs/media/",
   "ignoreCompilerErrors": true,
-  "readme": "none"
+  "includeVersion": true
 }
