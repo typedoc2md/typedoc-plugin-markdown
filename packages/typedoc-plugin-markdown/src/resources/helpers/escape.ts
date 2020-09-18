@@ -3,8 +3,5 @@ export function escape(str: string) {
     .replace(/</g, '\\<')
     .replace(/_/g, '\\_')
     .replace(/`/g, '\\`')
-    .replace(/\|/g, '\\|')
-    .replace(/\n/g, '\\n')
-    .replace(/\r/g, '\\r')
-    .replace(/\t/g, '\\t');
+    .replace(/\|/g, '\\|');
 }

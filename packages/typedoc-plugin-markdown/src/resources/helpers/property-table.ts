@@ -44,8 +44,8 @@ export function propertyTable(
     if (hasValues) {
       row.push(
         property.defaultValue
-          ? stripLineBreaks(escape(property.defaultValue))
-          : type.call(propertyType),
+          ? escape(stripLineBreaks(property.defaultValue))
+          : escape(stripLineBreaks(type.call(propertyType))),
       );
     }
 
