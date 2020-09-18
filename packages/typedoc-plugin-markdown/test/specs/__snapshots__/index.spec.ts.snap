@@ -5,6 +5,12 @@ exports[`Index: should compile readme 1`] = `
 
 [helper: breadcrumbs]
 
-MY README
+# MY README
+
+> Some block quote
+
+<!-- some comments -->
+
+Some text
 "
 `;
