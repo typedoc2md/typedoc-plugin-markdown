@@ -31,7 +31,7 @@ module.exports = {
       // plugin options
       {
         // list of input files relative to project (required).
-        inputFiles: ['../../src/'],
+        inputFiles: ['../src/'],
 
         // docs directory relative to the site directory (defaults to docs).
         docsRoot: 'docs',
