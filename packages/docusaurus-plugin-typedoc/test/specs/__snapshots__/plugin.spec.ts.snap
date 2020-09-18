@@ -41,26 +41,20 @@ exports[`Plugin: (sidebars) should update sidebars.js' 1`] = `
     ]
   },
   \\"typedoc\\": [
+    \\"api/index\\",
+    \\"api/globals\\",
     {
       \\"type\\": \\"category\\",
-      \\"label\\": \\"none\\",
+      \\"label\\": \\"Modules\\",
       \\"items\\": [
-        \\"api/index\\",
-        \\"api/globals\\",
-        {
-          \\"type\\": \\"category\\",
-          \\"label\\": \\"Modules\\",
-          \\"items\\": [
-            \\"api/modules/_theme_\\"
-          ]
-        },
-        {
-          \\"type\\": \\"category\\",
-          \\"label\\": \\"Interfaces\\",
-          \\"items\\": [
-            \\"api/interfaces/_theme_.interfaceitema\\"
-          ]
-        }
+        \\"api/modules/_theme_\\"
+      ]
+    },
+    {
+      \\"type\\": \\"category\\",
+      \\"label\\": \\"Interfaces\\",
+      \\"items\\": [
+        \\"api/interfaces/_theme_.interfaceitema\\"
       ]
     }
   ]

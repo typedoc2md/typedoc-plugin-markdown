@@ -157,7 +157,7 @@ function getSidebarJson(
     }
   });
 
-  if (parentCategory) {
+  if (parentCategory && parentCategory !== 'none') {
     return {
       typedoc: [{ type: 'category', label: parentCategory, items: navJson }],
     };
