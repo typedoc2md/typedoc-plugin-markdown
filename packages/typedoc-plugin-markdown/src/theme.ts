@@ -1,22 +1,27 @@
-import * as fs from 'fs-extra';
+import * as fs from 'fs';
+
 import * as Handlebars from 'handlebars';
 import {
+  BindOption,
   ContainerReflection,
   DeclarationReflection,
   NavigationItem,
   ProjectReflection,
   Reflection,
-  ReflectionKind,
   Renderer,
   UrlMapping,
 } from 'typedoc';
 import { ReflectionGroup } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
-import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+import {
+  DefaultTheme,
+  TemplateMapping,
+} from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { ContextAwareHelpersComponent } from './components/helpers.component';
-import { OptionsComponent } from './components/options.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs.component';
+import { CommentsComponent } from './components/comments.component';
+import { HelperUtilsComponent } from './components/utils.component';
 
 /**
  * The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/DefaultTheme.ts.
@@ -25,52 +30,21 @@ import { OptionsComponent } from './components/options.component';
  */
 
 export default class MarkdownTheme extends Theme {
-  /**
-   * @See DefaultTheme.MAPPINGS
-   */
-  static MAPPINGS: TemplateMapping[] = [
-    {
-      kind: [ReflectionKind.Class],
-      isLeaf: false,
-      directory: 'classes',
-      template: 'reflection.hbs',
-    },
-    {
-      kind: [ReflectionKind.Interface],
-      isLeaf: false,
-      directory: 'interfaces',
-      template: 'reflection.hbs',
-    },
-    {
-      kind: [ReflectionKind.Enum],
-      isLeaf: false,
-      directory: 'enums',
-      template: 'reflection.hbs',
-    },
-    {
-      kind: [ReflectionKind.Namespace, ReflectionKind.Module],
-      isLeaf: false,
-      directory: 'modules',
-      template: 'reflection.hbs',
-    },
-  ];
-
-  /**
-   * @See DefaultTheme.URL_PREFIX
-   */
-  static URL_PREFIX = /^(http|ftp)s?:\/\//;
+  @BindOption('readme')
+  readme!: string;
 
   // creates an isolated Handlebars environment to store context aware helpers
-  static handlebars = Handlebars.create();
+  static HANDLEBARS = Handlebars.create();
 
-  // is documentation generated as a single output file
-  static isSingleFile = false;
-
-  // the root of generated docs
-  indexName = 'README';
-
-  // the file extension of the generated docs
-  fileExt = '.md';
+  // formarts page content after render
+  static formatContents(contents: string) {
+    return (
+      contents
+        .replace(/[\r\n]{3,}/g, '\n\n')
+        .replace(/!spaces/g, '')
+        .replace(/^\s+|\s+$/g, '') + '\n'
+    );
+  }
 
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
@@ -81,10 +55,14 @@ export default class MarkdownTheme extends Theme {
     renderer.removeComponent('javascript-index');
     renderer.removeComponent('toc');
     renderer.removeComponent('pretty-print');
+    renderer.removeComponent('marked-links');
+    renderer.removeComponent('legend');
+    renderer.removeComponent('navigation');
 
     // add markdown related componenets
-    renderer.addComponent('helpers', new ContextAwareHelpersComponent(renderer));
-    renderer.addComponent('options', new OptionsComponent(renderer));
+    renderer.addComponent('comments', new CommentsComponent(renderer));
+    renderer.addComponent('breadcrumbs', new BreadcrumbsComponent(renderer));
+    renderer.addComponent('utils', new HelperUtilsComponent(renderer));
   }
 
   /**
@@ -93,16 +71,10 @@ export default class MarkdownTheme extends Theme {
    */
   isOutputDirectory(outputDirectory: string): boolean {
     let isOutputDirectory = true;
-
     const listings = fs.readdirSync(outputDirectory);
 
-    if (!listings.includes(this.indexName + this.fileExt)) {
-      isOutputDirectory = false;
-      return;
-    }
-
     listings.forEach((listing) => {
-      if (!this.allowedDirectoryListings().includes(listing)) {
+      if (!this.allowedDirectoryListings(this.entryFile).includes(listing)) {
         isOutputDirectory = false;
         return;
       }
@@ -112,10 +84,11 @@ export default class MarkdownTheme extends Theme {
   }
 
   // The allowed directory and files listing used to check the output directory
-  allowedDirectoryListings() {
+  allowedDirectoryListings(entryFileName: string) {
     return [
-      this.indexName + this.fileExt,
-      'globals' + this.fileExt,
+      entryFileName,
+      'README.md',
+      'globals.md',
       'classes',
       'enums',
       'interfaces',
@@ -136,26 +109,17 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    const omitReadme = this.application.options.getValue('readme') === 'none';
-    const inlineGroupTitles = ['Functions', 'Variables', 'Object literals'];
+    const omitReadme = this.readme === 'none';
 
-    if (project.groups) {
-      MarkdownTheme.isSingleFile =
-        project.groups && project.groups.every((group) => inlineGroupTitles.includes(group.title));
-    }
-    if (omitReadme || MarkdownTheme.isSingleFile) {
-      entryPoint.url = this.indexName + this.fileExt;
+    if (omitReadme) {
+      entryPoint.url = this.entryFile;
       urls.push(
-        new UrlMapping(
-          this.indexName + this.fileExt,
-          { ...entryPoint, displayReadme: MarkdownTheme.isSingleFile },
-          'reflection.hbs',
-        ),
+        new UrlMapping(this.entryFile, { ...entryPoint }, 'reflection.hbs'),
       );
     } else {
-      entryPoint.url = 'globals' + this.fileExt;
-      urls.push(new UrlMapping('globals' + this.fileExt, entryPoint, 'reflection.hbs'));
-      urls.push(new UrlMapping(this.indexName + this.fileExt, project, 'index.hbs'));
+      entryPoint.url = 'globals.md';
+      urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
+      urls.push(new UrlMapping(this.entryFile, project, 'index.hbs'));
     }
     if (entryPoint.children) {
       entryPoint.children.forEach((child: Reflection) => {
@@ -176,10 +140,13 @@ export default class MarkdownTheme extends Theme {
    * @returns The altered urls array.
    */
 
-  buildUrls(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
-    const mapping = MarkdownTheme.getMapping(reflection);
+  buildUrls(
+    reflection: DeclarationReflection,
+    urls: UrlMapping[],
+  ): UrlMapping[] {
+    const mapping = DefaultTheme.getMapping(reflection);
     if (mapping) {
-      if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
+      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
         const url = this.toUrl(mapping, reflection);
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
@@ -204,7 +171,7 @@ export default class MarkdownTheme extends Theme {
    * @param reflection
    */
   toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
-    return mapping.directory + '/' + this.getUrl(reflection) + this.fileExt;
+    return mapping.directory + '/' + this.getUrl(reflection) + '.md';
   }
 
   /**
@@ -216,11 +183,20 @@ export default class MarkdownTheme extends Theme {
    * @param separator   The separator used to generate the url.
    * @returns           The generated url.
    */
-  getUrl(reflection: Reflection, relative?: Reflection, separator = '.'): string {
+  getUrl(
+    reflection: Reflection,
+    relative?: Reflection,
+    separator = '.',
+  ): string {
     let url = reflection.getAlias();
 
-    if (reflection.parent && reflection.parent !== relative && !(reflection.parent instanceof ProjectReflection)) {
-      url = this.getUrl(reflection.parent, relative, separator) + separator + url;
+    if (
+      reflection.parent &&
+      reflection.parent !== relative &&
+      !(reflection.parent instanceof ProjectReflection)
+    ) {
+      url =
+        this.getUrl(reflection.parent, relative, separator) + separator + url;
     }
 
     return url;
@@ -234,8 +210,9 @@ export default class MarkdownTheme extends Theme {
    * @param container   The nearest reflection having an own document.
    */
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
-    if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
-      const anchor = this.toAnchorRef(reflection);
+    if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
+      const reflectionId = reflection.name.toLowerCase();
+      const anchor = this.toAnchorRef(reflectionId);
       reflection.url = container.url + '#' + anchor;
       reflection.anchor = anchor;
       reflection.hasOwnDocument = false;
@@ -247,20 +224,8 @@ export default class MarkdownTheme extends Theme {
     });
   }
 
-  /**
-   * Converts a reflection to anchor ref
-   * @param reflection
-   */
-  toAnchorRef(reflection: Reflection) {
-    function parseAnchorRef(ref: string) {
-      return ref.replace(/["\$]/g, '').replace(/ /g, '-');
-    }
-    let anchorPrefix = '';
-    reflection.flags.forEach((flag) => (anchorPrefix += `${flag}-`));
-    const prefixRef = parseAnchorRef(anchorPrefix);
-    const reflectionRef = parseAnchorRef(reflection.name);
-    const anchorRef = prefixRef + reflectionRef;
-    return anchorRef.toLowerCase();
+  toAnchorRef(reflectionId: string) {
+    return reflectionId;
   }
 
   /**
@@ -275,157 +240,58 @@ export default class MarkdownTheme extends Theme {
         if (reflection instanceof ContainerReflection) {
           return reflection;
         } else {
-          this.application.logger.warn('The given entry point `%s` is not a container.', entryPoint);
+          this.application.logger.warn(
+            'The given entry point `%s` is not a container.',
+            entryPoint,
+          );
         }
       } else {
-        this.application.logger.warn('The entry point `%s` could not be found.', entryPoint);
+        this.application.logger.warn(
+          'The entry point `%s` could not be found.',
+          entryPoint,
+        );
       }
     }
     return project;
   }
 
-  getNavigation(project: ProjectReflection) {
-    function createNavigationGroup(name: string, url = null) {
-      const navigationGroup = new NavigationItem(name, url);
-      navigationGroup.children = [];
-      delete navigationGroup.cssClasses;
-      delete navigationGroup.reflection;
-      return navigationGroup;
-    }
-
-    function getNavigationGroup(reflection: DeclarationReflection) {
-      if (reflection.kind === ReflectionKind.Namespace) {
-        return namespacesNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Module) {
-        return modulesNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Class) {
-        return classesNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Enum) {
-        return enumsNavigation;
-      }
-      if (reflection.kind === ReflectionKind.Interface) {
-        return interfacesNavigation;
-      }
-      return null;
-    }
-
-    function addNavigationItem(
-      longTitle: boolean,
-      reflection: DeclarationReflection,
-      parentNavigationItem?: NavigationItem,
-      group?,
-    ) {
-      let navigationGroup: NavigationItem;
-      if (group) {
-        navigationGroup = group;
-      } else {
-        navigationGroup = getNavigationGroup(reflection);
-      }
-      let titlePrefix = '';
-      if (longTitle && parentNavigationItem && parentNavigationItem.title) {
-        titlePrefix = parentNavigationItem.title.replace(/\"/g, '') + '.';
-      }
-
-      const title = titlePrefix + reflection.name.replace(/\"/g, '');
-      const url = reflection.url;
-      const nav = new NavigationItem(title, url, parentNavigationItem);
-      nav.parent = parentNavigationItem;
-
-      navigationGroup.children.push(nav);
-      if (reflection.children) {
-        reflection.children.forEach((reflectionChild) => {
-          if (reflectionChild.hasOwnDocument) {
-            addNavigationItem(longTitle, reflectionChild as DeclarationReflection, nav, navigationGroup);
-          }
-        });
-      }
-      delete nav.cssClasses;
-      delete nav.reflection;
-      return nav;
-    }
-    const isModules = this.application.options.getValue('mode') === 1;
-    const isLongTitle = this.application.options.getValue('longTitle') as boolean;
-
-    const navigation = createNavigationGroup(project.name, this.indexName + this.fileExt);
-    const externalModulesNavigation = createNavigationGroup('External Modules');
-    const modulesNavigation = createNavigationGroup('Modules');
-    const namespacesNavigation = createNavigationGroup('Namespaces');
-    const classesNavigation = createNavigationGroup('Classes');
-    const enumsNavigation = createNavigationGroup('Enums');
-    const interfacesNavigation = createNavigationGroup('Interfaces');
-
-    if (project.groups) {
-      if (!isModules) {
-        project.groups.forEach((group) => {
-          group.children.forEach((reflection) => {
-            if (reflection.hasOwnDocument) {
-              addNavigationItem(isLongTitle, reflection as DeclarationReflection);
-            }
-          });
-        });
-      }
-
-      if (isModules) {
-        project.groups[0].children.forEach((module) => {
-          const moduleNavigation = addNavigationItem(isLongTitle, module as DeclarationReflection);
-          if ((module as DeclarationReflection).children) {
-            (module as DeclarationReflection).children.forEach((reflection) => {
-              if (reflection.hasOwnDocument) {
-                addNavigationItem(isLongTitle, reflection, moduleNavigation);
-              }
-            });
-          }
-        });
-      }
-    }
-
-    if (externalModulesNavigation.children.length) {
-      navigation.children.push(externalModulesNavigation);
-    }
-    if (modulesNavigation.children.length) {
-      navigation.children.push(modulesNavigation);
-    }
-    if (classesNavigation.children.length) {
-      navigation.children.push(classesNavigation);
-    }
-    if (enumsNavigation.children.length) {
-      navigation.children.push(enumsNavigation);
-    }
-    if (interfacesNavigation.children.length) {
-      navigation.children.push(interfacesNavigation);
-    }
-
-    return navigation;
-  }
-
-  getNavigationV3(project: ProjectReflection): NavigationItem {
+  getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
+    const hasSeperateGlobals = this.readme !== 'none';
     const navigation = createNavigationItem(project.name);
-    const hasSeperateGlobals = this.application.options.getValue('readme') !== 'none';
 
-    navigation.children.push(
-      createNavigationItem(hasSeperateGlobals ? 'README' : 'Globals', this.indexName + this.fileExt),
+    navigation.children?.push(
+      createNavigationItem(
+        hasSeperateGlobals ? 'README' : 'Globals',
+        this.entryFile,
+      ),
     );
     if (hasSeperateGlobals) {
-      navigation.children.push(createNavigationItem('Globals', 'globals.md'));
+      navigation.children?.push(createNavigationItem('Globals', 'globals.md'));
     }
-    buildGroups(entryPoint.groups);
-    navigation.children.sort(sortCallback);
+    if (entryPoint.groups) {
+      buildGroups(entryPoint.groups);
+    }
+    navigation.children?.sort(sortCallback);
 
     function buildGroups(groups: ReflectionGroup[], level = 0) {
       groups.forEach((reflectionGroup) => {
         if (reflectionGroup.allChildrenHaveOwnDocument()) {
-          let reflectionGroupItem = navigation.children.find((child) => child.title === reflectionGroup.title);
+          let reflectionGroupItem = navigation.children?.find(
+            (child) => child.title === reflectionGroup.title,
+          );
           if (!reflectionGroupItem) {
             reflectionGroupItem = createNavigationItem(reflectionGroup.title);
-            navigation.children.push(reflectionGroupItem);
+            navigation.children?.push(reflectionGroupItem);
           }
           reflectionGroup.children.forEach((reflectionGroupChild) => {
-            const reflectionGroupChildItem = createNavigationItem(reflectionGroupChild.name, reflectionGroupChild.url);
-            reflectionGroupItem.children.push(reflectionGroupChildItem);
+            const reflectionGroupChildItem = createNavigationItem(
+              reflectionGroupChild.getFullName().replace(/\"/g, ''),
+              reflectionGroupChild.url,
+            );
+            if (reflectionGroupItem) {
+              reflectionGroupItem.children?.push(reflectionGroupChildItem);
+            }
             const reflection = reflectionGroupChild as ContainerReflection;
             if (reflection.groups) {
               buildGroups(reflection.groups, level + 1);
@@ -438,7 +304,6 @@ export default class MarkdownTheme extends Theme {
     function createNavigationItem(title: string, url?: string) {
       const navigationItem = new NavigationItem(title.replace(/\"/g, ''), url);
       navigationItem.children = [];
-      delete navigationItem.cssClasses;
       delete navigationItem.reflection;
       delete navigationItem.isLabel;
       return navigationItem;
@@ -460,26 +325,13 @@ export default class MarkdownTheme extends Theme {
   }
 
   private onPageEnd(page: PageEvent) {
-    page.contents = page.contents ? MarkdownTheme.formatContents(page.contents) : '';
+    page.contents = page.contents
+      ? MarkdownTheme.formatContents(page.contents)
+      : '';
   }
 
-  /**
-   * @see DefaultTheme.getMapping
-   * Return the template mapping fore the given reflection.
-   *
-   * @param reflection  The reflection whose mapping should be resolved.
-   * @returns           The found mapping or undefined if no mapping could be found.
-   */
-  static getMapping(reflection: DeclarationReflection): TemplateMapping | undefined {
-    return MarkdownTheme.MAPPINGS.find((mapping) => reflection.kindOf(mapping.kind));
-  }
-
-  static formatContents(contents: string) {
-    return (
-      contents
-        .replace(/[\r\n]{3,}/g, '\n\n')
-        .replace(/!spaces/g, '')
-        .replace(/^\s+|\s+$/g, '') + '\n'
-    );
+  // the entry file name
+  get entryFile() {
+    return 'README.md';
   }
 }

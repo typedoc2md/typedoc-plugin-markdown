@@ -1,17 +1,45 @@
-{{{declarationTitle true}}}
+{{{declarationTitle}}}
 
 {{> member.sources}}
 
 {{> comment}}
 
-{{#if type.declaration}}
+{{#if typeParameters}}
 
-{{heading 4}} Type declaration:
+#### Type parameters:
 
-{{#with type.declaration}}
+{{#with typeParameters}}
 
-{{> parameter}}
+{{{parameterTable 'typeParameters'}}}
 
 {{/with}}
 
 {{/if}}
+
+{{#if type.declaration}}
+
+{{#if type.declaration.children}}
+
+#### Type declaration:
+
+{{#with type.declaration.children}}
+
+{{{propertyTable ../kind}}}
+
+{{/with}}
+
+{{/if}}
+
+{{/if}}
+
+{{#ifCond kindString '==' 'Object literal'}}
+
+#### Properties:
+
+{{#with children}}
+
+{{{propertyTable ../kind}}}
+
+{{/with}}
+
+{{/ifCond }}

@@ -6,15 +6,11 @@
 ___
 {{/unless}}
 
-{{heading 2}} {{title}} {{../title}}
+## {{title}} {{../title}}
 
 {{#each children}}
 
-{{#unless hasOwnDocument}}
-
 {{> member}}
-
-{{/unless}}
 
 {{/each}}
 
@@ -22,15 +18,11 @@ ___
 
 {{else}}
 
-{{heading 2}} {{title}}
+## {{title}}
 
 {{#each children}}
 
-{{#unless hasOwnDocument}}
-
 {{> member}}
-
-{{/unless}}
 
 {{/each}}
 

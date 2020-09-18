@@ -1,14 +1,19 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
-export function reflectionTitle(this: PageEvent) {
-  const title = [];
+export function reflectionTitle(this: PageEvent, withParams: boolean) {
+  const title: string[] = [];
+  if (this.url === this.project.url) {
+    return 'Globals';
+  }
   if (this.model.kindString) {
-    title.push(`${this.model.kindString}:`);
+    title.push(`${this.model.kindString}: `);
   }
   title.push(this.model.name);
-  if (this.model.typeParameters) {
-    const typeParameters = this.model.typeParameters.map((typeParameter) => typeParameter.name).join(', ');
-    title.push(`‹**${typeParameters}**›`);
+  if (withParams && this.model.typeParameters) {
+    const typeParameters = this.model.typeParameters
+      .map((typeParameter) => typeParameter.name)
+      .join(', ');
+    title.push(`\\<**${typeParameters}**>`);
   }
-  return title.join(' ');
+  return title.join('');
 }

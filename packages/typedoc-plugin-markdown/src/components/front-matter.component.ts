@@ -1,78 +1,65 @@
 import * as path from 'path';
-import { NavigationItem } from 'typedoc';
-import { Component, ContextAwareRendererComponent } from 'typedoc/dist/lib/output/components';
+
+import {
+  Component,
+  ContextAwareRendererComponent,
+} from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
+import { reflectionTitle } from '../resources/helpers/reflection-title';
 
 @Component({ name: 'frontmatter' })
 export class FrontMatterComponent extends ContextAwareRendererComponent {
   initialize() {
     super.initialize();
-
     this.listenTo(this.application.renderer, {
       [PageEvent.END]: this.onPageEnd,
     });
   }
 
   onPageEnd(page: PageEvent) {
-    page.contents = page.contents.replace(/^/, this.getYamlString(page) + '\n\n').replace(/[\r\n]{3,}/g, '\n\n');
+    if (page.contents) {
+      page.contents = page.contents
+        .replace(/^/, this.getYamlString(this.getYamlItems(page)) + '\n\n')
+        .replace(/[\r\n]{3,}/g, '\n\n');
+    }
   }
 
-  getYamlString(page: PageEvent) {
+  getYamlString(yamlItems: { [key: string]: string | number | boolean }) {
     const yaml = `---
-id: "${this.escapeYAMLString(this.getId(page))}"
-title: "${this.escapeYAMLString(this.getTitle(page))}"
-sidebar_label: "${this.escapeYAMLString(this.getLabel(page))}"
+${Object.entries(yamlItems)
+  .map(
+    ([key, value]) =>
+      `${key}: ${
+        typeof value === 'string' ? `"${this.escapeYAMLString(value)}"` : value
+      }`,
+  )
+  .join('\n')}
 ---`;
     return yaml;
   }
 
+  getYamlItems(page: PageEvent) {
+    return this.getDefaultValues(page);
+  }
+
+  getDefaultValues(page: PageEvent) {
+    return {
+      id: this.getId(page),
+      title: this.getTitle(page),
+    };
+  }
+
   getId(page: PageEvent) {
-    return this.stripExt(page.url);
+    return path.basename(page.url, path.extname(page.url));
   }
 
   getTitle(page: PageEvent) {
-    if (page.url === page.project.url) {
-      return this.getProjectName(page);
-    }
-    return this.getTitleFromNavigation(page, page.url) || this.getProjectName(page);
-  }
-
-  getLabel(page: PageEvent) {
-    if (this.stripExt(page.url) === 'globals') {
-      return 'Globals';
-    }
-    const title = this.getTitleFromNavigation(page, page.url);
-    return title ? title : !!page.project.readme ? 'README' : 'Globals';
+    return reflectionTitle.call(page, false);
   }
 
   // prettier-ignore
   escapeYAMLString(str: string) {
-    return str.replace(/([^\\])'/g, '$1\\\'');
-  }
-
-  getProjectName(page: PageEvent) {
-    return (page.project.packageInfo && page.project.packageInfo.label) || page.project.name;
-  }
-
-  getTitleFromNavigation(page: PageEvent, url: string) {
-    const item = this.findNavigationItem(page.navigation.children, url, null);
-    return item ? item.title : null;
-  }
-
-  findNavigationItem(navigation: NavigationItem[], url, item: NavigationItem) {
-    navigation.forEach(navigationChild => {
-      if (navigationChild.url === url) {
-        item = navigationChild;
-        return;
-      }
-      if (navigationChild.children) {
-        item = this.findNavigationItem(navigationChild.children, url, item);
-      }
-    });
-    return item;
-  }
-
-  stripExt(url: string) {
-    return path.basename(url, path.extname(url));
+    return str.replace(/([^\\])'/g, '$1\\\'').replace(/\"/g, '');
   }
 }

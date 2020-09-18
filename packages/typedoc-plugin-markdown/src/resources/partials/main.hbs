@@ -1,11 +1,3 @@
-{{#ifCond kindString '==' 'Module'}}
 {{> index}}
 
 {{> members}}
-{{else}}
-{{#ifIndexes}}
-{{> index}}
-
-{{/ifIndexes}}
-{{> members}}
-{{/ifCond}}

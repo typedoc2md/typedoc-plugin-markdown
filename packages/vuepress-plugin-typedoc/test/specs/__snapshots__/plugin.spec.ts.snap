@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(render) should write docs 1`] = `
+Array [
+  "README.md",
+  "classes",
+  "enums",
+  "globals.md",
+  "interfaces",
+  "modules",
+]
+`;
+
+exports[`(sidebars) should generate default 1`] = `
+Object {
+  "content": "export default ({ siteData, options }) => {
+          siteData.themeConfig.sidebarDepth = 2;
+          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,{\\"/api/\\":[[\\"/api/\\",\\"README\\"],[\\"globals\\",\\"Globals\\"],{\\"title\\":\\"Modules\\",\\"children\\":[[\\"modules/_theme_\\",\\"theme\\"]]},{\\"title\\":\\"Namespaces\\",\\"children\\":[[\\"modules/_theme_.namespacea\\",\\"namespaceA\\"],[\\"modules/_theme_.namespaceb\\",\\"namespaceB\\"]]},{\\"title\\":\\"Enumerations\\",\\"children\\":[[\\"enums/_theme_.enumitema\\",\\"enumItemA\\"],[\\"enums/_theme_.enumitemb\\",\\"enumItemB\\"]]},{\\"title\\":\\"Classes\\",\\"children\\":[[\\"classes/_theme_.classitema\\",\\"ClassItemA\\"],[\\"classes/_theme_.classitemb\\",\\"ClassItemB\\"]]},{\\"title\\":\\"Interfaces\\",\\"children\\":[[\\"interfaces/_theme_.interfaceitema\\",\\"InterfaceItemA\\"],[\\"interfaces/_theme_.interfaceitemb\\",\\"InterfaceItemB\\"]]}]});
+        }",
+  "name": "typedoc-sidebar",
+}
+`;
+
+exports[`(sidebars) should generate with parent category and fullNames 1`] = `
+Object {
+  "content": "export default ({ siteData, options }) => {
+          siteData.themeConfig.sidebarDepth = 2;
+          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,{\\"/api/\\":[{\\"title\\":\\"Parent Category\\",\\"children\\":[[\\"/api/\\",\\"README\\"],[\\"globals\\",\\"Globals\\"],{\\"title\\":\\"Modules\\",\\"children\\":[[\\"modules/_theme_\\",\\"theme\\"]]},{\\"title\\":\\"Namespaces\\",\\"children\\":[[\\"modules/_theme_.namespacea\\",\\"theme.namespaceA\\"],[\\"modules/_theme_.namespaceb\\",\\"theme.namespaceB\\"]]},{\\"title\\":\\"Enumerations\\",\\"children\\":[[\\"enums/_theme_.enumitema\\",\\"theme.enumItemA\\"],[\\"enums/_theme_.enumitemb\\",\\"theme.enumItemB\\"]]},{\\"title\\":\\"Classes\\",\\"children\\":[[\\"classes/_theme_.classitema\\",\\"theme.ClassItemA\\"],[\\"classes/_theme_.classitemb\\",\\"theme.ClassItemB\\"]]},{\\"title\\":\\"Interfaces\\",\\"children\\":[[\\"interfaces/_theme_.interfaceitema\\",\\"theme.InterfaceItemA\\"],[\\"interfaces/_theme_.interfaceitemb\\",\\"theme.InterfaceItemB\\"]]}]}]});
+        }",
+  "name": "typedoc-sidebar",
+}
+`;

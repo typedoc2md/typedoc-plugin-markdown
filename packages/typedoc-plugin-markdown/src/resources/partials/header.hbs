@@ -1,5 +1,17 @@
-{{#ifBreadcrumbs}}
-{{{breadcrumbs}}}
-{{/ifBreadcrumbs}}
+{{#ifShowProjectName}}
 
-{{heading 1}} {{{reflectionTitle}}}
+**{{project.name}}**
+
+{{/ifShowProjectName}}
+
+{{#ifShowBreadcrumbs}}
+
+{{{breadcrumbs}}}
+
+{{/ifShowBreadcrumbs}}
+
+{{#if showTitle}}
+
+# {{{reflectionTitle true}}}
+
+{{/if}}

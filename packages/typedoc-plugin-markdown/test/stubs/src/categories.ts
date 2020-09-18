@@ -1,12 +1,12 @@
 /**
  * @category CategoryA
  */
-let categoryVariableA1 = true;
+const categoryVariableA1 = true;
 
 /**
  * @category CategoryA
  */
-let categoryVariableA2 = true;
+const categoryVariableA2 = true;
 
 /**
  * @category CategoryA
@@ -46,7 +46,7 @@ interface CategoryInterfaceA2 {
 /**
  * @category CategoryB
  */
-let categoryVariableB1 = true;
+const categoryVariableB1 = true;
 
 /**
  * @category CategoryB
@@ -55,13 +55,13 @@ function categoryFunctionB2() {
   return true;
 }
 
-let otherVariableA = true;
+const otherVariableA = true;
 
 function otherFunctionA() {
   return true;
 }
 
-let otherVariableB = true;
+const otherVariableB = true;
 
 function otherFunctionB() {
   return true;

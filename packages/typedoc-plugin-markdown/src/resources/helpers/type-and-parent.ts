@@ -5,29 +5,44 @@ import MarkdownTheme from '../../theme';
 
 export function typeAndParent(this: ArrayType | ReferenceType) {
   if (this instanceof ReferenceType && this.reflection) {
-    const md = [];
+    const md: string[] = [];
+    const parentReflection = this.reflection.parent;
     if (this.reflection instanceof SignatureReflection) {
-      if (this.reflection.parent.parent.url) {
+      if (
+        parentReflection &&
+        parentReflection.parent &&
+        parentReflection.parent.url
+      ) {
         md.push(
-          `[${this.reflection.parent.parent.name}](${MarkdownTheme.handlebars.helpers.relativeURL(
-            this.reflection.parent.parent.url,
+          `[${
+            parentReflection.parent.name
+          }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            parentReflection.parent.url,
           )})`,
         );
-      } else {
-        md.push(this.reflection.parent.parent.name);
+      } else if (parentReflection && parentReflection.parent) {
+        md.push(parentReflection.parent.name);
       }
     } else {
-      if (this.reflection.parent.url) {
+      if (parentReflection && parentReflection.url) {
         md.push(
-          `[${this.reflection.parent.name}](${MarkdownTheme.handlebars.helpers.relativeURL(
-            this.reflection.parent.url,
+          `[${
+            parentReflection.name
+          }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            parentReflection.url,
           )})`,
         );
-      } else {
-        md.push(this.reflection.parent.name);
+      } else if (parentReflection) {
+        md.push(parentReflection.name);
       }
       if (this.reflection.url) {
-        md.push(`[${this.reflection.name}](${MarkdownTheme.handlebars.helpers.relativeURL(this.reflection.url)})`);
+        md.push(
+          `[${
+            this.reflection.name
+          }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            this.reflection.url,
+          )})`,
+        );
       } else {
         md.push(this.reflection.name);
       }

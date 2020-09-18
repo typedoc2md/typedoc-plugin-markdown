@@ -9,6 +9,7 @@ tmp
 html
 samples
 demo
+fixtures
 
 # dependencies
 node_modules
@@ -24,7 +25,7 @@ node_modules
 # misc
 /.sass-cache
 /connect.lock
-coverage/*
+coverage
 /libpeerconnection.log
 npm-debug.log
 testem.log

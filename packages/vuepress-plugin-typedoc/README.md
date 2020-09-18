@@ -1,14 +1,15 @@
-# vuepress-plugin-typedoc (beta)
+# vuepress-plugin-typedoc
 
-A VuePress plugin to build api documentation with TypeDoc.
+A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-typedoc.svg)](https://www.npmjs.com/package/vuepress-plugin-typedoc)
+[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 
 ## What it does?
 
 - Generates pages as part of the build.
 - Adds Front Matter to pages.
-- Generates sidebars config.
+- Generates sidebars config to enable navigation.
 
 ## Installation
 
@@ -20,7 +21,7 @@ npm install typedoc typedoc-plugin-markdown vuepress-plugin-typedoc --save-dev
 
 ## Usage
 
-Add the plugin to `./vuepress/config.js`:
+Add the plugin to `.vuepress/config.js`:
 
 ```js
 module.exports = {
@@ -36,13 +37,19 @@ module.exports = {
         // out directory relative to docs folder (defaults to `api`)
         out: 'api',
 
-        // Skip auto generation of sidebar content (defaults to `false`)
-        skipSidebar: false,
+        // options for auto generated sidebars.json (pass `null` to skip generation completely)
+        sidebar: {
+          // display full names with module path if applicable - (defaults to 'false')
+          fullNames: false,
+          // the parent category label for sidebar - (defaults to `none` - no parent category)
+          parentCategory: 'none',
+        },
 
-        // Pass in any additional Typescript/TypeDoc options (see typedoc --help).
-        mode: 'file',
-        target: 'ES5',
-        //...etc
+        // include additional TypeDoc plugins in addition to the markdown plugin (optional)
+        plugin: ['typedoc-plugin-xyz'],
+
+        // Pass in any additional TypeDoc options (see typedoc --help)
+        mode: 'modules',
       },
     ],
   ],

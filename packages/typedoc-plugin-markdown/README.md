@@ -7,10 +7,7 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeS
 
 ## What it does?
 
-The plugin will replace the default HTML theme with a built-in Markdown theme, and expose some additional arguments.
-
-By default, the Markdown theme will attempt to render standard CommonMark, suitable for the majority of Markdown engines.
-It follows the same structure and file patterns as the default HTML theme.
+The plugin will replaces the default HTML theme with a built-in Markdown theme.
 
 ## Installation
 
@@ -34,16 +31,21 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
-- `--theme <markdown|path/to/custom/theme>`<br>
-  Defaults to `markdown`. See [custom themes](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/THEMES.md) for further details.
-- `--namedAnchors`<br>
-  Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.
-- `--hideSources`<br>
-  Do not print source file link rendering.
-- `--hideBreadcrumbs`<br>
-  Do not print breadcrumbs.
-- `--publicPath`<br>
-- Specifies the base path for all urls. If omitted urls will be relative.
+- `--hideProjectName<boolean>`<br>
+  Do not render project name in template header. Defaults to `false`.
+- `--hideBreadcrumbs<boolean>`<br>
+  Do not render breadcrumbs in template header. Defaults to `false`.
+- `--publicPath<string>`<br>
+  Specify the base path for all urls. If undefined urls will be relative. Defaults to `undefined`.
+- `--namedAnchors<boolean>`<br>
+  Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
+
+## Additional plugins
+
+If using specifically for [Docusaurus v2](https://v2.docusaurus.io/) or [VuePress](https://vuepress.vuejs.org/) check out the respective plugin for the platform:
+
+- [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
+- [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
 
 ## License
 

@@ -1,6 +1,6 @@
 {{#if name}}
 
-{{heading 3}} {{#ifNamedAnchors}}<a id="{{anchor}}" name="{{this.anchor}}"></a> {{/ifNamedAnchors}}{{{ memberTitle }}}
+### {{#ifNamedAnchors}}<a id="{{anchor}}" name="{{this.anchor}}"></a> {{/ifNamedAnchors}}{{ escape name }}
 
 {{/if}}
 
@@ -20,37 +20,19 @@
 
 {{else}}
 
+{{#if isReference}}
+
+{{> member.reference}}
+
+{{else}}
+
 {{> member.declaration}}
 
 {{/if}}
 
 {{/if}}
 
-{{#each groups}}
-
-{{#each children}}
-
-{{#unless hasOwnDocument}}
-
-{{#ifIsLiteralType true}}
-
-{{> member.declaration}}
-
-{{{literal}}}
-
-{{/ifIsLiteralType}}
-
-{{#ifIsLiteralType false}}
-
-{{> member hideHr=true}}
-
-{{/ifIsLiteralType}}
-
-{{/unless}}
-
-{{/each}}
-
-{{/each}}
+{{/if}}
 
 {{#unless @last}}
 {{#unless hideHr}}

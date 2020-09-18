@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Theme: (getUrls) should getUrls with readme 'none' 1`] = `
+Array [
+  "README.md",
+  "modules/_theme_.md",
+  "modules/_theme_.md#declarationitema",
+  "modules/_theme_.md#declarationitemb",
+  "modules/_theme_.md#functionitema",
+  "modules/_theme_.md#functionitemb",
+  "modules/_theme_.namespacea.md",
+  "modules/_theme_.namespaceb.md",
+  "enums/_theme_.enumitema.md",
+  "enums/_theme_.enumitemb.md",
+  "classes/_theme_.classitema.md",
+  "classes/_theme_.classitemb.md",
+  "interfaces/_theme_.interfaceitema.md",
+  "interfaces/_theme_.interfaceitema.md#prop",
+  "interfaces/_theme_.interfaceitemb.md",
+  "interfaces/_theme_.interfaceitemb.md#prop",
+]
+`;
+
+exports[`Theme: (getUrls) should getUrls' 1`] = `
+Array [
+  "globals.md",
+  "README.md",
+  "modules/_theme_.md",
+  "modules/_theme_.md#declarationitema",
+  "modules/_theme_.md#declarationitemb",
+  "modules/_theme_.md#functionitema",
+  "modules/_theme_.md#functionitemb",
+  "modules/_theme_.namespacea.md",
+  "modules/_theme_.namespaceb.md",
+  "enums/_theme_.enumitema.md",
+  "enums/_theme_.enumitemb.md",
+  "classes/_theme_.classitema.md",
+  "classes/_theme_.classitemb.md",
+  "interfaces/_theme_.interfaceitema.md",
+  "interfaces/_theme_.interfaceitema.md#prop",
+  "interfaces/_theme_.interfaceitemb.md",
+  "interfaces/_theme_.interfaceitemb.md#prop",
+]
+`;

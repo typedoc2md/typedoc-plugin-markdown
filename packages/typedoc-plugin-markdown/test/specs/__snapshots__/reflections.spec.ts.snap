@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reflections: (header) should compile template with breadcrumbs and project title 1`] = `
+"**typedoc-plugin-markdown**
+
+[helper: breadcrumbs]
+
+# Module: \\"reflections\\"
+
+[partial: index]
+[partial: members]
+"
+`;
+
+exports[`Reflections: (template) should compile a callable reflection 1`] = `
+"# Interface: CallableReflection
+
+## Hierarchy
+
+[helper: hierarchy]
+
+## Callable
+
+[partial: member.signature]
+
+[partial: index]
+[partial: members]
+"
+`;
+
+exports[`Reflections: (template) should compile an indexable reflection 1`] = `
+"# Interface: IndexableReflection
+
+## Hierarchy
+
+[helper: hierarchy]
+
+## Indexable
+
+▪ [index: number]: string
+
+[partial: comment]
+
+[partial: index]
+[partial: members]
+"
+`;
+
+exports[`Reflections: (template) should compile module with breadcrumbs and project title 1`] = `
+"# Module: \\"reflections\\"
+
+[partial: index]
+[partial: members]
+"
+`;
+
+exports[`Reflections: (template) should compile reflection with type params 1`] = `
+"# Interface: ReflectionWithTypeParams\\\\<**T, V**>
+
+## Type parameters
+
+* T
+* V
+
+## Hierarchy
+
+[helper: hierarchy]
+
+[partial: index]
+[partial: members]
+"
+`;

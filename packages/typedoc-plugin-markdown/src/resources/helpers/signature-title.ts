@@ -3,27 +3,35 @@ import { SignatureReflection } from 'typedoc';
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
-export function signatureTitle(this: SignatureReflection, showSymbol: boolean) {
-  const md = [];
+export function signatureTitle(this: SignatureReflection) {
+  const md: string[] = [];
 
-  if (showSymbol) {
-    md.push(`${memberSymbol.call(this)} `);
+  md.push(`${memberSymbol.call(this)} `);
+
+  if (this.parent && this.parent.flags) {
+    md.push(this.parent.flags.map((flag) => `\`${flag}\``).join(' '));
   }
 
-  if (this.name === '__get') {
-    md.push(`**get ${this.parent.name}**`);
-  } else if (this.name === '__set') {
-    md.push(`**set ${this.parent.name}**`);
+  if (this.name === '__get' && this.parent) {
+    md.push(`get **${this.parent.name}**`);
+  } else if (this.name === '__set' && this.parent) {
+    md.push(`set **${this.parent.name}**`);
   } else if (this.name !== '__call') {
     md.push(`**${this.name}**`);
   }
+
   if (this.typeParameters) {
-    md.push(`‹${this.typeParameters.map((typeParameter) => `**${typeParameter.name}**`).join(', ')}›`);
+    md.push(
+      `\\<${this.typeParameters
+        .map((typeParameter) => typeParameter.name)
+        .join(', ')}>`,
+    );
   }
+
   const params = this.parameters
     ? this.parameters
         .map((param) => {
-          const paramsmd = [];
+          const paramsmd: string[] = [];
           if (param.flags.isRest) {
             paramsmd.push('...');
           }
@@ -38,7 +46,7 @@ export function signatureTitle(this: SignatureReflection, showSymbol: boolean) {
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(`: *${type.call(this.type)}*`);
+    md.push(`: ${type.call(this.type, true)}`);
   }
   return md.join('') + '\n';
 }

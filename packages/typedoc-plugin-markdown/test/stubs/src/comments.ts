@@ -1,23 +1,42 @@
 /**
+ * See {@linkcode CommentClass} and [CommentClass's comment property]{@link CommentClass.comment}.
+ * Also, check out {@link https://www.google.com|Google} and
+ * {@link https://github.com GitHub}.
+ *
+ * Taken from http://usejsdoc.org/tags-inline-link.html.
+ */
+export const commentWithDocLinks = true;
+
+/**
  * Additionally you can link to other classes, members or functions using double square brackets.
  *
- * - Link to an external reflection: [[BaseClass]]
+ * - Link to an external reflection: [[CommentClass]]
  * - Link to an internal reflection: [[commentsInReturn]]
  * - Link to an undefined reflection: [[VOID]]
  */
 
-export let commentsWithSymbolLinks = true;
+export const commentsWithSymbolLinks = true;
+
+/**
+ * <p>
+ * You can write <strong>HTML</strong> tags directly in comments
+ * </p>
+ * <ul>
+ * <li>List item</li>
+ * </ul>
+ */
+export const commentsWithHTML = true;
 
 /**
  * This is an example of include
  *
- * [[include:class-example.md]] [[include:VOID]]
+ * [[include:class-example.md]]
  *
  * This is an example of handlebars include
  *
  * [[include:class-example.hbs]]
  */
-export let commentsWithIncludes = true;
+export const commentsWithIncludes = true;
 
 /**
  * @name Tag description on same line
@@ -28,7 +47,7 @@ export let commentsWithIncludes = true;
  * @deprecated
  * Another tag description
  */
-export let commentsWithTags = true;
+export const commentsWithTags = true;
 
 /**
  * Some comments with fence blocks
@@ -39,7 +58,7 @@ export let commentsWithTags = true;
  * anotherFunction()
  * ```
  */
-export let commentsWithFencedBlock = true;
+export const commentsWithFencedBlock = true;
 
 /**
  * Comments with a return definition
@@ -50,12 +69,34 @@ export function commentsInReturn() {
 }
 
 /**
- * See {@linkcode INameInterface} and [INameInterface's name property]{@link INameInterface.name}.
- * Also, check out {@link https://www.google.com|Google} and
- * {@link https://github.com GitHub}.
- *
- * Taken from http://usejsdoc.org/tags-inline-link.html.
+ * Comment for class
  */
-export function functionWithDocLink() {
-  return;
+export class CommentClass {
+  /**
+   * Comment for property
+   */
+  comment: string;
+  /**
+   * Comment for constructor
+   */
+  constructor(comment: string) {
+    this.comment = comment;
+  }
+  /**
+   * Comment for method
+   */
+  getComment() {
+    return 'Comment';
+  }
 }
+
+const objectWithBlockComments = {
+  /**
+   * Comment 1
+   *
+   * @tag Tag description
+   *
+   * Comment 2
+   */
+  prop: 'prop',
+};

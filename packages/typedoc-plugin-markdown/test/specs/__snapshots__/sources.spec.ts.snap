@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sources: should display implementation of sources' 1`] = `
+"*Implementation of [SomeInterface](_sources_.someinterface.md).[prop](_sources_.someinterface.md#prop)*
+
+*Defined in sources.ts:6*
+"
+`;
+
+exports[`Sources: should display inherited and overide sources' 1`] = `
+"*Inherited from [SomeInterface](_sources_.someinterface.md).[prop](_sources_.someinterface.md#prop)*
+
+*Overrides [SomeClass](../classes/_sources_.someclass.md).[prop](../classes/_sources_.someclass.md#prop)*
+
+*Defined in sources.ts:2*
+"
+`;

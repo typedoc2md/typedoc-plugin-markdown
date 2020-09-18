@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Theme: should getUrls' 1`] = `
+Array [
+  "globals.md",
+  "README.md",
+  "modules/_theme_.md",
+  "modules/_theme_.md#markdown-header-declarationitema",
+  "modules/_theme_.md#markdown-header-declarationitemb",
+  "modules/_theme_.md#markdown-header-functionitema",
+  "modules/_theme_.md#markdown-header-functionitemb",
+  "modules/_theme_.namespacea.md",
+  "modules/_theme_.namespaceb.md",
+  "enums/_theme_.enumitema.md",
+  "enums/_theme_.enumitemb.md",
+  "classes/_theme_.classitema.md",
+  "classes/_theme_.classitemb.md",
+  "interfaces/_theme_.interfaceitema.md",
+  "interfaces/_theme_.interfaceitema.md#markdown-header-prop",
+  "interfaces/_theme_.interfaceitemb.md",
+  "interfaces/_theme_.interfaceitemb.md#markdown-header-prop",
+]
+`;

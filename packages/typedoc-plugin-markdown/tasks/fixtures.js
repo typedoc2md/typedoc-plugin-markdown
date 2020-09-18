@@ -8,19 +8,27 @@ const app = new Application({
   experimentalDecorators: true,
   jsx: true,
   target: 'es2015',
+  ignoreCompilerErrors: true,
 });
 
 const fixturesDir = './test/fixtures';
-const inputFiles = app.expandInputFiles(['./test/stubs']);
+const inputFiles = app.expandInputFiles(['./test/stubs/src']);
 
 if (!fs.existsSync(fixturesDir)) {
   fs.mkdirSync(fixturesDir);
 }
 
-inputFiles.forEach(file => {
+inputFiles.forEach((file) => {
   const result = app.convert(app.expandInputFiles([file]));
-  fs.writeFileSync(`${fixturesDir}/${path.basename(file)}.json`, JSON.stringify(result, replacer));
-  console.log(`[typedoc-plugin-markdown(task:fixtures)] writing ${path.basename(file)}.json fixture`);
+  fs.writeFileSync(
+    `${fixturesDir}/${path.basename(file)}.json`,
+    JSON.stringify(result, replacer),
+  );
+  console.log(
+    `[typedoc-plugin-markdown(task:fixtures)] writing ${path.basename(
+      file,
+    )}.json fixture`,
+  );
 });
 
 function replacer(key, value) {

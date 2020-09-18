@@ -5,65 +5,45 @@ import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
   const app = PluginHost.owner;
+
   if (app.converter.hasComponent('markdown')) {
     return;
   }
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Deprecated in favour of theme.',
-    name: 'platform',
-    type: ParameterType.String,
-  });
-
-  app.options.addDeclaration({
-    help: 'Markdown Plugin: Deprecated.',
-    name: 'hideProjectTitle',
+    help: '[Markdown Plugin] Do not render project name in template header.',
+    name: 'hideProjectName',
     type: ParameterType.Boolean,
+    defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Do not print source file link rendering.',
-    name: 'hideSources',
-    type: ParameterType.Boolean,
-  });
-
-  app.options.addDeclaration({
-    help: 'Markdown Plugin: Do not print breadcrumbs.',
+    help: '[Markdown Plugin] Do not render breadcrumbs in template.',
     name: 'hideBreadcrumbs',
     type: ParameterType.Boolean,
+    defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: 'Markdown Plugin: Do not print indexes.',
-    name: 'hideIndexes',
+    help: '[Markdown Plugin] DEPRECATED - use --disableSources',
+    name: 'hideSources',
     type: ParameterType.Boolean,
+    defaultValue: false,
   });
 
   app.options.addDeclaration({
     help:
-      'Markdown Plugin: Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids.',
-    name: 'namedAnchors',
-    type: ParameterType.Boolean,
-  });
-
-  app.options.addDeclaration({
-    help:
-      'Markdown Plugin: Use long navigation title instead of default short one (applicable to navigation / front-matter only).',
-    name: 'longTitle',
-    type: ParameterType.Boolean,
-  });
-
-  app.options.addDeclaration({
-    help:
-      'Markdown Plugin: Specifies the base path that all links to be served from. If omitted all urls will be relative.',
+      '[Markdown Plugin] Specifies the base path that all links to be served from. If omitted all urls will be relative.',
     name: 'publicPath',
     type: ParameterType.String,
   });
 
   app.options.addDeclaration({
-    help: 'Skips updating of the sidebar.json file when used with docusaurus or docusaurus2 theme',
-    name: 'skipSidebar',
+    help:
+      '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
+    name: 'namedAnchors',
     type: ParameterType.Boolean,
+    defaultValue: false,
   });
 
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));

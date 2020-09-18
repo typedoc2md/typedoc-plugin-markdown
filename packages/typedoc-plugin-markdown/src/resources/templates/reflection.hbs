@@ -1,16 +1,4 @@
-{{#if model.displayReadme}}
-
-{{#if model.readme}}
-
-{{#with model.readme}}
-
-{{{comment}}}
-
-{{/with}}
-
-{{/if}}
-
-{{/if}}
+{{> header showTitle=true}}
 
 {{#with model}}
 
@@ -24,21 +12,21 @@
 
 {{#if model.typeParameters}}
 
-{{heading 2}} Type parameters
+## Type parameters
 
-{{#with model}}
-{{> typeParameters}}
-{{/with}}
+{{#each model.typeParameters}}
+* {{name}}
+{{/each}}
 
 {{/if}}
 
 {{#if model.typeHierarchy}}
 
-{{heading 2}} Hierarchy
+## Hierarchy
 
 {{#with model.typeHierarchy}}
 
-{{> hierarchy}}
+{{{hierarchy 0}}}
 
 {{/with}}
 
@@ -46,27 +34,27 @@
 
 {{#if model.implementedTypes}}
 
-{{heading 2}} Implements
+## Implements
 
 {{#each model.implementedTypes}}
-* {{{type}}}
+* {{{type false}}}
 {{/each}}
 
 {{/if}}
 
 {{#if model.implementedBy}}
 
-{{heading 2}} Implemented by
+## Implemented by
 
 {{#each model.implementedBy}}
-* {{{type}}}
+* {{{type false}}}
 {{/each}}
 
 {{/if}}
 
 {{#if model.signatures}}
 
-{{{heading 2}}} Callable
+## Callable
 
 {{#with model}}
 
@@ -82,11 +70,17 @@
 
 {{#if model.indexSignature}}
 
-{{heading 2}} Indexable
+## Indexable
 
 {{#with model}}
 
-{{> member.indexSignatures}}
+{{#with indexSignature}}
+
+{{{indexSignatureTitle}}}
+
+{{> comment}}
+
+{{/with}}
 
 {{/with}}
 

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Members: (member) should compile a signature members' 1`] = `
+"### signatureMember
+
+▸ **signatureMember**(): void
+
+[partial: member.sources]
+
+**Returns:** void
+
+___
+"
+`;
+
+exports[`Members: (member) should compile declaration members' 1`] = `
+"### declarationMember
+
+• \`Let\` **declarationMember**: string
+
+[partial: member.sources]
+
+___
+"
+`;
+
+exports[`Members: (member) should compile members with getter' 1`] = `
+"### getter
+
+• get **getter**(): string
+
+[partial: member.sources]
+
+**Returns:** string
+
+___
+"
+`;
+
+exports[`Members: (member) should compile members with setter' 1`] = `
+"### setter
+
+• set **setter**(\`value\`: string): void
+
+[partial: member.sources]
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+\`value\` | string |
+
+**Returns:** void
+
+___
+"
+`;
+
+exports[`Members: (member) should compile reference members' 1`] = `
+"### ReferenceMember
+
+Renames and exports: [NotExportedClass]([helper: relativeURL])
+
+___
+"
+`;
+
+exports[`Members: (members) should compile class members' 1`] = `
+"## Properties
+
+[partial: member]
+
+## Accessors
+
+[partial: member]
+
+[partial: member]
+"
+`;
+
+exports[`Members: (members) should compile module members' 1`] = `
+"## References
+
+[partial: member]
+
+## Variables
+
+[partial: member]
+
+## Functions
+
+[partial: member]
+"
+`;
