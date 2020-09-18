@@ -19,7 +19,6 @@
     "typedoc": ">=0.19.0",
     "typedoc-plugin-markdown": ">=3.0.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37",
     "typedoc": "^0.19.1",
@@ -45,5 +44,6 @@
     "markdown",
     "typescript",
     "api"
-  ]
+  ],
+  "gitHead": "a158818251fd437e322475cdfc8101864d3893b5"
 }
