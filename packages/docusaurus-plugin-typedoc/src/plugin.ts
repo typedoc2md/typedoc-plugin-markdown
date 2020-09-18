@@ -20,7 +20,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
 
 const TYPDOC_PLUGIN_NAME = 'typedoc-plugin-markdown';
 
-const app = new Application();
+let app: Application;
 
 export default function pluginDocusaurus(
   context: LoadContext,
@@ -32,6 +32,7 @@ export default function pluginDocusaurus(
 
   const inputFiles = options.inputFiles;
   const sidebar = options.sidebar;
+  const sidebarPath = path.resolve(siteDir, 'sidebars.js');
   const docsRoot = path.resolve(
     siteDir,
     options.docsRoot ? options.docsRoot : '',
@@ -49,59 +50,51 @@ export default function pluginDocusaurus(
   return {
     name: 'docusaurus-plugin-typedoc',
 
-    async loadContent(): Promise<LoadedContent> {
+    async loadContent(): Promise<any> {
       // re-compiling will cause an infinate render loop with dev server
-      if (app.renderer.theme) {
-        return {
-          app,
-        };
-      }
+      if (!app) {
+        app = new Application();
 
-      // bootstrap
-      app.bootstrap({
-        ...options,
-        plugin: [
-          ...options.plugin.filter((name) => name !== TYPDOC_PLUGIN_NAME),
-          ...[TYPDOC_PLUGIN_NAME],
-        ],
-        theme: path.resolve(__dirname, 'theme'),
-      });
+        // bootstrap
+        app.bootstrap({
+          ...options,
+          plugin: [
+            ...options.plugin.filter((name) => name !== TYPDOC_PLUGIN_NAME),
+            ...[TYPDOC_PLUGIN_NAME],
+          ],
+          theme: path.resolve(__dirname, 'theme'),
+        });
 
-      app.renderer.addComponent(
-        'docusaurus-frontmatter',
-        new DocsaurusFrontMatterComponent(
-          app.renderer,
-          sidebar ? sidebar : null,
-        ),
-      );
+        app.renderer.addComponent(
+          'docusaurus-frontmatter',
+          new DocsaurusFrontMatterComponent(
+            app.renderer,
+            sidebar ? sidebar : null,
+          ),
+        );
 
-      // render project
-      const project = app.convert(app.expandInputFiles(inputFiles));
-      if (project) {
-        app.generateDocs(project, out);
-      }
-      return {
-        app,
-        project,
-      };
-    },
-
-    async contentLoaded({ content }) {
-      const { app, project } = content;
-      if (project) {
-        const sidebarPath = path.resolve(siteDir, 'sidebars.js');
-        cleanSideBar(sidebarPath);
-        if (sidebar && content) {
-          const theme = app.renderer.theme as any;
-          const navigation = theme.getNavigation(project);
-          const sidebarContent = getSidebarJson(
-            navigation,
-            outFolder,
-            sidebar.parentCategory,
-          );
-          writeSideBar(sidebarContent, sidebarPath, options.logger !== 'none');
+        // render project
+        const project = app.convert(app.expandInputFiles(inputFiles));
+        if (project) {
+          cleanSideBar(sidebarPath);
+          app.generateDocs(project, out);
+          if (sidebar) {
+            const theme = app.renderer.theme as any;
+            const navigation = theme.getNavigation(project);
+            const sidebarContent = getSidebarJson(
+              navigation,
+              outFolder,
+              sidebar.parentCategory,
+            );
+            writeSideBar(
+              sidebarContent,
+              sidebarPath,
+              options.logger !== 'none',
+            );
+          }
         }
       }
+      return;
     },
   };
 }
