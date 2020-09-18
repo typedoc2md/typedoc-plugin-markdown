@@ -257,8 +257,7 @@ export default class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection): NavigationItem {
     const entryPoint = this.getEntryPoint(project);
-    const hasSeperateGlobals =
-      this.application.options.getValue('readme') !== 'none';
+    const hasSeperateGlobals = this.readme !== 'none';
     const navigation = createNavigationItem(project.name);
 
     navigation.children?.push(
