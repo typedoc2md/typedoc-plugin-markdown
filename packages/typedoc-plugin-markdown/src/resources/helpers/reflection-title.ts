@@ -2,9 +2,6 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 export function reflectionTitle(this: PageEvent, withParams: boolean) {
   const title: string[] = [];
-  if (this.url === this.project.url) {
-    return 'Globals';
-  }
   if (this.model.kindString) {
     title.push(`${this.model.kindString}: `);
   }

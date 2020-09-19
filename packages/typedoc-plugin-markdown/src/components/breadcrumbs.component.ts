@@ -18,9 +18,6 @@ export class BreadcrumbsComponent extends ContextAwareRendererComponent {
       'breadcrumbs',
       (page: PageEvent) => {
         const theme = this.application.renderer.theme as MarkdownTheme;
-        if (!this.project?.readme && page.model.url == this.project?.url) {
-          return null;
-        }
         const breadcrumbs: string[] = [];
         if (this.project?.readme) {
           breadcrumbs.push(

@@ -1,5 +1,6 @@
 import * as Handlebars from 'handlebars';
 import { Reflection } from 'typedoc';
+
 import { TestApp } from '../test-app';
 
 describe(`Breadcrumbs:`, () => {
@@ -62,16 +63,6 @@ describe(`Breadcrumbs:`, () => {
       testApp.bootstrap({ readme: 'none' });
       moduleReflection = testApp.findModule('breadcrumbs');
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');
-    });
-
-    test(`should not compile entryPoint (globals) breadcrumbs'`, () => {
-      expect(
-        Handlebars.helpers.breadcrumbs.call({
-          project: testApp.project,
-          model: testApp.findEntryPoint(),
-          url: 'globals.md',
-        }),
-      ).toBeNull();
     });
 
     test(`should compile module breadcrumbs'`, () => {
