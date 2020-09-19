@@ -3,7 +3,7 @@
 exports[`Reflections: (header) should compile template with breadcrumbs and project title 1`] = `
 "**typedoc-plugin-markdown**
 
-[helper: breadcrumbs]
+> [helper: breadcrumbs]
 
 # Module: \\"reflections\\"
 

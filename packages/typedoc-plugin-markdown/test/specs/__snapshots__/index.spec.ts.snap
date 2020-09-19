@@ -3,7 +3,7 @@
 exports[`Index: should compile readme 1`] = `
 "**typedoc-plugin-markdown**
 
-[helper: breadcrumbs]
+> [helper: breadcrumbs]
 
 # MY README
 
