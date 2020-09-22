@@ -32,7 +32,7 @@
     "demo:start": "npm run build && cd demo && npm run start",
     "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
     "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",
-    "test": "jest --colors",
+    "test": "jest --colors --silent",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
@@ -45,5 +45,7 @@
     "typescript",
     "api"
   ],
-  "gitHead": "a158818251fd437e322475cdfc8101864d3893b5"
+  "dependencies": {
+    "fs-extra": "^9.0.1"
+  }
 }
