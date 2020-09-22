@@ -39,7 +39,7 @@ describe(`Theme:`, () => {
     test(`should compile with module with subtitle`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
-          model: testApp.findReflection('InterfaceItemA'),
+          model: testApp.findReflection('InterfaceA'),
           project: testApp.project,
         }),
       ).toMatchSnapshot();

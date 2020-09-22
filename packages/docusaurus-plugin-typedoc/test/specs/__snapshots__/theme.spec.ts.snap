@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Theme: (header) should compile with module with subtitle 1`] = `
-"# Interface: InterfaceItemA
+"# Interface: InterfaceA
 
-[\\"theme\\"](../modules/_theme_.md).InterfaceItemA
+[\\"theme\\"](../modules/_theme_.md).InterfaceA
 
 ## Hierarchy
 

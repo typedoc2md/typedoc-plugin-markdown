@@ -1,5 +1,6 @@
 import cuid from 'cuid';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 import { DocsaurusFrontMatterComponent } from '../../dist/components/front-matter-component';
 import { SidebarOptions } from '../../dist/types';
@@ -39,6 +40,7 @@ describe(`FrontMatter:`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: false,
       parentCategory: 'none',
+      sidebarFile: 'sidebars.js',
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);
@@ -49,6 +51,7 @@ describe(`FrontMatter:`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: true,
       parentCategory: 'none',
+      sidebarFile: 'sidebars.js',
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);
