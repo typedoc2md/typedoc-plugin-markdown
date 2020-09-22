@@ -1,21 +1,25 @@
-import { Application, ProjectReflection } from 'typedoc';
-
 export interface PluginOptions {
-  id?: string;
-  logger?: string;
-  inputFiles?: string[];
-  docsRoot?: string;
-  out?: string;
-  sidebar?: SidebarOptions | null;
+  inputFiles: string[];
+  docsRoot: string;
+  out: string;
+  sidebar: SidebarOptions | null;
   plugin: string[];
 }
 
 export interface SidebarOptions {
   fullNames: boolean;
   parentCategory: string;
+  sidebarFile: string;
 }
 
-export interface LoadedContent {
-  app: Application;
-  project?: ProjectReflection | undefined;
+export interface Sidebar {
+  [sidebarId: string]: SidebarItem[];
 }
+
+export interface SidebarCategory {
+  type: string;
+  label: string;
+  items: SidebarItem[];
+}
+
+export type SidebarItem = SidebarCategory | string;
