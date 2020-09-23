@@ -61,11 +61,6 @@ describe(`Plugin:`, () => {
       expect(mockAppBootstrap).toHaveBeenCalledWith(defaultOptions);
     });
 
-    test('should bootstrap with default options', async () => {
-      await plugin(context, {});
-      expect(mockAppBootstrap).toHaveBeenCalledWith(defaultOptions);
-    });
-
     test('should bootstrap with additional options', async () => {
       await plugin(context, { mode: 'file' });
       expect(mockAppBootstrap).toHaveBeenCalledWith({
