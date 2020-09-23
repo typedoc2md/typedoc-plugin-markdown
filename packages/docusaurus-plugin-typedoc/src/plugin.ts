@@ -23,7 +23,7 @@ let app: Application;
 
 export default function pluginDocusaurus(
   context: LoadContext,
-  pluginOptions: Partial<PluginOptions>,
+  opts: Partial<PluginOptions>,
 ) {
   const { siteDir } = context;
 
@@ -32,21 +32,19 @@ export default function pluginDocusaurus(
    */
   const options = {
     ...DEFAULT_PLUGIN_OPTIONS,
-    ...pluginOptions,
+    ...opts,
     // deep merge plugin options
-    ...(pluginOptions.plugin && {
+    ...(opts.plugin && {
       plugin: [
         ...['typedoc-plugin-markdown'],
-        ...pluginOptions.plugin.filter(
-          (name) => name !== 'typedoc-plugin-markdown',
-        ),
+        ...opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown'),
       ],
     }),
     // deep merge sidebar
-    ...(pluginOptions.sidebar && {
+    ...(opts.sidebar && {
       sidebar: {
         ...DEFAULT_PLUGIN_OPTIONS.sidebar,
-        ...pluginOptions.sidebar,
+        ...opts.sidebar,
       },
     }),
   };
