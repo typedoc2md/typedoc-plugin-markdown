@@ -1,15 +1,15 @@
-# docusaurus-plugin-typedoc
+# docusaurus-plugin-typedoc [beta]
 
-A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
+A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc) and the [Markdown plugin](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
 
 [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 
 ## What it does?
 
-- Generates pages as part of the build.
+- Generates static TypeDoc pages in Markdown as part of the build.
 - Adds Front Matter to pages.
-- Appends JSON to sidebars.js to enable navigation.
+- Generates a sidebar file to enable navigation.
 
 ## Installation
 
@@ -31,7 +31,7 @@ module.exports = {
 
       // plugin options
       {
-        // list of input files relative to project (required)
+        // list of input files relative to project (defaults to `[../src/]`)
         inputFiles: ['../src/'],
 
         // docs directory relative to the site directory (defaults to `docs`)
@@ -40,22 +40,48 @@ module.exports = {
         // output directory relative to docs directory - use '' for docs root (defaults to `api`
         out: 'api',
 
-        // options for auto generated sidebars.json (pass `null` to skip generation completely)
+        // options for auto generated sidebar (pass `null` to skip generation completely)
         sidebar: {
+          // the name of the sidebars file relative to siteDir (typedoc-sidebar.js`)
+          sidebarFile: 'typedoc-sidebar.js'
           // display full names with module path if applicable - (defaults to 'false')
           fullNames: false,
-          // the parent category label for sidebar - (defaults to `none` - no parent category)
-          parentCategory: 'none',
         },
 
-        // include additional TypeDoc plugins in addition to the markdown plugin (optional)
+        // include additional TypeDoc plugins in addition to the Markdown plugin (optional)
         plugin: ['typedoc-plugin-xyz'],
 
         // Pass in any additional TypeDoc options (see typedoc --help)
         mode: 'modules',
+        target: `ES2017`
+        // ..etc
       },
     ],
   ],
+};
+```
+
+### Sidebar config
+
+To consume the sidebar, update `sidebars.js` (or equivalent entry sidebars file) and require the generated sidebar:
+
+```js
+module.exports = {
+  someSidebar: {
+    Guides: ['doc1', 'doc2', 'doc3'],
+  },
+  typedocSidebar: require('./typedoc-sidebar.js'),
+};
+```
+
+or with parent category:
+
+```js
+module.exports = {
+  someSidebar: {
+    Guides: ['doc1', 'doc2', 'doc3'],
+    API: require('./typedoc-sidebar.js'),
+  },
 };
 ```
 
