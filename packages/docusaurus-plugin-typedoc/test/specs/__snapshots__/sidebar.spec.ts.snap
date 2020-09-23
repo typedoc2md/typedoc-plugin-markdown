@@ -1,79 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sidebar: should merge existing sidebar with a parent category 1`] = `
-"module.exports = {
-  \\"someSidebar\\": {
-    \\"Docusaurus\\": [
-      \\"doc1\\"
-    ],
-    \\"Features\\": [
-      \\"mdx\\"
+exports[`Sidebar: should write sidebar with default ('api') out 1`] = `
+"module.exports = [
+  \\"api/index\\",
+  \\"api/globals\\",
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Modules\\",
+    \\"items\\": [
+      \\"api/modules/_theme_\\"
     ]
   },
-  \\"typedoc\\": [
-    {
-      \\"type\\": \\"category\\",
-      \\"label\\": \\"API\\",
-      \\"items\\": [
-        \\"api/index\\",
-        \\"api/globals\\",
-        {
-          \\"type\\": \\"category\\",
-          \\"label\\": \\"Modules\\",
-          \\"items\\": [
-            \\"api/modules/_theme_\\"
-          ]
-        },
-        {
-          \\"type\\": \\"category\\",
-          \\"label\\": \\"Classes\\",
-          \\"items\\": [
-            \\"api/classes/_theme_.classa\\",
-            \\"api/classes/_theme_.classb\\"
-          ]
-        },
-        {
-          \\"type\\": \\"category\\",
-          \\"label\\": \\"Interfaces\\",
-          \\"items\\": [
-            \\"api/interfaces/_theme_.interfacea\\",
-            \\"api/interfaces/_theme_.interfaceb\\"
-          ]
-        }
-      ]
-    }
-  ]
-};"
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Classes\\",
+    \\"items\\": [
+      \\"api/classes/_theme_.classa\\",
+      \\"api/classes/_theme_.classb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Interfaces\\",
+    \\"items\\": [
+      \\"api/interfaces/_theme_.interfacea\\",
+      \\"api/interfaces/_theme_.interfaceb\\"
+    ]
+  }
+];"
 `;
 
-exports[`Sidebar: should write to a new sidebar with custom id and root docs 1`] = `
-"module.exports = {
-  \\"typedoc\\": [
-    \\"index\\",
-    \\"globals\\",
-    {
-      \\"type\\": \\"category\\",
-      \\"label\\": \\"Modules\\",
-      \\"items\\": [
-        \\"modules/_theme_\\"
-      ]
-    },
-    {
-      \\"type\\": \\"category\\",
-      \\"label\\": \\"Classes\\",
-      \\"items\\": [
-        \\"classes/_theme_.classa\\",
-        \\"classes/_theme_.classb\\"
-      ]
-    },
-    {
-      \\"type\\": \\"category\\",
-      \\"label\\": \\"Interfaces\\",
-      \\"items\\": [
-        \\"interfaces/_theme_.interfacea\\",
-        \\"interfaces/_theme_.interfaceb\\"
-      ]
-    }
-  ]
-};"
+exports[`Sidebar: should write sidebar with root ('') out 1`] = `
+"module.exports = [
+  \\"index\\",
+  \\"globals\\",
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Modules\\",
+    \\"items\\": [
+      \\"modules/_theme_\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Classes\\",
+    \\"items\\": [
+      \\"classes/_theme_.classa\\",
+      \\"classes/_theme_.classb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Interfaces\\",
+    \\"items\\": [
+      \\"interfaces/_theme_.interfacea\\",
+      \\"interfaces/_theme_.interfaceb\\"
+    ]
+  }
+];"
 `;

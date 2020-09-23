@@ -19,13 +19,12 @@ describe(`Sidebar:`, () => {
     });
   });
 
-  test(`should merge existing sidebar with a parent category`, () => {
+  test(`should write sidebar with default ('api') out`, () => {
     const tmpobj = tmp.dirSync();
     const navigation = testApp.theme.getNavigation(testApp.project);
     const sidebarFile = 'sidebars.js';
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
-      parentCategory: 'API',
       sidebarFile,
     };
     const sidebarsContent = `module.exports = {
@@ -44,13 +43,12 @@ describe(`Sidebar:`, () => {
     expect(sidebar.toString()).toMatchSnapshot();
   });
 
-  test(`should write to a new sidebar with custom id and root docs`, () => {
+  test(`should write sidebar with root ('') out`, () => {
     const tmpobj = tmp.dirSync();
     const navigation = testApp.theme.getNavigation(testApp.project);
     const sidebarFile = 'sidebars/newSidebar.js';
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
-      parentCategory: 'none',
       sidebarFile,
     };
     writeSidebar(tmpobj.name, '', sidebarOptions, navigation);
