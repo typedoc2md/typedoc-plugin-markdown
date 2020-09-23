@@ -7,13 +7,22 @@ import { SidebarOptions } from '../types';
 
 @Component({ name: 'docusaurus-frontmatter' })
 export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
+  outFolder: string;
   sidebar: SidebarOptions | null;
-  constructor(owner: Renderer, sidebar: SidebarOptions | null) {
+  constructor(
+    owner: Renderer,
+    outFolder: string,
+    sidebar: SidebarOptions | null,
+  ) {
     super(owner);
+    this.outFolder = outFolder;
     this.sidebar = sidebar;
   }
   getYamlItems(page: PageEvent) {
     return {
+      ...(page.url === 'index.md' && {
+        slug: '/' + this.outFolder,
+      }),
       ...this.getDefaultValues(page),
       ...{
         ...(this.sidebar && {

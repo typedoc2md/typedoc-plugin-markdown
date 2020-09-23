@@ -87,5 +87,5 @@ module.exports = {
 
 ### Notes
 
-- Once built the docs will be available at `/docs/api/index` or equivalent out directory.
+- Once built the docs will be available at `/docs/api` or equivalent out directory.
 - By default TypeDoc will attempt to clean-up the output directory and will error if the directory contains un-recognised documents. To skip this step and copy files on-top of the output directory use the `disableOutputCheck: true` option.
