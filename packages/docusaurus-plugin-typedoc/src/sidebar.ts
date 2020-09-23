@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs-extra';
 import { NavigationItem } from 'typedoc';
 
-import { Sidebar, SidebarItem, SidebarOptions } from './types';
+import { SidebarItem, SidebarOptions } from './types';
 
 export function writeSidebar(
   siteDir: string,
@@ -48,28 +48,10 @@ export function writeSidebar(
   // full path to sidebar
   const sidebarPath = path.resolve(siteDir, sidebar.sidebarFile);
 
-  // if sidebar already exists merge non typedoc sidebars
-  const initialSidebarContent = fs.existsSync(sidebarPath)
-    ? require(sidebarPath)
-    : JSON.parse('{}');
-
-  const sidebarContent: Sidebar = Object.assign({}, initialSidebarContent, {
-    typedoc:
-      sidebar.parentCategory && sidebar.parentCategory !== 'none'
-        ? [
-            {
-              type: 'category',
-              label: sidebar.parentCategory,
-              items: sidebarItems,
-            },
-          ]
-        : sidebarItems,
-  });
-
   // write result to disk
   fs.outputFileSync(
     sidebarPath,
-    'module.exports = ' + JSON.stringify(sidebarContent, null, 2) + ';',
+    `module.exports = ${JSON.stringify(sidebarItems, null, 2)};`,
   );
 
   console.log(`[docusaurus-plugin-typedoc] sidebar written to ${sidebarPath}`);

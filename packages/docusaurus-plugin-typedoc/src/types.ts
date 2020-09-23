@@ -8,7 +8,6 @@ export interface PluginOptions {
 
 export interface SidebarOptions {
   fullNames: boolean;
-  parentCategory: string;
   sidebarFile: string;
 }
 
@@ -23,3 +22,7 @@ export interface SidebarCategory {
 }
 
 export type SidebarItem = SidebarCategory | string;
+
+export interface LoadedContent {
+  navigation: any;
+}
