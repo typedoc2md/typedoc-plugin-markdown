@@ -6,11 +6,21 @@ import { NavigationItem } from 'typedoc';
 import { SidebarItem, SidebarOptions } from './types';
 
 export function writeSidebar(
+  outputCheck: boolean,
   siteDir: string,
   outFolder: string,
   sidebar: SidebarOptions,
   navigation: NavigationItem,
 ) {
+  // full path to sidebar
+  const sidebarPath = path.resolve(siteDir, sidebar.sidebarFile);
+
+  // if output check failed (docs not generated) then gracefully return empty sidebar
+  if (!outputCheck) {
+    fs.outputFileSync(sidebarPath, `module.exports = [];`);
+    return;
+  }
+
   // map the navigation object to a Docuaurus sidebar format
   const sidebarItems = navigation.children
     ? navigation.children.map((navigationItem) => {
@@ -44,9 +54,6 @@ export function writeSidebar(
         }
       })
     : [];
-
-  // full path to sidebar
-  const sidebarPath = path.resolve(siteDir, sidebar.sidebarFile);
 
   // write result to disk
   fs.outputFileSync(

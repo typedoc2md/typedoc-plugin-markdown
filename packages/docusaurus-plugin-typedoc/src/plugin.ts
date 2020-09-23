@@ -76,7 +76,11 @@ export default function pluginDocusaurus(
     // add frontmatter component
     app.renderer.addComponent(
       'docusaurus-frontmatter',
-      new DocsaurusFrontMatterComponent(app.renderer, options.sidebar),
+      new DocsaurusFrontMatterComponent(
+        app.renderer,
+        options.out,
+        options.sidebar,
+      ),
     );
 
     // return the generated reflections
@@ -99,6 +103,7 @@ export default function pluginDocusaurus(
     if (options.sidebar) {
       const theme = app.renderer.getComponent('theme') as DocusaurusTheme;
       writeSidebar(
+        theme.isOutputDirectory(outputDirectory),
         siteDir,
         options.out,
         options.sidebar,
