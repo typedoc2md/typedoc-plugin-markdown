@@ -91,12 +91,14 @@ export default function pluginDocusaurus(
       return;
     }
 
-    // generate the static docs
+    // construct outputDirectory path
     const outputDirectory = path.resolve(
       siteDir,
       options.docsRoot,
       options.out,
     );
+
+    // generate the static docs
     app.generateDocs(project, outputDirectory);
 
     // write the sidebar (if applicable)
@@ -112,6 +114,7 @@ export default function pluginDocusaurus(
     }
   }
 
+  // we need to generate the sidebar before any available lifecycle apis
   return {
     name: 'docusaurus-plugin-typedoc',
   };
