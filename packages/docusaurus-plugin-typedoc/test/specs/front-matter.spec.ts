@@ -10,7 +10,7 @@ function generate(testApp: TestApp, sidebar: SidebarOptions) {
   const componentNamename = cuid();
   testApp.renderer.addComponent(
     componentNamename,
-    new DocsaurusFrontMatterComponent(testApp.renderer, sidebar),
+    new DocsaurusFrontMatterComponent(testApp.renderer, 'api', sidebar),
   );
   const frontMatterComponent = testApp.renderer.getComponent(
     componentNamename,
@@ -39,8 +39,7 @@ describe(`FrontMatter:`, () => {
   test(`should return front with short names`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: false,
-      parentCategory: 'none',
-      sidebarFile: 'sidebars.js',
+      sidebarFile: 'typedoc-sidebar.js',
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);
@@ -50,8 +49,7 @@ describe(`FrontMatter:`, () => {
   test(`should return front matter with full names`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: true,
-      parentCategory: 'none',
-      sidebarFile: 'sidebars.js',
+      sidebarFile: 'typedoc-sidebar.js',
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);
@@ -61,6 +59,19 @@ describe(`FrontMatter:`, () => {
   test(`should return front matter without sidebar`, () => {
     const frontMatterComponent = generate(testApp, null);
     const page = getPage(testApp);
+    frontMatterComponent.onPageEnd(page);
+    expect(page.contents).toMatchSnapshot();
+  });
+
+  test(`should set slug for index page`, () => {
+    const frontMatterComponent = generate(testApp, null);
+    const page = {
+      project: testApp.project,
+      model: testApp.project,
+      url: 'index.md',
+      navigation: testApp.renderer.theme.getNavigation(testApp.project),
+      contents: 'CONTENTS',
+    } as PageEvent;
     frontMatterComponent.onPageEnd(page);
     expect(page.contents).toMatchSnapshot();
   });

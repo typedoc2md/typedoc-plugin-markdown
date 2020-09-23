@@ -20,6 +20,7 @@ jest.mock('typedoc', () => {
           addComponent: jest.fn(),
           getComponent: jest.fn().mockImplementation(() => {
             return {
+              isOutputDirectory: jest.fn().mockImplementation(() => true),
               getNavigation: jest.fn().mockImplementation(() => []),
             };
           }),
@@ -125,6 +126,7 @@ describe(`Plugin:`, () => {
     test('should write sidebar with default options', async () => {
       await plugin(context, {});
       expect(mockWriteSidebar).toHaveBeenLastCalledWith(
+        true,
         context.siteDir,
         'api',
         {
@@ -139,6 +141,7 @@ describe(`Plugin:`, () => {
         sidebar: { sidebarFile: 'custom-sidebar.js' },
       });
       expect(mockWriteSidebar).toHaveBeenLastCalledWith(
+        true,
         context.siteDir,
         'api',
         {

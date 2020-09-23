@@ -38,7 +38,7 @@ describe(`Sidebar:`, () => {
       }
     };`;
     fs.writeFileSync(path.resolve(tmpobj.name, sidebarFile), sidebarsContent);
-    writeSidebar(tmpobj.name, 'api', sidebarOptions, navigation);
+    writeSidebar(true, tmpobj.name, 'api', sidebarOptions, navigation);
     const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));
     expect(sidebar.toString()).toMatchSnapshot();
   });
@@ -51,7 +51,20 @@ describe(`Sidebar:`, () => {
       fullNames: false,
       sidebarFile,
     };
-    writeSidebar(tmpobj.name, '', sidebarOptions, navigation);
+    writeSidebar(true, tmpobj.name, '', sidebarOptions, navigation);
+    const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));
+    expect(sidebar.toString()).toMatchSnapshot();
+  });
+
+  test(`should write empty sidebar if output check fails`, () => {
+    const tmpobj = tmp.dirSync();
+    const navigation = testApp.theme.getNavigation(testApp.project);
+    const sidebarFile = 'sidebars/newSidebar.js';
+    const sidebarOptions: SidebarOptions = {
+      fullNames: false,
+      sidebarFile,
+    };
+    writeSidebar(false, tmpobj.name, '', sidebarOptions, navigation);
     const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));
     expect(sidebar.toString()).toMatchSnapshot();
   });
