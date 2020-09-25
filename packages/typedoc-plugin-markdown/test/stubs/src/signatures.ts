@@ -116,3 +116,27 @@ export const functionWithTypeParams = <Item = boolean | string>() => true;
 function functionReturningAnObject() {
   return { x: 1, y: 2 };
 }
+
+/**
+ * Comments with a return definition
+ * @returns Return comments
+ */
+export function commentsInReturn() {
+  return true;
+}
+
+/**
+ * Shorthand switch/case helper function. Cases arguments list is a tuple
+ * consisting of case (`T`) and returned result (`R`). Returns a function where a default value is provided.
+ *
+ * @param value - Value to test against
+ * @param cases - Tuple of case and the result if `value` and `case` is equal
+ * @returns Function for which to provide the default value
+ */
+export const swtch = <T, R>(value: T, ...cases: [T, R][]) => (def: R) => {
+  for (const c of cases) {
+    if (c[0] === value) return c[1];
+  }
+
+  return def;
+};
