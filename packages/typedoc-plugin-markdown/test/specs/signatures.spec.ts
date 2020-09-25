@@ -9,7 +9,7 @@ describe(`Signatures:`, () => {
   beforeAll(() => {
     testApp = new TestApp(['signatures.ts']);
     testApp.bootstrap();
-    TestApp.stubPartials(['comment', 'member.sources']);
+    TestApp.stubPartials(['member.sources']);
     partial = TestApp.getPartial('member.signature');
   });
 
@@ -97,6 +97,16 @@ describe(`Signatures:`, () => {
       TestApp.compileTemplate(
         partial,
         testApp.findReflection('functionWithDefaults')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile signature with @return comments'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('commentsInReturn')
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();

@@ -4,7 +4,6 @@ exports[`Signatures: should compile callable signature' 1`] = `
 "▸ (): string
 
 [partial: member.sources]
-[partial: comment]
 
 **Returns:** string
 "
@@ -14,7 +13,6 @@ exports[`Signatures: should compile function that returns an object' 1`] = `
 "▸ **functionReturningAnObject**(): object
 
 [partial: member.sources]
-[partial: comment]
 
 **Returns:** object
 
@@ -25,11 +23,23 @@ Name | Type |
 "
 `;
 
+exports[`Signatures: should compile signature with @return comments' 1`] = `
+"▸ **commentsInReturn**(): boolean
+
+[partial: member.sources]
+
+Comments with a return definition
+
+**Returns:** boolean
+
+Return comments
+"
+`;
+
 exports[`Signatures: should compile signature with a flag' 1`] = `
 "▸ \`Private\`**privateFunction**(): string
 
 [partial: member.sources]
-[partial: comment]
 
 **Returns:** string
 "
@@ -39,7 +49,8 @@ exports[`Signatures: should compile signature with default values' 1`] = `
 "▸ **functionWithDefaults**(\`valueA\`: string, \`valueB\`: number, \`valueC\`: number, \`valueD\`: boolean, \`valueE\`: boolean): string
 
 [partial: member.sources]
-[partial: comment]
+
+This is a function with a parameter that has a default value.
 
 #### Parameters:
 
@@ -59,7 +70,8 @@ exports[`Signatures: should compile signature with optional params' 1`] = `
 "▸ **functionWithOptionalParam**(\`requiredParam\`: string, \`optionalParam?\`: string): void
 
 [partial: member.sources]
-[partial: comment]
+
+This is a function with a parameter that is optional.
 
 #### Parameters:
 
@@ -76,7 +88,8 @@ exports[`Signatures: should compile signature with params' 1`] = `
 "▸ **functionWithParameters**(\`paramZ\`: string, \`paramG\`: any, \`paramA\`: any): number
 
 [partial: member.sources]
-[partial: comment]
+
+This is a function with multiple arguments and a return value.
 
 #### Parameters:
 
@@ -94,7 +107,8 @@ exports[`Signatures: should compile signature with rest params' 1`] = `
 "▸ **functionWithRest**(...\`rest\`: string[]): string
 
 [partial: member.sources]
-[partial: comment]
+
+This is a function with rest parameter.
 
 #### Parameters:
 
@@ -110,7 +124,6 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 "▸ \`Const\`**functionWithTypeParams**\\\\<Item>(): boolean
 
 [partial: member.sources]
-[partial: comment]
 
 #### Type parameters:
 
@@ -126,7 +139,6 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 "▸ **functionWithUnionTypes**(\`arg\`: boolean[] \\\\| number, ...\`args\`: (string \\\\| number)[]): any
 
 [partial: member.sources]
-[partial: comment]
 
 #### Parameters:
 
