@@ -19,7 +19,6 @@ import {
   TemplateMapping,
 } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { BreadcrumbsComponent } from './components/breadcrumbs.component';
 import { CommentsComponent } from './components/comments.component';
 import { HelperUtilsComponent } from './components/utils.component';
 
@@ -61,7 +60,6 @@ export default class MarkdownTheme extends Theme {
 
     // add markdown related componenets
     renderer.addComponent('comments', new CommentsComponent(renderer));
-    renderer.addComponent('breadcrumbs', new BreadcrumbsComponent(renderer));
     renderer.addComponent('utils', new HelperUtilsComponent(renderer));
   }
 
