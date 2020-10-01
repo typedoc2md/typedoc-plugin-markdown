@@ -14,9 +14,11 @@
 
 ## Type parameters
 
-{{#each model.typeParameters}}
-* {{name}}
-{{/each}}
+{{#with model.typeParameters}}
+
+{{{parameterTable 'typeParameters'}}}
+
+{{/with}}
 
 {{/if}}
 
