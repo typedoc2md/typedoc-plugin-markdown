@@ -4,6 +4,7 @@ export interface PluginOptions {
   out: string;
   sidebar: SidebarOptions | null;
   plugin: string[];
+  disableOutputCheck?: boolean;
 }
 
 export interface SidebarOptions {

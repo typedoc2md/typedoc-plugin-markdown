@@ -103,7 +103,7 @@ export default function pluginDocusaurus(
     if (options.sidebar) {
       const theme = app.renderer.getComponent('theme') as DocusaurusTheme;
       writeSidebar(
-        theme.isOutputDirectory(outputDirectory),
+        options.disableOutputCheck || theme.isOutputDirectory(outputDirectory),
         siteDir,
         options.out,
         options.sidebar,
