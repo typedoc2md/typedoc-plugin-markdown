@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-
 import * as Handlebars from 'handlebars';
 import {
   BindOption,
@@ -18,7 +17,6 @@ import {
   DefaultTheme,
   TemplateMapping,
 } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-
 import { CommentsComponent } from './components/comments.component';
 import { HelperUtilsComponent } from './components/utils.component';
 
@@ -72,7 +70,7 @@ export default class MarkdownTheme extends Theme {
     const listings = fs.readdirSync(outputDirectory);
 
     listings.forEach((listing) => {
-      if (!this.allowedDirectoryListings(this.entryFile).includes(listing)) {
+      if (!this.allowedDirectoryListings().includes(listing)) {
         isOutputDirectory = false;
         return;
       }
@@ -82,15 +80,11 @@ export default class MarkdownTheme extends Theme {
   }
 
   // The allowed directory and files listing used to check the output directory
-  allowedDirectoryListings(entryFileName: string) {
+  allowedDirectoryListings() {
     return [
-      entryFileName,
-      'README.md',
-      'globals.md',
-      'classes',
-      'enums',
-      'interfaces',
-      'modules',
+      this.entryFile,
+      this.globalsFile,
+      ...DefaultTheme.MAPPINGS.map((mapping) => mapping.directory),
       'media',
       '.DS_Store',
     ];
@@ -107,16 +101,15 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     const entryPoint = this.getEntryPoint(project);
-    const omitReadme = this.readme === 'none';
 
-    if (omitReadme) {
+    if (this.readme === 'none') {
       entryPoint.url = this.entryFile;
       urls.push(
         new UrlMapping(this.entryFile, { ...entryPoint }, 'reflection.hbs'),
       );
     } else {
-      entryPoint.url = 'globals.md';
-      urls.push(new UrlMapping('globals.md', entryPoint, 'reflection.hbs'));
+      entryPoint.url = this.globalsFile;
+      urls.push(new UrlMapping(this.globalsFile, entryPoint, 'reflection.hbs'));
       urls.push(new UrlMapping(this.entryFile, project, 'index.hbs'));
     }
     if (entryPoint.children) {
@@ -143,6 +136,7 @@ export default class MarkdownTheme extends Theme {
     urls: UrlMapping[],
   ): UrlMapping[] {
     const mapping = DefaultTheme.getMapping(reflection);
+
     if (mapping) {
       if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
         const url = this.toUrl(mapping, reflection);
@@ -265,7 +259,9 @@ export default class MarkdownTheme extends Theme {
       ),
     );
     if (hasSeperateGlobals) {
-      navigation.children?.push(createNavigationItem('Globals', 'globals.md'));
+      navigation.children?.push(
+        createNavigationItem('Globals', this.globalsFile),
+      );
     }
     if (entryPoint.groups) {
       buildGroups(entryPoint.groups);
@@ -331,5 +327,10 @@ export default class MarkdownTheme extends Theme {
   // the entry file name
   get entryFile() {
     return 'README.md';
+  }
+
+  // the globals name
+  get globalsFile() {
+    return 'globals.md';
   }
 }
