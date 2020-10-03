@@ -10,12 +10,12 @@ export function reflectionTitle(
   if (this.model.kindString) {
     title.push(`${this.model.kindString}: `);
   }
-  title.push(this.model.name);
+  title.push(shouldEscape ? escape(this.model.name) : this.model.name);
   if (withParams && this.model.typeParameters) {
     const typeParameters = this.model.typeParameters
       .map((typeParameter) => typeParameter.name)
       .join(', ');
     title.push(`\\<**${typeParameters}**>`);
   }
-  return shouldEscape ? escape(title.join('')) : title.join('');
+  return title.join('');
 }
