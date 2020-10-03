@@ -49,6 +49,7 @@ module.exports = {
           // The label for the "Globals" page (defaults to 'Globals')
           globalsLabel: 'Globals',
           // The label for the "README" page (defaults to 'README')
+          // This will also replace README "title" field in frontmatter.
           readmeLabel: 'README'
         },
 

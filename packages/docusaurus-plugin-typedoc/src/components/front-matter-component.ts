@@ -19,23 +19,27 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
     this.sidebar = sidebar;
   }
   getYamlItems(page: PageEvent) {
+    let items: Record<string, any> = this.getDefaultValues(page);
+    if (page.url === 'index.md') {
+      items = { ...items, slug: '/' + this.outFolder };
+      if (page.url !== page.project.url && this.sidebar?.readmeLabel) {
+        items = { ...items, title: this.sidebar.readmeLabel };
+      }
+    }
+    if (this.sidebar) {
+      items = { ...items, sidebar_label: this.getSidebarLabel(page) };
+    }
     return {
-      ...(page.url === 'index.md' && {
-        slug: '/' + this.outFolder,
-      }),
-      ...this.getDefaultValues(page),
-      ...{
-        ...(this.sidebar && {
-          sidebar_label: this.getSidebarLabel(page),
-        }),
-        hide_title: true,
-      },
-    };
+      ...items,
+      hide_title: true,
+    } as any;
   }
 
   getSidebarLabel(page: PageEvent) {
     if (page.model.name === page.project.name) {
-      return page.url === page.project.url ? this.sidebar?.globalsLabel || 'Globals' : this.sidebar?.readmeLabel || 'README';
+      return page.url === page.project.url
+        ? this.sidebar?.globalsLabel || 'Globals'
+        : this.sidebar?.readmeLabel || 'README';
     }
 
     const item =
