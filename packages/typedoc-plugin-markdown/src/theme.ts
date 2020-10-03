@@ -10,7 +10,7 @@ import {
   Renderer,
   UrlMapping,
 } from 'typedoc';
-import { ReflectionGroup } from 'typedoc/dist/lib/models';
+import { ReflectionGroup, ReflectionKind } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import {
@@ -29,6 +29,8 @@ import { HelperUtilsComponent } from './components/utils.component';
 export default class MarkdownTheme extends Theme {
   @BindOption('readme')
   readme!: string;
+  @BindOption('allReflectionsHaveOwnDocument')
+  allReflectionsHaveOwnDocument!: boolean;
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
@@ -135,7 +137,9 @@ export default class MarkdownTheme extends Theme {
     reflection: DeclarationReflection,
     urls: UrlMapping[],
   ): UrlMapping[] {
-    const mapping = DefaultTheme.getMapping(reflection);
+    const mapping = this.mappings.find((mapping) =>
+      reflection.kindOf(mapping.kind),
+    );
 
     if (mapping) {
       if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
@@ -305,10 +309,14 @@ export default class MarkdownTheme extends Theme {
 
     function sortCallback(a: NavigationItem, b: NavigationItem): number {
       const weights = {
-        Namespaces: 1,
-        Enumerations: 2,
-        Classes: 3,
-        Interfaces: 4,
+        ['Namespaces']: 1,
+        ['Enumerations']: 2,
+        ['Classes']: 3,
+        ['Interfaces']: 4,
+        ['Type aliases']: 5,
+        ['Variables']: 6,
+        ['Functions']: 7,
+        ['Object literals']: 8,
       };
       const aWeight = weights[a.title] || 0;
       const bWeight = weights[b.title] || 0;
@@ -322,6 +330,63 @@ export default class MarkdownTheme extends Theme {
     page.contents = page.contents
       ? MarkdownTheme.formatContents(page.contents)
       : '';
+  }
+
+  get mappings() {
+    return [
+      {
+        kind: [ReflectionKind.Class],
+        isLeaf: false,
+        directory: 'classes',
+        template: 'reflection.hbs',
+      },
+      {
+        kind: [ReflectionKind.Interface],
+        isLeaf: false,
+        directory: 'interfaces',
+        template: 'reflection.hbs',
+      },
+      {
+        kind: [ReflectionKind.Enum],
+        isLeaf: false,
+        directory: 'enums',
+        template: 'reflection.hbs',
+      },
+      {
+        kind: [ReflectionKind.Namespace, ReflectionKind.Module],
+        isLeaf: false,
+        directory: 'modules',
+        template: 'reflection.hbs',
+      },
+      ...(this.allReflectionsHaveOwnDocument
+        ? [
+            {
+              kind: [ReflectionKind.Variable],
+              isLeaf: false,
+              directory: 'variables',
+              template: 'reflection.member.hbs',
+            },
+            {
+              kind: [ReflectionKind.TypeAlias],
+              isLeaf: false,
+              directory: 'types',
+              template: 'reflection.member.hbs',
+            },
+            {
+              kind: [ReflectionKind.Function],
+              isLeaf: false,
+              directory: 'functions',
+              template: 'reflection.member.hbs',
+            },
+            {
+              kind: [ReflectionKind.ObjectLiteral],
+              isLeaf: false,
+              directory: 'literals',
+              template: 'reflection.member.hbs',
+            },
+          ]
+        : []),
+    ];
   }
 
   // the entry file name

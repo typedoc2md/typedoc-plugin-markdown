@@ -1,6 +1,5 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
-
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -42,6 +41,14 @@ export = (PluginHost: Application) => {
     help:
       '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
     name: 'namedAnchors',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    help:
+      '[Markdown Plugin] Output all reflections into seperate output files.',
+    name: 'allReflectionsHaveOwnDocument',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
