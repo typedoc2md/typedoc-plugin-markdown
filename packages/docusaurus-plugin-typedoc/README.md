@@ -42,18 +42,17 @@ module.exports = {
 
         // options for auto generated sidebar (pass `null` to skip generation completely)
         sidebar: {
-          // the name of the sidebars file relative to siteDir (typedoc-sidebar.js`)
+          // the name of the sidebars file relative to siteDir (defaults to typedoc-sidebar.js`)
           sidebarFile: 'typedoc-sidebar.js'
+           // the label for the "README" sidebar item / frontmatter title (defaults to 'README')
+          readmeLabel: 'README'
+          // the label for the "Globals" sidebar item (defaults to 'Globals')
+          globalsLabel: 'Globals',
           // display full names with module path if applicable - (defaults to 'false')
           fullNames: false,
-          // The label for the "Globals" page (defaults to 'Globals')
-          globalsLabel: 'Globals',
-          // The label for the "README" page (defaults to 'README')
-          // This will also replace README "title" field in frontmatter.
-          readmeLabel: 'README'
         },
 
-        // include additional TypeDoc plugins in addition to the Markdown plugin (optional)
+        // include additional TypeDoc plugins (optional)
         plugin: ['typedoc-plugin-xyz'],
 
         // Pass in any additional TypeDoc options (see typedoc --help)
