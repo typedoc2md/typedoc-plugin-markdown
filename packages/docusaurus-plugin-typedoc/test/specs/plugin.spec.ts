@@ -30,7 +30,7 @@ jest.mock('typedoc', () => {
   };
 });
 
-jest.mock('../../dist/components/front-matter-component');
+jest.mock('../../dist/components/front-matter.component');
 
 jest.mock('../../dist/sidebar', () => {
   return {
@@ -127,8 +127,8 @@ describe(`Plugin:`, () => {
         {
           fullNames: false,
           sidebarFile: 'typedoc-sidebar.js',
-          globalsLabel: "Globals",
-          readmeLabel: "README"
+          globalsLabel: 'Globals',
+          readmeLabel: 'README',
         },
         [],
       );
@@ -144,8 +144,8 @@ describe(`Plugin:`, () => {
         {
           fullNames: false,
           sidebarFile: 'custom-sidebar.js',
-          globalsLabel: "Globals",
-          readmeLabel: "README"
+          globalsLabel: 'Globals',
+          readmeLabel: 'README',
         },
         [],
       );

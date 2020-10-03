@@ -2,7 +2,7 @@ import cuid from 'cuid';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
-import { DocsaurusFrontMatterComponent } from '../../dist/components/front-matter-component';
+import { DocsaurusFrontMatterComponent } from '../../dist/components/front-matter.component';
 import { SidebarOptions } from '../../dist/types';
 
 function generate(testApp: TestApp, sidebar: SidebarOptions) {
@@ -40,8 +40,8 @@ describe(`FrontMatter:`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: false,
       sidebarFile: 'typedoc-sidebar.js',
-      globalsLabel: "Globals",
-      readmeLabel: "README"
+      globalsLabel: 'Globals',
+      readmeLabel: 'README',
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);
@@ -52,8 +52,8 @@ describe(`FrontMatter:`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: true,
       sidebarFile: 'typedoc-sidebar.js',
-      globalsLabel: "Globals",
-      readmeLabel: "README"
+      globalsLabel: 'Globals',
+      readmeLabel: 'README',
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);

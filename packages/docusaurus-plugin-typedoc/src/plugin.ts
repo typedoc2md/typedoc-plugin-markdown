@@ -3,7 +3,7 @@ import * as path from 'path';
 import { LoadContext } from '@docusaurus/types';
 import { Application } from 'typedoc';
 
-import { DocsaurusFrontMatterComponent } from './components/front-matter-component';
+import { DocsaurusFrontMatterComponent } from './components/front-matter.component';
 import { writeSidebar } from './sidebar';
 import DocusaurusTheme from './theme/theme';
 import { PluginOptions } from './types';
@@ -16,7 +16,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
     globalsLabel: 'Globals',
-    readmeLabel: 'README'
+    readmeLabel: 'README',
   },
   plugin: ['typedoc-plugin-markdown'],
 };
