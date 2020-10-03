@@ -1,11 +1,9 @@
 import * as path from 'path';
-
 import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { reflectionTitle } from '../resources/helpers/reflection-title';
 
 @Component({ name: 'frontmatter' })
@@ -55,7 +53,7 @@ ${Object.entries(yamlItems)
   }
 
   getTitle(page: PageEvent) {
-    return reflectionTitle.call(page, false);
+    return reflectionTitle.call(page, false, false);
   }
 
   // prettier-ignore

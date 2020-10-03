@@ -1,7 +1,7 @@
 import { Reflection } from 'typedoc';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import MarkdownTheme from '../../theme';
+import { escape } from './escape';
 
 export function breadcrumbs(this: PageEvent) {
   const breadcrumbs: string[] = [];
@@ -22,10 +22,10 @@ function breadcrumb(page: PageEvent, model: Reflection, md: string[]) {
     if (model.url) {
       md.push(
         page.url === model.url
-          ? `${model.name}`
-          : `[${model.name}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
-              model.url,
-            )})`,
+          ? `${escape(model.name)}`
+          : `[${escape(
+              model.name,
+            )}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(model.url)})`,
       );
     }
   }

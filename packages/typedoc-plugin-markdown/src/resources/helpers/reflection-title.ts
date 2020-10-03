@@ -1,6 +1,11 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+import { escape } from './escape';
 
-export function reflectionTitle(this: PageEvent, withParams: boolean) {
+export function reflectionTitle(
+  this: PageEvent,
+  withParams: boolean,
+  shouldEscape = true,
+) {
   const title: string[] = [];
   if (this.model.kindString) {
     title.push(`${this.model.kindString}: `);
@@ -12,5 +17,5 @@ export function reflectionTitle(this: PageEvent, withParams: boolean) {
       .join(', ');
     title.push(`\\<**${typeParameters}**>`);
   }
-  return title.join('');
+  return shouldEscape ? escape(title.join('')) : title.join('');
 }
