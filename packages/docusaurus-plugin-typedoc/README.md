@@ -46,6 +46,8 @@ module.exports = {
           sidebarFile: 'typedoc-sidebar.js'
           // display full names with module path if applicable - (defaults to 'false')
           fullNames: false,
+          // The label for the "Globals" page (defaults to 'Globals')
+          globalsLabel: 'Globals'
         },
 
         // include additional TypeDoc plugins in addition to the Markdown plugin (optional)

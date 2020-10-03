@@ -35,7 +35,7 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
 
   getSidebarLabel(page: PageEvent) {
     if (page.model.name === page.project.name) {
-      return page.url === page.project.url ? 'Globals' : 'README';
+      return page.url === page.project.url ? this.sidebar?.globalsLabel || 'Globals' : 'README';
     }
 
     const item =
