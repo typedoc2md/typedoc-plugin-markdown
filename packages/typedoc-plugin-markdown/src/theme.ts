@@ -362,25 +362,25 @@ export default class MarkdownTheme extends Theme {
         ? [
             {
               kind: [ReflectionKind.Variable],
-              isLeaf: false,
+              isLeaf: true,
               directory: 'variables',
               template: 'reflection.member.hbs',
             },
             {
               kind: [ReflectionKind.TypeAlias],
-              isLeaf: false,
+              isLeaf: true,
               directory: 'types',
               template: 'reflection.member.hbs',
             },
             {
               kind: [ReflectionKind.Function],
-              isLeaf: false,
+              isLeaf: true,
               directory: 'functions',
               template: 'reflection.member.hbs',
             },
             {
               kind: [ReflectionKind.ObjectLiteral],
-              isLeaf: false,
+              isLeaf: true,
               directory: 'literals',
               template: 'reflection.member.hbs',
             },
