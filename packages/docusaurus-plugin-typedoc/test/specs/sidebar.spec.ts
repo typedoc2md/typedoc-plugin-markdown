@@ -26,6 +26,8 @@ describe(`Sidebar:`, () => {
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
       sidebarFile,
+      globalsLabel: 'Globals',
+      readmeLabel: 'README',
     };
     const sidebarsContent = `module.exports = {
       "someSidebar": {
@@ -50,6 +52,8 @@ describe(`Sidebar:`, () => {
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
       sidebarFile,
+      globalsLabel: 'Globals',
+      readmeLabel: 'README',
     };
     writeSidebar(true, tmpobj.name, '', sidebarOptions, navigation);
     const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));
@@ -63,6 +67,8 @@ describe(`Sidebar:`, () => {
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
       sidebarFile,
+      globalsLabel: 'Globals',
+      readmeLabel: 'README',
     };
     writeSidebar(false, tmpobj.name, '', sidebarOptions, navigation);
     const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));

@@ -40,6 +40,8 @@ describe(`FrontMatter:`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: false,
       sidebarFile: 'typedoc-sidebar.js',
+      globalsLabel: "Globals",
+      readmeLabel: "README"
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);
@@ -50,6 +52,8 @@ describe(`FrontMatter:`, () => {
     const frontMatterComponent = generate(testApp, {
       fullNames: true,
       sidebarFile: 'typedoc-sidebar.js',
+      globalsLabel: "Globals",
+      readmeLabel: "README"
     });
     const page = getPage(testApp);
     frontMatterComponent.onPageEnd(page);
