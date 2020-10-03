@@ -15,6 +15,8 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
+    globalsLabel: 'Globals',
+    readmeLabel: 'README'
   },
   plugin: ['typedoc-plugin-markdown'],
 };

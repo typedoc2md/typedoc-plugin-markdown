@@ -10,6 +10,8 @@ export interface PluginOptions {
 export interface SidebarOptions {
   fullNames: boolean;
   sidebarFile: string;
+  globalsLabel: string;
+  readmeLabel: string;
 }
 
 export interface Sidebar {
