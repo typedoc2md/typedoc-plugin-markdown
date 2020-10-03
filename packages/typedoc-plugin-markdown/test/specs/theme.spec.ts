@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-
 import { TestApp } from '../test-app';
 
 describe(`Theme:`, () => {
@@ -12,6 +11,12 @@ describe(`Theme:`, () => {
   describe(`(getUrls)`, () => {
     test(`should getUrls'`, () => {
       testApp.bootstrap();
+      const urlMappings = testApp.theme.getUrls(testApp.project);
+      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
+    });
+
+    test(`should getUrls with 'allReflectionsHaveOwnDocument' set`, () => {
+      testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
