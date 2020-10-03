@@ -38,8 +38,8 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
   getSidebarLabel(page: PageEvent) {
     if (page.model.name === page.project.name) {
       return page.url === page.project.url
-        ? this.sidebar?.globalsLabel || 'Globals'
-        : this.sidebar?.readmeLabel || 'README';
+        ? this.sidebar?.globalsLabel
+        : this.sidebar?.readmeLabel;
     }
 
     const item =
