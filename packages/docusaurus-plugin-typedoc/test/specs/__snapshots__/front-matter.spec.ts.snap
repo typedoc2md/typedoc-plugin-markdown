@@ -34,9 +34,9 @@ CONTENTS"
 
 exports[`FrontMatter: should set slug for index page 1`] = `
 "---
-slug: \\"/api\\"
 id: \\"index\\"
 title: \\"docusaurus-plugin-typedoc\\"
+slug: \\"/api\\"
 hide_title: true
 ---
 
