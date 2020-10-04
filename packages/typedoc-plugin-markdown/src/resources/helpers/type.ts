@@ -17,7 +17,6 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc/dist/lib/models/types';
-
 import MarkdownTheme from '../../theme';
 import { escape } from './escape';
 
@@ -139,7 +138,7 @@ function getLiteralType(model: DeclarationReflection) {
       types ? types.join('; ') : ''
     } }${model.defaultValue ? `= ${escape(model.defaultValue)}` : ''}`;
   }
-  return '{}';
+  return '';
 }
 
 export function getFunctionType(modelSignatures: SignatureReflection[]) {
