@@ -1,5 +1,4 @@
 import * as Handlebars from 'handlebars';
-
 import { TestApp } from '../test-app';
 
 describe(`Reflections:`, () => {
@@ -84,6 +83,15 @@ describe(`Reflections:`, () => {
       TestApp.compileTemplate(
         template,
         testApp.findReflection('AnyFunctionType'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile enum delcaration`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('EnumDeclarations').children[0],
       ),
     ).toMatchSnapshot();
   });

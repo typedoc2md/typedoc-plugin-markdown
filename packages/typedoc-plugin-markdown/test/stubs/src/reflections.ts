@@ -20,3 +20,10 @@ export interface CallableReflection {
 export interface IndexableReflection {
   [index: number]: string;
 }
+
+export enum EnumReflection {
+  Up = 'UP',
+  Down = 'DOWN',
+  Left = 'LEFT',
+  Right = 'RIGHT',
+}

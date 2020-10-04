@@ -34,6 +34,13 @@ exports[`Reflections: should compile declaration with double underscores in name
 "
 `;
 
+exports[`Reflections: should compile enum delcaration 1`] = `
+"•  **Down**:  = \\"DOWN\\"
+
+[partial: member.sources]
+"
+`;
+
 exports[`Reflections: should compile object literal cast as a const 1`] = `
 "• \`Const\` **objectLiteralAsConstDeclaration**: object = { Prop1: 'Prop1', Prop2: 'Prop1', Prop3: 'Prop1',} as const
 
@@ -60,6 +67,7 @@ Name | Type | Value | Description |
 ------ | ------ | ------ | ------ |
 \`valueA\` | number | 100 | Comment for valueA |
 \`valueB\` | boolean | true | - |
+\`valueC\` | object | {} | - |
 \`valueZ\` | string | \\"foo\\" | Comment for valueZ |
 \`valueY\` | function | () => string | Comment for value Y |
 \`valueX\` | object | { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\" } | Comment for valueX |

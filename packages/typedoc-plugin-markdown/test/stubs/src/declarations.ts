@@ -24,6 +24,7 @@ const objectLiteralDeclaration = {
    */
   valueA: 100,
   valueB: true,
+  valueC: {},
 };
 
 const objectLiteral2Declaration = {
@@ -77,3 +78,10 @@ const objectLiteralAsConstDeclaration = {
 export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');
 
 export type AnyFunctionType<A = any> = (...input: any[]) => A;
+
+export enum EnumDeclarations {
+  Up = 'UP',
+  Down = 'DOWN',
+  Left = 'LEFT',
+  Right = 'RIGHT',
+}

@@ -138,7 +138,7 @@ function getLiteralType(model: DeclarationReflection) {
       types ? types.join('; ') : ''
     } }${model.defaultValue ? `= ${escape(model.defaultValue)}` : ''}`;
   }
-  return '';
+  return '{}';
 }
 
 export function getFunctionType(modelSignatures: SignatureReflection[]) {

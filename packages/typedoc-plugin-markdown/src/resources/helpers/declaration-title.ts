@@ -4,7 +4,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { ReflectionType } from 'typedoc/dist/lib/models';
-
 import { escape } from './escape';
 import { memberSymbol } from './member-symbol';
 import { stripComments } from './strip-comments';
@@ -27,7 +26,7 @@ export function declarationTitle(
     );
   }
 
-  md.push(`: ${getType(this)}`);
+  md.push(`: ${this.parent?.kindOf(ReflectionKind.Enum) ? '' : getType(this)}`);
 
   if (this.defaultValue) {
     md.push(` = ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
@@ -45,10 +44,10 @@ function getType(reflection: ParameterReflection | DeclarationReflection) {
 function shouldCollapse(
   reflection: ParameterReflection | DeclarationReflection,
 ) {
-  if (reflection.kind === ReflectionKind.ObjectLiteral) {
+  if (reflection.kindOf(ReflectionKind.ObjectLiteral)) {
     return true;
   }
-  if (reflection.kind === ReflectionKind.Variable) {
+  if (reflection.kindOf(ReflectionKind.Variable)) {
     const type = reflection.type as ReflectionType;
     if (type.declaration && type.declaration.signatures) {
       return false;
