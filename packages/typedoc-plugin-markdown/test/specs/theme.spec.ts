@@ -29,11 +29,15 @@ describe(`Theme:`, () => {
   });
 
   describe(`(isOutputDirectory)`, () => {
-    let directoryListingSpy;
+    let directoryListingSpy: jest.SpyInstance;
 
     beforeAll(() => {
       testApp.bootstrap();
       directoryListingSpy = jest.spyOn(fs, 'readdirSync');
+    });
+
+    afterAll(() => {
+      directoryListingSpy.mockRestore();
     });
 
     test(`should test output directory true with all allowed files and directories`, () => {
@@ -92,6 +96,31 @@ describe(`Theme:`, () => {
     test(`should test output directory false with unknown folder`, () => {
       directoryListingSpy.mockReturnValue(['README.md', 'folder']);
       expect(testApp.theme.isOutputDirectory('/path')).toBeFalsy();
+    });
+  });
+
+  describe(`(directory mappings)`, () => {
+    test(`should set default mappings'`, () => {
+      testApp.bootstrap();
+      expect(
+        testApp.theme.mappings.map((mapping) => mapping.directory),
+      ).toEqual(['classes', 'interfaces', 'enums', 'modules']);
+    });
+
+    test(`should set mappings with 'allReflectionsHaveOwnDocument'`, () => {
+      testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
+      expect(
+        testApp.theme.mappings.map((mapping) => mapping.directory),
+      ).toEqual([
+        'classes',
+        'interfaces',
+        'enums',
+        'modules',
+        'variables',
+        'types',
+        'functions',
+        'literals',
+      ]);
     });
   });
 });

@@ -13,10 +13,7 @@ import {
 import { ReflectionGroup, ReflectionKind } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
-import {
-  DefaultTheme,
-  TemplateMapping,
-} from 'typedoc/dist/lib/output/themes/DefaultTheme';
+import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 import { CommentsComponent } from './components/comments.component';
 import { HelperUtilsComponent } from './components/utils.component';
 
@@ -34,6 +31,8 @@ export default class MarkdownTheme extends Theme {
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
+
+  static URL_PREFIX = /^(http|ftp)s?:\/\//;
 
   // formarts page content after render
   static formatContents(contents: string) {
@@ -86,7 +85,7 @@ export default class MarkdownTheme extends Theme {
     return [
       this.entryFile,
       this.globalsFile,
-      ...DefaultTheme.MAPPINGS.map((mapping) => mapping.directory),
+      ...this.mappings.map((mapping) => mapping.directory),
       'media',
       '.DS_Store',
     ];
@@ -142,7 +141,7 @@ export default class MarkdownTheme extends Theme {
     );
 
     if (mapping) {
-      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
+      if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
         const url = this.toUrl(mapping, reflection);
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
@@ -206,7 +205,7 @@ export default class MarkdownTheme extends Theme {
    * @param container   The nearest reflection having an own document.
    */
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
-    if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
+    if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
       const reflectionId = reflection.name.toLowerCase();
       const anchor = this.toAnchorRef(reflectionId);
       reflection.url = container.url + '#' + anchor;
