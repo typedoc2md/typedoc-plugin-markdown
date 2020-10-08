@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Theme: (header) should compile with module with subtitle 1`] = `
-"# Interface: InterfaceA
-
-[\\"theme\\"](../modules/_theme_.md).InterfaceA
+"[\\"theme\\"](../modules/_theme_.md).InterfaceA
 
 ## Hierarchy
 
@@ -14,9 +12,7 @@ exports[`Theme: (header) should compile with module with subtitle 1`] = `
 `;
 
 exports[`Theme: (header) should compile with module without subtitle 1`] = `
-"# Module: \\"theme\\"
-
-[partial: index]
+"[partial: index]
 
 [partial: members]
 "

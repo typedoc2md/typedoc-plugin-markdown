@@ -3,8 +3,18 @@ export interface PluginOptions {
   docsRoot: string;
   out: string;
   sidebar: SidebarOptions | null;
-  plugin: string[];
+  readmeTitle: string | undefined;
+  globalsTitle: string | undefined;
+  plugin?: string[];
   disableOutputCheck?: boolean;
+}
+
+export interface FrontMatter {
+  id: string;
+  title: string;
+  slug?: string;
+  sidebar_label?: string;
+  hide_title?: boolean;
 }
 
 export interface SidebarOptions {
@@ -25,7 +35,3 @@ export interface SidebarCategory {
 }
 
 export type SidebarItem = SidebarCategory | string;
-
-export interface LoadedContent {
-  navigation: any;
-}

@@ -3,14 +3,14 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 import { DocsaurusFrontMatterComponent } from '../../dist/components/front-matter.component';
-import { SidebarOptions } from '../../dist/types';
+import { PluginOptions } from '../../dist/types';
 
-function generate(testApp: TestApp, sidebar: SidebarOptions) {
+function generate(testApp: TestApp, options: PluginOptions) {
   testApp.bootstrap();
   const componentNamename = cuid();
   testApp.renderer.addComponent(
     componentNamename,
-    new DocsaurusFrontMatterComponent(testApp.renderer, 'api', sidebar),
+    new DocsaurusFrontMatterComponent(testApp.renderer, options),
   );
   const frontMatterComponent = testApp.renderer.getComponent(
     componentNamename,
@@ -18,65 +18,157 @@ function generate(testApp: TestApp, sidebar: SidebarOptions) {
   return frontMatterComponent;
 }
 
-function getPage(testApp: TestApp) {
-  const reflection = testApp.findReflection('FrontMatterClass');
-  const page = {
-    project: testApp.project,
-    model: reflection,
-    url: reflection.url,
-    navigation: testApp.renderer.theme.getNavigation(testApp.project),
-    contents: 'CONTENTS',
-  } as PageEvent;
-  return page;
-}
-
 describe(`FrontMatter:`, () => {
   let testApp: TestApp;
-  beforeAll(() => {
-    testApp = new TestApp(['frontmatter.ts']);
-  });
-
-  test(`should return front with short names`, () => {
-    const frontMatterComponent = generate(testApp, {
+  const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
+    out: 'api',
+    sidebar: {
       fullNames: false,
       sidebarFile: 'typedoc-sidebar.js',
       globalsLabel: 'Globals',
       readmeLabel: 'README',
+    },
+  } as PluginOptions;
+  beforeAll(() => {
+    testApp = new TestApp(['frontmatter.ts']);
+  });
+
+  describe(`(readme)`, () => {
+    let page: PageEvent;
+
+    beforeEach(() => {
+      page = {
+        url: 'index.md',
+        project: { name: 'test-project-name', url: 'globals.md' },
+        contents: 'CONTENTS',
+      } as PageEvent;
     });
-    const page = getPage(testApp);
-    frontMatterComponent.onPageEnd(page);
-    expect(page.contents).toMatchSnapshot();
-  });
 
-  test(`should return front matter with full names`, () => {
-    const frontMatterComponent = generate(testApp, {
-      fullNames: true,
-      sidebarFile: 'typedoc-sidebar.js',
-      globalsLabel: 'Globals',
-      readmeLabel: 'README',
+    test(`should set default index page`, () => {
+      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
     });
-    const page = getPage(testApp);
-    frontMatterComponent.onPageEnd(page);
-    expect(page.contents).toMatchSnapshot();
+
+    test(`should set custom readmeLabel and readmeTitle`, () => {
+      const frontMatterComponent = generate(testApp, {
+        ...DEFAULT_PLUGIN_OPTIONS,
+        sidebar: {
+          ...DEFAULT_PLUGIN_OPTIONS.sidebar,
+          readmeLabel: 'Custom readme label',
+        },
+        readmeTitle: 'Custom readme title',
+      });
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
+
+    test(`should set the same custom readmeLabel and readmeTitle`, () => {
+      const frontMatterComponent = generate(testApp, {
+        ...DEFAULT_PLUGIN_OPTIONS,
+        sidebar: {
+          ...DEFAULT_PLUGIN_OPTIONS.sidebar,
+          readmeLabel: 'Custom readme title',
+        },
+        readmeTitle: 'Custom readme title',
+      });
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
+
+    test(`should set default globals page`, () => {
+      const frontMatterComponent = generate(testApp, {
+        ...DEFAULT_PLUGIN_OPTIONS,
+      });
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
   });
 
-  test(`should return front matter without sidebar`, () => {
-    const frontMatterComponent = generate(testApp, null);
-    const page = getPage(testApp);
-    frontMatterComponent.onPageEnd(page);
-    expect(page.contents).toMatchSnapshot();
+  describe(`(globals)`, () => {
+    let page: PageEvent;
+
+    beforeEach(() => {
+      page = {
+        url: 'globals.md',
+        project: { name: 'test-project-name', url: 'globals.md' },
+        contents: 'CONTENTS',
+      } as PageEvent;
+    });
+
+    test(`should set default globals page`, () => {
+      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
+
+    test(`should set custom globalsLabel and custom globalsTitle`, () => {
+      const frontMatterComponent = generate(testApp, {
+        ...DEFAULT_PLUGIN_OPTIONS,
+        sidebar: {
+          ...DEFAULT_PLUGIN_OPTIONS.sidebar,
+          globalsLabel: 'Custom globals label',
+        },
+        globalsTitle: 'Custom globals title',
+      });
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
+
+    test(`should set globals page when readme=none`, () => {
+      page.url = 'index.md';
+      page.project.url = 'index.md';
+      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
   });
 
-  test(`should set slug for index page`, () => {
-    const frontMatterComponent = generate(testApp, null);
-    const page = {
-      project: testApp.project,
-      model: testApp.project,
-      url: 'index.md',
-      navigation: testApp.renderer.theme.getNavigation(testApp.project),
-      contents: 'CONTENTS',
-    } as PageEvent;
-    frontMatterComponent.onPageEnd(page);
-    expect(page.contents).toMatchSnapshot();
+  describe(`(reflection names)`, () => {
+    let page: PageEvent;
+
+    beforeEach(() => {
+      const reflection = testApp.findReflection('FrontMatterClass');
+      page = {
+        project: testApp.project,
+        model: reflection,
+        url: reflection.url,
+        contents: 'CONTENTS',
+      } as PageEvent;
+    });
+
+    test(`should return reflection labels with short names`, () => {
+      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
+
+    test(`should return front matter with full names`, () => {
+      const frontMatterComponent = generate(testApp, {
+        ...DEFAULT_PLUGIN_OPTIONS,
+        sidebar: {
+          ...DEFAULT_PLUGIN_OPTIONS.sidebar,
+          fullNames: true,
+        },
+      });
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
+  });
+
+  describe(`(no sidebar)`, () => {
+    test(`should return front matter without sidebar`, () => {
+      const page = {
+        url: 'globals.md',
+        project: { name: 'test-project-name', url: 'globals.md' },
+        contents: 'CONTENTS',
+      } as PageEvent;
+      const frontMatterComponent = generate(testApp, {
+        ...DEFAULT_PLUGIN_OPTIONS,
+        sidebar: null,
+      });
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
   });
 });

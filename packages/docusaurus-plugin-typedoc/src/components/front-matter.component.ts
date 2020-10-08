@@ -1,79 +1,71 @@
-import { NavigationItem, Renderer } from 'typedoc';
+import { Renderer } from 'typedoc';
 import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter.component';
 import { Component } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
-import { SidebarOptions } from '../types';
+import { FrontMatter, PluginOptions, SidebarOptions } from '../types';
 
 @Component({ name: 'docusaurus-frontmatter' })
 export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
   outFolder: string;
   sidebar: SidebarOptions | null;
-  constructor(
-    owner: Renderer,
-    outFolder: string,
-    sidebar: SidebarOptions | null,
-  ) {
-    super(owner);
-    this.outFolder = outFolder;
-    this.sidebar = sidebar;
+  readmeTitle?: string;
+  globalsTitle?: string;
+  entryFile = 'index.md';
+  globalsFile = 'globals.md';
+
+  constructor(renderer: Renderer, options: PluginOptions) {
+    super(renderer);
+    this.outFolder = options?.out;
+    this.sidebar = options?.sidebar;
+    this.readmeTitle = options?.readmeTitle;
+    this.globalsTitle = options?.globalsTitle;
   }
-  getYamlItems(page: PageEvent) {
-    let items: Record<string, any> = this.getDefaultValues(page);
-    if (page.url === 'index.md') {
+  getYamlItems(page: PageEvent): FrontMatter {
+    const pageId = this.getId(page);
+    const pageTitle = this.getTitle(page);
+    const sidebarLabel = this.getSidebarLabel(page);
+    let items: FrontMatter = {
+      id: pageId,
+      title: pageTitle,
+    };
+    if (page.url === this.entryFile) {
       items = { ...items, slug: '/' + this.outFolder };
-      if (page.url !== page.project.url && this.sidebar?.readmeLabel) {
-        items = { ...items, title: this.sidebar.readmeLabel };
-      }
     }
-    if (this.sidebar) {
-      items = { ...items, sidebar_label: this.getSidebarLabel(page) };
+    if (this.sidebar && sidebarLabel !== pageTitle) {
+      items = { ...items, sidebar_label: sidebarLabel };
+    }
+    if (page.url === this.entryFile && page.url !== page.project.url) {
+      items = { ...items, hide_title: true };
     }
     return {
       ...items,
-      hide_title: true,
-    } as any;
+    };
+  }
+
+  getTitle(page: PageEvent) {
+    const globalsTitle = this.globalsTitle || page.project.name;
+    const readmeTitle = this.readmeTitle || page.project.name;
+    if (page.url === this.entryFile) {
+      return page.url === page.project.url ? globalsTitle : readmeTitle;
+    }
+    if (page.url === this.globalsFile) {
+      return globalsTitle;
+    }
+    return super.getTitle(page);
   }
 
   getSidebarLabel(page: PageEvent) {
-    if (page.model.name === page.project.name) {
+    if (page.url === this.entryFile) {
       return page.url === page.project.url
         ? this.sidebar?.globalsLabel
         : this.sidebar?.readmeLabel;
     }
 
-    const item =
-      page.navigation && page.navigation.children
-        ? this.findNavigationItem(page.navigation.children, page.url)
-        : undefined;
-
-    const getShortName = (title: string) => {
-      const longTitle = title.split('.');
-      return longTitle[longTitle.length - 1];
-    };
-
-    if (item) {
-      return this.sidebar && this.sidebar.fullNames
-        ? item.title
-        : getShortName(item.title);
+    if (page.url === this.globalsFile) {
+      return this.sidebar?.globalsLabel;
     }
-    return page.model.name;
-  }
 
-  findNavigationItem(
-    navigation: NavigationItem[],
-    url: string,
-    item?: NavigationItem,
-  ) {
-    navigation.forEach((navigationChild) => {
-      if (navigationChild.url === url) {
-        item = navigationChild;
-        return;
-      }
-      if (navigationChild.children) {
-        item = this.findNavigationItem(navigationChild.children, url, item);
-      }
-    });
-    return item;
+    return this.sidebar?.fullNames ? page.model.getFullName() : page.model.name;
   }
 }

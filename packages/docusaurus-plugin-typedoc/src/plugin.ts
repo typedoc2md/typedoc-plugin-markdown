@@ -18,7 +18,8 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     globalsLabel: 'Globals',
     readmeLabel: 'README',
   },
-  plugin: ['typedoc-plugin-markdown'],
+  globalsTitle: undefined,
+  readmeTitle: undefined,
 };
 
 let app: Application;
@@ -35,14 +36,6 @@ export default function pluginDocusaurus(
   const options = {
     ...DEFAULT_PLUGIN_OPTIONS,
     ...opts,
-    // deep merge plugin options
-    ...(opts.plugin && {
-      plugin: [
-        ...['typedoc-plugin-markdown'],
-        ...opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown'),
-      ],
-    }),
-    // deep merge sidebar
     ...(opts.sidebar && {
       sidebar: {
         ...DEFAULT_PLUGIN_OPTIONS.sidebar,
@@ -59,28 +52,33 @@ export default function pluginDocusaurus(
   if (!app) {
     app = new Application();
 
-    // configure typedoc options (remove docusaurus props and pass everything else to renderer)
+    // TypeDoc options
     const typedocOptions = Object.keys(options).reduce((option, key) => {
-      if (!['id', 'inputFiles', 'sidebar', 'out', 'docsRoot'].includes(key)) {
+      if (![...['id'], ...Object.keys(DEFAULT_PLUGIN_OPTIONS)].includes(key)) {
         option[key] = options[key];
       }
       return option;
     }, {});
 
-    // bootstrap typedoc app (pass in docusaurus theme file)
+    // bootstrap TypeDoc app
     app.bootstrap({
+      // filtered TypeDoc options
       ...typedocOptions,
+      // TypeDoc plugins
+      plugin: [
+        ...['typedoc-plugin-markdown'],
+        ...(opts.plugin
+          ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
+          : []),
+      ],
+      // add docusaurus theme
       theme: path.resolve(__dirname, 'theme'),
     });
 
     // add frontmatter component
     app.renderer.addComponent(
       'docusaurus-frontmatter',
-      new DocsaurusFrontMatterComponent(
-        app.renderer,
-        options.out,
-        options.sidebar,
-      ),
+      new DocsaurusFrontMatterComponent(app.renderer, options),
     );
 
     // return the generated reflections

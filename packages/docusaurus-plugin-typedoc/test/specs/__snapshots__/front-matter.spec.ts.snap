@@ -1,43 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FrontMatter: should return front matter with full names 1`] = `
+exports[`FrontMatter: (globals) should set custom globalsLabel and custom globalsTitle 1`] = `
+"---
+id: \\"globals\\"
+title: \\"Custom globals title\\"
+sidebar_label: \\"Custom globals label\\"
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (globals) should set default globals page 1`] = `
+"---
+id: \\"globals\\"
+title: \\"test-project-name\\"
+sidebar_label: \\"Globals\\"
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (globals) should set globals page when readme=none 1`] = `
+"---
+id: \\"index\\"
+title: \\"test-project-name\\"
+slug: \\"/api\\"
+sidebar_label: \\"Globals\\"
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (no sidebar) should return front matter without sidebar 1`] = `
+"---
+id: \\"globals\\"
+title: \\"test-project-name\\"
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (readme) should set custom readmeLabel and readmeTitle 1`] = `
+"---
+id: \\"index\\"
+title: \\"Custom readme title\\"
+slug: \\"/api\\"
+sidebar_label: \\"Custom readme label\\"
+hide_title: true
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (readme) should set default globals page 1`] = `
+"---
+id: \\"index\\"
+title: \\"test-project-name\\"
+slug: \\"/api\\"
+sidebar_label: \\"README\\"
+hide_title: true
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (readme) should set default index page 1`] = `
+"---
+id: \\"index\\"
+title: \\"test-project-name\\"
+slug: \\"/api\\"
+sidebar_label: \\"README\\"
+hide_title: true
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (readme) should set the same custom readmeLabel and readmeTitle 1`] = `
+"---
+id: \\"index\\"
+title: \\"Custom readme title\\"
+slug: \\"/api\\"
+hide_title: true
+---
+
+CONTENTS"
+`;
+
+exports[`FrontMatter: (reflection names) should return front matter with full names 1`] = `
 "---
 id: \\"_frontmatter_.frontmatterclass\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"frontmatter.FrontMatterClass\\"
-hide_title: true
 ---
 
 CONTENTS"
 `;
 
-exports[`FrontMatter: should return front matter without sidebar 1`] = `
-"---
-id: \\"_frontmatter_.frontmatterclass\\"
-title: \\"Class: FrontMatterClass\\"
-hide_title: true
----
-
-CONTENTS"
-`;
-
-exports[`FrontMatter: should return front with short names 1`] = `
+exports[`FrontMatter: (reflection names) should return reflection labels with short names 1`] = `
 "---
 id: \\"_frontmatter_.frontmatterclass\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"FrontMatterClass\\"
-hide_title: true
----
-
-CONTENTS"
-`;
-
-exports[`FrontMatter: should set slug for index page 1`] = `
-"---
-id: \\"index\\"
-title: \\"docusaurus-plugin-typedoc\\"
-slug: \\"/api\\"
-hide_title: true
 ---
 
 CONTENTS"
