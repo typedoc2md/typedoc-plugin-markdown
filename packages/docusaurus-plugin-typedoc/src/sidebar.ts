@@ -12,7 +12,6 @@ export function writeSidebar(
   sidebar: SidebarOptions,
   navigation: NavigationItem,
 ) {
-  // full path to sidebar
   const sidebarPath = path.resolve(siteDir, sidebar.sidebarFile);
 
   // if output check failed (docs not generated) then gracefully return empty sidebar
@@ -24,9 +23,7 @@ export function writeSidebar(
   // map the navigation object to a Docuaurus sidebar format
   const sidebarItems = navigation.children
     ? navigation.children.map((navigationItem) => {
-        if (navigationItem.url && navigationItem.children?.length === 0) {
-          return getUrlKey(outFolder, navigationItem.url);
-        } else {
+        if (navigationItem.isLabel) {
           const sidebarCategoryItems = navigationItem.children
             ? navigationItem.children.map((navItem) => {
                 const url = getUrlKey(outFolder, navItem.url);
@@ -52,6 +49,7 @@ export function writeSidebar(
             : [];
           return sidebarCategory(navigationItem.title, sidebarCategoryItems);
         }
+        return getUrlKey(outFolder, navigationItem.url);
       })
     : [];
 

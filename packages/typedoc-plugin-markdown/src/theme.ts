@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+
 import * as Handlebars from 'handlebars';
 import {
   BindOption,
@@ -14,6 +15,7 @@ import { ReflectionGroup, ReflectionKind } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+
 import { CommentsComponent } from './components/comments.component';
 import { HelperUtilsComponent } from './components/utils.component';
 
@@ -251,29 +253,13 @@ export default class MarkdownTheme extends Theme {
   }
 
   getNavigation(project: ProjectReflection): NavigationItem {
-    const entryPoint = this.getEntryPoint(project);
-    const hasSeperateGlobals = this.readme !== 'none';
-    const navigation = createNavigationItem(project.name);
-
-    navigation.children?.push(
-      createNavigationItem(
-        hasSeperateGlobals ? 'README' : 'Globals',
-        this.entryFile,
-      ),
-    );
-    if (hasSeperateGlobals) {
-      navigation.children?.push(
-        createNavigationItem('Globals', this.globalsFile),
-      );
-    }
-    if (entryPoint.groups) {
-      buildGroups(entryPoint.groups);
-    }
-    navigation.children?.sort(sortCallback);
-
-    function buildGroups(groups: ReflectionGroup[], level = 0) {
-      groups.forEach((reflectionGroup) => {
-        if (reflectionGroup.allChildrenHaveOwnDocument()) {
+    const buildNavigationGroups = (
+      navigation: NavigationItem,
+      groups: ReflectionGroup[],
+    ) => {
+      groups
+        .filter((group) => group.allChildrenHaveOwnDocument())
+        .forEach((reflectionGroup) => {
           let reflectionGroupItem = navigation.children?.find(
             (child) => child.title === reflectionGroup.title,
           );
@@ -283,7 +269,7 @@ export default class MarkdownTheme extends Theme {
           }
           reflectionGroup.children.forEach((reflectionGroupChild) => {
             const reflectionGroupChildItem = createNavigationItem(
-              reflectionGroupChild.getFullName().replace(/\"/g, ''),
+              reflectionGroupChild.getFullName(),
               reflectionGroupChild.url,
             );
             if (reflectionGroupItem) {
@@ -291,22 +277,22 @@ export default class MarkdownTheme extends Theme {
             }
             const reflection = reflectionGroupChild as ContainerReflection;
             if (reflection.groups) {
-              buildGroups(reflection.groups, level + 1);
+              buildNavigationGroups(navigation, reflection.groups);
             }
           });
-        }
-      });
-    }
+        });
+    };
 
-    function createNavigationItem(title: string, url?: string) {
+    const createNavigationItem = (title: string, url?: string) => {
       const navigationItem = new NavigationItem(title.replace(/\"/g, ''), url);
+      navigationItem.isLabel = !url;
       navigationItem.children = [];
       delete navigationItem.reflection;
-      delete navigationItem.isLabel;
+      delete navigationItem.parent;
       return navigationItem;
-    }
+    };
 
-    function sortCallback(a: NavigationItem, b: NavigationItem): number {
+    const sortNavigationGroups = (a: NavigationItem, b: NavigationItem) => {
       const weights = {
         ['Namespaces']: 1,
         ['Enumerations']: 2,
@@ -320,8 +306,25 @@ export default class MarkdownTheme extends Theme {
       const aWeight = weights[a.title] || 0;
       const bWeight = weights[b.title] || 0;
       return aWeight - bWeight;
+    };
+    const entryPoint = this.getEntryPoint(project);
+    const hasSeperateGlobals = this.readme !== 'none';
+    const navigation = createNavigationItem(project.name);
+    navigation.children?.push(
+      createNavigationItem(
+        hasSeperateGlobals ? 'README' : 'Globals',
+        this.entryFile,
+      ),
+    );
+    if (hasSeperateGlobals) {
+      navigation.children?.push(
+        createNavigationItem('Globals', this.globalsFile),
+      );
     }
-
+    if (entryPoint.groups) {
+      buildNavigationGroups(navigation, entryPoint.groups);
+    }
+    navigation.children?.sort(sortNavigationGroups);
     return navigation;
   }
 
@@ -396,5 +399,10 @@ export default class MarkdownTheme extends Theme {
   // the globals name
   get globalsFile() {
     return 'globals.md';
+  }
+
+  // contains a sidebar
+  get hasSidebar() {
+    return false;
   }
 }
