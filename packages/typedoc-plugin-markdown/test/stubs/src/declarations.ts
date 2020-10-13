@@ -79,6 +79,11 @@ export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');
 
 export type AnyFunctionType<A = any> = (...input: any[]) => A;
 
+export type SpecialCharacters = {
+  this_prop_has_underscores: number;
+  'this|prop|has|the|pipe|character': string;
+};
+
 export enum EnumDeclarations {
   Up = 'UP',
   Down = 'DOWN',

@@ -36,7 +36,7 @@ export function propertyTable(
         ? property.name === '`'
           ? '`'
           : escape(getName(property))
-        : `\`${escape(getName(property))}\``;
+        : `\`${getName(property).replace(/`/g, '\\`')}\``;
     nameCol.push(name);
     row.push(nameCol.join(' '));
 
