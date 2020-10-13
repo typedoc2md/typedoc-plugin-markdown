@@ -114,6 +114,6 @@ exports[`Reflections: should not escape charcters within markdown code 1`] = `
 Name | Type |
 ------ | ------ |
 \`this_prop_has_underscores\` | number |
-\`this|prop|has|the|pipe|character\` | string |
+this\\\\|prop\\\\|has\\\\|the\\\\|pipe\\\\|character | string |
 "
 `;
