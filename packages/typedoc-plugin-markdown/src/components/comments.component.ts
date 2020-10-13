@@ -193,7 +193,7 @@ export class CommentsComponent extends ContextAwareRendererComponent {
         if (this.urlPrefix.test(reflection.url)) {
           target = reflection.url;
         } else {
-          target = this.getRelativeUrl(reflection.url);
+          target = MarkdownTheme.HANDLEBARS.helpers.relativeURL(reflection.url);
         }
       } else {
         const fullName = (this.reflection || this.project)!.getFullName();
