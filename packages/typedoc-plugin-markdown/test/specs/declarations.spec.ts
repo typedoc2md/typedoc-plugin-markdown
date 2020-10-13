@@ -87,6 +87,15 @@ describe(`Reflections:`, () => {
     ).toMatchSnapshot();
   });
 
+  test(`should not escape charcters within markdown code`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('SpecialCharacters'),
+      ),
+    ).toMatchSnapshot();
+  });
+
   test(`should compile enum delcaration`, () => {
     expect(
       TestApp.compileTemplate(

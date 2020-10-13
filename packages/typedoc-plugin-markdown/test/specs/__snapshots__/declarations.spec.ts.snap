@@ -103,3 +103,17 @@ Name | Type |
 \`valueZ\` | string |
 "
 `;
+
+exports[`Reflections: should not escape charcters within markdown code 1`] = `
+"Ƭ  **SpecialCharacters**: { this_prop_has_underscores: number ; this|prop|has|the|pipe|character: string  }
+
+[partial: member.sources]
+
+#### Type declaration:
+
+Name | Type |
+------ | ------ |
+\`this_prop_has_underscores\` | number |
+this\\\\|prop\\\\|has\\\\|the\\\\|pipe\\\\|character | string |
+"
+`;

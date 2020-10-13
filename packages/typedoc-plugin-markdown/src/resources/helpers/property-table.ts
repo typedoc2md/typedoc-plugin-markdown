@@ -1,6 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
 import { ReflectionKind } from 'typedoc/dist/lib/models';
-
 import { comment } from './comment';
 import { escape } from './escape';
 import { stripLineBreaks } from './strip-line-breaks';
@@ -30,16 +29,12 @@ export function propertyTable(
       property.signatures || property.children ? property : property.type;
     const row: string[] = [];
     const nameCol: string[] = [];
-    const ignored = ['`', '~', '_', '|'];
     const name =
-      ignored.includes(property.name) || property.name.startsWith('<')
-        ? property.name === '`'
-          ? '`'
-          : escape(getName(property))
-        : `\`${escape(getName(property))}\``;
+      property.name.match(/[\\`\\|]/g) !== null
+        ? escape(getName(property))
+        : `\`${getName(property)}\``;
     nameCol.push(name);
     row.push(nameCol.join(' '));
-
     row.push(type.call(propertyType, kind === ReflectionKind.ObjectLiteral));
     if (hasValues) {
       row.push(
