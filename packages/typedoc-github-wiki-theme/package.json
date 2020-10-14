@@ -12,9 +12,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
-    "directory": "packages/typedoc-bitbucket-theme"
+    "directory": "packages/typedoc-github-wiki-theme"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-bitbucket-theme",
+  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-github-wiki-theme",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
