@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Theme: should getUrls' 1`] = `
+Array [
+  "Globals.md",
+  "Home.md",
+  "Module: \\"theme\\".md",
+  "Module: \\"theme\\".md#declarationitema",
+  "Module: \\"theme\\".md#declarationitemb",
+  "Module: \\"theme\\".md#functionitema",
+  "Module: \\"theme\\".md#functionitemb",
+  "Module: namespaceA.md",
+  "Module: namespaceB.md",
+  "enums: enumItemA.md",
+  "enums: enumItemB.md",
+  "Class: ClassItemA.md",
+  "Class: ClassItemB.md",
+  "Interface: InterfaceItemA.md",
+  "Interface: InterfaceItemA.md#prop",
+  "Interface: InterfaceItemB.md",
+  "Interface: InterfaceItemB.md#prop",
+]
+`;

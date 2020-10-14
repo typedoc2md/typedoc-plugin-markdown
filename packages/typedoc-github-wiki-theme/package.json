@@ -21,8 +21,7 @@
     "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
-    "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src --theme ./dist --disableOutputCheck  --ignoreCompilerErrors --out ../../../typedoc-plugin-markdown-playground.wiki",
-    "predemo": "cd ../../../typedoc-plugin-markdown-playground.wiki && rm -f *.md"
+    "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src --theme ./dist --disableOutputCheck  --ignoreCompilerErrors --out ./demo"
   },
   "author": "Thomas Grey",
   "license": "MIT",
