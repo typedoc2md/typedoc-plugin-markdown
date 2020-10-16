@@ -17,6 +17,7 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc/dist/lib/models/types';
+
 import MarkdownTheme from '../../theme';
 import { escape } from './escape';
 
@@ -150,14 +151,14 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          return `${param.flags.isRest ? '...' : ''}${param.name}${
+          return `${param.flags.isRest ? '...' : ''}${escape(param.name)}${
             param.flags.isOptional ? '?' : ''
           }: ${type.call(param.type ? param.type : param)}`;
         })
       : [];
     const returns = type.call(fn.type);
 
-    return typeParams + `(${params.join(',')}) => ${returns}`;
+    return typeParams + `(${params.join(', ')}) => ${returns}`;
   });
   return functions.join('');
 }
@@ -167,13 +168,13 @@ function getReferenceType(model: ReferenceType) {
     const reflection =
       model.reflection && model.reflection.url
         ? [
-            `[${
-              model.reflection.name
-            }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            `[${escape(
+              model.reflection.name,
+            )}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
               model.reflection.url,
             )})`,
           ]
-        : [model.name];
+        : [escape(model.name)];
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `\\<${model.typeArguments
@@ -183,7 +184,7 @@ function getReferenceType(model: ReferenceType) {
     }
     return reflection.join('');
   }
-  return model.name;
+  return escape(model.name);
 }
 
 function getArrayType(model: ArrayType) {
@@ -208,7 +209,7 @@ function getTupleType(model: TupleType) {
 }
 
 function getIntrinsicType(model: IntrinsicType) {
-  return model.name;
+  return escape(model.name);
 }
 
 function getStringLiteralType(model: StringLiteralType) {
@@ -224,15 +225,15 @@ function getQueryType(model: QueryType) {
 }
 
 function getTypeParameterType(model: TypeParameterType) {
-  return model.name;
+  return escape(model.name);
 }
 
 function getInferredType(model: InferredType) {
-  return `*infer* ${model.name}`;
+  return `*infer* ${escape(model.name)}`;
 }
 
 function getUnknownType(model: UnknownType) {
-  return model.name;
+  return escape(model.name);
 }
 
 function getConditionalType(model: ConditionalType) {

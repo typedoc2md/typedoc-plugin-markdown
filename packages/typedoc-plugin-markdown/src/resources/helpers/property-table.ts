@@ -1,5 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { ReflectionKind } from 'typedoc/dist/lib/models';
+
 import { comment } from './comment';
 import { escape } from './escape';
 import { stripLineBreaks } from './strip-line-breaks';
@@ -40,7 +41,7 @@ export function propertyTable(
       row.push(
         property.defaultValue
           ? escape(stripLineBreaks(property.defaultValue))
-          : escape(stripLineBreaks(type.call(propertyType))),
+          : stripLineBreaks(type.call(propertyType)),
       );
     }
 

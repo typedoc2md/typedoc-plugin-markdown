@@ -140,3 +140,5 @@ export const swtch = <T, R>(value: T, ...cases: [T, R][]) => (def: R) => {
 
   return def;
 };
+
+export type _someCallback_ = (name: string, value: unknown) => void;

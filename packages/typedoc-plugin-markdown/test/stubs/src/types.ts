@@ -1,3 +1,5 @@
+import { _someCallback_ } from './signatures';
+
 let stringType: string;
 
 const stringLiteralType = 'blue';
@@ -26,8 +28,12 @@ const objectLiteralType = {
   'prop|with|pipes': 'foo',
   'prop`with`backticks': 'foo',
   _: 'foo',
-  valueZ: 'foo',
-  valueY: function () {
+  valueZ: '_foo_',
+  valueY: function (
+    cbParam: _someCallback_,
+    unionParam: 'a' | 'b',
+    _undercoreParam_: string,
+  ) {
     return 'foo';
   },
   valueX: {
