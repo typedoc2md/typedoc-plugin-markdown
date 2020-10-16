@@ -63,9 +63,13 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
 
       project = app.convert(app.expandInputFiles(inputFiles));
 
-      if (project) {
-        app.generateDocs(project, out);
+      // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
+      if (!project) {
+        done = true;
+        return;
       }
+
+      app.generateDocs(project, out);
     },
 
     async enhanceAppFiles() {
