@@ -36,7 +36,7 @@ export function signatureTitle(this: SignatureReflection) {
             paramsmd.push('...');
           }
           paramsmd.push(`\`${param.name}`);
-          if (param.flags.isOptional) {
+          if (param.flags.isOptional || param.defaultValue) {
             paramsmd.push('?');
           }
           paramsmd.push(`\`: ${type.call(param.type)}`);
