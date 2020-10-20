@@ -46,7 +46,7 @@ exports[`Signatures: should compile signature with a flag' 1`] = `
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"▸ **functionWithDefaults**(\`valueA\`: string, \`valueB\`: number, \`valueC\`: number, \`valueD\`: boolean, \`valueE\`: boolean): string
+"▸ **functionWithDefaults**(\`valueA?\`: string, \`valueB?\`: number, \`valueC?\`: number, \`valueD?\`: boolean, \`valueE?\`: boolean, \`valueF?\`: string): string
 
 [partial: member.sources]
 
@@ -61,6 +61,7 @@ Name | Type | Default value | Description |
 \`valueC\` | number | Number.NaN | A parameter with a default NaN value. |
 \`valueD\` | boolean | true | A parameter with a default boolean value. |
 \`valueE\` | boolean | null | A parameter with a default null value.  |
+\`valueF\` | string | \\"\\\\<foo>\\" | - |
 
 **Returns:** string
 "
@@ -129,7 +130,7 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 
 Name | Default |
 ------ | ------ |
-\`Item\` | boolean \\\\| string |
+\`Item\` | boolean \\\\\\\\| string |
 
 **Returns:** boolean
 "

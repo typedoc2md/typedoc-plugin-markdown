@@ -1,6 +1,7 @@
 import { ParameterReflection, TypeParameterReflection } from 'typedoc';
 
 import { comment } from './comment';
+import { escape } from './escape';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
@@ -46,7 +47,7 @@ export function parameterTable(
     }
 
     if (showDefaults) {
-      row.push(getDefaultValue(parameter));
+      row.push(escape(getDefaultValue(parameter)));
     }
     if (hasComments) {
       if (parameter.comment) {

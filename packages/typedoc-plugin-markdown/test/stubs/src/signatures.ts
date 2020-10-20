@@ -52,6 +52,7 @@ export function functionWithDefaults(
   valueC: number = Number.NaN,
   valueD = true,
   valueE: boolean = null,
+  valueF = '<foo>',
 ): string {
   return valueA;
 }
