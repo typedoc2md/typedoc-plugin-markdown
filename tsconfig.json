@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "experimentalDecorators": true,
-    "lib": ["es2016", "dom"],
+    "lib": ["es2018", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": false,
@@ -10,6 +10,6 @@
     "removeComments": true,
     "sourceMap": false,
     "strictNullChecks": true,
-    "target": "es2017"
+    "target": "es2018"
   }
 }
