@@ -1,5 +1,6 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -19,13 +20,6 @@ export = (PluginHost: Application) => {
   app.options.addDeclaration({
     help: '[Markdown Plugin] Do not render breadcrumbs in template.',
     name: 'hideBreadcrumbs',
-    type: ParameterType.Boolean,
-    defaultValue: false,
-  });
-
-  app.options.addDeclaration({
-    help: '[Markdown Plugin] DEPRECATED - use --disableSources',
-    name: 'hideSources',
     type: ParameterType.Boolean,
     defaultValue: false,
   });

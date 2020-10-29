@@ -3,6 +3,7 @@ import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
+
 import MarkdownTheme from '../theme';
 
 @Component({ name: 'utils' })
@@ -18,9 +19,6 @@ export class HelperUtilsComponent extends ContextAwareRendererComponent {
 
   @BindOption('hideBreadcrumbs')
   hideBreadcrumbs!: boolean;
-
-  @BindOption('hideSources')
-  hideSources!: boolean;
 
   initialize() {
     super.initialize();
@@ -48,13 +46,6 @@ export class HelperUtilsComponent extends ContextAwareRendererComponent {
         ? options.inverse(this)
         : options.fn(this);
     });
-
-    MarkdownTheme.HANDLEBARS.registerHelper('ifShowSources', function (
-      options,
-    ) {
-      return component.hideSources ? options.inverse(this) : options.fn(this);
-    });
-
     MarkdownTheme.HANDLEBARS.registerHelper('ifShowProjectName', function (
       options,
     ) {
