@@ -15,7 +15,7 @@ describe(`Breadcrumbs:`, () => {
   describe(`(with readme)`, () => {
     beforeAll(() => {
       testApp.bootstrap();
-      moduleReflection = testApp.findModule('breadcrumbs');
+      moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');
     });
 
@@ -33,7 +33,7 @@ describe(`Breadcrumbs:`, () => {
       expect(
         Handlebars.helpers.breadcrumbs.call({
           project: testApp.project,
-          model: testApp.findEntryPoint(),
+          model: testApp.project,
           url: 'globals.md',
         }),
       ).toMatchSnapshot();
@@ -61,7 +61,7 @@ describe(`Breadcrumbs:`, () => {
   describe(`(without readme)`, () => {
     beforeAll(() => {
       testApp.bootstrap({ readme: 'none' });
-      moduleReflection = testApp.findModule('breadcrumbs');
+      moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');
     });
 

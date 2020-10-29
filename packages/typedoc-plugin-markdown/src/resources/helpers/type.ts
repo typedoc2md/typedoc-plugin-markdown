@@ -10,7 +10,6 @@ import {
   QueryType,
   ReferenceType,
   ReflectionType,
-  StringLiteralType,
   TupleType,
   TypeOperatorType,
   TypeParameterType,
@@ -27,7 +26,6 @@ export function type(
     | IntersectionType
     | IntrinsicType
     | ReferenceType
-    | StringLiteralType
     | TupleType
     | UnionType
     | TypeOperatorType
@@ -63,10 +61,6 @@ export function type(
 
   if (this instanceof IntrinsicType && this.name) {
     return getIntrinsicType(this);
-  }
-
-  if (this instanceof StringLiteralType && this.value) {
-    return getStringLiteralType(this);
   }
 
   if (this instanceof ReflectionType && this.declaration) {
@@ -210,10 +204,6 @@ function getTupleType(model: TupleType) {
 
 function getIntrinsicType(model: IntrinsicType) {
   return escape(model.name);
-}
-
-function getStringLiteralType(model: StringLiteralType) {
-  return `\\"${escape(model.value)}\\"`;
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {

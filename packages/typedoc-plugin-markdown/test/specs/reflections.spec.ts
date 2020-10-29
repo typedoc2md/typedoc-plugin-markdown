@@ -20,7 +20,7 @@ describe(`Reflections:`, () => {
     test(`should compile template with breadcrumbs and project title`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
-          model: testApp.findModule('reflections'),
+          model: testApp.project.children[0],
           project: testApp.project,
         }),
       ).toMatchSnapshot();
@@ -38,7 +38,7 @@ describe(`Reflections:`, () => {
     test(`should compile module with breadcrumbs and project title`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
-          model: testApp.findModule('reflections'),
+          model: testApp.project.children[0],
           project: testApp.project,
         }),
       ).toMatchSnapshot();

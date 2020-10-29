@@ -1,8 +1,7 @@
 {
-  "inputFiles": "./test/stubs",
-  "target": "ES5",
+  "entryPoints": ["./test/stubs/src/index.ts"],
   "includes": "./test/stubs/inc/",
   "media": "./test/stubs/media/",
-  "ignoreCompilerErrors": true,
-  "includeVersion": true
+  "includeVersion": true,
+  "tsconfig": "./test/stubs/tsconfig.json"
 }

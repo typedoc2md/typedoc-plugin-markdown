@@ -9,5 +9,6 @@
     "noUnusedParameters": false,
     "strictNullChecks": false,
     "target": "es2015"
-  }
+  },
+  "include": ["**/*.ts"]
 }

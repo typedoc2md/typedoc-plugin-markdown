@@ -1,7 +1,7 @@
-const stringWithDefaultValueDeclaration = 'variable';
-let undefinedNumberDeclaration: number;
+export const stringWithDefaultValueDeclaration = 'variable';
+export let undefinedNumberDeclaration: number;
 
-const objectLiteralDeclaration = {
+export const objectLiteralDeclaration = {
   /**
    * Comment for valueZ
    */
@@ -27,11 +27,11 @@ const objectLiteralDeclaration = {
   valueC: {},
 };
 
-const objectLiteral2Declaration = {
+export const objectLiteral2Declaration = {
   valueA: () => {},
 };
 
-let typeLiteralDeclaration: {
+export let typeLiteralDeclaration: {
   /**
    * Comment for valueZ
    */
@@ -55,12 +55,12 @@ let typeLiteralDeclaration: {
   valueB?: boolean;
 };
 
-let typeLiteralDeclarationWithFunction: {
+export let typeLiteralDeclarationWithFunction: {
   (): string;
   valueZ: string;
 };
 
-const objectLiteralAsConstDeclaration = {
+export const objectLiteralAsConstDeclaration = {
   /**
    * comments
    */

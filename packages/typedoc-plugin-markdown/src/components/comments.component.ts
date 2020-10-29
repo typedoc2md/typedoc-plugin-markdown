@@ -1,13 +1,16 @@
 import * as fs from 'fs';
-import * as Handlebars from 'handlebars';
 import * as path from 'path';
-import { BindOption, MarkedLinksPlugin, Reflection } from 'typedoc';
+import * as Util from 'util';
+
+import * as Handlebars from 'handlebars';
+import { BindOption, Reflection } from 'typedoc';
 import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
-import * as Util from 'util';
+import { MarkedLinksPlugin } from 'typedoc/dist/lib/output/plugins';
+
 import MarkdownTheme from '../theme';
 
 /**

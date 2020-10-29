@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+
 import { TestApp } from '../test-app';
 
 describe(`Theme:`, () => {
@@ -44,7 +45,7 @@ describe(`Theme:`, () => {
       directoryListingSpy.mockReturnValue([
         '.DS_Store',
         'README.md',
-        'globals.md',
+        'modules.md',
         'classes',
         'enums',
         'interfaces',

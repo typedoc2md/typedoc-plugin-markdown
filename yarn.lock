@@ -3805,6 +3805,11 @@ highlight.js@^10.0.0:
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.2.0.tgz#367151bcf813adebc54822f1cb51d2e1e599619f"
   integrity sha512-OryzPiqqNCfO/wtFo619W+nPYALM6u7iCQkum4bqRmmlcTikOkmlL06i009QelynBPAlNByTQU6cBB2cOBQtCw==
 
+highlight.js@^10.3.1:
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.3.1.tgz#3ca6bf007377faae347e8135ff25900aac734b9a"
+  integrity sha512-jeW8rdPdhshYKObedYg5XGbpVgb1/DT4AHvDFXhkU7UnGSIjy9kkJ7zHG7qplhFHMitTSzh5/iClKQk3Kb2RFQ==
+
 hosted-git-info@^2.1.4, hosted-git-info@^2.7.1:
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
@@ -5157,6 +5162,11 @@ marked@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/marked/-/marked-1.1.1.tgz#e5d61b69842210d5df57b05856e0c91572703e6a"
   integrity sha512-mJzT8D2yPxoPh7h0UXkB+dBj4FykPJ2OIfxAWeIHrvoHDkFxukV/29QxoFQoPM6RLEwhIFdJpmKBlqVM3s2ZIw==
+
+marked@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-1.2.2.tgz#5d77ffb789c4cb0ae828bfe76250f7140b123f70"
+  integrity sha512-5jjKHVl/FPo0Z6ocP3zYhKiJLzkwJAw4CZoLjv57FkvbUuwOX4LIBBGGcXjAY6ATcd1q9B8UTj5T9Umauj0QYQ==
 
 memorystream@^0.3.1:
   version "0.3.1"
@@ -7475,6 +7485,28 @@ typedoc-default-themes@^0.11.1:
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.11.3.tgz#702df91d2db06d8d3499ab0bde456bf774ca914f"
   integrity sha512-SwyN188QGNA2iFS5mdWYTGzohKqJ1PWAXVmGolKnVc2NnpX234FEPF2nUvEg+O9jjwAu7ZSVZ5UrZri0raJOjQ==
+
+typedoc-default-themes@beta:
+  version "0.12.0-beta.4"
+  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.0-beta.4.tgz#5f6497f07e707c917cd42ea04bbb0261cdb53fbf"
+  integrity sha512-WQk7FDARYRAC43Cm2qgIu+GBcxYDFi3Id2ncG9QuAz2eNVWD4h6HywRMV98gEPy6J2kqH2rsfm2uvnjUjDpidA==
+
+typedoc@0.20.0-beta.4:
+  version "0.20.0-beta.4"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.20.0-beta.4.tgz#d7f8f2c7e4666b074137c9da5ea9190077717616"
+  integrity sha512-m+hxadhqIi6wKsO2zlrl2zHyaUDuaZi/9tW1k15g94tauR+G2WU6f7TEZzSZiedV2ag4OyruGvIYD+PAbcAVaQ==
+  dependencies:
+    fs-extra "^9.0.1"
+    handlebars "^4.7.6"
+    highlight.js "^10.3.1"
+    lodash "^4.17.20"
+    lunr "^2.3.9"
+    marked "^1.2.2"
+    minimatch "^3.0.0"
+    progress "^2.0.3"
+    semver "^7.3.2"
+    shelljs "^0.8.4"
+    typedoc-default-themes beta
 
 typedoc@^0.19.1:
   version "0.19.1"

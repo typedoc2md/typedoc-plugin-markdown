@@ -1,7 +1,8 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../test-app';
 
-describe(`Options:`, () => {
+describe(`Utils:`, () => {
   let testApp: TestApp;
   beforeAll(() => {
     testApp = new TestApp(['breadcrumbs.ts']);
