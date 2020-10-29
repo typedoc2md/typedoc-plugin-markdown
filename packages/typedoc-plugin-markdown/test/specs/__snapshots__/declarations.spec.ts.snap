@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Reflections: should compile a an udefined 1`] = `
+exports[`Declarations: should compile a an udefined 1`] = `
 "• \`Let\` **undefinedNumberDeclaration**: number
 
 [partial: member.sources]
 "
 `;
 
-exports[`Reflections: should compile a variable with default value 1`] = `
-"• \`Const\` **stringWithDefaultValueDeclaration**: \\\\\\"variable\\\\\\" = \\"variable\\"
+exports[`Declarations: should compile a variable with default value 1`] = `
+"• \`Const\` **stringWithDefaultValueDeclaration**: \\"variable\\" = \\"variable\\"
 
 [partial: member.sources]
 "
 `;
 
-exports[`Reflections: should compile any function type 1`] = `
+exports[`Declarations: should compile any function type 1`] = `
 "Ƭ  **AnyFunctionType**\\\\<A>: (...input: any[]) => A
 
 [partial: member.sources]
@@ -27,21 +27,21 @@ Name | Default |
 "
 `;
 
-exports[`Reflections: should compile declaration with double underscores in name and value 1`] = `
-"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: unique symbol = Symbol.for('\\\\_\\\\_type\\\\_\\\\_')
+exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
+"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: *typeof* [\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_](../modules.md#__double_underscores_declaration__) = Symbol.for('\\\\_\\\\_type\\\\_\\\\_')
 
 [partial: member.sources]
 "
 `;
 
-exports[`Reflections: should compile enum delcaration 1`] = `
+exports[`Declarations: should compile enum delcaration 1`] = `
 "•  **Down**:  = \\"DOWN\\"
 
 [partial: member.sources]
 "
 `;
 
-exports[`Reflections: should compile object literal cast as a const 1`] = `
+exports[`Declarations: should compile object literal cast as a const 1`] = `
 "• \`Const\` **objectLiteralAsConstDeclaration**: object = { Prop1: 'Prop1', Prop2: 'Prop1', Prop3: 'Prop1',} as const
 
 [partial: member.sources]
@@ -50,13 +50,13 @@ exports[`Reflections: should compile object literal cast as a const 1`] = `
 
 Name | Type | Description |
 ------ | ------ | ------ |
-\`Prop1\` | \\\\\\"Prop1\\\\\\" | comments |
-\`Prop2\` | \\\\\\"Prop1\\\\\\" | comments |
-\`Prop3\` | \\\\\\"Prop1\\\\\\" | comments |
+\`Prop1\` | \\"Prop1\\" | comments |
+\`Prop2\` | \\"Prop1\\" | comments |
+\`Prop3\` | \\"Prop1\\" | comments |
 "
 `;
 
-exports[`Reflections: should compile object literal declaration 1`] = `
+exports[`Declarations: should compile object literal declaration 1`] = `
 "▪ \`Const\` **objectLiteralDeclaration**: object
 
 [partial: member.sources]
@@ -70,11 +70,11 @@ Name | Type | Value | Description |
 \`valueC\` | object | {} | - |
 \`valueZ\` | string | \\"foo\\" | Comment for valueZ |
 \`valueY\` | function | () => string | Comment for value Y |
-\`valueX\` | object | { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\" } | Comment for valueX |
+\`valueX\` | object | { valueA: number[][] = [100, 200, 300]; valueZ: string = \\"foo\\" } | Comment for valueX |
 "
 `;
 
-exports[`Reflections: should compile type literal declaration 1`] = `
+exports[`Declarations: should compile type literal declaration 1`] = `
 "• \`Let\` **typeLiteralDeclaration**: object
 
 [partial: member.sources]
@@ -91,7 +91,7 @@ Name | Type | Description |
 "
 `;
 
-exports[`Reflections: should compile type literal declaration 2`] = `
+exports[`Declarations: should compile type literal declaration 2`] = `
 "• \`Let\` **typeLiteralDeclarationWithFunction**: () => string
 
 [partial: member.sources]
@@ -104,7 +104,7 @@ Name | Type |
 "
 `;
 
-exports[`Reflections: should not escape charcters within markdown code 1`] = `
+exports[`Declarations: should not escape charcters within markdown code 1`] = `
 "Ƭ  **SpecialCharacters**: { this_prop_has_underscores: number ; this|prop|has|the|pipe|character: string  }
 
 [partial: member.sources]

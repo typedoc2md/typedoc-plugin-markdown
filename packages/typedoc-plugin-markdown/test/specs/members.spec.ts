@@ -9,6 +9,7 @@ describe(`Members:`, () => {
   beforeAll(() => {
     testApp = new TestApp(['members.ts']);
     testApp.bootstrap();
+
     TestApp.stubPartials(['member', 'index', 'member.sources']);
     TestApp.stubHelpers(['relativeURL']);
     membersPartial = TestApp.getPartial('members');

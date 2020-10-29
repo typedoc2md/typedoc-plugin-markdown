@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs: (with readme) should compile README breadcrumbs' 1`] = `"[Globals](../globals.md)"`;
+exports[`Breadcrumbs: (with readme) should compile README breadcrumbs' 1`] = `"['Modules](../modules.md)"`;
 
-exports[`Breadcrumbs: (with readme) should compile class breadcrumbs' 1`] = `"[Globals](../globals.md) / [\\"breadcrumbs\\"](../modules/_breadcrumbs_.md) / Breadcrumbs"`;
+exports[`Breadcrumbs: (with readme) should compile class breadcrumbs' 1`] = `"['Modules](../modules.md) / Breadcrumbs"`;
 
-exports[`Breadcrumbs: (with readme) should compile entryPoint (globals) breadcrumbs' 1`] = `"Globals"`;
+exports[`Breadcrumbs: (with readme) should compile entryPoint (globals) breadcrumbs' 1`] = `"['Modules](../modules.md)"`;
 
-exports[`Breadcrumbs: (with readme) should compile module breadcrumbs' 1`] = `"[Globals](../globals.md) / \\"breadcrumbs\\""`;
+exports[`Breadcrumbs: (with readme) should compile module breadcrumbs' 1`] = `"['Modules](../modules.md) / Breadcrumbs"`;
 
-exports[`Breadcrumbs: (without readme) should compile class breadcrumbs' 1`] = `"[Globals](../README.md) / [\\"breadcrumbs\\"](../modules/_breadcrumbs_.md) / Breadcrumbs"`;
+exports[`Breadcrumbs: (without readme) should compile class breadcrumbs' 1`] = `"['Modules](../README.md) / Breadcrumbs"`;
 
-exports[`Breadcrumbs: (without readme) should compile module breadcrumbs' 1`] = `"[Globals](../README.md) / \\"breadcrumbs\\""`;
+exports[`Breadcrumbs: (without readme) should compile module breadcrumbs' 1`] = `"['Modules](../README.md) / Breadcrumbs"`;

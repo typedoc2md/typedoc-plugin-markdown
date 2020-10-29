@@ -14,7 +14,7 @@
     "build-and-test": "npm run build && npm run test",
     "fixtures": "node ./tasks/fixtures.js",
     "demos": "rm -rf ./demo && npm run build && npm-run-all demo:*",
-    "demo:md": "typedoc --options ./demo.options.json --out ./demo/md ",
+    "demo:md": "typedoc --options ./demo.options.json --out ./demo/md",
     "demo:html": "typedoc --options ./demo.options.json --plugin none --out ./demo/html"
   },
   "author": "Thomas Grey",
@@ -40,13 +40,13 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.19.0"
+    "typedoc": ">=0.20.0"
   },
   "dependencies": {
     "handlebars": "^4.7.6"
   },
   "devDependencies": {
-    "typedoc": "^0.19.1",
+    "typedoc": "0.20.0-beta.4",
     "typescript": "^4.0.2"
   }
 }

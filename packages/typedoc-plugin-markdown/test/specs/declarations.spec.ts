@@ -1,7 +1,8 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../test-app';
 
-describe(`Reflections:`, () => {
+describe(`Declarations:`, () => {
   let testApp: TestApp;
 
   let template: Handlebars.TemplateDelegate;

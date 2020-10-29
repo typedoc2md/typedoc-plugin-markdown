@@ -103,20 +103,18 @@ export default class MarkdownTheme extends Theme {
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
-    const entryPoint = this.getEntryPoint(project);
-
     if (this.readme === 'none') {
-      entryPoint.url = this.entryFile;
+      project.url = this.entryFile;
       urls.push(
-        new UrlMapping(this.entryFile, { ...entryPoint }, 'reflection.hbs'),
+        new UrlMapping(this.entryFile, { ...project }, 'reflection.hbs'),
       );
     } else {
-      entryPoint.url = this.globalsFile;
-      urls.push(new UrlMapping(this.globalsFile, entryPoint, 'reflection.hbs'));
+      project.url = this.globalsFile;
+      urls.push(new UrlMapping(this.globalsFile, project, 'reflection.hbs'));
       urls.push(new UrlMapping(this.entryFile, project, 'index.hbs'));
     }
-    if (entryPoint.children) {
-      entryPoint.children.forEach((child: Reflection) => {
+    if (project.children) {
+      project.children.forEach((child: Reflection) => {
         if (child instanceof DeclarationReflection) {
           this.buildUrls(child, urls);
         }
@@ -225,33 +223,6 @@ export default class MarkdownTheme extends Theme {
     return reflectionId;
   }
 
-  /**
-   * Copy of default theme DefaultTheme.getEntryPoint
-   * @param project
-   */
-  getEntryPoint(project: ProjectReflection): ContainerReflection {
-    const entryPoint = this.owner.entryPoint;
-    if (entryPoint) {
-      const reflection = project.getChildByName(entryPoint);
-      if (reflection) {
-        if (reflection instanceof ContainerReflection) {
-          return reflection;
-        } else {
-          this.application.logger.warn(
-            'The given entry point `%s` is not a container.',
-            entryPoint,
-          );
-        }
-      } else {
-        this.application.logger.warn(
-          'The entry point `%s` could not be found.',
-          entryPoint,
-        );
-      }
-    }
-    return project;
-  }
-
   getNavigation(project: ProjectReflection): NavigationItem {
     const buildNavigationGroups = (
       navigation: NavigationItem,
@@ -307,7 +278,6 @@ export default class MarkdownTheme extends Theme {
       const bWeight = weights[b.title] || 0;
       return aWeight - bWeight;
     };
-    const entryPoint = this.getEntryPoint(project);
     const hasSeperateGlobals = this.readme !== 'none';
     const navigation = createNavigationItem(project.name);
     navigation.children?.push(
@@ -321,8 +291,8 @@ export default class MarkdownTheme extends Theme {
         createNavigationItem('Globals', this.globalsFile),
       );
     }
-    if (entryPoint.groups) {
-      buildNavigationGroups(navigation, entryPoint.groups);
+    if (project.groups) {
+      buildNavigationGroups(navigation, project.groups);
     }
     navigation.children?.sort(sortNavigationGroups);
     return navigation;
@@ -398,7 +368,7 @@ export default class MarkdownTheme extends Theme {
 
   // the globals name
   get globalsFile() {
-    return 'globals.md';
+    return 'modules.md';
   }
 
   // contains a sidebar

@@ -57,11 +57,9 @@ ___
 `;
 
 exports[`Members: (member) should compile reference members' 1`] = `
-"### ReferenceMember
+"•  **ReferenceMember**: {}
 
-Renames and exports: [NotExportedClass]([helper: relativeURL])
-
-___
+[partial: member.sources]
 "
 `;
 
@@ -79,16 +77,6 @@ exports[`Members: (members) should compile class members' 1`] = `
 `;
 
 exports[`Members: (members) should compile module members' 1`] = `
-"## References
-
-[partial: member]
-
-## Variables
-
-[partial: member]
-
-## Functions
-
-[partial: member]
+"
 "
 `;

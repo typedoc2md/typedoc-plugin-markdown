@@ -5,7 +5,7 @@ exports[`Reflections: (header) should compile template with breadcrumbs and proj
 
 > [helper: breadcrumbs]
 
-# Module: \\"reflections\\"
+# Enumeration: EnumReflection
 
 [partial: index]
 [partial: members]
@@ -47,7 +47,7 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 `;
 
 exports[`Reflections: (template) should compile module with breadcrumbs and project title 1`] = `
-"# Module: \\"reflections\\"
+"# Enumeration: EnumReflection
 
 [partial: index]
 [partial: members]

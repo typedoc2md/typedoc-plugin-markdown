@@ -2,7 +2,7 @@
 
 exports[`FrontMatter: should prepend YAML block to start of page 1`] = `
 "---
-id: \\"_frontmatter_.frontmatterclass\\"
+id: \\"frontmatterclass\\"
 title: \\"Class: FrontMatterClass\\"
 ---
 

@@ -5,12 +5,14 @@ import * as Handlebars from 'handlebars';
 import * as tmp from 'tmp';
 import {
   Application,
+  ArgumentsReader,
   DeclarationReflection,
   ProjectReflection,
   Renderer,
+  TSConfigReader,
+  TypeDocReader,
   UrlMapping,
 } from 'typedoc';
-import { ModuleKind, ScriptTarget } from 'typescript';
 
 import MarkdownTheme from '../src/theme';
 
@@ -23,7 +25,7 @@ export class TestApp {
   theme: MarkdownTheme;
   outDir: string;
   tmpobj: tmp.DirResult;
-  inputFiles: string[];
+  entryPoints: string[];
 
   static handlebarsOptionsStub = {
     fn: () => true,
@@ -99,38 +101,46 @@ export class TestApp {
     return expectedUrls;
   }
 
-  constructor(inputFiles?: string[]) {
+  constructor(entryPoints?: string[]) {
     this.app = new Application();
-    this.inputFiles = inputFiles
-      ? inputFiles.map((inputFile: string) => './test/stubs/src/' + inputFile)
+    this.entryPoints = entryPoints
+      ? entryPoints.map((inputFile: string) => './test/stubs/src/' + inputFile)
       : ['./test/stubs/src'];
+    this.app.options.addReader(new ArgumentsReader(0));
+    this.app.options.addReader(new TypeDocReader());
+    this.app.options.addReader(new TSConfigReader());
+    this.app.options.addReader(new ArgumentsReader(300));
   }
 
   bootstrap(options = {}) {
     this.app.bootstrap({
-      module: ModuleKind.CommonJS,
-      target: ScriptTarget.ES5,
       logger: 'none',
-      disableOutputCheck: true,
+      entryPoints: this.entryPoints,
       plugin: [path.join(__dirname, '../dist/index')],
+      tsconfig: path.join(__dirname, 'stubs', 'tsconfig.json'),
       ...options,
     });
 
-    this.project = this.app.convert(this.app.expandInputFiles(this.inputFiles));
+    this.project = this.app.convert();
     this.renderer = this.app.renderer;
     this.tmpobj = tmp.dirSync();
+    this.app.options.setValue(
+      'entryPoints',
+      this.app.expandInputFiles(this.entryPoints),
+    );
+
     this.app.generateDocs(this.project, this.tmpobj.name);
     this.theme = this.app.renderer.theme as MarkdownTheme;
   }
 
   findModule(name: string) {
-    return this.findEntryPoint().groups[0].children.find(
+    return this.project.children.find(
       (child) => child.name.replace(/\"/g, '') === name,
     );
   }
 
   findEntryPoint() {
-    return this.theme.getEntryPoint(this.project);
+    return this.project;
   }
 
   findReflection(name: string) {

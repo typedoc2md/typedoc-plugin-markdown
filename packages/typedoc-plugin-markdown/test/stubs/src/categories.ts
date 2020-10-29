@@ -1,72 +1,72 @@
 /**
  * @category CategoryA
  */
-const categoryVariableA1 = true;
+export const categoryVariableA1 = true;
 
 /**
  * @category CategoryA
  */
-const categoryVariableA2 = true;
+export const categoryVariableA2 = true;
 
 /**
  * @category CategoryA
  */
-function categoryFunctionA1() {
+export function categoryFunctionA1() {
   return true;
 }
 
 /**
  * @category CategoryA
  */
-function categoryFunctionA2() {
+export function categoryFunctionA2() {
   return true;
 }
 
 /**
  * @category CategoryA
  */
-function categoryFunctionA3() {
+export function categoryFunctionA3() {
   return true;
 }
 
 /**
  * @category CategoryA
  */
-interface CategoryInterfaceA1 {
+export interface CategoryInterfaceA1 {
   value: string;
 }
 
 /**
  * @category CategoryA
  */
-interface CategoryInterfaceA2 {
+export interface CategoryInterfaceA2 {
   value: string;
 }
 
 /**
  * @category CategoryB
  */
-const categoryVariableB1 = true;
+export const categoryVariableB1 = true;
 
 /**
  * @category CategoryB
  */
-function categoryFunctionB2() {
+export function categoryFunctionB2() {
   return true;
 }
 
-const otherVariableA = true;
+export const otherVariableA = true;
 
-function otherFunctionA() {
+export function otherFunctionA() {
   return true;
 }
 
-const otherVariableB = true;
+export const otherVariableB = true;
 
-function otherFunctionB() {
+export function otherFunctionB() {
   return true;
 }
 
-interface OtherInterfaceA {
+export interface OtherInterfaceA {
   value: string;
 }

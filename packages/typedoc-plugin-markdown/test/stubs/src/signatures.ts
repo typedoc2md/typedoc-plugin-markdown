@@ -101,20 +101,20 @@ export interface CallableSignature {
   (): string;
 }
 
-function functionWithNamedParams({ x: number, b: string }) {
+export function functionWithNamedParams({ x: number, b: string }) {
   return '';
 }
 
 /**
  * @private
  */
-function privateFunction() {
+export function privateFunction() {
   return '';
 }
 
 export const functionWithTypeParams = <Item = boolean | string>() => true;
 
-function functionReturningAnObject() {
+export function functionReturningAnObject() {
   return { x: 1, y: 2 };
 }
 
