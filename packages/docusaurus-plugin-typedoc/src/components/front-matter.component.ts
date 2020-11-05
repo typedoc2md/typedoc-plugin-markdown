@@ -12,7 +12,7 @@ export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
   readmeTitle?: string;
   globalsTitle?: string;
   entryFile = 'index.md';
-  globalsFile = 'globals.md';
+  globalsFile = 'modules.md';
 
   constructor(renderer: Renderer, options: PluginOptions) {
     super(renderer);

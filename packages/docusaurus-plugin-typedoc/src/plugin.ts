@@ -1,7 +1,7 @@
 import * as path from 'path';
 
 import { LoadContext } from '@docusaurus/types';
-import { Application } from 'typedoc';
+import { Application, TSConfigReader, TypeDocReader } from 'typedoc';
 
 import { DocsaurusFrontMatterComponent } from './components/front-matter.component';
 import { writeSidebar } from './sidebar';
@@ -9,14 +9,13 @@ import DocusaurusTheme from './theme/theme';
 import { PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
-  inputFiles: ['../src/'],
   docsRoot: 'docs',
   out: 'api',
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
-    globalsLabel: 'Globals',
-    readmeLabel: 'README',
+    globalsLabel: 'Exports',
+    readmeLabel: 'Readme',
   },
   globalsTitle: undefined,
   readmeTitle: undefined,
@@ -60,6 +59,9 @@ export default function pluginDocusaurus(
       return option;
     }, {});
 
+    app.options.addReader(new TypeDocReader());
+    app.options.addReader(new TSConfigReader());
+
     // bootstrap TypeDoc app
     app.bootstrap({
       // filtered TypeDoc options
@@ -76,13 +78,14 @@ export default function pluginDocusaurus(
     });
 
     // add frontmatter component
+
     app.renderer.addComponent(
       'docusaurus-frontmatter',
       new DocsaurusFrontMatterComponent(app.renderer, options),
     );
 
     // return the generated reflections
-    const project = app.convert(app.expandInputFiles(options.inputFiles));
+    const project = app.convert();
 
     // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
     if (!project) {
@@ -100,6 +103,7 @@ export default function pluginDocusaurus(
     app.generateDocs(project, outputDirectory);
 
     // write the sidebar (if applicable)
+
     if (options.sidebar) {
       const theme = app.renderer.getComponent('theme') as DocusaurusTheme;
       writeSidebar(

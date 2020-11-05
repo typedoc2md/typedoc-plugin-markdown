@@ -90,7 +90,7 @@ export class CommentClass {
   }
 }
 
-const objectWithBlockComments = {
+export const objectWithBlockComments = {
   /**
    * Comment 1
    *

@@ -1,5 +1,4 @@
 export interface PluginOptions {
-  inputFiles: string[];
   docsRoot: string;
   out: string;
   sidebar: SidebarOptions | null;

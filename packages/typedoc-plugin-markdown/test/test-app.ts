@@ -104,7 +104,9 @@ export class TestApp {
   constructor(entryPoints?: string[]) {
     this.app = new Application();
     this.entryPoints = entryPoints
-      ? entryPoints.map((inputFile: string) => './test/stubs/src/' + inputFile)
+      ? entryPoints.map((inputFile: string) =>
+          path.join(__dirname, './stubs/src/' + inputFile),
+        )
       : ['./test/stubs/src'];
     this.app.options.addReader(new ArgumentsReader(0));
     this.app.options.addReader(new TypeDocReader());
@@ -124,10 +126,6 @@ export class TestApp {
     this.project = this.app.convert();
     this.renderer = this.app.renderer;
     this.tmpobj = tmp.dirSync();
-    this.app.options.setValue(
-      'entryPoints',
-      this.app.expandInputFiles(this.entryPoints),
-    );
 
     this.app.generateDocs(this.project, this.tmpobj.name);
     this.theme = this.app.renderer.theme as MarkdownTheme;

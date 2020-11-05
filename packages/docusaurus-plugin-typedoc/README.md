@@ -1,4 +1,4 @@
-# docusaurus-plugin-typedoc [beta]
+# docusaurus-plugin-typedoc
 
 A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc) and the [Markdown plugin](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
 
@@ -30,29 +30,33 @@ module.exports = {
   plugins: [
     [
       'docusaurus-plugin-typedoc',
-      {
-        // Plugin options
-        inputFiles: ['../src/'],
 
-        // TypeDoc options (see typedoc --help)
-        mode: 'file',
+      // Plugin / TypeDoc options (see typedoc --help)
+      {
+        entryPoints: ['../src/index.ts'],
+        tsconfig: '../tsconfig.json'
       },
     ],
   ],
 };
 ```
 
-## Plugin Options
+## Options
 
-### inputFiles
+### TypeDoc options
 
-List of input files relative to the root directory.
+At a minimum the `entryPoints` and `tsconfig` options will need to be set.
 
 ```js
-inputFiles: [../src]
+entryPoints: ['../src/index.ts'],
+tsconfig: '../tsconfig.json'
 ```
 
-### docsRoot
+Please refer to [TypeDoc]() for further options.
+
+### Plugin options
+
+#### docsRoot
 
 Docs directory relative to the the root directory. Defaults to `"docs"`.
 
@@ -60,7 +64,7 @@ Docs directory relative to the the root directory. Defaults to `"docs"`.
 docsRoot: 'docs',
 ```
 
-### out
+#### out
 
 Output directory relative to docs directory. Defaults to `"api"`.
 
@@ -68,7 +72,7 @@ Output directory relative to docs directory. Defaults to `"api"`.
 out: 'api',
 ```
 
-### sidebar
+#### sidebar
 
 Options object for auto generated sidebar. Pass `null` to skip generation completely.
 
@@ -82,21 +86,9 @@ Options object for auto generated sidebar. Pass `null` to skip generation comple
 
 - **readmeLabel**
 
-  The label of the README sidebar item. Default to `"README"`.
+  The label of the README sidebar item. Default to `"Readme"`.
   _Ignored if `readme=none`_.
 
-- **globalsLabel**
-
-  The label of the "Globals" sidebar item Default to `"Globals"`.
-
-```js
-sidebar: {
-  sidebarFile: 'typedoc-sidebar.js',
-  fullNames: false,
-  readmeLabel: 'README',
-  globalsLabel: 'Globals',
-}
-```
 
 To consume the sidebar, update `sidebars.js` (or equivalent entry sidebars file) and require the generated sidebar:
 
@@ -109,22 +101,6 @@ module.exports = {
 };
 ```
 
-### readmeTitle
-
-The Front Matter `title` of the README page. This option will update the document title but does not change the inline h1 title, which is derived from the project README file. Defaults to `"{project_name}"`. _Ignored if `readme=none`_.
-
-```js
-readmeTitle: 'Introduction';
-```
-
-### globalsTitle
-
-The Front Matter `title` of the globals page. This option also updates the inline h1 title. Defaults to `"{project_name}"`.
-
-```js
-globalsTitle: 'Overview';
-```
-
 ## Full example
 
 ```js
@@ -133,31 +109,22 @@ module.exports = {
     [
       'docusaurus-plugin-typedoc',
       {
+        // TypeDoc options
+        entryPoints: ['../src/index.ts'],
+        tsconfig: '../tsconfig.json',
+        plugin: ['some-typedoc-plugin'],
+
         // Plugin options
-        inputFiles: ['../src/'],
         docsRoot: 'docs',
         out: 'api',
         sidebar: {
-          sidebarFile: 'typedoc-sidebar.js'
-          readmeLabel: 'README'
-          globalsLabel: 'Globals',
-          fullNames: false,
+          sidebarFile: 'some-sidebar.js'
+          fullNames: true,
+          readmeLabel: 'Overview'
         },
-        readmeTitle: 'Introduction',
-        globalsTitle: 'Overview',
-
-        // Additional TypeDoc options (see typedoc --help)
-        mode: 'file',
-        target: `ES2017`
-        plugin: ['typedoc-plugin-xyz'],
-        // ..etc
       },
     ],
   ],
 };
 ```
 
-## Notes
-
-- Once built the docs will be available at `/docs/api` or equivalent out directory.
-- By default TypeDoc will attempt to clean-up the output directory and will error if the directory contains un-recognised documents. To skip this step and copy files on-top of the output directory use the `disableOutputCheck: true` option.

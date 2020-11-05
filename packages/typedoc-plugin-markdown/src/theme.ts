@@ -105,21 +105,19 @@ export default class MarkdownTheme extends Theme {
     const urls: UrlMapping[] = [];
     if (this.readme === 'none') {
       project.url = this.entryFile;
-      urls.push(
-        new UrlMapping(this.entryFile, { ...project }, 'reflection.hbs'),
-      );
+      urls.push(new UrlMapping(this.entryFile, project, 'reflection.hbs'));
     } else {
       project.url = this.globalsFile;
       urls.push(new UrlMapping(this.globalsFile, project, 'reflection.hbs'));
       urls.push(new UrlMapping(this.entryFile, project, 'index.hbs'));
     }
-    if (project.children) {
-      project.children.forEach((child: Reflection) => {
-        if (child instanceof DeclarationReflection) {
-          this.buildUrls(child, urls);
-        }
-      });
-    }
+
+    project.children?.forEach((child: Reflection) => {
+      if (child instanceof DeclarationReflection) {
+        this.buildUrls(child as DeclarationReflection, urls);
+      }
+    });
+
     return urls;
   }
 
@@ -282,13 +280,13 @@ export default class MarkdownTheme extends Theme {
     const navigation = createNavigationItem(project.name);
     navigation.children?.push(
       createNavigationItem(
-        hasSeperateGlobals ? 'README' : 'Globals',
+        hasSeperateGlobals ? 'Readme' : 'Modules',
         this.entryFile,
       ),
     );
     if (hasSeperateGlobals) {
       navigation.children?.push(
-        createNavigationItem('Globals', this.globalsFile),
+        createNavigationItem('Modules', this.globalsFile),
       );
     }
     if (project.groups) {

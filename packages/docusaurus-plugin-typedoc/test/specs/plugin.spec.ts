@@ -10,14 +10,17 @@ const mockWriteSidebar = jest.fn();
 
 jest.mock('typedoc', () => {
   return {
+    TypeDocReader: jest.fn().mockImplementation(() => {}),
+    TSConfigReader: jest.fn().mockImplementation(() => {}),
     Application: jest.fn().mockImplementation(() => {
       return {
         bootstrap: mockAppBootstrap,
         convert: mockAppConvert,
         generateDocs: mockGenerateDocs,
         expandInputFiles: mockExpandInputFiles,
+        options: { addReader: jest.fn() },
         renderer: {
-          addComponent: jest.fn(),
+          addComponent: jest.fn().mockImplementation(() => true),
           getComponent: jest.fn().mockImplementation(() => {
             return {
               isOutputDirectory: jest.fn().mockImplementation(() => true),
@@ -48,7 +51,6 @@ describe(`Plugin:`, () => {
   beforeEach(() => {
     mockAppBootstrap.mockClear();
     mockGenerateDocs.mockClear();
-    mockExpandInputFiles.mockClear();
     mockWriteSidebar.mockClear();
     jest.isolateModules(() => {
       plugin = require('../../dist/plugin').default;
@@ -88,14 +90,6 @@ describe(`Plugin:`, () => {
     });
   });
   describe(`(plugin options):`, () => {
-    test('should set default input files', async () => {
-      await plugin(context, {});
-      expect(mockExpandInputFiles).toHaveBeenCalledWith(['../src/']);
-    });
-    test('should set custom input files', async () => {
-      await plugin(context, { inputFiles: ['../../lib'] });
-      expect(mockExpandInputFiles).toHaveBeenCalledWith(['../../lib']);
-    });
     test('should set default output directory', async () => {
       await plugin(context, {});
       expect(mockGenerateDocs).toHaveBeenCalledWith(
@@ -127,8 +121,8 @@ describe(`Plugin:`, () => {
         {
           fullNames: false,
           sidebarFile: 'typedoc-sidebar.js',
-          globalsLabel: 'Globals',
-          readmeLabel: 'README',
+          globalsLabel: 'Exports',
+          readmeLabel: 'Readme',
         },
         [],
       );
@@ -144,8 +138,8 @@ describe(`Plugin:`, () => {
         {
           fullNames: false,
           sidebarFile: 'custom-sidebar.js',
-          globalsLabel: 'Globals',
-          readmeLabel: 'README',
+          globalsLabel: 'Exports',
+          readmeLabel: 'Readme',
         },
         [],
       );

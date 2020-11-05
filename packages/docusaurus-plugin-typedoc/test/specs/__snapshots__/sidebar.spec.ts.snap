@@ -5,28 +5,37 @@ exports[`Sidebar: should write empty sidebar if output check fails 1`] = `"modul
 exports[`Sidebar: should write sidebar with default ('api') out 1`] = `
 "module.exports = [
   \\"api/index\\",
-  \\"api/globals\\",
+  \\"api/modules\\",
   {
     \\"type\\": \\"category\\",
-    \\"label\\": \\"Modules\\",
+    \\"label\\": \\"Namespaces\\",
     \\"items\\": [
-      \\"api/modules/_theme_\\"
+      \\"api/modules/namespacea\\",
+      \\"api/modules/namespaceb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Enumerations\\",
+    \\"items\\": [
+      \\"api/enums/enumitema\\",
+      \\"api/enums/enumitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Classes\\",
     \\"items\\": [
-      \\"api/classes/_theme_.classa\\",
-      \\"api/classes/_theme_.classb\\"
+      \\"api/classes/classitema\\",
+      \\"api/classes/classitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Interfaces\\",
     \\"items\\": [
-      \\"api/interfaces/_theme_.interfacea\\",
-      \\"api/interfaces/_theme_.interfaceb\\"
+      \\"api/interfaces/interfaceitema\\",
+      \\"api/interfaces/interfaceitemb\\"
     ]
   }
 ];"
@@ -35,28 +44,37 @@ exports[`Sidebar: should write sidebar with default ('api') out 1`] = `
 exports[`Sidebar: should write sidebar with root ('') out 1`] = `
 "module.exports = [
   \\"index\\",
-  \\"globals\\",
+  \\"modules\\",
   {
     \\"type\\": \\"category\\",
-    \\"label\\": \\"Modules\\",
+    \\"label\\": \\"Namespaces\\",
     \\"items\\": [
-      \\"modules/_theme_\\"
+      \\"modules/namespacea\\",
+      \\"modules/namespaceb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Enumerations\\",
+    \\"items\\": [
+      \\"enums/enumitema\\",
+      \\"enums/enumitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Classes\\",
     \\"items\\": [
-      \\"classes/_theme_.classa\\",
-      \\"classes/_theme_.classb\\"
+      \\"classes/classitema\\",
+      \\"classes/classitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Interfaces\\",
     \\"items\\": [
-      \\"interfaces/_theme_.interfacea\\",
-      \\"interfaces/_theme_.interfaceb\\"
+      \\"interfaces/interfaceitema\\",
+      \\"interfaces/interfaceitemb\\"
     ]
   }
 ];"

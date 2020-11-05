@@ -3800,11 +3800,6 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-highlight.js@^10.0.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.2.0.tgz#367151bcf813adebc54822f1cb51d2e1e599619f"
-  integrity sha512-OryzPiqqNCfO/wtFo619W+nPYALM6u7iCQkum4bqRmmlcTikOkmlL06i009QelynBPAlNByTQU6cBB2cOBQtCw==
-
 highlight.js@^10.3.1:
   version "10.3.1"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.3.1.tgz#3ca6bf007377faae347e8135ff25900aac734b9a"
@@ -5157,11 +5152,6 @@ map-visit@^1.0.0:
   integrity sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
   dependencies:
     object-visit "^1.0.0"
-
-marked@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-1.1.1.tgz#e5d61b69842210d5df57b05856e0c91572703e6a"
-  integrity sha512-mJzT8D2yPxoPh7h0UXkB+dBj4FykPJ2OIfxAWeIHrvoHDkFxukV/29QxoFQoPM6RLEwhIFdJpmKBlqVM3s2ZIw==
 
 marked@^1.2.2:
   version "1.2.2"
@@ -7481,20 +7471,15 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typedoc-default-themes@^0.11.1:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.11.3.tgz#702df91d2db06d8d3499ab0bde456bf774ca914f"
-  integrity sha512-SwyN188QGNA2iFS5mdWYTGzohKqJ1PWAXVmGolKnVc2NnpX234FEPF2nUvEg+O9jjwAu7ZSVZ5UrZri0raJOjQ==
+typedoc-default-themes@0.12.0-beta.5:
+  version "0.12.0-beta.5"
+  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.0-beta.5.tgz#a52788340c06e3bac50796b8d23204b7ccfcee9e"
+  integrity sha512-RHcw/iUdLcgikWhNYQOr4qqt02G+/L32AmS3wK6INUgOatjJeaAWK7qyvO1xqp0m3VLjUhuCk1B/PkO6V3LFxQ==
 
-typedoc-default-themes@beta:
-  version "0.12.0-beta.4"
-  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.0-beta.4.tgz#5f6497f07e707c917cd42ea04bbb0261cdb53fbf"
-  integrity sha512-WQk7FDARYRAC43Cm2qgIu+GBcxYDFi3Id2ncG9QuAz2eNVWD4h6HywRMV98gEPy6J2kqH2rsfm2uvnjUjDpidA==
-
-typedoc@0.20.0-beta.4:
-  version "0.20.0-beta.4"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.20.0-beta.4.tgz#d7f8f2c7e4666b074137c9da5ea9190077717616"
-  integrity sha512-m+hxadhqIi6wKsO2zlrl2zHyaUDuaZi/9tW1k15g94tauR+G2WU6f7TEZzSZiedV2ag4OyruGvIYD+PAbcAVaQ==
+typedoc@0.20.0-beta.7:
+  version "0.20.0-beta.7"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.20.0-beta.7.tgz#7c7c905f6c5326370c211819a609cd93a7a53e57"
+  integrity sha512-aUqgiAUoWapZvaAutwpZJ1C1Ldg3V+x09nWHPiPom2dv/De2eEW1PzLoCY/SVt9FwpsF37+JAmnQG0djWKEtLQ==
   dependencies:
     fs-extra "^9.0.1"
     handlebars "^4.7.6"
@@ -7506,24 +7491,7 @@ typedoc@0.20.0-beta.4:
     progress "^2.0.3"
     semver "^7.3.2"
     shelljs "^0.8.4"
-    typedoc-default-themes beta
-
-typedoc@^0.19.1:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.19.1.tgz#1c92608fc4944c6e2223cf3a43b603272b4ac94d"
-  integrity sha512-EqZpRJQUnkwHA1yBhaDExEXUZIiWKddkrDXhRcfUzpnu6pizxNmVTw5IZ3mu682Noa4zQCniE0YNjaAwHQodrA==
-  dependencies:
-    fs-extra "^9.0.1"
-    handlebars "^4.7.6"
-    highlight.js "^10.0.0"
-    lodash "^4.17.20"
-    lunr "^2.3.9"
-    marked "^1.1.1"
-    minimatch "^3.0.0"
-    progress "^2.0.3"
-    semver "^7.3.2"
-    shelljs "^0.8.4"
-    typedoc-default-themes "^0.11.1"
+    typedoc-default-themes "0.12.0-beta.5"
 
 typescript@^4.0.2:
   version "4.0.2"

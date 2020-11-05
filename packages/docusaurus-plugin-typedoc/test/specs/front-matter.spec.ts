@@ -39,7 +39,7 @@ describe(`FrontMatter:`, () => {
     beforeEach(() => {
       page = {
         url: 'index.md',
-        project: { name: 'test-project-name', url: 'globals.md' },
+        project: { name: 'test-project-name', url: 'modules.md' },
         contents: 'CONTENTS',
       } as PageEvent;
     });
@@ -90,8 +90,8 @@ describe(`FrontMatter:`, () => {
 
     beforeEach(() => {
       page = {
-        url: 'globals.md',
-        project: { name: 'test-project-name', url: 'globals.md' },
+        url: 'modules.md',
+        project: { name: 'test-project-name', url: 'modules.md' },
         contents: 'CONTENTS',
       } as PageEvent;
     });
@@ -129,10 +129,11 @@ describe(`FrontMatter:`, () => {
 
     beforeEach(() => {
       const reflection = testApp.findReflection('FrontMatterClass');
+
       page = {
         project: testApp.project,
         model: reflection,
-        url: reflection.url,
+        url: 'url',
         contents: 'CONTENTS',
       } as PageEvent;
     });
@@ -159,8 +160,8 @@ describe(`FrontMatter:`, () => {
   describe(`(no sidebar)`, () => {
     test(`should return front matter without sidebar`, () => {
       const page = {
-        url: 'globals.md',
-        project: { name: 'test-project-name', url: 'globals.md' },
+        url: 'modules.md',
+        project: { name: 'test-project-name', url: 'modules.md' },
         contents: 'CONTENTS',
       } as PageEvent;
       const frontMatterComponent = generate(testApp, {

@@ -2,7 +2,7 @@
 
 exports[`FrontMatter: (globals) should set custom globalsLabel and custom globalsTitle 1`] = `
 "---
-id: \\"globals\\"
+id: \\"modules\\"
 title: \\"Custom globals title\\"
 sidebar_label: \\"Custom globals label\\"
 ---
@@ -12,7 +12,7 @@ CONTENTS"
 
 exports[`FrontMatter: (globals) should set default globals page 1`] = `
 "---
-id: \\"globals\\"
+id: \\"modules\\"
 title: \\"test-project-name\\"
 sidebar_label: \\"Globals\\"
 ---
@@ -33,7 +33,7 @@ CONTENTS"
 
 exports[`FrontMatter: (no sidebar) should return front matter without sidebar 1`] = `
 "---
-id: \\"globals\\"
+id: \\"modules\\"
 title: \\"test-project-name\\"
 ---
 
@@ -89,9 +89,9 @@ CONTENTS"
 
 exports[`FrontMatter: (reflection names) should return front matter with full names 1`] = `
 "---
-id: \\"_frontmatter_.frontmatterclass\\"
+id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
-sidebar_label: \\"frontmatter.FrontMatterClass\\"
+sidebar_label: \\"FrontMatterClass\\"
 ---
 
 CONTENTS"
@@ -99,7 +99,7 @@ CONTENTS"
 
 exports[`FrontMatter: (reflection names) should return reflection labels with short names 1`] = `
 "---
-id: \\"_frontmatter_.frontmatterclass\\"
+id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"FrontMatterClass\\"
 ---
