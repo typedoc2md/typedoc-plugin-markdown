@@ -32,7 +32,7 @@
     "demo:start": "rm -rf ./demo/docs/api && npm run build && cd demo && npm run dev",
     "demo:build-and-serve": "npm run build && cd demo && npm run build && npx http-server docs/.vuepress/dist -o",
     "demo:init": "rm -rf demo && npx create-vuepress demo",
-    "test": "jest --colors --updateSnapshot",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",

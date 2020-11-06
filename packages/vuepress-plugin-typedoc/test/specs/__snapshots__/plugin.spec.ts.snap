@@ -15,7 +15,7 @@ exports[`(sidebars) should generate default 1`] = `
 Object {
   "content": "export default ({ siteData, options }) => {
           siteData.themeConfig.sidebarDepth = 2;
-          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,{\\"/api/\\":[[\\"/api/\\",\\"Readme\\"],[\\"modules\\",\\"Modules\\"],{\\"title\\":\\"Namespaces\\",\\"children\\":[[\\"modules/namespacea\\",\\"namespaceA\\"],[\\"modules/namespaceb\\",\\"namespaceB\\"]]},{\\"title\\":\\"Enumerations\\",\\"children\\":[[\\"enums/enumitema\\",\\"enumItemA\\"],[\\"enums/enumitemb\\",\\"enumItemB\\"]]},{\\"title\\":\\"Classes\\",\\"children\\":[[\\"classes/classitema\\",\\"ClassItemA\\"],[\\"classes/classitemb\\",\\"ClassItemB\\"]]},{\\"title\\":\\"Interfaces\\",\\"children\\":[[\\"interfaces/interfaceitema\\",\\"InterfaceItemA\\"],[\\"interfaces/interfaceitemb\\",\\"InterfaceItemB\\"]]}]});
+          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,{\\"/api/\\":[[\\"/api/\\",\\"Readme\\"],[\\"modules\\",\\"Exports\\"],{\\"title\\":\\"Namespaces\\",\\"children\\":[[\\"modules/namespacea\\",\\"namespaceA\\"],[\\"modules/namespaceb\\",\\"namespaceB\\"]]},{\\"title\\":\\"Enumerations\\",\\"children\\":[[\\"enums/enumitema\\",\\"enumItemA\\"],[\\"enums/enumitemb\\",\\"enumItemB\\"]]},{\\"title\\":\\"Classes\\",\\"children\\":[[\\"classes/classitema\\",\\"ClassItemA\\"],[\\"classes/classitemb\\",\\"ClassItemB\\"]]},{\\"title\\":\\"Interfaces\\",\\"children\\":[[\\"interfaces/interfaceitema\\",\\"InterfaceItemA\\"],[\\"interfaces/interfaceitemb\\",\\"InterfaceItemB\\"]]}]});
         }",
   "name": "typedoc-sidebar",
 }
@@ -25,7 +25,7 @@ exports[`(sidebars) should generate with parent category and fullNames 1`] = `
 Object {
   "content": "export default ({ siteData, options }) => {
           siteData.themeConfig.sidebarDepth = 2;
-          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,{\\"/api/\\":[{\\"title\\":\\"Parent Category\\",\\"children\\":[[\\"/api/\\",\\"Readme\\"],[\\"modules\\",\\"Modules\\"],{\\"title\\":\\"Namespaces\\",\\"children\\":[[\\"modules/namespacea\\",\\"namespaceA\\"],[\\"modules/namespaceb\\",\\"namespaceB\\"]]},{\\"title\\":\\"Enumerations\\",\\"children\\":[[\\"enums/enumitema\\",\\"enumItemA\\"],[\\"enums/enumitemb\\",\\"enumItemB\\"]]},{\\"title\\":\\"Classes\\",\\"children\\":[[\\"classes/classitema\\",\\"ClassItemA\\"],[\\"classes/classitemb\\",\\"ClassItemB\\"]]},{\\"title\\":\\"Interfaces\\",\\"children\\":[[\\"interfaces/interfaceitema\\",\\"InterfaceItemA\\"],[\\"interfaces/interfaceitemb\\",\\"InterfaceItemB\\"]]}]}]});
+          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,{\\"/api/\\":[{\\"title\\":\\"Parent Category\\",\\"children\\":[[\\"/api/\\",\\"Readme\\"],[\\"modules\\",\\"Exports\\"],{\\"title\\":\\"Namespaces\\",\\"children\\":[[\\"modules/namespacea\\",\\"namespaceA\\"],[\\"modules/namespaceb\\",\\"namespaceB\\"]]},{\\"title\\":\\"Enumerations\\",\\"children\\":[[\\"enums/enumitema\\",\\"enumItemA\\"],[\\"enums/enumitemb\\",\\"enumItemB\\"]]},{\\"title\\":\\"Classes\\",\\"children\\":[[\\"classes/classitema\\",\\"ClassItemA\\"],[\\"classes/classitemb\\",\\"ClassItemB\\"]]},{\\"title\\":\\"Interfaces\\",\\"children\\":[[\\"interfaces/interfaceitema\\",\\"InterfaceItemA\\"],[\\"interfaces/interfaceitemb\\",\\"InterfaceItemB\\"]]}]}]});
         }",
   "name": "typedoc-sidebar",
 }

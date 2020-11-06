@@ -70,7 +70,7 @@ Name | Type | Value | Description |
 \`valueC\` | object | {} | - |
 \`valueZ\` | string | \\"foo\\" | Comment for valueZ |
 \`valueY\` | function | () => string | Comment for value Y |
-\`valueX\` | object | { valueA: number[][] = [100, 200, 300]; valueZ: string = \\"foo\\" } | Comment for valueX |
+\`valueX\` | object | { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\" } | Comment for valueX |
 "
 `;
 

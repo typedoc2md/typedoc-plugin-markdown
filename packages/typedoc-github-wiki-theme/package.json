@@ -19,7 +19,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "test": "jest --colors --updateSnapshot",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src/index.ts --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --disableOutputCheck --out ./demo"
   },
