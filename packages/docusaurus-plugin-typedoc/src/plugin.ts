@@ -78,7 +78,6 @@ export default function pluginDocusaurus(
     });
 
     // add frontmatter component
-
     app.renderer.addComponent(
       'docusaurus-frontmatter',
       new DocsaurusFrontMatterComponent(app.renderer, options),

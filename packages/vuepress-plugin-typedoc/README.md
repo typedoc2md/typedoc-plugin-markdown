@@ -24,39 +24,82 @@ npm install typedoc typedoc-plugin-markdown vuepress-plugin-typedoc --save-dev
 Add the plugin to `.vuepress/config.js`:
 
 ```js
-module.exports = {
+plugins: [
+  [
+    'vuepress-plugin-typedoc',
+
+    // Plugin / TypeDoc options (see typedoc --help)
+    {
+      entryPoints: ['../src/index.ts'],
+      tsconfig: '../tsconfig.json'
+    },
+  ],
+],
+```
+
+## Options
+
+### TypeDoc options
+
+At a minimum the `entryPoints` and `tsconfig` options will need to be set.
+
+```js
+entryPoints: ['../src/index.ts'],
+tsconfig: '../tsconfig.json'
+```
+
+Please refer to [TypeDoc]() for further options.
+
+### Plugin options
+
+#### out
+
+Output directory relative to docs directory. Defaults to `"api"`.
+
+```js
+out: 'api',
+```
+
+#### sidebar
+
+Options object for auto generated sidebar. (pass `null` to skip generation completely)
+
+- **fullNames**
+
+  Display full names with module path if applicable. Default to `false`.
+
+- **parentCategory**
+
+  The parent category label for sidebar - (defaults to `none` - no parent category)
+
+
+## Full example
+
+```js
+
   plugins: [
     [
       'vuepress-plugin-typedoc',
-
-      // plugin options
       {
-        // list of input files relative to docusaurus.config.js
-        inputFiles: ['../../src/'],
+        // TypeDoc options
+        entryPoints: ['../src/index.ts'],
+        tsconfig: '../tsconfig.json',
+        plugin: ['some-typedoc-plugin'],
 
-        // out directory relative to docs folder (defaults to `api`)
+        // Plugin options
         out: 'api',
-
-        // options for auto generated sidebars.json (pass `null` to skip generation completely)
         sidebar: {
-          // display full names with module path if applicable - (defaults to 'false')
-          fullNames: false,
-          // the parent category label for sidebar - (defaults to `none` - no parent category)
-          parentCategory: 'none',
+          fullNames: true,
+          parentCategory: 'API',
         },
 
         // include additional TypeDoc plugins in addition to the markdown plugin (optional)
         plugin: ['typedoc-plugin-xyz'],
 
-        // Pass in any additional TypeDoc options (see typedoc --help)
-        mode: 'modules',
       },
     ],
   ],
-};
+
 ```
 
-### Notes
-
-- Once built the docs will be available at `/api` or equivalent out directory.
-- By default TypeDoc will attempt to clean-up the output directory and will error if the directory contains un-recognised documents. To skip this step and copy files on-top of the output directory use the `disableOutputCheck: true` option.
+Once built the docs will be available at `/api` or equivalent out directory.

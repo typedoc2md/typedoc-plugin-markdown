@@ -2,13 +2,16 @@
 
 exports[`Theme: should getUrls' 1`] = `
 Array [
-  "Globals.md",
+  "Modules.md",
+  "Modules.md#declarationitema",
+  "Modules.md#declarationitemb",
+  "Modules.md#functionitema",
+  "Modules.md#functionitemb",
   "Home.md",
-  "Module: \\"theme\\".md",
-  "Module: \\"theme\\".md#declarationitema",
-  "Module: \\"theme\\".md#declarationitemb",
-  "Module: \\"theme\\".md#functionitema",
-  "Module: \\"theme\\".md#functionitemb",
+  "Modules.md#declarationitema",
+  "Modules.md#declarationitemb",
+  "Modules.md#functionitema",
+  "Modules.md#functionitemb",
   "Module: namespaceA.md",
   "Module: namespaceB.md",
   "enums: enumItemA.md",

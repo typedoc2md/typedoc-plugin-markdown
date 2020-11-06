@@ -1,41 +1,36 @@
 import * as path from 'path';
 
-import { Application, NavigationItem, ProjectReflection } from 'typedoc';
+import {
+  Application,
+  NavigationItem,
+  ProjectReflection,
+  TSConfigReader,
+  TypeDocReader,
+} from 'typedoc';
 import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter.component';
 
 import { PluginOptions, SidebarOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
-  inputFiles: [],
   out: 'api',
   sidebar: {
     parentCategory: 'none',
     fullNames: false,
   },
-  plugin: [],
 };
-
-const TYPDOC_PLUGIN_NAME = 'typedoc-plugin-markdown';
 
 const app = new Application();
 let done = false;
 
-export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
+export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
   let project: ProjectReflection | undefined;
   const sourceDir = ctx.sourceDir;
 
-  const options = { ...DEFAULT_PLUGIN_OPTIONS, ...pluginOptions };
+  const options = { ...DEFAULT_PLUGIN_OPTIONS, ...opts };
 
-  const inputFiles = options.inputFiles;
   const outFolder = options.out ? options.out : 'api';
   const out = sourceDir + '/' + outFolder;
   const sidebar = options.sidebar;
-
-  // remove docusaurus props (everything else is passed to renderer)
-  delete options.id;
-  delete options.sidebar;
-  delete options.inputFiles;
-  delete options.out;
 
   return {
     name: 'vuepress-plugin-typedoc',
@@ -46,12 +41,30 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
         return;
       }
 
+      // TypeDoc options
+      const vuepressOptions = Object.keys(options).reduce((option, key) => {
+        if (
+          ![...['id'], ...Object.keys(DEFAULT_PLUGIN_OPTIONS)].includes(key)
+        ) {
+          option[key] = options[key];
+        }
+        return option;
+      }, {});
+
+      app.options.addReader(new TypeDocReader());
+      app.options.addReader(new TSConfigReader());
+
       // bootstrap
       app.bootstrap({
-        ...options,
+        // filtered vuepress options
+        ...vuepressOptions,
+
+        // TypeDoc plugins
         plugin: [
-          ...options.plugin.filter((name) => name !== TYPDOC_PLUGIN_NAME),
-          ...[TYPDOC_PLUGIN_NAME],
+          ...['typedoc-plugin-markdown'],
+          ...(opts.plugin
+            ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
+            : []),
         ],
         theme: path.resolve(__dirname, 'theme'),
       });
@@ -61,7 +74,7 @@ export const typedocPlugin = (pluginOptions: PluginOptions, ctx: any) => {
         new FrontMatterComponent(app.renderer),
       );
 
-      project = app.convert(app.expandInputFiles(inputFiles));
+      project = app.convert();
 
       // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
       if (!project) {
@@ -120,7 +133,7 @@ function getSidebarJson(
     if (navigationItem.url && navigationItem.children?.length === 0) {
       const urlKey = navigationItem.url.replace('.md', '');
       navJson.push([
-        urlKey === 'README' ? `/${outFolder}/` : 'globals',
+        urlKey === 'README' ? `/${outFolder}/` : 'modules',
         navigationItem.title,
       ]);
     } else {

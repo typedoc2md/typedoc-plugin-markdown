@@ -41,6 +41,8 @@ module.exports = {
 };
 ```
 
+Once built the docs will be available at `/docs/api` or equivalent out directory.
+
 ## Options
 
 ### TypeDoc options

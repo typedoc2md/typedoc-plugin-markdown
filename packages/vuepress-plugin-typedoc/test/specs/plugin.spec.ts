@@ -11,7 +11,8 @@ let plugin: any;
 
 const bootstrap = async (customOptions = {}) => {
   const options = {
-    inputFiles: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
+    entryPoints: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
+    tsconfig: ['../typedoc-plugin-markdown/test/stubs/tsconfig.json'],
     target: 'ESNext',
     moduleResolution: 'node',
     logger: 'none',

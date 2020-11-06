@@ -44,7 +44,7 @@ export default class GithubWikiTheme extends MarkdownTheme {
       `## [${renderer.project.name}](${parseUrl(this.entryFile)})\n`,
     ];
     if (this.readme !== 'none') {
-      navJson.push(`- [Globals](${parseUrl(this.globalsFile)})`);
+      navJson.push(`- [Exports](${parseUrl(this.globalsFile)})`);
     }
     if (navigation.children) {
       navigation.children.forEach((navItem) => {
@@ -70,6 +70,6 @@ export default class GithubWikiTheme extends MarkdownTheme {
     return 'Home.md';
   }
   get globalsFile() {
-    return 'Globals.md';
+    return 'Modules.md';
   }
 }

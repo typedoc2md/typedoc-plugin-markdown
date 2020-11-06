@@ -280,13 +280,13 @@ export default class MarkdownTheme extends Theme {
     const navigation = createNavigationItem(project.name);
     navigation.children?.push(
       createNavigationItem(
-        hasSeperateGlobals ? 'Readme' : 'Modules',
+        hasSeperateGlobals ? 'Readme' : 'Exports',
         this.entryFile,
       ),
     );
     if (hasSeperateGlobals) {
       navigation.children?.push(
-        createNavigationItem('Modules', this.globalsFile),
+        createNavigationItem('Exports', this.globalsFile),
       );
     }
     if (project.groups) {

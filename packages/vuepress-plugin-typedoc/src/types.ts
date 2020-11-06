@@ -3,10 +3,9 @@ import { Application, ProjectReflection } from 'typedoc';
 export interface PluginOptions {
   id?: string;
   logger?: string;
-  inputFiles?: string[];
   out?: string;
   sidebar?: SidebarOptions | null;
-  plugin: string[];
+  plugin?: string[];
 }
 
 export interface SidebarOptions {
