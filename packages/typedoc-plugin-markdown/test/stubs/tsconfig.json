@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
-    "lib": ["es2016", "dom"],
+    "lib": ["es2020", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "strictNullChecks": false,
-    "target": "es2015"
+    "target": "es2020"
   },
   "include": ["**/*.ts"]
 }

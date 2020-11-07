@@ -90,3 +90,6 @@ export enum EnumDeclarations {
   Left = 'LEFT',
   Right = 'RIGHT',
 }
+
+export const fooBigInt = BigInt(100); // the BigInt function
+export const barBigInt = 100n; // a BigInt literal

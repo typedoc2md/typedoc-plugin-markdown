@@ -72,3 +72,11 @@ export const functionReflectionType: <T>(arg: T) => T = generic;
 export const typeOperatorType: unique symbol = Symbol.for('__type__');
 
 export type objectLiteralUnionType = string | { z: string };
+
+export type PartialMappedType<T> = {
+  [P in keyof T]?: T[P];
+};
+
+export type ReadonlyMapedType<T> = {
+  readonly [P in keyof T]: T[P];
+};

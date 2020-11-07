@@ -10,7 +10,7 @@ export function breadcrumbs(this: PageEvent) {
   breadcrumbs.push(
     this.url === this.project?.url
       ? 'Exports'
-      : `['Exports](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+      : `[Exports](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
           this.project?.url as string,
         )})`,
   );
