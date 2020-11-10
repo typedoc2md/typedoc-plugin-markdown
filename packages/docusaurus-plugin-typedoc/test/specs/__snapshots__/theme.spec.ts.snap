@@ -1,12 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Theme: (header) should compile with module with subtitle 1`] = `
-"
+"[InterfaceItemA](interfaceitema.md).prop
+
+[partial: members]
 "
 `;
 
 exports[`Theme: (header) should compile with module without subtitle 1`] = `
-"
+"[partial: index]
+
+[partial: members]
 "
 `;
 

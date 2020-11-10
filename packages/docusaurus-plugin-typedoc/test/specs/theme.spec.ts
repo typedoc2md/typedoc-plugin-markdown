@@ -1,7 +1,5 @@
-import * as path from 'path';
-
 import * as Handlebars from 'handlebars';
-
+import * as path from 'path';
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 import DocusaurusTheme from '../../src/theme/theme';
 
@@ -30,7 +28,7 @@ describe(`Theme:`, () => {
     test(`should compile with module without subtitle`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
-          model: testApp.findModule('theme'),
+          model: testApp.project.children[0],
           project: testApp.project,
         }),
       ).toMatchSnapshot();
@@ -39,7 +37,7 @@ describe(`Theme:`, () => {
     test(`should compile with module with subtitle`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
-          model: testApp.findReflection('InterfaceA'),
+          model: testApp.findReflection('InterfaceItemA').children[0],
           project: testApp.project,
         }),
       ).toMatchSnapshot();
