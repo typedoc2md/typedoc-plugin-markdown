@@ -19,7 +19,7 @@ import MarkdownTheme from '../theme';
  */
 
 @Component({ name: 'comments' })
-export class CommentsComponent extends ContextAwareRendererComponent {
+export class Comments extends ContextAwareRendererComponent {
   @BindOption('includes')
   includes!: string;
 

@@ -1,8 +1,9 @@
+import * as Handlebars from 'handlebars';
+
 import MarkdownTheme from '../../theme';
 
-export function ifShowNamedAnchors(options) {
-  return MarkdownTheme.HANDLEBARS.helpers.ifShowNamedAnchors.call(
-    this,
-    options,
-  );
+export function ifShowNamedAnchors(options: Handlebars.HelperOptions) {
+  return MarkdownTheme.HANDLEBARS.helpers.namedAnchors()
+    ? options.fn(this)
+    : options.inverse(this);
 }

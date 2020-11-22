@@ -16,8 +16,8 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { CommentsComponent } from './components/comments.component';
-import { HelperUtilsComponent } from './components/utils.component';
+import { Comments } from './components/comments';
+import { ContextAwareHelpers } from './components/context-aware-helpers';
 
 /**
  * The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/DefaultTheme.ts.
@@ -60,8 +60,8 @@ export default class MarkdownTheme extends Theme {
     renderer.removeComponent('navigation');
 
     // add markdown related componenets
-    renderer.addComponent('comments', new CommentsComponent(renderer));
-    renderer.addComponent('utils', new HelperUtilsComponent(renderer));
+    renderer.addComponent('comments', new Comments(renderer));
+    renderer.addComponent('helpers', new ContextAwareHelpers(renderer));
   }
 
   /**
@@ -111,13 +111,11 @@ export default class MarkdownTheme extends Theme {
       urls.push(new UrlMapping(this.globalsFile, project, 'reflection.hbs'));
       urls.push(new UrlMapping(this.entryFile, project, 'index.hbs'));
     }
-
     project.children?.forEach((child: Reflection) => {
       if (child instanceof DeclarationReflection) {
         this.buildUrls(child as DeclarationReflection, urls);
       }
     });
-
     return urls;
   }
 
@@ -359,18 +357,19 @@ export default class MarkdownTheme extends Theme {
     ];
   }
 
-  // the entry file name
   get entryFile() {
     return 'README.md';
   }
 
-  // the globals name
   get globalsFile() {
     return 'modules.md';
   }
 
-  // contains a sidebar
-  get hasSidebar() {
+  get navigationEnabled() {
+    return false;
+  }
+
+  get hideReflectionTitle() {
     return false;
   }
 }

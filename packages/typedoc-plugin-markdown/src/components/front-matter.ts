@@ -8,7 +8,7 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { reflectionTitle } from '../resources/helpers/reflection-title';
 
-@Component({ name: 'frontmatter' })
+@Component({ name: 'front-matter' })
 export class FrontMatterComponent extends ContextAwareRendererComponent {
   initialize() {
     super.initialize();

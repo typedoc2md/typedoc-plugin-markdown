@@ -1,5 +1,12 @@
+import * as Handlebars from 'handlebars';
+
 import MarkdownTheme from '../../theme';
 
-export function ifShowProjectName(options) {
-  return MarkdownTheme.HANDLEBARS.helpers.ifShowProjectName.call(this, options);
+export function ifShowProjectName(options: Handlebars.HelperOptions) {
+  if (MarkdownTheme.HANDLEBARS.helpers.navigationEnabled()) {
+    return options.inverse(this);
+  }
+  return MarkdownTheme.HANDLEBARS.helpers.hideProjectName()
+    ? options.inverse(this)
+    : options.fn(this);
 }

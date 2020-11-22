@@ -3,14 +3,11 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import MarkdownTheme from '../../theme';
 
-export function ifShowBreadcrumbs(
+export function ifShowReflectionTitle(
   this: PageEvent,
   options: Handlebars.HelperOptions,
 ) {
-  if (MarkdownTheme.HANDLEBARS.helpers.navigationEnabled()) {
-    return options.inverse(this);
-  }
-  return MarkdownTheme.HANDLEBARS.helpers.hideBreadcrumbs()
+  return MarkdownTheme.HANDLEBARS.helpers.hideReflectionTitle()
     ? options.inverse(this)
     : options.fn(this);
 }

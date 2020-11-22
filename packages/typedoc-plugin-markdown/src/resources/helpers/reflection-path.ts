@@ -3,7 +3,7 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { relativeURL } from './relative-url';
 
-export function reflectionSubtitle(this: PageEvent) {
+export function reflectionPath(this: PageEvent) {
   if (this.model) {
     if (this.model.kind && this.model.kind !== ReflectionKind.Module) {
       const title: string[] = [];
