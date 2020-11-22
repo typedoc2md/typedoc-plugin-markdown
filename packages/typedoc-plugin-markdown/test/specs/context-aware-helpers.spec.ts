@@ -89,44 +89,4 @@ describe(`ContextAwareHelpers:`, () => {
       expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
     });
   });
-  /*
-  describe(`(ifShowIndex helper default)`, () => {
-    beforeAll(() => {
-      testApp = new TestApp(['breadcrumbs.ts']);
-      testApp.bootstrap();
-    });
-    test(`should always be true`, () => {
-      const reflection = testApp.findReflection('Breadcrumbs');
-      expect(
-        Handlebars.helpers.ifShowIndex.call(
-          reflection,
-          TestApp.handlebarsOptionsStub,
-        ),
-      ).toBeTruthy();
-    });
-  });
-
-  describe(`(ifShowIndex helper with navigation)`, () => {
-    beforeAll(() => {
-      testApp = new TestApp(['breadcrumbs.ts']);
-      const customThemePath = path.resolve(
-        __dirname,
-        '..',
-        'stubs',
-        'custom-theme',
-      );
-      testApp.bootstrap({
-        theme: customThemePath,
-      });
-    });
-    test(`should be false on classes if navigation enabled`, () => {
-      const reflection = testApp.findReflection('Breadcrumbs');
-      expect(
-        Handlebars.helpers.ifShowIndex.call(
-          reflection,
-          TestApp.handlebarsOptionsStub,
-        ),
-      ).toBeFalsy();
-    });
-  });*/
 });
