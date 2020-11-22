@@ -2,7 +2,7 @@ import cuid from 'cuid';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
-import { DocsaurusFrontMatterComponent } from '../../dist/components/front-matter.component';
+import { DocusaurusFrontMatterComponent } from '../../dist/front-matter';
 import { PluginOptions } from '../../dist/types';
 
 function generate(testApp: TestApp, options: PluginOptions) {
@@ -10,11 +10,11 @@ function generate(testApp: TestApp, options: PluginOptions) {
   const componentNamename = cuid();
   testApp.renderer.addComponent(
     componentNamename,
-    new DocsaurusFrontMatterComponent(testApp.renderer, options),
+    new DocusaurusFrontMatterComponent(testApp.renderer, options),
   );
   const frontMatterComponent = testApp.renderer.getComponent(
     componentNamename,
-  ) as DocsaurusFrontMatterComponent;
+  ) as DocusaurusFrontMatterComponent;
   return frontMatterComponent;
 }
 

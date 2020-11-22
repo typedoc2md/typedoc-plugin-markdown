@@ -3,7 +3,7 @@ import * as path from 'path';
 import { LoadContext } from '@docusaurus/types';
 import { Application, TSConfigReader, TypeDocReader } from 'typedoc';
 
-import { DocsaurusFrontMatterComponent } from './components/front-matter.component';
+import { DocusaurusFrontMatterComponent } from './front-matter';
 import { writeSidebar } from './sidebar';
 import DocusaurusTheme from './theme/theme';
 import { PluginOptions } from './types';
@@ -80,7 +80,7 @@ export default function pluginDocusaurus(
     // add frontmatter component
     app.renderer.addComponent(
       'docusaurus-frontmatter',
-      new DocsaurusFrontMatterComponent(app.renderer, options),
+      new DocusaurusFrontMatterComponent(app.renderer, options),
     );
 
     // return the generated reflections

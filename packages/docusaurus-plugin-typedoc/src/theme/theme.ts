@@ -24,4 +24,12 @@ export default class DocusaurusTheme extends MarkdownTheme {
   get entryFile() {
     return 'index.md';
   }
+
+  get navigationEnabled() {
+    return true;
+  }
+
+  get hideReflectionTitle() {
+    return true;
+  }
 }

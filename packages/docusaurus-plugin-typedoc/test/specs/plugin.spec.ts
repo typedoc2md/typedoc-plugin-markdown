@@ -33,7 +33,7 @@ jest.mock('typedoc', () => {
   };
 });
 
-jest.mock('../../dist/components/front-matter.component');
+jest.mock('../../dist/front-matter');
 
 jest.mock('../../dist/sidebar', () => {
   return {

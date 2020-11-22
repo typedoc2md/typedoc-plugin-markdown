@@ -1,12 +1,12 @@
 import { Renderer } from 'typedoc';
-import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter.component';
+import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter';
 import { Component } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
-import { FrontMatter, PluginOptions, SidebarOptions } from '../types';
+import { FrontMatter, PluginOptions, SidebarOptions } from './types';
 
 @Component({ name: 'docusaurus-frontmatter' })
-export class DocsaurusFrontMatterComponent extends FrontMatterComponent {
+export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
   outFolder: string;
   sidebar: SidebarOptions | null;
   readmeTitle?: string;
