@@ -119,4 +119,12 @@ describe(`Types:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  test(`should compile conditional type '`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('ConditionalType').type,
+      ),
+    ).toMatchSnapshot();
+  });
 });

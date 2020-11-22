@@ -80,3 +80,13 @@ export type PartialMappedType<T> = {
 export type ReadonlyMapedType<T> = {
   readonly [P in keyof T]: T[P];
 };
+
+export type ConditionalType<T> = T extends string
+  ? 'string'
+  : T extends number
+  ? 'number'
+  : T extends boolean
+  ? 'boolean'
+  : T extends undefined
+  ? 'undefined'
+  : 'object';
