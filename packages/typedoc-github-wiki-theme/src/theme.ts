@@ -5,7 +5,7 @@ import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { UtilsComponent } from './components/utils.component';
+import { UtilsComponent } from './components/utils';
 
 export default class GithubWikiTheme extends MarkdownTheme {
   renderer: Renderer;
@@ -22,7 +22,7 @@ export default class GithubWikiTheme extends MarkdownTheme {
       classes: 'Class',
       interfaces: 'Interface',
       functions: 'Function',
-      enumurations: 'Enum',
+      enums: 'Enum',
     };
     return (
       (kindLabelMap[mapping.directory] || mapping.directory) +
@@ -69,7 +69,12 @@ export default class GithubWikiTheme extends MarkdownTheme {
   get entryFile() {
     return 'Home.md';
   }
+
   get globalsFile() {
     return 'Modules.md';
+  }
+
+  get navigationEnabled() {
+    return true;
   }
 }
