@@ -1,6 +1,6 @@
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
-import { FrontMatterComponent } from '../../dist/components/front-matter.component';
+import { FrontMatterComponent } from '../../dist/components/front-matter';
 import { TestApp } from '../test-app';
 
 describe(`FrontMatter:`, () => {

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContextAwareHelpers: (defaults) should compile relativeURL helper 1`] = `"breadcrumbs.md"`;
+
+exports[`ContextAwareHelpers: (with plugin options) should compile relativeURL helper with public path 1`] = `"test-public-pathclasses/breadcrumbs.md"`;

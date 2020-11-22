@@ -8,6 +8,7 @@ exports[`Reflections: (header) should compile template with breadcrumbs and proj
 # Enumeration: EnumReflection
 
 [partial: index]
+
 [partial: members]
 "
 `;
@@ -24,6 +25,7 @@ exports[`Reflections: (template) should compile a callable reflection 1`] = `
 [partial: member.signature]
 
 [partial: index]
+
 [partial: members]
 "
 `;
@@ -42,6 +44,7 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 [partial: comment]
 
 [partial: index]
+
 [partial: members]
 "
 `;
@@ -50,6 +53,7 @@ exports[`Reflections: (template) should compile module with breadcrumbs and proj
 "# Enumeration: EnumReflection
 
 [partial: index]
+
 [partial: members]
 "
 `;
@@ -71,6 +75,7 @@ Name | Description |
 [helper: hierarchy]
 
 [partial: index]
+
 [partial: members]
 "
 `;

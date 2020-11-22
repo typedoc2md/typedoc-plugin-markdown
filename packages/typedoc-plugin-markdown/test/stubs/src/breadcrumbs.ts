@@ -1,1 +1,5 @@
-export class Breadcrumbs {}
+export class Breadcrumbs {
+  someMethod() {
+    return true;
+  }
+}

@@ -114,7 +114,7 @@ export class TestApp {
     this.app.options.addReader(new ArgumentsReader(300));
   }
 
-  bootstrap(options = {}) {
+  bootstrap(options: any = {}) {
     this.app.bootstrap({
       logger: 'none',
       entryPoints: this.entryPoints,
