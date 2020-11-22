@@ -5,4 +5,8 @@ export default class VuePressTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
   }
+
+  get navigationEnabled() {
+    return true;
+  }
 }
