@@ -14,7 +14,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
-    globalsLabel: 'Exports',
+    globalsLabel: 'Index',
     readmeLabel: 'Readme',
   },
   globalsTitle: undefined,
@@ -23,7 +23,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
 
 let app: Application;
 
-export default function pluginDocusaurus(
+export default async function pluginDocusaurus(
   context: LoadContext,
   opts: Partial<PluginOptions>,
 ) {
@@ -99,10 +99,9 @@ export default function pluginDocusaurus(
     );
 
     // generate the static docs
-    app.generateDocs(project, outputDirectory);
+    await app.generateDocs(project, outputDirectory);
 
     // write the sidebar (if applicable)
-
     if (options.sidebar) {
       const theme = app.renderer.getComponent('theme') as DocusaurusTheme;
       writeSidebar(
