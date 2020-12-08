@@ -27,11 +27,11 @@ exports[`Types: should compile collapsed 'literal' type' 1`] = `"object"`;
 
 exports[`Types: should compile collapsed 'objectLiteralType' type' 1`] = `"object"`;
 
-exports[`Types: should compile expanded 'function' type ' 1`] = `"\\\\<T>(arg: T) => T"`;
+exports[`Types: should compile expanded 'function' type ' 1`] = `"<T\\\\>(arg: T) => T"`;
 
 exports[`Types: should compile expanded 'literal' type' 1`] = `"{ valueA?: number ; valueB?: boolean ; valueX: { valueA: number[] ; valueY: (z: string) => { a: string ; b: string  } ; valueZ: string  } ; valueY: () => string ; valueZ: string  }"`;
 
-exports[`Types: should compile expanded 'objectLiteralType' type' 1`] = `"{ <: string = \\"\\\\<foo>\\"; <foo>: string = \\"foo\\"; \\\\n: string = \\"foo\\"; _: string = \\"foo\\"; prop_with_underscore: string = \\"foo\\"; prop\`with\`backticks: string = \\"foo\\"; prop|with|pipes: string = \\"foo\\"; valueA: number = 100; valueB: boolean = true; valueZ: string = \\"\\\\_foo\\\\_\\"; |: string = \\"foo\\"; ~: string = \\"foo\\"; valueY: (cbParam: [\\\\_someCallback\\\\_](../modules/_signatures_.md#_somecallback_), unionParam: \\\\\\"a\\\\\\" \\\\| \\\\\\"b\\\\\\", \\\\_undercoreParam\\\\_: string) => string ; valueX: { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\"; valueY: (z: string) => { a: string = \\"test\\"; b: string = z }  }  }"`;
+exports[`Types: should compile expanded 'objectLiteralType' type' 1`] = `"{ <: string = \\"<foo\\\\>\\"; <foo>: string = \\"foo\\"; \\\\n: string = \\"foo\\"; _: string = \\"foo\\"; prop_with_underscore: string = \\"foo\\"; prop\`with\`backticks: string = \\"foo\\"; prop|with|pipes: string = \\"foo\\"; valueA: number = 100; valueB: boolean = true; valueZ: string = \\"\\\\_foo\\\\_\\"; |: string = \\"foo\\"; ~: string = \\"foo\\"; valueY: (cbParam: [\\\\_someCallback\\\\_](../modules/_signatures_.md#_somecallback_), unionParam: \\\\\\"a\\\\\\" \\\\| \\\\\\"b\\\\\\", \\\\_undercoreParam\\\\_: string) => string ; valueX: { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\"; valueY: (z: string) => { a: string = \\"test\\"; b: string = z }  }  }"`;
 
 exports[`Types: should compile intrinsic type' 1`] = `"string"`;
 

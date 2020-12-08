@@ -145,9 +145,9 @@ function getLiteralType(model: DeclarationReflection) {
 export function getFunctionType(modelSignatures: SignatureReflection[]) {
   const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
-      ? `\\<${fn.typeParameters
+      ? `<${fn.typeParameters
           .map((typeParameter) => typeParameter.name)
-          .join(', ')}>`
+          .join(', ')}\\>`
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
@@ -177,9 +177,9 @@ function getReferenceType(model: ReferenceType) {
         : [escape(model.name)];
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
-        `\\<${model.typeArguments
+        `<${model.typeArguments
           .map((typeArgument) => `${type.call(typeArgument)}`)
-          .join(', ')}>`,
+          .join(', ')}\\>`,
       );
     }
     return reflection.join('');

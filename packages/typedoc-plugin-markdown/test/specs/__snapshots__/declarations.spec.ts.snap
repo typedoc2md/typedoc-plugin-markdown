@@ -15,7 +15,7 @@ exports[`Reflections: should compile a variable with default value 1`] = `
 `;
 
 exports[`Reflections: should compile any function type 1`] = `
-"Ƭ  **AnyFunctionType**\\\\<A>: (...input: any[]) => A
+"Ƭ  **AnyFunctionType**<A\\\\>: (...input: any[]) => A
 
 [partial: member.sources]
 

@@ -61,7 +61,7 @@ Name | Type | Default value | Description |
 \`valueC\` | number | Number.NaN | A parameter with a default NaN value. |
 \`valueD\` | boolean | true | A parameter with a default boolean value. |
 \`valueE\` | boolean | null | A parameter with a default null value.  |
-\`valueF\` | string | \\"\\\\<foo>\\" | - |
+\`valueF\` | string | \\"<foo\\\\>\\" | - |
 
 **Returns:** string
 "
@@ -122,7 +122,7 @@ Name | Type | Description |
 `;
 
 exports[`Signatures: should compile signature with type params' 1`] = `
-"▸ \`Const\`**functionWithTypeParams**\\\\<Item>(): boolean
+"▸ \`Const\`**functionWithTypeParams**<Item\\\\>(): boolean
 
 [partial: member.sources]
 

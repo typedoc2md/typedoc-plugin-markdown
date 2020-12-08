@@ -4,6 +4,7 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { ReflectionType } from 'typedoc/dist/lib/models';
+
 import { escape } from './escape';
 import { memberSymbol } from './member-symbol';
 import { stripComments } from './strip-comments';
@@ -20,9 +21,9 @@ export function declarationTitle(
   md.push(`${this.flags.isRest ? '... ' : ' '}**${escape(this.name)}**`);
   if (this instanceof DeclarationReflection && this.typeParameters) {
     md.push(
-      `\\<${this.typeParameters
+      `<${this.typeParameters
         .map((typeParameter) => typeParameter.name)
-        .join(', ')}>`,
+        .join(', ')}\\>`,
     );
   }
 
