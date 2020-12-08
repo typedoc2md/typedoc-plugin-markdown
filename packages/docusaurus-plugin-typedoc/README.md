@@ -88,8 +88,12 @@ Options object for auto generated sidebar. Pass `null` to skip generation comple
 
 - **readmeLabel**
 
-  The label of the README sidebar item. Default to `"Readme"`.
+  The label of the `README` sidebar item. Default to `"Readme"`.
   _Ignored if `readme=none`_.
+
+- **indexLabel**
+
+  The label of the globals/index sidebar item. Default to `"Index"`.
 
 
 To consume the sidebar, update `sidebars.js` (or equivalent entry sidebars file) and require the generated sidebar:

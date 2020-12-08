@@ -31,16 +31,16 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
 
-- `--hideProjectName<boolean>`<br>
-  Do not render project name in template header. Defaults to `false`.
 - `--hideBreadcrumbs<boolean>`<br>
   Do not render breadcrumbs in template header. Defaults to `false`.
+- `--allReflectionsHaveOwnDocument<boolean>`<br>
+  Output all reflections into seperate output files. Defaults to `false`.
 - `--publicPath<string>`<br>
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `undefined`.
 - `--namedAnchors<boolean>`<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 
-## Additional plugins
+## Additional plugins / themes
 
 If using specifically for [Docusaurus v2](https://v2.docusaurus.io/) or [VuePress](https://vuepress.vuejs.org/) check out the respective plugin for the platform:
 
