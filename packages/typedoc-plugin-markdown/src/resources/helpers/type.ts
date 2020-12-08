@@ -6,6 +6,7 @@ import {
   InferredType,
   IntersectionType,
   IntrinsicType,
+  LiteralType,
   PredicateType,
   QueryType,
   ReferenceType,
@@ -99,24 +100,35 @@ export function type(
     return getInferredType(this);
   }
 
+  if (this instanceof LiteralType) {
+    return getLiteralType(this);
+  }
+
   return this ? escape(this.toString()) : '';
+}
+
+function getLiteralType(model: LiteralType) {
+  if (typeof model.value === 'bigint') {
+    return `*${model.value}n*`;
+  }
+  return `*${model.value}*`;
 }
 
 function getReflectionType(model: DeclarationReflection, collapse: boolean) {
   if (model.signatures) {
     return collapse ? 'function' : getFunctionType(model.signatures);
   }
-  return collapse ? 'object' : getLiteralType(model);
+  return collapse ? 'object' : getDeclarationType(model);
 }
 
-function getLiteralType(model: DeclarationReflection) {
+function getDeclarationType(model: DeclarationReflection) {
   if (model.indexSignature || model.children) {
     let indexSignature = '';
     const declarationIndexSignature = model.indexSignature;
     if (declarationIndexSignature) {
       const key = declarationIndexSignature.parameters
         ? declarationIndexSignature.parameters.map(
-            (param) => `[${param.name}:${param.type}]`,
+            (param) => `[${param.name}: ${param.type}]`,
           )
         : '';
       const obj = type.call(declarationIndexSignature.type);
@@ -125,7 +137,7 @@ function getLiteralType(model: DeclarationReflection) {
     const types =
       model.children &&
       model.children.map((obj) => {
-        return `${obj.name}${obj.flags.isOptional ? '?' : ''}: ${type.call(
+        return `\`${obj.name}${obj.flags.isOptional ? '?' : ''}\`: ${type.call(
           obj.signatures || obj.children ? obj : obj.type,
         )} ${obj.defaultValue ? `= ${escape(obj.defaultValue)}` : ''}`;
       });
@@ -145,9 +157,9 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          return `${param.flags.isRest ? '...' : ''}${escape(param.name)}${
+          return `${param.flags.isRest ? '...' : ''}\`${escape(param.name)}${
             param.flags.isOptional ? '?' : ''
-          }: ${type.call(param.type ? param.type : param)}`;
+          }\`: ${type.call(param.type ? param.type : param)}`;
         })
       : [];
     const returns = type.call(fn.type);
@@ -162,13 +174,13 @@ function getReferenceType(model: ReferenceType) {
     const reflection =
       model.reflection && model.reflection.url
         ? [
-            `[${escape(
+            `[*${escape(
               model.reflection.name,
-            )}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            )}*](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
               model.reflection.url,
             )})`,
           ]
-        : [escape(model.name)];
+        : [`*${escape(model.name)}*`];
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `\\<${model.typeArguments
@@ -203,7 +215,7 @@ function getTupleType(model: TupleType) {
 }
 
 function getIntrinsicType(model: IntrinsicType) {
-  return escape(model.name);
+  return `*${escape(model.name)}*`;
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {

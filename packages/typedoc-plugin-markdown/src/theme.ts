@@ -16,8 +16,9 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
+import { Breadcrumbs } from './components/breadcrumbs';
 import { Comments } from './components/comments';
-import { ContextAwareHelpers } from './components/context-aware-helpers';
+import { ContextAwareHelpers } from './components/options';
 
 /**
  * The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/DefaultTheme.ts.
@@ -28,6 +29,8 @@ import { ContextAwareHelpers } from './components/context-aware-helpers';
 export default class MarkdownTheme extends Theme {
   @BindOption('readme')
   readme!: string;
+  @BindOption('entryPoints')
+  entryPoints!: string[];
   @BindOption('allReflectionsHaveOwnDocument')
   allReflectionsHaveOwnDocument!: boolean;
 
@@ -59,9 +62,10 @@ export default class MarkdownTheme extends Theme {
     renderer.removeComponent('legend');
     renderer.removeComponent('navigation');
 
-    // add markdown related componenets
+    // add markdown related componenets / helpers
+    renderer.addComponent('options', new ContextAwareHelpers(renderer));
+    renderer.addComponent('breadcrumbs', new Breadcrumbs(renderer));
     renderer.addComponent('comments', new Comments(renderer));
-    renderer.addComponent('helpers', new ContextAwareHelpers(renderer));
   }
 
   /**
@@ -276,15 +280,16 @@ export default class MarkdownTheme extends Theme {
     };
     const hasSeperateGlobals = this.readme !== 'none';
     const navigation = createNavigationItem(project.name);
+    const rootName = this.entryPoints.length > 1 ? 'Modules' : 'Exports';
     navigation.children?.push(
       createNavigationItem(
-        hasSeperateGlobals ? 'Readme' : 'Exports',
+        hasSeperateGlobals ? 'Readme' : rootName,
         this.entryFile,
       ),
     );
     if (hasSeperateGlobals) {
       navigation.children?.push(
-        createNavigationItem('Exports', this.globalsFile),
+        createNavigationItem(rootName, this.globalsFile),
       );
     }
     if (project.groups) {

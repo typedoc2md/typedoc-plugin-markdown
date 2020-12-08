@@ -19,7 +19,7 @@ export interface FrontMatter {
 export interface SidebarOptions {
   fullNames: boolean;
   sidebarFile: string;
-  globalsLabel: string;
+  globalsLabel?: string;
   readmeLabel: string;
 }
 

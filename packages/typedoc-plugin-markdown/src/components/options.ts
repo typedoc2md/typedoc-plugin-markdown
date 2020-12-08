@@ -6,7 +6,7 @@ import {
 
 import MarkdownTheme from '../theme';
 
-@Component({ name: 'helpers' })
+@Component({ name: 'options' })
 export class ContextAwareHelpers extends ContextAwareRendererComponent {
   @BindOption('publicPath')
   publicPath!: string;

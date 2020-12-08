@@ -4,6 +4,7 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { ReflectionType } from 'typedoc/dist/lib/models';
+
 import { escape } from './escape';
 import { memberSymbol } from './member-symbol';
 import { stripComments } from './strip-comments';
@@ -13,7 +14,7 @@ import { type } from './type';
 export function declarationTitle(
   this: ParameterReflection | DeclarationReflection,
 ) {
-  const md = [memberSymbol.call(this) + ' '];
+  const md = [memberSymbol.call(this)];
   if (this.flags && !this.flags.isRest) {
     md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
   }

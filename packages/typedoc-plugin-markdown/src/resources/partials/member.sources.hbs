@@ -1,18 +1,18 @@
 {{#if implementationOf}}
 
-*Implementation of {{#with implementationOf}}{{typeAndParent}}{{/with}}*
+Implementation of: {{#with implementationOf}}{{typeAndParent}}{{/with}}
 
 {{/if}}
 
 {{#if inheritedFrom}}
 
-*Inherited from {{#with inheritedFrom}}{{{typeAndParent}}}{{/with}}*
+Inherited from: {{#with inheritedFrom}}{{{typeAndParent}}}{{/with}}
 
 {{/if}}
 
 {{#if overwrites}}
 
-*Overrides {{#with overwrites}}{{typeAndParent}}{{/with}}*
+Overrides: {{#with overwrites}}{{typeAndParent}}{{/with}}
 
 {{/if}}
 
@@ -22,11 +22,11 @@
 
 {{#if url}}
 
-*Defined in [{{fileName}}:{{line}}]({{url}})*
+Defined in: [{{fileName}}:{{line}}]({{url}})
 
 {{else}}
 
-*Defined in {{fileName}}:{{line}}*
+Defined in: {{fileName}}:{{line}}
 
 {{/if}}
 
