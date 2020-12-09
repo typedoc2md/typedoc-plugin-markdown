@@ -1,4 +1,5 @@
 export interface PluginOptions {
+  id: string;
   inputFiles: string[];
   docsRoot: string;
   out: string;

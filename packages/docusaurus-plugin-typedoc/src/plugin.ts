@@ -9,6 +9,7 @@ import DocusaurusTheme from './theme/theme';
 import { PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
+  id: 'default',
   inputFiles: ['../src/'],
   docsRoot: 'docs',
   out: 'api',
@@ -22,7 +23,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   readmeTitle: undefined,
 };
 
-let app: Application;
+const apps: string[] = [];
 
 export default function pluginDocusaurus(
   context: LoadContext,
@@ -44,13 +45,10 @@ export default function pluginDocusaurus(
     }),
   };
 
-  /**
-   * Initialize and build app
-   * - currently we can't re-compile with devServer due to infinate render loop
-   * - @TODO look if configureWebpack lifecycle can be updated to handle more gracefully
-   */
-  if (!app) {
-    app = new Application();
+  // Initialize and build app
+  if (!apps.includes(options.id)) {
+    apps.push(options.id);
+    const app = new Application();
 
     // TypeDoc options
     const typedocOptions = Object.keys(options).reduce((option, key) => {
