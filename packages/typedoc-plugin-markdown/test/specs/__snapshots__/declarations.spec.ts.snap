@@ -14,8 +14,8 @@ exports[`Declarations: should compile a variable with default value 1`] = `
 "
 `;
 
-exports[`Declarations: should compile any function type 1`] = `
-"Ƭ  **AnyFunctionType**\\\\<A>: (...input: any[]) => A
+exports[`Reflections: should compile any function type 1`] = `
+"Ƭ  **AnyFunctionType**<A\\\\>: (...input: any[]) => A
 
 [partial: member.sources]
 

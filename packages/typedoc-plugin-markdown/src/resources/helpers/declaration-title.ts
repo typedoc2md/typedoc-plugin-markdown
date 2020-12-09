@@ -21,9 +21,9 @@ export function declarationTitle(
   md.push(`${this.flags.isRest ? '... ' : ' '}**${escape(this.name)}**`);
   if (this instanceof DeclarationReflection && this.typeParameters) {
     md.push(
-      `\\<${this.typeParameters
+      `<${this.typeParameters
         .map((typeParameter) => typeParameter.name)
-        .join(', ')}>`,
+        .join(', ')}\\>`,
     );
   }
 

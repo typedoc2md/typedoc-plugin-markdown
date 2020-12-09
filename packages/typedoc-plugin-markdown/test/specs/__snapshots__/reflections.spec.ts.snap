@@ -59,7 +59,7 @@ exports[`Reflections: (template) should compile module with breadcrumbs and proj
 `;
 
 exports[`Reflections: (template) should compile reflection with type params 1`] = `
-"# Interface: ReflectionWithTypeParams\\\\<T, V>
+"# Interface: ReflectionWithTypeParams<T, V\\\\>
 
 [partial: comment]
 

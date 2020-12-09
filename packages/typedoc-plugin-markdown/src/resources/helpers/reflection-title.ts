@@ -14,7 +14,7 @@ export function reflectionTitle(this: PageEvent, shouldEscape = true) {
     const typeParameters = this.model.typeParameters
       .map((typeParameter: ParameterReflection) => typeParameter.name)
       .join(', ');
-    title.push((shouldEscape ? '\\<' : '<') + typeParameters + '>');
+    title.push(`<${typeParameters}${shouldEscape ? '\\>' : '>'}`);
   }
   return title.join('');
 }

@@ -1,4 +1,5 @@
 export interface PluginOptions {
+  id: string;
   docsRoot: string;
   out: string;
   sidebar: SidebarOptions | null;
