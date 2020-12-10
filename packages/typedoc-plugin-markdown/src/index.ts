@@ -6,10 +6,6 @@ import { MarkdownPlugin } from './plugin';
 export = (PluginHost: Application) => {
   const app = PluginHost.owner;
 
-  if (app.converter.hasComponent('markdown')) {
-    return;
-  }
-
   app.options.addDeclaration({
     help: '[Markdown Plugin] Do not render project name in template header.',
     name: 'hideProjectName',
