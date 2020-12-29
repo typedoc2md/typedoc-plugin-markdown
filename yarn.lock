@@ -1455,15 +1455,9 @@
     "@babel/types" "^7.3.0"
 
 "@types/babel__traverse@^7.0.4":
-<<<<<<< HEAD
-  version "7.0.15"
-  resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.0.15.tgz#db9e4238931eb69ef8aab0ad6523d4d4caa39d03"
-  integrity sha512-Pzh9O3sTK8V6I1olsXpCfj2k/ygO2q1X0vhhnDrEQyYLHZesWz+zMZMVcwXLCYf0U36EtmyYaFGPfXlTtDHe3A==
-=======
   version "7.11.0"
   resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.11.0.tgz#b9a1efa635201ba9bc850323a8793ee2d36c04a0"
   integrity sha512-kSjgDMZONiIfSH1Nxcr5JIRMwUetDki63FSQfpTCz8ogF3Ulqm8+mr5f78dUYs6vMiB6gBusQqfQmBvHZj/lwg==
->>>>>>> master
   dependencies:
     "@babel/types" "^7.3.0"
 
@@ -1529,17 +1523,10 @@
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
 
-<<<<<<< HEAD
-"@types/jest@^26.0.16":
-  version "26.0.16"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.16.tgz#b47abd50f6ed0503f589db8e126fc8eb470cf87c"
-  integrity sha512-Gp12+7tmKCgv9JjtltxUXokohCAEZfpJaEW5tn871SGRp8I+bRWBonQO7vW5NHwnAHe5dd50+Q4zyKuN35i09g==
-=======
 "@types/jest@^26.0.18":
   version "26.0.18"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.18.tgz#3c5f9228e9ac15bd42f903f1acf2ad6ea5ed73d9"
   integrity sha512-scDPs+mELZgsFetTgBSsIxKGrlitn9t/d2ecP+S1QSIGD+31fkMBEftLfOAX5k3tU06/0PjreJIQ+gWEbbHqpw==
->>>>>>> master
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
@@ -1564,17 +1551,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.10.3.tgz#5ae1f119c96643fc9b19b2d1a83bfa2ec3dbb7ea"
   integrity sha512-zdN0hor7TLkjAdKTnYW+Y22oIhUUpil5ZD1V1OFq0CR0CLKw+NdR6dkziTfkWRLo6sKzisayoj/GNpNbe4LY9Q==
 
-<<<<<<< HEAD
-"@types/node@^14.14.10":
-  version "14.14.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.10.tgz#5958a82e41863cfc71f2307b3748e3491ba03785"
-  integrity sha512-J32dgx2hw8vXrSbu4ZlVhn1Nm3GbeCFNw2FWL8S5QKucHGY0cyNwjdQdO+KMBZ4wpmC7KhLCiNsdk1RFRIYUQQ==
-=======
 "@types/node@^14.14.11":
   version "14.14.11"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.11.tgz#fc25a4248a5e8d0837019b1d170146d07334abe0"
   integrity sha512-BJ97wAUuU3NUiUCp44xzUFquQEvnk1wu7q4CMEUYKJWjdkr0YWYDsm4RFtAvxYsNjLsKcrFt6RvK8r+mnzMbEQ==
->>>>>>> master
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -4137,17 +4117,10 @@ is-ci@^2.0.0:
   dependencies:
     ci-info "^2.0.0"
 
-<<<<<<< HEAD
-is-core-module@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.1.0.tgz#a4cc031d9b1aca63eecbd18a650e13cb4eeab946"
-  integrity sha512-YcV7BgVMRFRua2FqQzKtTDMz8iCuLEyGKjr70q8Zm1yy2qKcurbFEd79PAdHV77oL3NrAaOVQIbMmiHQCHB7ZA==
-=======
 is-core-module@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.2.0.tgz#97037ef3d52224d85163f5597b2b63d9afed981a"
   integrity sha512-XRAfAdyyY5F5cOXn7hYQDqh2Xmii+DEfIcQGxK/uNwMHhIkPWO0g8msXcbzLe+MpGoR951MlqM/2iIlU4vKDdQ==
->>>>>>> master
   dependencies:
     has "^1.0.3"
 
@@ -6630,19 +6603,11 @@ resolve@^1.1.6, resolve@^1.10.0, resolve@^1.3.2:
     path-parse "^1.0.6"
 
 resolve@^1.18.1:
-<<<<<<< HEAD
-  version "1.18.1"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.18.1.tgz#018fcb2c5b207d2a6424aee361c5a266da8f4130"
-  integrity sha512-lDfCPaMKfOJXjy0dPayzPdF1phampNWr3qFCjAu+rw/qbQmr5jWH5xN2hwh9QKfw9E5v4hwV7A+jrCmL8yjjqA==
-  dependencies:
-    is-core-module "^2.0.0"
-=======
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.19.0.tgz#1af5bf630409734a067cae29318aac7fa29a267c"
   integrity sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==
   dependencies:
     is-core-module "^2.1.0"
->>>>>>> master
     path-parse "^1.0.6"
 
 restore-cursor@^2.0.0:
@@ -7610,15 +7575,15 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typedoc-default-themes@0.12.0-beta.10:
-  version "0.12.0-beta.10"
-  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.0-beta.10.tgz#74caab1f4a9c568ff28d501ae6005ff3d8ab3e62"
-  integrity sha512-RqTLRQvzuLrNEZ1VcmYoQiFkixW0QvVUv0R35jlkhxAMGtoo/giUVtWrWY1+Yp7HBnfI/wZKvhZpQYswbDL7eQ==
+typedoc-default-themes@0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.12.0.tgz#42451948e55a148c1350eb2aa68829be5c2b06b3"
+  integrity sha512-0hHBxwmfxE0rkIslOiO39fJyYwaScQEhUIxcpqx3uS1BL3zhFW5oQfUaPx2cv2XLL/GXhYFxhdFLoVmNptbxEQ==
 
-typedoc@0.20.0-beta.26:
-  version "0.20.0-beta.26"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.20.0-beta.26.tgz#123fb9758009aad26d29dae762ce4fcadf3dad9a"
-  integrity sha512-6gJsPTlmXyqxgwVlNG1YAeNRQMGrBv20ibfrnX8LKLPA24is8p6KSV02VBmkDYkXfzXufmk3dcrBON7hW8vQXQ==
+typedoc@0.20.1:
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.20.1.tgz#3cdf4015ed8beedcd83c0714001f2a7da72a3b5e"
+  integrity sha512-XQ4rFNrVTxrP3CtHszKrXkAVF2OUQtXWj480wQKRNXesM8DWw4zlTKDul2q3oKPKusvSx+hU/zzFa9pCU+6Pjw==
   dependencies:
     colors "^1.4.0"
     fs-extra "^9.0.1"
@@ -7630,7 +7595,7 @@ typedoc@0.20.0-beta.26:
     progress "^2.0.3"
     shelljs "^0.8.4"
     shiki "^0.2.7"
-    typedoc-default-themes "0.12.0-beta.10"
+    typedoc-default-themes "0.12.0"
 
 typescript@^4.0.5:
   version "4.0.5"
@@ -8032,17 +7997,10 @@ yallist@^3.0.0, yallist@^3.0.2, yallist@^3.0.3:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.1.1.tgz#dbb7daf9bfd8bac9ab45ebf602b8cbad0d5d08fd"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
 
-<<<<<<< HEAD
-yargs-parser@20.x:
-  version "20.2.3"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.3.tgz#92419ba867b858c868acf8bae9bf74af0dd0ce26"
-  integrity sha512-emOFRT9WVHw03QSvN5qor9QQT9+sw5vwxfYweivSMHTcAXPefwVae2FjO7JJjj8hCE4CzPOPeFM83VwT29HCww==
-=======
 yargs-parser@20.x, yargs-parser@^20.2.2:
   version "20.2.4"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.4.tgz#b42890f14566796f85ae8e3a25290d205f154a54"
   integrity sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
->>>>>>> master
 
 yargs-parser@^15.0.1:
   version "15.0.1"
@@ -8060,14 +8018,6 @@ yargs-parser@^18.1.2, yargs-parser@^18.1.3:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-<<<<<<< HEAD
-yargs-parser@^20.2.2:
-  version "20.2.4"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.4.tgz#b42890f14566796f85ae8e3a25290d205f154a54"
-  integrity sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
-
-=======
->>>>>>> master
 yargs@^14.2.2:
   version "14.2.3"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-14.2.3.tgz#1a1c3edced1afb2a2fea33604bc6d1d8d688a414"
