@@ -6,8 +6,8 @@ beforeAll(() => {
   testApp = new TestApp(['theme.ts']);
 });
 describe(`Theme:`, () => {
-  test(`should getUrls'`, () => {
-    testApp.bootstrap({ theme: './dist' });
+  test(`should getUrls'`, async () => {
+    await testApp.bootstrap({ theme: './dist' });
     const urlMappings = testApp.theme.getUrls(testApp.project);
     expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
   });

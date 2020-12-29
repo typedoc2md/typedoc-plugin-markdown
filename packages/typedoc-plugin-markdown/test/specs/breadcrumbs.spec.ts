@@ -58,7 +58,7 @@ describe(`Breadcrumbs:`, () => {
       ).toMatchSnapshot();
     });
   });
-  describe(`(without readme)`, async () => {
+  describe(`(without readme)`, () => {
     beforeAll(async () => {
       await testApp.bootstrap({ readme: 'none' });
       moduleReflection = testApp.project.children[0];

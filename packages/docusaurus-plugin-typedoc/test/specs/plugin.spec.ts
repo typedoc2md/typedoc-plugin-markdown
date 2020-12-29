@@ -121,7 +121,7 @@ describe(`Plugin:`, () => {
         {
           fullNames: false,
           sidebarFile: 'typedoc-sidebar.js',
-          globalsLabel: 'Exports',
+          globalsLabel: 'Index',
           readmeLabel: 'Readme',
         },
         [],
@@ -138,7 +138,7 @@ describe(`Plugin:`, () => {
         {
           fullNames: false,
           sidebarFile: 'custom-sidebar.js',
-          globalsLabel: 'Exports',
+          globalsLabel: 'Index',
           readmeLabel: 'Readme',
         },
         [],

@@ -16,7 +16,7 @@ const app = new Application();
 
 let done = false;
 
-export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
+export const typedocPlugin = async (opts: PluginOptions, ctx: any) => {
   const sourceDir = ctx.sourceDir;
 
   const options = { ...DEFAULT_PLUGIN_OPTIONS, ...opts };
@@ -69,7 +69,7 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
     return;
   }
 
-  app.generateDocs(project, out);
+  await app.generateDocs(project, out);
 
   return {
     name: 'vuepress-plugin-typedoc',

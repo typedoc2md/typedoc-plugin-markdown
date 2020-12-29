@@ -8,7 +8,7 @@ const tmpobj = tmp.dirSync();
 
 let plugin: any;
 
-const bootstrap = async (customOptions = {}) => {
+async function bootstrap(customOptions = {}) {
   const options = {
     entryPoints: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
     tsconfig: ['../typedoc-plugin-markdown/test/stubs/tsconfig.json'],
@@ -16,12 +16,12 @@ const bootstrap = async (customOptions = {}) => {
     moduleResolution: 'node',
     logger: 'none',
   } as any;
-  plugin = typedocPlugin(
+  plugin = await typedocPlugin(
     { ...options, ...customOptions },
     { sourceDir: tmpobj.name },
   );
   await plugin;
-};
+}
 
 describe(`(render)`, () => {
   test(`should write docs`, async () => {

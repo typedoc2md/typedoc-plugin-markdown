@@ -29,7 +29,7 @@ describe(`Theme:`, () => {
     });
   });
 
-  describe(`(isOutputDirectory)`, async () => {
+  describe(`(isOutputDirectory)`, () => {
     let directoryListingSpy: jest.SpyInstance;
 
     beforeAll(async () => {
@@ -100,7 +100,7 @@ describe(`Theme:`, () => {
     });
   });
 
-  describe(`(directory mappings)`, async () => {
+  describe(`(directory mappings)`, () => {
     test(`should set default mappings'`, async () => {
       await testApp.bootstrap();
       expect(

@@ -1,5 +1,7 @@
-import * as Handlebars from 'handlebars';
 import * as path from 'path';
+
+import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 import DocusaurusTheme from '../../src/theme/theme';
 
@@ -7,9 +9,9 @@ describe(`Theme:`, () => {
   let testApp: TestApp;
   let reflectionTemplate: Handlebars.TemplateDelegate;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['theme.ts']);
-    testApp.bootstrap({
+    await testApp.bootstrap({
       theme: path.resolve(__dirname, '..', '..', 'dist', 'theme'),
     });
     TestApp.stubPartials(['index', 'comment', 'member.signature', 'members']);

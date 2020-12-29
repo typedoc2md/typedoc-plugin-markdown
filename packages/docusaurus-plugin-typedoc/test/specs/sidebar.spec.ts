@@ -12,9 +12,9 @@ tmp.setGracefulCleanup();
 describe(`Sidebar:`, () => {
   let testApp: TestApp;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['theme.ts']);
-    testApp.bootstrap({
+    await testApp.bootstrap({
       theme: path.resolve(__dirname, '..', '..', 'dist', 'theme'),
     });
   });

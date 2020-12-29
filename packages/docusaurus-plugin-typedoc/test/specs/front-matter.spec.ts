@@ -5,8 +5,8 @@ import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 import { DocusaurusFrontMatterComponent } from '../../dist/front-matter';
 import { PluginOptions } from '../../dist/types';
 
-function generate(testApp: TestApp, options: PluginOptions) {
-  testApp.bootstrap();
+async function generate(testApp: TestApp, options: PluginOptions) {
+  await testApp.bootstrap();
   const componentNamename = cuid();
   testApp.renderer.addComponent(
     componentNamename,
@@ -33,7 +33,7 @@ describe(`FrontMatter:`, () => {
     testApp = new TestApp(['frontmatter.ts']);
   });
 
-  describe(`(readme)`, () => {
+  describe(`(readme)`, async () => {
     let page: PageEvent;
 
     beforeEach(() => {
@@ -44,14 +44,17 @@ describe(`FrontMatter:`, () => {
       } as PageEvent;
     });
 
-    test(`should set default index page`, () => {
-      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+    test(`should set default index page`, async () => {
+      const frontMatterComponent = await generate(
+        testApp,
+        DEFAULT_PLUGIN_OPTIONS,
+      );
       frontMatterComponent.onPageEnd(page);
       expect(page.contents).toMatchSnapshot();
     });
 
-    test(`should set custom readmeLabel and readmeTitle`, () => {
-      const frontMatterComponent = generate(testApp, {
+    test(`should set custom readmeLabel and readmeTitle`, async () => {
+      const frontMatterComponent = await generate(testApp, {
         ...DEFAULT_PLUGIN_OPTIONS,
         sidebar: {
           ...DEFAULT_PLUGIN_OPTIONS.sidebar,
@@ -63,8 +66,8 @@ describe(`FrontMatter:`, () => {
       expect(page.contents).toMatchSnapshot();
     });
 
-    test(`should set the same custom readmeLabel and readmeTitle`, () => {
-      const frontMatterComponent = generate(testApp, {
+    test(`should set the same custom readmeLabel and readmeTitle`, async () => {
+      const frontMatterComponent = await generate(testApp, {
         ...DEFAULT_PLUGIN_OPTIONS,
         sidebar: {
           ...DEFAULT_PLUGIN_OPTIONS.sidebar,
@@ -76,8 +79,8 @@ describe(`FrontMatter:`, () => {
       expect(page.contents).toMatchSnapshot();
     });
 
-    test(`should set default globals page`, () => {
-      const frontMatterComponent = generate(testApp, {
+    test(`should set default globals page`, async () => {
+      const frontMatterComponent = await generate(testApp, {
         ...DEFAULT_PLUGIN_OPTIONS,
       });
       frontMatterComponent.onPageEnd(page);
@@ -96,14 +99,17 @@ describe(`FrontMatter:`, () => {
       } as PageEvent;
     });
 
-    test(`should set default globals page`, () => {
-      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+    test(`should set default globals page`, async () => {
+      const frontMatterComponent = await generate(
+        testApp,
+        DEFAULT_PLUGIN_OPTIONS,
+      );
       frontMatterComponent.onPageEnd(page);
       expect(page.contents).toMatchSnapshot();
     });
 
-    test(`should set custom globalsLabel and custom globalsTitle`, () => {
-      const frontMatterComponent = generate(testApp, {
+    test(`should set custom globalsLabel and custom globalsTitle`, async () => {
+      const frontMatterComponent = await generate(testApp, {
         ...DEFAULT_PLUGIN_OPTIONS,
         sidebar: {
           ...DEFAULT_PLUGIN_OPTIONS.sidebar,
@@ -115,10 +121,13 @@ describe(`FrontMatter:`, () => {
       expect(page.contents).toMatchSnapshot();
     });
 
-    test(`should set globals page when readme=none`, () => {
+    test(`should set globals page when readme=none`, async () => {
       page.url = 'index.md';
       page.project.url = 'index.md';
-      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+      const frontMatterComponent = await generate(
+        testApp,
+        DEFAULT_PLUGIN_OPTIONS,
+      );
       frontMatterComponent.onPageEnd(page);
       expect(page.contents).toMatchSnapshot();
     });
@@ -138,14 +147,17 @@ describe(`FrontMatter:`, () => {
       } as PageEvent;
     });
 
-    test(`should return reflection labels with short names`, () => {
-      const frontMatterComponent = generate(testApp, DEFAULT_PLUGIN_OPTIONS);
+    test(`should return reflection labels with short names`, async () => {
+      const frontMatterComponent = await generate(
+        testApp,
+        DEFAULT_PLUGIN_OPTIONS,
+      );
       frontMatterComponent.onPageEnd(page);
       expect(page.contents).toMatchSnapshot();
     });
 
-    test(`should return front matter with full names`, () => {
-      const frontMatterComponent = generate(testApp, {
+    test(`should return front matter with full names`, async () => {
+      const frontMatterComponent = await generate(testApp, {
         ...DEFAULT_PLUGIN_OPTIONS,
         sidebar: {
           ...DEFAULT_PLUGIN_OPTIONS.sidebar,
@@ -158,13 +170,13 @@ describe(`FrontMatter:`, () => {
   });
 
   describe(`(no sidebar)`, () => {
-    test(`should return front matter without sidebar`, () => {
+    test(`should return front matter without sidebar`, async () => {
       const page = {
         url: 'modules.md',
         project: { name: 'test-project-name', url: 'modules.md' },
         contents: 'CONTENTS',
       } as PageEvent;
-      const frontMatterComponent = generate(testApp, {
+      const frontMatterComponent = await generate(testApp, {
         ...DEFAULT_PLUGIN_OPTIONS,
         sidebar: null,
       });
