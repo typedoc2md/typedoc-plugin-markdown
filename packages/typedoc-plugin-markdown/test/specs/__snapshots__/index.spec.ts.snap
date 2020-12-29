@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index: should compile readme 1`] = `
-"**[typedoc-plugin-markdown](../README.md)**
-
-> [helper: breadcrumbs]
+"[helper: breadcrumbs]
 
 # MY README
 

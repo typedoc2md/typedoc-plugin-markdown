@@ -15,10 +15,10 @@ export function declarationTitle(
   this: ParameterReflection | DeclarationReflection,
 ) {
   const md = [memberSymbol.call(this)];
-  if (this.flags && !this.flags.isRest) {
-    md.push(this.flags.map((flag) => `\`${flag}\``).join(' '));
+  if (this.flags && this.flags.length > 0 && !this.flags.isRest) {
+    md.push(' ' + this.flags.map((flag) => `\`${flag}\``).join(' '));
   }
-  md.push(`${this.flags.isRest ? '... ' : ' '}**${escape(this.name)}**`);
+  md.push(`${this.flags.isRest ? '... ' : ''} **${escape(this.name)}**`);
   if (this instanceof DeclarationReflection && this.typeParameters) {
     md.push(
       `<${this.typeParameters
@@ -29,8 +29,8 @@ export function declarationTitle(
 
   md.push(`: ${this.parent?.kindOf(ReflectionKind.Enum) ? '' : getType(this)}`);
 
-  if (this.defaultValue) {
-    md.push(` = ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
+  if (this.defaultValue && this.defaultValue !== '...') {
+    md.push(`= ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
   }
   return md.join('');
 }
@@ -45,9 +45,6 @@ function getType(reflection: ParameterReflection | DeclarationReflection) {
 function shouldCollapse(
   reflection: ParameterReflection | DeclarationReflection,
 ) {
-  if (reflection.kindOf(ReflectionKind.ObjectLiteral)) {
-    return true;
-  }
   if (reflection.kindOf(ReflectionKind.Variable)) {
     const type = reflection.type as ReflectionType;
     if (type.declaration && type.declaration.signatures) {

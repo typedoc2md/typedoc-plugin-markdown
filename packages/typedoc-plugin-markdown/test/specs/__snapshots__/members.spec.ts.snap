@@ -3,11 +3,11 @@
 exports[`Members: (member) should compile a signature members' 1`] = `
 "### signatureMember
 
-▸ **signatureMember**(): void
+▸ **signatureMember**(): *void*
+
+**Returns:** *void*
 
 [partial: member.sources]
-
-**Returns:** void
 
 ___
 "
@@ -16,7 +16,7 @@ ___
 exports[`Members: (member) should compile declaration members' 1`] = `
 "### declarationMember
 
-• \`Let\` **declarationMember**: string
+• \`Let\` **declarationMember**: *string*
 
 [partial: member.sources]
 
@@ -27,11 +27,11 @@ ___
 exports[`Members: (member) should compile members with getter' 1`] = `
 "### getter
 
-• get **getter**(): string
+• **getter**(): *string*
+
+**Returns:** *string*
 
 [partial: member.sources]
-
-**Returns:** string
 
 ___
 "
@@ -40,31 +40,35 @@ ___
 exports[`Members: (member) should compile members with setter' 1`] = `
 "### setter
 
-• set **setter**(\`value\`: string): void
-
-[partial: member.sources]
+• **setter**(\`value\`: *string*): *void*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-\`value\` | string |
+\`value\` | *string* |
 
-**Returns:** void
+**Returns:** *void*
+
+[partial: member.sources]
 
 ___
 "
 `;
 
 exports[`Members: (member) should compile reference members' 1`] = `
-"•  **ReferenceMember**: {}
+"• **ReferenceMember**: { \`constructor\`: () => [*ReferenceMember*](referencemember.md)  }
 
 [partial: member.sources]
 "
 `;
 
 exports[`Members: (members) should compile class members' 1`] = `
-"## Properties
+"## Constructors
+
+[partial: member]
+
+## Properties
 
 [partial: member]
 

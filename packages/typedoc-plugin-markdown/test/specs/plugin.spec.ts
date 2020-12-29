@@ -18,28 +18,28 @@ describe(`Plugin:`, () => {
       testApp.app.renderer.removeComponent('theme');
     });
 
-    test(`should load markdown theme by default`, () => {
-      testApp.bootstrap();
+    test(`should load markdown theme by default`, async () => {
+      await testApp.bootstrap();
       expect(testApp.theme instanceof MarkdownTheme).toBeTruthy();
       expect(testApp.theme.basePath).toEqual(defaultMarkdownThemePath);
     });
 
-    test(`should load custom markdown theme by path'`, () => {
+    test(`should load custom markdown theme by path'`, async () => {
       const customThemePath = path.resolve(
         __dirname,
         '..',
         'stubs',
         'custom-theme',
       );
-      testApp.bootstrap({
+      await testApp.bootstrap({
         theme: customThemePath,
       });
       expect(testApp.theme instanceof MarkdownTheme).toBeTruthy();
       expect(testApp.theme.basePath).toEqual(customThemePath);
     });
 
-    test(`should load markdown theme with unrecognised theme'`, () => {
-      testApp.bootstrap({ theme: 'minimal' });
+    test(`should load markdown theme with unrecognised theme'`, async () => {
+      await testApp.bootstrap({ theme: 'minimal' });
       expect(testApp.theme instanceof MarkdownTheme).toBeTruthy();
       expect(testApp.theme.basePath).toEqual(defaultMarkdownThemePath);
     });

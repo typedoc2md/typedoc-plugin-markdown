@@ -139,11 +139,19 @@ function getDeclarationType(model: DeclarationReflection) {
       model.children.map((obj) => {
         return `\`${obj.name}${obj.flags.isOptional ? '?' : ''}\`: ${type.call(
           obj.signatures || obj.children ? obj : obj.type,
-        )} ${obj.defaultValue ? `= ${escape(obj.defaultValue)}` : ''}`;
+        )} ${
+          obj.defaultValue && obj.defaultValue !== '...'
+            ? `= ${escape(obj.defaultValue)}`
+            : ''
+        }`;
       });
     return `{ ${indexSignature ? indexSignature : ''}${
       types ? types.join('; ') : ''
-    } }${model.defaultValue ? `= ${escape(model.defaultValue)}` : ''}`;
+    } }${
+      model.defaultValue && model.defaultValue !== '...'
+        ? `= ${escape(model.defaultValue)}`
+        : ''
+    }`;
   }
   return '{}';
 }

@@ -6,9 +6,9 @@ describe(`Hierarchy:`, () => {
   let testApp: TestApp;
   let helper: Handlebars.HelperDelegate;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['hierarchy.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
     helper = Handlebars.helpers.hierarchy;
   });
   test(`should compile type hierarchy`, () => {

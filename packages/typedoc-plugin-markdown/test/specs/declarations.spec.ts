@@ -7,9 +7,9 @@ describe(`Declarations:`, () => {
 
   let template: Handlebars.TemplateDelegate;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['declarations.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
     TestApp.stubPartials(['member.sources']);
     TestApp.stubHelpers([]);
 

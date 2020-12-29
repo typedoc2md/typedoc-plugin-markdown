@@ -1,54 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signatures: should compile callable signature' 1`] = `
-"▸ (): string
+"▸ **CallableSignature**(): *string*
+
+**Returns:** *string*
 
 [partial: member.sources]
-
-**Returns:** string
 "
 `;
 
 exports[`Signatures: should compile function that returns an object' 1`] = `
 "▸ **functionReturningAnObject**(): object
 
-[partial: member.sources]
-
 **Returns:** object
 
 Name | Type |
 ------ | ------ |
-\`x\` | number |
-\`y\` | number |
+\`x\` | *number* |
+\`y\` | *number* |
+
+[partial: member.sources]
 "
 `;
 
 exports[`Signatures: should compile signature with @return comments' 1`] = `
-"▸ **commentsInReturn**(): boolean
-
-[partial: member.sources]
+"▸ **commentsInReturn**(): *boolean*
 
 Comments with a return definition
 
-**Returns:** boolean
+**Returns:** *boolean*
 
 Return comments
+
+[partial: member.sources]
 "
 `;
 
 exports[`Signatures: should compile signature with a flag' 1`] = `
-"▸ \`Private\`**privateFunction**(): string
+"▸ \`Private\`**privateFunction**(): *string*
+
+**Returns:** *string*
 
 [partial: member.sources]
-
-**Returns:** string
 "
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"▸ **functionWithDefaults**(\`valueA?\`: string, \`valueB?\`: number, \`valueC?\`: number, \`valueD?\`: boolean, \`valueE?\`: boolean, \`valueF?\`: string): string
-
-[partial: member.sources]
+"▸ **functionWithDefaults**(\`valueA?\`: *string*, \`valueB?\`: *number*, \`valueC?\`: *number*, \`valueD?\`: *boolean*, \`valueE?\`: *boolean*, \`valueF?\`: *string*): *string*
 
 This is a function with a parameter that has a default value.
 
@@ -56,21 +54,21 @@ This is a function with a parameter that has a default value.
 
 Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
-\`valueA\` | string | \\"defaultValue\\" | A parameter with a default string value. |
-\`valueB\` | number | 100 | A parameter with a default numeric value. |
-\`valueC\` | number | Number.NaN | A parameter with a default NaN value. |
-\`valueD\` | boolean | true | A parameter with a default boolean value. |
-\`valueE\` | boolean | null | A parameter with a default null value.  |
-\`valueF\` | string | \\"<foo\\\\>\\" | - |
+\`valueA\` | *string* | 'defaultValue' | A parameter with a default string value.   |
+\`valueB\` | *number* | 100 | A parameter with a default numeric value.   |
+\`valueC\` | *number* | ... | A parameter with a default NaN value.   |
+\`valueD\` | *boolean* | true | A parameter with a default boolean value.   |
+\`valueE\` | *boolean* | null | A parameter with a default null value.    |
+\`valueF\` | *string* | '<foo\\\\>' | - |
 
-**Returns:** string
+**Returns:** *string*
+
+[partial: member.sources]
 "
 `;
 
 exports[`Signatures: should compile signature with optional params' 1`] = `
-"▸ **functionWithOptionalParam**(\`requiredParam\`: string, \`optionalParam?\`: string): void
-
-[partial: member.sources]
+"▸ **functionWithOptionalParam**(\`requiredParam\`: *string*, \`optionalParam?\`: *string*): *void*
 
 This is a function with a parameter that is optional.
 
@@ -78,17 +76,17 @@ This is a function with a parameter that is optional.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-\`requiredParam\` | string | A normal parameter. |
-\`optionalParam?\` | string | An optional parameter.  |
+\`requiredParam\` | *string* | A normal parameter.   |
+\`optionalParam?\` | *string* | An optional parameter.    |
 
-**Returns:** void
+**Returns:** *void*
+
+[partial: member.sources]
 "
 `;
 
 exports[`Signatures: should compile signature with params' 1`] = `
-"▸ **functionWithParameters**(\`paramZ\`: string, \`paramG\`: any, \`paramA\`: any): number
-
-[partial: member.sources]
+"▸ **functionWithParameters**(\`paramZ\`: *string*, \`paramG\`: *any*, \`paramA\`: *any*): *number*
 
 This is a function with multiple arguments and a return value.
 
@@ -96,18 +94,18 @@ This is a function with multiple arguments and a return value.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-\`paramZ\` | string | This is a string parameter. |
-\`paramG\` | any | This is a parameter flagged with any.<br />     This sentence is placed in the next line.  |
-\`paramA\` | any |    This is a **parameter** pointing to an interface.   |
+\`paramZ\` | *string* | This is a string parameter.   |
+\`paramG\` | *any* | This is a parameter flagged with any.<br />     This sentence is placed in the next line.    |
+\`paramA\` | *any* |    This is a **parameter** pointing to an interface.     |
 
-**Returns:** number
+**Returns:** *number*
+
+[partial: member.sources]
 "
 `;
 
 exports[`Signatures: should compile signature with rest params' 1`] = `
-"▸ **functionWithRest**(...\`rest\`: string[]): string
-
-[partial: member.sources]
+"▸ **functionWithRest**(...\`rest\`: *string*[]): *string*
 
 This is a function with rest parameter.
 
@@ -115,39 +113,41 @@ This is a function with rest parameter.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-\`...rest\` | string[] | The rest parameter.  |
+\`...rest\` | *string*[] | The rest parameter.    |
 
-**Returns:** string
+**Returns:** *string*
+
+[partial: member.sources]
 "
 `;
 
 exports[`Signatures: should compile signature with type params' 1`] = `
-"▸ \`Const\`**functionWithTypeParams**<Item\\\\>(): boolean
-
-[partial: member.sources]
+"▸ \`Const\`**functionWithTypeParams**<Item\\\\>(): *boolean*
 
 #### Type parameters:
 
 Name | Default |
 ------ | ------ |
-\`Item\` | boolean \\\\\\\\| string |
+\`Item\` | *string* \\\\\\\\| *boolean* |
 
-**Returns:** boolean
+**Returns:** *boolean*
+
+[partial: member.sources]
 "
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`: boolean[] \\\\| number, ...\`args\`: (string \\\\| number)[]): any
-
-[partial: member.sources]
+"▸ **functionWithUnionTypes**(\`arg\`: *number* \\\\| *boolean*[], ...\`args\`: (*string* \\\\| *number*)[]): *any*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-\`arg\` | boolean[] \\\\| number |
-\`...args\` | (string \\\\| number)[] |
+\`arg\` | *number* \\\\| *boolean*[] |
+\`...args\` | (*string* \\\\| *number*)[] |
 
-**Returns:** any
+**Returns:** *any*
+
+[partial: member.sources]
 "
 `;

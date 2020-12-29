@@ -1,12 +1,13 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../test-app';
 
 describe(`Comments:`, () => {
   let testApp: TestApp;
   let partial: Handlebars.TemplateDelegate;
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['comments.ts']);
-    testApp.bootstrap({
+    await testApp.bootstrap({
       includes: './test/stubs/inc',
       media: './test/stubs/media',
     });

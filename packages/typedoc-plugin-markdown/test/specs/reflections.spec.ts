@@ -11,8 +11,11 @@ describe(`Reflections:`, () => {
   });
 
   describe(`(header)`, () => {
-    beforeEach(() => {
-      testApp.bootstrap({ hideBreadcrumbs: false, hideProjectName: false });
+    beforeEach(async () => {
+      await testApp.bootstrap({
+        hideBreadcrumbs: false,
+        hideProjectName: false,
+      });
       TestApp.stubPartials(['index', 'comment', 'member.signature', 'members']);
       TestApp.stubHelpers(['breadcrumbs', 'hierarchy']);
       reflectionTemplate = TestApp.getTemplate('reflection');
@@ -28,8 +31,8 @@ describe(`Reflections:`, () => {
   });
 
   describe(`(template)`, () => {
-    beforeEach(() => {
-      testApp.bootstrap({ hideBreadcrumbs: true, hideProjectName: true });
+    beforeEach(async () => {
+      await testApp.bootstrap({ hideBreadcrumbs: true, hideProjectName: true });
       TestApp.stubPartials(['index', 'comment', 'member.signature', 'members']);
       TestApp.stubHelpers(['breadcrumbs', 'hierarchy']);
       reflectionTemplate = TestApp.getTemplate('reflection');

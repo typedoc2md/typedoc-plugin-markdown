@@ -10,8 +10,8 @@ describe(`ContextAwareHelpers:`, () => {
   });
 
   describe(`(defaults)`, () => {
-    beforeAll(() => {
-      testApp.bootstrap({});
+    beforeAll(async () => {
+      await testApp.bootstrap({});
     });
 
     test(`should set 'ifShowNamedAnchors' to 'false' by default`, () => {
@@ -57,8 +57,8 @@ describe(`ContextAwareHelpers:`, () => {
   });
 
   describe(`(with plugin options)`, () => {
-    beforeAll(() => {
-      testApp.bootstrap({
+    beforeAll(async () => {
+      await testApp.bootstrap({
         publicPath: 'test-public-path',
         namedAnchors: true,
         hideBreadcrumbs: true,

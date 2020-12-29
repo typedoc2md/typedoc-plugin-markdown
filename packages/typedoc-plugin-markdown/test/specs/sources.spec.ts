@@ -15,9 +15,9 @@ const getProp = (reflection: DeclarationReflection) => {
 describe(`Sources:`, () => {
   let testApp: TestApp;
   let partial: Handlebars.TemplateDelegate;
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['sources.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
     partial = TestApp.getPartial('member.sources');
   });
 

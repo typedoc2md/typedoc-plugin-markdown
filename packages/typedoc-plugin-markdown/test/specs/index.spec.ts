@@ -1,13 +1,14 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../test-app';
 
 describe(`Index:`, () => {
   let testApp: TestApp;
   let indexTemplate: Handlebars.TemplateDelegate;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['reflections.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
     indexTemplate = TestApp.getTemplate('index');
     TestApp.stubHelpers(['breadcrumbs']);
   });

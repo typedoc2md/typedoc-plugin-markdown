@@ -6,9 +6,9 @@ import { TestApp } from '../test-app';
 describe(`Signatures:`, () => {
   let testApp: TestApp;
   let partial: Handlebars.TemplateDelegate;
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['signatures.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
     TestApp.stubPartials(['member.sources']);
     partial = TestApp.getPartial('member.signature');
   });

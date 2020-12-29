@@ -7,7 +7,7 @@ import { TestApp } from '../test-app';
 describe(`CustomTheme:`, () => {
   let testApp: TestApp;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['breadcrumbs.ts']);
     const customThemePath = path.resolve(
       __dirname,
@@ -15,7 +15,7 @@ describe(`CustomTheme:`, () => {
       'stubs',
       'custom-theme',
     );
-    testApp.bootstrap({
+    await testApp.bootstrap({
       theme: customThemePath,
     });
   });

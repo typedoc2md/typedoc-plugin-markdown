@@ -10,30 +10,30 @@ describe(`Theme:`, () => {
   });
 
   describe(`(getUrls)`, () => {
-    test(`should getUrls'`, () => {
-      testApp.bootstrap();
+    test(`should getUrls'`, async () => {
+      await testApp.bootstrap();
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
 
-    test(`should getUrls with 'allReflectionsHaveOwnDocument' set`, () => {
-      testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
+    test(`should getUrls with 'allReflectionsHaveOwnDocument' set`, async () => {
+      await testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
 
-    test(`should getUrls with readme 'none'`, () => {
-      testApp.bootstrap({ readme: 'none' });
+    test(`should getUrls with readme 'none'`, async () => {
+      await testApp.bootstrap({ readme: 'none' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
   });
 
-  describe(`(isOutputDirectory)`, () => {
+  describe(`(isOutputDirectory)`, async () => {
     let directoryListingSpy: jest.SpyInstance;
 
-    beforeAll(() => {
-      testApp.bootstrap();
+    beforeAll(async () => {
+      await testApp.bootstrap();
       directoryListingSpy = jest.spyOn(fs, 'readdirSync');
     });
 
@@ -100,16 +100,16 @@ describe(`Theme:`, () => {
     });
   });
 
-  describe(`(directory mappings)`, () => {
-    test(`should set default mappings'`, () => {
-      testApp.bootstrap();
+  describe(`(directory mappings)`, async () => {
+    test(`should set default mappings'`, async () => {
+      await testApp.bootstrap();
       expect(
         testApp.theme.mappings.map((mapping) => mapping.directory),
       ).toEqual(['classes', 'interfaces', 'enums', 'modules']);
     });
 
-    test(`should set mappings with 'allReflectionsHaveOwnDocument'`, () => {
-      testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
+    test(`should set mappings with 'allReflectionsHaveOwnDocument'`, async () => {
+      await testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
       expect(
         testApp.theme.mappings.map((mapping) => mapping.directory),
       ).toEqual([

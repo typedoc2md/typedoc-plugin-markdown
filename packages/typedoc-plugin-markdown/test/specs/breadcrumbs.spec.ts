@@ -13,8 +13,8 @@ describe(`Breadcrumbs:`, () => {
   });
 
   describe(`(with readme)`, () => {
-    beforeAll(() => {
-      testApp.bootstrap();
+    beforeAll(async () => {
+      await testApp.bootstrap();
       moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');
     });
@@ -58,9 +58,9 @@ describe(`Breadcrumbs:`, () => {
       ).toMatchSnapshot();
     });
   });
-  describe(`(without readme)`, () => {
-    beforeAll(() => {
-      testApp.bootstrap({ readme: 'none' });
+  describe(`(without readme)`, async () => {
+    beforeAll(async () => {
+      await testApp.bootstrap({ readme: 'none' });
       moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');
     });

@@ -6,9 +6,9 @@ describe(`Members:`, () => {
   let testApp: TestApp;
   let membersPartial: Handlebars.TemplateDelegate;
   let memberPartial: Handlebars.TemplateDelegate;
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['members.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
 
     TestApp.stubPartials(['member', 'index', 'member.sources']);
     TestApp.stubHelpers(['relativeURL']);

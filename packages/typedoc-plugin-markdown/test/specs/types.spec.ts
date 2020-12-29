@@ -5,9 +5,9 @@ import { TestApp } from '../test-app';
 describe(`Types:`, () => {
   let testApp: TestApp;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['types.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
   });
 
   test(`should compile 'array' type'`, () => {

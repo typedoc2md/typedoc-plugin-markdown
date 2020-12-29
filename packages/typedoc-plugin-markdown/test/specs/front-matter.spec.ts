@@ -6,9 +6,9 @@ import { TestApp } from '../test-app';
 describe(`FrontMatter:`, () => {
   let testApp: TestApp;
   let frontMatterComponent: FrontMatterComponent;
-  beforeAll(() => {
+  beforeAll(async () => {
     testApp = new TestApp(['frontmatter.ts']);
-    testApp.bootstrap();
+    await testApp.bootstrap();
     testApp.renderer.addComponent(
       'frontmatter',
       new FrontMatterComponent(testApp.renderer),

@@ -114,7 +114,7 @@ export class TestApp {
     this.app.options.addReader(new ArgumentsReader(300));
   }
 
-  bootstrap(options: any = {}) {
+  async bootstrap(options: any = {}) {
     this.app.bootstrap({
       logger: 'none',
       entryPoints: this.entryPoints,
@@ -127,7 +127,7 @@ export class TestApp {
     this.renderer = this.app.renderer;
     this.tmpobj = tmp.dirSync();
 
-    this.app.generateDocs(this.project, this.tmpobj.name);
+    await this.app.generateDocs(this.project, this.tmpobj.name);
     this.theme = this.app.renderer.theme as MarkdownTheme;
   }
 
