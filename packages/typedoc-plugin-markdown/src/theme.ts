@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-
 import * as Handlebars from 'handlebars';
 import {
   BindOption,
@@ -15,7 +14,6 @@ import { ReflectionGroup, ReflectionKind } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-
 import { Breadcrumbs } from './components/breadcrumbs';
 import { Comments } from './components/comments';
 import { ContextAwareHelpers } from './components/options';
@@ -33,6 +31,8 @@ export default class MarkdownTheme extends Theme {
   entryPoints!: string[];
   @BindOption('allReflectionsHaveOwnDocument')
   allReflectionsHaveOwnDocument!: boolean;
+  @BindOption('filenameSeparator')
+  filenameSeparator!: boolean;
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
@@ -178,11 +178,7 @@ export default class MarkdownTheme extends Theme {
    * @param separator   The separator used to generate the url.
    * @returns           The generated url.
    */
-  getUrl(
-    reflection: Reflection,
-    relative?: Reflection,
-    separator = '.',
-  ): string {
+  getUrl(reflection: Reflection, relative?: Reflection): string {
     let url = reflection.getAlias();
 
     if (
@@ -191,7 +187,7 @@ export default class MarkdownTheme extends Theme {
       !(reflection.parent instanceof ProjectReflection)
     ) {
       url =
-        this.getUrl(reflection.parent, relative, separator) + separator + url;
+        this.getUrl(reflection.parent, relative) + this.filenameSeparator + url;
     }
 
     return url;

@@ -1,6 +1,5 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
-
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -41,6 +40,13 @@ export = (PluginHost: Application) => {
     name: 'allReflectionsHaveOwnDocument',
     type: ParameterType.Boolean,
     defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Separator used to format filenames.',
+    name: 'filenameSeparator',
+    type: ParameterType.String,
+    defaultValue: '.',
   });
 
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));

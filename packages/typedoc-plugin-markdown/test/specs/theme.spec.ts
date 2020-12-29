@@ -1,12 +1,11 @@
 import * as fs from 'fs';
-
 import { TestApp } from '../test-app';
 
 describe(`Theme:`, () => {
   let testApp: TestApp;
 
   beforeAll(() => {
-    testApp = new TestApp(['theme.ts']);
+    testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
   });
 
   describe(`(getUrls)`, () => {
@@ -24,6 +23,14 @@ describe(`Theme:`, () => {
 
     test(`should getUrls with readme 'none'`, async () => {
       await testApp.bootstrap({ readme: 'none' });
+      const urlMappings = testApp.theme.getUrls(testApp.project);
+      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
+    });
+  });
+
+  describe(`(filenameSeparator)`, () => {
+    test(`should getUrls with custom separator'`, async () => {
+      await testApp.bootstrap({ filenameSeparator: '-' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
