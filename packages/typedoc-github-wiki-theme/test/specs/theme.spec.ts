@@ -7,7 +7,7 @@ beforeAll(() => {
 });
 describe(`Theme:`, () => {
   test(`should getUrls'`, async () => {
-    await testApp.bootstrap({ theme: './dist' });
+    await testApp.bootstrap({ entryFile: 'Home.md', theme: './dist' });
     const urlMappings = testApp.theme.getUrls(testApp.project);
     expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
   });

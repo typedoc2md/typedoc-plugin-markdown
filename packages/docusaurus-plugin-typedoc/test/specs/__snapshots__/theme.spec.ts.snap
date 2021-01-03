@@ -14,4 +14,7 @@ exports[`Theme: (header) should compile with module without subtitle 1`] = `
 "
 `;
 
-exports[`Theme: (mdx) should escape angle brackets and quotes for full mdx support 1`] = `"Escape &#60;angle-brackets> and &#34;quotes&#34;"`;
+exports[`Theme: (mdx) should escape angle brackets and quotes for full mdx support 1`] = `
+"Escape \\\\<angle-brackets> and \\\\\\"quotes\\\\\\"
+"
+`;

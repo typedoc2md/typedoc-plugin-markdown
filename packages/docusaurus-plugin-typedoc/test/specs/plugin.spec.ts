@@ -45,6 +45,7 @@ describe(`Plugin:`, () => {
   let plugin;
   const context = { siteDir: '/siteDir' } as LoadContext;
   const defaultOptions = {
+    entryFile: 'index.md',
     plugin: ['typedoc-plugin-markdown'],
     theme: path.resolve(__dirname, '..', '..', 'dist', 'theme'),
   };

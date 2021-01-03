@@ -1,7 +1,12 @@
 import * as path from 'path';
 
 import { LoadContext } from '@docusaurus/types';
-import { Application, TSConfigReader, TypeDocReader } from 'typedoc';
+import {
+  Application,
+  TSConfigReader,
+  TypeDocOptions,
+  TypeDocReader,
+} from 'typedoc';
 
 import { DocusaurusFrontMatterComponent } from './front-matter';
 import { writeSidebar } from './sidebar';
@@ -64,6 +69,7 @@ export default async function pluginDocusaurus(
     app.bootstrap({
       // filtered TypeDoc options
       ...typedocOptions,
+      entryFile: 'index.md',
       // TypeDoc plugins
       plugin: [
         ...['typedoc-plugin-markdown'],
@@ -73,7 +79,7 @@ export default async function pluginDocusaurus(
       ],
       // add docusaurus theme
       theme: path.resolve(__dirname, 'theme'),
-    });
+    } as Partial<TypeDocOptions>);
 
     // add frontmatter component
     app.renderer.addComponent(

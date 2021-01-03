@@ -66,10 +66,6 @@ export default class GithubWikiTheme extends MarkdownTheme {
     );
   }
 
-  get entryFile() {
-    return 'Home.md';
-  }
-
   get globalsFile() {
     return 'Modules.md';
   }
