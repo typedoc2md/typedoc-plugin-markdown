@@ -1,5 +1,6 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -47,6 +48,13 @@ export = (PluginHost: Application) => {
     name: 'filenameSeparator',
     type: ParameterType.String,
     defaultValue: '.',
+  });
+
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] The file name of the entry document.',
+    name: 'entryFile',
+    type: ParameterType.String,
+    defaultValue: 'README.md',
   });
 
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));

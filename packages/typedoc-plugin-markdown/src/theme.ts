@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+
 import * as Handlebars from 'handlebars';
 import {
   BindOption,
@@ -14,6 +15,7 @@ import { ReflectionGroup, ReflectionKind } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+
 import { Breadcrumbs } from './components/breadcrumbs';
 import { Comments } from './components/comments';
 import { ContextAwareHelpers } from './components/options';
@@ -33,6 +35,8 @@ export default class MarkdownTheme extends Theme {
   allReflectionsHaveOwnDocument!: boolean;
   @BindOption('filenameSeparator')
   filenameSeparator!: boolean;
+  @BindOption('entryFile')
+  entryFile!: string;
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
@@ -356,10 +360,6 @@ export default class MarkdownTheme extends Theme {
           ]
         : []),
     ];
-  }
-
-  get entryFile() {
-    return 'README.md';
   }
 
   get globalsFile() {

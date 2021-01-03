@@ -33,6 +33,8 @@ The following arguments can be used in addition to the default [TypeDoc argument
 
 - `--hideBreadcrumbs<boolean>`<br>
   Do not render breadcrumbs in template header. Defaults to `false`.
+- `--entryFile<string>`<br>
+  The file name of the entry document. Defaults to `README.md`.
 - `--allReflectionsHaveOwnDocument<boolean>`<br>
   Output all reflections into seperate output files. Defaults to `false`.
 - `--publicPath<string>`<br>

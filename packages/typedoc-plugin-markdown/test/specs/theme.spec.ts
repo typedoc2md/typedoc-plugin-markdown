@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+
 import { TestApp } from '../test-app';
 
 describe(`Theme:`, () => {
@@ -31,6 +32,14 @@ describe(`Theme:`, () => {
   describe(`(filenameSeparator)`, () => {
     test(`should getUrls with custom separator'`, async () => {
       await testApp.bootstrap({ filenameSeparator: '-' });
+      const urlMappings = testApp.theme.getUrls(testApp.project);
+      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
+    });
+  });
+
+  describe(`(entryFile)`, () => {
+    test(`should getUrls with custom entryFile'`, async () => {
+      await testApp.bootstrap({ entryFile: 'index.md' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });

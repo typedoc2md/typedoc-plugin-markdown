@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Theme: (entryFile) should getUrls with custom entryFile' 1`] = `
+Array [
+  "modules.md",
+  "index.md",
+  "modules/breadcrumbs.md",
+  "classes/breadcrumbs.breadcrumbs-1.md",
+  "classes/breadcrumbs.breadcrumbs-1.md#constructor",
+  "classes/breadcrumbs.breadcrumbs-1.md#somemethod",
+  "modules/theme.md",
+  "modules/theme.md#declarationitema",
+  "modules/theme.md#declarationitemb",
+  "modules/theme.md#functionitema",
+  "modules/theme.md#functionitemb",
+  "modules/theme.namespacea.md",
+  "modules/theme.namespaceb.md",
+  "enums/theme.enumitema.md",
+  "enums/theme.enumitemb.md",
+  "classes/theme.classitema.md",
+  "classes/theme.classitema.md#constructor",
+  "classes/theme.classitemb.md",
+  "classes/theme.classitemb.md#constructor",
+  "interfaces/theme.interfaceitema.md",
+  "interfaces/theme.interfaceitema.md#prop",
+  "interfaces/theme.interfaceitemb.md",
+  "interfaces/theme.interfaceitemb.md#prop",
+]
+`;
+
 exports[`Theme: (filenameSeparator) should getUrls with custom separator' 1`] = `
 Array [
   "modules.md",

@@ -13,6 +13,8 @@ export class Breadcrumbs extends ContextAwareRendererComponent {
   entryPoints!: string[];
   @BindOption('readme')
   readme!: string;
+  @BindOption('entryFile')
+  entryFile!: string;
 
   initialize() {
     super.initialize();
@@ -23,11 +25,13 @@ export class Breadcrumbs extends ContextAwareRendererComponent {
         const breadcrumbs: string[] = [];
         const globalsName = this.entryPoints.length > 1 ? 'Modules' : 'Exports';
         breadcrumbs.push(
-          page.url === 'README.md'
+          page.url === this.entryFile
             ? page.project.name
             : `[${
                 page.project.name
-              }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL('README.md')})`,
+              }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+                this.entryFile,
+              )})`,
         );
         if (this.readme !== 'none') {
           breadcrumbs.push(
