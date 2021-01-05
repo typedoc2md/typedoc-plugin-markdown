@@ -10,8 +10,7 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
   outFolder: string;
   sidebar: SidebarOptions | null;
   readmeTitle?: string;
-  globalsTitle?: string;
-  entryFile = 'index.md';
+  entryDocument = 'index.md';
   globalsFile = 'modules.md';
 
   constructor(renderer: Renderer, options: PluginOptions) {
@@ -19,7 +18,6 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
     this.outFolder = options?.out;
     this.sidebar = options?.sidebar;
     this.readmeTitle = options?.readmeTitle;
-    this.globalsTitle = options?.globalsTitle;
   }
   getYamlItems(page: PageEvent): FrontMatter {
     const pageId = this.getId(page);
@@ -29,43 +27,36 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
       id: pageId,
       title: pageTitle,
     };
-    if (page.url === this.entryFile) {
+    if (page.url === this.entryDocument) {
       items = { ...items, slug: '/' + this.outFolder };
     }
     if (this.sidebar && sidebarLabel !== pageTitle) {
       items = { ...items, sidebar_label: sidebarLabel };
     }
-    if (page.url === this.entryFile && page.url !== page.project.url) {
-      items = { ...items, hide_title: true };
-    }
     return {
       ...items,
+      hide_title: true,
     };
   }
 
   getTitle(page: PageEvent) {
-    const globalsTitle = this.globalsTitle || page.project.name;
     const readmeTitle = this.readmeTitle || page.project.name;
-    if (page.url === this.entryFile) {
-      return page.url === page.project.url ? globalsTitle : readmeTitle;
-    }
-    if (page.url === this.globalsFile) {
-      return globalsTitle;
+    if (page.url === this.entryDocument && page.url !== page.project.url) {
+      return readmeTitle;
     }
     return super.getTitle(page);
   }
 
   getSidebarLabel(page: PageEvent) {
-    if (page.url === this.entryFile) {
+    if (page.url === this.entryDocument) {
       return page.url === page.project.url
-        ? this.sidebar?.globalsLabel
+        ? this.sidebar?.indexLabel
         : this.sidebar?.readmeLabel;
     }
 
     if (page.url === this.globalsFile) {
-      return this.sidebar?.globalsLabel;
+      return this.sidebar?.indexLabel;
     }
-
     return this.sidebar?.fullNames ? page.model.getFullName() : page.model.name;
   }
 }

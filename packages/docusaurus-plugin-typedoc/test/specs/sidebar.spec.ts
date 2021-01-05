@@ -15,7 +15,7 @@ describe(`Sidebar:`, () => {
   beforeAll(async () => {
     testApp = new TestApp(['theme.ts']);
     await testApp.bootstrap({
-      entryFile: 'index.md',
+      entryDocument: 'index.md',
       theme: path.resolve(__dirname, '..', '..', 'dist', 'theme'),
     });
   });

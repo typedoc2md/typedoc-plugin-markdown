@@ -31,7 +31,7 @@ module.exports = {
     [
       'docusaurus-plugin-typedoc',
 
-      // Plugin / TypeDoc options (see typedoc --help)
+      // Plugin / TypeDoc options
       {
         entryPoints: ['../src/index.ts'],
         tsconfig: '../tsconfig.json'
@@ -54,11 +54,11 @@ entryPoints: ['../src/index.ts'],
 tsconfig: '../tsconfig.json'
 ```
 
-Please refer to [TypeDoc]() for further options.
+Please refer to [TypeDoc](https://typedoc.org/guides/options/) for further options.
 
 ### Plugin options
 
-#### docsRoot
+#### docsRoot`<string>`
 
 Docs directory relative to the the root directory. Defaults to `"docs"`.
 
@@ -66,7 +66,7 @@ Docs directory relative to the the root directory. Defaults to `"docs"`.
 docsRoot: 'docs',
 ```
 
-#### out
+#### out`<string>`
 
 Output directory relative to docs directory. Defaults to `"api"`.
 
@@ -74,24 +74,28 @@ Output directory relative to docs directory. Defaults to `"api"`.
 out: 'api',
 ```
 
-#### sidebar
+#### allReflectionsHaveOwnDocument`<boolean>`
+
+Output all reflections into seperate output files. Defaults to `false`.
+
+#### sidebar`<object>`
 
 Options object for auto generated sidebar. Pass `null` to skip generation completely.
 
-- **sidebarFile**
+- **sidebarFile`<string>`**
 
   The name of the sidebars file. Will also accept a path relative to the root directory. Defaults to `typedoc-sidebar.js`.
 
-- **fullNames**
+- **fullNames`<boolean>`**
 
   Display full names with module path if applicable. Default to `false`.
 
-- **readmeLabel**
+- **readmeLabel`<string>`**
 
   The label of the `README` sidebar item. Default to `"Readme"`.
   _Ignored if `readme=none`_.
 
-- **indexLabel**
+- **indexLabel`<string>`**
 
   The label of the globals/index sidebar item. Default to `"Index"`.
 

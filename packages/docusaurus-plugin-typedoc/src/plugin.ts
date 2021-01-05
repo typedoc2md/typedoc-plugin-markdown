@@ -7,10 +7,10 @@ import {
   TypeDocOptions,
   TypeDocReader,
 } from 'typedoc';
+import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
 
 import { DocusaurusFrontMatterComponent } from './front-matter';
 import { writeSidebar } from './sidebar';
-import DocusaurusTheme from './theme/theme';
 import { PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
@@ -20,10 +20,9 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
-    globalsLabel: 'Index',
+    indexLabel: 'Index',
     readmeLabel: 'Readme',
   },
-  globalsTitle: undefined,
   readmeTitle: undefined,
 };
 
@@ -69,7 +68,9 @@ export default async function pluginDocusaurus(
     app.bootstrap({
       // filtered TypeDoc options
       ...typedocOptions,
-      entryFile: 'index.md',
+      entryDocument: 'index.md',
+      navigationEnabled: true,
+
       // TypeDoc plugins
       plugin: [
         ...['typedoc-plugin-markdown'],
@@ -77,8 +78,6 @@ export default async function pluginDocusaurus(
           ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
           : []),
       ],
-      // add docusaurus theme
-      theme: path.resolve(__dirname, 'theme'),
     } as Partial<TypeDocOptions>);
 
     // add frontmatter component
@@ -107,7 +106,7 @@ export default async function pluginDocusaurus(
 
     // write the sidebar (if applicable)
     if (options.sidebar) {
-      const theme = app.renderer.getComponent('theme') as DocusaurusTheme;
+      const theme = app.renderer.getComponent('theme') as MarkdownTheme;
       writeSidebar(
         options.disableOutputCheck || theme.isOutputDirectory(outputDirectory),
         siteDir,

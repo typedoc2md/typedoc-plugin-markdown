@@ -4,7 +4,7 @@ export interface PluginOptions {
   out: string;
   sidebar: SidebarOptions | null;
   readmeTitle: string | undefined;
-  globalsTitle: string | undefined;
+  globalsTitle?: string | undefined;
   plugin?: string[];
   disableOutputCheck?: boolean;
 }
@@ -20,7 +20,7 @@ export interface FrontMatter {
 export interface SidebarOptions {
   fullNames: boolean;
   sidebarFile: string;
-  globalsLabel?: string;
+  indexLabel?: string;
   readmeLabel: string;
 }
 
