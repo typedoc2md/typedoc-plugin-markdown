@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FrontMatter: (globals) should set custom globalsLabel and custom globalsTitle 1`] = `
+exports[`FrontMatter: (globals) should set custom indexLabel 1`] = `
 "---
 id: \\"modules\\"
-title: \\"Custom globals title\\"
-sidebar_label: \\"Custom globals label\\"
+title: \\"test-project-name\\"
+sidebar_label: \\"Custom index label\\"
+hide_title: true
 ---
 
 CONTENTS"
@@ -14,7 +15,8 @@ exports[`FrontMatter: (globals) should set default globals page 1`] = `
 "---
 id: \\"modules\\"
 title: \\"test-project-name\\"
-sidebar_label: \\"Globals\\"
+sidebar_label: \\"Index\\"
+hide_title: true
 ---
 
 CONTENTS"
@@ -25,7 +27,8 @@ exports[`FrontMatter: (globals) should set globals page when readme=none 1`] = `
 id: \\"index\\"
 title: \\"test-project-name\\"
 slug: \\"/api\\"
-sidebar_label: \\"Globals\\"
+sidebar_label: \\"Index\\"
+hide_title: true
 ---
 
 CONTENTS"
@@ -35,6 +38,7 @@ exports[`FrontMatter: (no sidebar) should return front matter without sidebar 1`
 "---
 id: \\"modules\\"
 title: \\"test-project-name\\"
+hide_title: true
 ---
 
 CONTENTS"
@@ -92,6 +96,7 @@ exports[`FrontMatter: (reflection names) should return front matter with full na
 id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"FrontMatterClass\\"
+hide_title: true
 ---
 
 CONTENTS"
@@ -102,6 +107,7 @@ exports[`FrontMatter: (reflection names) should return reflection labels with sh
 id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"FrontMatterClass\\"
+hide_title: true
 ---
 
 CONTENTS"

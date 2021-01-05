@@ -1,6 +1,5 @@
-import * as path from 'path';
-
 import { LoadContext } from '@docusaurus/types';
+import * as path from 'path';
 import {
   Application,
   TSConfigReader,
@@ -8,7 +7,6 @@ import {
   TypeDocReader,
 } from 'typedoc';
 import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
-
 import { DocusaurusFrontMatterComponent } from './front-matter';
 import { writeSidebar } from './sidebar';
 import { PluginOptions } from './types';

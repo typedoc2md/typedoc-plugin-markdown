@@ -2,7 +2,6 @@ import { Renderer } from 'typedoc';
 import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter';
 import { Component } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { FrontMatter, PluginOptions, SidebarOptions } from './types';
 
 @Component({ name: 'docusaurus-frontmatter' })
@@ -19,6 +18,7 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
     this.sidebar = options?.sidebar;
     this.readmeTitle = options?.readmeTitle;
   }
+
   getYamlItems(page: PageEvent): FrontMatter {
     const pageId = this.getId(page);
     const pageTitle = this.getTitle(page);

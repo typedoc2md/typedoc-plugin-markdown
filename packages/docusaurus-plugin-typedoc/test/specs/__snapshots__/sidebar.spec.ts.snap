@@ -26,6 +26,7 @@ exports[`Sidebar: should write sidebar with default ('api') out 1`] = `
     \\"type\\": \\"category\\",
     \\"label\\": \\"Classes\\",
     \\"items\\": [
+      \\"api/classes/namespacea.somenestedclass\\",
       \\"api/classes/classitema\\",
       \\"api/classes/classitemb\\"
     ]
@@ -65,6 +66,7 @@ exports[`Sidebar: should write sidebar with root ('') out 1`] = `
     \\"type\\": \\"category\\",
     \\"label\\": \\"Classes\\",
     \\"items\\": [
+      \\"classes/namespacea.somenestedclass\\",
       \\"classes/classitema\\",
       \\"classes/classitemb\\"
     ]

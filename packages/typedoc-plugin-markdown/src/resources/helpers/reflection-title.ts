@@ -7,7 +7,7 @@ import { escape } from './escape';
 export function reflectionTitle(this: PageEvent, shouldEscape = true) {
   const title: string[] = [''];
 
-  if (this.model.kindString && this.url !== this.project.url) {
+  if (this.model && this.model.kindString && this.url !== this.project.url) {
     title.push(`${this.model.kindString}: `);
   }
   if (this.url === this.project.url) {

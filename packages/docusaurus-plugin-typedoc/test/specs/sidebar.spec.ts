@@ -1,8 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-
 import * as tmp from 'tmp';
-
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 import { writeSidebar } from '../../dist/sidebar';
 import { SidebarOptions } from '../../dist/types';
@@ -27,7 +25,7 @@ describe(`Sidebar:`, () => {
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
       sidebarFile,
-      globalsLabel: 'Globals',
+      indexLabel: 'Index',
       readmeLabel: 'README',
     };
     const sidebarsContent = `module.exports = {
@@ -53,7 +51,7 @@ describe(`Sidebar:`, () => {
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
       sidebarFile,
-      globalsLabel: 'Globals',
+      indexLabel: 'Index',
       readmeLabel: 'README',
     };
     writeSidebar(true, tmpobj.name, '', sidebarOptions, navigation);
@@ -68,7 +66,7 @@ describe(`Sidebar:`, () => {
     const sidebarOptions: SidebarOptions = {
       fullNames: false,
       sidebarFile,
-      globalsLabel: 'Globals',
+      indexLabel: 'Index',
       readmeLabel: 'README',
     };
     writeSidebar(false, tmpobj.name, '', sidebarOptions, navigation);

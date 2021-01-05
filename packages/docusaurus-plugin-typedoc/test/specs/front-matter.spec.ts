@@ -1,6 +1,5 @@
 import cuid from 'cuid';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 import { DocusaurusFrontMatterComponent } from '../../dist/front-matter';
 import { PluginOptions } from '../../dist/types';
@@ -25,7 +24,7 @@ describe(`FrontMatter:`, () => {
     sidebar: {
       fullNames: false,
       sidebarFile: 'typedoc-sidebar.js',
-      globalsLabel: 'Globals',
+      indexLabel: 'Index',
       readmeLabel: 'README',
     },
   } as PluginOptions;
@@ -108,14 +107,13 @@ describe(`FrontMatter:`, () => {
       expect(page.contents).toMatchSnapshot();
     });
 
-    test(`should set custom globalsLabel and custom globalsTitle`, async () => {
+    test(`should set custom indexLabel`, async () => {
       const frontMatterComponent = await generate(testApp, {
         ...DEFAULT_PLUGIN_OPTIONS,
         sidebar: {
           ...DEFAULT_PLUGIN_OPTIONS.sidebar,
-          globalsLabel: 'Custom globals label',
+          indexLabel: 'Custom index label',
         },
-        globalsTitle: 'Custom globals title',
       });
       frontMatterComponent.onPageEnd(page);
       expect(page.contents).toMatchSnapshot();

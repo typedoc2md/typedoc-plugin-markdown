@@ -1,20 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Theme: (header) should compile with module with subtitle 1`] = `
-"[InterfaceItemA](interfaceitema.md).prop
+"[helper: breadcrumbs]
+
+# Property: prop
+
+[partial: index]
 
 [partial: members]
 "
 `;
 
 exports[`Theme: (header) should compile with module without subtitle 1`] = `
-"[partial: index]
+"[helper: breadcrumbs]
+
+# Namespace: namespaceA
+
+[partial: index]
 
 [partial: members]
-"
-`;
-
-exports[`Theme: (mdx) should escape angle brackets and quotes for full mdx support 1`] = `
-"Escape \\\\<angle-brackets> and \\\\\\"quotes\\\\\\"
 "
 `;
