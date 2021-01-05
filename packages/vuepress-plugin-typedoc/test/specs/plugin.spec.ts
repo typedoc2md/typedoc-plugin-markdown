@@ -1,5 +1,6 @@
 import * as fs from 'fs-extra';
 import * as tmp from 'tmp';
+
 import { typedocPlugin } from '../../dist/plugin';
 
 tmp.setGracefulCleanup();
@@ -16,11 +17,11 @@ async function bootstrap(customOptions = {}) {
     moduleResolution: 'node',
     logger: 'none',
   } as any;
-  plugin = await typedocPlugin(
+  plugin = typedocPlugin(
     { ...options, ...customOptions },
     { sourceDir: tmpobj.name },
   );
-  await plugin;
+  await plugin.ready();
 }
 
 describe(`(render)`, () => {

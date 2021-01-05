@@ -1,6 +1,12 @@
-import * as path from 'path';
-import { Application, TSConfigReader, TypeDocReader } from 'typedoc';
+import {
+  Application,
+  ProjectReflection,
+  TSConfigReader,
+  TypeDocOptions,
+  TypeDocReader,
+} from 'typedoc';
 import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter';
+
 import { getSidebarJson } from './sidebar';
 import { PluginOptions } from './types';
 
@@ -16,7 +22,7 @@ const app = new Application();
 
 let done = false;
 
-export const typedocPlugin = async (opts: PluginOptions, ctx: any) => {
+export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
   const sourceDir = ctx.sourceDir;
 
   const options = { ...DEFAULT_PLUGIN_OPTIONS, ...opts };
@@ -25,55 +31,57 @@ export const typedocPlugin = async (opts: PluginOptions, ctx: any) => {
   const out = sourceDir + '/' + outFolder;
   const sidebar = options.sidebar;
 
+  let project: ProjectReflection | undefined;
+
   // don't re-compile on dev server
-  if (done) {
-    return;
-  }
-
-  // TypeDoc options
-  const vuepressOptions = Object.keys(options).reduce((option, key) => {
-    if (![...['id'], ...Object.keys(DEFAULT_PLUGIN_OPTIONS)].includes(key)) {
-      option[key] = options[key];
-    }
-    return option;
-  }, {});
-
-  app.options.addReader(new TypeDocReader());
-  app.options.addReader(new TSConfigReader());
-
-  // bootstrap
-  app.bootstrap({
-    // filtered vuepress options
-    ...vuepressOptions,
-
-    // TypeDoc plugins
-    plugin: [
-      ...['typedoc-plugin-markdown'],
-      ...(opts.plugin
-        ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
-        : []),
-    ],
-    theme: path.resolve(__dirname, 'theme'),
-  });
-
-  app.renderer.addComponent(
-    'frontmatter',
-    new FrontMatterComponent(app.renderer),
-  );
-
-  const project = app.convert();
-
-  // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
-  if (!project) {
-    done = true;
-    return;
-  }
-
-  await app.generateDocs(project, out);
 
   return {
     name: 'vuepress-plugin-typedoc',
+    async ready() {
+      // TypeDoc options
+      const vuepressOptions = Object.keys(options).reduce((option, key) => {
+        if (
+          ![...['id'], ...Object.keys(DEFAULT_PLUGIN_OPTIONS)].includes(key)
+        ) {
+          option[key] = options[key];
+        }
+        return option;
+      }, {});
 
+      app.options.addReader(new TypeDocReader());
+      app.options.addReader(new TSConfigReader());
+
+      // bootstrap
+      app.bootstrap({
+        // filtered vuepress options
+        ...vuepressOptions,
+        navigationEnabled: true,
+        // TypeDoc plugins
+        plugin: [
+          ...['typedoc-plugin-markdown'],
+          ...(opts.plugin
+            ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
+            : []),
+        ],
+      } as Partial<TypeDocOptions>);
+
+      app.renderer.addComponent(
+        'frontmatter',
+        new FrontMatterComponent(app.renderer),
+      );
+
+      project = app.convert();
+
+      // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
+      if (!project) {
+        done = true;
+        return;
+      }
+
+      await app.generateDocs(project, out);
+
+      return;
+    },
     async enhanceAppFiles() {
       if (done || !sidebar) {
         return;
