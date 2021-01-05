@@ -1,6 +1,5 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
-
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -52,9 +51,23 @@ export = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     help: '[Markdown Plugin] The file name of the entry document.',
-    name: 'entryFile',
+    name: 'entryDocument',
     type: ParameterType.String,
     defaultValue: 'README.md',
+  });
+
+  app.options.addDeclaration({
+    help:
+      '[Markdown Plugin] Removes unnecessary indexes for platforms that supports sidebar / navigation.',
+    name: 'navigationEnabled',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Customise the index page title.',
+    name: 'indexTitle',
+    type: ParameterType.String,
   });
 
   app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));

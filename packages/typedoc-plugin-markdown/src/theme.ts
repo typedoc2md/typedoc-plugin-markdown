@@ -34,9 +34,9 @@ export default class MarkdownTheme extends Theme {
   @BindOption('allReflectionsHaveOwnDocument')
   allReflectionsHaveOwnDocument!: boolean;
   @BindOption('filenameSeparator')
-  filenameSeparator!: boolean;
-  @BindOption('entryFile')
-  entryFile!: string;
+  filenameSeparator!: string;
+  @BindOption('entryDocument')
+  entryDocument!: string;
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
@@ -93,7 +93,7 @@ export default class MarkdownTheme extends Theme {
   // The allowed directory and files listing used to check the output directory
   allowedDirectoryListings() {
     return [
-      this.entryFile,
+      this.entryDocument,
       this.globalsFile,
       ...this.mappings.map((mapping) => mapping.directory),
       'media',
@@ -112,12 +112,12 @@ export default class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
     if (this.readme === 'none') {
-      project.url = this.entryFile;
-      urls.push(new UrlMapping(this.entryFile, project, 'reflection.hbs'));
+      project.url = this.entryDocument;
+      urls.push(new UrlMapping(this.entryDocument, project, 'reflection.hbs'));
     } else {
       project.url = this.globalsFile;
       urls.push(new UrlMapping(this.globalsFile, project, 'reflection.hbs'));
-      urls.push(new UrlMapping(this.entryFile, project, 'index.hbs'));
+      urls.push(new UrlMapping(this.entryDocument, project, 'index.hbs'));
     }
     project.children?.forEach((child: Reflection) => {
       if (child instanceof DeclarationReflection) {
@@ -182,19 +182,19 @@ export default class MarkdownTheme extends Theme {
    * @param separator   The separator used to generate the url.
    * @returns           The generated url.
    */
-  getUrl(reflection: Reflection, relative?: Reflection): string {
-    let url = reflection.getAlias();
-
-    if (
-      reflection.parent &&
-      reflection.parent !== relative &&
-      !(reflection.parent instanceof ProjectReflection)
-    ) {
-      url =
-        this.getUrl(reflection.parent, relative) + this.filenameSeparator + url;
+  getUrl(reflection: Reflection): string {
+    const reflectionName = reflection.getAlias();
+    const paths = reflection
+      .getFullName()
+      .split('.')
+      .map((name) => name.toLowerCase());
+    paths.pop();
+    if (this.filenameSeparator === 'legacy') {
+      return paths.length > 0
+        ? `_${paths.join('_')}_.${reflectionName}`
+        : `_${reflectionName}_`;
     }
-
-    return url;
+    return [...paths, reflectionName].join(this.filenameSeparator);
   }
 
   /**
@@ -284,7 +284,7 @@ export default class MarkdownTheme extends Theme {
     navigation.children?.push(
       createNavigationItem(
         hasSeperateGlobals ? 'Readme' : rootName,
-        this.entryFile,
+        this.entryDocument,
       ),
     );
     if (hasSeperateGlobals) {
@@ -367,10 +367,6 @@ export default class MarkdownTheme extends Theme {
   }
 
   get navigationEnabled() {
-    return false;
-  }
-
-  get hideReflectionTitle() {
     return false;
   }
 }
