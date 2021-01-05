@@ -14,6 +14,9 @@ export default class GithubWikiTheme extends MarkdownTheme {
     this.renderer = renderer;
     renderer.addComponent('github-wiki-utils', new UtilsComponent(renderer));
 
+    this.renderer.application.options.setValue('entryDocument', 'Home.md');
+    this.renderer.application.options.setValue('navigationEnabled', true);
+
     this.listenTo(renderer, RendererEvent.END, this.onRendererEnd, 1024);
   }
   toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
@@ -41,10 +44,10 @@ export default class GithubWikiTheme extends MarkdownTheme {
     const parseUrl = (url: string) => '../wiki/' + url.replace('.md', '');
     const navigation: NavigationItem = this.getNavigation(renderer.project);
     const navJson: string[] = [
-      `## [${renderer.project.name}](${parseUrl(this.entryFile)})\n`,
+      `## [${renderer.project.name}](${parseUrl(this.entryDocument)})\n`,
     ];
     if (this.readme !== 'none') {
-      navJson.push(`- [Exports](${parseUrl(this.globalsFile)})`);
+      navJson.push(`- [Modules](${parseUrl(this.globalsFile)})`);
     }
     if (navigation.children) {
       navigation.children.forEach((navItem) => {
@@ -68,9 +71,5 @@ export default class GithubWikiTheme extends MarkdownTheme {
 
   get globalsFile() {
     return 'Modules.md';
-  }
-
-  get navigationEnabled() {
-    return true;
   }
 }
