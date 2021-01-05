@@ -13,6 +13,8 @@ Array [
   "Modules.md#functionitema",
   "Modules.md#functionitemb",
   "Module: namespaceA.md",
+  "Class: SomeNestedClass.md",
+  "Class: SomeNestedClass.md#constructor",
   "Module: namespaceB.md",
   "Enum: enumItemA.md",
   "Enum: enumItemB.md",

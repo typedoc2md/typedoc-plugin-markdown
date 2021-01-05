@@ -13,6 +13,8 @@ Array [
   "modules.md#markdown-header-functionitema",
   "modules.md#markdown-header-functionitemb",
   "modules/namespacea.md",
+  "classes/namespacea.somenestedclass.md",
+  "classes/namespacea.somenestedclass.md#markdown-header-constructor",
   "modules/namespaceb.md",
   "enums/enumitema.md",
   "enums/enumitemb.md",
