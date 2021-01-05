@@ -14,11 +14,14 @@ export class ContextAwareHelpers extends ContextAwareRendererComponent {
   @BindOption('namedAnchors')
   namedAnchors!: boolean;
 
-  @BindOption('hideProjectName')
-  hideProjectName!: boolean;
-
   @BindOption('hideBreadcrumbs')
   hideBreadcrumbs!: boolean;
+
+  @BindOption('navigationEnabled')
+  navigationEnabled!: boolean;
+
+  @BindOption('indexTitle')
+  indexTitle!: string;
 
   initialize() {
     super.initialize();
@@ -33,20 +36,12 @@ export class ContextAwareHelpers extends ContextAwareRendererComponent {
       return this.hideBreadcrumbs;
     });
 
-    MarkdownTheme.HANDLEBARS.registerHelper('hideProjectName', () => {
-      return this.hideProjectName;
-    });
-
-    // theme properties
-
     MarkdownTheme.HANDLEBARS.registerHelper('navigationEnabled', () => {
-      const theme = this.application.renderer.theme as MarkdownTheme;
-      return theme?.navigationEnabled;
+      return this.navigationEnabled;
     });
 
-    MarkdownTheme.HANDLEBARS.registerHelper('hideReflectionTitle', () => {
-      const theme = this.application.renderer.theme as MarkdownTheme;
-      return theme?.hideReflectionTitle;
+    MarkdownTheme.HANDLEBARS.registerHelper('indexTitle', () => {
+      return this.indexTitle;
     });
 
     // utility helper
