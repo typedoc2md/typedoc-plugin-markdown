@@ -1,7 +1,4 @@
 import * as path from 'path';
-
-import * as Handlebars from 'handlebars';
-
 import { TestApp } from '../test-app';
 
 describe(`CustomTheme:`, () => {
@@ -20,42 +17,7 @@ describe(`CustomTheme:`, () => {
     });
   });
 
-  test(`should set 'ifShowIndex' to true on modules if navigation enabled`, () => {
-    expect(
-      Handlebars.helpers.ifShowIndex.call(
-        testApp.project.children,
-        TestApp.handlebarsOptionsStub,
-      ),
-    ).toBeTruthy();
-  });
-
-  test(`should set 'ifShowIndex' to false on classes if navigation enabled`, () => {
-    const reflection = testApp.findReflection('Breadcrumbs');
-    expect(
-      Handlebars.helpers.ifShowIndex.call(
-        reflection,
-        TestApp.handlebarsOptionsStub,
-      ),
-    ).toBeFalsy();
-  });
-
-  test(`should set 'ifShowReflectionPath' to true if navigation enabled`, () => {
-    const reflection = testApp.findReflection('Breadcrumbs');
-    expect(
-      Handlebars.helpers.ifShowReflectionPath.call(
-        reflection,
-        TestApp.handlebarsOptionsStub,
-      ),
-    ).toBeTruthy();
-  });
-
-  test(`should set 'ifShowReflectionTitle' to false if hideReflectionTitle is true`, () => {
-    const reflection = testApp.findReflection('Breadcrumbs');
-    expect(
-      Handlebars.helpers.ifShowReflectionTitle.call(
-        reflection,
-        TestApp.handlebarsOptionsStub,
-      ),
-    ).toBeFalsy();
+  test(`should load custom theme`, () => {
+    expect(testApp.theme.basePath).toMatchSnapshot();
   });
 });

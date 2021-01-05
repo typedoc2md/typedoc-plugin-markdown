@@ -24,6 +24,8 @@ export enum enumItemB {}
 export enum enumItemA {}
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace namespaceA {}
+export namespace namespaceA {
+  export class SomeNestedClass {}
+}
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace namespaceB {}

@@ -1,8 +1,7 @@
 import * as Handlebars from 'handlebars';
-
 import { TestApp } from '../test-app';
 
-describe(`ContextAwareHelpers:`, () => {
+describe(`Options:`, () => {
   let testApp: TestApp;
 
   beforeAll(() => {
@@ -23,18 +22,6 @@ describe(`ContextAwareHelpers:`, () => {
     test(`should set 'ifShowBreadcrumbs' to 'true' by default`, () => {
       expect(
         Handlebars.helpers.ifShowBreadcrumbs(TestApp.handlebarsOptionsStub),
-      ).toBeTruthy();
-    });
-
-    test(`should set 'ifShowProjectName' to 'true' by default`, () => {
-      expect(
-        Handlebars.helpers.ifShowProjectName(TestApp.handlebarsOptionsStub),
-      ).toBeTruthy();
-    });
-
-    test(`should set 'ifShowReflectionTitle' to 'true' by default`, () => {
-      expect(
-        Handlebars.helpers.ifShowReflectionTitle(TestApp.handlebarsOptionsStub),
       ).toBeTruthy();
     });
 
@@ -62,7 +49,7 @@ describe(`ContextAwareHelpers:`, () => {
         publicPath: 'test-public-path',
         namedAnchors: true,
         hideBreadcrumbs: true,
-        hideProjectName: true,
+        navigationEnabled: true,
       });
     });
 
@@ -78,15 +65,31 @@ describe(`ContextAwareHelpers:`, () => {
       ).toBeFalsy();
     });
 
-    test(`should set project name to 'false'`, () => {
-      expect(
-        Handlebars.helpers.ifShowProjectName(TestApp.handlebarsOptionsStub),
-      ).toBeFalsy();
-    });
-
     test(`should compile relativeURL helper with public path`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
       expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
+    });
+
+    test(`should set 'ifShowReflectionPath' to true if navigation enabled`, () => {
+      expect(
+        Handlebars.helpers.ifShowReflectionPath(TestApp.handlebarsOptionsStub),
+      ).toBeTruthy();
+    });
+
+    test(`should set 'ifShowIndex' to false on classes if navigation enabled`, () => {
+      const reflection = testApp.findReflection('Breadcrumbs');
+      expect(
+        Handlebars.helpers.ifShowIndex.call(
+          reflection,
+          TestApp.handlebarsOptionsStub,
+        ),
+      ).toBeFalsy();
+    });
+
+    test(`should set 'ifShowIndex' to true on modules if navigation enabled`, () => {
+      expect(
+        Handlebars.helpers.ifShowIndex(TestApp.handlebarsOptionsStub),
+      ).toBeTruthy();
     });
   });
 });

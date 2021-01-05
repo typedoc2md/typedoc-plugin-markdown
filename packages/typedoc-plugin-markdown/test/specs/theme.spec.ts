@@ -37,9 +37,17 @@ describe(`Theme:`, () => {
     });
   });
 
-  describe(`(entryFile)`, () => {
-    test(`should getUrls with custom entryFile'`, async () => {
-      await testApp.bootstrap({ entryFile: 'index.md' });
+  describe(`(legacy filenames)`, () => {
+    test(`should getUrls with legacy filenames'`, async () => {
+      await testApp.bootstrap({ filenameSeparator: 'legacy' });
+      const urlMappings = testApp.theme.getUrls(testApp.project);
+      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
+    });
+  });
+
+  describe(`(entryDocument)`, () => {
+    test(`should getUrls with custom entryDocument'`, async () => {
+      await testApp.bootstrap({ entryDocument: 'index.md' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });

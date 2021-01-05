@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Theme: (entryFile) should getUrls with custom entryFile' 1`] = `
+exports[`Theme: (entryDocument) should getUrls with custom entryDocument' 1`] = `
 Array [
   "modules.md",
   "index.md",
@@ -14,6 +14,8 @@ Array [
   "modules/theme.md#functionitema",
   "modules/theme.md#functionitemb",
   "modules/theme.namespacea.md",
+  "classes/theme.namespacea.somenestedclass.md",
+  "classes/theme.namespacea.somenestedclass.md#constructor",
   "modules/theme.namespaceb.md",
   "enums/theme.enumitema.md",
   "enums/theme.enumitemb.md",
@@ -42,6 +44,8 @@ Array [
   "modules/theme.md#functionitema",
   "modules/theme.md#functionitemb",
   "modules/theme-namespacea.md",
+  "classes/theme-namespacea-somenestedclass.md",
+  "classes/theme-namespacea-somenestedclass.md#constructor",
   "modules/theme-namespaceb.md",
   "enums/theme-enumitema.md",
   "enums/theme-enumitemb.md",
@@ -66,6 +70,8 @@ Array [
   "classes/breadcrumbs.breadcrumbs-1.md#somemethod",
   "modules/theme.md",
   "modules/theme.namespacea.md",
+  "classes/theme.namespacea.somenestedclass.md",
+  "classes/theme.namespacea.somenestedclass.md#constructor",
   "modules/theme.namespaceb.md",
   "enums/theme.enumitema.md",
   "enums/theme.enumitemb.md",
@@ -97,6 +103,8 @@ Array [
   "modules/theme.md#functionitema",
   "modules/theme.md#functionitemb",
   "modules/theme.namespacea.md",
+  "classes/theme.namespacea.somenestedclass.md",
+  "classes/theme.namespacea.somenestedclass.md#constructor",
   "modules/theme.namespaceb.md",
   "enums/theme.enumitema.md",
   "enums/theme.enumitemb.md",
@@ -125,6 +133,8 @@ Array [
   "modules/theme.md#functionitema",
   "modules/theme.md#functionitemb",
   "modules/theme.namespacea.md",
+  "classes/theme.namespacea.somenestedclass.md",
+  "classes/theme.namespacea.somenestedclass.md#constructor",
   "modules/theme.namespaceb.md",
   "enums/theme.enumitema.md",
   "enums/theme.enumitemb.md",
@@ -136,5 +146,35 @@ Array [
   "interfaces/theme.interfaceitema.md#prop",
   "interfaces/theme.interfaceitemb.md",
   "interfaces/theme.interfaceitemb.md#prop",
+]
+`;
+
+exports[`Theme: (legacy filenames) should getUrls with legacy filenames' 1`] = `
+Array [
+  "modules.md",
+  "README.md",
+  "modules/_breadcrumbs_.md",
+  "classes/_breadcrumbs_.breadcrumbs-1.md",
+  "classes/_breadcrumbs_.breadcrumbs-1.md#constructor",
+  "classes/_breadcrumbs_.breadcrumbs-1.md#somemethod",
+  "modules/_theme_.md",
+  "modules/_theme_.md#declarationitema",
+  "modules/_theme_.md#declarationitemb",
+  "modules/_theme_.md#functionitema",
+  "modules/_theme_.md#functionitemb",
+  "modules/_theme_.namespacea.md",
+  "classes/_theme_namespacea_.somenestedclass.md",
+  "classes/_theme_namespacea_.somenestedclass.md#constructor",
+  "modules/_theme_.namespaceb.md",
+  "enums/_theme_.enumitema.md",
+  "enums/_theme_.enumitemb.md",
+  "classes/_theme_.classitema.md",
+  "classes/_theme_.classitema.md#constructor",
+  "classes/_theme_.classitemb.md",
+  "classes/_theme_.classitemb.md#constructor",
+  "interfaces/_theme_.interfaceitema.md",
+  "interfaces/_theme_.interfaceitema.md#prop",
+  "interfaces/_theme_.interfaceitemb.md",
+  "interfaces/_theme_.interfaceitemb.md#prop",
 ]
 `;
