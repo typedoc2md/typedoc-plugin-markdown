@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37",
-    "typedoc": "0.20.10",
+    "typedoc": "0.20.12",
     "typedoc-plugin-markdown": "*",
     "typescript": "^4.0.5"
   },
@@ -35,7 +35,7 @@
     "demo:start": "npm run build && cd demo && npm run start",
     "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
     "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",
-    "test": "jest --colors --silent",
+    "test": "jest --colors --silent --updateSnapshot",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",

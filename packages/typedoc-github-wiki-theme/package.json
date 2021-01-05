@@ -31,7 +31,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "typedoc": "0.20.10",
+    "typedoc": "0.20.12",
     "typedoc-plugin-markdown": "*",
     "typescript": "^4.0.5"
   },
