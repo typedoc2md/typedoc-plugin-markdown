@@ -1,6 +1,6 @@
 {
   "name": "typedoc-github-wiki-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An extension of the default theme from typedoc-plugin-markdown to create a compatible file structure for Github Wiki pages.",
   "main": "dist/theme.js",
   "files": [
@@ -27,11 +27,11 @@
   "license": "MIT",
   "peerDependencies": {
     "typedoc": ">=0.20.0",
-    "typedoc-plugin-markdown": ">=3.3.0"
+    "typedoc-plugin-markdown": ">=3.4.0"
   },
   "dependencies": {},
   "devDependencies": {
-    "typedoc": "0.20.12",
+    "typedoc": "0.20.13",
     "typedoc-plugin-markdown": "*",
     "typescript": "^4.0.5"
   },
