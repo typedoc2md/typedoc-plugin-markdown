@@ -62,17 +62,9 @@ Please refer to [TypeDoc](https://typedoc.org/guides/options/) for further optio
 
 Docs directory relative to the the root directory. Defaults to `"docs"`.
 
-```js
-docsRoot: 'docs',
-```
-
 #### out`<string>`
 
 Output directory relative to docs directory. Defaults to `"api"`.
-
-```js
-out: 'api',
-```
 
 #### allReflectionsHaveOwnDocument`<boolean>`
 
@@ -97,8 +89,7 @@ Options object for auto generated sidebar. Pass `null` to skip generation comple
 
 - **indexLabel`<string>`**
 
-  The label of the globals/index sidebar item. Default to `"Table of contents"`.
-
+  The label of the index sidebar item. Default to `"Table of contents"`.
 
 To consume the sidebar, update `sidebars.js` (or equivalent entry sidebars file) and require the generated sidebar:
 
@@ -128,7 +119,7 @@ module.exports = {
         docsRoot: 'docs',
         out: 'api',
         sidebar: {
-          sidebarFile: 'some-sidebar.js'
+          sidebarFile: 'some-sidebar.js',
           fullNames: true,
           readmeLabel: 'Overview'
         },
