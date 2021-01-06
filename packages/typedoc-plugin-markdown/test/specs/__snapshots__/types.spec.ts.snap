@@ -23,9 +23,9 @@ exports[`Types: should compile 'union' of string literals types' 1`] = `
 
 exports[`Types: should compile collapsed 'function' type ' 1`] = `""`;
 
-exports[`Types: should compile collapsed 'literal' type' 1`] = `"object"`;
+exports[`Types: should compile collapsed 'literal' type' 1`] = `"*object*"`;
 
-exports[`Types: should compile collapsed 'objectLiteralType' type' 1`] = `"object"`;
+exports[`Types: should compile collapsed 'objectLiteralType' type' 1`] = `"*object*"`;
 
 exports[`Types: should compile conditional type ' 1`] = `"T *extends* *string* ? *string* : T *extends* *number* ? *number* : T *extends* *boolean* ? *boolean* : T *extends* *undefined* ? *undefined* : *object*"`;
 

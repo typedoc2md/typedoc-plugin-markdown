@@ -10,9 +10,9 @@ exports[`Signatures: should compile callable signature' 1`] = `
 `;
 
 exports[`Signatures: should compile function that returns an object' 1`] = `
-"▸ **functionReturningAnObject**(): object
+"▸ **functionReturningAnObject**(): *object*
 
-**Returns:** object
+**Returns:** *object*
 
 Name | Type |
 ------ | ------ |
@@ -137,13 +137,13 @@ Name | Default |
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`: *number* \\\\| *boolean*[], ...\`args\`: (*string* \\\\| *number*)[]): *any*
+"▸ **functionWithUnionTypes**(\`arg\`: *boolean*[] \\\\| *number*, ...\`args\`: (*string* \\\\| *number*)[]): *any*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-\`arg\` | *number* \\\\| *boolean*[] |
+\`arg\` | *boolean*[] \\\\| *number* |
 \`...args\` | (*string* \\\\| *number*)[] |
 
 **Returns:** *any*

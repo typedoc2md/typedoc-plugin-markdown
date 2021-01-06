@@ -42,7 +42,7 @@ exports[`Declarations: should compile enum delcaration 1`] = `
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-"• \`Const\` **objectLiteralAsConstDeclaration**: object
+"• \`Const\` **objectLiteralAsConstDeclaration**: *object*
 
 #### Type declaration:
 
@@ -57,7 +57,7 @@ Name | Type | Value |
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-"• \`Const\` **objectLiteralDeclaration**: object
+"• \`Const\` **objectLiteralDeclaration**: *object*
 
 #### Type declaration:
 
@@ -65,9 +65,9 @@ Name | Type | Value |
 ------ | ------ | ------ |
 \`valueA\` | *number* | 100 |
 \`valueB\` | *boolean* | true |
-\`valueC\` | object | {} |
-\`valueX\` | object | { \`valueA\`: *number*[] ; \`valueZ\`: *string* = 'foo' } |
-\`valueY\` | function | () => *string* |
+\`valueC\` | *object* | {} |
+\`valueX\` | *object* | { \`valueA\`: *number*[] ; \`valueZ\`: *string* = 'foo' } |
+\`valueY\` | *function* | () => *string* |
 \`valueZ\` | *string* | 'foo' |
 
 [partial: member.sources]
@@ -75,7 +75,7 @@ Name | Type | Value |
 `;
 
 exports[`Declarations: should compile type literal declaration 1`] = `
-"• \`Let\` **typeLiteralDeclaration**: object
+"• \`Let\` **typeLiteralDeclaration**: *object*
 
 #### Type declaration:
 
@@ -83,8 +83,8 @@ Name | Type | Value | Description |
 ------ | ------ | ------ | ------ |
 \`valueA?\` | *number* | *number* | Comments for valueA   |
 \`valueB?\` | *boolean* | *boolean* | - |
-\`valueX\` | object | { \`valueA\`: *number*[] ; \`valueY\`: (\`z\`: *string*) => { \`a\`: *string* ; \`b\`: *string*  } ; \`valueZ\`: *string*  } | Comment for valueX   |
-\`valueY\` | function | () => *string* | - |
+\`valueX\` | *object* | { \`valueA\`: *number*[] ; \`valueY\`: (\`z\`: *string*) => { \`a\`: *string* ; \`b\`: *string*  } ; \`valueZ\`: *string*  } | Comment for valueX   |
+\`valueY\` | *function* | () => *string* | - |
 \`valueZ\` | *string* | *string* | Comment for valueZ   |
 
 [partial: member.sources]

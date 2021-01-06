@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`CustomTheme: should load custom theme 1`] = `"/Users/tomgrey/Projects/typedoc-plugin-markdown/packages/typedoc-plugin-markdown/test/stubs/custom-theme"`;
