@@ -8,6 +8,7 @@ import {
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
 
+import { escape } from '../resources/helpers/escape';
 import MarkdownTheme from '../theme';
 
 @Component({ name: 'toc' })
@@ -53,7 +54,7 @@ export class TableOfContents extends ContextAwareRendererComponent {
 function pushGroup(group: ReflectionGroup, md: string[]) {
   const children = group.children.map(
     (child) =>
-      `- [${child.name}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+      `- [${escape(child.name)}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
         child.url,
       )})`,
   );
