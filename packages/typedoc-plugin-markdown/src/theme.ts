@@ -19,6 +19,7 @@ import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 import { Breadcrumbs } from './components/breadcrumbs';
 import { Comments } from './components/comments';
 import { ContextAwareHelpers } from './components/options';
+import { TableOfContents } from './components/toc';
 
 /**
  * The MarkdownTheme is based on TypeDoc's DefaultTheme @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/DefaultTheme.ts.
@@ -70,6 +71,7 @@ export default class MarkdownTheme extends Theme {
     renderer.addComponent('options', new ContextAwareHelpers(renderer));
     renderer.addComponent('breadcrumbs', new Breadcrumbs(renderer));
     renderer.addComponent('comments', new Comments(renderer));
+    renderer.addComponent('toc', new TableOfContents(renderer));
   }
 
   /**

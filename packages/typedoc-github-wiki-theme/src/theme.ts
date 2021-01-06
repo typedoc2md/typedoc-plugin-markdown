@@ -15,7 +15,8 @@ export default class GithubWikiTheme extends MarkdownTheme {
     renderer.addComponent('github-wiki-utils', new UtilsComponent(renderer));
 
     this.renderer.application.options.setValue('entryDocument', 'Home.md');
-    this.renderer.application.options.setValue('navigationEnabled', true);
+    this.renderer.application.options.setValue('hideInPageTOC', true);
+    this.renderer.application.options.setValue('hideBreadcrumbs', true);
 
     this.listenTo(renderer, RendererEvent.END, this.onRendererEnd, 1024);
   }

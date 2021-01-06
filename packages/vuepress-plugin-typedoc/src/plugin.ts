@@ -6,7 +6,6 @@ import {
   TypeDocReader,
 } from 'typedoc';
 import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter';
-
 import { getSidebarJson } from './sidebar';
 import { PluginOptions } from './types';
 
@@ -55,7 +54,8 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
       app.bootstrap({
         // filtered vuepress options
         ...vuepressOptions,
-        navigationEnabled: true,
+        hideInPageTOC: true,
+        hideBreadcrumbs: true,
         // TypeDoc plugins
         plugin: [
           ...['typedoc-plugin-markdown'],

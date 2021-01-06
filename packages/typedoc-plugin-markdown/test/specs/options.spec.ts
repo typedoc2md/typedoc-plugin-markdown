@@ -1,4 +1,5 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../test-app';
 
 describe(`Options:`, () => {
@@ -25,17 +26,12 @@ describe(`Options:`, () => {
       ).toBeTruthy();
     });
 
-    test(`should set 'ifShowReflectionPath' to 'false' by default`, () => {
-      expect(
-        Handlebars.helpers.ifShowReflectionPath(TestApp.handlebarsOptionsStub),
-      ).toBeFalsy();
-    });
-
+    /*
     test(`should set 'ifShowIndex' to 'true' by default`, () => {
       expect(
         Handlebars.helpers.ifShowIndex(TestApp.handlebarsOptionsStub),
       ).toBeTruthy();
-    });
+    });*/
 
     test(`should compile relativeURL helper`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
@@ -69,27 +65,11 @@ describe(`Options:`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
       expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
     });
-
-    test(`should set 'ifShowReflectionPath' to true if navigation enabled`, () => {
-      expect(
-        Handlebars.helpers.ifShowReflectionPath(TestApp.handlebarsOptionsStub),
-      ).toBeTruthy();
-    });
-
-    test(`should set 'ifShowIndex' to false on classes if navigation enabled`, () => {
-      const reflection = testApp.findReflection('Breadcrumbs');
-      expect(
-        Handlebars.helpers.ifShowIndex.call(
-          reflection,
-          TestApp.handlebarsOptionsStub,
-        ),
-      ).toBeFalsy();
-    });
-
+    /*
     test(`should set 'ifShowIndex' to true on modules if navigation enabled`, () => {
       expect(
         Handlebars.helpers.ifShowIndex(TestApp.handlebarsOptionsStub),
       ).toBeTruthy();
-    });
+    });*/
   });
 });

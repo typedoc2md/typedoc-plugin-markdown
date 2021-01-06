@@ -5,7 +5,9 @@ exports[`Theme: (header) should compile with module with subtitle 1`] = `
 
 # Property: prop
 
-[partial: index]
+[InterfaceItemA](interfaceitema.md).prop
+
+[helper: toc]
 
 [partial: members]
 "
@@ -16,7 +18,7 @@ exports[`Theme: (header) should compile with module without subtitle 1`] = `
 
 # Namespace: namespaceA
 
-[partial: index]
+[helper: toc]
 
 [partial: members]
 "

@@ -1,5 +1,6 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+
 import { MarkdownPlugin } from './plugin';
 
 export = (PluginHost: Application) => {
@@ -57,9 +58,8 @@ export = (PluginHost: Application) => {
   });
 
   app.options.addDeclaration({
-    help:
-      '[Markdown Plugin] Removes unnecessary indexes for platforms that supports sidebar / navigation.',
-    name: 'navigationEnabled',
+    help: '[Markdown Plugin] Do not render in-page table of contents items.',
+    name: 'hideInPageTOC',
     type: ParameterType.Boolean,
     defaultValue: false,
   });

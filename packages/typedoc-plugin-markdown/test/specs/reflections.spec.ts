@@ -16,8 +16,8 @@ describe(`Reflections:`, () => {
         hideBreadcrumbs: false,
         hideProjectName: false,
       });
-      TestApp.stubPartials(['index', 'comment', 'member.signature', 'members']);
-      TestApp.stubHelpers(['breadcrumbs', 'hierarchy']);
+      TestApp.stubPartials(['comment', 'member.signature', 'members']);
+      TestApp.stubHelpers(['toc', 'breadcrumbs', 'hierarchy']);
       reflectionTemplate = TestApp.getTemplate('reflection');
     });
     test(`should compile template with breadcrumbs and project title`, () => {

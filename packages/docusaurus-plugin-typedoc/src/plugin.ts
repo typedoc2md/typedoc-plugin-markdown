@@ -1,5 +1,6 @@
-import { LoadContext } from '@docusaurus/types';
 import * as path from 'path';
+
+import { LoadContext } from '@docusaurus/types';
 import {
   Application,
   TSConfigReader,
@@ -7,6 +8,7 @@ import {
   TypeDocReader,
 } from 'typedoc';
 import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
+
 import { DocusaurusFrontMatterComponent } from './front-matter';
 import { writeSidebar } from './sidebar';
 import { PluginOptions } from './types';
@@ -18,7 +20,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
-    indexLabel: 'Index',
+    indexLabel: 'Table of contents',
     readmeLabel: 'Readme',
   },
   readmeTitle: undefined,
@@ -67,7 +69,8 @@ export default async function pluginDocusaurus(
       // filtered TypeDoc options
       ...typedocOptions,
       entryDocument: 'index.md',
-      navigationEnabled: true,
+      hideInPageTOC: true,
+      hideBreadcrumbs: true,
 
       // TypeDoc plugins
       plugin: [

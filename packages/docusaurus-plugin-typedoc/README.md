@@ -97,7 +97,7 @@ Options object for auto generated sidebar. Pass `null` to skip generation comple
 
 - **indexLabel`<string>`**
 
-  The label of the globals/index sidebar item. Default to `"Index"`.
+  The label of the globals/index sidebar item. Default to `"Table of contents"`.
 
 
 To consume the sidebar, update `sidebars.js` (or equivalent entry sidebars file) and require the generated sidebar:

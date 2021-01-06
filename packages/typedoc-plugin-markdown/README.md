@@ -29,12 +29,14 @@ $ npx typedoc --plugin typedoc-plugin-markdown [args]
 
 ## Arguments
 
-The following arguments can be used in addition to the default [TypeDoc arguments](https://github.com/TypeStrong/typedoc#arguments).
+The following arguments can be used in addition to the default [TypeDoc options](https://typedoc.org/guides/options/).
 
-- `--hideBreadcrumbs<boolean>`<br>
-  Do not render breadcrumbs in template header. Defaults to `false`.
 - `--entryDocument<string>`<br>
   The file name of the entry document. Defaults to `README.md`.
+- `--hideBreadcrumbs<boolean>`<br>
+  Do not render breadcrumbs in template header. Defaults to `false`.
+- `--hideInPageTOC<boolean>`<br>
+  Do not render in-page table of contents items.  Defaults to `false`.
 - `--allReflectionsHaveOwnDocument<boolean>`<br>
   Output all reflections into seperate output files. Defaults to `false`.
 - `--publicPath<string>`<br>

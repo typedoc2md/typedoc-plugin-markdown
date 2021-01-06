@@ -1,4 +1,5 @@
 import * as Handlebars from 'handlebars';
+
 import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
 
 describe(`Theme:`, () => {
@@ -8,8 +9,8 @@ describe(`Theme:`, () => {
   beforeAll(async () => {
     testApp = new TestApp(['theme.ts']);
     await testApp.bootstrap();
-    TestApp.stubPartials(['index', 'comment', 'member.signature', 'members']);
-    TestApp.stubHelpers(['breadcrumbs', 'hierarchy']);
+    TestApp.stubPartials(['comment', 'member.signature', 'members']);
+    TestApp.stubHelpers(['toc', 'breadcrumbs', 'hierarchy']);
     reflectionTemplate = TestApp.getTemplate('reflection');
   });
 

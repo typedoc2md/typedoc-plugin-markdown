@@ -7,9 +7,6 @@ export function ifShowBreadcrumbs(
   this: PageEvent,
   options: Handlebars.HelperOptions,
 ) {
-  if (MarkdownTheme.HANDLEBARS.helpers.navigationEnabled()) {
-    return options.inverse(this);
-  }
   return MarkdownTheme.HANDLEBARS.helpers.hideBreadcrumbs()
     ? options.inverse(this)
     : options.fn(this);
