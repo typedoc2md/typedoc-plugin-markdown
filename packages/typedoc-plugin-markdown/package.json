@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-markdown",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
   "main": "dist/index.js",
   "files": [
@@ -46,7 +46,7 @@
     "handlebars": "^4.7.6"
   },
   "devDependencies": {
-    "typedoc": "0.20.12",
+    "typedoc": "0.20.13",
     "typescript": "^4.0.5"
   }
 }
