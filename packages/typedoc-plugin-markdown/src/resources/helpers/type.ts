@@ -116,9 +116,9 @@ function getLiteralType(model: LiteralType) {
 
 function getReflectionType(model: DeclarationReflection, collapse: boolean) {
   if (model.signatures) {
-    return collapse ? 'function' : getFunctionType(model.signatures);
+    return collapse ? '*function*' : getFunctionType(model.signatures);
   }
-  return collapse ? 'object' : getDeclarationType(model);
+  return collapse ? '*object*' : getDeclarationType(model);
 }
 
 function getDeclarationType(model: DeclarationReflection) {
