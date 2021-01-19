@@ -184,19 +184,19 @@ export default class MarkdownTheme extends Theme {
    * @param separator   The separator used to generate the url.
    * @returns           The generated url.
    */
-  getUrl(reflection: Reflection): string {
-    const reflectionName = reflection.getAlias();
-    const paths = reflection
-      .getFullName()
-      .split('.')
-      .map((name) => name.toLowerCase());
-    paths.pop();
-    if (this.filenameSeparator === 'legacy') {
-      return paths.length > 0
-        ? `_${paths.join('_')}_.${reflectionName}`
-        : `_${reflectionName}_`;
+  getUrl(reflection: Reflection, relative?: Reflection): string {
+    let url = reflection.getAlias();
+
+    if (
+      reflection.parent &&
+      reflection.parent !== relative &&
+      !(reflection.parent instanceof ProjectReflection)
+    ) {
+      url =
+        this.getUrl(reflection.parent, relative) + this.filenameSeparator + url;
     }
-    return [...paths, reflectionName].join(this.filenameSeparator);
+
+    return url;
   }
 
   /**
