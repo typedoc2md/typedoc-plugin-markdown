@@ -143,3 +143,18 @@ export const swtch = <T, R>(value: T, ...cases: [T, R][]) => (def: R) => {
 };
 
 export type _someCallback_ = (name: string, value: unknown) => void;
+
+/**
+ * FOO
+ * @param __namedParameters various options
+ * @param foo An interesting value
+ * @param bar Another value
+ */
+export function functionWithNamedParamsAndComments(
+  { foo = 42, bar = 43 }: { foo?: number; bar?: number } = {},
+  /**
+   * Another param comment
+   */
+  anotherParam: string,
+  paramWithoutComment: boolean,
+) {}

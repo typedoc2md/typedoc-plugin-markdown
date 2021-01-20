@@ -1,7 +1,7 @@
 import { ParameterReflection, TypeParameterReflection } from 'typedoc';
-
 import { comment } from './comment';
 import { escape } from './escape';
+import { propertyTable } from './property-table';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
@@ -9,9 +9,40 @@ export function parameterTable(
   this: ParameterReflection[] | TypeParameterReflection[],
   kind: 'typeParameters' | 'parameters',
 ) {
-  const showDefaults = hasDefaultValues(kind, this);
-  const showTypes = kind === 'parameters' ? true : hasTypes(this);
   const parameters = this as ParameterReflection[];
+
+  const hasNamedParams = parameters.some(
+    (parameter) => parameter.name === '__namedParameters',
+  );
+
+  if (hasNamedParams) {
+    return list(parameters);
+  }
+
+  return table(parameters, kind);
+}
+
+function list(parameters: any) {
+  const output: string[] = [];
+  parameters.forEach((parameter) => {
+    output.push(`**${parameter.name}**: ${type.call(parameter.type, true)}`);
+    if (parameter.comment) {
+      output.push(comment.call(parameter.comment));
+    }
+    if (parameter.type?.declaration) {
+      output.push(propertyTable.call(parameter.type.declaration.children));
+    }
+  });
+  return output.join('\n\n');
+}
+
+function table(
+  parameters: ParameterReflection[],
+  kind: 'typeParameters' | 'parameters',
+) {
+  const showDefaults = hasDefaultValues(kind, parameters);
+  const showTypes = kind === 'parameters' ? true : hasTypes(parameters);
+
   const comments = parameters.map(
     (param) =>
       (param.comment && !!param.comment.text) ||
@@ -62,7 +93,6 @@ export function parameterTable(
   const output = `\n${headers.join(' | ')} |\n${headers
     .map(() => '------')
     .join(' | ')} |\n${rows.join('')}`;
-
   return output;
 }
 

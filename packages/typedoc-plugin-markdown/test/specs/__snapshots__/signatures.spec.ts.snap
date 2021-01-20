@@ -23,6 +23,45 @@ Name | Type |
 "
 `;
 
+exports[`Signatures: should compile named parameters with comments' 1`] = `
+"▸ **functionWithNamedParamsAndComments**(\`__namedParameters?\`: { \`bar?\`: *number* ; \`foo?\`: *number*  }, \`anotherParam\`: *string*, \`paramWithoutComment\`: *boolean*): *void*
+
+FOO
+
+#### Parameters:
+
+**__namedParameters**: *object*
+
+various options
+
+Name | Type | Description |
+------ | ------ | ------ |
+\`bar?\` | *number* | Another value    |
+\`foo?\` | *number* | An interesting value   |
+
+**anotherParam**: *string*
+
+**paramWithoutComment**: *boolean*
+
+**Returns:** *void*
+
+[partial: member.sources]
+"
+`;
+
+exports[`Signatures: should compile named parameters' 1`] = `
+"▸ **functionWithNamedParams**(\`__namedParameters\`: *Object*): *string*
+
+#### Parameters:
+
+**__namedParameters**: *Object*
+
+**Returns:** *string*
+
+[partial: member.sources]
+"
+`;
+
 exports[`Signatures: should compile signature with @return comments' 1`] = `
 "▸ **commentsInReturn**(): *boolean*
 
