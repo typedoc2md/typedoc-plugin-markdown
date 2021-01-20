@@ -7,7 +7,6 @@ import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
-
 import { escape } from '../resources/helpers/escape';
 import MarkdownTheme from '../theme';
 
@@ -26,7 +25,10 @@ export class TableOfContents extends ContextAwareRendererComponent {
         const isVisible = reflection.groups?.some((group) =>
           group.allChildrenHaveOwnDocument(),
         );
-        if (!this.hideInPageTOC || (isVisible && reflection.groups)) {
+        if (
+          (!this.hideInPageTOC && reflection.groups) ||
+          (isVisible && reflection.groups)
+        ) {
           md.push(`## Table of contents\n\n`);
           reflection.groups?.forEach((group) => {
             const groupTitle = group.title;
