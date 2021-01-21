@@ -167,7 +167,7 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 
 Name | Default |
 ------ | ------ |
-\`Item\` | *string* \\\\\\\\| *boolean* |
+\`Item\` | *string* \\\\| *boolean* |
 
 **Returns:** *boolean*
 
@@ -176,14 +176,14 @@ Name | Default |
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`: *boolean*[] \\\\| *number*, ...\`args\`: (*string* \\\\| *number*)[]): *any*
+"▸ **functionWithUnionTypes**(\`arg\`: *boolean*[] | *number*, ...\`args\`: (*string* | *number*)[]): *any*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-\`arg\` | *boolean*[] \\\\| *number* |
-\`...args\` | (*string* \\\\| *number*)[] |
+\`arg\` | *boolean*[] | *number* |
+\`...args\` | (*string* | *number*)[] |
 
 **Returns:** *any*
 

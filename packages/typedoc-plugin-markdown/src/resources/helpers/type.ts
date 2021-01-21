@@ -17,7 +17,6 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc/dist/lib/models/types';
-
 import MarkdownTheme from '../../theme';
 import { escape } from './escape';
 
@@ -209,7 +208,7 @@ function getArrayType(model: ArrayType) {
 }
 
 function getUnionType(model: UnionType) {
-  return model.types.map((unionType) => type.call(unionType)).join(' \\| ');
+  return model.types.map((unionType) => type.call(unionType)).join(` \| `);
 }
 
 function getIntersectionType(model: IntersectionType) {
