@@ -16,11 +16,8 @@ export function propertyTable(
       (param.comment && !!param.comment.shortText),
   );
   const hasComments = !commentsMap.every((value) => !value);
-  const hasValues = kind === ReflectionKind.Variable;
+
   const headers = ['Name', 'Type'];
-  if (hasValues) {
-    headers.push('Value');
-  }
   if (hasComments) {
     headers.push('Description');
   }
@@ -36,14 +33,7 @@ export function propertyTable(
         : `\`${getName(property)}\``;
     nameCol.push(name);
     row.push(nameCol.join(' '));
-    row.push(type.call(propertyType, kind === ReflectionKind.Variable));
-    if (hasValues) {
-      row.push(
-        property.defaultValue && property.defaultValue !== '...'
-          ? escape(stripLineBreaks(property.defaultValue))
-          : stripLineBreaks(type.call(propertyType)),
-      );
-    }
+    row.push(type.call(propertyType));
 
     if (hasComments) {
       if (property.comment) {
