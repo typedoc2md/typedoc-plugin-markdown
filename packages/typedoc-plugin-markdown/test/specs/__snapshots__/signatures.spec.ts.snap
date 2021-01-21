@@ -24,13 +24,13 @@ Name | Type |
 `;
 
 exports[`Signatures: should compile named parameters with comments' 1`] = `
-"▸ **functionWithNamedParamsAndComments**(\`__namedParameters?\`: { \`bar?\`: *number* ; \`foo?\`: *number*  }, \`anotherParam\`: *string*, \`paramWithoutComment\`: *boolean*): *void*
+"▸ **functionWithNamedParamsAndComments**(\`__namedParameters?\`: { \`bar?\`: *number* ; \`foo?\`: *number*  }, \`anotherParam\`: *string*): *void*
 
 FOO
 
 #### Parameters:
 
-**__namedParameters**: *object*
+• **__namedParameters**: *object*
 
 various options
 
@@ -39,9 +39,7 @@ Name | Type | Description |
 \`bar?\` | *number* | Another value    |
 \`foo?\` | *number* | An interesting value   |
 
-**anotherParam**: *string*
-
-**paramWithoutComment**: *boolean*
+• **anotherParam**: *string*
 
 **Returns:** *void*
 
@@ -54,7 +52,9 @@ exports[`Signatures: should compile named parameters' 1`] = `
 
 #### Parameters:
 
-**__namedParameters**: *Object*
+Name | Type |
+------ | ------ |
+\`__namedParameters\` | *Object* |
 
 **Returns:** *string*
 

@@ -1,5 +1,6 @@
 import * as Handlebars from 'handlebars';
 import { SignatureReflection } from 'typedoc';
+
 import { TestApp } from '../test-app';
 
 describe(`Signatures:`, () => {

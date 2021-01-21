@@ -1,6 +1,11 @@
 export const stringWithDefaultValueDeclaration = 'variable';
 export let undefinedNumberDeclaration: number;
 
+/**
+ * @param {Object} objectLiteralDeclaration description
+ * @param {string} objectLiteralDeclaration.valueZ description for valuez
+ * @param {number} objectLiteralDeclaration.valueA description for valuea
+ */
 export const objectLiteralDeclaration = {
   /**
    * Comment for valueZ
@@ -60,19 +65,16 @@ export let typeLiteralDeclarationWithFunction: {
   valueZ: string;
 };
 
+/**
+ * Comments
+ * @param {Object} objectLiteralAsConstDeclaration - Comment for object.
+ * @param {string} objectLiteralAsConstDeclaration.Prop1 - Comment for Prop1.
+ * @param {string} objectLiteralAsConstDeclaration.Prop2 - Comment for Prop2.
+ */
 export const objectLiteralAsConstDeclaration = {
-  /**
-   * comments
-   */
   Prop1: 'Prop1',
-  /**
-   * comments
-   */
-  Prop2: 'Prop1',
-  /**
-   * comments
-   */
-  Prop3: 'Prop1',
+  Prop2: 'Prop2',
+  Prop3: 'Prop3',
 } as const;
 
 export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');

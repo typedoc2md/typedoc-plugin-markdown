@@ -156,5 +156,4 @@ export function functionWithNamedParamsAndComments(
    * Another param comment
    */
   anotherParam: string,
-  paramWithoutComment: boolean,
 ) {}
