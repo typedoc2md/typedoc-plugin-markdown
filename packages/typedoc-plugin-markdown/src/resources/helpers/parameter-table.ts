@@ -1,8 +1,4 @@
-import {
-  ParameterReflection,
-  ReflectionKind,
-  TypeParameterReflection,
-} from 'typedoc';
+import { ParameterReflection, TypeParameterReflection } from 'typedoc';
 
 import { comment } from './comment';
 import { escape } from './escape';
@@ -16,12 +12,11 @@ export function parameterTable(
 ) {
   const parameters = this as ParameterReflection[];
 
-  const expandParams = parameters.some(
-    (parameter: any) =>
-      parameter.type?.declaration?.kind === ReflectionKind.TypeLiteral,
+  const hasNamedParams = parameters.some(
+    (parameter) => parameter.name === '__namedParameters',
   );
 
-  if (expandParams) {
+  if (hasNamedParams) {
     return list(parameters);
   }
 
@@ -35,7 +30,7 @@ function list(parameters: any) {
     if (parameter.comment) {
       output.push(comment.call(parameter.comment));
     }
-    if (parameter.type?.declaration) {
+    if (parameter.type?.declaration && parameter.type.declaration.children) {
       output.push(propertyTable.call(parameter.type.declaration.children));
     }
   });
