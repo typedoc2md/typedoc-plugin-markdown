@@ -33,7 +33,9 @@ export class MarkdownPlugin extends ConverterComponent {
    * Load markdown theme and perform additional checks
    */
   onResolveBegin() {
-    if (!['default', 'markdown'].includes(this.theme)) {
+    const themeDir = path.join(__dirname);
+
+    if (![themeDir, 'default', 'markdown'].includes(this.theme)) {
       // For custom themes check that the theme is a markdown theme
       // If it is return and pass through to renderer
       const themeFileName = path.resolve(path.join(this.theme, 'theme.js'));
@@ -46,7 +48,7 @@ export class MarkdownPlugin extends ConverterComponent {
     }
 
     // Set the default markdown theme
-    this.application.options.setValue('theme', path.join(__dirname));
+    this.application.options.setValue('theme', themeDir);
   }
 
   /**
