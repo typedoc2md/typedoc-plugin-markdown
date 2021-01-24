@@ -18,7 +18,11 @@ module.exports = {
       path.resolve(__dirname, '..', '..', 'dist'),
       {
         id: 'test-2',
-        entryPoints: '../../../typedoc-plugin-markdown/test/stubs/src/index.ts',
+        entryPoints: [
+          '../../../typedoc-plugin-markdown/test/stubs/src/breadcrumbs.ts',
+          '../../../typedoc-plugin-markdown/test/stubs/src/declarations.ts',
+          '../../../typedoc-plugin-markdown/test/stubs/src/reflections.ts',
+        ],
         tsconfig: '../../../typedoc-plugin-markdown/test/stubs/tsconfig.json',
         out: 'api-2',
         sidebar: {
