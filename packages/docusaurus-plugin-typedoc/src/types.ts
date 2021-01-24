@@ -6,7 +6,13 @@ export interface PluginOptions {
   readmeTitle: string | undefined;
   globalsTitle?: string | undefined;
   plugin?: string[];
+  readme?: string;
   disableOutputCheck?: boolean;
+  entryPoints?: any;
+  entryDocument: string;
+  hideInPageTOC: boolean;
+  hideBreadcrumbs: boolean;
+  theme: string;
 }
 
 export interface FrontMatter {

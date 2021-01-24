@@ -1,25 +1,57 @@
-import { Renderer } from 'typedoc';
-import { FrontMatterComponent } from 'typedoc-plugin-markdown/dist/components/front-matter';
-import { Component } from 'typedoc/dist/lib/output/components';
-import { PageEvent } from 'typedoc/dist/lib/output/events';
-import { FrontMatter, PluginOptions, SidebarOptions } from './types';
+import * as path from 'path';
 
-@Component({ name: 'docusaurus-frontmatter' })
-export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
-  outFolder: string;
-  sidebar: SidebarOptions | null;
-  readmeTitle?: string;
-  entryDocument = 'index.md';
+import { BindOption } from 'typedoc';
+import { reflectionTitle } from 'typedoc-plugin-markdown/dist/resources/helpers/reflection-title';
+import { Component } from 'typedoc/dist/lib/converter/components';
+import { RendererComponent } from 'typedoc/dist/lib/output/components';
+import { PageEvent } from 'typedoc/dist/lib/output/events';
+
+import { FrontMatter, Sidebar } from './types';
+
+@Component({ name: 'front-matter' })
+export class FrontMatterComponent extends RendererComponent {
+  @BindOption('out')
+  out!: string;
+  @BindOption('sidebar')
+  sidebar!: Sidebar;
+  @BindOption('globalsTitle')
+  globalsTitle!: string;
+  @BindOption('readmeTitle')
+  readmeTitle!: string;
+  @BindOption('entryDocument')
+  entryDocument!: string;
+
   globalsFile = 'modules.md';
 
-  constructor(renderer: Renderer, options: PluginOptions) {
-    super(renderer);
-    this.outFolder = options?.out;
-    this.sidebar = options?.sidebar;
-    this.readmeTitle = options?.readmeTitle;
+  initialize() {
+    super.initialize();
+    this.listenTo(this.application.renderer, {
+      [PageEvent.END]: this.onPageEnd,
+    });
+  }
+  onPageEnd(page: PageEvent) {
+    if (page.contents) {
+      page.contents = page.contents
+        .replace(/^/, this.getYamlString(this.getYamlItems(page)) + '\n\n')
+        .replace(/[\r\n]{3,}/g, '\n\n');
+    }
   }
 
-  getYamlItems(page: PageEvent): FrontMatter {
+  getYamlString(yamlItems: { [key: string]: string | number | boolean }) {
+    const yaml = `---
+${Object.entries(yamlItems)
+  .map(
+    ([key, value]) =>
+      `${key}: ${
+        typeof value === 'string' ? `"${this.escapeYAMLString(value)}"` : value
+      }`,
+  )
+  .join('\n')}
+---`;
+    return yaml;
+  }
+
+  getYamlItems(page: PageEvent): any {
     const pageId = this.getId(page);
     const pageTitle = this.getTitle(page);
     const sidebarLabel = this.getSidebarLabel(page);
@@ -28,9 +60,9 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
       title: pageTitle,
     };
     if (page.url === this.entryDocument) {
-      items = { ...items, slug: '/' + this.outFolder };
+      items = { ...items, slug: '/' + this.out };
     }
-    if (this.sidebar && sidebarLabel !== pageTitle) {
+    if (sidebarLabel && sidebarLabel !== pageTitle) {
       items = { ...items, sidebar_label: sidebarLabel };
     }
     return {
@@ -39,24 +71,36 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
     };
   }
 
+  getSidebarLabel(page: PageEvent) {
+    if (!this.sidebar) {
+      return null;
+    }
+    if (page.url === this.entryDocument) {
+      return page.url === page.project.url
+        ? this.sidebar.indexLabel
+        : this.sidebar.readmeLabel;
+    }
+
+    if (page.url === this.globalsFile) {
+      return this.sidebar.indexLabel;
+    }
+    return this.sidebar.fullNames ? page.model.getFullName() : page.model.name;
+  }
+
+  getId(page: PageEvent) {
+    return path.basename(page.url, path.extname(page.url));
+  }
+
   getTitle(page: PageEvent) {
     const readmeTitle = this.readmeTitle || page.project.name;
     if (page.url === this.entryDocument && page.url !== page.project.url) {
       return readmeTitle;
     }
-    return super.getTitle(page);
+    return reflectionTitle.call(page, false);
   }
 
-  getSidebarLabel(page: PageEvent) {
-    if (page.url === this.entryDocument) {
-      return page.url === page.project.url
-        ? this.sidebar?.indexLabel
-        : this.sidebar?.readmeLabel;
-    }
-
-    if (page.url === this.globalsFile) {
-      return this.sidebar?.indexLabel;
-    }
-    return this.sidebar?.fullNames ? page.model.getFullName() : page.model.name;
+  // prettier-ignore
+  escapeYAMLString(str: string) {
+    return str.replace(/([^\\])'/g, '$1\\\'').replace(/\"/g, '');
   }
 }

@@ -1,124 +1,78 @@
+import * as fs from 'fs';
 import * as path from 'path';
 
 import { LoadContext } from '@docusaurus/types';
-import {
-  Application,
-  TSConfigReader,
-  TypeDocOptions,
-  TypeDocReader,
-} from 'typedoc';
-import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
+import { Application } from 'typedoc';
 
-import { DocusaurusFrontMatterComponent } from './front-matter';
-import { writeSidebar } from './sidebar';
+import { FrontMatterComponent } from './front-matter';
+import { addOptions, getOptions } from './options';
+import { render } from './render';
+import { SidebarComponent } from './sidebar';
 import { PluginOptions } from './types';
 
-const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
-  id: 'default',
-  docsRoot: 'docs',
-  out: 'api',
-  sidebar: {
-    fullNames: false,
-    sidebarFile: 'typedoc-sidebar.js',
-    indexLabel: 'Table of contents',
-    readmeLabel: 'Readme',
-  },
-  readmeTitle: undefined,
-};
-
+// store list of plugin ids when running multiple instances
 const apps: string[] = [];
 
 export default async function pluginDocusaurus(
   context: LoadContext,
   opts: Partial<PluginOptions>,
 ) {
+  // assign relevant docusaurus context
   const { siteDir } = context;
 
-  /**
-   * Configure options
-   */
-  const options = {
-    ...DEFAULT_PLUGIN_OPTIONS,
-    ...opts,
-    ...(opts.sidebar && {
-      sidebar: {
-        ...DEFAULT_PLUGIN_OPTIONS.sidebar,
-        ...opts.sidebar,
-      },
-    }),
-  };
+  // merge options
+  const options = getOptions(opts);
 
-  // Initialize and build app
   if (!apps.includes(options.id)) {
-    apps.push(options.id);
-    const app = new Application();
-
-    // TypeDoc options
-    const typedocOptions = Object.keys(options).reduce((option, key) => {
-      if (![...['id'], ...Object.keys(DEFAULT_PLUGIN_OPTIONS)].includes(key)) {
-        option[key] = options[key];
+    // we need to generate an empty sidebar up-front so it can be resolved from sidebars.js
+    if (options.sidebar) {
+      const sidebarPath = path.resolve(siteDir, options.sidebar.sidebarFile);
+      if (!fs.existsSync(path.dirname(sidebarPath))) {
+        fs.mkdirSync(path.dirname(sidebarPath));
       }
-      return option;
-    }, {});
-
-    app.options.addReader(new TypeDocReader());
-    app.options.addReader(new TSConfigReader());
-
-    // bootstrap TypeDoc app
-    app.bootstrap({
-      // filtered TypeDoc options
-      ...typedocOptions,
-      entryDocument: 'index.md',
-      hideInPageTOC: true,
-      hideBreadcrumbs: true,
-
-      // TypeDoc plugins
-      plugin: [
-        ...['typedoc-plugin-markdown'],
-        ...(opts.plugin
-          ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
-          : []),
-      ],
-    } as Partial<TypeDocOptions>);
-
-    // add frontmatter component
-    app.renderer.addComponent(
-      'docusaurus-frontmatter',
-      new DocusaurusFrontMatterComponent(app.renderer, options),
-    );
-
-    // return the generated reflections
-    const project = app.convert();
-
-    // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
-    if (!project) {
-      return;
+      fs.writeFileSync(sidebarPath, 'module.exports=[]');
     }
 
-    // construct outputDirectory path
-    const outputDirectory = path.resolve(
-      siteDir,
-      options.docsRoot,
-      options.out,
-    );
+    if (!apps.includes(options.id)) {
+      // prevent dev server infinately re-compiling
+      apps.push(options.id);
 
-    // generate the static docs
-    await app.generateDocs(project, outputDirectory);
+      // initialize and build app
+      const app = new Application();
 
-    // write the sidebar (if applicable)
-    if (options.sidebar) {
-      const theme = app.renderer.getComponent('theme') as MarkdownTheme;
-      writeSidebar(
-        options.disableOutputCheck || theme.isOutputDirectory(outputDirectory),
+      // customise render
+      app.renderer.render = render;
+
+      // add plugin options
+      addOptions(app, siteDir, options);
+
+      // bootstrap TypeDoc app
+      app.bootstrap(options);
+
+      // add frontmatter and sidebar components
+      app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
+      app.renderer.addComponent('sidebar', new SidebarComponent(app.renderer));
+
+      // return the generated reflections
+      const project = app.convert();
+
+      // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
+      if (!project) {
+        return;
+      }
+
+      // construct outputDirectory path
+      const outputDirectory = path.resolve(
         siteDir,
+        options.docsRoot,
         options.out,
-        options.sidebar,
-        theme.getNavigation(project),
       );
+
+      // generate the static docs
+      await app.generateDocs(project, outputDirectory);
     }
   }
 
-  // we need to generate the sidebar before any available lifecycle apis
   return {
     name: 'docusaurus-plugin-typedoc',
   };
