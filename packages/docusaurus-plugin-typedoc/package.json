@@ -19,9 +19,7 @@
     "typedoc": ">=0.20.0",
     "typedoc-plugin-markdown": ">=3.4.0"
   },
-  "dependencies": {
-    "fs-extra": "^9.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37",
     "typedoc": "0.20.16",
@@ -31,12 +29,13 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
-    "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "demo:start": "npm run build && cd demo && npm run start",
-    "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
-    "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",
-    "test": "jest --colors --silent",
-    "build-and-test": "npm run build && npm run test"
+    "build": "rm -rf ./dist && tsc",
+    "build-and-test": "npm run build && npm run test",
+    "test:init": "rm -rf test/site && npx @docusaurus/init@latest init test/site classic",
+    "test:start": "yarn run test:clean && npm run build && cd test/site && npm run clear && npm run start",
+    "test:build-and-serve": "yarn run test:clean && npm run build && cd test/site && npm run build && npm run clear && npm run serve",
+    "test:clean": "rm -rf test/site/sidebars && rm -rf test/site/docs/api && rm -rf test/site/docs/api-2",
+    "test": "jest --colors --updateSnapshot"
   },
   "author": "Thomas Grey",
   "license": "MIT",
