@@ -26,14 +26,16 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     readmeLabel: 'Readme',
   },
   readmeTitle: undefined,
-  theme: 'markdown',
 };
 
 /**
  * Merge default with user options
  * @param opts
  */
-export const getOptions = (opts: Partial<PluginOptions>): PluginOptions => ({
+export const getOptions = (
+  siteDir: string,
+  opts: Partial<PluginOptions>,
+): PluginOptions => ({
   ...DEFAULT_PLUGIN_OPTIONS,
   ...opts,
   ...(opts.sidebar && {
@@ -48,17 +50,14 @@ export const getOptions = (opts: Partial<PluginOptions>): PluginOptions => ({
       ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
       : []),
   ],
+  siteDir,
 });
 
 /**
  * Add docusaurus options to converter
  * @param app
  */
-export const addOptions = (
-  app: Application,
-  siteDir: string,
-  options: PluginOptions,
-) => {
+export const addOptions = (app: Application) => {
   // configure deault typedoc options
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
@@ -74,7 +73,7 @@ export const addOptions = (
 
   app.options.addDeclaration({
     name: 'siteDir',
-  } as StringDeclarationOption);
+  } as MixedDeclarationOption);
 
   app.options.addDeclaration({
     name: 'globalsTitle',
@@ -88,9 +87,4 @@ export const addOptions = (
     name: 'sidebar',
     type: ParameterType.Mixed,
   } as MixedDeclarationOption);
-
-  app.options.setValue('siteDir', siteDir);
-  app.options.setValue('sidebar', options.sidebar);
-  app.options.setValue('readmeTitle', options.readmeTitle);
-  app.options.setValue('globalsTitle', options.globalsTitle);
 };

@@ -21,7 +21,7 @@ export default async function pluginDocusaurus(
   const { siteDir } = context;
 
   // merge options
-  const options = getOptions(opts);
+  const options = getOptions(siteDir, opts);
 
   if (!apps.includes(options.id)) {
     // we need to generate an empty sidebar up-front so it can be resolved from sidebars.js
@@ -44,7 +44,7 @@ export default async function pluginDocusaurus(
       app.renderer.render = render;
 
       // add plugin options
-      addOptions(app, siteDir, options);
+      addOptions(app);
 
       // bootstrap TypeDoc app
       app.bootstrap(options);

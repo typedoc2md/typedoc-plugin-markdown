@@ -12,7 +12,7 @@ export interface PluginOptions {
   entryDocument: string;
   hideInPageTOC: boolean;
   hideBreadcrumbs: boolean;
-  theme: string;
+  siteDir?: string;
 }
 
 export interface FrontMatter {
