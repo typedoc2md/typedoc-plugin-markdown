@@ -15,7 +15,7 @@ exports[`FrontMatter: (globals) should set default globals page 1`] = `
 "---
 id: \\"modules\\"
 title: \\"test-project-name\\"
-sidebar_label: \\"Index\\"
+sidebar_label: \\"Table of contents\\"
 hide_title: true
 ---
 
@@ -27,7 +27,7 @@ exports[`FrontMatter: (globals) should set globals page when readme=none 1`] = `
 id: \\"index\\"
 title: \\"test-project-name\\"
 slug: \\"/api\\"
-sidebar_label: \\"Index\\"
+sidebar_label: \\"Table of contents\\"
 hide_title: true
 ---
 
@@ -56,24 +56,12 @@ hide_title: true
 CONTENTS"
 `;
 
-exports[`FrontMatter: (readme) should set default globals page 1`] = `
-"---
-id: \\"index\\"
-title: \\"test-project-name\\"
-slug: \\"/api\\"
-sidebar_label: \\"README\\"
-hide_title: true
----
-
-CONTENTS"
-`;
-
 exports[`FrontMatter: (readme) should set default index page 1`] = `
 "---
 id: \\"index\\"
 title: \\"test-project-name\\"
 slug: \\"/api\\"
-sidebar_label: \\"README\\"
+sidebar_label: \\"Readme\\"
 hide_title: true
 ---
 
@@ -95,7 +83,7 @@ exports[`FrontMatter: (reflection names) should return front matter with full na
 "---
 id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
-sidebar_label: \\"FrontMatterClass\\"
+sidebar_label: \\"frontmatter.FrontMatterClass\\"
 hide_title: true
 ---
 

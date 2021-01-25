@@ -1,82 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sidebar: should write empty sidebar if output check fails 1`] = `"module.exports = [];"`;
-
-exports[`Sidebar: should write sidebar with default ('api') out 1`] = `
+exports[`Sidebar: should write sidebar with custom out dir and custom sidebar path 1`] = `
 "module.exports = [
-  \\"api/index\\",
-  \\"api/modules\\",
+  \\"custom-out/index\\",
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Modules\\",
+    \\"items\\": [
+      \\"custom-out/modules/frontmatter\\",
+      \\"custom-out/modules/theme\\"
+    ]
+  },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Namespaces\\",
     \\"items\\": [
-      \\"api/modules/namespacea\\",
-      \\"api/modules/namespaceb\\"
+      \\"custom-out/modules/theme.namespacea\\",
+      \\"custom-out/modules/theme.namespaceb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Enumerations\\",
     \\"items\\": [
-      \\"api/enums/enumitema\\",
-      \\"api/enums/enumitemb\\"
+      \\"custom-out/enums/theme.enumitema\\",
+      \\"custom-out/enums/theme.enumitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Classes\\",
     \\"items\\": [
-      \\"api/classes/namespacea.somenestedclass\\",
-      \\"api/classes/classitema\\",
-      \\"api/classes/classitemb\\"
+      \\"custom-out/classes/frontmatter.frontmatterclass\\",
+      \\"custom-out/classes/theme.namespacea.somenestedclass\\",
+      \\"custom-out/classes/theme.classitema\\",
+      \\"custom-out/classes/theme.classitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Interfaces\\",
     \\"items\\": [
-      \\"api/interfaces/interfaceitema\\",
-      \\"api/interfaces/interfaceitemb\\"
+      \\"custom-out/interfaces/theme.interfaceitema\\",
+      \\"custom-out/interfaces/theme.interfaceitemb\\"
     ]
   }
 ];"
 `;
 
-exports[`Sidebar: should write sidebar with root ('') out 1`] = `
+exports[`Sidebar: should write sidebar with defaults out 1`] = `
 "module.exports = [
-  \\"index\\",
-  \\"modules\\",
+  \\"api/index\\",
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Modules\\",
+    \\"items\\": [
+      \\"api/modules/frontmatter\\",
+      \\"api/modules/theme\\"
+    ]
+  },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Namespaces\\",
     \\"items\\": [
-      \\"modules/namespacea\\",
-      \\"modules/namespaceb\\"
+      \\"api/modules/theme.namespacea\\",
+      \\"api/modules/theme.namespaceb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Enumerations\\",
     \\"items\\": [
-      \\"enums/enumitema\\",
-      \\"enums/enumitemb\\"
+      \\"api/enums/theme.enumitema\\",
+      \\"api/enums/theme.enumitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Classes\\",
     \\"items\\": [
-      \\"classes/namespacea.somenestedclass\\",
-      \\"classes/classitema\\",
-      \\"classes/classitemb\\"
+      \\"api/classes/frontmatter.frontmatterclass\\",
+      \\"api/classes/theme.namespacea.somenestedclass\\",
+      \\"api/classes/theme.classitema\\",
+      \\"api/classes/theme.classitemb\\"
     ]
   },
   {
     \\"type\\": \\"category\\",
     \\"label\\": \\"Interfaces\\",
     \\"items\\": [
-      \\"interfaces/interfaceitema\\",
-      \\"interfaces/interfaceitemb\\"
+      \\"api/interfaces/theme.interfaceitema\\",
+      \\"api/interfaces/theme.interfaceitemb\\"
     ]
   }
 ];"

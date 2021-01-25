@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plugin: should render 1`] = `
+Array [
+  "classes",
+  "enums",
+  "index.md",
+  "interfaces",
+  "modules",
+  "modules.md",
+]
+`;
+
+exports[`Plugin: should write doc 1`] = `
+"---
+id: \\"index\\"
+title: \\"typedoc-plugin-markdown\\"
+slug: \\"/api\\"
+sidebar_label: \\"Readme\\"
+hide_title: true
+---
+
+# MY README
+
+> Some block quote
+
+<!-- some comments -->
+
+Some text
+"
+`;
+
+exports[`Plugin: should write sidebar 1`] = `
+"module.exports = [
+  \\"api/index\\",
+  \\"api/modules\\",
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Namespaces\\",
+    \\"items\\": [
+      \\"api/modules/namespacea\\",
+      \\"api/modules/namespaceb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Enumerations\\",
+    \\"items\\": [
+      \\"api/enums/enumitema\\",
+      \\"api/enums/enumitemb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Classes\\",
+    \\"items\\": [
+      \\"api/classes/namespacea.somenestedclass\\",
+      \\"api/classes/classitema\\",
+      \\"api/classes/classitemb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Interfaces\\",
+    \\"items\\": [
+      \\"api/interfaces/interfaceitema\\",
+      \\"api/interfaces/interfaceitemb\\"
+    ]
+  }
+];"
+`;

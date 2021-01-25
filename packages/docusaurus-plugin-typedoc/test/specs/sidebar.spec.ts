@@ -1,76 +1,80 @@
 import * as fs from 'fs';
 import * as path from 'path';
+
+import cuid from 'cuid';
 import * as tmp from 'tmp';
-import { TestApp } from '../../../typedoc-plugin-markdown/test/test-app';
-import { writeSidebar } from '../../dist/sidebar';
-import { SidebarOptions } from '../../dist/types';
+import { Application } from 'typedoc';
+import { RendererEvent } from 'typedoc/dist/lib/output/events';
+
+import { SidebarComponent } from '../../dist/sidebar';
+import { addOptions, getOptions } from '../../src/options';
 
 tmp.setGracefulCleanup();
+async function generate(opts = {}) {
+  const app = new Application();
+
+  addOptions(app);
+
+  const tmpobj = tmp.dirSync();
+
+  const options = getOptions(tmpobj.name, opts);
+
+  await app.bootstrap({
+    ...options,
+    logger: 'none',
+    plugin: [
+      path.join(__dirname, '../../../typedoc-plugin-markdown/dist/index'),
+    ],
+    entryPoints: [
+      '../typedoc-plugin-markdown/test/stubs/src/theme.ts',
+      '../typedoc-plugin-markdown/test/stubs/src/frontmatter.ts',
+    ],
+    tsconfig: '../typedoc-plugin-markdown/test/stubs/tsconfig.json',
+  });
+
+  const project = app.convert();
+  // construct outputDirectory path
+  const outputDirectory = path.resolve(
+    tmpobj.name,
+    options.docsRoot,
+    options.out,
+  );
+
+  // generate the static docs
+  await app.generateDocs(project, outputDirectory);
+  const componentNamename = cuid();
+  app.renderer.addComponent(
+    componentNamename,
+    new SidebarComponent(app.renderer),
+  );
+  const sidebarComponent = app.renderer.getComponent(
+    componentNamename,
+  ) as SidebarComponent;
+  return { project, sidebarComponent, tmpobj };
+}
 
 describe(`Sidebar:`, () => {
-  let testApp: TestApp;
-
-  beforeAll(async () => {
-    testApp = new TestApp(['theme.ts']);
-    await testApp.bootstrap({
-      entryDocument: 'index.md',
-      theme: path.resolve(__dirname, '..', '..', 'dist', 'theme'),
+  test(`should write sidebar with defaults out`, async () => {
+    const { project, sidebarComponent, tmpobj } = await generate();
+    const renderer = {
+      project,
+    } as RendererEvent;
+    sidebarComponent.onRendererBegin(renderer);
+    const sidebar = fs.readFileSync(tmpobj.name + '/typedoc-sidebar.js');
+    expect(sidebar.toString()).toMatchSnapshot();
+  });
+  test(`should write sidebar with custom out dir and custom sidebar path`, async () => {
+    const { project, sidebarComponent, tmpobj } = await generate({
+      out: 'custom-out',
+      sidebar: {
+        sidebarFile: './custom-sidebar.js',
+      },
     });
-  });
-
-  test(`should write sidebar with default ('api') out`, () => {
-    const tmpobj = tmp.dirSync();
-    const navigation = testApp.theme.getNavigation(testApp.project);
-    const sidebarFile = 'sidebars.js';
-    const sidebarOptions: SidebarOptions = {
-      fullNames: false,
-      sidebarFile,
-      indexLabel: 'Index',
-      readmeLabel: 'README',
-    };
-    const sidebarsContent = `module.exports = {
-      "someSidebar": {
-        "Docusaurus": [
-          "doc1",
-        ],
-        "Features": [
-          "mdx"
-        ]
-      }
-    };`;
-    fs.writeFileSync(path.resolve(tmpobj.name, sidebarFile), sidebarsContent);
-    writeSidebar(true, tmpobj.name, 'api', sidebarOptions, navigation);
-    const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));
-    expect(sidebar.toString()).toMatchSnapshot();
-  });
-
-  test(`should write sidebar with root ('') out`, () => {
-    const tmpobj = tmp.dirSync();
-    const navigation = testApp.theme.getNavigation(testApp.project);
-    const sidebarFile = 'sidebars/newSidebar.js';
-    const sidebarOptions: SidebarOptions = {
-      fullNames: false,
-      sidebarFile,
-      indexLabel: 'Index',
-      readmeLabel: 'README',
-    };
-    writeSidebar(true, tmpobj.name, '', sidebarOptions, navigation);
-    const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));
-    expect(sidebar.toString()).toMatchSnapshot();
-  });
-
-  test(`should write empty sidebar if output check fails`, () => {
-    const tmpobj = tmp.dirSync();
-    const navigation = testApp.theme.getNavigation(testApp.project);
-    const sidebarFile = 'sidebars/newSidebar.js';
-    const sidebarOptions: SidebarOptions = {
-      fullNames: false,
-      sidebarFile,
-      indexLabel: 'Index',
-      readmeLabel: 'README',
-    };
-    writeSidebar(false, tmpobj.name, '', sidebarOptions, navigation);
-    const sidebar = fs.readFileSync(path.resolve(tmpobj.name, sidebarFile));
+    const renderer = {
+      project,
+    } as RendererEvent;
+    sidebarComponent.onRendererBegin(renderer);
+    const sidebar = fs.readFileSync(tmpobj.name + '/custom-sidebar.js');
     expect(sidebar.toString()).toMatchSnapshot();
   });
 });
