@@ -35,7 +35,7 @@
     "test:start": "yarn run test:clean && npm run build && cd test/site && npm run clear && npm run start",
     "test:build-and-serve": "yarn run test:clean && npm run build && cd test/site && npm run build && npm run clear && npm run serve",
     "test:clean": "rm -rf test/site/sidebars && rm -rf test/site/docs/api && rm -rf test/site/docs/api-2",
-    "test": "jest --colors --updateSnapshot"
+    "test": "jest --colors"
   },
   "author": "Thomas Grey",
   "license": "MIT",

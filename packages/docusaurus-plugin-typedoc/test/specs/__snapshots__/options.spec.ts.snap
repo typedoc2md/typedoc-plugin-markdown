@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options: should merge plugins 1`] = `
+Array [
+  "typedoc-plugin-markdown",
+  "plugin-xyz",
+]
+`;
+
+exports[`Options: should merge sidebar options 1`] = `
+Object {
+  "fullNames": true,
+  "indexLabel": "Table of contents",
+  "readmeLabel": "Readme",
+  "sidebarFile": "custom-path.js",
+}
+`;
+
+exports[`Options: should not duplicate markdown plugin 1`] = `
+Array [
+  "typedoc-plugin-markdown",
+  "plugin-xyz",
+]
+`;
+
+exports[`Options: should return default options 1`] = `
+Object {
+  "docsRoot": "docs",
+  "entryDocument": "index.md",
+  "entryPoints": Array [
+    "entrypoint.ts",
+  ],
+  "hideBreadcrumbs": true,
+  "hideInPageTOC": true,
+  "id": "default",
+  "out": "api",
+  "plugin": Array [
+    "typedoc-plugin-markdown",
+  ],
+  "readmeTitle": undefined,
+  "sidebar": Object {
+    "fullNames": false,
+    "indexLabel": "Table of contents",
+    "readmeLabel": "Readme",
+    "sidebarFile": "typedoc-sidebar.js",
+  },
+  "siteDir": "site-dir",
+}
+`;
