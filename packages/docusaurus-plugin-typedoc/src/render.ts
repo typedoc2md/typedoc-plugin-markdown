@@ -24,9 +24,11 @@ export async function render(
   if (!output.isDefaultPrevented) {
     output.urls?.forEach((mapping: UrlMapping, i) => {
       this.renderDocument(output.createPageEvent(mapping));
-      ts.sys.write(
-        `\rGenerated ${i + 1} of ${output.urls?.length} TypeDoc docs`,
-      );
+      if (this.application.logger !== 'none') {
+        ts.sys.write(
+          `\rGenerated ${i + 1} of ${output.urls?.length} TypeDoc docs`,
+        );
+      }
     });
     ts.sys.write(`\n`);
     this.trigger(RendererEvent.END, output);
