@@ -66,6 +66,9 @@ export class SidebarComponent extends RendererComponent {
       : [];
 
     // write result to disk
+    if (!fs.existsSync(path.dirname(sidebarPath))) {
+      fs.mkdirSync(path.dirname(sidebarPath));
+    }
     fs.writeFileSync(
       sidebarPath,
       `module.exports = ${JSON.stringify(sidebarItems, null, 2)};`,
