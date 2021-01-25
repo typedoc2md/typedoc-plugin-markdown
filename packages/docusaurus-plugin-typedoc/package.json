@@ -32,8 +32,8 @@
     "build": "rm -rf ./dist && tsc",
     "build-and-test": "npm run build && npm run test",
     "test:init": "rm -rf test/site && npx @docusaurus/init@latest init test/site classic",
-    "test:start": "yarn run test:clean && npm run build && cd test/site && npm run clear && npm run start",
-    "test:build-and-serve": "yarn run test:clean && npm run build && cd test/site && npm run build && npm run clear && npm run serve",
+    "test:demo:start": "yarn run test:clean && npm run build && cd test/site && npm run clear && npm run start",
+    "test:demo:build": "yarn run test:clean && npm run build && cd test/site && npm run build && npm run clear && npm run serve",
     "test:clean": "rm -rf test/site/sidebars && rm -rf test/site/docs/api && rm -rf test/site/docs/api-2",
     "test": "jest --colors"
   },
