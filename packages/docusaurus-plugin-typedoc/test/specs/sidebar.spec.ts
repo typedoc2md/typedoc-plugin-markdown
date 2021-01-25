@@ -19,7 +19,7 @@ async function generate(opts = {}) {
 
   const options = getOptions(tmpobj.name, opts);
 
-  await app.bootstrap({
+  app.bootstrap({
     ...options,
     logger: 'none',
     plugin: [
