@@ -32,7 +32,7 @@ export class SidebarComponent extends RendererComponent {
     // map the navigation object to a Docuaurus sidebar format
     const sidebarItems = navigation?.children
       ? navigation.children.map((navigationItem) => {
-          if (navigationItem.title === 'Modules' || navigationItem.isLabel) {
+          if (navigationItem.isLabel) {
             const sidebarCategoryItems = navigationItem.children
               ? navigationItem.children.map((navItem) => {
                   const url = this.getUrlKey(this.out, navItem.url);

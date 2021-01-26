@@ -1,6 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sidebar: should write sidebar with custom out dir and custom sidebar path 1`] = `
+exports[`Sidebar: should write sidebar with defaults out 1`] = `
+"module.exports = [
+  \\"api/index\\",
+  \\"api/modules\\",
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Modules\\",
+    \\"items\\": [
+      \\"api/modules/frontmatter\\",
+      \\"api/modules/theme\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Namespaces\\",
+    \\"items\\": [
+      \\"api/modules/theme.namespacea\\",
+      \\"api/modules/theme.namespaceb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Enumerations\\",
+    \\"items\\": [
+      \\"api/enums/theme.enumitema\\",
+      \\"api/enums/theme.enumitemb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Classes\\",
+    \\"items\\": [
+      \\"api/classes/frontmatter.frontmatterclass\\",
+      \\"api/classes/theme.namespacea.somenestedclass\\",
+      \\"api/classes/theme.classitema\\",
+      \\"api/classes/theme.classitemb\\"
+    ]
+  },
+  {
+    \\"type\\": \\"category\\",
+    \\"label\\": \\"Interfaces\\",
+    \\"items\\": [
+      \\"api/interfaces/theme.interfaceitema\\",
+      \\"api/interfaces/theme.interfaceitemb\\"
+    ]
+  }
+];"
+`;
+
+exports[`Sidebar: should write sidebar without readme and with custom out dir/sidebar path 1`] = `
 "module.exports = [
   \\"custom-out/index\\",
   {
@@ -43,54 +92,6 @@ exports[`Sidebar: should write sidebar with custom out dir and custom sidebar pa
     \\"items\\": [
       \\"custom-out/interfaces/theme.interfaceitema\\",
       \\"custom-out/interfaces/theme.interfaceitemb\\"
-    ]
-  }
-];"
-`;
-
-exports[`Sidebar: should write sidebar with defaults out 1`] = `
-"module.exports = [
-  \\"api/index\\",
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Modules\\",
-    \\"items\\": [
-      \\"api/modules/frontmatter\\",
-      \\"api/modules/theme\\"
-    ]
-  },
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Namespaces\\",
-    \\"items\\": [
-      \\"api/modules/theme.namespacea\\",
-      \\"api/modules/theme.namespaceb\\"
-    ]
-  },
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Enumerations\\",
-    \\"items\\": [
-      \\"api/enums/theme.enumitema\\",
-      \\"api/enums/theme.enumitemb\\"
-    ]
-  },
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Classes\\",
-    \\"items\\": [
-      \\"api/classes/frontmatter.frontmatterclass\\",
-      \\"api/classes/theme.namespacea.somenestedclass\\",
-      \\"api/classes/theme.classitema\\",
-      \\"api/classes/theme.classitemb\\"
-    ]
-  },
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Interfaces\\",
-    \\"items\\": [
-      \\"api/interfaces/theme.interfaceitema\\",
-      \\"api/interfaces/theme.interfaceitemb\\"
     ]
   }
 ];"

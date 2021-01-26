@@ -234,16 +234,22 @@ export default class MarkdownTheme extends Theme {
         .filter((group) => group.allChildrenHaveOwnDocument())
         .forEach((reflectionGroup) => {
           let reflectionGroupItem = navigation.children?.find(
-            (child) => child.title === reflectionGroup.title,
+            (child) =>
+              child.title === reflectionGroup.title && child.isLabel === true,
           );
           if (!reflectionGroupItem) {
-            reflectionGroupItem = createNavigationItem(reflectionGroup.title);
+            reflectionGroupItem = createNavigationItem(
+              reflectionGroup.title,
+              undefined,
+              true,
+            );
             navigation.children?.push(reflectionGroupItem);
           }
           reflectionGroup.children.forEach((reflectionGroupChild) => {
             const reflectionGroupChildItem = createNavigationItem(
               reflectionGroupChild.getFullName(),
               reflectionGroupChild.url,
+              true,
             );
             if (reflectionGroupItem) {
               reflectionGroupItem.children?.push(reflectionGroupChildItem);
@@ -256,9 +262,13 @@ export default class MarkdownTheme extends Theme {
         });
     };
 
-    const createNavigationItem = (title: string, url?: string) => {
+    const createNavigationItem = (
+      title: string,
+      url: string | undefined,
+      isLabel: boolean,
+    ) => {
       const navigationItem = new NavigationItem(title.replace(/\"/g, ''), url);
-      navigationItem.isLabel = !url;
+      navigationItem.isLabel = isLabel;
       navigationItem.children = [];
       delete navigationItem.reflection;
       delete navigationItem.parent;
@@ -281,17 +291,18 @@ export default class MarkdownTheme extends Theme {
       return aWeight - bWeight;
     };
     const hasSeperateGlobals = this.readme !== 'none';
-    const navigation = createNavigationItem(project.name);
+    const navigation = createNavigationItem(project.name, undefined, false);
     const rootName = this.entryPoints.length > 1 ? 'Modules' : 'Exports';
     navigation.children?.push(
       createNavigationItem(
         hasSeperateGlobals ? 'Readme' : rootName,
         this.entryDocument,
+        false,
       ),
     );
     if (hasSeperateGlobals) {
       navigation.children?.push(
-        createNavigationItem(rootName, this.globalsFile),
+        createNavigationItem(rootName, this.globalsFile, false),
       );
     }
     if (project.groups) {
@@ -366,9 +377,5 @@ export default class MarkdownTheme extends Theme {
 
   get globalsFile() {
     return 'modules.md';
-  }
-
-  get navigationEnabled() {
-    return false;
   }
 }

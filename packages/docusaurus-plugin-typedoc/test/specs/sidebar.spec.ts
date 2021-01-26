@@ -63,9 +63,10 @@ describe(`Sidebar:`, () => {
     const sidebar = fs.readFileSync(tmpobj.name + '/typedoc-sidebar.js');
     expect(sidebar.toString()).toMatchSnapshot();
   });
-  test(`should write sidebar with custom out dir and custom sidebar path`, async () => {
+  test(`should write sidebar without readme and with custom out dir/sidebar path`, async () => {
     const { project, sidebarComponent, tmpobj } = await generate({
       out: 'custom-out',
+      readme: 'none',
       sidebar: {
         sidebarFile: './custom-sidebar.js',
       },

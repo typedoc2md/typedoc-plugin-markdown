@@ -5,7 +5,7 @@ module.exports = {
     [
       path.resolve(__dirname, '..', '..', 'dist'),
       {
-        //id: 'test-1',
+        id: 'test-1',
         entryPoints: '../../../typedoc-plugin-markdown/test/stubs/src/index.ts',
         tsconfig: '../../../typedoc-plugin-markdown/test/stubs/tsconfig.json',
         sidebar: {
@@ -18,6 +18,7 @@ module.exports = {
       path.resolve(__dirname, '..', '..', 'dist'),
       {
         id: 'test-2',
+        readme: 'none',
         entryPoints: [
           '../../../typedoc-plugin-markdown/test/stubs/src/breadcrumbs.ts',
           '../../../typedoc-plugin-markdown/test/stubs/src/declarations.ts',
