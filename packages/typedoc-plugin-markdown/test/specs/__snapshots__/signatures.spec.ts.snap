@@ -60,6 +60,21 @@ exports[`Signatures: should compile named parameters' 1`] = `
 "
 `;
 
+exports[`Signatures: should compile pipes in params and comments' 1`] = `
+"▸ **functionWithPipesInParamsAndComments**(\`n\`: *number* \\\\| *null*): *number* \\\\| *null*
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+\`n\` | *number* \\\\| *null* | a\\\\|b    |
+
+**Returns:** *number* \\\\| *null*
+
+[partial: member.sources]
+"
+`;
+
 exports[`Signatures: should compile signature with @return comments' 1`] = `
 "▸ **commentsInReturn**(): *boolean*
 
@@ -174,14 +189,14 @@ Name | Default |
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`: *boolean*[] | *number*, ...\`args\`: (*string* | *number*)[]): *any*
+"▸ **functionWithUnionTypes**(\`arg\`: *boolean*[] \\\\| *number*, ...\`args\`: (*string* \\\\| *number*)[]): *any*
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-\`arg\` | *boolean*[] | *number* |
-\`...args\` | (*string* | *number*)[] |
+\`arg\` | *boolean*[] \\\\| *number* |
+\`...args\` | (*string* \\\\| *number*)[] |
 
 **Returns:** *any*
 

@@ -157,3 +157,12 @@ export function functionWithNamedParamsAndComments(
    */
   anotherParam: string,
 ) {}
+
+/**
+ * @param n - a|b
+ */
+export function functionWithPipesInParamsAndComments(
+  n: number | null,
+): number | null {
+  return n;
+}

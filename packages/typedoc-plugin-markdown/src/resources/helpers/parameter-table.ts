@@ -1,5 +1,4 @@
 import { ParameterReflection, TypeParameterReflection } from 'typedoc';
-
 import { comment } from './comment';
 import { escape } from './escape';
 import { propertyTable } from './property-table';
@@ -79,11 +78,16 @@ function table(
     }
 
     if (showDefaults) {
-      row.push(escape(getDefaultValue(parameter)));
+      row.push(getDefaultValue(parameter));
     }
     if (hasComments) {
       if (parameter.comment) {
-        row.push(stripLineBreaks(comment.call(parameter.comment)));
+        row.push(
+          stripLineBreaks(comment.call(parameter.comment)).replace(
+            /\|/g,
+            '\\|',
+          ),
+        );
       } else {
         row.push('-');
       }
@@ -103,7 +107,7 @@ function getDefaultValue(
   if (parameter instanceof TypeParameterReflection) {
     return parameter.default ? type.call(parameter.default) : '-';
   }
-  return parameter.defaultValue ? parameter.defaultValue : '-';
+  return parameter.defaultValue ? escape(parameter.defaultValue) : '-';
 }
 
 function hasDefaultValues(

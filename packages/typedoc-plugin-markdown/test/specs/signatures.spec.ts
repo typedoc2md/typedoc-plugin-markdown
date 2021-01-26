@@ -1,6 +1,5 @@
 import * as Handlebars from 'handlebars';
 import { SignatureReflection } from 'typedoc';
-
 import { TestApp } from '../test-app';
 
 describe(`Signatures:`, () => {
@@ -127,6 +126,16 @@ describe(`Signatures:`, () => {
       TestApp.compileTemplate(
         partial,
         testApp.findReflection('functionWithNamedParamsAndComments')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile pipes in params and comments'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('functionWithPipesInParamsAndComments')
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
