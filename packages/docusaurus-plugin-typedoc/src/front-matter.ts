@@ -1,11 +1,9 @@
 import * as path from 'path';
-
 import { BindOption } from 'typedoc';
 import { reflectionTitle } from 'typedoc-plugin-markdown/dist/resources/helpers/reflection-title';
 import { Component } from 'typedoc/dist/lib/converter/components';
 import { RendererComponent } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { FrontMatter, Sidebar } from './types';
 
 @Component({ name: 'front-matter' })
@@ -67,6 +65,7 @@ ${Object.entries(yamlItems)
     }
     return {
       ...items,
+      custom_edit_url: null,
       hide_title: true,
     };
   }

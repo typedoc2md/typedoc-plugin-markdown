@@ -17,6 +17,7 @@ id: \\"index\\"
 title: \\"typedoc-plugin-markdown\\"
 slug: \\"/api\\"
 sidebar_label: \\"Readme\\"
+custom_edit_url: null
 hide_title: true
 ---
 

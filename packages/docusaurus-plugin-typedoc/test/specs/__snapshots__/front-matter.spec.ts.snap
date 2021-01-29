@@ -5,6 +5,7 @@ exports[`FrontMatter: (globals) should set custom indexLabel 1`] = `
 id: \\"modules\\"
 title: \\"test-project-name\\"
 sidebar_label: \\"Custom index label\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -16,6 +17,7 @@ exports[`FrontMatter: (globals) should set default globals page 1`] = `
 id: \\"modules\\"
 title: \\"test-project-name\\"
 sidebar_label: \\"Table of contents\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -28,6 +30,7 @@ id: \\"index\\"
 title: \\"test-project-name\\"
 slug: \\"/api\\"
 sidebar_label: \\"Table of contents\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -38,6 +41,7 @@ exports[`FrontMatter: (no sidebar) should return front matter without sidebar 1`
 "---
 id: \\"modules\\"
 title: \\"test-project-name\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -50,6 +54,7 @@ id: \\"index\\"
 title: \\"Custom readme title\\"
 slug: \\"/api\\"
 sidebar_label: \\"Custom readme label\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -62,6 +67,7 @@ id: \\"index\\"
 title: \\"test-project-name\\"
 slug: \\"/api\\"
 sidebar_label: \\"Readme\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -73,6 +79,7 @@ exports[`FrontMatter: (readme) should set the same custom readmeLabel and readme
 id: \\"index\\"
 title: \\"Custom readme title\\"
 slug: \\"/api\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -84,6 +91,7 @@ exports[`FrontMatter: (reflection names) should return front matter with full na
 id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"frontmatter.FrontMatterClass\\"
+custom_edit_url: null
 hide_title: true
 ---
 
@@ -95,6 +103,7 @@ exports[`FrontMatter: (reflection names) should return reflection labels with sh
 id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"FrontMatterClass\\"
+custom_edit_url: null
 hide_title: true
 ---
 
