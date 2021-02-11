@@ -14,10 +14,6 @@ exports[`Reflections: (header) should compile template with breadcrumbs and proj
 exports[`Reflections: (template) should compile a callable reflection 1`] = `
 "# Interface: CallableReflection
 
-## Hierarchy
-
-[helper: hierarchy]
-
 ## Callable
 
 [partial: member.signature]
@@ -30,10 +26,6 @@ exports[`Reflections: (template) should compile a callable reflection 1`] = `
 
 exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 "# Interface: IndexableReflection
-
-## Hierarchy
-
-[helper: hierarchy]
 
 ## Indexable
 
@@ -67,10 +59,6 @@ Name | Description |
 ------ | ------ |
 \`T\` | Some type param   |
 \`V\` | Some other type param    |
-
-## Hierarchy
-
-[helper: hierarchy]
 
 [helper: toc]
 

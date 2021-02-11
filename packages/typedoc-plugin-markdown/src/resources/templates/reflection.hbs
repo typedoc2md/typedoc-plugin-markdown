@@ -24,7 +24,7 @@
 
 {{/if}}
 
-{{#if model.typeHierarchy}}
+{{#ifShowTypeHierarchy}}
 
 ## Hierarchy
 
@@ -34,7 +34,7 @@
 
 {{/with}}
 
-{{/if}}
+{{/ifShowTypeHierarchy}}
 
 {{#if model.implementedTypes}}
 
@@ -64,7 +64,7 @@
 
 {{#each signatures}}
 
-{{> member.signature  }}
+{{> member.signature }}
 
 {{/each}}
 
