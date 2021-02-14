@@ -3,7 +3,7 @@ import { SignatureReflection } from 'typedoc';
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
-export function signatureTitle(this: SignatureReflection) {
+export function signatureTitle(this: SignatureReflection, accessor?: string) {
   const md: string[] = [];
 
   md.push(`${memberSymbol.call(this)} `);
@@ -12,10 +12,8 @@ export function signatureTitle(this: SignatureReflection) {
     md.push(this.parent.flags.map((flag) => `\`${flag}\``).join(' '));
   }
 
-  if (this.name === '__get' && this.parent) {
-    md.push(`get **${this.parent.name}**`);
-  } else if (this.name === '__set' && this.parent) {
-    md.push(`set **${this.parent.name}**`);
+  if (accessor) {
+    md.push(`${accessor} **${this.name}**`);
   } else if (this.name !== '__call' && this.name !== '__type') {
     md.push(`**${this.name}**`);
   }

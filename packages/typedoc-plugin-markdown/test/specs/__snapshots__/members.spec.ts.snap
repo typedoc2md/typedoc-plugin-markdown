@@ -27,7 +27,7 @@ ___
 exports[`Members: (member) should compile members with getter' 1`] = `
 "### getter
 
-• **getter**(): *string*
+• get **getter**(): *string*
 
 **Returns:** *string*
 
@@ -40,7 +40,7 @@ ___
 exports[`Members: (member) should compile members with setter' 1`] = `
 "### setter
 
-• **setter**(\`value\`: *string*): *void*
+• set **setter**(\`value\`: *string*): *void*
 
 #### Parameters:
 
