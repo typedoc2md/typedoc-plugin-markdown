@@ -23,6 +23,20 @@ Name | Default |
 ------ | ------ |
 \`A\` | *any* |
 
+#### Type declaration:
+
+▸ (...\`input\`: *any*[]): A
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+\`...input\` | *any*[] |
+
+**Returns:** A
+
+[partial: member.sources]
+
 [partial: member.sources]
 "
 `;
@@ -97,6 +111,12 @@ exports[`Declarations: should compile type literal declaration 2`] = `
 "• \`Let\` **typeLiteralDeclarationWithFunction**: () => *string*
 
 #### Type declaration:
+
+▸ (): *string*
+
+**Returns:** *string*
+
+[partial: member.sources]
 
 Name | Type |
 ------ | ------ |

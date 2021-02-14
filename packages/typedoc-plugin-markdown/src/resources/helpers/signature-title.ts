@@ -16,7 +16,7 @@ export function signatureTitle(this: SignatureReflection) {
     md.push(`get **${this.parent.name}**`);
   } else if (this.name === '__set' && this.parent) {
     md.push(`set **${this.parent.name}**`);
-  } else if (this.name !== '__call') {
+  } else if (this.name !== '__call' && this.name !== '__type') {
     md.push(`**${this.name}**`);
   }
 

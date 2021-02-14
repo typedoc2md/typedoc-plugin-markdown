@@ -16,9 +16,27 @@
 
 {{#if type.declaration}}
 
+#### Type declaration:
+
+{{#if type.declaration.signatures}}
+
+{{#each type.declaration.signatures}}
+
+{{> member.signature }}
+
+{{/each}}
+
+{{/if}}
+
 {{#if type.declaration.children}}
 
-#### Type declaration:
+{{#if type.declaration}}
+
+{{#with type.declaration}}
+
+{{/with}}
+
+{{/if}}
 
 {{#with type.declaration.children}}
 
