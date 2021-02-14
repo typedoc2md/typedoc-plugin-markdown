@@ -17,6 +17,7 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc/dist/lib/models/types';
+
 import MarkdownTheme from '../../theme';
 import { escape } from './escape';
 
@@ -38,6 +39,7 @@ export function type(
     | UnknownType
     | InferredType,
   collapse = false,
+  emphasis = true,
 ) {
   if (this instanceof ReferenceType) {
     return getReferenceType(this);
@@ -60,7 +62,7 @@ export function type(
   }
 
   if (this instanceof IntrinsicType && this.name) {
-    return getIntrinsicType(this);
+    return getIntrinsicType(this, emphasis);
   }
 
   if (this instanceof ReflectionType && this.declaration) {
@@ -191,7 +193,7 @@ function getReferenceType(model: ReferenceType) {
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `<${model.typeArguments
-          .map((typeArgument) => `${type.call(typeArgument)}`)
+          .map((typeArgument) => `${type.call(typeArgument, false, false)}`)
           .join(', ')}\\>`,
       );
     }
@@ -221,8 +223,8 @@ function getTupleType(model: TupleType) {
   return `[${model.elements.map((element) => type.call(element)).join(', ')}]`;
 }
 
-function getIntrinsicType(model: IntrinsicType) {
-  return `*${escape(model.name)}*`;
+function getIntrinsicType(model: IntrinsicType, emphasis: boolean) {
+  return emphasis ? `*${escape(model.name)}*` : escape(model.name);
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {

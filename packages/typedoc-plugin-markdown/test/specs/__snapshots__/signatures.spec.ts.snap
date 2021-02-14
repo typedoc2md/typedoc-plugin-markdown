@@ -23,6 +23,21 @@ Name | Type |
 "
 `;
 
+exports[`Signatures: should compile function with reference type' 1`] = `
+"▸ **functionWithReferenceType**(\`descriptor\`: *TypedPropertyDescriptor*<any\\\\>): *boolean*
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+\`descriptor\` | *TypedPropertyDescriptor*<any\\\\> |
+
+**Returns:** *boolean*
+
+[partial: member.sources]
+"
+`;
+
 exports[`Signatures: should compile named parameters with comments' 1`] = `
 "▸ **functionWithNamedParamsAndComments**(\`__namedParameters?\`: { \`bar?\`: *number* ; \`foo?\`: *number*  }, \`anotherParam\`: *string*): *void*
 

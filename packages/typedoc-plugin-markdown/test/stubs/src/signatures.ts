@@ -166,3 +166,9 @@ export function functionWithPipesInParamsAndComments(
 ): number | null {
   return n;
 }
+
+export function functionWithReferenceType(
+  descriptor: TypedPropertyDescriptor<any>,
+) {
+  return true;
+}
