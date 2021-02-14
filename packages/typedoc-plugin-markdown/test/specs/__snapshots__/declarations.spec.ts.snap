@@ -20,7 +20,7 @@ exports[`Declarations: should compile any function type 1`] = `
 #### Type parameters:
 
 Name | Default |
------- | ------ |
+:------ | :------ |
 \`A\` | *any* |
 
 #### Type declaration:
@@ -30,7 +30,7 @@ Name | Default |
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 \`...input\` | *any*[] |
 
 **Returns:** A
@@ -63,7 +63,7 @@ Comments
 #### Type declaration:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`Prop1\` | *Prop1* | Comment for Prop1.   |
 \`Prop2\` | *Prop2* | Comment for Prop2.    |
 \`Prop3\` | *Prop3* | - |
@@ -78,7 +78,7 @@ exports[`Declarations: should compile object literal declaration 1`] = `
 #### Type declaration:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`valueA\` | *number* | - |
 \`valueB\` | *boolean* | - |
 \`valueC\` | {} | - |
@@ -96,7 +96,7 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 #### Type declaration:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`valueA?\` | *number* | Comments for valueA   |
 \`valueB?\` | *boolean* | - |
 \`valueX\` | { \`valueA\`: *number*[] ; \`valueY\`: (\`z\`: *string*) => { \`a\`: *string* ; \`b\`: *string*  } ; \`valueZ\`: *string*  } | Comment for valueX   |
@@ -119,7 +119,7 @@ exports[`Declarations: should compile type literal declaration 2`] = `
 [partial: member.sources]
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 \`valueZ\` | *string* |
 
 [partial: member.sources]
@@ -132,7 +132,7 @@ exports[`Declarations: should not escape charcters within markdown code 1`] = `
 #### Type declaration:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 \`this_prop_has_underscores\` | *number* |
 this\\\\|prop\\\\|has\\\\|the\\\\|pipe\\\\|character | *string* |
 

@@ -45,7 +45,7 @@ exports[`Members: (member) should compile members with setter' 1`] = `
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 \`value\` | *string* |
 
 **Returns:** *void*

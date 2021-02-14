@@ -1,4 +1,5 @@
 import { ParameterReflection, TypeParameterReflection } from 'typedoc';
+
 import { comment } from './comment';
 import { escape } from './escape';
 import { propertyTable } from './property-table';
@@ -96,7 +97,7 @@ function table(
   });
 
   const output = `\n${headers.join(' | ')} |\n${headers
-    .map(() => '------')
+    .map(() => ':------')
     .join(' | ')} |\n${rows.join('')}`;
   return output;
 }

@@ -46,7 +46,7 @@ export function propertyTable(
   });
 
   const output = `\n${headers.join(' | ')} |\n${headers
-    .map(() => '------')
+    .map(() => ':------')
     .join(' | ')} |\n${rows.join('')}`;
 
   return output;

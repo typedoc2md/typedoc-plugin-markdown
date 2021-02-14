@@ -15,7 +15,7 @@ exports[`Signatures: should compile function that returns an object' 1`] = `
 **Returns:** *object*
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 \`x\` | *number* |
 \`y\` | *number* |
 
@@ -29,7 +29,7 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 \`descriptor\` | *TypedPropertyDescriptor*<any\\\\> |
 
 **Returns:** *boolean*
@@ -50,7 +50,7 @@ FOO
 various options
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`bar?\` | *number* | Another value    |
 \`foo?\` | *number* | An interesting value   |
 
@@ -81,7 +81,7 @@ exports[`Signatures: should compile pipes in params and comments' 1`] = `
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`n\` | *number* \\\\| *null* | a\\\\|b    |
 
 **Returns:** *number* \\\\| *null*
@@ -120,7 +120,7 @@ This is a function with a parameter that has a default value.
 #### Parameters:
 
 Name | Type | Default value | Description |
------- | ------ | ------ | ------ |
+:------ | :------ | :------ | :------ |
 \`valueA\` | *string* | 'defaultValue' | A parameter with a default string value.   |
 \`valueB\` | *number* | 100 | A parameter with a default numeric value.   |
 \`valueC\` | *number* | ... | A parameter with a default NaN value.   |
@@ -142,7 +142,7 @@ This is a function with a parameter that is optional.
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`requiredParam\` | *string* | A normal parameter.   |
 \`optionalParam?\` | *string* | An optional parameter.    |
 
@@ -160,7 +160,7 @@ This is a function with multiple arguments and a return value.
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`paramZ\` | *string* | This is a string parameter.   |
 \`paramG\` | *any* | This is a parameter flagged with any.<br />     This sentence is placed in the next line.    |
 \`paramA\` | *any* |    This is a **parameter** pointing to an interface.     |
@@ -179,7 +179,7 @@ This is a function with rest parameter.
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 \`...rest\` | *string*[] | The rest parameter.    |
 
 **Returns:** *string*
@@ -194,7 +194,7 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 #### Type parameters:
 
 Name | Default |
------- | ------ |
+:------ | :------ |
 \`Item\` | *string* \\\\| *boolean* |
 
 **Returns:** *boolean*
@@ -209,7 +209,7 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 \`arg\` | *boolean*[] \\\\| *number* |
 \`...args\` | (*string* \\\\| *number*)[] |
 
