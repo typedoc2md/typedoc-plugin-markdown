@@ -52,7 +52,7 @@ export function type(
   }
 
   if (this instanceof UnionType && this.types) {
-    return getUnionType(this);
+    return getUnionType(this, emphasis);
   }
 
   if (this instanceof IntersectionType && this.types) {
@@ -215,8 +215,10 @@ function getArrayType(model: ArrayType, emphasis: boolean) {
     : `${arrayType}[]`;
 }
 
-function getUnionType(model: UnionType) {
-  return model.types.map((unionType) => type.call(unionType)).join(` \\| `);
+function getUnionType(model: UnionType, emphasis: boolean) {
+  return model.types
+    .map((unionType) => type.call(unionType, 'none', emphasis))
+    .join(` \\| `);
 }
 
 function getIntersectionType(model: IntersectionType) {
