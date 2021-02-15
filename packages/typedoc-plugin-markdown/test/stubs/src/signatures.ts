@@ -172,3 +172,27 @@ export function functionWithReferenceType(
 ) {
   return true;
 }
+
+/**
+ * Some nested params.
+ * @param params The parameters passed to the method.
+ * @param params.name The name of the new group.
+ * @param params.nestedObj A nested object.
+ * @param context The context of the method call.
+ */
+export function functionWithNestedParams(
+  params: {
+    name: string;
+    parent?: number;
+    nestedObj: {
+      name: string;
+      value: number;
+      obj: {
+        name: () => void;
+      };
+    };
+  },
+  context: any,
+) {
+  return true;
+}

@@ -21,6 +21,8 @@ import {
 import MarkdownTheme from '../../theme';
 import { escape } from './escape';
 
+type Collapse = 'object' | 'function' | 'all' | 'none';
+
 export function type(
   this:
     | ArrayType
@@ -38,15 +40,15 @@ export function type(
     | IndexedAccessType
     | UnknownType
     | InferredType,
-  collapse = false,
+  collapse: Collapse = 'none',
   emphasis = true,
 ) {
   if (this instanceof ReferenceType) {
-    return getReferenceType(this);
+    return getReferenceType(this, emphasis);
   }
 
   if (this instanceof ArrayType && this.elementType) {
-    return getArrayType(this);
+    return getArrayType(this, emphasis);
   }
 
   if (this instanceof UnionType && this.types) {
@@ -115,11 +117,15 @@ function getLiteralType(model: LiteralType) {
   return `*${model.value}*`;
 }
 
-function getReflectionType(model: DeclarationReflection, collapse: boolean) {
+function getReflectionType(model: DeclarationReflection, collapse: Collapse) {
   if (model.signatures) {
-    return collapse ? '*function*' : getFunctionType(model.signatures);
+    return collapse === 'function' || collapse === 'all'
+      ? '*function*'
+      : getFunctionType(model.signatures);
   }
-  return collapse ? '*object*' : getDeclarationType(model);
+  return collapse === 'object' || collapse === 'all'
+    ? '*object*'
+    : getDeclarationType(model);
 }
 
 function getDeclarationType(model: DeclarationReflection) {
@@ -178,7 +184,7 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
   return functions.join('');
 }
 
-function getReferenceType(model: ReferenceType) {
+function getReferenceType(model: ReferenceType, emphasis) {
   if (model.reflection || (model.name && model.typeArguments)) {
     const reflection =
       model.reflection && model.reflection.url
@@ -189,11 +195,11 @@ function getReferenceType(model: ReferenceType) {
               model.reflection.url,
             )})`,
           ]
-        : [`*${escape(model.name)}*`];
+        : [emphasis ? `*${escape(model.name)}*` : escape(model.name)];
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `<${model.typeArguments
-          .map((typeArgument) => `${type.call(typeArgument, false, false)}`)
+          .map((typeArgument) => `${type.call(typeArgument, 'none', false)}`)
           .join(', ')}\\>`,
       );
     }
@@ -202,8 +208,8 @@ function getReferenceType(model: ReferenceType) {
   return escape(model.name);
 }
 
-function getArrayType(model: ArrayType) {
-  const arrayType = type.call(model.elementType);
+function getArrayType(model: ArrayType, emphasis: boolean) {
+  const arrayType = type.call(model.elementType, 'none', emphasis);
   return model.elementType.type === 'union'
     ? `(${arrayType})[]`
     : `${arrayType}[]`;

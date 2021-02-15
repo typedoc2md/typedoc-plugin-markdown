@@ -3,10 +3,16 @@ import { SignatureReflection } from 'typedoc';
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
-export function signatureTitle(this: SignatureReflection, accessor?: string) {
+export function signatureTitle(
+  this: SignatureReflection,
+  accessor?: string,
+  standalone = true,
+) {
   const md: string[] = [];
 
-  md.push(`${memberSymbol.call(this)} `);
+  if (standalone) {
+    md.push(`${memberSymbol.call(this)} `);
+  }
 
   if (this.parent && this.parent.flags) {
     md.push(this.parent.flags.map((flag) => `\`${flag}\``).join(' '));
@@ -37,14 +43,14 @@ export function signatureTitle(this: SignatureReflection, accessor?: string) {
           if (param.flags.isOptional || param.defaultValue) {
             paramsmd.push('?');
           }
-          paramsmd.push(`\`: ${type.call(param.type)}`);
+          paramsmd.push(`\`: ${type.call(param.type, true)}`);
           return paramsmd.join('');
         })
         .join(', ')
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(`: ${type.call(this.type, true)}`);
+    md.push(`: ${type.call(this.type, 'object')}`);
   }
-  return md.join('') + '\n';
+  return md.join('') + (standalone ? '\n' : '');
 }

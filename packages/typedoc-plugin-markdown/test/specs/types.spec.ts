@@ -47,7 +47,7 @@ describe(`Types:`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('literalType').type,
-        true,
+        'all',
       ),
     ).toMatchSnapshot();
   });
@@ -62,7 +62,7 @@ describe(`Types:`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('objectLiteralType'),
-        true,
+        'object',
       ),
     ).toMatchSnapshot();
   });
@@ -91,7 +91,7 @@ describe(`Types:`, () => {
     expect(
       Handlebars.helpers.type.call(
         testApp.findReflection('functionReflectionType').type,
-        true,
+        'function',
       ),
     ).toMatchSnapshot();
   });

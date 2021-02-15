@@ -56,13 +56,6 @@ ___
 "
 `;
 
-exports[`Members: (member) should compile reference members' 1`] = `
-"• **ReferenceMember**: { \`constructor\`: () => [*ReferenceMember*](referencemember.md)  }
-
-[partial: member.sources]
-"
-`;
-
 exports[`Members: (members) should compile class members' 1`] = `
 "## Constructors
 

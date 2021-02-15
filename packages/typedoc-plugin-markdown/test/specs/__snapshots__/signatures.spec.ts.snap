@@ -23,6 +23,31 @@ Name | Type |
 "
 `;
 
+exports[`Signatures: should compile function with nested typen params' 1`] = `
+"▸ **functionWithNestedParams**(\`params\`: { \`name\`: *string* ; \`nestedObj\`: { \`name\`: *string* ; \`obj\`: { \`name\`: () => *void*  } ; \`value\`: *number*  } ; \`parent?\`: *number*  }, \`context\`: *any*): *boolean*
+
+Some nested params.
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+\`params\` | *object* | The parameters passed to the method.   |
+\`params.name\` | *string* | The name of the new group.   |
+\`params.nestedObj\` | *object* | A nested object.   |
+\`params.nestedObj.name\` | *string* | - |
+\`params.nestedObj.obj\` | *object* | - |
+\`params.nestedObj.obj.name\` | () => *void* | - |
+\`params.nestedObj.value\` | *number* | - |
+\`params.parent?\` | *number* | - |
+\`context\` | *any* | The context of the method call.    |
+
+**Returns:** *boolean*
+
+[partial: member.sources]
+"
+`;
+
 exports[`Signatures: should compile function with reference type' 1`] = `
 "▸ **functionWithReferenceType**(\`descriptor\`: *TypedPropertyDescriptor*<any\\\\>): *boolean*
 
@@ -45,16 +70,12 @@ FOO
 
 #### Parameters:
 
-• **__namedParameters**: *object*
-
-various options
-
 Name | Type | Description |
 :------ | :------ | :------ |
-\`bar?\` | *number* | Another value    |
-\`foo?\` | *number* | An interesting value   |
-
-• **anotherParam**: *string*
+\`__namedParameters\` | *object* | various options   |
+\`__namedParameters.bar?\` | *number* | Another value    |
+\`__namedParameters.foo?\` | *number* | An interesting value   |
+\`anotherParam\` | *string* | - |
 
 **Returns:** *void*
 
@@ -67,7 +88,9 @@ exports[`Signatures: should compile named parameters' 1`] = `
 
 #### Parameters:
 
-• **__namedParameters**: *Object*
+Name | Type |
+:------ | :------ |
+\`__namedParameters\` | *Object* |
 
 **Returns:** *string*
 
@@ -123,7 +146,7 @@ Name | Type | Default value | Description |
 :------ | :------ | :------ | :------ |
 \`valueA\` | *string* | 'defaultValue' | A parameter with a default string value.   |
 \`valueB\` | *number* | 100 | A parameter with a default numeric value.   |
-\`valueC\` | *number* | ... | A parameter with a default NaN value.   |
+\`valueC\` | *number* | - | A parameter with a default NaN value.   |
 \`valueD\` | *boolean* | true | A parameter with a default boolean value.   |
 \`valueE\` | *boolean* | null | A parameter with a default null value.    |
 \`valueF\` | *string* | '<foo\\\\>' | - |

@@ -36,21 +36,6 @@ export function declarationTitle(
 }
 
 function getType(reflection: ParameterReflection | DeclarationReflection) {
-  return type.call(
-    reflection.type ? reflection.type : reflection,
-    shouldCollapse(reflection),
-  );
-}
-
-function shouldCollapse(
-  reflection: ParameterReflection | DeclarationReflection,
-) {
-  if (reflection.kindOf(ReflectionKind.Variable)) {
-    const type = reflection.type as ReflectionType;
-    if (type.declaration && type.declaration.signatures) {
-      return false;
-    }
-    return true;
-  }
-  return false;
+  const reflectionType = reflection.type as ReflectionType;
+  return type.call(reflectionType ? reflectionType : reflection, 'object');
 }

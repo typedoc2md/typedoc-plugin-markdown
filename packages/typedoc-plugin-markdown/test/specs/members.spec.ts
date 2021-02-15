@@ -52,15 +52,6 @@ describe(`Members:`, () => {
       ).toMatchSnapshot();
     });
 
-    test(`should compile reference members'`, () => {
-      expect(
-        TestApp.compileTemplate(
-          memberPartial,
-          testApp.findReflection('ReferenceMember'),
-        ),
-      ).toMatchSnapshot();
-    });
-
     test(`should compile members with getter'`, () => {
       expect(
         TestApp.compileTemplate(

@@ -48,16 +48,4 @@
 
 {{/if}}
 
-{{#ifCond kindString '==' 'Object literal'}}
-
-#### Properties:
-
-{{#with children}}
-
-{{{propertyTable ../kind}}}
-
-{{/with}}
-
-{{/ifCond }}
-
 {{> member.sources}}

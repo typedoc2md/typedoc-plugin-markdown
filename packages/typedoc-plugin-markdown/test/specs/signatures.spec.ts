@@ -151,4 +151,14 @@ describe(`Signatures:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  test(`should compile function with nested typen params'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('functionWithNestedParams')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
 });

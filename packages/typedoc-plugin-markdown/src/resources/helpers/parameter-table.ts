@@ -1,53 +1,53 @@
-import { ParameterReflection, TypeParameterReflection } from 'typedoc';
+import {
+  ParameterReflection,
+  ReflectionKind,
+  TypeParameterReflection,
+} from 'typedoc';
 
 import { comment } from './comment';
 import { escape } from './escape';
-import { propertyTable } from './property-table';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
 export function parameterTable(
-  this: ParameterReflection[] | TypeParameterReflection[],
+  this: ParameterReflection[] & TypeParameterReflection[],
   kind: 'typeParameters' | 'parameters',
 ) {
-  const parameters = this as ParameterReflection[];
+  const flattenParams = (current: any) => {
+    return current.type?.declaration?.children?.reduce(
+      (acc: any, child: any) => {
+        const childObj = {
+          ...child,
+          name: `${current.name}.${child.name}`,
+        };
+        return parseParams(childObj, acc);
+      },
+      [],
+    );
+  };
 
-  const hasNamedParams = parameters.some(
-    (parameter) => parameter.name === '__namedParameters',
+  const parseParams = (current: any, acc: any) => {
+    const shouldFlatten =
+      current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
+      current.type?.declaration?.children;
+    return shouldFlatten
+      ? [...acc, current, ...flattenParams(current)]
+      : [...acc, current];
+  };
+
+  return table(
+    this.reduce((acc: any, current: any) => parseParams(current, acc), []),
+    kind,
   );
-
-  if (hasNamedParams) {
-    return list(parameters);
-  }
-
-  return table(parameters, kind);
 }
 
-function list(parameters: any) {
-  const output: string[] = [];
-  parameters.forEach((parameter) => {
-    output.push(`• **${parameter.name}**: ${type.call(parameter.type, true)}`);
-    if (parameter.comment) {
-      output.push(comment.call(parameter.comment));
-    }
-    if (parameter.type?.declaration && parameter.type.declaration.children) {
-      output.push(propertyTable.call(parameter.type.declaration.children));
-    }
-  });
-  return output.join('\n\n');
-}
-
-function table(
-  parameters: ParameterReflection[],
-  kind: 'typeParameters' | 'parameters',
-) {
+function table(parameters: any, kind: 'typeParameters' | 'parameters') {
   const showDefaults = hasDefaultValues(kind, parameters);
   const showTypes = kind === 'parameters' ? true : hasTypes(parameters);
 
   const comments = parameters.map(
     (param) =>
-      (param.comment && !!param.comment.text) ||
-      (param.comment && !!param.comment.shortText),
+      !!param.comment?.text?.trim() || !!param.comment?.shortText?.trim(),
   );
   const hasComments = !comments.every((value) => !value);
 
@@ -75,7 +75,7 @@ function table(
     );
 
     if (showTypes) {
-      row.push(parameter.type ? type.call(parameter.type) : '-');
+      row.push(parameter.type ? type.call(parameter.type, 'object') : '-');
     }
 
     if (showDefaults) {
@@ -108,7 +108,9 @@ function getDefaultValue(
   if (parameter instanceof TypeParameterReflection) {
     return parameter.default ? type.call(parameter.default) : '-';
   }
-  return parameter.defaultValue ? escape(parameter.defaultValue) : '-';
+  return parameter.defaultValue && parameter.defaultValue !== '...'
+    ? escape(parameter.defaultValue)
+    : '-';
 }
 
 function hasDefaultValues(
@@ -118,7 +120,7 @@ function hasDefaultValues(
   const defaultValues =
     kind === 'parameters'
       ? (parameters as ParameterReflection[]).map(
-          (param) => !!param.defaultValue,
+          (param) => param.defaultValue !== '...' && !!param.defaultValue,
         )
       : (parameters as TypeParameterReflection[]).map(
           (param) => !!param.default,
