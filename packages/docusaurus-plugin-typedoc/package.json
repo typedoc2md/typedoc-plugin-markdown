@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-typedoc",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A Docusaurus v2 plugin to build API documentation with TypeDoc.",
   "main": "dist/index.js",
   "files": [
@@ -19,11 +19,10 @@
     "typedoc": ">=0.20.0",
     "typedoc-plugin-markdown": ">=3.4.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37",
     "typedoc": "0.20.24",
-    "typedoc-plugin-markdown": "*"
+    "typedoc-plugin-markdown": "^3.5.0"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-typedoc",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A VuePress plugin to build api documentation with TypeDoc.",
   "main": "dist/index.js",
   "files": [
@@ -19,10 +19,9 @@
     "typedoc": ">=0.20.0",
     "typedoc-plugin-markdown": ">=3.4.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "typedoc": "0.20.24",
-    "typedoc-plugin-markdown": "*"
+    "typedoc-plugin-markdown": "^3.5.0"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
