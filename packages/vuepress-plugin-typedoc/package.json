@@ -20,8 +20,7 @@
     "typedoc-plugin-markdown": ">=3.4.0"
   },
   "devDependencies": {
-    "typedoc": "0.20.24",
-    "typedoc-plugin-markdown": "^3.5.0"
+    "typedoc-plugin-markdown": "*"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
