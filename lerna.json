@@ -3,6 +3,7 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent",
+  "ignoreChanges": ["**/package.json", "**/*.md"],
   "command": {
     "version": {
       "message": "chore(release): publish %s",
