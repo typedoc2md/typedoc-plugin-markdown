@@ -1,6 +1,6 @@
 # vuepress-plugin-typedoc
 
-A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
+A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc) and the [Markdown plugin](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
 
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-typedoc.svg)](https://www.npmjs.com/package/vuepress-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -13,11 +13,13 @@ A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with
 
 ## Installation
 
-This guide assumes that VuePress has already been locally installed. See [getting started docs](https://vuepress.vuejs.org/guide/getting-started.html).
+This guide assumes that a VuePress project has been setup. See [getting started docs](https://vuepress.vuejs.org/guide/getting-started.html).
 
 ```shell
 npm install typedoc typedoc-plugin-markdown vuepress-plugin-typedoc --save-dev
 ```
+
+_Install in the same location as the VuePress root directory._
 
 ## Usage
 
@@ -52,23 +54,27 @@ Please refer to [TypeDoc]() for further options.
 
 ### Plugin options
 
-#### out
+**out**`<string>`
 
-Output directory relative to docs directory. Defaults to `"api"`.
+- Output directory relative to docs directory. Defaults to `"api"`.
 
-```js
-out: 'api',
-```
+**allReflectionsHaveOwnDocument**`<boolean>`
 
-#### sidebar
+- Output all reflections into seperate output files. Defaults to `false`.
 
-Options object for auto generated sidebar. (pass `null` to skip generation completely)
+**hideInPageTOC**`<boolean>`
 
-- **fullNames**
+- Do not render in-page table of contents items. Defaults to `false`.
+
+**sidebar**`<object>`
+
+- Options object for auto generated sidebar. (pass `null` to skip generation completely)
+
+  - **fullNames**`<object>`
 
   Display full names with module path if applicable. Default to `false`.
 
-- **parentCategory**
+  - **parentCategory**`<string>`
 
   The parent category label for sidebar - (defaults to `none` - no parent category)
 
@@ -84,7 +90,6 @@ Options object for auto generated sidebar. (pass `null` to skip generation compl
         // TypeDoc options
         entryPoints: ['../src/index.ts'],
         tsconfig: '../tsconfig.json',
-        plugin: ['some-typedoc-plugin'],
 
         // Plugin options
         out: 'api',
@@ -92,10 +97,6 @@ Options object for auto generated sidebar. (pass `null` to skip generation compl
           fullNames: true,
           parentCategory: 'API',
         },
-
-        // include additional TypeDoc plugins in addition to the markdown plugin (optional)
-        plugin: ['typedoc-plugin-xyz'],
-
       },
     ],
   ],
