@@ -1,9 +1,10 @@
 import { NavigationItem } from 'typedoc';
+
 import { SidebarOptions } from './types';
 
 export const getSidebarJson = (
   navigation: NavigationItem,
-  outFolder: string,
+  out: string,
   sidebar: SidebarOptions,
 ) => {
   const navJson: any = [];
@@ -17,7 +18,7 @@ export const getSidebarJson = (
     if (navigationItem.url && navigationItem.children?.length === 0) {
       const urlKey = navigationItem.url.replace('.md', '');
       navJson.push([
-        urlKey === 'README' ? `/${outFolder}/` : 'modules',
+        urlKey === 'README' ? `/${out}/` : 'modules',
         navigationItem.title,
       ]);
     } else {
@@ -37,7 +38,6 @@ export const getSidebarJson = (
   }
   return navJson;
 };
-
 const getUrlKey = (url: string) => {
   return url.replace('.md', '');
 };

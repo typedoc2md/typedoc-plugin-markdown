@@ -1,16 +1,18 @@
 import { Application, ProjectReflection } from 'typedoc';
 
 export interface PluginOptions {
-  id?: string;
-  logger?: string;
-  out?: string;
+  hideBreadcrumbs: boolean;
+  out: string;
   sidebar?: SidebarOptions | null;
-  plugin?: string[];
+  plugin: string[];
+  watch: boolean;
 }
 
 export interface SidebarOptions {
   fullNames: boolean;
   parentCategory: string;
+  sidebarFile: string;
+  sidebarPath: string;
 }
 
 export interface LoadedContent {

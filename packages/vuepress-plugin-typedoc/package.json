@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc",
   "peerDependencies": {
-    "typedoc": ">=0.20.0",
+    "typedoc": ">=0.20.19",
     "typedoc-plugin-markdown": ">=3.4.0"
   },
   "devDependencies": {
@@ -25,11 +25,11 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
-    "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "demo:start": "rm -rf ./demo/docs/api && npm run build && cd demo && npm run dev",
-    "demo:build-and-serve": "npm run build && cd demo && npm run build && npx http-server docs/.vuepress/dist -o",
-    "demo:init": "rm -rf demo && npx create-vuepress demo",
-    "test": "jest --colors",
+    "build": "rm -rf ./dist && tsc",
+    "test:init": "rm -rf test/site && yarn create vuepress-site test/site",
+    "test:demo:start": "rm -rf ./test/site/docs/api && yarn run build && cd test/site/docs && npm run dev",
+    "test:demo:build": "yarn run build && cd demo && yarn run build && npx http-server docs/.vuepress/dist -o",
+    "test": "jest --colors --updateSnapshot",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
