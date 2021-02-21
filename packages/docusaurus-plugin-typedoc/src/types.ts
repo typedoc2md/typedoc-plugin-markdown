@@ -3,16 +3,18 @@ export interface PluginOptions {
   docsRoot: string;
   out: string;
   sidebar: SidebarOptions | null;
-  readmeTitle: string | undefined;
-  globalsTitle?: string | undefined;
-  plugin?: string[];
+  readmeTitle?: string;
+  globalsTitle?: string;
+  plugin: string[];
   readme?: string;
   disableOutputCheck?: boolean;
-  entryPoints?: any;
+  entryPoints?: string[];
   entryDocument: string;
   hideInPageTOC: boolean;
   hideBreadcrumbs: boolean;
-  siteDir?: string;
+  siteDir: string;
+  outputDirectory: string;
+  watch: boolean;
 }
 
 export interface FrontMatter {
@@ -24,10 +26,11 @@ export interface FrontMatter {
 }
 
 export interface SidebarOptions {
-  fullNames: boolean;
+  fullNames?: boolean;
   sidebarFile: string;
+  sidebarPath: string;
   indexLabel?: string;
-  readmeLabel: string;
+  readmeLabel?: string;
 }
 
 export interface Sidebar {

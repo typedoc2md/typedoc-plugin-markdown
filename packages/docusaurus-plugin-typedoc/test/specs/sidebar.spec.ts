@@ -33,15 +33,9 @@ async function generate(opts = {}) {
   });
 
   const project = app.convert();
-  // construct outputDirectory path
-  const outputDirectory = path.resolve(
-    tmpobj.name,
-    options.docsRoot,
-    options.out,
-  );
 
   // generate the static docs
-  await app.generateDocs(project, outputDirectory);
+  await app.generateDocs(project, options.outputDirectory);
   const componentNamename = cuid();
   app.renderer.addComponent(
     componentNamename,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Plugin: should render 1`] = `
+exports[`Plugin: (docs) should render 1`] = `
 Array [
   "classes",
   "enums",
@@ -11,7 +11,7 @@ Array [
 ]
 `;
 
-exports[`Plugin: should write doc 1`] = `
+exports[`Plugin: (docs) should write doc 1`] = `
 "---
 id: \\"index\\"
 title: \\"typedoc-plugin-markdown\\"
@@ -31,7 +31,7 @@ Some text
 "
 `;
 
-exports[`Plugin: should write sidebar 1`] = `
+exports[`Plugin: (docs) should write sidebar 1`] = `
 "module.exports = [
   \\"api/index\\",
   \\"api/modules\\",

@@ -24,7 +24,6 @@ export class SidebarComponent extends RendererComponent {
   }
 
   onRendererBegin(renderer: RendererEvent) {
-    const sidebarPath = path.resolve(this.siteDir, this.sidebar.sidebarFile);
     const navigation = this.application.renderer.theme?.getNavigation(
       renderer.project,
     );
@@ -39,7 +38,7 @@ export class SidebarComponent extends RendererComponent {
                   if (navItem.children && navItem.children.length > 0) {
                     const sidebarCategoryChildren = navItem.children.map(
                       (childGroup) =>
-                        this.sidebarCategory(
+                        this.getSidebarCategory(
                           childGroup.title,
                           childGroup.children
                             ? childGroup.children.map((childItem) =>
@@ -48,7 +47,7 @@ export class SidebarComponent extends RendererComponent {
                             : [],
                         ),
                     );
-                    return this.sidebarCategory(navItem.title, [
+                    return this.getSidebarCategory(navItem.title, [
                       url,
                       ...sidebarCategoryChildren,
                     ]);
@@ -56,7 +55,7 @@ export class SidebarComponent extends RendererComponent {
                   return url;
                 })
               : [];
-            return this.sidebarCategory(
+            return this.getSidebarCategory(
               navigationItem.title,
               sidebarCategoryItems,
             );
@@ -65,24 +64,20 @@ export class SidebarComponent extends RendererComponent {
         })
       : [];
 
-    // write result to disk
-    if (!fs.existsSync(path.dirname(sidebarPath))) {
-      fs.mkdirSync(path.dirname(sidebarPath));
-    }
-    fs.writeFileSync(
-      sidebarPath,
+    writeSidebar(
+      this.sidebar,
       `module.exports = ${JSON.stringify(sidebarItems, null, 2)};`,
     );
 
     this.application.logger.success(
-      `TypeDoc sidebar written to ${sidebarPath}`,
+      `TypeDoc sidebar written to ${this.sidebar.sidebarPath}`,
     );
   }
 
   /**
    * returns a sidebar category node
    */
-  sidebarCategory(title: string, items: SidebarItem[]) {
+  getSidebarCategory(title: string, items: SidebarItem[]) {
     return {
       type: 'category',
       label: title,
@@ -98,3 +93,13 @@ export class SidebarComponent extends RendererComponent {
     return out ? out + '/' + urlKey : urlKey;
   }
 }
+
+/**
+ * Write content to sidebar file
+ */
+export const writeSidebar = (sidebar: SidebarOptions, content: string) => {
+  if (!fs.existsSync(path.dirname(sidebar.sidebarPath))) {
+    fs.mkdirSync(path.dirname(sidebar.sidebarPath));
+  }
+  fs.writeFileSync(sidebar.sidebarPath, content);
+};

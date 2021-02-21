@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 import {
   Application,
   MixedDeclarationOption,
@@ -7,25 +9,29 @@ import {
   TypeDocReader,
 } from 'typedoc';
 
-import { PluginOptions } from './types';
+import { PluginOptions, SidebarOptions } from './types';
 
 /**
  * Default plugin options
  */
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
+  id: 'default',
+  docsRoot: 'docs',
   out: 'api',
   entryDocument: 'index.md',
   hideInPageTOC: true,
   hideBreadcrumbs: true,
-  id: 'default',
-  docsRoot: 'docs',
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
     indexLabel: 'Table of contents',
     readmeLabel: 'Readme',
+    sidebarPath: '',
   },
-  readmeTitle: undefined,
+  plugin: ['typedoc-plugin-markdown'],
+  outputDirectory: '',
+  siteDir: '',
+  watch: false,
 };
 
 /**
@@ -35,23 +41,43 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
 export const getOptions = (
   siteDir: string,
   opts: Partial<PluginOptions>,
-): PluginOptions => ({
-  ...DEFAULT_PLUGIN_OPTIONS,
-  ...opts,
-  ...(opts.sidebar && {
-    sidebar: {
+): PluginOptions => {
+  // base options
+  let options = {
+    ...DEFAULT_PLUGIN_OPTIONS,
+    ...opts,
+  };
+  // sidebar
+  if (opts.sidebar === null) {
+    options = { ...options, sidebar: null };
+  } else {
+    const sidebar = {
       ...DEFAULT_PLUGIN_OPTIONS.sidebar,
       ...opts.sidebar,
-    },
-  }),
-  plugin: [
-    ...['typedoc-plugin-markdown'],
-    ...(opts.plugin
-      ? opts.plugin.filter((name) => name !== 'typedoc-plugin-markdown')
-      : []),
-  ],
-  siteDir,
-});
+    } as SidebarOptions;
+    options = {
+      ...options,
+      sidebar: {
+        ...sidebar,
+        sidebarPath: path.resolve(siteDir, sidebar.sidebarFile),
+      },
+    };
+  }
+  // plugin
+  if (opts.plugin) {
+    options = {
+      ...options,
+      plugin: [...DEFAULT_PLUGIN_OPTIONS.plugin, ...opts.plugin],
+    };
+  }
+  // additional
+  options = {
+    ...options,
+    siteDir,
+    outputDirectory: path.resolve(siteDir, options.docsRoot, options.out),
+  };
+  return options;
+};
 
 /**
  * Add docusaurus options to converter
@@ -74,6 +100,10 @@ export const addOptions = (app: Application) => {
   app.options.addDeclaration({
     name: 'siteDir',
   } as MixedDeclarationOption);
+
+  app.options.addDeclaration({
+    name: 'outputDirectory',
+  } as StringDeclarationOption);
 
   app.options.addDeclaration({
     name: 'globalsTitle',

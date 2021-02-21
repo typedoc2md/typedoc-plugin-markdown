@@ -1,22 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Options: should merge plugins 1`] = `
-Array [
-  "typedoc-plugin-markdown",
-  "plugin-xyz",
-]
-`;
-
-exports[`Options: should merge sidebar options 1`] = `
+exports[`Options: should merge custom sidebar options 1`] = `
 Object {
   "fullNames": true,
-  "indexLabel": "Table of contents",
-  "readmeLabel": "Readme",
-  "sidebarFile": "custom-path.js",
+  "indexLabel": "Custom index",
+  "readmeLabel": "Custom readme",
+  "sidebarFile": "custom-sidebar.js",
+  "sidebarPath": "/site-dir/custom-sidebar.js",
 }
 `;
 
-exports[`Options: should not duplicate markdown plugin 1`] = `
+exports[`Options: should merge plugins 1`] = `
 Array [
   "typedoc-plugin-markdown",
   "plugin-xyz",
@@ -34,16 +28,18 @@ Object {
   "hideInPageTOC": true,
   "id": "default",
   "out": "api",
+  "outputDirectory": "/site-dir/docs/api",
   "plugin": Array [
     "typedoc-plugin-markdown",
   ],
-  "readmeTitle": undefined,
   "sidebar": Object {
     "fullNames": false,
     "indexLabel": "Table of contents",
     "readmeLabel": "Readme",
     "sidebarFile": "typedoc-sidebar.js",
+    "sidebarPath": "/site-dir/typedoc-sidebar.js",
   },
-  "siteDir": "site-dir",
+  "siteDir": "/site-dir",
+  "watch": false,
 }
 `;
