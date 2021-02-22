@@ -6,7 +6,7 @@
   "ignoreChanges": ["**/package.json", "**/*.md"],
   "command": {
     "version": {
-      "allowBranch": "main",
+      "allowBranch": "master",
       "conventionalCommits": true,
       "createRelease": "github",
       "message": "chore(release): %s"
