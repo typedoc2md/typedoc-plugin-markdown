@@ -9,6 +9,15 @@ exports[`Signatures: should compile callable signature' 1`] = `
 "
 `;
 
+exports[`Signatures: should compile function that returns a function' 1`] = `
+"▸ **functionReturningAFunction**(): *function*
+
+**Returns:** () => *boolean*
+
+[partial: member.sources]
+"
+`;
+
 exports[`Signatures: should compile function that returns an object' 1`] = `
 "▸ **functionReturningAnObject**(): *object*
 

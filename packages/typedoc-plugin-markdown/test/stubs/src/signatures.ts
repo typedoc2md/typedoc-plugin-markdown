@@ -118,6 +118,10 @@ export function functionReturningAnObject() {
   return { x: 1, y: 2 };
 }
 
+export function functionReturningAFunction() {
+  return () => true;
+}
+
 /**
  * Comments with a return definition
  * @returns Return comments

@@ -52,6 +52,16 @@ describe(`Signatures:`, () => {
     ).toMatchSnapshot();
   });
 
+  test(`should compile function that returns a function'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('functionReturningAFunction')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
+
   test(`should compile signature with type params'`, () => {
     expect(
       TestApp.compileTemplate(

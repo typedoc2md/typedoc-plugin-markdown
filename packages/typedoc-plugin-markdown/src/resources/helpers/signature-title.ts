@@ -50,7 +50,7 @@ export function signatureTitle(
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(`: ${type.call(this.type, 'object')}`);
+    md.push(`: ${type.call(this.type, 'all')}`);
   }
   return md.join('') + (standalone ? '\n' : '');
 }
