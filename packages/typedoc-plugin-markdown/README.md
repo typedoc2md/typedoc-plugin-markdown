@@ -17,19 +17,25 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 
 ## Usage
 
+**npm script**
+```javascript
+"docs": "typedoc --plugin typedoc-plugin-markdown ...options"
+```
+
+**shell**
 ```bash
-$ npx typedoc --plugin typedoc-plugin-markdown [args]
+$ npx typedoc --plugin typedoc-plugin-markdown ...options
 ```
 
 ### Note:
 
 - The `--plugin` arg is optional - if omitted all installed plugins will run.
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- The plugin needs to be executed from the same location as `typedoc`. Either run as an npm script or make sure to run `npx typedoc`.
+- The plugin needs to be executed from the same location as `TypeDoc`. Either use as an npm script or run `npx typedoc`.
 
-## Arguments
+## Options
 
-The following arguments can be used in addition to the default [TypeDoc options](https://typedoc.org/guides/options/).
+The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/guides/options/).
 
 - `--entryDocument<string>`<br>
   The file name of the entry document. Defaults to `README.md`.
@@ -40,11 +46,12 @@ The following arguments can be used in addition to the default [TypeDoc options]
 - `--allReflectionsHaveOwnDocument<boolean>`<br>
   Output all reflections into seperate output files. Defaults to `false`.
 - `--publicPath<string>`<br>
-  Specify the base path for all urls. If undefined urls will be relative. Defaults to `undefined`.
+  Specify the base path for all urls. If undefined urls will be relative. Defaults to `.`.
 - `--namedAnchors<boolean>`<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 
-## Additional plugins / themes
+
+## Additional plugins
 
 If using specifically for [Docusaurus v2](https://v2.docusaurus.io/) or [VuePress](https://vuepress.vuejs.org/) check out the respective plugin for the platform:
 

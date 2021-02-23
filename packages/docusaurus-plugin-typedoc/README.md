@@ -23,7 +23,9 @@ _Install in the same location as the Docusaurus root directory._
 
 ## Usage
 
-Add the plugin to `docusaurus.config.js` and specify the required plugin options and any additional TypeDoc options.
+### Config
+
+Add the plugin to `docusaurus.config.js` and specify the required options (see [options](#options)).
 
 ```js
 module.exports = {
@@ -43,6 +45,19 @@ module.exports = {
 
 Once built the docs will be available at `/docs/api` or equivalent out directory.
 
+### Sidebar
+
+To consume the sidebar, update `sidebars.js` and require the generated sidebar:
+
+```js
+module.exports = {
+  someSidebar: {
+    Guides: ['doc1', 'doc2', 'doc3'],
+    API: require('./typedoc-sidebar.js'),
+  },
+};
+```
+
 ## Options
 
 ### TypeDoc options
@@ -54,53 +69,30 @@ entryPoints: ['../src/index.ts'],
 tsconfig: '../tsconfig.json'
 ```
 
-Please refer to [TypeDoc](https://typedoc.org/guides/options/) for further options.
+Please refer to [TypeDoc](https://typedoc.org/guides/options/) for details and other available options.
 
 ### Plugin options
 
-#### docsRoot`<string>`
+**out**`<string>`
 
-Docs directory relative to the the root directory. Defaults to `"docs"`.
+Output directory relative to docs directory. Defaults to `api`.
 
-#### out`<string>`
-
-Output directory relative to docs directory. Defaults to `"api"`.
-
-#### allReflectionsHaveOwnDocument`<boolean>`
+**allReflectionsHaveOwnDocument**`<boolean>`
 
 Output all reflections into seperate output files. Defaults to `false`.
 
-#### sidebar`<object>`
+**sidebar**`<object>`
 
-Options object for auto generated sidebar. Pass `null` to skip generation completely.
+Options object for auto generated sidebar. Pass `null` to skip generation.
 
-- **sidebarFile`<string>`**
-
+- **sidebarFile**`<string>`<br />
   The name of the sidebars file. Will also accept a path relative to the root directory. Defaults to `typedoc-sidebar.js`.
-
-- **fullNames`<boolean>`**
-
-  Display full names with module path if applicable. Default to `false`.
-
-- **readmeLabel`<string>`**
-
-  The label of the `README` sidebar item. Default to `"Readme"`.
-  _Ignored if `readme=none`_.
-
-- **indexLabel`<string>`**
-
-  The label of the index sidebar item. Default to `"Table of contents"`.
-
-To consume the sidebar, update `sidebars.js` (or equivalent entry sidebars file) and require the generated sidebar:
-
-```js
-module.exports = {
-  someSidebar: {
-    Guides: ['doc1', 'doc2', 'doc3'],
-    API: require('./typedoc-sidebar.js'),
-  },
-};
-```
+- **fullNames**`<boolean>`<br />
+  Display full names with module path if applicable. Defaults to `false`.
+- **readmeLabel**`<string>`<br />
+  The label of the `README` sidebar item. Defaults to `Readme`. _Ignored if `readme=none`_.
+- **indexLabel**`<string>`<br />
+The label of the index sidebar item. Defaults to `Table of contents`.
 
 ## Full example
 
@@ -113,10 +105,8 @@ module.exports = {
         // TypeDoc options
         entryPoints: ['../src/index.ts'],
         tsconfig: '../tsconfig.json',
-        plugin: ['some-typedoc-plugin'],
 
         // Plugin options
-        docsRoot: 'docs',
         out: 'api',
         sidebar: {
           sidebarFile: 'some-sidebar.js',
