@@ -14,13 +14,13 @@ describe(`Reflections:`, () => {
     beforeEach(async () => {
       await testApp.bootstrap({
         hideBreadcrumbs: false,
-        hideProjectName: false,
+        hidePageTitle: true,
       });
       TestApp.stubPartials(['comment', 'member.signature', 'members']);
       TestApp.stubHelpers(['toc', 'breadcrumbs', 'hierarchy']);
       reflectionTemplate = TestApp.getTemplate('reflection');
     });
-    test(`should compile template with breadcrumbs and project title`, () => {
+    test(`should compile template with breadcrumbs and without title`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
           model: testApp.project.children[0],
@@ -32,7 +32,10 @@ describe(`Reflections:`, () => {
 
   describe(`(template)`, () => {
     beforeEach(async () => {
-      await testApp.bootstrap({ hideBreadcrumbs: true, hideProjectName: true });
+      await testApp.bootstrap({
+        hideBreadcrumbs: true,
+        hidePageTitle: false,
+      });
       TestApp.stubPartials(['index', 'comment', 'member.signature', 'members']);
       TestApp.stubHelpers(['breadcrumbs', 'hierarchy']);
       reflectionTemplate = TestApp.getTemplate('reflection');

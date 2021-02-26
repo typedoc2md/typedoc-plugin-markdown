@@ -17,6 +17,9 @@ export class ContextAwareHelpers extends ContextAwareRendererComponent {
   @BindOption('hideBreadcrumbs')
   hideBreadcrumbs!: boolean;
 
+  @BindOption('hidePageTitle')
+  hidePageTitle!: boolean;
+
   @BindOption('indexTitle')
   indexTitle!: string;
 
@@ -31,6 +34,10 @@ export class ContextAwareHelpers extends ContextAwareRendererComponent {
 
     MarkdownTheme.HANDLEBARS.registerHelper('hideBreadcrumbs', () => {
       return this.hideBreadcrumbs;
+    });
+
+    MarkdownTheme.HANDLEBARS.registerHelper('hidePageTitle', () => {
+      return this.hidePageTitle;
     });
 
     MarkdownTheme.HANDLEBARS.registerHelper('indexTitle', () => {

@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Reflections: (header) should compile template with breadcrumbs and project title 1`] = `
+exports[`Reflections: (header) should compile template with breadcrumbs and without title 1`] = `
 "[helper: breadcrumbs]
-
-# Enumeration: EnumReflection
 
 [helper: toc]
 

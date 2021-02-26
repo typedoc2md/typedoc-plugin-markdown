@@ -26,12 +26,11 @@ describe(`Options:`, () => {
       ).toBeTruthy();
     });
 
-    /*
-    test(`should set 'ifShowIndex' to 'true' by default`, () => {
+    test(`should set 'ifShowPageTitle' to 'true' by default`, () => {
       expect(
-        Handlebars.helpers.ifShowIndex(TestApp.handlebarsOptionsStub),
+        Handlebars.helpers.ifShowPageTitle(TestApp.handlebarsOptionsStub),
       ).toBeTruthy();
-    });*/
+    });
 
     test(`should compile relativeURL helper`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
@@ -45,7 +44,7 @@ describe(`Options:`, () => {
         publicPath: 'test-public-path',
         namedAnchors: true,
         hideBreadcrumbs: true,
-        navigationEnabled: true,
+        hidePageTitle: true,
       });
     });
 
@@ -61,15 +60,15 @@ describe(`Options:`, () => {
       ).toBeFalsy();
     });
 
+    test(`should set page title to 'false'`, () => {
+      expect(
+        Handlebars.helpers.ifShowPageTitle(TestApp.handlebarsOptionsStub),
+      ).toBeFalsy();
+    });
+
     test(`should compile relativeURL helper with public path`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
       expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
     });
-    /*
-    test(`should set 'ifShowIndex' to true on modules if navigation enabled`, () => {
-      expect(
-        Handlebars.helpers.ifShowIndex(TestApp.handlebarsOptionsStub),
-      ).toBeTruthy();
-    });*/
   });
 });

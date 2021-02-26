@@ -7,8 +7,8 @@ export = (PluginHost: Application) => {
   const app = PluginHost.owner;
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Do not render project name in template header.',
-    name: 'hideProjectName',
+    help: '[Markdown Plugin] Do not render page title.',
+    name: 'hidePageTitle',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
