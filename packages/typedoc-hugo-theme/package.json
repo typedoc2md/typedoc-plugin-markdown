@@ -1,7 +1,7 @@
 {
-  "name": "typedoc-github-wiki-theme",
-  "version": "0.2.0",
-  "description": "An extension of the default theme from typedoc-plugin-markdown to create a compatible file structure for Github Wiki pages.",
+  "name": "typedoc-hugo-theme",
+  "version": "0.0.0",
+  "description": "An extension of the Markdown theme from typedoc-plugin-markdown that prepends Hugo Front Matter variables in YAML format to pages.",
   "main": "dist/theme.js",
   "files": [
     "dist/"
@@ -12,13 +12,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
-    "directory": "packages/typedoc-github-wiki-theme"
+    "directory": "packages/typedoc-hugo-theme"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-github-wiki-theme",
+  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-hugo-theme",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
-    "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "build": "rm -rf ./dist && tsc",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src/index.ts --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --disableOutputCheck --out ./demo"
@@ -27,7 +27,10 @@
   "license": "MIT",
   "peerDependencies": {
     "typedoc": ">=0.20.0",
-    "typedoc-plugin-markdown": ">=3.4.0"
+    "typedoc-plugin-markdown": ">=3.6.0"
   },
-  "keywords": []
+  "keywords": [
+    "typedoc",
+    "hugo"
+  ]
 }

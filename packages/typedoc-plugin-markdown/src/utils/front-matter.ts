@@ -2,27 +2,22 @@ import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { reflectionTitle } from '../resources/helpers/reflection-title';
 
-/*
- * Front Matter variable model.
- */
 export interface FrontMatterVars {
   [key: string]: string | number | boolean;
 }
 
-/*
- * Prepends YAML block to top of page.
- * @param page
- * @param vars
+/**
+ * Prepends YAML block to a string
+ * @param contents - the string to prepend
+ * @param vars - object of required front matter variables
  */
-export const addYAML = (page: PageEvent, vars: FrontMatterVars) => {
-  if (page.contents) {
-    page.contents = page.contents
-      .replace(/^/, toYAML(vars) + '\n\n')
-      .replace(/[\r\n]{3,}/g, '\n\n');
-  }
+export const prependYAML = (contents: string, vars: FrontMatterVars) => {
+  return contents
+    .replace(/^/, toYAML(vars) + '\n\n')
+    .replace(/[\r\n]{3,}/g, '\n\n');
 };
 
-/*
+/**
  * Returns the page title as rendered in the document h1(# title)
  * @param page
  */
@@ -49,6 +44,4 @@ ${Object.entries(vars)
 };
 
 // prettier-ignore
-const escapeString=(str: string)=> {
-    return str.replace(/([^\\])'/g, '$1\\\'').replace(/\"/g, '');
-  }
+const escapeString=(str: string) => str.replace(/([^\\])'/g, '$1\\\'');

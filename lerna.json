@@ -3,13 +3,13 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent",
-  "ignoreChanges": ["**/package.json", "**/*.md"],
+  "ignoreChanges": ["**/*.json", "**/*.md"],
   "command": {
     "version": {
       "allowBranch": "master",
       "conventionalCommits": true,
       "createRelease": "github",
-      "message": "chore(release): %s"
+      "message": "chore(release)"
     }
   }
 }

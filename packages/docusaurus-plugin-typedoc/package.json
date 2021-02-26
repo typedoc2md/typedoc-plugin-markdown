@@ -20,8 +20,7 @@
     "typedoc-plugin-markdown": ">=3.4.0"
   },
   "devDependencies": {
-    "@docusaurus/types": "^2.0.0-alpha.37",
-    "typedoc-plugin-markdown": "^3.5.0"
+    "@docusaurus/types": "^2.0.0-alpha.37"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
