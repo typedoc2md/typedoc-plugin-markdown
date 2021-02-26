@@ -29,7 +29,7 @@
     "test:init": "rm -rf test/site && yarn create vuepress-site test/site",
     "test:demo:start": "rm -rf ./test/site/docs/api && yarn run build && cd test/site/docs && npm run dev",
     "test:demo:build": "yarn run build && cd demo && yarn run build && npx http-server docs/.vuepress/dist -o",
-    "test": "jest --colors --updateSnapshot",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
