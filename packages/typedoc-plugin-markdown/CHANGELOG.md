@@ -15,12 +15,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * Added `--hidePageTitle` option ([0b9588b](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/0b9588b4db764095b9e5e17ce004d494b92e167e))
 * Added Front matter utils ([a530828](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/a5308280662b0efe5d14f03a5854d26c5e42852e))
-* Added Hugo theme / front matter support ([3cd1bf8](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/3cd1bf894533966f75ccd56c1b7cd2078e7084c0))
-
-
-
-
-
 
 
 # [3.5.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.3.0...typedoc-plugin-markdown@3.5.0) (2021-02-15)
