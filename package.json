@@ -5,9 +5,14 @@
   ],
   "scripts": {
     "lint": "lerna run lint",
-    "build": "lerna run build",
-    "pretest": "lerna run build",
-    "version": "lerna version",
+    "build": "npm-run-all build:*",
+    "build:1": "cd packages/typedoc-plugin-markdown && npm run build",
+    "build:2": "cd packages/typedoc-bitbucket-theme && npm run build",
+    "build:3": "cd packages/typedoc-github-wiki-theme && npm run build",
+    "build:4": "cd packages/typedoc-hugo-theme && npm run build",
+    "build:5": "cd packages/vuepress-plugin-typedoc && npm run build",
+    "build:6": "cd packages/docusaurus-plugin-typedoc && npm run build",
+    "pretest": "npm run build",
     "test": "lerna run test --parallel",
     "deploy": "lerna publish from-package",
     "postinstall": "lerna bootstrap"
