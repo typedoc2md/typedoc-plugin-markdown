@@ -32,7 +32,7 @@ Array [
 exports[`Theme: should prepend YAML block to start of page 1`] = `
 "---
 title: \\"SomeClass\\"
-slug: \\"classes/someclass\\"
+slug: \\"someclass\\"
 linkTitle: \\"SomeClass\\"
 ---
 

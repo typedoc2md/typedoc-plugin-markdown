@@ -16,10 +16,16 @@ export default class HugoTheme extends MarkdownTheme {
     this.listenTo(renderer, PageEvent.END, this.onHugoPageEnd);
   }
   private onHugoPageEnd(page: PageEvent) {
+    const slug = page.url.replace(/\.[^.$]+$/, '');
+    // Only use the last part of the slug, because the folder is used to make URL
+    let slugEnd = slug.split('/').pop();
+    if (slugEnd === undefined) {
+      slugEnd = slug;
+    }
     // yaml variables
     const yamlVars = {
       title: getPageTitle(page),
-      slug: page.url.replace(/\.[^.$]+$/, ''),
+      slug: slugEnd,
       linkTitle: page.model.name,
     };
     // pass yaml variables to prependYAML util
