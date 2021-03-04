@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-hugo-theme@0.1.1...typedoc-hugo-theme@0.2.0) (2021-03-04)
+
+
+### Features
+
+* Added Branch Bundle `_index.md` files ([f3c7118](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/f3c7118af9b53f63ea40ac5937ec57e08b9f6ec8))
+
+
+
+
+
 ## [0.1.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-hugo-theme@0.1.0...typedoc-hugo-theme@0.1.1) (2021-03-03)
 
 
