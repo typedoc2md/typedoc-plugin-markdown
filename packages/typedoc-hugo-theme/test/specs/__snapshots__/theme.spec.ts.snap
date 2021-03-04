@@ -1,5 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Theme: (YAML) should prepend YAML block to start of page 1`] = `
+"---
+title: \\"Class: SomeClass\\"
+linkTitle: \\"SomeClass\\"
+slug: \\"someclass\\"
+---
+
+CONTENTS"
+`;
+
+exports[`Theme: (YAML) should set entry page with a readme 1`] = `
+"---
+title: \\"Readme\\"
+linkTitle: \\"Readme\\"
+slug: \\"_index\\"
+---
+
+CONTENTS"
+`;
+
+exports[`Theme: (YAML) should set entry page without a readme 1`] = `
+"---
+title: \\"Test API\\"
+linkTitle: \\"Test API\\"
+slug: \\"_index\\"
+---
+
+CONTENTS"
+`;
+
+exports[`Theme: (YAML) should set modules page 1`] = `
+"---
+title: \\"Test API\\"
+linkTitle: \\"Test API\\"
+slug: \\"modules\\"
+---
+
+CONTENTS"
+`;
+
+exports[`Theme: (branch bundles) should write classes _index.md 1`] = `
+"---
+title: \\"Classes\\"
+---"
+`;
+
+exports[`Theme: (branch bundles) should write interfaces _index.md 1`] = `
+"---
+title: \\"Interfaces\\"
+---"
+`;
+
 exports[`Theme: should getUrls' 1`] = `
 Array [
   "modules.md",
@@ -7,7 +59,7 @@ Array [
   "modules.md#declarationitemb",
   "modules.md#functionitema",
   "modules.md#functionitemb",
-  "README.md",
+  "_index.md",
   "modules.md#declarationitema",
   "modules.md#declarationitemb",
   "modules.md#functionitema",
@@ -27,14 +79,4 @@ Array [
   "interfaces/interfaceitemb.md",
   "interfaces/interfaceitemb.md#prop",
 ]
-`;
-
-exports[`Theme: should prepend YAML block to start of page 1`] = `
-"---
-title: \\"SomeClass\\"
-slug: \\"someclass\\"
-linkTitle: \\"SomeClass\\"
----
-
-CONTENTS"
 `;

@@ -1,9 +1,14 @@
 # typedoc-hugo-theme
 
-An extension of the Markdown theme from [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown) that prepends [Hugo Front Matter](https://gohugo.io/content-management/front-matter/) variables in YAML format to pages.
+A [Hugo](https://gohugo.io/) compatible Markdown theme extended from [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
 
 [![npm](https://img.shields.io/npm/v/typedoc-hugo-theme.svg)](https://www.npmjs.com/package/typedoc-hugo-theme)
 
+
+## What is does?
+
+- Adds [Hugo Front Matter](https://gohugo.io/content-management/front-matter/) variables in YAML format to pages.
+- Writes `_index.md` files to folders to enable [Branch Bundles](https://gohugo.io/content-management/page-bundles/#branch-bundles).
 
 ## Installation
 
@@ -19,14 +24,25 @@ $ npx typedoc --plugin typedoc-plugin-markdown --theme ./node_modules/typedoc-hu
 
 ## Output
 
+### Example page
+
 ```
 ---
 title: "Class: SomeClass"
-slug: "classes/module.someclass"
+slug: "module.someclass"
 linkTitle: "SomeClass"
 ---
 
 + page contents
+```
+
+### Example directory
+
+```
+classes
+└─── _index.md
+└─── ClassA.md
+└─── ClassB.md
 ```
 
 
