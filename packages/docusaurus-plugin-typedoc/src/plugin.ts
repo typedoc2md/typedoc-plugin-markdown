@@ -1,5 +1,6 @@
 import { LoadContext } from '@docusaurus/types';
 import { Application } from 'typedoc';
+import MarkdownPlugin from 'typedoc-plugin-markdown';
 
 import { FrontMatterComponent } from './front-matter';
 import { addOptions, getOptions } from './options';
@@ -32,6 +33,9 @@ export default async function pluginDocusaurus(
 
     // initialize and build app
     const app = new Application();
+
+    // load the markdown plugin
+    MarkdownPlugin(app);
 
     // customise render
     app.renderer.render = render;

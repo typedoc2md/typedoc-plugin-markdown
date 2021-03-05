@@ -12,7 +12,6 @@ Object {
 
 exports[`Options: should merge plugins 1`] = `
 Array [
-  "typedoc-plugin-markdown",
   "plugin-xyz",
 ]
 `;
@@ -30,7 +29,7 @@ Object {
   "out": "api",
   "outputDirectory": "/site-dir/docs/api",
   "plugin": Array [
-    "typedoc-plugin-markdown",
+    "none",
   ],
   "sidebar": Object {
     "fullNames": false,

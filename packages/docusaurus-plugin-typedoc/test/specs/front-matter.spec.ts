@@ -1,5 +1,6 @@
 import cuid from 'cuid';
 import { Application } from 'typedoc';
+import MarkdownPlugin from 'typedoc-plugin-markdown';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { FrontMatterComponent } from '../../dist/front-matter';
@@ -7,6 +8,8 @@ import { addOptions, getOptions } from '../../src/options';
 
 async function generate(opts = {}) {
   const app = new Application();
+
+  MarkdownPlugin(app);
 
   addOptions(app);
 

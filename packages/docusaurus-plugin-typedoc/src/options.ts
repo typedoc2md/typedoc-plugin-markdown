@@ -28,7 +28,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     readmeLabel: 'Readme',
     sidebarPath: '',
   },
-  plugin: ['typedoc-plugin-markdown'],
+  plugin: ['none'],
   outputDirectory: '',
   siteDir: '',
   watch: false,
@@ -61,13 +61,6 @@ export const getOptions = (
         ...sidebar,
         sidebarPath: path.resolve(siteDir, sidebar.sidebarFile),
       },
-    };
-  }
-  // plugin
-  if (opts.plugin) {
-    options = {
-      ...options,
-      plugin: [...DEFAULT_PLUGIN_OPTIONS.plugin, ...opts.plugin],
     };
   }
   // additional
