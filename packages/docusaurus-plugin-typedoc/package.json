@@ -17,7 +17,7 @@
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc",
   "peerDependencies": {
     "typedoc": ">=0.20.19",
-    "typedoc-plugin-markdown": ">=3.4.0"
+    "typedoc-plugin-markdown": ">=3.6.0"
   },
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37"

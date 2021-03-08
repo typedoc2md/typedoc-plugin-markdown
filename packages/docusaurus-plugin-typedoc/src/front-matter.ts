@@ -1,9 +1,14 @@
 import * as path from 'path';
+
 import { BindOption } from 'typedoc';
-import { reflectionTitle } from 'typedoc-plugin-markdown/dist/resources/helpers/reflection-title';
+import {
+  getPageTitle,
+  prependYAML,
+} from 'typedoc-plugin-markdown/dist/utils/front-matter';
 import { Component } from 'typedoc/dist/lib/converter/components';
 import { RendererComponent } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { FrontMatter, Sidebar } from './types';
 
 @Component({ name: 'front-matter' })
@@ -29,24 +34,8 @@ export class FrontMatterComponent extends RendererComponent {
   }
   onPageEnd(page: PageEvent) {
     if (page.contents) {
-      page.contents = page.contents
-        .replace(/^/, this.getYamlString(this.getYamlItems(page)) + '\n\n')
-        .replace(/[\r\n]{3,}/g, '\n\n');
+      page.contents = prependYAML(page.contents, this.getYamlItems(page));
     }
-  }
-
-  getYamlString(yamlItems: { [key: string]: string | number | boolean }) {
-    const yaml = `---
-${Object.entries(yamlItems)
-  .map(
-    ([key, value]) =>
-      `${key}: ${
-        typeof value === 'string' ? `"${this.escapeYAMLString(value)}"` : value
-      }`,
-  )
-  .join('\n')}
----`;
-    return yaml;
   }
 
   getYamlItems(page: PageEvent): any {
@@ -95,11 +84,6 @@ ${Object.entries(yamlItems)
     if (page.url === this.entryDocument && page.url !== page.project.url) {
       return readmeTitle;
     }
-    return reflectionTitle.call(page, false);
-  }
-
-  // prettier-ignore
-  escapeYAMLString(str: string) {
-    return str.replace(/([^\\])'/g, '$1\\\'').replace(/\"/g, '');
+    return getPageTitle(page);
   }
 }
