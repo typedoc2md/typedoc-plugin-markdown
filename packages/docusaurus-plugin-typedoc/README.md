@@ -1,6 +1,6 @@
 # docusaurus-plugin-typedoc
 
-A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc) and the [Markdown plugin](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
+A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation with [typedoc](https://github.com/TypeStrong/typedoc) and [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
 
 [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -13,13 +13,13 @@ A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation w
 
 ## Installation
 
+> Install in the same location as the Docusaurus website directory.
+
 This guide assumes that Docusaurus has already been installed. See [installation docs](https://v2.docusaurus.io/docs/installation).
 
 ```shell
 npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
 ```
-
-_Install in the same location as the Docusaurus root directory._
 
 ## Usage
 
@@ -43,16 +43,33 @@ module.exports = {
 };
 ```
 
+TypeDoc will be bootstraped with the docusaurus `start` and `build` [cli commands](https://v2.docusaurus.io/docs/cli):
+
+```javascript
+"start": "docusaurus start",
+"build": "docusaurus build",
+```
+
 Once built the docs will be available at `/docs/api` or equivalent out directory.
 
-### Sidebar
+```
+website/ (docusaururs website root)
+├── docs/
+│   ├── api/ (compiled typedoc markdown)
+├── docusaurus.config.js (docusaurus config)
+├── package.json
+├── sidebars.js (docusaurus sidebars)
+├── typedoc-sidebar.js (generated typedoc sidebar)
+```
 
-To consume the sidebar, update `sidebars.js` and require the generated sidebar:
+### Sidebar usage
+
+To consume the sidebar simply `require()` the generated sidebar in `sidebars.js`:
 
 ```js
 module.exports = {
-  someSidebar: {
-    Guides: ['doc1', 'doc2', 'doc3'],
+  sidebar: {
+    Guides: ['doc1'],
     API: require('./typedoc-sidebar.js'),
   },
 };
@@ -62,6 +79,8 @@ module.exports = {
 
 ### TypeDoc options
 
+To configure TypeDoc, pass any relevant [TypeDoc options](https://typedoc.org/guides/options/) to the config.
+
 At a minimum the `entryPoints` and `tsconfig` options will need to be set.
 
 ```js
@@ -69,35 +88,27 @@ entryPoints: ['../src/index.ts'],
 tsconfig: '../tsconfig.json'
 ```
 
-Please refer to [TypeDoc](https://typedoc.org/guides/options/) for details and other available options.
+Additional TypeDoc plugins will need to be explicitly set:
+
+```js
+plugin:['typedoc-plugin-xyz']
+```
 
 ### Plugin options
 
-**out**`<string>`
+| Name                            | Default                | Description                                                                            |
+| :------------------------------ | :--------------------- | :------------------------------------------------------------------------------------- |
+| `docsRoot`                      | `"docs"`               | Docs directory relative to the the root directory.                                     |
+| `out`                           | `"api"`                | Output directory relative to docs directory.                                           |
+| `allReflectionsHaveOwnDocument` | `false`                | Output all reflections into seperate output files.                                     |
+| `sidebar.sidebarFile`           | `"typedoc-sidebar.js"` | The name of the sidebars file. Will also accept a path relative to the root directory. |
+| `sidebar.fullNames`             | `false`                | Display full names with module path if applicable.                                     |
 
-Output directory relative to docs directory. Defaults to `api`.
-
-**allReflectionsHaveOwnDocument**`<boolean>`
-
-Output all reflections into seperate output files. Defaults to `false`.
-
-**sidebar**`<object>`
-
-Options object for auto generated sidebar. Pass `null` to skip generation.
-
-- **sidebarFile**`<string>`<br />
-  The name of the sidebars file. Will also accept a path relative to the root directory. Defaults to `typedoc-sidebar.js`.
-- **fullNames**`<boolean>`<br />
-  Display full names with module path if applicable. Defaults to `false`.
-- **readmeLabel**`<string>`<br />
-  The label of the `README` sidebar item. Defaults to `Readme`. _Ignored if `readme=none`_.
-- **indexLabel**`<string>`<br />
-The label of the index sidebar item. Defaults to `Table of contents`.
-
-## Full example
+### Example config
 
 ```js
 module.exports = {
+
   plugins: [
     [
       'docusaurus-plugin-typedoc',
@@ -105,13 +116,15 @@ module.exports = {
         // TypeDoc options
         entryPoints: ['../src/index.ts'],
         tsconfig: '../tsconfig.json',
+        plugin:['typedoc-plugin-xyz'],
 
         // Plugin options
+        docsRoot: 'docs',
         out: 'api',
+        allReflectionsHaveOwnDocument: false,
         sidebar: {
-          sidebarFile: 'some-sidebar.js',
-          fullNames: true,
-          readmeLabel: 'Overview'
+          sidebarFile: 'typedoc-sidebar.js',
+          fullNames: false
         },
       },
     ],
@@ -119,3 +132,80 @@ module.exports = {
 };
 ```
 
+## Additional config
+
+### Multi instance
+
+It is possible to build multi TypeDoc instances by passing in multiple configs with unique ids:
+
+`docusaurus.config.js`
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id:'api-1',
+        entryPoints: ['../api-1/src/index.ts'],
+        tsconfig: '../api-1/tsconfig.json',
+        sidebar: {
+          sidebarFile: 'api-1-sidebar.js',
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id:'api-2',
+        entryPoints: ['../api-2/src/index.ts'],
+        tsconfig: '../api-2/tsconfig.json',
+        sidebar: {
+          sidebarFile: 'api-2-sidebar.js',
+        },
+      },
+    ],
+  ],
+};
+```
+
+`sidebars.js`
+```js
+module.exports = {
+  sidebar: {
+    API1: require('./sidebars/api-1-sidebar.js'),
+    API2: require('./sidebars/api-2-sidebar.js'),
+  },
+};
+```
+
+<!--
+### Watch mode
+
+Watching files is supported by passing in the `watch: true` option see [https://typedoc.org/guides/options/#watch](https://typedoc.org/guides/options/#watch).
+
+One method to only target the `start` command is with Node.js Environment Variables:
+
+`package.json`
+
+```json
+"start": "TYPEDOC_WATCH=true docusaurus start",
+"build": "TYPEDOC_WATCH=false docusaurus build",
+```
+
+`docusaurus.config.js`
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        entryPoints: ['../src/index.ts'],
+        tsconfig: '../tsconfig.json',
+        watch: process.env.TYPEDOC_WATCH,
+      },
+    ],
+  ],
+};
+```
+-->
