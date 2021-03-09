@@ -178,12 +178,11 @@ module.exports = {
 };
 ```
 
-<!--
 ### Watch mode
 
 Watching files is supported by passing in the `watch: true` option see [https://typedoc.org/guides/options/#watch](https://typedoc.org/guides/options/#watch).
 
-One method to only target the `start` command is with Node.js Environment Variables:
+Targetting the option in development mode only can be achieved using Node.js Environment Variables:
 
 `package.json`
 
@@ -208,4 +207,3 @@ module.exports = {
   ],
 };
 ```
--->
