@@ -7,7 +7,7 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeS
 
 ## What it does?
 
-The plugin will replaces the default HTML theme with a built-in Markdown theme.
+The plugin replaces the default HTML theme with a built-in Markdown theme.
 
 ## Installation
 
@@ -19,19 +19,18 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 
 **npm script**
 ```javascript
-"docs": "typedoc --plugin typedoc-plugin-markdown ...options"
+"docs": "typedoc ...options"
 ```
 
 **shell**
 ```bash
-$ npx typedoc --plugin typedoc-plugin-markdown ...options
+$ npx typedoc ...options
 ```
 
 ### Note:
 
-- The `--plugin` arg is optional - if omitted all installed plugins will run.
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- The plugin needs to be executed from the same location as `TypeDoc`. Either use as an npm script or run `npx typedoc`.
+- The plugin needs to be executed from the same location as TypeDoc (using a script or `npx typedoc`).
 
 ## Options
 
@@ -51,12 +50,26 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 
 
-## Additional plugins
+## Additional themes and plugins
 
-If using specifically for [Docusaurus v2](https://v2.docusaurus.io/) or [VuePress](https://vuepress.vuejs.org/) check out the respective plugin for the platform:
+If targeting specific static site generators or wiki platforms the following themes and plugins may be of interest:
 
-- [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
-- [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
+### Themes
+
+Themes that target particular Markdown platforms:
+
+- Github Wiki: [typedoc-github-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-github-wiki-theme/README.md)
+- GitLab Wiki: [typedoc-gitlab-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-gitlab-wiki-theme/README.md)
+- Hugo: [typedoc-hugo-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-hugo-theme/README.md)
+
+### Plugins
+
+Plugins that integrates TypeDoc seamlessly with a particular platform ecosystem:
+
+- Docusaurus v2: [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
+- VuePress: [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
+
+
 
 ## License
 
