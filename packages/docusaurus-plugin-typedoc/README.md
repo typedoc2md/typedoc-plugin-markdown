@@ -94,6 +94,8 @@ Additional TypeDoc plugins will need to be explicitly set:
 plugin:['typedoc-plugin-xyz']
 ```
 
+Note: TypeDoc options can also be declared under the `typedocOptions` key in `tsconfig.json`.
+
 ### Plugin options
 
 | Name                            | Default                | Description                                                                            |
