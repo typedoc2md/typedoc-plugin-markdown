@@ -6,17 +6,18 @@
   "scripts": {
     "lint": "lerna run lint",
     "build": "npm-run-all build:*",
-    "build:typedoc-plugin-markdown": "cd packages/typedoc-plugin-markdown && npm run build",
-    "build:typedoc-bitbucket-theme": "cd packages/typedoc-bitbucket-theme && npm run build",
-    "build:typedoc-github-wiki-theme": "cd packages/typedoc-github-wiki-theme && npm run build",
-    "build:typedoc-gitlab-wiki-theme": "cd packages/typedoc-gitlab-wiki-theme && npm run build",
-    "build:typedoc-hugo-theme": "cd packages/typedoc-hugo-theme && npm run build",
-    "build:vuepress-plugin-typedoc": "cd packages/vuepress-plugin-typedoc && npm run build",
-    "build:docusaurus-plugin-typedoc": "cd packages/docusaurus-plugin-typedoc && npm run build",
-    "pretest": "npm run build",
-    "test": "lerna run test --parallel",
+    "build:typedoc-plugin-markdown": "cd packages/typedoc-plugin-markdown && yarn run build",
+    "build:typedoc-bitbucket-theme": "cd packages/typedoc-bitbucket-theme && yarn run build",
+    "build:typedoc-github-wiki-theme": "cd packages/typedoc-github-wiki-theme && yarn run build",
+    "build:typedoc-gitlab-wiki-theme": "cd packages/typedoc-gitlab-wiki-theme && yarn run build",
+    "build:typedoc-hugo-theme": "cd packages/typedoc-hugo-theme && yarn run build",
+    "build:vuepress-plugin-typedoc": "cd packages/vuepress-plugin-typedoc && yarn run build",
+    "build:docusaurus-plugin-typedoc": "cd packages/docusaurus-plugin-typedoc && yarn run build",
+    "pretest": "yarn run build",
+    "test": "yarn run test --parallel",
     "deploy": "lerna publish from-package",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap",
+    "version": "lerna version"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.8",
