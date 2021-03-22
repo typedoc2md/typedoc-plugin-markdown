@@ -1,6 +1,6 @@
+import ProgressBar from 'progress';
 import { ProjectReflection, UrlMapping } from 'typedoc';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
-import * as ts from 'typescript';
 
 export async function render(
   project: ProjectReflection,
@@ -19,16 +19,21 @@ export async function render(
   output.settings = this.application.options.getRawValues();
   output.urls = this.theme!.getUrls(project);
 
-  this.trigger(output);
-
-  if (!output.isDefaultPrevented) {
-    output.urls?.forEach((mapping: UrlMapping, i) => {
-      this.renderDocument(output.createPageEvent(mapping));
-      ts.sys.write(
-        `\rGenerated ${i + 1} of ${output.urls?.length} TypeDoc docs`,
-      );
+  if (output.urls) {
+    const bar = new ProgressBar('Rendering [:bar] :percent', {
+      total: output.urls.length,
+      width: 40,
     });
-    ts.sys.write(`\n`);
-    this.trigger(RendererEvent.END, output);
+
+    this.trigger(output);
+
+    if (!output.isDefaultPrevented) {
+      output.urls?.forEach((mapping: UrlMapping, i) => {
+        this.renderDocument(output.createPageEvent(mapping));
+        bar.tick();
+      });
+
+      this.trigger(RendererEvent.END, output);
+    }
   }
 }
