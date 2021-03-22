@@ -23,6 +23,7 @@ export interface FrontMatter {
   slug?: string;
   sidebar_label?: string;
   hide_title?: boolean;
+  hide_table_of_contents?: boolean;
 }
 
 export interface SidebarOptions {

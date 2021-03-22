@@ -52,6 +52,9 @@ export class FrontMatterComponent extends RendererComponent {
     if (sidebarLabel && sidebarLabel !== pageTitle) {
       items = { ...items, sidebar_label: sidebarLabel };
     }
+    if (page.url === page.project.url) {
+      items = { ...items, hide_table_of_contents: true };
+    }
     return {
       ...items,
       custom_edit_url: null,
