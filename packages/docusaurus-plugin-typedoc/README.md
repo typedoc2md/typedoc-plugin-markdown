@@ -1,6 +1,6 @@
 # docusaurus-plugin-typedoc
 
-A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation with [typedoc](https://github.com/TypeStrong/typedoc) and [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
+A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API docs with [typedoc](https://github.com/TypeStrong/typedoc) and the [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
 
 [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -15,7 +15,7 @@ A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API documentation w
 
 > Install in the same location as the Docusaurus website directory.
 
-This guide assumes that Docusaurus has already been installed. See [installation docs](https://v2.docusaurus.io/docs/installation).
+This guide assumes that a Docusaurus project has already been setup. See [installation docs](https://v2.docusaurus.io/docs/installation).
 
 ```shell
 npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
@@ -43,7 +43,7 @@ module.exports = {
 };
 ```
 
-TypeDoc will be bootstraped with the docusaurus `start` and `build` [cli commands](https://v2.docusaurus.io/docs/cli):
+TypeDoc will be bootstraped with the Docusaurus `start` and `build` [cli commands](https://v2.docusaurus.io/docs/cli):
 
 ```javascript
 "start": "docusaurus start",
@@ -54,9 +54,10 @@ Once built the docs will be available at `/docs/api` or equivalent out directory
 
 ```
 website/ (docusaururs website root)
+├── build/ (static site dir)
 ├── docs/
 │   ├── api/ (compiled typedoc markdown)
-├── docusaurus.config.js (docusaurus config)
+├── docusaurus.config.js
 ├── package.json
 ├── sidebars.js (docusaurus sidebars)
 ├── typedoc-sidebar.js (generated typedoc sidebar)
@@ -209,3 +210,7 @@ module.exports = {
   ],
 };
 ```
+
+## License
+
+[MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/docusaurus-plugin-typedoc/LICENSE)
