@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.11.0...docusaurus-plugin-typedoc@0.12.0) (2021-03-22)
+
+
+### Features
+
+* Remove side TOC on index page ([07ed973](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/07ed9738a1abf136e523fcd353b6a97691317c4c))
+
+
+
+
+
 # [0.11.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.9.1...docusaurus-plugin-typedoc@0.11.0) (2021-03-08)
 
 

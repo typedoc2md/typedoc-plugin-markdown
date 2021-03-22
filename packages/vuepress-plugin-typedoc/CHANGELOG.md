@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.5.0...vuepress-plugin-typedoc@0.6.0) (2021-03-22)
+
+
+### Bug Fixes
+
+* Build docs before lifecycle ([#206](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/206)) ([cbf177d](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/cbf177d60b5db682819693f9ef14df3799ad3323))
+* Improved Readme docs ([#181](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/181)) ([d81f6a3](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/d81f6a392303c9e6566ef15ab0d8b9236e24556d))
+
+
+### Features
+
+* Added Hugo theme / front matter support ([3cd1bf8](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/3cd1bf894533966f75ccd56c1b7cd2078e7084c0))
+
+
+
+
+
 # [0.5.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.4.1...vuepress-plugin-typedoc@0.5.0) (2021-02-21)
 
 
