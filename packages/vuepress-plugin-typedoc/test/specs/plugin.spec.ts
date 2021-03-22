@@ -5,42 +5,51 @@ import { typedocPlugin } from '../../dist/plugin';
 
 tmp.setGracefulCleanup();
 
-const tmpobj = tmp.dirSync();
-
-let plugin: any;
-
-async function bootstrap(customOptions = {}) {
+function bootstrap(tmpobj: tmp.DirResult, customOptions = {}) {
   const options = {
-    entryPoints: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
-    tsconfig: ['../typedoc-plugin-markdown/test/stubs/tsconfig.json'],
-    target: 'ESNext',
-    moduleResolution: 'node',
+    id: 'default',
     logger: 'none',
+    entryPoints: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
+    tsconfig: '../typedoc-plugin-markdown/test/stubs/tsconfig.json',
   } as any;
-  plugin = typedocPlugin(
+
+  const plugin = typedocPlugin(
     { ...options, ...customOptions },
     { sourceDir: tmpobj.name },
   );
-  await plugin.ready();
+  return plugin;
 }
 
 describe(`(render)`, () => {
+  let tmpobj;
+  beforeAll(async () => {
+    tmpobj = tmp.dirSync();
+    bootstrap(tmpobj);
+  });
   test(`should write docs`, async () => {
-    await bootstrap();
     const files = fs.readdirSync(tmpobj.name + '/api');
     expect(files).toMatchSnapshot();
+  });
+  test(`should write doc`, () => {
+    const sidebar = fs.readFileSync(tmpobj.name + '/api/README.md');
+    expect(sidebar.toString()).toMatchSnapshot();
   });
 });
 
 describe(`(sidebars)`, () => {
+  let tmpobj;
+  beforeAll(async () => {
+    tmpobj = tmp.dirSync();
+    bootstrap(tmpobj);
+  });
   test(`should generate default`, async () => {
-    await bootstrap();
+    const plugin = bootstrap(tmpobj);
     const enhancedFiles = await plugin.enhanceAppFiles();
     expect(enhancedFiles).toMatchSnapshot();
   });
 
   test(`should generate with parent category and fullNames`, async () => {
-    await bootstrap({
+    const plugin = bootstrap(tmpobj, {
       sidebar: { parentCategory: 'Parent Category', fullNames: true },
     });
     const enhancedFiles = await plugin.enhanceAppFiles();
@@ -48,7 +57,7 @@ describe(`(sidebars)`, () => {
   });
 
   test(`should skip sidebar`, async () => {
-    await bootstrap({ sidebar: null });
+    const plugin = bootstrap(tmpobj, { sidebar: null });
     const enhancedFiles = await plugin.enhanceAppFiles();
     expect(enhancedFiles).toBeUndefined();
   });

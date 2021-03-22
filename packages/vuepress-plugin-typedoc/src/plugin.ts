@@ -1,64 +1,51 @@
 import { Application, ProjectReflection } from 'typedoc';
+import MarkdownPlugin from 'typedoc-plugin-markdown';
 
 import { FrontMatterComponent } from './front-matter';
 import { addOptions, getOptions } from './options';
+import { render } from './render';
 import { getSidebarJson } from './sidebar';
 import { PluginOptions } from './types';
 
 let app: Application;
 let project: ProjectReflection | undefined;
-const done = false;
 
 export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
-  // merge default plugin options with user options
   const options = getOptions(opts);
+
+  app = new Application();
+
+  MarkdownPlugin(app);
+
+  app.renderer.render = render;
+
+  addOptions(app);
+
+  app.bootstrap(options);
+
+  app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
+
+  project = app.convert();
+
+  // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
+  if (!project) {
+    return;
+  }
+
+  const outputDirectory = ctx.sourceDir + '/' + options.out;
+  app.generateDocs(project, outputDirectory);
+
+  if (options.watch) {
+    app.convertAndWatch(async (project) => {
+      app.generateDocs(project, outputDirectory);
+    });
+  }
 
   return {
     name: 'vuepress-plugin-typedoc',
-    async ready() {
-      if (!done) {
-        app = new Application();
 
-        const sourceDir = ctx.sourceDir;
-        const outputDirectory = sourceDir + '/' + options.out;
-
-        // add plugin options
-        addOptions(app);
-
-        // bootstrap typedoc app
-        app.bootstrap(options);
-
-        // add frontmatter component to typedoc renderer
-        app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
-
-        // add sidebar component to typedoc renderer
-        /*if (options.sidebar) {
-          app.renderer.addComponent(
-            'sidebar',
-            new SidebarComponent(app.renderer),
-          );
-        }*/
-
-        project = app.convert();
-
-        // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
-        if (!project) {
-          return;
-        }
-
-        // generate docs
-        await app.generateDocs(project, outputDirectory);
-
-        // watch pp
-        if (options.watch) {
-          app.convertAndWatch(async (project) => {
-            await app.generateDocs(project, outputDirectory);
-          });
-        }
-      }
-    },
     async enhanceAppFiles() {
-      if (done || !options.sidebar) {
+      if (!options.sidebar) {
         return;
       }
       const theme = app.renderer.theme as any;

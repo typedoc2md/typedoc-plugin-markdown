@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`(render) should write doc 1`] = `
+"---
+title: \\"typedoc-plugin-markdown\\"
+---
+
+# MY README
+
+> Some block quote
+
+<!-- some comments -->
+
+Some text
+"
+`;
+
 exports[`(render) should write docs 1`] = `
 Array [
   "README.md",

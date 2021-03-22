@@ -43,8 +43,8 @@ plugins: [
 TypeDoc will be bootstraped with the Vuepress `dev` and `build` [cli commands](https://vuepress.vuejs.org/api/cli.html):
 
 ```javascript
-"dev": "vuepress dev docs",
-"build": "vuepress dev docs",
+"dev": "vuepress dev [targetDir]",
+"build": "vuepress build [targetDir]",
 ```
 
 Once built the docs will be available at `/api` or equivalent out directory.
@@ -53,7 +53,8 @@ Once built the docs will be available at `/api` or equivalent out directory.
 docs/ (Vuepress website root)
 ├── src/
 │   └── .vuepress
-│   │    └───config.js (Vuepress configs)
+│   │    └───config.js
+│   │    └───dist/ (static site dir)
 │   └── api/ (compiled typedoc markdown)
 ├── package.json
 ```
