@@ -1,6 +1,6 @@
 # vuepress-plugin-typedoc
 
-A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc) and the [Markdown plugin](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
+A [VuePress](https://vuepress.vuejs.org/) plugin to build API docs with [typedoc](https://github.com/TypeStrong/typedoc) and the [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
 
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-typedoc.svg)](https://www.npmjs.com/package/vuepress-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -13,24 +13,25 @@ A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with
 
 ## Installation
 
+> Install in the same location as the VuePress root directory.
+
 This guide assumes that a VuePress project has been setup. See [getting started docs](https://vuepress.vuejs.org/guide/getting-started.html).
 
 ```shell
 npm install typedoc typedoc-plugin-markdown vuepress-plugin-typedoc --save-dev
 ```
 
-_Install in the same location as the VuePress root directory._
+### Config
 
-## Usage
+Add the plugin to `.vuepress/config.js` and specify the required options (see [options](#options)).
 
-Add the plugin to `.vuepress/config.js`:
 
 ```js
 plugins: [
   [
     'vuepress-plugin-typedoc',
 
-    // Plugin / TypeDoc options (see typedoc --help)
+    // Plugin / TypeDoc options
     {
       entryPoints: ['../src/index.ts'],
       tsconfig: '../tsconfig.json'
@@ -39,9 +40,29 @@ plugins: [
 ],
 ```
 
+TypeDoc will be bootstraped with the Vuepress `dev` and `build` [cli commands](https://vuepress.vuejs.org/api/cli.html):
+
+```javascript
+"dev": "vuepress dev docs",
+"build": "vuepress dev docs",
+```
+
+Once built the docs will be available at `/api` or equivalent out directory.
+
+```
+docs/ (Vuepress website root)
+├── src/
+│   └── .vuepress
+│   │    └───config.js (Vuepress configs)
+│   └── api/ (compiled typedoc markdown)
+├── package.json
+```
+
 ## Options
 
 ### TypeDoc options
+
+To configure TypeDoc, pass any relevant [TypeDoc options](https://typedoc.org/guides/options/) to the config.
 
 At a minimum the `entryPoints` and `tsconfig` options will need to be set.
 
@@ -50,36 +71,24 @@ entryPoints: ['../src/index.ts'],
 tsconfig: '../tsconfig.json'
 ```
 
-Please refer to [TypeDoc]() for further options.
+Additional TypeDoc plugins will need to be explicitly set:
+
+```js
+plugin:['typedoc-plugin-xyz']
+```
 
 ### Plugin options
 
-**out**`<string>`
-
-- Output directory relative to docs directory. Defaults to `"api"`.
-
-**allReflectionsHaveOwnDocument**`<boolean>`
-
-- Output all reflections into seperate output files. Defaults to `false`.
-
-**hideInPageTOC**`<boolean>`
-
-- Do not render in-page table of contents items. Defaults to `false`.
-
-**sidebar**`<object>`
-
-- Options object for auto generated sidebar. (pass `null` to skip generation completely)
-
-  - **fullNames**`<object>`
-
-  Display full names with module path if applicable. Default to `false`.
-
-  - **parentCategory**`<string>`
-
-  The parent category label for sidebar - (defaults to `none` - no parent category)
+| Name                            | Default  | Description                                                                        |
+| :------------------------------ | :------- | :--------------------------------------------------------------------------------- |
+| `out`                           | `"api"`  | Output directory relative to docs directory.                                       |
+| `allReflectionsHaveOwnDocument` | `false`  | Output all reflections into seperate output files.                                 |
+| `hideInPageTOC`                 | `false`  | Do not render in-page table of contents items.                                     |
+| `sidebar.fullNames`             | `false`  | Display full names with module path if applicable.                                 |
+| `sidebar.parentCategory`        | `"none"` | The parent category label for sidebar - (defaults to `none` - no parent category). |
 
 
-## Full example
+### Example config
 
 ```js
 
@@ -104,3 +113,7 @@ Please refer to [TypeDoc]() for further options.
 ```
 
 Once built the docs will be available at `/api` or equivalent out directory.
+
+## License
+
+[MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/vuepress-plugin-typedoc/LICENSE)
