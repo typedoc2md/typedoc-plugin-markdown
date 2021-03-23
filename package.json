@@ -14,7 +14,7 @@
     "build:vuepress-plugin-typedoc": "cd packages/vuepress-plugin-typedoc && yarn run build",
     "build:docusaurus-plugin-typedoc": "cd packages/docusaurus-plugin-typedoc && yarn run build",
     "pretest": "yarn run build",
-    "test": "yarn run test --parallel",
+    "test": "lerna run test --parallel",
     "deploy": "lerna publish from-package",
     "postinstall": "lerna bootstrap",
     "version": "lerna version"
