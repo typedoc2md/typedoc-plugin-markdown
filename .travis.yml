@@ -6,7 +6,6 @@ cache:
 notifications:
   email: false
 node_js:
-  - '10'
   - '12'
   - '14'
 before_script:
