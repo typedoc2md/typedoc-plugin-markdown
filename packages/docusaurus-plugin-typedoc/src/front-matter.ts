@@ -1,5 +1,4 @@
 import * as path from 'path';
-
 import { BindOption } from 'typedoc';
 import {
   getPageTitle,
@@ -8,7 +7,6 @@ import {
 import { Component } from 'typedoc/dist/lib/converter/components';
 import { RendererComponent } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { FrontMatter, Sidebar } from './types';
 
 @Component({ name: 'front-matter' })
@@ -23,6 +21,8 @@ export class FrontMatterComponent extends RendererComponent {
   readmeTitle!: string;
   @BindOption('entryDocument')
   entryDocument!: string;
+  @BindOption('allReflectionsHaveOwnDocument')
+  allReflectionsHaveOwnDocument!: boolean;
 
   globalsFile = 'modules.md';
 
@@ -52,7 +52,7 @@ export class FrontMatterComponent extends RendererComponent {
     if (sidebarLabel && sidebarLabel !== pageTitle) {
       items = { ...items, sidebar_label: sidebarLabel };
     }
-    if (page.url === page.project.url) {
+    if (page.url === page.project.url && this.allReflectionsHaveOwnDocument) {
       items = { ...items, hide_table_of_contents: true };
     }
     return {
