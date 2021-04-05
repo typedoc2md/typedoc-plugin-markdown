@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.6.0...typedoc-plugin-markdown@3.6.1) (2021-04-05)
+
+
+### Bug Fixes
+
+* Override section of methods overriding those of classes from node modules ([cb74e83](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/cb74e83116046aebb900f25f8348a74094b03901))
+
+
+
+
+
 # [3.6.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.5.0...typedoc-plugin-markdown@3.6.0) (2021-02-27)
 
 
