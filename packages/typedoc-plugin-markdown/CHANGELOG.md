@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.6.1...typedoc-plugin-markdown@3.7.0) (2021-04-17)
+
+
+### Features
+
+* Prefix table bars to beggining of lines ([064c0db](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/064c0dbecb194039d6a50d02ccc440116448c78a))
+* Use backticks and quote strings for literal types ([#212](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/212)) ([8949be1](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/8949be1608e60169d1f24393bf4257e38045b059))
+
+
+
+
+
 ## [3.6.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.6.0...typedoc-plugin-markdown@3.6.1) (2021-04-05)
 
 
