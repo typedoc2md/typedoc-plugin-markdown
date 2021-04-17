@@ -4,7 +4,18 @@ export let stringType: string;
 
 export const stringLiteralType = 'blue';
 
-export type unionType = 'ease-in' | 'ease-out' | 'ease-in-out';
+export type unionType = 'ease-in' | 'ease-out';
+
+export type unionTypeWithSymbols =
+  | ' '
+  | 'string'
+  | 'strong|with|pipes'
+  | 'type`with`backticks'
+  | '*';
+
+export type unionTypeWithSymbolsDeclarations = {
+  bar: ' ' | 'string' | 'strong|with|pipes' | 'type`with`backticks' | '*';
+};
 
 export let literalType: {
   valueZ: string;

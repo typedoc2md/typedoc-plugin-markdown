@@ -37,6 +37,15 @@ describe(`Types:`, () => {
     ).toMatchSnapshot();
   });
 
+  test(`should compile 'union' of literal declarations`, () => {
+    expect(
+      TestApp.compileHelper(
+        Handlebars.helpers.type,
+        testApp.findReflection('unionTypeWithSymbolsDeclarations').type,
+      ),
+    ).toMatchSnapshot();
+  });
+
   test(`should compile intrinsic type'`, () => {
     expect(
       Handlebars.helpers.type.call(testApp.findReflection('stringType').type),

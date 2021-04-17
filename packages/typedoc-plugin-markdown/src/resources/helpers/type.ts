@@ -112,9 +112,9 @@ export function type(
 
 function getLiteralType(model: LiteralType) {
   if (typeof model.value === 'bigint') {
-    return `*${model.value}n*`;
+    return `\`${model.value}n\``;
   }
-  return `*${model.value}*`;
+  return `\`\`${JSON.stringify(model.value)}\`\``;
 }
 
 function getReflectionType(model: DeclarationReflection, collapse: Collapse) {
@@ -172,7 +172,7 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          return `${param.flags.isRest ? '...' : ''}\`${escape(param.name)}${
+          return `${param.flags.isRest ? '...' : ''}\`${param.name}${
             param.flags.isOptional ? '?' : ''
           }\`: ${type.call(param.type ? param.type : param)}`;
         })
