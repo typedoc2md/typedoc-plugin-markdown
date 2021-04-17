@@ -53,10 +53,10 @@ exports[`Reflections: (template) should compile reflection with type params 1`] 
 
 ## Type parameters
 
-Name | Description |
-:------ | :------ |
-\`T\` | Some type param   |
-\`V\` | Some other type param    |
+| Name | Description |
+| :------ | :------ |
+| \`T\` | Some type param   |
+| \`V\` | Some other type param    |
 
 [helper: toc]
 

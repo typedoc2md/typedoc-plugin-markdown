@@ -23,10 +23,10 @@ exports[`Signatures: should compile function that returns an object' 1`] = `
 
 **Returns:** *object*
 
-Name | Type |
-:------ | :------ |
-\`x\` | *number* |
-\`y\` | *number* |
+| Name | Type |
+| :------ | :------ |
+| \`x\` | *number* |
+| \`y\` | *number* |
 
 [partial: member.sources]
 "
@@ -39,17 +39,17 @@ Some nested params.
 
 #### Parameters:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`params\` | *object* | The parameters passed to the method.   |
-\`params.name\` | *string* | The name of the new group.   |
-\`params.nestedObj\` | *object* | A nested object.   |
-\`params.nestedObj.name\` | *string* | - |
-\`params.nestedObj.obj\` | *object* | - |
-\`params.nestedObj.obj.name\` | () => *void* | - |
-\`params.nestedObj.value\` | *number* | - |
-\`params.parent?\` | *number* | - |
-\`context\` | *any* | The context of the method call.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`params\` | *object* | The parameters passed to the method.   |
+| \`params.name\` | *string* | The name of the new group.   |
+| \`params.nestedObj\` | *object* | A nested object.   |
+| \`params.nestedObj.name\` | *string* | - |
+| \`params.nestedObj.obj\` | *object* | - |
+| \`params.nestedObj.obj.name\` | () => *void* | - |
+| \`params.nestedObj.value\` | *number* | - |
+| \`params.parent?\` | *number* | - |
+| \`context\` | *any* | The context of the method call.    |
 
 **Returns:** *boolean*
 
@@ -62,9 +62,9 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-\`descriptor\` | *TypedPropertyDescriptor*<any\\\\> |
+| Name | Type |
+| :------ | :------ |
+| \`descriptor\` | *TypedPropertyDescriptor*<any\\\\> |
 
 **Returns:** *boolean*
 
@@ -79,12 +79,12 @@ FOO
 
 #### Parameters:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`__namedParameters\` | *object* | various options   |
-\`__namedParameters.bar?\` | *number* | Another value    |
-\`__namedParameters.foo?\` | *number* | An interesting value   |
-\`anotherParam\` | *string* | - |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`__namedParameters\` | *object* | {} | various options   |
+| \`__namedParameters.bar?\` | *number* | - | Another value    |
+| \`__namedParameters.foo?\` | *number* | - | An interesting value   |
+| \`anotherParam\` | *string* | - | - |
 
 **Returns:** *void*
 
@@ -97,9 +97,9 @@ exports[`Signatures: should compile named parameters' 1`] = `
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-\`__namedParameters\` | *Object* |
+| Name | Type |
+| :------ | :------ |
+| \`__namedParameters\` | *Object* |
 
 **Returns:** *string*
 
@@ -108,15 +108,15 @@ Name | Type |
 `;
 
 exports[`Signatures: should compile pipes in params and comments' 1`] = `
-"▸ **functionWithPipesInParamsAndComments**(\`n\`: *number* \\\\| *null*): *number* \\\\| *null*
+"▸ **functionWithPipesInParamsAndComments**(\`n\`: *number* \\\\| \`\`null\`\`): *number* \\\\| \`\`null\`\`
 
 #### Parameters:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`n\` | *number* \\\\| *null* | a\\\\|b    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`n\` | *number* \\\\| \`\`null\`\` | a\\\\|b    |
 
-**Returns:** *number* \\\\| *null*
+**Returns:** *number* \\\\| \`\`null\`\`
 
 [partial: member.sources]
 "
@@ -151,14 +151,14 @@ This is a function with a parameter that has a default value.
 
 #### Parameters:
 
-Name | Type | Default value | Description |
-:------ | :------ | :------ | :------ |
-\`valueA\` | *string* | 'defaultValue' | A parameter with a default string value.   |
-\`valueB\` | *number* | 100 | A parameter with a default numeric value.   |
-\`valueC\` | *number* | - | A parameter with a default NaN value.   |
-\`valueD\` | *boolean* | true | A parameter with a default boolean value.   |
-\`valueE\` | *boolean* | null | A parameter with a default null value.    |
-\`valueF\` | *string* | '<foo\\\\>' | - |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`valueA\` | *string* | 'defaultValue' | A parameter with a default string value.   |
+| \`valueB\` | *number* | 100 | A parameter with a default numeric value.   |
+| \`valueC\` | *number* | - | A parameter with a default NaN value.   |
+| \`valueD\` | *boolean* | true | A parameter with a default boolean value.   |
+| \`valueE\` | *boolean* | null | A parameter with a default null value.    |
+| \`valueF\` | *string* | '<foo\\\\>' | - |
 
 **Returns:** *string*
 
@@ -173,10 +173,10 @@ This is a function with a parameter that is optional.
 
 #### Parameters:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`requiredParam\` | *string* | A normal parameter.   |
-\`optionalParam?\` | *string* | An optional parameter.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`requiredParam\` | *string* | A normal parameter.   |
+| \`optionalParam?\` | *string* | An optional parameter.    |
 
 **Returns:** *void*
 
@@ -191,11 +191,11 @@ This is a function with multiple arguments and a return value.
 
 #### Parameters:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`paramZ\` | *string* | This is a string parameter.   |
-\`paramG\` | *any* | This is a parameter flagged with any.<br />     This sentence is placed in the next line.    |
-\`paramA\` | *any* |    This is a **parameter** pointing to an interface.     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`paramZ\` | *string* | This is a string parameter.   |
+| \`paramG\` | *any* | This is a parameter flagged with any.<br />     This sentence is placed in the next line.    |
+| \`paramA\` | *any* |    This is a **parameter** pointing to an interface.     |
 
 **Returns:** *number*
 
@@ -210,9 +210,9 @@ This is a function with rest parameter.
 
 #### Parameters:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`...rest\` | *string*[] | The rest parameter.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`...rest\` | *string*[] | The rest parameter.    |
 
 **Returns:** *string*
 
@@ -225,9 +225,9 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 
 #### Type parameters:
 
-Name | Default |
-:------ | :------ |
-\`Item\` | *string* \\\\| *boolean* |
+| Name | Default |
+| :------ | :------ |
+| \`Item\` | *string* \\\\| *boolean* |
 
 **Returns:** *boolean*
 
@@ -240,10 +240,10 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-\`arg\` | *boolean*[] \\\\| *number* |
-\`...args\` | (*string* \\\\| *number*)[] |
+| Name | Type |
+| :------ | :------ |
+| \`arg\` | *boolean*[] \\\\| *number* |
+| \`...args\` | (*string* \\\\| *number*)[] |
 
 **Returns:** *any*
 

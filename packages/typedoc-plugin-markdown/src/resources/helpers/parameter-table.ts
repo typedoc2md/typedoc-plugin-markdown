@@ -93,10 +93,10 @@ function table(parameters: any, kind: 'typeParameters' | 'parameters') {
         row.push('-');
       }
     }
-    return `${row.join(' | ')} |\n`;
+    return `| ${row.join(' | ')} |\n`;
   });
 
-  const output = `\n${headers.join(' | ')} |\n${headers
+  const output = `\n| ${headers.join(' | ')} |\n| ${headers
     .map(() => ':------')
     .join(' | ')} |\n${rows.join('')}`;
   return output;

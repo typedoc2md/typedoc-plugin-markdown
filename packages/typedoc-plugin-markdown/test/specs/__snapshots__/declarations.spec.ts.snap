@@ -8,7 +8,7 @@ exports[`Declarations: should compile a an udefined 1`] = `
 `;
 
 exports[`Declarations: should compile a variable with default value 1`] = `
-"• \`Const\` **stringWithDefaultValueDeclaration**: *variable*= 'variable'
+"• \`Const\` **stringWithDefaultValueDeclaration**: \`\`\\"variable\\"\`\`= 'variable'
 
 [partial: member.sources]
 "
@@ -19,9 +19,9 @@ exports[`Declarations: should compile any function type 1`] = `
 
 #### Type parameters:
 
-Name | Default |
-:------ | :------ |
-\`A\` | *any* |
+| Name | Default |
+| :------ | :------ |
+| \`A\` | *any* |
 
 #### Type declaration:
 
@@ -29,9 +29,9 @@ Name | Default |
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-\`...input\` | *any*[] |
+| Name | Type |
+| :------ | :------ |
+| \`...input\` | *any*[] |
 
 **Returns:** A
 
@@ -62,11 +62,11 @@ Comments
 
 #### Type declaration:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`Prop1\` | *Prop1* | Comment for Prop1.   |
-\`Prop2\` | *Prop2* | Comment for Prop2.    |
-\`Prop3\` | *Prop3* | - |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`Prop1\` | \`\`\\"Prop1\\"\`\` | Comment for Prop1.   |
+| \`Prop2\` | \`\`\\"Prop2\\"\`\` | Comment for Prop2.    |
+| \`Prop3\` | \`\`\\"Prop3\\"\`\` | - |
 
 [partial: member.sources]
 "
@@ -77,16 +77,16 @@ exports[`Declarations: should compile object literal declaration 1`] = `
 
 #### Type declaration:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`valueA\` | *number* | - |
-\`valueB\` | *boolean* | - |
-\`valueC\` | *object* | - |
-\`valueX\` | *object* | - |
-\`valueX.valueA\` | *number*[] | description for valuea    |
-\`valueX.valueZ\` | *string* | - |
-\`valueY\` | () => *string* | - |
-\`valueZ\` | *string* | description for valuez   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`valueA\` | *number* | - |
+| \`valueB\` | *boolean* | - |
+| \`valueC\` | *object* | - |
+| \`valueX\` | *object* | - |
+| \`valueX.valueA\` | *number*[] | description for valuea    |
+| \`valueX.valueZ\` | *string* | - |
+| \`valueY\` | () => *string* | - |
+| \`valueZ\` | *string* | description for valuez   |
 
 [partial: member.sources]
 "
@@ -97,16 +97,16 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 
 #### Type declaration:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-\`valueA\`? | *number* | Comments for valueA   |
-\`valueB\`? | *boolean* | - |
-\`valueX\` | *object* | Comment for valueX   |
-\`valueX.valueA\` | *number*[] | - |
-\`valueX.valueY\` | (\`z\`: *string*) => { \`a\`: *string* ; \`b\`: *string*  } | - |
-\`valueX.valueZ\` | *string* | Nested comment for valueZ   |
-\`valueY\` | () => *string* | - |
-\`valueZ\` | *string* | Comment for valueZ   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`valueA?\` | *number* | Comments for valueA   |
+| \`valueB?\` | *boolean* | - |
+| \`valueX\` | *object* | Comment for valueX   |
+| \`valueX.valueA\` | *number*[] | - |
+| \`valueX.valueY\` | (\`z\`: *string*) => { \`a\`: *string* ; \`b\`: *string*  } | - |
+| \`valueX.valueZ\` | *string* | Nested comment for valueZ   |
+| \`valueY\` | () => *string* | - |
+| \`valueZ\` | *string* | Comment for valueZ   |
 
 [partial: member.sources]
 "
@@ -123,9 +123,9 @@ exports[`Declarations: should compile type literal declaration 2`] = `
 
 [partial: member.sources]
 
-Name | Type |
-:------ | :------ |
-\`valueZ\` | *string* |
+| Name | Type |
+| :------ | :------ |
+| \`valueZ\` | *string* |
 
 [partial: member.sources]
 "
@@ -136,10 +136,10 @@ exports[`Declarations: should not escape charcters within markdown code 1`] = `
 
 #### Type declaration:
 
-Name | Type |
-:------ | :------ |
-\`this_prop_has_underscores\` | *number* |
-\\\\\`this\\\\|prop\\\\|has\\\\|the\\\\|pipe\\\\|character\\\\\` | *string* |
+| Name | Type |
+| :------ | :------ |
+| \`this_prop_has_underscores\` | *number* |
+| this\\\\|prop\\\\|has\\\\|the\\\\|pipe\\\\|character | *string* |
 
 [partial: member.sources]
 "

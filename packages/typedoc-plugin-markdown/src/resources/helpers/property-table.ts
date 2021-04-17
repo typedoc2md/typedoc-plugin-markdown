@@ -52,10 +52,10 @@ export function propertyTable(this: DeclarationReflection[]) {
     const name =
       property.name.match(/[\\`\\|]/g) !== null
         ? escape(getName(property))
-        : getName(property);
+        : `\`${getName(property)}\``;
     nameCol.push(name);
     row.push(nameCol.join(' '));
-    row.push(type.call(propertyType, 'object'));
+    row.push(type.call(propertyType, 'object').replace(/(?<!\\)\|/g, '\\|'));
 
     if (hasComments) {
       if (property.comment) {
@@ -64,10 +64,10 @@ export function propertyTable(this: DeclarationReflection[]) {
         row.push('-');
       }
     }
-    return `${row.join(' | ')} |\n`;
+    return `| ${row.join(' | ')} |\n`;
   });
 
-  const output = `\n${headers.join(' | ')} |\n${headers
+  const output = `\n| ${headers.join(' | ')} |\n| ${headers
     .map(() => ':------')
     .join(' | ')} |\n${rows.join('')}`;
 
@@ -84,7 +84,7 @@ function getName(property: DeclarationReflection) {
   } else if (property.setSignature) {
     md.push(signatureTitle.call(property.setSignature, 'set', false));
   } else {
-    md.push(`\`${property.name}\``);
+    md.push(property.name);
   }
   if (property.flags.isOptional) {
     md.push('?');
