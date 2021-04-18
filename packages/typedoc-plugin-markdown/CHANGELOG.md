@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.7.0...typedoc-plugin-markdown@3.7.1) (2021-04-18)
+
+
+### Bug Fixes
+
+* Remove extraneous whitespace in table description col ([4e56ae4](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/4e56ae4d12be35f94ac0f7294fc67c66df04e3c1))
+
+
+
+
+
 # [3.7.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.6.1...typedoc-plugin-markdown@3.7.0) (2021-04-17)
 
 
