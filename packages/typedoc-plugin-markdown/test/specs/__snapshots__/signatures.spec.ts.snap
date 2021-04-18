@@ -41,15 +41,15 @@ Some nested params.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | *object* | The parameters passed to the method.   |
-| \`params.name\` | *string* | The name of the new group.   |
-| \`params.nestedObj\` | *object* | A nested object.   |
+| \`params\` | *object* | The parameters passed to the method. |
+| \`params.name\` | *string* | The name of the new group. |
+| \`params.nestedObj\` | *object* | A nested object. |
 | \`params.nestedObj.name\` | *string* | - |
 | \`params.nestedObj.obj\` | *object* | - |
 | \`params.nestedObj.obj.name\` | () => *void* | - |
 | \`params.nestedObj.value\` | *number* | - |
 | \`params.parent?\` | *number* | - |
-| \`context\` | *any* | The context of the method call.    |
+| \`context\` | *any* | The context of the method call. |
 
 **Returns:** *boolean*
 
@@ -81,9 +81,9 @@ FOO
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| \`__namedParameters\` | *object* | {} | various options   |
-| \`__namedParameters.bar?\` | *number* | - | Another value    |
-| \`__namedParameters.foo?\` | *number* | - | An interesting value   |
+| \`__namedParameters\` | *object* | {} | various options |
+| \`__namedParameters.bar?\` | *number* | - | Another value |
+| \`__namedParameters.foo?\` | *number* | - | An interesting value |
 | \`anotherParam\` | *string* | - | - |
 
 **Returns:** *void*
@@ -114,7 +114,7 @@ exports[`Signatures: should compile pipes in params and comments' 1`] = `
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`n\` | *number* \\\\| \`\`null\`\` | a\\\\|b    |
+| \`n\` | *number* \\\\| \`\`null\`\` | a\\\\|b |
 
 **Returns:** *number* \\\\| \`\`null\`\`
 
@@ -153,11 +153,11 @@ This is a function with a parameter that has a default value.
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| \`valueA\` | *string* | 'defaultValue' | A parameter with a default string value.   |
-| \`valueB\` | *number* | 100 | A parameter with a default numeric value.   |
-| \`valueC\` | *number* | - | A parameter with a default NaN value.   |
-| \`valueD\` | *boolean* | true | A parameter with a default boolean value.   |
-| \`valueE\` | *boolean* | null | A parameter with a default null value.    |
+| \`valueA\` | *string* | 'defaultValue' | A parameter with a default string value. |
+| \`valueB\` | *number* | 100 | A parameter with a default numeric value. |
+| \`valueC\` | *number* | - | A parameter with a default NaN value. |
+| \`valueD\` | *boolean* | true | A parameter with a default boolean value. |
+| \`valueE\` | *boolean* | null | A parameter with a default null value. |
 | \`valueF\` | *string* | '<foo\\\\>' | - |
 
 **Returns:** *string*
@@ -175,8 +175,8 @@ This is a function with a parameter that is optional.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`requiredParam\` | *string* | A normal parameter.   |
-| \`optionalParam?\` | *string* | An optional parameter.    |
+| \`requiredParam\` | *string* | A normal parameter. |
+| \`optionalParam?\` | *string* | An optional parameter. |
 
 **Returns:** *void*
 
@@ -193,9 +193,9 @@ This is a function with multiple arguments and a return value.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`paramZ\` | *string* | This is a string parameter.   |
-| \`paramG\` | *any* | This is a parameter flagged with any.<br />     This sentence is placed in the next line.    |
-| \`paramA\` | *any* |    This is a **parameter** pointing to an interface.     |
+| \`paramZ\` | *string* | This is a string parameter. |
+| \`paramG\` | *any* | This is a parameter flagged with any.<br />     This sentence is placed in the next line. |
+| \`paramA\` | *any* | This is a **parameter** pointing to an interface. |
 
 **Returns:** *number*
 
@@ -212,7 +212,7 @@ This is a function with rest parameter.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`...rest\` | *string*[] | The rest parameter.    |
+| \`...rest\` | *string*[] | The rest parameter. |
 
 **Returns:** *string*
 
