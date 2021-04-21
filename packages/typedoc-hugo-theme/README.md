@@ -1,9 +1,9 @@
 # typedoc-hugo-theme
 
-A [Hugo](https://gohugo.io/) compatible Markdown theme extended from [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
+A [Hugo](https://gohugo.io/) compatible compatible [TypeDoc](https://github.com/TypeStrong/typedoc) theme.
 
 [![npm](https://img.shields.io/npm/v/typedoc-hugo-theme.svg)](https://www.npmjs.com/package/typedoc-hugo-theme)
-
+[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 
 ## What is does?
 
@@ -45,4 +45,6 @@ classes
 └─── ClassB.md
 ```
 
+## License
 
+[MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-hugo-theme/LICENSE)

@@ -1,6 +1,6 @@
 # vuepress-plugin-typedoc
 
-A [VuePress](https://vuepress.vuejs.org/) plugin to build API docs with [typedoc](https://github.com/TypeStrong/typedoc) and the [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
+A [VuePress](https://vuepress.vuejs.org/) plugin to build documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-typedoc.svg)](https://www.npmjs.com/package/vuepress-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)

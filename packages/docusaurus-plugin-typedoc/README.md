@@ -1,6 +1,6 @@
 # docusaurus-plugin-typedoc
 
-A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API docs with [typedoc](https://github.com/TypeStrong/typedoc) and the [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown).
+A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -16,6 +16,8 @@ A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build API docs with [type
 > Install in the same location as the Docusaurus website directory.
 
 This guide assumes that a Docusaurus project has already been setup. See [installation docs](https://v2.docusaurus.io/docs/installation).
+
+
 
 ```shell
 npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev

@@ -1,13 +1,13 @@
 # typedoc-plugin-markdown
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that enables TypeScript API documentation to be generated in Markdown.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders documentation as Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
 
 ## What it does?
 
-The plugin replaces the default HTML theme with a built-in Markdown theme.
+The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
 
 ## Installation
 
@@ -17,12 +17,6 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 
 ## Usage
 
-**npm script**
-```javascript
-"docs": "typedoc ...options"
-```
-
-**shell**
 ```bash
 $ npx typedoc ...options
 ```
@@ -30,7 +24,7 @@ $ npx typedoc ...options
 ### Note:
 
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- The plugin needs to be executed from the same location as TypeDoc (using a script or `npx typedoc`).
+- The plugin needs to be executed from the same location as TypeDoc. If running directly from command prompt make sure to use `npx`.
 
 ## Options
 
@@ -68,8 +62,6 @@ Plugins that integrates TypeDoc seamlessly with a particular platform ecosystem:
 
 - Docusaurus v2: [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
 - VuePress: [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
-
-
 
 ## License
 
