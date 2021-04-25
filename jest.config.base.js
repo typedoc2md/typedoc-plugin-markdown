@@ -12,4 +12,5 @@ module.exports = {
       tsconfig: '<rootDir>/tsconfig.test.json',
     },
   },
+  testTimeout: 30000,
 };
