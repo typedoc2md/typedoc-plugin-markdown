@@ -2,10 +2,11 @@ import { SignatureReflection } from 'typedoc';
 import { ArrayType, ReferenceType } from 'typedoc/dist/lib/models/types';
 
 import MarkdownTheme from '../../theme';
+import { escape } from './escape';
 
 export function typeAndParent(this: ArrayType | ReferenceType) {
   if (this) {
-    if ("elementType" in this) {
+    if ('elementType' in this) {
       return typeAndParent.call(this.elementType) + '[]';
     } else {
       if (this.reflection) {
@@ -53,7 +54,7 @@ export function typeAndParent(this: ArrayType | ReferenceType) {
         }
         return md.join('.');
       } else {
-        return this.toString();
+        return escape(this.toString());
       }
     }
   }
