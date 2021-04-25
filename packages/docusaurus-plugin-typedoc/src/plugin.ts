@@ -3,8 +3,8 @@ import { Application } from 'typedoc';
 import MarkdownPlugin from 'typedoc-plugin-markdown';
 
 import { FrontMatterComponent } from './front-matter';
-import { addOptions, getOptions } from './options';
-import { render } from './render';
+import { getOutputDirectory } from './options';
+import { bootstrap } from './render';
 import { SidebarComponent, writeSidebar } from './sidebar';
 import { PluginOptions } from './types';
 import { convertAndWatch } from './watch';
@@ -17,44 +17,24 @@ export default async function pluginDocusaurus(
   opts: Partial<PluginOptions>,
 ) {
   if (opts.id && !apps.includes(opts.id)) {
-    // add id to apps so it is intialized one time only
     apps.push(opts.id);
 
-    // assign relevant docusaurus context
     const { siteDir } = context;
 
-    // merge default plugin options with user options
-    const options = getOptions(siteDir, opts);
-
-    // we need to generate an empty sidebar up-front so it can be resolved from sidebars.js
-    if (options.sidebar) {
-      writeSidebar(options.sidebar, 'module.exports=[];');
-    }
-
-    // initialize and build app
     const app = new Application();
 
-    // load the markdown plugin
     MarkdownPlugin(app);
 
-    // customise render
-    app.renderer.render = render;
+    const options = bootstrap(app, siteDir, opts);
 
-    // add plugin options
-    addOptions(app);
-
-    // bootstrap typedoc app
-    app.bootstrap(options);
-
-    // add frontmatter component to typedoc renderer
-    app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
-
-    // add sidebar component to typedoc renderer
     if (options.sidebar) {
+      // generate an empty sidebar up-front so it can be resolved from sidebars.js
+      writeSidebar(options, 'module.exports=[];');
       app.renderer.addComponent('sidebar', new SidebarComponent(app.renderer));
     }
 
-    // return the generated reflections
+    app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
+
     const project = app.convert();
 
     // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
@@ -62,13 +42,13 @@ export default async function pluginDocusaurus(
       return;
     }
 
-    // generate or watch app
     if (options.watch) {
       convertAndWatch(app, options);
     } else {
-      await app.generateDocs(project, options.outputDirectory);
+      await app.generateDocs(project, getOutputDirectory(options));
     }
   }
+
   return {
     name: 'docusaurus-plugin-typedoc',
   };

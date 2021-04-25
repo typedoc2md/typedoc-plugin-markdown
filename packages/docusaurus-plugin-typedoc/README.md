@@ -97,7 +97,14 @@ Additional TypeDoc plugins will need to be explicitly set:
 plugin:['typedoc-plugin-xyz']
 ```
 
-Note: TypeDoc options can also be declared under the `typedocOptions` key in `tsconfig.json`.
+#### Other config options
+
+TypeDoc options can also be declared:
+
+- Using a `typedoc.json` file.
+- Under the `typedocOptions` key in `tsconfig.json`.
+
+Note: Options declared in this manner will take priority and overwrite options declared in `docusaurus.config.js`.
 
 ### Plugin options
 

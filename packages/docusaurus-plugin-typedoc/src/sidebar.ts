@@ -5,8 +5,9 @@ import { BindOption } from 'typedoc';
 import { Component } from 'typedoc/dist/lib/converter/components';
 import { RendererComponent } from 'typedoc/dist/lib/output/components';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
+import { Logger } from 'typedoc/dist/lib/utils';
 
-import { SidebarItem, SidebarOptions } from './types';
+import { PluginOptions, SidebarItem, SidebarOptions } from './types';
 
 @Component({ name: 'sidebar' })
 export class SidebarComponent extends RendererComponent {
@@ -65,18 +66,12 @@ export class SidebarComponent extends RendererComponent {
       : [];
 
     writeSidebar(
-      this.sidebar,
+      { siteDir: this.siteDir, sidebar: this.sidebar } as PluginOptions,
       `module.exports = ${JSON.stringify(sidebarItems, null, 2)};`,
-    );
-
-    this.application.logger.success(
-      `TypeDoc sidebar written to ${this.sidebar.sidebarPath}`,
+      this.application.logger,
     );
   }
 
-  /**
-   * returns a sidebar category node
-   */
   getSidebarCategory(title: string, items: SidebarItem[]) {
     return {
       type: 'category',
@@ -85,21 +80,30 @@ export class SidebarComponent extends RendererComponent {
     };
   }
 
-  /**
-   * returns the url key for relevant doc
-   */
   getUrlKey(out: string, url: string) {
     const urlKey = url.replace('.md', '');
     return out ? out + '/' + urlKey : urlKey;
   }
 }
 
-/**
- * Write content to sidebar file
- */
-export const writeSidebar = (sidebar: SidebarOptions, content: string) => {
-  if (!fs.existsSync(path.dirname(sidebar.sidebarPath))) {
-    fs.mkdirSync(path.dirname(sidebar.sidebarPath));
+export const writeSidebar = (
+  options: PluginOptions,
+  content: string,
+  logger?: Logger,
+) => {
+  const sidebarPath = getSidebarPath(options);
+  if (sidebarPath) {
+    if (!fs.existsSync(path.dirname(sidebarPath))) {
+      fs.mkdirSync(path.dirname(sidebarPath));
+    }
+    fs.writeFileSync(sidebarPath, content);
+    if (logger) {
+      logger.success(`TypeDoc sidebar written to ${sidebarPath}`);
+    }
   }
-  fs.writeFileSync(sidebar.sidebarPath, content);
 };
+
+export const getSidebarPath = (options: PluginOptions) =>
+  options.sidebar
+    ? path.resolve(options.siteDir, options.sidebar.sidebarFile)
+    : null;

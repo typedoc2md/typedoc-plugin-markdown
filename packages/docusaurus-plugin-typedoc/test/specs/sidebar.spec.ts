@@ -6,21 +6,19 @@ import * as tmp from 'tmp';
 import { Application } from 'typedoc';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 
+import { getOutputDirectory } from '../../dist/options';
+import { bootstrap } from '../../dist/render';
 import { SidebarComponent } from '../../dist/sidebar';
-import { addOptions, getOptions } from '../../src/options';
+import { PluginOptions } from '../../src/types';
 
 tmp.setGracefulCleanup();
 async function generate(opts = {}) {
   const app = new Application();
 
-  addOptions(app);
-
   const tmpobj = tmp.dirSync();
 
-  const options = getOptions(tmpobj.name, opts);
-
-  app.bootstrap({
-    ...options,
+  const options = bootstrap(app, tmpobj.name, {
+    ...opts,
     logger: 'none',
     plugin: [
       path.join(__dirname, '../../../typedoc-plugin-markdown/dist/index'),
@@ -30,12 +28,12 @@ async function generate(opts = {}) {
       '../typedoc-plugin-markdown/test/stubs/src/frontmatter.ts',
     ],
     tsconfig: '../typedoc-plugin-markdown/test/stubs/tsconfig.json',
-  });
+  } as Partial<PluginOptions>);
 
   const project = app.convert();
 
   // generate the static docs
-  await app.generateDocs(project, options.outputDirectory);
+  await app.generateDocs(project, getOutputDirectory(options));
   const componentNamename = cuid();
   app.renderer.addComponent(
     componentNamename,

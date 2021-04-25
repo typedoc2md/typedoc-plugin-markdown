@@ -1,15 +1,15 @@
-import { getOptions } from '../../src/options';
+import { getPluginOptions } from '../../dist/options';
 import { PluginOptions } from '../../src/types';
 
 describe(`Options:`, () => {
   test(`should return default options`, () => {
     expect(
-      getOptions('/site-dir', { entryPoints: ['entrypoint.ts'] }),
+      getPluginOptions('/site-dir', { entryPoints: ['entrypoint.ts'] }),
     ).toMatchSnapshot();
   });
   test(`should merge plugins`, () => {
     expect(
-      getOptions('/site-dir', {
+      getPluginOptions('/site-dir', {
         plugin: ['plugin-xyz'],
       }).plugin,
     ).toMatchSnapshot();
@@ -17,7 +17,7 @@ describe(`Options:`, () => {
 
   test(`should merge null sidebar`, () => {
     expect(
-      getOptions('/site-dir', {
+      getPluginOptions('/site-dir', {
         sidebar: null,
       } as PluginOptions).sidebar,
     ).toBeNull();
@@ -25,7 +25,7 @@ describe(`Options:`, () => {
 
   test(`should merge custom sidebar options`, () => {
     expect(
-      getOptions('/site-dir', {
+      getPluginOptions('/site-dir', {
         sidebar: {
           sidebarFile: 'custom-sidebar.js',
           fullNames: true,

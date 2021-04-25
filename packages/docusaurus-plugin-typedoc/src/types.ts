@@ -13,7 +13,6 @@ export interface PluginOptions {
   hideInPageTOC: boolean;
   hideBreadcrumbs: boolean;
   siteDir: string;
-  outputDirectory: string;
   watch: boolean;
 }
 
@@ -29,7 +28,6 @@ export interface FrontMatter {
 export interface SidebarOptions {
   fullNames?: boolean;
   sidebarFile: string;
-  sidebarPath: string;
   indexLabel?: string;
   readmeLabel?: string;
 }

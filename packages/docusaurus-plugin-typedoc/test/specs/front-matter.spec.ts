@@ -4,26 +4,22 @@ import MarkdownPlugin from 'typedoc-plugin-markdown';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { FrontMatterComponent } from '../../dist/front-matter';
-import { addOptions, getOptions } from '../../src/options';
+import { bootstrap } from '../../dist/render';
+import { PluginOptions } from '../../dist/types';
 
 async function generate(opts = {}) {
   const app = new Application();
 
   MarkdownPlugin(app);
 
-  addOptions(app);
-
-  const options = getOptions('test-site', opts);
-
-  await app.bootstrap({
-    ...options,
-    logger: 'none',
+  bootstrap(app, 'test-app', {
+    ...opts,
     entryPoints: [
       '../typedoc-plugin-markdown/test/stubs/src/theme.ts',
       '../typedoc-plugin-markdown/test/stubs/src/frontmatter.ts',
     ],
     tsconfig: '../typedoc-plugin-markdown/test/stubs/tsconfig.json',
-  });
+  } as Partial<PluginOptions>);
 
   const project = app.convert();
   const componentNamename = cuid();

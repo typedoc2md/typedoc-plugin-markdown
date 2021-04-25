@@ -6,7 +6,6 @@ Object {
   "indexLabel": "Custom index",
   "readmeLabel": "Custom readme",
   "sidebarFile": "custom-sidebar.js",
-  "sidebarPath": "/site-dir/custom-sidebar.js",
 }
 `;
 
@@ -27,7 +26,6 @@ Object {
   "hideInPageTOC": true,
   "id": "default",
   "out": "api",
-  "outputDirectory": "/site-dir/docs/api",
   "plugin": Array [
     "none",
   ],
@@ -36,7 +34,6 @@ Object {
     "indexLabel": "Table of contents",
     "readmeLabel": "Readme",
     "sidebarFile": "typedoc-sidebar.js",
-    "sidebarPath": "/site-dir/typedoc-sidebar.js",
   },
   "siteDir": "/site-dir",
   "watch": false,
