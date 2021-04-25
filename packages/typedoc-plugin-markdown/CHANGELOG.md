@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.7.1...typedoc-plugin-markdown@3.7.2) (2021-04-25)
+
+
+### Bug Fixes
+
+* Escape inherited types ([#215](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/215)) ([34c5e7b](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/34c5e7b9265a1825be567c2e89372d63c9b96f79))
+
+
+
+
+
 ## [3.7.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.7.0...typedoc-plugin-markdown@3.7.1) (2021-04-18)
 
 
