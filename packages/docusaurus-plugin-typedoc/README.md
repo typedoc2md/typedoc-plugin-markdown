@@ -108,13 +108,17 @@ Note: Options declared in this manner will take priority and overwrite options d
 
 ### Plugin options
 
-| Name                            | Default                | Description                                                                            |
-| :------------------------------ | :--------------------- | :------------------------------------------------------------------------------------- |
-| `docsRoot`                      | `"docs"`               | Docs directory relative to the the root directory.                                     |
-| `out`                           | `"api"`                | Output directory relative to docs directory.                                           |
-| `allReflectionsHaveOwnDocument` | `false`                | Output all reflections into seperate output files.                                     |
-| `sidebar.sidebarFile`           | `"typedoc-sidebar.js"` | The name of the sidebars file. Will also accept a path relative to the root directory. |
-| `sidebar.fullNames`             | `false`                | Display full names with module path if applicable.                                     |
+| Name                            | Default                                                           | Description                                                                            |
+| :------------------------------ | :---------------------------------------------------------------- | :------------------------------------------------------------------------------------- |
+| `docsRoot`                      | `"docs"`                                                          | Docs directory relative to the the root directory.                                     |
+| `out`                           | `"api"`                                                           | Output directory relative to docs directory.                                           |
+| `allReflectionsHaveOwnDocument` | `false`                                                           | Output all reflections into seperate files.                                            |
+| `globalsTitle`                  | <span style="white-space: nowrap;">`"%project-title%"`</span>     | Inline title and page meta title of the main globals/TOC page.                         |
+| `readmeTitle`                   | <span style="white-space: nowrap;">`"%project-title%"`</span>     | Page meta title of Readme (ignored if `readme: none`).                                 |
+| `sidebar.sidebarFile`           | <span style="white-space: nowrap;">`"typedoc-sidebar.js"` </span> | The name of the sidebars file. Will also accept a path relative to the root directory. |
+| `sidebar.fullNames`             | `false`                                                           | Display full names with module path.                                                   |  | Display full names with module path if applicable. |
+
+If the sidebar is not required pass `sidebar: null` to skip sidebar generation.
 
 ### Example config
 
