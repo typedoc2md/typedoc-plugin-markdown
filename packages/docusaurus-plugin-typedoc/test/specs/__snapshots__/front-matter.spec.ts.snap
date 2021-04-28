@@ -6,7 +6,6 @@ id: \\"modules\\"
 title: \\"test-project-name\\"
 sidebar_label: \\"Custom index label\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -18,7 +17,6 @@ id: \\"modules\\"
 title: \\"test-project-name\\"
 sidebar_label: \\"Table of contents\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -31,7 +29,6 @@ title: \\"test-project-name\\"
 slug: \\"/api\\"
 sidebar_label: \\"Table of contents\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -42,7 +39,6 @@ exports[`FrontMatter: (no sidebar) should return front matter without sidebar 1`
 id: \\"modules\\"
 title: \\"test-project-name\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -55,7 +51,6 @@ title: \\"Custom readme title\\"
 slug: \\"/api\\"
 sidebar_label: \\"Custom readme label\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -68,7 +63,6 @@ title: \\"test-project-name\\"
 slug: \\"/api\\"
 sidebar_label: \\"Readme\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -80,7 +74,6 @@ id: \\"index\\"
 title: \\"Custom readme title\\"
 slug: \\"/api\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -92,7 +85,6 @@ id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"frontmatter.FrontMatterClass\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"
@@ -104,7 +96,6 @@ id: \\"url\\"
 title: \\"Class: FrontMatterClass\\"
 sidebar_label: \\"FrontMatterClass\\"
 custom_edit_url: null
-hide_title: true
 ---
 
 CONTENTS"

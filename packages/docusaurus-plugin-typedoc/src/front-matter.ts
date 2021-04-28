@@ -1,4 +1,5 @@
 import * as path from 'path';
+
 import { BindOption } from 'typedoc';
 import {
   getPageTitle,
@@ -7,6 +8,7 @@ import {
 import { Component } from 'typedoc/dist/lib/converter/components';
 import { RendererComponent } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import { FrontMatter, Sidebar } from './types';
 
 @Component({ name: 'front-matter' })
@@ -58,7 +60,6 @@ export class FrontMatterComponent extends RendererComponent {
     return {
       ...items,
       custom_edit_url: null,
-      hide_title: true,
     };
   }
 
