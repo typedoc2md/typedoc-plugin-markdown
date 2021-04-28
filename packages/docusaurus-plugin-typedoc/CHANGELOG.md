@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.12.1...docusaurus-plugin-typedoc@0.13.0) (2021-04-28)
+
+
+### Bug Fixes
+
+* Consolidate options after TypeDoc option readers ([#214](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/214)) ([14b24e4](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/14b24e4f81ec2a937985ab8317a23010c9e84419))
+
+
+### Features
+
+* Update heading logic as per 'frontmatter-less' titles in alpha.73 ([62cf0d1](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/62cf0d1626289de168b71982fdbd694f0e17d21b))
+
+
+
+
+
 ## [0.12.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.12.0...docusaurus-plugin-typedoc@0.12.1) (2021-04-05)
 
 
