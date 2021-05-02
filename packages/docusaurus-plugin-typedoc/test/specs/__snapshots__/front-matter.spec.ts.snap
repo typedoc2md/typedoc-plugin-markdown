@@ -5,6 +5,7 @@ exports[`FrontMatter: (globals) should set custom indexLabel 1`] = `
 id: \\"modules\\"
 title: \\"test-project-name\\"
 sidebar_label: \\"Custom index label\\"
+sidebar_position: 0.5
 custom_edit_url: null
 ---
 
@@ -16,6 +17,7 @@ exports[`FrontMatter: (globals) should set default globals page 1`] = `
 id: \\"modules\\"
 title: \\"test-project-name\\"
 sidebar_label: \\"Table of contents\\"
+sidebar_position: 0.5
 custom_edit_url: null
 ---
 
@@ -28,16 +30,7 @@ id: \\"index\\"
 title: \\"test-project-name\\"
 slug: \\"/api\\"
 sidebar_label: \\"Table of contents\\"
-custom_edit_url: null
----
-
-CONTENTS"
-`;
-
-exports[`FrontMatter: (no sidebar) should return front matter without sidebar 1`] = `
-"---
-id: \\"modules\\"
-title: \\"test-project-name\\"
+sidebar_position: 0.5
 custom_edit_url: null
 ---
 
@@ -50,6 +43,7 @@ id: \\"index\\"
 title: \\"Custom readme title\\"
 slug: \\"/api\\"
 sidebar_label: \\"Custom readme label\\"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -62,6 +56,7 @@ id: \\"index\\"
 title: \\"test-project-name\\"
 slug: \\"/api\\"
 sidebar_label: \\"Readme\\"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -73,6 +68,7 @@ exports[`FrontMatter: (readme) should set the same custom readmeLabel and readme
 id: \\"index\\"
 title: \\"Custom readme title\\"
 slug: \\"/api\\"
+sidebar_position: 0
 custom_edit_url: null
 ---
 

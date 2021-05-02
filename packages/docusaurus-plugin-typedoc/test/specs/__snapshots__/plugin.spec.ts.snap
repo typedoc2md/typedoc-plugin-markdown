@@ -2,6 +2,7 @@
 
 exports[`Plugin: (docs) should render 1`] = `
 Array [
+  "_category_.yml",
   "classes",
   "enums",
   "index.md",
@@ -11,12 +12,18 @@ Array [
 ]
 `;
 
+exports[`Plugin: (docs) should write category yaml 1`] = `
+"label: \\"Classes\\"
+position: 3"
+`;
+
 exports[`Plugin: (docs) should write doc 1`] = `
 "---
 id: \\"index\\"
 title: \\"typedoc-plugin-markdown\\"
 slug: \\"/api\\"
 sidebar_label: \\"Readme\\"
+sidebar_position: 0
 custom_edit_url: null
 ---
 
@@ -28,44 +35,4 @@ custom_edit_url: null
 
 Some text
 "
-`;
-
-exports[`Plugin: (docs) should write sidebar 1`] = `
-"module.exports = [
-  \\"api/index\\",
-  \\"api/modules\\",
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Namespaces\\",
-    \\"items\\": [
-      \\"api/modules/namespacea\\",
-      \\"api/modules/namespaceb\\"
-    ]
-  },
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Enumerations\\",
-    \\"items\\": [
-      \\"api/enums/enumitema\\",
-      \\"api/enums/enumitemb\\"
-    ]
-  },
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Classes\\",
-    \\"items\\": [
-      \\"api/classes/namespacea.somenestedclass\\",
-      \\"api/classes/classitema\\",
-      \\"api/classes/classitemb\\"
-    ]
-  },
-  {
-    \\"type\\": \\"category\\",
-    \\"label\\": \\"Interfaces\\",
-    \\"items\\": [
-      \\"api/interfaces/interfaceitema\\",
-      \\"api/interfaces/interfaceitemb\\"
-    ]
-  }
-];"
 `;

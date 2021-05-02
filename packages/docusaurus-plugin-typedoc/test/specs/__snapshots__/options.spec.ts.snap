@@ -2,8 +2,10 @@
 
 exports[`Options: should merge custom sidebar options 1`] = `
 Object {
+  "categoryLabel": "API",
   "fullNames": true,
   "indexLabel": "Custom index",
+  "position": null,
   "readmeLabel": "Custom readme",
   "sidebarFile": "custom-sidebar.js",
 }
@@ -30,12 +32,13 @@ Object {
     "none",
   ],
   "sidebar": Object {
+    "categoryLabel": "API",
     "fullNames": false,
     "indexLabel": "Table of contents",
+    "position": null,
     "readmeLabel": "Readme",
     "sidebarFile": "typedoc-sidebar.js",
   },
-  "siteDir": "/site-dir",
   "watch": false,
 }
 `;

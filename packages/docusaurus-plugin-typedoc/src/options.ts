@@ -1,6 +1,6 @@
 import * as path from 'path';
 
-import { PluginOptions, SidebarOptions } from './types';
+import { PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   id: 'default',
@@ -12,32 +12,28 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
+    categoryLabel: 'API',
     indexLabel: 'Table of contents',
     readmeLabel: 'Readme',
+    position: null,
   },
   plugin: ['none'],
-  siteDir: '',
   watch: false,
 };
 
 export const getPluginOptions = (
-  siteDir: string,
   opts: Partial<PluginOptions>,
 ): PluginOptions => {
   const options = {
     ...DEFAULT_PLUGIN_OPTIONS,
     ...opts,
-    sidebar:
-      opts.sidebar === null
-        ? null
-        : ({
-            ...DEFAULT_PLUGIN_OPTIONS.sidebar,
-            ...opts.sidebar,
-          } as SidebarOptions),
-    siteDir,
+    sidebar: {
+      ...DEFAULT_PLUGIN_OPTIONS.sidebar,
+      ...opts.sidebar,
+    },
   };
   return options;
 };
 
-export const getOutputDirectory = (options: PluginOptions) =>
-  path.resolve(options.siteDir, options.docsRoot, options.out);
+export const getOutputDirectory = (siteDir: string, options: PluginOptions) =>
+  path.resolve(siteDir, options.docsRoot, options.out);
