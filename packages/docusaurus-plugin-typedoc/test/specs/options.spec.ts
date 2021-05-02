@@ -4,28 +4,20 @@ import { PluginOptions } from '../../src/types';
 describe(`Options:`, () => {
   test(`should return default options`, () => {
     expect(
-      getPluginOptions('/site-dir', { entryPoints: ['entrypoint.ts'] }),
+      getPluginOptions({ entryPoints: ['entrypoint.ts'] }),
     ).toMatchSnapshot();
   });
   test(`should merge plugins`, () => {
     expect(
-      getPluginOptions('/site-dir', {
+      getPluginOptions({
         plugin: ['plugin-xyz'],
       }).plugin,
     ).toMatchSnapshot();
   });
 
-  test(`should merge null sidebar`, () => {
-    expect(
-      getPluginOptions('/site-dir', {
-        sidebar: null,
-      } as PluginOptions).sidebar,
-    ).toBeNull();
-  });
-
   test(`should merge custom sidebar options`, () => {
     expect(
-      getPluginOptions('/site-dir', {
+      getPluginOptions({
         sidebar: {
           sidebarFile: 'custom-sidebar.js',
           fullNames: true,

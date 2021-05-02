@@ -2,7 +2,7 @@ export interface PluginOptions {
   id: string;
   docsRoot: string;
   out: string;
-  sidebar: SidebarOptions | null;
+  sidebar: SidebarOptions;
   readmeTitle?: string;
   globalsTitle?: string;
   plugin: string[];
@@ -12,7 +12,6 @@ export interface PluginOptions {
   entryDocument: string;
   hideInPageTOC: boolean;
   hideBreadcrumbs: boolean;
-  siteDir: string;
   watch: boolean;
 }
 
@@ -21,15 +20,18 @@ export interface FrontMatter {
   title: string;
   slug?: string;
   sidebar_label?: string;
+  sidebar_position?: number;
   hide_title?: boolean;
   hide_table_of_contents?: boolean;
 }
 
 export interface SidebarOptions {
   fullNames?: boolean;
-  sidebarFile: string;
+  sidebarFile: string; //deprecated
+  categoryLabel: string;
   indexLabel?: string;
   readmeLabel?: string;
+  position: number | null;
 }
 
 export interface Sidebar {

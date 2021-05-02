@@ -12,7 +12,7 @@ async function generate(opts = {}) {
 
   MarkdownPlugin(app);
 
-  bootstrap(app, 'test-app', {
+  bootstrap(app, {
     ...opts,
     entryPoints: [
       '../typedoc-plugin-markdown/test/stubs/src/theme.ts',
@@ -149,21 +149,6 @@ describe(`FrontMatter:`, () => {
         url: 'url',
         contents: 'CONTENTS',
       } as PageEvent;
-      frontMatterComponent.onPageEnd(page);
-      expect(page.contents).toMatchSnapshot();
-    });
-  });
-
-  describe(`(no sidebar)`, () => {
-    test(`should return front matter without sidebar`, async () => {
-      const page = {
-        url: 'modules.md',
-        project: { name: 'test-project-name', url: 'modules.md' },
-        contents: 'CONTENTS',
-      } as PageEvent;
-      const { frontMatterComponent } = await generate({
-        sidebar: null,
-      });
       frontMatterComponent.onPageEnd(page);
       expect(page.contents).toMatchSnapshot();
     });
