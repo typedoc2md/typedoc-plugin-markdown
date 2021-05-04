@@ -15,15 +15,17 @@ exports[`Comments: should build @link references' 1`] = `
 Also, check out [Google](https://www.google.com) and
 [GitHub](https://github.com).
 
-Taken from http://usejsdoc.org/tags-inline-link.html.
+Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html).
 "
 `;
 
 exports[`Comments: should convert comments with fenced block' 1`] = `
 "Some comments with fence blocks
+
 \`\`\`typescript
 someFunction()
 \`\`\`
+
 \`\`\`js
 anotherFunction()
 \`\`\`
@@ -46,11 +48,12 @@ This is a simple example on a handlebars file.
 exports[`Comments: should convert comments with tags' 1`] = `
 "**\`name\`** Tag description on same line
 
-**\`description\`** 
+**\`description\`**
 Tag description on new line
+
 - Tag description on another line
 
-**\`deprecated\`** 
+**\`deprecated\`**
 Another tag description
 "
 `;

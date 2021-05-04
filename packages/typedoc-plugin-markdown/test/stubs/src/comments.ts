@@ -3,7 +3,7 @@
  * Also, check out {@link https://www.google.com|Google} and
  * {@link https://github.com GitHub}.
  *
- * Taken from http://usejsdoc.org/tags-inline-link.html.
+ * Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html).
  */
 export const commentWithDocLinks = true;
 
@@ -42,6 +42,7 @@ export const commentsWithIncludes = true;
  * @name Tag description on same line
  * @description
  * Tag description on new line
+ *
  * - Tag description on another line
  *
  * @deprecated
@@ -51,9 +52,11 @@ export const commentsWithTags = true;
 
 /**
  * Some comments with fence blocks
+ *
  * ```typescript
  * someFunction()
  * ```
+ *
  * ```js
  * anotherFunction()
  * ```

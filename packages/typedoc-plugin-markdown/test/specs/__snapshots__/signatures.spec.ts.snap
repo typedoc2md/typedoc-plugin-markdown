@@ -37,7 +37,7 @@ exports[`Signatures: should compile function with nested typen params' 1`] = `
 
 Some nested params.
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -60,7 +60,7 @@ Some nested params.
 exports[`Signatures: should compile function with reference type' 1`] = `
 "▸ **functionWithReferenceType**(\`descriptor\`: *TypedPropertyDescriptor*<any\\\\>): *boolean*
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -77,7 +77,7 @@ exports[`Signatures: should compile named parameters with comments' 1`] = `
 
 FOO
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
@@ -95,7 +95,7 @@ FOO
 exports[`Signatures: should compile named parameters' 1`] = `
 "▸ **functionWithNamedParams**(\`__namedParameters\`: *Object*): *string*
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -110,7 +110,7 @@ exports[`Signatures: should compile named parameters' 1`] = `
 exports[`Signatures: should compile pipes in params and comments' 1`] = `
 "▸ **functionWithPipesInParamsAndComments**(\`n\`: *number* \\\\| \`\`null\`\`): *number* \\\\| \`\`null\`\`
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -149,7 +149,7 @@ exports[`Signatures: should compile signature with default values' 1`] = `
 
 This is a function with a parameter that has a default value.
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
@@ -171,7 +171,7 @@ exports[`Signatures: should compile signature with optional params' 1`] = `
 
 This is a function with a parameter that is optional.
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -189,7 +189,7 @@ exports[`Signatures: should compile signature with params' 1`] = `
 
 This is a function with multiple arguments and a return value.
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -208,7 +208,7 @@ exports[`Signatures: should compile signature with rest params' 1`] = `
 
 This is a function with rest parameter.
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -223,7 +223,7 @@ This is a function with rest parameter.
 exports[`Signatures: should compile signature with type params' 1`] = `
 "▸ \`Const\`**functionWithTypeParams**<Item\\\\>(): *boolean*
 
-#### Type parameters:
+#### Type parameters
 
 | Name | Default |
 | :------ | :------ |
@@ -238,7 +238,7 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 exports[`Signatures: should compile signature with union types' 1`] = `
 "▸ **functionWithUnionTypes**(\`arg\`: *boolean*[] \\\\| *number*, ...\`args\`: (*string* \\\\| *number*)[]): *any*
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |

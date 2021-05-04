@@ -5,7 +5,7 @@ import { type } from './type';
 
 export function hierarchy(this: DeclarationHierarchy, level: number) {
   const md: string[] = [];
-  const symbol = level > 0 ? getSymbol(level) : '*';
+  const symbol = level > 0 ? getSymbol(level) : '-';
   this.types.forEach((hierarchyType) => {
     if (this.isTarget) {
       md.push(`${symbol} **${hierarchyType}**`);
