@@ -37,6 +37,19 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 "
 `;
 
+exports[`Reflections: (template) should compile implemented class 1`] = `
+"# Class: ImplementedClass
+
+## Implements
+
+- [*ReflectionClass*](../classes/reflectionclass.md)
+
+[helper: toc]
+
+[partial: members]
+"
+`;
+
 exports[`Reflections: (template) should compile module with breadcrumbs and project title 1`] = `
 "# Enumeration: EnumReflection
 

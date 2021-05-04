@@ -10,6 +10,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "pretest": "yarn run demo:md && markdownlint ./demo/md",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "fixtures": "node ./tasks/fixtures.js",

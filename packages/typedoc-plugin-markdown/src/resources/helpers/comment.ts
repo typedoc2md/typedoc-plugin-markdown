@@ -14,9 +14,11 @@ export function comment(this: Comment) {
   if (this.tags) {
     const tags = this.tags.map(
       (tag) =>
-        `**\`${tag.tagName}\`** ${
+        `**\`${tag.tagName}\`**${
           tag.text
-            ? MarkdownTheme.HANDLEBARS.helpers.comment.call(tag.text)
+            ? MarkdownTheme.HANDLEBARS.helpers.comment.call(
+                (tag.text.startsWith('\n') ? '' : ' ') + tag.text,
+              )
             : ''
         }`,
     );
