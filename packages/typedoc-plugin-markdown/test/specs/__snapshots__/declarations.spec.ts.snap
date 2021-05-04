@@ -17,17 +17,17 @@ exports[`Declarations: should compile a variable with default value 1`] = `
 exports[`Declarations: should compile any function type 1`] = `
 "Ƭ **AnyFunctionType**<A\\\\>: (...\`input\`: *any*[]) => A
 
-#### Type parameters:
+#### Type parameters
 
 | Name | Default |
 | :------ | :------ |
 | \`A\` | *any* |
 
-#### Type declaration:
+#### Type declaration
 
 ▸ (...\`input\`: *any*[]): A
 
-#### Parameters:
+#### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -60,7 +60,7 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 Comments
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -75,7 +75,7 @@ Comments
 exports[`Declarations: should compile object literal declaration 1`] = `
 "• \`Const\` **objectLiteralDeclaration**: *object*
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -95,7 +95,7 @@ exports[`Declarations: should compile object literal declaration 1`] = `
 exports[`Declarations: should compile type literal declaration 1`] = `
 "• \`Let\` **typeLiteralDeclaration**: *object*
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -115,7 +115,7 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 exports[`Declarations: should compile type literal declaration 2`] = `
 "• \`Let\` **typeLiteralDeclarationWithFunction**: () => *string*
 
-#### Type declaration:
+#### Type declaration
 
 ▸ (): *string*
 
@@ -134,7 +134,7 @@ exports[`Declarations: should compile type literal declaration 2`] = `
 exports[`Declarations: should not escape charcters within markdown code 1`] = `
 "Ƭ **SpecialCharacters**: *object*
 
-#### Type declaration:
+#### Type declaration
 
 | Name | Type |
 | :------ | :------ |

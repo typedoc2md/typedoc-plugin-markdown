@@ -76,5 +76,14 @@ describe(`Reflections:`, () => {
         }),
       ).toMatchSnapshot();
     });
+
+    test(`should compile implemented class`, () => {
+      expect(
+        TestApp.compileTemplate(reflectionTemplate, {
+          model: testApp.findReflection('ImplementedClass'),
+          project: testApp.project,
+        }),
+      ).toMatchSnapshot();
+    });
   });
 });

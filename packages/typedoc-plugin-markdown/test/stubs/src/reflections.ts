@@ -27,3 +27,5 @@ export enum EnumReflection {
   Left = 'LEFT',
   Right = 'RIGHT',
 }
+
+export class ImplementedClass implements ReflectionClass {}
