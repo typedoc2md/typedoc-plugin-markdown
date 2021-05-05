@@ -23,8 +23,8 @@ export class FrontMatterComponent extends RendererComponent {
   readmeTitle!: string;
   @BindOption('entryDocument')
   entryDocument!: string;
-  @BindOption('allReflectionsHaveOwnDocument')
-  allReflectionsHaveOwnDocument!: boolean;
+  @BindOption('entryPoints')
+  entryPoints!: string[];
 
   globalsFile = 'modules.md';
 
@@ -58,7 +58,7 @@ export class FrontMatterComponent extends RendererComponent {
     if (sidebarPosition) {
       items = { ...items, sidebar_position: parseFloat(sidebarPosition) };
     }
-    if (page.url === page.project.url && this.allReflectionsHaveOwnDocument) {
+    if (page.url === page.project.url && this.entryPoints.length > 1) {
       items = { ...items, hide_table_of_contents: true };
     }
     return {
@@ -68,15 +68,20 @@ export class FrontMatterComponent extends RendererComponent {
   }
 
   getSidebarLabel(page: PageEvent) {
+    const indexLabel =
+      this.sidebar.indexLabel ||
+      (this.entryPoints.length > 1 ? 'Table of contents' : 'Exports');
+
     if (page.url === this.entryDocument) {
       return page.url === page.project.url
-        ? this.sidebar.indexLabel
+        ? indexLabel
         : this.sidebar.readmeLabel;
     }
 
     if (page.url === this.globalsFile) {
-      return this.sidebar.indexLabel;
+      return indexLabel;
     }
+
     return this.sidebar.fullNames ? page.model.getFullName() : page.model.name;
   }
 
