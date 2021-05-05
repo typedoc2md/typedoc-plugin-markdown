@@ -136,7 +136,7 @@ Return comments
 `;
 
 exports[`Signatures: should compile signature with a flag' 1`] = `
-"▸ \`Private\`**privateFunction**(): *string*
+"▸ \`Private\` **privateFunction**(): *string*
 
 **Returns:** *string*
 
@@ -221,7 +221,7 @@ This is a function with rest parameter.
 `;
 
 exports[`Signatures: should compile signature with type params' 1`] = `
-"▸ \`Const\`**functionWithTypeParams**<Item\\\\>(): *boolean*
+"▸ \`Const\` **functionWithTypeParams**<Item\\\\>(): *boolean*
 
 #### Type parameters
 

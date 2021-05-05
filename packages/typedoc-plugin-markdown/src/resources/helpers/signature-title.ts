@@ -1,5 +1,4 @@
 import { SignatureReflection } from 'typedoc';
-
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
@@ -14,8 +13,8 @@ export function signatureTitle(
     md.push(`${memberSymbol.call(this)} `);
   }
 
-  if (this.parent && this.parent.flags) {
-    md.push(this.parent.flags.map((flag) => `\`${flag}\``).join(' '));
+  if (this.parent && this.parent.flags?.length > 0) {
+    md.push(this.parent.flags.map((flag) => `\`${flag}\``).join(' ') + ' ');
   }
 
   if (accessor) {
