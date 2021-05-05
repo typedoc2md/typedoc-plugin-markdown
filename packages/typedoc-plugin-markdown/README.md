@@ -36,8 +36,6 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Do not render breadcrumbs in template header. Defaults to `false`.
 - `--hideInPageTOC<boolean>`<br>
   Do not render in-page table of contents items.  Defaults to `false`.
-- `--allReflectionsHaveOwnDocument<boolean>`<br>
-  Output all reflections into seperate output files. Defaults to `false`.
 - `--publicPath<string>`<br>
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `.`.
 - `--namedAnchors<boolean>`<br>
