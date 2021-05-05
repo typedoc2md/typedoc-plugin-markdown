@@ -18,18 +18,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-## [0.12.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.12.0...docusaurus-plugin-typedoc@0.12.1) (2021-04-05)
-
-
-### Bug Fixes
-
-* Only hide index TOC if `allReflectionsHaveOwnDocument:true` ([#209](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/209)) ([3408330](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/34083307a7c32ee955168c7818f8f5f35f19e05c))
-
-
-
-
-
 # [0.12.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.11.0...docusaurus-plugin-typedoc@0.12.0) (2021-03-22)
 
 
