@@ -1,5 +1,4 @@
 import * as path from 'path';
-
 import { BindOption } from 'typedoc';
 import {
   getPageTitle,
@@ -8,7 +7,6 @@ import {
 import { Component } from 'typedoc/dist/lib/converter/components';
 import { RendererComponent } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-
 import { FrontMatter, Sidebar } from './types';
 
 @Component({ name: 'front-matter' })
@@ -21,11 +19,10 @@ export class FrontMatterComponent extends RendererComponent {
   globalsTitle!: string;
   @BindOption('readmeTitle')
   readmeTitle!: string;
-  @BindOption('entryDocument')
-  entryDocument!: string;
   @BindOption('entryPoints')
   entryPoints!: string[];
 
+  entryDocument = 'index.md';
   globalsFile = 'modules.md';
 
   initialize() {
