@@ -9,9 +9,6 @@ export interface PluginOptions {
   readme?: string;
   disableOutputCheck?: boolean;
   entryPoints?: string[];
-  entryDocument: string;
-  hideInPageTOC: boolean;
-  hideBreadcrumbs: boolean;
   watch: boolean;
 }
 

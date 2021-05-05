@@ -1,14 +1,10 @@
 import * as path from 'path';
-
 import { PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   id: 'default',
   docsRoot: 'docs',
   out: 'api',
-  entryDocument: 'index.md',
-  hideInPageTOC: true,
-  hideBreadcrumbs: true,
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
