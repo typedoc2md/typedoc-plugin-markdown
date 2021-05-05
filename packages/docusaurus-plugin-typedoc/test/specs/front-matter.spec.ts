@@ -7,17 +7,20 @@ import { FrontMatterComponent } from '../../dist/front-matter';
 import { bootstrap } from '../../dist/render';
 import { PluginOptions } from '../../dist/types';
 
-async function generate(opts = {}) {
+async function generate(
+  opts = {},
+  entryPoints = [
+    '../typedoc-plugin-markdown/test/stubs/src/theme.ts',
+    '../typedoc-plugin-markdown/test/stubs/src/frontmatter.ts',
+  ],
+) {
   const app = new Application();
 
   MarkdownPlugin(app);
 
   bootstrap(app, {
     ...opts,
-    entryPoints: [
-      '../typedoc-plugin-markdown/test/stubs/src/theme.ts',
-      '../typedoc-plugin-markdown/test/stubs/src/frontmatter.ts',
-    ],
+    entryPoints,
     tsconfig: '../typedoc-plugin-markdown/test/stubs/tsconfig.json',
   } as Partial<PluginOptions>);
 
@@ -43,6 +46,20 @@ describe(`FrontMatter:`, () => {
         contents: 'CONTENTS',
       } as PageEvent;
       const { frontMatterComponent } = await generate();
+      frontMatterComponent.onPageEnd(page);
+      expect(page.contents).toMatchSnapshot();
+    });
+
+    test(`should set default index page with exports`, async () => {
+      const page = {
+        url: 'index.md',
+        model: { name: 'test-project-name' },
+        project: { name: 'test-project-name', url: 'index.md' },
+        contents: 'CONTENTS',
+      } as PageEvent;
+      const { frontMatterComponent } = await generate({}, [
+        '../typedoc-plugin-markdown/test/stubs/src/theme.ts',
+      ]);
       frontMatterComponent.onPageEnd(page);
       expect(page.contents).toMatchSnapshot();
     });
