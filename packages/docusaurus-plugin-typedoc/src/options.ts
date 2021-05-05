@@ -13,7 +13,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
     categoryLabel: 'API',
-    indexLabel: 'Table of contents',
+    indexLabel: undefined,
     readmeLabel: 'Readme',
     position: null,
   },
