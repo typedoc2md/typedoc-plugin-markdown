@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.7.2...typedoc-plugin-markdown@3.8.0) (2021-05-05)
+
+
+### Bug Fixes
+
+* Add space between 'Const' and signature name ([#220](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/220)) ([9400803](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/9400803a7dd0809d92c01d654e3fa75a01cb747e))
+
+
+### Features
+
+* Enforce markdowninit standards ([#219](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/219)) ([76a90bb](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/76a90bb052fa289d5b234081e45b9b40e3c7649c))
+* Improve heading structure with disabled inline toc ([#222](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/222)) ([2e898ac](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/2e898ac1ec7b00a610da7d57d90a155f649d64a7))
+
+
+
+
+
 ## [3.7.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.7.1...typedoc-plugin-markdown@3.7.2) (2021-04-25)
 
 
