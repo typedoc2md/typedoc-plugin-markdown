@@ -34,7 +34,7 @@ Object {
   "sidebar": Object {
     "categoryLabel": "API",
     "fullNames": false,
-    "indexLabel": "Table of contents",
+    "indexLabel": undefined,
     "position": null,
     "readmeLabel": "Readme",
     "sidebarFile": "typedoc-sidebar.js",
