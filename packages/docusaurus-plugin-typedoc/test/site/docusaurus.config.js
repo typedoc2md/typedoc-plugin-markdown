@@ -9,7 +9,8 @@ module.exports = {
         entryPoints: '../../../typedoc-plugin-markdown/test/stubs/src/index.ts',
         tsconfig: '../../../typedoc-plugin-markdown/test/stubs/tsconfig.json',
         sidebar: {
-          sidebarFile: './sidebars/typedoc-sidebar-1.js',
+          position: 0,
+          categoryLabel: 'API 1',
         },
       },
     ],
@@ -26,7 +27,7 @@ module.exports = {
         tsconfig: '../../../typedoc-plugin-markdown/test/stubs/tsconfig.json',
         out: 'api-2',
         sidebar: {
-          sidebarFile: './sidebars/typedoc-sidebar-2.js',
+          sidebarFile: './demo/typedoc-sidebar.js',
         },
       },
     ],

@@ -44,6 +44,7 @@ export class FrontMatterComponent extends RendererComponent {
     const pageId = this.getId(page);
     const pageTitle = this.getTitle(page);
     const sidebarLabel = this.getSidebarLabel(page);
+    const sidebarPosition = this.getSidebarPosition(page);
     let items: FrontMatter = {
       id: pageId,
       title: pageTitle,
@@ -53,6 +54,9 @@ export class FrontMatterComponent extends RendererComponent {
     }
     if (sidebarLabel && sidebarLabel !== pageTitle) {
       items = { ...items, sidebar_label: sidebarLabel };
+    }
+    if (sidebarPosition) {
+      items = { ...items, sidebar_position: parseFloat(sidebarPosition) };
     }
     if (page.url === page.project.url && this.allReflectionsHaveOwnDocument) {
       items = { ...items, hide_table_of_contents: true };
@@ -64,9 +68,6 @@ export class FrontMatterComponent extends RendererComponent {
   }
 
   getSidebarLabel(page: PageEvent) {
-    if (!this.sidebar) {
-      return null;
-    }
     if (page.url === this.entryDocument) {
       return page.url === page.project.url
         ? this.sidebar.indexLabel
@@ -77,6 +78,19 @@ export class FrontMatterComponent extends RendererComponent {
       return this.sidebar.indexLabel;
     }
     return this.sidebar.fullNames ? page.model.getFullName() : page.model.name;
+  }
+
+  getSidebarPosition(page: PageEvent) {
+    if (page.url === this.entryDocument) {
+      return page.url === page.project.url ? '0.5' : '0';
+    }
+    if (page.url === this.globalsFile) {
+      return '0.5';
+    }
+    if (page.model.getFullName().split('.').length === 1) {
+      return '0';
+    }
+    return null;
   }
 
   getId(page: PageEvent) {

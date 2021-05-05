@@ -3,7 +3,6 @@ import * as fs from 'fs-extra';
 import * as tmp from 'tmp';
 
 import typedocPlugin from '../../dist/plugin';
-import * as watch from '../../dist/watch';
 
 tmp.setGracefulCleanup();
 
@@ -46,23 +45,11 @@ describe(`Plugin:`, () => {
       expect(sidebar.toString()).toMatchSnapshot();
     });
 
-    test(`should write sidebar`, () => {
-      const sidebar = fs.readFileSync(tmpobj.name + '/typedoc-sidebar.js');
+    test(`should write category yaml`, () => {
+      const sidebar = fs.readFileSync(
+        tmpobj.name + '/docs/api/classes/_category_.yml',
+      );
       expect(sidebar.toString()).toMatchSnapshot();
-    });
-  });
-
-  describe(`(watch)`, () => {
-    let tmpobj: tmp.DirResult;
-    let watchSpy: jest.SpyInstance;
-    beforeAll(async () => {
-      watchSpy = jest.spyOn(watch, 'convertAndWatch').mockReturnValue();
-      tmpobj = tmp.dirSync();
-      await bootstrap(tmpobj, { id: 'watch', watch: true });
-    });
-
-    test(`should call watch`, async () => {
-      expect(watchSpy).toHaveBeenCalled();
     });
   });
 });

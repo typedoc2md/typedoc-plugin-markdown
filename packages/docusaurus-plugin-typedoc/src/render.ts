@@ -1,28 +1,43 @@
+import * as fs from 'fs';
+
 import ProgressBar from 'progress';
 import {
   Application,
   MixedDeclarationOption,
   ParameterType,
   ProjectReflection,
+  ReflectionKind,
   StringDeclarationOption,
   TSConfigReader,
   TypeDocReader,
   UrlMapping,
 } from 'typedoc';
+import { GroupPlugin } from 'typedoc/dist/lib/converter/plugins';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
+import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
+import { FrontMatterComponent } from './front-matter';
 import { getPluginOptions } from './options';
 import { PluginOptions } from './types';
 
-export const bootstrap = (
-  app: Application,
-  siteDir: string,
-  opts: Partial<PluginOptions>,
-) => {
+const CATEGORY_POSITION = {
+  [ReflectionKind.Module]: 1,
+  [ReflectionKind.Namespace]: 1,
+  [ReflectionKind.Enum]: 2,
+  [ReflectionKind.Class]: 3,
+  [ReflectionKind.Interface]: 4,
+  [ReflectionKind.TypeAlias]: 5,
+  [ReflectionKind.Variable]: 6,
+  [ReflectionKind.Function]: 7,
+  [ReflectionKind.ObjectLiteral]: 8,
+};
+
+export const bootstrap = (app: Application, opts: Partial<PluginOptions>) => {
   addTypedocReaders(app);
   addTypedocDeclarations(app);
+  app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
   app.renderer.render = render;
-  app.bootstrap(getPluginOptions(siteDir, opts));
+  app.bootstrap(getPluginOptions(opts));
   return app.options.getRawValues() as PluginOptions;
 };
 
@@ -37,7 +52,9 @@ async function render(project: ProjectReflection, outputDirectory: string) {
     project,
   );
 
-  output.settings = this.application.options.getRawValues();
+  const options: PluginOptions = this.application.options.getRawValues();
+
+  output.settings = options;
   output.urls = this.theme!.getUrls(project);
 
   if (output.urls) {
@@ -53,8 +70,49 @@ async function render(project: ProjectReflection, outputDirectory: string) {
       });
       this.trigger(RendererEvent.END, output);
     }
+
+    writeCategoryYaml(
+      outputDirectory,
+      options.sidebar.categoryLabel,
+      options.sidebar.position,
+    );
+
+    Object.keys(groupUrlsByKind(output.urls)).forEach((group) => {
+      const kind = parseInt(group);
+      const mapping = this.theme.mappings.find((mapping: TemplateMapping) =>
+        mapping.kind.includes(kind),
+      );
+      if (mapping) {
+        writeCategoryYaml(
+          outputDirectory + '/' + mapping.directory,
+          GroupPlugin.getKindPlural(kind),
+          CATEGORY_POSITION[kind],
+        );
+      }
+    });
   }
 }
+
+const writeCategoryYaml = (
+  categoryPath: string,
+  label: string,
+  position: number | null,
+) => {
+  const yaml: string[] = [`label: "${label}"`];
+  if (position !== null) {
+    yaml.push(`position: ${position}`);
+  }
+  if (fs.existsSync(categoryPath)) {
+    fs.writeFileSync(categoryPath + '/_category_.yml', yaml.join('\n'));
+  }
+};
+
+const groupUrlsByKind = (urls: UrlMapping[]) => {
+  return urls.reduce(
+    (r, v, i, a, k = v.model.kind) => ((r[k] || (r[k] = [])).push(v), r),
+    {},
+  );
+};
 
 const addTypedocReaders = (app: Application) => {
   app.options.addReader(new TypeDocReader());

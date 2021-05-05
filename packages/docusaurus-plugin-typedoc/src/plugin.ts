@@ -2,12 +2,10 @@ import { LoadContext } from '@docusaurus/types';
 import { Application } from 'typedoc';
 import MarkdownPlugin from 'typedoc-plugin-markdown';
 
-import { FrontMatterComponent } from './front-matter';
 import { getOutputDirectory } from './options';
 import { bootstrap } from './render';
-import { SidebarComponent, writeSidebar } from './sidebar';
+import { shouldWriteSidebar, writeSidebar } from './sidebar';
 import { PluginOptions } from './types';
-import { convertAndWatch } from './watch';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -25,15 +23,15 @@ export default async function pluginDocusaurus(
 
     MarkdownPlugin(app);
 
-    const options = bootstrap(app, siteDir, opts);
+    const options = bootstrap(app, opts);
 
-    if (options.sidebar) {
-      // generate an empty sidebar up-front so it can be resolved from sidebars.js
-      writeSidebar(options, 'module.exports=[];');
-      app.renderer.addComponent('sidebar', new SidebarComponent(app.renderer));
+    // Try not break legacy manual sidebar generation implementations
+    if (shouldWriteSidebar(siteDir, options)) {
+      app.logger.warn(
+        'As of docusaurus-plugin-markdown@0.14.0 manual sidebar generation is deprecated. Please see package Readme for details.',
+      );
+      writeSidebar(siteDir, options);
     }
-
-    app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
 
     const project = app.convert();
 
@@ -43,9 +41,11 @@ export default async function pluginDocusaurus(
     }
 
     if (options.watch) {
-      convertAndWatch(app, options);
+      app.convertAndWatch(async (project) => {
+        await app.generateDocs(project, getOutputDirectory(siteDir, options));
+      });
     } else {
-      await app.generateDocs(project, getOutputDirectory(options));
+      await app.generateDocs(project, getOutputDirectory(siteDir, options));
     }
   }
 
