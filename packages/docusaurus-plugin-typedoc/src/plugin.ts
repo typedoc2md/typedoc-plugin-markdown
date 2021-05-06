@@ -4,7 +4,7 @@ import MarkdownPlugin from 'typedoc-plugin-markdown';
 
 import { getOutputDirectory } from './options';
 import { bootstrap } from './render';
-import { shouldWriteSidebar, writeSidebar } from './sidebar';
+import { writeSidebar } from './sidebar';
 import { PluginOptions } from './types';
 
 // store list of plugin ids when running multiple instances
@@ -25,11 +25,8 @@ export default async function pluginDocusaurus(
 
     const options = bootstrap(app, opts);
 
-    // Try not break legacy manual sidebar generation implementations
-    if (shouldWriteSidebar(siteDir, options)) {
-      app.logger.warn(
-        'As of docusaurus-plugin-markdown@0.14.0 manual sidebar generation is deprecated. Please see package Readme for details.',
-      );
+    // Do not break legacy manual sidebar generation implementations
+    if (options.sidebar.sidebarFile) {
       writeSidebar(siteDir, options);
     }
 
