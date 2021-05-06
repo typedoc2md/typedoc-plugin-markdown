@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.14.0...docusaurus-plugin-typedoc@0.14.1) (2021-05-06)
+
+
+### Bug Fixes
+
+* Fix manual sidebar backward compatibility ([#224](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/224)) ([dc873d4](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/dc873d430ff29307e29abc81f115b5033a89ab51))
+
+
+
+
+
 # [0.14.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.13.0...docusaurus-plugin-typedoc@0.14.0) (2021-05-05)
 
 
