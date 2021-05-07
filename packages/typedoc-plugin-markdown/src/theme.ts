@@ -3,7 +3,6 @@ import * as fs from 'fs';
 import * as Handlebars from 'handlebars';
 import {
   BindOption,
-  ContainerReflection,
   DeclarationReflection,
   NavigationItem,
   ProjectReflection,
@@ -11,7 +10,8 @@ import {
   Renderer,
   UrlMapping,
 } from 'typedoc';
-import { ReflectionGroup, ReflectionKind } from 'typedoc/dist/lib/models';
+import { GroupPlugin } from 'typedoc/dist/lib/converter/plugins';
+import { ReflectionKind } from 'typedoc/dist/lib/models';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 import { Theme } from 'typedoc/dist/lib/output/theme';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
@@ -225,90 +225,58 @@ export default class MarkdownTheme extends Theme {
     return reflectionId;
   }
 
-  getNavigation(project: ProjectReflection): NavigationItem {
-    const buildNavigationGroups = (
-      navigation: NavigationItem,
-      groups: ReflectionGroup[],
-    ) => {
-      groups
-        .filter((group) => group.allChildrenHaveOwnDocument())
-        .forEach((reflectionGroup) => {
-          let reflectionGroupItem = navigation.children?.find(
-            (child) =>
-              child.title === reflectionGroup.title && child.isLabel === true,
-          );
-          if (!reflectionGroupItem) {
-            reflectionGroupItem = createNavigationItem(
-              reflectionGroup.title,
-              undefined,
-              true,
-            );
-            navigation.children?.push(reflectionGroupItem);
-          }
-          reflectionGroup.children.forEach((reflectionGroupChild) => {
-            const reflectionGroupChildItem = createNavigationItem(
-              reflectionGroupChild.getFullName(),
-              reflectionGroupChild.url,
-              true,
-            );
-            if (reflectionGroupItem) {
-              reflectionGroupItem.children?.push(reflectionGroupChildItem);
-            }
-            const reflection = reflectionGroupChild as ContainerReflection;
-            if (reflection.groups) {
-              buildNavigationGroups(navigation, reflection.groups);
-            }
-          });
-        });
-    };
-
+  getNavigation(project: ProjectReflection) {
     const createNavigationItem = (
       title: string,
       url: string | undefined,
       isLabel: boolean,
+      children: NavigationItem[] = [],
     ) => {
-      const navigationItem = new NavigationItem(title.replace(/\"/g, ''), url);
+      const navigationItem = new NavigationItem(title, url);
       navigationItem.isLabel = isLabel;
-      navigationItem.children = [];
-      delete navigationItem.reflection;
-      delete navigationItem.parent;
-      return navigationItem;
+      navigationItem.children = children;
+      const {
+        reflection,
+        parent,
+        cssClasses,
+        ...filteredNavigationItem
+      } = navigationItem;
+      return filteredNavigationItem as NavigationItem;
     };
-
-    const sortNavigationGroups = (a: NavigationItem, b: NavigationItem) => {
-      const weights = {
-        ['Namespaces']: 1,
-        ['Enumerations']: 2,
-        ['Classes']: 3,
-        ['Interfaces']: 4,
-        ['Type aliases']: 5,
-        ['Variables']: 6,
-        ['Functions']: 7,
-        ['Object literals']: 8,
-      };
-      const aWeight = weights[a.title] || 0;
-      const bWeight = weights[b.title] || 0;
-      return aWeight - bWeight;
-    };
-    const hasSeperateGlobals = this.readme !== 'none';
     const navigation = createNavigationItem(project.name, undefined, false);
-    const rootName = this.entryPoints.length > 1 ? 'Modules' : 'Exports';
-    navigation.children?.push(
-      createNavigationItem(
-        hasSeperateGlobals ? 'Readme' : rootName,
-        this.entryDocument,
-        false,
-      ),
-    );
-    if (hasSeperateGlobals) {
+    const hasReadme = this.readme !== 'none';
+    if (hasReadme) {
       navigation.children?.push(
-        createNavigationItem(rootName, this.globalsFile, false),
+        createNavigationItem('Readme', this.entryDocument, false),
       );
     }
-    if (project.groups) {
-      buildNavigationGroups(navigation, project.groups);
+    if (this.entryPoints.length === 1) {
+      navigation.children?.push(
+        createNavigationItem(
+          'Exports',
+          hasReadme ? this.globalsFile : this.entryDocument,
+          false,
+        ),
+      );
     }
-    navigation.children?.sort(sortNavigationGroups);
+    this.mappings.forEach((mapping) => {
+      const kind = mapping.kind[0];
+      const items = project.getReflectionsByKind(kind);
+      if (items.length > 0) {
+        const children = items
+          .map((item) =>
+            createNavigationItem(item.getFullName(), item.url, true),
+          )
+          .sort((a, b) => (a.title > b.title ? 1 : -1));
+        const group = createNavigationItem(
+          GroupPlugin.getKindPlural(kind),
+          undefined,
+          true,
+          children,
+        );
+        navigation.children?.push(group);
+      }
+    });
     return navigation;
   }
 
@@ -321,6 +289,24 @@ export default class MarkdownTheme extends Theme {
   get mappings() {
     return [
       {
+        kind: [ReflectionKind.Module],
+        isLeaf: false,
+        directory: 'modules',
+        template: 'reflection.hbs',
+      },
+      {
+        kind: [ReflectionKind.Namespace],
+        isLeaf: false,
+        directory: 'modules',
+        template: 'reflection.hbs',
+      },
+      {
+        kind: [ReflectionKind.Enum],
+        isLeaf: false,
+        directory: 'enums',
+        template: 'reflection.hbs',
+      },
+      {
         kind: [ReflectionKind.Class],
         isLeaf: false,
         directory: 'classes',
@@ -332,26 +318,8 @@ export default class MarkdownTheme extends Theme {
         directory: 'interfaces',
         template: 'reflection.hbs',
       },
-      {
-        kind: [ReflectionKind.Enum],
-        isLeaf: false,
-        directory: 'enums',
-        template: 'reflection.hbs',
-      },
-      {
-        kind: [ReflectionKind.Namespace, ReflectionKind.Module],
-        isLeaf: false,
-        directory: 'modules',
-        template: 'reflection.hbs',
-      },
       ...(this.allReflectionsHaveOwnDocument
         ? [
-            {
-              kind: [ReflectionKind.Variable],
-              isLeaf: true,
-              directory: 'variables',
-              template: 'reflection.member.hbs',
-            },
             {
               kind: [ReflectionKind.TypeAlias],
               isLeaf: true,
@@ -359,15 +327,15 @@ export default class MarkdownTheme extends Theme {
               template: 'reflection.member.hbs',
             },
             {
-              kind: [ReflectionKind.Function],
+              kind: [ReflectionKind.Variable],
               isLeaf: true,
-              directory: 'functions',
+              directory: 'variables',
               template: 'reflection.member.hbs',
             },
             {
-              kind: [ReflectionKind.ObjectLiteral],
+              kind: [ReflectionKind.Function],
               isLeaf: true,
-              directory: 'literals',
+              directory: 'functions',
               template: 'reflection.member.hbs',
             },
           ]

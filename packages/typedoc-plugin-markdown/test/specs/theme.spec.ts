@@ -5,11 +5,55 @@ import { TestApp } from '../test-app';
 describe(`Theme:`, () => {
   let testApp: TestApp;
 
-  beforeAll(() => {
-    testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+  describe(`(getNavigation)`, () => {
+    test(`should getNavigation'`, async () => {
+      testApp = new TestApp(['theme.ts']);
+      await testApp.bootstrap();
+      const navigation = testApp.theme.getNavigation(testApp.project);
+      expect(JSON.stringify(navigation, null, 1)).toMatchSnapshot();
+    });
+
+    test(`should getNavigation for exports'`, async () => {
+      testApp = new TestApp(['theme.ts']);
+      await testApp.bootstrap();
+      const navigation = testApp.theme
+        .getNavigation(testApp.project)
+        .children.map((child) => ({ title: child.title, url: child.url }));
+      expect(navigation).toMatchSnapshot();
+    });
+
+    test(`should getNavigation for exports with readme=none'`, async () => {
+      testApp = new TestApp(['theme.ts']);
+      await testApp.bootstrap({ readme: 'none' });
+      const navigation = testApp.theme
+        .getNavigation(testApp.project)
+        .children.map((child) => ({ title: child.title, url: child.url }));
+      expect(navigation).toMatchSnapshot();
+    });
+
+    test(`should getNavigation for modules'`, async () => {
+      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+      await testApp.bootstrap();
+      const navigation = testApp.theme
+        .getNavigation(testApp.project)
+        .children.map((child) => ({ title: child.title, url: child.url }));
+      expect(navigation).toMatchSnapshot();
+    });
+
+    test(`should getNavigation for modules with readme=none'`, async () => {
+      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+      await testApp.bootstrap({ readme: 'none' });
+      const navigation = testApp.theme
+        .getNavigation(testApp.project)
+        .children.map((child) => ({ title: child.title, url: child.url }));
+      expect(navigation).toMatchSnapshot();
+    });
   });
 
   describe(`(getUrls)`, () => {
+    beforeAll(() => {
+      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+    });
     test(`should getUrls'`, async () => {
       await testApp.bootstrap();
       const urlMappings = testApp.theme.getUrls(testApp.project);
@@ -30,6 +74,9 @@ describe(`Theme:`, () => {
   });
 
   describe(`(filenameSeparator)`, () => {
+    beforeAll(() => {
+      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+    });
     test(`should getUrls with custom separator'`, async () => {
       await testApp.bootstrap({ filenameSeparator: '-' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
@@ -46,6 +93,9 @@ describe(`Theme:`, () => {
   });
 
   describe(`(isOutputDirectory)`, () => {
+    beforeAll(() => {
+      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+    });
     let directoryListingSpy: jest.SpyInstance;
 
     beforeAll(async () => {
@@ -113,31 +163,6 @@ describe(`Theme:`, () => {
     test(`should test output directory false with unknown folder`, () => {
       directoryListingSpy.mockReturnValue(['README.md', 'folder']);
       expect(testApp.theme.isOutputDirectory('/path')).toBeFalsy();
-    });
-  });
-
-  describe(`(directory mappings)`, () => {
-    test(`should set default mappings'`, async () => {
-      await testApp.bootstrap();
-      expect(
-        testApp.theme.mappings.map((mapping) => mapping.directory),
-      ).toEqual(['classes', 'interfaces', 'enums', 'modules']);
-    });
-
-    test(`should set mappings with 'allReflectionsHaveOwnDocument'`, async () => {
-      await testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
-      expect(
-        testApp.theme.mappings.map((mapping) => mapping.directory),
-      ).toEqual([
-        'classes',
-        'interfaces',
-        'enums',
-        'modules',
-        'variables',
-        'types',
-        'functions',
-        'literals',
-      ]);
     });
   });
 });

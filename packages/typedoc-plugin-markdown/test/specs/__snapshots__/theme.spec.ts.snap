@@ -60,6 +60,218 @@ Array [
 ]
 `;
 
+exports[`Theme: (getNavigation) should getNavigation for exports with readme=none' 1`] = `
+Array [
+  Object {
+    "title": "Exports",
+    "url": "README.md",
+  },
+  Object {
+    "title": "Namespaces",
+    "url": "",
+  },
+  Object {
+    "title": "Enumerations",
+    "url": "",
+  },
+  Object {
+    "title": "Classes",
+    "url": "",
+  },
+  Object {
+    "title": "Interfaces",
+    "url": "",
+  },
+]
+`;
+
+exports[`Theme: (getNavigation) should getNavigation for exports' 1`] = `
+Array [
+  Object {
+    "title": "Readme",
+    "url": "README.md",
+  },
+  Object {
+    "title": "Exports",
+    "url": "modules.md",
+  },
+  Object {
+    "title": "Namespaces",
+    "url": "",
+  },
+  Object {
+    "title": "Enumerations",
+    "url": "",
+  },
+  Object {
+    "title": "Classes",
+    "url": "",
+  },
+  Object {
+    "title": "Interfaces",
+    "url": "",
+  },
+]
+`;
+
+exports[`Theme: (getNavigation) should getNavigation for modules with readme=none' 1`] = `
+Array [
+  Object {
+    "title": "Modules",
+    "url": "",
+  },
+  Object {
+    "title": "Namespaces",
+    "url": "",
+  },
+  Object {
+    "title": "Enumerations",
+    "url": "",
+  },
+  Object {
+    "title": "Classes",
+    "url": "",
+  },
+  Object {
+    "title": "Interfaces",
+    "url": "",
+  },
+]
+`;
+
+exports[`Theme: (getNavigation) should getNavigation for modules' 1`] = `
+Array [
+  Object {
+    "title": "Readme",
+    "url": "README.md",
+  },
+  Object {
+    "title": "Modules",
+    "url": "",
+  },
+  Object {
+    "title": "Namespaces",
+    "url": "",
+  },
+  Object {
+    "title": "Enumerations",
+    "url": "",
+  },
+  Object {
+    "title": "Classes",
+    "url": "",
+  },
+  Object {
+    "title": "Interfaces",
+    "url": "",
+  },
+]
+`;
+
+exports[`Theme: (getNavigation) should getNavigation' 1`] = `
+"{
+ \\"title\\": \\"typedoc-plugin-markdown\\",
+ \\"url\\": \\"\\",
+ \\"isLabel\\": false,
+ \\"children\\": [
+  {
+   \\"title\\": \\"Readme\\",
+   \\"url\\": \\"README.md\\",
+   \\"isLabel\\": false,
+   \\"children\\": []
+  },
+  {
+   \\"title\\": \\"Exports\\",
+   \\"url\\": \\"modules.md\\",
+   \\"isLabel\\": false,
+   \\"children\\": []
+  },
+  {
+   \\"title\\": \\"Namespaces\\",
+   \\"url\\": \\"\\",
+   \\"isLabel\\": true,
+   \\"children\\": [
+    {
+     \\"title\\": \\"namespaceA\\",
+     \\"url\\": \\"modules/namespacea.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    },
+    {
+     \\"title\\": \\"namespaceB\\",
+     \\"url\\": \\"modules/namespaceb.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    }
+   ]
+  },
+  {
+   \\"title\\": \\"Enumerations\\",
+   \\"url\\": \\"\\",
+   \\"isLabel\\": true,
+   \\"children\\": [
+    {
+     \\"title\\": \\"enumItemA\\",
+     \\"url\\": \\"enums/enumitema.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    },
+    {
+     \\"title\\": \\"enumItemB\\",
+     \\"url\\": \\"enums/enumitemb.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    }
+   ]
+  },
+  {
+   \\"title\\": \\"Classes\\",
+   \\"url\\": \\"\\",
+   \\"isLabel\\": true,
+   \\"children\\": [
+    {
+     \\"title\\": \\"ClassItemA\\",
+     \\"url\\": \\"classes/classitema.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    },
+    {
+     \\"title\\": \\"ClassItemB\\",
+     \\"url\\": \\"classes/classitemb.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    },
+    {
+     \\"title\\": \\"namespaceA.SomeNestedClass\\",
+     \\"url\\": \\"classes/namespacea.somenestedclass.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    }
+   ]
+  },
+  {
+   \\"title\\": \\"Interfaces\\",
+   \\"url\\": \\"\\",
+   \\"isLabel\\": true,
+   \\"children\\": [
+    {
+     \\"title\\": \\"InterfaceItemA\\",
+     \\"url\\": \\"interfaces/interfaceitema.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    },
+    {
+     \\"title\\": \\"InterfaceItemB\\",
+     \\"url\\": \\"interfaces/interfaceitemb.md\\",
+     \\"isLabel\\": true,
+     \\"children\\": []
+    }
+   ]
+  }
+ ]
+}"
+`;
+
 exports[`Theme: (getUrls) should getUrls with 'allReflectionsHaveOwnDocument' set 1`] = `
 Array [
   "modules.md",
