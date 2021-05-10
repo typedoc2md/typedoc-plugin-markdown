@@ -1,23 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Theme: should getUrls' 1`] = `
+exports[`Theme: sidebar should write sidebar for exports' 1`] = `
+"## typedoc-plugin-markdown
+
+- [Home](../wiki/Home)
+- [Exports](../wiki/Exports)
+
+### Namespaces
+
+- [namespaceA](../wiki/Namespace:%20namespaceA)
+- [namespaceB](../wiki/Namespace:%20namespaceB)
+
+### Enumerations
+
+- [enumItemA](../wiki/Enumeration:%20enumItemA)
+- [enumItemB](../wiki/Enumeration:%20enumItemB)
+
+### Classes
+
+- [ClassItemA](../wiki/Class:%20ClassItemA)
+- [ClassItemB](../wiki/Class:%20ClassItemB)
+- [SomeNestedClass](../wiki/Class:%20SomeNestedClass)
+
+### Interfaces
+
+- [InterfaceItemA](../wiki/Interface:%20InterfaceItemA)
+- [InterfaceItemB](../wiki/Interface:%20InterfaceItemB)
+"
+`;
+
+exports[`Theme: sidebar should write sidebar for modules' 1`] = `
+"## typedoc-plugin-markdown
+
+
+### Modules
+
+- [breadcrumbs](../wiki/Module:%20breadcrumbs)
+- [theme](../wiki/Module:%20theme)
+
+### Namespaces
+
+- [namespaceA](../wiki/Namespace:%20namespaceA)
+- [namespaceB](../wiki/Namespace:%20namespaceB)
+
+### Enumerations
+
+- [enumItemA](../wiki/Enumeration:%20enumItemA)
+- [enumItemB](../wiki/Enumeration:%20enumItemB)
+
+### Classes
+
+- [Breadcrumbs](../wiki/Class:%20Breadcrumbs)
+- [ClassItemA](../wiki/Class:%20ClassItemA)
+- [ClassItemB](../wiki/Class:%20ClassItemB)
+- [SomeNestedClass](../wiki/Class:%20SomeNestedClass)
+
+### Interfaces
+
+- [InterfaceItemA](../wiki/Interface:%20InterfaceItemA)
+- [InterfaceItemB](../wiki/Interface:%20InterfaceItemB)
+"
+`;
+
+exports[`Theme: url should getUrls' 1`] = `
 Array [
-  "Modules.md",
-  "Modules.md#declarationitema",
-  "Modules.md#declarationitemb",
-  "Modules.md#functionitema",
-  "Modules.md#functionitemb",
+  "Exports.md",
+  "Exports.md#declarationitema",
+  "Exports.md#declarationitemb",
+  "Exports.md#functionitema",
+  "Exports.md#functionitemb",
   "Home.md",
-  "Modules.md#declarationitema",
-  "Modules.md#declarationitemb",
-  "Modules.md#functionitema",
-  "Modules.md#functionitemb",
-  "Module: namespaceA.md",
+  "Exports.md#declarationitema",
+  "Exports.md#declarationitemb",
+  "Exports.md#functionitema",
+  "Exports.md#functionitemb",
+  "Namespace: namespaceA.md",
   "Class: SomeNestedClass.md",
   "Class: SomeNestedClass.md#constructor",
-  "Module: namespaceB.md",
-  "Enum: enumItemA.md",
-  "Enum: enumItemB.md",
+  "Namespace: namespaceB.md",
+  "Enumeration: enumItemA.md",
+  "Enumeration: enumItemB.md",
   "Class: ClassItemA.md",
   "Class: ClassItemA.md#constructor",
   "Class: ClassItemB.md",
