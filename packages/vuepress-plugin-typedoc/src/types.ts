@@ -1,8 +1,8 @@
 import { Application, ProjectReflection } from 'typedoc';
 
 export interface PluginOptions {
-  hideBreadcrumbs: boolean;
   out: string;
+  readme?: string;
   sidebar?: SidebarOptions | null;
   plugin: string[];
   watch: boolean;
@@ -18,4 +18,9 @@ export interface SidebarOptions {
 export interface LoadedContent {
   app: Application;
   project: ProjectReflection;
+}
+
+export interface FrontMatter {
+  title: string;
+  sidebarDepth?: number;
 }

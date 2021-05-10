@@ -21,10 +21,11 @@ This guide assumes that a VuePress project has been setup. See [getting started 
 npm install typedoc typedoc-plugin-markdown vuepress-plugin-typedoc --save-dev
 ```
 
+## Usage
+
 ### Config
 
 Add the plugin to `.vuepress/config.js` and specify the required options (see [options](#options)).
-
 
 ```js
 plugins: [
@@ -78,15 +79,22 @@ Additional TypeDoc plugins will need to be explicitly set:
 plugin:['typedoc-plugin-xyz']
 ```
 
+TypeDoc options can also be declared:
+
+- Using a `typedoc.json` file.
+- Under the `typedocOptions` key in `tsconfig.json`.
+
+Note: Options declared in this manner will take priority and overwrite options declared in `docusaurus.config.js`.
+
+
 ### Plugin options
 
-| Name                            | Default  | Description                                                                        |
-| :------------------------------ | :------- | :--------------------------------------------------------------------------------- |
-| `out`                           | `"api"`  | Output directory relative to docs directory.                                       |
-| `allReflectionsHaveOwnDocument` | `false`  | Output all reflections into seperate output files.                                 |
-| `hideInPageTOC`                 | `false`  | Do not render in-page table of contents items.                                     |
-| `sidebar.fullNames`             | `false`  | Display full names with module path if applicable.                                 |
-| `sidebar.parentCategory`        | `"none"` | The parent category label for sidebar - (defaults to `none` - no parent category). |
+| Name                     | Default | Description                                                                  |
+| :----------------------- | :------ | :--------------------------------------------------------------------------- |
+| `out`                    | `"api"` | Output directory relative to docs directory.                                 |
+| `hideInPageTOC`          | `false` | Do not render in-page table of contents items.                               |
+| `sidebar.fullNames`      | `false` | Display full names with module path if applicable.                           |
+| `sidebar.parentCategory` | `"API"` | The parent category label for sidebar. Pass `"none"` for no parent category. |
 
 
 ### Example config
@@ -112,8 +120,6 @@ plugin:['typedoc-plugin-xyz']
   ],
 
 ```
-
-Once built the docs will be available at `/api` or equivalent out directory.
 
 ## License
 

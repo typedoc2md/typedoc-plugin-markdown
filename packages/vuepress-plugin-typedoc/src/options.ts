@@ -12,9 +12,8 @@ import { PluginOptions, SidebarOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   out: 'api',
-  hideBreadcrumbs: true,
   sidebar: {
-    parentCategory: 'none',
+    parentCategory: 'API',
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
     sidebarPath: '',

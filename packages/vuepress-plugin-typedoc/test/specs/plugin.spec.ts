@@ -43,14 +43,14 @@ describe(`(sidebars)`, () => {
     bootstrap(tmpobj);
   });
   test(`should generate default`, async () => {
-    const plugin = bootstrap(tmpobj);
+    const plugin = bootstrap(tmpobj, { sidebar: { parentCategory: 'none' } });
     const enhancedFiles = await plugin.enhanceAppFiles();
     expect(enhancedFiles).toMatchSnapshot();
   });
 
   test(`should generate with parent category and fullNames`, async () => {
     const plugin = bootstrap(tmpobj, {
-      sidebar: { parentCategory: 'Parent Category', fullNames: true },
+      sidebar: { fullNames: true },
     });
     const enhancedFiles = await plugin.enhanceAppFiles();
     expect(enhancedFiles).toMatchSnapshot();
