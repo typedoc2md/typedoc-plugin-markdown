@@ -24,8 +24,8 @@
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf ./dist && tsc",
     "test:init": "rm -rf test/site && yarn create vuepress-site test/site",
-    "test:demo:start": "rm -rf ./test/site/docs/api && yarn run build && cd test/site/docs && yarn run dev",
-    "test:demo:build": "rm -rf ./test/site/docs/api && yarn run build && cd test/site/docs && yarn run build && npx http-server ./src/.vuepress/dist -o",
+    "test:demo:start": "yarn run build && cd test/site/docs && yarn run dev",
+    "test:demo:build": "yarn run build && cd test/site/docs && yarn run build && npx http-server ./src/.vuepress/dist -o",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test"
   },

@@ -38,6 +38,10 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
+        text: 'API',
+        link: '/api/',
+      },
+      {
         text: 'Guide',
         link: '/guide/',
       },
@@ -68,8 +72,9 @@ module.exports = {
     [
       path.resolve(__dirname, '..', '..', '..', '..', '..', 'dist'),
       {
-        entryPoints:
+        entryPoints: [
           '../../../../typedoc-plugin-markdown/test/stubs/src/index.ts',
+        ],
         tsconfig:
           '../../../../typedoc-plugin-markdown/test/stubs/tsconfig.json',
       },

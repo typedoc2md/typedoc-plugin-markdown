@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 import { Application, ProjectReflection } from 'typedoc';
 import MarkdownPlugin from 'typedoc-plugin-markdown';
 
@@ -21,7 +23,7 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
 
   addOptions(app);
 
-  app.bootstrap(options);
+  app.bootstrap({ ...options, theme: path.resolve(__dirname) });
 
   app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
 
@@ -50,19 +52,14 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
       }
       const theme = app.renderer.theme as any;
       const navigation = theme.getNavigation(project);
+      const sidebarJson = JSON.stringify({
+        [`/${options.out}/`]: getSidebarJson(navigation, options),
+      });
       return {
         name: 'typedoc-sidebar',
         content: `export default ({ siteData, options }) => {
           siteData.themeConfig.sidebarDepth = 0;
-          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,${JSON.stringify(
-            {
-              [`/${options.out}/`]: getSidebarJson(
-                navigation,
-                options.out,
-                options.sidebar,
-              ),
-            },
-          )});
+          siteData.themeConfig.sidebar = Object.assign({},siteData.themeConfig.sidebar,${sidebarJson});
         }`,
       };
     },
