@@ -36,8 +36,6 @@ exports[`Declarations: should compile any function type 1`] = `
 **Returns:** A
 
 [partial: member.sources]
-
-[partial: member.sources]
 "
 `;
 
@@ -120,8 +118,6 @@ exports[`Declarations: should compile type literal declaration 2`] = `
 ▸ (): *string*
 
 **Returns:** *string*
-
-[partial: member.sources]
 
 | Name | Type |
 | :------ | :------ |
