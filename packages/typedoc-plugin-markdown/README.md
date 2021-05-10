@@ -42,24 +42,23 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 
 
-## Additional themes and plugins
+## Additional plugins and thene
 
-If targeting specific static site generators or wiki platforms the following themes and plugins may be of interest:
-
-### Themes
-
-Themes that target particular Markdown platforms:
-
-- Github Wiki: [typedoc-github-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-github-wiki-theme/README.md)
-- GitLab Wiki: [typedoc-gitlab-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-gitlab-wiki-theme/README.md)
-- Hugo: [typedoc-hugo-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-hugo-theme/README.md)
+If targeting specific static site generators or wiki platforms the following plugins and themes may be of interest:
 
 ### Plugins
 
 Plugins that integrates TypeDoc seamlessly with a particular platform ecosystem:
 
-- Docusaurus v2: [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
-- VuePress: [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
+- Docusaurus v2 - [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
+- VuePress - [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
+
+### Themes
+
+Themes that target output to particular Markdown platforms:
+
+- GitHub Wiki - [typedoc-github-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-github-wiki-theme/README.md)
+- GitLab Wiki - [typedoc-gitlab-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-gitlab-wiki-theme/README.md)
 
 ## License
 
