@@ -4,8 +4,6 @@ exports[`Signatures: should compile callable signature' 1`] = `
 "▸ **CallableSignature**(): *string*
 
 **Returns:** *string*
-
-[partial: member.sources]
 "
 `;
 
@@ -13,8 +11,6 @@ exports[`Signatures: should compile function that returns a function' 1`] = `
 "▸ **functionReturningAFunction**(): *function*
 
 **Returns:** () => *boolean*
-
-[partial: member.sources]
 "
 `;
 
@@ -27,8 +23,6 @@ exports[`Signatures: should compile function that returns an object' 1`] = `
 | :------ | :------ |
 | \`x\` | *number* |
 | \`y\` | *number* |
-
-[partial: member.sources]
 "
 `;
 
@@ -52,8 +46,6 @@ Some nested params.
 | \`context\` | *any* | The context of the method call. |
 
 **Returns:** *boolean*
-
-[partial: member.sources]
 "
 `;
 
@@ -67,8 +59,6 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 | \`descriptor\` | *TypedPropertyDescriptor*<any\\\\> |
 
 **Returns:** *boolean*
-
-[partial: member.sources]
 "
 `;
 
@@ -87,8 +77,6 @@ FOO
 | \`anotherParam\` | *string* | - | - |
 
 **Returns:** *void*
-
-[partial: member.sources]
 "
 `;
 
@@ -102,8 +90,6 @@ exports[`Signatures: should compile named parameters' 1`] = `
 | \`__namedParameters\` | *Object* |
 
 **Returns:** *string*
-
-[partial: member.sources]
 "
 `;
 
@@ -117,8 +103,6 @@ exports[`Signatures: should compile pipes in params and comments' 1`] = `
 | \`n\` | *number* \\\\| \`\`null\`\` | a\\\\|b |
 
 **Returns:** *number* \\\\| \`\`null\`\`
-
-[partial: member.sources]
 "
 `;
 
@@ -130,8 +114,6 @@ Comments with a return definition
 **Returns:** *boolean*
 
 Return comments
-
-[partial: member.sources]
 "
 `;
 
@@ -139,8 +121,6 @@ exports[`Signatures: should compile signature with a flag' 1`] = `
 "▸ \`Private\` **privateFunction**(): *string*
 
 **Returns:** *string*
-
-[partial: member.sources]
 "
 `;
 
@@ -161,8 +141,6 @@ This is a function with a parameter that has a default value.
 | \`valueF\` | *string* | '<foo\\\\>' | - |
 
 **Returns:** *string*
-
-[partial: member.sources]
 "
 `;
 
@@ -179,8 +157,6 @@ This is a function with a parameter that is optional.
 | \`optionalParam?\` | *string* | An optional parameter. |
 
 **Returns:** *void*
-
-[partial: member.sources]
 "
 `;
 
@@ -198,8 +174,6 @@ This is a function with multiple arguments and a return value.
 | \`paramA\` | *any* | This is a **parameter** pointing to an interface. |
 
 **Returns:** *number*
-
-[partial: member.sources]
 "
 `;
 
@@ -215,8 +189,6 @@ This is a function with rest parameter.
 | \`...rest\` | *string*[] | The rest parameter. |
 
 **Returns:** *string*
-
-[partial: member.sources]
 "
 `;
 
@@ -230,8 +202,6 @@ exports[`Signatures: should compile signature with type params' 1`] = `
 | \`Item\` | *string* \\\\| *boolean* |
 
 **Returns:** *boolean*
-
-[partial: member.sources]
 "
 `;
 
@@ -246,7 +216,5 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 | \`...args\` | (*string* \\\\| *number*)[] |
 
 **Returns:** *any*
-
-[partial: member.sources]
 "
 `;
