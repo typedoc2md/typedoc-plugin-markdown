@@ -2,16 +2,16 @@
 
 exports[`Theme: should getUrls' 1`] = `
 Array [
-  "modules.md",
-  "modules.md#declarationitema",
-  "modules.md#declarationitemb",
-  "modules.md#functionitema",
-  "modules.md#functionitemb",
+  "Exports.md",
+  "Exports.md#declarationitema",
+  "Exports.md#declarationitemb",
+  "Exports.md#functionitema",
+  "Exports.md#functionitemb",
   "home.md",
-  "modules.md#declarationitema",
-  "modules.md#declarationitemb",
-  "modules.md#functionitema",
-  "modules.md#functionitemb",
+  "Exports.md#declarationitema",
+  "Exports.md#declarationitemb",
+  "Exports.md#functionitema",
+  "Exports.md#functionitemb",
   "modules/Namespace:-namespaceA.md",
   "classes/Class:-SomeNestedClass.md",
   "classes/Class:-SomeNestedClass.md#constructor",
@@ -30,8 +30,10 @@ Array [
 `;
 
 exports[`Theme: should write sidebar' 1`] = `
-"## [typedoc-plugin-markdown](home)
+"## typedoc-plugin-markdown
 
+- [Home](home)
+- [Exports](Exports)
 
 ### Namespaces
 
@@ -45,9 +47,9 @@ exports[`Theme: should write sidebar' 1`] = `
 
 ### Classes
 
-- [SomeNestedClass](classes/Class:-SomeNestedClass)
 - [ClassItemA](classes/Class:-ClassItemA)
 - [ClassItemB](classes/Class:-ClassItemB)
+- [SomeNestedClass](classes/Class:-SomeNestedClass)
 
 ### Interfaces
 
