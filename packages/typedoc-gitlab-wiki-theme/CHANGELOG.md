@@ -8,12 +8,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* Improved sidebae structure ([09e713a](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/09e713a4731fc3effceaf720bdefdba0c398d608))
+* Improved sidebar structure ([09e713a](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/09e713a4731fc3effceaf720bdefdba0c398d608))
 
 
 
 
 
-## 0.0.1 (2021-03-08)
-
-**Note:** Version bump only for package typedoc-gitlab-wiki-theme
