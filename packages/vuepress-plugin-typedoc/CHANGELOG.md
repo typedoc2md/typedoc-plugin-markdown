@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.6.0...vuepress-plugin-typedoc@0.7.0) (2021-05-11)
+
+
+### Features
+
+* Improved sidebar structure ([c32ed2c](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/c32ed2c36ee3ceabcc9d255cf611b94498311b0f))
+
+
+
+
+
 # [0.6.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.5.0...vuepress-plugin-typedoc@0.6.0) (2021-03-22)
 
 

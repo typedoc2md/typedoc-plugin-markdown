@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.8.0...typedoc-plugin-markdown@3.8.1) (2021-05-11)
+
+
+### Bug Fixes
+
+* Escape double quotes inside Front Matter yaml string ([8ce2f2b](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/8ce2f2be03be6cd8d730786d48b5cd484b82ec4e))
+* Fix duplicate source blocks ([616ca4e](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/616ca4e0e28431f4183c60b54fa9682c391dffe9))
+
+
+
+
+
 # [3.8.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.7.2...typedoc-plugin-markdown@3.8.0) (2021-05-05)
 
 
