@@ -1,6 +1,6 @@
 # typedoc-plugin-markdown
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders documentation as Markdown.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeScript API documentation as Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 [![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
@@ -8,6 +8,8 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders docum
 ## What it does?
 
 The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
+
+Useful if documentation is required to be included in project README files, Wikis and static site generators.
 
 ## Installation
 
@@ -17,14 +19,16 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 
 ## Usage
 
+Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installation/#command-line-interface).
+
 ```bash
-$ npx typedoc ...options
+typedoc --out docs src/index.ts
 ```
 
-### Note:
+**Note:**
 
 - If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- The plugin needs to be executed from the same location as TypeDoc. If running directly from command prompt make sure to use `npx`.
+- The plugin should be executed in the same location as TypeDoc. Use `npx` if running command directly in shell.
 
 ## Options
 
