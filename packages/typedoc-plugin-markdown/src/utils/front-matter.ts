@@ -44,4 +44,4 @@ ${Object.entries(vars)
 };
 
 // prettier-ignore
-const escapeString=(str: string) => str.replace(/([^\\])"/g, '$1\\"');
+const escapeString=(str: string) => str.replace(/"/g, '\\"');
