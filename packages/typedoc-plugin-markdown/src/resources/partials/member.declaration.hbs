@@ -8,7 +8,7 @@
 
 {{#with typeParameters}}
 
-{{{parameterTable 'typeParameters'}}}
+{{{typeParameterTable}}}
 
 {{/with}}
 
@@ -16,9 +16,31 @@
 
 {{#if type.declaration}}
 
-#### Type declaration
+{{#if type.declaration.indexSignature}}
+
+{{#with type.declaration.indexSignature}}
+
+#### Index signature
+
+{{{indexSignatureTitle}}}
+
+{{> comment}}
+
+{{/with}}
+
+{{/if}}
 
 {{#if type.declaration.signatures}}
+
+{{#if type.declaration.children}}
+
+#### Call signature
+
+{{else}}
+
+#### Type declaration
+
+{{/if}}
 
 {{#each type.declaration.signatures}}
 
@@ -30,17 +52,15 @@
 
 {{#if type.declaration.children}}
 
-{{#if type.declaration}}
-
 {{#with type.declaration}}
+
+#### Type declaration
 
 {{/with}}
 
-{{/if}}
-
 {{#with type.declaration.children}}
 
-{{{propertyTable ../kind}}}
+{{{propertyTable}}}
 
 {{/with}}
 

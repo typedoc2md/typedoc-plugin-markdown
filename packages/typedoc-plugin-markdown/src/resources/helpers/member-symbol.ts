@@ -3,9 +3,6 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
 export function memberSymbol(this: DeclarationReflection) {
   const isStatic = this.flags && this.flags.isStatic;
 
-  if (this.kind === ReflectionKind.ConstructorSignature) {
-    return '\\+';
-  }
   if (this.kind === ReflectionKind.CallSignature) {
     return '▸';
   }

@@ -114,12 +114,20 @@ export function privateFunction() {
 
 export const functionWithTypeParams = <Item = boolean | string>() => true;
 
+/**
+ * Comments for function
+ * @returns Return comments
+ */
 export function functionReturningAnObject() {
   return { x: 1, y: 2 };
 }
 
+/**
+ * Comments for function
+ * @returns Return comments
+ */
 export function functionReturningAFunction() {
-  return () => true;
+  return <T>(x: string) => true;
 }
 
 /**

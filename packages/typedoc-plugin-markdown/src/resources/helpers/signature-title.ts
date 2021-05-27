@@ -1,4 +1,5 @@
 import { SignatureReflection } from 'typedoc';
+
 import { memberSymbol } from './member-symbol';
 import { type } from './type';
 
@@ -18,7 +19,7 @@ export function signatureTitle(
   }
 
   if (accessor) {
-    md.push(`${accessor} **${this.name}**`);
+    md.push(`\`${accessor}\` **${this.name}**`);
   } else if (this.name !== '__call' && this.name !== '__type') {
     md.push(`**${this.name}**`);
   }
@@ -38,18 +39,19 @@ export function signatureTitle(
           if (param.flags.isRest) {
             paramsmd.push('...');
           }
-          paramsmd.push(`\`${param.name}`);
-          if (param.flags.isOptional || param.defaultValue) {
-            paramsmd.push('?');
-          }
-          paramsmd.push(`\`: ${type.call(param.type, true)}`);
+          paramsmd.push(
+            `\`${param.name}${
+              param.flags.isOptional || param.defaultValue ? '?' : ''
+            }\``,
+          );
           return paramsmd.join('');
         })
         .join(', ')
     : '';
   md.push(`(${params})`);
+
   if (this.type) {
-    md.push(`: ${type.call(this.type, 'all')}`);
+    md.push(`: ${type.call(this.type, 'object')}`);
   }
   return md.join('') + (standalone ? '\n' : '');
 }

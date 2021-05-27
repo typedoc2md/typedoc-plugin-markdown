@@ -6,11 +6,14 @@ import { TestApp } from '../test-app';
 describe(`Signatures:`, () => {
   let testApp: TestApp;
   let partial: Handlebars.TemplateDelegate;
+  let reflectionTemplate: Handlebars.TemplateDelegate;
+
   beforeAll(async () => {
     testApp = new TestApp(['signatures.ts']);
     await testApp.bootstrap();
     TestApp.stubPartials(['member.sources']);
     partial = TestApp.getPartial('member.signature');
+    reflectionTemplate = TestApp.getTemplate('reflection');
   });
 
   test(`should compile callable signature'`, () => {
@@ -57,16 +60,6 @@ describe(`Signatures:`, () => {
       TestApp.compileTemplate(
         partial,
         testApp.findReflection('functionReturningAFunction')
-          .signatures[0] as SignatureReflection,
-      ),
-    ).toMatchSnapshot();
-  });
-
-  test(`should compile signature with type params'`, () => {
-    expect(
-      TestApp.compileTemplate(
-        partial,
-        testApp.findReflection('functionWithTypeParams')
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
