@@ -3,6 +3,7 @@ export * as categories from './categories';
 export * as comments from './comments';
 export * as declarations from './declarations';
 export * as frontmatter from './frontmatter';
+export * as generics from './generics';
 export * as hierarchy from './hierarchy';
 export * as members from './members';
 export * as reflections from './reflections';

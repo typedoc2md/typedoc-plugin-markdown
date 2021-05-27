@@ -11,21 +11,28 @@ describe(`Declarations:`, () => {
     testApp = new TestApp(['declarations.ts']);
     await testApp.bootstrap();
     TestApp.stubPartials(['member.sources']);
-    TestApp.stubHelpers([]);
-
     template = TestApp.getPartial('member.declaration');
   });
 
-  test(`should compile a variable with default value`, () => {
+  test(`should compile a const with default value`, () => {
     expect(
       TestApp.compileTemplate(
         template,
-        testApp.findReflection('stringWithDefaultValueDeclaration'),
+        testApp.findReflection('stringConstWithDefaultValue'),
       ),
     ).toMatchSnapshot();
   });
 
-  test(`should compile a an udefined`, () => {
+  test(`should compile a let with default value`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('stringLetWithDefaultValue'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile an undefined declaration`, () => {
     expect(
       TestApp.compileTemplate(
         template,
@@ -61,15 +68,6 @@ describe(`Declarations:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile type literal declaration`, () => {
-    expect(
-      TestApp.compileTemplate(
-        template,
-        testApp.findReflection('typeLiteralDeclarationWithFunction'),
-      ),
-    ).toMatchSnapshot();
-  });
-
   test(`should compile declaration with double underscores in name and value`, () => {
     expect(
       TestApp.compileTemplate(
@@ -88,11 +86,29 @@ describe(`Declarations:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should not escape charcters within markdown code`, () => {
+  test(`should compile function declaration`, () => {
     expect(
       TestApp.compileTemplate(
         template,
-        testApp.findReflection('SpecialCharacters'),
+        testApp.findReflection('functionDeclaration'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile callable declaration`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('callableDeclaration'),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile indexable declaration`, () => {
+    expect(
+      TestApp.compileTemplate(
+        template,
+        testApp.findReflection('indexableDeclaration'),
       ),
     ).toMatchSnapshot();
   });

@@ -30,11 +30,20 @@ describe(`Sources:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should display inherited and overide sources'`, () => {
+  test(`should display inherited sources'`, () => {
     expect(
       TestApp.compileTemplate(
         partial,
         getProp(testApp.findReflection('AnotherInterface')),
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should display overide sources'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        getProp(testApp.findReflection('AnotherClass')),
       ),
     ).toMatchSnapshot();
   });

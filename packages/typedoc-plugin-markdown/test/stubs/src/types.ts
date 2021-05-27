@@ -67,7 +67,7 @@ export type intersectionType = IntersectionClassA & IntersectionClassB;
 
 export const arrayType: string[] = ['Apple', 'Orange', 'Banana'];
 
-export function restUntionTypes(
+export function restUnionTypes(
   arg: boolean[] | number,
   ...args: (string | number)[]
 ): any {
@@ -101,3 +101,9 @@ export type ConditionalType<T> = T extends string
   : T extends undefined
   ? 'undefined'
   : 'object';
+
+export type Bar<T, R> = (foos: ConditionalType<T>[]) => R; // defined elsewhere
+export const baz: Bar<string, string> = (foos) => '...';
+
+export const fooBigInt = BigInt(100); // the BigInt function
+export const barBigInt = 100n; // a BigInt literal

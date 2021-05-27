@@ -93,13 +93,12 @@ export class CommentClass {
   }
 }
 
-export const objectWithBlockComments = {
+/**
+ * Some comments
+ */
+export type literalWithBlockComments = {
   /**
-   * Comment 1
-   *
-   * @tag Tag description
-   *
-   * Comment 2
+   * Comment for prop
    */
-  prop: 'prop',
+  prop: string;
 };

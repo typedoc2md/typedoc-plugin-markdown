@@ -1,18 +1,11 @@
-import {
-  ParameterReflection,
-  ReflectionKind,
-  TypeParameterReflection,
-} from 'typedoc';
+import { ParameterReflection, ReflectionKind } from 'typedoc';
 
 import { comment } from './comment';
 import { escape } from './escape';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
-export function parameterTable(
-  this: ParameterReflection[] & TypeParameterReflection[],
-  kind: 'typeParameters' | 'parameters',
-) {
+export function parameterTable(this: ParameterReflection[]) {
   const flattenParams = (current: any) => {
     return current.type?.declaration?.children?.reduce(
       (acc: any, child: any) => {
@@ -37,13 +30,11 @@ export function parameterTable(
 
   return table(
     this.reduce((acc: any, current: any) => parseParams(current, acc), []),
-    kind,
   );
 }
 
-function table(parameters: any, kind: 'typeParameters' | 'parameters') {
-  const showDefaults = hasDefaultValues(kind, parameters);
-  const showTypes = kind === 'parameters' ? true : hasTypes(parameters);
+function table(parameters: any) {
+  const showDefaults = hasDefaultValues(parameters);
 
   const comments = parameters.map(
     (param) =>
@@ -51,14 +42,10 @@ function table(parameters: any, kind: 'typeParameters' | 'parameters') {
   );
   const hasComments = !comments.every((value) => !value);
 
-  const headers = ['Name'];
-
-  if (showTypes) {
-    headers.push('Type');
-  }
+  const headers = ['Name', 'Type'];
 
   if (showDefaults) {
-    headers.push(kind === 'parameters' ? 'Default value' : 'Default');
+    headers.push('Default value');
   }
 
   if (hasComments) {
@@ -74,9 +61,7 @@ function table(parameters: any, kind: 'typeParameters' | 'parameters') {
       }\``,
     );
 
-    if (showTypes) {
-      row.push(parameter.type ? type.call(parameter.type, 'object') : '-');
-    }
+    row.push(type.call(parameter.type, 'object'));
 
     if (showDefaults) {
       row.push(getDefaultValue(parameter));
@@ -102,37 +87,19 @@ function table(parameters: any, kind: 'typeParameters' | 'parameters') {
   return output;
 }
 
-function getDefaultValue(
-  parameter: ParameterReflection | TypeParameterReflection,
-) {
-  if (parameter instanceof TypeParameterReflection) {
-    return parameter.default ? type.call(parameter.default) : '-';
-  }
+function getDefaultValue(parameter: ParameterReflection) {
   return parameter.defaultValue && parameter.defaultValue !== '...'
     ? escape(parameter.defaultValue)
-    : '-';
+    : '`undefined`';
 }
 
-function hasDefaultValues(
-  kind: 'typeParameters' | 'parameters',
-  parameters: ParameterReflection[] | TypeParameterReflection[],
-) {
-  const defaultValues =
-    kind === 'parameters'
-      ? (parameters as ParameterReflection[]).map(
-          (param) => param.defaultValue !== '...' && !!param.defaultValue,
-        )
-      : (parameters as TypeParameterReflection[]).map(
-          (param) => !!param.default,
-        );
-  return !defaultValues.every((value) => !value);
-}
-
-function hasTypes(
-  parameters: TypeParameterReflection[] | ParameterReflection[],
-) {
-  const types = (parameters as TypeParameterReflection[]).map(
-    (param) => !!param.type,
+function hasDefaultValues(parameters: ParameterReflection[]) {
+  const defaultValues = (parameters as ParameterReflection[]).map(
+    (param) =>
+      param.defaultValue !== '{}' &&
+      param.defaultValue !== '...' &&
+      !!param.defaultValue,
   );
-  return !types.every((value) => !value);
+
+  return !defaultValues.every((value) => !value);
 }

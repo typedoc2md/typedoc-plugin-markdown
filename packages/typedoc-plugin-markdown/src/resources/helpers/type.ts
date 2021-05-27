@@ -120,11 +120,11 @@ function getLiteralType(model: LiteralType) {
 function getReflectionType(model: DeclarationReflection, collapse: Collapse) {
   if (model.signatures) {
     return collapse === 'function' || collapse === 'all'
-      ? '*function*'
+      ? `\`fn\``
       : getFunctionType(model.signatures);
   }
   return collapse === 'object' || collapse === 'all'
-    ? '*object*'
+    ? `\`Object\``
     : getDeclarationType(model);
 }
 
@@ -178,7 +178,6 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
         })
       : [];
     const returns = type.call(fn.type);
-
     return typeParams + `(${params.join(', ')}) => ${returns}`;
   });
   return functions.join('');
@@ -189,23 +188,23 @@ function getReferenceType(model: ReferenceType, emphasis) {
     const reflection =
       model.reflection && model.reflection.url
         ? [
-            `[*${escape(
+            `[${escape(
               model.reflection.name,
-            )}*](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            )}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
               model.reflection.url,
             )})`,
           ]
-        : [emphasis ? `*${escape(model.name)}*` : escape(model.name)];
+        : [emphasis ? `\`${escape(model.name)}\`` : escape(model.name)];
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `<${model.typeArguments
-          .map((typeArgument) => `${type.call(typeArgument, 'none', false)}`)
+          .map((typeArgument) => `${type.call(typeArgument, 'all', false)}`)
           .join(', ')}\\>`,
       );
     }
     return reflection.join('');
   }
-  return escape(model.name);
+  return emphasis ? `\`${escape(model.name)}\`` : escape(model.name);
 }
 
 function getArrayType(model: ArrayType, emphasis: boolean) {
@@ -232,7 +231,7 @@ function getTupleType(model: TupleType) {
 }
 
 function getIntrinsicType(model: IntrinsicType, emphasis: boolean) {
-  return emphasis ? `*${escape(model.name)}*` : escape(model.name);
+  return emphasis ? `\`${escape(model.name)}\`` : escape(model.name);
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {
@@ -240,7 +239,7 @@ function getTypeOperatorType(model: TypeOperatorType) {
 }
 
 function getQueryType(model: QueryType) {
-  return `*typeof* ${type.call(model.queryType)}`;
+  return `typeof ${type.call(model.queryType)}`;
 }
 
 function getTypeParameterType(model: TypeParameterType) {
@@ -248,7 +247,7 @@ function getTypeParameterType(model: TypeParameterType) {
 }
 
 function getInferredType(model: InferredType) {
-  return `*infer* ${escape(model.name)}`;
+  return `infer ${escape(model.name)}`;
 }
 
 function getUnknownType(model: UnknownType) {
@@ -260,7 +259,7 @@ function getConditionalType(model: ConditionalType) {
   if (model.checkType) {
     md.push(type.call(model.checkType));
   }
-  md.push('*extends*');
+  md.push('extends');
   if (model.extendsType) {
     md.push(type.call(model.extendsType));
   }
