@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+
 import ProgressBar from 'progress';
 import {
   Application,
@@ -15,7 +16,7 @@ import {
 import { GroupPlugin } from 'typedoc/dist/lib/converter/plugins';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
-import { FrontMatterComponent } from './front-matter';
+
 import { getPluginOptions } from './options';
 import { PluginOptions } from './types';
 
@@ -34,7 +35,6 @@ const CATEGORY_POSITION = {
 export const bootstrap = (app: Application, opts: Partial<PluginOptions>) => {
   addTypedocReaders(app);
   addTypedocDeclarations(app);
-  app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
   app.renderer.render = render;
   app.bootstrap({ ...getPluginOptions(opts), theme: path.resolve(__dirname) });
   return app.options.getRawValues() as PluginOptions;
