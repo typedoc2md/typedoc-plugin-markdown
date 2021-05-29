@@ -5,29 +5,11 @@ module.exports = {
     [
       path.resolve(__dirname, '..', '..', 'dist'),
       {
-        id: 'test-1',
         entryPoints: '../../../typedoc-plugin-markdown/test/stubs/src/index.ts',
         tsconfig: '../../../typedoc-plugin-markdown/test/stubs/tsconfig.json',
         sidebar: {
+          sidebarFile: null,
           position: 0,
-          categoryLabel: 'API 1',
-        },
-      },
-    ],
-    [
-      path.resolve(__dirname, '..', '..', 'dist'),
-      {
-        id: 'test-2',
-        readme: 'none',
-        entryPoints: [
-          '../../../typedoc-plugin-markdown/test/stubs/src/breadcrumbs.ts',
-          '../../../typedoc-plugin-markdown/test/stubs/src/declarations.ts',
-          '../../../typedoc-plugin-markdown/test/stubs/src/reflections.ts',
-        ],
-        tsconfig: '../../../typedoc-plugin-markdown/test/stubs/tsconfig.json',
-        out: 'api-2',
-        sidebar: {
-          sidebarFile: './demo/typedoc-sidebar.js',
         },
       },
     ],
@@ -49,6 +31,12 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
+        {
+          to: 'docs/api',
+          activeBasePath: 'docs',
+          label: 'API',
+          position: 'left',
+        },
         {
           to: 'docs/',
           activeBasePath: 'docs',
