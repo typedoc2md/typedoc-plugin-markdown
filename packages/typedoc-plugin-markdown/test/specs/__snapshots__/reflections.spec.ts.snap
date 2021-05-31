@@ -9,10 +9,21 @@ exports[`Reflections: (header) should compile template with breadcrumbs and with
 "
 `;
 
+exports[`Reflections: (template) should compile Enum 1`] = `
+"# Enumeration: EnumReflection
+
+[helper: toc]
+
+[partial: members]
+"
+`;
+
 exports[`Reflections: (template) should compile a callable reflection 1`] = `
 "# Interface: CallableReflection
 
 ## Callable
+
+### CallableReflection
 
 [partial: member.signature]
 
@@ -27,7 +38,7 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 
 ## Indexable
 
-▪ [index: *number*]: *string*
+▪ [index: \`number\`]: \`string\`
 
 [partial: comment]
 
@@ -42,7 +53,7 @@ exports[`Reflections: (template) should compile implemented class 1`] = `
 
 ## Implements
 
-- [*ReflectionClass*](../classes/reflectionclass.md)
+- [ReflectionClass](../classes/reflectionclass.md)
 
 [helper: toc]
 
@@ -52,24 +63,6 @@ exports[`Reflections: (template) should compile implemented class 1`] = `
 
 exports[`Reflections: (template) should compile module with breadcrumbs and project title 1`] = `
 "# Enumeration: EnumReflection
-
-[helper: toc]
-
-[partial: members]
-"
-`;
-
-exports[`Reflections: (template) should compile reflection with type params 1`] = `
-"# Interface: ReflectionWithTypeParams<T, V\\\\>
-
-[partial: comment]
-
-## Type parameters
-
-| Name | Description |
-| :------ | :------ |
-| \`T\` | Some type param |
-| \`V\` | Some other type param |
 
 [helper: toc]
 

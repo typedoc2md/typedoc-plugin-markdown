@@ -4,11 +4,19 @@
 
 {{#if typeParameters}}
 
+{{#if showSources}}
+
 #### Type parameters
+
+{{else}}
+
+##### Type parameters
+
+{{/if}}
 
 {{#with typeParameters}}
 
-{{{parameterTable 'typeParameters'}}}
+{{{typeParameterTable}}}
 
 {{/with}}
 
@@ -16,19 +24,43 @@
 
 {{#if parameters}}
 
+{{#if showSources}}
+
 #### Parameters
+
+{{else}}
+
+##### Parameters
+
+{{/if}}
 
 {{#with parameters}}
 
-{{{parameterTable 'parameters'}}}
+{{{parameterTable}}}
 
 {{/with}}
 
 {{/if}}
 
+{{#ifShowReturns}}
+
 {{#if type}}
 
-{{#with type}}{{{returns}}}{{/with}}
+{{#if showSources}}
+
+#### Returns
+
+{{else}}
+
+##### Returns
+
+{{/if}}
+
+{{#with type}}
+
+{{{type 'all'}}}
+
+{{/with}}
 
 {{#if comment.returns}}
 
@@ -40,7 +72,33 @@
 
 {{/if}}
 
+{{#with type}}
+
+{{#if declaration.signatures}}
+
+{{#each declaration.signatures}}
+
+{{> member.signature showSources=false }}
+
+{{/each}}
+
 {{/if}}
+
+{{#if declaration.children}}
+
+{{#with declaration.children}}
+
+{{{propertyTable}}}
+
+{{/with}}
+
+{{/if}}
+
+{{/with}}
+
+{{/if}}
+
+{{/ifShowReturns}}
 
 {{#if showSources}}
 

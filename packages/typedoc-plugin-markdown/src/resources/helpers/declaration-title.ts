@@ -1,9 +1,9 @@
+import { DeclarationReflection, ParameterReflection } from 'typedoc';
 import {
-  DeclarationReflection,
-  ParameterReflection,
+  LiteralType,
   ReflectionKind,
-} from 'typedoc';
-import { ReflectionType } from 'typedoc/dist/lib/models';
+  ReflectionType,
+} from 'typedoc/dist/lib/models';
 
 import { escape } from './escape';
 import { memberSymbol } from './member-symbol';
@@ -27,15 +27,26 @@ export function declarationTitle(
     );
   }
 
-  md.push(`: ${this.parent?.kindOf(ReflectionKind.Enum) ? '' : getType(this)}`);
+  if (!this.parent?.kindOf(ReflectionKind.Enum)) {
+    md.push(getType(this));
+  }
 
-  if (this.defaultValue && this.defaultValue !== '...') {
-    md.push(`= ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
+  if (
+    !(this.type instanceof LiteralType) &&
+    this.defaultValue &&
+    this.defaultValue !== '...'
+  ) {
+    md.push(` = ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
   }
   return md.join('');
 }
 
 function getType(reflection: ParameterReflection | DeclarationReflection) {
   const reflectionType = reflection.type as ReflectionType;
-  return type.call(reflectionType ? reflectionType : reflection, 'object');
+  if (reflectionType && reflectionType.declaration?.children) {
+    return ': `Object`';
+  }
+  return (
+    ': ' + type.call(reflectionType ? reflectionType : reflection, 'object')
+  );
 }

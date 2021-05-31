@@ -18,7 +18,7 @@
 
 {{#with model.typeParameters}}
 
-{{{parameterTable 'typeParameters'}}}
+{{{typeParameterTable}}}
 
 {{/with}}
 
@@ -41,7 +41,7 @@
 ## Implements
 
 {{#each model.implementedTypes}}
-- {{{type false}}}
+- {{{type}}}
 {{/each}}
 
 {{/if}}
@@ -51,7 +51,7 @@
 ## Implemented by
 
 {{#each model.implementedBy}}
-- {{{type false}}}
+- {{{type}}}
 {{/each}}
 
 {{/if}}
@@ -63,6 +63,8 @@
 {{#with model}}
 
 {{#each signatures}}
+
+### {{name}}
 
 {{> member.signature showSources=true }}
 

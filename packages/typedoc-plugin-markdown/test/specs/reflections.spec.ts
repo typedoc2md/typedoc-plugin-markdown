@@ -50,15 +50,6 @@ describe(`Reflections:`, () => {
       ).toMatchSnapshot();
     });
 
-    test(`should compile reflection with type params`, () => {
-      expect(
-        TestApp.compileTemplate(reflectionTemplate, {
-          model: testApp.findReflection('ReflectionWithTypeParams'),
-          project: testApp.project,
-        }),
-      ).toMatchSnapshot();
-    });
-
     test(`should compile a callable reflection`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
@@ -81,6 +72,15 @@ describe(`Reflections:`, () => {
       expect(
         TestApp.compileTemplate(reflectionTemplate, {
           model: testApp.findReflection('ImplementedClass'),
+          project: testApp.project,
+        }),
+      ).toMatchSnapshot();
+    });
+
+    test(`should compile Enum`, () => {
+      expect(
+        TestApp.compileTemplate(reflectionTemplate, {
+          model: testApp.findReflection('EnumReflection'),
           project: testApp.project,
         }),
       ).toMatchSnapshot();

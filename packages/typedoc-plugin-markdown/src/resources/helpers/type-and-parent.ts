@@ -11,45 +11,28 @@ export function typeAndParent(this: ArrayType | ReferenceType) {
     } else {
       if (this.reflection) {
         const md: string[] = [];
-        const parentReflection = this.reflection.parent;
         if (this.reflection instanceof SignatureReflection) {
-          if (
-            parentReflection &&
-            parentReflection.parent &&
-            parentReflection.parent.url
-          ) {
+          if (this.reflection.parent?.parent?.url) {
             md.push(
-              `[${
-                parentReflection.parent.name
-              }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
-                parentReflection.parent.url,
-              )})`,
+              getUrl(
+                this.reflection.parent.parent.name,
+                this.reflection.parent.parent.url,
+              ),
             );
-          } else if (parentReflection && parentReflection.parent) {
-            md.push(parentReflection.parent.name);
+            if (this.reflection.parent.url) {
+              md.push(
+                getUrl(this.reflection.parent.name, this.reflection.parent.url),
+              );
+            }
           }
         } else {
-          if (parentReflection && parentReflection.url) {
+          if (this.reflection.parent?.url) {
             md.push(
-              `[${
-                parentReflection.name
-              }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
-                parentReflection.url,
-              )})`,
+              getUrl(this.reflection.parent.name, this.reflection.parent.url),
             );
-          } else if (parentReflection) {
-            md.push(parentReflection.name);
-          }
-          if (this.reflection.url) {
-            md.push(
-              `[${
-                this.reflection.name
-              }](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
-                this.reflection.url,
-              )})`,
-            );
-          } else {
-            md.push(this.reflection.name);
+            if (this.reflection.url) {
+              md.push(getUrl(this.reflection.name, this.reflection.url));
+            }
           }
         }
         return md.join('.');
@@ -60,3 +43,6 @@ export function typeAndParent(this: ArrayType | ReferenceType) {
   }
   return 'void';
 }
+
+const getUrl = (name: string, url: string) =>
+  `[${name}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(url)})`;

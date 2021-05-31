@@ -1,10 +1,13 @@
-export const stringWithDefaultValueDeclaration = 'variable';
+export const stringConstWithDefaultValue = 'hello';
+export let stringLetWithDefaultValue = 'hello';
+stringLetWithDefaultValue = 'world';
+
 export let undefinedNumberDeclaration: number;
 
 /**
- * @param {Object} objectLiteralDeclaration description
- * @param {string} objectLiteralDeclaration.valueZ description for valuez
- * @param {number} objectLiteralDeclaration.valueA description for valuea
+ * @param objectLiteralDeclaration.valueX description for valueX
+ * @param objectLiteralDeclaration.valueZ description for valueZ
+ * @param objectLiteralDeclaration.valueY description for valueY
  */
 export const objectLiteralDeclaration = {
   /**
@@ -32,10 +35,6 @@ export const objectLiteralDeclaration = {
   valueC: {},
 };
 
-export const objectLiteral2Declaration = {
-  valueA: () => {},
-};
-
 export let typeLiteralDeclaration: {
   /**
    * Comment for valueZ
@@ -60,9 +59,17 @@ export let typeLiteralDeclaration: {
   valueB?: boolean;
 };
 
-export let typeLiteralDeclarationWithFunction: {
-  (): string;
-  valueZ: string;
+export let functionDeclaration: (someArg: number) => boolean;
+
+export let callableDeclaration: {
+  (someArg: number): boolean;
+  arg1: string;
+  arg2: number;
+};
+
+export let indexableDeclaration: {
+  [index: number]: string;
+  arg1: string;
 };
 
 /**
@@ -81,17 +88,9 @@ export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');
 
 export type AnyFunctionType<A = any> = (...input: any[]) => A;
 
-export type SpecialCharacters = {
-  this_prop_has_underscores: number;
-  'this|prop|has|the|pipe|character': string;
-};
-
 export enum EnumDeclarations {
   Up = 'UP',
   Down = 'DOWN',
   Left = 'LEFT',
   Right = 'RIGHT',
 }
-
-export const fooBigInt = BigInt(100); // the BigInt function
-export const barBigInt = 100n; // a BigInt literal
