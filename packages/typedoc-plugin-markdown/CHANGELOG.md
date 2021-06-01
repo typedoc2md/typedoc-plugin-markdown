@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.8.2...typedoc-plugin-markdown@3.9.0) (2021-06-01)
+
+
+### Features
+
+* UI fixes and readability enhancements ([#230](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/230)) ([f4329a9](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/f4329a9c989201d69b0e54497eba4f3e6c095abc))
+
+
+
+
+
 ## [3.8.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.8.1...typedoc-plugin-markdown@3.8.2) (2021-05-26)
 
 

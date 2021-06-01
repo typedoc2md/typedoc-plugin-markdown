@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.14.1...docusaurus-plugin-typedoc@0.14.2) (2021-06-01)
+
+
+### Bug Fixes
+
+* Use front-matter title to fix escapes angle brackets ([c5bc964](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/c5bc9645b4de81c2050271c0d85583d9bfbac531))
+
+
+
+
+
 ## [0.14.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.14.0...docusaurus-plugin-typedoc@0.14.1) (2021-05-06)
 
 
