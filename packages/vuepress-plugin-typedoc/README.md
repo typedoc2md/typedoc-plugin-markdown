@@ -3,7 +3,7 @@
 A [VuePress](https://vuepress.vuejs.org/) plugin to build documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-typedoc.svg)](https://www.npmjs.com/package/vuepress-plugin-typedoc)
-![Build Status](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown.svg?branch=master)
+[![Build Status](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown)
 
 ## What it does?
 
