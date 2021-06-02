@@ -3,7 +3,7 @@
 A [Github Wiki](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis) compatible [TypeDoc](https://github.com/TypeStrong/typedoc) theme.
 
 [![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-github-wiki-theme)
-[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
+![Build Status](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown.svg?branch=master)
 
 ## What is does?
 

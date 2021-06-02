@@ -3,7 +3,7 @@
 A [Hugo](https://gohugo.io/) compatible compatible [TypeDoc](https://github.com/TypeStrong/typedoc) theme.
 
 [![npm](https://img.shields.io/npm/v/typedoc-hugo-theme.svg)](https://www.npmjs.com/package/typedoc-hugo-theme)
-[![Build Status](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.org/tgreyuk/typedoc-plugin-markdown)
+![Build Status](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown.svg?branch=master)
 
 ## What is does?
 
