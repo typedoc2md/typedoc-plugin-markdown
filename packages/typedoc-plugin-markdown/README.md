@@ -46,7 +46,7 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 
 
-## Additional plugins and thene
+## Additional plugins and themes
 
 If targeting specific static site generators or wiki platforms the following plugins and themes may be of interest:
 
