@@ -8,6 +8,7 @@ notifications:
 node_js:
   - '12'
   - '14'
+  - '16'
 before_script:
 script:
   - yarn run lint && yarn run test
