@@ -16,20 +16,20 @@
   },
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc",
   "peerDependencies": {
-    "typedoc": ">=0.20.19",
-    "typedoc-plugin-markdown": ">=3.6.0"
+    "typedoc": ">=0.21.0",
+    "typedoc-plugin-markdown": ">=3.10.0"
   },
   "devDependencies": {
-    "@docusaurus/types": "^2.0.0-alpha.37"
+    "@docusaurus/types": "^2.0.0-beta.0"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "yarn run lint && yarn run build && npm run test",
+    "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf ./dist && tsc",
     "build-and-test": "yarn run build && yarn run test",
     "test:init": "rm -rf test/site && npx @docusaurus/init@latest init test/site classic",
     "test:demo:start": "yarn run build && cd test/site && yarn run clear && yarn run start",
-    "test:demo:build": "yarn run build && cd test/site && yarn run clear && yarn run build && yarn run serve",
+    "test:demo:build": "yarn run build && cd test/site && yarn run clear && yarn run serve",
     "test": "jest --colors"
   },
   "author": "Thomas Grey",

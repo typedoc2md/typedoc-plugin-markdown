@@ -1,6 +1,6 @@
 import { LoadContext } from '@docusaurus/types';
 import { Application } from 'typedoc';
-import MarkdownPlugin from 'typedoc-plugin-markdown';
+import { load } from 'typedoc-plugin-markdown';
 
 import { getOutputDirectory } from './options';
 import { bootstrap } from './render';
@@ -21,7 +21,7 @@ export default async function pluginDocusaurus(
 
     const app = new Application();
 
-    MarkdownPlugin(app);
+    load(app);
 
     const options = bootstrap(app, opts);
 

@@ -1,6 +1,6 @@
 import cuid from 'cuid';
 import { Application } from 'typedoc';
-import MarkdownPlugin from 'typedoc-plugin-markdown';
+import { load } from 'typedoc-plugin-markdown';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
 
 import { FrontMatterComponent } from '../../dist/front-matter';
@@ -16,7 +16,7 @@ async function generate(
 ) {
   const app = new Application();
 
-  MarkdownPlugin(app);
+  load(app);
 
   bootstrap(app, {
     ...opts,

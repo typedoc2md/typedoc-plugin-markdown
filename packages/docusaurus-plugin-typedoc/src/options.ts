@@ -1,4 +1,5 @@
 import * as path from 'path';
+
 import { PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
@@ -31,5 +32,10 @@ export const getPluginOptions = (
   return options;
 };
 
-export const getOutputDirectory = (siteDir: string, options: PluginOptions) =>
-  path.resolve(siteDir, options.docsRoot, options.out);
+export const getOutputDirectory = (siteDir: string, options: PluginOptions) => {
+  return path.resolve(
+    siteDir,
+    options.docsRoot,
+    path.relative(process.cwd(), options.out),
+  );
+};
