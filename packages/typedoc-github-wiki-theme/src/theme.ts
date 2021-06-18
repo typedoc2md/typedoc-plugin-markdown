@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 import * as fs from 'fs-extra';
 import {
   BindOption,
@@ -33,7 +35,8 @@ export default class GithubWikiTheme extends MarkdownTheme {
 
   getUrls(project: ProjectReflection) {
     return super.getUrls(project).map((urlMapping) => {
-      if (this.readme !== 'none' && project.url === urlMapping.url) {
+      const noReadmeFile = this.readme == path.join(process.cwd(), 'none');
+      if (noReadmeFile && project.url === urlMapping.url) {
         return {
           ...urlMapping,
           url: this.entryPoints.length > 1 ? 'Modules.md' : 'Exports.md',
