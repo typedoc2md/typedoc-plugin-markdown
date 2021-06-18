@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc",
   "peerDependencies": {
-    "typedoc": ">=0.20.19",
-    "typedoc-plugin-markdown": ">=3.6.0"
+    "typedoc": ">=0.21.0",
+    "typedoc-plugin-markdown": ">=3.10.0"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
@@ -27,7 +27,7 @@
     "test:demo:start": "yarn run build && cd test/site/docs && yarn run dev",
     "test:demo:build": "yarn run build && cd test/site/docs && yarn run build && npx http-server ./src/.vuepress/dist -o",
     "test": "jest --colors",
-    "build-and-test": "npm run build && npm run test"
+    "build-and-test": "yarn run build && yarn run test"
   },
   "author": "Thomas Grey",
   "license": "MIT",

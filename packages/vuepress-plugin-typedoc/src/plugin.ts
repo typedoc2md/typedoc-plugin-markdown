@@ -1,7 +1,7 @@
 import * as path from 'path';
 
 import { Application, ProjectReflection } from 'typedoc';
-import MarkdownPlugin from 'typedoc-plugin-markdown';
+import { load } from 'typedoc-plugin-markdown';
 
 import { FrontMatterComponent } from './front-matter';
 import { addOptions, getOptions } from './options';
@@ -17,7 +17,7 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
 
   app = new Application();
 
-  MarkdownPlugin(app);
+  load(app);
 
   app.renderer.render = render;
 
@@ -35,12 +35,13 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
   }
 
   const outputDirectory = ctx.sourceDir + '/' + options.out;
-  app.generateDocs(project, outputDirectory);
 
   if (options.watch) {
     app.convertAndWatch(async (project) => {
       app.generateDocs(project, outputDirectory);
     });
+  } else {
+    app.generateDocs(project, outputDirectory);
   }
 
   return {
@@ -52,6 +53,7 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
       }
       const theme = app.renderer.theme as any;
       const navigation = theme.getNavigation(project);
+
       const sidebarJson = JSON.stringify({
         [`/${options.out}/`]: getSidebarJson(navigation, options),
       });
