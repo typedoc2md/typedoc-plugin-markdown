@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as path from 'path';
 
 import * as Handlebars from 'handlebars';
 import {
@@ -113,7 +114,8 @@ export default class MarkdownTheme extends Theme {
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
     const urls: UrlMapping[] = [];
-    if (this.readme === 'none') {
+    const noReadmeFile = this.readme == path.join(process.cwd(), 'none');
+    if (noReadmeFile) {
       project.url = this.entryDocument;
       urls.push(new UrlMapping(this.entryDocument, project, 'reflection.hbs'));
     } else {
@@ -244,7 +246,7 @@ export default class MarkdownTheme extends Theme {
       return filteredNavigationItem as NavigationItem;
     };
     const navigation = createNavigationItem(project.name, undefined, false);
-    const hasReadme = this.readme !== 'none';
+    const hasReadme = this.readme !== path.join(process.cwd(), 'none');
     if (hasReadme) {
       navigation.children?.push(
         createNavigationItem('Readme', this.entryDocument, false),

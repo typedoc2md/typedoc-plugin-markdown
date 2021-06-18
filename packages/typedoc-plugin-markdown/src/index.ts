@@ -1,11 +1,11 @@
-import { Application } from 'typedoc/dist/lib/application';
-import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
+import * as fs from 'fs';
+import * as path from 'path';
 
-import { MarkdownPlugin } from './plugin';
+import { Application, Converter, ParameterType, Renderer } from 'typedoc';
 
-export = (PluginHost: Application) => {
-  const app = PluginHost.owner;
+import MarkdownTheme from './theme';
 
+export function load(app: Application) {
   app.options.addDeclaration({
     help: '[Markdown Plugin] Do not render page title.',
     name: 'hidePageTitle',
@@ -70,5 +70,36 @@ export = (PluginHost: Application) => {
     type: ParameterType.String,
   });
 
-  app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
-};
+  app.converter.on(Converter.EVENT_BEGIN, () => {
+    Renderer.getDefaultTheme = () => path.join(__dirname, 'resources');
+  });
+
+  app.converter.on(Converter.EVENT_RESOLVE_BEGIN, () => {
+    const themeName = app.options.getValue('theme');
+
+    const themeDir = path.join(__dirname);
+
+    if (![themeDir, 'default', 'markdown'].includes(themeName)) {
+      // For custom themes check that the theme is a markdown theme
+      // If it is return and pass through to renderer
+      const themeFileName = path.resolve(path.join(themeName, 'theme.js'));
+      if (fs.existsSync(themeFileName) && isMarkdownTheme(themeFileName)) {
+        return;
+      }
+      app.logger.warn(
+        `[typedoc-plugin-markdown] '${themeName}' is not a recognised markdown theme. If an html theme is required, please disable this plugin.`,
+      );
+    }
+
+    app.options.setValue('theme', themeDir);
+  });
+}
+
+function isMarkdownTheme(themeFileName: string) {
+  try {
+    const ThemeClass = require(themeFileName).default;
+    return ThemeClass.prototype instanceof MarkdownTheme;
+  } catch (e) {
+    return false;
+  }
+}

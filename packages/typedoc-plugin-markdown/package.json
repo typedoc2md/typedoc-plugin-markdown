@@ -8,20 +8,20 @@
   ],
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "npm run lint && npm run build && npm run test",
+    "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "pretest": "yarn run demo:md && markdownlint ./demo/md",
     "test": "jest --colors",
-    "build-and-test": "npm run build && npm run test",
+    "build-and-test": "yarn run build && yarn run test",
     "fixtures": "node ./tasks/fixtures.js",
-    "demos": "rm -rf ./demo && npm run build && npm-run-all demo:*",
+    "demos": "yarn run build && npm-run-all demo:*",
     "demo:md": "typedoc --options ./demo.options.json --out ./demo/md",
     "demo:html": "typedoc --options ./demo.options.json --plugin none --out ./demo/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "engines": {
-    "node": ">= 10.8.0"
+    "node": ">= 12.20.0"
   },
   "bugs": {
     "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
@@ -41,7 +41,7 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.20.0"
+    "typedoc": ">=0.21.0"
   },
   "dependencies": {
     "handlebars": "^4.7.7"

@@ -1,9 +1,12 @@
+import * as path from 'path';
+
 import { BindOption, Reflection } from 'typedoc';
 import {
   Component,
   ContextAwareRendererComponent,
 } from 'typedoc/dist/lib/output/components';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+
 import MarkdownTheme from '../theme';
 
 @Component({ name: 'breadcrumbs' })
@@ -21,6 +24,7 @@ export class Breadcrumbs extends ContextAwareRendererComponent {
     MarkdownTheme.HANDLEBARS.registerHelper(
       'breadcrumbs',
       (page: PageEvent) => {
+        const hasReadmeFile = this.readme !== path.join(process.cwd(), 'none');
         const breadcrumbs: string[] = [];
         const globalsName = this.entryPoints.length > 1 ? 'Modules' : 'Exports';
         breadcrumbs.push(
@@ -32,7 +36,7 @@ export class Breadcrumbs extends ContextAwareRendererComponent {
                 this.entryDocument,
               )})`,
         );
-        if (this.readme !== 'none') {
+        if (hasReadmeFile) {
           breadcrumbs.push(
             page.url === page.project.url
               ? globalsName
