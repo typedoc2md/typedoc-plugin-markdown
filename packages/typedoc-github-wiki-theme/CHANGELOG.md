@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.4.1...typedoc-github-wiki-theme@0.4.2) (2021-06-19)
+
+
+### Bug Fixes
+
+* Fix output directory check ([121ffe4](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/121ffe48717db57216314b4dc7a6646bd4a1b454))
+* Remove colon from filenames to fix windows compatibility ([#237](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/237)) ([554cd44](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/554cd44b2bc48b737cfb15df8e828ceea5101d19))
+
+
+
+
+
 ## [0.4.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.4.0...typedoc-github-wiki-theme@0.4.1) (2021-06-19)
 
 
