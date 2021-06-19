@@ -1,6 +1,6 @@
+import * as fs from 'fs';
 import * as path from 'path';
 
-import * as fs from 'fs-extra';
 import {
   BindOption,
   DeclarationReflection,
@@ -78,7 +78,7 @@ export default class GithubWikiTheme extends MarkdownTheme {
         navJson.push(`- [${title}](${parseUrl(navItem.url)})`);
       }
     });
-    fs.outputFileSync(
+    fs.writeFileSync(
       renderer.outputDirectory + '/_Sidebar.md',
       navJson.join('\n') + '\n',
     );
