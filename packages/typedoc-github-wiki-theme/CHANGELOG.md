@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.4.0...typedoc-github-wiki-theme@0.4.1) (2021-06-19)
+
+
+### Bug Fixes
+
+* Remove reference to fs-extra ([#236](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/236)) ([dfec277](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/dfec277f583a398ce6f40a0ea0f2361bebab1f88))
+
+
+
+
+
 # [0.4.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.3.0...typedoc-github-wiki-theme@0.4.0) (2021-06-18)
 
 
