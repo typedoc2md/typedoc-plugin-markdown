@@ -25,6 +25,10 @@ export default class GitlabTheme extends MarkdownTheme {
     )}:-${reflection.name}.md`;
   }
 
+  allowedDirectoryListings() {
+    return [...super.allowedDirectoryListings(), ...['_sidebar.md']];
+  }
+
   onGitLabRendererEnd(renderer: RendererEvent) {
     const parseUrl = (url: string) => url.replace(/(.*).md/, '$1');
     const navigation: NavigationItem = this.getNavigation(renderer.project);
