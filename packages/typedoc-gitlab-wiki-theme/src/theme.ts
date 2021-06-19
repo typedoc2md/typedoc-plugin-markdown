@@ -22,7 +22,7 @@ export default class GitlabTheme extends MarkdownTheme {
   toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
     return `${mapping.directory}/${GroupPlugin.getKindSingular(
       reflection.kind,
-    )}:-${reflection.name}.md`;
+    )}-${reflection.name}.md`;
   }
 
   allowedDirectoryListings() {

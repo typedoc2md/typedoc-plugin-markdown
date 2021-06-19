@@ -12,20 +12,20 @@ Array [
   "Exports.md#declarationitemb",
   "Exports.md#functionitema",
   "Exports.md#functionitemb",
-  "modules/Namespace:-namespaceA.md",
-  "classes/Class:-SomeNestedClass.md",
-  "classes/Class:-SomeNestedClass.md#constructor",
-  "modules/Namespace:-namespaceB.md",
-  "enums/Enumeration:-enumItemA.md",
-  "enums/Enumeration:-enumItemB.md",
-  "classes/Class:-ClassItemA.md",
-  "classes/Class:-ClassItemA.md#constructor",
-  "classes/Class:-ClassItemB.md",
-  "classes/Class:-ClassItemB.md#constructor",
-  "interfaces/Interface:-InterfaceItemA.md",
-  "interfaces/Interface:-InterfaceItemA.md#prop",
-  "interfaces/Interface:-InterfaceItemB.md",
-  "interfaces/Interface:-InterfaceItemB.md#prop",
+  "modules/Namespace-namespaceA.md",
+  "classes/Class-SomeNestedClass.md",
+  "classes/Class-SomeNestedClass.md#constructor",
+  "modules/Namespace-namespaceB.md",
+  "enums/Enumeration-enumItemA.md",
+  "enums/Enumeration-enumItemB.md",
+  "classes/Class-ClassItemA.md",
+  "classes/Class-ClassItemA.md#constructor",
+  "classes/Class-ClassItemB.md",
+  "classes/Class-ClassItemB.md#constructor",
+  "interfaces/Interface-InterfaceItemA.md",
+  "interfaces/Interface-InterfaceItemA.md#prop",
+  "interfaces/Interface-InterfaceItemB.md",
+  "interfaces/Interface-InterfaceItemB.md#prop",
 ]
 `;
 
@@ -37,22 +37,22 @@ exports[`Theme: should write sidebar' 1`] = `
 
 ### Namespaces
 
-- [namespaceA](modules/Namespace:-namespaceA)
-- [namespaceB](modules/Namespace:-namespaceB)
+- [namespaceA](modules/Namespace-namespaceA)
+- [namespaceB](modules/Namespace-namespaceB)
 
 ### Enumerations
 
-- [enumItemA](enums/Enumeration:-enumItemA)
-- [enumItemB](enums/Enumeration:-enumItemB)
+- [enumItemA](enums/Enumeration-enumItemA)
+- [enumItemB](enums/Enumeration-enumItemB)
 
 ### Classes
 
-- [ClassItemA](classes/Class:-ClassItemA)
-- [ClassItemB](classes/Class:-ClassItemB)
-- [SomeNestedClass](classes/Class:-SomeNestedClass)
+- [ClassItemA](classes/Class-ClassItemA)
+- [ClassItemB](classes/Class-ClassItemB)
+- [SomeNestedClass](classes/Class-SomeNestedClass)
 
 ### Interfaces
 
-- [InterfaceItemA](interfaces/Interface:-InterfaceItemA)
-- [InterfaceItemB](interfaces/Interface:-InterfaceItemB)"
+- [InterfaceItemA](interfaces/Interface-InterfaceItemA)
+- [InterfaceItemB](interfaces/Interface-InterfaceItemB)"
 `;
