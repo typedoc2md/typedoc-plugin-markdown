@@ -31,7 +31,7 @@ export default class GithubWikiTheme extends MarkdownTheme {
   }
 
   toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
-    return `${GroupPlugin.getKindSingular(reflection.kind)}: ${this.getUrl(
+    return `${GroupPlugin.getKindSingular(reflection.kind)}-${this.getUrl(
       reflection,
     )}.md`;
   }
