@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.10.0...typedoc-plugin-markdown@3.10.1) (2021-06-23)
+
+
+### Bug Fixes
+
+* Improve type params table readability ([52038e2](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/52038e228d0dac557b9c972ab6999389d1d6132a))
+* Use backticks for generics and refernce types to improve consistency ([#239](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/239)) ([1b3395f](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/1b3395f27c7d03d8d1509b9d97dcd06830ff17f5))
+
+
+
+
+
 # [3.10.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.9.0...typedoc-plugin-markdown@3.10.0) (2021-06-18)
 
 
