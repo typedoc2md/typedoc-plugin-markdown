@@ -28,7 +28,7 @@ exports[`Declarations: should compile any function type 1`] = `
 
 | Name | Type |
 | :------ | :------ |
-| \`A\` | \`A\` = \`any\` |
+| \`A\` | \`any\` |
 
 #### Type declaration
 

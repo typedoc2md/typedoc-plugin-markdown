@@ -32,12 +32,15 @@ function table(parameters: any) {
     row.push(`\`${parameter.name}\``);
 
     if (showTypeCol) {
-      const typeCol: string[] = [`\`${parameter.name}\``];
+      const typeCol: string[] = [];
+      if (!parameter.type && !parameter.default) {
+        typeCol.push(`\`${parameter.name}\``);
+      }
       if (parameter.type) {
-        typeCol.push(`: ${type.call(parameter.type, 'object')}`);
+        typeCol.push(`extends ${type.call(parameter.type, 'object')}`);
       }
       if (parameter.default) {
-        typeCol.push(` = ${type.call(parameter.default)}`);
+        typeCol.push(type.call(parameter.default));
       }
       row.push(typeCol.join(''));
     }
