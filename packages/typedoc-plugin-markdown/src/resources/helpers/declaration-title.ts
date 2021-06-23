@@ -22,7 +22,7 @@ export function declarationTitle(
   if (this instanceof DeclarationReflection && this.typeParameters) {
     md.push(
       `<${this.typeParameters
-        .map((typeParameter) => typeParameter.name)
+        .map((typeParameter) => `\`${typeParameter.name}\``)
         .join(', ')}\\>`,
     );
   }
@@ -36,7 +36,9 @@ export function declarationTitle(
     this.defaultValue &&
     this.defaultValue !== '...'
   ) {
-    md.push(` = ${stripLineBreaks(escape(stripComments(this.defaultValue)))}`);
+    md.push(
+      ` = \`${stripLineBreaks(escape(stripComments(this.defaultValue)))}\``,
+    );
   }
   return md.join('');
 }

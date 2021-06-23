@@ -8,7 +8,7 @@ exports[`Declarations: should compile a const with default value 1`] = `
 `;
 
 exports[`Declarations: should compile a let with default value 1`] = `
-"• \`Let\` **stringLetWithDefaultValue**: \`string\` = 'hello'
+"• \`Let\` **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
 
 [partial: member.sources]
 "
@@ -22,7 +22,7 @@ exports[`Declarations: should compile an undefined declaration 1`] = `
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-"Ƭ **AnyFunctionType**<A\\\\>: (...\`input\`: \`any\`[]) => \`A\`
+"Ƭ **AnyFunctionType**<\`A\`\\\\>: (...\`input\`: \`any\`[]) => \`A\`
 
 #### Type parameters
 
@@ -77,14 +77,14 @@ exports[`Declarations: should compile callable declaration 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_](../modules.md#__double_underscores_declaration__)
+"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile enum delcaration 1`] = `
-"• **Down** = \\"DOWN\\"
+"• **Down** = \`\\"DOWN\\"\`
 
 [partial: member.sources]
 "

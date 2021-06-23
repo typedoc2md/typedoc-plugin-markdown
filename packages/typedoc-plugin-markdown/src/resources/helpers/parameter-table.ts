@@ -1,7 +1,6 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 
 import { comment } from './comment';
-import { escape } from './escape';
 import { stripLineBreaks } from './strip-line-breaks';
 import { type } from './type';
 
@@ -89,7 +88,7 @@ function table(parameters: any) {
 
 function getDefaultValue(parameter: ParameterReflection) {
   return parameter.defaultValue && parameter.defaultValue !== '...'
-    ? escape(parameter.defaultValue)
+    ? `\`${parameter.defaultValue}\``
     : '`undefined`';
 }
 

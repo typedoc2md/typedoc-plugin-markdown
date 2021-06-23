@@ -8,7 +8,7 @@ export function hierarchy(this: DeclarationHierarchy, level: number) {
   const symbol = level > 0 ? getSymbol(level) : '-';
   this.types.forEach((hierarchyType) => {
     if (this.isTarget) {
-      md.push(`${symbol} **${hierarchyType}**`);
+      md.push(`${symbol} **\`${hierarchyType}\`**`);
     } else {
       md.push(`${symbol} ${type.call(hierarchyType)}`);
     }

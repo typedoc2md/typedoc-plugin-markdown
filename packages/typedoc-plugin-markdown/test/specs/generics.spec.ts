@@ -6,16 +6,23 @@ import { TestApp } from '../test-app';
 describe(`Generics:`, () => {
   let testApp: TestApp;
   let partial: Handlebars.TemplateDelegate;
+  let declarationPartial: Handlebars.TemplateDelegate;
   let reflectionTemplate: Handlebars.TemplateDelegate;
 
   beforeAll(() => {
     testApp = new TestApp(['generics.ts']);
     partial = TestApp.getPartial('member.signature');
+    declarationPartial = TestApp.getPartial('member.declaration');
   });
 
   beforeEach(async () => {
     await testApp.bootstrap();
-    TestApp.stubPartials(['comment', 'member.signature', 'members']);
+    TestApp.stubPartials([
+      'comment',
+      'member.signature',
+      'members',
+      'member.sources',
+    ]);
     TestApp.stubHelpers(['toc', 'breadcrumbs', 'hierarchy', 'returns']);
     reflectionTemplate = TestApp.getTemplate('reflection');
   });
@@ -45,6 +52,15 @@ describe(`Generics:`, () => {
         partial,
         testApp.findReflection('functionWithTypeParams')
           .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile type with nested generics'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        declarationPartial,
+        testApp.findReflection('nestedGenerics'),
       ),
     ).toMatchSnapshot();
   });

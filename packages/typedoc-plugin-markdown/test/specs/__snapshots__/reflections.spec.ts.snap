@@ -53,7 +53,7 @@ exports[`Reflections: (template) should compile implemented class 1`] = `
 
 ## Implements
 
-- [ReflectionClass](../classes/reflectionclass.md)
+- [\`ReflectionClass\`](../classes/reflectionclass.md)
 
 [helper: toc]
 

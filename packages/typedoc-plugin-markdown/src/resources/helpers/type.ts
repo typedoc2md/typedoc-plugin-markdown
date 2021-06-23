@@ -188,17 +188,15 @@ function getReferenceType(model: ReferenceType, emphasis) {
     const reflection =
       model.reflection && model.reflection.url
         ? [
-            `[${escape(
-              model.reflection.name,
-            )}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            `[${`\`${model.reflection.name}\``}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
               model.reflection.url,
             )})`,
           ]
-        : [emphasis ? `\`${escape(model.name)}\`` : escape(model.name)];
+        : [`\`${model.name}\``];
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `<${model.typeArguments
-          .map((typeArgument) => `${type.call(typeArgument, 'all', false)}`)
+          .map((typeArgument) => type.call(typeArgument, 'all'))
           .join(', ')}\\>`,
       );
     }

@@ -31,7 +31,7 @@ export function signatureTitle(
   if (this.typeParameters) {
     md.push(
       `<${this.typeParameters
-        .map((typeParameter) => typeParameter.name)
+        .map((typeParameter) => `\`${typeParameter.name}\``)
         .join(', ')}\\>`,
     );
   }
