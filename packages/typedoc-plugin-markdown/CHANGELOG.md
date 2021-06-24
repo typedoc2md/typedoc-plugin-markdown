@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.10.1...typedoc-plugin-markdown@3.10.2) (2021-06-24)
+
+
+### Bug Fixes
+
+* Fix string escape inside backticks ([3b8ab18](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/3b8ab18adda9023f79aaa6d1e377d710d8a09f38))
+
+
+
+
+
 ## [3.10.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.10.0...typedoc-plugin-markdown@3.10.1) (2021-06-23)
 
 
