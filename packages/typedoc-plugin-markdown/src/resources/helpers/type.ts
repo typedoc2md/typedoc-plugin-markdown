@@ -17,7 +17,6 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc/dist/lib/models/types';
-
 import MarkdownTheme from '../../theme';
 import { escape } from './escape';
 
@@ -202,7 +201,7 @@ function getReferenceType(model: ReferenceType, emphasis) {
     }
     return reflection.join('');
   }
-  return emphasis ? `\`${escape(model.name)}\`` : escape(model.name);
+  return emphasis ? `\`${model.name}\`` : escape(model.name);
 }
 
 function getArrayType(model: ArrayType, emphasis: boolean) {
@@ -229,7 +228,7 @@ function getTupleType(model: TupleType) {
 }
 
 function getIntrinsicType(model: IntrinsicType, emphasis: boolean) {
-  return emphasis ? `\`${escape(model.name)}\`` : escape(model.name);
+  return emphasis ? `\`${model.name}\`` : escape(model.name);
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {

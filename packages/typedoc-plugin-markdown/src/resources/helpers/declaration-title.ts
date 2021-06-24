@@ -4,7 +4,6 @@ import {
   ReflectionKind,
   ReflectionType,
 } from 'typedoc/dist/lib/models';
-
 import { escape } from './escape';
 import { memberSymbol } from './member-symbol';
 import { stripComments } from './strip-comments';
@@ -36,9 +35,7 @@ export function declarationTitle(
     this.defaultValue &&
     this.defaultValue !== '...'
   ) {
-    md.push(
-      ` = \`${stripLineBreaks(escape(stripComments(this.defaultValue)))}\``,
-    );
+    md.push(` = \`${stripLineBreaks(stripComments(this.defaultValue))}\``);
   }
   return md.join('');
 }
