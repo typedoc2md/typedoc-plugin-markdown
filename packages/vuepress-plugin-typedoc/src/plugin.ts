@@ -53,9 +53,11 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
       }
       const theme = app.renderer.theme as any;
       const navigation = theme.getNavigation(project);
-
       const sidebarJson = JSON.stringify({
-        [`/${options.out}/`]: getSidebarJson(navigation, options),
+        [`/${path.relative(process.cwd(), options.out)}/`]: getSidebarJson(
+          navigation,
+          options,
+        ),
       });
       return {
         name: 'typedoc-sidebar',

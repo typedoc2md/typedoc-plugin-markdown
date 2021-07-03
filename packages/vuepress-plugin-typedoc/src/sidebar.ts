@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 import { NavigationItem } from 'typedoc';
 
 import { PluginOptions } from './types';
@@ -22,10 +24,11 @@ export const getSidebarJson = (
         }),
       });
     } else {
+      const outDir = path.relative(process.cwd(), options.out);
       navJson.push([
         getUrlKey(navigationItem.url) === 'README'
-          ? `/${options.out}/`
-          : `/${options.out}/modules`,
+          ? `/${outDir}/`
+          : `/${outDir}/modules`,
         navigationItem.title,
       ]);
     }
