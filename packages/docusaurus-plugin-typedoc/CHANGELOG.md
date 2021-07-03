@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.15.0...docusaurus-plugin-typedoc@0.15.1) (2021-07-03)
+
+
+### Bug Fixes
+
+* Fix generated sidebar dirName ([49d3a01](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/49d3a0185b9e7176f85a6de3318c9e5a0649869c))
+
+
+
+
+
 # [0.15.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.14.2...docusaurus-plugin-typedoc@0.15.0) (2021-06-18)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.8.0...vuepress-plugin-typedoc@0.8.1) (2021-07-03)
+
+
+### Bug Fixes
+
+* Fix sidebar output path ([6b076ae](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/6b076ae5037665318433270f4ac16d965bf8c0e8))
+
+
+
+
+
 # [0.8.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.7.0...vuepress-plugin-typedoc@0.8.0) (2021-06-18)
 
 
