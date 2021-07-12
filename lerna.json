@@ -3,7 +3,7 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent",
-  "ignoreChanges": ["**/*.json", "**/*.md"],
+  "ignoreChanges": ["**/*.json", "**/*.md", "**/*.spec.ts", "**/*.snap"],
   "command": {
     "version": {
       "allowBranch": "master",
