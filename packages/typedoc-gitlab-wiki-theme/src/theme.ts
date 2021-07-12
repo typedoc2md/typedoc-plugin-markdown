@@ -12,9 +12,6 @@ import { UtilsComponent } from './utils';
 export default class GitlabTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
-    renderer.application.options.setValue('entryDocument', 'home.md');
-    renderer.application.options.setValue('hideBreadcrumbs', true);
-    renderer.application.options.setValue('hidePageTitle', true);
     renderer.addComponent('utils', new UtilsComponent(renderer));
     this.listenTo(renderer, RendererEvent.END, this.onGitLabRendererEnd);
   }
