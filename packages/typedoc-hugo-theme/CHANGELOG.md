@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-hugo-theme@0.2.0...typedoc-hugo-theme@0.2.1) (2021-07-12)
+
+
+### Bug Fixes
+
+* Handle TypeDoc 0.21.3 options breaking change ([c07ef46](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/c07ef4660bd126a3b97356f862a8e1019d97c5a8))
+
+
+
+
+
 # [0.2.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-hugo-theme@0.1.1...typedoc-hugo-theme@0.2.0) (2021-03-04)
 
 

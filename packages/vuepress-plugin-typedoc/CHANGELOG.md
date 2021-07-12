@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.8.1...vuepress-plugin-typedoc@0.8.2) (2021-07-12)
+
+
+### Bug Fixes
+
+* Handle TypeDoc 0.21.3 options breaking change ([ba571ce](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/ba571cefb6285d740e032c1e489bc2ca3fdb01dd))
+
+
+
+
+
 ## [0.8.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.8.0...vuepress-plugin-typedoc@0.8.1) (2021-07-03)
 
 
