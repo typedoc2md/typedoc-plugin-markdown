@@ -38,7 +38,7 @@ export default class MarkdownTheme extends Theme {
   @BindOption('filenameSeparator')
   filenameSeparator!: string;
   @BindOption('entryDocument')
-  entryDocument!: string;
+  entryDocument: string;
 
   // creates an isolated Handlebars environment to store context aware helpers
   static HANDLEBARS = Handlebars.create();
@@ -237,12 +237,8 @@ export default class MarkdownTheme extends Theme {
       const navigationItem = new NavigationItem(title, url);
       navigationItem.isLabel = isLabel;
       navigationItem.children = children;
-      const {
-        reflection,
-        parent,
-        cssClasses,
-        ...filteredNavigationItem
-      } = navigationItem;
+      const { reflection, parent, cssClasses, ...filteredNavigationItem } =
+        navigationItem;
       return filteredNavigationItem as NavigationItem;
     };
     const navigation = createNavigationItem(project.name, undefined, false);

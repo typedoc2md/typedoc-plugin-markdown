@@ -3,14 +3,10 @@ import * as Handlebars from 'handlebars';
 import { TestApp } from '../test-app';
 
 describe(`Options:`, () => {
-  let testApp: TestApp;
-
-  beforeAll(() => {
-    testApp = new TestApp(['breadcrumbs.ts']);
-  });
-
   describe(`(defaults)`, () => {
+    let testApp: TestApp;
     beforeAll(async () => {
+      testApp = new TestApp(['breadcrumbs.ts']);
       await testApp.bootstrap({});
     });
 
@@ -39,7 +35,9 @@ describe(`Options:`, () => {
   });
 
   describe(`(with plugin options)`, () => {
+    let testApp: TestApp;
     beforeAll(async () => {
+      testApp = new TestApp(['breadcrumbs.ts']);
       await testApp.bootstrap({
         publicPath: 'test-public-path',
         namedAnchors: true,

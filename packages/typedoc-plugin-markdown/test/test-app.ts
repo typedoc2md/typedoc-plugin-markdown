@@ -5,7 +5,6 @@ import * as Handlebars from 'handlebars';
 import * as tmp from 'tmp';
 import {
   Application,
-  ArgumentsReader,
   DeclarationReflection,
   ProjectReflection,
   Renderer,
@@ -14,6 +13,7 @@ import {
   UrlMapping,
 } from 'typedoc';
 
+import { load } from '../src/index';
 import MarkdownTheme from '../src/theme';
 
 tmp.setGracefulCleanup();
@@ -108,17 +108,15 @@ export class TestApp {
           path.join(__dirname, './stubs/src/' + inputFile),
         )
       : ['./test/stubs/src'];
-    this.app.options.addReader(new ArgumentsReader(0));
+    load(this.app);
     this.app.options.addReader(new TypeDocReader());
     this.app.options.addReader(new TSConfigReader());
-    this.app.options.addReader(new ArgumentsReader(300));
   }
 
   async bootstrap(options: any = {}) {
     this.app.bootstrap({
       logger: 'none',
       entryPoints: this.entryPoints,
-      plugin: [path.join(__dirname, '../dist/index')],
       tsconfig: path.join(__dirname, 'stubs', 'tsconfig.json'),
       ...options,
     });

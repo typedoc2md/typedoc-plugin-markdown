@@ -4,16 +4,13 @@ import { Reflection } from 'typedoc';
 import { TestApp } from '../test-app';
 
 describe(`TOC:`, () => {
-  let testApp: TestApp;
   let moduleReflection: Reflection;
   let classReflection: Reflection;
 
-  beforeAll(() => {
-    testApp = new TestApp(['breadcrumbs.ts']);
-  });
-
   describe(`(default)`, () => {
+    let testApp: TestApp;
     beforeAll(async () => {
+      testApp = new TestApp(['breadcrumbs.ts']);
       await testApp.bootstrap();
       moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');
@@ -32,7 +29,9 @@ describe(`TOC:`, () => {
     });
   });
   describe(`(hideInPageToc)`, () => {
+    let testApp: TestApp;
     beforeAll(async () => {
+      testApp = new TestApp(['breadcrumbs.ts']);
       await testApp.bootstrap({ hideInPageTOC: true });
       moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');

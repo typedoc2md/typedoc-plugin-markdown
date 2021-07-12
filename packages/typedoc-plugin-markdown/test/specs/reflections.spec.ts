@@ -3,15 +3,12 @@ import * as Handlebars from 'handlebars';
 import { TestApp } from '../test-app';
 
 describe(`Reflections:`, () => {
-  let testApp: TestApp;
   let reflectionTemplate: Handlebars.TemplateDelegate;
 
-  beforeAll(() => {
-    testApp = new TestApp(['reflections.ts']);
-  });
-
   describe(`(header)`, () => {
+    let testApp: TestApp;
     beforeEach(async () => {
+      testApp = new TestApp(['reflections.ts']);
       await testApp.bootstrap({
         hideBreadcrumbs: false,
         hidePageTitle: true,
@@ -31,7 +28,9 @@ describe(`Reflections:`, () => {
   });
 
   describe(`(template)`, () => {
+    let testApp: TestApp;
     beforeEach(async () => {
+      testApp = new TestApp(['reflections.ts']);
       await testApp.bootstrap({
         hideBreadcrumbs: true,
         hidePageTitle: false,

@@ -5,11 +5,11 @@ exports[`TOC: (default) should display toc for class' 1`] = `
 
 ### Constructors
 
-- [constructor](breadcrumbs.md#constructor)
+- [constructor](Breadcrumbs.md#constructor)
 
 ### Methods
 
-- [someMethod](breadcrumbs.md#somemethod)
+- [someMethod](Breadcrumbs.md#somemethod)
 "
 `;
 
@@ -18,10 +18,10 @@ exports[`TOC: (default) should display toc for module' 1`] = `
 
 ### Constructors
 
-- [constructor](breadcrumbs.md#constructor)
+- [constructor](Breadcrumbs.md#constructor)
 
 ### Methods
 
-- [someMethod](breadcrumbs.md#somemethod)
+- [someMethod](Breadcrumbs.md#somemethod)
 "
 `;

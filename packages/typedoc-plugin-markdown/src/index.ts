@@ -1,11 +1,16 @@
-import * as fs from 'fs';
 import * as path from 'path';
 
-import { Application, Converter, ParameterType, Renderer } from 'typedoc';
+import { Application, ParameterType } from 'typedoc';
 
+import { CustomOptionsReader } from './options-reader';
 import MarkdownTheme from './theme';
 
 export function load(app: Application) {
+  addDeclarations(app);
+  loadTheme(app);
+}
+
+function addDeclarations(app: Application) {
   app.options.addDeclaration({
     help: '[Markdown Plugin] Do not render page title.',
     name: 'hidePageTitle',
@@ -21,23 +26,20 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    help:
-      '[Markdown Plugin] Specifies the base path that all links to be served from. If omitted all urls will be relative.',
+    help: '[Markdown Plugin] Specifies the base path that all links to be served from. If omitted all urls will be relative.',
     name: 'publicPath',
     type: ParameterType.String,
   });
 
   app.options.addDeclaration({
-    help:
-      '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
+    help: '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
     name: 'namedAnchors',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help:
-      '[Markdown Plugin] Output all reflections into seperate output files.',
+    help: '[Markdown Plugin] Output all reflections into seperate output files.',
     name: 'allReflectionsHaveOwnDocument',
     type: ParameterType.Boolean,
     defaultValue: false,
@@ -69,37 +71,35 @@ export function load(app: Application) {
     name: 'indexTitle',
     type: ParameterType.String,
   });
-
-  app.converter.on(Converter.EVENT_BEGIN, () => {
-    Renderer.getDefaultTheme = () => path.join(__dirname, 'resources');
-  });
-
-  app.converter.on(Converter.EVENT_RESOLVE_BEGIN, () => {
-    const themeName = app.options.getValue('theme');
-
-    const themeDir = path.join(__dirname);
-
-    if (![themeDir, 'default', 'markdown'].includes(themeName)) {
-      // For custom themes check that the theme is a markdown theme
-      // If it is return and pass through to renderer
-      const themeFileName = path.resolve(path.join(themeName, 'theme.js'));
-      if (fs.existsSync(themeFileName) && isMarkdownTheme(themeFileName)) {
-        return;
-      }
-      app.logger.warn(
-        `[typedoc-plugin-markdown] '${themeName}' is not a recognised markdown theme. If an html theme is required, please disable this plugin.`,
-      );
-    }
-
-    app.options.setValue('theme', themeDir);
-  });
 }
 
-function isMarkdownTheme(themeFileName: string) {
+function loadTheme(app: Application) {
+  const themeRef = app.options.getValue('theme');
+  const themeDir = path.join(__dirname);
+  const basePath = themeDir + '/resources';
+
+  if ([themeDir, 'default', 'markdown'].includes(themeRef)) {
+    app.renderer.theme = new MarkdownTheme(app.renderer, basePath);
+  } else {
+    const CustomTheme = getCustomTheme(
+      path.resolve(path.join(themeRef, 'theme.js')),
+    );
+    if (CustomTheme !== null) {
+      app.options.addReader(new CustomOptionsReader());
+      app.renderer.theme = new CustomTheme(app.renderer, basePath);
+    } else {
+      app.logger.warn(
+        `[typedoc-plugin-markdown] '${themeRef}' is not a recognised markdown theme.`,
+      );
+    }
+  }
+}
+
+function getCustomTheme(themeFile: string) {
   try {
-    const ThemeClass = require(themeFileName).default;
-    return ThemeClass.prototype instanceof MarkdownTheme;
+    const ThemeClass = require(themeFile).default;
+    return ThemeClass.prototype instanceof MarkdownTheme ? ThemeClass : null;
   } catch (e) {
-    return false;
+    return null;
   }
 }

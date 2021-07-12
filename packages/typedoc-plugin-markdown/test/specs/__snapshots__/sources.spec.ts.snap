@@ -3,7 +3,7 @@
 exports[`Sources: should display implementation of sources' 1`] = `
 "#### Implementation of
 
-[SomeInterface](someinterface.md).[prop](someinterface.md#prop)
+[SomeInterface](SomeInterface.md).[prop](SomeInterface.md#prop)
 
 #### Defined in
 
@@ -14,7 +14,7 @@ sources.ts:6
 exports[`Sources: should display inherited sources' 1`] = `
 "#### Inherited from
 
-[SomeClass](../classes/someclass.md).[prop](../classes/someclass.md#prop)
+[SomeClass](../classes/SomeClass.md).[prop](../classes/SomeClass.md#prop)
 
 #### Defined in
 
@@ -25,7 +25,7 @@ sources.ts:2
 exports[`Sources: should display overide sources' 1`] = `
 "#### Overrides
 
-[SomeClass](../classes/someclass.md).[prop](../classes/someclass.md#prop)
+[SomeClass](../classes/SomeClass.md).[prop](../classes/SomeClass.md#prop)
 
 #### Defined in
 

@@ -84,7 +84,7 @@ Some nested params.
 | \`params.nestedObj\` | \`Object\` | A nested object. |
 | \`params.nestedObj.name\` | \`string\` | - |
 | \`params.nestedObj.obj\` | \`Object\` | - |
-| \`params.nestedObj.obj.name\` | () => \`void\` | - |
+| \`params.nestedObj.obj.name\` |  | - |
 | \`params.nestedObj.value\` | \`number\` | - |
 | \`params.parent?\` | \`number\` | - |
 | \`context\` | \`any\` | The context of the method call. |

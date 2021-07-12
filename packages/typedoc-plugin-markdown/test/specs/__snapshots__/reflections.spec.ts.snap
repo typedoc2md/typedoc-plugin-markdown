@@ -12,7 +12,14 @@ exports[`Reflections: (header) should compile template with breadcrumbs and with
 exports[`Reflections: (template) should compile Enum 1`] = `
 "# Enumeration: EnumReflection
 
-[helper: toc]
+## Table of contents
+
+### Enumeration members
+
+- [Down](../enums/EnumReflection.md#down)
+- [Left](../enums/EnumReflection.md#left)
+- [Right](../enums/EnumReflection.md#right)
+- [Up](../enums/EnumReflection.md#up)
 
 [partial: members]
 "
@@ -27,8 +34,6 @@ exports[`Reflections: (template) should compile a callable reflection 1`] = `
 
 [partial: member.signature]
 
-[helper: toc]
-
 [partial: members]
 "
 `;
@@ -42,8 +47,6 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 
 [partial: comment]
 
-[helper: toc]
-
 [partial: members]
 "
 `;
@@ -53,9 +56,13 @@ exports[`Reflections: (template) should compile implemented class 1`] = `
 
 ## Implements
 
-- [\`ReflectionClass\`](../classes/reflectionclass.md)
+- [\`ReflectionClass\`](../classes/ReflectionClass.md)
 
-[helper: toc]
+## Table of contents
+
+### Constructors
+
+- [constructor](../classes/ImplementedClass.md#constructor)
 
 [partial: members]
 "
@@ -64,7 +71,14 @@ exports[`Reflections: (template) should compile implemented class 1`] = `
 exports[`Reflections: (template) should compile module with breadcrumbs and project title 1`] = `
 "# Enumeration: EnumReflection
 
-[helper: toc]
+## Table of contents
+
+### Enumeration members
+
+- [Down](../enums/EnumReflection.md#down)
+- [Left](../enums/EnumReflection.md#left)
+- [Right](../enums/EnumReflection.md#right)
+- [Up](../enums/EnumReflection.md#up)
 
 [partial: members]
 "

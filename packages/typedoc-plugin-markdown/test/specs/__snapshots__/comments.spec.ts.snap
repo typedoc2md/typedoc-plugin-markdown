@@ -11,7 +11,7 @@ You can write <strong>HTML</strong> tags directly in comments
 `;
 
 exports[`Comments: should build @link references' 1`] = `
-"See [\`CommentClass\`](commentclass.md) and [CommentClass's comment property](commentclass.md#comment).
+"See [\`CommentClass\`](CommentClass.md) and [CommentClass's comment property](CommentClass.md#comment).
 Also, check out [Google](https://www.google.com) and
 [GitHub](https://github.com).
 
@@ -61,7 +61,7 @@ Another tag description
 exports[`Comments: should convert symbols brackets to symbol links' 1`] = `
 "Additionally you can link to other classes, members or functions using double square brackets.
 
-- Link to an external reflection: [CommentClass](commentclass.md)
+- Link to an external reflection: [CommentClass](CommentClass.md)
 - Link to an internal reflection: [commentsInReturn](../modules.md#commentsinreturn)
 - Link to an undefined reflection: [[VOID]]
 "

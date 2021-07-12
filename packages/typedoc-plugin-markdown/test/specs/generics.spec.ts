@@ -10,12 +10,12 @@ describe(`Generics:`, () => {
   let reflectionTemplate: Handlebars.TemplateDelegate;
 
   beforeAll(() => {
-    testApp = new TestApp(['generics.ts']);
     partial = TestApp.getPartial('member.signature');
     declarationPartial = TestApp.getPartial('member.declaration');
   });
 
   beforeEach(async () => {
+    testApp = new TestApp(['generics.ts']);
     await testApp.bootstrap();
     TestApp.stubPartials([
       'comment',

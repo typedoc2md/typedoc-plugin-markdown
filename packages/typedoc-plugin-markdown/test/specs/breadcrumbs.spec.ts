@@ -4,16 +4,13 @@ import { Reflection } from 'typedoc';
 import { TestApp } from '../test-app';
 
 describe(`Breadcrumbs:`, () => {
-  let testApp: TestApp;
   let moduleReflection: Reflection;
   let classReflection: Reflection;
 
-  beforeAll(() => {
-    testApp = new TestApp(['breadcrumbs.ts']);
-  });
-
   describe(`(with readme)`, () => {
+    let testApp: TestApp;
     beforeAll(async () => {
+      testApp = new TestApp(['breadcrumbs.ts']);
       await testApp.bootstrap();
       moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');
@@ -59,7 +56,9 @@ describe(`Breadcrumbs:`, () => {
     });
   });
   describe(`(without readme)`, () => {
+    let testApp: TestApp;
     beforeAll(async () => {
+      testApp = new TestApp(['breadcrumbs.ts']);
       await testApp.bootstrap({ readme: 'none' });
       moduleReflection = testApp.project.children[0];
       classReflection = testApp.project.findReflectionByName('Breadcrumbs');

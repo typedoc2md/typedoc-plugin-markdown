@@ -3,18 +3,16 @@ import * as fs from 'fs';
 import { TestApp } from '../test-app';
 
 describe(`Theme:`, () => {
-  let testApp: TestApp;
-
   describe(`(getNavigation)`, () => {
     test(`should getNavigation'`, async () => {
-      testApp = new TestApp(['theme.ts']);
+      const testApp = new TestApp(['theme.ts']);
       await testApp.bootstrap();
       const navigation = testApp.theme.getNavigation(testApp.project);
       expect(JSON.stringify(navigation, null, 1)).toMatchSnapshot();
     });
 
     test(`should getNavigation for exports'`, async () => {
-      testApp = new TestApp(['theme.ts']);
+      const testApp = new TestApp(['theme.ts']);
       await testApp.bootstrap();
       const navigation = testApp.theme
         .getNavigation(testApp.project)
@@ -23,7 +21,7 @@ describe(`Theme:`, () => {
     });
 
     test(`should getNavigation for exports with readme=none'`, async () => {
-      testApp = new TestApp(['theme.ts']);
+      const testApp = new TestApp(['theme.ts']);
       await testApp.bootstrap({ readme: 'none' });
       const navigation = testApp.theme
         .getNavigation(testApp.project)
@@ -32,7 +30,7 @@ describe(`Theme:`, () => {
     });
 
     test(`should getNavigation for modules'`, async () => {
-      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+      const testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
       await testApp.bootstrap();
       const navigation = testApp.theme
         .getNavigation(testApp.project)
@@ -41,7 +39,7 @@ describe(`Theme:`, () => {
     });
 
     test(`should getNavigation for modules with readme=none'`, async () => {
-      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
+      const testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
       await testApp.bootstrap({ readme: 'none' });
       const navigation = testApp.theme
         .getNavigation(testApp.project)
@@ -51,22 +49,23 @@ describe(`Theme:`, () => {
   });
 
   describe(`(getUrls)`, () => {
-    beforeAll(() => {
-      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
-    });
+    beforeAll(() => {});
     test(`should getUrls'`, async () => {
+      const testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
       await testApp.bootstrap();
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
 
     test(`should getUrls with 'allReflectionsHaveOwnDocument' set`, async () => {
+      const testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
       await testApp.bootstrap({ allReflectionsHaveOwnDocument: true });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
     });
 
     test(`should getUrls with readme 'none'`, async () => {
+      const testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
       await testApp.bootstrap({ readme: 'none' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
@@ -74,10 +73,8 @@ describe(`Theme:`, () => {
   });
 
   describe(`(filenameSeparator)`, () => {
-    beforeAll(() => {
-      testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
-    });
     test(`should getUrls with custom separator'`, async () => {
+      const testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
       await testApp.bootstrap({ filenameSeparator: '-' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
@@ -86,6 +83,7 @@ describe(`Theme:`, () => {
 
   describe(`(entryDocument)`, () => {
     test(`should getUrls with custom entryDocument'`, async () => {
+      const testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
       await testApp.bootstrap({ entryDocument: 'index.md' });
       const urlMappings = testApp.theme.getUrls(testApp.project);
       expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
@@ -93,6 +91,7 @@ describe(`Theme:`, () => {
   });
 
   describe(`(isOutputDirectory)`, () => {
+    let testApp: TestApp;
     beforeAll(() => {
       testApp = new TestApp(['breadcrumbs.ts', 'theme.ts']);
     });
