@@ -7,6 +7,7 @@ export interface PluginOptions {
   disableOutputCheck?: boolean;
   plugin: string[];
   watch: boolean;
+  hideBreadcrumbs: boolean;
 }
 
 export interface SidebarOptions {

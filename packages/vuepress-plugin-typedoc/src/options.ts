@@ -20,6 +20,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   },
   plugin: ['none'],
   watch: false,
+  hideBreadcrumbs: true,
 };
 
 export const getOptions = (opts: Partial<PluginOptions>): PluginOptions => {
