@@ -20,24 +20,17 @@ export default class HugoTheme extends MarkdownTheme {
 
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
-    // set relevant default options
-    renderer.application.options.setValue('hideBreadcrumbs', true);
-    renderer.application.options.setValue('hidePageTitle', true);
-    renderer.application.options.setValue('entryDocument', '_index.md');
-
-    // listen for triggered events
     this.listenTo(renderer, PageEvent.END, this.onHugoPageEnd);
     this.listenTo(renderer, RendererEvent.END, this.onHugoRendererEnd);
   }
 
   private onHugoPageEnd(page: PageEvent) {
-    // yaml variables
     const yamlVars = {
       title: this.getTitle(page, false),
       linkTitle: this.getTitle(page, true),
       slug: this.getSlug(page),
     };
-    // pass yaml variables to prependYAML util
+
     if (page.contents) {
       page.contents = prependYAML(page.contents, yamlVars);
     }
