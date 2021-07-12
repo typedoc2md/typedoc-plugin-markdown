@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 import { LoadContext } from '@docusaurus/types';
 import { Application } from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
@@ -20,6 +22,8 @@ export default async function pluginDocusaurus(
     const { siteDir } = context;
 
     const app = new Application();
+
+    app.options.setValue('theme', path.resolve(__dirname));
 
     load(app);
 

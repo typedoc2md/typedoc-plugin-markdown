@@ -20,9 +20,13 @@ Array [
 exports[`Options: should return default options 1`] = `
 Object {
   "docsRoot": "docs",
+  "entryDocument": "index.md",
   "entryPoints": Array [
     "entrypoint.ts",
   ],
+  "hideBreadcrumbs": true,
+  "hideInPageTOC": true,
+  "hidePageTitle": true,
   "id": "default",
   "out": "api",
   "plugin": Array [

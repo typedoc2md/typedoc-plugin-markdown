@@ -10,6 +10,10 @@ export interface PluginOptions {
   disableOutputCheck?: boolean;
   entryPoints?: string[];
   watch: boolean;
+  hideInPageTOC: boolean;
+  hideBreadcrumbs: boolean;
+  hidePageTitle: boolean;
+  entryDocument: string;
 }
 
 export interface FrontMatter {

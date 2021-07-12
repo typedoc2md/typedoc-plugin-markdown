@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-import * as path from 'path';
 
 import ProgressBar from 'progress';
 import {
@@ -36,7 +35,7 @@ export const bootstrap = (app: Application, opts: Partial<PluginOptions>) => {
   addTypedocReaders(app);
   addTypedocDeclarations(app);
   app.renderer.render = render;
-  app.bootstrap({ ...getPluginOptions(opts), theme: path.resolve(__dirname) });
+  app.bootstrap({ ...getPluginOptions(opts) });
   return app.options.getRawValues() as PluginOptions;
 };
 

@@ -16,6 +16,10 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   },
   plugin: ['none'],
   watch: false,
+  hideInPageTOC: true,
+  hideBreadcrumbs: true,
+  hidePageTitle: true,
+  entryDocument: 'index.md',
 };
 
 export const getPluginOptions = (
