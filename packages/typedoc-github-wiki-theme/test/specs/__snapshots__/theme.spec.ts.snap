@@ -8,24 +8,8 @@ exports[`Theme: sidebar should write sidebar for exports' 1`] = `
 
 ### Namespaces
 
-- [namespaceA](../wiki/Namespace-namespaceA)
-- [namespaceB](../wiki/Namespace-namespaceB)
-
-### Enumerations
-
-- [enumItemA](../wiki/Enumeration-enumItemA)
-- [enumItemB](../wiki/Enumeration-enumItemB)
-
-### Classes
-
-- [ClassItemA](../wiki/Class-ClassItemA)
-- [ClassItemB](../wiki/Class-ClassItemB)
-- [SomeNestedClass](../wiki/Class-SomeNestedClass)
-
-### Interfaces
-
-- [InterfaceItemA](../wiki/Interface-InterfaceItemA)
-- [InterfaceItemB](../wiki/Interface-InterfaceItemB)
+- [namespaceA](../wiki/namespaceA)
+- [namespaceB](../wiki/namespaceB)
 "
 `;
 
@@ -35,30 +19,13 @@ exports[`Theme: sidebar should write sidebar for modules' 1`] = `
 
 ### Modules
 
-- [breadcrumbs](../wiki/Module-breadcrumbs)
-- [theme](../wiki/Module-theme)
+- [breadcrumbs](../wiki/breadcrumbs)
+- [theme](../wiki/theme)
 
 ### Namespaces
 
-- [namespaceA](../wiki/Namespace-namespaceA)
-- [namespaceB](../wiki/Namespace-namespaceB)
-
-### Enumerations
-
-- [enumItemA](../wiki/Enumeration-enumItemA)
-- [enumItemB](../wiki/Enumeration-enumItemB)
-
-### Classes
-
-- [Breadcrumbs](../wiki/Class-Breadcrumbs)
-- [ClassItemA](../wiki/Class-ClassItemA)
-- [ClassItemB](../wiki/Class-ClassItemB)
-- [SomeNestedClass](../wiki/Class-SomeNestedClass)
-
-### Interfaces
-
-- [InterfaceItemA](../wiki/Interface-InterfaceItemA)
-- [InterfaceItemB](../wiki/Interface-InterfaceItemB)
+- [namespaceA](../wiki/theme.namespaceA)
+- [namespaceB](../wiki/theme.namespaceB)
 "
 `;
 
@@ -69,20 +36,20 @@ Array [
   "Home.md#declarationitemb",
   "Home.md#functionitema",
   "Home.md#functionitemb",
-  "Namespace-namespaceA.md",
-  "Class-SomeNestedClass.md",
-  "Class-SomeNestedClass.md#constructor",
-  "Namespace-namespaceB.md",
-  "Enumeration-enumItemA.md",
-  "Enumeration-enumItemB.md",
-  "Class-ClassItemA.md",
-  "Class-ClassItemA.md#constructor",
-  "Class-ClassItemB.md",
-  "Class-ClassItemB.md#constructor",
-  "Interface-InterfaceItemA.md",
-  "Interface-InterfaceItemA.md#prop",
-  "Interface-InterfaceItemB.md",
-  "Interface-InterfaceItemB.md#prop",
+  "namespaceA.md",
+  "namespaceA.SomeNestedClass.md",
+  "namespaceA.SomeNestedClass.md#constructor",
+  "namespaceB.md",
+  "enumItemA.md",
+  "enumItemB.md",
+  "ClassItemA.md",
+  "ClassItemA.md#constructor",
+  "ClassItemB.md",
+  "ClassItemB.md#constructor",
+  "InterfaceItemA.md",
+  "InterfaceItemA.md#prop",
+  "InterfaceItemB.md",
+  "InterfaceItemB.md#prop",
 ]
 `;
 
@@ -98,19 +65,19 @@ Array [
   "Exports.md#declarationitemb",
   "Exports.md#functionitema",
   "Exports.md#functionitemb",
-  "Namespace-namespaceA.md",
-  "Class-SomeNestedClass.md",
-  "Class-SomeNestedClass.md#constructor",
-  "Namespace-namespaceB.md",
-  "Enumeration-enumItemA.md",
-  "Enumeration-enumItemB.md",
-  "Class-ClassItemA.md",
-  "Class-ClassItemA.md#constructor",
-  "Class-ClassItemB.md",
-  "Class-ClassItemB.md#constructor",
-  "Interface-InterfaceItemA.md",
-  "Interface-InterfaceItemA.md#prop",
-  "Interface-InterfaceItemB.md",
-  "Interface-InterfaceItemB.md#prop",
+  "namespaceA.md",
+  "namespaceA.SomeNestedClass.md",
+  "namespaceA.SomeNestedClass.md#constructor",
+  "namespaceB.md",
+  "enumItemA.md",
+  "enumItemB.md",
+  "ClassItemA.md",
+  "ClassItemA.md#constructor",
+  "ClassItemB.md",
+  "ClassItemB.md#constructor",
+  "InterfaceItemA.md",
+  "InterfaceItemA.md#prop",
+  "InterfaceItemB.md",
+  "InterfaceItemB.md#prop",
 ]
 `;

@@ -1,13 +1,7 @@
 import * as fs from 'fs';
 
-import {
-  BindOption,
-  DeclarationReflection,
-  NavigationItem,
-  Reflection,
-} from 'typedoc';
+import { BindOption, DeclarationReflection, NavigationItem } from 'typedoc';
 import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
-import { GroupPlugin } from 'typedoc/dist/lib/converter/plugins';
 import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
@@ -24,18 +18,11 @@ export default class GithubWikiTheme extends MarkdownTheme {
   constructor(renderer: Renderer, basePath: string) {
     super(renderer, basePath);
     renderer.addComponent('utils', new UtilsComponent(renderer));
-    this.listenTo(renderer, RendererEvent.END, this.onRendererEnd, 1024);
+    this.listenTo(renderer, RendererEvent.END, this.writeSidebar, 1024);
   }
 
   toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
-    return `${GroupPlugin.getKindSingular(reflection.kind)}-${this.getUrl(
-      reflection,
-    )}.md`;
-  }
-
-  getUrl(reflection: Reflection): string {
-    const url = reflection.name;
-    return url;
+    return `${reflection.getFullName()}.md`;
   }
 
   isOutputDirectory(outputDirectory: string): boolean {
@@ -63,27 +50,33 @@ export default class GithubWikiTheme extends MarkdownTheme {
     ];
   }
 
-  onRendererEnd(renderer: RendererEvent) {
+  writeSidebar(renderer: RendererEvent) {
     const parseUrl = (url: string) => '../wiki/' + url.replace('.md', '');
     const navigation: NavigationItem = this.getNavigation(renderer.project);
     const navJson: string[] = [`## ${renderer.project.name}\n`];
+    const allowedSections = ['Home', 'Modules', 'Namespaces'];
+    navigation.children
+      ?.filter(
+        (navItem) =>
+          !navItem.isLabel || allowedSections.includes(navItem.title),
+      )
+      .forEach((navItem) => {
+        if (navItem.isLabel) {
+          navJson.push(`\n### ${navItem.title}\n`);
+          navItem.children?.forEach((navItemChild) => {
+            const longTitle = navItemChild.title.split('.');
+            const shortTitle = longTitle[longTitle.length - 1];
+            navJson.push(
+              `- [${shortTitle}](${parseUrl(encodeURI(navItemChild.url))})`,
+            );
+          });
+        } else {
+          const title =
+            navItem.url === this.entryDocument ? 'Home' : navItem.title;
+          navJson.push(`- [${title}](${parseUrl(navItem.url)})`);
+        }
+      });
 
-    navigation.children?.forEach((navItem) => {
-      if (navItem.isLabel) {
-        navJson.push(`\n### ${navItem.title}\n`);
-        navItem.children?.forEach((navItemChild) => {
-          const longTitle = navItemChild.title.split('.');
-          const shortTitle = longTitle[longTitle.length - 1];
-          navJson.push(
-            `- [${shortTitle}](${parseUrl(encodeURI(navItemChild.url))})`,
-          );
-        });
-      } else {
-        const title =
-          navItem.url === this.entryDocument ? 'Home' : navItem.title;
-        navJson.push(`- [${title}](${parseUrl(navItem.url)})`);
-      }
-    });
     fs.writeFileSync(
       renderer.outputDirectory + '/_Sidebar.md',
       navJson.join('\n') + '\n',
