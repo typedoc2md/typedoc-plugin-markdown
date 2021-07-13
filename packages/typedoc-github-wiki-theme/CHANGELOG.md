@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.4.3...typedoc-github-wiki-theme@0.5.0) (2021-07-13)
+
+
+### Features
+
+* Generate unique page names ([#242](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/242)) ([7802fd3](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/7802fd30775be167e520aaba41a04f649a569877))
+
+
+
+
+
 ## [0.4.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.4.2...typedoc-github-wiki-theme@0.4.3) (2021-07-12)
 
 
