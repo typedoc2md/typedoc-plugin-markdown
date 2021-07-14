@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.5.0...typedoc-github-wiki-theme@0.5.1) (2021-07-14)
+
+
+### Bug Fixes
+
+* Replace forward slash with periods for filenames ([#242](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/242)) ([69e31f2](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/69e31f2ff8e9f516897bbddefb208905ed4ecaa5))
+
+
+
+
+
 # [0.5.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.4.3...typedoc-github-wiki-theme@0.5.0) (2021-07-13)
 
 
