@@ -1,3 +1,4 @@
+import { ReflectionKind } from 'typedoc';
 import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
@@ -11,5 +12,17 @@ export default class DocusaurusTheme extends MarkdownTheme {
 
   allowedDirectoryListings() {
     return [...super.allowedDirectoryListings(), ...['_category_.yml']];
+  }
+
+  get mappings() {
+    return super.mappings.map((mapping) => {
+      if (mapping.kind.includes(ReflectionKind.Namespace)) {
+        return {
+          ...mapping,
+          directory: 'namespaces',
+        };
+      }
+      return mapping;
+    });
   }
 }
