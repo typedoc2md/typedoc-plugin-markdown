@@ -22,7 +22,7 @@ export default class GithubWikiTheme extends MarkdownTheme {
   }
 
   toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
-    return `${reflection.getFullName()}.md`;
+    return `${reflection.getFullName().replace(/\//g, '.')}.md`;
   }
 
   isOutputDirectory(outputDirectory: string): boolean {
