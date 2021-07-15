@@ -17,6 +17,7 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc/dist/lib/models/types';
+
 import MarkdownTheme from '../../theme';
 import { escape } from './escape';
 
@@ -39,6 +40,7 @@ export function type(
     | IndexedAccessType
     | UnknownType
     | InferredType,
+
   collapse: Collapse = 'none',
   emphasis = true,
 ) {
@@ -116,7 +118,10 @@ function getLiteralType(model: LiteralType) {
   return `\`\`${JSON.stringify(model.value)}\`\``;
 }
 
-function getReflectionType(model: DeclarationReflection, collapse: Collapse) {
+export function getReflectionType(
+  model: DeclarationReflection,
+  collapse: Collapse,
+) {
   if (model.signatures) {
     return collapse === 'function' || collapse === 'all'
       ? `\`fn\``

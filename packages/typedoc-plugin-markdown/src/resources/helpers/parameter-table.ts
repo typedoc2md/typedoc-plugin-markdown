@@ -2,7 +2,7 @@ import { ParameterReflection, ReflectionKind } from 'typedoc';
 
 import { comment } from './comment';
 import { stripLineBreaks } from './strip-line-breaks';
-import { type } from './type';
+import { getReflectionType, type } from './type';
 
 export function parameterTable(this: ParameterReflection[]) {
   const flattenParams = (current: any) => {
@@ -60,7 +60,11 @@ function table(parameters: any) {
       }\``,
     );
 
-    row.push(type.call(parameter.type, 'object'));
+    row.push(
+      parameter.type
+        ? type.call(parameter.type, 'object')
+        : getReflectionType(parameter, 'object'),
+    );
 
     if (showDefaults) {
       row.push(getDefaultValue(parameter));
