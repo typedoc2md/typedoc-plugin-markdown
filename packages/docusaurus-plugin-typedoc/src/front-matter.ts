@@ -53,7 +53,7 @@ export class FrontMatterComponent extends RendererComponent {
     if (page.url === this.entryDocument) {
       items = {
         ...items,
-        slug: '/' + path.relative(process.cwd(), this.out),
+        slug: '/' + path.relative(process.cwd(), this.out).replace(/\\/g, '/'),
       };
     }
     if (sidebarLabel && sidebarLabel !== pageTitle) {
