@@ -15,7 +15,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
             - name: Upgrade yarn
-              run: yarn install --frozen-lockfile
+              run: yarn install
             - name: Install
               run: yarn ci
             - name: Build
