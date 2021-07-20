@@ -17,7 +17,7 @@ jobs:
             - name: Upgrade yarn
               run: yarn install
             - name: Install
-              run: yarn ci
+              run: yarn
             - name: Build
               run: yarn run build
             - name: Test
