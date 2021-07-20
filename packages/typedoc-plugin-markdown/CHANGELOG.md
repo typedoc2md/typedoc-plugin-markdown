@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.10.3...typedoc-plugin-markdown@3.10.4) (2021-07-20)
+
+
+### Bug Fixes
+
+* Fix anonymous function types in params table ([0047faf](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/0047faf1d3e2ec91752cef0603f2838ce1e70be9))
+
+
+
+
+
 ## [3.10.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.10.2...typedoc-plugin-markdown@3.10.3) (2021-07-12)
 
 

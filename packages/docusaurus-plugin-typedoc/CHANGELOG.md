@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.15.2...docusaurus-plugin-typedoc@0.15.3) (2021-07-20)
+
+
+### Bug Fixes
+
+* Generate namespaces into own directory to fix sidebar category ([bd7669e](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/bd7669efc7eb43a91567451f3be17b5651f82a78))
+* Handle windows back-slash in slug ([#245](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/245)) ([9178963](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/917896393359426077e36149ab50b07252aafa49))
+
+
+
+
+
 ## [0.15.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.15.1...docusaurus-plugin-typedoc@0.15.2) (2021-07-12)
 
 
