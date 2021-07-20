@@ -3,7 +3,7 @@
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeScript API documentation as Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
-[![Build Status](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown)
+![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
 ## What it does?
 

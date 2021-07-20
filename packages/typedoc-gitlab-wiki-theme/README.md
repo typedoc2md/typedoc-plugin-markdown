@@ -3,7 +3,7 @@
 A [Gitlab Wiki](https://docs.gitlab.com/ee/user/project/wiki/) compatible [TypeDoc](https://github.com/TypeStrong/typedoc) theme.
 
 [![npm](https://img.shields.io/npm/v/typedoc-gitlab-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme)
-[![Build Status](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown.svg?branch=master)](https://travis-ci.com/tgreyuk/typedoc-plugin-markdown)
+![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
 ## What is does?
 
