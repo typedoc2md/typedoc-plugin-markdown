@@ -14,13 +14,13 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node }}
-            - name: Upgrade npm
-              run: npm i -g npm@latest
+            - name: Upgrade yarn
+              run: yarn install --frozen-lockfile
             - name: Install
-              run: npm ci
+              run: yarn ci
             - name: Build
-              run: npm run build
+              run: yarn run build
             - name: Test
-              run: npm test
+              run: yarn test
             - name: Lint
-              run: npm run lint
+              run: yarn run lint
