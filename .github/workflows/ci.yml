@@ -1,0 +1,26 @@
+name: CI
+on: [push, pull_request]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node: ["12", "14", "16"]
+        name: Node ${{ matrix.node }}
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            - name: Set up Node
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node }}
+            - name: Upgrade yarn
+              run: yarn install
+            - name: Install
+              run: yarn
+            - name: Build
+              run: yarn run build
+            - name: Test
+              run: yarn test
+            - name: Lint
+              run: yarn run lint
