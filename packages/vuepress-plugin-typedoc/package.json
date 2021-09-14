@@ -21,7 +21,7 @@
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
+    "prepublishOnly": "yarn run lint && yarn run build",
     "build": "rm -rf ./dist && tsc",
     "test:init": "rm -rf test/site && yarn create vuepress-site test/site",
     "test:demo:start": "yarn run build && cd test/site/docs && yarn run dev",
