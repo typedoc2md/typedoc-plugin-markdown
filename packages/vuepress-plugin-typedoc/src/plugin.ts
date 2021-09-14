@@ -3,9 +3,8 @@ import * as path from 'path';
 import { Application, ProjectReflection } from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
 
-import { FrontMatterComponent } from './front-matter';
 import { addOptions, getOptions } from './options';
-import { render } from './render';
+
 import { getSidebarJson } from './sidebar';
 import { PluginOptions } from './types';
 
@@ -19,13 +18,9 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
 
   load(app);
 
-  app.renderer.render = render;
-
   addOptions(app);
 
   app.bootstrap({ ...options, theme: path.resolve(__dirname) });
-
-  app.renderer.addComponent('fm', new FrontMatterComponent(app.renderer));
 
   project = app.convert();
 
@@ -53,6 +48,7 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
       }
       const theme = app.renderer.theme as any;
       const navigation = theme.getNavigation(project);
+
       const sidebarJson = JSON.stringify({
         [`/${path.relative(process.cwd(), options.out)}/`]: getSidebarJson(
           navigation,

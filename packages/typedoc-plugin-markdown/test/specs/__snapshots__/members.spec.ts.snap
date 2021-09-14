@@ -18,7 +18,7 @@ ___
 exports[`Members: (member) should compile declaration members' 1`] = `
 "### declarationMember
 
-• \`Let\` **declarationMember**: \`string\`
+• **declarationMember**: \`string\`
 
 [partial: member.sources]
 

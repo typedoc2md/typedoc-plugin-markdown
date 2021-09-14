@@ -1,7 +1,8 @@
-import { DeclarationReflection, SignatureReflection } from 'typedoc';
+import * as Handlebars from 'handlebars';
 import {
   ArrayType,
   ConditionalType,
+  DeclarationReflection,
   IndexedAccessType,
   InferredType,
   IntersectionType,
@@ -11,104 +12,102 @@ import {
   QueryType,
   ReferenceType,
   ReflectionType,
+  SignatureReflection,
   TupleType,
   TypeOperatorType,
-  TypeParameterType,
   UnionType,
   UnknownType,
-} from 'typedoc/dist/lib/models/types';
-
-import MarkdownTheme from '../../theme';
-import { escape } from './escape';
+} from 'typedoc';
+import { escapeChars } from '../../utils';
 
 type Collapse = 'object' | 'function' | 'all' | 'none';
 
-export function type(
-  this:
-    | ArrayType
-    | IntersectionType
-    | IntrinsicType
-    | ReferenceType
-    | TupleType
-    | UnionType
-    | TypeOperatorType
-    | TypeParameterType
-    | QueryType
-    | PredicateType
-    | ReferenceType
-    | ConditionalType
-    | IndexedAccessType
-    | UnknownType
-    | InferredType,
+export default function () {
+  Handlebars.registerHelper(
+    'type',
+    function (
+      this:
+        | ArrayType
+        | IntersectionType
+        | IntrinsicType
+        | ReferenceType
+        | TupleType
+        | UnionType
+        | TypeOperatorType
+        | QueryType
+        | PredicateType
+        | ReferenceType
+        | ConditionalType
+        | IndexedAccessType
+        | UnknownType
+        | InferredType,
 
-  collapse: Collapse = 'none',
-  emphasis = true,
-) {
-  if (this instanceof ReferenceType) {
-    return getReferenceType(this, emphasis);
-  }
+      collapse: Collapse = 'none',
+      emphasis = true,
+    ) {
+      if (this instanceof ReferenceType) {
+        return getReferenceType(this, emphasis);
+      }
 
-  if (this instanceof ArrayType && this.elementType) {
-    return getArrayType(this, emphasis);
-  }
+      if (this instanceof ArrayType && this.elementType) {
+        return getArrayType(this, emphasis);
+      }
 
-  if (this instanceof UnionType && this.types) {
-    return getUnionType(this, emphasis);
-  }
+      if (this instanceof UnionType && this.types) {
+        return getUnionType(this, emphasis);
+      }
 
-  if (this instanceof IntersectionType && this.types) {
-    return getIntersectionType(this);
-  }
+      if (this instanceof IntersectionType && this.types) {
+        return getIntersectionType(this);
+      }
 
-  if (this instanceof TupleType && this.elements) {
-    return getTupleType(this);
-  }
+      if (this instanceof TupleType && this.elements) {
+        return getTupleType(this);
+      }
 
-  if (this instanceof IntrinsicType && this.name) {
-    return getIntrinsicType(this, emphasis);
-  }
+      if (this instanceof IntrinsicType && this.name) {
+        return getIntrinsicType(this, emphasis);
+      }
 
-  if (this instanceof ReflectionType && this.declaration) {
-    return getReflectionType(this.declaration, collapse);
-  }
+      if (this instanceof ReflectionType) {
+        return getReflectionType(this, collapse);
+      }
 
-  if (this instanceof DeclarationReflection) {
-    return getReflectionType(this, collapse);
-  }
+      if (this instanceof DeclarationReflection) {
+        return getReflectionType(this, collapse);
+      }
 
-  if (this instanceof TypeOperatorType) {
-    return getTypeOperatorType(this);
-  }
+      if (this instanceof TypeOperatorType) {
+        return getTypeOperatorType(this);
+      }
 
-  if (this instanceof QueryType) {
-    return getQueryType(this);
-  }
+      if (this instanceof QueryType) {
+        return getQueryType(this);
+      }
 
-  if (this instanceof TypeParameterType) {
-    return getTypeParameterType(this);
-  }
+      if (this instanceof ConditionalType) {
+        return getConditionalType(this);
+      }
 
-  if (this instanceof ConditionalType) {
-    return getConditionalType(this);
-  }
+      if (this instanceof IndexedAccessType) {
+        return getIndexAccessType(this);
+      }
 
-  if (this instanceof IndexedAccessType) {
-    return getIndexAccessType(this);
-  }
+      if (this instanceof UnknownType) {
+        return getUnknownType(this);
+      }
 
-  if (this instanceof UnknownType) {
-    return getUnknownType(this);
-  }
+      if (this instanceof InferredType) {
+        return getInferredType(this);
+      }
 
-  if (this instanceof InferredType) {
-    return getInferredType(this);
-  }
+      if (this instanceof LiteralType) {
+        return getLiteralType(this);
+      }
 
-  if (this instanceof LiteralType) {
-    return getLiteralType(this);
-  }
-
-  return this ? escape(this.toString()) : '';
+      return this ? escapeChars(this.toString()) : '';
+    },
+  );
 }
 
 function getLiteralType(model: LiteralType) {
@@ -119,17 +118,18 @@ function getLiteralType(model: LiteralType) {
 }
 
 export function getReflectionType(
-  model: DeclarationReflection,
+  model: DeclarationReflection | ReflectionType,
   collapse: Collapse,
 ) {
-  if (model.signatures) {
+  const root = model instanceof ReflectionType ? model.declaration : model;
+  if (root.signatures) {
     return collapse === 'function' || collapse === 'all'
       ? `\`fn\``
-      : getFunctionType(model.signatures);
+      : getFunctionType(root.signatures);
   }
   return collapse === 'object' || collapse === 'all'
     ? `\`Object\``
-    : getDeclarationType(model);
+    : getDeclarationType(root);
 }
 
 function getDeclarationType(model: DeclarationReflection) {
@@ -142,17 +142,19 @@ function getDeclarationType(model: DeclarationReflection) {
             (param) => `[${param.name}: ${param.type}]`,
           )
         : '';
-      const obj = type.call(declarationIndexSignature.type);
+      const obj = Handlebars.helpers.type.call(declarationIndexSignature.type);
       indexSignature = `${key}: ${obj}; `;
     }
     const types =
       model.children &&
       model.children.map((obj) => {
-        return `\`${obj.name}${obj.flags.isOptional ? '?' : ''}\`: ${type.call(
+        return `\`${obj.name}${
+          obj.flags.isOptional ? '?' : ''
+        }\`: ${Handlebars.helpers.type.call(
           obj.signatures || obj.children ? obj : obj.type,
         )} ${
           obj.defaultValue && obj.defaultValue !== '...'
-            ? `= ${escape(obj.defaultValue)}`
+            ? `= ${escapeChars(obj.defaultValue)}`
             : ''
         }`;
       });
@@ -160,7 +162,7 @@ function getDeclarationType(model: DeclarationReflection) {
       types ? types.join('; ') : ''
     } }${
       model.defaultValue && model.defaultValue !== '...'
-        ? `= ${escape(model.defaultValue)}`
+        ? `= ${escapeChars(model.defaultValue)}`
         : ''
     }`;
   }
@@ -178,10 +180,12 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
       ? fn.parameters.map((param) => {
           return `${param.flags.isRest ? '...' : ''}\`${param.name}${
             param.flags.isOptional ? '?' : ''
-          }\`: ${type.call(param.type ? param.type : param)}`;
+          }\`: ${Handlebars.helpers.type.call(
+            param.type ? param.type : param,
+          )}`;
         })
       : [];
-    const returns = type.call(fn.type);
+    const returns = Handlebars.helpers.type.call(fn.type);
     return typeParams + `(${params.join(', ')}) => ${returns}`;
   });
   return functions.join('');
@@ -192,7 +196,7 @@ function getReferenceType(model: ReferenceType, emphasis) {
     const reflection =
       model.reflection && model.reflection.url
         ? [
-            `[${`\`${model.reflection.name}\``}](${MarkdownTheme.HANDLEBARS.helpers.relativeURL(
+            `[${`\`${model.reflection.name}\``}](${Handlebars.helpers.relativeURL(
               model.reflection.url,
             )})`,
           ]
@@ -200,17 +204,23 @@ function getReferenceType(model: ReferenceType, emphasis) {
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `<${model.typeArguments
-          .map((typeArgument) => type.call(typeArgument, 'all'))
+          .map((typeArgument) =>
+            Handlebars.helpers.type.call(typeArgument, 'all'),
+          )
           .join(', ')}\\>`,
       );
     }
     return reflection.join('');
   }
-  return emphasis ? `\`${model.name}\`` : escape(model.name);
+  return emphasis ? `\`${model.name}\`` : escapeChars(model.name);
 }
 
 function getArrayType(model: ArrayType, emphasis: boolean) {
-  const arrayType = type.call(model.elementType, 'none', emphasis);
+  const arrayType = Handlebars.helpers.type.call(
+    model.elementType,
+    'none',
+    emphasis,
+  );
   return model.elementType.type === 'union'
     ? `(${arrayType})[]`
     : `${arrayType}[]`;
@@ -218,60 +228,60 @@ function getArrayType(model: ArrayType, emphasis: boolean) {
 
 function getUnionType(model: UnionType, emphasis: boolean) {
   return model.types
-    .map((unionType) => type.call(unionType, 'none', emphasis))
+    .map((unionType) =>
+      Handlebars.helpers.type.call(unionType, 'none', emphasis),
+    )
     .join(` \\| `);
 }
 
 function getIntersectionType(model: IntersectionType) {
   return model.types
-    .map((intersectionType) => type.call(intersectionType))
+    .map((intersectionType) => Handlebars.helpers.type.call(intersectionType))
     .join(' & ');
 }
 
 function getTupleType(model: TupleType) {
-  return `[${model.elements.map((element) => type.call(element)).join(', ')}]`;
+  return `[${model.elements
+    .map((element) => Handlebars.helpers.type.call(element))
+    .join(', ')}]`;
 }
 
 function getIntrinsicType(model: IntrinsicType, emphasis: boolean) {
-  return emphasis ? `\`${model.name}\`` : escape(model.name);
+  return emphasis ? `\`${model.name}\`` : escapeChars(model.name);
 }
 
 function getTypeOperatorType(model: TypeOperatorType) {
-  return `${model.operator} ${type.call(model.target)}`;
+  return `${model.operator} ${Handlebars.helpers.type.call(model.target)}`;
 }
 
 function getQueryType(model: QueryType) {
-  return `typeof ${type.call(model.queryType)}`;
-}
-
-function getTypeParameterType(model: TypeParameterType) {
-  return escape(model.name);
+  return `typeof ${Handlebars.helpers.type.call(model.queryType)}`;
 }
 
 function getInferredType(model: InferredType) {
-  return `infer ${escape(model.name)}`;
+  return `infer ${escapeChars(model.name)}`;
 }
 
 function getUnknownType(model: UnknownType) {
-  return escape(model.name);
+  return escapeChars(model.name);
 }
 
 function getConditionalType(model: ConditionalType) {
   const md: string[] = [];
   if (model.checkType) {
-    md.push(type.call(model.checkType));
+    md.push(Handlebars.helpers.type.call(model.checkType));
   }
   md.push('extends');
   if (model.extendsType) {
-    md.push(type.call(model.extendsType));
+    md.push(Handlebars.helpers.type.call(model.extendsType));
   }
   md.push('?');
   if (model.trueType) {
-    md.push(type.call(model.trueType));
+    md.push(Handlebars.helpers.type.call(model.trueType));
   }
   md.push(':');
   if (model.falseType) {
-    md.push(type.call(model.falseType));
+    md.push(Handlebars.helpers.type.call(model.falseType));
   }
   return md.join(' ');
 }
@@ -279,10 +289,10 @@ function getConditionalType(model: ConditionalType) {
 function getIndexAccessType(model: IndexedAccessType) {
   const md: string[] = [];
   if (model.objectType) {
-    md.push(type.call(model.objectType));
+    md.push(Handlebars.helpers.type.call(model.objectType));
   }
   if (model.indexType) {
-    md.push(`[${type.call(model.indexType)}]`);
+    md.push(`[${Handlebars.helpers.type.call(model.indexType)}]`);
   }
   return md.join('');
 }

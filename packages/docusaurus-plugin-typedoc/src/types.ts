@@ -35,10 +35,6 @@ export interface SidebarOptions {
   position: number | null;
 }
 
-export interface Sidebar {
-  [sidebarId: string]: SidebarItem[];
-}
-
 export interface SidebarCategory {
   type: string;
   label: string;

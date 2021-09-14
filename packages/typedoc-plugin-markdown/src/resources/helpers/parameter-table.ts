@@ -1,34 +1,39 @@
+import * as Handlebars from 'handlebars';
 import { ParameterReflection, ReflectionKind } from 'typedoc';
+import { stripLineBreaks } from '../../utils';
+import { getReflectionType } from './type';
 
-import { comment } from './comment';
-import { stripLineBreaks } from './strip-line-breaks';
-import { getReflectionType, type } from './type';
+export default function () {
+  Handlebars.registerHelper(
+    'parameterTable',
 
-export function parameterTable(this: ParameterReflection[]) {
-  const flattenParams = (current: any) => {
-    return current.type?.declaration?.children?.reduce(
-      (acc: any, child: any) => {
-        const childObj = {
-          ...child,
-          name: `${current.name}.${child.name}`,
-        };
-        return parseParams(childObj, acc);
-      },
-      [],
-    );
-  };
+    function (this: ParameterReflection[]) {
+      const flattenParams = (current: any) => {
+        return current.type?.declaration?.children?.reduce(
+          (acc: any, child: any) => {
+            const childObj = {
+              ...child,
+              name: `${current.name}.${child.name}`,
+            };
+            return parseParams(childObj, acc);
+          },
+          [],
+        );
+      };
 
-  const parseParams = (current: any, acc: any) => {
-    const shouldFlatten =
-      current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
-      current.type?.declaration?.children;
-    return shouldFlatten
-      ? [...acc, current, ...flattenParams(current)]
-      : [...acc, current];
-  };
+      const parseParams = (current: any, acc: any) => {
+        const shouldFlatten =
+          current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
+          current.type?.declaration?.children;
+        return shouldFlatten
+          ? [...acc, current, ...flattenParams(current)]
+          : [...acc, current];
+      };
 
-  return table(
-    this.reduce((acc: any, current: any) => parseParams(current, acc), []),
+      return table(
+        this.reduce((acc: any, current: any) => parseParams(current, acc), []),
+      );
+    },
   );
 }
 
@@ -62,7 +67,7 @@ function table(parameters: any) {
 
     row.push(
       parameter.type
-        ? type.call(parameter.type, 'object')
+        ? Handlebars.helpers.type.call(parameter.type, 'object')
         : getReflectionType(parameter, 'object'),
     );
 
@@ -72,10 +77,9 @@ function table(parameters: any) {
     if (hasComments) {
       if (parameter.comment) {
         row.push(
-          stripLineBreaks(comment.call(parameter.comment)).replace(
-            /\|/g,
-            '\\|',
-          ),
+          stripLineBreaks(
+            Handlebars.helpers.comments.call(parameter.comment),
+          ).replace(/\|/g, '\\|'),
         );
       } else {
         row.push('-');

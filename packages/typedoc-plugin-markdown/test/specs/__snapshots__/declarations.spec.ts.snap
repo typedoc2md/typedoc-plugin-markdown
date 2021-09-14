@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-"• \`Const\` **stringConstWithDefaultValue**: \`\`\\"hello\\"\`\`
+"• **stringConstWithDefaultValue**: \`\`\\"hello\\"\`\`
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile a let with default value 1`] = `
-"• \`Let\` **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
+"• **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile an undefined declaration 1`] = `
-"• \`Let\` **undefinedNumberDeclaration**: \`number\`
+"• **undefinedNumberDeclaration**: \`number\`
 
 [partial: member.sources]
 "
@@ -49,7 +49,7 @@ exports[`Declarations: should compile any function type 1`] = `
 `;
 
 exports[`Declarations: should compile callable declaration 1`] = `
-"• \`Let\` **callableDeclaration**: \`Object\`
+"• **callableDeclaration**: \`Object\`
 
 #### Call signature
 
@@ -77,7 +77,7 @@ exports[`Declarations: should compile callable declaration 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
+"• **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
 
 [partial: member.sources]
 "
@@ -91,14 +91,14 @@ exports[`Declarations: should compile enum delcaration 1`] = `
 `;
 
 exports[`Declarations: should compile function declaration 1`] = `
-"• \`Let\` **functionDeclaration**: (\`someArg\`: \`number\`) => \`boolean\`
+"• **functionDeclaration**: (\`someArg\`: \`number\`) => \`boolean\`
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile indexable declaration 1`] = `
-"• \`Let\` **indexableDeclaration**: \`Object\`
+"• **indexableDeclaration**: \`Object\`
 
 #### Index signature
 
@@ -115,7 +115,7 @@ exports[`Declarations: should compile indexable declaration 1`] = `
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-"• \`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
+"• **objectLiteralAsConstDeclaration**: \`Object\`
 
 Comments
 
@@ -132,7 +132,7 @@ Comments
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-"• \`Const\` **objectLiteralDeclaration**: \`Object\`
+"• **objectLiteralDeclaration**: \`Object\`
 
 #### Type declaration
 
@@ -152,7 +152,7 @@ exports[`Declarations: should compile object literal declaration 1`] = `
 `;
 
 exports[`Declarations: should compile type literal declaration 1`] = `
-"• \`Let\` **typeLiteralDeclaration**: \`Object\`
+"• **typeLiteralDeclaration**: \`Object\`
 
 #### Type declaration
 

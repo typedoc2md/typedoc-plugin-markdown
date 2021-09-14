@@ -1,5 +1,13 @@
-import MarkdownTheme from '../../theme';
+import * as Handlebars from 'handlebars';
 
-export function relativeURL(url: string) {
-  return MarkdownTheme.HANDLEBARS.helpers.relativeURL(url);
+import { MarkdownTheme } from '../../theme';
+
+export default function (theme: MarkdownTheme) {
+  Handlebars.registerHelper('relativeURL', function (url: string) {
+    return url
+      ? theme.publicPath
+        ? theme.publicPath + url
+        : theme.getRelativeUrl(url)
+      : url;
+  });
 }

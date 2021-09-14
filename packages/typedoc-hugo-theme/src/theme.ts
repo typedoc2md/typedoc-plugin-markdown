@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
 import { BindOption, NavigationItem, ReflectionKind } from 'typedoc';
-import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
+import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
 import {
   getPageTitle,
   prependYAML,

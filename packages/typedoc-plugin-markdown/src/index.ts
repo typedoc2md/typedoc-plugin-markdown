@@ -3,7 +3,7 @@ import * as path from 'path';
 import { Application, ParameterType } from 'typedoc';
 
 import { CustomOptionsReader } from './options-reader';
-import MarkdownTheme from './theme';
+import { MarkdownTheme } from './theme';
 
 export function load(app: Application) {
   addDeclarations(app);
@@ -75,18 +75,16 @@ function addDeclarations(app: Application) {
 
 function loadTheme(app: Application) {
   const themeRef = app.options.getValue('theme');
-  const themeDir = path.join(__dirname);
-  const basePath = themeDir + '/resources';
 
-  if ([themeDir, 'default', 'markdown'].includes(themeRef)) {
-    app.renderer.theme = new MarkdownTheme(app.renderer, basePath);
+  if (['default', 'markdown'].includes(themeRef)) {
+    app.renderer.theme = new MarkdownTheme(app.renderer);
   } else {
     const CustomTheme = getCustomTheme(
       path.resolve(path.join(themeRef, 'theme.js')),
     );
     if (CustomTheme !== null) {
       app.options.addReader(new CustomOptionsReader());
-      app.renderer.theme = new CustomTheme(app.renderer, basePath);
+      app.renderer.theme = new CustomTheme(app.renderer);
     } else {
       app.logger.warn(
         `[typedoc-plugin-markdown] '${themeRef}' is not a recognised markdown theme.`,
@@ -97,8 +95,9 @@ function loadTheme(app: Application) {
 
 function getCustomTheme(themeFile: string) {
   try {
-    const ThemeClass = require(themeFile).default;
-    return ThemeClass.prototype instanceof MarkdownTheme ? ThemeClass : null;
+    const ThemeClass = require(themeFile);
+    const instance = ThemeClass[Object.keys(ThemeClass)[0]];
+    return instance.prototype instanceof MarkdownTheme ? instance : null;
   } catch (e) {
     return null;
   }

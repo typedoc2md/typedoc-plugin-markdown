@@ -35,13 +35,11 @@ anotherFunction()
 exports[`Comments: should convert comments with includes' 1`] = `
 "This is an example of include
 
-This is a simple example on how to use include.
-
-![My image alt text](../media/logo.png)
+[[include:class-example.md]]
 
 This is an example of handlebars include
 
-This is a simple example on a handlebars file.
+[[include:class-example.hbs]]
 "
 `;
 

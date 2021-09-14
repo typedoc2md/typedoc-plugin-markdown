@@ -1,7 +1,47 @@
-import { PageEvent } from 'typedoc/dist/lib/output/events';
+import * as Handlebars from 'handlebars';
+import { PageEvent } from 'typedoc';
+import { MarkdownTheme } from '../../theme';
 
-import MarkdownTheme from '../../theme';
+export default function (theme: MarkdownTheme) {
+  Handlebars.registerHelper('breadcrumbs', function (this: PageEvent) {
+    const { entryPoints, entryDocument, project, readme } = theme;
 
-export function breadcrumbs(this: PageEvent) {
-  return MarkdownTheme.HANDLEBARS.helpers.breadcrumbs(this);
+    if (!project) {
+      return '';
+    }
+
+    const hasReadmeFile = !readme.endsWith('none');
+    const breadcrumbs: string[] = [];
+    const globalsName = entryPoints.length > 1 ? 'Modules' : 'Exports';
+    breadcrumbs.push(
+      this.url === entryDocument
+        ? project.name
+        : `[${project.name}](${Handlebars.helpers.relativeURL(entryDocument)})`,
+    );
+    if (hasReadmeFile) {
+      breadcrumbs.push(
+        this.url === project.url
+          ? globalsName
+          : `[${globalsName}](${Handlebars.helpers.relativeURL('modules.md')})`,
+      );
+    }
+    const breadcrumbsOut = breadcrumb(this, this.model, breadcrumbs);
+    return breadcrumbsOut;
+  });
+}
+
+function breadcrumb(page: PageEvent, model: any, md: string[]) {
+  if (model && model.parent) {
+    breadcrumb(page, model.parent, md);
+    if (model.url) {
+      md.push(
+        page.url === model.url
+          ? `${escape(model.name)}`
+          : `[${escape(model.name)}](${Handlebars.helpers.relativeURL(
+              model.url,
+            )})`,
+      );
+    }
+  }
+  return md.join(' / ');
 }

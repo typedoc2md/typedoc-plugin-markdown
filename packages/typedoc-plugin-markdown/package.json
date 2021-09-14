@@ -14,7 +14,7 @@
     "test": "jest --colors",
     "build-and-test": "yarn run build && yarn run test",
     "fixtures": "node ./tasks/fixtures.js",
-    "demos": "yarn run build && npm-run-all demo:*",
+    "demos": "yarn run build && yarn run demo:md && yarn run demo:html",
     "demo:md": "typedoc --options ./demo.options.json --out ./demo/md",
     "demo:html": "typedoc --options ./demo.options.json --plugin none --out ./demo/html"
   },
@@ -38,7 +38,7 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.21.2"
+    "typedoc": ">=0.22.0"
   },
   "dependencies": {
     "handlebars": "^4.7.7"

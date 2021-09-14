@@ -1,13 +1,12 @@
 import * as Handlebars from 'handlebars';
-import { PageEvent } from 'typedoc/dist/lib/output/events';
+import { PageEvent } from 'typedoc';
+import { MarkdownTheme } from '../../theme';
 
-import MarkdownTheme from '../../theme';
-
-export function ifShowPageTitle(
-  this: PageEvent,
-  options: Handlebars.HelperOptions,
-) {
-  return MarkdownTheme.HANDLEBARS.helpers.hidePageTitle()
-    ? options.inverse(this)
-    : options.fn(this);
+export default function (theme: MarkdownTheme) {
+  Handlebars.registerHelper(
+    'ifShowPageTitle',
+    function (this: PageEvent, options: Handlebars.HelperOptions) {
+      return theme.hidePageTitle ? options.inverse(this) : options.fn(this);
+    },
+  );
 }

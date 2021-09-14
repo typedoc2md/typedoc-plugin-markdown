@@ -18,16 +18,6 @@ describe(`Theme:`, () => {
     const sidebarFile = fs.readFileSync(testApp.tmpobj.name + '/_sidebar.md');
     expect(sidebarFile.toString()).toMatchSnapshot();
   });
-  describe(`(relativeUrls)`, () => {
-    test(`should convert a url'`, async () => {
-      expect(
-        MarkdownTheme.HANDLEBARS.helpers.relativeURL('SomeClass.md'),
-      ).toEqual('../SomeClass');
-    });
-    test(`should convert a url with ancor'`, async () => {
-      expect(
-        MarkdownTheme.HANDLEBARS.helpers.relativeURL('SomeClass.md#anchor'),
-      ).toEqual('../SomeClass#anchor');
-    });
+
   });
 });

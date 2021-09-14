@@ -14,7 +14,8 @@ import {
 } from 'typedoc';
 
 import { load } from '../src/index';
-import MarkdownTheme from '../src/theme';
+import { MarkdownTheme } from '../src/theme';
+import { formatContents } from '../src/utils';
 
 tmp.setGracefulCleanup();
 
@@ -34,7 +35,7 @@ export class TestApp {
   };
 
   static compileTemplate(template: Handlebars.TemplateDelegate, context: any) {
-    return MarkdownTheme.formatContents(
+    return formatContents(
       template(context, {
         allowProtoMethodsByDefault: true,
         allowProtoPropertiesByDefault: true,
@@ -47,7 +48,7 @@ export class TestApp {
     context: any,
     args?: any,
   ) {
-    return MarkdownTheme.formatContents(helper.call(context, args));
+    return formatContents(helper.call(context, args));
   }
 
   static getTemplate(name: string) {

@@ -1,13 +1,8 @@
 import * as path from 'path';
 
-import { NavigationItem } from 'typedoc';
-
 import { PluginOptions } from './types';
 
-export const getSidebarJson = (
-  navigation: NavigationItem,
-  options: PluginOptions,
-) => {
+export const getSidebarJson = (navigation: any, options: PluginOptions) => {
   const navJson: any = [];
 
   navigation.children?.forEach((navigationItem) => {

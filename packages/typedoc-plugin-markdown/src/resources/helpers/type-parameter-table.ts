@@ -1,11 +1,14 @@
+import * as Handlebars from 'handlebars';
 import { TypeParameterReflection } from 'typedoc';
+import { stripLineBreaks } from '../../utils';
 
-import { comment } from './comment';
-import { stripLineBreaks } from './strip-line-breaks';
-import { type } from './type';
-
-export function typeParameterTable(this: TypeParameterReflection[]) {
-  return table(this);
+export default function () {
+  Handlebars.registerHelper(
+    'typeParameterTable',
+    function (this: TypeParameterReflection[]) {
+      return table(this);
+    },
+  );
 }
 
 function table(parameters: any) {
@@ -37,10 +40,12 @@ function table(parameters: any) {
         typeCol.push(`\`${parameter.name}\``);
       }
       if (parameter.type) {
-        typeCol.push(`extends ${type.call(parameter.type, 'object')}`);
+        typeCol.push(
+          `extends ${Handlebars.helpers.type.call(parameter.type, 'object')}`,
+        );
       }
       if (parameter.default) {
-        typeCol.push(type.call(parameter.default));
+        typeCol.push(Handlebars.helpers.type.call(parameter.default));
       }
       row.push(typeCol.join(''));
     }
@@ -48,10 +53,9 @@ function table(parameters: any) {
     if (hasComments) {
       if (parameter.comment) {
         row.push(
-          stripLineBreaks(comment.call(parameter.comment)).replace(
-            /\|/g,
-            '\\|',
-          ),
+          stripLineBreaks(
+            Handlebars.helpers.comments.call(parameter.comment),
+          ).replace(/\|/g, '\\|'),
         );
       } else {
         row.push('-');

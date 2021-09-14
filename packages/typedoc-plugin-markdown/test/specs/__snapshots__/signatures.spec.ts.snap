@@ -152,7 +152,7 @@ exports[`Signatures: should compile pipes in params and comments' 1`] = `
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`n\` | \`number\` \\\\| \`\`null\`\` | a\\\\|b |
+| \`n\` | \`number\` | a\\\\|b |
 
 ##### Returns
 
@@ -265,7 +265,7 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 
 | Name | Type |
 | :------ | :------ |
-| \`arg\` | \`boolean\`[] \\\\| \`number\` |
+| \`arg\` | \`number\` \\\\| \`boolean\`[] |
 | \`...args\` | (\`string\` \\\\| \`number\`)[] |
 
 ##### Returns
