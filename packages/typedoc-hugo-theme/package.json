@@ -1,6 +1,6 @@
 {
   "name": "typedoc-hugo-theme",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "An extension of the Markdown theme from typedoc-plugin-markdown that prepends Hugo Front Matter variables in YAML format to pages.",
   "main": "dist/theme.js",
   "files": [
