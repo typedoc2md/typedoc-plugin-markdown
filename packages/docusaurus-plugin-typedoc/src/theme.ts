@@ -92,7 +92,7 @@ export class DocusaurusTheme extends MarkdownTheme {
     if (page.url === this.entryDocument) {
       items = {
         ...items,
-        slug: '/' + path.relative(process.cwd(), this.out).replace(/\\/g, '/'),
+        slug: '/' + path.relative(process.cwd(), this.out).replace(/\\/g, '/') + '/index',
       };
     }
     if (sidebarLabel && sidebarLabel !== pageTitle) {
