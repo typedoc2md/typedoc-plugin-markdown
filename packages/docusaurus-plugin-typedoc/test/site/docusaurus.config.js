@@ -31,8 +31,8 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          to: 'docs/api',
+       {
+          to: 'docs/api/',
           activeBasePath: 'docs',
           label: 'API',
           position: 'left',

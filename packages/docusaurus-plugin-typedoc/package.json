@@ -29,7 +29,7 @@
     "build-and-test": "yarn run build && yarn run test",
     "test:init": "rm -rf test/site && npx @docusaurus/init@latest init test/site classic",
     "test:demo:start": "yarn run build && cd test/site && yarn run clear && yarn run start",
-    "test:demo:build": "yarn run build && cd test/site && yarn run clear && yarn run serve",
+    "test:demo:build": "yarn run build && cd test/site && yarn run clear && yarn run build && yarn run serve",
     "test": "jest --colors"
   },
   "author": "Thomas Grey",
