@@ -21,7 +21,7 @@ exports[`Plugin: (docs) should write doc 1`] = `
 "---
 id: \\"index\\"
 title: \\"typedoc-plugin-markdown\\"
-slug: \\"/api\\"
+slug: \\"/api/\\"
 sidebar_label: \\"Readme\\"
 sidebar_position: 0
 custom_edit_url: null
