@@ -28,7 +28,6 @@ export interface FrontMatter {
 
 export interface SidebarOptions {
   fullNames?: boolean;
-  sidebarFile: string; //deprecated
   categoryLabel: string;
   indexLabel?: string;
   readmeLabel?: string;

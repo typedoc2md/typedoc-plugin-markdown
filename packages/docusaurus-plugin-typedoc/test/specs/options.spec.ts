@@ -19,7 +19,6 @@ describe(`Options:`, () => {
     expect(
       getPluginOptions({
         sidebar: {
-          sidebarFile: 'custom-sidebar.js',
           fullNames: true,
           indexLabel: 'Custom index',
           readmeLabel: 'Custom readme',

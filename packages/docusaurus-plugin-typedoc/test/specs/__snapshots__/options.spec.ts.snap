@@ -7,7 +7,6 @@ Object {
   "indexLabel": "Custom index",
   "position": null,
   "readmeLabel": "Custom readme",
-  "sidebarFile": "custom-sidebar.js",
 }
 `;
 
@@ -38,7 +37,6 @@ Object {
     "indexLabel": undefined,
     "position": null,
     "readmeLabel": "Readme",
-    "sidebarFile": "typedoc-sidebar.js",
   },
   "watch": false,
 }

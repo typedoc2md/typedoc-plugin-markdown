@@ -8,7 +8,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   out: 'api',
   sidebar: {
     fullNames: false,
-    sidebarFile: 'typedoc-sidebar.js',
     categoryLabel: 'API',
     indexLabel: undefined,
     readmeLabel: 'Readme',

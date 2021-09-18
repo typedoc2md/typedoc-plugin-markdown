@@ -6,7 +6,6 @@ import { load } from 'typedoc-plugin-markdown';
 
 import { getOutputDirectory } from './options';
 import { bootstrap } from './render';
-import { writeSidebar } from './sidebar';
 import { PluginOptions } from './types';
 
 // store list of plugin ids when running multiple instances
@@ -28,11 +27,6 @@ export default async function pluginDocusaurus(
     load(app);
 
     const options = bootstrap(app, opts);
-
-    // Do not break legacy manual sidebar generation implementations
-    if (options.sidebar.sidebarFile) {
-      writeSidebar(siteDir, options);
-    }
 
     const project = app.convert();
 
