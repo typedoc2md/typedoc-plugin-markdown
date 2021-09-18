@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.1...docusaurus-plugin-typedoc@0.16.2) (2021-09-18)
+
+
+### Bug Fixes
+
+* remove manual sidebar generation and fix pre-render docs order ([#251](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/251)) ([eb21cb4](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/eb21cb439e746127ec0ffa128f67f0ee2e6b4767))
+
+
+
+
+
 ## [0.16.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.0...docusaurus-plugin-typedoc@0.16.1) (2021-09-17)
 
 
