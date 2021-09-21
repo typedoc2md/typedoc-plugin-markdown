@@ -17,17 +17,17 @@
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-github-wiki-theme",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "npm run lint && npm run build && npm run test",
+    "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf ./dist && tsc",
     "test": "jest --colors",
-    "build-and-test": "npm run build && npm run test",
-    "demo": "rm -rf ./demo && npm run build && typedoc --options ../typedoc-plugin-markdown/demo.options.json  --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --out ./demo"
+    "build-and-test": "yarn run build && yarn run test",
+    "demo": "rm -rf ./demo && yarn run build && typedoc --options ../typedoc-plugin-markdown/demo.options.json  --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --out ./demo"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": ">=0.20.0",
-    "typedoc-plugin-markdown": ">=3.4.0"
+    "typedoc": ">=0.22.0",
+    "typedoc-plugin-markdown": ">=3.11.0"
   },
   "keywords": [
     "typedoc",

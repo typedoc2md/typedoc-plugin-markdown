@@ -5,20 +5,6 @@ import { TestApp } from 'typedoc-plugin-markdown/test/test-app';
 let testApp: TestApp;
 
 describe(`Theme:`, () => {
-  describe(`url`, () => {
-    test(`should getUrls'`, async () => {
-      testApp = new TestApp(['theme.ts']);
-      await testApp.bootstrap({ theme: './dist' });
-      const urlMappings = testApp.theme.getUrls(testApp.project);
-      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
-    });
-    test(`should getUrls with readme=none'`, async () => {
-      testApp = new TestApp(['theme.ts']);
-      await testApp.bootstrap({ theme: './dist', readme: 'none' });
-      const urlMappings = testApp.theme.getUrls(testApp.project);
-      expect(TestApp.getExpectedUrls(urlMappings)).toMatchSnapshot();
-    });
-  });
   describe(`sidebar`, () => {
     test(`should write sidebar for exports'`, async () => {
       testApp = new TestApp(['theme.ts']);

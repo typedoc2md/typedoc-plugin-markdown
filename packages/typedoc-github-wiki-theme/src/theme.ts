@@ -1,58 +1,34 @@
 import * as fs from 'fs';
 
-import { BindOption, DeclarationReflection, NavigationItem } from 'typedoc';
-import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
-import { RendererEvent } from 'typedoc/dist/lib/output/events';
+import { BindOption, RendererEvent, DeclarationReflection } from 'typedoc';
+import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
-import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
 
-import { UtilsComponent } from './components/utils';
-
-export default class GithubWikiTheme extends MarkdownTheme {
-  renderer: Renderer;
+export class GithubWikiTheme extends MarkdownTheme {
   @BindOption('entryPoints')
   entryPoints!: string[];
   @BindOption('readme')
   readme!: string;
 
-  constructor(renderer: Renderer, basePath: string) {
-    super(renderer, basePath);
-    renderer.addComponent('utils', new UtilsComponent(renderer));
-    this.listenTo(renderer, RendererEvent.END, this.writeSidebar, 1024);
+  constructor(renderer: Renderer) {
+    super(renderer);
+
+    this.listenTo(this.owner, {
+      [RendererEvent.BEGIN]: this.writeSidebar,
+    });
   }
 
-  toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
+  getRelativeUrl(url: string) {
+    return encodeURI('../wiki/' + url.replace('.md', ''));
+  }
+
+  toUrl(mapping: any, reflection: DeclarationReflection) {
     return `${reflection.getFullName().replace(/\//g, '.')}.md`;
   }
 
-  isOutputDirectory(outputDirectory: string): boolean {
-    let isOutputDirectory = true;
-    const listings = fs.readdirSync(outputDirectory);
-    listings.forEach((listing) => {
-      if (
-        !this.allowedDirectoryListings().includes(listing) &&
-        !listing.match('^Class|^Enumeration|^Interface|^Module|^Namespace')
-      ) {
-        isOutputDirectory = false;
-        return false;
-      }
-    });
-    return isOutputDirectory;
-  }
-
-  allowedDirectoryListings() {
-    return [
-      this.entryDocument,
-      this.globalsFile,
-      'media',
-      '.DS_Store',
-      '_Sidebar.md',
-    ];
-  }
-
-  writeSidebar(renderer: RendererEvent) {
+  writeSidebar(renderer: any) {
     const parseUrl = (url: string) => '../wiki/' + url.replace('.md', '');
-    const navigation: NavigationItem = this.getNavigation(renderer.project);
+    const navigation = this.getNavigation(renderer.project);
     const navJson: string[] = [`## ${renderer.project.name}\n`];
     const allowedSections = ['Home', 'Modules', 'Namespaces'];
     navigation.children
