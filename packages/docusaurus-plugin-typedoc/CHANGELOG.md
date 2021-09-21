@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.2...docusaurus-plugin-typedoc@0.16.3) (2021-09-21)
+
+
+### Bug Fixes
+
+* cleanup pre-render steps ([9566a9c](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/9566a9c136fbd8aaa0974219a09076b636bf1cb5))
+
+
+
+
+
 ## [0.16.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.1...docusaurus-plugin-typedoc@0.16.2) (2021-09-18)
 
 
