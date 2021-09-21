@@ -19,15 +19,15 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf ./dist && tsc",
-    "test": "jest --colors",
+    "test": "jest --colors --updateSnapshot",
     "build-and-test": "yarn run build && yarn run test",
     "demo": "rm -rf ./demo && yarn run build && typedoc --entryPoints ../typedoc-plugin-markdown/test/stubs/src/index.ts --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --out ./demo"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": ">=0.20.0",
-    "typedoc-plugin-markdown": ">=3.6.0"
+    "typedoc": ">=0.22.0",
+    "typedoc-plugin-markdown": ">=3.11.0"
   },
   "keywords": [
     "typedoc",

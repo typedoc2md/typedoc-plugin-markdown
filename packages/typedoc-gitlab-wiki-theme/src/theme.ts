@@ -1,34 +1,29 @@
 import * as fs from 'fs';
 
-import { DeclarationReflection, NavigationItem } from 'typedoc';
-import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
-import { GroupPlugin } from 'typedoc/dist/lib/converter/plugins';
-import { RendererEvent } from 'typedoc/dist/lib/output/events';
-import { Renderer } from 'typedoc/dist/lib/output/renderer';
-import { TemplateMapping } from 'typedoc/dist/lib/output/themes/DefaultTheme';
+import { Renderer, DeclarationReflection, RendererEvent } from 'typedoc';
+import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
 
-import { UtilsComponent } from './utils';
+export class GitlabTheme extends MarkdownTheme {
+  constructor(renderer: Renderer) {
+    super(renderer);
 
-export default class GitlabTheme extends MarkdownTheme {
-  constructor(renderer: Renderer, basePath: string) {
-    super(renderer, basePath);
-    renderer.addComponent('utils', new UtilsComponent(renderer));
-    this.listenTo(renderer, RendererEvent.END, this.onGitLabRendererEnd);
+    this.listenTo(this.owner, {
+      [RendererEvent.END]: this.onGitLabRendererEnd,
+    });
   }
 
-  toUrl(mapping: TemplateMapping, reflection: DeclarationReflection) {
-    return `${mapping.directory}/${GroupPlugin.getKindSingular(
-      reflection.kind,
-    )}-${reflection.name}.md`;
+  getRelativeUrl(url: string) {
+    const relativeUrl = url.replace(/(.*).md/, '$1').replace(/ /g, '-');
+    return relativeUrl.startsWith('..') ? relativeUrl : './' + relativeUrl;
   }
 
-  allowedDirectoryListings() {
-    return [...super.allowedDirectoryListings(), ...['_sidebar.md']];
+  toUrl(mapping: any, reflection: DeclarationReflection) {
+    return `${mapping.directory}/${reflection.getFullName()}.md`;
   }
 
   onGitLabRendererEnd(renderer: RendererEvent) {
     const parseUrl = (url: string) => url.replace(/(.*).md/, '$1');
-    const navigation: NavigationItem = this.getNavigation(renderer.project);
+    const navigation = this.getNavigation(renderer.project);
     const navJson: string[] = [`## ${renderer.project.name}\n`];
     navigation.children?.forEach((navItem) => {
       if (navItem.isLabel) {
