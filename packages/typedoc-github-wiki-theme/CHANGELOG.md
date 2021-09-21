@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.5.1...typedoc-github-wiki-theme@0.6.0) (2021-09-21)
+
+
+### Features
+
+* TypeDoc 0.22 compatibility fixes ([f68442d](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/f68442d13e448d86d444e71f5781921cb4ac795e))
+
+
+
+
+
 ## [0.5.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.5.0...typedoc-github-wiki-theme@0.5.1) (2021-07-14)
 
 
