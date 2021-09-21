@@ -1,9 +1,9 @@
-import MarkdownTheme from 'typedoc-plugin-markdown/dist/theme';
-import { Renderer } from 'typedoc/dist/lib/output/renderer';
+import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
+import { Renderer } from 'typedoc';
 
-export default class BitbucketTheme extends MarkdownTheme {
-  constructor(renderer: Renderer, basePath: string) {
-    super(renderer, basePath);
+export class BitbucketTheme extends MarkdownTheme {
+  constructor(renderer: Renderer) {
+    super(renderer);
   }
   toAnchorRef(reflectionId: string) {
     return 'markdown-header-' + reflectionId;
