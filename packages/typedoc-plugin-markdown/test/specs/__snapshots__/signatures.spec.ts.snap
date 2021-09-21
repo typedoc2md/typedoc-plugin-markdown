@@ -120,8 +120,8 @@ FOO
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`__namedParameters\` | \`Object\` | various options |
-| \`__namedParameters.bar?\` | \`number\` | Another value |
-| \`__namedParameters.foo?\` | \`number\` | An interesting value |
+| \`__namedParameters.bar?\` | \`number\` | - |
+| \`__namedParameters.foo?\` | \`number\` | - |
 | \`anotherParam\` | \`string\` | - |
 
 ##### Returns

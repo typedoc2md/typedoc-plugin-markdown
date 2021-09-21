@@ -119,13 +119,19 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 Comments
 
+**\`param\`** Comment for object.
+
+**\`param\`** Comment for Prop1.
+
+**\`param\`** Comment for Prop2.
+
 #### Type declaration
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| \`Prop1\` | \`\`\\"Prop1\\"\`\` | Comment for Prop1. |
-| \`Prop2\` | \`\`\\"Prop2\\"\`\` | Comment for Prop2. |
-| \`Prop3\` | \`\`\\"Prop3\\"\`\` | - |
+| Name | Type |
+| :------ | :------ |
+| \`Prop1\` | \`\`\\"Prop1\\"\`\` |
+| \`Prop2\` | \`\`\\"Prop2\\"\`\` |
+| \`Prop3\` | \`\`\\"Prop3\\"\`\` |
 
 [partial: member.sources]
 "
@@ -136,16 +142,16 @@ exports[`Declarations: should compile object literal declaration 1`] = `
 
 #### Type declaration
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| \`valueA\` | \`number\` | - |
-| \`valueB\` | \`boolean\` | - |
-| \`valueC\` | \`Object\` | - |
-| \`valueX\` | \`Object\` | description for valueX |
-| \`valueX.valueA\` | \`number\`[] | - |
-| \`valueX.valueZ\` | \`string\` | - |
-| \`valueY\` | () => \`string\` | description for valueY |
-| \`valueZ\` | \`string\` | description for valueZ |
+| Name | Type |
+| :------ | :------ |
+| \`valueA\` | \`number\` |
+| \`valueB\` | \`boolean\` |
+| \`valueC\` | \`Object\` |
+| \`valueX\` | \`Object\` |
+| \`valueX.valueA\` | \`number\`[] |
+| \`valueX.valueZ\` | \`string\` |
+| \`valueY\` | () => \`string\` |
+| \`valueZ\` | \`string\` |
 
 [partial: member.sources]
 "
