@@ -1,11 +1,9 @@
-import * as path from 'path';
-
 import { LoadContext } from '@docusaurus/types';
+import * as path from 'path';
 import { Application } from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
-
-import { getOutputDirectory } from './options';
-import { bootstrap } from './render';
+import { getPluginOptions } from './options';
+import { bootstrap, removeDir } from './render';
 import { PluginOptions } from './types';
 
 // store list of plugin ids when running multiple instances
@@ -20,13 +18,19 @@ export default async function pluginDocusaurus(
 
     const { siteDir } = context;
 
+    const options = getPluginOptions(opts);
+
+    const outputDir = path.resolve(siteDir, options.docsRoot, options.out);
+
+    removeDir(outputDir);
+
     const app = new Application();
 
     app.options.setValue('theme', path.resolve(__dirname));
 
     load(app);
 
-    const options = bootstrap(app, opts);
+    bootstrap(app, options);
 
     const project = app.convert();
 
@@ -37,10 +41,10 @@ export default async function pluginDocusaurus(
 
     if (options.watch) {
       app.convertAndWatch(async (project) => {
-        await app.generateDocs(project, getOutputDirectory(siteDir, options));
+        await app.generateDocs(project, outputDir);
       });
     } else {
-      await app.generateDocs(project, getOutputDirectory(siteDir, options));
+      await app.generateDocs(project, outputDir);
     }
   }
 

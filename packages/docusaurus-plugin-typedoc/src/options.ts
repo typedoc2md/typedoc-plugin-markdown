@@ -1,5 +1,3 @@
-import * as path from 'path';
-
 import { PluginOptions } from './types';
 
 const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
@@ -13,12 +11,12 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     readmeLabel: 'Readme',
     position: null,
   },
-  plugin: ['none'],
-  watch: false,
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageTitle: true,
   entryDocument: 'index.md',
+  plugin: ['none'],
+  watch: false,
 };
 
 export const getPluginOptions = (
@@ -33,12 +31,4 @@ export const getPluginOptions = (
     },
   };
   return options;
-};
-
-export const getOutputDirectory = (siteDir: string, options: PluginOptions) => {
-  return path.resolve(
-    siteDir,
-    options.docsRoot,
-    path.relative(process.cwd(), options.out),
-  );
 };

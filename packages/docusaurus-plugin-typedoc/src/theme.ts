@@ -49,7 +49,7 @@ export class DocusaurusTheme extends MarkdownTheme {
   getRelativeUrl(url: string) {
     const relativeUrl = super.getRelativeUrl(url).replace(/.md/g, '');
     if (path.basename(relativeUrl).startsWith('index')) {
-      return relativeUrl.replace('index', '')
+      return relativeUrl.replace('index', '');
     }
     return relativeUrl;
   }
@@ -96,7 +96,7 @@ export class DocusaurusTheme extends MarkdownTheme {
     if (page.url === this.entryDocument) {
       items = {
         ...items,
-        slug: '/' + path.relative(process.cwd(), this.out).replace(/\\/g, '/') + '/',
+        slug: `/${path.relative(process.cwd(), this.out).replace(/\\/g, '/')}/`,
       };
     }
     if (sidebarLabel && sidebarLabel !== pageTitle) {

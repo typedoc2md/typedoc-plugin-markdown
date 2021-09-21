@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import {
   Application,
   MixedDeclarationOption,
@@ -9,26 +10,16 @@ import {
   TypeDocReader,
   UrlMapping,
 } from 'typedoc';
-
-import { getPluginOptions } from './options';
-
 import { PluginOptions } from './types';
 
-export const bootstrap = (app: Application, opts: Partial<PluginOptions>) => {
+export const bootstrap = (app: Application, options: PluginOptions) => {
   addTypedocReaders(app);
   addTypedocDeclarations(app);
   app.renderer.render = render;
-  app.bootstrap({ ...getPluginOptions(opts) });
-  return app.options.getRawValues() as PluginOptions;
+  app.bootstrap(options);
 };
 
 async function render(project: ProjectReflection, outputDirectory: string) {
-  if (
-    !this.prepareTheme() ||
-    !(await this.prepareOutputDirectory(outputDirectory))
-  ) {
-    return;
-  }
   const output = new RendererEvent(
     RendererEvent.BEGIN,
     outputDirectory,
@@ -77,3 +68,21 @@ const addTypedocDeclarations = (app: Application) => {
     type: ParameterType.Mixed,
   } as MixedDeclarationOption);
 };
+
+export function removeDir(path: string) {
+  if (fs.existsSync(path)) {
+    const files = fs.readdirSync(path);
+    if (files.length > 0) {
+      files.forEach(function (filename) {
+        if (fs.statSync(path + '/' + filename).isDirectory()) {
+          removeDir(path + '/' + filename);
+        } else {
+          fs.unlinkSync(path + '/' + filename);
+        }
+      });
+      fs.rmdirSync(path);
+    } else {
+      fs.rmdirSync(path);
+    }
+  }
+}
