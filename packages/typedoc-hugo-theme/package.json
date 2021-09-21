@@ -21,13 +21,13 @@
     "build": "rm -rf ./dist && tsc",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
-    "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src/index.ts --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --disableOutputCheck --out ./demo"
+    "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src/index.ts --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --out ./demo"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": ">=0.20.0",
-    "typedoc-plugin-markdown": ">=3.6.0"
+    "typedoc": ">=0.22.0",
+    "typedoc-plugin-markdown": ">=3.11.0"
   },
   "keywords": [
     "typedoc",

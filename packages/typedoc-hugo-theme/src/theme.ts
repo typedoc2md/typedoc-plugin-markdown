@@ -1,16 +1,21 @@
 import * as fs from 'fs';
 
-import { BindOption, NavigationItem, ReflectionKind } from 'typedoc';
+import {
+  BindOption,
+  ReflectionKind,
+  PageEvent,
+  RendererEvent,
+  Renderer,
+  ContainerReflection,
+} from 'typedoc';
 import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
+import { getKindPlural } from 'typedoc-plugin-markdown/dist/groups';
 import {
   getPageTitle,
   prependYAML,
 } from 'typedoc-plugin-markdown/dist/utils/front-matter';
-import { GroupPlugin } from 'typedoc/dist/lib/converter/plugins';
-import { PageEvent, RendererEvent } from 'typedoc/dist/lib/output/events';
-import { Renderer } from 'typedoc/dist/lib/output/renderer';
 
-export default class HugoTheme extends MarkdownTheme {
+export class HugoTheme extends MarkdownTheme {
   @BindOption('readme')
   readme!: string;
   @BindOption('indexTitle')
@@ -18,13 +23,16 @@ export default class HugoTheme extends MarkdownTheme {
   @BindOption('entryDocument')
   entryDocument!: string;
 
-  constructor(renderer: Renderer, basePath: string) {
-    super(renderer, basePath);
-    this.listenTo(renderer, PageEvent.END, this.onHugoPageEnd);
-    this.listenTo(renderer, RendererEvent.END, this.onHugoRendererEnd);
+  constructor(renderer: Renderer) {
+    super(renderer);
+
+    this.listenTo(this.owner, {
+      [PageEvent.END]: this.onHugoPageEnd,
+      [RendererEvent.END]: this.onHugoRendererEnd,
+    });
   }
 
-  private onHugoPageEnd(page: PageEvent) {
+  private onHugoPageEnd(page: PageEvent<ContainerReflection>) {
     const yamlVars = {
       title: this.getTitle(page, false),
       linkTitle: this.getTitle(page, true),
@@ -38,7 +46,7 @@ export default class HugoTheme extends MarkdownTheme {
 
   private onHugoRendererEnd(renderer: RendererEvent) {
     const theme = this.application.renderer.theme as MarkdownTheme;
-    const navigation: NavigationItem = theme.getNavigation(renderer.project);
+    const navigation = theme.getNavigation(renderer.project);
 
     if (navigation.children) {
       navigation.children
@@ -48,8 +56,7 @@ export default class HugoTheme extends MarkdownTheme {
           // get the mapping so we know what dir to write to
           const mapping = theme.mappings.find((mapping) =>
             mapping.kind.some(
-              (kind: ReflectionKind) =>
-                GroupPlugin.getKindPlural(kind) === navItem.title,
+              (kind: ReflectionKind) => getKindPlural(kind) === navItem.title,
             ),
           );
           if (mapping) {
@@ -62,7 +69,7 @@ export default class HugoTheme extends MarkdownTheme {
     }
   }
 
-  getTitle(page: PageEvent, linkTitle: boolean) {
+  getTitle(page: PageEvent<ContainerReflection>, linkTitle: boolean) {
     if (page.url === this.entryDocument) {
       return page.url === page.project.url
         ? this.indexTitle || page.model.name
