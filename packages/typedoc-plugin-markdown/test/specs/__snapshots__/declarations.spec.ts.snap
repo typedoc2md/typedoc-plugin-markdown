@@ -140,6 +140,12 @@ Comments
 exports[`Declarations: should compile object literal declaration 1`] = `
 "• **objectLiteralDeclaration**: \`Object\`
 
+**\`param\`** description for valueX
+
+**\`param\`** description for valueZ
+
+**\`param\`** description for valueY
+
 #### Type declaration
 
 | Name | Type |
