@@ -1,6 +1,7 @@
 import * as Handlebars from 'handlebars';
 import { PageEvent } from 'typedoc';
 import { MarkdownTheme } from '../../theme';
+import { escapeChars } from '../../utils';
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper('breadcrumbs', function (this: PageEvent) {
@@ -36,8 +37,8 @@ function breadcrumb(page: PageEvent, model: any, md: string[]) {
     if (model.url) {
       md.push(
         page.url === model.url
-          ? `${escape(model.name)}`
-          : `[${escape(model.name)}](${Handlebars.helpers.relativeURL(
+          ? `${escapeChars(model.name)}`
+          : `[${escapeChars(model.name)}](${Handlebars.helpers.relativeURL(
               model.url,
             )})`,
       );
