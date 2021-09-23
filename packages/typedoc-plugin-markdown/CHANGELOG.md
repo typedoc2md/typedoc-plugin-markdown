@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.0...typedoc-plugin-markdown@3.11.1) (2021-09-23)
+
+
+### Bug Fixes
+
+* fix `allReflectionsHaveOwnDocument` option ([64376e9](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/64376e9bd3beb2e941d0640408ace04786db4c7e))
+* properly escape chars inside anchors ([d4e5b1d](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/d4e5b1db4dcbc21601cc3a7b6122810f9cbb9152))
+
+
+
+
+
 # [3.11.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.10.4...typedoc-plugin-markdown@3.11.0) (2021-09-14)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.9.1...vuepress-plugin-typedoc@0.9.2) (2021-09-23)
+
+
+### Bug Fixes
+
+* cleanup pre-render steps ([6f2e5de](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/6f2e5decad2ed0e2ef1afb3a3f65664dcb167154))
+
+
+
+
+
 ## [0.9.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.9.0...vuepress-plugin-typedoc@0.9.1) (2021-09-17)
 
 **Note:** Version bump only for package vuepress-plugin-typedoc
