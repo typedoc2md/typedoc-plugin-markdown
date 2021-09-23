@@ -2,7 +2,7 @@ import * as path from 'path';
 
 import { Application, ProjectReflection } from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
-
+import { removeDir, render } from './render';
 import { addOptions, getOptions } from './options';
 
 import { getSidebarJson } from './sidebar';
@@ -14,7 +14,13 @@ let project: ProjectReflection | undefined;
 export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
   const options = getOptions(opts);
 
+  const outputDirectory = ctx.sourceDir + '/' + options.out;
+
+  removeDir(outputDirectory);
+
   app = new Application();
+
+  app.renderer.render = render;
 
   load(app);
 
@@ -28,8 +34,6 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
   if (!project) {
     return;
   }
-
-  const outputDirectory = ctx.sourceDir + '/' + options.out;
 
   if (options.watch) {
     app.convertAndWatch(async (project) => {
