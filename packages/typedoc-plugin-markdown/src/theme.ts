@@ -17,8 +17,8 @@ import { getKindPlural } from './groups';
 import { NavigationItem } from './navigation-item';
 
 import {
-  getReflectionMemberTemplate,
   indexTemplate,
+  reflectionMemberTemplate,
   reflectionTemplate,
   registerHelpers,
   registerPartials,
@@ -200,6 +200,16 @@ export class MarkdownTheme extends Theme {
     };
   }
 
+  getReflectionMemberTemplate() {
+    return (pageEvent: PageEvent<ContainerReflection>) => {
+      return reflectionMemberTemplate(pageEvent, {
+        allowProtoMethodsByDefault: true,
+        allowProtoPropertiesByDefault: true,
+        data: { theme: this },
+      });
+    };
+  }
+
   getIndexTemplate() {
     return (pageEvent: PageEvent<ContainerReflection>) => {
       return indexTemplate(pageEvent, {
@@ -311,19 +321,19 @@ export class MarkdownTheme extends Theme {
               kind: [ReflectionKind.TypeAlias],
               isLeaf: true,
               directory: 'types',
-              template: getReflectionMemberTemplate(),
+              template: this.getReflectionMemberTemplate(),
             },
             {
               kind: [ReflectionKind.Variable],
               isLeaf: true,
               directory: 'variables',
-              template: getReflectionMemberTemplate(),
+              template: this.getReflectionMemberTemplate(),
             },
             {
               kind: [ReflectionKind.Function],
               isLeaf: true,
               directory: 'functions',
-              template: getReflectionMemberTemplate(),
+              template: this.getReflectionMemberTemplate(),
             },
           ]
         : []),

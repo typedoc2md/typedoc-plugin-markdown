@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as Handlebars from 'handlebars';
 import * as path from 'path';
-import { ContainerReflection, PageEvent } from 'typedoc';
 import breadcrumbsHelper from './resources/helpers/breadcrumbs';
 import commentHelper from './resources/helpers/comment';
 import commentsHelper from './resources/helpers/comments';
@@ -36,9 +35,9 @@ export const reflectionTemplate = Handlebars.compile(
   fs.readFileSync(path.join(TEMPLATE_PATH, 'reflection.hbs')).toString(),
 );
 
-export function getReflectionMemberTemplate() {
-  return (pageEvent: PageEvent<ContainerReflection>) => 'REFLECTION_MEMBER';
-}
+export const reflectionMemberTemplate = Handlebars.compile(
+  fs.readFileSync(path.join(TEMPLATE_PATH, 'reflection.member.hbs')).toString(),
+);
 
 export function registerPartials() {
   const partialsFolder = path.join(__dirname, 'resources', 'partials');
