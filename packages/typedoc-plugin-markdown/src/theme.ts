@@ -156,7 +156,7 @@ export class MarkdownTheme extends Theme {
         this.getUrl(reflection.parent, relative) + this.filenameSeparator + url;
     }
 
-    return url;
+    return url.replace(/^_/, '');
   }
 
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
