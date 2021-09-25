@@ -7,17 +7,26 @@ A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build documentation with 
 
 ## What it does?
 
-- Generates static TypeDoc pages in Markdown as part of the build.
-- Adds frontmatter to pages.
+Generates static TypeDoc pages in Markdown with frontmatter as part of the Docusaurus build.
 
 ## Installation
 
-> Install in the same location as the Docusaurus website directory.
+1. Install Docusaurus in the root of your project. See https://v2.docusaurus.io/docs/installation.
 
-This guide assumes that a Docusaurus project has already been setup. See [installation docs](https://v2.docusaurus.io/docs/installation).
+2. Install the plugin dependencies in the same location as the Docusaurus website directory.
 
 ```shell
+cd docs-website
 npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
+```
+
+```
+├──docs-website (docusaurus location)
+   ├── package.json
+├──package.json
+├──src (typescript source files)
+├──tsconfig.json
+
 ```
 
 ## Usage
@@ -52,7 +61,7 @@ TypeDoc will be bootstraped with the Docusaurus `start` and `build` [cli command
 Once built the docs will be available at `/docs/api` or equivalent out directory.
 
 ```
-website/ (docusaururs website root)
+docs-website
 ├── build/ (static site dir)
 ├── docs/
 │   ├── api/ (compiled typedoc markdown)
@@ -88,9 +97,11 @@ TypeDoc options can also be declared:
 - Using a `typedoc.json` file.
 - Under the `typedocOptions` key in `tsconfig.json`.
 
-Note: Options declared in this manner will take priority and overwrite options declared in `docusaurus.config.js`.
+> Note: Options declared in this manner will take priority and overwrite options declared in `docusaurus.config.js`.
 
 ### Plugin options
+
+Options specific to the plugin should also be declared in the same object.
 
 | Name                    | Default | Description                                  |
 | :---------------------- | :------ | :------------------------------------------- |
@@ -126,9 +137,9 @@ module.exports = {
 };
 ```
 
-### Sidebar and Navbar
+## Sidebar and Navbar
 
-#### Sidebar
+### Sidebar
 
 `sidebars.js` can be configured in following ways:
 
@@ -165,7 +176,7 @@ module.exports = {
 
 Please see https://docusaurus.io/docs/sidebar for sidebar documentation.
 
-#### Navbar
+### Navbar
 
 A navbar item can be configured in `themeConfig` options in `docusaurus.config.js`:
 
@@ -240,6 +251,27 @@ module.exports = {
         entryPoints: ['../src/index.ts'],
         tsconfig: '../tsconfig.json',
         watch: process.env.TYPEDOC_WATCH,
+      },
+    ],
+  ],
+};
+```
+
+### Monorepo setup
+
+`docusaurus.config.js`
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        entryPoints: ['../packages/package-a', '../packages/package-b'],
+        entryPointStrategy: 'packages',
+        sidebar: {
+          fullNames: true
+        },
       },
     ],
   ],
