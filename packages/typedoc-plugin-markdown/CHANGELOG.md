@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.1...typedoc-plugin-markdown@3.11.2) (2021-09-25)
+
+
+### Bug Fixes
+
+* remove leading underscore from file names ([#248](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/248)) ([bb5e4e3](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/bb5e4e32437c367e03db6b6d4b83487b15698c6b))
+
+
+
+
+
 ## [3.11.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.0...typedoc-plugin-markdown@3.11.1) (2021-09-23)
 
 
