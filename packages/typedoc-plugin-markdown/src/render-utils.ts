@@ -7,6 +7,7 @@ import commentsHelper from './resources/helpers/comments';
 import declarationTitleHelper from './resources/helpers/declaration-title';
 import escapeHelper from './resources/helpers/escape';
 import hierarchyHelper from './resources/helpers/hierarchy';
+import ifIsReference from './resources/helpers/if-is-reference';
 import ifShowBreadcrumbsHelper from './resources/helpers/if-show-breadcrumbs';
 import ifShowNamedAnchorsHelper from './resources/helpers/if-show-named-anchors';
 import ifShowPageTitleHelper from './resources/helpers/if-show-page-title';
@@ -15,6 +16,7 @@ import ifShowTypeHierarchyHelper from './resources/helpers/if-show-type-hierarch
 import indexSignatureTitleHelper from './resources/helpers/index-signature-title';
 import parameterTableHelper from './resources/helpers/parameter-table';
 import propertyTableHelper from './resources/helpers/property-table';
+import referenceMember from './resources/helpers/reference-member';
 import reflectionPathHelper from './resources/helpers/reflection-path';
 import reflectionTitleHelper from './resources/helpers/reflection-title';
 import relativeUrlHelper from './resources/helpers/relative-url';
@@ -58,6 +60,7 @@ export function registerHelpers(theme: MarkdownTheme) {
   declarationTitleHelper();
   escapeHelper();
   hierarchyHelper();
+  ifIsReference();
   ifShowBreadcrumbsHelper(theme);
   ifShowNamedAnchorsHelper(theme);
   ifShowPageTitleHelper(theme);
@@ -66,6 +69,7 @@ export function registerHelpers(theme: MarkdownTheme) {
   indexSignatureTitleHelper();
   parameterTableHelper();
   propertyTableHelper();
+  referenceMember();
   reflectionPathHelper();
   reflectionTitleHelper(theme);
   relativeUrlHelper(theme);

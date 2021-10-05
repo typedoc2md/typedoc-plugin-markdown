@@ -24,15 +24,15 @@
 
 {{else}}
 
-{{#if isReference}}
+{{#ifIsReference}}
 
-{{> member.reference}}
+{{referenceMember}}
 
 {{else}}
 
 {{> member.declaration}}
 
-{{/if}}
+{{/ifIsReference}}
 
 {{/if}}
 
