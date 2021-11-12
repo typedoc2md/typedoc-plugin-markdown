@@ -62,6 +62,12 @@ export class MarkdownTheme extends Theme {
   @BindOption('publicPath')
   publicPath!: string;
 
+  @BindOption('includes')
+  includes!: string;
+
+  @BindOption('media')
+  mediaDirectory!: string;
+
   static URL_PREFIX = /^(http|ftp)s?:\/\//;
 
   project?: ProjectReflection;

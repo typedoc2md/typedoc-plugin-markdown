@@ -1,14 +1,18 @@
 import * as Handlebars from 'handlebars';
 import { MarkdownTheme } from '../../theme';
+import * as path from 'path';
+import * as fs from 'fs';
 
 const URL_PREFIX = /^(http|ftp)s?:\/\//;
 const BRACKETS = /\[\[([^\]]+)\]\]/g;
 const INLINE_TAG =
   /(?:\[(.+?)\])?\{@(link|linkcode|linkplain)\s+((?:.|\n)+?)\}/gi;
+const INCLUDE_PATTERN = /\[\[include:([^\]]+?)\]\]/g;
+const MEDIA_PATTERN = /media:\/\/([^ "\)\]\}]+)/g;
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper('comment', function (this: string) {
-    const { project } = theme;
+    const { project, includes, mediaDirectory } = theme;
 
     function replaceBrackets(text: string) {
       return text.replace(
@@ -79,6 +83,42 @@ export default function (theme: MarkdownTheme) {
       }
     }
 
-    return replaceInlineTags(replaceBrackets(this));
+    let text = this;
+    const context = Object.assign(text, '');
+
+    if (includes) {
+      text = text.replace(
+        INCLUDE_PATTERN,
+        (match: string, includesPath: string) => {
+          includesPath = path.join(includes!, includesPath.trim());
+          if (
+            fs.existsSync(includesPath) &&
+            fs.statSync(includesPath).isFile()
+          ) {
+            const contents = fs.readFileSync(includesPath, 'utf-8');
+            if (includesPath.substr(-4).toLocaleLowerCase() === '.hbs') {
+              const template = Handlebars.compile(contents);
+              return template(context);
+            } else {
+              return contents;
+            }
+          } else {
+            return '';
+          }
+        },
+      );
+    }
+
+    if (mediaDirectory) {
+      text = text.replace(MEDIA_PATTERN, (match: string, mediaPath: string) => {
+        if (fs.existsSync(path.join(mediaDirectory!, mediaPath))) {
+          return Handlebars.helpers.relativeURL('media') + '/' + mediaPath;
+        } else {
+          return match;
+        }
+      });
+    }
+
+    return replaceInlineTags(replaceBrackets(text));
   });
 }
