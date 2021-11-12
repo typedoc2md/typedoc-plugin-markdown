@@ -193,7 +193,7 @@ This is a function with a parameter that has a default value.
 | :------ | :------ | :------ | :------ |
 | \`valueA\` | \`string\` | \`'defaultValue'\` | A parameter with a default string value. |
 | \`valueB\` | \`number\` | \`100\` | A parameter with a default numeric value. |
-| \`valueC\` | \`number\` | \`undefined\` | A parameter with a default NaN value. |
+| \`valueC\` | \`number\` | \`Number.NaN\` | A parameter with a default NaN value. |
 | \`valueD\` | \`boolean\` | \`true\` | A parameter with a default boolean value. |
 | \`valueE\` | \`boolean\` | \`null\` | A parameter with a default null value. |
 | \`valueF\` | \`string\` | \`'<foo>'\` | - |
