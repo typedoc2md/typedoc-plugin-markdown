@@ -193,14 +193,23 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
 
 function getReferenceType(model: ReferenceType, emphasis) {
   if (model.reflection || (model.name && model.typeArguments)) {
-    const reflection =
-      model.reflection && model.reflection.url
-        ? [
-            `[${`\`${model.reflection.name}\``}](${Handlebars.helpers.relativeURL(
-              model.reflection.url,
-            )})`,
-          ]
-        : [`\`${model.name}\``];
+    const reflection: string[] = [];
+    if (model.reflection?.url) {
+      reflection.push(
+        `[${`\`${model.reflection.name}\``}](${Handlebars.helpers.relativeURL(
+          model.reflection.url,
+        )})`,
+      );
+    } else {
+      const externalUrl = Handlebars.helpers.attemptExternalResolution(
+        model.getSymbol(),
+      );
+      reflection.push(
+        externalUrl
+          ? `[${`\`${model.name}\``}](${externalUrl})`
+          : `\`${model.name}\``,
+      );
+    }
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `<${model.typeArguments
