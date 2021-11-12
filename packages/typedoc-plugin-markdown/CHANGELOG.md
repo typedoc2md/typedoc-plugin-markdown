@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.5](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.4...typedoc-plugin-markdown@3.11.5) (2021-11-12)
+
+
+### Bug Fixes
+
+* Expose 'includes' and 'media' options (regression) ([#264](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/264)) ([435e0d2](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/435e0d2a3cbedbf3d935059f3f07ab3cd23d4470))
+
+
+
+
+
 ## [3.11.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.3...typedoc-plugin-markdown@3.11.4) (2021-11-12)
 
 
