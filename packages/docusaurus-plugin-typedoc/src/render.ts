@@ -34,7 +34,6 @@ async function render(project: ProjectReflection, outputDirectory: string) {
 
     this.trigger(RendererEvent.END, output);
   }
-  this.theme = void 0;
 }
 
 const addTypedocReaders = (app: Application) => {
