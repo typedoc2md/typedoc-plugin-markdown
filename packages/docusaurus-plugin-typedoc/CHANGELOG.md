@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.3...docusaurus-plugin-typedoc@0.16.4) (2021-11-12)
+
+
+### Bug Fixes
+
+* Prevent watch mode crashing ([950d872](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/950d8727fd43051edf6216d96c4232e3ed1287e6))
+
+
+
+
+
 ## [0.16.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.2...docusaurus-plugin-typedoc@0.16.3) (2021-09-21)
 
 

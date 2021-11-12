@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.3...typedoc-plugin-markdown@3.11.4) (2021-11-12)
+
+
+### Bug Fixes
+
+* Added support for third party symbols ([#263](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/263)) ([e5a40d5](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/e5a40d58050cad370c82fc5ef897f8d7268e1d13))
+
+
+
+
+
 ## [3.11.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.2...typedoc-plugin-markdown@3.11.3) (2021-10-05)
 
 
