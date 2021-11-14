@@ -64,4 +64,14 @@ describe(`Generics:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  test(`should compile generics with defaults'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        declarationPartial,
+        testApp.findReflection('genericsWithDefaults')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
 });

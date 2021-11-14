@@ -21,6 +21,10 @@ export const functionWithTypeParams = <
   C = string,
 >() => true;
 
+export function genericsWithDefaults<Type extends boolean = boolean>() {
+  return;
+}
+
 export function functionWithGenericConstraints<Type, Key extends keyof Type>(
   obj: Type,
   key: Key,

@@ -56,6 +56,21 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 "
 `;
 
+exports[`Generics: should compile generics with defaults' 1`] = `
+"▸ **genericsWithDefaults**: \`void\`
+
+[partial: comment]
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| \`Type\` | extends \`boolean\` = \`boolean\` |
+
+[partial: member.sources]
+"
+`;
+
 exports[`Generics: should compile type with nested generics' 1`] = `
 "Ƭ **nestedGenerics**: [\`Generic1\`](../modules.md#generic1)<[\`Generic2\`](../modules.md#generic2)<[\`Generic3\`](../modules.md#generic3)<\`string\`\\\\>\\\\>\\\\>
 

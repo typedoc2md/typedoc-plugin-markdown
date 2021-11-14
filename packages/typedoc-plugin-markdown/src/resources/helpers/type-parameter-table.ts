@@ -45,6 +45,9 @@ function table(parameters: any) {
         );
       }
       if (parameter.default) {
+        if (parameter.type) {
+          typeCol.push(' = ');
+        }
         typeCol.push(Handlebars.helpers.type.call(parameter.default));
       }
       row.push(typeCol.join(''));
