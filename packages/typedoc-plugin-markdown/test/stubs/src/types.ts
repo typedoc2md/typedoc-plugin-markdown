@@ -1,4 +1,14 @@
+import { ClassWithTypeParams } from './generics';
 import { _someCallback_ } from './signatures';
+
+export let htmlElement: HTMLElement;
+
+export let externalReference: HTMLElement;
+
+export const externalReferenceInsideTypeParams = new ClassWithTypeParams<
+  HTMLElement,
+  Error
+>();
 
 export let stringType: string;
 

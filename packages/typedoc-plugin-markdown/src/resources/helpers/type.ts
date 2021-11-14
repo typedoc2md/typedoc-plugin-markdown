@@ -192,8 +192,12 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
 }
 
 function getReferenceType(model: ReferenceType, emphasis) {
+  const externalUrl = Handlebars.helpers.attemptExternalResolution(
+    model.getSymbol(),
+  );
   if (model.reflection || (model.name && model.typeArguments)) {
     const reflection: string[] = [];
+
     if (model.reflection?.url) {
       reflection.push(
         `[${`\`${model.reflection.name}\``}](${Handlebars.helpers.relativeURL(
@@ -201,12 +205,9 @@ function getReferenceType(model: ReferenceType, emphasis) {
         )})`,
       );
     } else {
-      const externalUrl = Handlebars.helpers.attemptExternalResolution(
-        model.getSymbol(),
-      );
       reflection.push(
         externalUrl
-          ? `[${`\`${model.name}\``}](${externalUrl})`
+          ? `[${`\`${model.name}\``}]( ${externalUrl} )`
           : `\`${model.name}\``,
       );
     }
@@ -221,7 +222,11 @@ function getReferenceType(model: ReferenceType, emphasis) {
     }
     return reflection.join('');
   }
-  return emphasis ? `\`${model.name}\`` : escapeChars(model.name);
+  return emphasis
+    ? externalUrl
+      ? `[${`\`${model.name}\``}]( ${externalUrl} )`
+      : `\`${model.name}\``
+    : escapeChars(model.name);
 }
 
 function getArrayType(model: ArrayType, emphasis: boolean) {

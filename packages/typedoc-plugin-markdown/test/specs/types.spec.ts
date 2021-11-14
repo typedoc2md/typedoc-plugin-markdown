@@ -136,4 +136,20 @@ describe(`Types:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  test(`should resolve external refs'`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('externalReference').type,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should resolve external refs with type params'`, () => {
+    expect(
+      Handlebars.helpers.type.call(
+        testApp.findReflection('externalReferenceInsideTypeParams').type,
+      ),
+    ).toMatchSnapshot();
+  });
 });

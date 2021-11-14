@@ -15,8 +15,8 @@
     "build-and-test": "yarn run build && yarn run test",
     "fixtures": "node ./tasks/fixtures.js",
     "demos": "yarn run build && yarn run demo:md && yarn run demo:html",
-    "demo:md": "typedoc --options ./demo.options.json --out ./demo/md",
-    "demo:html": "typedoc --options ./demo.options.json --plugin none --out ./demo/html"
+    "demo:md": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-mdn-links --options ./demo.options.json --out ./demo/md",
+    "demo:html": "typedoc --options ./demo.options.json --plugin typedoc-plugin-mdn-links --out ./demo/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",
