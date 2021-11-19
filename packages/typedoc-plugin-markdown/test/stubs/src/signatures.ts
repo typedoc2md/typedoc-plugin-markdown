@@ -146,13 +146,15 @@ export function commentsInReturn() {
  * @param cases - Tuple of case and the result if `value` and `case` is equal
  * @returns Function for which to provide the default value
  */
-export const swtch = <T, R>(value: T, ...cases: [T, R][]) => (def: R) => {
-  for (const c of cases) {
-    if (c[0] === value) return c[1];
-  }
+export const swtch =
+  <T, R>(value: T, ...cases: [T, R][]) =>
+  (def: R) => {
+    for (const c of cases) {
+      if (c[0] === value) return c[1];
+    }
 
-  return def;
-};
+    return def;
+  };
 
 export type _someCallback_ = (name: string, value: unknown) => void;
 
@@ -212,3 +214,23 @@ export function functionWithNestedParams(
 export class ClassWithConstructor {
   constructor(x: string, y: string) {}
 }
+
+export type User = {
+  id: string;
+  data: string;
+};
+
+export const promiseReturningASymbol = (): Promise<User> => {
+  return new Promise((resolve) => {
+    resolve({ id: 'id', data: 'data' });
+  });
+};
+
+export const promiseReturningAnObject = (): Promise<{
+  id: string;
+  data: string;
+}> => {
+  return new Promise((resolve) => {
+    resolve({ id: 'id', data: 'data' });
+  });
+};

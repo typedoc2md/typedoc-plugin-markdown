@@ -214,9 +214,7 @@ function getReferenceType(model: ReferenceType, emphasis) {
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
         `<${model.typeArguments
-          .map((typeArgument) =>
-            Handlebars.helpers.type.call(typeArgument, 'all'),
-          )
+          .map((typeArgument) => Handlebars.helpers.type.call(typeArgument))
           .join(', ')}\\>`,
       );
     }

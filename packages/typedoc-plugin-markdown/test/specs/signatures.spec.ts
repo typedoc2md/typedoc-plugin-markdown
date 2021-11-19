@@ -55,6 +55,26 @@ describe(`Signatures:`, () => {
     ).toMatchSnapshot();
   });
 
+  test(`should compile a promise that returns an object'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('promiseReturningAnObject')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile a promise that returns a symbol'`, () => {
+    expect(
+      TestApp.compileTemplate(
+        partial,
+        testApp.findReflection('promiseReturningASymbol')
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
+
   test(`should compile function that returns a function'`, () => {
     expect(
       TestApp.compileTemplate(
