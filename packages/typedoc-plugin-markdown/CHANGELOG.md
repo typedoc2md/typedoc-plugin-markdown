@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.7](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.6...typedoc-plugin-markdown@3.11.7) (2021-11-20)
+
+
+### Bug Fixes
+
+* expand generic object ([#268](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/268)) ([5029a85](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/5029a8519ad840675eb3772d6c6c154228e5f4b0))
+
+
+
+
+
 ## [3.11.6](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.5...typedoc-plugin-markdown@3.11.6) (2021-11-14)
 
 
