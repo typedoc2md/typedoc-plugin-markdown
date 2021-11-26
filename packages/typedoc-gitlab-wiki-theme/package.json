@@ -1,6 +1,6 @@
 {
   "name": "typedoc-gitlab-wiki-theme",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An extension of the default theme from typedoc-plugin-markdown to create a compatible file structure for GitLab Wiki pages.",
   "main": "dist/theme.js",
   "files": [
