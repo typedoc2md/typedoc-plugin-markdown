@@ -13,7 +13,10 @@ export class GitlabTheme extends MarkdownTheme {
   }
 
   getRelativeUrl(url: string) {
-    const relativeUrl = url.replace(/(.*).md/, '$1').replace(/ /g, '-');
+    const relativeUrl = super
+      .getRelativeUrl(url)
+      .replace(/(.*).md/, '$1')
+      .replace(/ /g, '-');
     return relativeUrl.startsWith('..') ? relativeUrl : './' + relativeUrl;
   }
 
