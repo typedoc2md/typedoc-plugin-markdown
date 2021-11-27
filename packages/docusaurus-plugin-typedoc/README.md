@@ -11,22 +11,10 @@ Generates static TypeDoc pages in Markdown with frontmatter as part of the Docus
 
 ## Installation
 
-1. Install Docusaurus in the root of your project. See https://v2.docusaurus.io/docs/installation.
-
-2. Install the plugin dependencies in the same location as the Docusaurus website directory.
+> Install [Docusaurus](https://v2.docusaurus.io/docs/installation) in the root of your project and install the plugin dependencies in the same location as the Docusaurus website directory.
 
 ```shell
-cd docs-website
 npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
-```
-
-```
-├──docs-website (docusaurus location)
-   ├── package.json
-├──package.json
-├──src (typescript source files)
-├──tsconfig.json
-
 ```
 
 ## Usage
@@ -58,16 +46,21 @@ TypeDoc will be bootstraped with the Docusaurus `start` and `build` [cli command
 "build": "docusaurus build",
 ```
 
-Once built the docs will be available at `/docs/api` or equivalent out directory.
+Once built the docs will be available at `/docs/api` (or equivalent out directory).
+
+### Directory structure
 
 ```
-docs-website
-├── build/ (static site dir)
-├── docs/
-│   ├── api/ (compiled typedoc markdown)
-├── docusaurus.config.js
-├── package.json
-├── sidebars.js
+├── docusauruss-website
+    ├── build/ (static site dir)
+    ├── docs/
+    │   ├── api/ (compiled typedoc markdown)
+    ├── docusaurus.config.js
+    ├── package.json
+    ├── sidebars.js
+├──package.json
+├──src (typescript source files)
+├──tsconfig.json
 ```
 
 
@@ -103,12 +96,12 @@ TypeDoc options can also be declared:
 
 Options specific to the plugin should also be declared in the same object.
 
-| Name                    | Default | Description                                  |
-| :---------------------- | :------ | :------------------------------------------- |
-| `out`                   | `"api"` | Output directory relative to docs directory. |
-| `sidebar.categoryLabel` | `API`   | The sidebar parent category label.           |
-| `sidebar.fullNames`     | `false` | Display full names with module path.         |
-| `sidebar.position`      | `null`  | The position of the sidebar in the tree.     |
+| Name                    | Default | Description                                              |
+| :---------------------- | :------ | :------------------------------------------------------- |
+| `out`                   | `"api"` | Output dir relative to docs dir (use `.` for no subdir). |  |
+| `sidebar.categoryLabel` | `API`   | The sidebar parent category label.                       |
+| `sidebar.fullNames`     | `false` | Display full names with module path.                     |
+| `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                 |
 
 ### An example configuration
 
@@ -137,13 +130,16 @@ module.exports = {
 };
 ```
 
-## Sidebar and Navbar
 
-### Sidebar
+## Recipes
+
+### Sidebar and Navbar
+
+#### Sidebar
 
 `sidebars.js` can be configured in following ways:
 
-1 ) Generate the entire sidebar from file structure of your docs folder (default behaviour):
+1) Generate the entire sidebar from file structure of your docs folder (default behaviour):
 
 ```js
 module.exports = {
@@ -156,9 +152,9 @@ module.exports = {
 };
 ```
 
-2 ) Alternatively, if you wish to manually control other parts of your sidebar you can use a slice for the TypeDoc sidebar.
+2) Alternatively, if you wish to manually control other parts of your sidebar you can use a slice for the TypeDoc sidebar.
 
->note: `sidebar.categoryLabel` and `sidebar.position` options are ignored with this implementation)
+> note: `sidebar.categoryLabel` and `sidebar.position` options are ignored with this implementation)
 
 ```js
 module.exports = {
@@ -176,7 +172,7 @@ module.exports = {
 
 Please see https://docusaurus.io/docs/sidebar for sidebar documentation.
 
-### Navbar
+#### Navbar
 
 A navbar item can be configured in `themeConfig` options in `docusaurus.config.js`:
 
@@ -197,7 +193,6 @@ A navbar item can be configured in `themeConfig` options in `docusaurus.config.j
 
 Please see https://docusaurus.io/docs/api/themes/configuration#navbar-items for navbar documentation.
 
-## Additional config
 
 ### Multi instance
 
