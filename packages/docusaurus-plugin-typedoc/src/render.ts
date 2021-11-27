@@ -63,6 +63,10 @@ const addTypedocDeclarations = (app: Application) => {
   } as StringDeclarationOption);
 
   app.options.addDeclaration({
+    name: 'indexSlug',
+  } as StringDeclarationOption);
+
+  app.options.addDeclaration({
     name: 'sidebar',
     type: ParameterType.Mixed,
   } as MixedDeclarationOption);

@@ -27,6 +27,7 @@ Object {
   "hideInPageTOC": true,
   "hidePageTitle": true,
   "id": "default",
+  "indexSlug": undefined,
   "out": "api",
   "plugin": Array [
     "none",

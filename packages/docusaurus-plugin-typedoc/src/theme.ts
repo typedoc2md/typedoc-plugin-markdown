@@ -37,6 +37,9 @@ export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('readmeTitle')
   readmeTitle!: string;
 
+  @BindOption('indexSlug')
+  indexSlug!: string;
+
   constructor(renderer: Renderer) {
     super(renderer);
 
@@ -94,10 +97,7 @@ export class DocusaurusTheme extends MarkdownTheme {
       title: pageTitle,
     };
     if (page.url === this.entryDocument) {
-      items = {
-        ...items,
-        slug: `/${path.relative(process.cwd(), this.out).replace(/\\/g, '/')}/`,
-      };
+      items = { ...items, slug: this.getSlug() };
     }
     if (sidebarLabel && sidebarLabel !== pageTitle) {
       items = { ...items, sidebar_label: sidebarLabel as string };
@@ -155,6 +155,16 @@ export class DocusaurusTheme extends MarkdownTheme {
       return readmeTitle;
     }
     return getPageTitle(page);
+  }
+
+  getSlug() {
+    if (this.indexSlug) {
+      return this.indexSlug;
+    }
+    if (this.out === process.cwd()) {
+      return '/';
+    }
+    return `/${path.relative(process.cwd(), this.out).replace(/\\/g, '/')}/`;
   }
 
   get mappings() {
