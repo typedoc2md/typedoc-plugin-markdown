@@ -3,7 +3,8 @@
 A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeScript API documentation as Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
-![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
+[![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
+
 
 ## What it does?
 
@@ -46,23 +47,7 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 
 
-## Additional plugins and themes
 
-If targeting specific static site generators or wiki platforms the following plugins and themes may be of interest:
-
-### Plugins
-
-Plugins that integrates TypeDoc seamlessly with a particular platform ecosystem:
-
-- Docusaurus v2 - [docusaurus-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc/README.md)
-- VuePress - [vuepress-plugin-typedoc](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc/README.md)
-
-### Themes
-
-Themes that target output to particular Markdown platforms:
-
-- GitHub Wiki - [typedoc-github-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-github-wiki-theme/README.md)
-- GitLab Wiki - [typedoc-gitlab-wiki-theme](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-gitlab-wiki-theme/README.md)
 
 ## License
 
