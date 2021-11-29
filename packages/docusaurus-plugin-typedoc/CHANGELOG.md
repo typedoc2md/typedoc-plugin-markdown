@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.5](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.4...docusaurus-plugin-typedoc@0.16.5) (2021-11-29)
+
+
+### Bug Fixes
+
+* define slug as '/' when out = '.' ([f22f049](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/f22f04952ebc7733489d3dac530aa7acbe84218d))
+
+
+
+
+
 ## [0.16.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.3...docusaurus-plugin-typedoc@0.16.4) (2021-11-12)
 
 
