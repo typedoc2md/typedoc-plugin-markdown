@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.6](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.5...docusaurus-plugin-typedoc@0.16.6) (2021-12-07)
+
+
+### Bug Fixes
+
+* move plugin definition to loadContent() lifecycle ([#271](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/271)) ([54104a8](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/54104a82b1e46d5ee0cca3bdf506874cd5fe41df))
+
+
+
+
+
 ## [0.16.5](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.4...docusaurus-plugin-typedoc@0.16.5) (2021-11-29)
 
 
