@@ -14,7 +14,7 @@ let project: ProjectReflection | undefined;
 export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
   const options = getOptions(opts);
 
-  const outputDirectory = ctx.sourceDir + '/' + options.out;
+  const outputDirectory = (ctx.sourceDir || ctx.dir.source()) + '/' + options.out;
 
   removeDir(outputDirectory);
 
