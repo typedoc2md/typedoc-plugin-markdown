@@ -5,7 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [3.11.8](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.7...typedoc-plugin-markdown@3.11.8) (2021-12-17)
 
-**Note:** Version bump only for package typedoc-plugin-markdown
+### Bug Fixes
+
+* fixed linked resolution ([#274](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/274))
 
 
 
