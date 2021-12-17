@@ -2,6 +2,7 @@ import * as Handlebars from 'handlebars';
 import { MarkdownTheme } from '../../theme';
 import * as path from 'path';
 import * as fs from 'fs';
+import { Reflection } from 'typedoc';
 
 const URL_PREFIX = /^(http|ftp)s?:\/\//;
 const BRACKETS = /\[\[([^\]]+)\]\]/g;
@@ -12,7 +13,7 @@ const MEDIA_PATTERN = /media:\/\/([^ "\)\]\}]+)/g;
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper('comment', function (this: string) {
-    const { project, includes, mediaDirectory } = theme;
+    const { project, reflection, includes, mediaDirectory } = theme;
 
     function replaceBrackets(text: string) {
       return text.replace(
@@ -51,11 +52,16 @@ export default function (theme: MarkdownTheme) {
         return `[${caption}](${target})`;
       }
 
-      const reflection = project?.findReflectionByName(target);
+      let targetReflection: Reflection | undefined;
+      if (reflection) {
+        targetReflection = reflection.findReflectionByName(target);
+      } else if (project) {
+        targetReflection = project.findReflectionByName(target);
+      }
 
-      if (reflection && reflection.url) {
+      if (targetReflection && targetReflection.url) {
         return `[${caption}](${Handlebars.helpers.relativeURL(
-          reflection.url,
+          targetReflection.url,
         )})`;
       } else {
         return original;
