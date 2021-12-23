@@ -9,6 +9,7 @@ import declarationTitleHelper from './resources/helpers/declaration-title';
 import escapeHelper from './resources/helpers/escape';
 import hierarchyHelper from './resources/helpers/hierarchy';
 import ifIsReference from './resources/helpers/if-is-reference';
+import ifNamedAnchors from './resources/helpers/if-named-anchors';
 import ifShowBreadcrumbsHelper from './resources/helpers/if-show-breadcrumbs';
 import ifShowNamedAnchorsHelper from './resources/helpers/if-show-named-anchors';
 import ifShowPageTitleHelper from './resources/helpers/if-show-page-title';
@@ -63,6 +64,7 @@ export function registerHelpers(theme: MarkdownTheme) {
   escapeHelper();
   hierarchyHelper();
   ifIsReference();
+  ifNamedAnchors(theme);
   ifShowBreadcrumbsHelper(theme);
   ifShowNamedAnchorsHelper(theme);
   ifShowPageTitleHelper(theme);
