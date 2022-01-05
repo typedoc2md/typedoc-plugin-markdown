@@ -1,6 +1,11 @@
 import * as path from 'path';
 
-import { Application, ParameterType } from 'typedoc';
+import {
+  Application,
+  ParameterType,
+  ProjectReflection,
+  RendererEvent,
+} from 'typedoc';
 
 import { CustomOptionsReader } from './options-reader';
 import { MarkdownTheme } from './theme';
@@ -75,8 +80,8 @@ function addDeclarations(app: Application) {
 
 function loadTheme(app: Application) {
   const themeRef = app.options.getValue('theme');
-
   if (['default', 'markdown'].includes(themeRef)) {
+    app.renderer.render = render;
     app.renderer.theme = new MarkdownTheme(app.renderer);
   } else {
     const CustomTheme = getCustomTheme(
@@ -84,12 +89,35 @@ function loadTheme(app: Application) {
     );
     if (CustomTheme !== null) {
       app.options.addReader(new CustomOptionsReader());
+      app.renderer.render = render;
       app.renderer.theme = new CustomTheme(app.renderer);
     } else {
       app.logger.warn(
         `[typedoc-plugin-markdown] '${themeRef}' is not a recognised markdown theme.`,
       );
     }
+  }
+}
+
+async function render(project: ProjectReflection, outputDirectory: string) {
+  const output = new RendererEvent(
+    RendererEvent.BEGIN,
+    outputDirectory,
+    project,
+  );
+  if (
+    !this.prepareTheme() ||
+    !(await this.prepareOutputDirectory(outputDirectory))
+  ) {
+    return;
+  }
+  output.urls = this.theme!.getUrls(project);
+  this.trigger(output);
+  if (!output.isDefaultPrevented) {
+    output?.urls?.forEach((mapping) => {
+      this.renderDocument(output.createPageEvent(mapping));
+    });
+    this.trigger(RendererEvent.END, output);
   }
 }
 
