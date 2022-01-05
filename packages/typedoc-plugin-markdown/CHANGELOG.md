@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.9](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.8...typedoc-plugin-markdown@3.11.9) (2022-01-05)
+
+
+### Bug Fixes
+
+* expose missing namedAnchors option (regression) ([#277](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/277)) ([5353334](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/53533342d0b34230ae344dbe4bf8563e4899da5b))
+* watch mode compatibility ([#279](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/279)) ([da65f74](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/da65f741c38ca6a5c2fefc58c4d4fd0cbc9a6d25))
+
+
+
+
+
 ## [3.11.8](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.7...typedoc-plugin-markdown@3.11.8) (2021-12-17)
 
 ### Bug Fixes
