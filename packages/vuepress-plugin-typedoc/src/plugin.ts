@@ -20,11 +20,11 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
 
   app = new Application();
 
-  app.renderer.render = render;
-
   load(app);
 
   addOptions(app);
+
+  app.renderer.render = render;
 
   app.bootstrap({ ...options, theme: path.resolve(__dirname) });
 
