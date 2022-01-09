@@ -40,6 +40,6 @@
     "ts-jest": "^26.5.5",
     "typedoc": "^0.22.10",
     "typedoc-plugin-mdn-links": "^1.0.4",
-    "typescript": "^4.5.4"
+    "typescript": "^4.4.0"
   }
 }
