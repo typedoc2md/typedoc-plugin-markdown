@@ -1,11 +1,15 @@
 import * as fs from 'fs';
 
 import { Renderer, DeclarationReflection, RendererEvent } from 'typedoc';
-import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
+import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
-export class GitlabTheme extends MarkdownTheme {
+export class GitlabWikiTheme extends MarkdownTheme {
   constructor(renderer: Renderer) {
     super(renderer);
+
+    this.entryDocument = 'home.md';
+    this.hideBreadcrumbs = true;
+    this.hidePageTitle = true;
 
     this.listenTo(this.owner, {
       [RendererEvent.END]: this.onGitLabRendererEnd,

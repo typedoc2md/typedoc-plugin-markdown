@@ -6,7 +6,7 @@ let testApp: TestApp;
 
 beforeAll(async () => {
   testApp = new TestApp(['theme.ts']);
-  await testApp.bootstrap({ theme: './dist', entryDocument: 'home.md' });
+  await testApp.bootstrap({ theme: 'gitlab-wiki' });
 });
 describe(`Theme:`, () => {
   test(`should write sidebar'`, async () => {
