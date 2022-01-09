@@ -8,7 +8,7 @@ describe(`Theme:`, () => {
   beforeAll(async () => {
     testApp = new TestApp(['theme.ts']);
     await testApp.bootstrap({
-      theme: './dist',
+      theme: 'hugo',
       entryDocument: '_index.md',
       indexTitle: 'Test API',
     });

@@ -1,14 +1,13 @@
 import * as fs from 'fs';
 
 import {
-  BindOption,
   ReflectionKind,
   PageEvent,
   RendererEvent,
   Renderer,
   ContainerReflection,
 } from 'typedoc';
-import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
+import { MarkdownTheme } from 'typedoc-plugin-markdown';
 import { getKindPlural } from 'typedoc-plugin-markdown/dist/groups';
 import {
   getPageTitle,
@@ -16,15 +15,12 @@ import {
 } from 'typedoc-plugin-markdown/dist/utils/front-matter';
 
 export class HugoTheme extends MarkdownTheme {
-  @BindOption('readme')
-  readme!: string;
-  @BindOption('indexTitle')
-  indexTitle!: string;
-  @BindOption('entryDocument')
-  entryDocument!: string;
-
   constructor(renderer: Renderer) {
     super(renderer);
+
+    this.entryDocument = '_index.md';
+    this.hideBreadcrumbs = true;
+    this.hidePageTitle = true;
 
     this.listenTo(this.owner, {
       [PageEvent.END]: this.onHugoPageEnd,

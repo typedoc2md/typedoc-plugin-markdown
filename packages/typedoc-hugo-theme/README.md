@@ -19,8 +19,13 @@ npm install typedoc typedoc-plugin-markdown typedoc-hugo-theme --save-dev
 ## Usage
 
 ```bash
-$ npx typedoc --plugin typedoc-plugin-markdown --theme ./node_modules/typedoc-hugo-theme/dist ...options
+$ npx typedoc --theme hugo [args]
 ```
+
+## Options
+
+Please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
+
 
 ## Output
 

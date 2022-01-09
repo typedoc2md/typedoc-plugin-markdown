@@ -2,7 +2,7 @@
   "name": "typedoc-hugo-theme",
   "version": "0.3.0",
   "description": "An extension of the Markdown theme from typedoc-plugin-markdown that prepends Hugo Front Matter variables in YAML format to pages.",
-  "main": "dist/theme.js",
+  "main": "dist/index.js",
   "files": [
     "dist/"
   ],
@@ -21,16 +21,17 @@
     "build": "rm -rf ./dist && tsc",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
-    "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src/index.ts --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --out ./demo"
+    "demo": "rm -rf ./demo && npm run build && typedoc ../typedoc-plugin-markdown/test/stubs/src/index.ts --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme hugo --out ./demo"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": ">=0.22.0",
-    "typedoc-plugin-markdown": ">=3.11.0"
+    "typedoc": ">=0.22.9",
+    "typedoc-plugin-markdown": ">=3.12.0"
   },
   "keywords": [
     "typedoc",
+    "typedoc-theme",
     "hugo"
   ]
 }
