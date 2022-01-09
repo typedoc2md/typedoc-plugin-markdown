@@ -1,17 +1,13 @@
 import * as fs from 'fs';
-
-import { BindOption, RendererEvent, DeclarationReflection } from 'typedoc';
-import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
-import { Renderer } from 'typedoc/dist/lib/output/renderer';
+import { RendererEvent, Renderer, DeclarationReflection } from 'typedoc';
+import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
 export class GithubWikiTheme extends MarkdownTheme {
-  @BindOption('entryPoints')
-  entryPoints!: string[];
-  @BindOption('readme')
-  readme!: string;
-
   constructor(renderer: Renderer) {
     super(renderer);
+
+    this.entryDocument = 'Home.md';
+    this.hideBreadcrumbs = true;
 
     this.listenTo(this.owner, {
       [RendererEvent.BEGIN]: this.writeSidebar,

@@ -20,8 +20,12 @@ npm install typedoc typedoc-plugin-markdown typedoc-github-wiki-theme --save-dev
 ### Usage
 
 ```bash
-$ npx typedoc --theme ./node_modules/typedoc-github-wiki-theme/dist [args]
+$ npx typedoc --theme github-wiki [args]
 ```
+
+## Options
+
+Please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
 
 ## License
 

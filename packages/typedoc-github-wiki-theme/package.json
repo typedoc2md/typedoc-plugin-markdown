@@ -2,7 +2,7 @@
   "name": "typedoc-github-wiki-theme",
   "version": "0.6.0",
   "description": "An extension of the default theme from typedoc-plugin-markdown to create a compatible file structure for Github Wiki pages.",
-  "main": "dist/theme.js",
+  "main": "dist/index.js",
   "files": [
     "dist/"
   ],
@@ -21,16 +21,17 @@
     "build": "rm -rf ./dist && tsc",
     "test": "jest --colors",
     "build-and-test": "yarn run build && yarn run test",
-    "demo": "rm -rf ./demo && yarn run build && typedoc --options ../typedoc-plugin-markdown/demo.options.json  --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme ./dist --out ./demo"
+    "demo": "rm -rf ./demo && yarn run build && typedoc --options ../typedoc-plugin-markdown/demo.options.json  --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme github-wiki --out ./demo"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": ">=0.22.0",
-    "typedoc-plugin-markdown": ">=3.11.0"
+    "typedoc": ">=0.22.9",
+    "typedoc-plugin-markdown": ">=3.12.0"
   },
   "keywords": [
     "typedoc",
+    "typedoc-theme",
     "githubwiki"
   ]
 }
