@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.10.1...vuepress-plugin-typedoc@0.10.2) (2022-01-09)
+
+
+### Bug Fixes
+
+* Correctly define theme using TypeDoc `defineTheme` method ([5f2ef42](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/5f2ef422aa1bcce0698e4b923682dbb106730f45))
+* Use ready() async lifecycle method ([2c22b84](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/2c22b8407005822fc0c063e5d2e76dbb44ae8f6b))
+
+
+
+
+
 ## [0.10.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.10.0...vuepress-plugin-typedoc@0.10.1) (2022-01-06)
 
 

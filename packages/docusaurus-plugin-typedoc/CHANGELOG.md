@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.7](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.6...docusaurus-plugin-typedoc@0.16.7) (2022-01-09)
+
+
+### Bug Fixes
+
+* Correctly define theme using TypeDoc `defineTheme` method ([5f2ef42](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/5f2ef422aa1bcce0698e4b923682dbb106730f45))
+* Use TypeDoc 'defineTheme' to register docusaurus theme ([ab5878d](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/ab5878d35c4e95297782b1c7fde030f96f70df1a))
+
+
+
+
+
 ## [0.16.6](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.5...docusaurus-plugin-typedoc@0.16.6) (2021-12-07)
 
 

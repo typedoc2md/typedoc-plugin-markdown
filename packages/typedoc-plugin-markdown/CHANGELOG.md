@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.10](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.9...typedoc-plugin-markdown@3.11.10) (2022-01-09)
+
+
+### Bug Fixes
+
+*  Add comments for function type properties ([#281](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/281)) ([c38a095](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/c38a095ea5b8d76d1c1657a244cc0d1c33361065))
+* Correctly define theme using TypeDoc `defineTheme` method ([5f2ef42](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/5f2ef422aa1bcce0698e4b923682dbb106730f45))
+
+
+
+
+
 ## [3.11.9](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.8...typedoc-plugin-markdown@3.11.9) (2022-01-05)
 
 
