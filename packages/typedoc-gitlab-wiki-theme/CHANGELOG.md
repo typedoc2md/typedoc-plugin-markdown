@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.0.0 (2022-01-09)
+
+### BREAKING CHANGE
+
+Internally initiate with TypeDoc `defineTheme` method (`theme` option should be keyword rather than path)
+
+
 ## [0.2.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-gitlab-wiki-theme@0.2.1...typedoc-gitlab-wiki-theme@0.2.2) (2022-01-09)
 
 
