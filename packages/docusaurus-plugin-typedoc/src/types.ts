@@ -15,6 +15,7 @@ export interface PluginOptions {
   hidePageTitle: boolean;
   entryDocument: string;
   indexSlug?: string;
+  theme?: string;
 }
 
 export interface FrontMatter {

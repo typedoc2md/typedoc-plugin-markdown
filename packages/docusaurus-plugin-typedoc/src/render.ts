@@ -19,7 +19,13 @@ export const bootstrap = (app: Application, options: PluginOptions) => {
   app.bootstrap(options);
 };
 
-async function render(project: ProjectReflection, outputDirectory: string) {
+export async function render(
+  project: ProjectReflection,
+  outputDirectory: string,
+) {
+  if (!this.prepareTheme()) {
+    return;
+  }
   const output = new RendererEvent(
     RendererEvent.BEGIN,
     outputDirectory,

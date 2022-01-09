@@ -18,6 +18,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   plugin: ['none'],
   watch: false,
   indexSlug: undefined,
+  theme: 'docusaurus',
 };
 
 export const getPluginOptions = (

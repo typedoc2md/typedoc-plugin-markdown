@@ -39,6 +39,7 @@ Object {
     "position": null,
     "readmeLabel": "Readme",
   },
+  "theme": "docusaurus",
   "watch": false,
 }
 `;

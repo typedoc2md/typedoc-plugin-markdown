@@ -4,6 +4,8 @@ import { Application } from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
 import { getPluginOptions } from './options';
 import { bootstrap, removeDir } from './render';
+
+import { DocusaurusTheme } from './theme';
 import { PluginOptions } from './types';
 
 // store list of plugin ids when running multiple instances
@@ -29,7 +31,7 @@ export default function pluginDocusaurus(
 
         const app = new Application();
 
-        app.options.setValue('theme', path.resolve(__dirname));
+        app.renderer.defineTheme('docusaurus', DocusaurusTheme);
 
         load(app);
 
