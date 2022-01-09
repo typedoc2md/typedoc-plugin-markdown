@@ -8,7 +8,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* Added Hugo theme / front matter support ([3cd1bf8](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/3cd1bf894533966f75ccd56c1b7cd2078e7084c0))
 * TypeDoc 0.22 compatibility fixes ([895d586](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/895d586e36da11e7fee9931d52c51a78e868e08f))
 
 

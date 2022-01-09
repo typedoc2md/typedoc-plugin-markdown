@@ -1,4 +1,4 @@
-import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
+import { MarkdownTheme } from 'typedoc-plugin-markdown';
 import { Renderer } from 'typedoc';
 
 export class BitbucketTheme extends MarkdownTheme {

@@ -1,10 +1,15 @@
 # typedoc-bitbucket-theme
 
-An extension of the default theme from [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown) to fix Bitbucket Cloud's internal anchor linking implementation.
+An Bitbucket Cloud compatible [TypeDoc](https://github.com/TypeStrong/typedoc) theme.
 
 [![npm](https://img.shields.io/npm/v/typedoc-bitbucket-theme.svg)](https://www.npmjs.com/package/typedoc-bitbucket-theme)
+![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
-_If using Bitbucket Server do not use this theme but set the `--namedAnchors` option instead._
+> Note: If using **Bitbucket Server** do not use this theme but set the `--namedAnchors` option instead.
+
+## What is does?
+
+- Fixes Bitbucket Cloud's internal anchor linking implementation.
 
 ## Installation
 
@@ -12,8 +17,16 @@ _If using Bitbucket Server do not use this theme but set the `--namedAnchors` op
 npm install typedoc typedoc-plugin-markdown typedoc-bitbucket-theme --save-dev
 ```
 
-### Usage
+## Usage
 
 ```bash
-$ npx typedoc --plugin typedoc-plugin-markdown --theme ./node_modules/typedoc-bitbucket-theme/dist [args]
+$ npx typedoc --theme --bitbucket [args]
 ```
+
+## Options
+
+Please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
+
+## License
+
+[MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-github-wiki-theme/LICENSE)
