@@ -5,6 +5,9 @@ export async function render(
   project: ProjectReflection,
   outputDirectory: string,
 ) {
+  if (!this.prepareTheme()) {
+    return;
+  }
   const output = new RendererEvent(
     RendererEvent.BEGIN,
     outputDirectory,
