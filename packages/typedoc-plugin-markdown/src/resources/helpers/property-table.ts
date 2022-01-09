@@ -1,5 +1,5 @@
 import * as Handlebars from 'handlebars';
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { escapeChars, stripLineBreaks } from '../../utils';
 
 export default function () {
@@ -113,6 +113,11 @@ function getName(property: DeclarationReflection) {
 }
 
 function getComments(property: DeclarationReflection) {
+  if (property.type instanceof ReflectionType) {
+    if (property.type?.declaration?.signatures) {
+      return property.type?.declaration.signatures[0].comment;
+    }
+  }
   if (property.signatures) {
     return property.signatures[0].comment;
   }
