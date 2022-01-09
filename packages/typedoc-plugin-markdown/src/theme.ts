@@ -1,6 +1,5 @@
 import * as path from 'path';
 import {
-  BindOption,
   ContainerReflection,
   DeclarationReflection,
   PageEvent,
@@ -26,56 +25,45 @@ import {
 import { formatContents } from './utils';
 
 export class MarkdownTheme extends Theme {
-  @BindOption('allReflectionsHaveOwnDocument')
   allReflectionsHaveOwnDocument!: boolean;
-
-  @BindOption('entryDocument')
   entryDocument: string;
-
-  @BindOption('entryPoints')
   entryPoints!: string[];
-
-  @BindOption('filenameSeparator')
   filenameSeparator!: string;
-
-  @BindOption('hideBreadcrumbs')
   hideBreadcrumbs!: boolean;
-
-  @BindOption('hideInPageTOC')
   hideInPageTOC!: boolean;
-
-  @BindOption('hidePageTitle')
   hidePageTitle!: boolean;
-
-  @BindOption('indexTitle')
-  indexTitle!: string;
-
-  @BindOption('namedAnchors')
-  namedAnchors!: boolean;
-
-  @BindOption('readme')
-  readme!: string;
-
-  @BindOption('out')
-  out!: string;
-
-  @BindOption('publicPath')
-  publicPath!: string;
-
-  @BindOption('includes')
   includes!: string;
-
-  @BindOption('media')
+  indexTitle!: string;
   mediaDirectory!: string;
-
-  static URL_PREFIX = /^(http|ftp)s?:\/\//;
+  namedAnchors!: boolean;
+  readme!: string;
+  out!: string;
+  publicPath!: string;
 
   project?: ProjectReflection;
   reflection?: DeclarationReflection;
   location!: string;
 
+  static URL_PREFIX = /^(http|ftp)s?:\/\//;
+
   constructor(renderer: Renderer) {
     super(renderer);
+
+    // prettier-ignore
+    this.allReflectionsHaveOwnDocument = this.getOption('allReflectionsHaveOwnDocument',) as boolean;
+    this.entryDocument = this.getOption('entryDocument') as string;
+    this.entryPoints = this.getOption('entryPoints') as string[];
+    this.filenameSeparator = this.getOption('filenameSeparator') as string;
+    this.hideBreadcrumbs = this.getOption('hideBreadcrumbs') as boolean;
+    this.hideInPageTOC = this.getOption('hideInPageTOC') as boolean;
+    this.hidePageTitle = this.getOption('hidePageTitle') as boolean;
+    this.includes = this.getOption('includes') as string;
+    this.indexTitle = this.getOption('indexTitle') as string;
+    this.mediaDirectory = this.getOption('media') as string;
+    this.namedAnchors = this.getOption('namedAnchors') as boolean;
+    this.readme = this.getOption('readme') as string;
+    this.out = this.getOption('out') as string;
+    this.publicPath = this.getOption('publicPath') as string;
 
     this.listenTo(this.owner, {
       [RendererEvent.BEGIN]: this.onBeginRenderer,
@@ -88,6 +76,10 @@ export class MarkdownTheme extends Theme {
 
   render(page: PageEvent<Reflection>): string {
     return formatContents(page.template(page) as string);
+  }
+
+  getOption(key: string) {
+    return this.application.options.getValue(key);
   }
 
   getUrls(project: ProjectReflection) {

@@ -17,7 +17,7 @@
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc",
   "peerDependencies": {
     "typedoc": ">=0.22.0",
-    "typedoc-plugin-markdown": ">=3.11.0"
+    "typedoc-plugin-markdown": ">=3.11.10"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",

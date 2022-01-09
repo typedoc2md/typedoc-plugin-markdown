@@ -23,17 +23,15 @@ npm install --save-dev typedoc typedoc-plugin-markdown
 Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installation/#command-line-interface).
 
 ```bash
-typedoc --out docs src/index.ts
+typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts
 ```
 
-**Note:**
-
-- If using with the default HTML theme or other themes, use `--plugin none` to switch the plugin off.
-- The plugin should be executed in the same location as TypeDoc. Use `npx` if running command directly in shell.
+> The plugin switches the default html theme to the in-built markdown theme as default. If using with the default html theme, use `--plugin none` to switch the plugin off.
 
 ## Options
 
-The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/guides/options/).
+The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/guides/options/)
+(please note that TypeDoc options specific to the html theme will be ignored).
 
 - `--entryDocument<string>`<br>
   The file name of the entry document. Defaults to `README.md`.
@@ -45,9 +43,6 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `.`.
 - `--namedAnchors<boolean>`<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
-
-
-
 
 ## License
 
