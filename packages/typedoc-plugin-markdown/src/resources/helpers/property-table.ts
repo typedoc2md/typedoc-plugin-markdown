@@ -61,11 +61,10 @@ export default function () {
         );
 
         if (hasComments) {
-          if (property.comment) {
+          const comments = getComments(property);
+          if (comments) {
             row.push(
-              stripLineBreaks(
-                Handlebars.helpers.comments.call(property.comment),
-              ),
+              stripLineBreaks(Handlebars.helpers.comments.call(comments)),
             );
           } else {
             row.push('-');
@@ -111,4 +110,11 @@ function getName(property: DeclarationReflection) {
     md.push('?');
   }
   return md.join('');
+}
+
+function getComments(property: DeclarationReflection) {
+  if (property.signatures) {
+    return property.signatures[0].comment;
+  }
+  return property.comment;
 }
