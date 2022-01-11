@@ -1,12 +1,14 @@
 import * as Handlebars from 'handlebars';
 import { PageEvent } from 'typedoc';
-import { MarkdownTheme } from '../../theme';
+import { MarkdownThemeContext } from '../../theme-context';
 
-export default function (theme: MarkdownTheme) {
+export default function (context: MarkdownThemeContext) {
   Handlebars.registerHelper(
     'ifShowBreadcrumbs',
     function (this: PageEvent, options: Handlebars.HelperOptions) {
-      return theme.hideBreadcrumbs ? options.inverse(this) : options.fn(this);
+      return context.options.hideBreadcrumbs
+        ? options.inverse(this)
+        : options.fn(this);
     },
   );
 }

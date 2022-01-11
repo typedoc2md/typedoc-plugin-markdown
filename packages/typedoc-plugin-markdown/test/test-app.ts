@@ -8,6 +8,7 @@ import {
   DeclarationReflection,
   ProjectReflection,
   Renderer,
+  RendererEvent,
   TSConfigReader,
   TypeDocReader,
   UrlMapping,
@@ -109,23 +110,26 @@ export class TestApp {
           path.join(__dirname, './stubs/src/' + inputFile),
         )
       : ['./test/stubs/src'];
-    load(this.app);
     this.app.options.addReader(new TypeDocReader());
     this.app.options.addReader(new TSConfigReader());
   }
 
   async bootstrap(options: any = {}) {
+    load(this.app);
     this.app.bootstrap({
       logger: 'none',
+      plugin: 'typedoc-plugin-mdn-links',
       entryPoints: this.entryPoints,
       tsconfig: path.join(__dirname, 'stubs', 'tsconfig.json'),
       ...options,
     });
 
-    this.project = this.app.convert();
-    this.renderer = this.app.renderer;
     this.tmpobj = tmp.dirSync();
 
+    this.project = this.app.convert();
+    this.renderer = this.app.renderer;
+
+    this.app.renderer.render = render;
     await this.app.generateDocs(this.project, this.tmpobj.name);
     this.theme = this.app.renderer.theme as MarkdownTheme;
   }
@@ -142,5 +146,28 @@ export class TestApp {
 
   findReflection(name: string) {
     return this.project.findReflectionByName(name) as DeclarationReflection;
+  }
+}
+
+export async function render(
+  project: ProjectReflection,
+  outputDirectory: string,
+) {
+  if (!this.prepareTheme()) {
+    return;
+  }
+  const output = new RendererEvent(
+    RendererEvent.BEGIN,
+    outputDirectory,
+    project,
+  );
+  output.urls = this.theme!.getUrls(project);
+  this.trigger(output);
+  if (!output.isDefaultPrevented) {
+    output?.urls?.forEach((mapping: UrlMapping) => {
+      this.renderDocument(output.createPageEvent(mapping));
+    });
+
+    this.trigger(RendererEvent.END, output);
   }
 }

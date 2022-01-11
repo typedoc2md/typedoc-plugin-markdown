@@ -30,7 +30,9 @@ describe(`Options:`, () => {
 
     test(`should compile relativeURL helper`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
-      expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
+      expect(
+        testApp.theme.getRenderContext().relativeURL(url),
+      ).toMatchSnapshot();
     });
   });
 
@@ -66,7 +68,9 @@ describe(`Options:`, () => {
 
     test(`should compile relativeURL helper with public path`, () => {
       const url = testApp.findReflection('Breadcrumbs').url;
-      expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
+      expect(
+        testApp.theme.getRenderContext().relativeURL(url),
+      ).toMatchSnapshot();
     });
   });
 });

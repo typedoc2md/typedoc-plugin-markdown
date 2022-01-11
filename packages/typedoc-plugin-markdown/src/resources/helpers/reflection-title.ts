@@ -1,9 +1,9 @@
 import * as Handlebars from 'handlebars';
 import { PageEvent, ParameterReflection } from 'typedoc';
 import { escapeChars } from '../../utils';
-import { MarkdownTheme } from '../../theme';
+import { MarkdownThemeContext } from '../../theme-context';
 
-export default function (theme: MarkdownTheme) {
+export default function (context: MarkdownThemeContext) {
   Handlebars.registerHelper(
     'reflectionTitle',
     function (this: PageEvent<any>, shouldEscape = true) {
@@ -16,7 +16,7 @@ export default function (theme: MarkdownTheme) {
         title.push(`${this.model.kindString}: `);
       }
       if (this.url === this.project.url) {
-        title.push(theme.indexTitle || this.project.name);
+        title.push(context.options.indexTitle || this.project.name);
       } else {
         title.push(
           shouldEscape ? escapeChars(this.model.name) : this.model.name,

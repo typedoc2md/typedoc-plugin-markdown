@@ -1,12 +1,14 @@
 import * as Handlebars from 'handlebars';
 import { PageEvent } from 'typedoc';
-import { MarkdownTheme } from '../../theme';
+import { MarkdownThemeContext } from '../../theme-context';
 
-export default function (theme: MarkdownTheme) {
+export default function (context: MarkdownThemeContext) {
   Handlebars.registerHelper(
     'ifNamedAnchors',
     function (this: PageEvent, options: Handlebars.HelperOptions) {
-      return theme.namedAnchors ? options.fn(this) : options.inverse(this);
+      return context.options.namedAnchors
+        ? options.fn(this)
+        : options.inverse(this);
     },
   );
 }

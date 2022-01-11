@@ -1,19 +1,21 @@
 import * as Handlebars from 'handlebars';
-import { MarkdownTheme } from '../../theme';
 import * as path from 'path';
 import * as fs from 'fs';
 import { Reflection } from 'typedoc';
+import { MarkdownThemeContext } from '../../theme-context';
+import {
+  BRACKETS,
+  INCLUDE_PATTERN,
+  INLINE_TAG,
+  MEDIA_PATTERN,
+  URL_PREFIX,
+} from '../../constants';
 
-const URL_PREFIX = /^(http|ftp)s?:\/\//;
-const BRACKETS = /\[\[([^\]]+)\]\]/g;
-const INLINE_TAG =
-  /(?:\[(.+?)\])?\{@(link|linkcode|linkplain)\s+((?:.|\n)+?)\}/gi;
-const INCLUDE_PATTERN = /\[\[include:([^\]]+?)\]\]/g;
-const MEDIA_PATTERN = /media:\/\/([^ "\)\]\}]+)/g;
-
-export default function (theme: MarkdownTheme) {
+export default function (context: MarkdownThemeContext) {
   Handlebars.registerHelper('comment', function (this: string) {
-    const { project, reflection, includes, mediaDirectory } = theme;
+    const { includes, media } = context.options;
+    const project = context.project();
+    const reflection = context.reflection();
 
     function replaceBrackets(text: string) {
       return text.replace(
@@ -60,9 +62,7 @@ export default function (theme: MarkdownTheme) {
       }
 
       if (targetReflection && targetReflection.url) {
-        return `[${caption}](${Handlebars.helpers.relativeURL(
-          targetReflection.url,
-        )})`;
+        return `[${caption}](${context.urlTo(targetReflection)})`;
       } else {
         return original;
       }
@@ -90,7 +90,7 @@ export default function (theme: MarkdownTheme) {
     }
 
     let text = this;
-    const context = Object.assign(text, '');
+    const commentContext = Object.assign(text, '');
 
     if (includes) {
       text = text.replace(
@@ -104,7 +104,7 @@ export default function (theme: MarkdownTheme) {
             const contents = fs.readFileSync(includesPath, 'utf-8');
             if (includesPath.substr(-4).toLocaleLowerCase() === '.hbs') {
               const template = Handlebars.compile(contents);
-              return template(context);
+              return template(commentContext);
             } else {
               return contents;
             }
@@ -115,16 +115,15 @@ export default function (theme: MarkdownTheme) {
       );
     }
 
-    if (mediaDirectory) {
+    if (media) {
       text = text.replace(MEDIA_PATTERN, (match: string, mediaPath: string) => {
-        if (fs.existsSync(path.join(mediaDirectory!, mediaPath))) {
-          return Handlebars.helpers.relativeURL('media') + '/' + mediaPath;
+        if (fs.existsSync(path.join(media!, mediaPath))) {
+          return context.relativeURL('media') + '/' + mediaPath;
         } else {
           return match;
         }
       });
     }
-
     return replaceInlineTags(replaceBrackets(text));
   });
 }

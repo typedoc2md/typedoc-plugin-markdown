@@ -1,7 +1,8 @@
 import * as Handlebars from 'handlebars';
 import { ReferenceReflection } from 'typedoc';
+import { MarkdownThemeContext } from '../../theme-context';
 
-export default function () {
+export default function (context: MarkdownThemeContext) {
   Handlebars.registerHelper(
     'referenceMember',
     function (this: ReferenceReflection) {
@@ -12,14 +13,12 @@ export default function () {
       }
 
       if (this.name === referenced.name) {
-        return `Re-exports [${
-          referenced.name
-        }](${Handlebars.helpers.relativeURL(referenced.url)})`;
+        return `Re-exports [${referenced.name}](${context.urlTo(referenced)})`;
       }
 
-      return `Renames and re-exports [${
-        referenced.name
-      }](${Handlebars.helpers.relativeURL(referenced.url)})`;
+      return `Renames and re-exports [${referenced.name}](${context.urlTo(
+        referenced,
+      )})`;
     },
   );
 }

@@ -1,6 +1,7 @@
 import { Application, ParameterType } from 'typedoc';
 import { MarkdownThemeOptionsReader } from './options-reader';
 import { MarkdownTheme } from './theme';
+import { MarkdownThemeContext } from './theme-context';
 
 export function load(app: Application) {
   app.renderer.defineTheme('markdown', MarkdownTheme);
@@ -68,4 +69,4 @@ export function load(app: Application) {
   });
 }
 
-export { MarkdownTheme };
+export { MarkdownTheme, MarkdownThemeContext };

@@ -2,26 +2,26 @@ import * as fs from 'fs';
 
 import { Renderer, DeclarationReflection, RendererEvent } from 'typedoc';
 import { MarkdownTheme } from 'typedoc-plugin-markdown';
+import { GitlabWikiThemeContext } from './theme-context';
 
 export class GitlabWikiTheme extends MarkdownTheme {
+  private _contextCache?: GitlabWikiThemeContext;
+  override getRenderContext() {
+    if (!this._contextCache) {
+      this._contextCache = new GitlabWikiThemeContext(
+        this,
+        this.application.options,
+      );
+    }
+    return this._contextCache;
+  }
+
   constructor(renderer: Renderer) {
     super(renderer);
-
-    this.entryDocument = 'home.md';
-    this.hideBreadcrumbs = true;
-    this.hidePageTitle = true;
 
     this.listenTo(this.owner, {
       [RendererEvent.END]: this.onGitLabRendererEnd,
     });
-  }
-
-  getRelativeUrl(url: string) {
-    const relativeUrl = super
-      .getRelativeUrl(url)
-      .replace(/(.*).md/, '$1')
-      .replace(/ /g, '-');
-    return relativeUrl.startsWith('..') ? relativeUrl : './' + relativeUrl;
   }
 
   toUrl(mapping: any, reflection: DeclarationReflection) {

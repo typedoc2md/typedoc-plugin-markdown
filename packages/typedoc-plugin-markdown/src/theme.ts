@@ -1,5 +1,5 @@
-import * as path from 'path';
 import {
+  BindOption,
   ContainerReflection,
   DeclarationReflection,
   PageEvent,
@@ -11,75 +11,73 @@ import {
   Theme,
   UrlMapping,
 } from 'typedoc';
+import { URL_PREFIX } from './constants';
 import { getKindPlural } from './groups';
 
 import { NavigationItem } from './navigation-item';
 
-import {
-  indexTemplate,
-  reflectionMemberTemplate,
-  reflectionTemplate,
-  registerHelpers,
-  registerPartials,
-} from './render-utils';
+import { MarkdownThemeContext } from './theme-context';
 import { formatContents } from './utils';
 
 export class MarkdownTheme extends Theme {
+  @BindOption('allReflectionsHaveOwnDocument')
   allReflectionsHaveOwnDocument!: boolean;
-  entryDocument: string;
-  entryPoints!: string[];
-  filenameSeparator!: string;
-  hideBreadcrumbs!: boolean;
-  hideInPageTOC!: boolean;
-  hidePageTitle!: boolean;
-  includes!: string;
-  indexTitle!: string;
-  mediaDirectory!: string;
-  namedAnchors!: boolean;
-  readme!: string;
-  out!: string;
-  publicPath!: string;
 
+  @BindOption('entryDocument')
+  entryDocument: string;
+
+  @BindOption('entryPoints')
+  entryPoints!: string[];
+
+  @BindOption('filenameSeparator')
+  filenameSeparator!: string;
+
+  @BindOption('readme')
+  readme!: string;
+
+  location!: string;
   project?: ProjectReflection;
   reflection?: DeclarationReflection;
-  location!: string;
 
-  static URL_PREFIX = /^(http|ftp)s?:\/\//;
+  private _renderContext?: MarkdownThemeContext;
+
+  getRenderContext() {
+    if (!this._renderContext) {
+      this._renderContext = new MarkdownThemeContext(
+        this,
+        this.application.options,
+      );
+    }
+    return this._renderContext;
+  }
+
+  readmeTemplate = (pageEvent: PageEvent<ContainerReflection>) => {
+    return this.getRenderContext().readmeTemplate(pageEvent);
+  };
+
+  indexTemplate = (pageEvent: PageEvent<ContainerReflection>) => {
+    return this.getRenderContext().indexTemplate(pageEvent);
+  };
+
+  reflectionTemplate = (pageEvent: PageEvent<ContainerReflection>) => {
+    return this.getRenderContext().reflectionTemplate(pageEvent);
+  };
+
+  reflectionMemberTemplate = (pageEvent: PageEvent<ContainerReflection>) => {
+    return this.getRenderContext().reflectionMemberTemplate(pageEvent);
+  };
 
   constructor(renderer: Renderer) {
     super(renderer);
-
-    // prettier-ignore
-    this.allReflectionsHaveOwnDocument = this.getOption('allReflectionsHaveOwnDocument',) as boolean;
-    this.entryDocument = this.getOption('entryDocument') as string;
-    this.entryPoints = this.getOption('entryPoints') as string[];
-    this.filenameSeparator = this.getOption('filenameSeparator') as string;
-    this.hideBreadcrumbs = this.getOption('hideBreadcrumbs') as boolean;
-    this.hideInPageTOC = this.getOption('hideInPageTOC') as boolean;
-    this.hidePageTitle = this.getOption('hidePageTitle') as boolean;
-    this.includes = this.getOption('includes') as string;
-    this.indexTitle = this.getOption('indexTitle') as string;
-    this.mediaDirectory = this.getOption('media') as string;
-    this.namedAnchors = this.getOption('namedAnchors') as boolean;
-    this.readme = this.getOption('readme') as string;
-    this.out = this.getOption('out') as string;
-    this.publicPath = this.getOption('publicPath') as string;
 
     this.listenTo(this.owner, {
       [RendererEvent.BEGIN]: this.onBeginRenderer,
       [PageEvent.BEGIN]: this.onBeginPage,
     });
-
-    registerPartials();
-    registerHelpers(this);
   }
 
   render(page: PageEvent<Reflection>): string {
     return formatContents(page.template(page) as string);
-  }
-
-  getOption(key: string) {
-    return this.application.options.getValue(key);
   }
 
   getUrls(project: ProjectReflection) {
@@ -88,19 +86,13 @@ export class MarkdownTheme extends Theme {
     if (noReadmeFile) {
       project.url = this.entryDocument;
       urls.push(
-        new UrlMapping(
-          this.entryDocument,
-          project,
-          this.getReflectionTemplate(),
-        ),
+        new UrlMapping(this.entryDocument, project, this.indexTemplate),
       );
     } else {
       project.url = this.globalsFile;
+      urls.push(new UrlMapping(this.globalsFile, project, this.indexTemplate));
       urls.push(
-        new UrlMapping(this.globalsFile, project, this.getReflectionTemplate()),
-      );
-      urls.push(
-        new UrlMapping(this.entryDocument, project, this.getIndexTemplate()),
+        new UrlMapping(this.entryDocument, project, this.readmeTemplate),
       );
     }
     project.children?.forEach((child: Reflection) => {
@@ -119,7 +111,7 @@ export class MarkdownTheme extends Theme {
       reflection.kindOf(mapping.kind),
     );
     if (mapping) {
-      if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
+      if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
         const url = this.toUrl(mapping, reflection);
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
@@ -158,7 +150,7 @@ export class MarkdownTheme extends Theme {
   }
 
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
-    if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
+    if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
       const reflectionId = reflection.name.toLowerCase();
       const anchor = this.toAnchorRef(reflectionId);
       reflection.url = container.url + '#' + anchor;
@@ -174,48 +166,6 @@ export class MarkdownTheme extends Theme {
 
   toAnchorRef(reflectionId: string) {
     return reflectionId;
-  }
-
-  getRelativeUrl(absolute: string) {
-    if (MarkdownTheme.URL_PREFIX.test(absolute)) {
-      return absolute;
-    } else {
-      const relative = path.relative(
-        path.dirname(this.location),
-        path.dirname(absolute),
-      );
-      return path.join(relative, path.basename(absolute)).replace(/\\/g, '/');
-    }
-  }
-
-  getReflectionTemplate() {
-    return (pageEvent: PageEvent<ContainerReflection>) => {
-      return reflectionTemplate(pageEvent, {
-        allowProtoMethodsByDefault: true,
-        allowProtoPropertiesByDefault: true,
-        data: { theme: this },
-      });
-    };
-  }
-
-  getReflectionMemberTemplate() {
-    return (pageEvent: PageEvent<ContainerReflection>) => {
-      return reflectionMemberTemplate(pageEvent, {
-        allowProtoMethodsByDefault: true,
-        allowProtoPropertiesByDefault: true,
-        data: { theme: this },
-      });
-    };
-  }
-
-  getIndexTemplate() {
-    return (pageEvent: PageEvent<ContainerReflection>) => {
-      return indexTemplate(pageEvent, {
-        allowProtoMethodsByDefault: true,
-        allowProtoPropertiesByDefault: true,
-        data: { theme: this },
-      });
-    };
   }
 
   getNavigation(project: ProjectReflection) {
@@ -287,31 +237,31 @@ export class MarkdownTheme extends Theme {
         kind: [ReflectionKind.Module],
         isLeaf: false,
         directory: 'modules',
-        template: this.getReflectionTemplate(),
+        template: this.reflectionTemplate,
       },
       {
         kind: [ReflectionKind.Namespace],
         isLeaf: false,
         directory: 'modules',
-        template: this.getReflectionTemplate(),
+        template: this.reflectionTemplate,
       },
       {
         kind: [ReflectionKind.Enum],
         isLeaf: false,
         directory: 'enums',
-        template: this.getReflectionTemplate(),
+        template: this.reflectionTemplate,
       },
       {
         kind: [ReflectionKind.Class],
         isLeaf: false,
         directory: 'classes',
-        template: this.getReflectionTemplate(),
+        template: this.reflectionTemplate,
       },
       {
         kind: [ReflectionKind.Interface],
         isLeaf: false,
         directory: 'interfaces',
-        template: this.getReflectionTemplate(),
+        template: this.reflectionTemplate,
       },
       ...(this.allReflectionsHaveOwnDocument
         ? [
@@ -319,19 +269,19 @@ export class MarkdownTheme extends Theme {
               kind: [ReflectionKind.TypeAlias],
               isLeaf: true,
               directory: 'types',
-              template: this.getReflectionMemberTemplate(),
+              template: this.reflectionMemberTemplate,
             },
             {
               kind: [ReflectionKind.Variable],
               isLeaf: true,
               directory: 'variables',
-              template: this.getReflectionMemberTemplate(),
+              template: this.reflectionMemberTemplate,
             },
             {
               kind: [ReflectionKind.Function],
               isLeaf: true,
               directory: 'functions',
-              template: this.getReflectionMemberTemplate(),
+              template: this.reflectionMemberTemplate,
             },
           ]
         : []),

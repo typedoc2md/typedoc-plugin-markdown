@@ -4,7 +4,6 @@ import {
   ReflectionKind,
   SignatureReflection,
 } from 'typedoc';
-import { memberSymbol } from '../../utils';
 
 export default function () {
   Handlebars.registerHelper(
@@ -13,7 +12,7 @@ export default function () {
       const md: string[] = [];
 
       if (standalone) {
-        md.push(`${memberSymbol(this)} `);
+        md.push(`${Handlebars.helpers.memberSymbol(this)} `);
       }
 
       if (this.parent && this.parent.flags?.length > 0) {

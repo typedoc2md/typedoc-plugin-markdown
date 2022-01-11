@@ -1,10 +1,3 @@
-import {
-  DeclarationReflection,
-  ParameterReflection,
-  ReflectionKind,
-  SignatureReflection,
-} from 'typedoc';
-
 export function formatContents(contents: string) {
   return (
     contents
@@ -20,27 +13,6 @@ export function escapeChars(str: string) {
     .replace(/_/g, '\\_')
     .replace(/`/g, '\\`')
     .replace(/\|/g, '\\|');
-}
-
-export function memberSymbol(
-  reflection: DeclarationReflection | ParameterReflection | SignatureReflection,
-) {
-  const isStatic = reflection.flags && reflection.flags.isStatic;
-
-  if (reflection.kind === ReflectionKind.CallSignature) {
-    return '▸';
-  }
-  if (reflection.kind === ReflectionKind.TypeAlias) {
-    return 'Ƭ';
-  }
-  if (reflection.kind === ReflectionKind.ObjectLiteral) {
-    return '▪';
-  }
-  if (reflection.kind === ReflectionKind.Property && isStatic) {
-    return '▪';
-  }
-
-  return '•';
 }
 
 export function spaces(length: number) {

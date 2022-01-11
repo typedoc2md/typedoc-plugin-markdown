@@ -6,18 +6,13 @@ import {
   ReflectionKind,
   ReflectionType,
 } from 'typedoc';
-import {
-  escapeChars,
-  memberSymbol,
-  stripComments,
-  stripLineBreaks,
-} from '../../utils';
+import { escapeChars, stripComments, stripLineBreaks } from '../../utils';
 
 export default function () {
   Handlebars.registerHelper(
     'declarationTitle',
     function (this: ParameterReflection | DeclarationReflection) {
-      const md = [memberSymbol(this)];
+      const md = [Handlebars.helpers.memberSymbol(this)];
 
       function getType(
         reflection: ParameterReflection | DeclarationReflection,

@@ -1,14 +1,14 @@
 import * as Handlebars from 'handlebars';
-import { SignatureReflection } from 'typedoc';
-import { ArrayType, ReferenceType } from 'typedoc/dist/lib/models/types';
+import { ArrayType, ReferenceType, SignatureReflection } from 'typedoc';
+import { MarkdownThemeContext } from '../../theme-context';
 import { escapeChars } from '../../utils';
 
-export default function () {
+export default function (context: MarkdownThemeContext) {
   Handlebars.registerHelper(
     'typeAndParent',
     function (this: ArrayType | ReferenceType) {
       const getUrl = (name: string, url: string) =>
-        `[${name}](${Handlebars.helpers.relativeURL(url)})`;
+        `[${name}](${context.relativeURL(url)})`;
       if (this) {
         if ('elementType' in this) {
           return Handlebars.helpers.typeAndParent.call(this.elementType) + '[]';

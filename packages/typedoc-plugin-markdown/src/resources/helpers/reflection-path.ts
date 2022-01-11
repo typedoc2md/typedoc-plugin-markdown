@@ -1,8 +1,9 @@
 import * as Handlebars from 'handlebars';
 import { ContainerReflection, ReflectionKind } from 'typedoc';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+import { MarkdownThemeContext } from '../../theme-context';
 
-export default function () {
+export default function (context: MarkdownThemeContext) {
   Handlebars.registerHelper(
     'reflectionPath',
 
@@ -13,16 +14,14 @@ export default function () {
           if (this.model.parent && this.model.parent.parent) {
             if (this.model.parent.parent.parent) {
               title.push(
-                `[${
-                  this.model.parent.parent.name
-                }](${Handlebars.helpers.relativeURL(
-                  this.model?.parent?.parent.url,
+                `[${this.model.parent.parent.name}](${context.urlTo(
+                  this.model?.parent?.parent,
                 )})`,
               );
             }
             title.push(
-              `[${this.model.parent.name}](${Handlebars.helpers.relativeURL(
-                this.model.parent.url,
+              `[${this.model.parent.name}](${context.urlTo(
+                this.model.parent,
               )})`,
             );
           }

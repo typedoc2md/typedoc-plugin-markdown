@@ -1,7 +1,6 @@
 import * as Handlebars from 'handlebars';
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 import { stripLineBreaks } from '../../utils';
-import { getReflectionType } from './type';
 
 export default function () {
   Handlebars.registerHelper(
@@ -68,7 +67,7 @@ function table(parameters: any) {
     row.push(
       parameter.type
         ? Handlebars.helpers.type.call(parameter.type, 'object')
-        : getReflectionType(parameter, 'object'),
+        : Handlebars.helpers.type.call(parameter.signatures),
     );
 
     if (showDefaults) {

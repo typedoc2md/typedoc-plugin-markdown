@@ -6,7 +6,10 @@ let testApp: TestApp;
 
 beforeAll(async () => {
   testApp = new TestApp(['theme.ts']);
-  await testApp.bootstrap({ theme: 'gitlab-wiki' });
+  await testApp.bootstrap({
+    theme: 'gitlab-wiki',
+    plugin: ['typedoc-gitlab-wiki-theme'],
+  });
 });
 describe(`Theme:`, () => {
   test(`should write sidebar'`, async () => {

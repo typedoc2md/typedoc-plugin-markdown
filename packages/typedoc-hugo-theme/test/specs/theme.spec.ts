@@ -9,6 +9,7 @@ describe(`Theme:`, () => {
     testApp = new TestApp(['theme.ts']);
     await testApp.bootstrap({
       theme: 'hugo',
+      plugin: ['typedoc-hugo-theme'],
       entryDocument: '_index.md',
       indexTitle: 'Test API',
     });

@@ -1,21 +1,26 @@
 import * as fs from 'fs';
 import { RendererEvent, Renderer, DeclarationReflection } from 'typedoc';
 import { MarkdownTheme } from 'typedoc-plugin-markdown';
+import { GithubWikiThemeContext } from './theme-context';
 
 export class GithubWikiTheme extends MarkdownTheme {
+  private _contextCache?: GithubWikiThemeContext;
+  override getRenderContext() {
+    if (!this._contextCache) {
+      this._contextCache = new GithubWikiThemeContext(
+        this,
+        this.application.options,
+      );
+    }
+    return this._contextCache;
+  }
+
   constructor(renderer: Renderer) {
     super(renderer);
-
-    this.entryDocument = 'Home.md';
-    this.hideBreadcrumbs = true;
 
     this.listenTo(this.owner, {
       [RendererEvent.BEGIN]: this.writeSidebar,
     });
-  }
-
-  getRelativeUrl(url: string) {
-    return encodeURI('../wiki/' + url.replace('.md', ''));
   }
 
   toUrl(mapping: any, reflection: DeclarationReflection) {

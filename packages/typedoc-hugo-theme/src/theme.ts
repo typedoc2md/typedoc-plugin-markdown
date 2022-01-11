@@ -6,6 +6,7 @@ import {
   RendererEvent,
   Renderer,
   ContainerReflection,
+  BindOption,
 } from 'typedoc';
 import { MarkdownTheme } from 'typedoc-plugin-markdown';
 import { getKindPlural } from 'typedoc-plugin-markdown/dist/groups';
@@ -15,12 +16,11 @@ import {
 } from 'typedoc-plugin-markdown/dist/utils/front-matter';
 
 export class HugoTheme extends MarkdownTheme {
+  @BindOption('indexTitle')
+  indexTitle!: string;
+
   constructor(renderer: Renderer) {
     super(renderer);
-
-    this.entryDocument = '_index.md';
-    this.hideBreadcrumbs = true;
-    this.hidePageTitle = true;
 
     this.listenTo(this.owner, {
       [PageEvent.END]: this.onHugoPageEnd,

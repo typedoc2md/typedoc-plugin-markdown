@@ -17,6 +17,7 @@ import {
   getPageTitle,
   prependYAML,
 } from 'typedoc-plugin-markdown/dist/utils/front-matter';
+import { DocusaurusThemeContext } from './theme-context';
 
 const CATEGORY_POSITION = {
   [ReflectionKind.Module]: 1,
@@ -40,6 +41,20 @@ export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('indexSlug')
   indexSlug!: string;
 
+  @BindOption('out')
+  out!: string;
+
+  private _contextCache?: DocusaurusThemeContext;
+  override getRenderContext() {
+    if (!this._contextCache) {
+      this._contextCache = new DocusaurusThemeContext(
+        this,
+        this.application.options,
+      );
+    }
+    return this._contextCache;
+  }
+
   constructor(renderer: Renderer) {
     super(renderer);
 
@@ -47,14 +62,6 @@ export class DocusaurusTheme extends MarkdownTheme {
       [PageEvent.END]: this.onPageEnd,
       [RendererEvent.END]: this.onRendererEnd,
     });
-  }
-
-  getRelativeUrl(url: string) {
-    const relativeUrl = super.getRelativeUrl(url).replace(/.md/g, '');
-    if (path.basename(relativeUrl).startsWith('index')) {
-      return relativeUrl.replace('index', '');
-    }
-    return relativeUrl;
   }
 
   onPageEnd(page: PageEvent<DeclarationReflection>) {

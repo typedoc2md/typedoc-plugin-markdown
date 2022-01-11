@@ -9,7 +9,7 @@ describe(`Index:`, () => {
   beforeAll(async () => {
     testApp = new TestApp(['reflections.ts']);
     await testApp.bootstrap();
-    indexTemplate = TestApp.getTemplate('index');
+    indexTemplate = TestApp.getTemplate('readme');
     TestApp.stubHelpers(['breadcrumbs']);
   });
 
