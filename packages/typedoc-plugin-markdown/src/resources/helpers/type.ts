@@ -192,9 +192,7 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
 }
 
 function getReferenceType(model: ReferenceType, emphasis) {
-  const externalUrl = Handlebars.helpers.attemptExternalResolution(
-    model.getSymbol(),
-  );
+  const externalUrl = Handlebars.helpers.attemptExternalResolution(model);
   if (model.reflection || (model.name && model.typeArguments)) {
     const reflection: string[] = [];
 

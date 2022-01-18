@@ -1,13 +1,12 @@
 import * as Handlebars from 'handlebars';
-import type * as ts from 'typescript';
-
+import { ReferenceType } from 'typedoc';
 import { MarkdownTheme } from '../../theme';
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
     'attemptExternalResolution',
-    function (symbol: ts.Symbol | undefined) {
-      return theme.owner.attemptExternalResolution(symbol);
+    function (type: ReferenceType) {
+      return theme.owner.attemptExternalResolution(type);
     },
   );
 }
