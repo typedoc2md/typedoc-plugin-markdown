@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.8](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.7...docusaurus-plugin-typedoc@0.16.8) (2022-02-02)
+
+
+### Bug Fixes
+
+* remove removing of md suffix ([e451a3d](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/e451a3d01874a65c1520f7091ee2945c02257f79))
+
+
+
+
+
 ## [0.16.7](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.6...docusaurus-plugin-typedoc@0.16.7) (2022-01-09)
 
 
