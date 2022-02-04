@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.10.2...vuepress-plugin-typedoc@0.10.3) (2022-02-04)
+
+
+### Bug Fixes
+
+* move bootstrap logic out of ready() lifecycle ([#290](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/290)) ([53eff76](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/53eff762e76b87f6577911adf1d61c4ee19f5cad))
+
+
+
+
+
 ## [0.10.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.10.1...vuepress-plugin-typedoc@0.10.2) (2022-01-09)
 
 
