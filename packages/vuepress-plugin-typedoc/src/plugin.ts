@@ -14,40 +14,40 @@ let project: ProjectReflection | undefined;
 export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
   const options = getOptions(opts);
 
+  const outputDirectory = (ctx.sourceDir || ctx.dir.source()) + '/' + options.out;
+
+  removeDir(outputDirectory);
+
+  app = new Application();
+
+  load(app);
+
+  addOptions(app);
+
+  app.renderer.render = render;
+
+  app.bootstrap(options);
+
+  project = app.convert();
+
+  // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
+  if (!project) {
+    return;
+  }
+
+  if (options.watch) {
+    app.convertAndWatch(async (project) => {
+      app.generateDocs(project, outputDirectory);
+    });
+  } else {
+    app.generateDocs(project, outputDirectory);
+  }
+
   return {
     name: 'vuepress-plugin-typedoc',
-    async ready() {
-      const outputDirectory =
-        (ctx.sourceDir || ctx.dir.source()) + '/' + options.out;
 
-      removeDir(outputDirectory);
-
-      app = new Application();
-
-      load(app);
-
-      addOptions(app);
-
-      app.renderer.render = render;
-
-      app.bootstrap(options);
-
-      project = app.convert();
-      // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
-      if (!project) {
-        return;
-      }
-
-      if (options.watch) {
-        app.convertAndWatch(async (project) => {
-          await app.generateDocs(project, outputDirectory);
-        });
-      } else {
-        await app.generateDocs(project, outputDirectory);
-      }
-    },
     async enhanceAppFiles() {
-      if (!app || !options.sidebar) {
+      if (!options.sidebar) {
         return;
       }
       const theme = app.renderer.theme as any;
