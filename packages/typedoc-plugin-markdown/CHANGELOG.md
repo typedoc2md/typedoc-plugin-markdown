@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.13](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.12...typedoc-plugin-markdown@3.11.13) (2022-02-05)
+
+
+### Bug Fixes
+
+* escape pipes in comments and expand object type in props table ([#286](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/286)) ([b87c250](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/b87c2505a57035d190b8694268e658f1cd1bb426))
+
+
+
+
+
 ## [3.11.12](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.11...typedoc-plugin-markdown@3.11.12) (2022-01-18)
 
 
