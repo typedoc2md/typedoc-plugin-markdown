@@ -56,7 +56,7 @@ export default function () {
         row.push(nameCol.join(' '));
         row.push(
           Handlebars.helpers.type
-            .call(propertyType, 'object')
+            .call(propertyType)
             .replace(/(?<!\\)\|/g, '\\|'),
         );
 
@@ -64,7 +64,9 @@ export default function () {
           const comments = getComments(property);
           if (comments) {
             row.push(
-              stripLineBreaks(Handlebars.helpers.comments.call(comments)),
+              stripLineBreaks(
+                Handlebars.helpers.comments.call(comments),
+              ).replace(/\|/g, '\\|'),
             );
           } else {
             row.push('-');
