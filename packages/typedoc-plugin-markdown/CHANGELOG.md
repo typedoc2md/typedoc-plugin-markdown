@@ -8,7 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* escape pipes in comments and expand object type in props table ([#286](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/286)) ([b87c250](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/b87c2505a57035d190b8694268e658f1cd1bb426))
+* Escape pipes in comments and expand object type in props table ([#286](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/286)) ([b87c250](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/b87c2505a57035d190b8694268e658f1cd1bb426))
 
 
 
@@ -53,8 +53,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* expose missing namedAnchors option (regression) ([#277](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/277)) ([5353334](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/53533342d0b34230ae344dbe4bf8563e4899da5b))
-* watch mode compatibility ([#279](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/279)) ([da65f74](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/da65f741c38ca6a5c2fefc58c4d4fd0cbc9a6d25))
+* Expose missing namedAnchors option (regression) ([#277](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/277)) ([5353334](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/53533342d0b34230ae344dbe4bf8563e4899da5b))
+* Watch mode compatibility ([#279](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/279)) ([da65f74](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/da65f741c38ca6a5c2fefc58c4d4fd0cbc9a6d25))
 
 
 
@@ -64,7 +64,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* fixed linked resolution ([#274](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/274))
+* Fixed linked resolution ([#274](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/274))
 
 
 
@@ -75,7 +75,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* expand generic object ([#268](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/268)) ([5029a85](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/5029a8519ad840675eb3772d6c6c154228e5f4b0))
+* Expand generic object ([#268](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/268)) ([5029a85](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/5029a8519ad840675eb3772d6c6c154228e5f4b0))
 
 
 
@@ -86,8 +86,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* catch all external references ([003cb96](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/003cb96952bbf1c7b1a651fe96903f57aca3c020))
-* fix type params with default values in params table ([7d73eff](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/7d73eff18cb919a9c1069977ebece3844528dfed))
+* Catch all external references ([003cb96](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/003cb96952bbf1c7b1a651fe96903f57aca3c020))
+* Fix type params with default values in params table ([7d73eff](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/7d73eff18cb919a9c1069977ebece3844528dfed))
 
 
 
@@ -131,7 +131,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* remove leading underscore from file names ([#248](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/248)) ([bb5e4e3](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/bb5e4e32437c367e03db6b6d4b83487b15698c6b))
+* Remove leading underscore from file names ([#248](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/248)) ([bb5e4e3](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/bb5e4e32437c367e03db6b6d4b83487b15698c6b))
 
 
 
@@ -142,8 +142,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* fix `allReflectionsHaveOwnDocument` option ([64376e9](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/64376e9bd3beb2e941d0640408ace04786db4c7e))
-* properly escape chars inside anchors ([d4e5b1d](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/d4e5b1db4dcbc21601cc3a7b6122810f9cbb9152))
+* Fix `allReflectionsHaveOwnDocument` option ([64376e9](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/64376e9bd3beb2e941d0640408ace04786db4c7e))
+* Properly escape chars inside anchors ([d4e5b1d](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/d4e5b1db4dcbc21601cc3a7b6122810f9cbb9152))
 
 
 
