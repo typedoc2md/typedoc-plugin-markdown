@@ -50,7 +50,7 @@ export class DocusaurusTheme extends MarkdownTheme {
   }
 
   getRelativeUrl(url: string) {
-    const relativeUrl = super.getRelativeUrl(url);
+    const relativeUrl = super.getRelativeUrl(url).replace(/.md/g, '');
     if (path.basename(relativeUrl).startsWith('index')) {
       return relativeUrl.replace('index', '');
     }
