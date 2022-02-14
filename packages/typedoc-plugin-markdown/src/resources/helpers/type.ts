@@ -139,8 +139,8 @@ function getDeclarationType(model: DeclarationReflection) {
     if (declarationIndexSignature) {
       const key = declarationIndexSignature.parameters
         ? declarationIndexSignature.parameters.map(
-            (param) => `[${param.name}: ${param.type}]`,
-          )
+          (param) => `\`[${param.name}: ${param.type}]\``,
+        )
         : '';
       const obj = Handlebars.helpers.type.call(declarationIndexSignature.type);
       indexSignature = `${key}: ${obj}; `;
@@ -148,23 +148,19 @@ function getDeclarationType(model: DeclarationReflection) {
     const types =
       model.children &&
       model.children.map((obj) => {
-        return `\`${obj.name}${
-          obj.flags.isOptional ? '?' : ''
-        }\`: ${Handlebars.helpers.type.call(
-          obj.signatures || obj.children ? obj : obj.type,
-        )} ${
-          obj.defaultValue && obj.defaultValue !== '...'
+        return `\`${obj.name}${obj.flags.isOptional ? '?' : ''
+          }\`: ${Handlebars.helpers.type.call(
+            obj.signatures || obj.children ? obj : obj.type,
+          )} ${obj.defaultValue && obj.defaultValue !== '...'
             ? `= ${escapeChars(obj.defaultValue)}`
             : ''
-        }`;
+          }`;
       });
-    return `{ ${indexSignature ? indexSignature : ''}${
-      types ? types.join('; ') : ''
-    } }${
-      model.defaultValue && model.defaultValue !== '...'
+    return `{ ${indexSignature ? indexSignature : ''}${types ? types.join('; ') : ''
+      } }${model.defaultValue && model.defaultValue !== '...'
         ? `= ${escapeChars(model.defaultValue)}`
         : ''
-    }`;
+      }`;
   }
   return '{}';
 }
@@ -173,17 +169,16 @@ export function getFunctionType(modelSignatures: SignatureReflection[]) {
   const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
       ? `<${fn.typeParameters
-          .map((typeParameter) => typeParameter.name)
-          .join(', ')}\\>`
+        .map((typeParameter) => typeParameter.name)
+        .join(', ')}\\>`
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          return `${param.flags.isRest ? '...' : ''}\`${param.name}${
-            param.flags.isOptional ? '?' : ''
+        return `${param.flags.isRest ? '...' : ''}\`${param.name}${param.flags.isOptional ? '?' : ''
           }\`: ${Handlebars.helpers.type.call(
             param.type ? param.type : param,
           )}`;
-        })
+      })
       : [];
     const returns = Handlebars.helpers.type.call(fn.type);
     return typeParams + `(${params.join(', ')}) => ${returns}`;
