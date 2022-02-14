@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.14](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.13...typedoc-plugin-markdown@3.11.14) (2022-02-14)
+
+
+### Bug Fixes
+
+* wrap index signature output within back ticks ([#292](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/292)) ([2226322](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/22263229bf2fc9bab4fe61f03cd915f63f8e1aa4))
+
+
+
+
+
 ## [3.11.13](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.12...typedoc-plugin-markdown@3.11.13) (2022-02-05)
 
 
