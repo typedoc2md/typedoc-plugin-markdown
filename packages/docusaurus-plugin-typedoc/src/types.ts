@@ -14,6 +14,7 @@ export interface PluginOptions {
   hideBreadcrumbs: boolean;
   hidePageTitle: boolean;
   entryDocument: string;
+  includeExtension?: boolean;
   indexSlug?: string;
   theme?: string;
 }

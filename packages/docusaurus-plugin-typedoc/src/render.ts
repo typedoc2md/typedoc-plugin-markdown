@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import {
   Application,
+  BooleanDeclarationOption,
   MixedDeclarationOption,
   ParameterType,
   ProjectReflection,
@@ -71,6 +72,10 @@ const addTypedocDeclarations = (app: Application) => {
   app.options.addDeclaration({
     name: 'indexSlug',
   } as StringDeclarationOption);
+
+  app.options.addDeclaration({
+    name: 'includeExtension',
+  } as BooleanDeclarationOption);
 
   app.options.addDeclaration({
     name: 'sidebar',

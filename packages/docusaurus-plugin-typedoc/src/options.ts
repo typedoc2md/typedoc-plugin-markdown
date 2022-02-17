@@ -17,6 +17,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   entryDocument: 'index.md',
   plugin: ['none'],
   watch: false,
+  includeExtension: false,
   indexSlug: undefined,
   theme: 'docusaurus',
 };
