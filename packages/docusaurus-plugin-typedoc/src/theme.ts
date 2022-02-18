@@ -41,7 +41,7 @@ export class DocusaurusTheme extends MarkdownTheme {
   indexSlug!: string;
 
   @BindOption('includeExtension')
-  includeExtension!: boolean;
+  includeExtension!: string;
 
   constructor(renderer: Renderer) {
     super(renderer);
@@ -53,7 +53,7 @@ export class DocusaurusTheme extends MarkdownTheme {
   }
 
   getRelativeUrl(url: string) {
-    const re = new RegExp(this.includeExtension ? '' : '.md', 'g');
+    const re = new RegExp(this.includeExtension === 'true' ? '' : '.md', 'g');
     const relativeUrl = super.getRelativeUrl(url).replace(re, '');
     if (path.basename(relativeUrl).startsWith('index')) {
       // always remove the extension for the index or else it creates weird paths like `../.md`
