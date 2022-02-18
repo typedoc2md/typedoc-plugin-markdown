@@ -30,7 +30,7 @@
     "test:init": "rm -rf test/site && npx @docusaurus/init@latest init test/site classic",
     "test:demo:start": "yarn run build && cd test/site && yarn run start",
     "test:demo:build": "yarn run build && cd test/site && yarn run build && yarn run serve",
-    "test": "jest --colors"
+    "test": "jest --colors --updateSnapshot"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -41,5 +41,6 @@
     "markdown",
     "typescript",
     "api"
-  ]
+  ],
+  "gitHead": "98104cfc1aae7142de5beeedf43ea57c9e7f119a"
 }
