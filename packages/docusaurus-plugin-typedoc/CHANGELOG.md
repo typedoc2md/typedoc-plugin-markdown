@@ -9,6 +9,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * Added ability to pass in additional global Frontmatter options ([55cc7e0](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/55cc7e0f1c373e11438e090f537d12340d501c58))
+* Added new includeExtension option ([#293](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/293))
+
 
 
 
