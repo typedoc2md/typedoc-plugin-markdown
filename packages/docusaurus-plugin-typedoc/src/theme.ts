@@ -40,6 +40,9 @@ export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('indexSlug')
   indexSlug!: string;
 
+  @BindOption('includeExtension')
+  includeExtension!: boolean;
+
   constructor(renderer: Renderer) {
     super(renderer);
 
@@ -50,9 +53,11 @@ export class DocusaurusTheme extends MarkdownTheme {
   }
 
   getRelativeUrl(url: string) {
-    const relativeUrl = super.getRelativeUrl(url).replace(/.md/g, '');
+    const re = new RegExp(this.includeExtension ? '' : '.md', 'g');
+    const relativeUrl = super.getRelativeUrl(url).replace(re, '');
     if (path.basename(relativeUrl).startsWith('index')) {
-      return relativeUrl.replace('index', '');
+      // always remove the extension for the index or else it creates weird paths like `../.md`
+      return relativeUrl.replace('index', '').replace('.md', '');
     }
     return relativeUrl;
   }
