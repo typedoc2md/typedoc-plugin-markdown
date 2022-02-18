@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.9...docusaurus-plugin-typedoc@0.17.0) (2022-02-18)
+
+
+### Features
+
+* Added ability to pass in additional global Frontmatter options ([55cc7e0](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/55cc7e0f1c373e11438e090f537d12340d501c58))
+
+
+
+
+
 ## [0.16.9](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.16.8...docusaurus-plugin-typedoc@0.16.9) (2022-02-05)
 
 
