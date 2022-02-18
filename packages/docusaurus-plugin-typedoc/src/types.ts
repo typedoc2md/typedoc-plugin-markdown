@@ -17,17 +17,12 @@ export interface PluginOptions {
   includeExtension?: boolean;
   indexSlug?: string;
   theme?: string;
+  frontmatter: FrontMatter;
 }
 
-export interface FrontMatter {
-  id: string;
-  title: string;
-  slug?: string;
-  sidebar_label?: string;
-  sidebar_position?: number;
-  hide_title?: boolean;
-  hide_table_of_contents?: boolean;
-}
+export type FrontMatter =
+  | Record<string, string | boolean | number | null>
+  | undefined;
 
 export interface SidebarOptions {
   fullNames?: boolean;

@@ -99,6 +99,7 @@ Options specific to the plugin should also be declared in the same object.
 | :---------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `out`                   | `"api"` | Output dir relative to docs dir (use `.` for no subdir).                                                                                                                                                     |
 | `includeExtension`      | `true`  | Determines whether to preserve the `.md` extension in relative links. `true` is recommended as per [Docusaurus documentation](https://docusaurus.io/docs/docs-markdown-features#referencing-other-documents) |
+| `frontmatter`           | `null`  | Additional frontmatter options object. See [Frontmatter](#frontmatter).                                                                                                                                      |
 | `sidebar.categoryLabel` | `API`   | The sidebar parent category label.                                                                                                                                                                           |
 | `sidebar.fullNames`     | `false` | Display full names with module path.                                                                                                                                                                         |
 | `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                                                                                                                                                                     |
@@ -191,6 +192,27 @@ A navbar item can be configured in `themeConfig` options in `docusaurus.config.j
 ```
 
 Please see https://docusaurus.io/docs/api/themes/configuration#navbar-items for navbar documentation.
+
+### Frontmatter
+
+By default the plugin will configure minimal required [Frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) configuration.
+Additionally required global Frontmatter options can be passed in using the `frontmatter` options object
+
+`docusaurus.config.js`:
+
+```js
+plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+      // .... other plugin option
+      frontmatter: {
+        pagination_prev: null,
+        pagination_next: null
+      }
+    ]
+]
+```
 
 ### Multi instance
 

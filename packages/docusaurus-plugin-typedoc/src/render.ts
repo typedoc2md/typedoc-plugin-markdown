@@ -81,6 +81,11 @@ const addTypedocDeclarations = (app: Application) => {
     name: 'sidebar',
     type: ParameterType.Mixed,
   } as MixedDeclarationOption);
+
+  app.options.addDeclaration({
+    name: 'frontmatter',
+    type: ParameterType.Mixed,
+  } as MixedDeclarationOption);
 };
 
 export function removeDir(path: string) {

@@ -14,6 +14,7 @@ import * as path from 'path';
 
 import { FrontMatter, SidebarOptions } from './types';
 import {
+  FrontMatterVars,
   getPageTitle,
   prependYAML,
 } from 'typedoc-plugin-markdown/dist/utils/front-matter';
@@ -43,6 +44,9 @@ export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('includeExtension')
   includeExtension!: string;
 
+  @BindOption('frontmatter')
+  frontmatter!: FrontMatter;
+
   constructor(renderer: Renderer) {
     super(renderer);
 
@@ -64,7 +68,10 @@ export class DocusaurusTheme extends MarkdownTheme {
 
   onPageEnd(page: PageEvent<DeclarationReflection>) {
     if (page.contents) {
-      page.contents = prependYAML(page.contents, this.getYamlItems(page));
+      page.contents = prependYAML(
+        page.contents,
+        this.getYamlItems(page) as FrontMatterVars,
+      );
     }
   }
 
@@ -92,7 +99,7 @@ export class DocusaurusTheme extends MarkdownTheme {
     );
   }
 
-  getYamlItems(page: PageEvent<DeclarationReflection>): any {
+  getYamlItems(page: PageEvent<DeclarationReflection>): FrontMatter {
     const pageId = this.getId(page);
     const pageTitle = this.getTitle(page);
     const sidebarLabel = this.getSidebarLabel(page);
@@ -113,9 +120,12 @@ export class DocusaurusTheme extends MarkdownTheme {
     if (page.url === page.project.url && this.entryPoints.length > 1) {
       items = { ...items, hide_table_of_contents: true };
     }
+    items = { ...items, custom_edit_url: null };
+    if (this.frontmatter) {
+      items = { ...items, ...this.frontmatter };
+    }
     return {
       ...items,
-      custom_edit_url: null,
     };
   }
 

@@ -20,6 +20,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   includeExtension: true,
   indexSlug: undefined,
   theme: 'docusaurus',
+  frontmatter: undefined,
 };
 
 export const getPluginOptions = (
