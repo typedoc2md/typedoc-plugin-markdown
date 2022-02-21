@@ -103,7 +103,6 @@ Options specific to the plugin should also be declared in the same object.
 | `sidebar.categoryLabel` | `API`   | The sidebar parent category label.                                                                                                                                                                           |
 | `sidebar.fullNames`     | `false` | Display full names with module path.                                                                                                                                                                         |
 | `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                                                                                                                                                                     |
-| `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                                                                                                                                                                     |
 
 ### An example configuration
 
@@ -229,6 +228,7 @@ module.exports = {
         id: 'api-1',
         entryPoints: ['../api-1/src/index.ts'],
         tsconfig: '../api-1/tsconfig.json',
+        out: 'api-1',
       },
     ],
     [
@@ -237,6 +237,7 @@ module.exports = {
         id: 'api-2',
         entryPoints: ['../api-2/src/index.ts'],
         tsconfig: '../api-2/tsconfig.json',
+        out: 'api-2',
       },
     ],
   ],
