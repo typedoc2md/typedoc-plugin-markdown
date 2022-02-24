@@ -18,6 +18,7 @@ Array [
 
 exports[`Options: should return default options 1`] = `
 Object {
+  "cleanOutputDir": true,
   "docsRoot": "docs",
   "entryDocument": "index.md",
   "entryPoints": Array [

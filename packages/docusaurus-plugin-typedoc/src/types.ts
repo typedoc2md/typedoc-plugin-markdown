@@ -8,6 +8,7 @@ export interface PluginOptions {
   plugin: string[];
   readme?: string;
   disableOutputCheck?: boolean;
+  cleanOutputDir?: boolean;
   entryPoints?: string[];
   watch: boolean;
   hideInPageTOC: boolean;
