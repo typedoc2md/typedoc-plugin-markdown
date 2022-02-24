@@ -4,6 +4,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   id: 'default',
   docsRoot: 'docs',
   out: 'api',
+  cleanOutputDir: true,
   sidebar: {
     fullNames: false,
     categoryLabel: 'API',

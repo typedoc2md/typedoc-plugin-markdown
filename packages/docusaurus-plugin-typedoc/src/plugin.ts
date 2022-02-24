@@ -27,7 +27,9 @@ export default function pluginDocusaurus(
 
         const outputDir = path.resolve(siteDir, options.docsRoot, options.out);
 
-        removeDir(outputDir);
+        if (opts.cleanOutputDir) {
+          removeDir(outputDir);
+        }
 
         const app = new Application();
 
