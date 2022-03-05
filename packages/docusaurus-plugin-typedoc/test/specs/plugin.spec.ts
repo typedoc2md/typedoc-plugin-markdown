@@ -1,4 +1,4 @@
-import { LoadContext } from '@docusaurus/types';
+
 import * as fs from 'fs-extra';
 import * as tmp from 'tmp';
 
@@ -19,7 +19,7 @@ async function bootstrap(tmpobj: tmp.DirResult, customOptions = {}) {
       siteDir: tmpobj.name,
       generatedFilesDir: '',
       siteConfig: {},
-    } as LoadContext,
+    } as any,
     {
       ...options,
       ...customOptions,
