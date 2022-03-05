@@ -1,8 +1,5 @@
 # Dependencies
 /node_modules
-api
-api-2
-sidebars
 
 # Production
 /build
@@ -21,3 +18,11 @@ sidebars
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore
+/static
+/src
+/blog
+/docs
+README.md
+sidebars.js
