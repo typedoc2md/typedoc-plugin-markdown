@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-"• **stringConstWithDefaultValue**: \`\`\\"hello\\"\`\`
+"• \`Const\` **stringConstWithDefaultValue**: \`\`\\"hello\\"\`\`
 
 [partial: member.sources]
 "
@@ -77,7 +77,7 @@ exports[`Declarations: should compile callable declaration 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"• **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
+"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
 
 [partial: member.sources]
 "
@@ -115,7 +115,7 @@ exports[`Declarations: should compile indexable declaration 1`] = `
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-"• **objectLiteralAsConstDeclaration**: \`Object\`
+"• \`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
 
 Comments
 
@@ -138,7 +138,7 @@ Comments
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-"• **objectLiteralDeclaration**: \`Object\`
+"• \`Const\` **objectLiteralDeclaration**: \`Object\`
 
 **\`param\`** description for valueX
 
