@@ -5,8 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.17.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.1...docusaurus-plugin-typedoc@0.17.2) (2022-03-05)
 
-- Allow option `cleanOutputDir`
-- ([#296](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/296))
+- Allow option `cleanOutputDir` ([#296](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/296))
 
 ## [0.17.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.0...docusaurus-plugin-typedoc@0.17.2) (2022-03-05)
 
