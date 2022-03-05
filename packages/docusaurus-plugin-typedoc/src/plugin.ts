@@ -1,4 +1,3 @@
-import { LoadContext } from '@docusaurus/types';
 import * as path from 'path';
 import { Application } from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
@@ -12,7 +11,7 @@ import { PluginOptions } from './types';
 const apps: string[] = [];
 
 export default function pluginDocusaurus(
-  context: LoadContext,
+  context: any,
   opts: Partial<PluginOptions>,
 ) {
   return {
