@@ -27,6 +27,7 @@ Object {
   "frontmatter": undefined,
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
+  "hideMembersSymbol": false,
   "hidePageTitle": true,
   "id": "default",
   "includeExtension": true,

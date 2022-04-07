@@ -32,6 +32,7 @@ export class MarkdownTheme extends Theme {
   hideBreadcrumbs!: boolean;
   hideInPageTOC!: boolean;
   hidePageTitle!: boolean;
+  hideMembersSymbol!: boolean;
   includes!: string;
   indexTitle!: string;
   mediaDirectory!: string;
@@ -57,6 +58,7 @@ export class MarkdownTheme extends Theme {
     this.hideBreadcrumbs = this.getOption('hideBreadcrumbs') as boolean;
     this.hideInPageTOC = this.getOption('hideInPageTOC') as boolean;
     this.hidePageTitle = this.getOption('hidePageTitle') as boolean;
+    this.hideMembersSymbol = this.getOption('hideMembersSymbol') as boolean;
     this.includes = this.getOption('includes') as string;
     this.indexTitle = this.getOption('indexTitle') as string;
     this.mediaDirectory = this.getOption('media') as string;

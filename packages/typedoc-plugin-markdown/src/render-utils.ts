@@ -60,7 +60,7 @@ export function registerHelpers(theme: MarkdownTheme) {
   breadcrumbsHelper(theme);
   commentHelper(theme);
   commentsHelper();
-  declarationTitleHelper();
+  declarationTitleHelper(theme);
   escapeHelper();
   hierarchyHelper();
   ifIsReference();
@@ -77,7 +77,7 @@ export function registerHelpers(theme: MarkdownTheme) {
   reflectionPathHelper();
   reflectionTitleHelper(theme);
   relativeUrlHelper(theme);
-  signatureTitleHelper();
+  signatureTitleHelper(theme);
   tocHelper(theme);
   typeHelper();
   typeAndParentHelper();

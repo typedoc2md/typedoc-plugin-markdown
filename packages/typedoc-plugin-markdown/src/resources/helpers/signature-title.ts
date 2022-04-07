@@ -5,14 +5,15 @@ import {
   SignatureReflection,
 } from 'typedoc';
 import { memberSymbol } from '../../utils';
+import { MarkdownTheme } from '../../theme';
 
-export default function () {
+export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
     'signatureTitle',
     function (this: SignatureReflection, accessor?: string, standalone = true) {
       const md: string[] = [];
 
-      if (standalone) {
+      if (standalone && !theme.hideMembersSymbol) {
         md.push(`${memberSymbol(this)} `);
       }
 

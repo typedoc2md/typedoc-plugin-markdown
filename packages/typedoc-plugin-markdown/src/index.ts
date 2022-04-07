@@ -66,6 +66,13 @@ export function load(app: Application) {
     name: 'indexTitle',
     type: ParameterType.String,
   });
+
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Do not add special symbols for class members.',
+    name: 'hideMembersSymbol',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
 }
 
 export { MarkdownTheme };
