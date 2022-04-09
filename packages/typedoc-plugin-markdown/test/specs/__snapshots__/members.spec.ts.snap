@@ -83,3 +83,18 @@ exports[`Members: (members) should compile module members' 1`] = `
 "
 "
 `;
+
+exports[`Members: (with hideMembersSymbol) should compile members without special symbols 1`] = `
+"### signatureMember
+
+**signatureMember**(): \`void\`
+
+#### Returns
+
+\`void\`
+
+[partial: member.sources]
+
+___
+"
+`;

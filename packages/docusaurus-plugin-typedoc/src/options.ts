@@ -15,6 +15,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageTitle: true,
+  hideMembersSymbol: false,
   entryDocument: 'index.md',
   plugin: ['none'],
   watch: false,

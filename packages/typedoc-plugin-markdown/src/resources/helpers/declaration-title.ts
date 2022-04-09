@@ -12,12 +12,13 @@ import {
   stripComments,
   stripLineBreaks,
 } from '../../utils';
+import { MarkdownTheme } from '../../theme';
 
-export default function () {
+export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
     'declarationTitle',
     function (this: ParameterReflection | DeclarationReflection) {
-      const md = [memberSymbol(this)];
+      const md = theme.hideMembersSymbol ? [] : [memberSymbol(this)];
 
       function getType(
         reflection: ParameterReflection | DeclarationReflection,

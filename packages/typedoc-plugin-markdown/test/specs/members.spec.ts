@@ -74,4 +74,25 @@ describe(`Members:`, () => {
       ).toMatchSnapshot();
     });
   });
+
+  describe(`(with hideMembersSymbol)`, () => {
+    beforeAll(async () => {
+      testApp = new TestApp(['members.ts']);
+      await testApp.bootstrap({
+        hideMembersSymbol: true
+      });
+      TestApp.stubPartials(['member', 'member.sources']);
+
+      memberPartial = TestApp.getPartial('member');
+    });
+
+    test(`should compile members without special symbols`, () => {
+      expect(
+        TestApp.compileTemplate(
+          memberPartial,
+          testApp.findReflection('signatureMember'),
+        ),
+      ).toMatchSnapshot();
+    });
+  });
 });
