@@ -1,7 +1,5 @@
-
 import * as fs from 'fs-extra';
 import * as tmp from 'tmp';
-
 import typedocPlugin from '../../dist/plugin';
 
 tmp.setGracefulCleanup();
@@ -37,7 +35,7 @@ describe(`Plugin:`, () => {
     });
     test(`should render`, () => {
       const files = fs.readdirSync(tmpobj.name + '/docs/api');
-      expect(files).toMatchSnapshot();
+      expect(files.sort((a, b) => a.localeCompare(b))).toMatchSnapshot();
     });
 
     test(`should write doc`, () => {
