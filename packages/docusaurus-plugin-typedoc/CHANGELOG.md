@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.2...docusaurus-plugin-typedoc@0.17.3) (2022-04-09)
+
+**Note:** Version bump only for package docusaurus-plugin-typedoc
+
+
+
+
+
+
 ## [0.17.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.1...docusaurus-plugin-typedoc@0.17.2) (2022-03-05)
 
 - Allow option `cleanOutputDir` ([#296](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/296))
