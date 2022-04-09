@@ -38,6 +38,7 @@ export class MarkdownTheme extends Theme {
   readme!: string;
   out!: string;
   publicPath!: string;
+  preserveAnchorCasing!: boolean;
 
   project?: ProjectReflection;
   reflection?: DeclarationReflection;
@@ -65,6 +66,9 @@ export class MarkdownTheme extends Theme {
     this.readme = this.getOption('readme') as string;
     this.out = this.getOption('out') as string;
     this.publicPath = this.getOption('publicPath') as string;
+    this.preserveAnchorCasing = this.getOption(
+      'preserveAnchorCasing',
+    ) as boolean;
 
     this.listenTo(this.owner, {
       [RendererEvent.BEGIN]: this.onBeginRenderer,
@@ -164,7 +168,9 @@ export class MarkdownTheme extends Theme {
       container.url &&
       (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url))
     ) {
-      const reflectionId = reflection.name.toLowerCase();
+      const reflectionId = this.preserveAnchorCasing
+        ? reflection.name
+        : reflection.name.toLowerCase();
 
       this.anchorMap[container.url]
         ? this.anchorMap[container.url].push(reflectionId)

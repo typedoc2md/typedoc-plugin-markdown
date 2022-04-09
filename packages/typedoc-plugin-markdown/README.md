@@ -5,7 +5,6 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeS
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
-
 ## What it does?
 
 The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
@@ -38,13 +37,15 @@ The following options can be used in addition to relevant [TypeDoc options](http
 - `--hideBreadcrumbs<boolean>`<br>
   Do not render breadcrumbs in template header. Defaults to `false`.
 - `--hideInPageTOC<boolean>`<br>
-  Do not render in-page table of contents items.  Defaults to `false`.
+  Do not render in-page table of contents items. Defaults to `false`.
 - `--hideMembersSymbol<boolean>`<br>
-  Do not add special symbols for class members.  Defaults to `false`.
+  Do not add special symbols for class members. Defaults to `false`.
 - `--publicPath<string>`<br>
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `.`.
 - `--namedAnchors<boolean>`<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
+- `--preserveAnchorCasing<boolean>`<br>
+  Preserve anchor id casing for implementations where original case is desirable. Defaults to `false`.
 
 ## License
 
