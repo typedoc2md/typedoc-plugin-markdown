@@ -12,9 +12,7 @@ import {
   UrlMapping,
 } from 'typedoc';
 import { getKindPlural } from './groups';
-
 import { NavigationItem } from './navigation-item';
-
 import {
   indexTemplate,
   reflectionMemberTemplate,
@@ -44,6 +42,7 @@ export class MarkdownTheme extends Theme {
   project?: ProjectReflection;
   reflection?: DeclarationReflection;
   location!: string;
+  anchorMap: Record<string, string[]> = {};
 
   static URL_PREFIX = /^(http|ftp)s?:\/\//;
 
@@ -127,6 +126,7 @@ export class MarkdownTheme extends Theme {
         reflection.url = url;
         reflection.hasOwnDocument = true;
       }
+
       for (const child of reflection.children || []) {
         if (mapping.isLeaf) {
           this.applyAnchorUrl(child, reflection);
@@ -160,9 +160,24 @@ export class MarkdownTheme extends Theme {
   }
 
   applyAnchorUrl(reflection: Reflection, container: Reflection) {
-    if (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url)) {
+    if (
+      container.url &&
+      (!reflection.url || !MarkdownTheme.URL_PREFIX.test(reflection.url))
+    ) {
       const reflectionId = reflection.name.toLowerCase();
-      const anchor = this.toAnchorRef(reflectionId);
+
+      this.anchorMap[container.url]
+        ? this.anchorMap[container.url].push(reflectionId)
+        : (this.anchorMap[container.url] = [reflectionId]);
+
+      const count = this.anchorMap[container.url].filter(
+        (id) => id === reflectionId,
+      )?.length;
+
+      const anchor = this.toAnchorRef(
+        reflectionId + (count > 1 ? '-' + (count - 1).toString() : ''),
+      );
+
       reflection.url = container.url + '#' + anchor;
       reflection.anchor = anchor;
       reflection.hasOwnDocument = false;

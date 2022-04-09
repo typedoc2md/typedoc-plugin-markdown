@@ -10,4 +10,5 @@ export * as reflections from './reflections';
 export * as signatures from './signatures';
 export * as sources from './sources';
 export * as theme from './theme';
+export * as toc from './toc';
 export * as types from './types';

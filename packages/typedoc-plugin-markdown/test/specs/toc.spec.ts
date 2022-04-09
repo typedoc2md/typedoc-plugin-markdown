@@ -1,6 +1,5 @@
 import * as Handlebars from 'handlebars';
 import { Reflection } from 'typedoc';
-
 import { TestApp } from '../test-app';
 
 describe(`TOC:`, () => {
@@ -10,10 +9,10 @@ describe(`TOC:`, () => {
   describe(`(default)`, () => {
     let testApp: TestApp;
     beforeAll(async () => {
-      testApp = new TestApp(['breadcrumbs.ts']);
+      testApp = new TestApp(['toc.ts']);
       await testApp.bootstrap();
-      moduleReflection = testApp.project.children[0];
-      classReflection = testApp.project.findReflectionByName('Breadcrumbs');
+      moduleReflection = testApp.project;
+      classReflection = testApp.project.findReflectionByName('SomeClass');
     });
 
     test(`should display toc for module'`, () => {
@@ -31,10 +30,10 @@ describe(`TOC:`, () => {
   describe(`(hideInPageToc)`, () => {
     let testApp: TestApp;
     beforeAll(async () => {
-      testApp = new TestApp(['breadcrumbs.ts']);
+      testApp = new TestApp(['toc.ts']);
       await testApp.bootstrap({ hideInPageTOC: true });
       moduleReflection = testApp.project.children[0];
-      classReflection = testApp.project.findReflectionByName('Breadcrumbs');
+      classReflection = testApp.project.findReflectionByName('SomeClass');
     });
 
     test(`should not display toc for class'`, () => {

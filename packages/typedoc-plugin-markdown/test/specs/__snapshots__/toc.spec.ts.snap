@@ -5,23 +5,27 @@ exports[`TOC: (default) should display toc for class' 1`] = `
 
 ### Constructors
 
-- [constructor](Breadcrumbs.md#constructor)
+- [constructor](SomeClass.md#constructor)
 
 ### Methods
 
-- [someMethod](Breadcrumbs.md#somemethod)
+- [someMethod](SomeClass.md#somemethod)
 "
 `;
 
 exports[`TOC: (default) should display toc for module' 1`] = `
 "## Table of contents
 
-### Constructors
+### Classes
 
-- [constructor](Breadcrumbs.md#constructor)
+- [SomeClass](SomeClass.md)
 
-### Methods
+### Type aliases
 
-- [someMethod](Breadcrumbs.md#somemethod)
+- [answer](../modules.md#answer)
+
+### Variables
+
+- [answer](../modules.md#answer-1)
 "
 `;

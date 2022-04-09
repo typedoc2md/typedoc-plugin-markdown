@@ -148,16 +148,16 @@ exports[`Declarations: should compile object literal declaration 1`] = `
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| \`valueA\` | \`number\` |
-| \`valueB\` | \`boolean\` |
-| \`valueC\` | {} |
-| \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueZ\`: \`string\` = 'foo' } |
-| \`valueX.valueA\` | \`number\`[] |
-| \`valueX.valueZ\` | \`string\` |
-| \`valueY\` | () => \`string\` |
-| \`valueZ\` | \`string\` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`valueA\` | \`number\` | Comment for valueA |
+| \`valueB\` | \`boolean\` | - |
+| \`valueC\` | {} | - |
+| \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueZ\`: \`string\` = 'foo' } | Comment for valueX |
+| \`valueX.valueA\` | \`number\`[] | - |
+| \`valueX.valueZ\` | \`string\` | - |
+| \`valueY\` | () => \`string\` | Comment for value Y |
+| \`valueZ\` | \`string\` | Comment for valueZ |
 
 [partial: member.sources]
 "
