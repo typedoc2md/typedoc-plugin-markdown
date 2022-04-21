@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.12.0...typedoc-plugin-markdown@3.12.1) (2022-04-21)
+
+
+### Bug Fixes
+
+* Handle non-unique anchor ids (update) ([#303](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/303)) ([2deb7b7](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/2deb7b734e6ec837aa403f4a70e01e56ccc47cc9))
+
+
+
+
+
 # [3.12.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.11.14...typedoc-plugin-markdown@3.12.0) (2022-04-09)
 
 
