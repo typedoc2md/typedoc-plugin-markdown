@@ -22,10 +22,12 @@ exports[`TOC: (default) should display toc for module' 1`] = `
 
 ### Type aliases
 
-- [answer](../modules.md#answer)
+- [Answer](../modules.md#answer)
+- [answer](../modules.md#answer-1)
 
 ### Variables
 
-- [answer](../modules.md#answer-1)
+- [\\\\_answer](../modules.md#_answer)
+- [answer](../modules.md#answer-2)
 "
 `;
