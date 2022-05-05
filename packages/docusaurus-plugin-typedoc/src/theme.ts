@@ -122,6 +122,10 @@ export class DocusaurusTheme extends MarkdownTheme {
   }
 
   getSidebarLabel(page: PageEvent<DeclarationReflection>) {
+    if (!this.sidebar.generateLabels) {
+      return null
+    }
+
     const indexLabel =
       this.sidebar.indexLabel ||
       (this.entryPoints.length > 1 ? 'Table of contents' : 'Exports');
