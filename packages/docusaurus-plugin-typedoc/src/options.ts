@@ -10,6 +10,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     indexLabel: undefined,
     readmeLabel: 'Readme',
     position: null,
+    generateLabels: true,
   },
   hideInPageTOC: true,
   hideBreadcrumbs: true,

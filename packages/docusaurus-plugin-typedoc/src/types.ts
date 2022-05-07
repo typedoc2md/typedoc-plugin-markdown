@@ -34,6 +34,7 @@ export interface SidebarOptions {
   indexLabel?: string;
   readmeLabel?: string;
   position: number | null;
+  generateLabels?: boolean;
 }
 
 export interface SidebarCategory {
