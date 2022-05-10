@@ -109,12 +109,11 @@ export class DocusaurusTheme extends MarkdownTheme {
       id: pageId,
       title: pageTitle,
     };
-    if (page.url === this.entryDocument) {
-      items = { ...items, slug: this.getSlug() };
+    if (page.url === this.entryDocument && this.indexSlug) {
+      items = { ...items, slug: this.indexSlug };
     }
 
     if (this.sidebar.autoConfiguration) {
-      console.log('config', this.sidebar.autoConfiguration);
       if (sidebarLabel && sidebarLabel !== pageTitle) {
         items = { ...items, sidebar_label: sidebarLabel as string };
       }
@@ -176,16 +175,6 @@ export class DocusaurusTheme extends MarkdownTheme {
       return readmeTitle;
     }
     return getPageTitle(page);
-  }
-
-  getSlug() {
-    if (this.indexSlug) {
-      return this.indexSlug;
-    }
-    if (this.out === process.cwd()) {
-      return '/';
-    }
-    return `/${path.relative(process.cwd(), this.out).replace(/\\/g, '/')}/`;
   }
 
   get mappings() {
