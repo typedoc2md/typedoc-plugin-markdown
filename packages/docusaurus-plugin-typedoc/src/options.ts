@@ -11,6 +11,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     indexLabel: undefined,
     readmeLabel: 'Readme',
     position: null,
+    autoConfiguration: true,
   },
   hideInPageTOC: true,
   hideBreadcrumbs: true,

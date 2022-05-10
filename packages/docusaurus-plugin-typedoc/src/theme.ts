@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+import * as path from 'path';
 import {
   BindOption,
   DeclarationReflection,
@@ -7,17 +9,14 @@ import {
   RendererEvent,
   UrlMapping,
 } from 'typedoc';
-import * as fs from 'fs';
-import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
 import { getKindPlural } from 'typedoc-plugin-markdown/dist/groups';
-import * as path from 'path';
-
-import { FrontMatter, SidebarOptions } from './types';
+import { MarkdownTheme } from 'typedoc-plugin-markdown/dist/theme';
 import {
   FrontMatterVars,
   getPageTitle,
   prependYAML,
 } from 'typedoc-plugin-markdown/dist/utils/front-matter';
+import { FrontMatter, SidebarOptions } from './types';
 
 const CATEGORY_POSITION = {
   [ReflectionKind.Module]: 1,
@@ -76,27 +75,29 @@ export class DocusaurusTheme extends MarkdownTheme {
   }
 
   onRendererEnd(renderer: RendererEvent) {
-    writeCategoryYaml(
-      renderer.outputDirectory,
-      this.sidebar.categoryLabel,
-      this.sidebar.position,
-    );
+    if (this.sidebar.autoConfiguration) {
+      writeCategoryYaml(
+        renderer.outputDirectory,
+        this.sidebar.categoryLabel,
+        this.sidebar.position,
+      );
 
-    Object.keys(groupUrlsByKind(this.getUrls(renderer.project))).forEach(
-      (group) => {
-        const kind = parseInt(group);
-        const mapping = this.mappings.find((mapping) =>
-          mapping.kind.includes(kind),
-        );
-        if (mapping) {
-          writeCategoryYaml(
-            renderer.outputDirectory + '/' + mapping.directory,
-            getKindPlural(kind),
-            CATEGORY_POSITION[kind],
+      Object.keys(groupUrlsByKind(this.getUrls(renderer.project))).forEach(
+        (group) => {
+          const kind = parseInt(group);
+          const mapping = this.mappings.find((mapping) =>
+            mapping.kind.includes(kind),
           );
-        }
-      },
-    );
+          if (mapping) {
+            writeCategoryYaml(
+              renderer.outputDirectory + '/' + mapping.directory,
+              getKindPlural(kind),
+              CATEGORY_POSITION[kind],
+            );
+          }
+        },
+      );
+    }
   }
 
   getYamlItems(page: PageEvent<DeclarationReflection>): FrontMatter {
@@ -111,12 +112,17 @@ export class DocusaurusTheme extends MarkdownTheme {
     if (page.url === this.entryDocument) {
       items = { ...items, slug: this.getSlug() };
     }
-    if (sidebarLabel && sidebarLabel !== pageTitle) {
-      items = { ...items, sidebar_label: sidebarLabel as string };
+
+    if (this.sidebar.autoConfiguration) {
+      console.log('config', this.sidebar.autoConfiguration);
+      if (sidebarLabel && sidebarLabel !== pageTitle) {
+        items = { ...items, sidebar_label: sidebarLabel as string };
+      }
+      if (sidebarPosition) {
+        items = { ...items, sidebar_position: parseFloat(sidebarPosition) };
+      }
     }
-    if (sidebarPosition) {
-      items = { ...items, sidebar_position: parseFloat(sidebarPosition) };
-    }
+
     if (page.url === page.project.url && this.entryPoints.length > 1) {
       items = { ...items, hide_table_of_contents: true };
     }
