@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.6.1...typedoc-github-wiki-theme@1.0.1) (2022-05-15)
+
+
+### Bug Fixes
+
+* Fixed incorrect toc anchors ([753a534](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/753a5340f8c29d692221152e0f49251f987707c8))
+
+
+
+
+
+
 # 1.0.0 (2022-01-09)
 
 ### BREAKING CHANGE
