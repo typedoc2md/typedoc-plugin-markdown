@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { RendererEvent, Renderer, DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, Renderer, RendererEvent } from 'typedoc';
 import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
 export class GithubWikiTheme extends MarkdownTheme {
@@ -10,7 +10,7 @@ export class GithubWikiTheme extends MarkdownTheme {
     this.hideBreadcrumbs = true;
 
     this.listenTo(this.owner, {
-      [RendererEvent.BEGIN]: this.writeSidebar,
+      [RendererEvent.END]: this.writeSidebar,
     });
   }
 
