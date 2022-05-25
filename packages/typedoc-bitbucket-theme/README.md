@@ -7,7 +7,7 @@ An Bitbucket Cloud compatible [TypeDoc](https://github.com/TypeStrong/typedoc) t
 
 > Note: If using **Bitbucket Server** do not use this theme but set the `--namedAnchors` option instead.
 
-## What is does?
+## What Does It Do?
 
 - Fixes Bitbucket Cloud's internal anchor linking implementation.
 

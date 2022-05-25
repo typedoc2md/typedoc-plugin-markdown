@@ -5,7 +5,7 @@ A [Github Wiki](https://docs.github.com/en/communities/documenting-your-project-
 [![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-github-wiki-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
-## What is does?
+## What Does It Do?
 
 - Generates Wiki friendly file names.
 - Updates internal urls to a compatible format.
