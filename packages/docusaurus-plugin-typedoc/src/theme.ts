@@ -137,7 +137,7 @@ export class DocusaurusTheme extends MarkdownTheme {
   getSidebarLabel(page: PageEvent<DeclarationReflection>) {
     const indexLabel =
       this.sidebar.indexLabel ||
-      (this.entryPoints.length > 1 ? 'Table of contents' : 'Exports');
+      (this.entryPoints.length > 1 ? 'Table of Contents' : 'Exports');
 
     if (page.url === this.entryDocument) {
       return page.url === page.project.url
