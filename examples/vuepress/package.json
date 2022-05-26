@@ -1,0 +1,16 @@
+{
+  "name": "vuepress-example-v1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs && npx http-server ./docs/.vuepress/dist -o"
+  },
+  "devDependencies": {
+    "typedoc-plugin-markdown": "*",
+    "vue": "^2.6.10",
+    "vue-server-renderer": "2.6.11",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-typedoc": "*"
+  }
+}

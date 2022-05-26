@@ -1,8 +1,10 @@
-import * as path from 'path';
+import { SidebarOptions } from '../shared/types';
 
-import { PluginOptions } from './types';
-
-export const getSidebarJson = (navigation: any, options: PluginOptions) => {
+export const getSidebarJson = (
+  navigation: any,
+  sidebarOptions: SidebarOptions,
+  outDir: string,
+) => {
   const navJson: any = [];
 
   navigation.children?.forEach((navigationItem) => {
@@ -12,14 +14,13 @@ export const getSidebarJson = (navigation: any, options: PluginOptions) => {
         children: navigationItem.children?.map((navItem) => {
           return [
             getUrlKey(navItem.url),
-            options.sidebar?.fullNames
+            sidebarOptions.fullNames
               ? navItem.title
               : getShortName(navItem.title),
           ];
         }),
       });
     } else {
-      const outDir = path.relative(process.cwd(), options.out);
       navJson.push([
         getUrlKey(navigationItem.url) === 'README'
           ? `/${outDir}/`
@@ -29,19 +30,18 @@ export const getSidebarJson = (navigation: any, options: PluginOptions) => {
     }
   });
   if (
-    options.sidebar?.parentCategory &&
-    options.sidebar.parentCategory !== 'none'
+    sidebarOptions.parentCategory &&
+    sidebarOptions.parentCategory !== 'none'
   ) {
     return [
       {
-        title: options.sidebar.parentCategory,
+        title: sidebarOptions.parentCategory,
         children: navJson,
         initialOpenGroupIndex: -1,
         collapsable: false,
       },
     ];
   }
-
   return navJson;
 };
 

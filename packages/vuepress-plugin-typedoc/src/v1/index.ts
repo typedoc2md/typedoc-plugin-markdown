@@ -2,21 +2,27 @@ import * as path from 'path';
 
 import { Application, ProjectReflection } from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
-import { removeDir, render } from './render';
-import { addOptions, getOptions } from './options';
+import {
+  addOptions,
+  getSidebarOptions,
+  getTypedocOptions,
+} from '../shared/options';
+import { removeDir, render } from '../shared/render';
 
+import { PluginOptions } from '../shared/types';
 import { getSidebarJson } from './sidebar';
-import { PluginOptions } from './types';
 
 let app: Application;
 let project: ProjectReflection | undefined;
 
-export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
-  const options = getOptions(opts);
+export = (opts: Partial<PluginOptions>, ctx: any) => {
+  const typedocOptions = getTypedocOptions(opts);
 
-  const outputDirectory = (ctx.sourceDir || ctx.dir.source()) + '/' + options.out;
+  const outputDirectory = ctx.sourceDir + '/' + typedocOptions.out;
 
-  removeDir(outputDirectory);
+  if (typedocOptions.cleanOutputDir) {
+    removeDir(outputDirectory);
+  }
 
   app = new Application();
 
@@ -26,7 +32,7 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
 
   app.renderer.render = render;
 
-  app.bootstrap(options);
+  app.bootstrap(typedocOptions);
 
   project = app.convert();
 
@@ -35,7 +41,7 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
     return;
   }
 
-  if (options.watch) {
+  if (typedocOptions.watch) {
     app.convertAndWatch(async (project) => {
       app.generateDocs(project, outputDirectory);
     });
@@ -47,17 +53,21 @@ export const typedocPlugin = (opts: PluginOptions, ctx: any) => {
     name: 'vuepress-plugin-typedoc',
 
     async enhanceAppFiles() {
-      if (!options.sidebar) {
+      const sidebarOptions = getSidebarOptions(opts);
+      if (!sidebarOptions.autoConfiguration) {
         return;
       }
+
       const theme = app.renderer.theme as any;
       const navigation = theme.getNavigation(project);
 
       const sidebarJson = JSON.stringify({
-        [`/${path.relative(process.cwd(), options.out)}/`]: getSidebarJson(
-          navigation,
-          options,
-        ),
+        [`/${path.relative(process.cwd(), typedocOptions.out as string)}/`]:
+          getSidebarJson(
+            navigation,
+            sidebarOptions,
+            typedocOptions.out as string,
+          ),
       });
       return {
         name: 'typedoc-sidebar',
