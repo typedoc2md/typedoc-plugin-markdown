@@ -5,7 +5,7 @@ A [Gitlab Wiki](https://docs.gitlab.com/ee/user/project/wiki/) compatible [TypeD
 [![npm](https://img.shields.io/npm/v/typedoc-gitlab-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
-## What is does?
+## What Does It Do?
 
 - Generates Wiki friendly file names.
 - Updates internal urls to a compatible format.
