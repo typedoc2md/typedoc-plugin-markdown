@@ -13,10 +13,11 @@ export default function () {
 
 function table(parameters: any) {
   const showTypeCol = hasTypes(parameters);
+
   const comments = parameters.map(
-    (param) =>
-      !!param.comment?.text?.trim() || !!param.comment?.shortText?.trim(),
+    (param) => !!param.comment?.hasVisibleComponent(),
   );
+
   const hasComments = !comments.every((value) => !value);
 
   const headers = ['Name'];
@@ -57,7 +58,7 @@ function table(parameters: any) {
       if (parameter.comment) {
         row.push(
           stripLineBreaks(
-            Handlebars.helpers.comments.call(parameter.comment),
+            Handlebars.helpers.returns(parameter.comment),
           ).replace(/\|/g, '\\|'),
         );
       } else {

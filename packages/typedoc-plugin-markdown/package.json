@@ -38,7 +38,7 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.22.0"
+    "typedoc": ">=0.23.0"
   },
   "dependencies": {
     "handlebars": "^4.7.7"

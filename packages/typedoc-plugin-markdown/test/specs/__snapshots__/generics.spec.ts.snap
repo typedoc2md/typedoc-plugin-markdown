@@ -9,10 +9,10 @@ exports[`Generics: should compile class with type params 1`] = `
 
 ## Type parameters
 
-| Name | Description |
-| :------ | :------ |
-| \`T\` | Some type param |
-| \`V\` | Some other type param |
+| Name |
+| :------ |
+| \`T\` |
+| \`V\` |
 
 [helper: toc]
 
@@ -44,11 +44,11 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 
 ##### Type parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| \`A\` | extends [\`ClassWithTypeParams\`](ClassWithTypeParams.md)<\`string\`, \`number\`, \`A\`\\\\> | Comment for type \`A\` |
-| \`B\` | \`string\` \\\\| \`boolean\` | Comment for type \`B\` |
-| \`C\` | \`string\` | - |
+| Name | Type |
+| :------ | :------ |
+| \`A\` | extends [\`ClassWithTypeParams\`](ClassWithTypeParams.md)<\`string\`, \`number\`, \`A\`\\\\> |
+| \`B\` | \`string\` \\\\| \`boolean\` |
+| \`C\` | \`string\` |
 
 ##### Returns
 

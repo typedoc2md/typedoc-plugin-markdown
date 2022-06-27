@@ -1,5 +1,6 @@
 import * as path from 'path';
 import {
+  BindOption,
   ContainerReflection,
   DeclarationReflection,
   PageEvent,
@@ -23,11 +24,14 @@ import {
 import { formatContents } from './utils';
 
 export class MarkdownTheme extends Theme {
+  @BindOption('hideBreadcrumbs')
+  hideBreadcrumbs!: boolean;
+
   allReflectionsHaveOwnDocument!: boolean;
   entryDocument: string;
   entryPoints!: string[];
   filenameSeparator!: string;
-  hideBreadcrumbs!: boolean;
+
   hideInPageTOC!: boolean;
   hidePageTitle!: boolean;
   hideMembersSymbol!: boolean;
@@ -55,7 +59,6 @@ export class MarkdownTheme extends Theme {
     this.entryDocument = this.getOption('entryDocument') as string;
     this.entryPoints = this.getOption('entryPoints') as string[];
     this.filenameSeparator = this.getOption('filenameSeparator') as string;
-    this.hideBreadcrumbs = this.getOption('hideBreadcrumbs') as boolean;
     this.hideInPageTOC = this.getOption('hideInPageTOC') as boolean;
     this.hidePageTitle = this.getOption('hidePageTitle') as boolean;
     this.hideMembersSymbol = this.getOption('hideMembersSymbol') as boolean;

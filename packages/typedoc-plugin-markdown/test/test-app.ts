@@ -13,7 +13,6 @@ import {
   UrlMapping,
 } from 'typedoc';
 
-import { load } from '../src/index';
 import { MarkdownTheme } from '../src/theme';
 import { formatContents } from '../src/utils';
 
@@ -88,7 +87,7 @@ export class TestApp {
   }
 
   static getExpectedUrls(urlMappings: UrlMapping[]) {
-    const expectedUrls = [];
+    const expectedUrls: string[] = [];
     urlMappings.forEach((urlMapping) => {
       expectedUrls.push(urlMapping.url);
       if (urlMapping.model.children) {
@@ -109,20 +108,20 @@ export class TestApp {
           path.join(__dirname, './stubs/src/' + inputFile),
         )
       : ['./test/stubs/src'];
-    load(this.app);
-    this.app.options.addReader(new TypeDocReader());
-    this.app.options.addReader(new TSConfigReader());
   }
 
   async bootstrap(options: any = {}) {
+    this.app.options.addReader(new TypeDocReader());
+    this.app.options.addReader(new TSConfigReader());
     this.app.bootstrap({
       logger: 'none',
       entryPoints: this.entryPoints,
       tsconfig: path.join(__dirname, 'stubs', 'tsconfig.json'),
+      plugin: [path.join(__dirname, '..', 'dist'), 'typedoc-plugin-mdn-links'],
       ...options,
     });
 
-    this.project = this.app.convert();
+    this.project = this.app.convert() as ProjectReflection;
     this.renderer = this.app.renderer;
     this.tmpobj = tmp.dirSync();
 
@@ -131,7 +130,7 @@ export class TestApp {
   }
 
   findModule(name: string) {
-    return this.project.children.find(
+    return this.project.children?.find(
       (child) => child.name.replace(/\"/g, '') === name,
     );
   }

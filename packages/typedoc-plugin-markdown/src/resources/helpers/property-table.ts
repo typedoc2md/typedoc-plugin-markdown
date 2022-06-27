@@ -7,8 +7,7 @@ export default function () {
     'propertyTable',
     function (this: DeclarationReflection[]) {
       const comments = this.map(
-        (param) =>
-          !!param.comment?.text?.trim() || !!param.comment?.shortText?.trim(),
+        (param) => !!param.comment?.hasVisibleComponent(),
       );
       const hasComments = !comments.every((value) => !value);
 
@@ -64,9 +63,10 @@ export default function () {
           const comments = getComments(property);
           if (comments) {
             row.push(
-              stripLineBreaks(
-                Handlebars.helpers.comments.call(comments),
-              ).replace(/\|/g, '\\|'),
+              stripLineBreaks(Handlebars.helpers.comments(comments)).replace(
+                /\|/g,
+                '\\|',
+              ),
             );
           } else {
             row.push('-');

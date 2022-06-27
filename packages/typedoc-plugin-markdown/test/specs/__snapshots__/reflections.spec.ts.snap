@@ -14,7 +14,7 @@ exports[`Reflections: (template) should compile Enum 1`] = `
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Down](../enums/EnumReflection.md#down)
 - [Left](../enums/EnumReflection.md#left)
@@ -54,6 +54,8 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 exports[`Reflections: (template) should compile implemented class 1`] = `
 "# Class: ImplementedClass
 
+[partial: comment]
+
 ## Implements
 
 - [\`ReflectionClass\`](../classes/ReflectionClass.md)
@@ -73,7 +75,7 @@ exports[`Reflections: (template) should compile module with breadcrumbs and proj
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [Down](../enums/EnumReflection.md#down)
 - [Left](../enums/EnumReflection.md#left)

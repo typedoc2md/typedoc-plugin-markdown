@@ -20,7 +20,7 @@ exports[`TOC: (default) should display toc for module' 1`] = `
 
 - [SomeClass](SomeClass.md)
 
-### Type aliases
+### Type Aliases
 
 - [Answer](../modules.md#answer)
 - [answer](../modules.md#answer-1)

@@ -84,7 +84,7 @@ exports[`Declarations: should compile declaration with double underscores in nam
 `;
 
 exports[`Declarations: should compile enum delcaration 1`] = `
-"• **Down** = \`\\"DOWN\\"\`
+"• **Down**
 
 [partial: member.sources]
 "

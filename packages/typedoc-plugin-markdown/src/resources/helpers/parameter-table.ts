@@ -41,8 +41,7 @@ function table(parameters: any) {
   const showDefaults = hasDefaultValues(parameters);
 
   const comments = parameters.map(
-    (param) =>
-      !!param.comment?.text?.trim() || !!param.comment?.shortText?.trim(),
+    (param) => !!param.comment?.hasVisibleComponent(),
   );
   const hasComments = !comments.every((value) => !value);
 
@@ -78,7 +77,7 @@ function table(parameters: any) {
       if (parameter.comment) {
         row.push(
           stripLineBreaks(
-            Handlebars.helpers.comments.call(parameter.comment),
+            Handlebars.helpers.comments(parameter.comment),
           ).replace(/\|/g, '\\|'),
         );
       } else {

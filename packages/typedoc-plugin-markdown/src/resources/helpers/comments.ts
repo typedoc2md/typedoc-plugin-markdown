@@ -2,28 +2,22 @@ import * as Handlebars from 'handlebars';
 import { Comment } from 'typedoc';
 
 export default function () {
-  Handlebars.registerHelper('comments', function (this: Comment) {
+  Handlebars.registerHelper('comments', function (comment: Comment) {
     const md: string[] = [];
 
-    if (this.shortText) {
-      md.push(Handlebars.helpers.comment.call(this.shortText));
+    if (comment.summary) {
+      md.push(Handlebars.helpers.comment(comment.summary));
     }
 
-    if (this.text) {
-      md.push(Handlebars.helpers.comment.call(this.text));
-    }
-
-    if (this.tags) {
-      const tags = this.tags.map(
-        (tag) =>
-          `**\`${tag.tagName}\`**${
-            tag.text
-              ? Handlebars.helpers.comment.call(
-                  (tag.text.startsWith('\n') ? '' : ' ') + tag.text,
-                )
-              : ''
-          }`,
-      );
+    if (comment.blockTags?.length) {
+      const tags = comment.blockTags
+        .filter((tag) => tag.tag !== '@returns')
+        .map(
+          (tag) =>
+            `**\`${tag.tag.substring(1)}\`** ${Handlebars.helpers.comment(
+              tag.content,
+            )}`,
+        );
       md.push(tags.join('\n\n'));
     }
 

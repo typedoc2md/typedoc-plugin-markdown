@@ -1,5 +1,5 @@
 /**
- * See {@linkcode CommentClass} and [CommentClass's comment property]{@link CommentClass.comment}.
+ * See {@linkcode CommentClass} and CommentClass's {@link CommentClass.comment} property.
  * Also, check out {@link https://www.google.com|Google} and
  * {@link https://github.com GitHub}.
  *

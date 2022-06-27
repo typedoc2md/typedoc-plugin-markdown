@@ -22,6 +22,7 @@ import referenceMember from './resources/helpers/reference-member';
 import reflectionPathHelper from './resources/helpers/reflection-path';
 import reflectionTitleHelper from './resources/helpers/reflection-title';
 import relativeUrlHelper from './resources/helpers/relative-url';
+import returns from './resources/helpers/returns';
 import signatureTitleHelper from './resources/helpers/signature-title';
 import tocHelper from './resources/helpers/toc';
 import typeHelper from './resources/helpers/type';
@@ -77,6 +78,7 @@ export function registerHelpers(theme: MarkdownTheme) {
   reflectionPathHelper();
   reflectionTitleHelper(theme);
   relativeUrlHelper(theme);
+  returns();
   signatureTitleHelper(theme);
   tocHelper(theme);
   typeHelper();

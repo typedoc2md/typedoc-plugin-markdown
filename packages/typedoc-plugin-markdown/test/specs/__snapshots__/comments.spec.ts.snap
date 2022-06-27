@@ -11,7 +11,7 @@ You can write <strong>HTML</strong> tags directly in comments
 `;
 
 exports[`Comments: should build @link references' 1`] = `
-"See [\`CommentClass\`](CommentClass.md) and [CommentClass's comment property](CommentClass.md#comment).
+"See [\`CommentClass\`](CommentClass.md) and CommentClass's [comment](CommentClass.md#comment) property.
 Also, check out [Google](https://www.google.com) and
 [GitHub](https://github.com).
 
@@ -35,26 +35,22 @@ anotherFunction()
 exports[`Comments: should convert comments with includes' 1`] = `
 "This is an example of include
 
-This is a simple example on how to use include.
-
-![My image alt text](../media/logo.png)
+include:class-example.md
 
 This is an example of handlebars include
 
-This is a simple example on a handlebars file.
+include:class-example.hbs
 "
 `;
 
 exports[`Comments: should convert comments with tags' 1`] = `
 "**\`name\`** Tag description on same line
 
-**\`description\`**
-Tag description on new line
+**\`description\`** Tag description on new line
 
 - Tag description on another line
 
-**\`deprecated\`**
-Another tag description
+**\`deprecated\`** Another tag description
 "
 `;
 
@@ -63,6 +59,6 @@ exports[`Comments: should convert symbols brackets to symbol links' 1`] = `
 
 - Link to an external reflection: [CommentClass](CommentClass.md)
 - Link to an internal reflection: [commentsInReturn](../modules.md#commentsinreturn)
-- Link to an undefined reflection: [[VOID]]
+- Link to an undefined reflection: VOID
 "
 `;
