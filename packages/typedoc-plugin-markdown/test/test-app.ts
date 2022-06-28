@@ -120,7 +120,7 @@ export class TestApp {
       ...options,
       plugin: [
         ...[path.join(__dirname, '..', 'dist'), 'typedoc-plugin-mdn-links'],
-        ...options.plugin,
+        ...(options.plugin ? options.plugin : []),
       ],
     });
 
