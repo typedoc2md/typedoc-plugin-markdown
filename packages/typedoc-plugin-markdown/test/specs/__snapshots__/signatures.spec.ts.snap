@@ -250,7 +250,7 @@ This is a function with multiple arguments and a return value.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`paramZ\` | \`string\` | This is a string parameter. |
-| \`paramG\` | \`any\` | This is a parameter flagged with any.<br />      This sentence is placed in the next line. |
+| \`paramG\` | \`any\` | This is a parameter flagged with any. |
 | \`paramA\` | \`any\` | This is a **parameter** pointing to an interface. |
 
 ##### Returns

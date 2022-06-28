@@ -2,9 +2,7 @@
  * This is a function with multiple arguments and a return value.
  *
  * @param paramZ - This is a string parameter.
- * @param paramG - This is a parameter flagged with any.<br />
- *     This sentence is placed in the next line.
- *
+ * @param paramG - This is a parameter flagged with any.
  * @param paramA
  *   This is a **parameter** pointing to an interface.
  *
