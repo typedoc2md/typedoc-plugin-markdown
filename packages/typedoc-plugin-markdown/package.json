@@ -8,15 +8,14 @@
   ],
   "scripts": {
     "lint": "eslint ./src --ext .ts",
+    "markdownlint": "yarn run docs:md && markdownlint ./docs/md",
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "pretest": "yarn run demo:md && markdownlint ./demo/md",
     "test": "jest --colors",
     "build-and-test": "yarn run build && yarn run test",
-    "fixtures": "node ./tasks/fixtures.js",
-    "demos": "yarn run build && yarn run demo:md && yarn run demo:html",
-    "demo:md": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-mdn-links --options ./demo.options.json --out ./demo/md",
-    "demo:html": "typedoc --options ./demo.options.json --plugin typedoc-plugin-mdn-links --out ./demo/html"
+    "docs": "yarn run build && yarn run docs:md && yarn run docs:html",
+    "docs:md": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-mdn-links --options ../../test/typedoc-options.json --out ./docs/md",
+    "docs:html": "typedoc --options ../../test/typedoc-options.json --plugin typedoc-plugin-mdn-links --out ./docs/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",

@@ -1,7 +1,0 @@
-{
-  "entryPoints": ["./test/stubs/src/index.ts"],
-  "includes": "./test/stubs/inc/",
-  "media": "./test/stubs/media/",
-  "includeVersion": true,
-  "tsconfig": "./test/stubs/tsconfig.json"
-}

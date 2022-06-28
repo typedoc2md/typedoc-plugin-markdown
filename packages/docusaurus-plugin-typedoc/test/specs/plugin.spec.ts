@@ -8,8 +8,8 @@ async function bootstrap(tmpobj: tmp.DirResult, customOptions = {}) {
   const options = {
     id: 'default',
     logger: 'none',
-    entryPoints: ['../typedoc-plugin-markdown/test/stubs/src/theme.ts'],
-    tsconfig: '../typedoc-plugin-markdown/test/stubs/tsconfig.json',
+    entryPoints: ['../../test/stubs/src/theme.ts'],
+    tsconfig: '../../test/stubs/tsconfig.json',
   } as any;
 
   const plugin = typedocPlugin(

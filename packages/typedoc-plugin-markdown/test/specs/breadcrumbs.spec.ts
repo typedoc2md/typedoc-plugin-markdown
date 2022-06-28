@@ -1,26 +1,23 @@
 import * as Handlebars from 'handlebars';
-import { Reflection } from 'typedoc';
-
-import { TestApp } from '../test-app';
+import { ProjectReflection, Reflection } from 'typedoc';
 
 describe(`Breadcrumbs:`, () => {
   let moduleReflection: Reflection;
   let classReflection: Reflection;
 
   describe(`(with readme)`, () => {
-    let testApp: TestApp;
+    let project: ProjectReflection;
     beforeAll(async () => {
-      testApp = new TestApp(['breadcrumbs.ts']);
-      await testApp.bootstrap();
-      moduleReflection = testApp.project.children[0];
-      classReflection = testApp.project.findReflectionByName('Breadcrumbs');
+      project = await global.bootstrap(['breadcrumbs.ts']);
+      moduleReflection = (project.children as any)[0];
+      classReflection = project.getChildByName('Breadcrumbs') as Reflection;
     });
 
     test(`should compile README breadcrumbs'`, () => {
       expect(
         Handlebars.helpers.breadcrumbs.call({
-          project: testApp.project,
-          model: testApp.project,
+          project: project,
+          model: project,
           url: 'README.md',
         }),
       ).toMatchSnapshot();
@@ -29,8 +26,8 @@ describe(`Breadcrumbs:`, () => {
     test(`should compile entryPoint (globals) breadcrumbs'`, () => {
       expect(
         Handlebars.helpers.breadcrumbs.call({
-          project: testApp.project,
-          model: testApp.project,
+          project: project,
+          model: project,
           url: 'globals.md',
         }),
       ).toMatchSnapshot();
@@ -39,7 +36,7 @@ describe(`Breadcrumbs:`, () => {
     test(`should compile module breadcrumbs'`, () => {
       expect(
         Handlebars.helpers.breadcrumbs.call({
-          project: testApp.project,
+          project: project,
           model: moduleReflection,
           url: moduleReflection.url,
         }),
@@ -48,7 +45,7 @@ describe(`Breadcrumbs:`, () => {
     test(`should compile class breadcrumbs'`, () => {
       expect(
         Handlebars.helpers.breadcrumbs.call({
-          project: testApp.project,
+          project: project,
           model: classReflection,
           url: classReflection.url,
         }),
@@ -56,18 +53,17 @@ describe(`Breadcrumbs:`, () => {
     });
   });
   describe(`(without readme)`, () => {
-    let testApp: TestApp;
+    let project: ProjectReflection;
     beforeAll(async () => {
-      testApp = new TestApp(['breadcrumbs.ts']);
-      await testApp.bootstrap({ readme: 'none' });
-      moduleReflection = testApp.project.children[0];
-      classReflection = testApp.project.findReflectionByName('Breadcrumbs');
+      project = await global.bootstrap(['breadcrumbs.ts'], { readme: 'none' });
+      moduleReflection = (project.children as any)[0];
+      classReflection = project.getChildByName('Breadcrumbs') as Reflection;
     });
 
     test(`should compile module breadcrumbs'`, () => {
       expect(
         Handlebars.helpers.breadcrumbs.call({
-          project: testApp.project,
+          project: project,
           model: moduleReflection,
           url: moduleReflection.url,
         }),
@@ -76,7 +72,7 @@ describe(`Breadcrumbs:`, () => {
     test(`should compile class breadcrumbs'`, () => {
       expect(
         Handlebars.helpers.breadcrumbs.call({
-          project: testApp.project,
+          project: project,
           model: classReflection,
           url: classReflection.url,
         }),

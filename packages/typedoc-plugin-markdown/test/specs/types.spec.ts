@@ -1,61 +1,62 @@
 import * as Handlebars from 'handlebars';
-
-import { TestApp } from '../test-app';
+import { ProjectReflection } from 'typedoc';
 
 describe(`Types:`, () => {
-  let testApp: TestApp;
+  let project: ProjectReflection;
 
   beforeAll(async () => {
-    testApp = new TestApp(['types.ts']);
-    await testApp.bootstrap();
+    project = await global.bootstrap(['types.ts']);
   });
 
   test(`should compile 'array' type'`, () => {
     expect(
-      TestApp.compileHelper(
+      global.compileHelper(
         Handlebars.helpers.type,
-        testApp.findReflection('arrayType').type,
+        (project.getChildByName('arrayType') as any).type,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'stringLiteral' type'`, () => {
     expect(
-      TestApp.compileHelper(
+      global.compileHelper(
         Handlebars.helpers.type,
-        testApp.findReflection('stringLiteralType').type,
+        (project.getChildByName('stringLiteralType') as any).type,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'union' of string literals types'`, () => {
     expect(
-      TestApp.compileHelper(
+      global.compileHelper(
         Handlebars.helpers.type,
-        testApp.findReflection('unionType').type,
+        (project.getChildByName('unionType') as any).type,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'union' of literal declarations`, () => {
     expect(
-      TestApp.compileHelper(
+      global.compileHelper(
         Handlebars.helpers.type,
-        testApp.findReflection('unionTypeWithSymbolsDeclarations').type,
+        (project.getChildByName('unionTypeWithSymbolsDeclarations') as any)
+          .type,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile intrinsic type'`, () => {
     expect(
-      Handlebars.helpers.type.call(testApp.findReflection('stringType').type),
+      Handlebars.helpers.type.call(
+        (project.getChildByName('stringType') as any).type,
+      ),
     ).toMatchSnapshot();
   });
 
   test(`should compile collapsed 'literal' type'`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('literalType').type,
+        (project.getChildByName('literalType') as any).type,
         'all',
       ),
     ).toMatchSnapshot();
@@ -63,14 +64,16 @@ describe(`Types:`, () => {
 
   test(`should compile expanded 'literal' type'`, () => {
     expect(
-      Handlebars.helpers.type.call(testApp.findReflection('literalType').type),
+      Handlebars.helpers.type.call(
+        (project.getChildByName('literalType') as any).type,
+      ),
     ).toMatchSnapshot();
   });
 
   test(`should compile collapsed 'objectLiteralType' type'`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('objectLiteralType'),
+        project.getChildByName('objectLiteralType'),
         'object',
       ),
     ).toMatchSnapshot();
@@ -78,20 +81,22 @@ describe(`Types:`, () => {
 
   test(`should compile expanded 'objectLiteralType' type'`, () => {
     expect(
-      Handlebars.helpers.type.call(testApp.findReflection('objectLiteralType')),
+      Handlebars.helpers.type.call(project.getChildByName('objectLiteralType')),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'tuple' type'`, () => {
     expect(
-      Handlebars.helpers.type.call(testApp.findReflection('tupleType').type),
+      Handlebars.helpers.type.call(
+        (project.getChildByName('tupleType') as any).type,
+      ),
     ).toMatchSnapshot();
   });
 
   test(`should compile 'intersection' type'`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('intersectionType').type,
+        (project.getChildByName('intersectionType') as any).type,
       ),
     ).toMatchSnapshot();
   });
@@ -99,7 +104,7 @@ describe(`Types:`, () => {
   test(`should compile collapsed 'function' type '`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('functionReflectionType').type,
+        (project.getChildByName('functionReflectionType') as any).type,
         'function',
       ),
     ).toMatchSnapshot();
@@ -108,7 +113,7 @@ describe(`Types:`, () => {
   test(`should compile expanded 'function' type '`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('functionReflectionType').type,
+        (project.getChildByName('functionReflectionType') as any).type,
       ),
     ).toMatchSnapshot();
   });
@@ -116,7 +121,7 @@ describe(`Types:`, () => {
   test(`should compile 'typeOperator' type '`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('typeOperatorType').type,
+        (project.getChildByName('typeOperatorType') as any).type,
       ),
     ).toMatchSnapshot();
   });
@@ -124,7 +129,7 @@ describe(`Types:`, () => {
   test(`should compile unionType with object literal type '`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('objectLiteralUnionType').type,
+        (project.getChildByName('objectLiteralUnionType') as any).type,
       ),
     ).toMatchSnapshot();
   });
@@ -132,7 +137,7 @@ describe(`Types:`, () => {
   test(`should compile conditional type '`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('ConditionalType').type,
+        (project.getChildByName('ConditionalType') as any).type,
       ),
     ).toMatchSnapshot();
   });
@@ -140,7 +145,7 @@ describe(`Types:`, () => {
   test(`should resolve external refs'`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('externalReference').type,
+        (project.getChildByName('externalReference') as any).type,
       ),
     ).toMatchSnapshot();
   });
@@ -148,7 +153,8 @@ describe(`Types:`, () => {
   test(`should resolve external refs with type params'`, () => {
     expect(
       Handlebars.helpers.type.call(
-        testApp.findReflection('externalReferenceInsideTypeParams').type,
+        (project.getChildByName('externalReferenceInsideTypeParams') as any)
+          .type,
       ),
     ).toMatchSnapshot();
   });

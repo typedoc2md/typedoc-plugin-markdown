@@ -1,35 +1,30 @@
 import * as Handlebars from 'handlebars';
-import { SignatureReflection } from 'typedoc';
-
-import { TestApp } from '../test-app';
+import { ProjectReflection, SignatureReflection } from 'typedoc';
 
 describe(`Signatures:`, () => {
-  let testApp: TestApp;
+  let project: ProjectReflection;
   let partial: Handlebars.TemplateDelegate;
-  let reflectionTemplate: Handlebars.TemplateDelegate;
 
   beforeAll(async () => {
-    testApp = new TestApp(['signatures.ts']);
-    await testApp.bootstrap();
-    TestApp.stubPartials(['member.sources']);
-    partial = TestApp.getPartial('member.signature');
-    reflectionTemplate = TestApp.getTemplate('reflection');
+    project = await global.bootstrap(['signatures.ts']);
+    global.stubPartials(['member.sources']);
+    partial = global.getPartial('member.signature');
   });
 
   test(`should compile callable signature'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('CallableSignature').signatures[0],
+        (project.getChildByName('CallableSignature') as any).signatures[0],
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile signature with a flag'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('privateFunction')
+        (project.getChildByName('privateFunction') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -37,9 +32,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with params'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithParameters')
+        (project.getChildByName('functionWithParameters') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -47,9 +42,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile function that returns an object'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionReturningAnObject')
+        (project.getChildByName('functionReturningAnObject') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -57,9 +52,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile a promise that returns an object'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('promiseReturningAnObject')
+        (project.getChildByName('promiseReturningAnObject') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -67,9 +62,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile a promise that returns a symbol'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('promiseReturningASymbol')
+        (project.getChildByName('promiseReturningASymbol') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -77,9 +72,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile function that returns a function'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionReturningAFunction')
+        (project.getChildByName('functionReturningAFunction') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -87,9 +82,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with rest params'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithRest')
+        (project.getChildByName('functionWithRest') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -97,9 +92,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with optional params'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithOptionalParam')
+        (project.getChildByName('functionWithOptionalParam') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -107,9 +102,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with union types'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithUnionTypes')
+        (project.getChildByName('functionWithUnionTypes') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -117,9 +112,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with default values'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithDefaults')
+        (project.getChildByName('functionWithDefaults') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -127,9 +122,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with @return comments'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('commentsInReturn')
+        (project.getChildByName('commentsInReturn') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -137,9 +132,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile named parameters'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithNamedParams')
+        (project.getChildByName('functionWithNamedParams') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -147,9 +142,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile named parameters with comments'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithNamedParamsAndComments')
+        (project.getChildByName('functionWithNamedParamsAndComments') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -157,9 +152,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile pipes in params and comments'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithPipesInParamsAndComments')
+        (project.getChildByName('functionWithPipesInParamsAndComments') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -167,9 +162,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile function with reference type'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithReferenceType')
+        (project.getChildByName('functionWithReferenceType') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -177,9 +172,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile function with nested typen params'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithNestedParams')
+        (project.getChildByName('functionWithNestedParams') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -187,9 +182,9 @@ describe(`Signatures:`, () => {
 
   test(`should compile class with constructor'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('ClassWithConstructor').children[0]
+        (project.getChildByName('ClassWithConstructor') as any).children[0]
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();

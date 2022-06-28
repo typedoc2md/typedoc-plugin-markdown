@@ -1,123 +1,121 @@
 import * as Handlebars from 'handlebars';
-
-import { TestApp } from '../test-app';
+import { ProjectReflection } from 'typedoc';
 
 describe(`Declarations:`, () => {
-  let testApp: TestApp;
+  let project: ProjectReflection;
 
   let template: Handlebars.TemplateDelegate;
 
   beforeAll(async () => {
-    testApp = new TestApp(['declarations.ts']);
-    await testApp.bootstrap();
-    TestApp.stubPartials(['member.sources']);
-    template = TestApp.getPartial('member.declaration');
+    project = await global.bootstrap(['declarations.ts']);
+    global.stubPartials(['member.sources']);
+    template = global.getPartial('member.declaration');
   });
 
   test(`should compile a const with default value`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('stringConstWithDefaultValue'),
+        project.getChildByName('stringConstWithDefaultValue'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile a let with default value`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('stringLetWithDefaultValue'),
+        project.getChildByName('stringLetWithDefaultValue'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile an undefined declaration`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('undefinedNumberDeclaration'),
+        project.getChildByName('undefinedNumberDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile object literal declaration`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('objectLiteralDeclaration'),
+        project.getChildByName('objectLiteralDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile object literal cast as a const`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('objectLiteralAsConstDeclaration'),
+        project.getChildByName('objectLiteralAsConstDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile type literal declaration`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('typeLiteralDeclaration'),
+        project.getChildByName('typeLiteralDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile declaration with double underscores in name and value`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('__DOUBLE_UNDERSCORES_DECLARATION__'),
+        project.getChildByName('__DOUBLE_UNDERSCORES_DECLARATION__'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile any function type`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('AnyFunctionType'),
+        project.getChildByName('AnyFunctionType'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile function declaration`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('functionDeclaration'),
+        project.getChildByName('functionDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile callable declaration`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('callableDeclaration'),
+        project.getChildByName('callableDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile indexable declaration`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('indexableDeclaration'),
+        project.getChildByName('indexableDeclaration'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile enum delcaration`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         template,
-        testApp.findReflection('EnumDeclarations').children[0],
+        (project.getChildByName('EnumDeclarations') as any).children[0],
       ),
     ).toMatchSnapshot();
   });

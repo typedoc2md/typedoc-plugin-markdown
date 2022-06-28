@@ -1,46 +1,43 @@
 import * as Handlebars from 'handlebars';
-import { SignatureReflection } from 'typedoc';
-
-import { TestApp } from '../test-app';
+import { ProjectReflection, SignatureReflection } from 'typedoc';
 
 describe(`Generics:`, () => {
-  let testApp: TestApp;
+  let project: ProjectReflection;
   let partial: Handlebars.TemplateDelegate;
   let declarationPartial: Handlebars.TemplateDelegate;
   let reflectionTemplate: Handlebars.TemplateDelegate;
 
   beforeAll(() => {
-    partial = TestApp.getPartial('member.signature');
-    declarationPartial = TestApp.getPartial('member.declaration');
+    partial = global.getPartial('member.signature');
+    declarationPartial = global.getPartial('member.declaration');
   });
 
   beforeEach(async () => {
-    testApp = new TestApp(['generics.ts']);
-    await testApp.bootstrap();
-    TestApp.stubPartials([
+    project = await global.bootstrap(['generics.ts']);
+    global.stubPartials([
       'comment',
       'member.signature',
       'members',
       'member.sources',
     ]);
-    TestApp.stubHelpers(['toc', 'breadcrumbs', 'hierarchy', 'returns']);
-    reflectionTemplate = TestApp.getTemplate('reflection');
+    global.stubHelpers(['toc', 'breadcrumbs', 'hierarchy', 'returns']);
+    reflectionTemplate = global.getTemplate('reflection');
   });
 
   test(`should compile class with type params`, () => {
     expect(
-      TestApp.compileTemplate(reflectionTemplate, {
-        model: testApp.findReflection('ClassWithTypeParams'),
-        project: testApp.project,
+      global.compileTemplate(reflectionTemplate, {
+        model: project.getChildByName('ClassWithTypeParams'),
+        project: project,
       }),
     ).toMatchSnapshot();
   });
 
   test(`should compile function with a simple type param'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithTypeParam')
+        (project.getChildByName('functionWithTypeParam') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -48,9 +45,9 @@ describe(`Generics:`, () => {
 
   test(`should compile function with complex type params'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         partial,
-        testApp.findReflection('functionWithTypeParams')
+        (project.getChildByName('functionWithTypeParams') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();
@@ -58,18 +55,18 @@ describe(`Generics:`, () => {
 
   test(`should compile type with nested generics'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         declarationPartial,
-        testApp.findReflection('nestedGenerics'),
+        project.getChildByName('nestedGenerics'),
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile generics with defaults'`, () => {
     expect(
-      TestApp.compileTemplate(
+      global.compileTemplate(
         declarationPartial,
-        testApp.findReflection('genericsWithDefaults')
+        (project.getChildByName('genericsWithDefaults') as any)
           .signatures[0] as SignatureReflection,
       ),
     ).toMatchSnapshot();

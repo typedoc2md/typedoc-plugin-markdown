@@ -1,14 +1,12 @@
-import { PageEvent } from 'typedoc/dist/lib/output/events';
+import { PageEvent, ProjectReflection } from 'typedoc';
 
 import { getPageTitle, prependYAML } from '../../src/utils/front-matter';
-import { TestApp } from '../test-app';
 
 describe(`FrontMatter:`, () => {
-  let testApp: TestApp;
+  let project: ProjectReflection;
 
   beforeAll(async () => {
-    testApp = new TestApp(['frontmatter.ts']);
-    await testApp.bootstrap();
+    project = await global.bootstrap(['frontmatter.ts']);
   });
 
   test(`should prependYAML to doc content`, () => {

@@ -1,23 +1,21 @@
 import * as Handlebars from 'handlebars';
-
-import { TestApp } from '../test-app';
+import { ProjectReflection } from 'typedoc';
 
 describe(`Index:`, () => {
-  let testApp: TestApp;
+  let project: ProjectReflection;
   let indexTemplate: Handlebars.TemplateDelegate;
 
   beforeAll(async () => {
-    testApp = new TestApp(['reflections.ts']);
-    await testApp.bootstrap();
-    indexTemplate = TestApp.getTemplate('index');
-    TestApp.stubHelpers(['breadcrumbs']);
+    project = await global.bootstrap(['reflections.ts']);
+    indexTemplate = global.getTemplate('index');
+    global.stubHelpers(['breadcrumbs']);
   });
 
   test(`should compile readme`, () => {
     expect(
-      TestApp.compileTemplate(indexTemplate, {
-        model: testApp.project,
-        project: testApp.project,
+      global.compileTemplate(indexTemplate, {
+        model: project,
+        project: project,
       }),
     ).toMatchSnapshot();
   });

@@ -1,33 +1,34 @@
 import * as Handlebars from 'handlebars';
-
-import { TestApp } from '../test-app';
+import { ProjectReflection } from 'typedoc';
 
 describe(`Members:`, () => {
-  let testApp: TestApp;
+  let project: ProjectReflection;
   let membersPartial: Handlebars.TemplateDelegate;
   let memberPartial: Handlebars.TemplateDelegate;
   beforeAll(async () => {
-    testApp = new TestApp(['members.ts']);
-    await testApp.bootstrap();
+    project = await global.bootstrap(['members.ts']);
 
-    TestApp.stubPartials(['member', 'index', 'member.sources']);
-    TestApp.stubHelpers(['relativeURL']);
-    membersPartial = TestApp.getPartial('members');
-    memberPartial = TestApp.getPartial('member');
+    global.stubPartials(['member', 'index', 'member.sources']);
+    global.stubHelpers(['relativeURL']);
+    membersPartial = global.getPartial('members');
+    memberPartial = global.getPartial('member');
   });
 
   describe(`(members)`, () => {
     test(`should compile module members'`, () => {
       expect(
-        TestApp.compileTemplate(membersPartial, testApp.findModule('members')),
+        global.compileTemplate(
+          membersPartial,
+          global.findModule(project, 'members'),
+        ),
       ).toMatchSnapshot();
     });
 
     test(`should compile class members'`, () => {
       expect(
-        TestApp.compileTemplate(
+        global.compileTemplate(
           membersPartial,
-          testApp.findReflection('ClassWithAccessorMembers'),
+          project.getChildByName('ClassWithAccessorMembers'),
         ),
       ).toMatchSnapshot();
     });
@@ -36,61 +37,61 @@ describe(`Members:`, () => {
   describe(`(member)`, () => {
     test(`should compile declaration members'`, () => {
       expect(
-        TestApp.compileTemplate(
+        global.compileTemplate(
           memberPartial,
-          testApp.findReflection('declarationMember'),
+          project.getChildByName('declarationMember'),
         ),
       ).toMatchSnapshot();
     });
 
     test(`should compile a signature members'`, () => {
       expect(
-        TestApp.compileTemplate(
+        global.compileTemplate(
           memberPartial,
-          testApp.findReflection('signatureMember'),
+          project.getChildByName('signatureMember'),
         ),
       ).toMatchSnapshot();
     });
 
     test(`should compile members with getter'`, () => {
       expect(
-        TestApp.compileTemplate(
+        global.compileTemplate(
           memberPartial,
-          testApp
-            .findReflection('ClassWithAccessorMembers')
-            .findReflectionByName('getter'),
+          (
+            project.getChildByName('ClassWithAccessorMembers') as any
+          ).getChildByName('getter'),
         ),
       ).toMatchSnapshot();
     });
 
     test(`should compile members with setter'`, () => {
       expect(
-        TestApp.compileTemplate(
+        global.compileTemplate(
           memberPartial,
-          testApp
-            .findReflection('ClassWithAccessorMembers')
-            .findReflectionByName('setter'),
+          (
+            project.getChildByName('ClassWithAccessorMembers') as any
+          ).getChildByName('setter'),
         ),
       ).toMatchSnapshot();
     });
   });
 
   describe(`(with hideMembersSymbol)`, () => {
+    let project: ProjectReflection;
     beforeAll(async () => {
-      testApp = new TestApp(['members.ts']);
-      await testApp.bootstrap({
-        hideMembersSymbol: true
+      project = await global.bootstrap(['members.ts'], {
+        hideMembersSymbol: true,
       });
-      TestApp.stubPartials(['member', 'member.sources']);
+      global.stubPartials(['member', 'member.sources']);
 
-      memberPartial = TestApp.getPartial('member');
+      memberPartial = global.getPartial('member');
     });
 
     test(`should compile members without special symbols`, () => {
       expect(
-        TestApp.compileTemplate(
+        global.compileTemplate(
           memberPartial,
-          testApp.findReflection('signatureMember'),
+          project.getChildByName('signatureMember'),
         ),
       ).toMatchSnapshot();
     });

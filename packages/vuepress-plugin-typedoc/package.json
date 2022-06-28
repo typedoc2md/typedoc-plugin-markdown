@@ -16,8 +16,11 @@
   },
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/vuepress-plugin-typedoc",
   "peerDependencies": {
-    "typedoc": ">=0.22.0",
-    "typedoc-plugin-markdown": ">=3.11.10"
+    "typedoc": ">=0.23.0",
+    "typedoc-plugin-markdown": ">=3.13.0"
+  },
+  "devDependencies": {
+    "typedoc-plugin-markdown": "^3.13.0"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
