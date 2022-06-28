@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-
+import * as path from 'path';
 import { TestApp } from 'typedoc-plugin-markdown/test/test-app';
 
 let testApp: TestApp;
@@ -8,6 +8,7 @@ describe(`Theme:`, () => {
   beforeAll(async () => {
     testApp = new TestApp(['theme.ts']);
     await testApp.bootstrap({
+      plugin: [path.join(__dirname, '..', '..', 'dist')],
       theme: 'hugo',
       entryDocument: '_index.md',
       indexTitle: 'Test API',

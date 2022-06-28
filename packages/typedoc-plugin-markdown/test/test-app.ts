@@ -117,8 +117,11 @@ export class TestApp {
       logger: 'none',
       entryPoints: this.entryPoints,
       tsconfig: path.join(__dirname, 'stubs', 'tsconfig.json'),
-      plugin: [path.join(__dirname, '..', 'dist'), 'typedoc-plugin-mdn-links'],
       ...options,
+      plugin: [
+        ...[path.join(__dirname, '..', 'dist'), 'typedoc-plugin-mdn-links'],
+        ...options.plugin,
+      ],
     });
 
     this.project = this.app.convert() as ProjectReflection;
