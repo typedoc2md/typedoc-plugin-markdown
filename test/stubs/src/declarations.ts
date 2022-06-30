@@ -102,3 +102,8 @@ export enum EnumDeclarationsWithDefaults {
   East = 'East',
   West = 'West',
 }
+
+export let getterAndSetter: {
+  get getMe(): Promise<string>;
+  set setMe(x: string);
+};

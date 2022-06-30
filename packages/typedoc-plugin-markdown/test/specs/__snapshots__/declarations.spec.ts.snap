@@ -76,6 +76,20 @@ exports[`Declarations: should compile callable declaration 1`] = `
 "
 `;
 
+exports[`Declarations: should compile declaration with accessors 1`] = `
+"• **getterAndSetter**: \`Object\`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| \`get getMe()\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`string\`\\\\> |
+| \`set setMe(x:string)\` | \`void\` |
+
+[partial: member.sources]
+"
+`;
+
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
 "• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
 

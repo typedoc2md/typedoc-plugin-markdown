@@ -44,7 +44,7 @@ export default function () {
       );
 
       const rows = properties.map((property) => {
-        const propertyType = property.type ? property.type : property;
+        const propertyType = getPropertyType(property);
         const row: string[] = [];
         const nameCol: string[] = [];
         const name =
@@ -84,26 +84,34 @@ export default function () {
   );
 }
 
+function getPropertyType(property: any) {
+  if (property.getSignature) {
+    return property.getSignature.type;
+  }
+  if (property.setSignature) {
+    return property.setSignature.type;
+  }
+  return property.type ? property.type : property;
+}
+
 function getName(property: DeclarationReflection) {
   const md: string[] = [];
   if (property.flags.isRest) {
     md.push('...');
   }
   if (property.getSignature) {
-    md.push(
-      Handlebars.helpers.signatureTitle.call(
-        property.getSignature,
-        'get',
-        false,
-      ),
-    );
+    md.push(`get ${property.getSignature.name}()`);
   } else if (property.setSignature) {
     md.push(
-      Handlebars.helpers.signatureTitle.call(
-        property.setSignature,
-        'set',
-        false,
-      ),
+      `set ${
+        property.setSignature.name
+      }(${property.setSignature.parameters?.map((parameter) => {
+        return `${parameter.name}:${Handlebars.helpers.type.call(
+          parameter.type,
+          'all',
+          false,
+        )}`;
+      })})`,
     );
   } else {
     md.push(property.name);

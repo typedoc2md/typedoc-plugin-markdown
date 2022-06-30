@@ -129,4 +129,13 @@ describe(`Declarations:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  test(`should compile declaration with accessors`, () => {
+    expect(
+      global.compileTemplate(
+        template,
+        project.getChildByName('getterAndSetter'),
+      ),
+    ).toMatchSnapshot();
+  });
 });
