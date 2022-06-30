@@ -111,11 +111,21 @@ describe(`Declarations:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile enum delcaration`, () => {
+  test(`should compile enum declaration`, () => {
     expect(
       global.compileTemplate(
         template,
         (project.getChildByName('EnumDeclarations') as any).children[0],
+      ),
+    ).toMatchSnapshot();
+  });
+
+  test(`should compile enum declaration with defaults`, () => {
+    expect(
+      global.compileTemplate(
+        template,
+        (project.getChildByName('EnumDeclarationsWithDefaults') as any)
+          .children[0],
       ),
     ).toMatchSnapshot();
   });

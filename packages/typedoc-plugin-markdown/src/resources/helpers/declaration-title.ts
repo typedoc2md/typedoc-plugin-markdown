@@ -6,13 +6,13 @@ import {
   ReflectionKind,
   ReflectionType,
 } from 'typedoc';
+import { MarkdownTheme } from '../../theme';
 import {
   escapeChars,
   memberSymbol,
   stripComments,
   stripLineBreaks,
 } from '../../utils';
-import { MarkdownTheme } from '../../theme';
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
@@ -28,7 +28,7 @@ export default function (theme: MarkdownTheme) {
           return ': `Object`';
         }
         return (
-          ': ' +
+          (reflection.parent?.kindOf(ReflectionKind.Enum) ? ' = ' : ': ') +
           Handlebars.helpers.type.call(
             reflectionType ? reflectionType : reflection,
             'object',
@@ -50,9 +50,7 @@ export default function (theme: MarkdownTheme) {
         );
       }
 
-      if (!this.parent?.kindOf(ReflectionKind.Enum)) {
-        md.push(getType(this));
-      }
+      md.push(getType(this));
 
       if (
         !(this.type instanceof LiteralType) &&

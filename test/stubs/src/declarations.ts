@@ -57,7 +57,7 @@ export let typeLiteralDeclaration: {
    */
   valueA?: number;
   valueB?: boolean;
-  valueC: { [dataId: string]: 'ok' | 'ko' }
+  valueC: { [dataId: string]: 'ok' | 'ko' };
 };
 
 export let functionDeclaration: (someArg: number) => boolean;
@@ -90,8 +90,15 @@ export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');
 export type AnyFunctionType<A = any> = (...input: any[]) => A;
 
 export enum EnumDeclarations {
-  Up = 'UP',
-  Down = 'DOWN',
-  Left = 'LEFT',
-  Right = 'RIGHT',
+  Up,
+  Down,
+  Left,
+  Right,
+}
+
+export enum EnumDeclarationsWithDefaults {
+  North = 'North',
+  South = 'South',
+  East = 'East',
+  West = 'West',
 }
