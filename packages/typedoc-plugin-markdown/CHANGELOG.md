@@ -5,6 +5,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [3.13.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.0...typedoc-plugin-markdown@3.13.2) (2022-06-30)
 
+### Fixes
+
 - Correctly display accessors in type declaration [(#320)](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/c7fd71aa13159ee729526bdd9b7688169752da64)
 - Add new line after tags [(#324)](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/396121e63db25b028b91fb935c7b1fbe8b25d9c4)
 - Expose values to enums [(#323)](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/15bda2ff76457b5bdcea617d012067dfb5d0f186)
