@@ -1,120 +1,99 @@
-import * as Handlebars from 'handlebars';
 import { ProjectReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../src/theme-context';
 
 describe(`Declarations:`, () => {
   let project: ProjectReflection;
-
-  let template: Handlebars.TemplateDelegate;
+  let context: MarkdownThemeRenderContext;
 
   beforeAll(async () => {
-    project = await global.bootstrap(['declarations.ts']);
-    global.stubPartials(['member.sources']);
-    template = global.getPartial('member.declaration');
+    ({ project, context } = await global.bootstrap(['declarations.ts'], {
+      stubPartials: ['sources'],
+    }));
   });
 
   test(`should compile a const with default value`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('stringConstWithDefaultValue'),
+      context.partials.declarationMember(
+        project.getChildByName('stringConstWithDefaultValue') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile a let with default value`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('stringLetWithDefaultValue'),
+      context.partials.declarationMember(
+        project.getChildByName('stringLetWithDefaultValue') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile an undefined declaration`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('undefinedNumberDeclaration'),
+      context.partials.declarationMember(
+        project.getChildByName('undefinedNumberDeclaration') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile object literal declaration`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('objectLiteralDeclaration'),
+      context.partials.declarationMember(
+        project.getChildByName('objectLiteralDeclaration') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile object literal cast as a const`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('objectLiteralAsConstDeclaration'),
+      context.partials.declarationMember(
+        project.getChildByName('objectLiteralAsConstDeclaration') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile type literal declaration`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('typeLiteralDeclaration'),
+      context.partials.declarationMember(
+        project.getChildByName('typeLiteralDeclaration') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile declaration with double underscores in name and value`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('__DOUBLE_UNDERSCORES_DECLARATION__'),
+      context.partials.declarationMember(
+        project.getChildByName('__DOUBLE_UNDERSCORES_DECLARATION__') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile any function type`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('AnyFunctionType'),
+      context.partials.declarationMember(
+        project.getChildByName('AnyFunctionType') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile function declaration`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('functionDeclaration'),
-      ),
-    ).toMatchSnapshot();
-  });
-
-  test(`should compile callable declaration`, () => {
-    expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('callableDeclaration'),
+      context.partials.declarationMember(
+        project.getChildByName('functionDeclaration') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile indexable declaration`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('indexableDeclaration'),
+      context.partials.declarationMember(
+        project.getChildByName('indexableDeclaration') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile enum declaration`, () => {
     expect(
-      global.compileTemplate(
-        template,
+      context.partials.declarationMember(
         (project.getChildByName('EnumDeclarations') as any).children[0],
       ),
     ).toMatchSnapshot();
@@ -122,8 +101,7 @@ describe(`Declarations:`, () => {
 
   test(`should compile enum declaration with defaults`, () => {
     expect(
-      global.compileTemplate(
-        template,
+      context.partials.declarationMember(
         (project.getChildByName('EnumDeclarationsWithDefaults') as any)
           .children[0],
       ),
@@ -132,9 +110,8 @@ describe(`Declarations:`, () => {
 
   test(`should compile declaration with accessors`, () => {
     expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('getterAndSetter'),
+      context.partials.declarationMember(
+        project.getChildByName('getterAndSetter') as any,
       ),
     ).toMatchSnapshot();
   });

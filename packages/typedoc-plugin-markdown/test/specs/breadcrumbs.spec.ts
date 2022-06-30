@@ -1,5 +1,6 @@
-import * as Handlebars from 'handlebars';
 import { ProjectReflection, Reflection } from 'typedoc';
+
+import { MarkdownThemeRenderContext } from '../../src/theme-context';
 
 describe(`Breadcrumbs:`, () => {
   let moduleReflection: Reflection;
@@ -7,75 +8,79 @@ describe(`Breadcrumbs:`, () => {
 
   describe(`(with readme)`, () => {
     let project: ProjectReflection;
+    let context: MarkdownThemeRenderContext;
     beforeAll(async () => {
-      project = await global.bootstrap(['breadcrumbs.ts']);
+      ({ project, context } = await global.bootstrap(['breadcrumbs.ts']));
       moduleReflection = (project.children as any)[0];
       classReflection = project.getChildByName('Breadcrumbs') as Reflection;
     });
 
     test(`should compile README breadcrumbs'`, () => {
       expect(
-        Handlebars.helpers.breadcrumbs.call({
+        context.partials.breadcrumbs({
           project: project,
           model: project,
           url: 'README.md',
-        }),
+        } as any),
       ).toMatchSnapshot();
     });
 
     test(`should compile entryPoint (globals) breadcrumbs'`, () => {
       expect(
-        Handlebars.helpers.breadcrumbs.call({
+        context.partials.breadcrumbs({
           project: project,
           model: project,
           url: 'globals.md',
-        }),
+        } as any),
       ).toMatchSnapshot();
     });
 
     test(`should compile module breadcrumbs'`, () => {
       expect(
-        Handlebars.helpers.breadcrumbs.call({
+        context.partials.breadcrumbs({
           project: project,
           model: moduleReflection,
           url: moduleReflection.url,
-        }),
+        } as any),
       ).toMatchSnapshot();
     });
     test(`should compile class breadcrumbs'`, () => {
       expect(
-        Handlebars.helpers.breadcrumbs.call({
+        context.partials.breadcrumbs({
           project: project,
           model: classReflection,
           url: classReflection.url,
-        }),
+        } as any),
       ).toMatchSnapshot();
     });
   });
   describe(`(without readme)`, () => {
     let project: ProjectReflection;
+    let context: MarkdownThemeRenderContext;
     beforeAll(async () => {
-      project = await global.bootstrap(['breadcrumbs.ts'], { readme: 'none' });
+      ({ project, context } = await global.bootstrap(['breadcrumbs.ts'], {
+        options: { readme: 'none' },
+      }));
       moduleReflection = (project.children as any)[0];
       classReflection = project.getChildByName('Breadcrumbs') as Reflection;
     });
 
     test(`should compile module breadcrumbs'`, () => {
       expect(
-        Handlebars.helpers.breadcrumbs.call({
+        context.partials.breadcrumbs({
           project: project,
           model: moduleReflection,
           url: moduleReflection.url,
-        }),
+        } as any),
       ).toMatchSnapshot();
     });
     test(`should compile class breadcrumbs'`, () => {
       expect(
-        Handlebars.helpers.breadcrumbs.call({
+        context.partials.breadcrumbs({
           project: project,
           model: classReflection,
           url: classReflection.url,
-        }),
+        } as any),
       ).toMatchSnapshot();
     });
   });

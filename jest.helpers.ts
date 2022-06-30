@@ -1,6 +1,4 @@
 require('ts-node/register');
-import * as fs from 'fs';
-import * as Handlebars from 'handlebars';
 import * as path from 'path';
 
 import {
@@ -12,7 +10,7 @@ import {
   TypeDocReader,
   UrlMapping,
 } from 'typedoc';
-import { formatContents } from 'typedoc-plugin-markdown/src/utils';
+import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
 const STUBS_SRC_PATH = path.join(__dirname, 'stub-project', 'src');
 const STUBS_TSCONFIG_PATH = path.join(
@@ -21,8 +19,13 @@ const STUBS_TSCONFIG_PATH = path.join(
   'tsconfig.json',
 );
 
-global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
+global.bootstrap = async (
+  entryPoints: string[] = [],
+  params: { options: any; stubPartials: string[] },
+) => {
   const app = new Application();
+  const options = params?.options || {};
+  const stubPartials = params?.stubPartials || [];
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
   app.bootstrap({
@@ -44,77 +47,12 @@ global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
   const project = app.convert() as ProjectReflection;
   app.renderer.render = render;
   await app.generateDocs(project, 'docs');
-  return project;
-};
-
-global.stubPartials = (partials: string[]) => {
-  partials.forEach((partial) => {
-    Handlebars.registerPartial(partial, `[partial: ${partial}]`);
+  const context = (app.renderer.theme as MarkdownTheme).getRenderContext();
+  stubPartials.forEach((stubPartial) => {
+    context.partials[stubPartial] = () => `[partial: ${stubPartial}]`;
   });
-};
 
-global.stubHelpers = (helpers: string[]) => {
-  helpers.forEach((helper) => {
-    Handlebars.registerHelper(helper, () => `[helper: ${helper}]`);
-  });
-};
-
-global.getTemplate = (name: string) => {
-  const templateDir = path.resolve(
-    __dirname,
-    'packages',
-    'typedoc-plugin-markdown',
-    'dist',
-    'resources',
-    'templates',
-  );
-  const hbs = fs.readFileSync(templateDir + '/' + name + '.hbs');
-  return Handlebars.compile(hbs.toString());
-};
-
-global.getPartial = (name: string) => {
-  const partialDir = path.resolve(
-    __dirname,
-    'packages',
-    'typedoc-plugin-markdown',
-    'dist',
-    'resources',
-    'partials',
-  );
-  const hbs = fs.readFileSync(partialDir + '/' + name + '.hbs');
-  return Handlebars.compile(hbs.toString());
-};
-
-global.compileTemplate = (
-  template: Handlebars.TemplateDelegate,
-  context: any,
-) => {
-  return formatContents(
-    template(context, {
-      allowProtoMethodsByDefault: true,
-      allowProtoPropertiesByDefault: true,
-    }),
-  );
-};
-
-global.compileHelper = (
-  helper: Handlebars.HelperDelegate,
-  context: any,
-  args?: any,
-) => {
-  return formatContents(helper.call(context, args));
-};
-
-global.findModule = (project: ProjectReflection, name: string) => {
-  return project.children?.find(
-    (child) => child.name.replace(/\"/g, '') === name,
-  );
-};
-
-global.handlebarsOptionsStub = {
-  fn: () => true,
-  inverse: () => false,
-  hash: {},
+  return { project, context };
 };
 
 async function render(project: ProjectReflection, outputDirectory: string) {
@@ -132,7 +70,6 @@ async function render(project: ProjectReflection, outputDirectory: string) {
     output?.urls?.forEach((mapping: UrlMapping) => {
       const page = output.createPageEvent(mapping);
       this.trigger(PageEvent.BEGIN, page);
-
       this.trigger(PageEvent.END, page);
     });
     this.trigger(RendererEvent.END, output);

@@ -1,42 +1,28 @@
-import * as Handlebars from 'handlebars';
 import { ProjectReflection, SignatureReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../src/theme-context';
 
 describe(`Generics:`, () => {
   let project: ProjectReflection;
-  let partial: Handlebars.TemplateDelegate;
-  let declarationPartial: Handlebars.TemplateDelegate;
-  let reflectionTemplate: Handlebars.TemplateDelegate;
+  let context: MarkdownThemeRenderContext;
 
-  beforeAll(() => {
-    partial = global.getPartial('member.signature');
-    declarationPartial = global.getPartial('member.declaration');
-  });
-
-  beforeEach(async () => {
-    project = await global.bootstrap(['generics.ts']);
-    global.stubPartials([
-      'comment',
-      'member.signature',
-      'members',
-      'member.sources',
-    ]);
-    global.stubHelpers(['toc', 'breadcrumbs', 'hierarchy', 'returns']);
-    reflectionTemplate = global.getTemplate('reflection');
+  beforeAll(async () => {
+    ({ project, context } = await global.bootstrap(['generics.ts'], {
+      stubPartials: ['breadcrumbs', 'comment', 'members', 'sources', 'toc'],
+    }));
   });
 
   test(`should compile class with type params`, () => {
     expect(
-      global.compileTemplate(reflectionTemplate, {
+      context.templates.reflection({
         model: project.getChildByName('ClassWithTypeParams'),
         project: project,
-      }),
+      } as any),
     ).toMatchSnapshot();
   });
 
   test(`should compile function with a simple type param'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithTypeParam') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -45,8 +31,7 @@ describe(`Generics:`, () => {
 
   test(`should compile function with complex type params'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithTypeParams') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -55,19 +40,16 @@ describe(`Generics:`, () => {
 
   test(`should compile type with nested generics'`, () => {
     expect(
-      global.compileTemplate(
-        declarationPartial,
-        project.getChildByName('nestedGenerics'),
+      context.partials.declarationMember(
+        project.getChildByName('nestedGenerics') as any,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should compile generics with defaults'`, () => {
     expect(
-      global.compileTemplate(
-        declarationPartial,
-        (project.getChildByName('genericsWithDefaults') as any)
-          .signatures[0] as SignatureReflection,
+      context.partials.declarationMember(
+        project.getChildByName('genericsWithDefaults') as any,
       ),
     ).toMatchSnapshot();
   });

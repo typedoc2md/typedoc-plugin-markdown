@@ -1,0 +1,8 @@
+{
+  "entryPoints": ["./src/index.ts"],
+  "includes": "./inc/",
+  "media": "./media/",
+  "name": "My TypeScript API",
+  "tsconfig": "./tsconfig.json",
+  "readme": "none"
+}

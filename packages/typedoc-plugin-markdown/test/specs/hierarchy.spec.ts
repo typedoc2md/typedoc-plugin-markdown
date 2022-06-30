@@ -1,25 +1,26 @@
-import * as Handlebars from 'handlebars';
 import { ProjectReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../src/theme-context';
 
 describe(`Hierarchy:`, () => {
   let project: ProjectReflection;
-  let helper: Handlebars.HelperDelegate;
+  let context: MarkdownThemeRenderContext;
 
   beforeAll(async () => {
-    project = await global.bootstrap(['hierarchy.ts']);
-    helper = Handlebars.helpers.hierarchy;
+    ({ project, context } = await global.bootstrap(['hierarchy.ts'], {
+      stubPartials: ['breadcrumbs', 'comment', 'members', 'sources', 'toc'],
+    }));
   });
   test(`should compile type hierarchy`, () => {
     const reflection = project.getChildByName('ParentClass');
     expect(
-      global.compileHelper(helper, (reflection as any).typeHierarchy, 0),
+      context.partials.hierarchy((reflection as any).typeHierarchy),
     ).toMatchSnapshot();
   });
 
   test(`should compile nested type hierarchy`, () => {
     const reflection = project.getChildByName('ChildClassA');
     expect(
-      global.compileHelper(helper, (reflection as any).typeHierarchy, 0),
+      context.partials.hierarchy((reflection as any).typeHierarchy),
     ).toMatchSnapshot();
   });
 });

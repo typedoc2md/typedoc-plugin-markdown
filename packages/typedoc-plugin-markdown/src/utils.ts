@@ -1,9 +1,5 @@
-import {
-  DeclarationReflection,
-  ParameterReflection,
-  ReflectionKind,
-  SignatureReflection,
-} from 'typedoc';
+import { ReflectionKind } from 'typedoc';
+import { PLURALS } from './constants';
 
 export function formatContents(contents: string) {
   return (
@@ -20,31 +16,6 @@ export function escapeChars(str: string) {
     .replace(/_/g, '\\_')
     .replace(/`/g, '\\`')
     .replace(/\|/g, '\\|');
-}
-
-export function memberSymbol(
-  reflection: DeclarationReflection | ParameterReflection | SignatureReflection,
-) {
-  const isStatic = reflection.flags && reflection.flags.isStatic;
-
-  if (reflection.kind === ReflectionKind.CallSignature) {
-    return '▸';
-  }
-  if (reflection.kind === ReflectionKind.TypeAlias) {
-    return 'Ƭ';
-  }
-  if (reflection.kind === ReflectionKind.ObjectLiteral) {
-    return '▪';
-  }
-  if (reflection.kind === ReflectionKind.Property && isStatic) {
-    return '▪';
-  }
-
-  return '•';
-}
-
-export function spaces(length: number) {
-  return `!spaces${[...Array(length)].map(() => ' ').join('')}`;
 }
 
 export function stripComments(str: string) {
@@ -65,4 +36,18 @@ export function camelToTitleCase(text: string) {
     text.substring(0, 1).toUpperCase() +
     text.substring(1).replace(/[a-z][A-Z]/g, (x) => `${x[0]} ${x[1]}`)
   );
+}
+
+export function getKindPlural(kind: ReflectionKind): string {
+  if (kind in PLURALS) {
+    return PLURALS[kind as keyof typeof PLURALS];
+  } else {
+    return getKindString(kind) + 's';
+  }
+}
+
+export function getKindString(kind: ReflectionKind): string {
+  let str = ReflectionKind[kind];
+  str = str.replace(/(.)([A-Z])/g, (_m, a, b) => a + ' ' + b.toLowerCase());
+  return str;
 }

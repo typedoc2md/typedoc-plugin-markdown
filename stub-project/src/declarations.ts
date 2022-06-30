@@ -62,12 +62,6 @@ export let typeLiteralDeclaration: {
 
 export let functionDeclaration: (someArg: number) => boolean;
 
-export let callableDeclaration: {
-  (someArg: number): boolean;
-  arg1: string;
-  arg2: number;
-};
-
 export let indexableDeclaration: {
   [index: number]: string;
   arg1: string;

@@ -1,28 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-"• \`Const\` **stringConstWithDefaultValue**: \`\`\\"hello\\"\`\`
+" \`Const\` **stringConstWithDefaultValue**: \\"hello\\"
 
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile a let with default value 1`] = `
-"• **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
+" **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
 
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile an undefined declaration 1`] = `
-"• **undefinedNumberDeclaration**: \`number\`
+" **undefinedNumberDeclaration**: \`number\`
 
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-"Ƭ **AnyFunctionType**<\`A\`\\\\>: (...\`input\`: \`any\`[]) => \`A\`
+" **AnyFunctionType**<\`A\`\\\\>: (...\`input\`: \`any\`[]) => \`A\`
 
 #### Type parameters
 
@@ -32,90 +29,80 @@ exports[`Declarations: should compile any function type 1`] = `
 
 #### Type declaration
 
-▸ (...\`input\`): \`A\`
+(...\`input\`: \`any\`[]): \`A\`
 
 ##### Parameters
+
 
 | Name | Type |
 | :------ | :------ |
 | \`...input\` | \`any\`[] |
 
+
 ##### Returns
 
 \`A\`
 
-[partial: member.sources]
-"
-`;
-
-exports[`Declarations: should compile callable declaration 1`] = `
-"• **callableDeclaration**: (\`someArg\`: \`number\`) => \`boolean\`
-
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile declaration with accessors 1`] = `
-"• **getterAndSetter**: \`Object\`
+" **getterAndSetter**: \`Object\`
 
 #### Type declaration
+
 
 | Name | Type |
 | :------ | :------ |
 | \`get getMe()\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`string\`\\\\> |
 | \`set setMe(x:string)\` | \`void\` |
 
-[partial: member.sources]
-"
+
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
+" \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
 
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile enum declaration 1`] = `
-"• **Down** = \`\`1\`\`
+" **Down** = 1
 
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile enum declaration with defaults 1`] = `
-"• **East** = \`\`\\"East\\"\`\`
+" **East** = \\"East\\"
 
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile function declaration 1`] = `
-"• **functionDeclaration**: (\`someArg\`: \`number\`) => \`boolean\`
+" **functionDeclaration**: 
 
-[partial: member.sources]
-"
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile indexable declaration 1`] = `
-"• **indexableDeclaration**: \`Object\`
+" **indexableDeclaration**: \`Object\`
 
-#### Index signature
-
-▪ [index: \`number\`]: \`string\`
+context.indexSignaturePartial(typeDeclaration.indexSignature)
 
 #### Type declaration
+
 
 | Name | Type |
 | :------ | :------ |
 | \`arg1\` | \`string\` |
 
-[partial: member.sources]
-"
+
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-"• \`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
+" \`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
 
 Comments
 
@@ -133,18 +120,19 @@ Comment for Prop2.
 
 #### Type declaration
 
+
 | Name | Type |
 | :------ | :------ |
-| \`Prop1\` | \`\`\\"Prop1\\"\`\` |
-| \`Prop2\` | \`\`\\"Prop2\\"\`\` |
-| \`Prop3\` | \`\`\\"Prop3\\"\`\` |
+| \`Prop1\` | \\"Prop1\\" |
+| \`Prop2\` | \\"Prop2\\" |
+| \`Prop3\` | \\"Prop3\\" |
 
-[partial: member.sources]
-"
+
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-"• \`Const\` **objectLiteralDeclaration**: \`Object\`
+" \`Const\` **objectLiteralDeclaration**: \`Object\`
 
 **\`Param\`**
 
@@ -160,6 +148,7 @@ description for valueY
 
 #### Type declaration
 
+
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`valueA\` | \`number\` | Comment for valueA |
@@ -171,20 +160,21 @@ description for valueY
 | \`valueY\` | () => \`string\` | Comment for value Y |
 | \`valueZ\` | \`string\` | Comment for valueZ |
 
-[partial: member.sources]
-"
+
+[partial: sources]"
 `;
 
 exports[`Declarations: should compile type literal declaration 1`] = `
-"• **typeLiteralDeclaration**: \`Object\`
+" **typeLiteralDeclaration**: \`Object\`
 
 #### Type declaration
+
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`valueA?\` | \`number\` | Comments for valueA |
 | \`valueB?\` | \`boolean\` | - |
-| \`valueC\` | { \`[dataId: string]\`: \`\`\\"ok\\"\`\` \\\\| \`\`\\"ko\\"\`\`;  } | - |
+| \`valueC\` | { \`[dataId: string]\`: \\"ok\\" \\\\| \\"ko\\";  } | - |
 | \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  } | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
 | \`valueX.valueY\` | (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } | - |
@@ -192,6 +182,6 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 | \`valueY\` | () => \`string\` | - |
 | \`valueZ\` | \`string\` | Comment for valueZ |
 
-[partial: member.sources]
-"
+
+[partial: sources]"
 `;

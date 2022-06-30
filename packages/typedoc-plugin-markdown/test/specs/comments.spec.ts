@@ -1,58 +1,54 @@
-import * as Handlebars from 'handlebars';
-import { ProjectReflection } from 'typedoc';
+import { Comment, ProjectReflection } from 'typedoc';
+
+import { MarkdownThemeRenderContext } from '../../src/theme-context';
 
 describe(`Comments:`, () => {
   let project: ProjectReflection;
-  let partial: Handlebars.TemplateDelegate;
+  let context: MarkdownThemeRenderContext;
+
   beforeAll(async () => {
-    project = await global.bootstrap(['comments.ts'], {
+    ({ project, context } = await global.bootstrap(['comments.ts'], {
       includes: './test/stubs/inc',
       media: './test/stubs/media',
-    });
-    partial = global.getPartial('comment');
+    }));
   });
 
   test(`should build @link references'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
-        project.getChildByName('commentWithDocLinks'),
+      context.partials.comment(
+        project.getChildByName('commentWithDocLinks')?.comment as Comment,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should convert symbols brackets to symbol links'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
-        project.getChildByName('commentsWithSymbolLinks'),
+      context.partials.comment(
+        project.getChildByName('commentsWithSymbolLinks')?.comment as Comment,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should convert comments with fenced block'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
-        project.getChildByName('commentsWithFencedBlock'),
+      context.partials.comment(
+        project.getChildByName('commentsWithFencedBlock')?.comment as Comment,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should convert comments with tags'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
-        project.getChildByName('commentsWithTags'),
+      context.partials.comment(
+        project.getChildByName('commentsWithTags')?.comment as Comment,
       ),
     ).toMatchSnapshot();
   });
 
   test(`should allow html in comments'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
-        project.getChildByName('commentsWithHTML'),
+      context.partials.comment(
+        project.getChildByName('commentsWithHTML')?.comment as Comment,
       ),
     ).toMatchSnapshot();
   });

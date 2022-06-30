@@ -1,20 +1,19 @@
-import * as Handlebars from 'handlebars';
 import { ProjectReflection, SignatureReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../src/theme-context';
 
 describe(`Signatures:`, () => {
   let project: ProjectReflection;
-  let partial: Handlebars.TemplateDelegate;
+  let context: MarkdownThemeRenderContext;
 
   beforeAll(async () => {
-    project = await global.bootstrap(['signatures.ts']);
-    global.stubPartials(['member.sources']);
-    partial = global.getPartial('member.signature');
+    ({ project, context } = await global.bootstrap(['signatures.ts'], {
+      stubPartials: ['sources'],
+    }));
   });
 
   test(`should compile callable signature'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('CallableSignature') as any).signatures[0],
       ),
     ).toMatchSnapshot();
@@ -22,8 +21,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with a flag'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('privateFunction') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -32,8 +30,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with params'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithParameters') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -42,8 +39,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile function that returns an object'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionReturningAnObject') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -52,8 +48,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile a promise that returns an object'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('promiseReturningAnObject') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -62,8 +57,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile a promise that returns a symbol'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('promiseReturningASymbol') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -72,8 +66,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile function that returns a function'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionReturningAFunction') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -82,8 +75,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with rest params'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithRest') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -92,8 +84,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with optional params'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithOptionalParam') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -102,8 +93,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with union types'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithUnionTypes') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -112,8 +102,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with default values'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithDefaults') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -122,8 +111,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile signature with @return comments'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('commentsInReturn') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -132,8 +120,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile named parameters'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithNamedParams') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -142,8 +129,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile named parameters with comments'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithNamedParamsAndComments') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -152,8 +138,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile pipes in params and comments'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithPipesInParamsAndComments') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -162,8 +147,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile function with reference type'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithReferenceType') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -172,8 +156,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile function with nested typen params'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('functionWithNestedParams') as any)
           .signatures[0] as SignatureReflection,
       ),
@@ -182,8 +165,7 @@ describe(`Signatures:`, () => {
 
   test(`should compile class with constructor'`, () => {
     expect(
-      global.compileTemplate(
-        partial,
+      context.partials.signatureMember(
         (project.getChildByName('ClassWithConstructor') as any).children[0]
           .signatures[0] as SignatureReflection,
       ),

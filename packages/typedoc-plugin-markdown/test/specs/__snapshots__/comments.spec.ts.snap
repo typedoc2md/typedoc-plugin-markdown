@@ -6,8 +6,7 @@ You can write <strong>HTML</strong> tags directly in comments
 </p>
 <ul>
 <li>List item</li>
-</ul>
-"
+</ul>"
 `;
 
 exports[`Comments: should build @link references' 1`] = `
@@ -15,8 +14,7 @@ exports[`Comments: should build @link references' 1`] = `
 Also, check out [https://www.google.com|Google](https://www.google.com|Google) and
 [GitHub](https://github.com).
 
-Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html).
-"
+Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html)."
 `;
 
 exports[`Comments: should convert comments with fenced block' 1`] = `
@@ -28,8 +26,7 @@ someFunction()
 
 \`\`\`js
 anotherFunction()
-\`\`\`
-"
+\`\`\`"
 `;
 
 exports[`Comments: should convert comments with tags' 1`] = `
@@ -50,8 +47,7 @@ Gets the application version.
 \`\`\`typescript
 import { getVersion } from '@tauri-apps/api/app';
 const appVersion = await getVersion();
-\`\`\`
-"
+\`\`\`"
 `;
 
 exports[`Comments: should convert symbols brackets to symbol links' 1`] = `
@@ -59,6 +55,5 @@ exports[`Comments: should convert symbols brackets to symbol links' 1`] = `
 
 - Link to an external reflection: [CommentClass](CommentClass.md)
 - Link to an internal reflection: [commentsInReturn](../modules.md#commentsinreturn)
-- Link to an undefined reflection: VOID
-"
+- Link to an undefined reflection: VOID"
 `;

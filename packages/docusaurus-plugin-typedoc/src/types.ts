@@ -14,7 +14,6 @@ export interface PluginOptions {
   hideInPageTOC: boolean;
   hideBreadcrumbs: boolean;
   hidePageTitle: boolean;
-  hideMembersSymbol: boolean;
   entryDocument: string;
   includeExtension?: boolean;
   indexSlug?: string;

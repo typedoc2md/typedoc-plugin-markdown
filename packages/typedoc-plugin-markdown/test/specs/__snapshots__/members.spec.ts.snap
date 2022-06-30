@@ -1,100 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Members: (member) should compile a signature members' 1`] = `
-"### signatureMember
+exports[`Members: (member) should compile a signature members' 1`] = `"[partial: member]"`;
 
-▸ **signatureMember**(): \`void\`
+exports[`Members: (member) should compile declaration members' 1`] = `"[partial: member]"`;
 
-#### Returns
+exports[`Members: (member) should compile members with getter' 1`] = `"[partial: member]"`;
 
-\`void\`
-
-[partial: member.sources]
-
-___
-"
-`;
-
-exports[`Members: (member) should compile declaration members' 1`] = `
-"### declarationMember
-
-• **declarationMember**: \`string\`
-
-[partial: member.sources]
-
-___
-"
-`;
-
-exports[`Members: (member) should compile members with getter' 1`] = `
-"### getter
-
-• \`get\` **getter**(): \`string\`
-
-#### Returns
-
-\`string\`
-
-[partial: member.sources]
-
-___
-"
-`;
-
-exports[`Members: (member) should compile members with setter' 1`] = `
-"### setter
-
-• \`set\` **setter**(\`value\`): \`void\`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| \`value\` | \`string\` |
-
-#### Returns
-
-\`void\`
-
-[partial: member.sources]
-
-___
-"
-`;
+exports[`Members: (member) should compile members with setter' 1`] = `"[partial: member]"`;
 
 exports[`Members: (members) should compile class members' 1`] = `
 "## Constructors
 
 [partial: member]
-
 ## Properties
 
 [partial: member]
-
 ## Accessors
 
 [partial: member]
 
-[partial: member]
-"
-`;
+---
 
-exports[`Members: (members) should compile module members' 1`] = `
-"
-"
-`;
-
-exports[`Members: (with hideMembersSymbol) should compile members without special symbols 1`] = `
-"### signatureMember
-
-**signatureMember**(): \`void\`
-
-#### Returns
-
-\`void\`
-
-[partial: member.sources]
-
-___
-"
+[partial: member]"
 `;

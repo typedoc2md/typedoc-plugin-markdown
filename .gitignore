@@ -4,6 +4,9 @@
 dist
 .nyc_output/
 
+# testing
+samples
+
 # dependencies
 node_modules
 

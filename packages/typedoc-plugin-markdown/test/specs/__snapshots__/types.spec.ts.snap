@@ -1,30 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Types: should compile 'array' type' 1`] = `
-"\`string\`[]
-"
-`;
+exports[`Types: should compile 'array' type' 1`] = `"\`string\`[]"`;
 
 exports[`Types: should compile 'intersection' type' 1`] = `"[\`IntersectionClassA\`](IntersectionClassA.md) & [\`IntersectionClassB\`](IntersectionClassB.md)"`;
 
-exports[`Types: should compile 'stringLiteral' type' 1`] = `
-"\`\`\\"blue\\"\`\`
-"
-`;
+exports[`Types: should compile 'stringLiteral' type' 1`] = `"\\"blue\\""`;
 
 exports[`Types: should compile 'tuple' type' 1`] = `"[\`string\`, \`number\`]"`;
 
 exports[`Types: should compile 'typeOperator' type ' 1`] = `"unique \`symbol\`"`;
 
-exports[`Types: should compile 'union' of literal declarations 1`] = `
-"{ \`bar\`: \`\`\\" \\"\`\` \\\\| \`\`\\"string\\"\`\` \\\\| \`\`\\"strong|with|pipes\\"\`\` \\\\| \`\`\\"type\`with\`backticks\\"\`\` \\\\| \`\`\\"*\\"\`\`  }
-"
-`;
+exports[`Types: should compile 'union' of literal declarations 1`] = `"{ \`bar\`: \\" \\" \\\\| \\"string\\" \\\\| \\"strong\\\\|with\\\\|pipes\\" \\\\| \\"type\\\\\`with\\\\\`backticks\\" \\\\| \\"*\\"  }"`;
 
-exports[`Types: should compile 'union' of string literals types' 1`] = `
-"\`\`\\"ease-in\\"\`\` \\\\| \`\`\\"ease-out\\"\`\`
-"
-`;
+exports[`Types: should compile 'union' of string literals types' 1`] = `"\\"ease-in\\" \\\\| \\"ease-out\\""`;
 
 exports[`Types: should compile collapsed 'function' type ' 1`] = `""`;
 
@@ -32,7 +20,7 @@ exports[`Types: should compile collapsed 'literal' type' 1`] = `"\`Object\`"`;
 
 exports[`Types: should compile collapsed 'objectLiteralType' type' 1`] = `"\`Object\`"`;
 
-exports[`Types: should compile conditional type ' 1`] = `"\`T\` extends \`string\` ? \`\`\\"string\\"\`\` : \`T\` extends \`number\` ? \`\`\\"number\\"\`\` : \`T\` extends \`boolean\` ? \`\`\\"boolean\\"\`\` : \`T\` extends \`undefined\` ? \`\`\\"undefined\\"\`\` : \`\`\\"object\\"\`\`"`;
+exports[`Types: should compile conditional type ' 1`] = `"\`T\` extends \`string\` ? \\"string\\" : \`T\` extends \`number\` ? \\"number\\" : \`T\` extends \`boolean\` ? \\"boolean\\" : \`T\` extends \`undefined\` ? \\"undefined\\" : \\"object\\""`;
 
 exports[`Types: should compile expanded 'function' type ' 1`] = `""`;
 

@@ -26,18 +26,18 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  // Additional plugins
   plugins: [
     [
       'docusaurus-plugin-typedoc',
       {
-        entryPoints: ['../../stub-project/src/index.ts'],
-        tsconfig: '../../stub-project/tsconfig.json',
+        options:
+          '../../samples/isaacscript/packages/isaacscript-common/typedoc.json',
         sidebar: {
           autoConfiguration: true,
           position: 0,
         },
         cleanOutputDir: true,
+        hasOwnDocument: 'none',
       },
     ],
   ],

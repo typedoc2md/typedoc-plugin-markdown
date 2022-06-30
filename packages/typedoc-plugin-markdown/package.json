@@ -10,12 +10,13 @@
     "lint": "eslint ./src --ext .ts",
     "markdownlint": "yarn run docs:md && markdownlint ./docs/md",
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
-    "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "prebuild": "ts-node scripts/build-resources",
+    "build": "rm -rf dist && tsc",
     "test": "jest --colors",
     "build-and-test": "yarn run build && yarn run test",
     "docs": "yarn run build && yarn run docs:md && yarn run docs:html",
-    "docs:md": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-mdn-links --options ../../stub-project/typedoc-options.json --out ./docs/md",
-    "docs:html": "typedoc --options ../../stub-project/typedoc-options.json --plugin typedoc-plugin-mdn-links --out ./docs/html"
+    "docs:md": "typedoc --plugin typedoc-plugin-markdown --hasOwnDocument all --options ../../stub-project/typedoc.json --out ./docs/md",
+    "docs:html": "typedoc --plugin none --options ../../stub-project/typedoc.json --out ./docs/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -38,8 +39,5 @@
   ],
   "peerDependencies": {
     "typedoc": ">=0.23.0"
-  },
-  "dependencies": {
-    "handlebars": "^4.7.7"
   }
 }
