@@ -1,5 +1,6 @@
 import * as Handlebars from 'handlebars';
 import { Comment } from 'typedoc';
+import { camelToTitleCase } from '../../utils';
 
 export default function () {
   Handlebars.registerHelper('comments', function (comment: Comment) {
@@ -14,9 +15,9 @@ export default function () {
         .filter((tag) => tag.tag !== '@returns')
         .map(
           (tag) =>
-            `**\`${tag.tag.substring(1)}\`** ${Handlebars.helpers.comment(
-              tag.content,
-            )}`,
+            `**\`${camelToTitleCase(
+              tag.tag.substring(1),
+            )}\`**\n\n ${Handlebars.helpers.comment(tag.content)}`,
         );
       md.push(tags.join('\n\n'));
     }

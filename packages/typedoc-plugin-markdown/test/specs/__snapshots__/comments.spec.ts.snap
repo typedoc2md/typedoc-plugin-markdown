@@ -44,13 +44,24 @@ include:class-example.hbs
 `;
 
 exports[`Comments: should convert comments with tags' 1`] = `
-"**\`name\`** Tag description on same line
+"**\`Description\`**
 
-**\`description\`** Tag description on new line
+ Tag description on new line
 
 - Tag description on another line
 
-**\`deprecated\`** Another tag description
+**\`Deprecated\`**
+
+ Another tag description
+
+Gets the application version.
+
+**\`Example\`**
+
+ \`\`\`typescript
+import { getVersion } from '@tauri-apps/api/app';
+const appVersion = await getVersion();
+\`\`\`
 "
 `;
 

@@ -39,7 +39,6 @@ export const commentsWithHTML = true;
 export const commentsWithIncludes = true;
 
 /**
- * @name Tag description on same line
  * @description
  * Tag description on new line
  *
@@ -47,6 +46,13 @@ export const commentsWithIncludes = true;
  *
  * @deprecated
  * Another tag description
+ *
+ * Gets the application version.
+ * @example
+ * ```typescript
+ * import { getVersion } from '@tauri-apps/api/app';
+ * const appVersion = await getVersion();
+ * ```
  */
 export const commentsWithTags = true;
 

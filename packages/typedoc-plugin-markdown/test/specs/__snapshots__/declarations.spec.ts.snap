@@ -126,11 +126,17 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 Comments
 
-**\`param\`** Comment for object.
+**\`Param\`**
 
-**\`param\`** Comment for Prop1.
+ Comment for object.
 
-**\`param\`** Comment for Prop2.
+**\`Param\`**
+
+ Comment for Prop1.
+
+**\`Param\`**
+
+ Comment for Prop2.
 
 #### Type declaration
 
@@ -147,11 +153,17 @@ Comments
 exports[`Declarations: should compile object literal declaration 1`] = `
 "• \`Const\` **objectLiteralDeclaration**: \`Object\`
 
-**\`param\`** description for valueX
+**\`Param\`**
 
-**\`param\`** description for valueZ
+ description for valueX
 
-**\`param\`** description for valueY
+**\`Param\`**
+
+ description for valueZ
+
+**\`Param\`**
+
+ description for valueY
 
 #### Type declaration
 
