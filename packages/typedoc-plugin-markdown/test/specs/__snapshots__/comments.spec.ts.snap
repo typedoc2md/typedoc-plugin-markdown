@@ -46,19 +46,19 @@ include:class-example.hbs
 exports[`Comments: should convert comments with tags' 1`] = `
 "**\`Description\`**
 
- Tag description on new line
+Tag description on new line
 
 - Tag description on another line
 
 **\`Deprecated\`**
 
- Another tag description
+Another tag description
 
 Gets the application version.
 
 **\`Example\`**
 
- \`\`\`typescript
+\`\`\`typescript
 import { getVersion } from '@tauri-apps/api/app';
 const appVersion = await getVersion();
 \`\`\`

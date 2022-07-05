@@ -142,15 +142,15 @@ Comments
 
 **\`Param\`**
 
- Comment for object.
+Comment for object.
 
 **\`Param\`**
 
- Comment for Prop1.
+Comment for Prop1.
 
 **\`Param\`**
 
- Comment for Prop2.
+Comment for Prop2.
 
 #### Type declaration
 
@@ -169,15 +169,15 @@ exports[`Declarations: should compile object literal declaration 1`] = `
 
 **\`Param\`**
 
- description for valueX
+description for valueX
 
 **\`Param\`**
 
- description for valueZ
+description for valueZ
 
 **\`Param\`**
 
- description for valueY
+description for valueY
 
 #### Type declaration
 

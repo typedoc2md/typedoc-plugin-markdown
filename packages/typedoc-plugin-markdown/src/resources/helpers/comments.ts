@@ -17,7 +17,7 @@ export default function () {
           (tag) =>
             `**\`${camelToTitleCase(
               tag.tag.substring(1),
-            )}\`**\n\n ${Handlebars.helpers.comment(tag.content)}`,
+            )}\`**\n\n${Handlebars.helpers.comment(tag.content)}`,
         );
       md.push(tags.join('\n\n'));
     }
