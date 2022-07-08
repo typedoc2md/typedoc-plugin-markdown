@@ -80,6 +80,13 @@ export function load(app: Application) {
     type: ParameterType.Boolean,
     defaultValue: false,
   });
+
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Do not show the reflection type in the page title.',
+    name: 'hideReflectionKindInTitle',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
 }
 
 export { MarkdownTheme };
