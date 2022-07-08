@@ -46,6 +46,8 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 - `--preserveAnchorCasing<boolean>`<br>
   Preserve anchor id casing for implementations where original case is desirable. Defaults to `false`.
+- `--hideReflectionKindInTitle<boolean>`<br>
+  Do not show the reflection type in the page title.
 
 ## License
 
