@@ -11,7 +11,8 @@ export default function (theme: MarkdownTheme) {
       if (
         this.model &&
         this.model.kindString &&
-        this.url !== this.project.url
+        this.url !== this.project.url &&
+        !theme.hideReflectionKindInTitle
       ) {
         title.push(`${this.model.kindString}: `);
       }
