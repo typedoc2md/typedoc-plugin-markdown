@@ -58,7 +58,7 @@ function table(parameters: any) {
       if (parameter.comment) {
         row.push(
           stripLineBreaks(
-            Handlebars.helpers.returns(parameter.comment),
+            Handlebars.helpers.comments(parameter.comment),
           ).replace(/\|/g, '\\|'),
         );
       } else {
