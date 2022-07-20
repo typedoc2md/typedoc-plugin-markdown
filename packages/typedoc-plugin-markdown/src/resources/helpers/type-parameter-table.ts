@@ -55,10 +55,10 @@ function table(parameters: any) {
     }
 
     if (hasComments) {
-      if (parameter.comment) {
+      if (parameter.comment?.summary) {
         row.push(
           stripLineBreaks(
-            Handlebars.helpers.returns(parameter.comment),
+            Handlebars.helpers.comment(parameter.comment?.summary),
           ).replace(/\|/g, '\\|'),
         );
       } else {
