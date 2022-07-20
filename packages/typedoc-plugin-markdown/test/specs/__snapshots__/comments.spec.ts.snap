@@ -12,7 +12,7 @@ You can write <strong>HTML</strong> tags directly in comments
 
 exports[`Comments: should build @link references' 1`] = `
 "See [\`CommentClass\`](CommentClass.md) and CommentClass's [comment](CommentClass.md#comment) property.
-Also, check out [Google](https://www.google.com) and
+Also, check out [https://www.google.com|Google](https://www.google.com|Google) and
 [GitHub](https://github.com).
 
 Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html).
@@ -29,17 +29,6 @@ someFunction()
 \`\`\`js
 anotherFunction()
 \`\`\`
-"
-`;
-
-exports[`Comments: should convert comments with includes' 1`] = `
-"This is an example of include
-
-include:class-example.md
-
-This is an example of handlebars include
-
-include:class-example.hbs
 "
 `;
 

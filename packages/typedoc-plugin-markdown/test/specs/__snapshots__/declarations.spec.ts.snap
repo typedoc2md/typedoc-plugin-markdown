@@ -49,28 +49,7 @@ exports[`Declarations: should compile any function type 1`] = `
 `;
 
 exports[`Declarations: should compile callable declaration 1`] = `
-"• **callableDeclaration**: \`Object\`
-
-#### Call signature
-
-▸ (\`someArg\`): \`boolean\`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| \`someArg\` | \`number\` |
-
-##### Returns
-
-\`boolean\`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| \`arg1\` | \`string\` |
-| \`arg2\` | \`number\` |
+"• **callableDeclaration**: (\`someArg\`: \`number\`) => \`boolean\`
 
 [partial: member.sources]
 "
