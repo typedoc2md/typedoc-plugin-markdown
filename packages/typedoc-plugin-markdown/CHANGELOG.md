@@ -3,13 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.13.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.0...typedoc-plugin-markdown@3.13.2) (2022-06-30)
+## [3.13.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.3...typedoc-plugin-markdown@3.13.4) (2022-07-20)
+
+### Fixes
+
+- Support @typeParam comments [(#326)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/326)
+
+## [3.13.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.2...typedoc-plugin-markdown@3.13.3) (2022-07-05)
+
+### Fixes
+
+- Remove extraneous whitespace in tag description [(#324)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/324)
+
+## [3.13.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.1...typedoc-plugin-markdown@3.13.2) (2022-06-30)
 
 ### Fixes
 
 - Correctly display accessors in type declaration [(#320)](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/c7fd71aa13159ee729526bdd9b7688169752da64)
-- Add new line after tags [(#324)](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/396121e63db25b028b91fb935c7b1fbe8b25d9c4)
-- Expose values to enums [(#323)](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/15bda2ff76457b5bdcea617d012067dfb5d0f186)
+- Add new line after tags [(#324)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/324)
+- Expose values to enums [(#323)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/323)
 
 ## [3.13.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.0...typedoc-plugin-markdown@3.13.1) (2022-06-28)
 
