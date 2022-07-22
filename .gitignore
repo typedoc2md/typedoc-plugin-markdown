@@ -2,15 +2,7 @@
 
 # compiled output
 dist
-tmp
-/out
-/test/fixtures
 .nyc_output/
-html
-samples
-demo
-fixtures
-docs
 
 # dependencies
 node_modules
