@@ -2,6 +2,7 @@ require('ts-node/register');
 import * as fs from 'fs';
 import * as Handlebars from 'handlebars';
 import * as path from 'path';
+
 import {
   Application,
   PageEvent,
@@ -13,6 +14,13 @@ import {
 } from 'typedoc';
 import { formatContents } from 'typedoc-plugin-markdown/src/utils';
 
+const STUBS_SRC_PATH = path.join(__dirname, 'stub-project', 'src');
+const STUBS_TSCONFIG_PATH = path.join(
+  __dirname,
+  'stub-project',
+  'tsconfig.json',
+);
+
 global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
   const app = new Application();
   app.options.addReader(new TypeDocReader());
@@ -22,33 +30,21 @@ global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
     entryPoints:
       entryPoints.length > 0
         ? entryPoints.map((inputFile: string) =>
-            path.join(__dirname, './stubs/src/' + inputFile),
+            path.join(STUBS_SRC_PATH, inputFile),
           )
-        : ['./test/stubs/src'],
-    tsconfig: path.join(__dirname, 'stubs', 'tsconfig.json'),
+        : [STUBS_SRC_PATH],
+    tsconfig: STUBS_TSCONFIG_PATH,
     ...options,
     plugin: [
-      ...[
-        path.join(
-          __dirname,
-          '..',
-          'packages',
-          'typedoc-plugin-markdown',
-          'dist',
-        ),
-        'typedoc-plugin-mdn-links',
-      ],
+      ...['typedoc-plugin-markdown', 'typedoc-plugin-mdn-links'],
       ...(options.plugin ? options.plugin : []),
     ],
   });
 
   const project = app.convert() as ProjectReflection;
-  const renderer = app.renderer;
-  //this.tmpobj = tmp.dirSync();
   app.renderer.render = render;
   await app.generateDocs(project, 'docs');
   return project;
-  // const theme = this.app.renderer.theme as MarkdownTheme;
 };
 
 global.stubPartials = (partials: string[]) => {
@@ -66,7 +62,6 @@ global.stubHelpers = (helpers: string[]) => {
 global.getTemplate = (name: string) => {
   const templateDir = path.resolve(
     __dirname,
-    '..',
     'packages',
     'typedoc-plugin-markdown',
     'dist',
@@ -80,7 +75,6 @@ global.getTemplate = (name: string) => {
 global.getPartial = (name: string) => {
   const partialDir = path.resolve(
     __dirname,
-    '..',
     'packages',
     'typedoc-plugin-markdown',
     'dist',

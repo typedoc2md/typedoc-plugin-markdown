@@ -5,7 +5,7 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
   },
   verbose: true,
-  setupFiles: [path.join(__dirname, 'test/jest-helpers.ts')],
+  setupFiles: [path.join(__dirname, 'jest.helpers.ts')],
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.test.json',

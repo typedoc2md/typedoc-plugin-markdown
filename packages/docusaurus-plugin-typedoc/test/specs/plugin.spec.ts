@@ -7,9 +7,9 @@ tmp.setGracefulCleanup();
 async function bootstrap(tmpobj: tmp.DirResult, customOptions = {}) {
   const options = {
     id: 'default',
-    logger: 'none',
-    entryPoints: ['../../test/stubs/src/theme.ts'],
-    tsconfig: '../../test/stubs/tsconfig.json',
+    // logger: 'none',
+    entryPoints: ['../../stub-project/src/theme.ts'],
+    tsconfig: '../../stub-project/tsconfig.json',
   } as any;
 
   const plugin = typedocPlugin(

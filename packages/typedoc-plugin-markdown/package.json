@@ -14,8 +14,8 @@
     "test": "jest --colors",
     "build-and-test": "yarn run build && yarn run test",
     "docs": "yarn run build && yarn run docs:md && yarn run docs:html",
-    "docs:md": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-mdn-links --options ../../test/typedoc-options.json --out ./docs/md",
-    "docs:html": "typedoc --options ../../test/typedoc-options.json --plugin typedoc-plugin-mdn-links --out ./docs/html"
+    "docs:md": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-mdn-links --options ../../stub-project/typedoc-options.json --out ./docs/md",
+    "docs:html": "typedoc --options ../../stub-project/typedoc-options.json --plugin typedoc-plugin-mdn-links --out ./docs/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",

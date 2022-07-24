@@ -1,6 +1,0 @@
-{
-  "entryPoints": ["./stubs/src/index.ts"],
-  "includes": "./stubs/inc/",
-  "media": "./stubs/media/",
-  "tsconfig": "./stubs/tsconfig.json"
-}
