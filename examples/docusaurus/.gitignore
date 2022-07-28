@@ -3,6 +3,7 @@
 
 # Production
 /build
+api
 
 # Generated files
 .docusaurus
@@ -18,11 +19,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Ignore
-/static
-/src
-/blog
-/docs
-README.md
-
