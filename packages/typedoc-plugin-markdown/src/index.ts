@@ -75,6 +75,13 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
+    help: '[Markdown Plugin] Do not show the reflection type in the page title',
+    name: 'hideReflectionKindInTitle',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
     help: '[Markdown Plugin] Preserve anchor casing when generating links.',
     name: 'preserveAnchorCasing',
     type: ParameterType.Boolean,
