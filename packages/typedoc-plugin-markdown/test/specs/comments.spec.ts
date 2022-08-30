@@ -56,4 +56,13 @@ describe(`Comments:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  test(`should convert comments with includes'`, () => {
+    expect(
+      global.compileTemplate(
+        partial,
+        project.getChildByName('commentsWithIncludes'),
+      ),
+    ).toMatchSnapshot();
+  });
 });

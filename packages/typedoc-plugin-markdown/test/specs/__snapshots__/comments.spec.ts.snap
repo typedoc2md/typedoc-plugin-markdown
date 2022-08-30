@@ -32,6 +32,13 @@ anotherFunction()
 "
 `;
 
+exports[`Comments: should convert comments with includes' 1`] = `
+"This is an example of include
+
+This is an example of handlebars include
+"
+`;
+
 exports[`Comments: should convert comments with tags' 1`] = `
 "**\`Description\`**
 
