@@ -6,7 +6,11 @@ export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
     'attemptExternalResolution',
     function (type: ReferenceType) {
-      return theme.owner.attemptExternalResolution(type);
+      if (theme.owner.attemptExternalResolution) {
+        return theme.owner.attemptExternalResolution(type);
+      } else {
+        return type.externalUrl;
+      }
     },
   );
 }
