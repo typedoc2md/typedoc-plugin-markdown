@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.13.6](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.5...typedoc-plugin-markdown@3.13.6) (2022-09-04)
+
+### Fixes
+
+- Replace deprecated 'attemptExternalResolution' [(#344)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/344)
+
+### Fixes
+
 ## [3.13.5](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.4...typedoc-plugin-markdown@3.13.5) (2022-08-30)
 
 ### Fixes
