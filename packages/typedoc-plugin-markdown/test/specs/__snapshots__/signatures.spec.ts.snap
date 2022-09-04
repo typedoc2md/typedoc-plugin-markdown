@@ -140,7 +140,7 @@ FOO
 | \`__namedParameters\` | \`Object\` | various options |
 | \`__namedParameters.bar?\` | \`number\` | - |
 | \`__namedParameters.foo?\` | \`number\` | - |
-| \`anotherParam\` | \`string\` | - |
+| \`anotherParam\` | \`string\` | Another param comment |
 
 ##### Returns
 
