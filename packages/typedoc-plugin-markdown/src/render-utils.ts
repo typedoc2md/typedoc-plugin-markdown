@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as Handlebars from 'handlebars';
 import * as path from 'path';
-import attemptExternalResolution from './resources/helpers/attemptExternalResolution';
 import breadcrumbsHelper from './resources/helpers/breadcrumbs';
 import commentHelper from './resources/helpers/comment';
 import commentsHelper from './resources/helpers/comments';
@@ -57,7 +56,6 @@ export function registerPartials() {
 }
 
 export function registerHelpers(theme: MarkdownTheme) {
-  attemptExternalResolution(theme);
   breadcrumbsHelper(theme);
   commentHelper(theme);
   commentsHelper();
