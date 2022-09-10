@@ -31,7 +31,7 @@ import { MarkdownThemeRenderContext } from './theme-context';
 import { Collapse } from './types';
 import { memberTemplate } from './templates/member';
 import { projectTemplate } from './templates/project';
-import { readmeTemplate } from './templates/readm3';
+import { readmeTemplate } from './templates/readme';
 import { reflectionTemplate } from './templates/reflection';
 import { breadcrumbs } from './partials/breadcrumbs';
 import { commentParts } from './partials/comment.parts';
