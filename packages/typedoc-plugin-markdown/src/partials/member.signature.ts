@@ -34,19 +34,22 @@ export function signatureMember(
     md.push(bold('Returns'));
     md.push(context.partials.someType(signature.type, 'all'));
 
+    if (signature.comment?.blockTags.length) {
+      const tags = signature.comment.blockTags
+        .filter((tag) => tag.tag === '@returns')
+        .map((tag) => context.partials.commentParts(tag.content));
+      md.push(tags.join('\n\n'));
+    }
+
     if (typeDeclaration?.signatures) {
       typeDeclaration.signatures.forEach((signature) => {
         md.push(context.partials.signatureMember(signature));
       });
     }
 
-    md.push('After signatures');
-
     if (typeDeclaration?.children) {
       md.push(context.partials.propertiesTable(typeDeclaration.children));
     }
-
-    md.push('After children');
   }
 
   return md.join('\n\n');
