@@ -40,9 +40,13 @@ export function signatureMember(
       });
     }
 
+    md.push('After signatures');
+
     if (typeDeclaration?.children) {
       md.push(context.partials.propertiesTable(typeDeclaration.children));
     }
+
+    md.push('After children');
   }
 
   return md.join('\n\n');
