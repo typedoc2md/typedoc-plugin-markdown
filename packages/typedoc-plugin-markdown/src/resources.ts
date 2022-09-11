@@ -1,37 +1,38 @@
-import { 
- ArrayType,
- ConditionalType,
- ContainerReflection,
- Comment,
- CommentDisplayPart,
- DeclarationHierarchy,
- DeclarationReflection,
- InferredType,
- IntersectionType,
- IntrinsicType,
- IndexedAccessType,
- LiteralType,
- PageEvent,
- ParameterReflection,
- ProjectReflection,
- QueryType,
- ReflectionGroup,
- ReferenceReflection,
- ReferenceType,
- ReflectionType,
- SignatureReflection,
- SomeType,
- TupleType,
- TypeOperatorType,
- TypeParameterReflection,
- UnionType,
- UnknownType } from 'typedoc';
+import {
+  ArrayType,
+  ConditionalType,
+  ContainerReflection,
+  Comment,
+  CommentDisplayPart,
+  DeclarationHierarchy,
+  DeclarationReflection,
+  InferredType,
+  IntersectionType,
+  IntrinsicType,
+  IndexedAccessType,
+  LiteralType,
+  PageEvent,
+  ParameterReflection,
+  ProjectReflection,
+  QueryType,
+  ReflectionGroup,
+  ReferenceReflection,
+  ReferenceType,
+  ReflectionType,
+  SignatureReflection,
+  SomeType,
+  TupleType,
+  TypeOperatorType,
+  TypeParameterReflection,
+  UnionType,
+  UnknownType,
+} from 'typedoc';
 
 import { MarkdownThemeRenderContext } from './theme-context';
 import { Collapse } from './types';
 import { memberTemplate } from './templates/member';
 import { projectTemplate } from './templates/project';
-import { readmeTemplate } from './templates/readm3';
+import { readmeTemplate } from './templates/readme';
 import { reflectionTemplate } from './templates/reflection';
 import { breadcrumbs } from './partials/breadcrumbs';
 import { commentParts } from './partials/comment.parts';
@@ -83,20 +84,27 @@ export type Templates = {
 };
 
 export type Partials = {
-  breadcrumbs: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
+  breadcrumbs: (
+    page: PageEvent<DeclarationReflection | ProjectReflection>,
+  ) => string;
   commentParts: (parts: CommentDisplayPart[]) => string;
   comment: (comment: Comment) => string;
   header: (page: PageEvent<DeclarationReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
   constructorMember: (signature: SignatureReflection) => string;
-  declarationMemberTitle: (reflection: DeclarationReflection | ParameterReflection) => string;
+  declarationMemberTitle: (
+    reflection: DeclarationReflection | ParameterReflection,
+  ) => string;
   declarationMember: (reflection: DeclarationReflection) => string;
   referenceMember: (props: ReferenceReflection) => string;
   signatureTitle: (signature: SignatureReflection) => string;
   signatureMember: (signature: SignatureReflection) => string;
   member: (reflection: DeclarationReflection) => string;
   members: (container: ContainerReflection) => string;
-  reflectionTitle: (reflection: DeclarationReflection, shouldEscape?: boolean) => string;
+  reflectionTitle: (
+    reflection: DeclarationReflection,
+    shouldEscape?: boolean,
+  ) => string;
   reflection: (reflection: DeclarationReflection) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
@@ -105,7 +113,10 @@ export type Partials = {
   toc: (reflection: DeclarationReflection | ProjectReflection) => string;
   arrayType: (arrayType: ArrayType, emphasis: boolean) => string;
   conditionalType: (conditionalType: ConditionalType) => string;
-  declarationType: (declarationReflection: DeclarationReflection, collapse?: Collapse) => string;
+  declarationType: (
+    declarationReflection: DeclarationReflection,
+    collapse?: Collapse,
+  ) => string;
   functionType: (modelSignatures: SignatureReflection[]) => string;
   indexAccessType: (model: IndexedAccessType) => string;
   inferredType: (model: InferredType) => string;
@@ -114,8 +125,15 @@ export type Partials = {
   literalType: (literalType: LiteralType) => string;
   queryType: (queryType: QueryType) => string;
   referenceType: (referenceType: ReferenceType) => string;
-  reflectionType: (reflectionType: ReflectionType, collapse: Collapse) => string;
-  someType: (someType: SomeType, collapse?: Collapse, emphasis?: boolean) => string;
+  reflectionType: (
+    reflectionType: ReflectionType,
+    collapse: Collapse,
+  ) => string;
+  someType: (
+    someType: SomeType,
+    collapse?: Collapse,
+    emphasis?: boolean,
+  ) => string;
   tupleType: (tupleType: TupleType) => string;
   typeOperatorType: (model: TypeOperatorType) => string;
   unionType: (unionType: UnionType, emphasis: boolean) => string;
