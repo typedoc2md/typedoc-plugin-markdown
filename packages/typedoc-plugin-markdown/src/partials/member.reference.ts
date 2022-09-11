@@ -12,8 +12,11 @@ export function referenceMember(
   }
 
   if (props.name === referenced.name) {
-    return `Re-exports <a href="${context.urlTo(referenced)}">${referenced.name}</a>`;
+    return `Re-exports [${referenced.name}](${context.urlTo(referenced)})`;
   }
 
-  return `Renames and re-exports <a href="${context.urlTo(referenced)}">${referenced.name}</a>`;
+  return `Renames and re-exports [${referenced.name}](${context.urlTo(
+    referenced,
+  )})
+  }`;
 }
