@@ -36,12 +36,12 @@ export function members(
             .forEach((groupChild, index) => {
               md.push(context.partials.member(groupChild));
               if (index !== group.children.length - 1) {
-                md.push(horizontalRule());
+                md.push(horizontalRule(context));
               }
             });
           if (container.groups && container.groups.length) {
             if (groupIndex !== container.groups.length - 1) {
-              md.push(horizontalRule());
+              md.push(horizontalRule(context));
             }
           }
         }

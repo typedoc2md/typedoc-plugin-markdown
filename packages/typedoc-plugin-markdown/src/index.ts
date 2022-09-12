@@ -60,6 +60,13 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
+    help: '[Markdown Plugin] Do not render horizontal divider between content.',
+    name: 'hideHorizontalDivider',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
     help: '[Markdown Plugin] Preserve anchor casing when generating links.',
     name: 'preserveAnchorCasing',
     type: ParameterType.Boolean,

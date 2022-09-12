@@ -1,3 +1,5 @@
+import { MarkdownThemeRenderContext } from './theme-context';
+
 export const heading = (level: number, text: string) =>
   `${[...Array(level)].map(() => '#').join('')} ${text}`;
 
@@ -11,7 +13,15 @@ export const backTicks = (text: string) => `\`${text}\``;
 export const unorderedList = <T>(items: T[]) =>
   items.map((item) => `- ${item}`).join('\n');
 
-export const horizontalRule = () => '\n\n---';
+export function horizontalRule(context: MarkdownThemeRenderContext) {
+  const hideHorizontalDivider = context.getOption('hideHorizontalDivider');
+
+  if (hideHorizontalDivider) {
+    return '\n\n';
+  } else {
+    return '\n\n---';
+  }
+}
 
 export const table = (headers: string[], rows: string[][]) =>
   `\n| ${headers.join(' | ')} |\n| ${headers

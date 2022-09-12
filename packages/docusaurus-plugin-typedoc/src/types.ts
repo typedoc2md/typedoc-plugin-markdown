@@ -15,6 +15,7 @@ export interface PluginOptions {
   hideBreadcrumbs: boolean;
   hidePageTitle: boolean;
   embedHeadingsInCodeBlock: boolean;
+  hideHorizontalDivider: boolean;
   entryDocument: string;
   includeExtension?: boolean;
   indexSlug?: string;

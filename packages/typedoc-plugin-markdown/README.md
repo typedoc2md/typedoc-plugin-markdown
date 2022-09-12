@@ -40,6 +40,8 @@ Do not render breadcrumbs in template header. Defaults to `false`.
   Do not render breadcrumbs in template header. Defaults to `false`.
 - **`--hideInPageTOC`**<br>
   Do not add special symbols for class members. Defaults to `false`.
+- **`--hideHorizontalDivider`**<br>
+  Do not render horizontal divider between content. Defaults to `false`.
 - **`--hasOwnDocument`**<br>
   Determines which symbols should be hoisted to their own document. Expected values are `None`, `All` OR Array of `['class', 'interface', 'enum', 'function', 'variable', 'type']` Defaults to `None` (all symbols included in a single module page). See [directory strategy]().
 - **`--namedAnchors`**<br>
