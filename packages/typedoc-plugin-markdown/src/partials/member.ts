@@ -3,7 +3,7 @@ import {
   ReferenceReflection,
   ReflectionKind,
 } from 'typedoc';
-import { heading } from '../els';
+import { heading, backTicks } from '../els';
 import { getTeritiaryHeadingLevel, isConstructor } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -20,9 +20,18 @@ export function member(
   }
 
   if (!reflection.hasOwnDocument) {
-    md.push(
-      heading(headingLevel, context.partials.reflectionTitle(reflection)),
-    );
+    if (context.getOption('embedTitleInCodeBlocks')) {
+      md.push(
+        heading(
+          headingLevel,
+          backTicks(context.partials.reflectionTitle(reflection)),
+        ),
+      );
+    } else {
+      md.push(
+        heading(headingLevel, context.partials.reflectionTitle(reflection)),
+      );
+    }
   }
 
   if (

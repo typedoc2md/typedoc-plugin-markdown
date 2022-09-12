@@ -53,6 +53,13 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
+    help: '[Markdown Plugin] Wraps the heading of a reflection in a code block.',
+    name: 'embedTitleInCodeBlocks',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
     help: '[Markdown Plugin] Preserve anchor casing when generating links.',
     name: 'preserveAnchorCasing',
     type: ParameterType.Boolean,
