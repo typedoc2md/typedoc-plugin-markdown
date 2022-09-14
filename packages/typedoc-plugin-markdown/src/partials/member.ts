@@ -20,7 +20,7 @@ export function member(
   }
 
   if (!reflection.hasOwnDocument) {
-    if (context.getOption('embedTitleInCodeBlocks')) {
+    if (context.getOption('embedHeadingsInCodeBlock')) {
       md.push(
         heading(
           headingLevel,
