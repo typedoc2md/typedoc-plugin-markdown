@@ -24,7 +24,7 @@ export function member(
       md.push(
         heading(
           headingLevel,
-          backTicks(context.partials.reflectionTitle(reflection)),
+          backTicks(context.partials.reflectionTitle(reflection, false)),
         ),
       );
     } else {
