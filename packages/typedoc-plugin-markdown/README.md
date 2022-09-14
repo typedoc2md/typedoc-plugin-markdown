@@ -44,6 +44,8 @@ Do not render breadcrumbs in template header. Defaults to `false`.
   Determines which symbols should be hoisted to their own document. Expected values are `None`, `All` OR Array of `['class', 'interface', 'enum', 'function', 'variable', 'type']` Defaults to `None` (all symbols included in a single module page). See [directory strategy]().
 - **`--namedAnchors`**<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
+- **`--embedHeadingsInCodeBlock`**<br>
+  Wraps the heading of a reflection in a code block. Defaults to `false`.
 
 ## License
 
