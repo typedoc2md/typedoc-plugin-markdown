@@ -24,10 +24,6 @@ export class MarkdownThemeRenderContext {
     return this.options.getValue(name) as TypedocPluginMarkdownOptions[K];
   }
 
-  attemptExternalResolution = (type: ReferenceType) => {
-    return this.theme.owner.attemptExternalResolution(type);
-  };
-
   urlTo = (reflection: Reflection) => this.relativeURL(reflection.url);
 
   relativeURL(url: string | undefined) {

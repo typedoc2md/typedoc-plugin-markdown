@@ -6,7 +6,6 @@ export function referenceType(
   context: MarkdownThemeRenderContext,
   referenceType: ReferenceType,
 ) {
-  const externalUrl = context.attemptExternalResolution(referenceType);
   if (
     referenceType.reflection ||
     (referenceType.name && referenceType.typeArguments)
@@ -21,8 +20,8 @@ export function referenceType(
       );
     } else {
       reflection.push(
-        externalUrl
-          ? `[${backTicks(referenceType.name)}]( ${externalUrl} )`
+        referenceType.externalUrl
+          ? `[${backTicks(referenceType.name)}]( ${referenceType.externalUrl} )`
           : backTicks(referenceType.name),
       );
     }
@@ -35,7 +34,7 @@ export function referenceType(
     }
     return reflection.join('');
   }
-  return externalUrl
-    ? `[${backTicks(referenceType.name)}]( ${externalUrl} )`
+  return referenceType.externalUrl
+    ? `[${backTicks(referenceType.name)}]( ${referenceType.externalUrl} )`
     : backTicks(referenceType.name);
 }
