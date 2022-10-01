@@ -22,6 +22,8 @@ npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
 ### Config
 
 Add the plugin to `docusaurus.config.js` and specify the required options (see [options](#options)).
+You may also generate documentation with the `docusaurus generate-typedoc` command which does not require a full build.
+This can be useful for generating documentation in CI.
 
 ```js
 module.exports = {
@@ -44,6 +46,7 @@ TypeDoc will be bootstraped with the Docusaurus `start` and `build` [cli command
 ```javascript
 "start": "docusaurus start",
 "build": "docusaurus build",
+"generate-typedoc": "docusaurus generate-typedoc",
 ```
 
 Once built the docs will be available at `/docs/api` (or equivalent out directory).

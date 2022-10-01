@@ -54,5 +54,15 @@ export default function pluginDocusaurus(
         }
       }
     },
+    extendCli(cli) {
+      cli
+        .command('generate-typedoc')
+        .description(
+          'Uses the docusaurus-plugin-typedoc to generate docs without a requiring full build',
+        )
+        .action(async () => {
+          await this.loadContent();
+        });
+    },
   };
 }
