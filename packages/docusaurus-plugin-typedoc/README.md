@@ -101,6 +101,7 @@ Options specific to the plugin should also be declared in the same object.
 | `includeExtension`      | `true`  | Determines whether to preserve the `.md` extension in relative links. `true` is recommended as per [Docusaurus documentation](https://docusaurus.io/docs/docs-markdown-features#referencing-other-documents) |
 | `frontmatter`           | `null`  | Additional frontmatter options object. See [Frontmatter](#frontmatter).                                                                                                                                      |
 | `sidebar.categoryLabel` | `API`   | The sidebar parent category label.                                                                                                                                                                           |
+| `sidebar.collapsed`     | `true`  | Whether the parent category is initially collapsed                                                                                                                                                                     |
 | `sidebar.fullNames`     | `false` | Display full names with module path.                                                                                                                                                                         |
 | `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                                                                                                                                                                     |
 
@@ -121,6 +122,7 @@ module.exports = {
         out: 'api-xyz',
         sidebar: {
           categoryLabel: 'API XYZ',
+          collapsed: false,
           position: 0,
           fullNames: true,
         },
@@ -153,7 +155,7 @@ module.exports = {
 
 2. Alternatively, if you wish to manually control other parts of your sidebar you can use a slice for the TypeDoc sidebar.
 
-> note: `sidebar.categoryLabel` and `sidebar.position` options are ignored with this implementation)
+> note: `sidebar.categoryLabel`, `sidebar.collapsed`, and `sidebar.position` options are ignored with this implementation)
 
 ```js
 module.exports = {

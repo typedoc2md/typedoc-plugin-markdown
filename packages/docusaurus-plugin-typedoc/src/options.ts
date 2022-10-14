@@ -8,6 +8,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     categoryLabel: 'API',
+    collapsed: true,
     indexLabel: undefined,
     readmeLabel: 'Readme',
     position: null,

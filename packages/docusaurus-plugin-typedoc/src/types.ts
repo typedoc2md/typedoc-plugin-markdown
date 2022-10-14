@@ -29,6 +29,7 @@ export type FrontMatter =
 export interface SidebarOptions {
   fullNames?: boolean;
   categoryLabel: string;
+  collapsed: boolean;
   indexLabel?: string;
   readmeLabel?: string;
   position: number | null;

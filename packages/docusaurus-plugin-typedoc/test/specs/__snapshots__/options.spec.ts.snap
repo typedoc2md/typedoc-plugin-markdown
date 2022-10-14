@@ -4,6 +4,7 @@ exports[`Options: should merge custom sidebar options 1`] = `
 Object {
   "autoConfiguration": true,
   "categoryLabel": "API",
+  "collapsed": true,
   "fullNames": true,
   "indexLabel": "Custom index",
   "position": null,
@@ -40,6 +41,7 @@ Object {
   "sidebar": Object {
     "autoConfiguration": true,
     "categoryLabel": "API",
+    "collapsed": true,
     "fullNames": false,
     "indexLabel": undefined,
     "position": null,
