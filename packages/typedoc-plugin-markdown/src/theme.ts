@@ -21,6 +21,7 @@ import {
   registerPartials,
 } from './render-utils';
 import { formatContents } from './utils';
+export type ObjectLiteralDeclarationStyle = "table" | "list"
 
 export class MarkdownTheme extends Theme {
   allReflectionsHaveOwnDocument!: boolean;
@@ -39,7 +40,7 @@ export class MarkdownTheme extends Theme {
   out!: string;
   publicPath!: string;
   preserveAnchorCasing!: boolean;
-
+  objectLiteralTypeDeclarationStyle: ObjectLiteralDeclarationStyle;
   project?: ProjectReflection;
   reflection?: DeclarationReflection;
   location!: string;
@@ -69,6 +70,7 @@ export class MarkdownTheme extends Theme {
     this.preserveAnchorCasing = this.getOption(
       'preserveAnchorCasing',
     ) as boolean;
+    this.objectLiteralTypeDeclarationStyle = this.getOption("objectLiteralTypeDeclarationStyle") as ObjectLiteralDeclarationStyle;
 
     this.listenTo(this.owner, {
       [RendererEvent.BEGIN]: this.onBeginRenderer,

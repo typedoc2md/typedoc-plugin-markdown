@@ -16,7 +16,7 @@ import ifShowReturnsHelper from './resources/helpers/if-show-returns';
 import ifShowTypeHierarchyHelper from './resources/helpers/if-show-type-hierarchy';
 import indexSignatureTitleHelper from './resources/helpers/index-signature-title';
 import parameterTableHelper from './resources/helpers/parameter-table';
-import propertyTableHelper from './resources/helpers/property-table';
+import objectLiteralMemberHelper from './resources/helpers/type-declaration-object-literal';
 import referenceMember from './resources/helpers/reference-member';
 import reflectionPathHelper from './resources/helpers/reflection-path';
 import reflectionTitleHelper from './resources/helpers/reflection-title';
@@ -71,7 +71,7 @@ export function registerHelpers(theme: MarkdownTheme) {
   ifShowTypeHierarchyHelper();
   indexSignatureTitleHelper();
   parameterTableHelper();
-  propertyTableHelper();
+  objectLiteralMemberHelper(theme);
   referenceMember();
   reflectionPathHelper();
   reflectionTitleHelper(theme);

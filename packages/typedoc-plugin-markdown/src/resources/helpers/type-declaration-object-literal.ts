@@ -1,21 +1,17 @@
 import * as Handlebars from 'handlebars';
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { escapeChars, stripLineBreaks } from '../../utils';
+import { MarkdownTheme } from "../../theme";
 
-export default function () {
+
+export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
-    'propertyTable',
+    'typeDeclarationMembers',
     function (this: DeclarationReflection[]) {
       const comments = this.map(
         (param) => !!param.comment?.hasVisibleComponent(),
       );
       const hasComments = !comments.every((value) => !value);
-
-      const headers = ['Name', 'Type'];
-
-      if (hasComments) {
-        headers.push('Description');
-      }
 
       const flattenParams = (current: any) => {
         return current.type?.declaration?.children?.reduce(
@@ -43,45 +39,91 @@ export default function () {
         [],
       );
 
-      const rows = properties.map((property) => {
-        const propertyType = getPropertyType(property);
-        const row: string[] = [];
-        const nameCol: string[] = [];
-        const name =
-          property.name.match(/[\\`\\|]/g) !== null
-            ? escapeChars(getName(property))
-            : `\`${getName(property)}\``;
-        nameCol.push(name);
-        row.push(nameCol.join(' '));
-        row.push(
-          Handlebars.helpers.type
-            .call(propertyType)
-            .replace(/(?<!\\)\|/g, '\\|'),
-        );
-
-        if (hasComments) {
-          const comments = getComments(property);
-          if (comments) {
-            row.push(
-              stripLineBreaks(Handlebars.helpers.comments(comments)).replace(
-                /\|/g,
-                '\\|',
-              ),
-            );
-          } else {
-            row.push('-');
+      let result = "";
+      switch (theme.objectLiteralTypeDeclarationStyle){
+        case "list": {
+          result = getListMarkdownContent(properties);
+          break;
+        }
+          case "table": {
+            result = getTableMarkdownContent(properties, hasComments);
+            break;
           }
         }
-        return `| ${row.join(' | ')} |\n`;
-      });
-
-      const output = `\n| ${headers.join(' | ')} |\n| ${headers
-        .map(() => ':------')
-        .join(' | ')} |\n${rows.join('')}`;
-
-      return output;
+      return result;
     },
   );
+}
+
+function getListMarkdownContent(properties: DeclarationReflection[]) {
+  const propertyDescriptions = properties.map((property) => {
+    const name = property.name.match(/[\\`\\|]/g) !== null
+      ? escapeChars(getName(property))
+      : `${getName(property)}`;
+
+    const propertyType = getPropertyType(property);
+    const propertyTypeStr = Handlebars.helpers.type
+      .call(propertyType);
+      
+    const comments = getComments(property);
+    const commentsStr = comments ? Handlebars.helpers.comments(comments) : "\\-";
+
+    let md = "";
+    md += ("**" + name + "**" + ": " + "" + propertyTypeStr + "" + "\n\n")
+    md += (commentsStr + "\n\n");
+    md += "-----\n\n"
+
+    return md;
+  });
+
+  const result = propertyDescriptions.join("\n\n");
+
+  return result;
+}
+
+function getTableMarkdownContent(properties: DeclarationReflection[], hasComments: boolean,) {
+
+  const headers = ['Name', 'Type'];
+
+  if (hasComments) {
+    headers.push('Description');
+  }
+  const rows = properties.map((property) => {
+    const propertyType = getPropertyType(property);
+    const row: string[] = [];
+    const nameCol: string[] = [];
+    const name =
+      property.name.match(/[\\`\\|]/g) !== null
+        ? escapeChars(getName(property))
+        : `\`${getName(property)}\``;
+    nameCol.push(name);
+    row.push(nameCol.join(' '));
+    row.push(
+      Handlebars.helpers.type
+        .call(propertyType)
+        .replace(/(?<!\\)\|/g, '\\|'),
+    );
+
+    if (hasComments) {
+      const comments = getComments(property);
+      if (comments) {
+        row.push(
+          stripLineBreaks(Handlebars.helpers.comments(comments)).replace(
+            /\|/g,
+            '\\|',
+          ),
+        );
+      } else {
+        row.push('-');
+      }
+    }
+    return `| ${row.join(' | ')} |\n`;
+  });
+
+  const output = `\n| ${headers.join(' | ')} |\n| ${headers
+    .map(() => ':------')
+    .join(' | ')} |\n${rows.join('')}`;
+  return output;
 }
 
 function getPropertyType(property: any) {
