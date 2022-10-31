@@ -56,6 +56,7 @@ export default function (theme: MarkdownTheme) {
 }
 
 function getListMarkdownContent(properties: DeclarationReflection[]) {
+  const propertyTable = getTableMarkdownContentWithoutComment(properties);
   const propertyDescriptions = properties.map((property) => {
     const name = property.name.match(/[\\`\\|]/g) !== null
       ? escapeChars(getName(property))
@@ -68,15 +69,28 @@ function getListMarkdownContent(properties: DeclarationReflection[]) {
     const comments = getComments(property);
     const commentsStr = comments ? Handlebars.helpers.comments(comments) : "\\-";
 
-    let md = "";
-    md += ("**" + name + "**" + ": " + "" + propertyTypeStr + "" + "\n\n")
-    md += (commentsStr + "\n\n");
-    md += "-----\n\n"
+    const md = (
+`**${name}**: ${propertyTypeStr}
+
+${commentsStr}
+
+-----
+
+
+`)
 
     return md;
   });
 
-  const result = propertyDescriptions.join("\n\n");
+  const propertyComments = propertyDescriptions.join("\n\n");
+
+  const result = 
+`
+${propertyTable}
+
+${propertyComments}
+
+`
 
   return result;
 }
@@ -124,6 +138,13 @@ function getTableMarkdownContent(properties: DeclarationReflection[], hasComment
     .map(() => ':------')
     .join(' | ')} |\n${rows.join('')}`;
   return output;
+}
+
+
+function getTableMarkdownContentWithoutComment(properties: DeclarationReflection[]){
+    
+  const result = getTableMarkdownContent(properties, false);
+  return result;
 }
 
 function getPropertyType(property: any) {

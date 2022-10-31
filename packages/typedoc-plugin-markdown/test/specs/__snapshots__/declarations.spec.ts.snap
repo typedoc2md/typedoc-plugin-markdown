@@ -17,6 +17,18 @@ description for valueY
 
 #### Type declaration
 
+| Name | Type |
+| :------ | :------ |
+| \`valueA\` | \`number\` |
+| \`valueB\` | \`boolean\` |
+| \`valueC\` | {} |
+| \`valueD\` | \`string\` |
+| \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueZ\`: \`string\` = 'foo' } |
+| \`valueX.valueA\` | \`number\`[] |
+| \`valueX.valueZ\` | \`string\` |
+| \`valueY\` | () => \`string\` |
+| \`valueZ\` | \`string\` |
+
 **valueA**: \`number\`
 
 Comment for valueA
@@ -89,6 +101,19 @@ exports[`Declarations: (Render Type Literal as List) should use correct list sty
 "• **typeLiteralDeclaration**: \`Object\`
 
 #### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| \`valueA?\` | \`number\` |
+| \`valueB?\` | \`boolean\` |
+| \`valueC\` | { \`[dataId: string]\`: \`\`\\"ok\\"\`\` \\\\| \`\`\\"ko\\"\`\`;  } |
+| \`valueD\` | \`unknown\` |
+| \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  } |
+| \`valueX.valueA\` | \`number\`[] |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } |
+| \`valueX.valueZ\` | \`string\` |
+| \`valueY\` | () => \`string\` |
+| \`valueZ\` | \`string\` |
 
 **valueA?**: \`number\`
 
