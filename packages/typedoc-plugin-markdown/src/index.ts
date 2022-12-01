@@ -80,6 +80,19 @@ export function load(app: Application) {
     type: ParameterType.Boolean,
     defaultValue: false,
   });
-}
 
+  
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Specify the Type Declaration Render Style',
+    name: 'objectLiteralTypeDeclarationStyle',
+    type: ParameterType.String,
+    defaultValue: "table",
+    validate: (x) => {
+      const availableValues = ["table", "list"];
+      if (!availableValues.includes(x)){
+        throw new Error(`Wrong value for objectLiteralTypeDeclarationStyle, the expected value is one of ${availableValues}`)
+      }
+    }
+  });
+}
 export { MarkdownTheme };

@@ -1,5 +1,194 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Declarations: (Render Type Literal as List) should use correct list style when using "list" option 1`] = `
+"• \`Const\` **objectLiteralDeclaration**: \`Object\`
+
+**\`Param\`**
+
+description for valueX
+
+**\`Param\`**
+
+description for valueZ
+
+**\`Param\`**
+
+description for valueY
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| \`valueA\` | \`number\` |
+| \`valueB\` | \`boolean\` |
+| \`valueC\` | {} |
+| \`valueD\` | \`string\` |
+| \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueZ\`: \`string\` = 'foo' } |
+| \`valueX.valueA\` | \`number\`[] |
+| \`valueX.valueZ\` | \`string\` |
+| \`valueY\` | () => \`string\` |
+| \`valueZ\` | \`string\` |
+
+**valueA**: \`number\`
+
+Comment for valueA
+
+-----
+
+**valueB**: \`boolean\`
+
+\\\\-
+
+-----
+
+**valueC**: {}
+
+\\\\-
+
+-----
+
+**valueD**: \`string\`
+
+Multiline Comments for valueD
+
+Multiline Comments for valueD - line2
+
+**\`Example\`**
+
+\`\`\`typescript
+console.log(\\"This is a multi line comment with code\\")
+console.log(\\"This is a multi line comment with code - line2\\")
+console.log(\\"This is a multi line comment with code - line3\\")
+\`\`\`
+
+-----
+
+**valueX**: { \`valueA\`: \`number\`[] ; \`valueZ\`: \`string\` = 'foo' }
+
+Comment for valueX
+
+-----
+
+**valueX.valueA**: \`number\`[]
+
+\\\\-
+
+-----
+
+**valueX.valueZ**: \`string\`
+
+\\\\-
+
+-----
+
+**valueY**: () => \`string\`
+
+Comment for value Y
+
+-----
+
+**valueZ**: \`string\`
+
+Comment for valueZ
+
+-----
+
+[partial: member.sources]
+"
+`;
+
+exports[`Declarations: (Render Type Literal as List) should use correct list style when using "list" option 2`] = `
+"• **typeLiteralDeclaration**: \`Object\`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| \`valueA?\` | \`number\` |
+| \`valueB?\` | \`boolean\` |
+| \`valueC\` | { \`[dataId: string]\`: \`\`\\"ok\\"\`\` \\\\| \`\`\\"ko\\"\`\`;  } |
+| \`valueD\` | \`unknown\` |
+| \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  } |
+| \`valueX.valueA\` | \`number\`[] |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } |
+| \`valueX.valueZ\` | \`string\` |
+| \`valueY\` | () => \`string\` |
+| \`valueZ\` | \`string\` |
+
+**valueA?**: \`number\`
+
+Comments for valueA
+
+-----
+
+**valueB?**: \`boolean\`
+
+\\\\-
+
+-----
+
+**valueC**: { \`[dataId: string]\`: \`\`\\"ok\\"\`\` \\\\| \`\`\\"ko\\"\`\`;  }
+
+\\\\-
+
+-----
+
+**valueD**: \`unknown\`
+
+Multiline Comments for valueD
+
+Multiline Comments for valueD - line2
+
+**\`Example\`**
+
+\`\`\`typescript
+console.log(\\"This is a multi line comment with code\\")
+console.log(\\"This is a multi line comment with code - line2\\")
+console.log(\\"This is a multi line comment with code - line3\\")
+\`\`\`
+
+-----
+
+**valueX**: { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  }
+
+Comment for valueX
+
+-----
+
+**valueX.valueA**: \`number\`[]
+
+\\\\-
+
+-----
+
+**valueX.valueY**: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  }
+
+\\\\-
+
+-----
+
+**valueX.valueZ**: \`string\`
+
+Nested comment for valueZ
+
+-----
+
+**valueY**: () => \`string\`
+
+\\\\-
+
+-----
+
+**valueZ**: \`string\`
+
+Comment for valueZ
+
+-----
+
+[partial: member.sources]
+"
+`;
+
 exports[`Declarations: should compile a const with default value 1`] = `
 "• \`Const\` **stringConstWithDefaultValue**: \`\`\\"hello\\"\`\`
 
@@ -165,6 +354,7 @@ description for valueY
 | \`valueA\` | \`number\` | Comment for valueA |
 | \`valueB\` | \`boolean\` | - |
 | \`valueC\` | {} | - |
+| \`valueD\` | \`string\` | Multiline Comments for valueD  Multiline Comments for valueD - line2  **\`Example\`**  \`\`\`typescript console.log(\\"This is a multi line comment with code\\") console.log(\\"This is a multi line comment with code - line2\\") console.log(\\"This is a multi line comment with code - line3\\") \`\`\` |
 | \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueZ\`: \`string\` = 'foo' } | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
 | \`valueX.valueZ\` | \`string\` | - |
@@ -185,6 +375,7 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 | \`valueA?\` | \`number\` | Comments for valueA |
 | \`valueB?\` | \`boolean\` | - |
 | \`valueC\` | { \`[dataId: string]\`: \`\`\\"ok\\"\`\` \\\\| \`\`\\"ko\\"\`\`;  } | - |
+| \`valueD\` | \`unknown\` | Multiline Comments for valueD  Multiline Comments for valueD - line2  **\`Example\`**  \`\`\`typescript console.log(\\"This is a multi line comment with code\\") console.log(\\"This is a multi line comment with code - line2\\") console.log(\\"This is a multi line comment with code - line3\\") \`\`\` |
 | \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  } | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
 | \`valueX.valueY\` | (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } | - |

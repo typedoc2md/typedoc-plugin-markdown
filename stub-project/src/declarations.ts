@@ -33,6 +33,21 @@ export const objectLiteralDeclaration = {
   valueA: 100,
   valueB: true,
   valueC: {},
+
+  /**
+   * Multiline Comments for valueD
+   * 
+   * Multiline Comments for valueD - line2
+   * 
+   * @example
+   * ```typescript
+   * console.log("This is a multi line comment with code")
+   * console.log("This is a multi line comment with code - line2")
+   * console.log("This is a multi line comment with code - line3")
+   * ```
+   * 
+   */
+    valueD: "ko"
 };
 
 export let typeLiteralDeclaration: {
@@ -58,6 +73,21 @@ export let typeLiteralDeclaration: {
   valueA?: number;
   valueB?: boolean;
   valueC: { [dataId: string]: 'ok' | 'ko' };
+
+  /**
+   * Multiline Comments for valueD
+   * 
+   * Multiline Comments for valueD - line2
+   * 
+   * @example
+   * ```typescript
+   * console.log("This is a multi line comment with code")
+   * console.log("This is a multi line comment with code - line2")
+   * console.log("This is a multi line comment with code - line3")
+   * ```
+   * 
+   */
+  valueD: unknown;
 };
 
 export let functionDeclaration: (someArg: number) => boolean;
