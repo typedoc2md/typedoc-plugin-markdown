@@ -1,8 +1,7 @@
 import * as Handlebars from 'handlebars';
 import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { MarkdownTheme } from '../../theme';
 import { escapeChars, stripLineBreaks } from '../../utils';
-import { MarkdownTheme } from "../../theme";
-
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
@@ -39,17 +38,17 @@ export default function (theme: MarkdownTheme) {
         [],
       );
 
-      let result = "";
-      switch (theme.objectLiteralTypeDeclarationStyle){
-        case "list": {
+      let result = '';
+      switch (theme.objectLiteralTypeDeclarationStyle) {
+        case 'list': {
           result = getListMarkdownContent(properties);
           break;
         }
-          case "table": {
-            result = getTableMarkdownContent(properties, hasComments);
-            break;
-          }
+        case 'table': {
+          result = getTableMarkdownContent(properties, hasComments);
+          break;
         }
+      }
       return result;
     },
   );
@@ -58,45 +57,47 @@ export default function (theme: MarkdownTheme) {
 function getListMarkdownContent(properties: DeclarationReflection[]) {
   const propertyTable = getTableMarkdownContentWithoutComment(properties);
   const propertyDescriptions = properties.map((property) => {
-    const name = property.name.match(/[\\`\\|]/g) !== null
-      ? escapeChars(getName(property))
-      : `${getName(property)}`;
+    const name =
+      property.name.match(/[\\`\\|]/g) !== null
+        ? escapeChars(getName(property))
+        : `${getName(property)}`;
 
     const propertyType = getPropertyType(property);
-    const propertyTypeStr = Handlebars.helpers.type
-      .call(propertyType);
-      
-    const comments = getComments(property);
-    const commentsStr = comments ? Handlebars.helpers.comments(comments) : "\\-";
+    const propertyTypeStr = Handlebars.helpers.type.call(propertyType);
 
-    const md = (
-`**${name}**: ${propertyTypeStr}
+    const comments = getComments(property);
+    const commentsStr = comments
+      ? Handlebars.helpers.comments(comments)
+      : '\\-';
+
+    const md = `**${name}**: ${propertyTypeStr}
 
 ${commentsStr}
 
 -----
 
 
-`)
+`;
 
     return md;
   });
 
-  const propertyComments = propertyDescriptions.join("\n\n");
+  const propertyComments = propertyDescriptions.join('\n\n');
 
-  const result = 
-`
+  const result = `
 ${propertyTable}
 
 ${propertyComments}
 
-`
+`;
 
   return result;
 }
 
-function getTableMarkdownContent(properties: DeclarationReflection[], hasComments: boolean,) {
-
+function getTableMarkdownContent(
+  properties: DeclarationReflection[],
+  hasComments: boolean,
+) {
   const headers = ['Name', 'Type'];
 
   if (hasComments) {
@@ -113,9 +114,7 @@ function getTableMarkdownContent(properties: DeclarationReflection[], hasComment
     nameCol.push(name);
     row.push(nameCol.join(' '));
     row.push(
-      Handlebars.helpers.type
-        .call(propertyType)
-        .replace(/(?<!\\)\|/g, '\\|'),
+      Handlebars.helpers.type.call(propertyType).replace(/(?<!\\)\|/g, '\\|'),
     );
 
     if (hasComments) {
@@ -140,9 +139,9 @@ function getTableMarkdownContent(properties: DeclarationReflection[], hasComment
   return output;
 }
 
-
-function getTableMarkdownContentWithoutComment(properties: DeclarationReflection[]){
-    
+function getTableMarkdownContentWithoutComment(
+  properties: DeclarationReflection[],
+) {
   const result = getTableMarkdownContent(properties, false);
   return result;
 }
@@ -191,7 +190,7 @@ function getComments(property: DeclarationReflection) {
       return property.type?.declaration.signatures[0].comment;
     }
   }
-  if (property.signatures) {
+  if (property.signatures?.length) {
     return property.signatures[0].comment;
   }
   return property.comment;
