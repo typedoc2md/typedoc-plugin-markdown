@@ -58,11 +58,22 @@ function table(parameters: any) {
   const rows = parameters.map((parameter) => {
     const row: string[] = [];
 
-    row.push(
-      `\`${parameter.flags.isRest ? '...' : ''}${parameter.name}${
-        parameter.flags.isOptional ? '?' : ''
-      }\``,
+    const nbsp = ' '; // ? <== Unicode no-break space character
+    const rest = parameter.flags.isRest ? '...' : '';
+    const optional = parameter.flags.isOptional ? '?' : '';
+
+    const isDestructuredParam = parameter.name == '__namedParameters';
+    const isDestructuredParamProp = parameter.name.startsWith(
+      '__namedParameters.',
     );
+
+    if (isDestructuredParam) {
+      row.push(`\`${rest}«destructured»\``);
+    } else if (isDestructuredParamProp) {
+      row.push(`›${nbsp}\`${rest}${parameter.name.slice(18)}${optional}\``);
+    } else {
+      row.push(`\`${rest}${parameter.name}${optional}\``);
+    }
 
     row.push(
       parameter.type

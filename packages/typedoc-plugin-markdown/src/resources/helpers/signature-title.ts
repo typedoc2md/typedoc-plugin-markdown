@@ -50,15 +50,11 @@ const getParameters = (
 ) => {
   return parameters
     .map((param) => {
-      const paramsmd: string[] = [];
-      if (param.flags.isRest) {
-        paramsmd.push('...');
-      }
-      const paramItem = `${param.name}${
-        param.flags.isOptional || param.defaultValue ? '?' : ''
-      }`;
-      paramsmd.push(backticks ? `\`${paramItem}\`` : paramItem);
-      return paramsmd.join('');
+      const isDestructuredParam = param.name == '__namedParameters';
+      const paramItem = `${param.flags.isRest ? '...' : ''}${
+        isDestructuredParam ? '«destructured»' : param.name
+      }${param.flags.isOptional || param.defaultValue ? '?' : ''}`;
+      return backticks ? `\`${paramItem}\`` : paramItem;
     })
     .join(', ');
 };
