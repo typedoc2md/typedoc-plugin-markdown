@@ -138,8 +138,8 @@ FOO
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`«destructured»\` | \`Object\` | various options |
-|  › \`bar?\` | \`number\` | - |
-|  › \`foo?\` | \`number\` | - |
+| › \`bar?\` | \`number\` | - |
+| › \`foo?\` | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
 
 ##### Returns
