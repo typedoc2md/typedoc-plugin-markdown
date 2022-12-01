@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Options: should merge custom sidebar options 1`] = `
-Object {
+{
   "autoConfiguration": true,
   "categoryLabel": "API",
   "collapsed": true,
@@ -13,17 +13,17 @@ Object {
 `;
 
 exports[`Options: should merge plugins 1`] = `
-Array [
+[
   "plugin-xyz",
 ]
 `;
 
 exports[`Options: should return default options 1`] = `
-Object {
+{
   "cleanOutputDir": true,
   "docsRoot": "docs",
   "entryDocument": "index.md",
-  "entryPoints": Array [
+  "entryPoints": [
     "entrypoint.ts",
   ],
   "frontmatter": undefined,
@@ -35,10 +35,10 @@ Object {
   "includeExtension": true,
   "indexSlug": undefined,
   "out": "api",
-  "plugin": Array [
+  "plugin": [
     "none",
   ],
-  "sidebar": Object {
+  "sidebar": {
     "autoConfiguration": true,
     "categoryLabel": "API",
     "collapsed": true,
