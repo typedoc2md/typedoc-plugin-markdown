@@ -138,4 +138,35 @@ describe(`Declarations:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  
+  describe(`(Render Type Literal as List)`, () => {
+    let project: ProjectReflection;
+
+    let template: Handlebars.TemplateDelegate;
+    beforeEach(async () => {
+      project = await global.bootstrap(['declarations.ts'], {
+        objectLiteralTypeDeclarationStyle: "list"
+      });
+      global.stubPartials(['member.sources']);
+      template = global.getPartial('member.declaration');
+    });
+
+    test(`should use correct list style when using "list" option`, async () => {
+      expect(
+        global.compileTemplate(
+          template,
+          project.getChildByName('objectLiteralDeclaration'),
+        ),
+      ).toMatchSnapshot();
+
+      expect(
+        global.compileTemplate(
+          template,
+          project.getChildByName('typeLiteralDeclaration'),
+        ),
+      ).toMatchSnapshot();
+    })
+  })
 });
+
