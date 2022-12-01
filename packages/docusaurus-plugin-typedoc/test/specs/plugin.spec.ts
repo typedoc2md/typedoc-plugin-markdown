@@ -31,7 +31,7 @@ describe(`Plugin:`, () => {
     let tmpobj;
     beforeAll(async () => {
       tmpobj = tmp.dirSync();
-      await bootstrap(tmpobj);
+      await bootstrap(tmpobj, { sidebar: { collapsed: false } });
     });
     test(`should render`, () => {
       const files = fs.readdirSync(tmpobj.name + '/docs/api');
@@ -48,6 +48,10 @@ describe(`Plugin:`, () => {
         tmpobj.name + '/docs/api/classes/_category_.yml',
       );
       expect(sidebar.toString()).toMatchSnapshot();
+      const parentSidebar = fs.readFileSync(
+        tmpobj.name + '/docs/api/_category_.yml',
+      );
+      expect(parentSidebar.toString()).toMatchSnapshot();
     });
   });
 });

@@ -80,6 +80,7 @@ export class DocusaurusTheme extends MarkdownTheme {
         renderer.outputDirectory,
         this.sidebar.categoryLabel,
         this.sidebar.position,
+        this.sidebar.collapsed,
       );
 
       Object.keys(groupUrlsByKind(this.getUrls(renderer.project))).forEach(
@@ -93,6 +94,7 @@ export class DocusaurusTheme extends MarkdownTheme {
               renderer.outputDirectory + '/' + mapping.directory,
               getKindPlural(kind),
               CATEGORY_POSITION[kind],
+              true,
             );
           }
         },
@@ -198,10 +200,14 @@ const writeCategoryYaml = (
   categoryPath: string,
   label: string,
   position: number | null,
+  collapsed: boolean,
 ) => {
   const yaml: string[] = [`label: "${label}"`];
   if (position !== null) {
     yaml.push(`position: ${position}`);
+  }
+  if (!collapsed) {
+    yaml.push(`collapsed: false`);
   }
   if (fs.existsSync(categoryPath)) {
     fs.writeFileSync(categoryPath + '/_category_.yml', yaml.join('\n'));
