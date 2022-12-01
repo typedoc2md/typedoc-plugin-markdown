@@ -17,6 +17,11 @@ exports[`Plugin: (docs) should write category yaml 1`] = `
 position: 3"
 `;
 
+exports[`Plugin: (docs) should write category yaml 2`] = `
+"label: \\"API\\"
+collapsed: false"
+`;
+
 exports[`Plugin: (docs) should write doc 1`] = `
 "---
 id: \\"index\\"
