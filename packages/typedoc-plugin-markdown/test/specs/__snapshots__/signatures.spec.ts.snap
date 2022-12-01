@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signatures: should compile a promise that returns a symbol' 1`] = `
-"▸ **promiseReturningASymbol**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[\`User\`](../modules.md#user)\\\\>
+"▸ **promiseReturningASymbol**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[\`User\`](../modules.md#user)\\>
 
 ##### Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[\`User\`](../modules.md#user)\\\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[\`User\`](../modules.md#user)\\>
 "
 `;
 
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
-"▸ **promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\\\>
+"▸ **promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 
 ##### Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 "
 `;
 
@@ -40,7 +40,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 `;
 
 exports[`Signatures: should compile function that returns a function' 1`] = `
-"▸ **functionReturningAFunction**(): <T\\\\>(\`x\`: \`string\`) => \`boolean\`
+"▸ **functionReturningAFunction**(): <T\\>(\`x\`: \`string\`) => \`boolean\`
 
 Comments for function
 
@@ -50,7 +50,7 @@ Comments for function
 
 Return comments
 
-▸ <\`T\`\\\\>(\`x\`): \`boolean\`
+▸ <\`T\`\\>(\`x\`): \`boolean\`
 
 ##### Type parameters
 
@@ -120,7 +120,7 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 
 | Name | Type |
 | :------ | :------ |
-| \`descriptor\` | \`TypedPropertyDescriptor\`<\`any\`\\\\> |
+| \`descriptor\` | \`TypedPropertyDescriptor\`<\`any\`\\> |
 
 ##### Returns
 
@@ -164,17 +164,17 @@ exports[`Signatures: should compile named parameters' 1`] = `
 `;
 
 exports[`Signatures: should compile pipes in params and comments' 1`] = `
-"▸ **functionWithPipesInParamsAndComments**(\`n\`): \`number\` \\\\| \`\`null\`\`
+"▸ **functionWithPipesInParamsAndComments**(\`n\`): \`number\` \\| \`\`null\`\`
 
 ##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`n\` | \`number\` | a\\\\|b |
+| \`n\` | \`number\` | a\\|b |
 
 ##### Returns
 
-\`number\` \\\\| \`\`null\`\`
+\`number\` \\| \`\`null\`\`
 "
 `;
 
@@ -283,8 +283,8 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 
 | Name | Type |
 | :------ | :------ |
-| \`arg\` | \`number\` \\\\| \`boolean\`[] |
-| \`...args\` | (\`string\` \\\\| \`number\`)[] |
+| \`arg\` | \`number\` \\| \`boolean\`[] |
+| \`...args\` | (\`string\` \\| \`number\`)[] |
 
 ##### Returns
 

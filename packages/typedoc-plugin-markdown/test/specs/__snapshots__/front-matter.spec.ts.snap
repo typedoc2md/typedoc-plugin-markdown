@@ -2,7 +2,7 @@
 
 exports[`FrontMatter: should prependYAML to doc content 1`] = `
 "---
-stringProp: \\"\\\\\\"Escaped\\\\\\" title\\"
+stringProp: "\\"Escaped\\" title"
 booleanProp: true
 numberProp: 2
 ---

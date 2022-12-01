@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-"• \`Const\` **stringConstWithDefaultValue**: \`\`\\"hello\\"\`\`
+"• \`Const\` **stringConstWithDefaultValue**: \`\`"hello"\`\`
 
 [partial: member.sources]
 "
@@ -22,7 +22,7 @@ exports[`Declarations: should compile an undefined declaration 1`] = `
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-"Ƭ **AnyFunctionType**<\`A\`\\\\>: (...\`input\`: \`any\`[]) => \`A\`
+"Ƭ **AnyFunctionType**<\`A\`\\>: (...\`input\`: \`any\`[]) => \`A\`
 
 #### Type parameters
 
@@ -62,7 +62,7 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 
 | Name | Type |
 | :------ | :------ |
-| \`get getMe()\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`string\`\\\\> |
+| \`get getMe()\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`string\`\\> |
 | \`set setMe(x:string)\` | \`void\` |
 
 [partial: member.sources]
@@ -70,7 +70,7 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
+"• \`Const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
 
 [partial: member.sources]
 "
@@ -84,7 +84,7 @@ exports[`Declarations: should compile enum declaration 1`] = `
 `;
 
 exports[`Declarations: should compile enum declaration with defaults 1`] = `
-"• **East** = \`\`\\"East\\"\`\`
+"• **East** = \`\`"East"\`\`
 
 [partial: member.sources]
 "
@@ -135,9 +135,9 @@ Comment for Prop2.
 
 | Name | Type |
 | :------ | :------ |
-| \`Prop1\` | \`\`\\"Prop1\\"\`\` |
-| \`Prop2\` | \`\`\\"Prop2\\"\`\` |
-| \`Prop3\` | \`\`\\"Prop3\\"\`\` |
+| \`Prop1\` | \`\`"Prop1"\`\` |
+| \`Prop2\` | \`\`"Prop2"\`\` |
+| \`Prop3\` | \`\`"Prop3"\`\` |
 
 [partial: member.sources]
 "
@@ -184,7 +184,7 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 | :------ | :------ | :------ |
 | \`valueA?\` | \`number\` | Comments for valueA |
 | \`valueB?\` | \`boolean\` | - |
-| \`valueC\` | { \`[dataId: string]\`: \`\`\\"ok\\"\`\` \\\\| \`\`\\"ko\\"\`\`;  } | - |
+| \`valueC\` | { \`[dataId: string]\`: \`\`"ok"\`\` \\| \`\`"ko"\`\`;  } | - |
 | \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  } | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
 | \`valueX.valueY\` | (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } | - |

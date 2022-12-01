@@ -27,7 +27,7 @@ exports[`TOC: (default) should display toc for module' 1`] = `
 
 ### Variables
 
-- [\\\\_answer](../modules.md#_answer)
+- [\\_answer](../modules.md#_answer)
 - [answer](../modules.md#answer-2)
 "
 `;

@@ -3,7 +3,7 @@
 exports[`Generics: should compile class with type params 1`] = `
 "[helper: breadcrumbs]
 
-# Class: ClassWithTypeParams<T, V\\\\>
+# Class: ClassWithTypeParams<T, V\\>
 
 [partial: comment]
 
@@ -21,7 +21,7 @@ exports[`Generics: should compile class with type params 1`] = `
 `;
 
 exports[`Generics: should compile function with a simple type param' 1`] = `
-"▸ **functionWithTypeParam**<\`A\`\\\\>(): \`boolean\`
+"▸ **functionWithTypeParam**<\`A\`\\>(): \`boolean\`
 
 [partial: comment]
 
@@ -38,7 +38,7 @@ exports[`Generics: should compile function with a simple type param' 1`] = `
 `;
 
 exports[`Generics: should compile function with complex type params' 1`] = `
-"▸ **functionWithTypeParams**<\`A\`, \`B\`, \`C\`\\\\>(): \`boolean\`
+"▸ **functionWithTypeParams**<\`A\`, \`B\`, \`C\`\\>(): \`boolean\`
 
 [partial: comment]
 
@@ -46,8 +46,8 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`A\` | extends [\`ClassWithTypeParams\`](ClassWithTypeParams.md)<\`string\`, \`number\`, \`A\`\\\\> | Comment for type \`A\` |
-| \`B\` | \`string\` \\\\| \`boolean\` | Comment for type \`B\` |
+| \`A\` | extends [\`ClassWithTypeParams\`](ClassWithTypeParams.md)<\`string\`, \`number\`, \`A\`\\> | Comment for type \`A\` |
+| \`B\` | \`string\` \\| \`boolean\` | Comment for type \`B\` |
 | \`C\` | \`string\` | - |
 
 ##### Returns
@@ -74,7 +74,7 @@ exports[`Generics: should compile generics with defaults' 1`] = `
 `;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-"Ƭ **nestedGenerics**: [\`Generic1\`](../modules.md#generic1)<[\`Generic2\`](../modules.md#generic2)<[\`Generic3\`](../modules.md#generic3)<\`string\`\\\\>\\\\>\\\\>
+"Ƭ **nestedGenerics**: [\`Generic1\`](../modules.md#generic1)<[\`Generic2\`](../modules.md#generic2)<[\`Generic3\`](../modules.md#generic3)<\`string\`\\>\\>\\>
 
 [partial: comment]
 
