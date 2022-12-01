@@ -129,7 +129,7 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 `;
 
 exports[`Signatures: should compile named parameters with comments' 1`] = `
-"▸ **functionWithNamedParamsAndComments**(\`__namedParameters?\`, \`anotherParam\`): \`void\`
+"▸ **functionWithNamedParamsAndComments**(\`«destructured»?\`, \`anotherParam\`): \`void\`
 
 FOO
 
@@ -137,9 +137,9 @@ FOO
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`__namedParameters\` | \`Object\` | various options |
-| \`__namedParameters.bar?\` | \`number\` | - |
-| \`__namedParameters.foo?\` | \`number\` | - |
+| \`«destructured»\` | \`Object\` | various options |
+|  › \`bar?\` | \`number\` | - |
+|  › \`foo?\` | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
 
 ##### Returns
@@ -149,13 +149,13 @@ FOO
 `;
 
 exports[`Signatures: should compile named parameters' 1`] = `
-"▸ **functionWithNamedParams**(\`__namedParameters\`): \`string\`
+"▸ **functionWithNamedParams**(\`«destructured»\`): \`string\`
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| \`__namedParameters\` | \`Object\` |
+| \`«destructured»\` | \`Object\` |
 
 ##### Returns
 
@@ -260,7 +260,7 @@ This is a function with multiple arguments and a return value.
 `;
 
 exports[`Signatures: should compile signature with rest params' 1`] = `
-"▸ **functionWithRest**(...\`rest\`): \`string\`
+"▸ **functionWithRest**(\`...rest\`): \`string\`
 
 This is a function with rest parameter.
 
@@ -277,7 +277,7 @@ This is a function with rest parameter.
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"▸ **functionWithUnionTypes**(\`arg\`, ...\`args\`): \`any\`
+"▸ **functionWithUnionTypes**(\`arg\`, \`...args\`): \`any\`
 
 ##### Parameters
 

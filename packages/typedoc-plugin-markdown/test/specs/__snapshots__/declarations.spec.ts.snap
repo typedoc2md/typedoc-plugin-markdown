@@ -32,7 +32,7 @@ exports[`Declarations: should compile any function type 1`] = `
 
 #### Type declaration
 
-▸ (...\`input\`): \`A\`
+▸ (\`...input\`): \`A\`
 
 ##### Parameters
 
