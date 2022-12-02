@@ -3,18 +3,6 @@
 exports[`Declarations: (Render Type Literal as List) should use correct list style when using "list" option 1`] = `
 "• \`Const\` **objectLiteralDeclaration**: \`Object\`
 
-**\`Param\`**
-
-description for valueX
-
-**\`Param\`**
-
-description for valueZ
-
-**\`Param\`**
-
-description for valueY
-
 #### Type declaration
 
 | Name | Type |
@@ -335,18 +323,6 @@ Comment for Prop2.
 exports[`Declarations: should compile object literal declaration 1`] = `
 "• \`Const\` **objectLiteralDeclaration**: \`Object\`
 
-**\`Param\`**
-
-description for valueX
-
-**\`Param\`**
-
-description for valueZ
-
-**\`Param\`**
-
-description for valueY
-
 #### Type declaration
 
 | Name | Type | Description |
@@ -354,7 +330,7 @@ description for valueY
 | \`valueA\` | \`number\` | Comment for valueA |
 | \`valueB\` | \`boolean\` | - |
 | \`valueC\` | {} | - |
-| \`valueD\` | \`string\` | Multiline Comments for valueD    Multiline Comments for valueD - line2  **\`Example\`**  \`\`\`typescript  console.log("This is a multi line comment with code")  console.log("This is a multi line comment with code - line2")  console.log("This is a multi line comment with code - line3")  \`\`\` |
+| \`valueD\` | \`string\` | Multiline Comments for valueD Multiline Comments for valueD - line2 **\`Example\`** \`\`\`typescript console.log("This is a multi line comment with code") console.log("This is a multi line comment with code - line2") console.log("This is a multi line comment with code - line3") \`\`\` |
 | \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueZ\`: \`string\` = 'foo' } | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
 | \`valueX.valueZ\` | \`string\` | - |
@@ -375,7 +351,7 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 | \`valueA?\` | \`number\` | Comments for valueA |
 | \`valueB?\` | \`boolean\` | - |
 | \`valueC\` | { \`[dataId: string]\`: \`\`"ok"\`\` \\| \`\`"ko"\`\`;  } | - |
-| \`valueD\` | \`unknown\` | Multiline Comments for valueD    Multiline Comments for valueD - line2  **\`Example\`**  \`\`\`typescript  console.log("This is a multi line comment with code")  console.log("This is a multi line comment with code - line2")  console.log("This is a multi line comment with code - line3")  \`\`\` |
+| \`valueD\` | \`unknown\` | Multiline Comments for valueD Multiline Comments for valueD - line2 **\`Example\`** \`\`\`typescript console.log("This is a multi line comment with code") console.log("This is a multi line comment with code - line2") console.log("This is a multi line comment with code - line3") \`\`\` |
 | \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  } | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
 | \`valueX.valueY\` | (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } | - |

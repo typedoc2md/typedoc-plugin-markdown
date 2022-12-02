@@ -4,11 +4,6 @@ stringLetWithDefaultValue = 'world';
 
 export let undefinedNumberDeclaration: number;
 
-/**
- * @param objectLiteralDeclaration.valueX description for valueX
- * @param objectLiteralDeclaration.valueZ description for valueZ
- * @param objectLiteralDeclaration.valueY description for valueY
- */
 export const objectLiteralDeclaration = {
   /**
    * Comment for valueZ
@@ -36,18 +31,18 @@ export const objectLiteralDeclaration = {
 
   /**
    * Multiline Comments for valueD
-   * 
+   *
    * Multiline Comments for valueD - line2
-   * 
+   *
    * @example
    * ```typescript
    * console.log("This is a multi line comment with code")
    * console.log("This is a multi line comment with code - line2")
    * console.log("This is a multi line comment with code - line3")
    * ```
-   * 
+   *
    */
-    valueD: "ko"
+  valueD: 'ko',
 };
 
 export let typeLiteralDeclaration: {
@@ -76,16 +71,16 @@ export let typeLiteralDeclaration: {
 
   /**
    * Multiline Comments for valueD
-   * 
+   *
    * Multiline Comments for valueD - line2
-   * 
+   *
    * @example
    * ```typescript
    * console.log("This is a multi line comment with code")
    * console.log("This is a multi line comment with code - line2")
    * console.log("This is a multi line comment with code - line3")
    * ```
-   * 
+   *
    */
   valueD: unknown;
 };
