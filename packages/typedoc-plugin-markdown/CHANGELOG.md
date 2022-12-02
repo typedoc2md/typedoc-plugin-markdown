@@ -3,13 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.6...typedoc-plugin-markdown@3.14.0) (2022-12-02)
+
+### Features
+
+- Add objectLiteralTypeDeclarationStyle option ([#362](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/362))
+- Beautify parameter table output of destructured params ([#364](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/364))
+
+### Fixes
+
+- Fix missing descriptions for function params ([#357](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/357))
+- Add conditional check to signature comments ([#368](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/368))
+
 ## [3.13.6](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.5...typedoc-plugin-markdown@3.13.6) (2022-09-04)
 
 ### Fixes
 
 - Replace deprecated 'attemptExternalResolution' [(#344)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/344)
-
-### Fixes
 
 ## [3.13.5](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.4...typedoc-plugin-markdown@3.13.5) (2022-08-30)
 
