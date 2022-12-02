@@ -1,5 +1,5 @@
 import * as Handlebars from 'handlebars';
-import { ParameterReflection, ReflectionKind } from 'typedoc';
+import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 import { stripLineBreaks } from '../../utils';
 import { getReflectionType } from './type';
 
@@ -63,9 +63,8 @@ function table(parameters: any) {
     const optional = parameter.flags.isOptional ? '?' : '';
 
     const isDestructuredParam = parameter.name == '__namedParameters';
-    const isDestructuredParamProp = parameter.name.startsWith(
-      '__namedParameters.',
-    );
+    const isDestructuredParamProp =
+      parameter.name.startsWith('__namedParameters.');
 
     if (isDestructuredParam) {
       row.push(`\`${rest}«destructured»\``);
@@ -85,11 +84,13 @@ function table(parameters: any) {
       row.push(getDefaultValue(parameter));
     }
     if (hasComments) {
-      if (parameter.comment) {
+      const comments = getComments(parameter);
+      if (comments) {
         row.push(
-          stripLineBreaks(
-            Handlebars.helpers.comments(parameter.comment),
-          ).replace(/\|/g, '\\|'),
+          stripLineBreaks(Handlebars.helpers.comments(comments)).replace(
+            /\|/g,
+            '\\|',
+          ),
         );
       } else {
         row.push('-');
@@ -119,4 +120,16 @@ function hasDefaultValues(parameters: ParameterReflection[]) {
   );
 
   return !defaultValues.every((value) => !value);
+}
+
+function getComments(parameter: any) {
+  if (parameter.type instanceof ReflectionType) {
+    if (
+      parameter.type?.declaration?.signatures &&
+      parameter.type?.declaration?.signatures[0]?.comment
+    ) {
+      return parameter.type?.declaration?.signatures[0]?.comment;
+    }
+  }
+  return parameter.comment;
 }

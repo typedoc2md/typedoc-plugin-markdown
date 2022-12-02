@@ -232,3 +232,20 @@ export const promiseReturningAnObject = (): Promise<{
     resolve({ id: 'id', data: 'data' });
   });
 };
+
+/**
+ * My Function.
+ * @param topLevelCallback A top-level callback.
+ * @param params Params object.
+ * @param params.callback1 A callback inside an object.
+ * @param params.testParam Some number.
+ * @param params.callback2 A callback inside an object.
+ */
+export function functionWithObjectParams(
+  topLevelCallback: () => void,
+  params: {
+    callback1: () => void;
+    testParam: number;
+    callback2: () => void;
+  },
+) {}

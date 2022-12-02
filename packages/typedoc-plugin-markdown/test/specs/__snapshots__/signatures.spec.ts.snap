@@ -113,6 +113,27 @@ Some nested params.
 "
 `;
 
+exports[`Signatures: should compile function with object params' 1`] = `
+"▸ **functionWithObjectParams**(\`topLevelCallback\`, \`params\`): \`void\`
+
+My Function.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`topLevelCallback\` | () => \`void\` | A top-level callback. |
+| \`params\` | \`Object\` | Params object. |
+| \`params.callback1\` | () => \`void\` | A callback inside an object. |
+| \`params.callback2\` | () => \`void\` | A callback inside an object. |
+| \`params.testParam\` | \`number\` | Some number. |
+
+##### Returns
+
+\`void\`
+"
+`;
+
 exports[`Signatures: should compile function with reference type' 1`] = `
 "▸ **functionWithReferenceType**(\`descriptor\`): \`boolean\`
 

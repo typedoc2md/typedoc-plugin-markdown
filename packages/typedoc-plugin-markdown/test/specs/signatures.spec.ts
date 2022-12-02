@@ -189,4 +189,14 @@ describe(`Signatures:`, () => {
       ),
     ).toMatchSnapshot();
   });
+
+  test(`should compile function with object params'`, () => {
+    expect(
+      global.compileTemplate(
+        partial,
+        (project.getChildByName('functionWithObjectParams') as any)
+          .signatures[0] as SignatureReflection,
+      ),
+    ).toMatchSnapshot();
+  });
 });
