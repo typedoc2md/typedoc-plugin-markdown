@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.11.0...vuepress-plugin-typedoc@0.11.2) (2022-12-02)
+
+### Fixes
+
+- Slugification of hashes ([#333](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/333))
+
+# 0.11.1
+
+- **Note:** Version bump only for package docusaurus-plugin-typedoc
+
 # [0.11.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/vuepress-plugin-typedoc@0.10.3...vuepress-plugin-typedoc@0.11.0) (2022-07-25)
 
 ### Features

@@ -3,27 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.17.6](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.5...docusaurus-plugin-typedoc@0.17.6) (2022-06-27)
+# [0.17.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.5...docusaurus-plugin-typedoc@0.18.0) (2022-12-03)
 
-**Note:** Version bump only for package docusaurus-plugin-typedoc
+### Features
 
-
-
-
-
+- Add option sidebar.collapsed ([#359](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/359))
+- Implement `generate-typedoc` cli command ([#356](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/356))
 
 ## [0.17.5](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.4...docusaurus-plugin-typedoc@0.17.5) (2022-05-10)
 
-
 ### Bug Fixes
 
-* added sidebar.autoConfiguration option ([f873b32](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/f873b32f2342b74c68f0bda8e7661b265b4d93ab))
-* Removed index slug ([3667eb5](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/3667eb59035b422b4f569f76635cfe682fbac5ac))
-
-
-
-
-
+- added sidebar.autoConfiguration option ([f873b32](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/f873b32f2342b74c68f0bda8e7661b265b4d93ab))
+- Removed index slug ([3667eb5](https://github.com/tgreyuk/typedoc-plugin-markdown/commit/3667eb59035b422b4f569f76635cfe682fbac5ac))
 
 ## [0.17.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.3...docusaurus-plugin-typedoc@0.17.4) (2022-04-21)
 
