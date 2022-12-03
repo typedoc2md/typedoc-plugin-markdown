@@ -11,6 +11,7 @@ const DEFAULT_TYPEDOC_OPTIONS: Partial<PluginOptions> = {
   out: 'api',
   plugin: ['none'],
   hideBreadcrumbs: true,
+  theme: 'vuepress',
 };
 
 const DEFAULT_SIDEBAR_OPTIONS = {

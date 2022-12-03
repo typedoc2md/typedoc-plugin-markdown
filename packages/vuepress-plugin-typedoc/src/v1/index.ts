@@ -8,7 +8,7 @@ import {
   getTypedocOptions,
 } from '../shared/options';
 import { removeDir, render } from '../shared/render';
-
+import { VuepressTheme } from '../shared/theme';
 import { PluginOptions } from '../shared/types';
 import { getSidebarJson } from './sidebar';
 
@@ -31,6 +31,8 @@ export = (opts: Partial<PluginOptions>, ctx: any) => {
   addOptions(app);
 
   app.renderer.render = render;
+
+  app.renderer.defineTheme('vuepress', VuepressTheme);
 
   app.bootstrap(typedocOptions);
 
