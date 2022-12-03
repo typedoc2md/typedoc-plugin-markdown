@@ -7,5 +7,5 @@ export function unknownType(
   context: MarkdownThemeRenderContext,
   model: UnknownType,
 ) {
-  return backTicks(escapeChars(model.name));
+  return backTicks(model.name);
 }

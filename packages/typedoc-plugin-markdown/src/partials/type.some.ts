@@ -81,5 +81,5 @@ export function someType(
     return '' + context.partials.unknownType(someType);
   }
 
-  return backTicks(escapeChars(someType?.toString()));
+  return backTicks(someType?.toString());
 }
