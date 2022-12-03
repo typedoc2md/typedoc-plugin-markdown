@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.17.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.5...docusaurus-plugin-typedoc@0.18.0) (2022-12-03)
+# [0.18.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.5...docusaurus-plugin-typedoc@0.18.0) (2022-12-03)
 
 ### Features
 
