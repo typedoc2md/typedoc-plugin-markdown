@@ -13,7 +13,7 @@ describe(`Generics:`, () => {
 
   test(`should compile class with type params`, () => {
     expect(
-      context.templates.reflection({
+      context.templates.reflectionTemplate({
         model: project.getChildByName('ClassWithTypeParams'),
         project: project,
       } as any),

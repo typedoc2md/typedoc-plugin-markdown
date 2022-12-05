@@ -3,68 +3,49 @@
 exports[`Generics: should compile class with type params 1`] = `
 "[partial: breadcrumbs]
 
-# Class: ClassWithTypeParams<T, V\\\\>
+# Class: ClassWithTypeParams<T, V\\>
 
 [partial: comment]
 
-## Type parameters
+**Type parameters**
 
-| Name |
-| :------ |
-| \`T\` || \`V\` |
-
-## Table of contents
+- \`T\`
+- \`V\`
 
 
-### Constructors
-
-
-- [constructor](ClassWithTypeParams.md#constructor)
-
-
-### Properties
-
-
-- [propT](ClassWithTypeParams.md#propt)
-- [propV](ClassWithTypeParams.md#propv)
-
-
+[partial: toc]
 
 [partial: members]"
 `;
 
 exports[`Generics: should compile function with a simple type param' 1`] = `
-"**functionWithTypeParam**<\`A\`\\\\>(): \`boolean\`
+"» **functionWithTypeParam**<\`A\`\\>(): \`boolean\`
 
-#### Type parameters
+**Type parameters**
 
-| Name |
-| :------ |
-| \`A\` |
+- \`A\`
 
-#### Returns
 
-\`boolean\`
+**Returns**
 
-[partial: sources]"
+\`boolean\`"
 `;
 
 exports[`Generics: should compile function with complex type params' 1`] = `
-"**functionWithTypeParams**<\`A\`, \`B\`, \`C\`\\\\>(): \`boolean\`
+"» **functionWithTypeParams**<\`A\`, \`B\`, \`C\`\\>(): \`boolean\`
 
 [partial: comment]
 
-#### Type parameters
+**Type parameters**
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| \`A\` | extends [\`ClassWithTypeParams\`](ClassWithTypeParams.md)<\`string\`, \`number\`, \`A\`\\\\> | [partial: comment] || \`B\` | \`string\` \\\\| \`boolean\` | [partial: comment] || \`C\` | \`string\` | - |
+- \`A\` *extends* [\`ClassWithTypeParams\`](Modules.md#classwithtypeparams)<\`string\`, \`number\`, \`A\`\\>[partial: comment]
+- \`B\` = \`string\` \\| \`boolean\`[partial: comment]
+- \`C\` = \`string\`
 
-#### Returns
 
-\`boolean\`
+**Returns**
 
-[partial: sources]"
+\`boolean\`"
 `;
 
 exports[`Generics: should compile generics with defaults' 1`] = `
@@ -74,7 +55,7 @@ exports[`Generics: should compile generics with defaults' 1`] = `
 `;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-" **nestedGenerics**: [\`Generic1\`](../modules.md#generic1)<[\`Generic2\`](../modules.md#generic2)<[\`Generic3\`](../modules.md#generic3)<\`string\`\\\\>\\\\>\\\\>
+" **nestedGenerics**: [\`Generic1\`](Modules.md#generic1)<[\`Generic2\`](Modules.md#generic2)<[\`Generic3\`](Modules.md#generic3)<\`string\`\\>\\>\\>
 
 [partial: sources]"
 `;

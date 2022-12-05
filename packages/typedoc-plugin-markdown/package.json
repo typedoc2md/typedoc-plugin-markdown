@@ -12,7 +12,7 @@
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "prebuild": "ts-node scripts/build-resources",
     "build": "rm -rf dist && tsc",
-    "test": "jest --colors",
+    "test": "jest --colors -u",
     "build-and-test": "yarn run build && yarn run test",
     "docs": "yarn run build && yarn run docs:md && yarn run docs:html",
     "docs:md": "typedoc --plugin typedoc-plugin-markdown --hasOwnDocument all --options ../../stub-project/typedoc.json --out ./docs/md",

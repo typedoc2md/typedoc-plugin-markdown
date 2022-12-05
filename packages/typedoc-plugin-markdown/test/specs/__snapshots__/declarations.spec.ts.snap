@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-" \`Const\` **stringConstWithDefaultValue**: \\"hello\\"
+"\`Const\` **stringConstWithDefaultValue**: \`"hello"\`
 
 [partial: sources]"
 `;
@@ -19,19 +19,18 @@ exports[`Declarations: should compile an undefined declaration 1`] = `
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-" **AnyFunctionType**<\`A\`\\\\>: (...\`input\`: \`any\`[]) => \`A\`
+" **AnyFunctionType**<\`A\`\\>: (...\`input\`: \`any\`[]) => \`A\`
 
-#### Type parameters
+**Type parameters**
 
-| Name | Type |
-| :------ | :------ |
-| \`A\` | \`any\` |
+- \`A\` = \`any\`
 
-#### Type declaration
 
-(...\`input\`: \`any\`[]): \`A\`
+**Type declaration**
 
-##### Parameters
+» (...\`input\`: \`any\`[]): \`A\`
+
+**Parameters**
 
 
 | Name | Type |
@@ -39,7 +38,7 @@ exports[`Declarations: should compile any function type 1`] = `
 | \`...input\` | \`any\`[] |
 
 
-##### Returns
+**Returns**
 
 \`A\`
 
@@ -49,12 +48,12 @@ exports[`Declarations: should compile any function type 1`] = `
 exports[`Declarations: should compile declaration with accessors 1`] = `
 " **getterAndSetter**: \`Object\`
 
-#### Type declaration
+**Type declaration**
 
 
 | Name | Type |
 | :------ | :------ |
-| \`get getMe()\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`string\`\\\\> |
+| \`get getMe()\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`string\`\\> |
 | \`set setMe(x:string)\` | \`void\` |
 
 
@@ -62,19 +61,19 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-" \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../modules.md#__double_underscores_declaration__)
+"\`Const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](Modules.md#__double_underscores_declaration__)
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile enum declaration 1`] = `
-" **Down** = 1
+" **Down** = \`1\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile enum declaration with defaults 1`] = `
-" **East** = \\"East\\"
+" **East** = \`"East"\`
 
 [partial: sources]"
 `;
@@ -90,7 +89,7 @@ exports[`Declarations: should compile indexable declaration 1`] = `
 
 context.indexSignaturePartial(typeDeclaration.indexSignature)
 
-#### Type declaration
+**Type declaration**
 
 
 | Name | Type |
@@ -102,7 +101,7 @@ context.indexSignaturePartial(typeDeclaration.indexSignature)
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-" \`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
+"\`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
 
 Comments
 
@@ -118,21 +117,21 @@ Comment for Prop1.
 
 Comment for Prop2.
 
-#### Type declaration
+**Type declaration**
 
 
 | Name | Type |
 | :------ | :------ |
-| \`Prop1\` | \\"Prop1\\" |
-| \`Prop2\` | \\"Prop2\\" |
-| \`Prop3\` | \\"Prop3\\" |
+| \`Prop1\` | \`"Prop1"\` |
+| \`Prop2\` | \`"Prop2"\` |
+| \`Prop3\` | \`"Prop3"\` |
 
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-" \`Const\` **objectLiteralDeclaration**: \`Object\`
+"\`Const\` **objectLiteralDeclaration**: \`Object\`
 
 **\`Param\`**
 
@@ -146,7 +145,7 @@ description for valueZ
 
 description for valueY
 
-#### Type declaration
+**Type declaration**
 
 
 | Name | Type | Description |
@@ -167,14 +166,14 @@ description for valueY
 exports[`Declarations: should compile type literal declaration 1`] = `
 " **typeLiteralDeclaration**: \`Object\`
 
-#### Type declaration
+**Type declaration**
 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`valueA?\` | \`number\` | Comments for valueA |
 | \`valueB?\` | \`boolean\` | - |
-| \`valueC\` | { \`[dataId: string]\`: \\"ok\\" \\\\| \\"ko\\";  } | - |
+| \`valueC\` | { \`[dataId: string]\`: \`"ok"\` \\| \`"ko"\`;  } | - |
 | \`valueX\` | { \`valueA\`: \`number\`[] ; \`valueY\`: (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } ; \`valueZ\`: \`string\`  } | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
 | \`valueX.valueY\` | (\`z\`: \`string\`) => { \`a\`: \`string\` ; \`b\`: \`string\`  } | - |

@@ -9,15 +9,27 @@ exports[`Members: (member) should compile members with getter' 1`] = `"[partial:
 exports[`Members: (member) should compile members with setter' 1`] = `"[partial: member]"`;
 
 exports[`Members: (members) should compile class members' 1`] = `
-"## Constructors
+"#### Constructors
 
 [partial: member]
-## Properties
+
+
+
+---
+
+#### Properties
 
 [partial: member]
-## Accessors
+
+
+
+---
+
+#### Accessors
 
 [partial: member]
+
+
 
 ---
 
