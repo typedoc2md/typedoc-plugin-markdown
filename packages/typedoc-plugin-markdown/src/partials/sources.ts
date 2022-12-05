@@ -4,11 +4,11 @@ import {
   ReferenceType,
   SignatureReflection,
 } from 'typedoc';
-import { bold, link } from '../els';
+import { bold, link } from '../support/els';
 import { getQuaternaryHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-import { escapeChars } from '../utils';
+import { escapeChars } from '../support/utils';
 
 export function sources(
   context: MarkdownThemeRenderContext,

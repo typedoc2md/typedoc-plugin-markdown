@@ -5,9 +5,9 @@ import {
   ReflectionKind,
   ReflectionType,
 } from 'typedoc';
-import { backTicks } from '../els';
+import { backTicks } from '../support/els';
+import { escapeChars, stripComments, stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { escapeChars, stripComments, stripLineBreaks } from '../utils';
 
 export function declarationMemberTitle(
   context: MarkdownThemeRenderContext,

@@ -1,7 +1,6 @@
 import { UnknownType } from 'typedoc';
-import { backTicks } from '../els';
+import { backTicks } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { escapeChars } from '../utils';
 
 export function unknownType(
   context: MarkdownThemeRenderContext,

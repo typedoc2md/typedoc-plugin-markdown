@@ -3,7 +3,7 @@ import {
   ReferenceReflection,
   ReflectionKind,
 } from 'typedoc';
-import { heading, backTicks } from '../els';
+import { backTicks, heading } from '../support/els';
 import { getTeritiaryHeadingLevel, isConstructor } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 

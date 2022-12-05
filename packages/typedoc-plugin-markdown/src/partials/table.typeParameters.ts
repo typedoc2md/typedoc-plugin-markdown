@@ -1,6 +1,6 @@
 import { TypeParameterReflection } from 'typedoc';
+import { stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { stripLineBreaks } from '../utils';
 
 export function typeParametersTable(
   context: MarkdownThemeRenderContext,

@@ -10,10 +10,10 @@ import {
   Theme,
   UrlMapping,
 } from 'typedoc';
-import { URL_PREFIX } from './constants';
+import { HasOwnDocument, TemplateMapping } from './models';
+import { URL_PREFIX } from './support/constants';
+import { formatContents } from './support/utils';
 import { MarkdownThemeRenderContext } from './theme-context';
-import { HasOwnDocument, TemplateMapping } from './types';
-import { formatContents } from './utils';
 export class MarkdownTheme extends Theme {
   @BindOption('entryDocument') entryDocument!: string;
   @BindOption('entryPoints') entryPoints!: string[];
@@ -41,7 +41,6 @@ export class MarkdownTheme extends Theme {
   getRenderContext() {
     if (!this._renderContext) {
       this._renderContext = new MarkdownThemeRenderContext(
-        this,
         this.application.options,
       );
     }

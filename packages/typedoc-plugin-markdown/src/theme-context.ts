@@ -1,9 +1,8 @@
 import * as path from 'path';
-import { Options, ReferenceType, Reflection } from 'typedoc';
-import { URL_PREFIX } from './constants';
+import { Options, Reflection } from 'typedoc';
+import { TypedocPluginMarkdownOptions } from './models';
 import { partials, templates } from './resources';
-import { MarkdownTheme } from './theme';
-import { TypedocPluginMarkdownOptions } from './types';
+import { URL_PREFIX } from './support/constants';
 
 export class MarkdownThemeRenderContext {
   public globalsFile = 'Modules.md';
@@ -18,15 +17,11 @@ export class MarkdownThemeRenderContext {
     return this._activeLocation;
   }
 
-  constructor(private theme: MarkdownTheme, public options: Options) {}
+  constructor(public options: Options) {}
 
   getOption<K extends keyof TypedocPluginMarkdownOptions>(name: K) {
     return this.options.getValue(name) as TypedocPluginMarkdownOptions[K];
   }
-
-  attemptExternalResolution = (type: ReferenceType) => {
-    return this.theme.owner.attemptExternalResolution(type);
-  };
 
   urlTo = (reflection: Reflection) => this.relativeURL(reflection.url);
 

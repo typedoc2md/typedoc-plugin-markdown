@@ -1,5 +1,5 @@
 import { ContainerReflection } from 'typedoc';
-import { heading, horizontalRule } from '../els';
+import { heading, horizontalRule } from '../support/els';
 import { getSecondaryHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 

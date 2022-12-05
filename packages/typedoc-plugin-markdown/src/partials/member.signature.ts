@@ -1,5 +1,5 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
-import { bold } from '../els';
+import { bold } from '../support/els';
 import { getQuaternaryHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 

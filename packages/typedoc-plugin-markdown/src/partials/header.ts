@@ -1,5 +1,5 @@
 import { DeclarationReflection, PageEvent, ReflectionKind } from 'typedoc';
-import { heading } from '../els';
+import { heading } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function header(

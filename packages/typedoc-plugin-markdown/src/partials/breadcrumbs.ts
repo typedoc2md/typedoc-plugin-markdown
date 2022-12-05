@@ -4,7 +4,7 @@ import {
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
-import { link } from '../els';
+import { link } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function breadcrumbs(

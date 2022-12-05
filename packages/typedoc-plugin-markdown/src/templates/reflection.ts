@@ -1,5 +1,5 @@
 import { DeclarationReflection, PageEvent } from 'typedoc';
-import { bold, heading, unorderedList } from '../els';
+import { bold, heading, unorderedList } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function reflectionTemplate(

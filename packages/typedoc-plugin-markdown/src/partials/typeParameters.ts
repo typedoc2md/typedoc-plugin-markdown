@@ -1,5 +1,5 @@
 import { TypeParameterReflection } from 'typedoc';
-import { backTicks } from '../els';
+import { backTicks } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function typeParameters(

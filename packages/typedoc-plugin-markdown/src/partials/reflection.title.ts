@@ -1,6 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { escapeChars } from '../utils';
 
 export function reflectionTitle(
   context: MarkdownThemeRenderContext,

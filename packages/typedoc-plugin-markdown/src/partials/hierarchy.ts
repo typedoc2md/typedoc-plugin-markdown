@@ -1,5 +1,5 @@
 import { DeclarationHierarchy, SomeType } from 'typedoc';
-import { bold } from '../els';
+import { bold } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function hierarchy(

@@ -1,5 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
-import { bold, heading, horizontalRule, unorderedList } from '../els';
+import { bold, heading, horizontalRule, unorderedList } from '../support/els';
 import { getSecondaryHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 

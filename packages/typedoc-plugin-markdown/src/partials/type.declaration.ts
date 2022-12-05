@@ -1,7 +1,7 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
+import { Collapse } from '../models';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { Collapse } from '../types';
-import { escapeChars } from '../utils';
 
 export function declarationType(
   context: MarkdownThemeRenderContext,

@@ -3,10 +3,10 @@ import {
   ProjectReflection,
   ReflectionGroup,
 } from 'typedoc';
-import { heading } from '../els';
+import { heading } from '../support/els';
 import { getSecondaryHeadingLevel } from '../support/helpers';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { escapeChars } from '../utils';
 
 export function toc(
   context: MarkdownThemeRenderContext,

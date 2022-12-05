@@ -14,10 +14,9 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc';
-import { backTicks } from '../els';
+import { Collapse } from '../models';
+import { backTicks } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { Collapse } from '../types';
-import { escapeChars } from '../utils';
 
 export function someType(
   context: MarkdownThemeRenderContext,

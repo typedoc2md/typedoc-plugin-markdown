@@ -1,6 +1,6 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { escapeChars, stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { escapeChars, stripLineBreaks } from '../utils';
 
 export function propertiesTable(
   context: MarkdownThemeRenderContext,

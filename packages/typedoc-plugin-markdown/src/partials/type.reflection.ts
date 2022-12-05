@@ -1,6 +1,6 @@
 import { ReflectionType } from 'typedoc';
+import { Collapse } from '../models';
 import { MarkdownThemeRenderContext } from '../theme-context';
-import { Collapse } from '../types';
 
 export function reflectionType(
   context: MarkdownThemeRenderContext,
