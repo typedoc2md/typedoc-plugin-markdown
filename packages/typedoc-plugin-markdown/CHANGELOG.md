@@ -1,7 +1,4 @@
-# Change Log
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+# Changelog
 
 ## [3.13.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.3...typedoc-plugin-markdown@3.13.4) (2022-07-20)
 

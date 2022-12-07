@@ -6,8 +6,8 @@ export class GithubWikiTheme extends MarkdownTheme {
   constructor(renderer: Renderer) {
     super(renderer);
 
-    this.entryDocument = 'Home.md';
-    this.hideBreadcrumbs = true;
+    //this.entryDocument = 'Home.md';
+    //this.hideBreadcrumbs = true;
 
     this.listenTo(this.owner, {
       [RendererEvent.END]: this.writeSidebar,
@@ -24,10 +24,10 @@ export class GithubWikiTheme extends MarkdownTheme {
 
   writeSidebar(renderer: any) {
     const parseUrl = (url: string) => '../wiki/' + url.replace('.md', '');
-    const navigation = this.getNavigation(renderer.project);
+    //const navigation = this.getNavigation(renderer.project);
     const navJson: string[] = [`## ${renderer.project.name}\n`];
     const allowedSections = ['Home', 'Modules', 'Namespaces'];
-    navigation.children
+    /*navigation.children
       ?.filter(
         (navItem) =>
           !navItem.isLabel || allowedSections.includes(navItem.title),
@@ -47,7 +47,7 @@ export class GithubWikiTheme extends MarkdownTheme {
             navItem.url === this.entryDocument ? 'Home' : navItem.title;
           navJson.push(`- [${title}](${parseUrl(navItem.url)})`);
         }
-      });
+      });*/
 
     fs.writeFileSync(
       renderer.outputDirectory + '/_Sidebar.md',

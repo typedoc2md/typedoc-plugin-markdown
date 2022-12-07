@@ -1,7 +1,7 @@
 name: CI
-on: [push, pull_request]
+on: [pull_request]
 jobs:
-  build:
+  lint-and-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -14,15 +14,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - name: Upgrade yarn
-        run: yarn install
       - name: Install
-        run: yarn
+        run: npm install
       - name: Lint
-        run: yarn run lint
+        run: npm run lint
       - name: Build
-        run: yarn run build
-      - name: Markdownlint
-        run: yarn run markdownlint
+        run: npm run build
       - name: Test
-        run: yarn test
+        run: npm run test
