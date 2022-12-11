@@ -2,7 +2,6 @@ name: CI
 on: [push, pull_request]
 jobs:
   lint-and-test:
-    name: Lint and Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
