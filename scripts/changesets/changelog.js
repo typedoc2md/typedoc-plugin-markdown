@@ -6,7 +6,7 @@ const getReleaseLine = async (changeset, _type) => {
   let returnVal = `- ${firstLine}`;
 
   if (futureLines.length > 0) {
-    returnVal += `\n${futureLines.map((l) => `  ${l}`).join('\n')}`;
+    returnVal += `\n- ${futureLines.map((l) => `  ${l}`).join('\n')}`;
   }
 
   return returnVal;
