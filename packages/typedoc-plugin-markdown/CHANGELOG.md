@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.0
+
+### Major Changes
+
+- Removed Handlebars
+- MDX2 Compatibility
+
 ## [3.13.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.3...typedoc-plugin-markdown@3.13.4) (2022-07-20)
 
 ### Fixes
