@@ -1,7 +1,8 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  build:
+  lint-and-test:
+    name: Lint and Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,4 +22,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Test
-        run: npm test
+        run: npm run test
