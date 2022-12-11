@@ -5,9 +5,9 @@
     "packages/docusaurus-plugin-typedoc"
   ],
   "scripts": {
-    "lint": "yarn workspaces foreach lint",
+    "lint": "npm run lint --workspaces",
     "build": "npm run build --workspaces",
-    "test": "yarn workspaces run test"
+    "test": "npm run test --workspaces"
   },
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
