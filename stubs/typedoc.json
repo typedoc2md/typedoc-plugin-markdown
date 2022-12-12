@@ -4,5 +4,7 @@
   "media": "./media/",
   "name": "My TypeScript API",
   "tsconfig": "./tsconfig.json",
-  "readme": "none"
+  "readme": "none",
+  "cleanOutputDir": true,
+  "githubPages": false
 }

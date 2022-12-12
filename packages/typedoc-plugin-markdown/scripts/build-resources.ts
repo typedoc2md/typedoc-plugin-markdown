@@ -99,7 +99,7 @@ partialsSymbols.forEach((symbol) => {
 });
 out.push(`});`);
 
-fs.writeFileSync(path.join(themePath, 'resources.ts'), out.join('\n'));
+fs.writeFileSync(path.join(themePath, 'resources.ts'), out.join('\n') + '\n');
 
 function getFiles(type: string) {
   const partialsFolder = path.join(themePath, type);

@@ -30,14 +30,12 @@ const config = {
     [
       'docusaurus-plugin-typedoc',
       {
-        options:
-          '../../samples/isaacscript/packages/isaacscript-common/typedoc.json',
+        options: '../../stubs/typedoc.json',
         sidebar: {
           autoConfiguration: true,
           position: 0,
         },
         cleanOutputDir: true,
-        hasOwnDocument: 'none',
       },
     ],
   ],

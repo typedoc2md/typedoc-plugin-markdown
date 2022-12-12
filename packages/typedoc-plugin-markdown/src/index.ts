@@ -18,58 +18,66 @@ export function load(app: Application) {
   );
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Do not render page title.',
     name: 'hidePageTitle',
+    help: '[Markdown Plugin] Do not render page title.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Do not render breadcrumbs in template.',
     name: 'hideBreadcrumbs',
+    help: '[Markdown Plugin] Do not render breadcrumbs in template.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
     name: 'namedAnchors',
+    help: '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] The file name of the entry document.',
     name: 'entryDocument',
+    help: '[Markdown Plugin] The file name of the entry document.',
     type: ParameterType.String,
     defaultValue: 'README.md',
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Do not render in-page table of contents items.',
     name: 'hideInPageTOC',
+    help: '[Markdown Plugin] Do not render in-page table of contents items.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Wraps the heading of a reflection in a code block.',
+    name: 'fileStructure',
+    help: '[Markdown Plugin] Specifies how the filesystem should be standard. Hierarchical builds directories as per file system.',
+    type: ParameterType.String,
+    defaultValue: 'all',
+  });
+
+  app.options.addDeclaration({
+    name: 'symbolsWithOwnFile',
+    help: "[Markdown Plugin] Specifies which symbols are contained in their own file. Values 'none', 'all' OR Array of ['class', 'interface', 'enum', 'function', 'variable', 'type']",
+    type: ParameterType.String | ParameterType.Array,
+    defaultValue: 'all',
+  });
+
+  app.options.addDeclaration({
     name: 'embedHeadingsInCodeBlock',
+    help: '[Markdown Plugin] Wraps the heading of a reflection in a code block.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    help: '[Markdown Plugin] Preserve anchor casing when generating links.',
     name: 'preserveAnchorCasing',
+    help: '[Markdown Plugin] Preserve anchor casing when generating links.',
     type: ParameterType.Boolean,
     defaultValue: false,
-  });
-
-  app.options.addDeclaration({
-    name: 'hasOwnDocument',
-    help: "Specifies which symbols should contain their own document. Values 'None', 'All' OR Array of ['class', 'interface', 'enum', 'function', 'variable', 'type']",
-    type: ParameterType.Array,
   });
 }
 

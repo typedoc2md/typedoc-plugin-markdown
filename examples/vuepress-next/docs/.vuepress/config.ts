@@ -25,8 +25,8 @@ module.exports = {
   }),
   plugins: [
     typedocPlugin({
-      entryPoints: ['../../stub-project/src/index.ts'],
-      tsconfig: '../../stub-project/tsconfig.json',
+      entryPoints: ['../../stubs/src/index.ts'],
+      tsconfig: '../../stubs/tsconfig.json',
       cleanOutputDir: true,
     }),
   ],

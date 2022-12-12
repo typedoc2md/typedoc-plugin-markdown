@@ -1,9 +1,4 @@
-import {
-  DeclarationReflection,
-  PageEvent,
-  ProjectReflection,
-  ReflectionKind,
-} from 'typedoc';
+import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { link } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -12,7 +7,7 @@ export function breadcrumbs(
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   if (page.model) {
-    if (page.model.kind && page.model.kind !== ReflectionKind.Module) {
+    if (page.model.kind) {
       const md: string[] = [];
       md.push(
         page.url === context.globalsFile

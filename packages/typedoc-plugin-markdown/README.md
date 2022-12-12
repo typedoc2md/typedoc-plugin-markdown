@@ -30,22 +30,38 @@ The `--plugin` arg is optional (all plugins are loaded by default), however if u
 ## Options
 
 The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/guides/options/)
-(please note that TypeDoc options specific to the html theme will be ignored).
+(please note that TypeDoc options specific to the HTML theme will be ignored).
 
-Do not render breadcrumbs in template header. Defaults to `false`.
+Please read the [documentation](#documentation) for further configuration options.
+
+**File output options**
 
 - **`--entryDocument`**<br>
   The file name of the entry document. Defaults to `README.md`.
+- **`--symbolsWithOwnFile`**<br>
+  Determines which symbols should be written to their own file. Expected values are `none`, `all` OR Array of [`class`, `interface`, `enum`, `function`, `var`, `type`] Defaults to `all` (all exports generated to an individual file).
+- **`--fileStructure`**<br>
+  Specifies how the files should be generated, grouped by folders of types or a module path structure. `groups` | `modules`. Defaults to `groups`.
+
+**UI options**
+
 - **`--hideBreadcrumbs`**<br>
   Do not render breadcrumbs in template header. Defaults to `false`.
 - **`--hideInPageTOC`**<br>
-  Do not add special symbols for class members. Defaults to `false`.
-- **`--hasOwnDocument`**<br>
-  Determines which symbols should be hoisted to their own document. Expected values are `None`, `All` OR Array of `['class', 'interface', 'enum', 'function', 'variable', 'type']` Defaults to `None` (all symbols included in a single module page). See [directory strategy]().
+  Hide in-page index items. Defaults to `false`.
+- **`--hidePageTitle`**<br>
+  Do not render the page title in output. Defaults to `false`.
+
+**Utility options**
+
 - **`--namedAnchors`**<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
-- **`--embedHeadingsInCodeBlock`**<br>
-  Wraps the heading of a reflection in a code block. Defaults to `false`.
+- **`--publicPath`**<br>
+  Specify the base path for all urls. If undefined urls will be relative. Defaults to `.`
+
+## Documentation
+
+- [Output file strategy](./documentation/output-file-strategy.md)
 
 ## License
 
