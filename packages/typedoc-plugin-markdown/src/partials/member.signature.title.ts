@@ -6,7 +6,7 @@ export function signatureTitle(
   signature: SignatureReflection,
   accessor?: string,
 ) {
-  const md: string[] = ['» '];
+  const md: string[] = ['> '];
 
   if (signature.parent && signature.parent.flags?.length > 0) {
     md.push(
