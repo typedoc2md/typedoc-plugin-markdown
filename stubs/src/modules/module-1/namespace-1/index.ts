@@ -1,0 +1,14 @@
+export class NameSspaceClassA {}
+
+export interface NamespaceInterface {
+  a: string;
+}
+
+export enum NamespaceEnum {
+  Value1,
+  Value2,
+}
+
+export type NamespaceTypeLiteral = 'a' | 'b';
+
+export const namespaceVariable = 'a';

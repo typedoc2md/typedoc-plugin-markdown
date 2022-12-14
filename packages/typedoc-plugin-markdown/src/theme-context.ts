@@ -3,6 +3,7 @@ import { Options, Reflection } from 'typedoc';
 import { TypedocPluginMarkdownOptions } from './models';
 import { partials, templates } from './resources';
 import { URL_PREFIX } from './support/constants';
+import { MarkdownTheme } from './theme';
 
 export class MarkdownThemeRenderContext {
   public globalsFile = 'Modules.md';
@@ -17,7 +18,7 @@ export class MarkdownThemeRenderContext {
     return this._activeLocation;
   }
 
-  constructor(public options: Options) {}
+  constructor(public theme: MarkdownTheme, public options: Options) {}
 
   getOption<K extends keyof TypedocPluginMarkdownOptions>(name: K) {
     return this.options.getValue(name) as TypedocPluginMarkdownOptions[K];

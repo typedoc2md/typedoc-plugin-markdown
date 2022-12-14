@@ -1,5 +1,5 @@
 import { ContainerReflection } from 'typedoc';
-import { heading, horizontalRule } from '../support/els';
+import { heading } from '../support/els';
 import { getSecondaryHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -35,15 +35,7 @@ export function members(
             .filter((item) => !item.hasOwnDocument)
             .forEach((groupChild, index) => {
               md.push(context.partials.member(groupChild));
-              if (index !== group.children.length - 1) {
-                md.push(horizontalRule());
-              }
             });
-          if (container.groups && container.groups.length) {
-            if (groupIndex !== container.groups.length - 1) {
-              md.push(horizontalRule());
-            }
-          }
         }
       });
   }

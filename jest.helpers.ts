@@ -12,12 +12,8 @@ import {
 } from 'typedoc';
 import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
-const STUBS_SRC_PATH = path.join(__dirname, 'stub-project', 'src');
-const STUBS_TSCONFIG_PATH = path.join(
-  __dirname,
-  'stub-project',
-  'tsconfig.json',
-);
+const STUBS_SRC_PATH = path.join(__dirname, 'stubs', 'src');
+const STUBS_TSCONFIG_PATH = path.join(__dirname, 'stubs', 'tsconfig.json');
 
 global.bootstrap = async (
   entryPoints: string[] = [],
@@ -51,8 +47,9 @@ global.bootstrap = async (
   stubPartials.forEach((stubPartial) => {
     context.partials[stubPartial] = () => `[partial: ${stubPartial}]`;
   });
+  const theme = app.renderer.theme;
 
-  return { project, context };
+  return { project, context, theme };
 };
 
 async function render(project: ProjectReflection, outputDirectory: string) {

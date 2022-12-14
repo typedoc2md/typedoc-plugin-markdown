@@ -8,15 +8,15 @@
   ],
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "markdownlint": "yarn run docs:md && markdownlint ./docs/md",
-    "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
+    "markdownlint": "npm run docs:md && markdownlint ./docs/md",
+    "prepublishOnly": "npm run lint && npm run build && npm run test",
     "prebuild": "ts-node scripts/build-resources",
     "build": "rm -rf dist && tsc",
-    "test": "jest --colors -u",
-    "build-and-test": "yarn run build && yarn run test",
-    "docs": "yarn run build && yarn run docs:md && yarn run docs:html",
-    "docs:md": "typedoc --plugin typedoc-plugin-markdown --hasOwnDocument all --options ../../stub-project/typedoc.json --out ./docs/md",
-    "docs:html": "typedoc --plugin none --options ../../stub-project/typedoc.json --out ./docs/html"
+    "test": "jest --colors -u -t \"Output File Strategy\"",
+    "build-and-test": "npm run build && npm run test",
+    "docs": "npm run build && yarn run docs:md && yarn run docs:html",
+    "docs:md": "typedoc  --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --out ./docs/md",
+    "docs:html": "typedoc --plugin none --options ../../stubs/typedoc.json --out ./docs/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",

@@ -10,7 +10,7 @@ import {
   Theme,
   UrlMapping,
 } from 'typedoc';
-import { HasOwnDocument, TemplateMapping } from './models';
+import { TemplateMapping } from './models';
 import { URL_PREFIX } from './support/constants';
 import { formatContents } from './support/utils';
 import { MarkdownThemeRenderContext } from './theme-context';
@@ -19,18 +19,16 @@ export class MarkdownTheme extends Theme {
   @BindOption('entryPoints') entryPoints!: string[];
   @BindOption('readme') readme!: string;
   @BindOption('preserveAnchorCasing') preserveAnchorCasing!: boolean;
-  @BindOption('hasOwnDocument') hasOwnDocument!: HasOwnDocument;
+  @BindOption('symbolsWithOwnFile') symbolsWithOwnFile!: string | string[];
+  @BindOption('fileStructure') fileStructure!: string;
 
   private _renderContext?: MarkdownThemeRenderContext;
-
-  private mappings: Record<number, TemplateMapping>;
 
   private anchors: Record<string, string[]>;
 
   constructor(renderer: Renderer) {
     super(renderer);
 
-    this.mappings = this.getMappingsMap(this.hasOwnDocument);
     this.anchors = {};
 
     this.listenTo(this.owner, {
@@ -41,6 +39,7 @@ export class MarkdownTheme extends Theme {
   getRenderContext() {
     if (!this._renderContext) {
       this._renderContext = new MarkdownThemeRenderContext(
+        this,
         this.application.options,
       );
     }
@@ -92,7 +91,11 @@ export class MarkdownTheme extends Theme {
 
     project.children?.forEach((child: Reflection) => {
       if (child instanceof DeclarationReflection) {
-        this.buildUrls(child, urls);
+        if (this.fileStructure === 'modules') {
+          this.buildModuleUrls(child, urls);
+        } else {
+          this.buildUrls(child, urls);
+        }
       }
     });
 
@@ -102,39 +105,92 @@ export class MarkdownTheme extends Theme {
   buildUrls(
     reflection: DeclarationReflection,
     urls: UrlMapping[],
-    parentFragment?: string,
+  ): UrlMapping[] {
+    const mapping = this.mappings[reflection.kind];
+    if (mapping) {
+      if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
+        const url = [mapping.directory, this.getUrl(reflection) + '.md'].join(
+          '/',
+        );
+        urls.push(new UrlMapping(url, reflection, mapping.template));
+
+        reflection.url = url;
+        reflection.hasOwnDocument = true;
+      }
+
+      reflection.traverse((child) => {
+        if (child instanceof DeclarationReflection) {
+          this.buildUrls(child, urls);
+        } else {
+          this.applyAnchorUrl(child, reflection);
+        }
+        return true;
+      });
+    } else if (reflection.parent) {
+      this.applyAnchorUrl(reflection, reflection.parent);
+    }
+
+    return urls;
+  }
+
+  getUrl(
+    reflection: Reflection,
+    relative?: Reflection,
+    separator = '.',
+  ): string {
+    let url = reflection.getAlias();
+
+    if (
+      reflection.parent &&
+      reflection.parent !== relative &&
+      !(reflection.parent instanceof ProjectReflection)
+    ) {
+      url =
+        this.getUrl(reflection.parent, relative, separator) + separator + url;
+    }
+
+    return url;
+  }
+
+  buildModuleUrls(
+    reflection: DeclarationReflection,
+    urls: UrlMapping[],
+    parentFragments?: string[],
   ): UrlMapping[] {
     const mapping = this.mappings[reflection.kind];
 
+    let fragments;
+
     if (mapping) {
-      const fragment = mapping.directory
-        ? `${mapping.directory}/${reflection.getAlias()}`
-        : reflection.getAlias();
+      const isModuleOrNamespace = reflection.kindOf([
+        ReflectionKind.Module,
+        ReflectionKind.Namespace,
+      ]);
+
+      let fragment: string;
+
+      if (this.symbolsWithOwnFile[0] === 'none') {
+        fragment = reflection.getAlias();
+      } else {
+        fragment = !isModuleOrNamespace
+          ? `${mapping.directory}/${reflection.getAlias()}`
+          : reflection.getAlias();
+      }
+      const entryDoc = path.parse(this.entryDocument).name;
 
       if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
-        const fragments = [fragment];
+        fragments = [fragment];
 
-        if (parentFragment) {
-          fragments.unshift(parentFragment);
+        if (parentFragments) {
+          fragments.unshift(parentFragments.join('/'));
         }
 
-        const friendlyFragments = reflection.getFriendlyFullName().split('.');
-
-        friendlyFragments.splice(
-          friendlyFragments.length - 1,
-          0,
-          ...(mapping.directory ? [mapping.directory] : []),
-        );
-
-        if (
-          reflection.groups?.some((group) =>
-            group.children.some((child) => Boolean(this.mappings[child.kind])),
-          )
-        ) {
-          friendlyFragments.push(path.parse(this.entryDocument).name);
+        if (isModuleOrNamespace && this.symbolsWithOwnFile[0] !== 'none') {
+          fragments.push(fragment);
         }
 
-        const url = friendlyFragments.join('/') + '.md';
+        const url = fragments.join('/') + '.md';
+
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
         reflection.hasOwnDocument = true;
@@ -144,12 +200,18 @@ export class MarkdownTheme extends Theme {
         if (mapping.isLeaf) {
           this.applyAnchorUrl(child, reflection);
         } else {
-          this.buildUrls(child, urls, fragment);
+          if (
+            fragments[fragments.length - 1] === fragments[fragments.length - 2]
+          ) {
+            fragments.pop();
+          }
+          this.buildModuleUrls(child, urls, fragments);
         }
       }
     } else if (reflection.parent) {
-      this.applyAnchorUrl(reflection, reflection.parent /*true*/);
+      this.applyAnchorUrl(reflection, reflection.parent);
     }
+
     return urls;
   }
 
@@ -190,62 +252,65 @@ export class MarkdownTheme extends Theme {
     });
   }
 
-  getMappingsMap(
-    hasOwnDocument: HasOwnDocument,
-  ): Record<number, TemplateMapping> {
+  get mappings(): Record<number, TemplateMapping> {
+    const isAll = this.symbolsWithOwnFile.includes('all');
+
     const mappings = {
       [ReflectionKind.Module]: {
         isLeaf: false,
         template: this.reflectionTemplate,
-      },
-      [ReflectionKind.Namespace]: {
-        isLeaf: false,
-        template: this.reflectionTemplate,
+        directory: 'modules',
       },
     };
-    if (hasOwnDocument.includes('all') || hasOwnDocument.includes('class')) {
+
+    if (isAll || this.symbolsWithOwnFile.includes('namespace')) {
+      mappings[ReflectionKind.Namespace] = {
+        isLeaf: false,
+        template: this.reflectionTemplate,
+        directory: 'namespaces',
+      };
+    }
+
+    if (isAll || this.symbolsWithOwnFile.includes('class')) {
       mappings[ReflectionKind.Class] = {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'Classes',
+        directory: 'classes',
       };
     }
-    if (
-      hasOwnDocument.includes('all') ||
-      hasOwnDocument.includes('interface')
-    ) {
+    if (isAll || this.symbolsWithOwnFile.includes('interface')) {
       mappings[ReflectionKind.Interface] = {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'Interfaces',
+        directory: 'interfaces',
       };
     }
-    if (hasOwnDocument.includes('all') || hasOwnDocument.includes('enum')) {
+    if (isAll || this.symbolsWithOwnFile.includes('enum')) {
       mappings[ReflectionKind.Enum] = {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'Enums',
+        directory: 'enums',
       };
     }
-    if (hasOwnDocument.includes('all') || hasOwnDocument.includes('function')) {
+    if (isAll || this.symbolsWithOwnFile.includes('function')) {
       mappings[ReflectionKind.Function] = {
         isLeaf: true,
         template: this.memberTemplate,
-        directory: 'Functions',
+        directory: 'functions',
       };
     }
-    if (hasOwnDocument.includes('all') || hasOwnDocument.includes('type')) {
+    if (isAll || this.symbolsWithOwnFile.includes('type')) {
       mappings[ReflectionKind.TypeAlias] = {
         isLeaf: true,
         template: this.memberTemplate,
-        directory: 'Types',
+        directory: 'types',
       };
     }
-    if (hasOwnDocument.includes('all') || hasOwnDocument.includes('variable')) {
+    if (isAll || this.symbolsWithOwnFile.includes('var')) {
       mappings[ReflectionKind.Variable] = {
         isLeaf: true,
         template: this.memberTemplate,
-        directory: 'Variables',
+        directory: 'variables',
       };
     }
     return mappings;

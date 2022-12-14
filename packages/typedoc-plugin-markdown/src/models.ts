@@ -9,23 +9,13 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   indexTitle: string;
   namedAnchors: boolean;
   publicPath: string;
-  hasOwnDocument: HasOwnDocument[];
+  hasOwnFile: string | string[];
 }
 
 export interface TemplateMapping {
-  directory?: string;
+  directory: string;
   template: any;
   isLeaf: boolean;
 }
-
-export type HasOwnDocument =
-  | 'none'
-  | 'all'
-  | 'class'
-  | 'interface'
-  | 'enum'
-  | 'function'
-  | 'variable'
-  | 'type';
 
 export type Collapse = 'object' | 'function' | 'all' | 'none';

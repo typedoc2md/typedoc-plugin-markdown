@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Output File Strategy fileStructure should compile '--fileStructure 'modules' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "module_1/module_1.md",
+  "module_1/nameSpace/nameSpace.md",
+  "module_1/nameSpace/enums/NamespaceEnum.md",
+  "module_1/nameSpace/classes/NameSspaceClassA.md",
+  "module_1/nameSpace/interfaces/NamespaceInterface.md",
+  "module_1/nameSpace/types/NamespaceTypeLiteral.md",
+  "module_1/nameSpace/variables/namespaceVariable.md",
+  "module_1/enums/Module1EnumA.md",
+  "module_1/enums/Module1EnumB.md",
+  "module_1/classes/Module1ClassA.md",
+  "module_1/classes/Module1ClassB.md",
+  "module_1/interfaces/Module1InterfaceA.md",
+  "module_1/interfaces/Module1InterfaceB.md",
+  "module_1/types/Module1TypeLiteralA.md",
+  "module_1/types/Module1TypeLiteralB.md",
+  "module_1/variables/module1VariableA.md",
+  "module_1/variables/module1VariableB.md",
+  "module_1/functions/module1FunctionA.md",
+  "module_1/functions/module1FunctionB.md",
+  "module_2/module_2.md",
+  "module_2/enums/Module2EnumA.md",
+  "module_2/enums/Module2EnumB.md",
+  "module_2/classes/Module2ClassA.md",
+  "module_2/classes/Module2ClassB.md",
+  "module_2/interfaces/Module2InterfaceA.md",
+  "module_2/interfaces/Module2InterfaceB.md",
+  "module_2/types/Module2TypeLiteralA.md",
+  "module_2/types/Module2TypeLiteralB.md",
+  "module_2/variables/module2VariableA.md",
+  "module_2/variables/module2VariableB.md",
+  "module_2/functions/module2FunctionA.md",
+  "module_2/functions/module2sFunctionB.md",
+]
+`;
+
+exports[`Output File Strategy fileStructure should compile '--fileStructure modules --symbolsWithOwnFile  none' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "module_1.md",
+  "module_2.md",
+]
+`;
+
+exports[`Output File Strategy fileStructure should compile default structure with '--symbolsWithOwnFile none 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "modules/module_1.md",
+  "modules/module_2.md",
+]
+`;
+
+exports[`Output File Strategy fileStructure should compile default structure' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "modules/module_1.md",
+  "namespaces/module_1.nameSpace.md",
+  "enums/module_1.nameSpace.NamespaceEnum.md",
+  "classes/module_1.nameSpace.NameSspaceClassA.md",
+  "interfaces/module_1.nameSpace.NamespaceInterface.md",
+  "types/module_1.nameSpace.NamespaceTypeLiteral.md",
+  "variables/module_1.nameSpace.namespaceVariable.md",
+  "enums/module_1.Module1EnumA.md",
+  "enums/module_1.Module1EnumB.md",
+  "classes/module_1.Module1ClassA.md",
+  "classes/module_1.Module1ClassB.md",
+  "interfaces/module_1.Module1InterfaceA.md",
+  "interfaces/module_1.Module1InterfaceB.md",
+  "types/module_1.Module1TypeLiteralA.md",
+  "types/module_1.Module1TypeLiteralB.md",
+  "variables/module_1.module1VariableA.md",
+  "variables/module_1.module1VariableB.md",
+  "functions/module_1.module1FunctionA.md",
+  "functions/module_1.module1FunctionB.md",
+  "modules/module_2.md",
+  "enums/module_2.Module2EnumA.md",
+  "enums/module_2.Module2EnumB.md",
+  "classes/module_2.Module2ClassA.md",
+  "classes/module_2.Module2ClassB.md",
+  "interfaces/module_2.Module2InterfaceA.md",
+  "interfaces/module_2.Module2InterfaceB.md",
+  "types/module_2.Module2TypeLiteralA.md",
+  "types/module_2.Module2TypeLiteralB.md",
+  "variables/module_2.module2VariableA.md",
+  "variables/module_2.module2VariableB.md",
+  "functions/module_2.module2FunctionA.md",
+  "functions/module_2.module2sFunctionB.md",
+]
+`;
+
+exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [class, interface]' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "modules/module_1.md",
+  "classes/module_1.Module1ClassA.md",
+  "classes/module_1.Module1ClassB.md",
+  "interfaces/module_1.Module1InterfaceA.md",
+  "interfaces/module_1.Module1InterfaceB.md",
+  "modules/module_2.md",
+  "classes/module_2.Module2ClassA.md",
+  "classes/module_2.Module2ClassB.md",
+  "interfaces/module_2.Module2InterfaceA.md",
+  "interfaces/module_2.Module2InterfaceB.md",
+]
+`;
+
+exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [class]' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "modules/module_1.md",
+  "classes/module_1.Module1ClassA.md",
+  "classes/module_1.Module1ClassB.md",
+  "modules/module_2.md",
+  "classes/module_2.Module2ClassA.md",
+  "classes/module_2.Module2ClassB.md",
+]
+`;
+
+exports[`Output File Strategy symbolsWithOwnFile should set --symbolsWithOwnFile none' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "modules/module_1.md",
+  "modules/module_2.md",
+]
+`;
+
+exports[`Output File Strategy symbolsWithOwnFile should set default symbolsWithOwnFile (all)' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "modules/module_1.md",
+  "namespaces/module_1.nameSpace.md",
+  "enums/module_1.nameSpace.NamespaceEnum.md",
+  "classes/module_1.nameSpace.NameSspaceClassA.md",
+  "interfaces/module_1.nameSpace.NamespaceInterface.md",
+  "types/module_1.nameSpace.NamespaceTypeLiteral.md",
+  "variables/module_1.nameSpace.namespaceVariable.md",
+  "enums/module_1.Module1EnumA.md",
+  "enums/module_1.Module1EnumB.md",
+  "classes/module_1.Module1ClassA.md",
+  "classes/module_1.Module1ClassB.md",
+  "interfaces/module_1.Module1InterfaceA.md",
+  "interfaces/module_1.Module1InterfaceB.md",
+  "types/module_1.Module1TypeLiteralA.md",
+  "types/module_1.Module1TypeLiteralB.md",
+  "variables/module_1.module1VariableA.md",
+  "variables/module_1.module1VariableB.md",
+  "functions/module_1.module1FunctionA.md",
+  "functions/module_1.module1FunctionB.md",
+  "modules/module_2.md",
+  "enums/module_2.Module2EnumA.md",
+  "enums/module_2.Module2EnumB.md",
+  "classes/module_2.Module2ClassA.md",
+  "classes/module_2.Module2ClassB.md",
+  "interfaces/module_2.Module2InterfaceA.md",
+  "interfaces/module_2.Module2InterfaceB.md",
+  "types/module_2.Module2TypeLiteralA.md",
+  "types/module_2.Module2TypeLiteralB.md",
+  "variables/module_2.module2VariableA.md",
+  "variables/module_2.module2VariableB.md",
+  "functions/module_2.module2FunctionA.md",
+  "functions/module_2.module2sFunctionB.md",
+]
+`;
+
+exports[`Output File Strategy symbolsWithOwnFile should set symbolsWithOwnFile [enum, types, variables]' 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "modules/module_1.md",
+  "enums/module_1.Module1EnumA.md",
+  "enums/module_1.Module1EnumB.md",
+  "types/module_1.Module1TypeLiteralA.md",
+  "types/module_1.Module1TypeLiteralB.md",
+  "variables/module_1.module1VariableA.md",
+  "variables/module_1.module1VariableB.md",
+  "modules/module_2.md",
+  "enums/module_2.Module2EnumA.md",
+  "enums/module_2.Module2EnumB.md",
+  "types/module_2.Module2TypeLiteralA.md",
+  "types/module_2.Module2TypeLiteralB.md",
+  "variables/module_2.module2VariableA.md",
+  "variables/module_2.module2VariableB.md",
+]
+`;
