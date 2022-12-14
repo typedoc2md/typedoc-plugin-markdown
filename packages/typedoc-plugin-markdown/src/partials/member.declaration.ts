@@ -26,7 +26,9 @@ export function declarationMember(
   }
 
   if (typeDeclaration?.indexSignature) {
-    md.push('context.indexSignaturePartial(typeDeclaration.indexSignature)');
+    md.push(
+      context.partials.indexSignatureTitle(typeDeclaration.indexSignature),
+    );
   }
 
   if (typeDeclaration?.signatures) {

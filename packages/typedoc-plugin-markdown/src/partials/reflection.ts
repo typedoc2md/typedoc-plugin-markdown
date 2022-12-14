@@ -47,7 +47,7 @@ export function reflection(
 
   if ('indexSignature' in reflection && reflection.indexSignature) {
     md.push(bold('Indexable'));
-    md.push('context.indexSignaturePartial(props.model.indexSignature)');
+    md.push(context.partials.indexSignatureTitle(reflection.indexSignature));
   }
 
   md.push(context.partials.toc(reflection));

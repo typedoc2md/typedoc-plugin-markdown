@@ -40,6 +40,7 @@ import { hierarchy } from './partials/hierarchy';
 import { constructorMember } from './partials/member.constructor';
 import { declarationMemberTitle } from './partials/member.declaration.title';
 import { declarationMember } from './partials/member.declaration';
+import { indexSignatureTitle } from './partials/member.indexsignature.title';
 import { referenceMember } from './partials/member.reference';
 import { signatureTitle } from './partials/member.signature.title';
 import { signatureMember } from './partials/member.signature';
@@ -90,6 +91,7 @@ export type Partials = {
   constructorMember: (signature: SignatureReflection) => string;
   declarationMemberTitle: (reflection: DeclarationReflection | ParameterReflection) => string;
   declarationMember: (reflection: DeclarationReflection) => string;
+  indexSignatureTitle: (signature: SignatureReflection) => string;
   referenceMember: (props: ReferenceReflection) => string;
   signatureTitle: (signature: SignatureReflection, accessor?: string |  undefined) => string;
   signatureMember: (signature: SignatureReflection) => string;
@@ -138,6 +140,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   constructorMember: bind(constructorMember, context),
   declarationMemberTitle: bind(declarationMemberTitle, context),
   declarationMember: bind(declarationMember, context),
+  indexSignatureTitle: bind(indexSignatureTitle, context),
   referenceMember: bind(referenceMember, context),
   signatureTitle: bind(signatureTitle, context),
   signatureMember: bind(signatureMember, context),
