@@ -17,6 +17,5 @@ export function referenceMember(
 
   return `Renames and re-exports [${referenced.name}](${context.urlTo(
     referenced,
-  )})
-  }`;
+  )})`;
 }
