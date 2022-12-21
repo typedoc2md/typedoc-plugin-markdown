@@ -1,5 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
-import { bold, heading, horizontalRule, unorderedList } from '../support/els';
+import { bold, heading, unorderedList } from '../support/els';
 import { getSecondaryHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -51,8 +51,6 @@ export function reflection(
   }
 
   md.push(context.partials.toc(reflection));
-
-  md.push(horizontalRule());
 
   md.push(context.partials.members(reflection));
 
