@@ -13,7 +13,7 @@ export function declarationMemberTitle(
   context: MarkdownThemeRenderContext,
   reflection: ParameterReflection | DeclarationReflection,
 ) {
-  const md: string[] = [''];
+  const md: string[] = ['> '];
 
   if (
     reflection.flags &&

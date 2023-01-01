@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-"\`Const\` **stringConstWithDefaultValue**: \`"hello"\`
+"> \`Const\` **stringConstWithDefaultValue**: \`"hello"\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile a let with default value 1`] = `
-" **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
+">  **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile an undefined declaration 1`] = `
-" **undefinedNumberDeclaration**: \`number\`
+">  **undefinedNumberDeclaration**: \`number\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-" **AnyFunctionType**<\`A\`\\>: (...\`input\`: \`any\`[]) => \`A\`
+">  **AnyFunctionType**<\`A\`\\>: (...\`input\`: \`any\`[]) => \`A\`
 
 **Type parameters**
 
@@ -28,7 +28,7 @@ exports[`Declarations: should compile any function type 1`] = `
 
 **Type declaration**
 
-» (...\`input\`: \`any\`[]): \`A\`
+> (...\`input\`: \`any\`[]): \`A\`
 
 **Parameters**
 
@@ -46,7 +46,7 @@ exports[`Declarations: should compile any function type 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with accessors 1`] = `
-" **getterAndSetter**: \`Object\`
+">  **getterAndSetter**: \`Object\`
 
 **Type declaration**
 
@@ -61,31 +61,31 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"\`Const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](Modules.md#__double_underscores_declaration__)
+"> \`Const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: typeof [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](Modules.md#__double_underscores_declaration__)
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile enum declaration 1`] = `
-" **Down** = \`1\`
+">  **Down** = \`1\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile enum declaration with defaults 1`] = `
-" **East** = \`"East"\`
+">  **East** = \`"East"\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile function declaration 1`] = `
-" **functionDeclaration**: 
+">  **functionDeclaration**: 
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile indexable declaration 1`] = `
-" **indexableDeclaration**: \`Object\`
+">  **indexableDeclaration**: \`Object\`
 
 context.indexSignaturePartial(typeDeclaration.indexSignature)
 
@@ -101,7 +101,7 @@ context.indexSignaturePartial(typeDeclaration.indexSignature)
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-"\`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
+"> \`Const\` **objectLiteralAsConstDeclaration**: \`Object\`
 
 Comments
 
@@ -131,7 +131,7 @@ Comment for Prop2.
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-"\`Const\` **objectLiteralDeclaration**: \`Object\`
+"> \`Const\` **objectLiteralDeclaration**: \`Object\`
 
 **\`Param\`**
 
@@ -164,7 +164,7 @@ description for valueY
 `;
 
 exports[`Declarations: should compile type literal declaration 1`] = `
-" **typeLiteralDeclaration**: \`Object\`
+">  **typeLiteralDeclaration**: \`Object\`
 
 **Type declaration**
 
