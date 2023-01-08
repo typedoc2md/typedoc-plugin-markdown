@@ -4,7 +4,7 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { backTicks, heading } from '../support/els';
-import { getTeritiaryHeadingLevel, isConstructor } from '../support/helpers';
+import { getReflectionHeadingLevel, isConstructor } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function member(
@@ -13,26 +13,15 @@ export function member(
 ) {
   const md: string[] = [];
 
-  const headingLevel = getTeritiaryHeadingLevel(reflection);
+  const headingLevel = getReflectionHeadingLevel(reflection);
 
   if (context.getOption('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 
-  if (!reflection.hasOwnDocument) {
-    if (context.getOption('embedHeadingsInCodeBlock')) {
-      md.push(
-        heading(
-          headingLevel,
-          backTicks(context.partials.reflectionTitle(reflection, false)),
-        ),
-      );
-    } else {
-      md.push(
-        heading(headingLevel, context.partials.reflectionTitle(reflection)),
-      );
-    }
-  }
+  const title = context.partials.reflectionTitle(reflection, false);
+
+  md.push(heading(headingLevel, backTicks(title)));
 
   if (
     [

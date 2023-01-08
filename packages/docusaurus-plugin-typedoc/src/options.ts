@@ -16,7 +16,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageTitle: false,
-  embedHeadingsInCodeBlock: false,
   entryDocument: 'README.md',
   plugin: ['none'],
   watch: false,

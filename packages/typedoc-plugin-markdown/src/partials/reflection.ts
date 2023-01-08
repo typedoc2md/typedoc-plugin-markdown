@@ -1,6 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
-import { bold, heading, unorderedList } from '../support/els';
-import { getSecondaryHeadingLevel } from '../support/helpers';
+import { heading, unorderedList } from '../support/els';
+import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function reflection(
@@ -9,25 +9,25 @@ export function reflection(
 ) {
   const md: string[] = [];
 
-  const headingLevel = getSecondaryHeadingLevel(reflection);
+  const headingLevel = getReflectionHeadingLevel(reflection) + 1;
 
   if (reflection.comment) {
     md.push(context.partials.comment(reflection.comment));
   }
 
   if (reflection.typeParameters) {
-    md.push(bold('Type parameters'));
+    md.push(heading(headingLevel, 'Type parameters'));
     md.push(context.partials.typeParameters(reflection.typeParameters));
   }
 
   if (reflection.typeHierarchy) {
     if (reflection.typeHierarchy?.next) {
-      md.push(bold('Hierarchy'));
+      md.push(heading(headingLevel, 'Hierarchy'));
       md.push(context.partials.hierarchy(reflection.typeHierarchy));
     }
   }
   if (reflection.implementedTypes) {
-    md.push(bold('Implements'));
+    md.push(heading(headingLevel, 'Implements'));
     md.push(
       unorderedList(
         reflection.implementedTypes.map((implementedType) =>
@@ -38,7 +38,7 @@ export function reflection(
   }
 
   if ('signatures' in reflection && reflection.signatures) {
-    md.push(bold('Callable'));
+    md.push(heading(headingLevel, 'Callable'));
     reflection.signatures.forEach((signature) => {
       md.push(heading(headingLevel + 1, signature.name));
       md.push(context.partials.signatureMember(signature));
@@ -46,7 +46,7 @@ export function reflection(
   }
 
   if ('indexSignature' in reflection && reflection.indexSignature) {
-    md.push(bold('Indexable'));
+    md.push(heading(headingLevel, 'Indexable'));
     md.push(context.partials.indexSignatureTitle(reflection.indexSignature));
   }
 

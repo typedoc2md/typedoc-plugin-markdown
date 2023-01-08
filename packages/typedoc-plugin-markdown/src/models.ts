@@ -4,12 +4,12 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   hidePageTitle: boolean;
-  embedHeadingsInCodeBlock: boolean;
   entryDocument: string;
   indexTitle: string;
   namedAnchors: boolean;
   publicPath: string;
   hasOwnFile: string | string[];
+  typeDeclarationStyle: 'list' | 'table';
 }
 
 export interface TemplateMapping {

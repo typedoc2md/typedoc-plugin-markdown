@@ -6,6 +6,8 @@ export const link = (label: string, url: string | null) =>
 
 export const bold = (text: string) => `**${text}**`;
 
+export const italic = (text: string) => `*${text}*`;
+
 export const backTicks = (text: string) => `\`${text}\``;
 
 export const unorderedList = <T>(items: T[]) =>

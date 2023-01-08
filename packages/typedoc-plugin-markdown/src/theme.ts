@@ -261,15 +261,12 @@ export class MarkdownTheme extends Theme {
         template: this.reflectionTemplate,
         directory: 'modules',
       },
-    };
-
-    if (isAll || this.symbolsWithOwnFile.includes('namespace')) {
-      mappings[ReflectionKind.Namespace] = {
+      [ReflectionKind.Namespace]: {
         isLeaf: false,
         template: this.reflectionTemplate,
         directory: 'namespaces',
-      };
-    }
+      },
+    };
 
     if (isAll || this.symbolsWithOwnFile.includes('class')) {
       mappings[ReflectionKind.Class] = {

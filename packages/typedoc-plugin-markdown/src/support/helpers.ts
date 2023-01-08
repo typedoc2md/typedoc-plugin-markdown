@@ -15,39 +15,45 @@ export const isConstructor = (
   return signature.parent?.kindOf(ReflectionKind.Constructor);
 };
 
-/**
- * ie: Functions
- */
-export const getSecondaryHeadingLevel = (
-  reflection: ProjectReflection | DeclarationReflection | ContainerReflection,
-) => {
-  return reflection.kindOf(ReflectionKind.Project) || reflection.hasOwnDocument
-    ? 2
-    : 4;
-};
+export function getIndexHeadingLevel(
+  reflection: DeclarationReflection | ProjectReflection,
+) {
+  if (!reflection.kindString) {
+    return 2;
+  }
+  return reflection.hasOwnDocument ? 2 : 3;
+}
 
-/**
- * ie: Reflection Name
- */
-export const getTeritiaryHeadingLevel = (
+export function getGroupHeadingLevel(container: ContainerReflection) {
+  if (container.kindOf(ReflectionKind.Module)) {
+    return 1;
+  }
+  return container.hasOwnDocument ? 2 : 3;
+}
+
+export function getReflectionHeadingLevel(
   reflection: DeclarationReflection | SignatureReflection,
-) => {
-  if (isConstructor(reflection)) {
-    return reflection.parent?.parent?.hasOwnDocument ? 4 : 6;
+) {
+  if (reflection.kindOf(ReflectionKind.Constructor)) {
+    return reflection.parent?.hasOwnDocument ? 3 : 4;
   }
 
-  return reflection.parent?.hasOwnDocument ? 3 : 5;
-};
-
-/**
- * Parameters
- */
-export const getQuaternaryHeadingLevel = (
-  reflection: DeclarationReflection | SignatureReflection,
-) => {
-  if (reflection.kindOf(ReflectionKind.SomeSignature)) {
-    return reflection.parent?.parent?.hasOwnDocument ? 4 : 6;
+  if (
+    reflection.kindOf([
+      ReflectionKind.Class,
+      ReflectionKind.Interface,
+      ReflectionKind.Function,
+      ReflectionKind.TypeAlias,
+      ReflectionKind.Variable,
+    ])
+  ) {
+    return 2;
   }
+  return reflection.parent?.hasOwnDocument ? 3 : 4;
+}
 
-  return reflection.parent?.hasOwnDocument ? 4 : 6;
-};
+export function getMemberHeadingLevel(
+  reflection: DeclarationReflection | SignatureReflection,
+) {
+  return getReflectionHeadingLevel(reflection) + 1;
+}

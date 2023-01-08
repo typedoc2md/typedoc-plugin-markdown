@@ -45,13 +45,14 @@ import { referenceMember } from './partials/member.reference';
 import { signatureTitle } from './partials/member.signature.title';
 import { signatureMember } from './partials/member.signature';
 import { member } from './partials/member';
+import { typeDeclarationList } from './partials/member.typedeclaration.list';
+import { typeDeclarationTable } from './partials/member.typedeclaration.table';
+import { typeParameters } from './partials/member.typeparameters';
 import { members } from './partials/members';
+import { parametersTable } from './partials/parameters..table';
 import { reflectionTitle } from './partials/reflection.title';
 import { reflection } from './partials/reflection';
 import { sources } from './partials/sources';
-import { parametersTable } from './partials/table.parameters';
-import { propertiesTable } from './partials/table.properties';
-import { typeParametersTable } from './partials/table.typeParameters';
 import { toc } from './partials/toc';
 import { arrayType } from './partials/type.array';
 import { conditionalType } from './partials/type.conditional';
@@ -70,7 +71,6 @@ import { tupleType } from './partials/type.tuple';
 import { typeOperatorType } from './partials/type.typeOperator';
 import { unionType } from './partials/type.union';
 import { unknownType } from './partials/type.unknown';
-import { typeParameters } from './partials/typeParameters';
 
 function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
   return (...r: L) => fn(first, ...r);
@@ -90,19 +90,20 @@ export type Partials = {
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
   constructorMember: (signature: SignatureReflection) => string;
   declarationMemberTitle: (reflection: DeclarationReflection | ParameterReflection) => string;
-  declarationMember: (reflection: DeclarationReflection) => string;
+  declarationMember: (declaration: DeclarationReflection) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
   referenceMember: (props: ReferenceReflection) => string;
   signatureTitle: (signature: SignatureReflection, accessor?: string |  undefined) => string;
-  signatureMember: (signature: SignatureReflection) => string;
+  signatureMember: (signature: SignatureReflection, parentHeadingLevel?: number |  undefined) => string;
   member: (reflection: DeclarationReflection) => string;
+  typeDeclarationList: (props: DeclarationReflection[]) => string;
+  typeDeclarationTable: (props: DeclarationReflection[]) => string;
+  typeParameters: (typeParameters: TypeParameterReflection[]) => string;
   members: (container: ContainerReflection) => string;
+  parametersTable: (parameters: ParameterReflection[]) => string;
   reflectionTitle: (reflection: DeclarationReflection, shouldEscape?: boolean) => string;
   reflection: (reflection: DeclarationReflection) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
-  parametersTable: (parameters: ParameterReflection[]) => string;
-  propertiesTable: (props: DeclarationReflection[]) => string;
-  typeParametersTable: (props: TypeParameterReflection[]) => string;
   toc: (reflection: DeclarationReflection | ProjectReflection) => string;
   arrayType: (arrayType: ArrayType, emphasis: boolean) => string;
   conditionalType: (conditionalType: ConditionalType) => string;
@@ -121,7 +122,6 @@ export type Partials = {
   typeOperatorType: (model: TypeOperatorType) => string;
   unionType: (unionType: UnionType, emphasis: boolean) => string;
   unknownType: (model: UnknownType) => string;
-  typeParameters: (typeParameters: TypeParameterReflection[]) => string;
 };
 
 export const templates = (context: MarkdownThemeRenderContext): Templates => ({
@@ -145,13 +145,14 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   signatureTitle: bind(signatureTitle, context),
   signatureMember: bind(signatureMember, context),
   member: bind(member, context),
+  typeDeclarationList: bind(typeDeclarationList, context),
+  typeDeclarationTable: bind(typeDeclarationTable, context),
+  typeParameters: bind(typeParameters, context),
   members: bind(members, context),
+  parametersTable: bind(parametersTable, context),
   reflectionTitle: bind(reflectionTitle, context),
   reflection: bind(reflection, context),
   sources: bind(sources, context),
-  parametersTable: bind(parametersTable, context),
-  propertiesTable: bind(propertiesTable, context),
-  typeParametersTable: bind(typeParametersTable, context),
   toc: bind(toc, context),
   arrayType: bind(arrayType, context),
   conditionalType: bind(conditionalType, context),
@@ -170,5 +171,4 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   typeOperatorType: bind(typeOperatorType, context),
   unionType: bind(unionType, context),
   unknownType: bind(unknownType, context),
-  typeParameters: bind(typeParameters, context),
 });

@@ -4,7 +4,7 @@ import {
   ReflectionGroup,
 } from 'typedoc';
 import { heading } from '../support/els';
-import { getSecondaryHeadingLevel } from '../support/helpers';
+import { getIndexHeadingLevel } from '../support/helpers';
 import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -32,7 +32,8 @@ export function toc(
     (!hideInPageTOC && reflection.groups) ||
     (isVisible && reflection.groups)
   ) {
-    const headingLevel = getSecondaryHeadingLevel(reflection);
+    const headingLevel = getIndexHeadingLevel(reflection);
+    const subHeadingLevel = headingLevel + 1;
     if (!hideInPageTOC) {
       md.push(heading(headingLevel, 'Index') + '\n\n');
     }
@@ -41,7 +42,7 @@ export function toc(
       if (group.categories) {
         group.categories.forEach((category) => {
           md.push(
-            heading(headingLevel + 1, `${category.title} ${groupTitle}`) +
+            heading(subHeadingLevel, `${category.title} ${groupTitle}`) +
               '\n\n',
           );
           pushGroup(category as any, md);
@@ -49,7 +50,7 @@ export function toc(
         });
       } else {
         if (!hideInPageTOC || group.allChildrenHaveOwnDocument()) {
-          md.push(heading(headingLevel + 1, groupTitle) + '\n\n');
+          md.push(heading(subHeadingLevel, groupTitle) + '\n\n');
           pushGroup(group, md);
           md.push('\n');
         }

@@ -4,11 +4,6 @@ stringLetWithDefaultValue = 'world';
 
 export let undefinedNumberDeclaration: number;
 
-/**
- * @param objectLiteralDeclaration.valueX description for valueX
- * @param objectLiteralDeclaration.valueZ description for valueZ
- * @param objectLiteralDeclaration.valueY description for valueY
- */
 export const objectLiteralDeclaration = {
   /**
    * Comment for valueZ
@@ -24,7 +19,13 @@ export const objectLiteralDeclaration = {
    * Comment for valueX
    */
   valueX: {
+    /**
+     * Comment for valueZ
+     */
     valueZ: 'foo',
+    /**
+     * Comment for valueA
+     */
     valueA: [100, 200, 300],
   },
   /**
@@ -46,9 +47,12 @@ export let typeLiteralDeclaration: {
    */
   valueX: {
     /**
-     * Nested comment for valueZ
+     * Nested comment for valueX.valueZ
      */
     valueZ: string;
+    /**
+     * Nested comment for valueX.valueY
+     */
     valueY: { (z: string): { a: string; b: string } };
     valueA: number[];
   };

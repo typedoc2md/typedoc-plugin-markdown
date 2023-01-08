@@ -1,5 +1,4 @@
 import { ClassWithTypeParams } from './generics';
-import { _someCallback_ } from './signatures';
 
 export let htmlElement: HTMLElement;
 
@@ -117,3 +116,5 @@ export const baz: Bar<string, string> = (foos) => '...';
 
 export const fooBigInt = BigInt(100); // the BigInt function
 export const barBigInt = 100n; // a BigInt literal
+
+export type _someCallback_ = (name: string, value: unknown) => void;

@@ -1,4 +1,4 @@
-export class NameSspaceClassA {}
+export class NameSpaceClassA {}
 
 export interface NamespaceInterface {
   a: string;

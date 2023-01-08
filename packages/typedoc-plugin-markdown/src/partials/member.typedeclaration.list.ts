@@ -1,19 +1,14 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
-import { escapeChars, stripLineBreaks } from '../support/utils';
+import { backTicks } from '../support/els';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-export function propertiesTable(
+export function typeDeclarationList(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
 ) {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = !comments.every((value) => !value);
-
-  const headers = ['Name', 'Type'];
-
-  if (hasComments) {
-    headers.push('Description');
-  }
 
   const flattenParams = (current: any) => {
     return current.type?.declaration?.children?.reduce(
@@ -41,39 +36,35 @@ export function propertiesTable(
     [],
   );
 
-  const rows = properties.map((property) => {
+  const items = properties.map((property) => {
     const propertyType = getPropertyType(property);
-    const row: string[] = [];
-    const nameCol: string[] = [];
+    const md: string[] = [];
     const name =
       property.name.match(/[\\`\\|]/g) !== null
         ? escapeChars(getName(context, property))
-        : `\`${getName(context, property)}\``;
-    nameCol.push(name);
-    row.push(nameCol.join(' '));
-    row.push(
-      context.partials.someType(propertyType).replace(/(?<!\\)\|/g, '\\|'),
-    );
+        : getName(context, property);
+
+    const isParent = name.split('.')?.length === 1;
 
     if (hasComments) {
       const comments = getComments(property);
       if (comments) {
-        row.push(
-          stripLineBreaks(context.partials.comment(comments)).replace(
-            /\|/g,
-            '\\|',
-          ),
-        );
-      } else {
-        row.push('-');
+        md.push((isParent ? '' : '  ') + context.partials.comment(comments));
       }
+      md.push('\n\n');
     }
-    return `| ${row.join(' | ')} |\n`;
+
+    md.push(
+      `${isParent ? '' : '  '}- ${backTicks(name)}: ${context.partials.someType(
+        propertyType,
+        isParent ? 'object' : 'none',
+      )}`,
+    );
+
+    return md.join('\n');
   });
 
-  const output = `\n| ${headers.join(' | ')} |\n| ${headers
-    .map(() => ':------')
-    .join(' | ')} |\n${rows.join('')}`;
+  const output = items.join('\n\n');
 
   return output;
 }

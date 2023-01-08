@@ -16,7 +16,7 @@ export function reflectionType(
       ? `\`fn\``
       : context.partials.functionType(root.signatures);
   }
-  return collapse === 'object' || collapse === 'all'
-    ? `\`Object\``
+  return (collapse === 'object' && !root.indexSignature) || collapse === 'all'
+    ? `\`object\``
     : context.partials.declarationType(root);
 }

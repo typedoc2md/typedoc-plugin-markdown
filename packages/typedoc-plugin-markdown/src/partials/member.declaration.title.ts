@@ -13,7 +13,7 @@ export function declarationMemberTitle(
   context: MarkdownThemeRenderContext,
   reflection: ParameterReflection | DeclarationReflection,
 ) {
-  const md: string[] = ['> '];
+  const md: string[] = [];
 
   if (
     reflection.flags &&
@@ -59,7 +59,7 @@ function getType(
 ) {
   const reflectionType = reflection.type as ReflectionType;
   if (reflectionType && reflectionType.declaration?.children) {
-    return ': `Object`';
+    return ': `object`';
   }
   return (
     (reflection.parent?.kindOf(ReflectionKind.Enum) ? ' = ' : ': ') +

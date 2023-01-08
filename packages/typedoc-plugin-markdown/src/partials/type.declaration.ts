@@ -9,7 +9,7 @@ export function declarationType(
   collapse: Collapse = 'none',
 ) {
   if (collapse === 'object' || collapse === 'all') {
-    return `\`Object\``;
+    return `\`object\``;
   }
 
   if (declarationReflection.indexSignature || declarationReflection.children) {

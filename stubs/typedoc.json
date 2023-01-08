@@ -1,5 +1,14 @@
 {
-  "entryPoints": ["./src/index.ts"],
+  "entryPoints": [
+    "./src/index.ts",
+    "./src/declarations.ts",
+    "./src/generics.ts",
+    "./src/interfaces.ts",
+    "./src/signatures.ts",
+    "./src/sources.ts",
+    "./src/types.ts",
+    "./src/modules/module-1/index.ts"
+  ],
   "includes": "./inc/",
   "media": "./media/",
   "name": "My TypeScript API",

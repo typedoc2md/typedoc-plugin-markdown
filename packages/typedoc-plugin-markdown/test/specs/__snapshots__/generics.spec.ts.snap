@@ -7,7 +7,7 @@ exports[`Generics: should compile class with type params 1`] = `
 
 [partial: comment]
 
-**Type parameters**
+## Type parameters
 
 - \`T\`
 - \`V\`
@@ -19,43 +19,47 @@ exports[`Generics: should compile class with type params 1`] = `
 `;
 
 exports[`Generics: should compile function with a simple type param' 1`] = `
-"> **functionWithTypeParam**<\`A\`\\>(): \`boolean\`
+"**functionWithTypeParam**<\`A\`\\>(): \`boolean\`
 
-**Type parameters**
+### Type parameters
 
 - \`A\`
 
 
-**Returns**
+### Returns
 
-\`boolean\`"
+\`boolean\`
+
+[partial: sources]"
 `;
 
 exports[`Generics: should compile function with complex type params' 1`] = `
-"> **functionWithTypeParams**<\`A\`, \`B\`, \`C\`\\>(): \`boolean\`
+"**functionWithTypeParams**<\`A\`, \`B\`, \`C\`\\>(): \`boolean\`
 
 [partial: comment]
 
-**Type parameters**
+### Type parameters
 
-- \`A\` *extends* [\`ClassWithTypeParams\`](Modules.md#classwithtypeparams)<\`string\`, \`number\`, \`A\`\\>[partial: comment]
+- \`A\` *extends* [\`ClassWithTypeParams\`](../classes/ClassWithTypeParams.md)<\`string\`, \`number\`, \`A\`\\>[partial: comment]
 - \`B\` = \`string\` \\| \`boolean\`[partial: comment]
 - \`C\` = \`string\`
 
 
-**Returns**
+### Returns
 
-\`boolean\`"
+\`boolean\`
+
+[partial: sources]"
 `;
 
 exports[`Generics: should compile generics with defaults' 1`] = `
-">  **genericsWithDefaults**: 
+" **genericsWithDefaults**: 
 
 [partial: sources]"
 `;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-">  **nestedGenerics**: [\`Generic1\`](Modules.md#generic1)<[\`Generic2\`](Modules.md#generic2)<[\`Generic3\`](Modules.md#generic3)<\`string\`\\>\\>\\>
+" **nestedGenerics**: [\`Generic1\`](../types/Generic1.md)<[\`Generic2\`](../types/Generic2.md)<[\`Generic3\`](../types/Generic3.md)<\`string\`\\>\\>\\>
 
 [partial: sources]"
 `;

@@ -4,8 +4,7 @@ import {
   ReferenceType,
   SignatureReflection,
 } from 'typedoc';
-import { bold, link } from '../support/els';
-import { getQuaternaryHeadingLevel } from '../support/helpers';
+import { link } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 import { escapeChars } from '../support/utils';
@@ -16,34 +15,43 @@ export function sources(
 ) {
   const md: string[] = [];
 
-  const headingLevel = getQuaternaryHeadingLevel(reflection);
-
   if (reflection.implementationOf) {
-    md.push(bold('Implementation of') + ' ');
-    md.push(typeAndParent(context, reflection.implementationOf));
+    md.push(
+      `${'Implementation of'}: ${typeAndParent(
+        context,
+        reflection.implementationOf,
+      )}`,
+    );
   }
 
   if (reflection.inheritedFrom) {
-    md.push(bold('Inherited from') + ' ');
-    md.push(typeAndParent(context, reflection.inheritedFrom));
+    md.push(
+      `${'Inherited from'}: ${typeAndParent(
+        context,
+        reflection.inheritedFrom,
+      )}`,
+    );
   }
 
   if (reflection.overwrites) {
-    md.push(bold('Overrides') + ' ');
-    md.push(typeAndParent(context, reflection.overwrites));
+    md.push(
+      `${'Overrides'}:  ${typeAndParent(context, reflection.overwrites)}`,
+    );
   }
 
   if (reflection.sources) {
-    md.push(bold('Defined in') + ' ');
+    const definedInMd = [`${'Defined in'}:`];
+
     reflection.sources.forEach((source) => {
       if (source.url) {
-        md.push(
+        definedInMd.push(
           link(`${escapeChars(source.fileName)}:${source.line}`, source.url),
         );
       } else {
-        md.push(`${escapeChars(source.fileName)}:${source.line}`);
+        definedInMd.push(`${escapeChars(source.fileName)}:${source.line}`);
       }
     });
+    md.push(definedInMd.join(' '));
   }
   return md.join('\n\n');
 }

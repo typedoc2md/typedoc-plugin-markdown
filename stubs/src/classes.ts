@@ -5,5 +5,5 @@ export class Point {
     this.x = x;
     this.y = y;
   }
-  getPoint() {}
+  getPoint(notes: string) {}
 }

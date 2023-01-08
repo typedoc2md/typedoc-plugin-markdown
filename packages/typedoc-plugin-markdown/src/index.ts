@@ -67,17 +67,25 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'embedHeadingsInCodeBlock',
-    help: '[Markdown Plugin] Wraps the heading of a reflection in a code block.',
+    name: 'preserveAnchorCasing',
+    help: '[Markdown Plugin] Preserve anchor casing when generating links.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    name: 'preserveAnchorCasing',
-    help: '[Markdown Plugin] Preserve anchor casing when generating links.',
-    type: ParameterType.Boolean,
-    defaultValue: false,
+    name: 'typeDeclarationStyle',
+    help: '[Markdown Plugin] Specify the Type Declaration Render Style',
+    type: ParameterType.String,
+    defaultValue: 'list',
+    validate: (x) => {
+      const availableValues = ['table', 'list'];
+      if (!availableValues.includes(x)) {
+        throw new Error(
+          `Wrong value for objectLiteralTypeDeclarationStyle, the expected value is one of ${availableValues}`,
+        );
+      }
+    },
   });
 }
 

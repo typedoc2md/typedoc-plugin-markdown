@@ -15,6 +15,10 @@ export function functionWithParameters(
   return 0;
 }
 
+export interface CallableSignature {
+  (): string;
+}
+
 /**
  * This is a function that is assigned to a variable.
  *
@@ -95,10 +99,6 @@ export function functionWithUnionTypes(
   return null;
 }
 
-export interface CallableSignature {
-  (): string;
-}
-
 export function functionWithNamedParams({ x: number, b: string }) {
   return '';
 }
@@ -154,7 +154,7 @@ export const swtch =
     return def;
   };
 
-export type _someCallback_ = (name: string, value: unknown) => void;
+export let functionDeclaration: (someArg: number) => boolean;
 
 /**
  * FOO
@@ -213,12 +213,7 @@ export class ClassWithConstructor {
   constructor(x: string, y: string) {}
 }
 
-export type User = {
-  id: string;
-  data: string;
-};
-
-export const promiseReturningASymbol = (): Promise<User> => {
+export const promiseReturningASymbol = (): Promise<any> => {
   return new Promise((resolve) => {
     resolve({ id: 'id', data: 'data' });
   });
