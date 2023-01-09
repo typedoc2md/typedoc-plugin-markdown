@@ -1,4 +1,4 @@
-import { TypeDocOptionMap } from 'typedoc';
+import { ReflectionKind, TypeDocOptionMap } from 'typedoc';
 
 export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   hideBreadcrumbs: boolean;
@@ -16,6 +16,7 @@ export interface TemplateMapping {
   directory: string;
   template: any;
   isLeaf: boolean;
+  kind: ReflectionKind;
 }
 
 export type Collapse = 'object' | 'function' | 'all' | 'none';

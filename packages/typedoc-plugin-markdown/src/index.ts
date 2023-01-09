@@ -1,5 +1,4 @@
 import { Application, Options, OptionsReader, ParameterType } from 'typedoc';
-
 import { MarkdownTheme } from './theme';
 import { MarkdownThemeRenderContext } from './theme-context';
 
@@ -89,4 +88,5 @@ export function load(app: Application) {
   });
 }
 
+export * from './models';
 export { MarkdownTheme, MarkdownThemeRenderContext };

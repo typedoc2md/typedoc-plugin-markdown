@@ -260,11 +260,13 @@ export class MarkdownTheme extends Theme {
         isLeaf: false,
         template: this.reflectionTemplate,
         directory: 'modules',
+        kind: ReflectionKind.Module,
       },
       [ReflectionKind.Namespace]: {
         isLeaf: false,
         template: this.reflectionTemplate,
         directory: 'namespaces',
+        kind: ReflectionKind.Namespace,
       },
     };
 
@@ -273,6 +275,7 @@ export class MarkdownTheme extends Theme {
         isLeaf: false,
         template: this.reflectionTemplate,
         directory: 'classes',
+        kind: ReflectionKind.Class,
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('interface')) {
@@ -280,6 +283,7 @@ export class MarkdownTheme extends Theme {
         isLeaf: false,
         template: this.reflectionTemplate,
         directory: 'interfaces',
+        kind: ReflectionKind.Interface,
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('enum')) {
@@ -287,6 +291,7 @@ export class MarkdownTheme extends Theme {
         isLeaf: false,
         template: this.reflectionTemplate,
         directory: 'enums',
+        kind: ReflectionKind.Enum,
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('function')) {
@@ -294,6 +299,7 @@ export class MarkdownTheme extends Theme {
         isLeaf: true,
         template: this.memberTemplate,
         directory: 'functions',
+        kind: ReflectionKind.Function,
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('type')) {
@@ -301,6 +307,7 @@ export class MarkdownTheme extends Theme {
         isLeaf: true,
         template: this.memberTemplate,
         directory: 'types',
+        kind: ReflectionKind.TypeAlias,
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('var')) {
@@ -308,6 +315,7 @@ export class MarkdownTheme extends Theme {
         isLeaf: true,
         template: this.memberTemplate,
         directory: 'variables',
+        kind: ReflectionKind.Variable,
       };
     }
     return mappings;

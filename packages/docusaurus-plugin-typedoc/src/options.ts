@@ -8,6 +8,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     categoryLabel: 'API',
+    collapsed: true,
     indexLabel: undefined,
     readmeLabel: 'Readme',
     position: null,
@@ -16,7 +17,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageTitle: false,
-  entryDocument: 'README.md',
+  entryDocument: 'index.md',
   plugin: ['none'],
   watch: false,
   includeExtension: true,

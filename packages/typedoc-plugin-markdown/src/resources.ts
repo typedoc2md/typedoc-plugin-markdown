@@ -49,10 +49,10 @@ import { typeDeclarationList } from './partials/member.typedeclaration.list';
 import { typeDeclarationTable } from './partials/member.typedeclaration.table';
 import { typeParameters } from './partials/member.typeparameters';
 import { members } from './partials/members';
-import { parametersTable } from './partials/parameters..table';
 import { reflectionTitle } from './partials/reflection.title';
 import { reflection } from './partials/reflection';
 import { sources } from './partials/sources';
+import { parametersTable } from './partials/table.parameters';
 import { toc } from './partials/toc';
 import { arrayType } from './partials/type.array';
 import { conditionalType } from './partials/type.conditional';
@@ -100,10 +100,10 @@ export type Partials = {
   typeDeclarationTable: (props: DeclarationReflection[]) => string;
   typeParameters: (typeParameters: TypeParameterReflection[]) => string;
   members: (container: ContainerReflection) => string;
-  parametersTable: (parameters: ParameterReflection[]) => string;
   reflectionTitle: (reflection: DeclarationReflection, shouldEscape?: boolean) => string;
   reflection: (reflection: DeclarationReflection) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
+  parametersTable: (parameters: ParameterReflection[]) => string;
   toc: (reflection: DeclarationReflection | ProjectReflection) => string;
   arrayType: (arrayType: ArrayType, emphasis: boolean) => string;
   conditionalType: (conditionalType: ConditionalType) => string;
@@ -149,10 +149,10 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   typeDeclarationTable: bind(typeDeclarationTable, context),
   typeParameters: bind(typeParameters, context),
   members: bind(members, context),
-  parametersTable: bind(parametersTable, context),
   reflectionTitle: bind(reflectionTitle, context),
   reflection: bind(reflection, context),
   sources: bind(sources, context),
+  parametersTable: bind(parametersTable, context),
   toc: bind(toc, context),
   arrayType: bind(arrayType, context),
   conditionalType: bind(conditionalType, context),

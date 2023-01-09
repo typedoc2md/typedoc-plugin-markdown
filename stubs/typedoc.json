@@ -1,13 +1,11 @@
 {
   "entryPoints": [
-    "./src/index.ts",
     "./src/declarations.ts",
     "./src/generics.ts",
     "./src/interfaces.ts",
     "./src/signatures.ts",
     "./src/sources.ts",
-    "./src/types.ts",
-    "./src/modules/module-1/index.ts"
+    "./src/types.ts"
   ],
   "includes": "./inc/",
   "media": "./media/",

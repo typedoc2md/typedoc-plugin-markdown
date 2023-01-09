@@ -1,32 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Plugin: (docs) should render 1`] = `
-Array [
+[
   "_category_.yml",
   "classes",
   "enums",
+  "functions",
   "index.md",
   "interfaces",
-  "modules.md",
+  "Modules.md",
   "namespaces",
+  "variables",
 ]
 `;
 
 exports[`Plugin: (docs) should write category yaml 1`] = `
-"label: \\"Classes\\"
+"label: "Classes"
 position: 3"
 `;
 
 exports[`Plugin: (docs) should write doc 1`] = `
 "---
-id: \\"index\\"
-title: \\"typedoc-plugin-markdown\\"
-sidebar_label: \\"Readme\\"
+sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
 # MY README
+
+[API](Modules.md)
 
 > Some block quote
 

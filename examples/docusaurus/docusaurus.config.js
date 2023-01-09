@@ -30,10 +30,28 @@ const config = {
     [
       'docusaurus-plugin-typedoc',
       {
+        id: 'api-1',
+        out: 'api-1',
         options: '../../stubs/typedoc.json',
         sidebar: {
           autoConfiguration: true,
           position: 0,
+          categoryLabel: 'API-1',
+        },
+        cleanOutputDir: true,
+        fileStructure: 'modules',
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'api-2',
+        out: 'api-2',
+        options: '../../stubs/typedoc.json',
+        sidebar: {
+          autoConfiguration: true,
+          position: 1,
+          categoryLabel: 'API-2',
         },
         cleanOutputDir: true,
       },
@@ -76,9 +94,15 @@ const config = {
         },
         items: [
           {
-            to: 'docs/api/',
+            to: 'docs/api-1/',
             activeBasePath: 'docs',
-            label: 'API',
+            label: 'API-1',
+            position: 'left',
+          },
+          {
+            to: 'docs/api-2/',
+            activeBasePath: 'docs',
+            label: 'API-2',
             position: 'left',
           },
           {
