@@ -21,6 +21,7 @@ export class MarkdownTheme extends Theme {
   @BindOption('preserveAnchorCasing') preserveAnchorCasing!: boolean;
   @BindOption('symbolsWithOwnFile') symbolsWithOwnFile!: string | string[];
   @BindOption('fileStructure') fileStructure!: string;
+  @BindOption('flattenOutput') flattenOutput!: string;
 
   private _renderContext?: MarkdownThemeRenderContext;
 
@@ -109,11 +110,13 @@ export class MarkdownTheme extends Theme {
     const mapping = this.mappings[reflection.kind];
     if (mapping) {
       if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
-        const url = [mapping.directory, this.getUrl(reflection) + '.md'].join(
+        let url = [mapping.directory, this.getUrl(reflection) + '.md'].join(
           '/',
         );
+        if (this.flattenOutput) {
+          url = url.replace(/\//g, '.');
+        }
         urls.push(new UrlMapping(url, reflection, mapping.template));
-
         reflection.url = url;
         reflection.hasOwnDocument = true;
       }
@@ -189,7 +192,11 @@ export class MarkdownTheme extends Theme {
           fragments.push(fragment);
         }
 
-        const url = fragments.join('/') + '.md';
+        let url = fragments.join('/') + '.md';
+
+        if (this.flattenOutput) {
+          url = url.replace(/\//g, '.');
+        }
 
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
@@ -261,12 +268,16 @@ export class MarkdownTheme extends Theme {
         template: this.reflectionTemplate,
         directory: 'modules',
         kind: ReflectionKind.Module,
+        labelSingular: 'Module',
+        labelPlural: 'Modules',
       },
       [ReflectionKind.Namespace]: {
         isLeaf: false,
         template: this.reflectionTemplate,
         directory: 'namespaces',
         kind: ReflectionKind.Namespace,
+        labelSingular: 'Namespace',
+        labelPlural: 'Namespaces',
       },
     };
 
@@ -276,6 +287,8 @@ export class MarkdownTheme extends Theme {
         template: this.reflectionTemplate,
         directory: 'classes',
         kind: ReflectionKind.Class,
+        labelSingular: 'Class',
+        labelPlural: 'Classes',
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('interface')) {
@@ -284,6 +297,8 @@ export class MarkdownTheme extends Theme {
         template: this.reflectionTemplate,
         directory: 'interfaces',
         kind: ReflectionKind.Interface,
+        labelSingular: 'Interface',
+        labelPlural: 'Interfaces',
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('enum')) {
@@ -292,6 +307,8 @@ export class MarkdownTheme extends Theme {
         template: this.reflectionTemplate,
         directory: 'enums',
         kind: ReflectionKind.Enum,
+        labelSingular: 'Enum',
+        labelPlural: 'Enums',
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('function')) {
@@ -300,6 +317,8 @@ export class MarkdownTheme extends Theme {
         template: this.memberTemplate,
         directory: 'functions',
         kind: ReflectionKind.Function,
+        labelSingular: 'Function',
+        labelPlural: 'Functions',
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('type')) {
@@ -308,6 +327,8 @@ export class MarkdownTheme extends Theme {
         template: this.memberTemplate,
         directory: 'types',
         kind: ReflectionKind.TypeAlias,
+        labelSingular: 'Type Aliases',
+        labelPlural: 'Type Alias',
       };
     }
     if (isAll || this.symbolsWithOwnFile.includes('var')) {
@@ -316,6 +337,8 @@ export class MarkdownTheme extends Theme {
         template: this.memberTemplate,
         directory: 'variables',
         kind: ReflectionKind.Variable,
+        labelSingular: 'Variable',
+        labelPlural: 'Variables',
       };
     }
     return mappings;

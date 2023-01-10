@@ -3,30 +3,13 @@ import {
   BindOption,
   DeclarationReflection,
   PageEvent,
-  ProjectReflection,
   Renderer,
   RendererEvent,
-  UrlMapping,
 } from 'typedoc';
-
-//import { MarkdownThemeRenderContext } from 'typedoc-plugin-markdown';
 import { MarkdownTheme, TemplateMapping } from 'typedoc-plugin-markdown';
-
 import { FrontMatterVars, prependYAML } from './front-matter';
 import { CATEGORY_POSITION, getKindPlural } from './navigation';
 import { FrontMatter, SidebarOptions } from './types';
-
-/*class MyThemeContext extends MarkdownThemeRenderContext {
-  // Important: If you use `this`, this function MUST be bound! Template functions are free
-  // to destructure the context object to only grab what they care about.
-  override relativeURL = (url: string) => {
-    if (path.basename(url).startsWith('index')) {
-      // always remove the extension for the index or else it creates weird paths like `../.md`
-      return url.replace('index', '').replace('.md', '');
-    }
-    return relativeUrl;
-  };
-}*/
 
 export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('sidebar')
@@ -44,8 +27,6 @@ export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('frontmatter')
   frontmatter!: FrontMatter;
 
-  urls: any;
-
   constructor(renderer: Renderer) {
     super(renderer);
 
@@ -62,12 +43,6 @@ export class DocusaurusTheme extends MarkdownTheme {
         this.getYamlItems(page) as FrontMatterVars,
       );
     }
-  }
-
-  override getUrls(project: ProjectReflection): UrlMapping<any>[] {
-    const urls = super.getUrls(project);
-    this.urls = urls;
-    return urls;
   }
 
   onRendererEnd(renderer: RendererEvent) {

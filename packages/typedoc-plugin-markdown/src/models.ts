@@ -8,8 +8,10 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   indexTitle: string;
   namedAnchors: boolean;
   publicPath: string;
-  hasOwnFile: string | string[];
+  symbolsWithOwnFile: string | string[];
   typeDeclarationStyle: 'list' | 'table';
+  fileStructure: 'modules' | 'groups';
+  flattenOutput: boolean;
 }
 
 export interface TemplateMapping {
@@ -17,6 +19,8 @@ export interface TemplateMapping {
   template: any;
   isLeaf: boolean;
   kind: ReflectionKind;
+  labelSingular: string;
+  labelPlural: string;
 }
 
 export type Collapse = 'object' | 'function' | 'all' | 'none';

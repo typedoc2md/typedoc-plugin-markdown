@@ -15,7 +15,7 @@
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "docs": "npm run build && npm-run-all docs-*",
-    "docs-md1": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --out ./docs/md-1",
+    "docs-md1": "typedoc --plugin typedoc-plugin-markdown --fileStructure flat --options ../../stubs/typedoc.json --out ./docs/md-1",
     "docs-md2": "typedoc --plugin typedoc-plugin-markdown --symbolsWithOwnFile none --options ../../stubs/typedoc.json --out ./docs/md-2",
     "docs-html": "typedoc --plugin none --options ../../stubs/typedoc.json --out ./docs/html"
   },

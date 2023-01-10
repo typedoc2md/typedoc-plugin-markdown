@@ -55,7 +55,15 @@ export function load(app: Application) {
     name: 'fileStructure',
     help: '[Markdown Plugin] Specifies how the filesystem should be standard. Hierarchical builds directories as per file system.',
     type: ParameterType.String,
-    defaultValue: 'all',
+    defaultValue: 'groups',
+    validate: (option) => {
+      const availableValues = ['modules', 'symbols', 'flat'];
+      if (!availableValues.includes(option)) {
+        throw new Error(
+          `Unexpected value for fileStructure, the expected value is one of 'modules', 'symbols', 'flat'`,
+        );
+      }
+    },
   });
 
   app.options.addDeclaration({
@@ -73,15 +81,22 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
+    name: 'flattenOutput',
+    help: '[Markdown Plugin] Flatten output files.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
     name: 'typeDeclarationStyle',
     help: '[Markdown Plugin] Specify the Type Declaration Render Style',
     type: ParameterType.String,
     defaultValue: 'list',
-    validate: (x) => {
+    validate: (option) => {
       const availableValues = ['table', 'list'];
-      if (!availableValues.includes(x)) {
+      if (!availableValues.includes(option)) {
         throw new Error(
-          `Wrong value for objectLiteralTypeDeclarationStyle, the expected value is one of ${availableValues}`,
+          `Unexpected value for typeDeclarationStyle, the expected value is one of 'table', 'list'`,
         );
       }
     },
@@ -89,4 +104,5 @@ export function load(app: Application) {
 }
 
 export * from './models';
+export * from './options-reader';
 export { MarkdownTheme, MarkdownThemeRenderContext };

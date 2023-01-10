@@ -17,9 +17,9 @@
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-github-wiki-theme",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "yarn run lint && yarn run build",
+    "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "demo": "rm -rf ./demo && yarn run build && typedoc --options ../typedoc-plugin-markdown/demo.options.json  --tsconfig ../typedoc-plugin-markdown/test/stubs/tsconfig.json --theme github-wiki --out ./demo"
+    "demo": "rm -rf ./demo && npm run build && typedoc --options ../../stubs/typedoc.json --theme github-wiki --out ./demo"
   },
   "author": "Thomas Grey",
   "license": "MIT",
