@@ -24,9 +24,7 @@ export class MarkdownThemeRenderContext {
     return this.options.getValue(name) as TypedocPluginMarkdownOptions[K];
   }
 
-  urlTo = (reflection: Reflection) => this.relativeURL(reflection.url);
-
-  relativeURL(url: string | undefined) {
+  getRelativeUrl(url: string | undefined) {
     if (!url) {
       return null;
     }
@@ -40,6 +38,10 @@ export class MarkdownThemeRenderContext {
       return path.join(relative, path.basename(url)).replace(/\\/g, '/');
     }
   }
+
+  urlTo = (reflection: Reflection) => this.getRelativeUrl(reflection.url);
+
+  relativeURL = (url: string | undefined) => this.getRelativeUrl(url);
 
   templates = templates(this);
   partials = partials(this);
