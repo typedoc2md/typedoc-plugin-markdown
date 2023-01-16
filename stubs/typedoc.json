@@ -1,6 +1,9 @@
 {
   "entryPoints": [
+    "./src/modules/module-1",
+    "./src/modules/module-2",
     "./src/declarations.ts",
+    "./src/comments.ts",
     "./src/generics.ts",
     "./src/interfaces.ts",
     "./src/signatures.ts",

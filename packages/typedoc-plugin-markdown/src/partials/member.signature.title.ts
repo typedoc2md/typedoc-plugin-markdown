@@ -1,4 +1,4 @@
-import { ParameterReflection, SignatureReflection, SomeType } from 'typedoc';
+import { ParameterReflection, SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function signatureTitle(
@@ -40,9 +40,7 @@ export function signatureTitle(
         }
         const paramItem = `\`${
           isDestructuredParam ? '«destructured»' : param.name
-        }${
-          param.flags.isOptional || param.defaultValue ? '?' : ''
-        }\`: ${context.partials.someType(param.type as SomeType, 'all')}`;
+        }${param.flags.isOptional || param.defaultValue ? '?' : ''}\``;
         paramsmd.push(paramItem);
         return paramsmd.join('');
       })

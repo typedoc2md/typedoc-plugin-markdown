@@ -25,17 +25,17 @@ export function getIndexHeadingLevel(
 }
 
 export function getGroupHeadingLevel(container: ContainerReflection) {
-  if (container.kindOf(ReflectionKind.Module)) {
-    return 1;
+  if (container.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])) {
+    return 2;
   }
-  return container.hasOwnDocument ? 2 : 3;
+  return container.hasOwnDocument ? 3 : 4;
 }
 
 export function getReflectionHeadingLevel(
   reflection: DeclarationReflection | SignatureReflection,
 ) {
   if (reflection.kindOf(ReflectionKind.Constructor)) {
-    return reflection.parent?.hasOwnDocument ? 3 : 4;
+    return reflection.parent?.hasOwnDocument ? 4 : 5;
   }
 
   if (
@@ -45,11 +45,12 @@ export function getReflectionHeadingLevel(
       ReflectionKind.Function,
       ReflectionKind.TypeAlias,
       ReflectionKind.Variable,
+      ReflectionKind.Enum,
     ])
   ) {
-    return 2;
+    return reflection.parent?.hasOwnDocument ? 2 : 3;
   }
-  return reflection.parent?.hasOwnDocument ? 3 : 4;
+  return reflection.parent?.hasOwnDocument ? 4 : 5;
 }
 
 export function getMemberHeadingLevel(

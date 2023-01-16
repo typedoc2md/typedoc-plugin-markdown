@@ -1,5 +1,5 @@
-import { ContainerReflection } from 'typedoc';
-import { heading } from '../support/els';
+import { ContainerReflection, ReflectionKind } from 'typedoc';
+import { heading, horizontalRule } from '../support/els';
 import { getGroupHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -36,7 +36,16 @@ export function members(
             .forEach((groupChild, index) => {
               md.push(context.partials.member(groupChild));
               if (index !== group.children.length - 1) {
-                //md.push(horizontalRule());
+                if (
+                  [
+                    ReflectionKind.Class,
+                    ReflectionKind.Interface,
+                    ReflectionKind.Enum,
+                    ReflectionKind.Function,
+                  ].includes(groupChild.kind)
+                ) {
+                  md.push(horizontalRule());
+                }
               }
             });
         }

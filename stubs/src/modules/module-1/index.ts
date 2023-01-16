@@ -1,5 +1,15 @@
+/**
+ * Comments Module1ClassA
+ */
 export class Module1ClassA {
-  prop: string;
+  /**
+   * Comments propa
+   */
+  propa: string;
+  /**
+   * Comments for method
+   * @returns comments for return
+   */
   someMethod() {
     return 'a';
   }
@@ -12,9 +22,18 @@ export class Module1ClassB {
   }
 }
 
+/**
+ * Comments for Module1EnumA
+ */
 export enum Module1EnumA {
+  /**
+   * Comments value1
+   */
   Value1,
-  Value2,
+  /**
+   * Comments Value2
+   */
+  Value2 = 'Value2',
 }
 
 export enum Module1EnumB {

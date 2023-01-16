@@ -1,4 +1,3 @@
-import * as path from 'path';
 import {
   BindOption,
   DeclarationReflection,
@@ -162,7 +161,7 @@ export class MarkdownTheme extends Theme {
   ): UrlMapping[] {
     const mapping = this.mappings[reflection.kind];
 
-    let fragments;
+    let fragments: string[] = [];
 
     if (mapping) {
       const isModuleOrNamespace = reflection.kindOf([
@@ -179,7 +178,6 @@ export class MarkdownTheme extends Theme {
           ? `${mapping.directory}/${reflection.getAlias()}`
           : reflection.getAlias();
       }
-      const entryDoc = path.parse(this.entryDocument).name;
 
       if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
         fragments = [fragment];
@@ -266,7 +264,7 @@ export class MarkdownTheme extends Theme {
       [ReflectionKind.Module]: {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'modules',
+        directory: '.',
         kind: ReflectionKind.Module,
         labelSingular: 'Module',
         labelPlural: 'Modules',
@@ -274,7 +272,7 @@ export class MarkdownTheme extends Theme {
       [ReflectionKind.Namespace]: {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'namespaces',
+        directory: '.',
         kind: ReflectionKind.Namespace,
         labelSingular: 'Namespace',
         labelPlural: 'Namespaces',

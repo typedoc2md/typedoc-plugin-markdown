@@ -3,7 +3,7 @@ import {
   ReferenceReflection,
   ReflectionKind,
 } from 'typedoc';
-import { backTicks, heading } from '../support/els';
+import { heading } from '../support/els';
 import { getReflectionHeadingLevel, isConstructor } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -21,7 +21,7 @@ export function member(
 
   const title = context.partials.reflectionTitle(reflection, false);
 
-  md.push(heading(headingLevel, backTicks(title)));
+  md.push(heading(headingLevel, title));
 
   if (
     [
