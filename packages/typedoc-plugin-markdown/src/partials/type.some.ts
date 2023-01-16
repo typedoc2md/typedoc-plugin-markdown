@@ -22,14 +22,13 @@ export function someType(
   context: MarkdownThemeRenderContext,
   someType: SomeType,
   collapse: Collapse = 'none',
-  emphasis = true,
 ) {
   if (!someType) {
     return '';
   }
 
   if (someType instanceof ArrayType) {
-    return '' + context.partials.arrayType(someType, emphasis);
+    return '' + context.partials.arrayType(someType);
   }
 
   if (someType instanceof ConditionalType) {
@@ -49,7 +48,7 @@ export function someType(
   }
 
   if (someType instanceof IntrinsicType && someType.name) {
-    return '' + context.partials.intrinsicType(someType, emphasis);
+    return '' + context.partials.intrinsicType(someType);
   }
 
   if (someType instanceof QueryType) {
@@ -73,7 +72,7 @@ export function someType(
   }
 
   if (someType instanceof UnionType && someType.types) {
-    return '' + context.partials.unionType(someType, emphasis);
+    return '' + context.partials.unionType(someType);
   }
 
   if (someType instanceof UnknownType) {

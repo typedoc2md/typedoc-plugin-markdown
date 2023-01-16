@@ -39,18 +39,22 @@ Please read the [documentation](#documentation) for further configuration option
 - **`--entryDocument`**<br>
   The file name of the entry document. Defaults to `README.md`.
 - **`--symbolsWithOwnFile`**<br>
-  Determines which symbols should be written to their own file. Expected values are `none`, `all` OR Array of [`class`, `interface`, `enum`, `function`, `var`, `type`] Defaults to `all` (all exports generated to an individual file).
+  Determines which symbols should be written to their own file. Expected values [`none`, `all`] OR Array of [`class`, `interface`, `enum`, `function`, `var`, `type`] Defaults to `all` (all symbols exported to an individual file).
 - **`--fileStructure`**<br>
-  Specifies how the files should be generated, grouped by folders of types or a module path structure. `groups` | `modules`. Defaults to `groups`.
+  Specifies how the files should be generated, grouped by modules or symbol types. Expected values [`modules`, `symbols`]. Defaults to `modules`.
 
 **UI options**
 
 - **`--hideBreadcrumbs`**<br>
-  Do not render breadcrumbs in template header. Defaults to `false`.
+  Do not print breadcrumbs header. Defaults to `false`.
 - **`--hideInPageTOC`**<br>
-  Hide in-page index items. Defaults to `false`.
+  Do not print in-page index items. Defaults to `false`.
 - **`--hidePageTitle`**<br>
-  Do not render the page title in output. Defaults to `false`.
+  Do not print the page title. Defaults to `false`.
+- **`--hideHierarchy`**<br>
+  Do not print reflection hierarchy. Defaults to `false`.
+- **`--typeDeclarationStyle`**<br>
+  Specify the render style of type declarations. Expected values [`list`, `table`] Defaults to `list`.
 
 **Utility options**
 

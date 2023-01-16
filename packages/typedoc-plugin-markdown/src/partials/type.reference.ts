@@ -27,7 +27,7 @@ export function referenceType(
     }
     if (referenceType.typeArguments && referenceType.typeArguments.length > 0) {
       reflection.push(
-        `<${referenceType.typeArguments
+        `\\<${referenceType.typeArguments
           .map((typeArgument) => context.partials.someType(typeArgument))
           .join(', ')}\\>`,
       );

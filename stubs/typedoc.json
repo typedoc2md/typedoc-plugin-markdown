@@ -2,10 +2,13 @@
   "entryPoints": [
     "./src/modules/module-1",
     "./src/modules/module-2",
+    "./src/classes.ts",
     "./src/declarations.ts",
     "./src/comments.ts",
     "./src/generics.ts",
+    "./src/hierarchy.ts",
     "./src/interfaces.ts",
+    "./src/reflections.ts",
     "./src/signatures.ts",
     "./src/sources.ts",
     "./src/types.ts"

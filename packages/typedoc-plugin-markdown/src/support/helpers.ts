@@ -5,6 +5,7 @@ import {
   ReflectionKind,
   SignatureReflection,
 } from 'typedoc';
+import { backTicks } from './els';
 
 /**
  * Determines if current signature is a constructor
@@ -18,43 +19,44 @@ export const isConstructor = (
 export function getIndexHeadingLevel(
   reflection: DeclarationReflection | ProjectReflection,
 ) {
-  if (!reflection.kindString) {
+  if (
+    reflection.kindOf([
+      ReflectionKind.Project,
+      ReflectionKind.Module,
+      ReflectionKind.Namespace,
+    ]) ||
+    reflection.hasOwnDocument
+  ) {
     return 2;
   }
-  return reflection.hasOwnDocument ? 2 : 3;
+  return 4;
 }
 
 export function getGroupHeadingLevel(container: ContainerReflection) {
-  if (container.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])) {
-    return 2;
-  }
-  return container.hasOwnDocument ? 3 : 4;
+  return container.hasOwnDocument ? 2 : 4;
 }
 
 export function getReflectionHeadingLevel(
   reflection: DeclarationReflection | SignatureReflection,
 ) {
+  if (reflection.hasOwnDocument) {
+    return 1;
+  }
   if (reflection.kindOf(ReflectionKind.Constructor)) {
-    return reflection.parent?.hasOwnDocument ? 4 : 5;
+    return reflection.parent?.hasOwnDocument ? 2 : 4;
   }
-
-  if (
-    reflection.kindOf([
-      ReflectionKind.Class,
-      ReflectionKind.Interface,
-      ReflectionKind.Function,
-      ReflectionKind.TypeAlias,
-      ReflectionKind.Variable,
-      ReflectionKind.Enum,
-    ])
-  ) {
-    return reflection.parent?.hasOwnDocument ? 2 : 3;
-  }
-  return reflection.parent?.hasOwnDocument ? 4 : 5;
+  return reflection.parent?.hasOwnDocument ? 3 : 5;
 }
 
 export function getMemberHeadingLevel(
   reflection: DeclarationReflection | SignatureReflection,
 ) {
   return getReflectionHeadingLevel(reflection) + 1;
+}
+
+export function getFlags(reflection: DeclarationReflection) {
+  if (reflection.flags?.length > 0 && !reflection.flags.isRest) {
+    return reflection.flags.map((flag) => backTicks(flag)).join(' ');
+  }
+  return null;
 }

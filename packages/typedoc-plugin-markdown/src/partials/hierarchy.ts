@@ -23,7 +23,7 @@ function getHierarchy(
       getSymbol(level) +
       (props.isTarget
         ? bold(hierarchyType.toString())
-        : context.partials.someType(hierarchyType as SomeType, undefined, true))
+        : context.partials.someType(hierarchyType as SomeType))
     );
   });
   if (props.next) {
@@ -36,7 +36,5 @@ function getSymbol(level: number) {
   if (level === 1) {
     return '- ';
   }
-  return level > 1
-    ? `${[...Array(level - 1)].map(() => '  ').join('')} - `
-    : '';
+  return level > 1 ? `${[...Array(level - 1)].map(() => '  ').join('')}- ` : '';
 }

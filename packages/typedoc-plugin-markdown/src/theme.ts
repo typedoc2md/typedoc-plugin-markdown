@@ -115,8 +115,9 @@ export class MarkdownTheme extends Theme {
         if (this.flattenOutput) {
           url = url.replace(/\//g, '.');
         }
+        url = url.replace(/^\/|\/$/g, '');
         urls.push(new UrlMapping(url, reflection, mapping.template));
-        reflection.url = url;
+        reflection.url = url.replace(/^\/|\/$/g, '');
         reflection.hasOwnDocument = true;
       }
 
@@ -195,7 +196,7 @@ export class MarkdownTheme extends Theme {
         if (this.flattenOutput) {
           url = url.replace(/\//g, '.');
         }
-
+        url = url.replace(/^\/|\/$/g, '');
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
         reflection.hasOwnDocument = true;
@@ -264,7 +265,7 @@ export class MarkdownTheme extends Theme {
       [ReflectionKind.Module]: {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: '.',
+        directory: null,
         kind: ReflectionKind.Module,
         labelSingular: 'Module',
         labelPlural: 'Modules',
@@ -272,7 +273,7 @@ export class MarkdownTheme extends Theme {
       [ReflectionKind.Namespace]: {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: '.',
+        directory: null,
         kind: ReflectionKind.Namespace,
         labelSingular: 'Namespace',
         labelPlural: 'Namespaces',

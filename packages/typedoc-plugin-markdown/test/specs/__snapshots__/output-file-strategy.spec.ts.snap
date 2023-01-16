@@ -49,22 +49,12 @@ exports[`Output File Strategy fileStructure should compile '--fileStructure modu
 ]
 `;
 
-exports[`Output File Strategy fileStructure should compile default structure with '--symbolsWithOwnFile none 1`] = `
+exports[`Output File Strategy fileStructure should compile --fileStructure 'symbols' 1`] = `
 [
   "Modules.md",
   "README.md",
-  "modules/module_1.md",
-  "namespaces/module_1.nameSpace.md",
-  "modules/module_2.md",
-]
-`;
-
-exports[`Output File Strategy fileStructure should compile default structure' 1`] = `
-[
-  "Modules.md",
-  "README.md",
-  "modules/module_1.md",
-  "namespaces/module_1.nameSpace.md",
+  "module_1.md",
+  "module_1.nameSpace.md",
   "enums/module_1.nameSpace.NamespaceEnum.md",
   "classes/module_1.nameSpace.NameSpaceClassA.md",
   "interfaces/module_1.nameSpace.NamespaceInterface.md",
@@ -82,7 +72,7 @@ exports[`Output File Strategy fileStructure should compile default structure' 1`
   "variables/module_1.module1VariableB.md",
   "functions/module_1.module1FunctionA.md",
   "functions/module_1.module1FunctionB.md",
-  "modules/module_2.md",
+  "module_2.md",
   "enums/module_2.Module2EnumA.md",
   "enums/module_2.Module2EnumB.md",
   "classes/module_2.Module2ClassA.md",
@@ -98,19 +88,29 @@ exports[`Output File Strategy fileStructure should compile default structure' 1`
 ]
 `;
 
+exports[`Output File Strategy fileStructure should compile fileStructure: 'symbols' --symbolsWithOwnFile none 1`] = `
+[
+  "Modules.md",
+  "README.md",
+  "module_1.md",
+  "module_1.nameSpace.md",
+  "module_2.md",
+]
+`;
+
 exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [class, interface]' 1`] = `
 [
   "Modules.md",
   "README.md",
-  "modules/module_1.md",
-  "namespaces/module_1.nameSpace.md",
+  "module_1.md",
+  "module_1.nameSpace.md",
   "classes/module_1.nameSpace.NameSpaceClassA.md",
   "interfaces/module_1.nameSpace.NamespaceInterface.md",
   "classes/module_1.Module1ClassA.md",
   "classes/module_1.Module1ClassB.md",
   "interfaces/module_1.Module1InterfaceA.md",
   "interfaces/module_1.Module1InterfaceB.md",
-  "modules/module_2.md",
+  "module_2.md",
   "classes/module_2.Module2ClassA.md",
   "classes/module_2.Module2ClassB.md",
   "interfaces/module_2.Module2InterfaceA.md",
@@ -122,12 +122,12 @@ exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [cl
 [
   "Modules.md",
   "README.md",
-  "modules/module_1.md",
-  "namespaces/module_1.nameSpace.md",
+  "module_1.md",
+  "module_1.nameSpace.md",
   "classes/module_1.nameSpace.NameSpaceClassA.md",
   "classes/module_1.Module1ClassA.md",
   "classes/module_1.Module1ClassB.md",
-  "modules/module_2.md",
+  "module_2.md",
   "classes/module_2.Module2ClassA.md",
   "classes/module_2.Module2ClassB.md",
 ]
@@ -137,18 +137,18 @@ exports[`Output File Strategy symbolsWithOwnFile should set --symbolsWithOwnFile
 [
   "Modules.md",
   "README.md",
-  "modules/module_1.md",
-  "namespaces/module_1.nameSpace.md",
-  "modules/module_2.md",
+  "module_1.md",
+  "module_1.nameSpace.md",
+  "module_2.md",
 ]
 `;
 
-exports[`Output File Strategy symbolsWithOwnFile should set default symbolsWithOwnFile (all)' 1`] = `
+exports[`Output File Strategy symbolsWithOwnFile should set default --symbolsWithOwnFile 'all' 1`] = `
 [
   "Modules.md",
   "README.md",
-  "modules/module_1.md",
-  "namespaces/module_1.nameSpace.md",
+  "module_1.md",
+  "module_1.nameSpace.md",
   "enums/module_1.nameSpace.NamespaceEnum.md",
   "classes/module_1.nameSpace.NameSpaceClassA.md",
   "interfaces/module_1.nameSpace.NamespaceInterface.md",
@@ -166,7 +166,7 @@ exports[`Output File Strategy symbolsWithOwnFile should set default symbolsWithO
   "variables/module_1.module1VariableB.md",
   "functions/module_1.module1FunctionA.md",
   "functions/module_1.module1FunctionB.md",
-  "modules/module_2.md",
+  "module_2.md",
   "enums/module_2.Module2EnumA.md",
   "enums/module_2.Module2EnumB.md",
   "classes/module_2.Module2ClassA.md",
@@ -186,8 +186,8 @@ exports[`Output File Strategy symbolsWithOwnFile should set symbolsWithOwnFile [
 [
   "Modules.md",
   "README.md",
-  "modules/module_1.md",
-  "namespaces/module_1.nameSpace.md",
+  "module_1.md",
+  "module_1.nameSpace.md",
   "enums/module_1.nameSpace.NamespaceEnum.md",
   "types/module_1.nameSpace.NamespaceTypeLiteral.md",
   "variables/module_1.nameSpace.namespaceVariable.md",
@@ -197,7 +197,7 @@ exports[`Output File Strategy symbolsWithOwnFile should set symbolsWithOwnFile [
   "types/module_1.Module1TypeLiteralB.md",
   "variables/module_1.module1VariableA.md",
   "variables/module_1.module1VariableB.md",
-  "modules/module_2.md",
+  "module_2.md",
   "enums/module_2.Module2EnumA.md",
   "enums/module_2.Module2EnumB.md",
   "types/module_2.Module2TypeLiteralA.md",

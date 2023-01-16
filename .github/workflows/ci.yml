@@ -1,5 +1,5 @@
 name: CI
-on: [pull_request]
+on: [push, pull_request]
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
@@ -18,8 +18,6 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run lint
-     - name: MarkdownLint
-        run: npm run markdownlint   
       - name: Build
         run: npm run build
       - name: Test

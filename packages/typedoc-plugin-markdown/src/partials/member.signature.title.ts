@@ -1,4 +1,4 @@
-import { ParameterReflection, SignatureReflection } from 'typedoc';
+import { ParameterReflection, SignatureReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function signatureTitle(
@@ -19,14 +19,14 @@ export function signatureTitle(
   }
 
   if (!['__call', '__type'].includes(signature.name)) {
-    md.push(`**${signature.name}**`);
+    md.push(signature.name);
   }
 
   if (signature.typeParameters) {
     md.push(
       `<${signature.typeParameters
-        .map((typeParameter) => `\`${typeParameter.name}\``)
-        .join(', ')}\\>`,
+        .map((typeParameter) => typeParameter.name)
+        .join(', ')}>`,
     );
   }
 
@@ -35,22 +35,35 @@ export function signatureTitle(
       .map((param) => {
         const isDestructuredParam = param.name == '__namedParameters';
         const paramsmd: string[] = [];
+        if (parameters.length > 3) {
+          paramsmd.push('\n  ');
+        }
         if (param.flags.isRest) {
           paramsmd.push('...');
         }
-        const paramItem = `\`${
+        const paramItem = `${
           isDestructuredParam ? '«destructured»' : param.name
-        }${param.flags.isOptional || param.defaultValue ? '?' : ''}\``;
+        }${param.flags.isOptional ? '?' : ''}: ${context.partials.someType(
+          param.type as SomeType,
+          'all',
+        )}`;
         paramsmd.push(paramItem);
+        if (param.defaultValue) {
+          paramsmd.push(` = ${param.defaultValue}`);
+        }
         return paramsmd.join('');
       })
       .join(', ');
   };
 
-  md.push(`(${getParameters(signature.parameters)})`);
+  md.push(
+    signature.parameters && signature.parameters?.length > 0
+      ? `(${getParameters(signature.parameters)})`
+      : '()',
+  );
 
   if (signature.type) {
-    md.push(`: ${context.partials.someType(signature.type, 'object')}`);
+    md.push(`: ${context.partials.someType(signature.type, 'all')}`);
   }
   return md.join('');
 }

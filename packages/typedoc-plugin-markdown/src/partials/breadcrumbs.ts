@@ -1,5 +1,6 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { link } from '../support/els';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function breadcrumbs(
@@ -24,9 +25,9 @@ export function breadcrumbs(
       if (page.model.parent && page.model.parent.parent) {
         if (page?.model?.parent?.parent.parent) {
           md.push(
-            `[${page.model.parent.parent.name}](${context.relativeURL(
-              page.model?.parent?.parent.url,
-            )})`,
+            `[${escapeChars(
+              page.model.parent.parent.name,
+            )}](${context.relativeURL(page.model?.parent?.parent.url)})`,
           );
         }
         md.push(
@@ -35,7 +36,7 @@ export function breadcrumbs(
           )})`,
         );
       }
-      md.push(page.model.name);
+      md.push(escapeChars(page.model.name));
       return md.length > 1 ? `${md.join(' / ')}` : '';
     }
   }

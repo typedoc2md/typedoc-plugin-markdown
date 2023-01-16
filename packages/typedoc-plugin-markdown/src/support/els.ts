@@ -1,3 +1,5 @@
+import { formatContents, unEscapeChars } from './utils';
+
 export const heading = (level: number, text: string) =>
   `${[...Array(level)].map(() => '#').join('')} ${text}`;
 
@@ -15,7 +17,15 @@ export const unorderedList = <T>(items: T[]) =>
 
 export const horizontalRule = () => '\n\n---';
 
+export const codeBlock = (content: string) =>
+  '```ts\n' + unEscapeChars(content) + '\n```';
+
 export const table = (headers: string[], rows: string[][]) =>
   `\n| ${headers.join(' | ')} |\n| ${headers
     .map(() => ':------')
     .join(' | ')} |\n${rows.map((row) => `| ${row.join(' | ')} \n`).join('')}`;
+
+export const indentBlock = (content: string) => {
+  const lines = formatContents(content).split('\n');
+  return lines.map((line) => (line.length ? `> ${line}` : '>')).join('\n');
+};

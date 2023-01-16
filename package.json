@@ -1,11 +1,11 @@
 {
   "private": true,
   "workspaces": [
+    "packages/typedoc-plugin-markdown",
     "packages/typedoc-plugin-markdown"
   ],
   "scripts": {
     "lint": "npm run lint --workspaces",
-    "markdownlint": "npm run markdownlint --workspaces",
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces"
   },

@@ -6,6 +6,8 @@ export function intersectionType(
   model: IntersectionType,
 ) {
   return model.types
-    .map((intersectionType) => context.partials.someType(intersectionType))
+    .map((intersectionType) =>
+      context.partials.someType(intersectionType, 'none'),
+    )
     .join(' & ');
 }

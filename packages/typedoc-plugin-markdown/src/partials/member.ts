@@ -4,7 +4,7 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { heading } from '../support/els';
-import { getReflectionHeadingLevel, isConstructor } from '../support/helpers';
+import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function member(
@@ -19,9 +19,14 @@ export function member(
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 
-  const title = context.partials.reflectionTitle(reflection, false);
-
-  md.push(heading(headingLevel, title));
+  if (
+    !reflection.hasOwnDocument &&
+    !reflection.kindOf(ReflectionKind.Constructor)
+  ) {
+    md.push(
+      heading(headingLevel, context.partials.reflectionTitle(reflection)),
+    );
+  }
 
   if (
     [
@@ -34,11 +39,7 @@ export function member(
   } else {
     if (reflection.signatures) {
       reflection.signatures.forEach((signature) => {
-        if (isConstructor(signature)) {
-          md.push(context.partials.constructorMember(signature));
-        } else {
-          md.push(context.partials.signatureMember(signature));
-        }
+        md.push(context.partials.signatureMember(signature));
       });
     } else {
       if (reflection.hasGetterOrSetter()) {

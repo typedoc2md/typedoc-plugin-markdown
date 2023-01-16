@@ -4,13 +4,8 @@ import { MarkdownThemeRenderContext } from '../theme-context';
 export function arrayType(
   context: MarkdownThemeRenderContext,
   arrayType: ArrayType,
-  emphasis: boolean,
 ) {
-  const theType = context.partials.someType(
-    arrayType.elementType,
-    'none',
-    emphasis,
-  );
+  const theType = context.partials.someType(arrayType.elementType, 'none');
   return arrayType.elementType.type === 'union'
     ? `(${theType})[]`
     : `${theType}[]`;

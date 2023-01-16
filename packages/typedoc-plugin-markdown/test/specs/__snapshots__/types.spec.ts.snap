@@ -16,11 +16,11 @@ exports[`Types: should compile 'union' of string literals types' 1`] = `"\`"ease
 
 exports[`Types: should compile collapsed 'function' type ' 1`] = `""`;
 
-exports[`Types: should compile collapsed 'literal' type' 1`] = `"\`object\`"`;
+exports[`Types: should compile collapsed 'literal' type' 1`] = `"\`Object\`"`;
 
-exports[`Types: should compile collapsed 'objectLiteralType' type' 1`] = `"\`object\`"`;
+exports[`Types: should compile collapsed 'objectLiteralType' type' 1`] = `"\`Object\`"`;
 
-exports[`Types: should compile conditional type ' 1`] = `"[\`T\`](../types/ConditionalType.md#t) extends \`string\` ? \`"string"\` : [\`T\`](../types/ConditionalType.md#t) extends \`number\` ? \`"number"\` : [\`T\`](../types/ConditionalType.md#t) extends \`boolean\` ? \`"boolean"\` : [\`T\`](../types/ConditionalType.md#t) extends \`undefined\` ? \`"undefined"\` : \`"object"\`"`;
+exports[`Types: should compile conditional type ' 1`] = `"\`T\` extends \`string\` ? \`"string"\` : \`T\` extends \`number\` ? \`"number"\` : \`T\` extends \`boolean\` ? \`"boolean"\` : \`T\` extends \`undefined\` ? \`"undefined"\` : \`"object"\`"`;
 
 exports[`Types: should compile expanded 'function' type ' 1`] = `""`;
 
@@ -32,6 +32,6 @@ exports[`Types: should compile intrinsic type' 1`] = `"\`string\`"`;
 
 exports[`Types: should compile unionType with object literal type ' 1`] = `"\`string\` \\| { \`z\`: \`string\`  }"`;
 
-exports[`Types: should resolve external refs with type params' 1`] = `"\`ClassWithTypeParams\`<[\`HTMLElement\`]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement ), [\`Error\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error )\\>"`;
+exports[`Types: should resolve external refs with type params' 1`] = `"\`ClassWithTypeParams\`\\<[\`HTMLElement\`]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement ), [\`Error\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error )\\>"`;
 
 exports[`Types: should resolve external refs' 1`] = `"[\`HTMLElement\`]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement )"`;

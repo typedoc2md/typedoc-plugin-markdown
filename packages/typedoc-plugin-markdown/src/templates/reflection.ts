@@ -11,7 +11,7 @@ export function reflectionTemplate(
 
   md.push(context.partials.header(page));
 
-  const headingLevel = getReflectionHeadingLevel(page.model);
+  const headingLevel = getReflectionHeadingLevel(page.model) + 1;
 
   if (page.model.comment) {
     md.push(context.partials.comment(page.model.comment));
@@ -22,7 +22,7 @@ export function reflectionTemplate(
     md.push(context.partials.typeParameters(page.model.typeParameters));
   }
 
-  if (page.model.typeHierarchy) {
+  if (page.model.typeHierarchy && !context.getOption('hideHierarchy')) {
     if (page.model?.typeHierarchy?.next) {
       md.push(heading(headingLevel, 'Hierarchy'));
       md.push(context.partials.hierarchy(page.model.typeHierarchy));

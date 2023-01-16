@@ -7,7 +7,7 @@ export function functionType(
 ) {
   const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
-      ? `<${fn.typeParameters
+      ? `\\<${fn.typeParameters
           .map((typeParameter) => typeParameter.name)
           .join(', ')}\\>`
       : [];

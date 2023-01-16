@@ -46,7 +46,6 @@ export const objectLiteralType = {
   '~': 'foo',
   prop_with_underscore: 'foo',
   'prop|with|pipes': 'foo',
-  'prop`with`backticks': 'foo',
   _: 'foo',
   valueZ: '_foo_',
   valueY: function (

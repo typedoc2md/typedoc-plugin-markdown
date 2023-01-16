@@ -39,7 +39,7 @@ export class DocusaurusTheme extends MarkdownTheme {
   onPageEnd(page: PageEvent<DeclarationReflection>) {
     if (page.contents) {
       page.contents = prependYAML(
-        page.contents,
+        page.contents.replace(/\\</g, '<'),
         this.getYamlItems(page) as FrontMatterVars,
       );
     }

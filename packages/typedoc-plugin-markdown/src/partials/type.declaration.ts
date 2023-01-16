@@ -1,5 +1,6 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { Collapse } from '../models';
+import { backTicks } from '../support/els';
 import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -9,7 +10,7 @@ export function declarationType(
   collapse: Collapse = 'none',
 ) {
   if (collapse === 'object' || collapse === 'all') {
-    return `\`object\``;
+    return backTicks('Object');
   }
 
   if (declarationReflection.indexSignature || declarationReflection.children) {

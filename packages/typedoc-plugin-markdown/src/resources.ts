@@ -37,7 +37,6 @@ import { commentParts } from './partials/comment.parts';
 import { comment } from './partials/comment';
 import { header } from './partials/header';
 import { hierarchy } from './partials/hierarchy';
-import { constructorMember } from './partials/member.constructor';
 import { declarationMemberTitle } from './partials/member.declaration.title';
 import { declarationMember } from './partials/member.declaration';
 import { indexSignatureTitle } from './partials/member.indexsignature.title';
@@ -68,7 +67,7 @@ import { referenceType } from './partials/type.reference';
 import { reflectionType } from './partials/type.reflection';
 import { someType } from './partials/type.some';
 import { tupleType } from './partials/type.tuple';
-import { typeOperatorType } from './partials/type.typeOperator';
+import { typeOperatorType } from './partials/type.typeoperator';
 import { unionType } from './partials/type.union';
 import { unknownType } from './partials/type.unknown';
 
@@ -88,7 +87,6 @@ export type Partials = {
   comment: (comment: Comment) => string;
   header: (page: PageEvent<DeclarationReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
-  constructorMember: (signature: SignatureReflection) => string;
   declarationMemberTitle: (reflection: DeclarationReflection | ParameterReflection) => string;
   declarationMember: (declaration: DeclarationReflection) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
@@ -100,27 +98,27 @@ export type Partials = {
   typeDeclarationTable: (props: DeclarationReflection[]) => string;
   typeParameters: (typeParameters: TypeParameterReflection[]) => string;
   members: (container: ContainerReflection) => string;
-  reflectionTitle: (reflection: DeclarationReflection, shouldEscape?: boolean) => string;
+  reflectionTitle: (reflection: DeclarationReflection) => string;
   reflection: (reflection: DeclarationReflection) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
   toc: (reflection: DeclarationReflection | ProjectReflection) => string;
-  arrayType: (arrayType: ArrayType, emphasis: boolean) => string;
+  arrayType: (arrayType: ArrayType) => string;
   conditionalType: (conditionalType: ConditionalType) => string;
   declarationType: (declarationReflection: DeclarationReflection, collapse?: Collapse) => string;
   functionType: (modelSignatures: SignatureReflection[]) => string;
   indexAccessType: (model: IndexedAccessType) => string;
   inferredType: (model: InferredType) => string;
   intersectionType: (model: IntersectionType) => string;
-  intrinsicType: (model: IntrinsicType, emphasis: boolean) => string;
+  intrinsicType: (model: IntrinsicType) => string;
   literalType: (literalType: LiteralType) => string;
   queryType: (queryType: QueryType) => string;
   referenceType: (referenceType: ReferenceType) => string;
   reflectionType: (reflectionType: ReflectionType, collapse: Collapse) => string;
-  someType: (someType: SomeType, collapse?: Collapse, emphasis?: boolean) => string;
+  someType: (someType: SomeType, collapse?: Collapse) => string;
   tupleType: (tupleType: TupleType) => string;
   typeOperatorType: (model: TypeOperatorType) => string;
-  unionType: (unionType: UnionType, emphasis: boolean) => string;
+  unionType: (unionType: UnionType) => string;
   unknownType: (model: UnknownType) => string;
 };
 
@@ -137,7 +135,6 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   comment: bind(comment, context),
   header: bind(header, context),
   hierarchy: bind(hierarchy, context),
-  constructorMember: bind(constructorMember, context),
   declarationMemberTitle: bind(declarationMemberTitle, context),
   declarationMember: bind(declarationMember, context),
   indexSignatureTitle: bind(indexSignatureTitle, context),

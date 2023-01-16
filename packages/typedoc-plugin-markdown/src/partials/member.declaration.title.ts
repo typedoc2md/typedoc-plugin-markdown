@@ -3,10 +3,9 @@ import {
   LiteralType,
   ParameterReflection,
   ReflectionKind,
-  ReflectionType,
 } from 'typedoc';
 import { backTicks } from '../support/els';
-import { escapeChars, stripComments, stripLineBreaks } from '../support/utils';
+import { stripComments, stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function declarationMemberTitle(
@@ -20,25 +19,29 @@ export function declarationMemberTitle(
     reflection.flags.length > 0 &&
     !reflection.flags.isRest
   ) {
-    md.push(reflection.flags.map((flag) => `\`${flag}\``).join(' '));
+    md.push(reflection.flags.map((flag) => flag.toLowerCase()).join(' '));
+    md.push(`${reflection.flags.isRest ? '... ' : ' '}`);
   }
-  md.push(
-    `${reflection.flags.isRest ? '... ' : ''} **${escapeChars(
-      reflection.name,
-    )}**`,
-  );
+
+  md.push(reflection.name);
+
   if (
     reflection instanceof DeclarationReflection &&
     reflection.typeParameters
   ) {
     md.push(
-      `<${reflection.typeParameters
+      `\\<${reflection.typeParameters
         ?.map((typeParameter) => backTicks(typeParameter.name))
         .join(', ')}\\>`,
     );
   }
-
-  md.push(getType(context, reflection));
+  if (reflection.type) {
+    md.push(
+      `${
+        reflection.parent?.kindOf(ReflectionKind.Enum) ? ' = ' : ': '
+      }${context.partials.someType(reflection.type, 'all')}`,
+    );
+  }
 
   if (
     !(reflection.type instanceof LiteralType) &&
@@ -51,18 +54,4 @@ export function declarationMemberTitle(
   }
 
   return md.join('');
-}
-
-function getType(
-  context: MarkdownThemeRenderContext,
-  reflection: ParameterReflection | DeclarationReflection,
-) {
-  const reflectionType = reflection.type as ReflectionType;
-  if (reflectionType && reflectionType.declaration?.children) {
-    return ': `object`';
-  }
-  return (
-    (reflection.parent?.kindOf(ReflectionKind.Enum) ? ' = ' : ': ') +
-    context.partials.someType(reflectionType)
-  );
 }

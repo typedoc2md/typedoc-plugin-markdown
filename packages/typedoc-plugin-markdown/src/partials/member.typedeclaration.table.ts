@@ -110,7 +110,6 @@ function getName(
           ? `${parameter.name}:${context.partials.someType(
               parameter.type,
               'all',
-              false,
             )}`
           : '';
       })})`,

@@ -21,7 +21,7 @@ export function members(
   } else {
     container.groups
       ?.filter((group) => !group.allChildrenHaveOwnDocument())
-      .forEach((group, groupIndex) => {
+      .forEach((group) => {
         const headingLevel = getGroupHeadingLevel(container);
         if (group.categories) {
           group.categories.forEach((groupItem) =>
@@ -42,6 +42,8 @@ export function members(
                     ReflectionKind.Interface,
                     ReflectionKind.Enum,
                     ReflectionKind.Function,
+                    ReflectionKind.Variable,
+                    ReflectionKind.TypeAlias,
                   ].includes(groupChild.kind)
                 ) {
                   md.push(horizontalRule());

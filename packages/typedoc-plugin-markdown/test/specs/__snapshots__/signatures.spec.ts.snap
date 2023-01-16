@@ -1,29 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signatures: should compile a promise that returns a symbol' 1`] = `
-"**promiseReturningASymbol**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`any\`\\>
+"\`\`\`ts
+promiseReturningASymbol(): Promise<any>
+\`\`\`
 
-### Returns
+## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<\`any\`\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 
 [partial: sources]"
 `;
 
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
-"**promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
+"\`\`\`ts
+promiseReturningAnObject(): Promise<{ data: string ; id: string  }>
+\`\`\`
 
-### Returns
+## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 
 [partial: sources]"
 `;
 
 exports[`Signatures: should compile callable signature' 1`] = `
-"**CallableSignature**(): \`string\`
+"\`\`\`ts
+CallableSignature(): string
+\`\`\`
 
-### Returns
+## Returns
 
 \`string\`
 
@@ -31,9 +37,11 @@ exports[`Signatures: should compile callable signature' 1`] = `
 `;
 
 exports[`Signatures: should compile class with constructor' 1`] = `
-"**new ClassWithConstructor**(\`x\`: \`string\`, \`y\`: \`string\`): [\`ClassWithConstructor\`](../classes/ClassWithConstructor.md)
+"\`\`\`ts
+new ClassWithConstructor(x: string, y: string): ClassWithConstructor
+\`\`\`
 
-#### Parameters
+### Parameters
 
 
 | Name | Type |
@@ -42,7 +50,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 | \`y\` | \`string\` |
 
 
-#### Returns
+### Returns
 
 [\`ClassWithConstructor\`](../classes/ClassWithConstructor.md)
 
@@ -50,52 +58,56 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 `;
 
 exports[`Signatures: should compile function that returns a function' 1`] = `
-"**functionReturningAFunction**(): <T\\>(\`x\`: \`string\`) => \`boolean\`
+"\`\`\`ts
+functionReturningAFunction(): Function
+\`\`\`
 
 Comments for function
 
 
 
-### Returns
+## Returns
 
-\`fn\`
+\`Function\`
 
 Return comments
 
-<\`T\`\\>(\`x\`: \`string\`): \`boolean\`
+\`\`\`ts
+<T>(x: string): boolean
+\`\`\`
 
-### Type parameters
-
-- \`T\`
-
-
-### Parameters
-
-
-| Name | Type |
-| :------ | :------ |
-| \`x\` | \`string\` |
-
-
-### Returns
-
-\`boolean\`
-
-[partial: sources]
+> ### Type parameters
+>
+> - \`T\`
+>
+> ### Parameters
+>
+> | Name | Type |
+> | :------ | :------ |
+> | \`x\` | \`string\` |
+>
+> ### Returns
+>
+> \`boolean\`
+>
+> [partial: sources]
+>
 
 [partial: sources]"
 `;
 
 exports[`Signatures: should compile function that returns an object' 1`] = `
-"**functionReturningAnObject**(): \`object\`
+"\`\`\`ts
+functionReturningAnObject(): Object
+\`\`\`
 
 Comments for function
 
 
 
-### Returns
+## Returns
 
-\`object\`
+\`Object\`
 
 Return comments
 
@@ -107,27 +119,29 @@ Return comments
 `;
 
 exports[`Signatures: should compile function with nested typen params' 1`] = `
-"**functionWithNestedParams**(\`params\`: \`object\`, \`context\`: \`any\`): \`boolean\`
+"\`\`\`ts
+functionWithNestedParams(params: Object, context: any): boolean
+\`\`\`
 
 Some nested params.
 
-### Parameters
+## Parameters
 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \`object\` | The parameters passed to the method. |
+| \`params\` | \`Object\` | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
-| \`params.nestedObj\` | \`object\` | A nested object. |
+| \`params.nestedObj\` | \`Object\` | A nested object. |
 | \`params.nestedObj.name\` | \`string\` | - |
-| \`params.nestedObj.obj\` | \`object\` | - |
+| \`params.nestedObj.obj\` | \`Object\` | - |
 | \`params.nestedObj.obj.name\` | () => \`void\` | - |
 | \`params.nestedObj.value\` | \`number\` | - |
 | \`params.parent?\` | \`number\` | - |
 | \`context\` | \`any\` | The context of the method call. |
 
 
-### Returns
+## Returns
 
 \`boolean\`
 
@@ -135,17 +149,19 @@ Some nested params.
 `;
 
 exports[`Signatures: should compile function with reference type' 1`] = `
-"**functionWithReferenceType**(\`descriptor\`: \`TypedPropertyDescriptor\`<\`any\`\\>): \`boolean\`
+"\`\`\`ts
+functionWithReferenceType(descriptor: TypedPropertyDescriptor<any>): boolean
+\`\`\`
 
-### Parameters
+## Parameters
 
 
 | Name | Type |
 | :------ | :------ |
-| \`descriptor\` | \`TypedPropertyDescriptor\`<\`any\`\\> |
+| \`descriptor\` | \`TypedPropertyDescriptor\`\\<\`any\`\\> |
 
 
-### Returns
+## Returns
 
 \`boolean\`
 
@@ -153,22 +169,24 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 `;
 
 exports[`Signatures: should compile named parameters with comments' 1`] = `
-"**functionWithNamedParamsAndComments**(\`«destructured»?\`: \`object\`, \`anotherParam\`: \`string\`): \`void\`
+"\`\`\`ts
+functionWithNamedParamsAndComments(«destructured»: Object = {}, anotherParam: string): void
+\`\`\`
 
 FOO
 
-### Parameters
+## Parameters
 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`«destructured»\` | \`object\` | various options |
+| \`«destructured»\` | \`Object\` | various options |
 | › \`bar?\` | \`number\` | - |
 | › \`foo?\` | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
 
 
-### Returns
+## Returns
 
 \`void\`
 
@@ -176,9 +194,11 @@ FOO
 `;
 
 exports[`Signatures: should compile named parameters' 1`] = `
-"**functionWithNamedParams**(\`«destructured»\`: \`Object\`): \`string\`
+"\`\`\`ts
+functionWithNamedParams(«destructured»: Object): string
+\`\`\`
 
-### Parameters
+## Parameters
 
 
 | Name | Type |
@@ -186,7 +206,7 @@ exports[`Signatures: should compile named parameters' 1`] = `
 | \`«destructured»\` | \`Object\` |
 
 
-### Returns
+## Returns
 
 \`string\`
 
@@ -194,11 +214,13 @@ exports[`Signatures: should compile named parameters' 1`] = `
 `;
 
 exports[`Signatures: should compile pipes in params and comments' 1`] = `
-"**functionWithPipesInParamsAndComments**(\`n\`: \`number\`): \`number\` \\| \`null\`
+"\`\`\`ts
+functionWithPipesInParamsAndComments(n: number): number | null
+\`\`\`
 
 
 
-### Parameters
+## Parameters
 
 
 | Name | Type | Description |
@@ -206,7 +228,7 @@ exports[`Signatures: should compile pipes in params and comments' 1`] = `
 | \`n\` | \`number\` | a\\|b |
 
 
-### Returns
+## Returns
 
 \`number\` \\| \`null\`
 
@@ -214,13 +236,15 @@ exports[`Signatures: should compile pipes in params and comments' 1`] = `
 `;
 
 exports[`Signatures: should compile signature with @return comments' 1`] = `
-"**commentsInReturn**(): \`boolean\`
+"\`\`\`ts
+commentsInReturn(): boolean
+\`\`\`
 
 Comments with a return definition
 
 
 
-### Returns
+## Returns
 
 \`boolean\`
 
@@ -230,11 +254,13 @@ Return comments
 `;
 
 exports[`Signatures: should compile signature with a flag' 1`] = `
-"\`Private\` **privateFunction**(): \`string\`
+"\`\`\`ts
+Private privateFunction(): string
+\`\`\`
 
 
 
-### Returns
+## Returns
 
 \`string\`
 
@@ -242,11 +268,19 @@ exports[`Signatures: should compile signature with a flag' 1`] = `
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"**functionWithDefaults**(\`valueA?\`: \`string\`, \`valueB?\`: \`number\`, \`valueC?\`: \`number\`, \`valueD?\`: \`boolean\`, \`valueE?\`: \`boolean\`, \`valueF?\`: \`string\`): \`string\`
+"\`\`\`ts
+functionWithDefaults(
+  valueA: string = 'defaultValue', 
+  valueB: number = 100, 
+  valueC: number = Number.NaN, 
+  valueD: boolean = true, 
+  valueE: boolean = null, 
+  valueF: string = '<foo>'): string
+\`\`\`
 
 This is a function with a parameter that has a default value.
 
-### Parameters
+## Parameters
 
 
 | Name | Type | Default value | Description |
@@ -259,7 +293,7 @@ This is a function with a parameter that has a default value.
 | \`valueF\` | \`string\` | \`'<foo>'\` | - |
 
 
-### Returns
+## Returns
 
 \`string\`
 
@@ -267,11 +301,13 @@ This is a function with a parameter that has a default value.
 `;
 
 exports[`Signatures: should compile signature with optional params' 1`] = `
-"**functionWithOptionalParam**(\`requiredParam\`: \`string\`, \`optionalParam?\`: \`string\`): \`void\`
+"\`\`\`ts
+functionWithOptionalParam(requiredParam: string, optionalParam?: string): void
+\`\`\`
 
 This is a function with a parameter that is optional.
 
-### Parameters
+## Parameters
 
 
 | Name | Type | Description |
@@ -280,7 +316,7 @@ This is a function with a parameter that is optional.
 | \`optionalParam?\` | \`string\` | An optional parameter. |
 
 
-### Returns
+## Returns
 
 \`void\`
 
@@ -288,11 +324,13 @@ This is a function with a parameter that is optional.
 `;
 
 exports[`Signatures: should compile signature with params' 1`] = `
-"**functionWithParameters**(\`paramZ\`: \`string\`, \`paramG\`: \`any\`, \`paramA\`: \`any\`): \`number\`
+"\`\`\`ts
+functionWithParameters(paramZ: string, paramG: any, paramA: any): number
+\`\`\`
 
 This is a function with multiple arguments and a return value.
 
-### Parameters
+## Parameters
 
 
 | Name | Type | Description |
@@ -302,7 +340,7 @@ This is a function with multiple arguments and a return value.
 | \`paramA\` | \`any\` | This is a **parameter** pointing to an interface. |
 
 
-### Returns
+## Returns
 
 \`number\`
 
@@ -310,11 +348,13 @@ This is a function with multiple arguments and a return value.
 `;
 
 exports[`Signatures: should compile signature with rest params' 1`] = `
-"**functionWithRest**(...\`rest\`: \`string\`[]): \`string\`
+"\`\`\`ts
+functionWithRest(...rest: string[]): string
+\`\`\`
 
 This is a function with rest parameter.
 
-### Parameters
+## Parameters
 
 
 | Name | Type | Description |
@@ -322,7 +362,7 @@ This is a function with rest parameter.
 | \`...rest\` | \`string\`[] | The rest parameter. |
 
 
-### Returns
+## Returns
 
 \`string\`
 
@@ -330,9 +370,11 @@ This is a function with rest parameter.
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"**functionWithUnionTypes**(\`arg\`: \`number\` \\| \`boolean\`[], ...\`args\`: (\`string\` \\| \`number\`)[]): \`any\`
+"\`\`\`ts
+functionWithUnionTypes(arg: number | boolean[], ...args: (string | number)[]): any
+\`\`\`
 
-### Parameters
+## Parameters
 
 
 | Name | Type |
@@ -341,7 +383,7 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 | \`...args\` | (\`string\` \\| \`number\`)[] |
 
 
-### Returns
+## Returns
 
 \`any\`
 
