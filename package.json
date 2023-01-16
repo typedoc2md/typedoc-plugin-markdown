@@ -5,6 +5,7 @@
   ],
   "scripts": {
     "lint": "npm run lint --workspaces",
+    "markdownlint": "npm run markdownlint --workspaces",
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces"
   },
