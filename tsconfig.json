@@ -2,7 +2,6 @@
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
-    "esModuleInterop": false,
     "experimentalDecorators": true,
     "incremental": true,
     "lib": [

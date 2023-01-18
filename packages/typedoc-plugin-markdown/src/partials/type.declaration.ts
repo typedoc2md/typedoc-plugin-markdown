@@ -47,7 +47,7 @@ export function declarationType(
           : ''
       }`,
       '{',
-    ).replace(/\\\\{/g, '\\{');
+    );
   }
   return escapeChars('{}', '{');
 }
