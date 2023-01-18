@@ -114,7 +114,6 @@ export class MarkdownTheme extends Theme {
         let url = [mapping.directory, this.getUrl(reflection) + '.md'].join(
           '/',
         );
-
         if (this.flattenOutput) {
           url = url.replace(/\//g, '.');
         }
