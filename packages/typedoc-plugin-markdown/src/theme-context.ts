@@ -35,9 +35,7 @@ export class MarkdownThemeRenderContext {
         path.dirname(this.activeLocation),
         path.dirname(url),
       );
-      url = path.join(relative, path.basename(url)).replace(/\\/g, '/');
-      if (this.getOption('includeExtension') ?? true) return url;
-      return url.replace(/\.md$/, '').replace(/\.md#/, '#');
+      return path.join(relative, path.basename(url)).replace(/\\/g, '/');
     }
   }
 

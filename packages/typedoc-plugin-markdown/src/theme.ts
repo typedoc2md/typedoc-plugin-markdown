@@ -22,7 +22,6 @@ export class MarkdownTheme extends Theme {
   @BindOption('symbolsWithOwnFile') symbolsWithOwnFile!: string | string[];
   @BindOption('fileStructure') fileStructure!: string;
   @BindOption('flattenOutput') flattenOutput!: string;
-  @BindOption('includeExtension') includeExtension!: boolean;
 
   private _renderContext?: MarkdownThemeRenderContext;
 

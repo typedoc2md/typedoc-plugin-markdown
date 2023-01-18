@@ -101,13 +101,6 @@ export function load(app: Application) {
       }
     },
   });
-
-  app.options.addDeclaration({
-    name: 'includeExtension',
-    help: '[Markdown Plugin] Determines whether to preserve the `.md` extension in relative links.',
-    type: ParameterType.Boolean,
-    defaultValue: true,
-  });
 }
 
 export * from './models';
