@@ -12,6 +12,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   typeDeclarationStyle: 'list' | 'table';
   fileStructure: 'modules' | 'groups';
   flattenOutput: boolean;
+  includeExtension: boolean;
 }
 
 export interface TemplateMapping {

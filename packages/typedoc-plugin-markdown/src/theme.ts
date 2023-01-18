@@ -22,6 +22,7 @@ export class MarkdownTheme extends Theme {
   @BindOption('symbolsWithOwnFile') symbolsWithOwnFile!: string | string[];
   @BindOption('fileStructure') fileStructure!: string;
   @BindOption('flattenOutput') flattenOutput!: string;
+  @BindOption('includeExtension') includeExtension!: boolean;
 
   private _renderContext?: MarkdownThemeRenderContext;
 
@@ -113,6 +114,7 @@ export class MarkdownTheme extends Theme {
         let url = [mapping.directory, this.getUrl(reflection) + '.md'].join(
           '/',
         );
+
         if (this.flattenOutput) {
           url = url.replace(/\//g, '.');
         }
