@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": false,
     "experimentalDecorators": true,
-    "lib": ["es2018", "dom"],
+    "incremental": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": false,
@@ -10,6 +16,7 @@
     "removeComments": true,
     "sourceMap": false,
     "strictNullChecks": true,
-    "target": "es2018"
-  }
+    "stripInternal": true,
+    "target": "es2020",
+  },
 }
