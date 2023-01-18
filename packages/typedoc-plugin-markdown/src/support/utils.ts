@@ -11,7 +11,7 @@ export function formatContents(contents: string) {
 }
 
 /**
- * Escapes certain characters with \\\\.
+ * Escapes certain characters with double `\`.
  *
  * Characters escaped by default:
  * ```
