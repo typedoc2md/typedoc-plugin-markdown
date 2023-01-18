@@ -10,12 +10,18 @@ export function formatContents(contents: string) {
   );
 }
 
-export function escapeChars(str: string) {
+/**
+ * Escapes certain characters with \\\\.
+ *
+ * Characters escaped by default:
+ * ```
+ * < > _ ` |
+ * ```
+ */
+export function escapeChars(str: string, toEscape = '<>_`|') {
   return str
-    .replace(/</g, '<')
-    .replace(/_/g, '\\_')
-    .replace(/`/g, '\\`')
-    .replace(/\|/g, '\\|');
+    .replace(new RegExp(`([${toEscape}])`, 'g'), '\\$1')
+    .replace(/\\\\/g, '\\');
 }
 
 export function stripComments(str: string) {

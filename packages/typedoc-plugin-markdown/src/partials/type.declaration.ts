@@ -37,14 +37,17 @@ export function declarationType(
             : ''
         }`;
       });
-    return `{ ${indexSignature ? indexSignature : ''}${
-      types ? types.join('; ') : ''
-    } }${
-      declarationReflection.defaultValue &&
-      declarationReflection.defaultValue !== '...'
-        ? `= ${escapeChars(declarationReflection.defaultValue)}`
-        : ''
-    }`;
+    return escapeChars(
+      `{ ${indexSignature ? indexSignature : ''}${
+        types ? types.join('; ') : ''
+      } }${
+        declarationReflection.defaultValue &&
+        declarationReflection.defaultValue !== '...'
+          ? `= ${escapeChars(declarationReflection.defaultValue)}`
+          : ''
+      }`,
+      '{',
+    ).replace(/\\\\{/g, '\\{');
   }
-  return '{}';
+  return escapeChars('{}', '{');
 }

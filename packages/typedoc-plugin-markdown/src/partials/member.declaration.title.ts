@@ -32,9 +32,12 @@ export function declarationMemberTitle(
     reflection.typeParameters
   ) {
     md.push(
-      `<${reflection.typeParameters
-        ?.map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}\\>`,
+      escapeChars(
+        `<${reflection.typeParameters
+          ?.map((typeParameter) => backTicks(typeParameter.name))
+          .join(', ')}>`,
+        '<>',
+      ),
     );
   }
 

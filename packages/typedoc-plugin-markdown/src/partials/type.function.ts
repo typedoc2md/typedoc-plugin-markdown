@@ -1,4 +1,5 @@
 import { SignatureReflection, SomeType } from 'typedoc';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function functionType(
@@ -7,9 +8,12 @@ export function functionType(
 ) {
   const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
-      ? `<${fn.typeParameters
-          .map((typeParameter) => typeParameter.name)
-          .join(', ')}\\>`
+      ? escapeChars(
+          `<${fn.typeParameters
+            .map((typeParameter) => typeParameter.name)
+            .join(', ')}>`,
+          '<>',
+        )
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {

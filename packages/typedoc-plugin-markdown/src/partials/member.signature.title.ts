@@ -1,4 +1,5 @@
 import { ParameterReflection, SignatureReflection, SomeType } from 'typedoc';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function signatureTitle(
@@ -24,9 +25,12 @@ export function signatureTitle(
 
   if (signature.typeParameters) {
     md.push(
-      `<${signature.typeParameters
-        .map((typeParameter) => `\`${typeParameter.name}\``)
-        .join(', ')}\\>`,
+      escapeChars(
+        `<${signature.typeParameters
+          .map((typeParameter) => `\`${typeParameter.name}\``)
+          .join(', ')}>`,
+        '<>',
+      ),
     );
   }
 

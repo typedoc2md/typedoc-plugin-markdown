@@ -1,5 +1,6 @@
 import { ReferenceType } from 'typedoc';
 import { backTicks } from '../support/els';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function referenceType(
@@ -27,9 +28,12 @@ export function referenceType(
     }
     if (referenceType.typeArguments && referenceType.typeArguments.length > 0) {
       reflection.push(
-        `<${referenceType.typeArguments
-          .map((typeArgument) => context.partials.someType(typeArgument))
-          .join(', ')}\\>`,
+        escapeChars(
+          `<${referenceType.typeArguments
+            .map((typeArgument) => context.partials.someType(typeArgument))
+            .join(', ')}>`,
+          '<>',
+        ),
       );
     }
     return reflection.join('');
