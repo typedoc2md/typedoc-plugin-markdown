@@ -54,7 +54,7 @@ AnyFunctionType<A>: Function
 >
 > ### Returns
 >
-> \`A\`
+> [\`A\`](../types/AnyFunctionType.md#a)
 >
 > [partial: sources]
 >

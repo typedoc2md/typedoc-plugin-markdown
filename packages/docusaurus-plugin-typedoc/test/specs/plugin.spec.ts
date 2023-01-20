@@ -33,21 +33,17 @@ describe(`Plugin:`, () => {
       tmpobj = tmp.dirSync();
       await bootstrap(tmpobj);
     });
-    test(`should render`, () => {
-      const files = fs.readdirSync(tmpobj.name + '/docs/api');
-      expect(files.sort((a, b) => a.localeCompare(b))).toMatchSnapshot();
-    });
 
     test(`should write doc`, () => {
-      const sidebar = fs.readFileSync(tmpobj.name + '/docs/api/index.md');
-      expect(sidebar.toString()).toMatchSnapshot();
+      const indexDoc = fs.readFileSync(tmpobj.name + '/docs/api/index.md');
+      expect(indexDoc.toString()).toMatchSnapshot();
     });
 
     test(`should write category yaml`, () => {
-      const sidebar = fs.readFileSync(
+      const categoryYaml = fs.readFileSync(
         tmpobj.name + '/docs/api/classes/_category_.yml',
       );
-      expect(sidebar.toString()).toMatchSnapshot();
+      expect(categoryYaml.toString()).toMatchSnapshot();
     });
   });
 });

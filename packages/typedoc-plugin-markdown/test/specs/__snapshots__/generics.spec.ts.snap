@@ -7,7 +7,7 @@ exports[`Generics: should compile class with type params 1`] = `
 
 [partial: comment]
 
-# Type parameters
+## Type parameters
 
 - \`T\`
 - \`V\`

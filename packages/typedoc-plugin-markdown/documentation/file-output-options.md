@@ -1,4 +1,4 @@
-# Output file strategy
+# File output options
 
 TypeDoc creates documentation according to exports. The modules strucutre will be driven by the implemented an entry point config. https://typedoc.org/guides/options/#entrypointstrategy.
 
@@ -41,7 +41,7 @@ _Note when definiting arrays using a json options file is less verbose:_
 
 ## Configuring the output directory structure
 
-### Default structure
+### Default structure (by symbols)
 
 As per the HTML theme, by default the plugin groups exports in directories following the symbol type producing the following output.
 

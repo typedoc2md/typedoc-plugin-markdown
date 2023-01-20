@@ -30,7 +30,7 @@ export function load(app: Application) {
     name: 'fileStructure',
     help: '[Markdown Plugin] Specifies how the filesystem should be standard. Hierarchical builds directories as per file system.',
     type: ParameterType.String,
-    defaultValue: 'modules',
+    defaultValue: 'symbols',
     validate: (option) => {
       const availableValues = ['modules', 'symbols'];
       if (!availableValues.includes(option)) {

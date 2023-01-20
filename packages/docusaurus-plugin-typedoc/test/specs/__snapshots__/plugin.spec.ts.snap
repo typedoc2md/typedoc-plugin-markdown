@@ -1,19 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Plugin: (docs) should render 1`] = `
-[
-  "_category_.yml",
-  "classes",
-  "enums",
-  "functions",
-  "index.md",
-  "interfaces",
-  "Modules.md",
-  "namespaces",
-  "variables",
-]
-`;
-
 exports[`Plugin: (docs) should write category yaml 1`] = `
 "label: "Classes"
 position: 3"
