@@ -20,7 +20,7 @@ exports[`Types: should compile collapsed 'literal' type' 1`] = `"\`Object\`"`;
 
 exports[`Types: should compile collapsed 'objectLiteralType' type' 1`] = `"\`Object\`"`;
 
-exports[`Types: should compile conditional type ' 1`] = `"\`T\` extends \`string\` ? \`"string"\` : \`T\` extends \`number\` ? \`"number"\` : \`T\` extends \`boolean\` ? \`"boolean"\` : \`T\` extends \`undefined\` ? \`"undefined"\` : \`"object"\`"`;
+exports[`Types: should compile conditional type ' 1`] = `"[\`T\`](../types/ConditionalType.md#t) extends \`string\` ? \`"string"\` : [\`T\`](../types/ConditionalType.md#t) extends \`number\` ? \`"number"\` : [\`T\`](../types/ConditionalType.md#t) extends \`boolean\` ? \`"boolean"\` : [\`T\`](../types/ConditionalType.md#t) extends \`undefined\` ? \`"undefined"\` : \`"object"\`"`;
 
 exports[`Types: should compile expanded 'function' type ' 1`] = `""`;
 

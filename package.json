@@ -2,12 +2,14 @@
   "private": true,
   "workspaces": [
     "packages/typedoc-plugin-markdown",
-    "packages/typedoc-plugin-markdown"
+    "packages/docusaurus-plugin-typedoc"
   ],
   "scripts": {
     "lint": "npm run lint --workspaces",
     "build": "npm run build --workspaces",
-    "test": "npm run test --workspaces"
+    "test": "npm run test --workspaces",
+    "prerelease": "npm run build",
+    "release": "npx changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",

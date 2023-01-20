@@ -1,15 +1,14 @@
 const getReleaseLine = async (changeset, _type) => {
-  const [firstLine, ...futureLines] = changeset.summary
+  /*const [firstLine, ...futureLines] = changeset.summary
     .split('\n')
     .map((l) => l.trimRight());
 
-  let returnVal = `- ${firstLine}`;
+   let returnVal = `- ${firstLine}`;
 
   if (futureLines.length > 0) {
     returnVal += `\n- ${futureLines.map((l) => `  ${l}`).join('\n')}`;
-  }
-
-  return returnVal;
+  }*/
+  return changeset.summary;
 };
 
 const getDependencyReleaseLine = async (changesets, dependenciesUpdated) => {

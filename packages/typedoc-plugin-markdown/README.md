@@ -32,9 +32,9 @@ The `--plugin` arg is optional (all plugins are loaded by default), however if u
 The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/guides/options/)
 (please note that TypeDoc options specific to the HTML theme will be ignored).
 
-Please read the [documentation](#documentation) for further configuration options.
+### File output options
 
-**File output options**
+See [File output options](./documentation/file-output-options.md) for further documentation.
 
 - **`--entryDocument`**<br>
   The file name of the entry document. Defaults to `README.md`.
@@ -43,7 +43,7 @@ Please read the [documentation](#documentation) for further configuration option
 - **`--fileStructure`**<br>
   Specifies how the files should be generated, grouped by modules or symbol types. Expected values [`modules`, `symbols`]. Defaults to `modules`.
 
-**UI options**
+### UI options
 
 - **`--hideBreadcrumbs`**<br>
   Do not print breadcrumbs header. Defaults to `false`.
@@ -53,10 +53,8 @@ Please read the [documentation](#documentation) for further configuration option
   Do not print the page title. Defaults to `false`.
 - **`--hideHierarchy`**<br>
   Do not print reflection hierarchy. Defaults to `false`.
-- **`--typeDeclarationStyle`**<br>
-  Specify the render style of type declarations. Expected values [`list`, `table`] Defaults to `list`.
 
-**Utility options**
+### Utility options
 
 - **`--namedAnchors`**<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
@@ -65,7 +63,7 @@ Please read the [documentation](#documentation) for further configuration option
 
 ## Documentation
 
-- [Output file strategy](./documentation/output-file-strategy.md)
+- [File output options](./documentation/file-output-options.md)
 
 ## License
 
