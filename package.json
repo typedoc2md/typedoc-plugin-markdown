@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": [
     "packages/typedoc-plugin-markdown",
-    "packages/typedoc-plugin-markdown"
+    "packages/docusaurus-plugin-typedoc"
   ],
   "scripts": {
     "lint": "npm run lint --workspaces",
