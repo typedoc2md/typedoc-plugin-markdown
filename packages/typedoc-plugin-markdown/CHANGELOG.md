@@ -7,8 +7,8 @@
 Initial release of next version. In summary includes:
 
 - Removal of handlebars.
-- MDX2 support as standard (#305, #252).
-- Exposes additional output file options (#353, #338, #328, #307).
+- MDX2 support as standard ([(#305)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/305), [(#252)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/252)).
+- Exposes additional output file options ([(#353)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/353), [(#338)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/338), [(#328)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/328), [(#307)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/307)).
 - Several UI improvements.
 
 ## [3.13.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.3...typedoc-plugin-markdown@3.13.4) (2022-07-20)
