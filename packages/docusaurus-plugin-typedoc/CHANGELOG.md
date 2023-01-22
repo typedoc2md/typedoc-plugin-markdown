@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.0-next.0
+
+### Major Changes
+
+- Compatibility updates for typedoc-plugin-markdown
+
+### Patch Changes
+
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.0
+
 ## [0.17.6](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.17.5...docusaurus-plugin-typedoc@0.17.6) (2022-06-27)
 
 **Note:** Version bump only for package docusaurus-plugin-typedoc
