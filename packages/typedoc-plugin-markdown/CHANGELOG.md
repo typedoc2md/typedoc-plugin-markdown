@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.0.0-next.0
+
+### Major Changes
+
+Initial release of next version. In summary includes:
+
+- Removal of handlebars.
+- MDX2 support as standard (#305, #252).
+- Exposes additional output file options (#353, #338, #328, #307).
+- Several UI improvements.
+
 ## [3.13.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.3...typedoc-plugin-markdown@3.13.4) (2022-07-20)
 
 ### Fixes
