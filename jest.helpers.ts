@@ -10,7 +10,6 @@ import {
   TypeDocReader,
   UrlMapping,
 } from 'typedoc';
-import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
 const STUBS_SRC_PATH = path.join(__dirname, 'stubs', 'src');
 const STUBS_TSCONFIG_PATH = path.join(__dirname, 'stubs', 'tsconfig.json');
@@ -43,7 +42,7 @@ global.bootstrap = async (
   const project = app.convert() as ProjectReflection;
   app.renderer.render = render;
   await app.generateDocs(project, 'docs');
-  const context = (app.renderer.theme as MarkdownTheme).getRenderContext();
+  const context = (app.renderer.theme as any).getRenderContext();
   stubPartials.forEach((stubPartial) => {
     context.partials[stubPartial] = () => `[partial: ${stubPartial}]`;
   });
