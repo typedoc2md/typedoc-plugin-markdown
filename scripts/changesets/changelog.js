@@ -115,4 +115,6 @@ const changelogFunctions = {
   },
 };
 
-export default changelogFunctions;
+module.exports = {
+  default: changelogFunctions,
+};
