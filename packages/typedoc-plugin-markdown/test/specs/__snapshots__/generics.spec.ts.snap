@@ -3,7 +3,7 @@
 exports[`Generics: should compile class with type params 1`] = `
 "[partial: breadcrumbs]
 
-# ClassWithTypeParams\\<T, V\\>
+# Class: ClassWithTypeParams\\<T, V\\>
 
 [partial: comment]
 

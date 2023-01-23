@@ -2,7 +2,7 @@
 
 exports[`Output File Strategy fileStructure should compile '--fileStructure 'modules' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1/module_1.md",
   "module_1/nameSpace/nameSpace.md",
@@ -41,7 +41,7 @@ exports[`Output File Strategy fileStructure should compile '--fileStructure 'mod
 
 exports[`Output File Strategy fileStructure should compile '--fileStructure modules --symbolsWithOwnFile  none' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1.md",
   "module_1/nameSpace.md",
@@ -51,7 +51,7 @@ exports[`Output File Strategy fileStructure should compile '--fileStructure modu
 
 exports[`Output File Strategy fileStructure should compile --fileStructure 'symbols' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1.md",
   "module_1.nameSpace.md",
@@ -88,7 +88,7 @@ exports[`Output File Strategy fileStructure should compile --fileStructure 'symb
 ]
 `;
 
-exports[`Output File Strategy fileStructure should compile fileStructure: 'symbols' --symbolsWithOwnFile none 1`] = `
+exports[`Output File Strategy fileStructure should compile fileStructure: 'symbols' --symbolsWithOwnFile none --readme none 1`] = `
 [
   "README.md",
   "module_1.md",
@@ -99,7 +99,7 @@ exports[`Output File Strategy fileStructure should compile fileStructure: 'symbo
 
 exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [class, interface]' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1.md",
   "module_1.nameSpace.md",
@@ -119,7 +119,7 @@ exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [cl
 
 exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [class]' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1.md",
   "module_1.nameSpace.md",
@@ -134,7 +134,7 @@ exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [cl
 
 exports[`Output File Strategy symbolsWithOwnFile should set --symbolsWithOwnFile none' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1.md",
   "module_1.nameSpace.md",
@@ -144,7 +144,7 @@ exports[`Output File Strategy symbolsWithOwnFile should set --symbolsWithOwnFile
 
 exports[`Output File Strategy symbolsWithOwnFile should set default --symbolsWithOwnFile 'all' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1.md",
   "module_1.nameSpace.md",
@@ -183,7 +183,7 @@ exports[`Output File Strategy symbolsWithOwnFile should set default --symbolsWit
 
 exports[`Output File Strategy symbolsWithOwnFile should set symbolsWithOwnFile [enum, types, variables]' 1`] = `
 [
-  "Modules.md",
+  "modules.md",
   "README.md",
   "module_1.md",
   "module_1.nameSpace.md",

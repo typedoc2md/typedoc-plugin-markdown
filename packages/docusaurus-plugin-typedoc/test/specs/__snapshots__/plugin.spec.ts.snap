@@ -14,12 +14,12 @@ custom_edit_url: null
 
 # MY README
 
-[API](Modules.md)
-
 > Some block quote
 
 <!-- some comments -->
 
 Some text
+
+[Goto API](modules.md)
 "
 `;
