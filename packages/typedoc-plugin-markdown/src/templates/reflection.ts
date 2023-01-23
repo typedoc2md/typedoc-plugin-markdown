@@ -1,6 +1,4 @@
 import { DeclarationReflection, PageEvent } from 'typedoc';
-import { heading, unorderedList } from '../support/els';
-import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function reflectionTemplate(
@@ -9,52 +7,21 @@ export function reflectionTemplate(
 ) {
   const md: string[] = [];
 
-  md.push(context.partials.header(page));
-
-  const headingLevel = getReflectionHeadingLevel(page.model) + 1;
-
-  if (page.model.comment) {
-    md.push(context.partials.comment(page.model.comment));
+  if (!context.getOption('hideBreadcrumbs')) {
+    md.push(context.partials.breadcrumbs(page));
   }
 
-  if (page.model.typeParameters) {
-    md.push(heading(headingLevel, 'Type parameters'));
-    md.push(context.partials.typeParameters(page.model.typeParameters));
-  }
-
-  if (page.model.typeHierarchy && !context.getOption('hideHierarchy')) {
-    if (page.model?.typeHierarchy?.next) {
-      md.push(heading(headingLevel, 'Hierarchy'));
-      md.push(context.partials.hierarchy(page.model.typeHierarchy));
-    }
-  }
-  if (page.model?.implementedTypes) {
-    md.push(heading(headingLevel, 'Implements'));
+  if (page.model.readme) {
     md.push(
-      unorderedList(
-        page.model.implementedTypes.map((implementedType) =>
-          context.partials.someType(implementedType),
-        ),
-      ),
+      context.partials
+        .commentParts(page.model.readme)
+        .replace('[TYPEDOC_INDEX]', context.partials.toc(page.model)),
     );
+  } else {
+    if (!context.getOption('hidePageTitle')) {
+      md.push(context.partials.pagetitle(page));
+    }
+    md.push(context.partials.reflection(page.model));
   }
-
-  if ('signatures' in page.model && page.model?.signatures) {
-    md.push(heading(headingLevel, 'Callable'));
-    page.model.signatures.forEach((signature) => {
-      md.push(heading(headingLevel + 1, signature.name));
-      md.push(context.partials.signatureMember(signature));
-    });
-  }
-
-  if ('indexSignature' in page.model && page.model.indexSignature) {
-    md.push(heading(headingLevel, 'Indexable'));
-    md.push(context.partials.indexSignatureTitle(page.model.indexSignature));
-  }
-
-  md.push(context.partials.toc(page.model));
-
-  md.push(context.partials.members(page.model));
-
   return md.join('\n\n');
 }

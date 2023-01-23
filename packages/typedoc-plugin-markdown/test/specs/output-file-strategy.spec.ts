@@ -14,11 +14,15 @@ describe(`Output File Strategy`, () => {
       expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
     });
 
-    test(`should compile fileStructure: 'symbols' --symbolsWithOwnFile none`, async () => {
+    test(`should compile fileStructure: 'symbols' --symbolsWithOwnFile none --readme none`, async () => {
       ({ project, theme } = await global.bootstrap(
         ['modules/module-1', 'modules/module-2'],
         {
-          options: { fileStructure: 'symbols', symbolsWithOwnFile: 'none' },
+          options: {
+            fileStructure: 'symbols',
+            symbolsWithOwnFile: 'none',
+            readme: 'none',
+          },
         },
       ));
       expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();

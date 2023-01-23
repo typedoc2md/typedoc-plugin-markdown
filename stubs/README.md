@@ -6,4 +6,4 @@
 
 Some text
 
-[TYPEDOC_INDEX]
+[Goto API](modules.md)

@@ -74,13 +74,6 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'hideHierarchy',
-    help: '[Markdown Plugin] Do not print reflection hierarchy.',
-    type: ParameterType.Boolean,
-    defaultValue: false,
-  });
-
-  app.options.addDeclaration({
     name: 'hideInPageTOC',
     help: '[Markdown Plugin] Do not render in-page table of contents items.',
     type: ParameterType.Boolean,

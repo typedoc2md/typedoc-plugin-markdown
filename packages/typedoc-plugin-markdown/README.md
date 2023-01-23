@@ -51,8 +51,6 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print in-page index items. Defaults to `false`.
 - **`--hidePageTitle`**<br>
   Do not print the page title. Defaults to `false`.
-- **`--hideHierarchy`**<br>
-  Do not print reflection hierarchy. Defaults to `false`.
 
 ### Utility options
 

@@ -90,7 +90,6 @@ exports[`Output File Strategy fileStructure should compile --fileStructure 'symb
 
 exports[`Output File Strategy fileStructure should compile fileStructure: 'symbols' --symbolsWithOwnFile none 1`] = `
 [
-  "Modules.md",
   "README.md",
   "module_1.md",
   "module_1.nameSpace.md",

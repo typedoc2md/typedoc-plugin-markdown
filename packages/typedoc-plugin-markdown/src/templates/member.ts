@@ -7,7 +7,13 @@ export function memberTemplate(
 ) {
   const md: string[] = [];
 
-  md.push(context.partials.header(page));
+  if (!context.getOption('hideBreadcrumbs')) {
+    md.push(context.partials.breadcrumbs(page));
+  }
+
+  if (!context.getOption('hidePageTitle')) {
+    md.push(context.partials.pagetitle(page));
+  }
 
   md.push(context.partials.member(page.model));
 

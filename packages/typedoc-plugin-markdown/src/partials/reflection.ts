@@ -20,12 +20,11 @@ export function reflection(
     md.push(context.partials.typeParameters(reflection.typeParameters));
   }
 
-  if (reflection.typeHierarchy && !context.getOption('hideHierarchy')) {
-    if (reflection.typeHierarchy?.next) {
-      md.push(heading(headingLevel, 'Hierarchy'));
-      md.push(context.partials.hierarchy(reflection.typeHierarchy));
-    }
+  if (reflection.typeHierarchy?.next) {
+    md.push(heading(headingLevel, 'Hierarchy'));
+    md.push(context.partials.hierarchy(reflection.typeHierarchy));
   }
+
   if (reflection.implementedTypes) {
     md.push(heading(headingLevel, 'Implements'));
     md.push(

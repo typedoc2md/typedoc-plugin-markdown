@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "typedoc": {
     "entryPoint": "./index.ts",
-    "readmeFile": "./README.md",
+    "readmeFile": "none",
     "displayName": "Child Package 2",
     "tsconfig": "./tsconfig.json"
   }

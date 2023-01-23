@@ -6,7 +6,7 @@ import { URL_PREFIX } from './support/constants';
 import { MarkdownTheme } from './theme';
 
 export class MarkdownThemeRenderContext {
-  public globalsFile = 'Modules.md';
+  public globalsFile = 'modules.md';
 
   private _activeLocation: string;
 

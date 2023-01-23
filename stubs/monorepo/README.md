@@ -2,4 +2,4 @@
 
 Monorepo readme content
 
-[TYPEDOC_INDEX]
+[Go to API](modules.md)
