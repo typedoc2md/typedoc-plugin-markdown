@@ -6,6 +6,7 @@
     "docusaurus-plugin-typedoc": "0.17.6"
   },
   "changesets": [
+    "breezy-avocados-lie",
     "polite-planets-knock",
     "twenty-moose-promise"
   ]

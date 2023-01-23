@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.1
+
+### Patch Changes
+
+- Respect monorepo `readmeFile` configuration [#383](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/383)
+
 ## 4.0.0-next.0
 
 ### Major Changes
