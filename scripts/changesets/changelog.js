@@ -1,7 +1,7 @@
-import { getInfo, getInfoFromPullRequest } from '@changesets/get-github-info';
-import { config } from 'dotenv';
-
-config();
+const {
+  getInfo,
+  getInfoFromPullRequest,
+} = require('@changesets/get-github-info');
 
 const changelogFunctions = {
   getDependencyReleaseLine: async (
