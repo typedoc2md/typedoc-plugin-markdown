@@ -1,0 +1,4 @@
+{
+  "entryPointStrategy": "packages",
+  "entryPoints": ["package-1", "package-2"]
+}

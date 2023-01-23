@@ -34,7 +34,7 @@ The following options can be used in addition to relevant [TypeDoc options](http
 
 ### File output options
 
-See [File output options](./documentation/file-output-options.md) for further documentation.
+See [File output options](./docs/file-output-options.md) for further documentation.
 
 - **`--entryDocument`**<br>
   The file name of the entry document. Defaults to `README.md`.
@@ -63,7 +63,8 @@ See [File output options](./documentation/file-output-options.md) for further do
 
 ## Documentation
 
-- [File output options](./documentation/file-output-options.md)
+- [Readme files](./docs/readme-files.md)
+- [File output options](./docs/file-output-options.md)
 
 ## License
 

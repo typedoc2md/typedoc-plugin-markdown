@@ -17,7 +17,6 @@
   "media": "./media/",
   "name": "My TypeScript API",
   "tsconfig": "./tsconfig.json",
-  "readme": "none",
   "cleanOutputDir": true,
   "githubPages": false
 }

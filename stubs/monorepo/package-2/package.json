@@ -1,0 +1,10 @@
+{
+  "name": "child-package-2",
+  "version": "1.0.0",
+  "typedoc": {
+    "entryPoint": "./index.ts",
+    "readmeFile": "./README.md",
+    "displayName": "Child Package 2",
+    "tsconfig": "./tsconfig.json"
+  }
+}

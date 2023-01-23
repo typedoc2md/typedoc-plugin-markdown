@@ -13,12 +13,12 @@
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "prebuild": "ts-node scripts/build-resources",
     "build": "rm -rf dist && tsc",
-    "test": "jest --colors -u",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "docs": "npm run build && npm-run-all docs-*",
-    "docs-md1": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --out ./docs/md/md-1",
-    "docs-md2": "typedoc --plugin typedoc-plugin-markdown --symbolsWithOwnFile none --typeDeclarationStyle table --options ../../stubs/typedoc.json --out ./docs/md/md-2",
-    "docs-html": "typedoc --plugin none --options ../../stubs/typedoc.json --out ./docs/html"
+    "docs-md1": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --out ./test/docs/md/md-1",
+    "docs-md2": "typedoc --plugin typedoc-plugin-markdown --readme \"none\" --symbolsWithOwnFile none --options ../../stubs/typedoc.json --out ./test/docs/md/md-2",
+    "docs-html": "typedoc --plugin none --options ../../stubs/typedoc.json --out ./test/docs/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",
