@@ -8,7 +8,6 @@ exports[`Options: should merge custom sidebar options 1`] = `
   "fullNames": true,
   "indexLabel": "Custom index",
   "position": null,
-  "readmeLabel": "Custom readme",
 }
 `;
 
@@ -22,17 +21,16 @@ exports[`Options: should return default options 1`] = `
 {
   "cleanOutputDir": true,
   "docsRoot": "docs",
+  "enableEmojis": true,
+  "enableFrontmatter": true,
   "entryDocument": "index.md",
   "entryPoints": [
     "entrypoint.ts",
   ],
-  "frontmatter": undefined,
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
   "hidePageTitle": false,
   "id": "default",
-  "includeExtension": true,
-  "indexSlug": undefined,
   "out": "api",
   "plugin": [
     "none",
@@ -42,9 +40,8 @@ exports[`Options: should return default options 1`] = `
     "categoryLabel": "API",
     "collapsed": true,
     "fullNames": false,
-    "indexLabel": undefined,
+    "indexLabel": "Overview",
     "position": null,
-    "readmeLabel": "Readme",
   },
   "theme": "docusaurus",
   "watch": false,

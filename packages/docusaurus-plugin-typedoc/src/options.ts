@@ -9,8 +9,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
     fullNames: false,
     categoryLabel: 'API',
     collapsed: true,
-    indexLabel: undefined,
-    readmeLabel: 'Readme',
+    indexLabel: 'Overview',
     position: null,
     autoConfiguration: true,
   },
@@ -20,10 +19,9 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   entryDocument: 'index.md',
   plugin: ['none'],
   watch: false,
-  includeExtension: true,
-  indexSlug: undefined,
   theme: 'docusaurus',
-  frontmatter: undefined,
+  enableFrontmatter: true,
+  enableEmojis: true,
 };
 
 export const getPluginOptions = (

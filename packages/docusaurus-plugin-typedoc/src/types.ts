@@ -16,9 +16,9 @@ export interface PluginOptions {
   hidePageTitle: boolean;
   entryDocument: string;
   includeExtension?: boolean;
-  indexSlug?: string;
   theme?: string;
-  frontmatter: FrontMatter;
+  enableFrontmatter: boolean;
+  enableEmojis: boolean;
 }
 
 export type FrontMatter =
@@ -30,7 +30,6 @@ export interface SidebarOptions {
   categoryLabel: string;
   collapsed: boolean;
   indexLabel?: string;
-  readmeLabel?: string;
   position: number | null;
   autoConfiguration: boolean;
 }

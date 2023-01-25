@@ -30,19 +30,19 @@ anotherFunction()
 `;
 
 exports[`Comments: should convert comments with tags' 1`] = `
-"**\`Description\`**
+"\`Description\`
 
 Tag description on new line
 
 - Tag description on another line
 
-**\`Deprecated\`**
+\`Deprecated\`
 
 Another tag description
 
 Gets the application version.
 
-**\`Example\`**
+\`Example\`
 
 \`\`\`typescript
 import { getVersion } from '@tauri-apps/api/app';

@@ -26,21 +26,24 @@ export function sources(
 
   if (reflection.inheritedFrom) {
     md.push(
-      `${'Inherited from'}: ${typeAndParent(
-        context,
-        reflection.inheritedFrom,
-      )}`,
+      `${
+        context.getOption('enableEmojis') ? ':link: ' : ''
+      }Inherited from: ${typeAndParent(context, reflection.inheritedFrom)}`,
     );
   }
 
   if (reflection.overwrites) {
     md.push(
-      `${'Overrides'}:  ${typeAndParent(context, reflection.overwrites)}`,
+      `${
+        context.getOption('enableEmojis') ? ':link: ' : ''
+      }Overrides: ${typeAndParent(context, reflection.overwrites)}`,
     );
   }
 
   if (reflection.sources) {
-    const definedInMd = [`${'Defined in'}:`];
+    const definedInMd = [
+      `${context.getOption('enableEmojis') ? ':file_folder: ' : ''}Defined in'`,
+    ];
 
     reflection.sources.forEach((source) => {
       if (source.url) {

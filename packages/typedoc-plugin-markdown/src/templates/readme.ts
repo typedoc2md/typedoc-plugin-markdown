@@ -7,7 +7,7 @@ export function readmeTemplate(
 ) {
   const md: string[] = [];
 
-  if (context.getOption('frontmatter')) {
+  if (context.getOption('enableFrontmatter')) {
     md.push(context.partials.frontmatter(page));
   }
 

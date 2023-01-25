@@ -42,6 +42,8 @@ AnyFunctionType<A>: Function
 
 ## Type declaration
 
+### Signature
+
 \`\`\`ts
 (...input: any[]): A
 \`\`\`
@@ -54,7 +56,7 @@ AnyFunctionType<A>: Function
 >
 > ### Returns
 >
-> [\`A\`](../types/AnyFunctionType.md#a)
+> \`A\`
 >
 > [partial: sources]
 >

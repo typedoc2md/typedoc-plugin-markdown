@@ -14,18 +14,18 @@ Useful if documentation is required to be included in project README files, Wiki
 ## Installation
 
 ```bash
-npm install --save-dev typedoc typedoc-plugin-markdown
+npm install --save-dev typedoc typedoc-plugin-markdown@next
 ```
 
 ## Usage
 
-Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installation/#command-line-interface).
+Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installation/#command-line-interface)
 
 ```bash
 typedoc --plugin typedoc-plugin-markdown
 ```
 
-The `--plugin` arg is optional (all plugins are loaded by default), however if using with the default html theme, use `--plugin none` to switch the plugin off.
+The `--plugin` arg is optional (all plugins are loaded by default unless set). Use `--plugin none` to switch the plugin off.
 
 ## Options
 
@@ -49,18 +49,34 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print in-page index items. Defaults to `false`.
 - **`--hidePageTitle`**<br>
   Do not print the page title. Defaults to `false`.
+- **`--hideHierarchy`**<br>
+  Do not print reflection hierarchy. Defaults to `false`.
+- **`--enableLongTitles`**<br>
+  Display full name including module paths in page titles. Defaults to `false`.
+
+### Frontmatter options
+
+See [Front matter options](./docs/frontmatter.md) for further documentation.
+
+- **`--enableFrontmatter`**<br>
+  Prepend output with a YAML front matter block. Defaults to `false`.
+- **`--frontmatterTags`**<br>
+  Specify which file comment tags should be added to front matter variables (as an array).
+- **`--frontmatterGlobals`**<br>
+  Specify global static variables to be added to all front matter blocks (as an object).
 
 ### Utility options
 
 - **`--namedAnchors`**<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
-- **`--publicPath`**<br>
-  Specify the base path for all urls. If undefined urls will be relative. Defaults to `.`
+- **`--baseUrl`**<br>
+  Specifies the base url for internal link. If omitted all urls will be relative. Defaults to `.`
 
 ## Documentation
 
-- [Readme files](./docs/readme-files.md)
 - [File output options](./docs/file-output-options.md)
+- [Frontmatter options](./docs/frontmatter.md)
+- [Readme files](./docs/readme-files.md)
 
 ## License
 

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signatures: should compile a promise that returns a symbol' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 promiseReturningASymbol(): Promise<any>
 \`\`\`
 
@@ -13,7 +15,9 @@ promiseReturningASymbol(): Promise<any>
 `;
 
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 promiseReturningAnObject(): Promise<{ data: string ; id: string  }>
 \`\`\`
 
@@ -25,7 +29,9 @@ promiseReturningAnObject(): Promise<{ data: string ; id: string  }>
 `;
 
 exports[`Signatures: should compile callable signature' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 CallableSignature(): string
 \`\`\`
 
@@ -37,7 +43,9 @@ CallableSignature(): string
 `;
 
 exports[`Signatures: should compile class with constructor' 1`] = `
-"\`\`\`ts
+"### Signature
+
+\`\`\`ts
 new ClassWithConstructor(x: string, y: string): ClassWithConstructor
 \`\`\`
 
@@ -58,7 +66,9 @@ new ClassWithConstructor(x: string, y: string): ClassWithConstructor
 `;
 
 exports[`Signatures: should compile function that returns a function' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionReturningAFunction(): Function
 \`\`\`
 
@@ -71,6 +81,8 @@ Comments for function
 \`Function\`
 
 Return comments
+
+### Signature
 
 \`\`\`ts
 <T>(x: string): boolean
@@ -97,7 +109,9 @@ Return comments
 `;
 
 exports[`Signatures: should compile function that returns an object' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionReturningAnObject(): Object
 \`\`\`
 
@@ -119,7 +133,9 @@ Return comments
 `;
 
 exports[`Signatures: should compile function with nested typen params' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithNestedParams(params: Object, context: any): boolean
 \`\`\`
 
@@ -149,7 +165,9 @@ Some nested params.
 `;
 
 exports[`Signatures: should compile function with reference type' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithReferenceType(descriptor: TypedPropertyDescriptor<any>): boolean
 \`\`\`
 
@@ -169,7 +187,9 @@ functionWithReferenceType(descriptor: TypedPropertyDescriptor<any>): boolean
 `;
 
 exports[`Signatures: should compile named parameters with comments' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithNamedParamsAndComments(«destructured»: Object = {}, anotherParam: string): void
 \`\`\`
 
@@ -194,7 +214,9 @@ FOO
 `;
 
 exports[`Signatures: should compile named parameters' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithNamedParams(«destructured»: Object): string
 \`\`\`
 
@@ -214,7 +236,9 @@ functionWithNamedParams(«destructured»: Object): string
 `;
 
 exports[`Signatures: should compile pipes in params and comments' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithPipesInParamsAndComments(n: number): number | null
 \`\`\`
 
@@ -236,7 +260,9 @@ functionWithPipesInParamsAndComments(n: number): number | null
 `;
 
 exports[`Signatures: should compile signature with @return comments' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 commentsInReturn(): boolean
 \`\`\`
 
@@ -254,7 +280,9 @@ Return comments
 `;
 
 exports[`Signatures: should compile signature with a flag' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 Private privateFunction(): string
 \`\`\`
 
@@ -268,7 +296,9 @@ Private privateFunction(): string
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithDefaults(
   valueA: string = 'defaultValue', 
   valueB: number = 100, 
@@ -301,7 +331,9 @@ This is a function with a parameter that has a default value.
 `;
 
 exports[`Signatures: should compile signature with optional params' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithOptionalParam(requiredParam: string, optionalParam?: string): void
 \`\`\`
 
@@ -324,7 +356,9 @@ This is a function with a parameter that is optional.
 `;
 
 exports[`Signatures: should compile signature with params' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithParameters(paramZ: string, paramG: any, paramA: any): number
 \`\`\`
 
@@ -348,7 +382,9 @@ This is a function with multiple arguments and a return value.
 `;
 
 exports[`Signatures: should compile signature with rest params' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithRest(...rest: string[]): string
 \`\`\`
 
@@ -370,7 +406,9 @@ This is a function with rest parameter.
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithUnionTypes(arg: number | boolean[], ...args: (string | number)[]): any
 \`\`\`
 

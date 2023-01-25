@@ -28,21 +28,6 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'fileStructure',
-    help: '[Markdown Plugin] Specifies how the filesystem should be standard. Hierarchical builds directories as per file system.',
-    type: ParameterType.String,
-    defaultValue: 'modules',
-    validate: (option) => {
-      const availableValues = ['modules', 'symbols'];
-      if (!availableValues.includes(option)) {
-        throw new Error(
-          `Unexpected value for fileStructure, the expected value is one of 'modules', 'symbols'`,
-        );
-      }
-    },
-  });
-
-  app.options.addDeclaration({
     name: 'flattenOutput',
     help: '[Markdown Plugin] Flatten output files.',
     type: ParameterType.Boolean,
@@ -82,8 +67,15 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'preserveAnchorCasing',
-    help: '[Markdown Plugin] Preserve anchor casing when generating links.',
+    name: 'hideHierarchy',
+    help: '[Markdown Plugin] Do not print reflection hierarchy.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    name: 'longTitles',
+    help: '[Markdown Plugin] Display full name including module paths in page titles.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
@@ -103,14 +95,44 @@ export function load(app: Application) {
     },
   });
 
+  app.options.addDeclaration({
+    name: 'enableEmojis',
+    help: '[Markdown Plugin] Enhance UI output with with Markdown Emoji symbols.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
   /**
-   * utility options
+   * Frontmatter options
    */
   app.options.addDeclaration({
-    name: 'frontmatter',
+    name: 'enableFrontmatter',
     help: '[Markdown Plugin] Prepend frontmatter to output.',
     type: ParameterType.Boolean,
     defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    name: 'frontmatterTags',
+    help: '[Markdown Plugin] Specify which file comment tags should be added to frontmatter.',
+    type: ParameterType.Array,
+    defaultValue: [],
+  });
+
+  app.options.addDeclaration({
+    name: 'frontmatterGlobals',
+    help: '[Markdown Plugin] Specify static variables to be added to all frontmatter.',
+    type: ParameterType.Object,
+    defaultValue: {},
+  });
+
+  /**
+   * Utility options
+   */
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Specifies the base url for internal link. If omitted all urls will be relative.',
+    name: 'baseUrl',
+    type: ParameterType.String,
   });
 
   app.options.addDeclaration({
@@ -119,8 +141,16 @@ export function load(app: Application) {
     type: ParameterType.Boolean,
     defaultValue: false,
   });
+
+  app.options.addDeclaration({
+    name: 'preserveAnchorCasing',
+    help: '[Markdown Plugin] Preserve anchor casing when generating links.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
 }
 
 export * from './models';
 export * from './options-reader';
+export { partials } from './resources';
 export { MarkdownTheme, MarkdownThemeRenderContext };

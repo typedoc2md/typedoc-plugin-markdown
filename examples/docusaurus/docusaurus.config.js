@@ -36,9 +36,14 @@ const config = {
         sidebar: {
           autoConfiguration: true,
           position: 0,
+          indexLabel: 'Overview',
           categoryLabel: 'API-1',
         },
         cleanOutputDir: true,
+        frontmatterGlobals: {
+          pagination_prev: null,
+          pagination_next: null,
+        },
       },
     ],
     [
@@ -49,23 +54,9 @@ const config = {
         options: '../../stubs/typedoc.json',
         sidebar: {
           autoConfiguration: true,
-          position: 2,
+          position: 1,
+          fullNames: true,
           categoryLabel: 'API-2',
-        },
-        cleanOutputDir: true,
-        symbolsWithOwnFile: 'none',
-      },
-    ],
-    [
-      'docusaurus-plugin-typedoc',
-      {
-        id: 'api-3',
-        out: 'api-3',
-        options: '../../stubs/typedoc.json',
-        sidebar: {
-          autoConfiguration: true,
-          position: 3,
-          categoryLabel: 'API-3',
         },
         cleanOutputDir: true,
         symbolsWithOwnFile: 'none',
@@ -118,12 +109,6 @@ const config = {
             to: 'docs/api-2/',
             activeBasePath: 'docs',
             label: 'API-2',
-            position: 'left',
-          },
-          {
-            to: 'docs/api-3/',
-            activeBasePath: 'docs',
-            label: 'API-3',
             position: 'left',
           },
           {

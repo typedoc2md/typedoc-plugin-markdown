@@ -3,7 +3,7 @@
 exports[`Generics: should compile class with type params 1`] = `
 "[partial: breadcrumbs]
 
-# Class: ClassWithTypeParams\\<T, V\\>
+# ClassWithTypeParams\\<T, V\\>
 
 [partial: comment]
 
@@ -13,13 +13,13 @@ exports[`Generics: should compile class with type params 1`] = `
 - \`V\`
 
 
-[partial: toc]
-
 [partial: members]"
 `;
 
 exports[`Generics: should compile function with a simple type param' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithTypeParam<A>(): boolean
 \`\`\`
 
@@ -36,7 +36,9 @@ functionWithTypeParam<A>(): boolean
 `;
 
 exports[`Generics: should compile function with complex type params' 1`] = `
-"\`\`\`ts
+"## Signature
+
+\`\`\`ts
 functionWithTypeParams<A, B, C>(): boolean
 \`\`\`
 

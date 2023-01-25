@@ -21,7 +21,6 @@ describe(`Options:`, () => {
         sidebar: {
           fullNames: true,
           indexLabel: 'Custom index',
-          readmeLabel: 'Custom readme',
         },
       } as PluginOptions).sidebar,
     ).toMatchSnapshot();

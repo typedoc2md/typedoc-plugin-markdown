@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Frontmatter: Default frontmatter should render default YAML block' 1`] = `
+"---
+title: "typedoc-plugin-markdown"
+---"
+`;
+
+exports[`Frontmatter: With options should render YAML block with options' 1`] = `
+"---
+title: "typedoc-plugin-markdown"
+author: "Joe Bloggs"
+description: "Some description used in frontmatter"
+globalA: "globalA"
+globalB: 2
+globalC: null
+---"
+`;

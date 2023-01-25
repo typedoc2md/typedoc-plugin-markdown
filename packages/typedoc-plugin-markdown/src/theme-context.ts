@@ -33,15 +33,20 @@ export class MarkdownThemeRenderContext {
     if (URL_PREFIX.test(url)) {
       return url;
     } else {
+      if (this.getOption('baseUrl')) {
+        return this.getOption('baseUrl') + url.replace(/\\/g, '/');
+      }
+
       const relative = path.relative(
         path.dirname(this.activeLocation),
         path.dirname(url),
       );
+
       return path.join(relative, path.basename(url)).replace(/\\/g, '/');
     }
   }
 
-  getFrontmatterVars(page: PageEvent<Reflection>) {
+  getBaseFrontmatterVars(page: PageEvent<Reflection>) {
     return {
       title: unEscapeChars(
         getReflectionTitle(page.model as DeclarationReflection),
@@ -49,12 +54,14 @@ export class MarkdownThemeRenderContext {
     };
   }
 
-  urlTo = (reflection: Reflection) => this.getRelativeUrl(reflection.url);
+  urlTo = (reflection: Reflection) => this.relativeURL(reflection.url);
 
-  relativeURL = (url: string | undefined) => this.getRelativeUrl(url);
+  relativeURL = (url: string | undefined) => {
+    return this.getRelativeUrl(url);
+  };
 
-  frontMatterVars = (page: PageEvent<Reflection>) => {
-    return this.getFrontmatterVars(page);
+  baseFrontmatterVars = (page: PageEvent<Reflection>) => {
+    return this.getBaseFrontmatterVars(page);
   };
 
   templates = templates(this);

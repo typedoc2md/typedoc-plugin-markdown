@@ -95,14 +95,12 @@ TypeDoc options can also be declared:
 
 Options specific to the plugin should also be declared in the same object.
 
-| Name                    | Default | Description                                                                                                                                                                                                  |
-| :---------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `out`                   | `"api"` | Output dir relative to docs dir (use `.` for no subdir).                                                                                                                                                     |
-| `includeExtension`      | `true`  | Determines whether to preserve the `.md` extension in relative links. `true` is recommended as per [Docusaurus documentation](https://docusaurus.io/docs/docs-markdown-features#referencing-other-documents) |
-| `frontmatter`           | `null`  | Additional frontmatter options object. See [Frontmatter](#frontmatter).                                                                                                                                      |
-| `sidebar.categoryLabel` | `API`   | The sidebar parent category label.                                                                                                                                                                           |
-| `sidebar.fullNames`     | `false` | Display full names with module path.                                                                                                                                                                         |
-| `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                                                                                                                                                                     |
+| Name                    | Default | Description                                              |
+| :---------------------- | :------ | :------------------------------------------------------- |
+| `out`                   | `"api"` | Output dir relative to docs dir (use `.` for no subdir). |
+| `sidebar.categoryLabel` | `API`   | The sidebar parent category label.                       |
+| `sidebar.fullNames`     | `false` | Display full names with module path.                     |
+| `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                 |
 
 ### An example configuration
 
@@ -195,7 +193,7 @@ Please see https://docusaurus.io/docs/api/themes/configuration#navbar-items for 
 ### Frontmatter
 
 By default the plugin will configure minimal required [Frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) configuration.
-Additionally required global Frontmatter options can be passed in using the `frontmatter` options object
+Additionally required global Frontmatter options can be passed in using the `frontmatterGlobals` options object
 
 `docusaurus.config.js`:
 
@@ -205,7 +203,7 @@ plugins: [
       'docusaurus-plugin-typedoc',
       {
       // .... other plugin option
-      frontmatter: {
+      frontmatterGlobals: {
         pagination_prev: null,
         pagination_next: null
       }

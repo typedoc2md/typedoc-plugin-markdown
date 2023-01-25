@@ -49,7 +49,6 @@ import { typeDeclarationTable } from './partials/member.typedeclaration.table';
 import { typeParameters } from './partials/member.typeparameters';
 import { members } from './partials/members';
 import { pageTitle } from './partials/page.title';
-import { reflectionTitle } from './partials/reflection.title';
 import { reflection } from './partials/reflection';
 import { sources } from './partials/sources';
 import { parametersTable } from './partials/table.parameters';
@@ -85,7 +84,7 @@ export type Templates = {
 export type Partials = {
   breadcrumbs: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   commentParts: (parts: CommentDisplayPart[]) => string;
-  comment: (comment: Comment) => string;
+  comment: (comment: Comment, headingLevel?: number |  undefined) => string;
   frontmatter: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
   declarationMemberTitle: (reflection: DeclarationReflection | ParameterReflection) => string;
@@ -100,7 +99,6 @@ export type Partials = {
   typeParameters: (typeParameters: TypeParameterReflection[]) => string;
   members: (container: ContainerReflection) => string;
   pageTitle: (page: PageEvent<DeclarationReflection>) => string;
-  reflectionTitle: (reflection: DeclarationReflection) => string;
   reflection: (reflection: DeclarationReflection) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
@@ -149,7 +147,6 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   typeParameters: bind(typeParameters, context),
   members: bind(members, context),
   pageTitle: bind(pageTitle, context),
-  reflectionTitle: bind(reflectionTitle, context),
   reflection: bind(reflection, context),
   sources: bind(sources, context),
   parametersTable: bind(parametersTable, context),

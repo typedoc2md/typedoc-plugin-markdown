@@ -7,9 +7,8 @@ position: 3"
 
 exports[`Plugin: (docs) should write doc 1`] = `
 "---
-sidebar_label: "Readme"
-sidebar_position: 0
-custom_edit_url: null
+title: "typedoc-plugin-markdown"
+sidebar_label: "Overview"
 ---
 
 # MY README

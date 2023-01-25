@@ -7,7 +7,7 @@ export interface IndexableInterface {
 }
 
 export interface Animal {
-  name: string;
+  name?: string;
 }
 
 export interface Dog extends Animal {

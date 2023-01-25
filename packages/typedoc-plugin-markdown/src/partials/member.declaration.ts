@@ -9,13 +9,15 @@ export function declarationMember(
 ) {
   const md: string[] = [];
 
+  const headingLevel = getReflectionHeadingLevel(declaration) + 1;
+
   md.push(codeBlock(context.partials.declarationMemberTitle(declaration)));
 
   if (declaration.comment) {
-    md.push(context.partials.comment(declaration.comment));
+    md.push(context.partials.comment(declaration.comment, headingLevel));
   }
 
-  md.push(declarationBody(context, declaration));
+  md.push(declarationBody(context, declaration, headingLevel));
 
   md.push(context.partials.sources(declaration));
 
@@ -25,10 +27,9 @@ export function declarationMember(
 function declarationBody(
   context: MarkdownThemeRenderContext,
   declaration: DeclarationReflection,
+  headingLevel: number,
 ) {
   const md: string[] = [];
-
-  const headingLevel = getReflectionHeadingLevel(declaration) + 1;
 
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;

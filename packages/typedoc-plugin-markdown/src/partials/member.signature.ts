@@ -10,10 +10,17 @@ export function signatureMember(
 ) {
   const md: string[] = [];
 
+  const headingLevel =
+    (parentHeadingLevel
+      ? parentHeadingLevel
+      : getReflectionHeadingLevel(signature.parent)) + 1;
+
+  md.push(heading(headingLevel, 'Signature'));
+
   md.push(codeBlock(context.partials.signatureTitle(signature)));
 
   if (signature.comment) {
-    md.push(context.partials.comment(signature.comment));
+    md.push(context.partials.comment(signature.comment, headingLevel));
   }
 
   if (parentHeadingLevel) {

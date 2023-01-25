@@ -34,9 +34,9 @@ export function toc(
   ) {
     const headingLevel = getIndexHeadingLevel(reflection);
     const subHeadingLevel = headingLevel + 1;
-    if (!hideInPageTOC) {
-      md.push(heading(headingLevel, 'Index') + '\n\n');
-    }
+
+    md.push(heading(headingLevel, 'Index') + '\n\n');
+
     reflection.groups?.forEach((group) => {
       const groupTitle = group.title;
       if (group.categories) {

@@ -19,7 +19,6 @@ export class MarkdownTheme extends Theme {
   @BindOption('readme') readme!: string;
   @BindOption('preserveAnchorCasing') preserveAnchorCasing!: boolean;
   @BindOption('symbolsWithOwnFile') symbolsWithOwnFile!: string | string[];
-  @BindOption('fileStructure') fileStructure!: string;
   @BindOption('flattenOutput') flattenOutput!: string;
 
   private _renderContext?: MarkdownThemeRenderContext;
@@ -89,49 +88,9 @@ export class MarkdownTheme extends Theme {
       );
     }
 
-    project.children?.forEach((child: Reflection) => {
-      if (child instanceof DeclarationReflection) {
-        if (this.fileStructure === 'modules') {
-          this.buildModuleUrls(child, urls);
-        } else {
-          this.buildUrls(child, urls);
-        }
-      }
+    project.children?.forEach((child) => {
+      this.buildUrls(child, urls);
     });
-
-    return urls;
-  }
-
-  buildUrls(
-    reflection: DeclarationReflection,
-    urls: UrlMapping[],
-  ): UrlMapping[] {
-    const mapping = this.mappings[reflection.kind];
-    if (mapping) {
-      if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
-        let url = [mapping.directory, this.getUrl(reflection) + '.md'].join(
-          '/',
-        );
-        if (this.flattenOutput) {
-          url = url.replace(/\//g, '.');
-        }
-        url = url.replace(/^\/|\/$/g, '');
-        urls.push(new UrlMapping(url, reflection, mapping.template));
-        reflection.url = url.replace(/^\/|\/$/g, '');
-        reflection.hasOwnDocument = true;
-      }
-
-      reflection.traverse((child) => {
-        if (child instanceof DeclarationReflection) {
-          this.buildUrls(child, urls);
-        } else {
-          this.applyAnchorUrl(child, reflection);
-        }
-        return true;
-      });
-    } else if (reflection.parent) {
-      this.applyAnchorUrl(reflection, reflection.parent);
-    }
 
     return urls;
   }
@@ -155,7 +114,7 @@ export class MarkdownTheme extends Theme {
     return url;
   }
 
-  buildModuleUrls(
+  buildUrls(
     reflection: DeclarationReflection,
     urls: UrlMapping[],
     parentFragments?: string[],
@@ -196,6 +155,7 @@ export class MarkdownTheme extends Theme {
         if (this.flattenOutput) {
           url = url.replace(/\//g, '.');
         }
+
         url = url.replace(/^\/|\/$/g, '');
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
@@ -211,7 +171,7 @@ export class MarkdownTheme extends Theme {
           ) {
             fragments.pop();
           }
-          this.buildModuleUrls(child, urls, fragments);
+          this.buildUrls(child, urls, fragments);
         }
       }
     } else if (reflection.parent) {

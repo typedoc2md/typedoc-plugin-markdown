@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import {
   Application,
-  BooleanDeclarationOption,
   MixedDeclarationOption,
   ParameterType,
   ProjectReflection,
@@ -16,7 +15,9 @@ import { PluginOptions } from './types';
 export const bootstrap = (app: Application, options: PluginOptions) => {
   addTypedocReaders(app);
   addTypedocDeclarations(app);
+
   app.renderer.render = render;
+
   app.bootstrap(options);
 };
 
@@ -66,24 +67,7 @@ const addTypedocDeclarations = (app: Application) => {
   } as StringDeclarationOption);
 
   app.options.addDeclaration({
-    name: 'readmeTitle',
-  } as StringDeclarationOption);
-
-  app.options.addDeclaration({
-    name: 'indexSlug',
-  } as StringDeclarationOption);
-
-  app.options.addDeclaration({
-    name: 'includeExtension',
-  } as BooleanDeclarationOption);
-
-  app.options.addDeclaration({
     name: 'sidebar',
-    type: ParameterType.Mixed,
-  } as MixedDeclarationOption);
-
-  app.options.addDeclaration({
-    name: 'frontmatter',
     type: ParameterType.Mixed,
   } as MixedDeclarationOption);
 };

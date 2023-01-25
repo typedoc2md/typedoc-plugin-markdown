@@ -1,4 +1,17 @@
 /**
+ * @module
+ *
+ * @overview
+ *
+ * Module comments
+ *
+ * @author Joe Bloggs
+ *
+ * @description Some description used in frontmatter
+ *
+ */
+
+/**
  * See {@linkcode CommentClass} and CommentClass's {@link CommentClass.comment} property.
  * Also, check out {@link https://www.google.com|Google} and
  * {@link https://github.com GitHub}.

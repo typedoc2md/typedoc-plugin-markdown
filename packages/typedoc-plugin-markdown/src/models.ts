@@ -4,15 +4,18 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   hidePageTitle: boolean;
+  hideHierarchy: boolean;
   entryDocument: string;
   indexTitle: string;
   namedAnchors: boolean;
-  frontmatter: boolean;
-  publicPath: string;
+  enableFrontmatter: boolean;
+  frontmatterTags: string[];
+  frontmatterGlobals: Record<string, string | boolean | number | null>;
+  baseUrl: string;
+  enableEmojis: boolean;
+  longTitles: boolean;
   symbolsWithOwnFile: string | string[];
   typeDeclarationStyle: 'list' | 'table';
-  fileStructure: 'modules' | 'symbols';
-  flattenOutput: boolean;
 }
 
 export interface TemplateMapping {

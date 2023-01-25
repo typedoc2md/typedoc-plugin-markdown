@@ -7,25 +7,15 @@ import {
   RendererEvent,
 } from 'typedoc';
 import { MarkdownTheme, TemplateMapping } from 'typedoc-plugin-markdown';
-import { FrontMatterVars, prependYAML } from './front-matter';
 import { CATEGORY_POSITION, getKindPlural } from './navigation';
-import { FrontMatter, SidebarOptions } from './types';
+import { DocusaurusThemeRenderContext } from './theme-context';
+import { SidebarOptions } from './types';
 
 export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('sidebar')
   sidebar!: SidebarOptions;
 
-  @BindOption('readmeTitle')
-  readmeTitle!: string;
-
-  @BindOption('indexSlug')
-  indexSlug!: string;
-
-  @BindOption('includeExtension')
-  includeExtension!: string;
-
-  @BindOption('frontmatter')
-  frontmatter!: FrontMatter;
+  private _contextCache?: DocusaurusThemeRenderContext;
 
   constructor(renderer: Renderer) {
     super(renderer);
@@ -36,12 +26,17 @@ export class DocusaurusTheme extends MarkdownTheme {
     });
   }
 
+  override getRenderContext() {
+    this._contextCache ||= new DocusaurusThemeRenderContext(
+      this,
+      this.application.options,
+    );
+    return this._contextCache;
+  }
+
   onPageEnd(page: PageEvent<DeclarationReflection>) {
     if (page.contents) {
-      page.contents = prependYAML(
-        page.contents.replace(/\\</g, '<'),
-        this.getYamlItems(page) as FrontMatterVars,
-      );
+      page.contents = page.contents.replace(/\\</g, '<');
     }
   }
 
@@ -53,6 +48,7 @@ export class DocusaurusTheme extends MarkdownTheme {
         this.sidebar.position,
         this.sidebar.collapsed,
       );
+
       this.loopAndWriteCategories(renderer.outputDirectory);
     }
   }
@@ -68,7 +64,11 @@ export class DocusaurusTheme extends MarkdownTheme {
             return (entry[1] as TemplateMapping).directory === segment;
           })
           .map((entry) => entry[1])[0] as TemplateMapping;
-        if (mapping) {
+        const subdirectory = fs.readdirSync(fullPath);
+        const containsDir = subdirectory.some((item) =>
+          fs.lstatSync(`${fullPath}/${item}`).isDirectory(),
+        );
+        if (mapping && !containsDir) {
           this.writeCategoryYaml(
             fullPath,
             getKindPlural(mapping.kind),
@@ -98,67 +98,4 @@ export class DocusaurusTheme extends MarkdownTheme {
       fs.writeFileSync(categoryPath + '/_category_.yml', yaml.join('\n'));
     }
   };
-
-  getYamlItems(page: PageEvent<DeclarationReflection>): FrontMatter {
-    const sidebarLabel = this.getSidebarLabel(page);
-    const sidebarPosition = this.getSidebarPosition(page);
-    let items: FrontMatter = {};
-    if (page.url === this.entryDocument && this.indexSlug) {
-      items = { ...items, slug: this.indexSlug };
-    }
-    if (this.sidebar.autoConfiguration) {
-      if (sidebarLabel) {
-        items = { ...items, sidebar_label: sidebarLabel as string };
-      }
-      if (sidebarPosition) {
-        items = { ...items, sidebar_position: parseFloat(sidebarPosition) };
-      }
-    }
-
-    if (page.url === page.project.url && this.entryPoints.length > 1) {
-      items = { ...items, hide_table_of_contents: true };
-    }
-    items = { ...items, custom_edit_url: null };
-    if (this.frontmatter) {
-      items = { ...items, ...this.frontmatter };
-    }
-    return {
-      ...items,
-    };
-  }
-
-  getSidebarLabel(page: PageEvent<DeclarationReflection>) {
-    const indexLabel =
-      this.sidebar.indexLabel ||
-      (this.entryPoints.length > 1 ? 'Table of Contents' : 'Exports');
-
-    if (page.url === this.entryDocument) {
-      return page.url === page.project.url
-        ? indexLabel
-        : this.sidebar.readmeLabel;
-    }
-
-    if (page.url === this.globalsFile) {
-      return indexLabel;
-    }
-
-    return this.sidebar.fullNames ? page.model.getFullName() : page.model.name;
-  }
-
-  getSidebarPosition(page: PageEvent<DeclarationReflection>) {
-    if (page.url === this.entryDocument) {
-      return page.url === page.project.url ? '0.5' : '0';
-    }
-    if (page.url === this.globalsFile) {
-      return '0.5';
-    }
-    if (page.model.getFullName().split('.').length === 1) {
-      return '0';
-    }
-    return null;
-  }
-
-  get globalsFile() {
-    return 'modules.md';
-  }
 }

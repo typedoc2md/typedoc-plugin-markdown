@@ -4,7 +4,11 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { heading } from '../support/els';
-import { getReflectionHeadingLevel } from '../support/helpers';
+import {
+  getMemberSymbol,
+  getReflectionHeadingLevel,
+  getReflectionTitle,
+} from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function member(
@@ -24,7 +28,12 @@ export function member(
     !reflection.kindOf(ReflectionKind.Constructor)
   ) {
     md.push(
-      heading(headingLevel, context.partials.reflectionTitle(reflection)),
+      heading(
+        headingLevel,
+        `${
+          context.getOption('enableEmojis') ? getMemberSymbol(reflection) : ''
+        } ${getReflectionTitle(reflection)}`,
+      ),
     );
   }
 

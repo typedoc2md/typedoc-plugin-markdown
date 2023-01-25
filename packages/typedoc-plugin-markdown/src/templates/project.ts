@@ -8,7 +8,7 @@ export function projectTemplate(
 ) {
   const md: string[] = [];
 
-  if (context.getOption('frontmatter')) {
+  if (context.getOption('enableFrontmatter')) {
     md.push(context.partials.frontmatter(page));
   }
 
@@ -19,6 +19,10 @@ export function projectTemplate(
   }
 
   md.push(heading(1, page.project.name));
+
+  if (page.model.comment) {
+    md.push(context.partials.comment(page.model.comment, 1));
+  }
 
   md.push(context.partials.toc(page.model));
 
