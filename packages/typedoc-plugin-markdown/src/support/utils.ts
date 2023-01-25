@@ -3,16 +3,14 @@ import { PLURALS } from './constants';
 
 export function formatContents(contents: string) {
   return (
-    contents
-      .replace(/[\r\n]{3,}/g, '\n\n')
-      .replace(/!spaces/g, '')
-      .replace(/^\s+|\s+$/g, '') + '\n'
+    contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
   );
 }
 
 export function escapeChars(str: string) {
   return str
-    .replace(/>/g, '\\<')
+    .replace(/>/g, '\\>')
+    .replace(/</g, '\\<')
     .replace(/{/g, '\\{')
     .replace(/_/g, '\\_')
     .replace(/`/g, '\\`')

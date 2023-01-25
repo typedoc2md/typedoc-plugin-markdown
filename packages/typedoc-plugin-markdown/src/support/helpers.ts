@@ -54,6 +54,21 @@ export function getMemberHeadingLevel(
   return getReflectionHeadingLevel(reflection) + 1;
 }
 
+export function getReflectionTitle(reflection: DeclarationReflection) {
+  const md: string[] = [];
+
+  md.push(reflection.name);
+
+  if (reflection.typeParameters) {
+    const typeParameters = reflection.typeParameters
+      .map((typeParameter) => typeParameter.name)
+      .join(', ');
+    md.push(`\\<${typeParameters}\\>`);
+  }
+
+  return md.join('');
+}
+
 export function getFlags(reflection: DeclarationReflection) {
   if (reflection.flags?.length > 0 && !reflection.flags.isRest) {
     return reflection.flags.map((flag) => backTicks(flag)).join(' ');
