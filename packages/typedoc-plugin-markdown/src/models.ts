@@ -7,6 +7,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   entryDocument: string;
   indexTitle: string;
   namedAnchors: boolean;
+  frontmatter: boolean;
   publicPath: string;
   symbolsWithOwnFile: string | string[];
   typeDeclarationStyle: 'list' | 'table';

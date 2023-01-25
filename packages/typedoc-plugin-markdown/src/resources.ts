@@ -35,6 +35,7 @@ import { reflectionTemplate } from './templates/reflection';
 import { breadcrumbs } from './partials/breadcrumbs';
 import { commentParts } from './partials/comment.parts';
 import { comment } from './partials/comment';
+import { frontmatter } from './partials/frontmatter';
 import { hierarchy } from './partials/hierarchy';
 import { declarationMemberTitle } from './partials/member.declaration.title';
 import { declarationMember } from './partials/member.declaration';
@@ -47,7 +48,7 @@ import { typeDeclarationList } from './partials/member.typedeclaration.list';
 import { typeDeclarationTable } from './partials/member.typedeclaration.table';
 import { typeParameters } from './partials/member.typeparameters';
 import { members } from './partials/members';
-import { pagetitle } from './partials/pagetitle';
+import { pageTitle } from './partials/page.title';
 import { reflectionTitle } from './partials/reflection.title';
 import { reflection } from './partials/reflection';
 import { sources } from './partials/sources';
@@ -85,6 +86,7 @@ export type Partials = {
   breadcrumbs: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   commentParts: (parts: CommentDisplayPart[]) => string;
   comment: (comment: Comment) => string;
+  frontmatter: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
   declarationMemberTitle: (reflection: DeclarationReflection | ParameterReflection) => string;
   declarationMember: (declaration: DeclarationReflection) => string;
@@ -97,7 +99,7 @@ export type Partials = {
   typeDeclarationTable: (props: DeclarationReflection[]) => string;
   typeParameters: (typeParameters: TypeParameterReflection[]) => string;
   members: (container: ContainerReflection) => string;
-  pagetitle: (page: PageEvent<DeclarationReflection>) => string;
+  pageTitle: (page: PageEvent<DeclarationReflection>) => string;
   reflectionTitle: (reflection: DeclarationReflection) => string;
   reflection: (reflection: DeclarationReflection) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
@@ -133,6 +135,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   breadcrumbs: bind(breadcrumbs, context),
   commentParts: bind(commentParts, context),
   comment: bind(comment, context),
+  frontmatter: bind(frontmatter, context),
   hierarchy: bind(hierarchy, context),
   declarationMemberTitle: bind(declarationMemberTitle, context),
   declarationMember: bind(declarationMember, context),
@@ -145,7 +148,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   typeDeclarationTable: bind(typeDeclarationTable, context),
   typeParameters: bind(typeParameters, context),
   members: bind(members, context),
-  pagetitle: bind(pagetitle, context),
+  pageTitle: bind(pageTitle, context),
   reflectionTitle: bind(reflectionTitle, context),
   reflection: bind(reflection, context),
   sources: bind(sources, context),

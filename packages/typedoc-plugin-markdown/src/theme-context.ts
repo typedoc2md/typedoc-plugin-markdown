@@ -1,8 +1,10 @@
 import * as path from 'path';
-import { Options, Reflection } from 'typedoc';
+import { DeclarationReflection, Options, PageEvent, Reflection } from 'typedoc';
 import { TypedocPluginMarkdownOptions } from './models';
 import { partials, templates } from './resources';
 import { URL_PREFIX } from './support/constants';
+import { getReflectionTitle } from './support/helpers';
+import { unEscapeChars } from './support/utils';
 import { MarkdownTheme } from './theme';
 
 export class MarkdownThemeRenderContext {
@@ -39,9 +41,21 @@ export class MarkdownThemeRenderContext {
     }
   }
 
+  getFrontmatterVars(page: PageEvent<Reflection>) {
+    return {
+      title: unEscapeChars(
+        getReflectionTitle(page.model as DeclarationReflection),
+      ),
+    };
+  }
+
   urlTo = (reflection: Reflection) => this.getRelativeUrl(reflection.url);
 
   relativeURL = (url: string | undefined) => this.getRelativeUrl(url);
+
+  frontMatterVars = (page: PageEvent<Reflection>) => {
+    return this.getFrontmatterVars(page);
+  };
 
   templates = templates(this);
   partials = partials(this);

@@ -4,6 +4,7 @@ import { MarkdownThemeRenderContext } from './theme-context';
 
 export function load(app: Application) {
   app.renderer.defineTheme('markdown', MarkdownTheme);
+
   app.options.addReader(
     new (class implements OptionsReader {
       priority = 1000;
@@ -30,7 +31,7 @@ export function load(app: Application) {
     name: 'fileStructure',
     help: '[Markdown Plugin] Specifies how the filesystem should be standard. Hierarchical builds directories as per file system.',
     type: ParameterType.String,
-    defaultValue: 'symbols',
+    defaultValue: 'modules',
     validate: (option) => {
       const availableValues = ['modules', 'symbols'];
       if (!availableValues.includes(option)) {
@@ -105,6 +106,13 @@ export function load(app: Application) {
   /**
    * utility options
    */
+  app.options.addDeclaration({
+    name: 'frontmatter',
+    help: '[Markdown Plugin] Prepend frontmatter to output.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
   app.options.addDeclaration({
     name: 'namedAnchors',
     help: '[Markdown Plugin] Use HTML named anchors as fragment identifiers for engines that do not automatically assign header ids. Should be set for Bitbucket Server docs.',

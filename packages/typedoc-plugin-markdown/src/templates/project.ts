@@ -8,6 +8,10 @@ export function projectTemplate(
 ) {
   const md: string[] = [];
 
+  if (context.getOption('frontmatter')) {
+    md.push(context.partials.frontmatter(page));
+  }
+
   if (Boolean(page.model.readme)) {
     md.push(
       link('Readme', context.relativeURL(context.getOption('entryDocument'))),

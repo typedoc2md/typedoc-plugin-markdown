@@ -7,12 +7,16 @@ export function memberTemplate(
 ) {
   const md: string[] = [];
 
+  if (context.getOption('frontmatter')) {
+    md.push(context.partials.frontmatter(page));
+  }
+
   if (!context.getOption('hideBreadcrumbs')) {
     md.push(context.partials.breadcrumbs(page));
   }
 
   if (!context.getOption('hidePageTitle')) {
-    md.push(context.partials.pagetitle(page));
+    md.push(context.partials.pageTitle(page));
   }
 
   md.push(context.partials.member(page.model));
