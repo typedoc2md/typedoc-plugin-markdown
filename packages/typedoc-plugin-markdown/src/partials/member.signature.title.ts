@@ -24,9 +24,9 @@ export function signatureTitle(
 
   if (signature.typeParameters) {
     md.push(
-      `<${signature.typeParameters
+      `\\<${signature.typeParameters
         .map((typeParameter) => typeParameter.name)
-        .join(', ')}>`,
+        .join(', ')}\\>`,
     );
   }
 

@@ -6,7 +6,6 @@ export function load(app: Application) {
   app.renderer.defineTheme('github-wiki', GithubWikiTheme);
   app.options.addReader(
     new MarkdownPluginOptionsReader({
-      fileStructure: 'modules',
       flattenOutput: true,
       symbolsWithOwnFile: 'none',
     }),

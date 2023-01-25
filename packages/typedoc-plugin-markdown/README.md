@@ -40,8 +40,6 @@ See [File output options](./docs/file-output-options.md) for further documentati
   The file name of the entry document. Defaults to `README.md`.
 - **`--symbolsWithOwnFile`**<br>
   Determines which symbols should be written to their own file. Expected values [`none`, `all`] OR Array of [`class`, `interface`, `enum`, `function`, `var`, `type`] Defaults to `all` (all symbols exported to an individual file).
-- **`--fileStructure`**<br>
-  Specifies how the files should be generated, grouped by modules or symbol types. Expected values [`modules`, `symbols`]. Defaults to `modules`.
 
 ### UI options
 
