@@ -6,7 +6,11 @@
     "docusaurus-plugin-typedoc": "0.17.6"
   },
   "changesets": [
+    "breezy-avocados-lie",
+    "forty-cows-jam",
+    "nasty-starfishes-ring",
     "polite-planets-knock",
+    "proud-mugs-pull",
     "twenty-moose-promise"
   ]
 }
