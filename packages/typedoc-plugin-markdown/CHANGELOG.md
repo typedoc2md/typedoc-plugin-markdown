@@ -1,5 +1,19 @@
 # Changelog
 
+## 4.0.0-next.1
+
+### Minor Changes
+
+- Expose Frontmatter options ([#384](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/384)), ([#360](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/360))
+- Convert comment `@tags` to headings
+- Export files following module structure as default
+- UI improvemements
+
+### Patch Changes
+
+- Respect monorepo `readmeFile` configuration ([#383](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/383))
+- Fix incorrect heading levels on project reflections
+
 ## 4.0.0-next.0
 
 ### Major Changes
