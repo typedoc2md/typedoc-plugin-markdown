@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.2
+
+### Patch Changes
+
+- Fix optional declarations in code blocks
+- Improve hierarchy output
+
 ## 4.0.0-next.1
 
 ### Minor Changes
