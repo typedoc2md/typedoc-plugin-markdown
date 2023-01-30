@@ -95,13 +95,6 @@ export function load(app: Application) {
     },
   });
 
-  app.options.addDeclaration({
-    name: 'enableEmojis',
-    help: '[Markdown Plugin] Enhance UI output with with Markdown Emoji symbols.',
-    type: ParameterType.Boolean,
-    defaultValue: false,
-  });
-
   /**
    * Frontmatter options
    */

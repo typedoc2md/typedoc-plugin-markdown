@@ -13,6 +13,8 @@ exports[`Generics: should compile class with type params 1`] = `
 - \`V\`
 
 
+[partial: toc]
+
 [partial: members]"
 `;
 
@@ -46,7 +48,7 @@ functionWithTypeParams<A, B, C>(): boolean
 
 ## Type parameters
 
-- \`A\` *extends* [\`ClassWithTypeParams\`](../classes/ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`A\`\\>[partial: comment]
+- \`A\` *extends* [ClassWithTypeParams](../classes/ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`A\`\\>[partial: comment]
 - \`B\` = \`string\` \\| \`boolean\`[partial: comment]
 - \`C\` = \`string\`
 

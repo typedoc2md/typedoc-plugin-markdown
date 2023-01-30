@@ -1,4 +1,4 @@
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection } from 'typedoc';
 import { heading, unorderedList } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
@@ -48,9 +48,8 @@ export function reflection(
     md.push(heading(headingLevel, 'Indexable'));
     md.push(context.partials.indexSignatureTitle(reflection.indexSignature));
   }
-  if (reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])) {
-    md.push(context.partials.toc(reflection));
-  }
+
+  md.push(context.partials.toc(reflection));
 
   md.push(context.partials.members(reflection));
 

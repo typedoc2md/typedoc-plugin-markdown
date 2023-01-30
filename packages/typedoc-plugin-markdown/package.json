@@ -16,7 +16,7 @@
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "docs": "npm run build && npm-run-all docs-*",
-    "docs-md1": "typedoc --plugin typedoc-plugin-markdown --enableEmojis --longTitles --options ../../stubs/typedoc.json --out ./test/docs/md/md-1",
+    "docs-md1": "typedoc --plugin typedoc-plugin-markdown --longTitles --options ../../stubs/typedoc.json --out ./test/docs/md/md-1",
     "docs-md2": "typedoc --plugin typedoc-plugin-markdown --hideHierarchy --readme \"none\" --symbolsWithOwnFile none --options ../../stubs/typedoc.json --out ./test/docs/md/md-2",
     "docshtml": "typedoc --plugin none --options ../../stubs/typedoc.json --out ./test/docs/html"
   },

@@ -21,7 +21,6 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   watch: false,
   theme: 'docusaurus',
   enableFrontmatter: true,
-  enableEmojis: true,
 };
 
 export const getPluginOptions = (

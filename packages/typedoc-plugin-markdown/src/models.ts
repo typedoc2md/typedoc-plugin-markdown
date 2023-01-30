@@ -12,7 +12,6 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   frontmatterTags: string[];
   frontmatterGlobals: Record<string, string | boolean | number | null>;
   baseUrl: string;
-  enableEmojis: boolean;
   longTitles: boolean;
   symbolsWithOwnFile: string | string[];
   typeDeclarationStyle: 'list' | 'table';

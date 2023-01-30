@@ -18,7 +18,6 @@ export interface PluginOptions {
   includeExtension?: boolean;
   theme?: string;
   enableFrontmatter: boolean;
-  enableEmojis: boolean;
 }
 
 export type FrontMatter =

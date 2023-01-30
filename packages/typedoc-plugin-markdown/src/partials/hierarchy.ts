@@ -1,40 +1,48 @@
-import { DeclarationHierarchy, SomeType } from 'typedoc';
-import { bold } from '../support/els';
+import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
+import { bold, unorderedList } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function hierarchy(
   context: MarkdownThemeRenderContext,
   declarationHierarchy: DeclarationHierarchy,
 ) {
-  const level = 0;
   const md: string[] = [];
-  md.push(getHierarchy(context, declarationHierarchy, level).join('\n'));
-  return md.join('\n');
+  const parent = !declarationHierarchy.isTarget
+    ? declarationHierarchy.types
+        .map((hierarchyType) => {
+          return getHierarchyType(
+            hierarchyType,
+            declarationHierarchy.isTarget || false,
+            context,
+          );
+        })
+        .join('.')
+    : null;
+  if (declarationHierarchy.next) {
+    declarationHierarchy.next.types.forEach((hierarchyType) => {
+      const line: string[] = [];
+      if (parent) {
+        line.push(parent);
+      }
+      line.push(
+        getHierarchyType(
+          hierarchyType,
+          declarationHierarchy.next?.isTarget || false,
+          context,
+        ),
+      );
+      md.push(line.join('.'));
+    });
+  }
+  return unorderedList(md);
 }
 
-function getHierarchy(
+function getHierarchyType(
+  hierarchyType: Type,
+  isTarget: boolean,
   context: MarkdownThemeRenderContext,
-  props: DeclarationHierarchy,
-  level: number,
 ) {
-  level = level + 1;
-  let md = props.types.map((hierarchyType) => {
-    return (
-      getSymbol(level) +
-      (props.isTarget
-        ? bold(hierarchyType.toString())
-        : context.partials.someType(hierarchyType as SomeType))
-    );
-  });
-  if (props.next) {
-    md = [...md, ...getHierarchy(context, props.next, level)];
-  }
-  return md;
-}
-
-function getSymbol(level: number) {
-  if (level === 1) {
-    return '- ';
-  }
-  return level > 1 ? `${[...Array(level - 1)].map(() => '  ').join('')}- ` : '';
+  return isTarget
+    ? bold(hierarchyType.toString())
+    : context.partials.someType(hierarchyType as SomeType);
 }

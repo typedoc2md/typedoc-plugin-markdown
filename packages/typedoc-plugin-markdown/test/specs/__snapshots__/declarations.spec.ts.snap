@@ -71,7 +71,7 @@ getterAndSetter: Object
 
 ## Type declaration
 
-- \`get getMe()\`: [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
+- \`get getMe()\`: [Promise]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 - \`set setMe(x:\`string\`)\`: \`void\`
 

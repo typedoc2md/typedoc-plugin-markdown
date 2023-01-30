@@ -17,7 +17,7 @@ export function sources(
 
   if (reflection.implementationOf) {
     md.push(
-      `${'Implementation of'}: ${typeAndParent(
+      `Implementation of: ${typeAndParent(
         context,
         reflection.implementationOf,
       )}`,
@@ -26,24 +26,16 @@ export function sources(
 
   if (reflection.inheritedFrom) {
     md.push(
-      `${
-        context.getOption('enableEmojis') ? ':link: ' : ''
-      }Inherited from: ${typeAndParent(context, reflection.inheritedFrom)}`,
+      `Inherited from: ${typeAndParent(context, reflection.inheritedFrom)}`,
     );
   }
 
   if (reflection.overwrites) {
-    md.push(
-      `${
-        context.getOption('enableEmojis') ? ':link: ' : ''
-      }Overrides: ${typeAndParent(context, reflection.overwrites)}`,
-    );
+    md.push(`Overrides: ${typeAndParent(context, reflection.overwrites)}`);
   }
 
   if (reflection.sources) {
-    const definedInMd = [
-      `${context.getOption('enableEmojis') ? ':file_folder: ' : ''}Defined in'`,
-    ];
+    const definedInMd = [`Defined in: `];
 
     reflection.sources.forEach((source) => {
       if (source.url) {

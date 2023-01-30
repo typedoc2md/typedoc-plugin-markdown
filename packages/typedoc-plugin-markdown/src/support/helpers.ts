@@ -93,19 +93,6 @@ export function getFlags(reflection: DeclarationReflection) {
   return null;
 }
 
-export function getMemberSymbol(reflection: DeclarationReflection) {
-  if (
-    reflection.kindOf([
-      ReflectionKind.Property,
-      ReflectionKind.Method,
-      ReflectionKind.EnumMember,
-    ])
-  ) {
-    return ':white_circle: ';
-  }
-  return '';
-}
-
 export function getTagName(tag: CommentTag) {
   return tag.tag.substring(1);
 }

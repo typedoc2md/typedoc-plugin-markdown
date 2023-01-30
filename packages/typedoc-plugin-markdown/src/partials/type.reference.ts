@@ -14,14 +14,14 @@ export function referenceType(
 
     if (referenceType.reflection?.url) {
       reflection.push(
-        `[${backTicks(referenceType.reflection.name)}](${context.relativeURL(
+        `[${referenceType.reflection.name}](${context.relativeURL(
           referenceType.reflection.url,
         )})`,
       );
     } else {
       reflection.push(
         referenceType.externalUrl
-          ? `[${backTicks(referenceType.name)}]( ${referenceType.externalUrl} )`
+          ? `[${referenceType.name}]( ${referenceType.externalUrl} )`
           : backTicks(referenceType.name),
       );
     }
@@ -35,6 +35,6 @@ export function referenceType(
     return reflection.join('');
   }
   return referenceType.externalUrl
-    ? `[${backTicks(referenceType.name)}]( ${referenceType.externalUrl} )`
+    ? `[${referenceType.name}]( ${referenceType.externalUrl} )`
     : backTicks(referenceType.name);
 }

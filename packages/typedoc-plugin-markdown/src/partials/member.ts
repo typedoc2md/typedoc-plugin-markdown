@@ -5,7 +5,6 @@ import {
 } from 'typedoc';
 import { heading } from '../support/els';
 import {
-  getMemberSymbol,
   getReflectionHeadingLevel,
   getReflectionTitle,
 } from '../support/helpers';
@@ -27,14 +26,7 @@ export function member(
     !reflection.hasOwnDocument &&
     !reflection.kindOf(ReflectionKind.Constructor)
   ) {
-    md.push(
-      heading(
-        headingLevel,
-        `${
-          context.getOption('enableEmojis') ? getMemberSymbol(reflection) : ''
-        } ${getReflectionTitle(reflection)}`,
-      ),
-    );
+    md.push(heading(headingLevel, getReflectionTitle(reflection)));
   }
 
   if (

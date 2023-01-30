@@ -9,7 +9,7 @@ promiseReturningASymbol(): Promise<any>
 
 ## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
+[Promise]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 
 [partial: sources]"
 `;
@@ -23,7 +23,7 @@ promiseReturningAnObject(): Promise<{ data: string ; id: string  }>
 
 ## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
+[Promise]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 
 [partial: sources]"
 `;
@@ -60,7 +60,7 @@ new ClassWithConstructor(x: string, y: string): ClassWithConstructor
 
 ### Returns
 
-[\`ClassWithConstructor\`](../classes/ClassWithConstructor.md)
+[ClassWithConstructor](../classes/ClassWithConstructor.md)
 
 [partial: sources]"
 `;

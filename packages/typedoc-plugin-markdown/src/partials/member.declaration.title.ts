@@ -15,15 +15,22 @@ export function declarationMemberTitle(
   const md: string[] = [];
 
   if (
-    reflection.flags &&
-    reflection.flags.length > 0 &&
+    reflection.flags?.length &&
+    !reflection.flags.isOptional &&
     !reflection.flags.isRest
   ) {
-    md.push(reflection.flags.map((flag) => flag.toLowerCase()).join(' '));
-    md.push(`${reflection.flags.isRest ? '... ' : ' '}`);
+    md.push(reflection.flags.map((flag) => flag.toLowerCase()).join(' ') + ' ');
+  }
+
+  if (reflection.flags.isRest) {
+    md.push('... ');
   }
 
   md.push(reflection.name);
+
+  if (reflection.flags.isOptional) {
+    md.push('?');
+  }
 
   if (
     reflection instanceof DeclarationReflection &&
