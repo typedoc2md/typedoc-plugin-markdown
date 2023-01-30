@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.2
+
+### Patch Changes
+
+- Update version
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.2
+
 ## 1.0.0-next.1
 
 ### Patch Changes
