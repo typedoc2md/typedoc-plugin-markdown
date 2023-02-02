@@ -1,5 +1,5 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
-import { codeBlock, heading, indentBlock } from '../support/els';
+import { codeBlock, heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -10,21 +10,8 @@ export function signatureMember(
 ) {
   const md: string[] = [];
 
-  const headingLevel =
-    (parentHeadingLevel
-      ? parentHeadingLevel
-      : getReflectionHeadingLevel(signature.parent)) + 1;
-
-  md.push(heading(headingLevel, 'Signature'));
-
-  md.push(codeBlock(context.partials.signatureTitle(signature)));
-
-  if (signature.comment) {
-    md.push(context.partials.comment(signature.comment, headingLevel));
-  }
-
   if (parentHeadingLevel) {
-    md.push(indentBlock(signatureBody(context, signature, parentHeadingLevel)));
+    md.push(signatureBody(context, signature, parentHeadingLevel));
   } else {
     md.push(signatureBody(context, signature));
   }
@@ -43,6 +30,14 @@ function signatureBody(
     (parentHeadingLevel
       ? parentHeadingLevel
       : getReflectionHeadingLevel(signature.parent)) + 1;
+
+  if (signature.comment) {
+    md.push(context.partials.comment(signature.comment, headingLevel));
+  }
+
+  md.push(heading(headingLevel, 'Signature'));
+
+  md.push(codeBlock(context.partials.signatureTitle(signature)));
 
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
@@ -83,8 +78,9 @@ function signatureBody(
         md.push(context.partials.typeDeclarationList(typeDeclaration.children));
       }
     }
-
-    md.push(context.partials.sources(signature));
+    if (!parentHeadingLevel) {
+      md.push(context.partials.sources(signature));
+    }
   }
 
   return md.join('\n\n');

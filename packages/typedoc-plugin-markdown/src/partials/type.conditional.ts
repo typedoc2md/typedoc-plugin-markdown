@@ -1,4 +1,5 @@
 import { ConditionalType } from 'typedoc';
+import { italic } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function conditionalType(
@@ -9,7 +10,7 @@ export function conditionalType(
   if (conditionalType.checkType) {
     md.push(context.partials.someType(conditionalType.checkType));
   }
-  md.push('extends');
+  md.push(italic('extends'));
   if (conditionalType.extendsType) {
     md.push(context.partials.someType(conditionalType.extendsType));
   }

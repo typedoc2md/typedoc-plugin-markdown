@@ -11,60 +11,53 @@ export function declarationMember(
 
   const headingLevel = getReflectionHeadingLevel(declaration) + 1;
 
-  md.push(codeBlock(context.partials.declarationMemberTitle(declaration)));
+  const typeDeclaration = (declaration.type as any)
+    ?.declaration as DeclarationReflection;
+
+  if (declaration.type) {
+    md.push(`> ${context.partials.declarationMemberDef(declaration)}`);
+
+    if (typeDeclaration?.children) {
+      md.push(codeBlock(context.partials.someType(declaration.type)));
+    }
+  }
 
   if (declaration.comment) {
     md.push(context.partials.comment(declaration.comment, headingLevel));
   }
-
-  md.push(declarationBody(context, declaration, headingLevel));
-
-  md.push(context.partials.sources(declaration));
-
-  return md.join('\n\n');
-}
-
-function declarationBody(
-  context: MarkdownThemeRenderContext,
-  declaration: DeclarationReflection,
-  headingLevel: number,
-) {
-  const md: string[] = [];
-
-  const typeDeclaration = (declaration.type as any)
-    ?.declaration as DeclarationReflection;
 
   if (declaration.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));
     md.push(context.partials.typeParameters(declaration.typeParameters));
   }
 
-  if (typeDeclaration?.indexSignature) {
-    md.push(
-      context.partials.indexSignatureTitle(typeDeclaration.indexSignature),
-    );
-  }
+  if (typeDeclaration) {
+    if (typeDeclaration?.indexSignature) {
+      md.push(heading(headingLevel, 'Index signature'));
+      md.push(
+        context.partials.indexSignatureTitle(typeDeclaration.indexSignature),
+      );
+    }
 
-  if (typeDeclaration?.signatures) {
-    md.push(
-      heading(
-        headingLevel,
-        typeDeclaration.children ? 'Call signature' : 'Type declaration',
-      ),
-    );
-    typeDeclaration.signatures.forEach((signature) => {
-      md.push(context.partials.signatureMember(signature, headingLevel));
-    });
-  }
-
-  if (typeDeclaration?.children) {
     md.push(heading(headingLevel, 'Type declaration'));
-    if (context.getOption('typeDeclarationStyle') === 'table') {
-      md.push(context.partials.typeDeclarationTable(typeDeclaration.children));
-    } else {
-      md.push(context.partials.typeDeclarationList(typeDeclaration.children));
+    if (typeDeclaration?.signatures) {
+      typeDeclaration.signatures.forEach((signature) => {
+        md.push(context.partials.signatureMember(signature, headingLevel));
+      });
+    }
+
+    if (typeDeclaration?.children) {
+      if (context.getOption('typeDeclarationStyle') === 'table') {
+        md.push(
+          context.partials.typeDeclarationTable(typeDeclaration.children),
+        );
+      } else {
+        md.push(context.partials.typeDeclarationList(typeDeclaration.children));
+      }
     }
   }
+
+  md.push(context.partials.sources(declaration));
 
   return md.join('\n\n');
 }

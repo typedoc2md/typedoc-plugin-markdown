@@ -13,3 +13,9 @@ export interface Animal {
 export interface Dog extends Animal {
   breed: string;
 }
+
+export interface SomeProps {
+  prop1: string;
+  prop2: string;
+  prop3: string;
+}

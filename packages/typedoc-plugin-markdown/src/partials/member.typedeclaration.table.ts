@@ -1,4 +1,5 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { getPropertyType } from '../support/helpers';
 import { escapeChars, stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -9,7 +10,7 @@ export function typeDeclarationTable(
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = !comments.every((value) => !value);
 
-  const headers = ['Name', 'Type'];
+  const headers = ['Member', 'Type'];
 
   if (hasComments) {
     headers.push('Description');
@@ -47,15 +48,17 @@ export function typeDeclarationTable(
     const nameCol: string[] = [];
     const name =
       property.name.match(/[\\`\\|]/g) !== null
-        ? escapeChars(getName(context, property))
-        : `\`${getName(context, property)}\``;
+        ? escapeChars(property.name)
+        : context.partials.propertyName(property);
     const isParent = name.split('.')?.length === 1;
     nameCol.push(name);
     row.push(nameCol.join(' '));
     row.push(
-      context.partials
-        .someType(propertyType, isParent ? 'object' : 'none')
-        .replace(/(?<!\\)\|/g, '\\|'),
+      stripLineBreaks(
+        context.partials
+          .someType(propertyType, isParent ? 'object' : 'none')
+          .replace(/(?<!\\)\|/g, '\\|'),
+      ),
     );
 
     if (hasComments) {
@@ -79,48 +82,6 @@ export function typeDeclarationTable(
     .join(' | ')} |\n${rows.join('')}`;
 
   return output;
-}
-
-function getPropertyType(property: any) {
-  if (property.getSignature) {
-    return property.getSignature.type;
-  }
-  if (property.setSignature) {
-    return property.setSignature.type;
-  }
-  return property.type ? property.type : property;
-}
-
-function getName(
-  context: MarkdownThemeRenderContext,
-  property: DeclarationReflection,
-) {
-  const md: string[] = [];
-  if (property.flags.isRest) {
-    md.push('...');
-  }
-  if (property.getSignature) {
-    md.push(`get ${property.getSignature.name}()`);
-  } else if (property.setSignature) {
-    md.push(
-      `set ${
-        property.setSignature.name
-      }(${property.setSignature.parameters?.map((parameter) => {
-        return parameter.type
-          ? `${parameter.name}:${context.partials.someType(
-              parameter.type,
-              'all',
-            )}`
-          : '';
-      })})`,
-    );
-  } else {
-    md.push(property.name);
-  }
-  if (property.flags.isOptional) {
-    md.push('?');
-  }
-  return md.join('');
 }
 
 function getComments(property: DeclarationReflection) {

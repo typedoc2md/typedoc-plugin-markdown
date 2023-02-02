@@ -1,4 +1,5 @@
 import { Application, Options, OptionsReader, ParameterType } from 'typedoc';
+import * as ts from 'typescript';
 import { MarkdownTheme } from './theme';
 import { MarkdownThemeRenderContext } from './theme-context';
 
@@ -84,7 +85,7 @@ export function load(app: Application) {
     name: 'typeDeclarationStyle',
     help: '[Markdown Plugin] Specify the render style of type declarations.',
     type: ParameterType.String,
-    defaultValue: 'list',
+    defaultValue: 'table',
     validate: (option) => {
       const availableValues = ['table', 'list'];
       if (!availableValues.includes(option)) {
@@ -147,3 +148,15 @@ export * from './models';
 export * from './options-reader';
 export { partials } from './resources';
 export { MarkdownTheme, MarkdownThemeRenderContext };
+
+function getNode(node: ts.Node) {
+  if (ts.isVariableDeclaration(node)) {
+    return node.parent;
+  }
+  return node;
+}
+
+function printNode(node: ts.Node, sourceFile: ts.SourceFile) {
+  const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
+  return printer.printNode(ts.EmitHint.Unspecified, node, sourceFile);
+}

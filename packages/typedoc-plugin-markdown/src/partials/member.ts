@@ -22,11 +22,8 @@ export function member(
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 
-  if (
-    !reflection.hasOwnDocument &&
-    !reflection.kindOf(ReflectionKind.Constructor)
-  ) {
-    md.push(heading(headingLevel, getReflectionTitle(reflection)));
+  if (!reflection.hasOwnDocument) {
+    md.push(heading(headingLevel, `${getReflectionTitle(reflection)}`));
   }
 
   if (
@@ -36,7 +33,7 @@ export function member(
       ReflectionKind.Enum,
     ].includes(reflection.kind)
   ) {
-    md.push(context.partials.reflection(reflection));
+    md.push(context.partials.reflectionMember(reflection));
   } else {
     if (reflection.signatures) {
       reflection.signatures.forEach((signature) => {
@@ -50,12 +47,14 @@ export function member(
         if (reflection.setSignature) {
           md.push(context.partials.signatureMember(reflection.setSignature));
         }
-      } else {
-        if (reflection instanceof ReferenceReflection) {
-          md.push(context.partials.referenceMember(reflection));
-        } else if (reflection instanceof DeclarationReflection) {
-          md.push(context.partials.declarationMember(reflection));
-        }
+      }
+
+      if (reflection instanceof ReferenceReflection) {
+        md.push(context.partials.referenceMember(reflection));
+      }
+
+      if (reflection instanceof DeclarationReflection) {
+        md.push(context.partials.declarationMember(reflection));
       }
     }
   }

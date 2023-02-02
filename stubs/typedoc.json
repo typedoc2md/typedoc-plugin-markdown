@@ -8,8 +8,10 @@
     "./src/generics.ts",
     "./src/hierarchy.ts",
     "./src/interfaces.ts",
+    "./src/properties.ts",
     "./src/reflections.ts",
     "./src/signatures.ts",
+    "./src/variables.ts",
     "./src/sources.ts",
     "./src/types.ts"
   ],
@@ -18,5 +20,7 @@
   "name": "My TypeScript API",
   "tsconfig": "./tsconfig.json",
   "cleanOutputDir": true,
-  "githubPages": false
+  "githubPages": false,
+
+  "sort": ["source-order"]
 }

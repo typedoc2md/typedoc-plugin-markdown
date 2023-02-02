@@ -65,6 +65,7 @@ export function getMemberHeadingLevel(
 export function getReflectionTitle(
   reflection: DeclarationReflection,
   fullname = false,
+  typeParams = false,
 ) {
   const md = [
     escapeChars(fullname ? reflection.getFullName() : reflection.name),
@@ -72,7 +73,12 @@ export function getReflectionTitle(
   if (reflection.signatures?.length) {
     md.push('()');
   }
-  md.push(getTypeParameters(reflection));
+  if (reflection.flags?.isOptional) {
+    md.push('?');
+  }
+  if (typeParams) {
+    md.push(getTypeParameters(reflection));
+  }
   return md.join('');
 }
 
@@ -95,4 +101,14 @@ export function getFlags(reflection: DeclarationReflection) {
 
 export function getTagName(tag: CommentTag) {
   return tag.tag.substring(1);
+}
+
+export function getPropertyType(property: any) {
+  if (property.getSignature) {
+    return property.getSignature.type;
+  }
+  if (property.setSignature) {
+    return property.setSignature.type;
+  }
+  return property.type ? property.type : property;
 }

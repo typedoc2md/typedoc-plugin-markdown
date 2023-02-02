@@ -37,10 +37,11 @@ import { commentParts } from './partials/comment.parts';
 import { comment } from './partials/comment';
 import { frontmatter } from './partials/frontmatter';
 import { hierarchy } from './partials/hierarchy';
-import { declarationMemberTitle } from './partials/member.declaration.title';
+import { declarationMemberDef } from './partials/member.declaration.def';
 import { declarationMember } from './partials/member.declaration';
 import { indexSignatureTitle } from './partials/member.indexsignature.title';
 import { referenceMember } from './partials/member.reference';
+import { reflectionMember } from './partials/member.reflection';
 import { signatureTitle } from './partials/member.signature.title';
 import { signatureMember } from './partials/member.signature';
 import { member } from './partials/member';
@@ -49,7 +50,7 @@ import { typeDeclarationTable } from './partials/member.typedeclaration.table';
 import { typeParameters } from './partials/member.typeparameters';
 import { members } from './partials/members';
 import { pageTitle } from './partials/page.title';
-import { reflection } from './partials/reflection';
+import { propertyName } from './partials/property.name';
 import { sources } from './partials/sources';
 import { parametersTable } from './partials/table.parameters';
 import { toc } from './partials/toc';
@@ -87,10 +88,11 @@ export type Partials = {
   comment: (comment: Comment, headingLevel?: number |  undefined) => string;
   frontmatter: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
-  declarationMemberTitle: (reflection: DeclarationReflection | ParameterReflection) => string;
+  declarationMemberDef: (reflection: DeclarationReflection) => string;
   declarationMember: (declaration: DeclarationReflection) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
   referenceMember: (props: ReferenceReflection) => string;
+  reflectionMember: (reflection: DeclarationReflection) => string;
   signatureTitle: (signature: SignatureReflection, accessor?: string |  undefined) => string;
   signatureMember: (signature: SignatureReflection, parentHeadingLevel?: number |  undefined) => string;
   member: (reflection: DeclarationReflection) => string;
@@ -99,7 +101,7 @@ export type Partials = {
   typeParameters: (typeParameters: TypeParameterReflection[]) => string;
   members: (container: ContainerReflection) => string;
   pageTitle: (page: PageEvent<DeclarationReflection>) => string;
-  reflection: (reflection: DeclarationReflection) => string;
+  propertyName: (property: DeclarationReflection) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
   toc: (reflection: DeclarationReflection | ProjectReflection) => string;
@@ -135,10 +137,11 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   comment: bind(comment, context),
   frontmatter: bind(frontmatter, context),
   hierarchy: bind(hierarchy, context),
-  declarationMemberTitle: bind(declarationMemberTitle, context),
+  declarationMemberDef: bind(declarationMemberDef, context),
   declarationMember: bind(declarationMember, context),
   indexSignatureTitle: bind(indexSignatureTitle, context),
   referenceMember: bind(referenceMember, context),
+  reflectionMember: bind(reflectionMember, context),
   signatureTitle: bind(signatureTitle, context),
   signatureMember: bind(signatureMember, context),
   member: bind(member, context),
@@ -147,7 +150,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   typeParameters: bind(typeParameters, context),
   members: bind(members, context),
   pageTitle: bind(pageTitle, context),
-  reflection: bind(reflection, context),
+  propertyName: bind(propertyName, context),
   sources: bind(sources, context),
   parametersTable: bind(parametersTable, context),
   toc: bind(toc, context),

@@ -1,7 +1,7 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { Collapse } from '../models';
-import { backTicks } from '../support/els';
-import { escapeChars } from '../support/utils';
+import { backTicks, indentBlock } from '../support/els';
+import { getPropertyType } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function declarationType(
@@ -10,7 +10,7 @@ export function declarationType(
   collapse: Collapse = 'none',
 ) {
   if (collapse === 'object' || collapse === 'all') {
-    return backTicks('Object');
+    return backTicks('object');
   }
 
   if (declarationReflection.indexSignature || declarationReflection.children) {
@@ -30,22 +30,14 @@ export function declarationType(
     const types =
       declarationReflection.children &&
       declarationReflection.children.map((obj) => {
-        return `\`${obj.name}${
-          obj.flags.isOptional ? '?' : ''
-        }\`: ${context.partials.someType(obj.type as SomeType)} ${
-          obj.defaultValue && obj.defaultValue !== '...'
-            ? `= ${escapeChars(obj.defaultValue)}`
-            : ''
-        }`;
+        return `${context.partials.propertyName(
+          obj,
+        )}: ${context.partials.someType(getPropertyType(obj) as SomeType)};`;
       });
-    return `{ ${indexSignature ? indexSignature : ''}${
-      types ? types.join('; ') : ''
-    } }${
-      declarationReflection.defaultValue &&
-      declarationReflection.defaultValue !== '...'
-        ? `= ${escapeChars(declarationReflection.defaultValue)}`
-        : ''
-    }`;
+    if (indexSignature) {
+      types?.unshift(indexSignature);
+    }
+    return `{\n${indentBlock(types ? types.join('\n') : '')}\n}`;
   }
   return '{}';
 }

@@ -1,16 +1,20 @@
+export interface PropInterface {
+  prop: string;
+}
+
 /**
  * This is a function with multiple arguments and a return value.
  *
  * @param paramZ - This is a string parameter.
- * @param paramG - This is a parameter flagged with any.
+ * @param paramG - This is a parameter with intersection type literal.
  * @param paramA
  *   This is a **parameter** pointing to an interface.
  *
  */
 export function functionWithParameters(
   paramZ: string,
-  paramG: any,
-  paramA: any,
+  paramG: { prop: string } & { prop: number },
+  paramA: PropInterface,
 ): number {
   return 0;
 }

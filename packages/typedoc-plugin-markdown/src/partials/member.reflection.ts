@@ -3,7 +3,13 @@ import { heading, unorderedList } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-export function reflection(
+/**
+ * Represents a top level reflection
+ * @param context
+ * @param reflection
+ * @returns
+ */
+export function reflectionMember(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
 ) {
@@ -37,9 +43,7 @@ export function reflection(
   }
 
   if ('signatures' in reflection && reflection.signatures) {
-    md.push(heading(headingLevel, 'Callable'));
     reflection.signatures.forEach((signature) => {
-      md.push(heading(headingLevel + 1, signature.name));
       md.push(context.partials.signatureMember(signature));
     });
   }

@@ -1,16 +1,11 @@
-import {
-  DeclarationReflection,
-  LiteralType,
-  ParameterReflection,
-  ReflectionKind,
-} from 'typedoc';
-import { backTicks } from '../support/els';
+import { DeclarationReflection, LiteralType } from 'typedoc';
+import { backTicks, bold } from '../support/els';
 import { stripComments, stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-export function declarationMemberTitle(
+export function declarationMemberDef(
   context: MarkdownThemeRenderContext,
-  reflection: ParameterReflection | DeclarationReflection,
+  reflection: DeclarationReflection,
 ) {
   const md: string[] = [];
 
@@ -19,23 +14,14 @@ export function declarationMemberTitle(
     !reflection.flags.isOptional &&
     !reflection.flags.isRest
   ) {
-    md.push(reflection.flags.map((flag) => flag.toLowerCase()).join(' ') + ' ');
+    md.push(reflection.flags.map((flag) => bold(backTicks(flag))).join(' '));
   }
 
   if (reflection.flags.isRest) {
-    md.push('... ');
+    md.push('...');
   }
 
-  md.push(reflection.name);
-
-  if (reflection.flags.isOptional) {
-    md.push('?');
-  }
-
-  if (
-    reflection instanceof DeclarationReflection &&
-    reflection.typeParameters
-  ) {
+  if (reflection.typeParameters) {
     md.push(
       `\\<${reflection.typeParameters
         ?.map((typeParameter) => backTicks(typeParameter.name))
@@ -43,11 +29,7 @@ export function declarationMemberTitle(
     );
   }
   if (reflection.type) {
-    md.push(
-      `${
-        reflection.parent?.kindOf(ReflectionKind.Enum) ? ' = ' : ': '
-      }${context.partials.someType(reflection.type, 'all')}`,
-    );
+    md.push(`${context.partials.someType(reflection.type, 'all')}`);
   }
 
   if (
@@ -60,5 +42,5 @@ export function declarationMemberTitle(
     );
   }
 
-  return md.join('');
+  return md.join(' ');
 }

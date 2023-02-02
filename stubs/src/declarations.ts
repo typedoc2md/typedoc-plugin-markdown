@@ -4,6 +4,9 @@ stringLetWithDefaultValue = 'world';
 
 export let undefinedNumberDeclaration: number;
 
+/**
+ * Comments for object literal
+ */
 export const objectLiteralDeclaration = {
   /**
    * Comment for valueZ
@@ -104,4 +107,5 @@ export const enuRef: EnumDeclarationsWithDefaults =
 export let getterAndSetter: {
   get getMe(): Promise<string>;
   set setMe(x: string);
+  prop: string;
 };

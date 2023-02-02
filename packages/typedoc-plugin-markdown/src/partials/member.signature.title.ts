@@ -65,5 +65,8 @@ export function signatureTitle(
   if (signature.type) {
     md.push(`: ${context.partials.someType(signature.type, 'all')}`);
   }
+
+  md.push(';');
+
   return md.join('');
 }

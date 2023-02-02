@@ -10,7 +10,10 @@ export function pageTitle(
   const md: string[] = [];
 
   md.push(
-    heading(1, getReflectionTitle(page.model, context.getOption('longTitles'))),
+    heading(
+      1,
+      getReflectionTitle(page.model, context.getOption('longTitles'), true),
+    ),
   );
 
   return md.join('\n\n');

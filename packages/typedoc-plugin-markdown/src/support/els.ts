@@ -25,7 +25,15 @@ export const table = (headers: string[], rows: string[][]) =>
     .map(() => ':------')
     .join(' | ')} |\n${rows.map((row) => `| ${row.join(' | ')} \n`).join('')}`;
 
-export const indentBlock = (content: string) => {
+export const blockQuoteBlock = (content: string) => {
   const lines = formatContents(content).split('\n');
   return lines.map((line) => (line.length ? `> ${line}` : '>')).join('\n');
+};
+
+export const indentBlock = (content: string) => {
+  const lines = formatContents(content).split('\n');
+  return lines
+    .filter((line) => Boolean(line.length))
+    .map((line) => `    ${line}`)
+    .join('\n');
 };

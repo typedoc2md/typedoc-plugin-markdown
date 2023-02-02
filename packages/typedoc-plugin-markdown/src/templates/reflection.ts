@@ -25,7 +25,7 @@ export function reflectionTemplate(
     if (!context.getOption('hidePageTitle')) {
       md.push(context.partials.pageTitle(page));
     }
-    md.push(context.partials.reflection(page.model));
+    md.push(context.partials.reflectionMember(page.model));
   }
   return md.join('\n\n');
 }

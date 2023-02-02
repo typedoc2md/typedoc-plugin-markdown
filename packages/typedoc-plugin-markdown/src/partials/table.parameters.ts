@@ -75,11 +75,11 @@ function table(context: MarkdownThemeRenderContext, parameters: any) {
       row.push(`\`${rest}${parameter.name}${optional}\``);
     }
 
-    row.push(
-      parameter.type
-        ? context.partials.someType(parameter.type, 'object')
-        : "getReflectionType(parameter, 'object')",
-    );
+    if (parameter.type) {
+      row.push(
+        stripLineBreaks(context.partials.someType(parameter.type, 'object')),
+      );
+    }
 
     if (showDefaults) {
       row.push(getDefaultValue(parameter));

@@ -18,6 +18,6 @@ export function reflectionType(
       : context.partials.functionType(root.signatures);
   }
   return (collapse === 'object' && !root.indexSignature) || collapse === 'all'
-    ? backTicks('Object')
+    ? backTicks('object')
     : context.partials.declarationType(root);
 }
