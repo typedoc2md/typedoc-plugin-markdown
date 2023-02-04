@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.3
+
+### Patch Changes
+
+- Expose referenced type links on declaration
+- UI fixes
+
 ## 4.0.0-next.2
 
 ### Patch Changes
