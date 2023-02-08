@@ -117,3 +117,11 @@ export const fooBigInt = BigInt(100); // the BigInt function
 export const barBigInt = 100n; // a BigInt literal
 
 export type _someCallback_ = (name: string, value: unknown) => void;
+
+export type Foo = {
+  foo: string;
+};
+
+export type FooAndBar = Foo & {
+  bar: number;
+};

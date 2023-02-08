@@ -26,7 +26,7 @@ promiseReturningAnObject(): Promise<{
 
 ## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<{
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{
     \`data\`: \`string\`;
     \`id\`: \`string\`;
 }\\>
@@ -383,7 +383,7 @@ functionWithParameters(paramZ: string, paramG: {
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`paramZ\` | \`string\` | This is a string parameter. |
-| \`paramG\` | {     \`prop\`: \`string\`; } & {     \`prop\`: \`number\`; } | This is a parameter with intersection type literal. |
+| \`paramG\` | \\{     \`prop\`: \`string\`; } & \\{     \`prop\`: \`number\`; } | This is a parameter with intersection type literal. |
 | \`paramA\` | [\`PropInterface\`](../interfaces/PropInterface.md) | This is a **parameter** pointing to an interface. |
 
 

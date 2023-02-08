@@ -37,7 +37,7 @@ export function declarationType(
     if (indexSignature) {
       types?.unshift(indexSignature);
     }
-    return `{\n${indentBlock(types ? types.join('\n') : '')}\n}`;
+    return `\\{\n${indentBlock(types ? types.join('\n') : '')}\n}`;
   }
-  return '{}';
+  return '\\{}';
 }

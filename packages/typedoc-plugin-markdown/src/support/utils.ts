@@ -22,6 +22,7 @@ export function unEscapeChars(str: string) {
     .replace(/\\</g, '<')
     .replace(/\\>/g, '>')
     .replace(/\\_/g, '_')
+    .replace(/\\{/g, '{')
     .replace(/`/g, '')
     .replace(/\*/g, '')
     .replace(/\\\|/g, '|')
