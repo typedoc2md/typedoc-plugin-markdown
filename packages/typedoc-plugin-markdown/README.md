@@ -1,11 +1,11 @@
 # typedoc-plugin-markdown
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeScript API documentation as Markdown.
+A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeScript API documentation as Markdown files. (By default, TypeDoc will render API documentation as a webpage, e.g. HTML files.)
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
-## What it does?
+## What does it do?
 
 The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
 
@@ -25,12 +25,11 @@ Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installa
 typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts
 ```
 
-> The plugin switches the default html theme to the in-built markdown theme as default. If using with the default html theme, use `--plugin none` to switch the plugin off.
+Note that the plugin switches the default HTML theme to the built-in Markdown theme by default. If you want to use the default HTML theme instead, use `--plugin none` to turn the plugin off.
 
 ## Options
 
-The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/guides/options/)
-(please note that TypeDoc options specific to the html theme will be ignored).
+This plugin provides additional options beyond the normal options that are [provided by TypeDoc](https://typedoc.org/guides/options/), which are listed below. Note that any vanilla TypeDoc options that customize the HTML theme will be ignored.
 
 - `--entryDocument<string>`<br>
   The file name of the entry document. Defaults to `README.md`.

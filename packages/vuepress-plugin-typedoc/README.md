@@ -5,7 +5,7 @@ A [VuePress](https://vuepress.vuejs.org/) plugin to build API documentation with
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-typedoc.svg)](https://www.npmjs.com/package/vuepress-plugin-typedoc)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
-## What it does?
+## What does it do?
 
 - Generates pages in Markdown as part of the build.
 - Generates sidebar configuration.
