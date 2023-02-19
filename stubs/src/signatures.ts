@@ -39,8 +39,10 @@ export const variableFunction = (someParam: number) => {
  * @param optionalParam  An optional parameter.
  */
 export function functionWithOptionalParam(
+  firstParamWithDefault = true,
   requiredParam: string,
   optionalParam?: string,
+  paramWithDefault = 0,
 ) {}
 
 /**

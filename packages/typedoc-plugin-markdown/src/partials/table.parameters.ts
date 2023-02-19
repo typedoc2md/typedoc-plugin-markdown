@@ -38,7 +38,10 @@ export function parametersTable(
   );
 }
 
-function table(context: MarkdownThemeRenderContext, parameters: any) {
+function table(
+  context: MarkdownThemeRenderContext,
+  parameters: ParameterReflection[],
+) {
   const showDefaults = hasDefaultValues(parameters);
 
   const comments = parameters.map(
@@ -56,12 +59,20 @@ function table(context: MarkdownThemeRenderContext, parameters: any) {
     headers.push('Description');
   }
 
-  const rows = parameters.map((parameter) => {
+  const firstOptionalParamIndex = parameters.findIndex(
+    (parameter) => parameter.flags.isOptional,
+  );
+
+  const rows = parameters.map((parameter, i) => {
     const row: string[] = [];
 
-    const nbsp = ' '; // ? <== Unicode no-break space character
+    const isOptional =
+      parameter.flags.isOptional ||
+      (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex);
+
     const rest = parameter.flags.isRest ? '...' : '';
-    const optional = parameter.flags.isOptional ? '?' : '';
+
+    const optional = isOptional ? '?' : '';
 
     const isDestructuredParam = parameter.name == '__namedParameters';
     const isDestructuredParamProp =
@@ -70,7 +81,7 @@ function table(context: MarkdownThemeRenderContext, parameters: any) {
     if (isDestructuredParam) {
       row.push(`\`${rest}«destructured»\``);
     } else if (isDestructuredParamProp) {
-      row.push(`›${nbsp}\`${rest}${parameter.name.slice(18)}${optional}\``);
+      row.push(`› \`${rest}${parameter.name.slice(18)}${optional}\``);
     } else {
       row.push(`\`${rest}${parameter.name}${optional}\``);
     }

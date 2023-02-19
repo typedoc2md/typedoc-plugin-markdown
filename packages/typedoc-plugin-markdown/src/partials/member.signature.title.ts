@@ -31,8 +31,11 @@ export function signatureTitle(
   }
 
   const getParameters = (parameters: ParameterReflection[] = []) => {
+    const firstOptionalParamIndex = parameters.findIndex(
+      (parameter) => parameter.flags.isOptional,
+    );
     return parameters
-      .map((param) => {
+      .map((param, i) => {
         const isDestructuredParam = param.name == '__namedParameters';
         const paramsmd: string[] = [];
         if (parameters.length > 3) {
@@ -43,10 +46,12 @@ export function signatureTitle(
         }
         const paramItem = `${
           isDestructuredParam ? '«destructured»' : param.name
-        }${param.flags.isOptional ? '?' : ''}: ${context.partials.someType(
-          param.type as SomeType,
-          'all',
-        )}`;
+        }${
+          param.flags.isOptional ||
+          (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
+            ? '?'
+            : ''
+        }: ${context.partials.someType(param.type as SomeType, 'all')}`;
         paramsmd.push(paramItem);
         if (param.defaultValue) {
           paramsmd.push(` = ${param.defaultValue}`);

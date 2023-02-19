@@ -163,7 +163,7 @@ functionWithNestedParams(params: object, context: any): boolean;
 | \`params.nestedObj.obj.name\` | () => \`void\` | - |
 | \`params.nestedObj.value\` | \`number\` | - |
 | \`params.parent?\` | \`number\` | - |
-| \`context\` | \`any\` | The context of the method call. |
+| \`context?\` | \`any\` | The context of the method call. |
 
 
 ## Returns
@@ -210,9 +210,9 @@ functionWithNamedParamsAndComments(«destructured»: object = {}, anotherParam: 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`«destructured»\` | \`object\` | various options |
-| › \`bar?\` | \`number\` | - |
-| › \`foo?\` | \`number\` | - |
-| \`anotherParam\` | \`string\` | Another param comment |
+| › \`bar?\` | \`number\` | - |
+| › \`foo?\` | \`number\` | - |
+| \`anotherParam?\` | \`string\` | Another param comment |
 
 
 ## Returns
@@ -345,16 +345,22 @@ exports[`Signatures: should compile signature with optional params' 1`] = `
 ## Signature
 
 \`\`\`ts
-functionWithOptionalParam(requiredParam: string, optionalParam?: string): void;
+functionWithOptionalParam(
+  firstParamWithDefault: boolean = true, 
+  requiredParam: string, 
+  optionalParam?: string, 
+  paramWithDefault?: number = 0): void;
 \`\`\`
 
 ## Parameters
 
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| \`requiredParam\` | \`string\` | A normal parameter. |
-| \`optionalParam?\` | \`string\` | An optional parameter. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
+| \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
+| \`optionalParam?\` | \`string\` | \`undefined\` | An optional parameter. |
+| \`paramWithDefault?\` | \`number\` | \`0\` | - |
 
 
 ## Returns
