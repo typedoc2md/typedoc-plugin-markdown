@@ -1,3 +1,4 @@
+import * as prettier from 'prettier';
 import {
   BindOption,
   DeclarationReflection,
@@ -11,7 +12,6 @@ import {
 } from 'typedoc';
 import { TemplateMapping } from './models';
 import { URL_PREFIX } from './support/constants';
-import { formatContents } from './support/utils';
 import { MarkdownThemeRenderContext } from './theme-context';
 export class MarkdownTheme extends Theme {
   @BindOption('entryDocument') entryDocument!: string;
@@ -62,7 +62,9 @@ export class MarkdownTheme extends Theme {
   };
 
   render(page: PageEvent<Reflection>): string {
-    return formatContents(page.template(page) as string);
+    return prettier.format(page.template(page) as string, {
+      parser: 'markdown',
+    });
   }
 
   getUrls(project: ProjectReflection) {

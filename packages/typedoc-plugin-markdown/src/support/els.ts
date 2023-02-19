@@ -1,4 +1,4 @@
-import { formatContents, unEscapeChars } from './utils';
+import { unEscapeChars } from './utils';
 
 export const heading = (level: number, text: string) =>
   `${[...Array(level)].map(() => '#').join('')} ${text}`;
@@ -26,12 +26,12 @@ export const table = (headers: string[], rows: string[][]) =>
     .join(' | ')} |\n${rows.map((row) => `| ${row.join(' | ')} \n`).join('')}`;
 
 export const blockQuoteBlock = (content: string) => {
-  const lines = formatContents(content).split('\n');
+  const lines = content.split('\n');
   return lines.map((line) => (line.length ? `> ${line}` : '>')).join('\n');
 };
 
 export const indentBlock = (content: string) => {
-  const lines = formatContents(content).split('\n');
+  const lines = content.split('\n');
   return lines
     .filter((line) => Boolean(line.length))
     .map((line) => `    ${line}`)

@@ -13,7 +13,7 @@
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "prebuild": "ts-node scripts/build-resources",
     "build": "rm -rf dist && tsc",
-    "test": "jest --colors -u",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "docs": "npm run build && npm-run-all docs-*",
     "docs-md-1": "typedoc --plugin typedoc-plugin-markdown --longTitles --options ../../stubs/typedoc.json --out ./test/docs/md/md-1",
@@ -40,6 +40,7 @@
     "typedoc"
   ],
   "peerDependencies": {
+    "prettier": ">=1.8.0",
     "typedoc": ">=0.23.0"
   }
 }

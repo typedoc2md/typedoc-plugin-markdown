@@ -1,12 +1,6 @@
 import { ReflectionKind } from 'typedoc';
 import { PLURALS } from './constants';
 
-export function formatContents(contents: string) {
-  return (
-    contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
-  );
-}
-
 export function escapeChars(str: string) {
   return str
     .replace(/>/g, '\\>')
