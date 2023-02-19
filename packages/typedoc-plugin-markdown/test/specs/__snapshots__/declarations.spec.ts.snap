@@ -188,8 +188,7 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 {
     valueA?: number;
     valueB?: boolean;
-    valueC: {
-    };
+    valueC: {};
     valueX: {
         valueA: number[];
         valueY: (z: string) => {
@@ -210,10 +209,10 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 | :------ | :------ | :------ |
 | \`valueA\`? | \`number\` | Comments for valueA |
 | \`valueB\`? | \`boolean\` | - |
-| \`valueC\` | \\{  } | - |
+| \`valueC\` | \\{} | - |
 | \`valueX\` | \`object\` | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
-| \`valueX.valueY\` | (\`z\`: \`string\`) => \\{     \`a\`: \`string\`;     \`b\`: \`string\`; } | Nested comment for valueX.valueY |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => \\{<br />    \`a\`: \`string\`;<br />    \`b\`: \`string\`;<br />} | Nested comment for valueX.valueY |
 | \`valueX.valueZ\` | \`string\` | Nested comment for valueX.valueZ |
 | \`valueY\` | () => \`string\` | - |
 | \`valueZ\` | \`string\` | Comment for valueZ |

@@ -389,7 +389,7 @@ functionWithParameters(paramZ: string, paramG: {
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | \`paramZ\` | \`string\` | This is a string parameter. |
-| \`paramG\` | \\{     \`prop\`: \`string\`; } & \\{     \`prop\`: \`number\`; } | This is a parameter with intersection type literal. |
+| \`paramG\` | \\{<br />    \`prop\`: \`string\`;<br />} & \\{<br />    \`prop\`: \`number\`;<br />} | This is a parameter with intersection type literal. |
 | \`paramA\` | [\`PropInterface\`](../interfaces/PropInterface.md) | This is a **parameter** pointing to an interface. |
 
 
