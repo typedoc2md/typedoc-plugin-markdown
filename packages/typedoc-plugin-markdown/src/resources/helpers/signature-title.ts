@@ -4,7 +4,7 @@ import {
   ReflectionKind,
   SignatureReflection,
 } from 'typedoc';
-import { memberSymbol } from '../../utils';
+import { escapeChars, memberSymbol } from '../../utils';
 import { MarkdownTheme } from '../../theme';
 
 export default function (theme: MarkdownTheme) {
@@ -22,9 +22,9 @@ export default function (theme: MarkdownTheme) {
       }
 
       if (accessor) {
-        md.push(`\`${accessor}\` **${this.name}**`);
+        md.push(`\`${accessor}\` **${escapeChars(this.name)}}**`);
       } else if (this.name !== '__call' && this.name !== '__type') {
-        md.push(`**${this.name}**`);
+        md.push(`**${escapeChars(this.name)}**`);
       }
 
       if (this.typeParameters) {
