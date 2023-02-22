@@ -22,7 +22,7 @@ export default function (theme: MarkdownTheme) {
       }
 
       if (accessor) {
-        md.push(`\`${accessor}\` **${escapeChars(this.name)}}**`);
+        md.push(`\`${accessor}\` **${escapeChars(this.name)}**`);
       } else if (this.name !== '__call' && this.name !== '__type') {
         md.push(`**${escapeChars(this.name)}**`);
       }
