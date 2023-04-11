@@ -17180,13 +17180,13 @@
   "resolved" "file:packages/typedoc-hugo-theme"
   "version" "1.0.0"
 
-"typedoc-plugin-markdown@*", "typedoc-plugin-markdown@^3.13.0", "typedoc-plugin-markdown@>=3.13.0", "typedoc-plugin-markdown@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/packages/typedoc-plugin-markdown":
+"typedoc-plugin-markdown@*", "typedoc-plugin-markdown@^3.13.0", "typedoc-plugin-markdown@^3.15.0", "typedoc-plugin-markdown@>=3.15.0", "typedoc-plugin-markdown@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/packages/typedoc-plugin-markdown":
   "resolved" "file:packages/typedoc-plugin-markdown"
   "version" "3.15.0"
   dependencies:
     "handlebars" "^4.7.7"
 
-"typedoc@^0.24.1", "typedoc@>=0.23.0":
+"typedoc@^0.24.1", "typedoc@>=0.23.0", "typedoc@>=0.24.0":
   "integrity" "sha512-u4HwjZcSQhQSkkhLjgcs0ooAf6HrFVLDHHrwU2xZW8WxH0KnGZlNkaWxiOcK5Gagj7mxJSgwWx0dv8ACDAOXAQ=="
   "resolved" "https://registry.npmjs.org/typedoc/-/typedoc-0.24.1.tgz"
   "version" "0.24.1"
@@ -17869,7 +17869,7 @@
 
 "vuepress-plugin-typedoc@*", "vuepress-plugin-typedoc@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/packages/vuepress-plugin-typedoc":
   "resolved" "file:packages/vuepress-plugin-typedoc"
-  "version" "0.11.2"
+  "version" "0.12.0"
 
 "vuepress-vite@2.0.0-beta.53":
   "integrity" "sha512-kITVMM+LcV5mDQXQXAKgK0adAGMm7oyPls6HPTLM9gUvpSs2A19zfwf8zFoxIF9X+ANay4Tg87egtnJOcp8Wcg=="
