@@ -3,4 +3,4 @@
 'typedoc-plugin-markdown': patch
 ---
 
-- TypdeDoc 0.24 compatibility fixes
+- TypdeDoc 0.24 compatibility fixes.
