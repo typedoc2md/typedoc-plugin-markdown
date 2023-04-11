@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.15.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.14.0...typedoc-plugin-markdown@3.15.0) (2023-04-11)
+
+### Features
+
+- Add objectLiteralTypeDeclarationStyle option ([#362](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/362))
+- Beautify parameter table output of destructured params ([#364](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/364))
+
 # [3.14.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.6...typedoc-plugin-markdown@3.14.0) (2022-12-02)
 
 ### Features
