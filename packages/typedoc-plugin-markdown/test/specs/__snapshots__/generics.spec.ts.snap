@@ -48,7 +48,7 @@ functionWithTypeParams<A, B, C>(): boolean;
 
 ## Type parameters
 
-- \`A\` *extends* [\`ClassWithTypeParams\`](../classes/ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`A\`\\>[partial: comment]
+- \`A\` *extends* [\`ClassWithTypeParams\`](classes/ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`A\`\\>[partial: comment]
 - \`B\` = \`string\` \\| \`boolean\`[partial: comment]
 - \`C\` = \`string\`
 
@@ -63,7 +63,7 @@ functionWithTypeParams<A, B, C>(): boolean;
 exports[`Generics: should compile generics with defaults' 1`] = `"[partial: sources]"`;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-"> [\`Generic1\`](../types/Generic1.md)\\<[\`Generic2\`](../types/Generic2.md)\\<[\`Generic3\`](../types/Generic3.md)\\<\`string\`\\>\\>\\>
+"> [\`Generic1\`](types/Generic1.md)\\<[\`Generic2\`](types/Generic2.md)\\<[\`Generic3\`](types/Generic3.md)\\<\`string\`\\>\\>\\>
 
 [partial: sources]"
 `;

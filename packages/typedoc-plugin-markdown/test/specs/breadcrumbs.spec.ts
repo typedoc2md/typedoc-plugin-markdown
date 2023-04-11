@@ -13,6 +13,7 @@ describe(`Breadcrumbs:`, () => {
       ({ project, context } = await global.bootstrap(['breadcrumbs.ts']));
       moduleReflection = (project.children as any)[0];
       classReflection = project.getChildByName('Breadcrumbs') as Reflection;
+      context.activeLocation = 'breadcrumbs.md';
     });
 
     test(`should compile README breadcrumbs'`, () => {
@@ -63,6 +64,7 @@ describe(`Breadcrumbs:`, () => {
       }));
       moduleReflection = (project.children as any)[0];
       classReflection = project.getChildByName('Breadcrumbs') as Reflection;
+      context.activeLocation = 'breadcrumbs.md';
     });
 
     test(`should compile module breadcrumbs'`, () => {

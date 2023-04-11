@@ -9,6 +9,7 @@ describe(`Generics:`, () => {
     ({ project, context } = await global.bootstrap(['generics.ts'], {
       stubPartials: ['breadcrumbs', 'comment', 'members', 'sources', 'toc'],
     }));
+    context.activeLocation = 'generics.md';
   });
 
   test(`should compile class with type params`, () => {

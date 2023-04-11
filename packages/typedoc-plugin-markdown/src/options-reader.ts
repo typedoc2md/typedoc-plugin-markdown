@@ -2,10 +2,11 @@ import { Options, OptionsReader } from 'typedoc';
 import { TypedocPluginMarkdownOptions } from './models';
 
 export class MarkdownPluginOptionsReader implements OptionsReader {
-  priority = 900;
   options: Partial<TypedocPluginMarkdownOptions>;
 
   name = 'custom-options';
+  readonly order = 900;
+  readonly supportsPackages = false;
 
   constructor(options: Partial<TypedocPluginMarkdownOptions>) {
     this.options = options;

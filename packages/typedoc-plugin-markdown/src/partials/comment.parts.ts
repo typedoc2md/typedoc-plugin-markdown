@@ -24,7 +24,7 @@ export function commentParts(
               const url =
                 typeof part.target === 'string'
                   ? part.target
-                  : context.relativeURL(part.target.url);
+                  : context.relativeURL((part.target as any).url);
               const wrap = part.tag === '@linkcode' ? '`' : '';
               md.push(url ? `[${wrap}${part.text}${wrap}](${url})` : part.text);
             } else {

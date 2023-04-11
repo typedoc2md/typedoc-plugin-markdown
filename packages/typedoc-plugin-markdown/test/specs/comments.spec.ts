@@ -13,15 +13,8 @@ describe(`Comments:`, () => {
     }));
   });
 
-  test(`should build @link references'`, () => {
-    expect(
-      context.partials.comment(
-        project.getChildByName('commentWithDocLinks')?.comment as Comment,
-      ),
-    ).toMatchSnapshot();
-  });
-
   test(`should convert symbols brackets to symbol links'`, () => {
+    context.activeLocation = 'comment.md';
     expect(
       context.partials.comment(
         project.getChildByName('commentsWithSymbolLinks')?.comment as Comment,

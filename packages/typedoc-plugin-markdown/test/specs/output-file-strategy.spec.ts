@@ -5,53 +5,11 @@ describe(`Output File Strategy`, () => {
   let project: ProjectReflection;
   let theme: MarkdownTheme;
 
-  describe(`fileStructure`, () => {
-    test(`should compile --fileStructure 'symbols'`, async () => {
-      ({ project, theme } = await global.bootstrap(
-        ['modules/module-1', 'modules/module-2'],
-        { options: { fileStructure: 'symbols' } },
-      ));
-      expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
-    });
-
-    test(`should compile fileStructure: 'symbols' --symbolsWithOwnFile none --readme none`, async () => {
-      ({ project, theme } = await global.bootstrap(
-        ['modules/module-1', 'modules/module-2'],
-        {
-          options: {
-            fileStructure: 'symbols',
-            symbolsWithOwnFile: 'none',
-            readme: 'none',
-          },
-        },
-      ));
-      expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
-    });
-
-    test(`should compile '--fileStructure 'modules'`, async () => {
-      ({ project, theme } = await global.bootstrap(
-        ['modules/module-1', 'modules/module-2'],
-        { options: { fileStructure: 'modules' } },
-      ));
-      expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
-    });
-
-    test(`should compile '--fileStructure modules --symbolsWithOwnFile  none'`, async () => {
-      ({ project, theme } = await global.bootstrap(
-        ['modules/module-1', 'modules/module-2'],
-        {
-          options: { symbolsWithOwnFile: 'none', fileStructure: 'modules' },
-        },
-      ));
-      expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
-    });
-  });
-
   describe(`symbolsWithOwnFile`, () => {
     test(`should set default --symbolsWithOwnFile 'all'`, async () => {
       ({ project, theme } = await global.bootstrap(
         ['modules/module-1', 'modules/module-2'],
-        { options: { fileStructure: 'symbols', symbolsWithOwnFile: 'all' } },
+        { options: { symbolsWithOwnFile: 'all' } },
       ));
       expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
     });
@@ -59,7 +17,7 @@ describe(`Output File Strategy`, () => {
     test(`should set --symbolsWithOwnFile none'`, async () => {
       ({ project, theme } = await global.bootstrap(
         ['modules/module-1', 'modules/module-2'],
-        { options: { fileStructure: 'symbols', symbolsWithOwnFile: 'none' } },
+        { options: { symbolsWithOwnFile: 'none' } },
       ));
       expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
     });
@@ -68,7 +26,7 @@ describe(`Output File Strategy`, () => {
       ({ project, theme } = await global.bootstrap(
         ['modules/module-1', 'modules/module-2'],
         {
-          options: { fileStructure: 'symbols', symbolsWithOwnFile: ['class'] },
+          options: { symbolsWithOwnFile: ['class'] },
         },
       ));
       expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
@@ -79,7 +37,6 @@ describe(`Output File Strategy`, () => {
         ['modules/module-1', 'modules/module-2'],
         {
           options: {
-            fileStructure: 'symbols',
             symbolsWithOwnFile: ['class', 'interface'],
           },
         },
@@ -92,7 +49,6 @@ describe(`Output File Strategy`, () => {
         ['modules/module-1', 'modules/module-2'],
         {
           options: {
-            fileStructure: 'symbols',
             symbolsWithOwnFile: ['enum', 'type', 'var'],
           },
         },

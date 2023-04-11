@@ -9,6 +9,7 @@ describe(`Hierarchy:`, () => {
     ({ project, context } = await global.bootstrap(['hierarchy.ts'], {
       stubPartials: ['breadcrumbs', 'comment', 'members', 'sources', 'toc'],
     }));
+    context.activeLocation = 'hierarchy.md';
   });
   test(`should compile type hierarchy`, () => {
     const reflection = project.getChildByName('ParentClass');

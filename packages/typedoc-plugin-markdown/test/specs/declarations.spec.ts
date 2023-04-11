@@ -9,6 +9,7 @@ describe(`Declarations:`, () => {
     ({ project, context } = await global.bootstrap(['declarations.ts'], {
       stubPartials: ['sources'],
     }));
+    context.activeLocation = 'declarations.md';
   });
 
   test(`should compile a const with default value`, () => {

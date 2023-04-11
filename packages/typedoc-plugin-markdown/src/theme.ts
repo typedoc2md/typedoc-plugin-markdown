@@ -6,6 +6,7 @@ import {
   ProjectReflection,
   Reflection,
   ReflectionKind,
+  RenderTemplate,
   Renderer,
   Theme,
   UrlMapping,
@@ -61,8 +62,11 @@ export class MarkdownTheme extends Theme {
     return this.getRenderContext().templates.memberTemplate(pageEvent);
   };
 
-  render(page: PageEvent<Reflection>): string {
-    return prettier.format(page.template(page) as string, {
+  render(
+    page: PageEvent<Reflection>,
+    template: RenderTemplate<PageEvent<Reflection>>,
+  ): string {
+    return prettier.format(template(page) as string, {
       parser: 'markdown',
     });
   }

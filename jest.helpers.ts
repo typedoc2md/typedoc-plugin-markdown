@@ -3,7 +3,6 @@ import * as path from 'path';
 
 import {
   Application,
-  PageEvent,
   ProjectReflection,
   RendererEvent,
   TSConfigReader,
@@ -23,8 +22,8 @@ global.bootstrap = async (
   const stubPartials = params?.stubPartials || [];
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
-  app.bootstrap({
-    logger: 'none',
+  await app.bootstrapWithPlugins({
+    logLevel: 'None',
     entryPoints:
       entryPoints.length > 0
         ? entryPoints.map((inputFile: string) =>
@@ -51,7 +50,10 @@ global.bootstrap = async (
   return { project, context, theme };
 };
 
-async function render(project: ProjectReflection, outputDirectory: string) {
+export async function render(
+  project: ProjectReflection,
+  outputDirectory: string,
+): Promise<void> {
   if (!this.prepareTheme()) {
     return;
   }
@@ -61,13 +63,20 @@ async function render(project: ProjectReflection, outputDirectory: string) {
     project,
   );
   output.urls = this.theme!.getUrls(project);
+
   this.trigger(output);
+
+  await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
+  this.preRenderAsyncJobs = [];
+
   if (!output.isDefaultPrevented) {
-    output?.urls?.forEach((mapping: UrlMapping) => {
-      const page = output.createPageEvent(mapping);
-      this.trigger(PageEvent.BEGIN, page);
-      this.trigger(PageEvent.END, page);
+    output.urls?.forEach((mapping: UrlMapping) => {
+      output.createPageEvent(mapping);
     });
+
+    await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
+    this.postRenderAsyncJobs = [];
+
     this.trigger(RendererEvent.END, output);
   }
 }

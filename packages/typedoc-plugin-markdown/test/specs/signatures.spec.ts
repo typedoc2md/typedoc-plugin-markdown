@@ -9,6 +9,7 @@ describe(`Signatures:`, () => {
     ({ project, context } = await global.bootstrap(['signatures.ts'], {
       stubPartials: ['sources'],
     }));
+    context.activeLocation = 'signatures.md';
   });
 
   test(`should compile callable signature'`, () => {

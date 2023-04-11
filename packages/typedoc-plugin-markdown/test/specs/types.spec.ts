@@ -7,6 +7,7 @@ describe(`Types:`, () => {
 
   beforeAll(async () => {
     ({ project, context } = await global.bootstrap(['types.ts']));
+    context.activeLocation = 'types.md';
   });
 
   test(`should compile 'array' type'`, () => {

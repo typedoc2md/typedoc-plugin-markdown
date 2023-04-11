@@ -13,19 +13,10 @@
 
 /**
  * See {@linkcode CommentClass} and CommentClass's {@link CommentClass.comment} property.
- * Also, check out {@link https://www.google.com|Google} and
+ * Also, check out {@link https://www.google.com Google} and
  * {@link https://github.com GitHub}.
  *
  * Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html).
- */
-export const commentWithDocLinks = true;
-
-/**
- * Additionally you can link to other classes, members or functions using double square brackets.
- *
- * - Link to an external reflection: [[CommentClass]]
- * - Link to an internal reflection: [[commentsInReturn]]
- * - Link to an undefined reflection: [[VOID]]
  */
 
 export const commentsWithSymbolLinks = true;

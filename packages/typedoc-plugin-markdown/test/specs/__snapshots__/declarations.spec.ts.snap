@@ -74,7 +74,7 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"> **\`Const\`** *typeof* [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](../variables/__DOUBLE_UNDERSCORES_DECLARATION__.md)
+"> **\`Const\`** *typeof* [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](variables/__DOUBLE_UNDERSCORES_DECLARATION__.md)
 
 Comments
 
