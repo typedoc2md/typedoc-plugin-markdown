@@ -7,8 +7,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- Add objectLiteralTypeDeclarationStyle option ([#362](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/362))
-- Beautify parameter table output of destructured params ([#364](https://github.com/tgreyuk/typedoc-plugin-markdown/pull/364))
+- TypdeDoc 0.24 compatibility fixes.
 
 # [3.14.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.6...typedoc-plugin-markdown@3.14.0) (2022-12-02)
 
