@@ -25,8 +25,6 @@ Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installa
 typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts
 ```
 
-Note that the plugin switches the default HTML theme to the built-in Markdown theme by default. If you want to use the default HTML theme instead, use `--plugin none` to turn the plugin off.
-
 ## Options
 
 This plugin provides additional options beyond the normal options that are [provided by TypeDoc](https://typedoc.org/guides/options/), which are listed below. Note that any vanilla TypeDoc options that customize the HTML theme will be ignored.

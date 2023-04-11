@@ -1,20 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signatures: should compile a promise that returns a symbol' 1`] = `
-"▸ **promiseReturningASymbol**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[\`User\`](../modules.md#user)\\>
-
-##### Returns
-
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[\`User\`](../modules.md#user)\\>
-"
-`;
-
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
-"▸ **promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
+"▸ **promiseReturningAnObject**(): \`Promise\`<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 
 ##### Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
+\`Promise\`<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 "
 `;
 

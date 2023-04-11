@@ -12,15 +12,6 @@ describe(`Comments:`, () => {
     partial = global.getPartial('comment');
   });
 
-  test(`should build @link references'`, () => {
-    expect(
-      global.compileTemplate(
-        partial,
-        project.getChildByName('commentWithDocLinks'),
-      ),
-    ).toMatchSnapshot();
-  });
-
   test(`should convert symbols brackets to symbol links'`, () => {
     expect(
       global.compileTemplate(

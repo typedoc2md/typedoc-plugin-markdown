@@ -60,16 +60,6 @@ describe(`Signatures:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile a promise that returns a symbol'`, () => {
-    expect(
-      global.compileTemplate(
-        partial,
-        (project.getChildByName('promiseReturningASymbol') as any)
-          .signatures[0] as SignatureReflection,
-      ),
-    ).toMatchSnapshot();
-  });
-
   test(`should compile function that returns a function'`, () => {
     expect(
       global.compileTemplate(

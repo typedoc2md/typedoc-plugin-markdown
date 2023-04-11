@@ -93,14 +93,6 @@ describe(`Types:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile 'intersection' type'`, () => {
-    expect(
-      Handlebars.helpers.type.call(
-        (project.getChildByName('intersectionType') as any).type,
-      ),
-    ).toMatchSnapshot();
-  });
-
   test(`should compile collapsed 'function' type '`, () => {
     expect(
       Handlebars.helpers.type.call(

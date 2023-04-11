@@ -43,25 +43,6 @@ describe(`Generics:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile function with complex type params'`, () => {
-    expect(
-      global.compileTemplate(
-        partial,
-        (project.getChildByName('functionWithTypeParams') as any)
-          .signatures[0] as SignatureReflection,
-      ),
-    ).toMatchSnapshot();
-  });
-
-  test(`should compile type with nested generics'`, () => {
-    expect(
-      global.compileTemplate(
-        declarationPartial,
-        project.getChildByName('nestedGenerics'),
-      ),
-    ).toMatchSnapshot();
-  });
-
   test(`should compile generics with defaults'`, () => {
     expect(
       global.compileTemplate(

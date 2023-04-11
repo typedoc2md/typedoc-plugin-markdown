@@ -6,6 +6,7 @@ import {
   ProjectReflection,
   Reflection,
   ReflectionKind,
+  RenderTemplate,
   Renderer,
   RendererEvent,
   Theme,
@@ -21,7 +22,7 @@ import {
   registerPartials,
 } from './render-utils';
 import { formatContents } from './utils';
-export type ObjectLiteralDeclarationStyle = "table" | "list"
+export type ObjectLiteralDeclarationStyle = 'table' | 'list';
 
 export class MarkdownTheme extends Theme {
   allReflectionsHaveOwnDocument!: boolean;
@@ -70,7 +71,9 @@ export class MarkdownTheme extends Theme {
     this.preserveAnchorCasing = this.getOption(
       'preserveAnchorCasing',
     ) as boolean;
-    this.objectLiteralTypeDeclarationStyle = this.getOption("objectLiteralTypeDeclarationStyle") as ObjectLiteralDeclarationStyle;
+    this.objectLiteralTypeDeclarationStyle = this.getOption(
+      'objectLiteralTypeDeclarationStyle',
+    ) as ObjectLiteralDeclarationStyle;
 
     this.listenTo(this.owner, {
       [RendererEvent.BEGIN]: this.onBeginRenderer,
@@ -81,8 +84,11 @@ export class MarkdownTheme extends Theme {
     registerHelpers(this);
   }
 
-  render(page: PageEvent<Reflection>): string {
-    return formatContents(page.template(page) as string);
+  render(
+    page: PageEvent<Reflection>,
+    template: RenderTemplate<PageEvent<Reflection>>,
+  ): string {
+    return formatContents(template(page) as string);
   }
 
   getOption(key: string) {

@@ -12,6 +12,7 @@ import {
   TypeDocReader,
   UrlMapping,
 } from 'typedoc';
+import { load } from 'typedoc-plugin-markdown';
 import { formatContents } from 'typedoc-plugin-markdown/src/utils';
 
 const STUBS_SRC_PATH = path.join(__dirname, 'stub-project', 'src');
@@ -23,10 +24,11 @@ const STUBS_TSCONFIG_PATH = path.join(
 
 global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
   const app = new Application();
+  load(app);
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
   app.bootstrap({
-    logger: 'none',
+    logLevel: 'None',
     entryPoints:
       entryPoints.length > 0
         ? entryPoints.map((inputFile: string) =>
@@ -35,10 +37,6 @@ global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
         : [STUBS_SRC_PATH],
     tsconfig: STUBS_TSCONFIG_PATH,
     ...options,
-    plugin: [
-      ...['typedoc-plugin-markdown', 'typedoc-plugin-mdn-links'],
-      ...(options.plugin ? options.plugin : []),
-    ],
   });
 
   const project = app.convert() as ProjectReflection;
@@ -117,7 +115,10 @@ global.handlebarsOptionsStub = {
   hash: {},
 };
 
-async function render(project: ProjectReflection, outputDirectory: string) {
+export async function render(
+  project: ProjectReflection,
+  outputDirectory: string,
+): Promise<void> {
   if (!this.prepareTheme()) {
     return;
   }
@@ -127,14 +128,20 @@ async function render(project: ProjectReflection, outputDirectory: string) {
     project,
   );
   output.urls = this.theme!.getUrls(project);
-  this.trigger(output);
-  if (!output.isDefaultPrevented) {
-    output?.urls?.forEach((mapping: UrlMapping) => {
-      const page = output.createPageEvent(mapping);
-      this.trigger(PageEvent.BEGIN, page);
 
-      this.trigger(PageEvent.END, page);
+  this.trigger(output);
+
+  await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
+  this.preRenderAsyncJobs = [];
+
+  if (!output.isDefaultPrevented) {
+    output.urls?.forEach((mapping: UrlMapping) => {
+      output.createPageEvent(mapping);
     });
+
+    await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
+    this.postRenderAsyncJobs = [];
+
     this.trigger(RendererEvent.END, output);
   }
 }

@@ -23,7 +23,7 @@ export const bootstrap = (app: Application, options: PluginOptions) => {
 export async function render(
   project: ProjectReflection,
   outputDirectory: string,
-) {
+): Promise<void> {
   if (!this.prepareTheme()) {
     return;
   }
@@ -33,11 +33,19 @@ export async function render(
     project,
   );
   output.urls = this.theme!.getUrls(project);
+
   this.trigger(output);
+
+  await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
+  this.preRenderAsyncJobs = [];
+
   if (!output.isDefaultPrevented) {
-    output?.urls?.forEach((mapping: UrlMapping) => {
-      this.renderDocument(output.createPageEvent(mapping));
+    output.urls?.forEach((mapping: UrlMapping) => {
+      this.renderDocument(...output.createPageEvent(mapping));
     });
+
+    await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
+    this.postRenderAsyncJobs = [];
 
     this.trigger(RendererEvent.END, output);
   }

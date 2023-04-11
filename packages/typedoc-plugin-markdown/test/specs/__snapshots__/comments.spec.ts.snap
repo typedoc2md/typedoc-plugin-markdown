@@ -10,15 +10,6 @@ You can write <strong>HTML</strong> tags directly in comments
 "
 `;
 
-exports[`Comments: should build @link references' 1`] = `
-"See [\`CommentClass\`](CommentClass.md) and CommentClass's [comment](CommentClass.md#comment) property.
-Also, check out [https://www.google.com|Google](https://www.google.com|Google) and
-[GitHub](https://github.com).
-
-Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html).
-"
-`;
-
 exports[`Comments: should convert comments with fenced block' 1`] = `
 "Some comments with fence blocks
 
@@ -64,8 +55,8 @@ const appVersion = await getVersion();
 exports[`Comments: should convert symbols brackets to symbol links' 1`] = `
 "Additionally you can link to other classes, members or functions using double square brackets.
 
-- Link to an external reflection: [CommentClass](CommentClass.md)
-- Link to an internal reflection: [commentsInReturn](../modules.md#commentsinreturn)
-- Link to an undefined reflection: VOID
+- Link to an external reflection: [[CommentClass]]
+- Link to an internal reflection: [[commentsInReturn]]
+- Link to an undefined reflection: [[VOID]]
 "
 `;

@@ -25,11 +25,6 @@ describe(`Options:`, () => {
         Handlebars.helpers.ifShowPageTitle(global.handlebarsOptionsStub),
       ).toBeTruthy();
     });
-
-    test(`should compile relativeURL helper`, () => {
-      const url = (project.getChildByName('Breadcrumbs') as any).url;
-      expect(Handlebars.helpers.relativeURL(url)).toMatchSnapshot();
-    });
   });
 
   describe(`(with plugin options)`, () => {

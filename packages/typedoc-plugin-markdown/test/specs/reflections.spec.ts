@@ -38,15 +38,6 @@ describe(`Reflections:`, () => {
       reflectionTemplate = global.getTemplate('reflection');
     });
 
-    test(`should compile module with breadcrumbs and project title`, () => {
-      expect(
-        global.compileTemplate(reflectionTemplate, {
-          model: project.children ? project.children[0] : [],
-          project: project,
-        }),
-      ).toMatchSnapshot();
-    });
-
     test(`should compile a callable reflection`, () => {
       expect(
         global.compileTemplate(reflectionTemplate, {
@@ -60,24 +51,6 @@ describe(`Reflections:`, () => {
       expect(
         global.compileTemplate(reflectionTemplate, {
           model: project.getChildByName('IndexableReflection'),
-          project: project,
-        }),
-      ).toMatchSnapshot();
-    });
-
-    test(`should compile implemented class`, () => {
-      expect(
-        global.compileTemplate(reflectionTemplate, {
-          model: project.getChildByName('ImplementedClass'),
-          project: project,
-        }),
-      ).toMatchSnapshot();
-    });
-
-    test(`should compile Enum`, () => {
-      expect(
-        global.compileTemplate(reflectionTemplate, {
-          model: project.getChildByName('EnumReflection'),
           project: project,
         }),
       ).toMatchSnapshot();

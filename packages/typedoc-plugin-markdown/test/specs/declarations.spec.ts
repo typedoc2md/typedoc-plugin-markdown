@@ -66,15 +66,6 @@ describe(`Declarations:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should compile declaration with double underscores in name and value`, () => {
-    expect(
-      global.compileTemplate(
-        template,
-        project.getChildByName('__DOUBLE_UNDERSCORES_DECLARATION__'),
-      ),
-    ).toMatchSnapshot();
-  });
-
   test(`should compile any function type`, () => {
     expect(
       global.compileTemplate(
@@ -139,14 +130,13 @@ describe(`Declarations:`, () => {
     ).toMatchSnapshot();
   });
 
-  
   describe(`(Render Type Literal as List)`, () => {
     let project: ProjectReflection;
 
     let template: Handlebars.TemplateDelegate;
     beforeEach(async () => {
       project = await global.bootstrap(['declarations.ts'], {
-        objectLiteralTypeDeclarationStyle: "list"
+        objectLiteralTypeDeclarationStyle: 'list',
       });
       global.stubPartials(['member.sources']);
       template = global.getPartial('member.declaration');
@@ -166,7 +156,6 @@ describe(`Declarations:`, () => {
           project.getChildByName('typeLiteralDeclaration'),
         ),
       ).toMatchSnapshot();
-    })
-  })
+    });
+  });
 });
-

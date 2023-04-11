@@ -5,8 +5,6 @@ exports[`Types: should compile 'array' type' 1`] = `
 "
 `;
 
-exports[`Types: should compile 'intersection' type' 1`] = `"[\`IntersectionClassA\`](IntersectionClassA.md) & [\`IntersectionClassB\`](IntersectionClassB.md)"`;
-
 exports[`Types: should compile 'stringLiteral' type' 1`] = `
 "\`\`"blue"\`\`
 "
@@ -44,6 +42,6 @@ exports[`Types: should compile intrinsic type' 1`] = `"\`string\`"`;
 
 exports[`Types: should compile unionType with object literal type ' 1`] = `"\`string\` \\| { \`z\`: \`string\`  }"`;
 
-exports[`Types: should resolve external refs with type params' 1`] = `"\`ClassWithTypeParams\`<[\`HTMLElement\`]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement ), [\`Error\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error )\\>"`;
+exports[`Types: should resolve external refs with type params' 1`] = `"\`ClassWithTypeParams\`<\`HTMLElement\`, \`Error\`\\>"`;
 
-exports[`Types: should resolve external refs' 1`] = `"[\`HTMLElement\`]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement )"`;
+exports[`Types: should resolve external refs' 1`] = `"\`HTMLElement\`"`;

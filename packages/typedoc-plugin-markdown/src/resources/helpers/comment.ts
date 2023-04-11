@@ -25,7 +25,7 @@ export default function (theme: MarkdownTheme) {
                 const url =
                   typeof part.target === 'string'
                     ? part.target
-                    : Handlebars.helpers.relativeURL(part.target.url);
+                    : Handlebars.helpers.relativeURL((part.target as any).url);
                 const wrap = part.tag === '@linkcode' ? '`' : '';
                 result.push(
                   url ? `[${wrap}${part.text}${wrap}](${url})` : part.text,
