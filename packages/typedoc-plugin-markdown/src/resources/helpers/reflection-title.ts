@@ -8,7 +8,7 @@ export default function (theme: MarkdownTheme) {
     'reflectionTitle',
     function (this: PageEvent<any>, shouldEscape = true) {
       const title: string[] = [''];
-      if (this.model && this.url !== this.project.url) {
+      if (this.model?.kind && this.url !== this.project.url) {
         title.push(`${ReflectionKind.singularString(this.model.kind)}: `);
       }
       if (this.url === this.project.url) {

@@ -10,7 +10,7 @@ exports[`Reflections: (header) should compile template with breadcrumbs and with
 `;
 
 exports[`Reflections: (template) should compile a callable reflection 1`] = `
-"# CallableReflection
+"# Interface: CallableReflection
 
 ## Callable
 
@@ -23,7 +23,7 @@ exports[`Reflections: (template) should compile a callable reflection 1`] = `
 `;
 
 exports[`Reflections: (template) should compile an indexable reflection 1`] = `
-"# IndexableReflection
+"# Interface: IndexableReflection
 
 ## Indexable
 
