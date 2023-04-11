@@ -24,11 +24,11 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": ">=0.23.0",
-    "typedoc-plugin-markdown": ">=3.13.0"
+    "typedoc": ">=0.24.0",
+    "typedoc-plugin-markdown": ">=3.15.0"
   },
   "devDependencies": {
-    "typedoc-plugin-markdown": "^3.13.0"
+    "typedoc-plugin-markdown": "^3.15.0"
   },
   "keywords": [
     "typedoc",
