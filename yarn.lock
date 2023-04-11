@@ -17182,7 +17182,7 @@
 
 "typedoc-plugin-markdown@*", "typedoc-plugin-markdown@^3.13.0", "typedoc-plugin-markdown@^3.15.0", "typedoc-plugin-markdown@>=3.15.0", "typedoc-plugin-markdown@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/packages/typedoc-plugin-markdown":
   "resolved" "file:packages/typedoc-plugin-markdown"
-  "version" "3.15.0"
+  "version" "3.15.1"
   dependencies:
     "handlebars" "^4.7.7"
 
