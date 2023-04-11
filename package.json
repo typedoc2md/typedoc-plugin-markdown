@@ -30,7 +30,6 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.1",
-    "typedoc-plugin-mdn-links": "^2.0.0",
     "typescript": "^4.9.3"
   }
 }
