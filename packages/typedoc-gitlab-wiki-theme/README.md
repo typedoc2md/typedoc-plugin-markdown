@@ -20,7 +20,7 @@ npm install typedoc typedoc-plugin-markdown typedoc-gitlab-wiki-theme --save-dev
 ## Usage
 
 ```bash
-$ npx typedoc --theme gitlab-wiki [args]
+$ npx typedoc --plugin typedoc-plugin-markdown --plugin typedoc-gitlab-wiki-theme [args]
 ```
 
 ## Options
