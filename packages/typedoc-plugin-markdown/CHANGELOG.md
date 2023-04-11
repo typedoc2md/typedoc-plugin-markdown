@@ -1,5 +1,19 @@
 # Changelog
 
+## 4.0.0-next.4
+
+### Patch Changes
+
+- Mark final default parameters as optional ([#396](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/396))
+
+- Run prettier on output files ([#398](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/398))
+
+- Replace new lines in tables with `<br />` ([#331](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/331))
+
+- TypdeDoc 0.24 compatibility fixes.
+
+- Escape curly braces in type declarations
+
 ## 4.0.0-next.3
 
 ### Patch Changes
