@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - next
+      - next-dev
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
