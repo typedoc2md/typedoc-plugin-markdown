@@ -17174,7 +17174,7 @@
 
 "typedoc-gitlab-wiki-theme@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/packages/typedoc-gitlab-wiki-theme":
   "resolved" "file:packages/typedoc-gitlab-wiki-theme"
-  "version" "1.0.0"
+  "version" "1.1.0"
 
 "typedoc-hugo-theme@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/packages/typedoc-hugo-theme":
   "resolved" "file:packages/typedoc-hugo-theme"
