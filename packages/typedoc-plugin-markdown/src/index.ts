@@ -42,6 +42,13 @@ export function load(app: Application) {
     defaultValue: 'all',
   });
 
+  app.options.addDeclaration({
+    name: 'groupBySymbols',
+    help: '[Markdown Plugin] Groups symbols by headings if applicable e.g Classes, Functions. If set to false all symbols will render on the same level. Defaults to `true`',
+    type: ParameterType.Boolean,
+    defaultValue: true,
+  });
+
   /**
    * ui options
    */

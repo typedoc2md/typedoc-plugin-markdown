@@ -4,7 +4,7 @@ import {
   ReferenceType,
   SignatureReflection,
 } from 'typedoc';
-import { link } from '../support/els';
+import { heading, link } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 import { escapeChars } from '../support/utils';
@@ -12,30 +12,27 @@ import { escapeChars } from '../support/utils';
 export function sources(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection | SignatureReflection,
+  headingLevel: number,
 ) {
   const md: string[] = [];
 
   if (reflection.implementationOf) {
-    md.push(
-      `Implementation of: ${typeAndParent(
-        context,
-        reflection.implementationOf,
-      )}`,
-    );
+    md.push(heading(headingLevel, 'Implementation of'));
+    md.push(typeAndParent(context, reflection.implementationOf));
   }
 
   if (reflection.inheritedFrom) {
-    md.push(
-      `Inherited from: ${typeAndParent(context, reflection.inheritedFrom)}`,
-    );
+    md.push(heading(headingLevel, 'Inherited from'));
+    md.push(typeAndParent(context, reflection.inheritedFrom));
   }
 
   if (reflection.overwrites) {
-    md.push(`Overrides: ${typeAndParent(context, reflection.overwrites)}`);
+    md.push(heading(headingLevel, 'Overrides'));
+    md.push(typeAndParent(context, reflection.overwrites));
   }
 
   if (reflection.sources) {
-    const definedInMd = [`Defined in: `];
+    const definedInMd = [heading(headingLevel, 'Defined in')];
 
     reflection.sources.forEach((source) => {
       if (source.url) {
@@ -46,7 +43,7 @@ export function sources(
         definedInMd.push(`${escapeChars(source.fileName)}:${source.line}`);
       }
     });
-    md.push(definedInMd.join(' '));
+    md.push(definedInMd.join('\n'));
   }
   return md.join('\n\n');
 }

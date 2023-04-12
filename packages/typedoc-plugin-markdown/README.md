@@ -5,16 +5,18 @@ A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeS
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
-## What it does?
+## What does it do?
 
 The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
 
-Useful if documentation is required to be included in project README files, Wikis and static site generators.
+By default, TypeDoc will render API documentation as a webpage, e.g. HTML files.
+
+The plugin is useful if documentation is required to be included in project README files, Wikis and static site generators.
 
 ## Installation
 
 ```bash
-npm install --save-dev typedoc typedoc-plugin-markdown@next
+npm install typedoc-plugin-markdown@next --save-dev
 ```
 
 ## Usage
@@ -24,8 +26,6 @@ Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installa
 ```bash
 typedoc --plugin typedoc-plugin-markdown
 ```
-
-The `--plugin` arg is optional (all plugins are loaded by default unless set). Use `--plugin none` to switch the plugin off.
 
 ## Options
 
@@ -53,6 +53,8 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print reflection hierarchy. Defaults to `false`.
 - **`--enableLongTitles`**<br>
   Display full name including module paths in page titles. Defaults to `false`.
+- **`--groupBySymbols`**<br>
+  Groups symbols by headings (if applicable) e.g Classes, Functions. If set to `false` all symbols will render on the same level. Defaults to `true`.
 
 ### Frontmatter options
 

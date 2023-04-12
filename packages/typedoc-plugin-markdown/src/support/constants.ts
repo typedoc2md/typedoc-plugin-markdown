@@ -9,3 +9,12 @@ export const PLURALS = {
   [ReflectionKind.EnumMember]: 'Enumeration members',
   [ReflectionKind.TypeAlias]: 'Type aliases',
 };
+
+export const SYMBOLS_WITH_DOCUMENTS = [
+  ReflectionKind.Class,
+  ReflectionKind.Interface,
+  ReflectionKind.Enum,
+  ReflectionKind.Function,
+  ReflectionKind.Variable,
+  ReflectionKind.TypeAlias,
+];

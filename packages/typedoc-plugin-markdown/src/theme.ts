@@ -141,7 +141,9 @@ export class MarkdownTheme extends Theme {
         fragment = reflection.getAlias();
       } else {
         fragment = !isModuleOrNamespace
-          ? `${mapping.directory}/${reflection.getAlias()}`
+          ? `${mapping.directory}/${ReflectionKind.singularString(
+              reflection.kind,
+            ).toLowerCase()}.${reflection.getAlias()}`
           : reflection.getAlias();
       }
 

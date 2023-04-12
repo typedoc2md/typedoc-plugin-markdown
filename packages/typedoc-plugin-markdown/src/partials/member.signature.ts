@@ -10,6 +10,18 @@ export function signatureMember(
 ) {
   const md: string[] = [];
 
+  /*if (signature.parent?.kindOf(ReflectionKind.Constructor)) {
+    md.push(
+      heading(
+        getReflectionHeadingLevel(
+          signature,
+          context.getOption('groupBySymbols'),
+        ),
+        `new ${signature.parent?.name}()`,
+      ),
+    );
+  }*/
+
   if (parentHeadingLevel) {
     md.push(signatureBody(context, signature, parentHeadingLevel));
   } else {
@@ -29,7 +41,10 @@ function signatureBody(
   const headingLevel =
     (parentHeadingLevel
       ? parentHeadingLevel
-      : getReflectionHeadingLevel(signature.parent)) + 1;
+      : getReflectionHeadingLevel(
+          signature.parent,
+          context.getOption('groupBySymbols'),
+        )) + 1;
 
   if (signature.comment) {
     md.push(context.partials.comment(signature.comment, headingLevel));
@@ -79,7 +94,7 @@ function signatureBody(
       }
     }
     if (!parentHeadingLevel) {
-      md.push(context.partials.sources(signature));
+      md.push(context.partials.sources(signature, headingLevel));
     }
   }
 

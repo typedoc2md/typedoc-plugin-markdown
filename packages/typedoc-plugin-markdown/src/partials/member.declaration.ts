@@ -9,7 +9,11 @@ export function declarationMember(
 ) {
   const md: string[] = [];
 
-  const headingLevel = getReflectionHeadingLevel(declaration) + 1;
+  const headingLevel =
+    getReflectionHeadingLevel(
+      declaration,
+      context.getOption('groupBySymbols'),
+    ) + 1;
 
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
@@ -57,7 +61,7 @@ export function declarationMember(
     }
   }
 
-  md.push(context.partials.sources(declaration));
+  md.push(context.partials.sources(declaration, headingLevel));
 
   return md.join('\n\n');
 }

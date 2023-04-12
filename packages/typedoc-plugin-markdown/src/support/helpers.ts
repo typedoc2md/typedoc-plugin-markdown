@@ -9,17 +9,9 @@ import {
 import { backTicks } from './els';
 import { escapeChars } from './utils';
 
-/**
- * Determines if current signature is a constructor
- */
-export const isConstructor = (
-  signature: DeclarationReflection | SignatureReflection,
-) => {
-  return signature.parent?.kindOf(ReflectionKind.Constructor);
-};
-
 export function getIndexHeadingLevel(
   reflection: DeclarationReflection | ProjectReflection,
+  groupBySymbols: boolean,
 ) {
   if (
     reflection.kindOf([
@@ -31,18 +23,22 @@ export function getIndexHeadingLevel(
   ) {
     return 2;
   }
-  return 4;
+  return groupBySymbols ? 4 : 3;
 }
 
-export function getGroupHeadingLevel(container: ContainerReflection) {
+export function getGroupHeadingLevel(
+  container: ContainerReflection,
+  groupBySymbols: boolean,
+) {
   if (container.kindOf(ReflectionKind.Project)) {
     return 2;
   }
-  return container.hasOwnDocument ? 2 : 4;
+  return container.hasOwnDocument ? 2 : groupBySymbols ? 4 : 3;
 }
 
 export function getReflectionHeadingLevel(
   reflection: DeclarationReflection | SignatureReflection,
+  groupBySymbols: boolean,
 ) {
   if (reflection.hasOwnDocument) {
     return 1;
@@ -51,15 +47,12 @@ export function getReflectionHeadingLevel(
     return 3;
   }
   if (reflection.kindOf(ReflectionKind.Constructor)) {
-    return reflection.parent?.hasOwnDocument ? 2 : 4;
+    return reflection.parent?.hasOwnDocument ? 3 : 4;
   }
-  return reflection.parent?.hasOwnDocument ? 3 : 5;
-}
-
-export function getMemberHeadingLevel(
-  reflection: DeclarationReflection | SignatureReflection,
-) {
-  return getReflectionHeadingLevel(reflection) + 1;
+  if (groupBySymbols) {
+    return reflection.parent?.hasOwnDocument ? 3 : 5;
+  }
+  return reflection.parent?.hasOwnDocument ? 2 : 4;
 }
 
 export function getReflectionTitle(

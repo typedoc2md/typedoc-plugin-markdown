@@ -1,5 +1,6 @@
-import { ContainerReflection, ReflectionKind } from 'typedoc';
-import { heading, horizontalRule } from '../support/els';
+import { ContainerReflection } from 'typedoc';
+import { SYMBOLS_WITH_DOCUMENTS } from '../support/constants';
+import { heading } from '../support/els';
 import { getGroupHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -22,33 +23,28 @@ export function members(
     container.groups
       ?.filter((group) => !group.allChildrenHaveOwnDocument())
       .forEach((group) => {
-        const headingLevel = getGroupHeadingLevel(container);
+        const headingLevel = getGroupHeadingLevel(
+          container,
+          context.getOption('groupBySymbols'),
+        );
         if (group.categories) {
+          md.push(heading(headingLevel, group.title));
           group.categories.forEach((groupItem) =>
             groupItem.children.forEach((item) => {
               md.push(context.partials.member(item));
             }),
           );
         } else {
-          md.push(heading(headingLevel, group.title));
+          if (
+            context.getOption('groupBySymbols') ||
+            SYMBOLS_WITH_DOCUMENTS.includes(container.kind)
+          ) {
+            md.push(heading(headingLevel, group.title));
+          }
           group.children
             .filter((item) => !item.hasOwnDocument)
             .forEach((groupChild, index) => {
               md.push(context.partials.member(groupChild));
-              if (index !== group.children.length - 1) {
-                if (
-                  [
-                    ReflectionKind.Class,
-                    ReflectionKind.Interface,
-                    ReflectionKind.Enum,
-                    ReflectionKind.Function,
-                    ReflectionKind.Variable,
-                    ReflectionKind.TypeAlias,
-                  ].includes(groupChild.kind)
-                ) {
-                  md.push(horizontalRule());
-                }
-              }
             });
         }
       });

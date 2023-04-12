@@ -16,7 +16,10 @@ export function member(
 ) {
   const md: string[] = [];
 
-  const headingLevel = getReflectionHeadingLevel(reflection);
+  const headingLevel = getReflectionHeadingLevel(
+    reflection,
+    context.getOption('groupBySymbols'),
+  );
 
   if (context.getOption('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);

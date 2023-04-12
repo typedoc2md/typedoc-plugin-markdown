@@ -20,42 +20,48 @@ export function toc(
     group.allChildrenHaveOwnDocument(),
   );
 
-  function pushGroup(group: ReflectionGroup, md: string[]) {
+  function pushGroup(group: ReflectionGroup) {
     const children = group.children.map(
       (child) =>
         `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
     );
-    md.push(children.join('\n'));
+    return children.join('\n');
   }
 
   if (
     (!hideInPageTOC && reflection.groups) ||
     (isVisible && reflection.groups)
   ) {
-    const headingLevel = getIndexHeadingLevel(reflection);
+    const headingLevel = getIndexHeadingLevel(
+      reflection,
+      context.getOption('groupBySymbols'),
+    );
     const subHeadingLevel = headingLevel + 1;
 
     md.push(heading(headingLevel, 'Index') + '\n\n');
 
-    reflection.groups?.forEach((group) => {
-      const groupTitle = group.title;
-      if (group.categories) {
-        group.categories.forEach((category) => {
-          md.push(
-            heading(subHeadingLevel, `${category.title} ${groupTitle}`) +
-              '\n\n',
-          );
-          pushGroup(category as any, md);
-          md.push('\n');
-        });
-      } else {
-        if (!hideInPageTOC || group.allChildrenHaveOwnDocument()) {
-          md.push(heading(subHeadingLevel, groupTitle) + '\n\n');
-          pushGroup(group, md);
-          md.push('\n');
+    if (reflection.categories?.length) {
+      reflection.categories.forEach((item) => {
+        md.push(heading(subHeadingLevel, item.title));
+        md.push(pushGroup(item));
+      });
+    } else if (reflection.groups?.length) {
+      reflection.groups.forEach((item) => {
+        if (item.categories) {
+          md.push(heading(subHeadingLevel, item.title));
+          item.categories.forEach((item2) => {
+            md.push(heading(subHeadingLevel + 1, `${item2.title}`));
+            md.push(pushGroup(item2));
+          });
+        } else {
+          if (!hideInPageTOC || item.allChildrenHaveOwnDocument()) {
+            md.push(heading(subHeadingLevel, item.title) + '\n\n');
+            md.push(pushGroup(item));
+            md.push('\n');
+          }
         }
-      }
-    });
+      });
+    }
   }
   return md.length > 0 ? md.join('\n') : '';
 }

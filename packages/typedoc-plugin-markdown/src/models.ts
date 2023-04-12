@@ -15,6 +15,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   longTitles: boolean;
   symbolsWithOwnFile: string | string[];
   typeDeclarationStyle: 'list' | 'table';
+  groupBySymbols: boolean;
 }
 
 export interface TemplateMapping {

@@ -2,6 +2,7 @@
   "entryPoints": [
     "./src/modules/module-1",
     "./src/modules/module-2",
+    "./src/categories.ts",
     "./src/classes.ts",
     "./src/declarations.ts",
     "./src/comments.ts",
@@ -21,6 +22,6 @@
   "tsconfig": "./tsconfig.json",
   "cleanOutputDir": true,
   "githubPages": false,
-
-  "sort": ["source-order"]
+  "sort": ["source-order"],
+  "categorizeByGroup": true
 }
