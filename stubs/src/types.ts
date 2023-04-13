@@ -20,10 +20,17 @@ export type unionTypeWithSymbols =
   | 'string'
   | 'strong|with|pipes'
   | 'type`with`backticks'
+  | '<foo>'
   | '*';
 
 export type unionTypeWithSymbolsDeclarations = {
-  bar: ' ' | 'string' | 'strong|with|pipes' | 'type`with`backticks' | '*';
+  bar:
+    | ' '
+    | 'string'
+    | 'strong|with|pipes'
+    | 'type`with`backticks'
+    | '<foo>'
+    | '*';
 };
 
 export let literalType: {

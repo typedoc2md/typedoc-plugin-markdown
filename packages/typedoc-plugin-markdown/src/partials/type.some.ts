@@ -15,7 +15,7 @@ import {
   UnknownType,
 } from 'typedoc';
 import { Collapse } from '../models';
-import { backTicks } from '../support/els';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function someType(
@@ -79,5 +79,5 @@ export function someType(
     return '' + context.partials.unknownType(someType);
   }
 
-  return backTicks(someType?.toString());
+  return '' + escapeChars(someType?.toString());
 }

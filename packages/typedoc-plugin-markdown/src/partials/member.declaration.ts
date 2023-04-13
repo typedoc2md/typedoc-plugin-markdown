@@ -1,5 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
-import { codeBlock, heading } from '../support/els';
+import { heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -19,11 +19,7 @@ export function declarationMember(
     ?.declaration as DeclarationReflection;
 
   if (declaration.type) {
-    md.push(`> ${context.partials.declarationMemberDef(declaration)}`);
-
-    if (typeDeclaration?.children) {
-      md.push(codeBlock(context.partials.someType(declaration.type)));
-    }
+    md.push(`${context.partials.declarationMemberDefinition(declaration)}`);
   }
 
   if (declaration.comment) {

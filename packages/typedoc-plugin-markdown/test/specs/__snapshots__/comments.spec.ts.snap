@@ -43,7 +43,7 @@ const appVersion = await getVersion();
 `;
 
 exports[`Comments: should convert symbols brackets to symbol links' 1`] = `
-"See [\`CommentClass\`](classes/CommentClass.md) and CommentClass's [comment](classes/CommentClass.md#comment) property.
+"See [\`CommentClass\`](classes/commentclass.md) and CommentClass's [comment](classes/commentclass.md#comment) property.
 Also, check out [Google](https://www.google.com) and
 [GitHub](https://github.com).
 

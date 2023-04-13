@@ -44,7 +44,7 @@ export function getReflectionHeadingLevel(
     return 1;
   }
   if (reflection?.parent?.kindOf(ReflectionKind.Project)) {
-    return 3;
+    return groupBySymbols ? 3 : 2;
   }
   if (reflection.kindOf(ReflectionKind.Constructor)) {
     return reflection.parent?.hasOwnDocument ? 3 : 4;

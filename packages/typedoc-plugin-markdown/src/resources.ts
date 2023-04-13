@@ -37,12 +37,12 @@ import { commentParts } from './partials/comment.parts';
 import { comment } from './partials/comment';
 import { frontmatter } from './partials/frontmatter';
 import { hierarchy } from './partials/hierarchy';
-import { declarationMemberDef } from './partials/member.declaration.def';
+import { declarationMemberDefinition } from './partials/member.declaration.definition';
 import { declarationMember } from './partials/member.declaration';
 import { indexSignatureTitle } from './partials/member.indexsignature.title';
 import { referenceMember } from './partials/member.reference';
 import { reflectionMember } from './partials/member.reflection';
-import { signatureTitle } from './partials/member.signature.title';
+import { signatureMemberDefinition } from './partials/member.signature.definition';
 import { signatureMember } from './partials/member.signature';
 import { member } from './partials/member';
 import { typeDeclarationList } from './partials/member.typedeclaration.list';
@@ -58,7 +58,7 @@ import { arrayType } from './partials/type.array';
 import { conditionalType } from './partials/type.conditional';
 import { declarationType } from './partials/type.declaration';
 import { functionType } from './partials/type.function';
-import { indexAccessType } from './partials/type.indexAccess';
+import { indexAccessType } from './partials/type.index-access';
 import { inferredType } from './partials/type.inferred';
 import { intersectionType } from './partials/type.intersection';
 import { intrinsicType } from './partials/type.intrinsic';
@@ -68,7 +68,7 @@ import { referenceType } from './partials/type.reference';
 import { reflectionType } from './partials/type.reflection';
 import { someType } from './partials/type.some';
 import { tupleType } from './partials/type.tuple';
-import { typeOperatorType } from './partials/type.typeOperator';
+import { typeOperatorType } from './partials/type.type-operator';
 import { unionType } from './partials/type.union';
 import { unknownType } from './partials/type.unknown';
 
@@ -88,12 +88,12 @@ export type Partials = {
   comment: (comment: Comment, headingLevel?: number |  undefined) => string;
   frontmatter: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
-  declarationMemberDef: (reflection: DeclarationReflection) => string;
+  declarationMemberDefinition: (reflection: DeclarationReflection) => string;
   declarationMember: (declaration: DeclarationReflection) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
   referenceMember: (props: ReferenceReflection) => string;
   reflectionMember: (reflection: DeclarationReflection) => string;
-  signatureTitle: (signature: SignatureReflection, accessor?: string |  undefined) => string;
+  signatureMemberDefinition: (signature: SignatureReflection, accessor?: string |  undefined) => string;
   signatureMember: (signature: SignatureReflection, parentHeadingLevel?: number |  undefined) => string;
   member: (reflection: DeclarationReflection) => string;
   typeDeclarationList: (props: DeclarationReflection[]) => string;
@@ -137,12 +137,12 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   comment: bind(comment, context),
   frontmatter: bind(frontmatter, context),
   hierarchy: bind(hierarchy, context),
-  declarationMemberDef: bind(declarationMemberDef, context),
+  declarationMemberDefinition: bind(declarationMemberDefinition, context),
   declarationMember: bind(declarationMember, context),
   indexSignatureTitle: bind(indexSignatureTitle, context),
   referenceMember: bind(referenceMember, context),
   reflectionMember: bind(reflectionMember, context),
-  signatureTitle: bind(signatureTitle, context),
+  signatureMemberDefinition: bind(signatureMemberDefinition, context),
   signatureMember: bind(signatureMember, context),
   member: bind(member, context),
   typeDeclarationList: bind(typeDeclarationList, context),

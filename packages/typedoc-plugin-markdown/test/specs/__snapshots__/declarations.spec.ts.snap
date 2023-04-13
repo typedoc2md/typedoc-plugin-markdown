@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-"> **\`Const\`** \`"hello"\`
+">  \`Const\` **stringConstWithDefaultValue**: "hello"  = \`'hello'\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile a let with default value 1`] = `
-"> \`string\`  = \`'hello'\`
+">  **stringLetWithDefaultValue**: \`string\`  = \`'hello'\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile an undefined declaration 1`] = `
-"> \`number\`
+">  **undefinedNumberDeclaration**: \`number\`
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-"> \\<\`A\`\\> \`Function\`
+">  **AnyFunctionType**: \\<\`A\`\\> \`Function\`
 
 ## Type parameters
 
@@ -28,16 +28,12 @@ exports[`Declarations: should compile any function type 1`] = `
 
 ## Type declaration
 
-### Signature
-
-\`\`\`ts
-(...input: any[]): A;
-\`\`\`
+> (...\`input\`: \`any\`[]): \`A\`;
 
 ### Parameters
 
 
-| Name | Type |
+| Parameter | Type |
 | :------ | :------ |
 | \`...input\` | \`any\`[] |
 
@@ -50,15 +46,7 @@ exports[`Declarations: should compile any function type 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with accessors 1`] = `
-"> \`object\`
-
-\`\`\`ts
-{
-    prop: string;
-    get getMe(): Promise<string>;
-    set setMe(x: string): void;
-}
-\`\`\`
+">  **getterAndSetter**: \`object\`
 
 ## Type declaration
 
@@ -74,7 +62,7 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"> **\`Const\`** *typeof* [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](variables/__DOUBLE_UNDERSCORES_DECLARATION__.md)
+">  \`Const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: *typeof* [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](variables/double-underscores-declaration.md)
 
 Comments
 
@@ -82,13 +70,13 @@ Comments
 `;
 
 exports[`Declarations: should compile enum declaration 1`] = `
-"> \`1\`
+">  **Down**: 1
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile enum declaration with defaults 1`] = `
-"> \`"East"\`
+">  **East**: "East"
 
 [partial: sources]"
 `;
@@ -96,14 +84,7 @@ exports[`Declarations: should compile enum declaration with defaults 1`] = `
 exports[`Declarations: should compile function declaration 1`] = `"[partial: sources]"`;
 
 exports[`Declarations: should compile indexable declaration 1`] = `
-"> \`object\`
-
-\`\`\`ts
-{
-    [index: number]: string; 
-    arg1: string;
-}
-\`\`\`
+">  **indexableDeclaration**: \`object\`
 
 ## Index signature
 
@@ -121,45 +102,23 @@ exports[`Declarations: should compile indexable declaration 1`] = `
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-"> **\`Const\`** \`object\`
-
-\`\`\`ts
-{
-    Prop1: "Prop1";
-    Prop2: "Prop2";
-    Prop3: "Prop3";
-}
-\`\`\`
+">  \`Const\` **objectLiteralAsConstDeclaration**: \`object\`
 
 ## Type declaration
 
 
 | Member | Type |
 | :------ | :------ |
-| \`Prop1\` | \`"Prop1"\` |
-| \`Prop2\` | \`"Prop2"\` |
-| \`Prop3\` | \`"Prop3"\` |
+| \`Prop1\` | "Prop1" |
+| \`Prop2\` | "Prop2" |
+| \`Prop3\` | "Prop3" |
 
 
 [partial: sources]"
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-"> **\`Const\`** \`object\`
-
-\`\`\`ts
-{
-    valueA: number;
-    valueB: boolean;
-    valueC: {};
-    valueX: {
-        valueA: number[];
-        valueZ: string;
-    };
-    valueY: () => string;
-    valueZ: string;
-}
-\`\`\`
+">  \`Const\` **objectLiteralDeclaration**: \`object\`
 
 Comments for object literal
 
@@ -182,25 +141,7 @@ Comments for object literal
 `;
 
 exports[`Declarations: should compile type literal declaration 1`] = `
-"> \`object\`
-
-\`\`\`ts
-{
-    valueA?: number;
-    valueB?: boolean;
-    valueC: {};
-    valueX: {
-        valueA: number[];
-        valueY: (z: string) => {
-            a: string;
-            b: string;
-        };
-        valueZ: string;
-    };
-    valueY: () => string;
-    valueZ: string;
-}
-\`\`\`
+">  **typeLiteralDeclaration**: \`object\`
 
 ## Type declaration
 
@@ -212,7 +153,7 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 | \`valueC\` | \\{} | - |
 | \`valueX\` | \`object\` | Comment for valueX |
 | \`valueX.valueA\` | \`number\`[] | - |
-| \`valueX.valueY\` | (\`z\`: \`string\`) => \\{<br />    \`a\`: \`string\`;<br />    \`b\`: \`string\`;<br />} | Nested comment for valueX.valueY |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => \\{\`a\`: \`string\`;<br />\`b\`: \`string\`;} | Nested comment for valueX.valueY |
 | \`valueX.valueZ\` | \`string\` | Nested comment for valueX.valueZ |
 | \`valueY\` | () => \`string\` | - |
 | \`valueZ\` | \`string\` | Comment for valueZ |

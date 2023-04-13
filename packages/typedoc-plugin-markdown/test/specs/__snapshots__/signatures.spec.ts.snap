@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signatures: should compile a promise that returns a symbol' 1`] = `
-"## Signature
-
-\`\`\`ts
-promiseReturningASymbol(): Promise<any>;
-\`\`\`
+"> **promiseReturningASymbol**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>;
 
 ## Returns
 
@@ -15,31 +11,19 @@ promiseReturningASymbol(): Promise<any>;
 `;
 
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
-"## Signature
-
-\`\`\`ts
-promiseReturningAnObject(): Promise<{
-    data: string;
-    id: string;
-}>;
-\`\`\`
+"> **promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{\`data\`: \`string\`;
+\`id\`: \`string\`;}\\>;
 
 ## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{
-    \`data\`: \`string\`;
-    \`id\`: \`string\`;
-}\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{\`data\`: \`string\`;
+\`id\`: \`string\`;}\\>
 
 [partial: sources]"
 `;
 
 exports[`Signatures: should compile callable signature' 1`] = `
-"## Signature
-
-\`\`\`ts
-CallableSignature(): string;
-\`\`\`
+"> **CallableSignature**(): \`string\`;
 
 ## Returns
 
@@ -49,24 +33,20 @@ CallableSignature(): string;
 `;
 
 exports[`Signatures: should compile class with constructor' 1`] = `
-"### Signature
+"> **new ClassWithConstructor**(\`x\`: \`string\`, \`y\`: \`string\`): [\`ClassWithConstructor\`](classes/classwithconstructor.md);
 
-\`\`\`ts
-new ClassWithConstructor(x: string, y: string): ClassWithConstructor;
-\`\`\`
-
-### Parameters
+#### Parameters
 
 
-| Name | Type |
+| Parameter | Type |
 | :------ | :------ |
 | \`x\` | \`string\` |
 | \`y\` | \`string\` |
 
 
-### Returns
+#### Returns
 
-[\`ClassWithConstructor\`](classes/ClassWithConstructor.md)
+[\`ClassWithConstructor\`](classes/classwithconstructor.md)
 
 [partial: sources]"
 `;
@@ -76,11 +56,7 @@ exports[`Signatures: should compile function that returns a function' 1`] = `
 
 
 
-## Signature
-
-\`\`\`ts
-functionReturningAFunction(): Function;
-\`\`\`
+> **functionReturningAFunction**(): \`Function\`;
 
 ## Returns
 
@@ -88,11 +64,7 @@ functionReturningAFunction(): Function;
 
 Return comments
 
-### Signature
-
-\`\`\`ts
-<T>(x: string): boolean;
-\`\`\`
+> \\<T\\>(\`x\`: \`string\`): \`boolean\`;
 
 ### Type parameters
 
@@ -102,7 +74,7 @@ Return comments
 ### Parameters
 
 
-| Name | Type |
+| Parameter | Type |
 | :------ | :------ |
 | \`x\` | \`string\` |
 
@@ -119,11 +91,7 @@ exports[`Signatures: should compile function that returns an object' 1`] = `
 
 
 
-## Signature
-
-\`\`\`ts
-functionReturningAnObject(): object;
-\`\`\`
+> **functionReturningAnObject**(): \`object\`;
 
 ## Returns
 
@@ -144,16 +112,12 @@ Return comments
 exports[`Signatures: should compile function with nested typen params' 1`] = `
 "Some nested params.
 
-## Signature
-
-\`\`\`ts
-functionWithNestedParams(params: object, context: any): boolean;
-\`\`\`
+> **functionWithNestedParams**(\`params\`: \`object\`, \`context\`: \`any\`): \`boolean\`;
 
 ## Parameters
 
 
-| Name | Type | Description |
+| Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`params\` | \`object\` | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
@@ -174,16 +138,12 @@ functionWithNestedParams(params: object, context: any): boolean;
 `;
 
 exports[`Signatures: should compile function with reference type' 1`] = `
-"## Signature
-
-\`\`\`ts
-functionWithReferenceType(descriptor: TypedPropertyDescriptor<any>): boolean;
-\`\`\`
+"> **functionWithReferenceType**(\`descriptor\`: \`TypedPropertyDescriptor\`\\<\`any\`\\>): \`boolean\`;
 
 ## Parameters
 
 
-| Name | Type |
+| Parameter | Type |
 | :------ | :------ |
 | \`descriptor\` | \`TypedPropertyDescriptor\`\\<\`any\`\\> |
 
@@ -198,16 +158,12 @@ functionWithReferenceType(descriptor: TypedPropertyDescriptor<any>): boolean;
 exports[`Signatures: should compile named parameters with comments' 1`] = `
 "FOO
 
-## Signature
-
-\`\`\`ts
-functionWithNamedParamsAndComments(«destructured»: object = {}, anotherParam: string): void;
-\`\`\`
+> **functionWithNamedParamsAndComments**(«destructured»: \`object\` = \`{}\`, \`anotherParam\`: \`string\`): \`void\`;
 
 ## Parameters
 
 
-| Name | Type | Description |
+| Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`«destructured»\` | \`object\` | various options |
 | › \`bar?\` | \`number\` | - |
@@ -223,16 +179,12 @@ functionWithNamedParamsAndComments(«destructured»: object = {}, anotherParam: 
 `;
 
 exports[`Signatures: should compile named parameters' 1`] = `
-"## Signature
-
-\`\`\`ts
-functionWithNamedParams(«destructured»: Object): string;
-\`\`\`
+"> **functionWithNamedParams**(«destructured»: \`Object\`): \`string\`;
 
 ## Parameters
 
 
-| Name | Type |
+| Parameter | Type |
 | :------ | :------ |
 | \`«destructured»\` | \`Object\` |
 
@@ -247,23 +199,19 @@ functionWithNamedParams(«destructured»: Object): string;
 exports[`Signatures: should compile pipes in params and comments' 1`] = `
 "
 
-## Signature
-
-\`\`\`ts
-functionWithPipesInParamsAndComments(n: number): number | null;
-\`\`\`
+> **functionWithPipesInParamsAndComments**(\`n\`: \`number\`): \`number\` \\| null;
 
 ## Parameters
 
 
-| Name | Type | Description |
+| Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`n\` | \`number\` | a\\|b |
 
 
 ## Returns
 
-\`number\` \\| \`null\`
+\`number\` \\| null
 
 [partial: sources]"
 `;
@@ -273,11 +221,7 @@ exports[`Signatures: should compile signature with @return comments' 1`] = `
 
 
 
-## Signature
-
-\`\`\`ts
-commentsInReturn(): boolean;
-\`\`\`
+> **commentsInReturn**(): \`boolean\`;
 
 ## Returns
 
@@ -291,11 +235,7 @@ Return comments
 exports[`Signatures: should compile signature with a flag' 1`] = `
 "
 
-## Signature
-
-\`\`\`ts
-Private privateFunction(): string;
-\`\`\`
+> \`Private\` **privateFunction**(): \`string\`;
 
 ## Returns
 
@@ -307,22 +247,12 @@ Private privateFunction(): string;
 exports[`Signatures: should compile signature with default values' 1`] = `
 "This is a function with a parameter that has a default value.
 
-## Signature
-
-\`\`\`ts
-functionWithDefaults(
-  valueA: string = 'defaultValue', 
-  valueB: number = 100, 
-  valueC: number = Number.NaN, 
-  valueD: boolean = true, 
-  valueE: boolean = null, 
-  valueF: string = '<foo>'): string;
-\`\`\`
+> **functionWithDefaults**(\`valueA\`: \`string\` = \`'defaultValue'\`, \`valueB\`: \`number\` = \`100\`, \`valueC\`: \`number\` = \`Number.NaN\`, \`valueD\`: \`boolean\` = \`true\`, \`valueE\`: \`boolean\` = \`null\`, \`valueF\`: \`string\` = \`'<foo>'\`): \`string\`;
 
 ## Parameters
 
 
-| Name | Type | Default value | Description |
+| Parameter | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`valueA\` | \`string\` | \`'defaultValue'\` | A parameter with a default string value. |
 | \`valueB\` | \`number\` | \`100\` | A parameter with a default numeric value. |
@@ -342,20 +272,12 @@ functionWithDefaults(
 exports[`Signatures: should compile signature with optional params' 1`] = `
 "This is a function with a parameter that is optional.
 
-## Signature
-
-\`\`\`ts
-functionWithOptionalParam(
-  firstParamWithDefault: boolean = true, 
-  requiredParam: string, 
-  optionalParam?: string, 
-  paramWithDefault?: number = 0): void;
-\`\`\`
+> **functionWithOptionalParam**(\`firstParamWithDefault\`: \`boolean\` = \`true\`, \`requiredParam\`: \`string\`, \`optionalParam\`?: \`string\`, \`paramWithDefault\`?: \`number\` = \`0\`): \`void\`;
 
 ## Parameters
 
 
-| Name | Type | Default value | Description |
+| Parameter | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
 | \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
@@ -373,24 +295,16 @@ functionWithOptionalParam(
 exports[`Signatures: should compile signature with params' 1`] = `
 "This is a function with multiple arguments and a return value.
 
-## Signature
-
-\`\`\`ts
-functionWithParameters(paramZ: string, paramG: {
-    prop: string;
-} & {
-    prop: number;
-}, paramA: PropInterface): number;
-\`\`\`
+> **functionWithParameters**(\`paramZ\`: \`string\`, \`paramG\`: \\{\`prop\`: \`string\`;} & \\{\`prop\`: \`number\`;}, \`paramA\`: [\`PropInterface\`](interfaces/propinterface.md)): \`number\`;
 
 ## Parameters
 
 
-| Name | Type | Description |
+| Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`paramZ\` | \`string\` | This is a string parameter. |
-| \`paramG\` | \\{<br />    \`prop\`: \`string\`;<br />} & \\{<br />    \`prop\`: \`number\`;<br />} | This is a parameter with intersection type literal. |
-| \`paramA\` | [\`PropInterface\`](interfaces/PropInterface.md) | This is a **parameter** pointing to an interface. |
+| \`paramG\` | \\{\`prop\`: \`string\`;} & \\{\`prop\`: \`number\`;} | This is a parameter with intersection type literal. |
+| \`paramA\` | [\`PropInterface\`](interfaces/propinterface.md) | This is a **parameter** pointing to an interface. |
 
 
 ## Returns
@@ -403,16 +317,12 @@ functionWithParameters(paramZ: string, paramG: {
 exports[`Signatures: should compile signature with rest params' 1`] = `
 "This is a function with rest parameter.
 
-## Signature
-
-\`\`\`ts
-functionWithRest(...rest: string[]): string;
-\`\`\`
+> **functionWithRest**(...\`rest\`: \`string\`[]): \`string\`;
 
 ## Parameters
 
 
-| Name | Type | Description |
+| Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`...rest\` | \`string\`[] | The rest parameter. |
 
@@ -425,16 +335,12 @@ functionWithRest(...rest: string[]): string;
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
-"## Signature
-
-\`\`\`ts
-functionWithUnionTypes(arg: number | boolean[], ...args: (string | number)[]): any;
-\`\`\`
+"> **functionWithUnionTypes**(\`arg\`: \`number\` \\| \`boolean\`[], ...\`args\`: (\`string\` \\| \`number\`)[]): \`any\`;
 
 ## Parameters
 
 
-| Name | Type |
+| Parameter | Type |
 | :------ | :------ |
 | \`arg\` | \`number\` \\| \`boolean\`[] |
 | \`...args\` | (\`string\` \\| \`number\`)[] |

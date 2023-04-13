@@ -13,6 +13,7 @@ import {
 } from 'typedoc';
 import { TemplateMapping } from './models';
 import { URL_PREFIX } from './support/constants';
+import { slugify } from './support/utils';
 import { MarkdownThemeRenderContext } from './theme-context';
 export class MarkdownTheme extends Theme {
   @BindOption('entryDocument') entryDocument!: string;
@@ -141,10 +142,8 @@ export class MarkdownTheme extends Theme {
         fragment = reflection.getAlias();
       } else {
         fragment = !isModuleOrNamespace
-          ? `${mapping.directory}/${ReflectionKind.singularString(
-              reflection.kind,
-            ).toLowerCase()}.${reflection.getAlias()}`
-          : reflection.getAlias();
+          ? `${mapping.directory}/${slugify(reflection.getAlias())}`
+          : slugify(reflection.getAlias());
       }
 
       if (!reflection.url || !URL_PREFIX.test(reflection.url)) {

@@ -1,7 +1,9 @@
 import { ParameterReflection, SignatureReflection, SomeType } from 'typedoc';
+import { backTicks, bold } from '../support/els';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-export function signatureTitle(
+export function signatureMemberDefinition(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
   accessor?: string,
@@ -19,7 +21,7 @@ export function signatureTitle(
   }
 
   if (!['__call', '__type'].includes(signature.name)) {
-    md.push(signature.name);
+    md.push(bold(escapeChars(signature.name)));
   }
 
   if (signature.typeParameters) {
@@ -38,14 +40,11 @@ export function signatureTitle(
       .map((param, i) => {
         const isDestructuredParam = param.name == '__namedParameters';
         const paramsmd: string[] = [];
-        if (parameters.length > 3) {
-          paramsmd.push('\n  ');
-        }
         if (param.flags.isRest) {
           paramsmd.push('...');
         }
         const paramItem = `${
-          isDestructuredParam ? '«destructured»' : param.name
+          isDestructuredParam ? '«destructured»' : backTicks(param.name)
         }${
           param.flags.isOptional ||
           (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
@@ -54,7 +53,7 @@ export function signatureTitle(
         }: ${context.partials.someType(param.type as SomeType, 'all')}`;
         paramsmd.push(paramItem);
         if (param.defaultValue) {
-          paramsmd.push(` = ${param.defaultValue}`);
+          paramsmd.push(` = ${backTicks(param.defaultValue)}`);
         }
         return paramsmd.join('');
       })

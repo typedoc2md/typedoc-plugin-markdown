@@ -49,7 +49,7 @@ function table(
   );
   const hasComments = !comments.every((value) => !value);
 
-  const headers = ['Name', 'Type'];
+  const headers = ['Parameter', 'Type'];
 
   if (showDefaults) {
     headers.push('Default value');

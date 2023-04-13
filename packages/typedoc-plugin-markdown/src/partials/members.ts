@@ -1,6 +1,6 @@
 import { ContainerReflection } from 'typedoc';
 import { SYMBOLS_WITH_DOCUMENTS } from '../support/constants';
-import { heading } from '../support/els';
+import { heading, horizontalRule } from '../support/els';
 import { getGroupHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -43,8 +43,11 @@ export function members(
           }
           group.children
             .filter((item) => !item.hasOwnDocument)
-            .forEach((groupChild, index) => {
+            .forEach((groupChild) => {
               md.push(context.partials.member(groupChild));
+              if (SYMBOLS_WITH_DOCUMENTS.includes(groupChild.kind)) {
+                md.push(horizontalRule());
+              }
             });
         }
       });

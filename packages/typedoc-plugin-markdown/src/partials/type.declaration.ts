@@ -1,6 +1,6 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { Collapse } from '../models';
-import { backTicks, indentBlock } from '../support/els';
+import { backTicks } from '../support/els';
 import { getPropertyType } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -37,7 +37,7 @@ export function declarationType(
     if (indexSignature) {
       types?.unshift(indexSignature);
     }
-    return types ? `\\{\n${indentBlock(types.join('\n'))}\n}` : '\\{}';
+    return types ? `\\{${types.join('\n')}}` : '\\{}';
   }
   return '\\{}';
 }

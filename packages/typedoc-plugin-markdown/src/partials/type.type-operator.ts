@@ -1,9 +1,10 @@
 import { TypeOperatorType } from 'typedoc';
+import { italic } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function typeOperatorType(
   context: MarkdownThemeRenderContext,
   model: TypeOperatorType,
 ) {
-  return `${model.operator} ${context.partials.someType(model.target)}`;
+  return `${italic(model.operator)} ${context.partials.someType(model.target)}`;
 }

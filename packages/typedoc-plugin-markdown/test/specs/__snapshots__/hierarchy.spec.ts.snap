@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hierarchy: should compile nested type hierarchy 1`] = `"- [\`ParentClass\`](classes/ParentClass.md).**ChildClassA**"`;
+exports[`Hierarchy: should compile nested type hierarchy 1`] = `"- [\`ParentClass\`](classes/parentclass.md).**ChildClassA**"`;
 
 exports[`Hierarchy: should compile type hierarchy 1`] = `
-"- [\`ChildClassA\`](classes/ChildClassA.md)
-- [\`ChildClassB\`](classes/ChildClassB.md)"
+"- [\`ChildClassA\`](classes/childclassa.md)
+- [\`ChildClassB\`](classes/childclassb.md)"
 `;

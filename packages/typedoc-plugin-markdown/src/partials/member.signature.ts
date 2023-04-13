@@ -1,5 +1,5 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
-import { codeBlock, heading } from '../support/els';
+import { heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -9,18 +9,6 @@ export function signatureMember(
   parentHeadingLevel?: number,
 ) {
   const md: string[] = [];
-
-  /*if (signature.parent?.kindOf(ReflectionKind.Constructor)) {
-    md.push(
-      heading(
-        getReflectionHeadingLevel(
-          signature,
-          context.getOption('groupBySymbols'),
-        ),
-        `new ${signature.parent?.name}()`,
-      ),
-    );
-  }*/
 
   if (parentHeadingLevel) {
     md.push(signatureBody(context, signature, parentHeadingLevel));
@@ -50,9 +38,7 @@ function signatureBody(
     md.push(context.partials.comment(signature.comment, headingLevel));
   }
 
-  md.push(heading(headingLevel, 'Signature'));
-
-  md.push(codeBlock(context.partials.signatureTitle(signature)));
+  md.push(`> ${context.partials.signatureMemberDefinition(signature)}`);
 
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;

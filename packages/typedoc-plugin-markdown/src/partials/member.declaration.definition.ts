@@ -1,25 +1,27 @@
-import { DeclarationReflection, LiteralType } from 'typedoc';
+import { DeclarationReflection } from 'typedoc';
 import { backTicks, bold } from '../support/els';
-import { stripComments, stripLineBreaks } from '../support/utils';
+import { escapeChars, stripComments, stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-export function declarationMemberDef(
+export function declarationMemberDefinition(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
 ) {
-  const md: string[] = [];
+  const md: string[] = ['> '];
 
   if (
     reflection.flags?.length &&
     !reflection.flags.isOptional &&
     !reflection.flags.isRest
   ) {
-    md.push(reflection.flags.map((flag) => bold(backTicks(flag))).join(' '));
+    md.push(reflection.flags.map((flag) => backTicks(flag)).join(' '));
   }
 
   if (reflection.flags.isRest) {
     md.push('...');
   }
+
+  md.push(`${bold(escapeChars(reflection.name))}${reflection.type ? ':' : ''}`);
 
   if (reflection.typeParameters) {
     md.push(
@@ -28,15 +30,12 @@ export function declarationMemberDef(
         .join(', ')}\\>`,
     );
   }
+
   if (reflection.type) {
     md.push(`${context.partials.someType(reflection.type, 'all')}`);
   }
 
-  if (
-    !(reflection.type instanceof LiteralType) &&
-    reflection.defaultValue &&
-    reflection.defaultValue !== '...'
-  ) {
+  if (reflection.defaultValue && reflection.defaultValue !== '...') {
     md.push(
       ` = \`${stripLineBreaks(stripComments(reflection.defaultValue))}\``,
     );
