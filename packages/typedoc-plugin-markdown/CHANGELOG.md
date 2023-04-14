@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.5
+
+### Patch Changes
+
+- Fix incorrect heading levels
+- Slugify output filenames
+- Expose `groupBySymbols` option
+
 ## 4.0.0-next.4
 
 ### Patch Changes
