@@ -12,13 +12,15 @@ export function projectTemplate(
     md.push(context.partials.frontmatter(page));
   }
 
-  if (Boolean(page.model.readme)) {
+  if (!context.getOption('hideBreadcrumbs') && Boolean(page.model.readme)) {
     md.push(
       link('Readme', context.relativeURL(context.getOption('entryDocument'))),
     );
   }
 
-  md.push(heading(1, page.project.name));
+  if (!context.getOption('hidePageTitle')) {
+    md.push(heading(1, page.project.name));
+  }
 
   if (page.model.comment) {
     md.push(context.partials.comment(page.model.comment, 1));

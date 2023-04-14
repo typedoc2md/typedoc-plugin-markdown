@@ -15,10 +15,10 @@
     "build": "rm -rf dist && tsc",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
-    "docs": "npm run build && npm-run-all docs-*",
-    "docs-md-1": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --out ./out/md/md-1",
-    "docs-md-2": "typedoc --plugin typedoc-plugin-markdown --groupBySymbols false --longTitles --typeDeclarationStyle \"list\" --readme \"none\" --symbolsWithOwnFile none --options ../../stubs/typedoc.json --out ./out/md/md-2",
-    "docs-html": "typedoc --options ../../stubs/typedoc.json --out ./out/html"
+    "docs": "npm run build && npm-run-all docs:*",
+    "docs:md-1": "typedoc --plugin typedoc-plugin-markdown --longTitles  --options ../../stubs/typedoc.json --out ./out/md/md-1",
+    "docs:md-2": "typedoc --plugin typedoc-plugin-markdown --groupBySymbols false --hideInPageTOC --typeDeclarationStyle \"list\" --readme \"none\" --symbolsWithOwnFile none --options ../../stubs/typedoc.json --out ./out/md/md-2",
+    "docs:html": "typedoc --options ../../stubs/typedoc.json --out ./out/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",

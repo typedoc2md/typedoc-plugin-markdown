@@ -65,4 +65,4 @@ export function module1FunctionB() {
   return 'a';
 }
 
-export * as nameSpace from './namespace-1';
+export * as someNameSpace from './namespace-1';

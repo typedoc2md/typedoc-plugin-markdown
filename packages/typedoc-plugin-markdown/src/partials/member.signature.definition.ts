@@ -70,7 +70,5 @@ export function signatureMemberDefinition(
     md.push(`: ${context.partials.someType(signature.type, 'all')}`);
   }
 
-  md.push(';');
-
   return md.join('');
 }

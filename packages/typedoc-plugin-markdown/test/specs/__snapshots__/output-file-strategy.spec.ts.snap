@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [class, interface]' 1`] = `
+exports[`Output File Strategy should --symbolsWithOwnFile [class, interface]' 1`] = `
 [
   "modules.md",
   "README.md",
   "module-1/module-1.md",
-  "module-1/namespace/namespace.md",
-  "module-1/namespace/classes/namespaceclassa.md",
-  "module-1/namespace/interfaces/namespaceinterface.md",
+  "module-1/namespaces/somenamespace/somenamespace.md",
+  "module-1/namespaces/somenamespace/classes/namespaceclassa.md",
+  "module-1/namespaces/somenamespace/interfaces/namespaceinterface.md",
   "module-1/classes/module1classa.md",
   "module-1/classes/module1classb.md",
   "module-1/interfaces/module1interfacea.md",
@@ -20,13 +20,13 @@ exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [cl
 ]
 `;
 
-exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [class]' 1`] = `
+exports[`Output File Strategy should --symbolsWithOwnFile [class]' 1`] = `
 [
   "modules.md",
   "README.md",
   "module-1/module-1.md",
-  "module-1/namespace/namespace.md",
-  "module-1/namespace/classes/namespaceclassa.md",
+  "module-1/namespaces/somenamespace/somenamespace.md",
+  "module-1/namespaces/somenamespace/classes/namespaceclassa.md",
   "module-1/classes/module1classa.md",
   "module-1/classes/module1classb.md",
   "module-2/module-2.md",
@@ -35,27 +35,27 @@ exports[`Output File Strategy symbolsWithOwnFile should --symbolsWithOwnFile [cl
 ]
 `;
 
-exports[`Output File Strategy symbolsWithOwnFile should set --symbolsWithOwnFile none' 1`] = `
-[
-  "modules.md",
-  "README.md",
-  "module_1.md",
-  "module_1/nameSpace.md",
-  "module_2.md",
-]
-`;
-
-exports[`Output File Strategy symbolsWithOwnFile should set default --symbolsWithOwnFile 'all' 1`] = `
+exports[`Output File Strategy should set --symbolsWithOwnFile none' 1`] = `
 [
   "modules.md",
   "README.md",
   "module-1/module-1.md",
-  "module-1/namespace/namespace.md",
-  "module-1/namespace/enums/namespaceenum.md",
-  "module-1/namespace/classes/namespaceclassa.md",
-  "module-1/namespace/interfaces/namespaceinterface.md",
-  "module-1/namespace/types/namespacetypeliteral.md",
-  "module-1/namespace/variables/namespacevariable.md",
+  "module-1/somenamespace.md",
+  "module-2.md",
+]
+`;
+
+exports[`Output File Strategy should set default --symbolsWithOwnFile 'all' (modules) 1`] = `
+[
+  "modules.md",
+  "README.md",
+  "module-1/module-1.md",
+  "module-1/namespaces/somenamespace/somenamespace.md",
+  "module-1/namespaces/somenamespace/enums/namespaceenum.md",
+  "module-1/namespaces/somenamespace/classes/namespaceclassa.md",
+  "module-1/namespaces/somenamespace/interfaces/namespaceinterface.md",
+  "module-1/namespaces/somenamespace/types/namespacetypeliteral.md",
+  "module-1/namespaces/somenamespace/variables/namespacevariable.md",
   "module-1/enums/module1enuma.md",
   "module-1/enums/module1enumb.md",
   "module-1/classes/module1classa.md",
@@ -84,15 +84,54 @@ exports[`Output File Strategy symbolsWithOwnFile should set default --symbolsWit
 ]
 `;
 
-exports[`Output File Strategy symbolsWithOwnFile should set symbolsWithOwnFile [enum, types, variables]' 1`] = `
+exports[`Output File Strategy should set default --symbolsWithOwnFile 'all' (namespaces) 1`] = `
+[
+  "modules.md",
+  "README.md",
+  "classes/classes.md",
+  "classes/classes/animal.md",
+  "classes/classes/base.md",
+  "classes/classes/c.md",
+  "classes/classes/derived.md",
+  "classes/classes/dog.md",
+  "classes/classes/indexableclass.md",
+  "classes/classes/point.md",
+  "declarations/declarations.md",
+  "declarations/enums/enumdeclarations.md",
+  "declarations/enums/enumdeclarationswithdefaults.md",
+  "declarations/types/anyfunctiontype.md",
+  "declarations/variables/double-underscores-declaration.md",
+  "declarations/variables/enuref.md",
+  "declarations/variables/getterandsetter.md",
+  "declarations/variables/indexabledeclaration.md",
+  "declarations/variables/objectliteralasconstdeclaration.md",
+  "declarations/variables/objectliteraldeclaration.md",
+  "declarations/variables/stringconstwithdefaultvalue.md",
+  "declarations/variables/stringletwithdefaultvalue.md",
+  "declarations/variables/typeliteraldeclaration.md",
+  "declarations/variables/undefinednumberdeclaration.md",
+  "declarations/functions/functiondeclaration.md",
+]
+`;
+
+exports[`Output File Strategy should set default --symbolsWithOwnFile 'none' (namespaces) 1`] = `
+[
+  "modules.md",
+  "README.md",
+  "classes.md",
+  "declarations.md",
+]
+`;
+
+exports[`Output File Strategy should set symbolsWithOwnFile [enum, types, variables]' 1`] = `
 [
   "modules.md",
   "README.md",
   "module-1/module-1.md",
-  "module-1/namespace/namespace.md",
-  "module-1/namespace/enums/namespaceenum.md",
-  "module-1/namespace/types/namespacetypeliteral.md",
-  "module-1/namespace/variables/namespacevariable.md",
+  "module-1/namespaces/somenamespace/somenamespace.md",
+  "module-1/namespaces/somenamespace/enums/namespaceenum.md",
+  "module-1/namespaces/somenamespace/types/namespacetypeliteral.md",
+  "module-1/namespaces/somenamespace/variables/namespacevariable.md",
   "module-1/enums/module1enuma.md",
   "module-1/enums/module1enumb.md",
   "module-1/types/module1typeliterala.md",

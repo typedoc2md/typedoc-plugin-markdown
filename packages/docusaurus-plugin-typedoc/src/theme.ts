@@ -3,6 +3,7 @@ import {
   BindOption,
   DeclarationReflection,
   PageEvent,
+  ReflectionKind,
   Renderer,
   RendererEvent,
 } from 'typedoc';
@@ -68,7 +69,10 @@ export class DocusaurusTheme extends MarkdownTheme {
         const containsDir = subdirectory.some((item) =>
           fs.lstatSync(`${fullPath}/${item}`).isDirectory(),
         );
-        if (mapping && !containsDir) {
+        if (
+          (mapping && !containsDir) ||
+          mapping?.kind === ReflectionKind.Namespace
+        ) {
           this.writeCategoryYaml(
             fullPath,
             getKindPlural(mapping.kind),

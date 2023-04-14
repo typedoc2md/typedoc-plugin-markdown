@@ -5,6 +5,7 @@ const PLURALS = {
   [ReflectionKind.Property]: 'Properties',
   [ReflectionKind.Enum]: 'Enumerations',
   [ReflectionKind.EnumMember]: 'Enumeration members',
+  [ReflectionKind.Namespace]: 'Namespaces',
   [ReflectionKind.TypeAlias]: 'Type aliases',
 };
 

@@ -61,6 +61,7 @@ const config = {
         cleanOutputDir: true,
         symbolsWithOwnFile: 'none',
         groupBySymbols: false,
+        readme: 'none',
       },
     ],
   ],

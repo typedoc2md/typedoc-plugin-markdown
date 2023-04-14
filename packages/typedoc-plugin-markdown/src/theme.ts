@@ -107,7 +107,7 @@ export class MarkdownTheme extends Theme {
     relative?: Reflection,
     separator = '.',
   ): string {
-    let url = reflection.getAlias();
+    let url = slugify(reflection.getAlias());
 
     if (
       reflection.parent &&
@@ -136,15 +136,19 @@ export class MarkdownTheme extends Theme {
         ReflectionKind.Namespace,
       ]);
 
-      let fragment: string;
+      const isModule = reflection.kindOf([ReflectionKind.Module]);
 
-      if (this.symbolsWithOwnFile[0] === 'none') {
-        fragment = reflection.getAlias();
-      } else {
-        fragment = !isModuleOrNamespace
+      const isNamespace = reflection.kindOf([ReflectionKind.Namespace]);
+
+      const hasDirectory = isNamespace
+        ? Boolean(parentFragments) &&
+          !reflection?.parent?.kindOf(ReflectionKind.Namespace)
+        : !isModule;
+
+      const fragment =
+        hasDirectory && this.symbolsWithOwnFile[0] !== 'none'
           ? `${mapping.directory}/${slugify(reflection.getAlias())}`
           : slugify(reflection.getAlias());
-      }
 
       if (!reflection.url || !URL_PREFIX.test(reflection.url)) {
         fragments = [fragment];
@@ -153,17 +157,34 @@ export class MarkdownTheme extends Theme {
           fragments.unshift(parentFragments.join('/'));
         }
 
-        if (isModuleOrNamespace && this.symbolsWithOwnFile[0] !== 'none') {
+        const hasNameSpace = reflection.children?.some((child) =>
+          child.kindOf(ReflectionKind.Namespace),
+        );
+
+        if (
+          hasNameSpace ||
+          (!hasDirectory && this.symbolsWithOwnFile[0] !== 'none')
+        ) {
           fragments.push(fragment);
         }
 
-        let url = fragments.join('/') + '.md';
+        let url = fragments.join('/');
+
+        if (
+          isNamespace &&
+          Boolean(parentFragments) &&
+          this.symbolsWithOwnFile[0] !== 'none'
+        ) {
+          const namespaceFragments = fragment.split('/');
+          url = url + '/' + namespaceFragments[namespaceFragments.length - 1];
+        }
 
         if (this.flattenOutput) {
           url = url.replace(/\//g, '.');
         }
 
-        url = url.replace(/^\/|\/$/g, '');
+        url = url.replace(/^\/|\/$/g, '') + '.md';
+
         urls.push(new UrlMapping(url, reflection, mapping.template));
         reflection.url = url;
         reflection.hasOwnDocument = true;
@@ -240,7 +261,7 @@ export class MarkdownTheme extends Theme {
       [ReflectionKind.Namespace]: {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: null,
+        directory: 'namespaces',
         kind: ReflectionKind.Namespace,
         labelSingular: 'Namespace',
         labelPlural: 'Namespaces',
