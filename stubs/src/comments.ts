@@ -9,6 +9,8 @@
  *
  * @description Some description used in frontmatter
  *
+ * @navOrder 1
+ *
  */
 
 /**

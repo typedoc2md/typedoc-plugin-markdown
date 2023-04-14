@@ -23,7 +23,7 @@ export function projectTemplate(
   }
 
   if (page.model.comment) {
-    md.push(context.partials.comment(page.model.comment, 1));
+    md.push(context.partials.comment(page.model.comment, 2));
   }
 
   md.push(context.partials.toc(page.model));

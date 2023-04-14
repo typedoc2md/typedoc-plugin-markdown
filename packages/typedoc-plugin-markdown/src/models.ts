@@ -10,7 +10,8 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   namedAnchors: boolean;
   enableFrontmatter: boolean;
   frontmatterTags: string[];
-  frontmatterGlobals: Record<string, string | boolean | number | null>;
+  frontmatterGlobals: FrontmatterGlobals;
+  frontmatterNamingConvention: FrontmatterNamingConvention;
   baseUrl: string;
   longTitles: boolean;
   symbolsWithOwnFile: string | string[];
@@ -28,3 +29,13 @@ export interface TemplateMapping {
 }
 
 export type Collapse = 'object' | 'function' | 'all' | 'none';
+
+export type FrontmatterGlobals =
+  | string
+  | Record<string, string | boolean | number | null>;
+
+export type FrontmatterNamingConvention =
+  | 'camelCase'
+  | 'snakeCase'
+  | 'kebabCase'
+  | 'pascalCase';

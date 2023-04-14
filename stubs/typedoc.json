@@ -23,5 +23,6 @@
   "cleanOutputDir": true,
   "githubPages": false,
   "sort": ["source-order"],
-  "categorizeByGroup": true
+  "categorizeByGroup": true,
+  "modifierTags": ["@navOrder"]
 }

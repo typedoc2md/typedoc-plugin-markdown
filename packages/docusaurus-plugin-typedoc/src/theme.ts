@@ -9,14 +9,11 @@ import {
 } from 'typedoc';
 import { MarkdownTheme, TemplateMapping } from 'typedoc-plugin-markdown';
 import { CATEGORY_POSITION, getKindPlural } from './navigation';
-import { DocusaurusThemeRenderContext } from './theme-context';
 import { SidebarOptions } from './types';
 
 export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('sidebar')
   sidebar!: SidebarOptions;
-
-  private _contextCache?: DocusaurusThemeRenderContext;
 
   constructor(renderer: Renderer) {
     super(renderer);
@@ -25,14 +22,6 @@ export class DocusaurusTheme extends MarkdownTheme {
       [PageEvent.END]: this.onPageEnd,
       [RendererEvent.END]: this.onRendererEnd,
     });
-  }
-
-  override getRenderContext() {
-    this._contextCache ||= new DocusaurusThemeRenderContext(
-      this,
-      this.application.options,
-    );
-    return this._contextCache;
   }
 
   onPageEnd(page: PageEvent<DeclarationReflection>) {
@@ -49,8 +38,18 @@ export class DocusaurusTheme extends MarkdownTheme {
         this.sidebar.position,
         this.sidebar.collapsed,
       );
-
       this.loopAndWriteCategories(renderer.outputDirectory);
+
+      const globalsFile = this.getRenderContext().globalsFile;
+      const globalsPath = `${renderer.outputDirectory}/${
+        this.getRenderContext().globalsFile
+      }`;
+      if (fs.existsSync(globalsPath)) {
+        fs.renameSync(
+          globalsPath,
+          `${renderer.outputDirectory}/01-${globalsFile}`,
+        );
+      }
     }
   }
 

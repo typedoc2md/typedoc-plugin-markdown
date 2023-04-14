@@ -30,9 +30,13 @@ export function stripComments(str: string) {
     .replace(/^\s+|\s+$|(\s)+/g, '$1');
 }
 
-export function stripLineBreaks(str: string) {
+export function stripLineBreaks(str: string, includeHTML = true) {
   return str
-    ? str.replace(/\n/g, '<br />').replace(/\r/g, '').replace(/\t/g, ' ').trim()
+    ? str
+        .replace(/\n/g, includeHTML ? '<br />' : ' ')
+        .replace(/\r/g, '')
+        .replace(/\t/g, ' ')
+        .trim()
     : '';
 }
 

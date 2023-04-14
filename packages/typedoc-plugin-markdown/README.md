@@ -66,6 +66,8 @@ See [Front matter options](./docs/frontmatter.md) for further documentation.
   Specify which file comment tags should be added to front matter variables (as an array).
 - **`--frontmatterGlobals`**<br>
   Specify global static variables to be added to all front matter blocks (as an object).
+- **`--frontmatterNamingConvention`**<br>
+  Specify the naming convention of front matter variables. Expected values [`camelCase`, `snakeCase`,`kebabCase`]. Defaults to `snakeCase`.
 
 ### Utility options
 
