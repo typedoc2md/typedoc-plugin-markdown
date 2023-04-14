@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-next.3
+
+### Patch Changes
+
+- TypdeDoc 0.24 compatibility fixes.
+
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.4
+
 ## 1.0.0-next.2
 
 ### Patch Changes

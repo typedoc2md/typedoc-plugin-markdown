@@ -2,18 +2,23 @@
   "mode": "pre",
   "tag": "next",
   "initialVersions": {
-    "typedoc-plugin-markdown": "3.13.4",
-    "docusaurus-plugin-typedoc": "0.17.6"
+    "typedoc-plugin-markdown": "3.15.1",
+    "docusaurus-plugin-typedoc": "0.18.0"
   },
   "changesets": [
+    "big-cooks-lick",
     "breezy-avocados-lie",
+    "cuddly-games-pull",
     "fair-rice-smoke",
     "forty-cows-jam",
     "hungry-papayas-punch",
+    "mighty-deers-dress",
     "nasty-starfishes-ring",
+    "olive-points-hug",
     "polite-planets-knock",
     "proud-mugs-pull",
     "selfish-coins-bake",
+    "thin-pigs-shout",
     "twenty-moose-promise"
   ]
 }
