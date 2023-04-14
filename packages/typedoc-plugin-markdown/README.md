@@ -67,7 +67,7 @@ See [Front matter options](./docs/frontmatter.md) for further documentation.
 - **`--frontmatterGlobals`**<br>
   Specify global static variables to be added to all front matter blocks (as an object).
 - **`--frontmatterNamingConvention`**<br>
-  Specify the naming convention of front matter variables. Expected values [`camelCase`, `snakeCase`,`kebabCase`]. Defaults to `snakeCase`.
+  Specify the naming convention of front matter variables. Expected values [`camelCase`, `snakeCase`,`kebabCase`]. Defaults to `camelCase`.
 
 ### Utility options
 
