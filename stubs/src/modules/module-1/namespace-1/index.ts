@@ -12,3 +12,5 @@ export enum NamespaceEnum {
 export type NamespaceTypeLiteral = 'a' | 'b';
 
 export const namespaceVariable = 'a';
+
+export * as nestedNamespace from './namespace-1-b';

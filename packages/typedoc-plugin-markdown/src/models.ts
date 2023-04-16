@@ -1,22 +1,23 @@
 import { ReflectionKind, TypeDocOptionMap } from 'typedoc';
 
 export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
+  baseUrl: string;
+  enableFrontmatter: boolean;
+  entryDocument: string;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   hidePageTitle: boolean;
   hideHierarchy: boolean;
-  entryDocument: string;
   indexTitle: string;
-  namedAnchors: boolean;
-  enableFrontmatter: boolean;
+  flattenOutputFiles: boolean;
   frontmatterTags: string[];
   frontmatterGlobals: FrontmatterGlobals;
   frontmatterNamingConvention: FrontmatterNamingConvention;
-  baseUrl: string;
+  groupByReflections: boolean;
   longTitles: boolean;
-  symbolsWithOwnFile: string | string[];
+  namedAnchors: boolean;
+  reflectionsWithOwnFile: string | string[];
   typeDeclarationStyle: 'list' | 'table';
-  groupBySymbols: boolean;
 }
 
 export interface TemplateMapping {
@@ -24,8 +25,6 @@ export interface TemplateMapping {
   template: any;
   isLeaf: boolean;
   kind: ReflectionKind;
-  labelSingular: string;
-  labelPlural: string;
 }
 
 export type Collapse = 'object' | 'function' | 'all' | 'none';

@@ -6,7 +6,7 @@ The plugin aims to provide some flexibility as to how files can be generated.
 
 ### Output folder structure
 
-By default the file structure is generated as per module path sturcutre and then symbols.
+By default the file structure is generated as per module path structure and then reflections.
 
 #### Example
 
@@ -26,9 +26,9 @@ By default the file structure is generated as per module path sturcutre and then
 
 ## Configuring how files are generated
 
-By default all exported symbols are contained in their own file as per the HTML theme. Modules and namespaces always have a file in their own scope, however configuring what symbols are hoisted onto the module file can be configured with the `symbolsWithOwnFile` option.
+By default all exported reflections are contained in their own file as per the HTML theme. Modules and namespaces always have a file in their own scope, however configuring what reflections are hoisted onto the module file can be configured with the `reflectionsWithOwnFile` option.
 
-All symobols can be hoisted onto a single module/namespace file with `none`, or to defined at a granular level the option accepts an array of the following types of symbol.
+All reflections can be hoisted onto a single module/namespace file with `none`, or to defined at a granular level the option accepts an array of the following types of reflections.
 
 - `class` - reflections which represent a class.
 - `interface` - reflections which represent an interface
@@ -42,24 +42,24 @@ All symobols can be hoisted onto a single module/namespace file with `none`, or 
 The following will create seperate files for classes and interfaces only.
 
 ```bash
---symbolsWithOwnFile class --symbolsWithOwnFile interface
+--reflectionsWithOwnFile class --reflectionsWithOwnFile interface
 ```
 
 _Note when definiting arrays using a json options file is less verbose:_
 
 ```js
 {
-  symbolsWithOwnFile: ['class', 'interface'];
+  reflectionsWithOwnFile: ['class', 'interface'];
 }
 ```
 
-To hoist all symbols onto the module document can be achieved with the `none` options. If exporting from a single entrypoint this will effectively result in a single file documentation.
+To hoist all reflections onto the module document can be achieved with the `none` options. If exporting from a single entrypoint this will effectively result in a single file documentation.
 
 ```bash
---symbolsWithOwnFile none
+--reflectionsWithOwnFile none
 ```
 
-The result will be all symbols are documented onto a single module file:
+The result will be all reflections are documented onto a single module file:
 
 ```
 ├── README.md

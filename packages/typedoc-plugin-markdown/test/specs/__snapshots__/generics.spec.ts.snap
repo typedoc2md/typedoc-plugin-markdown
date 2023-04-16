@@ -40,7 +40,7 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 
 ## Type parameters
 
-- \`A\` *extends* [\`ClassWithTypeParams\`](classes/classwithtypeparams.md)\\<\`string\`, \`number\`, \`A\`\\>[partial: comment]
+- \`A\` *extends* [\`ClassWithTypeParams\`](classes/class.ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`A\`\\>[partial: comment]
 - \`B\` = \`string\` \\| \`boolean\`[partial: comment]
 - \`C\` = \`string\`
 
@@ -55,7 +55,7 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 exports[`Generics: should compile generics with defaults' 1`] = `"[partial: sources]"`;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-">  **nestedGenerics**: [\`Generic1\`](types/generic1.md)\\<[\`Generic2\`](types/generic2.md)\\<[\`Generic3\`](types/generic3.md)\\<\`string\`\\>\\>\\>
+">  **nestedGenerics**: [\`Generic1\`](types/type alias.Generic1.md)\\<[\`Generic2\`](types/type alias.Generic2.md)\\<[\`Generic3\`](types/type alias.Generic3.md)\\<\`string\`\\>\\>\\>
 
 [partial: sources]"
 `;

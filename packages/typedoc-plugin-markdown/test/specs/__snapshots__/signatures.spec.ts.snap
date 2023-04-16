@@ -33,7 +33,7 @@ exports[`Signatures: should compile callable signature' 1`] = `
 `;
 
 exports[`Signatures: should compile class with constructor' 1`] = `
-"> **new ClassWithConstructor**(\`x\`: \`string\`, \`y\`: \`string\`): [\`ClassWithConstructor\`](classes/classwithconstructor.md)
+"> **new ClassWithConstructor**(\`x\`: \`string\`, \`y\`: \`string\`): [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
 
 #### Parameters
 
@@ -46,7 +46,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 
 #### Returns
 
-[\`ClassWithConstructor\`](classes/classwithconstructor.md)
+[\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
 
 [partial: sources]"
 `;
@@ -295,7 +295,7 @@ exports[`Signatures: should compile signature with optional params' 1`] = `
 exports[`Signatures: should compile signature with params' 1`] = `
 "This is a function with multiple arguments and a return value.
 
-> **functionWithParameters**(\`paramZ\`: \`string\`, \`paramG\`: \\{\`prop\`: \`string\`;} & \\{\`prop\`: \`number\`;}, \`paramA\`: [\`PropInterface\`](interfaces/propinterface.md)): \`number\`
+> **functionWithParameters**(\`paramZ\`: \`string\`, \`paramG\`: \\{\`prop\`: \`string\`;} & \\{\`prop\`: \`number\`;}, \`paramA\`: [\`PropInterface\`](interfaces/interface.PropInterface.md)): \`number\`
 
 ## Parameters
 
@@ -304,7 +304,7 @@ exports[`Signatures: should compile signature with params' 1`] = `
 | :------ | :------ | :------ |
 | \`paramZ\` | \`string\` | This is a string parameter. |
 | \`paramG\` | \\{\`prop\`: \`string\`;} & \\{\`prop\`: \`number\`;} | This is a parameter with intersection type literal. |
-| \`paramA\` | [\`PropInterface\`](interfaces/propinterface.md) | This is a **parameter** pointing to an interface. |
+| \`paramA\` | [\`PropInterface\`](interfaces/interface.PropInterface.md) | This is a **parameter** pointing to an interface. |
 
 
 ## Returns

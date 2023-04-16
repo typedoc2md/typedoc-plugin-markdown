@@ -1,17 +1,15 @@
 # typedoc-plugin-markdown
 
-A plugin for [TypeDoc](https://github.com/TypeStrong/typedoc) that renders TypeScript API documentation as Markdown.
+A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API documentation as Markdown.
 
 [![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
 [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
 ## What does it do?
 
-The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
-
 By default, TypeDoc will render API documentation as a webpage, e.g. HTML files.
 
-The plugin is useful if documentation is required to be included in project README files, Wikis and static site generators.
+The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options. This is useful if documentation is required to be included in project README files, Wikis and static site generators.
 
 ## Installation
 
@@ -19,9 +17,9 @@ The plugin is useful if documentation is required to be included in project READ
 npm install typedoc-plugin-markdown@next --save-dev
 ```
 
-## Usage
+> Please note the `next` version may contain breaking changes within the same semantic version without warning.
 
-Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installation/#command-line-interface)
+## Usage
 
 ```bash
 typedoc --plugin typedoc-plugin-markdown
@@ -29,7 +27,7 @@ typedoc --plugin typedoc-plugin-markdown
 
 ## Options
 
-The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/guides/options/)
+The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/options/)
 (please note that TypeDoc options specific to the HTML theme will be ignored).
 
 ### File output options
@@ -38,8 +36,12 @@ See [File output options](./docs/file-output-options.md) for further documentati
 
 - **`--entryDocument`**<br>
   The file name of the entry document. Defaults to `README.md`.
-- **`--symbolsWithOwnFile`**<br>
-  Determines which symbols should be written to their own file. Expected values [`none`, `all`] OR Array of [`class`, `interface`, `enum`, `function`, `var`, `type`] Defaults to `all` (all symbols exported to an individual file).
+- **`--reflectionsWithOwnFile`**<br>
+  Determines which reflections should be written to its own file. Expected values [`none`, `all`] OR Array of [`class`, `interface`, `enum`, `function`, `var`, `type`] Defaults to `all` (all reflections exported to an individual file).
+- **`--groupByReflections`**<br>
+  Groups reflections by type (if applicable). If set to `false` all reflections will group at the same level. Note this effects directory stucture and UI organisation heading structure. Defaults to `true`.
+- **`--flattenOutputFiles`**<br>
+  Flatten output files without directories. Note this does not effect the UI.
 
 ### UI options
 
@@ -53,8 +55,6 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print reflection hierarchy. Defaults to `false`.
 - **`--enableLongTitles`**<br>
   Display full name including module paths in page titles. Defaults to `false`.
-- **`--groupBySymbols`**<br>
-  Groups symbols by headings (if applicable) e.g Classes, Functions. If set to `false` all symbols will render on the same level. Defaults to `true`.
 
 ### Frontmatter options
 

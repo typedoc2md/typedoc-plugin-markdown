@@ -12,7 +12,7 @@ export function declarationMember(
   const headingLevel =
     getReflectionHeadingLevel(
       declaration,
-      context.getOption('groupBySymbols'),
+      context.getOption('groupByReflections'),
     ) + 1;
 
   const typeDeclaration = (declaration.type as any)

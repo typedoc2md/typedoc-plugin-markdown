@@ -5,5 +5,3 @@
 <!-- some comments -->
 
 Some text
-
-[Goto API](modules.md)

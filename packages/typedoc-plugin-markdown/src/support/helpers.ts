@@ -11,7 +11,7 @@ import { escapeChars } from './utils';
 
 export function getIndexHeadingLevel(
   reflection: DeclarationReflection | ProjectReflection,
-  groupBySymbols: boolean,
+  groupByReflections: boolean,
 ) {
   if (
     reflection.kindOf([
@@ -23,33 +23,33 @@ export function getIndexHeadingLevel(
   ) {
     return 2;
   }
-  return groupBySymbols ? 4 : 3;
+  return groupByReflections ? 4 : 3;
 }
 
 export function getGroupHeadingLevel(
   container: ContainerReflection,
-  groupBySymbols: boolean,
+  groupByReflections: boolean,
 ) {
   if (container.kindOf(ReflectionKind.Project)) {
     return 2;
   }
-  return container.hasOwnDocument ? 2 : groupBySymbols ? 4 : 3;
+  return container.hasOwnDocument ? 2 : groupByReflections ? 4 : 3;
 }
 
 export function getReflectionHeadingLevel(
   reflection: DeclarationReflection | SignatureReflection,
-  groupBySymbols: boolean,
+  groupByReflections: boolean,
 ) {
   if (reflection.hasOwnDocument) {
     return 1;
   }
   if (reflection?.parent?.kindOf(ReflectionKind.Project)) {
-    return groupBySymbols ? 3 : 2;
+    return groupByReflections ? 3 : 2;
   }
   if (reflection.kindOf(ReflectionKind.Constructor)) {
     return reflection.parent?.hasOwnDocument ? 3 : 4;
   }
-  if (groupBySymbols) {
+  if (groupByReflections) {
     return reflection.parent?.hasOwnDocument ? 3 : 5;
   }
   return reflection.parent?.hasOwnDocument ? 2 : 4;

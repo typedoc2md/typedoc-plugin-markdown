@@ -34,7 +34,7 @@ export function toc(
   ) {
     const headingLevel = getIndexHeadingLevel(
       reflection,
-      context.getOption('groupBySymbols'),
+      context.getOption('groupByReflections'),
     );
     const subHeadingLevel = headingLevel + 1;
 

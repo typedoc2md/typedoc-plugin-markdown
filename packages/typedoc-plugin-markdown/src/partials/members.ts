@@ -25,7 +25,7 @@ export function members(
       .forEach((group) => {
         const headingLevel = getGroupHeadingLevel(
           container,
-          context.getOption('groupBySymbols'),
+          context.getOption('groupByReflections'),
         );
         if (group.categories) {
           md.push(heading(headingLevel, group.title));
@@ -36,7 +36,7 @@ export function members(
           );
         } else {
           if (
-            context.getOption('groupBySymbols') ||
+            context.getOption('groupByReflections') ||
             SYMBOLS_WITH_DOCUMENTS.includes(container.kind)
           ) {
             md.push(heading(headingLevel, group.title));

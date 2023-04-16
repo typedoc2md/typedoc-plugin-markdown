@@ -2,7 +2,7 @@
 
 exports[`Types: should compile 'array' type' 1`] = `"\`string\`[]"`;
 
-exports[`Types: should compile 'intersection' type' 1`] = `"[\`IntersectionClassA\`](classes/intersectionclassa.md) & [\`IntersectionClassB\`](classes/intersectionclassb.md)"`;
+exports[`Types: should compile 'intersection' type' 1`] = `"[\`IntersectionClassA\`](classes/class.IntersectionClassA.md) & [\`IntersectionClassB\`](classes/class.IntersectionClassB.md)"`;
 
 exports[`Types: should compile 'stringLiteral' type' 1`] = `""blue""`;
 

@@ -8,12 +8,11 @@ import {
   RendererEvent,
 } from 'typedoc';
 import { MarkdownTheme, TemplateMapping } from 'typedoc-plugin-markdown';
-import { CATEGORY_POSITION, getKindPlural } from './navigation';
+import { CATEGORY_POSITION } from './navigation';
 import { SidebarOptions } from './types';
 
 export class DocusaurusTheme extends MarkdownTheme {
-  @BindOption('sidebar')
-  sidebar!: SidebarOptions;
+  @BindOption('sidebar') sidebar!: SidebarOptions;
 
   constructor(renderer: Renderer) {
     super(renderer);
@@ -37,6 +36,7 @@ export class DocusaurusTheme extends MarkdownTheme {
         this.sidebar.categoryLabel,
         this.sidebar.position,
         this.sidebar.collapsed,
+        false,
       );
       this.loopAndWriteCategories(renderer.outputDirectory);
 
@@ -53,7 +53,7 @@ export class DocusaurusTheme extends MarkdownTheme {
     }
   }
 
-  loopAndWriteCategories(path: string) {
+  loopAndWriteCategories(path: string, level = 0) {
     const directory = fs.readdirSync(path);
     directory.forEach((segment) => {
       const fullPath = `${path}/${segment}`;
@@ -68,14 +68,16 @@ export class DocusaurusTheme extends MarkdownTheme {
         const containsDir = subdirectory.some((item) =>
           fs.lstatSync(`${fullPath}/${item}`).isDirectory(),
         );
+
         if (
           (mapping && !containsDir) ||
           mapping?.kind === ReflectionKind.Namespace
         ) {
           this.writeCategoryYaml(
             fullPath,
-            getKindPlural(mapping.kind),
+            ReflectionKind.pluralString(mapping.kind),
             CATEGORY_POSITION[mapping.kind],
+            true,
             true,
           );
         }
@@ -89,6 +91,7 @@ export class DocusaurusTheme extends MarkdownTheme {
     label: string,
     position: number | null,
     collapsed: boolean,
+    generatedIndex: boolean,
   ) => {
     const yaml: string[] = [`label: "${label}"`];
     if (position !== null) {
@@ -96,6 +99,11 @@ export class DocusaurusTheme extends MarkdownTheme {
     }
     if (!collapsed) {
       yaml.push(`collapsed: false`);
+    }
+    if (generatedIndex) {
+      yaml.push(`link:
+  type: "generated-index"
+  title: "${label}"`);
     }
     if (fs.existsSync(categoryPath)) {
       fs.writeFileSync(categoryPath + '/_category_.yml', yaml.join('\n'));

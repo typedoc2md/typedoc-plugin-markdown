@@ -18,7 +18,7 @@ export function member(
 
   const headingLevel = getReflectionHeadingLevel(
     reflection,
-    context.getOption('groupBySymbols'),
+    context.getOption('groupByReflections'),
   );
 
   if (context.getOption('namedAnchors')) {

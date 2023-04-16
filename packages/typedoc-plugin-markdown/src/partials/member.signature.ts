@@ -31,7 +31,7 @@ function signatureBody(
       ? parentHeadingLevel
       : getReflectionHeadingLevel(
           signature.parent,
-          context.getOption('groupBySymbols'),
+          context.getOption('groupByReflections'),
         )) + 1;
 
   if (signature.comment) {

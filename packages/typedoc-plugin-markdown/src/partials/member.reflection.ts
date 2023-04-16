@@ -16,8 +16,10 @@ export function reflectionMember(
   const md: string[] = [];
 
   const headingLevel =
-    getReflectionHeadingLevel(reflection, context.getOption('groupBySymbols')) +
-    1;
+    getReflectionHeadingLevel(
+      reflection,
+      context.getOption('groupByReflections'),
+    ) + 1;
 
   if (reflection.comment) {
     md.push(context.partials.comment(reflection.comment, headingLevel));

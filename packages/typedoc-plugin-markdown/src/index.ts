@@ -29,24 +29,17 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'flattenOutput',
-    help: '[Markdown Plugin] Flatten output files.',
+    name: 'flattenOutputFiles',
+    help: '[Markdown Plugin] Flatten output files without directories.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    name: 'symbolsWithOwnFile',
-    help: "[Markdown Plugin] Specifies which symbols are contained in their own file. Values 'none', 'all' OR Array of ['class', 'interface', 'enum', 'function', 'variable', 'type']",
+    name: 'reflectionsWithOwnFile',
+    help: "[Markdown Plugin] Specifies which reflections are contained in their own file. Values 'none', 'all' OR Array of ['class', 'interface', 'enum', 'function', 'variable', 'type']",
     type: ParameterType.String | ParameterType.Array,
     defaultValue: 'all',
-  });
-
-  app.options.addDeclaration({
-    name: 'groupBySymbols',
-    help: '[Markdown Plugin] Groups symbols by headings if applicable e.g Classes, Functions. If set to false all symbols will render on the same level. Defaults to `true`',
-    type: ParameterType.Boolean,
-    defaultValue: true,
   });
 
   /**
@@ -86,6 +79,13 @@ export function load(app: Application) {
     help: '[Markdown Plugin] Display full name including module paths in page titles.',
     type: ParameterType.Boolean,
     defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    name: 'groupByReflections',
+    help: '[Markdown Plugin] Groups reflections by headings if applicable e.g Classes, Functions. If set to false all symbols will render on the same level. Defaults to `true`',
+    type: ParameterType.Boolean,
+    defaultValue: true,
   });
 
   app.options.addDeclaration({
