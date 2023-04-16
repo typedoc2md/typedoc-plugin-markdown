@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.6
+
+### Patch Changes
+
+- Refactored fileoutput options (renamed symbolsWithOwnFile=>reflectionsWithOwnFile, groupBySymbols=>groupByReflections)
+
 ## 4.0.0-next.5
 
 ### Patch Changes
