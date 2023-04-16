@@ -7,11 +7,11 @@ import {
   SignatureReflection,
 } from 'typedoc';
 import { backTicks } from './els';
-import { escapeChars } from './utils';
+import { escapeChars, stripLineBreaks } from './utils';
 
 export function getIndexHeadingLevel(
   reflection: DeclarationReflection | ProjectReflection,
-  groupByReflections: boolean,
+  groupByKinds: boolean,
 ) {
   if (
     reflection.kindOf([
@@ -23,33 +23,33 @@ export function getIndexHeadingLevel(
   ) {
     return 2;
   }
-  return groupByReflections ? 4 : 3;
+  return groupByKinds ? 4 : 3;
 }
 
 export function getGroupHeadingLevel(
   container: ContainerReflection,
-  groupByReflections: boolean,
+  groupByKinds: boolean,
 ) {
   if (container.kindOf(ReflectionKind.Project)) {
     return 2;
   }
-  return container.hasOwnDocument ? 2 : groupByReflections ? 4 : 3;
+  return container.hasOwnDocument ? 2 : groupByKinds ? 4 : 3;
 }
 
 export function getReflectionHeadingLevel(
   reflection: DeclarationReflection | SignatureReflection,
-  groupByReflections: boolean,
+  groupByKinds: boolean,
 ) {
   if (reflection.hasOwnDocument) {
     return 1;
   }
   if (reflection?.parent?.kindOf(ReflectionKind.Project)) {
-    return groupByReflections ? 3 : 2;
+    return groupByKinds ? 3 : 2;
   }
   if (reflection.kindOf(ReflectionKind.Constructor)) {
     return reflection.parent?.hasOwnDocument ? 3 : 4;
   }
-  if (groupByReflections) {
+  if (groupByKinds) {
     return reflection.parent?.hasOwnDocument ? 3 : 5;
   }
   return reflection.parent?.hasOwnDocument ? 2 : 4;
@@ -57,17 +57,11 @@ export function getReflectionHeadingLevel(
 
 export function getReflectionTitle(
   reflection: DeclarationReflection,
-  fullname = false,
   typeParams = false,
 ) {
-  const md = [
-    escapeChars(fullname ? reflection.getFullName() : reflection.name),
-  ];
+  const md = [escapeChars(reflection.name)];
   if (reflection.signatures?.length) {
     md.push('()');
-  }
-  if (reflection.flags?.isOptional) {
-    md.push('?');
   }
   if (typeParams) {
     md.push(getTypeParameters(reflection));
@@ -92,16 +86,20 @@ export function getFlags(reflection: DeclarationReflection) {
   return null;
 }
 
+export function tableComments(str: string) {
+  return stripLineBreaks(str).replace(/\|/g, '\\|');
+}
+
 export function getTagName(tag: CommentTag) {
   return tag.tag.substring(1);
 }
 
-export function getPropertyType(property: any) {
-  if (property.getSignature) {
-    return property.getSignature.type;
+export function getDeclarationType(declaration: DeclarationReflection) {
+  if (declaration.getSignature) {
+    return declaration.getSignature.type;
   }
-  if (property.setSignature) {
-    return property.setSignature.type;
+  if (declaration.setSignature) {
+    return declaration.setSignature.type;
   }
-  return property.type ? property.type : property;
+  return declaration.type;
 }

@@ -36,10 +36,17 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'reflectionsWithOwnFile',
-    help: "[Markdown Plugin] Specifies which reflections are contained in their own file. Values 'none', 'all' OR Array of ['class', 'interface', 'enum', 'function', 'variable', 'type']",
+    name: 'kindsWithOwnFile',
+    help: "[Markdown Plugin] Specifies which reflection kinds are contained in their own file. Values 'none', 'all' OR Array of ['class', 'interface', 'enum', 'function', 'variable', 'type']",
     type: ParameterType.String | ParameterType.Array,
     defaultValue: 'all',
+  });
+
+  app.options.addDeclaration({
+    name: 'groupByKinds',
+    help: '[Markdown Plugin] Groups reflection kinds by headings if applicable e.g Classes, Functions. If set to false all symbols will render on the same level. Defaults to `true`',
+    type: ParameterType.Boolean,
+    defaultValue: true,
   });
 
   /**
@@ -75,32 +82,31 @@ export function load(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'longTitles',
-    help: '[Markdown Plugin] Display full name including module paths in page titles.',
+    name: 'indentifiersAsCodeBlocks',
+    help: '[Markdown Plugin] Format signature and declaration identifiers in code blocks.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    name: 'groupByReflections',
-    help: '[Markdown Plugin] Groups reflections by headings if applicable e.g Classes, Functions. If set to false all symbols will render on the same level. Defaults to `true`',
-    type: ParameterType.Boolean,
-    defaultValue: true,
+    name: 'propertiesFormat',
+    help: '[Markdown Plugin] Specify the render style of properties.',
+    type: ParameterType.String,
+    defaultValue: 'List',
   });
 
   app.options.addDeclaration({
-    name: 'typeDeclarationStyle',
+    name: 'enumMembersFormat',
+    help: '[Markdown Plugin] Specify the render style of properties.',
+    type: ParameterType.String,
+    defaultValue: 'List',
+  });
+
+  app.options.addDeclaration({
+    name: 'typeDeclarationFormat',
     help: '[Markdown Plugin] Specify the render style of type declarations.',
     type: ParameterType.String,
-    defaultValue: 'table',
-    validate: (option) => {
-      const availableValues = ['table', 'list'];
-      if (!availableValues.includes(option)) {
-        throw new Error(
-          `Unexpected value for typeDeclarationStyle, the expected value is one of 'table', 'list'`,
-        );
-      }
-    },
+    defaultValue: 'List',
   });
 
   /**

@@ -1,6 +1,8 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 
-import { stripLineBreaks } from '../support/utils';
+import { table } from '../support/els';
+import { tableComments } from '../support/helpers';
+import { escapeChars, stripLineBreaks } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function parametersTable(
@@ -28,20 +30,6 @@ export function parametersTable(
       ? [...acc, current, ...flattenParams(current)]
       : [...acc, current];
   };
-
-  return table(
-    context,
-    parameters.reduce(
-      (acc: any, current: any) => parseParams(current, acc),
-      [],
-    ),
-  );
-}
-
-function table(
-  context: MarkdownThemeRenderContext,
-  parameters: ParameterReflection[],
-) {
   const showDefaults = hasDefaultValues(parameters);
 
   const comments = parameters.map(
@@ -63,7 +51,9 @@ function table(
     (parameter) => parameter.flags.isOptional,
   );
 
-  const rows = parameters.map((parameter, i) => {
+  const rows: string[][] = [];
+
+  parameters.forEach((parameter, i) => {
     const row: string[] = [];
 
     const isOptional =
@@ -74,17 +64,7 @@ function table(
 
     const optional = isOptional ? '?' : '';
 
-    const isDestructuredParam = parameter.name == '__namedParameters';
-    const isDestructuredParamProp =
-      parameter.name.startsWith('__namedParameters.');
-
-    if (isDestructuredParam) {
-      row.push(`\`${rest}«destructured»\``);
-    } else if (isDestructuredParamProp) {
-      row.push(`› \`${rest}${parameter.name.slice(18)}${optional}\``);
-    } else {
-      row.push(`\`${rest}${parameter.name}${optional}\``);
-    }
+    row.push(`${rest}${escapeChars(parameter.name)}${optional}`);
 
     if (parameter.type) {
       row.push(
@@ -97,29 +77,21 @@ function table(
     }
     if (hasComments) {
       if (parameter.comment) {
-        row.push(
-          stripLineBreaks(context.partials.comment(parameter.comment)).replace(
-            /\|/g,
-            '\\|',
-          ),
-        );
+        row.push(tableComments(context.partials.comment(parameter.comment)));
       } else {
         row.push('-');
       }
     }
-    return `| ${row.join(' | ')} |\n`;
+    rows.push(row);
   });
 
-  const output = `\n| ${headers.join(' | ')} |\n| ${headers
-    .map(() => ':------')
-    .join(' | ')} |\n${rows.join('')}`;
-  return output;
+  return table(headers, rows);
 }
 
 function getDefaultValue(parameter: ParameterReflection) {
   return parameter.defaultValue && parameter.defaultValue !== '...'
-    ? `\`${parameter.defaultValue}\``
-    : '`undefined`';
+    ? escapeChars(parameter.defaultValue)
+    : 'undefined';
 }
 
 function hasDefaultValues(parameters: ParameterReflection[]) {

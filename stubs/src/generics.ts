@@ -16,9 +16,10 @@ export const functionWithTypeParam = <A>() => true;
  * @typeParam B Comment for type `B`
  */
 export const functionWithTypeParams = <
-  A extends ClassWithTypeParams<string, number>,
-  B = boolean | string,
-  C = string,
+  A,
+  B extends ClassWithTypeParams<string, number>,
+  C = boolean | string,
+  D = string,
 >() => true;
 
 export function genericsWithDefaults<Type extends boolean = boolean>() {

@@ -26,37 +26,37 @@ By default the file structure is generated as per module path structure and then
 
 ## Configuring how files are generated
 
-By default all exported reflections are contained in their own file as per the HTML theme. Modules and namespaces always have a file in their own scope, however configuring what reflections are hoisted onto the module file can be configured with the `reflectionsWithOwnFile` option.
+By default all exported reflections are contained in their own file as per the HTML theme. Modules and namespaces always have a file in their own scope, however configuring what reflections are hoisted onto the module file can be configured with the `kindsWithOwnFile` option.
 
-All reflections can be hoisted onto a single module/namespace file with `none`, or to defined at a granular level the option accepts an array of the following types of reflections.
+All reflections can be hoisted onto a single module/namespace file with `None`, or to defined at a granular level the option accepts an array of the following types of reflections.
 
-- `class` - reflections which represent a class.
-- `interface` - reflections which represent an interface
-- `type` - reflections which represent a type alias
-- `enum` - reflections which represent an enum.
-- `function` - reflections which represent a function's or method's signatures.
-- `var` - reflections which represent a variable.
+- `Class` - reflections which represent a class.
+- `Interface` - reflections which represent an interface
+- `TypeAlias` - reflections which represent a type alias
+- `Enumeration` - reflections which represent an enum.
+- `Function` - reflections which represent a function's or method's signatures.
+- `Variable` - reflections which represent a variable.
 
 ### Examples
 
 The following will create seperate files for classes and interfaces only.
 
 ```bash
---reflectionsWithOwnFile class --reflectionsWithOwnFile interface
+--kindsWithOwnFile class --kindsWithOwnFile Interface
 ```
 
 _Note when definiting arrays using a json options file is less verbose:_
 
 ```js
 {
-  reflectionsWithOwnFile: ['class', 'interface'];
+  kindsWithOwnFile: ['Class', 'Interface'];
 }
 ```
 
 To hoist all reflections onto the module document can be achieved with the `none` options. If exporting from a single entrypoint this will effectively result in a single file documentation.
 
 ```bash
---reflectionsWithOwnFile none
+--kindsWithOwnFile none
 ```
 
 The result will be all reflections are documented onto a single module file:

@@ -36,12 +36,10 @@ See [File output options](./docs/file-output-options.md) for further documentati
 
 - **`--entryDocument`**<br>
   The file name of the entry document. Defaults to `README.md`.
-- **`--reflectionsWithOwnFile`**<br>
-  Determines which reflections should be written to its own file. Expected values [`none`, `all`] OR Array of [`class`, `interface`, `enum`, `function`, `var`, `type`] Defaults to `all` (all reflections exported to an individual file).
-- **`--groupByReflections`**<br>
-  Groups reflections by type (if applicable). If set to `false` all reflections will group at the same level. Note this effects directory stucture and UI organisation heading structure. Defaults to `true`.
+- **`--kindsWithOwnFile`**<br>
+  Determines which reflection kinds should be written to its own file. Expected values [`None`, `All`] OR Array of [`Class`, `Interface`, `Enum`, `Function`, `Variable`, `TypeAlias`]. Defaults to `All`.
 - **`--flattenOutputFiles`**<br>
-  Flatten output files without directories. Note this does not effect the UI.
+  Flatten output files without directories. Note this does not effect the UI. Defaults to `false`.
 
 ### UI options
 
@@ -53,8 +51,16 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print the page title. Defaults to `false`.
 - **`--hideHierarchy`**<br>
   Do not print reflection hierarchy. Defaults to `false`.
-- **`--enableLongTitles`**<br>
-  Display full name including module paths in page titles. Defaults to `false`.
+- **`--groupByKinds`**<br>
+  Group reflection kinds by headings (if applicable). If set to `false` all reflections will group at the same level. Note this effects directory stucture and UI organisation heading structure. Defaults to `true`.
+- **`--indentifiersAsCodeBlocks`**<br>
+  Format signature and declaration identifiers in code blocks. Note if `true` references will not be linked. Defaults to `false`.
+- **`--propertiesFormat`**<br>
+  Specify the render style of properties groups for Interfaces and Classes. Expected values [`List`, `Table`]. Defaults to `List`.
+- **`--typeDeclarationFormat`**<br>
+  Specify the render style of type declarations. Expected values [`List`, `Table`]. Defaults to `List`.
+- **`--enumMembersFormat`**<br>
+  Specify the render style of Enum members. Expected values [`List`, `Table`]. Defaults to `List`.
 
 ### Frontmatter options
 

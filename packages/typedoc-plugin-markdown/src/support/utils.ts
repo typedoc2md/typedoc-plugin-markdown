@@ -11,6 +11,10 @@ export function escapeChars(str: string) {
     .replace(/\|/g, '\\|');
 }
 
+export function escapeTableCol(str: string) {
+  return str.replace(/(?<!\\)\|/g, '\\|');
+}
+
 export function unEscapeChars(str: string) {
   return str
     .replace(/\\</g, '<')

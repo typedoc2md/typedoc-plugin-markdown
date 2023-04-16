@@ -116,7 +116,7 @@ export function privateFunction() {
   return '';
 }
 
-export const functionWithTypeParams = <Item = boolean | string>() => true;
+export const functionWithTypeParams = <T, Item = boolean | string>() => true;
 
 /**
  * Comments for function

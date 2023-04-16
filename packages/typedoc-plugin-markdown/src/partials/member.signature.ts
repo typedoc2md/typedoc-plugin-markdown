@@ -1,5 +1,5 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
-import { heading } from '../support/els';
+import { codeBlock, heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -31,21 +31,25 @@ function signatureBody(
       ? parentHeadingLevel
       : getReflectionHeadingLevel(
           signature.parent,
-          context.getOption('groupByReflections'),
+          context.getOption('groupByKinds'),
         )) + 1;
 
   if (signature.comment) {
     md.push(context.partials.comment(signature.comment, headingLevel));
   }
 
-  md.push(`> ${context.partials.signatureMemberDefinition(signature)}`);
+  if (context.getOption('indentifiersAsCodeBlocks')) {
+    md.push(codeBlock(context.partials.signatureMemberIdentifier(signature)));
+  } else {
+    md.push(`> ${context.partials.signatureMemberIdentifier(signature)}`);
+  }
 
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
 
   if (signature.typeParameters?.length) {
     md.push(heading(headingLevel, 'Type parameters'));
-    md.push(context.partials.typeParameters(signature.typeParameters));
+    md.push(context.partials.typeParametersTable(signature.typeParameters));
   }
 
   if (signature.parameters?.length) {
@@ -71,12 +75,17 @@ function signatureBody(
     }
 
     if (typeDeclaration?.children) {
-      if (context.getOption('typeDeclarationStyle') === 'table') {
-        md.push(
-          context.partials.typeDeclarationTable(typeDeclaration.children),
-        );
+      if (
+        context.getOption('typeDeclarationFormat').toLowerCase() === 'table'
+      ) {
+        md.push(context.partials.propertiesTable(typeDeclaration.children));
       } else {
-        md.push(context.partials.typeDeclarationList(typeDeclaration.children));
+        md.push(
+          context.partials.typeDeclarationMember(
+            typeDeclaration.children,
+            headingLevel,
+          ),
+        );
       }
     }
     if (!parentHeadingLevel) {

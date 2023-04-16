@@ -1,4 +1,4 @@
-import { DeclarationReflection, PageEvent } from 'typedoc';
+import { DeclarationReflection, PageEvent, ReflectionKind } from 'typedoc';
 import { heading } from '../support/els';
 import { getReflectionTitle } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
@@ -8,13 +8,10 @@ export function pageTitle(
   page: PageEvent<DeclarationReflection>,
 ) {
   const md: string[] = [];
-
-  md.push(
-    heading(
-      1,
-      getReflectionTitle(page.model, context.getOption('longTitles'), true),
-    ),
-  );
-
+  const title = [getReflectionTitle(page.model, true)];
+  if (!page.model.kindOf(ReflectionKind.Module)) {
+    title.unshift(ReflectionKind.singularString(page.model.kind));
+  }
+  md.push(heading(1, title.join(': ')));
   return md.join('\n\n');
 }

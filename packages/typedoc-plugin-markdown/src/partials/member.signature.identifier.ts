@@ -3,10 +3,9 @@ import { backTicks, bold } from '../support/els';
 import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-export function signatureMemberDefinition(
+export function signatureMemberIdentifier(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
-  accessor?: string,
 ) {
   const md: string[] = [];
 
@@ -14,10 +13,6 @@ export function signatureMemberDefinition(
     md.push(
       signature.parent.flags.map((flag) => `\`${flag}\``).join(' ') + ' ',
     );
-  }
-
-  if (accessor) {
-    md.push(accessor + ' ');
   }
 
   if (!['__call', '__type'].includes(signature.name)) {
@@ -38,14 +33,11 @@ export function signatureMemberDefinition(
     );
     return parameters
       .map((param, i) => {
-        const isDestructuredParam = param.name == '__namedParameters';
-        const paramsmd: string[] = [];
+        const paramsmd: string[] = [parameters.length > 2 ? '\n  ' : ''];
         if (param.flags.isRest) {
           paramsmd.push('...');
         }
-        const paramItem = `${
-          isDestructuredParam ? '«destructured»' : backTicks(param.name)
-        }${
+        const paramItem = `${escapeChars(param.name)}${
           param.flags.isOptional ||
           (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
             ? '?'
@@ -57,7 +49,7 @@ export function signatureMemberDefinition(
         }
         return paramsmd.join('');
       })
-      .join(', ');
+      .join(`, `);
   };
 
   md.push(

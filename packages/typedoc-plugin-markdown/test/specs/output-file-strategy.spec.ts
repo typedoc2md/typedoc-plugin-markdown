@@ -5,72 +5,72 @@ describe(`Output File Strategy`, () => {
   let project: ProjectReflection;
   let theme: MarkdownTheme;
 
-  test(`should set default --reflectionsWithOwnFile 'all' (modules)`, async () => {
+  test(`should set default --kindsWithOwnFile 'all' (modules)`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],
-      { options: { reflectionsWithOwnFile: 'all' } },
+      { options: { kindsWithOwnFile: 'all' } },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should set default --reflectionsWithOwnFile 'all' (namespaces)`, async () => {
+  test(`should set default --kindsWithOwnFile 'all' (namespaces)`, async () => {
     ({ project, theme } = await global.bootstrap(['index.ts'], {
-      options: { reflectionsWithOwnFile: 'all' },
+      options: { kindsWithOwnFile: 'all' },
     }));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should set with --groupByReflection=false (modules)`, async () => {
+  test(`should set with --groupByKinds=false (modules)`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],
-      { options: { groupByReflections: false } },
+      { options: { groupByKinds: false } },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should set --reflectionsWithOwnFile none'`, async () => {
+  test(`should set --kindsWithOwnFile none'`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],
-      { options: { reflectionsWithOwnFile: 'none' } },
+      { options: { kindsWithOwnFile: 'none' } },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should set default --reflectionsWithOwnFile 'none' (namespaces)`, async () => {
+  test(`should set default --kindsWithOwnFile 'none' (namespaces)`, async () => {
     ({ project, theme } = await global.bootstrap(['index.ts'], {
-      options: { reflectionsWithOwnFile: 'none' },
+      options: { kindsWithOwnFile: 'none' },
     }));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should --reflectionsWithOwnFile [class]'`, async () => {
+  test(`should --kindsWithOwnFile [class]'`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],
       {
-        options: { reflectionsWithOwnFile: ['class'] },
+        options: { kindsWithOwnFile: ['Class'] },
       },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should --reflectionsWithOwnFile [class, interface]'`, async () => {
+  test(`should --kindsWithOwnFile [Class, Interface]'`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],
       {
         options: {
-          reflectionsWithOwnFile: ['class', 'interface'],
+          kindsWithOwnFile: ['class', 'interface'],
         },
       },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should set reflectionsWithOwnFile [enum, types, variables]'`, async () => {
+  test(`should set kindsWithOwnFile [enum, types, variables]'`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],
       {
         options: {
-          reflectionsWithOwnFile: ['enum', 'type', 'var'],
+          kindsWithOwnFile: ['Enum', 'TypeAlias', 'Variable'],
         },
       },
     ));

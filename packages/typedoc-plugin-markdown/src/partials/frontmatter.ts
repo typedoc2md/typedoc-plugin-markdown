@@ -34,11 +34,7 @@ function getBaseFrontmatterVars(
   return {
     [toVariable('title', context.getOption('frontmatterNamingConvention'))]:
       unEscapeChars(
-        getReflectionTitle(
-          page.model as DeclarationReflection,
-          context.getOption('longTitles'),
-          true,
-        ),
+        getReflectionTitle(page.model as DeclarationReflection, true),
       ),
   };
 }

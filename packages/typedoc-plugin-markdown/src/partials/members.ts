@@ -1,4 +1,4 @@
-import { ContainerReflection } from 'typedoc';
+import { ContainerReflection, ReflectionKind } from 'typedoc';
 import { SYMBOLS_WITH_DOCUMENTS } from '../support/constants';
 import { heading, horizontalRule } from '../support/els';
 import { getGroupHeadingLevel } from '../support/helpers';
@@ -25,7 +25,7 @@ export function members(
       .forEach((group) => {
         const headingLevel = getGroupHeadingLevel(
           container,
-          context.getOption('groupByReflections'),
+          context.getOption('groupByKinds'),
         );
         if (group.categories) {
           md.push(heading(headingLevel, group.title));
@@ -36,19 +36,40 @@ export function members(
           );
         } else {
           if (
-            context.getOption('groupByReflections') ||
+            context.getOption('groupByKinds') ||
             SYMBOLS_WITH_DOCUMENTS.includes(container.kind)
           ) {
             md.push(heading(headingLevel, group.title));
           }
-          group.children
-            .filter((item) => !item.hasOwnDocument)
-            .forEach((groupChild) => {
-              md.push(context.partials.member(groupChild));
-              if (SYMBOLS_WITH_DOCUMENTS.includes(groupChild.kind)) {
-                md.push(horizontalRule());
-              }
-            });
+
+          const isPropertiesGroup = group.children.every((child) =>
+            child.kindOf(ReflectionKind.Property),
+          );
+
+          const isEnumGroup = group.children.every((child) =>
+            child.kindOf(ReflectionKind.EnumMember),
+          );
+
+          if (
+            isPropertiesGroup &&
+            context.getOption('propertiesFormat').toLowerCase() === 'table'
+          ) {
+            md.push(context.partials.propertiesTable(group.children));
+          } else if (
+            isEnumGroup &&
+            context.getOption('enumMembersFormat').toLowerCase() === 'table'
+          ) {
+            md.push(context.partials.enumMembersTable(group.children));
+          } else {
+            group.children
+              .filter((item) => !item.hasOwnDocument)
+              .forEach((groupChild) => {
+                md.push(context.partials.member(groupChild));
+                if (SYMBOLS_WITH_DOCUMENTS.includes(groupChild.kind)) {
+                  md.push(horizontalRule());
+                }
+              });
+          }
         }
       });
   }

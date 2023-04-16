@@ -1,4 +1,4 @@
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { heading, unorderedList } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
@@ -16,10 +16,8 @@ export function reflectionMember(
   const md: string[] = [];
 
   const headingLevel =
-    getReflectionHeadingLevel(
-      reflection,
-      context.getOption('groupByReflections'),
-    ) + 1;
+    getReflectionHeadingLevel(reflection, context.getOption('groupByKinds')) +
+    1;
 
   if (reflection.comment) {
     md.push(context.partials.comment(reflection.comment, headingLevel));
@@ -27,7 +25,7 @@ export function reflectionMember(
 
   if (reflection.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));
-    md.push(context.partials.typeParameters(reflection.typeParameters));
+    md.push(context.partials.typeParametersTable(reflection.typeParameters));
   }
 
   if (!context.getOption('hideHierarchy') && reflection.typeHierarchy?.next) {
@@ -57,7 +55,9 @@ export function reflectionMember(
     md.push(context.partials.indexSignatureTitle(reflection.indexSignature));
   }
 
-  md.push(context.partials.toc(reflection));
+  if (reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])) {
+    md.push(context.partials.toc(reflection));
+  }
 
   md.push(context.partials.members(reflection));
 

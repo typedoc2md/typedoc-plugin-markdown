@@ -1,7 +1,7 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { Collapse } from '../models';
 import { backTicks } from '../support/els';
-import { getPropertyType } from '../support/helpers';
+import { getDeclarationType } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function declarationType(
@@ -30,9 +30,10 @@ export function declarationType(
     const types =
       declarationReflection.children &&
       declarationReflection.children.map((obj) => {
-        return `${context.partials.propertyName(
+        return `${context.partials.declarationMemberName(
           obj,
-        )}: ${context.partials.someType(getPropertyType(obj) as SomeType)};`;
+          false,
+        )}: ${context.partials.someType(getDeclarationType(obj) as SomeType)};`;
       });
     if (indexSignature) {
       types?.unshift(indexSignature);

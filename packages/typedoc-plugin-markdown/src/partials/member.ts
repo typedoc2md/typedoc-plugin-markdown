@@ -18,7 +18,7 @@ export function member(
 
   const headingLevel = getReflectionHeadingLevel(
     reflection,
-    context.getOption('groupByReflections'),
+    context.getOption('groupByKinds'),
   );
 
   if (context.getOption('namedAnchors')) {
@@ -43,14 +43,14 @@ export function member(
         md.push(context.partials.signatureMember(signature));
       });
     } else {
-      if (reflection.hasGetterOrSetter()) {
+      /*if (reflection.hasGetterOrSetter()) {
         if (reflection.getSignature) {
-          md.push(context.partials.signatureMember(reflection.getSignature));
+          //  md.push(context.partials.signatureMember(reflection.getSignature));
         }
         if (reflection.setSignature) {
-          md.push(context.partials.signatureMember(reflection.setSignature));
+          //  md.push(context.partials.signatureMember(reflection.setSignature));
         }
-      }
+      }*/
 
       if (reflection instanceof ReferenceReflection) {
         md.push(context.partials.referenceMember(reflection));

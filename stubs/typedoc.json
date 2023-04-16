@@ -22,7 +22,5 @@
   "tsconfig": "./tsconfig.json",
   "cleanOutputDir": true,
   "githubPages": false,
-  "sort": ["kind"],
-  "categorizeByGroup": true,
   "modifierTags": ["@navOrder"]
 }

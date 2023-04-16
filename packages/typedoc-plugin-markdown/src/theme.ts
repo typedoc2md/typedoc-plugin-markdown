@@ -13,17 +13,16 @@ import {
 } from 'typedoc';
 import { TemplateMapping } from './models';
 import { URL_PREFIX } from './support/constants';
+import { slugify } from './support/utils';
 import { MarkdownThemeRenderContext } from './theme-context';
 export class MarkdownTheme extends Theme {
   @BindOption('entryDocument') entryDocument!: string;
   @BindOption('entryPoints') entryPoints!: string[];
   @BindOption('flattenOutputFiles') flattenOutputFiles!: string;
-  @BindOption('groupByReflections') groupByReflections!: string[];
+  @BindOption('groupByKinds') groupByKinds!: string[];
+  @BindOption('kindsWithOwnFile') kindsWithOwnFile!: string | string[];
   @BindOption('preserveAnchorCasing') preserveAnchorCasing!: boolean;
   @BindOption('readme') readme!: string;
-  @BindOption('reflectionsWithOwnFile') reflectionsWithOwnFile!:
-    | string
-    | string[];
 
   private _renderContext?: MarkdownThemeRenderContext;
 
@@ -137,7 +136,7 @@ export class MarkdownTheme extends Theme {
 
     const parts = alias.split('.');
 
-    const includesNamespace = reflection.children?.some((child) =>
+    const childrenIncludeNamespaces = reflection.children?.some((child) =>
       child.kindOf(ReflectionKind.Namespace),
     );
 
@@ -148,13 +147,14 @@ export class MarkdownTheme extends Theme {
 
     const namespaces: string[] = this.getNamespaces(reflection);
 
-    if (mapping.directory && !isModuleOrNamespace && this.groupByReflections) {
+    if (mapping.directory && !isModuleOrNamespace && this.groupByKinds) {
       parts.splice(parts.length - 1, 0, mapping.directory);
     }
 
     if (
-      (this.reflectionsWithOwnFile[0] !== 'none' && isModuleOrNamespace) ||
-      includesNamespace
+      (this.kindsWithOwnFile[0].toLocaleLowerCase() !== 'none' &&
+        isModuleOrNamespace) ||
+      childrenIncludeNamespaces
     ) {
       parts.push(parts[parts.length - 1]);
     }
@@ -164,13 +164,11 @@ export class MarkdownTheme extends Theme {
         const namespaceIndex = parts.findIndex(
           (part) => part === namespaceName,
         );
-        if (namespaceIndex > 0) {
-          parts.splice(
-            namespaceIndex,
-            0,
-            this.mappings[ReflectionKind.Namespace].directory as string,
-          );
-        }
+        parts.splice(
+          namespaceIndex,
+          0,
+          this.mappings[ReflectionKind.Namespace].directory as string,
+        );
       });
 
       if (reflection.kindOf(ReflectionKind.Namespace))
@@ -180,9 +178,9 @@ export class MarkdownTheme extends Theme {
     }
 
     if (!isModuleOrNamespace) {
-      parts[parts.length - 1] = `${ReflectionKind.singularString(
-        reflection.kind,
-      ).toLowerCase()}.${parts[parts.length - 1]}`;
+      parts[parts.length - 1] = `${slugify(
+        ReflectionKind.singularString(reflection.kind),
+      )}.${parts[parts.length - 1]}`;
     }
 
     return parts.join(this.flattenOutputFiles ? '.' : '/') + '.md';
@@ -207,25 +205,27 @@ export class MarkdownTheme extends Theme {
       container.url &&
       (!reflection.url || !URL_PREFIX.test(reflection.url))
     ) {
-      const reflectionId = this.preserveAnchorCasing
-        ? reflection.name
-        : reflection.name.toLowerCase();
+      if (!reflection.kindOf(ReflectionKind.TypeLiteral)) {
+        const reflectionId = this.preserveAnchorCasing
+          ? reflection.name
+          : reflection.name.toLowerCase();
 
-      if (isSymbol) {
-        this.anchors[container.url]
-          ? this.anchors[container.url].push(reflectionId)
-          : (this.anchors[container.url] = [reflectionId]);
+        if (isSymbol) {
+          this.anchors[container.url]
+            ? this.anchors[container.url].push(reflectionId)
+            : (this.anchors[container.url] = [reflectionId]);
+        }
+
+        const count = this.anchors[container.url]?.filter(
+          (id) => id === reflectionId,
+        )?.length;
+
+        const anchor =
+          reflectionId + (count > 1 ? '-' + (count - 1).toString() : '');
+
+        reflection.url = container.url + '#' + anchor;
+        reflection.anchor = anchor;
       }
-
-      const count = this.anchors[container.url]?.filter(
-        (id) => id === reflectionId,
-      )?.length;
-
-      const anchor =
-        reflectionId + (count > 1 ? '-' + (count - 1).toString() : '');
-
-      reflection.url = container.url + '#' + anchor;
-      reflection.anchor = anchor;
       reflection.hasOwnDocument = false;
     }
     reflection.traverse((child) => {
@@ -236,7 +236,11 @@ export class MarkdownTheme extends Theme {
   }
 
   get mappings(): Record<number, TemplateMapping> {
-    const isAll = this.reflectionsWithOwnFile.includes('all');
+    const kindsWithOwnFile: string[] = Array.isArray(this.kindsWithOwnFile)
+      ? this.kindsWithOwnFile.map((val) => val.toLowerCase())
+      : [this.kindsWithOwnFile.toLowerCase()];
+
+    const isAll = kindsWithOwnFile.includes('all');
 
     const mappings = {
       [ReflectionKind.Module]: {
@@ -253,7 +257,7 @@ export class MarkdownTheme extends Theme {
       },
     };
 
-    if (isAll || this.reflectionsWithOwnFile.includes('class')) {
+    if (isAll || kindsWithOwnFile.includes('class')) {
       mappings[ReflectionKind.Class] = {
         isLeaf: false,
         template: this.reflectionTemplate,
@@ -261,7 +265,7 @@ export class MarkdownTheme extends Theme {
         kind: ReflectionKind.Class,
       };
     }
-    if (isAll || this.reflectionsWithOwnFile.includes('interface')) {
+    if (isAll || kindsWithOwnFile.includes('interface')) {
       mappings[ReflectionKind.Interface] = {
         isLeaf: false,
         template: this.reflectionTemplate,
@@ -269,7 +273,7 @@ export class MarkdownTheme extends Theme {
         kind: ReflectionKind.Interface,
       };
     }
-    if (isAll || this.reflectionsWithOwnFile.includes('enum')) {
+    if (isAll || kindsWithOwnFile.includes('enum')) {
       mappings[ReflectionKind.Enum] = {
         isLeaf: false,
         template: this.reflectionTemplate,
@@ -277,7 +281,7 @@ export class MarkdownTheme extends Theme {
         kind: ReflectionKind.Enum,
       };
     }
-    if (isAll || this.reflectionsWithOwnFile.includes('function')) {
+    if (isAll || kindsWithOwnFile.includes('function')) {
       mappings[ReflectionKind.Function] = {
         isLeaf: true,
         template: this.memberTemplate,
@@ -285,7 +289,7 @@ export class MarkdownTheme extends Theme {
         kind: ReflectionKind.Function,
       };
     }
-    if (isAll || this.reflectionsWithOwnFile.includes('type')) {
+    if (isAll || kindsWithOwnFile.includes('typealias')) {
       mappings[ReflectionKind.TypeAlias] = {
         isLeaf: true,
         template: this.memberTemplate,
@@ -293,7 +297,7 @@ export class MarkdownTheme extends Theme {
         kind: ReflectionKind.TypeAlias,
       };
     }
-    if (isAll || this.reflectionsWithOwnFile.includes('var')) {
+    if (isAll || kindsWithOwnFile.includes('variable')) {
       mappings[ReflectionKind.Variable] = {
         isLeaf: true,
         template: this.memberTemplate,

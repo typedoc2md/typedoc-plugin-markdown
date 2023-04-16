@@ -3,17 +3,18 @@
 exports[`Generics: should compile class with type params 1`] = `
 "[partial: breadcrumbs]
 
-# ClassWithTypeParams\\<T, V\\>
+# Class: ClassWithTypeParams\\<T, V\\>
 
 [partial: comment]
 
 ## Type parameters
 
-- \`T\`
-- \`V\`
 
+| Parameter |
+| :------ |
+| T |
+| V |
 
-[partial: toc]
 
 [partial: members]"
 `;
@@ -23,7 +24,10 @@ exports[`Generics: should compile function with a simple type param' 1`] = `
 
 ## Type parameters
 
-- \`A\`
+
+| Parameter |
+| :------ |
+| A |
 
 
 ## Returns
@@ -36,13 +40,17 @@ exports[`Generics: should compile function with a simple type param' 1`] = `
 exports[`Generics: should compile function with complex type params' 1`] = `
 "[partial: comment]
 
-> **functionWithTypeParams**\\<A, B, C\\>(): \`boolean\`
+> **functionWithTypeParams**\\<A, B, C, D\\>(): \`boolean\`
 
 ## Type parameters
 
-- \`A\` *extends* [\`ClassWithTypeParams\`](classes/class.ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`A\`\\>[partial: comment]
-- \`B\` = \`string\` \\| \`boolean\`[partial: comment]
-- \`C\` = \`string\`
+
+| Parameter | Default | Description |
+| :------ | :------ | :------ |
+| A | - | [partial: comment] |
+| B *extends* [\`ClassWithTypeParams\`](classes/class.ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`B\`\\> | - | [partial: comment] |
+| C | \`string\` \\| \`boolean\` | - |
+| D | \`string\` | - |
 
 
 ## Returns
@@ -52,10 +60,14 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 [partial: sources]"
 `;
 
-exports[`Generics: should compile generics with defaults' 1`] = `"[partial: sources]"`;
+exports[`Generics: should compile generics with defaults' 1`] = `
+"> **genericsWithDefaults**
+
+[partial: sources]"
+`;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-">  **nestedGenerics**: [\`Generic1\`](types/type alias.Generic1.md)\\<[\`Generic2\`](types/type alias.Generic2.md)\\<[\`Generic3\`](types/type alias.Generic3.md)\\<\`string\`\\>\\>\\>
+"> **nestedGenerics**: [\`Generic1\`](types/type-alias.Generic1.md)\\<[\`Generic2\`](types/type-alias.Generic2.md)\\<[\`Generic3\`](types/type-alias.Generic3.md)\\<\`string\`\\>\\>\\>
 
 [partial: sources]"
 `;

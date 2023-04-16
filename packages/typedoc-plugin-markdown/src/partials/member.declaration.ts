@@ -1,25 +1,60 @@
-import { DeclarationReflection } from 'typedoc';
-import { heading } from '../support/els';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { blockQuoteBlock, codeBlock, heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function declarationMember(
   context: MarkdownThemeRenderContext,
   declaration: DeclarationReflection,
+  parentHeadingLevel?: number,
+) {
+  const md: string[] = [];
+  if (parentHeadingLevel) {
+    md.push(declarationBody(context, declaration, parentHeadingLevel));
+  } else {
+    md.push(declarationBody(context, declaration));
+  }
+
+  return md.join('\n\n');
+}
+
+function declarationBody(
+  context: MarkdownThemeRenderContext,
+  declaration: DeclarationReflection,
+  parentHeadingLevel?: number,
 ) {
   const md: string[] = [];
 
   const headingLevel =
-    getReflectionHeadingLevel(
-      declaration,
-      context.getOption('groupByReflections'),
-    ) + 1;
+    (parentHeadingLevel
+      ? parentHeadingLevel
+      : getReflectionHeadingLevel(
+          declaration,
+          context.getOption('groupByKinds'),
+        )) + 1;
 
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (declaration.type) {
-    md.push(`${context.partials.declarationMemberDefinition(declaration)}`);
+  const isTypeLiteralProperty =
+    declaration.kindOf(ReflectionKind.Property) &&
+    declaration.parent?.kindOf(ReflectionKind.TypeLiteral);
+
+  const titleSuffix = isTypeLiteralProperty
+    ? ` - ${escapeChars(declaration.name)}`
+    : '';
+
+  if (context.getOption('indentifiersAsCodeBlocks')) {
+    md.push(
+      codeBlock(context.partials.declarationMemberIdentifier(declaration)),
+    );
+  } else {
+    md.push(
+      `${
+        !parentHeadingLevel ? '>' : ''
+      } ${context.partials.declarationMemberIdentifier(declaration)}`,
+    );
   }
 
   if (declaration.comment) {
@@ -27,37 +62,46 @@ export function declarationMember(
   }
 
   if (declaration.typeParameters) {
-    md.push(heading(headingLevel, 'Type parameters'));
-    md.push(context.partials.typeParameters(declaration.typeParameters));
+    md.push(heading(headingLevel, `Type parameters${titleSuffix}`));
+    md.push(context.partials.typeParametersTable(declaration.typeParameters));
   }
 
   if (typeDeclaration) {
     if (typeDeclaration?.indexSignature) {
-      md.push(heading(headingLevel, 'Index signature'));
+      md.push(heading(headingLevel, `Index signature${titleSuffix}`));
       md.push(
         context.partials.indexSignatureTitle(typeDeclaration.indexSignature),
       );
     }
 
-    md.push(heading(headingLevel, 'Type declaration'));
+    md.push(heading(headingLevel, `Type declaration${titleSuffix}`));
+
     if (typeDeclaration?.signatures) {
       typeDeclaration.signatures.forEach((signature) => {
         md.push(context.partials.signatureMember(signature, headingLevel));
       });
     }
 
-    if (typeDeclaration?.children) {
-      if (context.getOption('typeDeclarationStyle') === 'table') {
-        md.push(
-          context.partials.typeDeclarationTable(typeDeclaration.children),
-        );
+    if (typeDeclaration?.children?.length) {
+      if (
+        context.getOption('typeDeclarationFormat').toLowerCase() === 'table'
+      ) {
+        md.push(context.partials.propertiesTable(typeDeclaration.children));
       } else {
-        md.push(context.partials.typeDeclarationList(typeDeclaration.children));
+        md.push(
+          blockQuoteBlock(
+            context.partials.typeDeclarationMember(
+              typeDeclaration.children,
+              headingLevel,
+            ),
+          ),
+        );
       }
     }
   }
 
-  md.push(context.partials.sources(declaration, headingLevel));
-
+  if (!parentHeadingLevel) {
+    md.push(context.partials.sources(declaration, headingLevel));
+  }
   return md.join('\n\n');
 }

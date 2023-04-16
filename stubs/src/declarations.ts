@@ -4,6 +4,12 @@ stringLetWithDefaultValue = 'world';
 
 export let undefinedNumberDeclaration: number;
 
+export const objectLiteralAsConstDeclaration = {
+  Prop1: 'Prop1',
+  Prop2: 'Prop2',
+  Prop3: 'Prop3',
+} as const;
+
 /**
  * Comments for object literal
  */
@@ -30,6 +36,10 @@ export const objectLiteralDeclaration = {
      * Comment for valueA
      */
     valueA: [100, 200, 300],
+    valueB: {
+      valueB1: 1,
+      valueB2: 2,
+    },
   },
   /**
    * Comment for valueA
@@ -73,12 +83,6 @@ export let indexableDeclaration: {
   [index: number]: string;
   arg1: string;
 };
-
-export const objectLiteralAsConstDeclaration = {
-  Prop1: 'Prop1',
-  Prop2: 'Prop2',
-  Prop3: 'Prop3',
-} as const;
 
 /**
  * Comments

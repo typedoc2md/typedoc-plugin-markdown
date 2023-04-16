@@ -1,16 +1,23 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
-import { getPropertyType } from '../support/helpers';
-import { escapeChars, stripLineBreaks } from '../support/utils';
+import { backTicks, table } from '../support/els';
+import { getDeclarationType, tableComments } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
-export function typeDeclarationTable(
+export function propertiesTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
 ) {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
-  const hasComments = !comments.every((value) => !value);
+  const hasComments = comments.some((value) => Boolean(value));
+  const hasModifiers = props.some((prop) => prop.flags.length);
 
-  const headers = ['Member', 'Type'];
+  const headers = ['Property'];
+
+  if (hasModifiers) {
+    headers.push('Modifiers');
+  }
+
+  headers.push('Type');
 
   if (hasComments) {
     headers.push('Description');
@@ -42,46 +49,47 @@ export function typeDeclarationTable(
     [],
   );
 
-  const rows = properties.map((property) => {
-    const propertyType = getPropertyType(property);
-    const row: string[] = [];
-    const nameCol: string[] = [];
-    const name =
-      property.name.match(/[\\`\\|]/g) !== null
-        ? escapeChars(property.name)
-        : context.partials.propertyName(property);
-    const isParent = name.split('.')?.length === 1;
-    nameCol.push(name);
-    row.push(nameCol.join(' '));
-    row.push(
-      stripLineBreaks(
-        context.partials
-          .someType(propertyType, isParent ? 'object' : 'none')
-          .replace(/(?<!\\)\|/g, '\\|'),
-      ),
-    );
+  const rows: string[][] = [];
 
-    if (hasComments) {
-      const comments = getComments(property);
-      if (comments) {
+  properties.forEach((property: DeclarationReflection) => {
+    const propertyType = getDeclarationType(property);
+    const row: string[] = [];
+
+    let prefix = '';
+    if (property.name.split('.').length > 1) {
+      prefix = '\\> ';
+    }
+
+    row.push(prefix + context.partials.declarationMemberName(property, false));
+
+    if (hasModifiers) {
+      if (property.flags.length) {
         row.push(
-          stripLineBreaks(context.partials.comment(comments)).replace(
-            /\|/g,
-            '\\|',
-          ),
+          property.flags.map((flag) => backTicks(flag.toLowerCase())).join(' '),
         );
       } else {
         row.push('-');
       }
     }
-    return `| ${row.join(' | ')} |\n`;
+
+    if (propertyType) {
+      row.push(
+        tableComments(context.partials.someType(propertyType, 'object')),
+      );
+    }
+
+    if (hasComments) {
+      const comments = getComments(property);
+      if (comments) {
+        row.push(tableComments(context.partials.comment(comments)));
+      } else {
+        row.push('-');
+      }
+    }
+    rows.push(row);
   });
 
-  const output = `\n| ${headers.join(' | ')} |\n| ${headers
-    .map(() => ':------')
-    .join(' | ')} |\n${rows.join('')}`;
-
-  return output;
+  return table(headers, rows);
 }
 
 function getComments(property: DeclarationReflection) {

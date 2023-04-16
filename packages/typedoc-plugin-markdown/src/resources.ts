@@ -37,22 +37,23 @@ import { commentParts } from './partials/comment.parts';
 import { comment } from './partials/comment';
 import { frontmatter } from './partials/frontmatter';
 import { hierarchy } from './partials/hierarchy';
-import { declarationMemberDefinition } from './partials/member.declaration.definition';
+import { declarationMemberIdentifier } from './partials/member.declaration.identifier';
+import { declarationMemberName } from './partials/member.declaration.name';
 import { declarationMember } from './partials/member.declaration';
 import { indexSignatureTitle } from './partials/member.indexsignature.title';
 import { referenceMember } from './partials/member.reference';
 import { reflectionMember } from './partials/member.reflection';
-import { signatureMemberDefinition } from './partials/member.signature.definition';
+import { signatureMemberIdentifier } from './partials/member.signature.identifier';
 import { signatureMember } from './partials/member.signature';
+import { sources } from './partials/member.sources';
 import { member } from './partials/member';
-import { typeDeclarationList } from './partials/member.typedeclaration.list';
-import { typeDeclarationTable } from './partials/member.typedeclaration.table';
-import { typeParameters } from './partials/member.typeparameters';
+import { typeDeclarationMember } from './partials/member.typedeclaration';
 import { members } from './partials/members';
 import { pageTitle } from './partials/page.title';
-import { propertyName } from './partials/property.name';
-import { sources } from './partials/sources';
+import { enumMembersTable } from './partials/table.enum-members';
 import { parametersTable } from './partials/table.parameters';
+import { propertiesTable } from './partials/table.properties';
+import { typeParametersTable } from './partials/table.typeparameters';
 import { toc } from './partials/toc';
 import { arrayType } from './partials/type.array';
 import { conditionalType } from './partials/type.conditional';
@@ -88,22 +89,23 @@ export type Partials = {
   comment: (comment: Comment, headingLevel?: number |  undefined) => string;
   frontmatter: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
-  declarationMemberDefinition: (reflection: DeclarationReflection) => string;
-  declarationMember: (declaration: DeclarationReflection) => string;
+  declarationMemberIdentifier: (reflection: DeclarationReflection) => string;
+  declarationMemberName: (declaration: DeclarationReflection, emphasis?: boolean) => string;
+  declarationMember: (declaration: DeclarationReflection, parentHeadingLevel?: number |  undefined) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
   referenceMember: (props: ReferenceReflection) => string;
   reflectionMember: (reflection: DeclarationReflection) => string;
-  signatureMemberDefinition: (signature: SignatureReflection, accessor?: string |  undefined) => string;
+  signatureMemberIdentifier: (signature: SignatureReflection) => string;
   signatureMember: (signature: SignatureReflection, parentHeadingLevel?: number |  undefined) => string;
+  sources: (reflection: DeclarationReflection | SignatureReflection, headingLevel: number) => string;
   member: (reflection: DeclarationReflection) => string;
-  typeDeclarationList: (props: DeclarationReflection[]) => string;
-  typeDeclarationTable: (props: DeclarationReflection[]) => string;
-  typeParameters: (typeParameters: TypeParameterReflection[]) => string;
+  typeDeclarationMember: (declarations: DeclarationReflection[], parentHeadingLevel: number) => string;
   members: (container: ContainerReflection) => string;
   pageTitle: (page: PageEvent<DeclarationReflection>) => string;
-  propertyName: (property: DeclarationReflection) => string;
-  sources: (reflection: DeclarationReflection | SignatureReflection, headingLevel: number) => string;
+  enumMembersTable: (props: DeclarationReflection[]) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
+  propertiesTable: (props: DeclarationReflection[]) => string;
+  typeParametersTable: (typeParameters: TypeParameterReflection[]) => string;
   toc: (reflection: DeclarationReflection | ProjectReflection) => string;
   arrayType: (arrayType: ArrayType) => string;
   conditionalType: (conditionalType: ConditionalType) => string;
@@ -137,22 +139,23 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   comment: bind(comment, context),
   frontmatter: bind(frontmatter, context),
   hierarchy: bind(hierarchy, context),
-  declarationMemberDefinition: bind(declarationMemberDefinition, context),
+  declarationMemberIdentifier: bind(declarationMemberIdentifier, context),
+  declarationMemberName: bind(declarationMemberName, context),
   declarationMember: bind(declarationMember, context),
   indexSignatureTitle: bind(indexSignatureTitle, context),
   referenceMember: bind(referenceMember, context),
   reflectionMember: bind(reflectionMember, context),
-  signatureMemberDefinition: bind(signatureMemberDefinition, context),
+  signatureMemberIdentifier: bind(signatureMemberIdentifier, context),
   signatureMember: bind(signatureMember, context),
+  sources: bind(sources, context),
   member: bind(member, context),
-  typeDeclarationList: bind(typeDeclarationList, context),
-  typeDeclarationTable: bind(typeDeclarationTable, context),
-  typeParameters: bind(typeParameters, context),
+  typeDeclarationMember: bind(typeDeclarationMember, context),
   members: bind(members, context),
   pageTitle: bind(pageTitle, context),
-  propertyName: bind(propertyName, context),
-  sources: bind(sources, context),
+  enumMembersTable: bind(enumMembersTable, context),
   parametersTable: bind(parametersTable, context),
+  propertiesTable: bind(propertiesTable, context),
+  typeParametersTable: bind(typeParametersTable, context),
   toc: bind(toc, context),
   arrayType: bind(arrayType, context),
   conditionalType: bind(conditionalType, context),
