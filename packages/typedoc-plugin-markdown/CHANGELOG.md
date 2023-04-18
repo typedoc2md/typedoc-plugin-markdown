@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.7
+
+### Patch Changes
+
+- Added `indentifiersAsCodeBlocks`, `propertiesFormat`, `typeDeclarationFormat`, `enumMembersFormat` options.
+- Renamed `reflectionsWithOwnFile`=>`kindsWithOwnFile` and `groupByReflections`=>`groupByKinds`.
+- General ui tweaks and fixes
+
 ## 4.0.0-next.6
 
 ### Patch Changes
