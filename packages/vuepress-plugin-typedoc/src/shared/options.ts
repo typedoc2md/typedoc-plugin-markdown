@@ -1,5 +1,7 @@
 import {
   Application,
+  MixedDeclarationOption,
+  ParameterType,
   TSConfigReader,
   TypeDocOptions,
   TypeDocReader,
@@ -43,4 +45,9 @@ export const getSidebarOptions = (
 export const addOptions = (app: Application) => {
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
+
+  app.options.addDeclaration({
+    name: 'sidebar',
+    type: ParameterType.Mixed,
+  } as MixedDeclarationOption);
 };
