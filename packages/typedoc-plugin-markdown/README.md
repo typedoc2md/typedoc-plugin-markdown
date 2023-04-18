@@ -13,17 +13,19 @@ The plugin replaces the default HTML theme with a built-in Markdown theme and ex
 
 ## Installation
 
+> Please note the `next` pre-release version may contain breaking changes within the same semantic version.
+
 ```bash
 npm install typedoc-plugin-markdown@next --save-dev
 ```
-
-> Please note the `next` version may contain breaking changes within the same semantic version without warning.
 
 ## Usage
 
 ```bash
 typedoc --plugin typedoc-plugin-markdown
 ```
+
+Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. This does require an additional peer dependency, however introduces a consistent output format.
 
 ## Options
 
