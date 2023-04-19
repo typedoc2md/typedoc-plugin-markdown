@@ -40,8 +40,10 @@ See [File output options](./docs/file-output-options.md) for further documentati
   The file name of the entry document. Defaults to `README.md`.
 - **`--kindsWithOwnFile`**<br>
   Determines which reflection kinds should be written to its own file. Expected values [`None`, `All`] OR Array of [`Class`, `Interface`, `Enum`, `Function`, `Variable`, `TypeAlias`]. Defaults to `All`.
-- **`--flattenOutputFiles`**<br>
-  Flatten output files without directories. Note this does not effect the UI. Defaults to `false`.
+- **`--flattenOutput`**<br>
+  Flatten output files without folders. Note this does not effect the UI. Defaults to `false`.
+- **`--numberPrefixOutput`**<br>
+  Prefixes docs and folders by number prefixes if applicable. Useful for auto sidebar generation. Defaults to `false`.
 
 ### UI options
 
@@ -51,8 +53,12 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print in-page index items. Defaults to `false`.
 - **`--hidePageTitle`**<br>
   Do not print the page title. Defaults to `false`.
+- **`--hideKindTag`**<br>
+  Do not print the kind tag beneath the page title. Defaults to `false`.
 - **`--hideHierarchy`**<br>
   Do not print reflection hierarchy. Defaults to `false`.
+- **`--indexPageTitle`**<br>
+  The title of the main index / modules page. If not set will default to the project name.
 - **`--groupByKinds`**<br>
   Group reflection kinds by headings (if applicable). If set to `false` all reflections will group at the same level. Note this effects directory stucture and UI organisation heading structure. Defaults to `true`.
 - **`--indentifiersAsCodeBlocks`**<br>

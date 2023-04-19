@@ -19,3 +19,5 @@ export interface SomeProps {
   prop2: string;
   prop3: string;
 }
+
+export class Animal {}

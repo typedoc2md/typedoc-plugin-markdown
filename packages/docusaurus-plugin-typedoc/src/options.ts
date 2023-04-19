@@ -1,15 +1,12 @@
-import { PluginOptions } from './types';
+import { PluginOptions } from './models';
 
-const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
+const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   id: 'default',
   docsRoot: 'docs',
   out: 'api',
-  cleanOutputDir: true,
   sidebar: {
-    fullNames: false,
     categoryLabel: 'API',
     collapsed: true,
-    indexLabel: 'Overview',
     position: null,
     autoConfiguration: true,
   },
@@ -19,8 +16,9 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   entryDocument: 'index.md',
   plugin: ['none'],
   watch: false,
-  theme: 'docusaurus',
   enableFrontmatter: true,
+  numberPrefixOutput: true,
+  theme: 'docusaurus',
 };
 
 export const getPluginOptions = (
@@ -34,5 +32,5 @@ export const getPluginOptions = (
       ...opts.sidebar,
     },
   };
-  return options;
+  return options as PluginOptions;
 };

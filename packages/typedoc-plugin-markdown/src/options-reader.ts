@@ -5,7 +5,7 @@ export class MarkdownPluginOptionsReader implements OptionsReader {
   options: Partial<TypedocPluginMarkdownOptions>;
 
   name = 'custom-options';
-  readonly order = 900;
+  order = 1000;
   readonly supportsPackages = false;
 
   constructor(options: Partial<TypedocPluginMarkdownOptions>) {

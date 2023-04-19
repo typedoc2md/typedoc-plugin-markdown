@@ -36,14 +36,11 @@ const config = {
         sidebar: {
           autoConfiguration: true,
           position: 0,
-          indexLabel: 'Overview',
           categoryLabel: 'API-1',
         },
+        indexPageTitle: 'Overview',
         cleanOutputDir: true,
-        frontmatterGlobals: {
-          pagination_prev: null,
-          pagination_next: null,
-        },
+        groupByKinds: true,
       },
     ],
     [
@@ -55,7 +52,6 @@ const config = {
         sidebar: {
           autoConfiguration: true,
           position: 1,
-          fullNames: true,
           categoryLabel: 'API-2',
         },
         cleanOutputDir: true,

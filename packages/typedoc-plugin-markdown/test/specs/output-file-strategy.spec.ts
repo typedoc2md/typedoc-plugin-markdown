@@ -20,6 +20,22 @@ describe(`Output File Strategy`, () => {
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
+  test(`should set --kindsWithOwnFile 'all' --numberPrefixOutput`, async () => {
+    ({ project, theme } = await global.bootstrap(
+      ['modules/module-1', 'modules/module-2'],
+      { options: { kindsWithOwnFile: 'all', numberPrefixOutput: true } },
+    ));
+    expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+  });
+
+  test(`should set --kindsWithOwnFile 'all' --flattenOutput`, async () => {
+    ({ project, theme } = await global.bootstrap(
+      ['modules/module-1', 'modules/module-2'],
+      { options: { kindsWithOwnFile: 'all', flattenOutput: true } },
+    ));
+    expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+  });
+
   test(`should set with --groupByKinds=false (modules)`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],

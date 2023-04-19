@@ -18,9 +18,10 @@ import { MarkdownThemeRenderContext } from './theme-context';
 export class MarkdownTheme extends Theme {
   @BindOption('entryDocument') entryDocument!: string;
   @BindOption('entryPoints') entryPoints!: string[];
-  @BindOption('flattenOutputFiles') flattenOutputFiles!: string;
+  @BindOption('flattenOutput') flattenOutput!: string;
   @BindOption('groupByKinds') groupByKinds!: string[];
   @BindOption('kindsWithOwnFile') kindsWithOwnFile!: string | string[];
+  @BindOption('numberPrefixOutput') numberPrefixOutput!: string;
   @BindOption('preserveAnchorCasing') preserveAnchorCasing!: boolean;
   @BindOption('readme') readme!: string;
 
@@ -83,21 +84,26 @@ export class MarkdownTheme extends Theme {
         new UrlMapping(this.entryDocument, project, this.projectTemplate),
       );
     } else {
-      project.url = this.getRenderContext().globalsFile;
+      project.url = this.getRenderContext().modulesFile;
+      urls.push(
+        new UrlMapping(this.entryDocument, project, this.readmeTemplate),
+      );
       urls.push(
         new UrlMapping(
-          this.getRenderContext().globalsFile,
+          `${this.numberPrefixOutput ? '01-' : ''}${
+            this.getRenderContext().modulesFile
+          }`,
           project,
           this.projectTemplate,
         ),
       );
-      urls.push(
-        new UrlMapping(this.entryDocument, project, this.readmeTemplate),
-      );
     }
 
-    project.children?.forEach((child) => {
-      this.buildUrls(child, urls);
+    project.groups?.forEach((projectGroup, groupIndex) => {
+      projectGroup.children.forEach((child) => {
+        const index = noReadmeFile ? groupIndex : groupIndex + 1;
+        this.buildUrls(child, urls, index);
+      });
     });
 
     return urls;
@@ -106,35 +112,40 @@ export class MarkdownTheme extends Theme {
   buildUrls(
     reflection: DeclarationReflection,
     urls: UrlMapping[],
+    index: number,
   ): UrlMapping[] {
     const mapping = this.mappings[reflection.kind];
 
     if (mapping) {
-      const url = this.getUrl(reflection, mapping);
+      const url = this.getUrl(reflection, mapping, index);
       urls.push(new UrlMapping(url, reflection, mapping.template));
       reflection.url = url;
       reflection.hasOwnDocument = true;
-      for (const child of reflection.children || []) {
-        if (mapping.isLeaf) {
-          this.applyAnchorUrl(child, reflection);
-        } else {
-          this.buildUrls(child, urls);
-        }
-      }
+      reflection.groups?.forEach((reflectionGroup, groupIndex) => {
+        reflectionGroup.children.forEach((child) => {
+          if (mapping.isLeaf) {
+            this.applyAnchorUrl(child, reflection);
+          } else {
+            this.buildUrls(child, urls, groupIndex);
+          }
+        });
+      });
     } else if (reflection.parent) {
       this.applyAnchorUrl(reflection, reflection.parent);
     }
     return urls;
   }
 
-  getUrl(reflection: DeclarationReflection, mapping: TemplateMapping) {
+  getUrl(
+    reflection: DeclarationReflection,
+    mapping: TemplateMapping,
+    index: number,
+  ) {
     const alias = reflection.getFriendlyFullName().replace(/\//g, '_');
 
-    if (this.flattenOutputFiles) {
+    if (this.flattenOutput) {
       return alias + '.md';
     }
-
-    const parts = alias.split('.');
 
     const childrenIncludeNamespaces = reflection.children?.some((child) =>
       child.kindOf(ReflectionKind.Namespace),
@@ -145,18 +156,26 @@ export class MarkdownTheme extends Theme {
       ReflectionKind.Namespace,
     ]);
 
+    const parts = alias.split('.');
+
     const namespaces: string[] = this.getNamespaces(reflection);
 
     if (mapping.directory && !isModuleOrNamespace && this.groupByKinds) {
-      parts.splice(parts.length - 1, 0, mapping.directory);
+      parts.splice(
+        parts.length - 1,
+        0,
+        `${this.numberPrefixOutput ? `0${index + 1}-` : ''}${
+          mapping.directory
+        }`,
+      );
     }
 
     if (
-      (this.kindsWithOwnFile[0].toLocaleLowerCase() !== 'none' &&
+      (this.kindsWithOwnFile[0].toLowerCase() !== 'none' &&
         isModuleOrNamespace) ||
       childrenIncludeNamespaces
     ) {
-      parts.push(parts[parts.length - 1]);
+      parts.push(`${parts[parts.length - 1]}`);
     }
 
     if (namespaces.length > 0) {
@@ -164,26 +183,32 @@ export class MarkdownTheme extends Theme {
         const namespaceIndex = parts.findIndex(
           (part) => part === namespaceName,
         );
+        parts[namespaceIndex] = `${this.getAliasPrefix(
+          ReflectionKind.Namespace,
+        )}.${parts[namespaceIndex]}`;
         parts.splice(
           namespaceIndex,
           0,
-          this.mappings[ReflectionKind.Namespace].directory as string,
+          `${this.numberPrefixOutput ? '01-' : ''}${
+            this.mappings[ReflectionKind.Namespace].directory
+          }` as string,
         );
       });
-
-      if (reflection.kindOf(ReflectionKind.Namespace))
-        parts[parts.length - 1] = `${ReflectionKind.singularString(
-          ReflectionKind.Namespace,
-        ).toLowerCase()}.${parts[parts.length - 1]}`;
     }
 
-    if (!isModuleOrNamespace) {
-      parts[parts.length - 1] = `${slugify(
-        ReflectionKind.singularString(reflection.kind),
-      )}.${parts[parts.length - 1]}`;
+    parts[parts.length - 1] = `${this.getAliasPrefix(reflection.kind)}.${
+      parts[parts.length - 1]
+    }`;
+
+    if (parts.length > 1 && this.entryPoints?.length > 1) {
+      parts[0] = `${this.getAliasPrefix(ReflectionKind.Module)}.${parts[0]}`;
     }
 
-    return parts.join(this.flattenOutputFiles ? '.' : '/') + '.md';
+    return parts.join('/') + '.md';
+  }
+
+  getAliasPrefix(reflectionKind: ReflectionKind) {
+    return slugify(ReflectionKind.singularString(reflectionKind));
   }
 
   getNamespaces(reflection: DeclarationReflection, namespaces: string[] = []) {

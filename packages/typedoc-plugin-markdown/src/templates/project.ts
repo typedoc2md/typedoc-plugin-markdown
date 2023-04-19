@@ -1,5 +1,5 @@
 import { PageEvent, ProjectReflection } from 'typedoc';
-import { heading, link } from '../support/els';
+import { heading } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function projectTemplate(
@@ -12,14 +12,8 @@ export function projectTemplate(
     md.push(context.partials.frontmatter(page));
   }
 
-  if (!context.getOption('hideBreadcrumbs') && Boolean(page.model.readme)) {
-    md.push(
-      link('Readme', context.relativeURL(context.getOption('entryDocument'))),
-    );
-  }
-
   if (!context.getOption('hidePageTitle')) {
-    md.push(heading(1, page.project.name));
+    md.push(heading(1, context.partials.pageTitle(page)));
   }
 
   if (page.model.comment) {

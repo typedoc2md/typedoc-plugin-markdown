@@ -12,11 +12,14 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   groupByKinds: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
+  hideKindTag: boolean;
   hidePageTitle: boolean;
   hideHierarchy: boolean;
   indentifiersAsCodeBlocks: boolean;
+  indexPageTitle: string;
   kindsWithOwnFile: string | string[];
   namedAnchors: boolean;
+  numberPrefixOutput: boolean;
   propertiesFormat: 'List' | 'Table';
   typeDeclarationFormat: 'List' | 'Table';
 }

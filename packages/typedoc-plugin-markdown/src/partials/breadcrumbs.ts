@@ -11,14 +11,14 @@ export function breadcrumbs(
     if (page.model.kind) {
       const md: string[] = [];
       md.push(
-        page.url === context.globalsFile
+        page.url === context.modulesFile
           ? page.project.name
           : link(
               page.project.name,
               context.relativeURL(
                 context.getOption('readme').endsWith('none')
                   ? context.getOption('entryDocument')
-                  : context.globalsFile,
+                  : context.modulesFile,
               ),
             ),
       );

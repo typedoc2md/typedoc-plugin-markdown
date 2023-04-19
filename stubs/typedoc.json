@@ -22,5 +22,6 @@
   "tsconfig": "./tsconfig.json",
   "cleanOutputDir": true,
   "githubPages": false,
-  "modifierTags": ["@navOrder"]
+  "modifierTags": ["@navOrder"],
+  "logLevel": "Verbose"
 }

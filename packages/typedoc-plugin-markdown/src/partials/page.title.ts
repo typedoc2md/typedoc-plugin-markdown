@@ -1,17 +1,16 @@
-import { DeclarationReflection, PageEvent, ReflectionKind } from 'typedoc';
-import { heading } from '../support/els';
+import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { getReflectionTitle } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function pageTitle(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<DeclarationReflection>,
+  page: PageEvent<DeclarationReflection | ProjectReflection>,
 ) {
   const md: string[] = [];
-  const title = [getReflectionTitle(page.model, true)];
-  if (!page.model.kindOf(ReflectionKind.Module)) {
-    title.unshift(ReflectionKind.singularString(page.model.kind));
+  if (page.model?.url === page.project.url) {
+    md.push(context.getOption('indexPageTitle') || page.project.name);
+  } else {
+    md.push(getReflectionTitle(page.model as DeclarationReflection, true));
   }
-  md.push(heading(1, title.join(': ')));
-  return md.join('\n\n');
+  return md.join(' ');
 }

@@ -8,8 +8,7 @@ import {
   RendererEvent,
 } from 'typedoc';
 import { MarkdownTheme, TemplateMapping } from 'typedoc-plugin-markdown';
-import { CATEGORY_POSITION } from './navigation';
-import { SidebarOptions } from './types';
+import { SidebarOptions } from './models';
 
 export class DocusaurusTheme extends MarkdownTheme {
   @BindOption('sidebar') sidebar!: SidebarOptions;
@@ -39,17 +38,6 @@ export class DocusaurusTheme extends MarkdownTheme {
         false,
       );
       this.loopAndWriteCategories(renderer.outputDirectory);
-
-      const globalsFile = this.getRenderContext().globalsFile;
-      const globalsPath = `${renderer.outputDirectory}/${
-        this.getRenderContext().globalsFile
-      }`;
-      if (fs.existsSync(globalsPath)) {
-        fs.renameSync(
-          globalsPath,
-          `${renderer.outputDirectory}/01-${globalsFile}`,
-        );
-      }
     }
   }
 
@@ -61,22 +49,16 @@ export class DocusaurusTheme extends MarkdownTheme {
       if (isDirectory) {
         const mapping = Object.entries(this.mappings)
           .filter((entry) => {
-            return (entry[1] as TemplateMapping).directory === segment;
+            return (entry[1] as TemplateMapping).directory === segment.slice(3);
           })
           .map((entry) => entry[1])[0] as TemplateMapping;
         const subdirectory = fs.readdirSync(fullPath);
-        const containsDir = subdirectory.some((item) =>
-          fs.lstatSync(`${fullPath}/${item}`).isDirectory(),
-        );
 
-        if (
-          (mapping && !containsDir) ||
-          mapping?.kind === ReflectionKind.Namespace
-        ) {
+        if (mapping && !subdirectory.includes(`${mapping?.directory}.md`)) {
           this.writeCategoryYaml(
             fullPath,
             ReflectionKind.pluralString(mapping.kind),
-            CATEGORY_POSITION[mapping.kind],
+            null,
             true,
             true,
           );

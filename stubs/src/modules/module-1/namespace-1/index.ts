@@ -13,4 +13,4 @@ export type NamespaceTypeLiteral = 'a' | 'b';
 
 export const namespaceVariable = 'a';
 
-export * as nestedNamespace from './namespace-1-b';
+export * as _nestedNamespace from './namespace-1-b';

@@ -1,8 +1,13 @@
 import { Application } from 'typedoc';
-import { GithubWikiThemeOptionsReader } from './options-reader';
+import { MarkdownPluginOptionsReader } from 'typedoc-plugin-markdown';
 import { GithubWikiTheme } from './theme';
 
 export function load(app: Application) {
   app.renderer.defineTheme('github-wiki', GithubWikiTheme);
-  app.options.addReader(new GithubWikiThemeOptionsReader());
+  app.options.addReader(
+    new MarkdownPluginOptionsReader({
+      theme: 'github-wiki',
+      flattenOutput: true,
+    }),
+  );
 }

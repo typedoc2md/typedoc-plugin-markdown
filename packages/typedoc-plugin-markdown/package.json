@@ -17,7 +17,7 @@
     "build-and-test": "npm run build && npm run test",
     "docs": "npm run build && npm-run-all docs:*",
     "docs:md-1": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --enableFrontmatter  --out ./out/md/md-1",
-    "docs:md-2": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --indentifiersAsCodeBlocks --groupByKinds false --propertiesFormat \"table\" --typeDeclarationFormat \"table\" --enumMembersFormat \"table\" --readme \"none\" --kindsWithOwnFile \"none\"  --out ./out/md/md-2",
+    "docs:md-2": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --indexPageTitle \"Overview\"  --indentifiersAsCodeBlocks --groupByKinds false --propertiesFormat \"table\" --typeDeclarationFormat \"table\" --enumMembersFormat \"table\" --readme \"none\" --kindsWithOwnFile \"none\"  --out ./out/md/md-2",
     "docs:html": "typedoc --options ../../stubs/typedoc.json --out ./out/html"
   },
   "author": "Thomas Grey",

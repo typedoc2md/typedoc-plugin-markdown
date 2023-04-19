@@ -5,7 +5,7 @@ import {
   ProjectReflection,
 } from 'typedoc';
 import { FrontmatterGlobals, FrontmatterNamingConvention } from '../models';
-import { getReflectionTitle, getTagName } from '../support/helpers';
+import { getTagName } from '../support/helpers';
 import { stripLineBreaks, unEscapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -34,7 +34,7 @@ function getBaseFrontmatterVars(
   return {
     [toVariable('title', context.getOption('frontmatterNamingConvention'))]:
       unEscapeChars(
-        getReflectionTitle(page.model as DeclarationReflection, true),
+        context.partials.pageTitle(page as PageEvent<DeclarationReflection>),
       ),
   };
 }

@@ -49,6 +49,7 @@ import { sources } from './partials/member.sources';
 import { member } from './partials/member';
 import { typeDeclarationMember } from './partials/member.typedeclaration';
 import { members } from './partials/members';
+import { navigation } from './partials/navigation';
 import { pageTitle } from './partials/page.title';
 import { enumMembersTable } from './partials/table.enum-members';
 import { parametersTable } from './partials/table.parameters';
@@ -101,7 +102,8 @@ export type Partials = {
   member: (reflection: DeclarationReflection) => string;
   typeDeclarationMember: (declarations: DeclarationReflection[], parentHeadingLevel: number) => string;
   members: (container: ContainerReflection) => string;
-  pageTitle: (page: PageEvent<DeclarationReflection>) => string;
+  navigation: (project: ProjectReflection) => string;
+  pageTitle: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   enumMembersTable: (props: DeclarationReflection[]) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
   propertiesTable: (props: DeclarationReflection[]) => string;
@@ -151,6 +153,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   member: bind(member, context),
   typeDeclarationMember: bind(typeDeclarationMember, context),
   members: bind(members, context),
+  navigation: bind(navigation, context),
   pageTitle: bind(pageTitle, context),
   enumMembersTable: bind(enumMembersTable, context),
   parametersTable: bind(parametersTable, context),

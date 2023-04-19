@@ -19,7 +19,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "docs": "rm -rf ./demo && npm run build && typedoc --options ../../stubs/typedoc.json --cleanOutputDir false --plugin typedoc-plugin-markdown --plugin ./dist/index --out ./out"
+    "docs": "rm -rf ./demo && npm run build && typedoc --options ../../stubs/typedoc.json --plugin typedoc-plugin-markdown --plugin ./dist/index --out ./out"
   },
   "author": "Thomas Grey",
   "license": "MIT",

@@ -28,7 +28,12 @@ export function members(
           context.getOption('groupByKinds'),
         );
         if (group.categories) {
-          md.push(heading(headingLevel, group.title));
+          if (
+            context.getOption('groupByKinds') ||
+            SYMBOLS_WITH_DOCUMENTS.includes(container.kind)
+          ) {
+            md.push(heading(headingLevel, group.title));
+          }
           group.categories.forEach((groupItem) =>
             groupItem.children.forEach((item) => {
               md.push(context.partials.member(item));

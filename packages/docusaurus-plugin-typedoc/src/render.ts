@@ -1,63 +1,18 @@
-import * as fs from 'fs';
 import {
   Application,
   MixedDeclarationOption,
   ParameterType,
-  ProjectReflection,
-  RendererEvent,
   StringDeclarationOption,
   TSConfigReader,
   TypeDocReader,
-  UrlMapping,
 } from 'typedoc';
-import { PluginOptions } from './types';
 
-export const bootstrap = (app: Application, options: PluginOptions) => {
-  addTypedocReaders(app);
-  addTypedocDeclarations(app);
-
-  app.renderer.render = render;
-
-  app.bootstrap(options);
-};
-
-export async function render(
-  project: ProjectReflection,
-  outputDirectory: string,
-): Promise<void> {
-  if (!this.prepareTheme()) {
-    return;
-  }
-  const output = new RendererEvent(
-    RendererEvent.BEGIN,
-    outputDirectory,
-    project,
-  );
-  output.urls = this.theme!.getUrls(project);
-
-  this.trigger(output);
-
-  await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
-  this.preRenderAsyncJobs = [];
-
-  if (!output.isDefaultPrevented) {
-    output.urls?.forEach((mapping: UrlMapping) => {
-      this.renderDocument(...output.createPageEvent(mapping));
-    });
-
-    await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
-    this.postRenderAsyncJobs = [];
-
-    this.trigger(RendererEvent.END, output);
-  }
-}
-
-const addTypedocReaders = (app: Application) => {
+export function addTypedocReaders(app: Application) {
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
-};
+}
 
-const addTypedocDeclarations = (app: Application) => {
+export function addTypedocDeclarations(app: Application) {
   app.options.addDeclaration({
     name: 'id',
   } as StringDeclarationOption);
@@ -67,10 +22,6 @@ const addTypedocDeclarations = (app: Application) => {
   } as StringDeclarationOption);
 
   app.options.addDeclaration({
-    name: 'siteDir',
-  } as MixedDeclarationOption);
-
-  app.options.addDeclaration({
     name: 'globalsTitle',
   } as StringDeclarationOption);
 
@@ -78,8 +29,4 @@ const addTypedocDeclarations = (app: Application) => {
     name: 'sidebar',
     type: ParameterType.Mixed,
   } as MixedDeclarationOption);
-};
-
-export function removeDir(path: string) {
-  fs.rmSync(path, { recursive: true, force: true });
 }
