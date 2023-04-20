@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.1...typedoc-plugin-markdown@3.15.2) (2022-04-20)
+
+### Fixes
+
+- Support `includeVersion' option [(#415)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/415)
+
 # [3.15.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.14.0...typedoc-plugin-markdown@3.15.0) (2023-04-11)
 
 ### Features
