@@ -13,12 +13,12 @@ import {
 } from 'typedoc';
 import { PluginOptions } from './types';
 
-export const bootstrap = (app: Application, options: PluginOptions) => {
+export async function bootstrap(app: Application, options: PluginOptions) {
   addTypedocReaders(app);
   addTypedocDeclarations(app);
   app.renderer.render = render;
-  app.bootstrap(options);
-};
+  await app.bootstrapWithPlugins(options as any);
+}
 
 export async function render(
   project: ProjectReflection,

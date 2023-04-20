@@ -35,9 +35,6 @@ exports[`Options: should return default options 1`] = `
   "includeExtension": true,
   "indexSlug": undefined,
   "out": "api",
-  "plugin": [
-    "none",
-  ],
   "sidebar": {
     "autoConfiguration": true,
     "categoryLabel": "API",

@@ -63,7 +63,7 @@ async function generateTypedoc(
 
   load(app);
 
-  bootstrap(app, options);
+  await bootstrap(app, options);
 
   const project = app.convert();
 

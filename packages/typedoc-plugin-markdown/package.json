@@ -14,7 +14,7 @@
     "test": "jest --colors",
     "build-and-test": "yarn run build && yarn run test",
     "docs": "yarn run build && yarn run docs:md && yarn run docs:html",
-    "docs:md": "typedoc --plugin typedoc-plugin-markdown --options ../../stub-project/typedoc-options.json --out ./docs/md",
+    "docs:md": "typedoc --plugin typedoc-plugin-markdown --options ../../stub-project/typedoc-options.json --plugin typedoc-plugin-mdn-links --out ./docs/md",
     "docs:html": "typedoc --options ../../stub-project/typedoc-options.json --out ./docs/html"
   },
   "author": "Thomas Grey",
@@ -40,6 +40,10 @@
     "typedoc": ">=0.24.0"
   },
   "dependencies": {
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "typedoc-plugin-mdn-links": "^3.0.3"
+  },
+  "devDependencies": {
+    "typedoc-plugin-mdn-links": "^3.0.3"
   }
 }

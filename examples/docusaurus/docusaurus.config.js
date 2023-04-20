@@ -33,6 +33,7 @@ const config = {
       {
         entryPoints: ['../../stub-project/src/index.ts'],
         tsconfig: '../../stub-project/tsconfig.json',
+        plugin: ['typedoc-plugin-mdn-links'],
         sidebar: {
           autoConfiguration: true,
           position: 0,
