@@ -1,7 +1,7 @@
 import * as Handlebars from 'handlebars';
 import { PageEvent } from 'typedoc';
 import { MarkdownTheme } from '../../theme';
-import { escapeChars } from '../../utils';
+import { escapeChars, getDisplayName } from '../../utils';
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper('breadcrumbs', function (this: PageEvent) {
@@ -17,7 +17,9 @@ export default function (theme: MarkdownTheme) {
     breadcrumbs.push(
       this.url === entryDocument
         ? project.name
-        : `[${project.name}](${Handlebars.helpers.relativeURL(entryDocument)})`,
+        : `[${getDisplayName(project)}](${Handlebars.helpers.relativeURL(
+            entryDocument,
+          )})`,
     );
     if (hasReadmeFile) {
       breadcrumbs.push(

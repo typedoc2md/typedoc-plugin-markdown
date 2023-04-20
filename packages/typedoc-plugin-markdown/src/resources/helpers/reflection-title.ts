@@ -1,7 +1,7 @@
 import * as Handlebars from 'handlebars';
 import { PageEvent, ParameterReflection, ReflectionKind } from 'typedoc';
-import { escapeChars } from '../../utils';
 import { MarkdownTheme } from '../../theme';
+import { escapeChars, getDisplayName } from '../../utils';
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
@@ -12,7 +12,7 @@ export default function (theme: MarkdownTheme) {
         title.push(`${ReflectionKind.singularString(this.model.kind)}: `);
       }
       if (this.url === this.project.url) {
-        title.push(theme.indexTitle || this.project.name);
+        title.push(theme.indexTitle || getDisplayName(this.model));
       } else {
         title.push(
           shouldEscape ? escapeChars(this.model.name) : this.model.name,

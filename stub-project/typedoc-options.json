@@ -2,5 +2,6 @@
   "entryPoints": ["./src/index.ts"],
   "includes": "./inc/",
   "media": "./media/",
-  "tsconfig": "./tsconfig.json"
+  "tsconfig": "./tsconfig.json",
+  "includeVersion": true
 }

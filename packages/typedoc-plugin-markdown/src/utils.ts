@@ -1,6 +1,8 @@
 import {
   DeclarationReflection,
   ParameterReflection,
+  ProjectReflection,
+  Reflection,
   ReflectionKind,
   SignatureReflection,
 } from 'typedoc';
@@ -70,4 +72,16 @@ export function camelToTitleCase(text: string) {
     text.substring(0, 1).toUpperCase() +
     text.substring(1).replace(/[a-z][A-Z]/g, (x) => `${x[0]} ${x[1]}`)
   );
+}
+
+export function getDisplayName(refl: Reflection): string {
+  let version = '';
+  if (
+    (refl instanceof DeclarationReflection ||
+      refl instanceof ProjectReflection) &&
+    refl.packageVersion
+  ) {
+    version = ` - v${refl.packageVersion}`;
+  }
+  return `${refl.name}${version}`;
 }
