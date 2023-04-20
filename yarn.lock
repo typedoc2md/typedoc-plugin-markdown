@@ -7693,7 +7693,7 @@
 
 "docusaurus-plugin-typedoc@*", "docusaurus-plugin-typedoc@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/packages/docusaurus-plugin-typedoc":
   "resolved" "file:packages/docusaurus-plugin-typedoc"
-  "version" "0.19.0"
+  "version" "0.19.1"
 
 "docusaurus@file:/Users/thomasgrey/Projects/typedoc-plugin-markdown/examples/docusaurus":
   "resolved" "file:examples/docusaurus"
