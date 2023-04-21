@@ -1,5 +1,5 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
-import { getReflectionTitle } from '../support/helpers';
+import { getProjectDisplayName, getReflectionTitle } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
 export function pageTitle(
@@ -8,7 +8,13 @@ export function pageTitle(
 ) {
   const md: string[] = [];
   if (page.model?.url === page.project.url) {
-    md.push(context.getOption('indexPageTitle') || page.project.name);
+    md.push(
+      context.getOption('indexPageTitle') ||
+        getProjectDisplayName(
+          page.project,
+          context.getOption('includeVersion'),
+        ),
+    );
   } else {
     md.push(getReflectionTitle(page.model as DeclarationReflection, true));
   }

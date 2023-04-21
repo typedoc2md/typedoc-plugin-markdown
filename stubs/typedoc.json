@@ -23,5 +23,6 @@
   "cleanOutputDir": true,
   "githubPages": false,
   "modifierTags": ["@navOrder"],
-  "logLevel": "Verbose"
+  "logLevel": "Verbose",
+  "includeVersion": true
 }

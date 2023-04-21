@@ -103,3 +103,11 @@ export function getDeclarationType(declaration: DeclarationReflection) {
   }
   return declaration.type;
 }
+
+export function getProjectDisplayName(
+  project: ProjectReflection,
+  includeVersion: boolean,
+): string {
+  const version = includeVersion ? ` - v${project.packageVersion}` : '';
+  return `${project.name}${version}`;
+}

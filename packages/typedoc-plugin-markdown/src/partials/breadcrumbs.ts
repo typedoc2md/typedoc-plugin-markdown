@@ -1,5 +1,6 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { link } from '../support/els';
+import { getProjectDisplayName } from '../support/helpers';
 import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-context';
 
@@ -10,11 +11,15 @@ export function breadcrumbs(
   if (page.model) {
     if (page.model.kind) {
       const md: string[] = [];
+      const projectName = getProjectDisplayName(
+        page.project,
+        context.getOption('includeVersion'),
+      );
       md.push(
         page.url === context.modulesFile
-          ? page.project.name
+          ? projectName
           : link(
-              page.project.name,
+              projectName,
               context.relativeURL(
                 context.getOption('readme').endsWith('none')
                   ? context.getOption('entryDocument')
