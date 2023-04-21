@@ -14,7 +14,6 @@ const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   hideBreadcrumbs: true,
   hidePageTitle: false,
   entryDocument: 'index.md',
-  plugin: ['none'],
   watch: false,
   enableFrontmatter: true,
   numberPrefixOutput: true,

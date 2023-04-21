@@ -58,7 +58,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   addTypedocReaders(app);
   addTypedocDeclarations(app);
 
-  app.bootstrap(options as unknown as Partial<TypeDocOptions>);
+  await app.bootstrapWithPlugins(options as unknown as Partial<TypeDocOptions>);
 
   const project = app.convert();
 

@@ -58,6 +58,7 @@ const config = {
         kindsWithOwnFile: 'none',
         groupByKinds: false,
         readme: 'none',
+        plugin: ['typedoc-plugin-mdn-links'],
       },
     ],
   ],

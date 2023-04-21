@@ -1,5 +1,5 @@
 import { getPluginOptions } from '../../dist/options';
-import { PluginOptions } from '../../src/types';
+import { PluginOptions } from '../../src/models';
 
 describe(`Options:`, () => {
   test(`should return default options`, () => {
@@ -19,8 +19,7 @@ describe(`Options:`, () => {
     expect(
       getPluginOptions({
         sidebar: {
-          fullNames: true,
-          indexLabel: 'Custom index',
+          position: 2,
         },
       } as PluginOptions).sidebar,
     ).toMatchSnapshot();

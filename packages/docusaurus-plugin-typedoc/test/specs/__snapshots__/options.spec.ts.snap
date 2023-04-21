@@ -5,9 +5,7 @@ exports[`Options: should merge custom sidebar options 1`] = `
   "autoConfiguration": true,
   "categoryLabel": "API",
   "collapsed": true,
-  "fullNames": true,
-  "indexLabel": "Custom index",
-  "position": null,
+  "position": 2,
 }
 `;
 
@@ -19,7 +17,6 @@ exports[`Options: should merge plugins 1`] = `
 
 exports[`Options: should return default options 1`] = `
 {
-  "cleanOutputDir": true,
   "docsRoot": "docs",
   "enableFrontmatter": true,
   "entryDocument": "index.md",
@@ -30,16 +27,12 @@ exports[`Options: should return default options 1`] = `
   "hideInPageTOC": true,
   "hidePageTitle": false,
   "id": "default",
+  "numberPrefixOutput": true,
   "out": "api",
-  "plugin": [
-    "none",
-  ],
   "sidebar": {
     "autoConfiguration": true,
     "categoryLabel": "API",
     "collapsed": true,
-    "fullNames": false,
-    "indexLabel": "Overview",
     "position": null,
   },
   "theme": "docusaurus",
