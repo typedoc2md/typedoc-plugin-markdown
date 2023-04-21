@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.6
+
+### Patch Changes
+
+- Support loading plugins from docusaurus config
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.8
+
 ## 1.0.0-next.5
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.0.0-next.8
+
+### Patch Changes
+
+- Added `numberPrefixOutput` and `hideKindTag` options
+- Support `includeVersion`
+- Decoupled renderer methods
+- Further refactoring and fixes
+
 ## 4.0.0-next.7
 
 ### Patch Changes
