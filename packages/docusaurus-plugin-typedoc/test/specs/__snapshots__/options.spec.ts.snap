@@ -8,34 +8,3 @@ exports[`Options: should merge custom sidebar options 1`] = `
   "position": 2,
 }
 `;
-
-exports[`Options: should merge plugins 1`] = `
-[
-  "plugin-xyz",
-]
-`;
-
-exports[`Options: should return default options 1`] = `
-{
-  "docsRoot": "docs",
-  "enableFrontmatter": true,
-  "entryDocument": "index.md",
-  "entryPoints": [
-    "entrypoint.ts",
-  ],
-  "hideBreadcrumbs": true,
-  "hideInPageTOC": true,
-  "hidePageTitle": false,
-  "id": "default",
-  "numberPrefixOutput": true,
-  "out": "api",
-  "sidebar": {
-    "autoConfiguration": true,
-    "categoryLabel": "API",
-    "collapsed": true,
-    "position": null,
-  },
-  "theme": "docusaurus",
-  "watch": false,
-}
-`;
