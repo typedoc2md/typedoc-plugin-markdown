@@ -5,6 +5,7 @@ import {
   PageEvent,
   ProjectReflection,
   Reflection,
+  ReflectionGroup,
   ReflectionKind,
   RenderTemplate,
   Renderer,
@@ -76,7 +77,6 @@ export class MarkdownTheme extends Theme {
 
   getUrls(project: ProjectReflection) {
     const urls: UrlMapping[] = [];
-
     const noReadmeFile = this.readme.endsWith('none');
     if (noReadmeFile) {
       project.url = this.entryDocument;
@@ -102,7 +102,7 @@ export class MarkdownTheme extends Theme {
     project.groups?.forEach((projectGroup, groupIndex) => {
       projectGroup.children.forEach((child) => {
         const index = noReadmeFile ? groupIndex : groupIndex + 1;
-        this.buildUrls(child, urls, index);
+        this.buildUrls(child, urls, index, projectGroup);
       });
     });
 
@@ -113,11 +113,29 @@ export class MarkdownTheme extends Theme {
     reflection: DeclarationReflection,
     urls: UrlMapping[],
     index: number,
+    reflectionGroup: ReflectionGroup,
   ): UrlMapping[] {
     const mapping = this.mappings[reflection.kind];
-
     if (mapping) {
       const url = this.getUrl(reflection, mapping, index);
+      if (mapping.directory) {
+        if (!reflection.kindOf(ReflectionKind.Module)) {
+          const sliceLength = reflection.kindOf(ReflectionKind.Namespace)
+            ? -2
+            : -1;
+          const groupDirectory = url.split('/').slice(0, sliceLength).join('/');
+          if (
+            urls.findIndex(
+              (urlMapping) => urlMapping.url === groupDirectory,
+            ) === -1 &&
+            groupDirectory.endsWith(mapping.directory)
+          ) {
+            urls.push(
+              new UrlMapping(groupDirectory, reflectionGroup, () => ''),
+            );
+          }
+        }
+      }
       urls.push(new UrlMapping(url, reflection, mapping.template));
       reflection.url = url;
       reflection.hasOwnDocument = true;
@@ -126,7 +144,7 @@ export class MarkdownTheme extends Theme {
           if (mapping.isLeaf) {
             this.applyAnchorUrl(child, reflection);
           } else {
-            this.buildUrls(child, urls, groupIndex);
+            this.buildUrls(child, urls, groupIndex, reflectionGroup);
           }
         });
       });
@@ -147,9 +165,8 @@ export class MarkdownTheme extends Theme {
       return alias + '.md';
     }
 
-    const childrenIncludeNamespaces = reflection.children?.some((child) =>
-      child.kindOf(ReflectionKind.Namespace),
-    );
+    const childrenIncludeNamespaces =
+      this.childrenIncludeNamespaces(reflection);
 
     const isModuleOrNamespace = reflection.kindOf([
       ReflectionKind.Module,
@@ -183,9 +200,11 @@ export class MarkdownTheme extends Theme {
         const namespaceIndex = parts.findIndex(
           (part) => part === namespaceName,
         );
+
         parts[namespaceIndex] = `${this.getAliasPrefix(
           ReflectionKind.Namespace,
         )}.${parts[namespaceIndex]}`;
+
         parts.splice(
           namespaceIndex,
           0,
@@ -205,6 +224,12 @@ export class MarkdownTheme extends Theme {
     }
 
     return parts.join('/') + '.md';
+  }
+
+  childrenIncludeNamespaces(reflection: DeclarationReflection) {
+    return reflection.children?.some((child) =>
+      child.kindOf(ReflectionKind.Namespace),
+    );
   }
 
   getAliasPrefix(reflectionKind: ReflectionKind) {

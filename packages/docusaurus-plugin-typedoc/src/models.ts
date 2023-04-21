@@ -19,4 +19,11 @@ export interface SidebarCategory {
   items: SidebarItem[];
 }
 
+export interface CategoryYamlOptions {
+  path: string;
+  label: string;
+  position: number | null;
+  collapsed: boolean;
+}
+
 export type SidebarItem = SidebarCategory | string;

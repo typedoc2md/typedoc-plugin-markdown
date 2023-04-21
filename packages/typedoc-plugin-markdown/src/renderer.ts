@@ -1,6 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { ProjectReflection, RendererEvent, UrlMapping } from 'typedoc';
+import {
+  DeclarationReflection,
+  ProjectReflection,
+  RendererEvent,
+  UrlMapping,
+} from 'typedoc';
 
 export async function generateMarkdown(
   project: ProjectReflection,
@@ -79,9 +84,15 @@ export async function renderMarkdown(
   this.application.logger.verbose(
     `There are ${output.urls?.length} pages to write.`,
   );
-  output.urls?.forEach((mapping: UrlMapping) => {
-    this.renderDocument(...output.createPageEvent(mapping));
-  });
+  output.urls
+    ?.filter(
+      (urlMapping) =>
+        urlMapping.model instanceof ProjectReflection ||
+        urlMapping.model instanceof DeclarationReflection,
+    )
+    .forEach((urlMapping: UrlMapping) => {
+      this.renderDocument(...output.createPageEvent(urlMapping));
+    });
 
   await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
   this.postRenderAsyncJobs = [];

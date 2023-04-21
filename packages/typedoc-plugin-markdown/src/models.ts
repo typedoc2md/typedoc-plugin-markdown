@@ -42,3 +42,7 @@ export type FrontmatterNamingConvention =
   | 'snakeCase'
   | 'kebabCase'
   | 'pascalCase';
+
+export interface UrlGroup {
+  name: string;
+}

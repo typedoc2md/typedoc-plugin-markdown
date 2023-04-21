@@ -1,4 +1,5 @@
 import { PluginOptions } from './models';
+const plugin = require.resolve('docusaurus-plugin-typedoc');
 
 const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   id: 'default',
@@ -12,12 +13,11 @@ const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   },
   hideInPageTOC: true,
   hideBreadcrumbs: true,
-  hidePageTitle: false,
   entryDocument: 'index.md',
   watch: false,
   enableFrontmatter: true,
   numberPrefixOutput: true,
-  theme: 'docusaurus',
+  plugin: [plugin],
 };
 
 export const getPluginOptions = (
@@ -30,6 +30,7 @@ export const getPluginOptions = (
       ...DEFAULT_PLUGIN_OPTIONS.sidebar,
       ...opts.sidebar,
     },
+    plugin: [DEFAULT_PLUGIN_OPTIONS.plugin, ...(opts.plugin || [])],
   };
   return options as PluginOptions;
 };
