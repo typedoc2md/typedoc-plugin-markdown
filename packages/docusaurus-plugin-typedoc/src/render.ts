@@ -36,16 +36,10 @@ export async function render(
 
   this.trigger(output);
 
-  await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
-  this.preRenderAsyncJobs = [];
-
   if (!output.isDefaultPrevented) {
     output.urls?.forEach((mapping: UrlMapping) => {
       this.renderDocument(...output.createPageEvent(mapping));
     });
-
-    await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
-    this.postRenderAsyncJobs = [];
 
     this.trigger(RendererEvent.END, output);
   }
