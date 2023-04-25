@@ -1,7 +1,7 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { backTicks, table } from '../support/els';
 import { getDeclarationType, tableComments } from '../support/helpers';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function propertiesTable(
   context: MarkdownThemeRenderContext,

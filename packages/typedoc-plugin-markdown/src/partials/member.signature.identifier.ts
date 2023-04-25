@@ -1,7 +1,7 @@
 import { ParameterReflection, SignatureReflection, SomeType } from 'typedoc';
 import { backTicks, bold } from '../support/els';
 import { escapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function signatureMemberIdentifier(
   context: MarkdownThemeRenderContext,

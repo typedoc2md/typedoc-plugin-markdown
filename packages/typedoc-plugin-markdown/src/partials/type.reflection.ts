@@ -1,7 +1,7 @@
 import { ReflectionType } from 'typedoc';
 import { Collapse } from '../models';
 import { backTicks } from '../support/els';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function reflectionType(
   context: MarkdownThemeRenderContext,

@@ -6,7 +6,7 @@ import {
 import { heading } from '../support/els';
 import { getIndexHeadingLevel } from '../support/helpers';
 import { escapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function toc(
   context: MarkdownThemeRenderContext,

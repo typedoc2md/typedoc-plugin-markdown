@@ -1,6 +1,6 @@
 import { ProjectReflection } from 'typedoc';
 
-import { MarkdownThemeRenderContext } from '../../src/theme-context';
+import { MarkdownThemeRenderContext } from '../../src/theme-render-context';
 
 describe(`Frontmatter:`, () => {
   let project: ProjectReflection;

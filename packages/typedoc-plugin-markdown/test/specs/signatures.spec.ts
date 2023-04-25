@@ -1,5 +1,5 @@
 import { ProjectReflection, SignatureReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/theme-context';
+import { MarkdownThemeRenderContext } from '../../src/theme-render-context';
 
 describe(`Signatures:`, () => {
   let project: ProjectReflection;

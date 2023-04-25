@@ -6,8 +6,6 @@ import { URL_PREFIX } from './support/constants';
 import { MarkdownTheme } from './theme';
 
 export class MarkdownThemeRenderContext {
-  public modulesFile = 'modules.md';
-
   private _activeLocation: string;
 
   set activeLocation(activeLocation: string) {

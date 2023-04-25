@@ -1,6 +1,6 @@
 import { PageEvent, ProjectReflection } from 'typedoc';
 import { heading } from '../support/els';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function projectTemplate(
   context: MarkdownThemeRenderContext,

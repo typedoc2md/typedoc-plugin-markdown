@@ -2,7 +2,7 @@ import { DeclarationReflection } from 'typedoc';
 import { backTicks } from '../support/els';
 import { getDeclarationType } from '../support/helpers';
 import { stripComments, stripLineBreaks } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,

@@ -2,7 +2,7 @@ import { ContainerReflection, ReflectionKind } from 'typedoc';
 import { SYMBOLS_WITH_DOCUMENTS } from '../support/constants';
 import { heading, horizontalRule } from '../support/els';
 import { getGroupHeadingLevel } from '../support/helpers';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function members(
   context: MarkdownThemeRenderContext,

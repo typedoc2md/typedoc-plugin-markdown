@@ -1,6 +1,6 @@
 import { InferredType } from 'typedoc';
 import { escapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function inferredType(
   context: MarkdownThemeRenderContext,

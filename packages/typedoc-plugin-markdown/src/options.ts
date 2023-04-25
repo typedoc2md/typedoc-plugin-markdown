@@ -25,7 +25,7 @@ export function defineOptions(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'flattenOutput',
+    name: 'flattenOutputFiles',
     help: '[Markdown Plugin] Flatten output files without directories.',
     type: ParameterType.Boolean,
     defaultValue: false,
@@ -176,6 +176,13 @@ export function defineOptions(app: Application) {
     help: '[Markdown Plugin] Specifies the base url for internal link. If omitted all urls will be relative.',
     name: 'baseUrl',
     type: ParameterType.String,
+  });
+
+  app.options.addDeclaration({
+    name: 'anchorFormat',
+    help: '[Markdown Plugin] The anchor pattern to use when linking to internal symbols.',
+    type: ParameterType.String,
+    defaultValue: 'lowercase',
   });
 
   app.options.addDeclaration({

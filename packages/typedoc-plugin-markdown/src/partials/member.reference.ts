@@ -1,5 +1,5 @@
 import { ReferenceReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function referenceMember(
   context: MarkdownThemeRenderContext,

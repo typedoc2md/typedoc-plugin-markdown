@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "publish-typedoc": "typedoc --plugin ../../packages/typedoc-plugin-markdown/dist --plugin ../../packages/vuepress-plugin-typedoc/dist --options \"../../stubs/typedoc.json\"",
+    "publish-typedoc": "typedoc --plugin ../../packages/typedoc-plugin-markdown/dist --plugin ../../packages/vuepress-plugin-typedoc/dist --kindsWithOwnFile \"none\" --vuepressVersion \"v2\" --options \"../../stubs/typedoc.json\"",
     "predocs:dev": "npm run publish-typedoc",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs && npx http-server ./docs/.vuepress/dist -o"

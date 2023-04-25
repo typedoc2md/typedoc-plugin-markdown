@@ -26,7 +26,7 @@ import {
  TypeParameterReflection,
  UnionType,
  UnknownType } from 'typedoc';
-import { MarkdownThemeRenderContext } from './theme-context';
+import { MarkdownThemeRenderContext } from './theme-render-context';
 import { Collapse } from './models';
 import { memberTemplate } from './templates/member';
 import { projectTemplate } from './templates/project';

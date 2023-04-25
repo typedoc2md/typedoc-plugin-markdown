@@ -1,6 +1,6 @@
 import { DeclarationReflection, PageEvent, ReflectionKind } from 'typedoc';
 import { backTicks, bold, heading } from '../support/els';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function reflectionTemplate(
   context: MarkdownThemeRenderContext,

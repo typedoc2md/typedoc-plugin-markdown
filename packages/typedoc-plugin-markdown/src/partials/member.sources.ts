@@ -5,7 +5,7 @@ import {
   SignatureReflection,
 } from 'typedoc';
 import { heading, link } from '../support/els';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 import { escapeChars } from '../support/utils';
 

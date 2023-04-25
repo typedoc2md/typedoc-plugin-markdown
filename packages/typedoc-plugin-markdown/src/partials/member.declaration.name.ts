@@ -1,7 +1,7 @@
 import { DeclarationReflection } from 'typedoc';
 import { bold } from '../support/els';
 import { escapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function declarationMemberName(
   context: MarkdownThemeRenderContext,

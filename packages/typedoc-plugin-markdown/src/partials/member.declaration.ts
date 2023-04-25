@@ -2,7 +2,7 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { blockQuoteBlock, codeBlock, heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { escapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function declarationMember(
   context: MarkdownThemeRenderContext,

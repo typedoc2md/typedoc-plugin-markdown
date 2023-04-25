@@ -1,7 +1,7 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { heading, unorderedList } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 /**
  * Represents a top level reflection

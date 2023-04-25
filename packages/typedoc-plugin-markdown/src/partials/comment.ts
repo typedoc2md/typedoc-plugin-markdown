@@ -2,7 +2,7 @@ import { Comment } from 'typedoc';
 import { backTicks, heading } from '../support/els';
 import { getTagName } from '../support/helpers';
 import { camelToTitleCase } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function comment(
   context: MarkdownThemeRenderContext,

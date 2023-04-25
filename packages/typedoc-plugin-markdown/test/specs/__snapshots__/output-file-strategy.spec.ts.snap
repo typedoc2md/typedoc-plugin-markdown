@@ -50,7 +50,7 @@ exports[`Output File Strategy should --kindsWithOwnFile [class]' 1`] = `
 ]
 `;
 
-exports[`Output File Strategy should set --kindsWithOwnFile 'all' --flattenOutput 1`] = `
+exports[`Output File Strategy should set --kindsWithOwnFile 'all' --flattenOutputFiles 1`] = `
 [
   "README.md",
   "modules.md",

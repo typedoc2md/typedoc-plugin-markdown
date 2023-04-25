@@ -4,10 +4,15 @@ import { GithubWikiTheme } from './theme';
 
 export function load(app: Application) {
   app.renderer.defineTheme('github-wiki', GithubWikiTheme);
+
   app.options.addReader(
     new MarkdownPluginOptionsReader({
       theme: 'github-wiki',
-      flattenOutput: true,
+      entryDocument: 'Home.md',
+      kindsWithOwnFile: 'none',
+      flattenOutputFiles: true,
+      hideInPageTOC: true,
+      hidePageTitle: true,
     }),
   );
 }

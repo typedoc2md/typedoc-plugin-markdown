@@ -2,7 +2,7 @@ import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { link } from '../support/els';
 import { getProjectDisplayName } from '../support/helpers';
 import { escapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function breadcrumbs(
   context: MarkdownThemeRenderContext,
@@ -16,14 +16,14 @@ export function breadcrumbs(
         context.getOption('includeVersion'),
       );
       md.push(
-        page.url === context.modulesFile
+        page.url === page.project.url
           ? projectName
           : link(
               projectName,
               context.relativeURL(
                 context.getOption('readme').endsWith('none')
                   ? context.getOption('entryDocument')
-                  : context.modulesFile,
+                  : page.project.url,
               ),
             ),
       );

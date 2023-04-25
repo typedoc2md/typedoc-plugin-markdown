@@ -1,7 +1,7 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
 import { codeBlock, heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function signatureMember(
   context: MarkdownThemeRenderContext,

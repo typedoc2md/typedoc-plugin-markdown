@@ -2,7 +2,6 @@ import { Application } from 'typedoc';
 import { defineOptions } from './options';
 import { generateMarkdown, renderMarkdown } from './renderer';
 import { MarkdownTheme } from './theme';
-import { MarkdownThemeRenderContext } from './theme-context';
 
 export function load(app: Application) {
   /**
@@ -30,5 +29,7 @@ export function load(app: Application) {
  */
 export * from './models';
 export * from './options-reader';
+export { MarkdownRendererEvent } from './renderer';
 export { partials } from './resources';
-export { MarkdownTheme, MarkdownThemeRenderContext };
+export { MarkdownTheme } from './theme';
+export { MarkdownThemeRenderContext } from './theme-render-context';

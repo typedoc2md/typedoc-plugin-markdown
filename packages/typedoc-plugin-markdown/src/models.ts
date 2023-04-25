@@ -1,10 +1,11 @@
 import { ReflectionKind, TypeDocOptionMap } from 'typedoc';
 
 export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
+  anchorFormat: AnchorFormat;
   baseUrl: string;
   enableFrontmatter: boolean;
   entryDocument: string;
-  enumMembersFormat: 'List' | 'Table';
+  enumMembersFormat: DataFormatStyle;
   flattenOutputFiles: boolean;
   frontmatterTags: string[];
   frontmatterGlobals: FrontmatterGlobals;
@@ -20,8 +21,8 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   kindsWithOwnFile: string | string[];
   namedAnchors: boolean;
   numberPrefixOutput: boolean;
-  propertiesFormat: 'List' | 'Table';
-  typeDeclarationFormat: 'List' | 'Table';
+  propertiesFormat: DataFormatStyle;
+  typeDeclarationFormat: DataFormatStyle;
 }
 
 export interface TemplateMapping {
@@ -33,6 +34,10 @@ export interface TemplateMapping {
 
 export type Collapse = 'object' | 'function' | 'all' | 'none';
 
+export type DataFormatStyle = 'list' | 'table';
+
+export type AnchorFormat = 'lowercase' | 'slug' | 'none';
+
 export type FrontmatterGlobals =
   | string
   | Record<string, string | boolean | number | null>;
@@ -43,6 +48,8 @@ export type FrontmatterNamingConvention =
   | 'kebabCase'
   | 'pascalCase';
 
-export interface UrlGroup {
-  name: string;
+export interface NavigationItem {
+  title?: string;
+  url?: string;
+  children?: NavigationItem[];
 }

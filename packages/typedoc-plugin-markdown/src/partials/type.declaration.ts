@@ -2,7 +2,7 @@ import { DeclarationReflection, SomeType } from 'typedoc';
 import { Collapse } from '../models';
 import { backTicks } from '../support/els';
 import { getDeclarationType } from '../support/helpers';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function declarationType(
   context: MarkdownThemeRenderContext,

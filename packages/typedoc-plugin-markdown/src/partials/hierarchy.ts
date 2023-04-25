@@ -1,6 +1,6 @@
 import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
 import { bold, unorderedList } from '../support/els';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function hierarchy(
   context: MarkdownThemeRenderContext,

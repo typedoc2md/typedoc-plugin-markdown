@@ -28,10 +28,10 @@ describe(`Output File Strategy`, () => {
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });
 
-  test(`should set --kindsWithOwnFile 'all' --flattenOutput`, async () => {
+  test(`should set --kindsWithOwnFile 'all' --flattenOutputFiles`, async () => {
     ({ project, theme } = await global.bootstrap(
       ['modules/module-1', 'modules/module-2'],
-      { options: { kindsWithOwnFile: 'all', flattenOutput: true } },
+      { options: { kindsWithOwnFile: 'all', flattenOutputFiles: true } },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
   });

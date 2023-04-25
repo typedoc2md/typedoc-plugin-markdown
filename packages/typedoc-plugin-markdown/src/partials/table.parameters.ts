@@ -3,7 +3,7 @@ import { ParameterReflection, ReflectionKind } from 'typedoc';
 import { table } from '../support/els';
 import { tableComments } from '../support/helpers';
 import { escapeChars, stripLineBreaks } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function parametersTable(
   context: MarkdownThemeRenderContext,

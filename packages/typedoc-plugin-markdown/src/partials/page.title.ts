@@ -1,6 +1,6 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { getProjectDisplayName, getReflectionTitle } from '../support/helpers';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function pageTitle(
   context: MarkdownThemeRenderContext,

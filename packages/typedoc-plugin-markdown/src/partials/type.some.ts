@@ -17,7 +17,7 @@ import {
 import { Collapse } from '../models';
 import { backTicks } from '../support/els';
 import { escapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function someType(
   context: MarkdownThemeRenderContext,

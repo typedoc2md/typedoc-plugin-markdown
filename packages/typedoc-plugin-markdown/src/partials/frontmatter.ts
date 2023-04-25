@@ -7,7 +7,7 @@ import {
 import { FrontmatterGlobals, FrontmatterNamingConvention } from '../models';
 import { getTagName } from '../support/helpers';
 import { stripLineBreaks, unEscapeChars } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function frontmatter(
   context: MarkdownThemeRenderContext,

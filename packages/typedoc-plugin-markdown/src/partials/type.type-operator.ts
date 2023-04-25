@@ -1,6 +1,6 @@
 import { TypeOperatorType } from 'typedoc';
 import { italic } from '../support/els';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function typeOperatorType(
   context: MarkdownThemeRenderContext,

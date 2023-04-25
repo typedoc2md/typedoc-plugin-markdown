@@ -1,7 +1,7 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { getDeclarationType } from '../support/helpers';
 import { escapeChars, stripLineBreaks } from '../support/utils';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function enumMembersTable(
   context: MarkdownThemeRenderContext,

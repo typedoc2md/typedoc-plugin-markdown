@@ -40,7 +40,7 @@ See [File output options](./docs/file-output-options.md) for further documentati
   The file name of the entry document. Defaults to `README.md`.
 - **`--kindsWithOwnFile`**<br>
   Determines which reflection kinds should be written to its own file. Expected values [`None`, `All`] OR Array of [`Class`, `Interface`, `Enum`, `Function`, `Variable`, `TypeAlias`]. Defaults to `All`.
-- **`--flattenOutput`**<br>
+- **`--flattenOutputFiles`**<br>
   Flatten output files without folders. Note this does not effect the UI. Defaults to `false`.
 - **`--numberPrefixOutput`**<br>
   Prefixes docs and folders by number prefixes if applicable. Useful for auto sidebar generation. Defaults to `false`.
@@ -64,11 +64,11 @@ See [File output options](./docs/file-output-options.md) for further documentati
 - **`--indentifiersAsCodeBlocks`**<br>
   Format signature and declaration identifiers in code blocks. Note if `true` references will not be linked. Defaults to `false`.
 - **`--propertiesFormat`**<br>
-  Specify the render style of properties groups for Interfaces and Classes. Expected values [`List`, `Table`]. Defaults to `List`.
+  Specify the render style of properties groups for Interfaces and Classes. Expected values [`list`, `table`]. Defaults to `list`.
 - **`--typeDeclarationFormat`**<br>
-  Specify the render style of type declarations. Expected values [`List`, `Table`]. Defaults to `List`.
+  Specify the render style of type declarations. Expected values [`list`, `table`]. Defaults to `list`.
 - **`--enumMembersFormat`**<br>
-  Specify the render style of Enum members. Expected values [`List`, `Table`]. Defaults to `List`.
+  Specify the render style of Enum members. Expected values [`list`, `table`]. Defaults to `list`.
 
 ### Frontmatter options
 
@@ -85,6 +85,8 @@ See [Front matter options](./docs/frontmatter.md) for further documentation.
 
 ### Utility options
 
+- **`--anchorFormat`**<br>
+  The anchor pattern to use when linking to internal symbols. Expected values [`lowercase`, `slug`, `none`]. Defaults to `lowercase`.
 - **`--namedAnchors`**<br>
   Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 - **`--baseUrl`**<br>

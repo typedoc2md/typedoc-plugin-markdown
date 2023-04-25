@@ -1,6 +1,6 @@
 import { ConditionalType } from 'typedoc';
 import { italic } from '../support/els';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function conditionalType(
   context: MarkdownThemeRenderContext,

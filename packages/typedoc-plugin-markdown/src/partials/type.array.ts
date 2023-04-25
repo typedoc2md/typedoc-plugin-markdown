@@ -1,5 +1,5 @@
 import { ArrayType } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function arrayType(
   context: MarkdownThemeRenderContext,

@@ -8,7 +8,7 @@ import {
   getReflectionHeadingLevel,
   getReflectionTitle,
 } from '../support/helpers';
-import { MarkdownThemeRenderContext } from '../theme-context';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function member(
   context: MarkdownThemeRenderContext,
