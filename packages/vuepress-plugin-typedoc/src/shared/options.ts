@@ -9,7 +9,6 @@ import { PluginOptions, SidebarOptions } from './types';
 
 const DEFAULT_TYPEDOC_OPTIONS: Partial<PluginOptions> = {
   out: 'api',
-  plugin: ['none'],
   hideBreadcrumbs: true,
 };
 

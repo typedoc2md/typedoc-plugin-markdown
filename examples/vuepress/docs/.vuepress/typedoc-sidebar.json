@@ -1,0 +1,1008 @@
+[
+  {
+    "title": "categories",
+    "path": "/api/module.categories",
+    "children": [
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.categories#categoryinterfacea1",
+            "CategoryInterfaceA1"
+          ],
+          [
+            "/api/module.categories#categoryinterfacea2",
+            "CategoryInterfaceA2"
+          ],
+          [
+            "/api/module.categories#otherinterfacea",
+            "OtherInterfaceA"
+          ]
+        ]
+      },
+      {
+        "title": "Variables",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.categories#categoryvariablea1",
+            "categoryVariableA1"
+          ],
+          [
+            "/api/module.categories#categoryvariablea2",
+            "categoryVariableA2"
+          ],
+          [
+            "/api/module.categories#categoryvariableb1",
+            "categoryVariableB1"
+          ],
+          [
+            "/api/module.categories#othervariablea",
+            "otherVariableA"
+          ],
+          [
+            "/api/module.categories#othervariableb",
+            "otherVariableB"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.categories#categoryfunctiona1",
+            "categoryFunctionA1"
+          ],
+          [
+            "/api/module.categories#categoryfunctiona2",
+            "categoryFunctionA2"
+          ],
+          [
+            "/api/module.categories#categoryfunctiona3",
+            "categoryFunctionA3"
+          ],
+          [
+            "/api/module.categories#categoryfunctionb2",
+            "categoryFunctionB2"
+          ],
+          [
+            "/api/module.categories#otherfunctiona",
+            "otherFunctionA"
+          ],
+          [
+            "/api/module.categories#otherfunctionb",
+            "otherFunctionB"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "classes",
+    "path": "/api/module.classes",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.classes#animal",
+            "Animal"
+          ],
+          [
+            "/api/module.classes#base",
+            "Base"
+          ],
+          [
+            "/api/module.classes#c",
+            "C"
+          ],
+          [
+            "/api/module.classes#derived",
+            "Derived"
+          ],
+          [
+            "/api/module.classes#dog",
+            "Dog"
+          ],
+          [
+            "/api/module.classes#indexableclass",
+            "IndexableClass"
+          ],
+          [
+            "/api/module.classes#point",
+            "Point"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "comments",
+    "path": "/api/module.comments",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.comments#commentclass",
+            "CommentClass"
+          ]
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.comments#literalwithblockcomments",
+            "literalWithBlockComments"
+          ]
+        ]
+      },
+      {
+        "title": "Variables",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.comments#commentswithfencedblock",
+            "commentsWithFencedBlock"
+          ],
+          [
+            "/api/module.comments#commentswithhtml",
+            "commentsWithHTML"
+          ],
+          [
+            "/api/module.comments#commentswithincludes",
+            "commentsWithIncludes"
+          ],
+          [
+            "/api/module.comments#commentswithsymbollinks",
+            "commentsWithSymbolLinks"
+          ],
+          [
+            "/api/module.comments#commentswithtags",
+            "commentsWithTags"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.comments#commentsinreturn",
+            "commentsInReturn"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "declarations",
+    "path": "/api/module.declarations",
+    "children": [
+      {
+        "title": "Enumerations",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.declarations#enumdeclarations",
+            "EnumDeclarations"
+          ],
+          [
+            "/api/module.declarations#enumdeclarationswithdefaults",
+            "EnumDeclarationsWithDefaults"
+          ]
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.declarations#anyfunctiontype",
+            "AnyFunctionType"
+          ]
+        ]
+      },
+      {
+        "title": "Variables",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.declarations#__double_underscores_declaration__",
+            "__DOUBLE_UNDERSCORES_DECLARATION__"
+          ],
+          [
+            "/api/module.declarations#enuref",
+            "enuRef"
+          ],
+          [
+            "/api/module.declarations#getterandsetter",
+            "getterAndSetter"
+          ],
+          [
+            "/api/module.declarations#indexabledeclaration",
+            "indexableDeclaration"
+          ],
+          [
+            "/api/module.declarations#objectliteralasconstdeclaration",
+            "objectLiteralAsConstDeclaration"
+          ],
+          [
+            "/api/module.declarations#objectliteraldeclaration",
+            "objectLiteralDeclaration"
+          ],
+          [
+            "/api/module.declarations#stringconstwithdefaultvalue",
+            "stringConstWithDefaultValue"
+          ],
+          [
+            "/api/module.declarations#stringletwithdefaultvalue",
+            "stringLetWithDefaultValue"
+          ],
+          [
+            "/api/module.declarations#typeliteraldeclaration",
+            "typeLiteralDeclaration"
+          ],
+          [
+            "/api/module.declarations#undefinednumberdeclaration",
+            "undefinedNumberDeclaration"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.declarations#functiondeclaration",
+            "functionDeclaration"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "generics",
+    "path": "/api/module.generics",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.generics#classwithtypeparams",
+            "ClassWithTypeParams"
+          ]
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.generics#generic1",
+            "Generic1"
+          ],
+          [
+            "/api/module.generics#generic2",
+            "Generic2"
+          ],
+          [
+            "/api/module.generics#generic3",
+            "Generic3"
+          ],
+          [
+            "/api/module.generics#nestedgenerics",
+            "nestedGenerics"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.generics#functionwithgenericconstraints",
+            "functionWithGenericConstraints"
+          ],
+          [
+            "/api/module.generics#functionwithtypeparam",
+            "functionWithTypeParam"
+          ],
+          [
+            "/api/module.generics#functionwithtypeparams",
+            "functionWithTypeParams"
+          ],
+          [
+            "/api/module.generics#genericswithdefaults",
+            "genericsWithDefaults"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "hierarchy",
+    "path": "/api/module.hierarchy",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.hierarchy#childclassa",
+            "ChildClassA"
+          ],
+          [
+            "/api/module.hierarchy#childclassb",
+            "ChildClassB"
+          ],
+          [
+            "/api/module.hierarchy#grandchildclassa",
+            "GrandChildClassA"
+          ],
+          [
+            "/api/module.hierarchy#parentclass",
+            "ParentClass"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "interfaces",
+    "path": "/api/module.interfaces",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.interfaces#animal",
+            "Animal"
+          ]
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.interfaces#callableinterface",
+            "CallableInterface"
+          ],
+          [
+            "/api/module.interfaces#dog",
+            "Dog"
+          ],
+          [
+            "/api/module.interfaces#indexableinterface",
+            "IndexableInterface"
+          ],
+          [
+            "/api/module.interfaces#someprops",
+            "SomeProps"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "modules/module-1",
+    "path": "/api/module.modules_module-1/module.modules_module-1",
+    "children": [
+      {
+        "title": "Namespaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace",
+            "someNameSpace"
+          ]
+        ]
+      },
+      {
+        "title": "Enumerations",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1enuma",
+            "Module1EnumA"
+          ],
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1enumb",
+            "Module1EnumB"
+          ]
+        ]
+      },
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1classa",
+            "Module1ClassA"
+          ],
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1classb",
+            "Module1ClassB"
+          ]
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1interfacea",
+            "Module1InterfaceA"
+          ],
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1interfaceb",
+            "Module1InterfaceB"
+          ]
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1typeliterala",
+            "Module1TypeLiteralA"
+          ],
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1typeliteralb",
+            "Module1TypeLiteralB"
+          ]
+        ]
+      },
+      {
+        "title": "Variables",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1variablea",
+            "module1VariableA"
+          ],
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1variableb",
+            "module1VariableB"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1functiona",
+            "module1FunctionA"
+          ],
+          [
+            "/api/module.modules_module-1/module.modules_module-1#module1functionb",
+            "module1FunctionB"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "modules/module-2",
+    "path": "/api/module.modules_module-2",
+    "children": [
+      {
+        "title": "Enumerations",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-2#module2enuma",
+            "Module2EnumA"
+          ],
+          [
+            "/api/module.modules_module-2#module2enumb",
+            "Module2EnumB"
+          ]
+        ]
+      },
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-2#module2classa",
+            "Module2ClassA"
+          ],
+          [
+            "/api/module.modules_module-2#module2classb",
+            "Module2ClassB"
+          ]
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-2#module2interfacea",
+            "Module2InterfaceA"
+          ],
+          [
+            "/api/module.modules_module-2#module2interfaceb",
+            "Module2InterfaceB"
+          ]
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-2#module2typeliterala",
+            "Module2TypeLiteralA"
+          ],
+          [
+            "/api/module.modules_module-2#module2typeliteralb",
+            "Module2TypeLiteralB"
+          ]
+        ]
+      },
+      {
+        "title": "Variables",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-2#module2variablea",
+            "module2VariableA"
+          ],
+          [
+            "/api/module.modules_module-2#module2variableb",
+            "module2VariableB"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.modules_module-2#module2functiona",
+            "module2FunctionA"
+          ],
+          [
+            "/api/module.modules_module-2#module2sfunctionb",
+            "module2sFunctionB"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "properties",
+    "path": "/api/module.properties",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.properties#classwithproperties",
+            "ClassWithProperties"
+          ]
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.properties#interfacewithproperties",
+            "InterfaceWithProperties"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "reflections",
+    "path": "/api/module.reflections",
+    "children": [
+      {
+        "title": "Enumerations",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.reflections#enumreflection",
+            "EnumReflection"
+          ]
+        ]
+      },
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.reflections#implementedclass",
+            "ImplementedClass"
+          ],
+          [
+            "/api/module.reflections#reflectionclass",
+            "ReflectionClass"
+          ]
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.reflections#callablereflection",
+            "CallableReflection"
+          ],
+          [
+            "/api/module.reflections#indexablereflection",
+            "IndexableReflection"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "signatures",
+    "path": "/api/module.signatures",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.signatures#classwithconstructor",
+            "ClassWithConstructor"
+          ]
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.signatures#callablesignature",
+            "CallableSignature"
+          ],
+          [
+            "/api/module.signatures#propinterface",
+            "PropInterface"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.signatures#commentsinreturn",
+            "commentsInReturn"
+          ],
+          [
+            "/api/module.signatures#functiondeclaration",
+            "functionDeclaration"
+          ],
+          [
+            "/api/module.signatures#functionreturningafunction",
+            "functionReturningAFunction"
+          ],
+          [
+            "/api/module.signatures#functionreturninganobject",
+            "functionReturningAnObject"
+          ],
+          [
+            "/api/module.signatures#functionwithdefaults",
+            "functionWithDefaults"
+          ],
+          [
+            "/api/module.signatures#functionwithnamedparams",
+            "functionWithNamedParams"
+          ],
+          [
+            "/api/module.signatures#functionwithnamedparamsandcomments",
+            "functionWithNamedParamsAndComments"
+          ],
+          [
+            "/api/module.signatures#functionwithnestedparams",
+            "functionWithNestedParams"
+          ],
+          [
+            "/api/module.signatures#functionwithoptionalparam",
+            "functionWithOptionalParam"
+          ],
+          [
+            "/api/module.signatures#functionwithparameters",
+            "functionWithParameters"
+          ],
+          [
+            "/api/module.signatures#functionwithpipesinparamsandcomments",
+            "functionWithPipesInParamsAndComments"
+          ],
+          [
+            "/api/module.signatures#functionwithreferencetype",
+            "functionWithReferenceType"
+          ],
+          [
+            "/api/module.signatures#functionwithrest",
+            "functionWithRest"
+          ],
+          [
+            "/api/module.signatures#functionwithtypeparams",
+            "functionWithTypeParams"
+          ],
+          [
+            "/api/module.signatures#functionwithuniontypes",
+            "functionWithUnionTypes"
+          ],
+          [
+            "/api/module.signatures#multiplesignatures",
+            "multipleSignatures"
+          ],
+          [
+            "/api/module.signatures#privatefunction",
+            "privateFunction"
+          ],
+          [
+            "/api/module.signatures#promisereturningasymbol",
+            "promiseReturningASymbol"
+          ],
+          [
+            "/api/module.signatures#promisereturninganobject",
+            "promiseReturningAnObject"
+          ],
+          [
+            "/api/module.signatures#swtch",
+            "swtch"
+          ],
+          [
+            "/api/module.signatures#variablefunction",
+            "variableFunction"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "sources",
+    "path": "/api/module.sources",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.sources#anotherclass",
+            "AnotherClass"
+          ],
+          [
+            "/api/module.sources#someclass",
+            "SomeClass"
+          ]
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.sources#anotherinterface",
+            "AnotherInterface"
+          ],
+          [
+            "/api/module.sources#someinterface",
+            "SomeInterface"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "types",
+    "path": "/api/module.types",
+    "children": [
+      {
+        "title": "Classes",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.types#intersectionclassa",
+            "IntersectionClassA"
+          ],
+          [
+            "/api/module.types#intersectionclassb",
+            "IntersectionClassB"
+          ]
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.types#bar",
+            "Bar"
+          ],
+          [
+            "/api/module.types#conditionaltype",
+            "ConditionalType"
+          ],
+          [
+            "/api/module.types#foo",
+            "Foo"
+          ],
+          [
+            "/api/module.types#fooandbar",
+            "FooAndBar"
+          ],
+          [
+            "/api/module.types#partialmappedtype",
+            "PartialMappedType"
+          ],
+          [
+            "/api/module.types#readonlymapedtype",
+            "ReadonlyMapedType"
+          ],
+          [
+            "/api/module.types#_somecallback_",
+            "_someCallback_"
+          ],
+          [
+            "/api/module.types#intersectiontype",
+            "intersectionType"
+          ],
+          [
+            "/api/module.types#objectliteraluniontype",
+            "objectLiteralUnionType"
+          ],
+          [
+            "/api/module.types#uniontype",
+            "unionType"
+          ],
+          [
+            "/api/module.types#uniontypewithsymbols",
+            "unionTypeWithSymbols"
+          ],
+          [
+            "/api/module.types#uniontypewithsymbolsdeclarations",
+            "unionTypeWithSymbolsDeclarations"
+          ]
+        ]
+      },
+      {
+        "title": "Variables",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.types#arraytype",
+            "arrayType"
+          ],
+          [
+            "/api/module.types#barbigint",
+            "barBigInt"
+          ],
+          [
+            "/api/module.types#externalreference",
+            "externalReference"
+          ],
+          [
+            "/api/module.types#externalreferenceinsidetypeparams",
+            "externalReferenceInsideTypeParams"
+          ],
+          [
+            "/api/module.types#foobigint",
+            "fooBigInt"
+          ],
+          [
+            "/api/module.types#htmlelement",
+            "htmlElement"
+          ],
+          [
+            "/api/module.types#literaltype",
+            "literalType"
+          ],
+          [
+            "/api/module.types#objectliteraltype",
+            "objectLiteralType"
+          ],
+          [
+            "/api/module.types#stringliteraltype",
+            "stringLiteralType"
+          ],
+          [
+            "/api/module.types#stringtype",
+            "stringType"
+          ],
+          [
+            "/api/module.types#tupletype",
+            "tupleType"
+          ],
+          [
+            "/api/module.types#typeoperatortype",
+            "typeOperatorType"
+          ]
+        ]
+      },
+      {
+        "title": "Functions",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.types#baz",
+            "baz"
+          ],
+          [
+            "/api/module.types#functionreflectiontype",
+            "functionReflectionType"
+          ],
+          [
+            "/api/module.types#generic",
+            "generic"
+          ],
+          [
+            "/api/module.types#restuniontypes",
+            "restUnionTypes"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "variables",
+    "path": "/api/module.variables",
+    "children": [
+      {
+        "title": "Variables",
+        "sidebarDepth": 0,
+        "children": [
+          [
+            "/api/module.variables#__specialcharacters__",
+            "__specialCharacters__"
+          ],
+          [
+            "/api/module.variables#arrayvalues",
+            "arrayValues"
+          ],
+          [
+            "/api/module.variables#indexable",
+            "indexable"
+          ],
+          [
+            "/api/module.variables#referencedtyped",
+            "referencedTyped"
+          ],
+          [
+            "/api/module.variables#somestring",
+            "someString"
+          ],
+          [
+            "/api/module.variables#stringwithdefaultvalue",
+            "stringWithDefaultValue"
+          ],
+          [
+            "/api/module.variables#typeliteral",
+            "typeLiteral"
+          ],
+          [
+            "/api/module.variables#typedvariable",
+            "typedVariable"
+          ],
+          [
+            "/api/module.variables#untypedobject",
+            "untypedObject"
+          ]
+        ]
+      }
+    ]
+  }
+]

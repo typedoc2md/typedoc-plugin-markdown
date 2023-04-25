@@ -1,5 +1,5 @@
 import { defaultTheme } from 'vuepress';
-import { typedocPlugin } from 'vuepress-plugin-typedoc/next';
+import typedocSidebar from './typedoc-sidebar.json';
 
 module.exports = {
   title: 'VuePress Docs v2',
@@ -21,13 +21,12 @@ module.exports = {
           children: ['/guide/README.md'],
         },
       ],
+      '/api/': [
+        {
+          text: 'API',
+          children: typedocSidebar,
+        },
+      ],
     },
   }),
-  plugins: [
-    typedocPlugin({
-      entryPoints: ['../../stubs/src/index.ts'],
-      tsconfig: '../../stubs/tsconfig.json',
-      cleanOutputDir: true,
-    }),
-  ],
 };

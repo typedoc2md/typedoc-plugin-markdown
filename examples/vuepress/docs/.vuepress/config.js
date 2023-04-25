@@ -1,3 +1,5 @@
+const typedocSidebar = require('./typedoc-sidebar.json');
+
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -32,20 +34,12 @@ module.exports = {
           path: '/guide/',
         },
       ],
+      '/api/': [
+        {
+          title: 'API',
+          children: typedocSidebar,
+        },
+      ],
     },
   },
-
-  /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
-   */
-  plugins: [
-    [
-      'vuepress-plugin-typedoc',
-      {
-        entryPoints: ['../../stubs/src/index.ts'],
-        tsconfig: '../../stubs/tsconfig.json',
-        cleanOutputDir: true,
-      },
-    ],
-  ],
 };

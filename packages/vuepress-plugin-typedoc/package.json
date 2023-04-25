@@ -2,11 +2,7 @@
   "name": "vuepress-plugin-typedoc",
   "version": "0.11.1",
   "description": "A VuePress plugin to build API documentation with TypeDoc.",
-  "main": "./dist/v1/index.js",
-  "exports": {
-    ".": "./dist/v1/index.js",
-    "./next": "./dist/v2/index.js"
-  },
+  "main": "./dist/index.js",
   "files": [
     "dist/"
   ],
@@ -22,20 +18,16 @@
   "author": "Thomas Grey",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "yarn run lint && yarn run build",
-    "build": "rm -rf ./dist && tsc"
+    "prepublishOnly": "npm run lint && npm run build",
+    "build": "rm -rf ./dist && tsc",
+    "docs": "rm -rf ./demo && npm run build && typedoc --options ../../stubs/typedoc.json --plugin typedoc-plugin-markdown --plugin ./dist/index --out ./out"
   },
   "peerDependencies": {
-    "typedoc": ">=0.23.0",
-    "typedoc-plugin-markdown": ">=3.13.0"
-  },
-  "devDependencies": {
-    "typedoc-plugin-markdown": ">=3.13.0"
+    "typedoc-plugin-markdown": ">=4.0.0-next.8"
   },
   "license": "MIT",
   "keywords": [
     "vuepress",
-    "vuepress-plugin",
     "typedoc",
     "markdown",
     "typescript",
