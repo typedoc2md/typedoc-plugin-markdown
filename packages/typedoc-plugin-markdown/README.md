@@ -15,6 +15,8 @@ The plugin replaces the default HTML theme with a built-in Markdown theme and ex
 
 > Please note the `next` pre-release version may contain breaking changes within the same semantic version.
 
+> [TypeDoc](https://typedoc.org) and [Prettier](https://prettier.io/) are both required peer dependencies.
+
 ```bash
 npm install typedoc-plugin-markdown@next --save-dev
 ```
@@ -24,8 +26,6 @@ npm install typedoc-plugin-markdown@next --save-dev
 ```bash
 typedoc --plugin typedoc-plugin-markdown
 ```
-
-Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. This does require an additional peer dependency, however introduces a consistent output format.
 
 ## Options
 
@@ -90,7 +90,17 @@ See [Front matter options](./docs/frontmatter.md) for further documentation.
 - **`--baseUrl`**<br>
   Specifies the base url for internal link. If omitted all urls will be relative. Defaults to `.`
 
-## Documentation
+## Output formatting (Prettier)
+
+Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. This does require an additional peer dependency but has several benefits:
+
+- Produces a consistent format.
+- Remove unnecessary escape characters.
+- Formats code blocks inside comment fenced blocks.
+
+Any [prettier configuration](https://prettier.io/docs/en/configuration.html) files discovered will be passed as options to the parser.
+
+## Further Documentation
 
 - [File output options](./docs/file-output-options.md)
 - [Frontmatter options](./docs/frontmatter.md)

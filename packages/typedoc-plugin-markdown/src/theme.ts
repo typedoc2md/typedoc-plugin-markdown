@@ -16,6 +16,7 @@ import { TemplateMapping } from './models';
 import { URL_PREFIX } from './support/constants';
 import { slugify } from './support/utils';
 import { MarkdownThemeRenderContext } from './theme-context';
+
 export class MarkdownTheme extends Theme {
   @BindOption('entryDocument') entryDocument!: string;
   @BindOption('entryPoints') entryPoints!: string[];
@@ -26,8 +27,8 @@ export class MarkdownTheme extends Theme {
   @BindOption('preserveAnchorCasing') preserveAnchorCasing!: boolean;
   @BindOption('readme') readme!: string;
 
-  private _renderContext?: MarkdownThemeRenderContext;
-
+  private _renderContext: MarkdownThemeRenderContext;
+  private _prettierOptions: prettier.Options | null;
   private anchors: Record<string, string[]>;
 
   constructor(renderer: Renderer) {
@@ -48,6 +49,18 @@ export class MarkdownTheme extends Theme {
       );
     }
     return this._renderContext;
+  }
+
+  getPrettierOptions() {
+    if (!this._prettierOptions) {
+      this._prettierOptions = this.resolvePrettierOptions();
+    }
+    return this._prettierOptions;
+  }
+
+  resolvePrettierOptions() {
+    const prettierFile = prettier.resolveConfigFile.sync();
+    return prettierFile ? prettier.resolveConfig.sync(prettierFile) : null;
   }
 
   readmeTemplate = (pageEvent: PageEvent<ProjectReflection>) => {
@@ -71,6 +84,7 @@ export class MarkdownTheme extends Theme {
     template: RenderTemplate<PageEvent<Reflection>>,
   ): string {
     return prettier.format(template(page) as string, {
+      ...this.getPrettierOptions(),
       parser: 'markdown',
     });
   }
