@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.9
+
+### Patch Changes
+
+- Discover prettier config files
+
 ## 4.0.0-next.8
 
 ### Patch Changes
