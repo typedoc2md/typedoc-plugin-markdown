@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.8
+
+### Patch Changes
+
+- Simplified category.yml generation and further refactoring
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.9
+
 ## 1.0.0-next.7
 
 ### Patch Changes
