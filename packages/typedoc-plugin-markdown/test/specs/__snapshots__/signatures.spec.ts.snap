@@ -13,15 +13,13 @@ exports[`Signatures: should compile a promise that returns a symbol' 1`] = `
 `;
 
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
-"> **promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{data: \`string\`;
-id: \`string\`;}\\>
+"> **promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{data: \`string\`; id: \`string\`;}\\>
 
 [partial: sources]
 
 ## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{data: \`string\`;
-id: \`string\`;}\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{data: \`string\`; id: \`string\`;}\\>
 
 "
 `;
@@ -74,7 +72,9 @@ Comments for function
 
 Return comments
 
-> > \\<T\\>(x: \`string\`): \`boolean\`
+> \\<T\\>(x: \`string\`): \`boolean\`
+>
+> [partial: sources]
 >
 > ### Type parameters
 >
@@ -95,6 +95,8 @@ Return comments
 > ### Returns
 >
 > \`boolean\`
+>
+>
 
 "
 `;
@@ -114,9 +116,21 @@ Comments for function
 
 Return comments
 
- **x**: \`number\`  = \`1\`
+### x
 
- **y**: \`number\`  = \`2\`
+> **x**: \`number\`  = \`1\`
+
+[partial: sources]
+
+
+
+### y
+
+> **y**: \`number\`  = \`2\`
+
+[partial: sources]
+
+
 
 "
 `;

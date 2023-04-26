@@ -4,6 +4,11 @@ export interface InterfaceWithProperties {
    */
   property: string;
   optionalProperty?: Partial<ClassWithProperties>;
+  /** Comments for someBoolean */
+  readonly someBoolean: (trueWeight?: number, falseWeight?: number) => boolean;
+  someObject: { x: 1; b: 2; c: 4 };
+
+  someRandomObject: object;
 }
 
 export class ClassWithProperties {

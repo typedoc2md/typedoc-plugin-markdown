@@ -1,7 +1,9 @@
 import { unEscapeChars } from './utils';
 
-export const heading = (level: number, text: string) =>
-  `${[...Array(level)].map(() => '#').join('')} ${text}`;
+export const heading = (level: number, text: string) => {
+  level = level > 6 ? 6 : level;
+  return `${[...Array(level)].map(() => '#').join('')} ${text}`;
+};
 
 export const link = (label: string, url: string | null) =>
   url ? `[${label}](${url})` : '';

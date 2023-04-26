@@ -118,13 +118,6 @@ export function defineOptions(app: Application) {
     defaultValue: 'List',
   });
 
-  app.options.addDeclaration({
-    name: 'typeDeclarationFormat',
-    help: '[Markdown Plugin] Specify the render style of type declarations.',
-    type: ParameterType.String,
-    defaultValue: 'List',
-  });
-
   /**
    * Frontmatter options
    */

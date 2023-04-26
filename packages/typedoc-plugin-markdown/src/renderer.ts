@@ -82,20 +82,6 @@ export async function renderMarkdown(
   output.urls = this.theme!.getUrls(project);
   output.navigation = this.theme!.getNavigation(project);
 
-  /*fs.writeFileSync(
-    outputDirectory + '.urls.json',
-    JSON.stringify(
-      output.urls?.map((url) => url.url),
-      null,
-      2,
-    ),
-  );
-
-  fs.writeFileSync(
-    outputDirectory + '.nav.json',
-    JSON.stringify(output.navigation, null, 2),
-  );*/
-
   this.trigger(output);
 
   await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));

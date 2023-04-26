@@ -38,7 +38,7 @@ export function declarationType(
     if (indexSignature) {
       types?.unshift(indexSignature);
     }
-    return types ? `\\{${types.join('\n')}}` : '\\{}';
+    return types ? `\\{${types.join(' ')}}` : '\\{}';
   }
   return '\\{}';
 }

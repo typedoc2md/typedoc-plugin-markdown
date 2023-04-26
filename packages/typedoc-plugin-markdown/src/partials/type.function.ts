@@ -13,9 +13,9 @@ export function functionType(
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          return `${param.flags.isRest ? '...' : ''}\`${param.name}${
+          return `${param.flags.isRest ? '...' : ''}${param.name}${
             param.flags.isOptional ? '?' : ''
-          }\`: ${context.partials.someType(param.type as SomeType)}`;
+          }: ${context.partials.someType(param.type as SomeType)}`;
         })
       : [];
     const returns = context.partials.someType(fn.type as SomeType);

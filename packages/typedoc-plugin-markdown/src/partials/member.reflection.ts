@@ -23,6 +23,17 @@ export function reflectionMember(
     md.push(context.partials.comment(reflection.comment, headingLevel));
   }
 
+  if (
+    !reflection.kindOf([
+      ReflectionKind.Module,
+      ReflectionKind.Project,
+      ReflectionKind.Namespace,
+    ]) &&
+    reflection.sources
+  ) {
+    md.push(context.partials.sources(reflection));
+  }
+
   if (reflection.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));
     md.push(context.partials.typeParametersTable(reflection.typeParameters));

@@ -9,6 +9,8 @@ exports[`Generics: should compile class with type params 1`] = `
 
 [partial: comment]
 
+[partial: sources]
+
 ## Type parameters
 
 

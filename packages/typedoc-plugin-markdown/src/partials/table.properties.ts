@@ -9,13 +9,8 @@ export function propertiesTable(
 ) {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
-  const hasModifiers = props.some((prop) => prop.flags.length);
 
   const headers = ['Property'];
-
-  if (hasModifiers) {
-    headers.push('Modifiers');
-  }
 
   headers.push('Type');
 
@@ -55,17 +50,21 @@ export function propertiesTable(
     const propertyType = getDeclarationType(property);
     const row: string[] = [];
 
-    row.push(context.partials.declarationMemberName(property, false));
+    const nameColumn: string[] = [];
 
-    if (hasModifiers) {
-      if (property.flags.length) {
-        row.push(
-          property.flags.map((flag) => backTicks(flag.toLowerCase())).join(' '),
-        );
-      } else {
-        row.push('-');
-      }
+    if (property.flags.length && !property.flags.isOptional) {
+      nameColumn.push(
+        property.flags.map((flag) => backTicks(flag.toLowerCase())).join(' '),
+      );
     }
+
+    nameColumn.push(
+      `${context.partials.declarationMemberName(property, false)}${
+        property.flags.isOptional ? '?' : ''
+      }`,
+    );
+
+    row.push(nameColumn.join(' '));
 
     if (propertyType) {
       row.push(context.partials.someType(propertyType, 'object'));

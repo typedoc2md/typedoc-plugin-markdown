@@ -39,16 +39,18 @@ function signatureBody(
   if (context.getOption('indentifiersAsCodeBlocks')) {
     md.push(codeBlock(context.partials.signatureMemberIdentifier(signature)));
   } else {
-    md.push(`> ${context.partials.signatureMemberIdentifier(signature)}`);
+    md.push(
+      `${
+        !parentHeadingLevel ? '>' : ''
+      } ${context.partials.signatureMemberIdentifier(signature)}`,
+    );
   }
 
   if (signature.comment) {
     md.push(context.partials.comment(signature.comment, headingLevel));
   }
 
-  if (!parentHeadingLevel && signature.sources) {
-    md.push(context.partials.sources(signature));
-  }
+  md.push(context.partials.sources(signature));
 
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
@@ -81,22 +83,16 @@ function signatureBody(
     }
 
     if (typeDeclaration?.children) {
-      if (
-        context.getOption('typeDeclarationFormat').toLowerCase() === 'table'
-      ) {
+      if (context.getOption('propertiesFormat').toLowerCase() === 'table') {
         md.push(context.partials.propertiesTable(typeDeclaration.children));
       } else {
-        md.push(
-          context.partials.typeDeclarationMember(
-            typeDeclaration.children,
-            headingLevel,
-          ),
-        );
+        typeDeclaration.children.forEach((declarationChild) => {
+          md.push(context.partials.member(declarationChild, headingLevel + 1));
+        });
       }
     }
-    if (!parentHeadingLevel) {
-      md.push(context.partials.inheritance(signature, headingLevel));
-    }
+
+    md.push(context.partials.inheritance(signature, headingLevel));
   }
 
   return md.join('\n\n');

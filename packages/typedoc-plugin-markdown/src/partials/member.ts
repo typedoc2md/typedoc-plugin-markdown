@@ -13,13 +13,13 @@ import { MarkdownThemeRenderContext } from '../theme-render-context';
 export function member(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
+  parentHeadingLevel?: number,
 ) {
   const md: string[] = [];
 
-  const headingLevel = getReflectionHeadingLevel(
-    reflection,
-    context.getOption('groupByKinds'),
-  );
+  const headingLevel = parentHeadingLevel
+    ? parentHeadingLevel
+    : getReflectionHeadingLevel(reflection, context.getOption('groupByKinds'));
 
   if (context.getOption('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
@@ -43,21 +43,12 @@ export function member(
         md.push(context.partials.signatureMember(signature));
       });
     } else {
-      /*if (reflection.hasGetterOrSetter()) {
-        if (reflection.getSignature) {
-          //  md.push(context.partials.signatureMember(reflection.getSignature));
-        }
-        if (reflection.setSignature) {
-          //  md.push(context.partials.signatureMember(reflection.setSignature));
-        }
-      }*/
-
       if (reflection instanceof ReferenceReflection) {
         md.push(context.partials.referenceMember(reflection));
       }
 
       if (reflection instanceof DeclarationReflection) {
-        md.push(context.partials.declarationMember(reflection));
+        md.push(context.partials.declarationMember(reflection, headingLevel));
       }
     }
   }

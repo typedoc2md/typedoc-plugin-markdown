@@ -48,7 +48,6 @@ import { signatureMemberIdentifier } from './partials/member.signature.identifie
 import { signatureMember } from './partials/member.signature';
 import { sources } from './partials/member.sources';
 import { member } from './partials/member';
-import { typeDeclarationMember } from './partials/member.typedeclaration';
 import { members } from './partials/members';
 import { navigation } from './partials/navigation';
 import { pageTitle } from './partials/page.title';
@@ -101,8 +100,7 @@ export type Partials = {
   signatureMemberIdentifier: (signature: SignatureReflection) => string;
   signatureMember: (signature: SignatureReflection, parentHeadingLevel?: number |  undefined) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
-  member: (reflection: DeclarationReflection) => string;
-  typeDeclarationMember: (declarations: DeclarationReflection[], parentHeadingLevel: number) => string;
+  member: (reflection: DeclarationReflection, parentHeadingLevel?: number |  undefined) => string;
   members: (container: ContainerReflection) => string;
   navigation: (project: ProjectReflection) => string;
   pageTitle: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
@@ -154,7 +152,6 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   signatureMember: bind(signatureMember, context),
   sources: bind(sources, context),
   member: bind(member, context),
-  typeDeclarationMember: bind(typeDeclarationMember, context),
   members: bind(members, context),
   navigation: bind(navigation, context),
   pageTitle: bind(pageTitle, context),

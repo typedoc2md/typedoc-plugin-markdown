@@ -1,4 +1,4 @@
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { backTicks } from '../support/els';
 import { getDeclarationType } from '../support/helpers';
 import { stripComments, stripLineBreaks } from '../support/utils';
@@ -12,21 +12,35 @@ export function declarationMemberIdentifier(
 
   const declarationType = getDeclarationType(reflection);
 
-  if (reflection.flags?.length && !reflection.flags.isRest) {
+  if (
+    reflection.flags?.length &&
+    !reflection.flags.isRest &&
+    !reflection.flags.isOptional
+  ) {
     md.push(
       reflection.flags.map((flag) => backTicks(flag.toLowerCase())).join(' '),
     );
+  }
+
+  if (reflection.kindOf(ReflectionKind.Variable) && !reflection.flags.isConst) {
+    md.push(backTicks('let'));
   }
 
   if (reflection.flags.isRest) {
     md.push('...');
   }
 
-  md.push(
-    `${context.partials.declarationMemberName(reflection)}${
-      declarationType ? ':' : ''
-    }`,
-  );
+  const name: string[] = [context.partials.declarationMemberName(reflection)];
+
+  if (reflection.flags.isOptional) {
+    name.push('?');
+  }
+
+  if (declarationType) {
+    name.push(':');
+  }
+
+  md.push(name.join(''));
 
   if (reflection.typeParameters) {
     md.push(

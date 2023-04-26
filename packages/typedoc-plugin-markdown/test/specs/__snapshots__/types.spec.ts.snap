@@ -24,16 +24,7 @@ exports[`Types: should compile conditional type ' 1`] = `"\`T\` *extends* \`stri
 
 exports[`Types: should compile expanded 'function' type ' 1`] = `""`;
 
-exports[`Types: should compile expanded 'literal' type' 1`] = `
-"\\{valueA: \`number\`;
-valueB: \`boolean\`;
-valueX: \\{valueA: \`number\`[];
-valueY: (\`z\`: \`string\`) => \\{a: \`string\`;
-b: \`string\`;};
-valueZ: \`string\`;};
-valueY: () => \`string\`;
-valueZ: \`string\`;}"
-`;
+exports[`Types: should compile expanded 'literal' type' 1`] = `"\\{valueA: \`number\`; valueB: \`boolean\`; valueX: \\{valueA: \`number\`[]; valueY: (z: \`string\`) => \\{a: \`string\`; b: \`string\`;}; valueZ: \`string\`;}; valueY: () => \`string\`; valueZ: \`string\`;}"`;
 
 exports[`Types: should compile expanded 'objectLiteralType' type' 1`] = `"\\{}"`;
 

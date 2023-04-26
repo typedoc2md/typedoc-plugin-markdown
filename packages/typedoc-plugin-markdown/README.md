@@ -64,9 +64,7 @@ See [File output options](./docs/file-output-options.md) for further documentati
 - **`--indentifiersAsCodeBlocks`**<br>
   Format signature and declaration identifiers in code blocks. Note if `true` references will not be linked. Defaults to `false`.
 - **`--propertiesFormat`**<br>
-  Specify the render style of properties groups for Interfaces and Classes. Expected values [`list`, `table`]. Defaults to `list`.
-- **`--typeDeclarationFormat`**<br>
-  Specify the render style of type declarations. Expected values [`list`, `table`]. Defaults to `list`.
+  Specify the render style of properties groups for interfaces, classes and type literals. Expected values [`list`, `table`]. Defaults to `list`.
 - **`--enumMembersFormat`**<br>
   Specify the render style of Enum members. Expected values [`list`, `table`]. Defaults to `list`.
 
