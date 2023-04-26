@@ -61,6 +61,10 @@ function declarationBody(
     md.push(context.partials.comment(declaration.comment, headingLevel));
   }
 
+  if (!parentHeadingLevel && declaration.sources) {
+    md.push(context.partials.sources(declaration));
+  }
+
   if (declaration.typeParameters) {
     md.push(heading(headingLevel, `Type parameters${titleSuffix}`));
     md.push(context.partials.typeParametersTable(declaration.typeParameters));
@@ -101,7 +105,7 @@ function declarationBody(
   }
 
   if (!parentHeadingLevel) {
-    md.push(context.partials.sources(declaration, headingLevel));
+    md.push(context.partials.inheritance(declaration, headingLevel));
   }
   return md.join('\n\n');
 }

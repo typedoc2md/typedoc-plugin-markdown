@@ -47,7 +47,7 @@ export function getReflectionHeadingLevel(
     return groupByKinds ? 3 : 2;
   }
   if (reflection.kindOf(ReflectionKind.Constructor)) {
-    return reflection.parent?.hasOwnDocument ? 3 : 4;
+    return reflection.parent?.hasOwnDocument ? 3 : 5;
   }
   if (groupByKinds) {
     return reflection.parent?.hasOwnDocument ? 3 : 5;

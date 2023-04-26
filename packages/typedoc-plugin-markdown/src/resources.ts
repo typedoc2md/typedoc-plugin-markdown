@@ -41,6 +41,7 @@ import { declarationMemberIdentifier } from './partials/member.declaration.ident
 import { declarationMemberName } from './partials/member.declaration.name';
 import { declarationMember } from './partials/member.declaration';
 import { indexSignatureTitle } from './partials/member.indexsignature.title';
+import { inheritance } from './partials/member.inheritance';
 import { referenceMember } from './partials/member.reference';
 import { reflectionMember } from './partials/member.reflection';
 import { signatureMemberIdentifier } from './partials/member.signature.identifier';
@@ -94,11 +95,12 @@ export type Partials = {
   declarationMemberName: (declaration: DeclarationReflection, emphasis?: boolean) => string;
   declarationMember: (declaration: DeclarationReflection, parentHeadingLevel?: number |  undefined) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
+  inheritance: (reflection: DeclarationReflection | SignatureReflection, headingLevel: number) => string;
   referenceMember: (props: ReferenceReflection) => string;
   reflectionMember: (reflection: DeclarationReflection) => string;
   signatureMemberIdentifier: (signature: SignatureReflection) => string;
   signatureMember: (signature: SignatureReflection, parentHeadingLevel?: number |  undefined) => string;
-  sources: (reflection: DeclarationReflection | SignatureReflection, headingLevel: number) => string;
+  sources: (reflection: DeclarationReflection | SignatureReflection) => string;
   member: (reflection: DeclarationReflection) => string;
   typeDeclarationMember: (declarations: DeclarationReflection[], parentHeadingLevel: number) => string;
   members: (container: ContainerReflection) => string;
@@ -145,6 +147,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   declarationMemberName: bind(declarationMemberName, context),
   declarationMember: bind(declarationMember, context),
   indexSignatureTitle: bind(indexSignatureTitle, context),
+  inheritance: bind(inheritance, context),
   referenceMember: bind(referenceMember, context),
   reflectionMember: bind(reflectionMember, context),
   signatureMemberIdentifier: bind(signatureMemberIdentifier, context),

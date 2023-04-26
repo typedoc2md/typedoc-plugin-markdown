@@ -3,37 +3,45 @@
 exports[`Signatures: should compile a promise that returns a symbol' 1`] = `
 "> **promiseReturningASymbol**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 
+[partial: sources]
+
 ## Returns
 
 [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
 "> **promiseReturningAnObject**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{data: \`string\`;
 id: \`string\`;}\\>
 
+[partial: sources]
+
 ## Returns
 
 [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{data: \`string\`;
 id: \`string\`;}\\>
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile callable signature' 1`] = `
 "> **CallableSignature**(): \`string\`
 
+[partial: sources]
+
 ## Returns
 
 \`string\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile class with constructor' 1`] = `
 "> **new ClassWithConstructor**(x: \`string\`, y: \`string\`): [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
+
+[partial: sources]
 
 #### Parameters
 
@@ -48,15 +56,17 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 
 [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile function that returns a function' 1`] = `
-"Comments for function
+"> **functionReturningAFunction**(): \`Function\`
+
+Comments for function
 
 
 
-> **functionReturningAFunction**(): \`Function\`
+[partial: sources]
 
 ## Returns
 
@@ -64,37 +74,39 @@ exports[`Signatures: should compile function that returns a function' 1`] = `
 
 Return comments
 
-> \\<T\\>(x: \`string\`): \`boolean\`
+> > \\<T\\>(x: \`string\`): \`boolean\`
+>
+> ### Type parameters
+>
+>
+> | Parameter |
+> | :------ |
+> | T |
+>
+>
+> ### Parameters
+>
+>
+> | Parameter | Type |
+> | :------ | :------ |
+> | x | \`string\` |
+>
+>
+> ### Returns
+>
+> \`boolean\`
 
-### Type parameters
-
-
-| Parameter |
-| :------ |
-| T |
-
-
-### Parameters
-
-
-| Parameter | Type |
-| :------ | :------ |
-| x | \`string\` |
-
-
-### Returns
-
-\`boolean\`
-
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile function that returns an object' 1`] = `
-"Comments for function
+"> **functionReturningAnObject**(): \`object\`
+
+Comments for function
 
 
 
-> **functionReturningAnObject**(): \`object\`
+[partial: sources]
 
 ## Returns
 
@@ -106,13 +118,15 @@ Return comments
 
  **y**: \`number\`  = \`2\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile function with nested typen params' 1`] = `
-"Some nested params.
+"> **functionWithNestedParams**(params: \`object\`, context: \`any\`): \`boolean\`
 
-> **functionWithNestedParams**(params: \`object\`, context: \`any\`): \`boolean\`
+Some nested params.
+
+[partial: sources]
 
 ## Parameters
 
@@ -127,11 +141,13 @@ exports[`Signatures: should compile function with nested typen params' 1`] = `
 
 \`boolean\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile function with reference type' 1`] = `
 "> **functionWithReferenceType**(descriptor: \`TypedPropertyDescriptor\`\\<\`any\`\\>): \`boolean\`
+
+[partial: sources]
 
 ## Parameters
 
@@ -145,13 +161,15 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 
 \`boolean\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile named parameters with comments' 1`] = `
-"FOO
+"> **functionWithNamedParamsAndComments**(\\_\\_namedParameters: \`object\` = \`{}\`, anotherParam: \`string\`): \`void\`
 
-> **functionWithNamedParamsAndComments**(\\_\\_namedParameters: \`object\` = \`{}\`, anotherParam: \`string\`): \`void\`
+FOO
+
+[partial: sources]
 
 ## Parameters
 
@@ -166,11 +184,13 @@ exports[`Signatures: should compile named parameters with comments' 1`] = `
 
 \`void\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile named parameters' 1`] = `
 "> **functionWithNamedParams**(\\_\\_namedParameters: \`Object\`): \`string\`
+
+[partial: sources]
 
 ## Parameters
 
@@ -184,13 +204,15 @@ exports[`Signatures: should compile named parameters' 1`] = `
 
 \`string\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile pipes in params and comments' 1`] = `
-"
+"> **functionWithPipesInParamsAndComments**(n: \`number\`): \`number\` \\| \`null\`
 
-> **functionWithPipesInParamsAndComments**(n: \`number\`): \`number\` \\| \`null\`
+
+
+[partial: sources]
 
 ## Parameters
 
@@ -204,15 +226,17 @@ exports[`Signatures: should compile pipes in params and comments' 1`] = `
 
 \`number\` \\| \`null\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile signature with @return comments' 1`] = `
-"Comments with a return definition
+"> **commentsInReturn**(): \`boolean\`
+
+Comments with a return definition
 
 
 
-> **commentsInReturn**(): \`boolean\`
+[partial: sources]
 
 ## Returns
 
@@ -220,31 +244,35 @@ exports[`Signatures: should compile signature with @return comments' 1`] = `
 
 Return comments
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile signature with a flag' 1`] = `
-"
+"> \`Private\` **privateFunction**(): \`string\`
 
-> \`Private\` **privateFunction**(): \`string\`
+
+
+[partial: sources]
 
 ## Returns
 
 \`string\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"This is a function with a parameter that has a default value.
-
-> **functionWithDefaults**(
+"> **functionWithDefaults**(
   valueA: \`string\` = \`'defaultValue'\`, 
   valueB: \`number\` = \`100\`, 
   valueC: \`number\` = \`Number.NaN\`, 
   valueD: \`boolean\` = \`true\`, 
   valueE: \`boolean\` = \`null\`, 
   valueF: \`string\` = \`'<foo>'\`): \`string\`
+
+This is a function with a parameter that has a default value.
+
+[partial: sources]
 
 ## Parameters
 
@@ -263,17 +291,19 @@ exports[`Signatures: should compile signature with default values' 1`] = `
 
 \`string\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile signature with optional params' 1`] = `
-"This is a function with a parameter that is optional.
-
-> **functionWithOptionalParam**(
+"> **functionWithOptionalParam**(
   firstParamWithDefault: \`boolean\` = \`true\`, 
   requiredParam: \`string\`, 
   optionalParam?: \`string\`, 
   paramWithDefault?: \`number\` = \`0\`): \`void\`
+
+This is a function with a parameter that is optional.
+
+[partial: sources]
 
 ## Parameters
 
@@ -290,16 +320,18 @@ exports[`Signatures: should compile signature with optional params' 1`] = `
 
 \`void\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile signature with params' 1`] = `
-"This is a function with multiple arguments and a return value.
-
-> **functionWithParameters**(
+"> **functionWithParameters**(
   paramZ: \`string\`, 
   paramG: \\{prop: \`string\`;} & \\{prop: \`number\`;}, 
   paramA: [\`PropInterface\`](interfaces/interface.PropInterface.md)): \`number\`
+
+This is a function with multiple arguments and a return value.
+
+[partial: sources]
 
 ## Parameters
 
@@ -315,13 +347,15 @@ exports[`Signatures: should compile signature with params' 1`] = `
 
 \`number\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile signature with rest params' 1`] = `
-"This is a function with rest parameter.
+"> **functionWithRest**(...rest: \`string\`[]): \`string\`
 
-> **functionWithRest**(...rest: \`string\`[]): \`string\`
+This is a function with rest parameter.
+
+[partial: sources]
 
 ## Parameters
 
@@ -335,11 +369,13 @@ exports[`Signatures: should compile signature with rest params' 1`] = `
 
 \`string\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Signatures: should compile signature with union types' 1`] = `
 "> **functionWithUnionTypes**(arg: \`number\` \\| \`boolean\`[], ...args: (\`string\` \\| \`number\`)[]): \`any\`
+
+[partial: sources]
 
 ## Parameters
 
@@ -354,5 +390,5 @@ exports[`Signatures: should compile signature with union types' 1`] = `
 
 \`any\`
 
-[partial: sources]"
+"
 `;

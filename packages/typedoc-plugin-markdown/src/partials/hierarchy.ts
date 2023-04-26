@@ -1,5 +1,5 @@
 import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
-import { bold, unorderedList } from '../support/els';
+import { backTicks, bold, unorderedList } from '../support/els';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function hierarchy(
@@ -43,6 +43,6 @@ function getHierarchyType(
   context: MarkdownThemeRenderContext,
 ) {
   return isTarget
-    ? bold(hierarchyType.toString())
+    ? bold(backTicks(hierarchyType.toString()))
     : context.partials.someType(hierarchyType as SomeType);
 }

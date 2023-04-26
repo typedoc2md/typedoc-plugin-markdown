@@ -1,5 +1,5 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
-import { codeBlock, heading } from '../support/els';
+import { blockQuoteBlock, codeBlock, heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
@@ -11,7 +11,9 @@ export function signatureMember(
   const md: string[] = [];
 
   if (parentHeadingLevel) {
-    md.push(signatureBody(context, signature, parentHeadingLevel));
+    md.push(
+      blockQuoteBlock(signatureBody(context, signature, parentHeadingLevel)),
+    );
   } else {
     md.push(signatureBody(context, signature));
   }
@@ -34,14 +36,18 @@ function signatureBody(
           context.getOption('groupByKinds'),
         )) + 1;
 
-  if (signature.comment) {
-    md.push(context.partials.comment(signature.comment, headingLevel));
-  }
-
   if (context.getOption('indentifiersAsCodeBlocks')) {
     md.push(codeBlock(context.partials.signatureMemberIdentifier(signature)));
   } else {
     md.push(`> ${context.partials.signatureMemberIdentifier(signature)}`);
+  }
+
+  if (signature.comment) {
+    md.push(context.partials.comment(signature.comment, headingLevel));
+  }
+
+  if (!parentHeadingLevel && signature.sources) {
+    md.push(context.partials.sources(signature));
   }
 
   const typeDeclaration = (signature.type as any)
@@ -89,7 +95,7 @@ function signatureBody(
       }
     }
     if (!parentHeadingLevel) {
-      md.push(context.partials.sources(signature, headingLevel));
+      md.push(context.partials.inheritance(signature, headingLevel));
     }
   }
 

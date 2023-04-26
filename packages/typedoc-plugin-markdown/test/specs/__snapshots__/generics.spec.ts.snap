@@ -24,6 +24,8 @@ exports[`Generics: should compile class with type params 1`] = `
 exports[`Generics: should compile function with a simple type param' 1`] = `
 "> **functionWithTypeParam**\\<A\\>(): \`boolean\`
 
+[partial: sources]
+
 ## Type parameters
 
 
@@ -36,13 +38,15 @@ exports[`Generics: should compile function with a simple type param' 1`] = `
 
 \`boolean\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Generics: should compile function with complex type params' 1`] = `
-"[partial: comment]
+"> **functionWithTypeParams**\\<A, B, C, D\\>(): \`boolean\`
 
-> **functionWithTypeParams**\\<A, B, C, D\\>(): \`boolean\`
+[partial: comment]
+
+[partial: sources]
 
 ## Type parameters
 
@@ -59,17 +63,21 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 
 \`boolean\`
 
-[partial: sources]"
+"
 `;
 
 exports[`Generics: should compile generics with defaults' 1`] = `
 "> **genericsWithDefaults**
 
-[partial: sources]"
+[partial: sources]
+
+"
 `;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
 "> **nestedGenerics**: [\`Generic1\`](types/type-alias.Generic1.md)\\<[\`Generic2\`](types/type-alias.Generic2.md)\\<[\`Generic3\`](types/type-alias.Generic3.md)\\<\`string\`\\>\\>\\>
 
-[partial: sources]"
+[partial: sources]
+
+"
 `;
