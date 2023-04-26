@@ -55,12 +55,7 @@ export function propertiesTable(
     const propertyType = getDeclarationType(property);
     const row: string[] = [];
 
-    let prefix = '';
-    if (property.name.split('.').length > 1) {
-      prefix = '\\> ';
-    }
-
-    row.push(prefix + context.partials.declarationMemberName(property, false));
+    row.push(context.partials.declarationMemberName(property, false));
 
     if (hasModifiers) {
       if (property.flags.length) {
@@ -73,9 +68,7 @@ export function propertiesTable(
     }
 
     if (propertyType) {
-      row.push(
-        tableComments(context.partials.someType(propertyType, 'object')),
-      );
+      row.push(context.partials.someType(propertyType, 'object'));
     }
 
     if (hasComments) {

@@ -8,10 +8,11 @@ export interface InterfaceWithProperties {
 
 export class ClassWithProperties {
   /**
-   * Property comments
+   * Property comments with | pipes
+   * and new line
    */
   propertyWithDefaultValue = 'string';
-  optionalProperty?: string;
+  optionalProperty?: string | boolean | null;
   objectProperty: { a: string };
   private privateProperty: string;
   private _getterProp: string;
