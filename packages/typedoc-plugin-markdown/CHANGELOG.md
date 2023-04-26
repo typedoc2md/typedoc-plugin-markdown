@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.10
+
+### Patch Changes
+
+- Fix pipes not being escaped correctly with union types in properties table
+- Exposed navigation object to renderer
+- General UI updates and fixes
+
 ## 4.0.0-next.9
 
 ### Patch Changes
