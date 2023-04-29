@@ -1,0 +1,9 @@
+{
+  "entryPoints": [
+    "../../../stubs/src/classes.ts",
+    "../../../stubs/src/comments.ts"
+  ],
+  "tsconfig": "../../../stubs/tsconfig.json",
+  "plugin": ["typedoc-plugin-markdown", "../dist"],
+  "sidebar": { "version": "v2" }
+}

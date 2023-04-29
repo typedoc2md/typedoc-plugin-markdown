@@ -1,10 +1,10 @@
 import { NavigationItem } from 'typedoc-plugin-markdown';
 
-export function getV2Sidebar(navigation: NavigationItem[], basePath: string) {
+export = (navigation: NavigationItem[], basePath: string) => {
   return navigation.map((navigationItem) => {
     return getNavigationItem(navigationItem, basePath);
   });
-}
+};
 
 function getNavigationItem(navigationItem: NavigationItem, basePath: string) {
   return {

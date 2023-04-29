@@ -1,6 +1,6 @@
 {
   "name": "typedoc-vuepress-theme",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A TypeDoc plugin to build API documentation to be consumed with VuePress.",
   "main": "./dist/index.js",
   "files": [
@@ -12,15 +12,17 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tgreyuk/typedoc-plugin-vuepress.git",
-    "directory": "packages/typedoc-plugin-vuepress"
+    "directory": "packages/typedoc-vuepress-theme"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-vuepress/tree/master/packages/vuepress-plugin-typedoc",
+  "homepage": "https://github.com/tgreyuk/typedoc-plugin-vuepress/tree/master/packages/typedoc-vuepress-theme",
   "author": "Thomas Grey",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "docs": "rm -rf ./demo && npm run build && typedoc --options ../../stubs/typedoc.json --plugin typedoc-plugin-markdown --vuepressVersion \"v2\" --plugin ./dist/index --out ./out"
+    "docs": "npm run build && npm-run-all docs:*",
+    "docs:v1": "typedoc --options ./test/typedoc-v1.json --out docs/v1",
+    "docs:v2": "typedoc --options ./test/typedoc-v2.json --out docs/v2"
   },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.0.0-next.8"
@@ -28,9 +30,6 @@
   "license": "MIT",
   "keywords": [
     "vuepress",
-    "typedoc",
-    "markdown",
-    "typescript",
-    "api"
+    "typedoc"
   ]
 }
