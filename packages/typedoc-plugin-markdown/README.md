@@ -63,6 +63,8 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Group reflection kinds by headings (if applicable). If set to `false` all reflections will group at the same level. Note this effects directory stucture and UI organisation heading structure. Defaults to `true`.
 - **`--indentifiersAsCodeBlocks`**<br>
   Format signature and declaration identifiers in code blocks. Note if `true` references will not be linked. Defaults to `false`.
+- **`--TOCFormat`**<br>
+  Specifiy render style of table of content items. Table format will also include description of the item if avaailable. Defaults to `list`.
 - **`--propertiesFormat`**<br>
   Specify the render style of properties groups for interfaces, classes and type literals. Expected values [`list`, `table`]. Defaults to `list`.
 - **`--enumMembersFormat`**<br>

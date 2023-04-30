@@ -1,4 +1,7 @@
 /**
+ *
+ * Comments form module comments
+ *
  * @module
  *
  * @overview

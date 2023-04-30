@@ -5,3 +5,7 @@
 <!-- some comments -->
 
 Some text
+
+API
+
+[TYPEDOC_INDEX]
