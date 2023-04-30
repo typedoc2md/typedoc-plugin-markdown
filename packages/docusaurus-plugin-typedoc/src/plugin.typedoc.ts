@@ -1,14 +1,11 @@
 import * as fs from 'fs';
-import * as path from 'path';
 import {
   Application,
   DeclarationReflection,
   MixedDeclarationOption,
   PageEvent,
   ParameterType,
-  ReflectionGroup,
   RendererEvent,
-  UrlMapping,
 } from 'typedoc';
 import { CategoryYamlOptions, SidebarOptions } from './models';
 
@@ -34,25 +31,6 @@ export function load(app: Application) {
         collapsed: sidebar.collapsed,
       });
     }
-
-    const urlGroups = renderer.urls?.filter((urlMapping) => {
-      return urlMapping.model instanceof ReflectionGroup;
-    }) as UrlMapping<ReflectionGroup>[];
-
-    urlGroups?.forEach((urlGroup) => {
-      const groupUrl = path.join(renderer.outputDirectory, urlGroup.url);
-      writeCategoryYaml({
-        path: groupUrl,
-        label: urlGroup.model.title,
-        position: null,
-        collapsed: sidebar.collapsed,
-      });
-    });
-
-    app.logger.verbose(
-      '[docusaurus-plugin-typedoc] _category_.yml files written' +
-        renderer.outputDirectory,
-    );
   });
 }
 

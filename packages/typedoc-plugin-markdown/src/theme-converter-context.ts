@@ -147,24 +147,6 @@ export class MarkdownThemeConverterContext {
     const mapping = this.mappings[reflection.kind];
     if (mapping) {
       const url = this.getUrl(reflection, mapping, index);
-      if (mapping.directory) {
-        if (!reflection.kindOf(ReflectionKind.Module)) {
-          const sliceLength = reflection.kindOf(ReflectionKind.Namespace)
-            ? -2
-            : -1;
-          const groupDirectory = url.split('/').slice(0, sliceLength).join('/');
-          if (
-            this._urls.findIndex(
-              (urlMapping) => urlMapping.url === groupDirectory,
-            ) === -1 &&
-            groupDirectory.endsWith(mapping.directory)
-          ) {
-            this._urls.push(
-              new UrlMapping(groupDirectory, reflectionGroup, () => ''),
-            );
-          }
-        }
-      }
       this._urls.push(new UrlMapping(url, reflection, mapping.template));
       reflection.url = url;
       reflection.hasOwnDocument = true;
@@ -320,6 +302,9 @@ export class MarkdownThemeConverterContext {
   }
 
   get mappings(): Record<number, TemplateMapping> {
+    const numberPrefixOutput = this.options.getValue(
+      'numberPrefixOutput',
+    ) as boolean;
     const kindsWithOwnFileOption = this.options.getValue('kindsWithOwnFile') as
       | string
       | string[];
@@ -328,6 +313,11 @@ export class MarkdownThemeConverterContext {
       : [kindsWithOwnFileOption.toLowerCase()];
 
     const isAll = kindsWithOwnFile.includes('all');
+
+    const getDirectoryName = (reflectionKind: ReflectionKind) => {
+      const pluralString = ReflectionKind.pluralString(reflectionKind);
+      return numberPrefixOutput ? pluralString : slugify(pluralString);
+    };
 
     const mappings = {
       [ReflectionKind.Module]: {
@@ -339,7 +329,7 @@ export class MarkdownThemeConverterContext {
       [ReflectionKind.Namespace]: {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'namespaces',
+        directory: getDirectoryName(ReflectionKind.Namespace),
         kind: ReflectionKind.Namespace,
       },
     };
@@ -348,7 +338,7 @@ export class MarkdownThemeConverterContext {
       mappings[ReflectionKind.Class] = {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'classes',
+        directory: getDirectoryName(ReflectionKind.Class),
         kind: ReflectionKind.Class,
       };
     }
@@ -356,7 +346,7 @@ export class MarkdownThemeConverterContext {
       mappings[ReflectionKind.Interface] = {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'interfaces',
+        directory: getDirectoryName(ReflectionKind.Interface),
         kind: ReflectionKind.Interface,
       };
     }
@@ -364,7 +354,7 @@ export class MarkdownThemeConverterContext {
       mappings[ReflectionKind.Enum] = {
         isLeaf: false,
         template: this.reflectionTemplate,
-        directory: 'enums',
+        directory: getDirectoryName(ReflectionKind.Enum),
         kind: ReflectionKind.Enum,
       };
     }
@@ -372,7 +362,7 @@ export class MarkdownThemeConverterContext {
       mappings[ReflectionKind.Function] = {
         isLeaf: true,
         template: this.memberTemplate,
-        directory: 'functions',
+        directory: getDirectoryName(ReflectionKind.Function),
         kind: ReflectionKind.Function,
       };
     }
@@ -380,7 +370,7 @@ export class MarkdownThemeConverterContext {
       mappings[ReflectionKind.TypeAlias] = {
         isLeaf: true,
         template: this.memberTemplate,
-        directory: 'types',
+        directory: getDirectoryName(ReflectionKind.TypeAlias),
         kind: ReflectionKind.TypeAlias,
       };
     }
@@ -388,7 +378,7 @@ export class MarkdownThemeConverterContext {
       mappings[ReflectionKind.Variable] = {
         isLeaf: true,
         template: this.memberTemplate,
-        directory: 'variables',
+        directory: getDirectoryName(ReflectionKind.Variable),
         kind: ReflectionKind.Variable,
       };
     }

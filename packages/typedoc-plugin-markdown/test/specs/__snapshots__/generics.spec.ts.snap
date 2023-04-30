@@ -77,7 +77,7 @@ exports[`Generics: should compile generics with defaults' 1`] = `
 `;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-"> **nestedGenerics**: [\`Generic1\`](types/type-alias.Generic1.md)\\<[\`Generic2\`](types/type-alias.Generic2.md)\\<[\`Generic3\`](types/type-alias.Generic3.md)\\<\`string\`\\>\\>\\>
+"> **nestedGenerics**: [\`Generic1\`](type-aliases/type-alias.Generic1.md)\\<[\`Generic2\`](type-aliases/type-alias.Generic2.md)\\<[\`Generic3\`](type-aliases/type-alias.Generic3.md)\\<\`string\`\\>\\>\\>
 
 [partial: sources]
 

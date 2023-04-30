@@ -38,7 +38,9 @@ export class MarkdownThemeRenderContext {
         path.dirname(url),
       );
 
-      return path.join(relative, path.basename(url)).replace(/\\/g, '/');
+      return encodeURI(
+        path.join(relative, path.basename(url)).replace(/\\/g, '/'),
+      );
     }
   }
 
