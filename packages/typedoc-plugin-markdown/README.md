@@ -59,6 +59,8 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print reflection hierarchy. Defaults to `false`.
 - **`--indexPageTitle`**<br>
   The title of the main index / modules page. If not set will default to the project name.
+- **`--longPageTitle`**<br>
+  Include full module paths in page title (if applicable). Defaults to `false`.
 - **`--groupByKinds`**<br>
   Group reflection kinds by headings (if applicable). If set to `false` all reflections will group at the same level. Note this effects directory stucture and UI organisation heading structure. Defaults to `true`.
 - **`--indentifiersAsCodeBlocks`**<br>

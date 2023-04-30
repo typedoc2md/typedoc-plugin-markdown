@@ -64,6 +64,13 @@ export function defineOptions(app: Application) {
   });
 
   app.options.addDeclaration({
+    name: 'longPageTitles',
+    help: '[Markdown Plugin] Include full module paths in page title.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
     name: 'hideKindTag',
     help: '[Markdown Plugin] Do not print the kind tag beneath the page title.',
     type: ParameterType.Boolean,

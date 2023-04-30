@@ -58,8 +58,11 @@ export function getReflectionHeadingLevel(
 export function getReflectionTitle(
   reflection: DeclarationReflection,
   typeParams = false,
+  longTitle = false,
 ) {
-  const md = [escapeChars(reflection.name)];
+  const md = [
+    escapeChars(longTitle ? reflection.getFriendlyFullName() : reflection.name),
+  ];
   if (reflection.signatures?.length) {
     md.push('()');
   }
