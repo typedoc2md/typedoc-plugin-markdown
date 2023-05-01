@@ -1,5 +1,4 @@
 import { PluginOptions } from './models';
-const plugin = require.resolve('docusaurus-plugin-typedoc');
 
 const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   id: 'default',
@@ -17,7 +16,6 @@ const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   watch: false,
   enableFrontmatter: true,
   numberPrefixOutput: true,
-  plugin: [plugin],
 };
 
 export const getPluginOptions = (
@@ -30,7 +28,6 @@ export const getPluginOptions = (
       ...DEFAULT_PLUGIN_OPTIONS.sidebar,
       ...opts.sidebar,
     },
-    plugin: [DEFAULT_PLUGIN_OPTIONS.plugin, ...(opts.plugin || [])],
   };
   return options as PluginOptions;
 };

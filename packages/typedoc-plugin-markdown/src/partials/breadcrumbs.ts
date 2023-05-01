@@ -8,42 +8,36 @@ export function breadcrumbs(
   context: MarkdownThemeRenderContext,
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
-  if (page.model) {
-    if (page.model.kind) {
-      const md: string[] = [];
-      const projectName = getProjectDisplayName(
-        page.project,
-        context.getOption('includeVersion'),
-      );
-      md.push(
-        page.url === page.project.url
-          ? projectName
-          : link(
-              projectName,
-              context.relativeURL(
-                context.getOption('readme').endsWith('none')
-                  ? context.getOption('entryDocument')
-                  : page.project.url,
-              ),
-            ),
-      );
-      if (page.model.parent && page.model.parent.parent) {
-        if (page?.model?.parent?.parent.parent) {
-          md.push(
-            `[${escapeChars(
-              page.model.parent.parent.name,
-            )}](${context.relativeURL(page.model?.parent?.parent.url)})`,
-          );
-        }
-        md.push(
-          `[${page.model.parent.name}](${context.relativeURL(
-            page.model.parent.url,
-          )})`,
-        );
-      }
-      md.push(escapeChars(page.model.name));
-      return md.length > 1 ? `${md.join(' / ')}` : '';
-    }
+  const md: string[] = [];
+  const projectName = getProjectDisplayName(
+    page.project,
+    context.getOption('includeVersion'),
+  );
+
+  const entryDocument = context.getOption('entryDocument');
+
+  if (page.url === page.project.url || page.url === entryDocument) {
+    return '';
   }
-  return '';
+
+  md.push(link(projectName, context.relativeURL(page.project.url)));
+  if (
+    page.model?.parent?.parent &&
+    (page.url !== page.project.url || page.url !== entryDocument)
+  ) {
+    if (page?.model?.parent?.parent?.parent) {
+      md.push(
+        `[${escapeChars(page.model.parent.parent.name)}](${context.relativeURL(
+          page.model?.parent?.parent.url,
+        )})`,
+      );
+    }
+    md.push(
+      `[${page.model.parent.name}](${context.relativeURL(
+        page.model.parent.url,
+      )})`,
+    );
+  }
+  md.push(escapeChars(page.model.name));
+  return md.length > 1 ? `${md.join(' > ')}` : '';
 }

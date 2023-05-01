@@ -31,7 +31,7 @@ export function toc(
     );
     const subHeadingLevel = headingLevel + 1;
 
-    md.push(heading(headingLevel, 'Table of Contents') + '\n\n');
+    md.push(heading(headingLevel, 'Index') + '\n\n');
 
     if (reflection.categories?.length) {
       reflection.categories.forEach((item) => {

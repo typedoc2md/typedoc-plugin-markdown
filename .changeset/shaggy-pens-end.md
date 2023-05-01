@@ -3,4 +3,4 @@
 ---
 
 - Added `--TOCFormat` option
-- Added `--longPageTitles` option
+- Tweak breadcrumbs output

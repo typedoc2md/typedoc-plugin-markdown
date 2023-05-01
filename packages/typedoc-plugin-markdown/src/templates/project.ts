@@ -12,6 +12,10 @@ export function projectTemplate(
     md.push(context.partials.frontmatter(page));
   }
 
+  if (!context.getOption('hideBreadcrumbs')) {
+    md.push(context.partials.breadcrumbs(page));
+  }
+
   if (!context.getOption('hidePageTitle')) {
     md.push(heading(1, context.partials.pageTitle(page)));
   }

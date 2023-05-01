@@ -8,6 +8,7 @@ import {
 import { load as loadTypedocPluginMarkdown } from 'typedoc-plugin-markdown';
 import { PluginOptions } from './models';
 import { getPluginOptions } from './options';
+import { load as loadDocusaurusTypedocPlugin } from './plugin.typedoc';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -60,6 +61,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   app.options.addReader(new TSConfigReader());
 
   loadTypedocPluginMarkdown(app);
+  loadDocusaurusTypedocPlugin(app);
 
   await app.bootstrapWithPlugins(
     optionsPassedToTypeDoc as unknown as Partial<TypeDocOptions>,
