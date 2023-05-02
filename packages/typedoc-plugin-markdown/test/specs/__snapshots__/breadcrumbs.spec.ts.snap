@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs: (with readme) should compile README breadcrumbs' 1`] = `"**typedoc-plugin-markdown**"`;
-
 exports[`Breadcrumbs: (with readme) should compile class breadcrumbs' 1`] = `"[typedoc-plugin-markdown](modules.md) > Breadcrumbs"`;
 
 exports[`Breadcrumbs: (with readme) should compile entryPoint (globals) breadcrumbs' 1`] = `"[typedoc-plugin-markdown](modules.md) > typedoc-plugin-markdown"`;

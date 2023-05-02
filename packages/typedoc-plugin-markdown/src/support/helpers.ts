@@ -7,7 +7,7 @@ import {
   SignatureReflection,
 } from 'typedoc';
 import { backTicks } from './els';
-import { escapeChars, stripLineBreaks } from './utils';
+import { stripLineBreaks } from './utils';
 
 export function getIndexHeadingLevel(
   reflection: DeclarationReflection | ProjectReflection,
@@ -53,20 +53,6 @@ export function getReflectionHeadingLevel(
     return reflection.parent?.hasOwnDocument ? 3 : 5;
   }
   return reflection.parent?.hasOwnDocument ? 2 : 4;
-}
-
-export function getReflectionTitle(
-  reflection: DeclarationReflection,
-  typeParams = false,
-) {
-  const md = [escapeChars(reflection.name)];
-  if (reflection.signatures?.length) {
-    md.push('()');
-  }
-  if (typeParams) {
-    md.push(getTypeParameters(reflection));
-  }
-  return md.join('');
 }
 
 export function getTypeParameters(reflection: DeclarationReflection) {

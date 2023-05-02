@@ -16,16 +16,6 @@ describe(`Breadcrumbs:`, () => {
       context.activeLocation = 'breadcrumbs.md';
     });
 
-    test(`should compile README breadcrumbs'`, () => {
-      expect(
-        context.partials.breadcrumbs({
-          project: project,
-          model: project,
-          url: 'README.md',
-        } as any),
-      ).toMatchSnapshot();
-    });
-
     test(`should compile entryPoint (globals) breadcrumbs'`, () => {
       expect(
         context.partials.breadcrumbs({

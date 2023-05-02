@@ -4,10 +4,7 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { heading } from '../support/els';
-import {
-  getReflectionHeadingLevel,
-  getReflectionTitle,
-} from '../support/helpers';
+import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function member(
@@ -26,7 +23,7 @@ export function member(
   }
 
   if (!reflection.hasOwnDocument) {
-    md.push(heading(headingLevel, `${getReflectionTitle(reflection)}`));
+    md.push(heading(headingLevel, context.partials.memberTitle(reflection)));
   }
 
   if (
