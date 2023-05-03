@@ -133,47 +133,13 @@ export function defineOptions(app: Application) {
   });
 
   /**
-   * Frontmatter options
+   * Frontmatter options (TO BE DELETED)
    */
   app.options.addDeclaration({
     name: 'enableFrontmatter',
-    help: '[Markdown Plugin] Prepend frontmatter to output.',
+    help: '[Markdown Plugin] Removed (please use typedoc-plugin-fronmatter)',
     type: ParameterType.Boolean,
     defaultValue: false,
-  });
-
-  app.options.addDeclaration({
-    name: 'frontmatterTags',
-    help: '[Markdown Plugin] Specify which file comment tags should be added to frontmatter.',
-    type: ParameterType.Array,
-    defaultValue: [],
-  });
-
-  app.options.addDeclaration({
-    name: 'frontmatterGlobals',
-    help: '[Markdown Plugin] Specify static variables to be added to all frontmatter.',
-    type: ParameterType.Mixed,
-    defaultValue: {},
-  });
-
-  app.options.addDeclaration({
-    name: 'frontmatterNamingConvention',
-    help: '[Markdown Plugin] Specify the naming convention of front matter variables.',
-    type: ParameterType.String,
-    defaultValue: 'camelCase',
-    validate: (option) => {
-      const availableValues = [
-        'camelCase',
-        'snakeCase',
-        'kebabCase',
-        'pascalCase',
-      ];
-      if (!availableValues.includes(option)) {
-        throw new Error(
-          `Unexpected value for frontmatterNamingConvention, the expected value is one of 'camelCase', 'snakeCase','kebabCase','pascalCase'`,
-        );
-      }
-    },
   });
 
   /**

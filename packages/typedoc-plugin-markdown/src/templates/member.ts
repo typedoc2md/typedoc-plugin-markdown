@@ -8,10 +8,6 @@ export function memberTemplate(
 ) {
   const md: string[] = [];
 
-  if (context.getOption('enableFrontmatter')) {
-    md.push(context.partials.frontmatter(page));
-  }
-
   if (!context.getOption('hideBreadcrumbs')) {
     md.push(context.partials.breadcrumbs(page));
   }

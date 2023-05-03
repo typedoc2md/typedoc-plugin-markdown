@@ -3,13 +3,9 @@ import { ReflectionKind, TypeDocOptionMap } from 'typedoc';
 export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   anchorFormat: AnchorFormat;
   baseUrl: string;
-  enableFrontmatter: boolean;
   entryDocument: string;
   enumMembersFormat: DataFormatStyle;
   flattenOutputFiles: boolean;
-  frontmatterTags: string[];
-  frontmatterGlobals: FrontmatterGlobals;
-  frontmatterNamingConvention: FrontmatterNamingConvention;
   groupByKinds: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;

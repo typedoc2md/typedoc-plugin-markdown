@@ -42,6 +42,11 @@ const config = {
         cleanOutputDir: true,
         groupByKinds: true,
         longPageTitles: true,
+        plugin: ['typedoc-plugin-frontmatter'],
+        frontmatterGlobals: {
+          pagination_prev: null,
+          pagination_next: null,
+        },
       },
     ],
     [

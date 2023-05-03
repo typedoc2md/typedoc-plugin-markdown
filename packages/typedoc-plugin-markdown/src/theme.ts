@@ -18,6 +18,13 @@ export class MarkdownTheme extends Theme {
   constructor(renderer: Renderer) {
     super(renderer);
 
+    // Warnings
+    if (this.application.options.getValue('enableFrontmatter')) {
+      this.application.logger.warn(
+        '[typedoc-plugin-markdown] `enableFrontmatter` has been removed. Please use plugin-typedoc-frontmatter instead',
+      );
+    }
+
     this.listenTo(this.owner, {
       [PageEvent.BEGIN]: this.onBeginPage,
     });

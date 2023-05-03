@@ -35,7 +35,6 @@ import { reflectionTemplate } from './templates/reflection';
 import { breadcrumbs } from './partials/breadcrumbs';
 import { commentParts } from './partials/comment.parts';
 import { comment } from './partials/comment';
-import { frontmatter } from './partials/frontmatter';
 import { hierarchy } from './partials/hierarchy';
 import { declarationMemberIdentifier } from './partials/member.declaration.identifier';
 import { declarationMemberName } from './partials/member.declaration.name';
@@ -89,7 +88,6 @@ export type Partials = {
   breadcrumbs: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   commentParts: (parts: CommentDisplayPart[]) => string;
   comment: (comment: Comment, headingLevel?: number |  undefined) => string;
-  frontmatter: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
   declarationMemberIdentifier: (reflection: DeclarationReflection) => string;
   declarationMemberName: (declaration: DeclarationReflection, emphasis?: boolean) => string;
@@ -141,7 +139,6 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   breadcrumbs: bind(breadcrumbs, context),
   commentParts: bind(commentParts, context),
   comment: bind(comment, context),
-  frontmatter: bind(frontmatter, context),
   hierarchy: bind(hierarchy, context),
   declarationMemberIdentifier: bind(declarationMemberIdentifier, context),
   declarationMemberName: bind(declarationMemberName, context),

@@ -29,6 +29,7 @@
     "ts-morph": "^18.0.0",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.4",
+    "typedoc-plugin-frontmatter": "^0.0.2",
     "typedoc-plugin-mdn-links": "^3.0.3",
     "typescript": "^5.0.4"
   }

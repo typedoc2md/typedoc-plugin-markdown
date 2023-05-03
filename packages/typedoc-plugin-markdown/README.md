@@ -72,19 +72,6 @@ See [File output options](./docs/file-output-options.md) for further documentati
 - **`--enumMembersFormat`**<br>
   Specify the render style of Enum members. Expected values [`list`, `table`]. Defaults to `list`.
 
-### Frontmatter options
-
-See [Front matter options](./docs/frontmatter.md) for further documentation.
-
-- **`--enableFrontmatter`**<br>
-  Prepend output with a YAML front matter block. Defaults to `false`.
-- **`--frontmatterTags`**<br>
-  Specify which file comment tags should be added to front matter variables (as an array).
-- **`--frontmatterGlobals`**<br>
-  Specify global static variables to be added to all front matter blocks (as an object).
-- **`--frontmatterNamingConvention`**<br>
-  Specify the naming convention of front matter variables. Expected values [`camelCase`, `snakeCase`,`kebabCase`]. Defaults to `camelCase`.
-
 ### Utility options
 
 - **`--anchorFormat`**<br>
@@ -94,9 +81,13 @@ See [Front matter options](./docs/frontmatter.md) for further documentation.
 - **`--baseUrl`**<br>
   Specifies the base url for internal link. If omitted all urls will be relative. Defaults to `.`
 
+## Frontmatter
+
+If frontmatter is required for adding further metadata please use [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter)
+
 ## Output formatting (Prettier)
 
-Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. This does require an additional peer dependency but has several benefits:
+Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. Parsing documents with Prettier has several benefits:
 
 - Produces a consistent format.
 - Remove unnecessary escape characters.
@@ -107,7 +98,6 @@ Any [prettier configuration](https://prettier.io/docs/en/configuration.html) fil
 ## Further Documentation
 
 - [File output options](./docs/file-output-options.md)
-- [Frontmatter options](./docs/frontmatter.md)
 - [Readme files](./docs/readme-files.md)
 
 ## License
