@@ -8,6 +8,12 @@ export function escapeChars(str: string) {
     .replace(/\|/g, '\\|');
 }
 
+export function escapeAngleBrackets(str: string) {
+  return str
+    .replace(/<(?=(?:[^`]*`[^`]*`)*[^`]*$)/gi, '\\<')
+    .replace(/>(?=(?:[^`]*`[^`]*`)*[^`]*$)/gi, '\\>');
+}
+
 export function escapeTableCol(str: string) {
   return str.replace(/(?<!\\)\|/g, '\\|');
 }
@@ -32,13 +38,7 @@ export function stripComments(str: string) {
 }
 
 export function stripLineBreaks(str: string, includeHTML = true) {
-  return str
-    ? str
-        .replace(/\n/g, includeHTML ? '<br />' : ' ')
-        .replace(/\r/g, '')
-        .replace(/\t/g, ' ')
-        .trim()
-    : '';
+  return str ? str.replace(/\n/g, includeHTML ? '<br />' : ' ').trim() : '';
 }
 
 export function camelToTitleCase(text: string) {

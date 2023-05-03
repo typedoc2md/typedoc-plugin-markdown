@@ -12,8 +12,6 @@
  *
  * @description Some description used in frontmatter
  *
- * @navOrder 1
- *
  */
 
 /**
@@ -27,25 +25,16 @@
 export const commentsWithSymbolLinks = true;
 
 /**
- * <p>
- * You can write <strong>HTML</strong> tags directly in comments
- * </p>
- * <ul>
- * <li>List item</li>
- * </ul>
+ * A <tag></tag> in comments
+ *
+ * A `<tag>` in backticks
+ *
+ * ```html
+ * A <tag> in a code block
+ * ```
  */
-export const commentsWithHTML = true;
 
-/**
- * This is an example of include
- *
- * [[include:class-example.md]]
- *
- * This is an example of handlebars include
- *
- * [[include:class-example.hbs]]
- */
-export const commentsWithIncludes = true;
+export const commentsWithMarkup = true;
 
 /**
  * @description

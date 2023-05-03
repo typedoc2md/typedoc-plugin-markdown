@@ -2,10 +2,9 @@ import {
   DeclarationReflection,
   ProjectReflection,
   ReflectionGroup,
-  ReflectionKind,
 } from 'typedoc';
-import { heading, link, table } from '../support/els';
-import { getIndexHeadingLevel, tableComments } from '../support/helpers';
+import { heading } from '../support/els';
+import { getIndexHeadingLevel } from '../support/helpers';
 import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
@@ -60,38 +59,6 @@ export function toc(
 }
 
 function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  const tocFormat = context.getOption('TOCFormat')?.toLowerCase();
-  if (tocFormat === 'table') {
-    return getTable(context, group);
-  }
-  return getList(context, group);
-}
-
-function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  const reflectionKind = group.children[0].kind;
-  const headers = [
-    ReflectionKind.singularString(reflectionKind),
-    'Description',
-  ];
-  const rows: string[][] = [];
-
-  group.children.forEach((child) => {
-    const row: string[] = [];
-    row.push(link(escapeChars(child.name), context.relativeURL(child.url)));
-
-    if (child.comment?.summary) {
-      row.push(
-        tableComments(context.partials.commentParts(child.comment.summary)),
-      );
-    } else {
-      row.push(' ');
-    }
-    rows.push(row);
-  });
-  return table(headers, rows);
-}
-
-function getList(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
   const children = group.children.map(
     (child) =>
       `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,

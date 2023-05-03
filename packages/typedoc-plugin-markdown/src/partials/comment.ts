@@ -1,7 +1,7 @@
 import { Comment } from 'typedoc';
 import { backTicks, heading } from '../support/els';
 import { getTagName } from '../support/helpers';
-import { camelToTitleCase } from '../support/utils';
+import { camelToTitleCase, escapeAngleBrackets } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function comment(
@@ -30,5 +30,5 @@ export function comment(
     md.push(tags.join('\n\n'));
   }
 
-  return md.join('\n\n');
+  return escapeAngleBrackets(md.join('\n\n'));
 }

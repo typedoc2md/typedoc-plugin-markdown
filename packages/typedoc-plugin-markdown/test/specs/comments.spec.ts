@@ -38,10 +38,10 @@ describe(`Comments:`, () => {
     ).toMatchSnapshot();
   });
 
-  test(`should allow html in comments'`, () => {
+  test(`should escape angle brackets inside comments'`, () => {
     expect(
       context.partials.comment(
-        project.getChildByName('commentsWithHTML')?.comment as Comment,
+        project.getChildByName('commentsWithMarkup')?.comment as Comment,
       ),
     ).toMatchSnapshot();
   });

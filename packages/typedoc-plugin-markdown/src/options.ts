@@ -105,13 +105,6 @@ export function defineOptions(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'TOCFormat',
-    help: '[Markdown Plugin] Specifiy render style of table of content items.',
-    type: ParameterType.String,
-    defaultValue: 'list',
-  });
-
-  app.options.addDeclaration({
     name: 'propertiesFormat',
     help: '[Markdown Plugin] Specify the render style of properties.',
     type: ParameterType.String,

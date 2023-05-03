@@ -18,7 +18,6 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   namedAnchors: boolean;
   numberPrefixOutput: boolean;
   propertiesFormat: DataFormatStyle;
-  TOCFormat: DataFormatStyle;
 }
 
 export interface TemplateMapping {

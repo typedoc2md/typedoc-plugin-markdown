@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comments: should allow html in comments' 1`] = `
-"<p>
-You can write <strong>HTML</strong> tags directly in comments
-</p>
-<ul>
-<li>List item</li>
-</ul>"
-`;
-
 exports[`Comments: should convert comments with fenced block' 1`] = `
 "Some comments with fence blocks
 
@@ -48,4 +39,14 @@ Also, check out [Google](https://www.google.com) and
 [GitHub](https://github.com).
 
 Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html)."
+`;
+
+exports[`Comments: should escape angle brackets inside comments' 1`] = `
+"A \\<tag\\>\\</tag\\> in comments
+
+A \`<tag>\` in backticks
+
+\`\`\`html
+A <tag> in a code block
+\`\`\`"
 `;

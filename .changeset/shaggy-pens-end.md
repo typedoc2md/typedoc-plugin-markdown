@@ -2,5 +2,5 @@
 'typedoc-plugin-markdown': patch
 ---
 
-- Added `--TOCFormat` option
 - Tweak breadcrumbs output
+- Escape angle brackets in comment blocks unless inside backticks (#276)
