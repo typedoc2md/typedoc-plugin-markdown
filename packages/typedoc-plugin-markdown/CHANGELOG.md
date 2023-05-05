@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.0.0-next.11
+
+### Patch Changes
+
+test- Extract frontmatter logic into seperate TypeDoc plugin
+test- Fix fileoutput for 'packages' entryPointStrategy
+
+- Tweaked header/breadcrumbs
+  test- Escape angle brackets in comment blocks unless inside backticks ([#276](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/276))
+  test- UI tweaks to properties display
+
 ## 4.0.0-next.10
 
 ### Patch Changes

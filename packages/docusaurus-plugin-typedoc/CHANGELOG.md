@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-next.9
+
+### Patch Changes
+
+test- Replace category.yml with readable dir names
+
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.11
+
 ## 1.0.0-next.8
 
 ### Patch Changes
