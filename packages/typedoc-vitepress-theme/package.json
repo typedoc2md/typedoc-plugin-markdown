@@ -1,6 +1,6 @@
 {
   "name": "typedoc-vitepress-theme",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A TypeDoc plugin to build API documentation to be consumed with VuePress.",
   "main": "./dist/index.js",
   "files": [
