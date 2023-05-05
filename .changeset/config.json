@@ -1,9 +1,5 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@2.2.0/schema.json",
-  "changelog": [
-    "../scripts/changesets/changelog.js",
-    { "repo": "tgreyuk/typedoc-plugin-markdown" }
-  ],
+  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
   "commit": false,
   "fixed": [],
   "linked": [],
