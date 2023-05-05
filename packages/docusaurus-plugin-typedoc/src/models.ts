@@ -8,9 +8,9 @@ export interface PluginOptions extends TypedocPluginMarkdownOptions {
 
 export interface SidebarOptions {
   categoryLabel: string;
-  collapsed: boolean;
   position: number | null;
   autoConfiguration: boolean;
+  indexLabel: string;
 }
 
 export interface SidebarCategory {

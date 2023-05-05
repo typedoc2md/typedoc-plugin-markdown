@@ -50,8 +50,6 @@ export class MarkdownThemeConverterContext {
       const readme = this.getOption('readme') as string;
       const entryDocument = this.getOption('entryDocument') as string;
       const noReadmeFile = readme.endsWith('none');
-      const modulesFile = 'modules.md';
-
       this._urls = [];
 
       if (noReadmeFile) {
@@ -60,18 +58,16 @@ export class MarkdownThemeConverterContext {
           new UrlMapping(entryDocument, project, this.projectTemplate),
         );
       } else {
+        const modulesFile = `${
+          this.getOption('numberPrefixOutput') ? '01-' : ''
+        }${'modules.md'}`;
+
         project.url = modulesFile;
         this._urls.push(
           new UrlMapping(entryDocument, project, this.readmeTemplate),
         );
         this._urls.push(
-          new UrlMapping(
-            `${
-              this.getOption('numberPrefixOutput') ? '01-' : ''
-            }${modulesFile}`,
-            project,
-            this.projectTemplate,
-          ),
+          new UrlMapping(modulesFile, project, this.projectTemplate),
         );
       }
 
@@ -84,7 +80,11 @@ export class MarkdownThemeConverterContext {
         });
       }
     }
-
+    this._urls.forEach((url) => {
+      if (url.model.name === 'child-package') {
+        console.log(url.model);
+      }
+    });
     return this._urls;
   }
 
@@ -152,8 +152,7 @@ export class MarkdownThemeConverterContext {
     if (isPackage) {
       const mapping = this.mappings[project.kind];
       if (mapping) {
-        const url = this.getUrl(project as DeclarationReflection, mapping, 0);
-        this._urls.push(new UrlMapping(url, project, mapping.template));
+        let url = this.getUrl(project as DeclarationReflection, mapping, 0);
         if (project.readme) {
           this._urls.push(
             new UrlMapping(
@@ -162,7 +161,10 @@ export class MarkdownThemeConverterContext {
               this.readmeTemplate,
             ),
           );
+        } else {
+          url = `${path.dirname(url)}/${entryDocument}`;
         }
+        this._urls.push(new UrlMapping(url, project, mapping.template));
         project.url = url;
       }
     }

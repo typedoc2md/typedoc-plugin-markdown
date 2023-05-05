@@ -37,15 +37,12 @@ const config = {
           autoConfiguration: true,
           position: 0,
           categoryLabel: 'API-1',
+          indexLabel: 'Overview',
         },
         indexPageTitle: 'Overview',
         cleanOutputDir: true,
         groupByKinds: true,
         plugin: ['typedoc-plugin-frontmatter'],
-        frontmatterGlobals: {
-          pagination_prev: null,
-          pagination_next: null,
-        },
       },
     ],
     [

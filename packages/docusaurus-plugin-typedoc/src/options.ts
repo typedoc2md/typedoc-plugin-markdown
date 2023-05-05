@@ -6,15 +6,17 @@ const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   out: 'api',
   sidebar: {
     categoryLabel: 'API',
-    collapsed: true,
     position: null,
     autoConfiguration: true,
+    indexLabel: 'Index',
   },
   hideInPageTOC: true,
   hideBreadcrumbs: true,
+  hidePageHeader: true,
   entryDocument: 'index.md',
   watch: false,
   numberPrefixOutput: true,
+  plugin: [],
 };
 
 export const getPluginOptions = (
@@ -27,6 +29,12 @@ export const getPluginOptions = (
       ...DEFAULT_PLUGIN_OPTIONS.sidebar,
       ...opts.sidebar,
     },
+    plugin: opts.plugin?.filter(
+      (plugin) =>
+        !['typedoc-plugin-markdown', 'typedoc-plugin-frontmatter'].includes(
+          plugin,
+        ),
+    ),
   };
   return options as PluginOptions;
 };

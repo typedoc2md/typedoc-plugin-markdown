@@ -4,7 +4,6 @@ import {
   DeclarationReflection,
   ProjectReflection,
   RendererEvent,
-  UrlMapping,
 } from 'typedoc';
 import { NavigationItem } from './models';
 
@@ -96,7 +95,7 @@ export async function renderMarkdown(
         urlMapping.model instanceof ProjectReflection ||
         urlMapping.model instanceof DeclarationReflection,
     )
-    .forEach((urlMapping: UrlMapping) => {
+    .forEach((urlMapping) => {
       this.renderDocument(...output.createPageEvent(urlMapping));
     });
 

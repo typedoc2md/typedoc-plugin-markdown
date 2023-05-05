@@ -1,20 +1,24 @@
 # docusaurus-plugin-typedoc
 
-A [Docusaurus v2](https://v2.docusaurus.io/) plugin to build documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
+A [Docusaurus](https://v2.docusaurus.io/) plugin to build TypeScript API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
 [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
-## What it does?
+## What does it do?
 
-Generates static TypeDoc pages in Markdown with frontmatter as part of the Docusaurus build.
+- Presets relevant options of [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown#readme).
+- Runs TypeDoc from the Docusaurus CLI.
+- Adds some basic frontmatter to pages and exposes the ability to configure frontmatter further.
 
 ## Installation
 
 > Install [Docusaurus](https://v2.docusaurus.io/docs/installation) in the root of your project and install the plugin dependencies in the same location as the Docusaurus website directory.
 
+> [typedoc](https://github.com/TypeStrong/typedoc), [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown) and [typedoc-plugin-frontmatter]() are required peer dependencies.
+
 ```shell
-npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
+npm install docusaurus-plugin-typedoc typedoc typedoc-plugin-markdown@next typedoc-plugin-frontmatter@next --save-dev
 ```
 
 ## Usage
@@ -65,42 +69,65 @@ Once built the docs will be available at `/docs/api` (or equivalent out director
 
 ## Options
 
-### TypeDoc options
+Options can be declared:
 
-To configure TypeDoc, pass any relevant [TypeDoc options](https://typedoc.org/guides/options/) to the config.
-
-At a minimum the `entryPoints` and `tsconfig` options will need to be set.
-
-```js
-entryPoints: ['../src/index.ts'],
-tsconfig: '../tsconfig.json'
-```
-
-Additional TypeDoc plugins will need to be explicitly set:
-
-```js
-plugin: ['typedoc-plugin-xyz'];
-```
-
-#### Other config options
-
-TypeDoc options can also be declared:
-
+- Passing arguments via the command line.
 - Using a `typedoc.json` file.
 - Under the `typedocOptions` key in `tsconfig.json`.
 
-> Note: Options declared in this manner will take priority and overwrite options declared in `docusaurus.config.js`.
+Please see https://typedoc.org/options/configuration for general TypeDoc option configuration.
+
+### TypeDoc options
+
+The following TypeDoc / Markdown plugin options can be passed to config:
+
+- [typedoc](https://typedoc.org/options) options (HTML specific output options that will be ignored).
+- [typedoc-plugin-markdown ](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#options) options (Some options are already preset to target Docusaurus).
+
+#### Docusaurus presets
+
+The following options are preset with the plugin.
+
+```json
+{
+  "out": "api",
+  "hideInPageTOC": true,
+  "hideBreadcrumbs": true,
+  "hidePageHeader": true,
+  "entryDocument": "index.md",
+  "numberPrefixOutput": true
+}
+```
 
 ### Plugin options
 
 Options specific to the plugin should also be declared in the same object.
 
-| Name                    | Default | Description                                              |
-| :---------------------- | :------ | :------------------------------------------------------- |
-| `out`                   | `"api"` | Output dir relative to docs dir (use `.` for no subdir). |
-| `sidebar.categoryLabel` | `API`   | The sidebar parent category label.                       |
-| `sidebar.fullNames`     | `false` | Display full names with module path.                     |
-| `sidebar.position`      | `auto`  | The position of the sidebar in the tree.                 |
+#### `--sidebar`
+
+`sidebar.autoConfiguration`
+
+Set to `false` to disable sidebar generation. Defaults to `true`.
+
+`sidebar.categoryLabel`
+
+The sidebar main parent category label. Defaults to `API`.
+
+`sidebar.indexLabel`
+
+The label of the main index page. Please note if `readme=none` this option has no effect because the index page becomes the root page. Defaults to `Index`.
+
+`sidebar.position`
+
+The position of the sidebar in the tree.
+
+#### `--docsRoot`
+
+The Docusaurus docs folder root. Use `./` if no root folder specified. Defaults to `./docs`.
+
+```shell
+--docsRoot <path/to/vitepress-docs/>
+```
 
 ### An example configuration
 
@@ -126,6 +153,21 @@ module.exports = {
     ],
   ],
 };
+```
+
+## Frontmatter
+
+Additional frontmatter options can be added to the config. Please see [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter#typedoc-plugin-frontmatter).
+
+For example:
+
+```json
+{
+  "frontmatterGlobals": {
+    "pagination_prev": null,
+    "pagination_next": null
+  }
+}
 ```
 
 ## Recipes
@@ -190,27 +232,6 @@ A navbar item can be configured in `themeConfig` options in `docusaurus.config.j
 
 Please see https://docusaurus.io/docs/api/themes/configuration#navbar-items for navbar documentation.
 
-### Frontmatter
-
-By default the plugin will configure minimal required [Frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) configuration.
-Additionally required global Frontmatter options can be passed in using the `frontmatterGlobals` options object
-
-`docusaurus.config.js`:
-
-```js
-plugins: [
-    [
-      'docusaurus-plugin-typedoc',
-      {
-      // .... other plugin option
-      frontmatterGlobals: {
-        pagination_prev: null,
-        pagination_next: null
-      }
-    ]
-]
-```
-
 ### Multi instance
 
 It is possible to build multi TypeDoc instances by passing in multiple configs with unique ids:
@@ -272,27 +293,9 @@ module.exports = {
 };
 ```
 
-### Monorepo setup
-
-`docusaurus.config.js`
-
-```js
-module.exports = {
-  plugins: [
-    [
-      'docusaurus-plugin-typedoc',
-      {
-        entryPoints: ['../packages/package-a', '../packages/package-b'],
-        entryPointStrategy: 'packages',
-        sidebar: {
-          fullNames: true,
-        },
-      },
-    ],
-  ],
-};
 ```
 
 ## License
 
 [MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/docusaurus-plugin-typedoc/LICENSE)
+```

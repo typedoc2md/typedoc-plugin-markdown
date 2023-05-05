@@ -105,11 +105,11 @@ Please see https://typedoc.org/options/configuration for general TypeDoc option 
 The following TypeDoc / Markdown plugin options can be passed to config:
 
 - [TypeDoc options](https://typedoc.org/options) (HTML specific output options that will be ignored).
-- [Markdown plugin options](https://typedoc.org/options) (Some options are preset to target VitePress).
+- [Markdown plugin options](https://typedoc.org/options) (Some options are already preset to target VitePress).
 
 #### VitePress presets
 
-The following options are preset as config when running the theme.
+The following options are preset with the theme.
 
 ```json
 {
@@ -125,11 +125,11 @@ The following theme options are also exposed, but the defaults should work for m
 
 #### `--sidebar`
 
-**`sidebar.autoConfiguration`**
+`sidebar.autoConfiguration`
 
 Set to `false` to disable sidebar generation. Defaults to `true`.
 
-**`sidebar.format`**
+`sidebar.format`
 
 The format of the sidebar. This option is exposed to enable backward compatibility with VuePress sidebars. Available options [`vitepress` `vuepress1`, `vuepress2`]. Defaults to `vitepress`.
 
