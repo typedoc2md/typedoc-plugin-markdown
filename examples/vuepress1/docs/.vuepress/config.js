@@ -1,4 +1,4 @@
-const typedocSidebar = require('./typedoc-sidebar.json');
+const typedocSidebar = require('../api/typedoc-sidebar.json');
 
 module.exports = {
   /**

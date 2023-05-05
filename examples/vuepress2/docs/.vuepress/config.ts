@@ -1,5 +1,5 @@
 import { defaultTheme } from 'vuepress';
-import typedocSidebar from './typedoc-sidebar.json';
+import typedocSidebar from '../api/typedoc-sidebar.json';
 
 module.exports = {
   title: 'VuePress Docs v2',

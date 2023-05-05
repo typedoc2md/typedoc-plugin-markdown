@@ -1,0 +1,10 @@
+{
+  "entryPoints": [
+    "../../stubs/src/classes.ts",
+    "../../stubs/src/declarations.ts"
+  ],
+  "tsconfig": "../../stubs/tsconfig.json",
+  "sidebar": {
+    "format": "vuepress1"
+  }
+}
