@@ -5,8 +5,8 @@ export const heading = (level: number, text: string) => {
   return `${[...Array(level)].map(() => '#').join('')} ${text}`;
 };
 
-export const link = (label: string, url: string | null, isBold = false) =>
-  url ? `[${isBold ? bold(label) : label}](${url})` : '';
+export const link = (label: string, url: string | null) =>
+  url ? `[${label}](${url})` : '';
 
 export const bold = (text: string) => `**${text}**`;
 

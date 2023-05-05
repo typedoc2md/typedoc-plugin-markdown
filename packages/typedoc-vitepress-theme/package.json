@@ -1,5 +1,5 @@
 {
-  "name": "typedoc-vuepress-theme",
+  "name": "typedoc-vitepress-theme",
   "version": "1.0.0",
   "description": "A TypeDoc plugin to build API documentation to be consumed with VuePress.",
   "main": "./dist/index.js",
@@ -11,18 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-vuepress.git",
+    "url": "git+https://github.com/tgreyuk/typedoc-vitepress-theme.git",
     "directory": "packages/typedoc-vuepress-theme"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-vuepress/tree/master/packages/typedoc-vuepress-theme",
+  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-vitepress-theme",
   "author": "Thomas Grey",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "docs": "npm run build && npm-run-all docs:*",
-    "docs:v1": "typedoc --options ./test/typedoc-v1.json --out docs/v1",
-    "docs:v2": "typedoc --options ./test/typedoc-v2.json --out docs/v2"
+    "predocs": "npm run build",
+    "docs": "typedoc --options ../../stubs/monorepo/typedoc.json --plugin typedoc-plugin-markdown --plugin ./dist --out docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.0.0-next.8"

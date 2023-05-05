@@ -5,7 +5,7 @@ import {
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
-import { link } from '../support/els';
+import { bold, link } from '../support/els';
 import { getProjectDisplayName } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
@@ -35,18 +35,18 @@ function projectHeader(
 
   const hasReadme = !context.getOption('readme').endsWith('none');
 
-  const md = [`> ${link(projectName, context.relativeURL(entryDocument))}`];
+  const md = [`${link(bold(projectName), context.relativeURL(entryDocument))}`];
 
   if (hasReadme) {
     md.push(
       `(${link(
-        page.project.groups ? 'API' : 'Packages',
+        bold(page.project.groups ? 'Index' : 'Packages'),
         context.relativeURL(page.project.url),
       )})`,
     );
   }
 
-  return `${md.join(' ')}\n---\n\n`;
+  return `${md.join(' ')}\n***\n`;
 }
 
 export function packageHeader(
@@ -65,17 +65,17 @@ export function packageHeader(
   )}`;
 
   const md = [
-    `> ${link(
-      packageItem.name,
+    `${link(
+      bold(packageItem.name),
       context.relativeURL(hasReadme ? readmeUrl : packageItem.url),
     )}`,
   ];
 
   if (hasReadme) {
-    md.push(`(${link('API', context.relativeURL(packageItem.url))})`);
+    md.push(`(${link(bold('Index'), context.relativeURL(packageItem.url))})`);
   }
 
-  return `${md.join(' ')}\n---\n\n`;
+  return `${md.join(' ')}\n***\n`;
 }
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {

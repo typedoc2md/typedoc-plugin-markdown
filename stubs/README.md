@@ -7,5 +7,3 @@
 Some text
 
 API
-
-[TYPEDOC_INDEX]
