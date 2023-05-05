@@ -50,6 +50,7 @@ import { memberTitle } from './partials/member.title';
 import { member } from './partials/member';
 import { members } from './partials/members';
 import { navigation } from './partials/navigation';
+import { pageHeader } from './partials/page.header';
 import { pageTitle } from './partials/page.title';
 import { enumMembersTable } from './partials/table.enum-members';
 import { parametersTable } from './partials/table.parameters';
@@ -80,7 +81,7 @@ function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
 export type Templates = {
   memberTemplate: (page: PageEvent<DeclarationReflection>) => string;
   projectTemplate: (page: PageEvent<ProjectReflection>) => string;
-  readmeTemplate: (page: PageEvent<ProjectReflection>) => string;
+  readmeTemplate: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   reflectionTemplate: (page: PageEvent<DeclarationReflection>) => string;
 };
 
@@ -103,6 +104,7 @@ export type Partials = {
   member: (reflection: DeclarationReflection, parentHeadingLevel?: number |  undefined) => string;
   members: (container: ContainerReflection) => string;
   navigation: (project: ProjectReflection) => string;
+  pageHeader: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   pageTitle: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   enumMembersTable: (props: DeclarationReflection[]) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
@@ -154,6 +156,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   member: bind(member, context),
   members: bind(members, context),
   navigation: bind(navigation, context),
+  pageHeader: bind(pageHeader, context),
   pageTitle: bind(pageTitle, context),
   enumMembersTable: bind(enumMembersTable, context),
   parametersTable: bind(parametersTable, context),

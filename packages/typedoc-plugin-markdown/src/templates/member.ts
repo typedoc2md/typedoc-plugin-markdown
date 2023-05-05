@@ -8,6 +8,10 @@ export function memberTemplate(
 ) {
   const md: string[] = [];
 
+  if (!context.getOption('hidePageHeader')) {
+    md.push(context.partials.pageHeader(page));
+  }
+
   if (!context.getOption('hideBreadcrumbs')) {
     md.push(context.partials.breadcrumbs(page));
   }

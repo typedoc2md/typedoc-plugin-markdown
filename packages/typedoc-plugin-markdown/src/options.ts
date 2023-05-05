@@ -57,6 +57,13 @@ export function defineOptions(app: Application) {
    */
 
   app.options.addDeclaration({
+    name: 'hidePageHeader',
+    help: '[Markdown Plugin] Do not print page header.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
     name: 'hidePageTitle',
     help: '[Markdown Plugin] Do not print page title.',
     type: ParameterType.Boolean,

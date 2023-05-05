@@ -10,6 +10,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   hideKindTag: boolean;
+  hidePageHeader: boolean;
   hidePageTitle: boolean;
   hideHierarchy: boolean;
   indentifiersAsCodeBlocks: boolean;
@@ -47,4 +48,6 @@ export interface NavigationItem {
   title?: string;
   url?: string;
   children?: NavigationItem[];
+  isReadme?: boolean;
+  isGroup?: boolean;
 }

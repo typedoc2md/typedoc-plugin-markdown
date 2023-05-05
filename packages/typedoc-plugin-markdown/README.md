@@ -47,8 +47,10 @@ See [File output options](./docs/file-output-options.md) for further documentati
 
 ### UI options
 
+- **`--hidePageHeader`**<br>
+  Do not print the page header. Defaults to `false`.
 - **`--hideBreadcrumbs`**<br>
-  Do not print breadcrumbs header. Defaults to `false`.
+  Do not print breadcrumbs. Defaults to `false`.
 - **`--hideInPageTOC`**<br>
   Do not print in-page index items. Defaults to `false`.
 - **`--hidePageTitle`**<br>
@@ -94,7 +96,6 @@ Any [prettier configuration](https://prettier.io/docs/en/configuration.html) fil
 ## Further Documentation
 
 - [File output options](./docs/file-output-options.md)
-- [Readme files](./docs/readme-files.md)
 
 ## License
 

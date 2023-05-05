@@ -1,0 +1,89 @@
+import * as path from 'path';
+import {
+  DeclarationReflection,
+  PageEvent,
+  ProjectReflection,
+  ReflectionKind,
+} from 'typedoc';
+import { link } from '../support/els';
+import { getProjectDisplayName } from '../support/helpers';
+import { MarkdownThemeRenderContext } from '../theme-render-context';
+
+export function pageHeader(
+  context: MarkdownThemeRenderContext,
+  page: PageEvent<ProjectReflection | DeclarationReflection>,
+) {
+  const isMonoRepo = !Boolean(page.project.groups);
+  if (isMonoRepo) {
+    const packageItem = findPackage(page.model);
+    if (packageItem) {
+      return packageHeader(context, page);
+    }
+  }
+  return projectHeader(context, page);
+}
+
+function projectHeader(
+  context: MarkdownThemeRenderContext,
+  page: PageEvent<ProjectReflection | DeclarationReflection>,
+) {
+  const projectName = getProjectDisplayName(
+    page.project,
+    context.getOption('includeVersion'),
+  );
+  const entryDocument = context.getOption('entryDocument');
+
+  const hasReadme = !context.getOption('readme').endsWith('none');
+
+  const md = [`> ${link(projectName, context.relativeURL(entryDocument))}`];
+
+  if (hasReadme) {
+    md.push(
+      `(${link(
+        page.project.groups ? 'API' : 'Packages',
+        context.relativeURL(page.project.url),
+      )})`,
+    );
+  }
+
+  return `${md.join(' ')}\n---\n\n`;
+}
+
+export function packageHeader(
+  context: MarkdownThemeRenderContext,
+  page: PageEvent<ProjectReflection | DeclarationReflection>,
+) {
+  const packageItem = findPackage(page.model);
+  if (!packageItem) {
+    return '';
+  }
+
+  const hasReadme = Boolean(packageItem.readme);
+
+  const readmeUrl = `${path.dirname(packageItem.url)}/${context.getOption(
+    'entryDocument',
+  )}`;
+
+  const md = [
+    `> ${link(
+      packageItem.name,
+      context.relativeURL(hasReadme ? readmeUrl : packageItem.url),
+    )}`,
+  ];
+
+  if (hasReadme) {
+    md.push(`(${link('API', context.relativeURL(packageItem.url))})`);
+  }
+
+  return `${md.join(' ')}\n---\n\n`;
+}
+
+function findPackage(model: DeclarationReflection | ProjectReflection) {
+  if (model.kindOf(ReflectionKind.Module)) {
+    return model;
+  }
+  if (model.parent) {
+    return findPackage(model.parent as DeclarationReflection);
+  }
+  return null;
+}

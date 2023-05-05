@@ -1,3 +1,4 @@
+import * as path from 'path';
 import {
   DeclarationReflection,
   Options,
@@ -73,13 +74,17 @@ export class MarkdownThemeConverterContext {
           ),
         );
       }
-      project.groups?.forEach((projectGroup, groupIndex) => {
-        projectGroup.children.forEach((child) => {
-          const index = noReadmeFile ? groupIndex : groupIndex + 1;
-          this.buildUrls(child, index, projectGroup);
+
+      // if the project does not contain groups we assume it is a monorepo
+      if (project.groups) {
+        this.buildProject(project);
+      } else {
+        project.children?.forEach((projectChild) => {
+          this.buildProject(projectChild, true);
         });
-      });
+      }
     }
+
     return this._urls;
   }
 
@@ -101,42 +106,73 @@ export class MarkdownThemeConverterContext {
         )
         .forEach((urlMapping) => {
           const children = this.getNavigationGroups(urls, urlMapping.url);
-          navigation.push({
-            title: urlMapping.model?.name,
-            url: urlMapping.url,
-            ...(children?.length && { children }),
-          });
+          const isReadme = urlMapping.template === this.readmeTemplate;
+          const hasReadme = Boolean(urlMapping.model.readme);
+          if (hasReadme) {
+            if (!isReadme) {
+              navigation.push({
+                title: urlMapping.model?.name,
+                url: `${path.dirname(urlMapping.url)}/${this.getOption(
+                  'entryDocument',
+                )}`,
+                children: [
+                  {
+                    title: 'Index',
+                    url: urlMapping.url,
+                  },
+                  ...children,
+                ],
+              });
+            }
+          } else {
+            navigation.push({
+              title: urlMapping.model?.name,
+              url: urlMapping.url,
+              ...(children?.length && { children }),
+            });
+          }
         });
     } else {
       this.getNavigationGroups(urls).forEach((group) => {
         navigation.push(group);
       });
     }
+
     return navigation;
   }
 
-  private getNavigationGroups(urls: UrlMapping[], url = '') {
-    const groups = urls?.filter((urlMapping) => {
-      const baseParts = url?.split('/').slice(0, -1);
-      const urlParts = urlMapping.url.split('/');
-      return (
-        urlMapping.model instanceof ReflectionGroup &&
-        urlParts?.length === baseParts.length + 1 &&
-        urlMapping.url.startsWith(baseParts.join('/'))
-      );
-    });
+  private buildProject(
+    project: ProjectReflection | DeclarationReflection,
+    isPackage = false,
+  ) {
+    const readme = this.getOption('readme') as string;
+    const noReadmeFile = readme.endsWith('none');
+    const entryDocument = this.getOption('entryDocument') as string;
 
-    return groups?.map((group) => ({
-      title: group.model?.title,
-      children: group?.model.children.map((child) => {
-        const children = this.getNavigationGroups(urls, child.url as string);
-        return {
-          title: child.name,
-          url: child.url || null,
-          ...(children?.length && { children }),
-        };
-      }),
-    }));
+    if (isPackage) {
+      const mapping = this.mappings[project.kind];
+      if (mapping) {
+        const url = this.getUrl(project as DeclarationReflection, mapping, 0);
+        this._urls.push(new UrlMapping(url, project, mapping.template));
+        if (project.readme) {
+          this._urls.push(
+            new UrlMapping(
+              `${path.dirname(url)}/${entryDocument}`,
+              project,
+              this.readmeTemplate,
+            ),
+          );
+        }
+        project.url = url;
+      }
+    }
+
+    project.groups?.forEach((projectGroup, groupIndex) => {
+      projectGroup.children.forEach((child) => {
+        const index = noReadmeFile ? groupIndex : groupIndex + 1;
+        this.buildUrls(child, index, projectGroup);
+      });
+    });
   }
 
   private buildUrls(
@@ -147,6 +183,24 @@ export class MarkdownThemeConverterContext {
     const mapping = this.mappings[reflection.kind];
     if (mapping) {
       const url = this.getUrl(reflection, mapping, index);
+      if (mapping.directory) {
+        if (!reflection.kindOf(ReflectionKind.Module)) {
+          const sliceLength = reflection.kindOf(ReflectionKind.Namespace)
+            ? -2
+            : -1;
+          const groupDirectory = url.split('/').slice(0, sliceLength).join('/');
+          if (
+            this._urls.findIndex(
+              (urlMapping) => urlMapping.url === groupDirectory,
+            ) === -1 &&
+            groupDirectory.endsWith(mapping.directory)
+          ) {
+            this._urls.push(
+              new UrlMapping(groupDirectory, reflectionGroup, () => ''),
+            );
+          }
+        }
+      }
       this._urls.push(new UrlMapping(url, reflection, mapping.template));
       reflection.url = url;
       reflection.hasOwnDocument = true;
@@ -196,7 +250,7 @@ export class MarkdownThemeConverterContext {
         parts.length - 1,
         0,
         `${this.getOption('numberPrefixOutput') ? `0${index + 1}-` : ''}${
-          mapping.directory
+          mapping.directory || parts[0]
         }`,
       );
     }
@@ -204,7 +258,8 @@ export class MarkdownThemeConverterContext {
     if (
       (this.getOption('kindsWithOwnFile')[0].toLowerCase() !== 'none' &&
         isModuleOrNamespace) ||
-      childrenIncludeNamespaces
+      childrenIncludeNamespaces ||
+      Boolean(reflection.readme)
     ) {
       parts.push(`${parts[parts.length - 1]}`);
     }
@@ -299,6 +354,31 @@ export class MarkdownThemeConverterContext {
       return slugify(reflection.name);
     }
     return reflection.name;
+  }
+
+  private getNavigationGroups(urls: UrlMapping[], url = '') {
+    const groups = urls?.filter((urlMapping) => {
+      const baseParts = url?.split('/').slice(0, -1);
+      const urlParts = urlMapping.url.split('/');
+      return (
+        urlMapping.model instanceof ReflectionGroup &&
+        urlParts?.length === baseParts.length + 1 &&
+        urlMapping.url.startsWith(baseParts.join('/')) &&
+        baseParts[0] === urlParts[0]
+      );
+    });
+
+    return groups?.map((group) => ({
+      title: group.model?.title,
+      children: group?.model.children.map((child) => {
+        const children = this.getNavigationGroups(urls, child.url as string);
+        return {
+          title: child.name,
+          url: child.url || null,
+          ...(children?.length && { children }),
+        };
+      }),
+    }));
   }
 
   get mappings(): Record<number, TemplateMapping> {

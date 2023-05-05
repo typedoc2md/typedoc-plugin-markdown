@@ -5,17 +5,25 @@ exports[`Output File Strategy should --kindsWithOwnFile [Class, Interface]' 1`] 
   "README.md",
   "modules.md",
   "module.module-1/module.module-1.md",
+  "module.module-1/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/classes",
   "module.module-1/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
+  "module.module-1/namespaces/namespace.someNameSpace/interfaces",
   "module.module-1/namespaces/namespace.someNameSpace/interfaces/interface.NamespaceInterface.md",
+  "module.module-1/classes",
   "module.module-1/classes/class.Module1ClassA.md",
   "module.module-1/classes/class.Module1ClassB.md",
+  "module.module-1/interfaces",
   "module.module-1/interfaces/interface.Module1InterfaceA.md",
   "module.module-1/interfaces/interface.Module1InterfaceB.md",
   "module.module-2/module.module-2.md",
+  "module.module-2/classes",
   "module.module-2/classes/class.Module2ClassA.md",
   "module.module-2/classes/class.Module2ClassB.md",
+  "module.module-2/interfaces",
   "module.module-2/interfaces/interface.Module2InterfaceA.md",
   "module.module-2/interfaces/interface.Module2InterfaceB.md",
 ]
@@ -26,12 +34,17 @@ exports[`Output File Strategy should --kindsWithOwnFile [class]' 1`] = `
   "README.md",
   "modules.md",
   "module.module-1/module.module-1.md",
+  "module.module-1/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/classes",
   "module.module-1/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
+  "module.module-1/classes",
   "module.module-1/classes/class.Module1ClassA.md",
   "module.module-1/classes/class.Module1ClassB.md",
   "module.module-2/module.module-2.md",
+  "module.module-2/classes",
   "module.module-2/classes/class.Module2ClassA.md",
   "module.module-2/classes/class.Module2ClassB.md",
 ]
@@ -83,37 +96,57 @@ exports[`Output File Strategy should set --kindsWithOwnFile 'all' --numberPrefix
   "README.md",
   "01-modules.md",
   "module.module-1/module.module-1.md",
+  "module.module-1/01-Namespaces",
   "module.module-1/01-Namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+  "module.module-1/01-Namespaces/namespace.someNameSpace/01-Namespaces",
   "module.module-1/01-Namespaces/namespace.someNameSpace/01-Namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
+  "module.module-1/01-Namespaces/namespace.someNameSpace/01-Namespaces/namespace._nestedNamespace/01-Variables",
   "module.module-1/01-Namespaces/namespace.someNameSpace/01-Namespaces/namespace._nestedNamespace/01-Variables/variable.nestedNamespaceVariable.md",
+  "module.module-1/01-Namespaces/namespace.someNameSpace/02-Enumerations",
   "module.module-1/01-Namespaces/namespace.someNameSpace/02-Enumerations/enumeration.NamespaceEnum.md",
+  "module.module-1/01-Namespaces/namespace.someNameSpace/03-Classes",
   "module.module-1/01-Namespaces/namespace.someNameSpace/03-Classes/class.NameSpaceClassA.md",
+  "module.module-1/01-Namespaces/namespace.someNameSpace/04-Interfaces",
   "module.module-1/01-Namespaces/namespace.someNameSpace/04-Interfaces/interface.NamespaceInterface.md",
+  "module.module-1/01-Namespaces/namespace.someNameSpace/05-Type Aliases",
   "module.module-1/01-Namespaces/namespace.someNameSpace/05-Type Aliases/type-alias.NamespaceTypeLiteral.md",
+  "module.module-1/01-Namespaces/namespace.someNameSpace/06-Variables",
   "module.module-1/01-Namespaces/namespace.someNameSpace/06-Variables/variable.namespaceVariable.md",
+  "module.module-1/02-Enumerations",
   "module.module-1/02-Enumerations/enumeration.Module1EnumA.md",
   "module.module-1/02-Enumerations/enumeration.Module1EnumB.md",
+  "module.module-1/03-Classes",
   "module.module-1/03-Classes/class.Module1ClassA.md",
   "module.module-1/03-Classes/class.Module1ClassB.md",
+  "module.module-1/04-Interfaces",
   "module.module-1/04-Interfaces/interface.Module1InterfaceA.md",
   "module.module-1/04-Interfaces/interface.Module1InterfaceB.md",
+  "module.module-1/05-Type Aliases",
   "module.module-1/05-Type Aliases/type-alias.Module1TypeLiteralA.md",
   "module.module-1/05-Type Aliases/type-alias.Module1TypeLiteralB.md",
+  "module.module-1/06-Variables",
   "module.module-1/06-Variables/variable.module1VariableA.md",
   "module.module-1/06-Variables/variable.module1VariableB.md",
+  "module.module-1/07-Functions",
   "module.module-1/07-Functions/function.module1FunctionA.md",
   "module.module-1/07-Functions/function.module1FunctionB.md",
   "module.module-2/module.module-2.md",
+  "module.module-2/01-Enumerations",
   "module.module-2/01-Enumerations/enumeration.Module2EnumA.md",
   "module.module-2/01-Enumerations/enumeration.Module2EnumB.md",
+  "module.module-2/02-Classes",
   "module.module-2/02-Classes/class.Module2ClassA.md",
   "module.module-2/02-Classes/class.Module2ClassB.md",
+  "module.module-2/03-Interfaces",
   "module.module-2/03-Interfaces/interface.Module2InterfaceA.md",
   "module.module-2/03-Interfaces/interface.Module2InterfaceB.md",
+  "module.module-2/04-Type Aliases",
   "module.module-2/04-Type Aliases/type-alias.Module2TypeLiteralA.md",
   "module.module-2/04-Type Aliases/type-alias.Module2TypeLiteralB.md",
+  "module.module-2/05-Variables",
   "module.module-2/05-Variables/variable.module2VariableA.md",
   "module.module-2/05-Variables/variable.module2VariableB.md",
+  "module.module-2/06-Functions",
   "module.module-2/06-Functions/function.module2FunctionA.md",
   "module.module-2/06-Functions/function.module2sFunctionB.md",
 ]
@@ -124,9 +157,34 @@ exports[`Output File Strategy should set --kindsWithOwnFile none' 1`] = `
   "README.md",
   "modules.md",
   "module.module-1/module.module-1.md",
+  "module.module-1/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace.namespace._nestedNamespace.md",
   "module.module-2.md",
+]
+`;
+
+exports[`Output File Strategy should set --kindsWithOwnFile none' 2`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "title": "someNameSpace",
+            "url": "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+          },
+        ],
+        "title": "Namespaces",
+      },
+    ],
+    "title": "module-1",
+    "url": "module.module-1/module.module-1.md",
+  },
+  {
+    "title": "module-2",
+    "url": "module.module-2.md",
+  },
 ]
 `;
 
@@ -135,39 +193,308 @@ exports[`Output File Strategy should set default --kindsWithOwnFile 'all' (modul
   "README.md",
   "modules.md",
   "module.module-1/module.module-1.md",
+  "module.module-1/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variables",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variables/variable.nestedNamespaceVariable.md",
+  "module.module-1/namespaces/namespace.someNameSpace/enumerations",
   "module.module-1/namespaces/namespace.someNameSpace/enumerations/enumeration.NamespaceEnum.md",
+  "module.module-1/namespaces/namespace.someNameSpace/classes",
   "module.module-1/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
+  "module.module-1/namespaces/namespace.someNameSpace/interfaces",
   "module.module-1/namespaces/namespace.someNameSpace/interfaces/interface.NamespaceInterface.md",
+  "module.module-1/namespaces/namespace.someNameSpace/type-aliases",
   "module.module-1/namespaces/namespace.someNameSpace/type-aliases/type-alias.NamespaceTypeLiteral.md",
+  "module.module-1/namespaces/namespace.someNameSpace/variables",
   "module.module-1/namespaces/namespace.someNameSpace/variables/variable.namespaceVariable.md",
+  "module.module-1/enumerations",
   "module.module-1/enumerations/enumeration.Module1EnumA.md",
   "module.module-1/enumerations/enumeration.Module1EnumB.md",
+  "module.module-1/classes",
   "module.module-1/classes/class.Module1ClassA.md",
   "module.module-1/classes/class.Module1ClassB.md",
+  "module.module-1/interfaces",
   "module.module-1/interfaces/interface.Module1InterfaceA.md",
   "module.module-1/interfaces/interface.Module1InterfaceB.md",
+  "module.module-1/type-aliases",
   "module.module-1/type-aliases/type-alias.Module1TypeLiteralA.md",
   "module.module-1/type-aliases/type-alias.Module1TypeLiteralB.md",
+  "module.module-1/variables",
   "module.module-1/variables/variable.module1VariableA.md",
   "module.module-1/variables/variable.module1VariableB.md",
+  "module.module-1/functions",
   "module.module-1/functions/function.module1FunctionA.md",
   "module.module-1/functions/function.module1FunctionB.md",
   "module.module-2/module.module-2.md",
+  "module.module-2/enumerations",
   "module.module-2/enumerations/enumeration.Module2EnumA.md",
   "module.module-2/enumerations/enumeration.Module2EnumB.md",
+  "module.module-2/classes",
   "module.module-2/classes/class.Module2ClassA.md",
   "module.module-2/classes/class.Module2ClassB.md",
+  "module.module-2/interfaces",
   "module.module-2/interfaces/interface.Module2InterfaceA.md",
   "module.module-2/interfaces/interface.Module2InterfaceB.md",
+  "module.module-2/type-aliases",
   "module.module-2/type-aliases/type-alias.Module2TypeLiteralA.md",
   "module.module-2/type-aliases/type-alias.Module2TypeLiteralB.md",
+  "module.module-2/variables",
   "module.module-2/variables/variable.module2VariableA.md",
   "module.module-2/variables/variable.module2VariableB.md",
+  "module.module-2/functions",
   "module.module-2/functions/function.module2FunctionA.md",
   "module.module-2/functions/function.module2sFunctionB.md",
+]
+`;
+
+exports[`Output File Strategy should set default --kindsWithOwnFile 'all' (modules) 2`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "title": "nestedNamespaceVariable",
+                            "url": "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variables/variable.nestedNamespaceVariable.md",
+                          },
+                        ],
+                        "title": "Variables",
+                      },
+                    ],
+                    "title": "_nestedNamespace",
+                    "url": "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
+                  },
+                ],
+                "title": "Namespaces",
+              },
+              {
+                "children": [
+                  {
+                    "title": "NamespaceEnum",
+                    "url": "module.module-1/namespaces/namespace.someNameSpace/enumerations/enumeration.NamespaceEnum.md",
+                  },
+                ],
+                "title": "Enumerations",
+              },
+              {
+                "children": [
+                  {
+                    "title": "NameSpaceClassA",
+                    "url": "module.module-1/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
+                  },
+                ],
+                "title": "Classes",
+              },
+              {
+                "children": [
+                  {
+                    "title": "NamespaceInterface",
+                    "url": "module.module-1/namespaces/namespace.someNameSpace/interfaces/interface.NamespaceInterface.md",
+                  },
+                ],
+                "title": "Interfaces",
+              },
+              {
+                "children": [
+                  {
+                    "title": "NamespaceTypeLiteral",
+                    "url": "module.module-1/namespaces/namespace.someNameSpace/type-aliases/type-alias.NamespaceTypeLiteral.md",
+                  },
+                ],
+                "title": "Type Aliases",
+              },
+              {
+                "children": [
+                  {
+                    "title": "namespaceVariable",
+                    "url": "module.module-1/namespaces/namespace.someNameSpace/variables/variable.namespaceVariable.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "someNameSpace",
+            "url": "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+          },
+        ],
+        "title": "Namespaces",
+      },
+      {
+        "children": [
+          {
+            "title": "Module1EnumA",
+            "url": "module.module-1/enumerations/enumeration.Module1EnumA.md",
+          },
+          {
+            "title": "Module1EnumB",
+            "url": "module.module-1/enumerations/enumeration.Module1EnumB.md",
+          },
+        ],
+        "title": "Enumerations",
+      },
+      {
+        "children": [
+          {
+            "title": "Module1ClassA",
+            "url": "module.module-1/classes/class.Module1ClassA.md",
+          },
+          {
+            "title": "Module1ClassB",
+            "url": "module.module-1/classes/class.Module1ClassB.md",
+          },
+        ],
+        "title": "Classes",
+      },
+      {
+        "children": [
+          {
+            "title": "Module1InterfaceA",
+            "url": "module.module-1/interfaces/interface.Module1InterfaceA.md",
+          },
+          {
+            "title": "Module1InterfaceB",
+            "url": "module.module-1/interfaces/interface.Module1InterfaceB.md",
+          },
+        ],
+        "title": "Interfaces",
+      },
+      {
+        "children": [
+          {
+            "title": "Module1TypeLiteralA",
+            "url": "module.module-1/type-aliases/type-alias.Module1TypeLiteralA.md",
+          },
+          {
+            "title": "Module1TypeLiteralB",
+            "url": "module.module-1/type-aliases/type-alias.Module1TypeLiteralB.md",
+          },
+        ],
+        "title": "Type Aliases",
+      },
+      {
+        "children": [
+          {
+            "title": "module1VariableA",
+            "url": "module.module-1/variables/variable.module1VariableA.md",
+          },
+          {
+            "title": "module1VariableB",
+            "url": "module.module-1/variables/variable.module1VariableB.md",
+          },
+        ],
+        "title": "Variables",
+      },
+      {
+        "children": [
+          {
+            "title": "module1FunctionA",
+            "url": "module.module-1/functions/function.module1FunctionA.md",
+          },
+          {
+            "title": "module1FunctionB",
+            "url": "module.module-1/functions/function.module1FunctionB.md",
+          },
+        ],
+        "title": "Functions",
+      },
+    ],
+    "title": "module-1",
+    "url": "module.module-1/module.module-1.md",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "title": "Module2EnumA",
+            "url": "module.module-2/enumerations/enumeration.Module2EnumA.md",
+          },
+          {
+            "title": "Module2EnumB",
+            "url": "module.module-2/enumerations/enumeration.Module2EnumB.md",
+          },
+        ],
+        "title": "Enumerations",
+      },
+      {
+        "children": [
+          {
+            "title": "Module2ClassA",
+            "url": "module.module-2/classes/class.Module2ClassA.md",
+          },
+          {
+            "title": "Module2ClassB",
+            "url": "module.module-2/classes/class.Module2ClassB.md",
+          },
+        ],
+        "title": "Classes",
+      },
+      {
+        "children": [
+          {
+            "title": "Module2InterfaceA",
+            "url": "module.module-2/interfaces/interface.Module2InterfaceA.md",
+          },
+          {
+            "title": "Module2InterfaceB",
+            "url": "module.module-2/interfaces/interface.Module2InterfaceB.md",
+          },
+        ],
+        "title": "Interfaces",
+      },
+      {
+        "children": [
+          {
+            "title": "Module2TypeLiteralA",
+            "url": "module.module-2/type-aliases/type-alias.Module2TypeLiteralA.md",
+          },
+          {
+            "title": "Module2TypeLiteralB",
+            "url": "module.module-2/type-aliases/type-alias.Module2TypeLiteralB.md",
+          },
+        ],
+        "title": "Type Aliases",
+      },
+      {
+        "children": [
+          {
+            "title": "module2VariableA",
+            "url": "module.module-2/variables/variable.module2VariableA.md",
+          },
+          {
+            "title": "module2VariableB",
+            "url": "module.module-2/variables/variable.module2VariableB.md",
+          },
+        ],
+        "title": "Variables",
+      },
+      {
+        "children": [
+          {
+            "title": "module2FunctionA",
+            "url": "module.module-2/functions/function.module2FunctionA.md",
+          },
+          {
+            "title": "module2sFunctionB",
+            "url": "module.module-2/functions/function.module2sFunctionB.md",
+          },
+        ],
+        "title": "Functions",
+      },
+    ],
+    "title": "module-2",
+    "url": "module.module-2/module.module-2.md",
+  },
 ]
 `;
 
@@ -175,29 +502,46 @@ exports[`Output File Strategy should set default --kindsWithOwnFile 'all' (names
 [
   "README.md",
   "modules.md",
+  "namespaces",
   "namespaces/namespace.someParentNamespace/namespace.someParentNamespace.md",
+  "namespaces/namespace.someParentNamespace/namespaces",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+  "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/namespaces",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
+  "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variables",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variables/variable.nestedNamespaceVariable.md",
+  "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/enumerations",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/enumerations/enumeration.NamespaceEnum.md",
+  "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/classes",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
+  "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/interfaces",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/interfaces/interface.NamespaceInterface.md",
+  "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/type-aliases",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/type-aliases/type-alias.NamespaceTypeLiteral.md",
+  "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/variables",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/variables/variable.namespaceVariable.md",
+  "namespaces/namespace.someParentNamespace/enumerations",
   "namespaces/namespace.someParentNamespace/enumerations/enumeration.Module1EnumA.md",
   "namespaces/namespace.someParentNamespace/enumerations/enumeration.Module1EnumB.md",
+  "namespaces/namespace.someParentNamespace/classes",
   "namespaces/namespace.someParentNamespace/classes/class.Module1ClassA.md",
   "namespaces/namespace.someParentNamespace/classes/class.Module1ClassB.md",
+  "namespaces/namespace.someParentNamespace/interfaces",
   "namespaces/namespace.someParentNamespace/interfaces/interface.Module1InterfaceA.md",
   "namespaces/namespace.someParentNamespace/interfaces/interface.Module1InterfaceB.md",
+  "namespaces/namespace.someParentNamespace/type-aliases",
   "namespaces/namespace.someParentNamespace/type-aliases/type-alias.Module1TypeLiteralA.md",
   "namespaces/namespace.someParentNamespace/type-aliases/type-alias.Module1TypeLiteralB.md",
+  "namespaces/namespace.someParentNamespace/variables",
   "namespaces/namespace.someParentNamespace/variables/variable.module1VariableA.md",
   "namespaces/namespace.someParentNamespace/variables/variable.module1VariableB.md",
+  "namespaces/namespace.someParentNamespace/functions",
   "namespaces/namespace.someParentNamespace/functions/function.module1FunctionA.md",
   "namespaces/namespace.someParentNamespace/functions/function.module1FunctionB.md",
+  "enumerations",
   "enumerations/enumeration.EnumDeclarations.md",
   "enumerations/enumeration.EnumDeclarationsWithDefaults.md",
+  "classes",
   "classes/class.Animal.md",
   "classes/class.Base.md",
   "classes/class.C.md",
@@ -205,7 +549,9 @@ exports[`Output File Strategy should set default --kindsWithOwnFile 'all' (names
   "classes/class.Dog.md",
   "classes/class.IndexableClass.md",
   "classes/class.Point.md",
+  "type-aliases",
   "type-aliases/type-alias.AnyFunctionType.md",
+  "variables",
   "variables/variable.__DOUBLE_UNDERSCORES_DECLARATION__.md",
   "variables/variable.enuRef.md",
   "variables/variable.getterAndSetter.md",
@@ -216,6 +562,7 @@ exports[`Output File Strategy should set default --kindsWithOwnFile 'all' (names
   "variables/variable.stringLetWithDefaultValue.md",
   "variables/variable.typeLiteralDeclaration.md",
   "variables/variable.undefinedNumberDeclaration.md",
+  "functions",
   "functions/function.functionDeclaration.md",
 ]
 `;
@@ -224,7 +571,9 @@ exports[`Output File Strategy should set default --kindsWithOwnFile 'none' (name
 [
   "README.md",
   "modules.md",
+  "namespaces",
   "namespaces/namespace.someParentNamespace/namespace.someParentNamespace.md",
+  "namespaces/namespace.someParentNamespace/namespaces",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
   "namespaces/namespace.someParentNamespace/namespaces/namespace.someNameSpace/namespaces/namespace.namespace._nestedNamespace.md",
 ]
@@ -235,23 +584,35 @@ exports[`Output File Strategy should set kindsWithOwnFile [enum, types, variable
   "README.md",
   "modules.md",
   "module.module-1/module.module-1.md",
+  "module.module-1/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variables",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variables/variable.nestedNamespaceVariable.md",
+  "module.module-1/namespaces/namespace.someNameSpace/enumerations",
   "module.module-1/namespaces/namespace.someNameSpace/enumerations/enumeration.NamespaceEnum.md",
+  "module.module-1/namespaces/namespace.someNameSpace/type-aliases",
   "module.module-1/namespaces/namespace.someNameSpace/type-aliases/type-alias.NamespaceTypeLiteral.md",
+  "module.module-1/namespaces/namespace.someNameSpace/variables",
   "module.module-1/namespaces/namespace.someNameSpace/variables/variable.namespaceVariable.md",
+  "module.module-1/enumerations",
   "module.module-1/enumerations/enumeration.Module1EnumA.md",
   "module.module-1/enumerations/enumeration.Module1EnumB.md",
+  "module.module-1/type-aliases",
   "module.module-1/type-aliases/type-alias.Module1TypeLiteralA.md",
   "module.module-1/type-aliases/type-alias.Module1TypeLiteralB.md",
+  "module.module-1/variables",
   "module.module-1/variables/variable.module1VariableA.md",
   "module.module-1/variables/variable.module1VariableB.md",
   "module.module-2/module.module-2.md",
+  "module.module-2/enumerations",
   "module.module-2/enumerations/enumeration.Module2EnumA.md",
   "module.module-2/enumerations/enumeration.Module2EnumB.md",
+  "module.module-2/type-aliases",
   "module.module-2/type-aliases/type-alias.Module2TypeLiteralA.md",
   "module.module-2/type-aliases/type-alias.Module2TypeLiteralB.md",
+  "module.module-2/variables",
   "module.module-2/variables/variable.module2VariableA.md",
   "module.module-2/variables/variable.module2VariableB.md",
 ]
@@ -262,7 +623,9 @@ exports[`Output File Strategy should set with --groupByKinds=false (modules) 1`]
   "README.md",
   "modules.md",
   "module.module-1/module.module-1.md",
+  "module.module-1/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespace.someNameSpace.md",
+  "module.module-1/namespaces/namespace.someNameSpace/namespaces",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/namespace._nestedNamespace.md",
   "module.module-1/namespaces/namespace.someNameSpace/namespaces/namespace._nestedNamespace/variable.nestedNamespaceVariable.md",
   "module.module-1/namespaces/namespace.someNameSpace/enumeration.NamespaceEnum.md",

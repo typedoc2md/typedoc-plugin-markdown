@@ -1,5 +1,7 @@
+import * as path from 'path';
 import { PageEvent, ProjectReflection } from 'typedoc';
 import { heading } from '../support/els';
+import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export function projectTemplate(
@@ -7,6 +9,12 @@ export function projectTemplate(
   page: PageEvent<ProjectReflection>,
 ) {
   const md: string[] = [];
+
+  const entryDocument = context.getOption('entryDocument');
+
+  if (!context.getOption('hidePageHeader')) {
+    md.push(context.partials.pageHeader(page));
+  }
 
   if (!context.getOption('hideBreadcrumbs')) {
     md.push(context.partials.breadcrumbs(page));
@@ -20,7 +28,19 @@ export function projectTemplate(
     md.push(context.partials.comment(page.model.comment, 2));
   }
 
-  md.push(context.partials.toc(page.model));
+  if (page.model.groups) {
+    md.push(context.partials.toc(page.model));
+  } else {
+    md.push(heading(2, 'Packages'));
+    const packagesList = page.model.children?.map((projectPackage) => {
+      return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
+        Boolean(projectPackage.readme)
+          ? `${path.dirname(projectPackage.url || '')}/${entryDocument}`
+          : projectPackage.url,
+      )})`;
+    });
+    md.push(packagesList?.join('\n') || '');
+  }
 
   md.push(context.partials.members(page.model));
 

@@ -1,6 +1,5 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { link } from '../support/els';
-import { getProjectDisplayName } from '../support/helpers';
 import { escapeChars } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
@@ -9,10 +8,6 @@ export function breadcrumbs(
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const md: string[] = [];
-  const projectName = getProjectDisplayName(
-    page.project,
-    context.getOption('includeVersion'),
-  );
 
   const entryDocument = context.getOption('entryDocument');
 
@@ -20,24 +15,30 @@ export function breadcrumbs(
     return '';
   }
 
-  md.push(link(projectName, context.relativeURL(page.project.url)));
+  md.push(
+    link(
+      Boolean(page.project.groups) ? 'Index' : 'Packages',
+      context.relativeURL(page.project.url),
+    ),
+  );
+
+  const breadcrumb = (model: any) => {
+    if (model?.parent?.parent) {
+      breadcrumb(model.parent);
+    }
+    md.push(link(model.name, context.relativeURL(model?.url)));
+  };
+
+  const pageName = escapeChars(page.model.name);
+
   if (
     page.model?.parent?.parent &&
     (page.url !== page.project.url || page.url !== entryDocument)
   ) {
-    if (page?.model?.parent?.parent?.parent) {
-      md.push(
-        `[${escapeChars(page.model.parent.parent.name)}](${context.relativeURL(
-          page.model?.parent?.parent.url,
-        )})`,
-      );
-    }
-    md.push(
-      `[${page.model.parent.name}](${context.relativeURL(
-        page.model.parent.url,
-      )})`,
-    );
+    breadcrumb(page.model.parent);
   }
-  md.push(escapeChars(page.model.name));
+
+  md.push(pageName);
+
   return md.length > 1 ? `${md.join(' > ')}` : '';
 }

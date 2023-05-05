@@ -11,6 +11,16 @@ describe(`Output File Strategy`, () => {
       { options: { kindsWithOwnFile: 'all' } },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+    expect(theme.getNavigation(project)).toMatchSnapshot();
+  });
+
+  test(`should set default --kindsWithOwnFile 'all' (modules) for monorepo`, async () => {
+    ({ project, theme } = await global.bootstrap(
+      ['modules/module-1', 'modules/module-2'],
+      { options: { kindsWithOwnFile: 'all' } },
+    ));
+    expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+    expect(theme.getNavigation(project)).toMatchSnapshot();
   });
 
   test(`should set default --kindsWithOwnFile 'all' (namespaces)`, async () => {
@@ -50,6 +60,7 @@ describe(`Output File Strategy`, () => {
       { options: { kindsWithOwnFile: 'none' } },
     ));
     expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+    expect(theme.getNavigation(project)).toMatchSnapshot();
   });
 
   test(`should set default --kindsWithOwnFile 'none' (namespaces)`, async () => {

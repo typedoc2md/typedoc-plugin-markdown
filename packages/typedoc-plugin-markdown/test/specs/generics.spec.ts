@@ -7,7 +7,14 @@ describe(`Generics:`, () => {
 
   beforeAll(async () => {
     ({ project, context } = await global.bootstrap(['generics.ts'], {
-      stubPartials: ['breadcrumbs', 'comment', 'members', 'sources', 'toc'],
+      stubPartials: [
+        'breadcrumbs',
+        'comment',
+        'members',
+        'sources',
+        'toc',
+        'pageHeader',
+      ],
     }));
     context.activeLocation = 'generics.md';
   });
