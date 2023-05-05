@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "packages/typedoc-plugin-markdown",
-    "packages/docusaurus-plugin-typedoc"
+    "packages/docusaurus-plugin-typedoc",
+    "packages/typedoc-vitepress-theme"
   ],
   "scripts": {
     "lint": "npm run lint --workspaces",

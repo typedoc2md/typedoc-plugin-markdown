@@ -115,7 +115,6 @@ The following options are preset as config when running the theme.
 {
   "anchorFormat": "slug",
   "entryDocument": "index.md",
-  "hidePageHeader": true,
   "out": "./docs/api"
 }
 ```

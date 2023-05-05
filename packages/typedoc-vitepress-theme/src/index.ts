@@ -28,7 +28,6 @@ export function load(app: Application) {
     new MarkdownPluginOptionsReader({
       entryDocument: 'index.md',
       anchorFormat: 'slug',
-      //hidePageHeader: true,
       out: './docs/api',
     }),
   );
