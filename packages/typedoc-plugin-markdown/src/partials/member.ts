@@ -3,7 +3,7 @@ import {
   ReferenceReflection,
   ReflectionKind,
 } from 'typedoc';
-import { heading } from '../support/els';
+import { backTicks, bold, heading } from '../support/els';
 import { getReflectionHeadingLevel } from '../support/helpers';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 
@@ -24,6 +24,17 @@ export function member(
 
   if (!reflection.hasOwnDocument) {
     md.push(heading(headingLevel, context.partials.memberTitle(reflection)));
+  }
+
+  if (
+    !context.getOption('hideKindTag') &&
+    !reflection.kindOf([
+      ReflectionKind.Module,
+      ReflectionKind.Namespace,
+      ReflectionKind.Constructor,
+    ])
+  ) {
+    md.push(bold(backTicks(ReflectionKind.singularString(reflection.kind))));
   }
 
   if (
