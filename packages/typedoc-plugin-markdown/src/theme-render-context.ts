@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { Options, Reflection } from 'typedoc';
 import { TypedocPluginMarkdownOptions } from './models';
-import { partials, templates } from './resources';
+import { partials, templates } from './resources/resources';
 import { URL_PREFIX } from './support/constants';
 import { MarkdownTheme } from './theme';
 

@@ -69,6 +69,8 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 
 ### prop
 
+**\`Property\`**
+
 > **prop**: \`string\`
 
 [partial: sources]
@@ -77,6 +79,8 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 
 ### getMe
 
+**\`Accessor\`**
+
 > get **getMe()**: [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 [partial: sources]
@@ -84,6 +88,8 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 
 
 ### setMe
+
+**\`Accessor\`**
 
 > set **setMe**(x: \`string\`): \`void\`
 
@@ -141,6 +147,8 @@ exports[`Declarations: should compile indexable declaration 1`] = `
 
 ### arg1
 
+**\`Property\`**
+
 > **arg1**: \`string\`
 
 [partial: sources]
@@ -159,6 +167,8 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 ### Prop1
 
+**\`Property\`**
+
 > \`readonly\` **Prop1**: "Prop1"  = \`'Prop1'\`
 
 [partial: sources]
@@ -167,6 +177,8 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 ### Prop2
 
+**\`Property\`**
+
 > \`readonly\` **Prop2**: "Prop2"  = \`'Prop2'\`
 
 [partial: sources]
@@ -174,6 +186,8 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 
 ### Prop3
+
+**\`Property\`**
 
 > \`readonly\` **Prop3**: "Prop3"  = \`'Prop3'\`
 
@@ -195,6 +209,8 @@ Comments for object literal
 
 ### valueA
 
+**\`Property\`**
+
 > **valueA**: \`number\`  = \`100\`
 
 Comment for valueA
@@ -205,6 +221,8 @@ Comment for valueA
 
 ### valueB
 
+**\`Property\`**
+
 > **valueB**: \`boolean\`  = \`true\`
 
 [partial: sources]
@@ -212,6 +230,8 @@ Comment for valueA
 
 
 ### valueC
+
+**\`Property\`**
 
 > **valueC**: \`object\`  = \`{}\`
 
@@ -223,6 +243,8 @@ Comment for valueA
 
 ### valueX
 
+**\`Property\`**
+
 > **valueX**: \`object\`
 
 Comment for valueX
@@ -232,6 +254,8 @@ Comment for valueX
 #### Type declaration
 
 ##### valueA
+
+**\`Property\`**
 
 > **valueA**: \`number\`[]
 
@@ -243,6 +267,8 @@ Comment for valueA
 
 ##### valueB
 
+**\`Property\`**
+
 > **valueB**: \`object\`
 
 [partial: sources]
@@ -251,6 +277,8 @@ Comment for valueA
 
 ###### valueB1
 
+**\`Property\`**
+
 > **valueB1**: \`number\`  = \`1\`
 
 [partial: sources]
@@ -258,6 +286,8 @@ Comment for valueA
 
 
 ###### valueB2
+
+**\`Property\`**
 
 > **valueB2**: \`number\`  = \`2\`
 
@@ -268,6 +298,8 @@ Comment for valueA
 
 
 ##### valueZ
+
+**\`Property\`**
 
 > **valueZ**: \`string\`  = \`'foo'\`
 
@@ -280,6 +312,8 @@ Comment for valueZ
 
 
 ### valueY
+
+**\`Property\`**
 
 > **valueY**: \`Function\`
 
@@ -303,6 +337,8 @@ Comment for valueZ
 
 ### valueZ
 
+**\`Property\`**
+
 > **valueZ**: \`string\`  = \`'foo'\`
 
 Comment for valueZ
@@ -323,6 +359,8 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 
 ### valueA
 
+**\`Property\`**
+
 > **valueA**?: \`number\`
 
 Comments for valueA
@@ -333,6 +371,8 @@ Comments for valueA
 
 ### valueB
 
+**\`Property\`**
+
 > **valueB**?: \`boolean\`
 
 [partial: sources]
@@ -340,6 +380,8 @@ Comments for valueA
 
 
 ### valueC
+
+**\`Property\`**
 
 > **valueC**: \`object\`
 
@@ -355,6 +397,8 @@ Comments for valueA
 
 ### valueX
 
+**\`Property\`**
+
 > **valueX**: \`object\`
 
 Comment for valueX
@@ -365,6 +409,8 @@ Comment for valueX
 
 ##### valueA
 
+**\`Property\`**
+
 > **valueA**: \`number\`[]
 
 [partial: sources]
@@ -372,6 +418,8 @@ Comment for valueX
 
 
 ##### valueY
+
+**\`Property\`**
 
 > **valueY**: \`Function\`
 
@@ -399,6 +447,8 @@ Comment for valueX
 >
 > ###### a
 >
+> **\`Property\`**
+>
 > > **a**: \`string\`
 >
 > [partial: sources]
@@ -406,6 +456,8 @@ Comment for valueX
 >
 >
 > ###### b
+>
+> **\`Property\`**
 >
 > > **b**: \`string\`
 >
@@ -419,6 +471,8 @@ Comment for valueX
 
 ##### valueZ
 
+**\`Property\`**
+
 > **valueZ**: \`string\`
 
 Nested comment for valueX.valueZ
@@ -430,6 +484,8 @@ Nested comment for valueX.valueZ
 
 
 ### valueY
+
+**\`Property\`**
 
 > **valueY**: \`Function\`
 
@@ -450,6 +506,8 @@ Nested comment for valueX.valueZ
 
 
 ### valueZ
+
+**\`Property\`**
 
 > **valueZ**: \`string\`
 
