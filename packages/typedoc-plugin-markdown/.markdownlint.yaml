@@ -4,9 +4,9 @@ MD013: false
 # MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content
 MD024: false
 
-# MD025 - Multiple top-level headings in the same document
-MD025:
-  front_matter_title: ''
+# MD028 - Blank line inside blockquote
+
+MD028: false
 
 # MD033/no-inline-html - Inline HTML
 MD033: false

@@ -27,7 +27,9 @@
     "react-dom": "^17.0.2",
     "typedoc-plugin-markdown": "file:../../packages/typedoc-plugin-markdown/dist"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typedoc-plugin-frontmatter": "^0.0.2"
+  },
   "browserslist": {
     "production": [
       ">0.5%",

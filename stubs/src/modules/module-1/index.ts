@@ -66,3 +66,7 @@ export function module1FunctionB() {
 }
 
 export * as someNameSpace from './namespace-1';
+// eslint-disable-next-line @typescript-eslint/no-namespace
+export namespace someNameSpaceB {
+  const x = 1;
+}

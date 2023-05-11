@@ -1,82 +1,95 @@
-import { ContainerReflection, ReflectionKind } from 'typedoc';
+import {
+  ContainerReflection,
+  DeclarationReflection,
+  ReflectionCategory,
+  ReflectionKind,
+} from 'typedoc';
 import { SYMBOLS_WITH_DOCUMENTS } from '../../support/constants';
 import { heading, horizontalRule } from '../../support/els';
-import { getGroupHeadingLevel } from '../../support/helpers';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function members(
   context: MarkdownThemeRenderContext,
   container: ContainerReflection,
+  headingLevel: number,
 ) {
   const md: string[] = [];
-  if (container.categories && container.categories.length) {
-    container.categories
-      .filter((category) => !category.allChildrenHaveOwnDocument())
-      .forEach((item) =>
-        item.children
-          .filter((item) => !item.hasOwnDocument)
-          .forEach((item) => {
-            md.push(context.partials.member(item));
-          }),
-      );
-  } else {
-    container.groups
-      ?.filter((group) => !group.allChildrenHaveOwnDocument())
-      .forEach((group) => {
-        const headingLevel = getGroupHeadingLevel(
-          container,
-          context.getOption('groupByKinds'),
+
+  const pushCategories = (
+    categories: ReflectionCategory[],
+    headingLevel: number,
+  ) => {
+    categories
+      ?.filter((category) => !category.allChildrenHaveOwnDocument())
+      .forEach((item) => {
+        md.push(heading(headingLevel, item.title));
+        pushChildren(item.children, headingLevel + 1);
+      });
+  };
+
+  const pushChildren = (
+    children?: DeclarationReflection[],
+    memberHeadingLevel?: number,
+  ) => {
+    children
+      ?.filter((item) => !item.hasOwnDocument)
+      .forEach((item) => {
+        md.push(
+          context.partials.member(item, memberHeadingLevel || headingLevel),
         );
-        if (group.categories) {
-          if (
-            context.getOption('groupByKinds') ||
-            SYMBOLS_WITH_DOCUMENTS.includes(container.kind)
-          ) {
-            md.push(heading(headingLevel, group.title));
-          }
-          group.categories.forEach((groupItem) =>
-            groupItem.children.forEach((item) => {
-              md.push(context.partials.member(item));
-            }),
-          );
-        } else {
-          if (
-            context.getOption('groupByKinds') ||
-            SYMBOLS_WITH_DOCUMENTS.includes(container.kind)
-          ) {
-            md.push(heading(headingLevel, group.title));
-          }
-
-          const isPropertiesGroup = group.children.every((child) =>
-            child.kindOf(ReflectionKind.Property),
-          );
-
-          const isEnumGroup = group.children.every((child) =>
-            child.kindOf(ReflectionKind.EnumMember),
-          );
-
-          if (
-            isPropertiesGroup &&
-            context.getOption('propertiesFormat').toLowerCase() === 'table'
-          ) {
-            md.push(context.partials.propertiesTable(group.children));
-          } else if (
-            isEnumGroup &&
-            context.getOption('enumMembersFormat').toLowerCase() === 'table'
-          ) {
-            md.push(context.partials.enumMembersTable(group.children));
-          } else {
-            group.children
-              .filter((item) => !item.hasOwnDocument)
-              .forEach((groupChild) => {
-                md.push(context.partials.member(groupChild));
-                if (SYMBOLS_WITH_DOCUMENTS.includes(groupChild.kind)) {
-                  md.push(horizontalRule());
-                }
-              });
-          }
+        if (SYMBOLS_WITH_DOCUMENTS.includes(item.kind)) {
+          md.push(horizontalRule());
         }
       });
+  };
+
+  if (container.categories?.length) {
+    pushCategories(container.categories, headingLevel);
+  } else {
+    if (
+      context.getOption('excludeGroups') &&
+      container.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])
+    ) {
+      if (container.categories?.length) {
+        pushCategories(container.categories, headingLevel);
+      } else {
+        pushChildren(container.children, headingLevel);
+      }
+    } else {
+      container.groups
+        ?.filter((group) => !group.allChildrenHaveOwnDocument())
+        .forEach((group) => {
+          if (group.categories) {
+            md.push(heading(headingLevel, group.title));
+            pushCategories(group.categories, headingLevel + 1);
+          } else {
+            md.push(heading(headingLevel, group.title));
+
+            const isPropertiesGroup = group.children.every((child) =>
+              child.kindOf(ReflectionKind.Property),
+            );
+
+            const isEnumGroup = group.children.every((child) =>
+              child.kindOf(ReflectionKind.EnumMember),
+            );
+
+            if (
+              isPropertiesGroup &&
+              context.getOption('propertiesFormat') === 'table'
+            ) {
+              md.push(context.partials.propertiesTable(group.children));
+            } else if (
+              isEnumGroup &&
+              context.getOption('enumMembersFormat') === 'table'
+            ) {
+              md.push(context.partials.enumMembersTable(group.children));
+            } else {
+              pushChildren(group.children, headingLevel + 1);
+            }
+          }
+        });
+    }
   }
+
   return md.join('\n\n');
 }

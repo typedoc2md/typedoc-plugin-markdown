@@ -1,5 +1,5 @@
-import { DeclarationReflection, PageEvent, ReflectionKind } from 'typedoc';
-import { backTicks, bold, heading } from '../../support/els';
+import { DeclarationReflection, PageEvent } from 'typedoc';
+import { heading } from '../../support/els';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function reflectionTemplate(
@@ -20,14 +20,11 @@ export function reflectionTemplate(
     md.push(heading(1, context.partials.pageTitle(page)));
   }
 
-  if (
-    !context.getOption('hideKindTag') &&
-    !page.model.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])
-  ) {
-    md.push(bold(backTicks(ReflectionKind.singularString(page.model.kind))));
+  if (!context.getOption('hideKindTag')) {
+    md.push(context.partials.memberKindTag(page.model));
   }
 
-  md.push(context.partials.reflectionMember(page.model));
+  md.push(context.partials.reflectionMember(page.model, 2));
 
   return md.join('\n\n');
 }

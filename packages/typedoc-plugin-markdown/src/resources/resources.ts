@@ -41,6 +41,7 @@ import { declarationMemberName } from './partials/member.declaration.name';
 import { declarationMember } from './partials/member.declaration';
 import { indexSignatureTitle } from './partials/member.indexsignature.title';
 import { inheritance } from './partials/member.inheritance';
+import { memberKindTag } from './partials/member.kind-tag';
 import { referenceMember } from './partials/member.reference';
 import { reflectionMember } from './partials/member.reflection';
 import { signatureMemberIdentifier } from './partials/member.signature.identifier';
@@ -92,17 +93,18 @@ export type Partials = {
   hierarchy: (declarationHierarchy: DeclarationHierarchy) => string;
   declarationMemberIdentifier: (reflection: DeclarationReflection) => string;
   declarationMemberName: (declaration: DeclarationReflection, emphasis?: boolean) => string;
-  declarationMember: (declaration: DeclarationReflection, parentHeadingLevel?: number |  undefined) => string;
+  declarationMember: (declaration: DeclarationReflection, headingLevel: number) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
   inheritance: (reflection: DeclarationReflection | SignatureReflection, headingLevel: number) => string;
+  memberKindTag: (reflection: DeclarationReflection) => string;
   referenceMember: (props: ReferenceReflection) => string;
-  reflectionMember: (reflection: DeclarationReflection) => string;
+  reflectionMember: (reflection: DeclarationReflection, headingLevel: number) => string;
   signatureMemberIdentifier: (signature: SignatureReflection) => string;
-  signatureMember: (signature: SignatureReflection, parentHeadingLevel?: number |  undefined) => string;
+  signatureMember: (signature: SignatureReflection, headingLevel: number) => string;
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
   memberTitle: (reflection: DeclarationReflection, typeParams?: boolean) => string;
-  member: (reflection: DeclarationReflection, parentHeadingLevel?: number |  undefined) => string;
-  members: (container: ContainerReflection) => string;
+  member: (reflection: DeclarationReflection, headingLevel: number) => string;
+  members: (container: ContainerReflection, headingLevel: number) => string;
   navigation: (project: ProjectReflection) => string;
   pageHeader: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   pageTitle: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
@@ -147,6 +149,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   declarationMember: bind(declarationMember, context),
   indexSignatureTitle: bind(indexSignatureTitle, context),
   inheritance: bind(inheritance, context),
+  memberKindTag: bind(memberKindTag, context),
   referenceMember: bind(referenceMember, context),
   reflectionMember: bind(reflectionMember, context),
   signatureMemberIdentifier: bind(signatureMemberIdentifier, context),

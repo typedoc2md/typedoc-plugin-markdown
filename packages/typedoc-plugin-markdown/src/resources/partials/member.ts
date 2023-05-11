@@ -3,20 +3,15 @@ import {
   ReferenceReflection,
   ReflectionKind,
 } from 'typedoc';
-import { backTicks, bold, heading } from '../../support/els';
-import { getReflectionHeadingLevel } from '../../support/helpers';
+import { heading } from '../../support/els';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function member(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
-  parentHeadingLevel?: number,
+  headingLevel: number,
 ) {
   const md: string[] = [];
-
-  const headingLevel = parentHeadingLevel
-    ? parentHeadingLevel
-    : getReflectionHeadingLevel(reflection, context.getOption('groupByKinds'));
 
   if (context.getOption('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
@@ -26,15 +21,8 @@ export function member(
     md.push(heading(headingLevel, context.partials.memberTitle(reflection)));
   }
 
-  if (
-    !context.getOption('hideKindTag') &&
-    !reflection.kindOf([
-      ReflectionKind.Module,
-      ReflectionKind.Namespace,
-      ReflectionKind.Constructor,
-    ])
-  ) {
-    md.push(bold(backTicks(ReflectionKind.singularString(reflection.kind))));
+  if (!context.getOption('hideKindTag')) {
+    md.push(context.partials.memberKindTag(reflection));
   }
 
   if (
@@ -44,11 +32,11 @@ export function member(
       ReflectionKind.Enum,
     ].includes(reflection.kind)
   ) {
-    md.push(context.partials.reflectionMember(reflection));
+    md.push(context.partials.reflectionMember(reflection, headingLevel + 1));
   } else {
     if (reflection.signatures) {
       reflection.signatures.forEach((signature) => {
-        md.push(context.partials.signatureMember(signature));
+        md.push(context.partials.signatureMember(signature, headingLevel + 1));
       });
     } else {
       if (reflection instanceof ReferenceReflection) {
@@ -56,7 +44,9 @@ export function member(
       }
 
       if (reflection instanceof DeclarationReflection) {
-        md.push(context.partials.declarationMember(reflection, headingLevel));
+        md.push(
+          context.partials.declarationMember(reflection, headingLevel + 1),
+        );
       }
     }
   }

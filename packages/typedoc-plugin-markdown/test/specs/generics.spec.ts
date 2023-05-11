@@ -33,6 +33,7 @@ describe(`Generics:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithTypeParam') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -42,6 +43,7 @@ describe(`Generics:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithTypeParams') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -50,6 +52,7 @@ describe(`Generics:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('nestedGenerics') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -58,6 +61,7 @@ describe(`Generics:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('genericsWithDefaults') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });

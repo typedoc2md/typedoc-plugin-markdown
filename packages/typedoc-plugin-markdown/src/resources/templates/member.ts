@@ -20,7 +20,7 @@ export function memberTemplate(
     md.push(heading(1, context.partials.pageTitle(page)));
   }
 
-  md.push(context.partials.member(page.model));
+  md.push(context.partials.member(page.model, 1));
 
   return md.join('\n\n');
 }

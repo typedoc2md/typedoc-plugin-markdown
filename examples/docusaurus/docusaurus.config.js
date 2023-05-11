@@ -32,7 +32,7 @@ const config = {
       {
         id: 'api-1',
         out: 'api-1',
-        options: '../../stubs/typedoc.json',
+        options: '../../stubs/typedoc.1.js',
         sidebar: {
           autoConfiguration: true,
           position: 0,
@@ -41,8 +41,6 @@ const config = {
         },
         indexPageTitle: 'Overview',
         cleanOutputDir: true,
-        groupByKinds: true,
-        plugin: ['typedoc-plugin-frontmatter'],
       },
     ],
     [
@@ -50,17 +48,16 @@ const config = {
       {
         id: 'api-2',
         out: 'api-2',
-        options: '../../stubs/typedoc.json',
+        options: '../../stubs/typedoc.1.js',
         sidebar: {
           autoConfiguration: true,
           position: 1,
           categoryLabel: 'API-2',
         },
         cleanOutputDir: true,
-        kindsWithOwnFile: 'none',
-        groupByKinds: false,
+        outputFileStrategy: 'modules',
+        excludeGroups: true,
         readme: 'none',
-        plugin: ['typedoc-plugin-mdn-links'],
       },
     ],
   ],

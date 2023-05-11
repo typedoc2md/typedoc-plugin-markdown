@@ -1,15 +1,26 @@
-import { Application, ParameterType } from 'typedoc';
+import { Application, Options, OptionsReader, ParameterType } from 'typedoc';
+import { OutputFileStrategy } from '../models';
 
 export function declareOptions(app: Application) {
+  app.options.addReader(
+    new (class implements OptionsReader {
+      name = 'markdown-theme';
+      readonly order = 900;
+      readonly supportsPackages = false;
+      read(container: Options) {
+        if (container.getValue('theme') === 'default') {
+          container.setValue('theme', 'markdown');
+        }
+
+        if (container.getValue('excludeGroups')) {
+          container.setValue('categorizeByGroup', false);
+        }
+      }
+    })(),
+  );
   /**
    * file output options
    */
-  app.options.addDeclaration({
-    name: 'entryDocument',
-    help: '[Markdown Plugin] The file name of the entry document.',
-    type: ParameterType.String,
-    defaultValue: 'README.md',
-  });
 
   app.options.addDeclaration({
     name: 'flattenOutputFiles',
@@ -19,24 +30,25 @@ export function declareOptions(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'numberPrefixOutput',
+    name: 'includeFileNumberPrefixes',
     help: '[Markdown Plugin] Prefixes docs and folders by number prefixes if applicable.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
 
   app.options.addDeclaration({
-    name: 'kindsWithOwnFile',
-    help: "[Markdown Plugin] Specifies which reflection kinds are contained in their own file. Values 'none', 'all' OR Array of ['class', 'interface', 'enum', 'function', 'variable', 'type']",
-    type: ParameterType.String | ParameterType.Array,
-    defaultValue: 'all',
+    name: 'outputFileStrategy',
+    help: 'Determines how files are rendered.',
+    type: ParameterType.Map,
+    map: OutputFileStrategy,
+    defaultValue: OutputFileStrategy.Members,
   });
 
   app.options.addDeclaration({
-    name: 'groupByKinds',
+    name: 'excludeGroups',
     help: '[Markdown Plugin] Groups reflection kinds by headings if applicable e.g Classes, Functions. If set to false all symbols will render on the same level. Defaults to `true`',
     type: ParameterType.Boolean,
-    defaultValue: true,
+    defaultValue: false,
   });
 
   /**

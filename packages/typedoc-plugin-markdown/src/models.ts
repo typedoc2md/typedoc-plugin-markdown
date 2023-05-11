@@ -1,32 +1,52 @@
 import { ReflectionKind, TypeDocOptionMap } from 'typedoc';
 
+/**
+ * Defines how entry points are interpreted.
+ * @enum
+ */
+export const OutputFileStrategy = {
+  Project: 'project',
+  Modules: 'modules',
+  Members: 'members',
+} as const;
+
+export type OutputFileStrategy =
+  (typeof OutputFileStrategy)[keyof typeof OutputFileStrategy];
+
 export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   anchorFormat: AnchorFormat;
   baseUrl: string;
-  entryDocument: string;
   enumMembersFormat: DataFormatStyle;
-  flattenOutputFiles: boolean;
-  groupByKinds: boolean;
+  excludeGroups: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   hideKindTag: boolean;
   hidePageHeader: boolean;
   hidePageTitle: boolean;
   hideHierarchy: boolean;
+  includeFileNumberPrefixes: boolean;
   indentifiersAsCodeBlocks: boolean;
   indexPageTitle: string;
-  kindsWithOwnFile: string | string[];
+  kindsWithOwnFile: AvailableKindsWithOwnFile[];
   namedAnchors: boolean;
-  numberPrefixOutput: boolean;
+  outputFileStrategy: OutputFileStrategy;
   propertiesFormat: DataFormatStyle;
 }
 
 export interface TemplateMapping {
   directory: string | null;
   template: any;
-  isLeaf: boolean;
   kind: ReflectionKind;
 }
+
+export type AvailableKindsWithOwnFile =
+  | 'None'
+  | 'Class'
+  | 'Interface'
+  | 'Enum'
+  | 'Function'
+  | 'Variable'
+  | 'TypeAlias';
 
 export type Collapse = 'object' | 'function' | 'all' | 'none';
 

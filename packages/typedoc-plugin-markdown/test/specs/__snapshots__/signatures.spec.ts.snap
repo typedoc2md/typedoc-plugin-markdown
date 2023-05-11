@@ -41,7 +41,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 
 [partial: sources]
 
-#### Parameters
+## Parameters
 
 
 | Parameter | Type |
@@ -50,7 +50,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 | y | \`string\` |
 
 
-#### Returns
+## Returns
 
 [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
 
@@ -72,7 +72,7 @@ Comments for function
 
 Return comments
 
-> \\<T\\>(x: \`string\`): \`boolean\`
+> > \\<T\\>(x: \`string\`): \`boolean\`
 >
 > [partial: sources]
 >
@@ -118,7 +118,7 @@ Return comments
 
 ### x
 
-**\`Property\`**
+
 
 > **x**: \`number\`  = \`1\`
 
@@ -128,7 +128,7 @@ Return comments
 
 ### y
 
-**\`Property\`**
+
 
 > **y**: \`number\`  = \`2\`
 

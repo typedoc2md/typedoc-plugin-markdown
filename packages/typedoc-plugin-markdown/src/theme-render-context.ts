@@ -6,6 +6,9 @@ import { URL_PREFIX } from './support/constants';
 import { MarkdownTheme } from './theme';
 
 export class MarkdownThemeRenderContext {
+  public readmeFile = 'README.md';
+  public indexFile = 'index.md';
+
   private _activeLocation: string;
 
   set activeLocation(activeLocation: string) {
@@ -34,7 +37,7 @@ export class MarkdownThemeRenderContext {
       }
 
       const relative = path.relative(
-        path.dirname(this.activeLocation),
+        path.dirname(this.activeLocation || ''),
         path.dirname(url),
       );
 

@@ -16,9 +16,9 @@
     "test": "jest --colors --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
     "docs": "npm run build && npm-run-all docs:*",
-    "docs:md-1": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-mdn-links --options ../../stubs/typedoc.json --out ./out/md/md-1",
-    "docs:md-2": "typedoc --plugin typedoc-plugin-markdown --options ../../stubs/typedoc.json --indexPageTitle \"Overview\"  --indentifiersAsCodeBlocks --groupByKinds --propertiesFormat \"table\" --enumMembersFormat \"table\" --readme \"none\" --kindsWithOwnFile \"all\"  --out ./out/md/md-2",
-    "docs:html": "typedoc --options ../../stubs/typedoc.json --out ./out/html"
+    "docs:md-1": "typedoc --options ../../stubs/typedoc.1.js --out ./out/md/md-1",
+    "docs:md-2": "typedoc --options ../../stubs/typedoc.2.js --out ./out/md/md-2",
+    "docs:html": "typedoc --options ../../stubs/typedoc.base.js --out ./out/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",

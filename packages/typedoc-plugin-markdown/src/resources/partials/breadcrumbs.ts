@@ -9,9 +9,7 @@ export function breadcrumbs(
 ) {
   const md: string[] = [];
 
-  const entryDocument = context.getOption('entryDocument');
-
-  if (page.url === page.project.url || page.url === entryDocument) {
+  if (page.url === page.project.url || page.url === context.indexFile) {
     return '';
   }
 
@@ -33,7 +31,7 @@ export function breadcrumbs(
 
   if (
     page.model?.parent?.parent &&
-    (page.url !== page.project.url || page.url !== entryDocument)
+    (page.url !== page.project.url || page.url !== context.indexFile)
   ) {
     breadcrumb(page.model.parent);
   }

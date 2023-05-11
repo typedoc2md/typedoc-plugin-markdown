@@ -1,6 +1,5 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { heading, unorderedList } from '../../support/els';
-import { getReflectionHeadingLevel } from '../../support/helpers';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 /**
@@ -12,12 +11,9 @@ import { MarkdownThemeRenderContext } from '../../theme-render-context';
 export function reflectionMember(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
+  headingLevel: number,
 ) {
   const md: string[] = [];
-
-  const headingLevel =
-    getReflectionHeadingLevel(reflection, context.getOption('groupByKinds')) +
-    1;
 
   if (reflection.comment) {
     md.push(context.partials.comment(reflection.comment, headingLevel));
@@ -57,7 +53,7 @@ export function reflectionMember(
 
   if ('signatures' in reflection && reflection.signatures) {
     reflection.signatures.forEach((signature) => {
-      md.push(context.partials.signatureMember(signature));
+      md.push(context.partials.signatureMember(signature, headingLevel));
     });
   }
 
@@ -70,7 +66,7 @@ export function reflectionMember(
     md.push(context.partials.toc(reflection));
   }
 
-  md.push(context.partials.members(reflection));
+  md.push(context.partials.members(reflection, headingLevel));
 
   return md.join('\n\n');
 }

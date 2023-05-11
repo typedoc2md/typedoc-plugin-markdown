@@ -40,22 +40,20 @@ exports[`Declarations: should compile any function type 1`] = `
 ## Type declaration
 
 > (...input: \`any\`[]): \`A\`
->
-> [partial: sources]
->
-> ### Parameters
->
->
-> | Parameter | Type |
-> | :------ | :------ |
-> | ...input | \`any\`[] |
->
->
-> ### Returns
->
-> \`A\`
->
->
+
+### Parameters
+
+
+| Parameter | Type |
+| :------ | :------ |
+| ...input | \`any\`[] |
+
+
+### Returns
+
+\`A\`
+
+
 
 "
 `;
@@ -67,29 +65,15 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 
 ## Type declaration
 
-### prop
-
-**\`Property\`**
-
 > **prop**: \`string\`
 
 [partial: sources]
 
 
-
-### getMe
-
-**\`Accessor\`**
-
 > get **getMe()**: [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 [partial: sources]
 
-
-
-### setMe
-
-**\`Accessor\`**
 
 > set **setMe**(x: \`string\`): \`void\`
 
@@ -101,7 +85,7 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"> \`const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: *typeof* [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](variables/variable.__DOUBLE_UNDERSCORES_DECLARATION__.md)
+"> \`const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: *typeof* [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](variables/variable._DOUBLE_UNDERSCORES_DECLARATION__.md)
 
 Comments
 
@@ -145,10 +129,6 @@ exports[`Declarations: should compile indexable declaration 1`] = `
 
 ## Type declaration
 
-### arg1
-
-**\`Property\`**
-
 > **arg1**: \`string\`
 
 [partial: sources]
@@ -165,29 +145,15 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 ## Type declaration
 
-### Prop1
-
-**\`Property\`**
-
 > \`readonly\` **Prop1**: "Prop1"  = \`'Prop1'\`
 
 [partial: sources]
 
 
-
-### Prop2
-
-**\`Property\`**
-
 > \`readonly\` **Prop2**: "Prop2"  = \`'Prop2'\`
 
 [partial: sources]
 
-
-
-### Prop3
-
-**\`Property\`**
 
 > \`readonly\` **Prop3**: "Prop3"  = \`'Prop3'\`
 
@@ -207,10 +173,6 @@ Comments for object literal
 
 ## Type declaration
 
-### valueA
-
-**\`Property\`**
-
 > **valueA**: \`number\`  = \`100\`
 
 Comment for valueA
@@ -218,32 +180,15 @@ Comment for valueA
 [partial: sources]
 
 
-
-### valueB
-
-**\`Property\`**
-
 > **valueB**: \`boolean\`  = \`true\`
 
 [partial: sources]
 
 
-
-### valueC
-
-**\`Property\`**
-
 > **valueC**: \`object\`  = \`{}\`
 
 [partial: sources]
 
-#### Type declaration
-
-
-
-### valueX
-
-**\`Property\`**
 
 > **valueX**: \`object\`
 
@@ -251,93 +196,60 @@ Comment for valueX
 
 [partial: sources]
 
-#### Type declaration
+### Type declaration
 
-##### valueA
+> > **valueA**: \`number\`[]
+>
+> Comment for valueA
+>
+> [partial: sources]
+>
+>
+> > **valueB**: \`object\`
+>
+> [partial: sources]
+>
+> #### Type declaration
+>
+> > > **valueB1**: \`number\`  = \`1\`
+> >
+> > [partial: sources]
+> >
+> >
+> > > **valueB2**: \`number\`  = \`2\`
+> >
+> > [partial: sources]
+> >
+> >
+>
+>
+> > **valueZ**: \`string\`  = \`'foo'\`
+>
+> Comment for valueZ
+>
+> [partial: sources]
+>
+>
 
-**\`Property\`**
-
-> **valueA**: \`number\`[]
-
-Comment for valueA
-
-[partial: sources]
-
-
-
-##### valueB
-
-**\`Property\`**
-
-> **valueB**: \`object\`
-
-[partial: sources]
-
-###### Type declaration
-
-###### valueB1
-
-**\`Property\`**
-
-> **valueB1**: \`number\`  = \`1\`
-
-[partial: sources]
-
-
-
-###### valueB2
-
-**\`Property\`**
-
-> **valueB2**: \`number\`  = \`2\`
-
-[partial: sources]
-
-
-
-
-
-##### valueZ
-
-**\`Property\`**
-
-> **valueZ**: \`string\`  = \`'foo'\`
-
-Comment for valueZ
-
-[partial: sources]
-
-
-
-
-
-### valueY
-
-**\`Property\`**
 
 > **valueY**: \`Function\`
 
 [partial: sources]
 
-#### Type declaration
+### Type declaration
 
 > (): \`string\`
->
-> Comment for value Y
->
-> [partial: sources]
->
-> ##### Returns
->
-> \`string\`
->
->
+
+Comment for value Y
+
+[partial: sources]
+
+#### Returns
+
+\`string\`
 
 
 
-### valueZ
-
-**\`Property\`**
 
 > **valueZ**: \`string\`  = \`'foo'\`
 
@@ -357,10 +269,6 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 
 ## Type declaration
 
-### valueA
-
-**\`Property\`**
-
 > **valueA**?: \`number\`
 
 Comments for valueA
@@ -368,36 +276,19 @@ Comments for valueA
 [partial: sources]
 
 
-
-### valueB
-
-**\`Property\`**
-
 > **valueB**?: \`boolean\`
 
 [partial: sources]
 
 
-
-### valueC
-
-**\`Property\`**
-
 > **valueC**: \`object\`
 
 [partial: sources]
 
-#### Index signature
+### Index signature
 
  \\[\`dataId\`: \`string\`\\]: "ok" \\| "ko"
 
-#### Type declaration
-
-
-
-### valueX
-
-**\`Property\`**
 
 > **valueX**: \`object\`
 
@@ -405,35 +296,26 @@ Comment for valueX
 
 [partial: sources]
 
-#### Type declaration
+### Type declaration
 
-##### valueA
-
-**\`Property\`**
-
-> **valueA**: \`number\`[]
-
-[partial: sources]
-
-
-
-##### valueY
-
-**\`Property\`**
-
-> **valueY**: \`Function\`
-
-[partial: sources]
-
-###### Type declaration
-
-> (z: \`string\`): \`object\`
+> > **valueA**: \`number\`[]
+>
+> [partial: sources]
+>
+>
+> > **valueY**: \`Function\`
+>
+> [partial: sources]
+>
+> #### Type declaration
+>
+> > (z: \`string\`): \`object\`
 >
 > Nested comment for valueX.valueY
 >
 > [partial: sources]
 >
-> ###### Parameters
+> ##### Parameters
 >
 >
 > | Parameter | Type |
@@ -441,13 +323,13 @@ Comment for valueX
 > | z | \`string\` |
 >
 >
-> ###### Returns
+> ##### Returns
 >
 > \`object\`
 >
 > ###### a
 >
-> **\`Property\`**
+>
 >
 > > **a**: \`string\`
 >
@@ -457,7 +339,7 @@ Comment for valueX
 >
 > ###### b
 >
-> **\`Property\`**
+>
 >
 > > **b**: \`string\`
 >
@@ -466,48 +348,33 @@ Comment for valueX
 >
 >
 >
+>
+>
+> > **valueZ**: \`string\`
+>
+> Nested comment for valueX.valueZ
+>
+> [partial: sources]
+>
+>
 
-
-
-##### valueZ
-
-**\`Property\`**
-
-> **valueZ**: \`string\`
-
-Nested comment for valueX.valueZ
-
-[partial: sources]
-
-
-
-
-
-### valueY
-
-**\`Property\`**
 
 > **valueY**: \`Function\`
 
 [partial: sources]
 
-#### Type declaration
+### Type declaration
 
 > (): \`string\`
->
-> [partial: sources]
->
-> ##### Returns
->
-> \`string\`
->
->
+
+[partial: sources]
+
+#### Returns
+
+\`string\`
 
 
 
-### valueZ
-
-**\`Property\`**
 
 > **valueZ**: \`string\`
 

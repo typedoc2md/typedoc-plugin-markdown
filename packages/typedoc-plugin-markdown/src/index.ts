@@ -1,4 +1,4 @@
-import { Application, Options, OptionsReader } from 'typedoc';
+import { Application } from 'typedoc';
 import { declareOptions } from './options/options';
 import { generateMarkdown, renderMarkdown } from './renderer/renderer';
 import { MarkdownTheme } from './theme';
@@ -8,19 +8,6 @@ export function load(app: Application) {
    * Exposes markdown and bootstrap the markdown theme to the renderer
    */
   app.renderer.defineTheme('markdown', MarkdownTheme);
-
-  app.options.addReader(
-    new (class implements OptionsReader {
-      name = 'markdown-theme';
-      readonly order = 900;
-      readonly supportsPackages = false;
-      read(container: Options) {
-        if (container.getValue('theme') === 'default') {
-          container.setValue('theme', 'markdown');
-        }
-      }
-    })(),
-  );
 
   /**
    * Defines all plugin options

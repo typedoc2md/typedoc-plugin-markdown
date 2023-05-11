@@ -95,7 +95,7 @@ The following options are preset with the plugin.
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
   "entryDocument": "index.md",
-  "numberPrefixOutput": true
+  "includeFileNumberPrefixes": true
 }
 ```
 

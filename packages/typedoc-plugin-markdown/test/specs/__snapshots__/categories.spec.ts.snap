@@ -1,0 +1,507 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories: (categorizeByGroup=false) should render category TOC' 1`] = `
+"## Index
+
+### CategoryA
+
+- [CategoryInterfaceA1](index.md#categoryinterfacea1)
+- [CategoryInterfaceA2](index.md#categoryinterfacea2)
+- [categoryVariableA1](index.md#categoryvariablea1)
+- [categoryVariableA2](index.md#categoryvariablea2)
+- [categoryFunctionA1](index.md#categoryfunctiona1)
+- [categoryFunctionA2](index.md#categoryfunctiona2)
+- [categoryFunctionA3](index.md#categoryfunctiona3)
+
+### CategoryB
+
+- [categoryVariableB1](index.md#categoryvariableb1)
+- [categoryFunctionB2](index.md#categoryfunctionb2)
+
+### Other
+
+- [OtherInterfaceA](index.md#otherinterfacea)
+- [otherVariableA](index.md#othervariablea)
+- [otherVariableB](index.md#othervariableb)
+- [otherFunctionA](index.md#otherfunctiona)
+- [otherFunctionB](index.md#otherfunctionb)
+"
+`;
+
+exports[`Categories: (categorizeByGroup=false) should render category members' 1`] = `
+"## CategoryA
+
+### CategoryInterfaceA1
+
+[partial: reflectionMember]
+
+
+
+---
+
+### CategoryInterfaceA2
+
+[partial: reflectionMember]
+
+
+
+---
+
+### categoryVariableA1
+
+[partial: declarationMember]
+
+
+
+---
+
+### categoryVariableA2
+
+[partial: declarationMember]
+
+
+
+---
+
+### categoryFunctionA1()
+
+[partial: signatureMember]
+
+
+
+---
+
+### categoryFunctionA2()
+
+[partial: signatureMember]
+
+
+
+---
+
+### categoryFunctionA3()
+
+[partial: signatureMember]
+
+
+
+---
+
+## CategoryB
+
+### categoryVariableB1
+
+[partial: declarationMember]
+
+
+
+---
+
+### categoryFunctionB2()
+
+[partial: signatureMember]
+
+
+
+---
+
+## Other
+
+### OtherInterfaceA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### otherVariableA
+
+[partial: declarationMember]
+
+
+
+---
+
+### otherVariableB
+
+[partial: declarationMember]
+
+
+
+---
+
+### otherFunctionA()
+
+[partial: signatureMember]
+
+
+
+---
+
+### otherFunctionB()
+
+[partial: signatureMember]
+
+
+
+---"
+`;
+
+exports[`Categories: (excludeGroups=false) should render category TOC' 1`] = `
+"## Index
+
+### Interfaces
+
+#### CategoryA
+
+- [CategoryInterfaceA1](index.md#categoryinterfacea1)
+- [CategoryInterfaceA2](index.md#categoryinterfacea2)
+- [OtherInterfaceA](index.md#otherinterfacea)
+
+#### Other
+
+- [CategoryInterfaceA1](index.md#categoryinterfacea1)
+- [CategoryInterfaceA2](index.md#categoryinterfacea2)
+- [OtherInterfaceA](index.md#otherinterfacea)
+
+### Variables
+
+#### CategoryA
+
+- [categoryVariableA1](index.md#categoryvariablea1)
+- [categoryVariableA2](index.md#categoryvariablea2)
+- [categoryVariableB1](index.md#categoryvariableb1)
+- [otherVariableA](index.md#othervariablea)
+- [otherVariableB](index.md#othervariableb)
+
+#### CategoryB
+
+- [categoryVariableA1](index.md#categoryvariablea1)
+- [categoryVariableA2](index.md#categoryvariablea2)
+- [categoryVariableB1](index.md#categoryvariableb1)
+- [otherVariableA](index.md#othervariablea)
+- [otherVariableB](index.md#othervariableb)
+
+#### Other
+
+- [categoryVariableA1](index.md#categoryvariablea1)
+- [categoryVariableA2](index.md#categoryvariablea2)
+- [categoryVariableB1](index.md#categoryvariableb1)
+- [otherVariableA](index.md#othervariablea)
+- [otherVariableB](index.md#othervariableb)
+
+### Functions
+
+#### CategoryA
+
+- [categoryFunctionA1](index.md#categoryfunctiona1)
+- [categoryFunctionA2](index.md#categoryfunctiona2)
+- [categoryFunctionA3](index.md#categoryfunctiona3)
+- [categoryFunctionB2](index.md#categoryfunctionb2)
+- [otherFunctionA](index.md#otherfunctiona)
+- [otherFunctionB](index.md#otherfunctionb)
+
+#### CategoryB
+
+- [categoryFunctionA1](index.md#categoryfunctiona1)
+- [categoryFunctionA2](index.md#categoryfunctiona2)
+- [categoryFunctionA3](index.md#categoryfunctiona3)
+- [categoryFunctionB2](index.md#categoryfunctionb2)
+- [otherFunctionA](index.md#otherfunctiona)
+- [otherFunctionB](index.md#otherfunctionb)
+
+#### Other
+
+- [categoryFunctionA1](index.md#categoryfunctiona1)
+- [categoryFunctionA2](index.md#categoryfunctiona2)
+- [categoryFunctionA3](index.md#categoryfunctiona3)
+- [categoryFunctionB2](index.md#categoryfunctionb2)
+- [otherFunctionA](index.md#otherfunctiona)
+- [otherFunctionB](index.md#otherfunctionb)
+"
+`;
+
+exports[`Categories: (excludeGroups=false) should render category members' 1`] = `
+"## Interfaces
+
+### CategoryA
+
+#### CategoryInterfaceA1
+
+[partial: reflectionMember]
+
+
+
+---
+
+#### CategoryInterfaceA2
+
+[partial: reflectionMember]
+
+
+
+---
+
+### Other
+
+#### OtherInterfaceA
+
+[partial: reflectionMember]
+
+
+
+---
+
+## Variables
+
+### CategoryA
+
+#### categoryVariableA1
+
+[partial: declarationMember]
+
+
+
+---
+
+#### categoryVariableA2
+
+[partial: declarationMember]
+
+
+
+---
+
+### CategoryB
+
+#### categoryVariableB1
+
+[partial: declarationMember]
+
+
+
+---
+
+### Other
+
+#### otherVariableA
+
+[partial: declarationMember]
+
+
+
+---
+
+#### otherVariableB
+
+[partial: declarationMember]
+
+
+
+---
+
+## Functions
+
+### CategoryA
+
+#### categoryFunctionA1()
+
+[partial: signatureMember]
+
+
+
+---
+
+#### categoryFunctionA2()
+
+[partial: signatureMember]
+
+
+
+---
+
+#### categoryFunctionA3()
+
+[partial: signatureMember]
+
+
+
+---
+
+### CategoryB
+
+#### categoryFunctionB2()
+
+[partial: signatureMember]
+
+
+
+---
+
+### Other
+
+#### otherFunctionA()
+
+[partial: signatureMember]
+
+
+
+---
+
+#### otherFunctionB()
+
+[partial: signatureMember]
+
+
+
+---"
+`;
+
+exports[`Categories: (excludeGroups=true) should render category TOC' 1`] = `
+"## Index
+
+### CategoryA
+
+- [CategoryInterfaceA1](index.md#categoryinterfacea1)
+- [CategoryInterfaceA2](index.md#categoryinterfacea2)
+- [categoryVariableA1](index.md#categoryvariablea1)
+- [categoryVariableA2](index.md#categoryvariablea2)
+- [categoryFunctionA1](index.md#categoryfunctiona1)
+- [categoryFunctionA2](index.md#categoryfunctiona2)
+- [categoryFunctionA3](index.md#categoryfunctiona3)
+
+### CategoryB
+
+- [categoryVariableB1](index.md#categoryvariableb1)
+- [categoryFunctionB2](index.md#categoryfunctionb2)
+
+### Other
+
+- [OtherInterfaceA](index.md#otherinterfacea)
+- [otherVariableA](index.md#othervariablea)
+- [otherVariableB](index.md#othervariableb)
+- [otherFunctionA](index.md#otherfunctiona)
+- [otherFunctionB](index.md#otherfunctionb)
+"
+`;
+
+exports[`Categories: (excludeGroups=true) should render category members' 1`] = `
+"## CategoryA
+
+### CategoryInterfaceA1
+
+[partial: reflectionMember]
+
+
+
+---
+
+### CategoryInterfaceA2
+
+[partial: reflectionMember]
+
+
+
+---
+
+### categoryVariableA1
+
+[partial: declarationMember]
+
+
+
+---
+
+### categoryVariableA2
+
+[partial: declarationMember]
+
+
+
+---
+
+### categoryFunctionA1()
+
+[partial: signatureMember]
+
+
+
+---
+
+### categoryFunctionA2()
+
+[partial: signatureMember]
+
+
+
+---
+
+### categoryFunctionA3()
+
+[partial: signatureMember]
+
+
+
+---
+
+## CategoryB
+
+### categoryVariableB1
+
+[partial: declarationMember]
+
+
+
+---
+
+### categoryFunctionB2()
+
+[partial: signatureMember]
+
+
+
+---
+
+## Other
+
+### OtherInterfaceA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### otherVariableA
+
+[partial: declarationMember]
+
+
+
+---
+
+### otherVariableB
+
+[partial: declarationMember]
+
+
+
+---
+
+### otherFunctionA()
+
+[partial: signatureMember]
+
+
+
+---
+
+### otherFunctionB()
+
+[partial: signatureMember]
+
+
+
+---"
+`;

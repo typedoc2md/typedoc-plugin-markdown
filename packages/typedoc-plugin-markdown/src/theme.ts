@@ -7,12 +7,12 @@ import {
   Renderer,
   Theme,
 } from 'typedoc';
-import { MarkdownThemeConverterContext } from './theme-converter-context';
+import { UrlBuilder } from './converter/url-builder';
+import { TypedocPluginMarkdownOptions } from './models';
 import { MarkdownThemeRenderContext } from './theme-render-context';
 
 export class MarkdownTheme extends Theme {
   private _renderContext: MarkdownThemeRenderContext;
-  private _converterContext: MarkdownThemeConverterContext;
   private _prettierOptions: prettier.Options | null;
 
   constructor(renderer: Renderer) {
@@ -40,16 +40,6 @@ export class MarkdownTheme extends Theme {
     return this._renderContext;
   }
 
-  getConverterContext() {
-    if (!this._converterContext) {
-      this._converterContext = new MarkdownThemeConverterContext(
-        this,
-        this.application.options,
-      );
-    }
-    return this._converterContext;
-  }
-
   getPrettierOptions() {
     if (!this._prettierOptions) {
       this._prettierOptions = this.resolvePrettierOptions();
@@ -73,11 +63,17 @@ export class MarkdownTheme extends Theme {
   }
 
   getUrls(project: ProjectReflection) {
-    return this.getConverterContext().getUrls(project);
+    const urls = new UrlBuilder(
+      this.getRenderContext(),
+      project,
+      this.application.options.getRawValues() as Partial<TypedocPluginMarkdownOptions>,
+    ).getUrls();
+
+    return urls;
   }
 
   getNavigation(project: ProjectReflection) {
-    return this.getConverterContext().getNavigation(project);
+    return [];
   }
 
   protected onBeginPage(page: PageEvent) {

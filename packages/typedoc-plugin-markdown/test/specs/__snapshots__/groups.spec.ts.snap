@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Groups: (excludeGroups=false) should render group TOC' 1`] = `
+"## Index
+
+### Enumerations
+
+- [EnumA](index.md#enuma)
+- [EnumB](index.md#enumb)
+
+### Classes
+
+- [ClassA](index.md#classa)
+- [ClassB](index.md#classb)
+
+### Interfaces
+
+- [InterfaceA](index.md#interfacea)
+- [InterfaceB](index.md#interfaceb)
+
+### Type Aliases
+
+- [typeA](index.md#typea)
+- [typeB](index.md#typeb)
+
+### Variables
+
+- [variableA](index.md#variablea)
+- [variableB](index.md#variableb)
+
+### Functions
+
+- [functionA](index.md#functiona)
+- [functionB](index.md#functionb)
+"
+`;
+
+exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
+"## Enumerations
+
+### EnumA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### EnumB
+
+[partial: reflectionMember]
+
+
+
+---
+
+## Classes
+
+### ClassA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### ClassB
+
+[partial: reflectionMember]
+
+
+
+---
+
+## Interfaces
+
+### InterfaceA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### InterfaceB
+
+[partial: reflectionMember]
+
+
+
+---
+
+## Type Aliases
+
+### typeA
+
+[partial: declarationMember]
+
+
+
+---
+
+### typeB
+
+[partial: declarationMember]
+
+
+
+---
+
+## Variables
+
+### variableA
+
+[partial: declarationMember]
+
+
+
+---
+
+### variableB
+
+[partial: declarationMember]
+
+
+
+---
+
+## Functions
+
+### functionA()
+
+[partial: signatureMember]
+
+
+
+---
+
+### functionB()
+
+[partial: signatureMember]
+
+
+
+---"
+`;
+
+exports[`Groups: (excludeGroups=true) should render group TOC' 1`] = `
+"## Index
+
+- [EnumA](index.md#enuma)
+- [EnumB](index.md#enumb)
+- [ClassA](index.md#classa)
+- [ClassB](index.md#classb)
+- [InterfaceA](index.md#interfacea)
+- [InterfaceB](index.md#interfaceb)
+- [typeA](index.md#typea)
+- [typeB](index.md#typeb)
+- [variableA](index.md#variablea)
+- [variableB](index.md#variableb)
+- [functionA](index.md#functiona)
+- [functionB](index.md#functionb)"
+`;
+
+exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
+"## Enumerations
+
+### EnumA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### EnumB
+
+[partial: reflectionMember]
+
+
+
+---
+
+## Classes
+
+### ClassA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### ClassB
+
+[partial: reflectionMember]
+
+
+
+---
+
+## Interfaces
+
+### InterfaceA
+
+[partial: reflectionMember]
+
+
+
+---
+
+### InterfaceB
+
+[partial: reflectionMember]
+
+
+
+---
+
+## Type Aliases
+
+### typeA
+
+[partial: declarationMember]
+
+
+
+---
+
+### typeB
+
+[partial: declarationMember]
+
+
+
+---
+
+## Variables
+
+### variableA
+
+[partial: declarationMember]
+
+
+
+---
+
+### variableB
+
+[partial: declarationMember]
+
+
+
+---
+
+## Functions
+
+### functionA()
+
+[partial: signatureMember]
+
+
+
+---
+
+### functionB()
+
+[partial: signatureMember]
+
+
+
+---"
+`;

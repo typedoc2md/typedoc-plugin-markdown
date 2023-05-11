@@ -31,17 +31,25 @@ function projectHeader(
     page.project,
     context.getOption('includeVersion'),
   );
-  const entryDocument = context.getOption('entryDocument');
 
   const hasReadme = !context.getOption('readme').endsWith('none');
 
-  const md = [`${link(bold(projectName), context.relativeURL(entryDocument))}`];
+  const md = [
+    `${link(
+      bold(projectName),
+      context.relativeURL(hasReadme ? context.readmeFile : context.indexFile),
+    )}`,
+  ];
 
   if (hasReadme) {
     md.push(
       `(${link(
         bold(page.project.groups ? 'Index' : 'Packages'),
-        context.relativeURL(page.project.url),
+        context.relativeURL(
+          context.getOption('includeFileNumberPrefixes')
+            ? `01-${context.indexFile}`
+            : context.indexFile,
+        ),
       )})`,
     );
   }
@@ -60,9 +68,7 @@ export function packageHeader(
 
   const hasReadme = Boolean(packageItem.readme);
 
-  const readmeUrl = `${path.dirname(packageItem.url)}/${context.getOption(
-    'entryDocument',
-  )}`;
+  const readmeUrl = `${path.dirname(packageItem.url)}/${context.readmeFile}`;
 
   const md = [
     `${link(

@@ -16,6 +16,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('stringConstWithDefaultValue') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -24,6 +25,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('stringLetWithDefaultValue') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -32,6 +34,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('undefinedNumberDeclaration') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -40,6 +43,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('objectLiteralDeclaration') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -48,6 +52,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('objectLiteralAsConstDeclaration') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -56,6 +61,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('typeLiteralDeclaration') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -64,6 +70,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('__DOUBLE_UNDERSCORES_DECLARATION__') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -72,6 +79,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('AnyFunctionType') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -80,6 +88,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('functionDeclaration') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -88,6 +97,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('indexableDeclaration') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -96,6 +106,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         (project.getChildByName('EnumDeclarations') as any).children[0],
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -105,6 +116,7 @@ describe(`Declarations:`, () => {
       context.partials.declarationMember(
         (project.getChildByName('EnumDeclarationsWithDefaults') as any)
           .children[0],
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -113,6 +125,7 @@ describe(`Declarations:`, () => {
     expect(
       context.partials.declarationMember(
         project.getChildByName('getterAndSetter') as any,
+        2,
       ),
     ).toMatchSnapshot();
   });

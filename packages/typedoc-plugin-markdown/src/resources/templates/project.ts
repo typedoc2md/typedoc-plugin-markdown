@@ -10,8 +10,6 @@ export function projectTemplate(
 ) {
   const md: string[] = [];
 
-  const entryDocument = context.getOption('entryDocument');
-
   if (!context.getOption('hidePageHeader')) {
     md.push(context.partials.pageHeader(page));
   }
@@ -35,14 +33,16 @@ export function projectTemplate(
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
         Boolean(projectPackage.readme)
-          ? `${path.dirname(projectPackage.url || '')}/${entryDocument}`
+          ? `${path.dirname(projectPackage.url || '')}/${
+              this.context.readmeFile
+            }`
           : projectPackage.url,
       )})`;
     });
     md.push(packagesList?.join('\n') || '');
   }
 
-  md.push(context.partials.members(page.model));
+  md.push(context.partials.members(page.model, 2));
 
   return md.join('\n\n');
 }

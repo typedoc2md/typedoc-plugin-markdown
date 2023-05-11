@@ -13,7 +13,7 @@ The plugin replaces the default HTML theme with a built-in Markdown theme and ex
 
 ## Installation
 
-> Please note the `next` pre-release version may contain breaking changes within the same semantic version.
+**Please note this pre-release version may contain breaking changes within the same semantic version.**
 
 > [TypeDoc](https://typedoc.org) and [Prettier](https://prettier.io/) are both required peer dependencies.
 
@@ -32,18 +32,16 @@ typedoc --plugin typedoc-plugin-markdown
 The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/options/)
 (please note that TypeDoc options specific to the HTML theme will be ignored).
 
-### File output options
+### File output and content organization
 
-See [File output options](./docs/file-output-options.md) for further documentation.
+- **`--outputFileStrategy`**<br>
+  Determines how output files are generated. Allowed values `modules` or `members`. Default value `members`.
+- **`--includeFileNumberPrefixes`**<br>
+  Prefixes generated files and folders with number prefixes. This is useful for auto sidebar generation. Defaults to `false`.
+- **`--excludeGroups`**<br>
+  By default members are grouped by kind (eg Classes, Functions). This options excludes such grouping so all members are rendered and sorted at same level. Defaults to `false`.
 
-- **`--entryDocument`**<br>
-  The file name of the entry document. Defaults to `README.md`.
-- **`--kindsWithOwnFile`**<br>
-  Determines which reflection kinds should be written to its own file. Expected values [`None`, `All`] OR Array of [`Class`, `Interface`, `Enum`, `Function`, `Variable`, `TypeAlias`]. Defaults to `All`.
-- **`--flattenOutputFiles`**<br>
-  Flatten output files without folders. Note this does not effect the UI. Defaults to `false`.
-- **`--numberPrefixOutput`**<br>
-  Prefixes docs and folders by number prefixes if applicable. Useful for auto sidebar generation. Defaults to `false`.
+Please see [File output and content organization](./docs/file-output-options.md) for further documentation.
 
 ### UI options
 
@@ -61,8 +59,6 @@ See [File output options](./docs/file-output-options.md) for further documentati
   Do not print reflection hierarchy. Defaults to `false`.
 - **`--indexPageTitle`**<br>
   The title of the main index / modules page. If not set will default to the project name.
-- **`--groupByKinds`**<br>
-  Group reflection kinds by headings (if applicable). If set to `false` all reflections will group at the same level. Note this effects directory stucture and UI organisation heading structure. Defaults to `true`.
 - **`--indentifiersAsCodeBlocks`**<br>
   Format signature and declaration identifiers in code blocks. Note if `true` references will not be linked. Defaults to `false`.
 - **`--propertiesFormat`**<br>

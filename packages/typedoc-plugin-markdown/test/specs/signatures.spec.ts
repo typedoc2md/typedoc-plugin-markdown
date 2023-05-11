@@ -16,6 +16,7 @@ describe(`Signatures:`, () => {
     expect(
       context.partials.signatureMember(
         (project.getChildByName('CallableSignature') as any).signatures[0],
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -25,6 +26,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('privateFunction') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -34,6 +36,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithParameters') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -43,6 +46,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionReturningAnObject') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -52,6 +56,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('promiseReturningAnObject') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -61,6 +66,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('promiseReturningASymbol') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -70,6 +76,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionReturningAFunction') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -79,6 +86,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithRest') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -88,6 +96,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithOptionalParam') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -97,6 +106,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithUnionTypes') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -106,6 +116,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithDefaults') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -115,6 +126,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('commentsInReturn') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -124,6 +136,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithNamedParams') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -133,6 +146,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithNamedParamsAndComments') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -142,6 +156,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithPipesInParamsAndComments') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -151,6 +166,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithReferenceType') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -160,6 +176,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('functionWithNestedParams') as any)
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });
@@ -169,6 +186,7 @@ describe(`Signatures:`, () => {
       context.partials.signatureMember(
         (project.getChildByName('ClassWithConstructor') as any).children[0]
           .signatures[0] as SignatureReflection,
+        2,
       ),
     ).toMatchSnapshot();
   });

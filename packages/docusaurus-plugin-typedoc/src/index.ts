@@ -1,15 +1,8 @@
 import * as path from 'path';
-import {
-  Application,
-  TSConfigReader,
-  TypeDocOptions,
-  TypeDocReader,
-} from 'typedoc';
-import { load as loadTypedocPluginFrontmatter } from 'typedoc-plugin-frontmatter';
-import { load as loadTypedocPluginMarkdown } from 'typedoc-plugin-markdown';
+import { Application, TypeDocOptions } from 'typedoc';
 import { PluginOptions } from './models';
-import { getPluginOptions } from './options';
-import { loadDocusaurusTypedocPlugin } from './typedoc-plugin';
+import { getPluginOptions, loadOptions } from './options';
+import { loadRenderer } from './renderer';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -58,12 +51,9 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const app = new Application();
 
-  app.options.addReader(new TypeDocReader());
-  app.options.addReader(new TSConfigReader());
+  loadOptions(app);
 
-  loadTypedocPluginMarkdown(app);
-  loadTypedocPluginFrontmatter(app);
-  loadDocusaurusTypedocPlugin(app);
+  loadRenderer(app);
 
   await app.bootstrapWithPlugins(
     optionsPassedToTypeDoc as unknown as Partial<TypeDocOptions>,

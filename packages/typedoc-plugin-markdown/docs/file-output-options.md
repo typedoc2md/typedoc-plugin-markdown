@@ -1,68 +1,115 @@
-# File output options
+# File output and content organization
 
-TypeDoc creates documentation according to exports. The modules strucutre will be driven by the implemented an entry point config. https://typedoc.org/guides/options/#entrypointstrategy.
+TypeDoc creates documentation according to exports. The module structure is drived from the `--entryPoints` configuration. https://typedoc.org/options/input/#entrypoints.
 
-The plugin aims to provide some flexibility as to how files can be generated.
+All TypeDoc organization and sorting options will be adhered to https://typedoc.org/options/organization/.
 
-### Output folder structure
+In addition, the plugin aims to provide some additional flexibility as to how files are generated.
 
-By default the file structure is generated as per module path structure and then reflections.
+## Output folder structure
 
-#### Example
+By default the file structure is generated as per the project module structure.
 
-```
-├── README.md
-│ ├── moduleA
-|    ├── classes
-|      ├── ClassA.md
-│    ├── interfaces
-|      ├── InterfaceA.md
-│ ├── moduleB
-|    ├── classes
-|      ├── ClassA.md
-│    ├── interfaces
-|      ├── InterfaceA.md
-```
+### --outputFileStrategy
 
-## Configuring how files are generated
+The plugin exposes an additional option `outputFileStrategy` that determines how files are generated. The options are `members` or `modules`.
 
-By default all exported reflections are contained in their own file as per the HTML theme. Modules and namespaces always have a file in their own scope, however configuring what reflections are hoisted onto the module file can be configured with the `kindsWithOwnFile` option.
+#### `members` (default)
 
-All reflections can be hoisted onto a single module/namespace file with `None`, or to defined at a granular level the option accepts an array of the following types of reflections.
+Each member is exported to its own file. This is the standard behaviour of the HTML theme and the plugin default.
 
-- `Class` - reflections which represent a class.
-- `Interface` - reflections which represent an interface
-- `TypeAlias` - reflections which represent a type alias
-- `Enumeration` - reflections which represent an enum.
-- `Function` - reflections which represent a function's or method's signatures.
-- `Variable` - reflections which represent a variable.
-
-### Examples
-
-The following will create seperate files for classes and interfaces only.
-
-```bash
---kindsWithOwnFile class --kindsWithOwnFile Interface
-```
-
-_Note when definiting arrays using a json options file is less verbose:_
+**typedoc.json**
 
 ```js
 {
-  kindsWithOwnFile: ['Class', 'Interface'];
+  outputFileStrategy: 'members';
 }
 ```
 
-To hoist all reflections onto the module document can be achieved with the `none` options. If exporting from a single entrypoint this will effectively result in a single file documentation.
-
-```bash
---kindsWithOwnFile none
-```
-
-The result will be all reflections are documented onto a single module file:
+**Folder structure**
 
 ```
 ├── README.md
-│── moduleA.md
-│── moduleB.md
+├── index.md
+│ ├── module.moduleA
+|    ├── index.md
+|    ├── classes
+|      ├── class.ClassA.md
+│    ├── interfaces
+|      ├── interface.InterfaceA.md
+│ ├── module.moduleB
+|    ├── index.md
+|    ├── classes
+|      ├── class.ClassA.md
+│    ├── interfaces
+|      ├── interface.InterfaceA.md
 ```
+
+#### `modules`
+
+This mode generates a single file for every Module and Namespace where all module members are hoisted. This creates a flat navigation structure and reduces the amount of files generated.
+
+**typedoc.json**
+
+```js
+{
+  outputFileStrategy: 'modules';
+}
+```
+
+**Folder structure**
+
+```
+├── README.md
+├── index.md
+├── module.moduleA.md
+├── module.moduleB.md
+```
+
+### --includeFileNumberPrefixes
+
+The `--includeFileNumberPrefixesA` prefixes files and folders with number prefxies. This makes them appear in the file system in the same order when sorted by file name and is useful where auto sidebar generation may be required.
+
+**Folder structure**
+
+```
+├── index.md
+│ ├── 01-module.moduleA
+|    ├── index.md
+|    ├── 01-Classes
+|      ├── 01-class.ClassA.md
+|      ├── 02-class.ClassB.md
+│    ├── 02-Interfaces
+|      ├── 01-interface.InterfaceA.md
+│ ├── 02-module.moduleB
+```
+
+### --excludeGroups
+
+By default members are grouped under their respecitve reflection kind headings:
+
+```markdown
+# SomeModule
+
+## Classes
+
+### ClassA
+
+## Functions
+
+### FunctionA
+```
+
+This `excludeGroups` option excludes such grouping so all members are rendered and sorted at same level.
+
+```markdown
+# SomeModule
+
+## ClassA
+
+## FunctionA
+```
+
+The is more relevant when `outputFileStrategy` equals `modules`. When `outputFileStrategy` equals `members` only the index page structure is effected.
+
+This will also effect the generated file output and remove the respective group folders.
