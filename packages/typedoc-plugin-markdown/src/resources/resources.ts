@@ -49,6 +49,7 @@ import { signatureMember } from './partials/member.signature';
 import { sources } from './partials/member.sources';
 import { memberTitle } from './partials/member.title';
 import { member } from './partials/member';
+import { typeDeclarationMember } from './partials/member.type-declaration';
 import { members } from './partials/members';
 import { navigation } from './partials/navigation';
 import { pageHeader } from './partials/page.header';
@@ -104,13 +105,14 @@ export type Partials = {
   sources: (reflection: DeclarationReflection | SignatureReflection) => string;
   memberTitle: (reflection: DeclarationReflection, typeParams?: boolean) => string;
   member: (reflection: DeclarationReflection, headingLevel: number) => string;
+  typeDeclarationMember: (typeDeclaration: DeclarationReflection, headingLevel: number) => string;
   members: (container: ContainerReflection, headingLevel: number) => string;
   navigation: (project: ProjectReflection) => string;
   pageHeader: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   pageTitle: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   enumMembersTable: (props: DeclarationReflection[]) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
-  propertiesTable: (props: DeclarationReflection[]) => string;
+  propertiesTable: (props: DeclarationReflection[], nameCol?: string) => string;
   typeParametersTable: (typeParameters: TypeParameterReflection[]) => string;
   toc: (reflection: DeclarationReflection | ProjectReflection) => string;
   arrayType: (arrayType: ArrayType) => string;
@@ -157,6 +159,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   sources: bind(sources, context),
   memberTitle: bind(memberTitle, context),
   member: bind(member, context),
+  typeDeclarationMember: bind(typeDeclarationMember, context),
   members: bind(members, context),
   navigation: bind(navigation, context),
   pageHeader: bind(pageHeader, context),

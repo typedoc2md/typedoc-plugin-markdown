@@ -58,13 +58,12 @@ export function signatureMember(
     }
 
     if (typeDeclaration?.children) {
-      if (context.getOption('propertiesFormat').toLowerCase() === 'table') {
-        md.push(context.partials.propertiesTable(typeDeclaration.children));
-      } else {
-        typeDeclaration.children.forEach((declarationChild) => {
-          md.push(context.partials.member(declarationChild, headingLevel + 1));
-        });
-      }
+      md.push(
+        context.partials.typeDeclarationMember(
+          typeDeclaration,
+          headingLevel + 1,
+        ),
+      );
     }
 
     md.push(context.partials.inheritance(signature, headingLevel + 1));

@@ -4,6 +4,7 @@ import {
   ReflectionCategory,
   ReflectionKind,
 } from 'typedoc';
+import { FormatStyle } from '../../models';
 import { SYMBOLS_WITH_DOCUMENTS } from '../../support/constants';
 import { heading, horizontalRule } from '../../support/els';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
@@ -75,12 +76,12 @@ export function members(
 
             if (
               isPropertiesGroup &&
-              context.getOption('propertiesFormat') === 'table'
+              context.getOption('propertiesFormat') === FormatStyle.Table
             ) {
               md.push(context.partials.propertiesTable(group.children));
             } else if (
               isEnumGroup &&
-              context.getOption('enumMembersFormat') === 'table'
+              context.getOption('enumMembersFormat') === FormatStyle.Table
             ) {
               md.push(context.partials.enumMembersTable(group.children));
             } else {

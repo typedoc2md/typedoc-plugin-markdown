@@ -45,33 +45,40 @@ export function declarationMember(
       typeDeclaration?.signatures?.length ||
       typeDeclaration?.children?.length
     ) {
-      md.push(heading(headingLevel, `Type declaration`));
+      if (typeDeclaration?.parent?.kindOf(ReflectionKind.Property)) {
+        md.push(
+          heading(
+            headingLevel,
+            `Type declaration (${typeDeclaration.parent?.name})`,
+          ),
+        );
+      } else {
+        md.push(heading(headingLevel, `Type declaration`));
+      }
 
       if (typeDeclaration?.signatures?.length) {
         typeDeclaration.signatures.forEach((signature) => {
-          md.push(
-            context.partials.signatureMember(signature, headingLevel + 1),
-          );
+          if (typeDeclaration?.parent?.kindOf(ReflectionKind.Property)) {
+            md.push(
+              blockQuoteBlock(
+                context.partials.signatureMember(signature, headingLevel + 1),
+              ),
+            );
+          } else {
+            md.push(
+              context.partials.signatureMember(signature, headingLevel + 1),
+            );
+          }
         });
       }
 
       if (typeDeclaration?.children?.length) {
-        if (context.getOption('propertiesFormat').toLowerCase() === 'table') {
-          md.push(context.partials.propertiesTable(typeDeclaration.children));
-        } else {
-          const list = typeDeclaration.children.map((declarationChild) => {
-            return context.partials.declarationMember(
-              declarationChild,
-              headingLevel + 1,
-            );
-          });
-
-          if (typeDeclaration?.parent?.kindOf(ReflectionKind.Variable)) {
-            md.push(list.join('\n'));
-          } else {
-            md.push(blockQuoteBlock(list.join('\n')));
-          }
-        }
+        md.push(
+          context.partials.typeDeclarationMember(
+            typeDeclaration,
+            headingLevel + 1,
+          ),
+        );
       }
     }
   }

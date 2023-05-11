@@ -6,11 +6,12 @@ import { MarkdownThemeRenderContext } from '../../theme-render-context';
 export function propertiesTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
+  nameCol = 'Property',
 ) {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
 
-  const headers = ['Property'];
+  const headers = [nameCol];
 
   headers.push('Type');
 

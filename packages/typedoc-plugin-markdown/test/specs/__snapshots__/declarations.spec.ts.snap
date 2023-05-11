@@ -196,7 +196,7 @@ Comment for valueX
 
 [partial: sources]
 
-### Type declaration
+### Type declaration (valueX)
 
 > > **valueA**: \`number\`[]
 >
@@ -209,7 +209,7 @@ Comment for valueX
 >
 > [partial: sources]
 >
-> #### Type declaration
+> #### Type declaration (valueB)
 >
 > > > **valueB1**: \`number\`  = \`1\`
 > >
@@ -236,19 +236,19 @@ Comment for valueX
 
 [partial: sources]
 
-### Type declaration
+### Type declaration (valueY)
 
-> (): \`string\`
-
-Comment for value Y
-
-[partial: sources]
-
-#### Returns
-
-\`string\`
-
-
+> > (): \`string\`
+>
+> Comment for value Y
+>
+> [partial: sources]
+>
+> #### Returns
+>
+> \`string\`
+>
+>
 
 
 > **valueZ**: \`string\`  = \`'foo'\`
@@ -296,7 +296,7 @@ Comment for valueX
 
 [partial: sources]
 
-### Type declaration
+### Type declaration (valueX)
 
 > > **valueA**: \`number\`[]
 >
@@ -307,47 +307,38 @@ Comment for valueX
 >
 > [partial: sources]
 >
-> #### Type declaration
+> #### Type declaration (valueY)
 >
-> > (z: \`string\`): \`object\`
->
-> Nested comment for valueX.valueY
->
-> [partial: sources]
->
-> ##### Parameters
->
->
-> | Parameter | Type |
-> | :------ | :------ |
-> | z | \`string\` |
->
->
-> ##### Returns
->
-> \`object\`
->
-> ###### a
->
->
->
-> > **a**: \`string\`
->
-> [partial: sources]
->
->
->
-> ###### b
->
->
->
-> > **b**: \`string\`
->
-> [partial: sources]
->
->
->
->
+> > > (z: \`string\`): \`object\`
+> >
+> > Nested comment for valueX.valueY
+> >
+> > [partial: sources]
+> >
+> > ##### Parameters
+> >
+> >
+> > | Parameter | Type |
+> > | :------ | :------ |
+> > | z | \`string\` |
+> >
+> >
+> > ##### Returns
+> >
+> > \`object\`
+> >
+> > > **a**: \`string\`
+> >
+> > [partial: sources]
+> >
+> >
+> > > **b**: \`string\`
+> >
+> > [partial: sources]
+> >
+> >
+> >
+> >
 >
 >
 > > **valueZ**: \`string\`
@@ -363,17 +354,17 @@ Comment for valueX
 
 [partial: sources]
 
-### Type declaration
+### Type declaration (valueY)
 
-> (): \`string\`
-
-[partial: sources]
-
-#### Returns
-
-\`string\`
-
-
+> > (): \`string\`
+>
+> [partial: sources]
+>
+> #### Returns
+>
+> \`string\`
+>
+>
 
 
 > **valueZ**: \`string\`

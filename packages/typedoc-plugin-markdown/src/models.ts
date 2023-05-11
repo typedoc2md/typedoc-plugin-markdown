@@ -1,11 +1,10 @@
 import { ReflectionKind, TypeDocOptionMap } from 'typedoc';
 
 /**
- * Defines how entry points are interpreted.
+ * Defines outputFileStrategy options
  * @enum
  */
 export const OutputFileStrategy = {
-  Project: 'project',
   Modules: 'modules',
   Members: 'members',
 } as const;
@@ -13,10 +12,33 @@ export const OutputFileStrategy = {
 export type OutputFileStrategy =
   (typeof OutputFileStrategy)[keyof typeof OutputFileStrategy];
 
+/**
+ * Defines format style options
+ * @enum
+ */
+export const FormatStyle = {
+  List: 'list',
+  Table: 'table',
+} as const;
+
+export type FormatStyle = (typeof FormatStyle)[keyof typeof FormatStyle];
+
+/**
+ * Defines format style options
+ * @enum
+ */
+export const AnchorFormat = {
+  Lowercase: 'lowercase',
+  Slug: 'slug',
+  None: 'none',
+} as const;
+
+export type AnchorFormat = (typeof AnchorFormat)[keyof typeof AnchorFormat];
+
 export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   anchorFormat: AnchorFormat;
   baseUrl: string;
-  enumMembersFormat: DataFormatStyle;
+  enumMembersFormat: FormatStyle;
   excludeGroups: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
@@ -27,10 +49,10 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   includeFileNumberPrefixes: boolean;
   indentifiersAsCodeBlocks: boolean;
   indexPageTitle: string;
-  kindsWithOwnFile: AvailableKindsWithOwnFile[];
   namedAnchors: boolean;
   outputFileStrategy: OutputFileStrategy;
-  propertiesFormat: DataFormatStyle;
+  propertiesFormat: FormatStyle;
+  typeDeclarationFormat: FormatStyle;
 }
 
 export interface TemplateMapping {
@@ -39,30 +61,11 @@ export interface TemplateMapping {
   kind: ReflectionKind;
 }
 
-export type AvailableKindsWithOwnFile =
-  | 'None'
-  | 'Class'
-  | 'Interface'
-  | 'Enum'
-  | 'Function'
-  | 'Variable'
-  | 'TypeAlias';
-
 export type Collapse = 'object' | 'function' | 'all' | 'none';
-
-export type DataFormatStyle = 'list' | 'table';
-
-export type AnchorFormat = 'lowercase' | 'slug' | 'none';
 
 export type FrontmatterGlobals =
   | string
   | Record<string, string | boolean | number | null>;
-
-export type FrontmatterNamingConvention =
-  | 'camelCase'
-  | 'snakeCase'
-  | 'kebabCase'
-  | 'pascalCase';
 
 export interface NavigationItem {
   title?: string;

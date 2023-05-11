@@ -293,9 +293,6 @@ module.exports = {
 };
 ```
 
-```
-
 ## License
 
 [MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/docusaurus-plugin-typedoc/LICENSE)
-```

@@ -1,5 +1,5 @@
 import { Application, Options, OptionsReader, ParameterType } from 'typedoc';
-import { OutputFileStrategy } from '../models';
+import { AnchorFormat, FormatStyle, OutputFileStrategy } from '../models';
 
 export function declareOptions(app: Application) {
   app.options.addReader(
@@ -113,15 +113,25 @@ export function declareOptions(app: Application) {
   app.options.addDeclaration({
     name: 'propertiesFormat',
     help: '[Markdown Plugin] Specify the render style of properties.',
-    type: ParameterType.String,
-    defaultValue: 'list',
+    type: ParameterType.Map,
+    map: FormatStyle,
+    defaultValue: FormatStyle.List,
   });
 
   app.options.addDeclaration({
     name: 'enumMembersFormat',
-    help: '[Markdown Plugin] Specify the render style of properties.',
-    type: ParameterType.String,
-    defaultValue: 'list',
+    help: '[Markdown Plugin] Specify the render style of enum members.',
+    type: ParameterType.Map,
+    map: FormatStyle,
+    defaultValue: FormatStyle.List,
+  });
+
+  app.options.addDeclaration({
+    name: 'typeDeclarationFormat',
+    help: '[Markdown Plugin] Specify the render style of type declration members.',
+    type: ParameterType.Map,
+    map: FormatStyle,
+    defaultValue: FormatStyle.List,
   });
 
   /**
@@ -146,8 +156,9 @@ export function declareOptions(app: Application) {
   app.options.addDeclaration({
     name: 'anchorFormat',
     help: '[Markdown Plugin] The anchor pattern to use when linking to internal symbols.',
-    type: ParameterType.String,
-    defaultValue: 'lowercase',
+    type: ParameterType.Map,
+    map: AnchorFormat,
+    defaultValue: AnchorFormat.Lowercase,
   });
 
   app.options.addDeclaration({

@@ -39,7 +39,7 @@ The following options can be used in addition to relevant [TypeDoc options](http
 - **`--includeFileNumberPrefixes`**<br>
   Prefixes generated files and folders with number prefixes. This is useful for auto sidebar generation. Defaults to `false`.
 - **`--excludeGroups`**<br>
-  By default members are grouped by kind (eg Classes, Functions). This options excludes such grouping so all members are rendered and sorted at same level. Defaults to `false`.
+  By default members are grouped by kind (eg Classes, Functions). This options excludes such grouping so all members are rendered and sorted at the same level. Defaults to `false`.
 
 Please see [File output and content organization](./docs/file-output-options.md) for further documentation.
 
@@ -65,6 +65,8 @@ Please see [File output and content organization](./docs/file-output-options.md)
   Specify the render style of properties groups for interfaces, classes and type literals. Expected values [`list`, `table`]. Defaults to `list`.
 - **`--enumMembersFormat`**<br>
   Specify the render style of Enum members. Expected values [`list`, `table`]. Defaults to `list`.
+- **`--typeDeclarationFormat`**<br>
+  Specify the render style for type declaration members. Expected values [`list`, `table`]. Defaults to `list`.
 
 ### Utility options
 
