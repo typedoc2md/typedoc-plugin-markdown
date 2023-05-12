@@ -38,6 +38,7 @@ export type AnchorFormat = (typeof AnchorFormat)[keyof typeof AnchorFormat];
 export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   anchorFormat: AnchorFormat;
   baseUrl: string;
+  entryDocument: string;
   enumMembersFormat: FormatStyle;
   excludeGroups: boolean;
   hideBreadcrumbs: boolean;

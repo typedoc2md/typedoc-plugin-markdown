@@ -3,7 +3,7 @@
 exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
 [
   "README.md",
-  "index.md",
+  "exports.md",
   "child-package/README.md",
   "child-package/index.md",
   "child-package/namespaces/namespace.Validation/index.md",
@@ -17,7 +17,7 @@ exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
 exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeFileNumberPrefixes=true) 1`] = `
 [
   "README.md",
-  "01-index.md",
+  "01-exports.md",
   "02-child-package/README.md",
   "02-child-package/01-index.md",
   "02-child-package/02-Namespaces/02-namespace.Validation/index.md",
@@ -31,7 +31,7 @@ exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeF
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] = `
 [
   "README.md",
-  "index.md",
+  "modules.md",
   "module.categories/index.md",
   "module.categories/interfaces/CategoryA/interface.CategoryInterfaceA1.md",
   "module.categories/interfaces/CategoryA/interface.CategoryInterfaceA2.md",
@@ -76,7 +76,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] 
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, includeFileNumberPrefixes: true) 1`] = `
 [
   "README.md",
-  "01-index.md",
+  "01-modules.md",
   "02-module.categories/index.md",
   "02-module.categories/01-Interfaces/01-CategoryA/01-interface.CategoryInterfaceA1.md",
   "02-module.categories/01-Interfaces/01-CategoryA/02-interface.CategoryInterfaceA2.md",
@@ -121,7 +121,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, incl
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, outputFileStrategy=modules, includeFileNumberPrefixes: true) 1`] = `
 [
   "README.md",
-  "01-index.md",
+  "01-modules.md",
   "02-module.categories.md",
   "03-module.modules_module_1/index.md",
   "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/index.md",
@@ -133,7 +133,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, outp
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, includeFileNumberPrefixes: true) 1`] = `
 [
   "README.md",
-  "01-index.md",
+  "01-modules.md",
   "02-module.categories/index.md",
   "02-module.categories/01-CategoryA/01-interface.CategoryInterfaceA1.md",
   "02-module.categories/01-CategoryA/02-interface.CategoryInterfaceA2.md",
@@ -177,7 +177,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, inclu
 
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, outputFileStrategy=modules, includeFileNumberPrefixes: true, readme=none) 1`] = `
 [
-  "index.md",
+  "README.md",
   "01-module.categories.md",
   "02-module.modules_module_1/index.md",
   "02-module.modules_module_1/01-someNameSpace/index.md",
@@ -189,7 +189,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, outpu
 exports[`Urls: (Single entrypoint) should get urls (excludeGroups=false, includeFileNumberPrefixes=true) 1`] = `
 [
   "README.md",
-  "01-index.md",
+  "01-exports.md",
   "02-Interfaces/02-interface.CategoryInterfaceA1.md",
   "02-Interfaces/03-interface.CategoryInterfaceA2.md",
   "02-Interfaces/04-interface.OtherInterfaceA.md",
@@ -209,20 +209,20 @@ exports[`Urls: (Single entrypoint) should get urls (excludeGroups=false, include
 
 exports[`Urls: (Single entrypoint) should get urls (excludeGroups=true, includeFileNumberPrefixes=true, readme=none) 1`] = `
 [
-  "index.md",
+  "README.md",
   "01-interface.CategoryInterfaceA1.md",
   "02-interface.CategoryInterfaceA2.md",
   "03-interface.OtherInterfaceA.md",
-  "01-variable.categoryVariableA1.md",
-  "02-variable.categoryVariableA2.md",
-  "03-variable.categoryVariableB1.md",
-  "04-variable.otherVariableA.md",
-  "05-variable.otherVariableB.md",
-  "01-function.categoryFunctionA1.md",
-  "02-function.categoryFunctionA2.md",
-  "03-function.categoryFunctionA3.md",
-  "04-function.categoryFunctionB2.md",
-  "05-function.otherFunctionA.md",
-  "06-function.otherFunctionB.md",
+  "04-variable.categoryVariableA1.md",
+  "05-variable.categoryVariableA2.md",
+  "06-variable.categoryVariableB1.md",
+  "07-variable.otherVariableA.md",
+  "08-variable.otherVariableB.md",
+  "09-function.categoryFunctionA1.md",
+  "10-function.categoryFunctionA2.md",
+  "11-function.categoryFunctionA3.md",
+  "12-function.categoryFunctionB2.md",
+  "13-function.otherFunctionA.md",
+  "14-function.otherFunctionB.md",
 ]
 `;

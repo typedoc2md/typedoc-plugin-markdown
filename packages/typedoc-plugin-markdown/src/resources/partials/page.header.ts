@@ -37,19 +37,21 @@ function projectHeader(
   const md = [
     `${link(
       bold(projectName),
-      context.relativeURL(hasReadme ? context.readmeFile : context.indexFile),
+      context.relativeURL(context.getOption('entryDocument')),
     )}`,
   ];
 
   if (hasReadme) {
     md.push(
       `(${link(
-        bold(page.project.groups ? 'Index' : 'Packages'),
-        context.relativeURL(
-          context.getOption('includeFileNumberPrefixes')
-            ? `01-${context.indexFile}`
-            : context.indexFile,
+        bold(
+          page.project.groups
+            ? context.getOption('entryPoints').length > 1
+              ? 'Modules'
+              : 'Exports'
+            : 'Packages',
         ),
+        context.relativeURL(page.project.url),
       )})`,
     );
   }
@@ -78,7 +80,7 @@ export function packageHeader(
   ];
 
   if (hasReadme) {
-    md.push(`(${link(bold('Index'), context.relativeURL(packageItem.url))})`);
+    md.push(`(${link(bold('Exports'), context.relativeURL(packageItem.url))})`);
   }
 
   return `${md.join(' ')}\n***\n`;

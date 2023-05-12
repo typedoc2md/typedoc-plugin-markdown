@@ -9,7 +9,6 @@ export function getSidebar(
   basePath: string,
   options: SidebarOptions,
 ) {
-  console.log(options.format);
   if (options.format === 'vuepress1') {
     return sidebarVuepress1(navigation, basePath);
   }

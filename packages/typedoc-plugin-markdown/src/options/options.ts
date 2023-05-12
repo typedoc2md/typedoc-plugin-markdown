@@ -23,10 +23,18 @@ export function declareOptions(app: Application) {
    */
 
   app.options.addDeclaration({
-    name: 'flattenOutputFiles',
-    help: '[Markdown Plugin] Flatten output files without directories.',
-    type: ParameterType.Boolean,
-    defaultValue: false,
+    name: 'outputFileStrategy',
+    help: 'Determines how files are rendered.',
+    type: ParameterType.Map,
+    map: OutputFileStrategy,
+    defaultValue: OutputFileStrategy.Members,
+  });
+
+  app.options.addDeclaration({
+    name: 'entryDocument',
+    help: '[Markdown Plugin] The file name of the entry document.',
+    type: ParameterType.String,
+    defaultValue: 'README.md',
   });
 
   app.options.addDeclaration({
@@ -34,14 +42,6 @@ export function declareOptions(app: Application) {
     help: '[Markdown Plugin] Prefixes docs and folders by number prefixes if applicable.',
     type: ParameterType.Boolean,
     defaultValue: false,
-  });
-
-  app.options.addDeclaration({
-    name: 'outputFileStrategy',
-    help: 'Determines how files are rendered.',
-    type: ParameterType.Map,
-    map: OutputFileStrategy,
-    defaultValue: OutputFileStrategy.Members,
   });
 
   app.options.addDeclaration({

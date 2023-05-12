@@ -5,33 +5,33 @@ exports[`Groups: (excludeGroups=false) should render group TOC' 1`] = `
 
 ### Enumerations
 
-- [EnumA](index.md#enuma)
-- [EnumB](index.md#enumb)
+- [EnumA](exports.md#enuma)
+- [EnumB](exports.md#enumb)
 
 ### Classes
 
-- [ClassA](index.md#classa)
-- [ClassB](index.md#classb)
+- [ClassA](exports.md#classa)
+- [ClassB](exports.md#classb)
 
 ### Interfaces
 
-- [InterfaceA](index.md#interfacea)
-- [InterfaceB](index.md#interfaceb)
+- [InterfaceA](exports.md#interfacea)
+- [InterfaceB](exports.md#interfaceb)
 
 ### Type Aliases
 
-- [typeA](index.md#typea)
-- [typeB](index.md#typeb)
+- [typeA](exports.md#typea)
+- [typeB](exports.md#typeb)
 
 ### Variables
 
-- [variableA](index.md#variablea)
-- [variableB](index.md#variableb)
+- [variableA](exports.md#variablea)
+- [variableB](exports.md#variableb)
 
 ### Functions
 
-- [functionA](index.md#functiona)
-- [functionB](index.md#functionb)
+- [functionA](exports.md#functiona)
+- [functionB](exports.md#functionb)
 "
 `;
 
@@ -148,18 +148,18 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 exports[`Groups: (excludeGroups=true) should render group TOC' 1`] = `
 "## Index
 
-- [EnumA](index.md#enuma)
-- [EnumB](index.md#enumb)
-- [ClassA](index.md#classa)
-- [ClassB](index.md#classb)
-- [InterfaceA](index.md#interfacea)
-- [InterfaceB](index.md#interfaceb)
-- [typeA](index.md#typea)
-- [typeB](index.md#typeb)
-- [variableA](index.md#variablea)
-- [variableB](index.md#variableb)
-- [functionA](index.md#functiona)
-- [functionB](index.md#functionb)"
+- [EnumA](exports.md#enuma)
+- [EnumB](exports.md#enumb)
+- [ClassA](exports.md#classa)
+- [ClassB](exports.md#classb)
+- [InterfaceA](exports.md#interfacea)
+- [InterfaceB](exports.md#interfaceb)
+- [typeA](exports.md#typea)
+- [typeB](exports.md#typeb)
+- [variableA](exports.md#variablea)
+- [variableB](exports.md#variableb)
+- [functionA](exports.md#functiona)
+- [functionB](exports.md#functionb)"
 `;
 
 exports[`Groups: (excludeGroups=true) should render group members' 1`] = `

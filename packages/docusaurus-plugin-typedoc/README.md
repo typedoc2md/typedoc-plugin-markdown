@@ -84,9 +84,7 @@ The following TypeDoc / Markdown plugin options can be passed to config:
 - [typedoc](https://typedoc.org/options) options (HTML specific output options that will be ignored).
 - [typedoc-plugin-markdown ](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#options) options (Some options are already preset to target Docusaurus).
 
-#### Docusaurus presets
-
-The following options are preset with the plugin.
+The following typedoc-plugin-markdown options are preset with the plugin.
 
 ```json
 {

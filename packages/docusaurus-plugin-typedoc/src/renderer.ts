@@ -30,6 +30,7 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
 
   const hasReadme = !app.options.getValue('readme').endsWith('none');
   const sidebar = app.options.getValue('sidebar') as SidebarOptions;
+  const isModulesPage = event.page?.url.endsWith(renderContext.modulesFile);
   const isIndexPage = event.page?.url.endsWith(renderContext.indexFile);
   const isReadmePage = event.page?.url.endsWith(renderContext.readmeFile);
   const isPackageModule =
@@ -39,7 +40,7 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
   let pluginFrontmatter: Record<string, any> = {};
 
   // Add titles to all pages
-  if (!isIndexPage && !isReadmePage) {
+  if (!isModulesPage && !isReadmePage) {
     pluginFrontmatter = {
       ...pluginFrontmatter,
       title: event.page?.model?.name,
@@ -50,7 +51,7 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
     // Entry url
     if (
       event.page?.url === renderContext.readmeFile ||
-      (!hasReadme && isIndexPage)
+      (!hasReadme && isModulesPage)
     ) {
       if (sidebar.categoryLabel) {
         pluginFrontmatter = {
@@ -67,24 +68,10 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
       }
     }
 
-    if (isIndexPage) {
+    if (isModulesPage) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
         sidebar_label: sidebar.indexLabel,
-      };
-    }
-
-    if (isIndexPage) {
-      pluginFrontmatter = {
-        ...pluginFrontmatter,
-        sidebar_label: sidebar.indexLabel,
-      };
-    }
-
-    if (isIndexPage && !Boolean((event.page.model as any)?.groups)) {
-      pluginFrontmatter = {
-        ...pluginFrontmatter,
-        sidebar_label: 'Packages',
       };
     }
 
@@ -92,6 +79,13 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
         sidebar_label: event.page.model.name,
+      };
+    }
+
+    if (isPackageModule && isIndexPage && Boolean(event.page.model?.readme)) {
+      pluginFrontmatter = {
+        ...pluginFrontmatter,
+        sidebar_label: sidebar.indexLabel,
       };
     }
 

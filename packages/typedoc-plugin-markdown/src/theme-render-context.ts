@@ -8,6 +8,8 @@ import { MarkdownTheme } from './theme';
 export class MarkdownThemeRenderContext {
   public readmeFile = 'README.md';
   public indexFile = 'index.md';
+  public modulesFile = 'modules.md';
+  public exportsFile = 'exports.md';
 
   private _activeLocation: string;
 

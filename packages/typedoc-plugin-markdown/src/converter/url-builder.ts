@@ -8,35 +8,16 @@ import {
   ReflectionKind,
   UrlMapping,
 } from 'typedoc';
-import {
-  OutputFileStrategy,
-  TemplateMapping,
-  TypedocPluginMarkdownOptions,
-} from '../models';
+import { OutputFileStrategy, TemplateMapping } from '../models';
 import { slugify } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
-
-export interface UrlBuilderOptions {
-  readme: string;
-  includeFileNumberPrefixes: boolean;
-}
-
-export interface GetUrlOptions {
-  parentUrl?: string;
-  directory?: string | null;
-  forceDirectory?: boolean;
-  directoryPosition: number;
-  pagePosition: number;
-}
+import { UrlOption } from './models';
 
 export class UrlBuilder {
   urls: UrlMapping[] = [];
   anchors: string[] = [];
 
-  constructor(
-    public context: MarkdownThemeRenderContext,
-    public options: Partial<TypedocPluginMarkdownOptions>,
-  ) {}
+  constructor(public context: MarkdownThemeRenderContext) {}
 
   readmeTemplate = (pageEvent: PageEvent<ProjectReflection>) => {
     return this.context.templates.readmeTemplate(pageEvent);
@@ -61,28 +42,44 @@ export class UrlBuilder {
    * @param project  The project whose urls should be generated.
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
-    if (!this.options.readme?.endsWith('none')) {
-      const indexFileName = this.getPartName(this.context.indexFile, 1);
-      project.url = indexFileName;
+    const entryDocument = this.context.getOption('entryDocument');
+    const globalsPage =
+      this.context.getOption('entryPoints')?.length > 1
+        ? this.context.modulesFile
+        : this.context.exportsFile;
+    if (!this.context.getOption('readme')?.endsWith('none')) {
+      project.url = this.getPartName(globalsPage, 1);
       this.urls.push(
-        new UrlMapping(this.context.readmeFile, project, this.readmeTemplate),
+        new UrlMapping(
+          this.context.getOption('entryDocument'),
+          project,
+          this.readmeTemplate,
+        ),
       );
+
       this.urls.push(
-        new UrlMapping(indexFileName, project, this.projectTemplate),
+        new UrlMapping(
+          this.getPartName(globalsPage, 1),
+          project,
+          this.projectTemplate,
+        ),
       );
     } else {
-      project.url = this.context.indexFile;
+      project.url = entryDocument;
       this.urls.push(
-        new UrlMapping(this.context.indexFile, project, this.projectTemplate),
+        new UrlMapping(entryDocument, project, this.projectTemplate),
       );
     }
 
     if (
-      (this.options.entryPointStrategy as unknown as EntryPointStrategy) ===
-      'packages'
+      (this.context.getOption(
+        'entryPointStrategy',
+      ) as unknown as EntryPointStrategy) === 'packages'
     ) {
       project.children?.forEach((projectChild, projectChildIndex) => {
-        const startIndex = !this.options.readme?.endsWith('none') ? 2 : 1;
+        const startIndex = !this.context.getOption('readme')?.endsWith('none')
+          ? 2
+          : 1;
         const directoryPosition = projectChildIndex + startIndex;
         const url = `${this.getPartName(
           projectChild.name,
@@ -124,22 +121,33 @@ export class UrlBuilder {
     parentUrl?: string,
   ) {
     const startIndex = Boolean(project.readme) ? 2 : 1;
-    project.groups?.forEach((projectGroup, projectGroupIndex) => {
-      projectGroup.children.forEach(
-        (projectGroupChild, projectGroupChildIndex) => {
-          this.buildUrlsFromGroup(projectGroupChild, {
-            directoryPosition: projectGroupIndex + startIndex,
-            pagePosition: projectGroupChildIndex + startIndex,
-            ...(parentUrl && { parentUrl: parentUrl }),
-          });
-        },
-      );
-    });
+
+    if (this.context.getOption('excludeGroups')) {
+      project.children?.forEach((projectGroupChild, projectGroupChildIndex) => {
+        this.buildUrlsFromGroup(projectGroupChild, {
+          directoryPosition: projectGroupChildIndex + startIndex,
+          pagePosition: projectGroupChildIndex + startIndex,
+          ...(parentUrl && { parentUrl: parentUrl }),
+        });
+      });
+    } else {
+      project.groups?.forEach((projectGroup, projectGroupIndex) => {
+        projectGroup.children.forEach(
+          (projectGroupChild, projectGroupChildIndex) => {
+            this.buildUrlsFromGroup(projectGroupChild, {
+              directoryPosition: projectGroupIndex + startIndex,
+              pagePosition: projectGroupChildIndex + startIndex,
+              ...(parentUrl && { parentUrl: parentUrl }),
+            });
+          },
+        );
+      });
+    }
   }
 
   private buildUrlsFromGroup(
     reflection: DeclarationReflection,
-    options: GetUrlOptions,
+    options: UrlOption,
   ) {
     const mapping = this.getTemplateMapping(reflection.kind);
     if (mapping) {
@@ -154,7 +162,7 @@ export class UrlBuilder {
       reflection.url = url;
       reflection.hasOwnDocument = true;
 
-      if (this.options.excludeGroups) {
+      if (this.context.getOption('excludeGroups')) {
         if (reflection.categories) {
           reflection.categories.forEach((category, categoryIndex) => {
             category.children.forEach((categoryChild, categoryChildIndex) => {
@@ -213,7 +221,7 @@ export class UrlBuilder {
     }
   }
 
-  private getUrl(reflection: DeclarationReflection, options: GetUrlOptions) {
+  private getUrl(reflection: DeclarationReflection, options: UrlOption) {
     const parentDir = options.parentUrl
       ? path.dirname(options.parentUrl)
       : null;
@@ -223,7 +231,7 @@ export class UrlBuilder {
 
     const dir = () => {
       if (reflection.kindOf(ReflectionKind.Namespace)) {
-        if (!this.options.excludeGroups) {
+        if (!this.context.getOption('excludeGroups')) {
           return this.getPartName(
             `${options.directory}/${this.getPartName(
               'namespace.' + alias,
@@ -237,7 +245,7 @@ export class UrlBuilder {
 
       if (
         options.directory &&
-        this.options.excludeGroups &&
+        this.context.getOption('excludeGroups') &&
         !options.forceDirectory
       ) {
         return null;
@@ -254,7 +262,8 @@ export class UrlBuilder {
     const filename = () => {
       if (
         reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace]) &&
-        this.options.outputFileStrategy === OutputFileStrategy.Modules &&
+        this.context.getOption('outputFileStrategy') ===
+          OutputFileStrategy.Modules &&
         !this.childrenIncludeNamespaces(reflection)
       ) {
         return null;
@@ -316,7 +325,7 @@ export class UrlBuilder {
   }
 
   private getPartName(part: string, position: number) {
-    return this.options.includeFileNumberPrefixes
+    return this.context.getOption('includeFileNumberPrefixes')
       ? `${String(position).padStart(2, '0')}-${part}`
       : part;
   }
@@ -334,7 +343,7 @@ export class UrlBuilder {
   private getTemplateMapping(kind: ReflectionKind): TemplateMapping {
     const getDirectoryName = (reflectionKind: ReflectionKind) => {
       const pluralString = ReflectionKind.pluralString(reflectionKind);
-      return this.options.includeFileNumberPrefixes
+      return this.context.getOption('includeFileNumberPrefixes')
         ? pluralString
         : slugify(pluralString);
     };

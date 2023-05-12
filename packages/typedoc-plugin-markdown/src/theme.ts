@@ -7,8 +7,8 @@ import {
   Renderer,
   Theme,
 } from 'typedoc';
+import { NavigationBuilder } from './converter/navigation-builder';
 import { UrlBuilder } from './converter/url-builder';
-import { TypedocPluginMarkdownOptions } from './models';
 import { MarkdownThemeRenderContext } from './theme-render-context';
 
 export class MarkdownTheme extends Theme {
@@ -63,16 +63,16 @@ export class MarkdownTheme extends Theme {
   }
 
   getUrls(project: ProjectReflection) {
-    const urls = new UrlBuilder(
-      this.getRenderContext(),
-      this.application.options.getRawValues() as Partial<TypedocPluginMarkdownOptions>,
-    ).getUrls(project);
+    const urls = new UrlBuilder(this.getRenderContext()).getUrls(project);
 
     return urls;
   }
 
   getNavigation(project: ProjectReflection) {
-    return [];
+    const navigation = new NavigationBuilder(
+      this.getRenderContext(),
+    ).getNavigation(project);
+    return navigation;
   }
 
   protected onBeginPage(page: PageEvent) {

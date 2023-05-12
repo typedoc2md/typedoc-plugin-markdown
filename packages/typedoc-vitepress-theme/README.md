@@ -104,17 +104,17 @@ Please see https://typedoc.org/options/configuration for general TypeDoc option 
 
 The following TypeDoc / Markdown plugin options can be passed to config:
 
-- [TypeDoc options](https://typedoc.org/options) (HTML specific output options that will be ignored).
-- [Markdown plugin options](https://typedoc.org/options) (Some options are already preset to target VitePress).
+- [typedoc options](https://typedoc.org/options) (HTML specific output options that will be ignored).
+- [typedoc-plugin-markdown options](https://typedoc.org/options) (Some options are already preset to target VitePress).
 
-#### VitePress presets
-
-The following options are preset with the theme.
+The following typedoc-plugin-markdown options are preset with the theme.
 
 ```json
 {
   "anchorFormat": "slug",
   "entryDocument": "index.md",
+  "hideBreadcrumbs": true,
+  "hidePageHeader": true,
   "out": "./docs/api"
 }
 ```

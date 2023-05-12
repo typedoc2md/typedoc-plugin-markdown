@@ -1,0 +1,1758 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "numberRegexp",
+                    "url": "child-package/namespaces/namespace.Validation/variables/variable.numberRegexp.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "Validation",
+            "url": "child-package/namespaces/namespace.Validation/index.md",
+          },
+        ],
+        "title": "Namespaces",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "hello",
+            "url": "child-package/variables/variable.hello.md",
+          },
+        ],
+        "title": "Variables",
+      },
+    ],
+    "title": "child-package",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "hello",
+            "url": "child-package-2/variables/variable.hello-1.md",
+          },
+        ],
+        "title": "Variables",
+      },
+    ],
+    "title": "child-package-2",
+  },
+]
+`;
+
+exports[`Navigation: (Monorepo) should get urls (entryPointStrategy=packages, includeFileNumberPrefixes=true) 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "numberRegexp",
+                    "url": "02-child-package/02-Namespaces/02-namespace.Validation/01-Variables/01-variable.numberRegexp.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "Validation",
+            "url": "02-child-package/02-Namespaces/02-namespace.Validation/index.md",
+          },
+        ],
+        "title": "Namespaces",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "hello",
+            "url": "02-child-package/03-Variables/02-variable.hello.md",
+          },
+        ],
+        "title": "Variables",
+      },
+    ],
+    "title": "child-package",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "hello",
+            "url": "03-child-package-2/01-Variables/01-variable.hello-1.md",
+          },
+        ],
+        "title": "Variables",
+      },
+    ],
+    "title": "child-package-2",
+  },
+]
+`;
+
+exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "Properties",
+                  },
+                ],
+                "title": "CategoryInterfaceA1",
+                "url": "module.categories/interfaces/CategoryA/interface.CategoryInterfaceA1.md",
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "Properties",
+                  },
+                ],
+                "title": "CategoryInterfaceA2",
+                "url": "module.categories/interfaces/CategoryA/interface.CategoryInterfaceA2.md",
+              },
+            ],
+            "title": "CategoryA",
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "Properties",
+                  },
+                ],
+                "title": "OtherInterfaceA",
+                "url": "module.categories/interfaces/Other/interface.OtherInterfaceA.md",
+              },
+            ],
+            "title": "Other",
+          },
+        ],
+        "title": "Interfaces",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryVariableA1",
+                "url": "module.categories/variables/CategoryA/variable.categoryVariableA1.md",
+              },
+              {
+                "children": [],
+                "title": "categoryVariableA2",
+                "url": "module.categories/variables/CategoryA/variable.categoryVariableA2.md",
+              },
+            ],
+            "title": "CategoryA",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryVariableB1",
+                "url": "module.categories/variables/CategoryB/variable.categoryVariableB1.md",
+              },
+            ],
+            "title": "CategoryB",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "otherVariableA",
+                "url": "module.categories/variables/Other/variable.otherVariableA.md",
+              },
+              {
+                "children": [],
+                "title": "otherVariableB",
+                "url": "module.categories/variables/Other/variable.otherVariableB.md",
+              },
+            ],
+            "title": "Other",
+          },
+        ],
+        "title": "Variables",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryFunctionA1",
+                "url": "module.categories/functions/CategoryA/function.categoryFunctionA1.md",
+              },
+              {
+                "children": [],
+                "title": "categoryFunctionA2",
+                "url": "module.categories/functions/CategoryA/function.categoryFunctionA2.md",
+              },
+              {
+                "children": [],
+                "title": "categoryFunctionA3",
+                "url": "module.categories/functions/CategoryA/function.categoryFunctionA3.md",
+              },
+            ],
+            "title": "CategoryA",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryFunctionB2",
+                "url": "module.categories/functions/CategoryB/function.categoryFunctionB2.md",
+              },
+            ],
+            "title": "CategoryB",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "otherFunctionA",
+                "url": "module.categories/functions/Other/function.otherFunctionA.md",
+              },
+              {
+                "children": [],
+                "title": "otherFunctionB",
+                "url": "module.categories/functions/Other/function.otherFunctionB.md",
+              },
+            ],
+            "title": "Other",
+          },
+        ],
+        "title": "Functions",
+      },
+    ],
+    "title": "categories",
+    "url": "module.categories/index.md",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [],
+                            "title": "nestedNamespaceVariable",
+                            "url": "module.modules_module_1/namespaces/namespace.someNameSpace/namespaces/namespace.nestedNamespace/variables/variable.nestedNamespaceVariable.md",
+                          },
+                        ],
+                        "title": "Variables",
+                      },
+                    ],
+                    "title": "_nestedNamespace",
+                    "url": "module.modules_module_1/namespaces/namespace.someNameSpace/namespaces/namespace.nestedNamespace/index.md",
+                  },
+                ],
+                "title": "Namespaces",
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [],
+                        "title": "Enumeration Members",
+                      },
+                    ],
+                    "title": "NamespaceEnum",
+                    "url": "module.modules_module_1/namespaces/namespace.someNameSpace/enumerations/enumeration.NamespaceEnum.md",
+                  },
+                ],
+                "title": "Enumerations",
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [],
+                        "title": "Constructors",
+                      },
+                    ],
+                    "title": "NameSpaceClassA",
+                    "url": "module.modules_module_1/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
+                  },
+                ],
+                "title": "Classes",
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [],
+                        "title": "Properties",
+                      },
+                    ],
+                    "title": "NamespaceInterface",
+                    "url": "module.modules_module_1/namespaces/namespace.someNameSpace/interfaces/interface.NamespaceInterface.md",
+                  },
+                ],
+                "title": "Interfaces",
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "NamespaceTypeLiteral",
+                    "url": "module.modules_module_1/namespaces/namespace.someNameSpace/type-aliases/type-alias.NamespaceTypeLiteral.md",
+                  },
+                ],
+                "title": "Type Aliases",
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "namespaceVariableA",
+                    "url": "module.modules_module_1/namespaces/namespace.someNameSpace/variables/variable.namespaceVariableA.md",
+                  },
+                  {
+                    "children": [],
+                    "title": "namespaceVariableB",
+                    "url": "module.modules_module_1/namespaces/namespace.someNameSpace/variables/variable.namespaceVariableB.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "someNameSpace",
+            "url": "module.modules_module_1/namespaces/namespace.someNameSpace/index.md",
+          },
+          {
+            "children": [],
+            "title": "someNameSpaceB",
+            "url": "module.modules_module_1/namespaces/namespace.someNameSpaceB/index.md",
+          },
+        ],
+        "title": "Namespaces",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Enumeration Members",
+              },
+            ],
+            "title": "Module1EnumA",
+            "url": "module.modules_module_1/enumerations/enumeration.Module1EnumA.md",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Enumeration Members",
+              },
+            ],
+            "title": "Module1EnumB",
+            "url": "module.modules_module_1/enumerations/enumeration.Module1EnumB.md",
+          },
+        ],
+        "title": "Enumerations",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Constructors",
+              },
+              {
+                "children": [],
+                "title": "Properties",
+              },
+              {
+                "children": [],
+                "title": "Methods",
+              },
+            ],
+            "title": "Module1ClassA",
+            "url": "module.modules_module_1/classes/class.Module1ClassA.md",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Constructors",
+              },
+              {
+                "children": [],
+                "title": "Properties",
+              },
+              {
+                "children": [],
+                "title": "Methods",
+              },
+            ],
+            "title": "Module1ClassB",
+            "url": "module.modules_module_1/classes/class.Module1ClassB.md",
+          },
+        ],
+        "title": "Classes",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Properties",
+              },
+            ],
+            "title": "Module1InterfaceA",
+            "url": "module.modules_module_1/interfaces/interface.Module1InterfaceA.md",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Properties",
+              },
+            ],
+            "title": "Module1InterfaceB",
+            "url": "module.modules_module_1/interfaces/interface.Module1InterfaceB.md",
+          },
+        ],
+        "title": "Interfaces",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "Module1TypeLiteralA",
+            "url": "module.modules_module_1/type-aliases/type-alias.Module1TypeLiteralA.md",
+          },
+          {
+            "children": [],
+            "title": "Module1TypeLiteralB",
+            "url": "module.modules_module_1/type-aliases/type-alias.Module1TypeLiteralB.md",
+          },
+        ],
+        "title": "Type Aliases",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "module1VariableA",
+            "url": "module.modules_module_1/variables/variable.module1VariableA.md",
+          },
+          {
+            "children": [],
+            "title": "module1VariableB",
+            "url": "module.modules_module_1/variables/variable.module1VariableB.md",
+          },
+        ],
+        "title": "Variables",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "module1FunctionA",
+            "url": "module.modules_module_1/functions/function.module1FunctionA.md",
+          },
+          {
+            "children": [],
+            "title": "module1FunctionB",
+            "url": "module.modules_module_1/functions/function.module1FunctionB.md",
+          },
+        ],
+        "title": "Functions",
+      },
+    ],
+    "title": "modules/module-1",
+    "url": "module.modules_module_1/index.md",
+  },
+]
+`;
+
+exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false, includeFileNumberPrefixes: true) 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "Properties",
+                  },
+                ],
+                "title": "CategoryInterfaceA1",
+                "url": "02-module.categories/01-Interfaces/01-CategoryA/01-interface.CategoryInterfaceA1.md",
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "Properties",
+                  },
+                ],
+                "title": "CategoryInterfaceA2",
+                "url": "02-module.categories/01-Interfaces/01-CategoryA/02-interface.CategoryInterfaceA2.md",
+              },
+            ],
+            "title": "CategoryA",
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "Properties",
+                  },
+                ],
+                "title": "OtherInterfaceA",
+                "url": "02-module.categories/01-Interfaces/02-Other/01-interface.OtherInterfaceA.md",
+              },
+            ],
+            "title": "Other",
+          },
+        ],
+        "title": "Interfaces",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryVariableA1",
+                "url": "02-module.categories/02-Variables/01-CategoryA/01-variable.categoryVariableA1.md",
+              },
+              {
+                "children": [],
+                "title": "categoryVariableA2",
+                "url": "02-module.categories/02-Variables/01-CategoryA/02-variable.categoryVariableA2.md",
+              },
+            ],
+            "title": "CategoryA",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryVariableB1",
+                "url": "02-module.categories/02-Variables/02-CategoryB/01-variable.categoryVariableB1.md",
+              },
+            ],
+            "title": "CategoryB",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "otherVariableA",
+                "url": "02-module.categories/02-Variables/03-Other/01-variable.otherVariableA.md",
+              },
+              {
+                "children": [],
+                "title": "otherVariableB",
+                "url": "02-module.categories/02-Variables/03-Other/02-variable.otherVariableB.md",
+              },
+            ],
+            "title": "Other",
+          },
+        ],
+        "title": "Variables",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryFunctionA1",
+                "url": "02-module.categories/03-Functions/01-CategoryA/01-function.categoryFunctionA1.md",
+              },
+              {
+                "children": [],
+                "title": "categoryFunctionA2",
+                "url": "02-module.categories/03-Functions/01-CategoryA/02-function.categoryFunctionA2.md",
+              },
+              {
+                "children": [],
+                "title": "categoryFunctionA3",
+                "url": "02-module.categories/03-Functions/01-CategoryA/03-function.categoryFunctionA3.md",
+              },
+            ],
+            "title": "CategoryA",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "categoryFunctionB2",
+                "url": "02-module.categories/03-Functions/02-CategoryB/01-function.categoryFunctionB2.md",
+              },
+            ],
+            "title": "CategoryB",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "otherFunctionA",
+                "url": "02-module.categories/03-Functions/03-Other/01-function.otherFunctionA.md",
+              },
+              {
+                "children": [],
+                "title": "otherFunctionB",
+                "url": "02-module.categories/03-Functions/03-Other/02-function.otherFunctionB.md",
+              },
+            ],
+            "title": "Other",
+          },
+        ],
+        "title": "Functions",
+      },
+    ],
+    "title": "categories",
+    "url": "02-module.categories/index.md",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [],
+                            "title": "nestedNamespaceVariable",
+                            "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/01-Variables/01-variable.nestedNamespaceVariable.md",
+                          },
+                        ],
+                        "title": "Variables",
+                      },
+                    ],
+                    "title": "_nestedNamespace",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/index.md",
+                  },
+                ],
+                "title": "Namespaces",
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [],
+                        "title": "Enumeration Members",
+                      },
+                    ],
+                    "title": "NamespaceEnum",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/02-Enumerations/01-enumeration.NamespaceEnum.md",
+                  },
+                ],
+                "title": "Enumerations",
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [],
+                        "title": "Constructors",
+                      },
+                    ],
+                    "title": "NameSpaceClassA",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/03-Classes/01-class.NameSpaceClassA.md",
+                  },
+                ],
+                "title": "Classes",
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [],
+                        "title": "Properties",
+                      },
+                    ],
+                    "title": "NamespaceInterface",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/04-Interfaces/01-interface.NamespaceInterface.md",
+                  },
+                ],
+                "title": "Interfaces",
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "NamespaceTypeLiteral",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/05-Type Aliases/01-type-alias.NamespaceTypeLiteral.md",
+                  },
+                ],
+                "title": "Type Aliases",
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "namespaceVariableA",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/01-variable.namespaceVariableA.md",
+                  },
+                  {
+                    "children": [],
+                    "title": "namespaceVariableB",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/02-variable.namespaceVariableB.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "someNameSpace",
+            "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/index.md",
+          },
+          {
+            "children": [],
+            "title": "someNameSpaceB",
+            "url": "03-module.modules_module_1/01-Namespaces/02-namespace.someNameSpaceB/index.md",
+          },
+        ],
+        "title": "Namespaces",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Enumeration Members",
+              },
+            ],
+            "title": "Module1EnumA",
+            "url": "03-module.modules_module_1/02-Enumerations/01-enumeration.Module1EnumA.md",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Enumeration Members",
+              },
+            ],
+            "title": "Module1EnumB",
+            "url": "03-module.modules_module_1/02-Enumerations/02-enumeration.Module1EnumB.md",
+          },
+        ],
+        "title": "Enumerations",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Constructors",
+              },
+              {
+                "children": [],
+                "title": "Properties",
+              },
+              {
+                "children": [],
+                "title": "Methods",
+              },
+            ],
+            "title": "Module1ClassA",
+            "url": "03-module.modules_module_1/03-Classes/01-class.Module1ClassA.md",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Constructors",
+              },
+              {
+                "children": [],
+                "title": "Properties",
+              },
+              {
+                "children": [],
+                "title": "Methods",
+              },
+            ],
+            "title": "Module1ClassB",
+            "url": "03-module.modules_module_1/03-Classes/02-class.Module1ClassB.md",
+          },
+        ],
+        "title": "Classes",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Properties",
+              },
+            ],
+            "title": "Module1InterfaceA",
+            "url": "03-module.modules_module_1/04-Interfaces/01-interface.Module1InterfaceA.md",
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "title": "Properties",
+              },
+            ],
+            "title": "Module1InterfaceB",
+            "url": "03-module.modules_module_1/04-Interfaces/02-interface.Module1InterfaceB.md",
+          },
+        ],
+        "title": "Interfaces",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "Module1TypeLiteralA",
+            "url": "03-module.modules_module_1/05-Type Aliases/01-type-alias.Module1TypeLiteralA.md",
+          },
+          {
+            "children": [],
+            "title": "Module1TypeLiteralB",
+            "url": "03-module.modules_module_1/05-Type Aliases/02-type-alias.Module1TypeLiteralB.md",
+          },
+        ],
+        "title": "Type Aliases",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "module1VariableA",
+            "url": "03-module.modules_module_1/06-Variables/01-variable.module1VariableA.md",
+          },
+          {
+            "children": [],
+            "title": "module1VariableB",
+            "url": "03-module.modules_module_1/06-Variables/02-variable.module1VariableB.md",
+          },
+        ],
+        "title": "Variables",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "module1FunctionA",
+            "url": "03-module.modules_module_1/07-Functions/01-function.module1FunctionA.md",
+          },
+          {
+            "children": [],
+            "title": "module1FunctionB",
+            "url": "03-module.modules_module_1/07-Functions/02-function.module1FunctionB.md",
+          },
+        ],
+        "title": "Functions",
+      },
+    ],
+    "title": "modules/module-1",
+    "url": "03-module.modules_module_1/index.md",
+  },
+]
+`;
+
+exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false, outputFileStrategy=modules, includeFileNumberPrefixes: true) 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "CategoryA",
+          },
+          {
+            "children": [],
+            "title": "Other",
+          },
+        ],
+        "title": "Interfaces",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "CategoryA",
+          },
+          {
+            "children": [],
+            "title": "CategoryB",
+          },
+          {
+            "children": [],
+            "title": "Other",
+          },
+        ],
+        "title": "Variables",
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "CategoryA",
+          },
+          {
+            "children": [],
+            "title": "CategoryB",
+          },
+          {
+            "children": [],
+            "title": "Other",
+          },
+        ],
+        "title": "Functions",
+      },
+    ],
+    "title": "categories",
+    "url": "02-module.categories.md",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [],
+                        "title": "Variables",
+                      },
+                    ],
+                    "title": "_nestedNamespace",
+                    "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace.md",
+                  },
+                ],
+                "title": "Namespaces",
+              },
+              {
+                "children": [],
+                "title": "Enumerations",
+              },
+              {
+                "children": [],
+                "title": "Classes",
+              },
+              {
+                "children": [],
+                "title": "Interfaces",
+              },
+              {
+                "children": [],
+                "title": "Type Aliases",
+              },
+              {
+                "children": [],
+                "title": "Variables",
+              },
+            ],
+            "title": "someNameSpace",
+            "url": "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/index.md",
+          },
+          {
+            "children": [],
+            "title": "someNameSpaceB",
+            "url": "03-module.modules_module_1/01-Namespaces/02-namespace.someNameSpaceB.md",
+          },
+        ],
+        "title": "Namespaces",
+      },
+      {
+        "children": [],
+        "title": "Enumerations",
+      },
+      {
+        "children": [],
+        "title": "Classes",
+      },
+      {
+        "children": [],
+        "title": "Interfaces",
+      },
+      {
+        "children": [],
+        "title": "Type Aliases",
+      },
+      {
+        "children": [],
+        "title": "Variables",
+      },
+      {
+        "children": [],
+        "title": "Functions",
+      },
+    ],
+    "title": "modules/module-1",
+    "url": "03-module.modules_module_1/index.md",
+  },
+]
+`;
+
+exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true, includeFileNumberPrefixes: true) 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "CategoryInterfaceA1",
+        "url": "02-module.categories/01-CategoryA/01-interface.CategoryInterfaceA1.md",
+      },
+      {
+        "children": [],
+        "title": "CategoryInterfaceA2",
+        "url": "02-module.categories/01-CategoryA/02-interface.CategoryInterfaceA2.md",
+      },
+      {
+        "children": [],
+        "title": "OtherInterfaceA",
+        "url": "02-module.categories/03-Other/01-interface.OtherInterfaceA.md",
+      },
+      {
+        "children": undefined,
+        "title": "categoryVariableA1",
+        "url": "02-module.categories/01-CategoryA/03-variable.categoryVariableA1.md",
+      },
+      {
+        "children": undefined,
+        "title": "categoryVariableA2",
+        "url": "02-module.categories/01-CategoryA/04-variable.categoryVariableA2.md",
+      },
+      {
+        "children": undefined,
+        "title": "categoryVariableB1",
+        "url": "02-module.categories/02-CategoryB/01-variable.categoryVariableB1.md",
+      },
+      {
+        "children": undefined,
+        "title": "otherVariableA",
+        "url": "02-module.categories/03-Other/02-variable.otherVariableA.md",
+      },
+      {
+        "children": undefined,
+        "title": "otherVariableB",
+        "url": "02-module.categories/03-Other/03-variable.otherVariableB.md",
+      },
+      {
+        "children": undefined,
+        "title": "categoryFunctionA1",
+        "url": "02-module.categories/01-CategoryA/05-function.categoryFunctionA1.md",
+      },
+      {
+        "children": undefined,
+        "title": "categoryFunctionA2",
+        "url": "02-module.categories/01-CategoryA/06-function.categoryFunctionA2.md",
+      },
+      {
+        "children": undefined,
+        "title": "categoryFunctionA3",
+        "url": "02-module.categories/01-CategoryA/07-function.categoryFunctionA3.md",
+      },
+      {
+        "children": undefined,
+        "title": "categoryFunctionB2",
+        "url": "02-module.categories/02-CategoryB/02-function.categoryFunctionB2.md",
+      },
+      {
+        "children": undefined,
+        "title": "otherFunctionA",
+        "url": "02-module.categories/03-Other/04-function.otherFunctionA.md",
+      },
+      {
+        "children": undefined,
+        "title": "otherFunctionB",
+        "url": "02-module.categories/03-Other/05-function.otherFunctionB.md",
+      },
+    ],
+    "title": "categories",
+    "url": "02-module.categories/index.md",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": undefined,
+                "title": "nestedNamespaceVariable",
+                "url": "03-module.modules_module_1/01-someNameSpace/01-nestedNamespace/01-variable.nestedNamespaceVariable.md",
+              },
+            ],
+            "title": "_nestedNamespace",
+            "url": "03-module.modules_module_1/01-someNameSpace/01-nestedNamespace/index.md",
+          },
+          {
+            "children": [],
+            "title": "NamespaceEnum",
+            "url": "03-module.modules_module_1/01-someNameSpace/02-enumeration.NamespaceEnum.md",
+          },
+          {
+            "children": [],
+            "title": "NameSpaceClassA",
+            "url": "03-module.modules_module_1/01-someNameSpace/03-class.NameSpaceClassA.md",
+          },
+          {
+            "children": [],
+            "title": "NamespaceInterface",
+            "url": "03-module.modules_module_1/01-someNameSpace/04-interface.NamespaceInterface.md",
+          },
+          {
+            "children": undefined,
+            "title": "NamespaceTypeLiteral",
+            "url": "03-module.modules_module_1/01-someNameSpace/05-type-alias.NamespaceTypeLiteral.md",
+          },
+          {
+            "children": undefined,
+            "title": "namespaceVariableA",
+            "url": "03-module.modules_module_1/01-someNameSpace/06-variable.namespaceVariableA.md",
+          },
+          {
+            "children": undefined,
+            "title": "namespaceVariableB",
+            "url": "03-module.modules_module_1/01-someNameSpace/07-variable.namespaceVariableB.md",
+          },
+        ],
+        "title": "someNameSpace",
+        "url": "03-module.modules_module_1/01-someNameSpace/index.md",
+      },
+      {
+        "children": undefined,
+        "title": "someNameSpaceB",
+        "url": "03-module.modules_module_1/02-someNameSpaceB/index.md",
+      },
+      {
+        "children": [],
+        "title": "Module1EnumA",
+        "url": "03-module.modules_module_1/03-enumeration.Module1EnumA.md",
+      },
+      {
+        "children": [],
+        "title": "Module1EnumB",
+        "url": "03-module.modules_module_1/04-enumeration.Module1EnumB.md",
+      },
+      {
+        "children": [],
+        "title": "Module1ClassA",
+        "url": "03-module.modules_module_1/05-class.Module1ClassA.md",
+      },
+      {
+        "children": [],
+        "title": "Module1ClassB",
+        "url": "03-module.modules_module_1/06-class.Module1ClassB.md",
+      },
+      {
+        "children": [],
+        "title": "Module1InterfaceA",
+        "url": "03-module.modules_module_1/07-interface.Module1InterfaceA.md",
+      },
+      {
+        "children": [],
+        "title": "Module1InterfaceB",
+        "url": "03-module.modules_module_1/08-interface.Module1InterfaceB.md",
+      },
+      {
+        "children": undefined,
+        "title": "Module1TypeLiteralA",
+        "url": "03-module.modules_module_1/09-type-alias.Module1TypeLiteralA.md",
+      },
+      {
+        "children": undefined,
+        "title": "Module1TypeLiteralB",
+        "url": "03-module.modules_module_1/10-type-alias.Module1TypeLiteralB.md",
+      },
+      {
+        "children": undefined,
+        "title": "module1VariableA",
+        "url": "03-module.modules_module_1/11-variable.module1VariableA.md",
+      },
+      {
+        "children": undefined,
+        "title": "module1VariableB",
+        "url": "03-module.modules_module_1/12-variable.module1VariableB.md",
+      },
+      {
+        "children": undefined,
+        "title": "module1FunctionA",
+        "url": "03-module.modules_module_1/13-function.module1FunctionA.md",
+      },
+      {
+        "children": undefined,
+        "title": "module1FunctionB",
+        "url": "03-module.modules_module_1/14-function.module1FunctionB.md",
+      },
+    ],
+    "title": "modules/module-1",
+    "url": "03-module.modules_module_1/index.md",
+  },
+]
+`;
+
+exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true, outputFileStrategy=modules, includeFileNumberPrefixes: true, readme=none) 1`] = `
+[
+  {
+    "children": [],
+    "title": "categories",
+    "url": "01-module.categories.md",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [],
+            "title": "_nestedNamespace",
+            "url": "02-module.modules_module_1/01-someNameSpace/01-nestedNamespace.md",
+          },
+        ],
+        "title": "someNameSpace",
+        "url": "02-module.modules_module_1/01-someNameSpace/index.md",
+      },
+      {
+        "children": undefined,
+        "title": "someNameSpaceB",
+        "url": "02-module.modules_module_1/02-someNameSpaceB.md",
+      },
+    ],
+    "title": "modules/module-1",
+    "url": "02-module.modules_module_1/index.md",
+  },
+]
+`;
+
+exports[`Navigation: (Single entrypoint) should get urls (excludeGroups=false, includeFileNumberPrefixes=true) 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "CategoryInterfaceA1",
+    "url": "02-Interfaces/02-interface.CategoryInterfaceA1.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "CategoryInterfaceA2",
+    "url": "02-Interfaces/03-interface.CategoryInterfaceA2.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "OtherInterfaceA",
+    "url": "02-Interfaces/04-interface.OtherInterfaceA.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA1",
+    "url": "03-Variables/02-variable.categoryVariableA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA2",
+    "url": "03-Variables/03-variable.categoryVariableA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableB1",
+    "url": "03-Variables/04-variable.categoryVariableB1.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableA",
+    "url": "03-Variables/05-variable.otherVariableA.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableB",
+    "url": "03-Variables/06-variable.otherVariableB.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA1",
+    "url": "04-Functions/02-function.categoryFunctionA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA2",
+    "url": "04-Functions/03-function.categoryFunctionA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA3",
+    "url": "04-Functions/04-function.categoryFunctionA3.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionB2",
+    "url": "04-Functions/05-function.categoryFunctionB2.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionA",
+    "url": "04-Functions/06-function.otherFunctionA.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionB",
+    "url": "04-Functions/07-function.otherFunctionB.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "CategoryInterfaceA1",
+    "url": "02-Interfaces/02-interface.CategoryInterfaceA1.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "CategoryInterfaceA2",
+    "url": "02-Interfaces/03-interface.CategoryInterfaceA2.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "OtherInterfaceA",
+    "url": "02-Interfaces/04-interface.OtherInterfaceA.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA1",
+    "url": "03-Variables/02-variable.categoryVariableA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA2",
+    "url": "03-Variables/03-variable.categoryVariableA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableB1",
+    "url": "03-Variables/04-variable.categoryVariableB1.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableA",
+    "url": "03-Variables/05-variable.otherVariableA.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableB",
+    "url": "03-Variables/06-variable.otherVariableB.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA1",
+    "url": "04-Functions/02-function.categoryFunctionA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA2",
+    "url": "04-Functions/03-function.categoryFunctionA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA3",
+    "url": "04-Functions/04-function.categoryFunctionA3.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionB2",
+    "url": "04-Functions/05-function.categoryFunctionB2.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionA",
+    "url": "04-Functions/06-function.otherFunctionA.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionB",
+    "url": "04-Functions/07-function.otherFunctionB.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "CategoryInterfaceA1",
+    "url": "02-Interfaces/02-interface.CategoryInterfaceA1.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "CategoryInterfaceA2",
+    "url": "02-Interfaces/03-interface.CategoryInterfaceA2.md",
+  },
+  {
+    "children": [
+      {
+        "children": [],
+        "title": "Properties",
+      },
+    ],
+    "title": "OtherInterfaceA",
+    "url": "02-Interfaces/04-interface.OtherInterfaceA.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA1",
+    "url": "03-Variables/02-variable.categoryVariableA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA2",
+    "url": "03-Variables/03-variable.categoryVariableA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableB1",
+    "url": "03-Variables/04-variable.categoryVariableB1.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableA",
+    "url": "03-Variables/05-variable.otherVariableA.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableB",
+    "url": "03-Variables/06-variable.otherVariableB.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA1",
+    "url": "04-Functions/02-function.categoryFunctionA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA2",
+    "url": "04-Functions/03-function.categoryFunctionA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA3",
+    "url": "04-Functions/04-function.categoryFunctionA3.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionB2",
+    "url": "04-Functions/05-function.categoryFunctionB2.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionA",
+    "url": "04-Functions/06-function.otherFunctionA.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionB",
+    "url": "04-Functions/07-function.otherFunctionB.md",
+  },
+]
+`;
+
+exports[`Navigation: (Single entrypoint) should get urls (excludeGroups=true, includeFileNumberPrefixes=true, readme=none) 1`] = `
+[
+  {
+    "children": [],
+    "title": "CategoryInterfaceA1",
+    "url": "01-interface.CategoryInterfaceA1.md",
+  },
+  {
+    "children": [],
+    "title": "CategoryInterfaceA2",
+    "url": "02-interface.CategoryInterfaceA2.md",
+  },
+  {
+    "children": [],
+    "title": "OtherInterfaceA",
+    "url": "03-interface.OtherInterfaceA.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA1",
+    "url": "04-variable.categoryVariableA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA2",
+    "url": "05-variable.categoryVariableA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableB1",
+    "url": "06-variable.categoryVariableB1.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableA",
+    "url": "07-variable.otherVariableA.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableB",
+    "url": "08-variable.otherVariableB.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA1",
+    "url": "09-function.categoryFunctionA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA2",
+    "url": "10-function.categoryFunctionA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA3",
+    "url": "11-function.categoryFunctionA3.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionB2",
+    "url": "12-function.categoryFunctionB2.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionA",
+    "url": "13-function.otherFunctionA.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionB",
+    "url": "14-function.otherFunctionB.md",
+  },
+  {
+    "children": [],
+    "title": "CategoryInterfaceA1",
+    "url": "01-interface.CategoryInterfaceA1.md",
+  },
+  {
+    "children": [],
+    "title": "CategoryInterfaceA2",
+    "url": "02-interface.CategoryInterfaceA2.md",
+  },
+  {
+    "children": [],
+    "title": "OtherInterfaceA",
+    "url": "03-interface.OtherInterfaceA.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA1",
+    "url": "04-variable.categoryVariableA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA2",
+    "url": "05-variable.categoryVariableA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableB1",
+    "url": "06-variable.categoryVariableB1.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableA",
+    "url": "07-variable.otherVariableA.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableB",
+    "url": "08-variable.otherVariableB.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA1",
+    "url": "09-function.categoryFunctionA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA2",
+    "url": "10-function.categoryFunctionA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA3",
+    "url": "11-function.categoryFunctionA3.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionB2",
+    "url": "12-function.categoryFunctionB2.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionA",
+    "url": "13-function.otherFunctionA.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionB",
+    "url": "14-function.otherFunctionB.md",
+  },
+  {
+    "children": [],
+    "title": "CategoryInterfaceA1",
+    "url": "01-interface.CategoryInterfaceA1.md",
+  },
+  {
+    "children": [],
+    "title": "CategoryInterfaceA2",
+    "url": "02-interface.CategoryInterfaceA2.md",
+  },
+  {
+    "children": [],
+    "title": "OtherInterfaceA",
+    "url": "03-interface.OtherInterfaceA.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA1",
+    "url": "04-variable.categoryVariableA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableA2",
+    "url": "05-variable.categoryVariableA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryVariableB1",
+    "url": "06-variable.categoryVariableB1.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableA",
+    "url": "07-variable.otherVariableA.md",
+  },
+  {
+    "children": [],
+    "title": "otherVariableB",
+    "url": "08-variable.otherVariableB.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA1",
+    "url": "09-function.categoryFunctionA1.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA2",
+    "url": "10-function.categoryFunctionA2.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionA3",
+    "url": "11-function.categoryFunctionA3.md",
+  },
+  {
+    "children": [],
+    "title": "categoryFunctionB2",
+    "url": "12-function.categoryFunctionB2.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionA",
+    "url": "13-function.otherFunctionA.md",
+  },
+  {
+    "children": [],
+    "title": "otherFunctionB",
+    "url": "14-function.otherFunctionB.md",
+  },
+]
+`;

@@ -15,7 +15,11 @@ export function breadcrumbs(
 
   md.push(
     link(
-      Boolean(page.project.groups) ? 'Index' : 'Packages',
+      Boolean(page.project.groups)
+        ? context.getOption('entryPoints').length > 1
+          ? 'Modules'
+          : 'Exports'
+        : 'Packages',
       context.relativeURL(page.project.url),
     ),
   );

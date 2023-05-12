@@ -36,6 +36,8 @@ The following options can be used in addition to relevant [TypeDoc options](http
 
 - **`--outputFileStrategy`**<br>
   Determines how output files are generated. Allowed values `modules` or `members`. Default value `members`.
+- **`--entryDocument`**<br>
+  The file name of the entry document. Default value `README.md`.
 - **`--includeFileNumberPrefixes`**<br>
   Prefixes generated files and folders with number prefixes. This is useful for auto sidebar generation. Defaults to `false`.
 - **`--excludeGroups`**<br>

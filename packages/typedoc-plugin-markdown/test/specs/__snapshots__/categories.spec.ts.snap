@@ -5,26 +5,26 @@ exports[`Categories: (categorizeByGroup=false) should render category TOC' 1`] =
 
 ### CategoryA
 
-- [CategoryInterfaceA1](index.md#categoryinterfacea1)
-- [CategoryInterfaceA2](index.md#categoryinterfacea2)
-- [categoryVariableA1](index.md#categoryvariablea1)
-- [categoryVariableA2](index.md#categoryvariablea2)
-- [categoryFunctionA1](index.md#categoryfunctiona1)
-- [categoryFunctionA2](index.md#categoryfunctiona2)
-- [categoryFunctionA3](index.md#categoryfunctiona3)
+- [CategoryInterfaceA1](exports.md#categoryinterfacea1)
+- [CategoryInterfaceA2](exports.md#categoryinterfacea2)
+- [categoryVariableA1](exports.md#categoryvariablea1)
+- [categoryVariableA2](exports.md#categoryvariablea2)
+- [categoryFunctionA1](exports.md#categoryfunctiona1)
+- [categoryFunctionA2](exports.md#categoryfunctiona2)
+- [categoryFunctionA3](exports.md#categoryfunctiona3)
 
 ### CategoryB
 
-- [categoryVariableB1](index.md#categoryvariableb1)
-- [categoryFunctionB2](index.md#categoryfunctionb2)
+- [categoryVariableB1](exports.md#categoryvariableb1)
+- [categoryFunctionB2](exports.md#categoryfunctionb2)
 
 ### Other
 
-- [OtherInterfaceA](index.md#otherinterfacea)
-- [otherVariableA](index.md#othervariablea)
-- [otherVariableB](index.md#othervariableb)
-- [otherFunctionA](index.md#otherfunctiona)
-- [otherFunctionB](index.md#otherfunctionb)
+- [OtherInterfaceA](exports.md#otherinterfacea)
+- [otherVariableA](exports.md#othervariablea)
+- [otherVariableB](exports.md#othervariableb)
+- [otherFunctionA](exports.md#otherfunctiona)
+- [otherFunctionB](exports.md#otherfunctionb)
 "
 `;
 
@@ -155,70 +155,70 @@ exports[`Categories: (excludeGroups=false) should render category TOC' 1`] = `
 
 #### CategoryA
 
-- [CategoryInterfaceA1](index.md#categoryinterfacea1)
-- [CategoryInterfaceA2](index.md#categoryinterfacea2)
-- [OtherInterfaceA](index.md#otherinterfacea)
+- [CategoryInterfaceA1](exports.md#categoryinterfacea1)
+- [CategoryInterfaceA2](exports.md#categoryinterfacea2)
+- [OtherInterfaceA](exports.md#otherinterfacea)
 
 #### Other
 
-- [CategoryInterfaceA1](index.md#categoryinterfacea1)
-- [CategoryInterfaceA2](index.md#categoryinterfacea2)
-- [OtherInterfaceA](index.md#otherinterfacea)
+- [CategoryInterfaceA1](exports.md#categoryinterfacea1)
+- [CategoryInterfaceA2](exports.md#categoryinterfacea2)
+- [OtherInterfaceA](exports.md#otherinterfacea)
 
 ### Variables
 
 #### CategoryA
 
-- [categoryVariableA1](index.md#categoryvariablea1)
-- [categoryVariableA2](index.md#categoryvariablea2)
-- [categoryVariableB1](index.md#categoryvariableb1)
-- [otherVariableA](index.md#othervariablea)
-- [otherVariableB](index.md#othervariableb)
+- [categoryVariableA1](exports.md#categoryvariablea1)
+- [categoryVariableA2](exports.md#categoryvariablea2)
+- [categoryVariableB1](exports.md#categoryvariableb1)
+- [otherVariableA](exports.md#othervariablea)
+- [otherVariableB](exports.md#othervariableb)
 
 #### CategoryB
 
-- [categoryVariableA1](index.md#categoryvariablea1)
-- [categoryVariableA2](index.md#categoryvariablea2)
-- [categoryVariableB1](index.md#categoryvariableb1)
-- [otherVariableA](index.md#othervariablea)
-- [otherVariableB](index.md#othervariableb)
+- [categoryVariableA1](exports.md#categoryvariablea1)
+- [categoryVariableA2](exports.md#categoryvariablea2)
+- [categoryVariableB1](exports.md#categoryvariableb1)
+- [otherVariableA](exports.md#othervariablea)
+- [otherVariableB](exports.md#othervariableb)
 
 #### Other
 
-- [categoryVariableA1](index.md#categoryvariablea1)
-- [categoryVariableA2](index.md#categoryvariablea2)
-- [categoryVariableB1](index.md#categoryvariableb1)
-- [otherVariableA](index.md#othervariablea)
-- [otherVariableB](index.md#othervariableb)
+- [categoryVariableA1](exports.md#categoryvariablea1)
+- [categoryVariableA2](exports.md#categoryvariablea2)
+- [categoryVariableB1](exports.md#categoryvariableb1)
+- [otherVariableA](exports.md#othervariablea)
+- [otherVariableB](exports.md#othervariableb)
 
 ### Functions
 
 #### CategoryA
 
-- [categoryFunctionA1](index.md#categoryfunctiona1)
-- [categoryFunctionA2](index.md#categoryfunctiona2)
-- [categoryFunctionA3](index.md#categoryfunctiona3)
-- [categoryFunctionB2](index.md#categoryfunctionb2)
-- [otherFunctionA](index.md#otherfunctiona)
-- [otherFunctionB](index.md#otherfunctionb)
+- [categoryFunctionA1](exports.md#categoryfunctiona1)
+- [categoryFunctionA2](exports.md#categoryfunctiona2)
+- [categoryFunctionA3](exports.md#categoryfunctiona3)
+- [categoryFunctionB2](exports.md#categoryfunctionb2)
+- [otherFunctionA](exports.md#otherfunctiona)
+- [otherFunctionB](exports.md#otherfunctionb)
 
 #### CategoryB
 
-- [categoryFunctionA1](index.md#categoryfunctiona1)
-- [categoryFunctionA2](index.md#categoryfunctiona2)
-- [categoryFunctionA3](index.md#categoryfunctiona3)
-- [categoryFunctionB2](index.md#categoryfunctionb2)
-- [otherFunctionA](index.md#otherfunctiona)
-- [otherFunctionB](index.md#otherfunctionb)
+- [categoryFunctionA1](exports.md#categoryfunctiona1)
+- [categoryFunctionA2](exports.md#categoryfunctiona2)
+- [categoryFunctionA3](exports.md#categoryfunctiona3)
+- [categoryFunctionB2](exports.md#categoryfunctionb2)
+- [otherFunctionA](exports.md#otherfunctiona)
+- [otherFunctionB](exports.md#otherfunctionb)
 
 #### Other
 
-- [categoryFunctionA1](index.md#categoryfunctiona1)
-- [categoryFunctionA2](index.md#categoryfunctiona2)
-- [categoryFunctionA3](index.md#categoryfunctiona3)
-- [categoryFunctionB2](index.md#categoryfunctionb2)
-- [otherFunctionA](index.md#otherfunctiona)
-- [otherFunctionB](index.md#otherfunctionb)
+- [categoryFunctionA1](exports.md#categoryfunctiona1)
+- [categoryFunctionA2](exports.md#categoryfunctiona2)
+- [categoryFunctionA3](exports.md#categoryfunctiona3)
+- [categoryFunctionB2](exports.md#categoryfunctionb2)
+- [otherFunctionA](exports.md#otherfunctiona)
+- [otherFunctionB](exports.md#otherfunctionb)
 "
 `;
 
@@ -363,26 +363,26 @@ exports[`Categories: (excludeGroups=true) should render category TOC' 1`] = `
 
 ### CategoryA
 
-- [CategoryInterfaceA1](index.md#categoryinterfacea1)
-- [CategoryInterfaceA2](index.md#categoryinterfacea2)
-- [categoryVariableA1](index.md#categoryvariablea1)
-- [categoryVariableA2](index.md#categoryvariablea2)
-- [categoryFunctionA1](index.md#categoryfunctiona1)
-- [categoryFunctionA2](index.md#categoryfunctiona2)
-- [categoryFunctionA3](index.md#categoryfunctiona3)
+- [CategoryInterfaceA1](exports.md#categoryinterfacea1)
+- [CategoryInterfaceA2](exports.md#categoryinterfacea2)
+- [categoryVariableA1](exports.md#categoryvariablea1)
+- [categoryVariableA2](exports.md#categoryvariablea2)
+- [categoryFunctionA1](exports.md#categoryfunctiona1)
+- [categoryFunctionA2](exports.md#categoryfunctiona2)
+- [categoryFunctionA3](exports.md#categoryfunctiona3)
 
 ### CategoryB
 
-- [categoryVariableB1](index.md#categoryvariableb1)
-- [categoryFunctionB2](index.md#categoryfunctionb2)
+- [categoryVariableB1](exports.md#categoryvariableb1)
+- [categoryFunctionB2](exports.md#categoryfunctionb2)
 
 ### Other
 
-- [OtherInterfaceA](index.md#otherinterfacea)
-- [otherVariableA](index.md#othervariablea)
-- [otherVariableB](index.md#othervariableb)
-- [otherFunctionA](index.md#otherfunctiona)
-- [otherFunctionB](index.md#otherfunctionb)
+- [OtherInterfaceA](exports.md#otherinterfacea)
+- [otherVariableA](exports.md#othervariablea)
+- [otherVariableB](exports.md#othervariableb)
+- [otherFunctionA](exports.md#otherfunctiona)
+- [otherFunctionB](exports.md#otherfunctionb)
 "
 `;
 
