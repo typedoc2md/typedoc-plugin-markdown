@@ -42,5 +42,5 @@ export function breadcrumbs(
 
   md.push(pageName);
 
-  return md.length > 1 ? `${md.join(' > ')}` : '';
+  return md.length > 1 ? `${md.join(' / ')}` : '';
 }
