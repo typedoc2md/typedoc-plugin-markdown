@@ -41,6 +41,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   entryDocument: string;
   enumMembersFormat: FormatStyle;
   excludeGroups: boolean;
+  flattenOutputFiles: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   hideKindTag: boolean;
@@ -69,7 +70,7 @@ export type FrontmatterGlobals =
   | Record<string, string | boolean | number | null>;
 
 export interface NavigationItem {
-  title?: string;
+  title: string;
   url?: string;
   children?: NavigationItem[];
   isReadme?: boolean;

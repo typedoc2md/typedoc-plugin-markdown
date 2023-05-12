@@ -3,6 +3,7 @@
   "workspaces": [
     "packages/typedoc-plugin-markdown",
     "packages/docusaurus-plugin-typedoc",
+    "packages/typedoc-github-wiki-theme",
     "packages/typedoc-vitepress-theme"
   ],
   "scripts": {

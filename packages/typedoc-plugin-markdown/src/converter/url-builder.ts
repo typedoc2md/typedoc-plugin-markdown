@@ -215,19 +215,30 @@ export class UrlBuilder {
           }
         });
       }
-      //}
     } else if (reflection.parent) {
       this.applyAnchorUrl(reflection, reflection.parent);
     }
   }
 
   private getUrl(reflection: DeclarationReflection, options: UrlOption) {
-    const parentDir = options.parentUrl
-      ? path.dirname(options.parentUrl)
-      : null;
+    if (this.context.getOption('flattenOutputFiles')) {
+      const reflectionParts = reflection.getFriendlyFullName().split('.');
+      if (!reflection.kindOf(ReflectionKind.Module)) {
+        reflectionParts.splice(
+          reflectionParts.length - 1,
+          0,
+          ReflectionKind.singularString(reflection.kind),
+        );
+      }
+      return reflectionParts.join('.').replace(/\//, '_') + '.md';
+    }
 
     // remove leading underscores
     const alias = reflection.getAlias().replace(/^_/, '');
+
+    const parentDir = options.parentUrl
+      ? path.dirname(options.parentUrl)
+      : null;
 
     const dir = () => {
       if (reflection.kindOf(ReflectionKind.Namespace)) {

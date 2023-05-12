@@ -1,14 +1,24 @@
-import { MarkdownTheme } from 'typedoc-plugin-markdown';
-import { GithubWikiThemeRenderContext } from './theme-context';
+import {
+  MarkdownTheme,
+  MarkdownThemeRenderContext,
+} from 'typedoc-plugin-markdown';
+import { parseUrl } from './helpers';
 
 export class GithubWikiTheme extends MarkdownTheme {
-  private _contextCache?: GithubWikiThemeRenderContext;
-
+  private _contextCache?: ThemeRenderContext;
   override getRenderContext() {
-    this._contextCache ||= new GithubWikiThemeRenderContext(
-      this,
-      this.application.options,
-    );
+    if (!this._contextCache) {
+      this._contextCache = new ThemeRenderContext(
+        this,
+        this.application.options,
+      );
+    }
     return this._contextCache;
+  }
+}
+
+class ThemeRenderContext extends MarkdownThemeRenderContext {
+  override getRelativeUrl(url: string) {
+    return parseUrl(url);
   }
 }

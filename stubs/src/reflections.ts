@@ -19,3 +19,11 @@ export enum EnumReflection {
 }
 
 export class ImplementedClass implements ReflectionClass {}
+
+export class Duck {
+  public age: number;
+}
+
+export interface Duck {
+  age: number;
+}

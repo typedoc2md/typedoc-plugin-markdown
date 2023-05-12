@@ -38,6 +38,13 @@ export function declareOptions(app: Application) {
   });
 
   app.options.addDeclaration({
+    name: 'flattenOutputFiles',
+    help: '[Markdown Plugin] Flatten output files without folders.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
     name: 'includeFileNumberPrefixes',
     help: '[Markdown Plugin] Prefixes docs and folders by number prefixes if applicable.',
     type: ParameterType.Boolean,

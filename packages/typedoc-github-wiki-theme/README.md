@@ -1,6 +1,6 @@
 # typedoc-github-wiki-theme
 
-A [Github Wiki](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis) compatible [TypeDoc](https://github.com/TypeStrong/typedoc) theme.
+A [TypeDoc](https://github.com/TypeStrong/typedoc) theme that publishes Markdown pages compatible with [Github Wiki](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis) .
 
 [![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-github-wiki-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
@@ -17,16 +17,33 @@ A [Github Wiki](https://docs.github.com/en/communities/documenting-your-project-
 npm install typedoc typedoc-plugin-markdown typedoc-github-wiki-theme --save-dev
 ```
 
-### Usage
+## Usage
 
 ```bash
-$ npx typedoc --theme github-wiki [args]
+$ typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme
 ```
 
 ## Options
 
 Please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
 
+The following options are preset with the theme:
+
+```json
+{
+  "entryDocument": "Home.md",
+  "flattenOutputFiles": true,
+  "hideInPageTOC": true,
+  "hidePageHeader": true,
+  "hideBreadcrumbs": true,
+  "hidePageTitle": true
+}
+```
+
 ## License
 
 [MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-github-wiki-theme/LICENSE)
+
+```
+
+```
