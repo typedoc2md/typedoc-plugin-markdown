@@ -4,7 +4,8 @@
   "initialVersions": {
     "typedoc-plugin-markdown": "3.15.1",
     "docusaurus-plugin-typedoc": "0.18.0",
-    "typedoc-vitepress-theme": "0.0.0"
+    "typedoc-vitepress-theme": "0.0.0",
+    "typedoc-github-wiki-theme": "1.0.1"
   },
   "changesets": [
     "big-cooks-lick",
