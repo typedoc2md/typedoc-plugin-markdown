@@ -103,4 +103,35 @@ describe(`Urls:`, () => {
       ).toMatchSnapshot();
     });
   });
+
+  describe(`(Monorepo)`, () => {
+    test(`should get urls (entryPointStrategy=packages)`, async () => {
+      const { project, context } = await global.bootstrap(
+        ['monorepo/packages/*'],
+        {
+          options: {
+            entryPointStrategy: 'packages',
+          },
+        },
+      );
+      expect(
+        context.theme.getUrls(project).map((url) => url.url),
+      ).toMatchSnapshot();
+    });
+
+    test(`should get urls (entryPointStrategy=packages, includeFileNumberPrefixes=true)`, async () => {
+      const { project, context } = await global.bootstrap(
+        ['monorepo/packages/*'],
+        {
+          options: {
+            entryPointStrategy: 'packages',
+            includeFileNumberPrefixes: true,
+          },
+        },
+      );
+      expect(
+        context.theme.getUrls(project).map((url) => url.url),
+      ).toMatchSnapshot();
+    });
+  });
 });

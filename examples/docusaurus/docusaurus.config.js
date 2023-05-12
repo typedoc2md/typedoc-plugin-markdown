@@ -60,6 +60,20 @@ const config = {
         readme: 'none',
       },
     ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'api-3',
+        out: 'api-3',
+        options: '../../stubs/typedoc.3.js',
+        sidebar: {
+          autoConfiguration: true,
+          position: 2,
+          categoryLabel: 'API-3',
+        },
+        cleanOutputDir: true,
+      },
+    ],
   ],
   presets: [
     [
@@ -107,6 +121,12 @@ const config = {
             to: 'docs/api-2/',
             activeBasePath: 'docs',
             label: 'API-2',
+            position: 'left',
+          },
+          {
+            to: 'docs/api-3/',
+            activeBasePath: 'docs',
+            label: 'API-3',
             position: 'left',
           },
           {

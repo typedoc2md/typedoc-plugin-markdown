@@ -26,7 +26,6 @@ export function load(app: Application) {
 
   app.options.addReader(
     new MarkdownPluginOptionsReader({
-      entryDocument: 'index.md',
       anchorFormat: 'slug',
       out: './docs/api',
     }),

@@ -35,7 +35,6 @@ export class UrlBuilder {
 
   constructor(
     public context: MarkdownThemeRenderContext,
-    public project: ProjectReflection,
     public options: Partial<TypedocPluginMarkdownOptions>,
   ) {}
 
@@ -61,68 +60,57 @@ export class UrlBuilder {
    *
    * @param project  The project whose urls should be generated.
    */
-  getUrls(): UrlMapping[] {
+  getUrls(project: ProjectReflection): UrlMapping[] {
     if (!this.options.readme?.endsWith('none')) {
       const indexFileName = this.getPartName(this.context.indexFile, 1);
-      this.project.url = indexFileName;
+      project.url = indexFileName;
       this.urls.push(
-        new UrlMapping(
-          this.context.readmeFile,
-          this.project,
-          this.readmeTemplate,
-        ),
+        new UrlMapping(this.context.readmeFile, project, this.readmeTemplate),
       );
       this.urls.push(
-        new UrlMapping(indexFileName, this.project, this.projectTemplate),
+        new UrlMapping(indexFileName, project, this.projectTemplate),
       );
     } else {
-      this.project.url = this.context.indexFile;
+      project.url = this.context.indexFile;
       this.urls.push(
-        new UrlMapping(
-          this.context.indexFile,
-          this.project,
-          this.projectTemplate,
-        ),
+        new UrlMapping(this.context.indexFile, project, this.projectTemplate),
       );
     }
 
-    /**
-     * If entrypoint is packages we loop over children, otherwise groups
-     */
     if (
       (this.options.entryPointStrategy as unknown as EntryPointStrategy) ===
       'packages'
     ) {
-      this.project.children?.forEach((projectChild) => {
-        const mapping = this.getTemplateMapping(this.project.kind);
-        if (mapping) {
-          let url = this.getUrl(
-            this.project as unknown as DeclarationReflection,
-            {
-              directory: mapping.directory,
-              directoryPosition: 1,
-              pagePosition: 1,
-            },
+      project.children?.forEach((projectChild, projectChildIndex) => {
+        const startIndex = !this.options.readme?.endsWith('none') ? 2 : 1;
+        const directoryPosition = projectChildIndex + startIndex;
+        const url = `${this.getPartName(
+          projectChild.name,
+          directoryPosition,
+        )}/${
+          Boolean(projectChild.readme)
+            ? this.getPartName(this.context.indexFile, 1)
+            : this.context.indexFile
+        }`;
+        if (projectChild.readme) {
+          this.urls.push(
+            new UrlMapping(
+              `${path.dirname(url)}/${this.context.readmeFile}`,
+              projectChild as any,
+              this.readmeTemplate,
+            ),
           );
-          if (this.project.readme) {
-            this.urls.push(
-              new UrlMapping(
-                `${path.dirname(url)}/${this.context.readmeFile}`,
-                this.project,
-                this.readmeTemplate,
-              ),
-            );
-          } else {
-            url = `${path.dirname(url)}/${this.context.readmeFile}`;
-          }
-          this.urls.push(new UrlMapping(url, this.project, mapping.template));
-          this.project.url = url;
         }
-        this.buildUrlsFromProject(projectChild);
+        this.urls.push(
+          new UrlMapping(url, projectChild as any, this.projectTemplate),
+        );
+        projectChild.url = url;
+        this.buildUrlsFromProject(projectChild, url);
       });
     } else {
-      this.buildUrlsFromProject(this.project);
+      this.buildUrlsFromProject(project);
     }
+
     return this.urls;
   }
 
@@ -133,14 +121,16 @@ export class UrlBuilder {
    */
   private buildUrlsFromProject(
     project: ProjectReflection | DeclarationReflection,
+    parentUrl?: string,
   ) {
-    const startIndex = !this.options.readme?.endsWith('none') ? 2 : 1;
+    const startIndex = Boolean(project.readme) ? 2 : 1;
     project.groups?.forEach((projectGroup, projectGroupIndex) => {
       projectGroup.children.forEach(
         (projectGroupChild, projectGroupChildIndex) => {
           this.buildUrlsFromGroup(projectGroupChild, {
             directoryPosition: projectGroupIndex + startIndex,
             pagePosition: projectGroupChildIndex + startIndex,
+            ...(parentUrl && { parentUrl: parentUrl }),
           });
         },
       );

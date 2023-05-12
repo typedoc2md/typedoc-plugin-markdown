@@ -30,52 +30,79 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
 
   const hasReadme = !app.options.getValue('readme').endsWith('none');
   const sidebar = app.options.getValue('sidebar') as SidebarOptions;
-  const isReadmePage = event.page?.url === renderContext.readmeFile;
-  const isIndexPage = event.page?.url === event.page.project.url;
-
+  const isIndexPage = event.page?.url.endsWith(renderContext.indexFile);
+  const isReadmePage = event.page?.url.endsWith(renderContext.readmeFile);
   const isPackageModule =
     event.page.model.kindOf(ReflectionKind.Module) &&
     !Boolean((event.page.model?.parent as any).groups);
 
   let pluginFrontmatter: Record<string, any> = {};
 
-  if (!isReadmePage) {
+  // Add titles to all pages
+  if (!isIndexPage && !isReadmePage) {
     pluginFrontmatter = {
       ...pluginFrontmatter,
       title: event.page?.model?.name,
     };
   }
 
-  if (
-    isIndexPage ||
-    (isPackageModule && !event.page.url.endsWith(renderContext.indexFile))
-  ) {
-    pluginFrontmatter = {
-      ...pluginFrontmatter,
-      title: sidebar.indexLabel,
-    };
-  }
+  if (sidebar.autoConfiguration) {
+    // Entry url
+    if (
+      event.page?.url === renderContext.readmeFile ||
+      (!hasReadme && isIndexPage)
+    ) {
+      if (sidebar.categoryLabel) {
+        pluginFrontmatter = {
+          ...pluginFrontmatter,
+          sidebar_label: sidebar.categoryLabel,
+        };
+      }
 
-  if (
-    (isReadmePage ||
-      (!hasReadme && isIndexPage) ||
-      (isPackageModule && !event.page.url.endsWith(renderContext.indexFile))) &&
-    sidebar.autoConfiguration
-  ) {
-    if (sidebar.categoryLabel) {
+      if (sidebar.position !== null && !Number.isNaN(sidebar.position)) {
+        pluginFrontmatter = {
+          ...pluginFrontmatter,
+          sidebar_position: sidebar.position,
+        };
+      }
+    }
+
+    if (isIndexPage) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
-        sidebar_label: sidebar.categoryLabel,
+        sidebar_label: sidebar.indexLabel,
       };
     }
 
-    if (sidebar.position !== null && !Number.isNaN(sidebar.position)) {
+    if (isIndexPage) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
-        sidebar_position: sidebar.position,
+        sidebar_label: sidebar.indexLabel,
+      };
+    }
+
+    if (isIndexPage && !Boolean((event.page.model as any)?.groups)) {
+      pluginFrontmatter = {
+        ...pluginFrontmatter,
+        sidebar_label: 'Packages',
+      };
+    }
+
+    if (isPackageModule && isReadmePage) {
+      pluginFrontmatter = {
+        ...pluginFrontmatter,
+        sidebar_label: event.page.model.name,
+      };
+    }
+
+    if (isPackageModule && isIndexPage && !Boolean(event.page.model?.readme)) {
+      pluginFrontmatter = {
+        ...pluginFrontmatter,
+        sidebar_label: event.page.model.name,
       };
     }
   }
+
   event.frontmatter = {
     ...pluginFrontmatter,
     ...event.frontmatter,

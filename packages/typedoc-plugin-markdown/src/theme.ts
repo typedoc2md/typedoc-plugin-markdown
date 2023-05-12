@@ -65,9 +65,8 @@ export class MarkdownTheme extends Theme {
   getUrls(project: ProjectReflection) {
     const urls = new UrlBuilder(
       this.getRenderContext(),
-      project,
       this.application.options.getRawValues() as Partial<TypedocPluginMarkdownOptions>,
-    ).getUrls();
+    ).getUrls(project);
 
     return urls;
   }

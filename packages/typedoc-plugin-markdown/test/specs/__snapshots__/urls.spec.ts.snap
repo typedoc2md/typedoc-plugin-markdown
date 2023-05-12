@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
+[
+  "README.md",
+  "index.md",
+  "child-package/README.md",
+  "child-package/index.md",
+  "child-package/namespaces/namespace.Validation/index.md",
+  "child-package/namespaces/namespace.Validation/variables/variable.numberRegexp.md",
+  "child-package/variables/variable.hello.md",
+  "child-package-2/index.md",
+  "child-package-2/variables/variable.hello-1.md",
+]
+`;
+
+exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeFileNumberPrefixes=true) 1`] = `
+[
+  "README.md",
+  "01-index.md",
+  "02-child-package/README.md",
+  "02-child-package/01-index.md",
+  "02-child-package/02-Namespaces/02-namespace.Validation/index.md",
+  "02-child-package/02-Namespaces/02-namespace.Validation/01-Variables/01-variable.numberRegexp.md",
+  "02-child-package/03-Variables/02-variable.hello.md",
+  "03-child-package-2/index.md",
+  "03-child-package-2/01-Variables/01-variable.hello-1.md",
+]
+`;
+
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] = `
 [
   "README.md",

@@ -30,12 +30,11 @@ export function projectTemplate(
     md.push(context.partials.toc(page.model));
   } else {
     md.push(heading(2, 'Packages'));
+
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
         Boolean(projectPackage.readme)
-          ? `${path.dirname(projectPackage.url || '')}/${
-              this.context.readmeFile
-            }`
+          ? `${path.dirname(projectPackage.url || '')}/${context.readmeFile}`
           : projectPackage.url,
       )})`;
     });
