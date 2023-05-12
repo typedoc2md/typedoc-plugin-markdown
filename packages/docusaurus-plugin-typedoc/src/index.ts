@@ -63,7 +63,13 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
   if (!project) {
-    return;
+    if (app.options.getValue('skipErrorChecking')) {
+      return;
+    }
+    console.error(
+      '[docusaurus-plugin-typedoc] TypeDoc exited with an error. Use the "skipErrorChecking" option to disable TypeDoc error checking.',
+    );
+    process.exit();
   }
 
   if (options.watch) {
