@@ -1,7 +1,11 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/typedoc-plugin-markdown",
+    "packages/docusaurus-plugin-typedoc",
+    "packages/typedoc-github-wiki-theme",
+    "packages/typedoc-gitlab-wiki-theme",
+    "packages/typedoc-vitepress-theme"
   ],
   "scripts": {
     "lint": "npm run lint --workspaces",
