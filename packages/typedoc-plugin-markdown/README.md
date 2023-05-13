@@ -72,12 +72,14 @@ Please see [File output and content organization](./docs/file-output-options.md)
 
 ### Utility options
 
-- **`--anchorFormat`**<br>
-  The anchor pattern to use when linking to internal symbols. Expected values [`lowercase`, `slug`, `none`]. Defaults to `lowercase`.
-- **`--namedAnchors`**<br>
-  Use HTML named anchors tags for implementations that do not assign header ids. Defaults to `false`.
 - **`--baseUrl`**<br>
   Specifies the base url for internal link. If omitted all urls will be relative. Defaults to `.`
+- **`--anchorFormat`**<br>
+  The anchor style to use when linking to internal symbols. Expected values [`lowercase`, `slug`, `none`]. Defaults to `lowercase`.
+- **`--anchorPattern`**<br>
+  The anchor pattern to use when linking to internal symbols. e.g customprefix-{{anchor}}.
+- **`--namedAnchors`**<br>
+  Use HTML named anchor tags for implementations that do not assign header ids. Defaults to `false`.
 
 ## Frontmatter
 

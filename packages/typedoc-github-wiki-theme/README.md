@@ -1,6 +1,6 @@
 # typedoc-github-wiki-theme
 
-A [TypeDoc](https://github.com/TypeStrong/typedoc) theme that publishes Markdown pages compatible with [Github Wiki](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis) .
+A [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md) theme that publishes Markdown pages compatible with [Github Wiki](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis).
 
 [![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-github-wiki-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)

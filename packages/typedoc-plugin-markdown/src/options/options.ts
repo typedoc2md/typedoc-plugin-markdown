@@ -162,10 +162,16 @@ export function declareOptions(app: Application) {
 
   app.options.addDeclaration({
     name: 'anchorFormat',
-    help: '[Markdown Plugin] The anchor pattern to use when linking to internal symbols.',
+    help: '[Markdown Plugin] The anchor format to use when linking to internal symbols.',
     type: ParameterType.Map,
     map: AnchorFormat,
     defaultValue: AnchorFormat.Lowercase,
+  });
+
+  app.options.addDeclaration({
+    name: 'anchorPattern',
+    help: '[Markdown Plugin] The anchor pattern to use when linking to internal symbols. e.g customprefix-{{anchor}}.',
+    type: ParameterType.String,
   });
 
   app.options.addDeclaration({

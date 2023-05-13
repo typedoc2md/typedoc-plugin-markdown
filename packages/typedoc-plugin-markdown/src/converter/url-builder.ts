@@ -294,7 +294,10 @@ export class UrlBuilder {
   ) {
     if (container.url && !reflection.url) {
       if (!reflection.kindOf(ReflectionKind.TypeLiteral)) {
-        const anchorId = this.getAnchorId(reflection);
+        const anchorPattern = this.context.getOption('anchorPattern');
+        const anchorId = anchorPattern
+          ? anchorPattern.replace('{{anchor}}', this.getAnchorId(reflection))
+          : this.getAnchorId(reflection);
 
         const count = this.anchors[container.url]?.filter(
           (id) => id === anchorId,
