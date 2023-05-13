@@ -3,6 +3,7 @@ import {
   Application,
   BooleanDeclarationOption,
   MixedDeclarationOption,
+  PackageJsonReader,
   ParameterType,
   ProjectReflection,
   RendererEvent,
@@ -46,6 +47,7 @@ export async function render(
 }
 
 const addTypedocReaders = (app: Application) => {
+  app.options.addReader(new PackageJsonReader())
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
 };
