@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.0-next.9
+
+### Patch Changes
+
+- Updated fileoutput for 'packages' entryPointStrategy
+- Fail docusaurus build when TypeDoc errors - can be overriden with `skipErrorChecking` ([#429](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/429)).
+- Enable reading of TypeDoc options from package.json typedocOptions
+- Replace category.yml with readable dir names
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.11
+
 ## 1.0.0-next.8
 
 ### Patch Changes
