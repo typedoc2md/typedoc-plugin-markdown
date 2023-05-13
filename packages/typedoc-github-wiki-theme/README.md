@@ -5,7 +5,9 @@ A [TypeDoc](https://github.com/TypeStrong/typedoc) theme that publishes Markdown
 [![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-github-wiki-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
-## What Does It Do?
+## What does it do?
+
+This theme customises the output from [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md):
 
 - Generates Wiki friendly file names.
 - Updates internal urls to a compatible format.
@@ -19,8 +21,12 @@ npm install typedoc typedoc-plugin-markdown typedoc-github-wiki-theme --save-dev
 
 ## Usage
 
-```bash
-$ typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme
+**typedoc.json**
+
+```json
+{
+  "plugin": ["typedoc-plugin-markdown", "typedoc-github-wiki-theme"]
+}
 ```
 
 ## Options

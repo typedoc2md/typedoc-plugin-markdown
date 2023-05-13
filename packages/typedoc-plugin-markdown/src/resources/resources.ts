@@ -27,7 +27,7 @@ import {
  UnionType,
  UnknownType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
-import { Collapse } from '../models';
+import { Collapse, NavigationItem } from '../models';
 import { memberTemplate } from './templates/member';
 import { projectTemplate } from './templates/project';
 import { readmeTemplate } from './templates/readme';
@@ -51,6 +51,7 @@ import { memberTitle } from './partials/member.title';
 import { member } from './partials/member';
 import { typeDeclarationMember } from './partials/member.type-declaration';
 import { members } from './partials/members';
+import { navigation } from './partials/navigation';
 import { pageHeader } from './partials/page.header';
 import { pageTitle } from './partials/page.title';
 import { enumMembersTable } from './partials/table.enum-members';
@@ -106,6 +107,7 @@ export type Partials = {
   member: (reflection: DeclarationReflection, headingLevel: number) => string;
   typeDeclarationMember: (typeDeclaration: DeclarationReflection, headingLevel: number) => string;
   members: (container: ContainerReflection, headingLevel: number) => string;
+  navigation: (navigationItems: NavigationItem[]) => string;
   pageHeader: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   pageTitle: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   enumMembersTable: (props: DeclarationReflection[]) => string;
@@ -159,6 +161,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   member: bind(member, context),
   typeDeclarationMember: bind(typeDeclarationMember, context),
   members: bind(members, context),
+  navigation: bind(navigation, context),
   pageHeader: bind(pageHeader, context),
   pageTitle: bind(pageTitle, context),
   enumMembersTable: bind(enumMembersTable, context),

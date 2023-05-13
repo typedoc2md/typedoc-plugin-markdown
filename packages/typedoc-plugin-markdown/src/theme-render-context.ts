@@ -11,7 +11,7 @@ export class MarkdownThemeRenderContext {
   public modulesFile = 'modules.md';
   public exportsFile = 'exports.md';
 
-  private _activeLocation: string;
+  private _activeLocation = '.';
 
   set activeLocation(activeLocation: string) {
     this._activeLocation = activeLocation;
@@ -39,21 +39,27 @@ export class MarkdownThemeRenderContext {
       }
 
       const relative = path.relative(
-        path.dirname(this.activeLocation || ''),
+        path.dirname(this.activeLocation),
         path.dirname(url),
       );
 
-      return encodeURI(
+      return this.parseUrl(
         path.join(relative, path.basename(url)).replace(/\\/g, '/'),
       );
     }
   }
 
-  urlTo = (reflection: Reflection) => this.relativeURL(reflection.url);
+  urlTo(reflection: Reflection) {
+    return this.relativeURL(reflection.url);
+  }
 
-  relativeURL = (url: string | undefined) => {
+  parseUrl(url: string) {
+    return encodeURI(url);
+  }
+
+  relativeURL(url: string | undefined) {
     return this.getRelativeUrl(url);
-  };
+  }
 
   templates = templates(this);
   partials = partials(this);

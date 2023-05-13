@@ -1,11 +1,13 @@
 # typedoc-gitlab-wiki-theme
 
-A [Gitlab Wiki](https://docs.gitlab.com/ee/user/project/wiki/) compatible [TypeDoc](https://github.com/TypeStrong/typedoc) theme.
+A [TypeDoc](https://github.com/TypeStrong/typedoc) theme that publishes Markdown pages compatible with [Gitlab Wiki](https://docs.gitlab.com/ee/user/project/wiki/).
 
 [![npm](https://img.shields.io/npm/v/typedoc-gitlab-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
 
-## What Does It Do?
+## What does it do?
+
+This theme customises the output from [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md):
 
 - Generates Wiki friendly file names.
 - Updates internal urls to a compatible format.
@@ -19,13 +21,30 @@ npm install typedoc typedoc-plugin-markdown typedoc-gitlab-wiki-theme --save-dev
 
 ## Usage
 
-```bash
-$ npx typedoc --theme gitlab-wiki [args]
+**typedoc.json**
+
+```json
+{
+  "plugin": ["typedoc-plugin-markdown", "typedoc-gitlab-wiki-theme"]
+}
 ```
 
 ## Options
 
 Please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
+
+The following options are preset with the theme:
+
+```json
+{
+  "entryDocument": "home.md",
+  "flattenOutputFiles": true,
+  "hideBreadcrumbs": true,
+  "hideInPageTOC": true,
+  "hidePageHeader": true,
+  "hidePageTitle": true
+}
+```
 
 ## License
 

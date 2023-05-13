@@ -3,8 +3,8 @@ import { Application } from 'typedoc';
 import {
   MarkdownPluginOptionsReader,
   MarkdownRendererEvent,
+  MarkdownTheme,
 } from 'typedoc-plugin-markdown';
-import { parseUrl } from './helpers';
 import { GithubWikiTheme } from './theme';
 
 export function load(app: Application) {
@@ -24,21 +24,10 @@ export function load(app: Application) {
 
   app.renderer.postRenderAsyncJobs.push(
     async (output: MarkdownRendererEvent) => {
-      const navigation = output.navigation;
-      const sidebarTitle =
-        app.options.getValue('entryPoints')?.length > 1 ? 'Modules' : 'Exports';
-      const sidebarMd: string[] = [`## ${sidebarTitle}\n`];
-      navigation.forEach((navigationItem) => {
-        if (navigationItem.url) {
-          sidebarMd.push(
-            `- [${navigationItem.title}](${parseUrl(navigationItem.url)})`,
-          );
-        }
-      });
-      fs.writeFileSync(
-        `${output.outputDirectory}/_Sidebar.md`,
-        sidebarMd.join('\n'),
-      );
+      const navigation = (app.renderer.theme as MarkdownTheme)
+        .getRenderContext()
+        .partials.navigation(output.navigation);
+      fs.writeFileSync(`${output.outputDirectory}/_Sidebar.md`, navigation);
     },
   );
 }

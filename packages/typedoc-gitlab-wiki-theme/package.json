@@ -19,22 +19,15 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "demo": "rm -rf ./demo && npm run build && typedoc  --options ../../stubs/typedoc.json --theme gitlab-wiki --out ./demo"
+    "docs": "rm -rf ./demo && npm run build && typedoc --options ../../stubs/typedoc.1.js --plugin typedoc-plugin-markdown --plugin ./dist/index --out ./out"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc": ">=0.23.0",
-    "typedoc-plugin-markdown": ">=3.13.0"
-  },
-  "devDependencies": {
-    "typedoc-plugin-markdown": "^3.13.0"
+    "typedoc-plugin-markdown": ">=4.0.0-next.8"
   },
   "keywords": [
     "typedoc",
-    "typedoc-theme",
-    "gitlab",
-    "wiki",
-    "markdown"
+    "gitlabwiki"
   ]
 }

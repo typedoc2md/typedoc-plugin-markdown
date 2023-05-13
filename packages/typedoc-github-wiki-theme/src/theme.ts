@@ -2,7 +2,6 @@ import {
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
-import { parseUrl } from './helpers';
 
 export class GithubWikiTheme extends MarkdownTheme {
   private _contextCache?: ThemeRenderContext;
@@ -18,7 +17,7 @@ export class GithubWikiTheme extends MarkdownTheme {
 }
 
 class ThemeRenderContext extends MarkdownThemeRenderContext {
-  override getRelativeUrl(url: string) {
-    return parseUrl(url);
+  override parseUrl(url: string) {
+    return encodeURI('../wiki/' + url.replace('.md', ''));
   }
 }

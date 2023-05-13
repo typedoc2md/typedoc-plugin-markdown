@@ -66,7 +66,7 @@ export function signatureMember(
       );
     }
 
-    md.push(context.partials.inheritance(signature, headingLevel + 1));
+    md.push(context.partials.inheritance(signature, headingLevel));
   }
 
   return md.join('\n\n');
