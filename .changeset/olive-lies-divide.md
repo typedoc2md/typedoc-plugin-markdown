@@ -1,5 +1,5 @@
 ---
-'typedoc-vitepress-theme': patch
+'typedoc-vitepress-theme': major
 ---
 
 - Initial commit
