@@ -4,7 +4,7 @@ import {
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
-import { heading } from '../../support/els';
+import { backTicks, heading } from '../../support/els';
 
 import { escapeChars } from '../../support/utils';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
@@ -36,12 +36,14 @@ export function toc(
         md.push(getGroup(context, item) + '\n');
       });
     } else {
-      if (context.getOption('excludeGroups')) {
-        reflection.children?.forEach((child) => {
-          md.push(
-            `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
-          );
-        });
+      if (context.getOption('excludeGroups') && reflection.children) {
+        md.push(
+          reflection.children
+            .map((child) => {
+              return getTocItem(context, child);
+            })
+            .join('\n'),
+        );
       } else {
         reflection.groups?.forEach((reflectionGroup) => {
           if (reflectionGroup.categories) {
@@ -67,11 +69,25 @@ export function toc(
 }
 
 function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  const children = group.children.map(
-    (child) =>
-      `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
-  );
+  const children = group.children.map((child) => getTocItem(context, child));
   return children.join('\n');
+}
+
+function getTocItem(
+  context: MarkdownThemeRenderContext,
+  reflection: DeclarationReflection,
+) {
+  const showKindTag =
+    !reflection.kindOf(ReflectionKind.Module) &&
+    !context.getOption('hideKindTag') &&
+    context.getOption('excludeGroups');
+  return `- ${
+    showKindTag
+      ? backTicks(
+          Array.from(ReflectionKind.singularString(reflection.kind))[0],
+        ) + ' '
+      : ''
+  }[${escapeChars(reflection.name)}](${context.relativeURL(reflection.url)})`;
 }
 
 function getIndexHeadingLevel(

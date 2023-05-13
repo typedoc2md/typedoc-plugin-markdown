@@ -1,6 +1,6 @@
 # typedoc-vitepress-theme
 
-A [TypeDoc](https://github.com/TypeStrong/typedoc) theme that publishes Markdown pages compatible with [VitePress](https://vitepress.dev/).
+A [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md) theme that publishes Markdown pages compatible with [VitePress](https://vitepress.dev/).
 
 [![npm](https://img.shields.io/npm/v/typedoc-vitepress-theme.svg)](https://www.npmjs.com/package/typedoc-vitepress-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)

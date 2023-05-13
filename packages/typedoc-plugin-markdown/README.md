@@ -35,13 +35,13 @@ The following options can be used in addition to relevant [TypeDoc options](http
 ### File output and content organization
 
 - **`--outputFileStrategy`**<br>
-  Determines how output files are generated. Allowed values `modules` or `members`. Default value `members`.
+  Determines how output files are generated. Allowed values `modules` (all symbols hoisted to a single modules file) or `members` (each symbol exported to a seperate file). Default value `members`.
 - **`--entryDocument`**<br>
   The file name of the entry document. Default value `README.md`.
 - **`--includeFileNumberPrefixes`**<br>
   Prefixes generated files and folders with number prefixes. This is useful for auto sidebar generation. Defaults to `false`.
 - **`--excludeGroups`**<br>
-  By default members are grouped by kind (eg Classes, Functions). This options excludes such grouping so all members are rendered and sorted at the same level. Defaults to `false`.
+  By default members are grouped by kind (eg Classes, Functions etc). This option excludes such groupings so all members are rendered and sorted at the same level. Defaults to `false`.
 
 Please see [File output and content organization](./docs/file-output-options.md) for further documentation.
 
@@ -56,7 +56,7 @@ Please see [File output and content organization](./docs/file-output-options.md)
 - **`--hidePageTitle`**<br>
   Do not print the page title. Defaults to `false`.
 - **`--hideKindTag`**<br>
-  Do not print the kind tag beneath the page title. Defaults to `false`.
+  Do not print the kind tag identifiers for symbols. Defaults to `false`.
 - **`--hideHierarchy`**<br>
   Do not print reflection hierarchy. Defaults to `false`.
 - **`--indexPageTitle`**<br>

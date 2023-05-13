@@ -16,7 +16,7 @@ This theme customises the output from [typedoc-plugin-markdown](https://github.c
 ## Installation
 
 ```shell
-npm install typedoc typedoc-plugin-markdown typedoc-github-wiki-theme --save-dev
+npm install typedoc typedoc-plugin-markdown@next typedoc-github-wiki-theme@next --save-dev
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ npm install typedoc typedoc-plugin-markdown typedoc-github-wiki-theme --save-dev
 
 ## Options
 
-Please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
+For options please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
 
 The following options are preset with the theme:
 

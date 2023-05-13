@@ -1,7 +1,7 @@
 {
   "name": "typedoc-github-wiki-theme",
   "version": "1.0.1",
-  "description": "An extension of the default theme from typedoc-plugin-markdown to create a compatible file structure for Github Wiki pages.",
+  "description": "A typedoc-plugin-markdown theme that publishes Markdown pages compatible with Github Wiki.",
   "main": "dist/index.js",
   "files": [
     "dist/"

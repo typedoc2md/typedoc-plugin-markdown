@@ -1,6 +1,6 @@
 # typedoc-gitlab-wiki-theme
 
-A [TypeDoc](https://github.com/TypeStrong/typedoc) theme that publishes Markdown pages compatible with [Gitlab Wiki](https://docs.gitlab.com/ee/user/project/wiki/).
+A [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md) theme that publishes Markdown pages compatible with [Gitlab Wiki](https://docs.gitlab.com/ee/user/project/wiki/).
 
 [![npm](https://img.shields.io/npm/v/typedoc-gitlab-wiki-theme.svg)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme)
 ![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
@@ -16,7 +16,7 @@ This theme customises the output from [typedoc-plugin-markdown](https://github.c
 ## Installation
 
 ```shell
-npm install typedoc typedoc-plugin-markdown typedoc-gitlab-wiki-theme --save-dev
+npm install typedoc typedoc-plugin-markdown@next typedoc-gitlab-wiki-theme@next --save-dev
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ npm install typedoc typedoc-plugin-markdown typedoc-gitlab-wiki-theme --save-dev
 
 ## Options
 
-Please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
+For options please refer to [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/packages/typedoc-plugin-markdown/README.md#options).
 
 The following options are preset with the theme:
 

@@ -36,18 +36,26 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
   const isPackageModule =
     event.page.model.kindOf(ReflectionKind.Module) &&
     !Boolean((event.page.model?.parent as any).groups);
+  const model = event.page?.model;
 
   let pluginFrontmatter: Record<string, any> = {};
 
-  // Add titles to all pages
-  if (!isModulesPage && !isReadmePage) {
-    pluginFrontmatter = {
-      ...pluginFrontmatter,
-      title: event.page?.model?.name,
-    };
-  }
-
   if (sidebar.autoConfiguration) {
+    // Add sidebar labels to all pages
+    if (!isModulesPage && !isReadmePage) {
+      const sidebarLabel =
+        !model.kindOf(ReflectionKind.Module) &&
+        !app.options.getValue('hideKindTag') &&
+        app.options.getValue('excludeGroups')
+          ? `(${Array.from(ReflectionKind.singularString(model.kind))[0]}) ${
+              model?.name
+            }`
+          : model?.name;
+      pluginFrontmatter = {
+        ...pluginFrontmatter,
+        sidebar_label: sidebarLabel,
+      };
+    }
     // Entry url
     if (
       event.page?.url === renderContext.readmeFile ||
