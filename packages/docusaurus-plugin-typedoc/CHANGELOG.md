@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0-next.9
+## 1.0.0-next.9 (2023-05-13)
 
 ### Patch Changes
 
