@@ -3,6 +3,7 @@ import {
   MixedDeclarationOption,
   Options,
   OptionsReader,
+  PackageJsonReader,
   ParameterType,
   TSConfigReader,
   TypeDocReader,
@@ -40,6 +41,7 @@ export function getPluginOptions(opts: Partial<PluginOptions>): PluginOptions {
 }
 
 export function loadOptions(app: Application) {
+  app.options.addReader(new PackageJsonReader());
   app.options.addReader(new TypeDocReader());
   app.options.addReader(new TSConfigReader());
 
