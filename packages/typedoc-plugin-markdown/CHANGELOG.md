@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.0.0-next.11
+
+### Patch Changes
+
+- Simplified fileoutput options - replaced kindsWithOwnFile option with an easier to understand `outputFileStrategy` option (see docs)
+- Extract frontmatter logic into seperate TypeDoc plugin
+- Fix fileoutput for 'packages' entryPointStrategy
+- Tweaked header/breadcrumbs
+- Escape angle brackets in comment blocks unless inside backticks ([#276](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/276))
+- UI tweaks to properties display
+
 ## 4.0.0-next.10
 
 ### Patch Changes

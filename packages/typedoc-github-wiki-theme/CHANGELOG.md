@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.0.0-next.0
+
+### Major Changes
+
+- Compatibility fixes for typedoc-plugin-markdown@next
+
+### Patch Changes
+
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.11
+
 ## [1.0.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-github-wiki-theme@0.6.1...typedoc-github-wiki-theme@1.0.1) (2022-05-15)
 
 ### Bug Fixes

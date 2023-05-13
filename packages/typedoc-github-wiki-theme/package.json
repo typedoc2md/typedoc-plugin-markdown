@@ -1,6 +1,6 @@
 {
   "name": "typedoc-github-wiki-theme",
-  "version": "1.0.1",
+  "version": "2.0.0-next.0",
   "description": "A typedoc-plugin-markdown theme that publishes Markdown pages compatible with Github Wiki.",
   "main": "dist/index.js",
   "files": [
@@ -24,7 +24,7 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.0.0-next.8"
+    "typedoc-plugin-markdown": ">=4.0.0-next.11"
   },
   "keywords": [
     "typedoc",

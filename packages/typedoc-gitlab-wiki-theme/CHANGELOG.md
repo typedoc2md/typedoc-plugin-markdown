@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.0.0-next.0
+
+### Major Changes
+
+- Compatibility with typedoc-plugin-markdown@next
+
+### Patch Changes
+
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.11
+
 # 1.0.0 (2022-01-09)
 
 ### BREAKING CHANGE
