@@ -1,6 +1,6 @@
 {
   "name": "typedoc-vitepress-theme",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A typedoc-plugin-markdown theme that publishes Markdown pages compatible with VitePress.",
   "main": "./dist/index.js",
   "files": [
