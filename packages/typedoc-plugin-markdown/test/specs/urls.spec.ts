@@ -14,6 +14,20 @@ describe(`Urls:`, () => {
       ).toMatchSnapshot();
     });
 
+    test(`should get urls (flattenOutputFiles=true)`, async () => {
+      const { project, context } = await global.bootstrap(
+        ['reflections.ts', 'modules/module-1'],
+        {
+          options: {
+            flattenOutputFiles: true,
+          },
+        },
+      );
+      expect(
+        context.theme.getUrls(project).map((url) => url.url),
+      ).toMatchSnapshot();
+    });
+
     test(`should get urls (excludeGroups=false, includeFileNumberPrefixes: true)`, async () => {
       const { project, context } = await global.bootstrap(
         ['modules/module-1', 'categories.ts'],
@@ -90,6 +104,18 @@ describe(`Urls:`, () => {
         context.theme.getUrls(project).map((url) => url.url),
       ).toMatchSnapshot();
     });
+
+    test(`should get urls (flattenOutputFiles=true)`, async () => {
+      const { project, context } = await global.bootstrap(['reflections.ts'], {
+        options: {
+          flattenOutputFiles: true,
+        },
+      });
+      expect(
+        context.theme.getUrls(project).map((url) => url.url),
+      ).toMatchSnapshot();
+    });
+
     test(`should get urls (excludeGroups=true, includeFileNumberPrefixes=true, readme=none)`, async () => {
       const { project, context } = await global.bootstrap(['categories.ts'], {
         options: {

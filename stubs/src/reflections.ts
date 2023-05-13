@@ -21,9 +21,10 @@ export enum EnumReflection {
 export class ImplementedClass implements ReflectionClass {}
 
 export class Duck {
-  public age: number;
+  public age: Duck.Age;
 }
 
-export interface Duck {
-  age: number;
+// eslint-disable-next-line @typescript-eslint/no-namespace
+export namespace Duck {
+  export type Age = number;
 }

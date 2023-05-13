@@ -222,7 +222,19 @@ export class UrlBuilder {
 
   private getUrl(reflection: DeclarationReflection, options: UrlOption) {
     if (this.context.getOption('flattenOutputFiles')) {
-      return reflection.getFriendlyFullName().replace(/\//, '_') + '.md';
+      const kindAlias = ReflectionKind.singularString(reflection.kind).split(
+        ' ',
+      )[0];
+      if (options.parentUrl) {
+        return `${path
+          .dirname(options.parentUrl.split('.').join('/'))
+          .split('/')
+          .join('.')}.${kindAlias}.${reflection.name.replace(/\//, '_')}.md`;
+      }
+      const friendlyName = `${reflection.name.replace(/\//, '_')}.md`;
+      return reflection.kindOf(ReflectionKind.Module)
+        ? friendlyName
+        : `${kindAlias}.${friendlyName}`;
     }
 
     // remove leading underscores

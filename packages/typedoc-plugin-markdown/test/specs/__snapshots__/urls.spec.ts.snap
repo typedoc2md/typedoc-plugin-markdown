@@ -186,6 +186,45 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, outpu
 ]
 `;
 
+exports[`Urls: (Multiple entrypoints) should get urls (flattenOutputFiles=true) 1`] = `
+[
+  "README.md",
+  "modules.md",
+  "modules_module-1.md",
+  "modules_module-1.Namespace.someNameSpace.md",
+  "modules_module-1.Namespace.someNameSpace.Namespace._nestedNamespace.md",
+  "modules_module-1.Namespace.someNameSpace.Namespace._nestedNamespace.Variable.nestedNamespaceVariable.md",
+  "modules_module-1.Namespace.someNameSpace.Enumeration.NamespaceEnum.md",
+  "modules_module-1.Namespace.someNameSpace.Class.NameSpaceClassA.md",
+  "modules_module-1.Namespace.someNameSpace.Interface.NamespaceInterface.md",
+  "modules_module-1.Namespace.someNameSpace.Type.NamespaceTypeLiteral.md",
+  "modules_module-1.Namespace.someNameSpace.Variable.namespaceVariableA.md",
+  "modules_module-1.Namespace.someNameSpace.Variable.namespaceVariableB.md",
+  "modules_module-1.Namespace.someNameSpaceB.md",
+  "modules_module-1.Enumeration.Module1EnumA.md",
+  "modules_module-1.Enumeration.Module1EnumB.md",
+  "modules_module-1.Class.Module1ClassA.md",
+  "modules_module-1.Class.Module1ClassB.md",
+  "modules_module-1.Interface.Module1InterfaceA.md",
+  "modules_module-1.Interface.Module1InterfaceB.md",
+  "modules_module-1.Type.Module1TypeLiteralA.md",
+  "modules_module-1.Type.Module1TypeLiteralB.md",
+  "modules_module-1.Variable.module1VariableA.md",
+  "modules_module-1.Variable.module1VariableB.md",
+  "modules_module-1.Function.module1FunctionA.md",
+  "modules_module-1.Function.module1FunctionB.md",
+  "reflections.md",
+  "reflections.Namespace.Duck.md",
+  "reflections.Namespace.Duck.Type.Age.md",
+  "reflections.Enumeration.EnumReflection.md",
+  "reflections.Class.Duck.md",
+  "reflections.Class.ImplementedClass.md",
+  "reflections.Class.ReflectionClass.md",
+  "reflections.Interface.CallableReflection.md",
+  "reflections.Interface.IndexableReflection.md",
+]
+`;
+
 exports[`Urls: (Single entrypoint) should get urls (excludeGroups=false, includeFileNumberPrefixes=true) 1`] = `
 [
   "README.md",
@@ -224,5 +263,20 @@ exports[`Urls: (Single entrypoint) should get urls (excludeGroups=true, includeF
   "12-function.categoryFunctionB2.md",
   "13-function.otherFunctionA.md",
   "14-function.otherFunctionB.md",
+]
+`;
+
+exports[`Urls: (Single entrypoint) should get urls (flattenOutputFiles=true) 1`] = `
+[
+  "README.md",
+  "exports.md",
+  "Namespace.Duck.md",
+  "Namespace.Duck.Type.Age.md",
+  "Enumeration.EnumReflection.md",
+  "Class.Duck.md",
+  "Class.ImplementedClass.md",
+  "Class.ReflectionClass.md",
+  "Interface.CallableReflection.md",
+  "Interface.IndexableReflection.md",
 ]
 `;
