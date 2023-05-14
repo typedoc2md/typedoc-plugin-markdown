@@ -43,12 +43,20 @@ export class UrlBuilder {
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
     const entryDocument = this.context.getOption('entryDocument');
-    const globalsPage =
-      this.context.getOption('entryPoints')?.length > 1
+    const globalsPage = () => {
+      if (
+        (this.context.getOption(
+          'entryPointStrategy',
+        ) as unknown as EntryPointStrategy) === EntryPointStrategy.Packages
+      ) {
+        return this.context.packagesFile;
+      }
+      return this.context.getOption('entryPoints')?.length > 1
         ? this.context.modulesFile
         : this.context.exportsFile;
+    };
     if (!this.context.getOption('readme')?.endsWith('none')) {
-      project.url = this.getPartName(globalsPage, 1);
+      project.url = this.getPartName(globalsPage(), 1);
       this.urls.push(
         new UrlMapping(
           this.context.getOption('entryDocument'),
@@ -59,7 +67,7 @@ export class UrlBuilder {
 
       this.urls.push(
         new UrlMapping(
-          this.getPartName(globalsPage, 1),
+          this.getPartName(globalsPage(), 1),
           project,
           this.projectTemplate,
         ),
@@ -74,7 +82,7 @@ export class UrlBuilder {
     if (
       (this.context.getOption(
         'entryPointStrategy',
-      ) as unknown as EntryPointStrategy) === 'packages'
+      ) as unknown as EntryPointStrategy) === EntryPointStrategy.Packages
     ) {
       project.children?.forEach((projectChild, projectChildIndex) => {
         const startIndex = !this.context.getOption('readme')?.endsWith('none')
@@ -86,13 +94,13 @@ export class UrlBuilder {
           directoryPosition,
         )}/${
           Boolean(projectChild.readme)
-            ? this.getPartName(this.context.indexFile, 1)
-            : this.context.indexFile
+            ? this.getPartName(this.context.modulesFile, 1)
+            : this.context.getOption('entryDocument')
         }`;
         if (projectChild.readme) {
           this.urls.push(
             new UrlMapping(
-              `${path.dirname(url)}/${this.context.readmeFile}`,
+              `${path.dirname(url)}/${this.context.getOption('entryDocument')}`,
               projectChild as any,
               this.readmeTemplate,
             ),
@@ -286,7 +294,7 @@ export class UrlBuilder {
       if (
         reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])
       ) {
-        return path.parse(this.context.indexFile).name;
+        return path.parse(this.context.getOption('entryDocument')).name;
       }
       return `${this.getPartName(
         slugify(ReflectionKind.singularString(reflection.kind)),

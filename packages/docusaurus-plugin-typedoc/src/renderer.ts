@@ -31,8 +31,10 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
   const hasReadme = !app.options.getValue('readme').endsWith('none');
   const sidebar = app.options.getValue('sidebar') as SidebarOptions;
   const isModulesPage = event.page?.url.endsWith(renderContext.modulesFile);
-  const isIndexPage = event.page?.url.endsWith(renderContext.indexFile);
-  const isReadmePage = event.page?.url.endsWith(renderContext.readmeFile);
+  const isPackagesPage = event.page?.url.endsWith(renderContext.packagesFile);
+  const isReadmePage = event.page?.url.endsWith(
+    app.options.getValue('entryDocument') as string,
+  );
   const isPackageModule =
     event.page.model.kindOf(ReflectionKind.Module) &&
     !Boolean((event.page.model?.parent as any).groups);
@@ -58,7 +60,7 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
     }
     // Entry url
     if (
-      event.page?.url === renderContext.readmeFile ||
+      event.page?.url === app.options.getValue('entryDocument') ||
       (!hasReadme && isModulesPage)
     ) {
       if (sidebar.categoryLabel) {
@@ -90,14 +92,25 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
       };
     }
 
-    if (isPackageModule && isIndexPage && Boolean(event.page.model?.readme)) {
+    if (isPackagesPage) {
+      pluginFrontmatter = {
+        ...pluginFrontmatter,
+        sidebar_label: 'Packages',
+      };
+    }
+
+    if (isPackageModule && isModulesPage && Boolean(event.page.model?.readme)) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
         sidebar_label: sidebar.indexLabel,
       };
     }
 
-    if (isPackageModule && isIndexPage && !Boolean(event.page.model?.readme)) {
+    if (
+      isPackageModule &&
+      isModulesPage &&
+      !Boolean(event.page.model?.readme)
+    ) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
         sidebar_label: event.page.model.name,

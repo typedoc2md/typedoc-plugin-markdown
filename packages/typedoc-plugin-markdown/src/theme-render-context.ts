@@ -6,10 +6,9 @@ import { URL_PREFIX } from './support/constants';
 import { MarkdownTheme } from './theme';
 
 export class MarkdownThemeRenderContext {
-  public readmeFile = 'README.md';
-  public indexFile = 'index.md';
   public modulesFile = 'modules.md';
   public exportsFile = 'exports.md';
+  public packagesFile = 'packages.md';
 
   private _activeLocation = '.';
 

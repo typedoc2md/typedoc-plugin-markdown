@@ -70,7 +70,9 @@ export function packageHeader(
 
   const hasReadme = Boolean(packageItem.readme);
 
-  const readmeUrl = `${path.dirname(packageItem.url)}/${context.readmeFile}`;
+  const readmeUrl = `${path.dirname(packageItem.url)}/${context.getOption(
+    'entryDocument',
+  )}`;
 
   const md = [
     `${link(
@@ -80,7 +82,7 @@ export function packageHeader(
   ];
 
   if (hasReadme) {
-    md.push(`(${link(bold('Exports'), context.relativeURL(packageItem.url))})`);
+    md.push(`(${link(bold('Modules'), context.relativeURL(packageItem.url))})`);
   }
 
   return `${md.join(' ')}\n***\n`;

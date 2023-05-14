@@ -12,6 +12,7 @@ import { MarkdownThemeRenderContext } from '../../theme-render-context';
 export function toc(
   context: MarkdownThemeRenderContext,
   reflection: ProjectReflection | DeclarationReflection,
+  headingLevel: number,
 ) {
   const md: string[] = [];
 
@@ -25,7 +26,6 @@ export function toc(
     (!hideInPageTOC && reflection.groups) ||
     (isVisible && reflection.groups)
   ) {
-    const headingLevel = getIndexHeadingLevel(reflection);
     const subHeadingLevel = headingLevel + 1;
 
     md.push(heading(headingLevel, 'Index\n'));
@@ -88,20 +88,4 @@ function getTocItem(
         ) + ' '
       : ''
   }[${escapeChars(reflection.name)}](${context.relativeURL(reflection.url)})`;
-}
-
-function getIndexHeadingLevel(
-  reflection: DeclarationReflection | ProjectReflection,
-) {
-  if (
-    reflection.kindOf([
-      ReflectionKind.Project,
-      ReflectionKind.Module,
-      ReflectionKind.Namespace,
-    ]) ||
-    reflection.hasOwnDocument
-  ) {
-    return 2;
-  }
-  return 4;
 }

@@ -63,7 +63,7 @@ export function reflectionMember(
   }
 
   if (reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])) {
-    md.push(context.partials.toc(reflection));
+    md.push(context.partials.toc(reflection, headingLevel));
   }
 
   md.push(context.partials.members(reflection, headingLevel));

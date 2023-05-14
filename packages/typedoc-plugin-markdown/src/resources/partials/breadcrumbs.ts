@@ -9,7 +9,10 @@ export function breadcrumbs(
 ) {
   const md: string[] = [];
 
-  if (page.url === page.project.url || page.url === context.indexFile) {
+  if (
+    page.url === page.project.url ||
+    page.url === context.getOption('entryDocument')
+  ) {
     return '';
   }
 
@@ -35,7 +38,8 @@ export function breadcrumbs(
 
   if (
     page.model?.parent?.parent &&
-    (page.url !== page.project.url || page.url !== context.indexFile)
+    (page.url !== page.project.url ||
+      page.url !== context.getOption('entryDocument'))
   ) {
     breadcrumb(page.model.parent);
   }

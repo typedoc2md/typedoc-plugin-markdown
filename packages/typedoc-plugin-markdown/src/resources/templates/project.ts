@@ -27,14 +27,16 @@ export function projectTemplate(
   }
 
   if (page.model.groups) {
-    md.push(context.partials.toc(page.model));
+    md.push(context.partials.toc(page.model, 2));
   } else {
     md.push(heading(2, 'Packages'));
 
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
         Boolean(projectPackage.readme)
-          ? `${path.dirname(projectPackage.url || '')}/${context.readmeFile}`
+          ? `${path.dirname(projectPackage.url || '')}/${context.getOption(
+              'entryDocument',
+            )}`
           : projectPackage.url,
       )})`;
     });
