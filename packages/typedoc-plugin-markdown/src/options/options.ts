@@ -31,13 +31,6 @@ export function declareOptions(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'entryDocument',
-    help: '[Markdown Plugin] The file name of the entry document.',
-    type: ParameterType.String,
-    defaultValue: 'README.md',
-  });
-
-  app.options.addDeclaration({
     name: 'flattenOutputFiles',
     help: '[Markdown Plugin] Flatten output files without folders.',
     type: ParameterType.Boolean,
@@ -54,6 +47,26 @@ export function declareOptions(app: Application) {
   app.options.addDeclaration({
     name: 'excludeGroups',
     help: '[Markdown Plugin] Groups reflection kinds by headings if applicable e.g Classes, Functions. If set to false all symbols will render on the same level. Defaults to `true`',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+  });
+
+  app.options.addDeclaration({
+    name: 'entryFileName',
+    help: '[Markdown Plugin] The file name of the entry document.',
+    type: ParameterType.String,
+    defaultValue: 'README.md',
+  });
+
+  app.options.addDeclaration({
+    name: 'indexPageTitle',
+    help: '[Markdown Plugin] The title of the main index / modules page.',
+    type: ParameterType.String,
+  });
+
+  app.options.addDeclaration({
+    name: 'skipIndexPage',
+    help: '[Markdown Plugin] How the globals page should be written.',
     type: ParameterType.Boolean,
     defaultValue: false,
   });
@@ -102,12 +115,6 @@ export function declareOptions(app: Application) {
     help: '[Markdown Plugin] Do not print reflection hierarchy.',
     type: ParameterType.Boolean,
     defaultValue: false,
-  });
-
-  app.options.addDeclaration({
-    name: 'indexPageTitle',
-    help: '[Markdown Plugin] The title of the main index / modules page.',
-    type: ParameterType.String,
   });
 
   app.options.addDeclaration({

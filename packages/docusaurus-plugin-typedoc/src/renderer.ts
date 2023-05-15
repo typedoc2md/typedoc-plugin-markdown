@@ -28,12 +28,10 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
     app.renderer.theme as MarkdownTheme
   ).getRenderContext();
 
-  const hasReadme = !app.options.getValue('readme').endsWith('none');
   const sidebar = app.options.getValue('sidebar') as SidebarOptions;
-  const isModulesPage = event.page?.url.endsWith(renderContext.modulesFile);
-  const isPackagesPage = event.page?.url.endsWith(renderContext.packagesFile);
+  const isIndexPage = event.page?.url.endsWith(renderContext.indexFileName);
   const isReadmePage = event.page?.url.endsWith(
-    app.options.getValue('entryDocument') as string,
+    app.options.getValue('entryFileName') as string,
   );
   const isPackageModule =
     event.page.model.kindOf(ReflectionKind.Module) &&
@@ -44,25 +42,15 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
 
   if (sidebar.autoConfiguration) {
     // Add sidebar labels to all pages
-    if (!isModulesPage && !isReadmePage) {
-      const sidebarLabel =
-        !model.kindOf(ReflectionKind.Module) &&
-        !app.options.getValue('hideKindTag') &&
-        app.options.getValue('excludeGroups')
-          ? `(${Array.from(ReflectionKind.singularString(model.kind))[0]}) ${
-              model?.name
-            }`
-          : model?.name;
+    if (!isIndexPage && !isReadmePage) {
+      const sidebarLabel = model?.name;
       pluginFrontmatter = {
         ...pluginFrontmatter,
         sidebar_label: sidebarLabel,
       };
     }
     // Entry url
-    if (
-      event.page?.url === app.options.getValue('entryDocument') ||
-      (!hasReadme && isModulesPage)
-    ) {
+    if (event.page?.url === app.options.getValue('entryFileName')) {
       if (sidebar.categoryLabel) {
         pluginFrontmatter = {
           ...pluginFrontmatter,
@@ -78,10 +66,12 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
       }
     }
 
-    if (isModulesPage) {
+    if (
+      event.page?.url.endsWith(app.options.getValue('entryFileName') as string)
+    ) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
-        sidebar_label: sidebar.indexLabel,
+        hide_table_of_contents: true,
       };
     }
 
@@ -92,28 +82,10 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
       };
     }
 
-    if (isPackagesPage) {
+    if (isPackageModule && isIndexPage && Boolean(event.page.model?.readme)) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
-        sidebar_label: 'Packages',
-      };
-    }
-
-    if (isPackageModule && isModulesPage && Boolean(event.page.model?.readme)) {
-      pluginFrontmatter = {
-        ...pluginFrontmatter,
-        sidebar_label: sidebar.indexLabel,
-      };
-    }
-
-    if (
-      isPackageModule &&
-      isModulesPage &&
-      !Boolean(event.page.model?.readme)
-    ) {
-      pluginFrontmatter = {
-        ...pluginFrontmatter,
-        sidebar_label: event.page.model.name,
+        sidebar_label: 'Index',
       };
     }
   }

@@ -32,7 +32,7 @@ describe(`Groups:`, () => {
     });
 
     test(`should render group TOC'`, () => {
-      expect(context.partials.toc(project, 2)).toMatchSnapshot();
+      expect(context.partials.memberIndex(project, 2)).toMatchSnapshot();
     });
   });
 
@@ -51,7 +51,7 @@ describe(`Groups:`, () => {
     });
 
     test(`should render group TOC'`, () => {
-      expect(context.partials.toc(project, 2)).toMatchSnapshot();
+      expect(context.partials.memberIndex(project, 2)).toMatchSnapshot();
     });
   });
 });

@@ -39,7 +39,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   anchorFormat: AnchorFormat;
   anchorPattern: string;
   baseUrl: string;
-  entryDocument: string;
+  entryFileName: string;
   enumMembersFormat: FormatStyle;
   excludeGroups: boolean;
   flattenOutputFiles: boolean;
@@ -55,6 +55,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   namedAnchors: boolean;
   outputFileStrategy: OutputFileStrategy;
   propertiesFormat: FormatStyle;
+  skipIndexPage: boolean;
   typeDeclarationFormat: FormatStyle;
 }
 

@@ -37,7 +37,7 @@ The following options are preset with the theme:
 
 ```json
 {
-  "entryDocument": "home.md",
+  "entryFileName": "home.md",
   "flattenOutputFiles": true,
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,

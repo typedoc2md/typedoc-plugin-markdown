@@ -2,8 +2,6 @@
 
 > Some block quote
 
-<!-- some comments -->
-
 Some text
 
-API
+<!-- include typedoc index page -->

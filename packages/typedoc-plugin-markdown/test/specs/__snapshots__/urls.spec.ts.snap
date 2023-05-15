@@ -3,9 +3,9 @@
 exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
 [
   "README.md",
-  "packages.md",
+  "API.md",
   "child-package/README.md",
-  "child-package/modules.md",
+  "child-package/API.md",
   "child-package/namespaces/namespace.Validation/README.md",
   "child-package/namespaces/namespace.Validation/variables/variable.numberRegexp.md",
   "child-package/variables/variable.hello.md",
@@ -17,9 +17,9 @@ exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
 exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeFileNumberPrefixes=true) 1`] = `
 [
   "README.md",
-  "01-packages.md",
+  "01-API.md",
   "02-child-package/README.md",
-  "02-child-package/01-modules.md",
+  "02-child-package/01-API.md",
   "02-child-package/02-Namespaces/02-namespace.Validation/README.md",
   "02-child-package/02-Namespaces/02-namespace.Validation/01-Variables/01-variable.numberRegexp.md",
   "02-child-package/03-Variables/02-variable.hello.md",
@@ -31,7 +31,7 @@ exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeF
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] = `
 [
   "README.md",
-  "modules.md",
+  "API.md",
   "module.categories/README.md",
   "module.categories/interfaces/CategoryA/interface.CategoryInterfaceA1.md",
   "module.categories/interfaces/CategoryA/interface.CategoryInterfaceA2.md",
@@ -73,10 +73,10 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] 
 ]
 `;
 
-exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, includeFileNumberPrefixes: true) 1`] = `
+exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, includeFileNumberPrefixes: true, globalsPageStrategy:auto) 1`] = `
 [
   "README.md",
-  "01-modules.md",
+  "01-API.md",
   "02-module.categories/README.md",
   "02-module.categories/01-Interfaces/01-CategoryA/01-interface.CategoryInterfaceA1.md",
   "02-module.categories/01-Interfaces/01-CategoryA/02-interface.CategoryInterfaceA2.md",
@@ -121,7 +121,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, incl
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, outputFileStrategy=modules, includeFileNumberPrefixes: true) 1`] = `
 [
   "README.md",
-  "01-modules.md",
+  "01-API.md",
   "02-module.categories.md",
   "03-module.modules_module_1/README.md",
   "03-module.modules_module_1/01-Namespaces/01-namespace.someNameSpace/README.md",
@@ -133,7 +133,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, outp
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, includeFileNumberPrefixes: true) 1`] = `
 [
   "README.md",
-  "01-modules.md",
+  "01-API.md",
   "02-module.categories/README.md",
   "02-module.categories/01-CategoryA/01-interface.CategoryInterfaceA1.md",
   "02-module.categories/01-CategoryA/02-interface.CategoryInterfaceA2.md",
@@ -189,7 +189,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, outpu
 exports[`Urls: (Multiple entrypoints) should get urls (flattenOutputFiles=true) 1`] = `
 [
   "README.md",
-  "modules.md",
+  "API.md",
   "modules_module-1.md",
   "modules_module-1.Namespace.someNameSpace.md",
   "modules_module-1.Namespace.someNameSpace.Namespace._nestedNamespace.md",
@@ -228,7 +228,7 @@ exports[`Urls: (Multiple entrypoints) should get urls (flattenOutputFiles=true) 
 exports[`Urls: (Single entrypoint) should get urls (excludeGroups=false, includeFileNumberPrefixes=true) 1`] = `
 [
   "README.md",
-  "01-exports.md",
+  "01-API.md",
   "02-Interfaces/02-interface.CategoryInterfaceA1.md",
   "02-Interfaces/03-interface.CategoryInterfaceA2.md",
   "02-Interfaces/04-interface.OtherInterfaceA.md",
@@ -269,7 +269,7 @@ exports[`Urls: (Single entrypoint) should get urls (excludeGroups=true, includeF
 exports[`Urls: (Single entrypoint) should get urls (flattenOutputFiles=true) 1`] = `
 [
   "README.md",
-  "exports.md",
+  "API.md",
   "Namespace.Duck.md",
   "Namespace.Duck.Type.Age.md",
   "Enumeration.EnumReflection.md",

@@ -49,7 +49,11 @@ export function members(
   } else {
     if (
       context.getOption('excludeGroups') &&
-      container.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])
+      container.kindOf([
+        ReflectionKind.Project,
+        ReflectionKind.Module,
+        ReflectionKind.Namespace,
+      ])
     ) {
       if (container.categories?.length) {
         pushCategories(container.categories, headingLevel);

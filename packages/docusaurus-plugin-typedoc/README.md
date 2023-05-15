@@ -15,10 +15,10 @@ A [Docusaurus](https://v2.docusaurus.io/) plugin to build TypeScript API documen
 
 > Install [Docusaurus](https://v2.docusaurus.io/docs/installation) in the root of your project and install the plugin dependencies in the same location as the Docusaurus website directory.
 
-> [typedoc](https://github.com/TypeStrong/typedoc), [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown) and [typedoc-plugin-frontmatter]() are required peer dependencies.
+> [typedoc](https://github.com/TypeStrong/typedoc), [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown) are peer dependencies.
 
 ```shell
-npm install docusaurus-plugin-typedoc typedoc typedoc-plugin-markdown@next typedoc-plugin-frontmatter@next --save-dev
+npm install docusaurus-plugin-typedoc typedoc typedoc-plugin-markdown@next --save-dev
 ```
 
 ## Usage
@@ -92,7 +92,8 @@ The following typedoc-plugin-markdown options are preset with the plugin.
   "hideInPageTOC": true,
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
-  "entryDocument": "index.md",
+  "entryFileName": "index.md",
+  "globalsPageStrategy": "skip",
   "includeFileNumberPrefixes": true
 }
 ```

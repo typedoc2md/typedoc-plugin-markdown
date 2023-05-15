@@ -11,21 +11,12 @@ export function breadcrumbs(
 
   if (
     page.url === page.project.url ||
-    page.url === context.getOption('entryDocument')
+    page.url === context.getOption('entryFileName')
   ) {
     return '';
   }
 
-  md.push(
-    link(
-      Boolean(page.project.groups)
-        ? context.getOption('entryPoints').length > 1
-          ? 'Modules'
-          : 'Exports'
-        : 'Packages',
-      context.relativeURL(page.project.url),
-    ),
-  );
+  md.push(link(page.project.name, context.relativeURL(page.project.url)));
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
@@ -39,7 +30,7 @@ export function breadcrumbs(
   if (
     page.model?.parent?.parent &&
     (page.url !== page.project.url ||
-      page.url !== context.getOption('entryDocument'))
+      page.url !== context.getOption('entryFileName'))
   ) {
     breadcrumb(page.model.parent);
   }

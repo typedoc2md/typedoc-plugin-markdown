@@ -10,7 +10,6 @@ export interface SidebarOptions {
   categoryLabel: string;
   position: number | null;
   autoConfiguration: boolean;
-  indexLabel: string;
 }
 
 export interface SidebarCategory {

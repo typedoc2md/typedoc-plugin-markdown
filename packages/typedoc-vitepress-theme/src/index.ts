@@ -27,7 +27,8 @@ export function load(app: Application) {
   app.options.addReader(
     new MarkdownPluginOptionsReader({
       anchorFormat: 'slug',
-      entryDocument: 'index.md',
+      entryFileName: 'index.md',
+      skipIndexPage: true,
       hideBreadcrumbs: true,
       hidePageHeader: true,
       out: './docs/api',

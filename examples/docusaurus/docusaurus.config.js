@@ -37,7 +37,6 @@ const config = {
           autoConfiguration: true,
           position: 0,
           categoryLabel: 'API-1',
-          indexLabel: 'Overview',
         },
         indexPageTitle: 'Overview',
         cleanOutputDir: true,
@@ -48,7 +47,7 @@ const config = {
       {
         id: 'api-2',
         out: 'api-2',
-        options: '../../stubs/typedoc.1.js',
+        options: '../../stubs/typedoc.2.js',
         sidebar: {
           autoConfiguration: true,
           position: 1,
@@ -57,7 +56,6 @@ const config = {
         cleanOutputDir: true,
         outputFileStrategy: 'modules',
         excludeGroups: true,
-        readme: 'none',
       },
     ],
     [

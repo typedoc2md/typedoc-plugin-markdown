@@ -20,11 +20,12 @@ const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   hideBreadcrumbs: true,
   hidePageHeader: true,
   includeFileNumberPrefixes: true,
+  skipIndexPage: true,
+  entryFileName: 'index.md',
   sidebar: {
     categoryLabel: 'API',
     position: null,
     autoConfiguration: true,
-    indexLabel: 'Index',
   },
 };
 

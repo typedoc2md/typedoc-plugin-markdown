@@ -13,8 +13,9 @@ export function load(app: Application) {
   app.options.addReader(
     new MarkdownPluginOptionsReader({
       theme: 'gitlab-wiki',
-      entryDocument: 'home.md',
+      entryFileName: 'home.md',
       flattenOutputFiles: true,
+      skipIndexPage: true,
       hideBreadcrumbs: true,
       hideInPageTOC: true,
       hidePageHeader: true,

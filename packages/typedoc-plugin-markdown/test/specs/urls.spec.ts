@@ -28,13 +28,14 @@ describe(`Urls:`, () => {
       ).toMatchSnapshot();
     });
 
-    test(`should get urls (excludeGroups=false, includeFileNumberPrefixes: true)`, async () => {
+    test(`should get urls (excludeGroups=false, includeFileNumberPrefixes: true, globalsPageStrategy:auto)`, async () => {
       const { project, context } = await global.bootstrap(
         ['modules/module-1', 'categories.ts'],
         {
           options: {
             excludeGroups: false,
             includeFileNumberPrefixes: true,
+            globalsPageStrategy: 'auto',
           },
         },
       );

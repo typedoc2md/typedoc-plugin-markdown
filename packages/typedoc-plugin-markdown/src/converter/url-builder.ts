@@ -9,6 +9,7 @@ import {
   UrlMapping,
 } from 'typedoc';
 import { OutputFileStrategy, TemplateMapping } from '../models';
+import { INDEX_PLACEHOLDER_KEY } from '../support/constants';
 import { slugify } from '../support/utils';
 import { MarkdownThemeRenderContext } from '../theme-render-context';
 import { UrlOption } from './models';
@@ -42,40 +43,34 @@ export class UrlBuilder {
    * @param project  The project whose urls should be generated.
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
-    const entryDocument = this.context.getOption('entryDocument');
-    const globalsPage = () => {
-      if (
-        (this.context.getOption(
-          'entryPointStrategy',
-        ) as unknown as EntryPointStrategy) === EntryPointStrategy.Packages
-      ) {
-        return this.context.packagesFile;
-      }
-      return this.context.getOption('entryPoints')?.length > 1
-        ? this.context.modulesFile
-        : this.context.exportsFile;
-    };
-    if (!this.context.getOption('readme')?.endsWith('none')) {
-      project.url = this.getPartName(globalsPage(), 1);
+    const entryFileName = this.context.getOption('entryFileName');
+    const hasReadme = !this.context.getOption('readme').endsWith('none');
+
+    if (hasReadme) {
       this.urls.push(
         new UrlMapping(
-          this.context.getOption('entryDocument'),
+          this.context.getOption('entryFileName'),
           project,
           this.readmeTemplate,
         ),
       );
 
-      this.urls.push(
-        new UrlMapping(
-          this.getPartName(globalsPage(), 1),
-          project,
-          this.projectTemplate,
-        ),
-      );
+      if (this.skipIndexPage(project)) {
+        project.url = this.context.getOption('entryFileName');
+      } else {
+        project.url = this.getPartName(this.context.indexFileName, 1);
+        this.urls.push(
+          new UrlMapping(
+            this.getPartName(this.context.indexFileName, 1),
+            project,
+            this.projectTemplate,
+          ),
+        );
+      }
     } else {
-      project.url = entryDocument;
+      project.url = entryFileName;
       this.urls.push(
-        new UrlMapping(entryDocument, project, this.projectTemplate),
+        new UrlMapping(entryFileName, project, this.projectTemplate),
       );
     }
 
@@ -85,22 +80,21 @@ export class UrlBuilder {
       ) as unknown as EntryPointStrategy) === EntryPointStrategy.Packages
     ) {
       project.children?.forEach((projectChild, projectChildIndex) => {
-        const startIndex = !this.context.getOption('readme')?.endsWith('none')
-          ? 2
-          : 1;
+        const startIndex = hasReadme ? 2 : 1;
+
         const directoryPosition = projectChildIndex + startIndex;
         const url = `${this.getPartName(
           projectChild.name,
           directoryPosition,
         )}/${
           Boolean(projectChild.readme)
-            ? this.getPartName(this.context.modulesFile, 1)
-            : this.context.getOption('entryDocument')
+            ? this.getPartName(this.context.indexFileName, 1)
+            : this.context.getOption('entryFileName')
         }`;
         if (projectChild.readme) {
           this.urls.push(
             new UrlMapping(
-              `${path.dirname(url)}/${this.context.getOption('entryDocument')}`,
+              `${path.dirname(url)}/${this.context.getOption('entryFileName')}`,
               projectChild as any,
               this.readmeTemplate,
             ),
@@ -117,6 +111,31 @@ export class UrlBuilder {
     }
 
     return this.urls;
+  }
+
+  skipIndexPage(project: ProjectReflection) {
+    if (
+      project.readme &&
+      this.context.partials
+        .commentParts(project.readme)
+        .includes(INDEX_PLACEHOLDER_KEY)
+    ) {
+      return true;
+    }
+
+    if (this.context.options.skipIndexPage) {
+      if (
+        this.context.options.entryPoints?.length === 1 &&
+        this.context.options.outputFileStrategy === OutputFileStrategy.Modules
+      ) {
+        this.context.theme.application.logger.warn(
+          `[typedoc-plugin-markdown] Ignoring 'skipIndexPage'. Can not skip index page as it contains exported symbols.`,
+        );
+        return false;
+      }
+      return true;
+    }
+    return false;
   }
 
   /**
@@ -294,7 +313,7 @@ export class UrlBuilder {
       if (
         reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])
       ) {
-        return path.parse(this.context.getOption('entryDocument')).name;
+        return path.parse(this.context.getOption('entryFileName')).name;
       }
       return `${this.getPartName(
         slugify(ReflectionKind.singularString(reflection.kind)),

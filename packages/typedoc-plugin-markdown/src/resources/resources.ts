@@ -30,7 +30,7 @@ import { MarkdownThemeRenderContext } from '../theme-render-context';
 import { Collapse, NavigationItem } from '../models';
 import { memberTemplate } from './templates/member';
 import { projectTemplate } from './templates/project';
-import { readmeTemplate } from './templates/readme';
+import { readmeTemplate } from './templates/read-me';
 import { reflectionTemplate } from './templates/reflection';
 import { breadcrumbs } from './partials/breadcrumbs';
 import { commentParts } from './partials/comment.parts';
@@ -39,6 +39,7 @@ import { hierarchy } from './partials/hierarchy';
 import { declarationMemberIdentifier } from './partials/member.declaration.identifier';
 import { declarationMemberName } from './partials/member.declaration.name';
 import { declarationMember } from './partials/member.declaration';
+import { memberIndex } from './partials/member.index';
 import { indexSignatureTitle } from './partials/member.indexsignature.title';
 import { inheritance } from './partials/member.inheritance';
 import { memberKindTag } from './partials/member.kind-tag';
@@ -53,12 +54,12 @@ import { typeDeclarationMember } from './partials/member.type-declaration';
 import { members } from './partials/members';
 import { navigation } from './partials/navigation';
 import { pageHeader } from './partials/page.header';
+import { pageIndex } from './partials/page.index';
 import { pageTitle } from './partials/page.title';
 import { enumMembersTable } from './partials/table.enum-members';
 import { parametersTable } from './partials/table.parameters';
 import { propertiesTable } from './partials/table.properties';
 import { typeParametersTable } from './partials/table.typeparameters';
-import { toc } from './partials/toc';
 import { arrayType } from './partials/type.array';
 import { conditionalType } from './partials/type.conditional';
 import { declarationType } from './partials/type.declaration';
@@ -95,6 +96,7 @@ export type Partials = {
   declarationMemberIdentifier: (reflection: DeclarationReflection) => string;
   declarationMemberName: (declaration: DeclarationReflection, emphasis?: boolean) => string;
   declarationMember: (declaration: DeclarationReflection, headingLevel: number) => string;
+  memberIndex: (reflection: DeclarationReflection | ProjectReflection, headingLevel: number) => string;
   indexSignatureTitle: (signature: SignatureReflection) => string;
   inheritance: (reflection: DeclarationReflection | SignatureReflection, headingLevel: number) => string;
   memberKindTag: (reflection: DeclarationReflection) => string;
@@ -109,12 +111,12 @@ export type Partials = {
   members: (container: ContainerReflection, headingLevel: number) => string;
   navigation: (navigationItems: NavigationItem[]) => string;
   pageHeader: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
+  pageIndex: (page: PageEvent<DeclarationReflection | ProjectReflection>, headingLevel: number) => string;
   pageTitle: (page: PageEvent<DeclarationReflection | ProjectReflection>) => string;
   enumMembersTable: (props: DeclarationReflection[]) => string;
   parametersTable: (parameters: ParameterReflection[]) => string;
   propertiesTable: (props: DeclarationReflection[], nameCol?: string) => string;
   typeParametersTable: (typeParameters: TypeParameterReflection[]) => string;
-  toc: (reflection: DeclarationReflection | ProjectReflection, headingLevel: number) => string;
   arrayType: (arrayType: ArrayType) => string;
   conditionalType: (conditionalType: ConditionalType) => string;
   declarationType: (declarationReflection: DeclarationReflection, collapse?: Collapse) => string;
@@ -149,6 +151,7 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   declarationMemberIdentifier: bind(declarationMemberIdentifier, context),
   declarationMemberName: bind(declarationMemberName, context),
   declarationMember: bind(declarationMember, context),
+  memberIndex: bind(memberIndex, context),
   indexSignatureTitle: bind(indexSignatureTitle, context),
   inheritance: bind(inheritance, context),
   memberKindTag: bind(memberKindTag, context),
@@ -163,12 +166,12 @@ export const partials = (context: MarkdownThemeRenderContext): Partials => ({
   members: bind(members, context),
   navigation: bind(navigation, context),
   pageHeader: bind(pageHeader, context),
+  pageIndex: bind(pageIndex, context),
   pageTitle: bind(pageTitle, context),
   enumMembersTable: bind(enumMembersTable, context),
   parametersTable: bind(parametersTable, context),
   propertiesTable: bind(propertiesTable, context),
   typeParametersTable: bind(typeParametersTable, context),
-  toc: bind(toc, context),
   arrayType: bind(arrayType, context),
   conditionalType: bind(conditionalType, context),
   declarationType: bind(declarationType, context),

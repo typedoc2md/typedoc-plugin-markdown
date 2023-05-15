@@ -112,7 +112,7 @@ The following typedoc-plugin-markdown options are preset with the theme.
 ```json
 {
   "anchorFormat": "slug",
-  "entryDocument": "index.md",
+  "entryFileName": "index.md",
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
   "out": "./docs/api"

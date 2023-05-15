@@ -5,33 +5,33 @@ exports[`Groups: (excludeGroups=false) should render group TOC' 1`] = `
 
 ### Enumerations
 
-- [EnumA](exports.md#enuma)
-- [EnumB](exports.md#enumb)
+- [EnumA](API.md#enuma)
+- [EnumB](API.md#enumb)
 
 ### Classes
 
-- [ClassA](exports.md#classa)
-- [ClassB](exports.md#classb)
+- [ClassA](API.md#classa)
+- [ClassB](API.md#classb)
 
 ### Interfaces
 
-- [InterfaceA](exports.md#interfacea)
-- [InterfaceB](exports.md#interfaceb)
+- [InterfaceA](API.md#interfacea)
+- [InterfaceB](API.md#interfaceb)
 
 ### Type Aliases
 
-- [typeA](exports.md#typea)
-- [typeB](exports.md#typeb)
+- [typeA](API.md#typea)
+- [typeB](API.md#typeb)
 
 ### Variables
 
-- [variableA](exports.md#variablea)
-- [variableB](exports.md#variableb)
+- [variableA](API.md#variablea)
+- [variableB](API.md#variableb)
 
 ### Functions
 
-- [functionA](exports.md#functiona)
-- [functionB](exports.md#functionb)
+- [functionA](API.md#functiona)
+- [functionB](API.md#functionb)
 "
 `;
 
@@ -148,24 +148,22 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 exports[`Groups: (excludeGroups=true) should render group TOC' 1`] = `
 "## Index
 
-- [EnumA](exports.md#enuma)
-- [EnumB](exports.md#enumb)
-- [ClassA](exports.md#classa)
-- [ClassB](exports.md#classb)
-- [InterfaceA](exports.md#interfacea)
-- [InterfaceB](exports.md#interfaceb)
-- [typeA](exports.md#typea)
-- [typeB](exports.md#typeb)
-- [variableA](exports.md#variablea)
-- [variableB](exports.md#variableb)
-- [functionA](exports.md#functiona)
-- [functionB](exports.md#functionb)"
+- [EnumA](API.md#enuma)
+- [EnumB](API.md#enumb)
+- [ClassA](API.md#classa)
+- [ClassB](API.md#classb)
+- [InterfaceA](API.md#interfacea)
+- [InterfaceB](API.md#interfaceb)
+- [typeA](API.md#typea)
+- [typeB](API.md#typeb)
+- [variableA](API.md#variablea)
+- [variableB](API.md#variableb)
+- [functionA](API.md#functiona)
+- [functionB](API.md#functionb)"
 `;
 
 exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
-"## Enumerations
-
-### EnumA
+"## EnumA
 
 [partial: reflectionMember]
 
@@ -173,7 +171,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-### EnumB
+## EnumB
 
 [partial: reflectionMember]
 
@@ -181,9 +179,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-## Classes
-
-### ClassA
+## ClassA
 
 [partial: reflectionMember]
 
@@ -191,7 +187,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-### ClassB
+## ClassB
 
 [partial: reflectionMember]
 
@@ -199,9 +195,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-## Interfaces
-
-### InterfaceA
+## InterfaceA
 
 [partial: reflectionMember]
 
@@ -209,7 +203,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-### InterfaceB
+## InterfaceB
 
 [partial: reflectionMember]
 
@@ -217,9 +211,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-## Type Aliases
-
-### typeA
+## typeA
 
 [partial: declarationMember]
 
@@ -227,7 +219,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-### typeB
+## typeB
 
 [partial: declarationMember]
 
@@ -235,9 +227,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-## Variables
-
-### variableA
+## variableA
 
 [partial: declarationMember]
 
@@ -245,7 +235,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-### variableB
+## variableB
 
 [partial: declarationMember]
 
@@ -253,9 +243,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-## Functions
-
-### functionA()
+## functionA()
 
 [partial: signatureMember]
 
@@ -263,7 +251,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-### functionB()
+## functionB()
 
 [partial: signatureMember]
 

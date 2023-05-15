@@ -6,11 +6,10 @@ import { URL_PREFIX } from './support/constants';
 import { MarkdownTheme } from './theme';
 
 export class MarkdownThemeRenderContext {
-  public modulesFile = 'modules.md';
-  public exportsFile = 'exports.md';
-  public packagesFile = 'packages.md';
-
+  public indexFileName = 'API.md';
   private _activeLocation = '.';
+
+  options: Partial<TypedocPluginMarkdownOptions>;
 
   set activeLocation(activeLocation: string) {
     this._activeLocation = activeLocation;
@@ -20,10 +19,12 @@ export class MarkdownThemeRenderContext {
     return this._activeLocation;
   }
 
-  constructor(public theme: MarkdownTheme, public options: Options) {}
+  constructor(public theme: MarkdownTheme, opts: Options) {
+    this.options = opts.getRawValues() as Partial<TypedocPluginMarkdownOptions>;
+  }
 
   getOption<K extends keyof TypedocPluginMarkdownOptions>(name: K) {
-    return this.options.getValue(name) as TypedocPluginMarkdownOptions[K];
+    return this.options[name] as TypedocPluginMarkdownOptions[K];
   }
 
   getRelativeUrl(url: string | undefined) {

@@ -4,7 +4,6 @@ exports[`Options: should merge custom sidebar options 1`] = `
 {
   "autoConfiguration": true,
   "categoryLabel": "API",
-  "indexLabel": "Index",
   "position": 2,
 }
 `;

@@ -2,14 +2,13 @@ import {
   DeclarationReflection,
   ProjectReflection,
   ReflectionGroup,
-  ReflectionKind,
 } from 'typedoc';
-import { backTicks, heading } from '../../support/els';
+import { heading } from '../../support/els';
 
 import { escapeChars } from '../../support/utils';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
-export function toc(
+export function memberIndex(
   context: MarkdownThemeRenderContext,
   reflection: ProjectReflection | DeclarationReflection,
   headingLevel: number,
@@ -77,15 +76,7 @@ function getTocItem(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
 ) {
-  const showKindTag =
-    !reflection.kindOf(ReflectionKind.Module) &&
-    !context.getOption('hideKindTag') &&
-    context.getOption('excludeGroups');
-  return `- ${
-    showKindTag
-      ? backTicks(
-          Array.from(ReflectionKind.singularString(reflection.kind))[0],
-        ) + ' '
-      : ''
-  }[${escapeChars(reflection.name)}](${context.relativeURL(reflection.url)})`;
+  return `- [${escapeChars(reflection.name)}](${context.relativeURL(
+    reflection.url,
+  )})`;
 }

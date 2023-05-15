@@ -34,26 +34,36 @@ function projectHeader(
 
   const hasReadme = !context.getOption('readme').endsWith('none');
 
-  const md = [
-    `${link(
-      bold(projectName),
-      context.relativeURL(context.getOption('entryDocument')),
-    )}`,
-  ];
+  const md: string[] = [];
 
-  if (hasReadme) {
-    md.push(
-      `(${link(
-        bold(
-          page.project.groups
-            ? context.getOption('entryPoints').length > 1
-              ? 'Modules'
-              : 'Exports'
-            : 'Packages',
-        ),
-        context.relativeURL(page.project.url),
-      )})`,
-    );
+  md.push(
+    link(
+      bold(projectName),
+      context.relativeURL(context.getOption('entryFileName')),
+    ),
+  );
+
+  const links: string[] = [];
+
+  if (!context.options.readme?.endsWith('none')) {
+    if (page.url === context.options.entryFileName) {
+      links.push('Readme');
+    } else {
+      links.push(
+        link('Readme', context.relativeURL(context.getOption('entryFileName'))),
+      );
+    }
+  }
+
+  if (hasReadme && page.project.url !== context.options.entryFileName) {
+    if (page.url === page.project.url) {
+      links.push('Index');
+    } else {
+      links.push(link('Index', context.relativeURL(page.project.url)));
+    }
+  }
+  if (links.length > 1) {
+    md.push(`( ${links.join(' \\| ')} )`);
   }
 
   return `${md.join(' ')}\n***\n`;
@@ -71,18 +81,36 @@ export function packageHeader(
   const hasReadme = Boolean(packageItem.readme);
 
   const readmeUrl = `${path.dirname(packageItem.url)}/${context.getOption(
-    'entryDocument',
+    'entryFileName',
   )}`;
 
-  const md = [
-    `${link(
-      bold(packageItem.name),
-      context.relativeURL(hasReadme ? readmeUrl : packageItem.url),
-    )}`,
-  ];
+  const md: string[] = [];
+
+  md.push(link(bold(packageItem.name), context.relativeURL(packageItem.url)));
+
+  const links: string[] = [];
 
   if (hasReadme) {
-    md.push(`(${link(bold('Modules'), context.relativeURL(packageItem.url))})`);
+    if (page.url === readmeUrl) {
+      links.push('Readme');
+    } else {
+      links.push(
+        `${link(
+          'Readme',
+          context.relativeURL(hasReadme ? readmeUrl : packageItem.url),
+        )}`,
+      );
+    }
+
+    if (page.url === packageItem.url) {
+      links.push('Index');
+    } else {
+      links.push(`${link('Index', context.relativeURL(packageItem.url))}`);
+    }
+  }
+
+  if (links.length) {
+    md.push(`( ${links.join(' \\| ')} )`);
   }
 
   return `${md.join(' ')}\n***\n`;

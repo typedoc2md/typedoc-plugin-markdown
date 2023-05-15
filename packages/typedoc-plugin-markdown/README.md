@@ -32,18 +32,22 @@ typedoc --plugin typedoc-plugin-markdown
 The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/options/)
 (please note that TypeDoc options specific to the HTML theme will be ignored).
 
-### File output and content organization
+### File output and content organization options
 
 - **`--outputFileStrategy`**<br>
-  Determines how output files are generated. Allowed values `modules` (all symbols hoisted to a single modules file) or `members` (each symbol exported to a seperate file). Default value `members`.
-- **`--entryDocument`**<br>
-  The file name of the entry document. Default value `README.md`.
+  Determines how output files are generated. Allowed values `modules` (all symbols hoisted to a single modules file) or `members` (each symbol exported to a seperate file as per HTML theme). Default to `members`.
 - **`--includeFileNumberPrefixes`**<br>
-  Prefixes generated files and folders with number prefixes. This is useful for auto sidebar generation. Defaults to `false`.
+  Prefixes generated files and folders with number prefixes. This is useful for implementations that support auto sidebar generation. Defaults to `false`.
+- **`--entryFileName`**<br>
+  The file name of the entry page. `README.md` is recognised when browsing folders on repos and Wikis, while using `index.md` makes the behavior more in line with documentation sites. Defaults to `README.md`.
+- **`--skipIndexPage`**<br>
+  Skips generation of API index page. Note the index page can be inserted into the readme page using the `$TYPEDOC_INDEX` placeholder key. Ignored if no readme resolved. Defaults to `false`.
+- **`--indexPageTitle`**<br>
+  The title of API index page. Defaults to the project name.
 - **`--excludeGroups`**<br>
   By default members are grouped by kind (eg Classes, Functions etc). This option excludes such groupings so all members are rendered and sorted at the same level. Defaults to `false`.
 
-Please see [File output and content organization](./docs/file-output-options.md) for further documentation.
+Please see [File output and content organization options](./docs/file-output-options.md) for further documentation.
 
 ### UI options
 
@@ -59,8 +63,6 @@ Please see [File output and content organization](./docs/file-output-options.md)
   Do not print the kind tag identifiers for symbols. Defaults to `false`.
 - **`--hideHierarchy`**<br>
   Do not print reflection hierarchy. Defaults to `false`.
-- **`--indexPageTitle`**<br>
-  The title of the main index / modules page. If not set will default to the project name.
 - **`--indentifiersAsCodeBlocks`**<br>
   Format signature and declaration identifiers in code blocks. Note if `true` references will not be linked. Defaults to `false`.
 - **`--propertiesFormat`**<br>
@@ -83,22 +85,34 @@ Please see [File output and content organization](./docs/file-output-options.md)
 
 ## Frontmatter
 
-If frontmatter is required for adding further metadata please use [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter)
+If frontmatter is required for adding further metadata please use [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter).
 
 ## Output formatting (Prettier)
 
 Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. Parsing documents with Prettier has several benefits:
 
 - Produces a consistent format.
-- Remove unnecessary escape characters.
+- Removes unnecessary escape characters.
 - Formats code blocks inside comment fenced blocks.
 
 Any [prettier configuration](https://prettier.io/docs/en/configuration.html) files discovered will be passed as options to the parser.
 
 ## Further Documentation
 
-- [File output options](./docs/file-output-options.md)
+- [File output and content organization options](./docs/file-output-options.md).
+
+## Demos
+
+TODO
+
+## Real life examples
+
+TODO
 
 ## License
 
 [MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/LICENSE)
+
+```
+
+```

@@ -1,7 +1,5 @@
-import * as path from 'path';
 import { PageEvent, ProjectReflection } from 'typedoc';
 import { heading } from '../../support/els';
-import { escapeChars } from '../../support/utils';
 import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function projectTemplate(
@@ -26,22 +24,7 @@ export function projectTemplate(
     md.push(context.partials.comment(page.model.comment, 2));
   }
 
-  if (page.model.groups) {
-    md.push(context.partials.toc(page.model, 2));
-  } else {
-    md.push(heading(2, 'Packages'));
-
-    const packagesList = page.model.children?.map((projectPackage) => {
-      return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
-        Boolean(projectPackage.readme)
-          ? `${path.dirname(projectPackage.url || '')}/${context.getOption(
-              'entryDocument',
-            )}`
-          : projectPackage.url,
-      )})`;
-    });
-    md.push(packagesList?.join('\n') || '');
-  }
+  md.push(context.partials.pageIndex(page, 2));
 
   md.push(context.partials.members(page.model, 2));
 

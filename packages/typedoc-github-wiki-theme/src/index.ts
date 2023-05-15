@@ -13,8 +13,9 @@ export function load(app: Application) {
   app.options.addReader(
     new MarkdownPluginOptionsReader({
       theme: 'github-wiki',
-      entryDocument: 'Home.md',
+      entryFileName: 'Home.md',
       flattenOutputFiles: true,
+      skipIndexPage: true,
       hideInPageTOC: true,
       hidePageHeader: true,
       hideBreadcrumbs: true,
