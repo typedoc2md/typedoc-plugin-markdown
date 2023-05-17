@@ -118,7 +118,7 @@ export function declareOptions(app: Application) {
   });
 
   app.options.addDeclaration({
-    name: 'indentifiersAsCodeBlocks',
+    name: 'identifiersAsCodeBlocks',
     help: '[Markdown Plugin] Format signature and declaration identifiers in code blocks.',
     type: ParameterType.Boolean,
     defaultValue: false,

@@ -3,7 +3,7 @@ module.exports = {
   plugin: ['typedoc-plugin-markdown'],
   hideInPageTOC: false,
   indexPageTitle: 'Overview',
-  indentifiersAsCodeBlocks: true,
+  identifiersAsCodeBlocks: true,
   propertiesFormat: 'table',
   enumMembersFormat: 'table',
   typeDeclarationFormat: 'table',

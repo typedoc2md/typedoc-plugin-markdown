@@ -65,7 +65,7 @@ Please see [File output and content organization options](./docs/file-output-opt
   Do not print the kind tag identifiers for symbols. Defaults to `false`.
 - **`--hideHierarchy`**<br>
   Do not print reflection hierarchy. Defaults to `false`.
-- **`--indentifiersAsCodeBlocks`**<br>
+- **`--identifiersAsCodeBlocks`**<br>
   Format signature and declaration identifiers in code blocks. Note if `true` references will not be linked. Defaults to `false`.
 - **`--propertiesFormat`**<br>
   Specify the render style of properties groups for interfaces, classes and type literals. Expected values [`list`, `table`]. Defaults to `list`.

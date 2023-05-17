@@ -12,7 +12,7 @@ export function declarationMember(
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (context.getOption('indentifiersAsCodeBlocks')) {
+  if (context.getOption('identifiersAsCodeBlocks')) {
     md.push(
       codeBlock(context.partials.declarationMemberIdentifier(declaration)),
     );
