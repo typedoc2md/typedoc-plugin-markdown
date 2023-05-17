@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.12
+
+### Patch Changes
+
+- Ensure unique file names for symbols with same name with `flattenOutputFiles`
+- Added functionality to skip seperate index page and inject into readme.
+
 ## 4.0.0-next.11 (2023-05-13)
 
 ### Patch Changes
