@@ -1,6 +1,6 @@
 # typedoc-vitepress-theme
 
-## 1.0.0-next.1
+## 1.0.0-next.1 (2023-05-17)
 
 ### Patch Changes
 
