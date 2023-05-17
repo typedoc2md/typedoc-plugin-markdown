@@ -38,10 +38,12 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Determines how output files are generated. Allowed values `modules` (all symbols hoisted to a single modules file) or `members` (each symbol exported to a seperate file as per HTML theme). Default to `members`.
 - **`--includeFileNumberPrefixes`**<br>
   Prefixes generated files and folders with number prefixes. This is useful for implementations that support auto sidebar generation. Defaults to `false`.
+- **`--flattenOutputFiles`**<br>
+  Flatten output files without folders. Defaults to `false`.
 - **`--entryFileName`**<br>
-  The file name of the entry page. `README.md` is recognised when browsing folders on repos and Wikis, while using `index.md` makes the behavior more in line with documentation sites. Defaults to `README.md`.
+  The file name of the entry page (either project readme or API index if readme=none). `README.md` is recognised when browsing folders on repos and Wikis, while using `index.md`. Defaults to `README.md`.
 - **`--skipIndexPage`**<br>
-  Skips generation of API index page. Note the index page can be inserted into the readme page using the `$TYPEDOC_INDEX` placeholder key. Ignored if no readme resolved. Defaults to `false`.
+  Skips generation of a seperate API index page. Note the index page can be inserted into the readme page using the `$TYPEDOC_INDEX` placeholder key. Ignored if readme=none. Defaults to `false`.
 - **`--indexPageTitle`**<br>
   The title of API index page. Defaults to the project name.
 - **`--excludeGroups`**<br>
