@@ -50,7 +50,7 @@ export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
   hidePageTitle: boolean;
   hideHierarchy: boolean;
   includeFileNumberPrefixes: boolean;
-  indentifiersAsCodeBlocks: boolean;
+  identifiersAsCodeBlocks: boolean;
   indexPageTitle: string;
   namedAnchors: boolean;
   outputFileStrategy: OutputFileStrategy;

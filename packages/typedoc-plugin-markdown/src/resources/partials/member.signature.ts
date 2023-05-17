@@ -9,7 +9,7 @@ export function signatureMember(
 ) {
   const md: string[] = [];
 
-  if (context.getOption('indentifiersAsCodeBlocks')) {
+  if (context.getOption('identifiersAsCodeBlocks')) {
     md.push(codeBlock(context.partials.signatureMemberIdentifier(signature)));
   } else {
     md.push(`> ${context.partials.signatureMemberIdentifier(signature)}`);
