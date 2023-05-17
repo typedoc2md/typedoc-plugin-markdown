@@ -1,12 +1,12 @@
 import { TypeParameterReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { italic, table } from '../../support/els';
 import { tableComments } from '../../support/helpers';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function typeParametersTable(
   context: MarkdownThemeRenderContext,
   typeParameters: TypeParameterReflection[],
-) {
+): string {
   const hasDefault = typeParameters.some((typeParameter) =>
     Boolean(typeParameter.default),
   );
@@ -35,7 +35,7 @@ export function typeParametersTable(
 
     if (typeParameter.type) {
       nameCol.push(
-        `${italic('extends')} ${context.partials.someType(typeParameter.type)}`,
+        `${italic('extends')} ${context.someType(typeParameter.type)}`,
       );
     }
 
@@ -43,7 +43,7 @@ export function typeParametersTable(
 
     if (hasDefault) {
       if (typeParameter.default) {
-        row.push(context.partials.someType(typeParameter.default));
+        row.push(context.someType(typeParameter.default));
       } else {
         row.push('-');
       }
@@ -51,9 +51,7 @@ export function typeParametersTable(
 
     if (hasComments) {
       if (typeParameter.comment) {
-        row.push(
-          tableComments(context.partials.comment(typeParameter.comment)),
-        );
+        row.push(tableComments(context.comment(typeParameter.comment)));
       } else {
         row.push('-');
       }

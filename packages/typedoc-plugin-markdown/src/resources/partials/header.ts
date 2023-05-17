@@ -5,14 +5,14 @@ import {
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { bold, link } from '../../support/els';
 import { getProjectDisplayName } from '../../support/helpers';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
-export function pageHeader(
+export function header(
   context: MarkdownThemeRenderContext,
   page: PageEvent<ProjectReflection | DeclarationReflection>,
-) {
+): string {
   const isMonoRepo = !Boolean(page.project.groups);
   if (isMonoRepo) {
     const packageItem = findPackage(page.model);
@@ -27,35 +27,30 @@ function projectHeader(
   context: MarkdownThemeRenderContext,
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
+  const entryFileName = context.options.getValue('entryFileName') as string;
+
   const projectName = getProjectDisplayName(
     page.project,
-    context.getOption('includeVersion'),
+    context.options.getValue('includeVersion'),
   );
 
-  const hasReadme = !context.getOption('readme').endsWith('none');
+  const hasReadme = !context.options.getValue('readme').endsWith('none');
 
   const md: string[] = [];
 
-  md.push(
-    link(
-      bold(projectName),
-      context.relativeURL(context.getOption('entryFileName')),
-    ),
-  );
+  md.push(link(bold(projectName), context.relativeURL(entryFileName)));
 
   const links: string[] = [];
 
-  if (!context.options.readme?.endsWith('none')) {
-    if (page.url === context.options.entryFileName) {
+  if (!context.options.getValue('readme')?.endsWith('none')) {
+    if (page.url === entryFileName) {
       links.push('Readme');
     } else {
-      links.push(
-        link('Readme', context.relativeURL(context.getOption('entryFileName'))),
-      );
+      links.push(link('Readme', context.relativeURL(entryFileName)));
     }
   }
 
-  if (hasReadme && page.project.url !== context.options.entryFileName) {
+  if (hasReadme && page.project.url !== entryFileName) {
     if (page.url === page.project.url) {
       links.push('Index');
     } else {
@@ -80,9 +75,9 @@ export function packageHeader(
 
   const hasReadme = Boolean(packageItem.readme);
 
-  const readmeUrl = `${path.dirname(packageItem.url)}/${context.getOption(
-    'entryFileName',
-  )}`;
+  const readmeUrl = `${path.dirname(
+    packageItem.url,
+  )}/${context.options.getValue('entryFileName')}`;
 
   const md: string[] = [];
 

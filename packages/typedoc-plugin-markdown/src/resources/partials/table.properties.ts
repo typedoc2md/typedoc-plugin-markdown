@@ -1,13 +1,13 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks, table } from '../../support/els';
 import { getDeclarationType, tableComments } from '../../support/helpers';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function propertiesTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
   nameCol = 'Property',
-) {
+): string {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
 
@@ -60,7 +60,7 @@ export function propertiesTable(
     }
 
     nameColumn.push(
-      `${context.partials.declarationMemberName(property, false)}${
+      `${context.declarationMemberName(property, false)}${
         property.flags.isOptional ? '?' : ''
       }`,
     );
@@ -68,13 +68,13 @@ export function propertiesTable(
     row.push(nameColumn.join(' '));
 
     if (propertyType) {
-      row.push(context.partials.someType(propertyType, 'object'));
+      row.push(context.someType(propertyType, 'object'));
     }
 
     if (hasComments) {
       const comments = getComments(property);
       if (comments) {
-        row.push(tableComments(context.partials.comment(comments)));
+        row.push(tableComments(context.comment(comments)));
       } else {
         row.push('-');
       }

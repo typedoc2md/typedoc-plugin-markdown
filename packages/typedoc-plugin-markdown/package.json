@@ -19,7 +19,7 @@
     "docs:md-1": "typedoc --options ../../stubs/typedoc.1.js --out ./out/md/md-1",
     "docs:md-2": "typedoc --options ../../stubs/typedoc.2.js --out ./out/md/md-2",
     "docs:md-3": "typedoc --options ../../stubs/typedoc.3.js --out ./out/md/md-3",
-    "docs:html": "typedoc --options ../../stubs/typedoc.base.js --out ./out/html"
+    "docs:html": "typedoc --options ../../stubs/typedoc.1.js --out ./out/html"
   },
   "author": "Thomas Grey",
   "license": "MIT",

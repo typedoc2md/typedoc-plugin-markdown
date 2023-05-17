@@ -1,13 +1,13 @@
 import { DeclarationReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks } from '../../support/els';
 import { escapeChars } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function memberTitle(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
   typeParams = false,
-) {
+): string {
   const md = [escapeChars(reflection.name)];
   if (reflection.signatures?.length) {
     md.push('()');

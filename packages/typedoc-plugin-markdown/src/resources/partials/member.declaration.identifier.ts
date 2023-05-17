@@ -1,13 +1,13 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks } from '../../support/els';
 import { getDeclarationType } from '../../support/helpers';
 import { stripComments, stripLineBreaks } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
-) {
+): string {
   const md: string[] = [];
 
   const declarationType = getDeclarationType(reflection);
@@ -30,7 +30,7 @@ export function declarationMemberIdentifier(
     md.push('...');
   }
 
-  const name: string[] = [context.partials.declarationMemberName(reflection)];
+  const name: string[] = [context.declarationMemberName(reflection)];
 
   if (reflection.flags.isOptional) {
     name.push('?');
@@ -51,7 +51,7 @@ export function declarationMemberIdentifier(
   }
 
   if (declarationType) {
-    md.push(`${context.partials.someType(declarationType, 'all')}`);
+    md.push(`${context.someType(declarationType, 'all')}`);
   }
 
   if (reflection.defaultValue && reflection.defaultValue !== '...') {

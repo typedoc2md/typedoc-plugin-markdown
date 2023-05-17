@@ -1,12 +1,12 @@
 import { ParameterReflection, SignatureReflection, SomeType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks, bold } from '../../support/els';
 import { escapeChars } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function signatureMemberIdentifier(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
-) {
+): string {
   const md: string[] = [];
 
   if (signature.parent && signature.parent.flags?.length > 0) {
@@ -42,7 +42,7 @@ export function signatureMemberIdentifier(
           (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
             ? '?'
             : ''
-        }: ${context.partials.someType(param.type as SomeType, 'all')}`;
+        }: ${context.someType(param.type as SomeType, 'all')}`;
         paramsmd.push(paramItem);
         if (param.defaultValue) {
           paramsmd.push(` = ${backTicks(param.defaultValue)}`);
@@ -59,7 +59,7 @@ export function signatureMemberIdentifier(
   );
 
   if (signature.type) {
-    md.push(`: ${context.partials.someType(signature.type, 'all')}`);
+    md.push(`: ${context.someType(signature.type, 'all')}`);
   }
 
   return md.join('');

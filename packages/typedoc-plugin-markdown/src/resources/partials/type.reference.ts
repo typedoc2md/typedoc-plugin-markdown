@@ -1,11 +1,11 @@
 import { ReferenceType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function referenceType(
   context: MarkdownThemeRenderContext,
   referenceType: ReferenceType,
-) {
+): string {
   if (
     referenceType.reflection ||
     (referenceType.name && referenceType.typeArguments)
@@ -28,7 +28,7 @@ export function referenceType(
     if (referenceType.typeArguments && referenceType.typeArguments.length > 0) {
       reflection.push(
         `\\<${referenceType.typeArguments
-          .map((typeArgument) => context.partials.someType(typeArgument))
+          .map((typeArgument) => context.someType(typeArgument))
           .join(', ')}\\>`,
       );
     }

@@ -1,14 +1,14 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { table } from '../../support/els';
 import { tableComments } from '../../support/helpers';
 import { escapeChars, stripLineBreaks } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function parametersTable(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
-) {
+): string {
   const flattenParams = (current: any) => {
     return current.type?.declaration?.children?.reduce(
       (acc: any, child: any) => {
@@ -67,9 +67,7 @@ export function parametersTable(
     row.push(`${rest}${escapeChars(parameter.name)}${optional}`);
 
     if (parameter.type) {
-      row.push(
-        stripLineBreaks(context.partials.someType(parameter.type, 'object')),
-      );
+      row.push(stripLineBreaks(context.someType(parameter.type, 'object')));
     }
 
     if (showDefaults) {
@@ -77,7 +75,7 @@ export function parametersTable(
     }
     if (hasComments) {
       if (parameter.comment) {
-        row.push(tableComments(context.partials.comment(parameter.comment)));
+        row.push(tableComments(context.comment(parameter.comment)));
       } else {
         row.push('-');
       }

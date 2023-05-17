@@ -1,6 +1,6 @@
 import { ProjectReflection, Reflection } from 'typedoc';
 
-import { MarkdownThemeRenderContext } from '../../src/theme-render-context';
+import { MarkdownThemeRenderContext } from '../../src/render-context';
 
 describe(`Breadcrumbs:`, () => {
   let moduleReflection: Reflection;
@@ -13,12 +13,11 @@ describe(`Breadcrumbs:`, () => {
       ({ project, context } = await global.bootstrap(['breadcrumbs.ts']));
       moduleReflection = (project.children as any)[0];
       classReflection = project.getChildByName('Breadcrumbs') as Reflection;
-      context.activeLocation = 'breadcrumbs.md';
     });
 
     test(`should compile entryPoint (globals) breadcrumbs'`, () => {
       expect(
-        context.partials.breadcrumbs({
+        context.breadcrumbs({
           project: project,
           model: project,
           url: 'globals.md',
@@ -28,7 +27,7 @@ describe(`Breadcrumbs:`, () => {
 
     test(`should compile module breadcrumbs'`, () => {
       expect(
-        context.partials.breadcrumbs({
+        context.breadcrumbs({
           project: project,
           model: moduleReflection,
           url: moduleReflection.url,
@@ -37,7 +36,7 @@ describe(`Breadcrumbs:`, () => {
     });
     test(`should compile class breadcrumbs'`, () => {
       expect(
-        context.partials.breadcrumbs({
+        context.breadcrumbs({
           project: project,
           model: classReflection,
           url: classReflection.url,
@@ -54,12 +53,11 @@ describe(`Breadcrumbs:`, () => {
       }));
       moduleReflection = (project.children as any)[0];
       classReflection = project.getChildByName('Breadcrumbs') as Reflection;
-      context.activeLocation = 'breadcrumbs.md';
     });
 
     test(`should compile module breadcrumbs'`, () => {
       expect(
-        context.partials.breadcrumbs({
+        context.breadcrumbs({
           project: project,
           model: moduleReflection,
           url: moduleReflection.url,
@@ -68,7 +66,7 @@ describe(`Breadcrumbs:`, () => {
     });
     test(`should compile class breadcrumbs'`, () => {
       expect(
-        context.partials.breadcrumbs({
+        context.breadcrumbs({
           project: project,
           model: classReflection,
           url: classReflection.url,

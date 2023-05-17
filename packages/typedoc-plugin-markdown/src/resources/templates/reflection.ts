@@ -1,6 +1,6 @@
 import { DeclarationReflection, PageEvent } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { heading } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function reflectionTemplate(
   context: MarkdownThemeRenderContext,
@@ -8,23 +8,25 @@ export function reflectionTemplate(
 ) {
   const md: string[] = [];
 
-  if (!context.getOption('hidePageHeader')) {
-    md.push(context.partials.pageHeader(page));
+  if (!context.options.getValue('hidePageHeader')) {
+    md.push(context.header(page));
   }
 
-  if (!context.getOption('hideBreadcrumbs')) {
-    md.push(context.partials.breadcrumbs(page));
+  if (!context.options.getValue('hideBreadcrumbs')) {
+    md.push(context.breadcrumbs(page));
   }
 
-  if (!context.getOption('hidePageTitle')) {
-    md.push(heading(1, context.partials.pageTitle(page)));
+  if (!context.options.getValue('hidePageTitle')) {
+    md.push(heading(1, context.pageTitle(page)));
   }
 
-  if (!context.getOption('hideKindTag')) {
-    md.push(context.partials.memberKindTag(page.model));
+  if (!context.options.getValue('hideKindTag')) {
+    md.push(context.memberKindTag(page.model));
   }
 
-  md.push(context.partials.reflectionMember(page.model, 2));
+  md.push(context.reflectionMember(page.model, 2));
+
+  md.push(context.footer());
 
   return md.join('\n\n');
 }

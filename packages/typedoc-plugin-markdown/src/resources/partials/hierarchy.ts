@@ -1,11 +1,11 @@
 import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks, bold, unorderedList } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function hierarchy(
   context: MarkdownThemeRenderContext,
   declarationHierarchy: DeclarationHierarchy,
-) {
+): string {
   const md: string[] = [];
   const parent = !declarationHierarchy.isTarget
     ? declarationHierarchy.types
@@ -44,5 +44,5 @@ function getHierarchyType(
 ) {
   return isTarget
     ? bold(backTicks(hierarchyType.toString()))
-    : context.partials.someType(hierarchyType as SomeType);
+    : context.someType(hierarchyType as SomeType);
 }

@@ -1,12 +1,10 @@
 import { QueryType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { italic } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function queryType(
   context: MarkdownThemeRenderContext,
   queryType: QueryType,
-) {
-  return `${italic('typeof')} ${context.partials.someType(
-    queryType.queryType,
-  )}`;
+): string {
+  return `${italic('typeof')} ${context.someType(queryType.queryType)}`;
 }

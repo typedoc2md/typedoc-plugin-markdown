@@ -1,6 +1,6 @@
 import { PageEvent, ProjectReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { heading } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function projectTemplate(
   context: MarkdownThemeRenderContext,
@@ -8,25 +8,27 @@ export function projectTemplate(
 ) {
   const md: string[] = [];
 
-  if (!context.getOption('hidePageHeader')) {
-    md.push(context.partials.pageHeader(page));
+  if (!context.options.getValue('hidePageHeader')) {
+    md.push(context.header(page));
   }
 
-  if (!context.getOption('hideBreadcrumbs')) {
-    md.push(context.partials.breadcrumbs(page));
+  if (!context.options.getValue('hideBreadcrumbs')) {
+    md.push(context.breadcrumbs(page));
   }
 
-  if (!context.getOption('hidePageTitle')) {
-    md.push(heading(1, context.partials.pageTitle(page)));
+  if (!context.options.getValue('hidePageTitle')) {
+    md.push(heading(1, context.pageTitle(page)));
   }
 
   if (page.model.comment) {
-    md.push(context.partials.comment(page.model.comment, 2));
+    md.push(context.comment(page.model.comment, 2));
   }
 
-  md.push(context.partials.pageIndex(page, 2));
+  md.push(context.pageIndex(page, 2));
 
-  md.push(context.partials.members(page.model, 2));
+  md.push(context.members(page.model, 2));
+
+  md.push(context.footer());
 
   return md.join('\n\n');
 }

@@ -1,44 +1,40 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { blockQuoteBlock, codeBlock, heading } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function declarationMember(
   context: MarkdownThemeRenderContext,
   declaration: DeclarationReflection,
   headingLevel: number,
-) {
+): string {
   const md: string[] = [];
 
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (context.getOption('identifiersAsCodeBlocks')) {
-    md.push(
-      codeBlock(context.partials.declarationMemberIdentifier(declaration)),
-    );
+  if (context.options.getValue('identifiersAsCodeBlocks')) {
+    md.push(codeBlock(context.declarationMemberIdentifier(declaration)));
   } else {
-    md.push(`> ${context.partials.declarationMemberIdentifier(declaration)}`);
+    md.push(`> ${context.declarationMemberIdentifier(declaration)}`);
   }
 
   if (declaration.comment) {
-    md.push(context.partials.comment(declaration.comment, headingLevel));
+    md.push(context.comment(declaration.comment, headingLevel));
   }
 
   if (declaration.sources) {
-    md.push(context.partials.sources(declaration));
+    md.push(context.sources(declaration));
   }
 
   if (declaration.typeParameters) {
     md.push(heading(headingLevel, `Type parameters`));
-    md.push(context.partials.typeParametersTable(declaration.typeParameters));
+    md.push(context.typeParametersTable(declaration.typeParameters));
   }
 
   if (typeDeclaration) {
     if (typeDeclaration?.indexSignature) {
       md.push(heading(headingLevel, `Index signature`));
-      md.push(
-        context.partials.indexSignatureTitle(typeDeclaration.indexSignature),
-      );
+      md.push(context.indexSignatureTitle(typeDeclaration.indexSignature));
     }
 
     if (
@@ -61,29 +57,24 @@ export function declarationMember(
           if (typeDeclaration?.parent?.kindOf(ReflectionKind.Property)) {
             md.push(
               blockQuoteBlock(
-                context.partials.signatureMember(signature, headingLevel + 1),
+                context.signatureMember(signature, headingLevel + 1),
               ),
             );
           } else {
-            md.push(
-              context.partials.signatureMember(signature, headingLevel + 1),
-            );
+            md.push(context.signatureMember(signature, headingLevel + 1));
           }
         });
       }
 
       if (typeDeclaration?.children?.length) {
         md.push(
-          context.partials.typeDeclarationMember(
-            typeDeclaration,
-            headingLevel + 1,
-          ),
+          context.typeDeclarationMember(typeDeclaration, headingLevel + 1),
         );
       }
     }
   }
 
-  md.push(context.partials.inheritance(declaration, headingLevel));
+  md.push(context.inheritance(declaration, headingLevel));
 
   return md.join('\n\n');
 }

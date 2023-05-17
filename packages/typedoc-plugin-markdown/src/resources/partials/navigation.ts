@@ -1,12 +1,12 @@
 import { NavigationItem } from '../../models';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
+import { MarkdownThemeRenderContext } from '../../render-context';
 
 export function navigation(
   context: MarkdownThemeRenderContext,
   navigationItems: NavigationItem[],
-) {
+): string {
   const title =
-    context.getOption('entryPoints')?.length > 1 ? 'Modules' : 'Exports';
+    context.options.getValue('entryPoints')?.length > 1 ? 'Modules' : 'Exports';
   const md: string[] = [`## ${title}\n`];
   navigationItems.forEach((navigationItem) => {
     if (navigationItem.url) {

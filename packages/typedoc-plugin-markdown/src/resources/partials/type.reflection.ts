@@ -1,13 +1,13 @@
 import { ReflectionType } from 'typedoc';
 import { Collapse } from '../../models';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function reflectionType(
   context: MarkdownThemeRenderContext,
   reflectionType: ReflectionType,
   collapse: Collapse,
-) {
+): string {
   const root =
     reflectionType instanceof ReflectionType
       ? reflectionType.declaration
@@ -15,9 +15,9 @@ export function reflectionType(
   if (root.signatures) {
     return collapse === 'function' || collapse === 'all'
       ? backTicks('Function')
-      : context.partials.functionType(root.signatures);
+      : context.functionType(root.signatures);
   }
   return (collapse === 'object' && !root.indexSignature) || collapse === 'all'
     ? backTicks('object')
-    : context.partials.declarationType(root);
+    : context.declarationType(root);
 }

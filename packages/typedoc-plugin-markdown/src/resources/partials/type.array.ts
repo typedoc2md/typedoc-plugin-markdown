@@ -1,11 +1,11 @@
 import { ArrayType } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
+import { MarkdownThemeRenderContext } from '../../render-context';
 
 export function arrayType(
   context: MarkdownThemeRenderContext,
   arrayType: ArrayType,
-) {
-  const theType = context.partials.someType(arrayType.elementType, 'none');
+): string {
+  const theType = context.someType(arrayType.elementType, 'none');
   return arrayType.elementType.type === 'union'
     ? `(${theType})[]`
     : `${theType}[]`;

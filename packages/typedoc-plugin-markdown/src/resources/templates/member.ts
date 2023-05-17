@@ -1,6 +1,6 @@
 import { DeclarationReflection, PageEvent } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { heading } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function memberTemplate(
   context: MarkdownThemeRenderContext,
@@ -8,19 +8,21 @@ export function memberTemplate(
 ) {
   const md: string[] = [];
 
-  if (!context.getOption('hidePageHeader')) {
-    md.push(context.partials.pageHeader(page));
+  if (!context.options.getValue('hidePageHeader')) {
+    md.push(context.header(page));
   }
 
-  if (!context.getOption('hideBreadcrumbs')) {
-    md.push(context.partials.breadcrumbs(page));
+  if (!context.options.getValue('hideBreadcrumbs')) {
+    md.push(context.breadcrumbs(page));
   }
 
-  if (!context.getOption('hidePageTitle')) {
-    md.push(heading(1, context.partials.pageTitle(page)));
+  if (!context.options.getValue('hidePageTitle')) {
+    md.push(heading(1, context.pageTitle(page)));
   }
 
-  md.push(context.partials.member(page.model, 1));
+  md.push(context.member(page.model, 1));
+
+  md.push(context.footer());
 
   return md.join('\n\n');
 }

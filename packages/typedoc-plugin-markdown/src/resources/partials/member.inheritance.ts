@@ -4,8 +4,8 @@ import {
   ReferenceType,
   SignatureReflection,
 } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks, heading, link } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 import { escapeChars } from '../../support/utils';
 
@@ -13,7 +13,7 @@ export function inheritance(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection | SignatureReflection,
   headingLevel: number,
-) {
+): string {
   const md: string[] = [];
 
   if (reflection.implementationOf) {

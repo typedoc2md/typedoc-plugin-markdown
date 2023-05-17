@@ -9,7 +9,7 @@ const apps: string[] = [];
 
 export default function pluginDocusaurus(
   context: any,
-  opts: Partial<PluginOptions>,
+  opts: Record<string, any>,
 ) {
   return {
     name: 'docusaurus-plugin-typedoc',
@@ -72,7 +72,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
     process.exit();
   }
 
-  if (options.watch) {
+  if (app.options.getValue('watch')) {
     app.convertAndWatch(async (project) => {
       await app.generateDocs(project, outputDir);
     });

@@ -45,7 +45,7 @@ global.bootstrap = async (
   await app.generateDocs(project, 'docs');
   const context = (app.renderer.theme as any).getRenderContext();
   stubPartials.forEach((stubPartial) => {
-    context.partials[stubPartial] = () => `[partial: ${stubPartial}]`;
+    context[stubPartial] = () => `[partial: ${stubPartial}]`;
   });
   const theme = app.renderer.theme;
 

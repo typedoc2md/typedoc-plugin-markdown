@@ -5,7 +5,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { FrontmatterEvent } from 'typedoc-plugin-frontmatter';
-import { MarkdownTheme } from 'typedoc-plugin-markdown';
 import { SidebarOptions } from './models';
 
 export function loadRenderer(app: Application) {
@@ -24,12 +23,10 @@ export function loadRenderer(app: Application) {
 }
 
 function loadFrontmatter(app: Application, event: FrontmatterEvent) {
-  const renderContext = (
-    app.renderer.theme as MarkdownTheme
-  ).getRenderContext();
-
   const sidebar = app.options.getValue('sidebar') as SidebarOptions;
-  const isIndexPage = event.page?.url.endsWith(renderContext.indexFileName);
+  const isIndexPage = event.page?.url.endsWith(
+    app.options.getValue('indexFileName') as string,
+  );
   const isReadmePage = event.page?.url.endsWith(
     app.options.getValue('entryFileName') as string,
   );

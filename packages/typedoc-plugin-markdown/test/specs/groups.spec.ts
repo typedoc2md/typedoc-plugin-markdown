@@ -1,5 +1,5 @@
 import { ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/theme-render-context';
+import { MarkdownThemeRenderContext } from '../../src/render-context';
 
 describe(`Groups:`, () => {
   let project: ProjectReflection;
@@ -28,11 +28,11 @@ describe(`Groups:`, () => {
       }));
     });
     test(`should render group members'`, () => {
-      expect(context.partials.members(project, 2)).toMatchSnapshot();
+      expect(context.members(project, 2)).toMatchSnapshot();
     });
 
     test(`should render group TOC'`, () => {
-      expect(context.partials.memberIndex(project, 2)).toMatchSnapshot();
+      expect(context.memberIndex(project, 2)).toMatchSnapshot();
     });
   });
 
@@ -47,11 +47,11 @@ describe(`Groups:`, () => {
       }));
     });
     test(`should render group members'`, () => {
-      expect(context.partials.members(project, 2)).toMatchSnapshot();
+      expect(context.members(project, 2)).toMatchSnapshot();
     });
 
     test(`should render group TOC'`, () => {
-      expect(context.partials.memberIndex(project, 2)).toMatchSnapshot();
+      expect(context.memberIndex(project, 2)).toMatchSnapshot();
     });
   });
 });

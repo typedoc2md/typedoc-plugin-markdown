@@ -1,13 +1,11 @@
 import { IntersectionType } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
+import { MarkdownThemeRenderContext } from '../../render-context';
 
 export function intersectionType(
   context: MarkdownThemeRenderContext,
   model: IntersectionType,
-) {
+): string {
   return model.types
-    .map((intersectionType) =>
-      context.partials.someType(intersectionType, 'none'),
-    )
+    .map((intersectionType) => context.someType(intersectionType, 'none'))
     .join(' & ');
 }

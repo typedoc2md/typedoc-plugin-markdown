@@ -1,5 +1,5 @@
 import { ProjectReflection, SignatureReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/theme-render-context';
+import { MarkdownThemeRenderContext } from '../../src/render-context';
 
 describe(`Generics:`, () => {
   let project: ProjectReflection;
@@ -13,15 +13,14 @@ describe(`Generics:`, () => {
         'members',
         'sources',
         'toc',
-        'pageHeader',
+        'header',
       ],
     }));
-    context.activeLocation = 'generics.md';
   });
 
   test(`should compile class with type params`, () => {
     expect(
-      context.templates.reflectionTemplate({
+      context.reflectionTemplate({
         model: project.getChildByName('ClassWithTypeParams'),
         project: project,
       } as any),
@@ -30,7 +29,7 @@ describe(`Generics:`, () => {
 
   test(`should compile function with a simple type param'`, () => {
     expect(
-      context.partials.signatureMember(
+      context.signatureMember(
         (project.getChildByName('functionWithTypeParam') as any)
           .signatures[0] as SignatureReflection,
         2,
@@ -40,7 +39,7 @@ describe(`Generics:`, () => {
 
   test(`should compile function with complex type params'`, () => {
     expect(
-      context.partials.signatureMember(
+      context.signatureMember(
         (project.getChildByName('functionWithTypeParams') as any)
           .signatures[0] as SignatureReflection,
         2,
@@ -50,7 +49,7 @@ describe(`Generics:`, () => {
 
   test(`should compile type with nested generics'`, () => {
     expect(
-      context.partials.declarationMember(
+      context.declarationMember(
         project.getChildByName('nestedGenerics') as any,
         2,
       ),
@@ -59,7 +58,7 @@ describe(`Generics:`, () => {
 
   test(`should compile generics with defaults'`, () => {
     expect(
-      context.partials.declarationMember(
+      context.declarationMember(
         project.getChildByName('genericsWithDefaults') as any,
         2,
       ),

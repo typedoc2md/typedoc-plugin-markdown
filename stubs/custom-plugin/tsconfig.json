@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "lib": ["es2020", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -10,5 +11,5 @@
     "strictNullChecks": false,
     "target": "es2020"
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["**/*.ts"]
 }

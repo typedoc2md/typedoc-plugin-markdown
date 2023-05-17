@@ -15,69 +15,69 @@ import {
   UnknownType,
 } from 'typedoc';
 import { Collapse } from '../../models';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks } from '../../support/els';
 import { escapeChars } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function someType(
   context: MarkdownThemeRenderContext,
   someType: SomeType,
   collapse: Collapse = 'none',
-) {
+): string {
   if (!someType) {
     return '';
   }
 
   if (someType instanceof ArrayType) {
-    return '' + context.partials.arrayType(someType);
+    return '' + context.arrayType(someType);
   }
 
   if (someType instanceof ConditionalType) {
-    return '' + context.partials.conditionalType(someType);
+    return '' + context.conditionalType(someType);
   }
 
   if (someType instanceof IndexedAccessType) {
-    return '' + context.partials.indexAccessType(someType);
+    return '' + context.indexAccessType(someType);
   }
 
   if (someType instanceof InferredType) {
-    return '' + context.partials.inferredType(someType);
+    return '' + context.inferredType(someType);
   }
 
   if (someType instanceof IntersectionType && someType.types) {
-    return '' + context.partials.intersectionType(someType);
+    return '' + context.intersectionType(someType);
   }
 
   if (someType instanceof IntrinsicType && someType.name) {
-    return '' + context.partials.intrinsicType(someType);
+    return '' + context.intrinsicType(someType);
   }
 
   if (someType instanceof QueryType) {
-    return '' + context.partials.queryType(someType);
+    return '' + context.queryType(someType);
   }
 
   if (someType instanceof ReferenceType) {
-    return '' + context.partials.referenceType(someType);
+    return '' + context.referenceType(someType);
   }
 
   if (someType instanceof ReflectionType) {
-    return '' + context.partials.reflectionType(someType, collapse);
+    return '' + context.reflectionType(someType, collapse);
   }
 
   if (someType instanceof TypeOperatorType) {
-    return '' + context.partials.typeOperatorType(someType);
+    return '' + context.typeOperatorType(someType);
   }
 
   if (someType instanceof TupleType && someType.elements) {
-    return '' + context.partials.tupleType(someType);
+    return '' + context.tupleType(someType);
   }
 
   if (someType instanceof UnionType && someType.types) {
-    return '' + context.partials.unionType(someType);
+    return '' + context.unionType(someType);
   }
 
   if (someType instanceof UnknownType) {
-    return '' + context.partials.unknownType(someType);
+    return '' + context.unknownType(someType);
   }
 
   if (someType.toString() == 'null') {

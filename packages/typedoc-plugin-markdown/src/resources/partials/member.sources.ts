@@ -1,13 +1,13 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { bold, link } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 import { escapeChars } from '../../support/utils';
 
 export function sources(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection | SignatureReflection,
-) {
+): string {
   const md = [bold('Source:')];
   reflection.sources?.forEach((source) => {
     if (source.url) {

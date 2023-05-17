@@ -1,10 +1,10 @@
 import { ReferenceReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
+import { MarkdownThemeRenderContext } from '../../render-context';
 
 export function referenceMember(
   context: MarkdownThemeRenderContext,
   props: ReferenceReflection,
-) {
+): string {
   const referenced = props.tryGetTargetReflectionDeep();
 
   if (!referenced) {

@@ -1,10 +1,10 @@
 import { CommentDisplayPart } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
+import { MarkdownThemeRenderContext } from '../../render-context';
 
 export function commentParts(
   context: MarkdownThemeRenderContext,
   parts: CommentDisplayPart[],
-) {
+): string {
   const md: string[] = [];
   for (const part of parts) {
     switch (part.kind) {

@@ -1,13 +1,13 @@
 import { DeclarationReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { bold } from '../../support/els';
 import { escapeChars } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function declarationMemberName(
   context: MarkdownThemeRenderContext,
   declaration: DeclarationReflection,
   emphasis = true,
-) {
+): string {
   if (Boolean(declaration.getSignature || Boolean(declaration.setSignature))) {
     if (declaration.getSignature) {
       return `${'get'} ${getName(
@@ -20,10 +20,7 @@ export function declarationMemberName(
         emphasis,
       )}(${declaration.setSignature.parameters?.map((parameter) => {
         return parameter.type
-          ? `${parameter.name}: ${context.partials.someType(
-              parameter.type,
-              'all',
-            )}`
+          ? `${parameter.name}: ${context.someType(parameter.type, 'all')}`
           : '';
       })})`;
     }

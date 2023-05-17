@@ -42,6 +42,8 @@ The following options can be used in addition to relevant [TypeDoc options](http
   Flatten output files without folders. Defaults to `false`.
 - **`--entryFileName`**<br>
   The file name of the entry page (either project readme or API index if readme=none). `README.md` is recognised when browsing folders on repos and Wikis, while using `index.md`. Defaults to `README.md`.
+- **`--indexFileName`**<br>
+  The file name the seperate index page. Ignored if readme=none or skipIndexPage=true. Default to `API.md`.
 - **`--skipIndexPage`**<br>
   Skips generation of a seperate API index page. Note the index page can be inserted into the readme page using the `$TYPEDOC_INDEX` placeholder key. Ignored if readme=none. Defaults to `false`.
 - **`--indexPageTitle`**<br>

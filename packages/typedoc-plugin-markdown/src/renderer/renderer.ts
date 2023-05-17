@@ -80,15 +80,16 @@ export async function renderMarkdown(
 
   output.urls = this.theme!.getUrls(project);
   output.navigation = this.theme!.getNavigation(project);
-
   this.trigger(output);
 
   await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
+
   this.preRenderAsyncJobs = [];
 
   this.application.logger.verbose(
     `There are ${output.urls?.length} pages to write.`,
   );
+
   output.urls
     ?.filter(
       (urlMapping) =>
@@ -100,6 +101,7 @@ export async function renderMarkdown(
     });
 
   await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
+
   this.postRenderAsyncJobs = [];
 
   this.trigger(RendererEvent.END, output);

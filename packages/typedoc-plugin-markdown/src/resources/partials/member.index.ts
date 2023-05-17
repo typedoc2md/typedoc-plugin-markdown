@@ -5,17 +5,17 @@ import {
 } from 'typedoc';
 import { heading } from '../../support/els';
 
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { escapeChars } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function memberIndex(
   context: MarkdownThemeRenderContext,
   reflection: ProjectReflection | DeclarationReflection,
   headingLevel: number,
-) {
+): string {
   const md: string[] = [];
 
-  const hideInPageTOC = context.getOption('hideInPageTOC');
+  const hideInPageTOC = context.options.getValue('hideInPageTOC');
 
   const isVisible = reflection.groups?.some((group) =>
     group.allChildrenHaveOwnDocument(),
@@ -35,7 +35,7 @@ export function memberIndex(
         md.push(getGroup(context, item) + '\n');
       });
     } else {
-      if (context.getOption('excludeGroups') && reflection.children) {
+      if (context.options.getValue('excludeGroups') && reflection.children) {
         md.push(
           reflection.children
             .map((child) => {

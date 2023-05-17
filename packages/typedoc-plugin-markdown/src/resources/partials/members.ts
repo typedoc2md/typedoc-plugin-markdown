@@ -5,15 +5,15 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { FormatStyle } from '../../models';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { SYMBOLS_WITH_DOCUMENTS } from '../../support/constants';
 import { heading, horizontalRule } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function members(
   context: MarkdownThemeRenderContext,
   container: ContainerReflection,
   headingLevel: number,
-) {
+): string {
   const md: string[] = [];
 
   const pushCategories = (
@@ -35,9 +35,7 @@ export function members(
     children
       ?.filter((item) => !item.hasOwnDocument)
       .forEach((item) => {
-        md.push(
-          context.partials.member(item, memberHeadingLevel || headingLevel),
-        );
+        md.push(context.member(item, memberHeadingLevel || headingLevel));
         if (SYMBOLS_WITH_DOCUMENTS.includes(item.kind)) {
           md.push(horizontalRule());
         }
@@ -48,7 +46,7 @@ export function members(
     pushCategories(container.categories, headingLevel);
   } else {
     if (
-      context.getOption('excludeGroups') &&
+      context.options.getValue('excludeGroups') &&
       container.kindOf([
         ReflectionKind.Project,
         ReflectionKind.Module,
@@ -80,14 +78,15 @@ export function members(
 
             if (
               isPropertiesGroup &&
-              context.getOption('propertiesFormat') === FormatStyle.Table
+              context.options.getValue('propertiesFormat') === FormatStyle.Table
             ) {
-              md.push(context.partials.propertiesTable(group.children));
+              md.push(context.propertiesTable(group.children));
             } else if (
               isEnumGroup &&
-              context.getOption('enumMembersFormat') === FormatStyle.Table
+              context.options.getValue('enumMembersFormat') ===
+                FormatStyle.Table
             ) {
-              md.push(context.partials.enumMembersTable(group.children));
+              md.push(context.enumMembersTable(group.children));
             } else {
               pushChildren(group.children, headingLevel + 1);
             }

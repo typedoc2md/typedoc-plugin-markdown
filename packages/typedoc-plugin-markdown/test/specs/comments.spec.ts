@@ -1,6 +1,6 @@
 import { Comment, ProjectReflection } from 'typedoc';
 
-import { MarkdownThemeRenderContext } from '../../src/theme-render-context';
+import { MarkdownThemeRenderContext } from '../../src/render-context';
 
 describe(`Comments:`, () => {
   let project: ProjectReflection;
@@ -14,9 +14,8 @@ describe(`Comments:`, () => {
   });
 
   test(`should convert symbols brackets to symbol links'`, () => {
-    context.activeLocation = 'comment.md';
     expect(
-      context.partials.comment(
+      context.comment(
         project.getChildByName('commentsWithSymbolLinks')?.comment as Comment,
       ),
     ).toMatchSnapshot();
@@ -24,7 +23,7 @@ describe(`Comments:`, () => {
 
   test(`should convert comments with fenced block'`, () => {
     expect(
-      context.partials.comment(
+      context.comment(
         project.getChildByName('commentsWithFencedBlock')?.comment as Comment,
       ),
     ).toMatchSnapshot();
@@ -32,7 +31,7 @@ describe(`Comments:`, () => {
 
   test(`should convert comments with tags'`, () => {
     expect(
-      context.partials.comment(
+      context.comment(
         project.getChildByName('commentsWithTags')?.comment as Comment,
       ),
     ).toMatchSnapshot();
@@ -40,7 +39,7 @@ describe(`Comments:`, () => {
 
   test(`should escape angle brackets inside comments'`, () => {
     expect(
-      context.partials.comment(
+      context.comment(
         project.getChildByName('commentsWithMarkup')?.comment as Comment,
       ),
     ).toMatchSnapshot();

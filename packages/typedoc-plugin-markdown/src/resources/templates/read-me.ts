@@ -1,7 +1,7 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { INDEX_PLACEHOLDER_KEY } from '../../support/constants';
 import { heading } from '../../support/els';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function readmeTemplate(
   context: MarkdownThemeRenderContext,
@@ -9,12 +9,12 @@ export function readmeTemplate(
 ) {
   const md: string[] = [];
 
-  if (!context.getOption('hidePageHeader')) {
-    md.push(context.partials.pageHeader(page));
+  if (!context.options.getValue('hidePageHeader')) {
+    md.push(context.header(page));
   }
 
   if (page.model.readme) {
-    const readmeContent = context.partials.commentParts(page.model.readme);
+    const readmeContent = context.commentParts(page.model.readme);
     md.push(
       readmeContent.includes(INDEX_PLACEHOLDER_KEY)
         ? readmeContent.replace(
@@ -25,6 +25,8 @@ export function readmeTemplate(
     );
   }
 
+  md.push(context.footer());
+
   return md.join('\n\n');
 }
 
@@ -33,13 +35,13 @@ function getIndexReplacer(
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const md: string[] = [];
-  if (!context.getOption('hidePageTitle')) {
-    md.push(heading(2, context.partials.pageTitle(page)));
+  if (!context.options.getValue('hidePageTitle')) {
+    md.push(heading(2, context.pageTitle(page)));
   }
   if (page.model.comment) {
-    md.push(context.partials.comment(page.model.comment, 2));
+    md.push(context.comment(page.model.comment, 2));
   }
-  md.push(context.partials.pageIndex(page, 3));
-  md.push(context.partials.members(page.model, 3));
+  md.push(context.pageIndex(page, 3));
+  md.push(context.members(page.model, 3));
   return md.join('\n\n');
 }

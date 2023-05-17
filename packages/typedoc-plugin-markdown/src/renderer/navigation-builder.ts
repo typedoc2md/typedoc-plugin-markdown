@@ -1,16 +1,16 @@
 import {
   DeclarationReflection,
+  Options,
   ProjectReflection,
   ReflectionGroup,
 } from 'typedoc';
 
 import { NavigationItem } from '../models';
-import { MarkdownThemeRenderContext } from '../theme-render-context';
 
 export class NavigationBuilder {
   navigation: NavigationItem[] = [];
 
-  constructor(public context: MarkdownThemeRenderContext) {}
+  constructor(public options: Options) {}
 
   getNavigation(project: ProjectReflection): NavigationItem[] {
     if (project.groups?.length) {
@@ -31,7 +31,6 @@ export class NavigationBuilder {
         });
       });
     }
-
     return this.navigation;
   }
 
@@ -56,7 +55,7 @@ export class NavigationBuilder {
   }
 
   getChildrenOrGroups(reflection: DeclarationReflection) {
-    if (this.context.getOption('excludeGroups')) {
+    if (this.options.getValue('excludeGroups')) {
       return reflection.children
         ?.filter((child) => child.hasOwnDocument)
         .map((child) => {

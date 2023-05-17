@@ -1,18 +1,12 @@
+import { PageEvent, Reflection } from 'typedoc';
 import {
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
 
 export class GitlabWikiTheme extends MarkdownTheme {
-  private _contextCache?: ThemeRenderContext;
-  override getRenderContext() {
-    if (!this._contextCache) {
-      this._contextCache = new ThemeRenderContext(
-        this,
-        this.application.options,
-      );
-    }
-    return this._contextCache;
+  override getRenderContext(pageEvent: PageEvent<Reflection>) {
+    return new ThemeRenderContext(pageEvent, this.application.options);
   }
 }
 

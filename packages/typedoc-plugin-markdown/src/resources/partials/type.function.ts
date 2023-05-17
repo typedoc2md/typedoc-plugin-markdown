@@ -1,10 +1,10 @@
 import { SignatureReflection, SomeType } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
+import { MarkdownThemeRenderContext } from '../../render-context';
 
 export function functionType(
   context: MarkdownThemeRenderContext,
   modelSignatures: SignatureReflection[],
-) {
+): string {
   const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
       ? `\\<${fn.typeParameters
@@ -15,10 +15,10 @@ export function functionType(
       ? fn.parameters.map((param) => {
           return `${param.flags.isRest ? '...' : ''}${param.name}${
             param.flags.isOptional ? '?' : ''
-          }: ${context.partials.someType(param.type as SomeType)}`;
+          }: ${context.someType(param.type as SomeType)}`;
         })
       : [];
-    const returns = context.partials.someType(fn.type as SomeType);
+    const returns = context.someType(fn.type as SomeType);
     return typeParams + `(${params.join(', ')}) => ${returns}`;
   });
   return functions.join('');

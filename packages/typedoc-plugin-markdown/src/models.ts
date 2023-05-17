@@ -1,4 +1,4 @@
-import { ReflectionKind, TypeDocOptionMap } from 'typedoc';
+import { ReflectionKind } from 'typedoc';
 
 /**
  * Defines outputFileStrategy options
@@ -34,30 +34,6 @@ export const AnchorFormat = {
 } as const;
 
 export type AnchorFormat = (typeof AnchorFormat)[keyof typeof AnchorFormat];
-
-export interface TypedocPluginMarkdownOptions extends TypeDocOptionMap {
-  anchorFormat: AnchorFormat;
-  anchorPattern: string;
-  baseUrl: string;
-  entryFileName: string;
-  enumMembersFormat: FormatStyle;
-  excludeGroups: boolean;
-  flattenOutputFiles: boolean;
-  hideBreadcrumbs: boolean;
-  hideInPageTOC: boolean;
-  hideKindTag: boolean;
-  hidePageHeader: boolean;
-  hidePageTitle: boolean;
-  hideHierarchy: boolean;
-  includeFileNumberPrefixes: boolean;
-  identifiersAsCodeBlocks: boolean;
-  indexPageTitle: string;
-  namedAnchors: boolean;
-  outputFileStrategy: OutputFileStrategy;
-  propertiesFormat: FormatStyle;
-  skipIndexPage: boolean;
-  typeDeclarationFormat: FormatStyle;
-}
 
 export interface TemplateMapping {
   directory: string | null;

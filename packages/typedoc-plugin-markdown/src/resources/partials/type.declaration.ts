@@ -1,14 +1,14 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { Collapse } from '../../models';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { backTicks } from '../../support/els';
 import { getDeclarationType } from '../../support/helpers';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function declarationType(
   context: MarkdownThemeRenderContext,
   declarationReflection: DeclarationReflection,
   collapse: Collapse = 'none',
-) {
+): string {
   if (collapse === 'object' || collapse === 'all') {
     return backTicks('object');
   }
@@ -22,18 +22,16 @@ export function declarationType(
             (param) => `\`[${param.name}: ${param.type}]\``,
           )
         : '';
-      const obj = context.partials.someType(
-        declarationIndexSignature.type as SomeType,
-      );
+      const obj = context.someType(declarationIndexSignature.type as SomeType);
       indexSignature = `${key}: ${obj}; `;
     }
     const types =
       declarationReflection.children &&
       declarationReflection.children.map((obj) => {
-        return `${context.partials.declarationMemberName(
+        return `${context.declarationMemberName(
           obj,
           false,
-        )}: ${context.partials.someType(getDeclarationType(obj) as SomeType)};`;
+        )}: ${context.someType(getDeclarationType(obj) as SomeType)};`;
       });
     if (indexSignature) {
       types?.unshift(indexSignature);

@@ -1,10 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, ParameterType } from 'typedoc';
-import {
-  MarkdownPluginOptionsReader,
-  MarkdownRendererEvent,
-} from 'typedoc-plugin-markdown';
+import { Application, Options, OptionsReader, ParameterType } from 'typedoc';
+import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { SidebarOptions } from './model';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import { getSidebar } from './sidebars/sidebars';
@@ -25,14 +22,23 @@ export function load(app: Application) {
   });
 
   app.options.addReader(
-    new MarkdownPluginOptionsReader({
-      anchorFormat: 'slug',
-      entryFileName: 'index.md',
-      skipIndexPage: true,
-      hideBreadcrumbs: true,
-      hidePageHeader: true,
-      out: './docs/api',
-    }),
+    new (class implements OptionsReader {
+      name = 'vitepress-options';
+      readonly order = 900;
+      readonly supportsPackages = false;
+      read(container: Options) {
+        Object.entries({
+          anchorFormat: 'slug',
+          entryFileName: 'index.md',
+          skipIndexPage: true,
+          hideBreadcrumbs: true,
+          hidePageHeader: true,
+          out: './docs/api',
+        }).forEach(([key, value]) => {
+          container.setValue(key, value);
+        });
+      }
+    })(),
   );
 
   app.renderer.postRenderAsyncJobs.push(

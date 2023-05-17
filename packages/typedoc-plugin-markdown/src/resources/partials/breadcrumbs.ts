@@ -1,17 +1,17 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { link } from '../../support/els';
 import { escapeChars } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function breadcrumbs(
   context: MarkdownThemeRenderContext,
   page: PageEvent<ProjectReflection | DeclarationReflection>,
-) {
+): string {
   const md: string[] = [];
 
   if (
     page.url === page.project.url ||
-    page.url === context.getOption('entryFileName')
+    page.url === context.options.getValue('entryFileName')
   ) {
     return '';
   }
@@ -30,7 +30,7 @@ export function breadcrumbs(
   if (
     page.model?.parent?.parent &&
     (page.url !== page.project.url ||
-      page.url !== context.getOption('entryFileName'))
+      page.url !== context.options.getValue('entryFileName'))
   ) {
     breadcrumb(page.model.parent);
   }

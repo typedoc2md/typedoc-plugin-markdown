@@ -8,14 +8,11 @@ import {
   TSConfigReader,
   TypeDocReader,
 } from 'typedoc';
-import { PluginOptions } from './models';
 
-const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
+const DEFAULT_PLUGIN_OPTIONS = {
   id: 'default',
   docsRoot: 'docs',
   out: 'api',
-  watch: false,
-  plugin: [],
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageHeader: true,
@@ -29,7 +26,9 @@ const DEFAULT_PLUGIN_OPTIONS: Partial<PluginOptions> = {
   },
 };
 
-export function getPluginOptions(opts: Partial<PluginOptions>): PluginOptions {
+export function getPluginOptions(
+  opts: Record<string, any>,
+): Record<string, any> {
   const options = {
     ...DEFAULT_PLUGIN_OPTIONS,
     ...opts,
@@ -38,7 +37,7 @@ export function getPluginOptions(opts: Partial<PluginOptions>): PluginOptions {
       ...opts.sidebar,
     },
   };
-  return options as PluginOptions;
+  return options;
 }
 
 export function loadOptions(app: Application) {

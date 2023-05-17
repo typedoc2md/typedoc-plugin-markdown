@@ -8,6 +8,7 @@ dist
 samples
 demo
 out
+typedoc-examples
 
 # dependencies
 node_modules

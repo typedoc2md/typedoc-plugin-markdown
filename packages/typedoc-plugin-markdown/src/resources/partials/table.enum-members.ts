@@ -1,12 +1,12 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../../render-context';
 import { getDeclarationType } from '../../support/helpers';
 import { escapeChars, stripLineBreaks } from '../../support/utils';
-import { MarkdownThemeRenderContext } from '../../theme-render-context';
 
 export function enumMembersTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
-) {
+): string {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
 
@@ -23,9 +23,7 @@ export function enumMembersTable(
     if (propertyType) {
       row.push(
         stripLineBreaks(
-          context.partials
-            .someType(propertyType, 'object')
-            .replace(/(?<!\\)\|/g, '\\|'),
+          context.someType(propertyType, 'object').replace(/(?<!\\)\|/g, '\\|'),
         ),
       );
     }
@@ -33,10 +31,7 @@ export function enumMembersTable(
       const comments = getComments(property);
       if (comments) {
         row.push(
-          stripLineBreaks(context.partials.comment(comments)).replace(
-            /\|/g,
-            '\\|',
-          ),
+          stripLineBreaks(context.comment(comments)).replace(/\|/g, '\\|'),
         );
       } else {
         row.push('-');
