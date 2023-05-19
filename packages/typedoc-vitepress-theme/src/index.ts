@@ -24,7 +24,7 @@ export function load(app: Application) {
   app.options.addReader(
     new (class implements OptionsReader {
       name = 'vitepress-options';
-      readonly order = 900;
+      readonly order = 0;
       readonly supportsPackages = false;
       read(container: Options) {
         Object.entries({
