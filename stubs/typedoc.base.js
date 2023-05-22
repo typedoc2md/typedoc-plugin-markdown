@@ -9,6 +9,7 @@ module.exports = {
     './src/comments.ts',
     './src/generics.ts',
     './src/hierarchy.ts',
+    './src/index.ts',
     './src/interfaces.ts',
     './src/properties.ts',
     './src/reflections.ts',

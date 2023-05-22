@@ -1,5 +1,5 @@
 import { ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/render-context';
+import { MarkdownThemeRenderContext } from '../../src/theme/definition';
 
 describe(`Hierarchy:`, () => {
   let project: ProjectReflection;
@@ -13,14 +13,14 @@ describe(`Hierarchy:`, () => {
   test(`should compile type hierarchy`, () => {
     const reflection = project.getChildByName('ParentClass');
     expect(
-      context.hierarchy((reflection as any).typeHierarchy),
+      context.memberHierarchy((reflection as any).typeHierarchy, 2),
     ).toMatchSnapshot();
   });
 
   test(`should compile nested type hierarchy`, () => {
     const reflection = project.getChildByName('ChildClassA');
     expect(
-      context.hierarchy((reflection as any).typeHierarchy),
+      context.memberHierarchy((reflection as any).typeHierarchy, 2),
     ).toMatchSnapshot();
   });
 });

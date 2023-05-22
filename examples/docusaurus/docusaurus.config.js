@@ -35,10 +35,7 @@ const config = {
         options: '../../stubs/typedoc.1.js',
         sidebar: {
           autoConfiguration: true,
-          position: 0,
-          categoryLabel: 'API-1',
         },
-        indexPageTitle: 'Overview',
         cleanOutputDir: true,
       },
     ],
@@ -66,8 +63,6 @@ const config = {
         options: '../../stubs/typedoc.3.js',
         sidebar: {
           autoConfiguration: true,
-          position: 2,
-          categoryLabel: 'API-3',
         },
         cleanOutputDir: true,
       },

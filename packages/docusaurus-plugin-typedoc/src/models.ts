@@ -5,22 +5,8 @@ export interface PluginOptions {
 }
 
 export interface SidebarOptions {
-  categoryLabel: string;
-  position: number | null;
   autoConfiguration: boolean;
+  readmeLabel: string;
+  indexLabel: string;
+  categoryLabel: string;
 }
-
-export interface SidebarCategory {
-  type: string;
-  label: string;
-  items: SidebarItem[];
-}
-
-export interface CategoryYamlOptions {
-  path: string;
-  label: string;
-  position: number | null;
-  collapsed: boolean;
-}
-
-export type SidebarItem = SidebarCategory | string;

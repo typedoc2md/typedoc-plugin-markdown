@@ -21,3 +21,17 @@ export interface SomeProps {
 }
 
 export class Animal {}
+
+/**
+ * Some config
+ *
+ * @default []
+ */
+export interface SomeConfig extends SomeProps {
+  /**
+   * Comments
+   */
+  callbacks?: SomeProps & {
+    authorized?: (params: { request: boolean; auth: string }) => string;
+  };
+}

@@ -1,5 +1,7 @@
 import * as path from 'path';
 import { Application, TypeDocOptions } from 'typedoc';
+import { load as loadTypedocPluginFrontmatter } from 'typedoc-plugin-frontmatter';
+import { load as loadTypedocPluginMarkdown } from 'typedoc-plugin-markdown';
 import { PluginOptions } from './models';
 import { getPluginOptions, loadOptions } from './options';
 import { loadRenderer } from './renderer';
@@ -52,8 +54,9 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   const app = new Application();
 
   loadOptions(app);
-
   loadRenderer(app);
+  loadTypedocPluginMarkdown(app);
+  loadTypedocPluginFrontmatter(app);
 
   await app.bootstrapWithPlugins(
     optionsPassedToTypeDoc as unknown as Partial<TypeDocOptions>,

@@ -5,6 +5,12 @@ export interface PropInterface {
 /**
  * This is a function with multiple arguments and a return value.
  *
+ * @example
+ *
+ * ```ts
+ * const example=true;
+ * ```
+ *
  * @param paramZ - This is a string parameter.
  * @param paramG - This is a parameter with intersection type literal.
  * @param paramA
@@ -105,7 +111,7 @@ export function functionWithUnionTypes(
   return null;
 }
 
-export function functionWithNamedParams({ x: number, b: string }) {
+export function functionWithNamedParams({ params: { x: number, b: string } }) {
   return '';
 }
 

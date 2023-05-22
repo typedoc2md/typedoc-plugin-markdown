@@ -11,11 +11,25 @@ By default, TypeDoc will render API documentation as a webpage, e.g. HTML files.
 
 The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options. This is useful if documentation is required to be included in project README files, Wikis and static site generators.
 
+<!--
+## Quick Links
+
+- [Installation]()
+- [Options]()
+- [Adding Frontmatter]()
+- [Output formatting]()
+- [Customizing / extending]()
+- [Recipes / demos]()
+- [Real life examples]()
+-->
+
 ## Installation
 
 **Please note this pre-release version may contain breaking changes within the same semantic version.**
 
-> [TypeDoc](https://typedoc.org) and [Prettier](https://prettier.io/) are both required peer dependencies.
+<!--To see whats changed between version 3 and 4 please see [v4 release notes](xx).-->
+
+> [TypeDoc](https://typedoc.org/guides/installation/) and [Prettier](https://prettier.io/) are both required peer dependencies.
 
 ```bash
 npm install typedoc-plugin-markdown@next --save-dev
@@ -23,14 +37,32 @@ npm install typedoc-plugin-markdown@next --save-dev
 
 ## Usage
 
+The plugin needs to be specified using the `plugin` argument:
+
+**command-line**
+
 ```bash
 typedoc --plugin typedoc-plugin-markdown
+```
+
+**typedoc.json**
+
+```json
+{
+  "plugin": ["typedoc-plugin-markdown"]
+}
 ```
 
 ## Options
 
 The following options can be used in addition to relevant [TypeDoc options](https://typedoc.org/options/)
 (please note that TypeDoc options specific to the HTML theme will be ignored).
+
+More detailed documentation with examples can be found in the following:
+
+- [File output and content organization options]()
+
+Below is a summary of the available options:
 
 ### File output and content organization options
 
@@ -51,8 +83,6 @@ The following options can be used in addition to relevant [TypeDoc options](http
 - **`--excludeGroups`**<br>
   By default members are grouped by kind (eg Classes, Functions etc). This option excludes such groupings so all members are rendered and sorted at the same level. Defaults to `false`.
 
-Please see [File output and content organization options](./docs/file-output-options.md) for further documentation.
-
 ### UI options
 
 - **`--hidePageHeader`**<br>
@@ -63,8 +93,8 @@ Please see [File output and content organization options](./docs/file-output-opt
   Do not print in-page index items. Defaults to `false`.
 - **`--hidePageTitle`**<br>
   Do not print the page title. Defaults to `false`.
-- **`--hideKindTag`**<br>
-  Do not print the kind tag identifiers for symbols. Defaults to `false`.
+- **`--hideKindPrefix`**<br>
+  Do not print the kind label as a title prefix. Defaults to `false`.
 - **`--hideHierarchy`**<br>
   Do not print reflection hierarchy. Defaults to `false`.
 - **`--identifiersAsCodeBlocks`**<br>
@@ -75,6 +105,8 @@ Please see [File output and content organization options](./docs/file-output-opt
   Specify the render style of Enum members. Expected values [`list`, `table`]. Defaults to `list`.
 - **`--typeDeclarationFormat`**<br>
   Specify the render style for type declaration members. Expected values [`list`, `table`]. Defaults to `list`.
+- **`--tocFormat`**<br>
+  Render TOC with first line of member descriptions. Expected values [`list`, `table`]. Defaults to `list`.
 
 ### Utility options
 
@@ -87,11 +119,11 @@ Please see [File output and content organization options](./docs/file-output-opt
 - **`--namedAnchors`**<br>
   Use HTML named anchor tags for implementations that do not assign header ids. Defaults to `false`.
 
-## Frontmatter
+## Adding Frontmatter
 
-If frontmatter is required for adding further metadata please use [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter).
+If frontmatter is required for adding further metadata please use [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter#readme).
 
-## Output formatting (Prettier)
+## Output formatting
 
 Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. Parsing documents with Prettier has several benefits:
 
@@ -101,22 +133,26 @@ Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is 
 
 Any [prettier configuration](https://prettier.io/docs/en/configuration.html) files discovered will be passed as options to the parser.
 
-## Further Documentation
+In addition all test files are linted with [markdownlint](https://github.com/DavidAnson/markdownlint#readme).
 
-- [File output and content organization options](./docs/file-output-options.md).
+<!--
+## Customizing / extending
+
+The plugin has been designed to provide as much flexibility as possible out of the box, however it is also possible to easily extend the in-built Markdown theme. For documentation on how to customise the theme please see here.
 
 ## Demos
 
-TODO
+Please visit dedicated demo repo will some example use-cases.
 
 ## Real life examples
 
-TODO
+Coming soon - We would love to showcases some real-life examples here.
+-->
+
+## Contributing
+
+Contributions and suggestions are welcome. Please see the [contributing guidelines](CONTRIBUTING.md) for further details.
 
 ## License
 
 [MIT](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/master/LICENSE)
-
-```
-
-```

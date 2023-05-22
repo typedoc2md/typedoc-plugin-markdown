@@ -1,6 +1,6 @@
 module.exports = {
   ...require('./typedoc.base'),
-  plugin: ['typedoc-plugin-markdown'],
+  plugin: ['typedoc-plugin-markdown', 'typedoc-plugin-mdn-links'],
   hideInPageTOC: false,
   indexPageTitle: 'Overview',
   identifiersAsCodeBlocks: true,
@@ -9,4 +9,5 @@ module.exports = {
   typeDeclarationFormat: 'table',
   readme: 'none',
   outputFileStrategy: 'modules',
+  excludeGroups: true,
 };

@@ -13,19 +13,19 @@ anotherFunction()
 `;
 
 exports[`Comments: should convert comments with tags' 1`] = `
-"\`Description\`
+"**Description**
 
 Tag description on new line
 
 - Tag description on another line
 
-\`Deprecated\`
+**Deprecated**
 
 Another tag description
 
 Gets the application version.
 
-\`Example\`
+**Example**
 
 \`\`\`typescript
 import { getVersion } from '@tauri-apps/api/app';
@@ -44,9 +44,20 @@ Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html)."
 exports[`Comments: should escape angle brackets inside comments' 1`] = `
 "A \\<tag\\>\\</tag\\> in comments
 
+Closing \\</element\\>
+
 A \`<tag>\` in backticks
 
-\`\`\`html
+<p>Some HTML</p>
+
+<img src="http://via.placeholder.com/50x50" />
+
+<ul>
+<li>html list item</li>
+</ul>
+
+\`\`\`
 A <tag> in a code block
+Some <p> html </p> inside codeblock
 \`\`\`"
 `;

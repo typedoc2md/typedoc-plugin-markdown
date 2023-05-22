@@ -5,21 +5,17 @@ exports[`Generics: should compile class with type params 1`] = `
 
 [partial: breadcrumbs]
 
-# ClassWithTypeParams\`<T, V>\`
-
-**\`Class\`**
+# Class: ClassWithTypeParams\`<T, V>\`
 
 [partial: comment]
-
-[partial: sources]
 
 ## Type parameters
 
 
 | Parameter |
 | :------ |
-| T |
-| V |
+| \`T\` |
+| \`V\` |
 
 
 [partial: members]
@@ -29,48 +25,48 @@ Generated using [TypeDoc](https://typedoc.org/) and [typedoc-plugin-markdown](ht
 `;
 
 exports[`Generics: should compile function with a simple type param' 1`] = `
-"> **functionWithTypeParam**\\<A\\>(): \`boolean\`
-
-[partial: sources]
+"> **functionWithTypeParam**\\<\`A\`\\>(): \`boolean\`
 
 ## Type parameters
 
 
 | Parameter |
 | :------ |
-| A |
+| \`A\` |
 
 
 ## Returns
 
 \`boolean\`
 
-"
+
+
+[partial: sources]"
 `;
 
 exports[`Generics: should compile function with complex type params' 1`] = `
-"> **functionWithTypeParams**\\<A, B, C, D\\>(): \`boolean\`
+"> **functionWithTypeParams**\\<\`A\`, \`B\`, \`C\`, \`D\`\\>(): \`boolean\`
 
 [partial: comment]
-
-[partial: sources]
 
 ## Type parameters
 
 
 | Parameter | Default | Description |
 | :------ | :------ | :------ |
-| A | - | [partial: comment] |
-| B *extends* [\`ClassWithTypeParams\`](classes/class.ClassWithTypeParams.md)\\<\`string\`, \`number\`, \`B\`\\> | - | [partial: comment] |
-| C | \`string\` \\| \`boolean\` | - |
-| D | \`string\` | - |
+| \`A\` | - | [partial: comment] |
+| \`B\` *extends* [\`ClassWithTypeParams\`](classes/class.ClassWithTypeParams.md)\\< \`string\`, \`number\`, \`B\` \\> | - | [partial: comment] |
+| \`C\` | \`string\` \\| \`boolean\` | - |
+| \`D\` | \`string\` | - |
 
 
 ## Returns
 
 \`boolean\`
 
-"
+
+
+[partial: sources]"
 `;
 
 exports[`Generics: should compile generics with defaults' 1`] = `
@@ -82,7 +78,7 @@ exports[`Generics: should compile generics with defaults' 1`] = `
 `;
 
 exports[`Generics: should compile type with nested generics' 1`] = `
-"> **nestedGenerics**: [\`Generic1\`](type-aliases/type-alias.Generic1.md)\\<[\`Generic2\`](type-aliases/type-alias.Generic2.md)\\<[\`Generic3\`](type-aliases/type-alias.Generic3.md)\\<\`string\`\\>\\>\\>
+"> **nestedGenerics**: [\`Generic1\`](type-aliases/type-alias.Generic1.md)\\< [\`Generic2\`](type-aliases/type-alias.Generic2.md)\\< [\`Generic3\`](type-aliases/type-alias.Generic3.md)\\< \`string\` \\> \\> \\>
 
 [partial: sources]
 

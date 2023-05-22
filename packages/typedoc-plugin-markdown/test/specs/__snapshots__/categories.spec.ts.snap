@@ -83,10 +83,6 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 [partial: signatureMember]
 
-
-
----
-
 ## CategoryB
 
 ### categoryVariableB1
@@ -100,10 +96,6 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 ### categoryFunctionB2()
 
 [partial: signatureMember]
-
-
-
----
 
 ## Other
 
@@ -141,11 +133,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 ### otherFunctionB()
 
-[partial: signatureMember]
-
-
-
----"
+[partial: signatureMember]"
 `;
 
 exports[`Categories: (excludeGroups=false) should render category TOC' 1`] = `
@@ -239,19 +227,11 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 [partial: reflectionMember]
 
-
-
----
-
 ### Other
 
 #### OtherInterfaceA
 
 [partial: reflectionMember]
-
-
-
----
 
 ## Variables
 
@@ -269,19 +249,11 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 [partial: declarationMember]
 
-
-
----
-
 ### CategoryB
 
 #### categoryVariableB1
 
 [partial: declarationMember]
-
-
-
----
 
 ### Other
 
@@ -296,10 +268,6 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 #### otherVariableB
 
 [partial: declarationMember]
-
-
-
----
 
 ## Functions
 
@@ -325,19 +293,11 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 [partial: signatureMember]
 
-
-
----
-
 ### CategoryB
 
 #### categoryFunctionB2()
 
 [partial: signatureMember]
-
-
-
----
 
 ### Other
 
@@ -351,11 +311,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 #### otherFunctionB()
 
-[partial: signatureMember]
-
-
-
----"
+[partial: signatureMember]"
 `;
 
 exports[`Categories: (excludeGroups=true) should render category TOC' 1`] = `
@@ -441,10 +397,6 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 [partial: signatureMember]
 
-
-
----
-
 ## CategoryB
 
 ### categoryVariableB1
@@ -458,10 +410,6 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 ### categoryFunctionB2()
 
 [partial: signatureMember]
-
-
-
----
 
 ## Other
 
@@ -499,9 +447,5 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 ### otherFunctionB()
 
-[partial: signatureMember]
-
-
-
----"
+[partial: signatureMember]"
 `;

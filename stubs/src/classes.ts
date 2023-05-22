@@ -8,6 +8,9 @@
  * @module
  */
 
+/**
+ * Comments for Point
+ */
 export class Point {
   // properties
   x: number;

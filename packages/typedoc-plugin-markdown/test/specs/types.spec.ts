@@ -1,5 +1,5 @@
 import { ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/render-context';
+import { MarkdownThemeRenderContext } from '../../src/theme/definition';
 
 describe(`Types:`, () => {
   let project: ProjectReflection;
@@ -48,7 +48,7 @@ describe(`Types:`, () => {
     expect(
       context.someType(
         (project.getChildByName('literalType') as any).type,
-        'all',
+        true,
       ),
     ).toMatchSnapshot();
   });
@@ -63,7 +63,7 @@ describe(`Types:`, () => {
     expect(
       context.declarationType(
         project.getChildByName('objectLiteralType') as any,
-        'object',
+        true,
       ),
     ).toMatchSnapshot();
   });
@@ -94,7 +94,7 @@ describe(`Types:`, () => {
     expect(
       context.someType(
         (project.getChildByName('functionReflectionType') as any).type,
-        'function',
+        true,
       ),
     ).toMatchSnapshot();
   });

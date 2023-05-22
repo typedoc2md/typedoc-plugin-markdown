@@ -50,10 +50,6 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 [partial: reflectionMember]
 
-
-
----
-
 ## Classes
 
 ### ClassA
@@ -67,10 +63,6 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 ### ClassB
 
 [partial: reflectionMember]
-
-
-
----
 
 ## Interfaces
 
@@ -86,10 +78,6 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 [partial: reflectionMember]
 
-
-
----
-
 ## Type Aliases
 
 ### typeA
@@ -103,10 +91,6 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 ### typeB
 
 [partial: declarationMember]
-
-
-
----
 
 ## Variables
 
@@ -122,10 +106,6 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 [partial: declarationMember]
 
-
-
----
-
 ## Functions
 
 ### functionA()
@@ -138,11 +118,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 ### functionB()
 
-[partial: signatureMember]
-
-
-
----"
+[partial: signatureMember]"
 `;
 
 exports[`Groups: (excludeGroups=true) should render group TOC' 1`] = `
@@ -159,7 +135,8 @@ exports[`Groups: (excludeGroups=true) should render group TOC' 1`] = `
 - [variableA](API.md#variablea)
 - [variableB](API.md#variableb)
 - [functionA](API.md#functiona)
-- [functionB](API.md#functionb)"
+- [functionB](API.md#functionb)
+"
 `;
 
 exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
@@ -253,9 +230,5 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ## functionB()
 
-[partial: signatureMember]
-
-
-
----"
+[partial: signatureMember]"
 `;

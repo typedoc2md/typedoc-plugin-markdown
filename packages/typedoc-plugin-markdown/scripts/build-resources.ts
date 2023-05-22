@@ -7,43 +7,55 @@ const project = new Project({
   tsConfigFilePath: 'tsconfig.json',
 });
 
-const resourcesPath = path.join(__dirname, '..', 'src', 'resources');
-const templateFiles = getFiles('templates');
+const resourcesPath = path.join(__dirname, '..', 'src', 'theme', 'resources');
+const templateFiles = getFiles('templates').filter((file) => file !== 'index');
 const templateSymbols = getSymbols(templateFiles, 'templates');
 
-const partialsFiles = getFiles('partials');
+const partialsFiles = getFiles('partials').filter((file) => file !== 'index');
 const partialsSymbols = getSymbols(partialsFiles, 'partials');
 
 const themeRenderContextFile = path.join(
   __dirname,
   '..',
   'src',
-  'render-context.ts',
+  'theme',
+  'definition',
+  'markdown-theme-render-context.ts',
 );
 
-const out: string[] = [];
+const partialsBarrelFile = path.join(resourcesPath, 'partials', 'index.ts');
+
+const importsOut: string[] = [];
+const exportsOut: string[] = [];
 
 partialsFiles.forEach((file, index) => {
-  out.push(
-    `import { ${partialsSymbols[index].symbolName} } from './resources/partials/${file}';`,
-  );
+  if (file !== 'index') {
+    importsOut.push(
+      `import { ${partialsSymbols[index].symbolName} } from '../resources/partials/${file}';`,
+    );
+  }
+  exportsOut.push(`export * from './${file}'`);
 });
 
 templateFiles.forEach((file, index) => {
-  out.push(
-    `import { ${templateSymbols[index].symbolName} } from './resources/templates/${file}';`,
-  );
+  if (file !== 'index') {
+    importsOut.push(
+      `import { ${templateSymbols[index].symbolName} } from '../resources/templates/${file}';`,
+    );
+  }
 });
 
 const resources: string[] = [];
 
 resources.push('\n// templates');
 templateSymbols.forEach((symbol) => {
+  resources.push('/** @hidden */');
   resources.push(`${symbol.symbolName} = bind(${symbol.symbolName}, this);`);
 });
 
 resources.push('\n// partials');
 partialsSymbols.forEach((symbol) => {
+  resources.push('/** @hidden */');
   resources.push(`${symbol.symbolName} = bind(${symbol.symbolName}, this);`);
 });
 
@@ -54,7 +66,7 @@ const data = fs
     /\/\* start_imports \*\/((.|\n)*)\/* end_imports \*\//g,
     `
   /* start_imports */
-  ${out.join('\n')}
+  ${importsOut.join('\n')}
   /* end_imports */`,
   )
   .replace(
@@ -68,6 +80,15 @@ const data = fs
 fs.writeFileSync(
   themeRenderContextFile,
   prettier.format(data, {
+    parser: 'typescript',
+    singleQuote: true,
+    trailingComma: 'all',
+  }),
+);
+
+fs.writeFileSync(
+  partialsBarrelFile,
+  prettier.format(exportsOut.join('\n'), {
     parser: 'typescript',
     singleQuote: true,
     trailingComma: 'all',

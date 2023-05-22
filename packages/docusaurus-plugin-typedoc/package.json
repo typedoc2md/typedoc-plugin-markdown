@@ -23,8 +23,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf ./dist && tsc",
-    "build-and-test": "npm run build && npm run test",
-    "test": "jest --colors"
+    "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
   "license": "MIT",

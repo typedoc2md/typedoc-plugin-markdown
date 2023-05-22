@@ -16,12 +16,10 @@ const DEFAULT_PLUGIN_OPTIONS = {
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageHeader: true,
+  githubPages: false,
   includeFileNumberPrefixes: true,
-  skipIndexPage: true,
   entryFileName: 'index.md',
   sidebar: {
-    categoryLabel: 'API',
-    position: null,
     autoConfiguration: true,
   },
 };
@@ -57,14 +55,16 @@ export function loadOptions(app: Application) {
       readonly supportsPackages = false;
       read(container: Options) {
         const plugins = container.getValue('plugin');
-        ['typedoc-plugin-markdown', 'typedoc-plugin-frontmatter'].forEach(
-          (defaultPlugin) => {
-            if (!plugins.includes(defaultPlugin)) {
-              plugins.push(defaultPlugin);
-            }
-          },
+        container.setValue(
+          'plugin',
+          plugins?.filter(
+            (plugin) =>
+              ![
+                'typedoc-plugin-markdown',
+                'typedoc-plugin-frontmatter',
+              ].includes(plugin),
+          ),
         );
-        container.setValue('plugin', plugins);
       }
     })(),
   );

@@ -1,9 +1,4 @@
-import {
-  Application,
-  DeclarationReflection,
-  PageEvent,
-  ReflectionKind,
-} from 'typedoc';
+import { Application, DeclarationReflection, PageEvent } from 'typedoc';
 import { FrontmatterEvent } from 'typedoc-plugin-frontmatter';
 import { SidebarOptions } from './models';
 
@@ -23,30 +18,17 @@ export function loadRenderer(app: Application) {
 }
 
 function loadFrontmatter(app: Application, event: FrontmatterEvent) {
-  const sidebar = app.options.getValue('sidebar') as SidebarOptions;
-  const isIndexPage = event.page?.url.endsWith(
-    app.options.getValue('indexFileName') as string,
-  );
-  const isReadmePage = event.page?.url.endsWith(
-    app.options.getValue('entryFileName') as string,
-  );
-  const isPackageModule =
-    event.page.model.kindOf(ReflectionKind.Module) &&
-    !Boolean((event.page.model?.parent as any).groups);
-  const model = event.page?.model;
+  const hasReadme = !app.options.getValue('readme').endsWith('none');
+  const entryPage = app.options.getValue('entryFileName');
+  const indexPage = app.options.getValue('indexFileName');
 
+  const sidebar = app.options.getValue('sidebar') as SidebarOptions;
+
+  const model = event.page?.model;
+  const sidebarLabel = model?.name;
   let pluginFrontmatter: Record<string, any> = {};
 
   if (sidebar.autoConfiguration) {
-    // Add sidebar labels to all pages
-    if (!isIndexPage && !isReadmePage) {
-      const sidebarLabel = model?.name;
-      pluginFrontmatter = {
-        ...pluginFrontmatter,
-        sidebar_label: sidebarLabel,
-      };
-    }
-    // Entry url
     if (event.page?.url === app.options.getValue('entryFileName')) {
       if (sidebar.categoryLabel) {
         pluginFrontmatter = {
@@ -54,35 +36,40 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
           sidebar_label: sidebar.categoryLabel,
         };
       }
+    }
 
-      if (sidebar.position !== null && !Number.isNaN(sidebar.position)) {
+    if (hasReadme) {
+      if (event.page?.url === entryPage) {
         pluginFrontmatter = {
           ...pluginFrontmatter,
-          sidebar_position: sidebar.position,
+          ...(sidebar.readmeLabel && { sidebar_label: sidebar.readmeLabel }),
+          sidebar_position: 0,
+        };
+      }
+      if (event.page?.url === `01-${indexPage}`) {
+        pluginFrontmatter = {
+          ...pluginFrontmatter,
+          ...(sidebar.indexLabel && { sidebar_label: sidebar.indexLabel }),
+        };
+      }
+    } else {
+      if (event.page?.url === entryPage) {
+        pluginFrontmatter = {
+          ...pluginFrontmatter,
+          ...(sidebar.indexLabel && { sidebar_label: sidebar.indexLabel }),
+          sidebar_position: 0,
         };
       }
     }
 
+    // Add sidebar labels to all pages
     if (
-      event.page?.url.endsWith(app.options.getValue('entryFileName') as string)
+      !(event.page?.url === entryPage) &&
+      !(event.page?.url === `01-${indexPage}`)
     ) {
       pluginFrontmatter = {
         ...pluginFrontmatter,
-        hide_table_of_contents: true,
-      };
-    }
-
-    if (isPackageModule && isReadmePage) {
-      pluginFrontmatter = {
-        ...pluginFrontmatter,
-        sidebar_label: event.page.model.name,
-      };
-    }
-
-    if (isPackageModule && isIndexPage && Boolean(event.page.model?.readme)) {
-      pluginFrontmatter = {
-        ...pluginFrontmatter,
-        sidebar_label: 'Index',
+        sidebar_label: sidebarLabel,
       };
     }
   }

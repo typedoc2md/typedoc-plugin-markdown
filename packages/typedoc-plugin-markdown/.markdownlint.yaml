@@ -1,18 +1,20 @@
-# MD013/line-length - Line length
+# MD013/line-length
 MD013: false
 
-# MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content
+# MD024/no-duplicate-heading/no-duplicate-header
 MD024: false
 
-# MD028 - Blank line inside blockquote
-
+# MD028/blank-line-inside-blockquote
 MD028: false
 
-# MD033/no-inline-html - Inline HTML
+# MD033/no-inline-html
 MD033: false
 
-# MD041/first-line-heading/first-line-h1 - First line in a file should be a top-level heading
+# MD040/fenced-code-language
+MD040: false
+
+# MD041/first-line-heading/first-line-h1
 MD041: false
 
-# MD052/reference-links-images - Reference links and images should use a label that is defined
+# MD052/reference-links-images
 MD052: false

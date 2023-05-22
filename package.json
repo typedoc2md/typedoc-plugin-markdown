@@ -8,6 +8,7 @@
     "packages/typedoc-vitepress-theme"
   ],
   "scripts": {
+    "docs": "typedoc",
     "lint": "npm run lint --workspaces",
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces",

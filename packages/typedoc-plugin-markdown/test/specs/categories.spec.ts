@@ -1,12 +1,12 @@
 import { ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/render-context';
+import { MarkdownThemeRenderContext } from '../../src/theme/definition';
 
 describe(`Categories:`, () => {
   let project: ProjectReflection;
   let context: MarkdownThemeRenderContext;
 
   const baseOptions = {
-    hideKindTag: true,
+    hideKindPrefix: true,
     disableSources: true,
     outputFileStrategy: 'modules',
   };
@@ -33,7 +33,7 @@ describe(`Categories:`, () => {
     });
 
     test(`should render category TOC'`, () => {
-      expect(context.memberIndex(project, 2)).toMatchSnapshot();
+      expect(context.memberTOC(project, 2)).toMatchSnapshot();
     });
   });
 
@@ -53,7 +53,7 @@ describe(`Categories:`, () => {
     });
 
     test(`should render category TOC'`, () => {
-      expect(context.memberIndex(project, 2)).toMatchSnapshot();
+      expect(context.memberTOC(project, 2)).toMatchSnapshot();
     });
   });
 
@@ -73,7 +73,7 @@ describe(`Categories:`, () => {
     });
 
     test(`should render category TOC'`, () => {
-      expect(context.memberIndex(project, 2)).toMatchSnapshot();
+      expect(context.memberTOC(project, 2)).toMatchSnapshot();
     });
   });
 });

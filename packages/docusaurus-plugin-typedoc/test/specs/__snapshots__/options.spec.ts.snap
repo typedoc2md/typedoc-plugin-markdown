@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Options: should merge custom sidebar options 1`] = `
-{
-  "autoConfiguration": true,
-  "categoryLabel": "API",
-  "position": 2,
-}
-`;

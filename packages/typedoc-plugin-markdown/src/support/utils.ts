@@ -1,3 +1,9 @@
+/**
+ * A set of pure utils to be consumed accross the plugin.
+ *
+ * @module
+ */
+
 export function escapeChars(str: string) {
   return str
     .replace(/>/g, '\\>')
@@ -8,10 +14,18 @@ export function escapeChars(str: string) {
     .replace(/\|/g, '\\|');
 }
 
+/**
+ * Escapes non html tag angle brackets inside comment blocks.
+ * Ignores strings inside code blocks
+ */
 export function escapeAngleBrackets(str: string) {
-  return str
-    .replace(/<(?=(?:[^`]*`[^`]*`)*[^`]*$)/gi, '\\<')
-    .replace(/>(?=(?:[^`]*`[^`]*`)*[^`]*$)/gi, '\\>');
+  const re = /<(?=(?:[^`]*`[^`]*`)*[^`]*$)[^<]+?>/gi;
+  return str.replace(re, (tags) => {
+    const htmlRe =
+      /<(?!\/?(div|span|p|a|br|img|ul|li|strike|em|strong|b)(>|\s))[^<]+?>/g;
+    const shouldEscape = tags.match(htmlRe);
+    return shouldEscape ? tags.replace(/>/g, '\\>').replace(/</g, '\\<') : tags;
+  });
 }
 
 export function escapeTableCol(str: string) {
@@ -37,8 +51,16 @@ export function stripComments(str: string) {
     .replace(/^\s+|\s+$|(\s)+/g, '$1');
 }
 
+export function tableComments(str: string) {
+  return str.replace(/\|/g, '\\|');
+}
+
 export function stripLineBreaks(str: string, includeHTML = true) {
-  return str ? str.replace(/\n/g, includeHTML ? '<br />' : ' ').trim() : '';
+  return str
+    .replace(/\n(?=(?:[^`]*`[^`]*`)*[^`]*$)/gi, includeHTML ? '<br />' : ' ')
+    .replace(/\`\`\`ts/g, '`')
+    .replace(/\`\`\`/g, '`')
+    .replace(/\n/g, ' ');
 }
 
 export function camelToTitleCase(text: string) {

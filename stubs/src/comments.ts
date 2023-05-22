@@ -27,10 +27,21 @@ export const commentsWithSymbolLinks = true;
 /**
  * A <tag></tag> in comments
  *
+ * Closing </element>
+ *
  * A `<tag>` in backticks
  *
- * ```html
+ * <p>Some HTML</p>
+ *
+ * <img src="http://via.placeholder.com/50x50" />
+ *
+ * <ul>
+ * <li>html list item</li>
+ * </ul>
+ *
+ * ```
  * A <tag> in a code block
+ * Some <p> html </p> inside codeblock
  * ```
  */
 

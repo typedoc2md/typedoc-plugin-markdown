@@ -1,12 +1,12 @@
 import { ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/render-context';
+import { MarkdownThemeRenderContext } from '../../src/theme/definition';
 
 describe(`Groups:`, () => {
   let project: ProjectReflection;
   let context: MarkdownThemeRenderContext;
 
   const baseOptions = {
-    hideKindTag: true,
+    hideKindPrefix: true,
     disableSources: true,
     outputFileStrategy: 'modules',
   };
@@ -32,7 +32,7 @@ describe(`Groups:`, () => {
     });
 
     test(`should render group TOC'`, () => {
-      expect(context.memberIndex(project, 2)).toMatchSnapshot();
+      expect(context.memberTOC(project, 2)).toMatchSnapshot();
     });
   });
 
@@ -51,7 +51,7 @@ describe(`Groups:`, () => {
     });
 
     test(`should render group TOC'`, () => {
-      expect(context.memberIndex(project, 2)).toMatchSnapshot();
+      expect(context.memberTOC(project, 2)).toMatchSnapshot();
     });
   });
 });
