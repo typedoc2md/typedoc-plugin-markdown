@@ -93,7 +93,6 @@ The following typedoc-plugin-markdown options are preset with the plugin.
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
   "entryFileName": "index.md",
-  "globalsPageStrategy": "skip",
   "includeFileNumberPrefixes": true
 }
 ```
@@ -106,15 +105,19 @@ Options specific to the plugin should also be declared in the same object.
 
 `sidebar.autoConfiguration`
 
-Set to `false` to disable sidebar generation. Defaults to `true`.
+Set to `false` to disable sidebar metadata added to frontmatter. Defaults to `true`.
 
 `sidebar.categoryLabel`
 
-The sidebar main parent category label. Defaults to `API`.
+The sidebar main parent category label. Defaults to entry page title.
+
+`sidebar.readmeLabel`
+
+The label of the readme page. Defaults to the h1 title of the readme page. Ignored if `readme=none`.
 
 `sidebar.indexLabel`
 
-The label of the main index page. Please note if `readme=none` this option has no effect because the index page becomes the root page. Defaults to `Index`.
+The label of the index page. Defaults to the index page title.
 
 `sidebar.position`
 
@@ -143,11 +146,6 @@ module.exports = {
 
         // Plugin options
         out: 'api-xyz',
-        sidebar: {
-          categoryLabel: 'API XYZ',
-          position: 0,
-          fullNames: true,
-        },
       },
     ],
   ],
