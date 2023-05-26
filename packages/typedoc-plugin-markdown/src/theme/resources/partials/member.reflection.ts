@@ -1,6 +1,6 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading, unorderedList } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -16,10 +16,7 @@ export function reflectionMember(
     md.push(context.comment(reflection.comment, headingLevel));
   }
 
-  if (
-    !context.options.getValue('hideHierarchy') &&
-    reflection.typeHierarchy?.next
-  ) {
+  if (!context.getOption('hideHierarchy') && reflection.typeHierarchy?.next) {
     md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
   }
 

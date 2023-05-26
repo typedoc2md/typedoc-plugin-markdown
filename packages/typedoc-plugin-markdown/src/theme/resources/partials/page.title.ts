@@ -1,5 +1,5 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
+import { MarkdownThemeRenderContext } from '../..';
 import { getProjectDisplayName } from '../../helpers';
 
 /**
@@ -13,10 +13,10 @@ export function pageTitle(
 
   if (page.model?.url === page.project.url) {
     md.push(
-      (context.options.getValue('indexPageTitle') as string) ||
+      (context.getOption('indexPageTitle') as string) ||
         getProjectDisplayName(
           page.project,
-          context.options.getValue('includeVersion'),
+          context.getOption('includeVersion'),
         ),
     );
   } else {

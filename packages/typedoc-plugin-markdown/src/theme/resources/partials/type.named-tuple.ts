@@ -1,5 +1,5 @@
 import { NamedTupleMember } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../definition';
+import { MarkdownThemeRenderContext } from '../..';
 
 /**
  * @category Partials

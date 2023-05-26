@@ -4,9 +4,9 @@ import {
   ReferenceType,
   SignatureReflection,
 } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, heading, link } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition';
 
 export function inheritance(
   context: MarkdownThemeRenderContext,

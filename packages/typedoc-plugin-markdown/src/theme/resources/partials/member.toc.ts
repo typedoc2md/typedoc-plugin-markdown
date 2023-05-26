@@ -4,10 +4,9 @@ import {
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
-import { FormatStyle } from '../../../plugin/models';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading, link, table } from '../../../support/elements';
 import { escapeChars, tableComments } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition';
 
 export function memberTOC(
   context: MarkdownThemeRenderContext,
@@ -16,7 +15,7 @@ export function memberTOC(
 ): string {
   const md: string[] = [];
 
-  const hideInPageTOC = context.options.getValue('hideInPageTOC');
+  const hideInPageTOC = context.getOption('hideInPageTOC');
 
   const isVisible = reflection.groups?.some((group) =>
     group.allChildrenHaveOwnDocument(),
@@ -36,7 +35,7 @@ export function memberTOC(
         md.push(getGroup(context, item) + '\n');
       });
     } else {
-      if (context.options.getValue('excludeGroups') && reflection.children) {
+      if (context.getOption('excludeGroups') && reflection.children) {
         const group = { title: 'Members', children: reflection.children };
         md.push(getGroup(context, group as ReflectionGroup) + '\n');
       } else {
@@ -64,7 +63,7 @@ export function memberTOC(
 }
 
 function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  if (context.options.getValue('tocFormat') === FormatStyle.Table) {
+  if (context.getOption('tocFormat') === 'table') {
     return getTable(context, group);
   }
   return getList(context, group);

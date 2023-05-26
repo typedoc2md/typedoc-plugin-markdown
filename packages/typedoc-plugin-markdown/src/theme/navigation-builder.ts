@@ -4,7 +4,7 @@ import {
   ProjectReflection,
   ReflectionGroup,
 } from 'typedoc';
-import { NavigationItem } from '../../theme/models';
+import { NavigationItem } from '../theme/models';
 
 export class NavigationBuilder {
   navigation: NavigationItem[] = [];

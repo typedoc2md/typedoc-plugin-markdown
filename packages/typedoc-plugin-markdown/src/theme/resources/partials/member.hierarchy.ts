@@ -1,11 +1,11 @@
 import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import {
   backTicks,
   bold,
   heading,
   unorderedList,
 } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition';
 
 export function memberHierarchy(
   context: MarkdownThemeRenderContext,

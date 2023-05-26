@@ -1,8 +1,7 @@
 import { DeclarationReflection } from 'typedoc';
-import { FormatStyle } from '../../../plugin/models';
+import { MarkdownThemeRenderContext } from '../..';
 import { blockQuoteBlock, heading } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -17,9 +16,7 @@ export function typeDeclarationMember(
 ) {
   const md: string[] = [];
   if (typeDeclaration.children) {
-    if (
-      context.options.getValue('typeDeclarationFormat') === FormatStyle.Table
-    ) {
+    if (context.getOption('typeDeclarationFormat') === 'table') {
       md.push(context.propertiesTable(typeDeclaration.children, 'Member'));
     } else {
       const list = typeDeclaration.children.map((declarationChild) => {

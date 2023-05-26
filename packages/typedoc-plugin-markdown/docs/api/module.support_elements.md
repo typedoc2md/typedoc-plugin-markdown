@@ -1,10 +1,14 @@
+[**typedoc-plugin-markdown - v4.0.0-next.13**](README.md)
+
+---
+
 [typedoc-plugin-markdown](README.md) > support/elements
 
 # support/elements
 
 A set of pure functions that returns markdown elements as strings.
 
-## Function: heading()
+## heading()
 
 ```ts
 heading(level, text): string
@@ -14,8 +18,8 @@ heading(level, text): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| level     | `number` |
-| text      | `string` |
+| `level`   | `number` |
+| `text`    | `string` |
 
 ### Returns
 
@@ -23,7 +27,7 @@ heading(level, text): string
 
 ---
 
-## Function: link()
+## link()
 
 ```ts
 link(label, url): string
@@ -33,8 +37,8 @@ link(label, url): string
 
 | Parameter | Type               |
 | :-------- | :----------------- |
-| label     | `string`           |
-| url       | `null` \| `string` |
+| `label`   | `string`           |
+| `url`     | `null` \| `string` |
 
 ### Returns
 
@@ -42,7 +46,7 @@ link(label, url): string
 
 ---
 
-## Function: bold()
+## bold()
 
 ```ts
 bold(text): string
@@ -52,7 +56,7 @@ bold(text): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| text      | `string` |
+| `text`    | `string` |
 
 ### Returns
 
@@ -60,7 +64,7 @@ bold(text): string
 
 ---
 
-## Function: italic()
+## italic()
 
 ```ts
 italic(text): string
@@ -70,7 +74,7 @@ italic(text): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| text      | `string` |
+| `text`    | `string` |
 
 ### Returns
 
@@ -78,7 +82,7 @@ italic(text): string
 
 ---
 
-## Function: backTicks()
+## backTicks()
 
 ```ts
 backTicks(text): string
@@ -88,7 +92,7 @@ backTicks(text): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| text      | `string` |
+| `text`    | `string` |
 
 ### Returns
 
@@ -96,7 +100,7 @@ backTicks(text): string
 
 ---
 
-## Function: unorderedList()
+## unorderedList()
 
 ```ts
 unorderedList<T>(items): string
@@ -106,13 +110,13 @@ unorderedList<T>(items): string
 
 | Parameter |
 | :-------- |
-| T         |
+| `T`       |
 
 ### Parameters
 
 | Parameter | Type  |
 | :-------- | :---- |
-| items     | `T`[] |
+| `items`   | `T`[] |
 
 ### Returns
 
@@ -120,7 +124,7 @@ unorderedList<T>(items): string
 
 ---
 
-## Function: horizontalRule()
+## horizontalRule()
 
 ```ts
 horizontalRule(): string
@@ -132,7 +136,7 @@ horizontalRule(): string
 
 ---
 
-## Function: codeBlock()
+## codeBlock()
 
 ```ts
 codeBlock(content): string
@@ -142,7 +146,7 @@ codeBlock(content): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| content   | `string` |
+| `content` | `string` |
 
 ### Returns
 
@@ -150,7 +154,7 @@ codeBlock(content): string
 
 ---
 
-## Function: table()
+## table()
 
 ```ts
 table(headers, rows): string
@@ -160,8 +164,8 @@ table(headers, rows): string
 
 | Parameter | Type         |
 | :-------- | :----------- |
-| headers   | `string`[]   |
-| rows      | `string`[][] |
+| `headers` | `string`[]   |
+| `rows`    | `string`[][] |
 
 ### Returns
 
@@ -169,7 +173,7 @@ table(headers, rows): string
 
 ---
 
-## Function: blockQuoteBlock()
+## blockQuoteBlock()
 
 ```ts
 blockQuoteBlock(content): string
@@ -179,7 +183,7 @@ blockQuoteBlock(content): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| content   | `string` |
+| `content` | `string` |
 
 ### Returns
 
@@ -187,7 +191,7 @@ blockQuoteBlock(content): string
 
 ---
 
-## Function: indentBlock()
+## indentBlock()
 
 ```ts
 indentBlock(content): string
@@ -197,7 +201,7 @@ indentBlock(content): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| content   | `string` |
+| `content` | `string` |
 
 ### Returns
 

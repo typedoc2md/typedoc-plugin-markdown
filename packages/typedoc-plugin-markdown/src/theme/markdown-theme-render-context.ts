@@ -1,57 +1,58 @@
 import * as path from 'path';
 import { Options, PageEvent, Reflection } from 'typedoc';
+import { PluginOptions } from '../plugin/options/model';
 
 /* start_imports */
-import { breadcrumbs } from '../resources/partials/breadcrumbs';
-import { commentParts } from '../resources/partials/comment.parts';
-import { comment } from '../resources/partials/comment';
-import { footer } from '../resources/partials/footer';
-import { header } from '../resources/partials/header';
-import { declarationMemberAccessor } from '../resources/partials/member.declaration.accessort';
-import { declarationMemberIdentifier } from '../resources/partials/member.declaration.identifier';
-import { declarationMember } from '../resources/partials/member.declaration';
-import { memberHierarchy } from '../resources/partials/member.hierarchy';
-import { indexSignatureTitle } from '../resources/partials/member.indexsignature.title';
-import { inheritance } from '../resources/partials/member.inheritance';
-import { referenceMember } from '../resources/partials/member.reference';
-import { reflectionMember } from '../resources/partials/member.reflection';
-import { signatureMemberIdentifier } from '../resources/partials/member.signature.identifier';
-import { signatureMember } from '../resources/partials/member.signature';
-import { sources } from '../resources/partials/member.sources';
-import { memberTitle } from '../resources/partials/member.title';
-import { memberTOC } from '../resources/partials/member.toc';
-import { member } from '../resources/partials/member';
-import { typeDeclarationMember } from '../resources/partials/member.type-declaration';
-import { members } from '../resources/partials/members';
-import { navigation } from '../resources/partials/navigation';
-import { pageTitle } from '../resources/partials/page.title';
-import { pageTOC } from '../resources/partials/page.toc';
-import { enumMembersTable } from '../resources/partials/table.enum-members';
-import { parametersTable } from '../resources/partials/table.parameters';
-import { propertiesTable } from '../resources/partials/table.properties';
-import { typeParametersTable } from '../resources/partials/table.typeparameters';
-import { arrayType } from '../resources/partials/type.array';
-import { conditionalType } from '../resources/partials/type.conditional';
-import { declarationType } from '../resources/partials/type.declaration';
-import { functionType } from '../resources/partials/type.function';
-import { indexAccessType } from '../resources/partials/type.index-access';
-import { inferredType } from '../resources/partials/type.inferred';
-import { intersectionType } from '../resources/partials/type.intersection';
-import { intrinsicType } from '../resources/partials/type.intrinsic';
-import { literalType } from '../resources/partials/type.literal';
-import { namedTupleType } from '../resources/partials/type.named-tuple';
-import { queryType } from '../resources/partials/type.query';
-import { referenceType } from '../resources/partials/type.reference';
-import { reflectionType } from '../resources/partials/type.reflection';
-import { someType } from '../resources/partials/type.some';
-import { tupleType } from '../resources/partials/type.tuple';
-import { typeOperatorType } from '../resources/partials/type.type-operator';
-import { unionType } from '../resources/partials/type.union';
-import { unknownType } from '../resources/partials/type.unknown';
-import { memberTemplate } from '../resources/templates/member';
-import { projectTemplate } from '../resources/templates/project';
-import { readmeTemplate } from '../resources/templates/read-me';
-import { reflectionTemplate } from '../resources/templates/reflection';
+import { breadcrumbs } from './resources/partials/breadcrumbs';
+import { commentParts } from './resources/partials/comment.parts';
+import { comment } from './resources/partials/comment';
+import { footer } from './resources/partials/footer';
+import { header } from './resources/partials/header';
+import { declarationMemberAccessor } from './resources/partials/member.declaration.accessort';
+import { declarationMemberIdentifier } from './resources/partials/member.declaration.identifier';
+import { declarationMember } from './resources/partials/member.declaration';
+import { memberHierarchy } from './resources/partials/member.hierarchy';
+import { indexSignatureTitle } from './resources/partials/member.indexsignature.title';
+import { inheritance } from './resources/partials/member.inheritance';
+import { referenceMember } from './resources/partials/member.reference';
+import { reflectionMember } from './resources/partials/member.reflection';
+import { signatureMemberIdentifier } from './resources/partials/member.signature.identifier';
+import { signatureMember } from './resources/partials/member.signature';
+import { sources } from './resources/partials/member.sources';
+import { memberTitle } from './resources/partials/member.title';
+import { memberTOC } from './resources/partials/member.toc';
+import { member } from './resources/partials/member';
+import { typeDeclarationMember } from './resources/partials/member.type-declaration';
+import { members } from './resources/partials/members';
+import { navigation } from './resources/partials/navigation';
+import { pageTitle } from './resources/partials/page.title';
+import { pageTOC } from './resources/partials/page.toc';
+import { enumMembersTable } from './resources/partials/table.enum-members';
+import { parametersTable } from './resources/partials/table.parameters';
+import { propertiesTable } from './resources/partials/table.properties';
+import { typeParametersTable } from './resources/partials/table.typeparameters';
+import { arrayType } from './resources/partials/type.array';
+import { conditionalType } from './resources/partials/type.conditional';
+import { declarationType } from './resources/partials/type.declaration';
+import { functionType } from './resources/partials/type.function';
+import { indexAccessType } from './resources/partials/type.index-access';
+import { inferredType } from './resources/partials/type.inferred';
+import { intersectionType } from './resources/partials/type.intersection';
+import { intrinsicType } from './resources/partials/type.intrinsic';
+import { literalType } from './resources/partials/type.literal';
+import { namedTupleType } from './resources/partials/type.named-tuple';
+import { queryType } from './resources/partials/type.query';
+import { referenceType } from './resources/partials/type.reference';
+import { reflectionType } from './resources/partials/type.reflection';
+import { someType } from './resources/partials/type.some';
+import { tupleType } from './resources/partials/type.tuple';
+import { typeOperatorType } from './resources/partials/type.type-operator';
+import { unionType } from './resources/partials/type.union';
+import { unknownType } from './resources/partials/type.unknown';
+import { memberTemplate } from './resources/templates/member';
+import { projectTemplate } from './resources/templates/project';
+import { readmeTemplate } from './resources/templates/read-me';
+import { reflectionTemplate } from './resources/templates/reflection';
 /* end_imports */
 
 function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
@@ -67,6 +68,10 @@ export class MarkdownThemeRenderContext {
     public page: PageEvent<Reflection> | null,
     public options: Options,
   ) {}
+
+  getOption<K extends keyof PluginOptions>(name: K) {
+    return this.options.getValue(name) as PluginOptions[K];
+  }
 
   urlTo = (reflection: Reflection) => {
     return this.relativeURL(reflection.url);

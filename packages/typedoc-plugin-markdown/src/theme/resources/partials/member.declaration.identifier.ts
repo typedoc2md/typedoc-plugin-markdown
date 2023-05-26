@@ -1,11 +1,11 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, bold } from '../../../support/elements';
 import {
   escapeChars,
   stripComments,
   stripLineBreaks,
 } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 import { getDeclarationType } from '../../helpers';
 
 /**

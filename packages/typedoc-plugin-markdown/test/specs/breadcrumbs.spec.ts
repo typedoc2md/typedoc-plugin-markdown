@@ -1,5 +1,5 @@
 import { ProjectReflection, Reflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/theme/definition';
+import { MarkdownThemeRenderContext } from '../../src/theme';
 
 describe(`Breadcrumbs:`, () => {
   let moduleReflection: Reflection;

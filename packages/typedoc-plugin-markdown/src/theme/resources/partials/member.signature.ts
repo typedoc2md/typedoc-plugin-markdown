@@ -3,8 +3,8 @@ import {
   ReflectionKind,
   SignatureReflection,
 } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { blockQuoteBlock, codeBlock, heading } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -18,7 +18,7 @@ export function signatureMember(
   const md: string[] = [];
 
   if (showSources) {
-    if (context.options.getValue('identifiersAsCodeBlocks')) {
+    if (context.getOption('identifiersAsCodeBlocks')) {
       md.push(codeBlock(context.signatureMemberIdentifier(signature)));
     } else {
       md.push(`> ${context.signatureMemberIdentifier(signature)}`);

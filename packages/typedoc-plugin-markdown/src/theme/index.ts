@@ -7,5 +7,6 @@
 
 export * from './markdown-theme';
 export * from './markdown-theme-render-context';
+export * from './models';
 export * from './navigation-builder';
 export * from './url-builder';

@@ -128,7 +128,7 @@ The position of the sidebar in the tree.
 The Docusaurus docs folder root. Use `./` if no root folder specified. Defaults to `./docs`.
 
 ```shell
---docsRoot <path/to/vitepress-docs/>
+--docsRoot <path/to/docs-dir/>
 ```
 
 ### An example configuration
@@ -150,6 +150,14 @@ module.exports = {
     ],
   ],
 };
+```
+
+## Typing the config file
+
+The config can be typed using JSDoc type annotations. See https://docusaurus.io/docs/typescript-support#typing-config.
+
+```js
+/** @type {import('docusaurus-plugin-typedoc').PluginOptions} */
 ```
 
 ## Frontmatter

@@ -4,8 +4,8 @@ import {
   ReflectionKind,
   ReflectionType,
 } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { codeBlock, heading } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -21,7 +21,7 @@ export function declarationMember(
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (context.options.getValue('identifiersAsCodeBlocks')) {
+  if (context.getOption('identifiersAsCodeBlocks')) {
     md.push(codeBlock(context.declarationMemberIdentifier(declaration)));
   } else {
     md.push(

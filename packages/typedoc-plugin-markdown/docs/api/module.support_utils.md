@@ -1,10 +1,14 @@
+[**typedoc-plugin-markdown - v4.0.0-next.13**](README.md)
+
+---
+
 [typedoc-plugin-markdown](README.md) > support/utils
 
 # support/utils
 
 A set of pure utils to be consumed accross the plugin.
 
-## Function: escapeChars()
+## escapeChars()
 
 ```ts
 escapeChars(str): string
@@ -14,7 +18,7 @@ escapeChars(str): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| str       | `string` |
+| `str`     | `string` |
 
 ### Returns
 
@@ -22,17 +26,20 @@ escapeChars(str): string
 
 ---
 
-## Function: escapeAngleBrackets()
+## escapeAngleBrackets()
 
 ```ts
 escapeAngleBrackets(str): string
 ```
 
+Escapes non html tag angle brackets inside comment blocks.
+Ignores strings inside code blocks
+
 ### Parameters
 
 | Parameter | Type     |
 | :-------- | :------- |
-| str       | `string` |
+| `str`     | `string` |
 
 ### Returns
 
@@ -40,7 +47,7 @@ escapeAngleBrackets(str): string
 
 ---
 
-## Function: escapeTableCol()
+## escapeTableCol()
 
 ```ts
 escapeTableCol(str): string
@@ -50,7 +57,7 @@ escapeTableCol(str): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| str       | `string` |
+| `str`     | `string` |
 
 ### Returns
 
@@ -58,7 +65,7 @@ escapeTableCol(str): string
 
 ---
 
-## Function: unEscapeChars()
+## unEscapeChars()
 
 ```ts
 unEscapeChars(str): string
@@ -68,7 +75,7 @@ unEscapeChars(str): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| str       | `string` |
+| `str`     | `string` |
 
 ### Returns
 
@@ -76,7 +83,7 @@ unEscapeChars(str): string
 
 ---
 
-## Function: stripComments()
+## stripComments()
 
 ```ts
 stripComments(str): string
@@ -86,7 +93,7 @@ stripComments(str): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| str       | `string` |
+| `str`     | `string` |
 
 ### Returns
 
@@ -94,7 +101,7 @@ stripComments(str): string
 
 ---
 
-## Function: tableComments()
+## tableComments()
 
 ```ts
 tableComments(str): string
@@ -104,7 +111,7 @@ tableComments(str): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| str       | `string` |
+| `str`     | `string` |
 
 ### Returns
 
@@ -112,7 +119,7 @@ tableComments(str): string
 
 ---
 
-## Function: stripLineBreaks()
+## stripLineBreaks()
 
 ```ts
 stripLineBreaks(str, includeHTML = true): string
@@ -120,10 +127,10 @@ stripLineBreaks(str, includeHTML = true): string
 
 ### Parameters
 
-| Parameter   | Type      | Default value |
-| :---------- | :-------- | :------------ |
-| str         | `string`  | undefined     |
-| includeHTML | `boolean` | true          |
+| Parameter     | Type      | Default value |
+| :------------ | :-------- | :------------ |
+| `str`         | `string`  | `undefined`   |
+| `includeHTML` | `boolean` | `true`        |
 
 ### Returns
 
@@ -131,7 +138,7 @@ stripLineBreaks(str, includeHTML = true): string
 
 ---
 
-## Function: camelToTitleCase()
+## camelToTitleCase()
 
 ```ts
 camelToTitleCase(text): string
@@ -141,7 +148,7 @@ camelToTitleCase(text): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| text      | `string` |
+| `text`    | `string` |
 
 ### Returns
 
@@ -149,7 +156,7 @@ camelToTitleCase(text): string
 
 ---
 
-## Function: slugify()
+## slugify()
 
 ```ts
 slugify(str): string
@@ -159,7 +166,7 @@ slugify(str): string
 
 | Parameter | Type     |
 | :-------- | :------- |
-| str       | `string` |
+| `str`     | `string` |
 
 ### Returns
 

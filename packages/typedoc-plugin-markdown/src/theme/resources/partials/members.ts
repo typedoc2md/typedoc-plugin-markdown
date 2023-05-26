@@ -5,9 +5,8 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-import { FormatStyle } from '../../../plugin/models';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading, horizontalRule } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition';
 
 export function members(
   context: MarkdownThemeRenderContext,
@@ -45,7 +44,7 @@ export function members(
     pushCategories(container.categories, headingLevel);
   } else {
     if (
-      context.options.getValue('excludeGroups') &&
+      context.getOption('excludeGroups') &&
       container.kindOf([
         ReflectionKind.Project,
         ReflectionKind.Module,
@@ -77,13 +76,12 @@ export function members(
 
             if (
               isPropertiesGroup &&
-              context.options.getValue('propertiesFormat') === FormatStyle.Table
+              context.getOption('propertiesFormat') === 'table'
             ) {
               md.push(context.propertiesTable(group.children));
             } else if (
               isEnumGroup &&
-              context.options.getValue('enumMembersFormat') ===
-                FormatStyle.Table
+              context.getOption('enumMembersFormat') === 'table'
             ) {
               md.push(context.enumMembersTable(group.children));
             } else {

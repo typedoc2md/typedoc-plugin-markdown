@@ -1,6 +1,6 @@
 import { PageEvent, ProjectReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Templates
@@ -11,15 +11,15 @@ export function projectTemplate(
 ) {
   const md: string[] = [];
 
-  if (!context.options.getValue('hidePageHeader')) {
+  if (!context.getOption('hidePageHeader')) {
     md.push(context.header(page));
   }
 
-  if (!context.options.getValue('hideBreadcrumbs')) {
+  if (!context.getOption('hideBreadcrumbs')) {
     md.push(context.breadcrumbs(page));
   }
 
-  if (!context.options.getValue('hidePageTitle')) {
+  if (!context.getOption('hidePageTitle')) {
     md.push(heading(1, context.pageTitle(page)));
   }
 

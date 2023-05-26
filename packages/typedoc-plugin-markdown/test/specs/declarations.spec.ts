@@ -1,5 +1,5 @@
 import { ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/theme/definition';
+import { MarkdownThemeRenderContext } from '../../src/theme';
 
 describe(`Declarations:`, () => {
   let project: ProjectReflection;

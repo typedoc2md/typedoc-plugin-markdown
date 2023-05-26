@@ -1,6 +1,6 @@
 import { UnknownType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { backTicks } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials

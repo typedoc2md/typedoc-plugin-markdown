@@ -19,7 +19,6 @@ const themeRenderContextFile = path.join(
   '..',
   'src',
   'theme',
-  'definition',
   'markdown-theme-render-context.ts',
 );
 
@@ -31,7 +30,7 @@ const exportsOut: string[] = [];
 partialsFiles.forEach((file, index) => {
   if (file !== 'index') {
     importsOut.push(
-      `import { ${partialsSymbols[index].symbolName} } from '../resources/partials/${file}';`,
+      `import { ${partialsSymbols[index].symbolName} } from './resources/partials/${file}';`,
     );
   }
   exportsOut.push(`export * from './${file}'`);
@@ -40,7 +39,7 @@ partialsFiles.forEach((file, index) => {
 templateFiles.forEach((file, index) => {
   if (file !== 'index') {
     importsOut.push(
-      `import { ${templateSymbols[index].symbolName} } from '../resources/templates/${file}';`,
+      `import { ${templateSymbols[index].symbolName} } from './resources/templates/${file}';`,
     );
   }
 });

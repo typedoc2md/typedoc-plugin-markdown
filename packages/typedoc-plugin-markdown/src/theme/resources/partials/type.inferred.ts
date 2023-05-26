@@ -1,6 +1,6 @@
 import { InferredType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { escapeChars } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials

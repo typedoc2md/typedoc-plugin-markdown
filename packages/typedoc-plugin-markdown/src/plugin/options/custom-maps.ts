@@ -1,17 +1,12 @@
 /**
- * Models describing custom plugin options.
- * @module
- */
-
-/**
  * Defines outputFileStrategy model for the `outputFileStrategy` option.
  *
  * @enum
  *
  */
 export const OutputFileStrategy = {
-  Modules: 'modules',
   Members: 'members',
+  Modules: 'modules',
 } as const;
 
 export type OutputFileStrategy =

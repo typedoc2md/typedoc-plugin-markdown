@@ -2,13 +2,10 @@ module.exports = {
   plugin: ['typedoc-plugin-markdown', 'typedoc-plugin-mdn-links'],
   tsconfig: './tsconfig.json',
   entryPoints: [
-    './src/plugin/bootstrap.ts',
-    './src/plugin/renderer.ts',
-    './src/plugin/models.ts',
-    './src/theme/definition/index.ts',
+    './src/plugin/options/config.ts',
+    './src/theme/index.ts',
     './src/theme/resources/index.ts',
     './src/theme/helpers.ts',
-    './src/theme/models.ts',
     './src/support/elements.ts',
     './src/support/utils.ts',
   ],
@@ -24,6 +21,7 @@ module.exports = {
   githubPages: false,
   includeVersion: true,
   hideGenerator: true,
+  hideKindPrefix: true,
   externalSymbolLinkMappings: {
     ['@types/prettier']: {
       Options: 'https://prettier.io/docs/en/options.html',
@@ -47,12 +45,13 @@ module.exports = {
       ReflectionGroup:
         'https://typedoc.org/api/classes/Models.ReflectionGroup.html',
       Theme: 'https://typedoc.org/api/classes/Theme.html',
+      TypeDocOptions: 'https://typedoc.org/api/interfaces/TypeDocOptions.html',
       UrlMapping: 'https://typedoc.org/api/classes/UrlMapping.html',
     },
   },
   excludeGroups: true,
   hideInPageTOC: true,
-  hidePageHeader: true,
+  hidePageHeader: false,
   identifiersAsCodeBlocks: true,
   outputFileStrategy: 'modules',
   tocFormat: 'table',

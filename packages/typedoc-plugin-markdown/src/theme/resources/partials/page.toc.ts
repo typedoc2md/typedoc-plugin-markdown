@@ -6,10 +6,9 @@ import {
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
-import { FormatStyle } from '../../../plugin/models';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading, link, table } from '../../../support/elements';
 import { escapeChars, tableComments } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -25,19 +24,16 @@ export function pageTOC(
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
         Boolean(projectPackage.readme)
-          ? `${path.dirname(
-              projectPackage.url || '',
-            )}/${context.options.getValue('entryFileName')}`
+          ? `${path.dirname(projectPackage.url || '')}/${context.getOption(
+              'entryFileName',
+            )}`
           : projectPackage.url,
       )})`;
     });
     md.push(packagesList?.join('\n') || '');
     return md.join('\n\n');
   }
-  if (
-    page.model.groups &&
-    context.options.getValue('entryPoints').length === 1
-  ) {
+  if (page.model.groups && context.getOption('entryPoints').length === 1) {
     md.push(context.memberTOC(page.model, headingLevel));
     return md.join('\n\n');
   }
@@ -47,7 +43,7 @@ export function pageTOC(
 }
 
 function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  if (context.options.getValue('tocFormat') === FormatStyle.Table) {
+  if (context.getOption('tocFormat') === 'table') {
     return getTable(context, group);
   }
   return getList(context, group);

@@ -1,3 +1,7 @@
+[**typedoc-plugin-markdown - v4.0.0-next.13**](README.md)
+
+---
+
 [typedoc-plugin-markdown](README.md) > theme/resources
 
 # theme/resources
@@ -6,7 +10,7 @@ Contains templates and partials used when generating output.
 
 ## Templates
 
-### Function: memberTemplate()
+### memberTemplate()
 
 ```ts
 memberTemplate(context, page): string
@@ -14,10 +18,10 @@ memberTemplate(context, page): string
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                          |
-| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                   |
-| page      | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\> |
+| Parameter | Type                                                                                                                                                            |
+| :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                      |
+| `page`    | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \> |
 
 #### Returns
 
@@ -25,7 +29,7 @@ memberTemplate(context, page): string
 
 ---
 
-### Function: projectTemplate()
+### projectTemplate()
 
 ```ts
 projectTemplate(context, page): string
@@ -33,10 +37,10 @@ projectTemplate(context, page): string
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                  |
-| :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                           |
-| page      | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
+| Parameter | Type                                                                                                                                                    |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                              |
+| `page`    | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \> |
 
 #### Returns
 
@@ -44,7 +48,7 @@ projectTemplate(context, page): string
 
 ---
 
-### Function: readmeTemplate()
+### readmeTemplate()
 
 ```ts
 readmeTemplate(context, page): string
@@ -52,10 +56,10 @@ readmeTemplate(context, page): string
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                                                                                                                  |
-| :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                                                                                                           |
-| page      | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
+| Parameter | Type                                                                                                                                                                                                                                                    |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                                                                                                              |
+| `page`    | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \> |
 
 #### Returns
 
@@ -63,7 +67,7 @@ readmeTemplate(context, page): string
 
 ---
 
-### Function: reflectionTemplate()
+### reflectionTemplate()
 
 ```ts
 reflectionTemplate(context, page): string
@@ -71,10 +75,10 @@ reflectionTemplate(context, page): string
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                          |
-| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                   |
-| page      | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\> |
+| Parameter | Type                                                                                                                                                            |
+| :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                      |
+| `page`    | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \> |
 
 #### Returns
 
@@ -82,7 +86,7 @@ reflectionTemplate(context, page): string
 
 ## Partials
 
-### Function: commentParts()
+### commentParts()
 
 ```ts
 commentParts(context, parts): string
@@ -90,10 +94,10 @@ commentParts(context, parts): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| parts     | [`CommentDisplayPart`](https://typedoc.org/api/types/Models.CommentDisplayPart.html)[]      |
+| Parameter | Type                                                                                   |
+| :-------- | :------------------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)             |
+| `parts`   | [`CommentDisplayPart`](https://typedoc.org/api/types/Models.CommentDisplayPart.html)[] |
 
 #### Returns
 
@@ -101,7 +105,7 @@ commentParts(context, parts): string
 
 ---
 
-### Function: comment()
+### comment()
 
 ```ts
 comment(
@@ -112,11 +116,11 @@ comment(
 
 #### Parameters
 
-| Parameter     | Type                                                                                        |
-| :------------ | :------------------------------------------------------------------------------------------ |
-| context       | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| comment       | `Comment`                                                                                   |
-| headingLevel? | `number`                                                                                    |
+| Parameter       | Type                                                                       |
+| :-------------- | :------------------------------------------------------------------------- |
+| `context`       | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `comment`       | `Comment`                                                                  |
+| `headingLevel`? | `number`                                                                   |
 
 #### Returns
 
@@ -124,7 +128,7 @@ comment(
 
 ---
 
-### Function: footer()
+### footer()
 
 ```ts
 footer(context): string
@@ -132,9 +136,9 @@ footer(context): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
 
 #### Returns
 
@@ -142,7 +146,7 @@ footer(context): string
 
 ---
 
-### Function: header()
+### header()
 
 ```ts
 header(context, page): string
@@ -150,10 +154,10 @@ header(context, page): string
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                                                                                                                  |
-| :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                                                                                                           |
-| page      | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
+| Parameter | Type                                                                                                                                                                                                                                                    |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                                                                                                              |
+| `page`    | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \> |
 
 #### Returns
 
@@ -161,7 +165,26 @@ header(context, page): string
 
 ---
 
-### Function: declarationMemberIdentifier()
+### declarationMemberAccessor()
+
+```ts
+declarationMemberAccessor(context, declaration): string
+```
+
+#### Parameters
+
+| Parameter     | Type                                                                                         |
+| :------------ | :------------------------------------------------------------------------------------------- |
+| `context`     | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   |
+| `declaration` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+#### Returns
+
+`string`
+
+---
+
+### declarationMemberIdentifier()
 
 ```ts
 declarationMemberIdentifier(context, reflection): string
@@ -169,10 +192,10 @@ declarationMemberIdentifier(context, reflection): string
 
 #### Parameters
 
-| Parameter  | Type                                                                                         |
-| :--------- | :------------------------------------------------------------------------------------------- |
-| context    | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  |
-| reflection | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| Parameter    | Type                                                                                         |
+| :----------- | :------------------------------------------------------------------------------------------- |
+| `context`    | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   |
+| `reflection` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 #### Returns
 
@@ -180,47 +203,24 @@ declarationMemberIdentifier(context, reflection): string
 
 ---
 
-### Function: declarationMemberName()
-
-```ts
-declarationMemberName(
-  context,
-  declaration,
-  emphasis = true): string
-```
-
-#### Parameters
-
-| Parameter   | Type                                                                                         | Default value |
-| :---------- | :------------------------------------------------------------------------------------------- | :------------ |
-| context     | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  | undefined     |
-| declaration | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | undefined     |
-| emphasis    | `boolean`                                                                                    | true          |
-
-#### Returns
-
-`string`
-
----
-
-### Function: declarationMember()
+### declarationMember()
 
 ```ts
 declarationMember(
   context,
   declaration,
   headingLevel,
-  showSources = true): string
+  nested = false): string
 ```
 
 #### Parameters
 
-| Parameter    | Type                                                                                         | Default value |
-| :----------- | :------------------------------------------------------------------------------------------- | :------------ |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  | undefined     |
-| declaration  | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | undefined     |
-| headingLevel | `number`                                                                                     | undefined     |
-| showSources  | `boolean`                                                                                    | true          |
+| Parameter      | Type                                                                                         | Default value |
+| :------------- | :------------------------------------------------------------------------------------------- | :------------ |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   | `undefined`   |
+| `declaration`  | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | `undefined`   |
+| `headingLevel` | `number`                                                                                     | `undefined`   |
+| `nested`       | `boolean`                                                                                    | `false`       |
 
 #### Returns
 
@@ -228,7 +228,7 @@ declarationMember(
 
 ---
 
-### Function: indexSignatureTitle()
+### indexSignatureTitle()
 
 ```ts
 indexSignatureTitle(context, signature): string
@@ -236,10 +236,10 @@ indexSignatureTitle(context, signature): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| signature | `SignatureReflection`                                                                       |
+| Parameter   | Type                                                                       |
+| :---------- | :------------------------------------------------------------------------- |
+| `context`   | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `signature` | `SignatureReflection`                                                      |
 
 #### Returns
 
@@ -247,7 +247,7 @@ indexSignatureTitle(context, signature): string
 
 ---
 
-### Function: referenceMember()
+### referenceMember()
 
 ```ts
 referenceMember(context, props): string
@@ -255,10 +255,10 @@ referenceMember(context, props): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| props     | `ReferenceReflection`                                                                       |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `props`   | `ReferenceReflection`                                                      |
 
 #### Returns
 
@@ -266,7 +266,7 @@ referenceMember(context, props): string
 
 ---
 
-### Function: reflectionMember()
+### reflectionMember()
 
 ```ts
 reflectionMember(
@@ -277,11 +277,11 @@ reflectionMember(
 
 #### Parameters
 
-| Parameter    | Type                                                                                         |
-| :----------- | :------------------------------------------------------------------------------------------- |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  |
-| reflection   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| headingLevel | `number`                                                                                     |
+| Parameter      | Type                                                                                         |
+| :------------- | :------------------------------------------------------------------------------------------- |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   |
+| `reflection`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `headingLevel` | `number`                                                                                     |
 
 #### Returns
 
@@ -289,7 +289,7 @@ reflectionMember(
 
 ---
 
-### Function: signatureMemberIdentifier()
+### signatureMemberIdentifier()
 
 ```ts
 signatureMemberIdentifier(context, signature): string
@@ -297,10 +297,10 @@ signatureMemberIdentifier(context, signature): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| signature | `SignatureReflection`                                                                       |
+| Parameter   | Type                                                                       |
+| :---------- | :------------------------------------------------------------------------- |
+| `context`   | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `signature` | `SignatureReflection`                                                      |
 
 #### Returns
 
@@ -308,7 +308,7 @@ signatureMemberIdentifier(context, signature): string
 
 ---
 
-### Function: signatureMember()
+### signatureMember()
 
 ```ts
 signatureMember(
@@ -320,12 +320,12 @@ signatureMember(
 
 #### Parameters
 
-| Parameter    | Type                                                                                        | Default value |
-| :----------- | :------------------------------------------------------------------------------------------ | :------------ |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) | undefined     |
-| signature    | `SignatureReflection`                                                                       | undefined     |
-| headingLevel | `number`                                                                                    | undefined     |
-| showSources  | `boolean`                                                                                   | true          |
+| Parameter      | Type                                                                       | Default value |
+| :------------- | :------------------------------------------------------------------------- | :------------ |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) | `undefined`   |
+| `signature`    | `SignatureReflection`                                                      | `undefined`   |
+| `headingLevel` | `number`                                                                   | `undefined`   |
+| `showSources`  | `boolean`                                                                  | `true`        |
 
 #### Returns
 
@@ -333,7 +333,7 @@ signatureMember(
 
 ---
 
-### Function: sources()
+### sources()
 
 ```ts
 sources(
@@ -344,11 +344,11 @@ sources(
 
 #### Parameters
 
-| Parameter    | Type                                                                                                                  |
-| :----------- | :-------------------------------------------------------------------------------------------------------------------- |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                           |
-| reflection   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| `SignatureReflection` |
-| headingLevel | `number`                                                                                                              |
+| Parameter      | Type                                                                                                                  |
+| :------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                            |
+| `reflection`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| `SignatureReflection` |
+| `headingLevel` | `number`                                                                                                              |
 
 #### Returns
 
@@ -356,7 +356,7 @@ sources(
 
 ---
 
-### Function: memberTitle()
+### memberTitle()
 
 ```ts
 memberTitle(
@@ -367,11 +367,11 @@ memberTitle(
 
 #### Parameters
 
-| Parameter  | Type                                                                                         | Default value |
-| :--------- | :------------------------------------------------------------------------------------------- | :------------ |
-| context    | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  | undefined     |
-| reflection | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | undefined     |
-| typeParams | `boolean`                                                                                    | false         |
+| Parameter    | Type                                                                                         | Default value |
+| :----------- | :------------------------------------------------------------------------------------------- | :------------ |
+| `context`    | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   | `undefined`   |
+| `reflection` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | `undefined`   |
+| `typeParams` | `boolean`                                                                                    | `false`       |
 
 #### Returns
 
@@ -379,24 +379,22 @@ memberTitle(
 
 ---
 
-### Function: member()
+### member()
 
 ```ts
 member(
   context,
   reflection,
-  headingLevel,
-  parentName?): string
+  headingLevel): string
 ```
 
 #### Parameters
 
-| Parameter    | Type                                                                                         |
-| :----------- | :------------------------------------------------------------------------------------------- |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  |
-| reflection   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| headingLevel | `number`                                                                                     |
-| parentName?  | `string`                                                                                     |
+| Parameter      | Type                                                                                         |
+| :------------- | :------------------------------------------------------------------------------------------- |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   |
+| `reflection`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `headingLevel` | `number`                                                                                     |
 
 #### Returns
 
@@ -404,24 +402,26 @@ member(
 
 ---
 
-### Function: typeDeclarationMember()
+### typeDeclarationMember()
 
 ```ts
 typeDeclarationMember(
   context,
   typeDeclaration,
   headingLevel,
-  parentName?): string
+  parentName?,
+  dividers? = true): string
 ```
 
 #### Parameters
 
-| Parameter       | Type                                                                                         |
-| :-------------- | :------------------------------------------------------------------------------------------- |
-| context         | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  |
-| typeDeclaration | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| headingLevel    | `number`                                                                                     |
-| parentName?     | `string`                                                                                     |
+| Parameter         | Type                                                                                         | Default value |
+| :---------------- | :------------------------------------------------------------------------------------------- | :------------ |
+| `context`         | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   | `undefined`   |
+| `typeDeclaration` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | `undefined`   |
+| `headingLevel`    | `number`                                                                                     | `undefined`   |
+| `parentName`?     | `string`                                                                                     | `undefined`   |
+| `dividers`?       | `boolean`                                                                                    | `true`        |
 
 #### Returns
 
@@ -429,7 +429,7 @@ typeDeclarationMember(
 
 ---
 
-### Function: navigation()
+### navigation()
 
 ```ts
 navigation(context, navigationItems): string
@@ -437,10 +437,10 @@ navigation(context, navigationItems): string
 
 #### Parameters
 
-| Parameter       | Type                                                                                        |
-| :-------------- | :------------------------------------------------------------------------------------------ |
-| context         | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| navigationItems | [`NavigationItem`](module.theme_models.md#interface-navigationitem)[]                       |
+| Parameter         | Type                                                                       |
+| :---------------- | :------------------------------------------------------------------------- |
+| `context`         | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `navigationItems` | [`NavigationItem`](module.theme.md#navigationitem)[]                       |
 
 #### Returns
 
@@ -448,7 +448,7 @@ navigation(context, navigationItems): string
 
 ---
 
-### Function: pageTitle()
+### pageTitle()
 
 ```ts
 pageTitle(context, page): string
@@ -456,10 +456,10 @@ pageTitle(context, page): string
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                                                                                                                  |
-| :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                                                                                                           |
-| page      | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
+| Parameter | Type                                                                                                                                                                                                                                                    |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                                                                                                              |
+| `page`    | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \> |
 
 #### Returns
 
@@ -467,7 +467,7 @@ pageTitle(context, page): string
 
 ---
 
-### Function: pageTOC()
+### pageTOC()
 
 ```ts
 pageTOC(
@@ -478,11 +478,11 @@ pageTOC(
 
 #### Parameters
 
-| Parameter    | Type                                                                                                                                                                                                                                                  |
-| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                                                                                                           |
-| page         | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
-| headingLevel | `number`                                                                                                                                                                                                                                              |
+| Parameter      | Type                                                                                                                                                                                                                                                    |
+| :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                                                                                                              |
+| `page`         | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \> |
+| `headingLevel` | `number`                                                                                                                                                                                                                                                |
 
 #### Returns
 
@@ -490,7 +490,7 @@ pageTOC(
 
 ---
 
-### Function: enumMembersTable()
+### enumMembersTable()
 
 ```ts
 enumMembersTable(context, props): string
@@ -500,8 +500,8 @@ enumMembersTable(context, props): string
 
 | Parameter | Type                                                                                           |
 | :-------- | :--------------------------------------------------------------------------------------------- |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)    |
-| props     | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                     |
+| `props`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 
 #### Returns
 
@@ -509,7 +509,7 @@ enumMembersTable(context, props): string
 
 ---
 
-### Function: parametersTable()
+### parametersTable()
 
 ```ts
 parametersTable(context, parameters): string
@@ -517,10 +517,10 @@ parametersTable(context, parameters): string
 
 #### Parameters
 
-| Parameter  | Type                                                                                        |
-| :--------- | :------------------------------------------------------------------------------------------ |
-| context    | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| parameters | `ParameterReflection`[]                                                                     |
+| Parameter    | Type                                                                       |
+| :----------- | :------------------------------------------------------------------------- |
+| `context`    | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `parameters` | `ParameterReflection`[]                                                    |
 
 #### Returns
 
@@ -528,7 +528,7 @@ parametersTable(context, parameters): string
 
 ---
 
-### Function: propertiesTable()
+### propertiesTable()
 
 ```ts
 propertiesTable(
@@ -541,9 +541,9 @@ propertiesTable(
 
 | Parameter | Type                                                                                           | Default value |
 | :-------- | :--------------------------------------------------------------------------------------------- | :------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)    | undefined     |
-| props     | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] | undefined     |
-| nameCol   | `string`                                                                                       | 'Property'    |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                     | `undefined`   |
+| `props`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] | `undefined`   |
+| `nameCol` | `string`                                                                                       | `'Property'`  |
 
 #### Returns
 
@@ -551,7 +551,7 @@ propertiesTable(
 
 ---
 
-### Function: typeParametersTable()
+### typeParametersTable()
 
 ```ts
 typeParametersTable(context, typeParameters): string
@@ -559,10 +559,10 @@ typeParametersTable(context, typeParameters): string
 
 #### Parameters
 
-| Parameter      | Type                                                                                        |
-| :------------- | :------------------------------------------------------------------------------------------ |
-| context        | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| typeParameters | `TypeParameterReflection`[]                                                                 |
+| Parameter        | Type                                                                       |
+| :--------------- | :------------------------------------------------------------------------- |
+| `context`        | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `typeParameters` | `TypeParameterReflection`[]                                                |
 
 #### Returns
 
@@ -570,7 +570,7 @@ typeParametersTable(context, typeParameters): string
 
 ---
 
-### Function: arrayType()
+### arrayType()
 
 ```ts
 arrayType(context, arrayType): string
@@ -578,10 +578,10 @@ arrayType(context, arrayType): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| arrayType | `ArrayType`                                                                                 |
+| Parameter   | Type                                                                       |
+| :---------- | :------------------------------------------------------------------------- |
+| `context`   | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `arrayType` | `ArrayType`                                                                |
 
 #### Returns
 
@@ -589,7 +589,7 @@ arrayType(context, arrayType): string
 
 ---
 
-### Function: conditionalType()
+### conditionalType()
 
 ```ts
 conditionalType(context, conditionalType): string
@@ -597,10 +597,10 @@ conditionalType(context, conditionalType): string
 
 #### Parameters
 
-| Parameter       | Type                                                                                        |
-| :-------------- | :------------------------------------------------------------------------------------------ |
-| context         | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| conditionalType | `ConditionalType`                                                                           |
+| Parameter         | Type                                                                       |
+| :---------------- | :------------------------------------------------------------------------- |
+| `context`         | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `conditionalType` | `ConditionalType`                                                          |
 
 #### Returns
 
@@ -608,7 +608,7 @@ conditionalType(context, conditionalType): string
 
 ---
 
-### Function: declarationType()
+### declarationType()
 
 ```ts
 declarationType(
@@ -619,11 +619,11 @@ declarationType(
 
 #### Parameters
 
-| Parameter             | Type                                                                                         | Default value |
-| :-------------------- | :------------------------------------------------------------------------------------------- | :------------ |
-| context               | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)  | undefined     |
-| declarationReflection | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | undefined     |
-| collapse              | `boolean`                                                                                    | false         |
+| Parameter               | Type                                                                                         | Default value |
+| :---------------------- | :------------------------------------------------------------------------------------------- | :------------ |
+| `context`               | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                   | `undefined`   |
+| `declarationReflection` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) | `undefined`   |
+| `collapse`              | `boolean`                                                                                    | `false`       |
 
 #### Returns
 
@@ -631,7 +631,7 @@ declarationType(
 
 ---
 
-### Function: functionType()
+### functionType()
 
 ```ts
 functionType(context, modelSignatures): string
@@ -639,10 +639,10 @@ functionType(context, modelSignatures): string
 
 #### Parameters
 
-| Parameter       | Type                                                                                        |
-| :-------------- | :------------------------------------------------------------------------------------------ |
-| context         | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| modelSignatures | `SignatureReflection`[]                                                                     |
+| Parameter         | Type                                                                       |
+| :---------------- | :------------------------------------------------------------------------- |
+| `context`         | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `modelSignatures` | `SignatureReflection`[]                                                    |
 
 #### Returns
 
@@ -650,7 +650,7 @@ functionType(context, modelSignatures): string
 
 ---
 
-### Function: indexAccessType()
+### indexAccessType()
 
 ```ts
 indexAccessType(context, model): string
@@ -658,10 +658,10 @@ indexAccessType(context, model): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| model     | `IndexedAccessType`                                                                         |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `model`   | `IndexedAccessType`                                                        |
 
 #### Returns
 
@@ -669,7 +669,7 @@ indexAccessType(context, model): string
 
 ---
 
-### Function: inferredType()
+### inferredType()
 
 ```ts
 inferredType(context, model): string
@@ -677,10 +677,10 @@ inferredType(context, model): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| model     | `InferredType`                                                                              |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `model`   | `InferredType`                                                             |
 
 #### Returns
 
@@ -688,7 +688,7 @@ inferredType(context, model): string
 
 ---
 
-### Function: intersectionType()
+### intersectionType()
 
 ```ts
 intersectionType(context, model): string
@@ -696,10 +696,10 @@ intersectionType(context, model): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| model     | `IntersectionType`                                                                          |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `model`   | `IntersectionType`                                                         |
 
 #### Returns
 
@@ -707,7 +707,7 @@ intersectionType(context, model): string
 
 ---
 
-### Function: intrinsicType()
+### intrinsicType()
 
 ```ts
 intrinsicType(context, model): string
@@ -715,10 +715,10 @@ intrinsicType(context, model): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| model     | `IntrinsicType`                                                                             |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `model`   | `IntrinsicType`                                                            |
 
 #### Returns
 
@@ -726,7 +726,7 @@ intrinsicType(context, model): string
 
 ---
 
-### Function: literalType()
+### literalType()
 
 ```ts
 literalType(context, literalType): string
@@ -734,10 +734,10 @@ literalType(context, literalType): string
 
 #### Parameters
 
-| Parameter   | Type                                                                                        |
-| :---------- | :------------------------------------------------------------------------------------------ |
-| context     | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| literalType | `LiteralType`                                                                               |
+| Parameter     | Type                                                                       |
+| :------------ | :------------------------------------------------------------------------- |
+| `context`     | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `literalType` | `LiteralType`                                                              |
 
 #### Returns
 
@@ -745,7 +745,7 @@ literalType(context, literalType): string
 
 ---
 
-### Function: namedTupleType()
+### namedTupleType()
 
 ```ts
 namedTupleType(context, member): string
@@ -753,10 +753,10 @@ namedTupleType(context, member): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| member    | `NamedTupleMember`                                                                          |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `member`  | `NamedTupleMember`                                                         |
 
 #### Returns
 
@@ -764,7 +764,7 @@ namedTupleType(context, member): string
 
 ---
 
-### Function: queryType()
+### queryType()
 
 ```ts
 queryType(context, queryType): string
@@ -772,10 +772,10 @@ queryType(context, queryType): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| queryType | `QueryType`                                                                                 |
+| Parameter   | Type                                                                       |
+| :---------- | :------------------------------------------------------------------------- |
+| `context`   | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `queryType` | `QueryType`                                                                |
 
 #### Returns
 
@@ -783,7 +783,7 @@ queryType(context, queryType): string
 
 ---
 
-### Function: referenceType()
+### referenceType()
 
 ```ts
 referenceType(context, referenceType): string
@@ -791,10 +791,10 @@ referenceType(context, referenceType): string
 
 #### Parameters
 
-| Parameter     | Type                                                                                        |
-| :------------ | :------------------------------------------------------------------------------------------ |
-| context       | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| referenceType | `ReferenceType`                                                                             |
+| Parameter       | Type                                                                       |
+| :-------------- | :------------------------------------------------------------------------- |
+| `context`       | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `referenceType` | `ReferenceType`                                                            |
 
 #### Returns
 
@@ -802,7 +802,7 @@ referenceType(context, referenceType): string
 
 ---
 
-### Function: reflectionType()
+### reflectionType()
 
 ```ts
 reflectionType(
@@ -813,11 +813,11 @@ reflectionType(
 
 #### Parameters
 
-| Parameter      | Type                                                                                        |
-| :------------- | :------------------------------------------------------------------------------------------ |
-| context        | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| reflectionType | `ReflectionType`                                                                            |
-| collapse       | `boolean`                                                                                   |
+| Parameter        | Type                                                                       |
+| :--------------- | :------------------------------------------------------------------------- |
+| `context`        | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `reflectionType` | `ReflectionType`                                                           |
+| `collapse`       | `boolean`                                                                  |
 
 #### Returns
 
@@ -825,7 +825,7 @@ reflectionType(
 
 ---
 
-### Function: someType()
+### someType()
 
 ```ts
 someType(
@@ -836,11 +836,11 @@ someType(
 
 #### Parameters
 
-| Parameter | Type                                                                                        | Default value |
-| :-------- | :------------------------------------------------------------------------------------------ | :------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) | undefined     |
-| someType  | `SomeType`                                                                                  | undefined     |
-| collapse  | `boolean`                                                                                   | false         |
+| Parameter  | Type                                                                       | Default value |
+| :--------- | :------------------------------------------------------------------------- | :------------ |
+| `context`  | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) | `undefined`   |
+| `someType` | `SomeType`                                                                 | `undefined`   |
+| `collapse` | `boolean`                                                                  | `false`       |
 
 #### Returns
 
@@ -848,7 +848,7 @@ someType(
 
 ---
 
-### Function: tupleType()
+### tupleType()
 
 ```ts
 tupleType(context, tupleType): string
@@ -856,10 +856,10 @@ tupleType(context, tupleType): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| tupleType | `TupleType`                                                                                 |
+| Parameter   | Type                                                                       |
+| :---------- | :------------------------------------------------------------------------- |
+| `context`   | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `tupleType` | `TupleType`                                                                |
 
 #### Returns
 
@@ -867,7 +867,7 @@ tupleType(context, tupleType): string
 
 ---
 
-### Function: typeOperatorType()
+### typeOperatorType()
 
 ```ts
 typeOperatorType(context, model): string
@@ -875,10 +875,10 @@ typeOperatorType(context, model): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| model     | `TypeOperatorType`                                                                          |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `model`   | `TypeOperatorType`                                                         |
 
 #### Returns
 
@@ -886,7 +886,7 @@ typeOperatorType(context, model): string
 
 ---
 
-### Function: unionType()
+### unionType()
 
 ```ts
 unionType(context, unionType): string
@@ -894,10 +894,10 @@ unionType(context, unionType): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| unionType | `UnionType`                                                                                 |
+| Parameter   | Type                                                                       |
+| :---------- | :------------------------------------------------------------------------- |
+| `context`   | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `unionType` | `UnionType`                                                                |
 
 #### Returns
 
@@ -905,7 +905,7 @@ unionType(context, unionType): string
 
 ---
 
-### Function: unknownType()
+### unknownType()
 
 ```ts
 unknownType(context, model): string
@@ -913,10 +913,10 @@ unknownType(context, model): string
 
 #### Parameters
 
-| Parameter | Type                                                                                        |
-| :-------- | :------------------------------------------------------------------------------------------ |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| model     | `UnknownType`                                                                               |
+| Parameter | Type                                                                       |
+| :-------- | :------------------------------------------------------------------------- |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `model`   | `UnknownType`                                                              |
 
 #### Returns
 
@@ -924,7 +924,7 @@ unknownType(context, model): string
 
 ## Other
 
-### Function: breadcrumbs()
+### breadcrumbs()
 
 ```ts
 breadcrumbs(context, page): string
@@ -936,10 +936,10 @@ Renders the breadcrumbs
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                                                                                                                  |
-| :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                                                                                                           |
-| page      | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
+| Parameter | Type                                                                                                                                                                                                                                                    |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `context` | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                                                                                                              |
+| `page`    | [`PageEvent`](https://typedoc.org/api/classes/PageEvent.html)\< [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \> |
 
 #### Returns
 
@@ -947,7 +947,7 @@ Renders the breadcrumbs
 
 ---
 
-### Function: memberHierarchy()
+### memberHierarchy()
 
 ```ts
 memberHierarchy(
@@ -958,11 +958,11 @@ memberHierarchy(
 
 #### Parameters
 
-| Parameter            | Type                                                                                        |
-| :------------------- | :------------------------------------------------------------------------------------------ |
-| context              | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| declarationHierarchy | `DeclarationHierarchy`                                                                      |
-| headingLevel         | `number`                                                                                    |
+| Parameter              | Type                                                                       |
+| :--------------------- | :------------------------------------------------------------------------- |
+| `context`              | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `declarationHierarchy` | `DeclarationHierarchy`                                                     |
+| `headingLevel`         | `number`                                                                   |
 
 #### Returns
 
@@ -970,7 +970,7 @@ memberHierarchy(
 
 ---
 
-### Function: inheritance()
+### inheritance()
 
 ```ts
 inheritance(
@@ -981,11 +981,11 @@ inheritance(
 
 #### Parameters
 
-| Parameter    | Type                                                                                                                  |
-| :----------- | :-------------------------------------------------------------------------------------------------------------------- |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                           |
-| reflection   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| `SignatureReflection` |
-| headingLevel | `number`                                                                                                              |
+| Parameter      | Type                                                                                                                  |
+| :------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                            |
+| `reflection`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| `SignatureReflection` |
+| `headingLevel` | `number`                                                                                                              |
 
 #### Returns
 
@@ -993,7 +993,7 @@ inheritance(
 
 ---
 
-### Function: memberTOC()
+### memberTOC()
 
 ```ts
 memberTOC(
@@ -1004,11 +1004,11 @@ memberTOC(
 
 #### Parameters
 
-| Parameter    | Type                                                                                                                                                                                 |
-| :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext)                                                                                          |
-| reflection   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
-| headingLevel | `number`                                                                                                                                                                             |
+| Parameter      | Type                                                                                                                                                                                 |
+| :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext)                                                                                                           |
+| `reflection`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| `headingLevel` | `number`                                                                                                                                                                             |
 
 #### Returns
 
@@ -1016,7 +1016,7 @@ memberTOC(
 
 ---
 
-### Function: members()
+### members()
 
 ```ts
 members(
@@ -1027,11 +1027,11 @@ members(
 
 #### Parameters
 
-| Parameter    | Type                                                                                        |
-| :----------- | :------------------------------------------------------------------------------------------ |
-| context      | [`MarkdownThemeRenderContext`](module.theme_definition.md#class-markdownthemerendercontext) |
-| container    | `ContainerReflection`                                                                       |
-| headingLevel | `number`                                                                                    |
+| Parameter      | Type                                                                       |
+| :------------- | :------------------------------------------------------------------------- |
+| `context`      | [`MarkdownThemeRenderContext`](module.theme.md#markdownthemerendercontext) |
+| `container`    | `ContainerReflection`                                                      |
+| `headingLevel` | `number`                                                                   |
 
 #### Returns
 

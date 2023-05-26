@@ -1,6 +1,6 @@
 import { QueryType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { italic } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials

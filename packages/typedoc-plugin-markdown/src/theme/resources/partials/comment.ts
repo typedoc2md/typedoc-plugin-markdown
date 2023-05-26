@@ -1,7 +1,7 @@
 import { Comment } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { bold, heading } from '../../../support/elements';
 import { camelToTitleCase, escapeAngleBrackets } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials

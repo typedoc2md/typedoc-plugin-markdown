@@ -11,7 +11,7 @@
     "lint:ts": "eslint ./src --ext .ts",
     "lint:markdown": "npm run docs && markdownlint ./out/md",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
-    "prebuild": "ts-node scripts/build-resources",
+    "prebuild": "npm-run-all task:*",
     "build": "rm -rf dist && tsc",
     "test": "jest --colors --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
@@ -20,7 +20,9 @@
     "docs:md-1": "typedoc --options ../../stubs/typedoc.1.js --out ./out/md/md-1",
     "docs:md-2": "typedoc --options ../../stubs/typedoc.2.js --out ./out/md/md-2",
     "docs:md-3": "typedoc --options ../../stubs/typedoc.3.js --out ./out/md/md-3",
-    "docs:html": "typedoc --options ../../stubs/typedoc.base.js  --out ./out/html"
+    "docs:html": "typedoc --options ../../stubs/typedoc.base.js  --out ./out/html",
+    "task:build-options": "ts-node scripts/build-options",
+    "task:build-resources": "ts-node scripts/build-resources"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -38,7 +40,7 @@
     "typescript",
     "documentation",
     "api",
-    "typedocplugin",
+    "typedoc-plugin",
     "typedoc"
   ],
   "peerDependencies": {

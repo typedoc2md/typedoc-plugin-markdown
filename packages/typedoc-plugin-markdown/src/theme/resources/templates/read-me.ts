@@ -1,6 +1,6 @@
 import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Templates
@@ -13,7 +13,7 @@ export function readmeTemplate(
 
   const INDEX_PLACEHOLDER_KEY = '$TYPEDOC_INDEX';
 
-  if (!context.options.getValue('hidePageHeader')) {
+  if (!context.getOption('hidePageHeader')) {
     md.push(context.header(page));
   }
 
@@ -39,7 +39,7 @@ function getIndexReplacer(
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const md: string[] = [];
-  if (!context.options.getValue('hidePageTitle')) {
+  if (!context.getOption('hidePageTitle')) {
     md.push(heading(2, context.pageTitle(page)));
   }
   if (page.model.comment) {

@@ -1,5 +1,5 @@
+import { MarkdownThemeRenderContext } from '../..';
 import { NavigationItem } from '../../../theme/models';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -9,7 +9,7 @@ export function navigation(
   navigationItems: NavigationItem[],
 ): string {
   const title =
-    context.options.getValue('entryPoints')?.length > 1 ? 'Modules' : 'Exports';
+    context.getOption('entryPoints')?.length > 1 ? 'Modules' : 'Exports';
   const md: string[] = [`## ${title}\n`];
   navigationItems.forEach((navigationItem) => {
     if (navigationItem.url) {

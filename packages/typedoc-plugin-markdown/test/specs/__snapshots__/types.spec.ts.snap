@@ -10,7 +10,7 @@ exports[`Types: should compile 'tuple' type' 1`] = `"[\`string\`, \`number\`]"`;
 
 exports[`Types: should compile 'typeOperator' type ' 1`] = `"*unique* \`symbol\`"`;
 
-exports[`Types: should compile 'union' of literal declarations 1`] = `"\\{\`bar\`: \`" "\` \\| \`"string"\` \\| \`"strong|with|pipes"\` \\| \`"type\`with\`backticks"\` \\| \`"<foo>"\` \\| \`"*"\`;}"`;
+exports[`Types: should compile 'union' of literal declarations 1`] = `"\\{\`bar\`: \`" "\` \\| \`"string"\` \\| "strong\\|with\\|pipes" \\| "type\\\`with\\\`backticks" \\| \`"<foo>"\` \\| \`"*"\`;}"`;
 
 exports[`Types: should compile 'union' of string literals types' 1`] = `"\`"ease-in"\` \\| \`"ease-out"\`"`;
 

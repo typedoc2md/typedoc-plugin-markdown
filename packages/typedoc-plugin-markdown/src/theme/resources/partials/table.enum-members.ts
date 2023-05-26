@@ -1,7 +1,7 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { backTicks } from '../../../support/elements';
 import { stripLineBreaks } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 import { getDeclarationType } from '../../helpers';
 
 /**

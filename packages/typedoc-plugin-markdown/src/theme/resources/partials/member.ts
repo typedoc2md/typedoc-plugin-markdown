@@ -3,8 +3,8 @@ import {
   ReferenceReflection,
   ReflectionKind,
 } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading } from '../../../support/elements';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -16,7 +16,7 @@ export function member(
 ): string {
   const md: string[] = [];
 
-  if (context.options.getValue('namedAnchors')) {
+  if (context.getOption('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 

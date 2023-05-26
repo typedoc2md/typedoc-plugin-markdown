@@ -1,7 +1,7 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { backTicks } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
@@ -37,24 +37,8 @@ function hasKindTag(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
 ) {
-  if (context.options.getValue('hideKindPrefix')) {
-    return false;
-  }
-  if (
-    reflection.hasOwnDocument &&
-    !reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])
-  ) {
+  if (reflection.hasOwnDocument && !context.getOption('hideKindPrefix')) {
     return true;
   }
-  return (
-    context.options.getValue('excludeGroups') &&
-    reflection.kindOf([
-      ReflectionKind.Function,
-      ReflectionKind.Class,
-      ReflectionKind.Interface,
-      ReflectionKind.Variable,
-      ReflectionKind.TypeAlias,
-      ReflectionKind.Enum,
-    ])
-  );
+  return false;
 }

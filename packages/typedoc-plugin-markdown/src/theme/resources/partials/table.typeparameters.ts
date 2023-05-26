@@ -1,7 +1,7 @@
 import { TypeParameterReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, italic, table } from '../../../support/elements';
 import { stripLineBreaks, tableComments } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials

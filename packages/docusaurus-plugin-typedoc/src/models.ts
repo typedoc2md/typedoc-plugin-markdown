@@ -1,7 +1,9 @@
-export interface PluginOptions {
+import { PluginOptions as TypedocPluginMarkdownOptions } from 'typedoc-plugin-markdown';
+
+export interface PluginOptions extends TypedocPluginMarkdownOptions {
   id: string;
   docsRoot: string;
-  sidebar: SidebarOptions;
+  sidebar: Partial<SidebarOptions>;
 }
 
 export interface SidebarOptions {

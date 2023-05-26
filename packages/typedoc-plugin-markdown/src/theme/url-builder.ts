@@ -9,10 +9,10 @@ import {
   UrlMapping,
 } from 'typedoc';
 
-import { OutputFileStrategy } from '../../plugin/models';
-import { slugify } from '../../support/utils';
-import { TemplateMapping, UrlOption } from '../models';
+import { OutputFileStrategy } from '../plugin/options/custom-maps';
+import { slugify } from '../support/utils';
 import { MarkdownTheme } from './markdown-theme';
+import { TemplateMapping, UrlOption } from './models';
 
 export class UrlBuilder {
   urls: UrlMapping[] = [];
@@ -320,15 +320,7 @@ export class UrlBuilder {
 
   private getAnchorId(reflection: DeclarationReflection) {
     const anchorFormat = this.options.getValue('anchorFormat') as string;
-    const name: string[] = [];
-    if (
-      !this.options.getValue('hideKindPrefix') &&
-      this.options.getValue('excludeGroups')
-    ) {
-      name.push(ReflectionKind.singularString(reflection.kind));
-    }
-
-    name.push(reflection.name);
+    const name: string[] = [reflection.name];
 
     if (anchorFormat.toLowerCase() === 'lowercase') {
       return name.join('-').toLowerCase();

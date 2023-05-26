@@ -1,5 +1,5 @@
 import { UnionType } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
+import { MarkdownThemeRenderContext } from '../..';
 
 /**
  * @category Partials

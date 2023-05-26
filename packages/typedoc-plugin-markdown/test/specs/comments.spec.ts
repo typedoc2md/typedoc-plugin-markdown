@@ -1,5 +1,5 @@
 import { Comment, ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/theme/definition';
+import { MarkdownThemeRenderContext } from '../../src/theme';
 
 describe(`Comments:`, () => {
   let project: ProjectReflection;

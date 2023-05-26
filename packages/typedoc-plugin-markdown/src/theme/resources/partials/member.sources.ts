@@ -1,7 +1,7 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
+import { MarkdownThemeRenderContext } from '../..';
 import { heading, link } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
-import { MarkdownThemeRenderContext } from '../../definition/markdown-theme-render-context';
 
 /**
  * @category Partials
