@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0-next.2
+
+### Patch Changes
+
+- Allow presets to be overridden.
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.13
+
 ## 2.0.0-next.1 (2023-05-17)
 
 ### Patch Changes
