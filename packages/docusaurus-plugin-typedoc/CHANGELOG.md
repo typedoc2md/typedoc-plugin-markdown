@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0-next.13
+## 1.0.0-next.13 (2023-06-12)
 
 ### Patch Changes
 
