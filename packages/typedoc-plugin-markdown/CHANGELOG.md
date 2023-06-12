@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.14
+
+### Patch Changes
+
+- Export plugin options
+
 ## 4.0.0-next.13 (2023-05-26)
 
 ### Patch Changes
