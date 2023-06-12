@@ -44,7 +44,7 @@ export function members(
     pushCategories(container.categories, headingLevel);
   } else {
     if (
-      context.getOption('excludeGroups') &&
+      context.options.getValue('excludeGroups') &&
       container.kindOf([
         ReflectionKind.Project,
         ReflectionKind.Module,
@@ -76,12 +76,12 @@ export function members(
 
             if (
               isPropertiesGroup &&
-              context.getOption('propertiesFormat') === 'table'
+              context.options.getValue('propertiesFormat') === 'table'
             ) {
               md.push(context.propertiesTable(group.children));
             } else if (
               isEnumGroup &&
-              context.getOption('enumMembersFormat') === 'table'
+              context.options.getValue('enumMembersFormat') === 'table'
             ) {
               md.push(context.enumMembersTable(group.children));
             } else {

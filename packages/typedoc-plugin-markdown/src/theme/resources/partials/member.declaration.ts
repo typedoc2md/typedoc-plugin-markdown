@@ -21,7 +21,7 @@ export function declarationMember(
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (context.getOption('identifiersAsCodeBlocks')) {
+  if (context.options.getValue('identifiersAsCodeBlocks')) {
     md.push(codeBlock(context.declarationMemberIdentifier(declaration)));
   } else {
     md.push(

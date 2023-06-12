@@ -59,9 +59,9 @@ export class UrlBuilder {
     }
 
     if (
-      (this.options.getValue(
-        'entryPointStrategy',
-      ) as unknown as EntryPointStrategy) === EntryPointStrategy.Packages
+      this.options.getValue('entryPointStrategy') ===
+        EntryPointStrategy.Packages &&
+      !Boolean(project.groups)
     ) {
       project.children?.forEach((projectChild, projectChildIndex) => {
         const startIndex = hasReadme ? 2 : 1;

@@ -30,14 +30,14 @@ function projectHeader(
   context: MarkdownThemeRenderContext,
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
-  const entryFileName = context.getOption('entryFileName');
+  const entryFileName = context.options.getValue('entryFileName');
 
   const projectName = getProjectDisplayName(
     page.project,
-    context.getOption('includeVersion'),
+    context.options.getValue('includeVersion'),
   );
 
-  const hasReadme = !context.getOption('readme').endsWith('none');
+  const hasReadme = !context.options.getValue('readme').endsWith('none');
 
   const md: string[] = [];
 
@@ -45,7 +45,7 @@ function projectHeader(
 
   const links: string[] = [];
 
-  if (!context.getOption('readme')?.endsWith('none')) {
+  if (!context.options.getValue('readme')?.endsWith('none')) {
     if (page.url === entryFileName) {
       links.push('Readme');
     } else {
@@ -78,9 +78,9 @@ function packageHeader(
 
   const hasReadme = Boolean(packageItem.readme);
 
-  const readmeUrl = `${path.dirname(packageItem.url)}/${context.getOption(
-    'entryFileName',
-  )}`;
+  const readmeUrl = `${path.dirname(
+    packageItem.url || '',
+  )}/${context.options.getValue('entryFileName')}`;
 
   const md: string[] = [];
 

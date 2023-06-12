@@ -1,3 +1,2 @@
-import { PluginOptions as PluginOptionsToExport } from './models';
-export type PluginOptions = Partial<PluginOptionsToExport>;
+export { PluginOptions } from './models';
 export { default } from './plugin';

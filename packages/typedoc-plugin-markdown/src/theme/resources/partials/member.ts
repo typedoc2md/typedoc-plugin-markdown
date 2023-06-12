@@ -16,7 +16,7 @@ export function member(
 ): string {
   const md: string[] = [];
 
-  if (context.getOption('namedAnchors')) {
+  if (context.options.getValue('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 

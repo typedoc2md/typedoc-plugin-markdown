@@ -11,15 +11,15 @@ export function memberTemplate(
 ) {
   const md: string[] = [];
 
-  if (!context.getOption('hidePageHeader')) {
+  if (!context.options.getValue('hidePageHeader')) {
     md.push(context.header(page));
   }
 
-  if (!context.getOption('hideBreadcrumbs')) {
+  if (!context.options.getValue('hideBreadcrumbs')) {
     md.push(context.breadcrumbs(page));
   }
 
-  if (!context.getOption('hidePageTitle')) {
+  if (!context.options.getValue('hidePageTitle')) {
     md.push(heading(1, context.pageTitle(page)));
   }
 

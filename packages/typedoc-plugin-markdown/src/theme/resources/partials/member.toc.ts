@@ -15,7 +15,7 @@ export function memberTOC(
 ): string {
   const md: string[] = [];
 
-  const hideInPageTOC = context.getOption('hideInPageTOC');
+  const hideInPageTOC = context.options.getValue('hideInPageTOC');
 
   const isVisible = reflection.groups?.some((group) =>
     group.allChildrenHaveOwnDocument(),
@@ -35,7 +35,7 @@ export function memberTOC(
         md.push(getGroup(context, item) + '\n');
       });
     } else {
-      if (context.getOption('excludeGroups') && reflection.children) {
+      if (context.options.getValue('excludeGroups') && reflection.children) {
         const group = { title: 'Members', children: reflection.children };
         md.push(getGroup(context, group as ReflectionGroup) + '\n');
       } else {
@@ -63,7 +63,7 @@ export function memberTOC(
 }
 
 function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  if (context.getOption('tocFormat') === 'table') {
+  if (context.options.getValue('tocFormat') === 'table') {
     return getTable(context, group);
   }
   return getList(context, group);

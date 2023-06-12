@@ -9,7 +9,7 @@ export function navigation(
   navigationItems: NavigationItem[],
 ): string {
   const title =
-    context.getOption('entryPoints')?.length > 1 ? 'Modules' : 'Exports';
+    context.options.getValue('entryPoints')?.length > 1 ? 'Modules' : 'Exports';
   const md: string[] = [`## ${title}\n`];
   navigationItems.forEach((navigationItem) => {
     if (navigationItem.url) {

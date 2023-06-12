@@ -16,7 +16,7 @@ export function typeDeclarationMember(
 ) {
   const md: string[] = [];
   if (typeDeclaration.children) {
-    if (context.getOption('typeDeclarationFormat') === 'table') {
+    if (context.options.getValue('typeDeclarationFormat') === 'table') {
       md.push(context.propertiesTable(typeDeclaration.children, 'Member'));
     } else {
       const list = typeDeclaration.children.map((declarationChild) => {

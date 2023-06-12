@@ -18,7 +18,7 @@ export function signatureMember(
   const md: string[] = [];
 
   if (showSources) {
-    if (context.getOption('identifiersAsCodeBlocks')) {
+    if (context.options.getValue('identifiersAsCodeBlocks')) {
       md.push(codeBlock(context.signatureMemberIdentifier(signature)));
     } else {
       md.push(`> ${context.signatureMemberIdentifier(signature)}`);

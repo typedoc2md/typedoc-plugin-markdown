@@ -1,6 +1,6 @@
 module.exports = {
-  ...require('./typedoc.base'),
-  plugin: ['typedoc-plugin-markdown', 'typedoc-plugin-mdn-links'],
+  ...require('./typedoc.base.cjs'),
+  plugin: ['typedoc-plugin-markdown'],
   hideInPageTOC: false,
   indexPageTitle: 'Overview',
   identifiersAsCodeBlocks: true,

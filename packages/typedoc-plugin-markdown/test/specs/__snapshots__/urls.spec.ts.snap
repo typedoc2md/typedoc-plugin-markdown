@@ -28,6 +28,16 @@ exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeF
 ]
 `;
 
+exports[`Urls: (Monorepo) should get urls for single package (entryPointStrategy=packages) 1`] = `
+[
+  "README.md",
+  "API.md",
+  "namespaces/namespace.Validation/README.md",
+  "namespaces/namespace.Validation/variables/variable.numberRegexp.md",
+  "variables/variable.hello.md",
+]
+`;
+
 exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] = `
 [
   "README.md",

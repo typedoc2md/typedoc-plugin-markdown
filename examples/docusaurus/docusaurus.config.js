@@ -29,6 +29,7 @@ const config = {
   plugins: [
     [
       'docusaurus-plugin-typedoc',
+      /** @type {import("typedoc").TypeDocOptions & import("../../packages/docusaurus-plugin-typedoc/dist").PluginOptions} */
       {
         id: 'api-1',
         out: 'api-1',

@@ -16,7 +16,10 @@ export function reflectionMember(
     md.push(context.comment(reflection.comment, headingLevel));
   }
 
-  if (!context.getOption('hideHierarchy') && reflection.typeHierarchy?.next) {
+  if (
+    !context.options.getValue('hideHierarchy') &&
+    reflection.typeHierarchy?.next
+  ) {
     md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
   }
 

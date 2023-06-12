@@ -15,7 +15,7 @@ export function breadcrumbs(
 
   if (
     page.url === page.project.url ||
-    page.url === context.getOption('entryFileName')
+    page.url === context.options.getValue('entryFileName')
   ) {
     return '';
   }
@@ -34,7 +34,7 @@ export function breadcrumbs(
   if (
     page.model?.parent?.parent &&
     (page.url !== page.project.url ||
-      page.url !== context.getOption('entryFileName'))
+      page.url !== context.options.getValue('entryFileName'))
   ) {
     breadcrumb(page.model.parent);
   }

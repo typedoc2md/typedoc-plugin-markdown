@@ -37,7 +37,10 @@ function hasKindTag(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
 ) {
-  if (reflection.hasOwnDocument && !context.getOption('hideKindPrefix')) {
+  if (
+    reflection.hasOwnDocument &&
+    !context.options.getValue('hideKindPrefix')
+  ) {
     return true;
   }
   return false;

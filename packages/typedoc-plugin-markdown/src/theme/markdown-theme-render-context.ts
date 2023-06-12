@@ -1,6 +1,5 @@
 import * as path from 'path';
 import { Options, PageEvent, Reflection } from 'typedoc';
-import { PluginOptions } from '../plugin/options/model';
 
 /* start_imports */
 import { breadcrumbs } from './resources/partials/breadcrumbs';
@@ -68,10 +67,6 @@ export class MarkdownThemeRenderContext {
     public page: PageEvent<Reflection> | null,
     public options: Options,
   ) {}
-
-  getOption<K extends keyof PluginOptions>(name: K) {
-    return this.options.getValue(name) as PluginOptions[K];
-  }
 
   urlTo = (reflection: Reflection) => {
     return this.relativeURL(reflection.url);

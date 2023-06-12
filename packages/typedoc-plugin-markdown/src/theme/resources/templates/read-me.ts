@@ -13,7 +13,7 @@ export function readmeTemplate(
 
   const INDEX_PLACEHOLDER_KEY = '$TYPEDOC_INDEX';
 
-  if (!context.getOption('hidePageHeader')) {
+  if (!context.options.getValue('hidePageHeader')) {
     md.push(context.header(page));
   }
 
@@ -39,7 +39,7 @@ function getIndexReplacer(
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const md: string[] = [];
-  if (!context.getOption('hidePageTitle')) {
+  if (!context.options.getValue('hidePageTitle')) {
     md.push(heading(2, context.pageTitle(page)));
   }
   if (page.model.comment) {

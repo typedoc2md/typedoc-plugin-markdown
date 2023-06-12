@@ -24,16 +24,19 @@ export function pageTOC(
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
         Boolean(projectPackage.readme)
-          ? `${path.dirname(projectPackage.url || '')}/${context.getOption(
-              'entryFileName',
-            )}`
+          ? `${path.dirname(
+              projectPackage.url || '',
+            )}/${context.options.getValue('entryFileName')}`
           : projectPackage.url,
       )})`;
     });
     md.push(packagesList?.join('\n') || '');
     return md.join('\n\n');
   }
-  if (page.model.groups && context.getOption('entryPoints').length === 1) {
+  if (
+    page.model.groups &&
+    context.options.getValue('entryPoints').length === 1
+  ) {
     md.push(context.memberTOC(page.model, headingLevel));
     return md.join('\n\n');
   }
@@ -43,7 +46,7 @@ export function pageTOC(
 }
 
 function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  if (context.getOption('tocFormat') === 'table') {
+  if (context.options.getValue('tocFormat') === 'table') {
     return getTable(context, group);
   }
   return getList(context, group);

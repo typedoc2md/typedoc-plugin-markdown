@@ -13,10 +13,10 @@ export function pageTitle(
 
   if (page.model?.url === page.project.url) {
     md.push(
-      (context.getOption('indexPageTitle') as string) ||
+      (context.options.getValue('indexPageTitle') as string) ||
         getProjectDisplayName(
           page.project,
-          context.getOption('includeVersion'),
+          context.options.getValue('includeVersion'),
         ),
     );
   } else {

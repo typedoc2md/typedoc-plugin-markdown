@@ -47,24 +47,26 @@ fs.writeFileSync(
   prettier.format(docsMd.join('\n\n'), { parser: 'markdown' }),
 );
 
-const output = [
-  `
-  /**
-   * THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
-   */
-  import { TypeDocOptions } from 'typedoc';
+const optionsOutput = `
+  // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
 
-  export interface PluginOptions extends TypeDocOptions  {`,
-];
+  declare module 'typedoc' {
+    export interface TypeDocOptionMap {
+      ${Object.entries(optionsConfig)
+        .map(([key, option], i) => {
+          return `${option.name}: ${getType(option)};`;
+        })
+        .join('\n')}
+    }
+  }
 
-Object.entries(optionsConfig).forEach(([key, option], i) => {
-  output.push(`/**
-* ${option.help}
-*/
-${option.name}: ${getType(option)};`);
-});
-
-output.push('}');
+  export interface PluginOptions {
+    ${Object.entries(optionsConfig)
+      .map(([key, option], i) => {
+        return `${option.name}: ${getType(option)};`;
+      })
+      .join('\n')}
+  }`;
 
 const optionsModelFile = path.join(
   __dirname,
@@ -72,12 +74,12 @@ const optionsModelFile = path.join(
   'src',
   'plugin',
   'options',
-  'model.ts',
+  'models.ts',
 );
 
 fs.writeFileSync(
   optionsModelFile,
-  prettier.format(output.join('\n'), {
+  prettier.format(optionsOutput, {
     parser: 'typescript',
     singleQuote: true,
     trailingComma: 'all',

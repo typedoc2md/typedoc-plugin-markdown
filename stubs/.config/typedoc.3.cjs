@@ -1,7 +1,7 @@
 module.exports = {
-  ...require('./typedoc.base'),
+  ...require('./typedoc.base.cjs'),
   plugin: ['typedoc-plugin-markdown'],
-  entryPoints: ['src/monorepo/packages/*'],
+  entryPoints: ['../src/monorepo/packages/*'],
   name: 'Packages Example',
   entryPointStrategy: 'packages',
   includeVersion: true,

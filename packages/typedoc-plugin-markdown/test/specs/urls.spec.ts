@@ -138,5 +138,17 @@ describe(`Urls:`, () => {
       );
       expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
     });
+
+    test(`should get urls for single package (entryPointStrategy=packages)`, async () => {
+      const { project, theme } = await global.bootstrap(
+        ['monorepo/packages/package-1'],
+        {
+          options: {
+            entryPointStrategy: 'packages',
+          },
+        },
+      );
+      expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+    });
   });
 });

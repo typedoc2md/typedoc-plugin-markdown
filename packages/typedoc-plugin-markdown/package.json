@@ -17,10 +17,10 @@
     "build-and-test": "npm run build && npm run test",
     "api-docs": "npm run build && typedoc --options ./typedoc.api.js --out ./docs/api",
     "docs": "npm run build && npm-run-all docs:*",
-    "docs:md-1": "typedoc --options ../../stubs/typedoc.1.js --out ./out/md/md-1",
-    "docs:md-2": "typedoc --options ../../stubs/typedoc.2.js --out ./out/md/md-2",
-    "docs:md-3": "typedoc --options ../../stubs/typedoc.3.js --out ./out/md/md-3",
-    "docs:html": "typedoc --options ../../stubs/typedoc.base.js  --out ./out/html",
+    "docs:md-1": "typedoc --options ../../stubs/.config/typedoc.1.cjs --out ./out/md/md-1",
+    "docs:md-2": "typedoc --options ../../stubs/.config/typedoc.2.cjs --out ./out/md/md-2",
+    "docs:md-3": "typedoc --options ../../stubs/.config/typedoc.3.cjs --out ./out/md/md-3",
+    "docs:html": "typedoc --options ../../stubs/.config/typedoc.base.cjs  --out ./out/html",
     "task:build-options": "ts-node scripts/build-options",
     "task:build-resources": "ts-node scripts/build-resources"
   },
@@ -46,8 +46,5 @@
   "peerDependencies": {
     "prettier": ">=1.8.0",
     "typedoc": ">=0.24.0"
-  },
-  "devDependencies": {
-    "typedoc-plugin-merge-modules": "^5.0.0"
   }
 }
