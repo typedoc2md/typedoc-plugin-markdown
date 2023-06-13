@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.15
+
+### Patch Changes
+
+- Remove namespace from module filenames
+
 ## 4.0.0-next.14 (2023-06-12)
 
 ### Patch Changes
