@@ -256,7 +256,7 @@ export class UrlBuilder {
         if (path.parse(this.options.getValue('entryFileName')).name === alias) {
           return this.options.getValue('skipIndexPage') &&
             this.options.getValue('readme').endsWith('none')
-            ? this.getPartName(alias, options.pagePosition)
+            ? alias
             : this.getPartName(`module.${alias}`, options.pagePosition);
         }
         return this.getPartName(alias, options.pagePosition);
