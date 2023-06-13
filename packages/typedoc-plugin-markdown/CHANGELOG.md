@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.16
+
+### Patch Changes
+
+- Omit number prefixes from index files
+
 ## 4.0.0-next.15 (2023-06-13)
 
 ### Patch Changes
