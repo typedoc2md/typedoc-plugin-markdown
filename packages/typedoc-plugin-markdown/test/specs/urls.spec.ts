@@ -79,6 +79,31 @@ describe(`Urls:`, () => {
       );
       expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
     });
+
+    test(`should get urls with a module named index and entryFile named index`, async () => {
+      const { project, theme } = await global.bootstrap(
+        ['index.ts', 'declarations.ts'],
+        {
+          options: { entryFileName: 'index.md', outputFileStrategy: 'modules' },
+        },
+      );
+      expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+    });
+
+    test(`should get urls with a module named index and entryFile named index without an index page`, async () => {
+      const { project, theme } = await global.bootstrap(
+        ['index.ts', 'declarations.ts'],
+        {
+          options: {
+            entryFileName: 'index.md',
+            outputFileStrategy: 'modules',
+            skipIndexPage: true,
+            readme: 'none',
+          },
+        },
+      );
+      expect(theme.getUrls(project).map((url) => url.url)).toMatchSnapshot();
+    });
   });
 
   describe(`(Single entrypoint)`, () => {

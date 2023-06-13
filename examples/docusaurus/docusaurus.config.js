@@ -33,7 +33,7 @@ const config = {
       {
         id: 'api-1',
         out: 'api-1',
-        options: '../../stubs/typedoc.1.js',
+        options: '../../stubs/.config/typedoc.1.cjs',
         sidebar: {
           autoConfiguration: true,
         },
@@ -45,7 +45,7 @@ const config = {
       {
         id: 'api-2',
         out: 'api-2',
-        options: '../../stubs/typedoc.2.js',
+        options: '../../stubs/.config/typedoc.2.cjs',
         sidebar: {
           autoConfiguration: true,
           position: 1,
@@ -61,7 +61,7 @@ const config = {
       {
         id: 'api-3',
         out: 'api-3',
-        options: '../../stubs/typedoc.3.js',
+        options: '../../stubs/.config/typedoc.3.cjs',
         sidebar: {
           autoConfiguration: true,
         },

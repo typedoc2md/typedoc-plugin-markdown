@@ -252,6 +252,16 @@ export class UrlBuilder {
         return null;
       }
 
+      if (reflection.kindOf(ReflectionKind.Module)) {
+        if (path.parse(this.options.getValue('entryFileName')).name === alias) {
+          return this.options.getValue('skipIndexPage') &&
+            this.options.getValue('readme').endsWith('none')
+            ? this.getPartName(alias, options.directoryPosition)
+            : `module.${alias}`;
+        }
+        return this.getPartName(alias, options.directoryPosition);
+      }
+
       return options.directory
         ? this.getPartName(options.directory, options.directoryPosition)
         : `${this.getPartName(
@@ -275,6 +285,7 @@ export class UrlBuilder {
         return path.parse(this.options.getValue('entryFileName') as string)
           .name;
       }
+
       return `${this.getPartName(
         slugify(ReflectionKind.singularString(reflection.kind)),
         options.pagePosition,
