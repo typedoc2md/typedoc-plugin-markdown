@@ -99,6 +99,7 @@ describe(`Urls:`, () => {
             outputFileStrategy: 'modules',
             skipIndexPage: true,
             readme: 'none',
+            includeFileNumberPrefixes: true,
           },
         },
       );

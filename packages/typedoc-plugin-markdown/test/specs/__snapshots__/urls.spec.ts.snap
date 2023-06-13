@@ -102,29 +102,29 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, incl
   "02-categories/03-Functions/02-CategoryB/01-function.categoryFunctionB2.md",
   "02-categories/03-Functions/03-Other/01-function.otherFunctionA.md",
   "02-categories/03-Functions/03-Other/02-function.otherFunctionB.md",
-  "02-modules_module_1/README.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/README.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/README.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/01-Variables/01-variable.nestedNamespaceVariable.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/02-Enumerations/01-enumeration.NamespaceEnum.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/03-Classes/01-class.NameSpaceClassA.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/04-Interfaces/01-interface.NamespaceInterface.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/05-Type Aliases/01-type-alias.NamespaceTypeLiteral.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/01-variable.namespaceVariableA.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/02-variable.namespaceVariableB.md",
-  "02-modules_module_1/01-Namespaces/02-namespace.someNameSpaceB/README.md",
-  "02-modules_module_1/02-Enumerations/01-enumeration.Module1EnumA.md",
-  "02-modules_module_1/02-Enumerations/02-enumeration.Module1EnumB.md",
-  "02-modules_module_1/03-Classes/01-class.Module1ClassA.md",
-  "02-modules_module_1/03-Classes/02-class.Module1ClassB.md",
-  "02-modules_module_1/04-Interfaces/01-interface.Module1InterfaceA.md",
-  "02-modules_module_1/04-Interfaces/02-interface.Module1InterfaceB.md",
-  "02-modules_module_1/05-Type Aliases/01-type-alias.Module1TypeLiteralA.md",
-  "02-modules_module_1/05-Type Aliases/02-type-alias.Module1TypeLiteralB.md",
-  "02-modules_module_1/06-Variables/01-variable.module1VariableA.md",
-  "02-modules_module_1/06-Variables/02-variable.module1VariableB.md",
-  "02-modules_module_1/07-Functions/01-function.module1FunctionA.md",
-  "02-modules_module_1/07-Functions/02-function.module1FunctionB.md",
+  "03-modules_module_1/README.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/README.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/README.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/01-Variables/01-variable.nestedNamespaceVariable.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/02-Enumerations/01-enumeration.NamespaceEnum.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/03-Classes/01-class.NameSpaceClassA.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/04-Interfaces/01-interface.NamespaceInterface.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/05-Type Aliases/01-type-alias.NamespaceTypeLiteral.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/01-variable.namespaceVariableA.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/02-variable.namespaceVariableB.md",
+  "03-modules_module_1/01-Namespaces/02-namespace.someNameSpaceB/README.md",
+  "03-modules_module_1/02-Enumerations/01-enumeration.Module1EnumA.md",
+  "03-modules_module_1/02-Enumerations/02-enumeration.Module1EnumB.md",
+  "03-modules_module_1/03-Classes/01-class.Module1ClassA.md",
+  "03-modules_module_1/03-Classes/02-class.Module1ClassB.md",
+  "03-modules_module_1/04-Interfaces/01-interface.Module1InterfaceA.md",
+  "03-modules_module_1/04-Interfaces/02-interface.Module1InterfaceB.md",
+  "03-modules_module_1/05-Type Aliases/01-type-alias.Module1TypeLiteralA.md",
+  "03-modules_module_1/05-Type Aliases/02-type-alias.Module1TypeLiteralB.md",
+  "03-modules_module_1/06-Variables/01-variable.module1VariableA.md",
+  "03-modules_module_1/06-Variables/02-variable.module1VariableB.md",
+  "03-modules_module_1/07-Functions/01-function.module1FunctionA.md",
+  "03-modules_module_1/07-Functions/02-function.module1FunctionB.md",
 ]
 `;
 
@@ -133,10 +133,10 @@ exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, outp
   "README.md",
   "01-API.md",
   "02-categories.md",
-  "02-modules_module_1/README.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/README.md",
-  "02-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace.md",
-  "02-modules_module_1/01-Namespaces/02-namespace.someNameSpaceB.md",
+  "03-modules_module_1/README.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/README.md",
+  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace.md",
+  "03-modules_module_1/01-Namespaces/02-namespace.someNameSpaceB.md",
 ]
 `;
 
@@ -246,8 +246,8 @@ exports[`Urls: (Multiple entrypoints) should get urls with a module named index 
 
 exports[`Urls: (Multiple entrypoints) should get urls with a module named index and entryFile named index without an index page 1`] = `
 [
-  "declarations.md",
-  "index.md",
+  "01-declarations.md",
+  "02-index.md",
 ]
 `;
 
