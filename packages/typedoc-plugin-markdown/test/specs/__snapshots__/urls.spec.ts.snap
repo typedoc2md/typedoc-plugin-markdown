@@ -247,7 +247,7 @@ exports[`Urls: (Multiple entrypoints) should get urls with a module named index 
 exports[`Urls: (Multiple entrypoints) should get urls with a module named index and entryFile named index without an index page 1`] = `
 [
   "01-declarations.md",
-  "02-index.md",
+  "index.md",
 ]
 `;
 
