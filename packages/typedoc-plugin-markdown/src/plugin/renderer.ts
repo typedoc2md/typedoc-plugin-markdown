@@ -5,9 +5,12 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import * as prettier from 'prettier';
 import {
   DeclarationReflection,
+  PageEvent,
   ProjectReflection,
+  Reflection,
   RendererEvent,
 } from 'typedoc';
 import { NavigationItem } from '../theme/models';
@@ -98,8 +101,6 @@ export async function renderMarkdown(
   output.urls = this.theme!.getUrls(project);
   output.navigation = this.theme!.getNavigation(project);
 
-  this.trigger(output);
-
   await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
 
   this.preRenderAsyncJobs = [];
@@ -108,14 +109,48 @@ export async function renderMarkdown(
     `There are ${output.urls?.length} pages to write.`,
   );
 
+  // Resolve prettier config options
+  const prettierConfigFile = await prettier.resolveConfigFile();
+
+  const prettierOptions = prettierConfigFile
+    ? await prettier.resolveConfig(prettierConfigFile)
+    : {};
+
   output.urls
     ?.filter(
       (urlMapping) =>
         urlMapping.model instanceof ProjectReflection ||
         urlMapping.model instanceof DeclarationReflection,
     )
-    .forEach((urlMapping) => {
-      this.renderDocument(...output.createPageEvent(urlMapping));
+    .forEach(async (urlMapping) => {
+      const [template, page] = output.createPageEvent(urlMapping);
+
+      this.trigger(PageEvent.BEGIN, page);
+      if (page.isDefaultPrevented) {
+        return false;
+      }
+
+      if (page.model instanceof Reflection) {
+        page.contents = this.theme!.render(page, template);
+      } else {
+        throw new Error('Should be unreachable');
+      }
+
+      this.trigger(PageEvent.END, page);
+
+      if (page.isDefaultPrevented) {
+        return false;
+      }
+
+      try {
+        const formattedContents = await prettier.format(
+          page.contents as string,
+          { parser: 'markdown', ...(prettierOptions && prettierOptions) },
+        );
+        writeFileSync(page.filename, formattedContents);
+      } catch (error) {
+        this.application.logger.error(`Could not write ${page.filename}`);
+      }
     });
 
   await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
@@ -125,4 +160,13 @@ export async function renderMarkdown(
   this.trigger(RendererEvent.END, output);
 
   this.theme = void 0;
+}
+
+export function writeFileSync(fileName: string, data: string) {
+  fs.mkdirSync(path.dirname(normalizePath(fileName)), { recursive: true });
+  fs.writeFileSync(normalizePath(fileName), data);
+}
+
+export function normalizePath(path: string) {
+  return path.replace(/\\/g, '/');
 }

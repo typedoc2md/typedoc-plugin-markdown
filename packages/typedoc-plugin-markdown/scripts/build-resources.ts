@@ -76,23 +76,25 @@ const data = fs
   /* end_resources */`,
   );
 
-fs.writeFileSync(
-  themeRenderContextFile,
-  prettier.format(data, {
+prettier
+  .format(data, {
     parser: 'typescript',
     singleQuote: true,
     trailingComma: 'all',
-  }),
-);
+  })
+  .then((formatted) => {
+    fs.writeFileSync(themeRenderContextFile, formatted);
+  });
 
-fs.writeFileSync(
-  partialsBarrelFile,
-  prettier.format(exportsOut.join('\n'), {
+prettier
+  .format(exportsOut.join('\n'), {
     parser: 'typescript',
     singleQuote: true,
     trailingComma: 'all',
-  }),
-);
+  })
+  .then((formatted) => {
+    fs.writeFileSync(partialsBarrelFile, formatted);
+  });
 
 function getFiles(type: string) {
   const partialsFolder = path.join(resourcesPath, type);

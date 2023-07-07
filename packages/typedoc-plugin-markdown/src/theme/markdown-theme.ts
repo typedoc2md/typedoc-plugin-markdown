@@ -1,4 +1,3 @@
-import { Options, format, resolveConfig, resolveConfigFile } from 'prettier';
 import {
   DeclarationReflection,
   PageEvent,
@@ -20,11 +19,6 @@ import { UrlBuilder } from './url-builder';
  */
 export class MarkdownTheme extends Theme {
   /**
-   * The resolved Prettier options.
-   */
-  private prettierOptions: Options | null;
-
-  /**
    *
    * @param renderer The TypeDoc renderer instance the theme is attached to.
    */
@@ -37,19 +31,6 @@ export class MarkdownTheme extends Theme {
    */
   getRenderContext(pageEvent: PageEvent<Reflection> | null) {
     return new MarkdownThemeRenderContext(pageEvent, this.application.options);
-  }
-
-  /**
-   * Returns memoized {@link prettierOptions} using Prettier APIs to resolve the config.
-   */
-  private getPrettierOptions() {
-    if (!this.prettierOptions) {
-      const prettierFile = resolveConfigFile.sync();
-      this.prettierOptions = prettierFile
-        ? resolveConfig.sync(prettierFile)
-        : null;
-    }
-    return this.prettierOptions;
   }
 
   readmeTemplate = (pageEvent: PageEvent<ProjectReflection>) => {
@@ -69,16 +50,13 @@ export class MarkdownTheme extends Theme {
   };
 
   /**
-   * Renders a template and page model to a Prettier formatted markdown string.
+   * Renders a template and page model to a string.
    */
   render(
     page: PageEvent<Reflection>,
     template: RenderTemplate<PageEvent<Reflection>>,
   ): string {
-    return format(template(page) as string, {
-      ...this.getPrettierOptions(),
-      parser: 'markdown',
-    });
+    return template(page) as string;
   }
 
   /**

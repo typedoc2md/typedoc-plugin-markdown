@@ -42,10 +42,11 @@ Object.entries(optionsConfig).forEach(([key, value], i) => {
   docsMd.push(comments.join('\n\n'));
 });
 
-fs.writeFileSync(
-  docsFile,
-  prettier.format(docsMd.join('\n\n'), { parser: 'markdown' }),
-);
+prettier
+  .format(docsMd.join('\n\n'), { parser: 'markdown' })
+  .then((formatted) => {
+    fs.writeFileSync(docsFile, formatted);
+  });
 
 const optionsOutput = `
   // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
@@ -77,14 +78,15 @@ const optionsModelFile = path.join(
   'models.ts',
 );
 
-fs.writeFileSync(
-  optionsModelFile,
-  prettier.format(optionsOutput, {
+prettier
+  .format(optionsOutput, {
     parser: 'typescript',
     singleQuote: true,
     trailingComma: 'all',
-  }),
-);
+  })
+  .then((formatted) => {
+    fs.writeFileSync(optionsModelFile, formatted);
+  });
 
 function getType(option: Partial<DeclarationOption>) {
   if (option.type === ParameterType.Boolean) {
@@ -113,17 +115,21 @@ Object.entries(optionsConfig).forEach(([key, option], i) => {
       : ''
   } \n`);
 });
-const data = fs
-  .readFileSync(readmeFile)
-  ?.toString()
-  .replace(
-    /<!-- START OPTIONS -->((.|\n)*)\<!-- END OPTIONS -->/g,
-    `<!-- START OPTIONS -->
-${prettier.format(optionsMd.join('\n'), { parser: 'markdown' })}
-<!-- END OPTIONS -->`,
-  );
 
-fs.writeFileSync(readmeFile, data);
+prettier
+  .format(optionsMd.join('\n'), { parser: 'markdown' })
+  .then((formatted) => {
+    const data = fs
+      .readFileSync(readmeFile)
+      ?.toString()
+      .replace(
+        /<!-- START OPTIONS -->((.|\n)*)\<!-- END OPTIONS -->/g,
+        `<!-- START OPTIONS -->
+${formatted}
+<!-- END OPTIONS -->`,
+      );
+    fs.writeFileSync(readmeFile, data);
+  });
 
 function getDefaultValue(option: DeclarationOption) {
   if (option.type !== ParameterType.Flags) {

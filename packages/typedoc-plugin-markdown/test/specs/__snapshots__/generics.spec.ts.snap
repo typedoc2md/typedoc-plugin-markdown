@@ -55,7 +55,7 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 | Parameter | Default | Description |
 | :------ | :------ | :------ |
 | \`A\` | - | [partial: comment] |
-| \`B\` *extends* [\`ClassWithTypeParams\`](classes/class.ClassWithTypeParams.md)\\< \`string\`, \`number\`, \`B\` \\> | - | [partial: comment] |
+| \`B\` *extends* [\`ClassWithTypeParams\`](classes/class.ClassWithTypeParams.md)\\< \`string\`, \`number\` \\> | - | [partial: comment] |
 | \`C\` | \`string\` \\| \`boolean\` | - |
 | \`D\` | \`string\` | - |
 
