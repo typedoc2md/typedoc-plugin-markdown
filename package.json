@@ -12,7 +12,7 @@
     "build": "npm run build --workspaces",
     "test": "NODE_OPTIONS=\"--experimental-vm-modules --max-old-space-size=4096\" npm run test --workspace=typedoc-plugin-markdown",
     "prerelease": "npm run build",
-    "release": "npx changeset publish"
+    "release": "NODE_OPTIONS=\"--experimental-vm-modules --max-old-space-size=4096\" npx changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
