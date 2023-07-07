@@ -11,6 +11,7 @@ module.exports = {
   },
   verbose: true,
   setupFiles: [path.join(__dirname, 'jest.helpers.ts')],
-  maxWorkers: '50%',
+  maxWorkers: '2',
   testTimeout: 30000,
+  updateSnapshot: false,
 };
