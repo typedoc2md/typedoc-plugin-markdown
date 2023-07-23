@@ -9,5 +9,4 @@ module.exports = {
   typeDeclarationFormat: 'table',
   readme: 'none',
   outputFileStrategy: 'modules',
-  excludeGroups: true,
 };

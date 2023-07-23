@@ -43,12 +43,39 @@ exports[`Navigation: (Monorepo) should get urls (entryPointStrategy=packages) 1`
       {
         "children": [
           {
-            "children": [],
-            "title": "hello",
-            "url": "child-package-2/variables/variable.hello-1.md",
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "hello",
+                    "url": "child-package-2/module1/variables/variable.hello.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "module1",
+            "url": "child-package-2/module1/README.md",
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "hello",
+                    "url": "child-package-2/module2/variables/variable.hello.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "module2",
+            "url": "child-package-2/module2/README.md",
           },
         ],
-        "title": "Variables",
+        "title": "Modules",
       },
     ],
     "title": "child-package-2",
@@ -99,12 +126,39 @@ exports[`Navigation: (Monorepo) should get urls (entryPointStrategy=packages, in
       {
         "children": [
           {
-            "children": [],
-            "title": "hello",
-            "url": "03-child-package-2/01-Variables/01-variable.hello-1.md",
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "hello",
+                    "url": "03-child-package-2/01-module1/01-Variables/01-variable.hello.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "module1",
+            "url": "03-child-package-2/01-module1/README.md",
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "title": "hello",
+                    "url": "03-child-package-2/02-module2/01-Variables/01-variable.hello.md",
+                  },
+                ],
+                "title": "Variables",
+              },
+            ],
+            "title": "module2",
+            "url": "03-child-package-2/02-module2/README.md",
           },
         ],
-        "title": "Variables",
+        "title": "Modules",
       },
     ],
     "title": "child-package-2",

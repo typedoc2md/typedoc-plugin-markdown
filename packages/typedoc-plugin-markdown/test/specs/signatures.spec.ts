@@ -185,7 +185,7 @@ describe(`Signatures:`, () => {
       context.signatureMember(
         (project.getChildByName('ClassWithConstructor') as any).children[0]
           .signatures[0] as SignatureReflection,
-        2,
+        3,
       ),
     ).toMatchSnapshot();
   });

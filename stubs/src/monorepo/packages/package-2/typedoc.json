@@ -1,5 +1,5 @@
 {
   "extends": ["../../typedoc.base.json"],
-  "entryPoints": ["./index.ts"],
+  "entryPoints": ["./module1.ts", "./module2.ts"],
   "readme": "none"
 }

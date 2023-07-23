@@ -10,7 +10,10 @@ exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
   "child-package/namespaces/namespace.Validation/variables/variable.numberRegexp.md",
   "child-package/variables/variable.hello.md",
   "child-package-2/README.md",
-  "child-package-2/variables/variable.hello-1.md",
+  "child-package-2/module1/README.md",
+  "child-package-2/module1/variables/variable.hello.md",
+  "child-package-2/module2/README.md",
+  "child-package-2/module2/variables/variable.hello.md",
 ]
 `;
 
@@ -24,7 +27,10 @@ exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeF
   "02-child-package/02-Namespaces/02-namespace.Validation/01-Variables/01-variable.numberRegexp.md",
   "02-child-package/03-Variables/02-variable.hello.md",
   "03-child-package-2/README.md",
-  "03-child-package-2/01-Variables/01-variable.hello-1.md",
+  "03-child-package-2/01-module1/README.md",
+  "03-child-package-2/01-module1/01-Variables/01-variable.hello.md",
+  "03-child-package-2/02-module2/README.md",
+  "03-child-package-2/02-module2/01-Variables/01-variable.hello.md",
 ]
 `;
 

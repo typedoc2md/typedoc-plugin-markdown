@@ -37,9 +37,11 @@ exports[`Signatures: should compile callable signature' 1`] = `
 `;
 
 exports[`Signatures: should compile class with constructor' 1`] = `
-"> **new ClassWithConstructor**(\`x\`, \`y\`): [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
+"## new ClassWithConstructor()
 
-## Parameters
+> **new ClassWithConstructor**(\`x\`, \`y\`): [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
+
+### Parameters
 
 
 | Parameter | Type |
@@ -48,7 +50,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 | \`y\` | \`string\` |
 
 
-## Returns
+### Returns
 
 [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
 

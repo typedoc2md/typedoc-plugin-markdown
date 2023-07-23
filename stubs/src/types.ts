@@ -7,7 +7,7 @@ export let externalReference: HTMLElement;
 export const externalReferenceInsideTypeParams = new ClassWithTypeParams<
   HTMLElement,
   Error
->();
+>('x');
 
 export let stringType: string;
 

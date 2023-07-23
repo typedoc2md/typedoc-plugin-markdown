@@ -1,9 +1,13 @@
 /**
  * Comments for typeParams
- * @typeparam T - Some type param
- * @typeparam V - Some other type param
  */
 export class ClassWithTypeParams<T, V> {
+  propT: T;
+  propV: V;
+  constructor(x: string) {}
+}
+
+export interface InterfaceWithTypeParams<T, V> {
   propT: T;
   propV: V;
 }

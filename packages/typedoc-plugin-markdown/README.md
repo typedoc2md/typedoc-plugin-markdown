@@ -105,10 +105,6 @@ Below is a summary of the available options:
 
 > Do not print page title. Defaults to `false`.
 
-**`--hideKindPrefix`** `boolean`
-
-> Do not print the kind label as a title prefix. Defaults to `false`.
-
 **`--hideBreadcrumbs`** `boolean`
 
 > Do not print breadcrumbs. Defaults to `false`.
@@ -149,9 +145,13 @@ Below is a summary of the available options:
 
 > The anchor format to use when linking to internal symbols. Defaults to `lowercase`.
 
-**`--anchorPattern`** `string`
+**`--anchorTemplate`** `string`
 
-> The anchor pattern to use when linking to internal symbols. Defaults to `undefined`. <small>[more »](./docs/usage/options.md#anchorpattern)</small>
+> The anchor template to use when linking to internal symbols. Defaults to `undefined`. <small>[more »](./docs/usage/options.md#anchortemplate)</small>
+
+**`--titleTemplate`** `string`
+
+> Specify a template for displaying page titles. Defaults to `{title}`. <small>[more »](./docs/usage/options.md#titletemplate)</small>
 
 **`--namedAnchors`** `boolean`
 
