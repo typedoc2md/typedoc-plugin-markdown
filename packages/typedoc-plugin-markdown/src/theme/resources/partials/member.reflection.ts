@@ -23,7 +23,7 @@ export function reflectionMember(
     md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
   }
 
-  if (reflection.typeParameters) {
+  if (!reflection.kindOf(ReflectionKind.Class) && reflection.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));
     md.push(context.typeParametersTable(reflection.typeParameters));
   }

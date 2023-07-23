@@ -12,7 +12,6 @@ declare module 'typedoc' {
     excludeGroups: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
-    hideKindPrefix: boolean;
     hideBreadcrumbs: boolean;
     hideInPageTOC: boolean;
     hideHierarchy: boolean;
@@ -23,7 +22,8 @@ declare module 'typedoc' {
     tocFormat: 'list' | 'table';
     baseUrl: string;
     anchorFormat: 'lowercase' | 'slug' | 'none';
-    anchorPattern: string;
+    anchorTemplate: string;
+    titleTemplate: string;
     namedAnchors: boolean;
   }
 }
@@ -39,7 +39,6 @@ export interface PluginOptions {
   excludeGroups: boolean;
   hidePageHeader: boolean;
   hidePageTitle: boolean;
-  hideKindPrefix: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   hideHierarchy: boolean;
@@ -50,6 +49,7 @@ export interface PluginOptions {
   tocFormat: 'list' | 'table';
   baseUrl: string;
   anchorFormat: 'lowercase' | 'slug' | 'none';
-  anchorPattern: string;
+  anchorTemplate: string;
+  titleTemplate: string;
   namedAnchors: boolean;
 }

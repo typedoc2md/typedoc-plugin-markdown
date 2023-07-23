@@ -137,12 +137,6 @@ This creates a flat structure where all members are displayed at the same level.
 
 > Do not print page title.
 
-## hideKindPrefix
-
-**type** `boolean` • **default** `false`
-
-> Do not print the kind label as a title prefix.
-
 ## hideBreadcrumbs
 
 **type** `boolean` • **default** `false`
@@ -205,18 +199,30 @@ Note if `true` references will not be linked.
 
 > The anchor format to use when linking to internal symbols.
 
-## anchorPattern
+## anchorTemplate
 
 **type** `string` • **default** `undefined`
 
-> The anchor pattern to use when linking to internal symbols.
+> The anchor template to use when linking to internal symbols.
 
-e.g customprefix-{{anchor}}
+Supports {anchor} placeholders.
 
 An example use-case is for bitbucket cloud that would use the option
 
 ```
-anchorPattern: 'markdown-header-{{anchor}}'
+anchorTemplate: 'markdown-header-{anchor}'
+```
+
+## titleTemplate
+
+**type** `string` • **default** `{title}`
+
+> Specify a template for displaying page titles.
+
+Supports {kind} and {title} placeholders.
+
+```
+titleTemplate: "{kind}: {title}"
 ```
 
 ## namedAnchors

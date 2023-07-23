@@ -1,4 +1,4 @@
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
@@ -12,10 +12,6 @@ export function memberTitle(
   typeParams = false,
 ): string {
   const md: string[] = [];
-
-  if (hasKindTag(context, reflection)) {
-    md.push(`${ReflectionKind.singularString(reflection.kind)}: `);
-  }
 
   md.push(`${escapeChars(reflection.name)}`);
 
@@ -31,17 +27,4 @@ export function memberTitle(
   }
 
   return md.join('');
-}
-
-function hasKindTag(
-  context: MarkdownThemeRenderContext,
-  reflection: DeclarationReflection,
-) {
-  if (
-    reflection.hasOwnDocument &&
-    !context.options.getValue('hideKindPrefix')
-  ) {
-    return true;
-  }
-  return false;
 }

@@ -18,7 +18,10 @@ export class UrlBuilder {
   urls: UrlMapping[] = [];
   anchors: string[] = [];
 
-  constructor(public theme: MarkdownTheme, public options: Options) {}
+  constructor(
+    public theme: MarkdownTheme,
+    public options: Options,
+  ) {}
 
   /**
    * Map the models of the given project to the desired output files.
@@ -304,9 +307,11 @@ export class UrlBuilder {
   ) {
     if (container.url && !reflection.url) {
       if (!reflection.kindOf(ReflectionKind.TypeLiteral)) {
-        const anchorPattern = this.options.getValue('anchorPattern') as string;
-        const anchorId = anchorPattern
-          ? anchorPattern.replace('{{anchor}}', this.getAnchorId(reflection))
+        const anchorTemplate = this.options.getValue(
+          'anchorTemplate',
+        ) as string;
+        const anchorId = anchorTemplate
+          ? anchorTemplate.replace('{anchor}', this.getAnchorId(reflection))
           : this.getAnchorId(reflection);
 
         const count = this.anchors[container.url]?.filter(

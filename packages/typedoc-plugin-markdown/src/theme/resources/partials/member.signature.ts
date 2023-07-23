@@ -17,6 +17,10 @@ export function signatureMember(
 ): string {
   const md: string[] = [];
 
+  if (signature.parent?.kindOf(ReflectionKind.Constructor)) {
+    md.push(heading(headingLevel - 1, `${signature.name}()`));
+  }
+
   if (showSources) {
     if (context.options.getValue('identifiersAsCodeBlocks')) {
       md.push(codeBlock(context.signatureMemberIdentifier(signature)));

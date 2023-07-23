@@ -20,7 +20,10 @@ export function member(
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 
-  if (!reflection.hasOwnDocument) {
+  if (
+    !reflection.kindOf(ReflectionKind.Constructor) &&
+    !reflection.hasOwnDocument
+  ) {
     md.push(heading(headingLevel, context.memberTitle(reflection)));
   }
 

@@ -162,13 +162,6 @@ export const hidePageTitle: DeclarationOption = {
   defaultValue: false,
 };
 
-export const hideKindPrefix: DeclarationOption = {
-  name: 'hideKindPrefix',
-  help: 'Do not print the kind label as a title prefix.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
 export const hideBreadcrumbs: DeclarationOption = {
   name: 'hideBreadcrumbs',
   help: 'Do not print breadcrumbs.',
@@ -247,18 +240,32 @@ export const anchorFormat: DeclarationOption = {
 };
 
 /**
- * e.g customprefix-{{anchor}}
+ * Supports {anchor} placeholders.
  *
  * An example use-case is for bitbucket cloud that would use the option
  *
  * ```
- * anchorPattern: 'markdown-header-{{anchor}}'
+ * anchorTemplate: 'markdown-header-{anchor}'
  * ```
  */
-export const anchorPattern: DeclarationOption = {
-  name: 'anchorPattern',
-  help: 'The anchor pattern to use when linking to internal symbols.',
+export const anchorTemplate: DeclarationOption = {
+  name: 'anchorTemplate',
+  help: 'The anchor template to use when linking to internal symbols.',
   type: ParameterType.String,
+};
+
+/**
+ * Supports {kind} and {title} placeholders.
+ *
+ * ```
+ * titleTemplate: "{kind}: {title}"
+ * ```
+ */
+export const titleTemplate: DeclarationOption = {
+  name: 'titleTemplate',
+  help: 'Specify a template for displaying page titles.',
+  type: ParameterType.String,
+  defaultValue: '{title}',
 };
 
 export const namedAnchors: DeclarationOption = {
