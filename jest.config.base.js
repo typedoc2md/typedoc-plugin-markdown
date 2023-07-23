@@ -14,4 +14,6 @@ module.exports = {
   maxWorkers: '2',
   testTimeout: 30000,
   updateSnapshot: false,
+  detectOpenHandles: true,
+  forceExit: true,
 };
