@@ -71,7 +71,7 @@ function packageHeader(
   context: MarkdownThemeRenderContext,
   page: PageEvent<ProjectReflection | DeclarationReflection>,
 ) {
-  const packageItem = findPackage(page.model);
+  const packageItem = findPackage(page.model) as any;
   if (!packageItem) {
     return '';
   }
@@ -115,7 +115,10 @@ function packageHeader(
 }
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {
-  if (model.kindOf(ReflectionKind.Module)) {
+  if (
+    model.kindOf(ReflectionKind.Module) &&
+    model.parent?.kindOf(ReflectionKind.Project)
+  ) {
     return model;
   }
   if (model.parent) {
