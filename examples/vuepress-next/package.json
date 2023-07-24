@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "typedoc-plugin-markdown": "*",
-    "vuepress": "^2.0.0-beta.53",
+    "vuepress": "next",
     "vuepress-plugin-typedoc": "*"
   }
 }

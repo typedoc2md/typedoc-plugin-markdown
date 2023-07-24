@@ -8,9 +8,7 @@
   },
   "devDependencies": {
     "typedoc-plugin-markdown": "*",
-    "vue": "^2.6.10",
-    "vue-server-renderer": "2.6.11",
-    "vuepress": "^1.8.2",
+    "vuepress": "^1.9.9",
     "vuepress-plugin-typedoc": "*"
   }
 }
