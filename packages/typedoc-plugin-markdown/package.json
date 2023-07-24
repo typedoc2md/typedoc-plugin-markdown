@@ -14,7 +14,7 @@
     "prebuild": "npm-run-all task:*",
     "build": "rm -rf dist && tsc",
     "pretest": "jest --clear-cache",
-    "test": "NODE_OPTIONS=\"--experimental-vm-modules\" jest --colors",
+    "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",
     "api-docs": "npm run build && typedoc --options ./typedoc.api.js --out ./docs/api",
     "docs": "npm run build && npm-run-all docs:*",
