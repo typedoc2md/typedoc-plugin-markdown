@@ -67,7 +67,7 @@ Once built the docs will be available at `/docs/api` (or equivalent out director
 
 ### TypeDoc options
 
-To configure TypeDoc, pass any relevant [TypeDoc options](https://typedoc.org/guides/options/) to the config.
+To configure TypeDoc, pass any relevant [TypeDoc options](https://typedoc.org/options/) to the config.
 
 At a minimum the `entryPoints` and `tsconfig` options will need to be set.
 
