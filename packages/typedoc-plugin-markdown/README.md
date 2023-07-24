@@ -35,8 +35,6 @@ This plugin provides additional options beyond the normal options that are [prov
   Do not render breadcrumbs in template header. Defaults to `false`.
 - `--hideInPageTOC<boolean>`<br>
   Do not render in-page table of contents items. Defaults to `false`.
-- `--hideMembersSymbol<boolean>`<br>
-  Do not add special symbols for class members. Defaults to `false`.
 - `--publicPath<string>`<br>
   Specify the base path for all urls. If undefined urls will be relative. Defaults to `.`.
 - `--namedAnchors<boolean>`<br>
