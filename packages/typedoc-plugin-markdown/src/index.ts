@@ -81,18 +81,26 @@ export function load(app: Application) {
     defaultValue: false,
   });
 
-  
   app.options.addDeclaration({
     help: '[Markdown Plugin] Specify the Type Declaration Render Style',
     name: 'objectLiteralTypeDeclarationStyle',
     type: ParameterType.String,
-    defaultValue: "table",
+    defaultValue: 'table',
     validate: (x) => {
-      const availableValues = ["table", "list"];
-      if (!availableValues.includes(x)){
-        throw new Error(`Wrong value for objectLiteralTypeDeclarationStyle, the expected value is one of ${availableValues}`)
+      const availableValues = ['table', 'list'];
+      if (!availableValues.includes(x)) {
+        throw new Error(
+          `Wrong value for objectLiteralTypeDeclarationStyle, the expected value is one of ${availableValues}`,
+        );
       }
-    }
+    },
+  });
+
+  app.options.addDeclaration({
+    help: '[Markdown Plugin] Specify a template for displaying page titles.',
+    name: 'titleTemplate',
+    type: ParameterType.String,
+    defaultValue: '{kind}: {title}',
   });
 }
 export { MarkdownTheme };

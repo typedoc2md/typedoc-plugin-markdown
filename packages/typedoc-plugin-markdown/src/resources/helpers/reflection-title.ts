@@ -7,13 +7,11 @@ export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
     'reflectionTitle',
     function (this: PageEvent<any>, shouldEscape = true) {
-      const title: string[] = [''];
-      if (this.model?.kind && this.url !== this.project.url) {
-        title.push(`${ReflectionKind.singularString(this.model.kind)}: `);
-      }
+      const titleTemplate = theme.getOption('titleTemplate') as string;
       if (this.url === this.project.url) {
-        title.push(theme.indexTitle || getDisplayName(this.model));
+        return theme.indexTitle || getDisplayName(this.model);
       } else {
+        const title: string[] = [''];
         title.push(
           shouldEscape ? escapeChars(this.model.name) : this.model.name,
         );
@@ -23,8 +21,12 @@ export default function (theme: MarkdownTheme) {
             .join(', ');
           title.push(`<${typeParameters}${shouldEscape ? '\\>' : '>'}`);
         }
+        return this.model.kind
+          ? titleTemplate
+              .replace('{title}', title.join(''))
+              .replace('{kind}', ReflectionKind.singularString(this.model.kind))
+          : title.join('');
       }
-      return title.join('');
     },
   );
 }
