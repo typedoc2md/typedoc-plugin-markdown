@@ -5,7 +5,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import * as prettier from 'prettier';
+import { format, resolveConfig, resolveConfigFile } from 'prettier';
 import {
   DeclarationReflection,
   PageEvent,
@@ -110,10 +110,10 @@ export async function renderMarkdown(
   );
 
   // Resolve prettier config options
-  const prettierConfigFile = await prettier.resolveConfigFile();
+  const prettierConfigFile = await resolveConfigFile();
 
   const prettierOptions = prettierConfigFile
-    ? await prettier.resolveConfig(prettierConfigFile)
+    ? await resolveConfig(prettierConfigFile)
     : {};
 
   output.urls
@@ -143,10 +143,10 @@ export async function renderMarkdown(
       }
 
       try {
-        const formattedContents = await prettier.format(
-          page.contents as string,
-          { parser: 'markdown', ...(prettierOptions && prettierOptions) },
-        );
+        const formattedContents = await format(page.contents as string, {
+          parser: 'markdown',
+          ...(prettierOptions && prettierOptions),
+        });
         writeFileSync(page.filename, formattedContents);
       } catch (error) {
         this.application.logger.error(`Could not write ${page.filename}`);
