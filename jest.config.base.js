@@ -16,4 +16,5 @@ module.exports = {
   updateSnapshot: false,
   detectOpenHandles: true,
   forceExit: true,
+  workerIdleMemoryLimit: '512MB',
 };
