@@ -1,6 +1,14 @@
 {{{signatureTitle accessor}}}
 
-{{> comment}}
+{{#with comment}}
+
+{{#if hasVisibleComponent}}
+
+{{{comments this true false}}}
+
+{{/if}}
+
+{{/with}}
 
 {{#if typeParameters}}
 
@@ -95,6 +103,16 @@
 {{/if}}
 
 {{/ifShowReturns}}
+
+{{#with comment}}
+
+{{#if hasVisibleComponent}}
+
+{{{comments this false true}}}
+
+{{/if}}
+
+{{/with}}
 
 {{#if showSources}}
 

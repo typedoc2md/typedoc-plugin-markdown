@@ -23,8 +23,6 @@ exports[`Generics: should compile class with type params 1`] = `
 exports[`Generics: should compile function with a simple type param' 1`] = `
 "▸ **functionWithTypeParam**<\`A\`\\>(): \`boolean\`
 
-[partial: comment]
-
 ##### Type parameters
 
 | Name |

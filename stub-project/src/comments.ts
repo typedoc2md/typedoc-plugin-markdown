@@ -108,3 +108,25 @@ export type literalWithBlockComments = {
    */
   prop: string;
 };
+
+/**
+ * Creates an integer expression for the end of an interval variable.
+ *
+ * @remarks
+ *
+ * If the interval is absent then the resulting expression is also absent.
+ *
+ * @example
+ *
+ * In the following example we constraint interval variable `y` to start after end of `y` with a delay at least 10. In addition we constrain length of `x` to be less or equal than length of `y`.
+ *
+ * ```ts
+ * let model = new CP.Model;
+ * ```
+ *
+ * When `x` or `y` is _absent_ then value of both constraints above is _absent_ and therefore they are satisfied.
+ *
+ */
+export function functionWithSummaryAndTags(arg: any) {
+  return '';
+}
