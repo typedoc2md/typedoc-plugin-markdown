@@ -10,14 +10,16 @@ export function comment(
   context: MarkdownThemeRenderContext,
   comment: Comment,
   headingLevel?: number,
+  showSummary = true,
+  showTags = true,
 ): string {
   const md: string[] = [];
 
-  if (comment.summary?.length > 0) {
+  if (showSummary && comment.summary?.length > 0) {
     md.push(context.commentParts(comment.summary));
   }
 
-  if (comment.blockTags?.length) {
+  if (showTags && comment.blockTags?.length) {
     const tags = comment.blockTags
       .filter((tag) => tag.tag !== '@returns')
       .map((tag) => {

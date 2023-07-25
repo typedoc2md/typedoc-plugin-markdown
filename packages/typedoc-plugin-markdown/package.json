@@ -13,7 +13,7 @@
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "prebuild": "npm-run-all task:*",
     "build": "rm -rf dist && tsc",
-    "test": "jest --colors",
+    "test": "jest --colors --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
     "api-docs": "npm run build && typedoc --options ./typedoc.api.js --out ./docs/api",
     "docs": "npm run build && npm-run-all docs:*",

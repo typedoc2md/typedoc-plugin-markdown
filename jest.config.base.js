@@ -13,7 +13,6 @@ module.exports = {
   setupFiles: [path.join(__dirname, 'jest.helpers.ts')],
   maxWorkers: '1',
   testTimeout: 30000,
-  updateSnapshot: false,
   detectOpenHandles: true,
   forceExit: true,
   workerIdleMemoryLimit: '512MB',

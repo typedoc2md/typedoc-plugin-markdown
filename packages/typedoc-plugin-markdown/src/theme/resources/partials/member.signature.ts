@@ -30,7 +30,7 @@ export function signatureMember(
   }
 
   if (signature.comment) {
-    md.push(context.comment(signature.comment, headingLevel));
+    md.push(context.comment(signature.comment, headingLevel, true, false));
   }
 
   const typeDeclaration = (signature.type as any)
@@ -83,6 +83,10 @@ export function signatureMember(
   }
 
   md.push(context.inheritance(signature, headingLevel));
+
+  if (signature.comment) {
+    md.push(context.comment(signature.comment, headingLevel, false, true));
+  }
 
   if (showSources && signature.sources) {
     md.push(context.sources(signature, headingLevel));

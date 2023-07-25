@@ -5,7 +5,7 @@ exports[`Generics: should compile class with type params 1`] = `
 
 [partial: breadcrumbs]
 
-# ClassWithTypeParams\`<T, V>\`
+# Class: ClassWithTypeParams\`<T, V>\`
 
 [partial: comment]
 
@@ -56,6 +56,8 @@ exports[`Generics: should compile function with complex type params' 1`] = `
 \`boolean\`
 
 
+
+[partial: comment]
 
 [partial: sources]"
 `;
