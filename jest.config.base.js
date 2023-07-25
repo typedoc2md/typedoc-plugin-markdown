@@ -11,6 +11,10 @@ module.exports = {
       tsconfig: '<rootDir>/tsconfig.test.json',
     },
   },
-  maxWorkers: '50%',
+  maxWorkers: '1',
   testTimeout: 30000,
+  updateSnapshot: false,
+  detectOpenHandles: true,
+  forceExit: true,
+  workerIdleMemoryLimit: '512MB',
 };
