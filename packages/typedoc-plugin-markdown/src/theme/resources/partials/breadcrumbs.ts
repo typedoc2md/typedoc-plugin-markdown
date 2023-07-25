@@ -20,7 +20,7 @@ export function breadcrumbs(
     return '';
   }
 
-  md.push(link(page.project.name, context.relativeURL(page.project.url)));
+  md.push(link('Index', context.relativeURL(page.project.url)));
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {

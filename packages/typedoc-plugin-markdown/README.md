@@ -87,7 +87,7 @@ Below is a summary of the available options:
 
 **`--indexPageTitle`** `string`
 
-> The title of API index page. Defaults to `undefined`. <small>[more »](./docs/usage/options.md#indexpagetitle)</small>
+> The title of API index page. Defaults to `Index`.
 
 **`--skipIndexPage`** `boolean`
 

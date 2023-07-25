@@ -4,4 +4,6 @@
 
 Some text
 
-<!-- include typedoc index page -->
+[Browse API]({indexUrl})
+
+{indexPage}

@@ -35,7 +35,7 @@ export function pageTOC(
   }
   if (
     page.model.groups &&
-    context.options.getValue('entryPoints').length === 1
+    page.model.children?.some((child) => !child.kindOf(ReflectionKind.Module))
   ) {
     md.push(context.memberTOC(page.model, headingLevel));
     return md.join('\n\n');

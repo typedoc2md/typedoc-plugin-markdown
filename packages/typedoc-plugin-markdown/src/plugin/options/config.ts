@@ -91,13 +91,11 @@ export const indexFileName: DeclarationOption = {
   defaultValue: 'API.md',
 };
 
-/**
- * If not defined then the project name / version will be printed.
- */
 export const indexPageTitle: DeclarationOption = {
   name: 'indexPageTitle',
   help: 'The title of API index page.',
   type: ParameterType.String,
+  defaultValue: 'Index',
 };
 
 /**

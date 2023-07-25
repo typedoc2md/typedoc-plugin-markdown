@@ -11,7 +11,8 @@ export function readmeTemplate(
 ) {
   const md: string[] = [];
 
-  const INDEX_PLACEHOLDER_KEY = '$TYPEDOC_INDEX';
+  const INDEX_URL_PLACEHOLDER_KEY = '{indexUrl}';
+  const INDEX_PAGE_PLACEHOLDER = '{indexPage}';
 
   if (!context.options.getValue('hidePageHeader')) {
     md.push(context.header(page));
@@ -20,12 +21,12 @@ export function readmeTemplate(
   if (page.model.readme) {
     const readmeContent = context.commentParts(page.model.readme);
     md.push(
-      readmeContent.includes(INDEX_PLACEHOLDER_KEY)
-        ? readmeContent.replace(
-            INDEX_PLACEHOLDER_KEY,
-            getIndexReplacer(context, page) || '',
-          )
-        : readmeContent,
+      readmeContent
+        .replace(INDEX_PAGE_PLACEHOLDER, getIndexReplacer(context, page) || '')
+        .replace(
+          INDEX_URL_PLACEHOLDER_KEY,
+          `./${context.options.getValue('indexFileName')}`,
+        ),
     );
   }
 

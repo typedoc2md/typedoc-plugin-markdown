@@ -75,11 +75,9 @@ This option is ignored if `readme=none` or `skipIndexPage=true`.
 
 ## indexPageTitle
 
-**type** `string` • **default** `undefined`
+**type** `string` • **default** `Index`
 
 > The title of API index page.
-
-If not defined then the project name / version will be printed.
 
 ## skipIndexPage
 

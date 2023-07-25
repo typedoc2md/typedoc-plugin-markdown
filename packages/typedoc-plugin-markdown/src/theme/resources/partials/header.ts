@@ -1,4 +1,3 @@
-import * as path from 'path';
 import {
   DeclarationReflection,
   PageEvent,
@@ -37,32 +36,9 @@ function projectHeader(
     context.options.getValue('includeVersion'),
   );
 
-  const hasReadme = !context.options.getValue('readme').endsWith('none');
-
   const md: string[] = [];
 
   md.push(link(bold(projectName), context.relativeURL(entryFileName)));
-
-  const links: string[] = [];
-
-  if (!context.options.getValue('readme')?.endsWith('none')) {
-    if (page.url === entryFileName) {
-      links.push('Readme');
-    } else {
-      links.push(link('Readme', context.relativeURL(entryFileName)));
-    }
-  }
-
-  if (hasReadme && page.project.url !== entryFileName) {
-    if (page.url === page.project.url) {
-      links.push('API');
-    } else {
-      links.push(link('API', context.relativeURL(page.project.url)));
-    }
-  }
-  if (links.length > 1) {
-    md.push(`( ${links.join(' \\| ')} )`);
-  }
 
   return `${md.join(' ')}\n***\n`;
 }
@@ -76,40 +52,9 @@ function packageHeader(
     return '';
   }
 
-  const hasReadme = Boolean(packageItem.readme);
-
-  const readmeUrl = `${path.dirname(
-    packageItem.url || '',
-  )}/${context.options.getValue('entryFileName')}`;
-
   const md: string[] = [];
 
   md.push(link(bold(packageItem.name), context.relativeURL(packageItem.url)));
-
-  const links: string[] = [];
-
-  if (hasReadme) {
-    if (page.url === readmeUrl) {
-      links.push('Readme');
-    } else {
-      links.push(
-        `${link(
-          'Readme',
-          context.relativeURL(hasReadme ? readmeUrl : packageItem.url),
-        )}`,
-      );
-    }
-
-    if (page.url === packageItem.url) {
-      links.push('API');
-    } else {
-      links.push(`${link('API', context.relativeURL(packageItem.url))}`);
-    }
-  }
-
-  if (links.length) {
-    md.push(`( ${links.join(' \\| ')} )`);
-  }
 
   return `${md.join(' ')}\n***\n`;
 }
