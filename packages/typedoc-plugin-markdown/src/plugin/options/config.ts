@@ -255,17 +255,17 @@ export const anchorTemplate: DeclarationOption = {
 };
 
 /**
- * Supports {kind} and {title} placeholders.
+ * Supports {kind} and {name} placeholders.
  *
  * ```
- * titleTemplate: "{kind}: {title}"
+ * titleTemplate: "{kind}: {name}"
  * ```
  */
 export const titleTemplate: DeclarationOption = {
   name: 'titleTemplate',
   help: 'Specify a template for displaying page titles.',
   type: ParameterType.String,
-  defaultValue: '{title}',
+  defaultValue: '{kind}: {name}',
 };
 
 export const namedAnchors: DeclarationOption = {

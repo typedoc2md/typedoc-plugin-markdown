@@ -27,14 +27,14 @@ export function pageTitle(
         ),
     );
   } else {
-    const title = context.memberTitle(
+    const name = context.memberTitle(
       page.model as DeclarationReflection,
       true,
     );
 
     md.push(
       titleTemplate
-        .replace('{title}', title)
+        .replace('{name}', name)
         .replace('{kind}', ReflectionKind.singularString(page.model.kind)),
     );
   }

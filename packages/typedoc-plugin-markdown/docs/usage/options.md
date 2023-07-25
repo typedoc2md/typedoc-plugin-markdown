@@ -215,14 +215,14 @@ anchorTemplate: 'markdown-header-{anchor}'
 
 ## titleTemplate
 
-**type** `string` • **default** `{title}`
+**type** `string` • **default** `{kind}: {name}`
 
 > Specify a template for displaying page titles.
 
-Supports {kind} and {title} placeholders.
+Supports {kind} and {name} placeholders.
 
 ```
-titleTemplate: "{kind}: {title}"
+titleTemplate: "{kind}: {name}"
 ```
 
 ## namedAnchors

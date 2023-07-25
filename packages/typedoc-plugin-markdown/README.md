@@ -151,7 +151,7 @@ Below is a summary of the available options:
 
 **`--titleTemplate`** `string`
 
-> Specify a template for displaying page titles. Defaults to `{title}`. <small>[more »](./docs/usage/options.md#titletemplate)</small>
+> Specify a template for displaying page titles. Defaults to `{kind}: {name}`. <small>[more »](./docs/usage/options.md#titletemplate)</small>
 
 **`--namedAnchors`** `boolean`
 
