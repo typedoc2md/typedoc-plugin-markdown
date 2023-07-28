@@ -30,8 +30,9 @@ export class UrlBuilder {
    * @param project  The project whose urls should be generated.
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
+    console.log(this.options.getValue('indexFileName'));
     const entryFileName = this.options.getValue('entryFileName') as string;
-    const indexFileName = 'API.md';
+    const indexFileName = this.options.getValue('indexFileName') as string;
     const hasReadme = !this.options.getValue('readme').endsWith('none');
 
     if (hasReadme) {
