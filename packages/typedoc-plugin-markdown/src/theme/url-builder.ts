@@ -31,7 +31,7 @@ export class UrlBuilder {
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
     const entryFileName = this.options.getValue('entryFileName') as string;
-    const indexFileName = 'API.md';
+    const indexFileName = this.options.getValue('indexFileName') as string;
     const hasReadme = !this.options.getValue('readme').endsWith('none');
 
     if (hasReadme) {
