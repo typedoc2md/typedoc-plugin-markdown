@@ -7,7 +7,6 @@ dist
 
 # testing
 samples
-demo
 out
 typedoc-examples
 plugin-docs

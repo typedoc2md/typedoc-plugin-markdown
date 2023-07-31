@@ -25,7 +25,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "build-and-test": "npm run build && npm run test"
+    "demo": "npm run build && cd demo && npm run start"
   },
   "author": "Thomas Grey",
   "license": "MIT",

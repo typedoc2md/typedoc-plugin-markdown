@@ -15,7 +15,7 @@ export default function pluginDocusaurus(
 ) {
   return {
     name: 'docusaurus-plugin-typedoc',
-    async loadContent() {
+    async contentLoaded() {
       if (opts.id && !apps.includes(opts.id)) {
         apps.push(opts.id);
         generateTypedoc(context, opts);
