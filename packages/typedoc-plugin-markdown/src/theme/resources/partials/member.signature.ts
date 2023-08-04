@@ -25,7 +25,7 @@ export function signatureMember(
     if (context.options.getValue('identifiersAsCodeBlocks')) {
       md.push(codeBlock(context.signatureMemberIdentifier(signature)));
     } else {
-      md.push(`> ${context.signatureMemberIdentifier(signature)}`);
+      md.push(context.signatureMemberIdentifier(signature));
     }
   }
 

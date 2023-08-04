@@ -24,11 +24,7 @@ export function declarationMember(
   if (context.options.getValue('identifiersAsCodeBlocks')) {
     md.push(codeBlock(context.declarationMemberIdentifier(declaration)));
   } else {
-    md.push(
-      `${!nested ? '>' : ''} ${context.declarationMemberIdentifier(
-        declaration,
-      )}`,
-    );
+    md.push(context.declarationMemberIdentifier(declaration));
   }
 
   if (declaration.comment) {
