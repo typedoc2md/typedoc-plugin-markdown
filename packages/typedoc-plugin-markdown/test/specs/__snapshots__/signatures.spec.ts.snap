@@ -112,11 +112,11 @@ Return comments
 
 ### \`x\`
 
-> **x**: \`number\`  = \`1\`
+> **x**: \`number\` = \`1\`
 
 ### \`y\`
 
-> **y**: \`number\`  = \`2\`
+> **y**: \`number\` = \`2\`
 
 
 
@@ -286,11 +286,11 @@ exports[`Signatures: should compile signature with a flag' 1`] = `
 
 exports[`Signatures: should compile signature with default values' 1`] = `
 "> **functionWithDefaults**(
-  \`valueA\` = \`'defaultValue'\`, 
-  \`valueB\` = \`100\`, 
-  \`valueC\` = \`Number.NaN\`, 
-  \`valueD\` = \`true\`, 
-  \`valueE\` = \`null\`, 
+  \`valueA\` = \`'defaultValue'\`,
+  \`valueB\` = \`100\`,
+  \`valueC\` = \`Number.NaN\`,
+  \`valueD\` = \`true\`,
+  \`valueE\` = \`null\`,
   \`valueF\` = \`'<foo>'\`): \`string\`
 
 This is a function with a parameter that has a default value.
@@ -321,9 +321,9 @@ This is a function with a parameter that has a default value.
 
 exports[`Signatures: should compile signature with optional params' 1`] = `
 "> **functionWithOptionalParam**(
-  \`firstParamWithDefault\` = \`true\`, 
-  \`requiredParam\`, 
-  \`optionalParam\`?, 
+  \`firstParamWithDefault\` = \`true\`,
+  \`requiredParam\`,
+  \`optionalParam\`?,
   \`paramWithDefault\`? = \`0\`): \`void\`
 
 This is a function with a parameter that is optional.
@@ -352,8 +352,8 @@ This is a function with a parameter that is optional.
 
 exports[`Signatures: should compile signature with params' 1`] = `
 "> **functionWithParameters**(
-  \`paramZ\`, 
-  \`paramG\`, 
+  \`paramZ\`,
+  \`paramG\`,
   \`paramA\`): \`number\`
 
 This is a function with multiple arguments and a return value.

@@ -59,9 +59,7 @@ export function declarationMemberIdentifier(
   }
 
   if (reflection.defaultValue && reflection.defaultValue !== '...') {
-    md.push(
-      ` = \`${stripLineBreaks(stripComments(reflection.defaultValue))}\``,
-    );
+    md.push(`= \`${stripLineBreaks(stripComments(reflection.defaultValue))}\``);
   }
 
   return md.join(' ');

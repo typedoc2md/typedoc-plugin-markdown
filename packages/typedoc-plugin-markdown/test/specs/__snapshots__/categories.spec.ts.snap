@@ -37,7 +37,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### CategoryInterfaceA2
 
@@ -45,7 +45,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### categoryVariableA1
 
@@ -53,7 +53,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### categoryVariableA2
 
@@ -61,7 +61,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### categoryFunctionA1
 
@@ -69,7 +69,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### categoryFunctionA2
 
@@ -77,7 +77,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### categoryFunctionA3
 
@@ -91,7 +91,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### categoryFunctionB2
 
@@ -105,7 +105,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### otherVariableA
 
@@ -113,7 +113,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### otherVariableB
 
@@ -121,7 +121,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### otherFunctionA
 
@@ -129,7 +129,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 
 
----
+***
 
 ### otherFunctionB
 
@@ -221,7 +221,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 
 
----
+***
 
 #### CategoryInterfaceA2
 
@@ -243,7 +243,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 
 
----
+***
 
 #### categoryVariableA2
 
@@ -263,7 +263,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 
 
----
+***
 
 #### otherVariableB
 
@@ -279,7 +279,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 
 
----
+***
 
 #### categoryFunctionA2
 
@@ -287,7 +287,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 
 
----
+***
 
 #### categoryFunctionA3
 
@@ -307,7 +307,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 
 
----
+***
 
 #### otherFunctionB
 
@@ -351,7 +351,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### CategoryInterfaceA2
 
@@ -359,7 +359,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### categoryVariableA1
 
@@ -367,7 +367,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### categoryVariableA2
 
@@ -375,7 +375,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### categoryFunctionA1
 
@@ -383,7 +383,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### categoryFunctionA2
 
@@ -391,7 +391,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### categoryFunctionA3
 
@@ -405,7 +405,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### categoryFunctionB2
 
@@ -419,7 +419,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### otherVariableA
 
@@ -427,7 +427,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### otherVariableB
 
@@ -435,7 +435,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### otherFunctionA
 
@@ -443,7 +443,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 
 
----
+***
 
 ### otherFunctionB
 

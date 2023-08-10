@@ -44,7 +44,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 
 
----
+***
 
 ### EnumB
 
@@ -58,7 +58,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 
 
----
+***
 
 ### ClassB
 
@@ -72,7 +72,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 
 
----
+***
 
 ### InterfaceB
 
@@ -86,7 +86,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 
 
----
+***
 
 ### typeB
 
@@ -100,7 +100,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 
 
----
+***
 
 ### variableB
 
@@ -114,7 +114,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 
 
----
+***
 
 ### functionB
 
@@ -146,7 +146,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## EnumB
 
@@ -154,7 +154,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## ClassA
 
@@ -162,7 +162,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## ClassB
 
@@ -170,7 +170,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## InterfaceA
 
@@ -178,7 +178,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## InterfaceB
 
@@ -186,7 +186,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## typeA
 
@@ -194,7 +194,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## typeB
 
@@ -202,7 +202,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## variableA
 
@@ -210,7 +210,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## variableB
 
@@ -218,7 +218,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## functionA
 
@@ -226,7 +226,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 
 
----
+***
 
 ## functionB
 

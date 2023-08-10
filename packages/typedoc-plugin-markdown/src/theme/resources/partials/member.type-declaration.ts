@@ -32,7 +32,7 @@ export function typeDeclarationMember(
           context.declarationMember(declarationChild, headingLevel + 1, true),
         ].join('\n\n');
       });
-      const output = list.join(!parentName && dividers ? '\n\n___\n\n' : '');
+      const output = list.join(!parentName && dividers ? '\n\n***\n\n' : '');
       if (parentName) {
         md.push(blockQuoteBlock(output));
       } else {

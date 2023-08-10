@@ -54,7 +54,7 @@ export function signatureMemberIdentifier(
         }
         return paramsmd.join('');
       })
-      .join(`, `);
+      .join(`,${parameters.length > 2 ? '' : ' '}`);
   };
 
   md.push(

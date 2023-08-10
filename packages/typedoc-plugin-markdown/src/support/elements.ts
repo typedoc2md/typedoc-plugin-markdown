@@ -24,7 +24,7 @@ export const backTicks = (text: string) => `\`${text}\``;
 export const unorderedList = <T>(items: T[]) =>
   items.map((item) => `- ${item}`).join('\n');
 
-export const horizontalRule = () => '\n\n---';
+export const horizontalRule = () => '\n\n***';
 
 export const codeBlock = (content: string) =>
   '```ts\n' + unEscapeChars(content) + '\n```';

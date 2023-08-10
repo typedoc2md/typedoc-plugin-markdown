@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a const with default value 1`] = `
-"> \`const\` **stringConstWithDefaultValue**: \`"hello"\`  = \`'hello'\`
+"> \`const\` **stringConstWithDefaultValue**: \`"hello"\` = \`'hello'\`
 
 [partial: sources]
 
@@ -9,7 +9,7 @@ exports[`Declarations: should compile a const with default value 1`] = `
 `;
 
 exports[`Declarations: should compile a let with default value 1`] = `
-"> \`let\` **stringLetWithDefaultValue**: \`string\`  = \`'hello'\`
+"> \`let\` **stringLetWithDefaultValue**: \`string\` = \`'hello'\`
 
 [partial: sources]
 
@@ -65,7 +65,7 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 
 
 
-___
+***
 
 ### \`getMe\`
 
@@ -73,7 +73,7 @@ ___
 
 
 
-___
+***
 
 ### \`setMe\`
 
@@ -145,23 +145,23 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 ### \`Prop1\`
 
-> \`readonly\` **Prop1**: \`"Prop1"\`  = \`'Prop1'\`
+> \`readonly\` **Prop1**: \`"Prop1"\` = \`'Prop1'\`
 
 
 
-___
+***
 
 ### \`Prop2\`
 
-> \`readonly\` **Prop2**: \`"Prop2"\`  = \`'Prop2'\`
+> \`readonly\` **Prop2**: \`"Prop2"\` = \`'Prop2'\`
 
 
 
-___
+***
 
 ### \`Prop3\`
 
-> \`readonly\` **Prop3**: \`"Prop3"\`  = \`'Prop3'\`
+> \`readonly\` **Prop3**: \`"Prop3"\` = \`'Prop3'\`
 
 
 
@@ -179,29 +179,29 @@ Comments for object literal
 
 ### \`valueA\`
 
-> **valueA**: \`number\`  = \`100\`
+> **valueA**: \`number\` = \`100\`
 
 Comment for valueA
 
 
 
-___
+***
 
 ### \`valueB\`
 
-> **valueB**: \`boolean\`  = \`true\`
+> **valueB**: \`boolean\` = \`true\`
 
 
 
-___
+***
 
 ### \`valueC\`
 
-> **valueC**: \`object\`  = \`{}\`
+> **valueC**: \`object\` = \`{}\`
 
 
 
-___
+***
 
 ### \`valueX\`
 
@@ -225,17 +225,17 @@ Comment for valueX
 >
 > > ###### \`valueB.valueB1\`
 > >
-> > > **valueB1**: \`number\`  = \`1\`
+> > > **valueB1**: \`number\` = \`1\`
 > >
 > > ###### \`valueB.valueB2\`
 > >
-> > > **valueB2**: \`number\`  = \`2\`
+> > > **valueB2**: \`number\` = \`2\`
 > >
 > >
 >
 > ##### \`valueX.valueZ\`
 >
-> > **valueZ**: \`string\`  = \`'foo'\`
+> > **valueZ**: \`string\` = \`'foo'\`
 >
 > Comment for valueZ
 >
@@ -243,7 +243,7 @@ Comment for valueX
 
 
 
-___
+***
 
 ### \`valueY\`
 
@@ -261,11 +261,11 @@ Comment for value Y
 
 
 
-___
+***
 
 ### \`valueZ\`
 
-> **valueZ**: \`string\`  = \`'foo'\`
+> **valueZ**: \`string\` = \`'foo'\`
 
 Comment for valueZ
 
@@ -289,7 +289,7 @@ Comments for valueA
 
 
 
-___
+***
 
 ### \`valueB\`
 
@@ -297,7 +297,7 @@ ___
 
 
 
-___
+***
 
 ### \`valueC\`
 
@@ -309,7 +309,7 @@ ___
 
 
 
-___
+***
 
 ### \`valueX\`
 
@@ -363,7 +363,7 @@ Comment for valueX
 
 
 
-___
+***
 
 ### \`valueY\`
 
@@ -377,7 +377,7 @@ ___
 
 
 
-___
+***
 
 ### \`valueZ\`
 

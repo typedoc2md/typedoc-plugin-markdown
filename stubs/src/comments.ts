@@ -40,7 +40,7 @@ export const __comments_For_Remark__ = true;
 /**
  * A <tag></tag> in comments
  *
- * Closing </element>
+ * Closing </element> on its own
  *
  * A `<tag>` in backticks
  *

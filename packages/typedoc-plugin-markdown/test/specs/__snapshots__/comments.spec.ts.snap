@@ -45,7 +45,7 @@ Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html)."
 exports[`Comments: should escape angle brackets inside comments' 1`] = `
 "A \`<tag>\` \`</tag>\`  in comments
 
-Closing \`</element>\` 
+Closing \`</element>\`  on its own
 
 A \`<tag>\` in backticks
 
