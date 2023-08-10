@@ -2,7 +2,7 @@
 
 A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API documentation as Markdown.
 
-[![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown.svg)](https://www.npmjs.com/package/typedoc-plugin-markdown)
+![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown%2Fnext?style=flat-square&logo=npm)
 [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
 ## What does it do?
@@ -10,18 +10,6 @@ A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API document
 By default, TypeDoc will render API documentation as a webpage, e.g. HTML files.
 
 The plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options. This is useful if documentation is required to be included in project README files, Wikis and static site generators.
-
-<!--
-## Quick Links
-
-- [Installation]()
-- [Options]()
-- [Adding Frontmatter]()
-- [Output formatting]()
-- [Customizing / extending]()
-- [Recipes / demos]()
-- [Real life examples]()
--->
 
 ## Installation
 
@@ -65,6 +53,7 @@ Below is a summary of the available options:
 <!-- DO NOT EDIT THE OPTIONS BELOW DIRECTLY - THEY ARE INJECTED DYNAMICALLY FROM OPTIONS CONFIG -->
 
 <!-- START OPTIONS -->
+
 **`--outputFileStrategy`** `"members" | "modules"`
 
 > Determines how output files are generated. Defaults to `members`. <small>[more »](./docs/usage/options.md#outputfilestrategy)</small>
