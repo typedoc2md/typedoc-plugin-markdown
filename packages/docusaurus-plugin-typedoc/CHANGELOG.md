@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-next.14
+
+### Patch Changes
+
+- Load TypeDoc plugins through config
+- fix: Move init logic to contentLoaded lifecycle
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.18
+
 ## 1.0.0-next.13 (2023-06-12)
 
 ### Patch Changes
