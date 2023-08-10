@@ -54,17 +54,14 @@ export function loadOptions(app: Application) {
       readonly order = 900;
       readonly supportsPackages = false;
       read(container: Options) {
+        const requiredPlugins = [
+          'typedoc-plugin-markdown',
+          'typedoc-plugin-frontmatter',
+        ];
         const plugins = container.getValue('plugin');
-        container.setValue(
-          'plugin',
-          plugins?.filter(
-            (plugin) =>
-              ![
-                'typedoc-plugin-markdown',
-                'typedoc-plugin-frontmatter',
-              ].includes(plugin),
-          ),
-        );
+        container.setValue('plugin', [
+          ...new Set([...requiredPlugins, ...plugins]),
+        ]);
       }
     })(),
   );

@@ -1,7 +1,5 @@
 import * as path from 'path';
 import { Application, TypeDocOptions } from 'typedoc';
-import { load as loadTypedocPluginFrontmatter } from 'typedoc-plugin-frontmatter';
-import { load as loadTypedocPluginMarkdown } from 'typedoc-plugin-markdown';
 import { PluginOptions } from '.';
 import { getPluginOptions, loadOptions } from './options';
 import { loadRenderer } from './renderer';
@@ -15,10 +13,10 @@ export default function pluginDocusaurus(
 ) {
   return {
     name: 'docusaurus-plugin-typedoc',
-    async contentLoaded() {
+    async loadContent() {
       if (opts.id && !apps.includes(opts.id)) {
         apps.push(opts.id);
-        generateTypedoc(context, opts);
+        await generateTypedoc(context, opts);
       }
     },
     extendCli(cli) {
@@ -55,8 +53,6 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   loadOptions(app);
   loadRenderer(app);
-  loadTypedocPluginMarkdown(app);
-  loadTypedocPluginFrontmatter(app);
 
   await app.bootstrapWithPlugins(
     optionsPassedToTypeDoc as unknown as Partial<TypeDocOptions>,

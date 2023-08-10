@@ -39,6 +39,7 @@ const config = {
       path.join(__dirname, '..', 'dist'),
       {
         id: 'api-1',
+        out: 'api-1',
         options: '../../../stubs/.config/typedoc.1.cjs',
         cleanOutputDir: true,
       },
@@ -99,9 +100,9 @@ const config = {
         },
         items: [
           {
-            to: 'docs/api/',
+            to: 'docs/api-1/',
             activeBasePath: 'docs',
-            label: 'API',
+            label: 'API 1',
             position: 'left',
           },
           {
@@ -128,12 +129,7 @@ const config = {
         links: [
           {
             title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
+            items: [],
           },
           {
             title: 'Community',

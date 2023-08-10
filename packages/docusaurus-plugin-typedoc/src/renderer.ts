@@ -1,14 +1,8 @@
-import { Application, DeclarationReflection, PageEvent } from 'typedoc';
+import { Application } from 'typedoc';
 import { FrontmatterEvent } from 'typedoc-plugin-frontmatter';
 import { SidebarOptions } from './models';
 
 export function loadRenderer(app: Application) {
-  app.renderer.on(PageEvent.END, (page: PageEvent<DeclarationReflection>) => {
-    if (page.contents) {
-      page.contents = page.contents.replace(/\\</g, '<');
-    }
-  });
-
   app.renderer.on(
     FrontmatterEvent.PREPARE_FRONTMATTER,
     (event: FrontmatterEvent) => {
