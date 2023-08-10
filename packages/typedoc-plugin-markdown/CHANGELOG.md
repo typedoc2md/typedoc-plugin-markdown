@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.0.0-next.18
+
+### Patch Changes
+
+- Split out comment summary and tags for signatures
+- Added `titleTemplate` option to replace hideKindPrefix option
+- Fixed incorrect heading title for monorepo packages
+- Disable in-built Prettier formatting
+
 ## 4.0.0-next.17 (2023-07-07)
 
 ### Patch Changes
