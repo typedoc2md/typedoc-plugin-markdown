@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   entryPoints: ['../src/*.ts'],
   tsconfig: '../tsconfig.json',

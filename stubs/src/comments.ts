@@ -6,7 +6,7 @@
  *
  * @overview
  *
- * Module comments
+ * Module comments with a link http://www.google.com
  *
  * @author Joe Bloggs
  *
@@ -23,6 +23,19 @@
  */
 
 export const commentsWithSymbolLinks = true;
+
+/**
+ * Comments
+ *
+ * thanks \@tgreyuk for the great work
+ *
+ *
+ *
+ * lots of space with external link http://www.google.com
+ *
+ * see issue #1
+ */
+export const __comments_For_Remark__ = true;
 
 /**
  * A <tag></tag> in comments
@@ -51,7 +64,8 @@ export const commentsWithMarkup = true;
  * @description
  * Tag description on new line
  *
- * - Tag description on another line
+ * - Tag description with bullet
+ * - Tag description with bullet
  *
  * @deprecated
  * Another tag description
@@ -136,6 +150,6 @@ export type literalWithBlockComments = {
  * When `x` or `y` is _absent_ then value of both constraints above is _absent_ and therefore they are satisfied.
  *
  */
-export function functionWithSummaryAndTags(arg: any) {
+export function functionWithSummaryAndTags(arg: string | boolean) {
   return '';
 }

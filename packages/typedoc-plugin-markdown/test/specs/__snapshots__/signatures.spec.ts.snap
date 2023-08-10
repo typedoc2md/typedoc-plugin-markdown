@@ -37,7 +37,7 @@ exports[`Signatures: should compile callable signature' 1`] = `
 `;
 
 exports[`Signatures: should compile class with constructor' 1`] = `
-"## new ClassWithConstructor()
+"## new ClassWithConstructor
 
 > **new ClassWithConstructor**(\`x\`, \`y\`): [\`ClassWithConstructor\`](classes/class.ClassWithConstructor.md)
 
@@ -60,7 +60,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 `;
 
 exports[`Signatures: should compile function that returns a function' 1`] = `
-"> **functionReturningAFunction**(): \\<T\\>(\`x\`) => \`boolean\`
+"> **functionReturningAFunction**(): <\`T\`>(\`x\`) => \`boolean\`
 
 Comments for function
 
@@ -68,7 +68,7 @@ Comments for function
 
 Return comments
 
-> > \\<\`T\`\\>(\`x\`): \`boolean\`
+> > <\`T\`>(\`x\`): \`boolean\`
 >
 > ### Type parameters
 >
@@ -110,13 +110,13 @@ Comments for function
 
 Return comments
 
-### x
+### \`x\`
 
- **x**: \`number\`  = \`1\`
+> **x**: \`number\`  = \`1\`
 
-### y
+### \`y\`
 
- **y**: \`number\`  = \`2\`
+> **y**: \`number\`  = \`2\`
 
 
 

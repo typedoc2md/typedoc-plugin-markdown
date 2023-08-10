@@ -25,7 +25,7 @@ exports[`Declarations: should compile an undefined declaration 1`] = `
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-"> **AnyFunctionType**: \\<\`A\`\\> (...\`input\`) => \`A\`
+"> **AnyFunctionType**: <\`A\`> (...\`input\`) => \`A\`
 
 ## Type parameters
 
@@ -59,25 +59,25 @@ exports[`Declarations: should compile declaration with accessors 1`] = `
 
 ## Type declaration
 
-### prop
+### \`prop\`
 
- **prop**: \`string\`
-
-
-
-___
-
-### getMe
-
- \`get\` getMe(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\< \`string\` \\>
+> **prop**: \`string\`
 
 
 
 ___
 
-### setMe
+### \`getMe\`
 
- \`set\` setMe(\`x\`: \`string\`): \`void\`
+> \`get\` getMe(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\< \`string\` \\>
+
+
+
+___
+
+### \`setMe\`
+
+> \`set\` setMe(\`x\`: \`string\`): \`void\`
 
 
 
@@ -88,8 +88,6 @@ ___
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
 "> \`const\` **\\_\\_DOUBLE\\_UNDERSCORES\\_DECLARATION\\_\\_**: *typeof* [\`__DOUBLE_UNDERSCORES_DECLARATION__\`](variables/variable._DOUBLE_UNDERSCORES_DECLARATION__.md)
-
-Comments
 
 [partial: sources]
 
@@ -129,9 +127,9 @@ exports[`Declarations: should compile indexable declaration 1`] = `
 
 ## Type declaration
 
-### arg1
+### \`arg1\`
 
- **arg1**: \`string\`
+> **arg1**: \`string\`
 
 
 
@@ -145,25 +143,25 @@ exports[`Declarations: should compile object literal cast as a const 1`] = `
 
 ## Type declaration
 
-### Prop1
+### \`Prop1\`
 
- \`readonly\` **Prop1**: \`"Prop1"\`  = \`'Prop1'\`
-
-
-
-___
-
-### Prop2
-
- \`readonly\` **Prop2**: \`"Prop2"\`  = \`'Prop2'\`
+> \`readonly\` **Prop1**: \`"Prop1"\`  = \`'Prop1'\`
 
 
 
 ___
 
-### Prop3
+### \`Prop2\`
 
- \`readonly\` **Prop3**: \`"Prop3"\`  = \`'Prop3'\`
+> \`readonly\` **Prop2**: \`"Prop2"\`  = \`'Prop2'\`
+
+
+
+___
+
+### \`Prop3\`
+
+> \`readonly\` **Prop3**: \`"Prop3"\`  = \`'Prop3'\`
 
 
 
@@ -179,9 +177,9 @@ Comments for object literal
 
 ## Type declaration
 
-### valueA
+### \`valueA\`
 
- **valueA**: \`number\`  = \`100\`
+> **valueA**: \`number\`  = \`100\`
 
 Comment for valueA
 
@@ -189,55 +187,55 @@ Comment for valueA
 
 ___
 
-### valueB
+### \`valueB\`
 
- **valueB**: \`boolean\`  = \`true\`
-
-
-
-___
-
-### valueC
-
- **valueC**: \`object\`  = \`{}\`
+> **valueB**: \`boolean\`  = \`true\`
 
 
 
 ___
 
-### valueX
+### \`valueC\`
 
- **valueX**: \`object\`
+> **valueC**: \`object\`  = \`{}\`
+
+
+
+___
+
+### \`valueX\`
+
+> **valueX**: \`object\`
 
 Comment for valueX
 
 #### Type declaration
 
-> ##### valueX.valueA
+> ##### \`valueX.valueA\`
 >
-> **valueA**: \`number\`[]
+> > **valueA**: \`number\`[]
 >
 > Comment for valueA
 >
-> ##### valueX.valueB
+> ##### \`valueX.valueB\`
 >
-> **valueB**: \`object\`
+> > **valueB**: \`object\`
 >
 > ###### Type declaration
 >
-> > ###### valueB.valueB1
+> > ###### \`valueB.valueB1\`
 > >
-> > **valueB1**: \`number\`  = \`1\`
+> > > **valueB1**: \`number\`  = \`1\`
 > >
-> > ###### valueB.valueB2
+> > ###### \`valueB.valueB2\`
 > >
-> > **valueB2**: \`number\`  = \`2\`
+> > > **valueB2**: \`number\`  = \`2\`
 > >
 > >
 >
-> ##### valueX.valueZ
+> ##### \`valueX.valueZ\`
 >
-> **valueZ**: \`string\`  = \`'foo'\`
+> > **valueZ**: \`string\`  = \`'foo'\`
 >
 > Comment for valueZ
 >
@@ -247,9 +245,9 @@ Comment for valueX
 
 ___
 
-### valueY
+### \`valueY\`
 
- **valueY**: () => \`string\`
+> **valueY**: () => \`string\`
 
 Comment for value Y
 
@@ -265,9 +263,9 @@ Comment for value Y
 
 ___
 
-### valueZ
+### \`valueZ\`
 
- **valueZ**: \`string\`  = \`'foo'\`
+> **valueZ**: \`string\`  = \`'foo'\`
 
 Comment for valueZ
 
@@ -283,9 +281,9 @@ exports[`Declarations: should compile type literal declaration 1`] = `
 
 ## Type declaration
 
-### valueA
+### \`valueA\`
 
- \`optional\` **valueA**: \`number\`
+> \`optional\` **valueA**: \`number\`
 
 Comments for valueA
 
@@ -293,17 +291,17 @@ Comments for valueA
 
 ___
 
-### valueB
+### \`valueB\`
 
- \`optional\` **valueB**: \`boolean\`
+> \`optional\` **valueB**: \`boolean\`
 
 
 
 ___
 
-### valueC
+### \`valueC\`
 
- **valueC**: \`object\`
+> **valueC**: \`object\`
 
 #### Index signature
 
@@ -313,21 +311,21 @@ ___
 
 ___
 
-### valueX
+### \`valueX\`
 
- **valueX**: \`object\`
+> **valueX**: \`object\`
 
 Comment for valueX
 
 #### Type declaration
 
-> ##### valueX.valueA
+> ##### \`valueX.valueA\`
 >
-> **valueA**: \`number\`[]
+> > **valueA**: \`number\`[]
 >
-> ##### valueX.valueY
+> ##### \`valueX.valueY\`
 >
-> **valueY**: (\`z\`) => \\{\`a\`: \`string\`; \`b\`: \`string\`;}
+> > **valueY**: (\`z\`) => \\{\`a\`: \`string\`; \`b\`: \`string\`;}
 >
 > Nested comment for valueX.valueY
 >
@@ -341,23 +339,23 @@ Comment for valueX
 >
 > ###### Returns
 >
-> ###### a
+> ###### \`a\`
 >
-> **a**: \`string\`
+> > **a**: \`string\`
 >
-> ###### b
+> ###### \`b\`
 >
-> **b**: \`string\`
->
->
+> > **b**: \`string\`
 >
 >
 >
 >
 >
-> ##### valueX.valueZ
 >
-> **valueZ**: \`string\`
+>
+> ##### \`valueX.valueZ\`
+>
+> > **valueZ**: \`string\`
 >
 > Nested comment for valueX.valueZ
 >
@@ -367,9 +365,9 @@ Comment for valueX
 
 ___
 
-### valueY
+### \`valueY\`
 
- **valueY**: () => \`string\`
+> **valueY**: () => \`string\`
 
 #### Returns
 
@@ -381,9 +379,9 @@ ___
 
 ___
 
-### valueZ
+### \`valueZ\`
 
- **valueZ**: \`string\`
+> **valueZ**: \`string\`
 
 Comment for valueZ
 

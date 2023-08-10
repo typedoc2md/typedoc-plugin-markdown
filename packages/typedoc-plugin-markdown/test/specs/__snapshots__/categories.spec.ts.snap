@@ -63,7 +63,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 ---
 
-### categoryFunctionA1()
+### categoryFunctionA1
 
 [partial: signatureMember]
 
@@ -71,7 +71,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 ---
 
-### categoryFunctionA2()
+### categoryFunctionA2
 
 [partial: signatureMember]
 
@@ -79,7 +79,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 ---
 
-### categoryFunctionA3()
+### categoryFunctionA3
 
 [partial: signatureMember]
 
@@ -93,7 +93,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 ---
 
-### categoryFunctionB2()
+### categoryFunctionB2
 
 [partial: signatureMember]
 
@@ -123,7 +123,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 ---
 
-### otherFunctionA()
+### otherFunctionA
 
 [partial: signatureMember]
 
@@ -131,7 +131,7 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 
 ---
 
-### otherFunctionB()
+### otherFunctionB
 
 [partial: signatureMember]"
 `;
@@ -273,7 +273,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 ### CategoryA
 
-#### categoryFunctionA1()
+#### categoryFunctionA1
 
 [partial: signatureMember]
 
@@ -281,7 +281,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 ---
 
-#### categoryFunctionA2()
+#### categoryFunctionA2
 
 [partial: signatureMember]
 
@@ -289,19 +289,19 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 ---
 
-#### categoryFunctionA3()
+#### categoryFunctionA3
 
 [partial: signatureMember]
 
 ### CategoryB
 
-#### categoryFunctionB2()
+#### categoryFunctionB2
 
 [partial: signatureMember]
 
 ### Other
 
-#### otherFunctionA()
+#### otherFunctionA
 
 [partial: signatureMember]
 
@@ -309,7 +309,7 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 
 ---
 
-#### otherFunctionB()
+#### otherFunctionB
 
 [partial: signatureMember]"
 `;
@@ -377,7 +377,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 ---
 
-### categoryFunctionA1()
+### categoryFunctionA1
 
 [partial: signatureMember]
 
@@ -385,7 +385,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 ---
 
-### categoryFunctionA2()
+### categoryFunctionA2
 
 [partial: signatureMember]
 
@@ -393,7 +393,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 ---
 
-### categoryFunctionA3()
+### categoryFunctionA3
 
 [partial: signatureMember]
 
@@ -407,7 +407,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 ---
 
-### categoryFunctionB2()
+### categoryFunctionB2
 
 [partial: signatureMember]
 
@@ -437,7 +437,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 ---
 
-### otherFunctionA()
+### otherFunctionA
 
 [partial: signatureMember]
 
@@ -445,7 +445,7 @@ exports[`Categories: (excludeGroups=true) should render category members' 1`] = 
 
 ---
 
-### otherFunctionB()
+### otherFunctionB
 
 [partial: signatureMember]"
 `;

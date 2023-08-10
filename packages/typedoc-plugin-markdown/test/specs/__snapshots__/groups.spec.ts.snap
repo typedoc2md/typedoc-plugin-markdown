@@ -108,7 +108,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 ## Functions
 
-### functionA()
+### functionA
 
 [partial: signatureMember]
 
@@ -116,7 +116,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 
 ---
 
-### functionB()
+### functionB
 
 [partial: signatureMember]"
 `;
@@ -220,7 +220,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-## functionA()
+## functionA
 
 [partial: signatureMember]
 
@@ -228,7 +228,7 @@ exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
 
 ---
 
-## functionB()
+## functionB
 
 [partial: signatureMember]"
 `;

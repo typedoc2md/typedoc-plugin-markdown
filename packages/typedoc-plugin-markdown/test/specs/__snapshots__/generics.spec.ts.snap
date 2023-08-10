@@ -16,7 +16,7 @@ Generated using [TypeDoc](https://typedoc.org/) and [typedoc-plugin-markdown](ht
 `;
 
 exports[`Generics: should compile function with a simple type param' 1`] = `
-"> **functionWithTypeParam**\\<\`A\`\\>(): \`boolean\`
+"> **functionWithTypeParam**<\`A\`>(): \`boolean\`
 
 ## Type parameters
 
@@ -36,7 +36,7 @@ exports[`Generics: should compile function with a simple type param' 1`] = `
 `;
 
 exports[`Generics: should compile function with complex type params' 1`] = `
-"> **functionWithTypeParams**\\<\`A\`, \`B\`, \`C\`, \`D\`\\>(): \`boolean\`
+"> **functionWithTypeParams**<\`A\`, \`B\`, \`C\`, \`D\`>(): \`boolean\`
 
 [partial: comment]
 

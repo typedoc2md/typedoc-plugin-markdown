@@ -24,12 +24,8 @@ export function escapeAngleBrackets(str: string) {
     const htmlRe =
       /<(?!\/?(div|span|p|a|br|img|ul|li|strike|em|strong|b)(>|\s))[^<]+?>/g;
     const shouldEscape = tags.match(htmlRe);
-    return shouldEscape ? tags.replace(/>/g, '\\>').replace(/</g, '\\<') : tags;
+    return shouldEscape ? tags.replace(/>/g, '>` ').replace(/</g, '`<') : tags;
   });
-}
-
-export function escapeTableCol(str: string) {
-  return str.replace(/(?<!\\)\|/g, '\\|');
 }
 
 export function unEscapeChars(str: string) {
@@ -77,4 +73,10 @@ export function slugify(str: string) {
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
+}
+
+export function formatContents(contents: string) {
+  return (
+    contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
+  );
 }

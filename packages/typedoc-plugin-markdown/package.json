@@ -44,7 +44,6 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "prettier": ">=1.8.0",
     "typedoc": ">=0.24.0"
   }
 }

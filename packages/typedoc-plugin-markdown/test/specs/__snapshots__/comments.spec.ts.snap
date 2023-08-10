@@ -17,7 +17,8 @@ exports[`Comments: should convert comments with tags' 1`] = `
 
 Tag description on new line
 
-- Tag description on another line
+- Tag description with bullet
+- Tag description with bullet
 
 **Deprecated**
 
@@ -42,9 +43,9 @@ Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html)."
 `;
 
 exports[`Comments: should escape angle brackets inside comments' 1`] = `
-"A \\<tag\\>\\</tag\\> in comments
+"A \`<tag>\` \`</tag>\`  in comments
 
-Closing \\</element\\>
+Closing \`</element>\` 
 
 A \`<tag>\` in backticks
 

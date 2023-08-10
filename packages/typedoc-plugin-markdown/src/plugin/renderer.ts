@@ -5,7 +5,6 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { format, resolveConfig, resolveConfigFile } from 'prettier';
 import {
   DeclarationReflection,
   PageEvent,
@@ -13,6 +12,7 @@ import {
   Reflection,
   RendererEvent,
 } from 'typedoc';
+import { formatContents } from '../support/utils';
 import { NavigationItem } from '../theme/models';
 
 /**
@@ -31,8 +31,6 @@ export async function generateMarkdown(
   out: string,
 ) {
   const start = Date.now();
-
-  out = path.resolve(out);
 
   await this.renderer.render(project, out);
 
@@ -109,13 +107,6 @@ export async function renderMarkdown(
     `There are ${output.urls?.length} pages to write.`,
   );
 
-  // Resolve prettier config options
-  const prettierConfigFile = await resolveConfigFile();
-
-  const prettierOptions = prettierConfigFile
-    ? await resolveConfig(prettierConfigFile)
-    : {};
-
   output.urls
     ?.filter(
       (urlMapping) =>
@@ -143,11 +134,7 @@ export async function renderMarkdown(
       }
 
       try {
-        const formattedContents = await format(page.contents as string, {
-          parser: 'markdown',
-          ...(prettierOptions && prettierOptions),
-        });
-        writeFileSync(page.filename, formattedContents);
+        writeFileSync(page.filename, formatContents(page.contents as string));
       } catch (error) {
         this.application.logger.error(`Could not write ${page.filename}`);
       }

@@ -29,7 +29,7 @@ The plugin replaces the default HTML theme with a built-in Markdown theme and ex
 
 <!--To see whats changed between version 3 and 4 please see [v4 release notes](xx).-->
 
-> [TypeDoc](https://typedoc.org/guides/installation/) and [Prettier](https://prettier.io/) are both required peer dependencies.
+> [TypeDoc](https://typedoc.org/guides/installation/) is a required peer dependency.
 
 ```bash
 npm install typedoc-plugin-markdown@next --save-dev
@@ -165,6 +165,7 @@ If frontmatter is required for adding further metadata please use [typedoc-plugi
 
 ## Output formatting
 
+<!--
 Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is backed by the remark-parse package. Parsing documents with Prettier has several benefits:
 
 - Produces a consistent format.
@@ -172,8 +173,9 @@ Generated Markdown is now parsed with [Prettier](https://prettier.io/) which is 
 - Formats code blocks inside comment fenced blocks.
 
 Any [prettier configuration](https://prettier.io/docs/en/configuration.html) files discovered will be passed as options to the parser.
+-->
 
-In addition all test files are linted with [markdownlint](https://github.com/DavidAnson/markdownlint#readme).
+All test files are linted with [markdownlint](https://github.com/DavidAnson/markdownlint#readme).
 
 <!--
 ## Customizing / extending

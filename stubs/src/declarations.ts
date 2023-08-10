@@ -84,9 +84,6 @@ export let indexableDeclaration: {
   arg1: string;
 };
 
-/**
- * Comments
- */
 export const __DOUBLE_UNDERSCORES_DECLARATION__ = Symbol.for('__type__');
 
 export type AnyFunctionType<A = any> = (...input: any[]) => A;
