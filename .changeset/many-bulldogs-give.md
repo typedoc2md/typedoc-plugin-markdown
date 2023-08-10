@@ -4,3 +4,4 @@
 
 - Added `titleTemplate` option to replace hideKindPrefix option
 - Fixed incorrect heading title for monorepo packages
+- Disable in-built Prettier formatting
