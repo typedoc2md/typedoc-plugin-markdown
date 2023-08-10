@@ -48,9 +48,9 @@ export function declarationMemberIdentifier(
 
   if (reflection.typeParameters) {
     md.push(
-      `\\<${reflection.typeParameters
+      `<${reflection.typeParameters
         ?.map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}\\>`,
+        .join(', ')}>`,
     );
   }
 

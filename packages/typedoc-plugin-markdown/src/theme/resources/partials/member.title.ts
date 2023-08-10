@@ -15,10 +15,6 @@ export function memberTitle(
 
   md.push(`${escapeChars(reflection.name)}`);
 
-  if (reflection.signatures?.length) {
-    md.push('()');
-  }
-
   if (typeParams && reflection.typeParameters) {
     const typeParameters = reflection.typeParameters
       .map((typeParameter) => typeParameter.name)

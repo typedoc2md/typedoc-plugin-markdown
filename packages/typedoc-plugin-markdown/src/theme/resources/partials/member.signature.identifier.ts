@@ -26,9 +26,9 @@ export function signatureMemberIdentifier(
 
   if (signature.typeParameters) {
     md.push(
-      `\\<${signature.typeParameters
+      `<${signature.typeParameters
         .map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}\\>`,
+        .join(', ')}>`,
     );
   }
 

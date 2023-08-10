@@ -18,14 +18,14 @@ export function signatureMember(
   const md: string[] = [];
 
   if (signature.parent?.kindOf(ReflectionKind.Constructor)) {
-    md.push(heading(headingLevel - 1, `${signature.name}()`));
+    md.push(heading(headingLevel - 1, signature.name));
   }
 
   if (showSources) {
     if (context.options.getValue('identifiersAsCodeBlocks')) {
       md.push(codeBlock(context.signatureMemberIdentifier(signature)));
     } else {
-      md.push(context.signatureMemberIdentifier(signature));
+      md.push('> ' + context.signatureMemberIdentifier(signature));
     }
   }
 

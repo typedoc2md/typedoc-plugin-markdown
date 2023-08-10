@@ -1,6 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { blockQuoteBlock, heading } from '../../../support/elements';
+import { backTicks, blockQuoteBlock, heading } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
 
 /**
@@ -23,9 +23,11 @@ export function typeDeclarationMember(
         return [
           heading(
             headingLevel,
-            [escapeChars(parentName || ''), escapeChars(declarationChild.name)]
-              .filter((name) => Boolean(name))
-              .join('.'),
+            backTicks(
+              [escapeChars(parentName || ''), declarationChild.name]
+                .filter((name) => Boolean(name))
+                .join('.'),
+            ),
           ),
           context.declarationMember(declarationChild, headingLevel + 1, true),
         ].join('\n\n');
