@@ -4,5 +4,3 @@
  * @module
  */
 export * from '../helpers';
-export * from './partials';
-export * from './templates';

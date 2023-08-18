@@ -1,34 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Groups: (excludeGroups=false) should render group TOC' 1`] = `
-"## Index
-
-### Enumerations
+"## Enumerations
 
 - [EnumA](API.md#enuma)
 - [EnumB](API.md#enumb)
 
-### Classes
+## Classes
 
 - [ClassA](API.md#classa)
 - [ClassB](API.md#classb)
 
-### Interfaces
+## Interfaces
 
 - [InterfaceA](API.md#interfacea)
 - [InterfaceB](API.md#interfaceb)
 
-### Type Aliases
+## Type Aliases
 
 - [typeA](API.md#typea)
 - [typeB](API.md#typeb)
 
-### Variables
+## Variables
 
 - [variableA](API.md#variablea)
 - [variableB](API.md#variableb)
 
-### Functions
+## Functions
 
 - [functionA](API.md#functiona)
 - [functionB](API.md#functionb)
@@ -122,9 +120,7 @@ exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
 `;
 
 exports[`Groups: (excludeGroups=true) should render group TOC' 1`] = `
-"## Index
-
-- [EnumA](API.md#enuma)
+"- [EnumA](API.md#enuma)
 - [EnumB](API.md#enumb)
 - [ClassA](API.md#classa)
 - [ClassB](API.md#classb)

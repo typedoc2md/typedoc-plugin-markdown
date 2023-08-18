@@ -1,5 +1,8 @@
+import * as fs from 'fs';
 import * as path from 'path';
 import { Application, TypeDocOptions } from 'typedoc';
+import { load as loadTypedocPluginFrontmatter } from 'typedoc-plugin-frontmatter';
+import { load as loadTypedocPluginMarkdown } from 'typedoc-plugin-markdown';
 import { PluginOptions } from '.';
 import { getPluginOptions, loadOptions } from './options';
 import { loadRenderer } from './renderer';
@@ -53,6 +56,8 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   loadOptions(app);
   loadRenderer(app);
+  loadTypedocPluginMarkdown(app);
+  loadTypedocPluginFrontmatter(app);
 
   await app.bootstrapWithPlugins(
     optionsPassedToTypeDoc as unknown as Partial<TypeDocOptions>,
@@ -78,4 +83,13 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   } else {
     await app.generateDocs(project, outputDir);
   }
+}
+
+export function writeFileSync(fileName: string, data: string) {
+  fs.mkdirSync(path.dirname(normalizePath(fileName)), { recursive: true });
+  fs.writeFileSync(normalizePath(fileName), data);
+}
+
+export function normalizePath(path: string) {
+  return path.replace(/\\/g, '/');
 }

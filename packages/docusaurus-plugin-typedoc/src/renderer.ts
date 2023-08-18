@@ -15,9 +15,7 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
   const hasReadme = !app.options.getValue('readme').endsWith('none');
   const entryPage = app.options.getValue('entryFileName');
   const indexPage = app.options.getValue('indexFileName');
-
   const sidebar = app.options.getValue('sidebar') as SidebarOptions;
-
   const model = event.page?.model;
   const sidebarLabel = model?.name;
   let pluginFrontmatter: Record<string, any> = {};
@@ -44,14 +42,6 @@ function loadFrontmatter(app: Application, event: FrontmatterEvent) {
         pluginFrontmatter = {
           ...pluginFrontmatter,
           ...(sidebar.indexLabel && { sidebar_label: sidebar.indexLabel }),
-        };
-      }
-    } else {
-      if (event.page?.url === entryPage) {
-        pluginFrontmatter = {
-          ...pluginFrontmatter,
-          ...(sidebar.indexLabel && { sidebar_label: sidebar.indexLabel }),
-          sidebar_position: 0,
         };
       }
     }

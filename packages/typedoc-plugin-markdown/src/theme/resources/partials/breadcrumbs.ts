@@ -1,5 +1,6 @@
-import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
+import { DeclarationReflection, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { MarkdownPageEvent } from '../../../plugin/events';
 import { link } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
 
@@ -9,7 +10,7 @@ import { escapeChars } from '../../../support/utils';
  */
 export function breadcrumbs(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<ProjectReflection | DeclarationReflection>,
+  page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ): string {
   const md: string[] = [];
 
@@ -20,7 +21,12 @@ export function breadcrumbs(
     return '';
   }
 
-  md.push(link('Index', context.relativeURL(page.project.url)));
+  md.push(
+    link(
+      context.options.getValue('indexPageTitle'),
+      context.relativeURL(page.project.url),
+    ),
+  );
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {

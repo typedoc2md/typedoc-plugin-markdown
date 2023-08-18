@@ -25,7 +25,7 @@ exports[`Declarations: should compile an undefined declaration 1`] = `
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-"> **AnyFunctionType**: <\`A\`> (...\`input\`) => \`A\`
+"> **AnyFunctionType**: <\`A\`> \`function\`
 
 ## Type parameters
 
@@ -247,7 +247,7 @@ Comment for valueX
 
 ### \`valueY\`
 
-> **valueY**: () => \`string\`
+> **valueY**: \`function\`
 
 Comment for value Y
 
@@ -325,7 +325,7 @@ Comment for valueX
 >
 > ##### \`valueX.valueY\`
 >
-> > **valueY**: (\`z\`) => \\{\`a\`: \`string\`; \`b\`: \`string\`;}
+> > **valueY**: \`function\`
 >
 > Nested comment for valueX.valueY
 >
@@ -367,7 +367,7 @@ Comment for valueX
 
 ### \`valueY\`
 
-> **valueY**: () => \`string\`
+> **valueY**: \`function\`
 
 #### Returns
 

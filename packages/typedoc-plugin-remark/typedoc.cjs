@@ -5,8 +5,7 @@ module.exports = {
   entryPoints: [path.join(__dirname, '../../stubs/src/comments.ts')],
   out: './out',
   outputFileStrategy: 'modules',
-  plugin: ['typedoc-plugin-markdown', 'typedoc-plugin-frontmatter', './dist'],
-  remarkPlugins: ['remark-github', 'unified-prettier'],
-  frontmatterGlobals: { author: 'Joe Bloggs' },
+  plugin: ['typedoc-plugin-markdown', './dist'],
+  remarkPlugins: ['remark-github'],
   readme: 'none',
 };

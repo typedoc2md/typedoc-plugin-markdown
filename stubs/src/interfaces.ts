@@ -20,8 +20,6 @@ export interface SomeProps {
   prop3: string;
 }
 
-export class Animal {}
-
 /**
  * Some config
  *

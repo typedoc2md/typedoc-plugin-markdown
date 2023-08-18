@@ -4,7 +4,7 @@ import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 export function load(app: Application) {
   app.options.addDeclaration({
     name: 'remarkPlugins',
-    help: 'A list of plugins with optional options.',
+    help: 'A list of remark plugins',
     type: ParameterType.Mixed,
     defaultValue: [],
   });
@@ -18,6 +18,7 @@ export function load(app: Application) {
         const filePath = `${output.outputDirectory}/${urlMapping.url}`;
         await parseContents(filePath, remarkPlugins);
       });
+
       app.logger.info(
         `TypeDoc output parsed with Remark using plugins [${remarkPlugins
           .map((plugin) => `"${plugin}"`)

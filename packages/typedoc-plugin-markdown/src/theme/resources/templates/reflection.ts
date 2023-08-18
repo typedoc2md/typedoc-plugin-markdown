@@ -1,5 +1,6 @@
-import { DeclarationReflection, PageEvent } from 'typedoc';
+import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { MarkdownPageEvent } from '../../../plugin/events';
 import { heading } from '../../../support/elements';
 
 /**
@@ -7,7 +8,7 @@ import { heading } from '../../../support/elements';
  */
 export function reflectionTemplate(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<DeclarationReflection>,
+  page: MarkdownPageEvent<DeclarationReflection>,
 ) {
   const md: string[] = [];
 

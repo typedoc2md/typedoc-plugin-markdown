@@ -1,28 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Categories: (categorizeByGroup=false) should render category TOC' 1`] = `
-"## Index
-
-### CategoryA
+"## Interfaces
 
 - [CategoryInterfaceA1](API.md#categoryinterfacea1)
 - [CategoryInterfaceA2](API.md#categoryinterfacea2)
+- [OtherInterfaceA](API.md#otherinterfacea)
+
+## Variables
+
 - [categoryVariableA1](API.md#categoryvariablea1)
 - [categoryVariableA2](API.md#categoryvariablea2)
+- [categoryVariableB1](API.md#categoryvariableb1)
+- [otherVariableA](API.md#othervariablea)
+- [otherVariableB](API.md#othervariableb)
+
+## Functions
+
 - [categoryFunctionA1](API.md#categoryfunctiona1)
 - [categoryFunctionA2](API.md#categoryfunctiona2)
 - [categoryFunctionA3](API.md#categoryfunctiona3)
-
-### CategoryB
-
-- [categoryVariableB1](API.md#categoryvariableb1)
 - [categoryFunctionB2](API.md#categoryfunctionb2)
-
-### Other
-
-- [OtherInterfaceA](API.md#otherinterfacea)
-- [otherVariableA](API.md#othervariablea)
-- [otherVariableB](API.md#othervariableb)
 - [otherFunctionA](API.md#otherfunctiona)
 - [otherFunctionB](API.md#otherfunctionb)
 "
@@ -137,74 +135,47 @@ exports[`Categories: (categorizeByGroup=false) should render category members' 1
 `;
 
 exports[`Categories: (excludeGroups=false) should render category TOC' 1`] = `
-"## Index
+"## Interfaces
 
-### Interfaces
-
-#### CategoryA
+### CategoryA
 
 - [CategoryInterfaceA1](API.md#categoryinterfacea1)
 - [CategoryInterfaceA2](API.md#categoryinterfacea2)
+
+### Other
+
 - [OtherInterfaceA](API.md#otherinterfacea)
 
-#### Other
+## Variables
 
-- [CategoryInterfaceA1](API.md#categoryinterfacea1)
-- [CategoryInterfaceA2](API.md#categoryinterfacea2)
-- [OtherInterfaceA](API.md#otherinterfacea)
-
-### Variables
-
-#### CategoryA
+### CategoryA
 
 - [categoryVariableA1](API.md#categoryvariablea1)
 - [categoryVariableA2](API.md#categoryvariablea2)
+
+### CategoryB
+
 - [categoryVariableB1](API.md#categoryvariableb1)
+
+### Other
+
 - [otherVariableA](API.md#othervariablea)
 - [otherVariableB](API.md#othervariableb)
 
-#### CategoryB
+## Functions
 
-- [categoryVariableA1](API.md#categoryvariablea1)
-- [categoryVariableA2](API.md#categoryvariablea2)
-- [categoryVariableB1](API.md#categoryvariableb1)
-- [otherVariableA](API.md#othervariablea)
-- [otherVariableB](API.md#othervariableb)
-
-#### Other
-
-- [categoryVariableA1](API.md#categoryvariablea1)
-- [categoryVariableA2](API.md#categoryvariablea2)
-- [categoryVariableB1](API.md#categoryvariableb1)
-- [otherVariableA](API.md#othervariablea)
-- [otherVariableB](API.md#othervariableb)
-
-### Functions
-
-#### CategoryA
+### CategoryA
 
 - [categoryFunctionA1](API.md#categoryfunctiona1)
 - [categoryFunctionA2](API.md#categoryfunctiona2)
 - [categoryFunctionA3](API.md#categoryfunctiona3)
+
+### CategoryB
+
 - [categoryFunctionB2](API.md#categoryfunctionb2)
-- [otherFunctionA](API.md#otherfunctiona)
-- [otherFunctionB](API.md#otherfunctionb)
 
-#### CategoryB
+### Other
 
-- [categoryFunctionA1](API.md#categoryfunctiona1)
-- [categoryFunctionA2](API.md#categoryfunctiona2)
-- [categoryFunctionA3](API.md#categoryfunctiona3)
-- [categoryFunctionB2](API.md#categoryfunctionb2)
-- [otherFunctionA](API.md#otherfunctiona)
-- [otherFunctionB](API.md#otherfunctionb)
-
-#### Other
-
-- [categoryFunctionA1](API.md#categoryfunctiona1)
-- [categoryFunctionA2](API.md#categoryfunctiona2)
-- [categoryFunctionA3](API.md#categoryfunctiona3)
-- [categoryFunctionB2](API.md#categoryfunctionb2)
 - [otherFunctionA](API.md#otherfunctiona)
 - [otherFunctionB](API.md#otherfunctionb)
 "
@@ -315,28 +286,18 @@ exports[`Categories: (excludeGroups=false) should render category members' 1`] =
 `;
 
 exports[`Categories: (excludeGroups=true) should render category TOC' 1`] = `
-"## Index
-
-### CategoryA
-
-- [CategoryInterfaceA1](API.md#categoryinterfacea1)
+"- [CategoryInterfaceA1](API.md#categoryinterfacea1)
 - [CategoryInterfaceA2](API.md#categoryinterfacea2)
+- [OtherInterfaceA](API.md#otherinterfacea)
 - [categoryVariableA1](API.md#categoryvariablea1)
 - [categoryVariableA2](API.md#categoryvariablea2)
+- [categoryVariableB1](API.md#categoryvariableb1)
+- [otherVariableA](API.md#othervariablea)
+- [otherVariableB](API.md#othervariableb)
 - [categoryFunctionA1](API.md#categoryfunctiona1)
 - [categoryFunctionA2](API.md#categoryfunctiona2)
 - [categoryFunctionA3](API.md#categoryfunctiona3)
-
-### CategoryB
-
-- [categoryVariableB1](API.md#categoryvariableb1)
 - [categoryFunctionB2](API.md#categoryfunctionb2)
-
-### Other
-
-- [OtherInterfaceA](API.md#otherinterfacea)
-- [otherVariableA](API.md#othervariablea)
-- [otherVariableB](API.md#othervariableb)
 - [otherFunctionA](API.md#otherfunctiona)
 - [otherFunctionB](API.md#otherfunctionb)
 "

@@ -2,4 +2,4 @@
 
 Monorepo readme content
 
-[Index]({indexUrl})
+[TYPEDOC_INDEX]

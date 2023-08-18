@@ -1,12 +1,13 @@
 import {
   DeclarationReflection,
-  PageEvent,
   ProjectReflection,
   Reflection,
   RenderTemplate,
   Renderer,
   Theme,
 } from 'typedoc';
+import { MarkdownPageEvent } from '../plugin/events';
+
 import { MarkdownThemeRenderContext } from './markdown-theme-render-context';
 import { NavigationBuilder } from './navigation-builder';
 import { UrlBuilder } from './url-builder';
@@ -29,23 +30,25 @@ export class MarkdownTheme extends Theme {
   /**
    * Returns a render context instance for a page.
    */
-  getRenderContext(pageEvent: PageEvent<Reflection> | null) {
+  getRenderContext(pageEvent: MarkdownPageEvent<Reflection> | null) {
     return new MarkdownThemeRenderContext(pageEvent, this.application.options);
   }
 
-  readmeTemplate = (pageEvent: PageEvent<ProjectReflection>) => {
+  readmeTemplate = (pageEvent: MarkdownPageEvent<ProjectReflection>) => {
     return this.getRenderContext(pageEvent).readmeTemplate(pageEvent);
   };
 
-  projectTemplate = (pageEvent: PageEvent<ProjectReflection>) => {
+  projectTemplate = (pageEvent: MarkdownPageEvent<ProjectReflection>) => {
     return this.getRenderContext(pageEvent).projectTemplate(pageEvent);
   };
 
-  reflectionTemplate = (pageEvent: PageEvent<DeclarationReflection>) => {
+  reflectionTemplate = (
+    pageEvent: MarkdownPageEvent<DeclarationReflection>,
+  ) => {
     return this.getRenderContext(pageEvent).reflectionTemplate(pageEvent);
   };
 
-  memberTemplate = (pageEvent: PageEvent<DeclarationReflection>) => {
+  memberTemplate = (pageEvent: MarkdownPageEvent<DeclarationReflection>) => {
     return this.getRenderContext(pageEvent).memberTemplate(pageEvent);
   };
 
@@ -53,9 +56,9 @@ export class MarkdownTheme extends Theme {
    * Renders a template and page model to a string.
    */
   render(
-    page: PageEvent<Reflection>,
-    template: RenderTemplate<PageEvent<Reflection>>,
-  ): string {
+    page: MarkdownPageEvent<Reflection>,
+    template: RenderTemplate<MarkdownPageEvent<Reflection>>,
+  ) {
     return template(page) as string;
   }
 

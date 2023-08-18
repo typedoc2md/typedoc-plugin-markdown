@@ -5,6 +5,14 @@ const path = require('path');
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const docusaurusPlugin = path.join(
+  __dirname,
+  '..',
+  '..',
+  'packages',
+  'docusaurus-plugin-typedoc',
+  'dist',
+);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -36,29 +44,30 @@ const config = {
 
   plugins: [
     [
-      path.join(__dirname, '..', 'dist'),
+      docusaurusPlugin,
       {
         id: 'api-1',
         out: 'api-1',
-        options: '../../../stubs/.config/typedoc.1.cjs',
+        options: '../../stubs/.config/typedoc.1.cjs',
         cleanOutputDir: true,
+        skipIndexPage: true,
       },
     ],
     [
-      path.join(__dirname, '..', 'dist'),
+      docusaurusPlugin,
       {
         id: 'api-2',
         out: 'api-2',
-        options: '../../../stubs/.config/typedoc.2.cjs',
+        options: '../../stubs/.config/typedoc.2.cjs',
         cleanOutputDir: true,
       },
     ],
     [
-      path.join(__dirname, '..', 'dist'),
+      docusaurusPlugin,
       {
         id: 'api-3',
         out: 'api-3',
-        options: '../../../stubs/.config/typedoc.3.cjs',
+        options: '../../stubs/.config/typedoc.3.cjs',
         cleanOutputDir: true,
       },
     ],
@@ -70,6 +79,15 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          /*async sidebarItemsGenerator({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            return sidebarItems.filter(
+              (sidebarItem) => !['api-1/index'].includes(sidebarItem.id),
+            );
+          },*/
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -100,7 +118,7 @@ const config = {
         },
         items: [
           {
-            to: 'docs/api-1/',
+            to: 'docs/api-1',
             activeBasePath: 'docs',
             label: 'API 1',
             position: 'left',

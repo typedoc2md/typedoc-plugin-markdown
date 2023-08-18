@@ -21,14 +21,3 @@ export const FormatStyle = {
 } as const;
 
 export type FormatStyle = (typeof FormatStyle)[keyof typeof FormatStyle];
-/**
- *
- * @enum
- */
-export const AnchorFormat = {
-  Lowercase: 'lowercase',
-  Slug: 'slug',
-  None: 'none',
-} as const;
-
-export type AnchorFormat = (typeof AnchorFormat)[keyof typeof AnchorFormat];

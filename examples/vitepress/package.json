@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-typedoc": "typedoc --plugin ../../packages/typedoc-plugin-markdown/dist --plugin ../../packages/typedoc-vitepress-theme/dist --options \"../../stubs/typedoc.1.js\"",
+    "publish-typedoc": "typedoc --plugin ../../packages/typedoc-plugin-markdown/dist --plugin ../../packages/typedoc-vitepress-theme/dist --options ../../stubs/.config/typedoc.2.cjs",
     "predocs:dev": "npm run publish-typedoc",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -12,6 +12,7 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.75"
+    "vitepress": "^1.0.0-rc.4",
+    "vitepress-sidebar": "^1.10.1"
   }
 }

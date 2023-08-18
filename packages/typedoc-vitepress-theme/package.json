@@ -21,10 +21,7 @@
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
     "predocs": "npm run build",
-    "docs": "typedoc --options ../../stubs/typedoc.1.js --plugin typedoc-plugin-markdown --plugin ./dist --out out",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs": "typedoc --options ../../stubs/.config/typedoc.1.cjs --plugin typedoc-plugin-markdown --plugin ./dist"
   },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.0.0-next.13"

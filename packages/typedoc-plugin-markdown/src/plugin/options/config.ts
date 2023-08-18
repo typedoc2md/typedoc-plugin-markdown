@@ -1,5 +1,5 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
-import { AnchorFormat, FormatStyle, OutputFileStrategy } from './custom-maps';
+import { FormatStyle, OutputFileStrategy } from './custom-maps';
 
 /**
  *
@@ -47,6 +47,8 @@ export const includeFileNumberPrefixes: DeclarationOption = {
  * This creates a flat folder structure without any folders - a required format for some Wikis.
  *
  * ![flattenOutputFiles folders](../images/options/flattenOutputFiles.png)
+ *
+ * @category fileOutput
  */
 export const flattenOutputFiles: DeclarationOption = {
   name: 'flattenOutputFiles',
@@ -69,6 +71,8 @@ export const flattenOutputFiles: DeclarationOption = {
  *
  * ├── {entryFileName} - (API index page)
  *
+ * @category fileOutput
+ *
  */
 export const entryFileName: DeclarationOption = {
   name: 'entryFileName',
@@ -83,6 +87,8 @@ export const entryFileName: DeclarationOption = {
  * This page may not be required (if navigation is present for example) and can be skipped. See `skipIndexPage`.
  *
  * This option is ignored if `readme=none` or `skipIndexPage=true`.
+ *
+ * @category fileOutput
  */
 export const indexFileName: DeclarationOption = {
   name: 'indexFileName',
@@ -91,17 +97,22 @@ export const indexFileName: DeclarationOption = {
   defaultValue: 'API.md',
 };
 
+/**
+ * @category fileOutput
+ */
 export const indexPageTitle: DeclarationOption = {
   name: 'indexPageTitle',
   help: 'The title of API index page.',
   type: ParameterType.String,
-  defaultValue: 'Index',
+  defaultValue: 'API',
 };
 
 /**
  * This option skips the generation of the index page if it is not required.
  *
  * Please note this option will be ignored if a single entryPoint is defined as it will contain exported symbols.
+ *
+ * @category fileOutput
  */
 export const skipIndexPage: DeclarationOption = {
   name: 'skipIndexPage',
@@ -138,6 +149,8 @@ export const skipIndexPage: DeclarationOption = {
  *
  * ## FunctionA
  * ```
+ *
+ * @category fileOutput
  */
 export const excludeGroups: DeclarationOption = {
   name: 'excludeGroups',
@@ -146,6 +159,9 @@ export const excludeGroups: DeclarationOption = {
   defaultValue: false,
 };
 
+/**
+ * @category fileOutput
+ */
 export const hidePageHeader: DeclarationOption = {
   name: 'hidePageHeader',
   help: 'Do not print page header.',
@@ -153,6 +169,9 @@ export const hidePageHeader: DeclarationOption = {
   defaultValue: false,
 };
 
+/**
+ * @category fileOutput
+ */
 export const hidePageTitle: DeclarationOption = {
   name: 'hidePageTitle',
   help: 'Do not print page title.',
@@ -160,6 +179,9 @@ export const hidePageTitle: DeclarationOption = {
   defaultValue: false,
 };
 
+/**
+ * @category fileOutput
+ */
 export const hideBreadcrumbs: DeclarationOption = {
   name: 'hideBreadcrumbs',
   help: 'Do not print breadcrumbs.',
@@ -167,13 +189,19 @@ export const hideBreadcrumbs: DeclarationOption = {
   defaultValue: false,
 };
 
+/**
+ * @category fileOutput
+ */
 export const hideInPageTOC: DeclarationOption = {
   name: 'hideInPageTOC',
-  help: 'Do not render in-page table of contents items.',
+  help: 'Do not render in-page TOC/Index items.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
 
+/**
+ * @category fileOutput
+ */
 export const hideHierarchy: DeclarationOption = {
   name: 'hideHierarchy',
   help: 'Do not print reflection hierarchy.',
@@ -183,6 +211,8 @@ export const hideHierarchy: DeclarationOption = {
 
 /**
  * Note if `true` references will not be linked.
+ *
+ * @category fileOutput
  */
 export const identifiersAsCodeBlocks: DeclarationOption = {
   name: 'identifiersAsCodeBlocks',
@@ -191,6 +221,9 @@ export const identifiersAsCodeBlocks: DeclarationOption = {
   defaultValue: false,
 };
 
+/**
+ * @category fileOutput
+ */
 export const propertiesFormat: DeclarationOption = {
   name: 'propertiesFormat',
   help: 'Specify the render style of properties groups for interfaces and classes.',
@@ -199,6 +232,9 @@ export const propertiesFormat: DeclarationOption = {
   defaultValue: FormatStyle.List,
 };
 
+/**
+ * @category fileOutput
+ */
 export const enumMembersFormat: DeclarationOption = {
   name: 'enumMembersFormat',
   help: 'Specify the render style of Enum members.',
@@ -207,6 +243,9 @@ export const enumMembersFormat: DeclarationOption = {
   defaultValue: FormatStyle.List,
 };
 
+/**
+ * @category fileOutput
+ */
 export const typeDeclarationFormat: DeclarationOption = {
   name: 'typeDeclarationFormat',
   help: 'Specify the render style for type declaration members.',
@@ -215,6 +254,9 @@ export const typeDeclarationFormat: DeclarationOption = {
   defaultValue: FormatStyle.List,
 };
 
+/**
+ * @category fileOutput
+ */
 export const tocFormat: DeclarationOption = {
   name: 'tocFormat',
   help: 'Render TOC either as a simple list or a table with a description.',
@@ -223,41 +265,13 @@ export const tocFormat: DeclarationOption = {
   defaultValue: FormatStyle.List,
 };
 
-export const baseUrl: DeclarationOption = {
-  help: 'Specifies the base url for internal link. If omitted all urls will be relative.',
-  name: 'baseUrl',
-  type: ParameterType.String,
-};
-
-export const anchorFormat: DeclarationOption = {
-  name: 'anchorFormat',
-  help: 'The anchor format to use when linking to internal symbols.',
-  type: ParameterType.Map,
-  map: AnchorFormat,
-  defaultValue: AnchorFormat.Lowercase,
-};
-
-/**
- * Supports {anchor} placeholders.
- *
- * An example use-case is for bitbucket cloud that would use the option
- *
- * ```
- * anchorTemplate: 'markdown-header-{anchor}'
- * ```
- */
-export const anchorTemplate: DeclarationOption = {
-  name: 'anchorTemplate',
-  help: 'The anchor template to use when linking to internal symbols.',
-  type: ParameterType.String,
-};
-
 /**
  * Supports {kind} and {name} placeholders.
  *
  * ```
  * titleTemplate: "{kind}: {name}"
  * ```
+ * @category fileOutput
  */
 export const titleTemplate: DeclarationOption = {
   name: 'titleTemplate',
@@ -266,9 +280,22 @@ export const titleTemplate: DeclarationOption = {
   defaultValue: '{kind}: {name}',
 };
 
-export const namedAnchors: DeclarationOption = {
-  name: 'namedAnchors',
-  help: 'Use HTML named anchors for engines that do not automatically assign header ids.',
+/**
+ * @category fileOutput
+ */
+export const preserveAnchorCasing: DeclarationOption = {
+  name: 'preserveAnchorCasing',
+  help: 'Preserve anchor casing when generating links.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * @category fileOutput
+ */
+export const anchorPrefix: DeclarationOption = {
+  name: 'anchorPrefix',
+  help: 'Custom anchor prefix',
+  type: ParameterType.String,
+  defaultValue: undefined,
 };

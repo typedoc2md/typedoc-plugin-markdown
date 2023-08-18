@@ -1,5 +1,6 @@
-import { PageEvent, ProjectReflection } from 'typedoc';
+import { ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { MarkdownPageEvent } from '../../../plugin/events';
 import { heading } from '../../../support/elements';
 
 /**
@@ -7,7 +8,7 @@ import { heading } from '../../../support/elements';
  */
 export function projectTemplate(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<ProjectReflection>,
+  page: MarkdownPageEvent<ProjectReflection>,
 ) {
   const md: string[] = [];
 
@@ -27,7 +28,7 @@ export function projectTemplate(
     md.push(context.comment(page.model.comment, 2));
   }
 
-  md.push(context.pageTOC(page, 2));
+  md.push(context.pageIndex(page, 2));
 
   md.push(context.members(page.model, 2));
 

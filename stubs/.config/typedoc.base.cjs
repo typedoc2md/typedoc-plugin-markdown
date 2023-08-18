@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  entryPoints: ['../src/*.ts'],
-  tsconfig: '../tsconfig.json',
+  entryPoints: [path.join(__dirname, '../src/*.ts')],
+  tsconfig: path.join(__dirname, '../tsconfig.json'),
   media: '../media/',
   includeVersion: true,
   cleanOutputDir: true,

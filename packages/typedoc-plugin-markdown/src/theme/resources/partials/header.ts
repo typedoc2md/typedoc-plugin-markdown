@@ -1,10 +1,10 @@
 import {
   DeclarationReflection,
-  PageEvent,
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { MarkdownPageEvent } from '../../../plugin/events';
 import { bold, link } from '../../../support/elements';
 import { getProjectDisplayName } from '../../helpers';
 
@@ -13,7 +13,7 @@ import { getProjectDisplayName } from '../../helpers';
  */
 export function header(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<ProjectReflection | DeclarationReflection>,
+  page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ): string {
   const isMonoRepo = !Boolean(page.project.groups);
   if (isMonoRepo) {
@@ -27,7 +27,7 @@ export function header(
 
 function projectHeader(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<ProjectReflection | DeclarationReflection>,
+  page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const entryFileName = context.options.getValue('entryFileName');
 
@@ -40,12 +40,12 @@ function projectHeader(
 
   md.push(link(bold(projectName), context.relativeURL(entryFileName)));
 
-  return `${md.join(' ')}\n***\n`;
+  return `${md.join(' ')}\n\n***\n`;
 }
 
 function packageHeader(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<ProjectReflection | DeclarationReflection>,
+  page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const packageItem = findPackage(page.model) as any;
   if (!packageItem) {
@@ -56,7 +56,7 @@ function packageHeader(
 
   md.push(link(bold(packageItem.name), context.relativeURL(packageItem.url)));
 
-  return `${md.join(' ')}\n***\n`;
+  return `${md.join(' ')}\n\n***\n`;
 }
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {

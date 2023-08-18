@@ -22,6 +22,7 @@ const DEFAULT_PLUGIN_OPTIONS = {
   sidebar: {
     autoConfiguration: true,
   },
+  plugin: ['typedoc-plugin-markdown'],
 };
 
 export function getPluginOptions(
@@ -54,14 +55,15 @@ export function loadOptions(app: Application) {
       readonly order = 900;
       readonly supportsPackages = false;
       read(container: Options) {
-        const requiredPlugins = [
+        const plugins = container.getValue('plugin');
+        const defaultPlugins = [
           'typedoc-plugin-markdown',
           'typedoc-plugin-frontmatter',
         ];
-        const plugins = container.getValue('plugin');
-        container.setValue('plugin', [
-          ...new Set([...requiredPlugins, ...plugins]),
-        ]);
+        container.setValue(
+          'plugin',
+          plugins?.filter((plugin) => !defaultPlugins.includes(plugin)),
+        );
       }
     })(),
   );

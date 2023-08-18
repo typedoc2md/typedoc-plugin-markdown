@@ -175,22 +175,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
           {
             "children": [
               {
-                "children": [
-                  {
-                    "children": [],
-                    "title": "Properties",
-                  },
-                ],
+                "children": [],
                 "title": "CategoryInterfaceA1",
                 "url": "categories/interfaces/CategoryA/interface.CategoryInterfaceA1.md",
               },
               {
-                "children": [
-                  {
-                    "children": [],
-                    "title": "Properties",
-                  },
-                ],
+                "children": [],
                 "title": "CategoryInterfaceA2",
                 "url": "categories/interfaces/CategoryA/interface.CategoryInterfaceA2.md",
               },
@@ -200,12 +190,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
           {
             "children": [
               {
-                "children": [
-                  {
-                    "children": [],
-                    "title": "Properties",
-                  },
-                ],
+                "children": [],
                 "title": "OtherInterfaceA",
                 "url": "categories/interfaces/Other/interface.OtherInterfaceA.md",
               },
@@ -344,12 +329,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
               {
                 "children": [
                   {
-                    "children": [
-                      {
-                        "children": [],
-                        "title": "Enumeration Members",
-                      },
-                    ],
+                    "children": [],
                     "title": "NamespaceEnum",
                     "url": "modules_module_1/namespaces/namespace.someNameSpace/enumerations/enumeration.NamespaceEnum.md",
                   },
@@ -359,12 +339,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
               {
                 "children": [
                   {
-                    "children": [
-                      {
-                        "children": [],
-                        "title": "Constructors",
-                      },
-                    ],
+                    "children": [],
                     "title": "NameSpaceClassA",
                     "url": "modules_module_1/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
                   },
@@ -374,12 +349,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
               {
                 "children": [
                   {
-                    "children": [
-                      {
-                        "children": [],
-                        "title": "Properties",
-                      },
-                    ],
+                    "children": [],
                     "title": "NamespaceInterface",
                     "url": "modules_module_1/namespaces/namespace.someNameSpace/interfaces/interface.NamespaceInterface.md",
                   },
@@ -426,22 +396,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
       {
         "children": [
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Enumeration Members",
-              },
-            ],
+            "children": [],
             "title": "Module1EnumA",
             "url": "modules_module_1/enumerations/enumeration.Module1EnumA.md",
           },
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Enumeration Members",
-              },
-            ],
+            "children": [],
             "title": "Module1EnumB",
             "url": "modules_module_1/enumerations/enumeration.Module1EnumB.md",
           },
@@ -451,38 +411,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
       {
         "children": [
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Constructors",
-              },
-              {
-                "children": [],
-                "title": "Properties",
-              },
-              {
-                "children": [],
-                "title": "Methods",
-              },
-            ],
+            "children": [],
             "title": "Module1ClassA",
             "url": "modules_module_1/classes/class.Module1ClassA.md",
           },
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Constructors",
-              },
-              {
-                "children": [],
-                "title": "Properties",
-              },
-              {
-                "children": [],
-                "title": "Methods",
-              },
-            ],
+            "children": [],
             "title": "Module1ClassB",
             "url": "modules_module_1/classes/class.Module1ClassB.md",
           },
@@ -492,22 +426,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
       {
         "children": [
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Properties",
-              },
-            ],
+            "children": [],
             "title": "Module1InterfaceA",
             "url": "modules_module_1/interfaces/interface.Module1InterfaceA.md",
           },
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Properties",
-              },
-            ],
+            "children": [],
             "title": "Module1InterfaceB",
             "url": "modules_module_1/interfaces/interface.Module1InterfaceB.md",
           },
@@ -575,22 +499,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
           {
             "children": [
               {
-                "children": [
-                  {
-                    "children": [],
-                    "title": "Properties",
-                  },
-                ],
+                "children": [],
                 "title": "CategoryInterfaceA1",
                 "url": "02-categories/01-Interfaces/01-CategoryA/01-interface.CategoryInterfaceA1.md",
               },
               {
-                "children": [
-                  {
-                    "children": [],
-                    "title": "Properties",
-                  },
-                ],
+                "children": [],
                 "title": "CategoryInterfaceA2",
                 "url": "02-categories/01-Interfaces/01-CategoryA/02-interface.CategoryInterfaceA2.md",
               },
@@ -600,12 +514,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
           {
             "children": [
               {
-                "children": [
-                  {
-                    "children": [],
-                    "title": "Properties",
-                  },
-                ],
+                "children": [],
                 "title": "OtherInterfaceA",
                 "url": "02-categories/01-Interfaces/02-Other/01-interface.OtherInterfaceA.md",
               },
@@ -744,12 +653,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
               {
                 "children": [
                   {
-                    "children": [
-                      {
-                        "children": [],
-                        "title": "Enumeration Members",
-                      },
-                    ],
+                    "children": [],
                     "title": "NamespaceEnum",
                     "url": "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/02-Enumerations/01-enumeration.NamespaceEnum.md",
                   },
@@ -759,12 +663,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
               {
                 "children": [
                   {
-                    "children": [
-                      {
-                        "children": [],
-                        "title": "Constructors",
-                      },
-                    ],
+                    "children": [],
                     "title": "NameSpaceClassA",
                     "url": "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/03-Classes/01-class.NameSpaceClassA.md",
                   },
@@ -774,12 +673,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
               {
                 "children": [
                   {
-                    "children": [
-                      {
-                        "children": [],
-                        "title": "Properties",
-                      },
-                    ],
+                    "children": [],
                     "title": "NamespaceInterface",
                     "url": "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/04-Interfaces/01-interface.NamespaceInterface.md",
                   },
@@ -826,22 +720,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
       {
         "children": [
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Enumeration Members",
-              },
-            ],
+            "children": [],
             "title": "Module1EnumA",
             "url": "03-modules_module_1/02-Enumerations/01-enumeration.Module1EnumA.md",
           },
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Enumeration Members",
-              },
-            ],
+            "children": [],
             "title": "Module1EnumB",
             "url": "03-modules_module_1/02-Enumerations/02-enumeration.Module1EnumB.md",
           },
@@ -851,38 +735,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
       {
         "children": [
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Constructors",
-              },
-              {
-                "children": [],
-                "title": "Properties",
-              },
-              {
-                "children": [],
-                "title": "Methods",
-              },
-            ],
+            "children": [],
             "title": "Module1ClassA",
             "url": "03-modules_module_1/03-Classes/01-class.Module1ClassA.md",
           },
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Constructors",
-              },
-              {
-                "children": [],
-                "title": "Properties",
-              },
-              {
-                "children": [],
-                "title": "Methods",
-              },
-            ],
+            "children": [],
             "title": "Module1ClassB",
             "url": "03-modules_module_1/03-Classes/02-class.Module1ClassB.md",
           },
@@ -892,22 +750,12 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
       {
         "children": [
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Properties",
-              },
-            ],
+            "children": [],
             "title": "Module1InterfaceA",
             "url": "03-modules_module_1/04-Interfaces/01-interface.Module1InterfaceA.md",
           },
           {
-            "children": [
-              {
-                "children": [],
-                "title": "Properties",
-              },
-            ],
+            "children": [],
             "title": "Module1InterfaceB",
             "url": "03-modules_module_1/04-Interfaces/02-interface.Module1InterfaceB.md",
           },
@@ -969,55 +817,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
 exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false, outputFileStrategy=modules, includeFileNumberPrefixes: true) 1`] = `
 [
   {
-    "children": [
-      {
-        "children": [
-          {
-            "children": [],
-            "title": "CategoryA",
-          },
-          {
-            "children": [],
-            "title": "Other",
-          },
-        ],
-        "title": "Interfaces",
-      },
-      {
-        "children": [
-          {
-            "children": [],
-            "title": "CategoryA",
-          },
-          {
-            "children": [],
-            "title": "CategoryB",
-          },
-          {
-            "children": [],
-            "title": "Other",
-          },
-        ],
-        "title": "Variables",
-      },
-      {
-        "children": [
-          {
-            "children": [],
-            "title": "CategoryA",
-          },
-          {
-            "children": [],
-            "title": "CategoryB",
-          },
-          {
-            "children": [],
-            "title": "Other",
-          },
-        ],
-        "title": "Functions",
-      },
-    ],
+    "children": [],
     "title": "categories",
     "url": "02-categories.md",
   },
@@ -1030,12 +830,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=false
               {
                 "children": [
                   {
-                    "children": [
-                      {
-                        "children": [],
-                        "title": "Variables",
-                      },
-                    ],
+                    "children": [],
                     "title": "_nestedNamespace",
                     "url": "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace.md",
                   },
@@ -1125,57 +920,57 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true,
         "url": "02-categories/03-Other/01-interface.OtherInterfaceA.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "categoryVariableA1",
         "url": "02-categories/01-CategoryA/03-variable.categoryVariableA1.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "categoryVariableA2",
         "url": "02-categories/01-CategoryA/04-variable.categoryVariableA2.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "categoryVariableB1",
         "url": "02-categories/02-CategoryB/01-variable.categoryVariableB1.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "otherVariableA",
         "url": "02-categories/03-Other/02-variable.otherVariableA.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "otherVariableB",
         "url": "02-categories/03-Other/03-variable.otherVariableB.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "categoryFunctionA1",
         "url": "02-categories/01-CategoryA/05-function.categoryFunctionA1.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "categoryFunctionA2",
         "url": "02-categories/01-CategoryA/06-function.categoryFunctionA2.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "categoryFunctionA3",
         "url": "02-categories/01-CategoryA/07-function.categoryFunctionA3.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "categoryFunctionB2",
         "url": "02-categories/02-CategoryB/02-function.categoryFunctionB2.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "otherFunctionA",
         "url": "02-categories/03-Other/04-function.otherFunctionA.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "otherFunctionB",
         "url": "02-categories/03-Other/05-function.otherFunctionB.md",
       },
@@ -1190,7 +985,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true,
           {
             "children": [
               {
-                "children": undefined,
+                "children": [],
                 "title": "nestedNamespaceVariable",
                 "url": "03-modules_module_1/01-someNameSpace/01-nestedNamespace/01-variable.nestedNamespaceVariable.md",
               },
@@ -1214,17 +1009,17 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true,
             "url": "03-modules_module_1/01-someNameSpace/04-interface.NamespaceInterface.md",
           },
           {
-            "children": undefined,
+            "children": [],
             "title": "NamespaceTypeLiteral",
             "url": "03-modules_module_1/01-someNameSpace/05-type-alias.NamespaceTypeLiteral.md",
           },
           {
-            "children": undefined,
+            "children": [],
             "title": "namespaceVariableA",
             "url": "03-modules_module_1/01-someNameSpace/06-variable.namespaceVariableA.md",
           },
           {
-            "children": undefined,
+            "children": [],
             "title": "namespaceVariableB",
             "url": "03-modules_module_1/01-someNameSpace/07-variable.namespaceVariableB.md",
           },
@@ -1233,7 +1028,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true,
         "url": "03-modules_module_1/01-someNameSpace/README.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "someNameSpaceB",
         "url": "03-modules_module_1/02-someNameSpaceB/README.md",
       },
@@ -1268,32 +1063,32 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true,
         "url": "03-modules_module_1/08-interface.Module1InterfaceB.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "Module1TypeLiteralA",
         "url": "03-modules_module_1/09-type-alias.Module1TypeLiteralA.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "Module1TypeLiteralB",
         "url": "03-modules_module_1/10-type-alias.Module1TypeLiteralB.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "module1VariableA",
         "url": "03-modules_module_1/11-variable.module1VariableA.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "module1VariableB",
         "url": "03-modules_module_1/12-variable.module1VariableB.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "module1FunctionA",
         "url": "03-modules_module_1/13-function.module1FunctionA.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "module1FunctionB",
         "url": "03-modules_module_1/14-function.module1FunctionB.md",
       },
@@ -1325,7 +1120,7 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true,
         "url": "02-modules_module_1/01-someNameSpace/README.md",
       },
       {
-        "children": undefined,
+        "children": [],
         "title": "someNameSpaceB",
         "url": "02-modules_module_1/02-someNameSpaceB.md",
       },
@@ -1339,32 +1134,17 @@ exports[`Navigation: (Multiple entrypoints) should get urls (excludeGroups=true,
 exports[`Navigation: (Single entrypoint) should get urls (excludeGroups=false, includeFileNumberPrefixes=true) 1`] = `
 [
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "CategoryInterfaceA1",
     "url": "02-Interfaces/02-interface.CategoryInterfaceA1.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "CategoryInterfaceA2",
     "url": "02-Interfaces/03-interface.CategoryInterfaceA2.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "OtherInterfaceA",
     "url": "02-Interfaces/04-interface.OtherInterfaceA.md",
   },
@@ -1424,32 +1204,17 @@ exports[`Navigation: (Single entrypoint) should get urls (excludeGroups=false, i
     "url": "04-Functions/07-function.otherFunctionB.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "CategoryInterfaceA1",
     "url": "02-Interfaces/02-interface.CategoryInterfaceA1.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "CategoryInterfaceA2",
     "url": "02-Interfaces/03-interface.CategoryInterfaceA2.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "OtherInterfaceA",
     "url": "02-Interfaces/04-interface.OtherInterfaceA.md",
   },
@@ -1509,32 +1274,17 @@ exports[`Navigation: (Single entrypoint) should get urls (excludeGroups=false, i
     "url": "04-Functions/07-function.otherFunctionB.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "CategoryInterfaceA1",
     "url": "02-Interfaces/02-interface.CategoryInterfaceA1.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "CategoryInterfaceA2",
     "url": "02-Interfaces/03-interface.CategoryInterfaceA2.md",
   },
   {
-    "children": [
-      {
-        "children": [],
-        "title": "Properties",
-      },
-    ],
+    "children": [],
     "title": "OtherInterfaceA",
     "url": "02-Interfaces/04-interface.OtherInterfaceA.md",
   },

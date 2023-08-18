@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs: (with readme) should compile class breadcrumbs' 1`] = `"[Index](API.md) > Breadcrumbs"`;
+exports[`Breadcrumbs: (with readme) should compile class breadcrumbs' 1`] = `"[API](API.md) > Breadcrumbs"`;
 
-exports[`Breadcrumbs: (with readme) should compile entryPoint (globals) breadcrumbs' 1`] = `"[Index](API.md) > typedoc-plugin-markdown"`;
+exports[`Breadcrumbs: (with readme) should compile entryPoint (globals) breadcrumbs' 1`] = `"[API](API.md) > typedoc-plugin-markdown"`;
 
-exports[`Breadcrumbs: (with readme) should compile module breadcrumbs' 1`] = `"[Index](API.md) > Breadcrumbs"`;
+exports[`Breadcrumbs: (with readme) should compile module breadcrumbs' 1`] = `"[API](API.md) > Breadcrumbs"`;
 
-exports[`Breadcrumbs: (without readme) should compile class breadcrumbs' 1`] = `"[Index](README.md) > Breadcrumbs"`;
+exports[`Breadcrumbs: (without readme) should compile class breadcrumbs' 1`] = `"[API](README.md) > Breadcrumbs"`;
 
-exports[`Breadcrumbs: (without readme) should compile module breadcrumbs' 1`] = `"[Index](README.md) > Breadcrumbs"`;
+exports[`Breadcrumbs: (without readme) should compile module breadcrumbs' 1`] = `"[API](README.md) > Breadcrumbs"`;

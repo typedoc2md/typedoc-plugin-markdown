@@ -1,7 +1,5 @@
-import * as path from 'path';
 import {
   DeclarationReflection,
-  PageEvent,
   ProjectReflection,
   ReflectionGroup,
   ReflectionKind,
@@ -10,39 +8,33 @@ import { MarkdownThemeRenderContext } from '../..';
 import { heading, link, table } from '../../../support/elements';
 import { escapeChars, tableComments } from '../../../support/utils';
 
-/**
- * @category Partials
- */
-export function pageTOC(
+export function reflectionIndex(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<DeclarationReflection | ProjectReflection>,
+  reflection: ProjectReflection | DeclarationReflection,
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  if (!page.model.groups) {
-    md.push(heading(headingLevel, 'Packages'));
-    const packagesList = page.model.children?.map((projectPackage) => {
-      return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
-        Boolean(projectPackage.readme)
-          ? `${path.dirname(
-              projectPackage.url || '',
-            )}/${context.options.getValue('entryFileName')}`
-          : projectPackage.url,
-      )})`;
+
+  const subHeadingLevel = headingLevel;
+
+  if (context.options.getValue('excludeGroups') && reflection.children) {
+    const group = { title: 'Members', children: reflection.children };
+    md.push(getGroup(context, group as ReflectionGroup) + '\n');
+  } else {
+    reflection.groups?.forEach((reflectionGroup) => {
+      if (reflectionGroup.categories) {
+        md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
+        reflectionGroup.categories.forEach((categoryGroup) => {
+          md.push(heading(subHeadingLevel + 1, categoryGroup.title) + '\n');
+          md.push(getGroup(context, categoryGroup) + '\n');
+        });
+      } else {
+        md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
+        md.push(getGroup(context, reflectionGroup) + '\n');
+      }
     });
-    md.push(packagesList?.join('\n') || '');
-    return md.join('\n\n');
   }
-  if (
-    page.model.groups &&
-    page.model.children?.some((child) => !child.kindOf(ReflectionKind.Module))
-  ) {
-    md.push(context.memberTOC(page.model, headingLevel));
-    return md.join('\n\n');
-  }
-  md.push(heading(headingLevel, 'Modules'));
-  md.push(getGroup(context, page.model.groups[0]));
-  return md.join('\n\n');
+  return md.join('\n');
 }
 
 function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
@@ -59,9 +51,12 @@ function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
     'Description',
   ];
   const rows: string[][] = [];
+
   group.children.forEach((child) => {
     const row: string[] = [];
+
     row.push(link(escapeChars(child.name), context.relativeURL(child.url)));
+
     if (child.comment?.summary) {
       row.push(
         tableComments(context.commentParts(child.comment.summary)).split(
@@ -77,11 +72,9 @@ function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
 }
 
 function getList(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
-  const list: string[] = [];
-  group.children.forEach((child) =>
-    list.push(
+  const children = group.children.map(
+    (child) =>
       `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
-    ),
   );
-  return list.join('\n');
+  return children.join('\n');
 }

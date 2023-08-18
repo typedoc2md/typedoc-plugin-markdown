@@ -15,17 +15,13 @@
     "directory": "packages/docusaurus-plugin-typedoc"
   },
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc",
-  "dependencies": {
-    "typedoc-plugin-frontmatter": ">=0.0.2"
-  },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.0.0-next.18"
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "build": "rm -rf ./dist && tsc",
-    "demo": "npm run build && cd demo && npm run start"
+    "build": "rm -rf ./dist && tsc"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -36,5 +32,8 @@
     "markdown",
     "typescript",
     "api"
-  ]
+  ],
+  "dependencies": {
+    "@docusaurus/types": "^2.4.1"
+  }
 }

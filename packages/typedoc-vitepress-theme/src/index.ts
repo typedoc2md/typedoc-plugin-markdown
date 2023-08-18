@@ -5,8 +5,11 @@ import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { SidebarOptions } from './model';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import { getSidebar } from './sidebars/sidebars';
+import { VitepressTheme } from './theme';
 
 export function load(app: Application) {
+  app.renderer.defineTheme('vitepress', VitepressTheme);
+
   app.options.addDeclaration({
     name: 'docsRoot',
     help: '',
@@ -28,12 +31,10 @@ export function load(app: Application) {
       readonly supportsPackages = false;
       read(container: Options) {
         Object.entries({
-          anchorFormat: 'slug',
           entryFileName: 'index.md',
-          skipIndexPage: true,
-          hideBreadcrumbs: true,
           hidePageHeader: true,
           out: './docs/api',
+          theme: 'vitepress',
         }).forEach(([key, value]) => {
           container.setValue(key, value);
         });
@@ -57,7 +58,7 @@ export function load(app: Application) {
           basePath,
           sidebarOptions,
         );
-        fs.writeFileSync(sidebarPath, JSON.stringify(sidebarJson));
+        fs.writeFileSync(sidebarPath, JSON.stringify(sidebarJson, null, 2));
       }
     },
   );

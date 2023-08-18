@@ -54,22 +54,27 @@ export class NavigationBuilder {
   }
 
   getChildrenOrGroups(reflection: DeclarationReflection) {
-    if (this.options.getValue('excludeGroups')) {
-      return reflection.children
-        ?.filter((child) => child.hasOwnDocument)
-        .map((child) => {
-          return {
-            title: child.name,
-            url: child.url,
-            children: this.getChildrenOrGroups(child),
-          };
-        });
+    if (
+      reflection.groups?.some((group) => group.allChildrenHaveOwnDocument())
+    ) {
+      if (this.options.getValue('excludeGroups')) {
+        return reflection.children
+          ?.filter((child) => child.hasOwnDocument)
+          .map((child) => {
+            return {
+              title: child.name,
+              url: child.url,
+              children: this.getChildrenOrGroups(child),
+            };
+          });
+      }
+      return reflection.groups?.map((group) => {
+        return {
+          title: group.title,
+          children: this.getGroupChildren(group) || [],
+        };
+      });
     }
-    return reflection.groups?.map((group) => {
-      return {
-        title: group.title,
-        children: this.getGroupChildren(group) || [],
-      };
-    });
+    return [];
   }
 }

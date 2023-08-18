@@ -96,7 +96,6 @@ export class UrlBuilder {
     } else {
       this.buildUrlsFromProject(project);
     }
-
     return this.urls;
   }
 
@@ -307,44 +306,48 @@ export class UrlBuilder {
   ) {
     if (container.url && !reflection.url) {
       if (!reflection.kindOf(ReflectionKind.TypeLiteral)) {
-        const anchorTemplate = this.options.getValue(
-          'anchorTemplate',
-        ) as string;
-        const anchorId = anchorTemplate
-          ? anchorTemplate.replace('{anchor}', this.getAnchorId(reflection))
-          : this.getAnchorId(reflection);
+        const anchorPrefix = this.options.getValue('anchorPrefix');
+        const anchorId = this.getAnchorId(reflection);
+
+        if (!this.anchors[container.url]) {
+          this.anchors[container.url] = [];
+        }
+
+        this.anchors[container.url].push(anchorId);
 
         const count = this.anchors[container.url]?.filter(
           (id) => id === anchorId,
         )?.length;
 
-        const anchor =
-          anchorId + (count > 1 ? '-' + (count - 1).toString() : '');
-        this.anchors.push(anchorId);
+        const anchorParts = [anchorId];
 
-        reflection.url = container.url + '#' + anchor;
-        reflection.anchor = anchor;
+        if (count > 1) {
+          anchorParts.push(`-${count}`);
+        }
+
+        if (anchorPrefix) {
+          anchorParts.unshift(`${anchorPrefix}`);
+        }
+
+        reflection.url = container.url + '#' + anchorParts.join('');
       }
       reflection.hasOwnDocument = false;
+    } else if (reflection.parent) {
+      reflection.traverse((child) => {
+        if (child instanceof DeclarationReflection) {
+          this.applyAnchorUrl(child, container);
+        }
+      });
     }
-    reflection.traverse((child) => {
-      if (child instanceof DeclarationReflection) {
-        this.applyAnchorUrl(child, container);
-      }
-    });
   }
 
   private getAnchorId(reflection: DeclarationReflection) {
-    const anchorFormat = this.options.getValue('anchorFormat') as string;
-    const name: string[] = [reflection.name];
-
-    if (anchorFormat.toLowerCase() === 'lowercase') {
-      return name.join('-').toLowerCase();
-    }
-    if (anchorFormat.toLowerCase() === 'slug') {
-      return slugify(name.join('-'));
-    }
-    return name.join('-');
+    const preserveAnchorCasing = this.options.getValue(
+      'preserveAnchorCasing',
+    ) as boolean;
+    return preserveAnchorCasing
+      ? reflection.name
+      : reflection.name.toLowerCase();
   }
 
   private getPartName(part: string, position: number) {

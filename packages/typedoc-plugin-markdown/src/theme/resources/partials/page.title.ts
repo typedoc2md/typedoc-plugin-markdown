@@ -1,17 +1,17 @@
 import {
   DeclarationReflection,
-  PageEvent,
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { MarkdownPageEvent } from '../../../plugin/events';
 
 /**
  * @category Partials
  */
 export function pageTitle(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<DeclarationReflection | ProjectReflection>,
+  page: MarkdownPageEvent<DeclarationReflection | ProjectReflection>,
 ): string {
   const md: string[] = [];
 
@@ -21,7 +21,6 @@ export function pageTitle(
     md.push(context.options.getValue('indexPageTitle') as string);
   } else {
     const name = context.memberTitle(page.model as DeclarationReflection, true);
-
     md.push(
       titleTemplate
         .replace('{name}', name)

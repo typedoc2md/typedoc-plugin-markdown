@@ -16,14 +16,7 @@ export function member(
 ): string {
   const md: string[] = [];
 
-  if (context.options.getValue('namedAnchors')) {
-    md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
-  }
-
-  if (
-    !reflection.kindOf(ReflectionKind.Constructor) &&
-    !reflection.hasOwnDocument
-  ) {
+  if (!reflection.hasOwnDocument) {
     md.push(heading(headingLevel, context.memberTitle(reflection)));
   }
 

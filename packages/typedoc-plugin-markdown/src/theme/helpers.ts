@@ -5,7 +5,12 @@
  * @module
  */
 
-import { DeclarationReflection, ProjectReflection } from 'typedoc';
+import {
+  DeclarationReflection,
+  Options,
+  ProjectReflection,
+  ReflectionKind,
+} from 'typedoc';
 
 export function getDeclarationType(declaration: DeclarationReflection) {
   if (declaration.getSignature) {
@@ -23,4 +28,17 @@ export function getProjectDisplayName(
 ): string {
   const version = includeVersion ? ` - v${project.packageVersion}` : '';
   return `${project.name}${version}`;
+}
+
+export function hasIndex(
+  reflection: DeclarationReflection | ProjectReflection,
+) {
+  return reflection.groups?.some((group) => group.allChildrenHaveOwnDocument());
+}
+
+export function hasTOC(reflection: DeclarationReflection, options: Options) {
+  if (options.getValue('hideInPageTOC')) {
+    return false;
+  }
+  return reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace]);
 }

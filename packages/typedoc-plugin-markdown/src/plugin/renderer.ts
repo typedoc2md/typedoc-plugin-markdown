@@ -5,22 +5,9 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import {
-  DeclarationReflection,
-  PageEvent,
-  ProjectReflection,
-  Reflection,
-  RendererEvent,
-} from 'typedoc';
+import { DeclarationReflection, ProjectReflection, Reflection } from 'typedoc';
 import { formatContents } from '../support/utils';
-import { NavigationItem } from '../theme/models';
-
-/**
- * Extends the RendererEvent from TypeDoc to expose navigation property.
- */
-export class MarkdownRendererEvent extends RendererEvent {
-  navigation: NavigationItem[];
-}
+import { MarkdownPageEvent, MarkdownRendererEvent } from './events';
 
 /**
  * Replacement of TypeDoc's [Application.generateDocs](https://typedoc.org/api/classes/Application.html#generateDocs) to decouple HTML logic.
@@ -68,7 +55,7 @@ export async function renderMarkdown(
   try {
     fs.mkdirSync(outputDirectory, { recursive: true });
   } catch (error) {
-    this.application.l.error(
+    this.application.logger.error(
       `Could not create output directory ${outputDirectory}.`,
     );
     return;
@@ -91,7 +78,7 @@ export async function renderMarkdown(
   this.prepareTheme();
 
   const output = new MarkdownRendererEvent(
-    RendererEvent.BEGIN,
+    MarkdownRendererEvent.BEGIN,
     outputDirectory,
     project,
   );
@@ -116,7 +103,7 @@ export async function renderMarkdown(
     .forEach(async (urlMapping) => {
       const [template, page] = output.createPageEvent(urlMapping);
 
-      this.trigger(PageEvent.BEGIN, page);
+      this.trigger(MarkdownPageEvent.BEGIN, page);
       if (page.isDefaultPrevented) {
         return false;
       }
@@ -127,7 +114,7 @@ export async function renderMarkdown(
         throw new Error('Should be unreachable');
       }
 
-      this.trigger(PageEvent.END, page);
+      this.trigger(MarkdownPageEvent.END, page);
 
       if (page.isDefaultPrevented) {
         return false;
@@ -144,7 +131,7 @@ export async function renderMarkdown(
 
   this.postRenderAsyncJobs = [];
 
-  this.trigger(RendererEvent.END, output);
+  this.trigger(MarkdownRendererEvent.END, output);
 
   this.theme = void 0;
 }

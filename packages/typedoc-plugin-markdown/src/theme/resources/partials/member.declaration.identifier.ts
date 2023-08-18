@@ -38,7 +38,13 @@ export function declarationMemberIdentifier(
   if (Boolean(reflection.getSignature || Boolean(reflection.setSignature))) {
     name.push(context.declarationMemberAccessor(reflection));
   } else {
-    name.push(bold(escapeChars(reflection.name)));
+    name.push(
+      bold(
+        reflection.name.startsWith('<')
+          ? backTicks(reflection.name)
+          : escapeChars(reflection.name),
+      ),
+    );
   }
   if (declarationType) {
     name.push(':');

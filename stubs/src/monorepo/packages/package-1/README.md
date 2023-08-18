@@ -2,4 +2,4 @@
 
 Readme content
 
-[Index]({indexUrl})
+[TYPEDOC_INDEX]

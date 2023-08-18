@@ -10,12 +10,8 @@ module.exports = {
     const { read, writeSync } = await import('to-vfile');
     const file = await read(filePath);
 
-    const { default: addTocTitle } = await import('./remark-add-toc-title.mjs');
     const { default: remarkFrontmatter } = await import('remark-frontmatter');
     const { default: remarkGfm } = await import('remark-gfm');
-
-    console.log(addTocTitle);
-    console.log(remarkGfm);
 
     const processor = remark()
       .data('settings', { fences: true })
@@ -26,9 +22,12 @@ module.exports = {
       const promises = plugins.map(async (plugin) => {
         return new Promise((resolve, reject) => {
           const name = Array.isArray(plugin) ? plugin[0] : plugin;
-          const options = Array.isArray(plugin) ? plugin[1] : undefined;
+          const options = Array.isArray(plugin) ? plugin[1] : {};
           import(name).then(({ default: pluginFn }) => {
-            resolve({ pluginFn, options });
+            resolve({
+              pluginFn,
+              options,
+            });
           });
         });
       });

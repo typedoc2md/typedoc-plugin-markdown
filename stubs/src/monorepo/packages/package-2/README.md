@@ -1,3 +1,5 @@
 # PACKAGE 2 README
 
 Readme content
+
+[TYPEDOC_INDEX]

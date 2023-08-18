@@ -8,7 +8,6 @@ import { escapeChars } from '../../../support/utils';
  */
 export function typeDeclarationMember(
   context: MarkdownThemeRenderContext,
-
   typeDeclaration: DeclarationReflection,
   headingLevel: number,
   parentName?: string,

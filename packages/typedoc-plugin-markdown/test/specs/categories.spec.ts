@@ -33,7 +33,7 @@ describe(`Categories:`, () => {
     });
 
     test(`should render category TOC'`, () => {
-      expect(context.memberTOC(project, 2)).toMatchSnapshot();
+      expect(context.reflectionIndex(project, 2)).toMatchSnapshot();
     });
   });
 
@@ -53,7 +53,7 @@ describe(`Categories:`, () => {
     });
 
     test(`should render category TOC'`, () => {
-      expect(context.memberTOC(project, 2)).toMatchSnapshot();
+      expect(context.reflectionIndex(project, 2)).toMatchSnapshot();
     });
   });
 
@@ -73,7 +73,7 @@ describe(`Categories:`, () => {
     });
 
     test(`should render category TOC'`, () => {
-      expect(context.memberTOC(project, 2)).toMatchSnapshot();
+      expect(context.reflectionIndex(project, 2)).toMatchSnapshot();
     });
   });
 });

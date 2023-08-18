@@ -2,4 +2,8 @@
 
 > Some block quote
 
-Some text
+Some text.
+
+[TYPEDOC_INDEX]
+
+Readme footer

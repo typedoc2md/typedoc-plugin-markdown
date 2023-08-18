@@ -7,9 +7,21 @@ const project = new Project({
   tsConfigFilePath: 'tsconfig.json',
 });
 
-const resourcesPath = path.join(__dirname, '..', 'src', 'theme', 'resources');
+const resourcesPath = path.join(
+  __dirname,
+  '..',
+  '..',
+  'src',
+  'theme',
+  'resources',
+);
 const templateFiles = getFiles('templates').filter((file) => file !== 'index');
-const templateSymbols = getSymbols(templateFiles, 'templates');
+const templateSymbols = [
+  { symbolName: 'memberTemplate' },
+  { symbolName: 'projectTemplate' },
+  { symbolName: 'readmeTemplate' },
+  { symbolName: 'reflectionTemplate' },
+];
 
 const partialsFiles = getFiles('partials').filter((file) => file !== 'index');
 const partialsSymbols = getSymbols(partialsFiles, 'partials');
@@ -17,12 +29,13 @@ const partialsSymbols = getSymbols(partialsFiles, 'partials');
 const themeRenderContextFile = path.join(
   __dirname,
   '..',
+  '..',
   'src',
   'theme',
   'markdown-theme-render-context.ts',
 );
 
-const partialsBarrelFile = path.join(resourcesPath, 'partials', 'index.ts');
+//const partialsBarrelFile = path.join(resourcesPath, 'partials', 'index.ts');
 
 const importsOut: string[] = [];
 const exportsOut: string[] = [];
@@ -84,16 +97,6 @@ prettier
   })
   .then((formatted) => {
     fs.writeFileSync(themeRenderContextFile, formatted);
-  });
-
-prettier
-  .format(exportsOut.join('\n'), {
-    parser: 'typescript',
-    singleQuote: true,
-    trailingComma: 'all',
-  })
-  .then((formatted) => {
-    fs.writeFileSync(partialsBarrelFile, formatted);
   });
 
 function getFiles(type: string) {

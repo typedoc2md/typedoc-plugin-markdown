@@ -2,6 +2,7 @@
  *
  * Comments form module comments
  *
+ *
  * @module
  *
  * @overview
@@ -11,6 +12,10 @@
  * @author Joe Bloggs
  *
  * @description Some description used in frontmatter
+ *
+ * Here is a simple footnote[^1]. With some additional text after it.
+ *
+ * [^1]: Some stuffer.
  *
  */
 

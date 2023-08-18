@@ -60,7 +60,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 `;
 
 exports[`Signatures: should compile function that returns a function' 1`] = `
-"> **functionReturningAFunction**(): <\`T\`>(\`x\`) => \`boolean\`
+"> **functionReturningAFunction**(): \`function\`
 
 Comments for function
 
@@ -142,7 +142,7 @@ Some nested params.
 | \`params.nestedObj\` | \`object\` | A nested object. |
 | \`params.nestedObj.name\` | \`string\` | - |
 | \`params.nestedObj.obj\` | \`object\` | - |
-| \`params.nestedObj.obj.name\` | () => \`void\` | - |
+| \`params.nestedObj.obj.name\` | \`function\` | - |
 | \`params.nestedObj.value\` | \`number\` | - |
 | \`params.parent\`? | \`number\` | - |
 | \`context\` | \`any\` | The context of the method call. |

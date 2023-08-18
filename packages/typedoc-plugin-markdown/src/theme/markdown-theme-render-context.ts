@@ -1,5 +1,6 @@
 import * as path from 'path';
-import { Options, PageEvent, Reflection } from 'typedoc';
+import { Options, Reflection } from 'typedoc';
+import { MarkdownPageEvent } from '../plugin/events';
 
 /* start_imports */
 import { breadcrumbs } from './resources/partials/breadcrumbs';
@@ -7,6 +8,8 @@ import { commentParts } from './resources/partials/comment.parts';
 import { comment } from './resources/partials/comment';
 import { footer } from './resources/partials/footer';
 import { header } from './resources/partials/header';
+import { pageIndex } from './resources/partials/index.page';
+import { reflectionIndex } from './resources/partials/index.reflection';
 import { declarationMemberAccessor } from './resources/partials/member.declaration.accessort';
 import { declarationMemberIdentifier } from './resources/partials/member.declaration.identifier';
 import { declarationMember } from './resources/partials/member.declaration';
@@ -19,13 +22,11 @@ import { signatureMemberIdentifier } from './resources/partials/member.signature
 import { signatureMember } from './resources/partials/member.signature';
 import { sources } from './resources/partials/member.sources';
 import { memberTitle } from './resources/partials/member.title';
-import { memberTOC } from './resources/partials/member.toc';
 import { member } from './resources/partials/member';
 import { typeDeclarationMember } from './resources/partials/member.type-declaration';
 import { members } from './resources/partials/members';
 import { navigation } from './resources/partials/navigation';
 import { pageTitle } from './resources/partials/page.title';
-import { pageTOC } from './resources/partials/page.toc';
 import { enumMembersTable } from './resources/partials/table.enum-members';
 import { parametersTable } from './resources/partials/table.parameters';
 import { propertiesTable } from './resources/partials/table.properties';
@@ -64,7 +65,7 @@ function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
  */
 export class MarkdownThemeRenderContext {
   constructor(
-    public page: PageEvent<Reflection> | null,
+    public page: MarkdownPageEvent<Reflection> | null,
     public options: Options,
   ) {}
 
@@ -74,22 +75,16 @@ export class MarkdownThemeRenderContext {
 
   relativeURL = (url: string | undefined) => {
     const URL_PREFIX = /^(http|ftp)s?:\/\//;
-
     if (!url) {
       return null;
     }
     if (URL_PREFIX.test(url)) {
       return url;
     } else {
-      if (this.options.getValue('baseUrl')) {
-        return this.options.getValue('baseUrl') + url.replace(/\\/g, '/');
-      }
-
       const relative = path.relative(
         path.dirname(this.page?.url || '.'),
         path.dirname(url),
       );
-
       return this.parseUrl(
         path.join(relative, path.basename(url)).replace(/\\/g, '/'),
       );
@@ -124,6 +119,10 @@ export class MarkdownThemeRenderContext {
   /** @hidden */
   header = bind(header, this);
   /** @hidden */
+  pageIndex = bind(pageIndex, this);
+  /** @hidden */
+  reflectionIndex = bind(reflectionIndex, this);
+  /** @hidden */
   declarationMemberAccessor = bind(declarationMemberAccessor, this);
   /** @hidden */
   declarationMemberIdentifier = bind(declarationMemberIdentifier, this);
@@ -148,8 +147,6 @@ export class MarkdownThemeRenderContext {
   /** @hidden */
   memberTitle = bind(memberTitle, this);
   /** @hidden */
-  memberTOC = bind(memberTOC, this);
-  /** @hidden */
   member = bind(member, this);
   /** @hidden */
   typeDeclarationMember = bind(typeDeclarationMember, this);
@@ -159,8 +156,6 @@ export class MarkdownThemeRenderContext {
   navigation = bind(navigation, this);
   /** @hidden */
   pageTitle = bind(pageTitle, this);
-  /** @hidden */
-  pageTOC = bind(pageTOC, this);
   /** @hidden */
   enumMembersTable = bind(enumMembersTable, this);
   /** @hidden */

@@ -1,6 +1,7 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { heading, unorderedList } from '../../../support/elements';
+import { hasIndex, hasTOC } from '../../helpers';
 
 /**
  * @category Partials
@@ -50,8 +51,9 @@ export function reflectionMember(
     md.push(context.indexSignatureTitle(reflection.indexSignature));
   }
 
-  if (reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace])) {
-    md.push(context.memberTOC(reflection, headingLevel));
+  if (hasIndex(reflection) || hasTOC(reflection, context.options)) {
+    md.push(heading(headingLevel, 'Index'));
+    md.push(context.reflectionIndex(reflection, headingLevel + 1));
   }
 
   md.push(context.members(reflection, headingLevel));

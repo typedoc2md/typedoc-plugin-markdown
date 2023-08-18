@@ -9,6 +9,18 @@ exports[`Generics: should compile class with type params 1`] = `
 
 [partial: comment]
 
+## Index
+
+### Constructors
+
+- [constructor](classes/class.ClassWithTypeParams.md#constructor)
+
+### Properties
+
+- [propT](classes/class.ClassWithTypeParams.md#propt)
+- [propV](classes/class.ClassWithTypeParams.md#propv)
+
+
 [partial: members]
 
 ***

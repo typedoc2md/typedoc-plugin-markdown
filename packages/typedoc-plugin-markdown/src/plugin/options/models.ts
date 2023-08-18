@@ -20,11 +20,9 @@ declare module 'typedoc' {
     enumMembersFormat: 'list' | 'table';
     typeDeclarationFormat: 'list' | 'table';
     tocFormat: 'list' | 'table';
-    baseUrl: string;
-    anchorFormat: 'lowercase' | 'slug' | 'none';
-    anchorTemplate: string;
     titleTemplate: string;
-    namedAnchors: boolean;
+    preserveAnchorCasing: boolean;
+    anchorPrefix: string;
   }
 }
 
@@ -47,9 +45,7 @@ export interface PluginOptions {
   enumMembersFormat: 'list' | 'table';
   typeDeclarationFormat: 'list' | 'table';
   tocFormat: 'list' | 'table';
-  baseUrl: string;
-  anchorFormat: 'lowercase' | 'slug' | 'none';
-  anchorTemplate: string;
   titleTemplate: string;
-  namedAnchors: boolean;
+  preserveAnchorCasing: boolean;
+  anchorPrefix: string;
 }
