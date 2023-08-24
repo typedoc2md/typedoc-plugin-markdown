@@ -12,18 +12,17 @@ async function readmePage() {
   const file = await read('./README.md');
   const vfile = await remark()
     .use(remarkGfm)
-    .use(remarkToc, { heading: 'Contents', maxDepth: 2 })
     .use(readmeOptions)
+    .use(remarkToc, { heading: 'Contents', maxDepth: 2 })
     .process(file);
   writeSync(vfile);
 }
 
 async function optionsPage() {
   const file = await read('./docs/guides/options.md');
+  const processor = await remark().use(remarkGfm).use(guideOptions);
   const vfile = await remark()
-    .use(remarkGfm)
     .use(remarkToc, { heading: 'Contents', maxDepth: 3 })
-    .use(guideOptions)
-    .process(file);
+    .processSync(processor.processSync(file));
   writeSync(vfile);
 }

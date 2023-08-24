@@ -1,6 +1,6 @@
 # typedoc-plugin-markdown
 
-![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown%2Fnext?&logo=npm) [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
+![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown%2Fnext?\&logo=npm) [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
 > **Please note this pre-release version may contain breaking changes within the same semantic version.**
 
@@ -8,14 +8,13 @@ A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API document
 
 ## Contents
 
-- [What does it do?](#what-does-it-do)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Plugin Options](#plugin-options)
-- [Customization](#customization)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+*   [What does it do?](#what-does-it-do)
+*   [Installation](#installation)
+*   [Usage](#usage)
+*   [Plugin Options](#plugin-options)
+*   [Custom templates](#custom-templates)
+*   [Contributing](#contributing)
+*   [License](#license)
 
 ## What does it do?
 
@@ -31,64 +30,66 @@ npm install typedoc typedoc-plugin-markdown@next --save-dev
 
 ## Usage
 
-Specify the using the `plugin` configuration option.
+### How to load the plugin?
+
+Plugins are loaded by using the `plugin` configuration option:
+
+Via the command line.
 
 ```bash
 typedoc --plugin typedoc-plugin-markdown
 ```
 
-This guide assumes familarity with TypeDoc and please refer to [TypeDoc documenation](https://typedoc.org/guides/installation/) on how to use TypeDoc in general.
+Using a `typedoc.json` config file or under the `typedocOptions` key in `tsconfig.json`.
 
-Please note:
+```json
+{ "plugin": ["typedoc-plugin-markdown"] }
+```
 
-- All of TypeDoc's [Configuration](https://typedoc.org/options/configuration/), [Input](https://typedoc.org/options/input/) and [Organization](https://typedoc.org/options/organization/) options are all respected as these are executed at the conversion phase of the project.
+Please see <https://typedoc.org/options/configuration> for general TypeDoc option configuration.
 
-- TypeDoc's [Output](https://typedoc.org/options/output/) options are relevant to the rendering phase and are HTML output specific and are ignored by this plugin with the exception of [`--cleanOutputDir`]().
+### What TypeDoc options are supported?
 
-## Options
+*   All of TypeDoc's [Configuration](https://typedoc.org/options/configuration/), [Input](https://typedoc.org/options/input/) and [Organization](https://typedoc.org/options/organization/) options are all respected as these are executed at the conversion phase of the project.
 
-Additional [Output](./docs/guides/options/output.md), [Frontmatter](./docs/guides/options/ui.md) and [Remark](./docs/guides/options/utility.md) options exposed by this plugin.
+*   TypeDoc's [Output](https://typedoc.org/options/output/) options are relevant to the rendering phase and in the main HTML output specific and are ignored by this plugin with the exception of [`--out`]() and [`--cleanOutputDir`]().
 
-### File Options
+## Plugin Options
 
-Options which control how output files are generated.
+This plugin exposes additional options. Please see [Options Guide](./docs/guides/options.md) for detailed usage.
 
-- [`--outputFileStrategy`]()
-- [`--includeFileNumberPrefixes`]()
-- [`--flattenOutputFiles`]()
-- [`--entryFileName`]()
-- [`--indexFileName`]()
-- [`--indexPageTitle`]()
-- [`--skipIndexPage`]()
+### Output Options
+
+Options that define how output files are generated.
+
+*   [`--outputFileStrategy`]()
+*   [`--includeFileNumberPrefixes`]()
+*   [`--flattenOutputFiles`]()
+*   [`--entryFileName`]()
+*   [`--indexFileName`]()
+*   [`--indexPageTitle`]()
+*   [`--skipIndexPage`]()
+*   [`--preserveAnchorCasing`]()
+*   [`--anchorPrefix`]()
 
 ### UI Options
 
-Options which control the format of the output on the page.
+UI Options
 
-- [`--excludeGroups`]()
-- [`--hidePageHeader`]()
-- [`--hidePageTitle`]()
-- [`--hideBreadcrumbs`]()
-- [`--hideInPageTOC`]()
-- [`--hideHierarchy`]()
-- [`--identifiersAsCodeBlocks`]()
-- [`--propertiesFormat`]()
-- [`--enumMembersFormat`]()
-- [`--typeDeclarationFormat`]()
-- [`--tocFormat`]()
-- [`--titleTemplate`]()
-
-### Utility Options
-
-- [`--remarkPlugins`]()
-- [`--translations`]()
-- [`--preserveAnchorCasing`]()
+*   [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
+*   [`--hidePageHeader`](./docs/guides/options.md#--hidepageheader)
+*   [`--hidePageTitle`](./docs/guides/options.md#--hidepagetitle)
+*   [`--hideBreadcrumbs`](./docs/guides/options.md#--hidebreadcrumbs)
+*   [`--hideInPageTOC`](./docs/guides/options.md#--hideinpagetoc)
+*   [`--hideHierarchy`](./docs/guides/options.md#--hidehierarchy)
+*   [`--identifiersAsCodeBlocks`](./docs/guides/options.md#--identifiersascodeblocks)
+*   [`--propertiesFormat`](./docs/guides/options.md#--propertiesformat)
+*   [`--enumMembersFormat`](./docs/guides/options.md#--enummembersformat)
+*   [`--typeDeclarationFormat`](./docs/guides/options.md#--typedeclarationformat)
+*   [`--tocFormat`](./docs/guides/options.md#--tocformat)
+*   [`--titleTemplate`](./docs/guides/options.md#--titletemplate)
 
 ## Custom templates
-
-Coming soon
-
-## Examples
 
 Coming soon
 

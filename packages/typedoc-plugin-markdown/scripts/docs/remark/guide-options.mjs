@@ -1,20 +1,17 @@
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { headingRange } from 'mdast-util-heading-range';
 import { ParameterType } from 'typedoc';
-import { TITLE_MAP, groupedConfig } from '../../utils/options.utils.mjs';
+import {
+  INTRO_MAP,
+  TITLE_MAP,
+  groupedConfig,
+} from '../../utils/options.utils.mjs';
 
 /** @type {import('unified').Plugin<[], import('mdast').Root>} */
 export default function guideOptions() {
   return (tree) => {
-    parseOptions(
-      tree,
-
-      'fileOutput',
-    );
-
-    parseOptions(tree, 'remark');
-
-    parseOptions(tree, 'frontmatter');
+    parseOptions(tree, 'fileOutput');
+    parseOptions(tree, 'ui');
   };
 }
 
@@ -26,20 +23,25 @@ function parseOptions(tree, key) {
 }
 
 function getMarkdown(key) {
-  const md = [];
+  const md = [INTRO_MAP[key]];
+  md.push('***');
+
   groupedConfig[key].forEach((config, i) => {
     md.push(`### \`--${config.name}\``);
-    md.push(`\`${getType(config)}\``);
     md.push(`> ${config.help}`);
+    md.push('#### Type');
+    md.push(`\`${getType(config)}\``);
+    md.push('#### Default');
     md.push(`
   \`\`\`json  
   {
-    ${config.name}: "${config.defaultValue}"
+    "${config.name}": "${config.defaultValue}"
   }  
   \`\`\`  
         `);
-
+    md.push('#### Usage');
     md.push(config.comments);
+    md.push('[↑ Top](#options-guide)');
     md.push('***');
   });
 

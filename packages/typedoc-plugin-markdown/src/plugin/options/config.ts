@@ -150,7 +150,7 @@ export const skipIndexPage: DeclarationOption = {
  * ## FunctionA
  * ```
  *
- * @category fileOutput
+ * @category ui
  */
 export const excludeGroups: DeclarationOption = {
   name: 'excludeGroups',
@@ -160,7 +160,7 @@ export const excludeGroups: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const hidePageHeader: DeclarationOption = {
   name: 'hidePageHeader',
@@ -170,7 +170,7 @@ export const hidePageHeader: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const hidePageTitle: DeclarationOption = {
   name: 'hidePageTitle',
@@ -180,7 +180,7 @@ export const hidePageTitle: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const hideBreadcrumbs: DeclarationOption = {
   name: 'hideBreadcrumbs',
@@ -190,7 +190,7 @@ export const hideBreadcrumbs: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const hideInPageTOC: DeclarationOption = {
   name: 'hideInPageTOC',
@@ -200,7 +200,7 @@ export const hideInPageTOC: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const hideHierarchy: DeclarationOption = {
   name: 'hideHierarchy',
@@ -212,7 +212,7 @@ export const hideHierarchy: DeclarationOption = {
 /**
  * Note if `true` references will not be linked.
  *
- * @category fileOutput
+ * @category ui
  */
 export const identifiersAsCodeBlocks: DeclarationOption = {
   name: 'identifiersAsCodeBlocks',
@@ -222,7 +222,7 @@ export const identifiersAsCodeBlocks: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const propertiesFormat: DeclarationOption = {
   name: 'propertiesFormat',
@@ -233,7 +233,7 @@ export const propertiesFormat: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const enumMembersFormat: DeclarationOption = {
   name: 'enumMembersFormat',
@@ -244,7 +244,7 @@ export const enumMembersFormat: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const typeDeclarationFormat: DeclarationOption = {
   name: 'typeDeclarationFormat',
@@ -255,7 +255,7 @@ export const typeDeclarationFormat: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
+ * @category ui
  */
 export const tocFormat: DeclarationOption = {
   name: 'tocFormat',
@@ -271,7 +271,7 @@ export const tocFormat: DeclarationOption = {
  * ```
  * titleTemplate: "{kind}: {name}"
  * ```
- * @category fileOutput
+ * @category ui
  */
 export const titleTemplate: DeclarationOption = {
   name: 'titleTemplate',

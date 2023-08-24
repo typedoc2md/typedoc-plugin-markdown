@@ -42,7 +42,11 @@ export const parsedConfig = Object.values(optionsConfig).map((value, i) => {
 export const groupedConfig = parsedConfig.groupBy('category');
 
 export const TITLE_MAP = {
-  fileOutput: 'Output Options',
-  remark: 'Remark Options',
-  frontmatter: 'Frontmatter Options',
+  fileOutput: 'File Options',
+  ui: 'UI Options',
+};
+
+export const INTRO_MAP = {
+  fileOutput: 'Options that define how output files are generated.',
+  ui: 'UI Options',
 };

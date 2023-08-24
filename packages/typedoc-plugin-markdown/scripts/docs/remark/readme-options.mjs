@@ -1,21 +1,20 @@
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { headingRange } from 'mdast-util-heading-range';
-import { TITLE_MAP, groupedConfig } from '../../utils/options.utils.mjs';
+import {
+  INTRO_MAP,
+  TITLE_MAP,
+  groupedConfig,
+} from '../../utils/options.utils.mjs';
 
 /** @type {import('unified').Plugin<[], import('mdast').Root>} */
 export default function readmeOptions() {
   return (tree) => {
-    parseOptions(
-      tree,
-      'Options that define how output files are generated.',
-      'fileOutput',
-    );
-    parseOptions(tree, 'Remark options.', 'remark');
-    parseOptions(tree, 'Frontmatter options.', 'frontmatter');
+    parseOptions(tree, 'fileOutput');
+    parseOptions(tree, 'ui');
   };
 }
 
-function parseOptions(tree, intro, key) {
+function parseOptions(tree, key) {
   const heading = TITLE_MAP[key];
   headingRange(tree, heading, (start, nodes, end) => {
     return [start, fromMarkdown(getMarkdown(key)), end];
@@ -23,7 +22,13 @@ function parseOptions(tree, intro, key) {
 }
 
 function getMarkdown(key) {
-  return groupedConfig[key]
-    .map((config) => `- [\`--${config.name}\`]()`)
+  const intro = INTRO_MAP[key];
+  const list = groupedConfig[key]
+    .map((config) => {
+      return `- [\`--${
+        config.name
+      }\`](./docs/guides/options.md#--${config.name.toLowerCase()})`;
+    })
     .join('\n');
+  return [intro, list].join('\n\n');
 }
