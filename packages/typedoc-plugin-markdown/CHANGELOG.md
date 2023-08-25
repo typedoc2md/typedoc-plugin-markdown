@@ -3,19 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.4...typedoc-plugin-markdown@3.16.0) (2023-08-26)
+
+### Fixes
+
+- TypeDoc 0.25 compatibility fixes.
+
 ## [3.15.4](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.3...typedoc-plugin-markdown@3.15.4) (2022-07-24)
 
 ### Fixes
 
 - Split out comment summary and tags for signatures [(#451)](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/451)
 
-## [3.15.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.2...typedoc-plugin-markdown@3.15.3) (2022-04-29)
+## [3.15.3](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.2...typedoc-plugin-markdown@3.15.3) (2023-04-29)
 
 ### Fixes
 
 - Updated dependencies
 
-## [3.15.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.1...typedoc-plugin-markdown@3.15.2) (2022-04-20)
+## [3.15.2](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.1...typedoc-plugin-markdown@3.15.2) (2023-04-20)
 
 ### Fixes
 
