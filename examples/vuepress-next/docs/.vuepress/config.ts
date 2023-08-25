@@ -21,6 +21,7 @@ module.exports = {
           children: ['/guide/README.md'],
         },
       ],
+      '/api': require('../api/typedoc-sidebar.json'),
     },
   }),
   plugins: [

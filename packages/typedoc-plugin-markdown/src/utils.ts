@@ -35,13 +35,9 @@ export function memberSymbol(
   if (reflection.kind === ReflectionKind.TypeAlias) {
     return 'Ƭ';
   }
-  if (reflection.kind === ReflectionKind.ObjectLiteral) {
-    return '▪';
-  }
   if (reflection.kind === ReflectionKind.Property && isStatic) {
     return '▪';
   }
-
   return '•';
 }
 

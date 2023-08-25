@@ -11,7 +11,7 @@
     "markdownlint": "yarn run docs:md && markdownlint ./docs/md",
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "test": "jest --colors",
+    "test": "jest",
     "build-and-test": "yarn run build && yarn run test",
     "docs": "yarn run build && yarn run docs:md && yarn run docs:html",
     "docs:md": "typedoc --plugin typedoc-plugin-markdown --options ../../stub-project/typedoc-options.json --plugin typedoc-plugin-mdn-links --out ./docs/md",

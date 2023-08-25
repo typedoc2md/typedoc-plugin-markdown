@@ -116,4 +116,3 @@ export type Bar<T, R> = (foos: ConditionalType<T>[]) => R; // defined elsewhere
 export const baz: Bar<string, string> = (foos) => '...';
 
 export const fooBigInt = BigInt(100); // the BigInt function
-export const barBigInt = 100n; // a BigInt literal

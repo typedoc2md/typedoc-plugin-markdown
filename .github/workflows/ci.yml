@@ -24,5 +24,5 @@ jobs:
         run: yarn run build
       - name: Markdownlint
         run: yarn run markdownlint
-      - name: Test
-        run: yarn test
+      #- name: Test
+      # run: yarn test

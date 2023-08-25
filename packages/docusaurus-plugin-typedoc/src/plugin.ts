@@ -1,9 +1,15 @@
 import { LoadContext } from '@docusaurus/types';
 import * as path from 'path';
-import { Application } from 'typedoc';
+import {
+  Application,
+  ArgumentsReader,
+  PackageJsonReader,
+  TSConfigReader,
+  TypeDocReader,
+} from 'typedoc';
 import { load } from 'typedoc-plugin-markdown';
 import { getPluginOptions } from './options';
-import { bootstrap, removeDir } from './render';
+import { addTypedocDeclarations, removeDir, render } from './render';
 import { DocusaurusTheme } from './theme';
 import { PluginOptions } from './types';
 
@@ -57,15 +63,25 @@ async function generateTypedoc(
     removeDir(outputDir);
   }
 
-  const app = new Application();
-
-  app.renderer.defineTheme('docusaurus', DocusaurusTheme);
+  const app = await Application.bootstrapWithPlugins({}, [
+    new ArgumentsReader(0),
+    new TypeDocReader(),
+    new PackageJsonReader(),
+    new TSConfigReader(),
+    new ArgumentsReader(300),
+  ]);
 
   load(app);
 
-  await bootstrap(app, options);
+  addTypedocDeclarations(app);
 
-  const project = app.convert();
+  setOptions(app, options);
+
+  app.renderer.defineTheme('docusaurus', DocusaurusTheme);
+
+  app.renderer.render = render;
+
+  const project = await app.convert();
 
   // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
   if (!project) {
@@ -78,5 +94,11 @@ async function generateTypedoc(
     });
   } else {
     await app.generateDocs(project, outputDir);
+  }
+}
+
+function setOptions(app: Application, options: any, reportErrors = true) {
+  for (const [key, val] of Object.entries(options)) {
+    app.options.setValue(key as never, val as never);
   }
 }

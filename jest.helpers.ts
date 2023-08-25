@@ -5,7 +5,8 @@ import * as path from 'path';
 
 import {
   Application,
-  PageEvent,
+  ArgumentsReader,
+  PackageJsonReader,
   ProjectReflection,
   RendererEvent,
   TSConfigReader,
@@ -23,24 +24,38 @@ const STUBS_TSCONFIG_PATH = path.join(
 );
 
 global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
-  const app = new Application();
-  load(app);
-  app.options.addReader(new TypeDocReader());
-  app.options.addReader(new TSConfigReader());
-  app.bootstrap({
-    logLevel: 'None',
-    entryPoints:
-      entryPoints.length > 0
-        ? entryPoints.map((inputFile: string) =>
-            path.join(STUBS_SRC_PATH, inputFile),
-          )
-        : [STUBS_SRC_PATH],
-    tsconfig: STUBS_TSCONFIG_PATH,
-    ...options,
-  });
+  //const app = new Application();
 
-  const project = app.convert() as ProjectReflection;
+  //app.options.addReader(new TypeDocReader());
+  //app.options.addReader(new TSConfigReader());
+  const app = await Application.bootstrapWithPlugins(
+    {
+      logLevel: 'None',
+      entryPoints:
+        entryPoints.length > 0
+          ? entryPoints.map((inputFile: string) =>
+              path.join(STUBS_SRC_PATH, inputFile),
+            )
+          : [STUBS_SRC_PATH],
+      tsconfig: STUBS_TSCONFIG_PATH,
+    },
+    [
+      new ArgumentsReader(0),
+      new TypeDocReader(),
+      new PackageJsonReader(),
+      new TSConfigReader(),
+      new ArgumentsReader(300),
+    ],
+  );
+
+  load(app);
+
+  setOptions(app, options);
+
   app.renderer.render = render;
+
+  const project = (await app.convert()) as ProjectReflection;
+
   await app.generateDocs(project, 'docs');
   return project;
 };
@@ -143,5 +158,11 @@ export async function render(
     this.postRenderAsyncJobs = [];
 
     this.trigger(RendererEvent.END, output);
+  }
+}
+
+function setOptions(app: Application, options: any, reportErrors = true) {
+  for (const [key, val] of Object.entries(options)) {
+    app.options.setValue(key as never, val as never);
   }
 }

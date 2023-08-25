@@ -3,23 +3,12 @@ import {
   Application,
   BooleanDeclarationOption,
   MixedDeclarationOption,
-  PackageJsonReader,
   ParameterType,
   ProjectReflection,
   RendererEvent,
   StringDeclarationOption,
-  TSConfigReader,
-  TypeDocReader,
   UrlMapping,
 } from 'typedoc';
-import { PluginOptions } from './types';
-
-export async function bootstrap(app: Application, options: PluginOptions) {
-  addTypedocReaders(app);
-  addTypedocDeclarations(app);
-  app.renderer.render = render;
-  await app.bootstrapWithPlugins(options as any);
-}
 
 export async function render(
   project: ProjectReflection,
@@ -46,13 +35,7 @@ export async function render(
   }
 }
 
-const addTypedocReaders = (app: Application) => {
-  app.options.addReader(new PackageJsonReader())
-  app.options.addReader(new TypeDocReader());
-  app.options.addReader(new TSConfigReader());
-};
-
-const addTypedocDeclarations = (app: Application) => {
+export const addTypedocDeclarations = (app: Application) => {
   app.options.addDeclaration({
     name: 'id',
   } as StringDeclarationOption);

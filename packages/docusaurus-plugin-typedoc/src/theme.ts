@@ -27,7 +27,6 @@ const CATEGORY_POSITION = {
   [ReflectionKind.TypeAlias]: 5,
   [ReflectionKind.Variable]: 6,
   [ReflectionKind.Function]: 7,
-  [ReflectionKind.ObjectLiteral]: 8,
 };
 
 export class DocusaurusTheme extends MarkdownTheme {

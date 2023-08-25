@@ -15,7 +15,7 @@ import { getSidebarJson } from './sidebar';
 let app: Application;
 let project: ProjectReflection | undefined;
 
-export = (opts: Partial<PluginOptions>, ctx: any) => {
+export = async (opts: Partial<PluginOptions>, ctx: any) => {
   const typedocOptions = getTypedocOptions(opts);
 
   const outputDirectory = ctx.sourceDir + '/' + typedocOptions.out;
@@ -24,7 +24,7 @@ export = (opts: Partial<PluginOptions>, ctx: any) => {
     removeDir(outputDirectory);
   }
 
-  app = new Application();
+  app = await Application.bootstrapWithPlugins();
 
   load(app);
 
@@ -34,9 +34,9 @@ export = (opts: Partial<PluginOptions>, ctx: any) => {
 
   app.renderer.defineTheme('vuepress', VuepressTheme);
 
-  app.bootstrap(typedocOptions);
+  //app.bootstrap(typedocOptions);
 
-  project = app.convert();
+  project = await app.convert();
 
   // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
   if (!project) {
