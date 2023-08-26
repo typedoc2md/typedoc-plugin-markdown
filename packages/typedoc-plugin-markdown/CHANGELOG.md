@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.19
+
+### Patch Changes
+
+- TypeDoc 0.25.0 compatibility fixes
+
 ## 4.0.0-next.18 (2023-08-10)
 
 ### Patch Changes

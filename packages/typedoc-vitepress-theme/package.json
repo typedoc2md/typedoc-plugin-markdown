@@ -1,6 +1,6 @@
 {
   "name": "typedoc-vitepress-theme",
-  "version": "1.0.0-next.2",
+  "version": "1.0.0-next.3",
   "description": "A typedoc-plugin-markdown theme that publishes Markdown pages compatible with VitePress.",
   "main": "./dist/index.js",
   "files": [
@@ -24,7 +24,7 @@
     "docs": "typedoc --options ../../stubs/.config/typedoc.1.cjs --plugin typedoc-plugin-markdown --plugin ./dist"
   },
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.0.0-next.13"
+    "typedoc-plugin-markdown": ">=4.0.0-next.19"
   },
   "license": "MIT",
   "keywords": [
