@@ -1,11 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, TypeDocOptions } from 'typedoc';
-import { load as loadTypedocPluginFrontmatter } from 'typedoc-plugin-frontmatter';
-import { load as loadTypedocPluginMarkdown } from 'typedoc-plugin-markdown';
+import { Application } from 'typedoc';
 import { PluginOptions } from '.';
-import { getPluginOptions, loadOptions } from './options';
-import { loadRenderer } from './renderer';
+import { loadFrontmatter } from './frontmatter';
+import { getPluginOptions } from './options';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -48,22 +46,15 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const options = getPluginOptions(opts);
 
-  const { id, docsRoot, ...optionsPassedToTypeDoc } = options;
+  const { id, docsRoot, sidebar, ...optionsPassedToTypeDoc } = options;
 
   const outputDir = path.resolve(siteDir, options.docsRoot, options.out);
 
-  const app = new Application();
+  const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
 
-  loadOptions(app);
-  loadRenderer(app);
-  loadTypedocPluginMarkdown(app);
-  loadTypedocPluginFrontmatter(app);
+  loadFrontmatter(app, options.sidebar);
 
-  await app.bootstrapWithPlugins(
-    optionsPassedToTypeDoc as unknown as Partial<TypeDocOptions>,
-  );
-
-  const project = app.convert();
+  const project = await app.convert();
 
   // if project is undefined typedoc has a problem - error logging will be supplied by typedoc.
   if (!project) {

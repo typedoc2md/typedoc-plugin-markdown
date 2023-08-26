@@ -3,7 +3,7 @@
  * @module
  */
 
-import { Application, Options, OptionsReader } from 'typedoc';
+import { Application, Renderer, Theme } from 'typedoc';
 import { MarkdownTheme } from '../theme';
 import * as options from './options/config';
 import { generateMarkdown, renderMarkdown } from './renderer';
@@ -14,32 +14,6 @@ import { generateMarkdown, renderMarkdown } from './renderer';
  */
 
 export function load(app: Application) {
-  /**
-   * Adds the in-built MarkdownTheme to the renderer.
-   */
-  app.renderer.defineTheme('markdown', MarkdownTheme);
-
-  /**
-   * Options reader that sets the Markdown theme as the defaut and initializes other relevant options.
-   */
-  app.options.addReader(
-    new (class implements OptionsReader {
-      name = 'markdown-theme';
-      readonly order = 900;
-      readonly supportsPackages = false;
-      read(container: Options) {
-        // Sets the theme name to 'markdown' as default
-        if (container.getValue('theme') === 'default') {
-          container.setValue('theme', 'markdown');
-        }
-        // If the custom option `excludeGroups` is set then categorizeByGroup should also be false
-        if (container.getValue('excludeGroups')) {
-          container.setValue('categorizeByGroup', false);
-        }
-      }
-    })(),
-  );
-
   /**
    * add options
    */
@@ -55,8 +29,14 @@ export function load(app: Application) {
    * See {@link plugin/renderer}.
    */
   Object.defineProperty(app, 'generateDocs', { value: generateMarkdown });
+
   Object.defineProperty(app.renderer, 'render', {
     value: renderMarkdown,
-    configurable: true,
+  });
+
+  Object.defineProperty(app.renderer, 'themes', {
+    value: new Map<string, new (renderer: Renderer) => Theme>([
+      ['default', MarkdownTheme],
+    ]),
   });
 }

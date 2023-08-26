@@ -2,6 +2,7 @@ import {
   DeclarationReflection,
   Options,
   ProjectReflection,
+  ReflectionCategory,
   ReflectionGroup,
 } from 'typedoc';
 import { NavigationItem } from '../theme/models';
@@ -33,12 +34,24 @@ export class NavigationBuilder {
     return this.navigation;
   }
 
+  getCategoryGroupChildren(group: ReflectionCategory) {
+    return group.children
+      ?.filter((child) => child.hasOwnDocument)
+      .map((child) => {
+        return {
+          title: child.name,
+          url: child.url,
+          children: this.getChildrenOrGroups(child) || [],
+        };
+      });
+  }
+
   getGroupChildren(group: ReflectionGroup) {
     if (group.categories) {
       return group.categories?.map((category) => {
         return {
           title: category.title,
-          children: this.getGroupChildren(category) || [],
+          children: this.getCategoryGroupChildren(category) || [],
         };
       });
     }

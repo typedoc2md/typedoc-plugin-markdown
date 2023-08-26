@@ -48,8 +48,7 @@ const config = {
       {
         id: 'api-1',
         out: 'api-1',
-        options: '../../stubs/.config/typedoc.1.cjs',
-        cleanOutputDir: true,
+        ...require(path.join(__dirname, '../../stubs/.config/typedoc.1.cjs')),
         skipIndexPage: true,
       },
     ],
@@ -58,8 +57,7 @@ const config = {
       {
         id: 'api-2',
         out: 'api-2',
-        options: '../../stubs/.config/typedoc.2.cjs',
-        cleanOutputDir: true,
+        ...require(path.join(__dirname, '../../stubs/.config/typedoc.2.cjs')),
       },
     ],
     [
@@ -67,8 +65,7 @@ const config = {
       {
         id: 'api-3',
         out: 'api-3',
-        options: '../../stubs/.config/typedoc.3.cjs',
-        cleanOutputDir: true,
+        ...require(path.join(__dirname, '../../stubs/.config/typedoc.3.cjs')),
       },
     ],
   ],

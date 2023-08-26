@@ -1,6 +1,7 @@
 import {
   DeclarationReflection,
   ProjectReflection,
+  ReflectionCategory,
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
@@ -37,14 +38,14 @@ export function reflectionIndex(
   return md.join('\n');
 }
 
-function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
+function getGroup(context: MarkdownThemeRenderContext, group: ReflectionGroup | ReflectionCategory) {
   if (context.options.getValue('tocFormat') === 'table') {
     return getTable(context, group);
   }
   return getList(context, group);
 }
 
-function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
+function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup | ReflectionCategory) {
   const reflectionKind = group.children[0].kind;
   const headers = [
     ReflectionKind.singularString(reflectionKind),
@@ -71,7 +72,7 @@ function getTable(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
   return table(headers, rows);
 }
 
-function getList(context: MarkdownThemeRenderContext, group: ReflectionGroup) {
+function getList(context: MarkdownThemeRenderContext, group: ReflectionGroup | ReflectionCategory) {
   const children = group.children.map(
     (child) =>
       `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
