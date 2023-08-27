@@ -80,10 +80,6 @@ export function signatureMember(
 
   md.push(context.inheritance(signature, headingLevel));
 
-  if (signature.comment) {
-    md.push(context.comment(signature.comment, headingLevel, false, true));
-  }
-
   if (showSources && signature.sources) {
     md.push(context.sources(signature, headingLevel));
   }
