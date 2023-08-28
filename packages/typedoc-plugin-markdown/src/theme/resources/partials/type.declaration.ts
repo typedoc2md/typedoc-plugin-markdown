@@ -27,23 +27,44 @@ export function declarationType(
       const obj = context.someType(declarationIndexSignature.type as SomeType);
       indexSignature = `${key}: ${obj}; `;
     }
+
     const types =
       declarationReflection.children &&
-      declarationReflection.children.map((obj) => {
+      declarationReflection.children.map((obj, index) => {
         const name: string[] = [];
         if (Boolean(obj.getSignature || Boolean(obj.setSignature))) {
           name.push(context.declarationMemberAccessor(obj));
         } else {
           name.push(backTicks(obj.name));
         }
-        return `${name.join(' ')}: ${context.someType(
-          getDeclarationType(obj) as SomeType,
-        )};`;
+
+        const theType = getDeclarationType(obj) as SomeType;
+
+        const typeString = context.someType(theType);
+
+        return `${name.join(' ')}: ${indentBlock(typeString)};\n `;
       });
+
     if (indexSignature) {
       types?.unshift(indexSignature);
     }
-    return types ? `\\{${types.join(' ')}}` : '\\{}';
+    return types ? `\\{\n  ${types.join(' ')}}` : '\\{}';
   }
   return '\\{}';
+}
+
+function indentBlock(content: string) {
+  const lines = content.split('\n');
+  return lines
+    .filter((line) => Boolean(line.length))
+    .map((line, i) => {
+      if (i === 0) {
+        return line;
+      }
+      if (i === lines.length - 1) {
+        return ` ${line}`;
+      }
+      return `  ${line}`;
+    })
+    .join('\n');
 }

@@ -1,6 +1,6 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, table } from '../../../support/elements';
+import { backTicks, bold, table } from '../../../support/elements';
 import { stripLineBreaks, tableComments } from '../../../support/utils';
 import { getDeclarationType } from '../../helpers';
 
@@ -14,13 +14,29 @@ export function propertiesTable(
 ): string {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
+  const inheritance = props.map(
+    (reflection) =>
+      Boolean(reflection.overwrites) || Boolean(reflection.inheritedFrom),
+  );
+  const hasInheritance = inheritance.some((value) => Boolean(value));
+  const hasSources = !context.options.getValue('disableSources');
 
-  const headers = [nameCol];
+  const headers: string[] = [];
+
+  headers.push(nameCol);
 
   headers.push('Type');
 
   if (hasComments) {
     headers.push('Description');
+  }
+
+  if (hasInheritance) {
+    headers.push('Inheritance');
+  }
+
+  if (hasSources) {
+    headers.push('Source');
   }
 
   const flattenParams = (current: any) => {
@@ -57,9 +73,18 @@ export function propertiesTable(
 
     const nameColumn: string[] = [];
 
-    if (property.flags.length && !property.flags.isOptional) {
+    if (context.options.getValue('namedAnchors') && property.anchor) {
       nameColumn.push(
-        property.flags.map((flag) => backTicks(flag.toLowerCase())).join(' '),
+        `<a id="${property.anchor}" name="${property.anchor}"></a>`,
+      );
+    }
+
+    if (property.flags.length) {
+      nameColumn.push(
+        property.flags
+          .filter((flag) => flag !== 'Optional')
+          .map((flag) => bold(backTicks(flag.toLowerCase())))
+          .join(' '),
       );
     }
 
@@ -67,9 +92,9 @@ export function propertiesTable(
       nameColumn.push(context.declarationMemberAccessor(property));
     } else {
       nameColumn.push(
-        `${backTicks(tableComments(property.name))}${
-          property.flags.isOptional ? '?' : ''
-        }`,
+        `${backTicks(
+          `${property.name}${property.flags.isOptional ? '?' : ''}`,
+        )}`,
       );
     }
 
@@ -87,6 +112,15 @@ export function propertiesTable(
         row.push('-');
       }
     }
+
+    if (hasInheritance) {
+      row.push(context.inheritance(property, -1) || '-');
+    }
+
+    if (hasSources) {
+      row.push(context.sources(property, -1));
+    }
+
     rows.push(row);
   });
 

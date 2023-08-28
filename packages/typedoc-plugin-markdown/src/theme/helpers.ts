@@ -42,3 +42,25 @@ export function hasTOC(reflection: DeclarationReflection, options: Options) {
   }
   return reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace]);
 }
+
+export function getModifier(reflection: DeclarationReflection) {
+  if (reflection.flags.isAbstract) {
+    return 'Abstract';
+  }
+  if (reflection.flags.isPrivate) {
+    return 'Private';
+  }
+  if (reflection.flags.isReadonly) {
+    return 'Readonly';
+  }
+  if (reflection.flags.isStatic) {
+    return 'Static';
+  }
+  if (reflection.getSignature) {
+    return 'get';
+  }
+  if (reflection.setSignature) {
+    return 'set';
+  }
+  return null;
+}

@@ -12,6 +12,14 @@ export function signatureMemberIdentifier(
 ): string {
   const md: string[] = [];
 
+  if (signature.parent?.getSignature) {
+    md.push('get ');
+  }
+
+  if (signature.parent?.setSignature) {
+    md.push('set ');
+  }
+
   if (signature.parent && signature.parent.flags?.length > 0) {
     md.push(
       signature.parent.flags

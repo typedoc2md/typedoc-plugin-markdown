@@ -11,7 +11,10 @@ export function sources(
   reflection: DeclarationReflection | SignatureReflection,
   headingLevel: number,
 ): string {
-  const md = [heading(headingLevel, 'Defined In')];
+  const md: string[] = [];
+  if (headingLevel !== -1) {
+    md.push(heading(headingLevel, 'Source'));
+  }
   reflection.sources?.forEach((source) => {
     if (source.url) {
       md.push(

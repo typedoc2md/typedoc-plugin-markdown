@@ -4,12 +4,12 @@
 dist
 .nyc_output/
 
-
 # testing
 samples
 out
 typedoc-examples
 plugin-docs
+html
 
 # dependencies
 node_modules

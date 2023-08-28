@@ -330,6 +330,7 @@ export class UrlBuilder {
         }
 
         reflection.url = container.url + '#' + anchorParts.join('');
+        reflection.anchor = anchorParts.join('');
       }
       reflection.hasOwnDocument = false;
     } else if (reflection.parent) {

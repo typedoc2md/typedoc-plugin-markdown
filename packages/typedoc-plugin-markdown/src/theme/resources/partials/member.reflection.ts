@@ -1,6 +1,11 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { heading, unorderedList } from '../../../support/elements';
+import {
+  backTicks,
+  bold,
+  heading,
+  unorderedList,
+} from '../../../support/elements';
 import { hasIndex, hasTOC } from '../../helpers';
 
 /**
@@ -13,14 +18,15 @@ export function reflectionMember(
 ): string {
   const md: string[] = [];
 
+  if (reflection.flags.isAbstract) {
+    md.push(bold(backTicks('abstract')));
+  }
+
   if (reflection.comment) {
     md.push(context.comment(reflection.comment, headingLevel));
   }
 
-  if (
-    !context.options.getValue('hideHierarchy') &&
-    reflection.typeHierarchy?.next
-  ) {
+  if (reflection.typeHierarchy?.next) {
     md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
   }
 

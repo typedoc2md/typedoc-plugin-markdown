@@ -16,17 +16,23 @@ export function inheritance(
   const md: string[] = [];
 
   if (reflection.implementationOf) {
-    md.push(heading(headingLevel, 'Implementation of'));
+    if (headingLevel !== -1) {
+      md.push(heading(headingLevel, 'Implementation of'));
+    }
     md.push(typeAndParent(context, reflection.implementationOf));
   }
 
   if (reflection.inheritedFrom) {
-    md.push(heading(headingLevel, 'Inherited from'));
+    if (headingLevel !== -1) {
+      md.push(heading(headingLevel, 'Inherited from'));
+    }
     md.push(typeAndParent(context, reflection.inheritedFrom));
   }
 
   if (reflection.overwrites) {
-    md.push(heading(headingLevel, 'Overrides'));
+    if (headingLevel !== -1) {
+      md.push(heading(headingLevel, 'Overrides'));
+    }
     md.push(typeAndParent(context, reflection.overwrites));
   }
 

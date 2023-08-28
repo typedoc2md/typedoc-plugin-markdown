@@ -200,16 +200,6 @@ export const hideInPageTOC: DeclarationOption = {
 };
 
 /**
- * @category ui
- */
-export const hideHierarchy: DeclarationOption = {
-  name: 'hideHierarchy',
-  help: 'Do not print reflection hierarchy.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
  * Note if `true` references will not be linked.
  *
  * @category ui
@@ -298,4 +288,11 @@ export const anchorPrefix: DeclarationOption = {
   help: 'Custom anchor prefix',
   type: ParameterType.String,
   defaultValue: undefined,
+};
+
+export const namedAnchors: DeclarationOption = {
+  name: 'namedAnchors',
+  help: 'Use HTML named anchors for item anchor references.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
 };

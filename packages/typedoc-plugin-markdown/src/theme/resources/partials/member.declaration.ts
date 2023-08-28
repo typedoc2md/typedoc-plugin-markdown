@@ -18,13 +18,19 @@ export function declarationMember(
 ) {
   const md: string[] = [];
 
+  const useCodeBlocks = context.options.getValue('identifiersAsCodeBlocks');
+
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (context.options.getValue('identifiersAsCodeBlocks')) {
+  if (useCodeBlocks) {
     md.push(codeBlock(context.declarationMemberIdentifier(declaration)));
   } else {
-    md.push('> ' + context.declarationMemberIdentifier(declaration));
+    md.push(
+      `${!nested ? '> ' : ''}${context.declarationMemberIdentifier(
+        declaration,
+      )}`,
+    );
   }
 
   if (declaration.comment) {
@@ -68,8 +74,10 @@ export function declarationMember(
         });
       }
 
-      if (typeDeclaration?.children?.length) {
-        md.push(heading(headingLevel, 'Type declaration'));
+      if (typeDeclaration?.children?.length && !useCodeBlocks) {
+        if (!nested) {
+          md.push(heading(headingLevel, 'Type declaration'));
+        }
         md.push(
           context.typeDeclarationMember(
             typeDeclaration,
@@ -81,11 +89,11 @@ export function declarationMember(
     }
   }
 
+  md.push(context.inheritance(declaration, headingLevel));
+
   if (!nested && declaration.sources) {
     md.push(context.sources(declaration, headingLevel));
   }
-
-  md.push(context.inheritance(declaration, headingLevel));
 
   return md.join('\n\n');
 }

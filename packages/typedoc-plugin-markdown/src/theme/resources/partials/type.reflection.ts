@@ -15,9 +15,7 @@ export function reflectionType(
       ? reflectionType.declaration
       : reflectionType;
   if (root.signatures) {
-    return collapse
-      ? backTicks('function')
-      : context.functionType(root.signatures);
+    return context.functionType(root.signatures);
   }
   return collapse ? backTicks('object') : context.declarationType(root);
 }

@@ -17,11 +17,19 @@ export function declarationMemberIdentifier(
 ): string {
   const md: string[] = [];
 
+  const useCodeBlocks = context.options.getValue('identifiersAsCodeBlocks');
+
   const declarationType = getDeclarationType(reflection);
 
-  if (reflection.flags?.length && !reflection.flags.isRest) {
+  if (
+    reflection.flags?.length &&
+    !reflection.flags.isRest &&
+    !reflection.flags.isOptional
+  ) {
     md.push(
-      reflection.flags.map((flag) => backTicks(flag.toLowerCase())).join(' '),
+      reflection.flags
+        .map((flag) => bold(backTicks(flag.toLowerCase())))
+        .join(' '),
     );
   }
 
@@ -46,6 +54,11 @@ export function declarationMemberIdentifier(
       ),
     );
   }
+
+  if (reflection.flags.isOptional) {
+    name.push('?');
+  }
+
   if (declarationType) {
     name.push(':');
   }
@@ -61,7 +74,7 @@ export function declarationMemberIdentifier(
   }
 
   if (declarationType) {
-    md.push(`${context.someType(declarationType, true)}`);
+    md.push(`${context.someType(declarationType, !useCodeBlocks)}`);
   }
 
   if (reflection.defaultValue && reflection.defaultValue !== '...') {

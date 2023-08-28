@@ -14,7 +14,6 @@ declare module 'typedoc' {
     hidePageTitle: boolean;
     hideBreadcrumbs: boolean;
     hideInPageTOC: boolean;
-    hideHierarchy: boolean;
     identifiersAsCodeBlocks: boolean;
     propertiesFormat: 'list' | 'table';
     enumMembersFormat: 'list' | 'table';
@@ -23,6 +22,7 @@ declare module 'typedoc' {
     titleTemplate: string;
     preserveAnchorCasing: boolean;
     anchorPrefix: string;
+    namedAnchors: boolean;
   }
 }
 
@@ -39,7 +39,6 @@ export interface PluginOptions {
   hidePageTitle: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
-  hideHierarchy: boolean;
   identifiersAsCodeBlocks: boolean;
   propertiesFormat: 'list' | 'table';
   enumMembersFormat: 'list' | 'table';
@@ -48,4 +47,5 @@ export interface PluginOptions {
   titleTemplate: string;
   preserveAnchorCasing: boolean;
   anchorPrefix: string;
+  namedAnchors: boolean;
 }
