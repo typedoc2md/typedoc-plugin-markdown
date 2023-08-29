@@ -1,14 +1,30 @@
-[**typedoc-plugin-markdown**](../../README.md)
+[**typedoc-plugin-markdown**](README.md)
 
 ***
 
-[API](../../API.md) > [interfaces](../README.md) > Base
+[API](API.md) > interfaces
 
-# Interface: Base
+# Module: interfaces
+
+Interfaces
+
+## Index
+
+### Interfaces
+
+- [Base](interfaces.md#base)
+- [FunctionInterface](interfaces.md#functioninterface)
+- [IndexableInterface](interfaces.md#indexableinterface)
+
+## Interfaces
+
+<a id="base" name="base"></a>
+
+### Base
 
 Comments for Class Base
 
-## Properties
+#### Properties
 
 | Property | Type | Description | Source |
 | :------ | :------ | :------ | :------ |
@@ -24,3 +40,36 @@ Comments for Class Base
 | <a id="nestedpropd" name="nestedpropd"></a> `propWithProps.nestedPropD` | () => `boolean` | Comments for nestedPropD | [interfaces.ts:65](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L65) |
 | <a id="readonlyprop" name="readonlyprop"></a> **`readonly`** `readonlyProp` | `string` | Comments for readonlyProp | [interfaces.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L24) |
 | <a id="readonlypropandoptional" name="readonlypropandoptional"></a> **`readonly`** `readonlyPropAndOptional?` | `string` | Comments for readonlyPropAndOptional | [interfaces.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L29) |
+
+***
+
+<a id="functioninterface" name="functioninterface"></a>
+
+### FunctionInterface
+
+> **FunctionInterface**(`source`, `subString`): `boolean`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `source` | `string` |
+| `subString` | `string` |
+
+#### Returns
+
+`boolean`
+
+#### Source
+
+[interfaces.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L74)
+
+***
+
+<a id="indexableinterface" name="indexableinterface"></a>
+
+### IndexableInterface
+
+#### Indexable
+
+ \[`s`: `string`\]: `string`

@@ -14,13 +14,13 @@ Comments for Class Base
 
 > **functionProp**: (`s`) => `boolean`
 
-Comments for functionProper [Base](interface.Base.md)
+Comments for functionProper
 
 #### Parameters
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| `s` | `string` | Comment for param s [propWithProps](interface.Base.md#propwithprops) |
+| `s` | `string` | Comment for param s |
 
 #### Returns
 
@@ -28,7 +28,7 @@ Comments for functionProper [Base](interface.Base.md)
 
 #### Source
 
-[interfaces.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L35)
+[interfaces.ts:35](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L35)
 
 ***
 
@@ -40,7 +40,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:19](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L19)
+[interfaces.ts:19](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L19)
 
 ***
 
@@ -52,7 +52,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L14)
+[interfaces.ts:14](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L14)
 
 ***
 
@@ -114,7 +114,7 @@ Comments for propWithProps
 
 #### Source
 
-[interfaces.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L40)
+[interfaces.ts:40](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L40)
 
 ***
 
@@ -126,7 +126,7 @@ Comments for readonlyProp
 
 #### Source
 
-[interfaces.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L24)
+[interfaces.ts:24](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L24)
 
 ***
 
@@ -138,4 +138,4 @@ Comments for readonlyPropAndOptional
 
 #### Source
 
-[interfaces.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L29)
+[interfaces.ts:29](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L29)

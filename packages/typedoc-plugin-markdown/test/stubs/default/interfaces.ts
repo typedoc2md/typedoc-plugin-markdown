@@ -29,8 +29,8 @@ export interface Base {
   readonly readonlyPropAndOptional?: string;
 
   /**
-   * Comments for functionProper {@link Base}
-   * @param s Comment for param s {@link propWithProps}
+   * Comments for functionProper
+   * @param s Comment for param s
    */
   functionProp: (s: string) => boolean;
 

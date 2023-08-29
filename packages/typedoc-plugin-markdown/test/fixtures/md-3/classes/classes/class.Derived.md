@@ -38,18 +38,18 @@ Constructor comments
 
 #### Source
 
-[classes.ts:64](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L64)
+[classes.ts:64](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L64)
 
 ## Properties
 
 | Property | Type | Description | Inheritance | Source |
 | :------ | :------ | :------ | :------ | :------ |
-| <a id="abstractprop" name="abstractprop"></a> `abstractProp` | `string` | Comments for abstractProp | [`Base`](class.Base.md).[`abstractProp`](class.Base.md#abstractprop) | [classes.ts:99](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L99) |
-| <a id="derivedprop" name="derivedprop"></a> `derivedProp` | `string` | - | - | [classes.ts:101](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L101) |
-| <a id="propwithdefault" name="propwithdefault"></a> `propWithDefault` | `string` | Comments for propWithDefault | [`Base`](class.Base.md).[`propWithDefault`](class.Base.md#propwithdefault) | [classes.ts:43](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L43) |
-| <a id="protectedprop" name="protectedprop"></a> **`protected`** `protectedProp` | `string` | Comments for protectedProp | [`Base`](class.Base.md).[`protectedProp`](class.Base.md#protectedprop) | [classes.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L38) |
-| <a id="readonlyprop" name="readonlyprop"></a> **`readonly`** `readonlyProp` | `string` | Comments for abstractProperty | [`Base`](class.Base.md).[`readonlyProp`](class.Base.md#readonlyprop) | [classes.ts:33](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L33) |
-| <a id="staticprop" name="staticprop"></a> **`static`** `staticProp` | `string` | Comments for staticProp | [`Base`](class.Base.md).[`staticProp`](class.Base.md#staticprop) | [classes.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L23) |
+| <a id="abstractprop" name="abstractprop"></a> `abstractProp` | `string` | Comments for abstractProp | [`Base`](class.Base.md).[`abstractProp`](class.Base.md#abstractprop) | [classes.ts:99](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L99) |
+| <a id="derivedprop" name="derivedprop"></a> `derivedProp` | `string` | - | - | [classes.ts:101](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L101) |
+| <a id="propwithdefault" name="propwithdefault"></a> `propWithDefault` | `string` | Comments for propWithDefault | [`Base`](class.Base.md).[`propWithDefault`](class.Base.md#propwithdefault) | [classes.ts:43](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L43) |
+| <a id="protectedprop" name="protectedprop"></a> **`protected`** `protectedProp` | `string` | Comments for protectedProp | [`Base`](class.Base.md).[`protectedProp`](class.Base.md#protectedprop) | [classes.ts:38](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L38) |
+| <a id="readonlyprop" name="readonlyprop"></a> **`readonly`** `readonlyProp` | `string` | Comments for abstractProperty | [`Base`](class.Base.md).[`readonlyProp`](class.Base.md#readonlyprop) | [classes.ts:33](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L33) |
+| <a id="staticprop" name="staticprop"></a> **`static`** `staticProp` | `string` | Comments for staticProp | [`Base`](class.Base.md).[`staticProp`](class.Base.md#staticprop) | [classes.ts:23](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L23) |
 
 ## Accessors
 
@@ -71,7 +71,7 @@ Base.getter
 
 #### Source
 
-[classes.ts:48](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L48)
+[classes.ts:48](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L48)
 
 ***
 
@@ -99,7 +99,7 @@ Base.setter
 
 #### Source
 
-[classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L56)
+[classes.ts:56](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L56)
 
 ## Methods
 
@@ -121,7 +121,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:103](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L103)
+[classes.ts:103](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L103)
 
 ***
 
@@ -137,7 +137,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:107](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L107)
+[classes.ts:107](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L107)
 
 ***
 
@@ -159,7 +159,7 @@ Comment for publicMethod
 
 #### Source
 
-[classes.ts:80](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L80)
+[classes.ts:80](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L80)
 
 ***
 
@@ -181,4 +181,4 @@ Comment for publicMethod
 
 #### Source
 
-[classes.ts:92](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L92)
+[classes.ts:92](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/classes.ts#L92)

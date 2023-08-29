@@ -43,7 +43,7 @@ const typeAndParent = (
   context: MarkdownThemeRenderContext,
   props: ArrayType | ReferenceType,
 ) => {
-  const getUrl = (name: string, url: string) =>
+  const getLink = (name: string, url: string) =>
     link(backTicks(name), context.relativeURL(url));
 
   if (props) {
@@ -55,14 +55,14 @@ const typeAndParent = (
         if (props.reflection instanceof SignatureReflection) {
           if (props.reflection.parent?.parent?.url) {
             md.push(
-              getUrl(
+              getLink(
                 props.reflection.parent.parent.name,
                 props.reflection.parent.parent.url,
               ),
             );
-            if (props.reflection.parent.url) {
+            if (props.reflection.parent?.url) {
               md.push(
-                getUrl(
+                getLink(
                   props.reflection.parent.name,
                   props.reflection.parent.url,
                 ),
@@ -70,12 +70,23 @@ const typeAndParent = (
             }
           }
         } else {
-          if (props.reflection.parent?.url) {
-            md.push(
-              getUrl(props.reflection.parent.name, props.reflection.parent.url),
-            );
-            if (props.reflection.url) {
-              md.push(getUrl(props.reflection.name, props.reflection.url));
+          if (props.reflection.parent) {
+            if (props.reflection.parent.url) {
+              md.push(
+                getLink(
+                  props.reflection.parent.name,
+                  props.reflection.parent.url,
+                ),
+              );
+            } else {
+              md.push(backTicks(props.reflection.parent.name));
+            }
+            if (props.reflection) {
+              if (props.reflection.url) {
+                md.push(getLink(props.reflection.name, props.reflection.url));
+              } else {
+                md.push(backTicks(props.reflection.name));
+              }
             }
           }
         }

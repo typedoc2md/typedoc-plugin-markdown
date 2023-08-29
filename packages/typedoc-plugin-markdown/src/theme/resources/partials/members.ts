@@ -34,7 +34,17 @@ export function members(
     const items = children?.filter((item) => !item.hasOwnDocument);
     items?.forEach((item, index) => {
       md.push(context.member(item, memberHeadingLevel || headingLevel));
-      if (index !== items.length - 1) {
+      if (
+        index !== items.length - 1 &&
+        (item.kindOf([
+          ReflectionKind.Class,
+          ReflectionKind.Interface,
+          ReflectionKind.Function,
+          ReflectionKind.Enum,
+          ReflectionKind.Variable,
+        ]) ||
+          context.options.getValue('outputFileStrategy') === 'members')
+      ) {
         md.push(horizontalRule());
       }
     });

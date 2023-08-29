@@ -16,7 +16,7 @@ import { TemplateMapping, UrlOption } from './models';
 
 export class UrlBuilder {
   urls: UrlMapping[] = [];
-  anchors: string[] = [];
+  anchors: Record<string, string[]> = {};
 
   constructor(
     public theme: MarkdownTheme,
@@ -225,7 +225,6 @@ export class UrlBuilder {
         : `${kindAlias}.${friendlyName}`;
     }
 
-    // remove leading underscores
     const alias = reflection.getAlias().replace(/^_/, '');
 
     const parentDir = options.parentUrl
@@ -304,36 +303,39 @@ export class UrlBuilder {
     reflection: DeclarationReflection,
     container: Reflection,
   ) {
-    if (container.url && !reflection.url) {
+    if (container.url) {
       if (!reflection.kindOf(ReflectionKind.TypeLiteral)) {
         const anchorPrefix = this.options.getValue('anchorPrefix');
         const anchorId = this.getAnchorId(reflection);
 
-        if (!this.anchors[container.url]) {
-          this.anchors[container.url] = [];
+        if (anchorId) {
+          if (!this.anchors[container.url]) {
+            this.anchors[container.url] = [];
+          }
+
+          this.anchors[container.url].push(anchorId);
+
+          const count = this.anchors[container.url]?.filter(
+            (id) => id === anchorId,
+          )?.length;
+
+          const anchorParts = [anchorId];
+
+          if (count > 1) {
+            anchorParts.push(`-${count}`);
+          }
+
+          if (anchorPrefix) {
+            anchorParts.unshift(`${anchorPrefix}`);
+          }
+
+          reflection.url = container.url + '#' + anchorParts.join('');
+          reflection.anchor = anchorParts.join('');
         }
-
-        this.anchors[container.url].push(anchorId);
-
-        const count = this.anchors[container.url]?.filter(
-          (id) => id === anchorId,
-        )?.length;
-
-        const anchorParts = [anchorId];
-
-        if (count > 1) {
-          anchorParts.push(`-${count}`);
-        }
-
-        if (anchorPrefix) {
-          anchorParts.unshift(`${anchorPrefix}`);
-        }
-
-        reflection.url = container.url + '#' + anchorParts.join('');
-        reflection.anchor = anchorParts.join('');
       }
       reflection.hasOwnDocument = false;
-    } else if (reflection.parent) {
+    }
+    if (reflection.parent) {
       reflection.traverse((child) => {
         if (child instanceof DeclarationReflection) {
           this.applyAnchorUrl(child, container);
@@ -346,9 +348,27 @@ export class UrlBuilder {
     const preserveAnchorCasing = this.options.getValue(
       'preserveAnchorCasing',
     ) as boolean;
-    return preserveAnchorCasing
-      ? reflection.name
-      : reflection.name.toLowerCase();
+
+    const anchorName = this.getAnchorName(reflection);
+
+    if (anchorName) {
+      return preserveAnchorCasing ? anchorName : anchorName.toLowerCase();
+    }
+
+    return null;
+  }
+
+  private getAnchorName(reflection: DeclarationReflection) {
+    const namedAnchors = this.options.getValue('namedAnchors');
+    const propertiesTableStyle =
+      this.options.getValue('propertiesFormat') === 'table';
+
+    if (!namedAnchors) {
+      if (reflection.kindOf(ReflectionKind.Property) && propertiesTableStyle) {
+        return null;
+      }
+    }
+    return reflection.name;
   }
 
   private getPartName(part: string, position: number) {

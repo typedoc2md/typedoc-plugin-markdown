@@ -81,7 +81,7 @@ export function declarationMember(
         md.push(
           context.typeDeclarationMember(
             typeDeclaration,
-            headingLevel + 1,
+            nested ? headingLevel : headingLevel + 1,
             hasParent ? declaration.name : undefined,
           ),
         );

@@ -21,4 +21,4 @@
 
 ## Source
 
-[interfaces.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c50784c/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L74)
+[interfaces.ts:74](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/c071d51/packages/typedoc-plugin-markdown/test/stubs/default/interfaces.ts#L74)
