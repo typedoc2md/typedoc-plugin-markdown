@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.20
+
+### Patch Changes
+
+- UI improvements
+- Enable anchor to items inside table
+
 ## 4.0.0-next.19 (2023-08-27)
 
 ### Patch Changes
