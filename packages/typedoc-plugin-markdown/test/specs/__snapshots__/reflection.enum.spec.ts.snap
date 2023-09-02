@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > BasicEnum
+
+# Enumeration: BasicEnum
+
+Comments for enum
+
+## Enumeration Members
+
+### MemberA
+
+> **MemberA**: \`0\`
+
+Comments for MemberA
+
+#### Source
+
+[enums.ts:12](source-url)
+
+### MemberB
+
+> **MemberB**: \`1\`
+
+Comments for MemberB
+
+#### Source
+
+[enums.ts:16](source-url)
+"
+`;
+
+exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > BasicEnum
+
+# BasicEnum
+
+Comments for enum
+
+## Enumeration Members
+
+| Member | Value | Description |
+| :------ | :------ | :------ |
+| \`MemberA\` | \`0\` | Comments for MemberA |
+| \`MemberB\` | \`1\` | Comments for MemberB |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > EnumWithValues
+
+# Enumeration: EnumWithValues
+
+Comments for enum
+
+## Enumeration Members
+
+### MemberA
+
+> **MemberA**: \`"UP"\`
+
+#### Source
+
+[enums.ts:23](source-url)
+
+### MemberB
+
+> **MemberB**: \`"DOWN"\`
+
+#### Source
+
+[enums.ts:24](source-url)
+"
+`;
+
+exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > EnumWithValues
+
+# EnumWithValues
+
+Comments for enum
+
+## Enumeration Members
+
+| Member | Value |
+| :------ | :------ |
+| \`MemberA\` | \`"UP"\` |
+| \`MemberB\` | \`"DOWN"\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;

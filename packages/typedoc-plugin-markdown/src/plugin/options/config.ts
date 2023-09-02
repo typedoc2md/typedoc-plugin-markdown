@@ -1,5 +1,9 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
-import { FormatStyle, OutputFileStrategy } from './custom-maps';
+import {
+  FormatStyle,
+  MembersWithOwnFile,
+  OutputFileStrategy,
+} from './custom-maps';
 
 /**
  *
@@ -7,21 +11,51 @@ import { FormatStyle, OutputFileStrategy } from './custom-maps';
  *
  * This options aims to provide some flexibility as to how files can be generated.
  *
- * **"members"**
+ * **`--outputFileStrategy members`**
  *
  * Generates an individual file for each exported member. This is the standard behaviour of the HTML theme and the plugin default.
  *
- * ![outputFileStrategy members folders](../images/options/outputFileStrategy-members.png)
+ * In this example output folder structure modules `module-a` and `module-b` export two classes and variables each:
  *
- * **"modules"**
+ * ```
+ * ├── README.md
+ * ├── API.md
+ * ├── module-a
+ * ├── ├── README.md
+ * │   ├── classes
+ * │   │   ├── ClassA.md
+ * │   │   ├── ClassB.md
+ * ├── ├── variables
+ * │   │   ├── VariableA.md
+ * │   │   ├── VariableB.md
+ * ├── module-b
+ * ├── ├── README.md
+ * │   ├── classes
+ * │   │   ├── ClassA.md
+ * │   │   ├── ClassB.md
+ * ├── ├── variables
+ * │   │   ├── VariableA.md
+ * │   │   ├── VariableB.md
+ * ```
+ *
+ * When `members` is set, it is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#membersWithOwnFile) option.
+ *
+ * **`--outputFileStrategy modules`**
  *
  * Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
  *
- * ![outputFileStrategy modules folders](../images/options/outputFileStrategy-modules.png)
+ * The above example will output the following folder structure:
+ *
+ * ```
+ * ├── README.md
+ * ├── API.md
+ * ├── module-a.md
+ * ├── module-b.md
+ * ```
  *
  * @category fileOutput
  */
-export const outputFileStrategy: DeclarationOption = {
+export const mdOutputFileStrategy: DeclarationOption = {
   name: 'outputFileStrategy',
   help: 'Determines how output files are generated.',
   type: ParameterType.Map,
@@ -30,46 +64,54 @@ export const outputFileStrategy: DeclarationOption = {
 };
 
 /**
- * This makes files and folders appear in the file system in the same order as they are sorted. This is useful where auto sidebar generation may be required.
+ * To export only Interfaces, classes and enums to their own file, the option should be configured in an options file as follows:
  *
- * ![includeFileNumberPrefixes folders](../images/options/includeFileNumberPrefixes.png)
- *
- * @category fileOutput
- */
-export const includeFileNumberPrefixes: DeclarationOption = {
-  name: 'includeFileNumberPrefixes',
-  help: 'Prefixes generated files and folders with number prefixes.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * This creates a flat folder structure without any folders - a required format for some Wikis.
- *
- * ![flattenOutputFiles folders](../images/options/flattenOutputFiles.png)
+ * ```js
+ * {
+ *   membersWithOwnFile: ['Interface', 'Class', 'Enum']
+ * }
+ * ```
  *
  * @category fileOutput
  */
-export const flattenOutputFiles: DeclarationOption = {
-  name: 'flattenOutputFiles',
-  help: 'Flatten output files without folders.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
+export const membersWithOwnFile: DeclarationOption = {
+  name: 'membersWithOwnFile',
+  help: 'Determines which members are exported to their own file. Ignored when `outputFileStrategy` = `modules`.',
+  type: ParameterType.Array,
+  validate(values) {
+    const validValues = MembersWithOwnFile;
+    for (const kind of values) {
+      if (!validValues.includes(kind)) {
+        throw new Error(
+          `'${kind}' is an invalid value for 'membersWithOwnFile'. Must be one of: ${validValues.join(
+            ', ',
+          )}`,
+        );
+      }
+    }
+  },
+  defaultValue: MembersWithOwnFile,
 };
 
 /**
+ * The entry page in this context is the reference to the file that acts as a root page for a project and it's folders, equivalent to `index.html` for web pages.
+ *
  * `README.md` is recognised when browsing folders on repos and Wikis. `index.md` might be better if published as a web site.
  *
- * Note the content of this file is either the API entry / index page, or the project readme (dependant on if a readme file is resolved or not).
+ * The content of this file at the root of the project is conditional on if a readme file is resolved for the project.
  *
- * a. If a readme file is resolved then two root files are generated:
+ * A. If a readme file is resolved then two root files are generated:
  *
- * ├── {entryFileName} - (the project readme file)
+ * ```
+ * ├── README.md - (the project readme file)
  * ├── API.md - (API index page)
+ * ```
  *
- * b. If a readme file is NOT resolved, then the index page becomes the entryFileName page.
+ * B. If a readme file is NOT resolved (when `readme` = `none`), then the index page becomes the `entryFileName` page and there is no seperate index page.
  *
- * ├── {entryFileName} - (API index page)
+ * ```
+ * ├── README.md - (API index page)
+ * ```
  *
  * @category fileOutput
  *
@@ -81,12 +123,8 @@ export const entryFileName: DeclarationOption = {
   defaultValue: 'README.md',
 };
 
-/**
- * This page either contains the module index or exported symbols depending on the given `entryPoints`.
- *
- * This page may not be required (if navigation is present for example) and can be skipped. See `skipIndexPage`.
- *
- * This option is ignored if `readme=none` or `skipIndexPage=true`.
+/*
+ * This option is ignored if `readme=none`.
  *
  * @category fileOutput
  */
@@ -95,68 +133,6 @@ export const indexFileName: DeclarationOption = {
   help: 'The file name the seperate index page.',
   type: ParameterType.String,
   defaultValue: 'API.md',
-};
-
-/**
- * @category fileOutput
- */
-export const indexPageTitle: DeclarationOption = {
-  name: 'indexPageTitle',
-  help: 'The title of API index page.',
-  type: ParameterType.String,
-  defaultValue: 'API',
-};
-
-/**
- * This option skips the generation of the index page if it is not required.
- *
- * Please note this option will be ignored if a single entryPoint is defined as it will contain exported symbols.
- *
- * @category fileOutput
- */
-export const skipIndexPage: DeclarationOption = {
-  name: 'skipIndexPage',
-  help: 'Skips generation of a seperate API index page. ',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * By default members are grouped by kind (eg Classes, Functions etc).
- *
- * This creates a flat structure where all members are displayed at the same level.
- *
- * **With groups**
- *
- * ```markdown
- * # SomeModule
- *
- * ## Classes
- *
- * ### ClassA
- *
- * ## Functions
- *
- * ### FunctionA
- *```
- *
- * **Without groups**
- *
- * ```markdown
- * # SomeModule
- *
- * ## ClassA
- *
- * ## FunctionA
- * ```
- *
- * @category ui
- */
-export const excludeGroups: DeclarationOption = {
-  name: 'excludeGroups',
-  help: 'Excludes grouping by reflection kind so all members are rendered and sorted at the same level.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
 };
 
 /**
@@ -200,6 +176,82 @@ export const hideInPageTOC: DeclarationOption = {
 };
 
 /**
+ * This provides a mechanism to change the main project index page title.
+ *
+ * Note this will also serve as the root breadcrumb text.
+ *
+ * @category ui
+ */
+export const indexPageTitle: DeclarationOption = {
+  name: 'indexPageTitle',
+  help: 'The title of project index page.',
+  type: ParameterType.String,
+  defaultValue: '{projectName}',
+};
+
+/**
+ * Supports {kind} and {name} placeholders.
+ *
+ * Example for displaying name only:
+ *
+ * ```
+ * titleTemplate: "{name}"
+ * ```
+ *
+ * Example for displaying kind in backticks:
+ *
+ * ```
+ * titleTemplate: "{name} `{kind}`"
+ * ```
+ *
+ * @category ui
+ */
+export const titleTemplate: DeclarationOption = {
+  name: 'titleTemplate',
+  help: 'Specify a template for displaying page titles.',
+  type: ParameterType.String,
+  defaultValue: '{kind}: {name}',
+};
+
+/**
+ * By default members are grouped by kind (eg Classes, Functions etc).
+ *
+ * This creates a flat structure where all members are displayed at the same level.
+ *
+ * **With groups**
+ *
+ * ```markdown
+ * # SomeModule
+ *
+ * ## Classes
+ *
+ * ### ClassA
+ *
+ * ## Functions
+ *
+ * ### FunctionA
+ *```
+ *
+ * **Without groups**
+ *
+ * ```markdown
+ * # SomeModule
+ *
+ * ## ClassA
+ *
+ * ## FunctionA
+ * ```
+ *
+ * @category ui
+ */
+export const excludeGroups: DeclarationOption = {
+  name: 'excludeGroups',
+  help: 'Excludes grouping by reflection kind so all members are rendered and sorted at the same level.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * Note if `true` references will not be linked.
  *
  * @category ui
@@ -209,6 +261,17 @@ export const identifiersAsCodeBlocks: DeclarationOption = {
   help: 'Format signature and declaration identifiers in code blocks.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * @category ui
+ */
+export const parametersFormat: DeclarationOption = {
+  name: 'parametersFormat',
+  help: 'Specify the render style of parameter and type parameter groups.',
+  type: ParameterType.Map,
+  map: FormatStyle,
+  defaultValue: FormatStyle.List,
 };
 
 /**
@@ -247,31 +310,15 @@ export const typeDeclarationFormat: DeclarationOption = {
 /**
  * @category ui
  */
-export const tocFormat: DeclarationOption = {
-  name: 'tocFormat',
-  help: 'Render TOC either as a simple list or a table with a description.',
+export const indexFormat: DeclarationOption = {
+  name: 'indexFormat',
+  help: 'Render indexes either as a simple list or a table with a description.',
   type: ParameterType.Map,
   map: FormatStyle,
   defaultValue: FormatStyle.List,
 };
 
 /**
- * Supports {kind} and {name} placeholders.
- *
- * ```
- * titleTemplate: "{kind}: {name}"
- * ```
- * @category ui
- */
-export const titleTemplate: DeclarationOption = {
-  name: 'titleTemplate',
-  help: 'Specify a template for displaying page titles.',
-  type: ParameterType.String,
-  defaultValue: '{kind}: {name}',
-};
-
-/**
- * @category fileOutput
  */
 export const preserveAnchorCasing: DeclarationOption = {
   name: 'preserveAnchorCasing',
@@ -281,7 +328,6 @@ export const preserveAnchorCasing: DeclarationOption = {
 };
 
 /**
- * @category fileOutput
  */
 export const anchorPrefix: DeclarationOption = {
   name: 'anchorPrefix',
@@ -290,9 +336,19 @@ export const anchorPrefix: DeclarationOption = {
   defaultValue: undefined,
 };
 
-export const namedAnchors: DeclarationOption = {
-  name: 'namedAnchors',
-  help: 'Use HTML named anchors for item anchor references.',
+export const htmlHeadingAnchors: DeclarationOption = {
+  name: 'htmlHeadingAnchors',
+  help: 'Use HTML named anchors on heading elements.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * Comment without tag
+ */
+export const htmlTableAnchors: DeclarationOption = {
+  name: 'htmlTableAnchors',
+  help: 'Use HTML named anchors on table rows that contain linkable symbols.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };

@@ -1,6 +1,5 @@
 import { ConditionalType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { italic } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -13,7 +12,7 @@ export function conditionalType(
   if (conditionalType.checkType) {
     md.push(context.someType(conditionalType.checkType));
   }
-  md.push(italic('extends'));
+  md.push('extends');
   if (conditionalType.extendsType) {
     md.push(context.someType(conditionalType.extendsType));
   }

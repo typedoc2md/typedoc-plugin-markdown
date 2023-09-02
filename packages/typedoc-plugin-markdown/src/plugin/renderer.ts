@@ -26,7 +26,7 @@ export async function generateMarkdown(
       'Documentation could not be generated due to the errors above.',
     );
   } else {
-    this.logger.info(`Documentation generated at ${out}`);
+    this.logger.info(`Documentation generated at ${nicePath(out)}`);
 
     this.logger.verbose(`Markdown rendering took ${Date.now() - start}ms`);
   }
@@ -143,4 +143,14 @@ export function writeFileSync(fileName: string, data: string) {
 
 export function normalizePath(path: string) {
   return path.replace(/\\/g, '/');
+}
+
+export function nicePath(absPath: string) {
+  if (!path.isAbsolute(absPath)) return absPath;
+
+  const relativePath = path.relative(process.cwd(), absPath);
+  if (relativePath.startsWith('..')) {
+    return normalizePath(absPath);
+  }
+  return `./${normalizePath(relativePath)}`;
 }

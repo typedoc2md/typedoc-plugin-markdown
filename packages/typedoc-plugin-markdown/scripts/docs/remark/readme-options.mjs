@@ -11,6 +11,7 @@ export default function readmeOptions() {
   return (tree) => {
     parseOptions(tree, 'fileOutput');
     parseOptions(tree, 'ui');
+    parseOptions(tree, 'other');
   };
 }
 

@@ -1,7 +1,7 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, italic, table } from '../../../support/elements';
-import { stripLineBreaks, tableComments } from '../../../support/utils';
+import { stripLineBreaks, tableString } from '../../../support/utils';
 
 /**
  * @category Partials
@@ -55,9 +55,7 @@ export function typeParametersTable(
     if (hasComments) {
       if (typeParameter.comment) {
         row.push(
-          stripLineBreaks(
-            tableComments(context.comment(typeParameter.comment)),
-          ),
+          stripLineBreaks(tableString(context.comment(typeParameter.comment))),
         );
       } else {
         row.push('-');

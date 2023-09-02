@@ -1,3 +1,5 @@
+import { ReflectionKind } from 'typedoc';
+
 /**
  * Defines outputFileStrategy model for the `outputFileStrategy` option.
  *
@@ -11,6 +13,7 @@ export const OutputFileStrategy = {
 
 export type OutputFileStrategy =
   (typeof OutputFileStrategy)[keyof typeof OutputFileStrategy];
+
 /**
  *
  * @enum
@@ -21,3 +24,12 @@ export const FormatStyle = {
 } as const;
 
 export type FormatStyle = (typeof FormatStyle)[keyof typeof FormatStyle];
+
+export const MembersWithOwnFile = [
+  ReflectionKind[ReflectionKind.Enum],
+  ReflectionKind[ReflectionKind.Variable],
+  ReflectionKind[ReflectionKind.Function],
+  ReflectionKind[ReflectionKind.Class],
+  ReflectionKind[ReflectionKind.Interface],
+  ReflectionKind[ReflectionKind.TypeAlias],
+];

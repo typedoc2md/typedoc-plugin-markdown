@@ -5,7 +5,7 @@ import {
   ReflectionType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { codeBlock, heading } from '../../../support/elements';
+import { heading } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -18,20 +18,10 @@ export function declarationMember(
 ) {
   const md: string[] = [];
 
-  const useCodeBlocks = context.options.getValue('identifiersAsCodeBlocks');
-
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (useCodeBlocks) {
-    md.push(codeBlock(context.declarationMemberIdentifier(declaration)));
-  } else {
-    md.push(
-      `${!nested ? '> ' : ''}${context.declarationMemberIdentifier(
-        declaration,
-      )}`,
-    );
-  }
+  md.push(context.declarationMemberIdentifier(declaration, nested));
 
   if (declaration.comment) {
     md.push(context.comment(declaration.comment, headingLevel));
@@ -40,6 +30,7 @@ export function declarationMember(
   if (declaration.type instanceof IntersectionType) {
     declaration.type?.types?.forEach((intersectionType) => {
       if (intersectionType instanceof ReflectionType) {
+        md.push(heading(headingLevel, 'Type declaration'));
         md.push(
           context.typeDeclarationMember(
             intersectionType.declaration,
@@ -74,7 +65,7 @@ export function declarationMember(
         });
       }
 
-      if (typeDeclaration?.children?.length && !useCodeBlocks) {
+      if (typeDeclaration?.children?.length) {
         if (!nested) {
           md.push(heading(headingLevel, 'Type declaration'));
         }

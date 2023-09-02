@@ -15,89 +15,94 @@ const resourcesPath = path.join(
   'theme',
   'resources',
 );
-const templateFiles = getFiles('templates').filter((file) => file !== 'index');
-const templateSymbols = [
-  { symbolName: 'memberTemplate' },
-  { symbolName: 'projectTemplate' },
-  { symbolName: 'readmeTemplate' },
-  { symbolName: 'reflectionTemplate' },
-];
 
-const partialsFiles = getFiles('partials').filter((file) => file !== 'index');
-const partialsSymbols = getSymbols(partialsFiles, 'partials');
+export function prepareResources() {
+  const templateFiles = getFiles('templates').filter(
+    (file) => file !== 'index',
+  );
+  const templateSymbols = [
+    { symbolName: 'memberTemplate' },
+    { symbolName: 'projectTemplate' },
+    { symbolName: 'readmeTemplate' },
+    { symbolName: 'reflectionTemplate' },
+  ];
 
-const themeRenderContextFile = path.join(
-  __dirname,
-  '..',
-  '..',
-  'src',
-  'theme',
-  'markdown-theme-render-context.ts',
-);
+  const partialsFiles = getFiles('partials').filter((file) => file !== 'index');
+  const partialsSymbols = getSymbols(partialsFiles, 'partials');
 
-//const partialsBarrelFile = path.join(resourcesPath, 'partials', 'index.ts');
+  const themeRenderContextFile = path.join(
+    __dirname,
+    '..',
+    '..',
+    'src',
+    'theme',
+    'render-context.ts',
+  );
 
-const importsOut: string[] = [];
-const exportsOut: string[] = [];
+  //const partialsBarrelFile = path.join(resourcesPath, 'partials', 'index.ts');
 
-partialsFiles.forEach((file, index) => {
-  if (file !== 'index') {
-    importsOut.push(
-      `import { ${partialsSymbols[index].symbolName} } from './resources/partials/${file}';`,
-    );
-  }
-  exportsOut.push(`export * from './${file}'`);
-});
+  const importsOut: string[] = [];
+  const exportsOut: string[] = [];
 
-templateFiles.forEach((file, index) => {
-  if (file !== 'index') {
-    importsOut.push(
-      `import { ${templateSymbols[index].symbolName} } from './resources/templates/${file}';`,
-    );
-  }
-});
+  partialsFiles.forEach((file, index) => {
+    if (file !== 'index') {
+      importsOut.push(
+        `import { ${partialsSymbols[index].symbolName} } from './resources/partials/${file}';`,
+      );
+    }
+    exportsOut.push(`export * from './${file}'`);
+  });
 
-const resources: string[] = [];
+  templateFiles.forEach((file, index) => {
+    if (file !== 'index') {
+      importsOut.push(
+        `import { ${templateSymbols[index].symbolName} } from './resources/templates/${file}';`,
+      );
+    }
+  });
 
-resources.push('\n// templates');
-templateSymbols.forEach((symbol) => {
-  resources.push('/** @hidden */');
-  resources.push(`${symbol.symbolName} = bind(${symbol.symbolName}, this);`);
-});
+  const resources: string[] = [];
 
-resources.push('\n// partials');
-partialsSymbols.forEach((symbol) => {
-  resources.push('/** @hidden */');
-  resources.push(`${symbol.symbolName} = bind(${symbol.symbolName}, this);`);
-});
+  resources.push('\n// templates');
+  templateSymbols.forEach((symbol) => {
+    resources.push('/** @hidden */');
+    resources.push(`${symbol.symbolName} = bind(${symbol.symbolName}, this);`);
+  });
 
-const data = fs
-  .readFileSync(themeRenderContextFile)
-  ?.toString()
-  .replace(
-    /\/\* start_imports \*\/((.|\n)*)\/* end_imports \*\//g,
-    `
+  resources.push('\n// partials');
+  partialsSymbols.forEach((symbol) => {
+    resources.push('/** @hidden */');
+    resources.push(`${symbol.symbolName} = bind(${symbol.symbolName}, this);`);
+  });
+
+  const data = fs
+    .readFileSync(themeRenderContextFile)
+    ?.toString()
+    .replace(
+      /\/\* start_imports \*\/((.|\n)*)\/* end_imports \*\//g,
+      `
   /* start_imports */
   ${importsOut.join('\n')}
   /* end_imports */`,
-  )
-  .replace(
-    /\/\* start_resources \*\/((.|\n)*)\/* end_resources \*\//g,
-    `
+    )
+    .replace(
+      /\/\* start_resources \*\/((.|\n)*)\/* end_resources \*\//g,
+      `
   /* start_resources */
   ${resources.join('\n')}
   /* end_resources */`,
-  );
+    );
 
-prettier
-  .format(data, {
-    parser: 'typescript',
-    singleQuote: true,
-    trailingComma: 'all',
-  })
-  .then((formatted) => {
-    fs.writeFileSync(themeRenderContextFile, formatted);
-  });
+  prettier
+    .format(data, {
+      parser: 'typescript',
+      singleQuote: true,
+      trailingComma: 'all',
+    })
+    .then((formatted) => {
+      fs.writeFileSync(themeRenderContextFile, formatted);
+    });
+}
 
 function getFiles(type: string) {
   const partialsFolder = path.join(resourcesPath, type);

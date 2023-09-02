@@ -10,6 +10,7 @@ export function declarationType(
   context: MarkdownThemeRenderContext,
   declarationReflection: DeclarationReflection,
   collapse = false,
+  format = false,
 ): string {
   if (collapse) {
     return backTicks('object');
@@ -33,28 +34,33 @@ export function declarationType(
       declarationReflection.children.map((obj, index) => {
         const name: string[] = [];
         if (Boolean(obj.getSignature || Boolean(obj.setSignature))) {
-          name.push(context.declarationMemberAccessor(obj));
-        } else {
-          name.push(backTicks(obj.name));
+          if (obj.getSignature) {
+            name.push('get');
+          }
+          if (obj.setSignature) {
+            name.push('set');
+          }
         }
-
+        name.push(backTicks(obj.name));
         const theType = getDeclarationType(obj) as SomeType;
 
         const typeString = context.someType(theType);
 
-        return `${name.join(' ')}: ${indentBlock(typeString)};\n `;
+        return `${name.join(' ')}: ${indentBlock(typeString, format)};${
+          format ? '\n ' : ' '
+        }`;
       });
 
     if (indexSignature) {
       types?.unshift(indexSignature);
     }
-    return types ? `\\{\n  ${types.join(' ')}}` : '\\{}';
+    return types ? `\\{${format ? '\n ' : ' '} ${types.join(' ')}}` : '\\{}';
   }
   return '\\{}';
 }
 
-function indentBlock(content: string) {
-  const lines = content.split('\n');
+function indentBlock(content: string, format: boolean) {
+  const lines = content.split(`${format ? '\n ' : ' '}`);
   return lines
     .filter((line) => Boolean(line.length))
     .map((line, i) => {
@@ -66,5 +72,5 @@ function indentBlock(content: string) {
       }
       return `  ${line}`;
     })
-    .join('\n');
+    .join(`${format ? '\n' : ''}`);
 }

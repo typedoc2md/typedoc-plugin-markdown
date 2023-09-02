@@ -1,57 +1,73 @@
-import { ProjectReflection } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../src/theme';
+import {
+  FixtureOutputDir,
+  FixtureOutputFileStrategy,
+} from '../__utils__/config';
+import { expectFileToEqual } from '../__utils__/helpers';
 
-describe(`Groups:`, () => {
-  let project: ProjectReflection;
-  let context: MarkdownThemeRenderContext;
-
-  const baseOptions = {
-    hideKindPrefix: true,
-    disableSources: true,
-    outputFileStrategy: 'modules',
-  };
-
-  const stubbedPartials = [
-    'declarationMember',
-    'reflectionMember',
-    'signatureMember',
-  ];
-
-  describe(`(excludeGroups=false)`, () => {
-    beforeAll(async () => {
-      ({ project, context } = await global.bootstrap(['groups.ts'], {
-        options: {
-          ...baseOptions,
-          excludeGroups: false,
-        },
-        stubPartials: stubbedPartials,
-      }));
-    });
-    test(`should render group members'`, () => {
-      expect(context.members(project, 2)).toMatchSnapshot();
-    });
-
-    test(`should render group TOC'`, () => {
-      expect(context.reflectionIndex(project, 2)).toMatchSnapshot();
-    });
+describe(`Groups`, () => {
+  test(`should compile index page for project`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
+      ['API.md', 'index.md'],
+    );
   });
 
-  describe(`(excludeGroups=true)`, () => {
-    beforeAll(async () => {
-      ({ project, context } = await global.bootstrap(['groups.ts'], {
-        options: {
-          ...baseOptions,
-          excludeGroups: true,
-        },
-        stubPartials: stubbedPartials,
-      }));
-    });
-    test(`should render group members'`, () => {
-      expect(context.members(project, 2)).toMatchSnapshot();
-    });
+  test(`should compile index page for monorepo`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Packages,
+      FixtureOutputFileStrategy.Members,
+      ['API.md'],
+    );
+  });
 
-    test(`should render group TOC'`, () => {
-      expect(context.reflectionIndex(project, 2)).toMatchSnapshot();
-    });
+  test(`should compile basic module index page`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      FixtureOutputFileStrategy.Modules,
+      'basic.md',
+    );
+
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      FixtureOutputFileStrategy.Members,
+      ['basic/README.md', 'basic/index.md'],
+    );
+  });
+
+  test(`should compile module index with namespaces index page`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
+      ['has-namespaces/README.md', 'has-namespaces/index.md'],
+    );
+  });
+
+  test(`should compile module index for a namespace`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
+      [
+        'has-namespaces/namespaces/Namespace_A_/README.md',
+        'has-namespaces/namespaces/Namespace_A_/index.md',
+      ],
+    );
+  });
+
+  test(`should compile categories group page`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      FixtureOutputFileStrategy.Modules,
+      'has-categories.md',
+    );
+  });
+
+  test(`should compile categories index page`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      FixtureOutputFileStrategy.Members,
+      ['has-categories/README.md', 'has-categories/index.md'],
+      2,
+    );
   });
 });

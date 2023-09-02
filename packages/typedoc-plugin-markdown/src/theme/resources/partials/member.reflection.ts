@@ -1,11 +1,6 @@
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import {
-  backTicks,
-  bold,
-  heading,
-  unorderedList,
-} from '../../../support/elements';
+import { heading, unorderedList } from '../../../support/elements';
 import { hasIndex, hasTOC } from '../../helpers';
 
 /**
@@ -18,10 +13,6 @@ export function reflectionMember(
 ): string {
   const md: string[] = [];
 
-  if (reflection.flags.isAbstract) {
-    md.push(bold(backTicks('abstract')));
-  }
-
   if (reflection.comment) {
     md.push(context.comment(reflection.comment, headingLevel));
   }
@@ -30,9 +21,15 @@ export function reflectionMember(
     md.push(context.memberHierarchy(reflection.typeHierarchy, headingLevel));
   }
 
-  if (!reflection.kindOf(ReflectionKind.Class) && reflection.typeParameters) {
+  if (reflection.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));
-    md.push(context.typeParametersTable(reflection.typeParameters));
+    if (context.options.getValue('parametersFormat') === 'table') {
+      md.push(context.typeParametersTable(reflection.typeParameters));
+    } else {
+      md.push(
+        context.typeParametersList(reflection.typeParameters, headingLevel + 1),
+      );
+    }
   }
 
   if (reflection.implementedTypes) {
@@ -57,9 +54,14 @@ export function reflectionMember(
     md.push(context.indexSignatureTitle(reflection.indexSignature));
   }
 
-  if (hasIndex(reflection) || hasTOC(reflection, context.options)) {
+  if (hasIndex(reflection)) {
     md.push(heading(headingLevel, 'Index'));
-    md.push(context.reflectionIndex(reflection, headingLevel + 1));
+    md.push(context.reflectionIndex(reflection, false, headingLevel + 1));
+  }
+
+  if (hasTOC(reflection)) {
+    md.push(heading(headingLevel, 'Table of contents'));
+    md.push(context.reflectionIndex(reflection, true, headingLevel + 1));
   }
 
   md.push(context.members(reflection, headingLevel));

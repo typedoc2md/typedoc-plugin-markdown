@@ -1,8 +1,8 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, bold, table } from '../../../support/elements';
-import { stripLineBreaks, tableComments } from '../../../support/utils';
-import { getDeclarationType } from '../../helpers';
+import { backTicks, table } from '../../../support/elements';
+import { stripLineBreaks, tableString } from '../../../support/utils';
+import { getDeclarationType, getModifier } from '../../helpers';
 
 /**
  * @category Partials
@@ -14,6 +14,9 @@ export function propertiesTable(
 ): string {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
+  const modifiers = props.map((param) => getModifier(param));
+  const hasModifiers = modifiers.some((value) => Boolean(value));
+
   const inheritance = props.map(
     (reflection) =>
       Boolean(reflection.overwrites) || Boolean(reflection.inheritedFrom),
@@ -22,6 +25,10 @@ export function propertiesTable(
   const hasSources = !context.options.getValue('disableSources');
 
   const headers: string[] = [];
+
+  if (hasModifiers) {
+    headers.push('Modifier');
+  }
 
   headers.push(nameCol);
 
@@ -67,36 +74,27 @@ export function propertiesTable(
 
   const rows: string[][] = [];
 
-  properties.forEach((property: DeclarationReflection) => {
+  properties.forEach((property: DeclarationReflection, index: number) => {
     const propertyType = getDeclarationType(property);
     const row: string[] = [];
 
+    if (hasModifiers) {
+      row.push(backTicks(modifiers[index] || 'public'));
+    }
+
     const nameColumn: string[] = [];
 
-    if (context.options.getValue('namedAnchors') && property.anchor) {
+    if (context.options.getValue('htmlTableAnchors') && property.anchor) {
       nameColumn.push(
         `<a id="${property.anchor}" name="${property.anchor}"></a>`,
       );
     }
 
-    if (property.flags.length) {
-      nameColumn.push(
-        property.flags
-          .filter((flag) => flag !== 'Optional')
-          .map((flag) => bold(backTicks(flag.toLowerCase())))
-          .join(' '),
-      );
-    }
-
-    if (Boolean(property.getSignature || Boolean(property.setSignature))) {
-      nameColumn.push(context.declarationMemberAccessor(property));
-    } else {
-      nameColumn.push(
-        `${backTicks(
-          `${property.name}${property.flags.isOptional ? '?' : ''}`,
-        )}`,
-      );
-    }
+    nameColumn.push(
+      `${backTicks(
+        `${tableString(property.name)}${property.flags.isOptional ? '?' : ''}`,
+      )}`,
+    );
 
     row.push(nameColumn.join(' '));
 
@@ -107,7 +105,7 @@ export function propertiesTable(
     if (hasComments) {
       const comments = getComments(property);
       if (comments) {
-        row.push(stripLineBreaks(tableComments(context.comment(comments))));
+        row.push(stripLineBreaks(tableString(context.comment(comments))));
       } else {
         row.push('-');
       }

@@ -7,6 +7,7 @@ import {
 
 import { MarkdownThemeRenderContext } from '../..';
 import { heading, horizontalRule } from '../../../support/elements';
+import { isGroupKind } from '../../helpers';
 
 export function members(
   context: MarkdownThemeRenderContext,
@@ -34,17 +35,7 @@ export function members(
     const items = children?.filter((item) => !item.hasOwnDocument);
     items?.forEach((item, index) => {
       md.push(context.member(item, memberHeadingLevel || headingLevel));
-      if (
-        index !== items.length - 1 &&
-        (item.kindOf([
-          ReflectionKind.Class,
-          ReflectionKind.Interface,
-          ReflectionKind.Function,
-          ReflectionKind.Enum,
-          ReflectionKind.Variable,
-        ]) ||
-          context.options.getValue('outputFileStrategy') === 'members')
-      ) {
+      if (index < items.length - 1 && isGroupKind(item)) {
         md.push(horizontalRule());
       }
     });
@@ -67,38 +58,43 @@ export function members(
         pushChildren(container.children, headingLevel);
       }
     } else {
-      container.groups
-        ?.filter((group) => !group.allChildrenHaveOwnDocument())
-        .forEach((group) => {
-          if (group.categories) {
-            md.push(heading(headingLevel, group.title));
-            pushCategories(group.categories, headingLevel + 1);
+      const groupsWithChildren = container.groups?.filter(
+        (group) => !group.allChildrenHaveOwnDocument(),
+      );
+      groupsWithChildren?.forEach((group, index: number) => {
+        if (group.categories) {
+          md.push(heading(headingLevel, group.title));
+          pushCategories(group.categories, headingLevel + 1);
+        } else {
+          const isPropertiesGroup = group.children.every((child) =>
+            child.kindOf(ReflectionKind.Property),
+          );
+
+          const isEnumGroup = group.children.every((child) =>
+            child.kindOf(ReflectionKind.EnumMember),
+          );
+
+          md.push(heading(headingLevel, group.title));
+
+          if (
+            isPropertiesGroup &&
+            context.options.getValue('propertiesFormat') === 'table'
+          ) {
+            md.push(context.propertiesTable(group.children));
+          } else if (
+            isEnumGroup &&
+            context.options.getValue('enumMembersFormat') === 'table'
+          ) {
+            md.push(context.enumMembersTable(group.children));
           } else {
-            const isPropertiesGroup = group.children.every((child) =>
-              child.kindOf(ReflectionKind.Property),
-            );
-
-            const isEnumGroup = group.children.every((child) =>
-              child.kindOf(ReflectionKind.EnumMember),
-            );
-
-            md.push(heading(headingLevel, group.title));
-
-            if (
-              isPropertiesGroup &&
-              context.options.getValue('propertiesFormat') === 'table'
-            ) {
-              md.push(context.propertiesTable(group.children));
-            } else if (
-              isEnumGroup &&
-              context.options.getValue('enumMembersFormat') === 'table'
-            ) {
-              md.push(context.enumMembersTable(group.children));
-            } else {
-              pushChildren(group.children, headingLevel + 1);
-            }
+            pushChildren(group.children, headingLevel + 1);
           }
-        });
+        }
+
+        if (index < groupsWithChildren.length - 1) {
+          md.push(horizontalRule());
+        }
+      });
     }
   }
 

@@ -2,7 +2,7 @@ import { ParameterReflection, ReflectionKind } from 'typedoc';
 
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, table } from '../../../support/elements';
-import { stripLineBreaks, tableComments } from '../../../support/utils';
+import { stripLineBreaks, tableString } from '../../../support/utils';
 
 /**
  * @category Partials
@@ -82,7 +82,7 @@ export function parametersTable(
     if (hasComments) {
       if (parameter.comment) {
         row.push(
-          stripLineBreaks(tableComments(context.comment(parameter.comment))),
+          stripLineBreaks(tableString(context.comment(parameter.comment))),
         );
       } else {
         row.push('-');

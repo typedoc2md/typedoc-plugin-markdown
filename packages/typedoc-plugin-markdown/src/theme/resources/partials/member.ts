@@ -5,6 +5,8 @@ import {
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { heading } from '../../../support/elements';
+import { escapeChars } from '../../../support/utils';
+import { getMemberTitle } from '../../helpers';
 
 /**
  * @category Partials
@@ -16,12 +18,15 @@ export function member(
 ): string {
   const md: string[] = [];
 
-  if (context.options.getValue('namedAnchors')) {
+  if (context.options.getValue('htmlHeadingAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 
-  if (!reflection.hasOwnDocument) {
-    md.push(heading(headingLevel, context.memberTitle(reflection)));
+  if (
+    !reflection.hasOwnDocument &&
+    !reflection.kindOf(ReflectionKind.Constructor)
+  ) {
+    md.push(heading(headingLevel, getMemberTitle(reflection)));
   }
 
   const getMember = (reflection: DeclarationReflection) => {
@@ -35,10 +40,38 @@ export function member(
       return context.reflectionMember(reflection, headingLevel + 1);
     }
 
+    if (reflection.kindOf(ReflectionKind.Constructor)) {
+      return context.constructorMember(reflection, headingLevel);
+    }
+
+    if (reflection.kindOf(ReflectionKind.Accessor)) {
+      return context.accessorMember(reflection, headingLevel + 1);
+    }
+
     if (reflection.signatures) {
       return reflection.signatures
         ?.map((signature) => {
-          return context.signatureMember(signature, headingLevel + 1);
+          const signatureMd: string[] = [];
+          const multipleSignatures =
+            reflection.signatures && reflection.signatures?.length > 1;
+
+          if (multipleSignatures) {
+            signatureMd.push(
+              heading(
+                headingLevel + 1,
+                `${escapeChars(signature.name)}(${signature.parameters
+                  ?.map((param) => param.name)
+                  .join(', ')})`,
+              ),
+            );
+          }
+          signatureMd.push(
+            context.signatureMember(
+              signature,
+              multipleSignatures ? headingLevel + 2 : headingLevel + 1,
+            ),
+          );
+          return signatureMd.join('\n\n');
         })
         .join('\n\n');
     }

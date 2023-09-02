@@ -1,49 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comments: should convert comments with fenced block' 1`] = `
-"Some comments with fence blocks
+exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# API
 
-\`\`\`typescript
-someFunction()
-\`\`\`
+Comments form module comments
 
-\`\`\`js
-anotherFunction()
-\`\`\`"
-`;
+## Links
 
-exports[`Comments: should convert comments with tags' 1`] = `
-"**Description**
+Links using \`{@link}\` inline tags.
 
-Tag description on new line
+- [CommentInterface](interfaces/CommentInterface.md) - Links to CommentInterface
+- [Links to CommentInterface.prop](interfaces/CommentInterface.md)
+- [Links to CommentInterface.propb](interfaces/CommentInterface.md)
+- [CommentEnum.MemberB](enumerations/CommentEnum.md)
+- [SameName:var](variables/SameName.md)
+- [SameName:interface](interfaces/SameName.md)
+- [SameName.prop](interfaces/SameName.md)
+- [prop:var](variables/prop.md)
 
-- Tag description with bullet
-- Tag description with bullet
+### External link
 
-**Deprecated**
+- [Google](https://www.google.com)
+- [\`https://www.google.com\`](https://www.google.com)
 
-Another tag description
+## Tag A
 
-Gets the application version.
+Comments for a tag
 
-**Example**
+## Tag B
 
-\`\`\`typescript
-import { getVersion } from '@tauri-apps/api/app';
-const appVersion = await getVersion();
-\`\`\`"
-`;
+Comments for tag written on same line
 
-exports[`Comments: should convert symbols brackets to symbol links' 1`] = `
-"See [\`CommentClass\`](classes/class.CommentClass.md) and CommentClass's [comment](classes/class.CommentClass.md#comment) property.
-Also, check out [Google](https://www.google.com) and
-[GitHub](https://github.com).
+## Html And Jsx
 
-Taken from [JsDoc](http://usejsdoc.org/tags-inline-link.html)."
-`;
-
-exports[`Comments: should escape angle brackets inside comments' 1`] = `
-"A \`<tag>\` \`</tag>\`  in comments
+A \`<tag>\` \`</tag>\`  in comments
 
 Closing \`</element>\`  on its own
 
@@ -60,5 +50,390 @@ A \`<tag>\` in backticks
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
-\`\`\`"
+\`\`\`
+
+## Exports
+
+### Enumerations
+
+- [CommentEnum](enumerations/CommentEnum.md)
+
+### Interfaces
+
+- [CommentInterface](interfaces/CommentInterface.md)
+- [SameName](interfaces/SameName.md)
+
+### Variables
+
+- [SameName](variables/SameName.md)
+- [prop](variables/prop.md)
+- [propb](variables/propb.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# API
+
+Comments form module comments
+
+## Links
+
+Links using \`{@link}\` inline tags.
+
+- [CommentInterface](interfaces/CommentInterface.md) - Links to CommentInterface
+- [Links to CommentInterface.prop](interfaces/CommentInterface.md#prop)
+- [Links to CommentInterface.propb](interfaces/CommentInterface.md#propb)
+- [CommentEnum.MemberB](enumerations/CommentEnum.md#memberb)
+- [SameName:var](variables/SameName.md)
+- [SameName:interface](interfaces/SameName.md)
+- [SameName.prop](interfaces/SameName.md#prop)
+- [prop:var](variables/prop.md)
+
+### External link
+
+- [Google](https://www.google.com)
+- [\`https://www.google.com\`](https://www.google.com)
+
+## Tag A
+
+Comments for a tag
+
+## Tag B
+
+Comments for tag written on same line
+
+## Html And Jsx
+
+A \`<tag>\` \`</tag>\`  in comments
+
+Closing \`</element>\`  on its own
+
+A \`<tag>\` in backticks
+
+<p>Some HTML</p>
+
+<img src="http://via.placeholder.com/50x50" />
+
+<ul>
+<li>html list item</li>
+</ul>
+
+\`\`\`
+A <tag> in a code block
+Some <p> html </p> inside codeblock
+\`\`\`
+
+## Exports
+
+### Enumerations
+
+| Enumeration | Description |
+| :------ | :------ |
+| [CommentEnum](enumerations/CommentEnum.md) | - |
+
+### Interfaces
+
+| Interface | Description |
+| :------ | :------ |
+| [CommentInterface](interfaces/CommentInterface.md) | - |
+| [SameName](interfaces/SameName.md) | - |
+
+### Variables
+
+| Variable | Description |
+| :------ | :------ |
+| [SameName](variables/SameName.md) | - |
+| [prop](variables/prop.md) | - |
+| [propb](variables/propb.md) | - |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"# API
+
+Comments form module comments
+
+## Links
+
+Links using \`{@link}\` inline tags.
+
+- [CommentInterface](API.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](API.md#commentinterface)
+- [Links to CommentInterface.propb](API.md#commentinterface)
+- [CommentEnum.MemberB](API.md#commentenum)
+- [SameName:var](API.md#samename-1)
+- [SameName:interface](API.md#samename)
+- [SameName.prop](API.md#samename)
+- [prop:var](API.md#prop)
+
+### External link
+
+- [Google](https://www.google.com)
+- [\`https://www.google.com\`](https://www.google.com)
+
+## Tag A
+
+Comments for a tag
+
+## Tag B
+
+Comments for tag written on same line
+
+## Html And Jsx
+
+A \`<tag>\` \`</tag>\`  in comments
+
+Closing \`</element>\`  on its own
+
+A \`<tag>\` in backticks
+
+<p>Some HTML</p>
+
+<img src="http://via.placeholder.com/50x50" />
+
+<ul>
+<li>html list item</li>
+</ul>
+
+\`\`\`
+A <tag> in a code block
+Some <p> html </p> inside codeblock
+\`\`\`
+
+## Enumerations
+
+- [CommentEnum](API.md#commentenum)
+
+## Interfaces
+
+- [CommentInterface](API.md#commentinterface)
+- [SameName](API.md#samename)
+
+## Variables
+
+- [SameName](API.md#samename-1)
+- [prop](API.md#prop)
+- [propb](API.md#propb)
+
+## Enumerations
+
+- [CommentEnum](API.md#commentenum)
+
+## Interfaces
+
+- [CommentInterface](API.md#commentinterface)
+- [SameName](API.md#samename)
+
+## Variables
+
+- [SameName](API.md#samename-1)
+- [prop](API.md#prop)
+- [propb](API.md#propb)
+
+## Enumerations
+
+### CommentEnum
+
+#### Enumeration Members
+
+| Member | Value | Description |
+| :------ | :------ | :------ |
+| \`Member\` | \`0\` | Comment for Member |
+| \`MemberB\` | \`1\` | - |
+
+***
+
+## Interfaces
+
+### CommentInterface
+
+#### Properties
+
+| Property | Type |
+| :------ | :------ |
+| \`prop\` | \`string\` |
+| \`propb\` | \`string\` |
+
+***
+
+### SameName
+
+#### Properties
+
+| Property | Type |
+| :------ | :------ |
+| \`prop\` | \`string\` |
+| \`propb\` | \`string\` |
+
+***
+
+## Variables
+
+### SameName
+
+> **SameName**: \`true\`
+
+***
+
+### prop
+
+> **\`const\`** **prop**: \`true\` = \`true\`
+
+***
+
+### propb
+
+> **\`const\`** **propb**: \`true\` = \`true\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# API
+
+Comments form module comments
+
+## Links
+
+Links using \`{@link}\` inline tags.
+
+- [CommentInterface](API.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](API.md#prop)
+- [Links to CommentInterface.propb](API.md#propb)
+- [CommentEnum.MemberB](API.md#memberb)
+- [SameName:var](API.md#samename-1)
+- [SameName:interface](API.md#samename)
+- [SameName.prop](API.md#prop-1)
+- [prop:var](API.md#prop-2)
+
+### External link
+
+- [Google](https://www.google.com)
+- [\`https://www.google.com\`](https://www.google.com)
+
+## Tag A
+
+Comments for a tag
+
+## Tag B
+
+Comments for tag written on same line
+
+## Html And Jsx
+
+A \`<tag>\` \`</tag>\`  in comments
+
+Closing \`</element>\`  on its own
+
+A \`<tag>\` in backticks
+
+<p>Some HTML</p>
+
+<img src="http://via.placeholder.com/50x50" />
+
+<ul>
+<li>html list item</li>
+</ul>
+
+\`\`\`
+A <tag> in a code block
+Some <p> html </p> inside codeblock
+\`\`\`
+
+## Enumerations
+
+- [CommentEnum](API.md#commentenum)
+
+## Interfaces
+
+- [CommentInterface](API.md#commentinterface)
+- [SameName](API.md#samename)
+
+## Variables
+
+- [SameName](API.md#samename-1)
+- [prop](API.md#prop-2)
+- [propb](API.md#propb-2)
+
+## Enumerations
+
+- [CommentEnum](API.md#commentenum)
+
+## Interfaces
+
+- [CommentInterface](API.md#commentinterface)
+- [SameName](API.md#samename)
+
+## Variables
+
+- [SameName](API.md#samename-1)
+- [prop](API.md#prop-2)
+- [propb](API.md#propb-2)
+
+## Enumerations
+
+### CommentEnum
+
+#### Enumeration Members
+
+| Member | Value | Description |
+| :------ | :------ | :------ |
+| <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member |
+| <a id="memberb" name="memberb"></a> \`MemberB\` | \`1\` | - |
+
+***
+
+## Interfaces
+
+### CommentInterface
+
+#### Properties
+
+| Property | Type |
+| :------ | :------ |
+| <a id="prop" name="prop"></a> \`prop\` | \`string\` |
+| <a id="propb" name="propb"></a> \`propb\` | \`string\` |
+
+***
+
+### SameName
+
+#### Properties
+
+| Property | Type |
+| :------ | :------ |
+| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` |
+| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` |
+
+***
+
+## Variables
+
+### SameName
+
+> **SameName**: \`true\`
+
+***
+
+### prop
+
+> **\`const\`** **prop**: \`true\` = \`true\`
+
+***
+
+### propb
+
+> **\`const\`** **propb**: \`true\` = \`true\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
 `;

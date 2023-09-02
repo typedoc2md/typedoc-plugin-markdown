@@ -1,230 +1,1148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Groups: (excludeGroups=false) should render group TOC' 1`] = `
-"## Enumerations
+exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
 
-- [EnumA](API.md#enuma)
-- [EnumB](API.md#enumb)
+***
 
-## Classes
+[API](../API.md) > basic
 
-- [ClassA](API.md#classa)
-- [ClassB](API.md#classb)
+# Module: basic
 
-## Interfaces
+A basic module
 
-- [InterfaceA](API.md#interfacea)
-- [InterfaceB](API.md#interfaceb)
+## Index
 
-## Type Aliases
+### Enumerations
 
-- [typeA](API.md#typea)
-- [typeB](API.md#typeb)
+- [EnumA](enumerations/EnumA.md)
+- [EnumB](enumerations/EnumB.md)
 
-## Variables
+### Interfaces
 
-- [variableA](API.md#variablea)
-- [variableB](API.md#variableb)
+- [IterfaceA](interfaces/IterfaceA.md)
+- [IterfaceB](interfaces/IterfaceB.md)
 
-## Functions
+### Type Aliases
 
-- [functionA](API.md#functiona)
-- [functionB](API.md#functionb)
+- [TypeA](type-aliases/TypeA.md)
+- [TypeB](type-aliases/TypeB.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
-exports[`Groups: (excludeGroups=false) should render group members' 1`] = `
-"## Enumerations
+exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Module: basic
+
+A basic module
+
+## Index
+
+### Enumerations
+
+| Enumeration | Description |
+| :------ | :------ |
+| [EnumA](enumerations/EnumA.md) | - |
+| [EnumB](enumerations/EnumB.md) | - |
+
+### Interfaces
+
+| Interface | Description |
+| :------ | :------ |
+| [IterfaceA](interfaces/IterfaceA.md) | - |
+| [IterfaceB](interfaces/IterfaceB.md) | - |
+
+## Table of contents
+
+### Type Aliases
+
+- [TypeA](index.md#typea)
+- [TypeB](index.md#typeb)
+
+<a id="typea" name="typea"></a>
+
+## TypeA
+
+> **\`type\`** **TypeA**: \`string\`
+
+***
+
+<a id="typeb" name="typeb"></a>
+
+## TypeB
+
+> **\`type\`** **TypeB**: \`string\`
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](API.md)
+
+***
+
+[API](API.md) > basic
+
+# Module: basic
+
+A basic module
+
+## Table of contents
+
+### Enumerations
+
+- [EnumA](basic.md#enuma)
+- [EnumB](basic.md#enumb)
+
+### Interfaces
+
+- [IterfaceA](basic.md#iterfacea)
+- [IterfaceB](basic.md#iterfaceb)
+
+### Type Aliases
+
+- [TypeA](basic.md#typea)
+- [TypeB](basic.md#typeb)
+
+## Enumerations
 
 ### EnumA
-
-[partial: reflectionMember]
-
-
 
 ***
 
 ### EnumB
 
-[partial: reflectionMember]
-
-## Classes
-
-### ClassA
-
-[partial: reflectionMember]
-
-
-
 ***
-
-### ClassB
-
-[partial: reflectionMember]
 
 ## Interfaces
 
-### InterfaceA
-
-[partial: reflectionMember]
-
-
+### IterfaceA
 
 ***
 
-### InterfaceB
+### IterfaceB
 
-[partial: reflectionMember]
+***
 
 ## Type Aliases
 
-### typeA
+### TypeA
 
-[partial: declarationMember]
-
-
+> **\`type\`** **TypeA**: \`string\`
 
 ***
 
-### typeB
+### TypeB
 
-[partial: declarationMember]
+> **\`type\`** **TypeB**: \`string\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# Module: basic
+
+A basic module
+
+## Table of contents
+
+### Enumerations
+
+- [EnumA](basic.md#enuma)
+- [EnumB](basic.md#enumb)
+
+### Interfaces
+
+- [IterfaceA](basic.md#iterfacea)
+- [IterfaceB](basic.md#iterfaceb)
+
+### Type Aliases
+
+- [TypeA](basic.md#typea)
+- [TypeB](basic.md#typeb)
+
+<a id="enuma" name="enuma"></a>
+
+## EnumA
+
+***
+
+<a id="enumb" name="enumb"></a>
+
+## EnumB
+
+***
+
+<a id="iterfacea" name="iterfacea"></a>
+
+## IterfaceA
+
+***
+
+<a id="iterfaceb" name="iterfaceb"></a>
+
+## IterfaceB
+
+***
+
+<a id="typea" name="typea"></a>
+
+## TypeA
+
+> **\`type\`** **TypeA**: \`string\`
+
+***
+
+<a id="typeb" name="typeb"></a>
+
+## TypeB
+
+> **\`type\`** **TypeB**: \`string\`
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](API.md)
+
+***
+
+[API](API.md) > has-categories
+
+# Module: has-categories
+
+A module that contains categories
+
+## Table of contents
+
+### Enumerations
+
+#### Category A
+
+- [CategoryAEnum1](has-categories.md#categoryaenum1)
+- [CategoryAEnum2](has-categories.md#categoryaenum2)
+
+#### Category B
+
+- [CategoryBEnum1](has-categories.md#categorybenum1)
+- [CategoryBEnum2](has-categories.md#categorybenum2)
+
+#### Other
+
+- [UnCategorizedEnum](has-categories.md#uncategorizedenum)
+
+### Interfaces
+
+#### Category A
+
+- [CategoryAInterface1](has-categories.md#categoryainterface1)
+- [CategoryAInterface2](has-categories.md#categoryainterface2)
+
+#### Category B
+
+- [CategoryBInterface1](has-categories.md#categorybinterface1)
+- [CategoryBInterface2](has-categories.md#categorybinterface2)
+
+#### Other
+
+- [UnCategorizedInterace](has-categories.md#uncategorizedinterace)
+
+## Enumerations
+
+### Category A
+
+#### CategoryAEnum1
+
+***
+
+#### CategoryAEnum2
+
+### Category B
+
+#### CategoryBEnum1
+
+***
+
+#### CategoryBEnum2
+
+### Other
+
+#### UnCategorizedEnum
+
+***
+
+## Interfaces
+
+### Category A
+
+#### CategoryAInterface1
+
+***
+
+#### CategoryAInterface2
+
+### Category B
+
+#### CategoryBInterface1
+
+***
+
+#### CategoryBInterface2
+
+### Other
+
+#### UnCategorizedInterace
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# Module: has-categories
+
+A module that contains categories
+
+## Table of contents
+
+### Category A
+
+- [CategoryAEnum1](has-categories.md#categoryaenum1)
+- [CategoryAEnum2](has-categories.md#categoryaenum2)
+- [CategoryAInterface1](has-categories.md#categoryainterface1)
+- [CategoryAInterface2](has-categories.md#categoryainterface2)
+
+### Category B
+
+- [CategoryBEnum1](has-categories.md#categorybenum1)
+- [CategoryBEnum2](has-categories.md#categorybenum2)
+- [CategoryBInterface1](has-categories.md#categorybinterface1)
+- [CategoryBInterface2](has-categories.md#categorybinterface2)
+
+### Other
+
+- [UnCategorizedEnum](has-categories.md#uncategorizedenum)
+- [UnCategorizedInterace](has-categories.md#uncategorizedinterace)
+
+## Category A
+
+<a id="categoryaenum1" name="categoryaenum1"></a>
+
+### CategoryAEnum1
+
+***
+
+<a id="categoryaenum2" name="categoryaenum2"></a>
+
+### CategoryAEnum2
+
+***
+
+<a id="categoryainterface1" name="categoryainterface1"></a>
+
+### CategoryAInterface1
+
+***
+
+<a id="categoryainterface2" name="categoryainterface2"></a>
+
+### CategoryAInterface2
+
+## Category B
+
+<a id="categorybenum1" name="categorybenum1"></a>
+
+### CategoryBEnum1
+
+***
+
+<a id="categorybenum2" name="categorybenum2"></a>
+
+### CategoryBEnum2
+
+***
+
+<a id="categorybinterface1" name="categorybinterface1"></a>
+
+### CategoryBInterface1
+
+***
+
+<a id="categorybinterface2" name="categorybinterface2"></a>
+
+### CategoryBInterface2
+
+## Other
+
+<a id="uncategorizedenum" name="uncategorizedenum"></a>
+
+### UnCategorizedEnum
+
+***
+
+<a id="uncategorizedinterace" name="uncategorizedinterace"></a>
+
+### UnCategorizedInterace
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > has-categories
+
+# Module: has-categories
+
+A module that contains categories
+
+## Index
+
+### Enumerations
+
+#### Category A
+
+- [CategoryAEnum1](enumerations/CategoryAEnum1.md)
+- [CategoryAEnum2](enumerations/CategoryAEnum2.md)
+
+#### Category B
+
+- [CategoryBEnum1](enumerations/CategoryBEnum1.md)
+- [CategoryBEnum2](enumerations/CategoryBEnum2.md)
+
+#### Other
+
+- [UnCategorizedEnum](enumerations/UnCategorizedEnum.md)
+
+### Interfaces
+
+#### Category A
+
+- [CategoryAInterface1](interfaces/CategoryAInterface1.md)
+- [CategoryAInterface2](interfaces/CategoryAInterface2.md)
+
+#### Category B
+
+- [CategoryBInterface1](interfaces/CategoryBInterface1.md)
+- [CategoryBInterface2](interfaces/CategoryBInterface2.md)
+
+#### Other
+
+- [UnCategorizedInterace](interfaces/UnCategorizedInterace.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Module: has-categories
+
+A module that contains categories
+
+## Index
+
+### Category A
+
+| Enumeration | Description |
+| :------ | :------ |
+| [CategoryAEnum1](enumerations/CategoryAEnum1.md) | - |
+| [CategoryAEnum2](enumerations/CategoryAEnum2.md) | - |
+| [CategoryAInterface1](interfaces/CategoryAInterface1.md) | - |
+| [CategoryAInterface2](interfaces/CategoryAInterface2.md) | - |
+
+### Category B
+
+| Enumeration | Description |
+| :------ | :------ |
+| [CategoryBEnum1](enumerations/CategoryBEnum1.md) | - |
+| [CategoryBEnum2](enumerations/CategoryBEnum2.md) | - |
+| [CategoryBInterface1](interfaces/CategoryBInterface1.md) | - |
+| [CategoryBInterface2](interfaces/CategoryBInterface2.md) | - |
+
+### Other
+
+| Enumeration | Description |
+| :------ | :------ |
+| [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
+| [UnCategorizedInterace](interfaces/UnCategorizedInterace.md) | - |
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile index page for monorepo: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**Documentation** ∙ [README](README.md) ∙ [API](API.md)
+
+***
+
+# API
+
+## Packages
+
+- [package-1](package-1/README.md)
+- [package-2](package-2/README.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](API.md)
+
+***
+
+# API
+
+## Modules
+
+- [basic](basic/README.md)
+- [has-categories](has-categories/README.md)
+- [has-namespaces](has-namespaces/README.md)
+- [index](index/README.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# API
+
+## Modules
+
+| Module | Description |
+| :------ | :------ |
+| [basic](basic/index.md) | A basic module |
+| [has-categories](has-categories/index.md) | A module that contains categories |
+| [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
+| [index](module.index/index.md) | A module named index |
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](API.md)
+
+***
+
+# API
+
+## Modules
+
+- [basic](basic.md)
+- [has-categories](has-categories.md)
+- [has-namespaces](has-namespaces/README.md)
+- [index](index.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# API
+
+## Modules
+
+| Module | Description |
+| :------ | :------ |
+| [basic](basic.md) | A basic module |
+| [has-categories](has-categories.md) | A module that contains categories |
+| [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
+| [index](module.index.md) | A module named index |
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../../../API.md)
+
+***
+
+[API](../../../API.md) > [has-namespaces](../../README.md) > \\_Namespace\\_A\\_
+
+# Namespace: \\_Namespace\\_A\\_
+
+## Index
+
+### Namespaces
+
+- [NestedNamespace](namespaces/NestedNamespace/README.md)
+
+### Interfaces
+
+- [NamespaceInterface](interfaces/NamespaceInterface.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Namespace: \\_Namespace\\_A\\_
+
+## Index
+
+### Namespaces
+
+| Namespace | Description |
+| :------ | :------ |
+| [NestedNamespace](namespaces/NestedNamespace/index.md) | - |
+
+### Interfaces
+
+| Interface | Description |
+| :------ | :------ |
+| [NamespaceInterface](interfaces/NamespaceInterface.md) | - |
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../../../API.md)
+
+***
+
+[API](../../../API.md) > [has-namespaces](../../README.md) > \\_Namespace\\_A\\_
+
+# Namespace: \\_Namespace\\_A\\_
+
+## Index
+
+### Namespaces
+
+- [NestedNamespace](namespaces/NestedNamespace.md)
+
+## Table of contents
+
+### Interfaces
+
+- [NamespaceInterface](README.md#namespaceinterface)
+
+## Interfaces
+
+### NamespaceInterface
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# Namespace: \\_Namespace\\_A\\_
+
+## Index
+
+### Namespaces
+
+| Namespace | Description |
+| :------ | :------ |
+| [NestedNamespace](namespaces/NestedNamespace.md) | - |
+
+## Table of contents
+
+### Interfaces
+
+- [NamespaceInterface](index.md#namespaceinterface)
+
+<a id="namespaceinterface" name="namespaceinterface"></a>
+
+## NamespaceInterface
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > has-namespaces
+
+# Module: has-namespaces
+
+A module that contains namespaces
+
+## Index
+
+### Namespaces
+
+- [NamespaceB](namespaces/NamespaceB/README.md)
+- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/README.md)
+
+### Enumerations
+
+- [EnumB](enumerations/EnumB.md)
+- [\\_Enum\\_A\\_](enumerations/Enum_A_.md)
+
+### Classes
+
+- [ClassB](classes/ClassB.md)
+- [\\_\\_Class\\_A\\_](classes/Class_A_.md)
+
+### Interfaces
+
+- [InterfaceB](interfaces/InterfaceB.md)
+- [\\_Interface\\_A\\_](interfaces/Interface_A_.md)
+
+### Type Aliases
+
+- [TypeB](type-aliases/TypeB.md)
+- [\\_Type\\_A\\_](type-aliases/Type_A_.md)
+
+### Variables
+
+- [\\_variable\\_A\\_](variables/variable_A_.md)
+- [variableB](variables/variableB.md)
+
+### Functions
+
+- [\\_function\\_A\\_](functions/function_A_.md)
+- [functionB](functions/functionB.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Module: has-namespaces
+
+A module that contains namespaces
+
+## Index
+
+### Namespaces
+
+| Namespace | Description |
+| :------ | :------ |
+| [NamespaceB](namespaces/NamespaceB/index.md) | - |
+| [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
+
+### Enumerations
+
+| Enumeration | Description |
+| :------ | :------ |
+| [EnumB](enumerations/EnumB.md) | - |
+| [\\_Enum\\_A\\_](enumerations/Enum_A_.md) | - |
+
+### Classes
+
+| Class | Description |
+| :------ | :------ |
+| [ClassB](classes/ClassB.md) | - |
+| [\\_\\_Class\\_A\\_](classes/Class_A_.md) | - |
+
+### Interfaces
+
+| Interface | Description |
+| :------ | :------ |
+| [InterfaceB](interfaces/InterfaceB.md) | - |
+| [\\_Interface\\_A\\_](interfaces/Interface_A_.md) | - |
+
+## Table of contents
+
+### Type Aliases
+
+- [TypeB](index.md#typeb)
+- [\\_Type\\_A\\_](index.md#type-a)
+
+### Variables
+
+- [\\_variable\\_A\\_](index.md#variable-a)
+- [variableB](index.md#variableb)
+
+### Functions
+
+- [\\_function\\_A\\_](index.md#function-a)
+- [functionB](index.md#functionb)
+
+<a id="typeb" name="typeb"></a>
+
+## TypeB
+
+> **\`type\`** **TypeB**: \`string\`
+
+***
+
+<a id="type-a" name="type-a"></a>
+
+## \\_Type\\_A\\_
+
+> **\`type\`** **\\_Type\\_A\\_**: \`string\`
+
+***
+
+<a id="variable-a" name="variable-a"></a>
+
+## \\_variable\\_A\\_
+
+> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+
+***
+
+<a id="variableb" name="variableb"></a>
+
+## variableB
+
+> **\`const\`** **variableB**: \`true\` = \`true\`
+
+***
+
+<a id="function-a" name="function-a"></a>
+
+## \\_function\\_A\\_
+
+> **\\_function\\_A\\_**(): \`void\`
+
+### Returns
+
+\`void\`
+
+***
+
+<a id="functionb" name="functionb"></a>
+
+## functionB
+
+> **functionB**(): \`void\`
+
+### Returns
+
+\`void\`
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > has-namespaces
+
+# Module: has-namespaces
+
+A module that contains namespaces
+
+## Index
+
+### Namespaces
+
+- [NamespaceB](namespaces/NamespaceB.md)
+- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/README.md)
+
+## Table of contents
+
+### Enumerations
+
+- [EnumB](README.md#enumb)
+- [\\_Enum\\_A\\_](README.md#enum-a)
+
+### Classes
+
+- [ClassB](README.md#classb)
+- [\\_\\_Class\\_A\\_](README.md#class-a)
+
+### Interfaces
+
+- [InterfaceB](README.md#interfaceb)
+- [\\_Interface\\_A\\_](README.md#interface-a)
+
+### Type Aliases
+
+- [TypeB](README.md#typeb)
+- [\\_Type\\_A\\_](README.md#type-a)
+
+### Variables
+
+- [\\_variable\\_A\\_](README.md#variable-a)
+- [variableB](README.md#variableb)
+
+### Functions
+
+- [\\_function\\_A\\_](README.md#function-a)
+- [functionB](README.md#functionb)
+
+## Enumerations
+
+### EnumB
+
+***
+
+### \\_Enum\\_A\\_
+
+***
+
+## Classes
+
+### ClassB
+
+#### Constructors
+
+##### new ClassB()
+
+> **new ClassB**(): [\`ClassB\`](README.md#classb)
+
+###### Returns
+
+[\`ClassB\`](README.md#classb)
+
+***
+
+### \\_\\_Class\\_A\\_
+
+#### Constructors
+
+##### new \\_\\_Class\\_A\\_()
+
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](README.md#class-a)
+
+###### Returns
+
+[\`__Class_A_\`](README.md#class-a)
+
+***
+
+## Interfaces
+
+### InterfaceB
+
+***
+
+### \\_Interface\\_A\\_
+
+***
+
+## Type Aliases
+
+### TypeB
+
+> **\`type\`** **TypeB**: \`string\`
+
+***
+
+### \\_Type\\_A\\_
+
+> **\`type\`** **\\_Type\\_A\\_**: \`string\`
+
+***
 
 ## Variables
 
-### variableA
+### \\_variable\\_A\\_
 
-[partial: declarationMember]
-
-
+> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
 ### variableB
 
-[partial: declarationMember]
+> **\`const\`** **variableB**: \`true\` = \`true\`
+
+***
 
 ## Functions
 
-### functionA
+### \\_function\\_A\\_
 
-[partial: signatureMember]
+> **\\_function\\_A\\_**(): \`void\`
 
+#### Returns
 
+\`void\`
 
 ***
 
 ### functionB
 
-[partial: signatureMember]"
-`;
+> **functionB**(): \`void\`
 
-exports[`Groups: (excludeGroups=true) should render group TOC' 1`] = `
-"- [EnumA](API.md#enuma)
-- [EnumB](API.md#enumb)
-- [ClassA](API.md#classa)
-- [ClassB](API.md#classb)
-- [InterfaceA](API.md#interfacea)
-- [InterfaceB](API.md#interfaceb)
-- [typeA](API.md#typea)
-- [typeB](API.md#typeb)
-- [variableA](API.md#variablea)
-- [variableB](API.md#variableb)
-- [functionA](API.md#functiona)
-- [functionB](API.md#functionb)
+#### Returns
+
+\`void\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
-exports[`Groups: (excludeGroups=true) should render group members' 1`] = `
-"## EnumA
+exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# Module: has-namespaces
 
-[partial: reflectionMember]
+A module that contains namespaces
 
+## Index
 
+### Namespaces
 
-***
+| Namespace | Description |
+| :------ | :------ |
+| [NamespaceB](namespaces/NamespaceB.md) | - |
+| [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
+
+## Table of contents
+
+### Enumerations
+
+- [EnumB](index.md#enumb)
+- [\\_Enum\\_A\\_](index.md#enum-a)
+
+### Classes
+
+- [ClassB](index.md#classb)
+- [\\_\\_Class\\_A\\_](index.md#class-a)
+
+### Interfaces
+
+- [InterfaceB](index.md#interfaceb)
+- [\\_Interface\\_A\\_](index.md#interface-a)
+
+### Type Aliases
+
+- [TypeB](index.md#typeb)
+- [\\_Type\\_A\\_](index.md#type-a)
+
+### Variables
+
+- [\\_variable\\_A\\_](index.md#variable-a)
+- [variableB](index.md#variableb)
+
+### Functions
+
+- [\\_function\\_A\\_](index.md#function-a)
+- [functionB](index.md#functionb)
+
+<a id="enumb" name="enumb"></a>
 
 ## EnumB
 
-[partial: reflectionMember]
+***
 
+<a id="enum-a" name="enum-a"></a>
 
+## \\_Enum\\_A\\_
 
 ***
 
-## ClassA
-
-[partial: reflectionMember]
-
-
-
-***
+<a id="classb" name="classb"></a>
 
 ## ClassB
 
-[partial: reflectionMember]
+### Constructors
 
+<a id="constructors" name="constructors"></a>
 
+#### new ClassB()
+
+> **new ClassB**(): [\`ClassB\`](index.md#classb)
+
+##### Returns
+
+[\`ClassB\`](index.md#classb)
 
 ***
 
-## InterfaceA
+<a id="class-a" name="class-a"></a>
 
-[partial: reflectionMember]
+## \\_\\_Class\\_A\\_
 
+### Constructors
 
+<a id="constructors-1" name="constructors-1"></a>
+
+#### new \\_\\_Class\\_A\\_()
+
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#class-a)
+
+##### Returns
+
+[\`__Class_A_\`](index.md#class-a)
 
 ***
+
+<a id="interfaceb" name="interfaceb"></a>
 
 ## InterfaceB
 
-[partial: reflectionMember]
+***
 
+<a id="interface-a" name="interface-a"></a>
 
+## \\_Interface\\_A\\_
 
 ***
 
-## typeA
+<a id="typeb" name="typeb"></a>
 
-[partial: declarationMember]
+## TypeB
 
-
-
-***
-
-## typeB
-
-[partial: declarationMember]
-
-
+> **\`type\`** **TypeB**: \`string\`
 
 ***
 
-## variableA
+<a id="type-a" name="type-a"></a>
 
-[partial: declarationMember]
+## \\_Type\\_A\\_
 
-
+> **\`type\`** **\\_Type\\_A\\_**: \`string\`
 
 ***
+
+<a id="variable-a" name="variable-a"></a>
+
+## \\_variable\\_A\\_
+
+> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+
+***
+
+<a id="variableb" name="variableb"></a>
 
 ## variableB
 
-[partial: declarationMember]
-
-
+> **\`const\`** **variableB**: \`true\` = \`true\`
 
 ***
 
-## functionA
+<a id="function-a" name="function-a"></a>
 
-[partial: signatureMember]
+## \\_function\\_A\\_
 
+> **\\_function\\_A\\_**(): \`void\`
 
+### Returns
+
+\`void\`
 
 ***
+
+<a id="functionb" name="functionb"></a>
 
 ## functionB
 
-[partial: signatureMember]"
+> **functionB**(): \`void\`
+
+### Returns
+
+\`void\`
+
+CUSTOM FOOTER HERE
+"
 `;

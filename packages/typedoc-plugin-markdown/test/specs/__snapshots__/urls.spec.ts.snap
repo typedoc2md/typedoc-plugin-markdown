@@ -1,314 +1,235 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages) 1`] = `
+exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: members 1`] = `
 [
-  "README.md",
   "API.md",
-  "child-package/README.md",
-  "child-package/API.md",
-  "child-package/namespaces/namespace.Validation/README.md",
-  "child-package/namespaces/namespace.Validation/variables/variable.numberRegexp.md",
-  "child-package/variables/variable.hello.md",
-  "child-package-2/README.md",
-  "child-package-2/module1/README.md",
-  "child-package-2/module1/variables/variable.hello.md",
-  "child-package-2/module2/README.md",
-  "child-package-2/module2/variables/variable.hello.md",
-]
-`;
-
-exports[`Urls: (Monorepo) should get urls (entryPointStrategy=packages, includeFileNumberPrefixes=true) 1`] = `
-[
   "README.md",
-  "01-API.md",
-  "02-child-package/README.md",
-  "02-child-package/01-API.md",
-  "02-child-package/02-Namespaces/02-namespace.Validation/README.md",
-  "02-child-package/02-Namespaces/02-namespace.Validation/01-Variables/01-variable.numberRegexp.md",
-  "02-child-package/03-Variables/02-variable.hello.md",
-  "03-child-package-2/README.md",
-  "03-child-package-2/01-module1/README.md",
-  "03-child-package-2/01-module1/01-Variables/01-variable.hello.md",
-  "03-child-package-2/02-module2/README.md",
-  "03-child-package-2/02-module2/01-Variables/01-variable.hello.md",
+  "basic/README.md",
+  "basic/enumerations/EnumA.md",
+  "basic/enumerations/EnumB.md",
+  "basic/interfaces/IterfaceA.md",
+  "basic/interfaces/IterfaceB.md",
+  "basic/type-aliases/TypeA.md",
+  "basic/type-aliases/TypeB.md",
+  "has-categories/README.md",
+  "has-categories/enumerations/CategoryAEnum1.md",
+  "has-categories/enumerations/CategoryAEnum2.md",
+  "has-categories/enumerations/CategoryBEnum1.md",
+  "has-categories/enumerations/CategoryBEnum2.md",
+  "has-categories/enumerations/UnCategorizedEnum.md",
+  "has-categories/interfaces/CategoryAInterface1.md",
+  "has-categories/interfaces/CategoryAInterface2.md",
+  "has-categories/interfaces/CategoryBInterface1.md",
+  "has-categories/interfaces/CategoryBInterface2.md",
+  "has-categories/interfaces/UnCategorizedInterace.md",
+  "has-namespaces/README.md",
+  "has-namespaces/classes/ClassB.md",
+  "has-namespaces/classes/Class_A_.md",
+  "has-namespaces/enumerations/EnumB.md",
+  "has-namespaces/enumerations/Enum_A_.md",
+  "has-namespaces/functions/functionB.md",
+  "has-namespaces/functions/function_A_.md",
+  "has-namespaces/interfaces/InterfaceB.md",
+  "has-namespaces/interfaces/Interface_A_.md",
+  "has-namespaces/namespaces/NamespaceB/README.md",
+  "has-namespaces/namespaces/Namespace_A_/README.md",
+  "has-namespaces/namespaces/Namespace_A_/interfaces/NamespaceInterface.md",
+  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/README.md",
+  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/interfaces/NamespaceInterface.md",
+  "has-namespaces/type-aliases/TypeB.md",
+  "has-namespaces/type-aliases/Type_A_.md",
+  "has-namespaces/variables/variableB.md",
+  "has-namespaces/variables/variable_A_.md",
+  "index/README.md",
 ]
 `;
 
-exports[`Urls: (Monorepo) should get urls for single package (entryPointStrategy=packages) 1`] = `
+exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: members 2`] = `
 [
-  "README.md",
-  "API.md",
-  "namespaces/namespace.Validation/README.md",
-  "namespaces/namespace.Validation/variables/variable.numberRegexp.md",
-  "variables/variable.hello.md",
-]
-`;
-
-exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false) 1`] = `
-[
-  "README.md",
-  "API.md",
-  "categories/README.md",
-  "categories/interfaces/CategoryA/interface.CategoryInterfaceA1.md",
-  "categories/interfaces/CategoryA/interface.CategoryInterfaceA2.md",
-  "categories/interfaces/Other/interface.OtherInterfaceA.md",
-  "categories/variables/CategoryA/variable.categoryVariableA1.md",
-  "categories/variables/CategoryA/variable.categoryVariableA2.md",
-  "categories/variables/CategoryB/variable.categoryVariableB1.md",
-  "categories/variables/Other/variable.otherVariableA.md",
-  "categories/variables/Other/variable.otherVariableB.md",
-  "categories/functions/CategoryA/function.categoryFunctionA1.md",
-  "categories/functions/CategoryA/function.categoryFunctionA2.md",
-  "categories/functions/CategoryA/function.categoryFunctionA3.md",
-  "categories/functions/CategoryB/function.categoryFunctionB2.md",
-  "categories/functions/Other/function.otherFunctionA.md",
-  "categories/functions/Other/function.otherFunctionB.md",
-  "modules_module_1/README.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/README.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/namespaces/namespace.nestedNamespace/README.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/namespaces/namespace.nestedNamespace/variables/variable.nestedNamespaceVariable.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/enumerations/enumeration.NamespaceEnum.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/classes/class.NameSpaceClassA.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/interfaces/interface.NamespaceInterface.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/type-aliases/type-alias.NamespaceTypeLiteral.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/variables/variable.namespaceVariableA.md",
-  "modules_module_1/namespaces/namespace.someNameSpace/variables/variable.namespaceVariableB.md",
-  "modules_module_1/namespaces/namespace.someNameSpaceB/README.md",
-  "modules_module_1/enumerations/enumeration.Module1EnumA.md",
-  "modules_module_1/enumerations/enumeration.Module1EnumB.md",
-  "modules_module_1/classes/class.Module1ClassA.md",
-  "modules_module_1/classes/class.Module1ClassB.md",
-  "modules_module_1/interfaces/interface.Module1InterfaceA.md",
-  "modules_module_1/interfaces/interface.Module1InterfaceB.md",
-  "modules_module_1/type-aliases/type-alias.Module1TypeLiteralA.md",
-  "modules_module_1/type-aliases/type-alias.Module1TypeLiteralB.md",
-  "modules_module_1/variables/variable.module1VariableA.md",
-  "modules_module_1/variables/variable.module1VariableB.md",
-  "modules_module_1/functions/function.module1FunctionA.md",
-  "modules_module_1/functions/function.module1FunctionB.md",
-]
-`;
-
-exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, includeFileNumberPrefixes: true, globalsPageStrategy:auto) 1`] = `
-[
-  "README.md",
-  "01-API.md",
-  "02-categories/README.md",
-  "02-categories/01-Interfaces/01-CategoryA/01-interface.CategoryInterfaceA1.md",
-  "02-categories/01-Interfaces/01-CategoryA/02-interface.CategoryInterfaceA2.md",
-  "02-categories/01-Interfaces/02-Other/01-interface.OtherInterfaceA.md",
-  "02-categories/02-Variables/01-CategoryA/01-variable.categoryVariableA1.md",
-  "02-categories/02-Variables/01-CategoryA/02-variable.categoryVariableA2.md",
-  "02-categories/02-Variables/02-CategoryB/01-variable.categoryVariableB1.md",
-  "02-categories/02-Variables/03-Other/01-variable.otherVariableA.md",
-  "02-categories/02-Variables/03-Other/02-variable.otherVariableB.md",
-  "02-categories/03-Functions/01-CategoryA/01-function.categoryFunctionA1.md",
-  "02-categories/03-Functions/01-CategoryA/02-function.categoryFunctionA2.md",
-  "02-categories/03-Functions/01-CategoryA/03-function.categoryFunctionA3.md",
-  "02-categories/03-Functions/02-CategoryB/01-function.categoryFunctionB2.md",
-  "02-categories/03-Functions/03-Other/01-function.otherFunctionA.md",
-  "02-categories/03-Functions/03-Other/02-function.otherFunctionB.md",
-  "03-modules_module_1/README.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/README.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/README.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace/01-Variables/01-variable.nestedNamespaceVariable.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/02-Enumerations/01-enumeration.NamespaceEnum.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/03-Classes/01-class.NameSpaceClassA.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/04-Interfaces/01-interface.NamespaceInterface.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/05-Type Aliases/01-type-alias.NamespaceTypeLiteral.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/01-variable.namespaceVariableA.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/06-Variables/02-variable.namespaceVariableB.md",
-  "03-modules_module_1/01-Namespaces/02-namespace.someNameSpaceB/README.md",
-  "03-modules_module_1/02-Enumerations/01-enumeration.Module1EnumA.md",
-  "03-modules_module_1/02-Enumerations/02-enumeration.Module1EnumB.md",
-  "03-modules_module_1/03-Classes/01-class.Module1ClassA.md",
-  "03-modules_module_1/03-Classes/02-class.Module1ClassB.md",
-  "03-modules_module_1/04-Interfaces/01-interface.Module1InterfaceA.md",
-  "03-modules_module_1/04-Interfaces/02-interface.Module1InterfaceB.md",
-  "03-modules_module_1/05-Type Aliases/01-type-alias.Module1TypeLiteralA.md",
-  "03-modules_module_1/05-Type Aliases/02-type-alias.Module1TypeLiteralB.md",
-  "03-modules_module_1/06-Variables/01-variable.module1VariableA.md",
-  "03-modules_module_1/06-Variables/02-variable.module1VariableB.md",
-  "03-modules_module_1/07-Functions/01-function.module1FunctionA.md",
-  "03-modules_module_1/07-Functions/02-function.module1FunctionB.md",
-]
-`;
-
-exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=false, outputFileStrategy=modules, includeFileNumberPrefixes: true) 1`] = `
-[
-  "README.md",
-  "01-API.md",
-  "02-categories.md",
-  "03-modules_module_1/README.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/README.md",
-  "03-modules_module_1/01-Namespaces/01-namespace.someNameSpace/01-Namespaces/01-namespace.nestedNamespace.md",
-  "03-modules_module_1/01-Namespaces/02-namespace.someNameSpaceB.md",
-]
-`;
-
-exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, includeFileNumberPrefixes: true) 1`] = `
-[
-  "README.md",
-  "01-API.md",
-  "02-categories/README.md",
-  "02-categories/01-CategoryA/01-interface.CategoryInterfaceA1.md",
-  "02-categories/01-CategoryA/02-interface.CategoryInterfaceA2.md",
-  "02-categories/01-CategoryA/03-variable.categoryVariableA1.md",
-  "02-categories/01-CategoryA/04-variable.categoryVariableA2.md",
-  "02-categories/01-CategoryA/05-function.categoryFunctionA1.md",
-  "02-categories/01-CategoryA/06-function.categoryFunctionA2.md",
-  "02-categories/01-CategoryA/07-function.categoryFunctionA3.md",
-  "02-categories/02-CategoryB/01-variable.categoryVariableB1.md",
-  "02-categories/02-CategoryB/02-function.categoryFunctionB2.md",
-  "02-categories/03-Other/01-interface.OtherInterfaceA.md",
-  "02-categories/03-Other/02-variable.otherVariableA.md",
-  "02-categories/03-Other/03-variable.otherVariableB.md",
-  "02-categories/03-Other/04-function.otherFunctionA.md",
-  "02-categories/03-Other/05-function.otherFunctionB.md",
-  "03-modules_module_1/README.md",
-  "03-modules_module_1/01-someNameSpace/README.md",
-  "03-modules_module_1/01-someNameSpace/01-nestedNamespace/README.md",
-  "03-modules_module_1/01-someNameSpace/01-nestedNamespace/01-variable.nestedNamespaceVariable.md",
-  "03-modules_module_1/01-someNameSpace/02-enumeration.NamespaceEnum.md",
-  "03-modules_module_1/01-someNameSpace/03-class.NameSpaceClassA.md",
-  "03-modules_module_1/01-someNameSpace/04-interface.NamespaceInterface.md",
-  "03-modules_module_1/01-someNameSpace/05-type-alias.NamespaceTypeLiteral.md",
-  "03-modules_module_1/01-someNameSpace/06-variable.namespaceVariableA.md",
-  "03-modules_module_1/01-someNameSpace/07-variable.namespaceVariableB.md",
-  "03-modules_module_1/02-someNameSpaceB/README.md",
-  "03-modules_module_1/03-enumeration.Module1EnumA.md",
-  "03-modules_module_1/04-enumeration.Module1EnumB.md",
-  "03-modules_module_1/05-class.Module1ClassA.md",
-  "03-modules_module_1/06-class.Module1ClassB.md",
-  "03-modules_module_1/07-interface.Module1InterfaceA.md",
-  "03-modules_module_1/08-interface.Module1InterfaceB.md",
-  "03-modules_module_1/09-type-alias.Module1TypeLiteralA.md",
-  "03-modules_module_1/10-type-alias.Module1TypeLiteralB.md",
-  "03-modules_module_1/11-variable.module1VariableA.md",
-  "03-modules_module_1/12-variable.module1VariableB.md",
-  "03-modules_module_1/13-function.module1FunctionA.md",
-  "03-modules_module_1/14-function.module1FunctionB.md",
-]
-`;
-
-exports[`Urls: (Multiple entrypoints) should get urls (excludeGroups=true, outputFileStrategy=modules, includeFileNumberPrefixes: true, readme=none) 1`] = `
-[
-  "README.md",
-  "01-categories.md",
-  "02-modules_module_1/README.md",
-  "02-modules_module_1/01-someNameSpace/README.md",
-  "02-modules_module_1/01-someNameSpace/01-nestedNamespace.md",
-  "02-modules_module_1/02-someNameSpaceB.md",
-]
-`;
-
-exports[`Urls: (Multiple entrypoints) should get urls (flattenOutputFiles=true) 1`] = `
-[
-  "README.md",
-  "API.md",
-  "modules_module-1.md",
-  "modules_module-1.Namespace.someNameSpace.md",
-  "modules_module-1.Namespace.someNameSpace.Namespace._nestedNamespace.md",
-  "modules_module-1.Namespace.someNameSpace.Namespace._nestedNamespace.Variable.nestedNamespaceVariable.md",
-  "modules_module-1.Namespace.someNameSpace.Enumeration.NamespaceEnum.md",
-  "modules_module-1.Namespace.someNameSpace.Class.NameSpaceClassA.md",
-  "modules_module-1.Namespace.someNameSpace.Interface.NamespaceInterface.md",
-  "modules_module-1.Namespace.someNameSpace.Type.NamespaceTypeLiteral.md",
-  "modules_module-1.Namespace.someNameSpace.Variable.namespaceVariableA.md",
-  "modules_module-1.Namespace.someNameSpace.Variable.namespaceVariableB.md",
-  "modules_module-1.Namespace.someNameSpaceB.md",
-  "modules_module-1.Enumeration.Module1EnumA.md",
-  "modules_module-1.Enumeration.Module1EnumB.md",
-  "modules_module-1.Class.Module1ClassA.md",
-  "modules_module-1.Class.Module1ClassB.md",
-  "modules_module-1.Interface.Module1InterfaceA.md",
-  "modules_module-1.Interface.Module1InterfaceB.md",
-  "modules_module-1.Type.Module1TypeLiteralA.md",
-  "modules_module-1.Type.Module1TypeLiteralB.md",
-  "modules_module-1.Variable.module1VariableA.md",
-  "modules_module-1.Variable.module1VariableB.md",
-  "modules_module-1.Function.module1FunctionA.md",
-  "modules_module-1.Function.module1FunctionB.md",
-  "reflections.md",
-  "reflections.Namespace.Duck.md",
-  "reflections.Namespace.Duck.Type.Age.md",
-  "reflections.Enumeration.EnumReflection.md",
-  "reflections.Class.Duck.md",
-  "reflections.Class.ImplementedClass.md",
-  "reflections.Class.ReflectionClass.md",
-  "reflections.Interface.CallableReflection.md",
-  "reflections.Interface.IndexableReflection.md",
-]
-`;
-
-exports[`Urls: (Multiple entrypoints) should get urls with a module named index and entryFile named index 1`] = `
-[
+  "basic/enumerations/EnumA.md",
+  "basic/enumerations/EnumB.md",
+  "basic/index.md",
+  "basic/interfaces/IterfaceA.md",
+  "basic/interfaces/IterfaceB.md",
+  "has-categories/enumerations/CategoryAEnum1.md",
+  "has-categories/enumerations/CategoryAEnum2.md",
+  "has-categories/enumerations/CategoryBEnum1.md",
+  "has-categories/enumerations/CategoryBEnum2.md",
+  "has-categories/enumerations/UnCategorizedEnum.md",
+  "has-categories/index.md",
+  "has-categories/interfaces/CategoryAInterface1.md",
+  "has-categories/interfaces/CategoryAInterface2.md",
+  "has-categories/interfaces/CategoryBInterface1.md",
+  "has-categories/interfaces/CategoryBInterface2.md",
+  "has-categories/interfaces/UnCategorizedInterace.md",
+  "has-namespaces/classes/ClassB.md",
+  "has-namespaces/classes/Class_A_.md",
+  "has-namespaces/enumerations/EnumB.md",
+  "has-namespaces/enumerations/Enum_A_.md",
+  "has-namespaces/index.md",
+  "has-namespaces/interfaces/InterfaceB.md",
+  "has-namespaces/interfaces/Interface_A_.md",
+  "has-namespaces/namespaces/NamespaceB/index.md",
+  "has-namespaces/namespaces/Namespace_A_/index.md",
+  "has-namespaces/namespaces/Namespace_A_/interfaces/NamespaceInterface.md",
+  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/index.md",
+  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/interfaces/NamespaceInterface.md",
   "index.md",
+  "module.index/index.md",
+]
+`;
+
+exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: modules 1`] = `
+[
   "API.md",
-  "declarations.md",
+  "README.md",
+  "basic.md",
+  "has-categories.md",
+  "has-namespaces/README.md",
+  "has-namespaces/namespaces/NamespaceB.md",
+  "has-namespaces/namespaces/Namespace_A_/README.md",
+  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace.md",
+  "index.md",
+]
+`;
+
+exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: modules 2`] = `
+[
+  "basic.md",
+  "has-categories.md",
+  "has-namespaces/index.md",
+  "has-namespaces/namespaces/NamespaceB.md",
+  "has-namespaces/namespaces/Namespace_A_/index.md",
+  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace.md",
+  "index.md",
   "module.index.md",
 ]
 `;
 
-exports[`Urls: (Multiple entrypoints) should get urls with a module named index and entryFile named index without an index page 1`] = `
+exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 1`] = `
 [
-  "01-declarations.md",
-  "index.md",
-]
-`;
-
-exports[`Urls: (Single entrypoint) should get urls (excludeGroups=false, includeFileNumberPrefixes=true) 1`] = `
-[
-  "README.md",
-  "01-API.md",
-  "02-Interfaces/02-interface.CategoryInterfaceA1.md",
-  "02-Interfaces/03-interface.CategoryInterfaceA2.md",
-  "02-Interfaces/04-interface.OtherInterfaceA.md",
-  "03-Variables/02-variable.categoryVariableA1.md",
-  "03-Variables/03-variable.categoryVariableA2.md",
-  "03-Variables/04-variable.categoryVariableB1.md",
-  "03-Variables/05-variable.otherVariableA.md",
-  "03-Variables/06-variable.otherVariableB.md",
-  "04-Functions/02-function.categoryFunctionA1.md",
-  "04-Functions/03-function.categoryFunctionA2.md",
-  "04-Functions/04-function.categoryFunctionA3.md",
-  "04-Functions/05-function.categoryFunctionB2.md",
-  "04-Functions/06-function.otherFunctionA.md",
-  "04-Functions/07-function.otherFunctionB.md",
-]
-`;
-
-exports[`Urls: (Single entrypoint) should get urls (excludeGroups=true, includeFileNumberPrefixes=true, readme=none) 1`] = `
-[
-  "README.md",
-  "01-interface.CategoryInterfaceA1.md",
-  "02-interface.CategoryInterfaceA2.md",
-  "03-interface.OtherInterfaceA.md",
-  "04-variable.categoryVariableA1.md",
-  "05-variable.categoryVariableA2.md",
-  "06-variable.categoryVariableB1.md",
-  "07-variable.otherVariableA.md",
-  "08-variable.otherVariableB.md",
-  "09-function.categoryFunctionA1.md",
-  "10-function.categoryFunctionA2.md",
-  "11-function.categoryFunctionA3.md",
-  "12-function.categoryFunctionB2.md",
-  "13-function.otherFunctionA.md",
-  "14-function.otherFunctionB.md",
-]
-`;
-
-exports[`Urls: (Single entrypoint) should get urls (flattenOutputFiles=true) 1`] = `
-[
-  "README.md",
   "API.md",
-  "Namespace.Duck.md",
-  "Namespace.Duck.Type.Age.md",
-  "Enumeration.EnumReflection.md",
-  "Class.Duck.md",
-  "Class.ImplementedClass.md",
-  "Class.ReflectionClass.md",
-  "Interface.CallableReflection.md",
-  "Interface.IndexableReflection.md",
+  "README.md",
+  "package-1/API.md",
+  "package-1/README.md",
+  "package-1/interfaces/PackageInterface.md",
+  "package-2/API.md",
+  "package-2/README.md",
+  "package-2/interfaces/PackageInterface.md",
+]
+`;
+
+exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 1`] = `
+[
+  "API.md",
+  "README.md",
+  "package-1/API.md",
+  "package-1/README.md",
+  "package-2/API.md",
+  "package-2/README.md",
+]
+`;
+
+exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 1`] = `
+[
+  "API.md",
+  "README.md",
+  "classes/AbstractClass.md",
+  "classes/ClassWithAccessors.md",
+  "classes/ClassWithConstructorOverloads.md",
+  "classes/ClassWithModifiers.md",
+  "classes/ClassWithTypeParameters.md",
+  "classes/DerivedClassA.md",
+  "classes/DerivedClassB.md",
+  "enumerations/BasicEnum.md",
+  "enumerations/EnumWithValues.md",
+  "functions/basicFunction.md",
+  "functions/functionReturningAFunction.md",
+  "functions/functionReturningAnObject.md",
+  "functions/functionWithDefaultParameters.md",
+  "functions/functionWithMultipleSignatures.md",
+  "functions/functionWithNamedParams.md",
+  "functions/functionWithNestedParameters.md",
+  "functions/functionWithOptionalParameters.md",
+  "functions/functionWithTypeParameters.md",
+  "interfaces/BasicInterface.md",
+  "interfaces/ExtendedInterface.md",
+  "interfaces/IndexableInterface.md",
+  "interfaces/InterfaceWithTypeParameters.md",
+  "type-aliases/ArrayType.md",
+  "type-aliases/ConditionalType.md",
+  "type-aliases/ExternalReferenceType.md",
+  "type-aliases/FunctionType.md",
+  "type-aliases/IntersectionType.md",
+  "type-aliases/LiteralType.md",
+  "type-aliases/PartialMappedType.md",
+  "type-aliases/PrimitiveType.md",
+  "type-aliases/ReadonlyMappedType.md",
+  "type-aliases/StringLiteralType.md",
+  "type-aliases/TupleType.md",
+  "type-aliases/TypeWithExternalSymbolLinkMapping.md",
+  "type-aliases/TypeWithTypeParams.md",
+  "type-aliases/UnionType.md",
+  "variables/objectLiteralVariable.md",
+  "variables/stringVariable.md",
+  "variables/typeOperatorVariable.md",
+]
+`;
+
+exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 2`] = `
+[
+  "classes/AbstractClass.md",
+  "classes/ClassWithAccessors.md",
+  "classes/ClassWithConstructorOverloads.md",
+  "classes/ClassWithModifiers.md",
+  "classes/ClassWithTypeParameters.md",
+  "classes/DerivedClassA.md",
+  "classes/DerivedClassB.md",
+  "enumerations/BasicEnum.md",
+  "enumerations/EnumWithValues.md",
+  "functions/basicFunction.md",
+  "functions/functionReturningAFunction.md",
+  "functions/functionReturningAnObject.md",
+  "functions/functionWithDefaultParameters.md",
+  "functions/functionWithMultipleSignatures.md",
+  "functions/functionWithNamedParams.md",
+  "functions/functionWithNestedParameters.md",
+  "functions/functionWithOptionalParameters.md",
+  "functions/functionWithTypeParameters.md",
+  "index.md",
+  "interfaces/BasicInterface.md",
+  "interfaces/ExtendedInterface.md",
+  "interfaces/IndexableInterface.md",
+  "interfaces/InterfaceWithTypeParameters.md",
+  "type-aliases/ArrayType.md",
+  "type-aliases/ConditionalType.md",
+  "type-aliases/ExternalReferenceType.md",
+  "type-aliases/FunctionType.md",
+  "type-aliases/IntersectionType.md",
+  "type-aliases/LiteralType.md",
+  "type-aliases/PartialMappedType.md",
+  "type-aliases/PrimitiveType.md",
+  "type-aliases/ReadonlyMappedType.md",
+  "type-aliases/StringLiteralType.md",
+  "type-aliases/TupleType.md",
+  "type-aliases/TypeWithExternalSymbolLinkMapping.md",
+  "type-aliases/TypeWithTypeParams.md",
+  "type-aliases/UnionType.md",
+  "variables/objectLiteralVariable.md",
+  "variables/stringVariable.md",
+  "variables/typeOperatorVariable.md",
+]
+`;
+
+exports[`Urls should gets Urls for single entry points: outputFileStrategy: modules 1`] = `
+[
+  "API.md",
+  "README.md",
+]
+`;
+
+exports[`Urls should gets Urls for single entry points: outputFileStrategy: modules 2`] = `
+[
+  "index.md",
 ]
 `;

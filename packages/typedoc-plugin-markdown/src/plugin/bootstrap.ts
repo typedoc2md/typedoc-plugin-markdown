@@ -39,4 +39,40 @@ export function load(app: Application) {
       ['default', MarkdownTheme],
     ]),
   });
+
+  /* app.converter.on(
+    Converter.EVENT_RESOLVE_END,
+    (context: Context, reflection: Reflection) => {
+      const project = context.project;
+      const removeGroups = (children) => {
+        return children?.map((child) =>
+          Object.assign(child, {
+            children: removeGroups(child.children),
+            groups: !child.kindOf(
+              ReflectionKind.Project,
+              ReflectionKind.Module,
+            ),
+          }),
+        );
+      };
+      project.children = removeGroups(project.children);
+    },
+  );*/
+
+  /**
+   * Options reader that sets the Markdown theme as the defaut and initializes other relevant options.
+   */
+  /*app.options.addReader(
+    new (class implements OptionsReader {
+      name = 'markdown-theme';
+      readonly order = 900;
+      readonly supportsPackages = false;
+      read(container: Options) {
+        container.setValue('modifierTags', [
+          ...(container.getValue('modifierTags') || []),
+          ...['@membersToFile', '@moduleToFile'],
+        ]);
+      }
+    })(),
+  );*/
 }

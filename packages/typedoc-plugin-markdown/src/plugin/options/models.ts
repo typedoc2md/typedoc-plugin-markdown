@@ -3,49 +3,49 @@
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
     outputFileStrategy: 'members' | 'modules';
-    includeFileNumberPrefixes: boolean;
-    flattenOutputFiles: boolean;
+    membersWithOwnFile: any[];
     entryFileName: string;
     indexFileName: string;
-    indexPageTitle: string;
-    skipIndexPage: boolean;
-    excludeGroups: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
     hideBreadcrumbs: boolean;
     hideInPageTOC: boolean;
+    indexPageTitle: string;
+    titleTemplate: string;
+    excludeGroups: boolean;
     identifiersAsCodeBlocks: boolean;
+    parametersFormat: 'list' | 'table';
     propertiesFormat: 'list' | 'table';
     enumMembersFormat: 'list' | 'table';
     typeDeclarationFormat: 'list' | 'table';
-    tocFormat: 'list' | 'table';
-    titleTemplate: string;
+    indexFormat: 'list' | 'table';
     preserveAnchorCasing: boolean;
     anchorPrefix: string;
-    namedAnchors: boolean;
+    htmlHeadingAnchors: boolean;
+    htmlTableAnchors: boolean;
   }
 }
 
 export interface PluginOptions {
   outputFileStrategy: 'members' | 'modules';
-  includeFileNumberPrefixes: boolean;
-  flattenOutputFiles: boolean;
+  membersWithOwnFile: any[];
   entryFileName: string;
   indexFileName: string;
-  indexPageTitle: string;
-  skipIndexPage: boolean;
-  excludeGroups: boolean;
   hidePageHeader: boolean;
   hidePageTitle: boolean;
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
+  indexPageTitle: string;
+  titleTemplate: string;
+  excludeGroups: boolean;
   identifiersAsCodeBlocks: boolean;
+  parametersFormat: 'list' | 'table';
   propertiesFormat: 'list' | 'table';
   enumMembersFormat: 'list' | 'table';
   typeDeclarationFormat: 'list' | 'table';
-  tocFormat: 'list' | 'table';
-  titleTemplate: string;
+  indexFormat: 'list' | 'table';
   preserveAnchorCasing: boolean;
   anchorPrefix: string;
-  namedAnchors: boolean;
+  htmlHeadingAnchors: boolean;
+  htmlTableAnchors: boolean;
 }

@@ -11,8 +11,7 @@ A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API document
 *   [What does it do?](#what-does-it-do)
 *   [Installation](#installation)
 *   [Usage](#usage)
-*   [Plugin Options](#plugin-options)
-*   [Custom templates](#custom-templates)
+*   [Options](#options)
 *   [Contributing](#contributing)
 *   [License](#license)
 
@@ -30,72 +29,58 @@ npm install typedoc typedoc-plugin-markdown@next --save-dev
 
 ## Usage
 
-### How to load the plugin?
-
 Plugins are loaded by using the `plugin` configuration option:
-
-Via the command line.
 
 ```bash
 typedoc --plugin typedoc-plugin-markdown
 ```
 
-Using a `typedoc.json` config file or under the `typedocOptions` key in `tsconfig.json`.
+Please see <https://typedoc.org/options/configuration>.
 
-```json
-{ "plugin": ["typedoc-plugin-markdown"] }
-```
+## Options
 
-Please see <https://typedoc.org/options/configuration> for general TypeDoc option configuration.
+### TypeDoc options
 
-### What TypeDoc options are supported?
+All of TypeDoc's [Configuration](https://typedoc.org/options/configuration/), [Input](https://typedoc.org/options/input/) and [Organization](https://typedoc.org/options/organization/) options are respected as they are executed at the conversion phase of the project.
 
-*   All of TypeDoc's [Configuration](https://typedoc.org/options/configuration/), [Input](https://typedoc.org/options/input/) and [Organization](https://typedoc.org/options/organization/) options are all respected as these are executed at the conversion phase of the project.
+TypeDoc's [Output](https://typedoc.org/options/output/) options are on the whole only relevant to the HTML theme and the majority are ignored by this plugin. Supported Output options are [`out`](https://typedoc.org/options/output/#out), `cleanOutputDir`.
 
-*   TypeDoc's [Output](https://typedoc.org/options/output/) options are relevant to the rendering phase and in the main HTML output specific and are ignored by this plugin with the exception of [`--out`]() and [`--cleanOutputDir`]().
-
-## Plugin Options
+### Plugin Options
 
 This plugin exposes additional options. Please see [Options Guide](./docs/guides/options.md) for detailed usage.
 
-### Output Options
+#### File output options
 
-Options that define how output files are generated.
+*   [`--outputFileStrategy`](./docs/guides/options.md#--outputfilestrategy)
+*   [`--membersWithOwnFile`](./docs/guides/options.md#--memberswithownfile)
+*   [`--entryFileName`](./docs/guides/options.md#--entryfilename)
 
-*   [`--outputFileStrategy`]()
-*   [`--includeFileNumberPrefixes`]()
-*   [`--flattenOutputFiles`]()
-*   [`--entryFileName`]()
-*   [`--indexFileName`]()
-*   [`--indexPageTitle`]()
-*   [`--skipIndexPage`]()
-*   [`--preserveAnchorCasing`]()
-*   [`--anchorPrefix`]()
+#### Structure and formatting options
 
-### UI Options
-
-UI Options
-
-*   [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
 *   [`--hidePageHeader`](./docs/guides/options.md#--hidepageheader)
 *   [`--hidePageTitle`](./docs/guides/options.md#--hidepagetitle)
 *   [`--hideBreadcrumbs`](./docs/guides/options.md#--hidebreadcrumbs)
 *   [`--hideInPageTOC`](./docs/guides/options.md#--hideinpagetoc)
-*   [`--hideHierarchy`](./docs/guides/options.md#--hidehierarchy)
+*   [`--indexPageTitle`](./docs/guides/options.md#--indexpagetitle)
+*   [`--titleTemplate`](./docs/guides/options.md#--titletemplate)
+*   [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
 *   [`--identifiersAsCodeBlocks`](./docs/guides/options.md#--identifiersascodeblocks)
+*   [`--parametersFormat`](./docs/guides/options.md#--parametersformat)
 *   [`--propertiesFormat`](./docs/guides/options.md#--propertiesformat)
 *   [`--enumMembersFormat`](./docs/guides/options.md#--enummembersformat)
 *   [`--typeDeclarationFormat`](./docs/guides/options.md#--typedeclarationformat)
-*   [`--tocFormat`](./docs/guides/options.md#--tocformat)
-*   [`--titleTemplate`](./docs/guides/options.md#--titletemplate)
+*   [`--indexFormat`](./docs/guides/options.md#--indexformat)
 
-## Custom templates
+#### Utility options
 
-Coming soon
+*   [`--preserveAnchorCasing`](./docs/guides/options.md#--preserveanchorcasing)
+*   [`--anchorPrefix`](./docs/guides/options.md#--anchorprefix)
+*   [`--htmlHeadingAnchors`](./docs/guides/options.md#--htmlheadinganchors)
+*   [`--htmlTableAnchors`](./docs/guides/options.md#--htmltableanchors)
 
 ## Contributing
 
-Contributions and suggestions are welcome. Please see the [contributing guidelines](CONTRIBUTING.md) for further details.
+Contributions and suggestions are welcome. Contributing guidelines coming soon.
 
 ## License
 

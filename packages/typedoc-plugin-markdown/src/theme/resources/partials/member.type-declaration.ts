@@ -1,7 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, blockQuoteBlock, heading } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
+import { blockQuoteBlock } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -11,7 +10,6 @@ export function typeDeclarationMember(
   typeDeclaration: DeclarationReflection,
   headingLevel: number,
   parentName?: string,
-  dividers = true,
 ) {
   const md: string[] = [];
   if (typeDeclaration.children) {
@@ -20,18 +18,10 @@ export function typeDeclarationMember(
     } else {
       const list = typeDeclaration.children.map((declarationChild) => {
         return [
-          heading(
-            headingLevel,
-            backTicks(
-              [escapeChars(parentName || ''), declarationChild.name]
-                .filter((name) => Boolean(name))
-                .join('.'),
-            ),
-          ),
           context.declarationMember(declarationChild, headingLevel + 1, true),
         ].join('\n\n');
       });
-      const output = list.join(!parentName && dividers ? '\n\n***\n\n' : '');
+      const output = list.join('');
       if (parentName) {
         md.push(blockQuoteBlock(output));
       } else {

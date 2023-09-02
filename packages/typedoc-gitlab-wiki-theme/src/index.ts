@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import { Application, Options, OptionsReader } from 'typedoc';
-import { MarkdownRendererEvent, MarkdownTheme } from 'typedoc-plugin-markdown';
+import { MarkdownRendererEvent, NavigationItem } from 'typedoc-plugin-markdown';
 import { GitlabWikiTheme } from './theme';
 
 export function load(app: Application) {
@@ -30,10 +30,27 @@ export function load(app: Application) {
 
   app.renderer.postRenderAsyncJobs.push(
     async (output: MarkdownRendererEvent) => {
-      const navigation = (app.renderer.theme as MarkdownTheme)
-        .getRenderContext(null)
-        .navigation(output.navigation);
-      fs.writeFileSync(`${output.outputDirectory}/_sidebar.md`, navigation);
+      fs.writeFileSync(
+        `${output.outputDirectory}/_sidebar.md`,
+        navigation(output.navigation),
+      );
     },
   );
+}
+
+export function navigation(navigationItems: NavigationItem[]): string {
+  const md: string[] = [];
+  navigationItems.forEach((navigationItem) => {
+    if (navigationItem.url) {
+      md.push(`- [${navigationItem.title}](${navigationItem.url})`);
+    }
+    if (navigationItem.children?.length) {
+      md.push(`## ${navigationItem.title} \n`);
+      navigationItem.children?.forEach((navItem) => {
+        md.push(`- [${navItem.title}](${navItem.url})`);
+      });
+      md.push('\n');
+    }
+  });
+  return md.join('\n');
 }

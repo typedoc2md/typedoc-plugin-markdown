@@ -4,7 +4,8 @@ import * as prettier from 'prettier';
 import { DeclarationOption, ParameterType } from 'typedoc';
 import * as optionsConfig from '../../src/plugin/options/config';
 
-const optionsOutput = `
+export function prepareOptions() {
+  const optionsOutput = `
   // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
 
   declare module 'typedoc' {
@@ -25,25 +26,26 @@ const optionsOutput = `
       .join('\n')}
   }`;
 
-const optionsModelFile = path.join(
-  __dirname,
-  '..',
-  '..',
-  'src',
-  'plugin',
-  'options',
-  'models.ts',
-);
+  const optionsModelFile = path.join(
+    __dirname,
+    '..',
+    '..',
+    'src',
+    'plugin',
+    'options',
+    'models.ts',
+  );
 
-prettier
-  .format(optionsOutput, {
-    parser: 'typescript',
-    singleQuote: true,
-    trailingComma: 'all',
-  })
-  .then((formatted) => {
-    fs.writeFileSync(optionsModelFile, formatted);
-  });
+  prettier
+    .format(optionsOutput, {
+      parser: 'typescript',
+      singleQuote: true,
+      trailingComma: 'all',
+    })
+    .then((formatted) => {
+      fs.writeFileSync(optionsModelFile, formatted);
+    });
+}
 
 function getType(option: Partial<DeclarationOption>) {
   if (option.type === ParameterType.Boolean) {

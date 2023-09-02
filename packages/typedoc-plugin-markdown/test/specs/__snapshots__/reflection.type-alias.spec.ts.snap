@@ -1,0 +1,668 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ArrayType
+
+# Type alias: ArrayType
+
+> **\`type\`** **ArrayType**: \`string\`[]
+
+Comments for ArrayType
+
+## Source
+
+[types.ts:12](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ArrayType
+
+# ArrayType
+
+\`\`\`ts
+type ArrayType: string[];
+\`\`\`
+
+Comments for ArrayType
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ConditionalType
+
+# Type alias: ConditionalType\`<T>\`
+
+> **\`type\`** **ConditionalType**<\`T\`>: \`T\` extends \`string\` ? \`"string"\` : \`T\` extends \`number\` ? \`"number"\` : \`T\` extends \`boolean\` ? \`"boolean"\` : \`T\` extends \`undefined\` ? \`"undefined"\` : \`"object"\`
+
+Comments for ConditionalType
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+
+## Source
+
+[types.ts:46](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ConditionalType
+
+# ConditionalType\`<T>\`
+
+\`\`\`ts
+type ConditionalType<T>: T extends string ? "string" : T extends number ? "number" : T extends boolean ? "boolean" : T extends undefined ? "undefined" : "object";
+\`\`\`
+
+Comments for ConditionalType
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > TypeWithExternalSymbolLinkMapping
+
+# Type alias: TypeWithExternalSymbolLinkMapping
+
+> **\`type\`** **TypeWithExternalSymbolLinkMapping**: [\`Application\`]( https://typedoc.org/api/classes/Application.html )
+
+Comments for TypeWithExternalSymbolLinkMapping
+
+## Source
+
+[types.ts:88](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > TypeWithExternalSymbolLinkMapping
+
+# TypeWithExternalSymbolLinkMapping
+
+\`\`\`ts
+type TypeWithExternalSymbolLinkMapping: Application;
+\`\`\`
+
+Comments for TypeWithExternalSymbolLinkMapping
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > LiteralType
+
+# Type alias: LiteralType
+
+> **\`type\`** **LiteralType**: \`object\`
+
+Comments for LiteralType
+
+## Type declaration
+
+**\`valueA\`**?: \`number\`
+
+Comments for valueA
+
+**\`valueB\`**?: \`boolean\`
+
+**\`valueX\`**: \`object\`
+
+Comment for valueX
+
+> **\`valueA\`**: \`number\`[]
+>
+> **\`valueY\`**: (\`z\`) => \\{  \`a\`: \`string\`;  \`b\`: \`string\`; }
+>
+> Nested comment for valueX.valueY
+>
+>
+>
+>
+>
+> **\`valueZ\`**: \`string\`
+>
+> Nested comment for valueX.valueZ
+>
+>
+
+**\`valueY\`**: () => \`string\`
+
+**\`valueZ\`**: \`string\`
+
+Comment for valueZ
+
+\`get\` **\`getMe\`**: \`Promise\`\\< \`string\` \\>
+
+\`set\` **\`setMe\`**: \`void\`
+
+## Source
+
+[types.ts:93](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > LiteralType
+
+# LiteralType
+
+\`\`\`ts
+type LiteralType: object;
+\`\`\`
+
+Comments for LiteralType
+
+## Type declaration
+
+| Modifier | Member | Type | Description |
+| :------ | :------ | :------ | :------ |
+| \`public\` | \`valueA?\` | \`number\` | Comments for valueA |
+| \`public\` | \`valueB?\` | \`boolean\` | - |
+| \`public\` | \`valueX\` | \`object\` | Comment for valueX |
+| \`public\` | \`valueX.valueA\` | \`number\`[] | - |
+| \`public\` | \`valueX.valueY\` | (\`z\`) => \\{  \`a\`: \`string\`;  \`b\`: \`string\`; } | Nested comment for valueX.valueY |
+| \`get\` | \`valueX.valueZ\` | \`string\` | Nested comment for valueX.valueZ |
+| \`set\` | \`valueY\` | () => \`string\` | - |
+| \`public\` | \`valueZ\` | \`string\` | Comment for valueZ |
+| \`public\` | \`getMe\` | \`Promise\`\\< \`string\` \\> | - |
+| \`public\` | \`setMe\` | \`void\` | - |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ExternalReferenceType
+
+# Type alias: ExternalReferenceType
+
+> **\`type\`** **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\< \`"x"\`, \`"y"\` \\>
+
+Comments for ExternalReferenceType
+
+## Source
+
+[types.ts:64](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ExternalReferenceType
+
+# ExternalReferenceType
+
+\`\`\`ts
+type ExternalReferenceType: ClassWithTypeParameters< "x", "y" >;
+\`\`\`
+
+Comments for ExternalReferenceType
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > FunctionType
+
+# Type alias: FunctionType
+
+> **\`type\`** **FunctionType**: (\`name\`, \`value\`) => \`void\`
+
+Comments for FunctionType
+
+## Source
+
+[types.ts:83](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > FunctionType
+
+# FunctionType
+
+\`\`\`ts
+type FunctionType: (name, value) => void;
+\`\`\`
+
+Comments for FunctionType
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > IntersectionType
+
+# Type alias: IntersectionType
+
+> **\`type\`** **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \\{  \`bar\`: \`number\`; }
+
+Comments for IntersectionType
+
+## Type declaration
+
+> **\`bar\`**: \`number\`
+>
+>
+
+## Source
+
+[types.ts:38](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > IntersectionType
+
+# IntersectionType
+
+\`\`\`ts
+type IntersectionType: TupleType & ArrayType & {  bar: number; };
+\`\`\`
+
+Comments for IntersectionType
+
+## Type declaration
+
+| Member | Type |
+| :------ | :------ |
+| \`bar\` | \`number\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > PartialMappedType
+
+# Type alias: PartialMappedType\`<T>\`
+
+> **\`type\`** **PartialMappedType**<\`T\`>: \`{ [P in keyof T]?: T[P] }\`
+
+Comments for PartialMappedType
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+
+## Source
+
+[types.ts:69](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > PartialMappedType
+
+# PartialMappedType\`<T>\`
+
+\`\`\`ts
+type PartialMappedType<T>: { [P in keyof T]?: T[P] };
+\`\`\`
+
+Comments for PartialMappedType
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > PrimitiveType
+
+# Type alias: PrimitiveType
+
+> **\`type\`** **PrimitiveType**: \`boolean\`
+
+Comments for PrimitiveType
+
+## Source
+
+[types.ts:7](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > PrimitiveType
+
+# PrimitiveType
+
+\`\`\`ts
+type PrimitiveType: boolean;
+\`\`\`
+
+Comments for PrimitiveType
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ReadonlyMappedType
+
+# Type alias: ReadonlyMappedType\`<T>\`
+
+> **\`type\`** **ReadonlyMappedType**<\`T\`>: \`{ readonly [P in keyof T]: T[P] }\`
+
+Comments for ReadonlyMapedType
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+
+## Source
+
+[types.ts:76](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ReadonlyMappedType
+
+# ReadonlyMappedType\`<T>\`
+
+\`\`\`ts
+type ReadonlyMappedType<T>: { readonly [P in keyof T]: T[P] };
+\`\`\`
+
+Comments for ReadonlyMapedType
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > StringLiteralType
+
+# Type alias: StringLiteralType
+
+> **\`type\`** **StringLiteralType**: \`" "\` \\| \`"string"\` \\| \`"string|with|pipes"\` \\| "string\\\`with\\\`backticks" \\| \`"<foo>"\` \\| \`"*"\`
+
+Comments for StringLiteralType
+
+## Source
+
+[types.ts:22](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > StringLiteralType
+
+# StringLiteralType
+
+\`\`\`ts
+type StringLiteralType: 
+  | " "
+  | "string"
+  | "string|with|pipes"
+  | "string\\with\\backticks"
+  | "<foo>"
+  | "*";
+\`\`\`
+
+Comments for StringLiteralType
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > TupleType
+
+# Type alias: TupleType
+
+> **\`type\`** **TupleType**: [\`string\`, \`number\`]
+
+Comments for TupleType
+
+## Source
+
+[types.ts:33](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > TupleType
+
+# TupleType
+
+\`\`\`ts
+type TupleType: [string, number];
+\`\`\`
+
+Comments for TupleType
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > TypeWithTypeParams
+
+# Type alias: TypeWithTypeParams\`<T, R>\`
+
+> **\`type\`** **TypeWithTypeParams**<\`T\`, \`R\`>: [\`T\`, \`R\`]
+
+Comments for TypeWithTypeParams
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+| \`R\` |
+
+## Source
+
+[types.ts:59](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > TypeWithTypeParams
+
+# TypeWithTypeParams\`<T, R>\`
+
+\`\`\`ts
+type TypeWithTypeParams<T, R>: [T, R];
+\`\`\`
+
+Comments for TypeWithTypeParams
+
+## Type parameters
+
+| Parameter |
+| :------ |
+| \`T\` |
+| \`R\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > UnionType
+
+# Type alias: UnionType
+
+> **\`type\`** **UnionType**: \`string\` \\| \`boolean\` \\| \\{  \`z\`: \`string\`; }
+
+Comments for UnionType
+
+## Source
+
+[types.ts:17](source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > UnionType
+
+# UnionType
+
+\`\`\`ts
+type UnionType: string | boolean | {  z: string; };
+\`\`\`
+
+Comments for UnionType
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;

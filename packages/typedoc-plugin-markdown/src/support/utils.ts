@@ -35,7 +35,7 @@ export function unEscapeChars(str: string) {
     .replace(/\\_/g, '_')
     .replace(/\\{/g, '{')
     .replace(/`/g, '')
-    .replace(/\*/g, '')
+    .replace(/\*\*/g, '')
     .replace(/\\\|/g, '|')
     .replace(/\[([^\[\]]*)\]\((.*?)\)/gm, '$1');
 }
@@ -47,7 +47,7 @@ export function stripComments(str: string) {
     .replace(/^\s+|\s+$|(\s)+/g, '$1');
 }
 
-export function tableComments(str: string) {
+export function tableString(str: string) {
   return str.replace(/\|/g, '\\|');
 }
 
@@ -68,7 +68,6 @@ export function camelToTitleCase(text: string) {
 
 export function slugify(str: string) {
   return str
-    .toLowerCase()
     .trim()
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_-]+/g, '-')

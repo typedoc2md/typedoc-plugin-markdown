@@ -7,31 +7,18 @@
     "dist/"
   ],
   "scripts": {
-    "lint": "npm-run-all lint:*",
-    "lint:ts": "eslint ./src --ext .ts",
-    "lint:markdown": "npm run docs && markdownlint ./out/md",
+    "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "prebuild": "rm -rf dist && npm-run-all task:code",
+    "prebuild": "rm -rf dist && npm run task:code",
     "build": "tsc",
-    "test": "jest --colors",
-    "prestubs": "npm run build",
-    "stubs": "npm-run-all stubs:*",
-    "stubs:md-1": "typedoc --options ./test/typedoc1.cjs --out ./test/fixtures/md-1",
-    "stubs:md-2": "typedoc --options ./test/typedoc2.cjs --out ./test/fixtures/md-2",
-    "stubs:md-3": "typedoc --options ./test/typedoc3.cjs --out ./test/fixtures/md-3",
-    "stubs:md-4": "typedoc --options ./test/typedoc4.cjs --out ./test/fixtures/md-4",
-    "stubs:html": "typedoc --options ./test/typedoc-html.cjs --out ./test/fixtures/html",
+    "pretest": "ts-node ./test/__scripts__/prepare.ts",
+    "test": "npm-run-all test:*",
+    "test:markdownlint": "markdownlint --config ./test/.markdownlint.yaml ./test/out",
+    "test:jest": "jest --updateSnapshot",
     "build-and-test": "npm run build && npm run test",
     "api-docs": "npm run build && typedoc --options ./typedoc.api.js --out ./docs/api",
-    "docs": "npm run build && npm-run-all docs:*",
-    "docs:md-1": "typedoc --options ../../stubs/.config/typedoc.1.cjs --out ./out/md/md-1",
-    "docs:md-2": "typedoc --options ../../stubs/.config/typedoc.2.cjs --out ./out/md/md-2",
-    "docs:md-3": "typedoc --options ../../stubs/.config/typedoc.3.cjs --out ./out/md/md-3",
-    "docs:html": "typedoc --options ../../stubs/.config/typedoc.base.cjs  --out ./out/html",
     "task:docs": "node scripts/docs/docs.mjs",
-    "task:code": "npm-run-all task:code:*",
-    "task:code:options": "ts-node scripts/code/options",
-    "task:code:resources": "ts-node scripts/code/resources"
+    "task:code": "ts-node scripts/code"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -53,6 +40,6 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.24.0"
+    "typedoc": ">=0.25.0"
   }
 }

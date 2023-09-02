@@ -1,0 +1,32 @@
+# MD013/line-length
+MD013: false
+
+# MD024/no-duplicate-heading/no-duplicate-header
+MD024: false
+
+# MD007/ul-indent
+MD007: false
+
+# MD028/blank-line-inside-blockquote
+MD028: false
+
+# MD030/list-marker-space
+MD030: false
+
+# MD033/no-inline-html
+MD033: false
+
+# MD034/no-bare-urls
+MD034: false
+
+# MD036/no-emphasis-as-heading
+MD036: false
+
+# MD040/fenced-code-language
+MD040: false
+
+# MD041/first-line-heading/first-line-h1
+MD041: false
+
+# MD052/reference-links-images
+MD052: false

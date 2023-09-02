@@ -1,0 +1,768 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionReturningAFunction
+
+# Function: functionReturningAFunction
+
+> **functionReturningAFunction**(): <\`T\`>(\`x\`) => \`boolean\`
+
+Comments for function
+
+## Returns
+
+Return comments
+
+> > <\`T\`>(\`x\`): \`boolean\`
+>
+> ### Type parameters
+>
+> > **T**
+>
+> ### Parameters
+>
+> > **x**: \`string\`
+>
+> ### Returns
+>
+> \`boolean\`
+>
+>
+>
+> ### Source
+>
+> [functions.ts:127](source-url)
+
+## Source
+
+[functions.ts:126](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionReturningAFunction
+
+# functionReturningAFunction
+
+\`\`\`ts
+functionReturningAFunction(): <T>(x) => boolean
+\`\`\`
+
+Comments for function
+
+## Returns
+
+Return comments
+
+> \`\`\`ts
+> <T>(x): boolean
+> \`\`\`
+>
+> ### Type parameters
+>
+>
+> | Parameter |
+> | :------ |
+> | \`T\` |
+>
+>
+> ### Parameters
+>
+>
+> | Parameter | Type |
+> | :------ | :------ |
+> | \`x\` | \`string\` |
+>
+>
+> ### Returns
+>
+> \`boolean\`
+>
+>
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionReturningAnObject
+
+# Function: functionReturningAnObject
+
+> **functionReturningAnObject**(): \`object\`
+
+Comments for function
+
+## Returns
+
+Return comments
+
+**\`x\`**: \`number\` = \`1\`
+
+**\`y\`**: \`number\` = \`2\`
+
+## Source
+
+[functions.ts:118](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionReturningAnObject
+
+# functionReturningAnObject
+
+\`\`\`ts
+functionReturningAnObject(): object
+\`\`\`
+
+Comments for function
+
+## Returns
+
+Return comments
+
+| Member | Type |
+| :------ | :------ |
+| \`x\` | \`number\` |
+| \`y\` | \`number\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > basicFunction
+
+# Function: basicFunction
+
+> **basicFunction**(\`someParam\`): \`number\`
+
+This is a function that is assigned to a variable.
+
+## Parameters
+
+> **someParam**: \`number\`
+
+This is some numeric parameter.
+
+## Returns
+
+\`number\`
+
+## Source
+
+[functions.ts:10](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > basicFunction
+
+# basicFunction
+
+\`\`\`ts
+basicFunction(someParam): number
+\`\`\`
+
+This is a function that is assigned to a variable.
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`someParam\` | \`number\` | This is some numeric parameter. |
+
+## Returns
+
+\`number\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionWithDefaultParameters
+
+# Function: functionWithDefaultParameters
+
+> **functionWithDefaultParameters**(\`valueA\`, \`valueB\`, \`valueC\`, \`valueD\`, \`valueE\`, \`valueF\`): \`string\`
+
+This is a function with a parameter that has a default value.
+
+## Parameters
+
+> **valueA**: \`string\`= \`'defaultValue'\`
+
+A parameter with a default string value.
+
+> **valueB**: \`number\`= \`100\`
+
+A parameter with a default numeric value.
+
+> **valueC**: \`number\`= \`Number.NaN\`
+
+A parameter with a default NaN value.
+
+> **valueD**: \`boolean\`= \`true\`
+
+A parameter with a default boolean value.
+
+> **valueE**: \`boolean\`= \`true\`
+
+A parameter with a default null value.
+
+> **valueF**: \`string\`= \`'<foo>'\`
+
+## Returns
+
+\`string\`
+
+## Source
+
+[functions.ts:23](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionWithDefaultParameters
+
+# functionWithDefaultParameters
+
+\`\`\`ts
+functionWithDefaultParameters(
+    valueA, 
+    valueB, 
+    valueC, 
+    valueD, 
+    valueE, 
+    valueF): string
+\`\`\`
+
+This is a function with a parameter that has a default value.
+
+## Parameters
+
+| Parameter | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`valueA\` | \`string\` | \`'defaultValue'\` | A parameter with a default string value. |
+| \`valueB\` | \`number\` | \`100\` | A parameter with a default numeric value. |
+| \`valueC\` | \`number\` | \`Number.NaN\` | A parameter with a default NaN value. |
+| \`valueD\` | \`boolean\` | \`true\` | A parameter with a default boolean value. |
+| \`valueE\` | \`boolean\` | \`true\` | A parameter with a default null value. |
+| \`valueF\` | \`string\` | \`'<foo>'\` | - |
+
+## Returns
+
+\`string\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionWithMultipleSignatures
+
+# Function: functionWithMultipleSignatures
+
+## functionWithMultipleSignatures(value)
+
+> **functionWithMultipleSignatures**(\`value\`): \`string\`
+
+This is the first signature of a function with multiple signatures.
+
+### Parameters
+
+> **value**: \`string\`
+
+The name value.
+
+### Returns
+
+\`string\`
+
+### Source
+
+[functions.ts:96](source-url)
+
+## functionWithMultipleSignatures(value)
+
+> **functionWithMultipleSignatures**(\`value\`): \`string\`
+
+This is the second signature of a function with multiple signatures.
+
+### Parameters
+
+> **value**: \`object\`
+
+An object containing the name value.
+
+> **value.name**: \`string\`
+
+A value of the object.
+
+### Returns
+
+\`string\`
+
+### Source
+
+[functions.ts:104](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionWithMultipleSignatures
+
+# functionWithMultipleSignatures
+
+## functionWithMultipleSignatures(value)
+
+\`\`\`ts
+functionWithMultipleSignatures(value): string
+\`\`\`
+
+This is the first signature of a function with multiple signatures.
+
+### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`value\` | \`string\` | The name value. |
+
+### Returns
+
+\`string\`
+
+## functionWithMultipleSignatures(value)
+
+\`\`\`ts
+functionWithMultipleSignatures(value): string
+\`\`\`
+
+This is the second signature of a function with multiple signatures.
+
+### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`value\` | \`object\` | An object containing the name value. |
+| \`value.name\` | \`string\` | A value of the object. |
+
+### Returns
+
+\`string\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionWithNamedParams
+
+# Function: functionWithNamedParams
+
+> **functionWithNamedParams**(\`__namedParameters\`, \`anotherParam\`): \`void\`
+
+## Parameters
+
+> **\\_\\_namedParameters**: \`object\`= \`{}\`
+
+various options
+
+> **\\_\\_namedParameters.bar?**: \`number\`
+
+> **\\_\\_namedParameters.foo?**: \`number\`
+
+> **anotherParam**: \`string\`
+
+Another param comment
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:76](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionWithNamedParams
+
+# functionWithNamedParams
+
+\`\`\`ts
+functionWithNamedParams(__namedParameters, anotherParam): void
+\`\`\`
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`__namedParameters\` | \`object\` | various options |
+| \`__namedParameters.bar\`? | \`number\` | - |
+| \`__namedParameters.foo\`? | \`number\` | - |
+| \`anotherParam\` | \`string\` | Another param comment |
+
+## Returns
+
+\`void\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionWithNestedParameters
+
+# Function: functionWithNestedParameters
+
+> **functionWithNestedParameters**(\`params\`, \`context\`): \`boolean\`
+
+Some nested params.
+
+## Parameters
+
+> **params**: \`object\`
+
+The parameters passed to the method.
+
+> **params.name**: \`string\`
+
+The name of the new group.
+
+> **params.nestedObj**: \`object\`
+
+A nested object.
+
+> **params.nestedObj.name**: \`string\`
+
+> **params.nestedObj.obj**: \`object\`
+
+> **params.nestedObj.obj.name**: () => \`void\`
+
+> **params.nestedObj.value**: \`number\`
+
+> **params.parent?**: \`number\`
+
+> **context**: \`any\`
+
+The context of the method call.
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:54](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionWithNestedParameters
+
+# functionWithNestedParameters
+
+\`\`\`ts
+functionWithNestedParameters(params, context): boolean
+\`\`\`
+
+Some nested params.
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`params\` | \`object\` | The parameters passed to the method. |
+| \`params.name\` | \`string\` | The name of the new group. |
+| \`params.nestedObj\` | \`object\` | A nested object. |
+| \`params.nestedObj.name\` | \`string\` | - |
+| \`params.nestedObj.obj\` | \`object\` | - |
+| \`params.nestedObj.obj.name\` | () => \`void\` | - |
+| \`params.nestedObj.value\` | \`number\` | - |
+| \`params.parent\`? | \`number\` | - |
+| \`context\` | \`any\` | The context of the method call. |
+
+## Returns
+
+\`boolean\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionWithOptionalParameters
+
+# Function: functionWithOptionalParameters
+
+> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
+
+This is a function with a parameters.
+
+## Parameters
+
+> **firstParamWithDefault**: \`boolean\`= \`true\`
+
+> **requiredParam**: \`string\`
+
+A normal parameter.
+
+> **optionalParam?**: \`string\`
+
+An optional parameter.
+
+> **paramWithDefault?**: \`number\`= \`0\`
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:40](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 2`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionWithOptionalParameters
+
+# Function: functionWithOptionalParameters
+
+> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
+
+This is a function with a parameters.
+
+## Parameters
+
+> **firstParamWithDefault**: \`boolean\`= \`true\`
+
+> **requiredParam**: \`string\`
+
+A normal parameter.
+
+> **optionalParam?**: \`string\`
+
+An optional parameter.
+
+> **paramWithDefault?**: \`number\`= \`0\`
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:40](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionWithOptionalParameters
+
+# functionWithOptionalParameters
+
+\`\`\`ts
+functionWithOptionalParameters(
+    firstParamWithDefault, 
+    requiredParam, 
+    optionalParam?, 
+    paramWithDefault?): void
+\`\`\`
+
+This is a function with a parameters.
+
+## Parameters
+
+| Parameter | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
+| \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
+| \`optionalParam\`? | \`string\` | \`undefined\` | An optional parameter. |
+| \`paramWithDefault\`? | \`number\` | \`0\` | - |
+
+## Returns
+
+\`void\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "2") 2`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionWithOptionalParameters
+
+# functionWithOptionalParameters
+
+\`\`\`ts
+functionWithOptionalParameters(
+    firstParamWithDefault, 
+    requiredParam, 
+    optionalParam?, 
+    paramWithDefault?): void
+\`\`\`
+
+This is a function with a parameters.
+
+## Parameters
+
+| Parameter | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
+| \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
+| \`optionalParam\`? | \`string\` | \`undefined\` | An optional parameter. |
+| \`paramWithDefault\`? | \`number\` | \`0\` | - |
+
+## Returns
+
+\`void\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > functionWithTypeParameters
+
+# Function: functionWithTypeParameters
+
+> **functionWithTypeParameters**<\`T\`, \`Item\`>(): \`boolean\`
+
+Function with type parameters
+
+## Type parameters
+
+> **T**
+
+Comments for T
+
+> **Item** = \`string\` \\| \`boolean\`
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:89](source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > functionWithTypeParameters
+
+# functionWithTypeParameters
+
+\`\`\`ts
+functionWithTypeParameters<T, Item>(): boolean
+\`\`\`
+
+Function with type parameters
+
+## Type parameters
+
+| Parameter | Default | Description |
+| :------ | :------ | :------ |
+| \`T\` | - | Comments for T |
+| \`Item\` | \`string\` \\| \`boolean\` | - |
+
+## Returns
+
+\`boolean\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;

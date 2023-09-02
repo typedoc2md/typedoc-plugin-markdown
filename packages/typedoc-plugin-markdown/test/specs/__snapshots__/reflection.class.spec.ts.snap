@@ -1,0 +1,863 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > AbstractClass
+
+# Class: \`abstract\` AbstractClass
+
+## Extended By
+
+- [\`DerivedClassA\`](DerivedClassA.md)
+- [\`DerivedClassB\`](DerivedClassB.md)
+
+## Constructors
+
+### new AbstractClass()
+
+> **new AbstractClass**(): [\`AbstractClass\`](AbstractClass.md)
+
+#### Returns
+
+[\`AbstractClass\`](AbstractClass.md)
+
+***
+
+## Properties
+
+### \`abstract\` abstractProp
+
+> **\`abstract\`** **abstractProp**: \`string\`
+
+Comments for abstractProp
+
+#### Source
+
+[classes.ts:9](source-url)
+
+***
+
+## Methods
+
+### \`abstract\` abstractMethod
+
+> \`abstract\` **abstractMethod**(): \`string\`
+
+Comments for abstractMethod
+
+#### Returns
+
+\`string\`
+
+#### Source
+
+[classes.ts:14](source-url)
+"
+`;
+
+exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > AbstractClass
+
+# \`abstract\` AbstractClass
+
+## Extended By
+
+- [\`DerivedClassA\`](DerivedClassA.md)
+- [\`DerivedClassB\`](DerivedClassB.md)
+
+## Constructors
+
+### new AbstractClass()
+
+\`\`\`ts
+new AbstractClass(): AbstractClass
+\`\`\`
+
+#### Returns
+
+[\`AbstractClass\`](AbstractClass.md)
+
+***
+
+## Properties
+
+| Modifier | Property | Type | Description |
+| :------ | :------ | :------ | :------ |
+| \`abstract\` | \`abstractProp\` | \`string\` | Comments for abstractProp |
+
+***
+
+## Methods
+
+### \`abstract\` abstractMethod
+
+\`\`\`ts
+abstract abstractMethod(): string
+\`\`\`
+
+Comments for abstractMethod
+
+#### Returns
+
+\`string\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ClassWithAccessors
+
+# Class: ClassWithAccessors
+
+Comments for ClassWithAccessors
+
+## Constructors
+
+### new ClassWithAccessors()
+
+> **new ClassWithAccessors**(): [\`ClassWithAccessors\`](ClassWithAccessors.md)
+
+#### Returns
+
+[\`ClassWithAccessors\`](ClassWithAccessors.md)
+
+***
+
+## Properties
+
+### privateProp
+
+> **\`private\`** **privateProp**: \`string\`
+
+#### Source
+
+[classes.ts:72](source-url)
+
+***
+
+## Accessors
+
+### accessor
+
+> \`get\` **accessor**(): \`string\`
+
+Comments for getter
+
+> \`set\` **accessor**(\`value\`): \`void\`
+
+Comments for setter
+
+#### Parameters
+
+> **value**: \`string\`
+
+Param comments
+
+#### Returns
+
+\`string\`
+
+#### Source
+
+[classes.ts:76](source-url)
+
+### noGetter
+
+> \`set\` **noGetter**(\`x\`): \`void\`
+
+#### Parameters
+
+> **x**: \`string\`
+
+#### Source
+
+[classes.ts:92](source-url)
+
+### noSetter
+
+> \`get\` **noSetter**(): \`string\`
+
+#### Returns
+
+\`string\`
+
+#### Source
+
+[classes.ts:88](source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ClassWithAccessors
+
+# ClassWithAccessors
+
+Comments for ClassWithAccessors
+
+## Constructors
+
+### new ClassWithAccessors()
+
+\`\`\`ts
+new ClassWithAccessors(): ClassWithAccessors
+\`\`\`
+
+#### Returns
+
+[\`ClassWithAccessors\`](ClassWithAccessors.md)
+
+***
+
+## Properties
+
+| Modifier | Property | Type |
+| :------ | :------ | :------ |
+| \`private\` | \`privateProp\` | \`string\` |
+
+***
+
+## Accessors
+
+### accessor
+
+\`\`\`ts
+get accessor(): string
+\`\`\`
+
+Comments for getter
+
+\`\`\`ts
+set accessor(value): void
+\`\`\`
+
+Comments for setter
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`value\` | \`string\` | Param comments |
+
+#### Returns
+
+\`string\`
+
+### noGetter
+
+\`\`\`ts
+set noGetter(x): void
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+### noSetter
+
+\`\`\`ts
+get noSetter(): string
+\`\`\`
+
+#### Returns
+
+\`string\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ClassWithConstructorOverloads
+
+# Class: ClassWithConstructorOverloads
+
+Comments for ClassWithConstructorOverloads
+
+## Constructors
+
+### new ClassWithConstructorOverloads(x, y)
+
+> **new ClassWithConstructorOverloads**(\`x\`, \`y\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+#### Parameters
+
+> **x**: \`number\`
+
+Comments for x number
+
+> **y**: \`string\`
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+#### Source
+
+[classes.ts:50](source-url)
+
+### new ClassWithConstructorOverloads(x)
+
+> **new ClassWithConstructorOverloads**(\`x\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+#### Parameters
+
+> **x**: \`string\`
+
+Comments for x string
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+#### Source
+
+[classes.ts:55](source-url)
+
+### new ClassWithConstructorOverloads(s)
+
+> **new ClassWithConstructorOverloads**(\`s\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+#### Parameters
+
+> **s**: \`string\`
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+#### Source
+
+[classes.ts:56](source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ClassWithConstructorOverloads
+
+# ClassWithConstructorOverloads
+
+Comments for ClassWithConstructorOverloads
+
+## Constructors
+
+### new ClassWithConstructorOverloads(x, y)
+
+\`\`\`ts
+new ClassWithConstructorOverloads(x, y): ClassWithConstructorOverloads
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`x\` | \`number\` | Comments for x number |
+| \`y\` | \`string\` |  |
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+### new ClassWithConstructorOverloads(x)
+
+\`\`\`ts
+new ClassWithConstructorOverloads(x): ClassWithConstructorOverloads
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`x\` | \`string\` | Comments for x string |
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+### new ClassWithConstructorOverloads(s)
+
+\`\`\`ts
+new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`s\` | \`string\` |
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ClassWithModifiers
+
+# Class: \`abstract\` ClassWithModifiers
+
+Comments for ClassWithModifiers
+
+## Constructors
+
+### new ClassWithModifiers()
+
+> **new ClassWithModifiers**(): [\`ClassWithModifiers\`](ClassWithModifiers.md)
+
+#### Returns
+
+[\`ClassWithModifiers\`](ClassWithModifiers.md)
+
+***
+
+## Properties
+
+### privateProp
+
+> **\`private\`** **privateProp**: \`string\`
+
+Comments for privateProp
+
+#### Source
+
+[classes.ts:111](source-url)
+
+### protectedProp
+
+> **\`protected\`** **protectedProp**: \`string\`
+
+Comments for protectedProp
+
+#### Source
+
+[classes.ts:121](source-url)
+
+### publicPropWithDefault
+
+> **publicPropWithDefault**: \`string\` = \`'propWithDefault'\`
+
+Comments for propWithDefault
+
+#### Source
+
+[classes.ts:126](source-url)
+
+### readonlyProp
+
+> **\`readonly\`** **readonlyProp**: \`string\`
+
+Comments for abstractProperty
+
+#### Source
+
+[classes.ts:116](source-url)
+
+### staticProp
+
+> **\`static\`** **staticProp**: \`string\`
+
+Comments for staticProp
+
+#### Source
+
+[classes.ts:106](source-url)
+
+***
+
+## Methods
+
+### privateMethod
+
+> \`private\` **privateMethod**(): \`void\`
+
+Comment for privateMethod
+
+#### Returns
+
+\`void\`
+
+#### Source
+
+[classes.ts:138](source-url)
+
+### publicMethod
+
+> **publicMethod**(): \`void\`
+
+Comment for publicMethod
+
+#### Returns
+
+\`void\`
+
+#### Source
+
+[classes.ts:131](source-url)
+
+### staticMethod
+
+> \`static\` **staticMethod**(): \`void\`
+
+Comment for staticMethod
+
+#### Returns
+
+\`void\`
+
+#### Source
+
+[classes.ts:143](source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ClassWithModifiers
+
+# \`abstract\` ClassWithModifiers
+
+Comments for ClassWithModifiers
+
+## Constructors
+
+### new ClassWithModifiers()
+
+\`\`\`ts
+new ClassWithModifiers(): ClassWithModifiers
+\`\`\`
+
+#### Returns
+
+[\`ClassWithModifiers\`](ClassWithModifiers.md)
+
+***
+
+## Properties
+
+| Modifier | Property | Type | Description |
+| :------ | :------ | :------ | :------ |
+| \`private\` | \`privateProp\` | \`string\` | Comments for privateProp |
+| \`public\` | \`protectedProp\` | \`string\` | Comments for protectedProp |
+| \`public\` | \`publicPropWithDefault\` | \`string\` | Comments for propWithDefault |
+| \`readonly\` | \`readonlyProp\` | \`string\` | Comments for abstractProperty |
+| \`static\` | \`staticProp\` | \`string\` | Comments for staticProp |
+
+***
+
+## Methods
+
+### privateMethod
+
+\`\`\`ts
+private privateMethod(): void
+\`\`\`
+
+Comment for privateMethod
+
+#### Returns
+
+\`void\`
+
+### publicMethod
+
+\`\`\`ts
+publicMethod(): void
+\`\`\`
+
+Comment for publicMethod
+
+#### Returns
+
+\`void\`
+
+### staticMethod
+
+\`\`\`ts
+static staticMethod(): void
+\`\`\`
+
+Comment for staticMethod
+
+#### Returns
+
+\`void\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > ClassWithTypeParameters
+
+# Class: ClassWithTypeParameters\`<A, B, C>\`
+
+Comments for ClassWithTypeParameters
+
+## Type parameters
+
+> **A**
+
+Comments for param A
+
+> **B** *extends* \`string\`
+
+Comments for param B
+
+> **C** = \`boolean\`
+
+## Constructors
+
+### new ClassWithTypeParameters()
+
+> **new ClassWithTypeParameters**<\`A\`, \`B\`, \`C\`>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\< \`A\`, \`B\`, \`C\` \\>
+
+#### Returns
+
+[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\< \`A\`, \`B\`, \`C\` \\>
+"
+`;
+
+exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > ClassWithTypeParameters
+
+# ClassWithTypeParameters\`<A, B, C>\`
+
+Comments for ClassWithTypeParameters
+
+## Type parameters
+
+| Parameter | Default | Description |
+| :------ | :------ | :------ |
+| \`A\` | - | Comments for param A |
+| \`B\` *extends* \`string\` | - | Comments for param B |
+| \`C\` | \`boolean\` | - |
+
+## Constructors
+
+### new ClassWithTypeParameters()
+
+\`\`\`ts
+new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters< A, B, C >
+\`\`\`
+
+#### Returns
+
+[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\< \`A\`, \`B\`, \`C\` \\>
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > DerivedClassA
+
+# Class: DerivedClassA
+
+Comments for DerivedClassA
+
+## Extends
+
+- [\`AbstractClass\`](AbstractClass.md)
+
+## Constructors
+
+### new DerivedClassA()
+
+> **new DerivedClassA**(): [\`DerivedClassA\`](DerivedClassA.md)
+
+#### Returns
+
+[\`DerivedClassA\`](DerivedClassA.md)
+
+#### Inherited from
+
+[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
+
+***
+
+## Properties
+
+### abstractProp
+
+> **abstractProp**: \`string\` = \`'abstractProp'\`
+
+Comments for abstractProp
+
+#### Overrides
+
+[\`AbstractClass\`](AbstractClass.md).[\`abstractProp\`](AbstractClass.md#abstract-abstractprop)
+
+#### Source
+
+[classes.ts:21](source-url)
+
+### derivedProp
+
+> **derivedProp**: \`string\`
+
+#### Source
+
+[classes.ts:22](source-url)
+
+***
+
+## Methods
+
+### abstractMethod
+
+> **abstractMethod**(): \`string\`
+
+Comments for abstractMethod
+
+#### Returns
+
+\`string\`
+
+#### Overrides
+
+[\`AbstractClass\`](AbstractClass.md).[\`abstractMethod\`](AbstractClass.md#abstract-abstractmethod)
+
+#### Source
+
+[classes.ts:23](source-url)
+
+### derivedMethod
+
+> **derivedMethod**(): \`string\`
+
+#### Returns
+
+\`string\`
+
+#### Source
+
+[classes.ts:26](source-url)
+"
+`;
+
+exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > DerivedClassA
+
+# DerivedClassA
+
+Comments for DerivedClassA
+
+## Extends
+
+- [\`AbstractClass\`](AbstractClass.md)
+
+## Constructors
+
+### new DerivedClassA()
+
+\`\`\`ts
+new DerivedClassA(): DerivedClassA
+\`\`\`
+
+#### Returns
+
+[\`DerivedClassA\`](DerivedClassA.md)
+
+#### Inherited from
+
+[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
+
+***
+
+## Properties
+
+| Property | Type | Description | Inheritance |
+| :------ | :------ | :------ | :------ |
+| \`abstractProp\` | \`string\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).\`abstractProp\` |
+| \`derivedProp\` | \`string\` | - | - |
+
+***
+
+## Methods
+
+### abstractMethod
+
+\`\`\`ts
+abstractMethod(): string
+\`\`\`
+
+Comments for abstractMethod
+
+#### Returns
+
+\`string\`
+
+#### Overrides
+
+[\`AbstractClass\`](AbstractClass.md).[\`abstractMethod\`](AbstractClass.md#abstract-abstractmethod)
+
+### derivedMethod
+
+\`\`\`ts
+derivedMethod(): string
+\`\`\`
+
+#### Returns
+
+\`string\`
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;

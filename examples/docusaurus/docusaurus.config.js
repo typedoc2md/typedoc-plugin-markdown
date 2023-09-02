@@ -48,8 +48,9 @@ const config = {
       {
         id: 'api-1',
         out: 'api-1',
-        ...require(path.join(__dirname, '../../stubs/.config/typedoc.1.cjs')),
-        skipIndexPage: true,
+        ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
+        entryPoints: '../../stubs/src/reflections/index.ts',
+        // outputFileStrategy: 'modules',
       },
     ],
     [
@@ -57,7 +58,10 @@ const config = {
       {
         id: 'api-2',
         out: 'api-2',
-        ...require(path.join(__dirname, '../../stubs/.config/typedoc.2.cjs')),
+        ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
+        entryPoints: '../../stubs/src/groups/**/*.ts',
+        // outputFileStrategy: 'modules',
+        membersWithOwnFile: ['Class', 'Interface'],
       },
     ],
     [
@@ -65,7 +69,9 @@ const config = {
       {
         id: 'api-3',
         out: 'api-3',
-        ...require(path.join(__dirname, '../../stubs/.config/typedoc.3.cjs')),
+        ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
+        entryPoints: '../../stubs/src/packages/*',
+        entryPointStrategy: 'packages',
       },
     ],
   ],
@@ -160,19 +166,6 @@ const config = {
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },

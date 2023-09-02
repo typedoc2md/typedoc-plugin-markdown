@@ -30,6 +30,10 @@ function projectHeader(
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const entryFileName = context.options.getValue('entryFileName');
+  const indexFileName = context.options.getValue('indexFileName') as string;
+  const titleLink = context.options.getValue('titleLink');
+  const hasBreadcrumbs = !context.options.getValue('hideBreadcrumbs');
+  const hasReadme = !context.options.getValue('readme')?.endsWith('none');
 
   const projectName = getProjectDisplayName(
     page.project,
@@ -38,9 +42,27 @@ function projectHeader(
 
   const md: string[] = [];
 
-  md.push(link(bold(projectName), context.relativeURL(entryFileName)));
+  if (Boolean(titleLink)) {
+    md.push(link(bold(projectName), titleLink));
+  } else {
+    md.push(bold(projectName));
+  }
 
-  return `${md.join(' ')}\n\n***\n`;
+  if (hasReadme) {
+    md.push(link('README', entryFileName));
+  }
+  if (hasReadme || !hasBreadcrumbs) {
+    md.push(
+      link(
+        'API',
+        hasReadme
+          ? context.relativeURL(indexFileName)
+          : context.relativeURL(entryFileName),
+      ),
+    );
+  }
+
+  return `${md.join(' ∙ ')}\n\n***\n`;
 }
 
 function packageHeader(
@@ -48,15 +70,35 @@ function packageHeader(
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const packageItem = findPackage(page.model) as any;
+
   if (!packageItem) {
     return '';
   }
 
   const md: string[] = [];
 
-  md.push(link(bold(packageItem.name), context.relativeURL(packageItem.url)));
+  const entryFileName = context.options.getValue('entryFileName');
+  const hasReadme = packageItem.readme;
+  const hasBreadcrumbs = !context.options.getValue('hideBreadcrumbs');
 
-  return `${md.join(' ')}\n\n***\n`;
+  md.push(bold(packageItem.name));
+
+  if (hasReadme) {
+    md.push(link('README', entryFileName));
+  }
+
+  if (hasReadme || !hasBreadcrumbs) {
+    md.push(
+      link(
+        'API',
+        hasReadme
+          ? context.relativeURL(packageItem.url)
+          : context.relativeURL(packageItem.url),
+      ),
+    );
+  }
+
+  return `${md.join(' ∙ ')}\n\n***\n`;
 }
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {

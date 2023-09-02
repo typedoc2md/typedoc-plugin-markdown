@@ -1,12 +1,12 @@
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, bold } from '../../../support/elements';
+import { backTicks, bold, codeBlock } from '../../../support/elements';
 import {
   escapeChars,
   stripComments,
   stripLineBreaks,
 } from '../../../support/utils';
-import { getDeclarationType } from '../../helpers';
+import { KEYWORD_MAP, getDeclarationType, isGroupKind } from '../../helpers';
 
 /**
  * @category Partials
@@ -14,6 +14,7 @@ import { getDeclarationType } from '../../helpers';
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
+  nested = false,
 ): string {
   const md: string[] = [];
 
@@ -21,37 +22,49 @@ export function declarationMemberIdentifier(
 
   const declarationType = getDeclarationType(reflection);
 
-  if (
-    reflection.flags?.length &&
-    !reflection.flags.isRest &&
-    !reflection.flags.isOptional
-  ) {
-    md.push(
-      reflection.flags
-        .map((flag) => bold(backTicks(flag.toLowerCase())))
-        .join(' '),
+  const prefix: string[] = [];
+
+  const modifiers = reflection.flags.filter(
+    (flag) => flag !== 'Optional' && !reflection.flags.isRest,
+  );
+
+  if (modifiers.length) {
+    prefix.push(
+      modifiers.map((flag) => bold(backTicks(flag.toLowerCase()))).join(' '),
     );
   }
 
-  if (reflection.kindOf(ReflectionKind.Variable) && !reflection.flags.isConst) {
-    md.push(backTicks('let'));
+  if (reflection.flags.isRest) {
+    prefix.push('...');
   }
 
-  if (reflection.flags.isRest) {
-    md.push('...');
+  if (isGroupKind(reflection) && KEYWORD_MAP[reflection.kind]) {
+    prefix.push(bold(backTicks(KEYWORD_MAP[reflection.kind])));
+  }
+
+  if (prefix.length) {
+    md.push(prefix.join(' ') + ' ');
   }
 
   const name: string[] = [];
 
-  if (Boolean(reflection.getSignature || Boolean(reflection.setSignature))) {
-    name.push(context.declarationMemberAccessor(reflection));
-  } else {
+  if (reflection.getSignature) {
+    name.push(backTicks('get') + ' ');
+  }
+
+  if (reflection.setSignature) {
+    name.push(backTicks('set') + ' ');
+  }
+
+  name.push(
+    bold(nested ? backTicks(reflection.name) : escapeChars(reflection.name)),
+  );
+
+  if (reflection.typeParameters) {
     name.push(
-      bold(
-        reflection.name.startsWith('<')
-          ? backTicks(reflection.name)
-          : escapeChars(reflection.name),
-      ),
+      `<${reflection.typeParameters
+        ?.map((typeParameter) => backTicks(typeParameter.name))
+        .join(', ')}>`,
     );
   }
 
@@ -60,26 +73,26 @@ export function declarationMemberIdentifier(
   }
 
   if (declarationType) {
-    name.push(':');
+    name.push(': ');
   }
 
   md.push(name.join(''));
 
-  if (reflection.typeParameters) {
-    md.push(
-      `<${reflection.typeParameters
-        ?.map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}>`,
-    );
-  }
-
   if (declarationType) {
-    md.push(`${context.someType(declarationType, !useCodeBlocks)}`);
+    md.push(context.someType(declarationType, true));
   }
 
   if (reflection.defaultValue && reflection.defaultValue !== '...') {
-    md.push(`= \`${stripLineBreaks(stripComments(reflection.defaultValue))}\``);
+    md.push(
+      ` = \`${stripLineBreaks(stripComments(reflection.defaultValue))}\``,
+    );
   }
 
-  return md.join(' ');
+  if (useCodeBlocks) {
+    md.push(';');
+  }
+
+  return useCodeBlocks
+    ? codeBlock(md.join(''))
+    : `${!nested ? '> ' : ''}${md.join('')}`;
 }

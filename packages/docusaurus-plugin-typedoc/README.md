@@ -1,29 +1,35 @@
 # docusaurus-plugin-typedoc
 
+![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc%2Fnext?\&logo=npm) [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
+
 A [Docusaurus](https://v2.docusaurus.io/) plugin to build TypeScript API documentation with [TypeDoc](https://github.com/TypeStrong/typedoc).
 
-[![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg)](https://www.npmjs.com/package/docusaurus-plugin-typedoc)
-![CI](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=master)
+## Contents
+
+*   [What does it do?](#what-does-it-do)
+*   [Installation](#installation)
+*   [Usage](#usage)
+*   [Options](#options)
+*   [Sidebar](#sidebar)
+*   [Other configuration](#other-configuration)
+*   [License](#license)
 
 ## What does it do?
 
-- Presets relevant options of [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown#readme).
-- Runs TypeDoc from the Docusaurus CLI.
-- Adds some basic frontmatter to pages and exposes the ability to configure frontmatter further.
+*   Presets relevant options of [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown#readme).
+*   Runs TypeDoc from the Docusaurus CLI.
 
 ## Installation
 
 > Install [Docusaurus](https://v2.docusaurus.io/docs/installation) in the root of your project and install the plugin dependencies in the same location as the Docusaurus website directory.
 
-> [typedoc](https://github.com/TypeStrong/typedoc), [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown) are peer dependencies.
+> [typedoc](https://github.com/TypeStrong/typedoc) and [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown) are peer dependencies.
 
 ```shell
 npm install docusaurus-plugin-typedoc typedoc typedoc-plugin-markdown@next --save-dev
 ```
 
 ## Usage
-
-### Config
 
 Add the plugin to `docusaurus.config.js` and specify the required options (see [options](#options)).
 
@@ -50,39 +56,37 @@ TypeDoc will be bootstraped with the Docusaurus `start` and `build` [cli command
 "build": "docusaurus build",
 ```
 
-Once built the docs will be available at `/docs/api` (or equivalent out directory).
+Once built the docs will be available at `http://localhost:3000/docs/api` (or equivalent out directory).
 
-### Directory structure
+Typical directory structure:
 
-```
-├── docusauruss-website
-    ├── build/ (static site dir)
-    ├── docs/
-    │   ├── api/ (compiled typedoc markdown)
-    ├── docusaurus.config.js
-    ├── package.json
-    ├── sidebars.js
-├──package.json
-├──src (typescript source files)
-├──tsconfig.json
-```
+        ├── docusaurus-website
+            ├── build/ (static site dir)
+            ├── docs/
+            │   ├── api/ (compiled typedoc markdown)
+            ├── docusaurus.config.js
+            ├── package.json
+            ├── sidebars.js
+        ├──package.json
+        ├──src (typescript source files)
+        ├──tsconfig.json
 
 ## Options
 
+### TypeDoc options
+
 Options can be declared:
 
-- Passing arguments via the command line.
-- Using a `typedoc.json` file.
-- Under the `typedocOptions` key in `tsconfig.json`.
+*   Passing arguments via the command line.
+*   Using a `typedoc.json` file.
+*   Under the `typedocOptions` key in `tsconfig.json`.
 
-Please see https://typedoc.org/options/configuration for general TypeDoc option configuration.
-
-### TypeDoc options
+Please see <https://typedoc.org/options/configuration> for general TypeDoc option configuration.
 
 The following TypeDoc / Markdown plugin options can be passed to config:
 
-- [typedoc](https://typedoc.org/options) options (HTML specific output options that will be ignored).
-- [typedoc-plugin-markdown ](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#options) options (Some options are already preset to target Docusaurus).
+*   [typedoc](https://typedoc.org/options) options (HTML specific output options that will be ignored).
+*   [typedoc-plugin-markdown ](https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#options) options (Some options are already preset to target Docusaurus).
 
 The following typedoc-plugin-markdown options are preset with the plugin.
 
@@ -92,8 +96,7 @@ The following typedoc-plugin-markdown options are preset with the plugin.
   "hideInPageTOC": true,
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
-  "entryFileName": "index.md",
-  "includeFileNumberPrefixes": true
+  "entryFileName": "index.md"
 }
 ```
 
@@ -105,23 +108,15 @@ Options specific to the plugin should also be declared in the same object.
 
 `sidebar.autoConfiguration`
 
-Set to `false` to disable sidebar metadata added to frontmatter. Defaults to `true`.
+Set to `false` to disable sidebar generation. Defaults to `true`.
 
-`sidebar.categoryLabel`
+`sidebar.filteredIds`
 
-The sidebar main parent category label. Defaults to entry page title.
+Ids of pages to be filtered from the sidebar. This would typically be used to filter README or modules named index from the sidebar.
 
-`sidebar.readmeLabel`
+`sidebar.pretty`
 
-The label of the readme page. Defaults to the h1 title of the readme page. Ignored if `readme=none`.
-
-`sidebar.indexLabel`
-
-The label of the index page. Defaults to the index page title.
-
-`sidebar.position`
-
-The position of the sidebar in the tree.
+Pretty format the sidebar json
 
 #### `--docsRoot`
 
@@ -131,92 +126,57 @@ The Docusaurus docs folder root. Use `./` if no root folder specified. Defaults 
 --docsRoot <path/to/docs-dir/>
 ```
 
-### An example configuration
+## Sidebar
+
+> Previous versions of this plugin recommended to use the `autogenerated` sidebar configuration. However we have decided it is more deterministic and configurable to use a manual sidebar configuration with an auto-generated sidebar file.
+
+A docusaurus sidebar file `typedoc-sidebar.cjs` is published to the relevant output directory along with the generated markdown documentation.
+
+This file should be referenced in `sidebars.js` using a sidebar slice and can be configured in following ways:
+
+1.  Display sidebar on the root:
 
 ```js
 module.exports = {
-  plugins: [
-    [
-      'docusaurus-plugin-typedoc',
-      {
-        // TypeDoc options
-        entryPoints: ['../src/index.ts'],
-        tsconfig: '../tsconfig.json',
-        plugin: ['typedoc-plugin-xyz'],
-
-        // Plugin options
-        out: 'api-xyz',
-      },
-    ],
-  ],
+  typedocSidebar: require('./docs/api/typedoc-sidebar.cjs'),
 };
 ```
 
-## Typing the config file
-
-The config can be typed using JSDoc type annotations. See https://docusaurus.io/docs/typescript-support#typing-config.
-
-```js
-/** @type {import('docusaurus-plugin-typedoc').PluginOptions} */
-```
-
-## Frontmatter
-
-Additional frontmatter options can be added to the config. Please see [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter#typedoc-plugin-frontmatter).
-
-For example:
-
-```json
-{
-  "frontmatterGlobals": {
-    "pagination_prev": null,
-    "pagination_next": null
-  }
-}
-```
-
-## Recipes
-
-### Sidebar and Navbar
-
-#### Sidebar
-
-`sidebars.js` can be configured in following ways:
-
-1. Generate the entire sidebar from file structure of your docs folder (default behaviour):
+2.  Display the sidebar inside a category:
 
 ```js
 module.exports = {
-  sidebar: [
+  typedocSidebar: {
+    'Typedoc Docs': require('./docs/api/typedoc-sidebar.cjs'),
+  },
+};
+```
+
+3.  Display the sidebar inside a linked category
+
+> Note the linked category page can be removed from sidebar using [`sidebar.filteredIds`]().
+
+```js
+module.exports = {
+  typedocSidebar: [
     {
-      type: 'autogenerated',
-      dirName: '.', // '.' means the docs folder
+      type: 'category',
+      label: 'Typedoc Docs',
+      link: {
+        type: 'doc',
+        id: 'api/index',
+      },
+      items: require('./docs/api/typedoc-sidebar.cjs'),
     },
   ],
 };
 ```
 
-2. Alternatively, if you wish to manually control other parts of your sidebar you can use a slice for the TypeDoc sidebar.
+Please see <https://docusaurus.io/docs/sidebar> for sidebar documentation.
 
-> note: `sidebar.categoryLabel` and `sidebar.position` options are ignored with this implementation)
+## Other configuration
 
-```js
-module.exports = {
-  sidebar: {
-    'Category 1': ['doc1', 'doc2', 'doc3'],
-    API: [
-      {
-        type: 'autogenerated',
-        dirName: 'api', // 'api' is the 'out' directory
-      },
-    ],
-  },
-};
-```
-
-Please see https://docusaurus.io/docs/sidebar for sidebar documentation.
-
-#### Navbar
+### Navbar
 
 A navbar item can be configured in `themeConfig` options in `docusaurus.config.js`:
 
@@ -235,7 +195,7 @@ A navbar item can be configured in `themeConfig` options in `docusaurus.config.j
 },
 ```
 
-Please see https://docusaurus.io/docs/api/themes/configuration#navbar-items for navbar documentation.
+Please see <https://docusaurus.io/docs/api/themes/configuration#navbar-items> for navbar documentation.
 
 ### Multi instance
 
@@ -268,9 +228,20 @@ module.exports = {
 };
 ```
 
+`sidebars.js`
+
+```js
+module.exports = {
+  typedocSidebar: {
+    'API 1': require('./docs/api-1/typedoc-sidebar.cjs'),
+    'API 2': require('./docs/api-2/typedoc-sidebar.cjs'),
+  },
+};
+```
+
 ### Watch mode
 
-Watching files is supported by passing in the `watch: true` option see [https://typedoc.org/guides/options/#watch](https://typedoc.org/guides/options/#watch).
+Watching files is supported by passing in the `watch: true` option see <https://typedoc.org/guides/options/#watch>.
 
 Targetting the option in development mode only can be achieved using Node.js Environment Variables:
 
@@ -297,6 +268,10 @@ module.exports = {
   ],
 };
 ```
+
+### Frontmatter
+
+To add frontmatter to page please use [typedoc-plugin-frontmatter](https://github.com/tgreyuk/typedoc-plugin-frontmatter#typedoc-plugin-frontmatter) and add options exposed by the plugin to the config.
 
 ## License
 

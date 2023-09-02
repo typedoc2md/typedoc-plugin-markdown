@@ -30,23 +30,25 @@ export const parsedConfig = Object.values(optionsConfig).map((value, i) => {
   const docs = optionsVariableStatements[i].getJsDocs().map((doc) => {
     return {
       comments: doc.getComment(),
-      category: doc.getTags()[0]?.getComment(),
+      category: doc.getTags()[0]?.getComment() || 'other',
     };
   })[0];
   return {
     ...value,
-    ...docs,
+    ...(docs ? docs : { category: 'other' }),
   };
 });
 
 export const groupedConfig = parsedConfig.groupBy('category');
 
 export const TITLE_MAP = {
-  fileOutput: 'File Options',
-  ui: 'UI Options',
+  fileOutput: 'File output options',
+  ui: 'Structure and formatting options',
+  other: 'Utility options',
 };
 
 export const INTRO_MAP = {
-  fileOutput: 'Options that define how output files are generated.',
-  ui: 'UI Options',
+  fileOutput: '',
+  ui: '',
+  other: '',
 };

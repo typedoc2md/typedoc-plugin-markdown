@@ -13,6 +13,7 @@ export function enumMembersTable(
 ): string {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
+  const hasSources = !context.options.getValue('disableSources');
 
   const headers = ['Member', 'Value'];
 
@@ -20,14 +21,25 @@ export function enumMembersTable(
     headers.push('Description');
   }
 
+  if (hasSources) {
+    headers.push('Source');
+  }
+
   const rows = props.map((property: DeclarationReflection) => {
     const propertyType = getDeclarationType(property);
     const row: string[] = [];
-    row.push(backTicks(property.name));
-    if (propertyType) {
-      row.push(
-        stripLineBreaks(backTicks(context.someType(propertyType, true))),
+    const nameColumn: string[] = [];
+
+    if (context.options.getValue('htmlTableAnchors') && property.anchor) {
+      nameColumn.push(
+        `<a id="${property.anchor}" name="${property.anchor}"></a>`,
       );
+    }
+
+    nameColumn.push(backTicks(property.name));
+    row.push(nameColumn.join(' '));
+    if (propertyType) {
+      row.push(stripLineBreaks(context.someType(propertyType, true)));
     }
     if (hasComments) {
       const comments = getComments(property);
@@ -39,6 +51,11 @@ export function enumMembersTable(
         row.push('-');
       }
     }
+
+    if (hasSources) {
+      row.push(context.sources(property, -1));
+    }
+
     return `| ${row.join(' | ')} |\n`;
   });
 

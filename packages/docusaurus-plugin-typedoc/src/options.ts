@@ -7,13 +7,11 @@ const DEFAULT_PLUGIN_OPTIONS = {
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageHeader: true,
-  githubPages: false,
-  includeFileNumberPrefixes: true,
   entryFileName: 'index.md',
   sidebar: {
     autoConfiguration: true,
   },
-  plugin: ['typedoc-plugin-markdown', 'typedoc-plugin-frontmatter'],
+  plugin: ['typedoc-plugin-markdown'],
 };
 
 export function getPluginOptions(

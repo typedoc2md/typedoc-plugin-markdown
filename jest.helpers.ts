@@ -1,15 +1,6 @@
 require('ts-node/register');
-import * as path from 'path';
 
-import {
-  Application,
-  ProjectReflection,
-  RendererEvent,
-  TSConfigReader,
-  TypeDocReader,
-  UrlMapping,
-} from 'typedoc';
-
+/*
 const STUBS_SRC_PATH = path.join(__dirname, 'stubs', 'src');
 const STUBS_TSCONFIG_PATH = path.join(__dirname, 'stubs', 'tsconfig.json');
 
@@ -72,4 +63,4 @@ export async function render(
     });
     this.trigger(RendererEvent.END, output);
   }
-}
+}*/

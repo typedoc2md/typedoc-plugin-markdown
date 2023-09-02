@@ -1,9 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { Application } from 'typedoc';
+import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { PluginOptions } from '.';
-import { loadFrontmatter } from './frontmatter';
 import { getPluginOptions } from './options';
+import { getSidebar } from './sidebar';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -50,9 +51,25 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const outputDir = path.resolve(siteDir, options.docsRoot, options.out);
 
+  if (options.cleanOutputDir) {
+    removeDir(outputDir);
+  }
+
   const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
 
-  loadFrontmatter(app, options.sidebar);
+  app.renderer.postRenderAsyncJobs.push(
+    async (output: MarkdownRendererEvent) => {
+      const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+      const sidebarJson = getSidebar(output.navigation, options.out);
+      fs.writeFileSync(
+        sidebarPath,
+        `// @ts-check
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const typedocSidebar = { items: ${JSON.stringify(sidebarJson)}};
+module.exports = typedocSidebar.items;`,
+      );
+    },
+  );
 
   const project = await app.convert();
 
@@ -83,4 +100,22 @@ export function writeFileSync(fileName: string, data: string) {
 
 export function normalizePath(path: string) {
   return path.replace(/\\/g, '/');
+}
+
+export function removeDir(path: string) {
+  if (fs.existsSync(path)) {
+    const files = fs.readdirSync(path);
+    if (files.length > 0) {
+      files.forEach(function (filename) {
+        if (fs.statSync(path + '/' + filename).isDirectory()) {
+          removeDir(path + '/' + filename);
+        } else {
+          fs.unlinkSync(path + '/' + filename);
+        }
+      });
+      fs.rmdirSync(path);
+    } else {
+      fs.rmdirSync(path);
+    }
+  }
 }

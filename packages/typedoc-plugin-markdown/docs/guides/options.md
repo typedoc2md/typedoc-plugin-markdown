@@ -2,53 +2,43 @@
 
 ## Contents
 
-*   [File Options](#file-options)
+*   [File output options](#file-output-options)
 
     *   [`--outputFileStrategy`](#--outputfilestrategy)
-    *   [`--includeFileNumberPrefixes`](#--includefilenumberprefixes)
-    *   [`--flattenOutputFiles`](#--flattenoutputfiles)
+    *   [`--membersWithOwnFile`](#--memberswithownfile)
     *   [`--entryFileName`](#--entryfilename)
-    *   [`--indexFileName`](#--indexfilename)
-    *   [`--indexPageTitle`](#--indexpagetitle)
-    *   [`--skipIndexPage`](#--skipindexpage)
-    *   [`--preserveAnchorCasing`](#--preserveanchorcasing)
-    *   [`--anchorPrefix`](#--anchorprefix)
 
-*   [UI Options](#ui-options)
+*   [Structure and formatting options](#structure-and-formatting-options)
 
-    *   [`--excludeGroups`](#--excludegroups)
     *   [`--hidePageHeader`](#--hidepageheader)
     *   [`--hidePageTitle`](#--hidepagetitle)
     *   [`--hideBreadcrumbs`](#--hidebreadcrumbs)
     *   [`--hideInPageTOC`](#--hideinpagetoc)
-    *   [`--hideHierarchy`](#--hidehierarchy)
+    *   [`--indexPageTitle`](#--indexpagetitle)
+    *   [`--titleTemplate`](#--titletemplate)
+    *   [`--excludeGroups`](#--excludegroups)
     *   [`--identifiersAsCodeBlocks`](#--identifiersascodeblocks)
+    *   [`--parametersFormat`](#--parametersformat)
     *   [`--propertiesFormat`](#--propertiesformat)
     *   [`--enumMembersFormat`](#--enummembersformat)
     *   [`--typeDeclarationFormat`](#--typedeclarationformat)
-    *   [`--tocFormat`](#--tocformat)
-    *   [`--titleTemplate`](#--titletemplate)
+    *   [`--indexFormat`](#--indexformat)
 
-## File Options
+*   [Utility options](#utility-options)
 
-Options that define how output files are generated.
+    *   [`--preserveAnchorCasing`](#--preserveanchorcasing)
+    *   [`--anchorPrefix`](#--anchorprefix)
+    *   [`--htmlHeadingAnchors`](#--htmlheadinganchors)
+    *   [`--htmlTableAnchors`](#--htmltableanchors)
 
-***
+## File output options
 
 ### `--outputFileStrategy`
 
-> Determines how output files are generated.
+Determines how output files are generated. Defaults to `"members"`
 
-#### Type
-
-`"members" | "modules"`
-
-#### Default
-
-```json
-{
-  "outputFileStrategy": "members"
-}  
+```shell
+--outputFileStrategy "members"|"modules"
 ```
 
 #### Usage
@@ -57,69 +47,67 @@ TypeDoc creates documentation according to exports. The structure will be driven
 
 This options aims to provide some flexibility as to how files can be generated.
 
-**"members"**
+**`--outputFileStrategy members`**
 
 Generates an individual file for each exported member. This is the standard behaviour of the HTML theme and the plugin default.
 
-![outputFileStrategy members folders](../images/options/outputFileStrategy-members.png)
+In this example output folder structure modules `module-a` and `module-b` export two classes and variables each:
 
-**"modules"**
+    ├── README.md
+    ├── API.md
+    ├── module-a
+    ├── ├── README.md
+    │   ├── classes
+    │   │   ├── ClassA.md
+    │   │   ├── ClassB.md
+    ├── ├── variables
+    │   │   ├── VariableA.md
+    │   │   ├── VariableB.md
+    ├── module-b
+    ├── ├── README.md
+    │   ├── classes
+    │   │   ├── ClassA.md
+    │   │   ├── ClassB.md
+    ├── ├── variables
+    │   │   ├── VariableA.md
+    │   │   ├── VariableB.md
+
+When `members` is set, it is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#membersWithOwnFile) option.
+
+**`--outputFileStrategy modules`**
 
 Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
 
-![outputFileStrategy modules folders](../images/options/outputFileStrategy-modules.png)
+The above example will output the following folder structure:
+
+    ├── README.md
+    ├── API.md
+    ├── module-a.md
+    ├── module-b.md
 
 [↑ Top](#options-guide)
 
 ***
 
-### `--includeFileNumberPrefixes`
+### `--membersWithOwnFile`
 
-> Prefixes generated files and folders with number prefixes.
+Determines which members are exported to their own file. Ignored when `outputFileStrategy` = `modules`. Defaults to `['Enum', 'Variable', 'Function', 'Class', 'Interface', 'TypeAlias']`
 
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "includeFileNumberPrefixes": "false"
-}  
+```shell
+--membersWithOwnFile Array<
+    ['Enum' | 'Variable' | 'Function' | 'Class' | 'Interface' | 'TypeAlias']
+  >
 ```
 
 #### Usage
 
-This makes files and folders appear in the file system in the same order as they are sorted. This is useful where auto sidebar generation may be required.
+To export only Interfaces, classes and enums to their own file, the option should be configured in an options file as follows:
 
-![includeFileNumberPrefixes folders](../images/options/includeFileNumberPrefixes.png)
-
-[↑ Top](#options-guide)
-
-***
-
-### `--flattenOutputFiles`
-
-> Flatten output files without folders.
-
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
+```js
 {
-  "flattenOutputFiles": "false"
-}  
+  membersWithOwnFile: ['Interface', 'Class', 'Enum']
+}
 ```
-
-#### Usage
-
-This creates a flat folder structure without any folders - a required format for some Wikis.
-
-![flattenOutputFiles folders](../images/options/flattenOutputFiles.png)
 
 [↑ Top](#options-guide)
 
@@ -127,62 +115,78 @@ This creates a flat folder structure without any folders - a required format for
 
 ### `--entryFileName`
 
-> The file name of the entry page.
+The file name of the entry page. Defaults to `"README.md"`
 
-#### Type
-
-`string`
-
-#### Default
-
-```json
-{
-  "entryFileName": "README.md"
-}  
+```shell
+--entryFileName <string>
 ```
 
 #### Usage
 
+The entry page in this context is the reference to the file that acts as a root page for a project and it's folders, equivalent to `index.html` for web pages.
+
 `README.md` is recognised when browsing folders on repos and Wikis. `index.md` might be better if published as a web site.
 
-Note the content of this file is either the API entry / index page, or the project readme (dependant on if a readme file is resolved or not).
+The content of this file at the root of the project is conditional on if a readme file is resolved for the project.
 
-a. If a readme file is resolved then two root files are generated:
+A. If a readme file is resolved then two root files are generated:
 
-├── {entryFileName} - (the project readme file)
-├── API.md - (API index page)
+    ├── README.md - (the project readme file)
+    ├── API.md - (API index page)
 
-b. If a readme file is NOT resolved, then the index page becomes the entryFileName page.
+B. If a readme file is NOT resolved (when `readme` = `none`), then the index page becomes the `entryFileName` page and there is no seperate index page.
 
-├── {entryFileName} - (API index page)
+    ├── README.md - (API index page)
 
 [↑ Top](#options-guide)
 
 ***
 
-### `--indexFileName`
+## Structure and formatting options
 
-> The file name the seperate index page.
+### `--hidePageHeader`
 
-#### Type
+Do not print page header. Defaults to `false`
 
-`string`
-
-#### Default
-
-```json
-{
-  "indexFileName": "API.md"
-}  
+```shell
+--hidePageHeader <boolean>
 ```
 
-#### Usage
+[↑ Top](#options-guide)
 
-This page either contains the module index or exported symbols depending on the given `entryPoints`.
+***
 
-This page may not be required (if navigation is present for example) and can be skipped. See `skipIndexPage`.
+### `--hidePageTitle`
 
-This option is ignored if `readme=none` or `skipIndexPage=true`.
+Do not print page title. Defaults to `false`
+
+```shell
+--hidePageTitle <boolean>
+```
+
+[↑ Top](#options-guide)
+
+***
+
+### `--hideBreadcrumbs`
+
+Do not print breadcrumbs. Defaults to `false`
+
+```shell
+--hideBreadcrumbs <boolean>
+```
+
+[↑ Top](#options-guide)
+
+***
+
+### `--hideInPageTOC`
+
+Do not render in-page TOC/Index items. Defaults to `false`
+
+```shell
+--hideInPageTOC <boolean>
+```
 
 [↑ Top](#options-guide)
 
@@ -190,116 +194,52 @@ This option is ignored if `readme=none` or `skipIndexPage=true`.
 
 ### `--indexPageTitle`
 
-> The title of API index page.
+The title of project index page. Defaults to `"{projectName}"`
 
-#### Type
-
-`string`
-
-#### Default
-
-```json
-{
-  "indexPageTitle": "API"
-}  
+```shell
+--indexPageTitle <string>
 ```
 
 #### Usage
+
+This provides a mechanism to change the main project index page title.
+
+Note this will also serve as the root breadcrumb text.
 
 [↑ Top](#options-guide)
 
 ***
 
-### `--skipIndexPage`
+### `--titleTemplate`
 
-> Skips generation of a seperate API index page.
+Specify a template for displaying page titles. Defaults to `"{name} `{kind}`"`
 
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "skipIndexPage": "false"
-}  
+```shell
+--titleTemplate <string>
 ```
 
 #### Usage
 
-This option skips the generation of the index page if it is not required.
+Supports {kind} and {name} placeholders.
 
-Please note this option will be ignored if a single entryPoint is defined as it will contain exported symbols.
+Example for displaying name only:
 
-[↑ Top](#options-guide)
+    titleTemplate: "{name}"
 
-***
+Example for displaying kind in backticks:
 
-### `--preserveAnchorCasing`
-
-> Preserve anchor casing when generating links.
-
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "preserveAnchorCasing": "false"
-}  
-```
-
-#### Usage
+    titleTemplate: "{name} `{kind}`"
 
 [↑ Top](#options-guide)
-
-***
-
-### `--anchorPrefix`
-
-> Custom anchor prefix
-
-#### Type
-
-`string`
-
-#### Default
-
-```json
-{
-  "anchorPrefix": "undefined"
-}  
-```
-
-#### Usage
-
-[↑ Top](#options-guide)
-
-***
-
-## UI Options
-
-UI Options
 
 ***
 
 ### `--excludeGroups`
 
-> Excludes grouping by reflection kind so all members are rendered and sorted at the same level.
+Excludes grouping by reflection kind so all members are rendered and sorted at the same level. Defaults to `false`
 
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "excludeGroups": "false"
-}  
+```shell
+--excludeGroups <boolean>
 ```
 
 #### Usage
@@ -336,130 +276,12 @@ This creates a flat structure where all members are displayed at the same level.
 
 ***
 
-### `--hidePageHeader`
-
-> Do not print page header.
-
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "hidePageHeader": "false"
-}  
-```
-
-#### Usage
-
-[↑ Top](#options-guide)
-
-***
-
-### `--hidePageTitle`
-
-> Do not print page title.
-
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "hidePageTitle": "false"
-}  
-```
-
-#### Usage
-
-[↑ Top](#options-guide)
-
-***
-
-### `--hideBreadcrumbs`
-
-> Do not print breadcrumbs.
-
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "hideBreadcrumbs": "false"
-}  
-```
-
-#### Usage
-
-[↑ Top](#options-guide)
-
-***
-
-### `--hideInPageTOC`
-
-> Do not render in-page TOC/Index items.
-
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "hideInPageTOC": "false"
-}  
-```
-
-#### Usage
-
-[↑ Top](#options-guide)
-
-***
-
-### `--hideHierarchy`
-
-> Do not print reflection hierarchy.
-
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "hideHierarchy": "false"
-}  
-```
-
-#### Usage
-
-[↑ Top](#options-guide)
-
-***
-
 ### `--identifiersAsCodeBlocks`
 
-> Format signature and declaration identifiers in code blocks.
+Format signature and declaration identifiers in code blocks. Defaults to `false`
 
-#### Type
-
-`boolean`
-
-#### Default
-
-```json
-{
-  "identifiersAsCodeBlocks": "false"
-}  
+```shell
+--identifiersAsCodeBlocks <boolean>
 ```
 
 #### Usage
@@ -470,23 +292,25 @@ Note if `true` references will not be linked.
 
 ***
 
-### `--propertiesFormat`
+### `--parametersFormat`
 
-> Specify the render style of properties groups for interfaces and classes.
+Specify the render style of parameter and type parameter groups. Defaults to `"list"`
 
-#### Type
-
-`"list" | "table"`
-
-#### Default
-
-```json
-{
-  "propertiesFormat": "list"
-}  
+```shell
+--parametersFormat "list"|"table"
 ```
 
-#### Usage
+[↑ Top](#options-guide)
+
+***
+
+### `--propertiesFormat`
+
+Specify the render style of properties groups for interfaces and classes. Defaults to `"list"`
+
+```shell
+--propertiesFormat "list"|"table"
+```
 
 [↑ Top](#options-guide)
 
@@ -494,21 +318,11 @@ Note if `true` references will not be linked.
 
 ### `--enumMembersFormat`
 
-> Specify the render style of Enum members.
+Specify the render style of Enum members. Defaults to `"list"`
 
-#### Type
-
-`"list" | "table"`
-
-#### Default
-
-```json
-{
-  "enumMembersFormat": "list"
-}  
+```shell
+--enumMembersFormat "list"|"table"
 ```
-
-#### Usage
 
 [↑ Top](#options-guide)
 
@@ -516,69 +330,77 @@ Note if `true` references will not be linked.
 
 ### `--typeDeclarationFormat`
 
-> Specify the render style for type declaration members.
+Specify the render style for type declaration members. Defaults to `"list"`
 
-#### Type
-
-`"list" | "table"`
-
-#### Default
-
-```json
-{
-  "typeDeclarationFormat": "list"
-}  
+```shell
+--typeDeclarationFormat "list"|"table"
 ```
-
-#### Usage
 
 [↑ Top](#options-guide)
 
 ***
 
-### `--tocFormat`
+### `--indexFormat`
 
-> Render TOC either as a simple list or a table with a description.
+Render indexes either as a simple list or a table with a description. Defaults to `"list"`
 
-#### Type
-
-`"list" | "table"`
-
-#### Default
-
-```json
-{
-  "tocFormat": "list"
-}  
+```shell
+--indexFormat "list"|"table"
 ```
-
-#### Usage
 
 [↑ Top](#options-guide)
 
 ***
 
-### `--titleTemplate`
+## Utility options
 
-> Specify a template for displaying page titles.
+### `--preserveAnchorCasing`
 
-#### Type
+Preserve anchor casing when generating links. Defaults to `false`
 
-`string`
+```shell
+--preserveAnchorCasing <boolean>
+```
 
-#### Default
+[↑ Top](#options-guide)
 
-```json
-{
-  "titleTemplate": "{kind}: {name}"
-}  
+***
+
+### `--anchorPrefix`
+
+Custom anchor prefix Defaults to `"undefined"`
+
+```shell
+--anchorPrefix <string>
+```
+
+[↑ Top](#options-guide)
+
+***
+
+### `--htmlHeadingAnchors`
+
+Use HTML named anchors on heading elements. Defaults to `false`
+
+```shell
+--htmlHeadingAnchors <boolean>
+```
+
+[↑ Top](#options-guide)
+
+***
+
+### `--htmlTableAnchors`
+
+Use HTML named anchors on table rows that contain linkable symbols. Defaults to `false`
+
+```shell
+--htmlTableAnchors <boolean>
 ```
 
 #### Usage
 
-Supports {kind} and {name} placeholders.
-
-    titleTemplate: "{kind}: {name}"
+Comment without tag
 
 [↑ Top](#options-guide)
 

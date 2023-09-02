@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > typeOperatorVariable
+
+# Variable: typeOperatorVariable
+
+> **\`const\`** **typeOperatorVariable**: unique \`symbol\`
+
+Comments for typeOperatorVariable
+
+## Source
+
+[variables.ts:13](source-url)
+"
+`;
+
+exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > typeOperatorVariable
+
+# typeOperatorVariable
+
+\`\`\`ts
+const typeOperatorVariable: unique symbol;
+\`\`\`
+
+Comments for typeOperatorVariable
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > stringVariable
+
+# Variable: stringVariable
+
+> **\`const\`** **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
+
+A simple string variable
+
+## Source
+
+[variables.ts:8](source-url)
+"
+`;
+
+exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > stringVariable
+
+# stringVariable
+
+\`\`\`ts
+const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultValue';
+\`\`\`
+
+A simple string variable
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
+exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+
+***
+
+[API](../API.md) > objectLiteralVariable
+
+# Variable: objectLiteralVariable
+
+> **\`const\`** **objectLiteralVariable**: \`object\`
+
+Comments for objectLiteralVariable
+
+## Type declaration
+
+**\`<\`**: \`string\` = \`'<foo>'\`
+
+**\`<foo>\`**: \`string\` = \`'foo'\`
+
+**\`\\n\`**: \`string\` = \`'foo'\`
+
+**\`_\`**: \`string\` = \`'foo'\`
+
+**\`prop_with_underscore\`**: \`string\` = \`'foo'\`
+
+**\`prop|with|pipes\`**: \`string\` = \`'foo'\`
+
+**\`valueA\`**: \`number\` = \`100\`
+
+**\`valueB\`**: \`boolean\` = \`true\`
+
+**\`valueX\`**: \`object\`
+
+> **\`valueA\`**: \`number\`[]
+>
+> **\`valueY\`**: (\`z\`) => \\{  \`a\`: \`string\`;  \`b\`: \`string\`; }
+>
+>
+>
+> **\`valueZ\`**: \`string\` = \`'foo'\`
+>
+>
+
+**\`valueY\`**: (\`unionParam\`, \`_undercoreParam_\`) => \`string\`
+
+**\`valueZ\`**: \`string\` = \`'_foo_'\`
+
+**\`|\`**: \`string\` = \`'foo'\`
+
+**\`~\`**: \`string\` = \`'foo'\`
+
+## Source
+
+[variables.ts:18](source-url)
+"
+`;
+
+exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > objectLiteralVariable
+
+# objectLiteralVariable
+
+\`\`\`ts
+const objectLiteralVariable: object;
+\`\`\`
+
+Comments for objectLiteralVariable
+
+## Type declaration
+
+| Member | Type |
+| :------ | :------ |
+| \`<\` | \`string\` |
+| \`<foo>\` | \`string\` |
+| \`\\n\` | \`string\` |
+| \`_\` | \`string\` |
+| \`prop_with_underscore\` | \`string\` |
+| \`prop\\|with\\|pipes\` | \`string\` |
+| \`valueA\` | \`number\` |
+| \`valueB\` | \`boolean\` |
+| \`valueX\` | \`object\` |
+| \`valueX.valueA\` | \`number\`[] |
+| \`valueX.valueY\` | (\`z\`) => \\{  \`a\`: \`string\`;  \`b\`: \`string\`; } |
+| \`valueX.valueZ\` | \`string\` |
+| \`valueY\` | (\`unionParam\`, \`_undercoreParam_\`) => \`string\` |
+| \`valueZ\` | \`string\` |
+| \`\\|\` | \`string\` |
+| \`~\` | \`string\` |
+
+***
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;

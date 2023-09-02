@@ -2,6 +2,7 @@ import { ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { heading } from '../../../support/elements';
+import { hasTOC } from '../../helpers';
 
 /**
  * @category Templates
@@ -29,6 +30,10 @@ export function projectTemplate(
   }
 
   md.push(context.pageIndex(page, 2));
+
+  if (hasTOC(page.model)) {
+    md.push(context.reflectionIndex(page.model, true, 2));
+  }
 
   md.push(context.members(page.model, 2));
 

@@ -1,4 +1,4 @@
-import { CommentDisplayPart } from 'typedoc';
+import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 
 /**
@@ -24,10 +24,7 @@ export function commentParts(
           case '@linkcode':
           case '@linkplain': {
             if (part.target) {
-              const url =
-                typeof part.target === 'string'
-                  ? part.target
-                  : context.relativeURL((part.target as any).url);
+              const url = getUrl(context, part);
               const wrap = part.tag === '@linkcode' ? '`' : '';
               md.push(url ? `[${wrap}${part.text}${wrap}](${url})` : part.text);
             } else {
@@ -45,4 +42,19 @@ export function commentParts(
     }
   }
   return md.join('');
+}
+
+function getUrl(
+  context: MarkdownThemeRenderContext,
+  part: InlineTagDisplayPart,
+) {
+  if ((part.target as any).url) {
+    return context.relativeURL((part.target as any).url);
+  }
+
+  if ((part.target as any)?.parent?.url) {
+    return context.relativeURL((part.target as any)?.parent?.url);
+  }
+
+  return part.target;
 }

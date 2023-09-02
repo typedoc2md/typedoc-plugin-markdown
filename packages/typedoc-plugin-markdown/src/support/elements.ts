@@ -19,7 +19,8 @@ export const bold = (text: string) => `**${text}**`;
 
 export const italic = (text: string) => `*${text}*`;
 
-export const backTicks = (text: string) => `\`${text}\``;
+export const backTicks = (text: string) =>
+  /(\`)/g.test(text) ? text.replace(/`/g, '\\`') : `\`${text}\``;
 
 export const unorderedList = <T>(items: T[]) =>
   items.map((item) => `- ${item}`).join('\n');

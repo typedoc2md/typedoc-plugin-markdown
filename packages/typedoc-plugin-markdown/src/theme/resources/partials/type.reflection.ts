@@ -9,6 +9,7 @@ export function reflectionType(
   context: MarkdownThemeRenderContext,
   reflectionType: ReflectionType,
   collapse: boolean,
+  format: boolean,
 ): string {
   const root =
     reflectionType instanceof ReflectionType
@@ -17,5 +18,5 @@ export function reflectionType(
   if (root.signatures) {
     return context.functionType(root.signatures);
   }
-  return collapse ? backTicks('object') : context.declarationType(root);
+  return collapse ? backTicks('object') : context.declarationType(root, format);
 }

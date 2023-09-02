@@ -1,6 +1,6 @@
 import { ParameterReflection, SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, bold } from '../../../support/elements';
+import { backTicks, bold, codeBlock } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
 
 /**
@@ -9,15 +9,14 @@ import { escapeChars } from '../../../support/utils';
 export function signatureMemberIdentifier(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
+  accessor?: string,
 ): string {
   const md: string[] = [];
 
-  if (signature.parent?.getSignature) {
-    md.push('get ');
-  }
+  const useCodeBlocks = context.options.getValue('identifiersAsCodeBlocks');
 
-  if (signature.parent?.setSignature) {
-    md.push('set ');
+  if (accessor) {
+    md.push(backTicks(accessor) + ' ');
   }
 
   if (signature.parent && signature.parent.flags?.length > 0) {
@@ -46,7 +45,7 @@ export function signatureMemberIdentifier(
     );
     return parameters
       .map((param, i) => {
-        const paramsmd: string[] = [parameters.length > 2 ? '\n  ' : ''];
+        const paramsmd: string[] = [];
         if (param.flags.isRest) {
           paramsmd.push('...');
         }
@@ -56,13 +55,14 @@ export function signatureMemberIdentifier(
             ? '?'
             : ''
         }`;
-        paramsmd.push(paramItem);
-        if (param.defaultValue) {
-          paramsmd.push(` = ${backTicks(param.defaultValue)}`);
-        }
+        paramsmd.push(
+          `${
+            useCodeBlocks && parameters.length > 2 ? '\n    ' : ''
+          }${paramItem}`,
+        );
         return paramsmd.join('');
       })
-      .join(`,${parameters.length > 2 ? '' : ' '}`);
+      .join(`, `);
   };
 
   md.push(
@@ -75,5 +75,5 @@ export function signatureMemberIdentifier(
     md.push(`: ${context.someType(signature.type, true)}`);
   }
 
-  return md.join('');
+  return useCodeBlocks ? codeBlock(md.join('')) : `> ${md.join('')}`;
 }

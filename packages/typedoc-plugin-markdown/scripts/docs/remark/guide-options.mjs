@@ -12,6 +12,7 @@ export default function guideOptions() {
   return (tree) => {
     parseOptions(tree, 'fileOutput');
     parseOptions(tree, 'ui');
+    parseOptions(tree, 'other');
   };
 }
 
@@ -24,23 +25,29 @@ function parseOptions(tree, key) {
 
 function getMarkdown(key) {
   const md = [INTRO_MAP[key]];
-  md.push('***');
 
   groupedConfig[key].forEach((config, i) => {
     md.push(`### \`--${config.name}\``);
-    md.push(`> ${config.help}`);
-    md.push('#### Type');
-    md.push(`\`${getType(config)}\``);
-    md.push('#### Default');
+    md.push(`${config.help} Defaults to \`${getDefaultValue(config)}\``);
     md.push(`
-  \`\`\`json  
-  {
-    "${config.name}": "${config.defaultValue}"
-  }  
-  \`\`\`  
-        `);
-    md.push('#### Usage');
-    md.push(config.comments);
+\`\`\`shell
+--${config.name} ${getType(config)}
+\`\`\`
+  `);
+    //md.push('#### Type');
+    //md.push(`\`${getType(config)}\``);
+    //md.push('#### Default');
+    // md.push(`
+    //  \`\`\`json
+    //  {
+    //    "${config.name}": "${config.defaultValue}"
+    //  }
+    /// \`\`\`
+    //`);
+    if (config.comments?.length > 0) {
+      md.push('#### Usage');
+      md.push(config.comments);
+    }
     md.push('[↑ Top](#options-guide)');
     md.push('***');
   });
@@ -50,17 +57,35 @@ function getMarkdown(key) {
 
 function getType(option) {
   if (option.type === ParameterType.Boolean) {
-    return 'boolean';
+    return '<boolean>';
   }
   if (option.type === ParameterType.Array) {
-    return 'any[]';
+    return `Array<\n    [${option.defaultValue
+      .toString()
+      .split(',')
+      .map((item) => `'${item}'`)
+      .join(' | ')}]\n  >`;
   }
   if (option.type === ParameterType.Map && option.map) {
     return `${Object.values(option.map)
       .map((value) => `"${value}"`)
-      .join(' | ')}`;
+      .join('|')}`;
   }
-  return 'string';
+  return '<string>';
+}
+
+function getDefaultValue(option) {
+  if (option.type === ParameterType.Boolean) {
+    return option.defaultValue;
+  }
+  if (option.type === ParameterType.Array) {
+    return `[${option.defaultValue
+      .toString()
+      .split(',')
+      .map((item) => `'${item}'`)
+      .join(', ')}]`;
+  }
+  return `"${option.defaultValue}"`;
 }
 
 function getOptions(intro, key) {

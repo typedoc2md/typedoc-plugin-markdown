@@ -7,10 +7,11 @@
 
 import {
   DeclarationReflection,
-  Options,
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
+import { backTicks } from '../support/elements';
+import { escapeChars } from '../support/utils';
 
 export function getDeclarationType(declaration: DeclarationReflection) {
   if (declaration.getSignature) {
@@ -26,8 +27,11 @@ export function getProjectDisplayName(
   project: ProjectReflection,
   includeVersion: boolean,
 ): string {
-  const version = includeVersion ? ` - v${project.packageVersion}` : '';
-  return `${project.name}${version}`;
+  const version =
+    includeVersion && project.packageVersion
+      ? ` - v${project.packageVersion}`
+      : '';
+  return `${project.name}${version ? version : ''}`;
 }
 
 export function hasIndex(
@@ -36,25 +40,40 @@ export function hasIndex(
   return reflection.groups?.some((group) => group.allChildrenHaveOwnDocument());
 }
 
-export function hasTOC(reflection: DeclarationReflection, options: Options) {
-  if (options.getValue('hideInPageTOC')) {
-    return false;
-  }
-  return reflection.kindOf([ReflectionKind.Module, ReflectionKind.Namespace]);
+export function hasTOC(reflection: DeclarationReflection | ProjectReflection) {
+  return (
+    reflection.kindOf([
+      ReflectionKind.Project,
+      ReflectionKind.Module,
+      ReflectionKind.Namespace,
+    ]) &&
+    reflection.groups?.some((group) => !group.allChildrenHaveOwnDocument())
+  );
+}
+
+export function isGroupKind(reflection: DeclarationReflection) {
+  return reflection.kindOf([
+    ReflectionKind.Class,
+    ReflectionKind.Interface,
+    ReflectionKind.Enum,
+    ReflectionKind.Function,
+    ReflectionKind.Variable,
+    ReflectionKind.TypeAlias,
+  ]);
 }
 
 export function getModifier(reflection: DeclarationReflection) {
   if (reflection.flags.isAbstract) {
-    return 'Abstract';
+    return 'abstract';
   }
   if (reflection.flags.isPrivate) {
-    return 'Private';
+    return 'private';
   }
   if (reflection.flags.isReadonly) {
-    return 'Readonly';
+    return 'readonly';
   }
   if (reflection.flags.isStatic) {
-    return 'Static';
+    return 'static';
   }
   if (reflection.getSignature) {
     return 'get';
@@ -63,4 +82,41 @@ export function getModifier(reflection: DeclarationReflection) {
     return 'set';
   }
   return null;
+}
+
+export const KEYWORD_MAP = {
+  [ReflectionKind.Class]: 'class',
+  [ReflectionKind.Interface]: 'interface',
+  [ReflectionKind.Enum]: 'enum',
+  [ReflectionKind.TypeAlias]: 'type',
+};
+
+export function getMemberTitle(reflection: DeclarationReflection) {
+  const md: string[] = [];
+
+  const name: string[] = [];
+
+  const flagsToInclude = ['Abstract'];
+
+  const flags = reflection.flags.filter((flag) =>
+    flagsToInclude.includes(flag),
+  );
+
+  if (flags.length) {
+    name.push(flags.map((flag) => backTicks(flag.toLowerCase())).join(' '));
+    name.push(' ');
+  }
+
+  name.push(`${escapeChars(reflection.name)}`);
+
+  if (reflection.typeParameters) {
+    const typeParameters = reflection.typeParameters
+      .map((typeParameter) => typeParameter.name)
+      .join(', ');
+    name.push(`${backTicks(`<${typeParameters}>`)}`);
+  }
+
+  md.push(name.join(''));
+
+  return md.join(': ');
 }
