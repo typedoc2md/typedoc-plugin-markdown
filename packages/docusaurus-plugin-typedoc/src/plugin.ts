@@ -63,7 +63,9 @@ async function generateTypedoc(
     removeDir(outputDir);
   }
 
-  const app = await Application.bootstrapWithPlugins({}, [
+  const app = await Application.bootstrapWithPlugins({
+    plugin: options.plugin
+  }, [
     new ArgumentsReader(0),
     new TypeDocReader(),
     new PackageJsonReader(),
