@@ -25,7 +25,7 @@ export class GitlabWikiTheme extends MarkdownTheme {
   }
 
   toUrl(mapping: any, reflection: DeclarationReflection) {
-    return `${mapping.directory}/${reflection.getFullName()}.md`;
+    return `${mapping.directory}/${reflection.getFullName().replace(/ /g, '-')}.md`;
   }
 
   onGitLabRendererEnd(renderer: RendererEvent) {
