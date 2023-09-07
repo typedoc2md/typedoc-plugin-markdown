@@ -24,6 +24,7 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   indexSlug: undefined,
   theme: 'docusaurus',
   frontmatter: undefined,
+  plugin: ['typedoc-plugin-markdown'],
 };
 
 export const getPluginOptions = (
@@ -36,6 +37,9 @@ export const getPluginOptions = (
       ...DEFAULT_PLUGIN_OPTIONS.sidebar,
       ...opts.sidebar,
     },
+    plugin: [
+      ...new Set([...DEFAULT_PLUGIN_OPTIONS.plugin, ...(opts.plugin || [])]),
+    ],
   };
   return options;
 };

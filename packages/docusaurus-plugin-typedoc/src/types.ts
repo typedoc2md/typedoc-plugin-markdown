@@ -5,7 +5,7 @@ export interface PluginOptions {
   sidebar: SidebarOptions;
   readmeTitle?: string;
   globalsTitle?: string;
-  plugin?: string[];
+  plugin: string[];
   readme?: string;
   disableOutputCheck?: boolean;
   cleanOutputDir?: boolean;

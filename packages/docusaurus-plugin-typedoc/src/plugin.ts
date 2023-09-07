@@ -1,13 +1,6 @@
 import { LoadContext } from '@docusaurus/types';
 import * as path from 'path';
-import {
-  Application,
-  ArgumentsReader,
-  PackageJsonReader,
-  TSConfigReader,
-  TypeDocReader,
-} from 'typedoc';
-import { load } from 'typedoc-plugin-markdown';
+import { Application } from 'typedoc';
 import { getPluginOptions } from './options';
 import { addTypedocDeclarations, removeDir, render } from './render';
 import { DocusaurusTheme } from './theme';
@@ -59,19 +52,21 @@ async function generateTypedoc(
 
   const outputDir = path.resolve(siteDir, options.docsRoot, options.out);
 
+  const {
+    id,
+    docsRoot,
+    sidebar,
+    frontmatter,
+    includeExtension,
+    indexSlug,
+    ...optionsPassedToTypeDoc
+  } = options;
+
   if (opts.cleanOutputDir) {
     removeDir(outputDir);
   }
 
-  const app = await Application.bootstrapWithPlugins({}, [
-    new ArgumentsReader(0),
-    new TypeDocReader(),
-    new PackageJsonReader(),
-    new TSConfigReader(),
-    new ArgumentsReader(300),
-  ]);
-
-  load(app);
+  const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
 
   addTypedocDeclarations(app);
 

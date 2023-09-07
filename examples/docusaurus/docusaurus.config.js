@@ -37,6 +37,7 @@ const config = {
         sidebar: {
           autoConfiguration: true,
           position: 0,
+          indexLabel: 'Custom Index Label',
         },
         cleanOutputDir: true,
       },
