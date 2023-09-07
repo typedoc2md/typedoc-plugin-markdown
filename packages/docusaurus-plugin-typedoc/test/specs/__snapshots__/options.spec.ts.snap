@@ -14,6 +14,7 @@ exports[`Options: should merge custom sidebar options 1`] = `
 
 exports[`Options: should merge plugins 1`] = `
 [
+  "typedoc-plugin-markdown",
   "plugin-xyz",
 ]
 `;
@@ -35,6 +36,9 @@ exports[`Options: should return default options 1`] = `
   "includeExtension": true,
   "indexSlug": undefined,
   "out": "api",
+  "plugin": [
+    "typedoc-plugin-markdown",
+  ],
   "sidebar": {
     "autoConfiguration": true,
     "categoryLabel": "API",
