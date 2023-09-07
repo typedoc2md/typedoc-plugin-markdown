@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-gitlab-wiki-theme@1.1.0...typedoc-gitlab-wiki-theme@1.1.1) (2022-09-07)
+
+### Fixes
+
+- Fix spaces in filenames results in broken links. Thanks @carlosingles
+
 # 1.1.0 (2023-04-11)
 
 ### Features
