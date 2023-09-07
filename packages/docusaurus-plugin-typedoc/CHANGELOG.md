@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.20.0...docusaurus-plugin-typedoc@0.20.1) (2023-09-07)
+
+### Bug Fixes
+
+- Fixed bootstrapping of TypeDoc options.
+
 ## [0.20.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.19.0...docusaurus-plugin-typedoc@0.20.0) (2023-08-26)
 
 ### Bug Fixes
