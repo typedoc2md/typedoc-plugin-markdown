@@ -9,12 +9,14 @@ import { PluginOptions } from './types';
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
 
+const PLUGIN_NAME = 'docusaurus-plugin-typedoc';
+
 export default function pluginDocusaurus(
   context: LoadContext,
   opts: Partial<PluginOptions>,
 ) {
   return {
-    name: 'docusaurus-plugin-typedoc',
+    name: PLUGIN_NAME,
     async loadContent() {
       if (opts.id && !apps.includes(opts.id)) {
         apps.push(opts.id);
@@ -25,12 +27,12 @@ export default function pluginDocusaurus(
       cli
         .command('generate-typedoc')
         .description(
-          '(docusaurus-plugin-typedoc) Generate TypeDoc docs independently of the Docusaurus build process.',
+          `(${PLUGIN_NAME}) Generate TypeDoc docs independently of the Docusaurus build process.`,
         )
         .action(async () => {
           context.siteConfig?.plugins.forEach((pluginConfig) => {
             // Check PluginConfig is typed to [string, PluginOptions]
-            if (pluginConfig && typeof pluginConfig[1] === 'object') {
+            if (pluginConfig && typeof pluginConfig[1] === 'object' && pluginConfig[0] === PLUGIN_NAME) {
               generateTypedoc(context, pluginConfig[1]);
             }
           });
