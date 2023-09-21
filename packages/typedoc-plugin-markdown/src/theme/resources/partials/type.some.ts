@@ -24,8 +24,6 @@ import { backTicks } from '../../../support/elements';
 export function someType(
   context: MarkdownThemeRenderContext,
   someType: SomeType,
-  collapse = false,
-  format = false,
 ): string {
   if (!someType) {
     return '';
@@ -64,7 +62,7 @@ export function someType(
   }
 
   if (someType instanceof ReflectionType) {
-    return context.reflectionType(someType, collapse, format);
+    return context.reflectionType(someType);
   }
 
   if (someType instanceof TypeOperatorType) {

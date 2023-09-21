@@ -49,7 +49,7 @@ function projectHeader(
   }
 
   if (hasReadme) {
-    md.push(link('README', entryFileName));
+    md.push(link('README', context.relativeURL(entryFileName)));
   }
   if (hasReadme || !hasBreadcrumbs) {
     md.push(

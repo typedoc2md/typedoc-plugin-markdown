@@ -123,7 +123,7 @@ export const entryFileName: DeclarationOption = {
   defaultValue: 'README.md',
 };
 
-/*
+/**
  * This option is ignored if `readme=none`.
  *
  * @category fileOutput
@@ -252,13 +252,47 @@ export const excludeGroups: DeclarationOption = {
 };
 
 /**
- * Note if `true` references will not be linked.
+ * This option can be used to improve readability and aesthetics when defining signatures and declarations.
+ *
+ * *Default example:*
+ *
+ * > **basicFunction**(someParam): `string`
+ *
+ * *Example inside code block:*
+ *
+ * ```ts
+ * basicFunction(someParam): string
+ * ```
+ *
+ * Note when this option is set to `true` it is not possible to link to other references.
+ *
+ * As a work around the {\@link} tag can be be used to manually reference types.
  *
  * @category ui
  */
-export const identifiersAsCodeBlocks: DeclarationOption = {
-  name: 'identifiersAsCodeBlocks',
-  help: 'Format signature and declaration identifiers in code blocks.',
+export const useCodeBlocks: DeclarationOption = {
+  name: 'useCodeBlocks',
+  help: 'Format signatures and declarations in code blocks.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default objects inside declaration are collapsed to preserve space and improve readability.
+ *
+ * *Default example:*
+ *
+ * `object`
+ *
+ * *Expanded example:*
+ *
+ * { `x`: `string` }
+ *
+ * @category ui
+ */
+export const expandObjects: DeclarationOption = {
+  name: 'expandObjects',
+  help: 'Expand objects inside declarations.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -336,19 +370,20 @@ export const anchorPrefix: DeclarationOption = {
   defaultValue: undefined,
 };
 
-export const htmlHeadingAnchors: DeclarationOption = {
-  name: 'htmlHeadingAnchors',
-  help: 'Use HTML named anchors on heading elements.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
 /**
- * Comment without tag
+ * Internal anchor links are used when referencing symbols with in-page table of contents or when referenced with  by {\@link} tags.
+ *
+ * There are two flags exposed by this option:
+ *
+ * - `headings` - Add HTML named anchors to heading for implementations that do not assign header ids.
+ * - `tableRows` - Add anchors to table rows when table formats are selected and no heading elements are present.
  */
-export const htmlTableAnchors: DeclarationOption = {
-  name: 'htmlTableAnchors',
-  help: 'Use HTML named anchors on table rows that contain linkable symbols.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
+export const namedAnchors: DeclarationOption = {
+  name: 'namedAnchors',
+  help: 'Use HTML named anchor tags for internal anchor links.',
+  type: ParameterType.Flags,
+  defaults: {
+    headings: false,
+    tableRows: false,
+  },
 };

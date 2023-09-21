@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -23,9 +23,17 @@ Comments for BasicInterface
 
 Comments for functionProper
 
+#### Parameters
+
+▪ **s**: \`string\`
+
+Comment for param s
+
 #### Source
 
 [interfaces.ts:23](source-url)
+
+***
 
 ### optionalProp
 
@@ -37,6 +45,8 @@ Comments for optional prop
 
 [interfaces.ts:17](source-url)
 
+***
+
 ### prop
 
 > **prop**: \`string\`
@@ -47,6 +57,8 @@ Comments for prop
 
 [interfaces.ts:12](source-url)
 
+***
+
 ### propWithProps
 
 > **propWithProps**: \`object\`
@@ -55,33 +67,35 @@ Comments for propWithProps
 
 #### Type declaration
 
-> **\`nestedPropA\`**: \`string\`
->
-> Comments for nestedPropA
->
-> **\`nestedPropB\`**: \`boolean\`
->
-> Comments for nestedPropB
->
-> **\`nestedPropC\`**: \`object\`
->
-> Comments for nestedPropC
->
-> > **\`nestedPropCA\`**: \`string\`
-> >
-> > Comments for nestedPropCA
-> >
-> >
->
-> **\`nestedPropD\`**: () => \`boolean\`
->
-> Comments for nestedPropD
->
->
->
->
->
->
+##### nestedPropA
+
+> **nestedPropA**: \`string\`
+
+Comments for nestedPropA
+
+##### nestedPropB
+
+> **nestedPropB**: \`boolean\`
+
+Comments for nestedPropB
+
+##### nestedPropC
+
+> **nestedPropC**: \`object\`
+
+Comments for nestedPropC
+
+##### nestedPropC.nestedPropCA
+
+> **nestedPropC.nestedPropCA**: \`string\`
+
+Comments for nestedPropCA
+
+##### nestedPropD
+
+> **nestedPropD**: () => \`boolean\`
+
+Comments for nestedPropD
 
 #### Source
 
@@ -108,15 +122,15 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`functionProp\` | (\`s\`) => \`boolean\` | Comments for functionProper |
+| \`functionProp\` | (\`s\`) => \`boolean\` | - |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
-| \`propWithProps\` | \`object\` | Comments for propWithProps |
+| \`propWithProps\` | \\{   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
-| \`propWithProps.nestedPropC\` | \`object\` | Comments for nestedPropC |
+| \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA |
-| \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD |
+| \`propWithProps.nestedPropD\` | () => \`boolean\` | - |
 
 ***
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -124,7 +138,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -148,11 +162,19 @@ Comments for ExtendedInterface
 
 [interfaces.ts:67](source-url)
 
+***
+
 ### functionProp
 
 > **functionProp**: (\`s\`) => \`boolean\`
 
 Comments for functionProper
+
+#### Parameters
+
+▪ **s**: \`string\`
+
+Comment for param s
 
 #### Inherited from
 
@@ -161,6 +183,8 @@ Comments for functionProper
 #### Source
 
 [interfaces.ts:23](source-url)
+
+***
 
 ### optionalProp
 
@@ -176,6 +200,8 @@ Comments for optional prop
 
 [interfaces.ts:17](source-url)
 
+***
+
 ### prop
 
 > **prop**: \`string\`
@@ -190,6 +216,8 @@ Comments for prop
 
 [interfaces.ts:12](source-url)
 
+***
+
 ### propWithProps
 
 > **propWithProps**: \`object\`
@@ -198,33 +226,35 @@ Comments for propWithProps
 
 #### Type declaration
 
-> **\`nestedPropA\`**: \`string\`
->
-> Comments for nestedPropA
->
-> **\`nestedPropB\`**: \`boolean\`
->
-> Comments for nestedPropB
->
-> **\`nestedPropC\`**: \`object\`
->
-> Comments for nestedPropC
->
-> > **\`nestedPropCA\`**: \`string\`
-> >
-> > Comments for nestedPropCA
-> >
-> >
->
-> **\`nestedPropD\`**: () => \`boolean\`
->
-> Comments for nestedPropD
->
->
->
->
->
->
+##### nestedPropA
+
+> **nestedPropA**: \`string\`
+
+Comments for nestedPropA
+
+##### nestedPropB
+
+> **nestedPropB**: \`boolean\`
+
+Comments for nestedPropB
+
+##### nestedPropC
+
+> **nestedPropC**: \`object\`
+
+Comments for nestedPropC
+
+##### nestedPropC.nestedPropCA
+
+> **nestedPropC.nestedPropCA**: \`string\`
+
+Comments for nestedPropCA
+
+##### nestedPropD
+
+> **nestedPropD**: () => \`boolean\`
+
+Comments for nestedPropD
 
 #### Inherited from
 
@@ -256,15 +286,15 @@ Comments for ExtendedInterface
 | Property | Type | Description | Inheritance |
 | :------ | :------ | :------ | :------ |
 | \`extendedProp\` | \`string\` | - | - |
-| \`functionProp\` | (\`s\`) => \`boolean\` | Comments for functionProper | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
+| \`functionProp\` | (\`s\`) => \`boolean\` | - | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).\`prop\` |
-| \`propWithProps\` | \`object\` | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
+| \`propWithProps\` | \\{   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
-| \`propWithProps.nestedPropC\` | \`object\` | Comments for nestedPropC | - |
+| \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC | - |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA | - |
-| \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD | - |
+| \`propWithProps.nestedPropD\` | () => \`boolean\` | - | - |
 
 ***
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -272,7 +302,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -315,9 +345,9 @@ Comments for IndexableInterface
 
 ## Properties
 
-| Property | Type |
-| :------ | :------ |
-| \`prop\` | \`string\` |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`prop\` | \`string\` | - |
 
 ***
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -325,7 +355,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -337,7 +367,7 @@ Comments for InterfaceWithTypeParameters
 
 ## Type parameters
 
-> **A**
+▪ **A**
 
 ## Properties
 

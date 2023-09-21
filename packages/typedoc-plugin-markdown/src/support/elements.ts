@@ -5,7 +5,7 @@
  *
  */
 
-import { unEscapeChars } from './utils';
+import { formatContents, unEscapeChars } from './utils';
 
 export const heading = (level: number, text: string) => {
   level = level > 6 ? 6 : level;
@@ -36,7 +36,7 @@ export const table = (headers: string[], rows: string[][]) =>
     .join(' | ')} |\n${rows.map((row) => `| ${row.join(' | ')} |\n`).join('')}`;
 
 export const blockQuoteBlock = (content: string) => {
-  const lines = content.split('\n');
+  const lines = formatContents(content).split('\n');
   return lines
     .map((line) => (line.length ? `> ${line.trim()}` : '>'))
     .join('\n');

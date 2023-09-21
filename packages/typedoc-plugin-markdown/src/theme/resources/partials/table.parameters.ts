@@ -2,7 +2,10 @@ import { ParameterReflection, ReflectionKind } from 'typedoc';
 
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, table } from '../../../support/elements';
-import { stripLineBreaks, tableString } from '../../../support/utils';
+import {
+  formatTableDescriptionCol,
+  stripLineBreaks,
+} from '../../../support/utils';
 
 /**
  * @category Partials
@@ -72,7 +75,7 @@ export function parametersTable(
     row.push(`${rest}${backTicks(parameter.name)}${optional}`);
 
     if (parameter.type) {
-      row.push(stripLineBreaks(context.someType(parameter.type, true)));
+      row.push(stripLineBreaks(context.someType(parameter.type), false));
     }
 
     if (showDefaults) {
@@ -82,7 +85,9 @@ export function parametersTable(
     if (hasComments) {
       if (parameter.comment) {
         row.push(
-          stripLineBreaks(tableString(context.comment(parameter.comment))),
+          stripLineBreaks(
+            formatTableDescriptionCol(context.comment(parameter.comment)),
+          ),
         );
       } else {
         row.push('-');

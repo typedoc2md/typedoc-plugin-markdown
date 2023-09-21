@@ -52,7 +52,7 @@ module.exports = {
   excludeGroups: true,
   hideInPageTOC: true,
   hidePageHeader: false,
-  identifiersAsCodeBlocks: true,
+  useCodeBlocks: true,
   outputFileStrategy: 'modules',
   tocFormat: 'table',
 };

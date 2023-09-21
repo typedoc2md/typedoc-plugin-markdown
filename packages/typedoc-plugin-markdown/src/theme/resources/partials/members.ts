@@ -16,6 +16,15 @@ export function members(
 ): string {
   const md: string[] = [];
 
+  const displayHr = (reflection: DeclarationReflection) => {
+    if (context.options.getValue('outputFileStrategy') === 'modules') {
+      return isGroupKind(reflection);
+    }
+    return !context.options
+      .getValue('membersWithOwnFile')
+      ?.includes(reflection);
+  };
+
   const pushCategories = (
     categories: ReflectionCategory[],
     headingLevel: number,
@@ -35,7 +44,7 @@ export function members(
     const items = children?.filter((item) => !item.hasOwnDocument);
     items?.forEach((item, index) => {
       md.push(context.member(item, memberHeadingLevel || headingLevel));
-      if (index < items.length - 1 && isGroupKind(item)) {
+      if (index < items.length - 1 && displayHr(item)) {
         md.push(horizontalRule());
       }
     });
@@ -89,10 +98,6 @@ export function members(
           } else {
             pushChildren(group.children, headingLevel + 1);
           }
-        }
-
-        if (index < groupsWithChildren.length - 1) {
-          md.push(horizontalRule());
         }
       });
     }

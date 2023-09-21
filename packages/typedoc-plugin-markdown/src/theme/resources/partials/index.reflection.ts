@@ -7,7 +7,7 @@ import {
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { heading, link, table } from '../../../support/elements';
-import { escapeChars, tableString } from '../../../support/utils';
+import { escapeChars, formatTableDescriptionCol } from '../../../support/utils';
 
 export function reflectionIndex(
   context: MarkdownThemeRenderContext,
@@ -77,7 +77,9 @@ function getTable(
 
     if (comment?.summary?.length) {
       row.push(
-        tableString(context.commentParts(comment.summary)).split('\n')[0],
+        formatTableDescriptionCol(context.commentParts(comment.summary)).split(
+          '\n',
+        )[0],
       );
     } else {
       row.push('-');

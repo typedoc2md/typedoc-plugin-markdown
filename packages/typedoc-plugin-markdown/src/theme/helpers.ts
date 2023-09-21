@@ -7,13 +7,18 @@
 
 import {
   DeclarationReflection,
+  ParameterReflection,
   ProjectReflection,
   ReflectionKind,
+  SignatureReflection,
 } from 'typedoc';
 import { backTicks } from '../support/elements';
 import { escapeChars } from '../support/utils';
 
 export function getDeclarationType(declaration: DeclarationReflection) {
+  if (declaration.signatures) {
+    return declaration.signatures[0].type;
+  }
   if (declaration.getSignature) {
     return declaration.getSignature.type;
   }
@@ -51,7 +56,9 @@ export function hasTOC(reflection: DeclarationReflection | ProjectReflection) {
   );
 }
 
-export function isGroupKind(reflection: DeclarationReflection) {
+export function isGroupKind(
+  reflection: DeclarationReflection | SignatureReflection,
+) {
   return reflection.kindOf([
     ReflectionKind.Class,
     ReflectionKind.Interface,
@@ -89,6 +96,7 @@ export const KEYWORD_MAP = {
   [ReflectionKind.Interface]: 'interface',
   [ReflectionKind.Enum]: 'enum',
   [ReflectionKind.TypeAlias]: 'type',
+  [ReflectionKind.Function]: 'function',
 };
 
 export function getMemberTitle(reflection: DeclarationReflection) {
@@ -109,6 +117,10 @@ export function getMemberTitle(reflection: DeclarationReflection) {
 
   name.push(`${escapeChars(reflection.name)}`);
 
+  if (reflection.signatures?.length) {
+    name.push('()');
+  }
+
   if (reflection.typeParameters) {
     const typeParameters = reflection.typeParameters
       .map((typeParameter) => typeParameter.name)
@@ -119,4 +131,113 @@ export function getMemberTitle(reflection: DeclarationReflection) {
   md.push(name.join(''));
 
   return md.join(': ');
+}
+
+export function declarationHasParent(declaration: DeclarationReflection) {
+  return declaration?.parent?.parent?.kindOf([
+    ReflectionKind.Property,
+    ReflectionKind.CallSignature,
+  ]);
+}
+
+export function flattenDeclarations(
+  props: DeclarationReflection[],
+  includeSignatures = false,
+) {
+  const flattenDeclarations = (current: DeclarationReflection) => {
+    return (current.type as any)?.declaration?.children?.reduce(
+      (acc: DeclarationReflection[], child: DeclarationReflection) => {
+        const childObj = {
+          ...child,
+          name: `${current.name}.${child.name}`,
+        } as DeclarationReflection;
+        return parseDeclarations(childObj, acc);
+      },
+      [],
+    );
+  };
+
+  const parseDeclarations = (
+    current: DeclarationReflection,
+    acc: DeclarationReflection[],
+  ) => {
+    const shouldFlatten = (current.type as any)?.declaration?.children;
+    const isAccessor = current.kind === ReflectionKind.Accessor;
+
+    if (includeSignatures) {
+      if (isAccessor) {
+        const accessors: any[] = [];
+        if (current.getSignature) {
+          accessors.push({
+            ...current,
+            name: `get ${current.name}`,
+            type: current.getSignature.type,
+            comment: current.getSignature?.comment,
+          });
+        }
+        if (current.setSignature) {
+          accessors.push({
+            ...current,
+            name: `set ${current.name}`,
+            type: current.setSignature.type,
+            comment: current.setSignature?.comment,
+          });
+        }
+        return [...acc, ...accessors];
+      }
+
+      if (current.signatures?.length) {
+        const signatures = current.signatures.map((signature) => {
+          return {
+            ...current,
+            name: signature.name,
+            type: signature.type,
+            comment: signature.comment,
+          };
+        });
+        return [...acc, ...signatures];
+      }
+    }
+
+    return shouldFlatten
+      ? [...acc, current, ...flattenDeclarations(current)]
+      : [...acc, current];
+  };
+
+  return props.reduce(
+    (acc: DeclarationReflection[], current: DeclarationReflection) =>
+      parseDeclarations(current, acc),
+    [],
+  );
+}
+
+export function getSignatureParameters(
+  parameters: ParameterReflection[],
+  format = false,
+) {
+  const firstOptionalParamIndex = parameters.findIndex(
+    (parameter) => parameter.flags.isOptional,
+  );
+  return (
+    '(' +
+    parameters
+      .map((param, i) => {
+        const paramsmd: string[] = [];
+        if (param.flags.isRest) {
+          paramsmd.push('...');
+        }
+        const paramItem = `${backTicks(param.name)}${
+          param.flags.isOptional ||
+          (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
+            ? '?'
+            : ''
+        }`;
+        paramsmd.push(
+          `${format && parameters.length > 2 ? `\n   ` : ''}${paramItem}`,
+        );
+        return paramsmd.join('');
+      })
+      .join(`, `) +
+    ')'
+  );
 }

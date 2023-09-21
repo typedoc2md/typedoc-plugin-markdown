@@ -54,6 +54,7 @@ This plugin exposes additional options. Please see [Options Guide](./docs/guides
 *   [`--outputFileStrategy`](./docs/guides/options.md#--outputfilestrategy)
 *   [`--membersWithOwnFile`](./docs/guides/options.md#--memberswithownfile)
 *   [`--entryFileName`](./docs/guides/options.md#--entryfilename)
+*   [`--indexFileName`](./docs/guides/options.md#--indexfilename)
 
 #### Structure and formatting options
 
@@ -64,7 +65,8 @@ This plugin exposes additional options. Please see [Options Guide](./docs/guides
 *   [`--indexPageTitle`](./docs/guides/options.md#--indexpagetitle)
 *   [`--titleTemplate`](./docs/guides/options.md#--titletemplate)
 *   [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
-*   [`--identifiersAsCodeBlocks`](./docs/guides/options.md#--identifiersascodeblocks)
+*   [`--useCodeBlocks`](./docs/guides/options.md#--usecodeblocks)
+*   [`--expandObjects`](./docs/guides/options.md#--expandobjects)
 *   [`--parametersFormat`](./docs/guides/options.md#--parametersformat)
 *   [`--propertiesFormat`](./docs/guides/options.md#--propertiesformat)
 *   [`--enumMembersFormat`](./docs/guides/options.md#--enummembersformat)
@@ -75,8 +77,7 @@ This plugin exposes additional options. Please see [Options Guide](./docs/guides
 
 *   [`--preserveAnchorCasing`](./docs/guides/options.md#--preserveanchorcasing)
 *   [`--anchorPrefix`](./docs/guides/options.md#--anchorprefix)
-*   [`--htmlHeadingAnchors`](./docs/guides/options.md#--htmlheadinganchors)
-*   [`--htmlTableAnchors`](./docs/guides/options.md#--htmltableanchors)
+*   [`--namedAnchors`](./docs/guides/options.md#--namedanchors)
 
 ## Contributing
 

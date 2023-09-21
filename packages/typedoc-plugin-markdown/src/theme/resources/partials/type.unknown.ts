@@ -1,6 +1,6 @@
 import { UnknownType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks } from '../../../support/elements';
+import { escapeChars } from '../../../support/utils';
 
 /**
  * @category Partials
@@ -9,5 +9,5 @@ export function unknownType(
   context: MarkdownThemeRenderContext,
   model: UnknownType,
 ): string {
-  return backTicks(model.name);
+  return escapeChars(model.name);
 }

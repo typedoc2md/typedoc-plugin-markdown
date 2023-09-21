@@ -60,14 +60,14 @@ export function parametersList(
     const identifier: string[] = [bold(name)];
 
     if (parameter.type) {
-      identifier.push(': ' + context.someType(parameter.type, true));
+      identifier.push(': ' + context.someType(parameter.type));
     }
 
     if (parameter.defaultValue) {
       identifier.push('= ' + getDefaultValue(parameter));
     }
 
-    row.push(`> ${rest}${identifier.join('')}`);
+    row.push(`▪ ${rest}${identifier.join('')}`);
 
     if (parameter.comment) {
       row.push(context.comment(parameter.comment));

@@ -9,13 +9,17 @@ export function signatureMember(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
   headingLevel: number,
-  showSources = true,
+  nested = false,
   accessor?: string,
 ): string {
   const md: string[] = [];
 
-  if (showSources) {
-    md.push(context.signatureMemberIdentifier(signature, accessor));
+  if (!nested) {
+    md.push(
+      context.signatureMemberIdentifier(signature, {
+        accessor,
+      }),
+    );
   }
 
   if (signature.comment) {
@@ -36,7 +40,7 @@ export function signatureMember(
     }
   }
 
-  if (signature.parameters?.length && showSources) {
+  if (signature.parameters?.length) {
     md.push(heading(headingLevel, 'Parameters'));
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.parametersTable(signature.parameters));
@@ -45,7 +49,7 @@ export function signatureMember(
     }
   }
 
-  if (signature.type && showSources) {
+  if (signature.type) {
     md.push(context.signatureMemberReturns(signature, headingLevel));
   }
 
@@ -55,7 +59,7 @@ export function signatureMember(
     md.push(context.comment(signature.comment, headingLevel, false, true));
   }
 
-  if (showSources && signature.sources) {
+  if (!nested && signature.sources) {
     md.push(context.sources(signature, headingLevel));
   }
 

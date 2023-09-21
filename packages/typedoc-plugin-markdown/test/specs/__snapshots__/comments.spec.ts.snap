@@ -39,14 +39,6 @@ Closing \`</element>\`  on its own
 
 A \`<tag>\` in backticks
 
-<p>Some HTML</p>
-
-<img src="http://via.placeholder.com/50x50" />
-
-<ul>
-<li>html list item</li>
-</ul>
-
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
@@ -112,14 +104,6 @@ A \`<tag>\` \`</tag>\`  in comments
 Closing \`</element>\`  on its own
 
 A \`<tag>\` in backticks
-
-<p>Some HTML</p>
-
-<img src="http://via.placeholder.com/50x50" />
-
-<ul>
-<li>html list item</li>
-</ul>
 
 \`\`\`
 A <tag> in a code block
@@ -193,14 +177,6 @@ Closing \`</element>\`  on its own
 
 A \`<tag>\` in backticks
 
-<p>Some HTML</p>
-
-<img src="http://via.placeholder.com/50x50" />
-
-<ul>
-<li>html list item</li>
-</ul>
-
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
@@ -247,18 +223,16 @@ Some <p> html </p> inside codeblock
 | \`Member\` | \`0\` | Comment for Member |
 | \`MemberB\` | \`1\` | - |
 
-***
-
 ## Interfaces
 
 ### CommentInterface
 
 #### Properties
 
-| Property | Type |
-| :------ | :------ |
-| \`prop\` | \`string\` |
-| \`propb\` | \`string\` |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`prop\` | \`string\` | - |
+| \`propb\` | \`string\` | - |
 
 ***
 
@@ -266,12 +240,10 @@ Some <p> html </p> inside codeblock
 
 #### Properties
 
-| Property | Type |
-| :------ | :------ |
-| \`prop\` | \`string\` |
-| \`propb\` | \`string\` |
-
-***
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`prop\` | \`string\` | - |
+| \`propb\` | \`string\` | - |
 
 ## Variables
 
@@ -335,14 +307,6 @@ Closing \`</element>\`  on its own
 
 A \`<tag>\` in backticks
 
-<p>Some HTML</p>
-
-<img src="http://via.placeholder.com/50x50" />
-
-<ul>
-<li>html list item</li>
-</ul>
-
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
@@ -389,18 +353,16 @@ Some <p> html </p> inside codeblock
 | <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member |
 | <a id="memberb" name="memberb"></a> \`MemberB\` | \`1\` | - |
 
-***
-
 ## Interfaces
 
 ### CommentInterface
 
 #### Properties
 
-| Property | Type |
-| :------ | :------ |
-| <a id="prop" name="prop"></a> \`prop\` | \`string\` |
-| <a id="propb" name="propb"></a> \`propb\` | \`string\` |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`<a id="prop" name="prop"></a> prop\` | \`string\` | - |
+| \`<a id="propb" name="propb"></a> propb\` | \`string\` | - |
 
 ***
 
@@ -408,12 +370,10 @@ Some <p> html </p> inside codeblock
 
 #### Properties
 
-| Property | Type |
-| :------ | :------ |
-| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` |
-| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` |
-
-***
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`<a id="prop-1" name="prop-1"></a> prop\` | \`string\` | - |
+| \`<a id="propb-1" name="propb-1"></a> propb\` | \`string\` | - |
 
 ## Variables
 

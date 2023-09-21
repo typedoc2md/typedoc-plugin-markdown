@@ -31,7 +31,7 @@ spawn.sync('tsc', {
 
 // write fixtures
 FIXTURES.forEach((fixture) => {
-  //writeHtml(fixture.entryPoints, fixture.outDir);
+  writeHtml(fixture.entryPoints, fixture.outDir);
   [
     FixtureOutputFileStrategy.Members,
     FixtureOutputFileStrategy.Modules,
@@ -118,6 +118,14 @@ function objectToOptions(obj: any) {
           }, []),
         ];
       }
+      if (typeof curr[1] === 'object') {
+        return [
+          ...prev,
+          ...Object.entries(curr[1]).reduce((prev1: any, curr1: any) => {
+            return [...prev1, ...[`-${curr[0]}.${curr1[0]}`, true]];
+          }, []),
+        ];
+      }
       return [...prev, ...[`-${curr[0]}`, curr[1]]];
     },
     [
@@ -129,7 +137,7 @@ function objectToOptions(obj: any) {
   );
 }
 
-process.on('exit', function () {
+process.on('exit', () => {
   consola.success(
     `Finished building fixtures in ${(
       (new Date().getTime() - timeStart) /

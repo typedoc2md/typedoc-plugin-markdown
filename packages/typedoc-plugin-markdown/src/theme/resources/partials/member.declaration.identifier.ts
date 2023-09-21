@@ -5,6 +5,7 @@ import {
   escapeChars,
   stripComments,
   stripLineBreaks,
+  trimLastLine,
 } from '../../../support/utils';
 import { KEYWORD_MAP, getDeclarationType, isGroupKind } from '../../helpers';
 
@@ -14,11 +15,10 @@ import { KEYWORD_MAP, getDeclarationType, isGroupKind } from '../../helpers';
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
-  nested = false,
 ): string {
   const md: string[] = [];
 
-  const useCodeBlocks = context.options.getValue('identifiersAsCodeBlocks');
+  const useCodeBlocks = context.options.getValue('useCodeBlocks');
 
   const declarationType = getDeclarationType(reflection);
 
@@ -38,8 +38,12 @@ export function declarationMemberIdentifier(
     prefix.push('...');
   }
 
-  if (isGroupKind(reflection) && KEYWORD_MAP[reflection.kind]) {
-    prefix.push(bold(backTicks(KEYWORD_MAP[reflection.kind])));
+  if (
+    useCodeBlocks &&
+    isGroupKind(reflection) &&
+    KEYWORD_MAP[reflection.kind]
+  ) {
+    prefix.push(KEYWORD_MAP[reflection.kind]);
   }
 
   if (prefix.length) {
@@ -56,15 +60,13 @@ export function declarationMemberIdentifier(
     name.push(backTicks('set') + ' ');
   }
 
-  name.push(
-    bold(nested ? backTicks(reflection.name) : escapeChars(reflection.name)),
-  );
+  name.push(bold(escapeChars(reflection.name)));
 
   if (reflection.typeParameters) {
     name.push(
-      `<${reflection.typeParameters
+      `\\<${reflection.typeParameters
         ?.map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}>`,
+        .join(', ')}\\>`,
     );
   }
 
@@ -79,7 +81,7 @@ export function declarationMemberIdentifier(
   md.push(name.join(''));
 
   if (declarationType) {
-    md.push(context.someType(declarationType, true));
+    md.push(context.someType(declarationType));
   }
 
   if (reflection.defaultValue && reflection.defaultValue !== '...') {
@@ -92,7 +94,12 @@ export function declarationMemberIdentifier(
     md.push(';');
   }
 
-  return useCodeBlocks
-    ? codeBlock(md.join(''))
-    : `${!nested ? '> ' : ''}${md.join('')}`;
+  const result = md.join('');
+
+  const trimmedResult =
+    result.endsWith('}') || result.endsWith('};') || result.endsWith('>')
+      ? trimLastLine(result)
+      : result;
+
+  return useCodeBlocks ? codeBlock(trimmedResult) : `> ${trimmedResult}`;
 }

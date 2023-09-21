@@ -1,4 +1,4 @@
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { heading } from '../../../support/elements';
 
@@ -13,13 +13,21 @@ export function accessorMember(
   const md: string[] = [];
 
   if (declaration.getSignature) {
-    md.push(context.signatureMemberIdentifier(declaration.getSignature, 'get'));
+    md.push(
+      context.signatureMemberIdentifier(declaration.getSignature, {
+        accessor: 'get',
+      }),
+    );
     if (declaration.getSignature.comment) {
       md.push(context.comment(declaration.getSignature.comment, headingLevel));
     }
   }
   if (declaration.setSignature) {
-    md.push(context.signatureMemberIdentifier(declaration.setSignature, 'set'));
+    md.push(
+      context.signatureMemberIdentifier(declaration.setSignature, {
+        accessor: 'set',
+      }),
+    );
     if (declaration.setSignature.comment) {
       md.push(context.comment(declaration.setSignature.comment, headingLevel));
     }
@@ -40,10 +48,14 @@ export function accessorMember(
     );
   }
 
-  if (declaration.getSignature?.sources) {
-    md.push(context.sources(declaration.getSignature, headingLevel));
-  } else if (declaration.setSignature?.sources) {
-    md.push(context.sources(declaration.setSignature, headingLevel));
+  const showSources = !declaration?.parent?.kindOf(ReflectionKind.TypeLiteral);
+
+  if (showSources && !context.options.getValue('disableSources')) {
+    if (declaration.getSignature?.sources) {
+      md.push(context.sources(declaration.getSignature, headingLevel));
+    } else if (declaration.setSignature?.sources) {
+      md.push(context.sources(declaration.setSignature, headingLevel));
+    }
   }
 
   return md.join('\n\n');

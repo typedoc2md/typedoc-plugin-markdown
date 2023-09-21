@@ -1,7 +1,10 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, italic, table } from '../../../support/elements';
-import { stripLineBreaks, tableString } from '../../../support/utils';
+import { backTicks, table } from '../../../support/elements';
+import {
+  formatTableDescriptionCol,
+  stripLineBreaks,
+} from '../../../support/utils';
 
 /**
  * @category Partials
@@ -37,9 +40,7 @@ export function typeParametersTable(
     nameCol.push(backTicks(typeParameter.name));
 
     if (typeParameter.type) {
-      nameCol.push(
-        `${italic('extends')} ${context.someType(typeParameter.type)}`,
-      );
+      nameCol.push(`extends ${context.someType(typeParameter.type)}`);
     }
 
     row.push(nameCol.join(' '));
@@ -55,7 +56,9 @@ export function typeParametersTable(
     if (hasComments) {
       if (typeParameter.comment) {
         row.push(
-          stripLineBreaks(tableString(context.comment(typeParameter.comment))),
+          stripLineBreaks(
+            formatTableDescriptionCol(context.comment(typeParameter.comment)),
+          ),
         );
       } else {
         row.push('-');

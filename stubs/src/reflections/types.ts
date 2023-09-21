@@ -92,29 +92,42 @@ export type TypeWithExternalSymbolLinkMapping = Application;
  */
 export type LiteralType = {
   /**
-   * Comment for valueZ
+   * comment for x
    */
-  valueZ: string;
-  valueY: { (): string };
+  x: string;
   /**
-   * Comment for valueX
+   * comment for y
    */
-  valueX: {
+  y: {
     /**
-     * Nested comment for valueX.valueZ
+     * comment for y.x
      */
-    valueZ: string;
+    x: string;
     /**
-     * Nested comment for valueX.valueY
+     * comment for y.y
      */
-    valueY: { (z: string): { a: string; b: string } };
-    valueA: number[];
-  };
+    y: boolean | string;
+    /**
+     * comment for y.z
+     */
+    z: (x: string) => string;
+  } /**
+   * comment for z
+   */;
+  z: (x: string) => string;
   /**
-   * Comments for valueA
+   * Comments for someFunction
+   * @param param
    */
-  valueA?: number;
-  valueB?: boolean;
-  get getMe(): Promise<string>;
-  set setMe(x: string);
+  someFunction(param: string): Promise<any>;
+  /**
+   * Comments for accessorA getter
+   */
+  get accessorA(): Promise<string>;
+  /**
+   * Comments for accessorA setter
+   */
+  set accessorA(x);
+  set accessorB(x: string);
+  get accessorB();
 };

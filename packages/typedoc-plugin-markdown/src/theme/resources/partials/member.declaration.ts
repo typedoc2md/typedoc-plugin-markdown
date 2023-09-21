@@ -1,7 +1,6 @@
 import {
   DeclarationReflection,
   IntersectionType,
-  ReflectionKind,
   ReflectionType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
@@ -21,7 +20,7 @@ export function declarationMember(
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(context.declarationMemberIdentifier(declaration, nested));
+  md.push(context.declarationMemberIdentifier(declaration));
 
   if (declaration.comment) {
     md.push(context.comment(declaration.comment, headingLevel));
@@ -35,7 +34,6 @@ export function declarationMember(
           context.typeDeclarationMember(
             intersectionType.declaration,
             headingLevel,
-            declaration.name,
           ),
         );
       }
@@ -48,8 +46,6 @@ export function declarationMember(
   }
 
   if (typeDeclaration) {
-    const hasParent = typeDeclaration.parent?.kindOf(ReflectionKind.Property);
-
     if (typeDeclaration?.indexSignature) {
       md.push(heading(headingLevel, `Index signature`));
       md.push(context.indexSignatureTitle(typeDeclaration.indexSignature));
@@ -61,21 +57,12 @@ export function declarationMember(
     ) {
       if (typeDeclaration?.signatures?.length) {
         typeDeclaration.signatures.forEach((signature) => {
-          md.push(context.signatureMember(signature, headingLevel, false));
+          md.push(context.signatureMember(signature, headingLevel, true));
         });
       }
-
-      if (typeDeclaration?.children?.length) {
-        if (!nested) {
-          md.push(heading(headingLevel, 'Type declaration'));
-        }
-        md.push(
-          context.typeDeclarationMember(
-            typeDeclaration,
-            nested ? headingLevel : headingLevel + 1,
-            hasParent ? declaration.name : undefined,
-          ),
-        );
+      if (!nested && typeDeclaration?.children?.length) {
+        md.push(heading(headingLevel, 'Type declaration'));
+        md.push(context.typeDeclarationMember(typeDeclaration, headingLevel));
       }
     }
   }

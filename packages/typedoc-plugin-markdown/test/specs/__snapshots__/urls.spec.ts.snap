@@ -5,6 +5,8 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
   "API.md",
   "README.md",
   "basic/README.md",
+  "basic/classes/ClassA.md",
+  "basic/classes/ClassB.md",
   "basic/enumerations/EnumA.md",
   "basic/enumerations/EnumB.md",
   "basic/interfaces/IterfaceA.md",
@@ -46,6 +48,8 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
 
 exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: members 2`] = `
 [
+  "basic/classes/ClassA.md",
+  "basic/classes/ClassB.md",
   "basic/enumerations/EnumA.md",
   "basic/enumerations/EnumB.md",
   "basic/index.md",
@@ -145,6 +149,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "enumerations/EnumWithValues.md",
   "functions/basicFunction.md",
   "functions/functionReturningAFunction.md",
+  "functions/functionReturningAPromise.md",
   "functions/functionReturningAnObject.md",
   "functions/functionWithDefaultParameters.md",
   "functions/functionWithMultipleSignatures.md",
@@ -189,6 +194,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "enumerations/EnumWithValues.md",
   "functions/basicFunction.md",
   "functions/functionReturningAFunction.md",
+  "functions/functionReturningAPromise.md",
   "functions/functionReturningAnObject.md",
   "functions/functionWithDefaultParameters.md",
   "functions/functionWithMultipleSignatures.md",

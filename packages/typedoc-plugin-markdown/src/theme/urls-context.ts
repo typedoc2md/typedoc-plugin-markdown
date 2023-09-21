@@ -240,7 +240,8 @@ export class UrlsContext {
   }
 
   private getAnchorName(reflection: DeclarationReflection) {
-    const htmlTableAnchors = this.options.htmlTableAnchors;
+    const htmlTableAnchors =
+      this.options.namedAnchors && this.options.namedAnchors['tableRows'];
 
     if (!htmlTableAnchors) {
       if (

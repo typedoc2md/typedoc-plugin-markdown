@@ -7,6 +7,7 @@
     *   [`--outputFileStrategy`](#--outputfilestrategy)
     *   [`--membersWithOwnFile`](#--memberswithownfile)
     *   [`--entryFileName`](#--entryfilename)
+    *   [`--indexFileName`](#--indexfilename)
 
 *   [Structure and formatting options](#structure-and-formatting-options)
 
@@ -17,7 +18,8 @@
     *   [`--indexPageTitle`](#--indexpagetitle)
     *   [`--titleTemplate`](#--titletemplate)
     *   [`--excludeGroups`](#--excludegroups)
-    *   [`--identifiersAsCodeBlocks`](#--identifiersascodeblocks)
+    *   [`--useCodeBlocks`](#--usecodeblocks)
+    *   [`--expandObjects`](#--expandobjects)
     *   [`--parametersFormat`](#--parametersformat)
     *   [`--propertiesFormat`](#--propertiesformat)
     *   [`--enumMembersFormat`](#--enummembersformat)
@@ -28,17 +30,16 @@
 
     *   [`--preserveAnchorCasing`](#--preserveanchorcasing)
     *   [`--anchorPrefix`](#--anchorprefix)
-    *   [`--htmlHeadingAnchors`](#--htmlheadinganchors)
-    *   [`--htmlTableAnchors`](#--htmltableanchors)
+    *   [`--namedAnchors`](#--namedanchors)
 
 ## File output options
 
 ### `--outputFileStrategy`
 
-Determines how output files are generated. Defaults to `"members"`
+Determines how output files are generated. Defaults to `"members"`.
 
 ```shell
---outputFileStrategy "members"|"modules"
+--outputFileStrategy <"members"|"modules">
 ```
 
 #### Usage
@@ -91,7 +92,7 @@ The above example will output the following folder structure:
 
 ### `--membersWithOwnFile`
 
-Determines which members are exported to their own file. Ignored when `outputFileStrategy` = `modules`. Defaults to `['Enum', 'Variable', 'Function', 'Class', 'Interface', 'TypeAlias']`
+Determines which members are exported to their own file. Ignored when `outputFileStrategy` = `modules`. Defaults to `['Enum', 'Variable', 'Function', 'Class', 'Interface', 'TypeAlias']`.
 
 ```shell
 --membersWithOwnFile Array<
@@ -115,7 +116,7 @@ To export only Interfaces, classes and enums to their own file, the option shoul
 
 ### `--entryFileName`
 
-The file name of the entry page. Defaults to `"README.md"`
+The file name of the entry page. Defaults to `"README.md"`.
 
 ```shell
 --entryFileName <string>
@@ -142,11 +143,27 @@ B. If a readme file is NOT resolved (when `readme` = `none`), then the index pag
 
 ***
 
+### `--indexFileName`
+
+The file name the seperate index page. Defaults to `"API.md"`.
+
+```shell
+--indexFileName <string>
+```
+
+#### Usage
+
+This option is ignored if `readme=none`.
+
+[↑ Top](#options-guide)
+
+***
+
 ## Structure and formatting options
 
 ### `--hidePageHeader`
 
-Do not print page header. Defaults to `false`
+Do not print page header. Defaults to `false`.
 
 ```shell
 --hidePageHeader <boolean>
@@ -158,7 +175,7 @@ Do not print page header. Defaults to `false`
 
 ### `--hidePageTitle`
 
-Do not print page title. Defaults to `false`
+Do not print page title. Defaults to `false`.
 
 ```shell
 --hidePageTitle <boolean>
@@ -170,7 +187,7 @@ Do not print page title. Defaults to `false`
 
 ### `--hideBreadcrumbs`
 
-Do not print breadcrumbs. Defaults to `false`
+Do not print breadcrumbs. Defaults to `false`.
 
 ```shell
 --hideBreadcrumbs <boolean>
@@ -182,7 +199,7 @@ Do not print breadcrumbs. Defaults to `false`
 
 ### `--hideInPageTOC`
 
-Do not render in-page TOC/Index items. Defaults to `false`
+Do not render in-page TOC/Index items. Defaults to `false`.
 
 ```shell
 --hideInPageTOC <boolean>
@@ -194,7 +211,7 @@ Do not render in-page TOC/Index items. Defaults to `false`
 
 ### `--indexPageTitle`
 
-The title of project index page. Defaults to `"{projectName}"`
+The title of project index page. Defaults to `"{projectName}"`.
 
 ```shell
 --indexPageTitle <string>
@@ -212,7 +229,7 @@ Note this will also serve as the root breadcrumb text.
 
 ### `--titleTemplate`
 
-Specify a template for displaying page titles. Defaults to `"{name} `{kind}`"`
+Specify a template for displaying page titles. Defaults to `"{kind}: {name}"`.
 
 ```shell
 --titleTemplate <string>
@@ -236,7 +253,7 @@ Example for displaying kind in backticks:
 
 ### `--excludeGroups`
 
-Excludes grouping by reflection kind so all members are rendered and sorted at the same level. Defaults to `false`
+Excludes grouping by reflection kind so all members are rendered and sorted at the same level. Defaults to `false`.
 
 ```shell
 --excludeGroups <boolean>
@@ -276,17 +293,55 @@ This creates a flat structure where all members are displayed at the same level.
 
 ***
 
-### `--identifiersAsCodeBlocks`
+### `--useCodeBlocks`
 
-Format signature and declaration identifiers in code blocks. Defaults to `false`
+Format signatures and declarations in code blocks. Defaults to `false`.
 
 ```shell
---identifiersAsCodeBlocks <boolean>
+--useCodeBlocks <boolean>
 ```
 
 #### Usage
 
-Note if `true` references will not be linked.
+This option can be used to improve readability and aesthetics when defining signatures and declarations.
+
+*Default example:*
+
+> **basicFunction**(someParam): `string`
+
+*Example inside code block:*
+
+```ts
+basicFunction(someParam): string
+```
+
+Note when this option is set to `true` it is not possible to link to other references.
+
+As a work around the {@link} tag can be be used to manually reference types.
+
+[↑ Top](#options-guide)
+
+***
+
+### `--expandObjects`
+
+Expand objects inside declarations. Defaults to `false`.
+
+```shell
+--expandObjects <boolean>
+```
+
+#### Usage
+
+By default objects inside declaration are collapsed to preserve space and improve readability.
+
+*Default example:*
+
+`object`
+
+*Expanded example:*
+
+{ `x`: `string` }
 
 [↑ Top](#options-guide)
 
@@ -294,10 +349,10 @@ Note if `true` references will not be linked.
 
 ### `--parametersFormat`
 
-Specify the render style of parameter and type parameter groups. Defaults to `"list"`
+Specify the render style of parameter and type parameter groups. Defaults to `"list"`.
 
 ```shell
---parametersFormat "list"|"table"
+--parametersFormat <"list"|"table">
 ```
 
 [↑ Top](#options-guide)
@@ -306,10 +361,10 @@ Specify the render style of parameter and type parameter groups. Defaults to `"l
 
 ### `--propertiesFormat`
 
-Specify the render style of properties groups for interfaces and classes. Defaults to `"list"`
+Specify the render style of properties groups for interfaces and classes. Defaults to `"list"`.
 
 ```shell
---propertiesFormat "list"|"table"
+--propertiesFormat <"list"|"table">
 ```
 
 [↑ Top](#options-guide)
@@ -318,10 +373,10 @@ Specify the render style of properties groups for interfaces and classes. Defaul
 
 ### `--enumMembersFormat`
 
-Specify the render style of Enum members. Defaults to `"list"`
+Specify the render style of Enum members. Defaults to `"list"`.
 
 ```shell
---enumMembersFormat "list"|"table"
+--enumMembersFormat <"list"|"table">
 ```
 
 [↑ Top](#options-guide)
@@ -330,10 +385,10 @@ Specify the render style of Enum members. Defaults to `"list"`
 
 ### `--typeDeclarationFormat`
 
-Specify the render style for type declaration members. Defaults to `"list"`
+Specify the render style for type declaration members. Defaults to `"list"`.
 
 ```shell
---typeDeclarationFormat "list"|"table"
+--typeDeclarationFormat <"list"|"table">
 ```
 
 [↑ Top](#options-guide)
@@ -342,10 +397,10 @@ Specify the render style for type declaration members. Defaults to `"list"`
 
 ### `--indexFormat`
 
-Render indexes either as a simple list or a table with a description. Defaults to `"list"`
+Render indexes either as a simple list or a table with a description. Defaults to `"list"`.
 
 ```shell
---indexFormat "list"|"table"
+--indexFormat <"list"|"table">
 ```
 
 [↑ Top](#options-guide)
@@ -356,7 +411,7 @@ Render indexes either as a simple list or a table with a description. Defaults t
 
 ### `--preserveAnchorCasing`
 
-Preserve anchor casing when generating links. Defaults to `false`
+Preserve anchor casing when generating links. Defaults to `false`.
 
 ```shell
 --preserveAnchorCasing <boolean>
@@ -368,7 +423,7 @@ Preserve anchor casing when generating links. Defaults to `false`
 
 ### `--anchorPrefix`
 
-Custom anchor prefix Defaults to `"undefined"`
+Custom anchor prefix Defaults to `"undefined"`.
 
 ```shell
 --anchorPrefix <string>
@@ -378,29 +433,22 @@ Custom anchor prefix Defaults to `"undefined"`
 
 ***
 
-### `--htmlHeadingAnchors`
+### `--namedAnchors`
 
-Use HTML named anchors on heading elements. Defaults to `false`
-
-```shell
---htmlHeadingAnchors <boolean>
-```
-
-[↑ Top](#options-guide)
-
-***
-
-### `--htmlTableAnchors`
-
-Use HTML named anchors on table rows that contain linkable symbols. Defaults to `false`
+Use HTML named anchor tags for internal anchor links. Defaults to `{"headings":false,"tableRows":false}`.
 
 ```shell
---htmlTableAnchors <boolean>
+--namedAnchors <{"headings": boolean}, {"tableRows": boolean}>
 ```
 
 #### Usage
 
-Comment without tag
+Internal anchor links are used when referencing symbols with in-page table of contents or when referenced with  by {@link} tags.
+
+There are two flags exposed by this option:
+
+*   `headings` - Add HTML named anchors to heading for implementations that do not assign header ids.
+*   `tableRows` - Add anchors to table rows when table formats are selected and no heading elements are present.
 
 [↑ Top](#options-guide)
 

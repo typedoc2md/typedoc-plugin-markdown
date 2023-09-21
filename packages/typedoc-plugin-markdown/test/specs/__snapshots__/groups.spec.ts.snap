@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -17,6 +17,11 @@ A basic module
 
 - [EnumA](enumerations/EnumA.md)
 - [EnumB](enumerations/EnumB.md)
+
+### Classes
+
+- [ClassA](classes/ClassA.md)
+- [ClassB](classes/ClassB.md)
 
 ### Interfaces
 
@@ -47,6 +52,13 @@ A basic module
 | [EnumA](enumerations/EnumA.md) | - |
 | [EnumB](enumerations/EnumB.md) | - |
 
+### Classes
+
+| Class | Description |
+| :------ | :------ |
+| [ClassA](classes/ClassA.md) | - |
+| [ClassB](classes/ClassB.md) | - |
+
 ### Interfaces
 
 | Interface | Description |
@@ -54,18 +66,11 @@ A basic module
 | [IterfaceA](interfaces/IterfaceA.md) | - |
 | [IterfaceB](interfaces/IterfaceB.md) | - |
 
-## Table of contents
-
-### Type Aliases
-
-- [TypeA](index.md#typea)
-- [TypeB](index.md#typeb)
-
 <a id="typea" name="typea"></a>
 
 ## TypeA
 
-> **\`type\`** **TypeA**: \`string\`
+> **TypeA**: \`string\`
 
 ***
 
@@ -73,7 +78,7 @@ A basic module
 
 ## TypeB
 
-> **\`type\`** **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 CUSTOM FOOTER HERE
 "
@@ -97,6 +102,11 @@ A basic module
 - [EnumA](basic.md#enuma)
 - [EnumB](basic.md#enumb)
 
+### Classes
+
+- [ClassA](basic.md#classa)
+- [ClassB](basic.md#classb)
+
 ### Interfaces
 
 - [IterfaceA](basic.md#iterfacea)
@@ -115,29 +125,55 @@ A basic module
 
 ### EnumB
 
+## Classes
+
+### ClassA
+
+#### Constructors
+
+##### new ClassA()
+
+> **new ClassA**(): [\`ClassA\`](basic.md#classa)
+
 ***
+
+### ClassB
+
+#### Constructors
+
+##### new ClassB()
+
+> **new ClassB**(): [\`ClassB\`](basic.md#classb)
 
 ## Interfaces
 
 ### IterfaceA
 
+#### Properties
+
+##### propA
+
+> **propA**: \`string\`
+
+##### propB
+
+> **propB**: \`string\`
+
 ***
 
 ### IterfaceB
-
-***
 
 ## Type Aliases
 
 ### TypeA
 
-> **\`type\`** **TypeA**: \`string\`
+> **TypeA**: \`string\`
 
 ***
 
 ### TypeB
 
-> **\`type\`** **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 ***
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -148,23 +184,6 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 "# Module: basic
 
 A basic module
-
-## Table of contents
-
-### Enumerations
-
-- [EnumA](basic.md#enuma)
-- [EnumB](basic.md#enumb)
-
-### Interfaces
-
-- [IterfaceA](basic.md#iterfacea)
-- [IterfaceB](basic.md#iterfaceb)
-
-### Type Aliases
-
-- [TypeA](basic.md#typea)
-- [TypeB](basic.md#typeb)
 
 <a id="enuma" name="enuma"></a>
 
@@ -178,9 +197,51 @@ A basic module
 
 ***
 
+<a id="classa" name="classa"></a>
+
+## ClassA
+
+### Constructors
+
+<a id="constructors" name="constructors"></a>
+
+#### new ClassA()
+
+> **new ClassA**(): [\`ClassA\`](basic.md#classa)
+
+***
+
+<a id="classb" name="classb"></a>
+
+## ClassB
+
+### Constructors
+
+<a id="constructors-1" name="constructors-1"></a>
+
+#### new ClassB()
+
+> **new ClassB**(): [\`ClassB\`](basic.md#classb)
+
+***
+
 <a id="iterfacea" name="iterfacea"></a>
 
 ## IterfaceA
+
+### Properties
+
+<a id="propa" name="propa"></a>
+
+#### propA
+
+> **propA**: \`string\`
+
+<a id="propb" name="propb"></a>
+
+#### propB
+
+> **propB**: \`string\`
 
 ***
 
@@ -194,7 +255,7 @@ A basic module
 
 ## TypeA
 
-> **\`type\`** **TypeA**: \`string\`
+> **TypeA**: \`string\`
 
 ***
 
@@ -202,7 +263,7 @@ A basic module
 
 ## TypeB
 
-> **\`type\`** **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 CUSTOM FOOTER HERE
 "
@@ -275,8 +336,6 @@ A module that contains categories
 
 #### UnCategorizedEnum
 
-***
-
 ## Interfaces
 
 ### Category A
@@ -308,27 +367,6 @@ exports[`Groups should compile categories group page: (Output File Strategy "mod
 "# Module: has-categories
 
 A module that contains categories
-
-## Table of contents
-
-### Category A
-
-- [CategoryAEnum1](has-categories.md#categoryaenum1)
-- [CategoryAEnum2](has-categories.md#categoryaenum2)
-- [CategoryAInterface1](has-categories.md#categoryainterface1)
-- [CategoryAInterface2](has-categories.md#categoryainterface2)
-
-### Category B
-
-- [CategoryBEnum1](has-categories.md#categorybenum1)
-- [CategoryBEnum2](has-categories.md#categorybenum2)
-- [CategoryBInterface1](has-categories.md#categorybinterface1)
-- [CategoryBInterface2](has-categories.md#categorybinterface2)
-
-### Other
-
-- [UnCategorizedEnum](has-categories.md#uncategorizedenum)
-- [UnCategorizedInterace](has-categories.md#uncategorizedinterace)
 
 ## Category A
 
@@ -395,7 +433,7 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -568,7 +606,7 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../../../API.md)
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](../../../README.md) ∙ [API](../../../API.md)
 
 ***
 
@@ -613,7 +651,7 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../../../API.md)
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](../../../README.md) ∙ [API](../../../API.md)
 
 ***
 
@@ -653,12 +691,6 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 | :------ | :------ |
 | [NestedNamespace](namespaces/NestedNamespace.md) | - |
 
-## Table of contents
-
-### Interfaces
-
-- [NamespaceInterface](index.md#namespaceinterface)
-
 <a id="namespaceinterface" name="namespaceinterface"></a>
 
 ## NamespaceInterface
@@ -668,7 +700,7 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -755,28 +787,11 @@ A module that contains namespaces
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 | [\\_Interface\\_A\\_](interfaces/Interface_A_.md) | - |
 
-## Table of contents
-
-### Type Aliases
-
-- [TypeB](index.md#typeb)
-- [\\_Type\\_A\\_](index.md#type-a)
-
-### Variables
-
-- [\\_variable\\_A\\_](index.md#variable-a)
-- [variableB](index.md#variableb)
-
-### Functions
-
-- [\\_function\\_A\\_](index.md#function-a)
-- [functionB](index.md#functionb)
-
 <a id="typeb" name="typeb"></a>
 
 ## TypeB
 
-> **\`type\`** **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 ***
 
@@ -784,7 +799,7 @@ A module that contains namespaces
 
 ## \\_Type\\_A\\_
 
-> **\`type\`** **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_**: \`string\`
 
 ***
 
@@ -806,32 +821,24 @@ A module that contains namespaces
 
 <a id="function-a" name="function-a"></a>
 
-## \\_function\\_A\\_
+## \\_function\\_A\\_()
 
 > **\\_function\\_A\\_**(): \`void\`
-
-### Returns
-
-\`void\`
 
 ***
 
 <a id="functionb" name="functionb"></a>
 
-## functionB
+## functionB()
 
 > **functionB**(): \`void\`
-
-### Returns
-
-\`void\`
 
 CUSTOM FOOTER HERE
 "
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](../API.md)
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -888,8 +895,6 @@ A module that contains namespaces
 
 ### \\_Enum\\_A\\_
 
-***
-
 ## Classes
 
 ### ClassB
@@ -899,10 +904,6 @@ A module that contains namespaces
 ##### new ClassB()
 
 > **new ClassB**(): [\`ClassB\`](README.md#classb)
-
-###### Returns
-
-[\`ClassB\`](README.md#classb)
 
 ***
 
@@ -914,12 +915,6 @@ A module that contains namespaces
 
 > **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](README.md#class-a)
 
-###### Returns
-
-[\`__Class_A_\`](README.md#class-a)
-
-***
-
 ## Interfaces
 
 ### InterfaceB
@@ -928,21 +923,17 @@ A module that contains namespaces
 
 ### \\_Interface\\_A\\_
 
-***
-
 ## Type Aliases
 
 ### TypeB
 
-> **\`type\`** **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 ***
 
 ### \\_Type\\_A\\_
 
-> **\`type\`** **\\_Type\\_A\\_**: \`string\`
-
-***
+> **\\_Type\\_A\\_**: \`string\`
 
 ## Variables
 
@@ -956,27 +947,17 @@ A module that contains namespaces
 
 > **\`const\`** **variableB**: \`true\` = \`true\`
 
-***
-
 ## Functions
 
-### \\_function\\_A\\_
+### \\_function\\_A\\_()
 
 > **\\_function\\_A\\_**(): \`void\`
 
-#### Returns
-
-\`void\`
-
 ***
 
-### functionB
+### functionB()
 
 > **functionB**(): \`void\`
-
-#### Returns
-
-\`void\`
 
 ***
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -996,38 +977,6 @@ A module that contains namespaces
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
-
-## Table of contents
-
-### Enumerations
-
-- [EnumB](index.md#enumb)
-- [\\_Enum\\_A\\_](index.md#enum-a)
-
-### Classes
-
-- [ClassB](index.md#classb)
-- [\\_\\_Class\\_A\\_](index.md#class-a)
-
-### Interfaces
-
-- [InterfaceB](index.md#interfaceb)
-- [\\_Interface\\_A\\_](index.md#interface-a)
-
-### Type Aliases
-
-- [TypeB](index.md#typeb)
-- [\\_Type\\_A\\_](index.md#type-a)
-
-### Variables
-
-- [\\_variable\\_A\\_](index.md#variable-a)
-- [variableB](index.md#variableb)
-
-### Functions
-
-- [\\_function\\_A\\_](index.md#function-a)
-- [functionB](index.md#functionb)
 
 <a id="enumb" name="enumb"></a>
 
@@ -1053,10 +1002,6 @@ A module that contains namespaces
 
 > **new ClassB**(): [\`ClassB\`](index.md#classb)
 
-##### Returns
-
-[\`ClassB\`](index.md#classb)
-
 ***
 
 <a id="class-a" name="class-a"></a>
@@ -1070,10 +1015,6 @@ A module that contains namespaces
 #### new \\_\\_Class\\_A\\_()
 
 > **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#class-a)
-
-##### Returns
-
-[\`__Class_A_\`](index.md#class-a)
 
 ***
 
@@ -1093,7 +1034,7 @@ A module that contains namespaces
 
 ## TypeB
 
-> **\`type\`** **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 ***
 
@@ -1101,7 +1042,7 @@ A module that contains namespaces
 
 ## \\_Type\\_A\\_
 
-> **\`type\`** **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_**: \`string\`
 
 ***
 
@@ -1123,25 +1064,17 @@ A module that contains namespaces
 
 <a id="function-a" name="function-a"></a>
 
-## \\_function\\_A\\_
+## \\_function\\_A\\_()
 
 > **\\_function\\_A\\_**(): \`void\`
-
-### Returns
-
-\`void\`
 
 ***
 
 <a id="functionb" name="functionb"></a>
 
-## functionB
+## functionB()
 
 > **functionB**(): \`void\`
-
-### Returns
-
-\`void\`
 
 CUSTOM FOOTER HERE
 "

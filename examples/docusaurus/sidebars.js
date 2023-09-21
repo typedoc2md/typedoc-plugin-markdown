@@ -16,7 +16,17 @@ const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
 
   //typedocSidebar1: require('./docs/api-1/typedoc-sidebar.cjs'),
-
+  typedocSidebar1: [
+    {
+      type: 'category',
+      label: 'Keyring API',
+      link: {
+        type: 'doc',
+        id: 'keyring-api/index',
+      },
+      items: require('./docs/keyring-api/typedoc-sidebar.cjs'),
+    },
+  ],
   typedocSidebar2: [
     {
       type: 'category',

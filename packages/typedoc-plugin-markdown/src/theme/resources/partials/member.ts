@@ -15,36 +15,37 @@ export function member(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
   headingLevel: number,
+  nested = false,
 ): string {
   const md: string[] = [];
 
-  if (context.options.getValue('htmlHeadingAnchors')) {
+  if (context.options.getValue('namedAnchors')?.headings) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
   }
 
   if (
     !reflection.hasOwnDocument &&
-    !reflection.kindOf(ReflectionKind.Constructor)
+    !(reflection.kind === ReflectionKind.Constructor)
   ) {
     md.push(heading(headingLevel, getMemberTitle(reflection)));
   }
 
   const getMember = (reflection: DeclarationReflection) => {
     if (
-      reflection.kindOf([
+      [
         ReflectionKind.Class,
         ReflectionKind.Interface,
         ReflectionKind.Enum,
-      ])
+      ].includes(reflection.kind)
     ) {
       return context.reflectionMember(reflection, headingLevel + 1);
     }
 
-    if (reflection.kindOf(ReflectionKind.Constructor)) {
+    if (reflection.kind === ReflectionKind.Constructor) {
       return context.constructorMember(reflection, headingLevel);
     }
 
-    if (reflection.kindOf(ReflectionKind.Accessor)) {
+    if (reflection.kind === ReflectionKind.Accessor) {
       return context.accessorMember(reflection, headingLevel + 1);
     }
 
@@ -69,6 +70,7 @@ export function member(
             context.signatureMember(
               signature,
               multipleSignatures ? headingLevel + 2 : headingLevel + 1,
+              nested,
             ),
           );
           return signatureMd.join('\n\n');
@@ -76,19 +78,11 @@ export function member(
         .join('\n\n');
     }
 
-    if (reflection.getSignature) {
-      return context.signatureMember(reflection.getSignature, headingLevel + 1);
-    }
-
-    if (reflection.setSignature) {
-      return context.signatureMember(reflection.setSignature, headingLevel + 1);
-    }
-
     if (reflection instanceof ReferenceReflection) {
       return context.referenceMember(reflection);
     }
 
-    return context.declarationMember(reflection, headingLevel + 1);
+    return context.declarationMember(reflection, headingLevel + 1, nested);
   };
 
   const member = getMember(reflection);

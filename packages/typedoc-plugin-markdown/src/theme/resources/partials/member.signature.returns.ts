@@ -1,8 +1,4 @@
-import {
-  DeclarationReflection,
-  ReflectionKind,
-  SignatureReflection,
-} from 'typedoc';
+import { DeclarationReflection, SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { blockQuoteBlock, heading } from '../../../support/elements';
 
@@ -19,41 +15,36 @@ export function signatureMemberReturns(
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(heading(headingLevel, 'Returns'));
+  const showReturns =
+    signature.comment?.blockTags.length ||
+    typeDeclaration?.signatures ||
+    typeDeclaration?.children;
 
-  if (
-    signature.type &&
-    !typeDeclaration?.signatures &&
-    !typeDeclaration?.children
-  ) {
-    md.push(context.someType(signature.type, true));
-  }
+  if (showReturns) {
+    md.push(heading(headingLevel, 'Returns'));
 
-  if (signature.comment?.blockTags.length) {
-    const tags = signature.comment.blockTags
-      .filter((tag) => tag.tag === '@returns')
-      .map((tag) => context.commentParts(tag.content));
-    md.push(tags.join('\n\n'));
-  }
+    if (signature.comment?.blockTags.length) {
+      const tags = signature.comment.blockTags
+        .filter((tag) => tag.tag === '@returns')
+        .map((tag) => context.commentParts(tag.content));
+      md.push(tags.join('\n\n'));
+    }
 
-  if (typeDeclaration?.signatures) {
-    typeDeclaration.signatures.forEach((signature) => {
+    if (typeDeclaration?.signatures) {
+      typeDeclaration.signatures.forEach((signature) => {
+        md.push(
+          blockQuoteBlock(context.signatureMember(signature, headingLevel + 1)),
+        );
+      });
+    }
+
+    if (typeDeclaration?.children) {
       md.push(
-        blockQuoteBlock(context.signatureMember(signature, headingLevel + 1)),
+        blockQuoteBlock(
+          context.typeDeclarationMember(typeDeclaration, headingLevel),
+        ),
       );
-    });
-  }
-
-  const hasParent = typeDeclaration?.parent?.kindOf(ReflectionKind.Property);
-
-  if (typeDeclaration?.children) {
-    md.push(
-      context.typeDeclarationMember(
-        typeDeclaration,
-        headingLevel + 1,
-        hasParent ? signature.name : undefined,
-      ),
-    );
+    }
   }
 
   return md.join('\n\n');

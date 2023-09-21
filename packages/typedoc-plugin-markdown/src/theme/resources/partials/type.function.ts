@@ -11,9 +11,9 @@ export function functionType(
 ): string {
   const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
-      ? `<${fn.typeParameters
+      ? `\\<${fn.typeParameters
           .map((typeParameter) => backTicks(typeParameter.name))
-          .join(', ')}>`
+          .join(', ')}\\>`
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {

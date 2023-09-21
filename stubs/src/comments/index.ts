@@ -36,14 +36,6 @@
  *
  * A `<tag>` in backticks
  *
- * <p>Some HTML</p>
- *
- * <img src="http://via.placeholder.com/50x50" />
- *
- * <ul>
- * <li>html list item</li>
- * </ul>
- *
  * ```
  * A <tag> in a code block
  * Some <p> html </p> inside codeblock

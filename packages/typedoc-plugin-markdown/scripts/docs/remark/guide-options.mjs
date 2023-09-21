@@ -28,22 +28,12 @@ function getMarkdown(key) {
 
   groupedConfig[key].forEach((config, i) => {
     md.push(`### \`--${config.name}\``);
-    md.push(`${config.help} Defaults to \`${getDefaultValue(config)}\``);
+    md.push(`${config.help} Defaults to \`${getDefaultValue(config)}\`.`);
     md.push(`
 \`\`\`shell
 --${config.name} ${getType(config)}
 \`\`\`
   `);
-    //md.push('#### Type');
-    //md.push(`\`${getType(config)}\``);
-    //md.push('#### Default');
-    // md.push(`
-    //  \`\`\`json
-    //  {
-    //    "${config.name}": "${config.defaultValue}"
-    //  }
-    /// \`\`\`
-    //`);
     if (config.comments?.length > 0) {
       md.push('#### Usage');
       md.push(config.comments);
@@ -59,6 +49,16 @@ function getType(option) {
   if (option.type === ParameterType.Boolean) {
     return '<boolean>';
   }
+  if (option.type === ParameterType.Flags) {
+    return `<${Object.keys(option.defaults)
+      .map((key) =>
+        JSON.stringify({
+          [key]: 'boolean',
+        }),
+      )
+      .join(', ')
+      .replaceAll('"boolean"', ' boolean')}>`;
+  }
   if (option.type === ParameterType.Array) {
     return `Array<\n    [${option.defaultValue
       .toString()
@@ -67,9 +67,9 @@ function getType(option) {
       .join(' | ')}]\n  >`;
   }
   if (option.type === ParameterType.Map && option.map) {
-    return `${Object.values(option.map)
+    return `<${Object.values(option.map)
       .map((value) => `"${value}"`)
-      .join('|')}`;
+      .join('|')}>`;
   }
   return '<string>';
 }
@@ -77,6 +77,9 @@ function getType(option) {
 function getDefaultValue(option) {
   if (option.type === ParameterType.Boolean) {
     return option.defaultValue;
+  }
+  if (option.type === ParameterType.Flags) {
+    return JSON.stringify(option.defaults);
   }
   if (option.type === ParameterType.Array) {
     return `[${option.defaultValue

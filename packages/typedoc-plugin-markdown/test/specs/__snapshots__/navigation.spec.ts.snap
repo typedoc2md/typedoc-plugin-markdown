@@ -94,6 +94,19 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         ]
       },
       {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "url": "basic/classes/ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "url": "basic/classes/ClassB.md"
+          }
+        ]
+      },
+      {
         "title": "Interfaces",
         "children": [
           {
@@ -359,6 +372,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       {
         "title": "EnumB",
         "url": "basic/enumerations/EnumB.md"
+      },
+      {
+        "title": "ClassA",
+        "url": "basic/classes/ClassA.md"
+      },
+      {
+        "title": "ClassB",
+        "url": "basic/classes/ClassB.md"
       },
       {
         "title": "IterfaceA",
@@ -754,6 +775,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "functionReturningAFunction",
         "url": "functions/functionReturningAFunction.md"
+      },
+      {
+        "title": "functionReturningAPromise",
+        "url": "functions/functionReturningAPromise.md"
       },
       {
         "title": "functionReturningAnObject",

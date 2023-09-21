@@ -1,7 +1,8 @@
-import { ParameterReflection, SignatureReflection } from 'typedoc';
+import { SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, bold, codeBlock } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
+import { escapeChars, trimLastLine } from '../../../support/utils';
+import { getSignatureParameters } from '../../helpers';
 
 /**
  * @category Partials
@@ -9,20 +10,30 @@ import { escapeChars } from '../../../support/utils';
 export function signatureMemberIdentifier(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
-  accessor?: string,
+  opts?: {
+    accessor?: string;
+    includeType?: boolean;
+  },
 ): string {
   const md: string[] = [];
 
-  const useCodeBlocks = context.options.getValue('identifiersAsCodeBlocks');
+  const DEFAULT_OPTIONS = {
+    accessor: null,
+    useCodeBlocks: false,
+  };
 
-  if (accessor) {
-    md.push(backTicks(accessor) + ' ');
+  const options = { ...DEFAULT_OPTIONS, ...opts };
+
+  const useCodeBlocks = context.options.getValue('useCodeBlocks');
+
+  if (options?.accessor) {
+    md.push(bold(backTicks(options?.accessor)) + ' ');
   }
 
   if (signature.parent && signature.parent.flags?.length > 0) {
     md.push(
       signature.parent.flags
-        .map((flag) => `\`${flag.toLowerCase()}\``)
+        .map((flag) => bold(backTicks(flag.toLowerCase())))
         .join(' ') + ' ',
     );
   }
@@ -33,47 +44,24 @@ export function signatureMemberIdentifier(
 
   if (signature.typeParameters) {
     md.push(
-      `<${signature.typeParameters
+      `\\<${signature.typeParameters
         .map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}>`,
+        .join(', ')}\\>`,
     );
   }
 
-  const getParameters = (parameters: ParameterReflection[] = []) => {
-    const firstOptionalParamIndex = parameters.findIndex(
-      (parameter) => parameter.flags.isOptional,
-    );
-    return parameters
-      .map((param, i) => {
-        const paramsmd: string[] = [];
-        if (param.flags.isRest) {
-          paramsmd.push('...');
-        }
-        const paramItem = `${backTicks(param.name)}${
-          param.flags.isOptional ||
-          (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
-            ? '?'
-            : ''
-        }`;
-        paramsmd.push(
-          `${
-            useCodeBlocks && parameters.length > 2 ? '\n    ' : ''
-          }${paramItem}`,
-        );
-        return paramsmd.join('');
-      })
-      .join(`, `);
-  };
-
-  md.push(
-    signature.parameters && signature.parameters?.length > 0
-      ? `(${getParameters(signature.parameters)})`
-      : '()',
-  );
+  md.push(getSignatureParameters(signature.parameters || [], useCodeBlocks));
 
   if (signature.type) {
-    md.push(`: ${context.someType(signature.type, true)}`);
+    md.push(`: ${context.someType(signature.type)}`);
   }
 
-  return useCodeBlocks ? codeBlock(md.join('')) : `> ${md.join('')}`;
+  const result = md.join('');
+
+  const trimmedResult =
+    result.endsWith('}') || result.endsWith('};') || result.endsWith('>')
+      ? trimLastLine(result)
+      : result;
+
+  return useCodeBlocks ? codeBlock(trimmedResult) : `> ${trimmedResult}`;
 }

@@ -1,6 +1,6 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { bold, italic } from '../../../support/elements';
+import { bold } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -14,21 +14,17 @@ export function typeParametersList(
   typeParameters?.forEach((typeParameter) => {
     const row: string[] = [];
 
-    //row.push(heading(headingLevel, typeParameter.name));
-
     const nameCol: string[] = [bold(typeParameter.name)];
 
     if (typeParameter.type) {
-      nameCol.push(
-        `${italic('extends')} ${context.someType(typeParameter.type)}`,
-      );
+      nameCol.push(`extends ${context.someType(typeParameter.type)}`);
     }
 
     if (typeParameter.default) {
       nameCol.push(`= ${context.someType(typeParameter.default)}`);
     }
 
-    row.push('> ' + nameCol.join(' '));
+    row.push('▪ ' + nameCol.join(' '));
 
     if (typeParameter.comment) {
       row.push(context.comment(typeParameter.comment));

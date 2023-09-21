@@ -84,4 +84,12 @@ describe(`Function Reflection`, () => {
       'functions/functionReturningAFunction.md',
     );
   });
+
+  test(`should compile function returning a promise`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Reflections,
+      FixtureOutputFileStrategy.Members,
+      'functions/functionReturningAPromise.md',
+    );
+  });
 });

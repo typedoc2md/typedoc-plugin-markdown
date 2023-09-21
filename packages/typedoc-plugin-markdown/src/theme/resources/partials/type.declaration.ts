@@ -9,13 +9,7 @@ import { getDeclarationType } from '../../helpers';
 export function declarationType(
   context: MarkdownThemeRenderContext,
   declarationReflection: DeclarationReflection,
-  collapse = false,
-  format = false,
 ): string {
-  if (collapse) {
-    return backTicks('object');
-  }
-
   if (declarationReflection.indexSignature || declarationReflection.children) {
     let indexSignature = '';
     const declarationIndexSignature = declarationReflection.indexSignature;
@@ -29,10 +23,13 @@ export function declarationType(
       indexSignature = `${key}: ${obj}; `;
     }
 
+    const children = declarationReflection.children;
+
     const types =
-      declarationReflection.children &&
-      declarationReflection.children.map((obj, index) => {
+      children &&
+      children.map((obj) => {
         const name: string[] = [];
+
         if (Boolean(obj.getSignature || Boolean(obj.setSignature))) {
           if (obj.getSignature) {
             name.push('get');
@@ -41,26 +38,26 @@ export function declarationType(
             name.push('set');
           }
         }
+
         name.push(backTicks(obj.name));
+
         const theType = getDeclarationType(obj) as SomeType;
 
         const typeString = context.someType(theType);
 
-        return `${name.join(' ')}: ${indentBlock(typeString, format)};${
-          format ? '\n ' : ' '
-        }`;
+        return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
       });
 
     if (indexSignature) {
       types?.unshift(indexSignature);
     }
-    return types ? `\\{${format ? '\n ' : ' '} ${types.join(' ')}}` : '\\{}';
+    return types ? `\\{\n${types.join('')}  }` : '\\{}';
   }
   return '\\{}';
 }
 
 function indentBlock(content: string, format: boolean) {
-  const lines = content.split(`${format ? '\n ' : ' '}`);
+  const lines = content.split(`${'\n'}`);
   return lines
     .filter((line) => Boolean(line.length))
     .map((line, i) => {
@@ -68,9 +65,9 @@ function indentBlock(content: string, format: boolean) {
         return line;
       }
       if (i === lines.length - 1) {
-        return ` ${line}`;
+        return line.trim().startsWith('}') ? line : `   ${line}`;
       }
-      return `  ${line}`;
+      return `   ${line}`;
     })
-    .join(`${format ? '\n' : ''}`);
+    .join(`${`\n`}`);
 }

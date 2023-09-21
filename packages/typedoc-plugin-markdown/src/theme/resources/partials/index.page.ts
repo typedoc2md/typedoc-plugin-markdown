@@ -50,7 +50,7 @@ export function pageIndex(
     );
     return md.join('\n\n');
   }
-  if (hasTOC(page.model)) {
+  if (!context.options.getValue('hideInPageTOC') && hasTOC(page.model)) {
     md.push(context.reflectionIndex(page.model, true, headingLevel));
   }
   return md.join('\n\n');

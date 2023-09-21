@@ -121,8 +121,17 @@ export function functionReturningAnObject() {
 
 /**
  * Comments for function
- * @returns Return comments
  */
 export function functionReturningAFunction() {
   return <T>(x: string) => true;
+}
+
+/**
+ * Comments for function
+ * @returns Return comments
+ */
+export function functionReturningAPromise(): Promise<{ prop: string }> {
+  return new Promise(() => {
+    return { prop: 'prop' };
+  });
 }

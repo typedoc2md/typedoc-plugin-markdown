@@ -27,7 +27,7 @@ async function optionsPage() {
   const file = await read('./docs/guides/options.md');
   const processor = await remark().use(remarkGfm).use(guideOptions);
   const vfile = await remark()
-    .use(remarkToc, { heading: 'Contents', maxDepth: 2 })
+    .use(remarkToc, { heading: 'Contents', maxDepth: 3 })
     .processSync(processor.processSync(file));
   writeSync(vfile);
 }

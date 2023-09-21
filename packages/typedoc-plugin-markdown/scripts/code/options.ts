@@ -54,6 +54,9 @@ function getType(option: Partial<DeclarationOption>) {
   if (option.type === ParameterType.Array) {
     return 'any[]';
   }
+  if (option.type === ParameterType.Flags) {
+    return 'Record<string, boolean>';
+  }
   if (option.type === ParameterType.Map && option.map) {
     return `${Object.values(option.map)
       .map((value) => `"${value}"`)

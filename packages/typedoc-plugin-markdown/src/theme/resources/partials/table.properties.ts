@@ -1,8 +1,16 @@
-import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, table } from '../../../support/elements';
-import { stripLineBreaks, tableString } from '../../../support/utils';
-import { getDeclarationType, getModifier } from '../../helpers';
+import {
+  escapeChars,
+  formatTableDescriptionCol,
+  stripLineBreaks,
+} from '../../../support/utils';
+import {
+  flattenDeclarations,
+  getDeclarationType,
+  getModifier,
+} from '../../helpers';
 
 /**
  * @category Partials
@@ -10,10 +18,7 @@ import { getDeclarationType, getModifier } from '../../helpers';
 export function propertiesTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
-  nameCol = 'Property',
 ): string {
-  const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
-  const hasComments = comments.some((value) => Boolean(value));
   const modifiers = props.map((param) => getModifier(param));
   const hasModifiers = modifiers.some((value) => Boolean(value));
 
@@ -30,13 +35,11 @@ export function propertiesTable(
     headers.push('Modifier');
   }
 
-  headers.push(nameCol);
+  headers.push('Property');
 
   headers.push('Type');
 
-  if (hasComments) {
-    headers.push('Description');
-  }
+  headers.push('Description');
 
   if (hasInheritance) {
     headers.push('Inheritance');
@@ -46,35 +49,11 @@ export function propertiesTable(
     headers.push('Source');
   }
 
-  const flattenParams = (current: any) => {
-    return current.type?.declaration?.children?.reduce(
-      (acc: any, child: any) => {
-        const childObj = {
-          ...child,
-          name: `${current.name}.${child.name}`,
-        };
-        return parseParams(childObj, acc);
-      },
-      [],
-    );
-  };
-
-  const parseParams = (current: any, acc: any) => {
-    const shouldFlatten = current.type?.declaration?.children;
-
-    return shouldFlatten
-      ? [...acc, current, ...flattenParams(current)]
-      : [...acc, current];
-  };
-
-  const properties = props.reduce(
-    (acc: any, current: any) => parseParams(current, acc),
-    [],
-  );
-
   const rows: string[][] = [];
 
-  properties.forEach((property: DeclarationReflection, index: number) => {
+  const declarations = flattenDeclarations(props);
+
+  declarations.forEach((property: DeclarationReflection, index: number) => {
     const propertyType = getDeclarationType(property);
     const row: string[] = [];
 
@@ -84,31 +63,34 @@ export function propertiesTable(
 
     const nameColumn: string[] = [];
 
-    if (context.options.getValue('htmlTableAnchors') && property.anchor) {
+    if (
+      context.options.getValue('namedAnchors')?.tableRows &&
+      property.anchor
+    ) {
       nameColumn.push(
         `<a id="${property.anchor}" name="${property.anchor}"></a>`,
       );
     }
 
     nameColumn.push(
-      `${backTicks(
-        `${tableString(property.name)}${property.flags.isOptional ? '?' : ''}`,
-      )}`,
+      `${`${escapeChars(property.name)}${
+        property.flags.isOptional ? '?' : ''
+      }`}`,
     );
 
-    row.push(nameColumn.join(' '));
+    row.push(backTicks(nameColumn.join(' ')));
 
     if (propertyType) {
-      row.push(context.someType(propertyType, true));
+      row.push(stripLineBreaks(context.someType(propertyType), false));
     }
 
-    if (hasComments) {
-      const comments = getComments(property);
-      if (comments) {
-        row.push(stripLineBreaks(tableString(context.comment(comments))));
-      } else {
-        row.push('-');
-      }
+    const comments = property.comment;
+    if (comments) {
+      row.push(
+        stripLineBreaks(formatTableDescriptionCol(context.comment(comments))),
+      );
+    } else {
+      row.push('-');
     }
 
     if (hasInheritance) {
@@ -123,16 +105,4 @@ export function propertiesTable(
   });
 
   return table(headers, rows);
-}
-
-function getComments(property: DeclarationReflection) {
-  if (property.type instanceof ReflectionType) {
-    if (property.type?.declaration?.signatures) {
-      return property.type?.declaration.signatures[0].comment;
-    }
-  }
-  if (property.signatures) {
-    return property.signatures[0].comment;
-  }
-  return property.comment;
 }

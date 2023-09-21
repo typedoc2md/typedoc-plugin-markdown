@@ -13,7 +13,8 @@ declare module 'typedoc' {
     indexPageTitle: string;
     titleTemplate: string;
     excludeGroups: boolean;
-    identifiersAsCodeBlocks: boolean;
+    useCodeBlocks: boolean;
+    expandObjects: boolean;
     parametersFormat: 'list' | 'table';
     propertiesFormat: 'list' | 'table';
     enumMembersFormat: 'list' | 'table';
@@ -21,8 +22,7 @@ declare module 'typedoc' {
     indexFormat: 'list' | 'table';
     preserveAnchorCasing: boolean;
     anchorPrefix: string;
-    htmlHeadingAnchors: boolean;
-    htmlTableAnchors: boolean;
+    namedAnchors: Record<string, boolean>;
   }
 }
 
@@ -38,7 +38,8 @@ export interface PluginOptions {
   indexPageTitle: string;
   titleTemplate: string;
   excludeGroups: boolean;
-  identifiersAsCodeBlocks: boolean;
+  useCodeBlocks: boolean;
+  expandObjects: boolean;
   parametersFormat: 'list' | 'table';
   propertiesFormat: 'list' | 'table';
   enumMembersFormat: 'list' | 'table';
@@ -46,6 +47,5 @@ export interface PluginOptions {
   indexFormat: 'list' | 'table';
   preserveAnchorCasing: boolean;
   anchorPrefix: string;
-  htmlHeadingAnchors: boolean;
-  htmlTableAnchors: boolean;
+  namedAnchors: Record<string, boolean>;
 }

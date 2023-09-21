@@ -31,7 +31,7 @@ export function projectTemplate(
 
   md.push(context.pageIndex(page, 2));
 
-  if (hasTOC(page.model)) {
+  if (!context.options.getValue('hideInPageTOC') && hasTOC(page.model)) {
     md.push(context.reflectionIndex(page.model, true, 2));
   }
 

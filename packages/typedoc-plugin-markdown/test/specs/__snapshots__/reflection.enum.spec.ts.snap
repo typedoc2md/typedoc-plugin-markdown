@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -22,6 +22,8 @@ Comments for MemberA
 #### Source
 
 [enums.ts:12](source-url)
+
+***
 
 ### MemberB
 
@@ -59,7 +61,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
 
 ***
 
@@ -78,6 +80,8 @@ Comments for enum
 #### Source
 
 [enums.ts:23](source-url)
+
+***
 
 ### MemberB
 

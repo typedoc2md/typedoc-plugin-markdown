@@ -50,7 +50,8 @@ const config = {
         out: 'api-1',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/reflections/index.ts',
-        // outputFileStrategy: 'modules',
+        typeDeclarationFormat: 'table',
+        expandObjects: true,
       },
     ],
     [
@@ -60,7 +61,6 @@ const config = {
         out: 'api-2',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/groups/**/*.ts',
-        // outputFileStrategy: 'modules',
         membersWithOwnFile: ['Class', 'Interface'],
       },
     ],

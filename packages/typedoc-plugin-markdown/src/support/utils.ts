@@ -11,7 +11,8 @@ export function escapeChars(str: string) {
     .replace(/{/g, '\\{')
     .replace(/_/g, '\\_')
     .replace(/`/g, '\\`')
-    .replace(/\|/g, '\\|');
+    .replace(/\|/g, '\\|')
+    .replace(/\*/g, '\\*');
 }
 
 /**
@@ -26,6 +27,13 @@ export function escapeAngleBrackets(str: string) {
     const shouldEscape = tags.match(htmlRe);
     return shouldEscape ? tags.replace(/>/g, '>` ').replace(/</g, '`<') : tags;
   });
+}
+
+export function trimLastLine(content: string) {
+  const lines = content.split('\n');
+  return lines
+    .map((line, index) => (index === lines.length - 1 ? line.trim() : line))
+    .join('\n');
 }
 
 export function unEscapeChars(str: string) {
@@ -47,8 +55,12 @@ export function stripComments(str: string) {
     .replace(/^\s+|\s+$|(\s)+/g, '$1');
 }
 
-export function tableString(str: string) {
+export function formatTableDescriptionCol(str: string) {
   return str.replace(/\|/g, '\\|');
+}
+
+export function formatTableNameCol(str: string) {
+  return str.includes('|') ? str.replace(/\|/g, '\\|') : `\`${str}\``;
 }
 
 export function stripLineBreaks(str: string, includeHTML = true) {

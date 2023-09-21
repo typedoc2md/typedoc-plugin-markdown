@@ -59,7 +59,7 @@ export function reflectionMember(
     md.push(context.reflectionIndex(reflection, false, headingLevel + 1));
   }
 
-  if (hasTOC(reflection)) {
+  if (!context.options.getValue('hideInPageTOC') && hasTOC(reflection)) {
     md.push(heading(headingLevel, 'Table of contents'));
     md.push(context.reflectionIndex(reflection, true, headingLevel + 1));
   }

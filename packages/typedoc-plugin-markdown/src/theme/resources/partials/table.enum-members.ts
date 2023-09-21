@@ -30,16 +30,20 @@ export function enumMembersTable(
     const row: string[] = [];
     const nameColumn: string[] = [];
 
-    if (context.options.getValue('htmlTableAnchors') && property.anchor) {
+    if (
+      context.options.getValue('namedAnchors')?.tableRows &&
+      property.anchor
+    ) {
       nameColumn.push(
         `<a id="${property.anchor}" name="${property.anchor}"></a>`,
       );
     }
 
     nameColumn.push(backTicks(property.name));
+
     row.push(nameColumn.join(' '));
     if (propertyType) {
-      row.push(stripLineBreaks(context.someType(propertyType, true)));
+      row.push(stripLineBreaks(context.someType(propertyType)));
     }
     if (hasComments) {
       const comments = getComments(property);
