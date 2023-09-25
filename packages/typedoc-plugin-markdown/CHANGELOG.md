@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.0.0-next.21
+
+### Patch Changes
+
+- Several ui improvements
+- Simplified option names
+- Improved documentation
+- Fixed and refactored tests
+
 ## 4.0.0-next.20 (2023-08-29)
 
 ### Patch Changes
