@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0-next.16
+
+### Patch Changes
+
+- Updated sidebar implementation (see readme)
+- Removed frontmatter
+- Fixed double escaped angle bracket
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.21
+
 ## 1.0.0-next.15 (2023-08-27)
 
 ### Patch Changes
