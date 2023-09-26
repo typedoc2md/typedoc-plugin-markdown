@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Readmes should compile readme for a project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](API.md)
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [API](modules.md)
 
 ***
 
@@ -17,7 +17,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Readmes should compile readmes for a momorepo: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1** ∙ [README](README.md) ∙ [API](API.md)
+"**package-1** ∙ [README](README.md) ∙ [API](modules.md)
 
 ***
 
@@ -31,7 +31,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Readmes should compile readmes for a momorepo: (Output File Strategy "members") (Option Group "1") 2`] = `
-"**package-2** ∙ [README](README.md) ∙ [API](API.md)
+"**package-2** ∙ [README](README.md) ∙ [API](modules.md)
 
 ***
 

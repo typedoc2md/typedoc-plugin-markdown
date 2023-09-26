@@ -15,31 +15,16 @@
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
 
-  //typedocSidebar1: require('./docs/api-1/typedoc-sidebar.cjs'),
-  typedocSidebar1: [
+  typedocSidebar: [
     {
       type: 'category',
-      label: 'Keyring API',
+      label: 'API',
       link: {
         type: 'doc',
-        id: 'keyring-api/index',
+        id: 'api/index',
       },
-      items: require('./docs/keyring-api/typedoc-sidebar.cjs'),
+      items: require('./docs/api/typedoc-sidebar.cjs'),
     },
-  ],
-  typedocSidebar2: [
-    {
-      type: 'category',
-      label: 'Typedoc Docs',
-      link: {
-        type: 'doc',
-        id: 'api-1/index',
-      },
-      items: require('./docs/api-1/typedoc-sidebar.cjs'),
-    },
-  ],
-  /*
-  exampleCategory: [
     {
       type: 'category',
       label: 'API 2',
@@ -58,7 +43,7 @@ const sidebars = {
       },
       items: require('./docs/api-3/typedoc-sidebar.cjs'),
     },
-  ],*/
+  ],
 };
 
 module.exports = sidebars;

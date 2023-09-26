@@ -47,33 +47,49 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const options = getPluginOptions(opts);
 
-  const { id, docsRoot, sidebar, ...optionsPassedToTypeDoc } = options;
+  const { id, sidebar, ...optionsPassedToTypeDoc } =
+    options as Partial<PluginOptions>;
 
-  const outputDir = path.resolve(siteDir, options.docsRoot, options.out);
+  const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
+
+  const outputDir = app.options.getValue('out');
 
   if (options.cleanOutputDir) {
     removeDir(outputDir);
   }
 
-  const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
-
   app.renderer.on(PageEvent.END, (event: PageEvent) => {
     event.contents = event.contents?.replace(/\\</g, '<');
   });
 
-  app.renderer.postRenderAsyncJobs.push(
-    async (output: MarkdownRendererEvent) => {
-      const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
-      const sidebarJson = getSidebar(output.navigation, options.out);
-      fs.writeFileSync(
-        sidebarPath,
-        `// @ts-check
+  if (sidebar?.autoConfiguration) {
+    app.renderer.postRenderAsyncJobs.push(
+      async (output: MarkdownRendererEvent) => {
+        const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+        const baseDir = path
+          .relative(siteDir, outputDir)
+          .split('/')
+          .slice(1)
+          .join('/');
+        const sidebarJson = getSidebar(
+          output.navigation,
+          baseDir,
+          sidebar.filteredIds,
+        );
+        fs.writeFileSync(
+          sidebarPath,
+          `// @ts-check
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
-const typedocSidebar = { items: ${JSON.stringify(sidebarJson)}};
+const typedocSidebar = { items: ${JSON.stringify(
+            sidebarJson,
+            null,
+            sidebar.pretty ? 2 : 0,
+          )}};
 module.exports = typedocSidebar.items;`,
-      );
-    },
-  );
+        );
+      },
+    );
+  }
 
   const project = await app.convert();
 

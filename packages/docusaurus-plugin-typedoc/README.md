@@ -92,7 +92,7 @@ The following typedoc-plugin-markdown options are preset with the plugin.
 
 ```json
 {
-  "out": "api",
+  "out": "./docs/api",
   "hideInPageTOC": true,
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
@@ -112,19 +112,11 @@ Set to `false` to disable sidebar generation. Defaults to `true`.
 
 `sidebar.filteredIds`
 
-Ids of pages to be filtered from the sidebar. This would typically be used to filter README or modules named index from the sidebar.
+Ids of pages to be filtered from the sidebar. This would typically be used to filter README or index pages from the sidebar.
 
 `sidebar.pretty`
 
-Pretty format the sidebar json
-
-#### `--docsRoot`
-
-The Docusaurus docs folder root. Use `./` if no root folder specified. Defaults to `./docs`.
-
-```shell
---docsRoot <path/to/docs-dir/>
-```
+Pretty format the sidebar JSON.
 
 ## Sidebar
 

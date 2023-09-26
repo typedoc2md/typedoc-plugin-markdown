@@ -5,7 +5,6 @@ declare module 'typedoc' {
     outputFileStrategy: 'members' | 'modules';
     membersWithOwnFile: any[];
     entryFileName: string;
-    indexFileName: string;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
     hideBreadcrumbs: boolean;
@@ -30,7 +29,6 @@ export interface PluginOptions {
   outputFileStrategy: 'members' | 'modules';
   membersWithOwnFile: any[];
   entryFileName: string;
-  indexFileName: string;
   hidePageHeader: boolean;
   hidePageTitle: boolean;
   hideBreadcrumbs: boolean;

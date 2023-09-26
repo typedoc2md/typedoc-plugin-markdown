@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 
 ***
 
-[API](../API.md) > typeOperatorVariable
+[API](../exports.md) > typeOperatorVariable
 
 # Variable: typeOperatorVariable
 
@@ -40,11 +40,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 
 ***
 
-[API](../API.md) > stringVariable
+[API](../exports.md) > stringVariable
 
 # Variable: stringVariable
 
@@ -79,11 +79,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 
 ***
 
-[API](../API.md) > objectLiteralVariable
+[API](../exports.md) > objectLiteralVariable
 
 # Variable: objectLiteralVariable
 

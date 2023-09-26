@@ -2,14 +2,15 @@ import { Application } from 'typedoc';
 
 const DEFAULT_PLUGIN_OPTIONS = {
   id: 'default',
-  docsRoot: 'docs',
-  out: 'api',
+  out: './docs/api',
   hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageHeader: true,
   entryFileName: 'index.md',
   sidebar: {
     autoConfiguration: true,
+    pretty: false,
+    filteredIds: [],
   },
   plugin: ['typedoc-plugin-markdown'],
 };

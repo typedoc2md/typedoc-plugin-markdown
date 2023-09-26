@@ -124,18 +124,6 @@ export const entryFileName: DeclarationOption = {
 };
 
 /**
- * This option is ignored if `readme=none`.
- *
- * @category fileOutput
- */
-export const indexFileName: DeclarationOption = {
-  name: 'indexFileName',
-  help: 'The file name the seperate index page.',
-  type: ParameterType.String,
-  defaultValue: 'API.md',
-};
-
-/**
  * @category ui
  */
 export const hidePageHeader: DeclarationOption = {

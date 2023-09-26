@@ -147,14 +147,14 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](API.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](API.md#commentinterface)
-- [Links to CommentInterface.propb](API.md#commentinterface)
-- [CommentEnum.MemberB](API.md#commentenum)
-- [SameName:var](API.md#samename-1)
-- [SameName:interface](API.md#samename)
-- [SameName.prop](API.md#samename)
-- [prop:var](API.md#prop)
+- [CommentInterface](exports.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](exports.md#commentinterface)
+- [Links to CommentInterface.propb](exports.md#commentinterface)
+- [CommentEnum.MemberB](exports.md#commentenum)
+- [SameName:var](exports.md#samename-1)
+- [SameName:interface](exports.md#samename)
+- [SameName.prop](exports.md#samename)
+- [prop:var](exports.md#prop)
 
 ### External link
 
@@ -184,33 +184,33 @@ Some <p> html </p> inside codeblock
 
 ## Enumerations
 
-- [CommentEnum](API.md#commentenum)
+- [CommentEnum](exports.md#commentenum)
 
 ## Interfaces
 
-- [CommentInterface](API.md#commentinterface)
-- [SameName](API.md#samename)
+- [CommentInterface](exports.md#commentinterface)
+- [SameName](exports.md#samename)
 
 ## Variables
 
-- [SameName](API.md#samename-1)
-- [prop](API.md#prop)
-- [propb](API.md#propb)
+- [SameName](exports.md#samename-1)
+- [prop](exports.md#prop)
+- [propb](exports.md#propb)
 
 ## Enumerations
 
-- [CommentEnum](API.md#commentenum)
+- [CommentEnum](exports.md#commentenum)
 
 ## Interfaces
 
-- [CommentInterface](API.md#commentinterface)
-- [SameName](API.md#samename)
+- [CommentInterface](exports.md#commentinterface)
+- [SameName](exports.md#samename)
 
 ## Variables
 
-- [SameName](API.md#samename-1)
-- [prop](API.md#prop)
-- [propb](API.md#propb)
+- [SameName](exports.md#samename-1)
+- [prop](exports.md#prop)
+- [propb](exports.md#propb)
 
 ## Enumerations
 
@@ -277,14 +277,14 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](API.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](API.md#prop)
-- [Links to CommentInterface.propb](API.md#propb)
-- [CommentEnum.MemberB](API.md#memberb)
-- [SameName:var](API.md#samename-1)
-- [SameName:interface](API.md#samename)
-- [SameName.prop](API.md#prop-1)
-- [prop:var](API.md#prop-2)
+- [CommentInterface](exports.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](exports.md#prop)
+- [Links to CommentInterface.propb](exports.md#propb)
+- [CommentEnum.MemberB](exports.md#memberb)
+- [SameName:var](exports.md#samename-1)
+- [SameName:interface](exports.md#samename)
+- [SameName.prop](exports.md#prop-1)
+- [prop:var](exports.md#prop-2)
 
 ### External link
 
@@ -314,33 +314,33 @@ Some <p> html </p> inside codeblock
 
 ## Enumerations
 
-- [CommentEnum](API.md#commentenum)
+- [CommentEnum](exports.md#commentenum)
 
 ## Interfaces
 
-- [CommentInterface](API.md#commentinterface)
-- [SameName](API.md#samename)
+- [CommentInterface](exports.md#commentinterface)
+- [SameName](exports.md#samename)
 
 ## Variables
 
-- [SameName](API.md#samename-1)
-- [prop](API.md#prop-2)
-- [propb](API.md#propb-2)
+- [SameName](exports.md#samename-1)
+- [prop](exports.md#prop-2)
+- [propb](exports.md#propb-2)
 
 ## Enumerations
 
-- [CommentEnum](API.md#commentenum)
+- [CommentEnum](exports.md#commentenum)
 
 ## Interfaces
 
-- [CommentInterface](API.md#commentinterface)
-- [SameName](API.md#samename)
+- [CommentInterface](exports.md#commentinterface)
+- [SameName](exports.md#samename)
 
 ## Variables
 
-- [SameName](API.md#samename-1)
-- [prop](API.md#prop-2)
-- [propb](API.md#propb-2)
+- [SameName](exports.md#samename-1)
+- [prop](exports.md#prop-2)
+- [propb](exports.md#propb-2)
 
 ## Enumerations
 

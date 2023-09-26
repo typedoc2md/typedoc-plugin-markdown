@@ -11,7 +11,7 @@ import { OutputFileStrategy } from '../plugin/options/custom-maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
 import { NavigationItem, UrlOption } from '../theme/models';
-import { getMemberTitle } from './helpers';
+import { getIndexFileName, getMemberTitle } from './helpers';
 import { MarkdownTheme } from './theme';
 
 export class UrlsContext {
@@ -33,7 +33,7 @@ export class UrlsContext {
    */
   getUrls(project: ProjectReflection): UrlMapping[] {
     const entryFileName = this.options.entryFileName as string;
-    const indexFileName = this.options.indexFileName as string;
+    const indexFileName = getIndexFileName(project);
     const hasReadme = !this.options.readme?.endsWith('none');
 
     if (hasReadme) {

@@ -8,7 +8,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "API",
-    "url": "API.md"
+    "url": "modules.md"
   },
   {
     "title": "package-1",
@@ -23,7 +23,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "url": "package-1/API.md"
+    "url": "package-1/modules.md"
   },
   {
     "title": "package-2",
@@ -38,7 +38,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "url": "package-2/API.md"
+    "url": "package-2/modules.md"
   }
 ]"
 `;
@@ -51,17 +51,17 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "API",
-    "url": "API.md"
+    "url": "modules.md"
   },
   {
     "title": "package-1",
     "children": [],
-    "url": "package-1/API.md"
+    "url": "package-1/modules.md"
   },
   {
     "title": "package-2",
     "children": [],
-    "url": "package-2/API.md"
+    "url": "package-2/modules.md"
   }
 ]"
 `;
@@ -74,7 +74,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "API",
-    "url": "API.md"
+    "url": "modules.md"
   },
   {
     "title": "basic",
@@ -521,7 +521,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "API",
-    "url": "API.md"
+    "url": "modules.md"
   },
   {
     "title": "basic",
@@ -618,7 +618,7 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
   },
   {
     "title": "API",
-    "url": "API.md"
+    "url": "exports.md"
   },
   {
     "title": "Enumerations",
@@ -821,7 +821,7 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
   },
   {
     "title": "API",
-    "url": "API.md"
+    "url": "exports.md"
   }
 ]"
 `;

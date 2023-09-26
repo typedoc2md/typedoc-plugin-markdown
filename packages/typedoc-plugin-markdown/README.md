@@ -8,12 +8,12 @@ A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API document
 
 ## Contents
 
-*   [What does it do?](#what-does-it-do)
-*   [Installation](#installation)
-*   [Usage](#usage)
-*   [Options](#options)
-*   [Contributing](#contributing)
-*   [License](#license)
+* [What does it do?](#what-does-it-do)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Options](#options)
+* [Contributing](#contributing)
+* [License](#license)
 
 ## What does it do?
 
@@ -51,33 +51,32 @@ This plugin exposes additional options. Please see [Options Guide](./docs/guides
 
 #### File output options
 
-*   [`--outputFileStrategy`](./docs/guides/options.md#--outputfilestrategy)
-*   [`--membersWithOwnFile`](./docs/guides/options.md#--memberswithownfile)
-*   [`--entryFileName`](./docs/guides/options.md#--entryfilename)
-*   [`--indexFileName`](./docs/guides/options.md#--indexfilename)
+* [`--outputFileStrategy`](./docs/guides/options.md#--outputfilestrategy)
+* [`--membersWithOwnFile`](./docs/guides/options.md#--memberswithownfile)
+* [`--entryFileName`](./docs/guides/options.md#--entryfilename)
 
 #### Structure and formatting options
 
-*   [`--hidePageHeader`](./docs/guides/options.md#--hidepageheader)
-*   [`--hidePageTitle`](./docs/guides/options.md#--hidepagetitle)
-*   [`--hideBreadcrumbs`](./docs/guides/options.md#--hidebreadcrumbs)
-*   [`--hideInPageTOC`](./docs/guides/options.md#--hideinpagetoc)
-*   [`--indexPageTitle`](./docs/guides/options.md#--indexpagetitle)
-*   [`--titleTemplate`](./docs/guides/options.md#--titletemplate)
-*   [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
-*   [`--useCodeBlocks`](./docs/guides/options.md#--usecodeblocks)
-*   [`--expandObjects`](./docs/guides/options.md#--expandobjects)
-*   [`--parametersFormat`](./docs/guides/options.md#--parametersformat)
-*   [`--propertiesFormat`](./docs/guides/options.md#--propertiesformat)
-*   [`--enumMembersFormat`](./docs/guides/options.md#--enummembersformat)
-*   [`--typeDeclarationFormat`](./docs/guides/options.md#--typedeclarationformat)
-*   [`--indexFormat`](./docs/guides/options.md#--indexformat)
+* [`--hidePageHeader`](./docs/guides/options.md#--hidepageheader)
+* [`--hidePageTitle`](./docs/guides/options.md#--hidepagetitle)
+* [`--hideBreadcrumbs`](./docs/guides/options.md#--hidebreadcrumbs)
+* [`--hideInPageTOC`](./docs/guides/options.md#--hideinpagetoc)
+* [`--indexPageTitle`](./docs/guides/options.md#--indexpagetitle)
+* [`--titleTemplate`](./docs/guides/options.md#--titletemplate)
+* [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
+* [`--useCodeBlocks`](./docs/guides/options.md#--usecodeblocks)
+* [`--expandObjects`](./docs/guides/options.md#--expandobjects)
+* [`--parametersFormat`](./docs/guides/options.md#--parametersformat)
+* [`--propertiesFormat`](./docs/guides/options.md#--propertiesformat)
+* [`--enumMembersFormat`](./docs/guides/options.md#--enummembersformat)
+* [`--typeDeclarationFormat`](./docs/guides/options.md#--typedeclarationformat)
+* [`--indexFormat`](./docs/guides/options.md#--indexformat)
 
 #### Utility options
 
-*   [`--preserveAnchorCasing`](./docs/guides/options.md#--preserveanchorcasing)
-*   [`--anchorPrefix`](./docs/guides/options.md#--anchorprefix)
-*   [`--namedAnchors`](./docs/guides/options.md#--namedanchors)
+* [`--preserveAnchorCasing`](./docs/guides/options.md#--preserveanchorcasing)
+* [`--anchorPrefix`](./docs/guides/options.md#--anchorprefix)
+* [`--namedAnchors`](./docs/guides/options.md#--namedanchors)
 
 ## Contributing
 

@@ -2,35 +2,29 @@
 
 ## Contents
 
-*   [File output options](#file-output-options)
-
-    *   [`--outputFileStrategy`](#--outputfilestrategy)
-    *   [`--membersWithOwnFile`](#--memberswithownfile)
-    *   [`--entryFileName`](#--entryfilename)
-    *   [`--indexFileName`](#--indexfilename)
-
-*   [Structure and formatting options](#structure-and-formatting-options)
-
-    *   [`--hidePageHeader`](#--hidepageheader)
-    *   [`--hidePageTitle`](#--hidepagetitle)
-    *   [`--hideBreadcrumbs`](#--hidebreadcrumbs)
-    *   [`--hideInPageTOC`](#--hideinpagetoc)
-    *   [`--indexPageTitle`](#--indexpagetitle)
-    *   [`--titleTemplate`](#--titletemplate)
-    *   [`--excludeGroups`](#--excludegroups)
-    *   [`--useCodeBlocks`](#--usecodeblocks)
-    *   [`--expandObjects`](#--expandobjects)
-    *   [`--parametersFormat`](#--parametersformat)
-    *   [`--propertiesFormat`](#--propertiesformat)
-    *   [`--enumMembersFormat`](#--enummembersformat)
-    *   [`--typeDeclarationFormat`](#--typedeclarationformat)
-    *   [`--indexFormat`](#--indexformat)
-
-*   [Utility options](#utility-options)
-
-    *   [`--preserveAnchorCasing`](#--preserveanchorcasing)
-    *   [`--anchorPrefix`](#--anchorprefix)
-    *   [`--namedAnchors`](#--namedanchors)
+* [File output options](#file-output-options)
+  * [`--outputFileStrategy`](#--outputfilestrategy)
+  * [`--membersWithOwnFile`](#--memberswithownfile)
+  * [`--entryFileName`](#--entryfilename)
+* [Structure and formatting options](#structure-and-formatting-options)
+  * [`--hidePageHeader`](#--hidepageheader)
+  * [`--hidePageTitle`](#--hidepagetitle)
+  * [`--hideBreadcrumbs`](#--hidebreadcrumbs)
+  * [`--hideInPageTOC`](#--hideinpagetoc)
+  * [`--indexPageTitle`](#--indexpagetitle)
+  * [`--titleTemplate`](#--titletemplate)
+  * [`--excludeGroups`](#--excludegroups)
+  * [`--useCodeBlocks`](#--usecodeblocks)
+  * [`--expandObjects`](#--expandobjects)
+  * [`--parametersFormat`](#--parametersformat)
+  * [`--propertiesFormat`](#--propertiesformat)
+  * [`--enumMembersFormat`](#--enummembersformat)
+  * [`--typeDeclarationFormat`](#--typedeclarationformat)
+  * [`--indexFormat`](#--indexformat)
+* [Utility options](#utility-options)
+  * [`--preserveAnchorCasing`](#--preserveanchorcasing)
+  * [`--anchorPrefix`](#--anchorprefix)
+  * [`--namedAnchors`](#--namedanchors)
 
 ## File output options
 
@@ -54,24 +48,26 @@ Generates an individual file for each exported member. This is the standard beha
 
 In this example output folder structure modules `module-a` and `module-b` export two classes and variables each:
 
-    ├── README.md
-    ├── API.md
-    ├── module-a
-    ├── ├── README.md
-    │   ├── classes
-    │   │   ├── ClassA.md
-    │   │   ├── ClassB.md
-    ├── ├── variables
-    │   │   ├── VariableA.md
-    │   │   ├── VariableB.md
-    ├── module-b
-    ├── ├── README.md
-    │   ├── classes
-    │   │   ├── ClassA.md
-    │   │   ├── ClassB.md
-    ├── ├── variables
-    │   │   ├── VariableA.md
-    │   │   ├── VariableB.md
+```
+├── README.md
+├── API.md
+├── module-a
+├── ├── README.md
+│   ├── classes
+│   │   ├── ClassA.md
+│   │   ├── ClassB.md
+├── ├── variables
+│   │   ├── VariableA.md
+│   │   ├── VariableB.md
+├── module-b
+├── ├── README.md
+│   ├── classes
+│   │   ├── ClassA.md
+│   │   ├── ClassB.md
+├── ├── variables
+│   │   ├── VariableA.md
+│   │   ├── VariableB.md
+```
 
 When `members` is set, it is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#membersWithOwnFile) option.
 
@@ -81,10 +77,12 @@ Generates a single file for every Module or Namespace where all members are hois
 
 The above example will output the following folder structure:
 
-    ├── README.md
-    ├── API.md
-    ├── module-a.md
-    ├── module-b.md
+```
+├── README.md
+├── API.md
+├── module-a.md
+├── module-b.md
+```
 
 [↑ Top](#options-guide)
 
@@ -132,28 +130,16 @@ The content of this file at the root of the project is conditional on if a readm
 
 A. If a readme file is resolved then two root files are generated:
 
-    ├── README.md - (the project readme file)
-    ├── API.md - (API index page)
+```
+├── README.md - (the project readme file)
+├── API.md - (API index page)
+```
 
 B. If a readme file is NOT resolved (when `readme` = `none`), then the index page becomes the `entryFileName` page and there is no seperate index page.
 
-    ├── README.md - (API index page)
-
-[↑ Top](#options-guide)
-
-***
-
-### `--indexFileName`
-
-The file name the seperate index page. Defaults to `"API.md"`.
-
-```shell
---indexFileName <string>
 ```
-
-#### Usage
-
-This option is ignored if `readme=none`.
+├── README.md - (API index page)
+```
 
 [↑ Top](#options-guide)
 
@@ -241,11 +227,15 @@ Supports {kind} and {name} placeholders.
 
 Example for displaying name only:
 
-    titleTemplate: "{name}"
+```
+titleTemplate: "{name}"
+```
 
 Example for displaying kind in backticks:
 
-    titleTemplate: "{name} `{kind}`"
+```
+titleTemplate: "{name} `{kind}`"
+```
 
 [↑ Top](#options-guide)
 
@@ -447,8 +437,8 @@ Internal anchor links are used when referencing symbols with in-page table of co
 
 There are two flags exposed by this option:
 
-*   `headings` - Add HTML named anchors to heading for implementations that do not assign header ids.
-*   `tableRows` - Add anchors to table rows when table formats are selected and no heading elements are present.
+* `headings` - Add HTML named anchors to heading for implementations that do not assign header ids.
+* `tableRows` - Add anchors to table rows when table formats are selected and no heading elements are present.
 
 [↑ Top](#options-guide)
 

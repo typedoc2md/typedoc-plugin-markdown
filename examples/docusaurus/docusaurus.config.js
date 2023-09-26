@@ -46,19 +46,18 @@ const config = {
     [
       docusaurusPlugin,
       {
-        id: 'api-1',
-        out: 'api-1',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/reflections/index.ts',
         typeDeclarationFormat: 'table',
         expandObjects: true,
+        sidebar: { pretty: true, filteredIds: ['api/index'] },
       },
     ],
     [
       docusaurusPlugin,
       {
         id: 'api-2',
-        out: 'api-2',
+        out: './docs/api-2',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/groups/**/*.ts',
         membersWithOwnFile: ['Class', 'Interface'],
@@ -68,7 +67,7 @@ const config = {
       docusaurusPlugin,
       {
         id: 'api-3',
-        out: 'api-3',
+        out: './docs/api-3',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/packages/*',
         entryPointStrategy: 'packages',
@@ -121,7 +120,7 @@ const config = {
         },
         items: [
           {
-            to: 'docs/api-1',
+            to: 'docs/api',
             activeBasePath: 'docs',
             label: 'API 1',
             position: 'left',

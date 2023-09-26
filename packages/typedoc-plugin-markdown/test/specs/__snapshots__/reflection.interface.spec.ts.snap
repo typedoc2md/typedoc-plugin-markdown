@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 
 ***
 
-[API](../API.md) > BasicInterface
+[API](../exports.md) > BasicInterface
 
 # Interface: BasicInterface
 
@@ -138,11 +138,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 
 ***
 
-[API](../API.md) > ExtendedInterface
+[API](../exports.md) > ExtendedInterface
 
 # Interface: ExtendedInterface
 
@@ -302,11 +302,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 
 ***
 
-[API](../API.md) > IndexableInterface
+[API](../exports.md) > IndexableInterface
 
 # Interface: IndexableInterface
 
@@ -355,11 +355,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../API.md)
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 
 ***
 
-[API](../API.md) > InterfaceWithTypeParameters
+[API](../exports.md) > InterfaceWithTypeParameters
 
 # Interface: InterfaceWithTypeParameters\`<A>\`
 

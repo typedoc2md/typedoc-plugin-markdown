@@ -6,7 +6,7 @@ import {
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { bold, link } from '../../../support/elements';
-import { getProjectDisplayName } from '../../helpers';
+import { getIndexFileName, getProjectDisplayName } from '../../helpers';
 
 /**
  * @category Partials
@@ -30,7 +30,7 @@ function projectHeader(
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const entryFileName = context.options.getValue('entryFileName');
-  const indexFileName = context.options.getValue('indexFileName') as string;
+  const indexFileName = getIndexFileName(page.project);
   const titleLink = context.options.getValue('titleLink');
   const hasBreadcrumbs = !context.options.getValue('hideBreadcrumbs');
   const hasReadme = !context.options.getValue('readme')?.endsWith('none');

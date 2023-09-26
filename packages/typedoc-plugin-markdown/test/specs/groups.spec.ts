@@ -9,7 +9,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      ['API.md', 'index.md'],
+      ['modules.md', 'index.md'],
     );
   });
 
@@ -17,7 +17,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
-      ['API.md'],
+      ['modules.md'],
     );
   });
 
