@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0-next.17
+
+### Patch Changes
+
+- Fixed sidebar ids
+- Added option to filter sidebar items (sidebar.filteredIds)
+- Added option to pretty output sidebar (sidebar.pretty)
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.22
+
 ## 1.0.0-next.16
 
 ### Patch Changes
