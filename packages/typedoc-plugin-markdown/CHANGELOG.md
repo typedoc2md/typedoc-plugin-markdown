@@ -1,12 +1,12 @@
 # Changelog
 
-## 4.0.0-next.22
+## 4.0.0-next.22 (2023-09-26)
 
 ### Patch Changes
 
 - Updated index filenames and Removed indexFileName option
 
-## 4.0.0-next.21
+## 4.0.0-next.21 (2023-09-25)
 
 ### Patch Changes
 
