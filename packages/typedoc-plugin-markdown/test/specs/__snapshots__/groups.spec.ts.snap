@@ -34,6 +34,7 @@ A basic module
 - [TypeB](type-aliases/TypeB.md)
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -176,6 +177,7 @@ A basic module
 > **TypeB**: \`string\`
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -359,6 +361,7 @@ A module that contains categories
 #### UnCategorizedInterace
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -478,6 +481,7 @@ A module that contains categories
 - [UnCategorizedInterace](interfaces/UnCategorizedInterace.md)
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -531,6 +535,7 @@ exports[`Groups should compile index page for monorepo: (Output File Strategy "m
 - [package-2](package-2/README.md)
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -550,6 +555,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 - [index](index/README.md)
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -585,6 +591,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 - [index](index.md)
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -625,6 +632,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 - [NamespaceInterface](interfaces/NamespaceInterface.md)
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -676,6 +684,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 ### NamespaceInterface
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -748,6 +757,7 @@ A module that contains namespaces
 - [functionB](functions/functionB.md)
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -960,6 +970,7 @@ A module that contains namespaces
 > **functionB**(): \`void\`
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

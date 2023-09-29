@@ -85,6 +85,7 @@ abstract abstractMethod(): string
 Comments for abstractMethod
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -234,6 +235,7 @@ get noSetter(): string
 \`\`\`
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -346,6 +348,7 @@ new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
 | \`s\` | \`string\` |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -525,6 +528,7 @@ static staticMethod(): void
 Comment for staticMethod
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -588,6 +592,7 @@ new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
 \`\`\`
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -728,6 +733,7 @@ derivedMethod(): string
 \`\`\`
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

@@ -12,6 +12,7 @@ exports[`Readmes should compile readme for a project: (Output File Strategy "mod
 Some text.
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -26,6 +27,7 @@ exports[`Readmes should compile readmes for a momorepo: (Output File Strategy "m
 Readme content
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -40,6 +42,7 @@ exports[`Readmes should compile readmes for a momorepo: (Output File Strategy "m
 Readme content
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

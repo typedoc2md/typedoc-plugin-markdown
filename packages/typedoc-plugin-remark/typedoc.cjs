@@ -1,11 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  ...require(path.join(__dirname, '../../stubs/.config/typedoc.base.cjs')),
-  entryPoints: [path.join(__dirname, '../../stubs/src/comments.ts')],
+  entryPoints: ['./stubs/index.ts'],
+  tsconfig: './stubs/tsconfig.json',
   out: './out',
-  outputFileStrategy: 'modules',
   plugin: ['typedoc-plugin-markdown', './dist'],
-  remarkPlugins: ['remark-github'],
+  remarkPlugins: ['remark-github', 'unified-prettier'],
   readme: 'none',
+  parametersFormat: 'table',
+  githubPages: false,
+  disableSources: true,
+  cleanOutputDir: true,
 };

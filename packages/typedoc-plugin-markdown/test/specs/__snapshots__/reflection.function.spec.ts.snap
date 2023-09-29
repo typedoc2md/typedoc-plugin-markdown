@@ -71,6 +71,7 @@ Comments for function
 >
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -120,6 +121,7 @@ Comments for function
 Return comments
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -185,6 +187,7 @@ Return comments
 >
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -236,6 +239,7 @@ This is a function that is assigned to a variable.
 | \`someParam\` | \`number\` | This is some numeric parameter. |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -316,6 +320,7 @@ This is a function with a parameter that has a default value.
 | \`valueF\` | \`string\` | \`'<foo>'\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -406,6 +411,7 @@ This is the second signature of a function with multiple signatures.
 | \`value.name\` | \`string\` | A value of the object. |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -464,6 +470,7 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 | \`anotherParam\` | \`string\` | Another param comment |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -545,6 +552,7 @@ Some nested params.
 | \`context\` | \`any\` | The context of the method call. |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -644,6 +652,7 @@ This is a function with a parameters.
 | \`paramWithDefault\`? | \`number\` | \`0\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -677,6 +686,7 @@ This is a function with a parameters.
 | \`paramWithDefault\`? | \`number\` | \`0\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -731,6 +741,7 @@ Function with type parameters
 | \`Item\` | \`string\` \\| \`boolean\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

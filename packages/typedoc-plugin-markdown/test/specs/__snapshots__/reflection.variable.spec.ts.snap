@@ -35,6 +35,7 @@ const typeOperatorVariable: unique symbol;
 Comments for typeOperatorVariable
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -74,6 +75,7 @@ const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultVal
 A simple string variable
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -276,6 +278,7 @@ Comments for objectLiteralVariable
 | \`~\` | \`string\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

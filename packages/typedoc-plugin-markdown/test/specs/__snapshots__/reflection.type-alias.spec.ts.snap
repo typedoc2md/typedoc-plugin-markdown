@@ -35,6 +35,7 @@ type ArrayType: string[];
 Comments for ArrayType
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -86,6 +87,7 @@ Comments for ConditionalType
 | \`T\` |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -125,6 +127,7 @@ type TypeWithExternalSymbolLinkMapping: Application;
 Comments for TypeWithExternalSymbolLinkMapping
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -267,6 +270,7 @@ Comments for LiteralType
 | \`someFunction\` | \`Promise\`\\<\`any\`\\> | Comments for someFunction |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -306,6 +310,7 @@ type ExternalReferenceType: ClassWithTypeParameters<"x", "y">;
 Comments for ExternalReferenceType
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -358,6 +363,7 @@ Comments for FunctionType
 | \`value\` | \`unknown\` |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -411,6 +417,7 @@ Comments for IntersectionType
 | \`bar\` | \`number\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -462,6 +469,7 @@ Comments for PartialMappedType
 | \`T\` |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -501,6 +509,7 @@ type PrimitiveType: boolean;
 Comments for PrimitiveType
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -552,6 +561,7 @@ Comments for ReadonlyMapedType
 | \`T\` |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -597,6 +607,7 @@ type StringLiteralType:
 Comments for StringLiteralType
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -636,6 +647,7 @@ type TupleType: [string, number];
 Comments for TupleType
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -689,6 +701,7 @@ Comments for TypeWithTypeParams
 | \`R\` |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -730,6 +743,7 @@ type UnionType: string | boolean | {
 Comments for UnionType
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

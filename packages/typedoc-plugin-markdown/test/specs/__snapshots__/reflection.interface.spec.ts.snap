@@ -133,6 +133,7 @@ Comments for BasicInterface
 | \`propWithProps.nestedPropD\` | () => \`boolean\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -297,6 +298,7 @@ Comments for ExtendedInterface
 | \`propWithProps.nestedPropD\` | () => \`boolean\` | - | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -350,6 +352,7 @@ Comments for IndexableInterface
 | \`prop\` | \`string\` | - |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
@@ -407,6 +410,7 @@ Comments for InterfaceWithTypeParameters
 | \`prop\` | \`A\` | Comments for prop |
 
 ***
+
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

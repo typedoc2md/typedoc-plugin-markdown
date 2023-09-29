@@ -10,7 +10,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "postbuild": "copyfiles --up 1 ./src/**/*.cjs ./dist/ && copyfiles --up 1 ./src/**/*.mjs ./dist/",
+    "postbuild": "copyfiles --up 1 ./src/**/*.cjs ./dist/",
     "predocs": "npm run build",
     "docs": "typedoc"
   },
@@ -23,13 +23,12 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "dependencies": {
-    "remark": "^14.0.3",
-    "remark-frontmatter": "^4.0.1",
-    "remark-gfm": "^3.0.1",
+    "remark": "^15.0.1",
     "to-vfile": "^8.0.0"
   },
   "keywords": [
     "typedoc",
+    "typedoc-plugin",
     "remark"
   ]
 }
