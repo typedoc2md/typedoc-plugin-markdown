@@ -18,7 +18,9 @@ export function formatContents(contents: string) {
 
 export function escapeChars(str: string) {
   return str
-    .replace(/>/g, '\\>')
+    .replace(/>/g, '&gt;')
+    .replace(/</g, '&lt;')
+    .replace(/\{/g, '\\{')
     .replace(/_/g, '\\_')
     .replace(/`/g, '\\`')
     .replace(/\|/g, '\\|');

@@ -158,7 +158,7 @@ function getDeclarationType(model: DeclarationReflection) {
             : ''
         }`;
       });
-    return `{ ${indexSignature ? indexSignature : ''}${
+    return `\\{ ${indexSignature ? indexSignature : ''}${
       types ? types.join('; ') : ''
     } }${
       model.defaultValue && model.defaultValue !== '...'
@@ -172,9 +172,9 @@ function getDeclarationType(model: DeclarationReflection) {
 export function getFunctionType(modelSignatures: SignatureReflection[]) {
   const functions = modelSignatures.map((fn) => {
     const typeParams = fn.typeParameters
-      ? `<${fn.typeParameters
+      ? `&lt;${fn.typeParameters
           .map((typeParameter) => typeParameter.name)
-          .join(', ')}\\>`
+          .join(', ')}&gt;`
       : [];
     const params = fn.parameters
       ? fn.parameters.map((param) => {
@@ -210,9 +210,9 @@ function getReferenceType(model: ReferenceType, emphasis) {
     }
     if (model.typeArguments && model.typeArguments.length > 0) {
       reflection.push(
-        `<${model.typeArguments
+        `&lt;${model.typeArguments
           .map((typeArgument) => Handlebars.helpers.type.call(typeArgument))
-          .join(', ')}\\>`,
+          .join(', ')}&gt;`,
       );
     }
     return reflection.join('');

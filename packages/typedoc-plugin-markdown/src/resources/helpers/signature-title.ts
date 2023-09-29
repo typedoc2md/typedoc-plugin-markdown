@@ -29,9 +29,9 @@ export default function (theme: MarkdownTheme) {
 
       if (this.typeParameters) {
         md.push(
-          `<${this.typeParameters
+          `&lt;${this.typeParameters
             .map((typeParameter) => `\`${typeParameter.name}\``)
-            .join(', ')}\\>`,
+            .join(', ')}&gt;`,
         );
       }
       md.push(`(${getParameters(this.parameters)})`);
