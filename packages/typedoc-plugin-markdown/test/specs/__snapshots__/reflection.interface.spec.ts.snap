@@ -11,6 +11,15 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
+## Contents
+
+- [Extended By](BasicInterface.md#extended-by)
+- [Properties](BasicInterface.md#properties)
+  - [functionProp](BasicInterface.md#functionprop)
+  - [optionalProp](BasicInterface.md#optionalprop)
+  - [prop](BasicInterface.md#prop)
+  - [propWithProps](BasicInterface.md#propwithprops)
+
 ## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
@@ -114,6 +123,11 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
+## Contents
+
+- [Extended By](BasicInterface.md#extended-by)
+- [Properties](BasicInterface.md#properties)
+
 ## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
@@ -148,6 +162,16 @@ exports[`Interface Reflection should compile extended interface: (Output File St
 # Interface: ExtendedInterface
 
 Comments for ExtendedInterface
+
+## Contents
+
+- [Extends](ExtendedInterface.md#extends)
+- [Properties](ExtendedInterface.md#properties)
+  - [extendedProp](ExtendedInterface.md#extendedprop)
+  - [functionProp](ExtendedInterface.md#functionprop)
+  - [optionalProp](ExtendedInterface.md#optionalprop)
+  - [prop](ExtendedInterface.md#prop)
+  - [propWithProps](ExtendedInterface.md#propwithprops)
 
 ## Extends
 
@@ -278,6 +302,11 @@ exports[`Interface Reflection should compile extended interface: (Output File St
 
 Comments for ExtendedInterface
 
+## Contents
+
+- [Extends](ExtendedInterface.md#extends)
+- [Properties](ExtendedInterface.md#properties)
+
 ## Extends
 
 - [\`BasicInterface\`](BasicInterface.md)
@@ -314,6 +343,12 @@ exports[`Interface Reflection should compile indexable interface: (Output File S
 
 Comments for IndexableInterface
 
+## Contents
+
+- [Indexable](IndexableInterface.md#indexable)
+- [Properties](IndexableInterface.md#properties)
+  - [prop](IndexableInterface.md#prop)
+
 ## Indexable
 
  \\[\`s\`: \`string\`\\]: \`string\`
@@ -341,6 +376,11 @@ exports[`Interface Reflection should compile indexable interface: (Output File S
 
 Comments for IndexableInterface
 
+## Contents
+
+- [Indexable](IndexableInterface.md#indexable)
+- [Properties](IndexableInterface.md#properties)
+
 ## Indexable
 
  \\[\`s\`: \`string\`\\]: \`string\`
@@ -367,6 +407,12 @@ exports[`Interface Reflection should compile interface with type parameters: (Ou
 # Interface: InterfaceWithTypeParameters\`<A>\`
 
 Comments for InterfaceWithTypeParameters
+
+## Contents
+
+- [Type parameters](InterfaceWithTypeParameters.md#type-parameters)
+- [Properties](InterfaceWithTypeParameters.md#properties)
+  - [prop](InterfaceWithTypeParameters.md#prop)
 
 ## Type parameters
 
@@ -396,6 +442,11 @@ exports[`Interface Reflection should compile interface with type parameters: (Ou
 # InterfaceWithTypeParameters\`<A>\`
 
 Comments for InterfaceWithTypeParameters
+
+## Contents
+
+- [Type parameters](InterfaceWithTypeParameters.md#type-parameters)
+- [Properties](InterfaceWithTypeParameters.md#properties)
 
 ## Type parameters
 

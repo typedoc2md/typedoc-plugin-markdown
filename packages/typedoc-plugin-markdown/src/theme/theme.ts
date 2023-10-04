@@ -1,5 +1,6 @@
 import {
   DeclarationReflection,
+  PageEvent,
   ProjectReflection,
   Reflection,
   ReflectionKind,
@@ -68,7 +69,8 @@ export class MarkdownTheme extends Theme {
     page: MarkdownPageEvent<Reflection>,
     template: RenderTemplate<MarkdownPageEvent<Reflection>>,
   ) {
-    return template(page) as string;
+    const contents = template(page) as string;
+    return this.hasToc(page) ? this.insertToc(page, contents) : contents;
   }
 
   getUrls(project: ProjectReflection): UrlMapping[] {
@@ -77,6 +79,73 @@ export class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection): NavigationItem[] {
     return this.getNavigationContext().getNavigation(project);
+  }
+
+  hasToc(page: PageEvent) {
+    if (this.application.options.getValue('hideInPageTOC')) {
+      return false;
+    }
+
+    const reflection = page.model as DeclarationReflection;
+
+    return (
+      reflection.kindOf([
+        ReflectionKind.Project,
+        ReflectionKind.Module,
+        ReflectionKind.Namespace,
+        ReflectionKind.Enum,
+        ReflectionKind.Class,
+        ReflectionKind.Interface,
+      ]) &&
+      reflection.groups?.some((group) => !group.allChildrenHaveOwnDocument())
+    );
+  }
+
+  insertToc(page: PageEvent, contents: string) {
+    const regXHeader = /(?<flag>#{2,6})\s+(?<content>.+)/g;
+
+    const anchors: string[] = [];
+
+    const toc = Array.from(contents?.matchAll(regXHeader) as any)
+      ?.map(({ groups: { flag, content } }) => {
+        return {
+          heading: flag.length,
+          content,
+        };
+      })
+      .map((item) => {
+        anchors.push(item.content);
+        const count = anchors?.filter((id) => id === item.content)?.length;
+        return { ...item, count };
+      })
+      .filter((item) => item.heading < 4)
+      .map((item) => {
+        const spaces = Array.from({ length: item.heading })
+          .map((_, i) => (i > 1 ? '  ' : ''))
+          .join('');
+        const urlParts = page?.url.split('/');
+        return `${spaces}- [${item.content}](${
+          urlParts[urlParts.length - 1]
+        }#${slugify(item.content).toLowerCase()}${
+          item.count > 1 ? `-${item.count - 1}` : ''
+        })`;
+      })
+      .join('\n');
+
+    const contentToLines = contents?.split('\n');
+    const firstHeadingIndex = contentToLines?.findIndex((line) =>
+      line.startsWith('##'),
+    );
+
+    if (firstHeadingIndex && firstHeadingIndex > 0) {
+      contentToLines?.splice(
+        firstHeadingIndex,
+        0,
+        `\n\n## Contents\n\n${toc}\n\n`,
+      );
+    }
+
+    return contentToLines?.join('\n') as string;
   }
 
   /**

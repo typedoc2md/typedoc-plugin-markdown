@@ -136,16 +136,16 @@ export async function renderMarkdown(
   this.theme = void 0;
 }
 
-export function writeFileSync(fileName: string, data: string) {
+function writeFileSync(fileName: string, data: string) {
   fs.mkdirSync(path.dirname(normalizePath(fileName)), { recursive: true });
   fs.writeFileSync(normalizePath(fileName), data);
 }
 
-export function normalizePath(path: string) {
+function normalizePath(path: string) {
   return path.replace(/\\/g, '/');
 }
 
-export function nicePath(absPath: string) {
+function nicePath(absPath: string) {
   if (!path.isAbsolute(absPath)) return absPath;
 
   const relativePath = path.relative(process.cwd(), absPath);

@@ -45,14 +45,11 @@ export function hasIndex(
   return reflection.groups?.some((group) => group.allChildrenHaveOwnDocument());
 }
 
-export function hasTOC(reflection: DeclarationReflection | ProjectReflection) {
-  return (
-    reflection.kindOf([
-      ReflectionKind.Project,
-      ReflectionKind.Module,
-      ReflectionKind.Namespace,
-    ]) &&
-    reflection.groups?.some((group) => !group.allChildrenHaveOwnDocument())
+export function isAbsoluteIndex(
+  reflection: DeclarationReflection | ProjectReflection,
+) {
+  return reflection.groups?.every((group) =>
+    group.allChildrenHaveOwnDocument(),
   );
 }
 

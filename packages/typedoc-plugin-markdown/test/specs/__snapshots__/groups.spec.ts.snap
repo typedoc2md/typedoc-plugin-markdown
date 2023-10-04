@@ -44,23 +44,21 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-## Index
-
-### Enumerations
+## Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
 | [EnumA](enumerations/EnumA.md) | - |
 | [EnumB](enumerations/EnumB.md) | - |
 
-### Classes
+## Classes
 
 | Class | Description |
 | :------ | :------ |
 | [ClassA](classes/ClassA.md) | - |
 | [ClassB](classes/ClassB.md) | - |
 
-### Interfaces
+## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
@@ -96,27 +94,20 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-## Table of contents
+## Contents
 
-### Enumerations
-
-- [EnumA](basic.md#enuma)
-- [EnumB](basic.md#enumb)
-
-### Classes
-
-- [ClassA](basic.md#classa)
-- [ClassB](basic.md#classb)
-
-### Interfaces
-
-- [IterfaceA](basic.md#iterfacea)
-- [IterfaceB](basic.md#iterfaceb)
-
-### Type Aliases
-
-- [TypeA](basic.md#typea)
-- [TypeB](basic.md#typeb)
+- [Enumerations](basic.md#enumerations)
+  - [EnumA](basic.md#enuma)
+  - [EnumB](basic.md#enumb)
+- [Classes](basic.md#classes)
+  - [ClassA](basic.md#classa)
+  - [ClassB](basic.md#classb)
+- [Interfaces](basic.md#interfaces)
+  - [IterfaceA](basic.md#iterfacea)
+  - [IterfaceB](basic.md#iterfaceb)
+- [Type Aliases](basic.md#type-aliases)
+  - [TypeA](basic.md#typea)
+  - [TypeB](basic.md#typeb)
 
 ## Enumerations
 
@@ -282,39 +273,16 @@ exports[`Groups should compile categories group page: (Output File Strategy "mod
 
 A module that contains categories
 
-## Table of contents
+## Contents
 
-### Enumerations
-
-#### Category A
-
-- [CategoryAEnum1](has-categories.md#categoryaenum1)
-- [CategoryAEnum2](has-categories.md#categoryaenum2)
-
-#### Category B
-
-- [CategoryBEnum1](has-categories.md#categorybenum1)
-- [CategoryBEnum2](has-categories.md#categorybenum2)
-
-#### Other
-
-- [UnCategorizedEnum](has-categories.md#uncategorizedenum)
-
-### Interfaces
-
-#### Category A
-
-- [CategoryAInterface1](has-categories.md#categoryainterface1)
-- [CategoryAInterface2](has-categories.md#categoryainterface2)
-
-#### Category B
-
-- [CategoryBInterface1](has-categories.md#categorybinterface1)
-- [CategoryBInterface2](has-categories.md#categorybinterface2)
-
-#### Other
-
-- [UnCategorizedInterace](has-categories.md#uncategorizedinterace)
+- [Enumerations](has-categories.md#enumerations)
+  - [Category A](has-categories.md#category-a)
+  - [Category B](has-categories.md#category-b)
+  - [Other](has-categories.md#other)
+- [Interfaces](has-categories.md#interfaces)
+  - [Category A](has-categories.md#category-a-1)
+  - [Category B](has-categories.md#category-b-1)
+  - [Other](has-categories.md#other-1)
 
 ## Enumerations
 
@@ -529,7 +497,7 @@ exports[`Groups should compile index page for monorepo: (Output File Strategy "m
 
 # API
 
-## Packages
+## Index
 
 - [package-1](package-1/README.md)
 - [package-2](package-2/README.md)
@@ -547,7 +515,9 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 # API
 
-## Modules
+## Index
+
+### Modules
 
 - [basic](basic/README.md)
 - [has-categories](has-categories/README.md)
@@ -563,7 +533,9 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# API
 
-## Modules
+## Index
+
+### Modules
 
 | Module | Description |
 | :------ | :------ |
@@ -583,7 +555,9 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 
 # API
 
-## Modules
+## Index
+
+### Modules
 
 - [basic](basic.md)
 - [has-categories](has-categories.md)
@@ -599,7 +573,9 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "# API
 
-## Modules
+## Index
+
+### Modules
 
 | Module | Description |
 | :------ | :------ |
@@ -667,17 +643,15 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # Namespace: \\_Namespace\\_A\\_
 
-## Index
+## Contents
 
-### Namespaces
+- [Namespaces](README.md#namespaces)
+- [Interfaces](README.md#interfaces)
+  - [NamespaceInterface](README.md#namespaceinterface)
+
+## Namespaces
 
 - [NestedNamespace](namespaces/NestedNamespace.md)
-
-## Table of contents
-
-### Interfaces
-
-- [NamespaceInterface](README.md#namespaceinterface)
 
 ## Interfaces
 
@@ -692,9 +666,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "# Namespace: \\_Namespace\\_A\\_
 
-## Index
-
-### Namespaces
+## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
@@ -767,30 +739,28 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Index
-
-### Namespaces
+## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB/index.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
 
-### Enumerations
+## Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
 | [EnumB](enumerations/EnumB.md) | - |
 | [\\_Enum\\_A\\_](enumerations/Enum_A_.md) | - |
 
-### Classes
+## Classes
 
 | Class | Description |
 | :------ | :------ |
 | [ClassB](classes/ClassB.md) | - |
 | [\\_\\_Class\\_A\\_](classes/Class_A_.md) | - |
 
-### Interfaces
+## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
@@ -858,44 +828,32 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Index
+## Contents
 
-### Namespaces
+- [Namespaces](README.md#namespaces)
+- [Enumerations](README.md#enumerations)
+  - [EnumB](README.md#enumb)
+  - [\\_Enum\\_A\\_](README.md#enum-a)
+- [Classes](README.md#classes)
+  - [ClassB](README.md#classb)
+  - [\\_\\_Class\\_A\\_](README.md#class-a)
+- [Interfaces](README.md#interfaces)
+  - [InterfaceB](README.md#interfaceb)
+  - [\\_Interface\\_A\\_](README.md#interface-a)
+- [Type Aliases](README.md#type-aliases)
+  - [TypeB](README.md#typeb)
+  - [\\_Type\\_A\\_](README.md#type-a)
+- [Variables](README.md#variables)
+  - [\\_variable\\_A\\_](README.md#variable-a)
+  - [variableB](README.md#variableb)
+- [Functions](README.md#functions)
+  - [\\_function\\_A\\_()](README.md#function-a)
+  - [functionB()](README.md#functionb)
+
+## Namespaces
 
 - [NamespaceB](namespaces/NamespaceB.md)
 - [\\_Namespace\\_A\\_](namespaces/Namespace_A_/README.md)
-
-## Table of contents
-
-### Enumerations
-
-- [EnumB](README.md#enumb)
-- [\\_Enum\\_A\\_](README.md#enum-a)
-
-### Classes
-
-- [ClassB](README.md#classb)
-- [\\_\\_Class\\_A\\_](README.md#class-a)
-
-### Interfaces
-
-- [InterfaceB](README.md#interfaceb)
-- [\\_Interface\\_A\\_](README.md#interface-a)
-
-### Type Aliases
-
-- [TypeB](README.md#typeb)
-- [\\_Type\\_A\\_](README.md#type-a)
-
-### Variables
-
-- [\\_variable\\_A\\_](README.md#variable-a)
-- [variableB](README.md#variableb)
-
-### Functions
-
-- [\\_function\\_A\\_](README.md#function-a)
-- [functionB](README.md#functionb)
 
 ## Enumerations
 
@@ -980,9 +938,7 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Index
-
-### Namespaces
+## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |

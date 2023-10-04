@@ -1,7 +1,7 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { heading, unorderedList } from '../../../support/elements';
-import { hasIndex, hasTOC } from '../../helpers';
+import { hasIndex, isAbsoluteIndex } from '../../helpers';
 
 /**
  * @category Partials
@@ -55,13 +55,18 @@ export function reflectionMember(
   }
 
   if (hasIndex(reflection)) {
-    md.push(heading(headingLevel, 'Index'));
-    md.push(context.reflectionIndex(reflection, false, headingLevel + 1));
-  }
+    const isAbsolute = isAbsoluteIndex(reflection);
 
-  if (!context.options.getValue('hideInPageTOC') && hasTOC(reflection)) {
-    md.push(heading(headingLevel, 'Table of contents'));
-    md.push(context.reflectionIndex(reflection, true, headingLevel + 1));
+    if (isAbsolute) {
+      md.push(heading(headingLevel, 'Index'));
+    }
+    md.push(
+      context.reflectionIndex(
+        reflection,
+        false,
+        isAbsolute ? headingLevel + 1 : headingLevel,
+      ),
+    );
   }
 
   md.push(context.members(reflection, headingLevel));

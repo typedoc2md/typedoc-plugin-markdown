@@ -225,18 +225,6 @@ Specify a template for displaying page titles. Defaults to `"{kind}: {name}"`.
 
 Supports {kind} and {name} placeholders.
 
-Example for displaying name only:
-
-```
-titleTemplate: "{name}"
-```
-
-Example for displaying kind in backticks:
-
-```
-titleTemplate: "{name} `{kind}`"
-```
-
 [↑ Top](#options-guide)
 
 ***
@@ -253,31 +241,7 @@ Excludes grouping by reflection kind so all members are rendered and sorted at t
 
 By default members are grouped by kind (eg Classes, Functions etc).
 
-This creates a flat structure where all members are displayed at the same level.
-
-**With groups**
-
-```markdown
-# SomeModule
-
-## Classes
-
-### ClassA
-
-## Functions
-
-### FunctionA
-```
-
-**Without groups**
-
-```markdown
-# SomeModule
-
-## ClassA
-
-## FunctionA
-```
+This creates a flat structure where all members are displayed at the same heading level.
 
 [↑ Top](#options-guide)
 
@@ -285,7 +249,7 @@ This creates a flat structure where all members are displayed at the same level.
 
 ### `--useCodeBlocks`
 
-Format signatures and declarations in code blocks. Defaults to `false`.
+Wraps signatures and declarations in code blocks. Defaults to `false`.
 
 ```shell
 --useCodeBlocks <boolean>
@@ -295,19 +259,9 @@ Format signatures and declarations in code blocks. Defaults to `false`.
 
 This option can be used to improve readability and aesthetics when defining signatures and declarations.
 
-*Default example:*
+Please note that when this option is set to `true` it is not possible to link to other references.
 
-> **basicFunction**(someParam): `string`
-
-*Example inside code block:*
-
-```ts
-basicFunction(someParam): string
-```
-
-Note when this option is set to `true` it is not possible to link to other references.
-
-As a work around the {@link} tag can be be used to manually reference types.
+As a work around the `{\@link}` tag can be be used to manually reference types.
 
 [↑ Top](#options-guide)
 
@@ -351,7 +305,7 @@ Specify the render style of parameter and type parameter groups. Defaults to `"l
 
 ### `--propertiesFormat`
 
-Specify the render style of properties groups for interfaces and classes. Defaults to `"list"`.
+Specify the render style of property groups for interfaces and classes. Defaults to `"list"`.
 
 ```shell
 --propertiesFormat <"list"|"table">
@@ -363,7 +317,7 @@ Specify the render style of properties groups for interfaces and classes. Defaul
 
 ### `--enumMembersFormat`
 
-Specify the render style of Enum members. Defaults to `"list"`.
+Specify the render style of enumuration members. Defaults to `"list"`.
 
 ```shell
 --enumMembersFormat <"list"|"table">
@@ -387,11 +341,15 @@ Specify the render style for type declaration members. Defaults to `"list"`.
 
 ### `--indexFormat`
 
-Render indexes either as a simple list or a table with a description. Defaults to `"list"`.
+Specify the render format for index items. Defaults to `"list"`.
 
 ```shell
 --indexFormat <"list"|"table">
 ```
+
+#### Usage
+
+This determines wheter to display index items either as a simple lists or in a table with a description column exposing the comment summary.
 
 [↑ Top](#options-guide)
 

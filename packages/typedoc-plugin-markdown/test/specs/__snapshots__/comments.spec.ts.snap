@@ -44,7 +44,7 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
-## Exports
+## Index
 
 ### Enumerations
 
@@ -111,7 +111,7 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
-## Exports
+## Index
 
 ### Enumerations
 
@@ -144,6 +144,23 @@ exports[`Comments should compile comments for module: (Output File Strategy "mod
 "# API
 
 Comments form module comments
+
+## Contents
+
+- [Links](exports.md#links)
+  - [External link](exports.md#external-link)
+- [Tag A](exports.md#tag-a)
+- [Tag B](exports.md#tag-b)
+- [Html And Jsx](exports.md#html-and-jsx)
+- [Enumerations](exports.md#enumerations)
+  - [CommentEnum](exports.md#commentenum)
+- [Interfaces](exports.md#interfaces)
+  - [CommentInterface](exports.md#commentinterface)
+  - [SameName](exports.md#samename)
+- [Variables](exports.md#variables)
+  - [SameName](exports.md#samename-1)
+  - [prop](exports.md#prop)
+  - [propb](exports.md#propb)
 
 ## Links
 
@@ -183,36 +200,6 @@ A \`<tag>\` in backticks
 A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
-
-## Enumerations
-
-- [CommentEnum](exports.md#commentenum)
-
-## Interfaces
-
-- [CommentInterface](exports.md#commentinterface)
-- [SameName](exports.md#samename)
-
-## Variables
-
-- [SameName](exports.md#samename-1)
-- [prop](exports.md#prop)
-- [propb](exports.md#propb)
-
-## Enumerations
-
-- [CommentEnum](exports.md#commentenum)
-
-## Interfaces
-
-- [CommentInterface](exports.md#commentinterface)
-- [SameName](exports.md#samename)
-
-## Variables
-
-- [SameName](exports.md#samename-1)
-- [prop](exports.md#prop)
-- [propb](exports.md#propb)
 
 ## Enumerations
 
@@ -276,6 +263,23 @@ exports[`Comments should compile comments for module: (Output File Strategy "mod
 
 Comments form module comments
 
+## Contents
+
+- [Links](exports.md#links)
+  - [External link](exports.md#external-link)
+- [Tag A](exports.md#tag-a)
+- [Tag B](exports.md#tag-b)
+- [Html And Jsx](exports.md#html-and-jsx)
+- [Enumerations](exports.md#enumerations)
+  - [CommentEnum](exports.md#commentenum)
+- [Interfaces](exports.md#interfaces)
+  - [CommentInterface](exports.md#commentinterface)
+  - [SameName](exports.md#samename)
+- [Variables](exports.md#variables)
+  - [SameName](exports.md#samename-1)
+  - [prop](exports.md#prop)
+  - [propb](exports.md#propb)
+
 ## Links
 
 Links using \`{@link}\` inline tags.
@@ -314,36 +318,6 @@ A \`<tag>\` in backticks
 A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
-
-## Enumerations
-
-- [CommentEnum](exports.md#commentenum)
-
-## Interfaces
-
-- [CommentInterface](exports.md#commentinterface)
-- [SameName](exports.md#samename)
-
-## Variables
-
-- [SameName](exports.md#samename-1)
-- [prop](exports.md#prop-2)
-- [propb](exports.md#propb-2)
-
-## Enumerations
-
-- [CommentEnum](exports.md#commentenum)
-
-## Interfaces
-
-- [CommentInterface](exports.md#commentinterface)
-- [SameName](exports.md#samename)
-
-## Variables
-
-- [SameName](exports.md#samename-1)
-- [prop](exports.md#prop-2)
-- [propb](exports.md#propb-2)
 
 ## Enumerations
 

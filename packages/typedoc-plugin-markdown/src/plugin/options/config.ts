@@ -180,18 +180,6 @@ export const indexPageTitle: DeclarationOption = {
 /**
  * Supports {kind} and {name} placeholders.
  *
- * Example for displaying name only:
- *
- * ```
- * titleTemplate: "{name}"
- * ```
- *
- * Example for displaying kind in backticks:
- *
- * ```
- * titleTemplate: "{name} `{kind}`"
- * ```
- *
  * @category ui
  */
 export const titleTemplate: DeclarationOption = {
@@ -204,31 +192,7 @@ export const titleTemplate: DeclarationOption = {
 /**
  * By default members are grouped by kind (eg Classes, Functions etc).
  *
- * This creates a flat structure where all members are displayed at the same level.
- *
- * **With groups**
- *
- * ```markdown
- * # SomeModule
- *
- * ## Classes
- *
- * ### ClassA
- *
- * ## Functions
- *
- * ### FunctionA
- *```
- *
- * **Without groups**
- *
- * ```markdown
- * # SomeModule
- *
- * ## ClassA
- *
- * ## FunctionA
- * ```
+ * This creates a flat structure where all members are displayed at the same heading level.
  *
  * @category ui
  */
@@ -242,25 +206,15 @@ export const excludeGroups: DeclarationOption = {
 /**
  * This option can be used to improve readability and aesthetics when defining signatures and declarations.
  *
- * *Default example:*
+ * Please note that when this option is set to `true` it is not possible to link to other references.
  *
- * > **basicFunction**(someParam): `string`
- *
- * *Example inside code block:*
- *
- * ```ts
- * basicFunction(someParam): string
- * ```
- *
- * Note when this option is set to `true` it is not possible to link to other references.
- *
- * As a work around the {\@link} tag can be be used to manually reference types.
+ * As a work around the `{\@link}` tag can be be used to manually reference types.
  *
  * @category ui
  */
 export const useCodeBlocks: DeclarationOption = {
   name: 'useCodeBlocks',
-  help: 'Format signatures and declarations in code blocks.',
+  help: 'Wraps signatures and declarations in code blocks.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -301,7 +255,7 @@ export const parametersFormat: DeclarationOption = {
  */
 export const propertiesFormat: DeclarationOption = {
   name: 'propertiesFormat',
-  help: 'Specify the render style of properties groups for interfaces and classes.',
+  help: 'Specify the render style of property groups for interfaces and classes.',
   type: ParameterType.Map,
   map: FormatStyle,
   defaultValue: FormatStyle.List,
@@ -312,7 +266,7 @@ export const propertiesFormat: DeclarationOption = {
  */
 export const enumMembersFormat: DeclarationOption = {
   name: 'enumMembersFormat',
-  help: 'Specify the render style of Enum members.',
+  help: 'Specify the render style of enumuration members.',
   type: ParameterType.Map,
   map: FormatStyle,
   defaultValue: FormatStyle.List,
@@ -330,11 +284,13 @@ export const typeDeclarationFormat: DeclarationOption = {
 };
 
 /**
+ * This determines wheter to display index items either as a simple lists or in a table with a description column exposing the comment summary.
+ *
  * @category ui
  */
 export const indexFormat: DeclarationOption = {
   name: 'indexFormat',
-  help: 'Render indexes either as a simple list or a table with a description.',
+  help: 'Specify the render format for index items.',
   type: ParameterType.Map,
   map: FormatStyle,
   defaultValue: FormatStyle.List,
