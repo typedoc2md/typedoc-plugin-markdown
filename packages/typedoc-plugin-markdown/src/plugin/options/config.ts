@@ -174,7 +174,7 @@ export const indexPageTitle: DeclarationOption = {
   name: 'indexPageTitle',
   help: 'The title of project index page.',
   type: ParameterType.String,
-  defaultValue: '{projectName}',
+  defaultValue: 'API',
 };
 
 /**

@@ -54,7 +54,7 @@ function projectHeader(
   if (hasReadme || !hasBreadcrumbs) {
     md.push(
       link(
-        'API',
+        context.options.getValue('indexPageTitle'),
         hasReadme
           ? context.relativeURL(indexFileName)
           : context.relativeURL(entryFileName),

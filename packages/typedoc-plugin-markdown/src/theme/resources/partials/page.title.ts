@@ -17,7 +17,7 @@ export function pageTitle(
   const titleTemplate = context.options.getValue('titleTemplate') as string;
   const name = getMemberTitle(page.model as DeclarationReflection);
   if (page.model?.url === page.project.url) {
-    return 'API';
+    return context.options.getValue('indexPageTitle');
   }
 
   return titleTemplate

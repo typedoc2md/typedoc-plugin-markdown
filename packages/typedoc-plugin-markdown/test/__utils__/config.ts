@@ -52,6 +52,7 @@ export const FIXTURES: Fixture[] = [
         categorizeByGroup: true,
         includeVersion: true,
         titleLink: 'http://www.google.com',
+        indexPageTitle: 'Custom Title',
       },
       {
         hidePageHeader: true,

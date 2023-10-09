@@ -21,7 +21,12 @@ export function breadcrumbs(
     return '';
   }
 
-  md.push(link('API', context.relativeURL(page.project.url)));
+  md.push(
+    link(
+      context.options.getValue('indexPageTitle'),
+      context.relativeURL(page.project.url),
+    ),
+  );
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
