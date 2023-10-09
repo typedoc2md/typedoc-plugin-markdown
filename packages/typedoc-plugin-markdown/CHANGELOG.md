@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.23
+
+### Patch Changes
+
+- Updated toc implementation
+- Fixed indexPageTitle optio
+
 ## 4.0.0-next.22 (2023-09-26)
 
 ### Patch Changes
