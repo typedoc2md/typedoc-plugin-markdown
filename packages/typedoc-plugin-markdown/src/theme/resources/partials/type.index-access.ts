@@ -13,7 +13,7 @@ export function indexAccessType(
     md.push(context.someType(model.objectType));
   }
   if (model.indexType) {
-    md.push(`[${context.someType(model.indexType)}]`);
+    md.push(`\\[${context.someType(model.indexType)}\\]`);
   }
   return md.join('');
 }

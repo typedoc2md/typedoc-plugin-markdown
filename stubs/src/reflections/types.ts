@@ -131,3 +131,10 @@ export type LiteralType = {
   set accessorB(x: string);
   get accessorB();
 };
+
+export type ArrayOfStuff = { name: string; age: number }[];
+
+/**
+ * Comments for IndexAccessType
+ */
+export type IndexAccessType = ArrayOfStuff[number];

@@ -368,6 +368,46 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 "
 `;
 
+exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+
+***
+
+[API](../exports.md) > IndexAccessType
+
+# Type alias: IndexAccessType
+
+> **IndexAccessType**: [\`ArrayOfStuff\`](ArrayOfStuff.md)\\[\`number\`\\]
+
+Comments for IndexAccessType
+
+## Source
+
+[types.ts:140](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs**
+
+***
+
+[API](../index.md) > IndexAccessType
+
+# IndexAccessType
+
+\`\`\`ts
+type IndexAccessType: ArrayOfStuff\\[number\\];
+\`\`\`
+
+Comments for IndexAccessType
+
+***
+
+Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+"
+`;
+
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
 

@@ -116,4 +116,12 @@ describe(`Type Alias Reflection`, () => {
       'type-aliases/LiteralType.md',
     );
   });
+
+  test(`should compile index access type`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Reflections,
+      FixtureOutputFileStrategy.Members,
+      'type-aliases/IndexAccessType.md',
+    );
+  });
 });

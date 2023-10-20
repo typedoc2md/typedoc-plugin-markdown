@@ -691,6 +691,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
     "title": "Type Aliases",
     "children": [
       {
+        "title": "ArrayOfStuff",
+        "url": "type-aliases/ArrayOfStuff.md"
+      },
+      {
         "title": "ArrayType",
         "url": "type-aliases/ArrayType.md"
       },
@@ -705,6 +709,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "FunctionType",
         "url": "type-aliases/FunctionType.md"
+      },
+      {
+        "title": "IndexAccessType",
+        "url": "type-aliases/IndexAccessType.md"
       },
       {
         "title": "IntersectionType",
