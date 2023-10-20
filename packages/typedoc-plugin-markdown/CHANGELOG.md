@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.24
+## 4.0.0-next.24 (2023-10-21)
 
 ### Patch Changes
 

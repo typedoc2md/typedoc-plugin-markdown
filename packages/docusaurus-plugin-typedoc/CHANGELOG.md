@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0-next.18
+## 1.0.0-next.18 (2023-10-21)
 
 ### Patch Changes
 
