@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.18
+
+### Patch Changes
+
+- Support Docusaurus 3
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.24
+
 ## 1.0.0-next.17 (2023-09-26)
 
 ### Patch Changes
