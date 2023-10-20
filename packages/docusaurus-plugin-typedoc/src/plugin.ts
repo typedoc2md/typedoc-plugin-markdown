@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, PageEvent } from 'typedoc';
+import { Application } from 'typedoc';
 import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { PluginOptions } from '.';
 import { getPluginOptions } from './options';
@@ -57,10 +57,6 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   if (options.cleanOutputDir) {
     removeDir(outputDir);
   }
-
-  app.renderer.on(PageEvent.END, (event: PageEvent) => {
-    event.contents = event.contents?.replace(/\\</g, '<');
-  });
 
   if (sidebar?.autoConfiguration) {
     app.renderer.postRenderAsyncJobs.push(
