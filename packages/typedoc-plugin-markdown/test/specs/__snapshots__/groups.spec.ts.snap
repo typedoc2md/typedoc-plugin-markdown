@@ -32,10 +32,6 @@ A basic module
 
 - [TypeA](type-aliases/TypeA.md)
 - [TypeB](type-aliases/TypeB.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -166,10 +162,6 @@ A basic module
 ### TypeB
 
 > **TypeB**: \`string\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -327,10 +319,6 @@ A module that contains categories
 ### Other
 
 #### UnCategorizedInterace
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -447,10 +435,6 @@ A module that contains categories
 #### Other
 
 - [UnCategorizedInterace](interfaces/UnCategorizedInterace.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -490,24 +474,6 @@ CUSTOM FOOTER HERE
 "
 `;
 
-exports[`Groups should compile index page for monorepo: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**Documentation** ∙ [README](README.md) ∙ [API](modules.md)
-
-***
-
-# API
-
-## Index
-
-- [package-1](package-1/README.md)
-- [package-2](package-2/README.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
-"
-`;
-
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [Custom Title](modules.md)
 
@@ -523,10 +489,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 - [has-categories](has-categories/README.md)
 - [has-namespaces](has-namespaces/README.md)
 - [index](index/README.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -563,10 +525,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 - [has-categories](has-categories.md)
 - [has-namespaces](has-namespaces/README.md)
 - [index](index.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -606,10 +564,6 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 ### Interfaces
 
 - [NamespaceInterface](interfaces/NamespaceInterface.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -656,10 +610,6 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 ## Interfaces
 
 ### NamespaceInterface
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -727,10 +677,6 @@ A module that contains namespaces
 
 - [\\_function\\_A\\_](functions/function_A_.md)
 - [functionB](functions/functionB.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -926,10 +872,6 @@ A module that contains namespaces
 ### functionB()
 
 > **functionB**(): \`void\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -1044,5 +986,18 @@ A module that contains namespaces
 > **functionB**(): \`void\`
 
 CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile readme for a project: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [README](README.md) ∙ [Custom Title](modules.md)
+
+***
+
+# MY README
+
+> Some block quote
+
+Some text.
 "
 `;

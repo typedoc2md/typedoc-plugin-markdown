@@ -84,7 +84,12 @@ function packageHeader(
   md.push(bold(packageItem.name));
 
   if (hasReadme) {
-    md.push(link('README', entryFileName));
+    md.push(
+      link(
+        'README',
+        context.relativeURL(`${packageItem.name}/${entryFileName}`),
+      ),
+    );
   }
 
   if (hasReadme || !hasBreadcrumbs) {

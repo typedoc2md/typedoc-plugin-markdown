@@ -13,11 +13,12 @@ describe(`Groups`, () => {
     );
   });
 
-  test(`should compile index page for monorepo`, () => {
+  test(`should compile readme for a project`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Packages,
-      FixtureOutputFileStrategy.Members,
-      ['modules.md'],
+      FixtureOutputDir.Groups,
+      FixtureOutputFileStrategy.Modules,
+      'README.md',
+      1,
     );
   });
 

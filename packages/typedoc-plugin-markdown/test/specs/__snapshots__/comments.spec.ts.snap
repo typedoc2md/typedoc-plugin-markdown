@@ -60,10 +60,6 @@ Some <p> html </p> inside codeblock
 - [SameName](variables/SameName.md)
 - [prop](variables/prop.md)
 - [propb](variables/propb.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -133,10 +129,6 @@ Some <p> html </p> inside codeblock
 | [SameName](variables/SameName.md) | - |
 | [prop](variables/prop.md) | - |
 | [propb](variables/propb.md) | - |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -251,10 +243,6 @@ Some <p> html </p> inside codeblock
 ### propb
 
 > **\`const\`** **propb**: \`true\` = \`true\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -369,9 +357,5 @@ Some <p> html </p> inside codeblock
 ### propb
 
 > **\`const\`** **propb**: \`true\` = \`true\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

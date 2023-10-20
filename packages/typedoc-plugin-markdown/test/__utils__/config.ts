@@ -46,6 +46,7 @@ export const FIXTURES: Fixture[] = [
     entryPoints: FixtureEntryPoints.Groups,
     commonOptions: {
       disableSources: true,
+      hideGenerator: true,
     },
     options: [
       {
@@ -80,6 +81,7 @@ export const FIXTURES: Fixture[] = [
       disableSources: true,
       hidePageHeader: true,
       hideBreadcrumbs: true,
+      hideGenerator: true,
       enumMembersFormat: 'table',
       propertiesFormat: 'table',
     },
@@ -99,6 +101,7 @@ export const FIXTURES: Fixture[] = [
     entryPoints: FixtureEntryPoints.Packages,
     commonOptions: {
       entryPointStrategy: 'packages',
+      hideGenerator: true,
     },
     options: [{}],
   },

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**Documentation** ∙ [README](README.md) ∙ [API](modules.md)
+
+***
+
+# API
+
+## Index
+
+- [package-1](package-1/README.md)
+- [package-2](package-2/README.md)
+"
+`;
+
+exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**package-1** ∙ [README](../README.md) ∙ [API](../modules.md)
+
+***
+
+[API](../../modules.md) > [package-1](../modules.md) > PackageInterface
+
+# Interface: PackageInterface
+"
+`;
+
+exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**package-1** ∙ [README](README.md) ∙ [API](modules.md)
+
+***
+
+# PACKAGE 1 README
+
+Readme content
+"
+`;
+
+exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 2`] = `
+"**package-2** ∙ [README](README.md) ∙ [API](modules.md)
+
+***
+
+# PACKAGE 2 README
+
+Readme content
+"
+`;
