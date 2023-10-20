@@ -27,7 +27,7 @@ Comments for MemberA
 
 #### Source
 
-[enums.ts:12](source-url)
+[enums.ts:12](http://source-url)
 
 ***
 
@@ -39,7 +39,7 @@ Comments for MemberB
 
 #### Source
 
-[enums.ts:16](source-url)
+[enums.ts:16](http://source-url)
 "
 `;
 
@@ -96,7 +96,7 @@ Comments for enum
 
 #### Source
 
-[enums.ts:23](source-url)
+[enums.ts:23](http://source-url)
 
 ***
 
@@ -106,7 +106,7 @@ Comments for enum
 
 #### Source
 
-[enums.ts:24](source-url)
+[enums.ts:24](http://source-url)
 "
 `;
 

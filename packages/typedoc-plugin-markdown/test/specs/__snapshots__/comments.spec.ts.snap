@@ -338,8 +338,8 @@ Some <p> html </p> inside codeblock
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`<a id="prop" name="prop"></a> prop\` | \`string\` | - |
-| \`<a id="propb" name="propb"></a> propb\` | \`string\` | - |
+| <a id="prop" name="prop"></a> \`prop\` | \`string\` | - |
+| <a id="propb" name="propb"></a> \`propb\` | \`string\` | - |
 
 ***
 
@@ -349,8 +349,8 @@ Some <p> html </p> inside codeblock
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`<a id="prop-1" name="prop-1"></a> prop\` | \`string\` | - |
-| \`<a id="propb-1" name="propb-1"></a> propb\` | \`string\` | - |
+| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` | - |
+| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` | - |
 
 ## Variables
 

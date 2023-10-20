@@ -27,12 +27,12 @@ Comments for function
 >
 > ### Source
 >
-> [functions.ts:126](source-url)
+> [functions.ts:126](http://source-url)
 >
 
 ## Source
 
-[functions.ts:125](source-url)
+[functions.ts:125](http://source-url)
 "
 `;
 
@@ -95,7 +95,7 @@ Return comments
 
 ## Source
 
-[functions.ts:133](source-url)
+[functions.ts:133](http://source-url)
 "
 `;
 
@@ -154,7 +154,7 @@ Return comments
 
 ## Source
 
-[functions.ts:118](source-url)
+[functions.ts:118](http://source-url)
 "
 `;
 
@@ -213,7 +213,7 @@ This is some numeric parameter.
 
 ## Source
 
-[functions.ts:10](source-url)
+[functions.ts:10](http://source-url)
 "
 `;
 
@@ -283,7 +283,7 @@ A parameter with a default null value.
 
 ## Source
 
-[functions.ts:23](source-url)
+[functions.ts:23](http://source-url)
 "
 `;
 
@@ -348,7 +348,7 @@ The name value.
 
 ### Source
 
-[functions.ts:96](source-url)
+[functions.ts:96](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -368,7 +368,7 @@ A value of the object.
 
 ### Source
 
-[functions.ts:104](source-url)
+[functions.ts:104](http://source-url)
 "
 `;
 
@@ -443,7 +443,7 @@ Another param comment
 
 ## Source
 
-[functions.ts:76](source-url)
+[functions.ts:76](http://source-url)
 "
 `;
 
@@ -518,7 +518,7 @@ The context of the method call.
 
 ## Source
 
-[functions.ts:54](source-url)
+[functions.ts:54](http://source-url)
 "
 `;
 
@@ -586,7 +586,7 @@ An optional parameter.
 
 ## Source
 
-[functions.ts:40](source-url)
+[functions.ts:40](http://source-url)
 "
 `;
 
@@ -619,7 +619,7 @@ An optional parameter.
 
 ## Source
 
-[functions.ts:40](source-url)
+[functions.ts:40](http://source-url)
 "
 `;
 
@@ -714,7 +714,7 @@ Comments for T
 
 ## Source
 
-[functions.ts:89](source-url)
+[functions.ts:89](http://source-url)
 "
 `;
 

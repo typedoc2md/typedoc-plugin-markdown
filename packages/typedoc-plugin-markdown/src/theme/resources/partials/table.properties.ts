@@ -2,7 +2,6 @@ import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, table } from '../../../support/elements';
 import {
-  escapeChars,
   formatTableDescriptionCol,
   stripLineBreaks,
 } from '../../../support/utils';
@@ -73,12 +72,10 @@ export function propertiesTable(
     }
 
     nameColumn.push(
-      `${`${escapeChars(property.name)}${
-        property.flags.isOptional ? '?' : ''
-      }`}`,
+      `${`${backTicks(property.name)}${property.flags.isOptional ? '?' : ''}`}`,
     );
 
-    row.push(backTicks(nameColumn.join(' ')));
+    row.push(nameColumn.join(' '));
 
     if (propertyType) {
       row.push(stripLineBreaks(context.someType(propertyType), false));

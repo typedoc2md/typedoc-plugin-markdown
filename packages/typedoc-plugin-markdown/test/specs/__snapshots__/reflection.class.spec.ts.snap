@@ -40,7 +40,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:9](source-url)
+[classes.ts:9](http://source-url)
 
 ## Methods
 
@@ -52,7 +52,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:14](source-url)
+[classes.ts:14](http://source-url)
 "
 `;
 
@@ -145,7 +145,7 @@ Comments for ClassWithAccessors
 
 #### Source
 
-[classes.ts:72](source-url)
+[classes.ts:72](http://source-url)
 
 ## Accessors
 
@@ -167,7 +167,7 @@ Param comments
 
 #### Source
 
-[classes.ts:76](source-url)
+[classes.ts:76](http://source-url)
 
 ***
 
@@ -181,7 +181,7 @@ Param comments
 
 #### Source
 
-[classes.ts:92](source-url)
+[classes.ts:92](http://source-url)
 
 ***
 
@@ -191,7 +191,7 @@ Param comments
 
 #### Source
 
-[classes.ts:88](source-url)
+[classes.ts:88](http://source-url)
 "
 `;
 
@@ -314,7 +314,7 @@ Comments for x number
 
 #### Source
 
-[classes.ts:50](source-url)
+[classes.ts:50](http://source-url)
 
 ### new ClassWithConstructorOverloads(x)
 
@@ -328,7 +328,7 @@ Comments for x string
 
 #### Source
 
-[classes.ts:55](source-url)
+[classes.ts:55](http://source-url)
 
 ### new ClassWithConstructorOverloads(s)
 
@@ -340,7 +340,7 @@ Comments for x string
 
 #### Source
 
-[classes.ts:56](source-url)
+[classes.ts:56](http://source-url)
 "
 `;
 
@@ -449,7 +449,7 @@ Comments for privateProp
 
 #### Source
 
-[classes.ts:111](source-url)
+[classes.ts:111](http://source-url)
 
 ***
 
@@ -461,7 +461,7 @@ Comments for protectedProp
 
 #### Source
 
-[classes.ts:121](source-url)
+[classes.ts:121](http://source-url)
 
 ***
 
@@ -473,7 +473,7 @@ Comments for propWithDefault
 
 #### Source
 
-[classes.ts:126](source-url)
+[classes.ts:126](http://source-url)
 
 ***
 
@@ -485,7 +485,7 @@ Comments for abstractProperty
 
 #### Source
 
-[classes.ts:116](source-url)
+[classes.ts:116](http://source-url)
 
 ***
 
@@ -497,7 +497,7 @@ Comments for staticProp
 
 #### Source
 
-[classes.ts:106](source-url)
+[classes.ts:106](http://source-url)
 
 ## Methods
 
@@ -509,7 +509,7 @@ Comment for privateMethod
 
 #### Source
 
-[classes.ts:138](source-url)
+[classes.ts:138](http://source-url)
 
 ***
 
@@ -521,7 +521,7 @@ Comment for publicMethod
 
 #### Source
 
-[classes.ts:131](source-url)
+[classes.ts:131](http://source-url)
 
 ***
 
@@ -533,7 +533,7 @@ Comment for staticMethod
 
 #### Source
 
-[classes.ts:143](source-url)
+[classes.ts:143](http://source-url)
 "
 `;
 
@@ -739,7 +739,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:21](source-url)
+[classes.ts:21](http://source-url)
 
 ***
 
@@ -749,7 +749,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:22](source-url)
+[classes.ts:22](http://source-url)
 
 ## Methods
 
@@ -765,7 +765,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:23](source-url)
+[classes.ts:23](http://source-url)
 
 ***
 
@@ -775,7 +775,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:26](source-url)
+[classes.ts:26](http://source-url)
 "
 `;
 

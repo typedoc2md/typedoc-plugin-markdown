@@ -15,7 +15,7 @@ Comments for ArrayType
 
 ## Source
 
-[types.ts:12](source-url)
+[types.ts:12](http://source-url)
 "
 `;
 
@@ -61,7 +61,7 @@ Comments for ConditionalType
 
 ## Source
 
-[types.ts:46](source-url)
+[types.ts:46](http://source-url)
 "
 `;
 
@@ -107,7 +107,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 
 ## Source
 
-[types.ts:88](source-url)
+[types.ts:88](http://source-url)
 "
 `;
 
@@ -223,7 +223,7 @@ Comments for someFunction
 
 ## Source
 
-[types.ts:93](source-url)
+[types.ts:93](http://source-url)
 "
 `;
 
@@ -290,7 +290,7 @@ Comments for ExternalReferenceType
 
 ## Source
 
-[types.ts:64](source-url)
+[types.ts:64](http://source-url)
 "
 `;
 
@@ -336,7 +336,7 @@ Comments for FunctionType
 
 ## Source
 
-[types.ts:83](source-url)
+[types.ts:83](http://source-url)
 "
 `;
 
@@ -389,7 +389,7 @@ Comments for IntersectionType
 
 ## Source
 
-[types.ts:38](source-url)
+[types.ts:38](http://source-url)
 "
 `;
 
@@ -443,7 +443,7 @@ Comments for PartialMappedType
 
 ## Source
 
-[types.ts:69](source-url)
+[types.ts:69](http://source-url)
 "
 `;
 
@@ -489,7 +489,7 @@ Comments for PrimitiveType
 
 ## Source
 
-[types.ts:7](source-url)
+[types.ts:7](http://source-url)
 "
 `;
 
@@ -535,7 +535,7 @@ Comments for ReadonlyMapedType
 
 ## Source
 
-[types.ts:76](source-url)
+[types.ts:76](http://source-url)
 "
 `;
 
@@ -581,7 +581,7 @@ Comments for StringLiteralType
 
 ## Source
 
-[types.ts:22](source-url)
+[types.ts:22](http://source-url)
 "
 `;
 
@@ -627,7 +627,7 @@ Comments for TupleType
 
 ## Source
 
-[types.ts:33](source-url)
+[types.ts:33](http://source-url)
 "
 `;
 
@@ -674,7 +674,7 @@ Comments for TypeWithTypeParams
 
 ## Source
 
-[types.ts:59](source-url)
+[types.ts:59](http://source-url)
 "
 `;
 
@@ -721,7 +721,7 @@ Comments for UnionType
 
 ## Source
 
-[types.ts:17](source-url)
+[types.ts:17](http://source-url)
 "
 `;
 

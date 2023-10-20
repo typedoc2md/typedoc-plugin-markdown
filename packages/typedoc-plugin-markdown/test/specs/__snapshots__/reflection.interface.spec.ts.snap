@@ -40,7 +40,7 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:23](source-url)
+[interfaces.ts:23](http://source-url)
 
 ***
 
@@ -52,7 +52,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:17](source-url)
+[interfaces.ts:17](http://source-url)
 
 ***
 
@@ -64,7 +64,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:12](source-url)
+[interfaces.ts:12](http://source-url)
 
 ***
 
@@ -108,7 +108,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:28](source-url)
+[interfaces.ts:28](http://source-url)
 "
 `;
 
@@ -137,7 +137,7 @@ Comments for BasicInterface
 | Property | Type | Description |
 | :------ | :------ | :------ |
 | \`functionProp\` | (\`s\`) => \`boolean\` | - |
-| \`optionalProp?\` | \`string\` | Comments for optional prop |
+| \`optionalProp\`? | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
 | \`propWithProps\` | \\{   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
@@ -185,7 +185,7 @@ Comments for ExtendedInterface
 
 #### Source
 
-[interfaces.ts:67](source-url)
+[interfaces.ts:67](http://source-url)
 
 ***
 
@@ -207,7 +207,7 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:23](source-url)
+[interfaces.ts:23](http://source-url)
 
 ***
 
@@ -223,7 +223,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:17](source-url)
+[interfaces.ts:17](http://source-url)
 
 ***
 
@@ -239,7 +239,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:12](source-url)
+[interfaces.ts:12](http://source-url)
 
 ***
 
@@ -287,7 +287,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:28](source-url)
+[interfaces.ts:28](http://source-url)
 "
 `;
 
@@ -317,7 +317,7 @@ Comments for ExtendedInterface
 | :------ | :------ | :------ | :------ |
 | \`extendedProp\` | \`string\` | - | - |
 | \`functionProp\` | (\`s\`) => \`boolean\` | - | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
-| \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
+| \`optionalProp\`? | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).\`prop\` |
 | \`propWithProps\` | \\{   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
@@ -361,7 +361,7 @@ Comments for IndexableInterface
 
 #### Source
 
-[interfaces.ts:75](source-url)
+[interfaces.ts:75](http://source-url)
 "
 `;
 
@@ -428,7 +428,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:60](source-url)
+[interfaces.ts:60](http://source-url)
 "
 `;
 
