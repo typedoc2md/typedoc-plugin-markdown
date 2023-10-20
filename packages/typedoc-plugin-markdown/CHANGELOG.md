@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.24
+
+### Patch Changes
+
+- Correctly resolve packge readme urls from member pages ([#483](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/483))
+- Prevent trigger of reversed link syntax rule on index access types ([#484](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/484))
+
 ## 4.0.0-next.23 (2023-10-09)
 
 ### Patch Changes
