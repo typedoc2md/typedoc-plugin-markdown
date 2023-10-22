@@ -164,9 +164,9 @@ export const hideInPageTOC: DeclarationOption = {
 };
 
 /**
- * This provides a mechanism to change the main project index page title.
+ * Provides a mechanism to change the main project index page title.
  *
- * Note this will also serve as the root breadcrumb text.
+ * Defaults to `{projectName}` - a placeholder that renders the project name and version (when `--includeVersion` is set).
  *
  * @category ui
  */
@@ -174,17 +174,21 @@ export const indexPageTitle: DeclarationOption = {
   name: 'indexPageTitle',
   help: 'The title of project index page.',
   type: ParameterType.String,
-  defaultValue: 'API',
+  defaultValue: '{projectName}',
 };
 
 /**
- * Supports {kind} and {name} placeholders.
+ * Provides a mechanism to change the page title of members.
+ *
+ * Supports `{kind}` and `{name}` placeholders.
+ *
+ * e.g "Class: MyClassName"
  *
  * @category ui
  */
-export const titleTemplate: DeclarationOption = {
-  name: 'titleTemplate',
-  help: 'Specify a template for displaying page titles.',
+export const memberPageTitle: DeclarationOption = {
+  name: 'memberPageTitle',
+  help: 'The page title of members.',
   type: ParameterType.String,
   defaultValue: '{kind}: {name}',
 };

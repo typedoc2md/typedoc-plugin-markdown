@@ -49,12 +49,12 @@ function projectHeader(
   }
 
   if (hasReadme) {
-    md.push(link('README', context.relativeURL(entryFileName)));
+    md.push(link('Readme', context.relativeURL(entryFileName)));
   }
   if (hasReadme || !hasBreadcrumbs) {
     md.push(
       link(
-        context.options.getValue('indexPageTitle'),
+        'API',
         hasReadme
           ? context.relativeURL(indexFileName)
           : context.relativeURL(entryFileName),
@@ -86,7 +86,7 @@ function packageHeader(
   if (hasReadme) {
     md.push(
       link(
-        'README',
+        'Readme',
         context.relativeURL(`${packageItem.name}/${entryFileName}`),
       ),
     );

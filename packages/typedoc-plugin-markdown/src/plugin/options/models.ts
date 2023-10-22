@@ -10,7 +10,7 @@ declare module 'typedoc' {
     hideBreadcrumbs: boolean;
     hideInPageTOC: boolean;
     indexPageTitle: string;
-    titleTemplate: string;
+    memberPageTitle: string;
     excludeGroups: boolean;
     useCodeBlocks: boolean;
     expandObjects: boolean;
@@ -34,7 +34,7 @@ export interface PluginOptions {
   hideBreadcrumbs: boolean;
   hideInPageTOC: boolean;
   indexPageTitle: string;
-  titleTemplate: string;
+  memberPageTitle: string;
   excludeGroups: boolean;
   useCodeBlocks: boolean;
   expandObjects: boolean;

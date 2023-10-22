@@ -12,7 +12,7 @@
   * [`--hideBreadcrumbs`](#--hidebreadcrumbs)
   * [`--hideInPageTOC`](#--hideinpagetoc)
   * [`--indexPageTitle`](#--indexpagetitle)
-  * [`--titleTemplate`](#--titletemplate)
+  * [`--memberPageTitle`](#--memberpagetitle)
   * [`--excludeGroups`](#--excludegroups)
   * [`--useCodeBlocks`](#--usecodeblocks)
   * [`--expandObjects`](#--expandobjects)
@@ -205,25 +205,29 @@ The title of project index page. Defaults to `"{projectName}"`.
 
 #### Usage
 
-This provides a mechanism to change the main project index page title.
+Provides a mechanism to change the main project index page title.
 
-Note this will also serve as the root breadcrumb text.
+Defaults to `{projectName}` - a placeholder that renders the project name and version (when `--includeVersion` is set).
 
 [↑ Top](#options-guide)
 
 ***
 
-### `--titleTemplate`
+### `--memberPageTitle`
 
-Specify a template for displaying page titles. Defaults to `"{kind}: {name}"`.
+The template for displaying page titles of members. Defaults to `"{kind}: {name}"`.
 
 ```shell
---titleTemplate <string>
+--memberPageTitle <string>
 ```
 
 #### Usage
 
-Supports {kind} and {name} placeholders.
+Provides a mechanism to change the page title of members.
+
+Supports `{kind}` and `{name}` placeholders.
+
+e.g "Class: MyClassName"
 
 [↑ Top](#options-guide)
 

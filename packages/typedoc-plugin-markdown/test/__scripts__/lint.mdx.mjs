@@ -20,7 +20,7 @@ async function lintMdx() {
       await remark().use(remarkMdx).processSync(vfile);
     } catch (e) {
       error = true;
-      consola.error('Error linting MDX');
+      consola.error(`Error linting MDX on file ${file}`);
       throw new Error(e);
     }
   });

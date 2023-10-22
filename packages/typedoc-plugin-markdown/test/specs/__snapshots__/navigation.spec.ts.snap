@@ -3,7 +3,7 @@
 exports[`Navigation should get Navigation Json for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "README",
+    "title": "Readme",
     "url": "README.md"
   },
   {
@@ -46,7 +46,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 exports[`Navigation should get Navigation Json for packages: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "README",
+    "title": "Readme",
     "url": "README.md"
   },
   {
@@ -69,7 +69,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "README",
+    "title": "Readme",
     "url": "README.md"
   },
   {
@@ -516,7 +516,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "README",
+    "title": "Readme",
     "url": "README.md"
   },
   {
@@ -613,7 +613,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "README",
+    "title": "Readme",
     "url": "README.md"
   },
   {
@@ -824,7 +824,7 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
 exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "README",
+    "title": "Readme",
     "url": "README.md"
   },
   {

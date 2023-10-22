@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**Documentation** ∙ [README](README.md) ∙ [API](modules.md)
+"**Documentation** ∙ [Readme](README.md) ∙ [API](modules.md)
 
 ***
 
-# API
+# Documentation
 
 ## Index
 
@@ -15,7 +15,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 `;
 
 exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1** ∙ [README](../README.md) ∙ [API](../modules.md)
+"**package-1** ∙ [Readme](../README.md) ∙ [API](../modules.md)
 
 ***
 
@@ -26,7 +26,7 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1** ∙ [README](README.md) ∙ [API](modules.md)
+"**package-1** ∙ [Readme](README.md) ∙ [API](modules.md)
 
 ***
 
@@ -37,7 +37,7 @@ Readme content
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"**package-2** ∙ [README](README.md) ∙ [API](modules.md)
+"**package-2** ∙ [Readme](README.md) ∙ [API](modules.md)
 
 ***
 

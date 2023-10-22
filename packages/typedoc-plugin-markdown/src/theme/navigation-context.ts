@@ -22,7 +22,7 @@ export class NavigationContext {
 
     if (hasReadme) {
       this.navigation.push({
-        title: 'README',
+        title: 'Readme',
         url: entryFileName,
       });
       this.navigation.push({

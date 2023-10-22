@@ -37,7 +37,7 @@ export const FIXTURES: Fixture[] = [
         enumMembersFormat: 'table',
         useCodeBlocks: true,
         expandObjects: true,
-        titleTemplate: '{name}',
+        memberPageTitle: '{name}',
       },
     ],
   },

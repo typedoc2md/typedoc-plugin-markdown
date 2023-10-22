@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -110,7 +110,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -281,7 +281,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -408,7 +408,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -613,7 +613,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -689,7 +689,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 

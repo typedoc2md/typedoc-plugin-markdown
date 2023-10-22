@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -41,7 +41,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -81,7 +81,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 

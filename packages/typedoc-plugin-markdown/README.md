@@ -62,7 +62,7 @@ This plugin exposes additional options. Please see [Options Guide](./docs/guides
 * [`--hideBreadcrumbs`](./docs/guides/options.md#--hidebreadcrumbs)
 * [`--hideInPageTOC`](./docs/guides/options.md#--hideinpagetoc)
 * [`--indexPageTitle`](./docs/guides/options.md#--indexpagetitle)
-* [`--titleTemplate`](./docs/guides/options.md#--titletemplate)
+* [`--memberPageTitle`](./docs/guides/options.md#--memberpagetitle)
 * [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
 * [`--useCodeBlocks`](./docs/guides/options.md#--usecodeblocks)
 * [`--expandObjects`](./docs/guides/options.md#--expandobjects)

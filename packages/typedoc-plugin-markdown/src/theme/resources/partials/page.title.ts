@@ -5,7 +5,7 @@ import {
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
-import { getMemberTitle } from '../../helpers';
+import { getMemberTitle, getProjectDisplayName } from '../../helpers';
 
 /**
  * @category Partials
@@ -14,13 +14,20 @@ export function pageTitle(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<DeclarationReflection | ProjectReflection>,
 ): string {
-  const titleTemplate = context.options.getValue('titleTemplate') as string;
+  const memberPageTitle = context.options.getValue('memberPageTitle') as string;
   const name = getMemberTitle(page.model as DeclarationReflection);
+  const projectName = getProjectDisplayName(
+    page.project,
+    context.options.getValue('includeVersion'),
+  );
+
   if (page.model?.url === page.project.url) {
-    return context.options.getValue('indexPageTitle');
+    return context.options
+      .getValue('indexPageTitle')
+      .replace('{projectName}', projectName);
   }
 
-  return titleTemplate
+  return memberPageTitle
     .replace('{name}', name)
     .replace('{kind}', ReflectionKind.singularString(page.model.kind));
 }

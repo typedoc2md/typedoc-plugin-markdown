@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -41,7 +41,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -93,7 +93,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -133,7 +133,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -276,7 +276,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -316,7 +316,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -369,7 +369,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -409,7 +409,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -463,7 +463,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -515,7 +515,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -555,7 +555,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -607,7 +607,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -653,7 +653,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -693,7 +693,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
@@ -747,7 +747,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [README](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
 
 ***
 
