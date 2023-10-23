@@ -1,4 +1,4 @@
-import { ReferenceReflection } from 'typedoc';
+import { ReferenceReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 
 /**
@@ -8,10 +8,18 @@ export function referenceMember(
   context: MarkdownThemeRenderContext,
   props: ReferenceReflection,
 ): string {
-  const referenced = props.tryGetTargetReflectionDeep();
+  let referenced = props.tryGetTargetReflectionDeep();
 
   if (!referenced) {
     return `Re-exports ${props.name}`;
+  }
+
+  if (referenced?.kindOf(ReflectionKind.TypeLiteral) && referenced.parent) {
+    referenced = referenced?.parent;
+  }
+
+  if (!referenced?.url) {
+    return `Re-exports ${referenced.name}`;
   }
 
   if (props.name === referenced.name) {

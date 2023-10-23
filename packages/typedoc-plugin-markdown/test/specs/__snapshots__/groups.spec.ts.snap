@@ -25,8 +25,8 @@ A basic module
 
 ### Interfaces
 
-- [IterfaceA](interfaces/IterfaceA.md)
-- [IterfaceB](interfaces/IterfaceB.md)
+- [InterfaceA](interfaces/InterfaceA.md)
+- [InterfaceB](interfaces/InterfaceB.md)
 
 ### Type Aliases
 
@@ -58,8 +58,8 @@ A basic module
 
 | Interface | Description |
 | :------ | :------ |
-| [IterfaceA](interfaces/IterfaceA.md) | - |
-| [IterfaceB](interfaces/IterfaceB.md) | - |
+| [InterfaceA](interfaces/InterfaceA.md) | - |
+| [InterfaceB](interfaces/InterfaceB.md) | - |
 
 <a id="typea" name="typea"></a>
 
@@ -99,8 +99,8 @@ A basic module
   - [ClassA](basic.md#classa)
   - [ClassB](basic.md#classb)
 - [Interfaces](basic.md#interfaces)
-  - [IterfaceA](basic.md#iterfacea)
-  - [IterfaceB](basic.md#iterfaceb)
+  - [InterfaceA](basic.md#interfacea)
+  - [InterfaceB](basic.md#interfaceb)
 - [Type Aliases](basic.md#type-aliases)
   - [TypeA](basic.md#typea)
   - [TypeB](basic.md#typeb)
@@ -135,7 +135,7 @@ A basic module
 
 ## Interfaces
 
-### IterfaceA
+### InterfaceA
 
 #### Properties
 
@@ -149,7 +149,7 @@ A basic module
 
 ***
 
-### IterfaceB
+### InterfaceB
 
 ## Type Aliases
 
@@ -210,9 +210,9 @@ A basic module
 
 ***
 
-<a id="iterfacea" name="iterfacea"></a>
+<a id="interfacea" name="interfacea"></a>
 
-## IterfaceA
+## InterfaceA
 
 ### Properties
 
@@ -230,9 +230,9 @@ A basic module
 
 ***
 
-<a id="iterfaceb" name="iterfaceb"></a>
+<a id="interfaceb" name="interfaceb"></a>
 
-## IterfaceB
+## InterfaceB
 
 ***
 
@@ -488,6 +488,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 - [basic](basic/README.md)
 - [has-categories](has-categories/README.md)
 - [has-namespaces](has-namespaces/README.md)
+- [has-references](has-references/README.md)
 - [index](index/README.md)
 "
 `;
@@ -504,6 +505,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 | [basic](basic/index.md) | A basic module |
 | [has-categories](has-categories/index.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
+| [has-references](has-references/index.md) | A module that contains references |
 | [index](module.index/index.md) | A module named index |
 
 CUSTOM FOOTER HERE
@@ -524,6 +526,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 - [basic](basic.md)
 - [has-categories](has-categories.md)
 - [has-namespaces](has-namespaces/README.md)
+- [has-references](has-references.md)
 - [index](index.md)
 "
 `;
@@ -540,6 +543,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | [basic](basic.md) | A basic module |
 | [has-categories](has-categories.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
+| [has-references](has-references.md) | A module that contains references |
 | [index](module.index.md) | A module named index |
 
 CUSTOM FOOTER HERE
@@ -999,5 +1003,162 @@ exports[`Groups should compile readme for a project: (Output File Strategy "modu
 > Some block quote
 
 Some text.
+"
+`;
+
+exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [Readme](README.md) ∙ [API](modules.md)
+
+***
+
+[API](modules.md) > has-references
+
+# Module: has-references
+
+A module that contains references
+
+## Contents
+
+- [References](has-references.md#references)
+  - [InterfaceA](has-references.md#interfacea)
+  - [RenamedInterfaceB](has-references.md#renamedinterfaceb)
+  - [default](has-references.md#default)
+- [Functions](has-references.md#functions)
+  - [defaultFunction()](has-references.md#defaultfunction)
+
+## References
+
+### InterfaceA
+
+Re-exports [InterfaceA](basic.md#interfacea)
+
+### RenamedInterfaceB
+
+Renames and re-exports [InterfaceB](basic.md#interfaceb)
+
+### default
+
+Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+
+## Functions
+
+### defaultFunction()
+
+> **defaultFunction**(): \`string\`
+"
+`;
+
+exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# Module: has-references
+
+A module that contains references
+
+<a id="interfacea" name="interfacea"></a>
+
+## InterfaceA
+
+Re-exports [InterfaceA](basic.md#interfacea)
+
+<a id="renamedinterfaceb" name="renamedinterfaceb"></a>
+
+## RenamedInterfaceB
+
+Renames and re-exports [InterfaceB](basic.md#interfaceb)
+
+<a id="default" name="default"></a>
+
+## default
+
+Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+
+<a id="defaultfunction" name="defaultfunction"></a>
+
+## defaultFunction()
+
+> **defaultFunction**(): \`string\`
+
+CUSTOM FOOTER HERE
+"
+`;
+
+exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**typedoc-stubs - v0.0**](http://www.google.com) ∙ [Readme](../README.md) ∙ [API](../modules.md)
+
+***
+
+[API](../modules.md) > has-references
+
+# Module: has-references
+
+A module that contains references
+
+## Contents
+
+- [Functions](README.md#functions)
+- [References](README.md#references)
+  - [InterfaceA](README.md#interfacea)
+  - [RenamedInterfaceB](README.md#renamedinterfaceb)
+  - [default](README.md#default)
+
+## Functions
+
+- [defaultFunction](functions/defaultFunction.md)
+
+## References
+
+### InterfaceA
+
+Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
+
+***
+
+### RenamedInterfaceB
+
+Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
+
+***
+
+### default
+
+Renames and re-exports [defaultFunction](functions/defaultFunction.md)
+"
+`;
+
+exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Module: has-references
+
+A module that contains references
+
+<a id="interfacea" name="interfacea"></a>
+
+## InterfaceA
+
+Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
+
+***
+
+<a id="renamedinterfaceb" name="renamedinterfaceb"></a>
+
+## RenamedInterfaceB
+
+Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
+
+***
+
+<a id="default" name="default"></a>
+
+## default
+
+Renames and re-exports [defaultFunction](index.md#defaultfunction)
+
+***
+
+<a id="defaultfunction" name="defaultfunction"></a>
+
+## defaultFunction()
+
+> **defaultFunction**(): \`string\`
+
+CUSTOM FOOTER HERE
 "
 `;

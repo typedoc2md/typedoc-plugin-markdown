@@ -3,11 +3,11 @@
  *
  * @module
  */
-export interface IterfaceA {
+export interface InterfaceA {
   propA: string;
   propB: string;
 }
-export interface IterfaceB {}
+export interface InterfaceB {}
 export enum EnumA {}
 export enum EnumB {}
 export class ClassA {}

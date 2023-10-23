@@ -110,12 +110,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Interfaces",
         "children": [
           {
-            "title": "IterfaceA",
-            "url": "basic/interfaces/IterfaceA.md"
+            "title": "InterfaceA",
+            "url": "basic/interfaces/InterfaceA.md"
           },
           {
-            "title": "IterfaceB",
-            "url": "basic/interfaces/IterfaceB.md"
+            "title": "InterfaceB",
+            "url": "basic/interfaces/InterfaceB.md"
           }
         ]
       },
@@ -349,6 +349,21 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     ]
   },
   {
+    "title": "has-references",
+    "url": "has-references/README.md",
+    "children": [
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "defaultFunction",
+            "url": "has-references/functions/defaultFunction.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "index",
     "url": "index/README.md"
   }
@@ -382,12 +397,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "url": "basic/classes/ClassB.md"
       },
       {
-        "title": "IterfaceA",
-        "url": "basic/interfaces/IterfaceA.md"
+        "title": "InterfaceA",
+        "url": "basic/interfaces/InterfaceA.md"
       },
       {
-        "title": "IterfaceB",
-        "url": "basic/interfaces/IterfaceB.md"
+        "title": "InterfaceB",
+        "url": "basic/interfaces/InterfaceB.md"
       }
     ]
   },
@@ -507,6 +522,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     ]
   },
   {
+    "title": "has-references",
+    "url": "has-references/index.md"
+  },
+  {
     "title": "index",
     "url": "module.index/index.md"
   }
@@ -562,6 +581,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     ]
   },
   {
+    "title": "has-references",
+    "url": "has-references.md"
+  },
+  {
     "title": "index",
     "url": "index.md"
   }
@@ -602,6 +625,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         ]
       }
     ]
+  },
+  {
+    "title": "has-references",
+    "url": "has-references.md"
   },
   {
     "title": "index",

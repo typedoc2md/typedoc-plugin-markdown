@@ -71,4 +71,21 @@ describe(`Groups`, () => {
       2,
     );
   });
+
+  test(`should compile references group page`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      FixtureOutputFileStrategy.Modules,
+      'has-references.md',
+    );
+  });
+
+  test(`should compile references index page`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Groups,
+      FixtureOutputFileStrategy.Members,
+      ['has-references/README.md', 'has-references/index.md'],
+      2,
+    );
+  });
 });
