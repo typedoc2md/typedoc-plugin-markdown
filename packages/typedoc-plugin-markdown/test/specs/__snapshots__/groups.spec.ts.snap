@@ -123,6 +123,10 @@ A basic module
 
 > **new ClassA**(): [\`ClassA\`](basic.md#classa)
 
+###### Returns
+
+[\`ClassA\`](basic.md#classa)
+
 ***
 
 ### ClassB
@@ -132,6 +136,10 @@ A basic module
 ##### new ClassB()
 
 > **new ClassB**(): [\`ClassB\`](basic.md#classb)
+
+###### Returns
+
+[\`ClassB\`](basic.md#classb)
 
 ## Interfaces
 
@@ -194,6 +202,10 @@ A basic module
 
 > **new ClassA**(): [\`ClassA\`](basic.md#classa)
 
+##### Returns
+
+[\`ClassA\`](basic.md#classa)
+
 ***
 
 <a id="classb" name="classb"></a>
@@ -207,6 +219,10 @@ A basic module
 #### new ClassB()
 
 > **new ClassB**(): [\`ClassB\`](basic.md#classb)
+
+##### Returns
+
+[\`ClassB\`](basic.md#classb)
 
 ***
 
@@ -747,6 +763,10 @@ A module that contains namespaces
 
 > **\\_function\\_A\\_**(): \`void\`
 
+### Returns
+
+\`void\`
+
 ***
 
 <a id="functionb" name="functionb"></a>
@@ -754,6 +774,10 @@ A module that contains namespaces
 ## functionB()
 
 > **functionB**(): \`void\`
+
+### Returns
+
+\`void\`
 
 CUSTOM FOOTER HERE
 "
@@ -815,6 +839,10 @@ A module that contains namespaces
 
 > **new ClassB**(): [\`ClassB\`](README.md#classb)
 
+###### Returns
+
+[\`ClassB\`](README.md#classb)
+
 ***
 
 ### \\_\\_Class\\_A\\_
@@ -824,6 +852,10 @@ A module that contains namespaces
 ##### new \\_\\_Class\\_A\\_()
 
 > **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](README.md#class-a)
+
+###### Returns
+
+[\`__Class_A_\`](README.md#class-a)
 
 ## Interfaces
 
@@ -863,11 +895,19 @@ A module that contains namespaces
 
 > **\\_function\\_A\\_**(): \`void\`
 
+#### Returns
+
+\`void\`
+
 ***
 
 ### functionB()
 
 > **functionB**(): \`void\`
+
+#### Returns
+
+\`void\`
 "
 `;
 
@@ -907,6 +947,10 @@ A module that contains namespaces
 
 > **new ClassB**(): [\`ClassB\`](index.md#classb)
 
+##### Returns
+
+[\`ClassB\`](index.md#classb)
+
 ***
 
 <a id="class-a" name="class-a"></a>
@@ -920,6 +964,10 @@ A module that contains namespaces
 #### new \\_\\_Class\\_A\\_()
 
 > **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#class-a)
+
+##### Returns
+
+[\`__Class_A_\`](index.md#class-a)
 
 ***
 
@@ -973,6 +1021,10 @@ A module that contains namespaces
 
 > **\\_function\\_A\\_**(): \`void\`
 
+### Returns
+
+\`void\`
+
 ***
 
 <a id="functionb" name="functionb"></a>
@@ -980,6 +1032,10 @@ A module that contains namespaces
 ## functionB()
 
 > **functionB**(): \`void\`
+
+### Returns
+
+\`void\`
 
 CUSTOM FOOTER HERE
 "
@@ -1041,6 +1097,10 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 ### defaultFunction()
 
 > **defaultFunction**(): \`string\`
+
+#### Returns
+
+\`string\`
 "
 `;
 
@@ -1072,6 +1132,10 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 ## defaultFunction()
 
 > **defaultFunction**(): \`string\`
+
+### Returns
+
+\`string\`
 
 CUSTOM FOOTER HERE
 "
@@ -1154,6 +1218,10 @@ Renames and re-exports [defaultFunction](index.md#defaultfunction)
 ## defaultFunction()
 
 > **defaultFunction**(): \`string\`
+
+### Returns
+
+\`string\`
 
 CUSTOM FOOTER HERE
 "

@@ -161,6 +161,8 @@ Comments for objectLiteralVariable
 
 #### Returns
 
+\`object\`
+
 > ##### a
 >
 > > **a**: \`string\` = \`'test'\`
@@ -195,6 +197,10 @@ Comments for objectLiteralVariable
 ▪ **unionParam**: \`"a"\` \\| \`"b"\`
 
 ▪ **\\_undercoreParam\\_**: \`string\`
+
+#### Returns
+
+\`string\`
 
 ### \\|
 

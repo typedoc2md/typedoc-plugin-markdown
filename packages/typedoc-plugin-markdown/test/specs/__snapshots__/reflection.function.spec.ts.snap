@@ -15,6 +15,8 @@ Comments for function
 
 ## Returns
 
+\`function\`
+
 > > \\<\`T\`\\>(\`x\`): \`boolean\`
 >
 > ### Type parameters
@@ -24,6 +26,10 @@ Comments for function
 > ### Parameters
 >
 > ▪ **x**: \`string\`
+>
+> ### Returns
+>
+> \`boolean\`
 >
 > ### Source
 >
@@ -53,6 +59,8 @@ Comments for function
 
 ## Returns
 
+\`function\`
+
 > \`\`\`ts
 > <T>(x): boolean
 > \`\`\`
@@ -68,6 +76,10 @@ Comments for function
 > | Parameter | Type |
 > | :------ | :------ |
 > | \`x\` | \`string\` |
+>
+> ### Returns
+>
+> \`boolean\`
 >
 
 ***
@@ -90,6 +102,8 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 Comments for function
 
 ## Returns
+
+\`Promise\`\\<\`object\`\\>
 
 Return comments
 
@@ -118,6 +132,8 @@ Comments for function
 
 ## Returns
 
+\`Promise\`\\<\\{   \`prop\`: \`string\`;   }\\>
+
 Return comments
 
 ***
@@ -140,6 +156,8 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 Comments for function
 
 ## Returns
+
+\`object\`
 
 Return comments
 
@@ -178,6 +196,8 @@ Comments for function
 
 ## Returns
 
+\`object\`
+
 Return comments
 
 > | Member | Type | Description |
@@ -211,6 +231,10 @@ This is a function that is assigned to a variable.
 
 This is some numeric parameter.
 
+## Returns
+
+\`number\`
+
 ## Source
 
 [functions.ts:10](http://source-url)
@@ -237,6 +261,10 @@ This is a function that is assigned to a variable.
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`someParam\` | \`number\` | This is some numeric parameter. |
+
+## Returns
+
+\`number\`
 
 ***
 
@@ -281,6 +309,10 @@ A parameter with a default null value.
 
 ▪ **valueF**: \`string\`= \`'<foo>'\`
 
+## Returns
+
+\`string\`
+
 ## Source
 
 [functions.ts:23](http://source-url)
@@ -319,6 +351,10 @@ This is a function with a parameter that has a default value.
 | \`valueE\` | \`boolean\` | \`true\` | A parameter with a default null value. |
 | \`valueF\` | \`string\` | \`'<foo>'\` | - |
 
+## Returns
+
+\`string\`
+
 ***
 
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -346,6 +382,10 @@ This is the first signature of a function with multiple signatures.
 
 The name value.
 
+### Returns
+
+\`string\`
+
 ### Source
 
 [functions.ts:96](http://source-url)
@@ -365,6 +405,10 @@ An object containing the name value.
 ▪ **value.name**: \`string\`
 
 A value of the object.
+
+### Returns
+
+\`string\`
 
 ### Source
 
@@ -395,6 +439,10 @@ This is the first signature of a function with multiple signatures.
 | :------ | :------ | :------ |
 | \`value\` | \`string\` | The name value. |
 
+### Returns
+
+\`string\`
+
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
@@ -409,6 +457,10 @@ This is the second signature of a function with multiple signatures.
 | :------ | :------ | :------ |
 | \`value\` | \\{   \`name\`: \`string\`;   } | An object containing the name value. |
 | \`value.name\` | \`string\` | A value of the object. |
+
+### Returns
+
+\`string\`
 
 ***
 
@@ -441,6 +493,10 @@ various options
 
 Another param comment
 
+## Returns
+
+\`void\`
+
 ## Source
 
 [functions.ts:76](http://source-url)
@@ -468,6 +524,10 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 | \`__namedParameters.bar\`? | \`number\` | - |
 | \`__namedParameters.foo\`? | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
+
+## Returns
+
+\`void\`
 
 ***
 
@@ -516,6 +576,10 @@ A nested object.
 
 The context of the method call.
 
+## Returns
+
+\`boolean\`
+
 ## Source
 
 [functions.ts:54](http://source-url)
@@ -551,6 +615,10 @@ Some nested params.
 | \`params.parent\`? | \`number\` | - |
 | \`context\` | \`any\` | The context of the method call. |
 
+## Returns
+
+\`boolean\`
+
 ***
 
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -584,6 +652,10 @@ An optional parameter.
 
 ▪ **paramWithDefault?**: \`number\`= \`0\`
 
+## Returns
+
+\`void\`
+
 ## Source
 
 [functions.ts:40](http://source-url)
@@ -616,6 +688,10 @@ A normal parameter.
 An optional parameter.
 
 ▪ **paramWithDefault?**: \`number\`= \`0\`
+
+## Returns
+
+\`void\`
 
 ## Source
 
@@ -651,6 +727,10 @@ This is a function with a parameters.
 | \`optionalParam\`? | \`string\` | \`undefined\` | An optional parameter. |
 | \`paramWithDefault\`? | \`number\` | \`0\` | - |
 
+## Returns
+
+\`void\`
+
 ***
 
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -685,6 +765,10 @@ This is a function with a parameters.
 | \`optionalParam\`? | \`string\` | \`undefined\` | An optional parameter. |
 | \`paramWithDefault\`? | \`number\` | \`0\` | - |
 
+## Returns
+
+\`void\`
+
 ***
 
 Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
@@ -711,6 +795,10 @@ Function with type parameters
 Comments for T
 
 ▪ **Item** = \`string\` \\| \`boolean\`
+
+## Returns
+
+\`boolean\`
 
 ## Source
 
@@ -739,6 +827,10 @@ Function with type parameters
 | :------ | :------ | :------ |
 | \`T\` | - | Comments for T |
 | \`Item\` | \`string\` \\| \`boolean\` | - |
+
+## Returns
+
+\`boolean\`
 
 ***
 

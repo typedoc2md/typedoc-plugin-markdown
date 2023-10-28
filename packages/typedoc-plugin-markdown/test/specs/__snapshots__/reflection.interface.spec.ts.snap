@@ -38,6 +38,10 @@ Comments for functionProper
 
 Comment for param s
 
+#### Returns
+
+\`boolean\`
+
 #### Source
 
 [interfaces.ts:23](http://source-url)
@@ -105,6 +109,10 @@ Comments for nestedPropCA
 > **nestedPropD**: () => \`boolean\`
 
 Comments for nestedPropD
+
+###### Returns
+
+\`boolean\`
 
 #### Source
 
@@ -201,6 +209,10 @@ Comments for functionProper
 
 Comment for param s
 
+#### Returns
+
+\`boolean\`
+
 #### Inherited from
 
 [\`BasicInterface\`](BasicInterface.md).[\`functionProp\`](BasicInterface.md#functionprop)
@@ -280,6 +292,10 @@ Comments for nestedPropCA
 > **nestedPropD**: () => \`boolean\`
 
 Comments for nestedPropD
+
+###### Returns
+
+\`boolean\`
 
 #### Inherited from
 

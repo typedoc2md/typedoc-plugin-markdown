@@ -181,6 +181,10 @@ comment for y.z
 
 ▪ **x**: \`string\`
 
+#### Returns
+
+\`string\`
+
 ### z
 
 > **z**: (\`x\`) => \`string\`
@@ -188,6 +192,10 @@ comment for y.z
 #### Parameters
 
 ▪ **x**: \`string\`
+
+#### Returns
+
+\`string\`
 
 ### accessorA
 
@@ -203,6 +211,10 @@ Comments for accessorA setter
 
 ▪ **x**: \`Promise\`\\<\`string\`\\>
 
+#### Returns
+
+\`Promise\`\\<\`string\`\\>
+
 ### accessorB
 
 > **\`get\`** **accessorB**(): \`string\`
@@ -213,6 +225,10 @@ Comments for accessorA setter
 
 ▪ **x**: \`string\`
 
+#### Returns
+
+\`string\`
+
 ### someFunction()
 
 Comments for someFunction
@@ -220,6 +236,10 @@ Comments for someFunction
 #### Parameters
 
 ▪ **param**: \`string\`
+
+#### Returns
+
+\`Promise\`\\<\`any\`\\>
 
 ## Source
 
@@ -334,6 +354,10 @@ Comments for FunctionType
 
 ▪ **value**: \`unknown\`
 
+## Returns
+
+\`void\`
+
 ## Source
 
 [types.ts:83](http://source-url)
@@ -361,6 +385,10 @@ Comments for FunctionType
 | :------ | :------ |
 | \`name\` | \`string\` |
 | \`value\` | \`unknown\` |
+
+## Returns
+
+\`void\`
 
 ***
 

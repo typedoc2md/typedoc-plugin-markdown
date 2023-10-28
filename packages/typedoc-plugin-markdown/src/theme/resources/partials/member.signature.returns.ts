@@ -1,6 +1,6 @@
-import { DeclarationReflection, SignatureReflection } from 'typedoc';
+import { DeclarationReflection, SignatureReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { blockQuoteBlock, heading } from '../../../support/elements';
+import { backTicks, blockQuoteBlock, heading } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -15,37 +15,46 @@ export function signatureMemberReturns(
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
 
-  const showReturns =
-    signature.comment?.blockTags.length ||
-    typeDeclaration?.signatures ||
-    typeDeclaration?.children;
+  md.push(heading(headingLevel, 'Returns'));
 
-  if (showReturns) {
-    md.push(heading(headingLevel, 'Returns'));
+  md.push(getReturnType(context, typeDeclaration, signature.type));
 
-    if (signature.comment?.blockTags.length) {
-      const tags = signature.comment.blockTags
-        .filter((tag) => tag.tag === '@returns')
-        .map((tag) => context.commentParts(tag.content));
-      md.push(tags.join('\n\n'));
-    }
+  if (signature.comment?.blockTags.length) {
+    const tags = signature.comment.blockTags
+      .filter((tag) => tag.tag === '@returns')
+      .map((tag) => context.commentParts(tag.content));
+    md.push(tags.join('\n\n'));
+  }
 
-    if (typeDeclaration?.signatures) {
-      typeDeclaration.signatures.forEach((signature) => {
-        md.push(
-          blockQuoteBlock(context.signatureMember(signature, headingLevel + 1)),
-        );
-      });
-    }
-
-    if (typeDeclaration?.children) {
+  if (typeDeclaration?.signatures) {
+    typeDeclaration.signatures.forEach((signature) => {
       md.push(
-        blockQuoteBlock(
-          context.typeDeclarationMember(typeDeclaration, headingLevel),
-        ),
+        blockQuoteBlock(context.signatureMember(signature, headingLevel + 1)),
       );
-    }
+    });
+  }
+
+  if (typeDeclaration?.children) {
+    md.push(
+      blockQuoteBlock(
+        context.typeDeclarationMember(typeDeclaration, headingLevel),
+      ),
+    );
   }
 
   return md.join('\n\n');
+}
+
+function getReturnType(
+  context: MarkdownThemeRenderContext,
+  typeDeclaration?: DeclarationReflection,
+  type?: SomeType,
+) {
+  if (typeDeclaration?.children) {
+    return backTicks('object');
+  }
+  if (typeDeclaration?.signatures) {
+    return backTicks('function');
+  }
+  return type ? context.someType(type).replace(/\n/g, ' ') : '';
 }

@@ -30,6 +30,10 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 > **new AbstractClass**(): [\`AbstractClass\`](AbstractClass.md)
 
+#### Returns
+
+[\`AbstractClass\`](AbstractClass.md)
+
 ## Properties
 
 ### \`abstract\` abstractProp
@@ -49,6 +53,10 @@ Comments for abstractProp
 > **\`abstract\`** **abstractMethod**(): \`string\`
 
 Comments for abstractMethod
+
+#### Returns
+
+\`string\`
 
 #### Source
 
@@ -87,6 +95,10 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 new AbstractClass(): AbstractClass
 \`\`\`
 
+#### Returns
+
+[\`AbstractClass\`](AbstractClass.md)
+
 ## Properties
 
 | Modifier | Property | Type | Description |
@@ -102,6 +114,10 @@ abstract abstractMethod(): string
 \`\`\`
 
 Comments for abstractMethod
+
+#### Returns
+
+\`string\`
 
 ***
 
@@ -137,6 +153,10 @@ Comments for ClassWithAccessors
 
 > **new ClassWithAccessors**(): [\`ClassWithAccessors\`](ClassWithAccessors.md)
 
+#### Returns
+
+[\`ClassWithAccessors\`](ClassWithAccessors.md)
+
 ## Properties
 
 ### privateProp
@@ -165,6 +185,10 @@ Comments for setter
 
 Param comments
 
+#### Returns
+
+\`string\`
+
 #### Source
 
 [classes.ts:76](http://source-url)
@@ -188,6 +212,10 @@ Param comments
 ### noSetter
 
 > **\`get\`** **noSetter**(): \`string\`
+
+#### Returns
+
+\`string\`
 
 #### Source
 
@@ -224,6 +252,10 @@ Comments for ClassWithAccessors
 new ClassWithAccessors(): ClassWithAccessors
 \`\`\`
 
+#### Returns
+
+[\`ClassWithAccessors\`](ClassWithAccessors.md)
+
 ## Properties
 
 | Modifier | Property | Type | Description |
@@ -252,6 +284,10 @@ Comments for setter
 | :------ | :------ | :------ |
 | \`value\` | \`string\` | Param comments |
 
+#### Returns
+
+\`string\`
+
 ***
 
 ### noGetter
@@ -273,6 +309,10 @@ set noGetter(x): void
 \`\`\`ts
 get noSetter(): string
 \`\`\`
+
+#### Returns
+
+\`string\`
 
 ***
 
@@ -312,6 +352,10 @@ Comments for x number
 
 ▪ **y**: \`string\`
 
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
 #### Source
 
 [classes.ts:50](http://source-url)
@@ -326,6 +370,10 @@ Comments for x number
 
 Comments for x string
 
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
 #### Source
 
 [classes.ts:55](http://source-url)
@@ -337,6 +385,10 @@ Comments for x string
 #### Parameters
 
 ▪ **s**: \`string\`
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
 #### Source
 
@@ -377,6 +429,10 @@ new ClassWithConstructorOverloads(x, y): ClassWithConstructorOverloads
 | \`x\` | \`number\` | Comments for x number |
 | \`y\` | \`string\` |  |
 
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
 ### new ClassWithConstructorOverloads(x)
 
 \`\`\`ts
@@ -389,6 +445,10 @@ new ClassWithConstructorOverloads(x): ClassWithConstructorOverloads
 | :------ | :------ | :------ |
 | \`x\` | \`string\` | Comments for x string |
 
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
 ### new ClassWithConstructorOverloads(s)
 
 \`\`\`ts
@@ -400,6 +460,10 @@ new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
 | Parameter | Type |
 | :------ | :------ |
 | \`s\` | \`string\` |
+
+#### Returns
+
+[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
 ***
 
@@ -438,6 +502,10 @@ Comments for ClassWithModifiers
 ### new ClassWithModifiers()
 
 > **new ClassWithModifiers**(): [\`ClassWithModifiers\`](ClassWithModifiers.md)
+
+#### Returns
+
+[\`ClassWithModifiers\`](ClassWithModifiers.md)
 
 ## Properties
 
@@ -507,6 +575,10 @@ Comments for staticProp
 
 Comment for privateMethod
 
+#### Returns
+
+\`void\`
+
 #### Source
 
 [classes.ts:138](http://source-url)
@@ -519,6 +591,10 @@ Comment for privateMethod
 
 Comment for publicMethod
 
+#### Returns
+
+\`void\`
+
 #### Source
 
 [classes.ts:131](http://source-url)
@@ -530,6 +606,10 @@ Comment for publicMethod
 > **\`static\`** **staticMethod**(): \`void\`
 
 Comment for staticMethod
+
+#### Returns
+
+\`void\`
 
 #### Source
 
@@ -566,6 +646,10 @@ Comments for ClassWithModifiers
 new ClassWithModifiers(): ClassWithModifiers
 \`\`\`
 
+#### Returns
+
+[\`ClassWithModifiers\`](ClassWithModifiers.md)
+
 ## Properties
 
 | Modifier | Property | Type | Description |
@@ -586,6 +670,10 @@ private privateMethod(): void
 
 Comment for privateMethod
 
+#### Returns
+
+\`void\`
+
 ***
 
 ### publicMethod()
@@ -596,6 +684,10 @@ publicMethod(): void
 
 Comment for publicMethod
 
+#### Returns
+
+\`void\`
+
 ***
 
 ### staticMethod()
@@ -605,6 +697,10 @@ static staticMethod(): void
 \`\`\`
 
 Comment for staticMethod
+
+#### Returns
+
+\`void\`
 
 ***
 
@@ -646,6 +742,10 @@ Comments for param B
 ### new ClassWithTypeParameters()
 
 > **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
+
+#### Returns
+
+[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
 "
 `;
 
@@ -681,6 +781,10 @@ Comments for ClassWithTypeParameters
 \`\`\`ts
 new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
 \`\`\`
+
+#### Returns
+
+[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
 
 ***
 
@@ -721,6 +825,10 @@ Comments for DerivedClassA
 
 > **new DerivedClassA**(): [\`DerivedClassA\`](DerivedClassA.md)
 
+#### Returns
+
+[\`DerivedClassA\`](DerivedClassA.md)
+
 #### Inherited from
 
 [\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
@@ -759,6 +867,10 @@ Comments for abstractProp
 
 Comments for abstractMethod
 
+#### Returns
+
+\`string\`
+
 #### Overrides
 
 [\`AbstractClass\`](AbstractClass.md).[\`abstractMethod\`](AbstractClass.md#abstract-abstractmethod)
@@ -772,6 +884,10 @@ Comments for abstractMethod
 ### derivedMethod()
 
 > **derivedMethod**(): \`string\`
+
+#### Returns
+
+\`string\`
 
 #### Source
 
@@ -812,6 +928,10 @@ Comments for DerivedClassA
 new DerivedClassA(): DerivedClassA
 \`\`\`
 
+#### Returns
+
+[\`DerivedClassA\`](DerivedClassA.md)
+
 #### Inherited from
 
 [\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
@@ -833,6 +953,10 @@ abstractMethod(): string
 
 Comments for abstractMethod
 
+#### Returns
+
+\`string\`
+
 #### Overrides
 
 [\`AbstractClass\`](AbstractClass.md).[\`abstractMethod\`](AbstractClass.md#abstract-abstractmethod)
@@ -844,6 +968,10 @@ Comments for abstractMethod
 \`\`\`ts
 derivedMethod(): string
 \`\`\`
+
+#### Returns
+
+\`string\`
 
 ***
 
