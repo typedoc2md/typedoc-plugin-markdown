@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.0-next.25
+
+### Patch Changes
+
+- Fixed missing return types
+- Added --mergeReadme option
+- Tweaked and added specs for reference types
+- Updated default `--indexPageTitle` to {projectName}
+- Renamed `--titleTemplate` -> `--memberPageTitle`
+
 ## 4.0.0-next.24 (2023-10-21)
 
 ### Patch Changes
