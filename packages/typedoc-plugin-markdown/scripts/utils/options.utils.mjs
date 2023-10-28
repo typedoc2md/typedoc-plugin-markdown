@@ -48,7 +48,7 @@ export const TITLE_MAP = {
 };
 
 export const INTRO_MAP = {
-  fileOutput: '',
-  ui: '',
-  other: '',
+  fileOutput: 'Options that configure how files are generated.',
+  ui: 'Options that alter the format and structure of pages.',
+  other: 'Options that configure additional functionality.',
 };

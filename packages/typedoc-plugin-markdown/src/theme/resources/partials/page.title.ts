@@ -5,6 +5,7 @@ import {
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
+
 import { getMemberTitle, getProjectDisplayName } from '../../helpers';
 
 /**
@@ -25,6 +26,10 @@ export function pageTitle(
     return context.options
       .getValue('indexPageTitle')
       .replace('{projectName}', projectName);
+  }
+
+  if (page.model.kindOf(ReflectionKind.Module)) {
+    return name;
   }
 
   return memberPageTitle

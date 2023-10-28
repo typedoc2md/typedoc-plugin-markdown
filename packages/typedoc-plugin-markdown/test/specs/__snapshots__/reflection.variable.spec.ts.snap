@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > typeOperatorVariable
+[typedoc-stubs](../exports.md) / typeOperatorVariable
 
 # Variable: typeOperatorVariable
 
@@ -24,7 +24,7 @@ exports[`Variable Reflection should compile type operator variable: (Output File
 
 ***
 
-[API](../index.md) > typeOperatorVariable
+[typedoc-stubs](../index.md) / typeOperatorVariable
 
 # typeOperatorVariable
 
@@ -41,11 +41,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > stringVariable
+[typedoc-stubs](../exports.md) / stringVariable
 
 # Variable: stringVariable
 
@@ -64,7 +64,7 @@ exports[`Variable Reflection should compile variable assigned to a string: (Outp
 
 ***
 
-[API](../index.md) > stringVariable
+[typedoc-stubs](../index.md) / stringVariable
 
 # stringVariable
 
@@ -81,11 +81,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > objectLiteralVariable
+[typedoc-stubs](../exports.md) / objectLiteralVariable
 
 # Variable: objectLiteralVariable
 
@@ -215,7 +215,7 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 
 ***
 
-[API](../index.md) > objectLiteralVariable
+[typedoc-stubs](../index.md) / objectLiteralVariable
 
 # objectLiteralVariable
 

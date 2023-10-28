@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**Documentation** ∙ [Readme](README.md) ∙ [API](modules.md)
+"**packages-example** ( [Readme](README.md) \\| API )
 
 ***
 
-# Documentation
+# packages-example
 
-## Index
+## Packages
 
 - [package-1](package-1/README.md)
 - [package-2](package-2/README.md)
@@ -15,20 +15,39 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 `;
 
 exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1** ∙ [Readme](../README.md) ∙ [API](../modules.md)
+"**package-1** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../../modules.md) > [package-1](../modules.md) > PackageInterface
+[packages-example](../../modules.md) / [package-1](../modules.md) / PackageInterface
 
 # Interface: PackageInterface
 "
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1** ∙ [Readme](README.md) ∙ [API](modules.md)
+"**packages-example** ( Readme \\| [API](modules.md) )
 
 ***
+
+# MY README
+
+> Some block quote
+
+Some text.
+
+## Readme heading
+
+Some text.
+"
+`;
+
+exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 2`] = `
+"**package-1** ( Readme \\| [API](modules.md) )
+
+***
+
+[packages-example](../modules.md) / package-1
 
 # PACKAGE 1 README
 
@@ -36,10 +55,12 @@ Readme content
 "
 `;
 
-exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"**package-2** ∙ [Readme](README.md) ∙ [API](modules.md)
+exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 3`] = `
+"**package-2** ( Readme \\| [API](modules.md) )
 
 ***
+
+[packages-example](../modules.md) / package-2
 
 # PACKAGE 2 README
 

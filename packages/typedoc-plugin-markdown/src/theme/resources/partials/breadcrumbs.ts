@@ -16,12 +16,13 @@ export function breadcrumbs(
 
   if (
     page.url === page.project.url ||
-    page.url === context.options.getValue('entryFileName')
+    (page.url === context.options.getValue('entryFileName') &&
+      page.url.split('/').length === 1)
   ) {
     return '';
   }
 
-  md.push(link('API', context.relativeURL(page.project.url)));
+  md.push(link(page.project.name, context.relativeURL(page.project.url)));
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
@@ -42,5 +43,5 @@ export function breadcrumbs(
 
   md.push(pageName);
 
-  return md.length > 1 ? `${md.join(' > ')}` : '';
+  return md.length > 1 ? `${md.join(' / ')}` : '';
 }

@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > AbstractClass
+[typedoc-stubs](../exports.md) / AbstractClass
 
 # Class: \`abstract\` AbstractClass
 
@@ -61,7 +61,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 ***
 
-[API](../index.md) > AbstractClass
+[typedoc-stubs](../index.md) / AbstractClass
 
 # \`abstract\` AbstractClass
 
@@ -110,11 +110,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > ClassWithAccessors
+[typedoc-stubs](../exports.md) / ClassWithAccessors
 
 # Class: ClassWithAccessors
 
@@ -200,7 +200,7 @@ exports[`Class Reflection should compile class with accessors: (Output File Stra
 
 ***
 
-[API](../index.md) > ClassWithAccessors
+[typedoc-stubs](../index.md) / ClassWithAccessors
 
 # ClassWithAccessors
 
@@ -281,11 +281,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > ClassWithConstructorOverloads
+[typedoc-stubs](../exports.md) / ClassWithConstructorOverloads
 
 # Class: ClassWithConstructorOverloads
 
@@ -349,7 +349,7 @@ exports[`Class Reflection should compile class with constructor overloads: (Outp
 
 ***
 
-[API](../index.md) > ClassWithConstructorOverloads
+[typedoc-stubs](../index.md) / ClassWithConstructorOverloads
 
 # ClassWithConstructorOverloads
 
@@ -408,11 +408,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > ClassWithModifiers
+[typedoc-stubs](../exports.md) / ClassWithModifiers
 
 # Class: \`abstract\` ClassWithModifiers
 
@@ -542,7 +542,7 @@ exports[`Class Reflection should compile class with modifiers: (Output File Stra
 
 ***
 
-[API](../index.md) > ClassWithModifiers
+[typedoc-stubs](../index.md) / ClassWithModifiers
 
 # \`abstract\` ClassWithModifiers
 
@@ -613,11 +613,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > ClassWithTypeParameters
+[typedoc-stubs](../exports.md) / ClassWithTypeParameters
 
 # Class: ClassWithTypeParameters\`<A, B, C>\`
 
@@ -654,7 +654,7 @@ exports[`Class Reflection should compile class with type parameters: (Output Fil
 
 ***
 
-[API](../index.md) > ClassWithTypeParameters
+[typedoc-stubs](../index.md) / ClassWithTypeParameters
 
 # ClassWithTypeParameters\`<A, B, C>\`
 
@@ -689,11 +689,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > DerivedClassA
+[typedoc-stubs](../exports.md) / DerivedClassA
 
 # Class: DerivedClassA
 
@@ -784,7 +784,7 @@ exports[`Class Reflection should compile derived class: (Output File Strategy "m
 
 ***
 
-[API](../index.md) > DerivedClassA
+[typedoc-stubs](../index.md) / DerivedClassA
 
 # DerivedClassA
 

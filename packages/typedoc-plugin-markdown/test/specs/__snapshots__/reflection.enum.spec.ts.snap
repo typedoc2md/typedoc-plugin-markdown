@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > BasicEnum
+[typedoc-stubs](../exports.md) / BasicEnum
 
 # Enumeration: BasicEnum
 
@@ -48,7 +48,7 @@ exports[`Enum Reflection should compile basic enum: (Output File Strategy "membe
 
 ***
 
-[API](../index.md) > BasicEnum
+[typedoc-stubs](../index.md) / BasicEnum
 
 # BasicEnum
 
@@ -72,11 +72,11 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ∙ [Readme](../README.md) ∙ [API](../exports.md)
+"**typedoc-stubs** ( [Readme](../README.md) \\| API )
 
 ***
 
-[API](../exports.md) > EnumWithValues
+[typedoc-stubs](../exports.md) / EnumWithValues
 
 # Enumeration: EnumWithValues
 
@@ -115,7 +115,7 @@ exports[`Enum Reflection should compile enum with values: (Output File Strategy 
 
 ***
 
-[API](../index.md) > EnumWithValues
+[typedoc-stubs](../index.md) / EnumWithValues
 
 # EnumWithValues
 

@@ -55,7 +55,7 @@ import {
  *
  * @category fileOutput
  */
-export const mdOutputFileStrategy: DeclarationOption = {
+export const outputFileStrategy: DeclarationOption = {
   name: 'outputFileStrategy',
   help: 'Determines how output files are generated.',
   type: ParameterType.Map,
@@ -124,6 +124,22 @@ export const entryFileName: DeclarationOption = {
 };
 
 /**
+ * By default when a readme file is resolved, a seperate index page is created. This option prepends the readme file into the index page creating a single documentation entrypoint.
+ *
+ * - This option is ignored when `readme` is set to `none`.
+ * - `--indexPageTitle` is ignored.
+ *
+ * @category fileOutput
+ *
+ */
+export const mergeReadme: DeclarationOption = {
+  name: 'mergeReadme',
+  help: 'Merges the resolved readme into the project index page.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * @category ui
  */
 export const hidePageHeader: DeclarationOption = {
@@ -158,7 +174,7 @@ export const hideBreadcrumbs: DeclarationOption = {
  */
 export const hideInPageTOC: DeclarationOption = {
   name: 'hideInPageTOC',
-  help: 'Do not render in-page TOC/Index items.',
+  help: 'Do not render in-page TOC items.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -180,9 +196,15 @@ export const indexPageTitle: DeclarationOption = {
 /**
  * Provides a mechanism to change the page title of members.
  *
- * Supports `{kind}` and `{name}` placeholders.
+ * Supports `{name}` and `{kind}` placeholders.
  *
  * e.g "Class: MyClassName"
+ *
+ * For example to display member name only:
+ *
+ * ```json
+ * memberPageTitle: "{name}"
+ * ```
  *
  * @category ui
  */

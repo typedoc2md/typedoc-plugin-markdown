@@ -95,6 +95,7 @@ export function writeHtml(
         `../../stubs/typedoc.cjs`,
         '-logLevel',
         'Warn',
+        '--includeVersion',
         '-entryPoints',
         [`../../stubs/${entryPoints}`],
         '-out',

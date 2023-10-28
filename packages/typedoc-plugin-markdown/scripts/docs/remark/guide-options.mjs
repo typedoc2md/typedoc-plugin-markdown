@@ -25,7 +25,6 @@ function parseOptions(tree, key) {
 
 function getMarkdown(key) {
   const md = [INTRO_MAP[key]];
-
   groupedConfig[key].forEach((config, i) => {
     md.push(`### \`--${config.name}\``);
     md.push(`${config.help} Defaults to \`${getDefaultValue(config)}\`.`);

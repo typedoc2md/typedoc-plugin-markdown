@@ -1,5 +1,10 @@
 import * as path from 'path';
-import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
+import {
+  DeclarationReflection,
+  PageEvent,
+  ProjectReflection,
+  ReflectionKind,
+} from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { heading } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
@@ -16,7 +21,7 @@ export function pageIndex(
   const md: string[] = [];
 
   if (!page.model.groups) {
-    md.push(heading(headingLevel, 'Index'));
+    md.push(heading(headingLevel, 'Packages'));
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
         Boolean(projectPackage.readme)
@@ -31,9 +36,21 @@ export function pageIndex(
   }
 
   if (hasIndex(page.model)) {
-    md.push(heading(headingLevel, 'Index'));
+    const isModules = page.project.children?.every((child) =>
+      child.kindOf(ReflectionKind.Module),
+    );
 
-    md.push(context.reflectionIndex(page.model, false, headingLevel + 1));
+    if (!isModules) {
+      md.push(heading(2, 'Exports'));
+    }
+
+    md.push(
+      context.reflectionIndex(
+        page.model,
+        false,
+        isModules ? headingLevel : headingLevel + 1,
+      ),
+    );
     return md.join('\n\n');
   }
 

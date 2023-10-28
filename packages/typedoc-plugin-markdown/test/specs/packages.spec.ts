@@ -9,10 +9,15 @@ describe(`Packages`, () => {
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
+      'README.md',
+      1,
+    );
+    expectFileToEqual(
+      FixtureOutputDir.Packages,
+      FixtureOutputFileStrategy.Members,
       'package-1/README.md',
       1,
     );
-
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,

@@ -6,7 +6,11 @@ import {
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { bold, link } from '../../../support/elements';
-import { getIndexFileName, getProjectDisplayName } from '../../helpers';
+import {
+  getIndexFileName,
+  getProjectDisplayName,
+  hasReadme,
+} from '../../helpers';
 
 /**
  * @category Partials
@@ -15,8 +19,8 @@ export function header(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ): string {
-  const isMonoRepo = !Boolean(page.project.groups);
-  if (isMonoRepo) {
+  const isPackages = !Boolean(page.project.groups);
+  if (isPackages) {
     const packageItem = findPackage(page.model);
     if (packageItem) {
       return packageHeader(context, page);
@@ -32,8 +36,6 @@ function projectHeader(
   const entryFileName = context.options.getValue('entryFileName');
   const indexFileName = getIndexFileName(page.project);
   const titleLink = context.options.getValue('titleLink');
-  const hasBreadcrumbs = !context.options.getValue('hideBreadcrumbs');
-  const hasReadme = !context.options.getValue('readme')?.endsWith('none');
 
   const projectName = getProjectDisplayName(
     page.project,
@@ -48,28 +50,35 @@ function projectHeader(
     md.push(bold(projectName));
   }
 
-  if (hasReadme) {
-    md.push(link('Readme', context.relativeURL(entryFileName)));
-  }
-  if (hasReadme || !hasBreadcrumbs) {
-    md.push(
-      link(
-        'API',
-        hasReadme
-          ? context.relativeURL(indexFileName)
-          : context.relativeURL(entryFileName),
-      ),
-    );
+  if (hasReadme(page.project)) {
+    if (!context.options.getValue('mergeReadme')) {
+      const links: string[] = [];
+      links.push('(');
+      if (page.url === entryFileName) {
+        links.push('Readme');
+        links.push('\\|');
+      } else {
+        links.push(link('Readme', context.relativeURL(entryFileName)));
+        links.push('\\|');
+      }
+      if (page.url !== entryFileName) {
+        links.push('API');
+      } else {
+        links.push(link('API', context.relativeURL(indexFileName)));
+      }
+      links.push(')');
+      md.push(links.join(' '));
+    }
   }
 
-  return `${md.join(' ∙ ')}\n\n***\n`;
+  return `${md.join(' ')}\n\n***\n`;
 }
 
 function packageHeader(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
-  const packageItem = findPackage(page.model) as any;
+  const packageItem = findPackage(page.model) as ProjectReflection;
 
   if (!packageItem) {
     return '';
@@ -78,32 +87,32 @@ function packageHeader(
   const md: string[] = [];
 
   const entryFileName = context.options.getValue('entryFileName');
-  const hasReadme = packageItem.readme;
-  const hasBreadcrumbs = !context.options.getValue('hideBreadcrumbs');
 
   md.push(bold(packageItem.name));
 
-  if (hasReadme) {
-    md.push(
-      link(
-        'Readme',
-        context.relativeURL(`${packageItem.name}/${entryFileName}`),
-      ),
-    );
+  if (hasReadme(packageItem)) {
+    if (!context.options.getValue('mergeReadme')) {
+      const links: string[] = [];
+      const readmeUrl = `${packageItem.name}/${entryFileName}`;
+      links.push('(');
+      if (page.url === readmeUrl) {
+        links.push('Readme');
+        links.push('\\|');
+      } else {
+        links.push(link('Readme', context.relativeURL(readmeUrl)));
+        links.push('\\|');
+      }
+      if (page.url !== readmeUrl) {
+        links.push('API');
+      } else {
+        links.push(link('API', context.relativeURL(packageItem.url)));
+      }
+      links.push(')');
+      md.push(links.join(' '));
+    }
   }
 
-  if (hasReadme || !hasBreadcrumbs) {
-    md.push(
-      link(
-        'API',
-        hasReadme
-          ? context.relativeURL(packageItem.url)
-          : context.relativeURL(packageItem.url),
-      ),
-    );
-  }
-
-  return `${md.join(' ∙ ')}\n\n***\n`;
+  return `${md.join(' ')}\n\n***\n`;
 }
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {

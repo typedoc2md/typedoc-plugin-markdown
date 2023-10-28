@@ -245,3 +245,7 @@ export function getIndexFileName(project: ProjectReflection) {
   );
   return isModules ? 'modules.md' : 'exports.md';
 }
+
+export function hasReadme(project: ProjectReflection) {
+  return Boolean(project.readme);
+}

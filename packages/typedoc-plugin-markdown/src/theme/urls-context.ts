@@ -11,7 +11,7 @@ import { OutputFileStrategy } from '../plugin/options/custom-maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
 import { NavigationItem, UrlOption } from '../theme/models';
-import { getIndexFileName, getMemberTitle } from './helpers';
+import { getIndexFileName, getMemberTitle, hasReadme } from './helpers';
 import { MarkdownTheme } from './theme';
 
 export class UrlsContext {
@@ -34,17 +34,18 @@ export class UrlsContext {
   getUrls(project: ProjectReflection): UrlMapping[] {
     const entryFileName = this.options.entryFileName as string;
     const indexFileName = getIndexFileName(project);
-    const hasReadme = !this.options.readme?.endsWith('none');
+    const showIndex = !this.options.mergeReadme;
 
-    if (hasReadme) {
-      project.url = indexFileName;
+    if (hasReadme(project)) {
+      project.url = showIndex ? indexFileName : entryFileName;
       this.urls.push(
         new UrlMapping(entryFileName, project, this.theme.readmeTemplate),
       );
-
-      this.urls.push(
-        new UrlMapping(indexFileName, project, this.theme.projectTemplate),
-      );
+      if (showIndex) {
+        this.urls.push(
+          new UrlMapping(indexFileName, project, this.theme.projectTemplate),
+        );
+      }
     } else {
       project.url = entryFileName;
       this.urls.push(

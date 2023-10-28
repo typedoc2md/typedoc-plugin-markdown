@@ -1,4 +1,6 @@
-# Options Guide
+# Plugin Options
+
+This document describes all the additional options exposed by the plugin.
 
 ## Contents
 
@@ -6,6 +8,7 @@
   * [`--outputFileStrategy`](#--outputfilestrategy)
   * [`--membersWithOwnFile`](#--memberswithownfile)
   * [`--entryFileName`](#--entryfilename)
+  * [`--mergeReadme`](#--mergereadme)
 * [Structure and formatting options](#structure-and-formatting-options)
   * [`--hidePageHeader`](#--hidepageheader)
   * [`--hidePageTitle`](#--hidepagetitle)
@@ -27,6 +30,8 @@
   * [`--namedAnchors`](#--namedanchors)
 
 ## File output options
+
+Options that configure how files are generated.
 
 ### `--outputFileStrategy`
 
@@ -145,7 +150,28 @@ B. If a readme file is NOT resolved (when `readme` = `none`), then the index pag
 
 ***
 
+### `--mergeReadme`
+
+Merges the resolved readme into the project index page. Defaults to `false`.
+
+```shell
+--mergeReadme <boolean>
+```
+
+#### Usage
+
+By default when a readme file is resolved, a seperate index page is created. This option prepends the readme file into the index page creating a single documentation entrypoint.
+
+* This option is ignored when `readme` is set to `none`.
+* `--indexPageTitle` is ignored.
+
+[↑ Top](#options-guide)
+
+***
+
 ## Structure and formatting options
+
+Options that alter the format and structure of pages.
 
 ### `--hidePageHeader`
 
@@ -185,7 +211,7 @@ Do not print breadcrumbs. Defaults to `false`.
 
 ### `--hideInPageTOC`
 
-Do not render in-page TOC/Index items. Defaults to `false`.
+Do not render in-page TOC items. Defaults to `false`.
 
 ```shell
 --hideInPageTOC <boolean>
@@ -215,7 +241,7 @@ Defaults to `{projectName}` - a placeholder that renders the project name and ve
 
 ### `--memberPageTitle`
 
-The template for displaying page titles of members. Defaults to `"{kind}: {name}"`.
+The page title of members. Defaults to `"{kind}: {name}"`.
 
 ```shell
 --memberPageTitle <string>
@@ -225,9 +251,15 @@ The template for displaying page titles of members. Defaults to `"{kind}: {name}
 
 Provides a mechanism to change the page title of members.
 
-Supports `{kind}` and `{name}` placeholders.
+Supports `{name}` and `{kind}` placeholders.
 
 e.g "Class: MyClassName"
+
+For example to display member name only:
+
+```json
+memberPageTitle: "{name}"
+```
 
 [↑ Top](#options-guide)
 
@@ -360,6 +392,8 @@ This determines wheter to display index items either as a simple lists or in a t
 ***
 
 ## Utility options
+
+Options that configure additional functionality.
 
 ### `--preserveAnchorCasing`
 

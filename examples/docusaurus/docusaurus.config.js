@@ -46,6 +46,29 @@ const config = {
     [
       docusaurusPlugin,
       {
+        id: 'query-builder',
+        entryPoints: [
+          '../../../usecases/react-querybuilder-v4/packages/react-querybuilder',
+          '../../../usecases/react-querybuilder-v4/packages/antd',
+          '../../../usecases/react-querybuilder-v4/packages/blueprint',
+          '../../../usecases/react-querybuilder-v4/packages/bootstrap',
+          '../../../usecases/react-querybuilder-v4/packages/bulma',
+          '../../../usecases/react-querybuilder-v4/packages/chakra',
+          '../../../usecases/react-querybuilder-v4/packages/dnd',
+          '../../../usecases/react-querybuilder-v4/packages/fluent',
+          '../../../usecases/react-querybuilder-v4/packages/mantine',
+          '../../../usecases/react-querybuilder-v4/packages/material',
+          '../../../usecases/react-querybuilder-v4/packages/native',
+        ],
+        out: './docs/query-builder',
+        readme: '../../../usecases/react-querybuilder-v4/website/_API_INDEX.md',
+        entryPointStrategy: 'packages',
+        cleanOutputDir: true,
+      },
+    ],
+    [
+      docusaurusPlugin,
+      {
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/reflections/index.ts',
         typeDeclarationFormat: 'table',

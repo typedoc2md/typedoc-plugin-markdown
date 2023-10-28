@@ -18,6 +18,15 @@ const sidebars = {
   typedocSidebar: [
     {
       type: 'category',
+      label: 'Query Builder API',
+      link: {
+        type: 'doc',
+        id: 'query-builder/index',
+      },
+      items: require('./docs/query-builder/typedoc-sidebar.cjs'),
+    },
+    {
+      type: 'category',
       label: 'API',
       link: {
         type: 'doc',

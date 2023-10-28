@@ -21,18 +21,21 @@ export function expectFileToEqual(
     const basePath = getBasePath(outDir, outputFileStrategy);
     const optionDirs = fs.readdirSync(basePath);
     optionDirs.forEach((optionDir, index) => {
-      if (!limit || limit > index) {
-        const fullPath = path.join(
-          basePath,
-          optionDir,
-          Array.isArray(file) ? file[index] : file,
-        );
-        const actual = fs.readFileSync(fullPath).toString();
-        expect(actual).toMatchSnapshot(
-          `(Output File Strategy "${outputFileStrategy}") (Option Group "${
-            index + 1
-          }")`,
-        );
+      const isArray = Array.isArray(file);
+      if (index < file.length) {
+        if (!limit || limit > index) {
+          const fullPath = path.join(
+            basePath,
+            optionDir,
+            isArray ? file[index] : file,
+          );
+          const actual = fs.readFileSync(fullPath).toString();
+          expect(actual).toMatchSnapshot(
+            `(Output File Strategy "${outputFileStrategy}") (Option Group "${
+              index + 1
+            }")`,
+          );
+        }
       }
     });
   });

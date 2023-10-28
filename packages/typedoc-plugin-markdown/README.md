@@ -4,7 +4,7 @@
 
 > **Please note this pre-release version may contain breaking changes within the same semantic version.**
 
-A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API documentation as Markdown.
+A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API documentation as Markdown. [MDX 2+](https://mdxjs.com/) and [GFM](https://github.github.com/gfm/) compliant.
 
 ## Contents
 
@@ -29,54 +29,63 @@ npm install typedoc typedoc-plugin-markdown@next --save-dev
 
 ## Usage
 
-Plugins are loaded by using the `plugin` configuration option:
+Plugins are loaded by using the TypeDoc `plugin` configuration option:
 
 ```bash
 typedoc --plugin typedoc-plugin-markdown
 ```
 
-Please see <https://typedoc.org/options/configuration>.
+For general TypeDoc configuration usage please see <https://typedoc.org/options/configuration>.
 
 ## Options
 
-### TypeDoc options
+### TypeDoc Options
 
 All of TypeDoc's [Configuration](https://typedoc.org/options/configuration/), [Input](https://typedoc.org/options/input/) and [Organization](https://typedoc.org/options/organization/) options are respected as they are executed at the conversion phase of the project.
 
-TypeDoc's [Output](https://typedoc.org/options/output/) options are on the whole only relevant to the HTML theme and the majority are ignored by this plugin. Supported Output options are [`out`](https://typedoc.org/options/output/#out), `cleanOutputDir`.
+TypeDoc's [Output](https://typedoc.org/options/output/) options are on the whole only relevant to the HTML theme and the majority are ignored by this plugin.
+
+Supported Output options are: [`--out`](https://typedoc.org/options/output/#out), [`--cleanOutputDir`](https://typedoc.org/options/output/#cleanoutputdir).
 
 ### Plugin Options
 
-This plugin exposes additional options. Please see [Options Guide](./docs/guides/options.md) for detailed usage.
+This plugin exposes several additional options. Please see [Plugin Options](./docs/plugin-options.md) for detailed usage.
 
 #### File output options
 
-* [`--outputFileStrategy`](./docs/guides/options.md#--outputfilestrategy)
-* [`--membersWithOwnFile`](./docs/guides/options.md#--memberswithownfile)
-* [`--entryFileName`](./docs/guides/options.md#--entryfilename)
+Options that configure how files are generated.
+
+* [`--outputFileStrategy`](./docs/plugin-options.md#--outputfilestrategy)
+* [`--membersWithOwnFile`](./docs/plugin-options.md#--memberswithownfile)
+* [`--entryFileName`](./docs/plugin-options.md#--entryfilename)
+* [`--mergeReadme`](./docs/plugin-options.md#--mergereadme)
 
 #### Structure and formatting options
 
-* [`--hidePageHeader`](./docs/guides/options.md#--hidepageheader)
-* [`--hidePageTitle`](./docs/guides/options.md#--hidepagetitle)
-* [`--hideBreadcrumbs`](./docs/guides/options.md#--hidebreadcrumbs)
-* [`--hideInPageTOC`](./docs/guides/options.md#--hideinpagetoc)
-* [`--indexPageTitle`](./docs/guides/options.md#--indexpagetitle)
-* [`--memberPageTitle`](./docs/guides/options.md#--memberpagetitle)
-* [`--excludeGroups`](./docs/guides/options.md#--excludegroups)
-* [`--useCodeBlocks`](./docs/guides/options.md#--usecodeblocks)
-* [`--expandObjects`](./docs/guides/options.md#--expandobjects)
-* [`--parametersFormat`](./docs/guides/options.md#--parametersformat)
-* [`--propertiesFormat`](./docs/guides/options.md#--propertiesformat)
-* [`--enumMembersFormat`](./docs/guides/options.md#--enummembersformat)
-* [`--typeDeclarationFormat`](./docs/guides/options.md#--typedeclarationformat)
-* [`--indexFormat`](./docs/guides/options.md#--indexformat)
+Options that alter the format and structure of pages.
+
+* [`--hidePageHeader`](./docs/plugin-options.md#--hidepageheader)
+* [`--hidePageTitle`](./docs/plugin-options.md#--hidepagetitle)
+* [`--hideBreadcrumbs`](./docs/plugin-options.md#--hidebreadcrumbs)
+* [`--hideInPageTOC`](./docs/plugin-options.md#--hideinpagetoc)
+* [`--indexPageTitle`](./docs/plugin-options.md#--indexpagetitle)
+* [`--memberPageTitle`](./docs/plugin-options.md#--memberpagetitle)
+* [`--excludeGroups`](./docs/plugin-options.md#--excludegroups)
+* [`--useCodeBlocks`](./docs/plugin-options.md#--usecodeblocks)
+* [`--expandObjects`](./docs/plugin-options.md#--expandobjects)
+* [`--parametersFormat`](./docs/plugin-options.md#--parametersformat)
+* [`--propertiesFormat`](./docs/plugin-options.md#--propertiesformat)
+* [`--enumMembersFormat`](./docs/plugin-options.md#--enummembersformat)
+* [`--typeDeclarationFormat`](./docs/plugin-options.md#--typedeclarationformat)
+* [`--indexFormat`](./docs/plugin-options.md#--indexformat)
 
 #### Utility options
 
-* [`--preserveAnchorCasing`](./docs/guides/options.md#--preserveanchorcasing)
-* [`--anchorPrefix`](./docs/guides/options.md#--anchorprefix)
-* [`--namedAnchors`](./docs/guides/options.md#--namedanchors)
+Options that configure additional functionality.
+
+* [`--preserveAnchorCasing`](./docs/plugin-options.md#--preserveanchorcasing)
+* [`--anchorPrefix`](./docs/plugin-options.md#--anchorprefix)
+* [`--namedAnchors`](./docs/plugin-options.md#--namedanchors)
 
 ## Contributing
 

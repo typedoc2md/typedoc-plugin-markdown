@@ -28,7 +28,7 @@ function getMarkdown(key) {
     .map((config) => {
       return `- [\`--${
         config.name
-      }\`](./docs/guides/options.md#--${config.name.toLowerCase()})`;
+      }\`](./docs/plugin-options.md#--${config.name.toLowerCase()})`;
     })
     .join('\n');
   return [intro, list].join('\n\n');

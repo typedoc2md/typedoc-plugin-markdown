@@ -99,10 +99,19 @@ export const FIXTURES: Fixture[] = [
   {
     outDir: FixtureOutputDir.Packages,
     entryPoints: FixtureEntryPoints.Packages,
-    commonOptions: {
-      entryPointStrategy: 'packages',
-      hideGenerator: true,
-    },
-    options: [{}],
+    commonOptions: {},
+    options: [
+      {
+        entryPointStrategy: 'packages',
+        hideGenerator: true,
+        name: 'packages-example',
+      },
+      {
+        entryPointStrategy: 'packages',
+        hideGenerator: true,
+        mergeReadme: true,
+        name: 'packages-example',
+      },
+    ],
   },
 ];

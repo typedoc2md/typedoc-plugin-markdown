@@ -128,10 +128,32 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
 ]
 `;
 
+exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 2`] = `
+[
+  "README.md",
+  "package-1/README.md",
+  "package-1/interfaces/PackageInterface.md",
+  "package-1/modules.md",
+  "package-2/README.md",
+  "package-2/interfaces/PackageInterface.md",
+  "package-2/modules.md",
+]
+`;
+
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 1`] = `
 [
   "README.md",
   "modules.md",
+  "package-1/README.md",
+  "package-1/modules.md",
+  "package-2/README.md",
+  "package-2/modules.md",
+]
+`;
+
+exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 2`] = `
+[
+  "README.md",
   "package-1/README.md",
   "package-1/modules.md",
   "package-2/README.md",

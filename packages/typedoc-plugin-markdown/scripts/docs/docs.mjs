@@ -24,7 +24,7 @@ async function readmePage() {
 }
 
 async function optionsPage() {
-  const file = await read('./docs/guides/options.md');
+  const file = await read('./docs/plugin-options.md');
   const processor = await remark().use(remarkGfm).use(guideOptions);
   const vfile = await remark()
     .use(remarkToc, { heading: 'Contents', maxDepth: 3 })
