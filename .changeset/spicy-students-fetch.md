@@ -3,4 +3,4 @@
 ---
 
 - Updated default `--indexPageTitle` to {projectName}
-- Renamed `--titleTemplate` -> `--memberPageTemplate`
+- Renamed `--titleTemplate` -> `--memberPageTitle`
