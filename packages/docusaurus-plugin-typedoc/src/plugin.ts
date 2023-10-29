@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application } from 'typedoc';
+import { Application, PageEvent } from 'typedoc';
 import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { PluginOptions } from '.';
 import { getPluginOptions } from './options';
@@ -58,10 +58,16 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
     removeDir(outputDir);
   }
 
+  if (context.siteConfig?.markdown?.format !== 'mdx') {
+    app.renderer.on(PageEvent.END, (event: PageEvent) => {
+      event.contents = event.contents?.replace(/\\</g, '<');
+    });
+  }
+
   if (sidebar?.autoConfiguration) {
     app.renderer.postRenderAsyncJobs.push(
       async (output: MarkdownRendererEvent) => {
-        const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+        const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.js');
         const baseDir = path
           .relative(siteDir, outputDir)
           .split('/')
