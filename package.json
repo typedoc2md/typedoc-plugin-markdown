@@ -3,6 +3,7 @@
   "workspaces": [
     "packages/typedoc-plugin-markdown",
     "packages/typedoc-plugin-remark",
+    "packages/typedoc-frontmatter",
     "packages/docusaurus-plugin-typedoc",
     "packages/typedoc-github-wiki-theme",
     "packages/typedoc-gitlab-wiki-theme",
@@ -11,7 +12,7 @@
   "scripts": {
     "lint": "npm run lint --workspaces",
     "build": "npm run build --workspaces",
-    "test": "npm run test --workspace=typedoc-plugin-markdown",
+    "test": "npm run test --workspaces",
     "prerelease": "npm run build",
     "release": "npx changeset publish"
   },

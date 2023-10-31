@@ -1,0 +1,39 @@
+{
+  "name": "typedoc-plugin-frontmatter",
+  "version": "0.0.2",
+  "description": "A plugin for TypeDoc that prepends configurable frontmatter to page content.",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "lint": "eslint ./src --ext .ts",
+    "prepublishOnly": "npm run lint && npm run build && npm run test",
+    "build": "rm -rf dist && tsc",
+    "build-and-test": "npm run build && npm run test",
+    "test": "tsc --project ./tsconfig.test.json && jest"
+  },
+  "author": "Tom Grey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
+    "directory": "packages/typedoc-plugin-frontmatter"
+  },
+  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-frontmatter#readme",
+  "dependencies": {
+    "yaml": "^2.2.2"
+  },
+  "peerDependencies": {
+    "typedoc": "0.25.x"
+  },
+  "keywords": [
+    "frontmatter",
+    "typedocplugin",
+    "typedoc-plugin",
+    "typedoc"
+  ]
+}

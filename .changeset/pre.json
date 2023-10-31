@@ -3,7 +3,8 @@
   "tag": "next",
   "initialVersions": {
     "typedoc-plugin-markdown": "3.15.1",
-    "typedoc-plugin-remark": "0.0.0",
+    "typedoc-plugin-remark": "0.0.1",
+    "typedoc-plugin-frontmatter": "0.0.2",
     "docusaurus-plugin-typedoc": "0.18.0",
     "typedoc-vitepress-theme": "0.0.0",
     "typedoc-github-wiki-theme": "1.0.1",

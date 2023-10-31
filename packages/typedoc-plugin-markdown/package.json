@@ -41,6 +41,6 @@
     "typedoc"
   ],
   "peerDependencies": {
-    "typedoc": ">=0.25.0"
+    "typedoc": "0.25.x"
   }
 }

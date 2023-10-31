@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["./stubs.ts"],
+  "tsconfig": "./tsconfig.test.json",
+  "out": "./docs",
+  "readme": "none",
+  "plugin": ["typedoc-plugin-markdown", "./test/custom-plugin"],
+  "frontmatterGlobals": {
+    "layout": "blog"
+  },
+  "frontmatterTags": ["tagOne", "tagTwo", "tagThree"]
+}
