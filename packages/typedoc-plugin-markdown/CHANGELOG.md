@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.17.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.16.0...typedoc-plugin-markdown@3.17.0) (2023-11-01)
+
+### Features
+
+- Support MDXv2
+
 ## [3.16.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.4...typedoc-plugin-markdown@3.16.0) (2023-08-26)
 
 ### Fixes
