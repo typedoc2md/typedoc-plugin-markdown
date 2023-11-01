@@ -70,9 +70,9 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
         const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.js');
         const baseDir = path
           .relative(siteDir, outputDir)
-          .split('/')
+          .split(path.sep)
           .slice(1)
-          .join('/');
+          .join(path.sep);
         const sidebarJson = getSidebar(
           output.navigation,
           baseDir,
