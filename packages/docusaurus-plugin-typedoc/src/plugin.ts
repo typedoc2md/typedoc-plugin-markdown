@@ -1,6 +1,6 @@
 import { LoadContext } from '@docusaurus/types';
 import * as path from 'path';
-import { Application } from 'typedoc';
+import { Application, PageEvent } from 'typedoc';
 import { getPluginOptions } from './options';
 import { addTypedocDeclarations, removeDir, render } from './render';
 import { DocusaurusTheme } from './theme';
@@ -32,7 +32,11 @@ export default function pluginDocusaurus(
         .action(async () => {
           context.siteConfig?.plugins.forEach((pluginConfig) => {
             // Check PluginConfig is typed to [string, PluginOptions]
-            if (pluginConfig && typeof pluginConfig[1] === 'object' && pluginConfig[0] === PLUGIN_NAME) {
+            if (
+              pluginConfig &&
+              typeof pluginConfig[1] === 'object' &&
+              pluginConfig[0] === PLUGIN_NAME
+            ) {
               generateTypedoc(context, pluginConfig[1]);
             }
           });
@@ -69,6 +73,12 @@ async function generateTypedoc(
   }
 
   const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
+
+  if (context.siteConfig?.markdown?.format !== 'mdx') {
+    app.renderer.on(PageEvent.END, (event: PageEvent) => {
+      event.contents = event.contents?.replace(/\\</g, '<');
+    });
+  }
 
   addTypedocDeclarations(app);
 

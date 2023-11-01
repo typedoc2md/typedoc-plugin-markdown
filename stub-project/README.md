@@ -2,6 +2,4 @@
 
 > Some block quote
 
-<!-- some comments -->
-
 Some text

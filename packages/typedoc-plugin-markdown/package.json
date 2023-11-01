@@ -8,7 +8,10 @@
   ],
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "markdownlint": "yarn run docs:md && markdownlint ./docs/md",
+    "prelint:docs": "yarn run docs:md",
+    "lint:docs": "yarn run lint:markdown && yarn run lint:mdx",
+    "lint:markdown": " markdownlint ./docs/md",
+    "lint:mdx": "node ./lint.mdx.mjs",
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "test": "jest",

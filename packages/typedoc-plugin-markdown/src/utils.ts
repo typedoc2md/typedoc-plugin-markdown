@@ -18,10 +18,12 @@ export function formatContents(contents: string) {
 
 export function escapeChars(str: string) {
   return str
+    .replace(/</g, '\\<')
     .replace(/>/g, '\\>')
     .replace(/_/g, '\\_')
     .replace(/`/g, '\\`')
-    .replace(/\|/g, '\\|');
+    .replace(/\|/g, '\\|')
+    .replace(/{/g, '\\{');
 }
 
 export function memberSymbol(

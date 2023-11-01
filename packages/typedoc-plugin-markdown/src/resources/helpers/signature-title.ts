@@ -4,8 +4,8 @@ import {
   ReflectionKind,
   SignatureReflection,
 } from 'typedoc';
-import { memberSymbol } from '../../utils';
 import { MarkdownTheme } from '../../theme';
+import { memberSymbol } from '../../utils';
 
 export default function (theme: MarkdownTheme) {
   Handlebars.registerHelper(
@@ -29,7 +29,7 @@ export default function (theme: MarkdownTheme) {
 
       if (this.typeParameters) {
         md.push(
-          `<${this.typeParameters
+          `\\<${this.typeParameters
             .map((typeParameter) => `\`${typeParameter.name}\``)
             .join(', ')}\\>`,
         );

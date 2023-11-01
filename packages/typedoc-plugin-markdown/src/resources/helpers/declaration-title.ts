@@ -44,7 +44,7 @@ export default function (theme: MarkdownTheme) {
       );
       if (this instanceof DeclarationReflection && this.typeParameters) {
         md.push(
-          `<${this.typeParameters
+          `\\<${this.typeParameters
             .map((typeParameter) => `\`${typeParameter.name}\``)
             .join(', ')}\\>`,
         );
