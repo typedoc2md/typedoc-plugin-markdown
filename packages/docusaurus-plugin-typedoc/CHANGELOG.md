@@ -1,10 +1,10 @@
 # Changelog
 
-## 1.0.0-next.19
+## 1.0.0-next.19 (2023-11-01)
 
 ### Patch Changes
 
-- fix: Remove additional backslash under mdx1
+- Remove additional backslash under mdx1
 - Use correct path separator in sidebar urls ([#489](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/489))
 
 ## 1.0.0-next.18 (2023-10-21)
