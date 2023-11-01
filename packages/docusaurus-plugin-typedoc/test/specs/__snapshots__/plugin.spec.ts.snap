@@ -35,8 +35,6 @@ custom_edit_url: null
 
 > Some block quote
 
-<!-- some comments -->
-
 Some text
 "
 `;

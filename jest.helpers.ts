@@ -13,7 +13,6 @@ import {
   TypeDocReader,
   UrlMapping,
 } from 'typedoc';
-import { load } from 'typedoc-plugin-markdown';
 import { formatContents } from 'typedoc-plugin-markdown/src/utils';
 
 const STUBS_SRC_PATH = path.join(__dirname, 'stub-project', 'src');
@@ -24,10 +23,6 @@ const STUBS_TSCONFIG_PATH = path.join(
 );
 
 global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
-  //const app = new Application();
-
-  //app.options.addReader(new TypeDocReader());
-  //app.options.addReader(new TSConfigReader());
   const app = await Application.bootstrapWithPlugins(
     {
       logLevel: 'None',
@@ -38,6 +33,7 @@ global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
             )
           : [STUBS_SRC_PATH],
       tsconfig: STUBS_TSCONFIG_PATH,
+      plugin: ['./dist'],
     },
     [
       new ArgumentsReader(0),
@@ -47,8 +43,6 @@ global.bootstrap = async (entryPoints: string[] = [], options: any = {}) => {
       new ArgumentsReader(300),
     ],
   );
-
-  load(app);
 
   setOptions(app, options);
 

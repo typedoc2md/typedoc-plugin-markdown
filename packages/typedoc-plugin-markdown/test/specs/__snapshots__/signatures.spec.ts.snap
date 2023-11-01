@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signatures: should compile a promise that returns an object' 1`] = `
-"▸ **promiseReturningAnObject**(): \`Promise\`<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
+"▸ **promiseReturningAnObject**(): \`Promise\`\\<\\{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 
 ##### Returns
 
-\`Promise\`<{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
+\`Promise\`\\<\\{ \`data\`: \`string\` ; \`id\`: \`string\`  }\\>
 "
 `;
 
@@ -31,7 +31,7 @@ exports[`Signatures: should compile class with constructor' 1`] = `
 `;
 
 exports[`Signatures: should compile function that returns a function' 1`] = `
-"▸ **functionReturningAFunction**(): <T\\>(\`x\`: \`string\`) => \`boolean\`
+"▸ **functionReturningAFunction**(): \\<T\\>(\`x\`: \`string\`) => \`boolean\`
 
 Comments for function
 
@@ -41,7 +41,7 @@ Comments for function
 
 Return comments
 
-▸ <\`T\`\\>(\`x\`): \`boolean\`
+▸ \\<\`T\`\\>(\`x\`): \`boolean\`
 
 ##### Type parameters
 
@@ -132,7 +132,7 @@ exports[`Signatures: should compile function with reference type' 1`] = `
 
 | Name | Type |
 | :------ | :------ |
-| \`descriptor\` | \`TypedPropertyDescriptor\`<\`any\`\\> |
+| \`descriptor\` | \`TypedPropertyDescriptor\`\\<\`any\`\\> |
 
 ##### Returns
 
@@ -213,7 +213,7 @@ exports[`Signatures: should compile signature with a flag' 1`] = `
 `;
 
 exports[`Signatures: should compile signature with default values' 1`] = `
-"▸ **functionWithDefaults**(\`valueA?\`, \`valueB?\`, \`valueC?\`, \`valueD?\`, \`valueE?\`, \`valueF?\`): \`string\`
+"▸ **functionWithDefaults**(\`valueA?\`, \`valueB?\`, \`valueC?\`, \`valueD?\`, \`valueF?\`): \`string\`
 
 This is a function with a parameter that has a default value.
 
@@ -225,7 +225,6 @@ This is a function with a parameter that has a default value.
 | \`valueB\` | \`number\` | \`100\` | A parameter with a default numeric value. |
 | \`valueC\` | \`number\` | \`Number.NaN\` | A parameter with a default NaN value. |
 | \`valueD\` | \`boolean\` | \`true\` | A parameter with a default boolean value. |
-| \`valueE\` | \`boolean\` | \`null\` | A parameter with a default null value. |
 | \`valueF\` | \`string\` | \`'<foo>'\` | - |
 
 ##### Returns

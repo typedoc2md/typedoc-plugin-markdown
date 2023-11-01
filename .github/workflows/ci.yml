@@ -18,11 +18,11 @@ jobs:
         run: yarn install
       - name: Install
         run: yarn
-      - name: Lint
-        run: yarn run lint
+      - name: Lint Code
+        run: yarn run lint:code
       - name: Build
         run: yarn run build
-      - name: Markdownlint
-        run: yarn run markdownlint
-      #- name: Test
-      # run: yarn test
+      - name: Lint Markdown
+        run: yarn run lint:md
+      - name: Test
+        run: yarn test

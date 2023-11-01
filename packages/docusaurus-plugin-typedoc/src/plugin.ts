@@ -74,6 +74,7 @@ async function generateTypedoc(
 
   const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
 
+  // fix Docusaurus v2 double backslash escape
   if (context.siteConfig?.markdown?.format !== 'mdx') {
     app.renderer.on(PageEvent.END, (event: PageEvent) => {
       event.contents = event.contents?.replace(/\\</g, '<');

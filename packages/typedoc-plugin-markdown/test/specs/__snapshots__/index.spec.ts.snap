@@ -7,8 +7,6 @@ exports[`Index: should compile readme 1`] = `
 
 > Some block quote
 
-<!-- some comments -->
-
 Some text
 "
 `;

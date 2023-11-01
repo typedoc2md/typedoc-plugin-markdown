@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prelint:docs": "yarn run docs:md",
-    "lint:docs": "yarn run lint:markdown && yarn run lint:mdx",
+    "lint:md": "yarn run lint:markdown && yarn run lint:mdx",
     "lint:markdown": " markdownlint ./docs/md",
     "lint:mdx": "node ./lint.mdx.mjs",
     "prepublishOnly": "yarn run lint && yarn run build && yarn run test",
