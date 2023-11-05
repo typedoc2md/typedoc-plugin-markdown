@@ -23,7 +23,7 @@ const sidebars = {
         type: 'doc',
         id: 'api/index',
       },
-      items: require('./docs/api/typedoc-sidebar.js'),
+      items: require('./docs/api/typedoc-sidebar.cjs'),
     },
     {
       type: 'category',
@@ -32,7 +32,7 @@ const sidebars = {
         type: 'doc',
         id: 'api-2/index',
       },
-      items: require('./docs/api-2/typedoc-sidebar.js'),
+      items: require('./docs/api-2/typedoc-sidebar.cjs'),
     },
     {
       type: 'category',
@@ -41,7 +41,7 @@ const sidebars = {
         type: 'doc',
         id: 'api-3/index',
       },
-      items: require('./docs/api-3/typedoc-sidebar.js'),
+      items: require('./docs/api-3/typedoc-sidebar.cjs'),
     },
   ],
 };

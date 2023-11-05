@@ -18,7 +18,10 @@ function getNavigationItem(
   filteredIds: string[],
 ) {
   const id = navigationItem.url
-    ? `${basePath}/${navigationItem.url}`.replace(/(.*).md/, '$1')
+    ? `${basePath}/${navigationItem.url.replace(/\d+\-/g, '')}`.replace(
+        /(.*).md/,
+        '$1',
+      )
     : null;
 
   if (navigationItem.children?.length) {

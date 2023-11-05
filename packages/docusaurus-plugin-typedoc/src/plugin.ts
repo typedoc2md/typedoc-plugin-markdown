@@ -67,7 +67,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   if (sidebar?.autoConfiguration) {
     app.renderer.postRenderAsyncJobs.push(
       async (output: MarkdownRendererEvent) => {
-        const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.js');
+        const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
         const baseDir = path
           .relative(siteDir, outputDir)
           .split(path.sep)
