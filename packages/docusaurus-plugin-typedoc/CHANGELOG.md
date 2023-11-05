@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.20
+
+### Patch Changes
+
+- Handle sidebar ids with number prefixes
+
 ## 1.0.0-next.19 (2023-11-01)
 
 ### Patch Changes
