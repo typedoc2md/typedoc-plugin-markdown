@@ -1,6 +1,7 @@
 import * as Handlebars from 'handlebars';
 import { ContainerReflection, ReflectionKind } from 'typedoc';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
+import { escapeChars } from '../../utils';
 
 export default function () {
   Handlebars.registerHelper(
@@ -14,14 +15,14 @@ export default function () {
             if (this.model.parent.parent.parent) {
               title.push(
                 `[${
-                  this.model.parent.parent.name
+                  escapeChars(this.model.parent.parent.name)
                 }](${Handlebars.helpers.relativeURL(
                   this.model?.parent?.parent.url,
                 )})`,
               );
             }
             title.push(
-              `[${this.model.parent.name}](${Handlebars.helpers.relativeURL(
+              `[${escapeChars(this.model.parent.name)}](${Handlebars.helpers.relativeURL(
                 this.model.parent.url,
               )})`,
             );
