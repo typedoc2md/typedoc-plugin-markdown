@@ -4,10 +4,16 @@ export function getSidebar(
   navigation: NavigationItem[],
   basePath: string,
   filteredIds: string[] = [],
+  numberPrefixParser?: any,
 ) {
   return navigation
     .map((navigationItem) =>
-      getNavigationItem(navigationItem, basePath, filteredIds),
+      getNavigationItem(
+        navigationItem,
+        basePath,
+        filteredIds,
+        numberPrefixParser,
+      ),
     )
     .filter((navItem) => Boolean(navItem));
 }
@@ -16,12 +22,14 @@ function getNavigationItem(
   navigationItem: NavigationItem,
   basePath: string,
   filteredIds: string[],
+  numberPrefixParser?: any,
 ) {
+  const parsedUrl =
+    numberPrefixParser === false
+      ? navigationItem.url
+      : navigationItem.url?.replace(/\d+\-/g, '');
   const id = navigationItem.url
-    ? `${basePath}/${navigationItem.url.replace(/\d+\-/g, '')}`.replace(
-        /(.*).md/,
-        '$1',
-      )
+    ? `${basePath}/${parsedUrl}`.replace(/(.*).md/, '$1')
     : null;
 
   if (navigationItem.children?.length) {

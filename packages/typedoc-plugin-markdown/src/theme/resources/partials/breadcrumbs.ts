@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { DeclarationReflection, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
@@ -17,18 +18,20 @@ export function breadcrumbs(
   if (
     page.url === page.project.url ||
     (page.url === context.options.getValue('entryFileName') &&
-      page.url.split('/').length === 1)
+      page.url.split(path.sep).length === 1)
   ) {
     return '';
   }
 
-  md.push(link(page.project.name, context.relativeURL(page.project.url)));
+  md.push(
+    link(escapeChars(page.project.name), context.relativeURL(page.project.url)),
+  );
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
       breadcrumb(model.parent);
     }
-    md.push(link(model.name, context.relativeURL(model?.url)));
+    md.push(link(escapeChars(model.name), context.relativeURL(model?.url)));
   };
 
   const pageName = escapeChars(page.model.name);

@@ -124,11 +124,10 @@ export class MarkdownTheme extends Theme {
           .map((_, i) => (i > 1 ? '  ' : ''))
           .join('');
         const urlParts = page?.url.split('/');
-        return `${spaces}- [${item.content}](${
-          urlParts[urlParts.length - 1]
-        }#${slugify(item.content).toLowerCase()}${
-          item.count > 1 ? `-${item.count - 1}` : ''
-        })`;
+        const urlBase = urlParts[urlParts.length - 1];
+        return `${spaces}- [${item.content}](${encodeURI(urlBase)}#${slugify(
+          item.content,
+        ).toLowerCase()}${item.count > 1 ? `-${item.count - 1}` : ''})`;
       })
       .join('\n');
 

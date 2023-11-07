@@ -1,0 +1,4 @@
+/**
+ *
+ * @module @scope/name
+ */

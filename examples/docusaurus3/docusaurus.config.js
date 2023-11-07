@@ -81,15 +81,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          /*async sidebarItemsGenerator({
-            defaultSidebarItemsGenerator,
-            ...args
-          }) {
-            const sidebarItems = await defaultSidebarItemsGenerator(args);
-            return sidebarItems.filter(
-              (sidebarItem) => !['api-1/index'].includes(sidebarItem.id),
-            );
-          },*/
+          numberPrefixParser: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

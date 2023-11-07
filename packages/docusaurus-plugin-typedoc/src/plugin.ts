@@ -65,6 +65,10 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   }
 
   if (sidebar?.autoConfiguration) {
+    const docsPreset = context.siteConfig?.presets.find((preset: any) =>
+      Boolean(preset[1]?.docs),
+    );
+
     app.renderer.postRenderAsyncJobs.push(
       async (output: MarkdownRendererEvent) => {
         const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
@@ -77,6 +81,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
           output.navigation,
           baseDir,
           sidebar.filteredIds,
+          docsPreset[1]?.docs?.numberPrefixParser,
         );
         fs.writeFileSync(
           sidebarPath,

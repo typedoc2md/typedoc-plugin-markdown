@@ -77,6 +77,18 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "url": "modules.md"
   },
   {
+    "title": "42-module-name",
+    "url": "42-module-name/README.md"
+  },
+  {
+    "title": "<internal>",
+    "url": "<internal>/README.md"
+  },
+  {
+    "title": "@scope/name",
+    "url": "@scope_name/README.md"
+  },
+  {
     "title": "basic",
     "url": "basic/README.md",
     "children": [
@@ -377,6 +389,18 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "url": "index.md"
   },
   {
+    "title": "42-module-name",
+    "url": "42-module-name/index.md"
+  },
+  {
+    "title": "<internal>",
+    "url": "<internal>/index.md"
+  },
+  {
+    "title": "@scope/name",
+    "url": "@scope_name/index.md"
+  },
+  {
     "title": "basic",
     "url": "basic/index.md",
     "children": [
@@ -543,6 +567,18 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "url": "modules.md"
   },
   {
+    "title": "42-module-name",
+    "url": "42-module-name.md"
+  },
+  {
+    "title": "<internal>",
+    "url": "<internal>.md"
+  },
+  {
+    "title": "@scope/name",
+    "url": "@scope_name.md"
+  },
+  {
     "title": "basic",
     "url": "basic.md"
   },
@@ -596,6 +632,18 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "API",
     "url": "index.md"
+  },
+  {
+    "title": "42-module-name",
+    "url": "42-module-name.md"
+  },
+  {
+    "title": "<internal>",
+    "url": "<internal>.md"
+  },
+  {
+    "title": "@scope/name",
+    "url": "@scope_name.md"
   },
   {
     "title": "basic",

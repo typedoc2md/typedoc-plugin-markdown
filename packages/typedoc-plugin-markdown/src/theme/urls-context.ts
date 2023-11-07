@@ -133,7 +133,7 @@ export class UrlsContext {
   }
 
   getUrl(reflection: DeclarationReflection, options: UrlOption) {
-    const alias = reflection.name.replace(/^_+/, '');
+    const alias = reflection.name.replace(/^_+/, '').replace(/\//, '_');
 
     const parentDir = options.parentUrl
       ? path.dirname(options.parentUrl)
