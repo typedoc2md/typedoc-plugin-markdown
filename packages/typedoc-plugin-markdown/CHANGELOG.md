@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.27
+
+### Patch Changes
+
+- Preserve slash in module filenames
+
 ## 4.0.0-next.26 (2023-11-07)
 
 ### Patch Changes
