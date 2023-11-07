@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.26
+
+### Patch Changes
+
+- Support angle brackets, slashes and leading numbers in module names
+
 ## 4.0.0-next.25 (2023-10-29)
 
 ### Patch Changes

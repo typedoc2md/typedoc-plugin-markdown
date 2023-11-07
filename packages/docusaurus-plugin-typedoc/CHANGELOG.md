@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.21
+
+### Patch Changes
+
+- Support disabling numberPrefixParser in docs preset
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.26
+
 ## 1.0.0-next.20 (2023-11-05)
 
 ### Patch Changes
