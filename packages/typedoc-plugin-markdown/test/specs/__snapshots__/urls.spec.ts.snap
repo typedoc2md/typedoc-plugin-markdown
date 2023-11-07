@@ -4,7 +4,6 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
 [
   "42-module-name/README.md",
   "<internal>/README.md",
-  "@scope_name/README.md",
   "README.md",
   "basic/README.md",
   "basic/classes/ClassA.md",
@@ -55,7 +54,6 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
 [
   "42-module-name/index.md",
   "<internal>/index.md",
-  "@scope_name/index.md",
   "basic/classes/ClassA.md",
   "basic/classes/ClassB.md",
   "basic/enumerations/EnumA.md",
@@ -96,7 +94,6 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
 [
   "42-module-name.md",
   "<internal>.md",
-  "@scope_name.md",
   "README.md",
   "basic.md",
   "has-categories.md",
@@ -114,7 +111,6 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
 [
   "42-module-name.md",
   "<internal>.md",
-  "@scope_name.md",
   "basic.md",
   "has-categories.md",
   "has-namespaces/index.md",

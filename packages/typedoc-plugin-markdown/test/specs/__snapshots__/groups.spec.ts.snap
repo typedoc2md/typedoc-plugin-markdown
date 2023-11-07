@@ -501,7 +501,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 - [42-module-name](42-module-name/README.md)
 - [\\<internal\\>](%3Cinternal%3E/README.md)
-- [@scope/name](@scope_name/README.md)
 - [basic](basic/README.md)
 - [has-categories](has-categories/README.md)
 - [has-namespaces](has-namespaces/README.md)
@@ -519,7 +518,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 | :------ | :------ |
 | [42-module-name](42-module-name/index.md) | - |
 | [\\<internal\\>](%3Cinternal%3E/index.md) | - |
-| [@scope/name](@scope_name/index.md) | - |
 | [basic](basic/index.md) | A basic module |
 | [has-categories](has-categories/index.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
@@ -541,7 +539,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 
 - [42-module-name](42-module-name.md)
 - [\\<internal\\>](%3Cinternal%3E.md)
-- [@scope/name](@scope_name.md)
 - [basic](basic.md)
 - [has-categories](has-categories.md)
 - [has-namespaces](has-namespaces/README.md)
@@ -559,7 +556,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | :------ | :------ |
 | [42-module-name](42-module-name.md) | - |
 | [\\<internal\\>](%3Cinternal%3E.md) | - |
-| [@scope/name](@scope_name.md) | - |
 | [basic](basic.md) | A basic module |
 | [has-categories](has-categories.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
