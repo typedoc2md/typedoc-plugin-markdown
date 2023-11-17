@@ -28,4 +28,12 @@ describe(`Variable Reflection`, () => {
       'variables/typeOperatorVariable.md',
     );
   });
+
+  test(`should compile object with symbol`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Reflections,
+      FixtureOutputFileStrategy.Members,
+      'variables/objectWithSymbol.md',
+    );
+  });
 });

@@ -52,4 +52,13 @@ describe(`Class Reflection`, () => {
       'classes/ClassWithModifiers.md',
     );
   });
+
+  test(`should compile disposable class`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Reflections,
+      FixtureOutputFileStrategy.Members,
+      'classes/DisposableClass.md',
+      1,
+    );
+  });
 });

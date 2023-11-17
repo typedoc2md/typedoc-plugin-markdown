@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Class: \`abstract\` AbstractClass
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Class: \`abstract\` AbstractClass
 
 ## Contents
 
@@ -11,7 +15,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 - [Properties](AbstractClass.md#properties)
   - [\`abstract\` abstractProp](AbstractClass.md#abstract-abstractprop)
 - [Methods](AbstractClass.md#methods)
-  - [\`abstract\` abstractMethod()](AbstractClass.md#abstract-abstractmethod)
+  - [\`abstract\` abstractMethod](AbstractClass.md#abstract-abstractmethod)
 
 ## Extended By
 
@@ -42,7 +46,7 @@ Comments for abstractProp
 
 ## Methods
 
-### \`abstract\` abstractMethod()
+### \`abstract\` abstractMethod
 
 > **\`abstract\`** **abstractMethod**(): \`string\`
 
@@ -72,7 +76,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
   - [new AbstractClass()](AbstractClass.md#new-abstractclass)
 - [Properties](AbstractClass.md#properties)
 - [Methods](AbstractClass.md#methods)
-  - [\`abstract\` abstractMethod()](AbstractClass.md#abstract-abstractmethod)
+  - [\`abstract\` abstractMethod](AbstractClass.md#abstract-abstractmethod)
 
 ## Extended By
 
@@ -99,7 +103,7 @@ new AbstractClass(): AbstractClass
 
 ## Methods
 
-### \`abstract\` abstractMethod()
+### \`abstract\` abstractMethod
 
 \`\`\`ts
 abstract abstractMethod(): string
@@ -110,15 +114,15 @@ Comments for abstractMethod
 #### Returns
 
 \`string\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Class: ClassWithAccessors
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Class: ClassWithAccessors
 
 Comments for ClassWithAccessors
 
@@ -297,15 +301,15 @@ get noSetter(): string
 #### Returns
 
 \`string\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Class: ClassWithConstructorOverloads
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Class: ClassWithConstructorOverloads
 
 Comments for ClassWithConstructorOverloads
 
@@ -440,15 +444,15 @@ new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
 #### Returns
 
 [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Class: \`abstract\` ClassWithModifiers
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Class: \`abstract\` ClassWithModifiers
 
 Comments for ClassWithModifiers
 
@@ -463,9 +467,9 @@ Comments for ClassWithModifiers
   - [readonlyProp](ClassWithModifiers.md#readonlyprop)
   - [staticProp](ClassWithModifiers.md#staticprop)
 - [Methods](ClassWithModifiers.md#methods)
-  - [privateMethod()](ClassWithModifiers.md#privatemethod)
-  - [publicMethod()](ClassWithModifiers.md#publicmethod)
-  - [staticMethod()](ClassWithModifiers.md#staticmethod)
+  - [privateMethod](ClassWithModifiers.md#privatemethod)
+  - [publicMethod](ClassWithModifiers.md#publicmethod)
+  - [staticMethod](ClassWithModifiers.md#staticmethod)
 
 ## Constructors
 
@@ -539,7 +543,7 @@ Comments for staticProp
 
 ## Methods
 
-### privateMethod()
+### privateMethod
 
 > **\`private\`** **privateMethod**(): \`void\`
 
@@ -555,7 +559,7 @@ Comment for privateMethod
 
 ***
 
-### publicMethod()
+### publicMethod
 
 > **publicMethod**(): \`void\`
 
@@ -571,7 +575,7 @@ Comment for publicMethod
 
 ***
 
-### staticMethod()
+### staticMethod
 
 > **\`static\`** **staticMethod**(): \`void\`
 
@@ -602,9 +606,9 @@ Comments for ClassWithModifiers
   - [new ClassWithModifiers()](ClassWithModifiers.md#new-classwithmodifiers)
 - [Properties](ClassWithModifiers.md#properties)
 - [Methods](ClassWithModifiers.md#methods)
-  - [privateMethod()](ClassWithModifiers.md#privatemethod)
-  - [publicMethod()](ClassWithModifiers.md#publicmethod)
-  - [staticMethod()](ClassWithModifiers.md#staticmethod)
+  - [privateMethod](ClassWithModifiers.md#privatemethod)
+  - [publicMethod](ClassWithModifiers.md#publicmethod)
+  - [staticMethod](ClassWithModifiers.md#staticmethod)
 
 ## Constructors
 
@@ -630,7 +634,7 @@ new ClassWithModifiers(): ClassWithModifiers
 
 ## Methods
 
-### privateMethod()
+### privateMethod
 
 \`\`\`ts
 private privateMethod(): void
@@ -644,7 +648,7 @@ Comment for privateMethod
 
 ***
 
-### publicMethod()
+### publicMethod
 
 \`\`\`ts
 publicMethod(): void
@@ -658,7 +662,7 @@ Comment for publicMethod
 
 ***
 
-### staticMethod()
+### staticMethod
 
 \`\`\`ts
 static staticMethod(): void
@@ -669,15 +673,15 @@ Comment for staticMethod
 #### Returns
 
 \`void\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Class: ClassWithTypeParameters\`<A, B, C>\`
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Class: ClassWithTypeParameters\\<\`A\`, \`B\`, \`C\`\\>
 
 Comments for ClassWithTypeParameters
 
@@ -716,7 +720,7 @@ exports[`Class Reflection should compile class with type parameters: (Output Fil
 
 ***
 
-# ClassWithTypeParameters\`<A, B, C>\`
+# ClassWithTypeParameters\\<\`A\`, \`B\`, \`C\`\\>
 
 Comments for ClassWithTypeParameters
 
@@ -745,15 +749,15 @@ new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
 #### Returns
 
 [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Class: DerivedClassA
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Class: DerivedClassA
 
 Comments for DerivedClassA
 
@@ -766,8 +770,8 @@ Comments for DerivedClassA
   - [abstractProp](DerivedClassA.md#abstractprop)
   - [derivedProp](DerivedClassA.md#derivedprop)
 - [Methods](DerivedClassA.md#methods)
-  - [abstractMethod()](DerivedClassA.md#abstractmethod)
-  - [derivedMethod()](DerivedClassA.md#derivedmethod)
+  - [abstractMethod](DerivedClassA.md#abstractmethod)
+  - [derivedMethod](DerivedClassA.md#derivedmethod)
 
 ## Extends
 
@@ -815,7 +819,7 @@ Comments for abstractProp
 
 ## Methods
 
-### abstractMethod()
+### abstractMethod
 
 > **abstractMethod**(): \`string\`
 
@@ -835,7 +839,7 @@ Comments for abstractMethod
 
 ***
 
-### derivedMethod()
+### derivedMethod
 
 > **derivedMethod**(): \`string\`
 
@@ -865,8 +869,8 @@ Comments for DerivedClassA
   - [new DerivedClassA()](DerivedClassA.md#new-derivedclassa)
 - [Properties](DerivedClassA.md#properties)
 - [Methods](DerivedClassA.md#methods)
-  - [abstractMethod()](DerivedClassA.md#abstractmethod)
-  - [derivedMethod()](DerivedClassA.md#derivedmethod)
+  - [abstractMethod](DerivedClassA.md#abstractmethod)
+  - [derivedMethod](DerivedClassA.md#derivedmethod)
 
 ## Extends
 
@@ -897,7 +901,7 @@ new DerivedClassA(): DerivedClassA
 
 ## Methods
 
-### abstractMethod()
+### abstractMethod
 
 \`\`\`ts
 abstractMethod(): string
@@ -915,7 +919,7 @@ Comments for abstractMethod
 
 ***
 
-### derivedMethod()
+### derivedMethod
 
 \`\`\`ts
 derivedMethod(): string
@@ -924,9 +928,54 @@ derivedMethod(): string
 #### Returns
 
 \`string\`
+"
+`;
+
+exports[`Class Reflection should compile disposable class: (Output File Strategy "members") (Option Group "1") 1`] = `
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
 
 ***
 
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
+# Class: DisposableClass
+
+## Contents
+
+- [Implements](DisposableClass.md#implements)
+- [Constructors](DisposableClass.md#constructors)
+  - [new DisposableClass()](DisposableClass.md#new-disposableclass)
+- [Methods](DisposableClass.md#methods)
+  - [[dispose]](DisposableClass.md#dispose)
+
+## Implements
+
+- \`Disposable\`
+
+## Constructors
+
+### new DisposableClass()
+
+> **new DisposableClass**(): [\`DisposableClass\`](DisposableClass.md)
+
+#### Returns
+
+[\`DisposableClass\`](DisposableClass.md)
+
+## Methods
+
+### [dispose]
+
+> **[dispose]**(): \`void\`
+
+#### Returns
+
+\`void\`
+
+#### Implementation of
+
+Disposable.[dispose]
+
+#### Source
+
+[classes.ts:147](http://source-url)
 "
 `;

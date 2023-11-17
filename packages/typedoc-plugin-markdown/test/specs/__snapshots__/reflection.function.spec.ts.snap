@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionReturningAFunction()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionReturningAFunction
 
 > **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
 
@@ -41,7 +45,7 @@ exports[`Function Reflection should compile function returning a function: (Outp
 
 ***
 
-# functionReturningAFunction()
+# functionReturningAFunction
 
 \`\`\`ts
 functionReturningAFunction(): <T>(x) => boolean
@@ -73,15 +77,15 @@ Comments for function
 >
 > \`boolean\`
 >
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionReturningAPromise()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionReturningAPromise
 
 > **functionReturningAPromise**(): \`Promise\`\\<\`object\`\\>
 
@@ -104,7 +108,7 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 
 ***
 
-# functionReturningAPromise()
+# functionReturningAPromise
 
 \`\`\`ts
 functionReturningAPromise(): Promise<{
@@ -119,15 +123,15 @@ Comments for function
 \`Promise\`\\<\\{   \`prop\`: \`string\`;   }\\>
 
 Return comments
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionReturningAnObject()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionReturningAnObject
 
 > **functionReturningAnObject**(): \`object\`
 
@@ -159,7 +163,7 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 
 ***
 
-# functionReturningAnObject()
+# functionReturningAnObject
 
 \`\`\`ts
 functionReturningAnObject(): {
@@ -181,15 +185,15 @@ Return comments
 > | \`x\` | \`number\` | - |
 > | \`y\` | \`number\` | - |
 >
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: basicFunction()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: basicFunction
 
 > **basicFunction**(\`someParam\`): \`number\`
 
@@ -216,7 +220,7 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 
 ***
 
-# basicFunction()
+# basicFunction
 
 \`\`\`ts
 basicFunction(someParam): number
@@ -233,15 +237,15 @@ This is a function that is assigned to a variable.
 ## Returns
 
 \`number\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionWithDefaultParameters()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionWithDefaultParameters
 
 > **functionWithDefaultParameters**(\`valueA\`, \`valueB\`, \`valueC\`, \`valueD\`, \`valueE\`, \`valueF\`): \`string\`
 
@@ -286,7 +290,7 @@ exports[`Function Reflection should compile function with default parameters: (O
 
 ***
 
-# functionWithDefaultParameters()
+# functionWithDefaultParameters
 
 \`\`\`ts
 functionWithDefaultParameters(
@@ -314,15 +318,15 @@ This is a function with a parameter that has a default value.
 ## Returns
 
 \`string\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionWithMultipleSignatures()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionWithMultipleSignatures
 
 ## functionWithMultipleSignatures(value)
 
@@ -375,7 +379,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 
 ***
 
-# functionWithMultipleSignatures()
+# functionWithMultipleSignatures
 
 ## functionWithMultipleSignatures(value)
 
@@ -413,15 +417,15 @@ This is the second signature of a function with multiple signatures.
 ### Returns
 
 \`string\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionWithNamedParams()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionWithNamedParams
 
 > **functionWithNamedParams**(\`__namedParameters\`, \`anotherParam\`): \`void\`
 
@@ -454,7 +458,7 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 ***
 
-# functionWithNamedParams()
+# functionWithNamedParams
 
 \`\`\`ts
 functionWithNamedParams(__namedParameters, anotherParam): void
@@ -472,15 +476,15 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 ## Returns
 
 \`void\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionWithNestedParameters()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionWithNestedParameters
 
 > **functionWithNestedParameters**(\`params\`, \`context\`): \`boolean\`
 
@@ -529,7 +533,7 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 
 ***
 
-# functionWithNestedParameters()
+# functionWithNestedParameters
 
 \`\`\`ts
 functionWithNestedParameters(params, context): boolean
@@ -554,15 +558,15 @@ Some nested params.
 ## Returns
 
 \`boolean\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionWithOptionalParameters()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionWithOptionalParameters
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
@@ -593,7 +597,11 @@ An optional parameter.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 2`] = `
-"# Function: functionWithOptionalParameters()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionWithOptionalParameters
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
@@ -628,7 +636,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 
 ***
 
-# functionWithOptionalParameters()
+# functionWithOptionalParameters
 
 \`\`\`ts
 functionWithOptionalParameters(
@@ -652,10 +660,6 @@ This is a function with a parameters.
 ## Returns
 
 \`void\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
@@ -664,7 +668,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 
 ***
 
-# functionWithOptionalParameters()
+# functionWithOptionalParameters
 
 \`\`\`ts
 functionWithOptionalParameters(
@@ -688,15 +692,15 @@ This is a function with a parameters.
 ## Returns
 
 \`void\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: functionWithTypeParameters()
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Function: functionWithTypeParameters
 
 > **functionWithTypeParameters**\\<\`T\`, \`Item\`\\>(): \`boolean\`
 
@@ -725,7 +729,7 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 
 ***
 
-# functionWithTypeParameters()
+# functionWithTypeParameters
 
 \`\`\`ts
 functionWithTypeParameters<T, Item>(): boolean
@@ -743,9 +747,5 @@ Function with type parameters
 ## Returns
 
 \`boolean\`
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

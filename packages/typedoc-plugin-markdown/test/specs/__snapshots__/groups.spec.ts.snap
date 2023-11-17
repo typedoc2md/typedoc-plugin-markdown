@@ -797,7 +797,7 @@ A module that contains namespaces
 
 <a id="function-a" name="function-a"></a>
 
-## \\_function\\_A\\_()
+## \\_function\\_A\\_
 
 > **\\_function\\_A\\_**(): \`void\`
 
@@ -809,7 +809,7 @@ A module that contains namespaces
 
 <a id="functionb" name="functionb"></a>
 
-## functionB()
+## functionB
 
 > **functionB**(): \`void\`
 
@@ -849,8 +849,8 @@ A module that contains namespaces
   - [\\_variable\\_A\\_](index.md#variable-a)
   - [variableB](index.md#variableb)
 - [Functions](index.md#functions)
-  - [\\_function\\_A\\_()](index.md#function-a)
-  - [functionB()](index.md#functionb)
+  - [\\_function\\_A\\_](index.md#function-a)
+  - [functionB](index.md#functionb)
 
 ## Namespaces
 
@@ -927,7 +927,7 @@ A module that contains namespaces
 
 ## Functions
 
-### \\_function\\_A\\_()
+### \\_function\\_A\\_
 
 > **\\_function\\_A\\_**(): \`void\`
 
@@ -937,7 +937,7 @@ A module that contains namespaces
 
 ***
 
-### functionB()
+### functionB
 
 > **functionB**(): \`void\`
 
@@ -1057,7 +1057,7 @@ A module that contains namespaces
 
 <a id="function-a" name="function-a"></a>
 
-## \\_function\\_A\\_()
+## \\_function\\_A\\_
 
 > **\\_function\\_A\\_**(): \`void\`
 
@@ -1069,7 +1069,7 @@ A module that contains namespaces
 
 <a id="functionb" name="functionb"></a>
 
-## functionB()
+## functionB
 
 > **functionB**(): \`void\`
 
@@ -1114,7 +1114,7 @@ A module that contains references
   - [RenamedInterfaceB](has-references.md#renamedinterfaceb)
   - [default](has-references.md#default)
 - [Functions](has-references.md#functions)
-  - [defaultFunction()](has-references.md#defaultfunction)
+  - [defaultFunction](has-references.md#defaultfunction)
 
 ## References
 
@@ -1132,7 +1132,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 ## Functions
 
-### defaultFunction()
+### defaultFunction
 
 > **defaultFunction**(): \`string\`
 
@@ -1171,7 +1171,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 <a id="defaultfunction" name="defaultfunction"></a>
 
-## defaultFunction()
+## defaultFunction
 
 > **defaultFunction**(): \`string\`
 
@@ -1259,7 +1259,7 @@ Renames and re-exports [defaultFunction](index.md#defaultfunction)
 
 <a id="defaultfunction" name="defaultfunction"></a>
 
-## defaultFunction()
+## defaultFunction
 
 > **defaultFunction**(): \`string\`
 

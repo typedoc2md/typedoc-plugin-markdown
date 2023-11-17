@@ -114,15 +114,11 @@ export function getMemberTitle(reflection: DeclarationReflection) {
 
   name.push(`${escapeChars(reflection.name)}`);
 
-  if (reflection.signatures?.length) {
-    name.push('()');
-  }
-
   if (reflection.typeParameters) {
     const typeParameters = reflection.typeParameters
-      .map((typeParameter) => typeParameter.name)
+      .map((typeParameter) => backTicks(typeParameter.name))
       .join(', ');
-    name.push(`${backTicks(`<${typeParameters}>`)}`);
+    name.push(`${`\\<${typeParameters}\\>`}`);
   }
 
   md.push(name.join(''));

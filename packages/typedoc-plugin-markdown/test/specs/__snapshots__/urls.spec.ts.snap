@@ -234,6 +234,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "classes/ClassWithTypeParameters.md",
   "classes/DerivedClassA.md",
   "classes/DerivedClassB.md",
+  "classes/DisposableClass.md",
   "docs.md",
   "enumerations/BasicEnum.md",
   "enumerations/EnumWithValues.md",
@@ -269,6 +270,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/TypeWithTypeParams.md",
   "type-aliases/UnionType.md",
   "variables/objectLiteralVariable.md",
+  "variables/objectWithSymbol.md",
   "variables/stringVariable.md",
   "variables/typeOperatorVariable.md",
 ]
@@ -283,6 +285,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "classes/ClassWithTypeParameters.md",
   "classes/DerivedClassA.md",
   "classes/DerivedClassB.md",
+  "classes/DisposableClass.md",
   "enumerations/BasicEnum.md",
   "enumerations/EnumWithValues.md",
   "functions/basicFunction.md",
@@ -317,6 +320,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/TypeWithTypeParams.md",
   "type-aliases/UnionType.md",
   "variables/objectLiteralVariable.md",
+  "variables/objectWithSymbol.md",
   "variables/stringVariable.md",
   "variables/typeOperatorVariable.md",
 ]

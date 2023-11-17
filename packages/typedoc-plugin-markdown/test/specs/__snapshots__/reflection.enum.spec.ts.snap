@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Enumeration: BasicEnum
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Enumeration: BasicEnum
 
 Comments for enum
 
@@ -56,15 +60,15 @@ Comments for enum
 | :------ | :------ | :------ |
 | \`MemberA\` | \`0\` | Comments for MemberA |
 | \`MemberB\` | \`1\` | Comments for MemberB |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Enumeration: EnumWithValues
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Enumeration: EnumWithValues
 
 Comments for enum
 
@@ -115,9 +119,5 @@ Comments for enum
 | :------ | :------ |
 | \`MemberA\` | \`"UP"\` |
 | \`MemberB\` | \`"DOWN"\` |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

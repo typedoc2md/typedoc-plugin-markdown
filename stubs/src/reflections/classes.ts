@@ -142,3 +142,7 @@ export abstract class ClassWithModifiers {
    */
   static staticMethod() {}
 }
+
+export class DisposableClass implements Disposable {
+  [Symbol.dispose]() {}
+}

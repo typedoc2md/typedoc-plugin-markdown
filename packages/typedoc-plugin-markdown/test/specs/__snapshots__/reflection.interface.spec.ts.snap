@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Interface: BasicInterface
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Interface: BasicInterface
 
 Comments for BasicInterface
 
@@ -145,15 +149,15 @@ Comments for BasicInterface
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA |
 | \`propWithProps.nestedPropD\` | () => \`boolean\` | - |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Interface: ExtendedInterface
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Interface: ExtendedInterface
 
 Comments for ExtendedInterface
 
@@ -325,15 +329,15 @@ Comments for ExtendedInterface
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC | - |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA | - |
 | \`propWithProps.nestedPropD\` | () => \`boolean\` | - | - |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Interface: IndexableInterface
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Interface: IndexableInterface
 
 Comments for IndexableInterface
 
@@ -382,15 +386,15 @@ Comments for IndexableInterface
 | Property | Type | Description |
 | :------ | :------ | :------ |
 | \`prop\` | \`string\` | - |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Interface: InterfaceWithTypeParameters\`<A>\`
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Interface: InterfaceWithTypeParameters\\<\`A\`\\>
 
 Comments for InterfaceWithTypeParameters
 
@@ -423,7 +427,7 @@ exports[`Interface Reflection should compile interface with type parameters: (Ou
 
 ***
 
-# InterfaceWithTypeParameters\`<A>\`
+# InterfaceWithTypeParameters\\<\`A\`\\>
 
 Comments for InterfaceWithTypeParameters
 
@@ -443,9 +447,5 @@ Comments for InterfaceWithTypeParameters
 | Property | Type | Description |
 | :------ | :------ | :------ |
 | \`prop\` | \`A\` | Comments for prop |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

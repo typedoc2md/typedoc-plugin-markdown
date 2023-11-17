@@ -1,7 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Variable Reflection should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Variable: objectWithSymbol
+
+> **\`const\`** **objectWithSymbol**: \`object\`
+
+## Type declaration
+
+### [sym]
+
+> **[sym]**: \`string\` = \`'value'\`
+
+## Source
+
+[variables.ts:47](http://source-url)
+"
+`;
+
+exports[`Variable Reflection should compile object with symbol: (Output File Strategy "members") (Option Group "2") 1`] = `
+"typedoc-stubs • [Documentation](../index.md)
+
+***
+
+# objectWithSymbol
+
+\`\`\`ts
+const objectWithSymbol: {
+  [sym]: string;
+};
+\`\`\`
+
+## Type declaration
+
+| Member | Type | Description |
+| :------ | :------ | :------ |
+| \`[sym]\` | \`string\` | - |
+"
+`;
+
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Variable: typeOperatorVariable
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Variable: typeOperatorVariable
 
 > **\`const\`** **typeOperatorVariable**: unique \`symbol\`
 
@@ -25,15 +71,15 @@ const typeOperatorVariable: unique symbol;
 \`\`\`
 
 Comments for typeOperatorVariable
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Variable: stringVariable
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Variable: stringVariable
 
 > **\`const\`** **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
 
@@ -57,15 +103,15 @@ const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultVal
 \`\`\`
 
 A simple string variable
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;
 
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Variable: objectLiteralVariable
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+
+***
+
+# Variable: objectLiteralVariable
 
 > **\`const\`** **objectLiteralVariable**: \`object\`
 
@@ -258,9 +304,5 @@ Comments for objectLiteralVariable
 | \`valueY\` | (\`unionParam\`, \`_undercoreParam_\`) => \`string\` | - |
 | \\| | \`string\` | - |
 | \`~\` | \`string\` | - |
-
-***
-
-Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown) and [TypeDoc](https://typedoc.org/)
 "
 `;

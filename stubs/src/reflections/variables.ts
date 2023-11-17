@@ -41,3 +41,9 @@ export const objectLiteralVariable = {
   valueA: 100,
   valueB: true,
 };
+
+const sym = Symbol();
+
+export const objectWithSymbol = {
+  [sym]: 'value',
+};

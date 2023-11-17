@@ -855,6 +855,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "DerivedClassB",
         "url": "classes/DerivedClassB.md"
+      },
+      {
+        "title": "DisposableClass",
+        "url": "classes/DisposableClass.md"
       }
     ]
   },
@@ -954,6 +958,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "objectLiteralVariable",
         "url": "variables/objectLiteralVariable.md"
+      },
+      {
+        "title": "objectWithSymbol",
+        "url": "variables/objectWithSymbol.md"
       },
       {
         "title": "stringVariable",
