@@ -18,7 +18,7 @@ const sidebars = {
   typedocSidebar: [
     {
       type: 'category',
-      label: 'API',
+      label: 'DOCS 1',
       link: {
         type: 'doc',
         id: 'api/index',
@@ -27,7 +27,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'API 2',
+      label: 'DOCS 2',
       link: {
         type: 'doc',
         id: 'api-2/index',
@@ -36,12 +36,21 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'API 3',
+      label: 'DOCS 3',
       link: {
         type: 'doc',
         id: 'api-3/index',
       },
       items: require('./docs/api-3/typedoc-sidebar.cjs'),
+    },
+    {
+      type: 'category',
+      label: 'DOCS 4',
+      link: {
+        type: 'doc',
+        id: 'api-4/index',
+      },
+      items: require('./docs/api-4/typedoc-sidebar.cjs'),
     },
   ],
 };

@@ -1,4 +1,3 @@
-import * as path from 'path';
 import { DeclarationReflection, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
@@ -14,18 +13,6 @@ export function breadcrumbs(
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ): string {
   const md: string[] = [];
-
-  if (
-    page.url === page.project.url ||
-    (page.url === context.options.getValue('entryFileName') &&
-      page.url.split(path.sep).length === 1)
-  ) {
-    return '';
-  }
-
-  md.push(
-    link(escapeChars(page.project.name), context.relativeURL(page.project.url)),
-  );
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
@@ -46,5 +33,5 @@ export function breadcrumbs(
 
   md.push(pageName);
 
-  return md.length > 1 ? `${md.join(' / ')}` : '';
+  return md.length > 1 ? `${md.join('.')}` : '';
 }

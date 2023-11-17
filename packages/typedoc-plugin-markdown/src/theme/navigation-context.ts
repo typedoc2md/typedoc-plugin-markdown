@@ -1,10 +1,12 @@
 import {
   DeclarationReflection,
+  EntryPointStrategy,
   ProjectReflection,
   ReflectionCategory,
   ReflectionGroup,
   TypeDocOptions,
 } from 'typedoc';
+import { OutputFileStrategy } from '../plugin/options/custom-maps';
 import { NavigationItem } from '../theme/models';
 import { MarkdownTheme } from './theme';
 
@@ -17,23 +19,22 @@ export class NavigationContext {
   ) {}
 
   getNavigation(project: ProjectReflection): NavigationItem[] {
-    const entryFileName = this.options.entryFileName as string;
-    const hasReadme = !this.options.readme?.endsWith('none');
+    const hasReadme = Boolean(project.readme);
+    const containsOnlyModules = project?.children?.every(
+      (child) => child.hasOwnDocument,
+    );
 
     if (hasReadme) {
-      this.navigation.push({
-        title: 'Readme',
-        url: entryFileName,
-      });
-      this.navigation.push({
-        title: 'API',
-        url: project.url,
-      });
-    } else {
-      this.navigation.push({
-        title: 'API',
-        url: entryFileName,
-      });
+      if (
+        !containsOnlyModules &&
+        this.options.outputFileStrategy === OutputFileStrategy.Members &&
+        this.options.entryPointStrategy !== EntryPointStrategy.Packages
+      ) {
+        this.navigation.push({
+          title: 'Documentation',
+          url: project.url,
+        });
+      }
     }
 
     this.buildNavigationFromProject(project);
@@ -45,19 +46,43 @@ export class NavigationContext {
     project: ProjectReflection | DeclarationReflection,
   ) {
     if (project.groups?.length) {
-      if (project.groups.length === 1) {
+      const entryModule = Boolean(
+        project?.groups[0]?.children.find(
+          (child) => child.name === this.options.entryModule,
+        ),
+      );
+      if (
+        (project.groups.length === 1 && !Boolean(entryModule)) ||
+        (project.groups.length === 1 &&
+          this.options.outputFileStrategy === OutputFileStrategy.Modules)
+      ) {
         const children = this.getGroupChildren(project.groups[0]);
         if (children) {
-          this.navigation.push(...children);
+          this.navigation.push(
+            ...children.filter(
+              (child) => child.title !== this.options.entryModule,
+            ),
+          );
         }
       } else {
         project.groups?.forEach((projectGroup) => {
           const children = this.getGroupChildren(projectGroup);
+          const indexModule = projectGroup.children.find(
+            (child) => child.name === this.options.entryModule,
+          );
           if (children.length) {
             this.navigation.push({
               title: projectGroup.title,
-              children,
+              children: children.filter(
+                (child) => child.title !== this.options.entryModule,
+              ),
             });
+          }
+          if (indexModule) {
+            const children = this.getChildrenOrGroups(indexModule);
+            if (children) {
+              this.navigation.push(...children);
+            }
           }
         });
       }
@@ -94,6 +119,7 @@ export class NavigationContext {
         };
       });
     }
+
     return group.children
       ?.filter((child) => child.hasOwnDocument)
       .map((child) => {

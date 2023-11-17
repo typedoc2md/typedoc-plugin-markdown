@@ -10,20 +10,33 @@ import {
 import { OutputFileStrategy } from '../plugin/options/custom-maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
-import { NavigationItem, UrlOption } from '../theme/models';
-import { getIndexFileName, getMemberTitle, hasReadme } from './helpers';
+import { UrlOption } from '../theme/models';
+import { getMemberTitle } from './helpers';
 import { MarkdownTheme } from './theme';
 
 export class UrlsContext {
   urls: UrlMapping[] = [];
-  navigation: NavigationItem[] = [];
-
   anchors: Record<string, string[]> = {};
+  hasReadme: boolean;
+  preserveModulesPage: boolean;
+  indexFilename = 'docs.md';
 
   constructor(
     public theme: MarkdownTheme,
+    public project: ProjectReflection,
     public options: Partial<TypeDocOptions>,
-  ) {}
+  ) {
+    this.hasReadme = Boolean(this.project.readme);
+
+    this.preserveModulesPage =
+      (this.project?.groups &&
+        Boolean(
+          this.project?.groups[0]?.children.find(
+            (child) => child.name === this.options.entryModule,
+          ),
+        )) ||
+      false;
+  }
 
   /**
    * Map the models of the given project to the desired output files.
@@ -31,35 +44,49 @@ export class UrlsContext {
    *
    * @param project  The project whose urls should be generated.
    */
-  getUrls(project: ProjectReflection): UrlMapping[] {
-    const entryFileName = this.options.entryFileName as string;
-    const indexFileName = getIndexFileName(project);
-    const showIndex = !this.options.mergeReadme;
+  getUrls(): UrlMapping[] {
+    const isPackages =
+      this.options.entryPointStrategy === EntryPointStrategy.Packages &&
+      !Boolean(this.project.groups);
 
-    if (hasReadme(project)) {
-      project.url = showIndex ? indexFileName : entryFileName;
+    const entryFileName = this.options.entryFileName as string;
+
+    this.project.url = Boolean(this.project.readme)
+      ? this.indexFilename
+      : this.preserveModulesPage
+      ? this.indexFilename
+      : this.options.entryFileName;
+
+    if (Boolean(this.project.readme)) {
       this.urls.push(
-        new UrlMapping(entryFileName, project, this.theme.readmeTemplate),
+        new UrlMapping(
+          this.preserveModulesPage ? 'readme_.md' : entryFileName,
+          this.project,
+          this.theme.readmeTemplate,
+        ),
       );
-      if (showIndex) {
-        this.urls.push(
-          new UrlMapping(indexFileName, project, this.theme.projectTemplate),
-        );
-      }
-    } else {
-      project.url = entryFileName;
+
       this.urls.push(
-        new UrlMapping(entryFileName, project, this.theme.projectTemplate),
+        new UrlMapping(
+          this.indexFilename,
+          this.project,
+          this.theme.projectTemplate,
+        ),
+      );
+    } else {
+      this.urls.push(
+        new UrlMapping(
+          this.preserveModulesPage ? this.indexFilename : entryFileName,
+          this.project,
+          this.theme.projectTemplate,
+        ),
       );
     }
 
-    if (
-      this.options.entryPointStrategy === EntryPointStrategy.Packages &&
-      !Boolean(project.groups)
-    ) {
-      project.children?.forEach((projectChild) => {
+    if (isPackages) {
+      this.project.children?.forEach((projectChild) => {
         const url = `${projectChild.name}/${
-          Boolean(projectChild.readme) ? indexFileName : entryFileName
+          Boolean(projectChild.readme) ? this.indexFilename : entryFileName
         }`;
         if (projectChild.readme) {
           this.urls.push(
@@ -77,7 +104,7 @@ export class UrlsContext {
         this.buildUrlsFromProject(projectChild, url);
       });
     } else {
-      this.buildUrlsFromProject(project);
+      this.buildUrlsFromProject(this.project);
     }
     return this.urls;
   }
@@ -108,13 +135,14 @@ export class UrlsContext {
 
     if (mapping) {
       const directory = options.directory || mapping.directory;
-      const url = this.getUrl(reflection, {
+      const urlPath = this.getUrlPath(reflection, {
         ...options,
         directory,
       });
 
-      this.urls.push(new UrlMapping(url, reflection, mapping.template));
+      const url = this.getUrl(reflection, urlPath);
 
+      this.urls.push(new UrlMapping(url, reflection, mapping.template));
       reflection.url = url;
       reflection.hasOwnDocument = true;
 
@@ -122,7 +150,7 @@ export class UrlsContext {
         group.children.forEach((groupChild) => {
           const mapping = this.theme.getTemplateMapping(groupChild.kind);
           this.buildUrlsFromGroup(groupChild, {
-            parentUrl: url,
+            parentUrl: urlPath,
             directory: mapping?.directory || null,
           });
         });
@@ -132,8 +160,24 @@ export class UrlsContext {
     }
   }
 
-  getUrl(reflection: DeclarationReflection, options: UrlOption) {
-    const alias = reflection.name.replace(/^_+/, '');
+  getUrl(reflection: DeclarationReflection, urlPath: string) {
+    if (reflection.name === this.options.entryModule) {
+      return this.options.entryFileName as string;
+    }
+    if (
+      this.options.outputFileStrategy === OutputFileStrategy.Modules &&
+      reflection.name === 'index'
+    ) {
+      return `module.index.md`;
+    }
+    return urlPath;
+  }
+
+  getUrlPath(reflection: DeclarationReflection, options: UrlOption) {
+    const alias = reflection.name
+      .replace(/^_+/, '')
+      .replace(/</, '-')
+      .replace(/>/, '-');
 
     const parentDir = options.parentUrl
       ? path.dirname(options.parentUrl)
@@ -145,9 +189,6 @@ export class UrlsContext {
       }
 
       if (reflection.kind === ReflectionKind.Module) {
-        if (path.parse(this.options.entryFileName as string).name === alias) {
-          return `module.${alias}`;
-        }
         return alias;
       }
 
@@ -173,7 +214,6 @@ export class UrlsContext {
       ) {
         return path.parse(this.options.entryFileName as string).name;
       }
-
       return alias;
     };
 

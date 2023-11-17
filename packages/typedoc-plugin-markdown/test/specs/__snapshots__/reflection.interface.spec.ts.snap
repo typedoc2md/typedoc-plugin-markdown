@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ( [Readme](../README.md) \\| API )
-
-***
-
-[typedoc-stubs](../exports.md) / BasicInterface
-
-# Interface: BasicInterface
+"# Interface: BasicInterface
 
 Comments for BasicInterface
 
@@ -121,11 +115,9 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs**
+"typedoc-stubs • [Documentation](../index.md)
 
 ***
-
-[typedoc-stubs](../index.md) / BasicInterface
 
 # BasicInterface
 
@@ -161,13 +153,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ( [Readme](../README.md) \\| API )
-
-***
-
-[typedoc-stubs](../exports.md) / ExtendedInterface
-
-# Interface: ExtendedInterface
+"# Interface: ExtendedInterface
 
 Comments for ExtendedInterface
 
@@ -308,11 +294,9 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs**
+"typedoc-stubs • [Documentation](../index.md)
 
 ***
-
-[typedoc-stubs](../index.md) / ExtendedInterface
 
 # ExtendedInterface
 
@@ -349,13 +333,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ( [Readme](../README.md) \\| API )
-
-***
-
-[typedoc-stubs](../exports.md) / IndexableInterface
-
-# Interface: IndexableInterface
+"# Interface: IndexableInterface
 
 Comments for IndexableInterface
 
@@ -382,11 +360,9 @@ Comments for IndexableInterface
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs**
+"typedoc-stubs • [Documentation](../index.md)
 
 ***
-
-[typedoc-stubs](../index.md) / IndexableInterface
 
 # IndexableInterface
 
@@ -414,13 +390,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ( [Readme](../README.md) \\| API )
-
-***
-
-[typedoc-stubs](../exports.md) / InterfaceWithTypeParameters
-
-# Interface: InterfaceWithTypeParameters\`<A>\`
+"# Interface: InterfaceWithTypeParameters\`<A>\`
 
 Comments for InterfaceWithTypeParameters
 
@@ -449,11 +419,9 @@ Comments for prop
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs**
+"typedoc-stubs • [Documentation](../index.md)
 
 ***
-
-[typedoc-stubs](../index.md) / InterfaceWithTypeParameters
 
 # InterfaceWithTypeParameters\`<A>\`
 

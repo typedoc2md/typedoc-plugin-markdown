@@ -36,7 +36,12 @@ function getNavigationItem(
     return {
       type: 'category',
       label: navigationItem.title,
-      items: getSidebar(navigationItem.children, basePath, filteredIds),
+      items: getSidebar(
+        navigationItem.children,
+        basePath,
+        filteredIds,
+        numberPrefixParser,
+      ),
       ...(id && { link: { type: 'doc', id } }),
     };
   }

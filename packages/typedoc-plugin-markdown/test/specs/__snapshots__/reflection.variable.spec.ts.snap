@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ( [Readme](../README.md) \\| API )
-
-***
-
-[typedoc-stubs](../exports.md) / typeOperatorVariable
-
-# Variable: typeOperatorVariable
+"# Variable: typeOperatorVariable
 
 > **\`const\`** **typeOperatorVariable**: unique \`symbol\`
 
@@ -20,11 +14,9 @@ Comments for typeOperatorVariable
 `;
 
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs**
+"typedoc-stubs • [Documentation](../index.md)
 
 ***
-
-[typedoc-stubs](../index.md) / typeOperatorVariable
 
 # typeOperatorVariable
 
@@ -41,13 +33,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ( [Readme](../README.md) \\| API )
-
-***
-
-[typedoc-stubs](../exports.md) / stringVariable
-
-# Variable: stringVariable
+"# Variable: stringVariable
 
 > **\`const\`** **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
 
@@ -60,11 +46,9 @@ A simple string variable
 `;
 
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs**
+"typedoc-stubs • [Documentation](../index.md)
 
 ***
-
-[typedoc-stubs](../index.md) / stringVariable
 
 # stringVariable
 
@@ -81,13 +65,7 @@ Generated using [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-
 `;
 
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** ( [Readme](../README.md) \\| API )
-
-***
-
-[typedoc-stubs](../exports.md) / objectLiteralVariable
-
-# Variable: objectLiteralVariable
+"# Variable: objectLiteralVariable
 
 > **\`const\`** **objectLiteralVariable**: \`object\`
 
@@ -217,11 +195,9 @@ Comments for objectLiteralVariable
 `;
 
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs**
+"typedoc-stubs • [Documentation](../index.md)
 
 ***
-
-[typedoc-stubs](../index.md) / objectLiteralVariable
 
 # objectLiteralVariable
 

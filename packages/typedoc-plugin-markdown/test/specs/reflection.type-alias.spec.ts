@@ -1,7 +1,7 @@
 import {
   FixtureOutputDir,
   FixtureOutputFileStrategy,
-} from '../__utils__/config';
+} from '../__utils__/fixture-config';
 import { expectFileToEqual } from '../__utils__/helpers';
 
 describe(`Type Alias Reflection`, () => {

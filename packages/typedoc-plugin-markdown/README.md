@@ -1,6 +1,6 @@
 # typedoc-plugin-markdown
 
-![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown%2Fnext?&logo=npm) [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=next)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
+![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown%2Fnext?\&logo=npm) [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=next)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
 > **Please note this pre-release version may contain breaking changes within the same semantic version.**
 
@@ -8,12 +8,12 @@ A plugin for [TypeDoc](https://typedoc.org) that renders TypeScript API document
 
 ## Contents
 
-- [What does it do?](#what-does-it-do)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Options](#options)
-- [Contributing](#contributing)
-- [License](#license)
+* [What does it do?](#what-does-it-do)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Options](#options)
+* [Contributing](#contributing)
+* [License](#license)
 
 ## What does it do?
 
@@ -55,37 +55,37 @@ This plugin exposes several additional options. Please see [Plugin Options](./do
 
 Options that configure how files are generated.
 
-- [`--outputFileStrategy`](./docs/plugin-options.md#--outputfilestrategy)
-- [`--membersWithOwnFile`](./docs/plugin-options.md#--memberswithownfile)
-- [`--entryFileName`](./docs/plugin-options.md#--entryfilename)
-- [`--mergeReadme`](./docs/plugin-options.md#--mergereadme)
+* [`--outputFileStrategy`](./docs/plugin-options.md#--outputfilestrategy)
+* [`--membersWithOwnFile`](./docs/plugin-options.md#--memberswithownfile)
+* [`--entryFileName`](./docs/plugin-options.md#--entryfilename)
+* [`--entryModule`](./docs/plugin-options.md#--entrymodule)
 
 #### Structure and formatting options
 
 Options that alter the format and structure of pages.
 
-- [`--hidePageHeader`](./docs/plugin-options.md#--hidepageheader)
-- [`--hidePageTitle`](./docs/plugin-options.md#--hidepagetitle)
-- [`--hideBreadcrumbs`](./docs/plugin-options.md#--hidebreadcrumbs)
-- [`--hideInPageTOC`](./docs/plugin-options.md#--hideinpagetoc)
-- [`--indexPageTitle`](./docs/plugin-options.md#--indexpagetitle)
-- [`--memberPageTitle`](./docs/plugin-options.md#--memberpagetitle)
-- [`--excludeGroups`](./docs/plugin-options.md#--excludegroups)
-- [`--useCodeBlocks`](./docs/plugin-options.md#--usecodeblocks)
-- [`--expandObjects`](./docs/plugin-options.md#--expandobjects)
-- [`--parametersFormat`](./docs/plugin-options.md#--parametersformat)
-- [`--propertiesFormat`](./docs/plugin-options.md#--propertiesformat)
-- [`--enumMembersFormat`](./docs/plugin-options.md#--enummembersformat)
-- [`--typeDeclarationFormat`](./docs/plugin-options.md#--typedeclarationformat)
-- [`--indexFormat`](./docs/plugin-options.md#--indexformat)
+* [`--hidePageHeader`](./docs/plugin-options.md#--hidepageheader)
+* [`--hidePageTitle`](./docs/plugin-options.md#--hidepagetitle)
+* [`--hideBreadcrumbs`](./docs/plugin-options.md#--hidebreadcrumbs)
+* [`--hideInPageTOC`](./docs/plugin-options.md#--hideinpagetoc)
+* [`--indexPageTitle`](./docs/plugin-options.md#--indexpagetitle)
+* [`--memberPageTitle`](./docs/plugin-options.md#--memberpagetitle)
+* [`--excludeGroups`](./docs/plugin-options.md#--excludegroups)
+* [`--useCodeBlocks`](./docs/plugin-options.md#--usecodeblocks)
+* [`--expandObjects`](./docs/plugin-options.md#--expandobjects)
+* [`--parametersFormat`](./docs/plugin-options.md#--parametersformat)
+* [`--propertiesFormat`](./docs/plugin-options.md#--propertiesformat)
+* [`--enumMembersFormat`](./docs/plugin-options.md#--enummembersformat)
+* [`--typeDeclarationFormat`](./docs/plugin-options.md#--typedeclarationformat)
+* [`--indexFormat`](./docs/plugin-options.md#--indexformat)
 
 #### Utility options
 
 Options that configure additional functionality.
 
-- [`--preserveAnchorCasing`](./docs/plugin-options.md#--preserveanchorcasing)
-- [`--anchorPrefix`](./docs/plugin-options.md#--anchorprefix)
-- [`--namedAnchors`](./docs/plugin-options.md#--namedanchors)
+* [`--preserveAnchorCasing`](./docs/plugin-options.md#--preserveanchorcasing)
+* [`--anchorPrefix`](./docs/plugin-options.md#--anchorprefix)
+* [`--namedAnchors`](./docs/plugin-options.md#--namedanchors)
 
 ## Contributing
 

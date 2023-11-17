@@ -11,47 +11,15 @@ import {
  *
  * This options aims to provide some flexibility as to how files can be generated.
  *
- * **`--outputFileStrategy members`**
+ * **`members`**
  *
  * Generates an individual file for each exported member. This is the standard behaviour of the HTML theme and the plugin default.
  *
- * In this example output folder structure modules `module-a` and `module-b` export two classes and variables each:
+ * It is also possible to further refine what members are exported to individual files with the [`--membersWithOwnFile`](#membersWithOwnFile) option.
  *
- * ```
- * ├── README.md
- * ├── API.md
- * ├── module-a
- * ├── ├── README.md
- * │   ├── classes
- * │   │   ├── ClassA.md
- * │   │   ├── ClassB.md
- * ├── ├── variables
- * │   │   ├── VariableA.md
- * │   │   ├── VariableB.md
- * ├── module-b
- * ├── ├── README.md
- * │   ├── classes
- * │   │   ├── ClassA.md
- * │   │   ├── ClassB.md
- * ├── ├── variables
- * │   │   ├── VariableA.md
- * │   │   ├── VariableB.md
- * ```
- *
- * When `members` is set, it is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#membersWithOwnFile) option.
- *
- * **`--outputFileStrategy modules`**
+ * **`modules`**
  *
  * Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
- *
- * The above example will output the following folder structure:
- *
- * ```
- * ├── README.md
- * ├── API.md
- * ├── module-a.md
- * ├── module-b.md
- * ```
  *
  * @category fileOutput
  */
@@ -94,24 +62,15 @@ export const membersWithOwnFile: DeclarationOption = {
 };
 
 /**
- * The entry page in this context is the reference to the file that acts as a root page for a project and it's folders, equivalent to `index.html` for web pages.
+ * The entry page in this context is the reference to the file that acts as a root page for the documentation, equivalent to `index.html` for web pages.
  *
- * `README.md` is recognised when browsing folders on repos and Wikis. `index.md` might be better if published as a web site.
+ * `index.md` is the default, however `README.md` is recognised when browsing folders on repos and Wikis.
  *
- * The content of this file at the root of the project is conditional on if a readme file is resolved for the project.
+ * The content of this file is one of the following:
  *
- * A. If a readme file is resolved then two root files are generated:
- *
- * ```
- * ├── README.md - (the project readme file)
- * ├── API.md - (API index page)
- * ```
- *
- * B. If a readme file is NOT resolved (when `readme` = `none`), then the index page becomes the `entryFileName` page and there is no seperate index page.
- *
- * ```
- * ├── README.md - (API index page)
- * ```
+ * a) The [`--entryModule`](#--entrymodule) (if set).
+ * b) The resolved Readme file.
+ * c) The documentation index page (if readme = none).
  *
  * @category fileOutput
  *
@@ -120,23 +79,20 @@ export const entryFileName: DeclarationOption = {
   name: 'entryFileName',
   help: 'The file name of the entry page.',
   type: ParameterType.String,
-  defaultValue: 'README.md',
+  defaultValue: 'index.md',
 };
 
 /**
- * By default when a readme file is resolved, a seperate index page is created. This option prepends the readme file into the index page creating a single documentation entrypoint.
+ * If set the name of the file will be determined by the value of [`--entryFileName`](#--entryfilename).
  *
- * - This option is ignored when `readme` is set to `none`.
- * - `--indexPageTitle` is ignored.
+ * This is only applicable when multiple modules are resolved.
  *
  * @category fileOutput
- *
  */
-export const mergeReadme: DeclarationOption = {
-  name: 'mergeReadme',
-  help: 'Merges the resolved readme into the project index page.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
+export const entryModule: DeclarationOption = {
+  name: 'entryModule',
+  help: 'The name of a module that should act as the root page for documentation.',
+  type: ParameterType.String,
 };
 
 /**

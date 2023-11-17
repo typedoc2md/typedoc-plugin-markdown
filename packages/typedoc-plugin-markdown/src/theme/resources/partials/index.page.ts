@@ -1,10 +1,5 @@
 import * as path from 'path';
-import {
-  DeclarationReflection,
-  PageEvent,
-  ProjectReflection,
-  ReflectionKind,
-} from 'typedoc';
+import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { heading } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
@@ -36,21 +31,7 @@ export function pageIndex(
   }
 
   if (hasIndex(page.model)) {
-    const isModules = page.project.children?.every((child) =>
-      child.kindOf(ReflectionKind.Module),
-    );
-
-    if (!isModules) {
-      md.push(heading(2, 'Exports'));
-    }
-
-    md.push(
-      context.reflectionIndex(
-        page.model,
-        false,
-        isModules ? headingLevel : headingLevel + 1,
-      ),
-    );
+    md.push(context.reflectionIndex(page.model, false, headingLevel));
     return md.join('\n\n');
   }
 

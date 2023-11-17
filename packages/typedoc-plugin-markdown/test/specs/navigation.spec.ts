@@ -1,7 +1,7 @@
 import {
   FixtureOutputDir,
   FixtureOutputFileStrategy,
-} from '../__utils__/config';
+} from '../__utils__/fixture-config';
 import { expectFileToEqual } from '../__utils__/helpers';
 
 describe(`Navigation`, () => {
@@ -28,6 +28,14 @@ describe(`Navigation`, () => {
       [FixtureOutputFileStrategy.Members, FixtureOutputFileStrategy.Modules],
       'sidebar.json',
       1,
+    );
+  });
+
+  test(`should gets Navigation Json for entry modules`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.EntryFiles,
+      [FixtureOutputFileStrategy.Members, FixtureOutputFileStrategy.Modules],
+      'sidebar.json',
     );
   });
 });

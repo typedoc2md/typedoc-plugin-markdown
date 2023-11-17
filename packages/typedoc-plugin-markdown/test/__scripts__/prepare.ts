@@ -6,14 +6,23 @@ import {
   FixtureEntryPoints,
   FixtureOutputDir,
   FixtureOutputFileStrategy,
-} from '../__utils__/config';
+} from '../__utils__/fixture-config';
 import { Fixture } from '../__utils__/models';
 
 const spawn = require('cross-spawn');
 
 const timeStart = new Date().getTime();
 
-const fixtureCount = FIXTURES.reduce(
+const only: FixtureOutputDir[] = [];
+
+const fixturesToRun = FIXTURES.filter((fixture) => {
+  if (only.length) {
+    return only.includes(fixture.outDir);
+  }
+  return true;
+});
+
+const fixtureCount = fixturesToRun.reduce(
   (prev, curr) => prev + curr.options.length * 2,
   0,
 );
@@ -30,7 +39,7 @@ spawn.sync('tsc', {
 });
 
 // write fixtures
-FIXTURES.forEach((fixture) => {
+fixturesToRun.forEach((fixture) => {
   writeHtml(fixture.entryPoints, fixture.outDir);
   [
     FixtureOutputFileStrategy.Members,
@@ -70,7 +79,7 @@ function writeMarkdown(
         '-logLevel',
         'Warn',
         '-entryPoints',
-        `../../stubs/${entryPoints}`,
+        [`../../stubs/${entryPoints}`],
         '-out',
         `./test/out/${fullPath}`,
       ],
@@ -95,6 +104,8 @@ export function writeHtml(
         `../../stubs/typedoc.cjs`,
         '-logLevel',
         'Warn',
+        '--readme',
+        'none',
         '--includeVersion',
         '-entryPoints',
         `../../stubs/${entryPoints}`,

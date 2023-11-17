@@ -12,10 +12,6 @@ class CustomTheme extends MarkdownTheme {
 }
 
 class ThemeRenderContext extends MarkdownThemeRenderContext {
-  override header = () => {
-    return 'CUSTOM_PAGE_HEADER';
-  };
-
   override footer = () => {
     return 'CUSTOM FOOTER HERE';
   };

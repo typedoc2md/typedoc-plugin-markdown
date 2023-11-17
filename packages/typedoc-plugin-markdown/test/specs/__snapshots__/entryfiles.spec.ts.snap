@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EntryFiles should get entry module: (Output File Strategy "members") (Option Group "1") 1`] = `
+"typedoc-stubs • [Readme](readme_.md) \\| [Documentation](docs.md)
+
+***
+
+# entry-module
+
+## Index
+
+### Classes
+
+- [ModuleClass](entry-module/classes/ModuleClass.md)
+"
+`;
+
+exports[`EntryFiles should get entry module: (Output File Strategy "members") (Option Group "2") 1`] = `
+"typedoc-stubs • [Documentation](docs.md)
+
+***
+
+# entry-module
+
+## Index
+
+### Classes
+
+- [ModuleClass](entry-module/classes/ModuleClass.md)
+"
+`;
+
+exports[`EntryFiles should get readme file: (Output File Strategy "members") (Option Group "1") 1`] = `
+"typedoc-stubs • [Readme](readme_.md) \\| [Documentation](docs.md)
+
+***
+
+# MY README
+
+> Some block quote
+
+Some text.
+
+## Readme heading
+
+Some text.
+"
+`;

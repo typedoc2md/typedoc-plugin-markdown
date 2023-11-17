@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](../README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](../index.md) \\| [Documentation](../docs.md)
 
 ***
-
-[typedoc-stubs](../modules.md) / basic
 
 # basic
 
@@ -36,7 +34,11 @@ A basic module
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# basic
+"typedoc-stubs • [Documentation](../index.md)
+
+***
+
+# basic
 
 A basic module
 
@@ -80,11 +82,9 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](index.md) \\| [Documentation](docs.md)
 
 ***
-
-[typedoc-stubs](modules.md) / basic
 
 # basic
 
@@ -174,7 +174,11 @@ A basic module
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# basic
+"typedoc-stubs • [Documentation](index.md)
+
+***
+
+# basic
 
 A basic module
 
@@ -271,11 +275,9 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](index.md) \\| [Documentation](docs.md)
 
 ***
-
-[typedoc-stubs](modules.md) / has-categories
 
 # has-categories
 
@@ -339,7 +341,11 @@ A module that contains categories
 `;
 
 exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# has-categories
+"typedoc-stubs • [Documentation](index.md)
+
+***
+
+# has-categories
 
 A module that contains categories
 
@@ -408,11 +414,9 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](../README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](../index.md) \\| [Documentation](../docs.md)
 
 ***
-
-[typedoc-stubs](../modules.md) / has-categories
 
 # has-categories
 
@@ -455,7 +459,11 @@ A module that contains categories
 `;
 
 exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# has-categories
+"typedoc-stubs • [Documentation](../index.md)
+
+***
+
+# has-categories
 
 A module that contains categories
 
@@ -491,7 +499,7 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](index.md) \\| [Documentation](docs.md)
 
 ***
 
@@ -499,37 +507,41 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 ## Modules
 
-- [42-module-name](42-module-name/README.md)
-- [\\<internal\\>](%3Cinternal%3E/README.md)
-- [basic](basic/README.md)
-- [has-categories](has-categories/README.md)
-- [has-namespaces](has-namespaces/README.md)
-- [has-references](has-references/README.md)
-- [index](index/README.md)
+- [42-module-name](42-module-name/index.md)
+- [\\<internal\\>](-internal-/index.md)
+- [basic](basic/index.md)
+- [has-categories](has-categories/index.md)
+- [has-namespaces](has-namespaces/index.md)
+- [has-references](has-references/index.md)
+- [index](index/index.md)
 "
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# typedoc-stubs
+"typedoc-stubs • [Documentation](index.md)
+
+***
+
+# typedoc-stubs
 
 ## Modules
 
 | Module | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name/index.md) | - |
-| [\\<internal\\>](%3Cinternal%3E/index.md) | - |
+| [\\<internal\\>](-internal-/index.md) | - |
 | [basic](basic/index.md) | A basic module |
 | [has-categories](has-categories/index.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references/index.md) | A module that contains references |
-| [index](module.index/index.md) | A module named index |
+| [index](index/index.md) | A module named index |
 
 CUSTOM FOOTER HERE
 "
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](index.md) \\| [Documentation](docs.md)
 
 ***
 
@@ -538,24 +550,28 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 ## Modules
 
 - [42-module-name](42-module-name.md)
-- [\\<internal\\>](%3Cinternal%3E.md)
+- [\\<internal\\>](-internal-.md)
 - [basic](basic.md)
 - [has-categories](has-categories.md)
-- [has-namespaces](has-namespaces/README.md)
+- [has-namespaces](has-namespaces/index.md)
 - [has-references](has-references.md)
-- [index](index.md)
+- [index](module.index.md)
 "
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# typedoc-stubs
+"typedoc-stubs • [Documentation](index.md)
+
+***
+
+# typedoc-stubs
 
 ## Modules
 
 | Module | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name.md) | - |
-| [\\<internal\\>](%3Cinternal%3E.md) | - |
+| [\\<internal\\>](-internal-.md) | - |
 | [basic](basic.md) | A basic module |
 | [has-categories](has-categories.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
@@ -567,19 +583,19 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](../../../README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](../../../index.md) \\| [Documentation](../../../docs.md)
 
 ***
 
-[typedoc-stubs](../../../modules.md) / [has-namespaces](../../README.md) / \\_Namespace\\_A\\_
-
 # Namespace: \\_Namespace\\_A\\_
+
+[has-namespaces](../../index.md).\\_Namespace\\_A\\_
 
 ## Index
 
 ### Namespaces
 
-- [NestedNamespace](namespaces/NestedNamespace/README.md)
+- [NestedNamespace](namespaces/NestedNamespace/index.md)
 
 ### Interfaces
 
@@ -588,7 +604,13 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# Namespace: \\_Namespace\\_A\\_
+"typedoc-stubs • [Documentation](../../../index.md)
+
+***
+
+# Namespace: \\_Namespace\\_A\\_
+
+[has-namespaces](../../index.md).\\_Namespace\\_A\\_
 
 ## Index
 
@@ -609,19 +631,19 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](../../../README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](../../../index.md) \\| [Documentation](../../../docs.md)
 
 ***
 
-[typedoc-stubs](../../../modules.md) / [has-namespaces](../../README.md) / \\_Namespace\\_A\\_
-
 # Namespace: \\_Namespace\\_A\\_
+
+[has-namespaces](../../index.md).\\_Namespace\\_A\\_
 
 ## Contents
 
-- [Namespaces](README.md#namespaces)
-- [Interfaces](README.md#interfaces)
-  - [NamespaceInterface](README.md#namespaceinterface)
+- [Namespaces](index.md#namespaces)
+- [Interfaces](index.md#interfaces)
+  - [NamespaceInterface](index.md#namespaceinterface)
 
 ## Namespaces
 
@@ -634,7 +656,13 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# Namespace: \\_Namespace\\_A\\_
+"typedoc-stubs • [Documentation](../../../index.md)
+
+***
+
+# Namespace: \\_Namespace\\_A\\_
+
+[has-namespaces](../../index.md).\\_Namespace\\_A\\_
 
 ## Namespaces
 
@@ -651,11 +679,9 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](../README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](../index.md) \\| [Documentation](../docs.md)
 
 ***
-
-[typedoc-stubs](../modules.md) / has-namespaces
 
 # has-namespaces
 
@@ -665,8 +691,8 @@ A module that contains namespaces
 
 ### Namespaces
 
-- [NamespaceB](namespaces/NamespaceB/README.md)
-- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/README.md)
+- [NamespaceB](namespaces/NamespaceB/index.md)
+- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md)
 
 ### Enumerations
 
@@ -701,7 +727,11 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# has-namespaces
+"typedoc-stubs • [Documentation](../index.md)
+
+***
+
+# has-namespaces
 
 A module that contains namespaces
 
@@ -792,11 +822,9 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](../README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](../index.md) \\| [Documentation](../docs.md)
 
 ***
-
-[typedoc-stubs](../modules.md) / has-namespaces
 
 # has-namespaces
 
@@ -804,30 +832,30 @@ A module that contains namespaces
 
 ## Contents
 
-- [Namespaces](README.md#namespaces)
-- [Enumerations](README.md#enumerations)
-  - [EnumB](README.md#enumb)
-  - [\\_Enum\\_A\\_](README.md#enum-a)
-- [Classes](README.md#classes)
-  - [ClassB](README.md#classb)
-  - [\\_\\_Class\\_A\\_](README.md#class-a)
-- [Interfaces](README.md#interfaces)
-  - [InterfaceB](README.md#interfaceb)
-  - [\\_Interface\\_A\\_](README.md#interface-a)
-- [Type Aliases](README.md#type-aliases)
-  - [TypeB](README.md#typeb)
-  - [\\_Type\\_A\\_](README.md#type-a)
-- [Variables](README.md#variables)
-  - [\\_variable\\_A\\_](README.md#variable-a)
-  - [variableB](README.md#variableb)
-- [Functions](README.md#functions)
-  - [\\_function\\_A\\_()](README.md#function-a)
-  - [functionB()](README.md#functionb)
+- [Namespaces](index.md#namespaces)
+- [Enumerations](index.md#enumerations)
+  - [EnumB](index.md#enumb)
+  - [\\_Enum\\_A\\_](index.md#enum-a)
+- [Classes](index.md#classes)
+  - [ClassB](index.md#classb)
+  - [\\_\\_Class\\_A\\_](index.md#class-a)
+- [Interfaces](index.md#interfaces)
+  - [InterfaceB](index.md#interfaceb)
+  - [\\_Interface\\_A\\_](index.md#interface-a)
+- [Type Aliases](index.md#type-aliases)
+  - [TypeB](index.md#typeb)
+  - [\\_Type\\_A\\_](index.md#type-a)
+- [Variables](index.md#variables)
+  - [\\_variable\\_A\\_](index.md#variable-a)
+  - [variableB](index.md#variableb)
+- [Functions](index.md#functions)
+  - [\\_function\\_A\\_()](index.md#function-a)
+  - [functionB()](index.md#functionb)
 
 ## Namespaces
 
 - [NamespaceB](namespaces/NamespaceB.md)
-- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/README.md)
+- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md)
 
 ## Enumerations
 
@@ -845,11 +873,11 @@ A module that contains namespaces
 
 ##### new ClassB()
 
-> **new ClassB**(): [\`ClassB\`](README.md#classb)
+> **new ClassB**(): [\`ClassB\`](index.md#classb)
 
 ###### Returns
 
-[\`ClassB\`](README.md#classb)
+[\`ClassB\`](index.md#classb)
 
 ***
 
@@ -859,11 +887,11 @@ A module that contains namespaces
 
 ##### new \\_\\_Class\\_A\\_()
 
-> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](README.md#class-a)
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#class-a)
 
 ###### Returns
 
-[\`__Class_A_\`](README.md#class-a)
+[\`__Class_A_\`](index.md#class-a)
 
 ## Interfaces
 
@@ -920,7 +948,11 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# has-namespaces
+"typedoc-stubs • [Documentation](../index.md)
+
+***
+
+# has-namespaces
 
 A module that contains namespaces
 
@@ -1050,7 +1082,7 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile readme for a project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( Readme \\| [API](modules.md) )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](index.md) \\| [Documentation](docs.md)
 
 ***
 
@@ -1067,11 +1099,9 @@ Some text.
 `;
 
 exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](index.md) \\| [Documentation](docs.md)
 
 ***
-
-[typedoc-stubs](modules.md) / has-references
 
 # has-references
 
@@ -1113,7 +1143,11 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 `;
 
 exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# has-references
+"typedoc-stubs • [Documentation](index.md)
+
+***
+
+# has-references
 
 A module that contains references
 
@@ -1150,11 +1184,9 @@ CUSTOM FOOTER HERE
 `;
 
 exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs - v0.0**](http://www.google.com) ( [Readme](../README.md) \\| API )
+"[typedoc-stubs - v0.0](http://www.google.com) • [Readme](../index.md) \\| [Documentation](../docs.md)
 
 ***
-
-[typedoc-stubs](../modules.md) / has-references
 
 # has-references
 
@@ -1162,11 +1194,11 @@ A module that contains references
 
 ## Contents
 
-- [Functions](README.md#functions)
-- [References](README.md#references)
-  - [InterfaceA](README.md#interfacea)
-  - [RenamedInterfaceB](README.md#renamedinterfaceb)
-  - [default](README.md#default)
+- [Functions](index.md#functions)
+- [References](index.md#references)
+  - [InterfaceA](index.md#interfacea)
+  - [RenamedInterfaceB](index.md#renamedinterfaceb)
+  - [default](index.md#default)
 
 ## Functions
 
@@ -1193,7 +1225,11 @@ Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 `;
 
 exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# has-references
+"typedoc-stubs • [Documentation](../index.md)
+
+***
+
+# has-references
 
 A module that contains references
 

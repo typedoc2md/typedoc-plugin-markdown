@@ -1,59 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Urls should gets Urls for entry module: outputFileStrategy: members 1`] = `
+[
+  "README.md",
+  "docs.md",
+  "entry-module/classes/ModuleClass.md",
+  "module-1/README.md",
+  "module-1/classes/ModuleClass.md",
+  "module-2/README.md",
+  "module-2/classes/ModuleClass.md",
+  "readme_.md",
+]
+`;
+
+exports[`Urls should gets Urls for entry module: outputFileStrategy: members 2`] = `
+[
+  "docs.md",
+  "entry-module/classes/ModuleClass.md",
+  "index.md",
+  "module-1/classes/ModuleClass.md",
+  "module-1/index.md",
+  "module-2/classes/ModuleClass.md",
+  "module-2/index.md",
+]
+`;
+
+exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 1`] = `
+[
+  "README.md",
+  "docs.md",
+  "module-1.md",
+  "module-2.md",
+  "readme_.md",
+]
+`;
+
+exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 2`] = `
+[
+  "docs.md",
+  "index.md",
+  "module-1.md",
+  "module-2.md",
+]
+`;
+
 exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: members 1`] = `
 [
-  "42-module-name/README.md",
-  "<internal>/README.md",
-  "README.md",
-  "basic/README.md",
+  "-internal-/index.md",
+  "42-module-name/index.md",
   "basic/classes/ClassA.md",
   "basic/classes/ClassB.md",
   "basic/enumerations/EnumA.md",
   "basic/enumerations/EnumB.md",
+  "basic/index.md",
   "basic/interfaces/InterfaceA.md",
   "basic/interfaces/InterfaceB.md",
   "basic/type-aliases/TypeA.md",
   "basic/type-aliases/TypeB.md",
-  "has-categories/README.md",
+  "docs.md",
   "has-categories/enumerations/CategoryAEnum1.md",
   "has-categories/enumerations/CategoryAEnum2.md",
   "has-categories/enumerations/CategoryBEnum1.md",
   "has-categories/enumerations/CategoryBEnum2.md",
   "has-categories/enumerations/UnCategorizedEnum.md",
+  "has-categories/index.md",
   "has-categories/interfaces/CategoryAInterface1.md",
   "has-categories/interfaces/CategoryAInterface2.md",
   "has-categories/interfaces/CategoryBInterface1.md",
   "has-categories/interfaces/CategoryBInterface2.md",
   "has-categories/interfaces/UnCategorizedInterace.md",
-  "has-namespaces/README.md",
   "has-namespaces/classes/ClassB.md",
   "has-namespaces/classes/Class_A_.md",
   "has-namespaces/enumerations/EnumB.md",
   "has-namespaces/enumerations/Enum_A_.md",
   "has-namespaces/functions/functionB.md",
   "has-namespaces/functions/function_A_.md",
+  "has-namespaces/index.md",
   "has-namespaces/interfaces/InterfaceB.md",
   "has-namespaces/interfaces/Interface_A_.md",
-  "has-namespaces/namespaces/NamespaceB/README.md",
-  "has-namespaces/namespaces/Namespace_A_/README.md",
+  "has-namespaces/namespaces/NamespaceB/index.md",
+  "has-namespaces/namespaces/Namespace_A_/index.md",
   "has-namespaces/namespaces/Namespace_A_/interfaces/NamespaceInterface.md",
-  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/README.md",
+  "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/index.md",
   "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/interfaces/NamespaceInterface.md",
   "has-namespaces/type-aliases/TypeB.md",
   "has-namespaces/type-aliases/Type_A_.md",
   "has-namespaces/variables/variableB.md",
   "has-namespaces/variables/variable_A_.md",
-  "has-references/README.md",
   "has-references/functions/defaultFunction.md",
-  "index/README.md",
-  "modules.md",
+  "has-references/index.md",
+  "index/classes/SomeClass.md",
+  "index/index.md",
+  "index.md",
 ]
 `;
 
 exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: members 2`] = `
 [
+  "-internal-/index.md",
   "42-module-name/index.md",
-  "<internal>/index.md",
   "basic/classes/ClassA.md",
   "basic/classes/ClassB.md",
   "basic/enumerations/EnumA.md",
@@ -85,32 +130,33 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
   "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/index.md",
   "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/interfaces/NamespaceInterface.md",
   "has-references/index.md",
+  "index/classes/SomeClass.md",
+  "index/index.md",
   "index.md",
-  "module.index/index.md",
 ]
 `;
 
 exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: modules 1`] = `
 [
+  "-internal-.md",
   "42-module-name.md",
-  "<internal>.md",
-  "README.md",
   "basic.md",
+  "docs.md",
   "has-categories.md",
-  "has-namespaces/README.md",
+  "has-namespaces/index.md",
   "has-namespaces/namespaces/NamespaceB.md",
-  "has-namespaces/namespaces/Namespace_A_/README.md",
+  "has-namespaces/namespaces/Namespace_A_/index.md",
   "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace.md",
   "has-references.md",
   "index.md",
-  "modules.md",
+  "module.index.md",
 ]
 `;
 
 exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: modules 2`] = `
 [
+  "-internal-.md",
   "42-module-name.md",
-  "<internal>.md",
   "basic.md",
   "has-categories.md",
   "has-namespaces/index.md",
@@ -125,53 +171,62 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 1`] = `
 [
-  "README.md",
-  "modules.md",
-  "package-1/README.md",
+  "docs.md",
+  "index.md",
+  "package-1/docs.md",
+  "package-1/index.md",
   "package-1/interfaces/PackageInterface.md",
-  "package-1/modules.md",
-  "package-2/README.md",
-  "package-2/interfaces/PackageInterface.md",
-  "package-2/modules.md",
+  "package-2/docs.md",
+  "package-2/index.md",
+  "package-2/module-1/index.md",
+  "package-2/module-1/interfaces/PackageInterface1.md",
+  "package-2/module-2/index.md",
+  "package-2/module-2/interfaces/PackageInterface2.md",
 ]
 `;
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 2`] = `
 [
-  "README.md",
-  "package-1/README.md",
+  "index.md",
+  "package-1/docs.md",
+  "package-1/index.md",
   "package-1/interfaces/PackageInterface.md",
-  "package-1/modules.md",
-  "package-2/README.md",
-  "package-2/interfaces/PackageInterface.md",
-  "package-2/modules.md",
+  "package-2/docs.md",
+  "package-2/index.md",
+  "package-2/module-1/index.md",
+  "package-2/module-1/interfaces/PackageInterface1.md",
+  "package-2/module-2/index.md",
+  "package-2/module-2/interfaces/PackageInterface2.md",
 ]
 `;
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 1`] = `
 [
-  "README.md",
-  "modules.md",
-  "package-1/README.md",
-  "package-1/modules.md",
-  "package-2/README.md",
-  "package-2/modules.md",
+  "docs.md",
+  "index.md",
+  "package-1/docs.md",
+  "package-1/index.md",
+  "package-2/docs.md",
+  "package-2/index.md",
+  "package-2/module-1.md",
+  "package-2/module-2.md",
 ]
 `;
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 2`] = `
 [
-  "README.md",
-  "package-1/README.md",
-  "package-1/modules.md",
-  "package-2/README.md",
-  "package-2/modules.md",
+  "index.md",
+  "package-1/docs.md",
+  "package-1/index.md",
+  "package-2/docs.md",
+  "package-2/index.md",
+  "package-2/module-1.md",
+  "package-2/module-2.md",
 ]
 `;
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 1`] = `
 [
-  "README.md",
   "classes/AbstractClass.md",
   "classes/ClassWithAccessors.md",
   "classes/ClassWithConstructorOverloads.md",
@@ -179,9 +234,9 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "classes/ClassWithTypeParameters.md",
   "classes/DerivedClassA.md",
   "classes/DerivedClassB.md",
+  "docs.md",
   "enumerations/BasicEnum.md",
   "enumerations/EnumWithValues.md",
-  "exports.md",
   "functions/basicFunction.md",
   "functions/functionReturningAFunction.md",
   "functions/functionReturningAPromise.md",
@@ -192,6 +247,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "functions/functionWithNestedParameters.md",
   "functions/functionWithOptionalParameters.md",
   "functions/functionWithTypeParameters.md",
+  "index.md",
   "interfaces/BasicInterface.md",
   "interfaces/ExtendedInterface.md",
   "interfaces/IndexableInterface.md",
@@ -268,8 +324,8 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: modules 1`] = `
 [
-  "README.md",
-  "exports.md",
+  "docs.md",
+  "index.md",
 ]
 `;
 

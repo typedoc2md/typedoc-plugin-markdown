@@ -1,7 +1,7 @@
 import {
   FixtureOutputDir,
   FixtureOutputFileStrategy,
-} from '../__utils__/config';
+} from '../__utils__/fixture-config';
 import { expectFileToEqual } from '../__utils__/helpers';
 
 describe(`Comments`, () => {
@@ -9,7 +9,7 @@ describe(`Comments`, () => {
     expectFileToEqual(
       FixtureOutputDir.Comments,
       [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      'exports.md',
+      'docs.md',
     );
   });
 });

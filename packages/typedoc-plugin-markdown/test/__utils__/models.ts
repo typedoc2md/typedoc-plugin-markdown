@@ -1,4 +1,4 @@
-import { FixtureEntryPoints, FixtureOutputDir } from './config';
+import { FixtureEntryPoints, FixtureOutputDir } from './fixture-config';
 
 export interface Fixture {
   outDir: FixtureOutputDir;

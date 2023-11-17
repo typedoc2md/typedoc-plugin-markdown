@@ -40,8 +40,12 @@ export class MarkdownTheme extends Theme {
     return new NavigationContext(this, this.application.options.getRawValues());
   }
 
-  getUrlsContext() {
-    return new UrlsContext(this, this.application.options.getRawValues());
+  getUrlsContext(project: ProjectReflection) {
+    return new UrlsContext(
+      this,
+      project,
+      this.application.options.getRawValues(),
+    );
   }
 
   readmeTemplate = (pageEvent: MarkdownPageEvent<ProjectReflection>) => {
@@ -74,7 +78,7 @@ export class MarkdownTheme extends Theme {
   }
 
   getUrls(project: ProjectReflection): UrlMapping[] {
-    return this.getUrlsContext().getUrls(project);
+    return this.getUrlsContext(project).getUrls();
   }
 
   getNavigation(project: ProjectReflection): NavigationItem[] {

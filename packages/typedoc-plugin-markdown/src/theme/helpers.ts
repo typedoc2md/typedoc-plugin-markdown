@@ -239,13 +239,6 @@ export function getSignatureParameters(
   );
 }
 
-export function getIndexFileName(project: ProjectReflection) {
-  const isModules = project.children?.every((child) =>
-    child.kindOf(ReflectionKind.Module),
-  );
-  return isModules ? 'modules.md' : 'exports.md';
-}
-
 export function hasReadme(project: ProjectReflection) {
   return Boolean(project.readme);
 }

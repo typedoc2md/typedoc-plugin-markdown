@@ -1,7 +1,7 @@
 import {
   FixtureOutputDir,
   FixtureOutputFileStrategy,
-} from '../__utils__/config';
+} from '../__utils__/fixture-config';
 import { expectFileToEqual } from '../__utils__/helpers';
 
 describe(`Groups`, () => {
@@ -9,7 +9,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      ['modules.md', 'index.md'],
+      ['docs.md', 'index.md'],
     );
   });
 
@@ -17,7 +17,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       FixtureOutputFileStrategy.Modules,
-      'README.md',
+      'index.md',
       1,
     );
   });
@@ -32,7 +32,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       FixtureOutputFileStrategy.Members,
-      ['basic/README.md', 'basic/index.md'],
+      'basic/index.md',
     );
   });
 
@@ -40,7 +40,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      ['has-namespaces/README.md', 'has-namespaces/index.md'],
+      'has-namespaces/index.md',
     );
   });
 
@@ -48,10 +48,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      [
-        'has-namespaces/namespaces/Namespace_A_/README.md',
-        'has-namespaces/namespaces/Namespace_A_/index.md',
-      ],
+      'has-namespaces/namespaces/Namespace_A_/index.md',
     );
   });
 
@@ -67,7 +64,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       FixtureOutputFileStrategy.Members,
-      ['has-categories/README.md', 'has-categories/index.md'],
+      'has-categories/index.md',
       2,
     );
   });
@@ -84,7 +81,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       FixtureOutputFileStrategy.Members,
-      ['has-references/README.md', 'has-references/index.md'],
+      'has-references/index.md',
       2,
     );
   });

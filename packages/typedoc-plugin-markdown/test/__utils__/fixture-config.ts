@@ -11,6 +11,7 @@ export enum FixtureEntryPoints {
   Packages = '/src/packages/*',
   Groups = '/src/groups/**/*.ts',
   Comments = '/src/comments/index.ts',
+  EntryFiles = '/src/entryfiles/*',
 }
 
 export enum FixtureOutputDir {
@@ -18,6 +19,7 @@ export enum FixtureOutputDir {
   Packages = 'packages',
   Groups = 'groups',
   Comments = 'comments',
+  EntryFiles = 'entryfiles',
 }
 
 export const FIXTURES: Fixture[] = [
@@ -26,10 +28,9 @@ export const FIXTURES: Fixture[] = [
     entryPoints: FixtureEntryPoints.Reflections,
     commonOptions: {},
     options: [
-      { hideGenerator: true },
+      { hideGenerator: true, hidePageHeader: true },
       {
         disableSources: true,
-        entryFileName: 'index.md',
         readme: 'none',
         parametersFormat: 'table',
         propertiesFormat: 'table',
@@ -56,9 +57,6 @@ export const FIXTURES: Fixture[] = [
         indexPageTitle: 'Custom Title',
       },
       {
-        hidePageHeader: true,
-        hideBreadcrumbs: true,
-        entryFileName: 'index.md',
         readme: 'none',
         categorizeByGroup: false,
         disableSources: true,
@@ -109,9 +107,15 @@ export const FIXTURES: Fixture[] = [
       {
         entryPointStrategy: 'packages',
         hideGenerator: true,
-        mergeReadme: true,
+        readme: 'none',
         name: 'packages-example',
       },
     ],
+  },
+  {
+    outDir: FixtureOutputDir.EntryFiles,
+    entryPoints: FixtureEntryPoints.EntryFiles,
+    commonOptions: { entryModule: 'entry-module', hideGenerator: true },
+    options: [{ entryFileName: 'README.md' }, { readme: 'none' }],
   },
 ];

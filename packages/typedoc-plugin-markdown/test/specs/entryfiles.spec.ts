@@ -4,20 +4,21 @@ import {
 } from '../__utils__/fixture-config';
 import { expectFileToEqual } from '../__utils__/helpers';
 
-describe(`Enum Reflection`, () => {
-  test(`should compile basic enum`, () => {
+describe(`EntryFiles`, () => {
+  test(`should get entry module`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
+      FixtureOutputDir.EntryFiles,
       FixtureOutputFileStrategy.Members,
-      'enumerations/BasicEnum.md',
+      ['README.md', 'index.md'],
     );
   });
 
-  test(`should compile enum with values`, () => {
+  test(`should get readme file`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
+      FixtureOutputDir.EntryFiles,
       FixtureOutputFileStrategy.Members,
-      '/enumerations/EnumWithValues.md',
+      'readme_.md',
+      1,
     );
   });
 });

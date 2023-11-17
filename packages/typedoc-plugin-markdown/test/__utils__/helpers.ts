@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { MarkdownTheme } from '../../src/theme';
-import { FixtureOutputDir, FixtureOutputFileStrategy } from './config';
+import { FixtureOutputDir, FixtureOutputFileStrategy } from './fixture-config';
 
 export class MockMarkdownTheme {}
 

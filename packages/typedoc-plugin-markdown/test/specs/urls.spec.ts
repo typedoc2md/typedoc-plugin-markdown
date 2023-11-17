@@ -1,7 +1,7 @@
 import {
   FixtureOutputDir,
   FixtureOutputFileStrategy,
-} from '../__utils__/config';
+} from '../__utils__/fixture-config';
 import { expectUrlsToEqual } from '../__utils__/helpers';
 
 describe(`Urls`, () => {
@@ -21,6 +21,13 @@ describe(`Urls`, () => {
 
   test(`should gets Urls for packages entry points`, () => {
     expectUrlsToEqual(FixtureOutputDir.Packages, [
+      FixtureOutputFileStrategy.Members,
+      FixtureOutputFileStrategy.Modules,
+    ]);
+  });
+
+  test(`should gets Urls for entry module`, () => {
+    expectUrlsToEqual(FixtureOutputDir.EntryFiles, [
       FixtureOutputFileStrategy.Members,
       FixtureOutputFileStrategy.Modules,
     ]);

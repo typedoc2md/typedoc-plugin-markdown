@@ -1,7 +1,7 @@
 import {
   FixtureOutputDir,
   FixtureOutputFileStrategy,
-} from '../__utils__/config';
+} from '../__utils__/fixture-config';
 import { expectFileToEqual } from '../__utils__/helpers';
 
 describe(`Packages`, () => {
@@ -9,19 +9,19 @@ describe(`Packages`, () => {
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
-      'README.md',
+      'index.md',
       1,
     );
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
-      'package-1/README.md',
+      'package-1/index.md',
       1,
     );
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
-      'package-2/README.md',
+      'package-2/index.md',
       1,
     );
   });
@@ -30,7 +30,7 @@ describe(`Packages`, () => {
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
-      ['modules.md'],
+      ['docs.md'],
     );
   });
 

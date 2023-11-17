@@ -50,7 +50,9 @@ const config = {
         entryPoints: '../../stubs/src/reflections/index.ts',
         typeDeclarationFormat: 'table',
         expandObjects: true,
-        sidebar: { pretty: true, filteredIds: ['api/index'] },
+        readme: 'none',
+        sidebar: { pretty: true },
+        membersWithOwnFile: ['Class', 'Interface', 'Enum'],
       },
     ],
     [
@@ -68,6 +70,18 @@ const config = {
       {
         id: 'api-3',
         out: './docs/api-3',
+        ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
+        entryPoints: '../../stubs/src/groups/**/*.ts',
+        readme: 'none',
+        outputFileStrategy: 'modules',
+        entryModule: 'index',
+      },
+    ],
+    [
+      docusaurusPlugin,
+      {
+        id: 'api-4',
+        out: './docs/api-4',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/packages/*',
         entryPointStrategy: 'packages',

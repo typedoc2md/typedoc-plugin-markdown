@@ -3,14 +3,6 @@
 exports[`Navigation should get Navigation Json for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "Readme",
-    "url": "README.md"
-  },
-  {
-    "title": "API",
-    "url": "modules.md"
-  },
-  {
     "title": "package-1",
     "children": [
       {
@@ -23,22 +15,48 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "url": "package-1/modules.md"
+    "url": "package-1/docs.md"
   },
   {
     "title": "package-2",
     "children": [
       {
-        "title": "Interfaces",
+        "title": "Modules",
         "children": [
           {
-            "title": "PackageInterface",
-            "url": "package-2/interfaces/PackageInterface.md"
+            "title": "module-1",
+            "url": "package-2/module-1/index.md",
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterface1",
+                    "url": "package-2/module-1/interfaces/PackageInterface1.md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "module-2",
+            "url": "package-2/module-2/index.md",
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterface2",
+                    "url": "package-2/module-2/interfaces/PackageInterface2.md"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
     ],
-    "url": "package-2/modules.md"
+    "url": "package-2/docs.md"
   }
 ]"
 `;
@@ -46,22 +64,152 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 exports[`Navigation should get Navigation Json for packages: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "Readme",
-    "url": "README.md"
-  },
-  {
-    "title": "API",
-    "url": "modules.md"
-  },
-  {
     "title": "package-1",
     "children": [],
-    "url": "package-1/modules.md"
+    "url": "package-1/docs.md"
   },
   {
     "title": "package-2",
-    "children": [],
-    "url": "package-2/modules.md"
+    "children": [
+      {
+        "title": "Modules",
+        "children": [
+          {
+            "title": "module-1",
+            "url": "package-2/module-1.md"
+          },
+          {
+            "title": "module-2",
+            "url": "package-2/module-2.md"
+          }
+        ]
+      }
+    ],
+    "url": "package-2/docs.md"
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "Modules",
+    "children": [
+      {
+        "title": "module-1",
+        "url": "module-1/README.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ModuleClass",
+                "url": "module-1/classes/ModuleClass.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "url": "module-2/README.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ModuleClass",
+                "url": "module-2/classes/ModuleClass.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Classes",
+    "children": [
+      {
+        "title": "ModuleClass",
+        "url": "entry-module/classes/ModuleClass.md"
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "Modules",
+    "children": [
+      {
+        "title": "module-1",
+        "url": "module-1/index.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ModuleClass",
+                "url": "module-1/classes/ModuleClass.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "url": "module-2/index.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ModuleClass",
+                "url": "module-2/classes/ModuleClass.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Classes",
+    "children": [
+      {
+        "title": "ModuleClass",
+        "url": "entry-module/classes/ModuleClass.md"
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "module-1",
+    "url": "module-1.md"
+  },
+  {
+    "title": "module-2",
+    "url": "module-2.md"
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "module-1",
+    "url": "module-1.md"
+  },
+  {
+    "title": "module-2",
+    "url": "module-2.md"
   }
 ]"
 `;
@@ -69,24 +217,16 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "Readme",
-    "url": "README.md"
-  },
-  {
-    "title": "API",
-    "url": "modules.md"
-  },
-  {
     "title": "42-module-name",
-    "url": "42-module-name/README.md"
+    "url": "42-module-name/index.md"
   },
   {
     "title": "<internal>",
-    "url": "<internal>/README.md"
+    "url": "-internal-/index.md"
   },
   {
     "title": "basic",
-    "url": "basic/README.md",
+    "url": "basic/index.md",
     "children": [
       {
         "title": "Enumerations",
@@ -144,7 +284,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-categories",
-    "url": "has-categories/README.md",
+    "url": "has-categories/index.md",
     "children": [
       {
         "title": "Enumerations",
@@ -230,25 +370,25 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-namespaces",
-    "url": "has-namespaces/README.md",
+    "url": "has-namespaces/index.md",
     "children": [
       {
         "title": "Namespaces",
         "children": [
           {
             "title": "NamespaceB",
-            "url": "has-namespaces/namespaces/NamespaceB/README.md"
+            "url": "has-namespaces/namespaces/NamespaceB/index.md"
           },
           {
             "title": "_Namespace_A_",
-            "url": "has-namespaces/namespaces/Namespace_A_/README.md",
+            "url": "has-namespaces/namespaces/Namespace_A_/index.md",
             "children": [
               {
                 "title": "Namespaces",
                 "children": [
                   {
                     "title": "NestedNamespace",
-                    "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/README.md",
+                    "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/index.md",
                     "children": [
                       {
                         "title": "Interfaces",
@@ -358,7 +498,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-references",
-    "url": "has-references/README.md",
+    "url": "has-references/index.md",
     "children": [
       {
         "title": "Functions",
@@ -373,7 +513,18 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "index",
-    "url": "index/README.md"
+    "url": "index/index.md",
+    "children": [
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "SomeClass",
+            "url": "index/classes/SomeClass.md"
+          }
+        ]
+      }
+    ]
   }
 ]"
 `;
@@ -381,16 +532,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "members") (Option Group "2") 1`] = `
 "[
   {
-    "title": "API",
-    "url": "index.md"
-  },
-  {
     "title": "42-module-name",
     "url": "42-module-name/index.md"
   },
   {
     "title": "<internal>",
-    "url": "<internal>/index.md"
+    "url": "-internal-/index.md"
   },
   {
     "title": "basic",
@@ -543,7 +690,13 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "index",
-    "url": "module.index/index.md"
+    "url": "index/index.md",
+    "children": [
+      {
+        "title": "SomeClass",
+        "url": "index/classes/SomeClass.md"
+      }
+    ]
   }
 ]"
 `;
@@ -551,20 +704,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "Readme",
-    "url": "README.md"
-  },
-  {
-    "title": "API",
-    "url": "modules.md"
-  },
-  {
     "title": "42-module-name",
     "url": "42-module-name.md"
   },
   {
     "title": "<internal>",
-    "url": "<internal>.md"
+    "url": "-internal-.md"
   },
   {
     "title": "basic",
@@ -576,7 +721,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-namespaces",
-    "url": "has-namespaces/README.md",
+    "url": "has-namespaces/index.md",
     "children": [
       {
         "title": "Namespaces",
@@ -587,7 +732,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           },
           {
             "title": "_Namespace_A_",
-            "url": "has-namespaces/namespaces/Namespace_A_/README.md",
+            "url": "has-namespaces/namespaces/Namespace_A_/index.md",
             "children": [
               {
                 "title": "Namespaces",
@@ -610,7 +755,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "index",
-    "url": "index.md"
+    "url": "module.index.md"
   }
 ]"
 `;
@@ -618,16 +763,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "[
   {
-    "title": "API",
-    "url": "index.md"
-  },
-  {
     "title": "42-module-name",
     "url": "42-module-name.md"
   },
   {
     "title": "<internal>",
-    "url": "<internal>.md"
+    "url": "-internal-.md"
   },
   {
     "title": "basic",
@@ -671,14 +812,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 
 exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
-  {
-    "title": "Readme",
-    "url": "README.md"
-  },
-  {
-    "title": "API",
-    "url": "exports.md"
-  },
   {
     "title": "Enumerations",
     "children": [
@@ -880,15 +1013,4 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
 ]"
 `;
 
-exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[
-  {
-    "title": "Readme",
-    "url": "README.md"
-  },
-  {
-    "title": "API",
-    "url": "exports.md"
-  }
-]"
-`;
+exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `"[]"`;
