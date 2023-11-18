@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.28
+
+### Patch Changes
+
+- Expose `--entryModule` option
+- UI updates to header and breadcrumbs
+- Prevent MDX parsing symbols as markdown links
+
 ## 4.0.0-next.27 (2023-11-07)
 
 ### Patch Changes
