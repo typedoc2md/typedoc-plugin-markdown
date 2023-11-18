@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.22
+
+### Patch Changes
+
+- Fix sidebar child sidebar items
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.28
+
 ## 1.0.0-next.21 (2023-11-07)
 
 ### Patch Changes
