@@ -30,13 +30,13 @@ export function referenceType(
     }
     if (referenceType.typeArguments && referenceType.typeArguments.length > 0) {
       reflection.push(
-        `\\<${referenceType.typeArguments
+        `\\< ${referenceType.typeArguments
           .map((typeArgument) => {
             return typeArgument instanceof ReflectionType
               ? context.reflectionType(typeArgument)
               : context.someType(typeArgument);
           })
-          .join(', ')}\\>`,
+          .join(', ')} \\>`,
       );
     }
     return reflection.join('');
