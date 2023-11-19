@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.29
+
+### Patch Changes
+
+- Fixed paraterTable style on declarations
+- UI updates
+
 ## 4.0.0-next.28 (2023-11-18)
 
 ### Patch Changes
