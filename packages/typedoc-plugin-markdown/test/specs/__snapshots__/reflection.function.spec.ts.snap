@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionReturningAFunction
+# Function: functionReturningAFunction()
 
 > **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
 
@@ -45,7 +45,7 @@ exports[`Function Reflection should compile function returning a function: (Outp
 
 ***
 
-# functionReturningAFunction
+# functionReturningAFunction()
 
 \`\`\`ts
 functionReturningAFunction(): <T>(x) => boolean
@@ -81,19 +81,19 @@ Comments for function
 `;
 
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionReturningAPromise
+# Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): \`Promise\`\\<\`object\`\\>
+> **functionReturningAPromise**(): \`Promise\`\\< \`object\` \\>
 
 Comments for function
 
 ## Returns
 
-\`Promise\`\\<\`object\`\\>
+\`Promise\`\\< \`object\` \\>
 
 Return comments
 
@@ -108,30 +108,30 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 
 ***
 
-# functionReturningAPromise
+# functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise<{
+functionReturningAPromise(): Promise< {
   prop: string;
-}>
+} >
 \`\`\`
 
 Comments for function
 
 ## Returns
 
-\`Promise\`\\<\\{   \`prop\`: \`string\`;   }\\>
+\`Promise\`\\< \\{   \`prop\`: \`string\`;   } \\>
 
 Return comments
 "
 `;
 
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionReturningAnObject
+# Function: functionReturningAnObject()
 
 > **functionReturningAnObject**(): \`object\`
 
@@ -163,7 +163,7 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 
 ***
 
-# functionReturningAnObject
+# functionReturningAnObject()
 
 \`\`\`ts
 functionReturningAnObject(): {
@@ -189,11 +189,11 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: basicFunction
+# Function: basicFunction()
 
 > **basicFunction**(\`someParam\`): \`number\`
 
@@ -220,7 +220,7 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 
 ***
 
-# basicFunction
+# basicFunction()
 
 \`\`\`ts
 basicFunction(someParam): number
@@ -241,11 +241,11 @@ This is a function that is assigned to a variable.
 `;
 
 exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionWithDefaultParameters
+# Function: functionWithDefaultParameters()
 
 > **functionWithDefaultParameters**(\`valueA\`, \`valueB\`, \`valueC\`, \`valueD\`, \`valueE\`, \`valueF\`): \`string\`
 
@@ -290,7 +290,7 @@ exports[`Function Reflection should compile function with default parameters: (O
 
 ***
 
-# functionWithDefaultParameters
+# functionWithDefaultParameters()
 
 \`\`\`ts
 functionWithDefaultParameters(
@@ -322,11 +322,11 @@ This is a function with a parameter that has a default value.
 `;
 
 exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionWithMultipleSignatures
+# Function: functionWithMultipleSignatures()
 
 ## functionWithMultipleSignatures(value)
 
@@ -379,7 +379,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 
 ***
 
-# functionWithMultipleSignatures
+# functionWithMultipleSignatures()
 
 ## functionWithMultipleSignatures(value)
 
@@ -421,11 +421,11 @@ This is the second signature of a function with multiple signatures.
 `;
 
 exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionWithNamedParams
+# Function: functionWithNamedParams()
 
 > **functionWithNamedParams**(\`__namedParameters\`, \`anotherParam\`): \`void\`
 
@@ -458,7 +458,7 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 ***
 
-# functionWithNamedParams
+# functionWithNamedParams()
 
 \`\`\`ts
 functionWithNamedParams(__namedParameters, anotherParam): void
@@ -480,11 +480,11 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 `;
 
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionWithNestedParameters
+# Function: functionWithNestedParameters()
 
 > **functionWithNestedParameters**(\`params\`, \`context\`): \`boolean\`
 
@@ -533,7 +533,7 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 
 ***
 
-# functionWithNestedParameters
+# functionWithNestedParameters()
 
 \`\`\`ts
 functionWithNestedParameters(params, context): boolean
@@ -562,11 +562,11 @@ Some nested params.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionWithOptionalParameters
+# Function: functionWithOptionalParameters()
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
@@ -597,11 +597,11 @@ An optional parameter.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 2`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionWithOptionalParameters
+# Function: functionWithOptionalParameters()
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
@@ -636,7 +636,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 
 ***
 
-# functionWithOptionalParameters
+# functionWithOptionalParameters()
 
 \`\`\`ts
 functionWithOptionalParameters(
@@ -668,7 +668,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 
 ***
 
-# functionWithOptionalParameters
+# functionWithOptionalParameters()
 
 \`\`\`ts
 functionWithOptionalParameters(
@@ -696,11 +696,11 @@ This is a function with a parameters.
 `;
 
 exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Function: functionWithTypeParameters
+# Function: functionWithTypeParameters()
 
 > **functionWithTypeParameters**\\<\`T\`, \`Item\`\\>(): \`boolean\`
 
@@ -729,7 +729,7 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 
 ***
 
-# functionWithTypeParameters
+# functionWithTypeParameters()
 
 \`\`\`ts
 functionWithTypeParameters<T, Item>(): boolean

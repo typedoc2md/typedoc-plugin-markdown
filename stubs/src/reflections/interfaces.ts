@@ -2,6 +2,8 @@
  * @module
  */
 
+import { CallbacksOptions } from './classes';
+
 /**
  * Comments for BasicInterface
  */
@@ -47,6 +49,10 @@ export interface BasicInterface {
      * Comments for nestedPropD
      */
     nestedPropD: () => boolean;
+    /**
+     * Comments for callbacks
+     */
+    callbacks?: Partial<CallbacksOptions>;
   };
 }
 

@@ -112,11 +112,21 @@ export function getMemberTitle(reflection: DeclarationReflection) {
     name.push(' ');
   }
 
-  name.push(`${escapeChars(reflection.name)}`);
+  name.push(
+    `${
+      reflection.name.startsWith('[') && reflection.signatures?.length
+        ? backTicks(reflection.name)
+        : escapeChars(reflection.name)
+    }`,
+  );
+
+  if (reflection.signatures?.length) {
+    name.push('()');
+  }
 
   if (reflection.typeParameters) {
     const typeParameters = reflection.typeParameters
-      .map((typeParameter) => backTicks(typeParameter.name))
+      .map((typeParameter) => typeParameter.name)
       .join(', ');
     name.push(`${`\\<${typeParameters}\\>`}`);
   }
@@ -233,6 +243,19 @@ export function getSignatureParameters(
       .join(`, `) +
     ')'
   );
+}
+
+export function getIndexFileName(
+  reflection: ProjectReflection | DeclarationReflection,
+  isPackages = false,
+) {
+  if (isPackages) {
+    return 'packages.md';
+  }
+  const isModules = reflection.children?.every((child) =>
+    child.kindOf(ReflectionKind.Module),
+  );
+  return isModules ? 'modules.md' : 'exports.md';
 }
 
 export function hasReadme(project: ProjectReflection) {

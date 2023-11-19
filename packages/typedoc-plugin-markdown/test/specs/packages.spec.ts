@@ -30,7 +30,7 @@ describe(`Packages`, () => {
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
-      ['docs.md'],
+      ['packages.md'],
     );
   });
 

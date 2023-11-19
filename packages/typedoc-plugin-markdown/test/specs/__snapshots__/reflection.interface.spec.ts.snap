@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -42,7 +42,7 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:23](http://source-url)
+[interfaces.ts:25](http://source-url)
 
 ***
 
@@ -54,7 +54,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:17](http://source-url)
+[interfaces.ts:19](http://source-url)
 
 ***
 
@@ -66,7 +66,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:12](http://source-url)
+[interfaces.ts:14](http://source-url)
 
 ***
 
@@ -77,6 +77,12 @@ Comments for prop
 Comments for propWithProps
 
 #### Type declaration
+
+##### callbacks
+
+> **callbacks**?: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>
+
+Comments for callbacks
 
 ##### nestedPropA
 
@@ -114,7 +120,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:28](http://source-url)
+[interfaces.ts:30](http://source-url)
 "
 `;
 
@@ -143,7 +149,8 @@ Comments for BasicInterface
 | \`functionProp\` | (\`s\`) => \`boolean\` | - |
 | \`optionalProp\`? | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
-| \`propWithProps\` | \\{   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
+| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
+| \`propWithProps.callbacks\`? | \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC |
@@ -153,7 +160,7 @@ Comments for BasicInterface
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -183,7 +190,7 @@ Comments for ExtendedInterface
 
 #### Source
 
-[interfaces.ts:67](http://source-url)
+[interfaces.ts:73](http://source-url)
 
 ***
 
@@ -205,11 +212,11 @@ Comment for param s
 
 #### Inherited from
 
-[\`BasicInterface\`](BasicInterface.md).[\`functionProp\`](BasicInterface.md#functionprop)
+[\`BasicInterface.functionProp\`](BasicInterface.md#functionprop)
 
 #### Source
 
-[interfaces.ts:23](http://source-url)
+[interfaces.ts:25](http://source-url)
 
 ***
 
@@ -221,11 +228,11 @@ Comments for optional prop
 
 #### Inherited from
 
-[\`BasicInterface\`](BasicInterface.md).[\`optionalProp\`](BasicInterface.md#optionalprop)
+[\`BasicInterface.optionalProp\`](BasicInterface.md#optionalprop)
 
 #### Source
 
-[interfaces.ts:17](http://source-url)
+[interfaces.ts:19](http://source-url)
 
 ***
 
@@ -237,11 +244,11 @@ Comments for prop
 
 #### Inherited from
 
-[\`BasicInterface\`](BasicInterface.md).[\`prop\`](BasicInterface.md#prop)
+[\`BasicInterface.prop\`](BasicInterface.md#prop)
 
 #### Source
 
-[interfaces.ts:12](http://source-url)
+[interfaces.ts:14](http://source-url)
 
 ***
 
@@ -252,6 +259,12 @@ Comments for prop
 Comments for propWithProps
 
 #### Type declaration
+
+##### callbacks
+
+> **callbacks**?: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>
+
+Comments for callbacks
 
 ##### nestedPropA
 
@@ -289,11 +302,11 @@ Comments for nestedPropD
 
 #### Inherited from
 
-[\`BasicInterface\`](BasicInterface.md).[\`propWithProps\`](BasicInterface.md#propwithprops)
+[\`BasicInterface.propWithProps\`](BasicInterface.md#propwithprops)
 
 #### Source
 
-[interfaces.ts:28](http://source-url)
+[interfaces.ts:30](http://source-url)
 "
 `;
 
@@ -320,10 +333,11 @@ Comments for ExtendedInterface
 | Property | Type | Description | Inheritance |
 | :------ | :------ | :------ | :------ |
 | \`extendedProp\` | \`string\` | - | - |
-| \`functionProp\` | (\`s\`) => \`boolean\` | - | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
-| \`optionalProp\`? | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
-| \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).\`prop\` |
-| \`propWithProps\` | \\{   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
+| \`functionProp\` | (\`s\`) => \`boolean\` | - | [\`BasicInterface.functionProp\`](BasicInterface.md) |
+| \`optionalProp\`? | \`string\` | Comments for optional prop | [\`BasicInterface.optionalProp\`](BasicInterface.md) |
+| \`prop\` | \`string\` | Comments for prop | [\`BasicInterface.prop\`](BasicInterface.md) |
+| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface.propWithProps\`](BasicInterface.md) |
+| \`propWithProps.callbacks\`? | \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC | - |
@@ -333,7 +347,7 @@ Comments for ExtendedInterface
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -359,7 +373,7 @@ Comments for IndexableInterface
 
 #### Source
 
-[interfaces.ts:75](http://source-url)
+[interfaces.ts:81](http://source-url)
 "
 `;
 
@@ -390,11 +404,11 @@ Comments for IndexableInterface
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Interface: InterfaceWithTypeParameters\\<\`A\`\\>
+# Interface: InterfaceWithTypeParameters\\<A\\>
 
 Comments for InterfaceWithTypeParameters
 
@@ -418,7 +432,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:60](http://source-url)
+[interfaces.ts:66](http://source-url)
 "
 `;
 
@@ -427,7 +441,7 @@ exports[`Interface Reflection should compile interface with type parameters: (Ou
 
 ***
 
-# InterfaceWithTypeParameters\\<\`A\`\\>
+# InterfaceWithTypeParameters\\<A\\>
 
 Comments for InterfaceWithTypeParameters
 

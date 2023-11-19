@@ -1,5 +1,6 @@
 import {
   DeclarationReflection,
+  EntryPointStrategy,
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
@@ -15,7 +16,9 @@ export function header(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ): string {
-  const isPackages = !Boolean(page.project.groups);
+  const isPackages =
+    context.options.getValue('entryPointStrategy') ===
+      EntryPointStrategy.Packages && !Boolean(page.project.groups);
   if (isPackages) {
     const packageItem = findPackage(page.model);
     if (packageItem) {
@@ -40,6 +43,9 @@ function projectHeader(
 
   const md: string[] = [];
 
+  const readmeLabel = 'Readme';
+  const documentationLabel = 'Documentation';
+
   if (Boolean(titleLink)) {
     md.push(link(projectName, titleLink));
   } else {
@@ -47,6 +53,10 @@ function projectHeader(
   }
 
   md.push('•');
+
+  const isSinglePage =
+    page.project?.groups &&
+    page.project?.groups.every((group) => !group.allChildrenHaveOwnDocument());
 
   if (hasReadme(page.project)) {
     const links: string[] = [];
@@ -61,17 +71,20 @@ function projectHeader(
 
     links.push(
       link(
-        'Readme',
+        readmeLabel,
         context.relativeURL(preserveModulesPage ? 'readme_.md' : entryFileName),
       ),
     );
     links.push('\\|');
-
-    links.push(link('Documentation', context.relativeURL(page.project.url)));
+    links.push(link(documentationLabel, context.relativeURL(page.project.url)));
 
     md.push(links.join(' '));
   } else {
-    md.push(link('Documentation', context.relativeURL(page.project.url)));
+    md.push(
+      isSinglePage
+        ? documentationLabel
+        : link(documentationLabel, context.relativeURL(page.project.url)),
+    );
   }
 
   return `${md.join(' ')}\n\n***\n`;
@@ -89,6 +102,9 @@ function packageHeader(
 
   const md: string[] = [];
 
+  const readmeLabel = 'Readme';
+  const documentationLabel = 'Documentation';
+
   const entryFileName = context.options.getValue('entryFileName');
 
   md.push(bold(packageItem.name));
@@ -98,10 +114,10 @@ function packageHeader(
     const readmeUrl = `${packageItem.name}/${entryFileName}`;
     links.push('•');
 
-    links.push(link('Readme', context.relativeURL(readmeUrl)));
+    links.push(link(readmeLabel, context.relativeURL(readmeUrl)));
     links.push('\\|');
 
-    links.push(link('Documentation', context.relativeURL(packageItem.url)));
+    links.push(link(documentationLabel, context.relativeURL(packageItem.url)));
 
     md.push(links.join(' '));
   }

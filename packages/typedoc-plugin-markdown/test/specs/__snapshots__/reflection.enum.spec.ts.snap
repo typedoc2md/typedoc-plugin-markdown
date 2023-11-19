@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -64,7 +64,7 @@ Comments for enum
 `;
 
 exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 

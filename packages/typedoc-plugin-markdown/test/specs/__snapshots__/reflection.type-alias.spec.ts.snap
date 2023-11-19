@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -33,11 +33,11 @@ Comments for ArrayType
 `;
 
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Type alias: ConditionalType\\<\`T\`\\>
+# Type alias: ConditionalType\\<T\\>
 
 > **ConditionalType**\\<\`T\`\\>: \`T\` extends \`string\` ? \`"string"\` : \`T\` extends \`number\` ? \`"number"\` : \`T\` extends \`boolean\` ? \`"boolean"\` : \`T\` extends \`undefined\` ? \`"undefined"\` : \`"object"\`
 
@@ -45,9 +45,7 @@ Comments for ConditionalType
 
 ## Type parameters
 
-| Parameter |
-| :------ |
-| \`T\` |
+▪ **T**
 
 ## Source
 
@@ -60,7 +58,7 @@ exports[`Type Alias Reflection should compile conditional type: (Output File Str
 
 ***
 
-# ConditionalType\\<\`T\`\\>
+# ConditionalType\\<T\\>
 
 \`\`\`ts
 type ConditionalType<T>: T extends string ? "string" : T extends number ? "number" : T extends boolean ? "boolean" : T extends undefined ? "undefined" : "object";
@@ -77,7 +75,7 @@ Comments for ConditionalType
 `;
 
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -109,7 +107,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 `;
 
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -173,7 +171,7 @@ comment for y.z
 
 ### accessorA
 
-> **\`get\`** **accessorA**(): \`Promise\`\\<\`string\`\\>
+> **\`get\`** **accessorA**(): \`Promise\`\\< \`string\` \\>
 
 Comments for accessorA getter
 
@@ -183,11 +181,11 @@ Comments for accessorA setter
 
 #### Parameters
 
-▪ **x**: \`Promise\`\\<\`string\`\\>
+▪ **x**: \`Promise\`\\< \`string\` \\>
 
 #### Returns
 
-\`Promise\`\\<\`string\`\\>
+\`Promise\`\\< \`string\` \\>
 
 ### accessorB
 
@@ -203,7 +201,7 @@ Comments for accessorA setter
 
 \`string\`
 
-### someFunction
+### someFunction()
 
 Comments for someFunction
 
@@ -213,7 +211,7 @@ Comments for someFunction
 
 #### Returns
 
-\`Promise\`\\<\`any\`\\>
+\`Promise\`\\< \`any\` \\>
 
 ## Source
 
@@ -237,9 +235,9 @@ type LiteralType: {
      z: (x) => string;
   };
   z: (x) => string;
-  get set accessorA: Promise<string>;
+  get set accessorA: Promise< string >;
   get set accessorB: string;
-  someFunction: Promise<any>;
+  someFunction: Promise< any >;
 };
 \`\`\`
 
@@ -255,22 +253,22 @@ Comments for LiteralType
 | \`y.y\` | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`) => \`string\` | - |
 | \`z\` | (\`x\`) => \`string\` | - |
-| \`get accessorA\` | \`Promise\`\\<\`string\`\\> | Comments for accessorA getter |
+| \`get accessorA\` | \`Promise\`\\< \`string\` \\> | Comments for accessorA getter |
 | \`set accessorA\` | \`void\` | Comments for accessorA setter |
 | \`get accessorB\` | \`string\` | - |
 | \`set accessorB\` | \`void\` | - |
-| \`someFunction\` | \`Promise\`\\<\`any\`\\> | Comments for someFunction |
+| \`someFunction\` | \`Promise\`\\< \`any\` \\> | Comments for someFunction |
 "
 `;
 
 exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
 # Type alias: ExternalReferenceType
 
-> **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\<\`"x"\`, \`"y"\`\\>
+> **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\< \`"x"\`, \`"y"\` \\>
 
 Comments for ExternalReferenceType
 
@@ -288,7 +286,7 @@ exports[`Type Alias Reflection should compile external reference type: (Output F
 # ExternalReferenceType
 
 \`\`\`ts
-type ExternalReferenceType: ClassWithTypeParameters<"x", "y">;
+type ExternalReferenceType: ClassWithTypeParameters< "x", "y" >;
 \`\`\`
 
 Comments for ExternalReferenceType
@@ -296,7 +294,7 @@ Comments for ExternalReferenceType
 `;
 
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -349,7 +347,7 @@ Comments for FunctionType
 `;
 
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -381,7 +379,7 @@ Comments for IndexAccessType
 `;
 
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -427,11 +425,11 @@ Comments for IntersectionType
 `;
 
 exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Type alias: PartialMappedType\\<\`T\`\\>
+# Type alias: PartialMappedType\\<T\\>
 
 > **PartialMappedType**\\<\`T\`\\>: \`{ [P in keyof T]?: T[P] }\`
 
@@ -439,9 +437,7 @@ Comments for PartialMappedType
 
 ## Type parameters
 
-| Parameter |
-| :------ |
-| \`T\` |
+▪ **T**
 
 ## Source
 
@@ -454,7 +450,7 @@ exports[`Type Alias Reflection should compile partial mapped type: (Output File 
 
 ***
 
-# PartialMappedType\\<\`T\`\\>
+# PartialMappedType\\<T\\>
 
 \`\`\`ts
 type PartialMappedType<T>: { [P in keyof T]?: T[P] };
@@ -471,7 +467,7 @@ Comments for PartialMappedType
 `;
 
 exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -503,11 +499,11 @@ Comments for PrimitiveType
 `;
 
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Type alias: ReadonlyMappedType\\<\`T\`\\>
+# Type alias: ReadonlyMappedType\\<T\\>
 
 > **ReadonlyMappedType**\\<\`T\`\\>: \`{ readonly [P in keyof T]: T[P] }\`
 
@@ -515,9 +511,7 @@ Comments for ReadonlyMapedType
 
 ## Type parameters
 
-| Parameter |
-| :------ |
-| \`T\` |
+▪ **T**
 
 ## Source
 
@@ -530,7 +524,7 @@ exports[`Type Alias Reflection should compile readonly mapped type: (Output File
 
 ***
 
-# ReadonlyMappedType\\<\`T\`\\>
+# ReadonlyMappedType\\<T\\>
 
 \`\`\`ts
 type ReadonlyMappedType<T>: { readonly [P in keyof T]: T[P] };
@@ -547,7 +541,7 @@ Comments for ReadonlyMapedType
 `;
 
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -585,7 +579,7 @@ Comments for StringLiteralType
 `;
 
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
@@ -617,11 +611,11 @@ Comments for TupleType
 `;
 
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 
-# Type alias: TypeWithTypeParams\\<\`T\`, \`R\`\\>
+# Type alias: TypeWithTypeParams\\<T, R\\>
 
 > **TypeWithTypeParams**\\<\`T\`, \`R\`\\>: [\`T\`, \`R\`]
 
@@ -629,10 +623,9 @@ Comments for TypeWithTypeParams
 
 ## Type parameters
 
-| Parameter |
-| :------ |
-| \`T\` |
-| \`R\` |
+▪ **T**
+
+▪ **R**
 
 ## Source
 
@@ -645,7 +638,7 @@ exports[`Type Alias Reflection should compile type parameter type: (Output File 
 
 ***
 
-# TypeWithTypeParams\\<\`T\`, \`R\`\\>
+# TypeWithTypeParams\\<T, R\\>
 
 \`\`\`ts
 type TypeWithTypeParams<T, R>: [T, R];
@@ -663,7 +656,7 @@ Comments for TypeWithTypeParams
 `;
 
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../docs.md)
+"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
 
 ***
 

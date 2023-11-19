@@ -146,3 +146,5 @@ export abstract class ClassWithModifiers {
 export class DisposableClass implements Disposable {
   [Symbol.dispose]() {}
 }
+
+export class CallbacksOptions<P = DisposableClass, A = ClassWithModifiers> {}

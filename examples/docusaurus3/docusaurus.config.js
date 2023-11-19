@@ -30,7 +30,6 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -52,7 +51,6 @@ const config = {
         expandObjects: true,
         readme: 'none',
         sidebar: { pretty: true },
-        membersWithOwnFile: ['Class', 'Interface', 'Enum'],
       },
     ],
     [
@@ -62,7 +60,6 @@ const config = {
         out: './docs/api-2',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/groups/**/*.ts',
-        membersWithOwnFile: ['Class', 'Interface'],
       },
     ],
     [
@@ -96,6 +93,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           numberPrefixParser: false,
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

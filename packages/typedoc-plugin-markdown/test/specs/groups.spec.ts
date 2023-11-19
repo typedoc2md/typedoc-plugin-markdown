@@ -9,7 +9,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       FixtureOutputDir.Groups,
       [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      ['docs.md', 'index.md'],
+      ['modules.md', 'index.md'],
     );
   });
 

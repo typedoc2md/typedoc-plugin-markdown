@@ -3,44 +3,44 @@
 exports[`Urls should gets Urls for entry module: outputFileStrategy: members 1`] = `
 [
   "README.md",
-  "docs.md",
   "entry-module/classes/ModuleClass.md",
   "module-1/README.md",
   "module-1/classes/ModuleClass.md",
   "module-2/README.md",
   "module-2/classes/ModuleClass.md",
+  "modules.md",
   "readme_.md",
 ]
 `;
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: members 2`] = `
 [
-  "docs.md",
   "entry-module/classes/ModuleClass.md",
   "index.md",
   "module-1/classes/ModuleClass.md",
   "module-1/index.md",
   "module-2/classes/ModuleClass.md",
   "module-2/index.md",
+  "modules.md",
 ]
 `;
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 1`] = `
 [
   "README.md",
-  "docs.md",
   "module-1.md",
   "module-2.md",
+  "modules.md",
   "readme_.md",
 ]
 `;
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 2`] = `
 [
-  "docs.md",
   "index.md",
   "module-1.md",
   "module-2.md",
+  "modules.md",
 ]
 `;
 
@@ -57,7 +57,6 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
   "basic/interfaces/InterfaceB.md",
   "basic/type-aliases/TypeA.md",
   "basic/type-aliases/TypeB.md",
-  "docs.md",
   "has-categories/enumerations/CategoryAEnum1.md",
   "has-categories/enumerations/CategoryAEnum2.md",
   "has-categories/enumerations/CategoryBEnum1.md",
@@ -92,6 +91,7 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
   "index/classes/SomeClass.md",
   "index/index.md",
   "index.md",
+  "modules.md",
 ]
 `;
 
@@ -141,7 +141,6 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "-internal-.md",
   "42-module-name.md",
   "basic.md",
-  "docs.md",
   "has-categories.md",
   "has-namespaces/index.md",
   "has-namespaces/namespaces/NamespaceB.md",
@@ -150,6 +149,7 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "has-references.md",
   "index.md",
   "module.index.md",
+  "modules.md",
 ]
 `;
 
@@ -171,63 +171,64 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 1`] = `
 [
-  "docs.md",
   "index.md",
-  "package-1/docs.md",
+  "package-1/exports.md",
   "package-1/index.md",
   "package-1/interfaces/PackageInterface.md",
-  "package-2/docs.md",
   "package-2/index.md",
   "package-2/module-1/index.md",
   "package-2/module-1/interfaces/PackageInterface1.md",
   "package-2/module-2/index.md",
   "package-2/module-2/interfaces/PackageInterface2.md",
+  "package-2/modules.md",
+  "packages.md",
 ]
 `;
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 2`] = `
 [
   "index.md",
-  "package-1/docs.md",
+  "package-1/exports.md",
   "package-1/index.md",
   "package-1/interfaces/PackageInterface.md",
-  "package-2/docs.md",
   "package-2/index.md",
   "package-2/module-1/index.md",
   "package-2/module-1/interfaces/PackageInterface1.md",
   "package-2/module-2/index.md",
   "package-2/module-2/interfaces/PackageInterface2.md",
+  "package-2/modules.md",
 ]
 `;
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 1`] = `
 [
-  "docs.md",
   "index.md",
-  "package-1/docs.md",
+  "package-1/exports.md",
   "package-1/index.md",
-  "package-2/docs.md",
   "package-2/index.md",
   "package-2/module-1.md",
   "package-2/module-2.md",
+  "package-2/modules.md",
+  "packages.md",
 ]
 `;
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 2`] = `
 [
   "index.md",
-  "package-1/docs.md",
+  "package-1/exports.md",
   "package-1/index.md",
-  "package-2/docs.md",
   "package-2/index.md",
   "package-2/module-1.md",
   "package-2/module-2.md",
+  "package-2/modules.md",
 ]
 `;
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 1`] = `
 [
   "classes/AbstractClass.md",
+  "classes/CallbacksOptions.md",
   "classes/ClassWithAccessors.md",
   "classes/ClassWithConstructorOverloads.md",
   "classes/ClassWithModifiers.md",
@@ -235,9 +236,9 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "classes/DerivedClassA.md",
   "classes/DerivedClassB.md",
   "classes/DisposableClass.md",
-  "docs.md",
   "enumerations/BasicEnum.md",
   "enumerations/EnumWithValues.md",
+  "exports.md",
   "functions/basicFunction.md",
   "functions/functionReturningAFunction.md",
   "functions/functionReturningAPromise.md",
@@ -279,6 +280,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 2`] = `
 [
   "classes/AbstractClass.md",
+  "classes/CallbacksOptions.md",
   "classes/ClassWithAccessors.md",
   "classes/ClassWithConstructorOverloads.md",
   "classes/ClassWithModifiers.md",
@@ -328,7 +330,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: modules 1`] = `
 [
-  "docs.md",
+  "exports.md",
   "index.md",
 ]
 `;

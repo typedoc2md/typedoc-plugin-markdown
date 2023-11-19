@@ -42,7 +42,16 @@ export function declarationMember(
 
   if (declaration.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));
-    md.push(context.typeParametersTable(declaration.typeParameters));
+    if (context.options.getValue('parametersFormat') === 'table') {
+      md.push(context.typeParametersTable(declaration.typeParameters));
+    } else {
+      md.push(
+        context.typeParametersList(
+          declaration.typeParameters,
+          headingLevel + 1,
+        ),
+      );
+    }
   }
 
   if (typeDeclaration) {

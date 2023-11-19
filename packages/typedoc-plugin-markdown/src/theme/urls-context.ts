@@ -11,7 +11,7 @@ import { OutputFileStrategy } from '../plugin/options/custom-maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
 import { UrlOption } from '../theme/models';
-import { getMemberTitle } from './helpers';
+import { getIndexFileName, getMemberTitle } from './helpers';
 import { MarkdownTheme } from './theme';
 
 export class UrlsContext {
@@ -19,7 +19,6 @@ export class UrlsContext {
   anchors: Record<string, string[]> = {};
   hasReadme: boolean;
   preserveModulesPage: boolean;
-  indexFilename = 'docs.md';
 
   constructor(
     public theme: MarkdownTheme,
@@ -51,10 +50,12 @@ export class UrlsContext {
 
     const entryFileName = this.options.entryFileName as string;
 
+    const indexFilename = getIndexFileName(this.project, isPackages);
+
     this.project.url = Boolean(this.project.readme)
-      ? this.indexFilename
+      ? indexFilename
       : this.preserveModulesPage
-      ? this.indexFilename
+      ? indexFilename
       : this.options.entryFileName;
 
     if (Boolean(this.project.readme)) {
@@ -67,16 +68,12 @@ export class UrlsContext {
       );
 
       this.urls.push(
-        new UrlMapping(
-          this.indexFilename,
-          this.project,
-          this.theme.projectTemplate,
-        ),
+        new UrlMapping(indexFilename, this.project, this.theme.projectTemplate),
       );
     } else {
       this.urls.push(
         new UrlMapping(
-          this.preserveModulesPage ? this.indexFilename : entryFileName,
+          this.preserveModulesPage ? indexFilename : entryFileName,
           this.project,
           this.theme.projectTemplate,
         ),
@@ -85,8 +82,9 @@ export class UrlsContext {
 
     if (isPackages) {
       this.project.children?.forEach((projectChild) => {
+        const packagesIndex = getIndexFileName(projectChild);
         const url = `${projectChild.name}/${
-          Boolean(projectChild.readme) ? this.indexFilename : entryFileName
+          Boolean(projectChild.readme) ? packagesIndex : entryFileName
         }`;
         if (projectChild.readme) {
           this.urls.push(

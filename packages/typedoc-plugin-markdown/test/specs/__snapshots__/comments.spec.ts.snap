@@ -135,33 +135,33 @@ Comments form module comments
 
 ## Contents
 
-- [Links](docs.md#links)
-  - [External link](docs.md#external-link)
-- [Tag A](docs.md#tag-a)
-- [Tag B](docs.md#tag-b)
-- [Html And Jsx](docs.md#html-and-jsx)
-- [Enumerations](docs.md#enumerations)
-  - [CommentEnum](docs.md#commentenum)
-- [Interfaces](docs.md#interfaces)
-  - [CommentInterface](docs.md#commentinterface)
-  - [SameName](docs.md#samename)
-- [Variables](docs.md#variables)
-  - [SameName](docs.md#samename-1)
-  - [prop](docs.md#prop)
-  - [propb](docs.md#propb)
+- [Links](exports.md#links)
+  - [External link](exports.md#external-link)
+- [Tag A](exports.md#tag-a)
+- [Tag B](exports.md#tag-b)
+- [Html And Jsx](exports.md#html-and-jsx)
+- [Enumerations](exports.md#enumerations)
+  - [CommentEnum](exports.md#commentenum)
+- [Interfaces](exports.md#interfaces)
+  - [CommentInterface](exports.md#commentinterface)
+  - [SameName](exports.md#samename)
+- [Variables](exports.md#variables)
+  - [SameName](exports.md#samename-1)
+  - [prop](exports.md#prop)
+  - [propb](exports.md#propb)
 
 ## Links
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](docs.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](docs.md#commentinterface)
-- [Links to CommentInterface.propb](docs.md#commentinterface)
-- [CommentEnum.MemberB](docs.md#commentenum)
-- [SameName:var](docs.md#samename-1)
-- [SameName:interface](docs.md#samename)
-- [SameName.prop](docs.md#samename)
-- [prop:var](docs.md#prop)
+- [CommentInterface](exports.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](exports.md#commentinterface)
+- [Links to CommentInterface.propb](exports.md#commentinterface)
+- [CommentEnum.MemberB](exports.md#commentenum)
+- [SameName:var](exports.md#samename-1)
+- [SameName:interface](exports.md#samename)
+- [SameName.prop](exports.md#samename)
+- [prop:var](exports.md#prop)
 
 ### External link
 
@@ -249,33 +249,33 @@ Comments form module comments
 
 ## Contents
 
-- [Links](docs.md#links)
-  - [External link](docs.md#external-link)
-- [Tag A](docs.md#tag-a)
-- [Tag B](docs.md#tag-b)
-- [Html And Jsx](docs.md#html-and-jsx)
-- [Enumerations](docs.md#enumerations)
-  - [CommentEnum](docs.md#commentenum)
-- [Interfaces](docs.md#interfaces)
-  - [CommentInterface](docs.md#commentinterface)
-  - [SameName](docs.md#samename)
-- [Variables](docs.md#variables)
-  - [SameName](docs.md#samename-1)
-  - [prop](docs.md#prop)
-  - [propb](docs.md#propb)
+- [Links](exports.md#links)
+  - [External link](exports.md#external-link)
+- [Tag A](exports.md#tag-a)
+- [Tag B](exports.md#tag-b)
+- [Html And Jsx](exports.md#html-and-jsx)
+- [Enumerations](exports.md#enumerations)
+  - [CommentEnum](exports.md#commentenum)
+- [Interfaces](exports.md#interfaces)
+  - [CommentInterface](exports.md#commentinterface)
+  - [SameName](exports.md#samename)
+- [Variables](exports.md#variables)
+  - [SameName](exports.md#samename-1)
+  - [prop](exports.md#prop)
+  - [propb](exports.md#propb)
 
 ## Links
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](docs.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](docs.md#prop)
-- [Links to CommentInterface.propb](docs.md#propb)
-- [CommentEnum.MemberB](docs.md#memberb)
-- [SameName:var](docs.md#samename-1)
-- [SameName:interface](docs.md#samename)
-- [SameName.prop](docs.md#prop-1)
-- [prop:var](docs.md#prop-2)
+- [CommentInterface](exports.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](exports.md#prop)
+- [Links to CommentInterface.propb](exports.md#propb)
+- [CommentEnum.MemberB](exports.md#memberb)
+- [SameName:var](exports.md#samename-1)
+- [SameName:interface](exports.md#samename)
+- [SameName.prop](exports.md#prop-1)
+- [prop:var](exports.md#prop-2)
 
 ### External link
 
