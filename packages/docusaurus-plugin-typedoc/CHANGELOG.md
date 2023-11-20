@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.23
+
+### Patch Changes
+
+- Handle Docusaurus broken links around type arguments
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.30
+
 ## 1.0.0-next.22 (2023-11-18)
 
 ### Patch Changes

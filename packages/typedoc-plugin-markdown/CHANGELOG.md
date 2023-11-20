@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.30
+
+### Patch Changes
+
+- Update header UI
+
 ## 4.0.0-next.29 (2023-11-19)
 
 ### Patch Changes
