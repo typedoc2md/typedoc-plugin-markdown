@@ -18,12 +18,6 @@ describe(`Packages`, () => {
       'package-1/index.md',
       1,
     );
-    expectFileToEqual(
-      FixtureOutputDir.Packages,
-      FixtureOutputFileStrategy.Members,
-      'package-2/index.md',
-      1,
-    );
   });
 
   test(`should compile index page for packages`, () => {
@@ -31,6 +25,20 @@ describe(`Packages`, () => {
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
       ['packages.md'],
+    );
+
+    expectFileToEqual(
+      FixtureOutputDir.Packages,
+      FixtureOutputFileStrategy.Members,
+      'package-1/exports.md',
+      1,
+    );
+
+    expectFileToEqual(
+      FixtureOutputDir.Packages,
+      FixtureOutputFileStrategy.Members,
+      'package-2/index.md',
+      1,
     );
   });
 

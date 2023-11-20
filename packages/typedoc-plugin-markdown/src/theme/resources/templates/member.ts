@@ -20,7 +20,9 @@ export function memberTemplate(
     md.push(heading(1, context.pageTitle(page)));
   }
 
-  md.push(context.breadcrumbs(page));
+  if (!context.options.getValue('hideBreadcrumbs')) {
+    md.push(context.breadcrumbs(page));
+  }
 
   md.push(context.member(page.model, 1));
 

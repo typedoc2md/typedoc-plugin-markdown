@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -125,7 +125,7 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -160,7 +160,7 @@ Comments for BasicInterface
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -311,7 +311,7 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -347,7 +347,7 @@ Comments for ExtendedInterface
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -378,7 +378,7 @@ Comments for IndexableInterface
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -404,7 +404,7 @@ Comments for IndexableInterface
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -437,7 +437,7 @@ Comments for prop
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 

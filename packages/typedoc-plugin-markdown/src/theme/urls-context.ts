@@ -86,7 +86,8 @@ export class UrlsContext {
         const url = `${projectChild.name}/${
           Boolean(projectChild.readme) ? packagesIndex : entryFileName
         }`;
-        if (projectChild.readme) {
+
+        if (Boolean(projectChild.readme)) {
           this.urls.push(
             new UrlMapping(
               `${path.dirname(url)}/${entryFileName}`,

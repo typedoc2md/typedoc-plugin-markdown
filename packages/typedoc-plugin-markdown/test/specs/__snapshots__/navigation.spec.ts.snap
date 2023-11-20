@@ -56,7 +56,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "url": "package-2/modules.md"
+    "url": "package-2/index.md"
   }
 ]"
 `;
@@ -85,7 +85,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "url": "package-2/modules.md"
+    "url": "package-2/index.md"
   }
 ]"
 `;

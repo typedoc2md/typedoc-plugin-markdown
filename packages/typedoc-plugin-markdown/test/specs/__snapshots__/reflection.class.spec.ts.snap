@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -63,7 +63,7 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -118,7 +118,7 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -214,7 +214,7 @@ Param comments
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -305,7 +305,7 @@ get noSetter(): string
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -379,7 +379,7 @@ Comments for x string
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -448,7 +448,7 @@ new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -592,7 +592,7 @@ Comment for staticMethod
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -677,7 +677,7 @@ Comment for staticMethod
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -716,7 +716,7 @@ Comments for param B
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -755,7 +755,7 @@ ClassWithTypeParameters<A, B, C>
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -856,7 +856,7 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -934,7 +934,7 @@ derivedMethod(): string
 `;
 
 exports[`Class Reflection should compile disposable class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 

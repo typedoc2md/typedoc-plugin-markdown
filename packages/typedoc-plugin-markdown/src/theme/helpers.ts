@@ -258,6 +258,19 @@ export function getIndexFileName(
   return isModules ? 'modules.md' : 'exports.md';
 }
 
+export function getIndexLabel(
+  reflection: ProjectReflection | DeclarationReflection,
+  isPackages = false,
+) {
+  if (isPackages) {
+    return 'Packages';
+  }
+  const isModules = reflection.children?.every((child) =>
+    child.kindOf(ReflectionKind.Module),
+  );
+  return isModules ? 'Modules' : 'Exports';
+}
+
 export function hasReadme(project: ProjectReflection) {
   return Boolean(project.readme);
 }

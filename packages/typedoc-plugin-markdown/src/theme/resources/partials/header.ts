@@ -7,7 +7,7 @@ import {
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { bold, link } from '../../../support/elements';
-import { getProjectDisplayName, hasReadme } from '../../helpers';
+import { getIndexLabel, getProjectDisplayName, hasReadme } from '../../helpers';
 
 /**
  * @category Partials
@@ -25,32 +25,30 @@ export function header(
       return packageHeader(context, page);
     }
   }
-  return projectHeader(context, page);
+  return projectHeader(context, page, isPackages);
 }
 
 function projectHeader(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
+  isPackages = false,
 ) {
   const entryFileName = context.options.getValue('entryFileName');
-
-  const titleLink = context.options.getValue('titleLink');
-
-  const projectName = getProjectDisplayName(
-    page.project,
-    context.options.getValue('includeVersion'),
-  );
 
   const md: string[] = [];
 
   const readmeLabel = 'Readme';
-  const documentationLabel = 'Documentation';
+  const documentationLabel = getIndexLabel(page.project, isPackages);
 
-  if (Boolean(titleLink)) {
-    md.push(link(projectName, titleLink));
-  } else {
-    md.push(projectName);
-  }
+  md.push(
+    bold(
+      getProjectName(
+        page.project,
+        context,
+        context.options.getValue('titleLink'),
+      ),
+    ),
+  );
 
   md.push('•');
 
@@ -103,16 +101,24 @@ function packageHeader(
   const md: string[] = [];
 
   const readmeLabel = 'Readme';
-  const documentationLabel = 'Documentation';
+  const documentationLabel = getIndexLabel(packageItem);
+
+  const isSinglePage =
+    packageItem?.groups &&
+    packageItem?.groups.every((group) => !group.allChildrenHaveOwnDocument());
 
   const entryFileName = context.options.getValue('entryFileName');
 
+  md.push(getProjectName(page.project, context, page.project.url));
+  md.push('\\>');
+
   md.push(bold(packageItem.name));
+
+  md.push('•');
 
   if (hasReadme(packageItem)) {
     const links: string[] = [];
     const readmeUrl = `${packageItem.name}/${entryFileName}`;
-    links.push('•');
 
     links.push(link(readmeLabel, context.relativeURL(readmeUrl)));
     links.push('\\|');
@@ -120,9 +126,31 @@ function packageHeader(
     links.push(link(documentationLabel, context.relativeURL(packageItem.url)));
 
     md.push(links.join(' '));
+  } else {
+    md.push(
+      isSinglePage
+        ? documentationLabel
+        : link(documentationLabel, context.relativeURL(packageItem.url)),
+    );
   }
 
   return `${md.join(' ')}\n\n***\n`;
+}
+
+function getProjectName(
+  project: ProjectReflection,
+  context: MarkdownThemeRenderContext,
+  url?: string,
+) {
+  const projectName = getProjectDisplayName(
+    project,
+    context.options.getValue('includeVersion'),
+  );
+  if (url) {
+    return link(projectName, context.relativeURL(url));
+  } else {
+    return projectName;
+  }
 }
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {

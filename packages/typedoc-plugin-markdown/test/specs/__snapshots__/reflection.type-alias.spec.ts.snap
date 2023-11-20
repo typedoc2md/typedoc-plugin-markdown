@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -18,7 +18,7 @@ Comments for ArrayType
 `;
 
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -33,7 +33,7 @@ Comments for ArrayType
 `;
 
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -54,7 +54,7 @@ Comments for ConditionalType
 `;
 
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -75,7 +75,7 @@ Comments for ConditionalType
 `;
 
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -92,7 +92,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 `;
 
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -107,7 +107,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 `;
 
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -220,7 +220,7 @@ Comments for someFunction
 `;
 
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -262,7 +262,7 @@ Comments for LiteralType
 `;
 
 exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -279,7 +279,7 @@ Comments for ExternalReferenceType
 `;
 
 exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -294,7 +294,7 @@ Comments for ExternalReferenceType
 `;
 
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -321,7 +321,7 @@ Comments for FunctionType
 `;
 
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -347,7 +347,7 @@ Comments for FunctionType
 `;
 
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -364,7 +364,7 @@ Comments for IndexAccessType
 `;
 
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -379,7 +379,7 @@ Comments for IndexAccessType
 `;
 
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -402,7 +402,7 @@ Comments for IntersectionType
 `;
 
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -425,7 +425,7 @@ Comments for IntersectionType
 `;
 
 exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -446,7 +446,7 @@ Comments for PartialMappedType
 `;
 
 exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -467,7 +467,7 @@ Comments for PartialMappedType
 `;
 
 exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -484,7 +484,7 @@ Comments for PrimitiveType
 `;
 
 exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -499,7 +499,7 @@ Comments for PrimitiveType
 `;
 
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -520,7 +520,7 @@ Comments for ReadonlyMapedType
 `;
 
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -541,7 +541,7 @@ Comments for ReadonlyMapedType
 `;
 
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -558,7 +558,7 @@ Comments for StringLiteralType
 `;
 
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -579,7 +579,7 @@ Comments for StringLiteralType
 `;
 
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -596,7 +596,7 @@ Comments for TupleType
 `;
 
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -611,7 +611,7 @@ Comments for TupleType
 `;
 
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -634,7 +634,7 @@ Comments for TypeWithTypeParams
 `;
 
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 
@@ -656,7 +656,7 @@ Comments for TypeWithTypeParams
 `;
 
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • [Readme](../index.md) \\| [Documentation](../exports.md)
+"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
 
 ***
 
@@ -673,7 +673,7 @@ Comments for UnionType
 `;
 
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"typedoc-stubs • [Documentation](../index.md)
+"**typedoc-stubs** • [Exports](../index.md)
 
 ***
 

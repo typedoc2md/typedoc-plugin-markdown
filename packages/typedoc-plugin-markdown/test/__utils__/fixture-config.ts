@@ -107,7 +107,6 @@ export const FIXTURES: Fixture[] = [
       {
         entryPointStrategy: 'packages',
         hideGenerator: true,
-        readme: 'none',
         name: 'packages-example',
       },
     ],

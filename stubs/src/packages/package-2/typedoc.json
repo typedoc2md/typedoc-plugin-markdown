@@ -1,3 +1,4 @@
 {
-  "entryPoints": ["./src/module-1.ts", "./src/module-2.ts"]
+  "entryPoints": ["./src/module-1.ts", "./src/module-2.ts"],
+  "readme": "none"
 }
