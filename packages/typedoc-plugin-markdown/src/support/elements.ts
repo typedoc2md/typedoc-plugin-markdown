@@ -5,7 +5,7 @@
  *
  */
 
-import { formatContents, unEscapeChars } from './utils';
+import { formatContents, trimLastLine, unEscapeChars } from './utils';
 
 export const heading = (level: number, text: string) => {
   level = level > 6 ? 6 : level;
@@ -27,8 +27,13 @@ export const unorderedList = <T>(items: T[]) =>
 
 export const horizontalRule = () => '\n\n***\n\n';
 
-export const codeBlock = (content: string) =>
-  '```ts\n' + unEscapeChars(content) + '\n```';
+export const codeBlock = (content: string) => {
+  const trimmedContent =
+    content.endsWith('}') || content.endsWith('};') || content.endsWith('>')
+      ? trimLastLine(content)
+      : content;
+  return '```ts\n' + unEscapeChars(trimmedContent) + '\n```';
+};
 
 export const table = (headers: string[], rows: string[][]) =>
   `\n| ${headers.join(' | ')} |\n| ${headers

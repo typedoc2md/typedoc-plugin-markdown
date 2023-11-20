@@ -707,11 +707,11 @@ Comments for param B
 
 ### new ClassWithTypeParameters()
 
-> **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\< \`A\`, \`B\`, \`C\` \\>
+> **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
 
 #### Returns
 
-[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\< \`A\`, \`B\`, \`C\` \\>
+[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
 "
 `;
 
@@ -743,12 +743,14 @@ Comments for ClassWithTypeParameters
 ### new ClassWithTypeParameters()
 
 \`\`\`ts
-new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters< A, B, C >
+new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
 \`\`\`
 
 #### Returns
 
-[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\< \`A\`, \`B\`, \`C\` \\>
+\`\`\`ts
+ClassWithTypeParameters<A, B, C>
+\`\`\`
 "
 `;
 

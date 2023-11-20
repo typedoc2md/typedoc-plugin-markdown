@@ -171,7 +171,7 @@ comment for y.z
 
 ### accessorA
 
-> **\`get\`** **accessorA**(): \`Promise\`\\< \`string\` \\>
+> **\`get\`** **accessorA**(): \`Promise\`\\<\`string\`\\>
 
 Comments for accessorA getter
 
@@ -181,11 +181,11 @@ Comments for accessorA setter
 
 #### Parameters
 
-▪ **x**: \`Promise\`\\< \`string\` \\>
+▪ **x**: \`Promise\`\\<\`string\`\\>
 
 #### Returns
 
-\`Promise\`\\< \`string\` \\>
+\`Promise\`\\<\`string\`\\>
 
 ### accessorB
 
@@ -211,7 +211,7 @@ Comments for someFunction
 
 #### Returns
 
-\`Promise\`\\< \`any\` \\>
+\`Promise\`\\<\`any\`\\>
 
 ## Source
 
@@ -235,9 +235,9 @@ type LiteralType: {
      z: (x) => string;
   };
   z: (x) => string;
-  get set accessorA: Promise< string >;
+  get set accessorA: Promise<string>;
   get set accessorB: string;
-  someFunction: Promise< any >;
+  someFunction: Promise<any>;
 };
 \`\`\`
 
@@ -253,11 +253,11 @@ Comments for LiteralType
 | \`y.y\` | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`) => \`string\` | - |
 | \`z\` | (\`x\`) => \`string\` | - |
-| \`get accessorA\` | \`Promise\`\\< \`string\` \\> | Comments for accessorA getter |
+| \`get accessorA\` | \`Promise\`\\<\`string\`\\> | Comments for accessorA getter |
 | \`set accessorA\` | \`void\` | Comments for accessorA setter |
 | \`get accessorB\` | \`string\` | - |
 | \`set accessorB\` | \`void\` | - |
-| \`someFunction\` | \`Promise\`\\< \`any\` \\> | Comments for someFunction |
+| \`someFunction\` | \`Promise\`\\<\`any\`\\> | Comments for someFunction |
 "
 `;
 
@@ -268,7 +268,7 @@ exports[`Type Alias Reflection should compile external reference type: (Output F
 
 # Type alias: ExternalReferenceType
 
-> **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\< \`"x"\`, \`"y"\` \\>
+> **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\<\`"x"\`, \`"y"\`\\>
 
 Comments for ExternalReferenceType
 
@@ -286,7 +286,7 @@ exports[`Type Alias Reflection should compile external reference type: (Output F
 # ExternalReferenceType
 
 \`\`\`ts
-type ExternalReferenceType: ClassWithTypeParameters< "x", "y" >;
+type ExternalReferenceType: ClassWithTypeParameters<"x", "y">;
 \`\`\`
 
 Comments for ExternalReferenceType

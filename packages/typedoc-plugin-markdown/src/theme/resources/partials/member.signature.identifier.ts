@@ -1,7 +1,7 @@
 import { SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, bold, codeBlock } from '../../../support/elements';
-import { escapeChars, trimLastLine } from '../../../support/utils';
+import { escapeChars } from '../../../support/utils';
 import { getSignatureParameters } from '../../helpers';
 
 /**
@@ -57,11 +57,5 @@ export function signatureMemberIdentifier(
   }
 
   const result = md.join('');
-
-  const trimmedResult =
-    result.endsWith('}') || result.endsWith('};') || result.endsWith('>')
-      ? trimLastLine(result)
-      : result;
-
-  return useCodeBlocks ? codeBlock(trimmedResult) : `> ${trimmedResult}`;
+  return useCodeBlocks ? codeBlock(result) : `> ${result}`;
 }

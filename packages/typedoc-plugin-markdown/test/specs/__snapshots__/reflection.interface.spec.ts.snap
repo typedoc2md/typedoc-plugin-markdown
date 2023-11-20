@@ -80,7 +80,7 @@ Comments for propWithProps
 
 ##### callbacks
 
-> **callbacks**?: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>
+> **callbacks**?: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
@@ -149,8 +149,8 @@ Comments for BasicInterface
 | \`functionProp\` | (\`s\`) => \`boolean\` | - |
 | \`optionalProp\`? | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
-| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
-| \`propWithProps.callbacks\`? | \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\> | Comments for callbacks |
+| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
+| \`propWithProps.callbacks\`? | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC |
@@ -262,7 +262,7 @@ Comments for propWithProps
 
 ##### callbacks
 
-> **callbacks**?: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>
+> **callbacks**?: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
@@ -336,8 +336,8 @@ Comments for ExtendedInterface
 | \`functionProp\` | (\`s\`) => \`boolean\` | - | [\`BasicInterface.functionProp\`](BasicInterface.md) |
 | \`optionalProp\`? | \`string\` | Comments for optional prop | [\`BasicInterface.optionalProp\`](BasicInterface.md) |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface.prop\`](BasicInterface.md) |
-| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface.propWithProps\`](BasicInterface.md) |
-| \`propWithProps.callbacks\`? | \`Partial\`\\< [\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\< [\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md) \\> \\> | Comments for callbacks | - |
+| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface.propWithProps\`](BasicInterface.md) |
+| \`propWithProps.callbacks\`? | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC | - |

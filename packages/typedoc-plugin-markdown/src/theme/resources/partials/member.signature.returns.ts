@@ -1,6 +1,16 @@
-import { DeclarationReflection, SignatureReflection, SomeType } from 'typedoc';
+import {
+  DeclarationReflection,
+  ReferenceType,
+  SignatureReflection,
+  SomeType,
+} from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, blockQuoteBlock, heading } from '../../../support/elements';
+import {
+  backTicks,
+  blockQuoteBlock,
+  codeBlock,
+  heading,
+} from '../../../support/elements';
 
 /**
  * @category Partials
@@ -56,5 +66,13 @@ function getReturnType(
   if (typeDeclaration?.signatures) {
     return backTicks('function');
   }
-  return type ? context.someType(type).replace(/\n/g, ' ') : '';
+  const shouldUseCodeBlocks =
+    context.options.getValue('useCodeBlocks') &&
+    type instanceof ReferenceType &&
+    type.typeArguments?.length;
+  return type
+    ? shouldUseCodeBlocks
+      ? codeBlock(context.someType(type))
+      : context.someType(type).replace(/\n/g, ' ')
+    : '';
 }

@@ -87,13 +87,13 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 
 # Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): \`Promise\`\\< \`object\` \\>
+> **functionReturningAPromise**(): \`Promise\`\\<\`object\`\\>
 
 Comments for function
 
 ## Returns
 
-\`Promise\`\\< \`object\` \\>
+\`Promise\`\\<\`object\`\\>
 
 Return comments
 
@@ -111,16 +111,20 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 # functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise< {
+functionReturningAPromise(): Promise<{
   prop: string;
-} >
+}>
 \`\`\`
 
 Comments for function
 
 ## Returns
 
-\`Promise\`\\< \\{   \`prop\`: \`string\`;   } \\>
+\`\`\`ts
+Promise<{
+  prop: string;
+}>
+\`\`\`
 
 Return comments
 "

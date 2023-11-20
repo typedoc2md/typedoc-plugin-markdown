@@ -5,7 +5,6 @@ import {
   escapeChars,
   stripComments,
   stripLineBreaks,
-  trimLastLine,
 } from '../../../support/utils';
 import { KEYWORD_MAP, getDeclarationType, isGroupKind } from '../../helpers';
 
@@ -95,11 +94,5 @@ export function declarationMemberIdentifier(
   }
 
   const result = md.join('');
-
-  const trimmedResult =
-    result.endsWith('}') || result.endsWith('};') || result.endsWith('>')
-      ? trimLastLine(result)
-      : result;
-
-  return useCodeBlocks ? codeBlock(trimmedResult) : `> ${trimmedResult}`;
+  return useCodeBlocks ? codeBlock(result) : `> ${result}`;
 }
