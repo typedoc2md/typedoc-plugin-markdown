@@ -1,4 +1,4 @@
-import { ReferenceType, ReflectionType } from 'typedoc';
+import { ReferenceType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks } from '../../../support/elements';
 
@@ -28,16 +28,8 @@ export function referenceType(
           : backTicks(referenceType.name),
       );
     }
-    if (referenceType.typeArguments && referenceType.typeArguments.length > 0) {
-      reflection.push(
-        `\\<${referenceType.typeArguments
-          .map((typeArgument) => {
-            return typeArgument instanceof ReflectionType
-              ? context.reflectionType(typeArgument)
-              : context.someType(typeArgument);
-          })
-          .join(', ')}\\>`,
-      );
+    if (referenceType.typeArguments && referenceType.typeArguments.length) {
+      reflection.push(context.typeArguments(referenceType.typeArguments));
     }
     return reflection.join('');
   }

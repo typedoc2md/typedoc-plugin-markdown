@@ -51,6 +51,7 @@ const config = {
         expandObjects: true,
         readme: 'none',
         sidebar: { pretty: true },
+        outputFileStrategy: 'modules',
       },
     ],
     [

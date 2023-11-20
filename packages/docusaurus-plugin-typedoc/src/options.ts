@@ -7,6 +7,7 @@ const DEFAULT_PLUGIN_OPTIONS = {
   hideBreadcrumbs: true,
   hidePageHeader: true,
   entryFileName: 'index.md',
+  theme: 'docusaurus',
   sidebar: {
     autoConfiguration: true,
     pretty: false,

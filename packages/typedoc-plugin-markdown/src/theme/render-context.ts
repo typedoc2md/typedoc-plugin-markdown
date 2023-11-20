@@ -34,6 +34,7 @@ import { parametersTable } from './resources/partials/table.parameters';
 import { propertiesTable } from './resources/partials/table.properties';
 import { typeDeclarationTable } from './resources/partials/table.type-declaration';
 import { typeParametersTable } from './resources/partials/table.typeparameters';
+import { typeArguments } from './resources/partials/type-argumentsts';
 import { arrayType } from './resources/partials/type.array';
 import { conditionalType } from './resources/partials/type.conditional';
 import { declarationType } from './resources/partials/type.declaration';
@@ -173,6 +174,8 @@ export class MarkdownThemeRenderContext {
   typeDeclarationTable = bind(typeDeclarationTable, this);
   /** @hidden */
   typeParametersTable = bind(typeParametersTable, this);
+  /** @hidden */
+  typeArguments = bind(typeArguments, this);
   /** @hidden */
   arrayType = bind(arrayType, this);
   /** @hidden */

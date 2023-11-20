@@ -5,6 +5,7 @@ import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { PluginOptions } from '.';
 import { getPluginOptions } from './options';
 import { getSidebar } from './sidebar';
+import { DocusuaurusTheme } from './theme';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -51,6 +52,8 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
     options as Partial<PluginOptions>;
 
   const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
+
+  app.renderer.defineTheme('docusaurus', DocusuaurusTheme);
 
   const outputDir = app.options.getValue('out');
 
