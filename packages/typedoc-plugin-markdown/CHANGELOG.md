@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.17.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.17.0...typedoc-plugin-markdown@3.17.1) (2022-11-06)
+## [3.17.1](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.17.0...typedoc-plugin-markdown@3.17.1) (2023-11-06)
 
 ### Features
 
