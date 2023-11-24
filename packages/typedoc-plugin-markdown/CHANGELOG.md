@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.31
+
+### Patch Changes
+
+- Strikethough members marked as deprecated
+- Expose returned declarations for reference types
+
 ## 4.0.0-next.30
 
 ### Patch Changes
