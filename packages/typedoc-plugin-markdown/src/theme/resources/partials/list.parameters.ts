@@ -25,7 +25,7 @@ export function parametersList(
       (acc: any, child: any) => {
         const childObj = {
           ...child,
-          name: `${current.name}.${child.name}`,
+          name: `${current.name}\\.${child.name}`,
         };
         return parseParams(childObj, acc);
       },
@@ -67,7 +67,7 @@ export function parametersList(
       identifier.push('= ' + getDefaultValue(parameter));
     }
 
-    row.push(`▪ ${rest}${identifier.join('')}`);
+    row.push(`• ${rest}${identifier.join('')}`);
 
     if (parameter.comment) {
       row.push(context.comment(parameter.comment));

@@ -29,7 +29,10 @@ export const horizontalRule = () => '\n\n***\n\n';
 
 export const codeBlock = (content: string) => {
   const trimmedContent =
-    content.endsWith('}') || content.endsWith('};') || content.endsWith('>')
+    content.endsWith('}') ||
+    content.endsWith('};') ||
+    content.endsWith('>') ||
+    content.endsWith('>;')
       ? trimLastLine(content)
       : content;
   return '```ts\n' + unEscapeChars(trimmedContent) + '\n```';

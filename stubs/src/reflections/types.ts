@@ -61,7 +61,16 @@ export type TypeWithTypeParams<T, R> = [T, R];
 /**
  * Comments for ExternalReferenceType
  */
-export type ExternalReferenceType = ClassWithTypeParameters<'x', 'y'>;
+export type ExternalReferenceType = ClassWithTypeParameters<
+  /**
+   * comments for x
+   */
+  'x',
+  /**
+   * Comments for y
+   */
+  'y'
+>;
 
 /**
  * Comments for PartialMappedType
@@ -138,3 +147,18 @@ export type ArrayOfStuff = { name: string; age: number }[];
  * Comments for IndexAccessType
  */
 export type IndexAccessType = ArrayOfStuff[number];
+
+/**
+ * Comments for promise type returning object
+ */
+export type PromiseTypeWithObject = Promise<{
+  /**
+   * comments for x
+   */
+  x: 1;
+}>;
+
+/**
+ * Comments for promise type returning symbol
+ */
+export type PromiseTypeWithSymbol = Promise<IndexAccessType>;

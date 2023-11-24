@@ -24,7 +24,7 @@ export function typeParametersList(
       nameCol.push(`= ${context.someType(typeParameter.default)}`);
     }
 
-    row.push('▪ ' + nameCol.join(' '));
+    row.push('• ' + nameCol.join(' '));
 
     if (typeParameter.comment) {
       row.push(context.comment(typeParameter.comment));

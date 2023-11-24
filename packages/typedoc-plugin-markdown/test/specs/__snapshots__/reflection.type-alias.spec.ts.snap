@@ -45,7 +45,7 @@ Comments for ConditionalType
 
 ## Type parameters
 
-▪ **T**
+• **T**
 
 ## Source
 
@@ -87,7 +87,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 
 ## Source
 
-[types.ts:88](http://source-url)
+[types.ts:97](http://source-url)
 "
 `;
 
@@ -113,7 +113,7 @@ exports[`Type Alias Reflection should compile external literal type: (Output Fil
 
 # Type alias: LiteralType
 
-> **LiteralType**: \`object\`
+> **LiteralType**: \`Object\`
 
 Comments for LiteralType
 
@@ -127,7 +127,7 @@ comment for x
 
 ### y
 
-> **y**: \`object\`
+> **y**: \`Object\`
 
 comment for y
 
@@ -151,7 +151,7 @@ comment for y.z
 
 #### Parameters
 
-▪ **x**: \`string\`
+• **x**: \`string\`
 
 #### Returns
 
@@ -163,7 +163,7 @@ comment for y.z
 
 #### Parameters
 
-▪ **x**: \`string\`
+• **x**: \`string\`
 
 #### Returns
 
@@ -171,7 +171,7 @@ comment for y.z
 
 ### accessorA
 
-> **\`get\`** **accessorA**(): \`Promise\`\\<\`string\`\\>
+> **\`get\`** **accessorA**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 Comments for accessorA getter
 
@@ -181,11 +181,11 @@ Comments for accessorA setter
 
 #### Parameters
 
-▪ **x**: \`Promise\`\\<\`string\`\\>
+• **x**: [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 #### Returns
 
-\`Promise\`\\<\`string\`\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 ### accessorB
 
@@ -195,7 +195,7 @@ Comments for accessorA setter
 
 #### Parameters
 
-▪ **x**: \`string\`
+• **x**: \`string\`
 
 #### Returns
 
@@ -207,15 +207,15 @@ Comments for someFunction
 
 #### Parameters
 
-▪ **param**: \`string\`
+• **param**: \`string\`
 
 #### Returns
 
-\`Promise\`\\<\`any\`\\>
+[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 
 ## Source
 
-[types.ts:93](http://source-url)
+[types.ts:102](http://source-url)
 "
 `;
 
@@ -253,11 +253,11 @@ Comments for LiteralType
 | \`y.y\` | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`) => \`string\` | - |
 | \`z\` | (\`x\`) => \`string\` | - |
-| \`get accessorA\` | \`Promise\`\\<\`string\`\\> | Comments for accessorA getter |
+| \`get accessorA\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\> | Comments for accessorA getter |
 | \`set accessorA\` | \`void\` | Comments for accessorA setter |
 | \`get accessorB\` | \`string\` | - |
 | \`set accessorB\` | \`void\` | - |
-| \`someFunction\` | \`Promise\`\\<\`any\`\\> | Comments for someFunction |
+| \`someFunction\` | [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\> | Comments for someFunction |
 "
 `;
 
@@ -306,9 +306,9 @@ Comments for FunctionType
 
 ## Parameters
 
-▪ **name**: \`string\`
+• **name**: \`string\`
 
-▪ **value**: \`unknown\`
+• **value**: \`unknown\`
 
 ## Returns
 
@@ -316,7 +316,7 @@ Comments for FunctionType
 
 ## Source
 
-[types.ts:83](http://source-url)
+[types.ts:92](http://source-url)
 "
 `;
 
@@ -359,7 +359,7 @@ Comments for IndexAccessType
 
 ## Source
 
-[types.ts:140](http://source-url)
+[types.ts:149](http://source-url)
 "
 `;
 
@@ -385,7 +385,7 @@ exports[`Type Alias Reflection should compile intersection type: (Output File St
 
 # Type alias: IntersectionType
 
-> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`object\`
+> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`Object\`
 
 Comments for IntersectionType
 
@@ -437,11 +437,11 @@ Comments for PartialMappedType
 
 ## Type parameters
 
-▪ **T**
+• **T**
 
 ## Source
 
-[types.ts:69](http://source-url)
+[types.ts:78](http://source-url)
 "
 `;
 
@@ -511,11 +511,11 @@ Comments for ReadonlyMapedType
 
 ## Type parameters
 
-▪ **T**
+• **T**
 
 ## Source
 
-[types.ts:76](http://source-url)
+[types.ts:85](http://source-url)
 "
 `;
 
@@ -623,9 +623,9 @@ Comments for TypeWithTypeParams
 
 ## Type parameters
 
-▪ **T**
+• **T**
 
-▪ **R**
+• **R**
 
 ## Source
 
@@ -662,7 +662,7 @@ exports[`Type Alias Reflection should compile union type: (Output File Strategy 
 
 # Type alias: UnionType
 
-> **UnionType**: \`string\` \\| \`boolean\` \\| \`object\`
+> **UnionType**: \`string\` \\| \`boolean\` \\| \`Object\`
 
 Comments for UnionType
 

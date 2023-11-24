@@ -8,6 +8,7 @@ import { backTicks } from '../../../support/elements';
 export function referenceType(
   context: MarkdownThemeRenderContext,
   referenceType: ReferenceType,
+  foreCollpase = false,
 ): string {
   if (
     referenceType.reflection ||
@@ -29,7 +30,9 @@ export function referenceType(
       );
     }
     if (referenceType.typeArguments && referenceType.typeArguments.length) {
-      reflection.push(context.typeArguments(referenceType.typeArguments));
+      reflection.push(
+        context.typeArguments(referenceType.typeArguments, foreCollpase),
+      );
     }
     return reflection.join('');
   }

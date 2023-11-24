@@ -132,6 +132,11 @@ export function functionReturningAFunction() {
  */
 export function functionReturningAPromise(): Promise<{ prop: string }> {
   return new Promise(() => {
-    return { prop: 'prop' };
+    return {
+      /**
+       * Comment for prop
+       */
+      prop: 'prop',
+    };
   });
 }

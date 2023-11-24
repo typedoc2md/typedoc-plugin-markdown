@@ -8,6 +8,7 @@ import { backTicks } from '../../../support/elements';
 export function reflectionType(
   context: MarkdownThemeRenderContext,
   reflectionType: ReflectionType,
+  foreCollpase = false,
 ): string {
   const root =
     reflectionType instanceof ReflectionType
@@ -17,7 +18,8 @@ export function reflectionType(
     return context.functionType(root.signatures);
   }
 
-  const expandObjects = context.options.getValue('expandObjects') as boolean;
+  const expandObjects =
+    !foreCollpase && (context.options.getValue('expandObjects') as boolean);
 
-  return expandObjects ? context.declarationType(root) : backTicks('object');
+  return expandObjects ? context.declarationType(root) : backTicks('Object');
 }

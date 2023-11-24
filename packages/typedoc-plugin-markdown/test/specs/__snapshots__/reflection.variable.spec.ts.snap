@@ -7,7 +7,9 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 
 # Variable: objectWithSymbol
 
-> **\`const\`** **objectWithSymbol**: \`object\`
+> **\`const\`** **objectWithSymbol**: \`Object\`
+
+Comments variable with symbol
 
 ## Type declaration
 
@@ -17,7 +19,7 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 
 ## Source
 
-[variables.ts:47](http://source-url)
+[variables.ts:50](http://source-url)
 "
 `;
 
@@ -33,6 +35,8 @@ const objectWithSymbol: {
   [sym]: string;
 };
 \`\`\`
+
+Comments variable with symbol
 
 ## Type declaration
 
@@ -113,7 +117,7 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 
 # Variable: objectLiteralVariable
 
-> **\`const\`** **objectLiteralVariable**: \`object\`
+> **\`const\`** **objectLiteralVariable**: \`Object\`
 
 Comments for objectLiteralVariable
 
@@ -169,7 +173,7 @@ Comments for objectLiteralVariable
 
 ### valueX
 
-> **valueX**: \`object\`
+> **valueX**: \`Object\`
 
 ### valueX.valueA
 
@@ -177,15 +181,15 @@ Comments for objectLiteralVariable
 
 ### valueX.valueY
 
-> **valueX.valueY**: (\`z\`) => \`object\`
+> **valueX.valueY**: (\`z\`) => \`Object\`
 
 #### Parameters
 
-▪ **z**: \`string\`
+• **z**: \`string\`
 
 #### Returns
 
-\`object\`
+\`Object\`
 
 > ##### a
 >
@@ -197,7 +201,7 @@ Comments for objectLiteralVariable
 >
 > ##### c
 >
-> > **c**: \`object\`
+> > **c**: \`Object\`
 >
 > ##### c.a
 >
@@ -218,9 +222,9 @@ Comments for objectLiteralVariable
 
 #### Parameters
 
-▪ **unionParam**: \`"a"\` \\| \`"b"\`
+• **unionParam**: \`"a"\` \\| \`"b"\`
 
-▪ **\\_undercoreParam\\_**: \`string\`
+• **\\_undercoreParam\\_**: \`string\`
 
 #### Returns
 

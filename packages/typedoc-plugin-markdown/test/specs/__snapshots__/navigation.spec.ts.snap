@@ -931,6 +931,14 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "type-aliases/PrimitiveType.md"
       },
       {
+        "title": "PromiseTypeWithObject",
+        "url": "type-aliases/PromiseTypeWithObject.md"
+      },
+      {
+        "title": "PromiseTypeWithSymbol",
+        "url": "type-aliases/PromiseTypeWithSymbol.md"
+      },
+      {
         "title": "ReadonlyMappedType",
         "url": "type-aliases/ReadonlyMappedType.md"
       },

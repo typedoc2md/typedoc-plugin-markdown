@@ -1,6 +1,7 @@
 import {
   DeclarationReflection,
   IntersectionType,
+  ReferenceType,
   ReflectionType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
@@ -16,9 +17,6 @@ export function declarationMember(
   nested = false,
 ) {
   const md: string[] = [];
-
-  const typeDeclaration = (declaration.type as any)
-    ?.declaration as DeclarationReflection;
 
   md.push(context.declarationMemberIdentifier(declaration));
 
@@ -40,6 +38,21 @@ export function declarationMember(
     });
   }
 
+  if (
+    declaration.type instanceof ReferenceType &&
+    declaration.type.typeArguments?.length
+  ) {
+    if (declaration.type.typeArguments[0] instanceof ReflectionType) {
+      md.push(heading(headingLevel, 'Type declaration'));
+      md.push(
+        context.typeDeclarationMember(
+          declaration.type.typeArguments[0].declaration,
+          headingLevel,
+        ),
+      );
+    }
+  }
+
   if (declaration.typeParameters) {
     md.push(heading(headingLevel, 'Type parameters'));
     if (context.options.getValue('parametersFormat') === 'table') {
@@ -53,6 +66,9 @@ export function declarationMember(
       );
     }
   }
+
+  const typeDeclaration = (declaration.type as any)
+    ?.declaration as DeclarationReflection;
 
   if (typeDeclaration) {
     if (typeDeclaration?.indexSignature) {

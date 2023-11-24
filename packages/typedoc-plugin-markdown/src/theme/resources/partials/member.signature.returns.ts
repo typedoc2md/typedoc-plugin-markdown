@@ -1,16 +1,12 @@
 import {
   DeclarationReflection,
   ReferenceType,
+  ReflectionType,
   SignatureReflection,
   SomeType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import {
-  backTicks,
-  blockQuoteBlock,
-  codeBlock,
-  heading,
-} from '../../../support/elements';
+import { backTicks, blockQuoteBlock, heading } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -36,10 +32,28 @@ export function signatureMemberReturns(
     md.push(tags.join('\n\n'));
   }
 
+  if (
+    signature.type instanceof ReferenceType &&
+    signature.type.typeArguments?.length
+  ) {
+    if (signature.type.typeArguments[0] instanceof ReflectionType) {
+      md.push(
+        blockQuoteBlock(
+          context.typeDeclarationMember(
+            signature.type.typeArguments[0].declaration,
+            headingLevel,
+          ),
+        ),
+      );
+    }
+  }
+
   if (typeDeclaration?.signatures) {
     typeDeclaration.signatures.forEach((signature) => {
       md.push(
-        blockQuoteBlock(context.signatureMember(signature, headingLevel + 1)),
+        blockQuoteBlock(
+          context.signatureMember(signature, headingLevel + 1, true),
+        ),
       );
     });
   }
@@ -61,18 +75,10 @@ function getReturnType(
   type?: SomeType,
 ) {
   if (typeDeclaration?.children) {
-    return backTicks('object');
+    return backTicks('Object');
   }
   if (typeDeclaration?.signatures) {
-    return backTicks('function');
+    return backTicks('Function');
   }
-  const shouldUseCodeBlocks =
-    context.options.getValue('useCodeBlocks') &&
-    type instanceof ReferenceType &&
-    type.typeArguments?.length;
-  return type
-    ? shouldUseCodeBlocks
-      ? codeBlock(context.someType(type))
-      : context.someType(type).replace(/\n/g, ' ')
-    : '';
+  return type ? context.someType(type, true).replace(/\n/g, ' ') : '';
 }
