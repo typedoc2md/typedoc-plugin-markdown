@@ -1,13 +1,13 @@
 # Changelog
 
-## 4.0.0-next.31
+## 4.0.0-next.31 (2023-11-24)
 
 ### Patch Changes
 
 - Strikethough members marked as deprecated
 - Expose returned declarations for reference types
 
-## 4.0.0-next.30
+## 4.0.0-next.30 (2023-11-22)
 
 ### Patch Changes
 
