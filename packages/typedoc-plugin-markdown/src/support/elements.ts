@@ -38,6 +38,8 @@ export const codeBlock = (content: string) => {
   return '```ts\n' + unEscapeChars(trimmedContent) + '\n```';
 };
 
+export const strikeThrough = (content: string) => `~~${content}~~`;
+
 export const table = (headers: string[], rows: string[][]) =>
   `\n| ${headers.join(' | ')} |\n| ${headers
     .map(() => ':------')

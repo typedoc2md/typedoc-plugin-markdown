@@ -12,7 +12,7 @@ import {
   ReflectionKind,
   SignatureReflection,
 } from 'typedoc';
-import { backTicks } from '../support/elements';
+import { backTicks, strikeThrough } from '../support/elements';
 import { escapeChars } from '../support/utils';
 
 export function getDeclarationType(declaration: DeclarationReflection) {
@@ -131,7 +131,15 @@ export function getMemberTitle(reflection: DeclarationReflection) {
     name.push(`${`\\<${typeParameters}\\>`}`);
   }
 
-  md.push(name.join(''));
+  if (reflection.flags.isOptional) {
+    name.push('?');
+  }
+
+  if (reflection.isDeprecated && reflection.isDeprecated()) {
+    md.push(strikeThrough(name.join('')));
+  } else {
+    md.push(name.join(''));
+  }
 
   return md.join(': ');
 }

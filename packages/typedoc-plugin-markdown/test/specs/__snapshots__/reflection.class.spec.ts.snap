@@ -732,7 +732,7 @@ Comments for ClassWithTypeParameters
 
 ## Type parameters
 
-| Parameter | Default | Description |
+| Parameter | Value | Description |
 | :------ | :------ | :------ |
 | \`A\` | - | Comments for param A |
 | \`B\` extends \`string\` | - | Comments for param B |

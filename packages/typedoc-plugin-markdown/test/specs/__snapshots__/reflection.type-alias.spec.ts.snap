@@ -371,7 +371,7 @@ exports[`Type Alias Reflection should compile index access type: (Output File St
 # IndexAccessType
 
 \`\`\`ts
-type IndexAccessType: ArrayOfStuff\\[number\\];
+type IndexAccessType: ArrayOfStuff[number];
 \`\`\`
 
 Comments for IndexAccessType

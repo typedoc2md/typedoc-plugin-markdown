@@ -13,8 +13,9 @@ Comments for BasicInterface
 
 - [Extended By](BasicInterface.md#extended-by)
 - [Properties](BasicInterface.md#properties)
+  - [~~deprecatedProp~~](BasicInterface.md#deprecatedprop)
   - [functionProp](BasicInterface.md#functionprop)
-  - [optionalProp](BasicInterface.md#optionalprop)
+  - [optionalProp?](BasicInterface.md#optionalprop)
   - [prop](BasicInterface.md#prop)
   - [propWithProps](BasicInterface.md#propwithprops)
 
@@ -23,6 +24,24 @@ Comments for BasicInterface
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
 ## Properties
+
+### ~~deprecatedProp~~
+
+> **deprecatedProp**: \`string\`
+
+#### Deprecated
+
+This prop is deprecte
+
+#### Some Tag
+
+Comments for some tag
+
+#### Source
+
+[interfaces.ts:25](http://source-url)
+
+***
 
 ### functionProp
 
@@ -42,11 +61,11 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:25](http://source-url)
+[interfaces.ts:36](http://source-url)
 
 ***
 
-### optionalProp
+### optionalProp?
 
 > **optionalProp**?: \`string\`
 
@@ -54,7 +73,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:19](http://source-url)
+[interfaces.ts:30](http://source-url)
 
 ***
 
@@ -78,7 +97,7 @@ Comments for propWithProps
 
 #### Type declaration
 
-##### callbacks
+##### callbacks?
 
 > **callbacks**?: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
@@ -120,7 +139,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:30](http://source-url)
+[interfaces.ts:41](http://source-url)
 "
 `;
 
@@ -146,11 +165,12 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag |
 | \`functionProp\` | (\`s\`) => \`boolean\` | - |
-| \`optionalProp\`? | \`string\` | Comments for optional prop |
+| \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
 | \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
-| \`propWithProps.callbacks\`? | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
+| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC |
@@ -172,9 +192,10 @@ Comments for ExtendedInterface
 
 - [Extends](ExtendedInterface.md#extends)
 - [Properties](ExtendedInterface.md#properties)
+  - [~~deprecatedProp~~](ExtendedInterface.md#deprecatedprop)
   - [extendedProp](ExtendedInterface.md#extendedprop)
   - [functionProp](ExtendedInterface.md#functionprop)
-  - [optionalProp](ExtendedInterface.md#optionalprop)
+  - [optionalProp?](ExtendedInterface.md#optionalprop)
   - [prop](ExtendedInterface.md#prop)
   - [propWithProps](ExtendedInterface.md#propwithprops)
 
@@ -184,13 +205,35 @@ Comments for ExtendedInterface
 
 ## Properties
 
+### ~~deprecatedProp~~
+
+> **deprecatedProp**: \`string\`
+
+#### Deprecated
+
+This prop is deprecte
+
+#### Some Tag
+
+Comments for some tag
+
+#### Inherited from
+
+[\`BasicInterface.deprecatedProp\`](BasicInterface.md#deprecatedprop)
+
+#### Source
+
+[interfaces.ts:25](http://source-url)
+
+***
+
 ### extendedProp
 
 > **extendedProp**: \`string\`
 
 #### Source
 
-[interfaces.ts:73](http://source-url)
+[interfaces.ts:84](http://source-url)
 
 ***
 
@@ -216,11 +259,11 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:25](http://source-url)
+[interfaces.ts:36](http://source-url)
 
 ***
 
-### optionalProp
+### optionalProp?
 
 > **optionalProp**?: \`string\`
 
@@ -232,7 +275,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:19](http://source-url)
+[interfaces.ts:30](http://source-url)
 
 ***
 
@@ -260,7 +303,7 @@ Comments for propWithProps
 
 #### Type declaration
 
-##### callbacks
+##### callbacks?
 
 > **callbacks**?: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
@@ -306,7 +349,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:30](http://source-url)
+[interfaces.ts:41](http://source-url)
 "
 `;
 
@@ -332,12 +375,13 @@ Comments for ExtendedInterface
 
 | Property | Type | Description | Inheritance |
 | :------ | :------ | :------ | :------ |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface.deprecatedProp\`](BasicInterface.md) |
 | \`extendedProp\` | \`string\` | - | - |
 | \`functionProp\` | (\`s\`) => \`boolean\` | - | [\`BasicInterface.functionProp\`](BasicInterface.md) |
-| \`optionalProp\`? | \`string\` | Comments for optional prop | [\`BasicInterface.optionalProp\`](BasicInterface.md) |
+| \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface.optionalProp\`](BasicInterface.md) |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface.prop\`](BasicInterface.md) |
 | \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface.propWithProps\`](BasicInterface.md) |
-| \`propWithProps.callbacks\`? | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
+| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC | - |
@@ -373,7 +417,7 @@ Comments for IndexableInterface
 
 #### Source
 
-[interfaces.ts:81](http://source-url)
+[interfaces.ts:92](http://source-url)
 "
 `;
 
@@ -432,7 +476,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:66](http://source-url)
+[interfaces.ts:77](http://source-url)
 "
 `;
 

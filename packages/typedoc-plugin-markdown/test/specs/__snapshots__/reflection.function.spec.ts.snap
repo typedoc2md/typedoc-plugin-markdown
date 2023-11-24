@@ -739,7 +739,7 @@ Function with type parameters
 
 ## Type parameters
 
-| Parameter | Default | Description |
+| Parameter | Value | Description |
 | :------ | :------ | :------ |
 | \`T\` | - | Comments for T |
 | \`Item\` | \`string\` \\| \`boolean\` | - |

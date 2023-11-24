@@ -24,7 +24,7 @@ export function typeParametersTable(
   const headers = ['Parameter'];
 
   if (hasDefault) {
-    headers.push('Default');
+    headers.push('Value');
   }
 
   if (hasComments) {

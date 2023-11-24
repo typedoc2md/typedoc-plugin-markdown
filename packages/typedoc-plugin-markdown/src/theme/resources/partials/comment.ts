@@ -26,10 +26,10 @@ export function comment(
         const tagName = tag.tag.substring(1);
         const tagText = camelToTitleCase(tagName);
         const tagMd = [
-          headingLevel ? heading(headingLevel, tagText) : bold(tagText),
+          headingLevel ? heading(headingLevel, tagText) + '\n' : bold(tagText),
         ];
         tagMd.push(context.commentParts(tag.content));
-        return tagMd.join('\n\n');
+        return tagMd.join('\n');
       });
     md.push(tags.join('\n\n'));
   }

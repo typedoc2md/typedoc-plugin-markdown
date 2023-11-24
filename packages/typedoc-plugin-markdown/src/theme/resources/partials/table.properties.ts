@@ -1,6 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, table } from '../../../support/elements';
+import { backTicks, strikeThrough, table } from '../../../support/elements';
 import {
   formatTableDescriptionCol,
   stripLineBreaks,
@@ -71,9 +71,15 @@ export function propertiesTable(
       );
     }
 
-    nameColumn.push(
-      `${`${backTicks(property.name)}${property.flags.isOptional ? '?' : ''}`}`,
-    );
+    const propertyName = `${property.name}${
+      property.flags.isOptional ? '?' : ''
+    }`;
+
+    if (property.isDeprecated && property.isDeprecated()) {
+      nameColumn.push(strikeThrough(backTicks(propertyName)));
+    } else {
+      nameColumn.push(backTicks(propertyName));
+    }
 
     row.push(nameColumn.join(' '));
 

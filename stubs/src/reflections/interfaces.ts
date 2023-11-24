@@ -14,6 +14,17 @@ export interface BasicInterface {
   prop: string;
 
   /**
+   * @deprecated
+   *
+   * This prop is deprecte
+   *
+   * @someTag
+   *
+   * Comments for some tag
+   */
+  deprecatedProp: string;
+
+  /**
    * Comments for optional prop
    */
   optionalProp?: string;
