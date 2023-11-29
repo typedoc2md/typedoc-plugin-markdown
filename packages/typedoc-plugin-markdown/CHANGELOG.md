@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.32
+
+### Patch Changes
+
+- Generate packages.md even if groups used
+
 ## 4.0.0-next.31 (2023-11-24)
 
 ### Patch Changes
