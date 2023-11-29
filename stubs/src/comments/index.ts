@@ -2,7 +2,7 @@
  *
  * Comments form module comments
  *
- * ## Links
+ * @links
  *
  * Links using `{@link}` inline tags.
  *
@@ -15,7 +15,7 @@
  * - {@link SameName.prop}
  * - {@link prop:var}
  *
- * ### External link
+ * External links:
  *
  * - {@link https://www.google.com Google}
  * - {@linkcode https://www.google.com}
@@ -50,6 +50,12 @@ export interface CommentInterface {
 export enum CommentEnum {
   /**
    * Comment for Member
+   *
+   * @deprecated
+   *
+   * Deprecated member
+   *
+   * @see {@link SameName}
    */
   Member,
   MemberB,
