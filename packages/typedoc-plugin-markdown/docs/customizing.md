@@ -2,7 +2,7 @@
 
 If required the theme can be further extended using recommended patterns of the HTML theme - please see TypeDoc's [custom theme](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) docs.
 
-This approach can be implemented in this example showing how the header and footer templates can be customized with a new theme using a customn plugin.
+This approach can be implemented in this example showing how the header and footer templates can be customized with a new theme using a custom plugin.
 
 `custom-plugin.ts`
 
