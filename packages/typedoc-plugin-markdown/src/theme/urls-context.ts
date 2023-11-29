@@ -45,8 +45,7 @@ export class UrlsContext {
    */
   getUrls(): UrlMapping[] {
     const isPackages =
-      this.options.entryPointStrategy === EntryPointStrategy.Packages &&
-      !Boolean(this.project.groups);
+      this.options.entryPointStrategy === EntryPointStrategy.Packages;
 
     const entryFileName = this.options.entryFileName as string;
 
