@@ -86,6 +86,7 @@ Options that configure additional functionality.
 * [`--preserveAnchorCasing`](./docs/plugin-options.md#--preserveanchorcasing)
 * [`--anchorPrefix`](./docs/plugin-options.md#--anchorprefix)
 * [`--namedAnchors`](./docs/plugin-options.md#--namedanchors)
+* [`--publicPath`](./docs/plugin-options.md#--publicpath)
 
 ## Contributing
 

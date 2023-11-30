@@ -69,6 +69,7 @@ export const FIXTURES: Fixture[] = [
         theme: 'custom-theme',
         indexFormat: 'table',
         hideInPageTOC: true,
+        publicPath: 'http://public-path',
       },
     ],
   },
@@ -91,6 +92,7 @@ export const FIXTURES: Fixture[] = [
         namedAnchors: {
           tableRows: true,
         },
+        publicPath: 'http://public-path',
       },
     ],
   },
@@ -99,11 +101,6 @@ export const FIXTURES: Fixture[] = [
     entryPoints: FixtureEntryPoints.Packages,
     commonOptions: {},
     options: [
-      {
-        entryPointStrategy: 'packages',
-        hideGenerator: true,
-        name: 'packages-example',
-      },
       {
         entryPointStrategy: 'packages',
         hideGenerator: true,

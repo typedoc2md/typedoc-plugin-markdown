@@ -23,6 +23,7 @@ declare module 'typedoc' {
     preserveAnchorCasing: boolean;
     anchorPrefix: string;
     namedAnchors: Record<string, boolean>;
+    publicPath: string;
   }
 }
 
@@ -48,4 +49,5 @@ export interface PluginOptions {
   preserveAnchorCasing: boolean;
   anchorPrefix: string;
   namedAnchors: Record<string, boolean>;
+  publicPath: string;
 }

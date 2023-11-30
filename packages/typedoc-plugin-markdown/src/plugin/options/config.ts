@@ -279,6 +279,7 @@ export const indexFormat: DeclarationOption = {
 };
 
 /**
+ * @category other
  */
 export const preserveAnchorCasing: DeclarationOption = {
   name: 'preserveAnchorCasing',
@@ -288,6 +289,7 @@ export const preserveAnchorCasing: DeclarationOption = {
 };
 
 /**
+ * @category other
  */
 export const anchorPrefix: DeclarationOption = {
   name: 'anchorPrefix',
@@ -297,12 +299,15 @@ export const anchorPrefix: DeclarationOption = {
 };
 
 /**
+ *
  * Internal anchor links are used when referencing symbols with in-page table of contents or when referenced with  by {\@link} tags.
  *
  * There are two flags exposed by this option:
  *
  * - `headings` - Add HTML named anchors to heading for implementations that do not assign header ids.
  * - `tableRows` - Add anchors to table rows when table formats are selected and no heading elements are present.
+ *
+ * @category other
  */
 export const namedAnchors: DeclarationOption = {
   name: 'namedAnchors',
@@ -312,4 +317,14 @@ export const namedAnchors: DeclarationOption = {
     headings: false,
     tableRows: false,
   },
+};
+
+/**
+ * @category other
+ */
+export const publicPath: DeclarationOption = {
+  name: 'publicPath',
+  help: 'Specify the base path for all urls. If undefined urls will be relative.',
+  type: ParameterType.String,
+  defaultValue: undefined,
 };

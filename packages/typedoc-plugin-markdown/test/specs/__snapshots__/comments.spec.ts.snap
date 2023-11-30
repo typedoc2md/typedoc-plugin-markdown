@@ -70,14 +70,14 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](interfaces/CommentInterface.md) - Links to CommentInterface
-- [Links to CommentInterface.prop](interfaces/CommentInterface.md#prop)
-- [Links to CommentInterface.propb](interfaces/CommentInterface.md#propb)
-- [CommentEnum.MemberB](enumerations/CommentEnum.md#memberb)
-- [SameName:var](variables/SameName.md)
-- [SameName:interface](interfaces/SameName.md)
-- [SameName.prop](interfaces/SameName.md#prop)
-- [prop:var](variables/prop.md)
+- [CommentInterface](http:/public-path/interfaces/CommentInterface.md) - Links to CommentInterface
+- [Links to CommentInterface.prop](http:/public-path/interfaces/CommentInterface.md#prop)
+- [Links to CommentInterface.propb](http:/public-path/interfaces/CommentInterface.md#propb)
+- [CommentEnum.MemberB](http:/public-path/enumerations/CommentEnum.md#memberb)
+- [SameName:var](http:/public-path/variables/SameName.md)
+- [SameName:interface](http:/public-path/interfaces/SameName.md)
+- [SameName.prop](http:/public-path/interfaces/SameName.md#prop)
+- [prop:var](http:/public-path/variables/prop.md)
 
 External links:
 
@@ -109,22 +109,22 @@ Some <p> html </p> inside codeblock
 
 | Enumeration | Description |
 | :------ | :------ |
-| [CommentEnum](enumerations/CommentEnum.md) | - |
+| [CommentEnum](http:/public-path/enumerations/CommentEnum.md) | - |
 
 ## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
-| [CommentInterface](interfaces/CommentInterface.md) | - |
-| [SameName](interfaces/SameName.md) | - |
+| [CommentInterface](http:/public-path/interfaces/CommentInterface.md) | - |
+| [SameName](http:/public-path/interfaces/SameName.md) | - |
 
 ## Variables
 
 | Variable | Description |
 | :------ | :------ |
-| [SameName](variables/SameName.md) | - |
-| [prop](variables/prop.md) | - |
-| [propb](variables/propb.md) | - |
+| [SameName](http:/public-path/variables/SameName.md) | - |
+| [prop](http:/public-path/variables/prop.md) | - |
+| [propb](http:/public-path/variables/propb.md) | - |
 "
 `;
 
@@ -266,14 +266,14 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](exports.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](exports.md#prop)
-- [Links to CommentInterface.propb](exports.md#propb)
-- [CommentEnum.MemberB](exports.md#memberb)
-- [SameName:var](exports.md#samename-1)
-- [SameName:interface](exports.md#samename)
-- [SameName.prop](exports.md#prop-1)
-- [prop:var](exports.md#prop-2)
+- [CommentInterface](http:/public-path/exports.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](http:/public-path/exports.md#prop)
+- [Links to CommentInterface.propb](http:/public-path/exports.md#propb)
+- [CommentEnum.MemberB](http:/public-path/exports.md#memberb)
+- [SameName:var](http:/public-path/exports.md#samename-1)
+- [SameName:interface](http:/public-path/exports.md#samename)
+- [SameName.prop](http:/public-path/exports.md#prop-1)
+- [prop:var](http:/public-path/exports.md#prop-2)
 
 External links:
 
@@ -309,7 +309,7 @@ Some <p> html </p> inside codeblock
 
 | Member | Value | Description |
 | :------ | :------ | :------ |
-| <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](exports.md#samename-1) |
+| <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](http:/public-path/exports.md#samename-1) |
 | <a id="memberb" name="memberb"></a> \`MemberB\` | \`1\` | - |
 
 ## Interfaces

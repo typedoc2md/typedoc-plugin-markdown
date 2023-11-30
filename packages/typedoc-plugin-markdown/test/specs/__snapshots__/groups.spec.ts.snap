@@ -34,7 +34,7 @@ A basic module
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](../index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -46,22 +46,22 @@ A basic module
 
 | Enumeration | Description |
 | :------ | :------ |
-| [EnumA](enumerations/EnumA.md) | - |
-| [EnumB](enumerations/EnumB.md) | - |
+| [EnumA](http:/public-path/basic/enumerations/EnumA.md) | - |
+| [EnumB](http:/public-path/basic/enumerations/EnumB.md) | - |
 
 ## Classes
 
 | Class | Description |
 | :------ | :------ |
-| [ClassA](classes/ClassA.md) | - |
-| [ClassB](classes/ClassB.md) | - |
+| [ClassA](http:/public-path/basic/classes/ClassA.md) | - |
+| [ClassB](http:/public-path/basic/classes/ClassB.md) | - |
 
 ## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
-| [InterfaceA](interfaces/InterfaceA.md) | - |
-| [InterfaceB](interfaces/InterfaceB.md) | - |
+| [InterfaceA](http:/public-path/basic/interfaces/InterfaceA.md) | - |
+| [InterfaceB](http:/public-path/basic/interfaces/InterfaceB.md) | - |
 
 <a id="typea" name="typea"></a>
 
@@ -174,7 +174,7 @@ A basic module
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -204,11 +204,11 @@ A basic module
 
 #### new ClassA()
 
-> **new ClassA**(): [\`ClassA\`](basic.md#classa)
+> **new ClassA**(): [\`ClassA\`](http:/public-path/basic.md#classa)
 
 ##### Returns
 
-[\`ClassA\`](basic.md#classa)
+[\`ClassA\`](http:/public-path/basic.md#classa)
 
 ***
 
@@ -222,11 +222,11 @@ A basic module
 
 #### new ClassB()
 
-> **new ClassB**(): [\`ClassB\`](basic.md#classb)
+> **new ClassB**(): [\`ClassB\`](http:/public-path/basic.md#classb)
 
 ##### Returns
 
-[\`ClassB\`](basic.md#classb)
+[\`ClassB\`](http:/public-path/basic.md#classb)
 
 ***
 
@@ -341,7 +341,7 @@ A module that contains categories
 `;
 
 exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -459,7 +459,7 @@ A module that contains categories
 `;
 
 exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](../index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -473,26 +473,26 @@ A module that contains categories
 
 | Enumeration | Description |
 | :------ | :------ |
-| [CategoryAEnum1](enumerations/CategoryAEnum1.md) | - |
-| [CategoryAEnum2](enumerations/CategoryAEnum2.md) | - |
-| [CategoryAInterface1](interfaces/CategoryAInterface1.md) | - |
-| [CategoryAInterface2](interfaces/CategoryAInterface2.md) | - |
+| [CategoryAEnum1](http:/public-path/has-categories/enumerations/CategoryAEnum1.md) | - |
+| [CategoryAEnum2](http:/public-path/has-categories/enumerations/CategoryAEnum2.md) | - |
+| [CategoryAInterface1](http:/public-path/has-categories/interfaces/CategoryAInterface1.md) | - |
+| [CategoryAInterface2](http:/public-path/has-categories/interfaces/CategoryAInterface2.md) | - |
 
 ### Category B
 
 | Enumeration | Description |
 | :------ | :------ |
-| [CategoryBEnum1](enumerations/CategoryBEnum1.md) | - |
-| [CategoryBEnum2](enumerations/CategoryBEnum2.md) | - |
-| [CategoryBInterface1](interfaces/CategoryBInterface1.md) | - |
-| [CategoryBInterface2](interfaces/CategoryBInterface2.md) | - |
+| [CategoryBEnum1](http:/public-path/has-categories/enumerations/CategoryBEnum1.md) | - |
+| [CategoryBEnum2](http:/public-path/has-categories/enumerations/CategoryBEnum2.md) | - |
+| [CategoryBInterface1](http:/public-path/has-categories/interfaces/CategoryBInterface1.md) | - |
+| [CategoryBInterface2](http:/public-path/has-categories/interfaces/CategoryBInterface2.md) | - |
 
 ### Other
 
 | Enumeration | Description |
 | :------ | :------ |
-| [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
-| [UnCategorizedInterace](interfaces/UnCategorizedInterace.md) | - |
+| [UnCategorizedEnum](http:/public-path/has-categories/enumerations/UnCategorizedEnum.md) | - |
+| [UnCategorizedInterace](http:/public-path/has-categories/interfaces/UnCategorizedInterace.md) | - |
 
 CUSTOM FOOTER HERE
 "
@@ -518,7 +518,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -528,13 +528,13 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 | Module | Description |
 | :------ | :------ |
-| [42-module-name](42-module-name/index.md) | - |
-| [\\<internal\\>](-internal-/index.md) | - |
-| [basic](basic/index.md) | A basic module |
-| [has-categories](has-categories/index.md) | A module that contains categories |
-| [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
-| [has-references](has-references/index.md) | A module that contains references |
-| [index](index/index.md) | A module named index |
+| [42-module-name](http:/public-path/42-module-name/index.md) | - |
+| [\\<internal\\>](http:/public-path/-internal-/index.md) | - |
+| [basic](http:/public-path/basic/index.md) | A basic module |
+| [has-categories](http:/public-path/has-categories/index.md) | A module that contains categories |
+| [has-namespaces](http:/public-path/has-namespaces/index.md) | A module that contains namespaces |
+| [has-references](http:/public-path/has-references/index.md) | A module that contains references |
+| [index](http:/public-path/index/index.md) | A module named index |
 
 CUSTOM FOOTER HERE
 "
@@ -560,7 +560,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -570,13 +570,13 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 
 | Module | Description |
 | :------ | :------ |
-| [42-module-name](42-module-name.md) | - |
-| [\\<internal\\>](-internal-.md) | - |
-| [basic](basic.md) | A basic module |
-| [has-categories](has-categories.md) | A module that contains categories |
-| [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
-| [has-references](has-references.md) | A module that contains references |
-| [index](module.index.md) | A module named index |
+| [42-module-name](http:/public-path/42-module-name.md) | - |
+| [\\<internal\\>](http:/public-path/-internal-.md) | - |
+| [basic](http:/public-path/basic.md) | A basic module |
+| [has-categories](http:/public-path/has-categories.md) | A module that contains categories |
+| [has-namespaces](http:/public-path/has-namespaces/index.md) | A module that contains namespaces |
+| [has-references](http:/public-path/has-references.md) | A module that contains references |
+| [index](http:/public-path/module.index.md) | A module named index |
 
 CUSTOM FOOTER HERE
 "
@@ -604,13 +604,13 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](../../../index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
 # Namespace: \\_Namespace\\_A\\_
 
-[has-namespaces](../../index.md).\\_Namespace\\_A\\_
+[has-namespaces](http:/public-path/has-namespaces/index.md).\\_Namespace\\_A\\_
 
 ## Index
 
@@ -618,13 +618,13 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 | Namespace | Description |
 | :------ | :------ |
-| [NestedNamespace](namespaces/NestedNamespace/index.md) | - |
+| [NestedNamespace](http:/public-path/has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/index.md) | - |
 
 ### Interfaces
 
 | Interface | Description |
 | :------ | :------ |
-| [NamespaceInterface](interfaces/NamespaceInterface.md) | - |
+| [NamespaceInterface](http:/public-path/has-namespaces/namespaces/Namespace_A_/interfaces/NamespaceInterface.md) | - |
 
 CUSTOM FOOTER HERE
 "
@@ -656,19 +656,19 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](../../../index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
 # Namespace: \\_Namespace\\_A\\_
 
-[has-namespaces](../../index.md).\\_Namespace\\_A\\_
+[has-namespaces](http:/public-path/has-namespaces/index.md).\\_Namespace\\_A\\_
 
 ## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
-| [NestedNamespace](namespaces/NestedNamespace.md) | - |
+| [NestedNamespace](http:/public-path/has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace.md) | - |
 
 <a id="namespaceinterface" name="namespaceinterface"></a>
 
@@ -727,7 +727,7 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](../index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -739,29 +739,29 @@ A module that contains namespaces
 
 | Namespace | Description |
 | :------ | :------ |
-| [NamespaceB](namespaces/NamespaceB/index.md) | - |
-| [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
+| [NamespaceB](http:/public-path/has-namespaces/namespaces/NamespaceB/index.md) | - |
+| [\\_Namespace\\_A\\_](http:/public-path/has-namespaces/namespaces/Namespace_A_/index.md) | - |
 
 ## Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
-| [EnumB](enumerations/EnumB.md) | - |
-| [\\_Enum\\_A\\_](enumerations/Enum_A_.md) | - |
+| [EnumB](http:/public-path/has-namespaces/enumerations/EnumB.md) | - |
+| [\\_Enum\\_A\\_](http:/public-path/has-namespaces/enumerations/Enum_A_.md) | - |
 
 ## Classes
 
 | Class | Description |
 | :------ | :------ |
-| [ClassB](classes/ClassB.md) | - |
-| [\\_\\_Class\\_A\\_](classes/Class_A_.md) | - |
+| [ClassB](http:/public-path/has-namespaces/classes/ClassB.md) | - |
+| [\\_\\_Class\\_A\\_](http:/public-path/has-namespaces/classes/Class_A_.md) | - |
 
 ## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
-| [InterfaceB](interfaces/InterfaceB.md) | - |
-| [\\_Interface\\_A\\_](interfaces/Interface_A_.md) | - |
+| [InterfaceB](http:/public-path/has-namespaces/interfaces/InterfaceB.md) | - |
+| [\\_Interface\\_A\\_](http:/public-path/has-namespaces/interfaces/Interface_A_.md) | - |
 
 <a id="typeb" name="typeb"></a>
 
@@ -948,7 +948,7 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](../index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -960,8 +960,8 @@ A module that contains namespaces
 
 | Namespace | Description |
 | :------ | :------ |
-| [NamespaceB](namespaces/NamespaceB.md) | - |
-| [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
+| [NamespaceB](http:/public-path/has-namespaces/namespaces/NamespaceB.md) | - |
+| [\\_Namespace\\_A\\_](http:/public-path/has-namespaces/namespaces/Namespace_A_/index.md) | - |
 
 <a id="enumb" name="enumb"></a>
 
@@ -985,11 +985,11 @@ A module that contains namespaces
 
 #### new ClassB()
 
-> **new ClassB**(): [\`ClassB\`](index.md#classb)
+> **new ClassB**(): [\`ClassB\`](http:/public-path/has-namespaces/index.md#classb)
 
 ##### Returns
 
-[\`ClassB\`](index.md#classb)
+[\`ClassB\`](http:/public-path/has-namespaces/index.md#classb)
 
 ***
 
@@ -1003,11 +1003,11 @@ A module that contains namespaces
 
 #### new \\_\\_Class\\_A\\_()
 
-> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#class-a)
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](http:/public-path/has-namespaces/index.md#class-a)
 
 ##### Returns
 
-[\`__Class_A_\`](index.md#class-a)
+[\`__Class_A_\`](http:/public-path/has-namespaces/index.md#class-a)
 
 ***
 
@@ -1143,7 +1143,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 `;
 
 exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -1155,19 +1155,19 @@ A module that contains references
 
 ## InterfaceA
 
-Re-exports [InterfaceA](basic.md#interfacea)
+Re-exports [InterfaceA](http:/public-path/basic.md#interfacea)
 
 <a id="renamedinterfaceb" name="renamedinterfaceb"></a>
 
 ## RenamedInterfaceB
 
-Renames and re-exports [InterfaceB](basic.md#interfaceb)
+Renames and re-exports [InterfaceB](http:/public-path/basic.md#interfaceb)
 
 <a id="default" name="default"></a>
 
 ## default
 
-Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+Renames and re-exports [defaultFunction](http:/public-path/has-references.md#defaultfunction)
 
 <a id="defaultfunction" name="defaultfunction"></a>
 
@@ -1225,7 +1225,7 @@ Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 `;
 
 exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Modules](../index.md)
+"**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
 
@@ -1237,7 +1237,7 @@ A module that contains references
 
 ## InterfaceA
 
-Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
+Re-exports [InterfaceA](http:/public-path/basic/interfaces/InterfaceA.md)
 
 ***
 
@@ -1245,7 +1245,7 @@ Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 
 ## RenamedInterfaceB
 
-Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
+Renames and re-exports [InterfaceB](http:/public-path/basic/interfaces/InterfaceB.md)
 
 ***
 
@@ -1253,7 +1253,7 @@ Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
 
 ## default
 
-Renames and re-exports [defaultFunction](index.md#defaultfunction)
+Renames and re-exports [defaultFunction](http:/public-path/has-references/index.md#defaultfunction)
 
 ***
 

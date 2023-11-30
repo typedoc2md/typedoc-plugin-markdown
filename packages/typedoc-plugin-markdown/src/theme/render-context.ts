@@ -85,6 +85,12 @@ export class MarkdownThemeRenderContext {
     if (URL_PREFIX.test(url)) {
       return url;
     } else {
+      const publicPath = this.options.getValue('publicPath');
+
+      if (publicPath) {
+        return path.join(publicPath, url);
+      }
+
       const relative = path.relative(
         path.dirname(this.page?.url || '.'),
         path.dirname(url),

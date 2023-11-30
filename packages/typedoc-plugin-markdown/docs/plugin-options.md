@@ -28,6 +28,7 @@ This document describes all the additional options exposed by the plugin.
   * [`--preserveAnchorCasing`](#--preserveanchorcasing)
   * [`--anchorPrefix`](#--anchorprefix)
   * [`--namedAnchors`](#--namedanchors)
+  * [`--publicPath`](#--publicpath)
 
 ## File output options
 
@@ -393,6 +394,18 @@ There are two flags exposed by this option:
 
 * `headings` - Add HTML named anchors to heading for implementations that do not assign header ids.
 * `tableRows` - Add anchors to table rows when table formats are selected and no heading elements are present.
+
+[↑ Top](#options-guide)
+
+***
+
+### `--publicPath`
+
+Specify the base path for all urls. If undefined urls will be relative. Defaults to `"undefined"`.
+
+```shell
+--publicPath <string>
+```
 
 [↑ Top](#options-guide)
 
