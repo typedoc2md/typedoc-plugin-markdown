@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.33
+
+### Patch Changes
+
+- Exposed `publicPath` option
+
 ## 4.0.0-next.32 (2023-11-29)
 
 ### Patch Changes
