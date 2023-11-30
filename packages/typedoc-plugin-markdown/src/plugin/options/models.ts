@@ -6,6 +6,7 @@ declare module 'typedoc' {
     membersWithOwnFile: any[];
     entryFileName: string;
     entryModule: string;
+    mergeReadme: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
     hideBreadcrumbs: boolean;
@@ -32,6 +33,7 @@ export interface PluginOptions {
   membersWithOwnFile: any[];
   entryFileName: string;
   entryModule: string;
+  mergeReadme: boolean;
   hidePageHeader: boolean;
   hidePageTitle: boolean;
   hideBreadcrumbs: boolean;

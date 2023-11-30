@@ -12,6 +12,7 @@ export enum FixtureEntryPoints {
   Groups = '/src/groups/**/*.ts',
   Comments = '/src/comments/index.ts',
   EntryFiles = '/src/entryfiles/*',
+  Readme = '/src/readme/index.ts',
 }
 
 export enum FixtureOutputDir {
@@ -20,6 +21,7 @@ export enum FixtureOutputDir {
   Groups = 'groups',
   Comments = 'comments',
   EntryFiles = 'entryfiles',
+  Readme = 'readme',
 }
 
 export const FIXTURES: Fixture[] = [
@@ -113,5 +115,11 @@ export const FIXTURES: Fixture[] = [
     entryPoints: FixtureEntryPoints.EntryFiles,
     commonOptions: { entryModule: 'entry-module', hideGenerator: true },
     options: [{ entryFileName: 'README.md' }, { readme: 'none' }],
+  },
+  {
+    outDir: FixtureOutputDir.Readme,
+    entryPoints: FixtureEntryPoints.Readme,
+    commonOptions: {},
+    options: [{ disableSources: true, hideGenerator: true, mergeReadme: true }],
   },
 ];

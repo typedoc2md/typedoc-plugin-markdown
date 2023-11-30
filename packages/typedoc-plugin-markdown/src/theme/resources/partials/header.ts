@@ -52,20 +52,24 @@ function projectHeader(
 
   md.push('•');
 
+  const preserveReadme =
+    Boolean(page.project.readme) && !context.options.getValue('mergeReadme');
+
   const isSinglePage =
     page.project?.groups &&
     page.project?.groups.every((group) => !group.allChildrenHaveOwnDocument());
 
-  if (hasReadme(page.project)) {
+  const preserveModulesPage =
+    (page.project?.groups &&
+      Boolean(
+        page.project?.groups[0]?.children.find(
+          (child) => child.name === context.options.getValue('entryModule'),
+        ),
+      )) ||
+    false;
+
+  if (preserveReadme) {
     const links: string[] = [];
-    const preserveModulesPage =
-      (page.project?.groups &&
-        Boolean(
-          page.project?.groups[0]?.children.find(
-            (child) => child.name === context.options.getValue('entryModule'),
-          ),
-        )) ||
-      false;
 
     links.push(
       link(
@@ -81,7 +85,12 @@ function projectHeader(
     md.push(
       isSinglePage
         ? documentationLabel
-        : link(documentationLabel, context.relativeURL(page.project.url)),
+        : link(
+            documentationLabel,
+            preserveModulesPage
+              ? context.relativeURL(page.project.url)
+              : context.relativeURL(entryFileName),
+          ),
     );
   }
 

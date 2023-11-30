@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Readmes should get merged readme for members: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** • [Exports](index.md)
+
+***
+
+# MY README
+
+> Some block quote
+
+Some text.
+
+## Readme heading
+
+Some text.
+
+## typedoc-stubs
+
+Module commments
+
+### Functions
+
+- [someFunction](functions/someFunction.md)
+"
+`;
+
+exports[`Readmes should get merged readme for modules: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"**typedoc-stubs** • Exports
+
+***
+
+# MY README
+
+> Some block quote
+
+Some text.
+
+## Contents
+
+- [Readme heading](index.md#readme-heading)
+- [typedoc-stubs](index.md#typedoc-stubs)
+  - [Functions](index.md#functions)
+
+## Readme heading
+
+Some text.
+
+## typedoc-stubs
+
+Module commments
+
+### Functions
+
+#### someFunction()
+
+> **someFunction**(): \`void\`
+
+##### Returns
+
+\`void\`
+"
+`;

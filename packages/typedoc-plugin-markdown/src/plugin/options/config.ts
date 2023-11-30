@@ -96,6 +96,20 @@ export const entryModule: DeclarationOption = {
 };
 
 /**
+ * By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page.
+ * This option has no effect when `readme` is set to `none`.
+ *
+ * @category fileOutput
+ *
+ */
+export const mergeReadme: DeclarationOption = {
+  name: 'mergeReadme',
+  help: 'Merges the resolved readme into the project index page.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * @category ui
  */
 export const hidePageHeader: DeclarationOption = {

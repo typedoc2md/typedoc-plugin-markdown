@@ -32,4 +32,11 @@ describe(`Urls`, () => {
       FixtureOutputFileStrategy.Modules,
     ]);
   });
+
+  test(`should gets Urls for readme options`, () => {
+    expectUrlsToEqual(FixtureOutputDir.Readme, [
+      FixtureOutputFileStrategy.Members,
+      FixtureOutputFileStrategy.Modules,
+    ]);
+  });
 });

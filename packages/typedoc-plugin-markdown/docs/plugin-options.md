@@ -9,6 +9,7 @@ This document describes all the additional options exposed by the plugin.
   * [`--membersWithOwnFile`](#--memberswithownfile)
   * [`--entryFileName`](#--entryfilename)
   * [`--entryModule`](#--entrymodule)
+  * [`--mergeReadme`](#--mergereadme)
 * [Structure and formatting options](#structure-and-formatting-options)
   * [`--hidePageHeader`](#--hidepageheader)
   * [`--hidePageTitle`](#--hidepagetitle)
@@ -123,6 +124,25 @@ The name of a module that should act as the root page for documentation. Default
 If set the name of the file will be determined by the value of [`--entryFileName`](#--entryfilename).
 
 This is only applicable when multiple modules are resolved.
+
+[↑ Top](#options-guide)
+
+***
+
+### `--mergeReadme`
+
+Merges the resolved readme into the project index page. Defaults to `false`.
+
+```shell
+--mergeReadme <boolean>
+```
+
+#### Usage
+
+By default when a readme file is resolved, a seperate Readme page is created. This option prepends the readme contents into the index page.
+
+* This option has no effect when `readme` is set to `none`.
+* When set to `true`, `--indexPageTitle` is ignored.
 
 [↑ Top](#options-guide)
 

@@ -17,25 +17,12 @@ import { MarkdownTheme } from './theme';
 export class UrlsContext {
   urls: UrlMapping[] = [];
   anchors: Record<string, string[]> = {};
-  hasReadme: boolean;
-  preserveModulesPage: boolean;
 
   constructor(
     public theme: MarkdownTheme,
     public project: ProjectReflection,
     public options: Partial<TypeDocOptions>,
-  ) {
-    this.hasReadme = Boolean(this.project.readme);
-
-    this.preserveModulesPage =
-      (this.project?.groups &&
-        Boolean(
-          this.project?.groups[0]?.children.find(
-            (child) => child.name === this.options.entryModule,
-          ),
-        )) ||
-      false;
-  }
+  ) {}
 
   /**
    * Map the models of the given project to the desired output files.
@@ -44,6 +31,18 @@ export class UrlsContext {
    * @param project  The project whose urls should be generated.
    */
   getUrls(): UrlMapping[] {
+    const preserveReadme =
+      Boolean(this.project.readme) && !this.options.mergeReadme;
+
+    const preserveModulesPage =
+      (this.project?.groups &&
+        Boolean(
+          this.project?.groups[0]?.children.find(
+            (child) => child.name === this.options.entryModule,
+          ),
+        )) ||
+      false;
+
     const isPackages =
       this.options.entryPointStrategy === EntryPointStrategy.Packages;
 
@@ -53,14 +52,14 @@ export class UrlsContext {
 
     this.project.url = Boolean(this.project.readme)
       ? indexFilename
-      : this.preserveModulesPage
-      ? indexFilename
-      : this.options.entryFileName;
+      : preserveModulesPage
+        ? indexFilename
+        : this.options.entryFileName;
 
-    if (Boolean(this.project.readme)) {
+    if (preserveReadme) {
       this.urls.push(
         new UrlMapping(
-          this.preserveModulesPage ? 'readme_.md' : entryFileName,
+          preserveModulesPage ? 'readme_.md' : entryFileName,
           this.project,
           this.theme.readmeTemplate,
         ),
@@ -72,7 +71,7 @@ export class UrlsContext {
     } else {
       this.urls.push(
         new UrlMapping(
-          this.preserveModulesPage ? indexFilename : entryFileName,
+          preserveModulesPage ? indexFilename : entryFileName,
           this.project,
           this.theme.projectTemplate,
         ),

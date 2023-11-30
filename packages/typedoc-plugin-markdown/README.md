@@ -59,6 +59,7 @@ Options that configure how files are generated.
 * [`--membersWithOwnFile`](./docs/plugin-options.md#--memberswithownfile)
 * [`--entryFileName`](./docs/plugin-options.md#--entryfilename)
 * [`--entryModule`](./docs/plugin-options.md#--entrymodule)
+* [`--mergeReadme`](./docs/plugin-options.md#--mergereadme)
 
 #### Structure and formatting options
 

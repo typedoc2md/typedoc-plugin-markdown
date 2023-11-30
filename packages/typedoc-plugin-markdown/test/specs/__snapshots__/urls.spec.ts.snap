@@ -196,6 +196,19 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
 ]
 `;
 
+exports[`Urls should gets Urls for readme options: outputFileStrategy: members 1`] = `
+[
+  "functions/someFunction.md",
+  "index.md",
+]
+`;
+
+exports[`Urls should gets Urls for readme options: outputFileStrategy: modules 1`] = `
+[
+  "index.md",
+]
+`;
+
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 1`] = `
 [
   "classes/AbstractClass.md",
