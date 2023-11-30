@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.34
+
+### Patch Changes
+
+- Expose `mergeReadme` option
+
 ## 4.0.0-next.33 (2023-11-30)
 
 ### Patch Changes
