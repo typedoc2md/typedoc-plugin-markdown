@@ -278,7 +278,3 @@ export function getIndexLabel(
   );
   return isModules ? 'Modules' : 'Exports';
 }
-
-export function hasReadme(project: ProjectReflection) {
-  return Boolean(project.readme);
-}

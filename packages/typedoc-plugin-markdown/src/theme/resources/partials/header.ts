@@ -7,7 +7,7 @@ import {
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { bold, link } from '../../../support/elements';
-import { getIndexLabel, getProjectDisplayName, hasReadme } from '../../helpers';
+import { getIndexLabel, getProjectDisplayName } from '../../helpers';
 
 /**
  * @category Partials
@@ -125,7 +125,10 @@ function packageHeader(
 
   md.push('•');
 
-  if (hasReadme(packageItem)) {
+  const preservePackageReadme =
+    Boolean(packageItem.readme) && !context.options.getValue('mergeReadme');
+
+  if (preservePackageReadme) {
     const links: string[] = [];
     const readmeUrl = `${packageItem.name}/${entryFileName}`;
 

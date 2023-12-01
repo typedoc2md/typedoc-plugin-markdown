@@ -19,23 +19,21 @@ export function projectTemplate(
   const includeReadme =
     context.options.getValue('mergeReadme') && page.model.readme;
 
-  const headingLevel = includeReadme ? 2 : 1;
-
   if (includeReadme && page.model.readme) {
     md.push(context.commentParts(page.model.readme));
-  }
-
-  if (!context.options.getValue('hidePageTitle')) {
-    md.push(heading(headingLevel, context.pageTitle(page)));
+  } else {
+    if (!context.options.getValue('hidePageTitle')) {
+      md.push(heading(1, context.pageTitle(page)));
+    }
   }
 
   if (page.model.comment) {
-    md.push(context.comment(page.model.comment, headingLevel + 1));
+    md.push(context.comment(page.model.comment, 2));
   }
 
-  md.push(context.pageIndex(page, headingLevel + 1));
+  md.push(context.pageIndex(page, 2));
 
-  md.push(context.members(page.model, headingLevel + 1));
+  md.push(context.members(page.model, 2));
 
   md.push(context.footer());
 

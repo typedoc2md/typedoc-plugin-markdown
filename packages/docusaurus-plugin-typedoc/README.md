@@ -124,36 +124,14 @@ Pretty format the sidebar JSON.
 
 A docusaurus sidebar file `typedoc-sidebar.cjs` is published to the relevant output directory along with the generated markdown documentation.
 
-This file should be referenced in `sidebars.js` using a sidebar slice and can be configured in following ways:
-
-1.  Display sidebar on the root:
-
-```js
-module.exports = {
-  typedocSidebar: require('./docs/api/typedoc-sidebar.cjs'),
-};
-```
-
-2.  Display the sidebar inside a category:
-
-```js
-module.exports = {
-  typedocSidebar: {
-    'Typedoc Docs': require('./docs/api/typedoc-sidebar.js'),
-  },
-};
-```
-
-3.  Display the sidebar inside a linked category
-
-> Note the linked category page can be removed from sidebar using [`sidebar.filteredIds`]().
+This file should be referenced in `sidebars.js` using a sidebar slice and can be configured in following way:
 
 ```js
 module.exports = {
   typedocSidebar: [
     {
       type: 'category',
-      label: 'Typedoc Docs',
+      label: 'Typedoc API',
       link: {
         type: 'doc',
         id: 'api/index',

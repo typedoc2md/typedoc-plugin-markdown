@@ -15,11 +15,9 @@ Some text.
 
 Some text.
 
-## typedoc-stubs
-
 Module commments
 
-### Functions
+## Functions
 
 - [someFunction](functions/someFunction.md)
 "
@@ -39,24 +37,22 @@ Some text.
 ## Contents
 
 - [Readme heading](index.md#readme-heading)
-- [typedoc-stubs](index.md#typedoc-stubs)
-  - [Functions](index.md#functions)
+- [Functions](index.md#functions)
+  - [someFunction()](index.md#somefunction)
 
 ## Readme heading
 
 Some text.
 
-## typedoc-stubs
-
 Module commments
 
-### Functions
+## Functions
 
-#### someFunction()
+### someFunction()
 
 > **someFunction**(): \`void\`
 
-##### Returns
+#### Returns
 
 \`void\`
 "

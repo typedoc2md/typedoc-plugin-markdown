@@ -10,7 +10,6 @@ describe(`Packages`, () => {
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
       'index.md',
-      1,
     );
     expectFileToEqual(
       FixtureOutputDir.Packages,

@@ -101,14 +101,12 @@ export const FIXTURES: Fixture[] = [
   {
     outDir: FixtureOutputDir.Packages,
     entryPoints: FixtureEntryPoints.Packages,
-    commonOptions: {},
-    options: [
-      {
-        entryPointStrategy: 'packages',
-        hideGenerator: true,
-        name: 'packages-example',
-      },
-    ],
+    commonOptions: {
+      entryPointStrategy: 'packages',
+      hideGenerator: true,
+      name: 'packages-example',
+    },
+    options: [{}, { mergeReadme: true, indexPageTitle: 'API' }],
   },
   {
     outDir: FixtureOutputDir.EntryFiles,

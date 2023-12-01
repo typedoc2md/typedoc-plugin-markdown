@@ -79,3 +79,25 @@ exports[`Packages should compile readmes for a packages: (Output File Strategy "
 Readme content
 "
 `;
+
+exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**packages-example** • [Packages](index.md)
+
+***
+
+# MY README
+
+> Some block quote
+
+Some text.
+
+## Readme heading
+
+Some text.
+
+## Packages
+
+- [package-1](package-1/index.md)
+- [package-2](package-2/index.md)
+"
+`;

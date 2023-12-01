@@ -50,7 +50,7 @@ export class UrlsContext {
 
     const indexFilename = getIndexFileName(this.project, isPackages);
 
-    this.project.url = Boolean(this.project.readme)
+    this.project.url = preserveReadme
       ? indexFilename
       : preserveModulesPage
         ? indexFilename
@@ -80,12 +80,14 @@ export class UrlsContext {
 
     if (isPackages) {
       this.project.children?.forEach((projectChild) => {
+        const preservePackageReadme =
+          Boolean(projectChild.readme) && !this.options.mergeReadme;
         const packagesIndex = getIndexFileName(projectChild);
         const url = `${projectChild.name}/${
-          Boolean(projectChild.readme) ? packagesIndex : entryFileName
+          preservePackageReadme ? packagesIndex : entryFileName
         }`;
 
-        if (Boolean(projectChild.readme)) {
+        if (preservePackageReadme) {
           this.urls.push(
             new UrlMapping(
               `${path.dirname(url)}/${entryFileName}`,
