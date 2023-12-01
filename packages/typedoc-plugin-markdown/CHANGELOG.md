@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.35
+
+### Patch Changes
+
+- Fixed `mergeReadme` for packages entryPointStrategy
+
 ## 4.0.0-next.34 (2023-11-30)
 
 ### Patch Changes
