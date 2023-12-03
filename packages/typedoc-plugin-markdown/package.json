@@ -15,7 +15,7 @@
     "test": "npm-run-all test:*",
     "test:lint-md": "node test/__scripts__/lint.md.mjs",
     "test:lint-mdx": "node test/__scripts__/lint.mdx.mjs",
-    "test:jest": "jest",
+    "test:jest": "jest --updateSnapshot",
     "build-and-run": "npm run build && npm run pretest",
     "build-and-test": "npm run build && npm run test",
     "api-docs": "npm run build && typedoc --options ./typedoc.api.js --out ./docs/api",

@@ -16,12 +16,12 @@ export function reflectionTemplate(
     md.push(context.header(page));
   }
 
-  if (!context.options.getValue('hidePageTitle')) {
-    md.push(heading(1, context.pageTitle(page)));
-  }
-
   if (!context.options.getValue('hideBreadcrumbs')) {
     md.push(context.breadcrumbs(page));
+  }
+
+  if (!context.options.getValue('hidePageTitle')) {
+    md.push(heading(1, context.pageTitle(page)));
   }
 
   md.push(context.reflectionMember(page.model, 2));

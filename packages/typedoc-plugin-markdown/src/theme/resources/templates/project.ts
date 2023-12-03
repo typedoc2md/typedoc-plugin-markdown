@@ -16,6 +16,10 @@ export function projectTemplate(
     md.push(context.header(page));
   }
 
+  if (!context.options.getValue('hideBreadcrumbs')) {
+    md.push(context.breadcrumbs(page));
+  }
+
   const includeReadme =
     context.options.getValue('mergeReadme') && page.model.readme;
 

@@ -5,6 +5,8 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 ***
 
+[typedoc-stubs](../modules.md) / basic
+
 # basic
 
 A basic module
@@ -37,6 +39,8 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 "**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
+
+[typedoc-stubs](http:/public-path/index.md) / basic
 
 # basic
 
@@ -85,6 +89,8 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 "**[typedoc-stubs - v0.0](http://www.google.com)** • [Readme](index.md) \\| [Modules](modules.md)
 
 ***
+
+[typedoc-stubs](modules.md) / basic
 
 # basic
 
@@ -177,6 +183,8 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 "**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
+
+[typedoc-stubs](http:/public-path/index.md) / basic
 
 # basic
 
@@ -279,6 +287,8 @@ exports[`Groups should compile categories group page: (Output File Strategy "mod
 
 ***
 
+[typedoc-stubs](modules.md) / has-categories
+
 # has-categories
 
 A module that contains categories
@@ -344,6 +354,8 @@ exports[`Groups should compile categories group page: (Output File Strategy "mod
 "**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
+
+[typedoc-stubs](http:/public-path/index.md) / has-categories
 
 # has-categories
 
@@ -418,6 +430,8 @@ exports[`Groups should compile categories index page: (Output File Strategy "mem
 
 ***
 
+[typedoc-stubs](../modules.md) / has-categories
+
 # has-categories
 
 A module that contains categories
@@ -462,6 +476,8 @@ exports[`Groups should compile categories index page: (Output File Strategy "mem
 "**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
+
+[typedoc-stubs](http:/public-path/index.md) / has-categories
 
 # has-categories
 
@@ -587,9 +603,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ***
 
-# Namespace: \\_Namespace\\_A\\_
+[typedoc-stubs](../../../modules.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
-[has-namespaces](../../index.md).\\_Namespace\\_A\\_
+# Namespace: \\_Namespace\\_A\\_
 
 ## Index
 
@@ -608,9 +624,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ***
 
-# Namespace: \\_Namespace\\_A\\_
+[typedoc-stubs](http:/public-path/index.md) / [has-namespaces](http:/public-path/has-namespaces/index.md) / \\_Namespace\\_A\\_
 
-[has-namespaces](http:/public-path/has-namespaces/index.md).\\_Namespace\\_A\\_
+# Namespace: \\_Namespace\\_A\\_
 
 ## Index
 
@@ -635,9 +651,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ***
 
-# Namespace: \\_Namespace\\_A\\_
+[typedoc-stubs](../../../modules.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
-[has-namespaces](../../index.md).\\_Namespace\\_A\\_
+# Namespace: \\_Namespace\\_A\\_
 
 ## Contents
 
@@ -660,9 +676,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ***
 
-# Namespace: \\_Namespace\\_A\\_
+[typedoc-stubs](http:/public-path/index.md) / [has-namespaces](http:/public-path/has-namespaces/index.md) / \\_Namespace\\_A\\_
 
-[has-namespaces](http:/public-path/has-namespaces/index.md).\\_Namespace\\_A\\_
+# Namespace: \\_Namespace\\_A\\_
 
 ## Namespaces
 
@@ -682,6 +698,8 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 "**[typedoc-stubs - v0.0](http://www.google.com)** • [Readme](../index.md) \\| [Modules](../modules.md)
 
 ***
+
+[typedoc-stubs](../modules.md) / has-namespaces
 
 # has-namespaces
 
@@ -730,6 +748,8 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 "**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
+
+[typedoc-stubs](http:/public-path/index.md) / has-namespaces
 
 # has-namespaces
 
@@ -825,6 +845,8 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 "**[typedoc-stubs - v0.0](http://www.google.com)** • [Readme](../index.md) \\| [Modules](../modules.md)
 
 ***
+
+[typedoc-stubs](../modules.md) / has-namespaces
 
 # has-namespaces
 
@@ -951,6 +973,8 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 "**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
+
+[typedoc-stubs](http:/public-path/index.md) / has-namespaces
 
 # has-namespaces
 
@@ -1103,6 +1127,8 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 ***
 
+[typedoc-stubs](modules.md) / has-references
+
 # has-references
 
 A module that contains references
@@ -1147,6 +1173,8 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 ***
 
+[typedoc-stubs](http:/public-path/index.md) / has-references
+
 # has-references
 
 A module that contains references
@@ -1188,6 +1216,8 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 
 ***
 
+[typedoc-stubs](../modules.md) / has-references
+
 # has-references
 
 A module that contains references
@@ -1228,6 +1258,8 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 "**typedoc-stubs** • [Modules](http:/public-path/index.md)
 
 ***
+
+[typedoc-stubs](http:/public-path/index.md) / has-references
 
 # has-references
 

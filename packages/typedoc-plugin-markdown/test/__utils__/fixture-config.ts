@@ -28,7 +28,7 @@ export const FIXTURES: Fixture[] = [
   {
     outDir: FixtureOutputDir.Reflections,
     entryPoints: FixtureEntryPoints.Reflections,
-    commonOptions: { hideGenerator: true },
+    commonOptions: { hideGenerator: true, hideBreadcrumbs: true },
     options: [
       {},
       {

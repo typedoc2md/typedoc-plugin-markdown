@@ -1,9 +1,5 @@
-import {
-  DeclarationReflection,
-  ProjectReflection,
-  Reflection,
-  ReflectionKind,
-} from 'typedoc';
+import * as path from 'path';
+import { DeclarationReflection, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { link } from '../../../support/elements';
@@ -19,11 +15,20 @@ export function breadcrumbs(
 ): string {
   const md: string[] = [];
 
-  const breadcrumb = (model: Reflection) => {
-    const isModule = model.kindOf(ReflectionKind.Module);
-    const isPackage = isModule && model.parent?.kindOf(ReflectionKind.Module);
+  if (
+    page.url === page.project.url ||
+    (page.url === context.options.getValue('entryFileName') &&
+      page.url.split(path.sep).length === 1)
+  ) {
+    return '';
+  }
 
-    if (model?.parent?.parent && !isPackage && !isModule) {
+  md.push(
+    link(escapeChars(page.project.name), context.relativeURL(page.project.url)),
+  );
+
+  const breadcrumb = (model: any) => {
+    if (model?.parent?.parent) {
       breadcrumb(model.parent);
     }
     md.push(link(escapeChars(model.name), context.relativeURL(model?.url)));
@@ -41,5 +46,5 @@ export function breadcrumbs(
 
   md.push(pageName);
 
-  return md.length > 1 ? `${md.join('.')}` : '';
+  return md.length > 1 ? `${md.join(' / ')}` : '';
 }
