@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.36
+
+### Patch Changes
+
+- Updated breadcrumbs UI
+
 ## 4.0.0-next.35 (2023-12-01)
 
 ### Patch Changes
