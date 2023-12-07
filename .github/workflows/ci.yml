@@ -1,11 +1,17 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - packages/typedoc-plugin-markdown/**
+  pull_request:
+    paths:
+      - packages/typedoc-plugin-markdown/**
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['16']
+        node: ['18']
     name: Node ${{ matrix.node }}
     steps:
       - name: Checkout repository
@@ -14,11 +20,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+          cache: 'npm'
       - name: Install
         run: npm install
       - name: Lint
-        run: npm run lint
+        run: npm run lint --workspace typedoc-plugin-markdown
       - name: Build
-        run: npm run build
+        run: npm run build --workspaces --if-present
       - name: Test
-        run: npm run test
+        run: npm run test --workspaces --if-present

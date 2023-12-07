@@ -5,7 +5,7 @@
  */
 
 import { ReflectionKind } from 'typedoc';
-import { OutputFileStrategy } from '../plugin/options/custom-maps';
+import { OutputFileStrategy } from '../options/maps';
 
 export interface UrlOption {
   parentUrl?: string;

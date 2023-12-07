@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import { Application, Options, OptionsReader } from 'typedoc';
 import { MarkdownRendererEvent, NavigationItem } from 'typedoc-plugin-markdown';
+import presets from './options/presets';
 import { GitlabWikiTheme } from './theme';
 
 export function load(app: Application) {
@@ -12,16 +13,8 @@ export function load(app: Application) {
       readonly order = 0;
       readonly supportsPackages = false;
       read(container: Options) {
-        Object.entries({
-          theme: 'gitlab-wiki',
-          entryFileName: 'home.md',
-          flattenOutputFiles: true,
-          skipIndexPage: true,
-          hideBreadcrumbs: true,
-          hideInPageTOC: true,
-          hidePageHeader: true,
-          hidePageTitle: true,
-        }).forEach(([key, value]) => {
+        Object.entries(presets).forEach(([key, value]) => {
+          container.setValue('theme', 'gitlab-wiki');
           container.setValue(key, value);
         });
       }

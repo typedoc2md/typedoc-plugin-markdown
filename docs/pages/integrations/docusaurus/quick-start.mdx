@@ -1,0 +1,46 @@
+# Quick Start
+
+## Installation
+
+Install Docusaurus in the root of your project and install the plugin dependencies in the same location as the Docusaurus website directory.
+
+```sh npm2yarn
+npm install typedoc typedoc-plugin-markdown@next docusaurus-plugin-typedoc@next --save-dev
+```
+
+## Usage
+
+Add the plugin to `docusaurus.config.js` and specify the required options.
+
+The following options can be passed to the config:
+
+- [typedoc](https://typedoc.org/options) options.
+- [typedoc-plugin-markdown ](/options) options.
+- [Plugin](/integrations/docusaurus/options) options.
+
+TypeDoc options can also be declared:
+
+- Using a `typedoc.json` file.
+- Under the `typedocOptions` key in `tsconfig.json`.
+
+Please note that options declared in this manner will overwrite options declared in `docusaurus.config.js`.
+
+```js filename="docusaurus.config.js"
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+
+      // Plugin / TypeDoc options
+      {
+        entryPoints: ['../src/index.ts'],
+        tsconfig: '../tsconfig.json',
+      },
+    ],
+  ],
+};
+```
+
+Once built the docs will be available at `/docs/api` (or equivalent out directory) after running the Docusaurus `start` and `build` [cli commands](https://v2.docusaurus.io/docs/cli).
+
+e.g. `http://localhost:3000/docs/api`

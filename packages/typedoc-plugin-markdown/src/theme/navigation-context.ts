@@ -6,7 +6,7 @@ import {
   ReflectionGroup,
   TypeDocOptions,
 } from 'typedoc';
-import { OutputFileStrategy } from '../plugin/options/custom-maps';
+import { OutputFileStrategy } from '../options/maps';
 import { NavigationItem } from '../theme/models';
 import { MarkdownTheme } from './theme';
 

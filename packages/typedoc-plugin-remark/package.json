@@ -1,7 +1,7 @@
 {
   "name": "typedoc-plugin-remark",
   "version": "0.0.0",
-  "description": "Parse output with Remark",
+  "description": "A plugin for TypeDoc that enables additional markdown transformations with remark.",
   "main": "./dist/index.js",
   "files": [
     "dist/"
@@ -9,10 +9,12 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "build": "rm -rf ./dist && tsc",
+    "prebuild": "rm -rf dist && prebuild-options",
+    "build": "tsc",
     "postbuild": "copyfiles --up 1 ./src/**/*.cjs ./dist/",
-    "predocs": "npm run build",
-    "docs": "typedoc"
+    "build-and-test": "npm run build && npm run test",
+    "pretest": "ts-node ./test/__scripts__/prepare.ts",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,6 @@
   },
   "keywords": [
     "typedoc",
-    "typedoc-plugin",
     "remark"
   ]
 }

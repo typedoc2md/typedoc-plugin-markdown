@@ -1,3 +1,4 @@
+import { spawn, spawnSync } from 'child_process';
 import { consola } from 'consola';
 import * as fs from 'fs-extra';
 import * as path from 'path';
@@ -8,8 +9,6 @@ import {
   FixtureOutputFileStrategy,
 } from '../__utils__/fixture-config';
 import { Fixture } from '../__utils__/models';
-
-const spawn = require('cross-spawn');
 
 const timeStart = new Date().getTime();
 
@@ -33,7 +32,7 @@ consola.start(`Building ${fixtureCount} test fixtures...`);
 fs.removeSync(`./test/out`);
 
 // build the custom plugin
-spawn.sync('tsc', {
+spawnSync('tsc', {
   stdio: 'inherit',
   cwd: path.join(__dirname, '..', 'custom-plugins'),
 });
@@ -96,7 +95,7 @@ export function writeHtml(
   outDir: FixtureOutputDir,
 ) {
   const fullpath = `./test/out/html/${outDir}`;
-  spawn.sync(
+  spawn(
     'typedoc',
     [
       ...[

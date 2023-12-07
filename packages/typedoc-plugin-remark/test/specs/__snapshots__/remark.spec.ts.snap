@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Remark should load and parse with remark-github and prettier plugins 1`] = `
+"# typedoc-plugin-remark
+
+Comments form module comments
+
+Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/1).
+
+\`\`\`js
+reallyUgly(javascript);
+\`\`\`
+
+\`\`\`css
+.h1 {
+  color: red;
+}
+\`\`\`
+
+## Variables
+
+- [\\_\\_variable_with_underscores\\_\\_](variables/variable_with_underscores__.md)
+
+## Functions
+
+- [some_function](functions/some_function.md)
+"
+`;

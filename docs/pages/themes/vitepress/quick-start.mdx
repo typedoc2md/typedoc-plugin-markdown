@@ -1,0 +1,64 @@
+import { Callout, Steps } from 'nextra/components';
+
+# Quick Start
+
+<Callout type="info">
+  This document assumes a
+  [VitePress](https://vitepress.dev/guide/getting-started) site has already been
+  setup.
+</Callout>
+
+## Installation
+
+```sh npm2yarn
+npm install typedoc-vitepress-theme@next --save-dev
+```
+
+## Usage
+
+Create a script that builds TypeDoc pages before bootstraping VitePress. The following is a guideline only and can be tailored as required.
+
+<Steps>
+
+### Update TypeDoc config
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"]
+}
+```
+
+### Create a script to publish TypeDoc pages
+
+```js filename="package.json"
+"publish-typedoc": "typedoc --options typedoc.json"
+```
+
+### Run the script before bootstrapping VitePress
+
+```json
+"docs:dev": "npm run publish-typedoc && vitepress dev",
+"docs:build": "npm run publish-typedoc && vitepress build"
+```
+
+### Configure Navbar and Sidebar
+
+A sidebar named `typedoc-sidebar.json` is auto-generated to the out directory. This can then be referenced in the config file to configure the sidebar.
+
+```ts filename=".vitepress/config.mts"
+import typedocSidebar from '../api/typedoc-sidebar.json';
+
+module.exports = {
+  themeConfig: {
+    nav: [{ text: 'API', link: '/api/' }],
+    sidebar: [
+      {
+        text: 'API',
+        items: typedocSidebar,
+      },
+    ],
+  },
+};
+```
+
+</Steps>

@@ -1,0 +1,29 @@
+# Watch Mode
+
+Watching files is supported by passing in the `watch: true` option see https://typedoc.org/guides/options/#watch.
+
+Targetting the option in development mode only can be achieved using Node.js Environment Variables:
+
+```json filename="package.json"
+{
+  "scripts": {
+    "start": "TYPEDOC_WATCH=true docusaurus start",
+    "build": "TYPEDOC_WATCH=false docusaurus build"
+  }
+}
+```
+
+```js filename="docusaurus.config.js"
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        entryPoints: ['../src/index.ts'],
+        tsconfig: '../tsconfig.json',
+        watch: process.env.TYPEDOC_WATCH,
+      },
+    ],
+  ],
+};
+```

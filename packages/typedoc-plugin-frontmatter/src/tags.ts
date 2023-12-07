@@ -1,9 +1,10 @@
 import { Comment, CommentTag } from 'typedoc';
+import { FrontmatterNamingConvention } from './options/maps';
 
 export function getFrontmatterTags(
   comment: Comment,
   frontmatterTags: string[],
-  tagFormat: boolean,
+  namingConvention: FrontmatterNamingConvention,
 ) {
   if (comment.blockTags?.length) {
     const tags = comment.blockTags
@@ -16,7 +17,7 @@ export function getFrontmatterTags(
           .join('\n');
         return {
           ...prev,
-          [toVariable(tagName, tagFormat)]: isNaN(Number(tagValue))
+          [toVariable(tagName, namingConvention)]: isNaN(Number(tagValue))
             ? tagValue
             : Number(tagValue),
         };
@@ -30,8 +31,11 @@ function getTagName(tag: CommentTag) {
   return tag.tag.substring(1);
 }
 
-function toVariable(key: string, frontmatterTagsToSnakeCase: boolean) {
-  if (frontmatterTagsToSnakeCase) {
+function toVariable(
+  key: string,
+  namingConvention: FrontmatterNamingConvention,
+) {
+  if (namingConvention === FrontmatterNamingConvention.SnakeCase) {
     return toSnakeCase(key);
   }
   return key;

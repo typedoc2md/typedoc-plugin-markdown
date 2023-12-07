@@ -9,9 +9,11 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
-    "build": "rm -rf dist && tsc",
+    "prebuild": "rm -rf dist && prebuild-options",
+    "build": "tsc",
     "build-and-test": "npm run build && npm run test",
-    "test": "tsc --project ./tsconfig.test.json && jest"
+    "pretest": "ts-node ./test/__scripts__/prepare.ts",
+    "test": "jest"
   },
   "author": "Tom Grey",
   "license": "MIT",
@@ -28,12 +30,10 @@
     "yaml": "^2.2.2"
   },
   "peerDependencies": {
-    "typedoc": "0.25.x"
+    "typedoc-plugin-markdown": ">=4.0.0-next.13"
   },
   "keywords": [
     "frontmatter",
-    "typedocplugin",
-    "typedoc-plugin",
     "typedoc"
   ]
 }

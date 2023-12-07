@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options: YAML should prepend frontmatter 1`] = `
+"---
+title: SomeInterface
+layout: blog
+navOrder: 1
+hide: true
+tagOne: 0
+tagTwo: "'Frontmatter' tag"
+---
+
+# Interface: SomeInterface
+"
+`;
+
+exports[`Options: YAML should prepend frontmatter with preserved tags 1`] = `
+"---
+title: SomeInterface
+layout: blog
+navOrder: 1
+hide: true
+tagOne: 0
+tagTwo: "'Frontmatter' tag"
+---
+
+# Interface: SomeInterface
+
+## Tag One
+
+0
+
+## Tag Two
+
+'Frontmatter' tag
+"
+`;

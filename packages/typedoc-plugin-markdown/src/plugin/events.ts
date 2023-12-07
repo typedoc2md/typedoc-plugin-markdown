@@ -41,11 +41,12 @@ export class MarkdownRendererEvent extends Event {
   }
 }
 
-export class MarkdownPageEvent<out Model = unknown> extends Event {
+export class MarkdownPageEvent<out Model = Reflection> extends Event {
   project!: ProjectReflection;
   filename!: string;
   url!: string;
   contents?: string;
+  frontmatter?: any;
   pageHeadings: any;
   readonly model: Model;
   static readonly BEGIN = 'beginPage';

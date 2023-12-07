@@ -1,0 +1,14 @@
+{
+  "extends": "./typedoc-base.json",
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-plugin-frontmatter",
+    "./custom-plugin"
+  ],
+  "frontmatterGlobals": {
+    "layout": "blog",
+    "navOrder": 1,
+    "hide": true
+  },
+  "frontmatterCommentTags": ["tagOne", "tagTwo", "tagThree"]
+}

@@ -1,7 +1,7 @@
 {
   "name": "typedoc-github-wiki-theme",
   "version": "2.0.0-next.2",
-  "description": "A typedoc-plugin-markdown theme that publishes Markdown pages compatible with Github Wiki.",
+  "description": "A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible with Github Wiki.",
   "main": "dist/index.js",
   "files": [
     "dist/"
@@ -18,7 +18,8 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "build": "rm -rf ./dist && tsc",
+    "prebuild": "rm -rf dist && prebuild-options",
+    "build": "tsc",
     "docs": "rm -rf ./demo && npm run build && typedoc"
   },
   "author": "Thomas Grey",

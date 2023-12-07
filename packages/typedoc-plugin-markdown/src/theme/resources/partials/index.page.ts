@@ -1,6 +1,7 @@
 import * as path from 'path';
-import { DeclarationReflection, PageEvent, ProjectReflection } from 'typedoc';
+import { DeclarationReflection, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { MarkdownPageEvent } from '../../../plugin/events';
 import { heading } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
 import { hasIndex } from '../../helpers';
@@ -10,7 +11,7 @@ import { hasIndex } from '../../helpers';
  */
 export function pageIndex(
   context: MarkdownThemeRenderContext,
-  page: PageEvent<DeclarationReflection | ProjectReflection>,
+  page: MarkdownPageEvent<DeclarationReflection | ProjectReflection>,
   headingLevel: number,
 ): string {
   const md: string[] = [];

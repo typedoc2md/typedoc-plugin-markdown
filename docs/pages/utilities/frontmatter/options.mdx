@@ -1,0 +1,86 @@
+import { Callout } from 'nextra/components';
+
+# Options
+
+## frontmatterGlobals
+
+<Callout>Specify static variables to be added to all frontmatter blocks.</Callout>
+
+Accepts a key/value Object. Defaults to `{}`.
+
+
+```json filename="typedoc.json"
+{
+  "frontmatterGlobals": {"layout": "docs", "sidebar": true }
+}
+```
+
+
+```yaml filename="YAML"
+---
+layout: docs
+sidebar: true
+---
+```
+
+## frontmatterCommentTags
+
+<Callout>Specify which comment block tags should be added to frontmatter.</Callout>
+
+Accepts an Array.
+
+
+```json filename="typedoc.json"
+{
+  "frontmatterCommentTags": ["author", "description"]
+}
+```
+
+Frontmatter variables can be added by extracting comments from block (@) tags.
+
+Please note tags must be added to the comment blocks of the symbol exported to a page.
+
+ ```ansi filename="Block Tags (someModule.ts)"
+ /**
+ * @author Joe Bloggs
+ *
+ * @description A description that will be added to frontmatter.
+ */
+ ```
+
+```yaml filename="YAML (someModule.md)"
+---
+author: Joe Bloggs
+description: A description that will be added to frontmatter.
+---
+```
+
+## preserveFrontmatterCommentTags
+
+<Callout>Preserve tags defined in frontmatter block tags in output.</Callout>
+
+Defaults to `false`.
+
+
+```json filename="typedoc.json"
+{
+  "preserveFrontmatterCommentTags": false
+}
+```
+
+## frontmatterNamingConvention
+
+<Callout>The naming convention that variables should be output as. </Callout>
+
+Accepts either `"camelCase"` or `"snakeCase"`. Defaults to `"camelCase"`.
+
+
+```json filename="typedoc.json"
+{
+  "frontmatterNamingConvention": "camelCase"
+}
+```
+
+This option can configure the output style of frontmatter variables.
+
+Note that block tags should be written in camelCase.

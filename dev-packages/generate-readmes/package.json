@@ -1,0 +1,10 @@
+{
+  "name": "@dev-packages/generate-readmes",
+  "private": true,
+  "files": [
+    "/"
+  ],
+  "bin": {
+    "generate-readmes": "cli.ts"
+  }
+}

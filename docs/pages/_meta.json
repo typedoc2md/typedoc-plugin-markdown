@@ -1,0 +1,13 @@
+{
+  "index": "Introduction",
+  "quick-start": "",
+  "options": "",
+  "guides": "Guides",
+  "-- RelatedPlugin": {
+    "type": "separator",
+    "title": "Related Plugins"
+  },
+  "utilities": "Utilities",
+  "themes": "Themes",
+  "integrations": "Integrations"
+}

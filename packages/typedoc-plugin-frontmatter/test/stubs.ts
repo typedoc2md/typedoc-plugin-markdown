@@ -6,4 +6,4 @@
  * 'Frontmatter' tag
  *
  */
-export class SomeClass {}
+export interface SomeInterface {}

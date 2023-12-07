@@ -1,0 +1,25 @@
+import { Callout } from 'nextra/components';
+
+# Quick Start
+
+<Callout type="info">
+  For general TypeDoc usage please see https://typedoc.org.
+</Callout>
+
+## Installation
+
+```sh npm2yarn
+npm install typedoc-plugin-markdown@next --save-dev
+```
+
+## Usage
+
+Plugins are loaded by using the TypeDoc [`plugin`](https://typedoc.org/options/configuration/#plugin) configuration option:
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown"]
+}
+```
+
+The majority of [TypeDoc's Options](https://typedoc.org/options/) are supported with the exception of some [output options](https://typedoc.org/options/output/) that are theme specific to the HTML theme.

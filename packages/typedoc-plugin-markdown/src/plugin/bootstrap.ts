@@ -3,9 +3,16 @@
  * @module
  */
 
-import { Application, Context, Converter, Renderer, Theme } from 'typedoc';
+import {
+  Application,
+  Context,
+  Converter,
+  DeclarationOption,
+  Renderer,
+  Theme,
+} from 'typedoc';
+import * as options from '../options/declarations';
 import { MarkdownTheme } from '../theme';
-import * as options from './options/config';
 import { generateMarkdown, renderMarkdown } from './renderer';
 
 /**
@@ -17,11 +24,11 @@ export function load(app: Application) {
   /**
    * add options
    */
-  Object.values(options).forEach((option) => {
+  Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
+      name,
       ...option,
-      help: `[typedoc-plugin-markdown] ${option.help}`,
-    });
+    } as DeclarationOption);
   });
 
   /**

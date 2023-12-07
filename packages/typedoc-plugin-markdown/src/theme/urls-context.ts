@@ -8,7 +8,7 @@ import {
   ReflectionKind,
   Renderer,
 } from 'typedoc';
-import { OutputFileStrategy } from '../plugin/options/custom-maps';
+import { OutputFileStrategy } from '../options/maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
 import { getIndexFileName, getMemberTitle } from './helpers';

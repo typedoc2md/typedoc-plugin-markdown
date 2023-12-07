@@ -1,13 +1,13 @@
-import { Application, ParameterType, RendererEvent } from 'typedoc';
+import { Application, DeclarationOption, RendererEvent } from 'typedoc';
+import * as options from './options/declarations';
 
 export function load(app: Application) {
-  app.options.addDeclaration({
-    name: 'remarkPlugins',
-    help: 'An array of remark plugins.',
-    type: ParameterType.Array,
-    defaultValue: [],
+  Object.entries(options).forEach(([name, option]) => {
+    app.options.addDeclaration({
+      name,
+      ...option,
+    } as DeclarationOption);
   });
-
   app.renderer.postRenderAsyncJobs.push(async (output: RendererEvent) => {
     const remarkPlugins = app.options.getValue('remarkPlugins') as any;
     if (output.urls?.length) {
@@ -20,7 +20,7 @@ export function load(app: Application) {
       );
       if (remarkPlugins.length) {
         app.logger.info(
-          `[typedoc-plugin-remark] Output parsed using remark plugin(s) [${remarkPlugins
+          `Output parsed using remark plugin(s) [${remarkPlugins
             .map((plugin) => `"${plugin}"`)
             .join(', ')}]`,
         );

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`No Frontmatter Data should not write any YAML to page if no data found 1`] = `
+"# Interface: SomeInterface
+
+## Tag One
+
+0
+
+## Tag Two
+
+'Frontmatter' tag
+"
+`;

@@ -1,14 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.load = void 0;
-const dist_1 = require("../dist");
+const { MarkdownPageEvent } = require('typedoc-plugin-markdown');
+
 function load(app) {
-    app.renderer.on(dist_1.FrontmatterEvent.PREPARE_FRONTMATTER, (event) => {
-        var _a;
-        event.frontmatter = {
-            title: (_a = event.page.model) === null || _a === void 0 ? void 0 : _a.name,
-            ...event.frontmatter,
-        };
-    });
+  app.renderer.on(MarkdownPageEvent.BEGIN, (page) => {
+    page.frontmatter = {
+      title: page.model.name,
+      ...page.frontmatter,
+    };
+  });
 }
+
 exports.load = load;

@@ -1,55 +1,75 @@
 import {
   Application,
+  DeclarationOption,
   DeclarationReflection,
-  PageEvent,
   ProjectReflection,
 } from 'typedoc';
+import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
 import * as yaml from 'yaml';
-import { FrontmatterEvent } from './events';
-import { declareOptions } from './options';
+import * as options from './options/declarations';
 import { getFrontmatterTags } from './tags';
 
 export function load(app: Application) {
-  declareOptions(app);
+  /**
+   * add options x
+   */
+  Object.entries(options).forEach(([name, option]) => {
+    app.options.addDeclaration({
+      name,
+      ...option,
+    } as DeclarationOption);
+  });
 
   app.renderer.on(
-    PageEvent.END,
-    (page: PageEvent<ProjectReflection | DeclarationReflection>) => {
+    MarkdownPageEvent.BEGIN,
+    (page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>) => {
       const frontmatterGlobals = app.options.getValue(
         'frontmatterGlobals',
       ) as any;
 
-      const frontmatterTags = app.options.getValue(
-        'frontmatterTags',
-      ) as string[];
+      const frontmatterTags = app.options.getValue('frontmatterCommentTags');
 
-      const frontmatterTagsToSnakeCase = app.options.getValue(
-        'frontmatterTagsToSnakeCase',
-      ) as boolean;
-
-      const event = new FrontmatterEvent(
-        FrontmatterEvent.PREPARE_FRONTMATTER,
-        page,
-        {
-          ...frontmatterGlobals,
-          ...(page.model?.comment &&
-            getFrontmatterTags(
-              page.model.comment,
-              frontmatterTags,
-              frontmatterTagsToSnakeCase,
-            )),
-        },
+      const namingConvention = app.options.getValue(
+        'frontmatterNamingConvention',
       );
 
-      app.renderer.trigger(event);
+      const preserveFrontmatterCommentTags = app.options.getValue(
+        'preserveFrontmatterCommentTags',
+      );
 
-      if (Object.keys(event.frontmatter).length) {
+      const resolvedFrontmatterTags = page.model?.comment
+        ? getFrontmatterTags(
+            page.model?.comment,
+            frontmatterTags,
+            namingConvention,
+          )
+        : {};
+
+      if (
+        Object.keys(resolvedFrontmatterTags)?.length &&
+        !preserveFrontmatterCommentTags
+      ) {
+        Object.keys(resolvedFrontmatterTags).forEach((tag) => {
+          page.model?.comment?.removeTags(`@${tag}`);
+        });
+      }
+
+      page.frontmatter = {
+        ...(page.frontmatter || {}),
+        ...frontmatterGlobals,
+        ...resolvedFrontmatterTags,
+      };
+    },
+  );
+
+  app.renderer.on(
+    MarkdownPageEvent.END,
+    (page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>) => {
+      if (Object.keys(page.frontmatter)?.length) {
         page.contents = page?.contents
-          ?.replace(/^/, `---\n${yaml.stringify(event.frontmatter)}---\n\n`)
+          ?.replace(/^/, `---\n${yaml.stringify(page.frontmatter)}---\n\n`)
           .replace(/[\r\n]{3,}/g, '\n\n');
       }
     },
   );
 }
-
-export * from './events';

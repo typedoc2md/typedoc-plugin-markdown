@@ -2,17 +2,16 @@
   "name": "vitepress",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-typedoc": "typedoc --plugin ../../packages/typedoc-plugin-markdown/dist --plugin ../../packages/typedoc-vitepress-theme/dist --options ../../stubs/.config/typedoc.2.cjs",
-    "predocs:dev": "npm run publish-typedoc",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "publish-typedoc": "typedoc",
+    "build-plugin": "cd ../../packages/typedoc-vitepress-theme && npm run build",
+    "predocs:dev": "npm run build-plugin && npm run publish-typedoc",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.4",
-    "vitepress-sidebar": "^1.10.1"
+    "vitepress": "^1.0.0-rc.32"
   }
 }

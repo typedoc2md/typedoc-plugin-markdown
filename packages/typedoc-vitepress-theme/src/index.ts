@@ -1,27 +1,27 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, Options, OptionsReader, ParameterType } from 'typedoc';
+import {
+  Application,
+  DeclarationOption,
+  Options,
+  OptionsReader,
+} from 'typedoc';
 import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { SidebarOptions } from './model';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
+import * as options from './options/declarations';
+import presets from './options/presets';
 import { getSidebar } from './sidebars/sidebars';
 import { VitepressTheme } from './theme';
 
 export function load(app: Application) {
   app.renderer.defineTheme('vitepress', VitepressTheme);
 
-  app.options.addDeclaration({
-    name: 'docsRoot',
-    help: '',
-    type: ParameterType.Path,
-    defaultValue: './docs',
-  });
-
-  app.options.addDeclaration({
-    name: 'sidebar',
-    help: '',
-    type: ParameterType.Mixed,
-    defaultValue: DEFAULT_SIDEBAR_OPTIONS,
+  Object.entries(options).forEach(([name, option]) => {
+    app.options.addDeclaration({
+      name,
+      ...option,
+    } as DeclarationOption);
   });
 
   app.options.addReader(
@@ -30,12 +30,8 @@ export function load(app: Application) {
       readonly order = 0;
       readonly supportsPackages = false;
       read(container: Options) {
-        Object.entries({
-          entryFileName: 'index.md',
-          hidePageHeader: true,
-          out: './docs/api',
-          theme: 'vitepress',
-        }).forEach(([key, value]) => {
+        Object.entries(presets).forEach(([key, value]) => {
+          container.setValue('theme', 'vitepress');
           container.setValue(key, value);
         });
       }
@@ -49,10 +45,9 @@ export function load(app: Application) {
         ...(app.options.getValue('sidebar') as SidebarOptions),
       };
       if (sidebarOptions.autoConfiguration) {
-        const outDir = app.options.getValue('out') as string;
-        const sourceDir = app.options.getValue('docsRoot') as string;
+        const outDir = app.options.getValue('out');
         const sidebarPath = path.resolve(outDir, 'typedoc-sidebar.json');
-        const basePath = path.relative(sourceDir, outDir);
+        const basePath = path.relative('./', outDir);
         const sidebarJson = getSidebar(
           output.navigation,
           basePath,

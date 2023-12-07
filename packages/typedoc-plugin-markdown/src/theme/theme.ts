@@ -1,6 +1,5 @@
 import {
   DeclarationReflection,
-  PageEvent,
   ProjectReflection,
   Reflection,
   ReflectionKind,
@@ -8,8 +7,8 @@ import {
   Renderer,
   Theme,
 } from 'typedoc';
+import { OutputFileStrategy } from '../options/maps';
 import { MarkdownPageEvent } from '../plugin/events';
-import { OutputFileStrategy } from '../plugin/options/custom-maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
 import { NavigationItem, TemplateMapping } from './models';
@@ -86,7 +85,7 @@ export class MarkdownTheme extends Theme {
     return this.getNavigationContext().getNavigation(project);
   }
 
-  hasToc(page: PageEvent) {
+  hasToc(page: MarkdownPageEvent) {
     if (this.application.options.getValue('hideInPageTOC')) {
       return false;
     }
@@ -106,7 +105,7 @@ export class MarkdownTheme extends Theme {
     );
   }
 
-  insertToc(page: PageEvent, contents: string) {
+  insertToc(page: MarkdownPageEvent, contents: string) {
     const regXHeader = /(?<flag>#{2,6})\s+(?<content>.+)/g;
 
     const anchors: string[] = [];
