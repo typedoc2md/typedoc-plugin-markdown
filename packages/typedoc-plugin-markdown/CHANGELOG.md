@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.37
+
+### Patch Changes
+
+- Enable outputFileStrategy in "packages" mode
+
 ## 4.0.0-next.36 (2023-12-03)
 
 ### Patch Changes
