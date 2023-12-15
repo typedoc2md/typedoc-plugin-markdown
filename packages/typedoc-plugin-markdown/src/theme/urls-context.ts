@@ -2,16 +2,17 @@ import * as path from 'path';
 import {
   DeclarationReflection,
   EntryPointStrategy,
+  Options,
   ProjectReflection,
   Reflection,
   ReflectionKind,
-  TypeDocOptions,
+  Renderer,
 } from 'typedoc';
 import { OutputFileStrategy } from '../plugin/options/custom-maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
-import { UrlOption } from '../theme/models';
 import { getIndexFileName, getMemberTitle } from './helpers';
+import { UrlOption } from './models';
 import { MarkdownTheme } from './theme';
 
 export class UrlsContext {
@@ -21,7 +22,8 @@ export class UrlsContext {
   constructor(
     public theme: MarkdownTheme,
     public project: ProjectReflection,
-    public options: Partial<TypeDocOptions>,
+    public renderer: Renderer,
+    public options: Options,
   ) {}
 
   /**
@@ -32,21 +34,22 @@ export class UrlsContext {
    */
   getUrls(): UrlMapping[] {
     const preserveReadme =
-      Boolean(this.project.readme) && !this.options.mergeReadme;
+      Boolean(this.project.readme) && !this.options.getValue('mergeReadme');
 
     const preserveModulesPage =
       (this.project?.groups &&
         Boolean(
           this.project?.groups[0]?.children.find(
-            (child) => child.name === this.options.entryModule,
+            (child) => child.name === this.options.getValue('entryModule'),
           ),
         )) ||
       false;
 
     const isPackages =
-      this.options.entryPointStrategy === EntryPointStrategy.Packages;
+      this.options.getValue('entryPointStrategy') ===
+      EntryPointStrategy.Packages;
 
-    const entryFileName = this.options.entryFileName as string;
+    const entryFileName = this.options.getValue('entryFileName');
 
     const indexFilename = getIndexFileName(this.project, isPackages);
 
@@ -54,7 +57,7 @@ export class UrlsContext {
       ? indexFilename
       : preserveModulesPage
         ? indexFilename
-        : this.options.entryFileName;
+        : this.options.getValue('entryFileName');
 
     if (preserveReadme) {
       this.urls.push(
@@ -81,8 +84,15 @@ export class UrlsContext {
     if (isPackages) {
       this.project.children?.forEach((projectChild) => {
         const preservePackageReadme =
-          Boolean(projectChild.readme) && !this.options.mergeReadme;
+          Boolean(projectChild.readme) && !this.options.getValue('mergeReadme');
+
         const packagesIndex = getIndexFileName(projectChild);
+        const packageMeta = (this.renderer as any).packages[projectChild.name];
+
+        const outputFileStrategy =
+          packageMeta.outputFileStrategy ||
+          this.options.getValue('outputFileStrategy');
+
         const url = `${projectChild.name}/${
           preservePackageReadme ? packagesIndex : entryFileName
         }`;
@@ -96,11 +106,14 @@ export class UrlsContext {
             ),
           );
         }
+
         this.urls.push(
           new UrlMapping(url, projectChild as any, this.theme.projectTemplate),
         );
+
         projectChild.url = url;
-        this.buildUrlsFromProject(projectChild, url);
+
+        this.buildUrlsFromProject(projectChild, url, outputFileStrategy);
       });
     } else {
       this.buildUrlsFromProject(this.project);
@@ -116,11 +129,13 @@ export class UrlsContext {
   private buildUrlsFromProject(
     project: ProjectReflection | DeclarationReflection,
     parentUrl?: string,
+    outputFileStrategy?: OutputFileStrategy,
   ) {
     project.groups?.forEach((projectGroup) => {
       projectGroup.children?.forEach((projectGroupChild) => {
         this.buildUrlsFromGroup(projectGroupChild, {
-          ...(parentUrl && { parentUrl: parentUrl }),
+          ...(parentUrl && { parentUrl }),
+          ...(outputFileStrategy && { outputFileStrategy }),
         });
       });
     });
@@ -130,7 +145,10 @@ export class UrlsContext {
     reflection: DeclarationReflection,
     options: UrlOption,
   ) {
-    const mapping = this.theme.getTemplateMapping(reflection.kind);
+    const mapping = this.theme.getTemplateMapping(
+      reflection.kind,
+      options.outputFileStrategy,
+    );
 
     if (mapping) {
       const directory = options.directory || mapping.directory;
@@ -147,10 +165,14 @@ export class UrlsContext {
 
       reflection.groups?.forEach((group) => {
         group.children.forEach((groupChild) => {
-          const mapping = this.theme.getTemplateMapping(groupChild.kind);
+          const mapping = this.theme.getTemplateMapping(
+            groupChild.kind,
+            options.outputFileStrategy,
+          );
           this.buildUrlsFromGroup(groupChild, {
             parentUrl: urlPath,
             directory: mapping?.directory || null,
+            outputFileStrategy: options.outputFileStrategy,
           });
         });
       });
@@ -160,11 +182,12 @@ export class UrlsContext {
   }
 
   getUrl(reflection: DeclarationReflection, urlPath: string) {
-    if (reflection.name === this.options.entryModule) {
-      return this.options.entryFileName as string;
+    if (reflection.name === this.options.getValue('entryModule')) {
+      return this.options.getValue('entryFileName');
     }
     if (
-      this.options.outputFileStrategy === OutputFileStrategy.Modules &&
+      this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Modules &&
       reflection.name === 'index'
     ) {
       return `module.index.md`;
@@ -201,7 +224,8 @@ export class UrlsContext {
         [ReflectionKind.Module, ReflectionKind.Namespace].includes(
           reflection.kind,
         ) &&
-        this.options.outputFileStrategy === OutputFileStrategy.Modules &&
+        this.options.getValue('outputFileStrategy') ===
+          OutputFileStrategy.Modules &&
         !this.childrenIncludeNamespaces(reflection)
       ) {
         return null;
@@ -211,7 +235,7 @@ export class UrlsContext {
           reflection.kind,
         )
       ) {
-        return path.parse(this.options.entryFileName as string).name;
+        return path.parse(this.options.getValue('entryFileName')).name;
       }
       return alias;
     };
@@ -228,7 +252,7 @@ export class UrlsContext {
   ) {
     if (container.url) {
       if (!reflection.kindOf(ReflectionKind.TypeLiteral)) {
-        const anchorPrefix = this.options.anchorPrefix;
+        const anchorPrefix = this.options.getValue('anchorPrefix');
         const anchorId = this.getAnchorId(reflection);
 
         if (anchorId) {
@@ -268,7 +292,7 @@ export class UrlsContext {
   }
 
   private getAnchorId(reflection: DeclarationReflection) {
-    const preserveAnchorCasing = this.options.preserveAnchorCasing;
+    const preserveAnchorCasing = this.options.getValue('preserveAnchorCasing');
 
     const anchorName = this.getAnchorName(reflection);
 
@@ -281,14 +305,15 @@ export class UrlsContext {
 
   private getAnchorName(reflection: DeclarationReflection) {
     const htmlTableAnchors =
-      this.options.namedAnchors && this.options.namedAnchors['tableRows'];
+      this.options.getValue('namedAnchors') &&
+      this.options.getValue('namedAnchors')['tableRows'];
 
     if (!htmlTableAnchors) {
       if (
         (reflection.kindOf(ReflectionKind.Property) &&
-          this.options.propertiesFormat === 'table') ||
+          this.options.getValue('propertiesFormat') === 'table') ||
         (reflection.kindOf(ReflectionKind.EnumMember) &&
-          this.options.enumMembersFormat === 'table')
+          this.options.getValue('enumMembersFormat') === 'table')
       ) {
         return null;
       }

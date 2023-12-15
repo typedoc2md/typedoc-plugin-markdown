@@ -106,7 +106,10 @@ export const FIXTURES: Fixture[] = [
       hideGenerator: true,
       name: 'packages-example',
     },
-    options: [{}, { mergeReadme: true, indexPageTitle: 'API' }],
+    options: [
+      {},
+      { mergeReadme: true, includeVersion: true, indexPageTitle: 'API' },
+    ],
   },
   {
     outDir: FixtureOutputDir.EntryFiles,

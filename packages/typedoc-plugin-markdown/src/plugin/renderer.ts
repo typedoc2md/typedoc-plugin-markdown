@@ -5,7 +5,12 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { DeclarationReflection, ProjectReflection, Reflection } from 'typedoc';
+import {
+  DeclarationReflection,
+  Options,
+  ProjectReflection,
+  Reflection,
+} from 'typedoc';
 import { formatContents } from '../support/utils';
 import { MarkdownPageEvent, MarkdownRendererEvent } from './events';
 
@@ -82,6 +87,27 @@ export async function renderMarkdown(
     outputDirectory,
     project,
   );
+
+  if (this.packages) {
+    const getOptionsForPackage = new Promise((resolve, reject) => {
+      const packages = {};
+      Object.entries(this.packages).forEach(async ([k, v]) => {
+        packages[k] = {};
+        const origOptions = this.application.options;
+        const packageOptions: Options = origOptions.copyForPackage(
+          (v as any).dir,
+        );
+        await packageOptions.read(this.application.logger, (v as any).dir);
+        const isSet = packageOptions.isSet('outputFileStrategy');
+        packages[k].outputFileStrategy = isSet
+          ? packageOptions.getValue('outputFileStrategy')
+          : null;
+        resolve(packages);
+      });
+    });
+
+    this.packages = await getOptionsForPackage;
+  }
 
   output.urls = this.theme!.getUrls(project);
   output.navigation = this.theme!.getNavigation(project);

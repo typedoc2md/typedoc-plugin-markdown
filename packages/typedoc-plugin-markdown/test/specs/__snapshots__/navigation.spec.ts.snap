@@ -57,6 +57,26 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "url": "package-2/index.md"
+  },
+  {
+    "title": "package-3",
+    "children": [],
+    "url": "package-3/index.md"
+  },
+  {
+    "title": "package-4",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "url": "package-4/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "url": "package-4/index.md"
   }
 ]"
 `;
@@ -86,6 +106,23 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "url": "package-2/index.md"
+  },
+  {
+    "title": "package-3",
+    "children": [],
+    "url": "package-3/index.md"
+  },
+  {
+    "title": "package-4",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          null
+        ]
+      }
+    ],
+    "url": "package-4/index.md"
   }
 ]"
 `;

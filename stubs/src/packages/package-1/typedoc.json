@@ -1,3 +1,4 @@
 {
-  "entryPoints": ["./index.ts"]
+  "entryPoints": ["./index.ts"],
+  "includeVersion": true
 }

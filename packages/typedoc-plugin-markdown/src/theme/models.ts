@@ -5,11 +5,13 @@
  */
 
 import { ReflectionKind } from 'typedoc';
+import { OutputFileStrategy } from '../plugin/options/custom-maps';
 
 export interface UrlOption {
   parentUrl?: string;
   directory?: string | null;
   forceDirectory?: boolean;
+  outputFileStrategy?: OutputFileStrategy;
 }
 
 export interface TemplateMapping {

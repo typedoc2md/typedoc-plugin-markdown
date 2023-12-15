@@ -44,7 +44,8 @@ export class MarkdownTheme extends Theme {
     return new UrlsContext(
       this,
       project,
-      this.application.options.getRawValues(),
+      this.application.renderer,
+      this.application.options,
     );
   }
 
@@ -155,19 +156,21 @@ export class MarkdownTheme extends Theme {
    * Returns the template mapping for a given reflection kind
    * @param kind
    */
-  getTemplateMapping(kind: ReflectionKind): TemplateMapping {
-    const outputFileStrategy = this.application.options.getValue(
-      'outputFileStrategy',
-    ) as OutputFileStrategy;
+  getTemplateMapping(
+    kind: ReflectionKind,
+    outputFileStrategyOverride?: OutputFileStrategy,
+  ): TemplateMapping {
+    const outputFileStrategy =
+      outputFileStrategyOverride ||
+      this.application.options.getValue('outputFileStrategy');
 
     const getDirectoryName = (reflectionKind: ReflectionKind) => {
       const pluralString = ReflectionKind.pluralString(reflectionKind);
       return slugify(pluralString).toLowerCase();
     };
 
-    const membersWithOwnFile = this.application.options.getValue(
-      'membersWithOwnFile',
-    ) as string[];
+    const membersWithOwnFile =
+      this.application.options.getValue('membersWithOwnFile');
 
     const mappings = {
       [ReflectionKind.Module]: {

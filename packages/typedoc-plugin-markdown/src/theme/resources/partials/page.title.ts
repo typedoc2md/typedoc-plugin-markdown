@@ -17,19 +17,21 @@ export function pageTitle(
 ): string {
   const memberPageTitle = context.options.getValue('memberPageTitle') as string;
   const name = getMemberTitle(page.model as DeclarationReflection);
-  const projectName = getProjectDisplayName(
-    page.project,
-    context.options.getValue('includeVersion'),
-  );
 
   if (page.model?.url === page.project.url) {
+    const projectName = getProjectDisplayName(
+      page.project,
+      context.options.getValue('includeVersion'),
+    );
     return context.options
       .getValue('indexPageTitle')
       .replace('{projectName}', projectName);
   }
 
   if (page.model.kindOf(ReflectionKind.Module)) {
-    return name;
+    return page.model.packageVersion
+      ? `${name} - v${page.model.packageVersion}`
+      : name;
   }
 
   return memberPageTitle

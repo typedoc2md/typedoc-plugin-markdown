@@ -3,7 +3,7 @@
  * @module
  */
 
-import { Application, Renderer, Theme } from 'typedoc';
+import { Application, Context, Converter, Renderer, Theme } from 'typedoc';
 import { MarkdownTheme } from '../theme';
 import * as options from './options/config';
 import { generateMarkdown, renderMarkdown } from './renderer';
@@ -38,5 +38,14 @@ export function load(app: Application) {
     value: new Map<string, new (renderer: Renderer) => Theme>([
       ['default', MarkdownTheme],
     ]),
+  });
+
+  app.converter.on(Converter.EVENT_RESOLVE_END, (context: Context) => {
+    if (app.options.packageDir) {
+      (app.renderer as any).packages = {
+        ...((app.renderer as any).packages || {}),
+        [context.project.name]: { dir: app.options.packageDir },
+      };
+    }
   });
 }

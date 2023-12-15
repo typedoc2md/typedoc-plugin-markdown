@@ -119,9 +119,13 @@ function packageHeader(
   const entryFileName = context.options.getValue('entryFileName');
 
   md.push(getProjectName(page.project, context, page.project.url));
-  md.push('\\>');
+  md.push('•');
 
-  md.push(bold(packageItem.name));
+  const packageItemName = packageItem.packageVersion
+    ? `${packageItem.name} - v${packageItem.packageVersion}`
+    : packageItem.name;
+
+  md.push(bold(packageItemName));
 
   md.push('•');
 
