@@ -82,43 +82,52 @@ export class UrlsContext {
     }
 
     if (isPackages) {
-      this.project.children?.forEach((projectChild) => {
-        const preservePackageReadme =
-          Boolean(projectChild.readme) && !this.options.getValue('mergeReadme');
-
-        const packagesIndex = getIndexFileName(projectChild);
-        const packageMeta = (this.renderer as any).packages[projectChild.name];
-
-        const outputFileStrategy =
-          packageMeta.outputFileStrategy ||
-          this.options.getValue('outputFileStrategy');
-
-        const url = `${projectChild.name}/${
-          preservePackageReadme ? packagesIndex : entryFileName
-        }`;
-
-        if (preservePackageReadme) {
-          this.urls.push(
-            new UrlMapping(
-              `${path.dirname(url)}/${entryFileName}`,
-              projectChild as any,
-              this.theme.readmeTemplate,
-            ),
-          );
-        }
-
-        this.urls.push(
-          new UrlMapping(url, projectChild as any, this.theme.projectTemplate),
-        );
-
-        projectChild.url = url;
-
-        this.buildUrlsFromProject(projectChild, url, outputFileStrategy);
-      });
+      if (Object.keys((this.renderer as any).packages)?.length === 1) {
+        this.buildUrlsFromProject(this.project);
+      } else {
+        this.project.children?.forEach((projectChild) => {
+          this.buildUrlsFromPackage(projectChild);
+        });
+      }
     } else {
       this.buildUrlsFromProject(this.project);
     }
     return this.urls;
+  }
+
+  private buildUrlsFromPackage(projectChild: DeclarationReflection) {
+    const entryFileName = this.options.getValue('entryFileName');
+    const preservePackageReadme =
+      Boolean(projectChild.readme) && !this.options.getValue('mergeReadme');
+
+    const packagesIndex = getIndexFileName(projectChild);
+    const packageMeta = (this.renderer as any).packages[projectChild.name];
+
+    const outputFileStrategy =
+      packageMeta?.outputFileStrategy ||
+      this.options.getValue('outputFileStrategy');
+
+    const url = `${projectChild.name}/${
+      preservePackageReadme ? packagesIndex : entryFileName
+    }`;
+
+    if (preservePackageReadme) {
+      this.urls.push(
+        new UrlMapping(
+          `${path.dirname(url)}/${entryFileName}`,
+          projectChild as any,
+          this.theme.readmeTemplate,
+        ),
+      );
+    }
+
+    this.urls.push(
+      new UrlMapping(url, projectChild as any, this.theme.projectTemplate),
+    );
+
+    projectChild.url = url;
+
+    this.buildUrlsFromProject(projectChild, url, outputFileStrategy);
   }
 
   /**
@@ -190,7 +199,7 @@ export class UrlsContext {
         OutputFileStrategy.Modules &&
       reflection.name === 'index'
     ) {
-      return `module.index.md`;
+      return urlPath.replace('index.md', 'module.index.md');
     }
     return urlPath;
   }

@@ -9,6 +9,7 @@ export enum FixtureOutputFileStrategy {
 export enum FixtureEntryPoints {
   Reflections = '/src/reflections/index.ts',
   Packages = '/src/packages/*',
+  Package = '/src/packages/package-1',
   Groups = '/src/groups/**/*.ts',
   Comments = '/src/comments/index.ts',
   EntryFiles = '/src/entryfiles/*',
@@ -18,6 +19,7 @@ export enum FixtureEntryPoints {
 export enum FixtureOutputDir {
   Reflections = 'reflections',
   Packages = 'packages',
+  Package = 'package',
   Groups = 'groups',
   Comments = 'comments',
   EntryFiles = 'entryfiles',
@@ -105,11 +107,24 @@ export const FIXTURES: Fixture[] = [
       entryPointStrategy: 'packages',
       hideGenerator: true,
       name: 'packages-example',
+      hideInPageTOC: true,
     },
     options: [
       {},
       { mergeReadme: true, includeVersion: true, indexPageTitle: 'API' },
     ],
+  },
+  {
+    outDir: FixtureOutputDir.Package,
+    entryPoints: FixtureEntryPoints.Package,
+    commonOptions: {
+      entryPointStrategy: 'packages',
+      hideGenerator: true,
+      name: 'packages-example',
+      includeVersion: true,
+      hideInPageTOC: true,
+    },
+    options: [{}],
   },
   {
     outDir: FixtureOutputDir.EntryFiles,

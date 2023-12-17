@@ -26,6 +26,13 @@ describe(`Urls`, () => {
     ]);
   });
 
+  test(`should gets Urls for single package entry points`, () => {
+    expectUrlsToEqual(FixtureOutputDir.Package, [
+      FixtureOutputFileStrategy.Members,
+      FixtureOutputFileStrategy.Modules,
+    ]);
+  });
+
   test(`should gets Urls for entry module`, () => {
     expectUrlsToEqual(FixtureOutputDir.EntryFiles, [
       FixtureOutputFileStrategy.Members,

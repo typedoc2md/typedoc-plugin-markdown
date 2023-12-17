@@ -18,7 +18,7 @@ export function header(
 ): string {
   const isPackages =
     context.options.getValue('entryPointStrategy') ===
-      EntryPointStrategy.Packages && !Boolean(page.project.groups);
+    EntryPointStrategy.Packages;
   if (isPackages) {
     const packageItem = findPackage(page.model);
     if (packageItem) {

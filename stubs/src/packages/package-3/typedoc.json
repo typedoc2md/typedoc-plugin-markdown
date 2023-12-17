@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["./index.ts"],
+  "entryPoints": ["./src/index.ts", "./src/module-1.ts", "./src/module-2.ts"],
   "readme": "none",
   "outputFileStrategy": "modules"
 }
