@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.38
+
+### Patch Changes
+
+- Packages output file fixes
+
 ## 4.0.0-next.37 (2023-12-15)
 
 ### Patch Changes
