@@ -23,7 +23,7 @@ async function bootstrap(tmpobj: tmp.DirResult, customOptions = {}) {
       ...customOptions,
     },
   );
-  return await plugin.loadContent();
+  return await plugin;
 }
 
 describe(`Plugin:`, () => {

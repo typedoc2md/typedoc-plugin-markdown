@@ -11,18 +11,16 @@ const apps: string[] = [];
 
 const PLUGIN_NAME = 'docusaurus-plugin-typedoc';
 
-export default function pluginDocusaurus(
+export default async function pluginDocusaurus(
   context: LoadContext,
   opts: Partial<PluginOptions>,
 ) {
+  if (opts.id && !apps.includes(opts.id)) {
+    apps.push(opts.id);
+    await generateTypedoc(context, opts);
+  }
   return {
     name: PLUGIN_NAME,
-    async loadContent() {
-      if (opts.id && !apps.includes(opts.id)) {
-        apps.push(opts.id);
-        generateTypedoc(context, opts);
-      }
-    },
     extendCli(cli) {
       cli
         .command('generate-typedoc')
