@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.21.2...docusaurus-plugin-typedoc@0.22.0) (2023-12-20)
+
+### Bug Fixes
+
+- Resolve typedoc esm plugins not loading in sync (#530)
+
 # [0.21.0](https://github.com/tgreyuk/typedoc-plugin-markdown/compare/docusaurus-plugin-typedoc@0.20.2...docusaurus-plugin-typedoc@0.21.0) (2023-11-01)
 
 ### Features
