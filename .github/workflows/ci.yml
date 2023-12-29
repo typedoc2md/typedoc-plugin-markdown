@@ -3,9 +3,15 @@ on:
   push:
     paths:
       - packages/typedoc-plugin-markdown/**
+    paths-ignore:
+      - 'packages/typedoc-plugin-markdown/README.md'
+      - 'packages/typedoc-plugin-markdown/package.json'
   pull_request:
     paths:
       - packages/typedoc-plugin-markdown/**
+    paths-ignore:
+      - 'packages/typedoc-plugin-markdown/README.md'
+      - 'packages/typedoc-plugin-markdown/package.json'
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
