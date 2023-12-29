@@ -1,5 +1,6 @@
 {
   "name": "@dev-packages/helpers",
+  "version": "0.0.0",
   "private": true,
   "main": "src/index.ts",
   "files": [

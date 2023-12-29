@@ -1,5 +1,6 @@
 {
   "name": "@dev-packages/generate-readmes",
+  "version": "0.0.0",
   "private": true,
   "files": [
     "/"
