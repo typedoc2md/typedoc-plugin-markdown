@@ -1,5 +1,11 @@
 # typedoc-plugin-frontmatter
 
+## 0.0.3-next.0
+
+### Patch Changes
+
+- Updated documentation.
+
 ## 0.0.2
 
 ### Patch Changes
