@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-frontmatter",
-  "version": "0.0.2",
+  "version": "0.0.3-next.0",
   "description": "A plugin for TypeDoc that prepends configurable frontmatter to page content.",
   "main": "dist/index.js",
   "files": [
