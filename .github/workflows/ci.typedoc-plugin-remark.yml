@@ -2,16 +2,14 @@ name: CI [typedoc-plugin-remark]
 on:
   push:
     paths:
-      - packages/typedoc-plugin-remark/**
-    paths-ignore:
-      - 'packages/typedoc-plugin-remark/README.md'
-      - 'packages/typedoc-plugin-remark/package.json'
+      - 'packages/typedoc-plugin-remark/**'
+      - '!packages/typedoc-plugin-remark/README.md'
+      - '!packages/typedoc-plugin-remark/package.json'
   pull_request:
     paths:
-      - packages/typedoc-plugin-remark/**
-    paths-ignore:
-      - 'packages/typedoc-plugin-remark/README.md'
-      - 'packages/typedoc-plugin-remark/package.json'
+      - 'packages/typedoc-plugin-remark/**'
+      - '!packages/typedoc-plugin-remark/README.md'
+      - '!packages/typedoc-plugin-remark/package.json'
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest

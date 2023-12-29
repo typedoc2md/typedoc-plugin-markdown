@@ -2,16 +2,14 @@ name: CI [typedoc-plugin-frontmatter]
 on:
   push:
     paths:
-      - packages/typedoc-plugin-frontmatter/**
-    paths-ignore:
-      - 'packages/typedoc-plugin-frontmatter/README.md'
-      - 'packages/typedoc-plugin-frontmatter/package.json'
+      - 'packages/typedoc-plugin-frontmatter/**'
+      - '!packages/typedoc-plugin-frontmatter/README.md'
+      - '!packages/typedoc-plugin-frontmatter/package.json'
   pull_request:
     paths:
-      - packages/typedoc-plugin-frontmatter/**
-    paths-ignore:
-      - 'packages/typedoc-plugin-frontmatter/README.md'
-      - 'packages/typedoc-plugin-frontmatter/package.json'
+      - 'packages/typedoc-plugin-frontmatter/**'
+      - '!packages/typedoc-plugin-frontmatter/README.md'
+      - '!packages/typedoc-plugin-frontmatter/package.json'
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
