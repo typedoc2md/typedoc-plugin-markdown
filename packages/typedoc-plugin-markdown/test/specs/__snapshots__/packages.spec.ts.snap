@@ -74,10 +74,6 @@ exports[`Packages should compile member page for a single package: (Output File 
 ### prop
 
 > **prop**: \`string\`
-
-#### Source
-
-[index.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/69ab7bbe/stubs/src/packages/package-1/index.ts#L8)
 "
 `;
 
@@ -95,10 +91,6 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 ### prop
 
 > **prop**: \`string\`
-
-#### Source
-
-[index.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/69ab7bbe/stubs/src/packages/package-1/index.ts#L8)
 "
 `;
 

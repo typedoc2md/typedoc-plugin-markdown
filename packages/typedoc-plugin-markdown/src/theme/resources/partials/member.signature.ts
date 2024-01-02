@@ -59,7 +59,11 @@ export function signatureMember(
     md.push(context.comment(signature.comment, headingLevel, false, true));
   }
 
-  if (!nested && signature.sources) {
+  if (
+    !nested &&
+    signature.sources &&
+    !context.options.getValue('disableSources')
+  ) {
     md.push(context.sources(signature, headingLevel));
   }
 

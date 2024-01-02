@@ -94,7 +94,11 @@ export function declarationMember(
 
   md.push(context.inheritance(declaration, headingLevel));
 
-  if (!nested && declaration.sources) {
+  if (
+    !nested &&
+    declaration.sources &&
+    !context.options.getValue('disableSources')
+  ) {
     md.push(context.sources(declaration, headingLevel));
   }
 

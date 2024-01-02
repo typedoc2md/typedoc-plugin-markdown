@@ -44,6 +44,12 @@ Comments for some tag
 
 Comments for functionProper
 
+#### Param
+
+Comment for param s
+
+Comments for functionProper
+
 #### Parameters
 
 • **s**: \`string\`
@@ -128,6 +134,8 @@ Comments for nestedPropCA
 
 Comments for nestedPropD
 
+Comments for nestedPropD
+
 ###### Returns
 
 \`boolean\`
@@ -156,7 +164,7 @@ Comments for BasicInterface
 | Property | Type | Description |
 | :------ | :------ | :------ |
 | ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag |
-| \`functionProp\` | (\`s\`) => \`boolean\` | - |
+| \`functionProp\` | (\`s\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
 | \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
@@ -165,7 +173,7 @@ Comments for BasicInterface
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA |
-| \`propWithProps.nestedPropD\` | () => \`boolean\` | - |
+| \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD |
 "
 `;
 
@@ -225,6 +233,12 @@ Comments for some tag
 ### functionProp
 
 > **functionProp**: (\`s\`) => \`boolean\`
+
+Comments for functionProper
+
+#### Param
+
+Comment for param s
 
 Comments for functionProper
 
@@ -324,6 +338,8 @@ Comments for nestedPropCA
 
 Comments for nestedPropD
 
+Comments for nestedPropD
+
 ###### Returns
 
 \`boolean\`
@@ -357,7 +373,7 @@ Comments for ExtendedInterface
 | :------ | :------ | :------ | :------ |
 | ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface.deprecatedProp\`](BasicInterface.md) |
 | \`extendedProp\` | \`string\` | - | - |
-| \`functionProp\` | (\`s\`) => \`boolean\` | - | [\`BasicInterface.functionProp\`](BasicInterface.md) |
+| \`functionProp\` | (\`s\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s | [\`BasicInterface.functionProp\`](BasicInterface.md) |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface.optionalProp\`](BasicInterface.md) |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface.prop\`](BasicInterface.md) |
 | \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface.propWithProps\`](BasicInterface.md) |
@@ -366,7 +382,7 @@ Comments for ExtendedInterface
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
 | \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC | - |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA | - |
-| \`propWithProps.nestedPropD\` | () => \`boolean\` | - | - |
+| \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD | - |
 "
 `;
 

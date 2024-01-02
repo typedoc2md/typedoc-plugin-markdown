@@ -113,6 +113,7 @@ export const FIXTURES: Fixture[] = [
       name: 'packages-example',
       hideInPageTOC: true,
       entryFileName: 'index.md',
+      disableSources: true,
     },
     options: [
       {},
@@ -128,6 +129,7 @@ export const FIXTURES: Fixture[] = [
       name: 'packages-example',
       includeVersion: true,
       hideInPageTOC: true,
+      disableSources: true,
     },
     options: [{}],
   },

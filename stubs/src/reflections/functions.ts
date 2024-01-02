@@ -70,8 +70,6 @@ export function functionWithNestedParameters(
 
 /**
  * @param __namedParameters various options
- * @param foo foo
- * @param bar bar
  */
 export function functionWithNamedParams(
   { foo = 42, bar = 43 }: { foo?: number; bar?: number } = {},

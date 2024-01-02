@@ -26,7 +26,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:125](http://source-url)
+[functions.ts:123](http://source-url)
 "
 `;
 
@@ -82,7 +82,7 @@ Return comments
 
 ## Source
 
-[functions.ts:133](http://source-url)
+[functions.ts:131](http://source-url)
 "
 `;
 
@@ -134,7 +134,7 @@ Return comments
 
 ## Source
 
-[functions.ts:118](http://source-url)
+[functions.ts:116](http://source-url)
 "
 `;
 
@@ -302,7 +302,7 @@ The name value.
 
 ### Source
 
-[functions.ts:96](http://source-url)
+[functions.ts:94](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -326,7 +326,7 @@ A value of the object.
 
 ### Source
 
-[functions.ts:104](http://source-url)
+[functions.ts:102](http://source-url)
 "
 `;
 
@@ -383,9 +383,9 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 various options
 
-• **\\_\\_namedParameters\\.bar?**: \`number\`
+• **\\_\\_namedParameters\\.bar?**: \`number\`= \`43\`
 
-• **\\_\\_namedParameters\\.foo?**: \`number\`
+• **\\_\\_namedParameters\\.foo?**: \`number\`= \`42\`
 
 • **anotherParam**: \`string\`
 
@@ -397,7 +397,7 @@ Another param comment
 
 ## Source
 
-[functions.ts:76](http://source-url)
+[functions.ts:74](http://source-url)
 "
 `;
 
@@ -636,7 +636,7 @@ Comments for T
 
 ## Source
 
-[functions.ts:89](http://source-url)
+[functions.ts:87](http://source-url)
 "
 `;
 
