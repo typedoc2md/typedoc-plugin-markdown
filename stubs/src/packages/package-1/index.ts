@@ -4,4 +4,6 @@
  * @packageDocumentation
  */
 
-export interface PackageInterface {}
+export interface PackageInterface {
+  prop: string;
+}

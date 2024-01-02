@@ -34,7 +34,7 @@ export function getProjectDisplayName(
 ): string {
   const version =
     includeVersion && project.packageVersion
-      ? ` - v${project.packageVersion}`
+      ? ` v${project.packageVersion}`
       : '';
   return `${project.name}${version ? version : ''}`;
 }
@@ -50,6 +50,23 @@ export function isAbsoluteIndex(
 ) {
   return reflection.groups?.every((group) =>
     group.allChildrenHaveOwnDocument(),
+  );
+}
+
+export function hasToc(reflection: DeclarationReflection, isMembers: boolean) {
+  return (
+    (reflection.kindOf([
+      ReflectionKind.Project,
+      ReflectionKind.Module,
+      ReflectionKind.Namespace,
+    ]) ||
+      (reflection.kindOf([
+        ReflectionKind.Enum,
+        ReflectionKind.Class,
+        ReflectionKind.Interface,
+      ]) &&
+        isMembers)) &&
+    reflection.groups?.some((group) => !group.allChildrenHaveOwnDocument())
   );
 }
 
@@ -263,7 +280,7 @@ export function getIndexFileName(
   const isModules = reflection.children?.every((child) =>
     child.kindOf(ReflectionKind.Module),
   );
-  return isModules ? 'modules.md' : 'exports.md';
+  return isModules ? 'modules.md' : 'globals.md';
 }
 
 export function getIndexLabel(
@@ -276,5 +293,5 @@ export function getIndexLabel(
   const isModules = reflection.children?.every((child) =>
     child.kindOf(ReflectionKind.Module),
   );
-  return isModules ? 'Modules' : 'Exports';
+  return isModules ? 'Modules' : 'Globals';
 }

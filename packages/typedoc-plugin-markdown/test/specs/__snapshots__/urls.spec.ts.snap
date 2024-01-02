@@ -172,7 +172,7 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 1`] = `
 [
   "index.md",
-  "package-1/exports.md",
+  "package-1/globals.md",
   "package-1/index.md",
   "package-1/interfaces/PackageInterface.md",
   "package-2/index.md",
@@ -212,7 +212,7 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 1`] = `
 [
   "index.md",
-  "package-1/exports.md",
+  "package-1/globals.md",
   "package-1/index.md",
   "package-2/index.md",
   "package-2/module-1.md",
@@ -258,6 +258,7 @@ exports[`Urls should gets Urls for readme options: outputFileStrategy: modules 1
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 1`] = `
 [
+  "README.md",
   "classes/AbstractClass.md",
   "classes/CallbacksOptions.md",
   "classes/ClassWithAccessors.md",
@@ -269,7 +270,6 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "classes/DisposableClass.md",
   "enumerations/BasicEnum.md",
   "enumerations/EnumWithValues.md",
-  "exports.md",
   "functions/basicFunction.md",
   "functions/functionReturningAFunction.md",
   "functions/functionReturningAPromise.md",
@@ -280,7 +280,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "functions/functionWithNestedParameters.md",
   "functions/functionWithOptionalParameters.md",
   "functions/functionWithTypeParameters.md",
-  "index.md",
+  "globals.md",
   "interfaces/BasicInterface.md",
   "interfaces/ExtendedInterface.md",
   "interfaces/IndexableInterface.md",
@@ -312,6 +312,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: members 2`] = `
 [
+  "README.md",
   "classes/AbstractClass.md",
   "classes/CallbacksOptions.md",
   "classes/ClassWithAccessors.md",
@@ -333,7 +334,6 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "functions/functionWithNestedParameters.md",
   "functions/functionWithOptionalParameters.md",
   "functions/functionWithTypeParameters.md",
-  "index.md",
   "interfaces/BasicInterface.md",
   "interfaces/ExtendedInterface.md",
   "interfaces/IndexableInterface.md",
@@ -365,20 +365,20 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: modules 1`] = `
 [
-  "exports.md",
-  "index.md",
+  "README.md",
+  "globals.md",
 ]
 `;
 
 exports[`Urls should gets Urls for single entry points: outputFileStrategy: modules 2`] = `
 [
-  "index.md",
+  "README.md",
 ]
 `;
 
 exports[`Urls should gets Urls for single package entry points: outputFileStrategy: members 1`] = `
 [
-  "index.md",
+  "README.md",
   "interfaces/PackageInterface.md",
   "packages.md",
 ]
@@ -386,7 +386,7 @@ exports[`Urls should gets Urls for single package entry points: outputFileStrate
 
 exports[`Urls should gets Urls for single package entry points: outputFileStrategy: modules 1`] = `
 [
-  "index.md",
+  "README.md",
   "packages.md",
 ]
 `;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# typedoc-stubs
+"# API Index
 
 Comments form module comments
 
@@ -62,7 +62,7 @@ Some <p> html </p> inside codeblock
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# typedoc-stubs
+"# API Index
 
 Comments form module comments
 
@@ -70,14 +70,14 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](http:/public-path/interfaces/CommentInterface.md) - Links to CommentInterface
-- [Links to CommentInterface.prop](http:/public-path/interfaces/CommentInterface.md#prop)
-- [Links to CommentInterface.propb](http:/public-path/interfaces/CommentInterface.md#propb)
-- [CommentEnum.MemberB](http:/public-path/enumerations/CommentEnum.md#memberb)
-- [SameName:var](http:/public-path/variables/SameName.md)
-- [SameName:interface](http:/public-path/interfaces/SameName.md)
-- [SameName.prop](http:/public-path/interfaces/SameName.md#prop)
-- [prop:var](http:/public-path/variables/prop.md)
+- [CommentInterface](interfaces/CommentInterface.md) - Links to CommentInterface
+- [Links to CommentInterface.prop](interfaces/CommentInterface.md#prop)
+- [Links to CommentInterface.propb](interfaces/CommentInterface.md#propb)
+- [CommentEnum.MemberB](enumerations/CommentEnum.md#memberb)
+- [SameName:var](variables/SameName.md)
+- [SameName:interface](interfaces/SameName.md)
+- [SameName.prop](interfaces/SameName.md#prop)
+- [prop:var](variables/prop.md)
 
 External links:
 
@@ -109,58 +109,42 @@ Some <p> html </p> inside codeblock
 
 | Enumeration | Description |
 | :------ | :------ |
-| [CommentEnum](http:/public-path/enumerations/CommentEnum.md) | - |
+| [CommentEnum](enumerations/CommentEnum.md) | - |
 
 ## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
-| [CommentInterface](http:/public-path/interfaces/CommentInterface.md) | - |
-| [SameName](http:/public-path/interfaces/SameName.md) | - |
+| [CommentInterface](interfaces/CommentInterface.md) | - |
+| [SameName](interfaces/SameName.md) | - |
 
 ## Variables
 
 | Variable | Description |
 | :------ | :------ |
-| [SameName](http:/public-path/variables/SameName.md) | - |
-| [prop](http:/public-path/variables/prop.md) | - |
-| [propb](http:/public-path/variables/propb.md) | - |
+| [SameName](variables/SameName.md) | - |
+| [prop](variables/prop.md) | - |
+| [propb](variables/propb.md) | - |
 "
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"# typedoc-stubs
+"# API Index
 
 Comments form module comments
-
-## Contents
-
-- [Links](exports.md#links)
-- [Tag A](exports.md#tag-a)
-- [Tag B](exports.md#tag-b)
-- [Html And Jsx](exports.md#html-and-jsx)
-- [Enumerations](exports.md#enumerations)
-  - [CommentEnum](exports.md#commentenum)
-- [Interfaces](exports.md#interfaces)
-  - [CommentInterface](exports.md#commentinterface)
-  - [SameName](exports.md#samename)
-- [Variables](exports.md#variables)
-  - [SameName](exports.md#samename-1)
-  - [prop](exports.md#prop)
-  - [propb](exports.md#propb)
 
 ## Links
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](exports.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](exports.md#commentinterface)
-- [Links to CommentInterface.propb](exports.md#commentinterface)
-- [CommentEnum.MemberB](exports.md#commentenum)
-- [SameName:var](exports.md#samename-1)
-- [SameName:interface](exports.md#samename)
-- [SameName.prop](exports.md#samename)
-- [prop:var](exports.md#prop)
+- [CommentInterface](globals.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](globals.md#commentinterface)
+- [Links to CommentInterface.propb](globals.md#commentinterface)
+- [CommentEnum.MemberB](globals.md#commentenum)
+- [SameName:var](globals.md#samename-1)
+- [SameName:interface](globals.md#samename)
+- [SameName.prop](globals.md#samename)
+- [prop:var](globals.md#prop)
 
 External links:
 
@@ -188,6 +172,18 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
+## Contents
+
+- [Enumerations](globals.md#enumerations)
+    - [CommentEnum](globals.md#commentenum)
+- [Interfaces](globals.md#interfaces)
+    - [CommentInterface](globals.md#commentinterface)
+    - [SameName](globals.md#samename)
+- [Variables](globals.md#variables)
+    - [SameName](globals.md#samename-1)
+    - [prop](globals.md#prop)
+    - [propb](globals.md#propb)
+
 ## Enumerations
 
 ### CommentEnum
@@ -196,7 +192,7 @@ Some <p> html </p> inside codeblock
 
 | Member | Value | Description |
 | :------ | :------ | :------ |
-| \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](exports.md#samename-1) |
+| \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](globals.md#samename-1) |
 | \`MemberB\` | \`1\` | - |
 
 ## Interfaces
@@ -242,38 +238,22 @@ Some <p> html </p> inside codeblock
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# typedoc-stubs
+"# API Index
 
 Comments form module comments
-
-## Contents
-
-- [Links](exports.md#links)
-- [Tag A](exports.md#tag-a)
-- [Tag B](exports.md#tag-b)
-- [Html And Jsx](exports.md#html-and-jsx)
-- [Enumerations](exports.md#enumerations)
-  - [CommentEnum](exports.md#commentenum)
-- [Interfaces](exports.md#interfaces)
-  - [CommentInterface](exports.md#commentinterface)
-  - [SameName](exports.md#samename)
-- [Variables](exports.md#variables)
-  - [SameName](exports.md#samename-1)
-  - [prop](exports.md#prop)
-  - [propb](exports.md#propb)
 
 ## Links
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](http:/public-path/exports.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](http:/public-path/exports.md#prop)
-- [Links to CommentInterface.propb](http:/public-path/exports.md#propb)
-- [CommentEnum.MemberB](http:/public-path/exports.md#memberb)
-- [SameName:var](http:/public-path/exports.md#samename-1)
-- [SameName:interface](http:/public-path/exports.md#samename)
-- [SameName.prop](http:/public-path/exports.md#prop-1)
-- [prop:var](http:/public-path/exports.md#prop-2)
+- [CommentInterface](globals.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](globals.md#prop)
+- [Links to CommentInterface.propb](globals.md#propb)
+- [CommentEnum.MemberB](globals.md#memberb)
+- [SameName:var](globals.md#samename-1)
+- [SameName:interface](globals.md#samename)
+- [SameName.prop](globals.md#prop-1)
+- [prop:var](globals.md#prop-2)
 
 External links:
 
@@ -301,6 +281,18 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
+## Contents
+
+- [Enumerations](globals.md#enumerations)
+    - [CommentEnum](globals.md#commentenum)
+- [Interfaces](globals.md#interfaces)
+    - [CommentInterface](globals.md#commentinterface)
+    - [SameName](globals.md#samename)
+- [Variables](globals.md#variables)
+    - [SameName](globals.md#samename-1)
+    - [prop](globals.md#prop-2)
+    - [propb](globals.md#propb-2)
+
 ## Enumerations
 
 ### CommentEnum
@@ -309,7 +301,7 @@ Some <p> html </p> inside codeblock
 
 | Member | Value | Description |
 | :------ | :------ | :------ |
-| <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](http:/public-path/exports.md#samename-1) |
+| <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](globals.md#samename-1) |
 | <a id="memberb" name="memberb"></a> \`MemberB\` | \`1\` | - |
 
 ## Interfaces

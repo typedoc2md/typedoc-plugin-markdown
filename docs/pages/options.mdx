@@ -39,7 +39,7 @@ ___
 
 ### membersWithOwnFile
 
-<Callout>Determines which members are exported to their own file.</Callout>
+<Callout>Determines which members are exported to their own file when `outputFileStrategy` equals `members`.</Callout>
 
 Accepts an array of the following values `"Enum"` `"Variable"` `"Function"` `"Class"` `"Interface"` `"TypeAlias"`.
 
@@ -65,24 +65,24 @@ ___
 
 <Callout>The file name of the entry page.</Callout>
 
-Defaults to `"index.md"`.
+Defaults to `"README.md"`.
 
 
 ```json filename="typedoc.json"
 {
-  "entryFileName": "README.md"
+  "entryFileName": "index.md"
 }
 
 ```
 
 The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
 
-To make the intention of this file clear `index.md` is the plugin default, however `README.md` is recognised when browsing folders on repos and Wikis.
+`README.md` is recognised when browsing folders on repos and Wikis and is the plugin default. `index.md` might be more suitable for other use-cases.
 
 The content of this file will be resolved in the following order:
 
-1. The [`entryModule`](#entrymodule) (if set).
-2. The resolved Readme file.
+1. The value of the [`entryModule`](#entrymodule) option (if defined).
+2. The resolved Readme file (skipped if the TypeDoc [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
 3. The documentation index page.
 
 ___
@@ -197,25 +197,25 @@ ___
 
 <Callout>The title of project index page.</Callout>
 
-Defaults to `"{projectName}"`.
+Defaults to `"API Index"`.
 
 
 ```json filename="typedoc.json"
 {
-  "indexPageTitle": "{projectName} API Documentation"
+  "indexPageTitle": "{projectName} Docs"
 }
 
 ```
 
 Provides a mechanism to change the main project index page title.
 
-Defaults to `{projectName}` - a placeholder that renders the project name and version.
+Supports `{projectName} - a placeholder that renders the project's name and version.
 
 ___
 
 ### memberPageTitle
 
-<Callout>The page title of members.</Callout>
+<Callout>The page title of member pages.</Callout>
 
 Defaults to `"{kind}: {name}"`.
 

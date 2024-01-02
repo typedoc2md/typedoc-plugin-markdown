@@ -36,7 +36,7 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
  * @category Output
  */
 export const membersWithOwnFile: Partial<DeclarationOption> = {
-  help: 'Determines which members are exported to their own file.',
+  help: 'Determines which members are exported to their own file when `outputFileStrategy` equals `members`.',
   type: ParameterType.Array,
   validate(values) {
     const validValues = MembersWithOwnFile;
@@ -56,15 +56,15 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
 /**
  * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
  *
- * To make the intention of this file clear `index.md` is the plugin default, however `README.md` is recognised when browsing folders on repos and Wikis.
+ * `README.md` is recognised when browsing folders on repos and Wikis and is the plugin default. `index.md` might be more suitable for other use-cases.
  *
  * The content of this file will be resolved in the following order:
  *
- * 1. The [`entryModule`](#entrymodule) (if set).
- * 2. The resolved Readme file.
+ * 1. The value of the [`entryModule`](#entrymodule) option (if defined).
+ * 2. The resolved Readme file (skipped if the TypeDoc [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
  * 3. The documentation index page.
  *
- * @example "README.md"
+ * @example "index.md"
  *
  * @category Output
  *
@@ -72,7 +72,7 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
 export const entryFileName: Partial<DeclarationOption> = {
   help: 'The file name of the entry page.',
   type: ParameterType.String,
-  defaultValue: 'index.md',
+  defaultValue: 'README.md',
 };
 
 /**
@@ -142,16 +142,16 @@ export const hideInPageTOC: Partial<DeclarationOption> = {
 /**
  * Provides a mechanism to change the main project index page title.
  *
- * Defaults to `{projectName}` - a placeholder that renders the project name and version.
+ * Supports `{projectName} - a placeholder that renders the project's name and version.
  *
- * @example "{projectName} API Documentation"
+ * @example "{projectName} Docs"
  *
  * @category UI
  */
 export const indexPageTitle: Partial<DeclarationOption> = {
   help: 'The title of project index page.',
   type: ParameterType.String,
-  defaultValue: '{projectName}',
+  defaultValue: 'API Index',
 };
 
 /**
@@ -164,7 +164,7 @@ export const indexPageTitle: Partial<DeclarationOption> = {
  * @category UI
  */
 export const memberPageTitle: Partial<DeclarationOption> = {
-  help: 'The page title of members.',
+  help: 'The page title of member pages.',
   type: ParameterType.String,
   defaultValue: '{kind}: {name}',
 };

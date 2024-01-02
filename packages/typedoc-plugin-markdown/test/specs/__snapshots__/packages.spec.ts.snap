@@ -1,11 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**packages-example** • [Readme](index.md) \\| [Packages](packages.md)
+exports[`Packages should compile index for a single package: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**package-1 v1.0.0** • Readme \\| [API](packages.md)
 
 ***
 
-# packages-example
+# PACKAGE 1 README
+
+Readme content
+"
+`;
+
+exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**packages-example** • [Readme](index.md) \\| API
+
+***
+
+# API Index
 
 ## Packages
 
@@ -17,13 +28,13 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"[packages-example](../packages.md) • **package-1 - v1.0.0** • [Readme](index.md) \\| [Exports](exports.md)
+"**package-1 v1.0.0** • [Readme](index.md) \\| API
 
 ***
 
-[packages-example](../packages.md) / package-1
+[API Index](../packages.md) / package-1
 
-# package-1 - v1.0.0
+# package-1 v1.0.0
 
 Comments for package-1
 
@@ -34,11 +45,11 @@ Comments for package-1
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 3`] = `
-"[packages-example](../packages.md) • **package-2** • [Modules](index.md)
+"**package-2** • API
 
 ***
 
-[packages-example](../packages.md) / package-2
+[API Index](../packages.md) / package-2
 
 # package-2
 
@@ -49,19 +60,50 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 "
 `;
 
-exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[packages-example](../../packages.md) • **package-1 - v1.0.0** • [Readme](../index.md) \\| [Exports](../exports.md)
+exports[`Packages should compile member page for a single package: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**package-1 v1.0.0** • [Readme](../README.md) \\| API
 
 ***
 
-[packages-example](../../packages.md) / [package-1](../exports.md) / PackageInterface
+[API Index](../packages.md) / PackageInterface
 
 # Interface: PackageInterface
+
+## Properties
+
+### prop
+
+> **prop**: \`string\`
+
+#### Source
+
+[index.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/69ab7bbe/stubs/src/packages/package-1/index.ts#L8)
+"
+`;
+
+exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**package-1 v1.0.0** • [Readme](../index.md) \\| API
+
+***
+
+[API Index](../../packages.md) / [package-1](../globals.md) / PackageInterface
+
+# Interface: PackageInterface
+
+## Properties
+
+### prop
+
+> **prop**: \`string\`
+
+#### Source
+
+[index.ts:8](https://github.com/tgreyuk/typedoc-plugin-markdown/blob/69ab7bbe/stubs/src/packages/package-1/index.ts#L8)
 "
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**packages-example** • [Readme](index.md) \\| [Packages](packages.md)
+"**packages-example** • Readme \\| [API](packages.md)
 
 ***
 
@@ -78,9 +120,11 @@ Some text.
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"[packages-example](../packages.md) • **package-1 - v1.0.0** • [Readme](index.md) \\| [Exports](exports.md)
+"**package-1 v1.0.0** • Readme \\| [API](globals.md)
 
 ***
+
+[API Index](../packages.md) / package-1
 
 # PACKAGE 1 README
 
@@ -89,7 +133,7 @@ Readme content
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**packages-example - v0.0** • [Packages](index.md)
+"**packages-example v0.0** • API
 
 ***
 
@@ -103,7 +147,9 @@ Some text.
 
 Some text.
 
-## Packages
+## API
+
+### Packages
 
 - [package-1](package-1/index.md)
 - [package-2](package-2/index.md)

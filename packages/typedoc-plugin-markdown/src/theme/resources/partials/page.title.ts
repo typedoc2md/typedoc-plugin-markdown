@@ -30,7 +30,7 @@ export function pageTitle(
 
   if (page.model.kindOf(ReflectionKind.Module)) {
     return page.model.packageVersion
-      ? `${name} - v${page.model.packageVersion}`
+      ? `${name} v${page.model.packageVersion}`
       : name;
   }
 

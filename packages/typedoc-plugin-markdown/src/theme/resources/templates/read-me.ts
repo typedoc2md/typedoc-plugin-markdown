@@ -15,6 +15,10 @@ export function readmeTemplate(
     md.push(context.header(page));
   }
 
+  if (!context.options.getValue('hideBreadcrumbs')) {
+    md.push(context.breadcrumbs(page));
+  }
+
   if (page.model.readme) {
     md.push(context.commentParts(page.model.readme));
   }

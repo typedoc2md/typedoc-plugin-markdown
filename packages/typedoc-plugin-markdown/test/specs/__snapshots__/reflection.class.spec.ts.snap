@@ -1,26 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Class: \`abstract\` AbstractClass
-
-## Contents
-
-- [Extended By](AbstractClass.md#extended-by)
-- [Constructors](AbstractClass.md#constructors)
-  - [new AbstractClass()](AbstractClass.md#new-abstractclass)
-- [Properties](AbstractClass.md#properties)
-  - [\`abstract\` abstractProp](AbstractClass.md#abstract-abstractprop)
-- [Methods](AbstractClass.md#methods)
-  - [\`abstract\` abstractMethod()](AbstractClass.md#abstract-abstractmethod)
+"# Class: \`abstract\` AbstractClass
 
 ## Extended By
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
+
+## Contents
+
+- [Constructors](AbstractClass.md#constructors)
+    - [new AbstractClass](AbstractClass.md#constructors)
+- [Properties](AbstractClass.md#properties)
+    - [abstractProp](AbstractClass.md#abstract-abstractprop)
+- [Methods](AbstractClass.md#methods)
+    - [abstractMethod](AbstractClass.md#abstract-abstractmethod)
 
 ## Constructors
 
@@ -63,25 +58,20 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# \`abstract\` AbstractClass
-
-## Contents
-
-- [Extended By](AbstractClass.md#extended-by)
-- [Constructors](AbstractClass.md#constructors)
-  - [new AbstractClass()](AbstractClass.md#new-abstractclass)
-- [Properties](AbstractClass.md#properties)
-- [Methods](AbstractClass.md#methods)
-  - [\`abstract\` abstractMethod()](AbstractClass.md#abstract-abstractmethod)
+"# \`abstract\` AbstractClass
 
 ## Extended By
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
+
+## Contents
+
+- [Constructors](AbstractClass.md#constructors)
+    - [new AbstractClass](AbstractClass.md#constructors)
+- [Properties](AbstractClass.md#properties)
+- [Methods](AbstractClass.md#methods)
+    - [abstractMethod](AbstractClass.md#abstract-abstractmethod)
 
 ## Constructors
 
@@ -118,24 +108,20 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Class: ClassWithAccessors
+"# Class: ClassWithAccessors
 
 Comments for ClassWithAccessors
 
 ## Contents
 
 - [Constructors](ClassWithAccessors.md#constructors)
-  - [new ClassWithAccessors()](ClassWithAccessors.md#new-classwithaccessors)
+    - [new ClassWithAccessors](ClassWithAccessors.md#constructors)
 - [Properties](ClassWithAccessors.md#properties)
-  - [privateProp](ClassWithAccessors.md#privateprop)
+    - [privateProp](ClassWithAccessors.md#privateprop)
 - [Accessors](ClassWithAccessors.md#accessors)
-  - [accessor](ClassWithAccessors.md#accessor)
-  - [noGetter](ClassWithAccessors.md#nogetter)
-  - [noSetter](ClassWithAccessors.md#nosetter)
+    - [accessor](ClassWithAccessors.md#accessor)
+    - [noGetter](ClassWithAccessors.md#nogetter)
+    - [noSetter](ClassWithAccessors.md#nosetter)
 
 ## Constructors
 
@@ -214,23 +200,19 @@ Param comments
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# ClassWithAccessors
+"# ClassWithAccessors
 
 Comments for ClassWithAccessors
 
 ## Contents
 
 - [Constructors](ClassWithAccessors.md#constructors)
-  - [new ClassWithAccessors()](ClassWithAccessors.md#new-classwithaccessors)
+    - [new ClassWithAccessors](ClassWithAccessors.md#constructors)
 - [Properties](ClassWithAccessors.md#properties)
 - [Accessors](ClassWithAccessors.md#accessors)
-  - [accessor](ClassWithAccessors.md#accessor)
-  - [noGetter](ClassWithAccessors.md#nogetter)
-  - [noSetter](ClassWithAccessors.md#nosetter)
+    - [accessor](ClassWithAccessors.md#accessor)
+    - [noGetter](ClassWithAccessors.md#nogetter)
+    - [noSetter](ClassWithAccessors.md#nosetter)
 
 ## Constructors
 
@@ -305,20 +287,14 @@ get noSetter(): string
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Class: ClassWithConstructorOverloads
+"# Class: ClassWithConstructorOverloads
 
 Comments for ClassWithConstructorOverloads
 
 ## Contents
 
 - [Constructors](ClassWithConstructorOverloads.md#constructors)
-  - [new ClassWithConstructorOverloads(x, y)](ClassWithConstructorOverloads.md#new-classwithconstructoroverloadsx-y)
-  - [new ClassWithConstructorOverloads(x)](ClassWithConstructorOverloads.md#new-classwithconstructoroverloadsx)
-  - [new ClassWithConstructorOverloads(s)](ClassWithConstructorOverloads.md#new-classwithconstructoroverloadss)
+    - [new ClassWithConstructorOverloads](ClassWithConstructorOverloads.md#constructors)
 
 ## Constructors
 
@@ -379,20 +355,14 @@ Comments for x string
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# ClassWithConstructorOverloads
+"# ClassWithConstructorOverloads
 
 Comments for ClassWithConstructorOverloads
 
 ## Contents
 
 - [Constructors](ClassWithConstructorOverloads.md#constructors)
-  - [new ClassWithConstructorOverloads(x, y)](ClassWithConstructorOverloads.md#new-classwithconstructoroverloadsx-y)
-  - [new ClassWithConstructorOverloads(x)](ClassWithConstructorOverloads.md#new-classwithconstructoroverloadsx)
-  - [new ClassWithConstructorOverloads(s)](ClassWithConstructorOverloads.md#new-classwithconstructoroverloadss)
+    - [new ClassWithConstructorOverloads](ClassWithConstructorOverloads.md#constructors)
 
 ## Constructors
 
@@ -448,28 +418,24 @@ new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Class: \`abstract\` ClassWithModifiers
+"# Class: \`abstract\` ClassWithModifiers
 
 Comments for ClassWithModifiers
 
 ## Contents
 
 - [Constructors](ClassWithModifiers.md#constructors)
-  - [new ClassWithModifiers()](ClassWithModifiers.md#new-classwithmodifiers)
+    - [new ClassWithModifiers](ClassWithModifiers.md#constructors)
 - [Properties](ClassWithModifiers.md#properties)
-  - [privateProp](ClassWithModifiers.md#privateprop)
-  - [protectedProp](ClassWithModifiers.md#protectedprop)
-  - [publicPropWithDefault](ClassWithModifiers.md#publicpropwithdefault)
-  - [readonlyProp](ClassWithModifiers.md#readonlyprop)
-  - [staticProp](ClassWithModifiers.md#staticprop)
+    - [privateProp](ClassWithModifiers.md#privateprop)
+    - [protectedProp](ClassWithModifiers.md#protectedprop)
+    - [publicPropWithDefault](ClassWithModifiers.md#publicpropwithdefault)
+    - [readonlyProp](ClassWithModifiers.md#readonlyprop)
+    - [staticProp](ClassWithModifiers.md#staticprop)
 - [Methods](ClassWithModifiers.md#methods)
-  - [privateMethod()](ClassWithModifiers.md#privatemethod)
-  - [publicMethod()](ClassWithModifiers.md#publicmethod)
-  - [staticMethod()](ClassWithModifiers.md#staticmethod)
+    - [privateMethod](ClassWithModifiers.md#privatemethod)
+    - [publicMethod](ClassWithModifiers.md#publicmethod)
+    - [staticMethod](ClassWithModifiers.md#staticmethod)
 
 ## Constructors
 
@@ -592,23 +558,19 @@ Comment for staticMethod
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# \`abstract\` ClassWithModifiers
+"# \`abstract\` ClassWithModifiers
 
 Comments for ClassWithModifiers
 
 ## Contents
 
 - [Constructors](ClassWithModifiers.md#constructors)
-  - [new ClassWithModifiers()](ClassWithModifiers.md#new-classwithmodifiers)
+    - [new ClassWithModifiers](ClassWithModifiers.md#constructors)
 - [Properties](ClassWithModifiers.md#properties)
 - [Methods](ClassWithModifiers.md#methods)
-  - [privateMethod()](ClassWithModifiers.md#privatemethod)
-  - [publicMethod()](ClassWithModifiers.md#publicmethod)
-  - [staticMethod()](ClassWithModifiers.md#staticmethod)
+    - [privateMethod](ClassWithModifiers.md#privatemethod)
+    - [publicMethod](ClassWithModifiers.md#publicmethod)
+    - [staticMethod](ClassWithModifiers.md#staticmethod)
 
 ## Constructors
 
@@ -677,19 +639,9 @@ Comment for staticMethod
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Class: ClassWithTypeParameters\\<A, B, C\\>
+"# Class: ClassWithTypeParameters\\<A, B, C\\>
 
 Comments for ClassWithTypeParameters
-
-## Contents
-
-- [Type parameters](ClassWithTypeParameters.md#type-parameters)
-- [Constructors](ClassWithTypeParameters.md#constructors)
-  - [new ClassWithTypeParameters()](ClassWithTypeParameters.md#new-classwithtypeparameters)
 
 ## Type parameters
 
@@ -702,6 +654,11 @@ Comments for param A
 Comments for param B
 
 • **C** = \`boolean\`
+
+## Contents
+
+- [Constructors](ClassWithTypeParameters.md#constructors)
+    - [new ClassWithTypeParameters](ClassWithTypeParameters.md#constructors)
 
 ## Constructors
 
@@ -716,19 +673,9 @@ Comments for param B
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# ClassWithTypeParameters\\<A, B, C\\>
+"# ClassWithTypeParameters\\<A, B, C\\>
 
 Comments for ClassWithTypeParameters
-
-## Contents
-
-- [Type parameters](ClassWithTypeParameters.md#type-parameters)
-- [Constructors](ClassWithTypeParameters.md#constructors)
-  - [new ClassWithTypeParameters()](ClassWithTypeParameters.md#new-classwithtypeparameters)
 
 ## Type parameters
 
@@ -737,6 +684,11 @@ Comments for ClassWithTypeParameters
 | \`A\` | - | Comments for param A |
 | \`B\` extends \`string\` | - | Comments for param B |
 | \`C\` | \`boolean\` | - |
+
+## Contents
+
+- [Constructors](ClassWithTypeParameters.md#constructors)
+    - [new ClassWithTypeParameters](ClassWithTypeParameters.md#constructors)
 
 ## Constructors
 
@@ -753,29 +705,24 @@ new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Class: DerivedClassA
+"# Class: DerivedClassA
 
 Comments for DerivedClassA
-
-## Contents
-
-- [Extends](DerivedClassA.md#extends)
-- [Constructors](DerivedClassA.md#constructors)
-  - [new DerivedClassA()](DerivedClassA.md#new-derivedclassa)
-- [Properties](DerivedClassA.md#properties)
-  - [abstractProp](DerivedClassA.md#abstractprop)
-  - [derivedProp](DerivedClassA.md#derivedprop)
-- [Methods](DerivedClassA.md#methods)
-  - [abstractMethod()](DerivedClassA.md#abstractmethod)
-  - [derivedMethod()](DerivedClassA.md#derivedmethod)
 
 ## Extends
 
 - [\`AbstractClass\`](AbstractClass.md)
+
+## Contents
+
+- [Constructors](DerivedClassA.md#constructors)
+    - [new DerivedClassA](DerivedClassA.md#constructors)
+- [Properties](DerivedClassA.md#properties)
+    - [abstractProp](DerivedClassA.md#abstractprop)
+    - [derivedProp](DerivedClassA.md#derivedprop)
+- [Methods](DerivedClassA.md#methods)
+    - [abstractMethod](DerivedClassA.md#abstractmethod)
+    - [derivedMethod](DerivedClassA.md#derivedmethod)
 
 ## Constructors
 
@@ -854,27 +801,22 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# DerivedClassA
+"# DerivedClassA
 
 Comments for DerivedClassA
-
-## Contents
-
-- [Extends](DerivedClassA.md#extends)
-- [Constructors](DerivedClassA.md#constructors)
-  - [new DerivedClassA()](DerivedClassA.md#new-derivedclassa)
-- [Properties](DerivedClassA.md#properties)
-- [Methods](DerivedClassA.md#methods)
-  - [abstractMethod()](DerivedClassA.md#abstractmethod)
-  - [derivedMethod()](DerivedClassA.md#derivedmethod)
 
 ## Extends
 
 - [\`AbstractClass\`](AbstractClass.md)
+
+## Contents
+
+- [Constructors](DerivedClassA.md#constructors)
+    - [new DerivedClassA](DerivedClassA.md#constructors)
+- [Properties](DerivedClassA.md#properties)
+- [Methods](DerivedClassA.md#methods)
+    - [abstractMethod](DerivedClassA.md#abstractmethod)
+    - [derivedMethod](DerivedClassA.md#derivedmethod)
 
 ## Constructors
 
@@ -932,23 +874,18 @@ derivedMethod(): string
 `;
 
 exports[`Class Reflection should compile disposable class: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Class: DisposableClass
-
-## Contents
-
-- [Implements](DisposableClass.md#implements)
-- [Constructors](DisposableClass.md#constructors)
-  - [new DisposableClass()](DisposableClass.md#new-disposableclass)
-- [Methods](DisposableClass.md#methods)
-  - [\`[dispose]\`()](DisposableClass.md#dispose)
+"# Class: DisposableClass
 
 ## Implements
 
 - \`Disposable\`
+
+## Contents
+
+- [Constructors](DisposableClass.md#constructors)
+    - [new DisposableClass](DisposableClass.md#constructors)
+- [Methods](DisposableClass.md#methods)
+    - [[dispose]](DisposableClass.md#dispose)
 
 ## Constructors
 

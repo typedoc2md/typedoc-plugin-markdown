@@ -1,7 +1,8 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { OutputFileStrategy } from '../../../options/maps';
 import { heading, unorderedList } from '../../../support/elements';
-import { hasIndex, isAbsoluteIndex } from '../../helpers';
+import { hasIndex, hasToc, isAbsoluteIndex } from '../../helpers';
 
 /**
  * @category Partials
@@ -67,6 +68,25 @@ export function reflectionMember(
         isAbsolute ? headingLevel + 1 : headingLevel,
       ),
     );
+  }
+
+  if (
+    !context.options.getValue('hideInPageTOC') &&
+    hasToc(
+      reflection,
+      context.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Members,
+    )
+  ) {
+    const tocContent = context.reflectionIndex(
+      reflection,
+      true,
+      headingLevel + 1,
+    );
+    if (tocContent.length) {
+      md.push(heading(headingLevel, 'Contents'));
+      md.push(context.reflectionIndex(reflection, true, headingLevel + 1));
+    }
   }
 
   md.push(context.members(reflection, headingLevel));

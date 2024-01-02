@@ -1,10 +1,15 @@
 import * as path from 'path';
-import { DeclarationReflection, ProjectReflection } from 'typedoc';
+import {
+  DeclarationReflection,
+  EntryPointStrategy,
+  ProjectReflection,
+} from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { OutputFileStrategy } from '../../../options/maps';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { heading } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
-import { hasIndex } from '../../helpers';
+import { hasIndex, hasToc } from '../../helpers';
 
 /**
  * @category Partials
@@ -16,7 +21,17 @@ export function pageIndex(
 ): string {
   const md: string[] = [];
 
-  if (!page.model.groups) {
+  if (hasIndex(page.model)) {
+    md.push(context.reflectionIndex(page.model, false, headingLevel));
+    return md.join('\n\n');
+  }
+
+  const isPackages =
+    page.project.url === page.url &&
+    context.options.getValue('entryPointStrategy') ===
+      EntryPointStrategy.Packages;
+
+  if (isPackages && page.model.children?.length) {
     md.push(heading(headingLevel, 'Packages'));
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
@@ -31,9 +46,16 @@ export function pageIndex(
     return md.join('\n\n');
   }
 
-  if (hasIndex(page.model)) {
-    md.push(context.reflectionIndex(page.model, false, headingLevel));
-    return md.join('\n\n');
+  if (
+    !context.options.getValue('hideInPageTOC') &&
+    hasToc(
+      page.model as DeclarationReflection,
+      context.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Members,
+    )
+  ) {
+    md.push(heading(headingLevel, 'Contents'));
+    md.push(context.reflectionIndex(page.model, true, headingLevel + 1));
   }
 
   return md.join('\n\n');

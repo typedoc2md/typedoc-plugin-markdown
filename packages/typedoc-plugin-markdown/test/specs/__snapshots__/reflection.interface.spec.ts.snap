@@ -1,27 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Interface: BasicInterface
+"# Interface: BasicInterface
 
 Comments for BasicInterface
-
-## Contents
-
-- [Extended By](BasicInterface.md#extended-by)
-- [Properties](BasicInterface.md#properties)
-  - [~~deprecatedProp~~](BasicInterface.md#deprecatedprop)
-  - [functionProp](BasicInterface.md#functionprop)
-  - [optionalProp?](BasicInterface.md#optionalprop)
-  - [prop](BasicInterface.md#prop)
-  - [propWithProps](BasicInterface.md#propwithprops)
 
 ## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
+
+## Contents
+
+- [Properties](BasicInterface.md#properties)
+    - [deprecatedProp](BasicInterface.md#deprecatedprop)
+    - [functionProp](BasicInterface.md#functionprop)
+    - [optionalProp](BasicInterface.md#optionalprop)
+    - [prop](BasicInterface.md#prop)
+    - [propWithProps](BasicInterface.md#propwithprops)
 
 ## Properties
 
@@ -144,22 +139,17 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# BasicInterface
+"# BasicInterface
 
 Comments for BasicInterface
-
-## Contents
-
-- [Extended By](BasicInterface.md#extended-by)
-- [Properties](BasicInterface.md#properties)
 
 ## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
+
+## Contents
+
+- [Properties](BasicInterface.md#properties)
 
 ## Properties
 
@@ -180,28 +170,23 @@ Comments for BasicInterface
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Interface: ExtendedInterface
+"# Interface: ExtendedInterface
 
 Comments for ExtendedInterface
-
-## Contents
-
-- [Extends](ExtendedInterface.md#extends)
-- [Properties](ExtendedInterface.md#properties)
-  - [~~deprecatedProp~~](ExtendedInterface.md#deprecatedprop)
-  - [extendedProp](ExtendedInterface.md#extendedprop)
-  - [functionProp](ExtendedInterface.md#functionprop)
-  - [optionalProp?](ExtendedInterface.md#optionalprop)
-  - [prop](ExtendedInterface.md#prop)
-  - [propWithProps](ExtendedInterface.md#propwithprops)
 
 ## Extends
 
 - [\`BasicInterface\`](BasicInterface.md)
+
+## Contents
+
+- [Properties](ExtendedInterface.md#properties)
+    - [deprecatedProp](ExtendedInterface.md#deprecatedprop)
+    - [extendedProp](ExtendedInterface.md#extendedprop)
+    - [functionProp](ExtendedInterface.md#functionprop)
+    - [optionalProp](ExtendedInterface.md#optionalprop)
+    - [prop](ExtendedInterface.md#prop)
+    - [propWithProps](ExtendedInterface.md#propwithprops)
 
 ## Properties
 
@@ -354,22 +339,17 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# ExtendedInterface
+"# ExtendedInterface
 
 Comments for ExtendedInterface
-
-## Contents
-
-- [Extends](ExtendedInterface.md#extends)
-- [Properties](ExtendedInterface.md#properties)
 
 ## Extends
 
 - [\`BasicInterface\`](BasicInterface.md)
+
+## Contents
+
+- [Properties](ExtendedInterface.md#properties)
 
 ## Properties
 
@@ -391,23 +371,18 @@ Comments for ExtendedInterface
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Interface: IndexableInterface
+"# Interface: IndexableInterface
 
 Comments for IndexableInterface
-
-## Contents
-
-- [Indexable](IndexableInterface.md#indexable)
-- [Properties](IndexableInterface.md#properties)
-  - [prop](IndexableInterface.md#prop)
 
 ## Indexable
 
  \\[\`s\`: \`string\`\\]: \`string\`
+
+## Contents
+
+- [Properties](IndexableInterface.md#properties)
+    - [prop](IndexableInterface.md#prop)
 
 ## Properties
 
@@ -422,22 +397,17 @@ Comments for IndexableInterface
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# IndexableInterface
+"# IndexableInterface
 
 Comments for IndexableInterface
-
-## Contents
-
-- [Indexable](IndexableInterface.md#indexable)
-- [Properties](IndexableInterface.md#properties)
 
 ## Indexable
 
  \\[\`s\`: \`string\`\\]: \`string\`
+
+## Contents
+
+- [Properties](IndexableInterface.md#properties)
 
 ## Properties
 
@@ -448,23 +418,18 @@ Comments for IndexableInterface
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Interface: InterfaceWithTypeParameters\\<A\\>
+"# Interface: InterfaceWithTypeParameters\\<A\\>
 
 Comments for InterfaceWithTypeParameters
-
-## Contents
-
-- [Type parameters](InterfaceWithTypeParameters.md#type-parameters)
-- [Properties](InterfaceWithTypeParameters.md#properties)
-  - [prop](InterfaceWithTypeParameters.md#prop)
 
 ## Type parameters
 
 • **A**
+
+## Contents
+
+- [Properties](InterfaceWithTypeParameters.md#properties)
+    - [prop](InterfaceWithTypeParameters.md#prop)
 
 ## Properties
 
@@ -481,24 +446,19 @@ Comments for prop
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# InterfaceWithTypeParameters\\<A\\>
+"# InterfaceWithTypeParameters\\<A\\>
 
 Comments for InterfaceWithTypeParameters
-
-## Contents
-
-- [Type parameters](InterfaceWithTypeParameters.md#type-parameters)
-- [Properties](InterfaceWithTypeParameters.md#properties)
 
 ## Type parameters
 
 | Parameter |
 | :------ |
 | \`A\` |
+
+## Contents
+
+- [Properties](InterfaceWithTypeParameters.md#properties)
 
 ## Properties
 

@@ -7,7 +7,7 @@ import {
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { bold, link } from '../../../support/elements';
-import { getIndexLabel, getProjectDisplayName } from '../../helpers';
+import { getProjectDisplayName } from '../../helpers';
 
 /**
  * @category Partials
@@ -25,39 +25,26 @@ export function header(
       return packageHeader(context, page);
     }
   }
-  return projectHeader(context, page, isPackages);
+  return projectHeader(context, page);
 }
 
 function projectHeader(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
-  isPackages = false,
 ) {
   const entryFileName = context.options.getValue('entryFileName');
 
   const md: string[] = [];
 
   const readmeLabel = 'Readme';
-  const documentationLabel = getIndexLabel(page.project, isPackages);
+  const documentationLabel = 'API';
 
-  md.push(
-    bold(
-      getProjectName(
-        page.project,
-        context,
-        context.options.getValue('titleLink'),
-      ),
-    ),
-  );
+  md.push(bold(getProjectName(page.project, context)));
 
   md.push('•');
 
   const preserveReadme =
     Boolean(page.project.readme) && !context.options.getValue('mergeReadme');
-
-  const isSinglePage =
-    page.project?.groups &&
-    page.project?.groups.every((group) => !group.allChildrenHaveOwnDocument());
 
   const preserveModulesPage =
     (page.project?.groups &&
@@ -71,27 +58,32 @@ function projectHeader(
   if (preserveReadme) {
     const links: string[] = [];
 
-    links.push(
-      link(
-        readmeLabel,
-        context.relativeURL(preserveModulesPage ? 'readme_.md' : entryFileName),
-      ),
-    );
-    links.push('\\|');
-    links.push(link(documentationLabel, context.relativeURL(page.project.url)));
-
-    md.push(links.join(' '));
-  } else {
-    md.push(
-      isSinglePage
-        ? documentationLabel
-        : link(
-            documentationLabel,
-            preserveModulesPage
-              ? context.relativeURL(page.project.url)
-              : context.relativeURL(entryFileName),
+    if (page.url === entryFileName) {
+      links.push(readmeLabel);
+    } else {
+      links.push(
+        link(
+          readmeLabel,
+          context.relativeURL(
+            preserveModulesPage ? 'readme_.md' : entryFileName,
           ),
-    );
+        ),
+      );
+    }
+
+    links.push('\\|');
+
+    if (page.url === entryFileName) {
+      links.push(
+        link(documentationLabel, context.relativeURL(page.project.url)),
+      );
+    } else {
+      links.push(documentationLabel);
+    }
+
+    md.push(`${links.join(' ')}`);
+  } else {
+    md.push(`${documentationLabel}`);
   }
 
   return `${md.join(' ')}\n\n***\n`;
@@ -110,19 +102,12 @@ function packageHeader(
   const md: string[] = [];
 
   const readmeLabel = 'Readme';
-  const documentationLabel = getIndexLabel(packageItem);
-
-  const isSinglePage =
-    packageItem?.groups &&
-    packageItem?.groups.every((group) => !group.allChildrenHaveOwnDocument());
+  const documentationLabel = 'API';
 
   const entryFileName = context.options.getValue('entryFileName');
 
-  md.push(getProjectName(page.project, context, page.project.url));
-  md.push('•');
-
   const packageItemName = packageItem.packageVersion
-    ? `${packageItem.name} - v${packageItem.packageVersion}`
+    ? `${packageItem.name} v${packageItem.packageVersion}`
     : packageItem.name;
 
   md.push(bold(packageItemName));
@@ -136,18 +121,24 @@ function packageHeader(
     const links: string[] = [];
     const readmeUrl = `${packageItem.name}/${entryFileName}`;
 
-    links.push(link(readmeLabel, context.relativeURL(readmeUrl)));
+    if (page.url === readmeUrl) {
+      links.push(readmeLabel);
+    } else {
+      links.push(link(readmeLabel, context.relativeURL(readmeUrl)));
+    }
+
     links.push('\\|');
 
-    links.push(link(documentationLabel, context.relativeURL(packageItem.url)));
-
-    md.push(links.join(' '));
+    if (page.url === readmeUrl) {
+      links.push(
+        link(documentationLabel, context.relativeURL(packageItem.url)),
+      );
+    } else {
+      links.push(documentationLabel);
+    }
+    md.push(`${links.join(' ')}`);
   } else {
-    md.push(
-      isSinglePage
-        ? documentationLabel
-        : link(documentationLabel, context.relativeURL(packageItem.url)),
-    );
+    md.push(documentationLabel);
   }
 
   return `${md.join(' ')}\n\n***\n`;

@@ -29,7 +29,7 @@ describe(`Packages`, () => {
     expectFileToEqual(
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
-      'package-1/exports.md',
+      'package-1/globals.md',
       1,
     );
 
@@ -46,6 +46,22 @@ describe(`Packages`, () => {
       FixtureOutputDir.Packages,
       FixtureOutputFileStrategy.Members,
       ['package-1/interfaces/PackageInterface.md'],
+    );
+  });
+
+  test(`should compile index for a single package`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Package,
+      FixtureOutputFileStrategy.Members,
+      'README.md',
+    );
+  });
+
+  test(`should compile member page for a single package`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Package,
+      FixtureOutputFileStrategy.Members,
+      'interfaces/PackageInterface.md',
     );
   });
 });

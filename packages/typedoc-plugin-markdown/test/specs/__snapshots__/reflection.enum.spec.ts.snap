@@ -1,19 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Enumeration: BasicEnum
+"# Enumeration: BasicEnum
 
 Comments for enum
 
 ## Contents
 
 - [Enumeration Members](BasicEnum.md#enumeration-members)
-  - [MemberA](BasicEnum.md#membera)
-  - [MemberB](BasicEnum.md#memberb)
+    - [MemberA](BasicEnum.md#membera)
+    - [MemberB](BasicEnum.md#memberb)
 
 ## Enumeration Members
 
@@ -42,11 +38,7 @@ Comments for MemberB
 `;
 
 exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# BasicEnum
+"# BasicEnum
 
 Comments for enum
 
@@ -64,19 +56,15 @@ Comments for enum
 `;
 
 exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Enumeration: EnumWithValues
+"# Enumeration: EnumWithValues
 
 Comments for enum
 
 ## Contents
 
 - [Enumeration Members](EnumWithValues.md#enumeration-members)
-  - [MemberA](EnumWithValues.md#membera)
-  - [MemberB](EnumWithValues.md#memberb)
+    - [MemberA](EnumWithValues.md#membera)
+    - [MemberB](EnumWithValues.md#memberb)
 
 ## Enumeration Members
 
@@ -101,11 +89,7 @@ Comments for enum
 `;
 
 exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# EnumWithValues
+"# EnumWithValues
 
 Comments for enum
 

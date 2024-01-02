@@ -6,8 +6,12 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { heading, link, table } from '../../../support/elements';
-import { escapeChars, formatTableDescriptionCol } from '../../../support/utils';
+import { heading, indentBlock, link, table } from '../../../support/elements';
+import {
+  escapeChars,
+  formatTableDescriptionCol,
+  slugify,
+} from '../../../support/utils';
 
 export function reflectionIndex(
   context: MarkdownThemeRenderContext,
@@ -38,8 +42,24 @@ export function reflectionIndex(
           md.push(getGroup(context, categoryGroup, inline) + '\n');
         });
       } else {
-        md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
-        md.push(getGroup(context, reflectionGroup, inline) + '\n');
+        const hasChildren = reflectionGroup.children.some((child) =>
+          Boolean(child.url),
+        );
+        if (inline) {
+          md.push(
+            `- [${reflectionGroup.title}](${context.relativeURL(
+              context.page?.url,
+            )}#${slugify(reflectionGroup.title).toLowerCase()})`,
+          );
+          if (hasChildren) {
+            md.push(
+              indentBlock(getGroup(context, reflectionGroup, inline) + '\n'),
+            );
+          }
+        } else {
+          md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
+          md.push(getGroup(context, reflectionGroup, inline) + '\n');
+        }
       }
     });
   }
@@ -93,10 +113,15 @@ function getList(
   context: MarkdownThemeRenderContext,
   group: ReflectionGroup | ReflectionCategory,
 ) {
-  const children = group.children.map(
-    (child) =>
-      `- [${escapeChars(child.name)}](${context.relativeURL(child.url)})`,
-  );
+  const children = group.children
+    .filter((child) => Boolean(child.url))
+    .map((child) => {
+      const name =
+        child.name === 'constructor'
+          ? `${child.signatures ? child.signatures[0].name : 'constructor'}`
+          : child.name;
+      return `- [${escapeChars(name)}](${context.relativeURL(child.url)})`;
+    });
   return children.join('\n');
 }
 

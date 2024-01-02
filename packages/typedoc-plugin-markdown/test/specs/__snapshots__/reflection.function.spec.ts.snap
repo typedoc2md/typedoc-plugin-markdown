@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionReturningAFunction()
+"# Function: functionReturningAFunction()
 
 > **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
 
@@ -35,11 +31,7 @@ Comments for function
 `;
 
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionReturningAFunction()
+"# functionReturningAFunction()
 
 \`\`\`ts
 functionReturningAFunction(): <T>(x) => boolean
@@ -71,11 +63,7 @@ Comments for function
 `;
 
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionReturningAPromise()
+"# Function: functionReturningAPromise()
 
 > **functionReturningAPromise**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`Object\`\\>
 
@@ -99,11 +87,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionReturningAPromise()
+"# functionReturningAPromise()
 
 \`\`\`ts
 functionReturningAPromise(): Promise<{
@@ -127,11 +111,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionReturningAnObject()
+"# Function: functionReturningAnObject()
 
 > **functionReturningAnObject**(): \`Object\`
 
@@ -159,11 +139,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionReturningAnObject()
+"# functionReturningAnObject()
 
 \`\`\`ts
 functionReturningAnObject(): {
@@ -189,11 +165,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: basicFunction()
+"# Function: basicFunction()
 
 > **basicFunction**(\`someParam\`): \`number\`
 
@@ -216,11 +188,7 @@ This is some numeric parameter.
 `;
 
 exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# basicFunction()
+"# basicFunction()
 
 \`\`\`ts
 basicFunction(someParam): number
@@ -241,11 +209,7 @@ This is a function that is assigned to a variable.
 `;
 
 exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionWithDefaultParameters()
+"# Function: functionWithDefaultParameters()
 
 > **functionWithDefaultParameters**(\`valueA\`, \`valueB\`, \`valueC\`, \`valueD\`, \`valueE\`, \`valueF\`): \`string\`
 
@@ -286,11 +250,7 @@ A parameter with a default null value.
 `;
 
 exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionWithDefaultParameters()
+"# functionWithDefaultParameters()
 
 \`\`\`ts
 functionWithDefaultParameters(
@@ -322,11 +282,7 @@ This is a function with a parameter that has a default value.
 `;
 
 exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionWithMultipleSignatures()
+"# Function: functionWithMultipleSignatures()
 
 ## functionWithMultipleSignatures(value)
 
@@ -375,11 +331,7 @@ A value of the object.
 `;
 
 exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionWithMultipleSignatures()
+"# functionWithMultipleSignatures()
 
 ## functionWithMultipleSignatures(value)
 
@@ -421,11 +373,7 @@ This is the second signature of a function with multiple signatures.
 `;
 
 exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionWithNamedParams()
+"# Function: functionWithNamedParams()
 
 > **functionWithNamedParams**(\`__namedParameters\`, \`anotherParam\`): \`void\`
 
@@ -454,11 +402,7 @@ Another param comment
 `;
 
 exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionWithNamedParams()
+"# functionWithNamedParams()
 
 \`\`\`ts
 functionWithNamedParams(__namedParameters, anotherParam): void
@@ -480,11 +424,7 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 `;
 
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionWithNestedParameters()
+"# Function: functionWithNestedParameters()
 
 > **functionWithNestedParameters**(\`params\`, \`context\`): \`boolean\`
 
@@ -529,11 +469,7 @@ The context of the method call.
 `;
 
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionWithNestedParameters()
+"# functionWithNestedParameters()
 
 \`\`\`ts
 functionWithNestedParameters(params, context): boolean
@@ -562,11 +498,7 @@ Some nested params.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionWithOptionalParameters()
+"# Function: functionWithOptionalParameters()
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
@@ -597,11 +529,7 @@ An optional parameter.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 2`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionWithOptionalParameters()
+"# Function: functionWithOptionalParameters()
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
@@ -632,11 +560,7 @@ An optional parameter.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionWithOptionalParameters()
+"# functionWithOptionalParameters()
 
 \`\`\`ts
 functionWithOptionalParameters(
@@ -664,11 +588,7 @@ This is a function with a parameters.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "2") 2`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionWithOptionalParameters()
+"# functionWithOptionalParameters()
 
 \`\`\`ts
 functionWithOptionalParameters(
@@ -696,11 +616,7 @@ This is a function with a parameters.
 `;
 
 exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [Exports](../exports.md)
-
-***
-
-# Function: functionWithTypeParameters()
+"# Function: functionWithTypeParameters()
 
 > **functionWithTypeParameters**\\<\`T\`, \`Item\`\\>(): \`boolean\`
 
@@ -725,11 +641,7 @@ Comments for T
 `;
 
 exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [Exports](../index.md)
-
-***
-
-# functionWithTypeParameters()
+"# functionWithTypeParameters()
 
 \`\`\`ts
 functionWithTypeParameters<T, Item>(): boolean

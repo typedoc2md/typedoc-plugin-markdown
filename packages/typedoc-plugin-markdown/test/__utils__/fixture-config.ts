@@ -30,7 +30,11 @@ export const FIXTURES: Fixture[] = [
   {
     outDir: FixtureOutputDir.Reflections,
     entryPoints: FixtureEntryPoints.Reflections,
-    commonOptions: { hideGenerator: true, hideBreadcrumbs: true },
+    commonOptions: {
+      hideGenerator: true,
+      hidePageHeader: true,
+      hideBreadcrumbs: true,
+    },
     options: [
       {},
       {
@@ -52,13 +56,13 @@ export const FIXTURES: Fixture[] = [
     commonOptions: {
       disableSources: true,
       hideGenerator: true,
+      entryFileName: 'index.md',
     },
     options: [
       {
         categorizeByGroup: true,
         includeVersion: true,
         titleLink: 'http://www.google.com',
-        indexPageTitle: 'Custom Title',
       },
       {
         readme: 'none',
@@ -74,6 +78,7 @@ export const FIXTURES: Fixture[] = [
         indexFormat: 'table',
         hideInPageTOC: true,
         publicPath: 'http://public-path',
+        indexPageTitle: '{projectName}',
       },
     ],
   },
@@ -96,7 +101,6 @@ export const FIXTURES: Fixture[] = [
         namedAnchors: {
           tableRows: true,
         },
-        publicPath: 'http://public-path',
       },
     ],
   },
@@ -108,6 +112,7 @@ export const FIXTURES: Fixture[] = [
       hideGenerator: true,
       name: 'packages-example',
       hideInPageTOC: true,
+      entryFileName: 'index.md',
     },
     options: [
       {},
@@ -129,13 +134,24 @@ export const FIXTURES: Fixture[] = [
   {
     outDir: FixtureOutputDir.EntryFiles,
     entryPoints: FixtureEntryPoints.EntryFiles,
-    commonOptions: { entryModule: 'entry-module', hideGenerator: true },
+    commonOptions: {
+      entryFileName: 'index.md',
+      entryModule: 'entry-module',
+      hideGenerator: true,
+    },
     options: [{ entryFileName: 'README.md' }, { readme: 'none' }],
   },
   {
     outDir: FixtureOutputDir.Readme,
     entryPoints: FixtureEntryPoints.Readme,
     commonOptions: {},
-    options: [{ disableSources: true, hideGenerator: true, mergeReadme: true }],
+    options: [
+      {
+        entryFileName: 'index.md',
+        disableSources: true,
+        hideGenerator: true,
+        mergeReadme: true,
+      },
+    ],
   },
 ];

@@ -23,9 +23,10 @@ export function breadcrumbs(
     return '';
   }
 
-  md.push(
-    link(escapeChars(page.project.name), context.relativeURL(page.project.url)),
-  );
+  //const homeLabel = getIndexLabel(page.project);
+  const homeLabel = 'API Index';
+
+  md.push(link(homeLabel, context.relativeURL(page.project.url)));
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {

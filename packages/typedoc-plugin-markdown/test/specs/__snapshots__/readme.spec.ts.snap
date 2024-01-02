@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Readmes should get merged readme for members: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Exports](index.md)
+"**typedoc-stubs** • API
 
 ***
 
@@ -15,16 +15,18 @@ Some text.
 
 Some text.
 
+## API Index
+
 Module commments
 
-## Functions
+### Functions
 
 - [someFunction](functions/someFunction.md)
 "
 `;
 
 exports[`Readmes should get merged readme for modules: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • Exports
+"**typedoc-stubs** • API
 
 ***
 
@@ -34,25 +36,26 @@ exports[`Readmes should get merged readme for modules: (Output File Strategy "mo
 
 Some text.
 
-## Contents
-
-- [Readme heading](index.md#readme-heading)
-- [Functions](index.md#functions)
-  - [someFunction()](index.md#somefunction)
-
 ## Readme heading
 
 Some text.
 
+## API Index
+
 Module commments
 
-## Functions
+### Contents
 
-### someFunction()
+- [Functions](index.md#functions)
+    - [someFunction](index.md#somefunction)
+
+### Functions
+
+#### someFunction()
 
 > **someFunction**(): \`void\`
 
-#### Returns
+##### Returns
 
 \`void\`
 "
