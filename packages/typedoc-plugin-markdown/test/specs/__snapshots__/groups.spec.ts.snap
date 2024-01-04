@@ -46,40 +46,35 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-## Enumerations
+## Index
+
+### Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
 | [EnumA](enumerations/EnumA.md) | - |
 | [EnumB](enumerations/EnumB.md) | - |
 
-## Classes
+### Classes
 
 | Class | Description |
 | :------ | :------ |
 | [ClassA](classes/ClassA.md) | - |
 | [ClassB](classes/ClassB.md) | - |
 
-## Interfaces
+### Interfaces
 
 | Interface | Description |
 | :------ | :------ |
 | [InterfaceA](interfaces/InterfaceA.md) | - |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 
-<a id="typea" name="typea"></a>
+### Type Aliases
 
-## TypeA
-
-> **TypeA**: \`string\`
-
-***
-
-<a id="typeb" name="typeb"></a>
-
-## TypeB
-
-> **TypeB**: \`string\`
+| Type alias | Description |
+| :------ | :------ |
+| [TypeA](type-aliases/TypeA.md) | - |
+| [TypeB](type-aliases/TypeB.md) | - |
 
 CUSTOM FOOTER HERE
 "
@@ -777,87 +772,56 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Namespaces
+## Index
+
+### Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB/index.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
 
-## Enumerations
+### Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
 | [EnumB](enumerations/EnumB.md) | - |
 | [\\_Enum\\_A\\_](enumerations/Enum_A_.md) | - |
 
-## Classes
+### Classes
 
 | Class | Description |
 | :------ | :------ |
 | [ClassB](classes/ClassB.md) | - |
 | [\\_\\_Class\\_A\\_](classes/Class_A_.md) | - |
 
-## Interfaces
+### Interfaces
 
 | Interface | Description |
 | :------ | :------ |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 | [\\_Interface\\_A\\_](interfaces/Interface_A_.md) | - |
 
-<a id="typeb" name="typeb"></a>
+### Type Aliases
 
-## TypeB
+| Type alias | Description |
+| :------ | :------ |
+| [TypeB](type-aliases/TypeB.md) | - |
+| [\\_Type\\_A\\_](type-aliases/Type_A_.md) | - |
 
-> **TypeB**: \`string\`
+### Variables
 
-***
+| Variable | Description |
+| :------ | :------ |
+| [\\_variable\\_A\\_](variables/variable_A_.md) | - |
+| [variableB](variables/variableB.md) | - |
 
-<a id="type-a" name="type-a"></a>
+### Functions
 
-## \\_Type\\_A\\_
-
-> **\\_Type\\_A\\_**: \`string\`
-
-***
-
-<a id="variable-a" name="variable-a"></a>
-
-## \\_variable\\_A\\_
-
-> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
-
-***
-
-<a id="variableb" name="variableb"></a>
-
-## variableB
-
-> **\`const\`** **variableB**: \`true\` = \`true\`
-
-***
-
-<a id="function-a" name="function-a"></a>
-
-## \\_function\\_A\\_()
-
-> **\\_function\\_A\\_**(): \`void\`
-
-### Returns
-
-\`void\`
-
-***
-
-<a id="functionb" name="functionb"></a>
-
-## functionB()
-
-> **functionB**(): \`void\`
-
-### Returns
-
-\`void\`
+| Function | Description |
+| :------ | :------ |
+| [\\_function\\_A\\_](functions/function_A_.md) | - |
+| [functionB](functions/functionB.md) | - |
 
 CUSTOM FOOTER HERE
 "
@@ -1285,6 +1249,12 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 
 A module that contains references
 
+## Functions
+
+| Function | Description |
+| :------ | :------ |
+| [defaultFunction](functions/defaultFunction.md) | - |
+
 <a id="interfacea" name="interfacea"></a>
 
 ## InterfaceA
@@ -1305,19 +1275,7 @@ Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
 
 ## default
 
-Renames and re-exports [defaultFunction](index.md#defaultfunction)
-
-***
-
-<a id="defaultfunction" name="defaultfunction"></a>
-
-## defaultFunction()
-
-> **defaultFunction**(): \`string\`
-
-### Returns
-
-\`string\`
+Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 
 CUSTOM FOOTER HERE
 "

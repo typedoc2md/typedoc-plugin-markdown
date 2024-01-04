@@ -4,7 +4,6 @@ import { ManuallyValidatedOption } from 'typedoc';
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
     outputFileStrategy: 'members' | 'modules';
-    membersWithOwnFile: any[];
     entryFileName: string;
     entryModule: string;
     mergeReadme: boolean;
@@ -32,7 +31,6 @@ declare module 'typedoc' {
 
 export interface PluginOptions {
   outputFileStrategy: 'members' | 'modules';
-  membersWithOwnFile: any[];
   entryFileName: string;
   entryModule: string;
   mergeReadme: boolean;

@@ -1,10 +1,5 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
-import {
-  FormatStyle,
-  MembersWithOwnFile,
-  OutputFileStrategy,
-  StaticText,
-} from './maps';
+import { FormatStyle, OutputFileStrategy, StaticText } from './maps';
 
 /**
  *
@@ -40,7 +35,7 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
  *
  * @category Output
  */
-export const membersWithOwnFile: Partial<DeclarationOption> = {
+/*export const membersWithOwnFile: Partial<DeclarationOption> = {
   help: 'Determines which members are exported to their own file when `outputFileStrategy` equals `members`.',
   type: ParameterType.Array,
   validate(values) {
@@ -56,7 +51,7 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
     }
   },
   defaultValue: MembersWithOwnFile,
-};
+};*/
 
 /**
  * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.

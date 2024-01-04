@@ -142,8 +142,8 @@ export class MarkdownTheme extends Theme {
       return slugify(pluralString).toLowerCase();
     };
 
-    const membersWithOwnFile =
-      this.application.options.getValue('membersWithOwnFile');
+    // const membersWithOwnFile =
+    //   this.application.options.getValue('membersWithOwnFile');
 
     const mappings = {
       [ReflectionKind.Module]: {
@@ -159,8 +159,8 @@ export class MarkdownTheme extends Theme {
     };
 
     if (
-      outputFileStrategy === OutputFileStrategy.Members &&
-      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Class])
+      outputFileStrategy === OutputFileStrategy.Members //&&
+      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Class])
     ) {
       mappings[ReflectionKind.Class] = {
         template: this.reflectionTemplate,
@@ -169,8 +169,8 @@ export class MarkdownTheme extends Theme {
       };
     }
     if (
-      outputFileStrategy === OutputFileStrategy.Members &&
-      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Interface])
+      outputFileStrategy === OutputFileStrategy.Members //&&
+      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Interface])
     ) {
       mappings[ReflectionKind.Interface] = {
         isLeaf: false,
@@ -180,8 +180,8 @@ export class MarkdownTheme extends Theme {
       };
     }
     if (
-      outputFileStrategy === OutputFileStrategy.Members &&
-      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Enum])
+      outputFileStrategy === OutputFileStrategy.Members //&&
+      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Enum])
     ) {
       mappings[ReflectionKind.Enum] = {
         template: this.reflectionTemplate,
@@ -190,8 +190,8 @@ export class MarkdownTheme extends Theme {
       };
     }
     if (
-      outputFileStrategy === OutputFileStrategy.Members &&
-      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Function])
+      outputFileStrategy === OutputFileStrategy.Members //&&
+      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Function])
     ) {
       mappings[ReflectionKind.Function] = {
         template: this.memberTemplate,
@@ -200,8 +200,8 @@ export class MarkdownTheme extends Theme {
       };
     }
     if (
-      outputFileStrategy === OutputFileStrategy.Members &&
-      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.TypeAlias])
+      outputFileStrategy === OutputFileStrategy.Members //&&
+      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.TypeAlias])
     ) {
       mappings[ReflectionKind.TypeAlias] = {
         template: this.memberTemplate,
@@ -210,8 +210,8 @@ export class MarkdownTheme extends Theme {
       };
     }
     if (
-      outputFileStrategy === OutputFileStrategy.Members &&
-      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Variable])
+      outputFileStrategy === OutputFileStrategy.Members //&&
+      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Variable])
     ) {
       mappings[ReflectionKind.Variable] = {
         template: this.memberTemplate,

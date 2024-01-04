@@ -20,9 +20,10 @@ export function members(
     if (context.options.getValue('outputFileStrategy') === 'modules') {
       return isGroupKind(reflection);
     }
-    return !context.options
-      .getValue('membersWithOwnFile')
-      ?.includes(reflection);
+    //return !context.options
+    //  .getValue('membersWithOwnFile')
+    //  ?.includes(reflection);
+    return true;
   };
 
   const pushCategories = (

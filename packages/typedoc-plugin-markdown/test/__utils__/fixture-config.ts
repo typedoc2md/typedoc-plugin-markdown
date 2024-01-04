@@ -72,7 +72,7 @@ export const FIXTURES: Fixture[] = [
         namedAnchors: {
           headings: true,
         },
-        membersWithOwnFile: ['Class', 'Interface', 'Enum'],
+        //membersWithOwnFile: ['Class', 'Interface', 'Enum'],
         plugin: [path.join(__dirname, '..', 'custom-plugins', 'custom-theme')],
         theme: 'custom-theme',
         indexFormat: 'table',

@@ -1,4 +1,3 @@
-import { ReflectionKind } from 'typedoc';
 import { KIND_DEFAULTS } from '../theme/constants/kinds';
 
 /**
@@ -59,11 +58,11 @@ export const StaticText = {
   ...KIND_DEFAULTS,
 };
 
-export const MembersWithOwnFile = [
+/*export const MembersWithOwnFile = [
   ReflectionKind[ReflectionKind.Enum],
   ReflectionKind[ReflectionKind.Variable],
   ReflectionKind[ReflectionKind.Function],
   ReflectionKind[ReflectionKind.Class],
   ReflectionKind[ReflectionKind.Interface],
   ReflectionKind[ReflectionKind.TypeAlias],
-];
+];*/
