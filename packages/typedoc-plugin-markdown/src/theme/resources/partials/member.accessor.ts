@@ -34,7 +34,9 @@ export function accessorMember(
   }
 
   if (declaration.setSignature?.parameters?.length) {
-    md.push(heading(headingLevel, 'Parameters'));
+    md.push(
+      heading(headingLevel, context.getTextContent('kind.parameter.plural')),
+    );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.parametersTable(declaration.setSignature.parameters));
     } else {

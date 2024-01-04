@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should get translations for index page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**[My API - v0.0](http://www.google.com)** • [My Readme](README.md) \\| Docs
+
+***
+
+# :tada: Custom Index Title
+
+## Modules
+
+- [module-1](module-1/README.md)
+- [module-2](module-2/README.md)
+"
+`;
+
+exports[`Text should get translations for member page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**[My API - v0.0](http://www.google.com)** • [My Readme](../../README.md) \\| Docs
+
+***
+
+[Home](../../modules.md) / [module-1](../README.md) / constA
+
+# constA
+
+> **\`const\`** **constA**: \`true\` = \`true\`
+
+## Defined In
+
+module-1.ts:1
+"
+`;
+
+exports[`Text should get translations for module page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**[My API - v0.0](http://www.google.com)** • [My Readme](../README.md) \\| Docs
+
+***
+
+[Home](../modules.md) / module-1
+
+# Module - module-1
+
+## Index
+
+### 多变的
+
+- [constA](variables/constA.md)
+"
+`;

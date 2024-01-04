@@ -6,7 +6,7 @@ import {
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 
-import { getMemberTitle, getProjectDisplayName } from '../../helpers';
+import { getMemberTitle } from '../../helpers';
 
 /**
  * @category Partials
@@ -15,26 +15,26 @@ export function pageTitle(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<DeclarationReflection | ProjectReflection>,
 ): string {
-  const memberPageTitle = context.options.getValue('memberPageTitle') as string;
+  if (page.model?.url === page.project.url) {
+    const titleContent = context.options.isSet('indexPageTitle')
+      ? context.options.getValue('indexPageTitle')
+      : context.getTextContent('title.indexPage');
+    return context.indexTitle(
+      titleContent,
+      page.project.name,
+      page.project.packageVersion,
+    );
+  }
+
   const name = getMemberTitle(page.model as DeclarationReflection);
 
-  if (page.model?.url === page.project.url) {
-    const projectName = getProjectDisplayName(
-      page.project,
-      context.options.getValue('includeVersion'),
-    );
-    return context.options
-      .getValue('indexPageTitle')
-      .replace('{projectName}', projectName);
-  }
+  const textContent = page.model.kindOf(ReflectionKind.Module)
+    ? context.getTextContent('title.modulePage')
+    : context.options.isSet('memberPageTitle')
+      ? context.options.getValue('memberPageTitle')
+      : context.getTextContent('title.memberPage');
 
-  if (page.model.kindOf(ReflectionKind.Module)) {
-    return page.model.packageVersion
-      ? `${name} v${page.model.packageVersion}`
-      : name;
-  }
-
-  return memberPageTitle
+  return textContent
     .replace('{name}', name)
-    .replace('{kind}', ReflectionKind.singularString(page.model.kind));
+    .replace('{kind}', context.kindString(page.model.kind));
 }

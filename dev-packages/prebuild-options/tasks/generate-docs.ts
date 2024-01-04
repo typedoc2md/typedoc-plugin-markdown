@@ -37,6 +37,7 @@ export async function generateDocs(docsConfig: DocsConfig) {
               .getTags()
               .filter(
                 (tag) =>
+                  tag.getTagName() !== 'deprecated' &&
                   tag.getTagName() !== 'category' &&
                   tag.getTagName() !== 'example',
               )
@@ -47,6 +48,10 @@ export async function generateDocs(docsConfig: DocsConfig) {
             example: doc
               .getTags()
               .find((tag) => tag.getTagName() === 'example')
+              ?.getComment(),
+            deprecated: doc
+              .getTags()
+              .find((tag) => tag.getTagName() === 'deprecated')
               ?.getComment(),
             category:
               doc
@@ -71,14 +76,23 @@ export async function generateDocs(docsConfig: DocsConfig) {
     const categories = Object.entries(groupedConfig);
 
     categories.forEach(([categoryName, options]) => {
-      // const out: string[] = [];
       const optionLevel = categories.length === 1 ? '##' : '###';
       if (categories.length > 1) {
         out.push(`## ${getDocsTitle(categoryName)}`);
       }
       options.forEach((option) => {
-        out.push(`${optionLevel} ${option.name}`);
-        out.push(`<Callout>${option.help}</Callout>`);
+        out.push(
+          `${optionLevel} ${
+            Boolean(option.deprecated) ? `~${option.name}~` : `${option.name}`
+          }`,
+        );
+        if (Boolean(option.deprecated)) {
+          out.push(
+            `<Callout type="warning">Deprecated - ${option.deprecated}</Callout>`,
+          );
+        } else {
+          out.push(`<Callout>${option.help}</Callout>`);
+        }
         const meta: string[] = [];
         const type = getType(option);
         if (type) {
@@ -90,7 +104,20 @@ export async function generateDocs(docsConfig: DocsConfig) {
         ) {
           meta.push(`Defaults to \`${getDefaultValue(option)}\`.`);
         }
-        out.push(`${meta.join(' ')}`);
+        out.push(`> ${meta.join(' ')}`);
+
+        if (option.comments?.length) {
+          out.push(option.comments);
+          option.tags?.forEach((tag) => {
+            out.push(`**${tag.name}**`);
+            out.push(tag.comments);
+          });
+        }
+
+        if (option.type === ParameterType.Mixed) {
+          out.push('Below is the full list of keys and default values:');
+        }
+
         out.push(`
 \`\`\`json filename="typedoc.json"
 ${JSON.stringify(
@@ -102,13 +129,7 @@ ${JSON.stringify(
 )}
 
 \`\`\``);
-        if (option.comments?.length) {
-          out.push(option.comments);
-          option.tags?.forEach((tag) => {
-            out.push(`**${tag.name}**`);
-            out.push(tag.comments);
-          });
-        }
+
         out.push('___');
       });
     });
@@ -131,12 +152,20 @@ function getType(option: any) {
       .join(' ')}.`;
   }
 
+  if (option.type === ParameterType.String) {
+    return 'Accepts a string value.';
+  }
+
+  if (option.type === ParameterType.Boolean) {
+    return 'Accepts a boolean value.';
+  }
+
   if (option.type === ParameterType.Array) {
     return 'Accepts an Array.';
   }
 
   if (option.type === ParameterType.Mixed) {
-    return 'Accepts a key/value Object.';
+    return 'Accepts a key/value object (see example).';
   }
 
   if (option.type === ParameterType.Map && option.map) {

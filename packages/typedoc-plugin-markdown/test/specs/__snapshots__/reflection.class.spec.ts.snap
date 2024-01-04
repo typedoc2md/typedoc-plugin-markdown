@@ -589,7 +589,7 @@ new ClassWithModifiers(): ClassWithModifiers
 | Modifier | Property | Type | Description |
 | :------ | :------ | :------ | :------ |
 | \`private\` | \`privateProp\` | \`string\` | Comments for privateProp |
-| \`public\` | \`protectedProp\` | \`string\` | Comments for protectedProp |
+| \`protected\` | \`protectedProp\` | \`string\` | Comments for protectedProp |
 | \`public\` | \`publicPropWithDefault\` | \`string\` | Comments for propWithDefault |
 | \`readonly\` | \`readonlyProp\` | \`string\` | Comments for abstractProperty |
 | \`static\` | \`staticProp\` | \`string\` | Comments for staticProp |
@@ -679,7 +679,7 @@ Comments for ClassWithTypeParameters
 
 ## Type parameters
 
-| Parameter | Value | Description |
+| Type parameter | Value | Description |
 | :------ | :------ | :------ |
 | \`A\` | - | Comments for param A |
 | \`B\` extends \`string\` | - | Comments for param B |
@@ -836,7 +836,7 @@ new DerivedClassA(): DerivedClassA
 
 ## Properties
 
-| Property | Type | Description | Inheritance |
+| Property | Type | Description | Overrides |
 | :------ | :------ | :------ | :------ |
 | \`abstractProp\` | \`string\` | Comments for abstractProp | [\`AbstractClass.abstractProp\`](AbstractClass.md) |
 | \`derivedProp\` | \`string\` | - | - |

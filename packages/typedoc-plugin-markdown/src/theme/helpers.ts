@@ -96,6 +96,12 @@ export function getModifier(reflection: DeclarationReflection) {
   if (reflection.flags.isStatic) {
     return 'static';
   }
+  if (reflection.flags.isProtected) {
+    return 'protected';
+  }
+  if (reflection.flags.isPublic) {
+    return 'public';
+  }
   if (reflection.getSignature) {
     return 'get';
   }

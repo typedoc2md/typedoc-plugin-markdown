@@ -32,7 +32,7 @@ export function pageIndex(
       EntryPointStrategy.Packages;
 
   if (isPackages && page.model.children?.length) {
-    md.push(heading(headingLevel, 'Packages'));
+    md.push(heading(headingLevel, context.getTextContent('label.packages')));
     const packagesList = page.model.children?.map((projectPackage) => {
       return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
         Boolean(projectPackage.readme)
@@ -54,7 +54,7 @@ export function pageIndex(
         OutputFileStrategy.Members,
     )
   ) {
-    md.push(heading(headingLevel, 'Contents'));
+    md.push(heading(headingLevel, context.getTextContent('label.contents')));
     md.push(context.reflectionIndex(page.model, true, headingLevel + 1));
   }
 

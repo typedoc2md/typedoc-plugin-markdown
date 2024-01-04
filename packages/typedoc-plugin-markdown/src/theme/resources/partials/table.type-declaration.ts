@@ -17,11 +17,11 @@ export function typeDeclarationTable(
 ): string {
   const headers: string[] = [];
 
-  headers.push('Member');
+  headers.push(context.getTextContent('label.member'));
 
-  headers.push('Type');
+  headers.push(context.getTextContent('label.type'));
 
-  headers.push('Description');
+  headers.push(context.getTextContent('label.description'));
 
   const declarations = flattenDeclarations(props, true);
 

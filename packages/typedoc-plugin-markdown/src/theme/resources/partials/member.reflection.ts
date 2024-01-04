@@ -23,7 +23,12 @@ export function reflectionMember(
   }
 
   if (reflection.typeParameters) {
-    md.push(heading(headingLevel, 'Type parameters'));
+    md.push(
+      heading(
+        headingLevel,
+        context.getTextContent('kind.type-parameter.plural'),
+      ),
+    );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.typeParametersTable(reflection.typeParameters));
     } else {
@@ -34,7 +39,7 @@ export function reflectionMember(
   }
 
   if (reflection.implementedTypes) {
-    md.push(heading(headingLevel, 'Implements'));
+    md.push(heading(headingLevel, context.getTextContent('label.implements')));
     md.push(
       unorderedList(
         reflection.implementedTypes.map((implementedType) =>
@@ -51,7 +56,7 @@ export function reflectionMember(
   }
 
   if ('indexSignature' in reflection && reflection.indexSignature) {
-    md.push(heading(headingLevel, 'Indexable'));
+    md.push(heading(headingLevel, context.getTextContent('label.indexable')));
     md.push(context.indexSignatureTitle(reflection.indexSignature));
   }
 
@@ -59,7 +64,7 @@ export function reflectionMember(
     const isAbsolute = isAbsoluteIndex(reflection);
 
     if (isAbsolute) {
-      md.push(heading(headingLevel, 'Index'));
+      md.push(heading(headingLevel, context.getTextContent('label.index')));
     }
     md.push(
       context.reflectionIndex(
@@ -84,7 +89,7 @@ export function reflectionMember(
       headingLevel + 1,
     );
     if (tocContent.length) {
-      md.push(heading(headingLevel, 'Contents'));
+      md.push(heading(headingLevel, context.getTextContent('label.contents')));
       md.push(context.reflectionIndex(reflection, true, headingLevel + 1));
     }
   }

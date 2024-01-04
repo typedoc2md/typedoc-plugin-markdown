@@ -86,7 +86,12 @@ export function declarationMember(
         });
       }
       if (!nested && typeDeclaration?.children?.length) {
-        md.push(heading(headingLevel, 'Type declaration'));
+        md.push(
+          heading(
+            headingLevel,
+            context.getTextContent('label.typeDeclaration'),
+          ),
+        );
         md.push(context.typeDeclarationMember(typeDeclaration, headingLevel));
       }
     }

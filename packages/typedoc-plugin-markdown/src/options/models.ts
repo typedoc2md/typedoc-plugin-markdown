@@ -1,4 +1,5 @@
 // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
+import { ManuallyValidatedOption } from 'typedoc';
 
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
@@ -13,6 +14,7 @@ declare module 'typedoc' {
     hideInPageTOC: boolean;
     indexPageTitle: string;
     memberPageTitle: string;
+    textContentMappings: ManuallyValidatedOption<TextContentMappings>;
     excludeGroups: boolean;
     useCodeBlocks: boolean;
     expandObjects: boolean;
@@ -40,6 +42,7 @@ export interface PluginOptions {
   hideInPageTOC: boolean;
   indexPageTitle: string;
   memberPageTitle: string;
+  textContentMappings: ManuallyValidatedOption<TextContentMappings>;
   excludeGroups: boolean;
   useCodeBlocks: boolean;
   expandObjects: boolean;
@@ -52,4 +55,66 @@ export interface PluginOptions {
   preserveAnchorCasing: boolean;
   anchorPrefix: string;
   namedAnchors: Record<string, boolean>;
+}
+
+export interface TextContentMappings {
+  'header.title': string;
+  'header.readme': string;
+  'header.docs': string;
+  'breadcrumbs.home': string;
+  'title.indexPage': string;
+  'title.modulePage': string;
+  'title.memberPage': string;
+  'label.contents': string;
+  'label.defaultValue': string;
+  'label.description': string;
+  'label.extendedBy': string;
+  'label.extends': string;
+  'label.implements': string;
+  'label.implementationOf': string;
+  'label.inheritedFrom': string;
+  'label.index': string;
+  'label.indexable': string;
+  'label.indexSignature': string;
+  'label.member': string;
+  'label.modifier': string;
+  'label.overrides': string;
+  'label.packages': string;
+  'label.reExports': string;
+  'label.renamesAndReExports': string;
+  'label.returns': string;
+  'label.source': string;
+  'label.type': string;
+  'label.typeDeclaration': string;
+  'label.value': string;
+  'kind.class.singular': string;
+  'kind.class.plural': string;
+  'kind.constructor.singular': string;
+  'kind.constructor.plural': string;
+  'kind.enum.singular': string;
+  'kind.enum.plural': string;
+  'kind.enum-member.singular': string;
+  'kind.enum-member.plural': string;
+  'kind.function.singular': string;
+  'kind.function.plural': string;
+  'kind.interface.singular': string;
+  'kind.interface.plural': string;
+  'kind.method.singular': string;
+  'kind.method.plural': string;
+  'kind.module.singular': string;
+  'kind.module.plural': string;
+  'kind.namespace.singular': string;
+  'kind.namespace.plural': string;
+  'kind.variable.singular': string;
+  'kind.variable.plural': string;
+  'kind.parameter.singular': string;
+  'kind.parameter.plural': string;
+  'kind.property.singular': string;
+  'kind.property.plural': string;
+  'kind.reference.singular': string;
+  'kind.reference.plural': string;
+  'kind.type-alias.singular': string;
+  'kind.type-alias.plural': string;
+  'kind.type-parameter.singular': string;
+  'kind.type-parameter.plural': string;
 }

@@ -16,21 +16,26 @@ export function inheritance(
 
   if (reflection.implementationOf) {
     if (headingLevel !== -1) {
-      md.push(heading(headingLevel, 'Implementation of'));
+      md.push(
+        heading(headingLevel, context.getTextContent('label.implementationOf')),
+      );
     }
     md.push(typeAndParent(context, reflection.implementationOf));
   }
 
   if (reflection.inheritedFrom) {
     if (headingLevel !== -1) {
-      md.push(heading(headingLevel, 'Inherited from'));
+      md.push(
+        heading(headingLevel, context.getTextContent('label.inheritedFrom')),
+      );
     }
     md.push(typeAndParent(context, reflection.inheritedFrom));
   }
 
   if (reflection.overwrites) {
+    const overridesLabel = context.getTextContent('label.overrides');
     if (headingLevel !== -1) {
-      md.push(heading(headingLevel, 'Overrides'));
+      md.push(heading(headingLevel, overridesLabel));
     }
     md.push(typeAndParent(context, reflection.overwrites));
   }

@@ -13,7 +13,7 @@ export function sources(
 ): string {
   const md: string[] = [];
   if (headingLevel !== -1) {
-    md.push(heading(headingLevel, 'Source'));
+    md.push(heading(headingLevel, context.getTextContent('label.source')));
   }
   reflection.sources?.forEach((source, index) => {
     if (index === 0) {

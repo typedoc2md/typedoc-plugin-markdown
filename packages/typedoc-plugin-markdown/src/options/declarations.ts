@@ -1,5 +1,10 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
-import { FormatStyle, MembersWithOwnFile, OutputFileStrategy } from './maps';
+import {
+  FormatStyle,
+  MembersWithOwnFile,
+  OutputFileStrategy,
+  StaticText,
+} from './maps';
 
 /**
  *
@@ -142,24 +147,21 @@ export const hideInPageTOC: Partial<DeclarationOption> = {
 /**
  * Provides a mechanism to change the main project index page title.
  *
- * Supports `{projectName} - a placeholder that renders the project's name and version.
- *
- * @example "{projectName} Docs"
+ * @deprecated Please use `textContentMappings`.
  *
  * @category UI
+ *
  */
 export const indexPageTitle: Partial<DeclarationOption> = {
   help: 'The title of project index page.',
   type: ParameterType.String,
-  defaultValue: 'API Index',
+  defaultValue: '{ProjectName}',
 };
 
 /**
  * Provides a mechanism to configure the page title of members.
  *
- * Supports `{name}` and `{kind}` placeholders. e.g "Class: MyClassName".
- *
- * @example "{name}"
+ * @deprecated Please use `textContentMappings`.
  *
  * @category UI
  */
@@ -167,6 +169,47 @@ export const memberPageTitle: Partial<DeclarationOption> = {
   help: 'The page title of member pages.',
   type: ParameterType.String,
   defaultValue: '{kind}: {name}',
+};
+
+/**
+ * This option enables changing static text rendered to the documentation.
+ * Useful if an alternative English phrase is preferred or to translate English text to another language.
+ * This option does not attempt to address translating text within code comments.
+ *
+ * **Placeholders**
+ *
+ * Default values within curly braces `{}` indicates a placeholder of dynamic text.
+ * The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
+ *
+ * **keys**
+ *
+ * Keys are categorised with the following namespace conventions:
+ *
+ * - `header.*` defines text in the page header (if displayed).
+ * - `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
+ * - `title.*` defines text in main page titles.
+ * - `label.*` other text in page content, including headings and table headers.
+ * - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
+ *
+ * Only keys that require translation need to be added to the object.
+ *
+ * @category UI
+ */
+export const textContentMappings: Partial<DeclarationOption> = {
+  help: 'Provides a mechanism to change the content of text used in documentation.',
+  type: ParameterType.Mixed,
+  defaultValue: StaticText,
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error('textContentMappings must be an object.');
+    }
+
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string') {
+        throw new Error(`All values of textContentMappings must be strings.`);
+      }
+    }
+  },
 };
 
 /**
@@ -268,7 +311,7 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * This option either renders index items either as a simple lists or in a table with a description column exposing the comment summary.
+ * This option renders index items either as a simple list or in a table with a description column exposing the comment summary.
  *
  * @category UI
  */

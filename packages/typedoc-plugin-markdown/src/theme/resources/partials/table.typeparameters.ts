@@ -21,14 +21,14 @@ export function typeParametersTable(
     Boolean(typeParameter.comment),
   );
 
-  const headers = ['Parameter'];
+  const headers = [context.getTextContent('kind.type-parameter.singular')];
 
   if (hasDefault) {
-    headers.push('Value');
+    headers.push(context.getTextContent('label.value'));
   }
 
   if (hasComments) {
-    headers.push('Description');
+    headers.push(context.getTextContent('label.description'));
   }
 
   const rows: string[][] = [];

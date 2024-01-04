@@ -9,7 +9,7 @@ describe(`Comments`, () => {
     expectFileToEqual(
       FixtureOutputDir.Comments,
       [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      'globals.md',
+      'README.md',
     );
   });
 });

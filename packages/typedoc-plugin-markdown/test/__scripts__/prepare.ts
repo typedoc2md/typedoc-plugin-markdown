@@ -22,7 +22,7 @@ const fixturesToRun = FIXTURES.filter((fixture) => {
 });
 
 const fixtureCount = fixturesToRun.reduce(
-  (prev, curr) => prev + curr.options.length * 2,
+  (prev, curr) => prev + curr.options.length * (curr.membersOnly ? 1 : 2),
   0,
 );
 
@@ -40,10 +40,11 @@ spawnSync('tsc', {
 // write fixtures
 fixturesToRun.forEach((fixture) => {
   writeHtml(fixture.entryPoints, fixture.outDir);
-  [
-    FixtureOutputFileStrategy.Members,
-    FixtureOutputFileStrategy.Modules,
-  ].forEach((outputFileStrategy) => {
+  const fileStrategies = fixture.membersOnly
+    ? [FixtureOutputFileStrategy.Members]
+    : [FixtureOutputFileStrategy.Members, FixtureOutputFileStrategy.Modules];
+
+  fileStrategies.forEach((outputFileStrategy) => {
     fixture.options.forEach((optionGroup, index) => {
       writeMarkdown(
         fixture,

@@ -16,7 +16,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 
 ***
 
-# API Index
+# packages-example
 
 ## Packages
 
@@ -32,9 +32,9 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 
 ***
 
-[API Index](../packages.md) / package-1
+[packages-example](../packages.md) / package-1
 
-# package-1 v1.0.0
+# package-1
 
 Comments for package-1
 
@@ -49,7 +49,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 
 ***
 
-[API Index](../packages.md) / package-2
+[packages-example](../packages.md) / package-2
 
 # package-2
 
@@ -65,7 +65,7 @@ exports[`Packages should compile member page for a single package: (Output File 
 
 ***
 
-[API Index](../packages.md) / PackageInterface
+[package-1](../packages.md) / PackageInterface
 
 # Interface: PackageInterface
 
@@ -82,7 +82,7 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 
 ***
 
-[API Index](../../packages.md) / [package-1](../globals.md) / PackageInterface
+[packages-example](../../packages.md) / [package-1](../globals.md) / PackageInterface
 
 # Interface: PackageInterface
 
@@ -116,7 +116,7 @@ exports[`Packages should compile readmes for a packages: (Output File Strategy "
 
 ***
 
-[API Index](../packages.md) / package-1
+[packages-example](../packages.md) / package-1
 
 # PACKAGE 1 README
 

@@ -10,8 +10,13 @@ export function referenceMember(
 ): string {
   let referenced = props.tryGetTargetReflectionDeep();
 
+  const reExportsText = context.getTextContent('label.reExports');
+  const renamesAndReExportsText = context.getTextContent(
+    'label.renamesAndReExports',
+  );
+
   if (!referenced) {
-    return `Re-exports ${props.name}`;
+    return `${reExportsText} ${props.name}`;
   }
 
   if (referenced?.kindOf(ReflectionKind.TypeLiteral) && referenced.parent) {
@@ -19,14 +24,16 @@ export function referenceMember(
   }
 
   if (!referenced?.url) {
-    return `Re-exports ${referenced.name}`;
+    return `${reExportsText} ${referenced.name}`;
   }
 
   if (props.name === referenced.name) {
-    return `Re-exports [${referenced.name}](${context.urlTo(referenced)})`;
+    return `${reExportsText} [${referenced.name}](${context.urlTo(
+      referenced,
+    )})`;
   }
 
-  return `Renames and re-exports [${referenced.name}](${context.urlTo(
+  return `${renamesAndReExportsText} [${referenced.name}](${context.urlTo(
     referenced,
   )})`;
 }

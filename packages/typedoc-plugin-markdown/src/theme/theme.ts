@@ -7,7 +7,8 @@ import {
   Renderer,
   Theme,
 } from 'typedoc';
-import { OutputFileStrategy } from '../options/maps';
+import { OutputFileStrategy, StaticText } from '../options/maps';
+import { TextContentMappings } from '../options/models';
 import { MarkdownPageEvent } from '../plugin/events';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
@@ -23,23 +24,63 @@ import { UrlsContext } from './urls-context';
  * The {@link render } and {@link getUrls} methods is where the work happens.
  */
 export class MarkdownTheme extends Theme {
+  textMappings: TextContentMappings;
+
   /**
    *
    * @param renderer The TypeDoc renderer instance the theme is attached to.
    */
   constructor(renderer: Renderer) {
     super(renderer);
+
+    // DEPRECATED PROPS WARNING (to delete)
+    const deprecatedOptions = ['indexPageTitle', 'memberPageTitle'];
+
+    deprecatedOptions.forEach((option) => {
+      if (this.application.options.isSet(option)) {
+        this.application.logger.warn(
+          `[typedoc-plugin-markdown] "${option}" is deprecated. Please see https://www.typedoc-plugin-markdown.org/options#${option}`,
+        );
+      }
+    });
+
+    this.textMappings = this.getTextContentMappings();
   }
 
   getRenderContext(pageEvent: MarkdownPageEvent<Reflection> | null) {
-    return new MarkdownThemeRenderContext(pageEvent, this.application.options);
+    return new MarkdownThemeRenderContext(
+      this,
+      pageEvent,
+      this.application.options,
+    );
   }
 
-  getNavigationContext() {
+  getTextContent(key: keyof TextContentMappings) {
+    return this.textMappings[key];
+  }
+
+  private getTextContentMappings() {
+    const textFromOptions = this.application.options.getValue(
+      'textContentMappings',
+    );
+    const knownKeys = Object.keys(StaticText);
+    for (const key of Object.keys(textFromOptions)) {
+      if (!knownKeys.includes(key)) {
+        this.application.logger.warn(
+          `[typedoc-plugin-markdown] "${key}" is not a valid "textContentMappings" key. Valid keys are ${knownKeys
+            .map((key) => `"${key}"`)
+            .join(', ')}.`,
+        );
+      }
+    }
+    return { ...StaticText, ...(textFromOptions || {}) };
+  }
+
+  private getNavigationContext() {
     return new NavigationContext(this, this.application.options.getRawValues());
   }
 
-  getUrlsContext(project: ProjectReflection) {
+  private getUrlsContext(project: ProjectReflection) {
     return new UrlsContext(
       this,
       project,

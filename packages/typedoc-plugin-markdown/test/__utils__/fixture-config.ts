@@ -14,6 +14,7 @@ export enum FixtureEntryPoints {
   Comments = '/src/comments/index.ts',
   EntryFiles = '/src/entryfiles/*',
   Readme = '/src/readme/index.ts',
+  Text = '/src/text/*.ts',
 }
 
 export enum FixtureOutputDir {
@@ -24,6 +25,7 @@ export enum FixtureOutputDir {
   Comments = 'comments',
   EntryFiles = 'entryfiles',
   Readme = 'readme',
+  Text = 'text',
 }
 
 export const FIXTURES: Fixture[] = [
@@ -61,8 +63,6 @@ export const FIXTURES: Fixture[] = [
     options: [
       {
         categorizeByGroup: true,
-        includeVersion: true,
-        titleLink: 'http://www.google.com',
       },
       {
         readme: 'none',
@@ -77,7 +77,6 @@ export const FIXTURES: Fixture[] = [
         theme: 'custom-theme',
         indexFormat: 'table',
         hideInPageTOC: true,
-        publicPath: 'http://public-path',
         indexPageTitle: '{projectName}',
       },
     ],
@@ -92,12 +91,11 @@ export const FIXTURES: Fixture[] = [
       hideGenerator: true,
       enumMembersFormat: 'table',
       propertiesFormat: 'table',
+      readme: 'none',
     },
     options: [
       {},
       {
-        indexFormat: 'table',
-        disableSources: true,
         namedAnchors: {
           tableRows: true,
         },
@@ -153,6 +151,19 @@ export const FIXTURES: Fixture[] = [
         disableSources: true,
         hideGenerator: true,
         mergeReadme: true,
+      },
+    ],
+  },
+  {
+    outDir: FixtureOutputDir.Text,
+    entryPoints: FixtureEntryPoints.Text,
+    membersOnly: true,
+    commonOptions: { hideGenerator: true },
+    options: [
+      {
+        includeVersion: true,
+        titleLink: 'http://www.google.com',
+        options: '../../stubs/typedoc.text.cjs',
       },
     ],
   },

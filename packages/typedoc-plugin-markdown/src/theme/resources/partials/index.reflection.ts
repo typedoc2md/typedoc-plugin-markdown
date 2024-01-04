@@ -47,9 +47,11 @@ export function reflectionIndex(
         );
         if (inline) {
           md.push(
-            `- [${reflectionGroup.title}](${context.relativeURL(
-              context.page?.url,
-            )}#${slugify(reflectionGroup.title).toLowerCase()})`,
+            `- [${context.groupTitle(
+              reflectionGroup.title,
+            )}](${context.relativeURL(context.page?.url)}#${slugify(
+              context.groupTitle(reflectionGroup.title),
+            ).toLowerCase()})`,
           );
           if (hasChildren) {
             md.push(
@@ -57,7 +59,12 @@ export function reflectionIndex(
             );
           }
         } else {
-          md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
+          md.push(
+            heading(
+              subHeadingLevel,
+              context.groupTitle(reflectionGroup.title),
+            ) + '\n',
+          );
           md.push(getGroup(context, reflectionGroup, inline) + '\n');
         }
       }
@@ -84,7 +91,7 @@ function getTable(
   const reflectionKind = group.children[0].kind;
   const headers = [
     ReflectionKind.singularString(reflectionKind),
-    'Description',
+    context.getTextContent('label.description'),
   ];
   const rows: string[][] = [];
 
@@ -118,7 +125,11 @@ function getList(
     .map((child) => {
       const name =
         child.name === 'constructor'
-          ? `${child.signatures ? child.signatures[0].name : 'constructor'}`
+          ? `${
+              child.signatures
+                ? child.signatures[0].name
+                : context.getTextContent('kind.constructor.singular')
+            }`
           : child.name;
       return `- [${escapeChars(name)}](${context.relativeURL(child.url)})`;
     });

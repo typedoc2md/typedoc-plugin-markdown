@@ -15,14 +15,17 @@ export function enumMembersTable(
   const hasComments = comments.some((value) => Boolean(value));
   const hasSources = !context.options.getValue('disableSources');
 
-  const headers = ['Member', 'Value'];
+  const headers = [
+    context.getTextContent('kind.enum-member.singular'),
+    context.getTextContent('label.value'),
+  ];
 
   if (hasComments) {
-    headers.push('Description');
+    headers.push(context.getTextContent('label.description'));
   }
 
   if (hasSources) {
-    headers.push('Source');
+    headers.push(context.getTextContent('label.source'));
   }
 
   const rows = props.map((property: DeclarationReflection) => {

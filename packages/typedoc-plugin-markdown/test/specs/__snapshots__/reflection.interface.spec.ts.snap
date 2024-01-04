@@ -369,7 +369,7 @@ Comments for ExtendedInterface
 
 ## Properties
 
-| Property | Type | Description | Inheritance |
+| Property | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ |
 | ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface.deprecatedProp\`](BasicInterface.md) |
 | \`extendedProp\` | \`string\` | - | - |
@@ -468,7 +468,7 @@ Comments for InterfaceWithTypeParameters
 
 ## Type parameters
 
-| Parameter |
+| Type parameter |
 | :------ |
 | \`A\` |
 

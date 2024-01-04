@@ -20,32 +20,33 @@ export function propertiesTable(
 ): string {
   const modifiers = props.map((param) => getModifier(param));
   const hasModifiers = modifiers.some((value) => Boolean(value));
+  const hasOverrides = props.some((prop) => Boolean(prop.overwrites));
+  const hasInheritance = props.some((prop) => Boolean(prop.inheritedFrom));
 
-  const inheritance = props.map(
-    (reflection) =>
-      Boolean(reflection.overwrites) || Boolean(reflection.inheritedFrom),
-  );
-  const hasInheritance = inheritance.some((value) => Boolean(value));
   const hasSources = !context.options.getValue('disableSources');
 
   const headers: string[] = [];
 
   if (hasModifiers) {
-    headers.push('Modifier');
+    headers.push(context.getTextContent('label.modifier'));
   }
 
-  headers.push('Property');
+  headers.push(context.getTextContent('kind.property.singular'));
 
-  headers.push('Type');
+  headers.push(context.getTextContent('label.type'));
 
-  headers.push('Description');
+  headers.push(context.getTextContent('label.description'));
+
+  if (hasOverrides) {
+    headers.push(context.getTextContent('label.overrides'));
+  }
 
   if (hasInheritance) {
-    headers.push('Inheritance');
+    headers.push(context.getTextContent('label.inheritedFrom'));
   }
 
   if (hasSources) {
-    headers.push('Source');
+    headers.push(context.getTextContent('label.source'));
   }
 
   const rows: string[][] = [];
@@ -94,6 +95,10 @@ export function propertiesTable(
       );
     } else {
       row.push('-');
+    }
+
+    if (hasOverrides) {
+      row.push(context.inheritance(property, -1) || '-');
     }
 
     if (hasInheritance) {

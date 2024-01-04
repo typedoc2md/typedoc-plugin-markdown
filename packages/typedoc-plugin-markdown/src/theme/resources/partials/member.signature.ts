@@ -30,7 +30,12 @@ export function signatureMember(
     signature.typeParameters?.length &&
     !signature.kindOf(ReflectionKind.ConstructorSignature)
   ) {
-    md.push(heading(headingLevel, 'Type parameters'));
+    md.push(
+      heading(
+        headingLevel,
+        context.getTextContent('kind.type-parameter.plural'),
+      ),
+    );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.typeParametersTable(signature.typeParameters));
     } else {
@@ -41,7 +46,9 @@ export function signatureMember(
   }
 
   if (signature.parameters?.length) {
-    md.push(heading(headingLevel, 'Parameters'));
+    md.push(
+      heading(headingLevel, context.getTextContent('kind.parameter.plural')),
+    );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.parametersTable(signature.parameters));
     } else {

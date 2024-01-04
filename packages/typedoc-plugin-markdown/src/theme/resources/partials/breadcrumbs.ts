@@ -4,6 +4,7 @@ import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { link } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
+import { getProjectDisplayName } from '../../helpers';
 
 /**
  * Renders the breadcrumbs
@@ -23,8 +24,9 @@ export function breadcrumbs(
     return '';
   }
 
-  //const homeLabel = getIndexLabel(page.project);
-  const homeLabel = 'API Index';
+  const homeLabel = context
+    .getTextContent('breadcrumbs.home')
+    .replace('{projectName}', getProjectDisplayName(page.project, false));
 
   md.push(link(homeLabel, context.relativeURL(page.project.url)));
 

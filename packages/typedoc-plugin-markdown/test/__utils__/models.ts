@@ -5,4 +5,5 @@ export interface Fixture {
   entryPoints: FixtureEntryPoints;
   commonOptions: any;
   options: any[];
+  membersOnly?: boolean;
 }

@@ -52,7 +52,7 @@ Comments for ConditionalType
 
 ## Type parameters
 
-| Parameter |
+| Type parameter |
 | :------ |
 | \`T\` |
 "
@@ -390,7 +390,7 @@ Comments for PartialMappedType
 
 ## Type parameters
 
-| Parameter |
+| Type parameter |
 | :------ |
 | \`T\` |
 "
@@ -448,7 +448,7 @@ Comments for ReadonlyMapedType
 
 ## Type parameters
 
-| Parameter |
+| Type parameter |
 | :------ |
 | \`T\` |
 "
@@ -538,7 +538,7 @@ Comments for TypeWithTypeParams
 
 ## Type parameters
 
-| Parameter |
+| Type parameter |
 | :------ |
 | \`T\` |
 | \`R\` |

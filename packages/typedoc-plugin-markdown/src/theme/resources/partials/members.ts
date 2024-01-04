@@ -72,7 +72,7 @@ export function members(
       );
       groupsWithChildren?.forEach((group, index: number) => {
         if (group.categories) {
-          md.push(heading(headingLevel, group.title));
+          md.push(heading(headingLevel, context.groupTitle(group.title)));
           pushCategories(group.categories, headingLevel + 1);
         } else {
           const isPropertiesGroup = group.children.every((child) =>
@@ -83,7 +83,7 @@ export function members(
             child.kindOf(ReflectionKind.EnumMember),
           );
 
-          md.push(heading(headingLevel, group.title));
+          md.push(heading(headingLevel, context.groupTitle(group.title)));
 
           if (
             isPropertiesGroup &&

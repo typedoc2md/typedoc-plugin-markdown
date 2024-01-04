@@ -7,7 +7,6 @@ import {
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { bold, link } from '../../../support/elements';
-import { getProjectDisplayName } from '../../helpers';
 
 /**
  * @category Partials
@@ -33,13 +32,20 @@ function projectHeader(
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const entryFileName = context.options.getValue('entryFileName');
+  const titleLink = context.options.getValue('titleLink');
 
   const md: string[] = [];
 
-  const readmeLabel = 'Readme';
-  const documentationLabel = 'API';
+  const title = context.indexTitle(
+    context.getTextContent('header.title'),
+    page.project.name,
+    page.project.packageVersion,
+  );
 
-  md.push(bold(getProjectName(page.project, context)));
+  const readmeLabel = context.getTextContent('header.readme');
+  const documentationLabel = context.getTextContent('header.docs');
+
+  md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
 
   md.push('•');
 
@@ -101,8 +107,8 @@ function packageHeader(
 
   const md: string[] = [];
 
-  const readmeLabel = 'Readme';
-  const documentationLabel = 'API';
+  const readmeLabel = context.getTextContent('header.readme');
+  const documentationLabel = context.getTextContent('header.docs');
 
   const entryFileName = context.options.getValue('entryFileName');
 
@@ -142,22 +148,6 @@ function packageHeader(
   }
 
   return `${md.join(' ')}\n\n***\n`;
-}
-
-function getProjectName(
-  project: ProjectReflection,
-  context: MarkdownThemeRenderContext,
-  url?: string,
-) {
-  const projectName = getProjectDisplayName(
-    project,
-    context.options.getValue('includeVersion'),
-  );
-  if (url) {
-    return link(projectName, context.relativeURL(url));
-  } else {
-    return projectName;
-  }
 }
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {

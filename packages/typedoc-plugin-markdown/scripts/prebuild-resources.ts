@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as prettier from 'prettier';
 import { Project } from 'ts-morph';
+import { ReflectionKind } from 'typedoc';
 
 const project = new Project({
   tsConfigFilePath: 'tsconfig.json',
@@ -13,6 +14,86 @@ const resourcesPath = path.join(__dirname, '..', 'src', 'theme', 'resources');
 main();
 
 async function main() {
+  // WRITE CONSTANTS
+
+  const themeRenderKindConstantsFile = path.join(
+    __dirname,
+    '..',
+    'src',
+    'theme',
+    'constants',
+    'kinds.ts',
+  );
+
+  const kinds = [
+    { key: 'class', kind: ReflectionKind.Class },
+    { key: 'constructor', kind: ReflectionKind.Constructor },
+    { key: 'enum', kind: ReflectionKind.Enum },
+    { key: 'enum-member', kind: ReflectionKind.EnumMember },
+    { key: 'function', kind: ReflectionKind.Function },
+    { key: 'interface', kind: ReflectionKind.Interface },
+    { key: 'method', kind: ReflectionKind.Method },
+    { key: 'module', kind: ReflectionKind.Module },
+    { key: 'namespace', kind: ReflectionKind.Namespace },
+    { key: 'variable', kind: ReflectionKind.Variable },
+    { key: 'parameter', kind: ReflectionKind.Parameter },
+    { key: 'property', kind: ReflectionKind.Property },
+    { key: 'reference', kind: ReflectionKind.Reference },
+    { key: 'type-alias', kind: ReflectionKind.TypeAlias },
+    { key: 'type-parameter', kind: ReflectionKind.TypeParameter },
+  ];
+
+  const kindsString: string[] = [];
+
+  kindsString.push(`
+  export const KIND_DEFAULTS:  Record<string, string> = {
+    ${kinds
+      .map((kind) => {
+        return `
+        'kind.${kind.key}.singular':'${ReflectionKind.singularString(
+          kind.kind,
+        )}',
+        'kind.${kind.key}.plural':'${ReflectionKind.pluralString(kind.kind)}'
+        `;
+      })
+      .join(',')}
+  }
+  `);
+
+  kindsString.push(`
+  export const SINGULAR_KIND_KEY_MAP: Record<string, string> = {
+    ${kinds
+      .map((kind) => {
+        return `['${ReflectionKind.singularString(kind.kind)}']: 'kind.${
+          kind.key
+        }.singular'`;
+      })
+      .join(',')}
+  }
+  `);
+
+  kindsString.push(`
+  export const PLURAL_KIND_KEY_MAP: Record<string, string>= {
+    ${kinds
+      .map((kind) => {
+        return `['${ReflectionKind.pluralString(kind.kind)}']: 'kind.${
+          kind.key
+        }.plural'`;
+      })
+      .join(',')}
+  }
+  `);
+
+  const formattedKinds = await prettier.format(kindsString.join('\n'), {
+    parser: 'typescript',
+    singleQuote: true,
+    trailingComma: 'all',
+  });
+
+  fs.writeFileSync(themeRenderKindConstantsFile, formattedKinds);
+
+  // WRITE THEME CONTEXT
+
   const templateFiles = getFiles('templates').filter(
     (file) => file !== 'index',
   );

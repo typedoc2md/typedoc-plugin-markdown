@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# API Index
+"# typedoc-stubs
 
 Comments form module comments
 
@@ -62,7 +62,7 @@ Some <p> html </p> inside codeblock
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# API Index
+"# typedoc-stubs
 
 Comments form module comments
 
@@ -107,29 +107,23 @@ Some <p> html </p> inside codeblock
 
 ## Enumerations
 
-| Enumeration | Description |
-| :------ | :------ |
-| [CommentEnum](enumerations/CommentEnum.md) | - |
+- [CommentEnum](enumerations/CommentEnum.md)
 
 ## Interfaces
 
-| Interface | Description |
-| :------ | :------ |
-| [CommentInterface](interfaces/CommentInterface.md) | - |
-| [SameName](interfaces/SameName.md) | - |
+- [CommentInterface](interfaces/CommentInterface.md)
+- [SameName](interfaces/SameName.md)
 
 ## Variables
 
-| Variable | Description |
-| :------ | :------ |
-| [SameName](variables/SameName.md) | - |
-| [prop](variables/prop.md) | - |
-| [propb](variables/propb.md) | - |
+- [SameName](variables/SameName.md)
+- [prop](variables/prop.md)
+- [propb](variables/propb.md)
 "
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"# API Index
+"# typedoc-stubs
 
 Comments form module comments
 
@@ -137,14 +131,14 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](globals.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](globals.md#commentinterface)
-- [Links to CommentInterface.propb](globals.md#commentinterface)
-- [CommentEnum.MemberB](globals.md#commentenum)
-- [SameName:var](globals.md#samename-1)
-- [SameName:interface](globals.md#samename)
-- [SameName.prop](globals.md#samename)
-- [prop:var](globals.md#prop)
+- [CommentInterface](README.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](README.md#commentinterface)
+- [Links to CommentInterface.propb](README.md#commentinterface)
+- [CommentEnum.MemberB](README.md#commentenum)
+- [SameName:var](README.md#samename-1)
+- [SameName:interface](README.md#samename)
+- [SameName.prop](README.md#samename)
+- [prop:var](README.md#prop)
 
 External links:
 
@@ -174,15 +168,15 @@ Some <p> html </p> inside codeblock
 
 ## Contents
 
-- [Enumerations](globals.md#enumerations)
-    - [CommentEnum](globals.md#commentenum)
-- [Interfaces](globals.md#interfaces)
-    - [CommentInterface](globals.md#commentinterface)
-    - [SameName](globals.md#samename)
-- [Variables](globals.md#variables)
-    - [SameName](globals.md#samename-1)
-    - [prop](globals.md#prop)
-    - [propb](globals.md#propb)
+- [Enumerations](README.md#enumerations)
+    - [CommentEnum](README.md#commentenum)
+- [Interfaces](README.md#interfaces)
+    - [CommentInterface](README.md#commentinterface)
+    - [SameName](README.md#samename)
+- [Variables](README.md#variables)
+    - [SameName](README.md#samename-1)
+    - [prop](README.md#prop)
+    - [propb](README.md#propb)
 
 ## Enumerations
 
@@ -190,9 +184,9 @@ Some <p> html </p> inside codeblock
 
 #### Enumeration Members
 
-| Member | Value | Description |
+| Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](globals.md#samename-1) |
+| \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](README.md#samename-1) |
 | \`MemberB\` | \`1\` | - |
 
 ## Interfaces
@@ -238,7 +232,7 @@ Some <p> html </p> inside codeblock
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# API Index
+"# typedoc-stubs
 
 Comments form module comments
 
@@ -246,14 +240,14 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](globals.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](globals.md#prop)
-- [Links to CommentInterface.propb](globals.md#propb)
-- [CommentEnum.MemberB](globals.md#memberb)
-- [SameName:var](globals.md#samename-1)
-- [SameName:interface](globals.md#samename)
-- [SameName.prop](globals.md#prop-1)
-- [prop:var](globals.md#prop-2)
+- [CommentInterface](README.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](README.md#prop)
+- [Links to CommentInterface.propb](README.md#propb)
+- [CommentEnum.MemberB](README.md#memberb)
+- [SameName:var](README.md#samename-1)
+- [SameName:interface](README.md#samename)
+- [SameName.prop](README.md#prop-1)
+- [prop:var](README.md#prop-2)
 
 External links:
 
@@ -283,15 +277,15 @@ Some <p> html </p> inside codeblock
 
 ## Contents
 
-- [Enumerations](globals.md#enumerations)
-    - [CommentEnum](globals.md#commentenum)
-- [Interfaces](globals.md#interfaces)
-    - [CommentInterface](globals.md#commentinterface)
-    - [SameName](globals.md#samename)
-- [Variables](globals.md#variables)
-    - [SameName](globals.md#samename-1)
-    - [prop](globals.md#prop-2)
-    - [propb](globals.md#propb-2)
+- [Enumerations](README.md#enumerations)
+    - [CommentEnum](README.md#commentenum)
+- [Interfaces](README.md#interfaces)
+    - [CommentInterface](README.md#commentinterface)
+    - [SameName](README.md#samename)
+- [Variables](README.md#variables)
+    - [SameName](README.md#samename-1)
+    - [prop](README.md#prop-2)
+    - [propb](README.md#propb-2)
 
 ## Enumerations
 
@@ -299,9 +293,9 @@ Some <p> html </p> inside codeblock
 
 #### Enumeration Members
 
-| Member | Value | Description |
+| Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](globals.md#samename-1) |
+| <a id="member" name="member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](README.md#samename-1) |
 | <a id="memberb" name="memberb"></a> \`MemberB\` | \`1\` | - |
 
 ## Interfaces

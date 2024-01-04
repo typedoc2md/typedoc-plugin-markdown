@@ -7,7 +7,7 @@ export function load(app: Application) {
 
 class CustomTheme extends MarkdownTheme {
   override getRenderContext(pageEvent: PageEvent<Reflection>) {
-    return new ThemeRenderContext(pageEvent, this.application.options);
+    return new ThemeRenderContext(this, pageEvent, this.application.options);
   }
 }
 

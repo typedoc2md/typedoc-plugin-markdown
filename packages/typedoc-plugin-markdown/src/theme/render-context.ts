@@ -1,6 +1,9 @@
 import * as path from 'path';
-import { Options, Reflection } from 'typedoc';
+import { Options, Reflection, ReflectionKind } from 'typedoc';
+import { TextContentMappings } from '../options/models';
 import { MarkdownPageEvent } from '../plugin/events';
+import { PLURAL_KIND_KEY_MAP, SINGULAR_KIND_KEY_MAP } from './constants/kinds';
+import { MarkdownTheme } from './theme';
 
 /* start_imports */
 import { breadcrumbs } from './resources/partials/breadcrumbs';
@@ -69,6 +72,7 @@ function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
  */
 export class MarkdownThemeRenderContext {
   constructor(
+    public theme: MarkdownTheme,
     public page: MarkdownPageEvent<Reflection> | null,
     public options: Options,
   ) {}
@@ -100,6 +104,31 @@ export class MarkdownThemeRenderContext {
       );
     }
   };
+
+  getTextContent(key: keyof TextContentMappings) {
+    return this.theme.textMappings[key];
+  }
+
+  groupTitle(title: string) {
+    const key = PLURAL_KIND_KEY_MAP[title] as keyof TextContentMappings;
+    return this.getTextContent(key) || title;
+  }
+
+  kindString(kind: ReflectionKind) {
+    const singularString = ReflectionKind.singularString(kind);
+    const key = SINGULAR_KIND_KEY_MAP[
+      singularString
+    ] as keyof TextContentMappings;
+    return this.getTextContent(key) || singularString;
+  }
+
+  indexTitle(textContent: string, name: string, version?: string) {
+    return textContent
+      .replace('{projectName}', name)
+      .replace('{version}', version ? `v${version}` : '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
 
   parseUrl(url: string) {
     return encodeURI(url);

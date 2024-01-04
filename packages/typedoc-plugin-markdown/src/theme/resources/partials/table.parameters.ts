@@ -45,14 +45,17 @@ export function parametersTable(
 
   const hasComments = parsedParams.some((param) => Boolean(param.comment));
 
-  const headers = ['Parameter', 'Type'];
+  const headers = [
+    context.getTextContent('kind.parameter.singular'),
+    context.getTextContent('label.type'),
+  ];
 
   if (showDefaults) {
-    headers.push('Default value');
+    headers.push(context.getTextContent('label.defaultValue'));
   }
 
   if (hasComments) {
-    headers.push('Description');
+    headers.push(context.getTextContent('label.description'));
   }
 
   const firstOptionalParamIndex = parameters.findIndex(

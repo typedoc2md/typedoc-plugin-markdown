@@ -48,7 +48,7 @@ Comments for enum
 
 ## Enumeration Members
 
-| Member | Value | Description |
+| Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
 | \`MemberA\` | \`0\` | Comments for MemberA |
 | \`MemberB\` | \`1\` | Comments for MemberB |
@@ -99,7 +99,7 @@ Comments for enum
 
 ## Enumeration Members
 
-| Member | Value |
+| Enumeration Member | Value |
 | :------ | :------ |
 | \`MemberA\` | \`"UP"\` |
 | \`MemberB\` | \`"DOWN"\` |

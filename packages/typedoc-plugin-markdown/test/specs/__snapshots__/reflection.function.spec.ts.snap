@@ -45,7 +45,7 @@ Comments for function
 
 > ### Type parameters
 >
-> | Parameter |
+> | Type parameter |
 > | :------ |
 > | \`T\` |
 >
@@ -651,7 +651,7 @@ Function with type parameters
 
 ## Type parameters
 
-| Parameter | Value | Description |
+| Type parameter | Value | Description |
 | :------ | :------ | :------ |
 | \`T\` | - | Comments for T |
 | \`Item\` | \`string\` \\| \`boolean\` | - |
