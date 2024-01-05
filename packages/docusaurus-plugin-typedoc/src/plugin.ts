@@ -10,23 +10,22 @@ import { DocusuaurusTheme } from './theme';
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
 
-export default function pluginDocusaurus(
+export default async function pluginDocusaurus(
   context: any,
   opts: Partial<PluginOptions>,
 ) {
+  const PLUGIN_NAME = 'docusaurus-plugin-typedoc';
+  if (opts.id && !apps.includes(opts.id)) {
+    apps.push(opts.id);
+    await generateTypedoc(context, opts);
+  }
   return {
-    name: 'docusaurus-plugin-typedoc',
-    async loadContent() {
-      if (opts.id && !apps.includes(opts.id)) {
-        apps.push(opts.id);
-        await generateTypedoc(context, opts);
-      }
-    },
+    name: PLUGIN_NAME,
     extendCli(cli) {
       cli
         .command('generate-typedoc')
         .description(
-          '(docusaurus-plugin-typedoc) Generate TypeDoc docs independently of the Docusaurus build process.',
+          `[${PLUGIN_NAME}] Generate TypeDoc docs independently of the Docusaurus build process.`,
         )
         .action(async () => {
           context.siteConfig?.plugins.forEach((pluginConfig) => {
