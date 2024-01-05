@@ -13,7 +13,6 @@ export function enumMembersTable(
 ): string {
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
-  const hasSources = !context.options.getValue('disableSources');
 
   const headers = [
     context.getTextContent('kind.enum-member.singular'),
@@ -22,10 +21,6 @@ export function enumMembersTable(
 
   if (hasComments) {
     headers.push(context.getTextContent('label.description'));
-  }
-
-  if (hasSources) {
-    headers.push(context.getTextContent('label.source'));
   }
 
   const rows = props.map((property: DeclarationReflection) => {
@@ -57,10 +52,6 @@ export function enumMembersTable(
       } else {
         row.push('-');
       }
-    }
-
-    if (hasSources) {
-      row.push(context.sources(property, -1));
     }
 
     return `| ${row.join(' | ')} |\n`;

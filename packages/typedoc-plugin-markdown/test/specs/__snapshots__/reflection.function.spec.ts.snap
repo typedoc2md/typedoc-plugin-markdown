@@ -59,6 +59,10 @@ Comments for function
 >
 > \`boolean\`
 >
+
+## Source
+
+[functions.ts:123](http://source-url)
 "
 `;
 
@@ -107,6 +111,10 @@ Return comments
 > | :------ | :------ | :------ |
 > | \`prop\` | \`string\` | - |
 >
+
+## Source
+
+[functions.ts:131](http://source-url)
 "
 `;
 
@@ -161,6 +169,10 @@ Return comments
 > | \`x\` | \`number\` | - |
 > | \`y\` | \`number\` | - |
 >
+
+## Source
+
+[functions.ts:116](http://source-url)
 "
 `;
 
@@ -205,6 +217,10 @@ This is a function that is assigned to a variable.
 ## Returns
 
 \`number\`
+
+## Source
+
+[functions.ts:10](http://source-url)
 "
 `;
 
@@ -278,6 +294,10 @@ This is a function with a parameter that has a default value.
 ## Returns
 
 \`string\`
+
+## Source
+
+[functions.ts:23](http://source-url)
 "
 `;
 
@@ -351,6 +371,10 @@ This is the first signature of a function with multiple signatures.
 
 \`string\`
 
+### Source
+
+[functions.ts:94](http://source-url)
+
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
@@ -369,6 +393,10 @@ This is the second signature of a function with multiple signatures.
 ### Returns
 
 \`string\`
+
+### Source
+
+[functions.ts:102](http://source-url)
 "
 `;
 
@@ -420,6 +448,10 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 ## Returns
 
 \`void\`
+
+## Source
+
+[functions.ts:74](http://source-url)
 "
 `;
 
@@ -494,6 +526,10 @@ Some nested params.
 ## Returns
 
 \`boolean\`
+
+## Source
+
+[functions.ts:54](http://source-url)
 "
 `;
 
@@ -584,6 +620,10 @@ This is a function with a parameters.
 ## Returns
 
 \`void\`
+
+## Source
+
+[functions.ts:40](http://source-url)
 "
 `;
 
@@ -612,6 +652,10 @@ This is a function with a parameters.
 ## Returns
 
 \`void\`
+
+## Source
+
+[functions.ts:40](http://source-url)
 "
 `;
 
@@ -659,5 +703,9 @@ Function with type parameters
 ## Returns
 
 \`boolean\`
+
+## Source
+
+[functions.ts:87](http://source-url)
 "
 `;

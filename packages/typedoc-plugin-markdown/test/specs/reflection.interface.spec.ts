@@ -36,4 +36,12 @@ describe(`Interface Reflection`, () => {
       'interfaces/IndexableInterface.md',
     );
   });
+
+  test(`should compile interface with event properties`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Reflections,
+      FixtureOutputFileStrategy.Members,
+      'interfaces/InterfaceWithEventProperties.md',
+    );
+  });
 });

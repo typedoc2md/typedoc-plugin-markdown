@@ -30,6 +30,7 @@ async function main() {
     { key: 'constructor', kind: ReflectionKind.Constructor },
     { key: 'enum', kind: ReflectionKind.Enum },
     { key: 'enum-member', kind: ReflectionKind.EnumMember },
+    { key: 'event', kind: undefined },
     { key: 'function', kind: ReflectionKind.Function },
     { key: 'interface', kind: ReflectionKind.Interface },
     { key: 'method', kind: ReflectionKind.Method },
@@ -45,15 +46,23 @@ async function main() {
 
   const kindsString: string[] = [];
 
+  const capitalize = (s: string) => s && s[0].toUpperCase() + s.slice(1);
+
+  const singularString = (kind: any) =>
+    kind.kind ? ReflectionKind.singularString(kind.kind) : capitalize(kind.key);
+
+  const pluralString = (kind: any) =>
+    kind.kind
+      ? ReflectionKind.pluralString(kind.kind)
+      : `${capitalize(kind.key)}s`;
+
   kindsString.push(`
   export const KIND_DEFAULTS:  Record<string, string> = {
     ${kinds
       .map((kind) => {
         return `
-        'kind.${kind.key}.singular':'${ReflectionKind.singularString(
-          kind.kind,
-        )}',
-        'kind.${kind.key}.plural':'${ReflectionKind.pluralString(kind.kind)}'
+        'kind.${kind.key}.singular':'${singularString(kind)}',
+        'kind.${kind.key}.plural':'${pluralString(kind)}'
         `;
       })
       .join(',')}
@@ -64,9 +73,7 @@ async function main() {
   export const SINGULAR_KIND_KEY_MAP: Record<string, string> = {
     ${kinds
       .map((kind) => {
-        return `['${ReflectionKind.singularString(kind.kind)}']: 'kind.${
-          kind.key
-        }.singular'`;
+        return `['${singularString(kind)}']: 'kind.${kind.key}.singular'`;
       })
       .join(',')}
   }
@@ -76,9 +83,7 @@ async function main() {
   export const PLURAL_KIND_KEY_MAP: Record<string, string>= {
     ${kinds
       .map((kind) => {
-        return `['${ReflectionKind.pluralString(kind.kind)}']: 'kind.${
-          kind.key
-        }.plural'`;
+        return `['${pluralString(kind)}']: 'kind.${kind.key}.plural'`;
       })
       .join(',')}
   }

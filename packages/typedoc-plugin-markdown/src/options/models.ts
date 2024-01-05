@@ -93,6 +93,8 @@ export interface TextContentMappings {
   'kind.enum.plural': string;
   'kind.enum-member.singular': string;
   'kind.enum-member.plural': string;
+  'kind.event.singular': string;
+  'kind.event.plural': string;
   'kind.function.singular': string;
   'kind.function.plural': string;
   'kind.interface.singular': string;

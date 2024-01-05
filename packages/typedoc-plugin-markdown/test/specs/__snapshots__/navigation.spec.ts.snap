@@ -993,6 +993,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "interfaces/IndexableInterface.md"
       },
       {
+        "title": "InterfaceWithEventProperties",
+        "url": "interfaces/InterfaceWithEventProperties.md"
+      },
+      {
         "title": "InterfaceWithTypeParameters",
         "url": "interfaces/InterfaceWithTypeParameters.md"
       }

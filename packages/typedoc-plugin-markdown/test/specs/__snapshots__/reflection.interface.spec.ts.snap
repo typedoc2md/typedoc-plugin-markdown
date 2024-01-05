@@ -44,12 +44,6 @@ Comments for some tag
 
 Comments for functionProper
 
-#### Param
-
-Comment for param s
-
-Comments for functionProper
-
 #### Parameters
 
 • **s**: \`string\`
@@ -131,8 +125,6 @@ Comments for nestedPropCA
 ##### nestedPropD
 
 > **nestedPropD**: () => \`boolean\`
-
-Comments for nestedPropD
 
 Comments for nestedPropD
 
@@ -236,12 +228,6 @@ Comments for some tag
 
 Comments for functionProper
 
-#### Param
-
-Comment for param s
-
-Comments for functionProper
-
 #### Parameters
 
 • **s**: \`string\`
@@ -338,8 +324,6 @@ Comments for nestedPropCA
 
 Comments for nestedPropD
 
-Comments for nestedPropD
-
 ###### Returns
 
 \`boolean\`
@@ -427,9 +411,93 @@ Comments for IndexableInterface
 
 ## Properties
 
+| Property | Type |
+| :------ | :------ |
+| \`prop\` | \`string\` |
+"
+`;
+
+exports[`Interface Reflection should compile interface with event properties: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Interface: InterfaceWithEventProperties
+
+## Contents
+
+- [Properties](InterfaceWithEventProperties.md#properties)
+    - [someProp](InterfaceWithEventProperties.md#someprop)
+- [Events](InterfaceWithEventProperties.md#events)
+    - [anotherEvent](InterfaceWithEventProperties.md#anotherevent)
+    - [someEvent](InterfaceWithEventProperties.md#someevent)
+
+## Properties
+
+### someProp?
+
+> **someProp**?: \`boolean\`
+
+Description for prop someProp
+
+#### Source
+
+[interfaces.ts:99](http://source-url)
+
+## Events
+
+### anotherEvent
+
+> **anotherEvent**: \`MouseEvent\`
+
+#### Source
+
+[interfaces.ts:111](http://source-url)
+
+***
+
+### ~~someEvent?~~
+
+> **someEvent**?: (\`eventParam\`) => \`void\`
+
+Description for event someEvent
+
+#### Parameters
+
+• **eventParam**: \`MouseEvent\`
+
+Comments for param eventParam
+
+#### Returns
+
+\`void\`
+
+#### Deprecated
+
+Deprectaed comments
+
+#### Source
+
+[interfaces.ts:106](http://source-url)
+"
+`;
+
+exports[`Interface Reflection should compile interface with event properties: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# InterfaceWithEventProperties
+
+## Contents
+
+- [Properties](InterfaceWithEventProperties.md#properties)
+- [Events](InterfaceWithEventProperties.md#events)
+
+## Properties
+
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`prop\` | \`string\` | - |
+| \`someProp?\` | \`boolean\` | Description for prop someProp |
+
+## Events
+
+| Event | Type | Description |
+| :------ | :------ | :------ |
+| \`anotherEvent\` | \`MouseEvent\` | - |
+| ~~\`someEvent?\`~~ | (\`eventParam\`) => \`void\` | Description for event someEvent<br /><br />**Param**<br />Comments for param eventParam<br /><br />**Deprecated**<br />Deprectaed comments |
 "
 `;
 

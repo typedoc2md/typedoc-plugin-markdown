@@ -104,6 +104,10 @@ Comments for abstractMethod
 #### Returns
 
 \`string\`
+
+#### Source
+
+[classes.ts:14](http://source-url)
 "
 `;
 
@@ -228,9 +232,9 @@ new ClassWithAccessors(): ClassWithAccessors
 
 ## Properties
 
-| Modifier | Property | Type | Description |
-| :------ | :------ | :------ | :------ |
-| \`private\` | \`privateProp\` | \`string\` | - |
+| Modifier | Property | Type |
+| :------ | :------ | :------ |
+| \`private\` | \`privateProp\` | \`string\` |
 
 ## Accessors
 
@@ -258,6 +262,10 @@ Comments for setter
 
 \`string\`
 
+#### Source
+
+[classes.ts:76](http://source-url)
+
 ***
 
 ### noGetter
@@ -272,6 +280,10 @@ set noGetter(x): void
 | :------ | :------ |
 | \`x\` | \`string\` |
 
+#### Source
+
+[classes.ts:92](http://source-url)
+
 ***
 
 ### noSetter
@@ -283,6 +295,10 @@ get noSetter(): string
 #### Returns
 
 \`string\`
+
+#### Source
+
+[classes.ts:88](http://source-url)
 "
 `;
 
@@ -383,6 +399,10 @@ new ClassWithConstructorOverloads(x, y): ClassWithConstructorOverloads
 
 [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
+#### Source
+
+[classes.ts:50](http://source-url)
+
 ### new ClassWithConstructorOverloads(x)
 
 \`\`\`ts
@@ -399,6 +419,10 @@ new ClassWithConstructorOverloads(x): ClassWithConstructorOverloads
 
 [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
+#### Source
+
+[classes.ts:55](http://source-url)
+
 ### new ClassWithConstructorOverloads(s)
 
 \`\`\`ts
@@ -414,6 +438,10 @@ new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
 #### Returns
 
 [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+
+#### Source
+
+[classes.ts:56](http://source-url)
 "
 `;
 
@@ -608,6 +636,10 @@ Comment for privateMethod
 
 \`void\`
 
+#### Source
+
+[classes.ts:138](http://source-url)
+
 ***
 
 ### publicMethod()
@@ -622,6 +654,10 @@ Comment for publicMethod
 
 \`void\`
 
+#### Source
+
+[classes.ts:131](http://source-url)
+
 ***
 
 ### staticMethod()
@@ -635,6 +671,10 @@ Comment for staticMethod
 #### Returns
 
 \`void\`
+
+#### Source
+
+[classes.ts:143](http://source-url)
 "
 `;
 
@@ -859,6 +899,10 @@ Comments for abstractMethod
 
 [\`AbstractClass.abstractMethod\`](AbstractClass.md#abstract-abstractmethod)
 
+#### Source
+
+[classes.ts:23](http://source-url)
+
 ***
 
 ### derivedMethod()
@@ -870,6 +914,10 @@ derivedMethod(): string
 #### Returns
 
 \`string\`
+
+#### Source
+
+[classes.ts:26](http://source-url)
 "
 `;
 

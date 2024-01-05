@@ -20,8 +20,17 @@ export function declarationMember(
 
   md.push(context.declarationMemberIdentifier(declaration));
 
-  if (declaration.comment) {
-    md.push(context.comment(declaration.comment, headingLevel));
+  const typeDeclaration = (declaration.type as any)
+    ?.declaration as DeclarationReflection;
+
+  if (
+    !typeDeclaration?.signatures?.every((signature) =>
+      Boolean(signature.comment),
+    )
+  ) {
+    if (declaration.comment) {
+      md.push(context.comment(declaration.comment, headingLevel));
+    }
   }
 
   if (declaration.type instanceof IntersectionType) {
@@ -67,24 +76,19 @@ export function declarationMember(
     }
   }
 
-  const typeDeclaration = (declaration.type as any)
-    ?.declaration as DeclarationReflection;
-
   if (typeDeclaration) {
     if (typeDeclaration?.indexSignature) {
       md.push(heading(headingLevel, `Index signature`));
       md.push(context.indexSignatureTitle(typeDeclaration.indexSignature));
     }
 
-    if (
-      typeDeclaration?.signatures?.length ||
-      typeDeclaration?.children?.length
-    ) {
-      if (typeDeclaration?.signatures?.length) {
-        typeDeclaration.signatures.forEach((signature) => {
-          md.push(context.signatureMember(signature, headingLevel, true));
-        });
-      }
+    if (typeDeclaration?.signatures?.length) {
+      typeDeclaration.signatures.forEach((signature) => {
+        md.push(context.signatureMember(signature, headingLevel, true));
+      });
+    }
+
+    if (typeDeclaration?.children?.length) {
       if (!nested && typeDeclaration?.children?.length) {
         md.push(
           heading(

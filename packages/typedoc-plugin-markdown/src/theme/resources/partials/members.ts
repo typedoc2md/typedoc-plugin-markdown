@@ -90,7 +90,13 @@ export function members(
             isPropertiesGroup &&
             context.options.getValue('propertiesFormat') === 'table'
           ) {
-            md.push(context.propertiesTable(group.children));
+            md.push(
+              context.propertiesTable(
+                group.children,
+                context.groupTitle(group.title) ===
+                  context.getTextContent('kind.event.plural'),
+              ),
+            );
           } else if (
             isEnumGroup &&
             context.options.getValue('enumMembersFormat') === 'table'

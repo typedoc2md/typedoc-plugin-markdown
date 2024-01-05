@@ -35,6 +35,10 @@ Comments variable with symbol
 | Member | Type | Description |
 | :------ | :------ | :------ |
 | \`[sym]\` | \`string\` | - |
+
+## Source
+
+[variables.ts:50](http://source-url)
 "
 `;
 
@@ -59,6 +63,10 @@ const typeOperatorVariable: unique symbol;
 \`\`\`
 
 Comments for typeOperatorVariable
+
+## Source
+
+[variables.ts:13](http://source-url)
 "
 `;
 
@@ -83,6 +91,10 @@ const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultVal
 \`\`\`
 
 A simple string variable
+
+## Source
+
+[variables.ts:8](http://source-url)
 "
 `;
 
@@ -276,5 +288,9 @@ Comments for objectLiteralVariable
 | \`valueY\` | (\`unionParam\`, \`_undercoreParam_\`) => \`string\` | - |
 | \\| | \`string\` | - |
 | \`~\` | \`string\` | - |
+
+## Source
+
+[variables.ts:18](http://source-url)
 "
 `;

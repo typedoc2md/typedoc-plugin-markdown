@@ -17,13 +17,15 @@ import {
 export function propertiesTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
+  isEventProps = false,
 ): string {
   const modifiers = props.map((param) => getModifier(param));
   const hasModifiers = modifiers.some((value) => Boolean(value));
   const hasOverrides = props.some((prop) => Boolean(prop.overwrites));
   const hasInheritance = props.some((prop) => Boolean(prop.inheritedFrom));
-
-  const hasSources = !context.options.getValue('disableSources');
+  const hasComments = props.some(
+    (prop) => prop.comment?.blockTags?.length || prop?.comment?.summary?.length,
+  );
 
   const headers: string[] = [];
 
@@ -31,11 +33,17 @@ export function propertiesTable(
     headers.push(context.getTextContent('label.modifier'));
   }
 
-  headers.push(context.getTextContent('kind.property.singular'));
+  headers.push(
+    isEventProps
+      ? context.getTextContent('kind.event.singular')
+      : context.getTextContent('kind.property.singular'),
+  );
 
   headers.push(context.getTextContent('label.type'));
 
-  headers.push(context.getTextContent('label.description'));
+  if (hasComments) {
+    headers.push(context.getTextContent('label.description'));
+  }
 
   if (hasOverrides) {
     headers.push(context.getTextContent('label.overrides'));
@@ -43,10 +51,6 @@ export function propertiesTable(
 
   if (hasInheritance) {
     headers.push(context.getTextContent('label.inheritedFrom'));
-  }
-
-  if (hasSources) {
-    headers.push(context.getTextContent('label.source'));
   }
 
   const rows: string[][] = [];
@@ -88,13 +92,18 @@ export function propertiesTable(
       row.push(stripLineBreaks(context.someType(propertyType), false));
     }
 
-    const comments = property.comment;
-    if (comments) {
-      row.push(
-        stripLineBreaks(formatTableDescriptionCol(context.comment(comments))),
-      );
-    } else {
-      row.push('-');
+    if (hasComments) {
+      const hasComment =
+        property.comment?.blockTags?.length ||
+        property?.comment?.summary?.length;
+      const comments = property?.comment;
+      if (hasComment && comments) {
+        row.push(
+          stripLineBreaks(formatTableDescriptionCol(context.comment(comments))),
+        );
+      } else {
+        row.push('-');
+      }
     }
 
     if (hasOverrides) {
@@ -103,10 +112,6 @@ export function propertiesTable(
 
     if (hasInheritance) {
       row.push(context.inheritance(property, -1) || '-');
-    }
-
-    if (hasSources) {
-      row.push(context.sources(property, -1));
     }
 
     rows.push(row);

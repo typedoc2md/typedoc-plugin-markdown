@@ -19,15 +19,26 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 ***
 
-[Home](../../modules.md) / [module-1](../README.md) / constA
+[Home](../../modules.md) / [module-1](../README.md) / SomeInterface
 
-# constA
+# SomeInterface
 
-> **\`const\`** **constA**: \`true\` = \`true\`
+## Contents
 
-## Defined In
+- [Properties](SomeInterface.md#properties)
+- [My Events](SomeInterface.md#my-events)
 
-[module-1.ts:1](http://source-url)
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`someProp?\` | \`boolean\` | Description for prop someProp |
+
+## My Events
+
+| Event! | Type |
+| :------ | :------ |
+| \`someEvent\` | \`MouseEvent\` |
 "
 `;
 
@@ -44,6 +55,6 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 
 ### 多变的
 
-- [constA](variables/constA.md)
+- [SomeInterface](interfaces/SomeInterface.md)
 "
 `;

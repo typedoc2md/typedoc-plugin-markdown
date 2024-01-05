@@ -39,7 +39,7 @@ export class MarkdownTheme extends Theme {
     deprecatedOptions.forEach((option) => {
       if (this.application.options.isSet(option)) {
         this.application.logger.warn(
-          `[typedoc-plugin-markdown] "${option}" is deprecated. Please see https://www.typedoc-plugin-markdown.org/options#${option}`,
+          `[typedoc-plugin-markdown] "${option}" is deprecated. Please see https://www.typedoc-plugin-markdown.org/options#${option.toLowerCase()}`,
         );
       }
     });

@@ -25,7 +25,7 @@ describe(`Text`, () => {
     expectFileToEqual(
       FixtureOutputDir.Text,
       FixtureOutputFileStrategy.Members,
-      ['module-1/variables/constA.md'],
+      ['module-1/interfaces/SomeInterface.md'],
     );
   });
 });

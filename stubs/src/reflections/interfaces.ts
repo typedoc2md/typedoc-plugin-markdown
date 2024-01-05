@@ -91,3 +91,22 @@ export interface IndexableInterface {
   [s: string]: string;
   prop: string;
 }
+
+export interface InterfaceWithEventProperties {
+  /**
+   * Description for prop someProp
+   */
+  someProp?: boolean;
+  /**
+   * Description for event someEvent
+   * @eventProperty
+   * @param eventParam Comments for param eventParam
+   * @deprecated Deprectaed comments
+   */
+  someEvent?: (eventParam: MouseEvent) => void;
+
+  /**
+   * @eventProperty
+   */
+  anotherEvent: MouseEvent;
+}

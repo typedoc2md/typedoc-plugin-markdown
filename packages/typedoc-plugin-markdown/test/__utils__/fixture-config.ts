@@ -40,7 +40,6 @@ export const FIXTURES: Fixture[] = [
     options: [
       {},
       {
-        disableSources: true,
         readme: 'none',
         parametersFormat: 'table',
         propertiesFormat: 'table',
@@ -67,7 +66,6 @@ export const FIXTURES: Fixture[] = [
       {
         readme: 'none',
         categorizeByGroup: false,
-        disableSources: true,
         excludeGroups: true,
         namedAnchors: {
           headings: true,
@@ -138,6 +136,7 @@ export const FIXTURES: Fixture[] = [
       entryFileName: 'index.md',
       entryModule: 'entry-module',
       hideGenerator: true,
+      disableSources: true,
     },
     options: [{ entryFileName: 'README.md' }, { readme: 'none' }],
   },
@@ -158,12 +157,13 @@ export const FIXTURES: Fixture[] = [
     outDir: FixtureOutputDir.Text,
     entryPoints: FixtureEntryPoints.Text,
     membersOnly: true,
-    commonOptions: { hideGenerator: true },
+    commonOptions: { hideGenerator: true, disableSources: true },
     options: [
       {
         includeVersion: true,
         titleLink: 'http://www.google.com',
         options: '../../stubs/typedoc.text.cjs',
+        propertiesFormat: 'table',
       },
     ],
   },
