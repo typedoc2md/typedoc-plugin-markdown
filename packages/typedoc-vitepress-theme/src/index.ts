@@ -7,7 +7,6 @@ import {
   OptionsReader,
 } from 'typedoc';
 import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
-import { SidebarOptions } from './model';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import * as options from './options/declarations';
 import presets from './options/presets';
@@ -42,7 +41,7 @@ export function load(app: Application) {
     async (output: MarkdownRendererEvent) => {
       const sidebarOptions = {
         ...DEFAULT_SIDEBAR_OPTIONS,
-        ...(app.options.getValue('sidebar') as SidebarOptions),
+        ...app.options.getValue('sidebar'),
       };
       if (sidebarOptions.autoConfiguration) {
         const outDir = app.options.getValue('out');

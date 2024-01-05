@@ -1,19 +1,19 @@
 import {
   DeclarationReflection,
-  PageEvent,
   ProjectReflection,
   Reflection,
   ReflectionKind,
 } from 'typedoc';
 import {
+  MarkdownPageEvent,
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
 import { UrlMapping } from 'typedoc-plugin-markdown/dist/plugin/url-mapping';
 
 export class GithubWikiTheme extends MarkdownTheme {
-  override getRenderContext(pageEvent: PageEvent<Reflection>) {
-    return new ThemeRenderContext(pageEvent, this.application.options);
+  override getRenderContext(pageEvent: MarkdownPageEvent<Reflection>) {
+    return new ThemeRenderContext(this, pageEvent, this.application.options);
   }
 
   getUrls(project: ProjectReflection): UrlMapping<any>[] {

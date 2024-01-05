@@ -15,9 +15,17 @@ export async function generateModels() {
     ([name, option]) => option.type === ParameterType.Mixed,
   );
 
+  const containsManuallyValidatedOptions = Object.values(optionsConfig).some(
+    (option) => (option as any).type === ParameterType.Mixed,
+  );
+
   const optionsOutput = `
   // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
-  import { ManuallyValidatedOption } from 'typedoc';
+
+  ${
+    containsManuallyValidatedOptions &&
+    `import { ManuallyValidatedOption } from 'typedoc'`
+  };
 
   declare module 'typedoc' {
     export interface TypeDocOptionMap {

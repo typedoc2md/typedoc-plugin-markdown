@@ -1,16 +1,21 @@
-import { PageEvent, Reflection, ReflectionType, SomeType } from 'typedoc';
+import { Reflection, ReflectionType, SomeType } from 'typedoc';
 import {
+  MarkdownPageEvent,
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
 
 export class DocusuaurusTheme extends MarkdownTheme {
-  override getRenderContext(pageEvent: PageEvent<Reflection>) {
-    return new ThemeRenderContext(pageEvent, this.application.options);
+  override getRenderContext(pageEvent: MarkdownPageEvent<Reflection>) {
+    return new DocusuaurusThemeThemeRenderContext(
+      this,
+      pageEvent,
+      this.application.options,
+    );
   }
 }
 
-class ThemeRenderContext extends MarkdownThemeRenderContext {
+class DocusuaurusThemeThemeRenderContext extends MarkdownThemeRenderContext {
   // adds space around type arguments as docusaurus generates broken links without it in certain use-cases (see https://github.com/facebook/docusaurus/issues/9518)
   override typeArguments = (typeArguments: SomeType[]) => {
     return `\\< ${typeArguments

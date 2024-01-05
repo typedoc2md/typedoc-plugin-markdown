@@ -72,7 +72,7 @@ function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
  */
 export class MarkdownThemeRenderContext {
   constructor(
-    public theme: MarkdownTheme,
+    private theme: MarkdownTheme,
     public page: MarkdownPageEvent<Reflection> | null,
     public options: Options,
   ) {}

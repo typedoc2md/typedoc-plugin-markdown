@@ -48,8 +48,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const options = getPluginOptions(opts);
 
-  const { id, sidebar, ...optionsPassedToTypeDoc } =
-    options as Partial<PluginOptions>;
+  const { id, sidebar, ...optionsPassedToTypeDoc } = options;
 
   const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
 

@@ -1,12 +1,13 @@
-import { PageEvent, Reflection } from 'typedoc';
+import { Reflection } from 'typedoc';
 import {
+  MarkdownPageEvent,
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
 
 export class VitepressTheme extends MarkdownTheme {
-  override getRenderContext(pageEvent: PageEvent<Reflection>) {
-    return new ThemeRenderContext(pageEvent, this.application.options);
+  override getRenderContext(pageEvent: MarkdownPageEvent<Reflection>) {
+    return new ThemeRenderContext(this, pageEvent, this.application.options);
   }
 }
 
