@@ -8,7 +8,10 @@
     "docusaurus-plugin-typedoc": "0.18.0",
     "typedoc-vitepress-theme": "0.0.0",
     "typedoc-github-wiki-theme": "1.0.1",
-    "typedoc-gitlab-wiki-theme": "1.0.0"
+    "typedoc-gitlab-wiki-theme": "1.0.0",
+    "@dev-packages/generate-readmes": "0.0.0",
+    "@dev-packages/helpers": "0.0.0",
+    "@dev-packages/prebuild-options": "0.0.0"
   },
   "changesets": [
     "angry-cars-wash",
@@ -33,6 +36,7 @@
     "fuzzy-clocks-whisper",
     "fuzzy-news-decide",
     "giant-mails-rest",
+    "green-lions-walk",
     "heavy-snakes-press",
     "hungry-papayas-punch",
     "khaki-dogs-cheat",
@@ -44,6 +48,7 @@
     "light-steaks-count",
     "little-rats-end",
     "long-crabs-own",
+    "long-frogs-divide",
     "lovely-needles-tap",
     "lucky-jokes-switch",
     "many-bulldogs-give",
@@ -56,6 +61,7 @@
     "olive-lies-divide",
     "olive-points-hug",
     "olive-socks-mate",
+    "olive-suits-lick",
     "perfect-ligers-help",
     "polite-planets-knock",
     "polite-ways-hang",

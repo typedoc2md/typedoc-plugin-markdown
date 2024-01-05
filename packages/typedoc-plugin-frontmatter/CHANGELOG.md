@@ -1,5 +1,13 @@
 # typedoc-plugin-frontmatter
 
+## 0.0.3-next.0
+
+### Patch Changes
+
+- Updated documentation.
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.39
+
 ## 0.0.2
 
 ### Patch Changes
