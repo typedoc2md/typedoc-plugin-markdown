@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.24
+
+### Patch Changes
+
+- Resolve typedoc esm plugins not loading in sync
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.39
+
 ## 1.0.0-next.23
 
 ### Patch Changes

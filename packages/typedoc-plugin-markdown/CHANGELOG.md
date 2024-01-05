@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.39
+
+### Patch Changes
+
+- Update ui for @eventProperty tags
+- Added `textContentMappings` option
+
 ## 4.0.0-next.38 (2023-12-18)
 
 ### Patch Changes
