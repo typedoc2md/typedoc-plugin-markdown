@@ -8,15 +8,6 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
 
-## Contents
-
-- [Constructors](AbstractClass.md#constructors)
-    - [new AbstractClass](AbstractClass.md#constructors)
-- [Properties](AbstractClass.md#properties)
-    - [abstractProp](AbstractClass.md#abstract-abstractprop)
-- [Methods](AbstractClass.md#methods)
-    - [abstractMethod](AbstractClass.md#abstract-abstractmethod)
-
 ## Constructors
 
 ### new AbstractClass()
@@ -65,14 +56,6 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
 
-## Contents
-
-- [Constructors](AbstractClass.md#constructors)
-    - [new AbstractClass](AbstractClass.md#constructors)
-- [Properties](AbstractClass.md#properties)
-- [Methods](AbstractClass.md#methods)
-    - [abstractMethod](AbstractClass.md#abstract-abstractmethod)
-
 ## Constructors
 
 ### new AbstractClass()
@@ -115,17 +98,6 @@ exports[`Class Reflection should compile class with accessors: (Output File Stra
 "# Class: ClassWithAccessors
 
 Comments for ClassWithAccessors
-
-## Contents
-
-- [Constructors](ClassWithAccessors.md#constructors)
-    - [new ClassWithAccessors](ClassWithAccessors.md#constructors)
-- [Properties](ClassWithAccessors.md#properties)
-    - [privateProp](ClassWithAccessors.md#privateprop)
-- [Accessors](ClassWithAccessors.md#accessors)
-    - [accessor](ClassWithAccessors.md#accessor)
-    - [noGetter](ClassWithAccessors.md#nogetter)
-    - [noSetter](ClassWithAccessors.md#nosetter)
 
 ## Constructors
 
@@ -207,16 +179,6 @@ exports[`Class Reflection should compile class with accessors: (Output File Stra
 "# ClassWithAccessors
 
 Comments for ClassWithAccessors
-
-## Contents
-
-- [Constructors](ClassWithAccessors.md#constructors)
-    - [new ClassWithAccessors](ClassWithAccessors.md#constructors)
-- [Properties](ClassWithAccessors.md#properties)
-- [Accessors](ClassWithAccessors.md#accessors)
-    - [accessor](ClassWithAccessors.md#accessor)
-    - [noGetter](ClassWithAccessors.md#nogetter)
-    - [noSetter](ClassWithAccessors.md#nosetter)
 
 ## Constructors
 
@@ -307,11 +269,6 @@ exports[`Class Reflection should compile class with constructor overloads: (Outp
 
 Comments for ClassWithConstructorOverloads
 
-## Contents
-
-- [Constructors](ClassWithConstructorOverloads.md#constructors)
-    - [new ClassWithConstructorOverloads](ClassWithConstructorOverloads.md#constructors)
-
 ## Constructors
 
 ### new ClassWithConstructorOverloads(x, y)
@@ -374,11 +331,6 @@ exports[`Class Reflection should compile class with constructor overloads: (Outp
 "# ClassWithConstructorOverloads
 
 Comments for ClassWithConstructorOverloads
-
-## Contents
-
-- [Constructors](ClassWithConstructorOverloads.md#constructors)
-    - [new ClassWithConstructorOverloads](ClassWithConstructorOverloads.md#constructors)
 
 ## Constructors
 
@@ -449,21 +401,6 @@ exports[`Class Reflection should compile class with modifiers: (Output File Stra
 "# Class: \`abstract\` ClassWithModifiers
 
 Comments for ClassWithModifiers
-
-## Contents
-
-- [Constructors](ClassWithModifiers.md#constructors)
-    - [new ClassWithModifiers](ClassWithModifiers.md#constructors)
-- [Properties](ClassWithModifiers.md#properties)
-    - [privateProp](ClassWithModifiers.md#privateprop)
-    - [protectedProp](ClassWithModifiers.md#protectedprop)
-    - [publicPropWithDefault](ClassWithModifiers.md#publicpropwithdefault)
-    - [readonlyProp](ClassWithModifiers.md#readonlyprop)
-    - [staticProp](ClassWithModifiers.md#staticprop)
-- [Methods](ClassWithModifiers.md#methods)
-    - [privateMethod](ClassWithModifiers.md#privatemethod)
-    - [publicMethod](ClassWithModifiers.md#publicmethod)
-    - [staticMethod](ClassWithModifiers.md#staticmethod)
 
 ## Constructors
 
@@ -590,16 +527,6 @@ exports[`Class Reflection should compile class with modifiers: (Output File Stra
 
 Comments for ClassWithModifiers
 
-## Contents
-
-- [Constructors](ClassWithModifiers.md#constructors)
-    - [new ClassWithModifiers](ClassWithModifiers.md#constructors)
-- [Properties](ClassWithModifiers.md#properties)
-- [Methods](ClassWithModifiers.md#methods)
-    - [privateMethod](ClassWithModifiers.md#privatemethod)
-    - [publicMethod](ClassWithModifiers.md#publicmethod)
-    - [staticMethod](ClassWithModifiers.md#staticmethod)
-
 ## Constructors
 
 ### new ClassWithModifiers()
@@ -695,11 +622,6 @@ Comments for param B
 
 • **C** = \`boolean\`
 
-## Contents
-
-- [Constructors](ClassWithTypeParameters.md#constructors)
-    - [new ClassWithTypeParameters](ClassWithTypeParameters.md#constructors)
-
 ## Constructors
 
 ### new ClassWithTypeParameters()
@@ -725,11 +647,6 @@ Comments for ClassWithTypeParameters
 | \`B\` extends \`string\` | - | Comments for param B |
 | \`C\` | \`boolean\` | - |
 
-## Contents
-
-- [Constructors](ClassWithTypeParameters.md#constructors)
-    - [new ClassWithTypeParameters](ClassWithTypeParameters.md#constructors)
-
 ## Constructors
 
 ### new ClassWithTypeParameters()
@@ -752,17 +669,6 @@ Comments for DerivedClassA
 ## Extends
 
 - [\`AbstractClass\`](AbstractClass.md)
-
-## Contents
-
-- [Constructors](DerivedClassA.md#constructors)
-    - [new DerivedClassA](DerivedClassA.md#constructors)
-- [Properties](DerivedClassA.md#properties)
-    - [abstractProp](DerivedClassA.md#abstractprop)
-    - [derivedProp](DerivedClassA.md#derivedprop)
-- [Methods](DerivedClassA.md#methods)
-    - [abstractMethod](DerivedClassA.md#abstractmethod)
-    - [derivedMethod](DerivedClassA.md#derivedmethod)
 
 ## Constructors
 
@@ -849,15 +755,6 @@ Comments for DerivedClassA
 
 - [\`AbstractClass\`](AbstractClass.md)
 
-## Contents
-
-- [Constructors](DerivedClassA.md#constructors)
-    - [new DerivedClassA](DerivedClassA.md#constructors)
-- [Properties](DerivedClassA.md#properties)
-- [Methods](DerivedClassA.md#methods)
-    - [abstractMethod](DerivedClassA.md#abstractmethod)
-    - [derivedMethod](DerivedClassA.md#derivedmethod)
-
 ## Constructors
 
 ### new DerivedClassA()
@@ -927,13 +824,6 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 ## Implements
 
 - \`Disposable\`
-
-## Contents
-
-- [Constructors](DisposableClass.md#constructors)
-    - [new DisposableClass](DisposableClass.md#constructors)
-- [Methods](DisposableClass.md#methods)
-    - [[dispose]](DisposableClass.md#dispose)
 
 ## Constructors
 

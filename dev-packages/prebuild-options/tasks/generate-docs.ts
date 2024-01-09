@@ -114,7 +114,7 @@ export async function generateDocs(docsConfig: DocsConfig) {
           });
         }
 
-        if (option.type === ParameterType.Mixed) {
+        if (option.type === ParameterType.Mixed && option.defaultValue) {
           out.push('Below is the full list of keys and default values:');
         }
 
@@ -164,7 +164,7 @@ function getType(option: any) {
     return 'Accepts an Array.';
   }
 
-  if (option.type === ParameterType.Mixed) {
+  if (option.type === ParameterType.Mixed && option.defaultValue) {
     return 'Accepts a key/value object (see example).';
   }
 

@@ -131,6 +131,8 @@ export const hideBreadcrumbs: Partial<DeclarationOption> = {
 };
 
 /**
+ * @deprecated In-page TOC is now hidden as default.
+ *
  * @category UI
  */
 export const hideInPageTOC: Partial<DeclarationOption> = {

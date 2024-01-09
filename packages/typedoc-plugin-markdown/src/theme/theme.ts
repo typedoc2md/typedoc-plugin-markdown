@@ -34,12 +34,16 @@ export class MarkdownTheme extends Theme {
     super(renderer);
 
     // DEPRECATED PROPS WARNING (to delete)
-    const deprecatedOptions = ['indexPageTitle', 'memberPageTitle'];
+    const deprecatedOptions = [
+      'indexPageTitle',
+      'memberPageTitle',
+      'hideInPageTOC',
+    ];
 
     deprecatedOptions.forEach((option) => {
       if (this.application.options.isSet(option)) {
         this.application.logger.warn(
-          `[typedoc-plugin-markdown] "${option}" is deprecated. Please see https://www.typedoc-plugin-markdown.org/options#${option.toLowerCase()}`,
+          `[typedoc-plugin-markdown] "${option}" is deprecated and will be removed in v4 release. Please see https://www.typedoc-plugin-markdown.org/options#${option.toLowerCase()}`,
         );
       }
     });

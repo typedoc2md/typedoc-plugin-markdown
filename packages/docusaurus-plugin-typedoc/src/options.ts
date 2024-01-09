@@ -3,7 +3,6 @@ import { Application } from 'typedoc';
 const DEFAULT_PLUGIN_OPTIONS = {
   id: 'default',
   out: './docs/api',
-  hideInPageTOC: true,
   hideBreadcrumbs: true,
   hidePageHeader: true,
   entryFileName: 'index.md',

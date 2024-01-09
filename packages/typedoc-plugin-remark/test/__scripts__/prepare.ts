@@ -9,7 +9,11 @@ consola.start(`Building test fixtures...`);
 // remove output dir
 fs.removeSync(`./test/out`);
 
-const fixtures = [{ options: 'typedoc.cjs', outDir: 'default' }];
+const fixtures = [
+  { options: 'typedoc.modules.json', outDir: 'modules' },
+  { options: 'typedoc.members.json', outDir: 'members' },
+  { options: 'typedoc.globals.json', outDir: 'globals' },
+];
 
 // write fixtures
 fixtures.forEach((fixture) => {
@@ -24,7 +28,7 @@ function writeMarkdown(fixture: any) {
         '-options',
         `./test/${fixture.options}`,
         '-logLevel',
-        'Warn',
+        'Info',
         '-out',
         `./test/out/${fixture.outDir}`,
       ],

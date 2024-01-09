@@ -23,11 +23,6 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 # SomeInterface
 
-## Contents
-
-- [Properties](SomeInterface.md#properties)
-- [My Events](SomeInterface.md#my-events)
-
 ## Properties
 
 | Property | Type | Description |

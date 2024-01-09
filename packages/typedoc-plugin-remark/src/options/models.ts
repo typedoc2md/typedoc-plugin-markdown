@@ -4,10 +4,10 @@ false;
 
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
-    remarkPlugins: any[];
+    remarkPlugins: any;
   }
 }
 
 export interface PluginOptions {
-  remarkPlugins: any[];
+  remarkPlugins: any;
 }

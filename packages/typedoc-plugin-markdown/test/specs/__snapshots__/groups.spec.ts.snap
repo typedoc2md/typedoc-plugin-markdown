@@ -91,21 +91,6 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-## Contents
-
-- [Enumerations](basic.md#enumerations)
-    - [EnumA](basic.md#enuma)
-    - [EnumB](basic.md#enumb)
-- [Classes](basic.md#classes)
-    - [ClassA](basic.md#classa)
-    - [ClassB](basic.md#classb)
-- [Interfaces](basic.md#interfaces)
-    - [InterfaceA](basic.md#interfacea)
-    - [InterfaceB](basic.md#interfaceb)
-- [Type Aliases](basic.md#type-aliases)
-    - [TypeA](basic.md#typea)
-    - [TypeB](basic.md#typeb)
-
 ## Enumerations
 
 ### EnumA
@@ -287,40 +272,6 @@ exports[`Groups should compile categories group page: (Output File Strategy "mod
 # has-categories
 
 A module that contains categories
-
-## Contents
-
-### Enumerations
-
-#### Category A
-
-- [CategoryAEnum1](has-categories.md#categoryaenum1)
-- [CategoryAEnum2](has-categories.md#categoryaenum2)
-
-#### Category B
-
-- [CategoryBEnum1](has-categories.md#categorybenum1)
-- [CategoryBEnum2](has-categories.md#categorybenum2)
-
-#### Other
-
-- [UnCategorizedEnum](has-categories.md#uncategorizedenum)
-
-### Interfaces
-
-#### Category A
-
-- [CategoryAInterface1](has-categories.md#categoryainterface1)
-- [CategoryAInterface2](has-categories.md#categoryainterface2)
-
-#### Category B
-
-- [CategoryBInterface1](has-categories.md#categorybinterface1)
-- [CategoryBInterface2](has-categories.md#categorybinterface2)
-
-#### Other
-
-- [UnCategorizedInterace](has-categories.md#uncategorizedinterace)
 
 ## Enumerations
 
@@ -677,11 +628,6 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 - [NestedNamespace](namespaces/NestedNamespace.md)
 
-## Contents
-
-- [Interfaces](index.md#interfaces)
-    - [NamespaceInterface](index.md#namespaceinterface)
-
 ## Interfaces
 
 ### NamespaceInterface
@@ -842,27 +788,6 @@ A module that contains namespaces
 
 - [NamespaceB](namespaces/NamespaceB.md)
 - [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md)
-
-## Contents
-
-- [Enumerations](index.md#enumerations)
-    - [EnumB](index.md#enumb)
-    - [\\_Enum\\_A\\_](index.md#enum-a)
-- [Classes](index.md#classes)
-    - [ClassB](index.md#classb)
-    - [\\_\\_Class\\_A\\_](index.md#class-a)
-- [Interfaces](index.md#interfaces)
-    - [InterfaceB](index.md#interfaceb)
-    - [\\_Interface\\_A\\_](index.md#interface-a)
-- [Type Aliases](index.md#type-aliases)
-    - [TypeB](index.md#typeb)
-    - [\\_Type\\_A\\_](index.md#type-a)
-- [Variables](index.md#variables)
-    - [\\_variable\\_A\\_](index.md#variable-a)
-    - [variableB](index.md#variableb)
-- [Functions](index.md#functions)
-    - [\\_function\\_A\\_](index.md#function-a)
-    - [functionB](index.md#functionb)
 
 ## Enumerations
 
@@ -1118,15 +1043,6 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 A module that contains references
 
-## Contents
-
-- [References](has-references.md#references)
-    - [InterfaceA](has-references.md#interfacea)
-    - [RenamedInterfaceB](has-references.md#renamedinterfaceb)
-    - [default](has-references.md#default)
-- [Functions](has-references.md#functions)
-    - [defaultFunction](has-references.md#defaultfunction)
-
 ## References
 
 ### InterfaceA
@@ -1210,13 +1126,6 @@ A module that contains references
 ## Functions
 
 - [defaultFunction](functions/defaultFunction.md)
-
-## Contents
-
-- [References](index.md#references)
-    - [InterfaceA](index.md#interfacea)
-    - [RenamedInterfaceB](index.md#renamedinterfaceb)
-    - [default](index.md#default)
 
 ## References
 

@@ -1,0 +1,5 @@
+{
+  "extends": "./typedoc.base.json",
+  "entryPoints": ["./stubs/module-1.ts"],
+  "outputFileStrategy": "modules"
+}

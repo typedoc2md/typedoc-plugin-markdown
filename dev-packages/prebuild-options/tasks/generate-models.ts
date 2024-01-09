@@ -12,11 +12,14 @@ export async function generateModels() {
   const optionsConfig = await import(DECLARATIONS_PATH);
 
   const mixedTypes = (Object.entries(optionsConfig) as any).filter(
-    ([name, option]) => option.type === ParameterType.Mixed,
+    ([name, option]) =>
+      option.type === ParameterType.Mixed && option.defaultValue,
   );
 
   const containsManuallyValidatedOptions = Object.values(optionsConfig).some(
-    (option) => (option as any).type === ParameterType.Mixed,
+    (option) =>
+      (option as any).type === ParameterType.Mixed &&
+      (option as any).defaultValue,
   );
 
   const optionsOutput = `
@@ -41,7 +44,7 @@ export async function generateModels() {
       .join('\n')}
   }
 
-  ${mixedTypes.map(([name, option]) => {
+  ${mixedTypes?.map(([name, option]) => {
     return `
   export interface ${capitalize(name)} {
       ${Object.keys(option.defaultValue as any)
@@ -72,13 +75,16 @@ function getType(name: string, option: Partial<DeclarationOption>) {
   if (option.type === ParameterType.Boolean) {
     return 'boolean';
   }
+  if (option.type === ParameterType.String) {
+    return 'string';
+  }
   if (option.type === ParameterType.Array) {
     return 'any[]';
   }
   if (option.type === ParameterType.Flags) {
     return 'Record<string, boolean>';
   }
-  if (option.type === ParameterType.Mixed) {
+  if (option.type === ParameterType.Mixed && option.defaultValue) {
     return `ManuallyValidatedOption<${capitalize(name)}>`;
   }
 
@@ -87,7 +93,7 @@ function getType(name: string, option: Partial<DeclarationOption>) {
       .map((value) => `"${value}"`)
       .join(' | ')}`;
   }
-  return 'string';
+  return 'any';
 }
 
 function capitalize(str: string) {

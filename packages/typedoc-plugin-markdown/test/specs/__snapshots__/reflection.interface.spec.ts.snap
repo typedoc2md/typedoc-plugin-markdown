@@ -9,15 +9,6 @@ Comments for BasicInterface
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
-## Contents
-
-- [Properties](BasicInterface.md#properties)
-    - [deprecatedProp](BasicInterface.md#deprecatedprop)
-    - [functionProp](BasicInterface.md#functionprop)
-    - [optionalProp](BasicInterface.md#optionalprop)
-    - [prop](BasicInterface.md#prop)
-    - [propWithProps](BasicInterface.md#propwithprops)
-
 ## Properties
 
 ### ~~deprecatedProp~~
@@ -147,10 +138,6 @@ Comments for BasicInterface
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
-## Contents
-
-- [Properties](BasicInterface.md#properties)
-
 ## Properties
 
 | Property | Type | Description |
@@ -177,16 +164,6 @@ Comments for ExtendedInterface
 ## Extends
 
 - [\`BasicInterface\`](BasicInterface.md)
-
-## Contents
-
-- [Properties](ExtendedInterface.md#properties)
-    - [deprecatedProp](ExtendedInterface.md#deprecatedprop)
-    - [extendedProp](ExtendedInterface.md#extendedprop)
-    - [functionProp](ExtendedInterface.md#functionprop)
-    - [optionalProp](ExtendedInterface.md#optionalprop)
-    - [prop](ExtendedInterface.md#prop)
-    - [propWithProps](ExtendedInterface.md#propwithprops)
 
 ## Properties
 
@@ -347,10 +324,6 @@ Comments for ExtendedInterface
 
 - [\`BasicInterface\`](BasicInterface.md)
 
-## Contents
-
-- [Properties](ExtendedInterface.md#properties)
-
 ## Properties
 
 | Property | Type | Description | Inherited from |
@@ -379,11 +352,6 @@ Comments for IndexableInterface
 
  \\[\`s\`: \`string\`\\]: \`string\`
 
-## Contents
-
-- [Properties](IndexableInterface.md#properties)
-    - [prop](IndexableInterface.md#prop)
-
 ## Properties
 
 ### prop
@@ -405,10 +373,6 @@ Comments for IndexableInterface
 
  \\[\`s\`: \`string\`\\]: \`string\`
 
-## Contents
-
-- [Properties](IndexableInterface.md#properties)
-
 ## Properties
 
 | Property | Type |
@@ -419,14 +383,6 @@ Comments for IndexableInterface
 
 exports[`Interface Reflection should compile interface with event properties: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: InterfaceWithEventProperties
-
-## Contents
-
-- [Properties](InterfaceWithEventProperties.md#properties)
-    - [someProp](InterfaceWithEventProperties.md#someprop)
-- [Events](InterfaceWithEventProperties.md#events)
-    - [anotherEvent](InterfaceWithEventProperties.md#anotherevent)
-    - [someEvent](InterfaceWithEventProperties.md#someevent)
 
 ## Properties
 
@@ -481,11 +437,6 @@ Deprectaed comments
 exports[`Interface Reflection should compile interface with event properties: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# InterfaceWithEventProperties
 
-## Contents
-
-- [Properties](InterfaceWithEventProperties.md#properties)
-- [Events](InterfaceWithEventProperties.md#events)
-
 ## Properties
 
 | Property | Type | Description |
@@ -509,11 +460,6 @@ Comments for InterfaceWithTypeParameters
 ## Type parameters
 
 • **A**
-
-## Contents
-
-- [Properties](InterfaceWithTypeParameters.md#properties)
-    - [prop](InterfaceWithTypeParameters.md#prop)
 
 ## Properties
 
@@ -539,10 +485,6 @@ Comments for InterfaceWithTypeParameters
 | Type parameter |
 | :------ |
 | \`A\` |
-
-## Contents
-
-- [Properties](InterfaceWithTypeParameters.md#properties)
 
 ## Properties
 

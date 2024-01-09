@@ -44,11 +44,6 @@ Some text.
 
 Module commments
 
-### Contents
-
-- [Functions](index.md#functions)
-    - [someFunction](index.md#somefunction)
-
 ### Functions
 
 #### someFunction()

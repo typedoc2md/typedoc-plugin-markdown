@@ -64,7 +64,6 @@ export interface TextContentMappings {
   'title.indexPage': string;
   'title.modulePage': string;
   'title.memberPage': string;
-  'label.contents': string;
   'label.defaultValue': string;
   'label.description': string;
   'label.extendedBy': string;

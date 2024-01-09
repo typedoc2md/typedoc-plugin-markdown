@@ -14,7 +14,7 @@ export default {
     </div>
   ),
   project: {
-    link: 'https://github.com/tgreyuk/typedoc-plugin-markdown',
+    link: 'https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next',
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,

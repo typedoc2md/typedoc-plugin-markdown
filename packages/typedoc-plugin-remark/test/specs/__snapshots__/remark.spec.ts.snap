@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Remark should load and parse with remark-github and prettier plugins 1`] = `
+exports[`Remark should parse globals page 1`] = `
 "# typedoc-plugin-remark
 
 Comments form module comments
@@ -17,12 +17,234 @@ reallyUgly(javascript);
 }
 \`\`\`
 
+## Contents
+
+- [Classes](#classes)
+  - [SomeClass](#someclass)
+- [Interfaces](#interfaces)
+  - [SomeInterface](#someinterface)
+- [Variables](#variables)
+  - [\\_\\_variable_with_underscores\\_\\_](#__variable_with_underscores__)
+- [Functions](#functions)
+  - [some_function()](#some_function)
+
+## Classes
+
+### SomeClass
+
+#### Constructors
+
+##### new SomeClass()
+
+> **new SomeClass**(): [\`SomeClass\`](README.md#someclass)
+
+###### Returns
+
+[\`SomeClass\`](README.md#someclass)
+
+#### Properties
+
+##### someProp
+
+> **someProp**: \`string\`
+
+## Interfaces
+
+### SomeInterface
+
+#### Properties
+
+##### someProp
+
+> **someProp**: \`string\`
+
 ## Variables
 
-- [\\_\\_variable_with_underscores\\_\\_](variables/variable_with_underscores__.md)
+### \\_\\_variable_with_underscores\\_\\_
+
+> **\`const\`** **\\_\\_variable_with_underscores\\_\\_**: \`true\` = \`true\`
 
 ## Functions
 
+### some_function()
+
+> **some_function**(\`param\`): \`void\`
+
+#### Parameters
+
+| Parameter | Type     |
+| :-------- | :------- |
+| \`param\`   | \`string\` |
+
+#### Returns
+
+\`void\`
+"
+`;
+
+exports[`Remark should parse members class page 1`] = `
+"# Class: SomeClass
+
+## Contents
+
+- [Constructors](#constructors)
+  - [new SomeClass()](#new-someclass)
+- [Properties](#properties)
+  - [someProp](#someprop)
+
+## Constructors
+
+### new SomeClass()
+
+> **new SomeClass**(): [\`SomeClass\`](SomeClass.md)
+
+#### Returns
+
+[\`SomeClass\`](SomeClass.md)
+
+## Properties
+
+### someProp
+
+> **someProp**: \`string\`
+"
+`;
+
+exports[`Remark should parse members index 1`] = `
+"# typedoc-plugin-remark
+
+## Modules
+
+- [module-1](module-1/README.md)
+- [module-2](module-2/README.md)
+"
+`;
+
+exports[`Remark should parse members module page 1`] = `
+"# module-1
+
+Comments form module comments
+
+Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/1).
+
+\`\`\`js
+reallyUgly(javascript);
+\`\`\`
+
+\`\`\`css
+.h1 {
+  color: red;
+}
+\`\`\`
+
+## Index
+
+### Classes
+
+- [SomeClass](classes/SomeClass.md)
+
+### Interfaces
+
+- [SomeInterface](interfaces/SomeInterface.md)
+
+### Variables
+
+- [\\_\\_variable_with_underscores\\_\\_](variables/variable_with_underscores__.md)
+
+### Functions
+
 - [some_function](functions/some_function.md)
+"
+`;
+
+exports[`Remark should parse modules index 1`] = `
+"# typedoc-plugin-remark
+
+## Modules
+
+- [module-1](module-1.md)
+- [module-2](module-2.md)
+"
+`;
+
+exports[`Remark should parse modules module page 1`] = `
+"# module-1
+
+Comments form module comments
+
+Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/1).
+
+\`\`\`js
+reallyUgly(javascript);
+\`\`\`
+
+\`\`\`css
+.h1 {
+  color: red;
+}
+\`\`\`
+
+## Contents
+
+- [Classes](#classes)
+  - [SomeClass](#someclass)
+- [Interfaces](#interfaces)
+  - [SomeInterface](#someinterface)
+- [Variables](#variables)
+  - [\\_\\_variable_with_underscores\\_\\_](#__variable_with_underscores__)
+- [Functions](#functions)
+  - [some_function()](#some_function)
+
+## Classes
+
+### SomeClass
+
+#### Constructors
+
+##### new SomeClass()
+
+> **new SomeClass**(): [\`SomeClass\`](module-1.md#someclass)
+
+###### Returns
+
+[\`SomeClass\`](module-1.md#someclass)
+
+#### Properties
+
+##### someProp
+
+> **someProp**: \`string\`
+
+## Interfaces
+
+### SomeInterface
+
+#### Properties
+
+##### someProp
+
+> **someProp**: \`string\`
+
+## Variables
+
+### \\_\\_variable_with_underscores\\_\\_
+
+> **\`const\`** **\\_\\_variable_with_underscores\\_\\_**: \`true\` = \`true\`
+
+## Functions
+
+### some_function()
+
+> **some_function**(\`param\`): \`void\`
+
+#### Parameters
+
+| Parameter | Type     |
+| :-------- | :------- |
+| \`param\`   | \`string\` |
+
+#### Returns
+
+\`void\`
 "
 `;

@@ -5,11 +5,10 @@ import {
   ProjectReflection,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { OutputFileStrategy } from '../../../options/maps';
 import { MarkdownPageEvent } from '../../../plugin/events';
 import { heading } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
-import { hasIndex, hasToc } from '../../helpers';
+import { hasIndex } from '../../helpers';
 
 /**
  * @category Partials
@@ -44,18 +43,6 @@ export function pageIndex(
     });
     md.push(packagesList?.join('\n') || '');
     return md.join('\n\n');
-  }
-
-  if (
-    !context.options.getValue('hideInPageTOC') &&
-    hasToc(
-      page.model as DeclarationReflection,
-      context.options.getValue('outputFileStrategy') ===
-        OutputFileStrategy.Members,
-    )
-  ) {
-    md.push(heading(headingLevel, context.getTextContent('label.contents')));
-    md.push(context.reflectionIndex(page.model, true, headingLevel + 1));
   }
 
   return md.join('\n\n');

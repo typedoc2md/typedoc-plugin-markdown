@@ -33,7 +33,6 @@ export const StaticText = {
   'title.indexPage': '{projectName} {version}',
   'title.modulePage': '{name}',
   'title.memberPage': '{kind}: {name}',
-  'label.contents': 'Contents',
   'label.defaultValue': 'Default value',
   'label.description': 'Description',
   'label.extendedBy': 'Extended By',

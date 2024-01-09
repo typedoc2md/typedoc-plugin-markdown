@@ -166,18 +166,6 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
-## Contents
-
-- [Enumerations](README.md#enumerations)
-    - [CommentEnum](README.md#commentenum)
-- [Interfaces](README.md#interfaces)
-    - [CommentInterface](README.md#commentinterface)
-    - [SameName](README.md#samename)
-- [Variables](README.md#variables)
-    - [SameName](README.md#samename-1)
-    - [prop](README.md#prop)
-    - [propb](README.md#propb)
-
 ## Enumerations
 
 ### CommentEnum
@@ -274,18 +262,6 @@ A \`<tag>\` in backticks
 A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
-
-## Contents
-
-- [Enumerations](README.md#enumerations)
-    - [CommentEnum](README.md#commentenum)
-- [Interfaces](README.md#interfaces)
-    - [CommentInterface](README.md#commentinterface)
-    - [SameName](README.md#samename)
-- [Variables](README.md#variables)
-    - [SameName](README.md#samename-1)
-    - [prop](README.md#prop-2)
-    - [propb](README.md#propb-2)
 
 ## Enumerations
 

@@ -5,12 +5,6 @@ exports[`Enum Reflection should compile basic enum: (Output File Strategy "membe
 
 Comments for enum
 
-## Contents
-
-- [Enumeration Members](BasicEnum.md#enumeration-members)
-    - [MemberA](BasicEnum.md#membera)
-    - [MemberB](BasicEnum.md#memberb)
-
 ## Enumeration Members
 
 ### MemberA
@@ -42,10 +36,6 @@ exports[`Enum Reflection should compile basic enum: (Output File Strategy "membe
 
 Comments for enum
 
-## Contents
-
-- [Enumeration Members](BasicEnum.md#enumeration-members)
-
 ## Enumeration Members
 
 | Enumeration Member | Value | Description |
@@ -59,12 +49,6 @@ exports[`Enum Reflection should compile enum with values: (Output File Strategy 
 "# Enumeration: EnumWithValues
 
 Comments for enum
-
-## Contents
-
-- [Enumeration Members](EnumWithValues.md#enumeration-members)
-    - [MemberA](EnumWithValues.md#membera)
-    - [MemberB](EnumWithValues.md#memberb)
 
 ## Enumeration Members
 
@@ -92,10 +76,6 @@ exports[`Enum Reflection should compile enum with values: (Output File Strategy 
 "# EnumWithValues
 
 Comments for enum
-
-## Contents
-
-- [Enumeration Members](EnumWithValues.md#enumeration-members)
 
 ## Enumeration Members
 

@@ -17,8 +17,7 @@
     "test:lint-mdx": "node test/__scripts__/lint.mdx.mjs",
     "test:jest": "jest",
     "build-and-run": "npm run build && npm run pretest",
-    "build-and-test": "npm run build && npm run test",
-    "api-docs": "npm run build && typedoc --options ./typedoc.api.js --out ./docs/api"
+    "build-and-test": "npm run build && npm run test"
   },
   "author": "Thomas Grey",
   "license": "MIT",

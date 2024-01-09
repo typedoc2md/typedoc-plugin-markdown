@@ -6,5 +6,5 @@ import { DeclarationOption, ParameterType } from 'typedoc';
  */
 export const remarkPlugins: Partial<DeclarationOption> = {
   help: 'An array of remark plugins.',
-  type: ParameterType.Array,
+  type: ParameterType.Mixed,
 };
