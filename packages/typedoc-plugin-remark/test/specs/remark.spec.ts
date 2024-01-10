@@ -19,7 +19,7 @@ describe(`Remark`, () => {
   test(`should parse members class page`, async () => {
     const contents = fs
       .readFileSync(
-        path.join(__dirname, '../out/members/module-1/classes/someClass.md'),
+        path.join(__dirname, '../out/members/module-1/classes/SomeClass.md'),
       )
       .toString();
     expect(contents).toMatchSnapshot();
