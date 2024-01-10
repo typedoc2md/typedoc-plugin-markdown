@@ -28,6 +28,9 @@
     "remark": "^15.0.1",
     "to-vfile": "^8.0.0"
   },
+  "peerDependencies": {
+    "typedoc-plugin-markdown": ">=4.0.0-next.39"
+  },
   "keywords": [
     "typedoc",
     "remark"
