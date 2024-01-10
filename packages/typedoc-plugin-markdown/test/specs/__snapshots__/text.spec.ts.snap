@@ -53,3 +53,20 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 - [SomeInterface](interfaces/SomeInterface.md)
 "
 `;
+
+exports[`Text should get translations for modules page: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"**[My API - v0.0](http://www.google.com)** • [My Readme](README.md) \\| Docs
+
+***
+
+[Home](modules.md) / module-2
+
+# Module - module-2
+
+## Variables
+
+### Variable: constA
+
+> **\`const\`** **constA**: \`true\` = \`true\`
+"
+`;

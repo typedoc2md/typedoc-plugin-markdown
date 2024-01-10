@@ -5,7 +5,7 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
-## Extended By
+## Extended by
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -134,7 +134,7 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
-## Extended By
+## Extended by
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 

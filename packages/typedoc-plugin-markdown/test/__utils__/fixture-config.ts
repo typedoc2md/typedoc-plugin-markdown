@@ -153,7 +153,6 @@ export const FIXTURES: Fixture[] = [
   {
     outDir: FixtureOutputDir.Text,
     entryPoints: FixtureEntryPoints.Text,
-    membersOnly: true,
     commonOptions: { hideGenerator: true, disableSources: true },
     options: [
       {

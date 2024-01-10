@@ -33,7 +33,7 @@ export function signatureMember(
     md.push(
       heading(
         headingLevel,
-        context.getTextContent('kind.type-parameter.plural'),
+        context.getTextContent('kind.typeParameter.plural'),
       ),
     );
     if (context.options.getValue('parametersFormat') === 'table') {

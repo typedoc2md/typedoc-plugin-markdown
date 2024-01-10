@@ -64,6 +64,7 @@ export interface TextContentMappings {
   'title.indexPage': string;
   'title.modulePage': string;
   'title.memberPage': string;
+  'title.member': string;
   'label.defaultValue': string;
   'label.description': string;
   'label.extendedBy': string;
@@ -91,8 +92,8 @@ export interface TextContentMappings {
   'kind.constructor.plural': string;
   'kind.enum.singular': string;
   'kind.enum.plural': string;
-  'kind.enum-member.singular': string;
-  'kind.enum-member.plural': string;
+  'kind.enumMember.singular': string;
+  'kind.enumMember.plural': string;
   'kind.event.singular': string;
   'kind.event.plural': string;
   'kind.function.singular': string;
@@ -113,8 +114,8 @@ export interface TextContentMappings {
   'kind.property.plural': string;
   'kind.reference.singular': string;
   'kind.reference.plural': string;
-  'kind.type-alias.singular': string;
-  'kind.type-alias.plural': string;
-  'kind.type-parameter.singular': string;
-  'kind.type-parameter.plural': string;
+  'kind.typeAlias.singular': string;
+  'kind.typeAlias.plural': string;
+  'kind.typeParameter.singular': string;
+  'kind.typeParameter.plural': string;
 }

@@ -29,7 +29,7 @@ async function main() {
     { key: 'class', kind: ReflectionKind.Class },
     { key: 'constructor', kind: ReflectionKind.Constructor },
     { key: 'enum', kind: ReflectionKind.Enum },
-    { key: 'enum-member', kind: ReflectionKind.EnumMember },
+    { key: 'enumMember', kind: ReflectionKind.EnumMember },
     { key: 'event', kind: undefined },
     { key: 'function', kind: ReflectionKind.Function },
     { key: 'interface', kind: ReflectionKind.Interface },
@@ -40,8 +40,8 @@ async function main() {
     { key: 'parameter', kind: ReflectionKind.Parameter },
     { key: 'property', kind: ReflectionKind.Property },
     { key: 'reference', kind: ReflectionKind.Reference },
-    { key: 'type-alias', kind: ReflectionKind.TypeAlias },
-    { key: 'type-parameter', kind: ReflectionKind.TypeParameter },
+    { key: 'typeAlias', kind: ReflectionKind.TypeAlias },
+    { key: 'typeParameter', kind: ReflectionKind.TypeParameter },
   ];
 
   const kindsString: string[] = [];

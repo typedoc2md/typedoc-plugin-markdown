@@ -27,7 +27,12 @@ export function member(
     !reflection.hasOwnDocument &&
     !(reflection.kind === ReflectionKind.Constructor)
   ) {
-    md.push(heading(headingLevel, getMemberTitle(reflection)));
+    const memberName = getMemberTitle(reflection);
+    const memberHeading = context
+      .getTextContent('title.member')
+      .replace('{name}', memberName)
+      .replace('{kind}', context.kindString(reflection.kind));
+    md.push(heading(headingLevel, memberHeading));
   }
 
   const getMember = (reflection: DeclarationReflection) => {

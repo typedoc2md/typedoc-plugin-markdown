@@ -9,6 +9,7 @@ module.exports = {
     'breadcrumbs.home': 'Home',
     'title.indexPage': ':tada: Custom Index Title',
     'title.memberPage': '{name}',
+    'title.member': '{kind}: {name}',
     'title.modulePage': '{kind} - {name}',
     'label.source': 'Defined In',
     'kind.event.plural': 'My Events',

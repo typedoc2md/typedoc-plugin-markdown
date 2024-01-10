@@ -15,7 +15,7 @@ export function enumMembersTable(
   const hasComments = comments.some((value) => Boolean(value));
 
   const headers = [
-    context.getTextContent('kind.enum-member.singular'),
+    context.getTextContent('kind.enumMember.singular'),
     context.getTextContent('label.value'),
   ];
 

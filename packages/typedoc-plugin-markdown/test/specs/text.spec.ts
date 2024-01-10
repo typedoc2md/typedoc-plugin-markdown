@@ -28,4 +28,12 @@ describe(`Text`, () => {
       ['module-1/interfaces/SomeInterface.md'],
     );
   });
+
+  test(`should get translations for modules page`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Text,
+      FixtureOutputFileStrategy.Modules,
+      ['module-2.md'],
+    );
+  });
 });

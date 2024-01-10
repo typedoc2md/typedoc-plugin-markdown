@@ -21,7 +21,7 @@ export function typeParametersTable(
     Boolean(typeParameter.comment),
   );
 
-  const headers = [context.getTextContent('kind.type-parameter.singular')];
+  const headers = [context.getTextContent('kind.typeParameter.singular')];
 
   if (hasDefault) {
     headers.push(context.getTextContent('label.value'));

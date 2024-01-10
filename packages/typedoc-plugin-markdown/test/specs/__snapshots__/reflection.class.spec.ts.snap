@@ -3,7 +3,7 @@
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: \`abstract\` AbstractClass
 
-## Extended By
+## Extended by
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
@@ -51,7 +51,7 @@ Comments for abstractMethod
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# \`abstract\` AbstractClass
 
-## Extended By
+## Extended by
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)

@@ -52,7 +52,9 @@ export function declarationMember(
     declaration.type.typeArguments?.length
   ) {
     if (declaration.type.typeArguments[0] instanceof ReflectionType) {
-      md.push(heading(headingLevel, 'Type declaration'));
+      md.push(
+        heading(headingLevel, context.getTextContent('label.typeDeclaration')),
+      );
       md.push(
         context.typeDeclarationMember(
           declaration.type.typeArguments[0].declaration,
@@ -63,7 +65,12 @@ export function declarationMember(
   }
 
   if (declaration.typeParameters) {
-    md.push(heading(headingLevel, 'Type parameters'));
+    md.push(
+      heading(
+        headingLevel,
+        context.getTextContent('kind.typeParameter.plural'),
+      ),
+    );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.typeParametersTable(declaration.typeParameters));
     } else {
@@ -78,7 +85,9 @@ export function declarationMember(
 
   if (typeDeclaration) {
     if (typeDeclaration?.indexSignature) {
-      md.push(heading(headingLevel, `Index signature`));
+      md.push(
+        heading(headingLevel, context.getTextContent('label.indexSignature')),
+      );
       md.push(context.indexSignatureTitle(typeDeclaration.indexSignature));
     }
 
