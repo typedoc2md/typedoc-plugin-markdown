@@ -14,7 +14,6 @@ declare module 'typedoc' {
     hideInPageTOC: boolean;
     indexPageTitle: string;
     memberPageTitle: string;
-    textContentMappings: ManuallyValidatedOption<TextContentMappings>;
     excludeGroups: boolean;
     useCodeBlocks: boolean;
     expandObjects: boolean;
@@ -23,10 +22,11 @@ declare module 'typedoc' {
     enumMembersFormat: 'list' | 'table';
     typeDeclarationFormat: 'list' | 'table';
     indexFormat: 'list' | 'table';
+    textContentMappings: ManuallyValidatedOption<TextContentMappings>;
     publicPath: string;
     preserveAnchorCasing: boolean;
     anchorPrefix: string;
-    namedAnchors: Record<string, boolean>;
+    namedAnchors: boolean;
   }
 }
 
@@ -41,7 +41,6 @@ export interface PluginOptions {
   hideInPageTOC: boolean;
   indexPageTitle: string;
   memberPageTitle: string;
-  textContentMappings: ManuallyValidatedOption<TextContentMappings>;
   excludeGroups: boolean;
   useCodeBlocks: boolean;
   expandObjects: boolean;
@@ -50,10 +49,11 @@ export interface PluginOptions {
   enumMembersFormat: 'list' | 'table';
   typeDeclarationFormat: 'list' | 'table';
   indexFormat: 'list' | 'table';
+  textContentMappings: ManuallyValidatedOption<TextContentMappings>;
   publicPath: string;
   preserveAnchorCasing: boolean;
   anchorPrefix: string;
-  namedAnchors: Record<string, boolean>;
+  namedAnchors: boolean;
 }
 
 export interface TextContentMappings {

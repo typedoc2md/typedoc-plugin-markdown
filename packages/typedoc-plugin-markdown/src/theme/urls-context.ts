@@ -313,9 +313,7 @@ export class UrlsContext {
   }
 
   private getAnchorName(reflection: DeclarationReflection) {
-    const htmlTableAnchors =
-      this.options.getValue('namedAnchors') &&
-      this.options.getValue('namedAnchors')['tableRows'];
+    const htmlTableAnchors = this.options.getValue('namedAnchors');
 
     if (!htmlTableAnchors) {
       if (

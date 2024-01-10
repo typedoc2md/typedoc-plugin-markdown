@@ -67,9 +67,7 @@ export const FIXTURES: Fixture[] = [
         readme: 'none',
         categorizeByGroup: false,
         excludeGroups: true,
-        namedAnchors: {
-          headings: true,
-        },
+        namedAnchors: true,
         //membersWithOwnFile: ['Class', 'Interface', 'Enum'],
         plugin: [path.join(__dirname, '..', 'custom-plugins', 'custom-theme')],
         theme: 'custom-theme',
@@ -93,9 +91,7 @@ export const FIXTURES: Fixture[] = [
     options: [
       {},
       {
-        namedAnchors: {
-          tableRows: true,
-        },
+        namedAnchors: true,
       },
     ],
   },

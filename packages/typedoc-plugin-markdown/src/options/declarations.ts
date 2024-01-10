@@ -169,47 +169,6 @@ export const memberPageTitle: Partial<DeclarationOption> = {
 };
 
 /**
- * This option enables changing static text rendered to the documentation.
- * Useful if an alternative English phrase is preferred or to translate English text to another language.
- * This option does not attempt to address translating text within code comments.
- *
- * **Placeholders**
- *
- * Default values within curly braces `{}` indicates a placeholder of dynamic text.
- * The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
- *
- * **keys**
- *
- * Keys are categorised with the following namespace conventions:
- *
- * - `header.*` defines text in the page header (if displayed).
- * - `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
- * - `title.*` defines text in main page titles.
- * - `label.*` other text in page content, including headings and table headers.
- * - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
- *
- * Only keys that require translation need to be added to the object.
- *
- * @category UI
- */
-export const textContentMappings: Partial<DeclarationOption> = {
-  help: 'Provides a mechanism to change the content of text used in documentation.',
-  type: ParameterType.Mixed,
-  defaultValue: StaticText,
-  validate(value) {
-    if (!value || typeof value !== 'object') {
-      throw new Error('textContentMappings must be an object.');
-    }
-
-    for (const val of Object.values(value)) {
-      if (typeof val !== 'string') {
-        throw new Error(`All values of textContentMappings must be strings.`);
-      }
-    }
-  },
-};
-
-/**
  * By default members are grouped by kind (eg Classes, Functions etc).
  *
  * This creates a flat structure where all members are displayed at the same heading level.
@@ -320,6 +279,47 @@ export const indexFormat: Partial<DeclarationOption> = {
 };
 
 /**
+ * This option enables changing static text rendered to the documentation.
+ * Useful if an alternative English phrase is preferred or to translate English text to another language.
+ * This option does not attempt to address translating text within code comments.
+ *
+ * **Placeholders**
+ *
+ * Default values within curly braces `{}` indicates a placeholder of dynamic text.
+ * The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
+ *
+ * **keys**
+ *
+ * Keys are categorised with the following namespace conventions:
+ *
+ * - `header.*` defines text in the page header (if displayed).
+ * - `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
+ * - `title.*` defines text in main page titles.
+ * - `label.*` other text in page content, including headings and table headers.
+ * - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
+ *
+ * Only keys that require translation need to be added to the object.
+ *
+ * @category UI
+ */
+export const textContentMappings: Partial<DeclarationOption> = {
+  help: 'Provides a mechanism to change the content of text used in documentation.',
+  type: ParameterType.Mixed,
+  defaultValue: StaticText,
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error('textContentMappings must be an object.');
+    }
+
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string') {
+        throw new Error(`All values of textContentMappings must be strings.`);
+      }
+    }
+  },
+};
+
+/**
  * If undefined all urls will be relative.
  *
  * @example "http://abc.com"
@@ -359,24 +359,15 @@ export const anchorPrefix: Partial<DeclarationOption> = {
 };
 
 /**
+ * This option should be used if there are issues with anchoring to symbols within a page.
  *
- * There are two flags exposed by this option:
- *
- * @headings
- *
- * Add HTML named anchors to headings for implementations that do not assign header ids.
- *
- * @tableRows
- *
- * Add HTML named anchors to table rows when table format options are selected.
+ * - For markdown parsers that do not automatically assign header ids.
+ * - When cross referencing symbols that are referenced in a table row.
  *
  * @category Utility
  */
 export const namedAnchors: Partial<DeclarationOption> = {
-  help: 'Flags to specifify where HTML named anchor tags should be used for internal anchor links.',
-  type: ParameterType.Flags,
-  defaults: {
-    headings: false,
-    tableRows: false,
-  },
+  help: 'Add HTML named anchors to headings and table rows.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
 };

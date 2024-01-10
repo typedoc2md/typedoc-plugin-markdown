@@ -203,107 +203,6 @@ Provides a mechanism to configure the page title of members.
 
 ___
 
-### textContentMappings
-
-<Callout>Provides a mechanism to change the content of text used in documentation.</Callout>
-
-> Accepts a key/value object (see example).
-
-This option enables changing static text rendered to the documentation.
-Useful if an alternative English phrase is preferred or to translate English text to another language.
-This option does not attempt to address translating text within code comments.
-
-**Placeholders**
-
-Default values within curly braces `{}` indicates a placeholder of dynamic text.
-The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
-
-**keys**
-
-Keys are categorised with the following namespace conventions:
-
-- `header.*` defines text in the page header (if displayed).
-- `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
-- `title.*` defines text in main page titles.
-- `label.*` other text in page content, including headings and table headers.
-- `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
-
-Only keys that require translation need to be added to the object.
-
-Below is the full list of keys and default values:
-
-
-```json filename="typedoc.json"
-{
-  "textContentMappings": {
-    "header.title": "{projectName} {version}",
-    "header.readme": "Readme",
-    "header.docs": "API",
-    "breadcrumbs.home": "{projectName}",
-    "title.indexPage": "{projectName} {version}",
-    "title.modulePage": "{name}",
-    "title.memberPage": "{kind}: {name}",
-    "title.member": "{name}",
-    "label.defaultValue": "Default value",
-    "label.description": "Description",
-    "label.extendedBy": "Extended by",
-    "label.extends": "Extends",
-    "label.implements": "Implements",
-    "label.implementationOf": "Implementation of",
-    "label.inheritedFrom": "Inherited from",
-    "label.index": "Index",
-    "label.indexable": "Indexable",
-    "label.indexSignature": "Index signature",
-    "label.member": "Member",
-    "label.modifier": "Modifier",
-    "label.overrides": "Overrides",
-    "label.packages": "Packages",
-    "label.reExports": "Re-exports",
-    "label.renamesAndReExports": "Renames and re-exports",
-    "label.returns": "Returns",
-    "label.source": "Source",
-    "label.type": "Type",
-    "label.typeDeclaration": "Type declaration",
-    "label.value": "Value",
-    "kind.class.singular": "Class",
-    "kind.class.plural": "Classes",
-    "kind.constructor.singular": "Constructor",
-    "kind.constructor.plural": "Constructors",
-    "kind.enum.singular": "Enumeration",
-    "kind.enum.plural": "Enumerations",
-    "kind.enumMember.singular": "Enumeration Member",
-    "kind.enumMember.plural": "Enumeration Members",
-    "kind.event.singular": "Event",
-    "kind.event.plural": "Events",
-    "kind.function.singular": "Function",
-    "kind.function.plural": "Functions",
-    "kind.interface.singular": "Interface",
-    "kind.interface.plural": "Interfaces",
-    "kind.method.singular": "Method",
-    "kind.method.plural": "Methods",
-    "kind.module.singular": "Module",
-    "kind.module.plural": "Modules",
-    "kind.namespace.singular": "Namespace",
-    "kind.namespace.plural": "Namespaces",
-    "kind.variable.singular": "Variable",
-    "kind.variable.plural": "Variables",
-    "kind.parameter.singular": "Parameter",
-    "kind.parameter.plural": "Parameters",
-    "kind.property.singular": "Property",
-    "kind.property.plural": "Properties",
-    "kind.reference.singular": "Reference",
-    "kind.reference.plural": "References",
-    "kind.typeAlias.singular": "Type alias",
-    "kind.typeAlias.plural": "Type Aliases",
-    "kind.typeParameter.singular": "Type parameter",
-    "kind.typeParameter.plural": "Type parameters"
-  }
-}
-
-```
-
-___
-
 ### excludeGroups
 
 <Callout>Excludes grouping by kind so all members are rendered and sorted at the same level.</Callout>
@@ -464,6 +363,107 @@ This option renders index items either as a simple list or in a table with a des
 
 ___
 
+### textContentMappings
+
+<Callout>Provides a mechanism to change the content of text used in documentation.</Callout>
+
+> Accepts a key/value object (see example).
+
+This option enables changing static text rendered to the documentation.
+Useful if an alternative English phrase is preferred or to translate English text to another language.
+This option does not attempt to address translating text within code comments.
+
+**Placeholders**
+
+Default values within curly braces `{}` indicates a placeholder of dynamic text.
+The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
+
+**keys**
+
+Keys are categorised with the following namespace conventions:
+
+- `header.*` defines text in the page header (if displayed).
+- `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
+- `title.*` defines text in main page titles.
+- `label.*` other text in page content, including headings and table headers.
+- `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
+
+Only keys that require translation need to be added to the object.
+
+Below is the full list of keys and default values:
+
+
+```json filename="typedoc.json"
+{
+  "textContentMappings": {
+    "header.title": "{projectName} {version}",
+    "header.readme": "Readme",
+    "header.docs": "API",
+    "breadcrumbs.home": "{projectName}",
+    "title.indexPage": "{projectName} {version}",
+    "title.modulePage": "{name}",
+    "title.memberPage": "{kind}: {name}",
+    "title.member": "{name}",
+    "label.defaultValue": "Default value",
+    "label.description": "Description",
+    "label.extendedBy": "Extended by",
+    "label.extends": "Extends",
+    "label.implements": "Implements",
+    "label.implementationOf": "Implementation of",
+    "label.inheritedFrom": "Inherited from",
+    "label.index": "Index",
+    "label.indexable": "Indexable",
+    "label.indexSignature": "Index signature",
+    "label.member": "Member",
+    "label.modifier": "Modifier",
+    "label.overrides": "Overrides",
+    "label.packages": "Packages",
+    "label.reExports": "Re-exports",
+    "label.renamesAndReExports": "Renames and re-exports",
+    "label.returns": "Returns",
+    "label.source": "Source",
+    "label.type": "Type",
+    "label.typeDeclaration": "Type declaration",
+    "label.value": "Value",
+    "kind.class.singular": "Class",
+    "kind.class.plural": "Classes",
+    "kind.constructor.singular": "Constructor",
+    "kind.constructor.plural": "Constructors",
+    "kind.enum.singular": "Enumeration",
+    "kind.enum.plural": "Enumerations",
+    "kind.enumMember.singular": "Enumeration Member",
+    "kind.enumMember.plural": "Enumeration Members",
+    "kind.event.singular": "Event",
+    "kind.event.plural": "Events",
+    "kind.function.singular": "Function",
+    "kind.function.plural": "Functions",
+    "kind.interface.singular": "Interface",
+    "kind.interface.plural": "Interfaces",
+    "kind.method.singular": "Method",
+    "kind.method.plural": "Methods",
+    "kind.module.singular": "Module",
+    "kind.module.plural": "Modules",
+    "kind.namespace.singular": "Namespace",
+    "kind.namespace.plural": "Namespaces",
+    "kind.variable.singular": "Variable",
+    "kind.variable.plural": "Variables",
+    "kind.parameter.singular": "Parameter",
+    "kind.parameter.plural": "Parameters",
+    "kind.property.singular": "Property",
+    "kind.property.plural": "Properties",
+    "kind.reference.singular": "Reference",
+    "kind.reference.plural": "References",
+    "kind.typeAlias.singular": "Type alias",
+    "kind.typeAlias.plural": "Type Aliases",
+    "kind.typeParameter.singular": "Type parameter",
+    "kind.typeParameter.plural": "Type parameters"
+  }
+}
+
+```
+
+___
+
 ## Utility Options
 
 ### publicPath
@@ -524,28 +524,19 @@ ___
 
 ### namedAnchors
 
-<Callout>Flags to specifify where HTML named anchor tags should be used for internal anchor links.</Callout>
+<Callout>Add HTML named anchors to headings and table rows.</Callout>
 
-> Defaults to `{"headings":false,"tableRows":false}`.
+> Accepts a boolean value. Defaults to `false`.
 
+This option should be used if there are issues with anchoring to symbols within a page.
 
-There are two flags exposed by this option:
-
-**headings**
-
-Add HTML named anchors to headings for implementations that do not assign header ids.
-
-**tableRows**
-
-Add HTML named anchors to table rows when table format options are selected.
+- For markdown parsers that do not automatically assign header ids.
+- When cross referencing symbols that are referenced in a table row.
 
 
 ```json filename="typedoc.json"
 {
-  "namedAnchors": {
-    "headings": false,
-    "tableRows": false
-  }
+  "namedAnchors": false
 }
 
 ```

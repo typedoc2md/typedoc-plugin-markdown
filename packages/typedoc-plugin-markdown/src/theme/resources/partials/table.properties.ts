@@ -67,10 +67,7 @@ export function propertiesTable(
 
     const nameColumn: string[] = [];
 
-    if (
-      context.options.getValue('namedAnchors')?.tableRows &&
-      property.anchor
-    ) {
+    if (context.options.getValue('namedAnchors') && property.anchor) {
       nameColumn.push(
         `<a id="${property.anchor}" name="${property.anchor}"></a>`,
       );
