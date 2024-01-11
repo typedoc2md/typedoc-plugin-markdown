@@ -13,6 +13,7 @@ const fixtures = [
   { options: 'typedoc.modules.json', outDir: 'modules' },
   { options: 'typedoc.members.json', outDir: 'members' },
   { options: 'typedoc.globals.json', outDir: 'globals' },
+  { options: 'typedoc.globals-notoc.json', outDir: 'globals-notoc' },
 ];
 
 // write fixtures
@@ -28,7 +29,7 @@ function writeMarkdown(fixture: any) {
         '-options',
         `./test/${fixture.options}`,
         '-logLevel',
-        'Info',
+        'Warn',
         '-out',
         `./test/out/${fixture.outDir}`,
       ],

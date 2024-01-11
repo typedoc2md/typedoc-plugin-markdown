@@ -3,66 +3,45 @@
 exports[`Remark should parse globals page 1`] = `
 "# typedoc-plugin-remark
 
-Comments form module comments
+## CustomTOC
 
-Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/1).
-
-\`\`\`js
-reallyUgly(javascript);
-\`\`\`
-
-\`\`\`css
-.h1 {
-  color: red;
-}
-\`\`\`
-
-## Contents
-
-- [Classes](#classes)
-  - [SomeClass](#someclass)
-- [Interfaces](#interfaces)
-  - [SomeInterface](#someinterface)
 - [Variables](#variables)
-  - [\\_\\_variable_with_underscores\\_\\_](#__variable_with_underscores__)
+  - [someVariable](#somevariable)
 - [Functions](#functions)
   - [some_function()](#some_function)
 
-## Classes
+## Variables
 
-### SomeClass
+### someVariable
 
-#### Constructors
+> **\`const\`** **someVariable**: \`true\` = \`true\`
 
-##### new SomeClass()
+## Functions
 
-> **new SomeClass**(): [\`SomeClass\`](README.md#someclass)
+### some_function()
 
-###### Returns
+> **some_function**(\`param\`): \`void\`
 
-[\`SomeClass\`](README.md#someclass)
+#### Parameters
 
-#### Properties
+| Parameter | Type     |
+| :-------- | :------- |
+| \`param\`   | \`string\` |
 
-##### someProp
+#### Returns
 
-> **someProp**: \`string\`
+\`void\`
+"
+`;
 
-## Interfaces
-
-### SomeInterface
-
-#### Properties
-
-##### someProp
-
-> **someProp**: \`string\`
+exports[`Remark should parse globals page without toc 1`] = `
+"# typedoc-plugin-remark
 
 ## Variables
 
-### \\_\\_variable_with_underscores\\_\\_
+### someVariable
 
-> **\`const\`** **\\_\\_variable_with_underscores\\_\\_**: \`true\` = \`true\`
+> **\`const\`** **someVariable**: \`true\` = \`true\`
 
 ## Functions
 

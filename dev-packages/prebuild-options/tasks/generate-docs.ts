@@ -114,7 +114,10 @@ export async function generateDocs(docsConfig: DocsConfig) {
           });
         }
 
-        if (option.type === ParameterType.Mixed && option.defaultValue) {
+        if (
+          option.type === ParameterType.Mixed &&
+          option.defaultValue?.length
+        ) {
           out.push('Below is the full list of keys and default values:');
         }
 
@@ -165,7 +168,9 @@ function getType(option: any) {
   }
 
   if (option.type === ParameterType.Mixed && option.defaultValue) {
-    return 'Accepts a key/value object (see example).';
+    return Array.isArray(option.defaultValue)
+      ? 'Accepts an array (see example)'
+      : 'Accepts a key/value object (see example).';
   }
 
   if (option.type === ParameterType.Map && option.map) {

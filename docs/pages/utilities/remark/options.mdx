@@ -6,16 +6,31 @@ These are the additional options that can be added to the TypeDoc configuration.
 
 ## remarkPlugins
 
-<Callout>An array of remark plugins.</Callout>
+<Callout>An array of remark plugin names.</Callout>
 
-> 
+> Accepts an array (see example)
+
+
+Each required plugin should be individually installed.
+
+Please note options can be passed to plugins using the format:
+
+ ```json
+ {['plugin-name', { pluginOption:true }]}
+```
 
 
 ```json filename="typedoc.json"
 {
   "remarkPlugins": [
+    "unified-prettier",
     "remark-github",
-    "unified-prettier"
+    [
+      "remark-toc",
+      {
+        "maxDepth": 3
+      }
+    ]
   ]
 }
 

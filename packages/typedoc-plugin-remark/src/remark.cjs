@@ -8,8 +8,7 @@ module.exports = {
     const { remark } = await import('remark');
     const { read, writeSync } = await import('to-vfile');
     const file = await read(filePath);
-    const processor = remark(); /*.data('settings', {})*/
-
+    const processor = remark();
     if (plugins.length > 0) {
       const promises = plugins.map(async (plugin) => {
         return new Promise((resolve) => {

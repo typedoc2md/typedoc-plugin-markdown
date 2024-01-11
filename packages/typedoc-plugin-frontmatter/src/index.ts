@@ -10,9 +10,6 @@ import * as options from './options/declarations';
 import { getFrontmatterTags } from './tags';
 
 export function load(app: Application) {
-  /**
-   * add options x
-   */
   Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
       name,

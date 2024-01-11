@@ -45,4 +45,11 @@ describe(`Remark`, () => {
       .toString();
     expect(contents).toMatchSnapshot();
   });
+
+  test(`should parse globals page without toc`, async () => {
+    const contents = fs
+      .readFileSync(path.join(__dirname, '../out/globals-notoc/README.md'))
+      .toString();
+    expect(contents).toMatchSnapshot();
+  });
 });

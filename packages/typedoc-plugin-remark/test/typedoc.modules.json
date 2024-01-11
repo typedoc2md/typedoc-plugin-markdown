@@ -1,5 +1,10 @@
 {
   "extends": "./typedoc.base.json",
   "entryPoints": ["./stubs/*.ts"],
-  "outputFileStrategy": "modules"
+  "outputFileStrategy": "modules",
+  "remarkPlugins": [
+    "remark-github",
+    "unified-prettier",
+    ["remark-toc", { "maxDepth": 3 }]
+  ]
 }
