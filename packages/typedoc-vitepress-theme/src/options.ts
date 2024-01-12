@@ -1,6 +1,8 @@
-export const DEFAULT_SIDEBAR_OPTIONS = {
+import { Sidebar } from './options/models';
+
+export const DEFAULT_SIDEBAR_OPTIONS: Sidebar = {
   autoConfiguration: true,
   format: 'vitepress',
   pretty: false,
-  collapse: true,
+  collapsed: true,
 };

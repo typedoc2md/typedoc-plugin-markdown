@@ -22,7 +22,6 @@
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
     "predocs": "npm run build",
-    "docs": "rm -rf ./demo && npm run build && typedoc",
     "build-and-test": "npm run build && npm run test",
     "pretest": "ts-node ./test/__scripts__/prepare.ts",
     "test": "jest"

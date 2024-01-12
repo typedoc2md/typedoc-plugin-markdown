@@ -13,8 +13,8 @@ export interface PluginOptions {
 }
 
 export interface Sidebar {
-  autoConfiguration: string;
+  autoConfiguration: boolean;
   format: string;
-  pretty: string;
-  collapse: string;
+  pretty: boolean;
+  collapsed: boolean;
 }

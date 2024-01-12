@@ -47,8 +47,8 @@ export async function generateModels() {
   ${mixedTypes?.map(([name, option]) => {
     return `
   export interface ${capitalize(name)} {
-      ${Object.keys(option.defaultValue as any)
-        .map((key) => `'${key}': string`)
+      ${Object.entries(option.defaultValue as any)
+        .map(([key, value]) => `'${key}': ${getValueType(value)}`)
         .join(';')}
   }
     `;
@@ -69,6 +69,13 @@ export async function generateModels() {
   });
 
   fs.writeFileSync(optionsModelFile, formatted);
+}
+
+function getValueType(value: any) {
+  if (value === true || value === false) {
+    return 'boolean';
+  }
+  return 'string';
 }
 
 function getType(name: string, option: Partial<DeclarationOption>) {

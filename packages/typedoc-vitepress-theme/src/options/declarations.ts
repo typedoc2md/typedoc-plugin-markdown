@@ -10,9 +10,11 @@ import { DEFAULT_SIDEBAR_OPTIONS } from '../options';
  *
  * Eenables backward compatibility with VuePress. Available options [`"vitepress"`, `"vuepress1"`, `"vuepress2"`]. Defaults to `"vitepress"`.
  *
- * **sidebar.collapse**
+ * **sidebar.collapsed**
  *
- * Determines if sidebar items with children are open or closed. Set `collapse` to `false` to set sidebar items as open by default.
+ * Determines if sidebar items with children are open or closed. Set `collapsed` to `false` to set sidebar items as open by default.
+ *
+ * https://vitepress.dev/reference/default-theme-sidebar#collapsible-sidebar-groups
  *
  * **sidebar.pretty**
  *

@@ -18,7 +18,7 @@ function getNavigationItem(
     ...(Boolean(navigationItem.url) && {
       link: `/${basePath}/${navigationItem.url}`,
     }),
-    ...(hasChildren && { collapsed: options.collapse }),
+    ...(hasChildren && { collapsed: options.collapsed }),
     ...(hasChildren && {
       items: navigationItem.children?.map((group) =>
         getNavigationItem(group, basePath, options),
