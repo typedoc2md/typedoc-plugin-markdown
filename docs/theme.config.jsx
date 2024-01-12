@@ -39,8 +39,8 @@ export default {
     };
   },
   navigation: {
-    prev: false,
-    next: false,
+    prev: true,
+    next: true,
   },
   footer: {
     text: <div></div>,

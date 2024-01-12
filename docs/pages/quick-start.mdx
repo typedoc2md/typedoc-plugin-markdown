@@ -9,10 +9,12 @@ import { Callout } from 'nextra/components';
 ## Installation
 
 ```sh npm2yarn
-npm install typedoc-plugin-markdown@next --save-dev
+npm install typedoc typedoc-plugin-markdown@next --save-dev
 ```
 
 ## Usage
+
+### Loading the plugin
 
 Plugins are loaded by using the TypeDoc [`plugin`](https://typedoc.org/options/configuration/#plugin) configuration option:
 
@@ -22,4 +24,14 @@ Plugins are loaded by using the TypeDoc [`plugin`](https://typedoc.org/options/c
 }
 ```
 
-The majority of [TypeDoc's Options](https://typedoc.org/options/) are supported with the exception of some [output options](https://typedoc.org/options/output/) that are theme specific to the HTML theme.
+### TypeDoc options
+
+The majority of [TypeDoc's options](https://typedoc.org/options/) are supported, including all [configuration](https://typedoc.org/options/configuration/), [input](https://typedoc.org/options/input/), [comments](https://typedoc.org/options/comments/), [organization](https://typedoc.org/options/organization/), [validation](https://typedoc.org/options/validation/) and [other](https://typedoc.org/options/other/) options.
+[Output](https://typedoc.org/options/output/) options that are specific to the HTML theme are ignored.
+
+Some typical (and frequently asked about) TypeDoc options that might be useful are:
+
+- Using [githubPages](https://typedoc.org/options/output/#githubpages) to remove the generated `.nojekyll` file.
+- Using [hideGenerator](https://typedoc.org/options/output/#hidegenerator) to prevent outputting links in the footer.
+- Using [disableSources](https://typedoc.org/options/output/#disablesources) to prevent outputting source references.
+- Setting [readme](https://typedoc.org/options/input/#readme) to `none` to exclude the project readme from the docs.
