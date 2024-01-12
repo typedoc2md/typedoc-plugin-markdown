@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.40
+
+### Patch Changes
+
+- Changed named anchors to a boolean
+- Remove page title from merged readme
+- Deprecate hideInPageTOC option
+
 ## 4.0.0-next.39
 
 ### Patch Changes
