@@ -34,7 +34,7 @@ exports[`Function Reflection should compile function returning a function: (Outp
 "# functionReturningAFunction()
 
 \`\`\`ts
-functionReturningAFunction(): <T>(x) => boolean
+function functionReturningAFunction(): <T>(x) => boolean
 \`\`\`
 
 Comments for function
@@ -94,7 +94,7 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 "# functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise<{
+function functionReturningAPromise(): Promise<{
   prop: string;
 }>
 \`\`\`
@@ -150,7 +150,7 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 "# functionReturningAnObject()
 
 \`\`\`ts
-functionReturningAnObject(): {
+function functionReturningAnObject(): {
   x: number;
   y: number;
 }
@@ -203,7 +203,7 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 "# basicFunction()
 
 \`\`\`ts
-basicFunction(someParam): number
+function basicFunction(someParam): number
 \`\`\`
 
 This is a function that is assigned to a variable.
@@ -269,7 +269,7 @@ exports[`Function Reflection should compile function with default parameters: (O
 "# functionWithDefaultParameters()
 
 \`\`\`ts
-functionWithDefaultParameters(
+function functionWithDefaultParameters(
    valueA, 
    valueB, 
    valueC, 
@@ -356,7 +356,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
-functionWithMultipleSignatures(value): string
+function functionWithMultipleSignatures(value): string
 \`\`\`
 
 This is the first signature of a function with multiple signatures.
@@ -378,7 +378,7 @@ This is the first signature of a function with multiple signatures.
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
-functionWithMultipleSignatures(value): string
+function functionWithMultipleSignatures(value): string
 \`\`\`
 
 This is the second signature of a function with multiple signatures.
@@ -433,7 +433,7 @@ exports[`Function Reflection should compile function with named params: (Output 
 "# functionWithNamedParams()
 
 \`\`\`ts
-functionWithNamedParams(__namedParameters, anotherParam): void
+function functionWithNamedParams(__namedParameters, anotherParam): void
 \`\`\`
 
 ## Parameters
@@ -504,7 +504,7 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 "# functionWithNestedParameters()
 
 \`\`\`ts
-functionWithNestedParameters(params, context): boolean
+function functionWithNestedParameters(params, context): boolean
 \`\`\`
 
 Some nested params.
@@ -599,7 +599,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 "# functionWithOptionalParameters()
 
 \`\`\`ts
-functionWithOptionalParameters(
+function functionWithOptionalParameters(
    firstParamWithDefault, 
    requiredParam, 
    optionalParam?, 
@@ -631,7 +631,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 "# functionWithOptionalParameters()
 
 \`\`\`ts
-functionWithOptionalParameters(
+function functionWithOptionalParameters(
    firstParamWithDefault, 
    requiredParam, 
    optionalParam?, 
@@ -688,7 +688,7 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 "# functionWithTypeParameters()
 
 \`\`\`ts
-functionWithTypeParameters<T, Item>(): boolean
+function functionWithTypeParameters<T, Item>(): boolean
 \`\`\`
 
 Function with type parameters

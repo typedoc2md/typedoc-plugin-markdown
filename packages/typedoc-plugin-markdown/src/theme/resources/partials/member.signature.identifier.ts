@@ -2,7 +2,11 @@ import { SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, bold, codeBlock } from '../../../support/elements';
 import { escapeChars } from '../../../support/utils';
-import { getSignatureParameters } from '../../helpers';
+import {
+  KEYWORD_MAP,
+  getSignatureParameters,
+  isGroupKind,
+} from '../../helpers';
 
 /**
  * @category Partials
@@ -25,6 +29,14 @@ export function signatureMemberIdentifier(
   const options = { ...DEFAULT_OPTIONS, ...opts };
 
   const useCodeBlocks = context.options.getValue('useCodeBlocks');
+
+  if (
+    useCodeBlocks &&
+    isGroupKind(signature.parent) &&
+    KEYWORD_MAP[signature.parent.kind]
+  ) {
+    md.push(KEYWORD_MAP[signature.parent.kind] + ' ');
+  }
 
   if (options?.accessor) {
     md.push(bold(backTicks(options?.accessor)) + ' ');
