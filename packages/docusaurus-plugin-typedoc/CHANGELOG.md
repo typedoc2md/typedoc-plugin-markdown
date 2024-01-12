@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0-next.25
+## 1.0.0-next.25 (2023-01-07)
 
 ### Patch Changes
 

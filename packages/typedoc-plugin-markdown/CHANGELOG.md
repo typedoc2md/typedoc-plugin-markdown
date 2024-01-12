@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.40
+## 4.0.0-next.40 (2023-01-12)
 
 ### Patch Changes
 
@@ -8,7 +8,7 @@
 - Remove page title from merged readme
 - Deprecate hideInPageTOC option
 
-## 4.0.0-next.39
+## 4.0.0-next.39 (2023-01-07)
 
 ### Patch Changes
 

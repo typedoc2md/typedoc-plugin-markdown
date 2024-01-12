@@ -7,7 +7,7 @@
 - Fix sidebar types
 - Rename sidebar.collapse=>sidebar.collapsed
 
-## 1.0.0-next.5
+## 1.0.0-next.5 (2023-01-12)
 
 ### Patch Changes
 
@@ -16,7 +16,7 @@
 - Updated peer dependencies
   - typedoc-plugin-markdown@4.0.0-next.40
 
-## 1.0.0-next.4
+## 1.0.0-next.4 (2023-01-07)
 
 ### Patch Changes
 
