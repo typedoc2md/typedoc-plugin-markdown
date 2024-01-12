@@ -53,34 +53,18 @@ export function isAbsoluteIndex(
   );
 }
 
-export function hasToc(reflection: DeclarationReflection, isMembers: boolean) {
-  return (
-    (reflection.kindOf([
-      ReflectionKind.Project,
-      ReflectionKind.Module,
-      ReflectionKind.Namespace,
-    ]) ||
-      (reflection.kindOf([
-        ReflectionKind.Enum,
-        ReflectionKind.Class,
-        ReflectionKind.Interface,
-      ]) &&
-        isMembers)) &&
-    reflection.groups?.some((group) => !group.allChildrenHaveOwnDocument())
-  );
-}
-
 export function isGroupKind(
   reflection: DeclarationReflection | SignatureReflection,
 ) {
-  return reflection.kindOf([
+  const groupKinds = [
     ReflectionKind.Class,
     ReflectionKind.Interface,
     ReflectionKind.Enum,
     ReflectionKind.Function,
     ReflectionKind.Variable,
     ReflectionKind.TypeAlias,
-  ]);
+  ];
+  return groupKinds.includes(reflection.kind);
 }
 
 export function getModifier(reflection: DeclarationReflection) {
@@ -165,13 +149,6 @@ export function getMemberTitle(reflection: DeclarationReflection) {
   }
 
   return md.join(': ');
-}
-
-export function declarationHasParent(declaration: DeclarationReflection) {
-  return declaration?.parent?.parent?.kindOf([
-    ReflectionKind.Property,
-    ReflectionKind.CallSignature,
-  ]);
 }
 
 export function flattenDeclarations(
@@ -287,17 +264,4 @@ export function getIndexFileName(
     child.kindOf(ReflectionKind.Module),
   );
   return isModules ? 'modules.md' : 'globals.md';
-}
-
-export function getIndexLabel(
-  reflection: ProjectReflection | DeclarationReflection,
-  isPackages = false,
-) {
-  if (isPackages) {
-    return 'Packages';
-  }
-  const isModules = reflection.children?.every((child) =>
-    child.kindOf(ReflectionKind.Module),
-  );
-  return isModules ? 'Modules' : 'Globals';
 }
