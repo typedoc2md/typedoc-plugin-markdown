@@ -1,5 +1,11 @@
 # typedoc-plugin-remark
 
+## 0.0.1-next.2
+
+### Patch Changes
+
+- Fix options not being passed to remark plugins
+
 ## 0.0.1-next.1
 
 ### Patch Changes
