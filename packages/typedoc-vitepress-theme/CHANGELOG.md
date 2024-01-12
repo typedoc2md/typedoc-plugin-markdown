@@ -1,5 +1,14 @@
 # typedoc-vitepress-theme
 
+## 1.0.0-next.5
+
+### Patch Changes
+
+- Updated typedoc-plugin-markdown version
+- Exposed additional sidebar options
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.40
+
 ## 1.0.0-next.4
 
 ### Patch Changes

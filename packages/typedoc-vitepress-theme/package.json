@@ -1,6 +1,6 @@
 {
   "name": "typedoc-vitepress-theme",
-  "version": "1.0.0-next.4",
+  "version": "1.0.0-next.5",
   "description": "A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible with VitePress.",
   "main": "./dist/index.js",
   "files": [
@@ -28,7 +28,7 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.0.0-next.39"
+    "typedoc-plugin-markdown": ">=4.0.0-next.40"
   },
   "license": "MIT",
   "keywords": [
