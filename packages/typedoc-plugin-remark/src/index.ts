@@ -27,8 +27,7 @@ export function load(app: Application) {
         (name) => name === 'remark-toc',
       );
       const tocPlugin = remarkPlugins[tocPluginIndex];
-
-      const options = tocPlugin[1];
+      const options = Array.isArray(tocPlugin) ? tocPlugin[1] : {};
 
       const isModulesOnly = (
         event?.model as DeclarationReflection
@@ -44,9 +43,10 @@ export function load(app: Application) {
 
       if (outputFileStrategy === OutputFileStrategy.Modules) {
         kindsWithToc.push(ReflectionKind.Module);
-        if (!isModulesOnly) {
-          kindsWithToc.push(ReflectionKind.Project);
-        }
+      }
+
+      if (!isModulesOnly) {
+        kindsWithToc.push(ReflectionKind.Project);
       }
 
       if (kindsWithToc.includes(event.model?.kind)) {
