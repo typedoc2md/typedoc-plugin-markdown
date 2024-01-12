@@ -4,11 +4,13 @@ on:
     paths:
       - 'packages/typedoc-plugin-markdown/**'
       - '!packages/typedoc-plugin-markdown/README.md'
+      - '!packages/typedoc-plugin-markdown/CHANGELOG.md'
       - '!packages/typedoc-plugin-markdown/package.json'
   pull_request:
     paths:
       - 'packages/typedoc-plugin-markdown/**'
       - '!packages/typedoc-plugin-markdown/README.md'
+      - '!packages/typedoc-plugin-markdown/CHANGELOG.md'
       - '!packages/typedoc-plugin-markdown/package.json'
 jobs:
   lint-and-test:
