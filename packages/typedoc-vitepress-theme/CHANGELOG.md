@@ -1,5 +1,12 @@
 # typedoc-vitepress-theme
 
+## 1.0.0-next.6
+
+### Patch Changes
+
+- Fix sidebar types
+- Rename sidebar.collapse=>sidebar.collapsed
+
 ## 1.0.0-next.5
 
 ### Patch Changes
