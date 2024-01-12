@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VitePress should generate typedoc sidebar 1`] = `"[{"text":"module-1","link":"/test/out/default/module-1/index.md","collapsed":true,"items":[{"text":"Classes","collapsed":true,"items":[{"text":"ClassA","link":"/test/out/default/module-1/classes/ClassA.md"},{"text":"ClassB","link":"/test/out/default/module-1/classes/ClassB.md"},{"text":"InterfaceA","link":"/test/out/default/module-1/classes/InterfaceA.md"},{"text":"InterfaceB","link":"/test/out/default/module-1/classes/InterfaceB.md"}]}]},{"text":"module-2","link":"/test/out/default/module-2/index.md","collapsed":true,"items":[{"text":"Classes","collapsed":true,"items":[{"text":"ClassA","link":"/test/out/default/module-2/classes/ClassA.md"},{"text":"ClassB","link":"/test/out/default/module-2/classes/ClassB.md"},{"text":"InterfaceA","link":"/test/out/default/module-2/classes/InterfaceA.md"},{"text":"InterfaceB","link":"/test/out/default/module-2/classes/InterfaceB.md"}]}]}]"`;
+
+exports[`VitePress should generate typedoc sidebar with options 1`] = `
+"[
+  {
+    "text": "module-1",
+    "link": "/test/out/sidebar-options/module-1/index.md",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "Classes",
+        "collapsed": false,
+        "items": [
+          {
+            "text": "ClassA",
+            "link": "/test/out/sidebar-options/module-1/classes/ClassA.md"
+          },
+          {
+            "text": "ClassB",
+            "link": "/test/out/sidebar-options/module-1/classes/ClassB.md"
+          },
+          {
+            "text": "InterfaceA",
+            "link": "/test/out/sidebar-options/module-1/classes/InterfaceA.md"
+          },
+          {
+            "text": "InterfaceB",
+            "link": "/test/out/sidebar-options/module-1/classes/InterfaceB.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "module-2",
+    "link": "/test/out/sidebar-options/module-2/index.md",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "Classes",
+        "collapsed": false,
+        "items": [
+          {
+            "text": "ClassA",
+            "link": "/test/out/sidebar-options/module-2/classes/ClassA.md"
+          },
+          {
+            "text": "ClassB",
+            "link": "/test/out/sidebar-options/module-2/classes/ClassB.md"
+          },
+          {
+            "text": "InterfaceA",
+            "link": "/test/out/sidebar-options/module-2/classes/InterfaceA.md"
+          },
+          {
+            "text": "InterfaceB",
+            "link": "/test/out/sidebar-options/module-2/classes/InterfaceB.md"
+          }
+        ]
+      }
+    ]
+  }
+]"
+`;
+
+exports[`VitePress should output docs with vitepress theme 1`] = `
+"# typedoc-vitepress-theme
+
+## Modules
+
+- [module-1](module-1/index.md)
+- [module-2](module-2/index.md)
+"
+`;

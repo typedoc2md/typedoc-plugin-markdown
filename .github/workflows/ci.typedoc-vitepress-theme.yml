@@ -1,0 +1,35 @@
+name: CI [typedoc-vitepress-theme]
+on:
+  push:
+    paths:
+      - 'packages/typedoc-vitepress-theme/**'
+      - '!packages/typedoc-vitepress-theme/README.md'
+      - '!packages/typedoc-vitepress-theme/package.json'
+  pull_request:
+    paths:
+      - 'packages/typedoc-vitepress-theme/**'
+      - '!packages/typedoc-vitepress-theme/README.md'
+      - '!packages/typedoc-vitepress-theme/package.json'
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['18']
+    name: Node ${{ matrix.node }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+      - name: Install
+        run: npm install
+      - name: Lint
+        run: npm run lint --workspace typedoc-vitepress-theme
+      - name: Build
+        run: npm run build --workspace typedoc-plugin-markdown --workspace typedoc-vitepress-theme
+      - name: Test
+        run: npm run test --workspace typedoc-vitepress-theme

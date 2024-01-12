@@ -18,6 +18,14 @@ Set to `false` to disable sidebar generation. Defaults to true.
 
 Eenables backward compatibility with VuePress. Available options [`"vitepress"`, `"vuepress1"`, `"vuepress2"`]. Defaults to `"vitepress"`.
 
+**sidebar.collapse**
+
+Determines if sidebar items with children are open or closed. Set `collapse` to `false` to set sidebar items as open by default.
+
+**sidebar.pretty**
+
+Pretty format the sidebar JSON.
+
 Below is the full list of keys and default values:
 
 
@@ -25,7 +33,9 @@ Below is the full list of keys and default values:
 {
   "sidebar": {
     "autoConfiguration": true,
-    "format": "vitepress"
+    "format": "vitepress",
+    "pretty": false,
+    "collapse": true
   }
 }
 

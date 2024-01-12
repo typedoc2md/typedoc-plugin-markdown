@@ -1,20 +1,28 @@
 import { NavigationItem } from 'typedoc-plugin-markdown';
+import { Sidebar } from '../options/models';
 
-export = (navigation: NavigationItem[], basePath: string) => {
+export = (navigation: NavigationItem[], basePath: string, options: Sidebar) => {
   return navigation.map((navigationItem) => {
-    return getNavigationItem(navigationItem, basePath);
+    return getNavigationItem(navigationItem, basePath, options);
   });
 };
 
-function getNavigationItem(navigationItem: NavigationItem, basePath: string) {
+function getNavigationItem(
+  navigationItem: NavigationItem,
+  basePath: string,
+  options: Sidebar,
+) {
+  const hasChildren = navigationItem.children?.length;
   return {
     text: navigationItem.title,
     ...(Boolean(navigationItem.url) && {
       link: `/${basePath}/${navigationItem.url}`,
     }),
-    collapsed: true,
-    items: navigationItem.children?.map((group) => {
-      return getNavigationItem(group, basePath);
+    ...(hasChildren && { collapsed: options.collapse }),
+    ...(hasChildren && {
+      items: navigationItem.children?.map((group) =>
+        getNavigationItem(group, basePath, options),
+      ),
     }),
   };
 }

@@ -15,5 +15,5 @@ export function getSidebar(
   if (options.format === 'vuepress2') {
     return sidebarVuepress2(navigation, basePath);
   }
-  return sidebarVitepress(navigation, basePath);
+  return sidebarVitepress(navigation, basePath, options);
 }

@@ -1,0 +1,7 @@
+{
+  "extends": "./typedoc.base.json",
+  "sidebar": {
+    "collapse": false,
+    "pretty": true
+  }
+}

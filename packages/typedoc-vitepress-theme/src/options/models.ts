@@ -15,4 +15,6 @@ export interface PluginOptions {
 export interface Sidebar {
   autoConfiguration: string;
   format: string;
+  pretty: string;
+  collapse: string;
 }

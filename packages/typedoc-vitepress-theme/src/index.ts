@@ -52,7 +52,12 @@ export function load(app: Application) {
           basePath,
           sidebarOptions,
         );
-        fs.writeFileSync(sidebarPath, JSON.stringify(sidebarJson, null, 2));
+        fs.writeFileSync(
+          sidebarPath,
+          sidebarOptions.pretty
+            ? JSON.stringify(sidebarJson, null, 2)
+            : JSON.stringify(sidebarJson),
+        );
       }
     },
   );
