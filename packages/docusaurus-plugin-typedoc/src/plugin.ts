@@ -15,6 +15,7 @@ export default async function pluginDocusaurus(
   opts: Partial<PluginOptions>,
 ) {
   const PLUGIN_NAME = 'docusaurus-plugin-typedoc';
+
   if (opts.id && !apps.includes(opts.id)) {
     apps.push(opts.id);
     await generateTypedoc(context, opts);
@@ -66,7 +67,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   }
 
   if (sidebar?.autoConfiguration) {
-    const docsPreset = context.siteConfig?.presets.find((preset: any) =>
+    const docsPreset = context.siteConfig?.presets?.find((preset: any) =>
       Boolean(preset[1]?.docs),
     );
 
@@ -82,7 +83,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
           output.navigation,
           baseDir,
           sidebar.filteredIds,
-          docsPreset[1]?.docs?.numberPrefixParser,
+          docsPreset ? docsPreset[1]?.docs?.numberPrefixParser : null,
         );
         fs.writeFileSync(
           sidebarPath,

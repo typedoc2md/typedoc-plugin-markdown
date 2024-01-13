@@ -22,7 +22,8 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "task:docs": "node ./tasks/docs.mjs"
+    "build-and-test": "npm run build && npm run test",
+    "test": "jest --updateSnapshot"
   },
   "author": "Thomas Grey",
   "license": "MIT",

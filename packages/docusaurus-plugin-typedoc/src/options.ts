@@ -7,6 +7,7 @@ const DEFAULT_PLUGIN_OPTIONS = {
   hidePageHeader: true,
   entryFileName: 'index.md',
   theme: 'docusaurus',
+  githubPages: false,
   sidebar: {
     autoConfiguration: true,
     pretty: false,
