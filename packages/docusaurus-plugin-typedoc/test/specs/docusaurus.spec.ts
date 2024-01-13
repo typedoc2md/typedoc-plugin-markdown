@@ -2,11 +2,15 @@ import * as fs from 'fs';
 import * as path from 'path';
 import typedocPlugin from '../../dist/plugin';
 
-async function bootstrap(outDir: string, customOptions = {}) {
+async function bootstrap(
+  outDir: string,
+  entryPoints: string[],
+  customOptions = {},
+) {
   const options = {
-    id: 'default',
+    id: outDir,
     out: outDir,
-    entryPoints: ['./test/stubs/*.ts'],
+    entryPoints,
     tsconfig: ['./test/stubs/tsconfig.json'],
     readme: 'none',
   };
@@ -25,11 +29,12 @@ async function bootstrap(outDir: string, customOptions = {}) {
   return await plugin;
 }
 
-describe(`Plugin:`, () => {
+describe(`Docusaurus:`, () => {
   describe(`Defaults`, () => {
-    let tmpobj;
     beforeAll(async () => {
-      await bootstrap('./test/out/default', { sidebar: { collapsed: false } });
+      await bootstrap('./test/out/default', ['./test/stubs/*.ts'], {
+        sidebar: { collapsed: false },
+      });
     });
     test(`should render`, () => {
       const contents = fs
@@ -39,6 +44,33 @@ describe(`Plugin:`, () => {
     });
 
     test(`should generate typedoc sidebar`, async () => {
+      const contents = fs
+        .readFileSync(
+          path.join(__dirname, '../out/default/typedoc-sidebar.cjs'),
+        )
+        .toString();
+      expect(contents).toMatchSnapshot();
+    });
+  });
+
+  describe(`Global members`, () => {
+    beforeAll(async () => {
+      await bootstrap(
+        './test/out/global-members',
+        ['./test/stubs/module-1.ts'],
+        {
+          sidebar: { collapsed: false, pretty: true },
+        },
+      );
+    });
+    test(`should render 2`, () => {
+      const contents = fs
+        .readFileSync(path.join(__dirname, '../out/default/index.md'))
+        .toString();
+      expect(contents).toMatchSnapshot();
+    });
+
+    test(`should generate typedoc sidebar 2`, async () => {
       const contents = fs
         .readFileSync(
           path.join(__dirname, '../out/default/typedoc-sidebar.cjs'),

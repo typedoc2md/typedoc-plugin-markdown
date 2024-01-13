@@ -1,12 +1,11 @@
 import {
   DeclarationReflection,
-  EntryPointStrategy,
   ProjectReflection,
   ReflectionCategory,
   ReflectionGroup,
+  ReflectionKind,
   TypeDocOptions,
 } from 'typedoc';
-import { OutputFileStrategy } from '../options/maps';
 import { NavigationItem } from '../theme/models';
 import { MarkdownTheme } from './theme';
 
@@ -19,24 +18,6 @@ export class NavigationContext {
   ) {}
 
   getNavigation(project: ProjectReflection): NavigationItem[] {
-    const hasReadme = Boolean(project.readme);
-    const containsOnlyModules = project?.children?.every(
-      (child) => child.hasOwnDocument,
-    );
-
-    if (hasReadme) {
-      if (
-        !containsOnlyModules &&
-        this.options.outputFileStrategy === OutputFileStrategy.Members &&
-        this.options.entryPointStrategy !== EntryPointStrategy.Packages
-      ) {
-        this.navigation.push({
-          title: 'Documentation',
-          url: project.url,
-        });
-      }
-    }
-
     this.buildNavigationFromProject(project);
 
     return this.navigation;
@@ -51,10 +32,12 @@ export class NavigationContext {
           (child) => child.name === this.options.entryModule,
         ),
       );
+      const isOnlyModules = project.children?.every((child) =>
+        child.kindOf(ReflectionKind.Module),
+      );
       if (
         (project.groups.length === 1 && !Boolean(entryModule)) ||
-        (project.groups.length === 1 &&
-          this.options.outputFileStrategy === OutputFileStrategy.Modules)
+        isOnlyModules
       ) {
         const children = this.getGroupChildren(project.groups[0]);
         if (children) {
@@ -163,6 +146,15 @@ export class NavigationContext {
             };
           });
       }
+
+      const isModulesGroup = reflection.groups[0].children.every((child) =>
+        child.kindOf(ReflectionKind.Module),
+      );
+
+      if (isModulesGroup) {
+        return this.getGroupChildren(reflection.groups[0]) || null;
+      }
+
       return reflection.groups
         ?.map((group) => {
           const groupChildren = this.getGroupChildren(group);

@@ -51,7 +51,7 @@ const config = {
         expandObjects: true,
         readme: 'none',
         sidebar: { pretty: true },
-        outputFileStrategy: 'modules',
+        outputFileStrategy: 'members',
       },
     ],
     [
@@ -83,6 +83,7 @@ const config = {
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/packages/*',
         entryPointStrategy: 'packages',
+        sidebar: { pretty: true },
       },
     ],
   ],

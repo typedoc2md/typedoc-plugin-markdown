@@ -23,7 +23,7 @@
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
     "build-and-test": "npm run build && npm run test",
-    "test": "jest --updateSnapshot"
+    "test": "jest"
   },
   "author": "Thomas Grey",
   "license": "MIT",

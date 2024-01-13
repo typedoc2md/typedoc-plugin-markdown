@@ -26,7 +26,7 @@ export const DOCS_CONFIG: Record<string, DocsConfig> = {
   ['typedoc-github-wiki-theme']: {
     optionsPath: 'themes/github-wiki',
     docsPath: '/themes/github-wiki',
-    declarations: false,
+    declarations: true,
     presets: true,
   },
   ['typedoc-gitlab-wiki-theme']: {

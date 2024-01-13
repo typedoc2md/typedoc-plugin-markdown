@@ -1,5 +1,5 @@
 export class ClassA {}
 export class ClassB {}
 
-export class InterfaceA {}
-export class InterfaceB {}
+export interface InterfaceA {}
+export interface InterfaceB {}

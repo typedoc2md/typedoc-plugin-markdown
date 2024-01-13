@@ -75,6 +75,9 @@ function getValueType(value: any) {
   if (value === true || value === false) {
     return 'boolean';
   }
+  if (typeof value === 'number') {
+    return 'number';
+  }
   return 'string';
 }
 

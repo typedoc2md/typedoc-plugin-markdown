@@ -21,7 +21,6 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
-    "predocs": "npm run build",
     "build-and-test": "npm run build && npm run test",
     "pretest": "ts-node ./test/__scripts__/prepare.ts",
     "test": "jest"
