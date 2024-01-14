@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GithubWiki should not output single page sidebar 1`] = `
+[
+  "home.md",
+]
+`;
+
+exports[`GithubWiki should output default sidebar 1`] = `
+"## API
+
+### module-1
+
+#### Namespaces
+
+- [Validation](module-1/namespaces/Validation/home)
+
+#### Classes
+
+- [ClassA](module-1/classes/ClassA)
+- [ClassB](module-1/classes/ClassB)
+
+#### Interfaces
+
+- [InterfaceA](module-1/interfaces/InterfaceA)
+- [InterfaceB](module-1/interfaces/InterfaceB)
+
+### module-2
+
+#### Classes
+
+- [ClassA](module-2/classes/ClassA)
+- [ClassB](module-2/classes/ClassB)
+
+#### Interfaces
+
+- [InterfaceA](module-2/interfaces/InterfaceA)
+- [InterfaceB](module-2/interfaces/InterfaceB)
+"
+`;
+
+exports[`GithubWiki should output globals sidebar 1`] = `
+"## API
+
+### Classes
+
+- [ClassA](classes/ClassA)
+- [ClassB](classes/ClassB)
+
+### Interfaces
+
+- [InterfaceA](interfaces/InterfaceA)
+- [InterfaceB](interfaces/InterfaceB)
+"
+`;
+
+exports[`GithubWiki should output index docs 1`] = `
+"# typedoc-gitlab-wiki-theme
+
+## Modules
+
+- [module-1](./module-1/home)
+- [module-2](./module-2/home)
+"
+`;
+
+exports[`GithubWiki should output single modules sidebar 1`] = `
+"## API
+
+- [module-1](module-1/home)
+- [module-2](module-2)
+"
+`;

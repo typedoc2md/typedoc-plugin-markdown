@@ -32,7 +32,7 @@ export const DOCS_CONFIG: Record<string, DocsConfig> = {
   ['typedoc-gitlab-wiki-theme']: {
     optionsPath: 'themes/gitlab-wiki',
     docsPath: '/themes/gitlab-wiki',
-    declarations: false,
+    declarations: true,
     presets: true,
   },
   ['typedoc-vitepress-theme']: {

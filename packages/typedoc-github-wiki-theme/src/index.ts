@@ -91,7 +91,7 @@ export function getSidebar(
         md.push(`### ${navigationItem.title}`);
         if (navigationItem.children) {
           navigationItem.children.forEach((child) => {
-            md.push(`### ${child.title}`);
+            md.push(`#### ${child.title}`);
             if (child.children) {
               const childList = child.children
                 ?.map(

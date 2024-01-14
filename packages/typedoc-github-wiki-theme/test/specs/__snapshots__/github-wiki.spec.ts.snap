@@ -30,28 +30,28 @@ exports[`GithubWiki should output default sidebar 1`] = `
 
 ### module-1
 
-### Namespaces
+#### Namespaces
 
 - [Validation](../wiki/module-1.Namespace.Validation)
 
-### Classes
+#### Classes
 
 - [ClassA](../wiki/module-1.Class.ClassA)
 - [ClassB](../wiki/module-1.Class.ClassB)
 
-### Interfaces
+#### Interfaces
 
 - [InterfaceA](../wiki/module-1.Interface.InterfaceA)
 - [InterfaceB](../wiki/module-1.Interface.InterfaceB)
 
 ### module-2
 
-### Classes
+#### Classes
 
 - [ClassA](../wiki/module-2.Class.ClassA)
 - [ClassB](../wiki/module-2.Class.ClassB)
 
-### Interfaces
+#### Interfaces
 
 - [InterfaceA](../wiki/module-2.Interface.InterfaceA)
 - [InterfaceB](../wiki/module-2.Interface.InterfaceB)

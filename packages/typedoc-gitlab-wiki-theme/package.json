@@ -20,7 +20,9 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
-    "docs": "rm -rf ./demo && npm run build && typedoc"
+    "build-and-test": "npm run build && npm run test",
+    "pretest": "ts-node ./test/__scripts__/prepare.ts",
+    "test": "jest"
   },
   "author": "Thomas Grey",
   "license": "MIT",
