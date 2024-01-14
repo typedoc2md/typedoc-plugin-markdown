@@ -11,6 +11,10 @@ exports[`Text should get translations for index page: (Output File Strategy "mem
 
 - [module-1](module-1/README.md)
 - [module-2](module-2/README.md)
+
+***
+
+@copyright My Test
 "
 `;
 
@@ -34,6 +38,10 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 | Event! | Type |
 | :------ | :------ |
 | \`someEvent\` | \`MouseEvent\` |
+
+***
+
+@copyright My Test
 "
 `;
 
@@ -51,6 +59,10 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 ### 多变的
 
 - [SomeInterface](interfaces/SomeInterface.md)
+
+***
+
+@copyright My Test
 "
 `;
 
@@ -68,5 +80,9 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 ### Variable: constA
 
 > **\`const\`** **constA**: \`true\` = \`true\`
+
+***
+
+@copyright My Test
 "
 `;

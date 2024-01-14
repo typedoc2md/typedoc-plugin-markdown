@@ -7,6 +7,7 @@ module.exports = {
     'header.readme': 'My Readme',
     'header.docs': 'Docs',
     'breadcrumbs.home': 'Home',
+    'footer.generator': '@copyright My Test',
     'title.indexPage': ':tada: Custom Index Title',
     'title.memberPage': '{name}',
     'title.member': '{kind}: {name}',
