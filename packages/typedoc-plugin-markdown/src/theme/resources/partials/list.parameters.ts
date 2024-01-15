@@ -1,8 +1,6 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, bold } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
 
 /**
  * @category Partials
@@ -11,6 +9,9 @@ export function parametersList(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
 ): string {
+  const { bold, backTicks } = context.markdown;
+  const { escapeChars } = context.utils;
+
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
@@ -60,27 +61,23 @@ export function parametersList(
     const identifier: string[] = [bold(name)];
 
     if (parameter.type) {
-      identifier.push(': ' + context.someType(parameter.type));
+      identifier.push(': ' + context.partials.someType(parameter.type));
     }
 
     if (parameter.defaultValue) {
-      identifier.push('= ' + getDefaultValue(parameter));
+      identifier.push(
+        '= ' + backTicks(context.helpers.getParameterDefaultValue(parameter)),
+      );
     }
 
     row.push(`• ${rest}${identifier.join('')}`);
 
     if (parameter.comment) {
-      row.push(context.comment(parameter.comment));
+      row.push(context.partials.comment(parameter.comment));
     }
 
     rows.push(row.join('\n\n'));
   });
 
   return rows.join('\n\n');
-}
-
-function getDefaultValue(parameter: ParameterReflection) {
-  return parameter.defaultValue && parameter.defaultValue !== '...'
-    ? backTicks(parameter.defaultValue)
-    : backTicks('undefined');
 }

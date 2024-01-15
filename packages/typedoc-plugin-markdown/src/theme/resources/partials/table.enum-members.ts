@@ -1,8 +1,5 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks } from '../../../support/elements';
-import { stripLineBreaks } from '../../../support/utils';
-import { getDeclarationType } from '../../helpers';
 
 /**
  * @category Partials
@@ -11,20 +8,22 @@ export function enumMembersTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
 ): string {
+  const { backTicks } = context.markdown;
+  const { stripLineBreaks } = context.utils;
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
 
   const headers = [
-    context.getTextContent('kind.enumMember.singular'),
-    context.getTextContent('label.value'),
+    context.text.get('kind.enumMember.singular'),
+    context.text.get('label.value'),
   ];
 
   if (hasComments) {
-    headers.push(context.getTextContent('label.description'));
+    headers.push(context.text.get('label.description'));
   }
 
   const rows = props.map((property: DeclarationReflection) => {
-    const propertyType = getDeclarationType(property);
+    const propertyType = context.helpers.getDeclarationType(property);
     const row: string[] = [];
     const nameColumn: string[] = [];
 
@@ -38,13 +37,16 @@ export function enumMembersTable(
 
     row.push(nameColumn.join(' '));
     if (propertyType) {
-      row.push(stripLineBreaks(context.someType(propertyType)));
+      row.push(stripLineBreaks(context.partials.someType(propertyType)));
     }
     if (hasComments) {
       const comments = getComments(property);
       if (comments) {
         row.push(
-          stripLineBreaks(context.comment(comments)).replace(/\|/g, '\\|'),
+          stripLineBreaks(context.partials.comment(comments)).replace(
+            /\|/g,
+            '\\|',
+          ),
         );
       } else {
         row.push('-');

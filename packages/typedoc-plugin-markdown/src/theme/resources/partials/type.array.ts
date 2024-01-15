@@ -8,7 +8,7 @@ export function arrayType(
   context: MarkdownThemeRenderContext,
   arrayType: ArrayType,
 ): string {
-  const theType = context.someType(arrayType.elementType);
+  const theType = context.partials.someType(arrayType.elementType);
   return arrayType.elementType.type === 'union'
     ? `(${theType})[]`
     : `${theType}[]`;

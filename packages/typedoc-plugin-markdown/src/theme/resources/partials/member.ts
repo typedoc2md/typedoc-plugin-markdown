@@ -4,9 +4,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { heading } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
-import { getMemberTitle } from '../../helpers';
 
 /**
  * @category Partials
@@ -18,6 +15,8 @@ export function member(
   nested = false,
 ): string {
   const md: string[] = [];
+  const { heading } = context.markdown;
+  const { escapeChars } = context.utils;
 
   if (context.options.getValue('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
@@ -27,11 +26,11 @@ export function member(
     !reflection.hasOwnDocument &&
     !(reflection.kind === ReflectionKind.Constructor)
   ) {
-    const memberName = getMemberTitle(reflection);
-    const memberHeading = context
-      .getTextContent('title.member')
+    const memberName = context.partials.memberTitle(reflection);
+    const memberHeading = context.text
+      .get('title.member')
       .replace('{name}', memberName)
-      .replace('{kind}', context.kindString(reflection.kind));
+      .replace('{kind}', context.text.kindString(reflection.kind));
     md.push(heading(headingLevel, memberHeading));
   }
 
@@ -43,15 +42,15 @@ export function member(
         ReflectionKind.Enum,
       ].includes(reflection.kind)
     ) {
-      return context.reflectionMember(reflection, headingLevel + 1);
+      return context.partials.reflectionMember(reflection, headingLevel + 1);
     }
 
     if (reflection.kind === ReflectionKind.Constructor) {
-      return context.constructorMember(reflection, headingLevel);
+      return context.partials.constructorMember(reflection, headingLevel);
     }
 
     if (reflection.kind === ReflectionKind.Accessor) {
-      return context.accessorMember(reflection, headingLevel + 1);
+      return context.partials.accessorMember(reflection, headingLevel + 1);
     }
 
     if (reflection.signatures) {
@@ -72,7 +71,7 @@ export function member(
             );
           }
           signatureMd.push(
-            context.signatureMember(
+            context.partials.signatureMember(
               signature,
               multipleSignatures ? headingLevel + 2 : headingLevel + 1,
               nested,
@@ -84,10 +83,14 @@ export function member(
     }
 
     if (reflection instanceof ReferenceReflection) {
-      return context.referenceMember(reflection);
+      return context.partials.referenceMember(reflection);
     }
 
-    return context.declarationMember(reflection, headingLevel + 1, nested);
+    return context.partials.declarationMember(
+      reflection,
+      headingLevel + 1,
+      nested,
+    );
   };
 
   const member = getMember(reflection);

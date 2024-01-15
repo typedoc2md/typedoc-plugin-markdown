@@ -13,6 +13,8 @@ async function bootstrap(
     entryPoints,
     tsconfig: ['./test/stubs/tsconfig.json'],
     readme: 'none',
+    logLevel: 'Warn',
+    hideGenerator: true,
   };
 
   const plugin = typedocPlugin(

@@ -4,7 +4,6 @@
   "out": "./out",
   "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"],
   "readme": "none",
-  "githubPages": false,
   "disableSources": true,
   "cleanOutputDir": true,
   "hideGenerator": true,

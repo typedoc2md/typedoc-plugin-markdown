@@ -1,0 +1,28 @@
+{
+  "entryPoints": ["./src/plugin/*", "./src/theme/resources/partials/index.ts"],
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeReferences": true,
+  "excludeExternals": true,
+  "sort": ["instance-first", "required-first"],
+  "cleanOutputDir": true,
+  "externalSymbolLinkMappings": {
+    "typedoc": {
+      "Application": "https://typedoc.org/api/classes/Application.html",
+      "CommentDisplayPart": "https://typedoc.org/api/types/Models.CommentDisplayPart.html",
+      "DeclarationReflection": "https://typedoc.org/api/classes/Models.DeclarationReflection.html",
+      "DefaultThemeRenderContext": "https://typedoc.org/api/classes/DefaultThemeRenderContext.html",
+      "Options": "https://typedoc.org/api/classes/Configuration.Options.html",
+      "PageEvent": "https://typedoc.org/api/classes/PageEvent.html",
+      "ProjectReflection": "https://typedoc.org/api/classes/Models.ProjectReflection.html",
+      "Renderer": "https://typedoc.org/api/classes/Renderer.html",
+      "RendererEvent": "https://typedoc.org/api/classes/RendererEvent.html",
+      "RenderTemplate": "https://typedoc.org/api/types/RenderTemplate.html",
+      "Reflection": "https://typedoc.org/api/classes/Models.Reflection.html",
+      "ReflectionGroup": "https://typedoc.org/api/classes/Models.ReflectionGroup.html",
+      "Theme": "https://typedoc.org/api/classes/Theme.html",
+      "TypeDocOptions": "https://typedoc.org/api/interfaces/TypeDocOptions.html",
+      "UrlMapping": "https://typedoc.org/api/classes/UrlMapping.html"
+    }
+  }
+}

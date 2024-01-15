@@ -1,4 +1,3 @@
-import { DECLARATIONS_PATH } from '@dev-packages/helpers';
 import { DocsConfig } from '@dev-packages/helpers/src/models';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -21,8 +20,8 @@ export async function generateDocs(docsConfig: DocsConfig) {
 
   // DECLARATIONS
   if (docsConfig.declarations) {
-    const declarationsConfig: any = await import(DECLARATIONS_PATH);
-    const configFileTs = project.getSourceFile(DECLARATIONS_PATH);
+    const declarationsConfig: any = await import(docsConfig.declarationsPath);
+    const configFileTs = project.getSourceFile(docsConfig.declarationsPath);
 
     const optionsVariableStatements =
       configFileTs?.getVariableStatements() as VariableStatement[];

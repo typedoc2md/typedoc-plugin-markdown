@@ -1,12 +1,5 @@
 import { SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, bold, codeBlock } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
-import {
-  KEYWORD_MAP,
-  getSignatureParameters,
-  isGroupKind,
-} from '../../helpers';
 
 /**
  * @category Partials
@@ -20,6 +13,8 @@ export function signatureMemberIdentifier(
   },
 ): string {
   const md: string[] = [];
+  const { backTicks, bold, codeBlock } = context.markdown;
+  const { escapeChars } = context.utils;
 
   const DEFAULT_OPTIONS = {
     accessor: null,
@@ -27,15 +22,15 @@ export function signatureMemberIdentifier(
   };
 
   const options = { ...DEFAULT_OPTIONS, ...opts };
-
   const useCodeBlocks = context.options.getValue('useCodeBlocks');
+  const keyword = context.helpers.getKeyword(signature.parent.kind);
 
   if (
     useCodeBlocks &&
-    isGroupKind(signature.parent) &&
-    KEYWORD_MAP[signature.parent.kind]
+    context.helpers.isGroupKind(signature.parent) &&
+    keyword
   ) {
-    md.push(KEYWORD_MAP[signature.parent.kind] + ' ');
+    md.push(keyword + ' ');
   }
 
   if (options?.accessor) {
@@ -62,10 +57,15 @@ export function signatureMemberIdentifier(
     );
   }
 
-  md.push(getSignatureParameters(signature.parameters || [], useCodeBlocks));
+  md.push(
+    context.partials.signatureParameters(
+      signature.parameters || [],
+      useCodeBlocks,
+    ),
+  );
 
   if (signature.type) {
-    md.push(`: ${context.someType(signature.type)}`);
+    md.push(`: ${context.partials.someType(signature.type)}`);
   }
 
   const result = md.join('');

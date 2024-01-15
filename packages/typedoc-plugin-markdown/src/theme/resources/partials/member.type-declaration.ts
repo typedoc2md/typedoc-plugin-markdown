@@ -1,6 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { flattenDeclarations } from '../../helpers';
 
 /**
  * @category Partials
@@ -14,11 +13,13 @@ export function typeDeclarationMember(
 
   if (typeDeclaration.children) {
     if (context.options.getValue('typeDeclarationFormat') === 'table') {
-      md.push(context.typeDeclarationTable(typeDeclaration.children));
+      md.push(context.partials.typeDeclarationTable(typeDeclaration.children));
     } else {
-      const declarations = flattenDeclarations(typeDeclaration.children);
+      const declarations = context.helpers.flattenDeclarations(
+        typeDeclaration.children,
+      );
       declarations.forEach((declaration: DeclarationReflection) => {
-        md.push(context.member(declaration, headingLevel + 1, true));
+        md.push(context.partials.member(declaration, headingLevel + 1, true));
       });
     }
   }

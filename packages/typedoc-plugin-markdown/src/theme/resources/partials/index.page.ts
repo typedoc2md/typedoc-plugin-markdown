@@ -5,10 +5,7 @@ import {
   ProjectReflection,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { MarkdownPageEvent } from '../../../plugin/events';
-import { heading } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
-import { hasIndex } from '../../helpers';
+import { MarkdownPageEvent } from '../../..';
 
 /**
  * @category Partials
@@ -19,9 +16,11 @@ export function pageIndex(
   headingLevel: number,
 ): string {
   const md: string[] = [];
+  const { heading } = context.markdown;
+  const { escapeChars } = context.utils;
 
-  if (hasIndex(page.model)) {
-    md.push(context.reflectionIndex(page.model, false, headingLevel));
+  if (page.model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
+    md.push(context.partials.reflectionIndex(page.model, headingLevel));
     return md.join('\n\n');
   }
 
@@ -31,15 +30,17 @@ export function pageIndex(
       EntryPointStrategy.Packages;
 
   if (isPackages && page.model.children?.length) {
-    md.push(heading(headingLevel, context.getTextContent('label.packages')));
+    md.push(heading(headingLevel, context.text.get('label.packages')));
     const packagesList = page.model.children?.map((projectPackage) => {
-      return `- [${escapeChars(projectPackage.name)}](${context.relativeURL(
-        Boolean(projectPackage.readme)
-          ? `${path.dirname(
-              projectPackage.url || '',
-            )}/${context.options.getValue('entryFileName')}`
-          : projectPackage.url,
-      )})`;
+      const urlTo = Boolean(projectPackage.readme)
+        ? `${path.dirname(projectPackage.url || '')}/${context.options.getValue(
+            'entryFileName',
+          )}`
+        : projectPackage.url;
+      return `- ${context.partials.linkTo(
+        escapeChars(projectPackage.name),
+        urlTo,
+      )}`;
     });
     md.push(packagesList?.join('\n') || '');
     return md.join('\n\n');

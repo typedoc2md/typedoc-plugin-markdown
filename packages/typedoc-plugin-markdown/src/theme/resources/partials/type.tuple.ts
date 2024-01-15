@@ -9,6 +9,6 @@ export function tupleType(
   tupleType: TupleType,
 ): string {
   return `[${tupleType.elements
-    .map((element) => context.someType(element))
+    .map((element) => context.partials.someType(element))
     .join(', ')}]`;
 }

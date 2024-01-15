@@ -1,6 +1,5 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { bold } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -8,26 +7,27 @@ import { bold } from '../../../support/elements';
 export function typeParametersList(
   context: MarkdownThemeRenderContext,
   typeParameters: TypeParameterReflection[],
-  headingLevel: number,
 ): string {
   const rows: string[] = [];
   typeParameters?.forEach((typeParameter) => {
     const row: string[] = [];
 
+    const { bold } = context.markdown;
+
     const nameCol: string[] = [bold(typeParameter.name)];
 
     if (typeParameter.type) {
-      nameCol.push(`extends ${context.someType(typeParameter.type)}`);
+      nameCol.push(`extends ${context.partials.someType(typeParameter.type)}`);
     }
 
     if (typeParameter.default) {
-      nameCol.push(`= ${context.someType(typeParameter.default)}`);
+      nameCol.push(`= ${context.partials.someType(typeParameter.default)}`);
     }
 
     row.push('• ' + nameCol.join(' '));
 
     if (typeParameter.comment) {
-      row.push(context.comment(typeParameter.comment));
+      row.push(context.partials.comment(typeParameter.comment));
     }
 
     rows.push(row.join('\n\n'));

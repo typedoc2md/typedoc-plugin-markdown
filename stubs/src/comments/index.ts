@@ -41,6 +41,15 @@
  * A <tag> in a code block
  * Some <p> html </p> inside codeblock
  * ```
+ * @media
+ *
+ * You can include media in doc comments:
+ *
+ * ![alt SomeAlt](media://logo.png)
+ *
+ * And include other files:
+ *
+ * [[include:example.md]] [[include:not-found.md]]
  */
 
 export interface CommentInterface {

@@ -1,10 +1,5 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, table } from '../../../support/elements';
-import {
-  formatTableDescriptionCol,
-  stripLineBreaks,
-} from '../../../support/utils';
 
 /**
  * @category Partials
@@ -13,6 +8,9 @@ export function typeParametersTable(
   context: MarkdownThemeRenderContext,
   typeParameters: TypeParameterReflection[],
 ): string {
+  const { backTicks, table } = context.markdown;
+  const { formatTableDescriptionCol, stripLineBreaks } = context.utils;
+
   const hasDefault = typeParameters.some((typeParameter) =>
     Boolean(typeParameter.default),
   );
@@ -21,14 +19,14 @@ export function typeParametersTable(
     Boolean(typeParameter.comment),
   );
 
-  const headers = [context.getTextContent('kind.typeParameter.singular')];
+  const headers = [context.text.get('kind.typeParameter.singular')];
 
   if (hasDefault) {
-    headers.push(context.getTextContent('label.value'));
+    headers.push(context.text.get('label.value'));
   }
 
   if (hasComments) {
-    headers.push(context.getTextContent('label.description'));
+    headers.push(context.text.get('label.description'));
   }
 
   const rows: string[][] = [];
@@ -40,14 +38,14 @@ export function typeParametersTable(
     nameCol.push(backTicks(typeParameter.name));
 
     if (typeParameter.type) {
-      nameCol.push(`extends ${context.someType(typeParameter.type)}`);
+      nameCol.push(`extends ${context.partials.someType(typeParameter.type)}`);
     }
 
     row.push(nameCol.join(' '));
 
     if (hasDefault) {
       if (typeParameter.default) {
-        row.push(context.someType(typeParameter.default));
+        row.push(context.partials.someType(typeParameter.default));
       } else {
         row.push('-');
       }
@@ -57,7 +55,9 @@ export function typeParametersTable(
       if (typeParameter.comment) {
         row.push(
           stripLineBreaks(
-            formatTableDescriptionCol(context.comment(typeParameter.comment)),
+            formatTableDescriptionCol(
+              context.partials.comment(typeParameter.comment),
+            ),
           ),
         );
       } else {

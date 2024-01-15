@@ -45,6 +45,19 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
+## Media
+
+You can include media in doc comments:
+
+![alt SomeAlt](media/logo.png)
+
+And include other files:
+
+This is a simple example on how to use include.
+
+![My image alt text](media/logo.png)
+ [[include:not-found.md]]
+
 ## Enumerations
 
 - [CommentEnum](enumerations/CommentEnum.md)
@@ -108,6 +121,19 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
+## Media
+
+You can include media in doc comments:
+
+![alt SomeAlt](media/logo.png)
+
+And include other files:
+
+This is a simple example on how to use include.
+
+![My image alt text](media/logo.png)
+ [[include:not-found.md]]
+
 ## Enumerations
 
 - [CommentEnum](enumerations/CommentEnum.md)
@@ -170,6 +196,19 @@ A \`<tag>\` in backticks
 A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
+
+## Media
+
+You can include media in doc comments:
+
+![alt SomeAlt](media/logo.png)
+
+And include other files:
+
+This is a simple example on how to use include.
+
+![My image alt text](media/logo.png)
+ [[include:not-found.md]]
 
 ## Enumerations
 
@@ -274,6 +313,19 @@ A \`<tag>\` in backticks
 A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
+
+## Media
+
+You can include media in doc comments:
+
+![alt SomeAlt](media/logo.png)
+
+And include other files:
+
+This is a simple example on how to use include.
+
+![My image alt text](media/logo.png)
+ [[include:not-found.md]]
 
 ## Enumerations
 

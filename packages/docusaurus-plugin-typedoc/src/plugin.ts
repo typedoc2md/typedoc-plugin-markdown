@@ -56,10 +56,6 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const outputDir = app.options.getValue('out');
 
-  if (options.cleanOutputDir) {
-    removeDir(outputDir);
-  }
-
   if (context.siteConfig?.markdown?.format !== 'mdx') {
     app.renderer.on(PageEvent.END, (event: PageEvent) => {
       event.contents = event.contents?.replace(/\\</g, '<');
@@ -119,32 +115,5 @@ module.exports = typedocSidebar.items;`,
     });
   } else {
     await app.generateDocs(project, outputDir);
-  }
-}
-
-export function writeFileSync(fileName: string, data: string) {
-  fs.mkdirSync(path.dirname(normalizePath(fileName)), { recursive: true });
-  fs.writeFileSync(normalizePath(fileName), data);
-}
-
-export function normalizePath(path: string) {
-  return path.replace(/\\/g, '/');
-}
-
-export function removeDir(path: string) {
-  if (fs.existsSync(path)) {
-    const files = fs.readdirSync(path);
-    if (files.length > 0) {
-      files.forEach(function (filename) {
-        if (fs.statSync(path + '/' + filename).isDirectory()) {
-          removeDir(path + '/' + filename);
-        } else {
-          fs.unlinkSync(path + '/' + filename);
-        }
-      });
-      fs.rmdirSync(path);
-    } else {
-      fs.rmdirSync(path);
-    }
   }
 }

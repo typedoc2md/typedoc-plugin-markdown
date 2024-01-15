@@ -1,4 +1,3 @@
-import { DECLARATIONS_PATH } from '@dev-packages/helpers';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as prettier from 'prettier';
@@ -8,8 +7,8 @@ import { DeclarationOption, ParameterType } from 'typedoc';
  * Creates models for plugin options
  */
 
-export async function generateModels() {
-  const optionsConfig = await import(DECLARATIONS_PATH);
+export async function generateModels(declarationsPath: string) {
+  const optionsConfig = await import(declarationsPath);
 
   const mixedTypes = (Object.entries(optionsConfig) as any).filter(
     ([name, option]) =>
@@ -59,10 +58,8 @@ export async function generateModels() {
   `;
 
   const optionsModelFile = path.join(
-    process.cwd(),
-    'src',
-    'options',
-    'models.ts',
+    path.dirname(declarationsPath),
+    'option-types.ts',
   );
 
   const formatted = await prettier.format(optionsOutput, {

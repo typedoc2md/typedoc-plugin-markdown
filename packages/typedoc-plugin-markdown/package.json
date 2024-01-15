@@ -9,15 +9,16 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "prebuild": "rm -rf dist && prebuild-options && ts-node scripts/prebuild-resources",
+    "prebuild": "rm -rf dist && prebuild-options && ts-node scripts/prebuild",
     "build": "tsc",
-    "pretest": "ts-node ./test/__scripts__/prepare.ts",
-    "test": "npm-run-all test:*",
-    "test:lint-md": "node test/__scripts__/lint.md.mjs",
-    "test:lint-mdx": "node test/__scripts__/lint.mdx.mjs",
-    "test:jest": "jest",
+    "pretest": "ts-node ./test/__scripts__/prepare",
+    "test-md": "node test/__scripts__/lint.md.mjs",
+    "test-mdx": "node test/__scripts__/lint.mdx.mjs",
+    "test": "npm run test-md && npm run test-mdx && jest",
+    "test:update": "npm run build && npm test -- -u",
     "build-and-run": "npm run build && npm run pretest",
-    "build-and-test": "npm run build && npm run test"
+    "build-and-test": "npm run build && npm run test",
+    "docs": "npm run build && typedoc --options ./typedoc.md.json --out ./docs/api && typedoc --options ./typedoc.base.json  --out ./docs/api-html"
   },
   "author": "Thomas Grey",
   "license": "MIT",

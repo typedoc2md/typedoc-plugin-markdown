@@ -1,51 +1,52 @@
+import * as fs from 'fs';
+import {
+  Application,
+  DeclarationReflection,
+  ProjectReflection,
+  Reflection,
+  Renderer,
+} from 'typedoc';
+import { MarkdownPageEvent, MarkdownRendererEvent } from './events';
+import { nicePath, writeFileSync } from './utils';
+
 /**
- * Contains functionality to decouple HTML logic from the TypeDoc [Renderer](https://typedoc.org/api/classes/Renderer.html).
+ * Contains functionality to decouple HTML logic from the TypeDoc's {@link Renderer}.
+ *
+ * @todo Investigate ways to properly decouple HTML logic from the TypeDoc renderer.
+ *
  * @module
  */
 
-import * as fs from 'fs';
-import * as path from 'path';
-import {
-  DeclarationReflection,
-  Options,
-  ProjectReflection,
-  Reflection,
-} from 'typedoc';
-import { formatContents } from '../support/utils';
-import { MarkdownPageEvent, MarkdownRendererEvent } from './events';
-
 /**
- * Replacement of TypeDoc's [Application.generateDocs](https://typedoc.org/api/classes/Application.html#generateDocs) to decouple HTML logic.
+ * Replacement of TypeDoc's {@link Application.generateDocs} method to decouple HTML logic.
  *
  */
-export async function generateMarkdown(
-  project: ProjectReflection,
-  out: string,
-) {
+export async function generateDocs(project: ProjectReflection, out: string) {
   const start = Date.now();
-
   await this.renderer.render(project, out);
-
   if (this.logger.hasErrors()) {
     this.logger.error(
       'Documentation could not be generated due to the errors above.',
     );
   } else {
     this.logger.info(`Documentation generated at ${nicePath(out)}`);
-
     this.logger.verbose(`Markdown rendering took ${Date.now() - start}ms`);
   }
 }
 
 /**
- * Replacement of TypeDoc's [Renderer.render](https://typedoc.org/api/classes/Renderer.html#render) to decouple HTML logic.
- * - Removes uneccessary async calls to load highlighters
- * - Removes hooks logic
+ * Replacement of TypeDoc's {@link Renderer.render} method to decouple HTML logic.
+ *
+ * This is essentially a copy of the base method with a few tweaks.
+ *
+ * - Removes uneccessary async calls to load highlighters only required for html theme.
+ * - Removes hooks logic that are jsx specific.
+ * - Adds any logic specific to markdown rendering.
  */
-export async function renderMarkdown(
+export async function render(
   project: ProjectReflection,
   outputDirectory: string,
-): Promise<void> {
+) {
   this.renderStartTime = Date.now();
 
   if (this.cleanOutputDir) {
@@ -66,20 +67,6 @@ export async function renderMarkdown(
     return;
   }
 
-  if (this.githubPages) {
-    try {
-      const text =
-        'TypeDoc added this file to prevent GitHub Pages from ' +
-        'using Jekyll. You can turn off this behavior by setting ' +
-        'the `githubPages` option to false.';
-
-      fs.writeFileSync(path.join(outputDirectory, '.nojekyll'), text);
-    } catch (error) {
-      this.application.warn('Could not create .nojekyll file.');
-      return;
-    }
-  }
-
   this.prepareTheme();
 
   const output = new MarkdownRendererEvent(
@@ -88,29 +75,10 @@ export async function renderMarkdown(
     project,
   );
 
-  if (this.packages) {
-    const getOptionsForPackage = new Promise((resolve, reject) => {
-      const packages = {};
-      Object.entries(this.packages).forEach(async ([k, v]) => {
-        packages[k] = {};
-        const origOptions = this.application.options;
-        const packageOptions: Options = origOptions.copyForPackage(
-          (v as any).dir,
-        );
-        await packageOptions.read(this.application.logger, (v as any).dir);
-        const isSet = packageOptions.isSet('outputFileStrategy');
-        packages[k].outputFileStrategy = isSet
-          ? packageOptions.getValue('outputFileStrategy')
-          : null;
-        resolve(packages);
-      });
-    });
-
-    this.packages = await getOptionsForPackage;
-  }
-
   output.urls = this.theme!.getUrls(project);
   output.navigation = this.theme!.getNavigation(project);
+
+  this.trigger(output);
 
   await Promise.all(this.preRenderAsyncJobs.map((job) => job(output)));
 
@@ -147,7 +115,7 @@ export async function renderMarkdown(
       }
 
       try {
-        writeFileSync(page.filename, formatContents(page.contents as string));
+        writeFileSync(page.filename, page.contents as string);
       } catch (error) {
         this.application.logger.error(`Could not write ${page.filename}`);
       }
@@ -160,23 +128,4 @@ export async function renderMarkdown(
   this.trigger(MarkdownRendererEvent.END, output);
 
   this.theme = void 0;
-}
-
-function writeFileSync(fileName: string, data: string) {
-  fs.mkdirSync(path.dirname(normalizePath(fileName)), { recursive: true });
-  fs.writeFileSync(normalizePath(fileName), data);
-}
-
-function normalizePath(path: string) {
-  return path.replace(/\\/g, '/');
-}
-
-function nicePath(absPath: string) {
-  if (!path.isAbsolute(absPath)) return absPath;
-
-  const relativePath = path.relative(process.cwd(), absPath);
-  if (relativePath.startsWith('..')) {
-    return normalizePath(absPath);
-  }
-  return `./${normalizePath(relativePath)}`;
 }

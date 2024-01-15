@@ -9,21 +9,20 @@ import {
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
-import { UrlMapping } from 'typedoc-plugin-markdown/dist/plugin/url-mapping';
 
 export class GithubWikiTheme extends MarkdownTheme {
   override getRenderContext(pageEvent: MarkdownPageEvent<Reflection>) {
     return new ThemeRenderContext(this, pageEvent, this.application.options);
   }
 
-  getUrls(project: ProjectReflection): UrlMapping<any>[] {
+  getUrls(project: ProjectReflection) {
     return super.getUrls(project).map((urlMapping) => {
       if (urlMapping.model.kindOf(ReflectionKind.Project)) {
         return urlMapping;
       }
       return {
         ...urlMapping,
-        url: this.getUrl(urlMapping.model),
+        url: this.getUrl(urlMapping.model as DeclarationReflection),
       };
     });
   }
@@ -45,7 +44,10 @@ export class GithubWikiTheme extends MarkdownTheme {
 }
 
 class ThemeRenderContext extends MarkdownThemeRenderContext {
-  override parseUrl(url: string) {
-    return encodeURI('../wiki/' + url.replace('.md', ''));
-  }
+  override utils = {
+    ...this.utils,
+    parseUrl: (url: string) => {
+      return encodeURI('../wiki/' + url.replace('.md', ''));
+    },
+  };
 }

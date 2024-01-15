@@ -1,0 +1,74 @@
+// @ts-check
+import * as fs from 'fs';
+import {
+  MarkdownTheme,
+  MarkdownThemeRenderContext,
+} from 'typedoc-plugin-markdown';
+
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  app.renderer.defineTheme('custom-theme', MyMarkdownTheme);
+
+  app.renderer.markdownHooks.on(
+    'page.begin',
+    () => '> TOP BANNER using `page.begin` hook',
+  );
+
+  app.renderer.markdownHooks.on(
+    'page.end',
+    () => `**Generated using \`page.end\` hook**`,
+  );
+
+  app.renderer.markdownHooks.on(
+    'content.begin',
+    () => '> CONTENT BANNER using `content.begin` hook',
+  );
+
+  app.renderer.preRenderAsyncJobs.push(async (output) => {
+    await new Promise((r) => setTimeout(r, 5));
+    fs.writeFileSync(
+      `${output.outputDirectory}/pre-render.txt`,
+      'pre render success',
+    );
+  });
+
+  app.renderer.postRenderAsyncJobs.push(async (output) => {
+    await new Promise((r) => setTimeout(r, 5));
+    fs.writeFileSync(
+      `${output.outputDirectory}/post-render.txt`,
+      'post render success',
+    );
+  });
+}
+
+class MyMarkdownTheme extends MarkdownTheme {
+  /**
+   * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
+   */
+  getRenderContext(page) {
+    return new MyMarkdownThemeRenderContext(
+      this,
+      page,
+      this.application.options,
+    );
+  }
+}
+
+class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
+  partials = {
+    ...this.partials,
+    /**
+     * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
+     */
+    header: (page) => {
+      return `
+<div style="display:flex; align-items:center;">
+  <img alt="My logo" src="https://placehold.co/100x50" style="margin-right: .5em;" />
+  <em>Welcome to ${page.project.name} with a customised header partial!!</em>
+</div>
+`;
+    },
+  };
+}

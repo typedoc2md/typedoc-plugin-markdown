@@ -10,10 +10,10 @@ export function indexAccessType(
 ): string {
   const md: string[] = [];
   if (model.objectType) {
-    md.push(context.someType(model.objectType));
+    md.push(context.partials.someType(model.objectType));
   }
   if (model.indexType) {
-    md.push(`\\[${context.someType(model.indexType)}\\]`);
+    md.push(`\\[${context.partials.someType(model.indexType)}\\]`);
   }
   return md.join('');
 }

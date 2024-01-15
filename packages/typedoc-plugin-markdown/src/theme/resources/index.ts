@@ -1,6 +1,135 @@
-/**
- * Contains templates and partials used when generating output.
- *
- * @module
- */
-export * from '../helpers';
+import { MarkdownThemeRenderContext } from '../..';
+
+import {
+  memberTemplate,
+  projectTemplate,
+  readmeTemplate,
+  reflectionTemplate,
+} from './templates';
+
+import {
+  breadcrumbs,
+  commentParts,
+  comment,
+  generator,
+  header,
+  pageIndex,
+  reflectionIndex,
+  linkTo,
+  parametersList,
+  typeParametersList,
+  accessorMember,
+  constructorMember,
+  declarationMemberIdentifier,
+  declarationMember,
+  memberHierarchy,
+  indexSignatureTitle,
+  inheritance,
+  referenceMember,
+  reflectionMember,
+  signatureMemberIdentifier,
+  signatureParameters,
+  signatureMemberReturns,
+  signatureMember,
+  sources,
+  memberTitle,
+  member,
+  typeDeclarationMember,
+  members,
+  pageTitle,
+  enumMembersTable,
+  parametersTable,
+  propertiesTable,
+  typeDeclarationTable,
+  typeParametersTable,
+  typeArguments,
+  arrayType,
+  conditionalType,
+  declarationType,
+  functionType,
+  indexAccessType,
+  inferredType,
+  intersectionType,
+  intrinsicType,
+  literalType,
+  namedTupleType,
+  queryType,
+  referenceType,
+  reflectionType,
+  someType,
+  tupleType,
+  typeOperatorType,
+  unionType,
+  unknownType,
+} from './partials';
+
+function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
+  return (...args: L) => fn(first, ...args);
+}
+
+export const templates = (context: MarkdownThemeRenderContext) => {
+  return {
+    memberTemplate: bind(memberTemplate, context),
+    projectTemplate: bind(projectTemplate, context),
+    readmeTemplate: bind(readmeTemplate, context),
+    reflectionTemplate: bind(reflectionTemplate, context),
+  };
+};
+
+export const partials = (context: MarkdownThemeRenderContext) => {
+  return {
+    breadcrumbs: bind(breadcrumbs, context),
+    commentParts: bind(commentParts, context),
+    comment: bind(comment, context),
+    generator: bind(generator, context),
+    header: bind(header, context),
+    pageIndex: bind(pageIndex, context),
+    reflectionIndex: bind(reflectionIndex, context),
+    linkTo: bind(linkTo, context),
+    parametersList: bind(parametersList, context),
+    typeParametersList: bind(typeParametersList, context),
+    accessorMember: bind(accessorMember, context),
+    constructorMember: bind(constructorMember, context),
+    declarationMemberIdentifier: bind(declarationMemberIdentifier, context),
+    declarationMember: bind(declarationMember, context),
+    memberHierarchy: bind(memberHierarchy, context),
+    indexSignatureTitle: bind(indexSignatureTitle, context),
+    inheritance: bind(inheritance, context),
+    referenceMember: bind(referenceMember, context),
+    reflectionMember: bind(reflectionMember, context),
+    signatureMemberIdentifier: bind(signatureMemberIdentifier, context),
+    signatureParameters: bind(signatureParameters, context),
+    signatureMemberReturns: bind(signatureMemberReturns, context),
+    signatureMember: bind(signatureMember, context),
+    sources: bind(sources, context),
+    memberTitle: bind(memberTitle, context),
+    member: bind(member, context),
+    typeDeclarationMember: bind(typeDeclarationMember, context),
+    members: bind(members, context),
+    pageTitle: bind(pageTitle, context),
+    enumMembersTable: bind(enumMembersTable, context),
+    parametersTable: bind(parametersTable, context),
+    propertiesTable: bind(propertiesTable, context),
+    typeDeclarationTable: bind(typeDeclarationTable, context),
+    typeParametersTable: bind(typeParametersTable, context),
+    typeArguments: bind(typeArguments, context),
+    arrayType: bind(arrayType, context),
+    conditionalType: bind(conditionalType, context),
+    declarationType: bind(declarationType, context),
+    functionType: bind(functionType, context),
+    indexAccessType: bind(indexAccessType, context),
+    inferredType: bind(inferredType, context),
+    intersectionType: bind(intersectionType, context),
+    intrinsicType: bind(intrinsicType, context),
+    literalType: bind(literalType, context),
+    namedTupleType: bind(namedTupleType, context),
+    queryType: bind(queryType, context),
+    referenceType: bind(referenceType, context),
+    reflectionType: bind(reflectionType, context),
+    someType: bind(someType, context),
+    tupleType: bind(tupleType, context),
+    typeOperatorType: bind(typeOperatorType, context),
+    unionType: bind(unionType, context),
+    unknownType: bind(unknownType, context),
+  };
+};

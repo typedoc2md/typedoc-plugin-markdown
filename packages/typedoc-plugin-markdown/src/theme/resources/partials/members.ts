@@ -6,8 +6,6 @@ import {
 } from 'typedoc';
 
 import { MarkdownThemeRenderContext } from '../..';
-import { heading, horizontalRule } from '../../../support/elements';
-import { isGroupKind } from '../../helpers';
 
 export function members(
   context: MarkdownThemeRenderContext,
@@ -15,14 +13,12 @@ export function members(
   headingLevel: number,
 ): string {
   const md: string[] = [];
+  const { heading, horizontalRule } = context.markdown;
 
   const displayHr = (reflection: DeclarationReflection) => {
     if (context.options.getValue('outputFileStrategy') === 'modules') {
-      return isGroupKind(reflection);
+      return context.helpers.isGroupKind(reflection);
     }
-    //return !context.options
-    //  .getValue('membersWithOwnFile')
-    //  ?.includes(reflection);
     return true;
   };
 
@@ -44,7 +40,9 @@ export function members(
   ) => {
     const items = children?.filter((item) => !item.hasOwnDocument);
     items?.forEach((item, index) => {
-      md.push(context.member(item, memberHeadingLevel || headingLevel));
+      md.push(
+        context.partials.member(item, memberHeadingLevel || headingLevel),
+      );
       if (index < items.length - 1 && displayHr(item)) {
         md.push(horizontalRule());
       }
@@ -73,7 +71,7 @@ export function members(
       );
       groupsWithChildren?.forEach((group, index: number) => {
         if (group.categories) {
-          md.push(heading(headingLevel, context.groupTitle(group.title)));
+          md.push(heading(headingLevel, context.text.groupTitle(group.title)));
           pushCategories(group.categories, headingLevel + 1);
         } else {
           const isPropertiesGroup = group.children.every((child) =>
@@ -84,24 +82,24 @@ export function members(
             child.kindOf(ReflectionKind.EnumMember),
           );
 
-          md.push(heading(headingLevel, context.groupTitle(group.title)));
+          md.push(heading(headingLevel, context.text.groupTitle(group.title)));
 
           if (
             isPropertiesGroup &&
             context.options.getValue('propertiesFormat') === 'table'
           ) {
             md.push(
-              context.propertiesTable(
+              context.partials.propertiesTable(
                 group.children,
-                context.groupTitle(group.title) ===
-                  context.getTextContent('kind.event.plural'),
+                context.text.groupTitle(group.title) ===
+                  context.text.get('kind.event.plural'),
               ),
             );
           } else if (
             isEnumGroup &&
             context.options.getValue('enumMembersFormat') === 'table'
           ) {
-            md.push(context.enumMembersTable(group.children));
+            md.push(context.partials.enumMembersTable(group.children));
           } else {
             pushChildren(group.children, headingLevel + 1);
           }

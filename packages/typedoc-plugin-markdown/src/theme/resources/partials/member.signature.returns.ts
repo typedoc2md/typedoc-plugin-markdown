@@ -6,7 +6,6 @@ import {
   SomeType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, blockQuoteBlock, heading } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -17,18 +16,19 @@ export function signatureMemberReturns(
   headingLevel: number,
 ): string {
   const md: string[] = [];
+  const { heading, blockQuoteBlock } = context.markdown;
 
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(heading(headingLevel, context.getTextContent('label.returns')));
+  md.push(heading(headingLevel, context.text.get('label.returns')));
 
   md.push(getReturnType(context, typeDeclaration, signature.type));
 
   if (signature.comment?.blockTags.length) {
     const tags = signature.comment.blockTags
       .filter((tag) => tag.tag === '@returns')
-      .map((tag) => context.commentParts(tag.content));
+      .map((tag) => context.partials.commentParts(tag.content));
     md.push(tags.join('\n\n'));
   }
 
@@ -39,7 +39,7 @@ export function signatureMemberReturns(
     if (signature.type.typeArguments[0] instanceof ReflectionType) {
       md.push(
         blockQuoteBlock(
-          context.typeDeclarationMember(
+          context.partials.typeDeclarationMember(
             signature.type.typeArguments[0].declaration,
             headingLevel,
           ),
@@ -52,7 +52,7 @@ export function signatureMemberReturns(
     typeDeclaration.signatures.forEach((signature) => {
       md.push(
         blockQuoteBlock(
-          context.signatureMember(signature, headingLevel + 1, true),
+          context.partials.signatureMember(signature, headingLevel + 1, true),
         ),
       );
     });
@@ -61,7 +61,7 @@ export function signatureMemberReturns(
   if (typeDeclaration?.children) {
     md.push(
       blockQuoteBlock(
-        context.typeDeclarationMember(typeDeclaration, headingLevel),
+        context.partials.typeDeclarationMember(typeDeclaration, headingLevel),
       ),
     );
   }
@@ -74,11 +74,12 @@ function getReturnType(
   typeDeclaration?: DeclarationReflection,
   type?: SomeType,
 ) {
+  const { backTicks } = context.markdown;
   if (typeDeclaration?.children) {
     return backTicks('Object');
   }
   if (typeDeclaration?.signatures) {
     return backTicks('Function');
   }
-  return type ? context.someType(type, true).replace(/\n/g, ' ') : '';
+  return type ? context.partials.someType(type, true).replace(/\n/g, ' ') : '';
 }

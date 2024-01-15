@@ -69,13 +69,13 @@ Comments for function
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): [\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`Object\`\\>
+> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
 
 Comments for function
 
 ## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`Object\`\\>
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
 
 Return comments
 
@@ -103,7 +103,7 @@ Comments for function
 
 ## Returns
 
-[\`Promise\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`Object\`\\>
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
 
 Return comments
 

@@ -1,11 +1,11 @@
 import * as path from 'path';
 import { Event, ProjectReflection, Reflection } from 'typedoc';
-import { NavigationItem } from '../theme/models';
-import { RenderTemplate, UrlMapping } from './url-mapping';
+import { NavigationItem, RenderTemplate, UrlMapping } from '../theme';
 
 /**
  * Extends the RendererEvent from TypeDoc to expose navigation property.
  */
+
 export class MarkdownRendererEvent extends Event {
   readonly project: ProjectReflection;
 

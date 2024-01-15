@@ -8,5 +8,5 @@ export function typeOperatorType(
   context: MarkdownThemeRenderContext,
   model: TypeOperatorType,
 ): string {
-  return `${model.operator} ${context.someType(model.target)}`;
+  return `${model.operator} ${context.partials.someType(model.target)}`;
 }

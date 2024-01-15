@@ -8,6 +8,18 @@ describe(`VitePress`, () => {
     expect(contents).toMatchSnapshot();
   });
 
+  test(`should output members that require anchor slugification`, async () => {
+    const contents = fs
+      .readFileSync(
+        path.join(
+          __dirname,
+          '../out/default/module-1/interfaces/InterfaceA.md',
+        ),
+      )
+      .toString();
+    expect(contents).toMatchSnapshot();
+  });
+
   test(`should generate typedoc sidebar`, async () => {
     const contents = fs
       .readFileSync(path.join(__dirname, '../out/default/typedoc-sidebar.json'))

@@ -1,6 +1,5 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { heading } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -12,41 +11,58 @@ export function accessorMember(
 ): string {
   const md: string[] = [];
 
+  const { heading } = context.markdown;
+
   if (declaration.getSignature) {
     md.push(
-      context.signatureMemberIdentifier(declaration.getSignature, {
+      context.partials.signatureMemberIdentifier(declaration.getSignature, {
         accessor: 'get',
       }),
     );
     if (declaration.getSignature.comment) {
-      md.push(context.comment(declaration.getSignature.comment, headingLevel));
+      md.push(
+        context.partials.comment(
+          declaration.getSignature.comment,
+          headingLevel,
+        ),
+      );
     }
   }
   if (declaration.setSignature) {
     md.push(
-      context.signatureMemberIdentifier(declaration.setSignature, {
+      context.partials.signatureMemberIdentifier(declaration.setSignature, {
         accessor: 'set',
       }),
     );
     if (declaration.setSignature.comment) {
-      md.push(context.comment(declaration.setSignature.comment, headingLevel));
+      md.push(
+        context.partials.comment(
+          declaration.setSignature.comment,
+          headingLevel,
+        ),
+      );
     }
   }
 
   if (declaration.setSignature?.parameters?.length) {
-    md.push(
-      heading(headingLevel, context.getTextContent('kind.parameter.plural')),
-    );
+    md.push(heading(headingLevel, context.text.get('kind.parameter.plural')));
     if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(context.parametersTable(declaration.setSignature.parameters));
+      md.push(
+        context.partials.parametersTable(declaration.setSignature.parameters),
+      );
     } else {
-      md.push(context.parametersList(declaration.setSignature.parameters));
+      md.push(
+        context.partials.parametersList(declaration.setSignature.parameters),
+      );
     }
   }
 
   if (declaration.getSignature?.type) {
     md.push(
-      context.signatureMemberReturns(declaration.getSignature, headingLevel),
+      context.partials.signatureMemberReturns(
+        declaration.getSignature,
+        headingLevel,
+      ),
     );
   }
 
@@ -54,9 +70,9 @@ export function accessorMember(
 
   if (showSources && !context.options.getValue('disableSources')) {
     if (declaration.getSignature?.sources) {
-      md.push(context.sources(declaration.getSignature, headingLevel));
+      md.push(context.partials.sources(declaration.getSignature, headingLevel));
     } else if (declaration.setSignature?.sources) {
-      md.push(context.sources(declaration.setSignature, headingLevel));
+      md.push(context.partials.sources(declaration.setSignature, headingLevel));
     }
   }
 

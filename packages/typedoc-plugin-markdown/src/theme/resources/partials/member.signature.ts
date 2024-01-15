@@ -1,6 +1,5 @@
 import { ReflectionKind, SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { heading } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -13,17 +12,20 @@ export function signatureMember(
   accessor?: string,
 ): string {
   const md: string[] = [];
+  const { heading } = context.markdown;
 
   if (!nested) {
     md.push(
-      context.signatureMemberIdentifier(signature, {
+      context.partials.signatureMemberIdentifier(signature, {
         accessor,
       }),
     );
   }
 
   if (signature.comment) {
-    md.push(context.comment(signature.comment, headingLevel, true, false));
+    md.push(
+      context.partials.comment(signature.comment, headingLevel, true, false),
+    );
   }
 
   if (
@@ -31,39 +33,34 @@ export function signatureMember(
     !signature.kindOf(ReflectionKind.ConstructorSignature)
   ) {
     md.push(
-      heading(
-        headingLevel,
-        context.getTextContent('kind.typeParameter.plural'),
-      ),
+      heading(headingLevel, context.text.get('kind.typeParameter.plural')),
     );
     if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(context.typeParametersTable(signature.typeParameters));
+      md.push(context.partials.typeParametersTable(signature.typeParameters));
     } else {
-      md.push(
-        context.typeParametersList(signature.typeParameters, headingLevel + 1),
-      );
+      md.push(context.partials.typeParametersList(signature.typeParameters));
     }
   }
 
   if (signature.parameters?.length) {
-    md.push(
-      heading(headingLevel, context.getTextContent('kind.parameter.plural')),
-    );
+    md.push(heading(headingLevel, context.text.get('kind.parameter.plural')));
     if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(context.parametersTable(signature.parameters));
+      md.push(context.partials.parametersTable(signature.parameters));
     } else {
-      md.push(context.parametersList(signature.parameters));
+      md.push(context.partials.parametersList(signature.parameters));
     }
   }
 
   if (signature.type) {
-    md.push(context.signatureMemberReturns(signature, headingLevel));
+    md.push(context.partials.signatureMemberReturns(signature, headingLevel));
   }
 
-  md.push(context.inheritance(signature, headingLevel));
+  md.push(context.partials.inheritance(signature, headingLevel));
 
   if (signature.comment) {
-    md.push(context.comment(signature.comment, headingLevel, false, true));
+    md.push(
+      context.partials.comment(signature.comment, headingLevel, false, true),
+    );
   }
 
   if (
@@ -71,7 +68,7 @@ export function signatureMember(
     signature.sources &&
     !context.options.getValue('disableSources')
   ) {
-    md.push(context.sources(signature, headingLevel));
+    md.push(context.partials.sources(signature, headingLevel));
   }
 
   return md.join('\n\n');

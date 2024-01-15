@@ -5,7 +5,6 @@ import {
   ReflectionType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { heading } from '../../../support/elements';
 
 /**
  * @category Partials
@@ -17,8 +16,9 @@ export function declarationMember(
   nested = false,
 ) {
   const md: string[] = [];
+  const { heading } = context.markdown;
 
-  md.push(context.declarationMemberIdentifier(declaration));
+  md.push(context.partials.declarationMemberIdentifier(declaration));
 
   const typeDeclaration = (declaration.type as any)
     ?.declaration as DeclarationReflection;
@@ -29,7 +29,7 @@ export function declarationMember(
     )
   ) {
     if (declaration.comment) {
-      md.push(context.comment(declaration.comment, headingLevel));
+      md.push(context.partials.comment(declaration.comment, headingLevel));
     }
   }
 
@@ -38,7 +38,7 @@ export function declarationMember(
       if (intersectionType instanceof ReflectionType) {
         md.push(heading(headingLevel, 'Type declaration'));
         md.push(
-          context.typeDeclarationMember(
+          context.partials.typeDeclarationMember(
             intersectionType.declaration,
             headingLevel,
           ),
@@ -52,11 +52,9 @@ export function declarationMember(
     declaration.type.typeArguments?.length
   ) {
     if (declaration.type.typeArguments[0] instanceof ReflectionType) {
+      md.push(heading(headingLevel, context.text.get('label.typeDeclaration')));
       md.push(
-        heading(headingLevel, context.getTextContent('label.typeDeclaration')),
-      );
-      md.push(
-        context.typeDeclarationMember(
+        context.partials.typeDeclarationMember(
           declaration.type.typeArguments[0].declaration,
           headingLevel,
         ),
@@ -66,58 +64,51 @@ export function declarationMember(
 
   if (declaration.typeParameters) {
     md.push(
-      heading(
-        headingLevel,
-        context.getTextContent('kind.typeParameter.plural'),
-      ),
+      heading(headingLevel, context.text.get('kind.typeParameter.plural')),
     );
     if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(context.typeParametersTable(declaration.typeParameters));
+      md.push(context.partials.typeParametersTable(declaration.typeParameters));
     } else {
-      md.push(
-        context.typeParametersList(
-          declaration.typeParameters,
-          headingLevel + 1,
-        ),
-      );
+      md.push(context.partials.typeParametersList(declaration.typeParameters));
     }
   }
 
   if (typeDeclaration) {
     if (typeDeclaration?.indexSignature) {
+      md.push(heading(headingLevel, context.text.get('label.indexSignature')));
       md.push(
-        heading(headingLevel, context.getTextContent('label.indexSignature')),
+        context.partials.indexSignatureTitle(typeDeclaration.indexSignature),
       );
-      md.push(context.indexSignatureTitle(typeDeclaration.indexSignature));
     }
 
     if (typeDeclaration?.signatures?.length) {
       typeDeclaration.signatures.forEach((signature) => {
-        md.push(context.signatureMember(signature, headingLevel, true));
+        md.push(
+          context.partials.signatureMember(signature, headingLevel, true),
+        );
       });
     }
 
     if (typeDeclaration?.children?.length) {
       if (!nested && typeDeclaration?.children?.length) {
         md.push(
-          heading(
-            headingLevel,
-            context.getTextContent('label.typeDeclaration'),
-          ),
+          heading(headingLevel, context.text.get('label.typeDeclaration')),
         );
-        md.push(context.typeDeclarationMember(typeDeclaration, headingLevel));
+        md.push(
+          context.partials.typeDeclarationMember(typeDeclaration, headingLevel),
+        );
       }
     }
   }
 
-  md.push(context.inheritance(declaration, headingLevel));
+  md.push(context.partials.inheritance(declaration, headingLevel));
 
   if (
     !nested &&
     declaration.sources &&
     !context.options.getValue('disableSources')
   ) {
-    md.push(context.sources(declaration, headingLevel));
+    md.push(context.partials.sources(declaration, headingLevel));
   }
 
   return md.join('\n\n');

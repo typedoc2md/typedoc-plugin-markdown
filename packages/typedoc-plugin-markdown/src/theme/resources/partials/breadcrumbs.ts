@@ -1,20 +1,18 @@
 import * as path from 'path';
 import { DeclarationReflection, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { MarkdownPageEvent } from '../../../plugin/events';
-import { link } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
-import { getProjectDisplayName } from '../../helpers';
+import { MarkdownPageEvent } from '../../..';
 
 /**
  * Renders the breadcrumbs
- * @mergeTarget
+ *
  */
 export function breadcrumbs(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
-): string {
+) {
   const md: string[] = [];
+  const { escapeChars } = context.utils;
 
   const entryFileName = context.options.getValue('entryFileName');
 
@@ -25,11 +23,11 @@ export function breadcrumbs(
     return '';
   }
 
-  const homeLabel = context
-    .getTextContent('breadcrumbs.home')
-    .replace('{projectName}', getProjectDisplayName(page.project, false));
+  const homeLabel = context.text
+    .get('breadcrumbs.home')
+    .replace('{projectName}', page.project.name);
 
-  md.push(link(homeLabel, context.relativeURL(entryFileName)));
+  md.push(context.partials.linkTo(homeLabel, entryFileName));
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
@@ -42,7 +40,7 @@ export function breadcrumbs(
       }
       return model.url;
     };
-    md.push(link(escapeChars(model.name), context.relativeURL(getUrl(model))));
+    md.push(context.partials.linkTo(escapeChars(model.name), getUrl(model)));
   };
 
   const pageName = escapeChars(page.model.name);

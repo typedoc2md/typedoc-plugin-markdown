@@ -75,8 +75,6 @@ A basic module
 | :------ | :------ |
 | [TypeA](type-aliases/TypeA.md) | - |
 | [TypeB](type-aliases/TypeB.md) | - |
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -257,8 +255,6 @@ A basic module
 ## TypeB
 
 > **TypeB**: \`string\`
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -389,8 +385,6 @@ A module that contains categories
 <a id="uncategorizedinterace" name="uncategorizedinterace"></a>
 
 ### UnCategorizedInterace
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -478,8 +472,6 @@ A module that contains categories
 | :------ | :------ |
 | [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
 | [UnCategorizedInterace](interfaces/UnCategorizedInterace.md) | - |
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -520,8 +512,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references/index.md) | A module that contains references |
 | [index](index/index.md) | A module named index |
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -562,8 +552,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references.md) | A module that contains references |
 | [index](module.index.md) | A module named index |
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -610,8 +598,6 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 | Interface | Description |
 | :------ | :------ |
 | [NamespaceInterface](interfaces/NamespaceInterface.md) | - |
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -652,8 +638,6 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 <a id="namespaceinterface" name="namespaceinterface"></a>
 
 ## NamespaceInterface
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -768,8 +752,6 @@ A module that contains namespaces
 | :------ | :------ |
 | [\\_function\\_A\\_](functions/function_A_.md) | - |
 | [functionB](functions/functionB.md) | - |
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -1010,8 +992,6 @@ A module that contains namespaces
 ### Returns
 
 \`void\`
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -1107,8 +1087,6 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 ### Returns
 
 \`string\`
-
-CUSTOM FOOTER HERE
 "
 `;
 
@@ -1185,7 +1163,5 @@ Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
 ## default
 
 Renames and re-exports [defaultFunction](functions/defaultFunction.md)
-
-CUSTOM FOOTER HERE
 "
 `;

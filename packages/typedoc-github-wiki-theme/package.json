@@ -22,7 +22,8 @@
     "build": "tsc",
     "build-and-test": "npm run build && npm run test",
     "pretest": "ts-node ./test/__scripts__/prepare.ts",
-    "test": "jest"
+    "test": "jest",
+    "test:update": "npm run build && npm test -- -u"
   },
   "author": "Thomas Grey",
   "license": "MIT",

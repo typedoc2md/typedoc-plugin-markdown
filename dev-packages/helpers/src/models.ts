@@ -1,4 +1,5 @@
 export interface DocsConfig {
+  declarationsPath: string;
   optionsPath: string;
   docsPath: string;
   declarations: boolean;

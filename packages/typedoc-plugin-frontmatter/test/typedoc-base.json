@@ -6,6 +6,5 @@
   "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-frontmatter"],
   "hidePageHeader": true,
   "hideBreadcrumbs": true,
-  "hideGenerator": true,
-  "githubPages": false
+  "hideGenerator": true
 }

@@ -1,11 +1,5 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
-
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, table } from '../../../support/elements';
-import {
-  formatTableDescriptionCol,
-  stripLineBreaks,
-} from '../../../support/utils';
 
 /**
  * @category Partials
@@ -14,6 +8,9 @@ export function parametersTable(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
 ): string {
+  const { table, backTicks } = context.markdown;
+  const { stripLineBreaks, formatTableDescriptionCol } = context.utils;
+
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
@@ -46,16 +43,16 @@ export function parametersTable(
   const hasComments = parsedParams.some((param) => Boolean(param.comment));
 
   const headers = [
-    context.getTextContent('kind.parameter.singular'),
-    context.getTextContent('label.type'),
+    context.text.get('kind.parameter.singular'),
+    context.text.get('label.type'),
   ];
 
   if (showDefaults) {
-    headers.push(context.getTextContent('label.defaultValue'));
+    headers.push(context.text.get('label.defaultValue'));
   }
 
   if (hasComments) {
-    headers.push(context.getTextContent('label.description'));
+    headers.push(context.text.get('label.description'));
   }
 
   const firstOptionalParamIndex = parameters.findIndex(
@@ -78,18 +75,22 @@ export function parametersTable(
     row.push(`${rest}${backTicks(parameter.name)}${optional}`);
 
     if (parameter.type) {
-      row.push(stripLineBreaks(context.someType(parameter.type), false));
+      row.push(
+        stripLineBreaks(context.partials.someType(parameter.type), false),
+      );
     }
 
     if (showDefaults) {
-      row.push(getDefaultValue(parameter));
+      row.push(backTicks(context.helpers.getParameterDefaultValue(parameter)));
     }
 
     if (hasComments) {
       if (parameter.comment) {
         row.push(
           stripLineBreaks(
-            formatTableDescriptionCol(context.comment(parameter.comment)),
+            formatTableDescriptionCol(
+              context.partials.comment(parameter.comment),
+            ),
           ),
         );
       } else {
@@ -100,12 +101,6 @@ export function parametersTable(
   });
 
   return table(headers, rows);
-}
-
-function getDefaultValue(parameter: ParameterReflection) {
-  return parameter.defaultValue && parameter.defaultValue !== '...'
-    ? backTicks(parameter.defaultValue)
-    : backTicks('undefined');
 }
 
 function hasDefaultValues(parameters: ParameterReflection[]) {

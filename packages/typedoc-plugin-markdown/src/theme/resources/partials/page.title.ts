@@ -3,10 +3,7 @@ import {
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../..';
-import { MarkdownPageEvent } from '../../../plugin/events';
-
-import { getMemberTitle } from '../../helpers';
+import { MarkdownPageEvent, MarkdownThemeRenderContext } from '../../..';
 
 /**
  * @category Partials
@@ -18,23 +15,25 @@ export function pageTitle(
   if (page.model?.url === page.project.url) {
     const titleContent = context.options.isSet('indexPageTitle')
       ? context.options.getValue('indexPageTitle')
-      : context.getTextContent('title.indexPage');
-    return context.indexTitle(
+      : context.text.get('title.indexPage');
+    return context.text.indexTitle(
       titleContent,
       page.project.name,
       page.project.packageVersion,
     );
   }
 
-  const name = getMemberTitle(page.model as DeclarationReflection);
+  const name = context.partials.memberTitle(
+    page.model as DeclarationReflection,
+  );
 
   const textContent = page.model.kindOf(ReflectionKind.Module)
-    ? context.getTextContent('title.modulePage')
+    ? context.text.get('title.modulePage')
     : context.options.isSet('memberPageTitle')
       ? context.options.getValue('memberPageTitle')
-      : context.getTextContent('title.memberPage');
+      : context.text.get('title.memberPage');
 
   return textContent
     .replace('{name}', name)
-    .replace('{kind}', context.kindString(page.model.kind));
+    .replace('{kind}', context.text.kindString(page.model.kind));
 }

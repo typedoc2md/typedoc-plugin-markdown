@@ -1,4 +1,4 @@
-export * from './member';
-export * from './project';
-export * from './read-me';
-export * from './reflection';
+export { memberTemplate } from './member';
+export { projectTemplate } from './project';
+export { readmeTemplate } from './read-me';
+export { reflectionTemplate } from './reflection';

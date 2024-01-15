@@ -10,7 +10,7 @@ main();
 async function main() {
   const docsConfig: DocsConfig = DOCS_CONFIG[getPackageName()];
   if (docsConfig.declarations) {
-    await generateModels();
+    await generateModels(docsConfig.declarationsPath);
   }
   await generateDocs(docsConfig);
   consola.success(`[${getPackageName()}] Prebuild options complete`);

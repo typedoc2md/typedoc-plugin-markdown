@@ -5,11 +5,10 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { MarkdownPageEvent } from '../../../plugin/events';
-import { bold, link } from '../../../support/elements';
+import { MarkdownPageEvent } from '../../..';
 
 /**
- * @category Partials
+ * Docs for header!!!
  */
 export function header(
   context: MarkdownThemeRenderContext,
@@ -36,14 +35,16 @@ function projectHeader(
 
   const md: string[] = [];
 
-  const title = context.indexTitle(
-    context.getTextContent('header.title'),
+  const { bold, link } = context.markdown;
+
+  const title = context.text.indexTitle(
+    context.text.get('header.title'),
     page.project.name,
     page.project.packageVersion,
   );
 
-  const readmeLabel = context.getTextContent('header.readme');
-  const indexLabel = context.getTextContent('header.docs');
+  const readmeLabel = context.text.get('header.readme');
+  const indexLabel = context.text.get('header.docs');
 
   md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
 
@@ -68,11 +69,9 @@ function projectHeader(
       links.push(readmeLabel);
     } else {
       links.push(
-        link(
+        context.partials.linkTo(
           readmeLabel,
-          context.relativeURL(
-            preserveModulesPage ? 'readme_.md' : entryFileName,
-          ),
+          preserveModulesPage ? 'readme_.md' : entryFileName,
         ),
       );
     }
@@ -82,7 +81,7 @@ function projectHeader(
     if (page.url === page.project.url) {
       links.push(indexLabel);
     } else {
-      links.push(link(indexLabel, context.relativeURL(page.project.url)));
+      links.push(context.partials.linkTo(indexLabel, page.project.url));
     }
 
     md.push(`${links.join(' ')}`);
@@ -104,9 +103,10 @@ function packageHeader(
   }
 
   const md: string[] = [];
+  const { bold } = context.markdown;
 
-  const readmeLabel = context.getTextContent('header.readme');
-  const indexLabel = context.getTextContent('header.docs');
+  const readmeLabel = context.text.get('header.readme');
+  const indexLabel = context.text.get('header.docs');
 
   const entryFileName = context.options.getValue('entryFileName');
 
@@ -128,7 +128,7 @@ function packageHeader(
     if (page.url === readmeUrl) {
       links.push(readmeLabel);
     } else {
-      links.push(link(readmeLabel, context.relativeURL(readmeUrl)));
+      links.push(context.partials.linkTo(readmeLabel, readmeUrl));
     }
 
     links.push('\\|');
@@ -136,7 +136,7 @@ function packageHeader(
     if (page.url === packageItem.url) {
       links.push(indexLabel);
     } else {
-      links.push(link(indexLabel, context.relativeURL(packageItem.url)));
+      links.push(context.partials.linkTo(indexLabel, packageItem.url));
     }
     md.push(`${links.join(' ')}`);
   } else {

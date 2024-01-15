@@ -8,5 +8,5 @@ export function namedTupleType(
   context: MarkdownThemeRenderContext,
   member: NamedTupleMember,
 ): string {
-  return context.someType(member.element);
+  return context.partials.someType(member.element);
 }

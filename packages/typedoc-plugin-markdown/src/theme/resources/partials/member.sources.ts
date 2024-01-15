@@ -1,7 +1,5 @@
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { heading, link } from '../../../support/elements';
-import { escapeChars } from '../../../support/utils';
 
 /**
  * @category Partials
@@ -12,8 +10,10 @@ export function sources(
   headingLevel: number,
 ): string {
   const md: string[] = [];
+  const { heading, link } = context.markdown;
+  const { escapeChars } = context.utils;
   if (headingLevel !== -1) {
-    md.push(heading(headingLevel, context.getTextContent('label.source')));
+    md.push(heading(headingLevel, context.text.get('label.source')));
   }
   reflection.sources?.forEach((source, index) => {
     if (index === 0) {

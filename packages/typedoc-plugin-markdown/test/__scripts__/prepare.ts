@@ -1,4 +1,4 @@
-import { spawn, spawnSync } from 'child_process';
+import { spawn } from 'child_process';
 import { consola } from 'consola';
 import * as fs from 'fs-extra';
 import * as path from 'path';
@@ -30,12 +30,6 @@ consola.start(`Building ${fixtureCount} test fixtures...`);
 
 // remove output dir
 fs.removeSync(`./test/out`);
-
-// build the custom plugin
-spawnSync('tsc', {
-  stdio: 'inherit',
-  cwd: path.join(__dirname, '..', 'custom-plugins'),
-});
 
 // write fixtures
 fixturesToRun.forEach((fixture) => {
@@ -106,6 +100,10 @@ export function writeHtml(
         'Warn',
         '--readme',
         'none',
+        '--media',
+        '../../stubs/media',
+        '--includes',
+        '../../stubs/inc',
         '--includeVersion',
         '-entryPoints',
         `../../stubs/${entryPoints}`,
@@ -144,7 +142,7 @@ function objectToOptions(obj: any) {
       '-plugin',
       'typedoc-plugin-markdown',
       '-plugin',
-      path.join(__dirname, '..', 'custom-plugins', 'navigation-plugin'),
+      path.join(__dirname, '..', 'custom-plugins', 'navigation-plugin.mjs'),
     ],
   );
 }

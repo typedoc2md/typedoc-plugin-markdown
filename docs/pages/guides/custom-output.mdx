@@ -1,0 +1,99 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# Custom Output
+
+Output can be further extended following the an adapted version of TypeDoc's [Custom Theme docs](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md).
+
+## Local plugins
+
+To get started a create a local TypeDoc plugin file. TypeDoc supports both ESM and CommonJS
+modules. This example is a guide only and written as ESM using an `.mjs` file extension - please adapt to your own needs.
+
+```js filename="custom-plugin.mjs"
+// @ts-check
+
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  // Theme customization should be placed in the load function.
+}
+```
+
+The file can the be referenced in the `typedoc.json` file.
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "./custom-plugin.mjs"]
+}
+```
+
+## Hooks
+
+Hooks allows Markdown (or HTML) to be injected into the output in specific locations and are the most basic form form of customization.
+
+```js filename="local-plugins/custom-plugin.mjs"
+// @ts-check
+
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  // Add a hook to insert markdown at the top of the page.
+  app.renderer.markdownHooks.on(
+    'page.begin',
+    () => '> This is some markdown at the top of the page',
+  );
+}
+```
+
+Available hooks are:
+
+- `page.begin` - Applied at the start of the markdown output.
+- `page.end` - Applied at the end of the markdown output.
+- `content.begin` - Applied before the main markdown content is rendered..
+
+## Custom Theme Class
+
+If there are some specific customization not achievable with hooks then a more advanced customization can be achieved by providing a new theme class which returns a different context class.
+
+In theory all available templates, partials and hepers can be overriden (and added to) with custom implementations, but please proceed with caution.
+
+Please consider raising a PR to the plugin directly if you think your customizations would be useful to others.
+
+```js filename="custom-plugin.mjs"
+// @ts-check
+
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  // Add a hook to insert markdown at the top of the page.
+  app.renderer.defineTheme('custom-theme', MyMarkdownTheme);
+}
+
+class MyMarkdownTheme extends MarkdownTheme {
+  /**
+   * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
+   */
+  getRenderContext(page) {
+    return new MyMarkdownThemeRenderContext(
+      this,
+      page,
+      this.application.options,
+    );
+  }
+}
+
+class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
+  partials = {
+    ...this.partials,
+    /**
+     * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
+     */
+    header: (page) => {
+      return `Welcome to ${page.project.name} custom header!`;
+    },
+  };
+}
+```

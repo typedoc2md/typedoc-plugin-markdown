@@ -1,12 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, bold, codeBlock } from '../../../support/elements';
-import {
-  escapeChars,
-  stripComments,
-  stripLineBreaks,
-} from '../../../support/utils';
-import { KEYWORD_MAP, getDeclarationType, isGroupKind } from '../../helpers';
 
 /**
  * @category Partials
@@ -16,10 +9,12 @@ export function declarationMemberIdentifier(
   reflection: DeclarationReflection,
 ): string {
   const md: string[] = [];
+  const { backTicks, bold, codeBlock } = context.markdown;
+  const { escapeChars, stripComments, stripLineBreaks } = context.utils;
 
   const useCodeBlocks = context.options.getValue('useCodeBlocks');
 
-  const declarationType = getDeclarationType(reflection);
+  const declarationType = context.helpers.getDeclarationType(reflection);
 
   const prefix: string[] = [];
 
@@ -37,12 +32,10 @@ export function declarationMemberIdentifier(
     prefix.push('...');
   }
 
-  if (
-    useCodeBlocks &&
-    isGroupKind(reflection) &&
-    KEYWORD_MAP[reflection.kind]
-  ) {
-    prefix.push(KEYWORD_MAP[reflection.kind]);
+  const keyword = context.helpers.getKeyword(reflection.kind);
+
+  if (useCodeBlocks && context.helpers.isGroupKind(reflection) && keyword) {
+    prefix.push(keyword);
   }
 
   if (prefix.length) {
@@ -80,7 +73,7 @@ export function declarationMemberIdentifier(
   md.push(name.join(''));
 
   if (declarationType) {
-    md.push(context.someType(declarationType));
+    md.push(context.partials.someType(declarationType));
   }
 
   if (reflection.defaultValue && reflection.defaultValue !== '...') {

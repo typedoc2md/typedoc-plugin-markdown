@@ -1,15 +1,5 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, strikeThrough, table } from '../../../support/elements';
-import {
-  formatTableDescriptionCol,
-  stripLineBreaks,
-} from '../../../support/utils';
-import {
-  flattenDeclarations,
-  getDeclarationType,
-  getModifier,
-} from '../../helpers';
 
 /**
  * @category Partials
@@ -19,7 +9,10 @@ export function propertiesTable(
   props: DeclarationReflection[],
   isEventProps = false,
 ): string {
-  const modifiers = props.map((param) => getModifier(param));
+  const { backTicks, table, strikeThrough } = context.markdown;
+  const { formatTableDescriptionCol, stripLineBreaks } = context.utils;
+
+  const modifiers = props.map((param) => context.helpers.getModifier(param));
   const hasModifiers = modifiers.some((value) => Boolean(value));
   const hasOverrides = props.some((prop) => Boolean(prop.overwrites));
   const hasInheritance = props.some((prop) => Boolean(prop.inheritedFrom));
@@ -30,35 +23,35 @@ export function propertiesTable(
   const headers: string[] = [];
 
   if (hasModifiers) {
-    headers.push(context.getTextContent('label.modifier'));
+    headers.push(context.text.get('label.modifier'));
   }
 
   headers.push(
     isEventProps
-      ? context.getTextContent('kind.event.singular')
-      : context.getTextContent('kind.property.singular'),
+      ? context.text.get('kind.event.singular')
+      : context.text.get('kind.property.singular'),
   );
 
-  headers.push(context.getTextContent('label.type'));
+  headers.push(context.text.get('label.type'));
 
   if (hasComments) {
-    headers.push(context.getTextContent('label.description'));
+    headers.push(context.text.get('label.description'));
   }
 
   if (hasOverrides) {
-    headers.push(context.getTextContent('label.overrides'));
+    headers.push(context.text.get('label.overrides'));
   }
 
   if (hasInheritance) {
-    headers.push(context.getTextContent('label.inheritedFrom'));
+    headers.push(context.text.get('label.inheritedFrom'));
   }
 
   const rows: string[][] = [];
 
-  const declarations = flattenDeclarations(props);
+  const declarations = context.helpers.flattenDeclarations(props);
 
   declarations.forEach((property: DeclarationReflection, index: number) => {
-    const propertyType = getDeclarationType(property);
+    const propertyType = context.helpers.getDeclarationType(property);
     const row: string[] = [];
 
     if (hasModifiers) {
@@ -86,7 +79,7 @@ export function propertiesTable(
     row.push(nameColumn.join(' '));
 
     if (propertyType) {
-      row.push(stripLineBreaks(context.someType(propertyType), false));
+      row.push(stripLineBreaks(context.partials.someType(propertyType), false));
     }
 
     if (hasComments) {
@@ -96,7 +89,9 @@ export function propertiesTable(
       const comments = property?.comment;
       if (hasComment && comments) {
         row.push(
-          stripLineBreaks(formatTableDescriptionCol(context.comment(comments))),
+          stripLineBreaks(
+            formatTableDescriptionCol(context.partials.comment(comments)),
+          ),
         );
       } else {
         row.push('-');
@@ -104,11 +99,11 @@ export function propertiesTable(
     }
 
     if (hasOverrides) {
-      row.push(context.inheritance(property, -1) || '-');
+      row.push(context.partials.inheritance(property, -1) || '-');
     }
 
     if (hasInheritance) {
-      row.push(context.inheritance(property, -1) || '-');
+      row.push(context.partials.inheritance(property, -1) || '-');
     }
 
     rows.push(row);

@@ -1,7 +1,5 @@
 import { Comment } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { bold, heading } from '../../../support/elements';
-import { camelToTitleCase, escapeAngleBrackets } from '../../../support/utils';
 
 /**
  * @category Partials
@@ -15,8 +13,11 @@ export function comment(
 ): string {
   const md: string[] = [];
 
+  const { heading, bold } = context.markdown;
+  const { escapeAngleBrackets } = context.utils;
+
   if (showSummary && comment.summary?.length > 0) {
-    md.push(context.commentParts(comment.summary));
+    md.push(context.partials.commentParts(comment.summary));
   }
 
   if (showTags && comment.blockTags?.length) {
@@ -28,11 +29,18 @@ export function comment(
         const tagMd = [
           headingLevel ? heading(headingLevel, tagText) + '\n' : bold(tagText),
         ];
-        tagMd.push(context.commentParts(tag.content));
+        tagMd.push(context.partials.commentParts(tag.content));
         return tagMd.join('\n');
       });
     md.push(tags.join('\n\n'));
   }
 
   return escapeAngleBrackets(md.join('\n\n'));
+}
+
+function camelToTitleCase(text: string) {
+  return (
+    text.substring(0, 1).toUpperCase() +
+    text.substring(1).replace(/[a-z][A-Z]/g, (x) => `${x[0]} ${x[1]}`)
+  );
 }

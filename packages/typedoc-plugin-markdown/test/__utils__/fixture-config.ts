@@ -15,6 +15,7 @@ export enum FixtureEntryPoints {
   EntryFiles = '/src/entryfiles/*',
   Readme = '/src/readme/index.ts',
   Text = '/src/text/*.ts',
+  Customize = '/src/customize/index.ts',
 }
 
 export enum FixtureOutputDir {
@@ -26,6 +27,7 @@ export enum FixtureOutputDir {
   EntryFiles = 'entryfiles',
   Readme = 'readme',
   Text = 'text',
+  Customize = 'customize',
 }
 
 export const FIXTURES: Fixture[] = [
@@ -68,9 +70,6 @@ export const FIXTURES: Fixture[] = [
         categorizeByGroup: false,
         excludeGroups: true,
         namedAnchors: true,
-        //membersWithOwnFile: ['Class', 'Interface', 'Enum'],
-        plugin: [path.join(__dirname, '..', 'custom-plugins', 'custom-theme')],
-        theme: 'custom-theme',
         indexFormat: 'table',
         indexPageTitle: '{projectName}',
       },
@@ -87,6 +86,8 @@ export const FIXTURES: Fixture[] = [
       enumMembersFormat: 'table',
       propertiesFormat: 'table',
       readme: 'none',
+      media: '../../stubs/media',
+      includes: '../../stubs/inc',
     },
     options: [
       {},
@@ -157,6 +158,25 @@ export const FIXTURES: Fixture[] = [
         titleLink: 'http://www.google.com',
         options: '../../stubs/typedoc.text.cjs',
         propertiesFormat: 'table',
+      },
+    ],
+  },
+  {
+    outDir: FixtureOutputDir.Customize,
+    entryPoints: FixtureEntryPoints.Customize,
+    commonOptions: {
+      disableSources: true,
+      hideGenerator: true,
+      readme: 'none',
+      outputFileStrategy: 'modules',
+    },
+    membersOnly: true,
+    options: [
+      {
+        plugin: [
+          path.join(__dirname, '..', 'custom-plugins', 'custom-theme.mjs'),
+        ],
+        theme: 'custom-theme',
       },
     ],
   },

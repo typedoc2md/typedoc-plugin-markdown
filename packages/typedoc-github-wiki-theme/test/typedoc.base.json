@@ -6,5 +6,6 @@
   "readme": "none",
   "disableSources": true,
   "cleanOutputDir": true,
-  "hideGenerator": true
+  "hideGenerator": true,
+  "logLevel": "Warn"
 }

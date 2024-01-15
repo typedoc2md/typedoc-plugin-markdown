@@ -14,10 +14,6 @@ exports[`Docusaurus: Defaults should render 1`] = `
 
 - [module-1](module-1/index.md)
 - [module-2](module-2/index.md)
-
-***
-
-Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 
@@ -35,9 +31,5 @@ exports[`Docusaurus: Global members should render 2 1`] = `
 
 - [module-1](module-1/index.md)
 - [module-2](module-2/index.md)
-
-***
-
-Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;

@@ -1,7 +1,5 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks } from '../../../support/elements';
-import { getDeclarationType } from '../../helpers';
 
 /**
  * @category Partials
@@ -10,6 +8,7 @@ export function declarationType(
   context: MarkdownThemeRenderContext,
   declarationReflection: DeclarationReflection,
 ): string {
+  const { backTicks } = context.markdown;
   if (declarationReflection.indexSignature || declarationReflection.children) {
     let indexSignature = '';
     const declarationIndexSignature = declarationReflection.indexSignature;
@@ -19,7 +18,9 @@ export function declarationType(
             (param) => `\`[${param.name}: ${param.type}]\``,
           )
         : '';
-      const obj = context.someType(declarationIndexSignature.type as SomeType);
+      const obj = context.partials.someType(
+        declarationIndexSignature.type as SomeType,
+      );
       indexSignature = `${key}: ${obj}; `;
     }
 
@@ -41,9 +42,9 @@ export function declarationType(
 
         name.push(backTicks(obj.name));
 
-        const theType = getDeclarationType(obj) as SomeType;
+        const theType = context.helpers.getDeclarationType(obj) as SomeType;
 
-        const typeString = context.someType(theType);
+        const typeString = context.partials.someType(theType);
 
         return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
       });

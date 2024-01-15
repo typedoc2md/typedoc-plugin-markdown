@@ -52,6 +52,7 @@ const config = {
         readme: 'none',
         sidebar: { pretty: true },
         outputFileStrategy: 'members',
+        cleanOutputDir: true,
       },
     ],
     [
@@ -61,6 +62,7 @@ const config = {
         out: './docs/api-2',
         ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
         entryPoints: '../../stubs/src/groups/**/*.ts',
+        cleanOutputDir: true,
       },
     ],
     [
@@ -73,6 +75,7 @@ const config = {
         readme: 'none',
         outputFileStrategy: 'modules',
         entryModule: 'index',
+        cleanOutputDir: true,
       },
     ],
     [

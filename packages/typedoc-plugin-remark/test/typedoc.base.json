@@ -5,7 +5,6 @@
   "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
   "readme": "none",
   "parametersFormat": "table",
-  "githubPages": false,
   "disableSources": true,
   "cleanOutputDir": true,
   "hideGenerator": true,

@@ -27,7 +27,7 @@ function writeMarkdown(fixture: any) {
         '-options',
         `./test/${fixture.options}`,
         '-logLevel',
-        'Info',
+        'Warn',
         '-out',
         `./test/out/${fixture.outDir}`,
       ],

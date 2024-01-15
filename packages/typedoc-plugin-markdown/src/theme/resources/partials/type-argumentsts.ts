@@ -9,8 +9,8 @@ export function typeArguments(
   return `\\<${typeArguments
     .map((typeArgument) =>
       typeArgument instanceof ReflectionType
-        ? context.reflectionType(typeArgument, foreCollpase)
-        : context.someType(typeArgument, foreCollpase),
+        ? context.partials.reflectionType(typeArgument, foreCollpase)
+        : context.partials.someType(typeArgument, foreCollpase),
     )
     .join(', ')}\\>`;
 }

@@ -17,13 +17,16 @@ export class DocusuaurusTheme extends MarkdownTheme {
 
 class DocusuaurusThemeThemeRenderContext extends MarkdownThemeRenderContext {
   // adds space around type arguments as docusaurus generates broken links without it in certain use-cases (see https://github.com/facebook/docusaurus/issues/9518)
-  override typeArguments = (typeArguments: SomeType[]) => {
-    return `\\< ${typeArguments
-      .map((typeArgument) =>
-        typeArgument instanceof ReflectionType
-          ? this.reflectionType(typeArgument)
-          : this.someType(typeArgument),
-      )
-      .join(', ')} \\>`;
+  override partials = {
+    ...this.partials,
+    typeArguments: (typeArguments: SomeType[]) => {
+      return `\\< ${typeArguments
+        .map((typeArgument) =>
+          typeArgument instanceof ReflectionType
+            ? this.partials.reflectionType(typeArgument)
+            : this.partials.someType(typeArgument),
+        )
+        .join(', ')} \\>`;
+    },
   };
 }

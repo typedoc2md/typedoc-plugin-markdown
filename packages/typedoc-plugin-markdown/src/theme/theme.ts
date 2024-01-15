@@ -1,120 +1,24 @@
 import {
   DeclarationReflection,
+  DefaultTheme,
   ProjectReflection,
   Reflection,
   ReflectionKind,
-  RenderTemplate,
-  Renderer,
   Theme,
 } from 'typedoc';
-import { OutputFileStrategy, StaticText } from '../options/maps';
-import { TextContentMappings } from '../options/models';
-import { MarkdownPageEvent } from '../plugin/events';
-import { UrlMapping } from '../plugin/url-mapping';
-import { slugify } from '../support/utils';
-import { NavigationItem, TemplateMapping } from './models';
-import { NavigationContext } from './navigation-context';
-import { MarkdownThemeRenderContext } from './render-context';
-import { UrlsContext } from './urls-context';
+
+import { MarkdownPageEvent } from '../plugin';
+import { OutputFileStrategy } from '../plugin/options/option-maps';
+import { getNavigation } from './support/support.navigation';
+import { RenderTemplate, getUrls } from './support/support.urls';
+import { MarkdownThemeRenderContext } from './theme-render-context';
 
 /**
  * This is in-built MarkdownTheme which extends TypeDocs Theme class.
- * This follows the implementation of TypeDoc's [DefaultTheme](https://typedoc.org/api/classes/DefaultThemeRender.html).
+ * This follows the implementation of TypeDoc's {@link DefaultTheme}.
  *
- * The {@link render } and {@link getUrls} methods is where the work happens.
  */
 export class MarkdownTheme extends Theme {
-  textMappings: TextContentMappings;
-
-  /**
-   *
-   * @param renderer The TypeDoc renderer instance the theme is attached to.
-   */
-  constructor(renderer: Renderer) {
-    super(renderer);
-
-    // DEPRECATED PROPS WARNING (to delete)
-    const deprecatedOptions = [
-      'indexPageTitle',
-      'memberPageTitle',
-      'hideInPageTOC',
-    ];
-
-    deprecatedOptions.forEach((option) => {
-      if (this.application.options.isSet(option)) {
-        this.application.logger.warn(
-          `[typedoc-plugin-markdown] "${option}" is deprecated and will be removed in v4 release. Please see https://www.typedoc-plugin-markdown.org/options#${option.toLowerCase()}`,
-        );
-      }
-    });
-
-    this.textMappings = this.getTextContentMappings();
-  }
-
-  getRenderContext(pageEvent: MarkdownPageEvent<Reflection> | null) {
-    return new MarkdownThemeRenderContext(
-      this,
-      pageEvent,
-      this.application.options,
-    );
-  }
-
-  getTextContent(key: keyof TextContentMappings) {
-    return this.textMappings[key];
-  }
-
-  private getTextContentMappings() {
-    const textFromOptions = this.application.options.getValue(
-      'textContentMappings',
-    );
-    const knownKeys = Object.keys(StaticText);
-    for (const key of Object.keys(textFromOptions)) {
-      if (!knownKeys.includes(key)) {
-        this.application.logger.warn(
-          `[typedoc-plugin-markdown] "${key}" is not a valid "textContentMappings" key. Valid keys are ${knownKeys
-            .map((key) => `"${key}"`)
-            .join(', ')}.`,
-        );
-      }
-    }
-    return { ...StaticText, ...(textFromOptions || {}) };
-  }
-
-  private getNavigationContext() {
-    return new NavigationContext(
-      this,
-      this.application.options.getRawValues(),
-      this.application.renderer,
-    );
-  }
-
-  private getUrlsContext(project: ProjectReflection) {
-    return new UrlsContext(
-      this,
-      project,
-      this.application.renderer,
-      this.application.options,
-    );
-  }
-
-  readmeTemplate = (pageEvent: MarkdownPageEvent<ProjectReflection>) => {
-    return this.getRenderContext(pageEvent).readmeTemplate(pageEvent);
-  };
-
-  projectTemplate = (pageEvent: MarkdownPageEvent<ProjectReflection>) => {
-    return this.getRenderContext(pageEvent).projectTemplate(pageEvent);
-  };
-
-  reflectionTemplate = (
-    pageEvent: MarkdownPageEvent<DeclarationReflection>,
-  ) => {
-    return this.getRenderContext(pageEvent).reflectionTemplate(pageEvent);
-  };
-
-  memberTemplate = (pageEvent: MarkdownPageEvent<DeclarationReflection>) => {
-    return this.getRenderContext(pageEvent).memberTemplate(pageEvent);
-  };
-
   /**
    * Renders a template and page model to a string.
    */
@@ -122,15 +26,51 @@ export class MarkdownTheme extends Theme {
     page: MarkdownPageEvent<Reflection>,
     template: RenderTemplate<MarkdownPageEvent<Reflection>>,
   ) {
-    return template(page) as string;
+    try {
+      return this.formatContents(template(page));
+    } catch (e) {
+      this.application.logger.error(
+        `Error rendering page ${page.url} using template ${template.name}: ${e.message}`,
+      );
+      throw new Error(e);
+    }
   }
 
-  getUrls(project: ProjectReflection): UrlMapping[] {
-    return this.getUrlsContext(project).getUrls();
+  /**
+   * Creates a instance of render context for each page template.
+   */
+  getRenderContext(page: MarkdownPageEvent<Reflection> | null) {
+    return new MarkdownThemeRenderContext(this, page, this.application.options);
   }
 
-  getNavigation(project: ProjectReflection): NavigationItem[] {
-    return this.getNavigationContext().getNavigation(project);
+  readmeTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
+    return this.getRenderContext(page).templates.readmeTemplate(page);
+  };
+
+  projectTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
+    return this.getRenderContext(page).templates.projectTemplate(page);
+  };
+
+  reflectionTemplate = (page: MarkdownPageEvent<DeclarationReflection>) => {
+    return this.getRenderContext(page).templates.reflectionTemplate(page);
+  };
+
+  memberTemplate = (page: MarkdownPageEvent<DeclarationReflection>) => {
+    return this.getRenderContext(page).templates.memberTemplate(page);
+  };
+
+  getUrls(project: ProjectReflection) {
+    return getUrls(this, project);
+  }
+
+  getNavigation(project: ProjectReflection) {
+    return getNavigation(this, project);
+  }
+
+  formatContents(contents: string) {
+    return (
+      contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
+    );
   }
 
   /**
@@ -140,18 +80,15 @@ export class MarkdownTheme extends Theme {
   getTemplateMapping(
     kind: ReflectionKind,
     outputFileStrategyOverride?: OutputFileStrategy,
-  ): TemplateMapping {
+  ) {
     const outputFileStrategy =
       outputFileStrategyOverride ||
       this.application.options.getValue('outputFileStrategy');
 
     const getDirectoryName = (reflectionKind: ReflectionKind) => {
       const pluralString = ReflectionKind.pluralString(reflectionKind);
-      return slugify(pluralString).toLowerCase();
+      return pluralString.replace(/[\s_-]+/g, '-').toLowerCase();
     };
-
-    // const membersWithOwnFile =
-    //   this.application.options.getValue('membersWithOwnFile');
 
     const mappings = {
       [ReflectionKind.Module]: {
@@ -166,66 +103,52 @@ export class MarkdownTheme extends Theme {
       },
     };
 
-    if (
-      outputFileStrategy === OutputFileStrategy.Members //&&
-      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Class])
-    ) {
-      mappings[ReflectionKind.Class] = {
-        template: this.reflectionTemplate,
-        directory: getDirectoryName(ReflectionKind.Class),
-        kind: ReflectionKind.Class,
+    const getMemberMapping = (
+      template: (pageEvent: MarkdownPageEvent<any>) => string,
+      kind: ReflectionKind,
+    ) => {
+      return {
+        template,
+        directory: getDirectoryName(kind),
+        kind: kind,
       };
+    };
+
+    if (outputFileStrategy === OutputFileStrategy.Members) {
+      mappings[ReflectionKind.Class] = getMemberMapping(
+        this.reflectionTemplate,
+        ReflectionKind.Class,
+      );
     }
-    if (
-      outputFileStrategy === OutputFileStrategy.Members //&&
-      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Interface])
-    ) {
-      mappings[ReflectionKind.Interface] = {
-        isLeaf: false,
-        template: this.reflectionTemplate,
-        directory: getDirectoryName(ReflectionKind.Interface),
-        kind: ReflectionKind.Interface,
-      };
+    if (outputFileStrategy === OutputFileStrategy.Members) {
+      mappings[ReflectionKind.Interface] = getMemberMapping(
+        this.reflectionTemplate,
+        ReflectionKind.Interface,
+      );
     }
-    if (
-      outputFileStrategy === OutputFileStrategy.Members //&&
-      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Enum])
-    ) {
-      mappings[ReflectionKind.Enum] = {
-        template: this.reflectionTemplate,
-        directory: getDirectoryName(ReflectionKind.Enum),
-        kind: ReflectionKind.Enum,
-      };
+    if (outputFileStrategy === OutputFileStrategy.Members) {
+      mappings[ReflectionKind.Enum] = getMemberMapping(
+        this.reflectionTemplate,
+        ReflectionKind.Enum,
+      );
     }
-    if (
-      outputFileStrategy === OutputFileStrategy.Members //&&
-      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Function])
-    ) {
-      mappings[ReflectionKind.Function] = {
-        template: this.memberTemplate,
-        directory: getDirectoryName(ReflectionKind.Function),
-        kind: ReflectionKind.Function,
-      };
+    if (outputFileStrategy === OutputFileStrategy.Members) {
+      mappings[ReflectionKind.Function] = getMemberMapping(
+        this.memberTemplate,
+        ReflectionKind.Function,
+      );
     }
-    if (
-      outputFileStrategy === OutputFileStrategy.Members //&&
-      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.TypeAlias])
-    ) {
-      mappings[ReflectionKind.TypeAlias] = {
-        template: this.memberTemplate,
-        directory: getDirectoryName(ReflectionKind.TypeAlias),
-        kind: ReflectionKind.TypeAlias,
-      };
+    if (outputFileStrategy === OutputFileStrategy.Members) {
+      mappings[ReflectionKind.TypeAlias] = getMemberMapping(
+        this.memberTemplate,
+        ReflectionKind.TypeAlias,
+      );
     }
-    if (
-      outputFileStrategy === OutputFileStrategy.Members //&&
-      //membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Variable])
-    ) {
-      mappings[ReflectionKind.Variable] = {
-        template: this.memberTemplate,
-        directory: getDirectoryName(ReflectionKind.Variable),
-        kind: ReflectionKind.Variable,
-      };
+    if (outputFileStrategy === OutputFileStrategy.Members) {
+      mappings[ReflectionKind.Variable] = getMemberMapping(
+        this.memberTemplate,
+        ReflectionKind.Variable,
+      );
     }
     return mappings[kind];
   }

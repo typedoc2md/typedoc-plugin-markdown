@@ -9,6 +9,6 @@ export function intersectionType(
   model: IntersectionType,
 ): string {
   return model.types
-    .map((intersectionType) => context.someType(intersectionType))
+    .map((intersectionType) => context.partials.someType(intersectionType))
     .join(' & ');
 }
