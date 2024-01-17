@@ -1,5 +1,11 @@
 export class ClassA {}
 export class ClassB {}
 
-export class InterfaceA {}
-export class InterfaceB {}
+/**
+ * See {@link InterfaceB._prop_with_underscore_}
+ */
+export interface InterfaceA {}
+
+export interface InterfaceB {
+  _prop_with_underscore_: string;
+}

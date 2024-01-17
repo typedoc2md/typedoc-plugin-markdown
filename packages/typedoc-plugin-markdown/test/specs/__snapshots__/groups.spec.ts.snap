@@ -819,11 +819,11 @@ A module that contains namespaces
 
 ##### new \\_\\_Class\\_A\\_()
 
-> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#class-a)
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
 
 ###### Returns
 
-[\`__Class_A_\`](index.md#class-a)
+[\`__Class_A_\`](index.md#__class_a_)
 
 ## Interfaces
 
@@ -903,7 +903,7 @@ A module that contains namespaces
 
 ***
 
-<a id="enum-a" name="enum-a"></a>
+<a id="_enum_a_" name="_enum_a_"></a>
 
 ## \\_Enum\\_A\\_
 
@@ -927,7 +927,7 @@ A module that contains namespaces
 
 ***
 
-<a id="class-a" name="class-a"></a>
+<a id="__class_a_" name="__class_a_"></a>
 
 ## \\_\\_Class\\_A\\_
 
@@ -937,11 +937,11 @@ A module that contains namespaces
 
 #### new \\_\\_Class\\_A\\_()
 
-> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#class-a)
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
 
 ##### Returns
 
-[\`__Class_A_\`](index.md#class-a)
+[\`__Class_A_\`](index.md#__class_a_)
 
 ***
 
@@ -951,7 +951,7 @@ A module that contains namespaces
 
 ***
 
-<a id="interface-a" name="interface-a"></a>
+<a id="_interface_a_" name="_interface_a_"></a>
 
 ## \\_Interface\\_A\\_
 
@@ -965,7 +965,7 @@ A module that contains namespaces
 
 ***
 
-<a id="type-a" name="type-a"></a>
+<a id="_type_a_" name="_type_a_"></a>
 
 ## \\_Type\\_A\\_
 
@@ -973,7 +973,7 @@ A module that contains namespaces
 
 ***
 
-<a id="variable-a" name="variable-a"></a>
+<a id="_variable_a_" name="_variable_a_"></a>
 
 ## \\_variable\\_A\\_
 
@@ -989,7 +989,7 @@ A module that contains namespaces
 
 ***
 
-<a id="function-a" name="function-a"></a>
+<a id="_function_a_" name="_function_a_"></a>
 
 ## \\_function\\_A\\_()
 

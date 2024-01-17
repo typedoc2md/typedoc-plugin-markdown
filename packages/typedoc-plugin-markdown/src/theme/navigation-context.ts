@@ -19,7 +19,6 @@ export class NavigationContext {
 
   getNavigation(project: ProjectReflection): NavigationItem[] {
     this.buildNavigationFromProject(project);
-
     return this.navigation;
   }
 

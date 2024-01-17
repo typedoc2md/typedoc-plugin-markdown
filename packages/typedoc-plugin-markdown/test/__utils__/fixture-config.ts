@@ -92,6 +92,7 @@ export const FIXTURES: Fixture[] = [
       {},
       {
         namedAnchors: true,
+        preserveAnchorCasing: true,
       },
     ],
   },

@@ -11,7 +11,7 @@ import {
 import { OutputFileStrategy } from '../options/maps';
 import { UrlMapping } from '../plugin/url-mapping';
 import { slugify } from '../support/utils';
-import { getIndexFileName, getMemberTitle } from './helpers';
+import { getIndexFileName } from './helpers';
 import { UrlOption } from './models';
 import { MarkdownTheme } from './theme';
 
@@ -328,7 +328,7 @@ export class UrlsContext {
     if (reflection.kindOf(ReflectionKind.Constructor)) {
       return 'Constructors';
     }
-    return slugify(getMemberTitle(reflection));
+    return reflection.name;
   }
 
   private childrenIncludeNamespaces(reflection: DeclarationReflection) {

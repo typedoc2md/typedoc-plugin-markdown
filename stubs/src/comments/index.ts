@@ -14,6 +14,7 @@
  * - {@link SameName:interface}
  * - {@link SameName.prop}
  * - {@link prop:var}
+ * - {@link _prop_with_underscore:var}
  *
  * External links:
  *
@@ -68,3 +69,4 @@ export interface SameName {
 export const SameName = true;
 export const prop = true;
 export const propb = true;
+export const _prop_with_underscore = true;

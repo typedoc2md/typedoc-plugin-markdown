@@ -108,15 +108,11 @@ export function getMemberTitle(reflection: DeclarationReflection) {
 
   const name: string[] = [];
 
-  const flagsToInclude = ['Abstract'];
-
-  const flags = reflection.flags.filter((flag) =>
-    flagsToInclude.includes(flag),
-  );
-
-  if (flags.length) {
-    name.push(flags.map((flag) => backTicks(flag.toLowerCase())).join(' '));
-    name.push(' ');
+  if (
+    reflection?.kind === ReflectionKind.Class &&
+    reflection?.flags?.includes('Abstract')
+  ) {
+    name.push(backTicks('abstract') + ' ');
   }
 
   name.push(

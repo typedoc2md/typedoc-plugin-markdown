@@ -48,7 +48,10 @@ export async function generateModels() {
     return `
   export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
-        .map(([key, value]) => `'${key}': ${getValueType(value)}`)
+        .map(
+          ([key, value]) =>
+            `'${key}'${value === undefined ? '?' : ''}: ${getValueType(value)}`,
+        )
         .join(';')}
   }
     `;
@@ -85,7 +88,10 @@ function getType(name: string, option: Partial<DeclarationOption>) {
   if (option.type === ParameterType.Boolean) {
     return 'boolean';
   }
-  if (option.type === ParameterType.String) {
+  if (
+    option.type === ParameterType.String ||
+    option.type === ParameterType.Path
+  ) {
     return 'string';
   }
   if (option.type === ParameterType.Array) {

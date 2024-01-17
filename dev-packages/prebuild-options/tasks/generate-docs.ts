@@ -11,9 +11,10 @@ export async function generateDocs(docsConfig: DocsConfig) {
   });
 
   // PRESETS
-  const out: string[] = [`import { Callout } from 'nextra/components';`];
+  const out: string[] = [
+    `import { Callout, FileTree } from 'nextra/components';`,
+  ];
   out.push('# Options');
-
   out.push(
     'These are the additional options that can be added to the TypeDoc configuration.',
   );
@@ -39,12 +40,16 @@ export async function generateDocs(docsConfig: DocsConfig) {
                 (tag) =>
                   tag.getTagName() !== 'deprecated' &&
                   tag.getTagName() !== 'category' &&
+                  tag.getTagName() !== 'omitExample' &&
                   tag.getTagName() !== 'example',
               )
               .map((tag) => ({
                 name: tag.getTagName(),
                 comments: tag.getComment(),
               })),
+            omitExample: Boolean(
+              doc.getTags().find((tag) => tag.getTagName() === 'omitExample'),
+            ),
             example: doc
               .getTags()
               .find((tag) => tag.getTagName() === 'example')
@@ -114,14 +119,16 @@ export async function generateDocs(docsConfig: DocsConfig) {
           });
         }
 
-        if (
-          option.type === ParameterType.Mixed &&
-          (!Array.isArray(option.defaultValue) || option.defaultValue?.length)
-        ) {
-          out.push('Below is the full list of keys and default values:');
-        }
+        if (!option.omitExample) {
+          if (
+            !option.example &&
+            option.type === ParameterType.Mixed &&
+            (!Array.isArray(option.defaultValue) || option.defaultValue?.length)
+          ) {
+            out.push('Below is the full list of keys and default values:');
+          }
 
-        out.push(`
+          out.push(`
 \`\`\`json filename="typedoc.json"
 ${JSON.stringify(
   JSON.parse(`{
@@ -132,7 +139,7 @@ ${JSON.stringify(
 )}
 
 \`\`\``);
-
+        }
         out.push('___');
       });
     });
@@ -169,8 +176,8 @@ function getType(option: any) {
 
   if (option.type === ParameterType.Mixed && option.defaultValue) {
     return Array.isArray(option.defaultValue)
-      ? 'Accepts an array (see example)'
-      : 'Accepts a key/value object (see example).';
+      ? 'Accepts an Array.'
+      : 'Accepts a key/value object.';
   }
 
   if (option.type === ParameterType.Map && option.map) {

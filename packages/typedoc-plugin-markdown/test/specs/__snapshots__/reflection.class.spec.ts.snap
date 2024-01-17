@@ -20,7 +20,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 ## Properties
 
-### \`abstract\` abstractProp
+### abstractProp
 
 > **\`abstract\`** **abstractProp**: \`string\`
 
@@ -32,7 +32,7 @@ Comments for abstractProp
 
 ## Methods
 
-### \`abstract\` abstractMethod()
+### abstractMethod()
 
 > **\`abstract\`** **abstractMethod**(): \`string\`
 
@@ -76,7 +76,7 @@ new AbstractClass(): AbstractClass
 
 ## Methods
 
-### \`abstract\` abstractMethod()
+### abstractMethod()
 
 \`\`\`ts
 abstract abstractMethod(): string
@@ -694,7 +694,7 @@ Comments for abstractProp
 
 #### Overrides
 
-[\`AbstractClass.abstractProp\`](AbstractClass.md#abstract-abstractprop)
+[\`AbstractClass.abstractProp\`](AbstractClass.md#abstractprop)
 
 #### Source
 
@@ -724,7 +724,7 @@ Comments for abstractMethod
 
 #### Overrides
 
-[\`AbstractClass.abstractMethod\`](AbstractClass.md#abstract-abstractmethod)
+[\`AbstractClass.abstractMethod\`](AbstractClass.md#abstractmethod)
 
 #### Source
 
@@ -794,7 +794,7 @@ Comments for abstractMethod
 
 #### Overrides
 
-[\`AbstractClass.abstractMethod\`](AbstractClass.md#abstract-abstractmethod)
+[\`AbstractClass.abstractMethod\`](AbstractClass.md#abstractmethod)
 
 #### Source
 
