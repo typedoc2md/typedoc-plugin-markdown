@@ -3,5 +3,6 @@
   "sidebar": {
     "collapsed": false,
     "pretty": true
-  }
+  },
+  "docsRoot": "./out"
 }

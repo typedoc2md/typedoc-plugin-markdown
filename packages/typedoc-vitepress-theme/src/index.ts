@@ -46,7 +46,11 @@ export function load(app: Application) {
       if (sidebarOptions.autoConfiguration) {
         const outDir = app.options.getValue('out');
         const sidebarPath = path.resolve(outDir, 'typedoc-sidebar.json');
-        const basePath = path.relative('./', outDir);
+        const basePath = path.relative(
+          app.options.getValue('docsRoot'),
+          outDir,
+        );
+
         const sidebarJson = getSidebar(
           output.navigation,
           basePath,

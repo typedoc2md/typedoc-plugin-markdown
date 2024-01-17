@@ -4,11 +4,13 @@ import { ManuallyValidatedOption } from 'typedoc';
 
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
+    docsRoot: string;
     sidebar: ManuallyValidatedOption<Sidebar>;
   }
 }
 
 export interface PluginOptions {
+  docsRoot: string;
   sidebar: ManuallyValidatedOption<Sidebar>;
 }
 
