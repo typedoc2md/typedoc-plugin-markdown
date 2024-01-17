@@ -1,26 +1,28 @@
 import { Callout, Steps } from 'nextra/components';
+import { Cards, Card } from 'nextra/components';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 # Quick Start
 
-<Callout type="info">
-  This document assumes a
-  [VitePress](https://vitepress.dev/guide/getting-started) site has already been
-  setup.
-</Callout>
-
-## Installation
-
-```sh npm2yarn
-npm install typedoc-vitepress-theme@next --save-dev
-```
-
-## Usage
-
-Create a script that builds TypeDoc pages before bootstraping VitePress. The following is a guideline only and can be tailored as required.
-
 <Steps>
 
-### Update TypeDoc config
+### Install and Setup VitePress
+
+Please follow instructions at https://vitepress.dev/guide/getting-started.
+
+### Install TypeDoc and plugins
+
+TypeDoc would typically be installed and executed from the VitePress project root but can be installed in any location.
+
+```sh npm2yarn
+npm install typedoc typedoc-plugin-markdown@next typedoc-vitepress-theme@next --save-dev
+```
+
+### Update the TypeDoc config
+
+Update the TypeDoc config file to include the plugins and add any additional [options](/themes/vitepress/options).
 
 ```json filename="typedoc.json"
 {
@@ -28,22 +30,25 @@ Create a script that builds TypeDoc pages before bootstraping VitePress. The fol
 }
 ```
 
-### Create a script to publish TypeDoc pages
+### Run TypeDoc before bootstrapping VitePress
 
-```js filename="package.json"
-"publish-typedoc": "typedoc --options typedoc.json"
-```
+Run TypeDoc before bootstraping VitePress.
 
-### Run the script before bootstrapping VitePress
-
-```json
-"docs:dev": "npm run publish-typedoc && vitepress dev",
-"docs:build": "npm run publish-typedoc && vitepress build"
+```json filename="package.json"
+"predocs": "typedoc"
+"docs:dev": "vitepress dev",
+"docs:build": "vitepress build"
 ```
 
 ### Configure Navbar and Sidebar
 
-A sidebar named `typedoc-sidebar.json` is auto-generated to the out directory. This can then be referenced in the config file to configure the sidebar.
+<Callout type="warning">
+  If running TypeDoc from outside the VitePress project root then the option
+  [`docsRoot`](/themes/vitepress/options#sidebarbasepath) will need to be be
+  updated for sidebar links to resolve correctly.
+</Callout>
+
+A sidebar named `typedoc-sidebar.json` is auto-generated to the output directory. This can then be referenced in the config file to include the sidebar in the docs.
 
 ```ts filename=".vitepress/config.mts"
 import typedocSidebar from '../api/typedoc-sidebar.json';
@@ -60,5 +65,7 @@ module.exports = {
   },
 };
 ```
+
+For further documentation please visit https://vitepress.dev/reference/default-theme-sidebar.
 
 </Steps>

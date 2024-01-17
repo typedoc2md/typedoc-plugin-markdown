@@ -11,8 +11,6 @@ import { FormatStyle, OutputFileStrategy, StaticText } from './maps';
  *
  * Generates an individual file for each exported member. This is the standard behaviour of the HTML theme and the plugin default.
  *
- * It is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#memberswithownfile) option.
- *
  * @modules
  *
  * Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
@@ -25,33 +23,6 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
   map: OutputFileStrategy,
   defaultValue: OutputFileStrategy.Members,
 };
-
-/**
- * This option is useful when only specific types of members should be exported to a single file.
- *
- * Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
- *
- * @example ["Class", "Enum", "Interface"]
- *
- * @category Output
- */
-/*export const membersWithOwnFile: Partial<DeclarationOption> = {
-  help: 'Determines which members are exported to their own file when `outputFileStrategy` equals `members`.',
-  type: ParameterType.Array,
-  validate(values) {
-    const validValues = MembersWithOwnFile;
-    for (const kind of values) {
-      if (!validValues.includes(kind)) {
-        throw new Error(
-          `'${kind}' is an invalid value for 'membersWithOwnFile'. Must be one of: ${validValues.join(
-            ', ',
-          )}`,
-        );
-      }
-    }
-  },
-  defaultValue: MembersWithOwnFile,
-};*/
 
 /**
  * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
