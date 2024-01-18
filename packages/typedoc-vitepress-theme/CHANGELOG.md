@@ -1,5 +1,13 @@
 # typedoc-vitepress-theme
 
+## 1.0.0-next.7
+
+### Patch Changes
+
+- Expose `docsRoot` option ([#540](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/540))
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.41
+
 ## 1.0.0-next.6
 
 ### Patch Changes

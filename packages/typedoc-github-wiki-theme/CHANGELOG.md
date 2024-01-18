@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0-next.4
+
+### Patch Changes
+
+- Fixed sidebar output
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.41
+
 ## 2.0.0-next.3
 
 ### Patch Changes
