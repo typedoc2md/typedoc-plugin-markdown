@@ -1,6 +1,6 @@
 # typedoc-plugin-remark
 
-## 0.0.1-next.2
+## 0.0.1-next.2 (2024-01-12)
 
 ### Patch Changes
 

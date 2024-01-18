@@ -1,6 +1,6 @@
 # typedoc-vitepress-theme
 
-## 1.0.0-next.7
+## 1.0.0-next.7 (2024-01-18)
 
 ### Patch Changes
 
@@ -8,14 +8,14 @@
 - Updated peer dependencies
   - typedoc-plugin-markdown@4.0.0-next.41
 
-## 1.0.0-next.6
+## 1.0.0-next.6 (2024-01-12)
 
 ### Patch Changes
 
 - Fix sidebar types
 - Rename sidebar.collapse=>sidebar.collapsed
 
-## 1.0.0-next.5 (2023-01-12)
+## 1.0.0-next.5 (2024-01-12)
 
 ### Patch Changes
 
@@ -24,7 +24,7 @@
 - Updated peer dependencies
   - typedoc-plugin-markdown@4.0.0-next.40
 
-## 1.0.0-next.4 (2023-01-07)
+## 1.0.0-next.4 (2024-01-07)
 
 ### Patch Changes
 

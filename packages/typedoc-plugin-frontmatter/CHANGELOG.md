@@ -1,6 +1,6 @@
 # typedoc-plugin-frontmatter
 
-## 0.0.3-next.0
+## 0.0.3-next.0 (2024-01-15)
 
 ### Patch Changes
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.41
+## 4.0.0-next.41 (2024-01-18)
 
 ### Patch Changes
 
@@ -8,7 +8,7 @@
 - Exposed function keyword to code blocks.
 - Fixed some incorrect navigation structures.
 
-## 4.0.0-next.40 (2023-01-12)
+## 4.0.0-next.40 (2024-01-12)
 
 ### Patch Changes
 
@@ -16,7 +16,7 @@
 - Remove page title from merged readme
 - Deprecate hideInPageTOC option
 
-## 4.0.0-next.39 (2023-01-07)
+## 4.0.0-next.39 (2024-01-07)
 
 ### Patch Changes
 
