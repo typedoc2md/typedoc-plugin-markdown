@@ -43,7 +43,7 @@ function projectHeader(
   );
 
   const readmeLabel = context.getTextContent('header.readme');
-  const indexLabel = context.getTextContent('header.index');
+  const indexLabel = context.getTextContent('header.docs');
 
   md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
 
@@ -106,7 +106,7 @@ function packageHeader(
   const md: string[] = [];
 
   const readmeLabel = context.getTextContent('header.readme');
-  const indexLabel = context.getTextContent('header.index');
+  const indexLabel = context.getTextContent('header.docs');
 
   const entryFileName = context.options.getValue('entryFileName');
 
