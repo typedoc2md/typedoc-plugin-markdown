@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.43
+
+### Patch Changes
+
+- Updated documentation
+
 ## 4.0.0-next.42
 
 ### Patch Changes
