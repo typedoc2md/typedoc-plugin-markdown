@@ -28,7 +28,7 @@ export type FormatStyle = (typeof FormatStyle)[keyof typeof FormatStyle];
 export const StaticText = {
   'header.title': '{projectName} {version}',
   'header.readme': 'Readme',
-  'header.docs': 'API',
+  'header.index': 'API Index',
   'breadcrumbs.home': '{projectName}',
   'footer.generator': 'Generated using TypeDoc and typedoc-plugin-markdown.',
   'title.indexPage': '{projectName} {version}',
@@ -39,6 +39,7 @@ export const StaticText = {
   'label.description': 'Description',
   'label.extendedBy': 'Extended by',
   'label.extends': 'Extends',
+  'label.globals': 'Globals',
   'label.implements': 'Implements',
   'label.implementationOf': 'Implementation of',
   'label.inheritedFrom': 'Inherited from',

@@ -6,6 +6,10 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "title": "package-1",
     "children": [
       {
+        "title": "Globals",
+        "url": "package-1/globals.md"
+      },
+      {
         "title": "Interfaces",
         "children": [
           {
@@ -15,7 +19,22 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "url": "package-1/globals.md"
+    "url": "package-1/index.md"
+  },
+  {
+    "title": "package-1b",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "url": "package-1b/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "url": "package-1b/index.md"
   },
   {
     "title": "package-2",
@@ -58,15 +77,48 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "children": [
       {
         "title": "index",
-        "url": "package-3/index/index.md"
+        "url": "package-3/index/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterfaceForIndexModule",
+                "url": "package-3/index/interfaces/PackageInterfaceForIndexModule.md"
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "module-1",
-        "url": "package-3/module-1/index.md"
+        "url": "package-3/module-1/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface1",
+                "url": "package-3/module-1/interfaces/PackageInterface1.md"
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "module-2",
-        "url": "package-3/module-2/index.md"
+        "url": "package-3/module-2/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "url": "package-3/module-2/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
       }
     ],
     "url": "package-3/index.md"
@@ -93,8 +145,18 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 "[
   {
     "title": "package-1",
+    "children": [
+      {
+        "title": "Globals",
+        "url": "package-1/globals.md"
+      }
+    ],
+    "url": "package-1/index.md"
+  },
+  {
+    "title": "package-1b",
     "children": [],
-    "url": "package-1/globals.md"
+    "url": "package-1b/index.md"
   },
   {
     "title": "package-2",
@@ -115,15 +177,48 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "children": [
       {
         "title": "index",
-        "url": "package-3/module.index.md"
+        "url": "package-3/module.index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterfaceForIndexModule",
+                "url": "package-3/interfaces/PackageInterfaceForIndexModule.md"
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "module-1",
-        "url": "package-3/module-1.md"
+        "url": "package-3/module-1.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface1",
+                "url": "package-3/interfaces/PackageInterface1.md"
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "module-2",
-        "url": "package-3/module-2.md"
+        "url": "package-3/module-2.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "url": "package-3/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
       }
     ],
     "url": "package-3/index.md"
@@ -134,7 +229,10 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "Interfaces",
         "children": [
-          null
+          {
+            "title": "PackageInterface",
+            "url": "package-4/interfaces/PackageInterface.md"
+          }
         ]
       }
     ],

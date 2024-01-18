@@ -5,7 +5,7 @@ module.exports = {
   textContentMappings: {
     'header.title': 'My API -  {version}',
     'header.readme': 'My Readme',
-    'header.docs': 'Docs',
+    'header.index': 'Docs',
     'breadcrumbs.home': 'Home',
     'footer.generator': '@copyright My Test',
     'title.indexPage': ':tada: Custom Index Title',

@@ -11,7 +11,7 @@ function getNavigationItem(navigationItem: NavigationItem, basePath: string) {
     text: navigationItem.title,
     link: navigationItem.url ? `/${basePath}/${navigationItem.url}` : null,
     collapsible: true,
-    children: navigationItem.children?.map((group) => {
+    children: navigationItem?.children?.map((group) => {
       return getNavigationItem(group, basePath);
     }),
   };

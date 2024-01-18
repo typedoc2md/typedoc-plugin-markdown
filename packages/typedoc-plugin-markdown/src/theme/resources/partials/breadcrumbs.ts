@@ -16,10 +16,11 @@ export function breadcrumbs(
 ): string {
   const md: string[] = [];
 
+  const entryFileName = context.options.getValue('entryFileName');
+
   if (
     page.url === page.project.url ||
-    (page.url === context.options.getValue('entryFileName') &&
-      page.url.split(path.sep).length === 1)
+    (page.url === entryFileName && page.url.split(path.sep).length === 1)
   ) {
     return '';
   }
@@ -28,13 +29,20 @@ export function breadcrumbs(
     .getTextContent('breadcrumbs.home')
     .replace('{projectName}', getProjectDisplayName(page.project, false));
 
-  md.push(link(homeLabel, context.relativeURL(page.project.url)));
+  md.push(link(homeLabel, context.relativeURL(entryFileName)));
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
       breadcrumb(model.parent);
     }
-    md.push(link(escapeChars(model.name), context.relativeURL(model?.url)));
+
+    const getUrl = (model: any) => {
+      if (Boolean(model.readme)) {
+        return `${path.dirname(model.url)}/${entryFileName}`;
+      }
+      return model.url;
+    };
+    md.push(link(escapeChars(model.name), context.relativeURL(getUrl(model))));
   };
 
   const pageName = escapeChars(page.model.name);

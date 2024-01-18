@@ -1,1 +1,1 @@
-export interface PackageInterface1 {}
+export interface PackageInterfaceForIndexModule {}

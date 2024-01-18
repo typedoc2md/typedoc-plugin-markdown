@@ -43,7 +43,7 @@ function projectHeader(
   );
 
   const readmeLabel = context.getTextContent('header.readme');
-  const documentationLabel = context.getTextContent('header.docs');
+  const indexLabel = context.getTextContent('header.index');
 
   md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
 
@@ -79,17 +79,15 @@ function projectHeader(
 
     links.push('\\|');
 
-    if (page.url === entryFileName) {
-      links.push(
-        link(documentationLabel, context.relativeURL(page.project.url)),
-      );
+    if (page.url === page.project.url) {
+      links.push(indexLabel);
     } else {
-      links.push(documentationLabel);
+      links.push(link(indexLabel, context.relativeURL(page.project.url)));
     }
 
     md.push(`${links.join(' ')}`);
   } else {
-    md.push(`${documentationLabel}`);
+    md.push(`${indexLabel}`);
   }
 
   return `${md.join(' ')}\n\n***\n`;
@@ -108,7 +106,7 @@ function packageHeader(
   const md: string[] = [];
 
   const readmeLabel = context.getTextContent('header.readme');
-  const documentationLabel = context.getTextContent('header.docs');
+  const indexLabel = context.getTextContent('header.index');
 
   const entryFileName = context.options.getValue('entryFileName');
 
@@ -135,16 +133,14 @@ function packageHeader(
 
     links.push('\\|');
 
-    if (page.url === readmeUrl) {
-      links.push(
-        link(documentationLabel, context.relativeURL(packageItem.url)),
-      );
+    if (page.url === packageItem.url) {
+      links.push(indexLabel);
     } else {
-      links.push(documentationLabel);
+      links.push(link(indexLabel, context.relativeURL(packageItem.url)));
     }
     md.push(`${links.join(' ')}`);
   } else {
-    md.push(documentationLabel);
+    md.push(indexLabel);
   }
 
   return `${md.join(' ')}\n\n***\n`;

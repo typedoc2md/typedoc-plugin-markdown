@@ -13,7 +13,7 @@ function getNavigationItem(navigationItem: NavigationItem, basePath: string) {
     path: navigationItem.url
       ? `/${basePath}/${getUrlKey(navigationItem.url as string)}`
       : null,
-    children: navigationItem.children?.map((groupChild) => {
+    children: navigationItem?.children?.map((groupChild) => {
       return getNavigationItem(groupChild, basePath);
     }),
   };

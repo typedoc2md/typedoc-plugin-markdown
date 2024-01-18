@@ -59,7 +59,7 @@ export interface PluginOptions {
 export interface TextContentMappings {
   'header.title': string;
   'header.readme': string;
-  'header.docs': string;
+  'header.index': string;
   'breadcrumbs.home': string;
   'footer.generator': string;
   'title.indexPage': string;
@@ -70,6 +70,7 @@ export interface TextContentMappings {
   'label.description': string;
   'label.extendedBy': string;
   'label.extends': string;
+  'label.globals': string;
   'label.implements': string;
   'label.implementationOf': string;
   'label.inheritedFrom': string;

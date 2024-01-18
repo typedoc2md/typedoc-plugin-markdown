@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EntryFiles should get entry module: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • Readme \\| [API](modules.md)
+"**typedoc-stubs** • Readme \\| [API Index](modules.md)
 
 ***
 
@@ -16,7 +16,7 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 `;
 
 exports[`EntryFiles should get entry module: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • API
+"**typedoc-stubs** • API Index
 
 ***
 
@@ -31,11 +31,11 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 `;
 
 exports[`EntryFiles should get readme file: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](readme_.md) \\| API
+"**typedoc-stubs** • [Readme](readme_.md) \\| [API Index](modules.md)
 
 ***
 
-[typedoc-stubs](modules.md) / typedoc-stubs
+[typedoc-stubs](README.md) / typedoc-stubs
 
 # MY README
 

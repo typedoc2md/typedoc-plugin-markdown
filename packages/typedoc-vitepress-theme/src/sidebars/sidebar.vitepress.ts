@@ -12,10 +12,10 @@ function getNavigationItem(
   basePath: string,
   options: Sidebar,
 ) {
-  const hasChildren = navigationItem.children?.length;
+  const hasChildren = navigationItem?.children?.length;
   return {
     text: navigationItem.title,
-    ...(Boolean(navigationItem.url) && {
+    ...(Boolean(navigationItem?.url) && {
       link: `/${basePath}/${navigationItem.url}`,
     }),
     ...(hasChildren && { collapsed: options.collapsed }),

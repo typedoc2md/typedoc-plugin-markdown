@@ -81,7 +81,11 @@ export class MarkdownTheme extends Theme {
   }
 
   private getNavigationContext() {
-    return new NavigationContext(this, this.application.options.getRawValues());
+    return new NavigationContext(
+      this,
+      this.application.options.getRawValues(),
+      this.application.renderer,
+    );
   }
 
   private getUrlsContext(project: ProjectReflection) {

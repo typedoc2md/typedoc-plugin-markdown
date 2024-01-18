@@ -19,11 +19,11 @@ exports[`Text should get translations for index page: (Output File Strategy "mem
 `;
 
 exports[`Text should get translations for member page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**[My API - v0.0](http://www.google.com)** • [My Readme](../../README.md) \\| Docs
+"**[My API - v0.0](http://www.google.com)** • [My Readme](../../README.md) \\| [Docs](../../modules.md)
 
 ***
 
-[Home](../../modules.md) / [module-1](../README.md) / SomeInterface
+[Home](../../README.md) / [module-1](../README.md) / SomeInterface
 
 # SomeInterface
 
@@ -46,11 +46,11 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 `;
 
 exports[`Text should get translations for module page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**[My API - v0.0](http://www.google.com)** • [My Readme](../README.md) \\| Docs
+"**[My API - v0.0](http://www.google.com)** • [My Readme](../README.md) \\| [Docs](../modules.md)
 
 ***
 
-[Home](../modules.md) / module-1
+[Home](../README.md) / module-1
 
 # Module - module-1
 
@@ -67,11 +67,11 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 `;
 
 exports[`Text should get translations for modules page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**[My API - v0.0](http://www.google.com)** • [My Readme](README.md) \\| Docs
+"**[My API - v0.0](http://www.google.com)** • [My Readme](README.md) \\| [Docs](modules.md)
 
 ***
 
-[Home](modules.md) / module-2
+[Home](README.md) / module-2
 
 # Module - module-2
 
