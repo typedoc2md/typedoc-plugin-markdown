@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.42
+
+### Patch Changes
+
+- Fixed navigation structure
+- Updated documentation
+
 ## 4.0.0-next.41 (2024-01-18)
 
 ### Patch Changes
