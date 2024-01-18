@@ -6,10 +6,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "title": "package-1",
     "children": [
       {
-        "title": "Globals",
-        "url": "package-1/globals.md"
-      },
-      {
         "title": "Interfaces",
         "children": [
           {

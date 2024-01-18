@@ -63,7 +63,11 @@ export class NavigationContext {
 
     const children: NavigationItem[] = [];
 
-    if (preservePackageReadme && !isModulesGroup) {
+    if (
+      preservePackageReadme &&
+      !isModulesGroup &&
+      outputFileStrategy === OutputFileStrategy.Modules
+    ) {
       children.push({
         title: this.theme.getTextContent('label.globals'),
         url: projectChild.url,
