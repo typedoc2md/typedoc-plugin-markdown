@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.41
+
+### Patch Changes
+
+- Fix incorrect anchor slugs on urls
+- Exposed function keyword to code blocks.
+- Fixed some incorrect navigation structures.
+
 ## 4.0.0-next.40 (2023-01-12)
 
 ### Patch Changes
