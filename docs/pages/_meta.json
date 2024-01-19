@@ -2,6 +2,7 @@
   "index": "Introduction",
   "quick-start": "",
   "options": "",
+  "examples": "",
   "-- RelatedPlugin": {
     "type": "separator",
     "title": "Related Plugins"

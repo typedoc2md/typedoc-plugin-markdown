@@ -38,6 +38,7 @@ export default {
       titleTemplate: `${title || 'Introduction'} • typedoc-plugin-markdown`,
     };
   },
+  feedback: { content: null },
   navigation: {
     prev: true,
     next: true,

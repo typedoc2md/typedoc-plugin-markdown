@@ -1,0 +1,16 @@
+import { Cards, Card } from 'nextra/components';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+# Examples
+
+<Cards num={2}>
+  <Card
+    title="View on Github"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/03-typedoc-plugin-remark"
+    target="_blank"
+  />
+</Cards>
