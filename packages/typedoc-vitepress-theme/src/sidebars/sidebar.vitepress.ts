@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { NavigationItem } from 'typedoc-plugin-markdown';
 import { Sidebar } from '../options/models';
 
@@ -13,10 +14,11 @@ function getNavigationItem(
   options: Sidebar,
 ) {
   const hasChildren = navigationItem?.children?.length;
+
   return {
     text: navigationItem.title,
     ...(Boolean(navigationItem?.url) && {
-      link: `/${basePath}/${navigationItem.url}`,
+      link: `/${basePath}/${getParsedUrl(navigationItem.url as string)}`,
     }),
     ...(hasChildren && { collapsed: options.collapsed }),
     ...(hasChildren && {
@@ -25,4 +27,11 @@ function getNavigationItem(
       ),
     }),
   };
+}
+
+function getParsedUrl(url: string) {
+  if (path.basename(url) === 'index.md') {
+    return path.dirname(url) + '/';
+  }
+  return url;
 }
