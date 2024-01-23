@@ -31,7 +31,7 @@ Comments for some tag
 
 ### functionProp
 
-> **functionProp**: (\`s\`) => \`boolean\`
+> **functionProp**: (\`s\`: \`string\`) => \`boolean\`
 
 Comments for functionProper
 
@@ -143,7 +143,7 @@ Comments for BasicInterface
 | Property | Type | Description |
 | :------ | :------ | :------ |
 | ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag |
-| \`functionProp\` | (\`s\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s |
+| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
 | \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
@@ -201,7 +201,7 @@ Comments for some tag
 
 ### functionProp
 
-> **functionProp**: (\`s\`) => \`boolean\`
+> **functionProp**: (\`s\`: \`string\`) => \`boolean\`
 
 Comments for functionProper
 
@@ -330,7 +330,7 @@ Comments for ExtendedInterface
 | :------ | :------ | :------ | :------ |
 | ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface.deprecatedProp\`](BasicInterface.md) |
 | \`extendedProp\` | \`string\` | - | - |
-| \`functionProp\` | (\`s\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s | [\`BasicInterface.functionProp\`](BasicInterface.md) |
+| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s | [\`BasicInterface.functionProp\`](BasicInterface.md) |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface.optionalProp\`](BasicInterface.md) |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface.prop\`](BasicInterface.md) |
 | \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface.propWithProps\`](BasicInterface.md) |
@@ -394,7 +394,7 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:99](http://source-url)
+[interfaces.ts:104](http://source-url)
 
 ## Events
 
@@ -404,19 +404,19 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:111](http://source-url)
+[interfaces.ts:116](http://source-url)
 
 ***
 
 ### ~~someEvent?~~
 
-> **someEvent**?: (\`eventParam\`) => \`void\`
+> **someEvent**?: (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\`
 
 Description for event someEvent
 
 #### Parameters
 
-• **eventParam**: \`MouseEvent\`
+• **eventParam**: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
 
 Comments for param eventParam
 
@@ -430,7 +430,7 @@ Deprectaed comments
 
 #### Source
 
-[interfaces.ts:106](http://source-url)
+[interfaces.ts:111](http://source-url)
 "
 `;
 
@@ -448,7 +448,7 @@ exports[`Interface Reflection should compile interface with event properties: (O
 | Event | Type | Description |
 | :------ | :------ | :------ |
 | \`anotherEvent\` | \`MouseEvent\` | - |
-| ~~\`someEvent?\`~~ | (\`eventParam\`) => \`void\` | Description for event someEvent<br /><br />**Param**<br />Comments for param eventParam<br /><br />**Deprecated**<br />Deprectaed comments |
+| ~~\`someEvent?\`~~ | (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\` | Description for event someEvent<br /><br />**Param**<br />Comments for param eventParam<br /><br />**Deprecated**<br />Deprectaed comments |
 "
 `;
 

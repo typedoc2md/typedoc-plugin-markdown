@@ -3,7 +3,7 @@
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAFunction()
 
-> **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
+> **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`: \`string\`) => \`boolean\`
 
 Comments for function
 

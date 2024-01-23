@@ -1031,6 +1031,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "interfaces/BasicInterface.md"
       },
       {
+        "title": "CustomEventInterface",
+        "url": "interfaces/CustomEventInterface.md"
+      },
+      {
         "title": "ExtendedInterface",
         "url": "interfaces/ExtendedInterface.md"
       },

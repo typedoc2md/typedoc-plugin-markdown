@@ -342,7 +342,15 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     if (reflection.kindOf(ReflectionKind.Constructor)) {
       return 'Constructors';
     }
-    return reflection.name;
+    const anchorParts = [reflection.name];
+    if (reflection.typeParameters?.length) {
+      anchorParts.push(
+        reflection.typeParameters
+          .map((typeParameter) => typeParameter.name)
+          .join(''),
+      );
+    }
+    return anchorParts.join('');
   }
 
   function childrenIncludeNamespaces(reflection: DeclarationReflection) {

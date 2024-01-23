@@ -40,7 +40,7 @@ export const FIXTURES: Fixture[] = [
       hideBreadcrumbs: true,
     },
     options: [
-      {},
+      { hideParameterTypesInTitle: false },
       {
         readme: 'none',
         parametersFormat: 'table',
@@ -50,6 +50,7 @@ export const FIXTURES: Fixture[] = [
         useCodeBlocks: true,
         expandObjects: true,
         memberPageTitle: '{name}',
+        hideParameterTypesInTitle: true,
       },
     ],
   },

@@ -92,6 +92,11 @@ export interface IndexableInterface {
   prop: string;
 }
 
+export interface CustomEventInterface<T> {
+  detail: string;
+  target: T;
+}
+
 export interface InterfaceWithEventProperties {
   /**
    * Description for prop someProp
@@ -103,7 +108,7 @@ export interface InterfaceWithEventProperties {
    * @param eventParam Comments for param eventParam
    * @deprecated Deprectaed comments
    */
-  someEvent?: (eventParam: MouseEvent) => void;
+  someEvent?: (eventParam: CustomEventInterface<MouseEvent>) => void;
 
   /**
    * @eventProperty

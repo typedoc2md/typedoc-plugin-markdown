@@ -165,7 +165,7 @@ Comments for objectLiteralVariable
 
 ### valueX.valueY
 
-> **valueX.valueY**: (\`z\`) => \`Object\`
+> **valueX.valueY**: (\`z\`: \`string\`) => \`Object\`
 
 #### Parameters
 
@@ -202,7 +202,7 @@ Comments for objectLiteralVariable
 
 ### valueY
 
-> **valueY**: (\`unionParam\`, \`_undercoreParam_\`) => \`string\`
+> **valueY**: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`
 
 #### Parameters
 

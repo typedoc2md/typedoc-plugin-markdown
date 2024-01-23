@@ -79,7 +79,13 @@ export function propertiesTable(
     row.push(nameColumn.join(' '));
 
     if (propertyType) {
-      row.push(stripLineBreaks(context.partials.someType(propertyType), false));
+      const type = (propertyType as any).declaration?.signatures?.length
+        ? context.partials.functionType(
+            (propertyType as any)?.declaration?.signatures,
+            true,
+          )
+        : context.partials.someType(propertyType);
+      row.push(stripLineBreaks(type, false));
     }
 
     if (hasComments) {

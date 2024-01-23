@@ -6,20 +6,32 @@ import { MarkdownThemeRenderContext } from '../..';
  */
 export function functionType(
   context: MarkdownThemeRenderContext,
-  modelSignatures: SignatureReflection[],
+  signatures: SignatureReflection[],
+  forceParameterType = false,
 ): string {
   const { backTicks } = context.markdown;
-  const functions = modelSignatures.map((fn) => {
+  const functions = signatures.map((fn) => {
     const typeParams = fn.typeParameters
       ? `\\<${fn.typeParameters
           .map((typeParameter) => backTicks(typeParameter.name))
           .join(', ')}\\>`
       : [];
+    const showParameterType =
+      forceParameterType ||
+      !context.options.getValue('hideParameterTypesInTitle');
+
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          return `${param.flags.isRest ? '...' : ''}${backTicks(param.name)}${
-            param.flags.isOptional ? '?' : ''
-          }`;
+          const paramType = context.partials.someType(param.type as SomeType);
+          const paramItem = [
+            `${param.flags.isRest ? '...' : ''}${backTicks(param.name)}${
+              param.flags.isOptional ? '?' : ''
+            }`,
+          ];
+          if (showParameterType) {
+            paramItem.push(paramType);
+          }
+          return paramItem.join(': ');
         })
       : [];
     const returns = context.partials.someType(fn.type as SomeType);
