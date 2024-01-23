@@ -14,7 +14,7 @@ exports[`Text should get translations for index page: (Output File Strategy "mem
 
 ***
 
-@copyright My Test
+Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 
@@ -41,7 +41,7 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 ***
 
-@copyright My Test
+Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 
@@ -62,7 +62,7 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 
 ***
 
-@copyright My Test
+Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 
@@ -75,7 +75,7 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 
 # Module - module-2
 
-## Variables
+## CoolVars
 
 ### Variable: constA
 
@@ -83,6 +83,41 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 
 ***
 
-@copyright My Test
+Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
+`;
+
+exports[`Text should get translations for sidebar: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "module-1",
+    "url": "module-1/README.md",
+    "children": [
+      {
+        "title": "多变的",
+        "children": [
+          {
+            "title": "SomeInterface",
+            "url": "module-1/interfaces/SomeInterface.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "url": "module-2/README.md",
+    "children": [
+      {
+        "title": "CoolVars",
+        "children": [
+          {
+            "title": "constA",
+            "url": "module-2/variables/constA.md"
+          }
+        ]
+      }
+    ]
+  }
+]"
 `;

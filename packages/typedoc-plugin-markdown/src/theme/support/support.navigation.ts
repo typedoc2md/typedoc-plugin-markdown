@@ -26,6 +26,7 @@ export function getNavigation(
   const options = theme.application.options;
   const navigation: NavigationItem[] = [];
   const optionsForPackages = (theme.application.renderer as any).packageOptions;
+  const textUtils = text(options);
 
   const isPackages =
     options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
@@ -75,7 +76,7 @@ export function getNavigation(
       outputFileStrategy === OutputFileStrategy.Modules
     ) {
       children.push({
-        title: text(options).get('label.globals'),
+        title: textUtils.get('label.globals'),
         url: projectChild.url,
       });
     }
@@ -231,7 +232,7 @@ export function getNavigation(
           const groupChildren = getGroupChildren(group, outputFileStrategy);
           return groupChildren.length
             ? {
-                title: group.title,
+                title: textUtils.groupTitle(group.title),
                 children: groupChildren || null,
               }
             : null;

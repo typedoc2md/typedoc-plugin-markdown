@@ -36,4 +36,12 @@ describe(`Text`, () => {
       ['module-2.md'],
     );
   });
+
+  test(`should get translations for sidebar`, () => {
+    expectFileToEqual(
+      FixtureOutputDir.Text,
+      FixtureOutputFileStrategy.Members,
+      ['sidebar.json'],
+    );
+  });
 });

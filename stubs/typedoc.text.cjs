@@ -16,5 +16,6 @@ module.exports = {
     'kind.event.plural': 'My Events',
     'kind.event.singular': 'Event!',
     'kind.interface.plural': '多变的',
+    'kind.variable.plural': 'CoolVars',
   },
 };
