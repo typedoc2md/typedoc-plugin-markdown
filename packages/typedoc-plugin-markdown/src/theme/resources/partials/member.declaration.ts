@@ -35,8 +35,13 @@ export function declarationMember(
 
   if (declaration.type instanceof IntersectionType) {
     declaration.type?.types?.forEach((intersectionType) => {
-      if (intersectionType instanceof ReflectionType) {
-        md.push(heading(headingLevel, 'Type declaration'));
+      if (
+        intersectionType instanceof ReflectionType &&
+        !intersectionType.declaration.signatures
+      ) {
+        md.push(
+          heading(headingLevel, context.text.get('label.typeDeclaration')),
+        );
         md.push(
           context.partials.typeDeclarationMember(
             intersectionType.declaration,

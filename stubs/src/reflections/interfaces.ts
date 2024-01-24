@@ -36,6 +36,31 @@ export interface BasicInterface {
   functionProp: (s: string) => boolean;
 
   /**
+   * Comments for propReturningSignatureDeclaration
+   */
+  propReturningSignatureDeclaration: () => any;
+
+  /**
+   * Comments for propReturningSignatureDeclarations
+   */
+  propReturningSignatureDeclarations: (() => any) &
+    ((paramsA: any[] | true, paramsB?: any) => any) &
+    ((paramsC: any) => any);
+
+  /**
+   * Comments for propReturningObjectDeclaration
+   */
+  propReturningObjectDeclaration: { a: boolean; b: string };
+
+  /**
+   * Comments for propReturningObjectDeclarations
+   */
+  propReturningObjectDeclarations: { a: boolean; b: string } & {
+    c: boolean;
+    d: string;
+  };
+
+  /**
    * Comments for propWithProps
    */
   propWithProps: {

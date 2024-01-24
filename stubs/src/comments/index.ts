@@ -57,6 +57,10 @@ export interface CommentInterface {
   propb: string;
 }
 
+export interface CommentInterfaceExtended extends CommentInterface {
+  propc: string;
+}
+
 export enum CommentEnum {
   /**
    * Comment for Member

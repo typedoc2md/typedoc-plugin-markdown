@@ -86,7 +86,11 @@ function projectHeader(
 
     md.push(`${links.join(' ')}`);
   } else {
-    md.push(`${indexLabel}`);
+    if (page.url === page.project.url) {
+      md.push(indexLabel);
+    } else {
+      md.push(context.partials.linkTo(indexLabel, page.project.url));
+    }
   }
 
   return `${md.join(' ')}\n\n***\n`;

@@ -65,6 +65,7 @@ This is a simple example on how to use include.
 ## Interfaces
 
 - [CommentInterface](interfaces/CommentInterface.md)
+- [CommentInterfaceExtended](interfaces/CommentInterfaceExtended.md)
 - [SameName](interfaces/SameName.md)
 
 ## Variables
@@ -141,6 +142,7 @@ This is a simple example on how to use include.
 ## Interfaces
 
 - [CommentInterface](interfaces/CommentInterface.md)
+- [CommentInterfaceExtended](interfaces/CommentInterfaceExtended.md)
 - [SameName](interfaces/SameName.md)
 
 ## Variables
@@ -225,12 +227,32 @@ This is a simple example on how to use include.
 
 ### CommentInterface
 
+#### Extended by
+
+- [\`CommentInterfaceExtended\`](README.md#commentinterfaceextended)
+
 #### Properties
 
 | Property | Type |
 | :------ | :------ |
 | \`prop\` | \`string\` |
 | \`propb\` | \`string\` |
+
+***
+
+### CommentInterfaceExtended
+
+#### Extends
+
+- [\`CommentInterface\`](README.md#commentinterface)
+
+#### Properties
+
+| Property | Type | Inherited from |
+| :------ | :------ | :------ |
+| \`prop\` | \`string\` | [\`CommentInterface\`](README.md#commentinterface).\`prop\` |
+| \`propb\` | \`string\` | [\`CommentInterface\`](README.md#commentinterface).\`propb\` |
+| \`propc\` | \`string\` | - |
 
 ***
 
@@ -284,8 +306,8 @@ Links using \`{@link}\` inline tags.
 - [CommentEnum.MemberB](README.md#MemberB)
 - [SameName:var](README.md#SameName-1)
 - [SameName:interface](README.md#SameName)
-- [SameName.prop](README.md#prop-1)
-- [prop:var](README.md#prop-2)
+- [SameName.prop](README.md#prop-2)
+- [prop:var](README.md#prop-3)
 - [_prop_with_underscore:var](README.md#_prop_with_underscore)
 
 External links:
@@ -346,12 +368,34 @@ This is a simple example on how to use include.
 
 ### CommentInterface
 
+#### Extended by
+
+- [\`CommentInterfaceExtended\`](README.md#CommentInterfaceExtended)
+
 #### Properties
 
 | Property | Type |
 | :------ | :------ |
 | <a id="prop" name="prop"></a> \`prop\` | \`string\` |
 | <a id="propb" name="propb"></a> \`propb\` | \`string\` |
+
+***
+
+<a id="CommentInterfaceExtended" name="CommentInterfaceExtended"></a>
+
+### CommentInterfaceExtended
+
+#### Extends
+
+- [\`CommentInterface\`](README.md#CommentInterface)
+
+#### Properties
+
+| Property | Type | Inherited from |
+| :------ | :------ | :------ |
+| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` | [\`CommentInterface\`](README.md#CommentInterface).[\`prop\`](README.md#prop) |
+| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` | [\`CommentInterface\`](README.md#CommentInterface).[\`propb\`](README.md#propb) |
+| <a id="propc" name="propc"></a> \`propc\` | \`string\` | - |
 
 ***
 
@@ -363,8 +407,8 @@ This is a simple example on how to use include.
 
 | Property | Type |
 | :------ | :------ |
-| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` |
-| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` |
+| <a id="prop-2" name="prop-2"></a> \`prop\` | \`string\` |
+| <a id="propb-2" name="propb-2"></a> \`propb\` | \`string\` |
 
 ## Variables
 
@@ -384,7 +428,7 @@ This is a simple example on how to use include.
 
 ***
 
-<a id="prop-2" name="prop-2"></a>
+<a id="prop-3" name="prop-3"></a>
 
 ### prop
 
@@ -392,7 +436,7 @@ This is a simple example on how to use include.
 
 ***
 
-<a id="propb-2" name="propb-2"></a>
+<a id="propb-3" name="propb-3"></a>
 
 ### propb
 

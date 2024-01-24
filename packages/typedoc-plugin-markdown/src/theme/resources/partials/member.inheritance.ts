@@ -46,21 +46,38 @@ const typeAndParent = (
   props: ArrayType | ReferenceType,
 ) => {
   const { backTicks } = context.markdown;
-  if (props) {
-    if ('elementType' in props) {
-      return typeAndParent(context, props.elementType as any) + '[]';
-    } else {
-      if (props.reflection) {
-        const name = props.reflection.getFriendlyFullName();
-        const url = props.reflection?.url || props.reflection?.parent?.url;
-        const output = url
-          ? context.partials.linkTo(backTicks(name), url)
-          : backTicks(name);
-        return output;
+  if (!props) {
+    return backTicks('void');
+  }
+
+  if (props instanceof ArrayType) {
+    return `${typeAndParent(context, props.elementType as any)}[]`;
+  }
+
+  if (props instanceof ReferenceType && props.reflection) {
+    const refl =
+      props.reflection instanceof SignatureReflection
+        ? props.reflection.parent
+        : props.reflection;
+    const parent = refl?.parent;
+    if (parent) {
+      const resultWithParent: string[] = [];
+      if (parent?.url) {
+        resultWithParent.push(
+          context.partials.linkTo(backTicks(parent.name), parent.url),
+        );
       } else {
-        return backTicks(props.toString());
+        resultWithParent.push(backTicks(parent?.name));
       }
+      if (refl?.url) {
+        resultWithParent.push(
+          context.partials.linkTo(backTicks(refl.name), refl.url),
+        );
+      } else {
+        resultWithParent.push(backTicks(refl?.name));
+      }
+      return resultWithParent.join('.');
     }
   }
-  return 'void';
+  return backTicks(props.toString());
 };

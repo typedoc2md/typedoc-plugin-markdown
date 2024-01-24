@@ -16,7 +16,7 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 `;
 
 exports[`EntryFiles should get entry module: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • API
+"**typedoc-stubs** • [API](modules.md)
 
 ***
 

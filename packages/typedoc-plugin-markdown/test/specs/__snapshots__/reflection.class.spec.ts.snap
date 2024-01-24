@@ -682,7 +682,7 @@ Comments for DerivedClassA
 
 #### Inherited from
 
-[\`AbstractClass.constructor\`](AbstractClass.md#constructors)
+[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
 
 ## Properties
 
@@ -694,7 +694,7 @@ Comments for abstractProp
 
 #### Overrides
 
-[\`AbstractClass.abstractProp\`](AbstractClass.md#abstractprop)
+[\`AbstractClass\`](AbstractClass.md).[\`abstractProp\`](AbstractClass.md#abstractprop)
 
 #### Source
 
@@ -724,7 +724,7 @@ Comments for abstractMethod
 
 #### Overrides
 
-[\`AbstractClass.abstractMethod\`](AbstractClass.md#abstractmethod)
+[\`AbstractClass\`](AbstractClass.md).[\`abstractMethod\`](AbstractClass.md#abstractmethod)
 
 #### Source
 
@@ -769,13 +769,13 @@ new DerivedClassA(): DerivedClassA
 
 #### Inherited from
 
-[\`AbstractClass.constructor\`](AbstractClass.md#constructors)
+[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
 
 ## Properties
 
 | Property | Type | Description | Overrides |
 | :------ | :------ | :------ | :------ |
-| \`abstractProp\` | \`string\` | Comments for abstractProp | [\`AbstractClass.abstractProp\`](AbstractClass.md) |
+| \`abstractProp\` | \`string\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).\`abstractProp\` |
 | \`derivedProp\` | \`string\` | - | - |
 
 ## Methods
@@ -794,7 +794,7 @@ Comments for abstractMethod
 
 #### Overrides
 
-[\`AbstractClass.abstractMethod\`](AbstractClass.md#abstractmethod)
+[\`AbstractClass\`](AbstractClass.md).[\`abstractMethod\`](AbstractClass.md#abstractmethod)
 
 #### Source
 

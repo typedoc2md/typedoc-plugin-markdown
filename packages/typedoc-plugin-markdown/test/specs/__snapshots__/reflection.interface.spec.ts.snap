@@ -75,6 +75,88 @@ Comments for prop
 
 ***
 
+### propReturningObjectDeclaration
+
+> **propReturningObjectDeclaration**: \`Object\`
+
+Comments for propReturningObjectDeclaration
+
+#### Type declaration
+
+##### a
+
+> **a**: \`boolean\`
+
+##### b
+
+> **b**: \`string\`
+
+#### Source
+
+[interfaces.ts:53](http://source-url)
+
+***
+
+### propReturningObjectDeclarations
+
+> **propReturningObjectDeclarations**: \`Object\` & \`Object\`
+
+Comments for propReturningObjectDeclarations
+
+#### Type declaration
+
+##### a
+
+> **a**: \`boolean\`
+
+##### b
+
+> **b**: \`string\`
+
+#### Type declaration
+
+##### c
+
+> **c**: \`boolean\`
+
+##### d
+
+> **d**: \`string\`
+
+#### Source
+
+[interfaces.ts:58](http://source-url)
+
+***
+
+### propReturningSignatureDeclaration
+
+> **propReturningSignatureDeclaration**: () => \`any\`
+
+Comments for propReturningSignatureDeclaration
+
+#### Returns
+
+\`any\`
+
+#### Source
+
+[interfaces.ts:41](http://source-url)
+
+***
+
+### propReturningSignatureDeclarations
+
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\`
+
+Comments for propReturningSignatureDeclarations
+
+#### Source
+
+[interfaces.ts:46](http://source-url)
+
+***
+
 ### propWithProps
 
 > **propWithProps**: \`Object\`
@@ -125,7 +207,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:41](http://source-url)
+[interfaces.ts:66](http://source-url)
 "
 `;
 
@@ -146,6 +228,12 @@ Comments for BasicInterface
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
+| \`propReturningObjectDeclaration\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } | Comments for propReturningObjectDeclaration |
+| \`propReturningObjectDeclaration.a\` | \`boolean\` | - |
+| \`propReturningObjectDeclaration.b\` | \`string\` | - |
+| \`propReturningObjectDeclarations\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } & \\{   \`c\`: \`boolean\`;   \`d\`: \`string\`;   } | Comments for propReturningObjectDeclarations |
+| \`propReturningSignatureDeclaration\` | () => \`any\` | Comments for propReturningSignatureDeclaration |
+| \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\` | Comments for propReturningSignatureDeclarations |
 | \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
@@ -181,7 +269,7 @@ Comments for some tag
 
 #### Inherited from
 
-[\`BasicInterface.deprecatedProp\`](BasicInterface.md#deprecatedprop)
+[\`BasicInterface\`](BasicInterface.md).[\`deprecatedProp\`](BasicInterface.md#deprecatedprop)
 
 #### Source
 
@@ -195,7 +283,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:84](http://source-url)
+[interfaces.ts:109](http://source-url)
 
 ***
 
@@ -217,7 +305,7 @@ Comment for param s
 
 #### Inherited from
 
-[\`BasicInterface.functionProp\`](BasicInterface.md#functionprop)
+[\`BasicInterface\`](BasicInterface.md).[\`functionProp\`](BasicInterface.md#functionprop)
 
 #### Source
 
@@ -233,7 +321,7 @@ Comments for optional prop
 
 #### Inherited from
 
-[\`BasicInterface.optionalProp\`](BasicInterface.md#optionalprop)
+[\`BasicInterface\`](BasicInterface.md).[\`optionalProp\`](BasicInterface.md#optionalprop)
 
 #### Source
 
@@ -249,11 +337,109 @@ Comments for prop
 
 #### Inherited from
 
-[\`BasicInterface.prop\`](BasicInterface.md#prop)
+[\`BasicInterface\`](BasicInterface.md).[\`prop\`](BasicInterface.md#prop)
 
 #### Source
 
 [interfaces.ts:14](http://source-url)
+
+***
+
+### propReturningObjectDeclaration
+
+> **propReturningObjectDeclaration**: \`Object\`
+
+Comments for propReturningObjectDeclaration
+
+#### Type declaration
+
+##### a
+
+> **a**: \`boolean\`
+
+##### b
+
+> **b**: \`string\`
+
+#### Inherited from
+
+[\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclaration\`](BasicInterface.md#propreturningobjectdeclaration)
+
+#### Source
+
+[interfaces.ts:53](http://source-url)
+
+***
+
+### propReturningObjectDeclarations
+
+> **propReturningObjectDeclarations**: \`Object\` & \`Object\`
+
+Comments for propReturningObjectDeclarations
+
+#### Type declaration
+
+##### a
+
+> **a**: \`boolean\`
+
+##### b
+
+> **b**: \`string\`
+
+#### Type declaration
+
+##### c
+
+> **c**: \`boolean\`
+
+##### d
+
+> **d**: \`string\`
+
+#### Inherited from
+
+[\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclarations\`](BasicInterface.md#propreturningobjectdeclarations)
+
+#### Source
+
+[interfaces.ts:58](http://source-url)
+
+***
+
+### propReturningSignatureDeclaration
+
+> **propReturningSignatureDeclaration**: () => \`any\`
+
+Comments for propReturningSignatureDeclaration
+
+#### Returns
+
+\`any\`
+
+#### Inherited from
+
+[\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclaration\`](BasicInterface.md#propreturningsignaturedeclaration)
+
+#### Source
+
+[interfaces.ts:41](http://source-url)
+
+***
+
+### propReturningSignatureDeclarations
+
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\`
+
+Comments for propReturningSignatureDeclarations
+
+#### Inherited from
+
+[\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclarations\`](BasicInterface.md#propreturningsignaturedeclarations)
+
+#### Source
+
+[interfaces.ts:46](http://source-url)
 
 ***
 
@@ -307,11 +493,11 @@ Comments for nestedPropD
 
 #### Inherited from
 
-[\`BasicInterface.propWithProps\`](BasicInterface.md#propwithprops)
+[\`BasicInterface\`](BasicInterface.md).[\`propWithProps\`](BasicInterface.md#propwithprops)
 
 #### Source
 
-[interfaces.ts:41](http://source-url)
+[interfaces.ts:66](http://source-url)
 "
 `;
 
@@ -328,12 +514,18 @@ Comments for ExtendedInterface
 
 | Property | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface.deprecatedProp\`](BasicInterface.md) |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
 | \`extendedProp\` | \`string\` | - | - |
-| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s | [\`BasicInterface.functionProp\`](BasicInterface.md) |
-| \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface.optionalProp\`](BasicInterface.md) |
-| \`prop\` | \`string\` | Comments for prop | [\`BasicInterface.prop\`](BasicInterface.md) |
-| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface.propWithProps\`](BasicInterface.md) |
+| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
+| \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
+| \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).\`prop\` |
+| \`propReturningObjectDeclaration\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } | Comments for propReturningObjectDeclaration | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclaration\` |
+| \`propReturningObjectDeclaration.a\` | \`boolean\` | - | - |
+| \`propReturningObjectDeclaration.b\` | \`string\` | - | - |
+| \`propReturningObjectDeclarations\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } & \\{   \`c\`: \`boolean\`;   \`d\`: \`string\`;   } | Comments for propReturningObjectDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclarations\` |
+| \`propReturningSignatureDeclaration\` | () => \`any\` | Comments for propReturningSignatureDeclaration | [\`BasicInterface\`](BasicInterface.md).\`propReturningSignatureDeclaration\` |
+| \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningSignatureDeclarations\` |
+| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
@@ -360,7 +552,7 @@ Comments for IndexableInterface
 
 #### Source
 
-[interfaces.ts:92](http://source-url)
+[interfaces.ts:117](http://source-url)
 "
 `;
 
@@ -394,7 +586,7 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:104](http://source-url)
+[interfaces.ts:129](http://source-url)
 
 ## Events
 
@@ -404,7 +596,7 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:116](http://source-url)
+[interfaces.ts:141](http://source-url)
 
 ***
 
@@ -430,7 +622,7 @@ Deprectaed comments
 
 #### Source
 
-[interfaces.ts:111](http://source-url)
+[interfaces.ts:136](http://source-url)
 "
 `;
 
@@ -471,7 +663,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:77](http://source-url)
+[interfaces.ts:102](http://source-url)
 "
 `;
 
