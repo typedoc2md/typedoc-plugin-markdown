@@ -5,10 +5,8 @@ import {
   ReflectionType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { heading } from '../markdown';
 
-/**
- * @category Partials
- */
 export function declarationMember(
   context: MarkdownThemeRenderContext,
   declaration: DeclarationReflection,
@@ -16,7 +14,6 @@ export function declarationMember(
   nested = false,
 ) {
   const md: string[] = [];
-  const { heading } = context.markdown;
 
   md.push(context.partials.declarationMemberIdentifier(declaration));
 
@@ -40,7 +37,7 @@ export function declarationMember(
         !intersectionType.declaration.signatures
       ) {
         md.push(
-          heading(headingLevel, context.text.get('label.typeDeclaration')),
+          heading(headingLevel, context.getText('label.typeDeclaration')),
         );
         md.push(
           context.partials.typeDeclarationMember(
@@ -57,7 +54,7 @@ export function declarationMember(
     declaration.type.typeArguments?.length
   ) {
     if (declaration.type.typeArguments[0] instanceof ReflectionType) {
-      md.push(heading(headingLevel, context.text.get('label.typeDeclaration')));
+      md.push(heading(headingLevel, context.getText('label.typeDeclaration')));
       md.push(
         context.partials.typeDeclarationMember(
           declaration.type.typeArguments[0].declaration,
@@ -69,7 +66,7 @@ export function declarationMember(
 
   if (declaration.typeParameters) {
     md.push(
-      heading(headingLevel, context.text.get('kind.typeParameter.plural')),
+      heading(headingLevel, context.getText('kind.typeParameter.plural')),
     );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.partials.typeParametersTable(declaration.typeParameters));
@@ -80,7 +77,7 @@ export function declarationMember(
 
   if (typeDeclaration) {
     if (typeDeclaration?.indexSignature) {
-      md.push(heading(headingLevel, context.text.get('label.indexSignature')));
+      md.push(heading(headingLevel, context.getText('label.indexSignature')));
       md.push(
         context.partials.indexSignatureTitle(typeDeclaration.indexSignature),
       );
@@ -97,7 +94,7 @@ export function declarationMember(
     if (typeDeclaration?.children?.length) {
       if (!nested && typeDeclaration?.children?.length) {
         md.push(
-          heading(headingLevel, context.text.get('label.typeDeclaration')),
+          heading(headingLevel, context.getText('label.typeDeclaration')),
         );
         md.push(
           context.partials.typeDeclarationMember(typeDeclaration, headingLevel),

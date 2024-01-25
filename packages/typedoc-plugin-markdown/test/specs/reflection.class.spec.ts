@@ -1,62 +1,50 @@
-import {
-  FixtureOutputDir,
-  FixtureOutputFileStrategy,
-} from '../__utils__/fixture-config';
-import { expectFileToEqual } from '../__utils__/helpers';
+import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Class Reflection`, () => {
   test(`should compile abstract class`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
-      'classes/AbstractClass.md',
-    );
+    expectFileToEqual('reflections', 'members', 'classes/AbstractClass.md');
   });
 
   test(`should compile derived class`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
-      'classes/DerivedClassA.md',
-    );
+    expectFileToEqual('reflections', 'members', 'classes/DerivedClassA.md');
   });
 
   test(`should compile class with constructor overloads`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'classes/ClassWithConstructorOverloads.md',
     );
   });
 
   test(`should compile class with type parameters`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'classes/ClassWithTypeParameters.md',
     );
   });
 
   test(`should compile class with accessors`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'classes/ClassWithAccessors.md',
     );
   });
 
   test(`should compile class with modifiers`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'classes/ClassWithModifiers.md',
     );
   });
 
   test(`should compile disposable class`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'classes/DisposableClass.md',
       1,
     );

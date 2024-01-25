@@ -1,12 +1,7 @@
 import { ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { MarkdownPageEvent } from '../../../';
+import { MarkdownPageEvent } from '../../..';
 
-/**
- * Renders a readme template.
- *
- * @param page The page to render.
- */
 export function readmeTemplate(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection>,

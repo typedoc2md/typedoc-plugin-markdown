@@ -6,6 +6,7 @@ import {
 } from 'typedoc';
 
 import { MarkdownThemeRenderContext } from '../..';
+import { heading, horizontalRule } from '../markdown';
 
 export function members(
   context: MarkdownThemeRenderContext,
@@ -13,7 +14,6 @@ export function members(
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  const { heading, horizontalRule } = context.markdown;
 
   const displayHr = (reflection: DeclarationReflection) => {
     if (context.options.getValue('outputFileStrategy') === 'modules') {
@@ -71,7 +71,12 @@ export function members(
       );
       groupsWithChildren?.forEach((group, index: number) => {
         if (group.categories) {
-          md.push(heading(headingLevel, context.text.groupTitle(group.title)));
+          md.push(
+            heading(
+              headingLevel,
+              context.getTextFromKindString(group.title, true),
+            ),
+          );
           pushCategories(group.categories, headingLevel + 1);
         } else {
           const isPropertiesGroup = group.children.every((child) =>
@@ -82,7 +87,12 @@ export function members(
             child.kindOf(ReflectionKind.EnumMember),
           );
 
-          md.push(heading(headingLevel, context.text.groupTitle(group.title)));
+          md.push(
+            heading(
+              headingLevel,
+              context.getTextFromKindString(group.title, true),
+            ),
+          );
 
           if (
             isPropertiesGroup &&
@@ -91,8 +101,8 @@ export function members(
             md.push(
               context.partials.propertiesTable(
                 group.children,
-                context.text.groupTitle(group.title) ===
-                  context.text.get('kind.event.plural'),
+                context.getTextFromKindString(group.title, true) ===
+                  context.getText('kind.event.plural'),
               ),
             );
           } else if (

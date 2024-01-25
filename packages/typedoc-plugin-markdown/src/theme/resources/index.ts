@@ -1,3 +1,4 @@
+// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
 import { MarkdownThemeRenderContext } from '../..';
 
 import {
@@ -62,6 +63,16 @@ import {
   unionType,
   unknownType,
 } from './partials';
+
+import {
+  flattenDeclarations,
+  getDeclarationType,
+  getIndexTitle,
+  getKeyword,
+  getModifier,
+  getParameterDefaultValue,
+  isGroupKind,
+} from './helpers';
 
 function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
   return (...args: L) => fn(first, ...args);
@@ -131,5 +142,17 @@ export const partials = (context: MarkdownThemeRenderContext) => {
     typeOperatorType: bind(typeOperatorType, context),
     unionType: bind(unionType, context),
     unknownType: bind(unknownType, context),
+  };
+};
+
+export const helpers = () => {
+  return {
+    flattenDeclarations: flattenDeclarations,
+    getDeclarationType: getDeclarationType,
+    getIndexTitle: getIndexTitle,
+    getKeyword: getKeyword,
+    getModifier: getModifier,
+    getParameterDefaultValue: getParameterDefaultValue,
+    isGroupKind: isGroupKind,
   };
 };

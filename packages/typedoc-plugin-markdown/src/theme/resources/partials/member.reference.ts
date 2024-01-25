@@ -1,17 +1,14 @@
 import { ReferenceReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 
-/**
- * @category Partials
- */
 export function referenceMember(
   context: MarkdownThemeRenderContext,
   props: ReferenceReflection,
 ): string {
   let referenced = props.tryGetTargetReflectionDeep();
 
-  const reExportsText = context.text.get('label.reExports');
-  const renamesAndReExportsText = context.text.get('label.renamesAndReExports');
+  const reExportsText = context.getText('label.reExports');
+  const renamesAndReExportsText = context.getText('label.renamesAndReExports');
 
   if (!referenced) {
     return `${reExportsText} ${props.name}`;

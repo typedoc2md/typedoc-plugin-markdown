@@ -5,6 +5,7 @@ import {
   SignatureReflection,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, heading } from '../markdown';
 
 export function inheritance(
   context: MarkdownThemeRenderContext,
@@ -12,26 +13,23 @@ export function inheritance(
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  const { heading } = context.markdown;
 
   if (reflection.implementationOf) {
     if (headingLevel !== -1) {
-      md.push(
-        heading(headingLevel, context.text.get('label.implementationOf')),
-      );
+      md.push(heading(headingLevel, context.getText('label.implementationOf')));
     }
     md.push(typeAndParent(context, reflection.implementationOf));
   }
 
   if (reflection.inheritedFrom) {
     if (headingLevel !== -1) {
-      md.push(heading(headingLevel, context.text.get('label.inheritedFrom')));
+      md.push(heading(headingLevel, context.getText('label.inheritedFrom')));
     }
     md.push(typeAndParent(context, reflection.inheritedFrom));
   }
 
   if (reflection.overwrites) {
-    const overridesLabel = context.text.get('label.overrides');
+    const overridesLabel = context.getText('label.overrides');
     if (headingLevel !== -1) {
       md.push(heading(headingLevel, overridesLabel));
     }
@@ -45,7 +43,6 @@ const typeAndParent = (
   context: MarkdownThemeRenderContext,
   props: ArrayType | ReferenceType,
 ) => {
-  const { backTicks } = context.markdown;
   if (!props) {
     return backTicks('void');
   }

@@ -1,9 +1,8 @@
 import { SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, bold, codeBlock } from '../markdown';
+import { escapeChars } from '../utils';
 
-/**
- * @category Partials
- */
 export function signatureMemberIdentifier(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
@@ -13,8 +12,6 @@ export function signatureMemberIdentifier(
   },
 ): string {
   const md: string[] = [];
-  const { backTicks, bold, codeBlock } = context.markdown;
-  const { escapeChars } = context.utils;
 
   const DEFAULT_OPTIONS = {
     accessor: null,

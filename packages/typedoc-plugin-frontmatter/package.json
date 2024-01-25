@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-frontmatter#readme",
   "dependencies": {
-    "yaml": "^2.2.2"
+    "yaml": "^2.3.4"
   },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.0.0-next.39"

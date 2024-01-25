@@ -5,9 +5,6 @@ import {
 } from 'typedoc';
 import { MarkdownPageEvent, MarkdownThemeRenderContext } from '../../..';
 
-/**
- * @category Partials
- */
 export function pageTitle(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<DeclarationReflection | ProjectReflection>,
@@ -15,8 +12,8 @@ export function pageTitle(
   if (page.model?.url === page.project.url) {
     const titleContent = context.options.isSet('indexPageTitle')
       ? context.options.getValue('indexPageTitle')
-      : context.text.get('title.indexPage');
-    return context.text.indexTitle(
+      : context.getText('title.indexPage');
+    return context.helpers.getIndexTitle(
       titleContent,
       page.project.name,
       page.project.packageVersion,
@@ -28,12 +25,17 @@ export function pageTitle(
   );
 
   const textContent = page.model.kindOf(ReflectionKind.Module)
-    ? context.text.get('title.modulePage')
+    ? context.getText('title.modulePage')
     : context.options.isSet('memberPageTitle')
       ? context.options.getValue('memberPageTitle')
-      : context.text.get('title.memberPage');
+      : context.getText('title.memberPage');
 
   return textContent
     .replace('{name}', name)
-    .replace('{kind}', context.text.kindString(page.model.kind));
+    .replace(
+      '{kind}',
+      context.getTextFromKindString(
+        ReflectionKind.singularString(page.model.kind),
+      ),
+    );
 }

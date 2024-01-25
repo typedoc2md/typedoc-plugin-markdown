@@ -6,22 +6,19 @@ import {
   SomeType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, blockQuoteBlock, heading } from '../markdown';
 
-/**
- * @category Partials
- */
 export function signatureMemberReturns(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  const { heading, blockQuoteBlock } = context.markdown;
 
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(heading(headingLevel, context.text.get('label.returns')));
+  md.push(heading(headingLevel, context.getText('label.returns')));
 
   md.push(getReturnType(context, typeDeclaration, signature.type));
 
@@ -74,7 +71,6 @@ function getReturnType(
   typeDeclaration?: DeclarationReflection,
   type?: SomeType,
 ) {
-  const { backTicks } = context.markdown;
   if (typeDeclaration?.children) {
     return backTicks('Object');
   }

@@ -1,0 +1,11 @@
+{
+  "name": "@devtools/prebuild-options",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "/"
+  ],
+  "bin": {
+    "prebuild-options": "cli.ts"
+  }
+}

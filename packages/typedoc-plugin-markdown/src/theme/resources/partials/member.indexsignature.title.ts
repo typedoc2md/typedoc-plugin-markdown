@@ -1,15 +1,13 @@
 import { SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
 
-/**
- * @category Partials
- */
 export function indexSignatureTitle(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
 ): string {
   const md = [''];
-  const { backTicks } = context.markdown;
+
   const params = signature.parameters
     ? signature.parameters.map((parameter) => {
         return parameter.type

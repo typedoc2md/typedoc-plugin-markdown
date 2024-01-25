@@ -4,10 +4,9 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { heading } from '../markdown';
+import { escapeChars } from '../utils';
 
-/**
- * @category Partials
- */
 export function member(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
@@ -15,8 +14,6 @@ export function member(
   nested = false,
 ): string {
   const md: string[] = [];
-  const { heading } = context.markdown;
-  const { escapeChars } = context.utils;
 
   if (context.options.getValue('namedAnchors')) {
     md.push(`<a id="${reflection.anchor}" name="${reflection.anchor}"></a>`);
@@ -27,10 +24,16 @@ export function member(
     !(reflection.kind === ReflectionKind.Constructor)
   ) {
     const memberName = context.partials.memberTitle(reflection);
-    const memberHeading = context.text
-      .get('title.member')
+    const memberHeading = context
+      .getText('title.member')
       .replace('{name}', memberName)
-      .replace('{kind}', context.text.kindString(reflection.kind));
+      .replace(
+        '{kind}',
+
+        context.getTextFromKindString(
+          ReflectionKind.singularString(reflection.kind),
+        ),
+      );
     md.push(heading(headingLevel, memberHeading));
   }
 

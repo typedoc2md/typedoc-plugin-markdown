@@ -2,17 +2,13 @@ import * as path from 'path';
 import { DeclarationReflection, ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../..';
+import { escapeChars } from '../utils';
 
-/**
- * Renders the breadcrumbs
- *
- */
 export function breadcrumbs(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
   const md: string[] = [];
-  const { escapeChars } = context.utils;
 
   const entryFileName = context.options.getValue('entryFileName');
 
@@ -23,8 +19,8 @@ export function breadcrumbs(
     return '';
   }
 
-  const homeLabel = context.text
-    .get('breadcrumbs.home')
+  const homeLabel = context
+    .getText('breadcrumbs.home')
     .replace('{projectName}', page.project.name);
 
   md.push(context.partials.linkTo(homeLabel, entryFileName));

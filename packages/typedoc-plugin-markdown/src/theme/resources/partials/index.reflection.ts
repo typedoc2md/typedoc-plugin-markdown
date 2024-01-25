@@ -6,6 +6,8 @@ import {
   ReflectionKind,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { heading, table } from '../markdown';
+import { escapeChars, formatTableDescriptionCol } from '../utils';
 
 export function reflectionIndex(
   context: MarkdownThemeRenderContext,
@@ -13,8 +15,6 @@ export function reflectionIndex(
   headingLevel: number,
 ): string {
   const md: string[] = [];
-
-  const { heading } = context.markdown;
 
   const subHeadingLevel = headingLevel;
 
@@ -38,7 +38,7 @@ export function reflectionIndex(
         md.push(
           heading(
             subHeadingLevel,
-            context.text.groupTitle(reflectionGroup.title),
+            context.getTextFromKindString(reflectionGroup.title, true),
           ) + '\n',
         );
         md.push(getGroup(context, reflectionGroup) + '\n');
@@ -62,15 +62,13 @@ function getTable(
   context: MarkdownThemeRenderContext,
   group: ReflectionGroup | ReflectionCategory,
 ) {
-  const { escapeChars } = context.utils;
   const reflectionKind = group.children[0].kind;
-  const { table } = context.markdown;
+
   const headers = [
     ReflectionKind.singularString(reflectionKind),
-    context.text.get('label.description'),
+    context.getText('label.description'),
   ];
   const rows: string[][] = [];
-  const { formatTableDescriptionCol } = context.utils;
 
   group.children.forEach((child) => {
     const row: string[] = [];
@@ -97,7 +95,6 @@ function getList(
   context: MarkdownThemeRenderContext,
   group: ReflectionGroup | ReflectionCategory,
 ) {
-  const { escapeChars } = context.utils;
   const children = group.children
     .filter((child) => Boolean(child.url))
     .map((child) => {
@@ -106,7 +103,7 @@ function getList(
           ? `${
               child.signatures
                 ? child.signatures[0].name
-                : context.text.get('kind.constructor.singular')
+                : context.getText('kind.constructor.singular')
             }`
           : child.name;
       return `- ${context.partials.linkTo(escapeChars(name), child.url)}`;

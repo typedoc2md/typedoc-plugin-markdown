@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { Event, ProjectReflection, Reflection } from 'typedoc';
-import { NavigationItem, RenderTemplate, UrlMapping } from '../theme';
+import { NavigationItem, UrlMapping } from '../theme';
+import { RenderTemplate } from '../theme/core/urls';
 
 /**
  * Extends the RendererEvent from TypeDoc to expose navigation property.
@@ -17,6 +18,9 @@ export class MarkdownRendererEvent extends Event {
   static readonly BEGIN = 'beginRender';
   static readonly END = 'endRender';
 
+  /**
+   * @hidden
+   */
   constructor(
     name: string,
     outputDirectory: string,
@@ -27,6 +31,9 @@ export class MarkdownRendererEvent extends Event {
     this.project = project;
   }
 
+  /**
+   * @hidden
+   */
   public createPageEvent<Model>(
     mapping: UrlMapping<Model>,
   ): [RenderTemplate<MarkdownPageEvent<Model>>, MarkdownPageEvent<Model>] {

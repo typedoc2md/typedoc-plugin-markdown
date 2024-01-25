@@ -1,24 +1,23 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { table } from '../markdown';
+import {
+  formatTableDescriptionCol,
+  formatTableNameCol,
+  stripLineBreaks,
+} from '../utils';
 
-/**
- * @category Partials
- */
 export function typeDeclarationTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
 ): string {
-  const { table } = context.markdown;
-  const { formatTableDescriptionCol, stripLineBreaks, formatTableNameCol } =
-    context.utils;
-
   const headers: string[] = [];
 
-  headers.push(context.text.get('label.member'));
+  headers.push(context.getText('label.member'));
 
-  headers.push(context.text.get('label.type'));
+  headers.push(context.getText('label.type'));
 
-  headers.push(context.text.get('label.description'));
+  headers.push(context.getText('label.description'));
 
   const declarations = context.helpers.flattenDeclarations(props, true);
 

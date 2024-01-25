@@ -6,7 +6,9 @@ import { TEXT_MAPPING_DEFAULTS } from './text-mappings/text-mapping-defaults';
  *
  * TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
  *
- * This option provides some flexibility as to how output files are generated with the following keywords:
+ * This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
+ *
+ * The following keys are available:
  *
  * @members
  *
@@ -23,6 +25,15 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
   type: ParameterType.Map,
   map: OutputFileStrategy,
   defaultValue: OutputFileStrategy.Members,
+};
+
+/**
+ * Comments
+ */
+export const myNewOption: Partial<DeclarationOption> = {
+  help: 'A short description of the file.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
 };
 
 /**

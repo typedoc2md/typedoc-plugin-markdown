@@ -9,10 +9,5 @@
   "linked": [],
   "access": "public",
   "baseBranch": "next",
-  "updateInternalDependencies": "minor",
-  "ignore": [
-    "@dev-packages/helpers",
-    "@dev-packages/prebuild-options",
-    "@dev-packages/generate-readmes"
-  ]
+  "updateInternalDependencies": "minor"
 }

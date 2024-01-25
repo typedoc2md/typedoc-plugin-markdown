@@ -8,10 +8,7 @@
     "docusaurus-plugin-typedoc": "0.18.0",
     "typedoc-vitepress-theme": "0.0.0",
     "typedoc-github-wiki-theme": "1.0.1",
-    "typedoc-gitlab-wiki-theme": "1.0.0",
-    "@dev-packages/generate-readmes": "0.0.0",
-    "@dev-packages/helpers": "0.0.0",
-    "@dev-packages/prebuild-options": "0.0.0"
+    "typedoc-gitlab-wiki-theme": "1.0.0"
   },
   "changesets": [
     "afraid-fans-study",

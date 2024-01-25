@@ -1,17 +1,14 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../../..';
+import { backTicks, strikeThrough } from '../markdown';
+import { escapeChars } from '../utils';
 
-/**
- * @category Partials
- */
 export function memberTitle(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
 ): string {
   const md: string[] = [];
   const name: string[] = [];
-  const { backTicks, strikeThrough } = context.markdown;
-  const { escapeChars } = context.utils;
 
   if (
     reflection?.kind === ReflectionKind.Class &&

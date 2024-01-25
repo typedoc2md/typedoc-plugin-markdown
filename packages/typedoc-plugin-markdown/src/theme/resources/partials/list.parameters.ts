@@ -1,17 +1,12 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
-
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
+import { escapeChars } from '../utils';
 
-/**
- * @category Partials
- */
 export function parametersList(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
 ): string {
-  const { bold, backTicks } = context.markdown;
-  const { escapeChars } = context.utils;
-
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
@@ -58,7 +53,7 @@ export function parametersList(
 
     const name = `${escapeChars(parameter.name)}${optional}`;
 
-    const identifier: string[] = [bold(name)];
+    const identifier: string[] = [backTicks(name)];
 
     if (parameter.type) {
       identifier.push(': ' + context.partials.someType(parameter.type));

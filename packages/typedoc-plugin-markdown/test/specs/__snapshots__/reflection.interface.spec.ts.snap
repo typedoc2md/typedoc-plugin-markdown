@@ -25,7 +25,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:25](http://source-url)
+interfaces.ts:25
 
 ***
 
@@ -37,7 +37,7 @@ Comments for functionProper
 
 #### Parameters
 
-• **s**: \`string\`
+• \`s\`: \`string\`
 
 Comment for param s
 
@@ -47,7 +47,7 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:36](http://source-url)
+interfaces.ts:36
 
 ***
 
@@ -59,7 +59,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:30](http://source-url)
+interfaces.ts:30
 
 ***
 
@@ -71,7 +71,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:14](http://source-url)
+interfaces.ts:14
 
 ***
 
@@ -93,7 +93,7 @@ Comments for propReturningObjectDeclaration
 
 #### Source
 
-[interfaces.ts:53](http://source-url)
+interfaces.ts:53
 
 ***
 
@@ -125,7 +125,7 @@ Comments for propReturningObjectDeclarations
 
 #### Source
 
-[interfaces.ts:58](http://source-url)
+interfaces.ts:58
 
 ***
 
@@ -141,7 +141,7 @@ Comments for propReturningSignatureDeclaration
 
 #### Source
 
-[interfaces.ts:41](http://source-url)
+interfaces.ts:41
 
 ***
 
@@ -153,7 +153,7 @@ Comments for propReturningSignatureDeclarations
 
 #### Source
 
-[interfaces.ts:46](http://source-url)
+interfaces.ts:46
 
 ***
 
@@ -207,7 +207,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:66](http://source-url)
+interfaces.ts:66
 "
 `;
 
@@ -273,7 +273,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:25](http://source-url)
+interfaces.ts:25
 
 ***
 
@@ -283,7 +283,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:109](http://source-url)
+interfaces.ts:109
 
 ***
 
@@ -295,7 +295,7 @@ Comments for functionProper
 
 #### Parameters
 
-• **s**: \`string\`
+• \`s\`: \`string\`
 
 Comment for param s
 
@@ -309,7 +309,7 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:36](http://source-url)
+interfaces.ts:36
 
 ***
 
@@ -325,7 +325,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:30](http://source-url)
+interfaces.ts:30
 
 ***
 
@@ -341,7 +341,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:14](http://source-url)
+interfaces.ts:14
 
 ***
 
@@ -367,7 +367,7 @@ Comments for propReturningObjectDeclaration
 
 #### Source
 
-[interfaces.ts:53](http://source-url)
+interfaces.ts:53
 
 ***
 
@@ -403,7 +403,7 @@ Comments for propReturningObjectDeclarations
 
 #### Source
 
-[interfaces.ts:58](http://source-url)
+interfaces.ts:58
 
 ***
 
@@ -423,7 +423,7 @@ Comments for propReturningSignatureDeclaration
 
 #### Source
 
-[interfaces.ts:41](http://source-url)
+interfaces.ts:41
 
 ***
 
@@ -439,7 +439,7 @@ Comments for propReturningSignatureDeclarations
 
 #### Source
 
-[interfaces.ts:46](http://source-url)
+interfaces.ts:46
 
 ***
 
@@ -497,7 +497,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:66](http://source-url)
+interfaces.ts:66
 "
 `;
 
@@ -552,7 +552,7 @@ Comments for IndexableInterface
 
 #### Source
 
-[interfaces.ts:117](http://source-url)
+interfaces.ts:117
 "
 `;
 
@@ -586,7 +586,7 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:129](http://source-url)
+interfaces.ts:129
 
 ## Events
 
@@ -596,7 +596,7 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:141](http://source-url)
+interfaces.ts:141
 
 ***
 
@@ -608,7 +608,7 @@ Description for event someEvent
 
 #### Parameters
 
-• **eventParam**: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
+• \`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
 
 Comments for param eventParam
 
@@ -622,7 +622,7 @@ Deprectaed comments
 
 #### Source
 
-[interfaces.ts:136](http://source-url)
+interfaces.ts:136
 "
 `;
 
@@ -663,7 +663,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:102](http://source-url)
+interfaces.ts:102
 "
 `;
 

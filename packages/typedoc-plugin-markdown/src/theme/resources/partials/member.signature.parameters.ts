@@ -1,5 +1,6 @@
 import { ParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
 
 /**
  * @category Partials
@@ -8,7 +9,7 @@ export function signatureParameters(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
   format = false,
-): string {
+) {
   const firstOptionalParamIndex = parameters.findIndex(
     (parameter) => parameter.flags.isOptional,
   );
@@ -20,7 +21,7 @@ export function signatureParameters(
         if (param.flags.isRest) {
           paramsmd.push('...');
         }
-        const paramItem = `${context.markdown.backTicks(param.name)}${
+        const paramItem = `${backTicks(param.name)}${
           param.flags.isOptional ||
           (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
             ? '?'

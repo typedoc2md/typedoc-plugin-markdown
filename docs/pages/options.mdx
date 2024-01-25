@@ -15,7 +15,9 @@ These are the additional options that can be added to the TypeDoc configuration.
 
 TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
 
-This option provides some flexibility as to how output files are generated with the following keywords:
+This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
+
+The following keys are available:
 
 **members**
 
@@ -95,6 +97,26 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 ```json filename="typedoc.json"
 {
   "mergeReadme": false
+}
+
+```
+
+___
+
+## Plugin Options
+
+### myNewOption
+
+<Callout>A short description of the file.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+Comments
+
+
+```json filename="typedoc.json"
+{
+  "myNewOption": false
 }
 
 ```
@@ -427,6 +449,8 @@ Below is the full list of keys and default values:
     "label.type": "Type",
     "label.typeDeclaration": "Type declaration",
     "label.value": "Value",
+    "kind.accessor.singular": "Accessor",
+    "kind.accessor.plural": "Accessors",
     "kind.class.singular": "Class",
     "kind.class.plural": "Classes",
     "kind.constructor.singular": "Constructor",

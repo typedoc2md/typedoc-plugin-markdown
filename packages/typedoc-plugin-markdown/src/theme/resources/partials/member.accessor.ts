@@ -1,17 +1,13 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { heading } from '../markdown';
 
-/**
- * @category Partials
- */
 export function accessorMember(
   context: MarkdownThemeRenderContext,
   declaration: DeclarationReflection,
   headingLevel: number,
 ): string {
   const md: string[] = [];
-
-  const { heading } = context.markdown;
 
   if (declaration.getSignature) {
     md.push(
@@ -45,7 +41,7 @@ export function accessorMember(
   }
 
   if (declaration.setSignature?.parameters?.length) {
-    md.push(heading(headingLevel, context.text.get('kind.parameter.plural')));
+    md.push(heading(headingLevel, context.getText('kind.parameter.plural')));
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(
         context.partials.parametersTable(declaration.setSignature.parameters),

@@ -1,16 +1,12 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, table } from '../markdown';
+import { formatTableDescriptionCol, stripLineBreaks } from '../utils';
 
-/**
- * @category Partials
- */
 export function typeParametersTable(
   context: MarkdownThemeRenderContext,
   typeParameters: TypeParameterReflection[],
 ): string {
-  const { backTicks, table } = context.markdown;
-  const { formatTableDescriptionCol, stripLineBreaks } = context.utils;
-
   const hasDefault = typeParameters.some((typeParameter) =>
     Boolean(typeParameter.default),
   );
@@ -19,14 +15,14 @@ export function typeParametersTable(
     Boolean(typeParameter.comment),
   );
 
-  const headers = [context.text.get('kind.typeParameter.singular')];
+  const headers = [context.getText('kind.typeParameter.singular')];
 
   if (hasDefault) {
-    headers.push(context.text.get('label.value'));
+    headers.push(context.getText('label.value'));
   }
 
   if (hasComments) {
-    headers.push(context.text.get('label.description'));
+    headers.push(context.getText('label.description'));
   }
 
   const rows: string[][] = [];

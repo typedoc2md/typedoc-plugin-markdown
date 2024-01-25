@@ -8,6 +8,9 @@ import { MarkdownRendererEvent } from './events';
  * This interface augments the TypeDoc {@link Application} with the updated renderer.
  */
 export interface MarkdownApplication extends Application {
+  /**
+   * The renderer instance mapped to {@link MarkdownRenderer}.
+   */
   renderer: MarkdownRenderer;
 }
 

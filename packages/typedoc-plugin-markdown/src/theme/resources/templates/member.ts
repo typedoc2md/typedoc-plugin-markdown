@@ -1,19 +1,13 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../..';
+import { heading } from '../markdown';
 
-/**
- * Function that renders a member template.
- *
- * @param page The page to render.
- */
 export function memberTemplate(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<DeclarationReflection>,
 ) {
   const md: string[] = [];
-
-  const { heading } = context.markdown;
 
   md.push(context.hook('page.begin').join('\n'));
 

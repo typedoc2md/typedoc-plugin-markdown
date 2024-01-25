@@ -1,10 +1,8 @@
 import * as fs from 'fs';
 import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { getRelativeUrl } from '../utils';
 
-/**
- * @category Partials
- */
 export function commentParts(
   context: MarkdownThemeRenderContext,
   parts: CommentDisplayPart[],
@@ -23,7 +21,7 @@ export function commentParts(
         includePattern,
         (match: string, includeFile: string) => {
           const includeDirectory = context.options.getValue('includes');
-          const includesPath = context.utils.getRelativeUrl(
+          const includesPath = getRelativeUrl(
             `${includeDirectory}/${includeFile}`,
             context.page?.url,
           );
@@ -41,10 +39,7 @@ export function commentParts(
       parsedText = parsedText.replace(
         mediaPattern,
         (match: string, mediaFile: string) => {
-          return context.utils.getRelativeUrl(
-            `media/${mediaFile}`,
-            context.page?.url,
-          );
+          return getRelativeUrl(`media/${mediaFile}`, context.page?.url);
         },
       );
     }

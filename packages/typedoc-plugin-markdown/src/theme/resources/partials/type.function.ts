@@ -1,15 +1,12 @@
 import { SignatureReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
 
-/**
- * @category Partials
- */
 export function functionType(
   context: MarkdownThemeRenderContext,
   signatures: SignatureReflection[],
   forceParameterType = false,
 ): string {
-  const { backTicks } = context.markdown;
   const functions = signatures.map((fn) => {
     const typeParams = fn.typeParameters
       ? `\\<${fn.typeParameters

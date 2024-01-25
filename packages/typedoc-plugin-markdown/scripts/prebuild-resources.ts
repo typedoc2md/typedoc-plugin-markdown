@@ -12,6 +12,9 @@ const resourcesPath = path.join(__dirname, '..', 'src', 'theme', 'resources');
 export async function prebuildResources() {
   writeBarrelsFile('partials');
   writeBarrelsFile('templates');
+  writeBarrelsFile('helpers');
+  writeBarrelsFile('utils');
+  writeBarrelsFile('markdown');
   writeResourcesFile();
 }
 
@@ -28,12 +31,29 @@ function getSymbols(files: string[], type: string) {
       path.join(resourcesPath, type, file + '.ts'),
     );
     const symbolName = tsFile?.getExportSymbols()[0]?.getEscapedName();
-    return { symbolName };
+
+    const jsDocs = tsFile
+      ?.getFunctions()[0]
+      .getJsDocs()
+      .map((jsDoc) => {
+        return `
+/**
+ * ${jsDoc.getComment()};
+ *
+ * ${jsDoc
+   .getTags()
+   .map((tag) => `@${tag.getTagName()} ${tag.getComment()}`)
+   .join('\n')}
+ */`;
+      });
+    return { symbolName, jsDocs: jsDocs?.join('\n') };
   });
 }
 
-function writeBarrelsFile(resourceType: 'partials' | 'templates') {
-  const files = getFiles(resourceType).filter((file) => file !== 'index');
+function writeBarrelsFile(resourceType: string) {
+  const files = getFiles(resourceType).filter(
+    (file) => file !== 'index' && !file.endsWith('spec'),
+  );
   const symbols = getSymbols(files, resourceType);
   const barrelsFile = path.join(
     __dirname,
@@ -61,15 +81,19 @@ async function writeResourcesFile() {
     'index.ts',
   );
 
-  const out = `
+  const out = `// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
 import { MarkdownThemeRenderContext } from '../..';
 ${getResourceImports('templates')}
 ${getResourceImports('partials')}
+${getResourceImports('helpers')}
+
 function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
   return (...args: L) => fn(first, ...args);
 }
-${getResourceBinding('templates')}
-${getResourceBinding('partials')}
+${getResources('templates')}
+${getResources('partials')}
+${getResources('helpers', false)}
+
 `;
   const formattedOut = await prettier.format(out, {
     parser: 'typescript',
@@ -79,8 +103,10 @@ ${getResourceBinding('partials')}
   fs.writeFileSync(resourcesFile, formattedOut);
 }
 
-function getResourceImports(resourceType: 'partials' | 'templates') {
-  const files = getFiles(resourceType).filter((file) => file !== 'index');
+function getResourceImports(resourceType: string) {
+  const files = getFiles(resourceType).filter(
+    (file) => file !== 'index' && !file.endsWith('spec'),
+  );
   const symbols = getSymbols(files, resourceType);
   return `
   import { ${symbols
@@ -89,15 +115,22 @@ function getResourceImports(resourceType: 'partials' | 'templates') {
  `;
 }
 
-function getResourceBinding(resourceType: 'partials' | 'templates') {
-  const files = getFiles(resourceType).filter((file) => file !== 'index');
+function getResources(resourceType: string, binding = true) {
+  const files = getFiles(resourceType).filter(
+    (file) => file !== 'index' && !file.endsWith('spec'),
+  );
   const symbols = getSymbols(files, resourceType);
+
   return `
-  export const ${resourceType} = (context: MarkdownThemeRenderContext) => {
+  export const ${resourceType} = (${binding ? `context: MarkdownThemeRenderContext` : ''}) => {
     return {
-      ${symbols.map(
-        (symbol) => `${symbol.symbolName}: bind(${symbol.symbolName},context)`,
-      )}
+      ${symbols.map((symbol) => {
+        const returnValue = binding
+          ? `bind(${symbol.symbolName},context)`
+          : symbol.symbolName;
+        return `
+${symbol.symbolName}: ${returnValue}`;
+      })}
     };
   };`;
 }

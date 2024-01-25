@@ -1,46 +1,38 @@
-import {
-  FixtureOutputDir,
-  FixtureOutputFileStrategy,
-} from '../__utils__/fixture-config';
-import { expectFileToEqual } from '../__utils__/helpers';
+import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Interface Reflection`, () => {
   test(`should compile basic interface`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
-      'interfaces/BasicInterface.md',
-    );
+    expectFileToEqual('reflections', 'members', 'interfaces/BasicInterface.md');
   });
 
   test(`should compile interface with type parameters`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'interfaces/InterfaceWithTypeParameters.md',
     );
   });
 
   test(`should compile extended interface`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'interfaces/ExtendedInterface.md',
     );
   });
 
   test(`should compile indexable interface`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'interfaces/IndexableInterface.md',
     );
   });
 
   test(`should compile interface with event properties`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'interfaces/InterfaceWithEventProperties.md',
     );
   });

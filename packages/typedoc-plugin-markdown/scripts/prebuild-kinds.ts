@@ -15,6 +15,7 @@ export async function prebuildKinds() {
   );
 
   const kinds = [
+    { key: 'accessor', kind: ReflectionKind.Accessor },
     { key: 'class', kind: ReflectionKind.Class },
     { key: 'constructor', kind: ReflectionKind.Constructor },
     { key: 'enum', kind: ReflectionKind.Enum },

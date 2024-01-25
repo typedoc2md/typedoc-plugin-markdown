@@ -1,18 +1,14 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { heading } from '../markdown';
+import { escapeChars } from '../utils';
 
-/**
- * @category Partials
- */
 export function constructorMember(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
   headingLevel: number,
 ): string {
   const md: string[] = [];
-
-  const { heading } = context.markdown;
-  const { escapeChars } = context.utils;
 
   reflection.signatures?.forEach((signature) => {
     const params = signature.parameters?.map((param) => param.name).join(', ');

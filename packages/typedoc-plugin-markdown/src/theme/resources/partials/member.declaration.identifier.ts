@@ -1,16 +1,13 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, bold, codeBlock } from '../markdown';
+import { escapeChars, stripComments, stripLineBreaks } from '../utils';
 
-/**
- * @category Partials
- */
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
 ): string {
   const md: string[] = [];
-  const { backTicks, bold, codeBlock } = context.markdown;
-  const { escapeChars, stripComments, stripLineBreaks } = context.utils;
 
   const useCodeBlocks = context.options.getValue('useCodeBlocks');
 

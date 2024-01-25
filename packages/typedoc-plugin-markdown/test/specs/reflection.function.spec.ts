@@ -1,94 +1,86 @@
-import {
-  FixtureOutputDir,
-  FixtureOutputFileStrategy,
-} from '../__utils__/fixture-config';
-import { expectFileToEqual } from '../__utils__/helpers';
+import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Function Reflection`, () => {
   test(`should compile function with a parameter`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
-      'functions/basicFunction.md',
-    );
+    expectFileToEqual('reflections', 'members', 'functions/basicFunction.md');
   });
 
   test(`should compile function with default parameters`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionWithDefaultParameters.md',
     );
   });
 
   test(`should compile function with optional parameters`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionWithOptionalParameters.md',
     );
   });
 
   test(`should compile function with optional parameters`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionWithOptionalParameters.md',
     );
   });
 
   test(`should compile function with nested parameters`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionWithNestedParameters.md',
     );
   });
 
   test(`should compile function with named params`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionWithNamedParams.md',
     );
   });
 
   test(`should compile function with type parameters`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionWithTypeParameters.md',
     );
   });
 
   test(`should compile function with multiple signatures`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionWithMultipleSignatures.md',
     );
   });
 
   test(`should compile function returning an object`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionReturningAnObject.md',
     );
   });
 
   test(`should compile function returning a function`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionReturningAFunction.md',
     );
   });
 
   test(`should compile function returning a promise`, () => {
     expectFileToEqual(
-      FixtureOutputDir.Reflections,
-      FixtureOutputFileStrategy.Members,
+      'reflections',
+      'members',
       'functions/functionReturningAPromise.md',
     );
   });

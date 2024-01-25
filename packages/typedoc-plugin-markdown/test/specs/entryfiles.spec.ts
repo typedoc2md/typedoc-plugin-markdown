@@ -1,24 +1,11 @@
-import {
-  FixtureOutputDir,
-  FixtureOutputFileStrategy,
-} from '../__utils__/fixture-config';
-import { expectFileToEqual } from '../__utils__/helpers';
+import { expectFileToEqual } from '@devtools/testing';
 
 describe(`EntryFiles`, () => {
   test(`should get entry module`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.EntryFiles,
-      FixtureOutputFileStrategy.Members,
-      ['README.md', 'index.md'],
-    );
+    expectFileToEqual('entryfiles', 'members', ['README.md', 'index.md']);
   });
 
   test(`should get readme file`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.EntryFiles,
-      FixtureOutputFileStrategy.Members,
-      'readme_.md',
-      1,
-    );
+    expectFileToEqual('entryfiles', 'members', 'readme_.md', 1);
   });
 });

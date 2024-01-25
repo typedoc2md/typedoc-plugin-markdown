@@ -1,9 +1,8 @@
 import { Comment } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { bold, heading } from '../markdown';
+import { escapeAngleBrackets } from '../utils';
 
-/**
- * @category Partials
- */
 export function comment(
   context: MarkdownThemeRenderContext,
   comment: Comment,
@@ -12,9 +11,6 @@ export function comment(
   showTags = true,
 ): string {
   const md: string[] = [];
-
-  const { heading, bold } = context.markdown;
-  const { escapeAngleBrackets } = context.utils;
 
   if (showSummary && comment.summary?.length > 0) {
     md.push(context.partials.commentParts(comment.summary));

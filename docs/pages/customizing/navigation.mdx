@@ -1,0 +1,27 @@
+# Consuming Navigtion
+
+If required, a navigation structure can be provided to the output. This is useful if you want to provide a custom sidebar or navigation bar.
+
+This can be achieved by adding `postRenderAsyncJobs` to the renderer.
+
+```js filename="local-plugins/my-navigation-plugin.mjs"
+// @ts-check
+
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  app.renderer.postRenderAsyncJobs.push(
+   /**
+    * @param {import('typedoc-plugin-markdown').MarkdownRendererEvent} output
+    */
+    async (event: MarkdownRendererEvent) => {
+      // The navigation JSON structure is available on the output.
+      const navigation = event.navigation;
+
+      // This can be parsed to something else or written straight to a file:
+      fs.writeFileSync('navigation.json', JSON.stringify(navigation));
+    },
+  );
+}
+```

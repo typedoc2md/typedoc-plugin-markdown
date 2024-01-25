@@ -1,5 +1,6 @@
 import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, bold, heading, unorderedList } from '../markdown';
 
 export function memberHierarchy(
   context: MarkdownThemeRenderContext,
@@ -7,7 +8,6 @@ export function memberHierarchy(
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  const { heading, unorderedList } = context.markdown;
   const parent = !declarationHierarchy.isTarget
     ? declarationHierarchy.types
         .map((hierarchyType) => {
@@ -21,10 +21,10 @@ export function memberHierarchy(
     : null;
   if (declarationHierarchy.next) {
     if (parent) {
-      md.push(heading(headingLevel, context.text.get('label.extends')));
+      md.push(heading(headingLevel, context.getText('label.extends')));
       md.push(`- ${parent}`);
     } else {
-      md.push(heading(headingLevel, context.text.get('label.extendedBy')));
+      md.push(heading(headingLevel, context.getText('label.extendedBy')));
       const lines: string[] = [];
       declarationHierarchy.next.types.forEach((hierarchyType) => {
         lines.push(
@@ -46,7 +46,6 @@ function getHierarchyType(
   isTarget: boolean,
   context: MarkdownThemeRenderContext,
 ) {
-  const { bold, backTicks } = context.markdown;
   return isTarget
     ? bold(backTicks(hierarchyType.toString()))
     : context.partials.someType(hierarchyType as SomeType);

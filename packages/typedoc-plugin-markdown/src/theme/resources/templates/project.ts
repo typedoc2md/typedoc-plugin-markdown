@@ -1,12 +1,8 @@
 import { ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../..';
+import { heading } from '../markdown';
 
-/**
- * Renders a project/index template.
- *
- * @param page The page to render.
- */
 export function projectTemplate(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection>,
@@ -14,8 +10,6 @@ export function projectTemplate(
   const md: string[] = [];
 
   md.push(context.hook('page.begin').join('\n'));
-
-  const { heading } = context.markdown;
 
   if (!context.options.getValue('hidePageHeader')) {
     md.push(context.partials.header(page));

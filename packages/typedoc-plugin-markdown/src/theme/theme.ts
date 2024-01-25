@@ -6,11 +6,19 @@ import {
   ReflectionKind,
   Theme,
 } from 'typedoc';
-
-import { MarkdownPageEvent } from '../plugin';
-import { OutputFileStrategy } from '../plugin/options/option-maps';
-import { getNavigation } from './support/support.navigation';
-import { RenderTemplate, getUrls } from './support/support.urls';
+import {
+  MarkdownPageEvent,
+  MarkdownRenderer,
+  OutputFileStrategy,
+  TextContentMappings,
+} from '../plugin';
+import {
+  PLURAL_KIND_KEY_MAP,
+  SINGULAR_KIND_KEY_MAP,
+  TEXT_MAPPING_DEFAULTS,
+} from '../plugin/options/text-mappings';
+import { getNavigation } from './core/navigation';
+import { RenderTemplate, getUrls } from './core/urls';
 import { MarkdownThemeRenderContext } from './theme-render-context';
 
 /**
@@ -19,6 +27,16 @@ import { MarkdownThemeRenderContext } from './theme-render-context';
  *
  */
 export class MarkdownTheme extends Theme {
+  textMappings: TextContentMappings;
+
+  constructor(renderer: MarkdownRenderer) {
+    super(renderer);
+    this.textMappings = {
+      ...TEXT_MAPPING_DEFAULTS,
+      ...(this.application.options.getValue('textContentMappings') || {}),
+    };
+  }
+
   /**
    * Renders a template and page model to a string.
    */
@@ -27,20 +45,16 @@ export class MarkdownTheme extends Theme {
     template: RenderTemplate<MarkdownPageEvent<Reflection>>,
   ) {
     try {
-      return this.formatContents(template(page));
-    } catch (e) {
-      this.application.logger.error(
-        `Error rendering page ${page.url} using template ${template.name}: ${e.message}`,
+      return (
+        template(page)
+          .replace(/[\r\n]{3,}/g, '\n\n')
+          .replace(/^\s+|\s+$/g, '') + '\n'
       );
+    } catch (e) {
+      console.log(e);
+      this.application.logger.error(`Error rendering page ${page.url}.`);
       throw new Error(e);
     }
-  }
-
-  /**
-   * Creates a instance of render context for each page template.
-   */
-  getRenderContext(page: MarkdownPageEvent<Reflection> | null) {
-    return new MarkdownThemeRenderContext(this, page, this.application.options);
   }
 
   readmeTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
@@ -59,6 +73,10 @@ export class MarkdownTheme extends Theme {
     return this.getRenderContext(page).templates.memberTemplate(page);
   };
 
+  getRenderContext(page: MarkdownPageEvent<Reflection> | null) {
+    return new MarkdownThemeRenderContext(this, page, this.application.options);
+  }
+
   getUrls(project: ProjectReflection) {
     return getUrls(this, project);
   }
@@ -67,16 +85,17 @@ export class MarkdownTheme extends Theme {
     return getNavigation(this, project);
   }
 
-  formatContents(contents: string) {
-    return (
-      contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
-    );
+  getText(key: keyof TextContentMappings) {
+    return this.textMappings[key];
   }
 
-  /**
-   * Returns the template mapping for a given reflection kind
-   * @param kind
-   */
+  getTextFromKindString(kindString: string, isPlural = false) {
+    const key = isPlural
+      ? (PLURAL_KIND_KEY_MAP[kindString] as keyof TextContentMappings)
+      : (SINGULAR_KIND_KEY_MAP[kindString] as keyof TextContentMappings);
+    return this.textMappings[key];
+  }
+
   getTemplateMapping(
     kind: ReflectionKind,
     outputFileStrategyOverride?: OutputFileStrategy,
@@ -85,11 +104,21 @@ export class MarkdownTheme extends Theme {
       outputFileStrategyOverride ||
       this.application.options.getValue('outputFileStrategy');
 
-    const getDirectoryName = (reflectionKind: ReflectionKind) => {
+    const directoryName = (reflectionKind: ReflectionKind) => {
       const pluralString = ReflectionKind.pluralString(reflectionKind);
       return pluralString.replace(/[\s_-]+/g, '-').toLowerCase();
     };
 
+    const memberMapping = (
+      template: (pageEvent: MarkdownPageEvent<any>) => string,
+      kind: ReflectionKind,
+    ) => {
+      return {
+        template,
+        directory: directoryName(kind),
+        kind: kind,
+      };
+    };
     const mappings = {
       [ReflectionKind.Module]: {
         template: this.reflectionTemplate,
@@ -98,58 +127,43 @@ export class MarkdownTheme extends Theme {
       },
       [ReflectionKind.Namespace]: {
         template: this.reflectionTemplate,
-        directory: getDirectoryName(ReflectionKind.Namespace),
+        directory: directoryName(ReflectionKind.Namespace),
         kind: ReflectionKind.Namespace,
       },
     };
 
-    const getMemberMapping = (
-      template: (pageEvent: MarkdownPageEvent<any>) => string,
-      kind: ReflectionKind,
-    ) => {
-      return {
-        template,
-        directory: getDirectoryName(kind),
-        kind: kind,
-      };
-    };
-
     if (outputFileStrategy === OutputFileStrategy.Members) {
-      mappings[ReflectionKind.Class] = getMemberMapping(
+      mappings[ReflectionKind.Class] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Class,
       );
-    }
-    if (outputFileStrategy === OutputFileStrategy.Members) {
-      mappings[ReflectionKind.Interface] = getMemberMapping(
+
+      mappings[ReflectionKind.Interface] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Interface,
       );
-    }
-    if (outputFileStrategy === OutputFileStrategy.Members) {
-      mappings[ReflectionKind.Enum] = getMemberMapping(
+
+      mappings[ReflectionKind.Enum] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Enum,
       );
-    }
-    if (outputFileStrategy === OutputFileStrategy.Members) {
-      mappings[ReflectionKind.Function] = getMemberMapping(
+
+      mappings[ReflectionKind.Function] = memberMapping(
         this.memberTemplate,
         ReflectionKind.Function,
       );
-    }
-    if (outputFileStrategy === OutputFileStrategy.Members) {
-      mappings[ReflectionKind.TypeAlias] = getMemberMapping(
+
+      mappings[ReflectionKind.TypeAlias] = memberMapping(
         this.memberTemplate,
         ReflectionKind.TypeAlias,
       );
-    }
-    if (outputFileStrategy === OutputFileStrategy.Members) {
-      mappings[ReflectionKind.Variable] = getMemberMapping(
+
+      mappings[ReflectionKind.Variable] = memberMapping(
         this.memberTemplate,
         ReflectionKind.Variable,
       );
     }
+
     return mappings[kind];
   }
 }

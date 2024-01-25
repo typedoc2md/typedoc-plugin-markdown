@@ -1,16 +1,12 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, table } from '../markdown';
+import { formatTableDescriptionCol, stripLineBreaks } from '../utils';
 
-/**
- * @category Partials
- */
 export function parametersTable(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
 ): string {
-  const { table, backTicks } = context.markdown;
-  const { stripLineBreaks, formatTableDescriptionCol } = context.utils;
-
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
@@ -43,16 +39,16 @@ export function parametersTable(
   const hasComments = parsedParams.some((param) => Boolean(param.comment));
 
   const headers = [
-    context.text.get('kind.parameter.singular'),
-    context.text.get('label.type'),
+    context.getText('kind.parameter.singular'),
+    context.getText('label.type'),
   ];
 
   if (showDefaults) {
-    headers.push(context.text.get('label.defaultValue'));
+    headers.push(context.getText('label.defaultValue'));
   }
 
   if (hasComments) {
-    headers.push(context.text.get('label.description'));
+    headers.push(context.getText('label.description'));
   }
 
   const firstOptionalParamIndex = parameters.findIndex(

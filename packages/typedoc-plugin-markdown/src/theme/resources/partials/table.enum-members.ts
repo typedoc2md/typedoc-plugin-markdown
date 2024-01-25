@@ -1,25 +1,22 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
+import { stripLineBreaks } from '../utils';
 
-/**
- * @category Partials
- */
 export function enumMembersTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
 ): string {
-  const { backTicks } = context.markdown;
-  const { stripLineBreaks } = context.utils;
   const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
 
   const headers = [
-    context.text.get('kind.enumMember.singular'),
-    context.text.get('label.value'),
+    context.getText('kind.enumMember.singular'),
+    context.getText('label.value'),
   ];
 
   if (hasComments) {
-    headers.push(context.text.get('label.description'));
+    headers.push(context.getText('label.description'));
   }
 
   const rows = props.map((property: DeclarationReflection) => {

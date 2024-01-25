@@ -6,18 +6,15 @@ import {
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../..';
+import { heading } from '../markdown';
+import { escapeChars } from '../utils';
 
-/**
- * @category Partials
- */
 export function pageIndex(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<DeclarationReflection | ProjectReflection>,
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  const { heading } = context.markdown;
-  const { escapeChars } = context.utils;
 
   if (page.model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
     md.push(context.partials.reflectionIndex(page.model, headingLevel));
@@ -30,7 +27,7 @@ export function pageIndex(
       EntryPointStrategy.Packages;
 
   if (isPackages && page.model.children?.length) {
-    md.push(heading(headingLevel, context.text.get('label.packages')));
+    md.push(heading(headingLevel, context.getText('label.packages')));
     const packagesList = page.model.children?.map((projectPackage) => {
       const urlTo = Boolean(projectPackage.readme)
         ? `${path.dirname(projectPackage.url || '')}/${context.options.getValue(

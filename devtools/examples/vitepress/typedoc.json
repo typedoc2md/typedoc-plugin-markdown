@@ -1,0 +1,14 @@
+{
+  "extends": ["../../../stubs/typedoc.cjs"],
+  "entryPoints": ["../../../stubs/src/packages/*"],
+  "entryPointStrategy": "packages",
+  "outputFileStrategy": "modules",
+  "plugin": [
+    "../../../packages/typedoc-plugin-markdown/dist",
+    "../../../packages/typedoc-vitepress-theme/dist"
+  ],
+  "sidebar": {
+    "collapse": false,
+    "pretty": true
+  }
+}

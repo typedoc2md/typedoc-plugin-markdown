@@ -16,16 +16,13 @@ import {
   UnknownType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
 
-/**
- * @category Partials
- */
 export function someType(
   context: MarkdownThemeRenderContext,
   someType: SomeType,
   foreCollpase = false,
 ): string {
-  const { backTicks } = context.markdown;
   if (!someType) {
     return '';
   }

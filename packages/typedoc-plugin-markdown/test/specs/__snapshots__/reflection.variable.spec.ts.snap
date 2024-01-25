@@ -15,7 +15,7 @@ Comments variable with symbol
 
 ## Source
 
-[variables.ts:50](http://source-url)
+variables.ts:50
 "
 `;
 
@@ -38,7 +38,7 @@ Comments variable with symbol
 
 ## Source
 
-[variables.ts:50](http://source-url)
+variables.ts:50
 "
 `;
 
@@ -51,7 +51,7 @@ Comments for typeOperatorVariable
 
 ## Source
 
-[variables.ts:13](http://source-url)
+variables.ts:13
 "
 `;
 
@@ -66,7 +66,7 @@ Comments for typeOperatorVariable
 
 ## Source
 
-[variables.ts:13](http://source-url)
+variables.ts:13
 "
 `;
 
@@ -79,7 +79,7 @@ A simple string variable
 
 ## Source
 
-[variables.ts:8](http://source-url)
+variables.ts:8
 "
 `;
 
@@ -94,7 +94,7 @@ A simple string variable
 
 ## Source
 
-[variables.ts:8](http://source-url)
+variables.ts:8
 "
 `;
 
@@ -169,7 +169,7 @@ Comments for objectLiteralVariable
 
 #### Parameters
 
-• **z**: \`string\`
+• \`z\`: \`string\`
 
 #### Returns
 
@@ -206,9 +206,9 @@ Comments for objectLiteralVariable
 
 #### Parameters
 
-• **unionParam**: \`"a"\` \\| \`"b"\`
+• \`unionParam\`: \`"a"\` \\| \`"b"\`
 
-• **\\_undercoreParam\\_**: \`string\`
+• \`\\_undercoreParam\\_\`: \`string\`
 
 #### Returns
 
@@ -224,7 +224,7 @@ Comments for objectLiteralVariable
 
 ## Source
 
-[variables.ts:18](http://source-url)
+variables.ts:18
 "
 `;
 
@@ -291,6 +291,6 @@ Comments for objectLiteralVariable
 
 ## Source
 
-[variables.ts:18](http://source-url)
+variables.ts:18
 "
 `;

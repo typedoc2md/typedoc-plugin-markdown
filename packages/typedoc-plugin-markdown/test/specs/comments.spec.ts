@@ -1,15 +1,7 @@
-import {
-  FixtureOutputDir,
-  FixtureOutputFileStrategy,
-} from '../__utils__/fixture-config';
-import { expectFileToEqual } from '../__utils__/helpers';
+import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Comments`, () => {
   test(`should compile comments for module`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.Comments,
-      [FixtureOutputFileStrategy.Modules, FixtureOutputFileStrategy.Members],
-      'README.md',
-    );
+    expectFileToEqual('comments', ['modules', 'members'], 'README.md');
   });
 });

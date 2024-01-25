@@ -1,9 +1,7 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { bold } from '../markdown';
 
-/**
- * @category Partials
- */
 export function typeParametersList(
   context: MarkdownThemeRenderContext,
   typeParameters: TypeParameterReflection[],
@@ -11,8 +9,6 @@ export function typeParametersList(
   const rows: string[] = [];
   typeParameters?.forEach((typeParameter) => {
     const row: string[] = [];
-
-    const { bold } = context.markdown;
 
     const nameCol: string[] = [bold(typeParameter.name)];
 

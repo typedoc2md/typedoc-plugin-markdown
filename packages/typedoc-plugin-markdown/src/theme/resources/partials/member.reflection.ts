@@ -1,16 +1,13 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { heading, unorderedList } from '../markdown';
 
-/**
- * @category Partials
- */
 export function reflectionMember(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  const { heading, unorderedList } = context.markdown;
 
   if (reflection.comment) {
     md.push(context.partials.comment(reflection.comment, headingLevel));
@@ -24,7 +21,7 @@ export function reflectionMember(
 
   if (reflection.typeParameters) {
     md.push(
-      heading(headingLevel, context.text.get('kind.typeParameter.plural')),
+      heading(headingLevel, context.getText('kind.typeParameter.plural')),
     );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.partials.typeParametersTable(reflection.typeParameters));
@@ -34,7 +31,7 @@ export function reflectionMember(
   }
 
   if (reflection.implementedTypes) {
-    md.push(heading(headingLevel, context.text.get('label.implements')));
+    md.push(heading(headingLevel, context.getText('label.implements')));
     md.push(
       unorderedList(
         reflection.implementedTypes.map((implementedType) =>
@@ -51,7 +48,7 @@ export function reflectionMember(
   }
 
   if ('indexSignature' in reflection && reflection.indexSignature) {
-    md.push(heading(headingLevel, context.text.get('label.indexable')));
+    md.push(heading(headingLevel, context.getText('label.indexable')));
     md.push(context.partials.indexSignatureTitle(reflection.indexSignature));
   }
 
@@ -60,7 +57,7 @@ export function reflectionMember(
       group.allChildrenHaveOwnDocument(),
     );
     if (isAbsolute) {
-      md.push(heading(headingLevel, context.text.get('label.index')));
+      md.push(heading(headingLevel, context.getText('label.index')));
     }
     md.push(
       context.partials.reflectionIndex(

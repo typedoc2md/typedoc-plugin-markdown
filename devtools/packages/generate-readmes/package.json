@@ -1,0 +1,11 @@
+{
+  "name": "@devtools/generate-readmes",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "/"
+  ],
+  "bin": {
+    "generate-readmes": "cli.ts"
+  }
+}

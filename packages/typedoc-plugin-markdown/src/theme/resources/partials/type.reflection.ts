@@ -1,15 +1,12 @@
 import { ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
 
-/**
- * @category Partials
- */
 export function reflectionType(
   context: MarkdownThemeRenderContext,
   reflectionType: ReflectionType,
   foreCollpase = false,
 ): string {
-  const { backTicks } = context.markdown;
   const root =
     reflectionType instanceof ReflectionType
       ? reflectionType.declaration

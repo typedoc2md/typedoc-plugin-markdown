@@ -5,6 +5,7 @@ import { ManuallyValidatedOption } from 'typedoc';
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
     outputFileStrategy: 'members' | 'modules';
+    myNewOption: boolean;
     entryFileName: string;
     entryModule: string;
     mergeReadme: boolean;
@@ -32,6 +33,7 @@ declare module 'typedoc' {
 
 export interface PluginOptions {
   outputFileStrategy: 'members' | 'modules';
+  myNewOption: boolean;
   entryFileName: string;
   entryModule: string;
   mergeReadme: boolean;
@@ -88,6 +90,8 @@ export interface TextContentMappings {
   'label.type': string;
   'label.typeDeclaration': string;
   'label.value': string;
+  'kind.accessor.singular': string;
+  'kind.accessor.plural': string;
   'kind.class.singular': string;
   'kind.class.plural': string;
   'kind.constructor.singular': string;

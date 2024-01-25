@@ -1,11 +1,7 @@
 import { Options, Reflection } from 'typedoc';
-import { MarkdownPageEvent, MarkdownTheme } from '..';
+import { MarkdownPageEvent, MarkdownTheme, TextContentMappings } from '..';
 import { MarkdownRenderer, MarkdownRendererHooks } from '../plugin/types';
-import { partials, templates } from './resources';
-import { helpers } from './support/support.helpers';
-import { markdown } from './support/support.markdown';
-import { text } from './support/support.text';
-import { utils } from './support/support.utils';
+import { helpers, partials, templates } from './resources';
 
 /* start_imports */
 /* end_imports */
@@ -27,32 +23,11 @@ export class MarkdownThemeRenderContext {
   ) {}
 
   /**
-   * Returns an object with methods for generating markdown syntax.
-   *
-   * Each method returns a string formatted according to markdown rules.
-   *
-   * This can consumed by theme templates and partials using the syntax `context.markdown.method()`.
-   */
-  markdown = markdown();
-
-  /**
-   * A set of pure utils to be consumed accross the plugin.
-   *
-   * These can be consumed by theme templates and partials using the syntax `context.utils.method()`.
-   */
-  utils = utils();
-
-  /**
    * A set of methods to return strings from specific TypeDoc models.
    *
    * These can be consumed by theme templates and partials using the syntax `context.models.method()`.
    */
   helpers = helpers();
-
-  /**
-   * The theme's global text context.
-   */
-  text = text(this.options);
 
   /**
    * The theme's global templates context.
@@ -63,6 +38,18 @@ export class MarkdownThemeRenderContext {
    * The theme's global partials context.
    */
   partials = partials(this);
+
+  getText(key: keyof TextContentMappings) {
+    return this.theme.getText(key);
+  }
+
+  getTextFromKindString(kindString: string, isPlural = false) {
+    return this.theme.getTextFromKindString(kindString, isPlural);
+  }
+
+  parseUrl = (url: string) => {
+    return encodeURI(url);
+  };
 
   /**
    * Hook into the TypeDoc rendering system.

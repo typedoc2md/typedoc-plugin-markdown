@@ -1,5 +1,7 @@
 import * as path from 'path';
 import { MarkdownThemeRenderContext } from '../..';
+import { link } from '../markdown';
+import { getRelativeUrl } from '../utils';
 
 export function linkTo(
   context: MarkdownThemeRenderContext,
@@ -7,7 +9,7 @@ export function linkTo(
   url?: string,
 ) {
   const URL_PREFIX = /^(http|ftp)s?:\/\//;
-  const { link } = context.markdown;
+
   if (typeof url !== 'string') {
     return label;
   }
@@ -20,8 +22,8 @@ export function linkTo(
       return path.join(publicPath, url);
     }
 
-    const relativeUrl = context.utils.getRelativeUrl(url, context.page?.url);
+    const relativeUrl = getRelativeUrl(url, context.page?.url);
 
-    return link(label, context.utils.parseUrl(relativeUrl));
+    return link(label, context.parseUrl(relativeUrl));
   }
 }

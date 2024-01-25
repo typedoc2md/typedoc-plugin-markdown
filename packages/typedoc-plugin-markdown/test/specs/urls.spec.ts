@@ -1,49 +1,26 @@
-import {
-  FixtureOutputDir,
-  FixtureOutputFileStrategy,
-} from '../__utils__/fixture-config';
-import { expectUrlsToEqual } from '../__utils__/helpers';
-
+import { expectUrlsToEqual } from '@devtools/testing';
 describe(`Urls`, () => {
   test(`should gets Urls for multiple entry points`, () => {
-    expectUrlsToEqual(FixtureOutputDir.Groups, [
-      FixtureOutputFileStrategy.Members,
-      FixtureOutputFileStrategy.Modules,
-    ]);
+    expectUrlsToEqual('groups', ['members', 'modules']);
   });
 
   test(`should gets Urls for single entry points`, () => {
-    expectUrlsToEqual(FixtureOutputDir.Reflections, [
-      FixtureOutputFileStrategy.Members,
-      FixtureOutputFileStrategy.Modules,
-    ]);
+    expectUrlsToEqual('reflections', ['members', 'modules']);
   });
 
   test(`should gets Urls for packages entry points`, () => {
-    expectUrlsToEqual(FixtureOutputDir.Packages, [
-      FixtureOutputFileStrategy.Members,
-      FixtureOutputFileStrategy.Modules,
-    ]);
+    expectUrlsToEqual('packages', ['members', 'modules']);
   });
 
   test(`should gets Urls for single package entry points`, () => {
-    expectUrlsToEqual(FixtureOutputDir.Package, [
-      FixtureOutputFileStrategy.Members,
-      FixtureOutputFileStrategy.Modules,
-    ]);
+    expectUrlsToEqual('package', ['members', 'modules']);
   });
 
   test(`should gets Urls for entry module`, () => {
-    expectUrlsToEqual(FixtureOutputDir.EntryFiles, [
-      FixtureOutputFileStrategy.Members,
-      FixtureOutputFileStrategy.Modules,
-    ]);
+    expectUrlsToEqual('entryfiles', ['members', 'modules']);
   });
 
   test(`should gets Urls for readme options`, () => {
-    expectUrlsToEqual(FixtureOutputDir.Readme, [
-      FixtureOutputFileStrategy.Members,
-      FixtureOutputFileStrategy.Modules,
-    ]);
+    expectUrlsToEqual('readme', ['members', 'modules']);
   });
 });

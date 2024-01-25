@@ -1,9 +1,6 @@
 import { ConditionalType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 
-/**
- * @category Partials
- */
 export function conditionalType(
   context: MarkdownThemeRenderContext,
   conditionalType: ConditionalType,

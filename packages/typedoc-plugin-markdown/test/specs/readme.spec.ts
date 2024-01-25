@@ -1,23 +1,11 @@
-import {
-  FixtureOutputDir,
-  FixtureOutputFileStrategy,
-} from '../__utils__/fixture-config';
-import { expectFileToEqual } from '../__utils__/helpers';
+import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Readmes`, () => {
   test(`should get merged readme for members`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.Readme,
-      FixtureOutputFileStrategy.Members,
-      ['index.md'],
-    );
+    expectFileToEqual('readme', 'members', ['index.md']);
   });
 
   test(`should get merged readme for modules`, () => {
-    expectFileToEqual(
-      FixtureOutputDir.Readme,
-      FixtureOutputFileStrategy.Modules,
-      ['index.md'],
-    );
+    expectFileToEqual('readme', 'modules', ['index.md']);
   });
 });

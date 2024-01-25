@@ -44,10 +44,7 @@ export class GithubWikiTheme extends MarkdownTheme {
 }
 
 class ThemeRenderContext extends MarkdownThemeRenderContext {
-  override utils = {
-    ...this.utils,
-    parseUrl: (url: string) => {
-      return encodeURI('../wiki/' + url.replace('.md', ''));
-    },
+  parseUrl = (url: string) => {
+    return encodeURI('../wiki/' + url.replace('.md', ''));
   };
 }

@@ -6,10 +6,8 @@ import {
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { MarkdownPageEvent } from '../../..';
+import { bold, link } from '../markdown';
 
-/**
- * Docs for header!!!
- */
 export function header(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
@@ -35,16 +33,14 @@ function projectHeader(
 
   const md: string[] = [];
 
-  const { bold, link } = context.markdown;
-
-  const title = context.text.indexTitle(
-    context.text.get('header.title'),
+  const title = context.helpers.getIndexTitle(
+    context.getText('header.title'),
     page.project.name,
     page.project.packageVersion,
   );
 
-  const readmeLabel = context.text.get('header.readme');
-  const indexLabel = context.text.get('header.docs');
+  const readmeLabel = context.getText('header.readme');
+  const indexLabel = context.getText('header.docs');
 
   md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
 
@@ -107,10 +103,9 @@ function packageHeader(
   }
 
   const md: string[] = [];
-  const { bold } = context.markdown;
 
-  const readmeLabel = context.text.get('header.readme');
-  const indexLabel = context.text.get('header.docs');
+  const readmeLabel = context.getText('header.readme');
+  const indexLabel = context.getText('header.docs');
 
   const entryFileName = context.options.getValue('entryFileName');
 

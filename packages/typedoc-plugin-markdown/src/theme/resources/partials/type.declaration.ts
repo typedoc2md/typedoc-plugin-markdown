@@ -1,14 +1,11 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
 
-/**
- * @category Partials
- */
 export function declarationType(
   context: MarkdownThemeRenderContext,
   declarationReflection: DeclarationReflection,
 ): string {
-  const { backTicks } = context.markdown;
   if (declarationReflection.indexSignature || declarationReflection.children) {
     let indexSignature = '';
     const declarationIndexSignature = declarationReflection.indexSignature;

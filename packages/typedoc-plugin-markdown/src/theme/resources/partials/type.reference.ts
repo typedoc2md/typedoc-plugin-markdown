@@ -1,15 +1,12 @@
 import { ReferenceType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks } from '../markdown';
 
-/**
- * @category Partials
- */
 export function referenceType(
   context: MarkdownThemeRenderContext,
   referenceType: ReferenceType,
   foreCollpase = false,
 ): string {
-  const { backTicks } = context.markdown;
   if (
     referenceType.reflection ||
     (referenceType.name && referenceType.typeArguments)

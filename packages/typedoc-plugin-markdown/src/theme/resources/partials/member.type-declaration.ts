@@ -1,9 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 
-/**
- * @category Partials
- */
 export function typeDeclarationMember(
   context: MarkdownThemeRenderContext,
   typeDeclaration: DeclarationReflection,

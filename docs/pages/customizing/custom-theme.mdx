@@ -1,0 +1,44 @@
+# Custom Theme
+
+If there are some specific customization not achievable with hooks then a more advanced customization can be achieved by providing a new theme class which returns a different context class.
+
+In theory all available templates, partials and helpers can be overriden with custom implementations, but please proceed with caution.
+
+Please consider raising a PR to the plugin directly if you think your customizations would be useful to others.
+
+```js filename="custom-plugin.mjs"
+// @ts-check
+
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  // Add a hook to insert markdown at the top of the page.
+  app.renderer.defineTheme('custom-theme', MyMarkdownTheme);
+}
+
+class MyMarkdownTheme extends MarkdownTheme {
+  /**
+   * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
+   */
+  getRenderContext(page) {
+    return new MyMarkdownThemeRenderContext(
+      this,
+      page,
+      this.application.options,
+    );
+  }
+}
+
+class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
+  partials = {
+    ...this.partials,
+    /**
+     * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
+     */
+    header: (page) => {
+      return `Welcome to ${page.project.name} custom header!`;
+    },
+  };
+}
+```

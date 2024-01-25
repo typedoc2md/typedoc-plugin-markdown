@@ -1,9 +1,7 @@
 import { ReflectionKind, SignatureReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { heading } from '../markdown';
 
-/**
- * @category Partials
- */
 export function signatureMember(
   context: MarkdownThemeRenderContext,
   signature: SignatureReflection,
@@ -12,7 +10,6 @@ export function signatureMember(
   accessor?: string,
 ): string {
   const md: string[] = [];
-  const { heading } = context.markdown;
 
   if (!nested) {
     md.push(
@@ -33,7 +30,7 @@ export function signatureMember(
     !signature.kindOf(ReflectionKind.ConstructorSignature)
   ) {
     md.push(
-      heading(headingLevel, context.text.get('kind.typeParameter.plural')),
+      heading(headingLevel, context.getText('kind.typeParameter.plural')),
     );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.partials.typeParametersTable(signature.typeParameters));
@@ -43,7 +40,7 @@ export function signatureMember(
   }
 
   if (signature.parameters?.length) {
-    md.push(heading(headingLevel, context.text.get('kind.parameter.plural')));
+    md.push(heading(headingLevel, context.getText('kind.parameter.plural')));
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.partials.parametersTable(signature.parameters));
     } else {

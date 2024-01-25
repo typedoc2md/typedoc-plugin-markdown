@@ -37,6 +37,6 @@
     "api"
   ],
   "devDependencies": {
-    "@docusaurus/types": "^3.0.0"
+    "@docusaurus/types": "^3.1.1"
   }
 }

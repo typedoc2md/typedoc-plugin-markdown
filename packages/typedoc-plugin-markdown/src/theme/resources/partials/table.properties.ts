@@ -1,17 +1,13 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
+import { backTicks, strikeThrough, table } from '../markdown';
+import { formatTableDescriptionCol, stripLineBreaks } from '../utils';
 
-/**
- * @category Partials
- */
 export function propertiesTable(
   context: MarkdownThemeRenderContext,
   props: DeclarationReflection[],
   isEventProps = false,
 ): string {
-  const { backTicks, table, strikeThrough } = context.markdown;
-  const { formatTableDescriptionCol, stripLineBreaks } = context.utils;
-
   const modifiers = props.map((param) => context.helpers.getModifier(param));
   const hasModifiers = modifiers.some((value) => Boolean(value));
   const hasOverrides = props.some((prop) => Boolean(prop.overwrites));
@@ -23,27 +19,27 @@ export function propertiesTable(
   const headers: string[] = [];
 
   if (hasModifiers) {
-    headers.push(context.text.get('label.modifier'));
+    headers.push(context.getText('label.modifier'));
   }
 
   headers.push(
     isEventProps
-      ? context.text.get('kind.event.singular')
-      : context.text.get('kind.property.singular'),
+      ? context.getText('kind.event.singular')
+      : context.getText('kind.property.singular'),
   );
 
-  headers.push(context.text.get('label.type'));
+  headers.push(context.getText('label.type'));
 
   if (hasComments) {
-    headers.push(context.text.get('label.description'));
+    headers.push(context.getText('label.description'));
   }
 
   if (hasOverrides) {
-    headers.push(context.text.get('label.overrides'));
+    headers.push(context.getText('label.overrides'));
   }
 
   if (hasInheritance) {
-    headers.push(context.text.get('label.inheritedFrom'));
+    headers.push(context.getText('label.inheritedFrom'));
   }
 
   const rows: string[][] = [];
