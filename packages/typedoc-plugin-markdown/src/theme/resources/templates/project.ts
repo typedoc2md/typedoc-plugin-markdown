@@ -32,7 +32,7 @@ export function projectTemplate(
     md.push(context.partials.commentParts(page.model.readme));
   }
 
-  if (!includeReadme) {
+  if (!context.options.getValue('hidePageTitle') && !includeReadme) {
     md.push(heading(1, context.partials.pageTitle(page)));
   }
 

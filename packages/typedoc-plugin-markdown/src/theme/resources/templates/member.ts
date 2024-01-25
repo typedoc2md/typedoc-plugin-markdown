@@ -25,7 +25,9 @@ export function memberTemplate(
     md.push(context.partials.breadcrumbs(page));
   }
 
-  md.push(heading(1, context.partials.pageTitle(page)));
+  if (!context.options.getValue('hidePageTitle')) {
+    md.push(heading(1, context.partials.pageTitle(page)));
+  }
 
   md.push(context.hook('content.begin').join('\n'));
 
