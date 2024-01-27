@@ -25,7 +25,7 @@ export default function (theme: MarkdownTheme) {
       breadcrumbs.push(
         this.url === project.url
           ? globalsName
-          : `[${globalsName}](${Handlebars.helpers.relativeURL('modules.md')})`,
+          : `[${getDisplayName(globalsName)}](${Handlebars.helpers.relativeURL('modules.md')})`,
       );
     }
     const breadcrumbsOut = breadcrumb(this, this.model, breadcrumbs);
