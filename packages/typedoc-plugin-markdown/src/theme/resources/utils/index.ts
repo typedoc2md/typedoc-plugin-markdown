@@ -1,3 +1,4 @@
+export { camelToTitleCase } from './camel-to-title-case';
 export { escapeAngleBrackets } from './escape-angle-brackets';
 export { escapeChars } from './escape-chars';
 export { formatTableDescriptionCol } from './format-table-description-col';

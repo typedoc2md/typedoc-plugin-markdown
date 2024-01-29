@@ -67,11 +67,11 @@ export interface TextContentMappings {
   'title.indexPage': string;
   'title.modulePage': string;
   'title.memberPage': string;
-  'title.member': string;
   'label.defaultValue': string;
   'label.description': string;
   'label.extendedBy': string;
   'label.extends': string;
+  'label.flags': string;
   'label.globals': string;
   'label.implements': string;
   'label.implementationOf': string;

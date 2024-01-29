@@ -23,7 +23,7 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 ***
 
-[Home](../../README.md) / [module-1](../README.md) / SomeInterface
+[typedoc-stubs v0.0](../../README.md) / [module-1](../README.md) / SomeInterface
 
 # SomeInterface
 
@@ -50,7 +50,7 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 
 ***
 
-[Home](../README.md) / module-1
+[typedoc-stubs v0.0](../README.md) / module-1
 
 # Module - module-1
 
@@ -71,13 +71,13 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 
 ***
 
-[Home](README.md) / module-2
+[typedoc-stubs v0.0](README.md) / module-2
 
 # Module - module-2
 
 ## CoolVars
 
-### Variable: constA
+### constA
 
 > **\`const\`** **constA**: \`true\` = \`true\`
 

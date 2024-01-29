@@ -1,7 +1,7 @@
 import { Comment } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { bold, heading } from '../markdown';
-import { escapeAngleBrackets } from '../utils';
+import { camelToTitleCase, escapeAngleBrackets } from '../utils';
 
 export function comment(
   context: MarkdownThemeRenderContext,
@@ -32,11 +32,4 @@ export function comment(
   }
 
   return escapeAngleBrackets(md.join('\n\n'));
-}
-
-function camelToTitleCase(text: string) {
-  return (
-    text.substring(0, 1).toUpperCase() +
-    text.substring(1).replace(/[a-z][A-Z]/g, (x) => `${x[0]} ${x[1]}`)
-  );
 }

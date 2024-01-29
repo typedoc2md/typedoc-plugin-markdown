@@ -15,6 +15,8 @@ export function declarationMember(
 ) {
   const md: string[] = [];
 
+  md.push(context.partials.reflectionFlags(declaration));
+
   md.push(context.partials.declarationMemberIdentifier(declaration));
 
   const typeDeclaration = (declaration.type as any)

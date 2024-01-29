@@ -11,6 +11,8 @@ export function signatureMember(
 ): string {
   const md: string[] = [];
 
+  md.push(context.partials.reflectionFlags(signature));
+
   if (!nested) {
     md.push(
       context.partials.signatureMemberIdentifier(signature, {

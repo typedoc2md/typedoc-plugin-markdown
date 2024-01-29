@@ -41,6 +41,10 @@ describe(`Class Reflection`, () => {
     );
   });
 
+  test(`should compile class with flags`, () => {
+    expectFileToEqual('reflections', 'members', 'classes/ClassWithFlags.md');
+  });
+
   test(`should compile disposable class`, () => {
     expectFileToEqual(
       'reflections',

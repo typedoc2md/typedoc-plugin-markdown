@@ -10,6 +10,8 @@ export function propertiesTable(
 ): string {
   const modifiers = props.map((param) => context.helpers.getModifier(param));
   const hasModifiers = modifiers.some((value) => Boolean(value));
+  const flags = props.map((param) => context.partials.reflectionFlags(param));
+  const hasFlags = flags.some((value) => Boolean(value));
   const hasOverrides = props.some((prop) => Boolean(prop.overwrites));
   const hasInheritance = props.some((prop) => Boolean(prop.inheritedFrom));
   const hasComments = props.some(
@@ -18,15 +20,19 @@ export function propertiesTable(
 
   const headers: string[] = [];
 
-  if (hasModifiers) {
-    headers.push(context.getText('label.modifier'));
-  }
-
   headers.push(
     isEventProps
       ? context.getText('kind.event.singular')
       : context.getText('kind.property.singular'),
   );
+
+  if (hasModifiers) {
+    headers.push(context.getText('label.modifier'));
+  }
+
+  if (hasFlags) {
+    headers.push(context.getText('label.flags'));
+  }
 
   headers.push(context.getText('label.type'));
 
@@ -50,10 +56,6 @@ export function propertiesTable(
     const propertyType = context.helpers.getDeclarationType(property);
     const row: string[] = [];
 
-    if (hasModifiers) {
-      row.push(backTicks(modifiers[index] || 'public'));
-    }
-
     const nameColumn: string[] = [];
 
     if (context.options.getValue('namedAnchors') && property.anchor) {
@@ -73,6 +75,14 @@ export function propertiesTable(
     }
 
     row.push(nameColumn.join(' '));
+
+    if (hasModifiers) {
+      row.push(backTicks(modifiers[index] || 'public'));
+    }
+
+    if (hasFlags) {
+      row.push(flags[index]);
+    }
 
     if (propertyType) {
       const type = (propertyType as any).declaration?.signatures?.length

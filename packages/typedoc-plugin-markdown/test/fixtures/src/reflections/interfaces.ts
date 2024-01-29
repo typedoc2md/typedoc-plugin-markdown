@@ -140,3 +140,13 @@ export interface InterfaceWithEventProperties {
    */
   anotherEvent: MouseEvent;
 }
+
+/**
+ * Comments for InterfaceWithFlags
+ */
+export interface InterfaceWithFlags {
+  /** @experimental */
+  expermintalProp?: string;
+  /** @internal */
+  internalProp: string;
+}

@@ -27,6 +27,7 @@ export { member } from './member';
 export { typeDeclarationMember } from './member.type-declaration';
 export { members } from './members';
 export { pageTitle } from './page.title';
+export { reflectionFlags } from './reflection.flags';
 export { enumMembersTable } from './table.enum-members';
 export { parametersTable } from './table.parameters';
 export { propertiesTable } from './table.properties';

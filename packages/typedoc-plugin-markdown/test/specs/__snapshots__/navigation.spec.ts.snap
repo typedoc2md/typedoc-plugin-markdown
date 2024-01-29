@@ -1043,6 +1043,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "classes/ClassWithConstructorOverloads.md"
       },
       {
+        "title": "ClassWithFlags",
+        "url": "classes/ClassWithFlags.md"
+      },
+      {
         "title": "ClassWithModifiers",
         "url": "classes/ClassWithModifiers.md"
       },
@@ -1086,6 +1090,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "InterfaceWithEventProperties",
         "url": "interfaces/InterfaceWithEventProperties.md"
+      },
+      {
+        "title": "InterfaceWithFlags",
+        "url": "interfaces/InterfaceWithFlags.md"
       },
       {
         "title": "InterfaceWithTypeParameters",

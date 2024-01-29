@@ -644,6 +644,51 @@ exports[`Interface Reflection should compile interface with event properties: (O
 "
 `;
 
+exports[`Interface Reflection should compile interface with flags: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Interface: InterfaceWithFlags
+
+Comments for InterfaceWithFlags
+
+## Properties
+
+### expermintalProp?
+
+\`Experimental\`
+
+> **expermintalProp**?: \`string\`
+
+#### Source
+
+[interfaces.ts:149](http://source-url)
+
+***
+
+### internalProp
+
+\`Internal\`
+
+> **internalProp**: \`string\`
+
+#### Source
+
+[interfaces.ts:151](http://source-url)
+"
+`;
+
+exports[`Interface Reflection should compile interface with flags: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# InterfaceWithFlags
+
+Comments for InterfaceWithFlags
+
+## Properties
+
+| Property | Flags | Type |
+| :------ | :------ | :------ |
+| \`expermintalProp?\` | \`Experimental\` | \`string\` |
+| \`internalProp\` | \`Internal\` | \`string\` |
+"
+`;
+
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: InterfaceWithTypeParameters\\<A\\>
 

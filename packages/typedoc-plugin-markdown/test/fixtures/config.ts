@@ -3,6 +3,7 @@ import * as path from 'path';
 
 const config: Record<string, Fixture> = {
   reflections: {
+    only: false,
     entryPoints: '/reflections/index.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
@@ -49,6 +50,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   comments: {
+    only: false,
     entryPoints: '/comments/index.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],

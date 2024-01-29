@@ -36,4 +36,12 @@ describe(`Interface Reflection`, () => {
       'interfaces/InterfaceWithEventProperties.md',
     );
   });
+
+  test(`should compile interface with flags`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'interfaces/InterfaceWithFlags.md',
+    );
+  });
 });

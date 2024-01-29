@@ -148,3 +148,19 @@ export class DisposableClass implements Disposable {
 }
 
 export class CallbacksOptions<P = DisposableClass, A = ClassWithModifiers> {}
+
+/**
+ * Comment for ClassWithFlags
+ */
+export class ClassWithFlags {
+  /** @experimental */
+  expermintalProp: string;
+  /** @internal */
+  private internalProp: string;
+  /** @experimental */
+  expermintalMethod() {}
+  /**
+   * @internal
+   */
+  protected internalMethod() {}
+}

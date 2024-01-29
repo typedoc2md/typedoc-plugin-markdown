@@ -19,9 +19,11 @@ export function breadcrumbs(
     return '';
   }
 
-  const homeLabel = context
-    .getText('breadcrumbs.home')
-    .replace('{projectName}', page.project.name);
+  const homeLabel = context.helpers.getIndexTitle(
+    context.getText('breadcrumbs.home'),
+    page.project.name,
+    page.project.packageVersion,
+  );
 
   md.push(context.partials.linkTo(homeLabel, entryFileName));
 

@@ -70,9 +70,9 @@ new AbstractClass(): AbstractClass
 
 ## Properties
 
-| Modifier | Property | Type | Description |
+| Property | Modifier | Type | Description |
 | :------ | :------ | :------ | :------ |
-| \`abstract\` | \`abstractProp\` | \`string\` | Comments for abstractProp |
+| \`abstractProp\` | \`abstract\` | \`string\` | Comments for abstractProp |
 
 ## Methods
 
@@ -194,9 +194,9 @@ new ClassWithAccessors(): ClassWithAccessors
 
 ## Properties
 
-| Modifier | Property | Type |
+| Property | Modifier | Type |
 | :------ | :------ | :------ |
-| \`private\` | \`privateProp\` | \`string\` |
+| \`privateProp\` | \`private\` | \`string\` |
 
 ## Accessors
 
@@ -397,6 +397,141 @@ new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
 "
 `;
 
+exports[`Class Reflection should compile class with flags: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Class: ClassWithFlags
+
+Comment for ClassWithFlags
+
+## Constructors
+
+### new ClassWithFlags()
+
+> **new ClassWithFlags**(): [\`ClassWithFlags\`](ClassWithFlags.md)
+
+#### Returns
+
+[\`ClassWithFlags\`](ClassWithFlags.md)
+
+## Properties
+
+### expermintalProp
+
+\`Experimental\`
+
+> **expermintalProp**: \`string\`
+
+#### Source
+
+[classes.ts:157](http://source-url)
+
+***
+
+### internalProp
+
+\`Internal\`
+
+> **\`private\`** **internalProp**: \`string\`
+
+#### Source
+
+[classes.ts:159](http://source-url)
+
+## Methods
+
+### expermintalMethod()
+
+\`Experimental\`
+
+> **expermintalMethod**(): \`void\`
+
+#### Returns
+
+\`void\`
+
+#### Source
+
+[classes.ts:161](http://source-url)
+
+***
+
+### internalMethod()
+
+\`Internal\`
+
+> **\`protected\`** **internalMethod**(): \`void\`
+
+#### Returns
+
+\`void\`
+
+#### Source
+
+[classes.ts:165](http://source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with flags: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# ClassWithFlags
+
+Comment for ClassWithFlags
+
+## Constructors
+
+### new ClassWithFlags()
+
+\`\`\`ts
+new ClassWithFlags(): ClassWithFlags
+\`\`\`
+
+#### Returns
+
+[\`ClassWithFlags\`](ClassWithFlags.md)
+
+## Properties
+
+| Property | Modifier | Flags | Type |
+| :------ | :------ | :------ | :------ |
+| \`expermintalProp\` | \`public\` | \`Experimental\` | \`string\` |
+| \`internalProp\` | \`private\` | \`Internal\` | \`string\` |
+
+## Methods
+
+### expermintalMethod()
+
+\`Experimental\`
+
+\`\`\`ts
+expermintalMethod(): void
+\`\`\`
+
+#### Returns
+
+\`void\`
+
+#### Source
+
+[classes.ts:161](http://source-url)
+
+***
+
+### internalMethod()
+
+\`Internal\`
+
+\`\`\`ts
+protected internalMethod(): void
+\`\`\`
+
+#### Returns
+
+\`void\`
+
+#### Source
+
+[classes.ts:165](http://source-url)
+"
+`;
+
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: \`abstract\` ClassWithModifiers
 
@@ -541,13 +676,13 @@ new ClassWithModifiers(): ClassWithModifiers
 
 ## Properties
 
-| Modifier | Property | Type | Description |
+| Property | Modifier | Type | Description |
 | :------ | :------ | :------ | :------ |
-| \`private\` | \`privateProp\` | \`string\` | Comments for privateProp |
-| \`protected\` | \`protectedProp\` | \`string\` | Comments for protectedProp |
-| \`public\` | \`publicPropWithDefault\` | \`string\` | Comments for propWithDefault |
-| \`readonly\` | \`readonlyProp\` | \`string\` | Comments for abstractProperty |
-| \`static\` | \`staticProp\` | \`string\` | Comments for staticProp |
+| \`privateProp\` | \`private\` | \`string\` | Comments for privateProp |
+| \`protectedProp\` | \`protected\` | \`string\` | Comments for protectedProp |
+| \`publicPropWithDefault\` | \`public\` | \`string\` | Comments for propWithDefault |
+| \`readonlyProp\` | \`readonly\` | \`string\` | Comments for abstractProperty |
+| \`staticProp\` | \`static\` | \`string\` | Comments for staticProp |
 
 ## Methods
 
