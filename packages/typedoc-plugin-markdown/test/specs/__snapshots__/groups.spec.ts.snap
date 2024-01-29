@@ -490,6 +490,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 - [has-categories](has-categories/index.md)
 - [has-namespaces](has-namespaces/index.md)
 - [has-references](has-references/index.md)
+- [has-same-exports](has-same-exports/index.md)
 - [index](index/index.md)
 "
 `;
@@ -511,6 +512,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 | [has-categories](has-categories/index.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references/index.md) | A module that contains references |
+| [has-same-exports](has-same-exports/index.md) | - |
 | [index](index/index.md) | A module named index |
 "
 `;
@@ -530,6 +532,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 - [has-categories](has-categories.md)
 - [has-namespaces](has-namespaces/index.md)
 - [has-references](has-references.md)
+- [has-same-exports](has-same-exports.md)
 - [index](module.index.md)
 "
 `;
@@ -551,6 +554,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | [has-categories](has-categories.md) | A module that contains categories |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references.md) | A module that contains references |
+| [has-same-exports](has-same-exports.md) | - |
 | [index](module.index.md) | A module named index |
 "
 `;

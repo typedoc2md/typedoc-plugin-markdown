@@ -631,6 +631,25 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     ]
   },
   {
+    "title": "has-same-exports",
+    "url": "has-same-exports/index.md",
+    "children": [
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "SomeClass",
+            "url": "has-same-exports/classes/SomeClass.md"
+          },
+          {
+            "title": "someClass",
+            "url": "has-same-exports/classes/someClass-1.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "index",
     "url": "index/index.md",
     "children": [
@@ -846,6 +865,20 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     ]
   },
   {
+    "title": "has-same-exports",
+    "url": "has-same-exports/index.md",
+    "children": [
+      {
+        "title": "SomeClass",
+        "url": "has-same-exports/classes/SomeClass.md"
+      },
+      {
+        "title": "someClass",
+        "url": "has-same-exports/classes/someClass-1.md"
+      }
+    ]
+  },
+  {
     "title": "index",
     "url": "index/index.md",
     "children": [
@@ -911,6 +944,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "url": "has-references.md"
   },
   {
+    "title": "has-same-exports",
+    "url": "has-same-exports.md"
+  },
+  {
     "title": "index",
     "url": "module.index.md"
   }
@@ -959,6 +996,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "has-references",
     "url": "has-references.md"
+  },
+  {
+    "title": "has-same-exports",
+    "url": "has-same-exports.md"
   },
   {
     "title": "index",

@@ -168,7 +168,20 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
         directory,
       });
 
-      const url = getUrl(reflection, urlPath);
+      let url = getUrl(reflection, urlPath);
+
+      const duplicateUrls = urls.filter(
+        (urlMapping) =>
+          urlMapping.url.toLowerCase().replace(/-\d+$/, '') ===
+          url.toLowerCase(),
+      );
+
+      if (duplicateUrls.length > 0) {
+        const urlParts = url.split('.');
+        urlParts[urlParts.length - 2] += `-${duplicateUrls.length}`;
+        url = urlParts.join('.');
+      }
+
       urls.push({
         url: url,
         model: reflection,

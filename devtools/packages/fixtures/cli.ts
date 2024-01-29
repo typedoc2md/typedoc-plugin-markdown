@@ -18,7 +18,15 @@ async function main() {
     path.join(process.cwd(), process.argv[3])
   );
 
-  const fixtureCount = Object.entries(config.default).reduce(
+  const fixtures = Object.entries(config.default);
+
+  const filtered = fixtures.filter(([key, config]) => {
+    return config.only;
+  });
+
+  const fixturesToBuild = filtered.length ? filtered : fixtures;
+
+  const fixtureCount = fixturesToBuild.reduce(
     (prev, curr) =>
       prev + curr[1].options.length * (curr[1].outputFileStragies?.length || 2),
     0,
@@ -28,9 +36,10 @@ async function main() {
     `[${getPackageName()}] Building ${fixtureCount} test fixtures...`,
   );
 
-  Object.entries(config.default).forEach(([key, config]) => {
+  fixturesToBuild.forEach(([key, config]) => {
     const outputFileStrategies: ('members' | 'modules')[] =
       config.outputFileStrategies || ['members', 'modules'];
+    writeHtml(key, config.entryPoints);
     outputFileStrategies.forEach((outputFileStrategy) => {
       config.options.forEach((optionGroup, index: number) => {
         const options = {
@@ -87,34 +96,34 @@ function writeMarkdown(
   );
 }
 
-/*export function writeHtml(
-  entryPoints: FixtureEntryPoints,
-  outDir: FixtureOutputDir,
-) {
-  const fullpath = `./test/out/html/${outDir}`;
+export function writeHtml(key: string, entryPoints: string[]) {
+  const fullPath = path.join(
+    process.cwd(),
+    'test',
+    'fixtures',
+    'out',
+    'html',
+    key,
+  );
   spawn(
     'typedoc',
     [
       ...[
         '-options',
-        `./stubs/typedoc.cjs`,
+        path.join(__dirname, 'typedoc.cjs'),
         '-logLevel',
         'Warn',
-        '--media',
-        './stubs/media',
-        '--includes',
-        './stubs/inc',
         '-entryPoints',
-        `./stubs/${entryPoints}`,
+        `${process.cwd()}/test/fixtures/src/${entryPoints}`,
         '-out',
-        fullpath,
+        fullPath,
       ],
     ],
     {
       stdio: 'inherit',
     },
   );
-}*/
+}
 
 function objectToOptions(obj: any) {
   return Object.entries(obj).reduce(

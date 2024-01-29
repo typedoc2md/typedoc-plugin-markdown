@@ -11,6 +11,7 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options && ts-node scripts/prebuild",
     "build": "tsc",
+    "build-and-run": "npm run build && npm run pretest",
     "pretest": "fixtures -c ./test/fixtures/config.ts",
     "test:md": "node test/scripts/lint.md.mjs",
     "test:mdx": "node test/scripts/lint.mdx.mjs",

@@ -26,6 +26,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   groups: {
+    only: false,
     entryPoints: '/groups/**/*.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
