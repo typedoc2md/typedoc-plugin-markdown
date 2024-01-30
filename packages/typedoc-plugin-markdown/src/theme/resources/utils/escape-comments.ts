@@ -24,8 +24,8 @@ export function escapeComments(str: string) {
         ? tags.replace(/>/g, '>`').replace(/</g, '`<')
         : tags;
     })
-    .replace(/(?<!\\){/g, '\\{')
-    .replace(/(?<!\\)}/g, '\\}');
+    .replace(/(?<!\\)(?<!`)(?<!{)(?<!{{){(?!`)(?!{)(?!{{)/g, '\\{')
+    .replace(/(?<!\\)(?<!`)(?!{)(?!{{)(?<!})}(?!`)(?!{)(?!})/g, '\\}');
 
   // Replace placeholders with original code blocks
   str = str.replace(
@@ -35,6 +35,3 @@ export function escapeComments(str: string) {
 
   return str;
 }
-
-//.replace(/(?<!\\)(?<!`){(?!`)/g, '\\{')
-//.replace(/(?<!\\)(?<!`)}(?!`)/g, '\\}');

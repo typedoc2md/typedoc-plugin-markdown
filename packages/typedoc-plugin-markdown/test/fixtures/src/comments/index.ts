@@ -33,11 +33,18 @@
  *
  * A <tag></tag> in comments
  *
+ *
  * Closing </element> on its own
  *
  * A `<tag>` in backticks
  *
  * Some object { x: 1 }. Another object `{ x: 1 }`.
+ *
+ * <div style={{backgroundColor: "#fff", padding: 16}}>
+ * <img style={{display: "block"}} height="48" width="48"/>
+ * </div>
+ *
+ * Some random {{braces}} in comments {}.
  *
  * ```
  * A <tag> in a code block
