@@ -99,7 +99,7 @@ const config: Record<string, Fixture> = {
     },
     options: [{}],
   },
-  entryFiles: {
+  entryfiles: {
     entryPoints: '/entryfiles/*',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
