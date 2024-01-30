@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0-next.5
+## 2.0.0-next.5 (2024-01-30)
 
 ### Patch Changes
 
