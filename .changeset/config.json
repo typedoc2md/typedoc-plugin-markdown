@@ -10,11 +10,5 @@
   "access": "public",
   "baseBranch": "next",
   "updateInternalDependencies": "minor",
-  "ignore": [
-    "@devtools/fixtures",
-    "@devtools/generate-readmes",
-    "@devtools/helpers",
-    "@devtools/prebuild-options",
-    "@devtools/testing"
-  ]
+  "ignore": ["@devtools/*"]
 }
