@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.27
+
+### Patch Changes
+
+- Handle alternative docusaurus `routeBasePath`.
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.45
+
 ## 1.0.0-next.26 (2024-01-30)
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.45
+
+### Patch Changes
+
+- Escpae curly braces inside comment blocks.
+
 ## 4.0.0-next.44 (2024-01-30)
 
 ### Patch Changes
