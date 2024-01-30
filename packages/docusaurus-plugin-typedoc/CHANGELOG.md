@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0-next.27
+## 1.0.0-next.27 (2024-01-31)
 
 ### Patch Changes
 
