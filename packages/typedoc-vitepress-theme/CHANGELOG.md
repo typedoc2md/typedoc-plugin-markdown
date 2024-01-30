@@ -1,5 +1,14 @@
 # typedoc-vitepress-theme
 
+## 1.0.0-next.8
+
+### Patch Changes
+
+- Update core package dependency
+- Replace `/index.md` with `/` on sidebar root paths
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.44
+
 ## 1.0.0-next.7 (2024-01-18)
 
 ### Patch Changes

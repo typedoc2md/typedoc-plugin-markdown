@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.0.0-next.44
+
+### Patch Changes
+
+- Expose `textContentMappings` to navigation
+- Expose theme hooks similar to default theme.
+- Expose TypedDoc media and include syntax.
+- Expose `@experimental` and `@internal` doc flags
+- Handle symbols with same name when generating urls
+- Expose version to breadcrumbs.home text mapping
+
 ## 4.0.0-next.43
 
 ### Patch Changes
