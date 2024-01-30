@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.46
+
+### Patch Changes
+
+- Allow jsx style curly braces in comments.
+
 ## 4.0.0-next.45 (2024-01-31)
 
 ### Patch Changes
