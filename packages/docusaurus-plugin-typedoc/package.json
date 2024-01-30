@@ -22,9 +22,9 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf ./dist && tsc",
-    "build-and-test": "npm run build && npm run test",
+    "pretest": "rm -rf ./test/out && docusaurus generate-typedoc",
     "test": "jest",
-    "test:update": "npm test -- -u"
+    "test:update": "npm run build && npm test -- -u"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -37,6 +37,7 @@
     "api"
   ],
   "devDependencies": {
+    "@docusaurus/core": "^3.1.1",
     "@docusaurus/types": "^3.1.1"
   }
 }

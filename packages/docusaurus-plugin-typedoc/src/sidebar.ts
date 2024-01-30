@@ -28,9 +28,21 @@ function getNavigationItem(
     numberPrefixParser === false
       ? navigationItem.url
       : navigationItem.url?.replace(/\d+\-/g, '');
-  const id = navigationItem.url
-    ? `${basePath}/${parsedUrl}`.replace(/(.*).md/, '$1')
-    : null;
+
+  const getId = () => {
+    const idParts: string[] = [];
+    if (basePath.length > 0) {
+      idParts.push(basePath);
+    }
+    if (parsedUrl) {
+      idParts.push(parsedUrl);
+    }
+    if (navigationItem.url) {
+      return idParts.join('/').replace(/(.*).md/, '$1');
+    }
+    return null;
+  };
+  const id = getId();
 
   if (navigationItem.children?.length) {
     return {

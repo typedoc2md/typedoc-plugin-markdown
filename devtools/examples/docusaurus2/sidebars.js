@@ -20,9 +20,9 @@ const sidebars = {
       label: 'DOCS',
       link: {
         type: 'doc',
-        id: 'api/index',
+        id: 'index',
       },
-      items: require('./docs/api/typedoc-sidebar.cjs'),
+      items: require('./api/typedoc-sidebar.cjs'),
     },
   ],
 };
