@@ -22,7 +22,7 @@ const sidebars = {
         type: 'doc',
         id: 'api/index',
       },
-      items: require('./docs/api/typedoc-sidebar.js'),
+      items: require('./docs/api/typedoc-sidebar.cjs'),
     },
   ],
 };

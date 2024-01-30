@@ -1,8 +1,11 @@
 {
-  "extends": ["../../../stubs/typedoc.cjs"],
-  "entryPoints": ["../../../stubs/src/packages/*"],
-  "entryPointStrategy": "packages",
-  "outputFileStrategy": "modules",
+  "extends": [
+    "../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs"
+  ],
+  "entryPoints": [
+    "../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts"
+  ],
+  "outputFileStrategy": "members",
   "plugin": [
     "../../../packages/typedoc-plugin-markdown/dist",
     "../../../packages/typedoc-vitepress-theme/dist"

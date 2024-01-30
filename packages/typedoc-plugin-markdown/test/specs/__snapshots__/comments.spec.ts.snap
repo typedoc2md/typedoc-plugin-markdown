@@ -40,6 +40,8 @@ Closing \`</element>\` on its own
 
 A \`<tag>\` in backticks
 
+Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
@@ -57,6 +59,18 @@ This is a simple example on how to use include.
 
 ![My image alt text](media/logo.png)
  [[include:not-found.md]]
+
+## Code Blocks
+
+\`\`\`css
+.class {color:red}
+\`\`\`
+
+\`\`\`html
+<div>x</div> <tag>y</tag>
+\`\`\`
+
+\`single line <code> {block}\`
 
 ## Enumerations
 
@@ -117,6 +131,8 @@ Closing \`</element>\` on its own
 
 A \`<tag>\` in backticks
 
+Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
@@ -134,6 +150,18 @@ This is a simple example on how to use include.
 
 ![My image alt text](media/logo.png)
  [[include:not-found.md]]
+
+## Code Blocks
+
+\`\`\`css
+.class {color:red}
+\`\`\`
+
+\`\`\`html
+<div>x</div> <tag>y</tag>
+\`\`\`
+
+\`single line <code> {block}\`
 
 ## Enumerations
 
@@ -194,6 +222,8 @@ Closing \`</element>\` on its own
 
 A \`<tag>\` in backticks
 
+Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
@@ -211,6 +241,18 @@ This is a simple example on how to use include.
 
 ![My image alt text](media/logo.png)
  [[include:not-found.md]]
+
+## Code Blocks
+
+\`\`\`css
+.class {color:red}
+\`\`\`
+
+\`\`\`html
+<div>x</div> <tag>y</tag>
+\`\`\`
+
+\`single line <code> {block}\`
 
 ## Enumerations
 
@@ -331,6 +373,8 @@ Closing \`</element>\` on its own
 
 A \`<tag>\` in backticks
 
+Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+
 \`\`\`
 A <tag> in a code block
 Some <p> html </p> inside codeblock
@@ -348,6 +392,18 @@ This is a simple example on how to use include.
 
 ![My image alt text](media/logo.png)
  [[include:not-found.md]]
+
+## Code Blocks
+
+\`\`\`css
+.class {color:red}
+\`\`\`
+
+\`\`\`html
+<div>x</div> <tag>y</tag>
+\`\`\`
+
+\`single line <code> {block}\`
 
 ## Enumerations
 

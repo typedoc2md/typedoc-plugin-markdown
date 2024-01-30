@@ -7,6 +7,7 @@ const docusaurusPlugin = path.join(
   __dirname,
   '..',
   '..',
+  '..',
   'packages',
   'docusaurus-plugin-typedoc',
   'dist',
@@ -43,8 +44,14 @@ const config = {
     [
       docusaurusPlugin,
       {
-        ...require(path.join(__dirname, '../../stubs/typedoc.cjs')),
-        entryPoints: '../../stubs/src/reflections/index.ts',
+        ...require(
+          path.join(
+            __dirname,
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+          ),
+        ),
+        entryPoints:
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
         expandObjects: true,
         sidebar: { pretty: true, filteredIds: ['api/index'] },
       },

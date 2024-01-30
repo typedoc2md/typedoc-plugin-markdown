@@ -46,8 +46,14 @@ const config = {
     [
       docusaurusPlugin,
       {
-        ...require(path.join(__dirname, '../../../stubs/typedoc.cjs')),
-        entryPoints: '../../../stubs/src/reflections/index.ts',
+        ...require(
+          path.join(
+            __dirname,
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+          ),
+        ),
+        entryPoints:
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
         typeDeclarationFormat: 'table',
         expandObjects: true,
         readme: 'none',
@@ -61,8 +67,14 @@ const config = {
       {
         id: 'api-2',
         out: './docs/api-2',
-        ...require(path.join(__dirname, '../../../stubs/typedoc.cjs')),
-        entryPoints: '../../../stubs/src/groups/**/*.ts',
+        ...require(
+          path.join(
+            __dirname,
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+          ),
+        ),
+        entryPoints:
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts',
         cleanOutputDir: true,
       },
     ],
@@ -71,8 +83,14 @@ const config = {
       {
         id: 'api-3',
         out: './docs/api-3',
-        ...require(path.join(__dirname, '../../../stubs/typedoc.cjs')),
-        entryPoints: '../../../stubs/src/groups/**/*.ts',
+        ...require(
+          path.join(
+            __dirname,
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+          ),
+        ),
+        entryPoints:
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts',
         readme: 'none',
         outputFileStrategy: 'modules',
         entryModule: 'index',
@@ -84,8 +102,14 @@ const config = {
       {
         id: 'api-4',
         out: './docs/api-4',
-        ...require(path.join(__dirname, '../../../stubs/typedoc.cjs')),
-        entryPoints: '../../../stubs/src/packages/*',
+        ...require(
+          path.join(
+            __dirname,
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+          ),
+        ),
+        entryPoints:
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/packages/*',
         entryPointStrategy: 'packages',
         sidebar: { pretty: true },
       },

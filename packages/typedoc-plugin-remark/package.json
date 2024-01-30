@@ -12,9 +12,9 @@
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
     "postbuild": "copyfiles --up 1 ./src/**/*.cjs ./dist/",
-    "build-and-test": "npm run build && npm run test",
     "pretest": "ts-node ./test/__scripts__/prepare.ts",
-    "test": "jest"
+    "test": "jest",
+    "test:update": "npm run build && npm run test -- -u"
   },
   "repository": {
     "type": "git",

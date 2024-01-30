@@ -1,6 +1,6 @@
 export { camelToTitleCase } from './camel-to-title-case';
-export { escapeAngleBrackets } from './escape-angle-brackets';
 export { escapeChars } from './escape-chars';
+export { escapeComments } from './escape-comments';
 export { formatTableDescriptionCol } from './format-table-description-col';
 export { formatTableNameCol } from './format-table-name-col';
 export { getRelativeUrl } from './get-relative-url';

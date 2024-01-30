@@ -1,7 +1,7 @@
 import { Comment } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { bold, heading } from '../markdown';
-import { camelToTitleCase, escapeAngleBrackets } from '../utils';
+import { camelToTitleCase, escapeComments } from '../utils';
 
 export function comment(
   context: MarkdownThemeRenderContext,
@@ -31,5 +31,5 @@ export function comment(
     md.push(tags.join('\n\n'));
   }
 
-  return escapeAngleBrackets(md.join('\n\n'));
+  return escapeComments(md.join('\n\n'));
 }

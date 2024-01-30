@@ -37,6 +37,8 @@
  *
  * A `<tag>` in backticks
  *
+ * Some object { x: 1 }. Another object `{ x: 1 }`.
+ *
  * ```
  * A <tag> in a code block
  * Some <p> html </p> inside codeblock
@@ -50,6 +52,18 @@
  * And include other files:
  *
  * [[include:example.md]] [[include:not-found.md]]
+ *
+ * @codeBlocks
+ *
+ * ```css
+ * .class {color:red}
+ * ```
+ *
+ * ```html
+ * <div>x</div> <tag>y</tag>
+ * ```
+ *
+ * `single line <code> {block}`
  */
 
 export interface CommentInterface {
