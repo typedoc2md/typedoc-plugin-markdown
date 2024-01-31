@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.47
+## 4.0.0-next.47 (2024-01-31)
 
 ### Patch Changes
 
@@ -8,7 +8,7 @@
 - Removed generator in footer.
 - Fix typing of the defineTheme method.
 
-## 4.0.0-next.46
+## 4.0.0-next.46 (2024-01-31)
 
 ### Patch Changes
 
