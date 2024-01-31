@@ -1,4 +1,4 @@
-import { Application, EventHooks, Options, Renderer } from 'typedoc';
+import { Application, EventHooks, Options, Renderer, Theme } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../theme';
 import { MarkdownRendererEvent } from './events';
 
@@ -18,6 +18,10 @@ export interface MarkdownApplication extends Application {
  * The plugin amends the renderer with additional hooks and options.
  */
 export interface MarkdownRenderer extends Renderer {
+  defineTheme: (
+    name: string,
+    theme: new (renderer: MarkdownRenderer) => Theme,
+  ) => void;
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
   packageOptions: Record<string, Options>;
   preRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
