@@ -6,7 +6,6 @@ module.exports = {
     'header.title': 'My API -  {version}',
     'header.readme': 'My Readme',
     'header.docs': 'Docs',
-    'footer.generator': '@copyright My Test',
     'title.indexPage': ':tada: Custom Index Title',
     'title.memberPage': '{name}',
     'title.modulePage': '{kind} - {name}',

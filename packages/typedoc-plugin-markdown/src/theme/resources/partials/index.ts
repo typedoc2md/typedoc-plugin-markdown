@@ -1,7 +1,6 @@
 export { breadcrumbs } from './breadcrumbs';
 export { commentParts } from './comment.parts';
 export { comment } from './comment';
-export { generator } from './generator';
 export { header } from './header';
 export { pageIndex } from './index.page';
 export { reflectionIndex } from './index.reflection';

@@ -37,7 +37,7 @@ Comments for functionProper
 
 #### Parameters
 
-• \`s\`: \`string\`
+• **s**: \`string\`
 
 Comment for param s
 
@@ -295,7 +295,7 @@ Comments for functionProper
 
 #### Parameters
 
-• \`s\`: \`string\`
+• **s**: \`string\`
 
 Comment for param s
 
@@ -608,7 +608,7 @@ Description for event someEvent
 
 #### Parameters
 
-• \`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
+• **eventParam**: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
 
 Comments for param eventParam
 

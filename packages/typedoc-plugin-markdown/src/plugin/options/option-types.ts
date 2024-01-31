@@ -63,7 +63,6 @@ export interface TextContentMappings {
   'header.readme': string;
   'header.docs': string;
   'breadcrumbs.home': string;
-  'footer.generator': string;
   'title.indexPage': string;
   'title.modulePage': string;
   'title.memberPage': string;

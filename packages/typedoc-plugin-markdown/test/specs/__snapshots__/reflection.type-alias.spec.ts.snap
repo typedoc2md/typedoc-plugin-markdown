@@ -135,7 +135,7 @@ comment for y.z
 
 #### Parameters
 
-• \`x\`: \`string\`
+• **x**: \`string\`
 
 #### Returns
 
@@ -147,7 +147,7 @@ comment for y.z
 
 #### Parameters
 
-• \`x\`: \`string\`
+• **x**: \`string\`
 
 #### Returns
 
@@ -165,7 +165,7 @@ Comments for accessorA setter
 
 #### Parameters
 
-• \`x\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
 #### Returns
 
@@ -179,7 +179,7 @@ Comments for accessorA setter
 
 #### Parameters
 
-• \`x\`: \`string\`
+• **x**: \`string\`
 
 #### Returns
 
@@ -191,7 +191,7 @@ Comments for someFunction
 
 #### Parameters
 
-• \`param\`: \`string\`
+• **param**: \`string\`
 
 #### Returns
 
@@ -282,9 +282,9 @@ Comments for FunctionType
 
 ## Parameters
 
-• \`name\`: \`string\`
+• **name**: \`string\`
 
-• \`value\`: \`unknown\`
+• **value**: \`unknown\`
 
 ## Returns
 

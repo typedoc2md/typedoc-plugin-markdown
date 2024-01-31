@@ -11,10 +11,6 @@ exports[`Text should get translations for index page: (Output File Strategy "mem
 
 - [module-1](module-1/README.md)
 - [module-2](module-2/README.md)
-
-***
-
-Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 
@@ -38,10 +34,6 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 | Event! | Type |
 | :------ | :------ |
 | \`someEvent\` | \`MouseEvent\` |
-
-***
-
-Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 
@@ -59,10 +51,6 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 ### 多变的
 
 - [SomeInterface](interfaces/SomeInterface.md)
-
-***
-
-Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 
@@ -80,10 +68,6 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 ### constA
 
 > **\`const\`** **constA**: \`true\` = \`true\`
-
-***
-
-Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).
 "
 `;
 

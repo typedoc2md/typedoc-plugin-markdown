@@ -5,6 +5,5 @@
   "readme": "none",
   "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-frontmatter"],
   "hidePageHeader": true,
-  "hideBreadcrumbs": true,
-  "hideGenerator": true
+  "hideBreadcrumbs": true
 }

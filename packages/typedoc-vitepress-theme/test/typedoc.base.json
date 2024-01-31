@@ -6,7 +6,6 @@
   "readme": "none",
   "disableSources": true,
   "cleanOutputDir": true,
-  "hideGenerator": true,
   "hidePageHeader": true,
   "hideBreadcrumbs": true
 }

@@ -17,7 +17,7 @@ Comments for function
 >
 > ### Parameters
 >
-> • \`x\`: \`string\`
+> • **x**: \`string\`
 >
 > ### Returns
 >
@@ -185,7 +185,7 @@ This is a function that is assigned to a variable.
 
 ## Parameters
 
-• \`someParam\`: \`number\`
+• **someParam**: \`number\`
 
 This is some numeric parameter.
 
@@ -233,27 +233,27 @@ This is a function with a parameter that has a default value.
 
 ## Parameters
 
-• \`valueA\`: \`string\`= \`'defaultValue'\`
+• **valueA**: \`string\`= \`'defaultValue'\`
 
 A parameter with a default string value.
 
-• \`valueB\`: \`number\`= \`100\`
+• **valueB**: \`number\`= \`100\`
 
 A parameter with a default numeric value.
 
-• \`valueC\`: \`number\`= \`Number.NaN\`
+• **valueC**: \`number\`= \`Number.NaN\`
 
 A parameter with a default NaN value.
 
-• \`valueD\`: \`boolean\`= \`true\`
+• **valueD**: \`boolean\`= \`true\`
 
 A parameter with a default boolean value.
 
-• \`valueE\`: \`boolean\`= \`true\`
+• **valueE**: \`boolean\`= \`true\`
 
 A parameter with a default null value.
 
-• \`valueF\`: \`string\`= \`'<foo>'\`
+• **valueF**: \`string\`= \`'<foo>'\`
 
 ## Returns
 
@@ -312,7 +312,7 @@ This is the first signature of a function with multiple signatures.
 
 ### Parameters
 
-• \`value\`: \`string\`
+• **value**: \`string\`
 
 The name value.
 
@@ -332,11 +332,11 @@ This is the second signature of a function with multiple signatures.
 
 ### Parameters
 
-• \`value\`: \`Object\`
+• **value**: \`Object\`
 
 An object containing the name value.
 
-• \`value\\.name\`: \`string\`
+• **value\\.name**: \`string\`
 
 A value of the object.
 
@@ -407,15 +407,15 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 ## Parameters
 
-• \`\\_\\_namedParameters\`: \`Object\`= \`{}\`
+• **\\_\\_namedParameters**: \`Object\`= \`{}\`
 
 various options
 
-• \`\\_\\_namedParameters\\.bar?\`: \`number\`= \`43\`
+• **\\_\\_namedParameters\\.bar?**: \`number\`= \`43\`
 
-• \`\\_\\_namedParameters\\.foo?\`: \`number\`= \`42\`
+• **\\_\\_namedParameters\\.foo?**: \`number\`= \`42\`
 
-• \`anotherParam\`: \`string\`
+• **anotherParam**: \`string\`
 
 Another param comment
 
@@ -464,29 +464,29 @@ Some nested params.
 
 ## Parameters
 
-• \`params\`: \`Object\`
+• **params**: \`Object\`
 
 The parameters passed to the method.
 
-• \`params\\.name\`: \`string\`
+• **params\\.name**: \`string\`
 
 The name of the new group.
 
-• \`params\\.nestedObj\`: \`Object\`
+• **params\\.nestedObj**: \`Object\`
 
 A nested object.
 
-• \`params\\.nestedObj\\.name\`: \`string\`
+• **params\\.nestedObj\\.name**: \`string\`
 
-• \`params\\.nestedObj\\.obj\`: \`Object\`
+• **params\\.nestedObj\\.obj**: \`Object\`
 
-• \`params\\.nestedObj\\.obj\\.name\`: () => \`void\`
+• **params\\.nestedObj\\.obj\\.name**: () => \`void\`
 
-• \`params\\.nestedObj\\.value\`: \`number\`
+• **params\\.nestedObj\\.value**: \`number\`
 
-• \`params\\.parent?\`: \`number\`
+• **params\\.parent?**: \`number\`
 
-• \`context\`: \`any\`
+• **context**: \`any\`
 
 The context of the method call.
 
@@ -542,17 +542,17 @@ This is a function with a parameters.
 
 ## Parameters
 
-• \`firstParamWithDefault\`: \`boolean\`= \`true\`
+• **firstParamWithDefault**: \`boolean\`= \`true\`
 
-• \`requiredParam\`: \`string\`
+• **requiredParam**: \`string\`
 
 A normal parameter.
 
-• \`optionalParam?\`: \`string\`
+• **optionalParam?**: \`string\`
 
 An optional parameter.
 
-• \`paramWithDefault?\`: \`number\`= \`0\`
+• **paramWithDefault?**: \`number\`= \`0\`
 
 ## Returns
 
@@ -573,17 +573,17 @@ This is a function with a parameters.
 
 ## Parameters
 
-• \`firstParamWithDefault\`: \`boolean\`= \`true\`
+• **firstParamWithDefault**: \`boolean\`= \`true\`
 
-• \`requiredParam\`: \`string\`
+• **requiredParam**: \`string\`
 
 A normal parameter.
 
-• \`optionalParam?\`: \`string\`
+• **optionalParam?**: \`string\`
 
 An optional parameter.
 
-• \`paramWithDefault?\`: \`number\`= \`0\`
+• **paramWithDefault?**: \`number\`= \`0\`
 
 ## Returns
 

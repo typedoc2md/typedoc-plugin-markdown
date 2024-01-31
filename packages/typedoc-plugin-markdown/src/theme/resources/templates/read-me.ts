@@ -22,10 +22,6 @@ export function readmeTemplate(
     md.push(context.partials.commentParts(page.model.readme));
   }
 
-  if (!context.options.getValue('hideGenerator')) {
-    md.push(context.partials.generator());
-  }
-
   md.push(context.hook('page.end').join('\n'));
 
   return md.join('\n\n');

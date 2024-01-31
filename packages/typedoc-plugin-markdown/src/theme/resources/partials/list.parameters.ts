@@ -1,6 +1,6 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks } from '../markdown';
+import { backTicks, bold } from '../markdown';
 import { escapeChars } from '../utils';
 
 export function parametersList(
@@ -53,7 +53,7 @@ export function parametersList(
 
     const name = `${escapeChars(parameter.name)}${optional}`;
 
-    const identifier: string[] = [backTicks(name)];
+    const identifier: string[] = [bold(name)];
 
     if (parameter.type) {
       identifier.push(': ' + context.partials.someType(parameter.type));
