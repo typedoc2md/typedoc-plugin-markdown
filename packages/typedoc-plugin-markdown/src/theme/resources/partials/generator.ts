@@ -2,8 +2,10 @@ import { MarkdownThemeRenderContext } from '../..';
 import { horizontalRule } from '../markdown';
 
 export function generator(context: MarkdownThemeRenderContext): string {
-  const generatorText =
-    'Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org). ';
+  const footer = context.getText('footer.generator');
+  if(!footer) {
+    return '';
+  }
 
-  return [horizontalRule(), generatorText].join('');
+  return [horizontalRule(), footer].join('');
 }

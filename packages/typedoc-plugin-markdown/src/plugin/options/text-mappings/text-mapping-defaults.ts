@@ -5,7 +5,7 @@ export const TEXT_MAPPING_DEFAULTS = {
   'header.readme': 'Readme',
   'header.docs': 'API',
   'breadcrumbs.home': '{projectName} {version}',
-  'footer.generator': 'Generated using TypeDoc and typedoc-plugin-markdown.',
+  'footer.generator': 'Generated using [TypeDoc](https://typedoc.org) and [typedoc-plugin-markdown](https://typedoc-plugin-markdown.org).',
   'title.indexPage': '{projectName} {version}',
   'title.modulePage': '{name}',
   'title.memberPage': '{kind}: {name}',
