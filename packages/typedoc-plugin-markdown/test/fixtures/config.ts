@@ -7,7 +7,6 @@ const config: Record<string, Fixture> = {
     entryPoints: '/reflections/index.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      hideGenerator: true,
       hidePageHeader: true,
       hideBreadcrumbs: true,
     },
@@ -32,7 +31,6 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       disableSources: true,
-      hideGenerator: true,
       entryFileName: 'index.md',
     },
     options: [
@@ -57,7 +55,6 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       hidePageHeader: true,
       hideBreadcrumbs: true,
-      hideGenerator: true,
       enumMembersFormat: 'table',
       propertiesFormat: 'table',
       readme: 'none',
@@ -77,7 +74,6 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       entryPointStrategy: 'packages',
-      hideGenerator: true,
       name: 'packages-example',
       entryFileName: 'index.md',
       disableSources: true,
@@ -92,7 +88,6 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       entryPointStrategy: 'packages',
-      hideGenerator: true,
       name: 'packages-example',
       includeVersion: true,
       disableSources: true,
@@ -105,7 +100,6 @@ const config: Record<string, Fixture> = {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       entryFileName: 'index.md',
       entryModule: 'entry-module',
-      hideGenerator: true,
       disableSources: true,
     },
     options: [{ entryFileName: 'README.md' }, { readme: 'none' }],
@@ -119,7 +113,6 @@ const config: Record<string, Fixture> = {
       {
         entryFileName: 'index.md',
         disableSources: true,
-        hideGenerator: true,
         mergeReadme: true,
       },
     ],
@@ -144,7 +137,6 @@ const config: Record<string, Fixture> = {
     outputFileStragies: ['members'],
     commonOptions: {
       disableSources: true,
-      hideGenerator: true,
       readme: 'none',
       outputFileStrategy: 'modules',
     },

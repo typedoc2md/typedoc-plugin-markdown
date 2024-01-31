@@ -27,10 +27,6 @@ export function memberTemplate(
 
   md.push(context.partials.member(page.model, 1));
 
-  if (!context.options.getValue('hideGenerator')) {
-    md.push(context.partials.generator());
-  }
-
   md.push(context.hook('page.end').join('\n'));
 
   return md.join('\n\n');

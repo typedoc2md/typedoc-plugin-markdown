@@ -40,10 +40,6 @@ export function projectTemplate(
 
   md.push(context.partials.members(page.model, 2));
 
-  if (!context.options.getValue('hideGenerator')) {
-    md.push(context.partials.generator());
-  }
-
   md.push(context.hook('page.end').join('\n'));
 
   return md.join('\n\n');

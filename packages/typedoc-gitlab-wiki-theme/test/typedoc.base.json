@@ -5,6 +5,5 @@
   "plugin": ["typedoc-plugin-markdown", "typedoc-gitlab-wiki-theme"],
   "readme": "none",
   "disableSources": true,
-  "cleanOutputDir": true,
-  "hideGenerator": true
+  "cleanOutputDir": true
 }
