@@ -169,7 +169,7 @@ Comments for objectLiteralVariable
 
 #### Parameters
 
-• \`z\`: \`string\`
+• **z**: \`string\`
 
 #### Returns
 
@@ -206,9 +206,9 @@ Comments for objectLiteralVariable
 
 #### Parameters
 
-• \`unionParam\`: \`"a"\` \\| \`"b"\`
+• **unionParam**: \`"a"\` \\| \`"b"\`
 
-• \`\\_undercoreParam\\_\`: \`string\`
+• **\\_undercoreParam\\_**: \`string\`
 
 #### Returns
 

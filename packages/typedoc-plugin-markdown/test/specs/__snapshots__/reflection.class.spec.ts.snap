@@ -133,7 +133,7 @@ Comments for setter
 
 #### Parameters
 
-• \`value\`: \`string\`
+• **value**: \`string\`
 
 Param comments
 
@@ -153,7 +153,7 @@ Param comments
 
 #### Parameters
 
-• \`x\`: \`string\`
+• **x**: \`string\`
 
 #### Source
 
@@ -277,11 +277,11 @@ Comments for ClassWithConstructorOverloads
 
 #### Parameters
 
-• \`x\`: \`number\`
+• **x**: \`number\`
 
 Comments for x number
 
-• \`y\`: \`string\`
+• **y**: \`string\`
 
 #### Returns
 
@@ -297,7 +297,7 @@ Comments for x number
 
 #### Parameters
 
-• \`x\`: \`string\`
+• **x**: \`string\`
 
 Comments for x string
 
@@ -315,7 +315,7 @@ Comments for x string
 
 #### Parameters
 
-• \`s\`: \`string\`
+• **s**: \`string\`
 
 #### Returns
 
