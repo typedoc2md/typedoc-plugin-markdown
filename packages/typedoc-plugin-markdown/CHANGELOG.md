@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.47
+
+### Patch Changes
+
+- Fix params being incorrectly escaped in list format.
+- Removed generator in footer.
+- Fix typing of the defineTheme method.
+
 ## 4.0.0-next.46
 
 ### Patch Changes
