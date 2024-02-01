@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.48
+
+### Patch Changes
+
+- Ignore seperate module index when `entryModule` is defined.
+
 ## 4.0.0-next.47 (2024-01-31)
 
 ### Patch Changes
