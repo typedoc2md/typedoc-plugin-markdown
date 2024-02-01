@@ -8,7 +8,6 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: members 1`]
   "module-1/classes/ModuleClass.md",
   "module-2/README.md",
   "module-2/classes/ModuleClass.md",
-  "modules.md",
   "readme_.md",
 ]
 `;
@@ -21,7 +20,6 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: members 2`]
   "module-1/index.md",
   "module-2/classes/ModuleClass.md",
   "module-2/index.md",
-  "modules.md",
 ]
 `;
 
@@ -30,7 +28,6 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 1`]
   "README.md",
   "module-1.md",
   "module-2.md",
-  "modules.md",
   "readme_.md",
 ]
 `;
@@ -40,7 +37,6 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 2`]
   "index.md",
   "module-1.md",
   "module-2.md",
-  "modules.md",
 ]
 `;
 

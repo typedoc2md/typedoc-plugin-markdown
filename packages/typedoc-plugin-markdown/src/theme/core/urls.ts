@@ -45,14 +45,17 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const preserveReadme =
     Boolean(project.readme) && !options.getValue('mergeReadme');
 
-  const preserveModulesPage =
-    (project?.groups &&
-      Boolean(
-        project?.groups[0]?.children.find(
-          (child) => child.name === options.getValue('entryModule'),
-        ),
-      )) ||
-    false;
+  const isModulesOnly = project.children?.every((child) =>
+    child.kindOf(ReflectionKind.Module),
+  );
+  const useEntryModule =
+    project?.groups &&
+    Boolean(
+      project?.groups[0]?.children.find(
+        (child) => child.name === options.getValue('entryModule'),
+      ),
+    ) &&
+    isModulesOnly;
 
   const isPackages =
     options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
@@ -63,27 +66,32 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
   project.url = preserveReadme
     ? indexFilename
-    : preserveModulesPage
+    : useEntryModule
       ? indexFilename
       : options.getValue('entryFileName');
 
   if (preserveReadme) {
     urls.push({
-      url: preserveModulesPage ? 'readme_.md' : entryFileName,
+      url: useEntryModule ? 'readme_.md' : entryFileName,
       model: project,
       template: theme.readmeTemplate,
     });
-    urls.push({
-      url: indexFilename,
-      model: project,
-      template: theme.projectTemplate,
-    });
+
+    if (!useEntryModule) {
+      urls.push({
+        url: indexFilename,
+        model: project,
+        template: theme.projectTemplate,
+      });
+    }
   } else {
-    urls.push({
-      url: preserveModulesPage ? indexFilename : entryFileName,
-      model: project,
-      template: theme.projectTemplate,
-    });
+    if (!useEntryModule) {
+      urls.push({
+        url: entryFileName,
+        model: project,
+        template: theme.projectTemplate,
+      });
+    }
   }
 
   if (isPackages) {

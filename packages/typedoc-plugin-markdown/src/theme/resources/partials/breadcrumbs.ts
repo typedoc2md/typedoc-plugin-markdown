@@ -14,7 +14,8 @@ export function breadcrumbs(
 
   if (
     page.url === page.project.url ||
-    (page.url === entryFileName && page.url.split(path.sep).length === 1)
+    ((page.url === entryFileName || page.url === 'readme_.md') &&
+      page.url.split(path.sep).length === 1)
   ) {
     return '';
   }
@@ -38,7 +39,9 @@ export function breadcrumbs(
       }
       return model.url;
     };
-    md.push(context.partials.linkTo(escapeChars(model.name), getUrl(model)));
+    if (model.name !== context.options.getValue('entryModule')) {
+      md.push(context.partials.linkTo(escapeChars(model.name), getUrl(model)));
+    }
   };
 
   const pageName = escapeChars(page.model.name);

@@ -49,7 +49,7 @@ function projectHeader(
   const preserveReadme =
     Boolean(page.project.readme) && !context.options.getValue('mergeReadme');
 
-  const preserveModulesPage =
+  const useEntryModule =
     (page.project?.groups &&
       Boolean(
         page.project?.groups[0]?.children.find(
@@ -60,29 +60,27 @@ function projectHeader(
 
   if (preserveReadme) {
     const links: string[] = [];
+    const readMeUrl = useEntryModule ? 'readme_.md' : entryFileName;
 
-    if (page.url === entryFileName) {
+    if (page.url === readMeUrl) {
       links.push(readmeLabel);
     } else {
-      links.push(
-        context.partials.linkTo(
-          readmeLabel,
-          preserveModulesPage ? 'readme_.md' : entryFileName,
-        ),
-      );
+      links.push(context.partials.linkTo(readmeLabel, readMeUrl));
     }
 
     links.push('\\|');
 
-    if (page.url === page.project.url) {
+    const indexUrl = useEntryModule ? entryFileName : page.project.url;
+
+    if (page.url === indexUrl) {
       links.push(indexLabel);
     } else {
-      links.push(context.partials.linkTo(indexLabel, page.project.url));
+      links.push(context.partials.linkTo(indexLabel, indexUrl));
     }
 
     md.push(`${links.join(' ')}`);
   } else {
-    if (page.url === page.project.url) {
+    if (useEntryModule || page.url === page.project.url) {
       md.push(indexLabel);
     } else {
       md.push(context.partials.linkTo(indexLabel, page.project.url));

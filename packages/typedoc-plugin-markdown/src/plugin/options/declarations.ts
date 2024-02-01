@@ -28,15 +28,6 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
 };
 
 /**
- * Comments
- */
-export const myNewOption: Partial<DeclarationOption> = {
-  help: 'A short description of the file.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
  * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
  *
  * `README.md` is recognised when browsing folders on repos and Wikis and is the plugin default. `index.md` might be more suitable for other use-cases.
@@ -59,9 +50,9 @@ export const entryFileName: Partial<DeclarationOption> = {
 };
 
 /**
- * This option can be used when the root page of the documentation should be a specific module (typically a module named "index").
+ * This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
  *
- * This is only applicable when multiple modules are resolved.
+ * Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
  *
  * @example "index"
  *
@@ -73,7 +64,7 @@ export const entryModule: Partial<DeclarationOption> = {
 };
 
 /**
- * By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is genertaed.
+ * By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
  *
  * This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
  *

@@ -69,9 +69,9 @@ ___
 
 > Accepts a string value. Defaults to `"undefined"`.
 
-This option can be used when the root page of the documentation should be a specific module (typically a module named "index").
+This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
 
-This is only applicable when multiple modules are resolved.
+Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
 
 
 ```json filename="typedoc.json"
@@ -89,7 +89,7 @@ ___
 
 > Accepts a boolean value. Defaults to `false`.
 
-By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is genertaed.
+By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
 
 This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
 
@@ -97,26 +97,6 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 ```json filename="typedoc.json"
 {
   "mergeReadme": false
-}
-
-```
-
-___
-
-## Plugin Options
-
-### myNewOption
-
-<Callout>A short description of the file.</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-Comments
-
-
-```json filename="typedoc.json"
-{
-  "myNewOption": false
 }
 
 ```
