@@ -3,9 +3,6 @@ import { MarkdownPageEvent, MarkdownTheme, TextContentMappings } from '..';
 import { MarkdownRenderer, MarkdownRendererHooks } from '../plugin/types';
 import { helpers, partials, templates } from './resources';
 
-/* start_imports */
-/* end_imports */
-
 /**
  * The render context of the {@link MarkdownTheme}.
  * This follows the implementation of TypeDocs [DefaultThemeRenderContext](https://typedoc.org/api/classes/DefaultThemeRenderContext.html)

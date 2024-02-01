@@ -1,5 +1,8 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
+/**
+ * Flattens declarations into a single array, useful for displaying items in tables.
+ */
 export function flattenDeclarations(
   props: DeclarationReflection[],
   includeSignatures = false,
