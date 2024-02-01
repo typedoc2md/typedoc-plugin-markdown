@@ -66,6 +66,7 @@ const config: Record<string, Fixture> = {
       {
         namedAnchors: true,
         preserveAnchorCasing: true,
+        publicPath: '/some-path',
       },
     ],
   },

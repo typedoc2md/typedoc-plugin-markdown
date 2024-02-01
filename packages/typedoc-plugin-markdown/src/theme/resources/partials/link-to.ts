@@ -19,7 +19,7 @@ export function linkTo(
     const publicPath = context.options.getValue('publicPath');
 
     if (publicPath) {
-      return path.join(publicPath, url);
+      return link(label, context.parseUrl(path.join(publicPath, url)));
     }
 
     const relativeUrl = getRelativeUrl(url, context.page?.url);
