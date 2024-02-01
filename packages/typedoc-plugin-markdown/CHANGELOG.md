@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.49
+## 4.0.0-next.49 (2024-02-01)
 
 ### Patch Changes
 
