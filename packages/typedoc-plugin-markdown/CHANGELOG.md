@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.49
+
+### Patch Changes
+
+- Fixed `publicPath` implemention.
+
 ## 4.0.0-next.48 (2024-02-01)
 
 ### Patch Changes
