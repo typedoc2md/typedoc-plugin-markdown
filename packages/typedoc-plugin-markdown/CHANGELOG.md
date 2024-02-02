@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.50
+
+### Patch Changes
+
+- Fix "undefined" custom `@group` headings.
+
 ## 4.0.0-next.49 (2024-02-01)
 
 ### Patch Changes
