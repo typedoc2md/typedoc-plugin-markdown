@@ -43,6 +43,10 @@ describe(`Groups`, () => {
     expectFileToEqual('groups', 'members', 'has-categories/index.md', 2);
   });
 
+  test(`should compile custom groups index page`, () => {
+    expectFileToEqual('groups', 'members', 'has-custom-groups/index.md', 2);
+  });
+
   test(`should compile references group page`, () => {
     expectFileToEqual('groups', 'modules', 'has-references.md');
   });

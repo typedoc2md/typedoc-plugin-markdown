@@ -488,6 +488,43 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     ]
   },
   {
+    "title": "has-custom-groups",
+    "url": "has-custom-groups/index.md",
+    "children": [
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "variableC",
+            "url": "has-custom-groups/variables/variableC.md"
+          }
+        ]
+      },
+      {
+        "title": "CustomGroupA",
+        "children": [
+          {
+            "title": "variabelA",
+            "url": "has-custom-groups/variables/variabelA.md"
+          }
+        ]
+      },
+      {
+        "title": "CustomGroupB",
+        "children": [
+          {
+            "title": "variableB1",
+            "url": "has-custom-groups/variables/variableB1.md"
+          },
+          {
+            "title": "variableB2",
+            "url": "has-custom-groups/variables/variableB2.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "has-namespaces",
     "url": "has-namespaces/index.md",
     "children": [
@@ -777,6 +814,28 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     ]
   },
   {
+    "title": "has-custom-groups",
+    "url": "has-custom-groups/index.md",
+    "children": [
+      {
+        "title": "variabelA",
+        "url": "has-custom-groups/variables/variabelA.md"
+      },
+      {
+        "title": "variableB1",
+        "url": "has-custom-groups/variables/variableB1.md"
+      },
+      {
+        "title": "variableB2",
+        "url": "has-custom-groups/variables/variableB2.md"
+      },
+      {
+        "title": "variableC",
+        "url": "has-custom-groups/variables/variableC.md"
+      }
+    ]
+  },
+  {
     "title": "has-namespaces",
     "url": "has-namespaces/index.md",
     "children": [
@@ -910,6 +969,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "url": "has-categories.md"
   },
   {
+    "title": "has-custom-groups",
+    "url": "has-custom-groups.md"
+  },
+  {
     "title": "has-namespaces",
     "url": "has-namespaces/index.md",
     "children": [
@@ -972,6 +1035,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "title": "has-categories",
     "url": "has-categories.md",
     "children": []
+  },
+  {
+    "title": "has-custom-groups",
+    "url": "has-custom-groups.md"
   },
   {
     "title": "has-namespaces",

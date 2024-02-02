@@ -475,6 +475,68 @@ A module that contains categories
 "
 `;
 
+exports[`Groups should compile custom groups index page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**typedoc-stubs** • [Readme](../index.md) \\| [API](../modules.md)
+
+***
+
+[typedoc-stubs](../index.md) / has-custom-groups
+
+# has-custom-groups
+
+A module that contains custom groupings
+
+## Index
+
+### Variables
+
+- [variableC](variables/variableC.md)
+
+### CustomGroupA
+
+- [variabelA](variables/variabelA.md)
+
+### CustomGroupB
+
+- [variableB1](variables/variableB1.md)
+- [variableB2](variables/variableB2.md)
+"
+`;
+
+exports[`Groups should compile custom groups index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs** • [API](../index.md)
+
+***
+
+[typedoc-stubs](../index.md) / has-custom-groups
+
+# has-custom-groups
+
+A module that contains custom groupings
+
+## Index
+
+### Variables
+
+| Variable | Description |
+| :------ | :------ |
+| [variableC](variables/variableC.md) | Default grouping |
+
+### CustomGroupA
+
+| Variable | Description |
+| :------ | :------ |
+| [variabelA](variables/variabelA.md) | - |
+
+### CustomGroupB
+
+| Variable | Description |
+| :------ | :------ |
+| [variableB1](variables/variableB1.md) | - |
+| [variableB2](variables/variableB2.md) | - |
+"
+`;
+
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "1") 1`] = `
 "**typedoc-stubs** • [Readme](index.md) \\| API
 
@@ -488,6 +550,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 - [\\<internal\\>](-internal-/index.md)
 - [basic](basic/index.md)
 - [has-categories](has-categories/index.md)
+- [has-custom-groups](has-custom-groups/index.md)
 - [has-namespaces](has-namespaces/index.md)
 - [has-references](has-references/index.md)
 - [has-same-exports](has-same-exports/index.md)
@@ -510,6 +573,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 | [\\<internal\\>](-internal-/index.md) | - |
 | [basic](basic/index.md) | A basic module |
 | [has-categories](has-categories/index.md) | A module that contains categories |
+| [has-custom-groups](has-custom-groups/index.md) | A module that contains custom groupings |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references/index.md) | A module that contains references |
 | [has-same-exports](has-same-exports/index.md) | - |
@@ -530,6 +594,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 - [\\<internal\\>](-internal-.md)
 - [basic](basic.md)
 - [has-categories](has-categories.md)
+- [has-custom-groups](has-custom-groups.md)
 - [has-namespaces](has-namespaces/index.md)
 - [has-references](has-references.md)
 - [has-same-exports](has-same-exports.md)
@@ -552,6 +617,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | [\\<internal\\>](-internal-.md) | - |
 | [basic](basic.md) | A basic module |
 | [has-categories](has-categories.md) | A module that contains categories |
+| [has-custom-groups](has-custom-groups.md) | A module that contains custom groupings |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references.md) | A module that contains references |
 | [has-same-exports](has-same-exports.md) | - |

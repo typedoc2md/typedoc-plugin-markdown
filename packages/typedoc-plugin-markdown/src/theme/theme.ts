@@ -93,7 +93,7 @@ export class MarkdownTheme extends Theme {
     const key = isPlural
       ? (PLURAL_KIND_KEY_MAP[kindString] as keyof TextContentMappings)
       : (SINGULAR_KIND_KEY_MAP[kindString] as keyof TextContentMappings);
-    return this.textMappings[key];
+    return this.textMappings[key] || kindString;
   }
 
   getTemplateMapping(
