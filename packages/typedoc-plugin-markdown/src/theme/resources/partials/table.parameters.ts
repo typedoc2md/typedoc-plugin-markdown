@@ -39,16 +39,16 @@ export function parametersTable(
   const hasComments = parsedParams.some((param) => Boolean(param.comment));
 
   const headers = [
-    context.getText('kind.parameter.singular'),
-    context.getText('label.type'),
+    context.text.getText('kind.parameter.singular'),
+    context.text.getText('label.type'),
   ];
 
   if (showDefaults) {
-    headers.push(context.getText('label.defaultValue'));
+    headers.push(context.text.getText('label.defaultValue'));
   }
 
   if (hasComments) {
-    headers.push(context.getText('label.description'));
+    headers.push(context.text.getText('label.description'));
   }
 
   const firstOptionalParamIndex = parameters.findIndex(

@@ -11,12 +11,12 @@ export function enumMembersTable(
   const hasComments = comments.some((value) => Boolean(value));
 
   const headers = [
-    context.getText('kind.enumMember.singular'),
-    context.getText('label.value'),
+    context.text.getText('kind.enumMember.singular'),
+    context.text.getText('label.value'),
   ];
 
   if (hasComments) {
-    headers.push(context.getText('label.description'));
+    headers.push(context.text.getText('label.description'));
   }
 
   const rows = props.map((property: DeclarationReflection) => {

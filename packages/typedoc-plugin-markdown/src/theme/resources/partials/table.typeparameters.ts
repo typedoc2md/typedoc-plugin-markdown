@@ -15,14 +15,14 @@ export function typeParametersTable(
     Boolean(typeParameter.comment),
   );
 
-  const headers = [context.getText('kind.typeParameter.singular')];
+  const headers = [context.text.getText('kind.typeParameter.singular')];
 
   if (hasDefault) {
-    headers.push(context.getText('label.value'));
+    headers.push(context.text.getText('label.value'));
   }
 
   if (hasComments) {
-    headers.push(context.getText('label.description'));
+    headers.push(context.text.getText('label.description'));
   }
 
   const rows: string[][] = [];

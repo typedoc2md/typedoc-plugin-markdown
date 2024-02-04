@@ -74,7 +74,7 @@ export function members(
           md.push(
             heading(
               headingLevel,
-              context.getTextFromKindString(group.title, true),
+              context.text.getTextFromKindString(group.title, true),
             ),
           );
           pushCategories(group.categories, headingLevel + 1);
@@ -90,7 +90,7 @@ export function members(
           md.push(
             heading(
               headingLevel,
-              context.getTextFromKindString(group.title, true),
+              context.text.getTextFromKindString(group.title, true),
             ),
           );
 
@@ -101,8 +101,8 @@ export function members(
             md.push(
               context.partials.propertiesTable(
                 group.children,
-                context.getTextFromKindString(group.title, true) ===
-                  context.getText('kind.event.plural'),
+                context.text.getTextFromKindString(group.title, true) ===
+                  context.text.getText('kind.event.plural'),
               ),
             );
           } else if (

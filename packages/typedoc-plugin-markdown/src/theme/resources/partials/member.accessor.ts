@@ -41,7 +41,9 @@ export function accessorMember(
   }
 
   if (declaration.setSignature?.parameters?.length) {
-    md.push(heading(headingLevel, context.getText('kind.parameter.plural')));
+    md.push(
+      heading(headingLevel, context.text.getText('kind.parameter.plural')),
+    );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(
         context.partials.parametersTable(declaration.setSignature.parameters),

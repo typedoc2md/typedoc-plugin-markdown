@@ -22,30 +22,30 @@ export function propertiesTable(
 
   headers.push(
     isEventProps
-      ? context.getText('kind.event.singular')
-      : context.getText('kind.property.singular'),
+      ? context.text.getText('kind.event.singular')
+      : context.text.getText('kind.property.singular'),
   );
 
   if (hasModifiers) {
-    headers.push(context.getText('label.modifier'));
+    headers.push(context.text.getText('label.modifier'));
   }
 
   if (hasFlags) {
-    headers.push(context.getText('label.flags'));
+    headers.push(context.text.getText('label.flags'));
   }
 
-  headers.push(context.getText('label.type'));
+  headers.push(context.text.getText('label.type'));
 
   if (hasComments) {
-    headers.push(context.getText('label.description'));
+    headers.push(context.text.getText('label.description'));
   }
 
   if (hasOverrides) {
-    headers.push(context.getText('label.overrides'));
+    headers.push(context.text.getText('label.overrides'));
   }
 
   if (hasInheritance) {
-    headers.push(context.getText('label.inheritedFrom'));
+    headers.push(context.text.getText('label.inheritedFrom'));
   }
 
   const rows: string[][] = [];

@@ -16,20 +16,24 @@ export function inheritance(
 
   if (reflection.implementationOf) {
     if (headingLevel !== -1) {
-      md.push(heading(headingLevel, context.getText('label.implementationOf')));
+      md.push(
+        heading(headingLevel, context.text.getText('label.implementationOf')),
+      );
     }
     md.push(typeAndParent(context, reflection.implementationOf));
   }
 
   if (reflection.inheritedFrom) {
     if (headingLevel !== -1) {
-      md.push(heading(headingLevel, context.getText('label.inheritedFrom')));
+      md.push(
+        heading(headingLevel, context.text.getText('label.inheritedFrom')),
+      );
     }
     md.push(typeAndParent(context, reflection.inheritedFrom));
   }
 
   if (reflection.overwrites) {
-    const overridesLabel = context.getText('label.overrides');
+    const overridesLabel = context.text.getText('label.overrides');
     if (headingLevel !== -1) {
       md.push(heading(headingLevel, overridesLabel));
     }

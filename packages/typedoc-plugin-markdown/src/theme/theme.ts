@@ -6,17 +6,7 @@ import {
   ReflectionKind,
   Theme,
 } from 'typedoc';
-import {
-  MarkdownPageEvent,
-  MarkdownRenderer,
-  OutputFileStrategy,
-  TextContentMappings,
-} from '../plugin';
-import {
-  PLURAL_KIND_KEY_MAP,
-  SINGULAR_KIND_KEY_MAP,
-  TEXT_MAPPING_DEFAULTS,
-} from '../plugin/options/text-mappings';
+import { MarkdownPageEvent, OutputFileStrategy } from '../plugin';
 import { getNavigation } from './core/navigation';
 import { RenderTemplate, getUrls } from './core/urls';
 import { MarkdownThemeRenderContext } from './theme-render-context';
@@ -27,16 +17,6 @@ import { MarkdownThemeRenderContext } from './theme-render-context';
  *
  */
 export class MarkdownTheme extends Theme {
-  textMappings: TextContentMappings;
-
-  constructor(renderer: MarkdownRenderer) {
-    super(renderer);
-    this.textMappings = {
-      ...TEXT_MAPPING_DEFAULTS,
-      ...(this.application.options.getValue('textContentMappings') || {}),
-    };
-  }
-
   /**
    * Renders a template and page model to a string.
    */
@@ -83,17 +63,6 @@ export class MarkdownTheme extends Theme {
 
   getNavigation(project: ProjectReflection) {
     return getNavigation(this, project);
-  }
-
-  getText(key: keyof TextContentMappings) {
-    return this.textMappings[key];
-  }
-
-  getTextFromKindString(kindString: string, isPlural = false) {
-    const key = isPlural
-      ? (PLURAL_KIND_KEY_MAP[kindString] as keyof TextContentMappings)
-      : (SINGULAR_KIND_KEY_MAP[kindString] as keyof TextContentMappings);
-    return this.textMappings[key] || kindString;
   }
 
   getTemplateMapping(

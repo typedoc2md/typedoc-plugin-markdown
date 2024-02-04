@@ -34,13 +34,13 @@ function projectHeader(
   const md: string[] = [];
 
   const title = context.helpers.getIndexTitle(
-    context.getText('header.title'),
+    context.text.getText('header.title'),
     page.project.name,
     page.project.packageVersion,
   );
 
-  const readmeLabel = context.getText('header.readme');
-  const indexLabel = context.getText('header.docs');
+  const readmeLabel = context.text.getText('header.readme');
+  const indexLabel = context.text.getText('header.docs');
 
   md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
 
@@ -102,8 +102,8 @@ function packageHeader(
 
   const md: string[] = [];
 
-  const readmeLabel = context.getText('header.readme');
-  const indexLabel = context.getText('header.docs');
+  const readmeLabel = context.text.getText('header.readme');
+  const indexLabel = context.text.getText('header.docs');
 
   const entryFileName = context.options.getValue('entryFileName');
 

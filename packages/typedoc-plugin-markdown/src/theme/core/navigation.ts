@@ -9,6 +9,7 @@ import {
 } from 'typedoc';
 import { MarkdownTheme } from '../..';
 import { OutputFileStrategy } from '../../plugin/options/option-maps';
+import { text } from './text';
 
 export interface NavigationItem {
   title: string;
@@ -22,6 +23,7 @@ export function getNavigation(
   theme: MarkdownTheme,
   project: ProjectReflection,
 ) {
+  const textHelpers = text(theme);
   const options = theme.application.options;
   const navigation: NavigationItem[] = [];
   const optionsForPackages = (theme.application.renderer as any).packageOptions;
@@ -74,7 +76,7 @@ export function getNavigation(
       outputFileStrategy === OutputFileStrategy.Modules
     ) {
       children.push({
-        title: theme.getText('label.globals'),
+        title: textHelpers.getText('label.globals'),
         url: projectChild.url,
       });
     }
@@ -230,7 +232,7 @@ export function getNavigation(
           const groupChildren = getGroupChildren(group, outputFileStrategy);
           return groupChildren.length
             ? {
-                title: theme.getTextFromKindString(group.title, true),
+                title: textHelpers.getTextFromKindString(group.title, true),
                 children: groupChildren || null,
               }
             : null;

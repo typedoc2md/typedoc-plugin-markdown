@@ -12,7 +12,7 @@ export function pageTitle(
   if (page.model?.url === page.project.url) {
     const titleContent = context.options.isSet('indexPageTitle')
       ? context.options.getValue('indexPageTitle')
-      : context.getText('title.indexPage');
+      : context.text.getText('title.indexPage');
     return context.helpers.getIndexTitle(
       titleContent,
       page.project.name,
@@ -25,16 +25,16 @@ export function pageTitle(
   );
 
   const textContent = page.model.kindOf(ReflectionKind.Module)
-    ? context.getText('title.modulePage')
+    ? context.text.getText('title.modulePage')
     : context.options.isSet('memberPageTitle')
       ? context.options.getValue('memberPageTitle')
-      : context.getText('title.memberPage');
+      : context.text.getText('title.memberPage');
 
   return textContent
     .replace('{name}', name)
     .replace(
       '{kind}',
-      context.getTextFromKindString(
+      context.text.getTextFromKindString(
         ReflectionKind.singularString(page.model.kind),
       ),
     );

@@ -21,10 +21,10 @@ export function memberHierarchy(
     : null;
   if (declarationHierarchy.next) {
     if (parent) {
-      md.push(heading(headingLevel, context.getText('label.extends')));
+      md.push(heading(headingLevel, context.text.getText('label.extends')));
       md.push(`- ${parent}`);
     } else {
-      md.push(heading(headingLevel, context.getText('label.extendedBy')));
+      md.push(heading(headingLevel, context.text.getText('label.extendedBy')));
       const lines: string[] = [];
       declarationHierarchy.next.types.forEach((hierarchyType) => {
         lines.push(

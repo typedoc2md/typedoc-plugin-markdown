@@ -27,7 +27,7 @@ export function pageIndex(
       EntryPointStrategy.Packages;
 
   if (isPackages && page.model.children?.length) {
-    md.push(heading(headingLevel, context.getText('label.packages')));
+    md.push(heading(headingLevel, context.text.getText('label.packages')));
     const packagesList = page.model.children?.map((projectPackage) => {
       const urlTo = Boolean(projectPackage.readme)
         ? `${path.dirname(projectPackage.url || '')}/${context.options.getValue(

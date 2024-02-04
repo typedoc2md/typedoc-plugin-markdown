@@ -21,7 +21,7 @@ export function reflectionMember(
 
   if (reflection.typeParameters) {
     md.push(
-      heading(headingLevel, context.getText('kind.typeParameter.plural')),
+      heading(headingLevel, context.text.getText('kind.typeParameter.plural')),
     );
     if (context.options.getValue('parametersFormat') === 'table') {
       md.push(context.partials.typeParametersTable(reflection.typeParameters));
@@ -31,7 +31,7 @@ export function reflectionMember(
   }
 
   if (reflection.implementedTypes) {
-    md.push(heading(headingLevel, context.getText('label.implements')));
+    md.push(heading(headingLevel, context.text.getText('label.implements')));
     md.push(
       unorderedList(
         reflection.implementedTypes.map((implementedType) =>
@@ -48,7 +48,7 @@ export function reflectionMember(
   }
 
   if ('indexSignature' in reflection && reflection.indexSignature) {
-    md.push(heading(headingLevel, context.getText('label.indexable')));
+    md.push(heading(headingLevel, context.text.getText('label.indexable')));
     md.push(context.partials.indexSignatureTitle(reflection.indexSignature));
   }
 
@@ -57,7 +57,7 @@ export function reflectionMember(
       group.allChildrenHaveOwnDocument(),
     );
     if (isAbsolute) {
-      md.push(heading(headingLevel, context.getText('label.index')));
+      md.push(heading(headingLevel, context.text.getText('label.index')));
     }
     md.push(
       context.partials.reflectionIndex(

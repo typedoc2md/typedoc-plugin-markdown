@@ -7,8 +7,10 @@ export function referenceMember(
 ): string {
   let referenced = props.tryGetTargetReflectionDeep();
 
-  const reExportsText = context.getText('label.reExports');
-  const renamesAndReExportsText = context.getText('label.renamesAndReExports');
+  const reExportsText = context.text.getText('label.reExports');
+  const renamesAndReExportsText = context.text.getText(
+    'label.renamesAndReExports',
+  );
 
   if (!referenced) {
     return `${reExportsText} ${props.name}`;

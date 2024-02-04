@@ -1,8 +1,8 @@
 import { Options, Reflection } from 'typedoc';
-import { MarkdownPageEvent, MarkdownTheme, TextContentMappings } from '..';
+import { MarkdownPageEvent, MarkdownTheme } from '..';
 import { MarkdownRenderer, MarkdownRendererHooks } from '../plugin/types';
+import { text } from './core/text';
 import { helpers, partials, templates } from './resources';
-
 /**
  * The render context of the {@link MarkdownTheme}.
  * This follows the implementation of TypeDocs [DefaultThemeRenderContext](https://typedoc.org/api/classes/DefaultThemeRenderContext.html)
@@ -36,13 +36,10 @@ export class MarkdownThemeRenderContext {
    */
   partials = partials(this);
 
-  getText(key: keyof TextContentMappings) {
-    return this.theme.getText(key);
-  }
-
-  getTextFromKindString(kindString: string, isPlural = false) {
-    return this.theme.getTextFromKindString(kindString, isPlural);
-  }
+  /**
+   * Themes text content
+   */
+  text = text(this.theme);
 
   /**
    * @deprecated - moved to helpers

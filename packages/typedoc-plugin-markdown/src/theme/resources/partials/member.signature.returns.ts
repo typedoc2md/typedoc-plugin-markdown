@@ -18,7 +18,7 @@ export function signatureMemberReturns(
   const typeDeclaration = (signature.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(heading(headingLevel, context.getText('label.returns')));
+  md.push(heading(headingLevel, context.text.getText('label.returns')));
 
   md.push(getReturnType(context, typeDeclaration, signature.type));
 

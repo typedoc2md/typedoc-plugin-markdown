@@ -21,7 +21,7 @@ export function breadcrumbs(
   }
 
   const homeLabel = context.helpers.getIndexTitle(
-    context.getText('breadcrumbs.home'),
+    context.text.getText('breadcrumbs.home'),
     page.project.name,
     page.project.packageVersion,
   );

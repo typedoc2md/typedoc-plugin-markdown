@@ -38,7 +38,7 @@ export function reflectionIndex(
         md.push(
           heading(
             subHeadingLevel,
-            context.getTextFromKindString(reflectionGroup.title, true),
+            context.text.getTextFromKindString(reflectionGroup.title, true),
           ) + '\n',
         );
         md.push(getGroup(context, reflectionGroup) + '\n');
@@ -66,7 +66,7 @@ function getTable(
 
   const headers = [
     ReflectionKind.singularString(reflectionKind),
-    context.getText('label.description'),
+    context.text.getText('label.description'),
   ];
   const rows: string[][] = [];
 
@@ -103,7 +103,7 @@ function getList(
           ? `${
               child.signatures
                 ? child.signatures[0].name
-                : context.getText('kind.constructor.singular')
+                : context.text.getText('kind.constructor.singular')
             }`
           : child.name;
       return `- ${context.partials.linkTo(escapeChars(name), child.url)}`;
