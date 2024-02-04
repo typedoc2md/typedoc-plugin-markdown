@@ -19,11 +19,11 @@ export function linkTo(
     const publicPath = context.options.getValue('publicPath');
 
     if (publicPath) {
-      return link(label, context.parseUrl(path.join(publicPath, url)));
+      return link(label, context.helpers.parseUrl(path.join(publicPath, url)));
     }
 
     const relativeUrl = getRelativeUrl(url, context.page?.url);
 
-    return link(label, context.parseUrl(relativeUrl));
+    return link(label, context.helpers.parseUrl(relativeUrl));
   }
 }

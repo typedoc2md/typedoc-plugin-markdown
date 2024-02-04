@@ -72,6 +72,8 @@ import {
   getModifier,
   getParameterDefaultValue,
   isGroupKind,
+  parseComments,
+  parseUrl,
 } from './helpers';
 
 function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
@@ -154,5 +156,7 @@ export const helpers = () => {
     getModifier: getModifier,
     getParameterDefaultValue: getParameterDefaultValue,
     isGroupKind: isGroupKind,
+    parseComments: parseComments,
+    parseUrl: parseUrl,
   };
 };

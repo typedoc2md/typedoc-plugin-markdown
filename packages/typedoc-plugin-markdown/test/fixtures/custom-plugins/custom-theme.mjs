@@ -57,6 +57,21 @@ class MyMarkdownTheme extends MarkdownTheme {
 }
 
 class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
+  helpers = {
+    ...this.helpers,
+    /**
+     * @param {string} comment
+     */
+    parseComments: (comment) => {
+      const regex = /:::([^\n\s]*)([^\n]*)([\s\S]*?):::/g;
+      const parsedComments = comment.replace(
+        regex,
+        (match, p1, p2, p3) =>
+          `<Tag type="${p1.trim()}">**${p2.trim()}** ${p3.trim()}</Tag>`,
+      );
+      return parsedComments;
+    },
+  };
   partials = {
     ...this.partials,
     /**

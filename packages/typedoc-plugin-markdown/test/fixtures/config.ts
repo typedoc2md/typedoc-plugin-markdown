@@ -135,6 +135,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   customize: {
+    only: false,
     entryPoints: '/customize/index.ts',
     outputFileStragies: ['members'],
     commonOptions: {

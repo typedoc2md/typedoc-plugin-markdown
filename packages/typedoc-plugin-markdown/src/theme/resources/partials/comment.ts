@@ -31,5 +31,5 @@ export function comment(
     md.push(tags.join('\n\n'));
   }
 
-  return escapeComments(md.join('\n\n'));
+  return context.helpers.parseComments(escapeComments(md.join('\n\n')));
 }

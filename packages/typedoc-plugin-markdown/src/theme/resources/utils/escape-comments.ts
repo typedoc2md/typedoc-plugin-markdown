@@ -15,6 +15,8 @@ export function escapeComments(str: string) {
   });
 
   // Perform escaping outside of code blocks
+  // - Wrap non-html tags in code blocks
+  // - Escape non-JSX curly braces
   str = str
     .replace(re, (tags) => {
       const htmlRe =

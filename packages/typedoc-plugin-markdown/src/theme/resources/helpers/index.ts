@@ -5,3 +5,5 @@ export { getKeyword } from './get-keyword';
 export { getModifier } from './get-modifier';
 export { getParameterDefaultValue } from './get-parameter-default-value.';
 export { isGroupKind } from './is-group-kind';
+export { parseComments } from './parse-comments';
+export { parseUrl } from './parse-url';

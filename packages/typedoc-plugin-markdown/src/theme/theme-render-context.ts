@@ -44,6 +44,9 @@ export class MarkdownThemeRenderContext {
     return this.theme.getTextFromKindString(kindString, isPlural);
   }
 
+  /**
+   * @deprecated - moved to helpers
+   */
   parseUrl = (url: string) => {
     return encodeURI(url);
   };
