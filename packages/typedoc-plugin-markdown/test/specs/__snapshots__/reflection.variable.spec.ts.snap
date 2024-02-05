@@ -161,11 +161,11 @@ Comments for objectLiteralVariable
 
 ### valueX.valueA
 
-> **valueX.valueA**: \`number\`[]
+> **valueA**: \`number\`[]
 
 ### valueX.valueY
 
-> **valueX.valueY**: (\`z\`: \`string\`) => \`Object\`
+> **valueY**: (\`z\`: \`string\`) => \`Object\`
 
 #### Parameters
 
@@ -189,16 +189,16 @@ Comments for objectLiteralVariable
 >
 > ##### c.a
 >
-> > **c.a**: \`number\` = \`1\`
+> > **a**: \`number\` = \`1\`
 >
 > ##### c.b
 >
-> > **c.b**: \`number\` = \`2\`
+> > **b**: \`number\` = \`2\`
 >
 
 ### valueX.valueZ
 
-> **valueX.valueZ**: \`string\` = \`'foo'\`
+> **valueZ**: \`string\` = \`'foo'\`
 
 ### valueY
 

@@ -48,8 +48,8 @@ export function declarationMemberIdentifier(
   if (reflection.setSignature) {
     name.push(backTicks('set') + ' ');
   }
-
-  name.push(bold(escapeChars(reflection.name)));
+  const nameParts = reflection.name.split('.');
+  name.push(bold(escapeChars(nameParts[nameParts.length - 1])));
 
   if (reflection.typeParameters) {
     name.push(

@@ -81,13 +81,11 @@ Comments for prop
 
 Comments for propReturningObjectDeclaration
 
-#### Type declaration
-
-##### a
+#### propReturningObjectDeclaration.a
 
 > **a**: \`boolean\`
 
-##### b
+#### propReturningObjectDeclaration.b
 
 > **b**: \`string\`
 
@@ -163,45 +161,43 @@ Comments for propReturningSignatureDeclarations
 
 Comments for propWithProps
 
-#### Type declaration
-
-##### callbacks?
+#### propWithProps.callbacks?
 
 > **callbacks**?: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
-##### nestedPropA
+#### propWithProps.nestedPropA
 
 > **nestedPropA**: \`string\`
 
 Comments for nestedPropA
 
-##### nestedPropB
+#### propWithProps.nestedPropB
 
 > **nestedPropB**: \`boolean\`
 
 Comments for nestedPropB
 
-##### nestedPropC
+#### propWithProps.nestedPropC
 
 > **nestedPropC**: \`Object\`
 
 Comments for nestedPropC
 
-##### nestedPropC.nestedPropCA
+#### propWithProps.nestedPropC.nestedPropCA
 
-> **nestedPropC.nestedPropCA**: \`string\`
+> **nestedPropCA**: \`string\`
 
 Comments for nestedPropCA
 
-##### nestedPropD
+#### propWithProps.nestedPropD
 
 > **nestedPropD**: () => \`boolean\`
 
 Comments for nestedPropD
 
-###### Returns
+##### Returns
 
 \`boolean\`
 
@@ -351,13 +347,11 @@ Comments for prop
 
 Comments for propReturningObjectDeclaration
 
-#### Type declaration
-
-##### a
+#### propReturningObjectDeclaration.a
 
 > **a**: \`boolean\`
 
-##### b
+#### propReturningObjectDeclaration.b
 
 > **b**: \`string\`
 
@@ -449,45 +443,43 @@ Comments for propReturningSignatureDeclarations
 
 Comments for propWithProps
 
-#### Type declaration
-
-##### callbacks?
+#### propWithProps.callbacks?
 
 > **callbacks**?: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
-##### nestedPropA
+#### propWithProps.nestedPropA
 
 > **nestedPropA**: \`string\`
 
 Comments for nestedPropA
 
-##### nestedPropB
+#### propWithProps.nestedPropB
 
 > **nestedPropB**: \`boolean\`
 
 Comments for nestedPropB
 
-##### nestedPropC
+#### propWithProps.nestedPropC
 
 > **nestedPropC**: \`Object\`
 
 Comments for nestedPropC
 
-##### nestedPropC.nestedPropCA
+#### propWithProps.nestedPropC.nestedPropCA
 
-> **nestedPropC.nestedPropCA**: \`string\`
+> **nestedPropCA**: \`string\`
 
 Comments for nestedPropCA
 
-##### nestedPropD
+#### propWithProps.nestedPropD
 
 > **nestedPropD**: () => \`boolean\`
 
 Comments for nestedPropD
 
-###### Returns
+##### Returns
 
 \`boolean\`
 

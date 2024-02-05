@@ -5,6 +5,7 @@ export function typeDeclarationMember(
   context: MarkdownThemeRenderContext,
   typeDeclaration: DeclarationReflection,
   headingLevel: number,
+  parentDeclaration?: DeclarationReflection,
 ) {
   const md: string[] = [];
 
@@ -14,9 +15,17 @@ export function typeDeclarationMember(
     } else {
       const declarations = context.helpers.flattenDeclarations(
         typeDeclaration.children,
+        false,
       );
-      declarations.forEach((declaration: DeclarationReflection) => {
-        md.push(context.partials.member(declaration, headingLevel + 1, true));
+      declarations?.forEach((declaration: DeclarationReflection) => {
+        md.push(
+          context.partials.member(
+            declaration,
+            headingLevel + 1,
+            true,
+            parentDeclaration,
+          ),
+        );
       });
     }
   }

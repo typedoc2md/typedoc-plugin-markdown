@@ -2,6 +2,7 @@ import {
   DeclarationReflection,
   IntersectionType,
   ReferenceType,
+  ReflectionKind,
   ReflectionType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
@@ -98,12 +99,26 @@ export function declarationMember(
     }
 
     if (typeDeclaration?.children?.length) {
+      const useHeading =
+        !declaration.kindOf(ReflectionKind.Property) ||
+        context.options.getValue('propertiesFormat') == 'table';
       if (!nested && typeDeclaration?.children?.length) {
+        if (useHeading) {
+          md.push(
+            heading(
+              headingLevel,
+              context.text.getText('label.typeDeclaration'),
+            ),
+          );
+        }
         md.push(
-          heading(headingLevel, context.text.getText('label.typeDeclaration')),
-        );
-        md.push(
-          context.partials.typeDeclarationMember(typeDeclaration, headingLevel),
+          context.partials.typeDeclarationMember(
+            typeDeclaration,
+            useHeading ? headingLevel : headingLevel - 1,
+            declaration.kindOf(ReflectionKind.Property)
+              ? declaration
+              : undefined,
+          ),
         );
       }
     }

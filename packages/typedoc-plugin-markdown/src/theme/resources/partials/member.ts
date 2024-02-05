@@ -12,6 +12,7 @@ export function member(
   reflection: DeclarationReflection,
   headingLevel: number,
   nested = false,
+  parentDeclaration?: DeclarationReflection,
 ): string {
   const md: string[] = [];
 
@@ -23,7 +24,10 @@ export function member(
     !reflection.hasOwnDocument &&
     !(reflection.kind === ReflectionKind.Constructor)
   ) {
-    const memberName = context.partials.memberTitle(reflection);
+    let memberName = context.partials.memberTitle(reflection);
+    if (parentDeclaration?.name) {
+      memberName = `${parentDeclaration.name}.${memberName}`;
+    }
     md.push(heading(headingLevel, memberName));
   }
 
