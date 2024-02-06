@@ -12,10 +12,13 @@ export class GitlabWikiTheme extends MarkdownTheme {
 }
 
 class ThemeRenderContext extends MarkdownThemeRenderContext {
-  parseUrl = (url: string) => {
-    const relativeUrl = url?.replace(/(.*).md/, '$1').replace(/ /g, '-');
-    return encodeURI(
-      relativeUrl?.startsWith('..') ? relativeUrl : './' + relativeUrl,
-    );
+  override helpers = {
+    ...this.helpers,
+    parseUrl: (url: string) => {
+      const relativeUrl = url?.replace(/(.*).md/, '$1').replace(/ /g, '-');
+      return encodeURI(
+        relativeUrl?.startsWith('..') ? relativeUrl : './' + relativeUrl,
+      );
+    },
   };
 }

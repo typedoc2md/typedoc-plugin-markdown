@@ -42,13 +42,6 @@ export class MarkdownThemeRenderContext {
   text = text(this.theme);
 
   /**
-   * @deprecated - moved to helpers
-   */
-  parseUrl = (url: string) => {
-    return encodeURI(url);
-  };
-
-  /**
    * Hook into the TypeDoc rendering system.
    */
   hook = (name: keyof MarkdownRendererHooks) =>

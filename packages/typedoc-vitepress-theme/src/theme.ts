@@ -12,13 +12,16 @@ export class VitepressTheme extends MarkdownTheme {
 }
 
 class ThemeRenderContext extends MarkdownThemeRenderContext {
-  parseUrl = (url: string) => {
-    const urlWithAnchor = url.split('#');
-    if (urlWithAnchor.length > 1) {
-      const anchorPart = slugify(urlWithAnchor[1]);
-      return encodeURI(`${urlWithAnchor[0]}#${anchorPart}`);
-    }
-    return encodeURI(url);
+  override helpers = {
+    ...this.helpers,
+    parseUrl: (url: string) => {
+      const urlWithAnchor = url.split('#');
+      if (urlWithAnchor.length > 1) {
+        const anchorPart = slugify(urlWithAnchor[1]);
+        return encodeURI(`${urlWithAnchor[0]}#${anchorPart}`);
+      }
+      return encodeURI(url);
+    },
   };
 }
 
