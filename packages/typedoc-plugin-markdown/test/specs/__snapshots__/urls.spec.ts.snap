@@ -346,6 +346,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/PrimitiveType.md",
   "type-aliases/PromiseTypeWithObject.md",
   "type-aliases/PromiseTypeWithSymbol.md",
+  "type-aliases/QueryType.md",
   "type-aliases/ReadonlyMappedType.md",
   "type-aliases/StringLiteralType.md",
   "type-aliases/TupleType.md",
@@ -354,6 +355,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/UnionType.md",
   "variables/objectLiteralVariable.md",
   "variables/objectWithSymbol.md",
+  "variables/someQuery.md",
   "variables/stringVariable.md",
   "variables/typeOperatorVariable.md",
 ]
@@ -403,6 +405,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/PrimitiveType.md",
   "type-aliases/PromiseTypeWithObject.md",
   "type-aliases/PromiseTypeWithSymbol.md",
+  "type-aliases/QueryType.md",
   "type-aliases/ReadonlyMappedType.md",
   "type-aliases/StringLiteralType.md",
   "type-aliases/TupleType.md",
@@ -411,6 +414,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/UnionType.md",
   "variables/objectLiteralVariable.md",
   "variables/objectWithSymbol.md",
+  "variables/someQuery.md",
   "variables/stringVariable.md",
   "variables/typeOperatorVariable.md",
 ]

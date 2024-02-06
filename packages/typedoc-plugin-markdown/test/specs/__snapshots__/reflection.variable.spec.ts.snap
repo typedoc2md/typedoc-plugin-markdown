@@ -15,7 +15,7 @@ Comments variable with symbol
 
 ## Source
 
-[variables.ts:50](http://source-url)
+[variables.ts:51](http://source-url)
 "
 `;
 
@@ -38,7 +38,7 @@ Comments variable with symbol
 
 ## Source
 
-[variables.ts:50](http://source-url)
+[variables.ts:51](http://source-url)
 "
 `;
 
@@ -110,6 +110,10 @@ Comments for objectLiteralVariable
 ### \\*
 
 > **\\***: \`string\` = \`'*'\`
+
+### \\*\\*foo\\*\\*
+
+> **\\*\\*foo\\*\\***: \`string\` = \`'**foo**'\`
 
 ### \\*foo\\*
 
@@ -234,6 +238,7 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 \`\`\`ts
 const objectLiteralVariable: {
   *: string;
+  **foo**: string;
   *foo*: string;
   <: string;
   <foo: string;
@@ -270,6 +275,7 @@ Comments for objectLiteralVariable
 | Member | Type | Description |
 | :------ | :------ | :------ |
 | \`*\` | \`string\` | - |
+| \`**foo**\` | \`string\` | - |
 | \`*foo*\` | \`string\` | - |
 | \`<\` | \`string\` | - |
 | \`<foo\` | \`string\` | - |

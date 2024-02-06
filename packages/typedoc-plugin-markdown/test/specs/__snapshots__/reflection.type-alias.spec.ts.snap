@@ -458,6 +458,34 @@ Comments for PrimitiveType
 "
 `;
 
+exports[`Type Alias Reflection should compile query type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type alias: QueryType
+
+> **QueryType**: *typeof* [\`someQuery\`](../variables/someQuery.md)
+
+Comments for query type
+
+## Source
+
+[types.ts:171](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile query type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# QueryType
+
+\`\`\`ts
+type QueryType: typeof someQuery;
+\`\`\`
+
+Comments for query type
+
+## Source
+
+[types.ts:171](http://source-url)
+"
+`;
+
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: ReadonlyMappedType\\<T\\>
 

@@ -22,6 +22,7 @@ export const objectLiteralVariable = {
   '<foo>': '<foo>',
   '*': '*',
   '*foo*': '*foo*',
+  '**foo**': '**foo**',
   _foo_: '_foo_',
   _: '_',
   '|': '|',

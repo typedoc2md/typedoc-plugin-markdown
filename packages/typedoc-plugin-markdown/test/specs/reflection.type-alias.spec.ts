@@ -100,4 +100,8 @@ describe(`Type Alias Reflection`, () => {
       'type-aliases/IndexAccessType.md',
     );
   });
+
+  test(`should compile query type`, () => {
+    expectFileToEqual('reflections', 'members', 'type-aliases/QueryType.md');
+  });
 });

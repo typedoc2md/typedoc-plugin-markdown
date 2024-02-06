@@ -46,12 +46,12 @@ export type IntersectionType = TupleType &
 export type ConditionalType<T> = T extends string
   ? 'string'
   : T extends number
-  ? 'number'
-  : T extends boolean
-  ? 'boolean'
-  : T extends undefined
-  ? 'undefined'
-  : 'object';
+    ? 'number'
+    : T extends boolean
+      ? 'boolean'
+      : T extends undefined
+        ? 'undefined'
+        : 'object';
 
 /**
  * Comments for TypeWithTypeParams
@@ -162,3 +162,10 @@ export type PromiseTypeWithObject = Promise<{
  * Comments for promise type returning symbol
  */
 export type PromiseTypeWithSymbol = Promise<IndexAccessType>;
+
+export const someQuery = 1;
+
+/**
+ * Comments for query type
+ */
+export type QueryType = typeof someQuery;

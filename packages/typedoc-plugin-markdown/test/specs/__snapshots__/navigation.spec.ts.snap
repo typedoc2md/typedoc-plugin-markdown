@@ -1220,6 +1220,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "type-aliases/PromiseTypeWithSymbol.md"
       },
       {
+        "title": "QueryType",
+        "url": "type-aliases/QueryType.md"
+      },
+      {
         "title": "ReadonlyMappedType",
         "url": "type-aliases/ReadonlyMappedType.md"
       },
@@ -1255,6 +1259,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "objectWithSymbol",
         "url": "variables/objectWithSymbol.md"
+      },
+      {
+        "title": "someQuery",
+        "url": "variables/someQuery.md"
       },
       {
         "title": "stringVariable",
