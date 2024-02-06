@@ -6,7 +6,7 @@ import { escapeChars, stripComments } from '../utils';
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
-): string {
+) {
   const md: string[] = [];
 
   const useCodeBlocks = context.options.getValue('useCodeBlocks');
@@ -76,7 +76,7 @@ export function declarationMemberIdentifier(
   if (
     reflection.defaultValue &&
     reflection.defaultValue !== '...' &&
-    !reflection.name.includes(reflection.defaultValue)
+    reflection.name !== reflection.defaultValue?.slice(1, -1)
   ) {
     md.push(` = \`${stripComments(reflection.defaultValue)}\``);
   }

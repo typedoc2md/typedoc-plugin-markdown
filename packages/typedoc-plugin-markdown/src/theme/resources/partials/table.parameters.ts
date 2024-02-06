@@ -1,4 +1,4 @@
-import { ParameterReflection, ReflectionKind } from 'typedoc';
+import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, table } from '../markdown';
 import { formatTableDescriptionCol, formatTableTypeCol } from '../utils';
@@ -6,7 +6,7 @@ import { formatTableDescriptionCol, formatTableTypeCol } from '../utils';
 export function parametersTable(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
-): string {
+) {
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
@@ -71,9 +71,11 @@ export function parametersTable(
     row.push(`${rest}${backTicks(parameter.name)}${optional}`);
 
     if (parameter.type) {
-      row.push(
-        formatTableTypeCol(context.partials.someType(parameter.type), false),
-      );
+      const displayType =
+        parameter.type instanceof ReflectionType
+          ? context.partials.reflectionType(parameter.type, true)
+          : context.partials.someType(parameter.type);
+      row.push(formatTableTypeCol(displayType, false));
     }
 
     if (showDefaults) {

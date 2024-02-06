@@ -1,4 +1,4 @@
-import { ParameterReflection, ReflectionKind } from 'typedoc';
+import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, bold } from '../markdown';
 import { escapeChars } from '../utils';
@@ -6,7 +6,7 @@ import { escapeChars } from '../utils';
 export function parametersList(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
-): string {
+) {
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
@@ -55,7 +55,7 @@ export function parametersList(
 
     const identifier: string[] = [bold(name)];
 
-    if (parameter.type) {
+    if (parameter.type && !(parameter.type instanceof ReflectionType)) {
       identifier.push(': ' + context.partials.someType(parameter.type));
     }
 

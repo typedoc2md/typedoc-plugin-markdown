@@ -365,7 +365,7 @@ This is the second signature of a function with multiple signatures.
 
 ### Parameters
 
-• **value**: \`Object\`
+• **value**
 
 An object containing the name value.
 
@@ -440,7 +440,7 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 ## Parameters
 
-• **\\_\\_namedParameters**: \`Object\`= \`{}\`
+• **\\_\\_namedParameters**= \`{}\`
 
 various options
 
@@ -497,7 +497,7 @@ Some nested params.
 
 ## Parameters
 
-• **params**: \`Object\`
+• **params**
 
 The parameters passed to the method.
 
@@ -505,15 +505,15 @@ The parameters passed to the method.
 
 The name of the new group.
 
-• **params\\.nestedObj**: \`Object\`
+• **params\\.nestedObj**
 
 A nested object.
 
 • **params\\.nestedObj\\.name?**: \`string\`
 
-• **params\\.nestedObj\\.obj?**: \`Object\`
+• **params\\.nestedObj\\.obj?**
 
-• **params\\.nestedObj\\.obj\\.name?**: () => \`void\`
+• **params\\.nestedObj\\.obj\\.name?**
 
 • **params\\.nestedObj\\.value?**: \`number\`
 
