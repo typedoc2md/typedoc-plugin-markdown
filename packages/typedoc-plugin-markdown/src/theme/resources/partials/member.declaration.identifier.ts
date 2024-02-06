@@ -76,7 +76,7 @@ export function declarationMemberIdentifier(
   if (
     reflection.defaultValue &&
     reflection.defaultValue !== '...' &&
-    reflection.name !== reflection.defaultValue?.slice(1, -1)
+    !reflection.name.includes(reflection.defaultValue)
   ) {
     md.push(` = \`${stripComments(reflection.defaultValue)}\``);
   }
