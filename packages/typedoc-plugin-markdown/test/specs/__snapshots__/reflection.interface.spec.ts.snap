@@ -31,7 +31,7 @@ Comments for some tag
 
 ### functionProp
 
-> **functionProp**: (\`s\`: \`string\`) => \`boolean\`
+> **functionProp**: (\`s\`) => \`boolean\`
 
 Comments for functionProper
 
@@ -145,7 +145,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\`
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
 
 Comments for propReturningSignatureDeclarations
 
@@ -224,17 +224,17 @@ Comments for BasicInterface
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
-| \`propReturningObjectDeclaration\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } | Comments for propReturningObjectDeclaration |
+| \`propReturningObjectDeclaration\` | \`Object\` | Comments for propReturningObjectDeclaration |
 | \`propReturningObjectDeclaration.a\` | \`boolean\` | - |
 | \`propReturningObjectDeclaration.b\` | \`string\` | - |
-| \`propReturningObjectDeclarations\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } & \\{   \`c\`: \`boolean\`;   \`d\`: \`string\`;   } | Comments for propReturningObjectDeclarations |
+| \`propReturningObjectDeclarations\` | \`Object\` & \`Object\` | Comments for propReturningObjectDeclarations |
 | \`propReturningSignatureDeclaration\` | () => \`any\` | Comments for propReturningSignatureDeclaration |
 | \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\` | Comments for propReturningSignatureDeclarations |
-| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps |
+| \`propWithProps\` | \`Object\` | Comments for propWithProps |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
-| \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC |
+| \`propWithProps.nestedPropC\` | \`Object\` | Comments for nestedPropC |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA |
 | \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD |
 "
@@ -285,7 +285,7 @@ Comments for some tag
 
 ### functionProp
 
-> **functionProp**: (\`s\`: \`string\`) => \`boolean\`
+> **functionProp**: (\`s\`) => \`boolean\`
 
 Comments for functionProper
 
@@ -423,7 +423,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\`
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
 
 Comments for propReturningSignatureDeclarations
 
@@ -511,17 +511,17 @@ Comments for ExtendedInterface
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).\`prop\` |
-| \`propReturningObjectDeclaration\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } | Comments for propReturningObjectDeclaration | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclaration\` |
+| \`propReturningObjectDeclaration\` | \`Object\` | Comments for propReturningObjectDeclaration | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclaration\` |
 | \`propReturningObjectDeclaration.a\` | \`boolean\` | - | - |
 | \`propReturningObjectDeclaration.b\` | \`string\` | - | - |
-| \`propReturningObjectDeclarations\` | \\{   \`a\`: \`boolean\`;   \`b\`: \`string\`;   } & \\{   \`c\`: \`boolean\`;   \`d\`: \`string\`;   } | Comments for propReturningObjectDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclarations\` |
+| \`propReturningObjectDeclarations\` | \`Object\` & \`Object\` | Comments for propReturningObjectDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclarations\` |
 | \`propReturningSignatureDeclaration\` | () => \`any\` | Comments for propReturningSignatureDeclaration | [\`BasicInterface\`](BasicInterface.md).\`propReturningSignatureDeclaration\` |
 | \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningSignatureDeclarations\` |
-| \`propWithProps\` | \\{   \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;   \`nestedPropA\`: \`string\`;   \`nestedPropB\`: \`boolean\`;   \`nestedPropC\`: \\{      \`nestedPropCA\`: \`string\`;   };   \`nestedPropD\`: () => \`boolean\`;   } | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
+| \`propWithProps\` | \`Object\` | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
-| \`propWithProps.nestedPropC\` | \\{   \`nestedPropCA\`: \`string\`;   } | Comments for nestedPropC | - |
+| \`propWithProps.nestedPropC\` | \`Object\` | Comments for nestedPropC | - |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA | - |
 | \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD | - |
 "
@@ -594,7 +594,7 @@ Description for prop someProp
 
 ### ~~someEvent?~~
 
-> **someEvent**?: (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\`
+> **someEvent**?: (\`eventParam\`) => \`void\`
 
 Description for event someEvent
 

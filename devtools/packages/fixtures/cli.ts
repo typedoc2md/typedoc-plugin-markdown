@@ -28,7 +28,8 @@ async function main() {
 
   const fixtureCount = fixturesToBuild.reduce(
     (prev, curr) =>
-      prev + curr[1].options.length * (curr[1].outputFileStragies?.length || 2),
+      prev +
+      curr[1].options.length * (curr[1].outputFileStrategies?.length || 2),
     0,
   );
 
@@ -39,6 +40,7 @@ async function main() {
   fixturesToBuild.forEach(([key, config]) => {
     const outputFileStrategies: ('members' | 'modules')[] =
       config.outputFileStrategies || ['members', 'modules'];
+
     writeHtml(key, config.entryPoints);
     outputFileStrategies.forEach((outputFileStrategy) => {
       config.options.forEach((optionGroup, index: number) => {

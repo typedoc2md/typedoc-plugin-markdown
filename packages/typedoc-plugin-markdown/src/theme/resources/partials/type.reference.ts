@@ -5,8 +5,7 @@ import { backTicks } from '../markdown';
 export function referenceType(
   context: MarkdownThemeRenderContext,
   referenceType: ReferenceType,
-  foreCollpase = false,
-): string {
+) {
   if (
     referenceType.reflection ||
     (referenceType.name && referenceType.typeArguments)
@@ -32,10 +31,7 @@ export function referenceType(
     }
     if (referenceType.typeArguments && referenceType.typeArguments.length) {
       reflection.push(
-        context.partials.typeArguments(
-          referenceType.typeArguments,
-          foreCollpase,
-        ),
+        context.partials.typeArguments(referenceType.typeArguments),
       );
     }
     return reflection.join('');

@@ -61,6 +61,14 @@ describe(`Function Reflection`, () => {
     );
   });
 
+  test(`should compile function returning a string`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningAString.md',
+    );
+  });
+
   test(`should compile function returning an object`, () => {
     expectFileToEqual(
       'reflections',

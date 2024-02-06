@@ -14,8 +14,7 @@ export function functionType(
           .join(', ')}\\>`
       : [];
     const showParameterType =
-      forceParameterType ||
-      !context.options.getValue('hideParameterTypesInTitle');
+      forceParameterType || context.options.getValue('expandParameters');
 
     const params = fn.parameters
       ? fn.parameters.map((param) => {

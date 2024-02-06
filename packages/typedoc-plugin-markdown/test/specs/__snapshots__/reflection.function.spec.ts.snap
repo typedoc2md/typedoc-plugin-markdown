@@ -3,7 +3,7 @@
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAFunction()
 
-> **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`: \`string\`) => \`boolean\`
+> **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
 
 Comments for function
 
@@ -26,7 +26,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:123](http://source-url)
+[functions.ts:132](http://source-url)
 "
 `;
 
@@ -62,7 +62,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:123](http://source-url)
+[functions.ts:132](http://source-url)
 "
 `;
 
@@ -86,7 +86,7 @@ Return comments
 
 ## Source
 
-[functions.ts:131](http://source-url)
+[functions.ts:140](http://source-url)
 "
 `;
 
@@ -94,9 +94,7 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 "# functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise<{
-  prop: string;
-}>
+functionReturningAPromise(): Promise<Object>
 \`\`\`
 
 Comments for function
@@ -107,14 +105,54 @@ Comments for function
 
 Return comments
 
-> | Member | Type | Description |
-> | :------ | :------ | :------ |
-> | \`prop\` | \`string\` | - |
+> | Member | Type |
+> | :------ | :------ |
+> | \`prop\` | \`string\` |
 >
 
 ## Source
 
-[functions.ts:131](http://source-url)
+[functions.ts:140](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function returning a string: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionReturningAString()
+
+> **functionReturningAString**(): \`string\`
+
+Comments for function
+
+## Returns
+
+\`string\`
+
+Return comments
+
+## Source
+
+[functions.ts:125](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function returning a string: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# functionReturningAString()
+
+\`\`\`ts
+functionReturningAString(): string
+\`\`\`
+
+Comments for function
+
+## Returns
+
+\`string\`
+
+Return comments
+
+## Source
+
+[functions.ts:125](http://source-url)
 "
 `;
 
@@ -131,18 +169,17 @@ Comments for function
 
 Return comments
 
-> ### x
->
-> > **x**: \`number\` = \`1\`
->
-> ### y
->
-> > **y**: \`number\` = \`2\`
->
+### x
+
+> **x**: \`number\` = \`1\`
+
+### y
+
+> **y**: \`number\` = \`2\`
 
 ## Source
 
-[functions.ts:116](http://source-url)
+[functions.ts:117](http://source-url)
 "
 `;
 
@@ -150,10 +187,7 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 "# functionReturningAnObject()
 
 \`\`\`ts
-functionReturningAnObject(): {
-  x: number;
-  y: number;
-}
+functionReturningAnObject(): Object
 \`\`\`
 
 Comments for function
@@ -164,15 +198,14 @@ Comments for function
 
 Return comments
 
-> | Member | Type | Description |
-> | :------ | :------ | :------ |
-> | \`x\` | \`number\` | - |
-> | \`y\` | \`number\` | - |
->
+| Member | Type |
+| :------ | :------ |
+| \`x\` | \`number\` |
+| \`y\` | \`number\` |
 
 ## Source
 
-[functions.ts:116](http://source-url)
+[functions.ts:117](http://source-url)
 "
 `;
 
@@ -322,7 +355,7 @@ The name value.
 
 ### Source
 
-[functions.ts:94](http://source-url)
+[functions.ts:95](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -346,7 +379,7 @@ A value of the object.
 
 ### Source
 
-[functions.ts:102](http://source-url)
+[functions.ts:103](http://source-url)
 "
 `;
 
@@ -373,7 +406,7 @@ This is the first signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:94](http://source-url)
+[functions.ts:95](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -387,7 +420,7 @@ This is the second signature of a function with multiple signatures.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`value\` | \\{   \`name\`: \`string\`;   } | An object containing the name value. |
+| \`value\` | \`Object\` | An object containing the name value. |
 | \`value.name\` | \`string\` | A value of the object. |
 
 ### Returns
@@ -396,7 +429,7 @@ This is the second signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:102](http://source-url)
+[functions.ts:103](http://source-url)
 "
 `;
 
@@ -425,7 +458,7 @@ Another param comment
 
 ## Source
 
-[functions.ts:74](http://source-url)
+[functions.ts:75](http://source-url)
 "
 `;
 
@@ -440,7 +473,7 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`__namedParameters\` | \\{   \`bar\`: \`number\`;   \`foo\`: \`number\`;   } | various options |
+| \`__namedParameters\` | \`Object\` | various options |
 | \`__namedParameters.bar\`? | \`number\` | - |
 | \`__namedParameters.foo\`? | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
@@ -451,14 +484,14 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 
 ## Source
 
-[functions.ts:74](http://source-url)
+[functions.ts:75](http://source-url)
 "
 `;
 
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithNestedParameters()
 
-> **functionWithNestedParameters**(\`params\`, \`context\`): \`boolean\`
+> **functionWithNestedParameters**(\`params\`, \`context\`, \`somethingElse\`?): \`boolean\`
 
 Some nested params.
 
@@ -476,19 +509,21 @@ The name of the new group.
 
 A nested object.
 
-• **params\\.nestedObj\\.name**: \`string\`
+• **params\\.nestedObj\\.name?**: \`string\`
 
-• **params\\.nestedObj\\.obj**: \`Object\`
+• **params\\.nestedObj\\.obj?**: \`Object\`
 
-• **params\\.nestedObj\\.obj\\.name**: () => \`void\`
+• **params\\.nestedObj\\.obj\\.name?**: () => \`void\`
 
-• **params\\.nestedObj\\.value**: \`number\`
+• **params\\.nestedObj\\.value?**: \`number\`
 
 • **params\\.parent?**: \`number\`
 
-• **context**: \`any\`
+• **context?**: \`any\`
 
 The context of the method call.
+
+• **somethingElse?**: \`string\`
 
 ## Returns
 
@@ -504,7 +539,10 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 "# functionWithNestedParameters()
 
 \`\`\`ts
-functionWithNestedParameters(params, context): boolean
+functionWithNestedParameters(
+   params, 
+   context, 
+   somethingElse?): boolean
 \`\`\`
 
 Some nested params.
@@ -513,15 +551,16 @@ Some nested params.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \\{   \`name\`: \`string\`;   \`nestedObj\`: \\{      \`name\`: \`string\`;      \`obj\`: \\{         \`name\`: () => \`void\`;      };      \`value\`: \`number\`;   };   \`parent\`: \`number\`;   } | The parameters passed to the method. |
+| \`params\` | \`Object\` | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
-| \`params.nestedObj\` | \\{   \`name\`: \`string\`;   \`obj\`: \\{      \`name\`: () => \`void\`;   };   \`value\`: \`number\`;   } | A nested object. |
-| \`params.nestedObj.name\` | \`string\` | - |
-| \`params.nestedObj.obj\` | \\{   \`name\`: () => \`void\`;   } | - |
-| \`params.nestedObj.obj.name\` | () => \`void\` | - |
-| \`params.nestedObj.value\` | \`number\` | - |
+| \`params.nestedObj\` | \`Object\` | A nested object. |
+| \`params.nestedObj.name\`? | \`string\` | - |
+| \`params.nestedObj.obj\`? | \`Object\` | - |
+| \`params.nestedObj.obj.name\`? | () => \`void\` | - |
+| \`params.nestedObj.value\`? | \`number\` | - |
 | \`params.parent\`? | \`number\` | - |
-| \`context\` | \`any\` | The context of the method call. |
+| \`context\`? | \`any\` | The context of the method call. |
+| \`somethingElse\`? | \`string\` | - |
 
 ## Returns
 
@@ -680,7 +719,7 @@ Comments for T
 
 ## Source
 
-[functions.ts:87](http://source-url)
+[functions.ts:88](http://source-url)
 "
 `;
 
@@ -706,6 +745,6 @@ Function with type parameters
 
 ## Source
 
-[functions.ts:87](http://source-url)
+[functions.ts:88](http://source-url)
 "
 `;

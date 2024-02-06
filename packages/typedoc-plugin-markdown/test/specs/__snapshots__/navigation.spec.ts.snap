@@ -1290,6 +1290,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "functions/functionReturningAPromise.md"
       },
       {
+        "title": "functionReturningAString",
+        "url": "functions/functionReturningAString.md"
+      },
+      {
         "title": "functionReturningAnObject",
         "url": "functions/functionReturningAnObject.md"
       },

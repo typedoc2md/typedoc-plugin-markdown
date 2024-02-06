@@ -129,7 +129,7 @@ comment for y.y
 
 ### y.z
 
-> **z**: (\`x\`: \`string\`) => \`string\`
+> **z**: (\`x\`) => \`string\`
 
 comment for y.z
 
@@ -143,7 +143,7 @@ comment for y.z
 
 ### z
 
-> **z**: (\`x\`: \`string\`) => \`string\`
+> **z**: (\`x\`) => \`string\`
 
 #### Parameters
 
@@ -207,18 +207,7 @@ exports[`Type Alias Reflection should compile external literal type: (Output Fil
 "# LiteralType
 
 \`\`\`ts
-type LiteralType: {
-  x: string;
-  y: {
-     x: string;
-     y: boolean | string;
-     z: (x) => string;
-  };
-  z: (x) => string;
-  get set accessorA: Promise<string>;
-  get set accessorB: string;
-  someFunction: Promise<any>;
-};
+type LiteralType: Object;
 \`\`\`
 
 Comments for LiteralType
@@ -228,7 +217,7 @@ Comments for LiteralType
 | Member | Type | Description |
 | :------ | :------ | :------ |
 | \`x\` | \`string\` | comment for x |
-| \`y\` | \\{   \`x\`: \`string\`;   \`y\`: \`boolean\` \\| \`string\`;   \`z\`: (\`x\`) => \`string\`;   } | comment for y |
+| \`y\` | \`Object\` | comment for y |
 | \`y.x\` | \`string\` | comment for y.x |
 | \`y.y\` | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`) => \`string\` | comment for y.z |
@@ -276,7 +265,7 @@ Comments for ExternalReferenceType
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: FunctionType
 
-> **FunctionType**: (\`name\`: \`string\`, \`value\`: \`unknown\`) => \`void\`
+> **FunctionType**: (\`name\`, \`value\`) => \`void\`
 
 Comments for FunctionType
 
@@ -373,18 +362,16 @@ exports[`Type Alias Reflection should compile intersection type: (Output File St
 "# IntersectionType
 
 \`\`\`ts
-type IntersectionType: TupleType & ArrayType & {
-  bar: number;
-};
+type IntersectionType: TupleType & ArrayType & Object;
 \`\`\`
 
 Comments for IntersectionType
 
 ## Type declaration
 
-| Member | Type | Description |
-| :------ | :------ | :------ |
-| \`bar\` | \`number\` | - |
+| Member | Type |
+| :------ | :------ |
+| \`bar\` | \`number\` |
 
 ## Source
 
@@ -644,9 +631,7 @@ exports[`Type Alias Reflection should compile union type: (Output File Strategy 
 "# UnionType
 
 \`\`\`ts
-type UnionType: string | boolean | {
-  z: string;
-};
+type UnionType: string | boolean | Object;
 \`\`\`
 
 Comments for UnionType

@@ -64,6 +64,7 @@ export function functionWithNestedParameters(
     };
   },
   context: any,
+  somethingElse?: string,
 ) {
   return true;
 }
@@ -115,6 +116,14 @@ export function functionWithMultipleSignatures(): string {
  */
 export function functionReturningAnObject() {
   return { x: 1, y: 2 };
+}
+
+/**
+ * Comments for function
+ * @returns Return comments
+ */
+export function functionReturningAString() {
+  return 'hello';
 }
 
 /**

@@ -275,6 +275,36 @@ This option should be set when a full object representation is preferred.
 
 ___
 
+### expandParameters
+
+<Callout>Expand parameters in signature parentheses to display type information.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default parameters in signature definitions only display the parameter name so the output is more concise.
+
+This option should be set when a full type representation is preferred.
+
+This is the oppisite of TypeDoc's [hideParameterTypesInTitle](https://typedoc.org/options/output/#hideparametertypesintitle) output option.
+
+**Default**
+
+`someFunction(param1, param2)`
+
+**Expanded**
+
+`someFunction(param1: string, param2: boolean)`
+
+
+```json filename="typedoc.json"
+{
+  "expandParameters": false
+}
+
+```
+
+___
+
 ### parametersFormat
 
 <Callout>Specify the render style of parameter and type parameter groups.</Callout>

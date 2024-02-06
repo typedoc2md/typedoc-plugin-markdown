@@ -1,7 +1,7 @@
 import { TypeParameterReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, table } from '../markdown';
-import { formatTableDescriptionCol, stripLineBreaks } from '../utils';
+import { formatTableDescriptionCol } from '../utils';
 
 export function typeParametersTable(
   context: MarkdownThemeRenderContext,
@@ -50,10 +50,8 @@ export function typeParametersTable(
     if (hasComments) {
       if (typeParameter.comment) {
         row.push(
-          stripLineBreaks(
-            formatTableDescriptionCol(
-              context.partials.comment(typeParameter.comment),
-            ),
+          formatTableDescriptionCol(
+            context.partials.comment(typeParameter.comment),
           ),
         );
       } else {

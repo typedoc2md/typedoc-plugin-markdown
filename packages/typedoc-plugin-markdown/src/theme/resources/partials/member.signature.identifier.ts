@@ -54,12 +54,7 @@ export function signatureMemberIdentifier(
     );
   }
 
-  md.push(
-    context.partials.signatureParameters(
-      signature.parameters || [],
-      useCodeBlocks,
-    ),
-  );
+  md.push(context.partials.signatureParameters(signature.parameters || []));
 
   if (signature.type) {
     md.push(`: ${context.partials.someType(signature.type)}`);

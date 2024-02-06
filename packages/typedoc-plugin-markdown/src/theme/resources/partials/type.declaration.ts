@@ -5,7 +5,9 @@ import { backTicks } from '../markdown';
 export function declarationType(
   context: MarkdownThemeRenderContext,
   declarationReflection: DeclarationReflection,
-): string {
+) {
+  const shouldFormat = context.options.getValue('useCodeBlocks');
+
   if (declarationReflection.indexSignature || declarationReflection.children) {
     let indexSignature = '';
     const declarationIndexSignature = declarationReflection.indexSignature;
@@ -42,14 +44,18 @@ export function declarationType(
         const theType = context.helpers.getDeclarationType(obj) as SomeType;
 
         const typeString = context.partials.someType(theType);
-
-        return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
+        if (shouldFormat) {
+          return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
+        }
+        return `${name.join(' ')}: ${indentBlock(typeString, true)};`;
       });
 
     if (indexSignature) {
       types?.unshift(indexSignature);
     }
-    return types ? `\\{\n${types.join('')}  }` : '\\{}';
+    return types
+      ? `\\{${shouldFormat ? '\n' : ''}${types.join('')}  }`
+      : '\\{}';
   }
   return '\\{}';
 }

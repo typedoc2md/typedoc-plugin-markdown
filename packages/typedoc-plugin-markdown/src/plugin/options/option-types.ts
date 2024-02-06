@@ -17,6 +17,7 @@ declare module 'typedoc' {
     excludeGroups: boolean;
     useCodeBlocks: boolean;
     expandObjects: boolean;
+    expandParameters: boolean;
     parametersFormat: 'list' | 'table';
     propertiesFormat: 'list' | 'table';
     enumMembersFormat: 'list' | 'table';
@@ -44,6 +45,7 @@ export interface PluginOptions {
   excludeGroups: boolean;
   useCodeBlocks: boolean;
   expandObjects: boolean;
+  expandParameters: boolean;
   parametersFormat: 'list' | 'table';
   propertiesFormat: 'list' | 'table';
   enumMembersFormat: 'list' | 'table';

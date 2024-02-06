@@ -1,0 +1,1119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Objects And Params should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Interface: BasicInterface
+
+Comments for BasicInterface
+
+## Extended by
+
+- [\`ExtendedInterface\`](ExtendedInterface.md)
+
+## Properties
+
+### ~~deprecatedProp~~
+
+> **deprecatedProp**: \`string\`
+
+#### Deprecated
+
+This prop is deprecte
+
+#### Some Tag
+
+Comments for some tag
+
+***
+
+### functionProp
+
+> **functionProp**: (\`s\`: \`string\`) => \`boolean\`
+
+Comments for functionProper
+
+#### Parameters
+
+• **s**: \`string\`
+
+Comment for param s
+
+#### Returns
+
+\`boolean\`
+
+***
+
+### optionalProp?
+
+> **optionalProp**?: \`string\`
+
+Comments for optional prop
+
+***
+
+### prop
+
+> **prop**: \`string\`
+
+Comments for prop
+
+***
+
+### propReturningObjectDeclaration
+
+> **propReturningObjectDeclaration**: \\{\`a\`: \`boolean\`;\`b\`: \`string\`;  }
+
+Comments for propReturningObjectDeclaration
+
+#### propReturningObjectDeclaration.a
+
+> **a**: \`boolean\`
+
+#### propReturningObjectDeclaration.b
+
+> **b**: \`string\`
+
+***
+
+### propReturningObjectDeclarations
+
+> **propReturningObjectDeclarations**: \\{\`a\`: \`boolean\`;\`b\`: \`string\`;  } & \\{\`c\`: \`boolean\`;\`d\`: \`string\`;  }
+
+Comments for propReturningObjectDeclarations
+
+#### Type declaration
+
+##### a
+
+> **a**: \`boolean\`
+
+##### b
+
+> **b**: \`string\`
+
+#### Type declaration
+
+##### c
+
+> **c**: \`boolean\`
+
+##### d
+
+> **d**: \`string\`
+
+***
+
+### propReturningSignatureDeclaration
+
+> **propReturningSignatureDeclaration**: () => \`any\`
+
+Comments for propReturningSignatureDeclaration
+
+#### Returns
+
+\`any\`
+
+***
+
+### propReturningSignatureDeclarations
+
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\`
+
+Comments for propReturningSignatureDeclarations
+
+***
+
+### propWithProps
+
+> **propWithProps**: \\{\`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;\`nestedPropA\`: \`string\`;\`nestedPropB\`: \`boolean\`;\`nestedPropC\`: \\{\`nestedPropCA\`: \`string\`;  };\`nestedPropD\`: () => \`boolean\`;  }
+
+Comments for propWithProps
+
+#### propWithProps.callbacks?
+
+> **callbacks**?: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+
+Comments for callbacks
+
+#### propWithProps.nestedPropA
+
+> **nestedPropA**: \`string\`
+
+Comments for nestedPropA
+
+#### propWithProps.nestedPropB
+
+> **nestedPropB**: \`boolean\`
+
+Comments for nestedPropB
+
+#### propWithProps.nestedPropC
+
+> **nestedPropC**: \\{\`nestedPropCA\`: \`string\`;  }
+
+Comments for nestedPropC
+
+#### propWithProps.nestedPropC.nestedPropCA
+
+> **nestedPropCA**: \`string\`
+
+Comments for nestedPropCA
+
+#### propWithProps.nestedPropD
+
+> **nestedPropD**: () => \`boolean\`
+
+Comments for nestedPropD
+
+##### Returns
+
+\`boolean\`
+"
+`;
+
+exports[`Objects And Params should compile basic interface: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Interface: BasicInterface
+
+Comments for BasicInterface
+
+## Extended by
+
+- [\`ExtendedInterface\`](ExtendedInterface.md)
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag |
+| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s |
+| \`optionalProp?\` | \`string\` | Comments for optional prop |
+| \`prop\` | \`string\` | Comments for prop |
+| \`propReturningObjectDeclaration\` | \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; } | Comments for propReturningObjectDeclaration |
+| \`propReturningObjectDeclaration.a\` | \`boolean\` | - |
+| \`propReturningObjectDeclaration.b\` | \`string\` | - |
+| \`propReturningObjectDeclarations\` | \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; } & \\{ \`c\`: \`boolean\`; \`d\`: \`string\`; } | Comments for propReturningObjectDeclarations |
+| \`propReturningSignatureDeclaration\` | () => \`any\` | Comments for propReturningSignatureDeclaration |
+| \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
+| \`propWithProps\` | \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; }; \`nestedPropD\`: () => \`boolean\`; } | Comments for propWithProps |
+| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
+| \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
+| \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
+| \`propWithProps.nestedPropC\` | \\{ \`nestedPropCA\`: \`string\`; } | Comments for nestedPropC |
+| \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA |
+| \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD |
+"
+`;
+
+exports[`Objects And Params should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionReturningAPromise()
+
+> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
+
+Comments for function
+
+## Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
+
+Return comments
+
+> ### prop
+>
+> > **prop**: \`string\`
+>
+
+## Source
+
+[functions.ts:140](http://source-url)
+"
+`;
+
+exports[`Objects And Params should compile function returning a promise: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# functionReturningAPromise()
+
+\`\`\`ts
+functionReturningAPromise(): Promise<Object>
+\`\`\`
+
+Comments for function
+
+## Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
+
+Return comments
+
+> | Member | Type |
+> | :------ | :------ |
+> | \`prop\` | \`string\` |
+>
+
+## Source
+
+[functions.ts:140](http://source-url)
+"
+`;
+
+exports[`Objects And Params should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionReturningAnObject()
+
+> **functionReturningAnObject**(): \`Object\`
+
+Comments for function
+
+## Returns
+
+\`Object\`
+
+Return comments
+
+### x
+
+> **x**: \`number\` = \`1\`
+
+### y
+
+> **y**: \`number\` = \`2\`
+
+## Source
+
+[functions.ts:117](http://source-url)
+"
+`;
+
+exports[`Objects And Params should compile function returning an object: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# functionReturningAnObject()
+
+\`\`\`ts
+functionReturningAnObject(): Object
+\`\`\`
+
+Comments for function
+
+## Returns
+
+\`Object\`
+
+Return comments
+
+| Member | Type |
+| :------ | :------ |
+| \`x\` | \`number\` |
+| \`y\` | \`number\` |
+
+## Source
+
+[functions.ts:117](http://source-url)
+"
+`;
+
+exports[`Objects And Params should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithNestedParameters()
+
+> **functionWithNestedParameters**(\`params\`, \`context\`, \`somethingElse\`?): \`boolean\`
+
+Some nested params.
+
+## Parameters
+
+• **params**: \`Object\`
+
+The parameters passed to the method.
+
+• **params\\.name**: \`string\`
+
+The name of the new group.
+
+• **params\\.nestedObj**: \`Object\`
+
+A nested object.
+
+• **params\\.nestedObj\\.name?**: \`string\`
+
+• **params\\.nestedObj\\.obj?**: \`Object\`
+
+• **params\\.nestedObj\\.obj\\.name?**: () => \`void\`
+
+• **params\\.nestedObj\\.value?**: \`number\`
+
+• **params\\.parent?**: \`number\`
+
+• **context?**: \`any\`
+
+The context of the method call.
+
+• **somethingElse?**: \`string\`
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:54](http://source-url)
+"
+`;
+
+exports[`Objects And Params should compile function with nested parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# functionWithNestedParameters()
+
+\`\`\`ts
+functionWithNestedParameters(
+   params, 
+   context, 
+   somethingElse?): boolean
+\`\`\`
+
+Some nested params.
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`params\` | \`Object\` | The parameters passed to the method. |
+| \`params.name\` | \`string\` | The name of the new group. |
+| \`params.nestedObj\` | \`Object\` | A nested object. |
+| \`params.nestedObj.name\`? | \`string\` | - |
+| \`params.nestedObj.obj\`? | \`Object\` | - |
+| \`params.nestedObj.obj.name\`? | () => \`void\` | - |
+| \`params.nestedObj.value\`? | \`number\` | - |
+| \`params.parent\`? | \`number\` | - |
+| \`context\`? | \`any\` | The context of the method call. |
+| \`somethingElse\`? | \`string\` | - |
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:54](http://source-url)
+"
+`;
+
+exports[`Objects And Params should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type alias: IntersectionType
+
+> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \\{\`bar\`: \`number\`;  }
+
+Comments for IntersectionType
+
+## Type declaration
+
+### bar
+
+> **bar**: \`number\`
+"
+`;
+
+exports[`Objects And Params should compile intersection type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type alias: IntersectionType
+
+\`\`\`ts
+type IntersectionType: TupleType & ArrayType & {
+  bar: number;
+};
+\`\`\`
+
+Comments for IntersectionType
+
+## Type declaration
+
+### bar
+
+\`\`\`ts
+bar: number;
+\`\`\`
+"
+`;
+
+exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type alias: LiteralType
+
+> **LiteralType**: \\{\`x\`: \`string\`;\`y\`: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`;  };\`z\`: (\`x\`: \`string\`) => \`string\`;get set \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>;get set \`accessorB\`: \`string\`;\`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>;  }
+
+Comments for LiteralType
+
+## Type declaration
+
+### x
+
+> **x**: \`string\`
+
+comment for x
+
+### y
+
+> **y**: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`;  }
+
+comment for y
+
+### y.x
+
+> **x**: \`string\`
+
+comment for y.x
+
+### y.y
+
+> **y**: \`boolean\` \\| \`string\`
+
+comment for y.y
+
+### y.z
+
+> **z**: (\`x\`: \`string\`) => \`string\`
+
+comment for y.z
+
+#### Parameters
+
+• **x**: \`string\`
+
+#### Returns
+
+\`string\`
+
+### z
+
+> **z**: (\`x\`: \`string\`) => \`string\`
+
+#### Parameters
+
+• **x**: \`string\`
+
+#### Returns
+
+\`string\`
+
+### accessorA
+
+> **\`get\`** **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+Comments for accessorA getter
+
+> **\`set\`** **accessorA**(\`x\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>): \`void\`
+
+Comments for accessorA setter
+
+#### Parameters
+
+• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+#### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+### accessorB
+
+> **\`get\`** **accessorB**(): \`string\`
+
+> **\`set\`** **accessorB**(\`x\`: \`string\`): \`void\`
+
+#### Parameters
+
+• **x**: \`string\`
+
+#### Returns
+
+\`string\`
+
+### someFunction()
+
+Comments for someFunction
+
+#### Parameters
+
+• **param**: \`string\`
+
+#### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
+"
+`;
+
+exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type alias: LiteralType
+
+\`\`\`ts
+type LiteralType: {
+  x: string;
+  y: {
+     x: string;
+     y: boolean | string;
+     z: (x: string) => string;
+  };
+  z: (x: string) => string;
+  get set accessorA: Promise<string>;
+  get set accessorB: string;
+  someFunction: Promise<any>;
+};
+\`\`\`
+
+Comments for LiteralType
+
+## Type declaration
+
+### x
+
+\`\`\`ts
+x: string;
+\`\`\`
+
+comment for x
+
+### y
+
+\`\`\`ts
+y: {
+  x: string;
+  y: boolean | string;
+  z: (x: string) => string;
+};
+\`\`\`
+
+comment for y
+
+### y.x
+
+\`\`\`ts
+x: string;
+\`\`\`
+
+comment for y.x
+
+### y.y
+
+\`\`\`ts
+y: boolean | string;
+\`\`\`
+
+comment for y.y
+
+### y.z
+
+\`\`\`ts
+z: (x: string) => string;
+\`\`\`
+
+comment for y.z
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+#### Returns
+
+\`string\`
+
+### z
+
+\`\`\`ts
+z: (x: string) => string;
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+#### Returns
+
+\`string\`
+
+### accessorA
+
+\`\`\`ts
+get accessorA(): Promise<string>
+\`\`\`
+
+Comments for accessorA getter
+
+\`\`\`ts
+set accessorA(x: Promise<string>): void
+\`\`\`
+
+Comments for accessorA setter
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> |
+
+#### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+### accessorB
+
+\`\`\`ts
+get accessorB(): string
+\`\`\`
+
+\`\`\`ts
+set accessorB(x: string): void
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+#### Returns
+
+\`string\`
+
+### someFunction()
+
+Comments for someFunction
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`param\` | \`string\` |  |
+
+#### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
+"
+`;
+
+exports[`Objects And Params should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Variable: objectWithSymbol
+
+> **\`const\`** **objectWithSymbol**: \\{\`[sym]\`: \`string\`;  }
+
+Comments variable with symbol
+
+## Type declaration
+
+### [sym]
+
+> **[sym]**: \`string\` = \`'value'\`
+
+Comments for symbol
+"
+`;
+
+exports[`Objects And Params should compile object with symbol: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Variable: objectWithSymbol
+
+\`\`\`ts
+const objectWithSymbol: {
+  [sym]: string;
+};
+\`\`\`
+
+Comments variable with symbol
+
+## Type declaration
+
+### [sym]
+
+\`\`\`ts
+[sym]: string = 'value';
+\`\`\`
+
+Comments for symbol
+"
+`;
+
+exports[`Objects And Params should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type alias: UnionType
+
+> **UnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`;  }
+
+Comments for UnionType
+"
+`;
+
+exports[`Objects And Params should compile union type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type alias: UnionType
+
+\`\`\`ts
+type UnionType: string | boolean | {
+  z: string;
+};
+\`\`\`
+
+Comments for UnionType
+"
+`;
+
+exports[`Objects And Params should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Variable: objectLiteralVariable
+
+> **\`const\`** **objectLiteralVariable**: \\{\`*\`: \`string\`;\`**foo**\`: \`string\`;\`*foo*\`: \`string\`;\`<\`: \`string\`;\`<foo\`: \`string\`;\`<foo>\`: \`string\`;\`>\`: \`string\`;\`_\`: \`string\`;\`_foo_\`: \`string\`;\`prop_with_underscore\`: \`string\`;\`prop|with|pipes\`: \`string\`;\`valueA\`: \`number\`;\`valueB\`: \`boolean\`;\`valueX\`: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`;  };  };\`valueZ\`: \`string\`;  };\`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`;\`|\`: \`string\`;\`~\`: \`string\`;  }
+
+Comments for objectLiteralVariable
+
+## Type declaration
+
+### \\*
+
+> **\\***: \`string\`
+
+### \\*\\*foo\\*\\*
+
+> **\\*\\*foo\\*\\***: \`string\`
+
+### \\*foo\\*
+
+> **\\*foo\\***: \`string\`
+
+### \\<
+
+> **\\<**: \`string\`
+
+### \\<foo
+
+> **\\<foo**: \`string\`
+
+### \\<foo\\>
+
+> **\\<foo\\>**: \`string\`
+
+### \\>
+
+> **\\>**: \`string\`
+
+### \\_
+
+> **\\_**: \`string\`
+
+### \\_foo\\_
+
+> **\\_foo\\_**: \`string\`
+
+### prop\\_with\\_underscore
+
+> **prop\\_with\\_underscore**: \`string\`
+
+### prop\\|with\\|pipes
+
+> **prop\\|with\\|pipes**: \`string\`
+
+### valueA
+
+> **valueA**: \`number\` = \`100\`
+
+### valueB
+
+> **valueB**: \`boolean\` = \`true\`
+
+### valueX
+
+> **valueX**: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`;  };  };\`valueZ\`: \`string\`;  }
+
+### valueX.valueA
+
+> **valueA**: \`number\`[]
+
+### valueX.valueY
+
+> **valueY**: (\`z\`: \`string\`) => \\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`;  };  }
+
+#### Parameters
+
+• **z**: \`string\`
+
+#### Returns
+
+\\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`;  };  }
+
+##### a
+
+> **a**: \`string\` = \`'test'\`
+
+##### b
+
+> **b**: \`string\` = \`z\`
+
+##### c
+
+> **c**: \\{\`a\`: \`number\`;\`b\`: \`number\`;  }
+
+##### c.a
+
+> **a**: \`number\` = \`1\`
+
+##### c.b
+
+> **b**: \`number\` = \`2\`
+
+### valueX.valueZ
+
+> **valueZ**: \`string\` = \`'foo'\`
+
+### valueY
+
+> **valueY**: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`
+
+#### Parameters
+
+• **unionParam**: \`"a"\` \\| \`"b"\`
+
+• **\\_undercoreParam\\_**: \`string\`
+
+#### Returns
+
+\`string\`
+
+### \\|
+
+> **\\|**: \`string\`
+
+### ~
+
+> **~**: \`string\`
+"
+`;
+
+exports[`Objects And Params should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Variable: objectLiteralVariable
+
+\`\`\`ts
+const objectLiteralVariable: {
+  *: string;
+  **foo**: string;
+  *foo*: string;
+  <: string;
+  <foo: string;
+  <foo>: string;
+  >: string;
+  _: string;
+  _foo_: string;
+  prop_with_underscore: string;
+  prop|with|pipes: string;
+  valueA: number;
+  valueB: boolean;
+  valueX: {
+     valueA: number[];
+     valueY: (z: string) => {
+        a: string;
+        b: string;
+        c: {
+           a: number;
+           b: number;
+        };
+     };
+     valueZ: string;
+  };
+  valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
+  |: string;
+  ~: string;
+};
+\`\`\`
+
+Comments for objectLiteralVariable
+
+## Type declaration
+
+### \\*
+
+\`\`\`ts
+*: string;
+\`\`\`
+
+### \\*\\*foo\\*\\*
+
+\`\`\`ts
+**foo**: string;
+\`\`\`
+
+### \\*foo\\*
+
+\`\`\`ts
+*foo*: string;
+\`\`\`
+
+### \\<
+
+\`\`\`ts
+<: string;
+\`\`\`
+
+### \\<foo
+
+\`\`\`ts
+<foo: string;
+\`\`\`
+
+### \\<foo\\>
+
+\`\`\`ts
+<foo>: string;
+\`\`\`
+
+### \\>
+
+\`\`\`ts
+>: string;
+\`\`\`
+
+### \\_
+
+\`\`\`ts
+_: string;
+\`\`\`
+
+### \\_foo\\_
+
+\`\`\`ts
+_foo_: string;
+\`\`\`
+
+### prop\\_with\\_underscore
+
+\`\`\`ts
+prop_with_underscore: string;
+\`\`\`
+
+### prop\\|with\\|pipes
+
+\`\`\`ts
+prop|with|pipes: string;
+\`\`\`
+
+### valueA
+
+\`\`\`ts
+valueA: number = 100;
+\`\`\`
+
+### valueB
+
+\`\`\`ts
+valueB: boolean = true;
+\`\`\`
+
+### valueX
+
+\`\`\`ts
+valueX: {
+  valueA: number[];
+  valueY: (z: string) => {
+     a: string;
+     b: string;
+     c: {
+        a: number;
+        b: number;
+     };
+  };
+  valueZ: string;
+};
+\`\`\`
+
+### valueX.valueA
+
+\`\`\`ts
+valueA: number[];
+\`\`\`
+
+### valueX.valueY
+
+\`\`\`ts
+valueY: (z: string) => {
+  a: string;
+  b: string;
+  c: {
+     a: number;
+     b: number;
+  };
+};
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`z\` | \`string\` |
+
+#### Returns
+
+\`\`\`ts
+{
+  a: string;
+  b: string;
+  c: {
+     a: number;
+     b: number;
+  };
+}
+\`\`\`
+
+##### a
+
+\`\`\`ts
+a: string = 'test';
+\`\`\`
+
+##### b
+
+\`\`\`ts
+b: string = z;
+\`\`\`
+
+##### c
+
+\`\`\`ts
+c: {
+  a: number;
+  b: number;
+};
+\`\`\`
+
+##### c.a
+
+\`\`\`ts
+a: number = 1;
+\`\`\`
+
+##### c.b
+
+\`\`\`ts
+b: number = 2;
+\`\`\`
+
+### valueX.valueZ
+
+\`\`\`ts
+valueZ: string = 'foo';
+\`\`\`
+
+### valueY
+
+\`\`\`ts
+valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`unionParam\` | \`"a"\` \\| \`"b"\` |
+| \`_undercoreParam_\` | \`string\` |
+
+#### Returns
+
+\`string\`
+
+### \\|
+
+\`\`\`ts
+|: string;
+\`\`\`
+
+### ~
+
+\`\`\`ts
+~: string;
+\`\`\`
+"
+`;

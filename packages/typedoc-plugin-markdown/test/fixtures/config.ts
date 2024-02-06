@@ -11,7 +11,7 @@ const config: Record<string, Fixture> = {
       hideBreadcrumbs: true,
     },
     options: [
-      { hideParameterTypesInTitle: false },
+      {},
       {
         readme: 'none',
         parametersFormat: 'table',
@@ -19,9 +19,27 @@ const config: Record<string, Fixture> = {
         typeDeclarationFormat: 'table',
         enumMembersFormat: 'table',
         useCodeBlocks: true,
-        expandObjects: true,
         memberPageTitle: '{name}',
-        hideParameterTypesInTitle: true,
+      },
+    ],
+  },
+  objectsAndParams: {
+    only: false,
+    outputFileStrategies: ['members'],
+    entryPoints: '/reflections/index.ts',
+    commonOptions: {
+      hidePageHeader: true,
+      hideBreadcrumbs: true,
+      disableSources: true,
+      expandObjects: true,
+      expandParameters: true,
+    },
+    options: [
+      {},
+      {
+        useCodeBlocks: true,
+        parametersFormat: 'table',
+        propertiesFormat: 'table',
       },
     ],
   },
@@ -137,7 +155,7 @@ const config: Record<string, Fixture> = {
   customize: {
     only: false,
     entryPoints: '/customize/index.ts',
-    outputFileStragies: ['members'],
+    outputFileStrategies: ['members'],
     commonOptions: {
       disableSources: true,
       readme: 'none',

@@ -1,7 +1,7 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, strikeThrough, table } from '../markdown';
-import { formatTableDescriptionCol, stripLineBreaks } from '../utils';
+import { formatTableDescriptionCol, formatTableTypeCol } from '../utils';
 
 export function propertiesTable(
   context: MarkdownThemeRenderContext,
@@ -91,7 +91,7 @@ export function propertiesTable(
             true,
           )
         : context.partials.someType(propertyType);
-      row.push(stripLineBreaks(type, false));
+      row.push(formatTableTypeCol(type, false));
     }
 
     if (hasComments) {
@@ -100,11 +100,7 @@ export function propertiesTable(
         property?.comment?.summary?.length;
       const comments = property?.comment;
       if (hasComment && comments) {
-        row.push(
-          stripLineBreaks(
-            formatTableDescriptionCol(context.partials.comment(comments)),
-          ),
-        );
+        row.push(formatTableDescriptionCol(context.partials.comment(comments)));
       } else {
         row.push('-');
       }

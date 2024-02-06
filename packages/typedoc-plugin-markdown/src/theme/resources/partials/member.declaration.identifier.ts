@@ -1,7 +1,7 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, bold, codeBlock } from '../markdown';
-import { escapeChars, stripComments, stripLineBreaks } from '../utils';
+import { escapeChars, stripComments } from '../utils';
 
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,
@@ -73,10 +73,12 @@ export function declarationMemberIdentifier(
     md.push(context.partials.someType(declarationType));
   }
 
-  if (reflection.defaultValue && reflection.defaultValue !== '...') {
-    md.push(
-      ` = \`${stripLineBreaks(stripComments(reflection.defaultValue))}\``,
-    );
+  if (
+    reflection.defaultValue &&
+    reflection.defaultValue !== '...' &&
+    reflection.name !== reflection.defaultValue?.slice(1, -1)
+  ) {
+    md.push(` = \`${stripComments(reflection.defaultValue)}\``);
   }
 
   if (useCodeBlocks) {

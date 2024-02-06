@@ -1,7 +1,7 @@
 import { ParameterReflection, ReflectionKind } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, table } from '../markdown';
-import { formatTableDescriptionCol, stripLineBreaks } from '../utils';
+import { formatTableDescriptionCol, formatTableTypeCol } from '../utils';
 
 export function parametersTable(
   context: MarkdownThemeRenderContext,
@@ -72,7 +72,7 @@ export function parametersTable(
 
     if (parameter.type) {
       row.push(
-        stripLineBreaks(context.partials.someType(parameter.type), false),
+        formatTableTypeCol(context.partials.someType(parameter.type), false),
       );
     }
 
@@ -83,10 +83,8 @@ export function parametersTable(
     if (hasComments) {
       if (parameter.comment) {
         row.push(
-          stripLineBreaks(
-            formatTableDescriptionCol(
-              context.partials.comment(parameter.comment),
-            ),
+          formatTableDescriptionCol(
+            context.partials.comment(parameter.comment),
           ),
         );
       } else {

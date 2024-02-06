@@ -1,11 +1,7 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { table } from '../markdown';
-import {
-  formatTableDescriptionCol,
-  formatTableNameCol,
-  stripLineBreaks,
-} from '../utils';
+import { formatTableDescriptionCol, formatTableNameCol } from '../utils';
 
 export function typeDeclarationTable(
   context: MarkdownThemeRenderContext,
@@ -13,13 +9,19 @@ export function typeDeclarationTable(
 ): string {
   const headers: string[] = [];
 
+  const declarations = context.helpers.flattenDeclarations(props, true);
+
+  const hasComments = declarations.some((declaration) =>
+    Boolean(declaration.comment),
+  );
+
   headers.push(context.text.getText('label.member'));
 
   headers.push(context.text.getText('label.type'));
 
-  headers.push(context.text.getText('label.description'));
-
-  const declarations = context.helpers.flattenDeclarations(props, true);
+  if (hasComments) {
+    headers.push(context.text.getText('label.description'));
+  }
 
   const rows: string[][] = [];
 
@@ -34,16 +36,14 @@ export function typeDeclarationTable(
         .replace(/\n/g, ' '),
     );
 
-    const comments = declaration.comment;
+    if (hasComments) {
+      const comments = declaration.comment;
 
-    if (comments) {
-      row.push(
-        stripLineBreaks(
-          formatTableDescriptionCol(context.partials.comment(comments)),
-        ),
-      );
-    } else {
-      row.push('-');
+      if (comments) {
+        row.push(formatTableDescriptionCol(context.partials.comment(comments)));
+      } else {
+        row.push('-');
+      }
     }
 
     rows.push(row);

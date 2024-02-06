@@ -6,7 +6,7 @@ import {
   SomeType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, blockQuoteBlock, heading } from '../markdown';
+import { backTicks, blockQuoteBlock, codeBlock, heading } from '../markdown';
 
 export function signatureMemberReturns(
   context: MarkdownThemeRenderContext,
@@ -57,9 +57,7 @@ export function signatureMemberReturns(
 
   if (typeDeclaration?.children) {
     md.push(
-      blockQuoteBlock(
-        context.partials.typeDeclarationMember(typeDeclaration, headingLevel),
-      ),
+      context.partials.typeDeclarationMember(typeDeclaration, headingLevel),
     );
   }
 
@@ -71,11 +69,19 @@ function getReturnType(
   typeDeclaration?: DeclarationReflection,
   type?: SomeType,
 ) {
-  if (typeDeclaration?.children) {
-    return backTicks('Object');
-  }
   if (typeDeclaration?.signatures) {
     return backTicks('Function');
   }
-  return type ? context.partials.someType(type, true).replace(/\n/g, ' ') : '';
+  if (type) {
+    const returnType = context.partials.someType(type);
+    if (
+      type instanceof ReflectionType &&
+      context.options.getValue('expandObjects') &&
+      context.options.getValue('useCodeBlocks')
+    ) {
+      return codeBlock(returnType);
+    }
+    return returnType;
+  }
+  return '';
 }

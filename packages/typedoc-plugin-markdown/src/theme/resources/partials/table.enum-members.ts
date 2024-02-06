@@ -1,7 +1,7 @@
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks } from '../markdown';
-import { stripLineBreaks } from '../utils';
+import { formatTableDescriptionCol, formatTableTypeCol } from '../utils';
 
 export function enumMembersTable(
   context: MarkdownThemeRenderContext,
@@ -34,17 +34,12 @@ export function enumMembersTable(
 
     row.push(nameColumn.join(' '));
     if (propertyType) {
-      row.push(stripLineBreaks(context.partials.someType(propertyType)));
+      row.push(formatTableTypeCol(context.partials.someType(propertyType)));
     }
     if (hasComments) {
       const comments = getComments(property);
       if (comments) {
-        row.push(
-          stripLineBreaks(context.partials.comment(comments)).replace(
-            /\|/g,
-            '\\|',
-          ),
-        );
+        row.push(formatTableDescriptionCol(context.partials.comment(comments)));
       } else {
         row.push('-');
       }

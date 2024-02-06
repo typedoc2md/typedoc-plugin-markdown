@@ -192,6 +192,29 @@ export const expandObjects: Partial<DeclarationOption> = {
 };
 
 /**
+ * By default parameters in signature definitions only display the parameter name so the output is more concise.
+ *
+ * This option should be set when a full type representation is preferred.
+ *
+ * This is the oppisite of TypeDoc's [hideParameterTypesInTitle](https://typedoc.org/options/output/#hideparametertypesintitle) output option.
+ *
+ * @Default
+ *
+ * `someFunction(param1, param2)`
+ *
+ * @Expanded
+ *
+ * `someFunction(param1: string, param2: boolean)`
+ *
+ * @category UI
+ */
+export const expandParameters: Partial<DeclarationOption> = {
+  help: 'Expand parameters in signature parentheses to display type information.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * This option either renders parameters for functions and class methods as a list or in tabular format.
  *
  * @category UI

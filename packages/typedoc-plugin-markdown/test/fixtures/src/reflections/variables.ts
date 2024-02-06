@@ -49,5 +49,8 @@ const sym = Symbol();
  * Comments variable with symbol
  */
 export const objectWithSymbol = {
+  /**
+   * Comments for symbol
+   */
   [sym]: 'value',
 };

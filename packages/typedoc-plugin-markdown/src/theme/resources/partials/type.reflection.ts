@@ -5,8 +5,7 @@ import { backTicks } from '../markdown';
 export function reflectionType(
   context: MarkdownThemeRenderContext,
   reflectionType: ReflectionType,
-  foreCollpase = false,
-): string {
+) {
   const root =
     reflectionType instanceof ReflectionType
       ? reflectionType.declaration
@@ -15,8 +14,7 @@ export function reflectionType(
     return context.partials.functionType(root.signatures);
   }
 
-  const expandObjects =
-    !foreCollpase && (context.options.getValue('expandObjects') as boolean);
+  const expandObjects = context.options.getValue('expandObjects') as boolean;
 
   return expandObjects
     ? context.partials.declarationType(root)

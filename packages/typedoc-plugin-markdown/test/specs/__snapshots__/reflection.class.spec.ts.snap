@@ -823,7 +823,7 @@ Comments for DerivedClassA
 
 ### abstractProp
 
-> **abstractProp**: \`string\` = \`'abstractProp'\`
+> **abstractProp**: \`string\`
 
 Comments for abstractProp
 
