@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.51
+## 4.0.0-next.51 (2024-02-07)
 
 ### Patch Changes
 
@@ -8,7 +8,7 @@
 - Minor ui tweaks.
 - Expose `expandParameters` option.
 
-## 4.0.0-next.50
+## 4.0.0-next.50 (2024-02-01)
 
 ### Patch Changes
 
