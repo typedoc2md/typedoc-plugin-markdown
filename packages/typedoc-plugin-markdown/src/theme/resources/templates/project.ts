@@ -1,6 +1,6 @@
 import { ProjectReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { MarkdownPageEvent } from '../../..';
+import { MarkdownHooks, MarkdownPageEvent } from '../../..';
 import { heading } from '../markdown';
 
 export function projectTemplate(
@@ -9,7 +9,7 @@ export function projectTemplate(
 ) {
   const md: string[] = [];
 
-  md.push(context.hook('page.begin').join('\n'));
+  md.push(context.hook(MarkdownHooks.INDEX_PAGE_BEGIN).join('\n'));
 
   if (!context.options.getValue('hidePageHeader')) {
     md.push(context.partials.header(page));
@@ -30,7 +30,7 @@ export function projectTemplate(
     md.push(heading(1, context.partials.pageTitle(page)));
   }
 
-  md.push(context.hook('content.begin').join('\n'));
+  md.push(context.hook(MarkdownHooks.INDEX_CONTENT_BEGIN).join('\n'));
 
   if (page.model.comment) {
     md.push(context.partials.comment(page.model.comment, 2));
@@ -40,7 +40,7 @@ export function projectTemplate(
 
   md.push(context.partials.members(page.model, 2));
 
-  md.push(context.hook('page.end').join('\n'));
+  md.push(context.hook(MarkdownHooks.INDEX_PAGE_END).join('\n'));
 
   return md.join('\n\n');
 }

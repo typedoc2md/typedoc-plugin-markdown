@@ -3,7 +3,7 @@
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: ArrayType
 
-**ArrayType**: \`string\`[]
+• **ArrayType**: \`string\`[]
 
 Comments for ArrayType
 
@@ -31,7 +31,7 @@ Comments for ArrayType
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: ConditionalType\\<T\\>
 
-**ConditionalType**\\<\`T\`\\>: \`T\` extends \`string\` ? \`"string"\` : \`T\` extends \`number\` ? \`"number"\` : \`T\` extends \`boolean\` ? \`"boolean"\` : \`T\` extends \`undefined\` ? \`"undefined"\` : \`"object"\`
+• **ConditionalType**\\<\`T\`\\>: \`T\` extends \`string\` ? \`"string"\` : \`T\` extends \`number\` ? \`"number"\` : \`T\` extends \`boolean\` ? \`"boolean"\` : \`T\` extends \`undefined\` ? \`"undefined"\` : \`"object"\`
 
 Comments for ConditionalType
 
@@ -69,7 +69,7 @@ Comments for ConditionalType
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: TypeWithExternalSymbolLinkMapping
 
-**TypeWithExternalSymbolLinkMapping**: [\`Application\`]( https://typedoc.org/api/classes/Application.html )
+• **TypeWithExternalSymbolLinkMapping**: [\`Application\`]( https://typedoc.org/api/classes/Application.html )
 
 Comments for TypeWithExternalSymbolLinkMapping
 
@@ -97,7 +97,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: LiteralType
 
-**LiteralType**: \`Object\`
+• **LiteralType**: \`Object\`
 
 Comments for LiteralType
 
@@ -105,31 +105,31 @@ Comments for LiteralType
 
 ### x
 
-**x**: \`string\`
+• **x**: \`string\`
 
 comment for x
 
 ### y
 
-**y**: \`Object\`
+• **y**: \`Object\`
 
 comment for y
 
 ### y.x
 
-**x**: \`string\`
+• **x**: \`string\`
 
 comment for y.x
 
 ### y.y
 
-**y**: \`boolean\` \\| \`string\`
+• **y**: \`boolean\` \\| \`string\`
 
 comment for y.y
 
 ### y.z
 
-**z**: (\`x\`) => \`string\`
+• **z**: (\`x\`) => \`string\`
 
 comment for y.z
 
@@ -143,7 +143,7 @@ comment for y.z
 
 ### z
 
-**z**: (\`x\`) => \`string\`
+• **z**: (\`x\`) => \`string\`
 
 #### Parameters
 
@@ -155,11 +155,11 @@ comment for y.z
 
 ### accessorA
 
-**\`get\`** **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+• **\`get\`** **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
 Comments for accessorA getter
 
-**\`set\`** **accessorA**(\`x\`): \`void\`
+• **\`set\`** **accessorA**(\`x\`): \`void\`
 
 Comments for accessorA setter
 
@@ -173,9 +173,9 @@ Comments for accessorA setter
 
 ### accessorB
 
-**\`get\`** **accessorB**(): \`string\`
+• **\`get\`** **accessorB**(): \`string\`
 
-**\`set\`** **accessorB**(\`x\`): \`void\`
+• **\`set\`** **accessorB**(\`x\`): \`void\`
 
 #### Parameters
 
@@ -237,7 +237,7 @@ Comments for LiteralType
 exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: ExternalReferenceType
 
-**ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\<\`"x"\`, \`"y"\`\\>
+• **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\<\`"x"\`, \`"y"\`\\>
 
 Comments for ExternalReferenceType
 
@@ -265,7 +265,7 @@ Comments for ExternalReferenceType
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: FunctionType
 
-**FunctionType**: (\`name\`, \`value\`) => \`void\`
+• **FunctionType**: (\`name\`, \`value\`) => \`void\`
 
 Comments for FunctionType
 
@@ -314,7 +314,7 @@ Comments for FunctionType
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: IndexAccessType
 
-**IndexAccessType**: [\`ArrayOfStuff\`](ArrayOfStuff.md)\\[\`number\`\\]
+• **IndexAccessType**: [\`ArrayOfStuff\`](ArrayOfStuff.md)\\[\`number\`\\]
 
 Comments for IndexAccessType
 
@@ -342,7 +342,7 @@ Comments for IndexAccessType
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: IntersectionType
 
-**IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`Object\`
+• **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`Object\`
 
 Comments for IntersectionType
 
@@ -350,7 +350,7 @@ Comments for IntersectionType
 
 ### bar
 
-**bar**: \`number\`
+• **bar**: \`number\`
 
 ## Source
 
@@ -382,7 +382,7 @@ Comments for IntersectionType
 exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: PartialMappedType\\<T\\>
 
-**PartialMappedType**\\<\`T\`\\>: \`{ [P in keyof T]?: T[P] }\`
+• **PartialMappedType**\\<\`T\`\\>: \`{ [P in keyof T]?: T[P] }\`
 
 Comments for PartialMappedType
 
@@ -420,7 +420,7 @@ Comments for PartialMappedType
 exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: PrimitiveType
 
-**PrimitiveType**: \`boolean\`
+• **PrimitiveType**: \`boolean\`
 
 Comments for PrimitiveType
 
@@ -448,7 +448,7 @@ Comments for PrimitiveType
 exports[`Type Alias Reflection should compile query type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: QueryType
 
-**QueryType**: *typeof* [\`someQuery\`](../variables/someQuery.md)
+• **QueryType**: *typeof* [\`someQuery\`](../variables/someQuery.md)
 
 Comments for query type
 
@@ -476,7 +476,7 @@ Comments for query type
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: ReadonlyMappedType\\<T\\>
 
-**ReadonlyMappedType**\\<\`T\`\\>: \`{ readonly [P in keyof T]: T[P] }\`
+• **ReadonlyMappedType**\\<\`T\`\\>: \`{ readonly [P in keyof T]: T[P] }\`
 
 Comments for ReadonlyMapedType
 
@@ -514,7 +514,7 @@ Comments for ReadonlyMapedType
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: StringLiteralType
 
-**StringLiteralType**: \`" "\` \\| \`"string"\` \\| \`"string|with|pipes"\` \\| "string\\\`with\\\`backticks" \\| \`"<foo>"\` \\| \`"*"\`
+• **StringLiteralType**: \`" "\` \\| \`"string"\` \\| \`"string|with|pipes"\` \\| "string\\\`with\\\`backticks" \\| \`"<foo>"\` \\| \`"*"\`
 
 Comments for StringLiteralType
 
@@ -548,7 +548,7 @@ Comments for StringLiteralType
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: TupleType
 
-**TupleType**: [\`string\`, \`number\`]
+• **TupleType**: [\`string\`, \`number\`]
 
 Comments for TupleType
 
@@ -576,7 +576,7 @@ Comments for TupleType
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: TypeWithTypeParams\\<T, R\\>
 
-**TypeWithTypeParams**\\<\`T\`, \`R\`\\>: [\`T\`, \`R\`]
+• **TypeWithTypeParams**\\<\`T\`, \`R\`\\>: [\`T\`, \`R\`]
 
 Comments for TypeWithTypeParams
 
@@ -617,7 +617,7 @@ Comments for TypeWithTypeParams
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: UnionType
 
-**UnionType**: \`string\` \\| \`boolean\` \\| \`Object\`
+• **UnionType**: \`string\` \\| \`boolean\` \\| \`Object\`
 
 Comments for UnionType
 

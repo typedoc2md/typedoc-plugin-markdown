@@ -241,14 +241,14 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "module-1",
-    "url": "module-1/README.md",
+    "url": "module-1/README.mdx",
     "children": [
       {
         "title": "Classes",
         "children": [
           {
             "title": "ModuleClass",
-            "url": "module-1/classes/ModuleClass.md"
+            "url": "module-1/classes/ModuleClass.mdx"
           }
         ]
       }
@@ -256,14 +256,14 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
   },
   {
     "title": "module-2",
-    "url": "module-2/README.md",
+    "url": "module-2/README.mdx",
     "children": [
       {
         "title": "Classes",
         "children": [
           {
             "title": "ModuleClass",
-            "url": "module-2/classes/ModuleClass.md"
+            "url": "module-2/classes/ModuleClass.mdx"
           }
         ]
       }
@@ -276,14 +276,14 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "module-1",
-    "url": "module-1/index.md",
+    "url": "module-1/index.mdx",
     "children": [
       {
         "title": "Classes",
         "children": [
           {
             "title": "ModuleClass",
-            "url": "module-1/classes/ModuleClass.md"
+            "url": "module-1/classes/ModuleClass.mdx"
           }
         ]
       }
@@ -291,14 +291,14 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
   },
   {
     "title": "module-2",
-    "url": "module-2/index.md",
+    "url": "module-2/index.mdx",
     "children": [
       {
         "title": "Classes",
         "children": [
           {
             "title": "ModuleClass",
-            "url": "module-2/classes/ModuleClass.md"
+            "url": "module-2/classes/ModuleClass.mdx"
           }
         ]
       }
@@ -311,11 +311,11 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "module-1",
-    "url": "module-1.md"
+    "url": "module-1.mdx"
   },
   {
     "title": "module-2",
-    "url": "module-2.md"
+    "url": "module-2.mdx"
   }
 ]"
 `;
@@ -324,11 +324,11 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "module-1",
-    "url": "module-1.md"
+    "url": "module-1.mdx"
   },
   {
     "title": "module-2",
-    "url": "module-2.md"
+    "url": "module-2.mdx"
   }
 ]"
 `;

@@ -42,6 +42,9 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const urls: UrlMapping<Reflection>[] = [];
   const anchors: Record<string, string[]> = {};
 
+  const fileExtension = options.getValue('useMDXFileExt') ? '.mdx' : '.md';
+  const entryFileName = `${path.parse(options.getValue('entryFileName')).name}${fileExtension}`;
+
   const preserveReadme =
     Boolean(project.readme) && !options.getValue('mergeReadme');
 
@@ -60,19 +63,17 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const isPackages =
     options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
 
-  const entryFileName = options.getValue('entryFileName');
-
   const indexFilename = getIndexFileName(project, isPackages);
 
   project.url = preserveReadme
     ? indexFilename
     : useEntryModule
       ? indexFilename
-      : options.getValue('entryFileName');
+      : entryFileName;
 
   if (preserveReadme) {
     urls.push({
-      url: useEntryModule ? 'readme_.md' : entryFileName,
+      url: useEntryModule ? `readme_${fileExtension}` : entryFileName,
       model: project,
       template: theme.readmeTemplate,
     });
@@ -124,7 +125,6 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   }
 
   function buildUrlsFromPackage(projectChild: DeclarationReflection) {
-    const entryFileName = options.getValue('entryFileName');
     const preservePackageReadme =
       Boolean(projectChild.readme) && !options.getValue('mergeReadme');
 
@@ -219,13 +219,16 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
   function getUrl(reflection: DeclarationReflection, urlPath: string) {
     if (reflection.name === options.getValue('entryModule')) {
-      return options.getValue('entryFileName');
+      return entryFileName;
     }
     if (
       options.getValue('outputFileStrategy') === OutputFileStrategy.Modules &&
       reflection.name === 'index'
     ) {
-      return urlPath.replace('index.md', 'module.index.md');
+      return urlPath.replace(
+        `index${fileExtension}`,
+        `module.index${fileExtension}`,
+      );
     }
     return urlPath;
   }
@@ -280,14 +283,14 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
           reflection.kind,
         )
       ) {
-        return path.parse(options.getValue('entryFileName')).name;
+        return path.parse(entryFileName).name;
       }
       return alias;
     };
 
     return (
       [parentDir, dir(), filename()].filter((part) => Boolean(part)).join('/') +
-      '.md'
+      fileExtension
     );
   }
 
@@ -386,11 +389,11 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     isPackages = false,
   ) {
     if (isPackages) {
-      return 'packages.md';
+      return `packages${fileExtension}`;
     }
     const isModules = reflection.children?.every((child) =>
       child.kindOf(ReflectionKind.Module),
     );
-    return isModules ? 'modules.md' : 'globals.md';
+    return isModules ? `modules${fileExtension}` : `globals${fileExtension}`;
   }
 }

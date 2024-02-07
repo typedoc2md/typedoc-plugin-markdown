@@ -2,41 +2,41 @@
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: members 1`] = `
 [
-  "README.md",
-  "entry-module/classes/ModuleClass.md",
-  "module-1/README.md",
-  "module-1/classes/ModuleClass.md",
-  "module-2/README.md",
-  "module-2/classes/ModuleClass.md",
-  "readme_.md",
+  "README.mdx",
+  "entry-module/classes/ModuleClass.mdx",
+  "module-1/README.mdx",
+  "module-1/classes/ModuleClass.mdx",
+  "module-2/README.mdx",
+  "module-2/classes/ModuleClass.mdx",
+  "readme_.mdx",
 ]
 `;
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: members 2`] = `
 [
-  "entry-module/classes/ModuleClass.md",
-  "index.md",
-  "module-1/classes/ModuleClass.md",
-  "module-1/index.md",
-  "module-2/classes/ModuleClass.md",
-  "module-2/index.md",
+  "entry-module/classes/ModuleClass.mdx",
+  "index.mdx",
+  "module-1/classes/ModuleClass.mdx",
+  "module-1/index.mdx",
+  "module-2/classes/ModuleClass.mdx",
+  "module-2/index.mdx",
 ]
 `;
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 1`] = `
 [
-  "README.md",
-  "module-1.md",
-  "module-2.md",
-  "readme_.md",
+  "README.mdx",
+  "module-1.mdx",
+  "module-2.mdx",
+  "readme_.mdx",
 ]
 `;
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 2`] = `
 [
-  "index.md",
-  "module-1.md",
-  "module-2.md",
+  "index.mdx",
+  "module-1.mdx",
+  "module-2.mdx",
 ]
 `;
 

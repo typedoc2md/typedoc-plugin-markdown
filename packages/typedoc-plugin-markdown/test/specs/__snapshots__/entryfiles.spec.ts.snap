@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EntryFiles should get entry module: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](readme_.md) \\| API
+"**typedoc-stubs** • [Readme](readme_.mdx) \\| API
 
 ***
 
@@ -11,7 +11,7 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 
 ### Classes
 
-- [ModuleClass](entry-module/classes/ModuleClass.md)
+- [ModuleClass](entry-module/classes/ModuleClass.mdx)
 "
 `;
 
@@ -26,16 +26,16 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 
 ### Classes
 
-- [ModuleClass](entry-module/classes/ModuleClass.md)
+- [ModuleClass](entry-module/classes/ModuleClass.mdx)
 "
 `;
 
 exports[`EntryFiles should get module member for members: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../../readme_.md) \\| [API](../../README.md)
+"**typedoc-stubs** • [Readme](../../readme_.mdx) \\| [API](../../README.mdx)
 
 ***
 
-[typedoc-stubs](../../README.md) / ModuleClass
+[typedoc-stubs](../../README.mdx) / ModuleClass
 
 # Class: ModuleClass
 
@@ -43,11 +43,11 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ### new ModuleClass()
 
-**new ModuleClass**(): [\`ModuleClass\`](ModuleClass.md)
+• **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.mdx)
 
 #### Returns
 
-[\`ModuleClass\`](ModuleClass.md)
+[\`ModuleClass\`](ModuleClass.mdx)
 "
 `;
 
@@ -56,7 +56,7 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ***
 
-[typedoc-stubs](../../index.md) / ModuleClass
+[typedoc-stubs](../../index.mdx) / ModuleClass
 
 # Class: ModuleClass
 
@@ -64,18 +64,20 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ### new ModuleClass()
 
-**new ModuleClass**(): [\`ModuleClass\`](ModuleClass.md)
+• **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.mdx)
 
 #### Returns
 
-[\`ModuleClass\`](ModuleClass.md)
+[\`ModuleClass\`](ModuleClass.mdx)
 "
 `;
 
 exports[`EntryFiles should get readme file: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • Readme \\| [API](README.md)
+"**typedoc-stubs** • Readme \\| [API](README.mdx)
 
 ***
+
+[typedoc-stubs](README.mdx) / typedoc-stubs
 
 # MY README
 

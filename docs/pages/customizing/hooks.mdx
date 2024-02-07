@@ -5,13 +5,15 @@ Hooks allows Markdown (or HTML) to be injected into the output in specific locat
 ```js filename="local-plugins/custom-plugin.mjs"
 // @ts-check
 
+import { MarkdownHooks, MarkdownApplication } from 'typedoc-plugin-markdown';
+
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
   // Add a hook to insert markdown at the top of the page.
   app.renderer.markdownHooks.on(
-    'page.begin',
+    MarkdownHooks.PAGE_BEGIN,
     () => '> This is some markdown at the top of the page',
   );
 }
@@ -19,6 +21,9 @@ export function load(app) {
 
 Available hooks are:
 
-- `page.begin` - Applied at the start of the markdown output.
-- `page.end` - Applied at the end of the markdown output.
-- `content.begin` - Applied before the main markdown content is rendered..
+- `MarkdownHooks.PAGE_BEGIN` - Applied at the start of the output.
+- `MarkdownHooks.PAGE_END` - Applied at the end of the output.
+- `MarkdownHooks.CONTENT_BEGIN` - Applied before the main content is rendered.
+- `MarkdownHooks.INDEX_PAGE_BEGIN` - Applied at the start of the output on the index page.
+- `MarkdownHooks.INDEX_PAGE_END` - Applied at the end of theoutput on the index page.
+- `MarkdownHooks.INDEX_CONTENT_BEGIN` - Applied before the main content is rendered on the index page.

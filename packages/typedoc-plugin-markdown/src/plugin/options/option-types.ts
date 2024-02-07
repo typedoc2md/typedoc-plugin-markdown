@@ -6,6 +6,7 @@ declare module 'typedoc' {
   export interface TypeDocOptionMap {
     outputFileStrategy: 'members' | 'modules';
     entryFileName: string;
+    useMDXFileExt: boolean;
     entryModule: string;
     mergeReadme: boolean;
     hidePageHeader: boolean;
@@ -34,6 +35,7 @@ declare module 'typedoc' {
 export interface PluginOptions {
   outputFileStrategy: 'members' | 'modules';
   entryFileName: string;
+  useMDXFileExt: boolean;
   entryModule: string;
   mergeReadme: boolean;
   hidePageHeader: boolean;
