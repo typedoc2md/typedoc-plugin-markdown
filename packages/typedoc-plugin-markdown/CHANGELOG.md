@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.52
+
+### Patch Changes
+
+- Expose `useMDXFileExt` option.
+- Fix hooks being called in incorrect order.
+
 ## 4.0.0-next.51 (2024-02-07)
 
 ### Patch Changes
