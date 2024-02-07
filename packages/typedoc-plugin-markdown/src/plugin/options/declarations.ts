@@ -30,15 +30,15 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
 /**
  * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
  *
- * `README.md` is recognised when browsing folders on repos and Wikis and is the plugin default. `index.md` might be more suitable for other use-cases.
+ * `README` is recognised when browsing folders on repos and Wikis and is the plugin default. `index` might be more suitable for static site generators.
  *
  * The content of this file will be resolved in the following order:
  *
  * 1. The value of the [`entryModule`](#entrymodule) option (if defined).
- * 2. The resolved Readme file (skipped if the TypeDoc [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
+ * 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
  * 3. The documentation index page.
  *
- * @example "index.md"
+ * @example "index"
  *
  * @category Output
  *
@@ -46,11 +46,26 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
 export const entryFileName: Partial<DeclarationOption> = {
   help: 'The file name of the entry page.',
   type: ParameterType.String,
-  defaultValue: 'README.md',
+  defaultValue: 'README',
+};
+
+/**
+ * Use this option if your output files require `.mdx` extensions. By default all files have an `.md` extension.
+ *
+ * Note all output is MDX compatible regardless of this option.
+ *
+ * @category Output
+ */
+export const useMDXFileExt: Partial<DeclarationOption> = {
+  help: 'Use `.mdx` file extensions for generated output files.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
 };
 
 /**
  * This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
+ *
+ * The module name should be specified (NOT the reference to the file name).
  *
  * Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
  *

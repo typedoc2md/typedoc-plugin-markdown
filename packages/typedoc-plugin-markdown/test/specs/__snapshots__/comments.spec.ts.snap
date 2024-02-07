@@ -106,15 +106,15 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](/some-path/interfaces/CommentInterface.md) - Links to CommentInterface
-- [Links to CommentInterface.prop](/some-path/interfaces/CommentInterface.md#prop)
-- [Links to CommentInterface.propb](/some-path/interfaces/CommentInterface.md#propb)
-- [CommentEnum.MemberB](/some-path/enumerations/CommentEnum.md#MemberB)
-- [SameName:var](/some-path/variables/SameName.md)
-- [SameName:interface](/some-path/interfaces/SameName.md)
-- [SameName.prop](/some-path/interfaces/SameName.md#prop)
-- [prop:var](/some-path/variables/prop.md)
-- [_prop_with_underscore:var](/some-path/variables/prop_with_underscore.md)
+- [CommentInterface](/some-path/interfaces/CommentInterface.mdx) - Links to CommentInterface
+- [Links to CommentInterface.prop](/some-path/interfaces/CommentInterface.mdx#prop)
+- [Links to CommentInterface.propb](/some-path/interfaces/CommentInterface.mdx#propb)
+- [CommentEnum.MemberB](/some-path/enumerations/CommentEnum.mdx#MemberB)
+- [SameName:var](/some-path/variables/SameName.mdx)
+- [SameName:interface](/some-path/interfaces/SameName.mdx)
+- [SameName.prop](/some-path/interfaces/SameName.mdx#prop)
+- [prop:var](/some-path/variables/prop.mdx)
+- [_prop_with_underscore:var](/some-path/variables/prop_with_underscore.mdx)
 
 External links:
 
@@ -177,20 +177,20 @@ This is a simple example on how to use include.
 
 ## Enumerations
 
-- [CommentEnum](/some-path/enumerations/CommentEnum.md)
+- [CommentEnum](/some-path/enumerations/CommentEnum.mdx)
 
 ## Interfaces
 
-- [CommentInterface](/some-path/interfaces/CommentInterface.md)
-- [CommentInterfaceExtended](/some-path/interfaces/CommentInterfaceExtended.md)
-- [SameName](/some-path/interfaces/SameName.md)
+- [CommentInterface](/some-path/interfaces/CommentInterface.mdx)
+- [CommentInterfaceExtended](/some-path/interfaces/CommentInterfaceExtended.mdx)
+- [SameName](/some-path/interfaces/SameName.mdx)
 
 ## Variables
 
-- [SameName](/some-path/variables/SameName.md)
-- [\\_prop\\_with\\_underscore](/some-path/variables/prop_with_underscore.md)
-- [prop](/some-path/variables/prop.md)
-- [propb](/some-path/variables/propb.md)
+- [SameName](/some-path/variables/SameName.mdx)
+- [\\_prop\\_with\\_underscore](/some-path/variables/prop_with_underscore.mdx)
+- [prop](/some-path/variables/prop.mdx)
+- [propb](/some-path/variables/propb.mdx)
 "
 `;
 
@@ -360,15 +360,15 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](/some-path/README.md#CommentInterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](/some-path/README.md#prop)
-- [Links to CommentInterface.propb](/some-path/README.md#propb)
-- [CommentEnum.MemberB](/some-path/README.md#MemberB)
-- [SameName:var](/some-path/README.md#SameName-1)
-- [SameName:interface](/some-path/README.md#SameName)
-- [SameName.prop](/some-path/README.md#prop-2)
-- [prop:var](/some-path/README.md#prop-3)
-- [_prop_with_underscore:var](/some-path/README.md#_prop_with_underscore)
+- [CommentInterface](/some-path/README.mdx#CommentInterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](/some-path/README.mdx#prop)
+- [Links to CommentInterface.propb](/some-path/README.mdx#propb)
+- [CommentEnum.MemberB](/some-path/README.mdx#MemberB)
+- [SameName:var](/some-path/README.mdx#SameName-1)
+- [SameName:interface](/some-path/README.mdx#SameName)
+- [SameName.prop](/some-path/README.mdx#prop-2)
+- [prop:var](/some-path/README.mdx#prop-3)
+- [_prop_with_underscore:var](/some-path/README.mdx#_prop_with_underscore)
 
 External links:
 
@@ -439,7 +439,7 @@ This is a simple example on how to use include.
 
 | Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| <a id="Member" name="Member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](/some-path/README.md#SameName-1) |
+| <a id="Member" name="Member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](/some-path/README.mdx#SameName-1) |
 | <a id="MemberB" name="MemberB"></a> \`MemberB\` | \`1\` | - |
 
 ## Interfaces
@@ -450,7 +450,7 @@ This is a simple example on how to use include.
 
 #### Extended by
 
-- [\`CommentInterfaceExtended\`](/some-path/README.md#CommentInterfaceExtended)
+- [\`CommentInterfaceExtended\`](/some-path/README.mdx#CommentInterfaceExtended)
 
 #### Properties
 
@@ -467,14 +467,14 @@ This is a simple example on how to use include.
 
 #### Extends
 
-- [\`CommentInterface\`](/some-path/README.md#CommentInterface)
+- [\`CommentInterface\`](/some-path/README.mdx#CommentInterface)
 
 #### Properties
 
 | Property | Type | Inherited from |
 | :------ | :------ | :------ |
-| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` | [\`CommentInterface\`](/some-path/README.md#CommentInterface).[\`prop\`](/some-path/README.md#prop) |
-| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` | [\`CommentInterface\`](/some-path/README.md#CommentInterface).[\`propb\`](/some-path/README.md#propb) |
+| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` | [\`CommentInterface\`](/some-path/README.mdx#CommentInterface).[\`prop\`](/some-path/README.mdx#prop) |
+| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` | [\`CommentInterface\`](/some-path/README.mdx#CommentInterface).[\`propb\`](/some-path/README.mdx#propb) |
 | <a id="propc" name="propc"></a> \`propc\` | \`string\` | - |
 
 ***

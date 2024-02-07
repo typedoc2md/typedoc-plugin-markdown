@@ -2,18 +2,18 @@ import { expectFileToEqual } from '@devtools/testing';
 
 describe(`EntryFiles`, () => {
   test(`should get entry module`, () => {
-    expectFileToEqual('entryfiles', 'members', ['README.md', 'index.md']);
+    expectFileToEqual('entryfiles', 'members', ['README.mdx', 'index.mdx']);
   });
 
   test(`should get module member for members`, () => {
     expectFileToEqual(
       'entryfiles',
       'members',
-      'entry-module/classes/ModuleClass.md',
+      'entry-module/classes/ModuleClass.mdx',
     );
   });
 
   test(`should get readme file`, () => {
-    expectFileToEqual('entryfiles', 'members', 'readme_.md', 1);
+    expectFileToEqual('entryfiles', 'members', 'readme_.mdx', 1);
   });
 });

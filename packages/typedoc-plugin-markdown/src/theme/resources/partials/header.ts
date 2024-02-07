@@ -1,3 +1,4 @@
+import * as path from 'path';
 import {
   DeclarationReflection,
   EntryPointStrategy,
@@ -28,7 +29,10 @@ function projectHeader(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
-  const entryFileName = context.options.getValue('entryFileName');
+  const fileExtension = context.options.getValue('useMDXFileExt')
+    ? '.mdx'
+    : '.md';
+  const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
   const titleLink = context.options.getValue('titleLink');
 
   const md: string[] = [];
@@ -60,7 +64,9 @@ function projectHeader(
 
   if (preserveReadme) {
     const links: string[] = [];
-    const readMeUrl = useEntryModule ? 'readme_.md' : entryFileName;
+    const readMeUrl = useEntryModule
+      ? `readme_${fileExtension}`
+      : entryFileName;
 
     if (page.url === readMeUrl) {
       links.push(readmeLabel);
@@ -105,7 +111,10 @@ function packageHeader(
   const readmeLabel = context.text.getText('header.readme');
   const indexLabel = context.text.getText('header.docs');
 
-  const entryFileName = context.options.getValue('entryFileName');
+  const fileExtension = context.options.getValue('useMDXFileExt')
+    ? '.mdx'
+    : '.md';
+  const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
 
   const packageItemName = packageItem.packageVersion
     ? `${packageItem.name} v${packageItem.packageVersion}`

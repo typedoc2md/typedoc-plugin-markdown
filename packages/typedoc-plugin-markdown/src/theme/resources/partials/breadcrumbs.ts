@@ -10,7 +10,10 @@ export function breadcrumbs(
 ) {
   const md: string[] = [];
 
-  const entryFileName = context.options.getValue('entryFileName');
+  const fileExtension = context.options.getValue('useMDXFileExt')
+    ? '.mdx'
+    : '.md';
+  const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
 
   if (
     page.url === page.project.url ||
@@ -48,8 +51,7 @@ export function breadcrumbs(
 
   if (
     page.model?.parent?.parent &&
-    (page.url !== page.project.url ||
-      page.url !== context.options.getValue('entryFileName'))
+    (page.url !== page.project.url || page.url !== entryFileName)
   ) {
     breadcrumb(page.model.parent);
   }
