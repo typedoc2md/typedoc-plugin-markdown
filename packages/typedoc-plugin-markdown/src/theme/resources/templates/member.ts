@@ -1,6 +1,6 @@
 import { DeclarationReflection } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { MarkdownPageEvent } from '../../..';
+import { MarkdownHooks, MarkdownPageEvent } from '../../..';
 import { heading } from '../markdown';
 
 export function memberTemplate(
@@ -9,7 +9,7 @@ export function memberTemplate(
 ) {
   const md: string[] = [];
 
-  md.push(context.hook('page.begin').join('\n'));
+  md.push(context.hook(MarkdownHooks.PAGE_BEGIN).join('\n'));
 
   if (!context.options.getValue('hidePageHeader')) {
     md.push(context.partials.header(page));
@@ -23,11 +23,11 @@ export function memberTemplate(
     md.push(heading(1, context.partials.pageTitle(page)));
   }
 
-  md.push(context.hook('content.begin').join('\n'));
+  md.push(context.hook(MarkdownHooks.CONTENT_BEGIN).join('\n'));
 
   md.push(context.partials.member(page.model, 1));
 
-  md.push(context.hook('page.end').join('\n'));
+  md.push(context.hook(MarkdownHooks.PAGE_END).join('\n'));
 
   return md.join('\n\n');
 }

@@ -13,7 +13,7 @@ Comments for BasicInterface
 
 ### ~~deprecatedProp~~
 
-**deprecatedProp**: \`string\`
+• **deprecatedProp**: \`string\`
 
 #### Deprecated
 
@@ -31,7 +31,7 @@ Comments for some tag
 
 ### functionProp
 
-**functionProp**: (\`s\`) => \`boolean\`
+• **functionProp**: (\`s\`) => \`boolean\`
 
 Comments for functionProper
 
@@ -53,7 +53,7 @@ Comment for param s
 
 ### optionalProp?
 
-**\`optional\`** **optionalProp**: \`string\`
+• **\`optional\`** **optionalProp**: \`string\`
 
 Comments for optional prop
 
@@ -65,7 +65,7 @@ Comments for optional prop
 
 ### prop
 
-**prop**: \`string\`
+• **prop**: \`string\`
 
 Comments for prop
 
@@ -77,17 +77,17 @@ Comments for prop
 
 ### propReturningObjectDeclaration
 
-**propReturningObjectDeclaration**: \`Object\`
+• **propReturningObjectDeclaration**: \`Object\`
 
 Comments for propReturningObjectDeclaration
 
 #### propReturningObjectDeclaration.a
 
-**a**: \`boolean\`
+• **a**: \`boolean\`
 
 #### propReturningObjectDeclaration.b
 
-**b**: \`string\`
+• **b**: \`string\`
 
 #### Source
 
@@ -97,7 +97,7 @@ Comments for propReturningObjectDeclaration
 
 ### propReturningObjectDeclarations
 
-**propReturningObjectDeclarations**: \`Object\` & \`Object\`
+• **propReturningObjectDeclarations**: \`Object\` & \`Object\`
 
 Comments for propReturningObjectDeclarations
 
@@ -105,21 +105,21 @@ Comments for propReturningObjectDeclarations
 
 ##### a
 
-**a**: \`boolean\`
+• **a**: \`boolean\`
 
 ##### b
 
-**b**: \`string\`
+• **b**: \`string\`
 
 #### Type declaration
 
 ##### c
 
-**c**: \`boolean\`
+• **c**: \`boolean\`
 
 ##### d
 
-**d**: \`string\`
+• **d**: \`string\`
 
 #### Source
 
@@ -129,7 +129,7 @@ Comments for propReturningObjectDeclarations
 
 ### propReturningSignatureDeclaration?
 
-**\`optional\`** **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
+• **\`optional\`** **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
 
 Comments for propReturningSignatureDeclaration
 
@@ -145,7 +145,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-**propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
+• **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
 
 Comments for propReturningSignatureDeclarations
 
@@ -157,43 +157,43 @@ Comments for propReturningSignatureDeclarations
 
 ### propWithProps
 
-**propWithProps**: \`Object\`
+• **propWithProps**: \`Object\`
 
 Comments for propWithProps
 
 #### propWithProps.callbacks?
 
-**\`optional\`** **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+• **\`optional\`** **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
 #### propWithProps.nestedPropA
 
-**nestedPropA**: \`string\`
+• **nestedPropA**: \`string\`
 
 Comments for nestedPropA
 
 #### propWithProps.nestedPropB
 
-**nestedPropB**: \`boolean\`
+• **nestedPropB**: \`boolean\`
 
 Comments for nestedPropB
 
 #### propWithProps.nestedPropC
 
-**nestedPropC**: \`Object\`
+• **nestedPropC**: \`Object\`
 
 Comments for nestedPropC
 
 #### propWithProps.nestedPropC.nestedPropCA
 
-**nestedPropCA**: \`string\`
+• **nestedPropCA**: \`string\`
 
 Comments for nestedPropCA
 
 #### propWithProps.nestedPropD
 
-**nestedPropD**: () => \`boolean\`
+• **nestedPropD**: () => \`boolean\`
 
 Comments for nestedPropD
 
@@ -253,7 +253,7 @@ Comments for ExtendedInterface
 
 ### ~~deprecatedProp~~
 
-**deprecatedProp**: \`string\`
+• **deprecatedProp**: \`string\`
 
 #### Deprecated
 
@@ -275,7 +275,7 @@ Comments for some tag
 
 ### extendedProp
 
-**extendedProp**: \`string\`
+• **extendedProp**: \`string\`
 
 #### Source
 
@@ -285,7 +285,7 @@ Comments for some tag
 
 ### functionProp
 
-**functionProp**: (\`s\`) => \`boolean\`
+• **functionProp**: (\`s\`) => \`boolean\`
 
 Comments for functionProper
 
@@ -311,7 +311,7 @@ Comment for param s
 
 ### optionalProp?
 
-**\`optional\`** **optionalProp**: \`string\`
+• **\`optional\`** **optionalProp**: \`string\`
 
 Comments for optional prop
 
@@ -327,7 +327,7 @@ Comments for optional prop
 
 ### prop
 
-**prop**: \`string\`
+• **prop**: \`string\`
 
 Comments for prop
 
@@ -343,17 +343,17 @@ Comments for prop
 
 ### propReturningObjectDeclaration
 
-**propReturningObjectDeclaration**: \`Object\`
+• **propReturningObjectDeclaration**: \`Object\`
 
 Comments for propReturningObjectDeclaration
 
 #### propReturningObjectDeclaration.a
 
-**a**: \`boolean\`
+• **a**: \`boolean\`
 
 #### propReturningObjectDeclaration.b
 
-**b**: \`string\`
+• **b**: \`string\`
 
 #### Inherited from
 
@@ -367,7 +367,7 @@ Comments for propReturningObjectDeclaration
 
 ### propReturningObjectDeclarations
 
-**propReturningObjectDeclarations**: \`Object\` & \`Object\`
+• **propReturningObjectDeclarations**: \`Object\` & \`Object\`
 
 Comments for propReturningObjectDeclarations
 
@@ -375,21 +375,21 @@ Comments for propReturningObjectDeclarations
 
 ##### a
 
-**a**: \`boolean\`
+• **a**: \`boolean\`
 
 ##### b
 
-**b**: \`string\`
+• **b**: \`string\`
 
 #### Type declaration
 
 ##### c
 
-**c**: \`boolean\`
+• **c**: \`boolean\`
 
 ##### d
 
-**d**: \`string\`
+• **d**: \`string\`
 
 #### Inherited from
 
@@ -403,7 +403,7 @@ Comments for propReturningObjectDeclarations
 
 ### propReturningSignatureDeclaration?
 
-**\`optional\`** **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
+• **\`optional\`** **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
 
 Comments for propReturningSignatureDeclaration
 
@@ -423,7 +423,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-**propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
+• **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
 
 Comments for propReturningSignatureDeclarations
 
@@ -439,43 +439,43 @@ Comments for propReturningSignatureDeclarations
 
 ### propWithProps
 
-**propWithProps**: \`Object\`
+• **propWithProps**: \`Object\`
 
 Comments for propWithProps
 
 #### propWithProps.callbacks?
 
-**\`optional\`** **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+• **\`optional\`** **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
 #### propWithProps.nestedPropA
 
-**nestedPropA**: \`string\`
+• **nestedPropA**: \`string\`
 
 Comments for nestedPropA
 
 #### propWithProps.nestedPropB
 
-**nestedPropB**: \`boolean\`
+• **nestedPropB**: \`boolean\`
 
 Comments for nestedPropB
 
 #### propWithProps.nestedPropC
 
-**nestedPropC**: \`Object\`
+• **nestedPropC**: \`Object\`
 
 Comments for nestedPropC
 
 #### propWithProps.nestedPropC.nestedPropCA
 
-**nestedPropCA**: \`string\`
+• **nestedPropCA**: \`string\`
 
 Comments for nestedPropCA
 
 #### propWithProps.nestedPropD
 
-**nestedPropD**: () => \`boolean\`
+• **nestedPropD**: () => \`boolean\`
 
 Comments for nestedPropD
 
@@ -540,7 +540,7 @@ Comments for IndexableInterface
 
 ### prop
 
-**prop**: \`string\`
+• **prop**: \`string\`
 
 #### Source
 
@@ -572,7 +572,7 @@ exports[`Interface Reflection should compile interface with event properties: (O
 
 ### someProp?
 
-**\`optional\`** **someProp**: \`boolean\`
+• **\`optional\`** **someProp**: \`boolean\`
 
 Description for prop someProp
 
@@ -584,7 +584,7 @@ Description for prop someProp
 
 ### anotherEvent
 
-**anotherEvent**: \`MouseEvent\`
+• **anotherEvent**: \`MouseEvent\`
 
 #### Source
 
@@ -594,7 +594,7 @@ Description for prop someProp
 
 ### ~~someEvent?~~
 
-**\`optional\`** **someEvent**: (\`eventParam\`) => \`void\`
+• **\`optional\`** **someEvent**: (\`eventParam\`) => \`void\`
 
 Description for event someEvent
 
@@ -647,7 +647,7 @@ Comments for InterfaceWithFlags
 
 \`Experimental\`
 
-**\`optional\`** **expermintalProp**: \`string\`
+• **\`optional\`** **expermintalProp**: \`string\`
 
 #### Source
 
@@ -659,7 +659,7 @@ Comments for InterfaceWithFlags
 
 \`Internal\`
 
-**internalProp**: \`string\`
+• **internalProp**: \`string\`
 
 #### Source
 
@@ -694,7 +694,7 @@ Comments for InterfaceWithTypeParameters
 
 ### prop
 
-**prop**: \`A\`
+• **prop**: \`A\`
 
 Comments for prop
 

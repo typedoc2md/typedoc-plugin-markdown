@@ -1,13 +1,15 @@
 {
   "extends": "./typedoc.base.json",
   "plugin": ["typedoc-plugin-markdown"],
+  "hidePageHeader": true,
   "expandObjects": true,
-  "useCodeBlocks": true,
   "excludeGroups": true,
   "outputFileStrategy": "members",
+  "useCodeBlocks": true,
   "indexFormat": "table",
   "parametersFormat": "table",
   "textContentMappings": {
-    "title.indexPage": "Public API"
+    "breadcrumbs.home": "API",
+    "title.indexPage": "API"
   }
 }

@@ -15,8 +15,6 @@ export function declarationMemberIdentifier(
 
   const prefix: string[] = [];
 
-  //const modifiers = reflection.flags.filter(() => !reflection.flags.isRest);
-
   if (reflection.flags.length) {
     prefix.push(
       reflection.flags
@@ -48,8 +46,17 @@ export function declarationMemberIdentifier(
   if (reflection.setSignature) {
     name.push(backTicks('set') + ' ');
   }
+
   const nameParts = reflection.name.split('.');
-  name.push(bold(escapeChars(nameParts[nameParts.length - 1])));
+  name.push(
+    bold(
+      escapeChars(
+        reflection.escapedName?.includes('.')
+          ? reflection.name
+          : nameParts[nameParts.length - 1],
+      ),
+    ),
+  );
 
   if (reflection.typeParameters) {
     name.push(
@@ -57,10 +64,6 @@ export function declarationMemberIdentifier(
         ?.map((typeParameter) => backTicks(typeParameter.name))
         .join(', ')}\\>`,
     );
-  }
-
-  if (reflection.flags.isOptional) {
-    //name.push('?');
   }
 
   if (declarationType) {
@@ -86,5 +89,5 @@ export function declarationMemberIdentifier(
   }
 
   const result = md.join('');
-  return useCodeBlocks ? codeBlock(result) : `${result}`;
+  return useCodeBlocks ? codeBlock(result) : `• ${result}`;
 }

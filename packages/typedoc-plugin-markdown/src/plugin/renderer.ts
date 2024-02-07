@@ -121,11 +121,11 @@ export async function render(
       }
     });
 
+  this.trigger(MarkdownRendererEvent.END, output);
+
   await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
 
   this.postRenderAsyncJobs = [];
-
-  this.trigger(MarkdownRendererEvent.END, output);
 
   this.theme = void 0;
 }

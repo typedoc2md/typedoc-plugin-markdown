@@ -159,7 +159,6 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       disableSources: true,
       readme: 'none',
-      outputFileStrategy: 'modules',
     },
     options: [
       {

@@ -1,6 +1,7 @@
 // @ts-check
 import * as fs from 'fs';
 import {
+  MarkdownHooks,
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
@@ -12,18 +13,33 @@ export function load(app) {
   app.renderer.defineTheme('custom-theme', MyMarkdownTheme);
 
   app.renderer.markdownHooks.on(
-    'page.begin',
-    () => '> TOP BANNER using `page.begin` hook',
+    MarkdownHooks.PAGE_BEGIN,
+    () => '> `page.begin` hook',
   );
 
   app.renderer.markdownHooks.on(
-    'page.end',
+    MarkdownHooks.PAGE_END,
     () => `**Generated using \`page.end\` hook**`,
   );
 
   app.renderer.markdownHooks.on(
-    'content.begin',
-    () => '> CONTENT BANNER using `content.begin` hook',
+    MarkdownHooks.CONTENT_BEGIN,
+    () => '> `content.begin` hook',
+  );
+
+  app.renderer.markdownHooks.on(
+    MarkdownHooks.INDEX_PAGE_BEGIN,
+    () => '> `page.index.begin` hook',
+  );
+
+  app.renderer.markdownHooks.on(
+    MarkdownHooks.INDEX_PAGE_END,
+    () => '> **Generated using `page.index.end` hook**',
+  );
+
+  app.renderer.markdownHooks.on(
+    MarkdownHooks.INDEX_CONTENT_BEGIN,
+    () => '> `content.index.begin` hook',
   );
 
   app.renderer.preRenderAsyncJobs.push(async (output) => {

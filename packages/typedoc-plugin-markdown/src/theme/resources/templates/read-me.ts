@@ -8,8 +8,6 @@ export function readmeTemplate(
 ) {
   const md: string[] = [];
 
-  md.push(context.hook('page.begin').join('\n'));
-
   if (!context.options.getValue('hidePageHeader')) {
     md.push(context.partials.header(page));
   }
@@ -21,8 +19,6 @@ export function readmeTemplate(
   if (page.model.readme) {
     md.push(context.partials.commentParts(page.model.readme));
   }
-
-  md.push(context.hook('page.end').join('\n'));
 
   return md.join('\n\n');
 }
