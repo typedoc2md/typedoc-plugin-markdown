@@ -14,13 +14,13 @@ exports[`Remark should parse globals page 1`] = `
 
 ### someVariable
 
-**\`const\`** **someVariable**: \`true\` = \`true\`
+• **\`const\`** **someVariable**: \`true\` = \`true\`
 
 ## Functions
 
 ### some_function()
 
-**some_function**(\`param\`): \`void\`
+• **some_function**(\`param\`): \`void\`
 
 #### Parameters
 
@@ -41,13 +41,13 @@ exports[`Remark should parse globals page without toc 1`] = `
 
 ### someVariable
 
-**\`const\`** **someVariable**: \`true\` = \`true\`
+• **\`const\`** **someVariable**: \`true\` = \`true\`
 
 ## Functions
 
 ### some_function()
 
-**some_function**(\`param\`): \`void\`
+• **some_function**(\`param\`): \`void\`
 
 #### Parameters
 
@@ -75,7 +75,7 @@ exports[`Remark should parse members class page 1`] = `
 
 ### new SomeClass()
 
-**new SomeClass**(): [\`SomeClass\`](SomeClass.md)
+• **new SomeClass**(): [\`SomeClass\`](SomeClass.md)
 
 #### Returns
 
@@ -85,7 +85,7 @@ exports[`Remark should parse members class page 1`] = `
 
 ### someProp
 
-**someProp**: \`string\`
+• **someProp**: \`string\`
 "
 `;
 
@@ -182,7 +182,7 @@ reallyUgly(javascript);
 
 ##### new SomeClass()
 
-**new SomeClass**(): [\`SomeClass\`](module-1.md#someclass)
+• **new SomeClass**(): [\`SomeClass\`](module-1.md#someclass)
 
 ###### Returns
 
@@ -192,7 +192,7 @@ reallyUgly(javascript);
 
 ##### someProp
 
-**someProp**: \`string\`
+• **someProp**: \`string\`
 
 ## Interfaces
 
@@ -202,19 +202,19 @@ reallyUgly(javascript);
 
 ##### someProp
 
-**someProp**: \`string\`
+• **someProp**: \`string\`
 
 ## Variables
 
 ### \\_\\_variable_with_underscores\\_\\_
 
-**\`const\`** **\\_\\_variable_with_underscores\\_\\_**: \`true\` = \`true\`
+• **\`const\`** **\\_\\_variable_with_underscores\\_\\_**: \`true\` = \`true\`
 
 ## Functions
 
 ### some_function()
 
-**some_function**(\`param\`): \`void\`
+• **some_function**(\`param\`): \`void\`
 
 #### Parameters
 
