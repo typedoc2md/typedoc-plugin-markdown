@@ -1,6 +1,6 @@
 {
   "name": "typedoc-gitlab-wiki-theme",
-  "version": "2.0.0-next.5",
+  "version": "2.0.0-next.6",
   "description": "A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible with Gitlab Wiki.",
   "main": "dist/index.js",
   "files": [
@@ -28,7 +28,7 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.0.0-next.44"
+    "typedoc-plugin-markdown": ">=4.0.0-next.51"
   },
   "keywords": [
     "typedoc",

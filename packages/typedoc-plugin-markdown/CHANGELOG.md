@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.51
+
+### Patch Changes
+
+- Remove blockquotes on signature and declarations.
+- Minor ui tweaks.
+- Expose `expandParameters` option.
+
 ## 4.0.0-next.50
 
 ### Patch Changes
