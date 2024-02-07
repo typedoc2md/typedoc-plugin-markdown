@@ -1294,6 +1294,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "functions/functionReturningAString.md"
       },
       {
+        "title": "functionReturningAUnionType",
+        "url": "functions/functionReturningAUnionType.md"
+      },
+      {
         "title": "functionReturningAnObject",
         "url": "functions/functionReturningAnObject.md"
       },
@@ -1316,6 +1320,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "functionWithOptionalParameters",
         "url": "functions/functionWithOptionalParameters.md"
+      },
+      {
+        "title": "functionWithRestParams",
+        "url": "functions/functionWithRestParams.md"
       },
       {
         "title": "functionWithTypeParameters",

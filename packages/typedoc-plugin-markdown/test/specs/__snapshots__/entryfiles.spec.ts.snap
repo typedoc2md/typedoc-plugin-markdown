@@ -43,7 +43,7 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ### new ModuleClass()
 
-> **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.md)
+**new ModuleClass**(): [\`ModuleClass\`](ModuleClass.md)
 
 #### Returns
 
@@ -64,7 +64,7 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ### new ModuleClass()
 
-> **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.md)
+**new ModuleClass**(): [\`ModuleClass\`](ModuleClass.md)
 
 #### Returns
 

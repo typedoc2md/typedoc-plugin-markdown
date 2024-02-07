@@ -77,6 +77,14 @@ describe(`Function Reflection`, () => {
     );
   });
 
+  test(`should compile function returning a union`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningAUnionType.md',
+    );
+  });
+
   test(`should compile function returning a function`, () => {
     expectFileToEqual(
       'reflections',
@@ -90,6 +98,14 @@ describe(`Function Reflection`, () => {
       'reflections',
       'members',
       'functions/functionReturningAPromise.md',
+    );
+  });
+
+  test(`should compile function with rest params`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithRestParams.md',
     );
   });
 });

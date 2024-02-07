@@ -51,7 +51,7 @@ describe(`Objects And Params`, () => {
 
   test(`should compile function returning a promise`, () => {
     expectFileToEqual(
-      'reflections',
+      'objectsAndParams',
       'members',
       'functions/functionReturningAPromise.md',
     );
@@ -59,7 +59,7 @@ describe(`Objects And Params`, () => {
 
   test(`should compile function returning an object`, () => {
     expectFileToEqual(
-      'reflections',
+      'objectsAndParams',
       'members',
       'functions/functionReturningAnObject.md',
     );
@@ -67,9 +67,17 @@ describe(`Objects And Params`, () => {
 
   test(`should compile function with nested parameters`, () => {
     expectFileToEqual(
-      'reflections',
+      'objectsAndParams',
       'members',
       'functions/functionWithNestedParameters.md',
+    );
+  });
+
+  test(`should compile function returning a union`, () => {
+    expectFileToEqual(
+      'objectsAndParams',
+      'members',
+      'functions/functionReturningAUnionType.md',
     );
   });
 });

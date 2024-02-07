@@ -3,7 +3,7 @@
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAFunction()
 
-> **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
+**functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
 
 Comments for function
 
@@ -26,7 +26,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:132](http://source-url)
+[functions.ts:154](http://source-url)
 "
 `;
 
@@ -62,14 +62,14 @@ Comments for function
 
 ## Source
 
-[functions.ts:132](http://source-url)
+[functions.ts:154](http://source-url)
 "
 `;
 
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
+**functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
 
 Comments for function
 
@@ -81,12 +81,12 @@ Return comments
 
 > ### prop
 >
-> > **prop**: \`string\`
+> **prop**: \`string\`
 >
 
 ## Source
 
-[functions.ts:140](http://source-url)
+[functions.ts:162](http://source-url)
 "
 `;
 
@@ -112,14 +112,14 @@ Return comments
 
 ## Source
 
-[functions.ts:140](http://source-url)
+[functions.ts:162](http://source-url)
 "
 `;
 
 exports[`Function Reflection should compile function returning a string: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAString()
 
-> **functionReturningAString**(): \`string\`
+**functionReturningAString**(): \`string\`
 
 Comments for function
 
@@ -131,7 +131,7 @@ Return comments
 
 ## Source
 
-[functions.ts:125](http://source-url)
+[functions.ts:135](http://source-url)
 "
 `;
 
@@ -152,14 +152,54 @@ Return comments
 
 ## Source
 
-[functions.ts:125](http://source-url)
+[functions.ts:135](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function returning a union: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionReturningAUnionType()
+
+**functionReturningAUnionType**(): \`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+
+Comments for function
+
+## Returns
+
+\`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+
+Return comments
+
+## Source
+
+[functions.ts:143](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function returning a union: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# functionReturningAUnionType()
+
+\`\`\`ts
+functionReturningAUnionType(): string | boolean | "string1" | "string2"
+\`\`\`
+
+Comments for function
+
+## Returns
+
+\`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+
+Return comments
+
+## Source
+
+[functions.ts:143](http://source-url)
 "
 `;
 
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAnObject()
 
-> **functionReturningAnObject**(): \`Object\`
+**functionReturningAnObject**(): \`Object\`
 
 Comments for function
 
@@ -171,15 +211,21 @@ Return comments
 
 ### x
 
-> **x**: \`number\` = \`1\`
+**x**: \`number\` = \`1\`
 
 ### y
 
-> **y**: \`number\` = \`2\`
+**y**: \`number\` = \`2\`
+
+## Default
+
+\`\`\`ts
+{}
+\`\`\`
 
 ## Source
 
-[functions.ts:117](http://source-url)
+[functions.ts:127](http://source-url)
 "
 `;
 
@@ -203,16 +249,22 @@ Return comments
 | \`x\` | \`number\` |
 | \`y\` | \`number\` |
 
+## Default
+
+\`\`\`ts
+{}
+\`\`\`
+
 ## Source
 
-[functions.ts:117](http://source-url)
+[functions.ts:127](http://source-url)
 "
 `;
 
 exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: basicFunction()
 
-> **basicFunction**(\`someParam\`): \`number\`
+**basicFunction**(\`someParam\`): \`number\`
 
 This is a function that is assigned to a variable.
 
@@ -260,7 +312,7 @@ This is a function that is assigned to a variable.
 exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithDefaultParameters()
 
-> **functionWithDefaultParameters**(\`valueA\`, \`valueB\`, \`valueC\`, \`valueD\`, \`valueE\`, \`valueF\`): \`string\`
+**functionWithDefaultParameters**(\`valueA\`, \`valueB\`, \`valueC\`, \`valueD\`, \`valueE\`, \`valueF\`): \`string\`
 
 This is a function with a parameter that has a default value.
 
@@ -339,7 +391,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 
 ## functionWithMultipleSignatures(value)
 
-> **functionWithMultipleSignatures**(\`value\`): \`string\`
+**functionWithMultipleSignatures**(\`value\`): \`string\`
 
 This is the first signature of a function with multiple signatures.
 
@@ -355,11 +407,11 @@ The name value.
 
 ### Source
 
-[functions.ts:95](http://source-url)
+[functions.ts:102](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
-> **functionWithMultipleSignatures**(\`value\`): \`string\`
+**functionWithMultipleSignatures**(\`value\`): \`string\`
 
 This is the second signature of a function with multiple signatures.
 
@@ -379,7 +431,7 @@ A value of the object.
 
 ### Source
 
-[functions.ts:103](http://source-url)
+[functions.ts:110](http://source-url)
 "
 `;
 
@@ -406,7 +458,7 @@ This is the first signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:95](http://source-url)
+[functions.ts:102](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -429,14 +481,14 @@ This is the second signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:103](http://source-url)
+[functions.ts:110](http://source-url)
 "
 `;
 
 exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithNamedParams()
 
-> **functionWithNamedParams**(\`__namedParameters\`, \`anotherParam\`): \`void\`
+**functionWithNamedParams**(\`__namedParameters\`, \`anotherParam\`): \`void\`
 
 ## Parameters
 
@@ -491,7 +543,7 @@ functionWithNamedParams(__namedParameters, anotherParam): void
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithNestedParameters()
 
-> **functionWithNestedParameters**(\`params\`, \`context\`, \`somethingElse\`?): \`boolean\`
+**functionWithNestedParameters**(\`params\`, \`context\`, \`somethingElse\`?): \`boolean\`
 
 Some nested params.
 
@@ -575,7 +627,7 @@ Some nested params.
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithOptionalParameters()
 
-> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
+**functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
 This is a function with a parameters.
 
@@ -606,7 +658,7 @@ An optional parameter.
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 2`] = `
 "# Function: functionWithOptionalParameters()
 
-> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
+**functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
 This is a function with a parameters.
 
@@ -698,10 +750,59 @@ This is a function with a parameters.
 "
 `;
 
+exports[`Function Reflection should compile function with rest params: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithRestParams()
+
+**functionWithRestParams**(\`param\`, ...\`restParams\`): \`boolean\`
+
+Function with reset parmas
+
+## Parameters
+
+• **param**: \`string\`
+
+• ...**restParams**: \`string\`[]
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:86](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with rest params: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# functionWithRestParams()
+
+\`\`\`ts
+functionWithRestParams(param, ...restParams): boolean
+\`\`\`
+
+Function with reset parmas
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`param\` | \`string\` |
+| ...\`restParams\` | \`string\`[] |
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:86](http://source-url)
+"
+`;
+
 exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithTypeParameters()
 
-> **functionWithTypeParameters**\\<\`T\`, \`Item\`\\>(): \`boolean\`
+**functionWithTypeParameters**\\<\`T\`, \`Item\`\\>(): \`boolean\`
 
 Function with type parameters
 
@@ -719,7 +820,7 @@ Comments for T
 
 ## Source
 
-[functions.ts:88](http://source-url)
+[functions.ts:95](http://source-url)
 "
 `;
 
@@ -745,6 +846,6 @@ Function with type parameters
 
 ## Source
 
-[functions.ts:88](http://source-url)
+[functions.ts:95](http://source-url)
 "
 `;

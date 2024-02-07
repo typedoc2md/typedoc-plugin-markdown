@@ -15,13 +15,13 @@ export function declarationMemberIdentifier(
 
   const prefix: string[] = [];
 
-  const modifiers = reflection.flags.filter(
-    (flag) => flag !== 'Optional' && !reflection.flags.isRest,
-  );
+  //const modifiers = reflection.flags.filter(() => !reflection.flags.isRest);
 
-  if (modifiers.length) {
+  if (reflection.flags.length) {
     prefix.push(
-      modifiers.map((flag) => bold(backTicks(flag.toLowerCase()))).join(' '),
+      reflection.flags
+        .map((flag) => bold(backTicks(flag.toLowerCase())))
+        .join(' '),
     );
   }
 
@@ -60,7 +60,7 @@ export function declarationMemberIdentifier(
   }
 
   if (reflection.flags.isOptional) {
-    name.push('?');
+    //name.push('?');
   }
 
   if (declarationType) {
@@ -86,5 +86,5 @@ export function declarationMemberIdentifier(
   }
 
   const result = md.join('');
-  return useCodeBlocks ? codeBlock(result) : `> ${result}`;
+  return useCodeBlocks ? codeBlock(result) : `${result}`;
 }

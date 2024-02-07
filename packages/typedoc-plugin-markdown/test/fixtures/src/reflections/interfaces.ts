@@ -38,7 +38,7 @@ export interface BasicInterface {
   /**
    * Comments for propReturningSignatureDeclaration
    */
-  propReturningSignatureDeclaration: () => any;
+  propReturningSignatureDeclaration?: () => string | boolean | number;
 
   /**
    * Comments for propReturningSignatureDeclarations

@@ -329,25 +329,25 @@ This is a simple example on how to use include.
 
 ### SameName
 
-> **SameName**: \`true\`
+**SameName**: \`true\`
 
 ***
 
 ### \\_prop\\_with\\_underscore
 
-> **\`const\`** **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
+**\`const\`** **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
 
 ***
 
 ### prop
 
-> **\`const\`** **prop**: \`true\` = \`true\`
+**\`const\`** **prop**: \`true\` = \`true\`
 
 ***
 
 ### propb
 
-> **\`const\`** **propb**: \`true\` = \`true\`
+**\`const\`** **propb**: \`true\` = \`true\`
 "
 `;
 
@@ -496,7 +496,7 @@ This is a simple example on how to use include.
 
 ### SameName
 
-> **SameName**: \`true\`
+**SameName**: \`true\`
 
 ***
 
@@ -504,7 +504,7 @@ This is a simple example on how to use include.
 
 ### \\_prop\\_with\\_underscore
 
-> **\`const\`** **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
+**\`const\`** **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
 
 ***
 
@@ -512,7 +512,7 @@ This is a simple example on how to use include.
 
 ### prop
 
-> **\`const\`** **prop**: \`true\` = \`true\`
+**\`const\`** **prop**: \`true\` = \`true\`
 
 ***
 
@@ -520,6 +520,6 @@ This is a simple example on how to use include.
 
 ### propb
 
-> **\`const\`** **propb**: \`true\` = \`true\`
+**\`const\`** **propb**: \`true\` = \`true\`
 "
 `;

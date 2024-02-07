@@ -81,6 +81,13 @@ export function functionWithNamedParams(
 ) {}
 
 /**
+ * Function with reset parmas
+ */
+export function functionWithRestParams(param: string, ...restParams: string[]) {
+  return true;
+}
+
+/**
  * Function with type parameters
  * @typeParam T Comments for T
  */
@@ -112,6 +119,9 @@ export function functionWithMultipleSignatures(): string {
 
 /**
  * Comments for function
+ *
+ * @default {}
+ *
  * @returns Return comments
  */
 export function functionReturningAnObject() {
@@ -123,6 +133,18 @@ export function functionReturningAnObject() {
  * @returns Return comments
  */
 export function functionReturningAString() {
+  return 'hello';
+}
+
+/**
+ * Comments for function
+ * @returns Return comments
+ */
+export function functionReturningAUnionType():
+  | string
+  | boolean
+  | 'string1'
+  | 'string2' {
   return 'hello';
 }
 

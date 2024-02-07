@@ -9,7 +9,7 @@ Comments for enum
 
 ### MemberA
 
-> **MemberA**: \`0\`
+**MemberA**: \`0\`
 
 Comments for MemberA
 
@@ -21,7 +21,7 @@ Comments for MemberA
 
 ### MemberB
 
-> **MemberB**: \`1\`
+**MemberB**: \`1\`
 
 Comments for MemberB
 
@@ -54,7 +54,7 @@ Comments for enum
 
 ### MemberA
 
-> **MemberA**: \`"UP"\`
+**MemberA**: \`"UP"\`
 
 #### Source
 
@@ -64,7 +64,7 @@ Comments for enum
 
 ### MemberB
 
-> **MemberB**: \`"DOWN"\`
+**MemberB**: \`"DOWN"\`
 
 #### Source
 

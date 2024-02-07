@@ -4,7 +4,6 @@ import {
   ReflectionType,
   SignatureReflection,
   SomeType,
-  UnionType,
 } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { backTicks, blockQuoteBlock, codeBlock, heading } from '../markdown';
@@ -75,13 +74,13 @@ function getReturnType(
   }
   if (type) {
     const returnType = context.partials.someType(type);
-    if (
-      type instanceof UnionType ||
-      (type instanceof ReflectionType &&
-        context.options.getValue('expandObjects') &&
-        context.options.getValue('useCodeBlocks'))
-    ) {
-      return codeBlock(returnType);
+    if (context.options.getValue('useCodeBlocks')) {
+      if (
+        type instanceof ReflectionType &&
+        context.options.getValue('expandObjects')
+      ) {
+        return codeBlock(returnType);
+      }
     }
     return returnType;
   }

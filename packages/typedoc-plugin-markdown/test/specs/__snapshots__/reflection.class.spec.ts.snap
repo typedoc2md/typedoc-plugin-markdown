@@ -12,7 +12,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 ### new AbstractClass()
 
-> **new AbstractClass**(): [\`AbstractClass\`](AbstractClass.md)
+**new AbstractClass**(): [\`AbstractClass\`](AbstractClass.md)
 
 #### Returns
 
@@ -22,7 +22,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 ### abstractProp
 
-> **\`abstract\`** **abstractProp**: \`string\`
+**\`abstract\`** **abstractProp**: \`string\`
 
 Comments for abstractProp
 
@@ -34,7 +34,7 @@ Comments for abstractProp
 
 ### abstractMethod()
 
-> **\`abstract\`** **abstractMethod**(): \`string\`
+**\`abstract\`** **abstractMethod**(): \`string\`
 
 Comments for abstractMethod
 
@@ -103,7 +103,7 @@ Comments for ClassWithAccessors
 
 ### new ClassWithAccessors()
 
-> **new ClassWithAccessors**(): [\`ClassWithAccessors\`](ClassWithAccessors.md)
+**new ClassWithAccessors**(): [\`ClassWithAccessors\`](ClassWithAccessors.md)
 
 #### Returns
 
@@ -113,7 +113,7 @@ Comments for ClassWithAccessors
 
 ### privateProp
 
-> **\`private\`** **privateProp**: \`string\`
+**\`private\`** **privateProp**: \`string\`
 
 #### Source
 
@@ -123,11 +123,11 @@ Comments for ClassWithAccessors
 
 ### accessor
 
-> **\`get\`** **accessor**(): \`string\`
+**\`get\`** **accessor**(): \`string\`
 
 Comments for getter
 
-> **\`set\`** **accessor**(\`value\`): \`void\`
+**\`set\`** **accessor**(\`value\`): \`void\`
 
 Comments for setter
 
@@ -149,7 +149,7 @@ Param comments
 
 ### noGetter
 
-> **\`set\`** **noGetter**(\`x\`): \`void\`
+**\`set\`** **noGetter**(\`x\`): \`void\`
 
 #### Parameters
 
@@ -163,7 +163,7 @@ Param comments
 
 ### noSetter
 
-> **\`get\`** **noSetter**(): \`string\`
+**\`get\`** **noSetter**(): \`string\`
 
 #### Returns
 
@@ -273,7 +273,7 @@ Comments for ClassWithConstructorOverloads
 
 ### new ClassWithConstructorOverloads(x, y)
 
-> **new ClassWithConstructorOverloads**(\`x\`, \`y\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+**new ClassWithConstructorOverloads**(\`x\`, \`y\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
 #### Parameters
 
@@ -293,7 +293,7 @@ Comments for x number
 
 ### new ClassWithConstructorOverloads(x)
 
-> **new ClassWithConstructorOverloads**(\`x\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+**new ClassWithConstructorOverloads**(\`x\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
 #### Parameters
 
@@ -311,7 +311,7 @@ Comments for x string
 
 ### new ClassWithConstructorOverloads(s)
 
-> **new ClassWithConstructorOverloads**(\`s\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+**new ClassWithConstructorOverloads**(\`s\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
 #### Parameters
 
@@ -406,7 +406,7 @@ Comment for ClassWithFlags
 
 ### new ClassWithFlags()
 
-> **new ClassWithFlags**(): [\`ClassWithFlags\`](ClassWithFlags.md)
+**new ClassWithFlags**(): [\`ClassWithFlags\`](ClassWithFlags.md)
 
 #### Returns
 
@@ -418,7 +418,7 @@ Comment for ClassWithFlags
 
 \`Experimental\`
 
-> **expermintalProp**: \`string\`
+**expermintalProp**: \`string\`
 
 #### Source
 
@@ -430,7 +430,7 @@ Comment for ClassWithFlags
 
 \`Internal\`
 
-> **\`private\`** **internalProp**: \`string\`
+**\`private\`** **internalProp**: \`string\`
 
 #### Source
 
@@ -442,7 +442,7 @@ Comment for ClassWithFlags
 
 \`Experimental\`
 
-> **expermintalMethod**(): \`void\`
+**expermintalMethod**(): \`void\`
 
 #### Returns
 
@@ -458,7 +458,7 @@ Comment for ClassWithFlags
 
 \`Internal\`
 
-> **\`protected\`** **internalMethod**(): \`void\`
+**\`protected\`** **internalMethod**(): \`void\`
 
 #### Returns
 
@@ -541,7 +541,7 @@ Comments for ClassWithModifiers
 
 ### new ClassWithModifiers()
 
-> **new ClassWithModifiers**(): [\`ClassWithModifiers\`](ClassWithModifiers.md)
+**new ClassWithModifiers**(): [\`ClassWithModifiers\`](ClassWithModifiers.md)
 
 #### Returns
 
@@ -551,7 +551,7 @@ Comments for ClassWithModifiers
 
 ### privateProp
 
-> **\`private\`** **privateProp**: \`string\`
+**\`private\`** **privateProp**: \`string\`
 
 Comments for privateProp
 
@@ -563,7 +563,7 @@ Comments for privateProp
 
 ### protectedProp
 
-> **\`protected\`** **protectedProp**: \`string\`
+**\`protected\`** **protectedProp**: \`string\`
 
 Comments for protectedProp
 
@@ -575,7 +575,7 @@ Comments for protectedProp
 
 ### publicPropWithDefault
 
-> **publicPropWithDefault**: \`string\` = \`'propWithDefault'\`
+**publicPropWithDefault**: \`string\` = \`'propWithDefault'\`
 
 Comments for propWithDefault
 
@@ -587,7 +587,7 @@ Comments for propWithDefault
 
 ### readonlyProp
 
-> **\`readonly\`** **readonlyProp**: \`string\`
+**\`readonly\`** **readonlyProp**: \`string\`
 
 Comments for abstractProperty
 
@@ -599,7 +599,7 @@ Comments for abstractProperty
 
 ### staticProp
 
-> **\`static\`** **staticProp**: \`string\`
+**\`static\`** **staticProp**: \`string\`
 
 Comments for staticProp
 
@@ -611,7 +611,7 @@ Comments for staticProp
 
 ### privateMethod()
 
-> **\`private\`** **privateMethod**(): \`void\`
+**\`private\`** **privateMethod**(): \`void\`
 
 Comment for privateMethod
 
@@ -627,7 +627,7 @@ Comment for privateMethod
 
 ### publicMethod()
 
-> **publicMethod**(): \`void\`
+**publicMethod**(): \`void\`
 
 Comment for publicMethod
 
@@ -643,7 +643,7 @@ Comment for publicMethod
 
 ### staticMethod()
 
-> **\`static\`** **staticMethod**(): \`void\`
+**\`static\`** **staticMethod**(): \`void\`
 
 Comment for staticMethod
 
@@ -761,7 +761,7 @@ Comments for param B
 
 ### new ClassWithTypeParameters()
 
-> **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
+**new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
 
 #### Returns
 
@@ -809,7 +809,7 @@ Comments for DerivedClassA
 
 ### new DerivedClassA()
 
-> **new DerivedClassA**(): [\`DerivedClassA\`](DerivedClassA.md)
+**new DerivedClassA**(): [\`DerivedClassA\`](DerivedClassA.md)
 
 #### Returns
 
@@ -823,7 +823,7 @@ Comments for DerivedClassA
 
 ### abstractProp
 
-> **abstractProp**: \`string\`
+**abstractProp**: \`string\`
 
 Comments for abstractProp
 
@@ -839,7 +839,7 @@ Comments for abstractProp
 
 ### derivedProp
 
-> **derivedProp**: \`string\`
+**derivedProp**: \`string\`
 
 #### Source
 
@@ -849,7 +849,7 @@ Comments for abstractProp
 
 ### abstractMethod()
 
-> **abstractMethod**(): \`string\`
+**abstractMethod**(): \`string\`
 
 Comments for abstractMethod
 
@@ -869,7 +869,7 @@ Comments for abstractMethod
 
 ### derivedMethod()
 
-> **derivedMethod**(): \`string\`
+**derivedMethod**(): \`string\`
 
 #### Returns
 
@@ -964,7 +964,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 
 ### new DisposableClass()
 
-> **new DisposableClass**(): [\`DisposableClass\`](DisposableClass.md)
+**new DisposableClass**(): [\`DisposableClass\`](DisposableClass.md)
 
 #### Returns
 
@@ -974,7 +974,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 
 ### \`[dispose]\`()
 
-> **[dispose]**(): \`void\`
+**[dispose]**(): \`void\`
 
 #### Returns
 
