@@ -60,6 +60,7 @@ const config = {
         sidebar: { pretty: true },
         outputFileStrategy: 'members',
         cleanOutputDir: true,
+        plugin: ['typedoc-plugin-coverage'],
       },
     ],
     [
@@ -76,6 +77,7 @@ const config = {
         entryPoints:
           '../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts',
         cleanOutputDir: true,
+        plugin: ['typedoc-plugin-coverage'],
       },
     ],
     [
@@ -95,6 +97,7 @@ const config = {
         outputFileStrategy: 'modules',
         entryModule: 'index',
         cleanOutputDir: true,
+        plugin: ['typedoc-plugin-coverage'],
       },
     ],
     [
@@ -112,6 +115,7 @@ const config = {
           '../../../packages/typedoc-plugin-markdown/test/fixtures/src/packages/*',
         entryPointStrategy: 'packages',
         sidebar: { pretty: true },
+        plugin: ['typedoc-plugin-coverage'],
       },
     ],
   ],
