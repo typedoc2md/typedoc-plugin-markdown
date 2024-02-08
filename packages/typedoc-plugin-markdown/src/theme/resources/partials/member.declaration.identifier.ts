@@ -76,11 +76,7 @@ export function declarationMemberIdentifier(
     md.push(context.partials.someType(declarationType));
   }
 
-  if (
-    reflection.defaultValue &&
-    reflection.defaultValue !== '...' &&
-    reflection.name !== reflection.defaultValue?.slice(1, -1)
-  ) {
+  if (reflection.defaultValue && reflection.defaultValue !== '...') {
     md.push(` = \`${stripComments(reflection.defaultValue)}\``);
   }
 
@@ -89,5 +85,5 @@ export function declarationMemberIdentifier(
   }
 
   const result = md.join('');
-  return useCodeBlocks ? codeBlock(result) : `• ${result}`;
+  return useCodeBlocks ? codeBlock(result) : `> ${result}`;
 }

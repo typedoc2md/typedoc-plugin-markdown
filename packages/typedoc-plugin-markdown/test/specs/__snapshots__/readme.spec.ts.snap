@@ -44,7 +44,7 @@ Module commments
 
 ### someFunction()
 
-• **someFunction**(): \`void\`
+> **someFunction**(): \`void\`
 
 #### Returns
 

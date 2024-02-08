@@ -3,7 +3,7 @@
 exports[`Variable Reflection should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
-• **\`const\`** **objectWithSymbol**: \`Object\`
+> **\`const\`** **objectWithSymbol**: \`Object\`
 
 Comments variable with symbol
 
@@ -11,7 +11,7 @@ Comments variable with symbol
 
 ### [sym]
 
-• **[sym]**: \`string\` = \`'value'\`
+> **[sym]**: \`string\` = \`'value'\`
 
 Comments for symbol
 
@@ -32,9 +32,9 @@ Comments variable with symbol
 
 ## Type declaration
 
-| Member | Type | Description |
-| :------ | :------ | :------ |
-| \`[sym]\` | \`string\` | Comments for symbol |
+| Member | Type | Value | Description |
+| :------ | :------ | :------ | :------ |
+| \`[sym]\` | \`string\` | 'value' | Comments for symbol |
 
 ## Source
 
@@ -45,7 +45,7 @@ Comments variable with symbol
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: typeOperatorVariable
 
-• **\`const\`** **typeOperatorVariable**: unique \`symbol\`
+> **\`const\`** **typeOperatorVariable**: unique \`symbol\`
 
 Comments for typeOperatorVariable
 
@@ -73,7 +73,7 @@ Comments for typeOperatorVariable
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: stringVariable
 
-• **\`const\`** **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
+> **\`const\`** **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
 
 A simple string variable
 
@@ -101,7 +101,7 @@ A simple string variable
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-• **\`const\`** **objectLiteralVariable**: \`Object\`
+> **\`const\`** **objectLiteralVariable**: \`Object\`
 
 Comments for objectLiteralVariable
 
@@ -109,67 +109,67 @@ Comments for objectLiteralVariable
 
 ### \\*
 
-• **\\***: \`string\`
+> **\\***: \`string\` = \`'*'\`
 
 ### \\*\\*foo\\*\\*
 
-• **\\*\\*foo\\*\\***: \`string\`
+> **\\*\\*foo\\*\\***: \`string\` = \`'**foo**'\`
 
 ### \\*foo\\*
 
-• **\\*foo\\***: \`string\`
+> **\\*foo\\***: \`string\` = \`'*foo*'\`
 
 ### \\<
 
-• **\\<**: \`string\`
+> **\\<**: \`string\` = \`'<'\`
 
 ### \\<foo
 
-• **\\<foo**: \`string\`
+> **\\<foo**: \`string\` = \`'<foo'\`
 
 ### \\<foo\\>
 
-• **\\<foo\\>**: \`string\`
+> **\\<foo\\>**: \`string\` = \`'<foo>'\`
 
 ### \\>
 
-• **\\>**: \`string\`
+> **\\>**: \`string\` = \`'>'\`
 
 ### \\_
 
-• **\\_**: \`string\`
+> **\\_**: \`string\` = \`'_'\`
 
 ### \\_foo\\_
 
-• **\\_foo\\_**: \`string\`
+> **\\_foo\\_**: \`string\` = \`'_foo_'\`
 
 ### prop\\_with\\_underscore
 
-• **prop\\_with\\_underscore**: \`string\`
+> **prop\\_with\\_underscore**: \`string\` = \`'prop_with_underscore'\`
 
 ### prop\\|with\\|pipes
 
-• **prop\\|with\\|pipes**: \`string\`
+> **prop\\|with\\|pipes**: \`string\` = \`'prop|with|pipes'\`
 
 ### valueA
 
-• **valueA**: \`number\` = \`100\`
+> **valueA**: \`number\` = \`100\`
 
 ### valueB
 
-• **valueB**: \`boolean\` = \`true\`
+> **valueB**: \`boolean\` = \`true\`
 
 ### valueX
 
-• **valueX**: \`Object\`
+> **valueX**: \`Object\`
 
 ### valueX.valueA
 
-• **valueA**: \`number\`[]
+> **valueA**: \`number\`[]
 
 ### valueX.valueY
 
-• **valueY**: (\`z\`) => \`Object\`
+> **valueY**: (\`z\`) => \`Object\`
 
 #### Parameters
 
@@ -181,31 +181,31 @@ Comments for objectLiteralVariable
 
 ##### a
 
-• **a**: \`string\` = \`'test'\`
+> **a**: \`string\` = \`'test'\`
 
 ##### b
 
-• **b**: \`string\` = \`z\`
+> **b**: \`string\` = \`z\`
 
 ##### c
 
-• **c**: \`Object\`
+> **c**: \`Object\`
 
 ##### c.a
 
-• **a**: \`number\` = \`1\`
+> **a**: \`number\` = \`1\`
 
 ##### c.b
 
-• **b**: \`number\` = \`2\`
+> **b**: \`number\` = \`2\`
 
 ### valueX.valueZ
 
-• **valueZ**: \`string\` = \`'foo'\`
+> **valueZ**: \`string\` = \`'foo'\`
 
 ### valueY
 
-• **valueY**: (\`unionParam\`, \`_undercoreParam_\`) => \`string\`
+> **valueY**: (\`unionParam\`, \`_undercoreParam_\`) => \`string\`
 
 #### Parameters
 
@@ -219,11 +219,11 @@ Comments for objectLiteralVariable
 
 ### \\|
 
-• **\\|**: \`string\`
+> **\\|**: \`string\` = \`'|'\`
 
 ### ~
 
-• **~**: \`string\`
+> **~**: \`string\` = \`'~'\`
 
 ## Source
 
@@ -242,28 +242,28 @@ Comments for objectLiteralVariable
 
 ## Type declaration
 
-| Member | Type |
-| :------ | :------ |
-| \`*\` | \`string\` |
-| \`**foo**\` | \`string\` |
-| \`*foo*\` | \`string\` |
-| \`<\` | \`string\` |
-| \`<foo\` | \`string\` |
-| \`<foo>\` | \`string\` |
-| \`>\` | \`string\` |
-| \`_\` | \`string\` |
-| \`_foo_\` | \`string\` |
-| \`prop_with_underscore\` | \`string\` |
-| prop\\|with\\|pipes | \`string\` |
-| \`valueA\` | \`number\` |
-| \`valueB\` | \`boolean\` |
-| \`valueX\` | \`Object\` |
-| \`valueX.valueA\` | \`number\`[] |
-| \`valueX.valueY\` | (\`z\`) => \`Object\` |
-| \`valueX.valueZ\` | \`string\` |
-| \`valueY\` | (\`unionParam\`, \`_undercoreParam_\`) => \`string\` |
-| \\| | \`string\` |
-| \`~\` | \`string\` |
+| Member | Type | Value |
+| :------ | :------ | :------ |
+| \`*\` | \`string\` | '\\*' |
+| \`**foo**\` | \`string\` | '\\*\\*foo\\*\\*' |
+| \`*foo*\` | \`string\` | '\\*foo\\*' |
+| \`<\` | \`string\` | '\\<' |
+| \`<foo\` | \`string\` | '\\<foo' |
+| \`<foo>\` | \`string\` | '\\<foo\\>' |
+| \`>\` | \`string\` | '\\>' |
+| \`_\` | \`string\` | '\\_' |
+| \`_foo_\` | \`string\` | '\\_foo\\_' |
+| \`prop_with_underscore\` | \`string\` | 'prop\\_with\\_underscore' |
+| prop\\|with\\|pipes | \`string\` | 'prop\\|with\\|pipes' |
+| \`valueA\` | \`number\` | 100 |
+| \`valueB\` | \`boolean\` | true |
+| \`valueX\` | \`Object\` | - |
+| \`valueX.valueA\` | \`number\`[] | - |
+| \`valueX.valueY\` | (\`z\`) => \`Object\` | - |
+| \`valueX.valueZ\` | \`string\` | 'foo' |
+| \`valueY\` | (\`unionParam\`, \`_undercoreParam_\`) => \`string\` | - |
+| \\| | \`string\` | '\\|' |
+| \`~\` | \`string\` | '~' |
 
 ## Source
 

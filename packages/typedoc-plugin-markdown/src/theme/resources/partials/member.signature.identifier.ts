@@ -61,5 +61,5 @@ export function signatureMemberIdentifier(
   }
 
   const result = md.join('');
-  return useCodeBlocks ? codeBlock(result) : `• ${result}`;
+  return useCodeBlocks ? codeBlock(result) : `> ${result}`;
 }

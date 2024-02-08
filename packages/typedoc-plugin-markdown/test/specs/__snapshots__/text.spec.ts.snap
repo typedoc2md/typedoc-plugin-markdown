@@ -67,7 +67,7 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 
 ### constA
 
-• **\`const\`** **constA**: \`true\` = \`true\`
+> **\`const\`** **constA**: \`true\` = \`true\`
 "
 `;
 

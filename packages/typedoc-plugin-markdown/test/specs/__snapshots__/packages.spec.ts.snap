@@ -74,7 +74,7 @@ exports[`Packages should compile member page for a single package: (Output File 
 
 ### prop
 
-• **prop**: \`string\`
+> **prop**: \`string\`
 "
 `;
 
@@ -91,7 +91,7 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 
 ### prop
 
-• **prop**: \`string\`
+> **prop**: \`string\`
 "
 `;
 

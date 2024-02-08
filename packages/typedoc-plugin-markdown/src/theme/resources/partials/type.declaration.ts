@@ -43,7 +43,10 @@ export function declarationType(
 
         const theType = context.helpers.getDeclarationType(obj) as SomeType;
 
-        const typeString = context.partials.someType(theType);
+        const typeString =
+          obj.defaultValue && obj.defaultValue !== '...'
+            ? obj.defaultValue
+            : context.partials.someType(theType);
         if (shouldFormat) {
           return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
         }

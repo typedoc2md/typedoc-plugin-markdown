@@ -360,8 +360,8 @@ exports[`Objects And Params should compile function returning an object: (Output
 
 \`\`\`ts
 functionReturningAnObject(): {
-  x: number;
-  y: number;
+  x: 1;
+  y: 2;
 }
 \`\`\`
 
@@ -371,8 +371,8 @@ Comments for function
 
 \`\`\`ts
 {
-  x: number;
-  y: number;
+  x: 1;
+  y: 2;
 }
 \`\`\`
 
@@ -403,8 +403,8 @@ exports[`Objects And Params should compile function returning an object: (Output
 
 \`\`\`ts
 functionReturningAnObject(): {
-  x: number;
-  y: number;
+  x: 1;
+  y: 2;
 }
 \`\`\`
 
@@ -414,8 +414,8 @@ Comments for function
 
 \`\`\`ts
 {
-  x: number;
-  y: number;
+  x: 1;
+  y: 2;
 }
 \`\`\`
 
@@ -883,7 +883,7 @@ exports[`Objects And Params should compile object with symbol: (Output File Stra
 
 \`\`\`ts
 const objectWithSymbol: {
-  [sym]: string;
+  [sym]: 'value';
 };
 \`\`\`
 
@@ -906,7 +906,7 @@ exports[`Objects And Params should compile object with symbol: (Output File Stra
 
 \`\`\`ts
 const objectWithSymbol: {
-  [sym]: string;
+  [sym]: 'value';
 };
 \`\`\`
 
@@ -955,34 +955,34 @@ exports[`Objects And Params should compile variable assigned to an object litera
 
 \`\`\`ts
 const objectLiteralVariable: {
-  *: string;
-  **foo**: string;
-  *foo*: string;
-  <: string;
-  <foo: string;
-  <foo>: string;
-  >: string;
-  _: string;
-  _foo_: string;
-  prop_with_underscore: string;
-  prop|with|pipes: string;
-  valueA: number;
-  valueB: boolean;
+  *: '';
+  **foo**: 'foo';
+  *foo*: 'foo';
+  <: '<';
+  <foo: '<foo';
+  <foo>: '<foo>';
+  >: '>';
+  _: '_';
+  _foo_: '_foo_';
+  prop_with_underscore: 'prop_with_underscore';
+  prop|with|pipes: 'prop|with|pipes';
+  valueA: 100;
+  valueB: true;
   valueX: {
      valueA: number[];
      valueY: (z: string) => {
-        a: string;
-        b: string;
+        a: 'test';
+        b: z;
         c: {
-           a: number;
-           b: number;
+           a: 1;
+           b: 2;
         };
      };
-     valueZ: string;
+     valueZ: 'foo';
   };
   valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
-  |: string;
-  ~: string;
+  |: '|';
+  ~: '~';
 };
 \`\`\`
 
@@ -993,67 +993,67 @@ Comments for objectLiteralVariable
 ### \\*
 
 \`\`\`ts
-*: string;
+*: string = '*';
 \`\`\`
 
 ### \\*\\*foo\\*\\*
 
 \`\`\`ts
-**foo**: string;
+**foo**: string = '**foo**';
 \`\`\`
 
 ### \\*foo\\*
 
 \`\`\`ts
-*foo*: string;
+*foo*: string = '*foo*';
 \`\`\`
 
 ### \\<
 
 \`\`\`ts
-<: string;
+<: string = '<';
 \`\`\`
 
 ### \\<foo
 
 \`\`\`ts
-<foo: string;
+<foo: string = '<foo';
 \`\`\`
 
 ### \\<foo\\>
 
 \`\`\`ts
-<foo>: string;
+<foo>: string = '<foo>';
 \`\`\`
 
 ### \\>
 
 \`\`\`ts
->: string;
+>: string = '>';
 \`\`\`
 
 ### \\_
 
 \`\`\`ts
-_: string;
+_: string = '_';
 \`\`\`
 
 ### \\_foo\\_
 
 \`\`\`ts
-_foo_: string;
+_foo_: string = '_foo_';
 \`\`\`
 
 ### prop\\_with\\_underscore
 
 \`\`\`ts
-prop_with_underscore: string;
+prop_with_underscore: string = 'prop_with_underscore';
 \`\`\`
 
 ### prop\\|with\\|pipes
 
 \`\`\`ts
-prop|with|pipes: string;
+prop|with|pipes: string = 'prop|with|pipes';
 \`\`\`
 
 ### valueA
@@ -1074,14 +1074,14 @@ valueB: boolean = true;
 valueX: {
   valueA: number[];
   valueY: (z: string) => {
-     a: string;
-     b: string;
+     a: 'test';
+     b: z;
      c: {
-        a: number;
-        b: number;
+        a: 1;
+        b: 2;
      };
   };
-  valueZ: string;
+  valueZ: 'foo';
 };
 \`\`\`
 
@@ -1095,11 +1095,11 @@ valueA: number[];
 
 \`\`\`ts
 valueY: (z: string) => {
-  a: string;
-  b: string;
+  a: 'test';
+  b: z;
   c: {
-     a: number;
-     b: number;
+     a: 1;
+     b: 2;
   };
 };
 \`\`\`
@@ -1112,11 +1112,11 @@ valueY: (z: string) => {
 
 \`\`\`ts
 {
-  a: string;
-  b: string;
+  a: 'test';
+  b: z;
   c: {
-     a: number;
-     b: number;
+     a: 1;
+     b: 2;
   };
 }
 \`\`\`
@@ -1137,8 +1137,8 @@ b: string = z;
 
 \`\`\`ts
 c: {
-  a: number;
-  b: number;
+  a: 1;
+  b: 2;
 };
 \`\`\`
 
@@ -1179,13 +1179,13 @@ valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
 ### \\|
 
 \`\`\`ts
-|: string;
+|: string = '|';
 \`\`\`
 
 ### ~
 
 \`\`\`ts
-~: string;
+~: string = '~';
 \`\`\`
 "
 `;
@@ -1195,34 +1195,34 @@ exports[`Objects And Params should compile variable assigned to an object litera
 
 \`\`\`ts
 const objectLiteralVariable: {
-  *: string;
-  **foo**: string;
-  *foo*: string;
-  <: string;
-  <foo: string;
-  <foo>: string;
-  >: string;
-  _: string;
-  _foo_: string;
-  prop_with_underscore: string;
-  prop|with|pipes: string;
-  valueA: number;
-  valueB: boolean;
+  *: '';
+  **foo**: 'foo';
+  *foo*: 'foo';
+  <: '<';
+  <foo: '<foo';
+  <foo>: '<foo>';
+  >: '>';
+  _: '_';
+  _foo_: '_foo_';
+  prop_with_underscore: 'prop_with_underscore';
+  prop|with|pipes: 'prop|with|pipes';
+  valueA: 100;
+  valueB: true;
   valueX: {
      valueA: number[];
      valueY: (z: string) => {
-        a: string;
-        b: string;
+        a: 'test';
+        b: z;
         c: {
-           a: number;
-           b: number;
+           a: 1;
+           b: 2;
         };
      };
-     valueZ: string;
+     valueZ: 'foo';
   };
   valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
-  |: string;
-  ~: string;
+  |: '|';
+  ~: '~';
 };
 \`\`\`
 
@@ -1233,67 +1233,67 @@ Comments for objectLiteralVariable
 ### \\*
 
 \`\`\`ts
-*: string;
+*: string = '*';
 \`\`\`
 
 ### \\*\\*foo\\*\\*
 
 \`\`\`ts
-**foo**: string;
+**foo**: string = '**foo**';
 \`\`\`
 
 ### \\*foo\\*
 
 \`\`\`ts
-*foo*: string;
+*foo*: string = '*foo*';
 \`\`\`
 
 ### \\<
 
 \`\`\`ts
-<: string;
+<: string = '<';
 \`\`\`
 
 ### \\<foo
 
 \`\`\`ts
-<foo: string;
+<foo: string = '<foo';
 \`\`\`
 
 ### \\<foo\\>
 
 \`\`\`ts
-<foo>: string;
+<foo>: string = '<foo>';
 \`\`\`
 
 ### \\>
 
 \`\`\`ts
->: string;
+>: string = '>';
 \`\`\`
 
 ### \\_
 
 \`\`\`ts
-_: string;
+_: string = '_';
 \`\`\`
 
 ### \\_foo\\_
 
 \`\`\`ts
-_foo_: string;
+_foo_: string = '_foo_';
 \`\`\`
 
 ### prop\\_with\\_underscore
 
 \`\`\`ts
-prop_with_underscore: string;
+prop_with_underscore: string = 'prop_with_underscore';
 \`\`\`
 
 ### prop\\|with\\|pipes
 
 \`\`\`ts
-prop|with|pipes: string;
+prop|with|pipes: string = 'prop|with|pipes';
 \`\`\`
 
 ### valueA
@@ -1314,14 +1314,14 @@ valueB: boolean = true;
 valueX: {
   valueA: number[];
   valueY: (z: string) => {
-     a: string;
-     b: string;
+     a: 'test';
+     b: z;
      c: {
-        a: number;
-        b: number;
+        a: 1;
+        b: 2;
      };
   };
-  valueZ: string;
+  valueZ: 'foo';
 };
 \`\`\`
 
@@ -1335,11 +1335,11 @@ valueA: number[];
 
 \`\`\`ts
 valueY: (z: string) => {
-  a: string;
-  b: string;
+  a: 'test';
+  b: z;
   c: {
-     a: number;
-     b: number;
+     a: 1;
+     b: 2;
   };
 };
 \`\`\`
@@ -1354,11 +1354,11 @@ valueY: (z: string) => {
 
 \`\`\`ts
 {
-  a: string;
-  b: string;
+  a: 'test';
+  b: z;
   c: {
-     a: number;
-     b: number;
+     a: 1;
+     b: 2;
   };
 }
 \`\`\`
@@ -1379,8 +1379,8 @@ b: string = z;
 
 \`\`\`ts
 c: {
-  a: number;
-  b: number;
+  a: 1;
+  b: 2;
 };
 \`\`\`
 
@@ -1422,13 +1422,13 @@ valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
 ### \\|
 
 \`\`\`ts
-|: string;
+|: string = '|';
 \`\`\`
 
 ### ~
 
 \`\`\`ts
-~: string;
+~: string = '~';
 \`\`\`
 "
 `;

@@ -1,7 +1,11 @@
 import { DeclarationReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
 import { table } from '../markdown';
-import { formatTableDescriptionCol, formatTableNameCol } from '../utils';
+import {
+  escapeChars,
+  formatTableDescriptionCol,
+  formatTableNameCol,
+} from '../utils';
 
 export function typeDeclarationTable(
   context: MarkdownThemeRenderContext,
@@ -15,9 +19,17 @@ export function typeDeclarationTable(
     Boolean(declaration.comment),
   );
 
+  const hasDefaultValues = declarations.some((declaration) =>
+    Boolean(declaration.defaultValue),
+  );
+
   headers.push(context.text.getText('label.member'));
 
   headers.push(context.text.getText('label.type'));
+
+  if (hasDefaultValues) {
+    headers.push(context.text.getText('label.value'));
+  }
 
   if (hasComments) {
     headers.push(context.text.getText('label.description'));
@@ -35,6 +47,16 @@ export function typeDeclarationTable(
         .someType(declaration.type as SomeType)
         .replace(/\n/g, ' '),
     );
+
+    if (hasDefaultValues) {
+      row.push(
+        escapeChars(
+          !declaration.defaultValue || declaration.defaultValue === '...'
+            ? '-'
+            : declaration.defaultValue,
+        ),
+      );
+    }
 
     if (hasComments) {
       const comments = declaration.comment;

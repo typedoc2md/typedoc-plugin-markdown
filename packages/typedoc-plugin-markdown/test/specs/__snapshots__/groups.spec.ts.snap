@@ -105,7 +105,7 @@ A basic module
 
 ##### new ClassA()
 
-• **new ClassA**(): [\`ClassA\`](basic.md#classa)
+> **new ClassA**(): [\`ClassA\`](basic.md#classa)
 
 ###### Returns
 
@@ -119,7 +119,7 @@ A basic module
 
 ##### new ClassB()
 
-• **new ClassB**(): [\`ClassB\`](basic.md#classb)
+> **new ClassB**(): [\`ClassB\`](basic.md#classb)
 
 ###### Returns
 
@@ -133,11 +133,11 @@ A basic module
 
 ##### propA
 
-• **propA**: \`string\`
+> **propA**: \`string\`
 
 ##### propB
 
-• **propB**: \`string\`
+> **propB**: \`string\`
 
 ***
 
@@ -147,13 +147,13 @@ A basic module
 
 ### TypeA
 
-• **TypeA**: \`string\`
+> **TypeA**: \`string\`
 
 ***
 
 ### TypeB
 
-• **TypeB**: \`string\`
+> **TypeB**: \`string\`
 "
 `;
 
@@ -190,7 +190,7 @@ A basic module
 
 #### new ClassA()
 
-• **new ClassA**(): [\`ClassA\`](basic.md#classa)
+> **new ClassA**(): [\`ClassA\`](basic.md#classa)
 
 ##### Returns
 
@@ -208,7 +208,7 @@ A basic module
 
 #### new ClassB()
 
-• **new ClassB**(): [\`ClassB\`](basic.md#classb)
+> **new ClassB**(): [\`ClassB\`](basic.md#classb)
 
 ##### Returns
 
@@ -226,13 +226,13 @@ A basic module
 
 #### propA
 
-• **propA**: \`string\`
+> **propA**: \`string\`
 
 <a id="propb" name="propb"></a>
 
 #### propB
 
-• **propB**: \`string\`
+> **propB**: \`string\`
 
 ***
 
@@ -246,7 +246,7 @@ A basic module
 
 ## TypeA
 
-• **TypeA**: \`string\`
+> **TypeA**: \`string\`
 
 ***
 
@@ -254,7 +254,7 @@ A basic module
 
 ## TypeB
 
-• **TypeB**: \`string\`
+> **TypeB**: \`string\`
 "
 `;
 
@@ -857,7 +857,7 @@ A module that contains namespaces
 
 ##### new ClassB()
 
-• **new ClassB**(): [\`ClassB\`](index.md#classb)
+> **new ClassB**(): [\`ClassB\`](index.md#classb)
 
 ###### Returns
 
@@ -871,7 +871,7 @@ A module that contains namespaces
 
 ##### new \\_\\_Class\\_A\\_()
 
-• **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
 
 ###### Returns
 
@@ -889,31 +889,31 @@ A module that contains namespaces
 
 ### TypeB
 
-• **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 ***
 
 ### \\_Type\\_A\\_
 
-• **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_**: \`string\`
 
 ## Variables
 
 ### \\_variable\\_A\\_
 
-• **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
 ### variableB
 
-• **\`const\`** **variableB**: \`true\` = \`true\`
+> **\`const\`** **variableB**: \`true\` = \`true\`
 
 ## Functions
 
 ### \\_function\\_A\\_()
 
-• **\\_function\\_A\\_**(): \`void\`
+> **\\_function\\_A\\_**(): \`void\`
 
 #### Returns
 
@@ -923,7 +923,7 @@ A module that contains namespaces
 
 ### functionB()
 
-• **functionB**(): \`void\`
+> **functionB**(): \`void\`
 
 #### Returns
 
@@ -971,7 +971,7 @@ A module that contains namespaces
 
 #### new ClassB()
 
-• **new ClassB**(): [\`ClassB\`](index.md#classb)
+> **new ClassB**(): [\`ClassB\`](index.md#classb)
 
 ##### Returns
 
@@ -989,7 +989,7 @@ A module that contains namespaces
 
 #### new \\_\\_Class\\_A\\_()
 
-• **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
+> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
 
 ##### Returns
 
@@ -1013,7 +1013,7 @@ A module that contains namespaces
 
 ## TypeB
 
-• **TypeB**: \`string\`
+> **TypeB**: \`string\`
 
 ***
 
@@ -1021,7 +1021,7 @@ A module that contains namespaces
 
 ## \\_Type\\_A\\_
 
-• **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_**: \`string\`
 
 ***
 
@@ -1029,7 +1029,7 @@ A module that contains namespaces
 
 ## \\_variable\\_A\\_
 
-• **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
@@ -1037,7 +1037,7 @@ A module that contains namespaces
 
 ## variableB
 
-• **\`const\`** **variableB**: \`true\` = \`true\`
+> **\`const\`** **variableB**: \`true\` = \`true\`
 
 ***
 
@@ -1045,7 +1045,7 @@ A module that contains namespaces
 
 ## \\_function\\_A\\_()
 
-• **\\_function\\_A\\_**(): \`void\`
+> **\\_function\\_A\\_**(): \`void\`
 
 ### Returns
 
@@ -1057,7 +1057,7 @@ A module that contains namespaces
 
 ## functionB()
 
-• **functionB**(): \`void\`
+> **functionB**(): \`void\`
 
 ### Returns
 
@@ -1111,7 +1111,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 ### defaultFunction()
 
-• **defaultFunction**(): \`string\`
+> **defaultFunction**(): \`string\`
 
 #### Returns
 
@@ -1152,7 +1152,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 ## defaultFunction()
 
-• **defaultFunction**(): \`string\`
+> **defaultFunction**(): \`string\`
 
 ### Returns
 
