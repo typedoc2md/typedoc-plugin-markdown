@@ -29,7 +29,7 @@ export function signatureMember(
 
   if (
     signature.typeParameters?.length &&
-    !signature.kindOf(ReflectionKind.ConstructorSignature)
+    signature.kind !== ReflectionKind.ConstructorSignature
   ) {
     md.push(
       heading(headingLevel, context.text.getText('kind.typeParameter.plural')),

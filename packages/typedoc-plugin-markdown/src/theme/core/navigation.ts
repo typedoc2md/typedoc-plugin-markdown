@@ -66,8 +66,8 @@ export function getNavigation(
 
     const isModulesGroup =
       projectChild?.groups &&
-      projectChild?.groups[0].children.every((child) =>
-        child.kindOf(ReflectionKind.Module),
+      projectChild?.groups[0].children.every(
+        (child) => child.kind === ReflectionKind.Module,
       );
 
     const children: NavigationItem[] = [];
@@ -105,8 +105,8 @@ export function getNavigation(
           (child) => child.name === entryModule,
         ),
       );
-      const isOnlyModules = project.children?.every((child) =>
-        child.kindOf(ReflectionKind.Module),
+      const isOnlyModules = project.children?.every(
+        (child) => child.kind === ReflectionKind.Module,
       );
       if (
         (project.groups.length === 1 && !Boolean(isEntryModule)) ||
@@ -219,8 +219,8 @@ export function getNavigation(
           });
       }
 
-      const isModulesGroup = reflection.groups[0].children.every((child) =>
-        child.kindOf(ReflectionKind.Module),
+      const isModulesGroup = reflection.groups[0].children.every(
+        (child) => child.kind === ReflectionKind.Module,
       );
 
       if (isModulesGroup) {

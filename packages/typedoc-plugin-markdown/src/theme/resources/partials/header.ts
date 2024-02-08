@@ -154,8 +154,8 @@ function packageHeader(
 
 function findPackage(model: DeclarationReflection | ProjectReflection) {
   if (
-    model.kindOf(ReflectionKind.Module) &&
-    model.parent?.kindOf(ReflectionKind.Project)
+    model.kind === ReflectionKind.Module &&
+    model.parent?.kind === ReflectionKind.Project
   ) {
     return model;
   }

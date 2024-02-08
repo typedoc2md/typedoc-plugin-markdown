@@ -52,13 +52,14 @@ export function members(
   if (container.categories?.length) {
     pushCategories(container.categories, headingLevel);
   } else {
+    const containerKinds = [
+      ReflectionKind.Project,
+      ReflectionKind.Module,
+      ReflectionKind.Namespace,
+    ];
     if (
       context.options.getValue('excludeGroups') &&
-      container.kindOf([
-        ReflectionKind.Project,
-        ReflectionKind.Module,
-        ReflectionKind.Namespace,
-      ])
+      containerKinds.includes(container.kind)
     ) {
       if (container.categories?.length) {
         pushCategories(container.categories, headingLevel);
@@ -79,12 +80,12 @@ export function members(
           );
           pushCategories(group.categories, headingLevel + 1);
         } else {
-          const isPropertiesGroup = group.children.every((child) =>
-            child.kindOf(ReflectionKind.Property),
+          const isPropertiesGroup = group.children.every(
+            (child) => child.kind === ReflectionKind.Property,
           );
 
-          const isEnumGroup = group.children.every((child) =>
-            child.kindOf(ReflectionKind.EnumMember),
+          const isEnumGroup = group.children.every(
+            (child) => child.kind === ReflectionKind.EnumMember,
           );
 
           md.push(

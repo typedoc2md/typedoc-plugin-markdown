@@ -100,7 +100,7 @@ export function declarationMember(
 
     if (typeDeclaration?.children?.length) {
       const useHeading =
-        !declaration.kindOf(ReflectionKind.Property) ||
+        declaration.kind !== ReflectionKind.Property ||
         context.options.getValue('propertiesFormat') == 'table';
       if (!nested && typeDeclaration?.children?.length) {
         if (useHeading) {
@@ -115,7 +115,7 @@ export function declarationMember(
           context.partials.typeDeclarationMember(
             typeDeclaration,
             useHeading ? headingLevel : headingLevel - 1,
-            declaration.kindOf(ReflectionKind.Property)
+            declaration.kind === ReflectionKind.Property
               ? declaration
               : undefined,
           ),

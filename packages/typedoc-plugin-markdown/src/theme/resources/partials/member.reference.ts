@@ -16,7 +16,7 @@ export function referenceMember(
     return `${reExportsText} ${props.name}`;
   }
 
-  if (referenced?.kindOf(ReflectionKind.TypeLiteral) && referenced.parent) {
+  if (referenced?.kind === ReflectionKind.TypeLiteral && referenced.parent) {
     referenced = referenced?.parent;
   }
 

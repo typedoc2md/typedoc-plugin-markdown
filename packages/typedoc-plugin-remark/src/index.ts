@@ -31,7 +31,7 @@ export function load(app: Application) {
 
       const isModulesOnly = (
         event?.model as DeclarationReflection
-      ).children?.every((child) => child.kindOf(ReflectionKind.Module));
+      ).children?.every((child) => child.kind === ReflectionKind.Module);
       const outputFileStrategy = app.options.getValue('outputFileStrategy');
 
       const kindsWithToc = [

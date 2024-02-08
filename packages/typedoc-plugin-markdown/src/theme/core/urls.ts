@@ -48,8 +48,8 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const preserveReadme =
     Boolean(project.readme) && !options.getValue('mergeReadme');
 
-  const isModulesOnly = project.children?.every((child) =>
-    child.kindOf(ReflectionKind.Module),
+  const isModulesOnly = project.children?.every(
+    (child) => child.kind === ReflectionKind.Module,
   );
   const useEntryModule =
     project?.groups &&
@@ -299,7 +299,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     container: Reflection,
   ) {
     if (container.url) {
-      if (!reflection.kindOf(ReflectionKind.TypeLiteral)) {
+      if (reflection.kind !== ReflectionKind.TypeLiteral) {
         const anchorPrefix = options.getValue('anchorPrefix');
         const anchorId = getAnchorId(reflection);
 
@@ -356,15 +356,15 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
     if (!htmlTableAnchors) {
       if (
-        (reflection.kindOf(ReflectionKind.Property) &&
+        (reflection.kind === ReflectionKind.Property &&
           options.getValue('propertiesFormat') === 'table') ||
-        (reflection.kindOf(ReflectionKind.EnumMember) &&
+        (reflection.kind === ReflectionKind.EnumMember &&
           options.getValue('enumMembersFormat') === 'table')
       ) {
         return null;
       }
     }
-    if (reflection.kindOf(ReflectionKind.Constructor)) {
+    if (reflection.kind === ReflectionKind.Constructor) {
       return 'Constructors';
     }
     const anchorParts = [reflection.name];
@@ -391,8 +391,8 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     if (isPackages) {
       return `packages${fileExtension}`;
     }
-    const isModules = reflection.children?.every((child) =>
-      child.kindOf(ReflectionKind.Module),
+    const isModules = reflection.children?.every(
+      (child) => child.kind === ReflectionKind.Module,
     );
     return isModules ? `modules${fileExtension}` : `globals${fileExtension}`;
   }

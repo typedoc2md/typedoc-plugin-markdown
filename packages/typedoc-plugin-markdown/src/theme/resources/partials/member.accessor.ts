@@ -64,7 +64,7 @@ export function accessorMember(
     );
   }
 
-  const showSources = !declaration?.parent?.kindOf(ReflectionKind.TypeLiteral);
+  const showSources = declaration?.parent?.kind !== ReflectionKind.TypeLiteral;
 
   if (showSources && !context.options.getValue('disableSources')) {
     if (declaration.getSignature?.sources) {

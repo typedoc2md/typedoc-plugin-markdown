@@ -17,7 +17,7 @@ export class GithubWikiTheme extends MarkdownTheme {
 
   getUrls(project: ProjectReflection) {
     return super.getUrls(project).map((urlMapping) => {
-      if (urlMapping.model.kindOf(ReflectionKind.Project)) {
+      if (urlMapping.model.kind === ReflectionKind.Project) {
         return urlMapping;
       }
       return {
@@ -30,7 +30,7 @@ export class GithubWikiTheme extends MarkdownTheme {
   getUrl(reflection: DeclarationReflection) {
     const fullname = reflection.getFullName();
     const fullnameParts = fullname.split('.');
-    if (!reflection.kindOf(ReflectionKind.Module)) {
+    if (reflection.kind !== ReflectionKind.Module) {
       fullnameParts.splice(
         fullnameParts.length - 1,
         0,

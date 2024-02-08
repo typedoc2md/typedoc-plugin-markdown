@@ -24,11 +24,12 @@ export function pageTitle(
     page.model as DeclarationReflection,
   );
 
-  const textContent = page.model.kindOf(ReflectionKind.Module)
-    ? context.text.getText('title.modulePage')
-    : context.options.isSet('memberPageTitle')
-      ? context.options.getValue('memberPageTitle')
-      : context.text.getText('title.memberPage');
+  const textContent =
+    page.model.kind === ReflectionKind.Module
+      ? context.text.getText('title.modulePage')
+      : context.options.isSet('memberPageTitle')
+        ? context.options.getValue('memberPageTitle')
+        : context.text.getText('title.memberPage');
 
   return textContent
     .replace('{name}', name)
