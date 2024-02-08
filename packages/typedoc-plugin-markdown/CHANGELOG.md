@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.53
+
+### Patch Changes
+
+- Fixed omitted object literal default values.
+
 ## 4.0.0-next.52 (2024-02-07)
 
 ### Patch Changes
