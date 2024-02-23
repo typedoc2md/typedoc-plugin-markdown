@@ -13,7 +13,7 @@ export function declarationMember(
   declaration: DeclarationReflection,
   headingLevel: number,
   nested = false,
-) {
+): string {
   const md: string[] = [];
 
   md.push(context.partials.reflectionFlags(declaration));

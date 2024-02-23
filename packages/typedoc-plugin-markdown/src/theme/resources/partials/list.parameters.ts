@@ -6,7 +6,7 @@ import { escapeChars } from '../utils';
 export function parametersList(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
-) {
+): string {
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&

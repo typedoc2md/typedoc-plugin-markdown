@@ -6,7 +6,7 @@ export function reflectionType(
   context: MarkdownThemeRenderContext,
   reflectionType: ReflectionType,
   foreCollpase = false,
-) {
+): string {
   const root =
     reflectionType instanceof ReflectionType
       ? reflectionType.declaration

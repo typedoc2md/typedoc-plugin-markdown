@@ -6,7 +6,7 @@ export function typeDeclarationMember(
   typeDeclaration: DeclarationReflection,
   headingLevel: number,
   parentDeclaration?: DeclarationReflection,
-) {
+): string {
   const md: string[] = [];
 
   if (typeDeclaration.children) {

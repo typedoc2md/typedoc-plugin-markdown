@@ -6,7 +6,7 @@ import { formatTableDescriptionCol, formatTableTypeCol } from '../utils';
 export function parametersTable(
   context: MarkdownThemeRenderContext,
   parameters: ParameterReflection[],
-) {
+): string {
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&

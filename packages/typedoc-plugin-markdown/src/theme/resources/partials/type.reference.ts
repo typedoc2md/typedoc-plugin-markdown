@@ -5,7 +5,7 @@ import { backTicks } from '../markdown';
 export function referenceType(
   context: MarkdownThemeRenderContext,
   referenceType: ReferenceType,
-) {
+): string {
   if (
     referenceType.reflection ||
     (referenceType.name && referenceType.typeArguments)

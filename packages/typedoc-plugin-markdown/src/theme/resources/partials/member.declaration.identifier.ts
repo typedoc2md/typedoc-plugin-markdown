@@ -6,7 +6,7 @@ import { escapeChars, stripComments } from '../utils';
 export function declarationMemberIdentifier(
   context: MarkdownThemeRenderContext,
   reflection: DeclarationReflection,
-) {
+): string {
   const md: string[] = [];
 
   const useCodeBlocks = context.options.getValue('useCodeBlocks');

@@ -6,7 +6,7 @@ import { getRelativeUrl } from '../utils';
 export function commentParts(
   context: MarkdownThemeRenderContext,
   parts: CommentDisplayPart[],
-) {
+): string {
   const md: string[] = [];
   const parsedText = (text: string) => {
     const mediaPattern = /media:\/\/([^ ")\]}]+)/g;
