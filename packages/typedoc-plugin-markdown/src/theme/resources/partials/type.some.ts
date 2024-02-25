@@ -21,7 +21,7 @@ import { backTicks } from '../markdown';
 export function someType(
   context: MarkdownThemeRenderContext,
   someType: SomeType,
-) {
+): string {
   if (!someType) {
     return '';
   }

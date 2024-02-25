@@ -10,7 +10,7 @@ export function typeArguments(
     .map((typeArgument) =>
       typeArgument instanceof ReflectionType
         ? context.partials.reflectionType(typeArgument, foreCollpase)
-        : context.partials.someType(typeArgument, foreCollpase),
+        : context.partials.someType(typeArgument),
     )
     .join(', ')}\\>`;
 }

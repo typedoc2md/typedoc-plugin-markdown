@@ -5,7 +5,7 @@ import { backTicks } from '../markdown';
 export function declarationType(
   context: MarkdownThemeRenderContext,
   declarationReflection: DeclarationReflection,
-) {
+): string {
   const shouldFormat = context.options.getValue('useCodeBlocks');
 
   if (declarationReflection.indexSignature || declarationReflection.children) {

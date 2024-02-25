@@ -7,7 +7,7 @@ import { escapeChars } from '../utils';
 export function breadcrumbs(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
-) {
+): string {
   const md: string[] = [];
 
   const fileExtension = context.options.getValue('useMDXFileExt')
