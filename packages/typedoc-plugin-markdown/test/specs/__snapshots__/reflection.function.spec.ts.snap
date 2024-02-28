@@ -26,7 +26,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:154](http://source-url)
+[functions.ts:164](http://source-url)
 "
 `;
 
@@ -34,7 +34,7 @@ exports[`Function Reflection should compile function returning a function: (Outp
 "# functionReturningAFunction()
 
 \`\`\`ts
-functionReturningAFunction(): <T>(x) => boolean
+function functionReturningAFunction(): <T>(x: string) => boolean
 \`\`\`
 
 Comments for function
@@ -62,7 +62,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:154](http://source-url)
+[functions.ts:164](http://source-url)
 "
 `;
 
@@ -86,7 +86,7 @@ Return comments
 
 ## Source
 
-[functions.ts:162](http://source-url)
+[functions.ts:172](http://source-url)
 "
 `;
 
@@ -94,7 +94,7 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 "# functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise<Object>
+function functionReturningAPromise(): Promise<Object>
 \`\`\`
 
 Comments for function
@@ -112,7 +112,7 @@ Return comments
 
 ## Source
 
-[functions.ts:162](http://source-url)
+[functions.ts:172](http://source-url)
 "
 `;
 
@@ -131,7 +131,7 @@ Return comments
 
 ## Source
 
-[functions.ts:135](http://source-url)
+[functions.ts:145](http://source-url)
 "
 `;
 
@@ -139,7 +139,7 @@ exports[`Function Reflection should compile function returning a string: (Output
 "# functionReturningAString()
 
 \`\`\`ts
-functionReturningAString(): string
+function functionReturningAString(): string
 \`\`\`
 
 Comments for function
@@ -152,7 +152,7 @@ Return comments
 
 ## Source
 
-[functions.ts:135](http://source-url)
+[functions.ts:145](http://source-url)
 "
 `;
 
@@ -171,7 +171,7 @@ Return comments
 
 ## Source
 
-[functions.ts:143](http://source-url)
+[functions.ts:153](http://source-url)
 "
 `;
 
@@ -179,7 +179,7 @@ exports[`Function Reflection should compile function returning a union: (Output 
 "# functionReturningAUnionType()
 
 \`\`\`ts
-functionReturningAUnionType(): string | boolean | "string1" | "string2"
+function functionReturningAUnionType(): string | boolean | "string1" | "string2"
 \`\`\`
 
 Comments for function
@@ -192,7 +192,7 @@ Return comments
 
 ## Source
 
-[functions.ts:143](http://source-url)
+[functions.ts:153](http://source-url)
 "
 `;
 
@@ -225,7 +225,7 @@ Return comments
 
 ## Source
 
-[functions.ts:127](http://source-url)
+[functions.ts:137](http://source-url)
 "
 `;
 
@@ -233,7 +233,7 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 "# functionReturningAnObject()
 
 \`\`\`ts
-functionReturningAnObject(): Object
+function functionReturningAnObject(): Object
 \`\`\`
 
 Comments for function
@@ -257,7 +257,7 @@ Return comments
 
 ## Source
 
-[functions.ts:127](http://source-url)
+[functions.ts:137](http://source-url)
 "
 `;
 
@@ -288,7 +288,7 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 "# basicFunction()
 
 \`\`\`ts
-basicFunction(someParam): number
+function basicFunction(someParam: number): number
 \`\`\`
 
 This is a function that is assigned to a variable.
@@ -306,6 +306,58 @@ This is a function that is assigned to a variable.
 ## Source
 
 [functions.ts:10](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with complex params: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithComplexParams()
+
+> **functionWithComplexParams**(\`paramA\`, \`paramB\`): \`boolean\`
+
+Function with function parmas
+
+## Parameters
+
+• **paramA**
+
+• **paramB**
+
+• **paramB\\.x**: \`1\`
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:93](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with complex params: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# functionWithComplexParams()
+
+\`\`\`ts
+function functionWithComplexParams(paramA: (a: string) => true, paramB: Object): boolean
+\`\`\`
+
+Function with function parmas
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`paramA\` | (\`a\`: \`string\`) => \`true\` |
+| \`paramB\` | \`Object\` |
+| \`paramB.x\` | \`1\` |
+
+## Returns
+
+\`boolean\`
+
+## Source
+
+[functions.ts:93](http://source-url)
 "
 `;
 
@@ -354,13 +406,13 @@ exports[`Function Reflection should compile function with default parameters: (O
 "# functionWithDefaultParameters()
 
 \`\`\`ts
-functionWithDefaultParameters(
-   valueA, 
-   valueB, 
-   valueC, 
-   valueD, 
-   valueE, 
-   valueF): string
+function functionWithDefaultParameters(
+   valueA: string, 
+   valueB: number, 
+   valueC: number, 
+   valueD: boolean, 
+   valueE: boolean, 
+   valueF: string): string
 \`\`\`
 
 This is a function with a parameter that has a default value.
@@ -407,7 +459,7 @@ The name value.
 
 ### Source
 
-[functions.ts:102](http://source-url)
+[functions.ts:112](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -431,7 +483,7 @@ A value of the object.
 
 ### Source
 
-[functions.ts:110](http://source-url)
+[functions.ts:120](http://source-url)
 "
 `;
 
@@ -441,7 +493,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
-functionWithMultipleSignatures(value): string
+function functionWithMultipleSignatures(value: string): string
 \`\`\`
 
 This is the first signature of a function with multiple signatures.
@@ -458,12 +510,12 @@ This is the first signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:102](http://source-url)
+[functions.ts:112](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
-functionWithMultipleSignatures(value): string
+function functionWithMultipleSignatures(value: Object): string
 \`\`\`
 
 This is the second signature of a function with multiple signatures.
@@ -481,7 +533,7 @@ This is the second signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:110](http://source-url)
+[functions.ts:120](http://source-url)
 "
 `;
 
@@ -518,7 +570,7 @@ exports[`Function Reflection should compile function with named params: (Output 
 "# functionWithNamedParams()
 
 \`\`\`ts
-functionWithNamedParams(__namedParameters, anotherParam): void
+function functionWithNamedParams(__namedParameters: Object, anotherParam: string): void
 \`\`\`
 
 ## Parameters
@@ -591,10 +643,10 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 "# functionWithNestedParameters()
 
 \`\`\`ts
-functionWithNestedParameters(
-   params, 
-   context, 
-   somethingElse?): boolean
+function functionWithNestedParameters(
+   params: Object, 
+   context: any, 
+   somethingElse?: string): boolean
 \`\`\`
 
 Some nested params.
@@ -690,11 +742,11 @@ exports[`Function Reflection should compile function with optional parameters: (
 "# functionWithOptionalParameters()
 
 \`\`\`ts
-functionWithOptionalParameters(
-   firstParamWithDefault, 
-   requiredParam, 
-   optionalParam?, 
-   paramWithDefault?): void
+function functionWithOptionalParameters(
+   firstParamWithDefault: boolean, 
+   requiredParam: string, 
+   optionalParam?: string, 
+   paramWithDefault?: number): void
 \`\`\`
 
 This is a function with a parameters.
@@ -722,11 +774,11 @@ exports[`Function Reflection should compile function with optional parameters: (
 "# functionWithOptionalParameters()
 
 \`\`\`ts
-functionWithOptionalParameters(
-   firstParamWithDefault, 
-   requiredParam, 
-   optionalParam?, 
-   paramWithDefault?): void
+function functionWithOptionalParameters(
+   firstParamWithDefault: boolean, 
+   requiredParam: string, 
+   optionalParam?: string, 
+   paramWithDefault?: number): void
 \`\`\`
 
 This is a function with a parameters.
@@ -777,7 +829,7 @@ exports[`Function Reflection should compile function with rest params: (Output F
 "# functionWithRestParams()
 
 \`\`\`ts
-functionWithRestParams(param, ...restParams): boolean
+function functionWithRestParams(param: string, ...restParams: string[]): boolean
 \`\`\`
 
 Function with reset parmas
@@ -820,7 +872,7 @@ Comments for T
 
 ## Source
 
-[functions.ts:95](http://source-url)
+[functions.ts:105](http://source-url)
 "
 `;
 
@@ -828,7 +880,7 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 "# functionWithTypeParameters()
 
 \`\`\`ts
-functionWithTypeParameters<T, Item>(): boolean
+function functionWithTypeParameters<T, Item>(): boolean
 \`\`\`
 
 Function with type parameters
@@ -846,6 +898,6 @@ Function with type parameters
 
 ## Source
 
-[functions.ts:95](http://source-url)
+[functions.ts:105](http://source-url)
 "
 `;

@@ -108,4 +108,12 @@ describe(`Function Reflection`, () => {
       'functions/functionWithRestParams.md',
     );
   });
+
+  test(`should compile function with complex params`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithComplexParams.md',
+    );
+  });
 });

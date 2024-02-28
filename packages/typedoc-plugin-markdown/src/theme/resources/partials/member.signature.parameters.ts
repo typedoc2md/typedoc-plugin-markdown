@@ -1,6 +1,6 @@
-import { ParameterReflection, ReflectionType, SomeType } from 'typedoc';
+import { ParameterReflection, SomeType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../..';
-import { backTicks, indentBlock } from '../markdown';
+import { backTicks } from '../markdown';
 
 export function signatureParameters(
   context: MarkdownThemeRenderContext,
@@ -29,11 +29,7 @@ export function signatureParameters(
           }`,
         ];
         if (showParamType) {
-          paramItem.push(
-            param.type instanceof ReflectionType
-              ? indentBlock(paramType)
-              : paramType,
-          );
+          paramItem.push(paramType);
         }
         paramsmd.push(
           `${format && parameters.length > 2 ? `\n   ` : ''}${paramItem.join(': ')}`,

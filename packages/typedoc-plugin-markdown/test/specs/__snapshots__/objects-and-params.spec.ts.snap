@@ -269,7 +269,7 @@ exports[`Objects And Params should compile function returning a promise: (Output
 "# Function: functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise<{
+function functionReturningAPromise(): Promise<{
   prop: string;
 }>
 \`\`\`
@@ -297,7 +297,7 @@ exports[`Objects And Params should compile function returning a promise: (Output
 "# Function: functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise<{
+function functionReturningAPromise(): Promise<{
   prop: string;
 }>
 \`\`\`
@@ -325,7 +325,7 @@ exports[`Objects And Params should compile function returning a union: (Output F
 "# Function: functionReturningAUnionType()
 
 \`\`\`ts
-functionReturningAUnionType(): string | boolean | "string1" | "string2"
+function functionReturningAUnionType(): string | boolean | "string1" | "string2"
 \`\`\`
 
 Comments for function
@@ -342,7 +342,7 @@ exports[`Objects And Params should compile function returning a union: (Output F
 "# Function: functionReturningAUnionType()
 
 \`\`\`ts
-functionReturningAUnionType(): string | boolean | "string1" | "string2"
+function functionReturningAUnionType(): string | boolean | "string1" | "string2"
 \`\`\`
 
 Comments for function
@@ -359,7 +359,7 @@ exports[`Objects And Params should compile function returning an object: (Output
 "# Function: functionReturningAnObject()
 
 \`\`\`ts
-functionReturningAnObject(): {
+function functionReturningAnObject(): {
   x: 1;
   y: 2;
 }
@@ -402,7 +402,7 @@ exports[`Objects And Params should compile function returning an object: (Output
 "# Function: functionReturningAnObject()
 
 \`\`\`ts
-functionReturningAnObject(): {
+function functionReturningAnObject(): {
   x: 1;
   y: 2;
 }
@@ -445,18 +445,18 @@ exports[`Objects And Params should compile function with nested parameters: (Out
 "# Function: functionWithNestedParameters()
 
 \`\`\`ts
-functionWithNestedParameters(
-   params:     {
-      name: string;
-      nestedObj: {
-         name: string;
-         obj: {
-            name: () => void;
-         };
-         value: number;
-      };
-      parent: number;
-      }, 
+function functionWithNestedParameters(
+   params: {
+  name: string;
+  nestedObj: {
+     name: string;
+     obj: {
+        name: () => void;
+     };
+     value: number;
+  };
+  parent: number;
+  }, 
    context: any, 
    somethingElse?: string): boolean
 \`\`\`
@@ -503,18 +503,18 @@ exports[`Objects And Params should compile function with nested parameters: (Out
 "# Function: functionWithNestedParameters()
 
 \`\`\`ts
-functionWithNestedParameters(
-   params:     {
-      name: string;
-      nestedObj: {
-         name: string;
-         obj: {
-            name: () => void;
-         };
-         value: number;
-      };
-      parent: number;
-      }, 
+function functionWithNestedParameters(
+   params: {
+  name: string;
+  nestedObj: {
+     name: string;
+     obj: {
+        name: () => void;
+     };
+     value: number;
+  };
+  parent: number;
+  }, 
    context: any, 
    somethingElse?: string): boolean
 \`\`\`

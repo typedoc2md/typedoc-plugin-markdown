@@ -220,8 +220,8 @@ Comments for LiteralType
 | \`y\` | \`Object\` | comment for y |
 | \`y.x\` | \`string\` | comment for y.x |
 | \`y.y\` | \`boolean\` \\| \`string\` | comment for y.y |
-| \`y.z\` | (\`x\`) => \`string\` | comment for y.z |
-| \`z\` | (\`x\`) => \`string\` | - |
+| \`y.z\` | (\`x\`: \`string\`) => \`string\` | comment for y.z |
+| \`z\` | (\`x\`: \`string\`) => \`string\` | - |
 | \`get accessorA\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> | Comments for accessorA getter |
 | \`set accessorA\` | \`void\` | Comments for accessorA setter |
 | \`get accessorB\` | \`string\` | - |
@@ -289,7 +289,7 @@ exports[`Type Alias Reflection should compile function type: (Output File Strate
 "# FunctionType
 
 \`\`\`ts
-type FunctionType: (name, value) => void;
+type FunctionType: (name: string, value: unknown) => void;
 \`\`\`
 
 Comments for FunctionType

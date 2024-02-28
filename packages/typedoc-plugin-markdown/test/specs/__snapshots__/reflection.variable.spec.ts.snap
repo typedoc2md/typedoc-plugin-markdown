@@ -259,9 +259,9 @@ Comments for objectLiteralVariable
 | \`valueB\` | \`boolean\` | true |
 | \`valueX\` | \`Object\` | - |
 | \`valueX.valueA\` | \`number\`[] | - |
-| \`valueX.valueY\` | (\`z\`) => \`Object\` | - |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => \`Object\` | - |
 | \`valueX.valueZ\` | \`string\` | 'foo' |
-| \`valueY\` | (\`unionParam\`, \`_undercoreParam_\`) => \`string\` | - |
+| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - |
 | \\| | \`string\` | '\\|' |
 | \`~\` | \`string\` | '~' |
 

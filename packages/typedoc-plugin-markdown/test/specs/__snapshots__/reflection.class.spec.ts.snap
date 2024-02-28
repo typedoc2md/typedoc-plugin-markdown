@@ -209,7 +209,7 @@ get accessor(): string
 Comments for getter
 
 \`\`\`ts
-set accessor(value): void
+set accessor(value: string): void
 \`\`\`
 
 Comments for setter
@@ -233,7 +233,7 @@ Comments for setter
 ### noGetter
 
 \`\`\`ts
-set noGetter(x): void
+set noGetter(x: string): void
 \`\`\`
 
 #### Parameters
@@ -337,7 +337,7 @@ Comments for ClassWithConstructorOverloads
 ### new ClassWithConstructorOverloads(x, y)
 
 \`\`\`ts
-new ClassWithConstructorOverloads(x, y): ClassWithConstructorOverloads
+new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads
 \`\`\`
 
 #### Parameters
@@ -358,7 +358,7 @@ new ClassWithConstructorOverloads(x, y): ClassWithConstructorOverloads
 ### new ClassWithConstructorOverloads(x)
 
 \`\`\`ts
-new ClassWithConstructorOverloads(x): ClassWithConstructorOverloads
+new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
 \`\`\`
 
 #### Parameters
@@ -378,7 +378,7 @@ new ClassWithConstructorOverloads(x): ClassWithConstructorOverloads
 ### new ClassWithConstructorOverloads(s)
 
 \`\`\`ts
-new ClassWithConstructorOverloads(s): ClassWithConstructorOverloads
+new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
 \`\`\`
 
 #### Parameters

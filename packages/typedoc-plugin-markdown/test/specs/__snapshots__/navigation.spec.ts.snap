@@ -1302,6 +1302,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "functions/functionReturningAnObject.md"
       },
       {
+        "title": "functionWithComplexParams",
+        "url": "functions/functionWithComplexParams.md"
+      },
+      {
         "title": "functionWithDefaultParameters",
         "url": "functions/functionWithDefaultParameters.md"
       },

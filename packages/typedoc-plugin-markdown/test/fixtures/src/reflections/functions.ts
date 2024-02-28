@@ -88,6 +88,16 @@ export function functionWithRestParams(param: string, ...restParams: string[]) {
 }
 
 /**
+ * Function with function parmas
+ */
+export function functionWithComplexParams(
+  paramA: (a: string) => true,
+  paramB: { x: 1 },
+) {
+  return true;
+}
+
+/**
  * Function with type parameters
  * @typeParam T Comments for T
  */
