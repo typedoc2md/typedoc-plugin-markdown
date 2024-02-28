@@ -17,7 +17,7 @@ async function main() {
     'docusaurus-plugin-typedoc',
   ].map(async (packageName) => {
     const packageJson = await import(
-      `../../packages/${packageName}/package.json`
+      `../../../packages/${packageName}/package.json`
     );
     return {
       name: packageName,
@@ -77,6 +77,10 @@ function writePackageReadme(packageItem: any) {
   readme.push('## Documentation');
   const resources = [`Please visit ${docLink}.`];
   readme.push(resources.join('\n'));
+  readme.push('## Contributing');
+  readme.push(
+    `If you would like to contribute please read the [contributing guide](./CONTRIBUTING.md).`,
+  );
   readme.push('## License');
   readme.push(`Released under the [MIT License](./LICENSE).`);
 

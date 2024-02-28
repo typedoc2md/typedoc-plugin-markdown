@@ -14,6 +14,10 @@ A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible wit
 
 Please visit https://typedoc-plugin-markdown.org/themes/vitepress.
 
+## Contributing
+
+If you would like to contribute please read the [contributing guide](./CONTRIBUTING.md).
+
 ## License
 
 Released under the [MIT License](./LICENSE).

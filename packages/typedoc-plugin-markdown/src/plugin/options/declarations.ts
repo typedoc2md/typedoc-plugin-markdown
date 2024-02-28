@@ -14,9 +14,35 @@ import { TEXT_MAPPING_DEFAULTS } from './text-mappings/text-mapping-defaults';
  *
  * Generates an individual file for each exported member. This is the standard behaviour of the HTML theme and the plugin default.
  *
+ * <FileTree>
+ *  <FileTree.File name="README.md" />
+ *  <FileTree.Folder name="module-a" defaultOpen>
+ *   <FileTree.Folder name="classes" defaultOpen>
+ *   <FileTree.File name="ClassA.md" />
+ *   <FileTree.File name="ClassB.md" />
+ *  </FileTree.Folder>
+ *  <FileTree.Folder name="functions" defaultOpen>
+ *    <FileTree.File name="FunctionA.md" />
+ *    <FileTree.File name="FunctionB.md" />
+ *  </FileTree.Folder>
+ * </FileTree.Folder>
+ * <FileTree.Folder name="module-b" defaultOpen>
+ *  <FileTree.Folder name="classes" defaultOpen>
+ *   <FileTree.File name="ClassA.md" />
+ *   <FileTree.File name="ClassB.md" />
+ *  </FileTree.Folder>
+ *  </FileTree.Folder>
+ * </FileTree>
+ *
  * @modules
  *
  * Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
+ *
+ * <FileTree>
+ *  <FileTree.File name="README.md" />
+ *  <FileTree.File name="module-a.md" />
+ *  <FileTree.File name="module-b.md" />
+ * </FileTree>
  *
  * @category Output
  */

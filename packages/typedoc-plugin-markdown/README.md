@@ -14,6 +14,10 @@ A plugin for TypeDoc that enables TypeScript API documentation to be generated i
 
 Please visit https://typedoc-plugin-markdown.org.
 
+## Contributing
+
+If you would like to contribute please read the [contributing guide](./CONTRIBUTING.md).
+
 ## License
 
 Released under the [MIT License](./LICENSE).

@@ -11,6 +11,7 @@
     "devtools/packages/*"
   ],
   "scripts": {
+    "readme": "generate-readmes",
     "prerelease": "npm run build --workspaces --if-present",
     "release": "npx changeset publish"
   },

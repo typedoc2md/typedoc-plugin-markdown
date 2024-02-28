@@ -1,0 +1,19 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# V4 Migration Guide
+
+Migrating from v3 to v4 should be fairly straightforward. This guide will help you understand the changes and how to update your project.
+
+## Architecture Changes
+
+- Handlebars as a dependency has been removed.
+- The way files are output has changed. Files and folders now follow your TypeScript project structure.
+- In-page TOCs are no longer included by default. You can include in-page TOCs by using the [Remark](/utilities/remark) plugin.
+- Updated theming model. See [customizing output](/customizing) guide.
+
+## Breaking API Changes
+
+- The option `allReflectionsHaveOwnDocument` has beeen removed (this behaviour is now the default).
+- The option `entryDocument` has been renamed to `entryFileName` to better reflect its purpose.
+- The option `hideInPageTOC` has been removed. In-page TOC are no longer included by default.
+- Because the file structure has changed you may need to update any cross references to files in your documentation.

@@ -62,4 +62,4 @@ If the project builds and the tests run successfully you are ready to start cont
 
 Below are links to the contibuting guide for each project.
 
-- [typedoc-plugin-markdow](./packages/typedoc-plugin-markdown/CONTRIBUTING.md) (core package)
+- [typedoc-plugin-markdown](./packages/typedoc-plugin-markdown/CONTRIBUTING.md) (core package)

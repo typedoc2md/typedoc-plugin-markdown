@@ -14,6 +14,10 @@ A Docusaurus plugin to integrate TypeDoc into a Docusaurus project.
 
 Please visit https://typedoc-plugin-markdown.org/integrations/docusaurus.
 
+## Contributing
+
+If you would like to contribute please read the [contributing guide](./CONTRIBUTING.md).
+
 ## License
 
 Released under the [MIT License](./LICENSE).
