@@ -1,4 +1,10 @@
 {
   "extends": "./typedoc-options.json",
-  "preserveFrontmatterCommentTags": true
+  "preserveFrontmatterCommentTags": true,
+  "readmeFrontmatter": {
+    "onReadme": true
+  },
+  "indexFrontmatter": {
+    "onIndex": true
+  }
 }

@@ -19,6 +19,24 @@ export const frontmatterGlobals: Partial<DeclarationOption> = {
 };
 
 /**
+ * @example {"onReadme": "true" }
+ */
+export const readmeFrontmatter: Partial<DeclarationOption> = {
+  help: 'Specify static variables to be added to the readme page only.',
+  type: ParameterType.Mixed,
+  defaultValue: {},
+};
+
+/**
+ * @example {"onIndex": "true" }
+ */
+export const indexFrontmatter: Partial<DeclarationOption> = {
+  help: 'Specify static variables to be added to the index page only.',
+  type: ParameterType.Mixed,
+  defaultValue: {},
+};
+
+/**
  * Frontmatter variables can be added by extracting comments from block (@) tags.
  *
  * Please note tags must be added to the comment blocks of the symbol exported to a page.
@@ -52,9 +70,9 @@ export const preserveFrontmatterCommentTags: Partial<DeclarationOption> = {
 };
 
 /**
- * This option can configure the output style of frontmatter variables.
+ * Block tags have to be written in camelCase (see [tsdoc.org](https://tsdoc.org/pages/spec/tag_kinds)).
  *
- * Note that block tags should be written in camelCase.
+ * This option can configure the output style of frontmatter variables when written to YAML.
  */
 export const frontmatterNamingConvention: Partial<DeclarationOption> = {
   help: 'The naming convention that variables should be output as. ',

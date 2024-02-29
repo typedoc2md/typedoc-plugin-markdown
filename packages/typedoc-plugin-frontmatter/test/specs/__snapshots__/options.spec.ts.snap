@@ -14,6 +14,36 @@ tagTwo: "'Frontmatter' tag"
 "
 `;
 
+exports[`Options: YAML should prepend frontmatter for readme page 1`] = `
+"---
+title: typedoc-plugin-frontmatter
+layout: blog
+navOrder: 1
+hide: true
+onReadme: true
+---
+
+# The Readme
+"
+`;
+
+exports[`Options: YAML should prepend frontmatter to index page 1`] = `
+"---
+title: typedoc-plugin-frontmatter
+layout: blog
+navOrder: 1
+hide: true
+onIndex: true
+---
+
+# typedoc-plugin-frontmatter
+
+## Interfaces
+
+- [SomeInterface](interfaces/SomeInterface.md)
+"
+`;
+
 exports[`Options: YAML should prepend frontmatter with preserved tags 1`] = `
 "---
 title: SomeInterface

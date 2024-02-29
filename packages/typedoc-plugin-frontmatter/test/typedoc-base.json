@@ -2,7 +2,7 @@
   "entryPoints": ["./stubs.ts"],
   "tsconfig": "../tsconfig.test.json",
   "out": "./out",
-  "readme": "none",
+  "readme": "./some-readme.md",
   "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-frontmatter"],
   "hidePageHeader": true,
   "hideBreadcrumbs": true

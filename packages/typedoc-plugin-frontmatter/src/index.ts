@@ -1,3 +1,4 @@
+import * as path from 'path';
 import {
   Application,
   DeclarationOption,
@@ -20,6 +21,8 @@ export function load(app: Application) {
   app.renderer.on(
     MarkdownPageEvent.BEGIN,
     (page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>) => {
+      const entryFileName = app.options.getValue('entryFileName') as any;
+
       const frontmatterGlobals = app.options.getValue(
         'frontmatterGlobals',
       ) as any;
@@ -33,6 +36,10 @@ export function load(app: Application) {
       const preserveFrontmatterCommentTags = app.options.getValue(
         'preserveFrontmatterCommentTags',
       );
+
+      const readmeFrontmatter = app.options.getValue('readmeFrontmatter');
+
+      const indexFrontmatter = app.options.getValue('indexFrontmatter');
 
       const resolvedFrontmatterTags = page.model?.comment
         ? getFrontmatterTags(
@@ -56,6 +63,22 @@ export function load(app: Application) {
         ...frontmatterGlobals,
         ...resolvedFrontmatterTags,
       };
+
+      if (path.parse(page.url).name === path.parse(entryFileName).name) {
+        page.frontmatter = {
+          ...page.frontmatter,
+          ...readmeFrontmatter,
+        };
+      }
+
+      if (
+        path.parse(page.url).name === path.parse(page.project?.url || '').name
+      ) {
+        page.frontmatter = {
+          ...page.frontmatter,
+          ...indexFrontmatter,
+        };
+      }
     },
   );
 

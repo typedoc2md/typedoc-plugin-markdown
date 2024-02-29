@@ -25,6 +25,20 @@ describe(`Options:`, () => {
         .toString();
       expect(pageContent).toMatchSnapshot();
     });
+
+    test(`should prepend frontmatter for readme page`, async () => {
+      const pageContent = fs
+        .readFileSync(path.join(__dirname, '../out/options-2/README.md'))
+        .toString();
+      expect(pageContent).toMatchSnapshot();
+    });
+
+    test(`should prepend frontmatter to index page`, async () => {
+      const pageContent = fs
+        .readFileSync(path.join(__dirname, '../out/options-2/globals.md'))
+        .toString();
+      expect(pageContent).toMatchSnapshot();
+    });
   });
 
   describe(`Tags`, () => {
