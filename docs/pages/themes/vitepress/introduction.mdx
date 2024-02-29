@@ -1,10 +1,30 @@
+import pjson from '../../../../packages/typedoc-vitepress-theme/package.json';
 import { Callout, Steps } from 'nextra/components';
 import { Cards, Card } from 'nextra/components';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-# Example
+# typedoc-vitepress-theme
+
+![npm](https://img.shields.io/npm/v/typedoc-vitepress-theme%2Fnext?&logo=npm)
+
+## Description
+
+<PackageDescription description={pjson.description}></PackageDescription>
+
+## Features
+
+- Updates internal anchors to be compatible with VitePress.
+- Auto generates a VitePress sidebar that can be referenced from the VitePress config.
+
+## What about VuePress?
+
+This theme is also compatible with VuePress and the configuration is almost identical. However this theme supersedes previous VuePress TypeDoc plugins and is specifically targetted for VitePress.
+
+See https://vitepress.dev/guide/what-is-vitepress#what-about-vuepress.
+
+## Example
 
 The following is a simple example of a VitePress project running TypeDoc.
 

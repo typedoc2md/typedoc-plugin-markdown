@@ -122,6 +122,7 @@ export async function generateDocs(docsConfig: DocsConfig) {
           if (
             !option.example &&
             option.type === ParameterType.Mixed &&
+            Object.keys(option.defaultValue).length &&
             (!Array.isArray(option.defaultValue) || option.defaultValue?.length)
           ) {
             out.push('Below is the full list of keys and default values:');

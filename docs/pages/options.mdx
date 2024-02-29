@@ -12,6 +12,7 @@ These are the additional options that can be added to the TypeDoc configuration.
 
 > Accepts either `"members"` or `"modules"`. Defaults to `"members"`.
 
+
 TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
 
 This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
@@ -23,23 +24,23 @@ The following keys are available:
 Generates an individual file for each exported member. This is the standard behaviour of the HTML theme and the plugin default.
 
 <FileTree>
-  <FileTree.File name="README.md" />
-  <FileTree.Folder name="module-a" defaultOpen>
-    <FileTree.Folder name="classes" defaultOpen>
-      <FileTree.File name="ClassA.md" />
-      <FileTree.File name="ClassB.md" />
-    </FileTree.Folder>
-    <FileTree.Folder name="functions" defaultOpen>
-      <FileTree.File name="FunctionA.md" />
-      <FileTree.File name="FunctionB.md" />
-    </FileTree.Folder>
-  </FileTree.Folder>
-  <FileTree.Folder name="module-b" defaultOpen>
-    <FileTree.Folder name="classes" defaultOpen>
-      <FileTree.File name="ClassA.md" />
-      <FileTree.File name="ClassB.md" />
-    </FileTree.Folder>
-  </FileTree.Folder>
+ <FileTree.File name="README.md" />
+ <FileTree.Folder name="module-a" defaultOpen>
+  <FileTree.Folder name="classes" defaultOpen>
+  <FileTree.File name="ClassA.md" />
+  <FileTree.File name="ClassB.md" />
+ </FileTree.Folder>
+ <FileTree.Folder name="functions" defaultOpen>
+   <FileTree.File name="FunctionA.md" />
+   <FileTree.File name="FunctionB.md" />
+ </FileTree.Folder>
+</FileTree.Folder>
+<FileTree.Folder name="module-b" defaultOpen>
+ <FileTree.Folder name="classes" defaultOpen>
+  <FileTree.File name="ClassA.md" />
+  <FileTree.File name="ClassB.md" />
+ </FileTree.Folder>
+ </FileTree.Folder>
 </FileTree>
 
 **modules**
@@ -47,18 +48,20 @@ Generates an individual file for each exported member. This is the standard beha
 Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
 
 <FileTree>
-  <FileTree.File name="README.md" />
-  <FileTree.File name="module-a.md" />
-  <FileTree.File name="module-b.md" />
+ <FileTree.File name="README.md" />
+ <FileTree.File name="module-a.md" />
+ <FileTree.File name="module-b.md" />
 </FileTree>
+
 
 ```json filename="typedoc.json"
 {
   "outputFileStrategy": "members"
 }
+
 ```
 
----
+___
 
 ### entryFileName
 
@@ -76,13 +79,15 @@ The content of this file will be resolved in the following order:
 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
 3. The documentation index page.
 
+
 ```json filename="typedoc.json"
 {
   "entryFileName": "index"
 }
+
 ```
 
----
+___
 
 ### useMDXFileExt
 
@@ -94,19 +99,19 @@ Use this option if your output files require `.mdx` extensions. By default all f
 
 Note all output is MDX compatible regardless of this option.
 
+
 ```json filename="typedoc.json"
 {
   "useMDXFileExt": false
 }
+
 ```
 
----
+___
 
 ### entryModule
 
-<Callout>
-  The name of a module that should act as the root page for the documentation.
-</Callout>
+<Callout>The name of a module that should act as the root page for the documentation.</Callout>
 
 > Accepts a string value. Defaults to `"undefined"`.
 
@@ -116,13 +121,15 @@ The module name should be specified (NOT the reference to the file name).
 
 Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
 
+
 ```json filename="typedoc.json"
 {
   "entryModule": "index"
 }
+
 ```
 
----
+___
 
 ### mergeReadme
 
@@ -134,13 +141,15 @@ By default when a readme file is resolved, a seperate readme page is created. Th
 
 This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
 
+
 ```json filename="typedoc.json"
 {
   "mergeReadme": false
 }
+
 ```
 
----
+___
 
 ## UI Options
 
@@ -150,13 +159,15 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 
 > Accepts a boolean value. Defaults to `false`.
 
+
 ```json filename="typedoc.json"
 {
   "hidePageHeader": false
 }
+
 ```
 
----
+___
 
 ### hidePageTitle
 
@@ -164,13 +175,15 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 
 > Accepts a boolean value. Defaults to `false`.
 
+
 ```json filename="typedoc.json"
 {
   "hidePageTitle": false
 }
+
 ```
 
----
+___
 
 ### hideBreadcrumbs
 
@@ -178,29 +191,31 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 
 > Accepts a boolean value. Defaults to `false`.
 
+
 ```json filename="typedoc.json"
 {
   "hideBreadcrumbs": false
 }
+
 ```
 
----
+___
 
 ### ~hideInPageTOC~
 
-<Callout type="warning">
-  Deprecated - In-page TOC is now hidden as default.
-</Callout>
+<Callout type="warning">Deprecated - In-page TOC is now hidden as default.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
+
 
 ```json filename="typedoc.json"
 {
   "hideInPageTOC": false
 }
+
 ```
 
----
+___
 
 ### ~indexPageTitle~
 
@@ -210,13 +225,15 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 
 Provides a mechanism to change the main project index page title.
 
+
 ```json filename="typedoc.json"
 {
   "indexPageTitle": "{ProjectName}"
 }
+
 ```
 
----
+___
 
 ### ~memberPageTitle~
 
@@ -226,20 +243,19 @@ Provides a mechanism to change the main project index page title.
 
 Provides a mechanism to configure the page title of members.
 
+
 ```json filename="typedoc.json"
 {
   "memberPageTitle": "{kind}: {name}"
 }
+
 ```
 
----
+___
 
 ### excludeGroups
 
-<Callout>
-  Excludes grouping by kind so all members are rendered and sorted at the same
-  level.
-</Callout>
+<Callout>Excludes grouping by kind so all members are rendered and sorted at the same level.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -247,13 +263,15 @@ By default members are grouped by kind (eg Classes, Functions etc).
 
 This creates a flat structure where all members are displayed at the same heading level.
 
+
 ```json filename="typedoc.json"
 {
   "excludeGroups": false
 }
+
 ```
 
----
+___
 
 ### useCodeBlocks
 
@@ -267,13 +285,15 @@ Please note that when this option is set to `true` it is not possible to link to
 
 As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be be used to manually reference types.
 
+
 ```json filename="typedoc.json"
 {
   "useCodeBlocks": false
 }
+
 ```
 
----
+___
 
 ### expandObjects
 
@@ -293,19 +313,19 @@ This option should be set when a full object representation is preferred.
 
 \{ `x`: `string` }
 
+
 ```json filename="typedoc.json"
 {
   "expandObjects": false
 }
+
 ```
 
----
+___
 
 ### expandParameters
 
-<Callout>
-  Expand parameters in signature parentheses to display type information.
-</Callout>
+<Callout>Expand parameters in signature parentheses to display type information.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -323,49 +343,51 @@ This is the oppisite of TypeDoc's [hideParameterTypesInTitle](https://typedoc.or
 
 `someFunction(param1: string, param2: boolean)`
 
+
 ```json filename="typedoc.json"
 {
   "expandParameters": false
 }
+
 ```
 
----
+___
 
 ### parametersFormat
 
-<Callout>
-  Specify the render style of parameter and type parameter groups.
-</Callout>
+<Callout>Specify the render style of parameter and type parameter groups.</Callout>
 
 > Accepts either `"list"` or `"table"`. Defaults to `"list"`.
 
 This option either renders parameters for functions and class methods as a list or in tabular format.
 
+
 ```json filename="typedoc.json"
 {
   "parametersFormat": "list"
 }
+
 ```
 
----
+___
 
 ### propertiesFormat
 
-<Callout>
-  Specify the render style of property groups for interfaces and classes.
-</Callout>
+<Callout>Specify the render style of property groups for interfaces and classes.</Callout>
 
 > Accepts either `"list"` or `"table"`. Defaults to `"list"`.
 
 This option either renders properties for classes and interfaces as a list or in tabular format.
 
+
 ```json filename="typedoc.json"
 {
   "propertiesFormat": "list"
 }
+
 ```
 
----
+___
 
 ### enumMembersFormat
 
@@ -375,13 +397,15 @@ This option either renders properties for classes and interfaces as a list or in
 
 This option either renders members of enums as a list or in tabular format.
 
+
 ```json filename="typedoc.json"
 {
   "enumMembersFormat": "list"
 }
+
 ```
 
----
+___
 
 ### typeDeclarationFormat
 
@@ -391,13 +415,15 @@ This option either renders members of enums as a list or in tabular format.
 
 This option either renders type declrations as a list or in tabular format.
 
+
 ```json filename="typedoc.json"
 {
   "typeDeclarationFormat": "list"
 }
+
 ```
 
----
+___
 
 ### indexFormat
 
@@ -407,19 +433,19 @@ This option either renders type declrations as a list or in tabular format.
 
 This option renders index items either as a simple list or in a table with a description column exposing the comment summary.
 
+
 ```json filename="typedoc.json"
 {
   "indexFormat": "list"
 }
+
 ```
 
----
+___
 
 ### textContentMappings
 
-<Callout>
-  Provides a mechanism to change the content of text used in documentation.
-</Callout>
+<Callout>Provides a mechanism to change the content of text used in documentation.</Callout>
 
 > Accepts a key/value object.
 
@@ -445,6 +471,7 @@ Keys are categorised with the following namespace conventions:
 Only keys that require translation need to be added to the object.
 
 Below is the full list of keys and default values:
+
 
 ```json filename="typedoc.json"
 {
@@ -515,9 +542,10 @@ Below is the full list of keys and default values:
     "kind.typeParameter.plural": "Type parameters"
   }
 }
+
 ```
 
----
+___
 
 ## Utility Options
 
@@ -529,13 +557,15 @@ Below is the full list of keys and default values:
 
 If undefined all urls will be relative.
 
+
 ```json filename="typedoc.json"
 {
   "publicPath": "http://abc.com"
 }
+
 ```
 
----
+___
 
 ### preserveAnchorCasing
 
@@ -547,13 +577,15 @@ By default references to symbol anchor links are lowercased.
 
 This option can be used for engines that require the preservation of anchor link casing.
 
+
 ```json filename="typedoc.json"
 {
   "preserveAnchorCasing": false
 }
+
 ```
 
----
+___
 
 ### anchorPrefix
 
@@ -563,13 +595,15 @@ This option can be used for engines that require the preservation of anchor link
 
 This option should be used when parsers requiren a custom anchor prefix.
 
+
 ```json filename="typedoc.json"
 {
   "anchorPrefix": "markdown-header"
 }
+
 ```
 
----
+___
 
 ### namedAnchors
 
@@ -582,10 +616,12 @@ This option should be used if there are issues with anchoring to symbols within 
 - For markdown parsers that do not automatically assign header ids.
 - When cross referencing symbols that are referenced in a table row.
 
+
 ```json filename="typedoc.json"
 {
   "namedAnchors": false
 }
+
 ```
 
----
+___

@@ -2,8 +2,8 @@
   "index": "Introduction",
   "quick-start": "",
   "options": "",
-  "customizing": "Customizing",
-  "v4-migration-guide": "",
+  "guide": "Guide",
+  "v4-migration": "",
   "-- RelatedPlugin": {
     "type": "separator",
     "title": "Related Plugins"

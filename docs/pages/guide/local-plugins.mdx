@@ -1,8 +1,10 @@
 import { Callout, FileTree } from 'nextra/components';
 
-# Writing a Local plugin
+# Local plugins
 
-To get started a create a local TypeDoc plugin file. Here we are writing a file in a directory named `local-plugins` and referencing it in `typedoc.json`.
+Additional functionality documented in this section can be provided by writing a local plugin.
+
+To get started a create a local TypeDoc plugin file and reference it in `typedoc.json`.
 
 ```js filename="local-plugins/my-custom-plugin.mjs"
 // @ts-check
@@ -14,8 +16,6 @@ export function load(app) {
   // Additional customization should be placed in the load function.
 }
 ```
-
-The file can the be referenced in the `typedoc.json` file.
 
 ```json filename="typedoc.json"
 {

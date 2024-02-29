@@ -43,8 +43,9 @@ export async function generateModels(declarationsPath: string) {
       .join('\n')}
   }
 
-  ${mixedTypes?.map(([name, option]) => {
-    return `
+  ${mixedTypes
+    ?.map(([name, option]) => {
+      return `
   export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
         .map(
@@ -54,7 +55,8 @@ export async function generateModels(declarationsPath: string) {
         .join(';')}
   }
     `;
-  })}
+    })
+    .join('\n')}
   `;
 
   const optionsModelFile = path.join(

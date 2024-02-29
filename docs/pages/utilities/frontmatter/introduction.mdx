@@ -1,9 +1,23 @@
-import { Cards, Card } from 'nextra/components';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Card, Cards } from 'nextra/components';
+import pjson from '../../../../packages/typedoc-plugin-frontmatter/package.json';
 
-# Examples
+# typedoc-plugin-frontmatter
+
+![npm](https://img.shields.io/npm/v/typedoc-plugin-frontmatter%2Fnext?&logo=npm)
+
+## Description
+
+<PackageDescription description={pjson.description}></PackageDescription>
+
+## Features
+
+- Apply global frontmatter variables to all pages.
+- Configure specific pages with comment tags.
+
+## Examples
 
 <Cards num={2}>
   <Card

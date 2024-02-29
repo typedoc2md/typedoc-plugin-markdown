@@ -31,6 +31,42 @@ sidebar: true
 
 ___
 
+## readmeFrontmatter
+
+<Callout>Specify static variables to be added to the readme page only.</Callout>
+
+> Accepts a key/value object.
+
+
+```json filename="typedoc.json"
+{
+  "readmeFrontmatter": {
+    "onReadme": "true"
+  }
+}
+
+```
+
+___
+
+## indexFrontmatter
+
+<Callout>Specify static variables to be added to the index page only.</Callout>
+
+> Accepts a key/value object.
+
+
+```json filename="typedoc.json"
+{
+  "indexFrontmatter": {
+    "onIndex": "true"
+  }
+}
+
+```
+
+___
+
 ## frontmatterCommentTags
 
 <Callout>Specify which comment block tags should be added to frontmatter.</Callout>
@@ -91,9 +127,9 @@ ___
 
 > Accepts either `"camelCase"` or `"snakeCase"`. Defaults to `"camelCase"`.
 
-This option can configure the output style of frontmatter variables.
+Block tags have to be written in camelCase (see [tsdoc.org](https://tsdoc.org/pages/spec/tag_kinds)).
 
-Note that block tags should be written in camelCase.
+This option can configure the output style of frontmatter variables when written to YAML.
 
 
 ```json filename="typedoc.json"
