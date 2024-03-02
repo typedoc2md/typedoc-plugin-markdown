@@ -11,7 +11,7 @@
     "devtools/packages/*"
   ],
   "scripts": {
-    "readme": "generate-readmes",
+    "scripts": "ts-node ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs",
     "prerelease": "npm run build --workspaces --if-present",
     "release": "npx changeset publish"
   },

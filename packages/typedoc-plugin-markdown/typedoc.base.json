@@ -1,5 +1,10 @@
 {
-  "entryPoints": ["./src/index.ts"],
+  "entryPoints": [
+    "./src/theme/theme-render-context.ts",
+    "./src/theme/resources/templates/index.ts",
+    "./src/theme/resources/partials/index.ts",
+    "./src/theme/resources/helpers/index.ts"
+  ],
   "readme": "none",
   "excludePrivate": true,
   "excludeReferences": true,

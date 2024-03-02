@@ -4,12 +4,13 @@ import { Callout, FileTree } from 'nextra/components';
 
 Migrating from v3 to v4 should be fairly straightforward. This guide will help you understand the changes and how to update your project.
 
-## Architecture Changes
+## Architecture/Configuration Changes
 
 - Handlebars as a dependency has been removed.
 - The way files are output has changed. Files and folders now follow your TypeScript project structure.
 - In-page TOCs are no longer included by default. You can include in-page TOCs by using the [Remark](/utilities/remark) plugin.
 - Updated theming model. See [customizing output](/customizing) guide.
+- `--theme markdown` options is no longer required and should be removed.
 
 ## Breaking API Changes
 

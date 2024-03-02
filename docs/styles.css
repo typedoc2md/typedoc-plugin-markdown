@@ -1,0 +1,4 @@
+.nextra-toc a[href^='#parameters'],
+.nextra-toc a[href^='#returns'] {
+  display: none;
+}

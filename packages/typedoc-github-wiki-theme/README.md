@@ -1,6 +1,6 @@
 # typedoc-github-wiki-theme
 
-![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme%2Fnext?&logo=npm) ![Downloads](https://img.shields.io/npm/dm/typedoc-github-wiki-theme) [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=next)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
+![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme%2Fnext?&logo=npm) [![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=next)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)
 
 A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible with Github Wiki.
 
@@ -12,12 +12,4 @@ A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible wit
 
 ## Documentation
 
-Please visit https://typedoc-plugin-markdown.org/themes/github-wiki.
-
-## Contributing
-
-If you would like to contribute please read the [contributing guide](./CONTRIBUTING.md).
-
-## License
-
-Released under the [MIT License](./LICENSE).
+Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/themes/github-wiki/introduction) for comprehensive documentation, including options and usage guides.

@@ -30,7 +30,7 @@
     "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
     "directory": "packages/typedoc-plugin-markdown"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown",
+  "homepage": "https://typedoc-plugin-markdown.org",
   "keywords": [
     "markdown",
     "typescript",

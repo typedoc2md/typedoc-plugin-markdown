@@ -24,6 +24,7 @@ export default {
   components: {
     PackageDescription,
   },
+
   useNextSeoProps() {
     const { asPath } = useRouter();
     const title = asPath

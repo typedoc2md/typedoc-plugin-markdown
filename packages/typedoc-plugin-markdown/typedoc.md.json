@@ -1,15 +1,22 @@
 {
   "extends": "./typedoc.base.json",
-  "plugin": ["typedoc-plugin-markdown"],
+  "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
   "hidePageHeader": true,
-  "expandObjects": true,
+  "expandObjects": false,
   "excludeGroups": true,
   "outputFileStrategy": "members",
-  "useCodeBlocks": true,
+  "useCodeBlocks": false,
+  "expandParameters": false,
   "indexFormat": "table",
   "parametersFormat": "table",
+  "entryFileName": "README.md",
   "textContentMappings": {
     "breadcrumbs.home": "API",
-    "title.indexPage": "API"
-  }
+    "title.indexPage": "Resources"
+  },
+  "remarkPlugins": [
+    "remark-gfm",
+    ["remark-toc", { "skip": "Parameters|Returns" }]
+  ],
+  "propertiesFormat": "list"
 }
