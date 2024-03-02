@@ -2,6 +2,31 @@
  * @module
  */
 
+/**
+ * Comments for BasicClass
+ */
+export class BasicClass {
+  /**
+   * Comments for prop1
+   */
+  someProp = 'someProp';
+  /**
+   *
+   */
+  objecLiteralProp = {
+    /**
+     * Comments for someFunction
+     */
+    someFunction: (a: string) => {
+      return a;
+    },
+    /**
+     * Comments for someProp
+     */
+    someProp: 'someProp',
+  };
+}
+
 export abstract class AbstractClass {
   /**
    * Comments for abstractProp

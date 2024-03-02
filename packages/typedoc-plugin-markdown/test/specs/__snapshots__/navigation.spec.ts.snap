@@ -1098,6 +1098,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "classes/AbstractClass.md"
       },
       {
+        "title": "BasicClass",
+        "url": "classes/BasicClass.md"
+      },
+      {
         "title": "CallbacksOptions",
         "url": "classes/CallbacksOptions.md"
       },

@@ -127,7 +127,7 @@ comment for y.x
 
 comment for y.y
 
-### y.z
+### y.z()
 
 > **z**: (\`x\`) => \`string\`
 
@@ -141,7 +141,7 @@ comment for y.z
 
 \`string\`
 
-### z
+### z()
 
 > **z**: (\`x\`) => \`string\`
 
@@ -263,7 +263,7 @@ Comments for ExternalReferenceType
 `;
 
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Type alias: FunctionType
+"# Type alias: FunctionType()
 
 > **FunctionType**: (\`name\`, \`value\`) => \`void\`
 
@@ -286,7 +286,7 @@ Comments for FunctionType
 `;
 
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# FunctionType
+"# FunctionType()
 
 \`\`\`ts
 type FunctionType: (name: string, value: unknown) => void;

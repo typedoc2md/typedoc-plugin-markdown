@@ -76,7 +76,11 @@ export function declarationMemberIdentifier(
     md.push(context.partials.someType(declarationType));
   }
 
-  if (reflection.defaultValue && reflection.defaultValue !== '...') {
+  if (
+    reflection.defaultValue &&
+    reflection.defaultValue !== '...' &&
+    reflection.defaultValue !== reflection.name
+  ) {
     md.push(` = \`${stripComments(reflection.defaultValue)}\``);
   }
 

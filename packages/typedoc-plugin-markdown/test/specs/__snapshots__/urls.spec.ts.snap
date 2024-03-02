@@ -305,6 +305,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
 [
   "README.md",
   "classes/AbstractClass.md",
+  "classes/BasicClass.md",
   "classes/CallbacksOptions.md",
   "classes/ClassWithAccessors.md",
   "classes/ClassWithConstructorOverloads.md",
@@ -369,6 +370,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
 [
   "README.md",
   "classes/AbstractClass.md",
+  "classes/BasicClass.md",
   "classes/CallbacksOptions.md",
   "classes/ClassWithAccessors.md",
   "classes/ClassWithConstructorOverloads.md",

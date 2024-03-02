@@ -27,7 +27,7 @@ Comments for some tag
 
 ***
 
-### functionProp
+### functionProp()
 
 \`\`\`ts
 functionProp: (s: string) => boolean;
@@ -78,13 +78,13 @@ propReturningObjectDeclaration: {
 
 Comments for propReturningObjectDeclaration
 
-#### propReturningObjectDeclaration.a
+#### a
 
 \`\`\`ts
 a: boolean;
 \`\`\`
 
-#### propReturningObjectDeclaration.b
+#### b
 
 \`\`\`ts
 b: string;
@@ -136,7 +136,7 @@ d: string;
 
 ***
 
-### propReturningSignatureDeclaration?
+### propReturningSignatureDeclaration()?
 
 \`\`\`ts
 optional propReturningSignatureDeclaration: () => string | number | boolean;
@@ -176,7 +176,7 @@ propWithProps: {
 
 Comments for propWithProps
 
-#### propWithProps.callbacks?
+#### callbacks?
 
 \`\`\`ts
 optional callbacks: Partial<CallbacksOptions<DisposableClass, ClassWithModifiers>>;
@@ -184,7 +184,7 @@ optional callbacks: Partial<CallbacksOptions<DisposableClass, ClassWithModifiers
 
 Comments for callbacks
 
-#### propWithProps.nestedPropA
+#### nestedPropA
 
 \`\`\`ts
 nestedPropA: string;
@@ -192,7 +192,7 @@ nestedPropA: string;
 
 Comments for nestedPropA
 
-#### propWithProps.nestedPropB
+#### nestedPropB
 
 \`\`\`ts
 nestedPropB: boolean;
@@ -200,7 +200,7 @@ nestedPropB: boolean;
 
 Comments for nestedPropB
 
-#### propWithProps.nestedPropC
+#### nestedPropC
 
 \`\`\`ts
 nestedPropC: {
@@ -210,7 +210,7 @@ nestedPropC: {
 
 Comments for nestedPropC
 
-#### propWithProps.nestedPropC.nestedPropCA
+#### nestedPropC.nestedPropCA
 
 \`\`\`ts
 nestedPropCA: string;
@@ -218,7 +218,7 @@ nestedPropCA: string;
 
 Comments for nestedPropCA
 
-#### propWithProps.nestedPropD
+#### nestedPropD()
 
 \`\`\`ts
 nestedPropD: () => boolean;
@@ -642,7 +642,7 @@ y: boolean | string;
 
 comment for y.y
 
-### y.z
+### y.z()
 
 \`\`\`ts
 z: (x: string) => string;
@@ -658,7 +658,7 @@ comment for y.z
 
 \`string\`
 
-### z
+### z()
 
 \`\`\`ts
 z: (x: string) => string;
@@ -784,7 +784,7 @@ y: boolean | string;
 
 comment for y.y
 
-### y.z
+### y.z()
 
 \`\`\`ts
 z: (x: string) => string;
@@ -802,7 +802,7 @@ comment for y.z
 
 \`string\`
 
-### z
+### z()
 
 \`\`\`ts
 z: (x: string) => string;
@@ -1091,7 +1091,7 @@ valueX: {
 valueA: number[];
 \`\`\`
 
-### valueX.valueY
+### valueX.valueY()
 
 \`\`\`ts
 valueY: (z: string) => {
@@ -1160,7 +1160,7 @@ b: number = 2;
 valueZ: string = 'foo';
 \`\`\`
 
-### valueY
+### valueY()
 
 \`\`\`ts
 valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
@@ -1331,7 +1331,7 @@ valueX: {
 valueA: number[];
 \`\`\`
 
-### valueX.valueY
+### valueX.valueY()
 
 \`\`\`ts
 valueY: (z: string) => {
@@ -1402,7 +1402,7 @@ b: number = 2;
 valueZ: string = 'foo';
 \`\`\`
 
-### valueY
+### valueY()
 
 \`\`\`ts
 valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;

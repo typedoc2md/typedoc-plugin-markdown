@@ -167,7 +167,7 @@ Comments for objectLiteralVariable
 
 > **valueA**: \`number\`[]
 
-### valueX.valueY
+### valueX.valueY()
 
 > **valueY**: (\`z\`) => \`Object\`
 
@@ -203,7 +203,7 @@ Comments for objectLiteralVariable
 
 > **valueZ**: \`string\` = \`'foo'\`
 
-### valueY
+### valueY()
 
 > **valueY**: (\`unionParam\`, \`_undercoreParam_\`) => \`string\`
 

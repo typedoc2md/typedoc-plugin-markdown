@@ -1,6 +1,10 @@
 import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Class Reflection`, () => {
+  test(`should compile basic class`, () => {
+    expectFileToEqual('reflections', 'members', 'classes/BasicClass.md');
+  });
+
   test(`should compile abstract class`, () => {
     expectFileToEqual('reflections', 'members', 'classes/AbstractClass.md');
   });

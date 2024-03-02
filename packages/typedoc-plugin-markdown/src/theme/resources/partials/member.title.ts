@@ -1,4 +1,4 @@
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 import { MarkdownThemeRenderContext } from '../../..';
 import { backTicks, strikeThrough } from '../markdown';
 import { escapeChars } from '../utils';
@@ -25,7 +25,10 @@ export function memberTitle(
     }`,
   );
 
-  if (reflection.signatures?.length) {
+  if (
+    reflection.signatures?.length ||
+    (reflection.type as ReflectionType)?.declaration?.signatures?.length
+  ) {
     name.push('()');
   }
 
