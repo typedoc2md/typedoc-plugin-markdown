@@ -29,9 +29,7 @@ function projectHeader(
   context: MarkdownThemeRenderContext,
   page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>,
 ) {
-  const fileExtension = context.options.getValue('useMDXFileExt')
-    ? '.mdx'
-    : '.md';
+  const fileExtension = context.options.getValue('fileExtension');
   const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
   const titleLink = context.options.getValue('titleLink');
 
@@ -111,9 +109,7 @@ function packageHeader(
   const readmeLabel = context.text.getText('header.readme');
   const indexLabel = context.text.getText('header.docs');
 
-  const fileExtension = context.options.getValue('useMDXFileExt')
-    ? '.mdx'
-    : '.md';
+  const fileExtension = context.options.getValue('fileExtension');
   const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
 
   const packageItemName = packageItem.packageVersion

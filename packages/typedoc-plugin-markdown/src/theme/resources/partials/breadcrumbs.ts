@@ -10,9 +10,7 @@ export function breadcrumbs(
 ): string {
   const md: string[] = [];
 
-  const fileExtension = context.options.getValue('useMDXFileExt')
-    ? '.mdx'
-    : '.md';
+  const fileExtension = context.options.getValue('fileExtension');
   const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
 
   if (

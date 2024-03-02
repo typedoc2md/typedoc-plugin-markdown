@@ -42,7 +42,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const urls: UrlMapping<Reflection>[] = [];
   const anchors: Record<string, string[]> = {};
 
-  const fileExtension = options.getValue('useMDXFileExt') ? '.mdx' : '.md';
+  const fileExtension = options.getValue('fileExtension');
   const entryFileName = `${path.parse(options.getValue('entryFileName')).name}${fileExtension}`;
 
   const preserveReadme =

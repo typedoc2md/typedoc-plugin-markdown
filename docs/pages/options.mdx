@@ -89,20 +89,18 @@ The content of this file will be resolved in the following order:
 
 ___
 
-### useMDXFileExt
+### fileExtension
 
-<Callout>Use `.mdx` file extensions for generated output files.</Callout>
+<Callout>Specify the file extension for generated output files.</Callout>
 
-> Accepts a boolean value. Defaults to `false`.
+> Accepts a string value. Defaults to `".md"`.
 
-Use this option if your output files require `.mdx` extensions. By default all files have an `.md` extension.
-
-Note all output is MDX compatible regardless of this option.
+Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
 
 
 ```json filename="typedoc.json"
 {
-  "useMDXFileExt": false
+  "fileExtension": ".mdx"
 }
 
 ```

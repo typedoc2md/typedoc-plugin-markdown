@@ -76,16 +76,23 @@ export const entryFileName: Partial<DeclarationOption> = {
 };
 
 /**
- * Use this option if your output files require `.mdx` extensions. By default all files have an `.md` extension.
+ * Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
  *
- * Note all output is MDX compatible regardless of this option.
+ * @example ".mdx"
  *
  * @category Output
  */
-export const useMDXFileExt: Partial<DeclarationOption> = {
-  help: 'Use `.mdx` file extensions for generated output files.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
+export const fileExtension: Partial<DeclarationOption> = {
+  help: 'Specify the file extension for generated output files.',
+  type: ParameterType.String,
+  defaultValue: '.md',
+  validate(value) {
+    if (!value.startsWith('.')) {
+      throw new Error(
+        `[typedoc-plugin-markdown] The "fileExtension" must start with a "." (found "${value}").`,
+      );
+    }
+  },
 };
 
 /**

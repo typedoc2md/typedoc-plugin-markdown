@@ -46,7 +46,7 @@ export function getNavigation(
   return navigation;
 
   function buildNavigationFromPackage(projectChild: DeclarationReflection) {
-    const fileExtension = options.getValue('useMDXFileExt') ? '.mdx' : '.md';
+    const fileExtension = options.getValue('fileExtension');
     const entryFileName = `${path.parse(options.getValue('entryFileName')).name}${fileExtension}`;
 
     const preservePackageReadme =
