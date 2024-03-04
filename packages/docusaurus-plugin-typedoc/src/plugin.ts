@@ -106,7 +106,7 @@ module.exports = typedocSidebar.items;`,
     console.error(
       '[docusaurus-plugin-typedoc] TypeDoc exited with an error. Use the "skipErrorChecking" option to disable TypeDoc error checking.',
     );
-    process.exit();
+    process.exit(1);
   }
 
   if (app.options.getValue('watch')) {
