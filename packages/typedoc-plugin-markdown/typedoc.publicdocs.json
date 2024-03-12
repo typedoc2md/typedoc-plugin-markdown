@@ -1,0 +1,9 @@
+{
+  "extends": "./typedoc.md.json",
+  "entryPoints": ["./src"],
+  "plugin": ["typedoc-plugin-markdown", "./typedoc-theme.cjs"],
+  "out": "../../docs/pages/test-api",
+  "theme": "nextra",
+  "excludeInternal": true,
+  "disableSources": true
+}

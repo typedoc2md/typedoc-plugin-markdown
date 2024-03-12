@@ -1,20 +1,11 @@
 import {
   DeclarationReflection,
   ProjectReflection,
-  Reflection,
   ReflectionKind,
 } from 'typedoc';
-import {
-  MarkdownPageEvent,
-  MarkdownTheme,
-  MarkdownThemeRenderContext,
-} from 'typedoc-plugin-markdown';
+import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
 export class GithubWikiTheme extends MarkdownTheme {
-  override getRenderContext(pageEvent: MarkdownPageEvent<Reflection>) {
-    return new ThemeRenderContext(this, pageEvent, this.application.options);
-  }
-
   getUrls(project: ProjectReflection) {
     return super.getUrls(project).map((urlMapping) => {
       if (urlMapping.model.kind === ReflectionKind.Project) {
@@ -41,13 +32,4 @@ export class GithubWikiTheme extends MarkdownTheme {
     reflection.url = url;
     return url;
   }
-}
-
-class ThemeRenderContext extends MarkdownThemeRenderContext {
-  override helpers = {
-    ...this.helpers,
-    parseUrl: (url: string) => {
-      return encodeURI('../wiki/' + url.replace('.md', ''));
-    },
-  };
 }

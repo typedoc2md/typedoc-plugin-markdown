@@ -5,17 +5,18 @@ import {
   DeclarationOption,
   Options,
   OptionsReader,
+  Reflection,
 } from 'typedoc';
-import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
+import {
+  MarkdownPageEvent,
+  MarkdownRendererEvent,
+} from 'typedoc-plugin-markdown';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import * as options from './options/declarations';
 import presets from './options/presets';
 import { getSidebar } from './sidebars/sidebars';
-import { VitepressTheme } from './theme';
 
 export function load(app: Application) {
-  app.renderer.defineTheme('vitepress', VitepressTheme);
-
   Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
       name,
@@ -30,11 +31,27 @@ export function load(app: Application) {
       readonly supportsPackages = false;
       read(container: Options) {
         Object.entries(presets).forEach(([key, value]) => {
-          container.setValue('theme', 'vitepress');
           container.setValue(key, value);
         });
       }
     })(),
+  );
+
+  app.renderer.on(
+    MarkdownPageEvent.END,
+    (page: MarkdownPageEvent<Reflection>) => {
+      page.contents = page.contents?.replace(
+        /\[([^\]]+)\]\((?!https?:|\/|\.)([^)]*#?[^)]*)\)/g,
+        (match: string, text: string, url: string) => {
+          const urlWithAnchor = url.split('#');
+          if (urlWithAnchor.length > 1) {
+            const anchorPart = slugifyAnchor(urlWithAnchor[1]);
+            return `[${text}](${encodeURI(`${urlWithAnchor[0]}#${anchorPart}`)})`;
+          }
+          return `[${text}](${encodeURI(url)})`;
+        },
+      );
+    },
   );
 
   app.renderer.postRenderAsyncJobs.push(
@@ -65,4 +82,13 @@ export function load(app: Application) {
       }
     },
   );
+}
+
+function slugifyAnchor(anchor: string) {
+  return anchor
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }

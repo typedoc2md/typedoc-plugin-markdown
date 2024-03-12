@@ -4,8 +4,10 @@ import {
   DeclarationOption,
   Options,
   OptionsReader,
+  Reflection,
 } from 'typedoc';
 import {
+  MarkdownPageEvent,
   MarkdownRendererEvent,
   NavigationItem,
   OutputFileStrategy,
@@ -37,6 +39,18 @@ export function load(app: Application) {
         });
       }
     })(),
+  );
+
+  app.renderer.on(
+    MarkdownPageEvent.END,
+    (page: MarkdownPageEvent<Reflection>) => {
+      page.contents = page.contents?.replace(
+        /\[([^\]]+)\]\((?!https?:|\/|\.)([^)]+)\)/g,
+        (match: string, text: string, url: string) => {
+          return `[${text}](${encodeURI('../wiki/' + url.replace('.md', ''))})`;
+        },
+      );
+    },
   );
 
   app.renderer.postRenderAsyncJobs.push(
@@ -71,7 +85,7 @@ export function getSidebar(
   navigationItems: NavigationItem[],
   outputFileStrategy: OutputFileStrategy,
 ) {
-  const parseUrl = (url: string) => '../wiki/' + url.replace('.md', '');
+  const parseSidebarUrl = (url: string) => '../wiki/' + url.replace('.md', '');
   const md: string[] = [];
   const isGlobals = navigationItems?.every((child) => !Boolean(child.url));
 
@@ -80,7 +94,10 @@ export function getSidebar(
       md.push(`### ${navigationItem.title}`);
       if (navigationItem.children) {
         const childList = navigationItem.children
-          ?.map((child) => `- [${child.title}](${parseUrl(child.url || '')})`)
+          ?.map(
+            (child) =>
+              `- [${child.title}](${parseSidebarUrl(child.url || '')})`,
+          )
           .join('\n');
         md.push(childList);
       }
@@ -97,7 +114,7 @@ export function getSidebar(
                 ?.map(
                   (innerChild) =>
                     `- [${innerChild.title}](${
-                      innerChild.url ? parseUrl(innerChild.url) : ''
+                      innerChild.url ? parseSidebarUrl(innerChild.url) : ''
                     })`,
                 )
                 .join('\n');
@@ -110,7 +127,7 @@ export function getSidebar(
       const childList = navigationItems
         ?.map(
           (navItem) =>
-            `- [${navItem.title}](${navItem.url ? parseUrl(navItem.url) : ''})`,
+            `- [${navItem.title}](${navItem.url ? parseSidebarUrl(navItem.url) : ''})`,
         )
         .join('\n');
       md.push(childList);

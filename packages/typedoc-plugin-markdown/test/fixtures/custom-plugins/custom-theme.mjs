@@ -1,7 +1,6 @@
 // @ts-check
 import * as fs from 'fs';
 import {
-  MarkdownHooks,
   MarkdownTheme,
   MarkdownThemeRenderContext,
 } from 'typedoc-plugin-markdown';
@@ -12,33 +11,30 @@ import {
 export function load(app) {
   app.renderer.defineTheme('custom-theme', MyMarkdownTheme);
 
-  app.renderer.markdownHooks.on(
-    MarkdownHooks.PAGE_BEGIN,
-    () => '> `page.begin` hook',
-  );
+  app.renderer.markdownHooks.on('page.begin', () => '> `page.begin` hook');
 
   app.renderer.markdownHooks.on(
-    MarkdownHooks.PAGE_END,
+    'page.end',
     () => `**Generated using \`page.end\` hook**`,
   );
 
   app.renderer.markdownHooks.on(
-    MarkdownHooks.CONTENT_BEGIN,
+    'content.begin',
     () => '> `content.begin` hook',
   );
 
   app.renderer.markdownHooks.on(
-    MarkdownHooks.INDEX_PAGE_BEGIN,
+    'index.page.begin',
     () => '> `page.index.begin` hook',
   );
 
   app.renderer.markdownHooks.on(
-    MarkdownHooks.INDEX_PAGE_END,
+    'index.page.end',
     () => '> **Generated using `page.index.end` hook**',
   );
 
   app.renderer.markdownHooks.on(
-    MarkdownHooks.INDEX_CONTENT_BEGIN,
+    'index.content.begin',
     () => '> `content.index.begin` hook',
   );
 
@@ -90,14 +86,11 @@ class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
   };
   partials = {
     ...this.partials,
-    /**
-     * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
-     */
-    header: (page) => {
+    header: () => {
       return `
 <div style="display:flex; align-items:center;">
   <img alt="My logo" src="https://placehold.co/100x50" style="margin-right: .5em;" />
-  <em>Welcome to ${page.project.name} with a customised header partial!!</em>
+  <em>Welcome to ${this.page.project.name} with a customised header partial!!</em>
 </div>
 `;
     },

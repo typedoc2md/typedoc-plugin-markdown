@@ -16,7 +16,7 @@ lintMdx();
 
 async function lintMdx() {
   const mdFiles = await glob(`./test/out/**/opts-1/**/*.md`);
-  console.log(mdFiles);
+
   mdFiles.forEach(async (file) => {
     const vfile = await read(file);
     try {

@@ -1,0 +1,16 @@
+{
+  "extends": "./typedoc.md.json",
+  "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
+
+  "out": "./plugin-docs",
+  "remarkPlugins": [
+    [
+      "remark-toc",
+      {
+        "maxDepth": 5,
+        "tight": true,
+        "skip": "Parameters|Returns|Source|Overrides|Inherited from"
+      }
+    ]
+  ]
+}

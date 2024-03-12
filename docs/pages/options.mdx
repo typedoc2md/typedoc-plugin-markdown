@@ -565,6 +565,26 @@ If undefined all urls will be relative.
 
 ___
 
+### preserveMarkup
+
+<Callout>Preserves non-html markup tags in comments.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default non html tags inside comments are escaped.
+
+This option should be used when parsers require the preservation of non-html tags, for example if some custom JSX tags are required to be interpreted in final output.
+
+
+```json filename="typedoc.json"
+{
+  "preserveMarkup": false
+}
+
+```
+
+___
+
 ### preserveAnchorCasing
 
 <Callout>Preserve anchor casing when generating link to symbols.</Callout>

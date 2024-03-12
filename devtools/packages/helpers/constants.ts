@@ -4,8 +4,8 @@ export const PRESETS_PATH = `${process.cwd()}/src/options/presets.ts`;
 
 export const DOCS_CONFIG: Record<string, DocsConfig> = {
   ['typedoc-plugin-markdown']: {
-    declarationsPath: `${process.cwd()}/src/plugin/options/declarations.ts`,
-    optionsPath: 'options',
+    declarationsPath: `${process.cwd()}/src/app/options/declarations.ts`,
+    optionsPath: '',
     docsPath: '',
     declarations: true,
     presets: false,
@@ -27,7 +27,7 @@ export const DOCS_CONFIG: Record<string, DocsConfig> = {
   ['typedoc-github-wiki-theme']: {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,
     optionsPath: 'themes/github-wiki',
-    docsPath: '/themes/github-wiki/introduction',
+    docsPath: '/themes/github-wiki',
     declarations: true,
     presets: true,
   },

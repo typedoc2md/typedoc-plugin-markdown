@@ -8,7 +8,7 @@ export async function prebuildKinds() {
     __dirname,
     '..',
     'src',
-    'plugin',
+    'app',
     'options',
     'text-mappings',
     'kind-defaults.ts',

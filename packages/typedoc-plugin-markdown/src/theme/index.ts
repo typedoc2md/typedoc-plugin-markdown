@@ -1,9 +1,8 @@
 /**
- * The in-built custom theme and context theme definitions that the plugin initiates.
+ * The in-built custom markdown theme and theme context.
  *
  * @module
  */
-export { NavigationItem } from './core/navigation';
-export { UrlMapping } from './core/urls';
-export { MarkdownTheme } from './theme';
-export { MarkdownThemeRenderContext } from './theme-render-context';
+export { MarkdownTheme } from './markdown-theme';
+export { MarkdownThemeRenderContext } from './markdown-theme-render-context';
+export * from './theme-types';

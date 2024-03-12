@@ -146,7 +146,7 @@ ${JSON.stringify(
   }
 
   const optionDocPath = path.join(
-    getDocsPath(docsConfig.docsPath),
+    getDocsPath(docsConfig.optionsPath),
     'options.mdx',
   );
 

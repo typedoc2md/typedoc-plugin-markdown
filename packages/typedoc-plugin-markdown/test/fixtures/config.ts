@@ -109,7 +109,7 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       entryPointStrategy: 'packages',
-      name: 'packages-example',
+      name: 'package-example',
       includeVersion: true,
       disableSources: true,
     },
@@ -159,9 +159,11 @@ const config: Record<string, Fixture> = {
     only: false,
     entryPoints: '/customize/index.ts',
     outputFileStrategies: ['members'],
+
     commonOptions: {
       disableSources: true,
       readme: 'none',
+      preserveMarkup: true,
     },
     options: [
       {
