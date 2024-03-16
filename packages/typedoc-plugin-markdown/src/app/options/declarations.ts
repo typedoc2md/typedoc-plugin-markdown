@@ -1,5 +1,9 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
-import { FormatStyle, OutputFileStrategy } from './option-maps';
+import {
+  FormatStyle,
+  MembersWithOwnFile,
+  OutputFileStrategy,
+} from './option-maps';
 import { TEXT_MAPPING_DEFAULTS } from './text-mappings/text-mapping-defaults';
 
 /**
@@ -7,6 +11,8 @@ import { TEXT_MAPPING_DEFAULTS } from './text-mappings/text-mapping-defaults';
  * TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
  *
  * This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
+ *
+ * It is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#memberswithownfile) option.
  *
  * The following keys are available:
  *
@@ -51,6 +57,33 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
   type: ParameterType.Map,
   map: OutputFileStrategy,
   defaultValue: OutputFileStrategy.Members,
+};
+
+/**
+ * This option is useful when only specific types of members should be exported to a single file.
+ *
+ * Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
+ *
+ * @example ["Class", "Enum", "Interface"]
+ *
+ * @category Output
+ */
+export const membersWithOwnFile: Partial<DeclarationOption> = {
+  help: 'Determines which members are exported to their own file when `outputFileStrategy` equals `members`.',
+  type: ParameterType.Array,
+  validate(values) {
+    const validValues = MembersWithOwnFile;
+    for (const kind of values) {
+      if (!validValues.includes(kind)) {
+        throw new Error(
+          `'${kind}' is an invalid value for 'membersWithOwnFile'. Must be one of: ${validValues.join(
+            ', ',
+          )}`,
+        );
+      }
+    }
+  },
+  defaultValue: MembersWithOwnFile,
 };
 
 /**

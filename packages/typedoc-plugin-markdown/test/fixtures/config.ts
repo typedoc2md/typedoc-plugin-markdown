@@ -58,6 +58,7 @@ const config: Record<string, Fixture> = {
       },
       {
         readme: 'none',
+        membersWithOwnFile: ['Class', 'Interface', 'Enum'],
         categorizeByGroup: false,
         excludeGroups: true,
         namedAnchors: true,

@@ -8,6 +8,7 @@ Migrating from v3 to v4 should be fairly straightforward. This guide will help y
 
 - Handlebars as a dependency has been removed.
 - The way files are output has changed. Files and folders now follow your TypeScript project structure.
+- Each member is now output to its own file by default. See [`--outputFileStrategy`](/options#outputfilestrategy). To achieve the same output as v3 (wherby only Classes, Enums and Interfaces have their own file), use [`--membersWithOwnFile`](/options#memberswithownfile)
 - In-page TOCs are no longer included by default. You can include in-page TOCs by using the [Remark](/utilities/remark) plugin.
 - Updated theming model. See [customizing output](/customizing) guide.
 - `--theme markdown` options is no longer required and should be removed.

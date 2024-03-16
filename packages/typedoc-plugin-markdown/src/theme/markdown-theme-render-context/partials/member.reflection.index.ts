@@ -35,23 +35,38 @@ export function reflectionIndex(
     const groups = reflection.groups?.filter((group) =>
       group.allChildrenHaveOwnDocument(),
     );
-    groups?.forEach((reflectionGroup) => {
-      if (reflectionGroup.categories) {
-        md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
-        reflectionGroup.categories.forEach((categoryGroup) => {
-          md.push(heading(subHeadingLevel + 1, categoryGroup.title) + '\n');
-          md.push(getGroup(context, categoryGroup) + '\n');
-        });
+
+    if (context.options.getValue('excludeGroups')) {
+      const children = groups?.reduce((acc, group) => {
+        return [...acc, ...group.children];
+      }, []);
+      if (context.options.getValue('indexFormat') === 'table') {
+        md.push(getTable(context, children || []));
       } else {
-        md.push(
-          heading(
-            subHeadingLevel,
-            context.helpers.getTextFromKindString(reflectionGroup.title, true),
-          ) + '\n',
-        );
-        md.push(getGroup(context, reflectionGroup) + '\n');
+        md.push(getList(context, children || []));
       }
-    });
+    } else {
+      groups?.forEach((reflectionGroup) => {
+        if (reflectionGroup.categories) {
+          md.push(heading(subHeadingLevel, reflectionGroup.title) + '\n');
+          reflectionGroup.categories.forEach((categoryGroup) => {
+            md.push(heading(subHeadingLevel + 1, categoryGroup.title) + '\n');
+            md.push(getGroup(context, categoryGroup) + '\n');
+          });
+        } else {
+          md.push(
+            heading(
+              subHeadingLevel,
+              context.helpers.getTextFromKindString(
+                reflectionGroup.title,
+                true,
+              ),
+            ) + '\n',
+          );
+          md.push(getGroup(context, reflectionGroup) + '\n');
+        }
+      });
+    }
   }
   return md.join('\n');
 }
@@ -61,24 +76,24 @@ function getGroup(
   group: ReflectionGroup | ReflectionCategory,
 ) {
   if (context.options.getValue('indexFormat') === 'table') {
-    return getTable(context, group);
+    return getTable(context, group.children);
   }
-  return getList(context, group);
+  return getList(context, group.children);
 }
 
 function getTable(
   context: MarkdownThemeRenderContext,
-  group: ReflectionGroup | ReflectionCategory,
+  children: DeclarationReflection[],
 ) {
-  const reflectionKind = group.children[0].kind;
-
   const headers = [
-    ReflectionKind.singularString(reflectionKind),
+    context.options.getValue('excludeGroups')
+      ? context.helpers.getText('label.member')
+      : ReflectionKind.singularString(children[0].kind),
     context.helpers.getText('label.description'),
   ];
   const rows: string[][] = [];
 
-  group.children.forEach((child) => {
+  children.forEach((child) => {
     const row: string[] = [];
 
     if (child.url) {
@@ -108,9 +123,9 @@ function getTable(
 
 function getList(
   context: MarkdownThemeRenderContext,
-  group: ReflectionGroup | ReflectionCategory,
+  children: DeclarationReflection[],
 ) {
-  const children = group.children
+  const filteredChildren = children
     .filter((child) => Boolean(child.url))
     .map((child) => {
       const name =
@@ -125,7 +140,7 @@ function getList(
         ? `- ${link(escapeChars(name), context.helpers.getRelativeUrl(child.url))}`
         : '';
     });
-  return children.join('\n');
+  return filteredChildren.join('\n');
 }
 
 function getComment(declaration: DeclarationReflection) {

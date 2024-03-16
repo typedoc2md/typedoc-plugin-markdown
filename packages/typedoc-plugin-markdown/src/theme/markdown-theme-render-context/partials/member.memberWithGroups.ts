@@ -59,18 +59,8 @@ export function memberWithGroups(
   }
 
   if (model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-    const isAbsolute = model.groups?.every((group) =>
-      group.allChildrenHaveOwnDocument(),
-    );
-    if (isAbsolute) {
-      md.push(heading(headingLevel, context.helpers.getText('label.index')));
-    }
-    md.push(
-      context.partials.reflectionIndex(
-        model,
-        isAbsolute ? headingLevel + 1 : headingLevel,
-      ),
-    );
+    md.push(heading(headingLevel, context.helpers.getText('label.index')));
+    md.push(context.partials.reflectionIndex(model, headingLevel + 1));
   }
 
   md.push(context.partials.body(model, headingLevel));

@@ -103,6 +103,9 @@ export class MarkdownTheme extends Theme {
       return pluralString.replace(/[\s_-]+/g, '-').toLowerCase();
     };
 
+    const membersWithOwnFile =
+      this.application.options.getValue('membersWithOwnFile');
+
     const memberMapping = (
       template: (pageEvent: MarkdownPageEvent<any>) => string,
       kind: ReflectionKind,
@@ -126,32 +129,60 @@ export class MarkdownTheme extends Theme {
       },
     };
 
-    if (outputFileStrategy === OutputFileStrategy.Members) {
+    if (
+      outputFileStrategy === OutputFileStrategy.Members &&
+      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Class])
+    ) {
       mappings[ReflectionKind.Class] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Class,
       );
+    }
 
+    if (
+      outputFileStrategy === OutputFileStrategy.Members &&
+      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Interface])
+    ) {
       mappings[ReflectionKind.Interface] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Interface,
       );
+    }
 
+    if (
+      outputFileStrategy === OutputFileStrategy.Members &&
+      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Enum])
+    ) {
       mappings[ReflectionKind.Enum] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Enum,
       );
+    }
 
+    if (
+      outputFileStrategy === OutputFileStrategy.Members &&
+      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Function])
+    ) {
       mappings[ReflectionKind.Function] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Function,
       );
+    }
 
+    if (
+      outputFileStrategy === OutputFileStrategy.Members &&
+      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.TypeAlias])
+    ) {
       mappings[ReflectionKind.TypeAlias] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.TypeAlias,
       );
+    }
 
+    if (
+      outputFileStrategy === OutputFileStrategy.Members &&
+      membersWithOwnFile?.includes(ReflectionKind[ReflectionKind.Variable])
+    ) {
       mappings[ReflectionKind.Variable] = memberMapping(
         this.reflectionTemplate,
         ReflectionKind.Variable,

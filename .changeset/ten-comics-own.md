@@ -1,5 +1,7 @@
 ---
-"typedoc-plugin-markdown": patch
+'typedoc-plugin-markdown': patch
 ---
 
-- fix: Improve signature ui and add 'function' keywords within codeblocks
+- Improve signature ui.
+- Expose `membersWithOwnFile`, `preserveMarkup` and `fileExtension` options.
+-

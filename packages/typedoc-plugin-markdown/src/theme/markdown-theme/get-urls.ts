@@ -314,9 +314,9 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
           reflection.url = container.url + '#' + anchorParts.join('');
           reflection.anchor = anchorParts.join('');
+          reflection.hasOwnDocument = false;
         }
       }
-      reflection.hasOwnDocument = false;
     }
     if (reflection.parent) {
       reflection.traverse((child) => {

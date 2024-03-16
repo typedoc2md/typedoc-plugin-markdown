@@ -48,33 +48,28 @@ A basic module
 
 ## Index
 
-### Enumerations
-
-| Enumeration | Description |
+| Member | Description |
 | :------ | :------ |
 | [EnumA](enumerations/EnumA.md) | - |
 | [EnumB](enumerations/EnumB.md) | - |
-
-### Classes
-
-| Class | Description |
-| :------ | :------ |
 | [ClassA](classes/ClassA.md) | - |
 | [ClassB](classes/ClassB.md) | - |
-
-### Interfaces
-
-| Interface | Description |
-| :------ | :------ |
 | [InterfaceA](interfaces/InterfaceA.md) | - |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 
-### Type Aliases
+<a id="typea" name="typea"></a>
 
-| Type alias | Description |
-| :------ | :------ |
-| [TypeA](type-aliases/TypeA.md) | - |
-| [TypeB](type-aliases/TypeB.md) | - |
+## TypeA
+
+> **TypeA**: \`string\`
+
+***
+
+<a id="typeb" name="typeb"></a>
+
+## TypeB
+
+> **TypeB**: \`string\`
 "
 `;
 
@@ -450,7 +445,7 @@ A module that contains categories
 
 ### Category A
 
-| Enumeration | Description |
+| Member | Description |
 | :------ | :------ |
 | [CategoryAEnum1](enumerations/CategoryAEnum1.md) | - |
 | [CategoryAEnum2](enumerations/CategoryAEnum2.md) | - |
@@ -459,7 +454,7 @@ A module that contains categories
 
 ### Category B
 
-| Enumeration | Description |
+| Member | Description |
 | :------ | :------ |
 | [CategoryBEnum1](enumerations/CategoryBEnum1.md) | - |
 | [CategoryBEnum2](enumerations/CategoryBEnum2.md) | - |
@@ -468,7 +463,7 @@ A module that contains categories
 
 ### Other
 
-| Enumeration | Description |
+| Member | Description |
 | :------ | :------ |
 | [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
 | [UnCategorizedInterace](interfaces/UnCategorizedInterace.md) | - |
@@ -514,26 +509,37 @@ exports[`Groups should compile custom groups index page: (Output File Strategy "
 
 A module that contains custom groupings
 
-## Index
+<a id="variabela" name="variabela"></a>
 
-### Variables
+## variabelA
 
-| Variable | Description |
-| :------ | :------ |
-| [variableC](variables/variableC.md) | Default grouping |
+> **\`const\`** **variabelA**: \`true\` = \`true\`
 
-### CustomGroupA
+***
 
-| Variable | Description |
-| :------ | :------ |
-| [variabelA](variables/variabelA.md) | - |
+<a id="variableb1" name="variableb1"></a>
 
-### CustomGroupB
+## variableB1
 
-| Variable | Description |
-| :------ | :------ |
-| [variableB1](variables/variableB1.md) | - |
-| [variableB2](variables/variableB2.md) | - |
+> **\`const\`** **variableB1**: \`true\` = \`true\`
+
+***
+
+<a id="variableb2" name="variableb2"></a>
+
+## variableB2
+
+> **\`const\`** **variableB2**: \`true\` = \`true\`
+
+***
+
+<a id="variablec" name="variablec"></a>
+
+## variableC
+
+> **\`const\`** **variableC**: \`true\` = \`true\`
+
+Default grouping
 "
 `;
 
@@ -565,9 +571,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 # typedoc-stubs
 
-## Modules
-
-| Module | Description |
+| Member | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name/index.md) | - |
 | [\\<internal\\>](-internal-/index.md) | - |
@@ -609,9 +613,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 
 # typedoc-stubs
 
-## Modules
-
-| Module | Description |
+| Member | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name.md) | - |
 | [\\<internal\\>](-internal-.md) | - |
@@ -657,16 +659,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ## Index
 
-### Namespaces
-
-| Namespace | Description |
+| Member | Description |
 | :------ | :------ |
 | [NestedNamespace](namespaces/NestedNamespace/index.md) | - |
-
-### Interfaces
-
-| Interface | Description |
-| :------ | :------ |
 | [NamespaceInterface](interfaces/NamespaceInterface.md) | - |
 "
 `;
@@ -680,7 +675,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # Namespace: \\_Namespace\\_A\\_
 
-## Namespaces
+## Index
+
+### Namespaces
 
 - [NestedNamespace](namespaces/NestedNamespace.md)
 
@@ -699,9 +696,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # Namespace: \\_Namespace\\_A\\_
 
-## Namespaces
+## Index
 
-| Namespace | Description |
+| Member | Description |
 | :------ | :------ |
 | [NestedNamespace](namespaces/NestedNamespace.md) | - |
 
@@ -774,54 +771,70 @@ A module that contains namespaces
 
 ## Index
 
-### Namespaces
-
-| Namespace | Description |
+| Member | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB/index.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
-
-### Enumerations
-
-| Enumeration | Description |
-| :------ | :------ |
 | [EnumB](enumerations/EnumB.md) | - |
 | [\\_Enum\\_A\\_](enumerations/Enum_A_.md) | - |
-
-### Classes
-
-| Class | Description |
-| :------ | :------ |
 | [ClassB](classes/ClassB.md) | - |
 | [\\_\\_Class\\_A\\_](classes/Class_A_.md) | - |
-
-### Interfaces
-
-| Interface | Description |
-| :------ | :------ |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 | [\\_Interface\\_A\\_](interfaces/Interface_A_.md) | - |
 
-### Type Aliases
+<a id="typeb" name="typeb"></a>
 
-| Type alias | Description |
-| :------ | :------ |
-| [TypeB](type-aliases/TypeB.md) | - |
-| [\\_Type\\_A\\_](type-aliases/Type_A_.md) | - |
+## TypeB
 
-### Variables
+> **TypeB**: \`string\`
 
-| Variable | Description |
-| :------ | :------ |
-| [\\_variable\\_A\\_](variables/variable_A_.md) | - |
-| [variableB](variables/variableB.md) | - |
+***
 
-### Functions
+<a id="_type_a_" name="_type_a_"></a>
 
-| Function | Description |
-| :------ | :------ |
-| [\\_function\\_A\\_](functions/function_A_.md) | - |
-| [functionB](functions/functionB.md) | - |
+## \\_Type\\_A\\_
+
+> **\\_Type\\_A\\_**: \`string\`
+
+***
+
+<a id="_variable_a_" name="_variable_a_"></a>
+
+## \\_variable\\_A\\_
+
+> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+
+***
+
+<a id="variableb" name="variableb"></a>
+
+## variableB
+
+> **\`const\`** **variableB**: \`true\` = \`true\`
+
+***
+
+<a id="_function_a_" name="_function_a_"></a>
+
+## \\_function\\_A\\_()
+
+> **\\_function\\_A\\_**(): \`void\`
+
+### Returns
+
+\`void\`
+
+***
+
+<a id="functionb" name="functionb"></a>
+
+## functionB()
+
+> **functionB**(): \`void\`
+
+### Returns
+
+\`void\`
 "
 `;
 
@@ -836,7 +849,9 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Namespaces
+## Index
+
+### Namespaces
 
 - [NamespaceB](namespaces/NamespaceB.md)
 - [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md)
@@ -942,9 +957,9 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Namespaces
+## Index
 
-| Namespace | Description |
+| Member | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
@@ -1171,7 +1186,9 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 
 A module that contains references
 
-## Functions
+## Index
+
+### Functions
 
 - [defaultFunction](functions/defaultFunction.md)
 
@@ -1206,12 +1223,6 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 
 A module that contains references
 
-## Functions
-
-| Function | Description |
-| :------ | :------ |
-| [defaultFunction](functions/defaultFunction.md) | - |
-
 <a id="interfacea" name="interfacea"></a>
 
 ## InterfaceA
@@ -1232,6 +1243,18 @@ Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
 
 ## default
 
-Renames and re-exports [defaultFunction](functions/defaultFunction.md)
+Renames and re-exports [defaultFunction](index.md#defaultfunction)
+
+***
+
+<a id="defaultfunction" name="defaultfunction"></a>
+
+## defaultFunction()
+
+> **defaultFunction**(): \`string\`
+
+### Returns
+
+\`string\`
 "
 `;

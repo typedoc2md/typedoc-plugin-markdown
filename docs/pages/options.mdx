@@ -17,6 +17,8 @@ TypeDoc creates documentation according to exports derived from the given [`entr
 
 This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
 
+It is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#memberswithownfile) option.
+
 The following keys are available:
 
 **members**
@@ -57,6 +59,30 @@ Generates a single file for every Module or Namespace where all members are hois
 ```json filename="typedoc.json"
 {
   "outputFileStrategy": "members"
+}
+
+```
+
+___
+
+### membersWithOwnFile
+
+<Callout>Determines which members are exported to their own file when `outputFileStrategy` equals `members`.</Callout>
+
+> Accepts an array of the following values `"Enum"` `"Variable"` `"Function"` `"Class"` `"Interface"` `"TypeAlias"`.
+
+This option is useful when only specific types of members should be exported to a single file.
+
+Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
+
+
+```json filename="typedoc.json"
+{
+  "membersWithOwnFile": [
+    "Class",
+    "Enum",
+    "Interface"
+  ]
 }
 
 ```

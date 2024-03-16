@@ -741,14 +741,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       {
         "title": "InterfaceB",
         "url": "basic/interfaces/InterfaceB.md"
-      },
-      {
-        "title": "TypeA",
-        "url": "basic/type-aliases/TypeA.md"
-      },
-      {
-        "title": "TypeB",
-        "url": "basic/type-aliases/TypeB.md"
       }
     ]
   },
@@ -815,25 +807,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-custom-groups",
-    "url": "has-custom-groups/index.md",
-    "children": [
-      {
-        "title": "variabelA",
-        "url": "has-custom-groups/variables/variabelA.md"
-      },
-      {
-        "title": "variableB1",
-        "url": "has-custom-groups/variables/variableB1.md"
-      },
-      {
-        "title": "variableB2",
-        "url": "has-custom-groups/variables/variableB2.md"
-      },
-      {
-        "title": "variableC",
-        "url": "has-custom-groups/variables/variableC.md"
-      }
-    ]
+    "url": "has-custom-groups/index.md"
   },
   {
     "title": "has-namespaces",
@@ -886,42 +860,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       {
         "title": "_Interface_A_",
         "url": "has-namespaces/interfaces/Interface_A_.md"
-      },
-      {
-        "title": "TypeB",
-        "url": "has-namespaces/type-aliases/TypeB.md"
-      },
-      {
-        "title": "_Type_A_",
-        "url": "has-namespaces/type-aliases/Type_A_.md"
-      },
-      {
-        "title": "_variable_A_",
-        "url": "has-namespaces/variables/variable_A_.md"
-      },
-      {
-        "title": "variableB",
-        "url": "has-namespaces/variables/variableB.md"
-      },
-      {
-        "title": "_function_A_",
-        "url": "has-namespaces/functions/function_A_.md"
-      },
-      {
-        "title": "functionB",
-        "url": "has-namespaces/functions/functionB.md"
       }
     ]
   },
   {
     "title": "has-references",
-    "url": "has-references/index.md",
-    "children": [
-      {
-        "title": "defaultFunction",
-        "url": "has-references/functions/defaultFunction.md"
-      }
-    ]
+    "url": "has-references/index.md"
   },
   {
     "title": "has-same-exports",
