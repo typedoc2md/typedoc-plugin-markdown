@@ -34,13 +34,13 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       expandObjects: true,
       expandParameters: true,
-      useCodeBlocks: true,
     },
     options: [
       {},
       {
         parametersFormat: 'table',
         propertiesFormat: 'table',
+        useCodeBlocks: true,
       },
     ],
   },

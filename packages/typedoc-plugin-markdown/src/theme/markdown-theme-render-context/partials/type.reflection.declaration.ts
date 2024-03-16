@@ -50,7 +50,7 @@ export function declarationType(
 
         const typeString =
           obj.defaultValue && obj.defaultValue !== '...'
-            ? obj.defaultValue
+            ? backTicks(obj.defaultValue)
             : context.partials.someType(theType);
         if (shouldFormat) {
           return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
