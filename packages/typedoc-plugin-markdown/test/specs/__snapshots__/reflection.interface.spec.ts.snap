@@ -221,7 +221,7 @@ Comments for BasicInterface
 | Property | Type | Description |
 | :------ | :------ | :------ |
 | ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag |
-| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s |
+| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
 | \`propReturningObjectDeclaration\` | \`Object\` | Comments for propReturningObjectDeclaration |
@@ -508,7 +508,7 @@ Comments for ExtendedInterface
 | :------ | :------ | :------ | :------ |
 | ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
 | \`extendedProp\` | \`string\` | - | - |
-| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper<br /><br />**Param**<br />Comment for param s | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
+| \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
 | \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).\`prop\` |
 | \`propReturningObjectDeclaration\` | \`Object\` | Comments for propReturningObjectDeclaration | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclaration\` |
@@ -598,6 +598,10 @@ Description for prop someProp
 
 Description for event someEvent
 
+#### Deprecated
+
+Deprectaed comments
+
 #### Parameters
 
 • **eventParam**: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
@@ -607,10 +611,6 @@ Comments for param eventParam
 #### Returns
 
 \`void\`
-
-#### Deprecated
-
-Deprectaed comments
 
 #### Source
 
@@ -632,7 +632,7 @@ exports[`Interface Reflection should compile interface with event properties: (O
 | Event | Type | Description |
 | :------ | :------ | :------ |
 | \`anotherEvent\` | \`MouseEvent\` | - |
-| ~~\`someEvent?\`~~ | (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\` | Description for event someEvent<br /><br />**Param**<br />Comments for param eventParam<br /><br />**Deprecated**<br />Deprectaed comments |
+| ~~\`someEvent?\`~~ | (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\` | Description for event someEvent<br /><br />**Deprecated**<br />Deprectaed comments |
 "
 `;
 
