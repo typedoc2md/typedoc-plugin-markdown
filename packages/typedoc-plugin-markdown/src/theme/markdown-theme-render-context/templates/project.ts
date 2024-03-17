@@ -1,6 +1,4 @@
-import { heading, link } from '@plugin/theme/lib/markdown';
-import { escapeChars } from '@plugin/theme/lib/utils';
-import * as path from 'path';
+import { heading } from '@plugin/theme/lib/markdown';
 import { MarkdownThemeRenderContext } from 'theme';
 import { EntryPointStrategy, ProjectReflection } from 'typedoc';
 
@@ -40,44 +38,17 @@ export function project(
     md.push(this.partials.comment(model.comment, { headingLevel: 2 }));
   }
 
-  const pageIndex = () => {
-    const md: string[] = [];
+  if (model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
+    md.push(this.partials.reflectionIndex(model, 2));
+  }
 
-    const model = this.page.model as ProjectReflection;
+  const isPackages =
+    this.page.project.url === this.page.url &&
+    this.options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
 
-    if (model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-      md.push(this.partials.reflectionIndex(model, 2));
-      return md.join('\n\n');
-    }
-
-    const isPackages =
-      this.page.project.url === this.page.url &&
-      this.options.getValue('entryPointStrategy') ===
-        EntryPointStrategy.Packages;
-
-    if (isPackages && model.children?.length) {
-      md.push(heading(2, this.helpers.getText('label.packages')));
-      const packagesList = model.children?.map((projectPackage) => {
-        const urlTo = Boolean(projectPackage.readme)
-          ? `${path.dirname(projectPackage.url || '')}/${this.options.getValue(
-              'entryFileName',
-            )}`
-          : projectPackage.url;
-        return urlTo
-          ? `- ${link(
-              escapeChars(projectPackage.name),
-              this.helpers.getRelativeUrl(urlTo),
-            )}`
-          : '';
-      });
-      md.push(packagesList?.join('\n') || '');
-      return md.join('\n\n');
-    }
-
-    return md.join('\n\n');
-  };
-
-  md.push(pageIndex());
+  if (isPackages && model.children?.length) {
+    md.push(this.partials.packagesIndex(model));
+  }
 
   md.push(this.partials.body(model, 2));
 

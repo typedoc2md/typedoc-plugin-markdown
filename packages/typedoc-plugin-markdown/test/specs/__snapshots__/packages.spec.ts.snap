@@ -20,7 +20,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 
 ## Packages
 
-- [package-1](package-1/index.md)
+- [package-1 - v1.0.0](package-1/index.md)
 - [package-1b](package-1b/index.md)
 - [package-2](package-2/index.md)
 - [package-3](package-3/index.md)
@@ -38,6 +38,8 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 # package-1
 
 Comments for package-1
+
+Some more comments for package-1
 
 ## Interfaces
 
@@ -142,10 +144,12 @@ Some text.
 
 ## Packages
 
-- [package-1](package-1/index.md)
-- [package-1b](package-1b/index.md)
-- [package-2](package-2/index.md)
-- [package-3](package-3/index.md)
-- [package-4](package-4/index.md)
+| Package | Version | Description |
+| :------ | :------ | :------ |
+| [package-1](package-1/index.md) | 1.0.0 | Comments for package-1 |
+| [package-1b](package-1b/index.md) | - | Comments for package-1b |
+| [package-2](package-2/index.md) | - | - |
+| [package-3](package-3/index.md) | - | - |
+| [package-4](package-4/index.md) | - | - |
 "
 `;

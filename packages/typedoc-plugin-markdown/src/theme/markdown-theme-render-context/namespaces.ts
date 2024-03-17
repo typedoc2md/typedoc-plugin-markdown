@@ -74,6 +74,7 @@ import { typeParametersList } from './partials/member.typeParametersList';
 import { typeParametersTable } from './partials/member.typeParametersTable';
 import { breadcrumbs } from './partials/page.breadcrumbs';
 import { header } from './partials/page.header';
+import { packagesIndex } from './partials/page.packagesIndex';
 import { pageTitle } from './partials/page.pageTtitle';
 import { arrayType } from './partials/type.array';
 import { conditionalType } from './partials/type.conditional';
@@ -95,6 +96,7 @@ import { unionType } from './partials/type.union';
 import { unknownType } from './partials/type.unknown';
 
 import { flattenDeclarations } from './helpers/flatten-declarations';
+import { getDeclarationComment } from './helpers/get-declaration-comment';
 import { getDeclarationType } from './helpers/get-declaration-type';
 import { getKeyword } from './helpers/get-keyword';
 import { getModifier } from './helpers/get-modifier';
@@ -411,6 +413,12 @@ There is no association list partial for properties as these are handled as a st
      *
      * @category Page Partials
      */
+    packagesIndex: (model: ProjectReflection) => packagesIndex(context, model),
+    /**
+     * Renders the page title.
+     *
+     * @category Page Partials
+     */
     pageTitle: () => pageTitle(context),
     /**
      * Transforms an ArrayType model to a string.
@@ -542,6 +550,8 @@ export const helpers = (context: MarkdownThemeRenderContext) => {
         props,
         includeSignatures,
       ]) as DeclarationReflection[],
+    getDeclarationComment: (declaration: DeclarationReflection) =>
+      getDeclarationComment.apply(context, [declaration]) as any,
     getDeclarationType: (declaration: DeclarationReflection) =>
       getDeclarationType.apply(context, [declaration]) as SomeType | undefined,
     getKeyword: (kind: ReflectionKind) =>

@@ -1,6 +1,8 @@
 /**
  * Comments for package-1
  *
+ * Some more comments for package-1
+ *
  * @packageDocumentation
  */
 

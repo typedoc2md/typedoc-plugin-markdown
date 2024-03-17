@@ -92,6 +92,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   packages: {
+    only: false,
     entryPoints: '/packages/*',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
@@ -102,7 +103,12 @@ const config: Record<string, Fixture> = {
     },
     options: [
       {},
-      { mergeReadme: true, includeVersion: true, indexPageTitle: 'API' },
+      {
+        mergeReadme: true,
+        includeVersion: true,
+        indexPageTitle: 'API',
+        indexFormat: 'table',
+      },
     ],
   },
   package: {

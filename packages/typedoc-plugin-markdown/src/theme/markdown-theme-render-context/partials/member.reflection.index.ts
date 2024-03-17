@@ -2,6 +2,8 @@ import { heading, link, table } from '@plugin/theme/lib/markdown';
 import {
   escapeChars,
   formatTableDescriptionCol,
+  getFirstParagrph,
+  pipe,
 } from '@plugin/theme/lib/utils';
 import {
   DeclarationReflection,
@@ -105,13 +107,14 @@ function getTable(
       );
     }
 
-    const comment = getComment(child);
+    const comment = context.helpers.getDeclarationComment(child);
 
     if (comment?.summary?.length) {
       row.push(
-        formatTableDescriptionCol(
-          context.partials.commentParts(comment.summary),
-        ).split('\n')[0],
+        pipe(
+          getFirstParagrph,
+          formatTableDescriptionCol,
+        )(context.partials.commentParts(comment.summary)),
       );
     } else {
       row.push('-');
@@ -141,16 +144,4 @@ function getList(
         : '';
     });
   return filteredChildren.join('\n');
-}
-
-function getComment(declaration: DeclarationReflection) {
-  if (declaration.signatures?.length) {
-    return declaration.signatures[0].comment;
-  }
-
-  if ((declaration.type as any)?.declaration?.signatures?.length) {
-    return (declaration.type as any)?.declaration.signatures[0].comment;
-  }
-
-  return declaration.comment;
 }

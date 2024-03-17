@@ -3,5 +3,5 @@
 ---
 
 - Improve signature ui.
-- Expose `membersWithOwnFile`, `preserveMarkup` and `fileExtension` options.
--
+- Expose `membersWithOwnFile` and `preserveMarkup` options.
+- Fix index table format for packages.
