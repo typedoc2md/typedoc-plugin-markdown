@@ -1,3 +1,8 @@
+/**
+ * Docs for `lib` module
+ * @packageDocumentation
+ */
+
 import * as path from 'path';
 import {
   Application,

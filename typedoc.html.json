@@ -1,0 +1,10 @@
+{
+  "entryPoints": [
+    "packages/typedoc-plugin-markdown",
+    "packages/typedoc-plugin-frontmatter"
+  ],
+  "out": "devdocs-html",
+  "name": "HTML Documentation",
+  "entryPointStrategy": "packages",
+  "readme": "none"
+}
