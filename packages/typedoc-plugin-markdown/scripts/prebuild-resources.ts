@@ -239,6 +239,7 @@ async function writeResourcesFile2() {
   const out = `// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
 import { MarkdownThemeRenderContext } from '@plugin/theme';
 import { TextContentMappings } from '@plugin/app/options';
+import { PackagesMeta } from 'app/renderer';
 import {${typedocTypes.join(',')}} from 'typedoc';
 
 

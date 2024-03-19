@@ -19,14 +19,14 @@ export function getNavigation(
 ) {
   const options = theme.application.options;
   const navigation: NavigationItem[] = [];
-  const optionsForPackages = (theme.application.renderer as MarkdownRenderer)
-    .packageOptions;
+  const packagesMeta = (theme.application.renderer as MarkdownRenderer)
+    .packagesMeta;
 
   const isPackages =
     options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
 
   if (isPackages) {
-    if (Object.keys(optionsForPackages)?.length === 1) {
+    if (Object.keys(packagesMeta)?.length === 1) {
       buildNavigationFromProject(project);
     } else {
       project.children?.forEach((projectChild) => {
@@ -46,7 +46,7 @@ export function getNavigation(
     const preservePackageReadme =
       Boolean(projectChild.readme) && !options.getValue('mergeReadme');
 
-    const packageOptions = optionsForPackages[projectChild.name];
+    const packageOptions = packagesMeta[projectChild.name]?.options;
 
     const isSet = packageOptions.isSet('outputFileStrategy');
 

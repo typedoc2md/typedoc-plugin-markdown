@@ -22,7 +22,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 
 - [package-1 - v1.0.0](package-1/index.md)
 - [package-1b](package-1b/index.md)
-- [package-2](package-2/index.md)
+- [package-2 - v1.0.0](package-2/index.md)
 - [package-3](package-3/index.md)
 - [package-4](package-4/index.md)
 - [package-5](package-5/package-5.md)
@@ -50,7 +50,7 @@ Some more comments for package-1
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 3`] = `
-"**package-2** • [Readme](index.md) \\| API
+"**package-2 v1.0.0** • [Readme](index.md) \\| API
 
 ***
 
@@ -159,10 +159,10 @@ Some text.
 
 | Package | Version | Description |
 | :------ | :------ | :------ |
-| [package-1](package-1/index.md) | 1.0.0 | Comments for package-1 |
-| [package-1b](package-1b/index.md) | - | Comments for package-1b |
-| [package-2](package-2/index.md) | - | - |
-| [package-3](package-3/index.md) | - | - |
+| [package-1](package-1/index.md) | 1.0.0 | Description for package-1 |
+| [package-1b](package-1b/index.md) | - | - |
+| [package-2](package-2/index.md) | 1.0.0 | - |
+| [package-3](package-3/index.md) | - | Description for package 3 |
 | [package-4](package-4/index.md) | - | - |
 | [package-5](package-5/package-5.md) | - | - |
 | [package-6](package-6.md) | - | - |

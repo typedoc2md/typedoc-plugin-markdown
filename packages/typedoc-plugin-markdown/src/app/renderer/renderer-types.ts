@@ -19,13 +19,18 @@ export interface MarkdownApplication extends Application {
  */
 export interface MarkdownRenderer extends Renderer {
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
-  packageOptions: Record<string, Options>;
+  packagesMeta: Record<string, PackagesMeta>;
   preRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
   postRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
   defineTheme: (
     name: string,
     theme: new (renderer: MarkdownRenderer) => MarkdownTheme,
   ) => void;
+}
+
+export interface PackagesMeta {
+  description?: string;
+  options: Options;
 }
 
 /**

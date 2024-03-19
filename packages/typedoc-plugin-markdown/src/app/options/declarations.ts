@@ -350,6 +350,20 @@ export const indexFormat: Partial<DeclarationOption> = {
 };
 
 /**
+ * This option renders the packages index either as a simple list or in a table with a description column exposing the package.json description.
+ *
+ * Utilise the includeVersion option to additionally display a "Version" column.
+ *
+ * @category UI
+ */
+export const packagesFormat: Partial<DeclarationOption> = {
+  help: 'Specify the render format for packages index page.',
+  type: ParameterType.Map,
+  map: FormatStyle,
+  defaultValue: FormatStyle.List,
+};
+
+/**
  * This option enables changing static text rendered to the documentation.
  * Useful if an alternative English phrase is preferred or to translate English text to another language.
  * This option does not attempt to address translating text within code comments.

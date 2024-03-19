@@ -107,7 +107,7 @@ const config: Record<string, Fixture> = {
         mergeReadme: true,
         includeVersion: true,
         indexPageTitle: 'API',
-        indexFormat: 'table',
+        packagesFormat: 'table',
       },
     ],
   },

@@ -467,6 +467,26 @@ This option renders index items either as a simple list or in a table with a des
 
 ___
 
+### packagesFormat
+
+<Callout>Specify the render format for packages index page.</Callout>
+
+> Accepts either `"list"` or `"table"`. Defaults to `"list"`.
+
+This option renders the packages index either as a simple list or in a table with a description column exposing the package.json description.
+
+Utilise the includeVersion option to additionally display a "Version" column.
+
+
+```json filename="typedoc.json"
+{
+  "packagesFormat": "list"
+}
+
+```
+
+___
+
 ### textContentMappings
 
 <Callout>Provides a mechanism to change the content of text used in documentation.</Callout>

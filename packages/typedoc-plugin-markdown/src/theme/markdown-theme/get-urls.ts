@@ -29,8 +29,8 @@ interface UrlOption {
  */
 export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const options = theme.application.options;
-  const optionsForPackages = (theme.application.renderer as MarkdownRenderer)
-    .packageOptions;
+  const packagesMeta = (theme.application.renderer as MarkdownRenderer)
+    .packagesMeta;
   const urls: UrlMapping<Reflection>[] = [];
   const anchors: Record<string, string[]> = {};
 
@@ -46,7 +46,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   buildEntryUrls();
 
   if (isPackages) {
-    if (Object.keys(optionsForPackages)?.length === 1) {
+    if (Object.keys(packagesMeta)?.length === 1) {
       buildUrlsFromProject(project);
     } else {
       project.children?.forEach((projectChild) => {
@@ -134,7 +134,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
     const packagesIndex = getIndexFileName(projectChild);
 
-    const packageOptions = optionsForPackages[projectChild.name];
+    const packageOptions = packagesMeta[projectChild.name]?.options;
 
     const outputFileStrategy = packageOptions.isSet('outputFileStrategy')
       ? packageOptions.getValue('outputFileStrategy')

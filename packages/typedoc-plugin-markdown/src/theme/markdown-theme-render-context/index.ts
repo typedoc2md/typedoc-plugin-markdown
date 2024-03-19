@@ -1,6 +1,10 @@
 import { MarkdownPageEvent } from '@plugin/app/events';
 import { TextContentMappings } from '@plugin/app/options';
-import { MarkdownRenderer, MarkdownRendererHooks } from '@plugin/app/renderer';
+import {
+  MarkdownRenderer,
+  MarkdownRendererHooks,
+  PackagesMeta,
+} from '@plugin/app/renderer';
 import { MarkdownTheme } from 'theme';
 import { Options, Reflection } from 'typedoc';
 import { helpers, partials, templates } from './namespaces';
@@ -40,12 +44,18 @@ export class MarkdownThemeRenderContext {
     readonly options: Options,
   ) {
     this.textMappings = this.theme.textMappings;
+    this.packagesMeta = (this.theme.owner as MarkdownRenderer).packagesMeta;
   }
 
   /**
    * Holds the textmappings object of the theme.
    */
   readonly textMappings: TextContentMappings;
+
+  /**
+   * Holds meta data for packages (if applicable)
+   */
+  readonly packagesMeta: Record<string, PackagesMeta>;
 
   /**
    * Then `templates` namespace holds the main templates for the theme that are mapped to single pages and configured in the MarkdownTheme.

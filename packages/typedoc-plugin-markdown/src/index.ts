@@ -4,6 +4,7 @@ import {
   MarkdownRendererHooks,
   generateDocs,
   render,
+  resolvePackages,
 } from '@plugin/app/renderer';
 import { MarkdownTheme } from '@plugin/theme';
 import {
@@ -95,11 +96,7 @@ export function load(app: Application) {
    */
   app.converter.on(Converter.EVENT_RESOLVE_END, (context: Context) => {
     if (app.options.packageDir) {
-      const renderer = app.renderer as MarkdownRenderer;
-      renderer.packageOptions = {
-        ...(renderer.packageOptions || {}),
-        [context.project.name]: app.options,
-      };
+      resolvePackages(app, context, app.options.packageDir);
     }
   });
 }
@@ -109,6 +106,10 @@ export function load(app: Application) {
  */
 export { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/app/events';
 export { OutputFileStrategy, PluginOptions } from '@plugin/app/options';
+export {
+  MarkdownApplication,
+  MarkdownRendererHooks,
+} from '@plugin/app/renderer';
 export {
   MarkdownTheme,
   MarkdownThemeRenderContext,

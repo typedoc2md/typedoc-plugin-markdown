@@ -1,11 +1,6 @@
 import { MarkdownThemeRenderContext } from '@plugin/theme';
 import { heading, link, table } from '@plugin/theme/lib/markdown';
-import {
-  escapeChars,
-  formatTableDescriptionCol,
-  getFirstParagrph,
-} from '@plugin/theme/lib/utils';
-import { pipe } from '@plugin/theme/lib/utils/pipe';
+import { escapeChars } from '@plugin/theme/lib/utils';
 import * as path from 'path';
 import { ProjectReflection } from 'typedoc';
 
@@ -22,28 +17,40 @@ export function packagesIndex(
 
   md.push(heading(2, context.helpers.getText('label.packages')));
 
-  if (context.options.getValue('indexFormat') === 'table') {
-    const headers = ['Package', 'Version', 'Description'];
+  const includeVersion = model.children?.some((projectPackage) =>
+    Boolean(projectPackage.packageVersion),
+  );
+
+  if (context.options.getValue('packagesFormat') === 'table') {
+    const headers = ['Package'];
+    if (includeVersion) {
+      headers.push('Version');
+    }
+    headers.push('Description');
+
     const packageRows = model.children?.map((projectPackage) => {
+      const packageMeta = context.helpers.getPackagesMeta(projectPackage.name);
+
       const urlTo = Boolean(projectPackage.readme)
         ? `${path.dirname(projectPackage.url || '')}/${context.options.getValue(
             'entryFileName',
           )}`
         : projectPackage.url;
-      const comment = context.helpers.getDeclarationComment(projectPackage);
-      return [
-        `${link(
-          `${escapeChars(projectPackage.name)}`,
-          context.helpers.getRelativeUrl(urlTo || ''),
-        )}`,
-        projectPackage.packageVersion || '-',
-        comment?.summary
-          ? pipe(
-              getFirstParagrph,
-              formatTableDescriptionCol,
-            )(context.partials.commentParts(comment.summary))
-          : '-',
+
+      const rows = [
+        urlTo
+          ? link(
+              escapeChars(projectPackage.name),
+              context.helpers.getRelativeUrl(urlTo),
+            )
+          : escapeChars(projectPackage.name),
       ];
+      if (includeVersion) {
+        rows.push(projectPackage.packageVersion || '-');
+      }
+      rows.push(packageMeta?.description || '-');
+
+      return rows;
     });
     md.push(table(headers, packageRows || []));
   } else {

@@ -1,6 +1,7 @@
 // THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
 import { MarkdownThemeRenderContext } from '@plugin/theme';
 import { TextContentMappings } from '@plugin/app/options';
+import { PackagesMeta } from 'app/renderer';
 import {
   DeclarationReflection,
   ProjectReflection,
@@ -100,6 +101,7 @@ import { getDeclarationComment } from './helpers/get-declaration-comment';
 import { getDeclarationType } from './helpers/get-declaration-type';
 import { getKeyword } from './helpers/get-keyword';
 import { getModifier } from './helpers/get-modifier';
+import { getPackagesMeta } from './helpers/get-packages-meta';
 import { getParameterDefaultValue } from './helpers/get-parameter-default-value';
 import { getProjectName } from './helpers/get-project-name';
 import { getRelativeUrl } from './helpers/get-relative-url';
@@ -567,6 +569,8 @@ export const helpers = (context: MarkdownThemeRenderContext) => {
         | 'get'
         | 'set'
         | null,
+    getPackagesMeta: (key: string) =>
+      getPackagesMeta.apply(context, [key]) as PackagesMeta,
     getParameterDefaultValue: (parameter: ParameterReflection) =>
       getParameterDefaultValue.apply(context, [parameter]) as string,
     getProjectName: (textContent: string) =>

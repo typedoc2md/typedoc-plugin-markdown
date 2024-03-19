@@ -48,9 +48,9 @@ export function project(
 
   if (isPackages && model.children?.length) {
     md.push(this.partials.packagesIndex(model));
+  } else {
+    md.push(this.partials.body(model, 2));
   }
-
-  md.push(this.partials.body(model, 2));
 
   md.push(this.hook('index.page.end').join('\n'));
 
