@@ -87,7 +87,7 @@ const config: Record<string, Fixture> = {
         namedAnchors: true,
         preserveAnchorCasing: true,
         publicPath: '/some-path',
-        fileExtension: '.mdx',
+        fileExtension: 'mdx',
       },
     ],
   },
@@ -112,6 +112,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   package: {
+    only: false,
     entryPoints: '/packages/package-1',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],

@@ -602,7 +602,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 - [has-namespaces](has-namespaces/index.md)
 - [has-references](has-references.md)
 - [has-same-exports](has-same-exports.md)
-- [index](module.index.md)
+- [index](module_index.md)
 "
 `;
 
@@ -623,7 +623,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references.md) | A module that contains references |
 | [has-same-exports](has-same-exports.md) | - |
-| [index](module.index.md) | A module named index |
+| [index](module_index.md) | A module named index |
 "
 `;
 

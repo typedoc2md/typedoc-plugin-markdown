@@ -158,7 +158,7 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "has-references.md",
   "has-same-exports.md",
   "index.md",
-  "module.index.md",
+  "module_index.md",
   "modules.md",
 ]
 `;
@@ -177,7 +177,7 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "has-references.md",
   "has-same-exports.md",
   "index.md",
-  "module.index.md",
+  "module_index.md",
 ]
 `;
 
@@ -204,6 +204,14 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-3/module-2/interfaces/PackageInterface2.md",
   "package-4/index.md",
   "package-4/interfaces/PackageInterface.md",
+  "package-5/module1/interfaces/PackageInterface1.md",
+  "package-5/module2/index.md",
+  "package-5/module2/interfaces/PackageInterface2.md",
+  "package-5/package-5.md",
+  "package-6/module1/interfaces/PackageInterface1.md",
+  "package-6/module2/index.md",
+  "package-6/module2/interfaces/PackageInterface2.md",
+  "package-6.md",
   "packages.md",
 ]
 `;
@@ -229,6 +237,14 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-3/module-2/interfaces/PackageInterface2.md",
   "package-4/index.md",
   "package-4/interfaces/PackageInterface.md",
+  "package-5/module1/interfaces/PackageInterface1.md",
+  "package-5/module2/index.md",
+  "package-5/module2/interfaces/PackageInterface2.md",
+  "package-5/package-5.md",
+  "package-6/module1/interfaces/PackageInterface1.md",
+  "package-6/module2/index.md",
+  "package-6/module2/interfaces/PackageInterface2.md",
+  "package-6.md",
 ]
 `;
 
@@ -248,9 +264,13 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
   "package-3/interfaces/PackageInterfaceForIndexModule.md",
   "package-3/module-1.md",
   "package-3/module-2.md",
-  "package-3/module.index.md",
+  "package-3/module_index.md",
   "package-4/index.md",
   "package-4/interfaces/PackageInterface.md",
+  "package-5/module2.md",
+  "package-5/package-5.md",
+  "package-6/module2.md",
+  "package-6.md",
   "packages.md",
 ]
 `;
@@ -269,9 +289,13 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
   "package-3/interfaces/PackageInterfaceForIndexModule.md",
   "package-3/module-1.md",
   "package-3/module-2.md",
-  "package-3/module.index.md",
+  "package-3/module_index.md",
   "package-4/index.md",
   "package-4/interfaces/PackageInterface.md",
+  "package-5/module2.md",
+  "package-5/package-5.md",
+  "package-6/module2.md",
+  "package-6.md",
 ]
 `;
 

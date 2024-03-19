@@ -25,6 +25,8 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 - [package-2](package-2/index.md)
 - [package-3](package-3/index.md)
 - [package-4](package-4/index.md)
+- [package-5](package-5/package-5.md)
+- [package-6](package-6.md)
 "
 `;
 
@@ -60,6 +62,17 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 
 - [module-1](module-1/index.md)
 - [module-2](module-2/index.md)
+"
+`;
+
+exports[`Packages should compile member for relative entry module package: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**package-6** • API
+
+***
+
+[packages-example](../../../index.md) / [package-6](../../../package-6.md) / [module1](../../../package-6.md) / PackageInterface1
+
+# Interface: PackageInterface1
 "
 `;
 
@@ -151,5 +164,24 @@ Some text.
 | [package-2](package-2/index.md) | - | - |
 | [package-3](package-3/index.md) | - | - |
 | [package-4](package-4/index.md) | - | - |
+| [package-5](package-5/package-5.md) | - | - |
+| [package-6](package-6.md) | - | - |
+"
+`;
+
+exports[`Packages should compile relative entry module package: (Output File Strategy "members") (Option Group "1") 1`] = `
+"**package-6** • API
+
+***
+
+[packages-example](index.md) / [package-6](package-6.md) / module1
+
+# module1
+
+## Index
+
+### Interfaces
+
+- [PackageInterface1](package-6/module1/interfaces/PackageInterface1.md)
 "
 `;

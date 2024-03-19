@@ -119,13 +119,6 @@ export const fileExtension: Partial<DeclarationOption> = {
   help: 'Specify the file extension for generated output files.',
   type: ParameterType.String,
   defaultValue: '.md',
-  validate(value) {
-    if (!value.startsWith('.')) {
-      throw new Error(
-        `[typedoc-plugin-markdown] The "fileExtension" must start with a "." (found "${value}").`,
-      );
-    }
-  },
 };
 
 /**

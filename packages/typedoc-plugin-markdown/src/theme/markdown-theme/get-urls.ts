@@ -1,5 +1,9 @@
+import { MarkdownRenderer } from '@plugin/app/renderer';
 import { TemplateMapping, UrlMapping } from '@plugin/theme/theme-types';
+import { OutputFileStrategy } from 'app/options/option-maps';
 import * as path from 'path';
+import { MarkdownTheme } from 'theme';
+import { getFileNameWithExtension } from 'theme/lib/utils';
 import {
   DeclarationReflection,
   EntryPointStrategy,
@@ -7,14 +11,14 @@ import {
   Reflection,
   ReflectionKind,
 } from 'typedoc';
-import { MarkdownTheme } from '../..';
-import { OutputFileStrategy } from '../../app/options/option-maps';
 
 interface UrlOption {
   parentUrl?: string;
   directory?: string | null;
   forceDirectory?: boolean;
   outputFileStrategy?: OutputFileStrategy;
+  entryModule?: string;
+  entryFileName?: string;
 }
 
 /**
@@ -25,11 +29,17 @@ interface UrlOption {
  */
 export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const options = theme.application.options;
-  const optionsForPackages = (theme.application.renderer as any).packageOptions;
+  const optionsForPackages = (theme.application.renderer as MarkdownRenderer)
+    .packageOptions;
   const urls: UrlMapping<Reflection>[] = [];
   const anchors: Record<string, string[]> = {};
+
   const fileExtension = options.getValue('fileExtension');
-  const entryFileName = `${path.parse(options.getValue('entryFileName')).name}${fileExtension}`;
+  const entryFileName = getFileNameWithExtension(
+    options.getValue('entryFileName'),
+    fileExtension,
+  );
+
   const isPackages =
     options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
 
@@ -74,7 +84,9 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
     if (preserveReadme) {
       urls.push({
-        url: useEntryModule ? `readme_${fileExtension}` : entryFileName,
+        url: useEntryModule
+          ? getFileNameWithExtension('readme_', fileExtension)
+          : entryFileName,
         model: project,
         template: theme.readmeTemplate,
       });
@@ -101,12 +113,16 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     project: ProjectReflection | DeclarationReflection,
     parentUrl?: string,
     outputFileStrategy?: OutputFileStrategy,
+    entryModule?: string,
+    entryFileName?: string,
   ) {
     project.groups?.forEach((projectGroup) => {
       projectGroup.children?.forEach((projectGroupChild) => {
         buildUrlsFromGroup(projectGroupChild, {
           ...(parentUrl && { parentUrl }),
           ...(outputFileStrategy && { outputFileStrategy }),
+          ...(entryModule && { entryModule }),
+          ...(entryFileName && { entryFileName }),
         });
       });
     });
@@ -120,32 +136,84 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
     const packageOptions = optionsForPackages[projectChild.name];
 
-    const isSet = packageOptions.isSet('outputFileStrategy');
-
-    const outputFileStrategy = isSet
+    const outputFileStrategy = packageOptions.isSet('outputFileStrategy')
       ? packageOptions.getValue('outputFileStrategy')
       : options.getValue('outputFileStrategy');
 
-    const url = `${projectChild.name}/${
-      preservePackageReadme ? packagesIndex : entryFileName
-    }`;
+    const entryModule = packageOptions.isSet('entryModule')
+      ? packageOptions.getValue('entryModule')
+      : options.getValue('entryModule');
+
+    const packageEntryFileName = packageOptions.isSet('entryFileName')
+      ? packageOptions.getValue('entryFileName')
+      : options.getValue('entryFileName');
+
+    const fullEntryFileName = getFileNameWithExtension(
+      path.join(projectChild.name, packageEntryFileName),
+      fileExtension,
+    );
+
+    const fullIndexFileName = getFileNameWithExtension(
+      path.join(projectChild.name, packagesIndex),
+      fileExtension,
+    );
+
+    const indexFileName = preservePackageReadme
+      ? fullIndexFileName
+      : fullEntryFileName;
+
+    const isModulesOnly = projectChild.children?.every(
+      (child) => child.kind === ReflectionKind.Module,
+    );
+
+    const useEntryModule =
+      projectChild?.groups &&
+      Boolean(
+        projectChild?.groups[0]?.children.find(
+          (child) => child.name === entryModule,
+        ),
+      ) &&
+      isModulesOnly;
 
     if (preservePackageReadme) {
       urls.push({
-        url: `${path.dirname(url)}/${entryFileName}`,
-        model: projectChild as any,
+        url: useEntryModule
+          ? `${path.dirname(indexFileName)}/${getFileNameWithExtension('readme_', fileExtension)}`
+          : path.join(path.dirname(indexFileName), packageEntryFileName),
+        model: projectChild,
         template: theme.readmeTemplate,
       });
+
+      if (!useEntryModule) {
+        urls.push({
+          url: indexFileName,
+          model: projectChild,
+          template: theme.projectTemplate,
+        });
+      }
+    } else {
+      if (!useEntryModule) {
+        urls.push({
+          url: indexFileName,
+          model: projectChild,
+          template: theme.projectTemplate,
+        });
+      }
     }
-    urls.push({
-      url: url,
-      model: projectChild as any,
-      template: theme.projectTemplate,
-    });
 
-    projectChild.url = url;
+    projectChild.url = indexFileName;
 
-    buildUrlsFromProject(projectChild, url, outputFileStrategy);
+    const parentUrl =
+      indexFileName.split(path.sep)?.length > 1
+        ? indexFileName
+        : `${projectChild.name}/${indexFileName}`;
+    buildUrlsFromProject(
+      projectChild,
+      parentUrl,
+      outputFileStrategy,
+      entryModule,
+      fullEntryFileName,
+    );
   }
 
   function buildUrlsFromGroup(
@@ -164,7 +232,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
         directory,
       });
 
-      let url = getUrl(reflection, urlPath);
+      let url = getUrl(reflection, urlPath, urlOptions);
 
       const duplicateUrls = urls.filter(
         (urlMapping) =>
@@ -205,17 +273,28 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     }
   }
 
-  function getUrl(reflection: DeclarationReflection, urlPath: string) {
-    if (reflection.name === options.getValue('entryModule')) {
-      return entryFileName;
+  function getUrl(
+    reflection: DeclarationReflection,
+    urlPath: string,
+    urlOptions: UrlOption,
+  ) {
+    const entryModule =
+      urlOptions.entryModule || options.getValue('entryModule');
+
+    const entryName = urlOptions.entryFileName || entryFileName;
+
+    if (reflection.name === entryModule) {
+      return entryName;
     }
+
     if (
       options.getValue('outputFileStrategy') === OutputFileStrategy.Modules &&
-      reflection.name === 'index'
+      reflection.name === 'index' &&
+      path.parse(entryName).name === 'index'
     ) {
       return urlPath.replace(
-        `index${fileExtension}`,
-        `module.index${fileExtension}`,
+        getFileNameWithExtension('index', fileExtension),
+        getFileNameWithExtension('module_index', fileExtension),
       );
     }
     return urlPath;
@@ -276,9 +355,9 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
       return alias;
     };
 
-    return (
-      [parentDir, dir(), filename()].filter((part) => Boolean(part)).join('/') +
-      fileExtension
+    return getFileNameWithExtension(
+      [parentDir, dir(), filename()].filter((part) => Boolean(part)).join('/'),
+      fileExtension,
     );
   }
 
@@ -377,11 +456,13 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     isPackages = false,
   ) {
     if (isPackages) {
-      return `packages${fileExtension}`;
+      return getFileNameWithExtension('packages', fileExtension);
     }
     const isModules = reflection.children?.every(
       (child) => child.kind === ReflectionKind.Module,
     );
-    return isModules ? `modules${fileExtension}` : `globals${fileExtension}`;
+    return isModules
+      ? getFileNameWithExtension('modules', fileExtension)
+      : getFileNameWithExtension('globals', fileExtension);
   }
 }

@@ -140,6 +140,12 @@ function escapeComments(str: string, preserveTags: boolean) {
     'strong',
     'b',
     'code',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
   ];
 
   // Perform escaping outside of code blocks
