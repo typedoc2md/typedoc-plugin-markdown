@@ -10,10 +10,14 @@ describe(`Navigation`, () => {
   });
 
   test(`should get Navigation Json for packages`, () => {
-    expectFileToEqual('packages', ['members', 'modules'], 'sidebar.json', 1);
+    expectFileToEqual('packages', ['members', 'modules'], 'sidebar.json');
   });
 
   test(`should gets Navigation Json for entry modules`, () => {
     expectFileToEqual('entryfiles', ['members', 'modules'], 'sidebar.json');
+  });
+
+  test(`should gets Navigation Json for modules with parts`, () => {
+    expectFileToEqual('modules', ['members', 'modules'], 'sidebar.json');
   });
 });

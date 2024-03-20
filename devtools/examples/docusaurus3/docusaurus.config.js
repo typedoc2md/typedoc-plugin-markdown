@@ -114,6 +114,22 @@ const config = {
         sidebar: { pretty: true },
       },
     ],
+    [
+      docusaurusPlugin,
+      {
+        id: 'api-5',
+        out: './docs/api-5',
+        ...require(
+          path.join(
+            __dirname,
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+          ),
+        ),
+        entryPoints:
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/**',
+        sidebar: { pretty: true },
+      },
+    ],
   ],
   presets: [
     [
@@ -169,6 +185,18 @@ const config = {
             to: 'docs/api-3/',
             activeBasePath: 'docs',
             label: 'API 3',
+            position: 'left',
+          },
+          {
+            to: 'docs/api-4/',
+            activeBasePath: 'docs',
+            label: 'API 4',
+            position: 'left',
+          },
+          {
+            to: 'docs/api-5/',
+            activeBasePath: 'docs',
+            label: 'API 5',
             position: 'left',
           },
           {

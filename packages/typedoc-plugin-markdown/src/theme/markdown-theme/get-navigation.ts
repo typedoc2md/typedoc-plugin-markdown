@@ -48,11 +48,13 @@ export function getNavigation(
 
     const packageOptions = packagesMeta[projectChild.name]?.options;
 
-    const isSet = packageOptions.isSet('outputFileStrategy');
-
-    const outputFileStrategy = isSet
+    const outputFileStrategy = packageOptions.isSet('outputFileStrategy')
       ? packageOptions.getValue('outputFileStrategy')
       : options.getValue('outputFileStrategy');
+
+    const entryModule = packageOptions.isSet('entryModule')
+      ? packageOptions.getValue('entryModule')
+      : options.getValue('entryModule');
 
     const projectChildUrl = preservePackageReadme
       ? `${path.dirname(projectChild.url as string)}/${entryFileName}`
@@ -79,7 +81,9 @@ export function getNavigation(
     const childGroups = getChildrenOrGroups(projectChild, outputFileStrategy);
 
     if (childGroups) {
-      children.push(...childGroups);
+      children.push(
+        ...childGroups.filter((child) => child.title !== entryModule),
+      );
     }
 
     navigation.push({
@@ -107,7 +111,7 @@ export function getNavigation(
         isOnlyModules
       ) {
         const children = getGroupChildren(project.groups[0]);
-        if (children) {
+        if (children?.length) {
           navigation.push(
             ...children.filter((child) => child.title !== entryModule),
           );
@@ -163,7 +167,7 @@ export function getNavigation(
 
     return group.children
       ?.filter((child) => child.hasOwnDocument)
-      .map((child) => {
+      .reduce((acc, child) => {
         const mapping = theme.getTemplateMapping(
           child.kind,
           outputFileStrategy,
@@ -184,13 +188,10 @@ export function getNavigation(
 
                 .filter((cat) => Boolean(cat))
             : getChildrenOrGroups(child, outputFileStrategy);
-          return {
-            title: child.name,
-            url: child.url,
-            ...(children && { children }),
-          };
+
+          return processChild(acc, child, children);
         }
-      });
+      }, []);
   }
 
   function getChildrenOrGroups(
@@ -203,14 +204,10 @@ export function getNavigation(
       if (options.getValue('excludeGroups')) {
         return reflection.children
           ?.filter((child) => child.hasOwnDocument)
-          .map((child) => {
+          .reduce((acc, child) => {
             const children = getChildrenOrGroups(child, outputFileStrategy);
-            return {
-              title: child.name,
-              url: child.url,
-              ...(children && { children }),
-            };
-          });
+            return processChild(acc, child, children);
+          }, []);
       }
 
       const isModulesGroup = reflection.groups[0].children.every(
@@ -239,4 +236,67 @@ export function getNavigation(
     }
     return null;
   }
+}
+
+function processChild(acc, child, children) {
+  const titleParts = child.name.split('/');
+  if (!child.name.startsWith('@') && titleParts.length > 1) {
+    const existing = acc.find(
+      (item: NavigationItem) => item.title === titleParts[0],
+    );
+    if (existing) {
+      return acc.map((item: NavigationItem) => {
+        if (item.title === titleParts[0]) {
+          return {
+            ...item,
+            children: [
+              ...(item.children || []),
+              ...(titleParts.length > 2
+                ? [
+                    {
+                      title: titleParts[1],
+                      children: [
+                        {
+                          title: titleParts[2],
+                          url: child.url,
+                          ...(children && { children }),
+                        },
+                      ],
+                    },
+                  ]
+                : [
+                    {
+                      title: titleParts[1],
+                      url: child.url,
+                      ...(children && { children }),
+                    },
+                  ]),
+            ],
+          };
+        }
+        return item;
+      });
+    }
+    return [
+      ...acc,
+      {
+        title: titleParts[0],
+        children: [
+          {
+            title: titleParts[1],
+            url: child.url,
+            ...(children && { children }),
+          },
+        ],
+      },
+    ];
+  }
+  return [
+    ...acc,
+    {
+      title: child.name,
+      url: child.url,
+      ...(children && { children }),
+    },
+  ];
 }

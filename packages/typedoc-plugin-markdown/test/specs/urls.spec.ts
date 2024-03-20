@@ -23,4 +23,8 @@ describe(`Urls`, () => {
   test(`should gets Urls for readme options`, () => {
     expectUrlsToEqual('readme', ['members', 'modules']);
   });
+
+  test(`should gets Urls for modules parts`, () => {
+    expectUrlsToEqual('modules', ['members', 'modules']);
+  });
 });

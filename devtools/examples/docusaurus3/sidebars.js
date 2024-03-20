@@ -51,6 +51,15 @@ const sidebars = {
       },
       items: require('./docs/api-4/typedoc-sidebar.cjs'),
     },
+    {
+      type: 'category',
+      label: 'DOCS 5',
+      link: {
+        type: 'doc',
+        id: 'api-5/index',
+      },
+      items: require('./docs/api-5/typedoc-sidebar.cjs'),
+    },
   ],
 };
 

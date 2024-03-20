@@ -10,6 +10,7 @@ declare module 'typedoc' {
     fileExtension: string;
     entryModule: string;
     mergeReadme: boolean;
+    excludeScopesInPaths: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
     hideBreadcrumbs: boolean;
@@ -42,6 +43,7 @@ export interface PluginOptions {
   fileExtension: string;
   entryModule: string;
   mergeReadme: boolean;
+  excludeScopesInPaths: boolean;
   hidePageHeader: boolean;
   hidePageTitle: boolean;
   hideBreadcrumbs: boolean;

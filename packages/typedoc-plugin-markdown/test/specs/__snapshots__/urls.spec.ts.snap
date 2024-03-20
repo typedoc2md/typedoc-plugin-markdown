@@ -2,10 +2,10 @@
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: members 1`] = `
 [
+  "@scope/module-1/README.mdx",
+  "@scope/module-1/classes/ModuleClass.mdx",
   "README.mdx",
   "entry-module/classes/ModuleClass.mdx",
-  "module-1/README.mdx",
-  "module-1/classes/ModuleClass.mdx",
   "module-2/README.mdx",
   "module-2/classes/ModuleClass.mdx",
   "readme_.mdx",
@@ -25,8 +25,8 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: members 2`]
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 1`] = `
 [
+  "@scope/module-1.mdx",
   "README.mdx",
-  "module-1.mdx",
   "module-2.mdx",
   "readme_.mdx",
 ]
@@ -37,6 +37,58 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 2`]
   "index.mdx",
   "module-1.mdx",
   "module-2.mdx",
+]
+`;
+
+exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 1`] = `
+[
+  "README.md",
+  "module-1/submodules/submodule-1/README.md",
+  "module-1/submodules/submodule-1/classes/ClassA.md",
+  "module-1/submodules/submodule-1/classes/ClassB.md",
+  "module-1/submodules/submodule-1/enumerations/EnumA.md",
+  "module-1/submodules/submodule-1/enumerations/EnumB.md",
+  "module-1/submodules/submodule-1/interfaces/InterfaceA.md",
+  "module-1/submodules/submodule-1/interfaces/InterfaceB.md",
+  "module-1/submodules/submodule-1/type-aliases/TypeA.md",
+  "module-1/submodules/submodule-1/type-aliases/TypeB.md",
+  "module-1/submodules/submodule-2/README.md",
+  "module-1/submodules/submodule-2/classes/ClassA.md",
+  "module-1/submodules/submodule-2/classes/ClassB.md",
+  "module-1/submodules/submodule-2/enumerations/EnumA.md",
+  "module-1/submodules/submodule-2/enumerations/EnumB.md",
+  "module-1/submodules/submodule-2/interfaces/InterfaceA.md",
+  "module-1/submodules/submodule-2/interfaces/InterfaceB.md",
+  "module-1/submodules/submodule-2/type-aliases/TypeA.md",
+  "module-1/submodules/submodule-2/type-aliases/TypeB.md",
+  "module-2/namespace-2/README.md",
+  "module-2/namespace-2/classes/ClassA.md",
+  "module-2/namespace-2/classes/ClassB.md",
+  "module-2/namespace-2/enumerations/EnumA.md",
+  "module-2/namespace-2/enumerations/EnumB.md",
+  "module-2/namespace-2/interfaces/InterfaceA.md",
+  "module-2/namespace-2/interfaces/InterfaceB.md",
+  "module-2/namespace-2/type-aliases/TypeA.md",
+  "module-2/namespace-2/type-aliases/TypeB.md",
+  "namespace/README.md",
+  "namespace/classes/ClassA.md",
+  "namespace/classes/ClassB.md",
+  "namespace/enumerations/EnumA.md",
+  "namespace/enumerations/EnumB.md",
+  "namespace/interfaces/InterfaceA.md",
+  "namespace/interfaces/InterfaceB.md",
+  "namespace/type-aliases/TypeA.md",
+  "namespace/type-aliases/TypeB.md",
+]
+`;
+
+exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 1`] = `
+[
+  "README.md",
+  "module-1/submodules/submodule-1.md",
+  "module-1/submodules/submodule-2.md",
+  "module-2/namespace-2.md",
+  "namespace.md",
 ]
 `;
 
@@ -183,10 +235,17 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 1`] = `
 [
+  "@scope/package-1/globals.md",
+  "@scope/package-1/index.md",
+  "@scope/package-1/interfaces/PackageInterface.md",
+  "@scope/package-3/index/index.md",
+  "@scope/package-3/index/interfaces/PackageInterfaceForIndexModule.md",
+  "@scope/package-3/index.md",
+  "@scope/package-3/module-1/index.md",
+  "@scope/package-3/module-1/interfaces/PackageInterface1.md",
+  "@scope/package-3/module-2/index.md",
+  "@scope/package-3/module-2/interfaces/PackageInterface2.md",
   "index.md",
-  "package-1/globals.md",
-  "package-1/index.md",
-  "package-1/interfaces/PackageInterface.md",
   "package-1b/index.md",
   "package-1b/interfaces/PackageInterface.md",
   "package-2/index.md",
@@ -195,13 +254,6 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-2/module-2/index.md",
   "package-2/module-2/interfaces/PackageInterface2.md",
   "package-2/modules.md",
-  "package-3/index/index.md",
-  "package-3/index/interfaces/PackageInterfaceForIndexModule.md",
-  "package-3/index.md",
-  "package-3/module-1/index.md",
-  "package-3/module-1/interfaces/PackageInterface1.md",
-  "package-3/module-2/index.md",
-  "package-3/module-2/interfaces/PackageInterface2.md",
   "package-4/index.md",
   "package-4/interfaces/PackageInterface.md",
   "package-5/module1/interfaces/PackageInterface1.md",
@@ -250,21 +302,21 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 1`] = `
 [
+  "@scope/package-1/globals.md",
+  "@scope/package-1/index.md",
+  "@scope/package-3/index.md",
+  "@scope/package-3/interfaces/PackageInterface1.md",
+  "@scope/package-3/interfaces/PackageInterface2.md",
+  "@scope/package-3/interfaces/PackageInterfaceForIndexModule.md",
+  "@scope/package-3/module-1.md",
+  "@scope/package-3/module-2.md",
+  "@scope/package-3/module_index.md",
   "index.md",
-  "package-1/globals.md",
-  "package-1/index.md",
   "package-1b/index.md",
   "package-2/index.md",
   "package-2/module-1.md",
   "package-2/module-2.md",
   "package-2/modules.md",
-  "package-3/index.md",
-  "package-3/interfaces/PackageInterface1.md",
-  "package-3/interfaces/PackageInterface2.md",
-  "package-3/interfaces/PackageInterfaceForIndexModule.md",
-  "package-3/module-1.md",
-  "package-3/module-2.md",
-  "package-3/module_index.md",
   "package-4/index.md",
   "package-4/interfaces/PackageInterface.md",
   "package-5/module2.md",

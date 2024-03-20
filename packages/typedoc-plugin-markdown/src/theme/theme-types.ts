@@ -4,7 +4,7 @@ import { ReflectionKind } from 'typedoc';
 
 export interface NavigationItem {
   title: string;
-  url?: string;
+  url?: string | null;
   children?: NavigationItem[];
   isReadme?: boolean;
   isGroup?: boolean;

@@ -3,7 +3,186 @@
 exports[`Navigation should get Navigation Json for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "package-1",
+    "title": "@scope/package-1",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "url": "@scope/package-1/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "url": "@scope/package-1/index.md"
+  },
+  {
+    "title": "package-1b",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "url": "package-1b/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "url": "package-1b/index.md"
+  },
+  {
+    "title": "package-2",
+    "children": [
+      {
+        "title": "module-1",
+        "url": "package-2/module-1/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface1",
+                "url": "package-2/module-1/interfaces/PackageInterface1.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "url": "package-2/module-2/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "url": "package-2/module-2/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "url": "package-2/index.md"
+  },
+  {
+    "title": "@scope/package-3",
+    "children": [
+      {
+        "title": "index",
+        "url": "@scope/package-3/index/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterfaceForIndexModule",
+                "url": "@scope/package-3/index/interfaces/PackageInterfaceForIndexModule.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-1",
+        "url": "@scope/package-3/module-1/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface1",
+                "url": "@scope/package-3/module-1/interfaces/PackageInterface1.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "url": "@scope/package-3/module-2/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "url": "@scope/package-3/module-2/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "url": "@scope/package-3/index.md"
+  },
+  {
+    "title": "package-4",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "url": "package-4/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "url": "package-4/index.md"
+  },
+  {
+    "title": "package-5",
+    "children": [
+      {
+        "title": "module2",
+        "url": "package-5/module2/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "url": "package-5/module2/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "url": "package-5/package-5.md"
+  },
+  {
+    "title": "package-6",
+    "children": [
+      {
+        "title": "module2",
+        "url": "package-6/module2/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "url": "package-6/module2/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "url": "package-6.md"
+  }
+]"
+`;
+
+exports[`Navigation should get Navigation Json for packages: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "@scope/package-1",
     "children": [
       {
         "title": "Interfaces",
@@ -69,7 +248,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "url": "package-2/index.md"
   },
   {
-    "title": "package-3",
+    "title": "@scope/package-3",
     "children": [
       {
         "title": "index",
@@ -138,21 +317,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "title": "package-5",
     "children": [
       {
-        "title": "module1",
-        "url": "package-5/package-5.md",
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "url": "package-5/module1/interfaces/PackageInterface1.md"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "title": "module2",
         "url": "package-5/module2/index.md",
         "children": [
@@ -173,21 +337,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-6",
     "children": [
-      {
-        "title": "module1",
-        "url": "package-6.md",
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "url": "package-6/module1/interfaces/PackageInterface1.md"
-              }
-            ]
-          }
-        ]
-      },
       {
         "title": "module2",
         "url": "package-6/module2/index.md",
@@ -212,13 +361,128 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 exports[`Navigation should get Navigation Json for packages: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "package-1",
+    "title": "@scope/package-1",
     "children": [
       {
         "title": "Globals",
-        "url": "package-1/globals.md"
+        "url": "@scope/package-1/globals.md"
       }
     ],
+    "url": "@scope/package-1/index.md"
+  },
+  {
+    "title": "package-1b",
+    "children": [],
+    "url": "package-1b/index.md"
+  },
+  {
+    "title": "package-2",
+    "children": [
+      {
+        "title": "module-1",
+        "url": "package-2/module-1.md"
+      },
+      {
+        "title": "module-2",
+        "url": "package-2/module-2.md"
+      }
+    ],
+    "url": "package-2/index.md"
+  },
+  {
+    "title": "@scope/package-3",
+    "children": [
+      {
+        "title": "index",
+        "url": "@scope/package-3/module_index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterfaceForIndexModule",
+                "url": "@scope/package-3/interfaces/PackageInterfaceForIndexModule.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-1",
+        "url": "@scope/package-3/module-1.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface1",
+                "url": "@scope/package-3/interfaces/PackageInterface1.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "url": "@scope/package-3/module-2.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "url": "@scope/package-3/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "url": "@scope/package-3/index.md"
+  },
+  {
+    "title": "package-4",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "url": "package-4/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "url": "package-4/index.md"
+  },
+  {
+    "title": "package-5",
+    "children": [
+      {
+        "title": "module2",
+        "url": "package-5/module2.md"
+      }
+    ],
+    "url": "package-5/package-5.md"
+  },
+  {
+    "title": "package-6",
+    "children": [
+      {
+        "title": "module2",
+        "url": "package-6/module2.md"
+      }
+    ],
+    "url": "package-6.md"
+  }
+]"
+`;
+
+exports[`Navigation should get Navigation Json for packages: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "@scope/package-1",
+    "children": [],
     "url": "package-1/index.md"
   },
   {
@@ -241,7 +505,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "url": "package-2/index.md"
   },
   {
-    "title": "package-3",
+    "title": "@scope/package-3",
     "children": [
       {
         "title": "index",
@@ -310,10 +574,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "title": "package-5",
     "children": [
       {
-        "title": "module1",
-        "url": "package-5/package-5.md"
-      },
-      {
         "title": "module2",
         "url": "package-5/module2.md"
       }
@@ -323,10 +583,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-6",
     "children": [
-      {
-        "title": "module1",
-        "url": "package-6.md"
-      },
       {
         "title": "module2",
         "url": "package-6/module2.md"
@@ -340,15 +596,15 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "module-1",
-    "url": "module-1/README.mdx",
+    "title": "@scope/module-1",
+    "url": "@scope/module-1/README.mdx",
     "children": [
       {
         "title": "Classes",
         "children": [
           {
             "title": "ModuleClass",
-            "url": "module-1/classes/ModuleClass.mdx"
+            "url": "@scope/module-1/classes/ModuleClass.mdx"
           }
         ]
       }
@@ -375,7 +631,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "members") (Option Group "2") 1`] = `
 "[
   {
-    "title": "module-1",
+    "title": "@scope/module-1",
     "url": "module-1/index.mdx",
     "children": [
       {
@@ -410,8 +666,8 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "module-1",
-    "url": "module-1.mdx"
+    "title": "@scope/module-1",
+    "url": "@scope/module-1.mdx"
   },
   {
     "title": "module-2",
@@ -423,12 +679,300 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 exports[`Navigation should gets Navigation Json for entry modules: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "[
   {
-    "title": "module-1",
+    "title": "@scope/module-1",
     "url": "module-1.mdx"
   },
   {
     "title": "module-2",
     "url": "module-2.mdx"
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "@scope/namespace",
+    "url": "namespace/README.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "url": "namespace/enumerations/EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "url": "namespace/enumerations/EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "url": "namespace/classes/ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "url": "namespace/classes/ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "url": "namespace/interfaces/InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "url": "namespace/interfaces/InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "url": "namespace/type-aliases/TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "url": "namespace/type-aliases/TypeB.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-1",
+    "children": [
+      {
+        "title": "submodules",
+        "url": "module-1/submodules/submodule-1/README.md",
+        "children": [
+          {
+            "title": "Enumerations",
+            "children": [
+              {
+                "title": "EnumA",
+                "url": "module-1/submodules/submodule-1/enumerations/EnumA.md"
+              },
+              {
+                "title": "EnumB",
+                "url": "module-1/submodules/submodule-1/enumerations/EnumB.md"
+              }
+            ]
+          },
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "url": "module-1/submodules/submodule-1/classes/ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "url": "module-1/submodules/submodule-1/classes/ClassB.md"
+              }
+            ]
+          },
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "InterfaceA",
+                "url": "module-1/submodules/submodule-1/interfaces/InterfaceA.md"
+              },
+              {
+                "title": "InterfaceB",
+                "url": "module-1/submodules/submodule-1/interfaces/InterfaceB.md"
+              }
+            ]
+          },
+          {
+            "title": "Type Aliases",
+            "children": [
+              {
+                "title": "TypeA",
+                "url": "module-1/submodules/submodule-1/type-aliases/TypeA.md"
+              },
+              {
+                "title": "TypeB",
+                "url": "module-1/submodules/submodule-1/type-aliases/TypeB.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "submodules",
+        "children": [
+          {
+            "title": "submodule-2",
+            "url": "module-1/submodules/submodule-2/README.md",
+            "children": [
+              {
+                "title": "Enumerations",
+                "children": [
+                  {
+                    "title": "EnumA",
+                    "url": "module-1/submodules/submodule-2/enumerations/EnumA.md"
+                  },
+                  {
+                    "title": "EnumB",
+                    "url": "module-1/submodules/submodule-2/enumerations/EnumB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Classes",
+                "children": [
+                  {
+                    "title": "ClassA",
+                    "url": "module-1/submodules/submodule-2/classes/ClassA.md"
+                  },
+                  {
+                    "title": "ClassB",
+                    "url": "module-1/submodules/submodule-2/classes/ClassB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "InterfaceA",
+                    "url": "module-1/submodules/submodule-2/interfaces/InterfaceA.md"
+                  },
+                  {
+                    "title": "InterfaceB",
+                    "url": "module-1/submodules/submodule-2/interfaces/InterfaceB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Type Aliases",
+                "children": [
+                  {
+                    "title": "TypeA",
+                    "url": "module-1/submodules/submodule-2/type-aliases/TypeA.md"
+                  },
+                  {
+                    "title": "TypeB",
+                    "url": "module-1/submodules/submodule-2/type-aliases/TypeB.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "children": [
+      {
+        "title": "namespace-2",
+        "url": "module-2/namespace-2/README.md",
+        "children": [
+          {
+            "title": "Enumerations",
+            "children": [
+              {
+                "title": "EnumA",
+                "url": "module-2/namespace-2/enumerations/EnumA.md"
+              },
+              {
+                "title": "EnumB",
+                "url": "module-2/namespace-2/enumerations/EnumB.md"
+              }
+            ]
+          },
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "url": "module-2/namespace-2/classes/ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "url": "module-2/namespace-2/classes/ClassB.md"
+              }
+            ]
+          },
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "InterfaceA",
+                "url": "module-2/namespace-2/interfaces/InterfaceA.md"
+              },
+              {
+                "title": "InterfaceB",
+                "url": "module-2/namespace-2/interfaces/InterfaceB.md"
+              }
+            ]
+          },
+          {
+            "title": "Type Aliases",
+            "children": [
+              {
+                "title": "TypeA",
+                "url": "module-2/namespace-2/type-aliases/TypeA.md"
+              },
+              {
+                "title": "TypeB",
+                "url": "module-2/namespace-2/type-aliases/TypeB.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "@scope/namespace",
+    "url": "namespace.md"
+  },
+  {
+    "title": "module-1",
+    "children": [
+      {
+        "title": "submodules",
+        "url": "module-1/submodules/submodule-1.md"
+      },
+      {
+        "title": "submodules",
+        "children": [
+          {
+            "title": "submodule-2",
+            "url": "module-1/submodules/submodule-2.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "children": [
+      {
+        "title": "namespace-2",
+        "url": "module-2/namespace-2.md"
+      }
+    ]
   }
 ]"
 `;

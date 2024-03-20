@@ -44,6 +44,19 @@ const config: Record<string, Fixture> = {
       },
     ],
   },
+  modules: {
+    only: false,
+    entryPoints: '/modules/**',
+    commonOptions: {
+      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+      readme: 'none',
+      hidePageHeader: true,
+      hideBreadcrumbs: true,
+      disableSources: true,
+      excludeScopesInPaths: true,
+    },
+    options: [{}],
+  },
   groups: {
     only: false,
     entryPoints: '/groups/**/*.ts',
@@ -104,6 +117,7 @@ const config: Record<string, Fixture> = {
     options: [
       {},
       {
+        excludeScopesInPaths: true,
         mergeReadme: true,
         includeVersion: true,
         indexPageTitle: 'API',
@@ -132,8 +146,15 @@ const config: Record<string, Fixture> = {
       entryModule: 'entry-module',
       disableSources: true,
       fileExtension: '.mdx',
+      name: '@scope/entryfile',
     },
-    options: [{ entryFileName: 'README.md' }, { readme: 'none' }],
+    options: [
+      { entryFileName: 'README.md' },
+      {
+        readme: 'none',
+        excludeScopesInPaths: true,
+      },
+    ],
   },
   readme: {
     entryPoints: '/readme/index.ts',
@@ -149,6 +170,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   text: {
+    only: false,
     entryPoints: '/text/*.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],

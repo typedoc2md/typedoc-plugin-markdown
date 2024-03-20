@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Packages should compile index for a single package: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1 v1.0.0** • Readme \\| [API](packages.md)
+"**@scope/package-1 v1.0.0** • Readme \\| [API](packages.md)
 
 ***
 
@@ -20,10 +20,10 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 
 ## Packages
 
-- [package-1 - v1.0.0](package-1/index.md)
+- [@scope/package-1 - v1.0.0](@scope/package-1/index.md)
 - [package-1b](package-1b/index.md)
 - [package-2 - v1.0.0](package-2/index.md)
-- [package-3](package-3/index.md)
+- [@scope/package-3](@scope/package-3/index.md)
 - [package-4](package-4/index.md)
 - [package-5](package-5/package-5.md)
 - [package-6](package-6.md)
@@ -31,13 +31,13 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"**package-1 v1.0.0** • [Readme](index.md) \\| API
+"**@scope/package-1 v1.0.0** • [Readme](index.md) \\| API
 
 ***
 
-[packages-example](../index.md) / package-1
+[packages-example](../../index.md) / @scope/package-1
 
-# package-1
+# @scope/package-1
 
 Comments for package-1
 
@@ -77,11 +77,11 @@ exports[`Packages should compile member for relative entry module package: (Outp
 `;
 
 exports[`Packages should compile member page for a single package: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1 v1.0.0** • [Readme](../README.md) \\| [API](../packages.md)
+"**@scope/package-1 v1.0.0** • [Readme](../README.md) \\| [API](../packages.md)
 
 ***
 
-[package-1 v1.0.0](../README.md) / PackageInterface
+[@scope/package-1 v1.0.0](../README.md) / PackageInterface
 
 # Interface: PackageInterface
 
@@ -94,11 +94,28 @@ exports[`Packages should compile member page for a single package: (Output File 
 `;
 
 exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-1 v1.0.0** • [Readme](../index.md) \\| [API](../globals.md)
+"**@scope/package-1 v1.0.0** • [Readme](../index.md) \\| [API](../globals.md)
 
 ***
 
-[packages-example](../../index.md) / [package-1](../index.md) / PackageInterface
+[packages-example](../../../index.md) / [@scope/package-1](../index.md) / PackageInterface
+
+# Interface: PackageInterface
+
+## Properties
+
+### prop
+
+> **prop**: \`string\`
+"
+`;
+
+exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**@scope/package-1 v1.0.0** • API
+
+***
+
+[packages-example v0.0](../../index.md) / [@scope/package-1](../index.md) / PackageInterface
 
 # Interface: PackageInterface
 
@@ -128,11 +145,11 @@ Some text.
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"**package-1 v1.0.0** • Readme \\| [API](globals.md)
+"**@scope/package-1 v1.0.0** • Readme \\| [API](globals.md)
 
 ***
 
-[packages-example](../index.md) / package-1
+[packages-example](../../index.md) / @scope/package-1
 
 # PACKAGE 1 README
 
@@ -159,10 +176,10 @@ Some text.
 
 | Package | Version | Description |
 | :------ | :------ | :------ |
-| [package-1](package-1/index.md) | 1.0.0 | Description for package-1 |
+| [@scope/package-1](package-1/index.md) | 1.0.0 | Description for package-1 |
 | [package-1b](package-1b/index.md) | - | - |
 | [package-2](package-2/index.md) | 1.0.0 | - |
-| [package-3](package-3/index.md) | - | Description for package 3 |
+| [@scope/package-3](package-3/index.md) | - | Description for package 3 |
 | [package-4](package-4/index.md) | - | - |
 | [package-5](package-5/package-5.md) | - | - |
 | [package-6](package-6.md) | - | - |

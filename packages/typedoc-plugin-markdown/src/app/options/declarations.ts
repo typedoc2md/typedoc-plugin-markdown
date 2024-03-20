@@ -152,6 +152,37 @@ export const mergeReadme: Partial<DeclarationOption> = {
 };
 
 /**
+ * By default directories are split by scopes when generating file paths.
+ *
+ * This option will remove reference to `@scope` in the path when generating files and directories. It does not effect the name of the package or module in the output.
+ *
+ * The following will be the directory structure for packages named `@scope/package-1` and `@scope/package-2`:
+ *
+ * `false` (default):
+ *
+ *  <FileTree>
+ *    <FileTree.Folder name="@scope" defaultOpen>
+ *       <FileTree.Folder name="package-1" />
+ *       <FileTree.Folder name="package-2" />
+ *    </FileTree.Folder>
+ * </FileTree>
+ *
+ * `true`:
+ *
+ * <FileTree>
+ *   <FileTree.Folder name="package-1" />
+ *   <FileTree.Folder name="package-2" />
+ * </FileTree>
+ *
+ * @category Output
+ */
+export const excludeScopesInPaths: Partial<DeclarationOption> = {
+  help: 'Exclude writing @ scope directories in paths.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * @category UI
  */
 export const hidePageHeader: Partial<DeclarationOption> = {

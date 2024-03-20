@@ -117,14 +117,3 @@ function hasDefaultValues(parameters: ParameterReflection[]) {
 
   return !defaultValues.every((value) => !value);
 }
-
-/*function hasDefaultValues(parameters: ParameterReflection[]) {
-  const defaultValues = (parameters as ParameterReflection[]).map((param) => {
-    if (param.name === 'options.showSummary') {
-      console.log(param);
-    }
-    return Boolean(param.defaultValue);
-  });
-
-  return defaultValues.some((value) => value);
-}*/

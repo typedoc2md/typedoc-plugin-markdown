@@ -175,6 +175,44 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 
 ___
 
+### excludeScopesInPaths
+
+<Callout>Exclude writing @ scope directories in paths.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default directories are split by scopes when generating file paths.
+
+This option will remove reference to `@scope` in the path when generating files and directories. It does not effect the name of the package or module in the output.
+
+The following will be the directory structure for packages named `@scope/package-1` and `@scope/package-2`:
+
+`false` (default):
+
+ <FileTree>
+   <FileTree.Folder name="@scope" defaultOpen>
+      <FileTree.Folder name="package-1" />
+      <FileTree.Folder name="package-2" />
+   </FileTree.Folder>
+</FileTree>
+
+`true`:
+
+<FileTree>
+  <FileTree.Folder name="package-1" />
+  <FileTree.Folder name="package-2" />
+</FileTree>
+
+
+```json filename="typedoc.json"
+{
+  "excludeScopesInPaths": false
+}
+
+```
+
+___
+
 ## UI Options
 
 ### hidePageHeader

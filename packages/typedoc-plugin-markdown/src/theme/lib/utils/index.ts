@@ -10,4 +10,5 @@ export { formatTableTypeCol } from './format-table-type-col';
 export { getFileNameWithExtension } from './get-file-name-with-extension';
 export { getFirstParagrph } from './get-first-paragraph';
 export { pipe } from './pipe';
+export { removeFirstScopedDirectory } from './remove-first-scoped-directory';
 export { stripComments } from './strip-comments';

@@ -3,7 +3,10 @@ import { TemplateMapping, UrlMapping } from '@plugin/theme/theme-types';
 import { OutputFileStrategy } from 'app/options/option-maps';
 import * as path from 'path';
 import { MarkdownTheme } from 'theme';
-import { getFileNameWithExtension } from 'theme/lib/utils';
+import {
+  getFileNameWithExtension,
+  removeFirstScopedDirectory,
+} from 'theme/lib/utils';
 import {
   DeclarationReflection,
   EntryPointStrategy,
@@ -35,6 +38,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const anchors: Record<string, string[]> = {};
 
   const fileExtension = options.getValue('fileExtension');
+  const ignoreScopes = options.getValue('excludeScopesInPaths');
   const entryFileName = getFileNameWithExtension(
     options.getValue('entryFileName'),
     fileExtension,
@@ -148,15 +152,20 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
       ? packageOptions.getValue('entryFileName')
       : options.getValue('entryFileName');
 
-    const fullEntryFileName = getFileNameWithExtension(
+    let fullEntryFileName = getFileNameWithExtension(
       path.join(projectChild.name, packageEntryFileName),
       fileExtension,
     );
 
-    const fullIndexFileName = getFileNameWithExtension(
+    let fullIndexFileName = getFileNameWithExtension(
       path.join(projectChild.name, packagesIndex),
       fileExtension,
     );
+
+    if (ignoreScopes) {
+      fullEntryFileName = removeFirstScopedDirectory(fullEntryFileName);
+      fullIndexFileName = removeFirstScopedDirectory(fullIndexFileName);
+    }
 
     const indexFileName = preservePackageReadme
       ? fullIndexFileName
@@ -233,6 +242,10 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
       });
 
       let url = getUrl(reflection, urlPath, urlOptions);
+
+      if (ignoreScopes) {
+        url = removeFirstScopedDirectory(url);
+      }
 
       const duplicateUrls = urls.filter(
         (urlMapping) =>
