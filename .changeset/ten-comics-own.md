@@ -2,6 +2,7 @@
 'typedoc-plugin-markdown': patch
 ---
 
+- Expose `membersWithOwnFile`, `preserveMarkup` and `excludeScopesInPaths` options.
 - Improve signature ui.
-- Expose `membersWithOwnFile` and `preserveMarkup` options.
+- Exposed additional file options to packages
 - Fix index table format for packages.
