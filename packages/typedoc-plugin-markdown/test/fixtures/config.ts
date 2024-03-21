@@ -121,7 +121,7 @@ const config: Record<string, Fixture> = {
         mergeReadme: true,
         includeVersion: true,
         indexPageTitle: 'API',
-        packagesFormat: 'table',
+        indexFormat: 'table',
       },
     ],
   },

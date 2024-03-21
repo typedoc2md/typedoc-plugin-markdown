@@ -371,24 +371,12 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
 /**
  * This option renders index items either as a simple list or in a table with a description column exposing the comment summary.
  *
+ * For a packages index page (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
+ *
  * @category UI
  */
 export const indexFormat: Partial<DeclarationOption> = {
   help: 'Specify the render format for index items.',
-  type: ParameterType.Map,
-  map: FormatStyle,
-  defaultValue: FormatStyle.List,
-};
-
-/**
- * This option renders the packages index either as a simple list or in a table with a description column exposing the package.json description.
- *
- * Utilise the includeVersion option to additionally display a "Version" column.
- *
- * @category UI
- */
-export const packagesFormat: Partial<DeclarationOption> = {
-  help: 'Specify the render format for packages index page.',
   type: ParameterType.Map,
   map: FormatStyle,
   defaultValue: FormatStyle.List,

@@ -21,7 +21,7 @@ export function packagesIndex(
     Boolean(projectPackage.packageVersion),
   );
 
-  if (context.options.getValue('packagesFormat') === 'table') {
+  if (context.options.getValue('indexFormat') === 'table') {
     const headers = [context.helpers.getText('label.name')];
     if (includeVersion) {
       headers.push('Version');

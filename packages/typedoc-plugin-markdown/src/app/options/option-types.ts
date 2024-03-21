@@ -26,7 +26,6 @@ declare module 'typedoc' {
     enumMembersFormat: 'list' | 'table';
     typeDeclarationFormat: 'list' | 'table';
     indexFormat: 'list' | 'table';
-    packagesFormat: 'list' | 'table';
     textContentMappings: ManuallyValidatedOption<TextContentMappings>;
     publicPath: string;
     preserveMarkup: boolean;
@@ -59,7 +58,6 @@ export interface PluginOptions {
   enumMembersFormat: 'list' | 'table';
   typeDeclarationFormat: 'list' | 'table';
   indexFormat: 'list' | 'table';
-  packagesFormat: 'list' | 'table';
   textContentMappings: ManuallyValidatedOption<TextContentMappings>;
   publicPath: string;
   preserveMarkup: boolean;
