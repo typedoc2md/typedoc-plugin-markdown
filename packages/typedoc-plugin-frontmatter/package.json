@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-frontmatter",
-  "version": "0.0.3-next.0",
+  "version": "1.0.0-next.1",
   "description": "A plugin for TypeDoc that prepends configurable frontmatter to page content.",
   "main": "dist/index.js",
   "files": [
@@ -31,7 +31,7 @@
     "yaml": "^2.3.4"
   },
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.0.0-next.39"
+    "typedoc-plugin-markdown": ">=4.0.0-next.54"
   },
   "keywords": [
     "frontmatter",
