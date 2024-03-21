@@ -1,12 +1,12 @@
 # Changelog
 
-## 2.0.0-next.7
+## 2.0.0-next.7 (2024-03-21)
 
 ### Patch Changes
 
 - API updates from typedoc-plugin-markdown
 
-## 2.0.0-next.6
+## 2.0.0-next.6 (2024-01-30)
 
 ### Patch Changes
 

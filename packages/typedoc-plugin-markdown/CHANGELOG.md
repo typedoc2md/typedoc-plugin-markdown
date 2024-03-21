@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.54
+## 4.0.0-next.54 (2024-03-21)
 
 ### Patch Changes
 
@@ -10,7 +10,7 @@
 - Exposed additional file options to packages
 - Fix index table format for packages.
 
-## 4.0.0-next.53
+## 4.0.0-next.53 (2024-02-07)
 
 ### Patch Changes
 

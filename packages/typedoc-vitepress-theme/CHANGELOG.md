@@ -1,12 +1,12 @@
 # typedoc-vitepress-theme
 
-## 1.0.0-next.10
+## 1.0.0-next.10 (2024-03-21)
 
 ### Patch Changes
 
 - API updates from typedoc-plugin-markdown
 
-## 1.0.0-next.9
+## 1.0.0-next.9 (2024-01-18)
 
 ### Patch Changes
 
@@ -14,7 +14,7 @@
 - Updated peer dependencies
   - typedoc-plugin-markdown@4.0.0-next.51
 
-## 1.0.0-next.8
+## 1.0.0-next.8 (2024-01-18)
 
 ### Patch Changes
 

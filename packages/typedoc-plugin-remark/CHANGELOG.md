@@ -6,7 +6,7 @@
 
 - Fix options not being passed to remark plugins
 
-## 0.0.1-next.1
+## 0.0.1-next.1 (2024-01-12)
 
 ### Patch Changes
 
@@ -14,7 +14,7 @@
 - Updated peer dependencies
   - typedoc-plugin-markdown@4.0.0-next.40
 
-## 0.0.1-next.0
+## 0.0.1-next.0 (2024-01-12)
 
 ### Patch Changes
 

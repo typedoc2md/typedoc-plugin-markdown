@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0-next.28
+## 1.0.0-next.28 (2024-03-21)
 
 ### Patch Changes
 
