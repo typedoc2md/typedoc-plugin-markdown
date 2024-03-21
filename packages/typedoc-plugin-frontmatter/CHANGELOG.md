@@ -1,5 +1,16 @@
 # typedoc-plugin-frontmatter
 
+## 1.0.0-next.1
+
+### Major Changes
+
+- Added `readmeFrontmatter` and `indexFrontmatter` options
+
+### Patch Changes
+
+- Updated peer dependencies
+  - typedoc-plugin-markdown@4.0.0-next.54
+
 ## 0.0.3-next.0 (2024-01-15)
 
 ### Patch Changes

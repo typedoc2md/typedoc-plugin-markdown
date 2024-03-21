@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.0-next.54
+
+### Patch Changes
+
+- Added `fileExtension` option.
+- Expose `membersWithOwnFile`, `preserveMarkup` and `excludeScopesInPaths` options.
+- Improve signature ui.
+- Exposed additional file options to packages
+- Fix index table format for packages.
+
 ## 4.0.0-next.53
 
 ### Patch Changes
