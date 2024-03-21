@@ -104,4 +104,12 @@ describe(`Type Alias Reflection`, () => {
   test(`should compile query type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/QueryType.md');
   });
+
+  test(`should compile union type with template strings`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/UnionTypeWithTemplateStrings.md',
+    );
+  });
 });

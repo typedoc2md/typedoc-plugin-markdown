@@ -22,7 +22,7 @@ export function packagesIndex(
   );
 
   if (context.options.getValue('packagesFormat') === 'table') {
-    const headers = ['Package'];
+    const headers = [context.helpers.getText('label.name')];
     if (includeVersion) {
       headers.push('Version');
     }

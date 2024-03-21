@@ -514,7 +514,7 @@ Comments for ReadonlyMapedType
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: StringLiteralType
 
-> **StringLiteralType**: \`" "\` \\| \`"string"\` \\| \`"string|with|pipes"\` \\| "string\\\`with\\\`backticks" \\| \`"<foo>"\` \\| \`"*"\`
+> **StringLiteralType**: \`" "\` \\| \`"string"\` \\| \`"string|with|pipes"\` \\| \`\`"string\`with\`backticks"\`\` \\| \`"<foo>"\` \\| \`"*"\`
 
 Comments for StringLiteralType
 
@@ -532,7 +532,7 @@ type StringLiteralType:
   | " "
   | "string"
   | "string|with|pipes"
-  | "string\\with\\backticks"
+  | "stringwithbackticks"
   | "<foo>"
   | "*";
 \`\`\`
@@ -611,6 +611,34 @@ Comments for TypeWithTypeParams
 ## Source
 
 [types.ts:59](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile union type with template strings: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type alias: UnionTypeWithTemplateStrings
+
+> **UnionTypeWithTemplateStrings**: \`\`\`v\${number}\`\`\` \\| \`\`\`v\${number}.\${number}\`\`\` \\| \`\`\`v\${number}.\${number}.\${number}\`\`\`
+
+Union with template strings
+
+## Source
+
+[types.ts:176](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile union type with template strings: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# UnionTypeWithTemplateStrings
+
+\`\`\`ts
+type UnionTypeWithTemplateStrings: v\${number} | v\${number}.\${number} | v\${number}.\${number}.\${number};
+\`\`\`
+
+Union with template strings
+
+## Source
+
+[types.ts:176](http://source-url)
 "
 `;
 

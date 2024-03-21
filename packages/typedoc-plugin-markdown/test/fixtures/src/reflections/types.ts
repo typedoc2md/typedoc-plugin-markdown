@@ -169,3 +169,11 @@ export const someQuery = 1;
  * Comments for query type
  */
 export type QueryType = typeof someQuery;
+
+/**
+ * Union with template strings
+ */
+export type UnionTypeWithTemplateStrings =
+  | `v${number}`
+  | `v${number}.${number}`
+  | `v${number}.${number}.${number}`;

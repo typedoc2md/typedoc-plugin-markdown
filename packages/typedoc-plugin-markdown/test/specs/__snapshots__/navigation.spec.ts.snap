@@ -1838,6 +1838,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "UnionType",
         "url": "type-aliases/UnionType.md"
+      },
+      {
+        "title": "UnionTypeWithTemplateStrings",
+        "url": "type-aliases/UnionTypeWithTemplateStrings.md"
       }
     ]
   },

@@ -90,6 +90,7 @@ export interface TextContentMappings {
   'label.indexSignature': string;
   'label.member': string;
   'label.modifier': string;
+  'label.name': string;
   'label.overrides': string;
   'label.packages': string;
   'label.reExports': string;

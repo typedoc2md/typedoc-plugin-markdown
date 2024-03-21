@@ -22,6 +22,7 @@ export const TEXT_MAPPING_DEFAULTS = {
   'label.indexSignature': 'Index signature',
   'label.member': 'Member',
   'label.modifier': 'Modifier',
+  'label.name': 'Name',
   'label.overrides': 'Overrides',
   'label.packages': 'Packages',
   'label.reExports': 'Re-exports',
