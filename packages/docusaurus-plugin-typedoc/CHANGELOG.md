@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-next.28
+
+### Patch Changes
+
+- Provide exit code on process error ([#583](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/583))
+
+Thanks @axel7083
+
 ## 1.0.0-next.27 (2024-01-31)
 
 ### Patch Changes
