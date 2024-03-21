@@ -34,7 +34,7 @@ exports[`Function Reflection should compile function returning a function: (Outp
 "# functionReturningAFunction()
 
 \`\`\`ts
-function functionReturningAFunction(): <T>(x: string) => boolean
+functionReturningAFunction(): <T>(x: string) => boolean
 \`\`\`
 
 Comments for function
@@ -94,7 +94,7 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 "# functionReturningAPromise()
 
 \`\`\`ts
-function functionReturningAPromise(): Promise<Object>
+functionReturningAPromise(): Promise<Object>
 \`\`\`
 
 Comments for function
@@ -139,7 +139,7 @@ exports[`Function Reflection should compile function returning a string: (Output
 "# functionReturningAString()
 
 \`\`\`ts
-function functionReturningAString(): string
+functionReturningAString(): string
 \`\`\`
 
 Comments for function
@@ -179,7 +179,7 @@ exports[`Function Reflection should compile function returning a union: (Output 
 "# functionReturningAUnionType()
 
 \`\`\`ts
-function functionReturningAUnionType(): string | boolean | "string1" | "string2"
+functionReturningAUnionType(): string | boolean | "string1" | "string2"
 \`\`\`
 
 Comments for function
@@ -233,7 +233,7 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 "# functionReturningAnObject()
 
 \`\`\`ts
-function functionReturningAnObject(): Object
+functionReturningAnObject(): Object
 \`\`\`
 
 Comments for function
@@ -288,7 +288,7 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 "# basicFunction()
 
 \`\`\`ts
-function basicFunction(someParam: number): number
+basicFunction(someParam: number): number
 \`\`\`
 
 This is a function that is assigned to a variable.
@@ -338,7 +338,7 @@ exports[`Function Reflection should compile function with complex params: (Outpu
 "# functionWithComplexParams()
 
 \`\`\`ts
-function functionWithComplexParams(paramA: (a: string) => true, paramB: Object): boolean
+functionWithComplexParams(paramA: (a: string) => true, paramB: Object): boolean
 \`\`\`
 
 Function with function parmas
@@ -406,7 +406,7 @@ exports[`Function Reflection should compile function with default parameters: (O
 "# functionWithDefaultParameters()
 
 \`\`\`ts
-function functionWithDefaultParameters(
+functionWithDefaultParameters(
    valueA: string, 
    valueB: number, 
    valueC: number, 
@@ -493,7 +493,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
-function functionWithMultipleSignatures(value: string): string
+functionWithMultipleSignatures(value: string): string
 \`\`\`
 
 This is the first signature of a function with multiple signatures.
@@ -515,7 +515,7 @@ This is the first signature of a function with multiple signatures.
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
-function functionWithMultipleSignatures(value: Object): string
+functionWithMultipleSignatures(value: Object): string
 \`\`\`
 
 This is the second signature of a function with multiple signatures.
@@ -570,7 +570,7 @@ exports[`Function Reflection should compile function with named params: (Output 
 "# functionWithNamedParams()
 
 \`\`\`ts
-function functionWithNamedParams(__namedParameters: Object, anotherParam: string): void
+functionWithNamedParams(__namedParameters: Object, anotherParam: string): void
 \`\`\`
 
 ## Parameters
@@ -643,7 +643,7 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 "# functionWithNestedParameters()
 
 \`\`\`ts
-function functionWithNestedParameters(
+functionWithNestedParameters(
    params: Object, 
    context: any, 
    somethingElse?: string): boolean
@@ -742,7 +742,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 "# functionWithOptionalParameters()
 
 \`\`\`ts
-function functionWithOptionalParameters(
+functionWithOptionalParameters(
    firstParamWithDefault: boolean, 
    requiredParam: string, 
    optionalParam?: string, 
@@ -774,7 +774,7 @@ exports[`Function Reflection should compile function with optional parameters: (
 "# functionWithOptionalParameters()
 
 \`\`\`ts
-function functionWithOptionalParameters(
+functionWithOptionalParameters(
    firstParamWithDefault: boolean, 
    requiredParam: string, 
    optionalParam?: string, 
@@ -829,7 +829,7 @@ exports[`Function Reflection should compile function with rest params: (Output F
 "# functionWithRestParams()
 
 \`\`\`ts
-function functionWithRestParams(param: string, ...restParams: string[]): boolean
+functionWithRestParams(param: string, ...restParams: string[]): boolean
 \`\`\`
 
 Function with reset parmas
@@ -880,7 +880,7 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 "# functionWithTypeParameters()
 
 \`\`\`ts
-function functionWithTypeParameters<T, Item>(): boolean
+functionWithTypeParameters<T, Item>(): boolean
 \`\`\`
 
 Function with type parameters

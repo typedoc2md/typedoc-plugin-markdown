@@ -228,7 +228,7 @@ exports[`Objects And Params should compile function returning a promise: (Output
 "# Function: functionReturningAPromise()
 
 \`\`\`ts
-function functionReturningAPromise(): Promise<{
+functionReturningAPromise(): Promise<{
   prop: string;
 }>
 \`\`\`
@@ -271,7 +271,7 @@ exports[`Objects And Params should compile function returning a union: (Output F
 "# Function: functionReturningAUnionType()
 
 \`\`\`ts
-function functionReturningAUnionType(): string | boolean | "string1" | "string2"
+functionReturningAUnionType(): string | boolean | "string1" | "string2"
 \`\`\`
 
 Comments for function
@@ -317,7 +317,7 @@ exports[`Objects And Params should compile function returning an object: (Output
 "# Function: functionReturningAnObject()
 
 \`\`\`ts
-function functionReturningAnObject(): {
+functionReturningAnObject(): {
   x: 1;
   y: 2;
 }
@@ -403,7 +403,7 @@ exports[`Objects And Params should compile function with nested parameters: (Out
 "# Function: functionWithNestedParameters()
 
 \`\`\`ts
-function functionWithNestedParameters(
+functionWithNestedParameters(
    params: {
   name: string;
   nestedObj: {
