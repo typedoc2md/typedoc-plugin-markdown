@@ -1,12 +1,8 @@
-import * as declarations from '@plugin/app/options/declarations';
-import {
-  MarkdownRenderer,
-  MarkdownRendererHooks,
-  generateDocs,
-  render,
-  resolvePackages,
-} from '@plugin/app/renderer';
-import { MarkdownTheme } from '@plugin/theme';
+import { MarkdownRendererHooks } from '@app/hooks/markdown-renderer-hooks';
+import { generateDocs, render } from '@app/renderer/overrides';
+import { resolvePackages } from '@app/renderer/packages';
+import * as declarations from '@options/declarations';
+import { MarkdownTheme } from '@theme/base';
 import {
   Application,
   Context,
@@ -23,6 +19,8 @@ import {
  * Here we expose additional TypeDoc options and make some adjustments.
  *
  * This method is not intended to be consumed in any other context that via the `plugin` option.
+ *
+ * @ignore
  */
 export function load(app: Application) {
   /**
@@ -101,17 +99,4 @@ export function load(app: Application) {
   });
 }
 
-/**
- * Symbols required for the public api
- */
-export { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/app/events';
-export { OutputFileStrategy, PluginOptions } from '@plugin/app/options';
-export {
-  MarkdownApplication,
-  MarkdownRendererHooks,
-} from '@plugin/app/renderer';
-export {
-  MarkdownTheme,
-  MarkdownThemeRenderContext,
-  NavigationItem,
-} from '@plugin/theme';
+export * from 'public-api';

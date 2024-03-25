@@ -1,0 +1,42 @@
+import pjson from '../../../../packages/typedoc-vitepress-theme/package.json';
+import { Callout, Steps } from 'nextra/components';
+import { Cards } from 'nextra/components';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+# typedoc-vitepress-theme
+
+<PackageDescription pjson={pjson}></PackageDescription>
+
+## Features
+
+- Updates internal anchors to be compatible with VitePress.
+- Auto generates a VitePress sidebar that can be referenced from the VitePress config.
+
+## What about VuePress?
+
+This theme is also compatible with VuePress and the configuration is almost identical. However this theme supersedes previous VuePress TypeDoc plugins and is specifically targetted for VitePress.
+
+See https://vitepress.dev/guide/what-is-vitepress#what-about-vuepress.
+
+## Example
+
+The following is a simple example of a VitePress project running TypeDoc.
+
+<Cards num={2}>
+  <Cards.Card
+    title="View on Github"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/typedoc-vitepress-theme-example"
+    target="_blank"
+  />{' '}
+  <Cards.Card
+    title="View on StackBlitz"
+    icon={<FontAwesomeIcon icon={faBolt} />}
+    arrow={true}
+    href="https://stackblitz.com/~/github.com/tgreyuk/typedoc-vitepress-theme-example"
+    target="_blank"
+  />
+</Cards>

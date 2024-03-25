@@ -1,0 +1,35 @@
+import { Callout, Steps } from 'nextra/components';
+
+# Quick Start
+
+<Callout type="info">
+  For general TypeDoc usage please refer to https://typedoc.org.
+</Callout>
+
+## Install the plugin
+
+```sh npm2yarn
+npm install typedoc typedoc-plugin-markdown@next --save-dev
+```
+
+## Load the plugin
+
+Plugins are loaded by using the TypeDoc [`plugin`](https://typedoc.org/options/configuration/#plugin) configuration option:
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown"]
+}
+```
+
+## Set options
+
+Please see TypeDoc's [Configuring Options](https://typedoc.org/options/configuration/) page for more information on how to set options.
+
+The majority of [TypeDoc's options](https://typedoc.org/options/) are supported, including all [input](https://typedoc.org/options/input/), [comments](https://typedoc.org/options/comments/), [organization](https://typedoc.org/options/organization/), [validation](https://typedoc.org/options/validation/) and [other](https://typedoc.org/options/other/) options.
+[Output](https://typedoc.org/options/output/) options that are specific to the HTML theme are ignored.
+
+Some typical (and frequently asked about) TypeDoc options that might be useful are:
+
+- Using [disableSources](https://typedoc.org/options/output/#disablesources) to prevent outputting source references.
+- Setting [readme](https://typedoc.org/options/input/#readme) to `none` to exclude the project readme from the docs.import { Callout, Steps } from 'nextra/components';

@@ -1,4 +1,5 @@
-import { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/app/events';
+import { MarkdownPageEvent } from '@app/events/markdown-page-event';
+import { MarkdownRendererEvent } from '@app/events/markdown-renderer-event';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
@@ -84,48 +85,51 @@ export async function render(
 
   this.preRenderAsyncJobs = [];
 
-  this.application.logger.verbose(
-    `There are ${output.urls?.length} pages to write.`,
-  );
+  if (!output.isDefaultPrevented) {
+    this.application.logger.verbose(
+      `There are ${output.urls?.length} pages to write.`,
+    );
 
-  output.urls
-    ?.filter(
-      (urlMapping) =>
-        urlMapping.model instanceof ProjectReflection ||
-        urlMapping.model instanceof DeclarationReflection,
-    )
-    .forEach(async (urlMapping) => {
-      const [template, page] = output.createPageEvent(urlMapping);
+    output.urls
+      ?.filter(
+        (urlMapping) =>
+          urlMapping.model instanceof ProjectReflection ||
+          urlMapping.model instanceof DeclarationReflection,
+      )
+      .forEach(async (urlMapping) => {
+        const [template, page] = output.createPageEvent(urlMapping);
 
-      this.trigger(MarkdownPageEvent.BEGIN, page);
-      if (page.isDefaultPrevented) {
-        return false;
-      }
+        this.trigger(MarkdownPageEvent.BEGIN, page);
 
-      if (page.model instanceof Reflection) {
-        page.contents = this.theme!.render(page, template);
-      } else {
-        throw new Error('Should be unreachable');
-      }
+        if (page.isDefaultPrevented) {
+          return false;
+        }
 
-      this.trigger(MarkdownPageEvent.END, page);
+        if (page.model instanceof Reflection) {
+          page.contents = this.theme!.render(page, template);
+        } else {
+          throw new Error('Should be unreachable');
+        }
 
-      if (page.isDefaultPrevented) {
-        return false;
-      }
+        this.trigger(MarkdownPageEvent.END, page);
 
-      try {
-        writeFileSync(page.filename, page.contents as string);
-      } catch (error) {
-        this.application.logger.error(`Could not write ${page.filename}`);
-      }
-    });
+        if (page.isDefaultPrevented) {
+          return false;
+        }
 
-  this.trigger(MarkdownRendererEvent.END, output);
+        try {
+          writeFileSync(page.filename, page.contents as string);
+        } catch (error) {
+          this.application.logger.error(`Could not write ${page.filename}`);
+        }
+      });
 
-  await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
+    await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
 
-  this.postRenderAsyncJobs = [];
+    this.postRenderAsyncJobs = [];
+
+    this.trigger(MarkdownRendererEvent.END, output);
+  }
 
   this.theme = void 0;
 }

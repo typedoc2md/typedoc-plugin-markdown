@@ -1,38 +1,42 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Card, Cards } from 'nextra/components';
-import pjson from '../../packages/typedoc-plugin-markdown/package.json';
-import { PackageDescription } from '../components/package-description';
+import Image from 'next/image';
 
-# typedoc-plugin-markdown
-
-![npm](https://img.shields.io/npm/v/typedoc-plugin-markdown%2Fnext?&logo=npm)
-
-<PackageDescription description={pjson.description}></PackageDescription>
-
-## Overview
-
-By default, TypeDoc will render API documentation as a webpage, e.g. HTML files. This plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
-
-Markdown output is useful when documentation is to be included in project README files, Wikis and static site generators.
-
-## Features
-
-- [MDX](https://mdxjs.com/) and [GFM](https://github.github.com/gfm/) compliant.
-- Works alongside other TypeDoc plugins.
-- Configurable output file structure.
-- Configurable UI options
-- [Frontmatter](/utilities/frontmatter/introduction) and [Remark](/utilities/remark/introduction) utility plugins available.
-
-## Examples
-
-<Cards num={2}>
-  <Card
-    title="View on Github"
-    icon={<FontAwesomeIcon icon={faGithub} />}
-    arrow={true}
-    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/01-typedoc-plugin-markdown"
-    target="_blank"
-  />
-</Cards>
+<section className="px-4 mx-auto w-full max-w-7xl h-64">
+  <div className="flex flex-col gap-14 items-center mt-10">
+    <div className="flex flex-col gap-8 justify-center items-center w-full">
+      <span className="text-6xl font-black lg:text-6xl text-center">
+        typedoc-plugin-markdown
+      </span>
+      <div className="flex md:flex-row items-center text-3xl">
+        <Image src="/ts-logo.png" alt="TypeScript" width={64} height={64} />
+        <span className="px-2">→</span>
+        <Image
+          src="/markdown-logo.svg"
+          alt="Markdown"
+          width={104}
+          height={64}
+        />
+      </div>
+      <div className="text-2xl text-center lg:text-2xl">
+        <h1>Generate TypeScript API documentation as Markdown.</h1>
+        <div className="pt-8">
+          Powered by
+          <Image
+            src="/typedoc-logo.png"
+            alt="TypeDoc"
+            width={30}
+            height={30}
+            style={{ display: 'inline' }}
+          /> TypeDoc.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="flex flex-row justify-center pt-8 w-full">
+    <a
+      href="/docs"
+      className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+    >
+      <p>Get Started</p>
+    </a>
+  </div>
+</section>

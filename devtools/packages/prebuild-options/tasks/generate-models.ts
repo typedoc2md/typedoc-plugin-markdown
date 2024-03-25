@@ -37,15 +37,31 @@ export async function generateModels(declarationsPath: string) {
     }
   }
 
+  /**
+   * Describes the options declared by the plugin.
+   *
+   * @category Options
+   */
   export interface PluginOptions {
     ${(Object.entries(optionsConfig) as any)
-      .map(([name, option]) => `${name}: ${getType(name, option)};`)
+      .map(
+        ([name, option]) => `
+/**
+ * ${option.help}
+ */
+${name}: ${getType(name, option, true)};`,
+      )
       .join('\n')}
   }
 
   ${mixedTypes
     ?.map(([name, option]) => {
       return `
+  /**
+   * ${getComments(name)}
+   *
+   * @category Options
+   */
   export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
         .map(
@@ -73,6 +89,13 @@ export async function generateModels(declarationsPath: string) {
   fs.writeFileSync(optionsModelFile, formatted);
 }
 
+function getComments(name: string) {
+  if (name === 'textContentMappings') {
+    return 'Describes the keys available to replace static text.';
+  }
+  return '';
+}
+
 function getValueType(value: any) {
   if (value === true || value === false) {
     return 'boolean';
@@ -83,7 +106,19 @@ function getValueType(value: any) {
   return 'string';
 }
 
-function getType(name: string, option: Partial<DeclarationOption>) {
+function getType(
+  name: string,
+  option: Partial<DeclarationOption>,
+  isInterface = false,
+) {
+  if (option.type === ParameterType.Array && option.defaultValue) {
+    return `(${option.defaultValue
+      .toString()
+      .split(',')
+      .map((item) => `"${item}"`)
+      .join(' | ')})[]`;
+  }
+
   if (option.type === ParameterType.Boolean) {
     return 'boolean';
   }
@@ -100,7 +135,14 @@ function getType(name: string, option: Partial<DeclarationOption>) {
     return 'Record<string, boolean>';
   }
   if (option.type === ParameterType.Mixed && option.defaultValue) {
-    return `ManuallyValidatedOption<${capitalize(name)}>`;
+    const usePartial = name === 'textContentMappings';
+    return isInterface
+      ? usePartial
+        ? `Partial<${capitalize(name)}>`
+        : capitalize(name)
+      : usePartial
+        ? `ManuallyValidatedOption<Partial<${capitalize(name)}>>`
+        : `ManuallyValidatedOption<${capitalize(name)}>`;
   }
 
   if (option.type === ParameterType.Map && option.map) {

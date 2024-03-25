@@ -13,17 +13,60 @@ declare module 'typedoc' {
   }
 }
 
+/**
+ * Describes the options declared by the plugin.
+ *
+ * @category Options
+ */
 export interface PluginOptions {
-  frontmatterGlobals: ManuallyValidatedOption<FrontmatterGlobals>;
-  readmeFrontmatter: ManuallyValidatedOption<ReadmeFrontmatter>;
-  indexFrontmatter: ManuallyValidatedOption<IndexFrontmatter>;
+  /**
+   * Specify static variables to be added to all frontmatter blocks.
+   */
+  frontmatterGlobals: FrontmatterGlobals;
+
+  /**
+   * Specify static variables to be added to the readme page only.
+   */
+  readmeFrontmatter: ReadmeFrontmatter;
+
+  /**
+   * Specify static variables to be added to the index page only.
+   */
+  indexFrontmatter: IndexFrontmatter;
+
+  /**
+   * Specify which comment block tags should be added to frontmatter.
+   */
   frontmatterCommentTags: any[];
+
+  /**
+   * Preserve tags defined in frontmatter block tags in output.
+   */
   preserveFrontmatterCommentTags: boolean;
+
+  /**
+   * The naming convention that variables should be output as.
+   */
   frontmatterNamingConvention: 'camelCase' | 'snakeCase';
 }
 
+/**
+ *
+ *
+ * @category Options
+ */
 export interface FrontmatterGlobals {}
 
+/**
+ *
+ *
+ * @category Options
+ */
 export interface ReadmeFrontmatter {}
 
+/**
+ *
+ *
+ * @category Options
+ */
 export interface IndexFrontmatter {}

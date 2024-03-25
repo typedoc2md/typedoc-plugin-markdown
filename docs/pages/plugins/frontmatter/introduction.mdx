@@ -1,0 +1,26 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Cards } from 'nextra/components';
+import pjson from '../../../../packages/typedoc-plugin-frontmatter/package.json';
+
+# typedoc-plugin-frontmatter
+
+<PackageDescription pjson={pjson}></PackageDescription>
+
+## Features
+
+- Apply global frontmatter variables to all pages.
+- Configure specific pages with comment tags.
+
+## Examples
+
+<Cards num={2}>
+  <Cards.Card
+    title="View on Github"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/02-typedoc-plugin-frontmatter"
+    target="_blank"
+  />
+</Cards>

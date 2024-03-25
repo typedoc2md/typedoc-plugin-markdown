@@ -8,8 +8,21 @@ declare module 'typedoc' {
   }
 }
 
+/**
+ * Describes the options declared by the plugin.
+ *
+ * @category Options
+ */
 export interface PluginOptions {
-  remarkPlugins: ManuallyValidatedOption<RemarkPlugins>;
+  /**
+   * An array of remark plugin names.
+   */
+  remarkPlugins: RemarkPlugins;
 }
 
+/**
+ *
+ *
+ * @category Options
+ */
 export interface RemarkPlugins {}

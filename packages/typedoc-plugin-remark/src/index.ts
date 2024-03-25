@@ -5,7 +5,7 @@ import {
   ReflectionKind,
   RendererEvent,
 } from 'typedoc';
-import { MarkdownPageEvent, OutputFileStrategy } from 'typedoc-plugin-markdown';
+import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
 import * as options from './options/declarations';
 
 export function load(app: Application) {
@@ -41,7 +41,7 @@ export function load(app: Application) {
         ReflectionKind.Interface,
       ];
 
-      if (outputFileStrategy === OutputFileStrategy.Modules) {
+      if (outputFileStrategy === 'modules') {
         kindsWithToc.push(ReflectionKind.Module);
       }
 

@@ -5,7 +5,6 @@ import {
   DeclarationOption,
   Options,
   OptionsReader,
-  Reflection,
 } from 'typedoc';
 import {
   MarkdownPageEvent,
@@ -37,22 +36,19 @@ export function load(app: Application) {
     })(),
   );
 
-  app.renderer.on(
-    MarkdownPageEvent.END,
-    (page: MarkdownPageEvent<Reflection>) => {
-      page.contents = page.contents?.replace(
-        /\[([^\]]+)\]\((?!https?:|\/|\.)([^)]*#?[^)]*)\)/g,
-        (match: string, text: string, url: string) => {
-          const urlWithAnchor = url.split('#');
-          if (urlWithAnchor.length > 1) {
-            const anchorPart = slugifyAnchor(urlWithAnchor[1]);
-            return `[${text}](${encodeURI(`${urlWithAnchor[0]}#${anchorPart}`)})`;
-          }
-          return `[${text}](${encodeURI(url)})`;
-        },
-      );
-    },
-  );
+  app.renderer.on(MarkdownPageEvent.END, (page: MarkdownPageEvent) => {
+    page.contents = page.contents?.replace(
+      /\[([^\]]+)\]\((?!https?:|\/|\.)([^)]*#?[^)]*)\)/g,
+      (match: string, text: string, url: string) => {
+        const urlWithAnchor = url.split('#');
+        if (urlWithAnchor.length > 1) {
+          const anchorPart = slugifyAnchor(urlWithAnchor[1]);
+          return `[${text}](${encodeURI(`${urlWithAnchor[0]}#${anchorPart}`)})`;
+        }
+        return `[${text}](${encodeURI(url)})`;
+      },
+    );
+  });
 
   app.renderer.postRenderAsyncJobs.push(
     async (output: MarkdownRendererEvent) => {
@@ -60,7 +56,7 @@ export function load(app: Application) {
         ...DEFAULT_SIDEBAR_OPTIONS,
         ...app.options.getValue('sidebar'),
       };
-      if (sidebarOptions.autoConfiguration) {
+      if (sidebarOptions.autoConfiguration && output.navigation) {
         const outDir = app.options.getValue('out');
         const sidebarPath = path.resolve(outDir, 'typedoc-sidebar.json');
         const basePath = path.relative(

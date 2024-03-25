@@ -1,0 +1,37 @@
+# API
+
+The public API of the plugin exposes some classes and types that can be used to extend the plugin. Please note this only covers the API relevant to this plugin and not cover the entire [TypeDoc API](https://typedoc.org/api/).
+
+The APIs are typically consumed by writing [local plugins](/docs/customizing-output#local-plugins).
+
+## Application
+
+The Application class is the main entry point for a TypeDoc application and provides the mechanism to listen to hooks, events and define new themes.
+
+| Member | Description |
+| :------ | :------ |
+| [MarkdownApplication](/api-docs/Interface.MarkdownApplication.md) | An extended typing of TypeDoc's Application instance. |
+| [MarkdownRenderer](/api-docs/Interface.MarkdownRenderer.md) | An extended typing of TypeDoc's Renderer class. |
+| [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent.md) | An event emitted by before and after the markup of a page is rendered. |
+| [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent.md) | An event emitted at the beginning and end of the rendering process. |
+| [MarkdownRendererHooks](/api-docs/Interface.MarkdownRendererHooks.md) | Describes the hooks available to inject output in the markdown theme. |
+
+## Options
+
+Types that are used to define the plugin options.
+
+| Member | Description |
+| :------ | :------ |
+| [PluginOptions](/api-docs/Interface.PluginOptions.md) | Describes the options declared by the plugin. |
+| [TextContentMappings](/api-docs/Interface.TextContentMappings.md) | Describes the keys available to replace static text. |
+
+## Custom Theme
+
+Classes and types that are used to create custom themes.
+
+| Member | Description |
+| :------ | :------ |
+| [MarkdownTheme](/api-docs/Class.MarkdownTheme.md) | The main theme class for the plugin. |
+| [MarkdownThemeRenderContext](/api-docs/Class.MarkdownThemeRenderContext.md) | The theme context class that is provided as context to every template. |
+| [UrlMapping](/api-docs/Interface.UrlMapping.md) | The model used to define the URL mapping structure. |
+| [NavigationItem](/api-docs/Interface.NavigationItem.md) | The model used to define the navigation structure. |

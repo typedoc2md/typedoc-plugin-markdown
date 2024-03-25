@@ -1,0 +1,35 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Cards } from 'nextra/components';
+import pjson from '../../../packages/typedoc-plugin-markdown/package.json';
+
+# typedoc-plugin-markdown
+
+<PackageDescription pjson={pjson}></PackageDescription>
+
+## Overview
+
+By default, TypeDoc will render API documentation as a webpage, e.g. HTML files. This plugin replaces the default HTML theme with a built-in Markdown theme and exposes some additional options.
+
+Markdown output is useful when documentation is to be included in project README files, Wikis and static site generators.
+
+## Features
+
+- [MDX](https://mdxjs.com/) and [GFM](https://github.github.com/gfm/) compliant.
+- Works alongside other TypeDoc plugins.
+- Configurable output file structure.
+- Configurable UI options
+- [Frontmatter](/utilities/frontmatter/introduction) and [Remark](/utilities/remark/introduction) utility plugins available.
+
+## Examples
+
+<Cards num={2}>
+  <Cards.Card
+    title="View on Github"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/01-typedoc-plugin-markdown"
+    target="_blank"
+  />
+</Cards>

@@ -11,4 +11,5 @@ export { getFileNameWithExtension } from './get-file-name-with-extension';
 export { getFirstParagrph } from './get-first-paragraph';
 export { pipe } from './pipe';
 export { removeFirstScopedDirectory } from './remove-first-scoped-directory';
+export { slugifyUrl } from './slugify-url';
 export { stripComments } from './strip-comments';

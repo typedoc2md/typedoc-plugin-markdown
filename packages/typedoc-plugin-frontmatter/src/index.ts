@@ -90,7 +90,7 @@ export function load(app: Application) {
   app.renderer.on(
     MarkdownPageEvent.END,
     (page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>) => {
-      if (Object.keys(page.frontmatter)?.length) {
+      if (page.frontmatter && Object.keys(page.frontmatter)?.length) {
         page.contents = page?.contents
           ?.replace(/^/, `---\n${yaml.stringify(page.frontmatter)}---\n\n`)
           .replace(/[\r\n]{3,}/g, '\n\n');

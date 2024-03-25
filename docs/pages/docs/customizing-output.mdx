@@ -1,0 +1,144 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# Customizing Output
+
+It is possible to customize the output of the generated markdown files by creating local plugins and utilising the exposed public [API](/api-docs).
+
+## Local plugins
+
+Plugins export a load function with context of the resolved application.
+
+Here is a basic plugin skeleton:
+
+```ts filename="local-plugins/my-custom-plugin.ts"
+import { MarkdownApplication } from 'typedoc-plugin-markdown';
+
+export function load(app: MarkdownApplication) {
+  ...
+}
+```
+
+The plugin can then be consumed by adding the path to the plugin in the typedoc.json file:
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "./local-plugins/my-custom-plugin.js"]
+}
+```
+
+Note plugins can either be consumed as either CommonJs or ESM.
+
+## Hooks
+
+Hooks allows strings to be injected into the output in specific locations and are the most basic form form of customization.
+
+```ts
+// Add a hook to insert markdown at the top of the page.
+export function load(app: MarkdownApplication) {
+  app.renderer.markdownHooks.on(
+    'page.begin',
+    () => '> This is some markdown at the top of the page',
+  );
+}
+```
+
+Please see [MarkdownRendererHooks](/api-docs/Interface.MarkdownRendererHooks) API docs.
+
+## Events
+
+Events are more powerful than hooks and allow for more complex customizations and provide a context that can be used to modify the output.
+
+```ts
+export function load(app: MarkdownApplication) {
+  app.renderer.on(MarkdownPageEvent.END, (event: MarkdownPageEvent) => {
+    events.content = event.content.replace('foo', 'bar');
+  });
+}
+```
+
+Please see [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent) and [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent) API docs.
+
+## Async Jobs
+
+Async jobs are used to perform asynchronous tasks before or after rendering.
+
+```ts
+export function load(app: MarkdownApplication) {
+  app.renderer.preRenderAsyncJobs.push(async (event) => {
+    await doSomethingAsync(event);
+  });
+
+  app.renderer.postRenderAsyncJobs.push(async (event) => {
+    await doSomethingAsync(event);
+  });
+}
+```
+
+## Custom Theme
+
+If there are some specific customization not achievable with hooks or events then a more advanced customization can be achieved by providing a new theme class which returns a different context class.
+
+This implementation follows an adapted version of [TypeDoc's custom theming implementation](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md).
+
+In theory all available templates, partials and helpers can be overriden with custom implementations, but please proceed with caution.
+
+This code defines a new theme called “customTheme”:
+
+```ts
+export function load(app) {
+  app.renderer.defineTheme('customTheme', MyMarkdownTheme);
+}
+
+class MyMarkdownTheme extends MarkdownTheme {}
+```
+
+The theme can then be consumed by the theme option:
+
+```shell
+typedoc --plugin typedoc-plugin-markdown --theme customTheme
+```
+
+The themes can be extended to provide custom partials, helpers and templates by proving a custom render context class.
+
+```ts
+class MyMarkdownTheme extends MarkdownTheme {
+  getRenderContext(page) {
+    return new MyMarkdownThemeRenderContext(
+      this,
+      page,
+      this.application.options,
+    );
+  }
+}
+
+class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
+  partials = {
+    ...this.partials,
+    header: () => {
+      return `Welcome to ${page.project.name} custom header!`;
+    },
+  };
+}
+```
+
+Please see the [Custom Theme API](/api-docs#custom-theme) for more information.
+
+## Navigation
+
+If required, a navigation structure can be provided to the output. This is useful if you want to provide a custom sidebar or navigation bar.
+
+This can be achieved by utilising `postRenderAsyncJobs` on the renderer.
+
+```ts
+export function load(app: MarkdownApplication) {
+  app.renderer.postRenderAsyncJobs.push(
+    async (event: MarkdownRendererEvent) => {
+      // The navigation JSON structure is available on the output.
+      const navigation = event.navigation;
+
+      // This can be parsed to something else or written straight to a file:
+      fs.writeFileSync('navigation.json', JSON.stringify(navigation));
+    },
+  );
+}
+```

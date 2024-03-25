@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { Application, Context } from 'typedoc';
-import { MarkdownRenderer } from './renderer-types';
+import { MarkdownRenderer } from '../application';
 
 export function resolvePackages(
   app: Application,

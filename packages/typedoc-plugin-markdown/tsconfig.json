@@ -4,9 +4,11 @@
     "outDir": "./dist",
     "baseUrl": "src",
     "paths": {
-      "@plugin/*": ["*"]
+      "@app/*": ["./app/*"],
+      "@theme/*": ["./theme/*"],
+      "@options/*": ["./options/*"]
     }
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["./dist", "./test", "./scripts", "**/*.spec.ts"]
+  "exclude": ["./dist", "./test", ".scripts", "**/*.spec.ts"]
 }

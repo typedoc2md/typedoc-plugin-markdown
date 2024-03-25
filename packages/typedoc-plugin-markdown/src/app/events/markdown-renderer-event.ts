@@ -1,29 +1,61 @@
 /**
  * Extends the RendererEvent from TypeDoc to expose navigation property.
+ *
  */
 
-import { MarkdownPageEvent } from '@plugin/app/events';
-import {
-  NavigationItem,
-  RenderTemplate,
-  UrlMapping,
-} from '@plugin/theme/theme-types';
+import { MarkdownPageEvent } from '@app/events/markdown-page-event';
+import { NavigationItem, RenderTemplate, UrlMapping } from '@theme/theme-types';
 import * as path from 'path';
 import { Event, ProjectReflection, Reflection } from 'typedoc';
 
+/**
+ * An event emitted at the beginning and end of the rendering process.
+ *
+ * @usage
+ *
+ * ```ts
+ * app.renderer.on(MarkdownRendererEvent.BEGIN, (event) => {
+ *   console.log(`Render Starting for ${event.project.name}!`);
+ * });
+ * ```
+ *
+ * @category Application
+ */
 export class MarkdownRendererEvent extends Event {
+  /**
+   * The project the renderer is currently processing.
+   */
   readonly project: ProjectReflection;
 
+  /**
+   * The path of the directory the documentation should be written to.
+   */
   readonly outputDirectory: string;
 
+  /**
+   * A list of all pages that should be generated.
+   */
   urls?: UrlMapping<Reflection>[];
-  navigation: NavigationItem[];
 
+  /**
+   * The navigation structure of the project that can be utilised by plugins.
+   */
+  navigation?: NavigationItem[];
+
+  /**
+   * Triggered before the renderer starts rendering a project.
+   * @event
+   */
   static readonly BEGIN = 'beginRender';
+
+  /**
+   * Triggered after the renderer has written all documents.
+   * @event
+   */
   static readonly END = 'endRender';
 
   /**
-   * @hidden
+   * @ignore
    */
   constructor(
     name: string,
@@ -36,7 +68,7 @@ export class MarkdownRendererEvent extends Event {
   }
 
   /**
-   * @hidden
+   * @ignore
    */
   public createPageEvent<Model>(
     mapping: UrlMapping<Model>,

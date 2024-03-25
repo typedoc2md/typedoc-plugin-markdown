@@ -8,7 +8,6 @@ dist
 samples
 out
 typedoc-examples
-plugin-docs
 html
 /devdocs
 /devdocs-html

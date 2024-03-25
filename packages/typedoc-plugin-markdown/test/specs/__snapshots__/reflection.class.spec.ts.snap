@@ -28,7 +28,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:34](http://source-url)
+[classes.ts:40](http://source-url)
 
 ## Methods
 
@@ -44,7 +44,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:39](http://source-url)
+[classes.ts:45](http://source-url)
 "
 `;
 
@@ -90,7 +90,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:39](http://source-url)
+[classes.ts:45](http://source-url)
 "
 `;
 
@@ -137,7 +137,7 @@ Comments for someProp
 
 #### Source
 
-[classes.ts:16](http://source-url)
+[classes.ts:18](http://source-url)
 
 ***
 
@@ -149,7 +149,7 @@ Comments for prop1
 
 #### Source
 
-[classes.ts:12](http://source-url)
+[classes.ts:14](http://source-url)
 "
 `;
 
@@ -204,7 +204,7 @@ Comments for ClassWithAccessors
 
 #### Source
 
-[classes.ts:97](http://source-url)
+[classes.ts:121](http://source-url)
 
 ## Accessors
 
@@ -230,7 +230,7 @@ Param comments
 
 #### Source
 
-[classes.ts:101](http://source-url)
+[classes.ts:125](http://source-url)
 
 ***
 
@@ -244,7 +244,7 @@ Param comments
 
 #### Source
 
-[classes.ts:117](http://source-url)
+[classes.ts:141](http://source-url)
 
 ***
 
@@ -258,7 +258,7 @@ Param comments
 
 #### Source
 
-[classes.ts:113](http://source-url)
+[classes.ts:137](http://source-url)
 "
 `;
 
@@ -313,7 +313,7 @@ Comments for setter
 
 #### Source
 
-[classes.ts:101](http://source-url)
+[classes.ts:125](http://source-url)
 
 ***
 
@@ -331,7 +331,7 @@ set noGetter(x: string): void
 
 #### Source
 
-[classes.ts:117](http://source-url)
+[classes.ts:141](http://source-url)
 
 ***
 
@@ -347,7 +347,7 @@ get noSetter(): string
 
 #### Source
 
-[classes.ts:113](http://source-url)
+[classes.ts:137](http://source-url)
 "
 `;
 
@@ -376,7 +376,7 @@ Comments for x number
 
 #### Source
 
-[classes.ts:75](http://source-url)
+[classes.ts:95](http://source-url)
 
 ### new ClassWithConstructorOverloads(x)
 
@@ -394,7 +394,7 @@ Comments for x string
 
 #### Source
 
-[classes.ts:80](http://source-url)
+[classes.ts:100](http://source-url)
 
 ### new ClassWithConstructorOverloads(s)
 
@@ -410,7 +410,7 @@ Comments for x string
 
 #### Source
 
-[classes.ts:81](http://source-url)
+[classes.ts:101](http://source-url)
 "
 `;
 
@@ -440,7 +440,7 @@ new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOve
 
 #### Source
 
-[classes.ts:75](http://source-url)
+[classes.ts:95](http://source-url)
 
 ### new ClassWithConstructorOverloads(x)
 
@@ -460,7 +460,7 @@ new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
 
 #### Source
 
-[classes.ts:80](http://source-url)
+[classes.ts:100](http://source-url)
 
 ### new ClassWithConstructorOverloads(s)
 
@@ -480,7 +480,7 @@ new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
 
 #### Source
 
-[classes.ts:81](http://source-url)
+[classes.ts:101](http://source-url)
 "
 `;
 
@@ -509,7 +509,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:182](http://source-url)
+[classes.ts:200](http://source-url)
 
 ***
 
@@ -521,7 +521,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:184](http://source-url)
+[classes.ts:202](http://source-url)
 
 ## Methods
 
@@ -537,7 +537,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:186](http://source-url)
+[classes.ts:204](http://source-url)
 
 ***
 
@@ -553,7 +553,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:190](http://source-url)
+[classes.ts:208](http://source-url)
 "
 `;
 
@@ -597,7 +597,7 @@ expermintalMethod(): void
 
 #### Source
 
-[classes.ts:186](http://source-url)
+[classes.ts:204](http://source-url)
 
 ***
 
@@ -615,7 +615,7 @@ protected internalMethod(): void
 
 #### Source
 
-[classes.ts:190](http://source-url)
+[classes.ts:208](http://source-url)
 "
 `;
 
@@ -623,6 +623,8 @@ exports[`Class Reflection should compile class with modifiers: (Output File Stra
 "# Class: \`abstract\` ClassWithModifiers
 
 Comments for ClassWithModifiers
+
+## Modifiers
 
 ## Constructors
 
@@ -644,7 +646,7 @@ Comments for privateProp
 
 #### Source
 
-[classes.ts:136](http://source-url)
+[classes.ts:158](http://source-url)
 
 ***
 
@@ -656,7 +658,7 @@ Comments for protectedProp
 
 #### Source
 
-[classes.ts:146](http://source-url)
+[classes.ts:168](http://source-url)
 
 ***
 
@@ -668,7 +670,7 @@ Comments for propWithDefault
 
 #### Source
 
-[classes.ts:151](http://source-url)
+[classes.ts:173](http://source-url)
 
 ***
 
@@ -680,7 +682,7 @@ Comments for abstractProperty
 
 #### Source
 
-[classes.ts:141](http://source-url)
+[classes.ts:163](http://source-url)
 
 ***
 
@@ -692,7 +694,7 @@ Comments for staticProp
 
 #### Source
 
-[classes.ts:131](http://source-url)
+[classes.ts:153](http://source-url)
 
 ## Methods
 
@@ -708,7 +710,7 @@ Comment for privateMethod
 
 #### Source
 
-[classes.ts:163](http://source-url)
+[classes.ts:185](http://source-url)
 
 ***
 
@@ -724,7 +726,7 @@ Comment for publicMethod
 
 #### Source
 
-[classes.ts:156](http://source-url)
+[classes.ts:178](http://source-url)
 
 ***
 
@@ -740,7 +742,7 @@ Comment for staticMethod
 
 #### Source
 
-[classes.ts:168](http://source-url)
+[classes.ts:190](http://source-url)
 "
 `;
 
@@ -748,6 +750,8 @@ exports[`Class Reflection should compile class with modifiers: (Output File Stra
 "# \`abstract\` ClassWithModifiers
 
 Comments for ClassWithModifiers
+
+## Modifiers
 
 ## Constructors
 
@@ -787,7 +791,7 @@ Comment for privateMethod
 
 #### Source
 
-[classes.ts:163](http://source-url)
+[classes.ts:185](http://source-url)
 
 ***
 
@@ -805,7 +809,7 @@ Comment for publicMethod
 
 #### Source
 
-[classes.ts:156](http://source-url)
+[classes.ts:178](http://source-url)
 
 ***
 
@@ -823,7 +827,7 @@ Comment for staticMethod
 
 #### Source
 
-[classes.ts:168](http://source-url)
+[classes.ts:190](http://source-url)
 "
 `;
 
@@ -920,7 +924,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:46](http://source-url)
+[classes.ts:54](http://source-url)
 
 ***
 
@@ -930,7 +934,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:47](http://source-url)
+[classes.ts:55](http://source-url)
 
 ## Methods
 
@@ -950,7 +954,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:48](http://source-url)
+[classes.ts:56](http://source-url)
 
 ***
 
@@ -964,7 +968,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:51](http://source-url)
+[classes.ts:59](http://source-url)
 "
 `;
 
@@ -1020,7 +1024,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:48](http://source-url)
+[classes.ts:56](http://source-url)
 
 ***
 
@@ -1036,7 +1040,7 @@ derivedMethod(): string
 
 #### Source
 
-[classes.ts:51](http://source-url)
+[classes.ts:59](http://source-url)
 "
 `;
 
@@ -1073,6 +1077,6 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 
 #### Source
 
-[classes.ts:172](http://source-url)
+[classes.ts:81](http://source-url)
 "
 `;

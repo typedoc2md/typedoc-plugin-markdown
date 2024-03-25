@@ -69,29 +69,31 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
     app.renderer.postRenderAsyncJobs.push(
       async (output: MarkdownRendererEvent) => {
-        const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
-        const baseDir = path
-          .relative(siteDir, outputDir)
-          .split(path.sep)
-          .slice(1)
-          .join(path.sep);
-        const sidebarJson = getSidebar(
-          output.navigation,
-          baseDir,
-          sidebar.filteredIds,
-          docsPreset ? docsPreset[1]?.docs?.numberPrefixParser : null,
-        );
-        fs.writeFileSync(
-          sidebarPath,
-          `// @ts-check
+        if (output.navigation) {
+          const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+          const baseDir = path
+            .relative(siteDir, outputDir)
+            .split(path.sep)
+            .slice(1)
+            .join(path.sep);
+          const sidebarJson = getSidebar(
+            output.navigation,
+            baseDir,
+            sidebar.filteredIds,
+            docsPreset ? docsPreset[1]?.docs?.numberPrefixParser : null,
+          );
+          fs.writeFileSync(
+            sidebarPath,
+            `// @ts-check
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const typedocSidebar = { items: ${JSON.stringify(
-            sidebarJson,
-            null,
-            sidebar.pretty ? 2 : 0,
-          )}};
+              sidebarJson,
+              null,
+              sidebar.pretty ? 2 : 0,
+            )}};
 module.exports = typedocSidebar.items;`,
-        );
+          );
+        }
       },
     );
   }

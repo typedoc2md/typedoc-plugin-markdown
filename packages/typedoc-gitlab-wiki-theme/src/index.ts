@@ -10,7 +10,7 @@ import {
   MarkdownPageEvent,
   MarkdownRendererEvent,
   NavigationItem,
-  OutputFileStrategy,
+  PluginOptions,
 } from 'typedoc-plugin-markdown';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import * as options from './options/declarations';
@@ -59,7 +59,7 @@ export function load(app: Application) {
         ...DEFAULT_SIDEBAR_OPTIONS,
         ...app.options.getValue('sidebar'),
       };
-      if (sidebarOptions.autoConfiguration) {
+      if (sidebarOptions.autoConfiguration && output.navigation) {
         const sidebarHeading = sidebarOptions.heading;
         const sidebarContent = getSidebar(
           output.navigation,
@@ -100,7 +100,7 @@ export function navigation(navigationItems: NavigationItem[]): string {
 
 export function getSidebar(
   navigationItems: NavigationItem[],
-  outputFileStrategy: OutputFileStrategy,
+  outputFileStrategy: PluginOptions['outputFileStrategy'],
 ) {
   const parseSidebarUrl = (url: string) => url.replace(/(.*).md/, '$1');
   const md: string[] = [];
@@ -120,7 +120,7 @@ export function getSidebar(
       }
     });
   } else {
-    if (outputFileStrategy === OutputFileStrategy.Members) {
+    if (outputFileStrategy === 'members') {
       navigationItems.forEach((navigationItem, i) => {
         md.push(`### ${navigationItem.title}`);
         if (navigationItem.children) {

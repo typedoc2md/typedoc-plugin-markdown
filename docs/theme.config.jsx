@@ -1,5 +1,4 @@
-import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import * as path from 'path';
 import { PackageDescription } from './components/package-description';
@@ -7,10 +6,18 @@ import { PackageDescription } from './components/package-description';
 export default {
   logo: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ width: '36px', marginRight: '6px' }}>
-        <FontAwesomeIcon icon={faMarkdown} size="xs" />
+      <div style={{ width: '36px' }}>
+        <Image src="/markdown-logo.svg" alt="Markdown" width={64} height={64} />
       </div>
-      <code style={{ fontSize: '14px' }}>typedoc-plugin-markdown</code>
+      <div
+        style={{
+          marginLeft: '8px',
+          fontSize: '12px',
+          fontWeight: 'bold',
+        }}
+      >
+        TYPEDOC-PLUGIN-MARKDOWN
+      </div>
     </div>
   ),
   project: {
@@ -19,8 +26,11 @@ export default {
   sidebar: {
     defaultMenuCollapseLevel: 1,
   },
-  editLink: { text: '' },
-  banner: { dismissible: true, text: 'V4 pre-release documentation 👋' },
+  editLink: { text: 'x' },
+  banner: {
+    content: <>V4 pre-release documentation 👋</>,
+    dismissible: false,
+  },
   components: {
     PackageDescription,
   },

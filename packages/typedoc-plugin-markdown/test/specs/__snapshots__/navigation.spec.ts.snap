@@ -1666,52 +1666,29 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "Enumerations",
+    "title": "Accessors",
     "children": [
       {
-        "title": "BasicEnum",
-        "url": "enumerations/BasicEnum.md"
-      },
-      {
-        "title": "EnumWithValues",
-        "url": "enumerations/EnumWithValues.md"
+        "title": "ClassWithAccessors",
+        "url": "classes/ClassWithAccessors.md"
       }
     ]
   },
   {
-    "title": "Classes",
+    "title": "Basic",
+    "children": [
+      {
+        "title": "BasicClass",
+        "url": "classes/BasicClass.md"
+      }
+    ]
+  },
+  {
+    "title": "Inheritance",
     "children": [
       {
         "title": "AbstractClass",
         "url": "classes/AbstractClass.md"
-      },
-      {
-        "title": "BasicClass",
-        "url": "classes/BasicClass.md"
-      },
-      {
-        "title": "CallbacksOptions",
-        "url": "classes/CallbacksOptions.md"
-      },
-      {
-        "title": "ClassWithAccessors",
-        "url": "classes/ClassWithAccessors.md"
-      },
-      {
-        "title": "ClassWithConstructorOverloads",
-        "url": "classes/ClassWithConstructorOverloads.md"
-      },
-      {
-        "title": "ClassWithFlags",
-        "url": "classes/ClassWithFlags.md"
-      },
-      {
-        "title": "ClassWithModifiers",
-        "url": "classes/ClassWithModifiers.md"
-      },
-      {
-        "title": "ClassWithTypeParameters",
-        "url": "classes/ClassWithTypeParameters.md"
       },
       {
         "title": "DerivedClassA",
@@ -1728,8 +1705,28 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
     ]
   },
   {
-    "title": "Interfaces",
+    "title": "Other",
     "children": [
+      {
+        "title": "BasicEnum",
+        "url": "enumerations/BasicEnum.md"
+      },
+      {
+        "title": "EnumWithValues",
+        "url": "enumerations/EnumWithValues.md"
+      },
+      {
+        "title": "CallbacksOptions",
+        "url": "classes/CallbacksOptions.md"
+      },
+      {
+        "title": "ClassWithFlags",
+        "url": "classes/ClassWithFlags.md"
+      },
+      {
+        "title": "ClassWithModifiers",
+        "url": "classes/ClassWithModifiers.md"
+      },
       {
         "title": "BasicInterface",
         "url": "interfaces/BasicInterface.md"
@@ -1757,12 +1754,7 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "InterfaceWithTypeParameters",
         "url": "interfaces/InterfaceWithTypeParameters.md"
-      }
-    ]
-  },
-  {
-    "title": "Type Aliases",
-    "children": [
+      },
       {
         "title": "ArrayOfStuff",
         "url": "type-aliases/ArrayOfStuff.md"
@@ -1842,12 +1834,7 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "UnionTypeWithTemplateStrings",
         "url": "type-aliases/UnionTypeWithTemplateStrings.md"
-      }
-    ]
-  },
-  {
-    "title": "Variables",
-    "children": [
+      },
       {
         "title": "objectLiteralVariable",
         "url": "variables/objectLiteralVariable.md"
@@ -1867,12 +1854,7 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "typeOperatorVariable",
         "url": "variables/typeOperatorVariable.md"
-      }
-    ]
-  },
-  {
-    "title": "Functions",
-    "children": [
+      },
       {
         "title": "basicFunction",
         "url": "functions/basicFunction.md"
@@ -1930,8 +1912,44 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "url": "functions/functionWithTypeParameters.md"
       }
     ]
+  },
+  {
+    "title": "Overloads",
+    "children": [
+      {
+        "title": "ClassWithConstructorOverloads",
+        "url": "classes/ClassWithConstructorOverloads.md"
+      },
+      {
+        "title": "ClassWithTypeParameters",
+        "url": "classes/ClassWithTypeParameters.md"
+      }
+    ]
   }
 ]"
 `;
 
-exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `"[]"`;
+exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "Accessors",
+    "children": []
+  },
+  {
+    "title": "Basic",
+    "children": []
+  },
+  {
+    "title": "Inheritance",
+    "children": []
+  },
+  {
+    "title": "Other",
+    "children": []
+  },
+  {
+    "title": "Overloads",
+    "children": []
+  }
+]"
+`;

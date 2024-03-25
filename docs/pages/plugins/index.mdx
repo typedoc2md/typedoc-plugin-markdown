@@ -1,0 +1,85 @@
+import { Cards } from 'nextra/components';
+import {
+  faGithub,
+  faGitlab,
+  faVuejs,
+} from '@fortawesome/free-brands-svg-icons';
+import { faBolt, faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+
+# Related Plugins
+
+Listed here are related plugins that can be used with **typedoc-plugin-markdown** to enhance the documentation experience.
+
+## Utils
+
+Utility plugins that used to adjust the output of the markdown files.
+
+<Cards num={2}>
+  <Cards.Card
+    title="typedoc-plugin-frontmatter"
+    icon={<Image src="/yaml-logo.png" alt="YAML" width={20} height={20} />}
+    arrow={true}
+    href="plugins/frontmatter/introduction"
+  />
+  <Cards.Card
+    title="typedoc-plugin-remark"
+    icon={
+      <Image
+        src="/remark-logo.png"
+        alt="Remark"
+        width={38}
+        height={30}
+      />
+    }
+    arrow={true}
+    href="plugins/remark/introduction"
+/>
+
+</Cards>
+
+## Themes
+
+Theme plugins that can be used to adjust the output for specific platforms.
+
+<Cards num={2}>
+  <Cards.Card
+    title="typedoc-vitepress-theme"
+    icon={<Image src="/vite-logo.svg" alt="Vitepress" width={20} height={20} />}
+    arrow={true}
+    href="plugins/vitepress/introduction"
+  />{' '}
+  <Cards.Card
+    title="typedoc-github-wiki-theme"
+    icon={<Image src="/github-logo.png" alt="Github" width={26} height={26} />}
+    arrow={true}
+    href="plugins/github-wiki/introduction"
+  />{' '}
+  <Cards.Card
+    title="typedoc-gitlab-wiki-theme"
+    icon={<Image src="/gitlab-logo.png" alt="Gitlab" width={26} height={26} />}
+    arrow={true}
+    href="plugins/gitlab-wiki/introduction"
+  />
+</Cards>
+
+## Integrations
+
+Integration plugins that can be used to integrate with other tools.
+
+<Cards num={2}>
+  <Cards.Card
+    title="docusaurus-plugin-typedoc"
+    icon={
+      <Image
+        src="/docusaurus-logo.svg"
+        alt="Docusaurus"
+        width={36}
+        height={36}
+      />
+    }
+    arrow={true}
+    href="plugins/docusaurus/introduction"
+  />
+</Cards>
