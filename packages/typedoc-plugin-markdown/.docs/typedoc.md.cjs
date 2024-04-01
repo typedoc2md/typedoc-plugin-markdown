@@ -14,7 +14,6 @@ const options = {
   publicPath: '/api-docs',
   indexFormat: 'table',
   mergeReadme: true,
-  theme: 'nextra',
   fileExtension: '.mdx',
   entryFileName: 'index.mdx',
   hideBreadcrumbs: true,
@@ -27,5 +26,6 @@ const options = {
     'title.memberPage': '{name}',
   },
   expandParameters: true,
+  flattenOutputFiles: true,
 };
 module.exports = options;

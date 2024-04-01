@@ -152,6 +152,46 @@ export const mergeReadme: Partial<DeclarationOption> = {
 };
 
 /**
+ * By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
+ *
+ * This option will flatten the output files to a single directory as follows:
+ *
+ * Default output:
+ *
+ * <FileTree>
+ *  <FileTree.File name="README.md" />
+ *  <FileTree.Folder name="module-a" defaultOpen>
+ *   <FileTree.Folder name="classes" defaultOpen>
+ *   <FileTree.File name="ClassA.md" />
+ *   <FileTree.File name="ClassB.md" />
+ *  </FileTree.Folder>
+ *  <FileTree.Folder name="functions" defaultOpen>
+ *    <FileTree.File name="FunctionA.md" />
+ *    <FileTree.File name="FunctionB.md" />
+ *  </FileTree.Folder>
+ * </FileTree.Folder>
+ * </FileTree>
+ *
+ * Flattened output:
+ *
+ * <FileTree>
+ *  <FileTree.File name="README.md" />
+ *  <FileTree.File name="module-a.Class.ClassA.md" />
+ *  <FileTree.File name="module-a.Class.ClassB.md" />
+ *  <FileTree.File name="module-a.Function.functionA.md" />
+ *  <FileTree.File name="module-a.Function.function.md" />
+ * </FileTree>
+ *
+ *
+ * @category Output
+ */
+export const flattenOutputFiles: Partial<DeclarationOption> = {
+  help: 'Flatten output files to a single directory.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * By default directories are split by scopes when generating file paths.
  *
  * This option will remove reference to `@scope` in the path when generating files and directories. It does not effect the name of the package or module in the output.
@@ -173,6 +213,8 @@ export const mergeReadme: Partial<DeclarationOption> = {
  *   <FileTree.Folder name="package-1" />
  *   <FileTree.Folder name="package-2" />
  * </FileTree>
+ *
+ * Ignored if `flattenOutputFiles` is set to `true`.
  *
  * @category Output
  */

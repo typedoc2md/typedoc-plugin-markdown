@@ -1,13 +1,13 @@
 import { MarkdownRenderer } from '@app/application';
 import { OutputFileStrategy } from '@options/option-maps';
-import { TemplateMapping, UrlMapping } from '@theme/theme-types';
-import * as path from 'path';
-import { MarkdownTheme } from 'theme/base';
+import { MarkdownTheme } from '@theme/base';
 import {
   getFileNameWithExtension,
   removeFirstScopedDirectory,
   slugifyUrl,
-} from 'theme/lib/utils';
+} from '@theme/lib/utils';
+import { TemplateMapping, UrlMapping, UrlOption } from '@theme/theme-types';
+import * as path from 'path';
 import {
   DeclarationReflection,
   EntryPointStrategy,
@@ -15,15 +15,6 @@ import {
   Reflection,
   ReflectionKind,
 } from 'typedoc';
-
-interface UrlOption {
-  parentUrl?: string;
-  directory?: string | null;
-  forceDirectory?: boolean;
-  outputFileStrategy?: OutputFileStrategy;
-  entryModule?: string;
-  entryFileName?: string;
-}
 
 /**
  * Map the models of the given project to the desired output files.
@@ -37,7 +28,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     .packagesMeta;
   const urls: UrlMapping<Reflection>[] = [];
   const anchors: Record<string, string[]> = {};
-
+  const flattenOutputFiles = options.getValue('flattenOutputFiles');
   const fileExtension = options.getValue('fileExtension');
   const ignoreScopes = options.getValue('excludeScopesInPaths');
   const entryFileName = getFileNameWithExtension(
@@ -62,7 +53,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     buildUrlsFromProject(project);
   }
 
-  return urls;
+  return flattenOutputFiles ? flattenFiles(urls) : urls;
 
   function buildEntryUrls() {
     const preserveReadme =
@@ -469,5 +460,31 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
     return isModules
       ? getFileNameWithExtension('modules', fileExtension)
       : getFileNameWithExtension('globals', fileExtension);
+  }
+
+  function flattenFiles(urls: UrlMapping<Reflection>[]) {
+    const getUrl = (reflection: Reflection) => {
+      const fullname = reflection.getFullName();
+      const fullnameParts = fullname.replace(/\//g, '.').split('.');
+      if (reflection.kind !== ReflectionKind.Module) {
+        fullnameParts.splice(
+          fullnameParts.length - 1,
+          0,
+          ReflectionKind.singularString(reflection.kind).split(' ')[0],
+        );
+      }
+      const url = `${fullnameParts.join('.')}.md`;
+      reflection.url = url;
+      return url;
+    };
+    return urls.map((urlMapping) => {
+      if (urlMapping.model.kind === ReflectionKind.Project) {
+        return urlMapping;
+      }
+      return {
+        ...urlMapping,
+        url: getUrl(urlMapping.model),
+      };
+    });
   }
 }

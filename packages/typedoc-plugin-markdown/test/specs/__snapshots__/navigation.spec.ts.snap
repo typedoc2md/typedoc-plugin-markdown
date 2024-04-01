@@ -941,6 +941,258 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 ]"
 `;
 
+exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "@scope/namespace",
+    "url": "@scope.namespace.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "url": "@scope.namespace.Enumeration.EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "url": "@scope.namespace.Enumeration.EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "url": "@scope.namespace.Class.ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "url": "@scope.namespace.Class.ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "url": "@scope.namespace.Interface.InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "url": "@scope.namespace.Interface.InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "url": "@scope.namespace.Type.TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "url": "@scope.namespace.Type.TypeB.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-1",
+    "children": [
+      {
+        "title": "submodules",
+        "url": "module-1.submodules.submodule-1.md",
+        "children": [
+          {
+            "title": "Enumerations",
+            "children": [
+              {
+                "title": "EnumA",
+                "url": "module-1.submodules.submodule-1.Enumeration.EnumA.md"
+              },
+              {
+                "title": "EnumB",
+                "url": "module-1.submodules.submodule-1.Enumeration.EnumB.md"
+              }
+            ]
+          },
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "url": "module-1.submodules.submodule-1.Class.ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "url": "module-1.submodules.submodule-1.Class.ClassB.md"
+              }
+            ]
+          },
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "InterfaceA",
+                "url": "module-1.submodules.submodule-1.Interface.InterfaceA.md"
+              },
+              {
+                "title": "InterfaceB",
+                "url": "module-1.submodules.submodule-1.Interface.InterfaceB.md"
+              }
+            ]
+          },
+          {
+            "title": "Type Aliases",
+            "children": [
+              {
+                "title": "TypeA",
+                "url": "module-1.submodules.submodule-1.Type.TypeA.md"
+              },
+              {
+                "title": "TypeB",
+                "url": "module-1.submodules.submodule-1.Type.TypeB.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "submodules",
+        "children": [
+          {
+            "title": "submodule-2",
+            "url": "module-1.submodules.submodule-2.md",
+            "children": [
+              {
+                "title": "Enumerations",
+                "children": [
+                  {
+                    "title": "EnumA",
+                    "url": "module-1.submodules.submodule-2.Enumeration.EnumA.md"
+                  },
+                  {
+                    "title": "EnumB",
+                    "url": "module-1.submodules.submodule-2.Enumeration.EnumB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Classes",
+                "children": [
+                  {
+                    "title": "ClassA",
+                    "url": "module-1.submodules.submodule-2.Class.ClassA.md"
+                  },
+                  {
+                    "title": "ClassB",
+                    "url": "module-1.submodules.submodule-2.Class.ClassB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "InterfaceA",
+                    "url": "module-1.submodules.submodule-2.Interface.InterfaceA.md"
+                  },
+                  {
+                    "title": "InterfaceB",
+                    "url": "module-1.submodules.submodule-2.Interface.InterfaceB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Type Aliases",
+                "children": [
+                  {
+                    "title": "TypeA",
+                    "url": "module-1.submodules.submodule-2.Type.TypeA.md"
+                  },
+                  {
+                    "title": "TypeB",
+                    "url": "module-1.submodules.submodule-2.Type.TypeB.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "children": [
+      {
+        "title": "namespace-2",
+        "url": "module-2.namespace-2.md",
+        "children": [
+          {
+            "title": "Enumerations",
+            "children": [
+              {
+                "title": "EnumA",
+                "url": "module-2.namespace-2.Enumeration.EnumA.md"
+              },
+              {
+                "title": "EnumB",
+                "url": "module-2.namespace-2.Enumeration.EnumB.md"
+              }
+            ]
+          },
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "url": "module-2.namespace-2.Class.ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "url": "module-2.namespace-2.Class.ClassB.md"
+              }
+            ]
+          },
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "InterfaceA",
+                "url": "module-2.namespace-2.Interface.InterfaceA.md"
+              },
+              {
+                "title": "InterfaceB",
+                "url": "module-2.namespace-2.Interface.InterfaceB.md"
+              }
+            ]
+          },
+          {
+            "title": "Type Aliases",
+            "children": [
+              {
+                "title": "TypeA",
+                "url": "module-2.namespace-2.Type.TypeA.md"
+              },
+              {
+                "title": "TypeB",
+                "url": "module-2.namespace-2.Type.TypeB.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]"
+`;
+
 exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
@@ -971,6 +1223,42 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
       {
         "title": "namespace-2",
         "url": "module-2/namespace-2.md"
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "@scope/namespace",
+    "url": "@scope.namespace.md"
+  },
+  {
+    "title": "module-1",
+    "children": [
+      {
+        "title": "submodules",
+        "url": "module-1.submodules.submodule-1.md"
+      },
+      {
+        "title": "submodules",
+        "children": [
+          {
+            "title": "submodule-2",
+            "url": "module-1.submodules.submodule-2.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "children": [
+      {
+        "title": "namespace-2",
+        "url": "module-2.namespace-2.md"
       }
     ]
   }

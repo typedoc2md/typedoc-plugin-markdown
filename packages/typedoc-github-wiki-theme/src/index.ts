@@ -15,11 +15,8 @@ import {
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import * as options from './options/declarations';
 import presets from './options/presets';
-import { GithubWikiTheme } from './theme';
 
 export function load(app: Application) {
-  app.renderer.defineTheme('github-wiki', GithubWikiTheme);
-
   Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
       name,
@@ -34,7 +31,6 @@ export function load(app: Application) {
       readonly supportsPackages = false;
       read(container: Options) {
         Object.entries(presets).forEach(([key, value]) => {
-          container.setValue('theme', 'github-wiki');
           container.setValue(key, value);
         });
       }

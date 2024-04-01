@@ -17,6 +17,7 @@ declare module 'typedoc' {
     fileExtension: string;
     entryModule: string;
     mergeReadme: boolean;
+    flattenOutputFiles: boolean;
     excludeScopesInPaths: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
@@ -84,6 +85,11 @@ export interface PluginOptions {
    * Merges the resolved readme into the project index page.
    */
   mergeReadme: boolean;
+
+  /**
+   * Flatten output files to a single directory.
+   */
+  flattenOutputFiles: boolean;
 
   /**
    * Exclude writing @ scope directories in paths.

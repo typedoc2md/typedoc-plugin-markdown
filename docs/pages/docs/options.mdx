@@ -175,6 +175,52 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 
 ___
 
+### flattenOutputFiles
+
+<Callout>Flatten output files to a single directory.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
+
+This option will flatten the output files to a single directory as follows:
+
+Default output:
+
+<FileTree>
+ <FileTree.File name="README.md" />
+ <FileTree.Folder name="module-a" defaultOpen>
+  <FileTree.Folder name="classes" defaultOpen>
+  <FileTree.File name="ClassA.md" />
+  <FileTree.File name="ClassB.md" />
+ </FileTree.Folder>
+ <FileTree.Folder name="functions" defaultOpen>
+   <FileTree.File name="FunctionA.md" />
+   <FileTree.File name="FunctionB.md" />
+ </FileTree.Folder>
+</FileTree.Folder>
+</FileTree>
+
+Flattened output:
+
+<FileTree>
+ <FileTree.File name="README.md" />
+ <FileTree.File name="module-a.Class.ClassA.md" />
+ <FileTree.File name="module-a.Class.ClassB.md" />
+ <FileTree.File name="module-a.Function.functionA.md" />
+ <FileTree.File name="module-a.Function.function.md" />
+</FileTree>
+
+
+```json filename="typedoc.json"
+{
+  "flattenOutputFiles": false
+}
+
+```
+
+___
+
 ### excludeScopesInPaths
 
 <Callout>Exclude writing @ scope directories in paths.</Callout>
@@ -202,6 +248,8 @@ The following will be the directory structure for packages named `@scope/package
   <FileTree.Folder name="package-1" />
   <FileTree.Folder name="package-2" />
 </FileTree>
+
+Ignored if `flattenOutputFiles` is set to `true`.
 
 
 ```json filename="typedoc.json"

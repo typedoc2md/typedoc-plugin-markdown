@@ -86,7 +86,8 @@ export async function generateDocs(docsConfig: DocsConfig) {
       }
       options.forEach((option) => {
         out.push(
-          `${optionLevel} ${Boolean(option.deprecated) ? `~${option.name}~` : `${option.name}`
+          `${optionLevel} ${
+            Boolean(option.deprecated) ? `~${option.name}~` : `${option.name}`
           }`,
         );
         if (Boolean(option.deprecated)) {
@@ -130,12 +131,12 @@ export async function generateDocs(docsConfig: DocsConfig) {
           out.push(`
 \`\`\`json filename="typedoc.json"
 ${JSON.stringify(
-            JSON.parse(`{
+  JSON.parse(`{
   "${option.name}": ${getExampleValue(option)}
 }`),
-            null,
-            2,
-          )}
+  null,
+  2,
+)}
 
 \`\`\``);
         }

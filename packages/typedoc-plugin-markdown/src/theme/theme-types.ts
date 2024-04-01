@@ -1,4 +1,5 @@
 import { MarkdownPageEvent } from '@app/events/markdown-page-event';
+import { OutputFileStrategy } from '@options/option-maps';
 import { ReflectionKind } from 'typedoc';
 
 /**
@@ -29,4 +30,13 @@ export interface TemplateMapping {
   directory: string | null;
   template: any;
   kind: ReflectionKind;
+}
+
+export interface UrlOption {
+  parentUrl?: string;
+  directory?: string | null;
+  forceDirectory?: boolean;
+  outputFileStrategy?: OutputFileStrategy;
+  entryModule?: string;
+  entryFileName?: string;
 }

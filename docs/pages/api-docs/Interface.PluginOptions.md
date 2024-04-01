@@ -52,6 +52,14 @@ Merges the resolved readme into the project index page.
 
 ***
 
+### flattenOutputFiles
+
+> **flattenOutputFiles**: `boolean`
+
+Flatten output files to a single directory.
+
+***
+
 ### excludeScopesInPaths
 
 > **excludeScopesInPaths**: `boolean`

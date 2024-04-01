@@ -55,7 +55,7 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       excludeScopesInPaths: true,
     },
-    options: [{}],
+    options: [{}, { flattenOutputFiles: true }],
   },
   groups: {
     only: false,

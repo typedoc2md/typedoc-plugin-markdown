@@ -2,8 +2,6 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { ReflectionKind } from 'typedoc';
-import { MarkdownTheme } from 'typedoc-plugin-markdown';
 
 /**
  * Local plugin to tweak TypeDoc output for nextra docs
@@ -12,7 +10,6 @@ import { MarkdownTheme } from 'typedoc-plugin-markdown';
  */
 export function load(app) {
   writeMetaJsFiles(app);
-  app.renderer.defineTheme('nextra', NextraTheme);
 }
 
 /**
@@ -53,33 +50,4 @@ export function slugifyUrl(url) {
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
-}
-
-export class NextraTheme extends MarkdownTheme {
-  getUrls(project) {
-    return super.getUrls(project).map((urlMapping) => {
-      if (urlMapping.model.kind === ReflectionKind.Project) {
-        return urlMapping;
-      }
-      return {
-        ...urlMapping,
-        url: this.getUrl(urlMapping.model),
-      };
-    });
-  }
-
-  getUrl(reflection) {
-    const fullname = reflection.getFullName();
-    const fullnameParts = fullname.split('.');
-    if (reflection.kind !== ReflectionKind.Module) {
-      fullnameParts.splice(
-        fullnameParts.length - 1,
-        0,
-        ReflectionKind.singularString(reflection.kind).split(' ')[0],
-      );
-    }
-    const url = `${fullnameParts.join('.')}.md`;
-    reflection.url = url;
-    return url;
-  }
 }

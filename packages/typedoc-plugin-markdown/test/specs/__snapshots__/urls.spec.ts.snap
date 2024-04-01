@@ -82,6 +82,48 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 1`
 ]
 `;
 
+exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 2`] = `
+[
+  "@scope.namespace.Class.ClassA.md",
+  "@scope.namespace.Class.ClassB.md",
+  "@scope.namespace.Enumeration.EnumA.md",
+  "@scope.namespace.Enumeration.EnumB.md",
+  "@scope.namespace.Interface.InterfaceA.md",
+  "@scope.namespace.Interface.InterfaceB.md",
+  "@scope.namespace.Type.TypeA.md",
+  "@scope.namespace.Type.TypeB.md",
+  "@scope.namespace.md",
+  "README.md",
+  "module-1.submodules.submodule-1.Class.ClassA.md",
+  "module-1.submodules.submodule-1.Class.ClassB.md",
+  "module-1.submodules.submodule-1.Enumeration.EnumA.md",
+  "module-1.submodules.submodule-1.Enumeration.EnumB.md",
+  "module-1.submodules.submodule-1.Interface.InterfaceA.md",
+  "module-1.submodules.submodule-1.Interface.InterfaceB.md",
+  "module-1.submodules.submodule-1.Type.TypeA.md",
+  "module-1.submodules.submodule-1.Type.TypeB.md",
+  "module-1.submodules.submodule-1.md",
+  "module-1.submodules.submodule-2.Class.ClassA.md",
+  "module-1.submodules.submodule-2.Class.ClassB.md",
+  "module-1.submodules.submodule-2.Enumeration.EnumA.md",
+  "module-1.submodules.submodule-2.Enumeration.EnumB.md",
+  "module-1.submodules.submodule-2.Interface.InterfaceA.md",
+  "module-1.submodules.submodule-2.Interface.InterfaceB.md",
+  "module-1.submodules.submodule-2.Type.TypeA.md",
+  "module-1.submodules.submodule-2.Type.TypeB.md",
+  "module-1.submodules.submodule-2.md",
+  "module-2.namespace-2.Class.ClassA.md",
+  "module-2.namespace-2.Class.ClassB.md",
+  "module-2.namespace-2.Enumeration.EnumA.md",
+  "module-2.namespace-2.Enumeration.EnumB.md",
+  "module-2.namespace-2.Interface.InterfaceA.md",
+  "module-2.namespace-2.Interface.InterfaceB.md",
+  "module-2.namespace-2.Type.TypeA.md",
+  "module-2.namespace-2.Type.TypeB.md",
+  "module-2.namespace-2.md",
+]
+`;
+
 exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 1`] = `
 [
   "README.md",
@@ -89,6 +131,16 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 1`
   "module-1/submodules/submodule-2.md",
   "module-2/namespace-2.md",
   "namespace.md",
+]
+`;
+
+exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 2`] = `
+[
+  "@scope.namespace.md",
+  "README.md",
+  "module-1.submodules.submodule-1.md",
+  "module-1.submodules.submodule-2.md",
+  "module-2.namespace-2.md",
 ]
 `;
 
