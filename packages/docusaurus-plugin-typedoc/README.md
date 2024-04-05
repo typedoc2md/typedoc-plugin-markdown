@@ -12,4 +12,4 @@ A Docusaurus plugin to integrate TypeDoc into a Docusaurus project.
 
 ## Documentation
 
-Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/integrations/docusaurus/introduction) for comprehensive documentation, including options and usage guides.
+Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/plugins/docusaurus) for comprehensive documentation, including options and usage guides.

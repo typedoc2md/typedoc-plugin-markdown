@@ -1,12 +1,10 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import { Cards } from 'nextra/components';
-import pjson from '../../../../packages/typedoc-plugin-frontmatter/package.json';
+import pjson from '../../../packages/typedoc-plugin-frontmatter/package.json';
 
 # typedoc-plugin-frontmatter
 
-<PackageDescription pjson={pjson}></PackageDescription>
+<PackageDescription pjson={pjson} />
 
 ## Features
 
@@ -18,7 +16,9 @@ import pjson from '../../../../packages/typedoc-plugin-frontmatter/package.json'
 <Cards num={2}>
   <Cards.Card
     title="View on Github"
-    icon={<FontAwesomeIcon icon={faGithub} />}
+    icon={
+      <Image src="/github-logo.png" alt="Github" width={24} height={24}></Image>
+    }
     arrow={true}
     href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/02-typedoc-plugin-frontmatter"
     target="_blank"

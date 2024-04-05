@@ -12,4 +12,4 @@ A plugin for TypeDoc that enables TypeScript API documentation to be generated i
 
 ## Documentation
 
-Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org) for comprehensive documentation, including options and usage guides.
+Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/docs) for comprehensive documentation, including options and usage guides.

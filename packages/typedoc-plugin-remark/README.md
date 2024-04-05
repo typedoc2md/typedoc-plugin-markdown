@@ -12,4 +12,4 @@ A plugin for TypeDoc that enables additional markdown transformations with remar
 
 ## Documentation
 
-Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/utilities/remark/introduction) for comprehensive documentation, including options and usage guides.
+Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/plugins/remark) for comprehensive documentation, including options and usage guides.

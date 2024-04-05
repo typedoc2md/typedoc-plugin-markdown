@@ -1,13 +1,11 @@
-import pjson from '../../../../packages/typedoc-vitepress-theme/package.json';
+import Image from 'next/image';
+import pjson from '../../../packages/typedoc-vitepress-theme/package.json';
 import { Callout, Steps } from 'nextra/components';
 import { Cards } from 'nextra/components';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 # typedoc-vitepress-theme
 
-<PackageDescription pjson={pjson}></PackageDescription>
+<PackageDescription pjson={pjson} />
 
 ## Features
 
@@ -27,14 +25,21 @@ The following is a simple example of a VitePress project running TypeDoc.
 <Cards num={2}>
   <Cards.Card
     title="View on Github"
-    icon={<FontAwesomeIcon icon={faGithub} />}
+    icon={<Image src="/github-logo.png" alt="Github" width={24} height={24} />}
     arrow={true}
     href="https://github.com/tgreyuk/typedoc-vitepress-theme-example"
     target="_blank"
-  />{' '}
+  />
   <Cards.Card
     title="View on StackBlitz"
-    icon={<FontAwesomeIcon icon={faBolt} />}
+    icon={
+      <Image
+        src="/stackblitz-logo.png"
+        alt="Stackblitz"
+        width={24}
+        height={24}
+      />
+    }
     arrow={true}
     href="https://stackblitz.com/~/github.com/tgreyuk/typedoc-vitepress-theme-example"
     target="_blank"

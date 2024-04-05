@@ -1,12 +1,10 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Cards } from 'nextra/components';
 import pjson from '../../../packages/typedoc-plugin-markdown/package.json';
+import Image from 'next/image';
 
 # typedoc-plugin-markdown
 
-<PackageDescription pjson={pjson}></PackageDescription>
+<PackageDescription pjson={pjson} />
 
 ## Overview
 
@@ -20,14 +18,14 @@ Markdown output is useful when documentation is to be included in project README
 - Works alongside other TypeDoc plugins.
 - Configurable output file structure.
 - Configurable UI options
-- [Frontmatter](/utilities/frontmatter/introduction) and [Remark](/utilities/remark/introduction) utility plugins available.
+- [Frontmatter](/plugins/frontmatter) and [Remark](/plugins/remark) utility plugins available.
 
 ## Examples
 
 <Cards num={2}>
   <Cards.Card
     title="View on Github"
-    icon={<FontAwesomeIcon icon={faGithub} />}
+    icon={<Image src="/github-logo.png" alt="Github" width={24} height={24} />}
     arrow={true}
     href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/01-typedoc-plugin-markdown"
     target="_blank"

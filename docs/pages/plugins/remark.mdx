@@ -1,0 +1,19 @@
+import Image from 'next/image';
+import { Cards } from 'nextra/components';
+import pjson from '../../../packages/typedoc-plugin-frontmatter/package.json';
+
+# typedoc-plugin-remark
+
+<PackageDescription pjson={pjson} />
+
+## Examples
+
+<Cards num={2}>
+  <Cards.Card
+    title="View on Github"
+    icon={<Image src="/github-logo.png" alt="Github" width={24} height={24} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/03-typedoc-plugin-remark"
+    target="_blank"
+  />
+</Cards>

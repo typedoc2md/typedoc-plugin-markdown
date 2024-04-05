@@ -12,4 +12,4 @@ A plugin for TypeDoc that prepends configurable frontmatter to page content.
 
 ## Documentation
 
-Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/utilities/frontmatter/introduction) for comprehensive documentation, including options and usage guides.
+Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/plugins/frontmatter) for comprehensive documentation, including options and usage guides.

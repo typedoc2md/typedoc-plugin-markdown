@@ -12,4 +12,4 @@ A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible wit
 
 ## Documentation
 
-Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/themes/github-wiki/introduction) for comprehensive documentation, including options and usage guides.
+Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/plugins/github-wiki) for comprehensive documentation, including options and usage guides.

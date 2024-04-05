@@ -55,6 +55,6 @@ export default {
     next: true,
   },
   footer: {
-    text: <div></div>,
+    content: <div></div>,
   },
 };

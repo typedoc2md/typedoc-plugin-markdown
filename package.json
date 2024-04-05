@@ -11,9 +11,8 @@
     "devtools/packages/*"
   ],
   "scripts": {
-    "predocs": "npm run build --workspace typedoc-plugin-markdown",
-    "docs": "typedoc && typedoc --options ./typedoc.html.json",
-    "scripts": "ts-node ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs",
+    "docs:api": "npm run build --workspace typedoc-plugin-markdown && typedoc && typedoc --options ./typedoc.html.json",
+    "docs:support": "ts-node ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs",
     "prerelease": "npm run build --workspaces --if-present",
     "release": "npx changeset publish"
   },
@@ -21,15 +20,15 @@
     "@changesets/cli": "^2.27.1",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.28",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
+    "@types/node": "^20.12.4",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
     "consola": "^3.2.3",
     "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
-    "glob": "^10.3.10",
+    "glob": "^10.3.12",
     "jest": "^29.7.0",
-    "markdownlint": "^0.33.0",
+    "markdownlint": "^0.34.0",
     "mdast-util-from-markdown": "^2.0.0",
     "mdast-util-heading-range": "^4.0.0",
     "prettier": "^3.2.5",
@@ -45,7 +44,7 @@
     "tsc-alias": "^1.8.8",
     "typedoc": "0.25.12",
     "typedoc-plugin-merge-modules": "^5.1.0",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.4",
     "unified-prettier": "^2.0.1"
   }
 }
