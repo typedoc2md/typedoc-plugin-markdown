@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0-next.55
+## 4.0.0-next.55 (2024-04-05)
 
 ### Patch Changes
 
