@@ -1,5 +1,12 @@
 import { Cards } from 'nextra/components';
 import Image from 'next/image';
+import { faFileLines, faBook } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGithub,
+  faGitlab,
+  faVuejs,
+} from '@fortawesome/free-brands-svg-icons';
 
 # Related Plugins
 
@@ -12,17 +19,13 @@ Utility plugins that used to adjust the output of the markdown files.
 <Cards num={2}>
   <Cards.Card
     title="typedoc-plugin-frontmatter"
-    icon={
-      <Image src="/yaml-logo.png" alt="YAML" width={20} height={20}></Image>
-    }
+    icon={<FontAwesomeIcon icon={faFileLines} />}
     arrow={true}
     href="plugins/frontmatter"
   />
   <Cards.Card
     title="typedoc-plugin-remark"
-    icon={
-      <Image src="/remark-logo.png" alt="Remark" width={38} height={30}></Image>
-    }
+    icon={<FontAwesomeIcon icon={faFileLines} />}
     arrow={true}
     href="plugins/remark"
   />
@@ -35,30 +38,19 @@ Theme plugins that can be used to adjust the output for specific platforms.
 <Cards num={2}>
   <Cards.Card
     title="typedoc-vitepress-theme"
-    icon={
-      <Image
-        src="/vite-logo.svg"
-        alt="Vitepress"
-        width={20}
-        height={20}
-      ></Image>
-    }
+    icon={<FontAwesomeIcon icon={faVuejs} />}
     arrow={true}
     href="plugins/vitepress"
   />
   <Cards.Card
     title="typedoc-github-wiki-theme"
-    icon={
-      <Image src="/github-logo.png" alt="Github" width={24} height={24}></Image>
-    }
+    icon={<FontAwesomeIcon icon={faGithub} />}
     arrow={true}
     href="plugins/github-wiki"
   />
   <Cards.Card
     title="typedoc-gitlab-wiki-theme"
-    icon={
-      <Image src="/gitlab-logo.png" alt="Gitlab" width={26} height={26}></Image>
-    }
+    icon={<FontAwesomeIcon icon={faGitlab} />}
     arrow={true}
     href="plugins/gitlab-wiki"
   />
@@ -71,14 +63,7 @@ Integration plugins that can be used to integrate with other tools.
 <Cards num={2}>
   <Cards.Card
     title="docusaurus-plugin-typedoc"
-    icon={
-      <Image
-        src="/docusaurus-logo.svg"
-        alt="Docusaurus"
-        width={36}
-        height={36}
-      ></Image>
-    }
+    icon={<FontAwesomeIcon icon={faBook} />}
     arrow={true}
     href="plugins/docusaurus"
   />

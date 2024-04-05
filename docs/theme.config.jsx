@@ -1,13 +1,14 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import * as path from 'path';
 import { PackageDescription } from './components/package-description';
+import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default {
   logo: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <div style={{ width: '36px' }}>
-        <Image src="/markdown-logo.svg" alt="Markdown" width={64} height={64} />
+        <FontAwesomeIcon icon={faMarkdown} size="xs" />
       </div>
       <div
         style={{

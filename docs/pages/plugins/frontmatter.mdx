@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Cards } from 'nextra/components';
 import pjson from '../../../packages/typedoc-plugin-frontmatter/package.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 # typedoc-plugin-frontmatter
 
@@ -16,9 +18,7 @@ import pjson from '../../../packages/typedoc-plugin-frontmatter/package.json';
 <Cards num={2}>
   <Cards.Card
     title="View on Github"
-    icon={
-      <Image src="/github-logo.png" alt="Github" width={24} height={24}></Image>
-    }
+    icon={<FontAwesomeIcon icon={faGithub} />}
     arrow={true}
     href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/02-typedoc-plugin-frontmatter"
     target="_blank"
