@@ -69,13 +69,13 @@ Comments for function
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
+> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`object\`\\>
 
 Comments for function
 
 ## Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`object\`\\>
 
 Return comments
 
@@ -94,14 +94,14 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 "# functionReturningAPromise()
 
 \`\`\`ts
-functionReturningAPromise(): Promise<Object>
+functionReturningAPromise(): Promise<object>
 \`\`\`
 
 Comments for function
 
 ## Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`Object\`\\>
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`object\`\\>
 
 Return comments
 
@@ -199,13 +199,13 @@ Return comments
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAnObject()
 
-> **functionReturningAnObject**(): \`Object\`
+> **functionReturningAnObject**(): \`object\`
 
 Comments for function
 
 ## Returns
 
-\`Object\`
+\`object\`
 
 Return comments
 
@@ -233,14 +233,14 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 "# functionReturningAnObject()
 
 \`\`\`ts
-functionReturningAnObject(): Object
+functionReturningAnObject(): object
 \`\`\`
 
 Comments for function
 
 ## Returns
 
-\`Object\`
+\`object\`
 
 Return comments
 
@@ -338,7 +338,7 @@ exports[`Function Reflection should compile function with complex params: (Outpu
 "# functionWithComplexParams()
 
 \`\`\`ts
-functionWithComplexParams(paramA: (a: string) => true, paramB: Object): boolean
+functionWithComplexParams(paramA: (a: string) => true, paramB: object): boolean
 \`\`\`
 
 Function with function parmas
@@ -348,7 +348,7 @@ Function with function parmas
 | Parameter | Type |
 | :------ | :------ |
 | \`paramA\` | (\`a\`: \`string\`) => \`true\` |
-| \`paramB\` | \`Object\` |
+| \`paramB\` | \`object\` |
 | \`paramB.x\` | \`1\` |
 
 ## Returns
@@ -515,7 +515,7 @@ This is the first signature of a function with multiple signatures.
 ## functionWithMultipleSignatures(value)
 
 \`\`\`ts
-functionWithMultipleSignatures(value: Object): string
+functionWithMultipleSignatures(value: object): string
 \`\`\`
 
 This is the second signature of a function with multiple signatures.
@@ -524,7 +524,7 @@ This is the second signature of a function with multiple signatures.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`value\` | \`Object\` | An object containing the name value. |
+| \`value\` | \`object\` | An object containing the name value. |
 | \`value.name\` | \`string\` | A value of the object. |
 
 ### Returns
@@ -570,14 +570,14 @@ exports[`Function Reflection should compile function with named params: (Output 
 "# functionWithNamedParams()
 
 \`\`\`ts
-functionWithNamedParams(__namedParameters: Object, anotherParam: string): void
+functionWithNamedParams(__namedParameters: object, anotherParam: string): void
 \`\`\`
 
 ## Parameters
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`__namedParameters\` | \`Object\` | various options |
+| \`__namedParameters\` | \`object\` | various options |
 | \`__namedParameters.bar\`? | \`number\` | - |
 | \`__namedParameters.foo\`? | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
@@ -644,7 +644,7 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 
 \`\`\`ts
 functionWithNestedParameters(
-   params: Object, 
+   params: object, 
    context: any, 
    somethingElse?: string): boolean
 \`\`\`
@@ -655,11 +655,11 @@ Some nested params.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \`Object\` | The parameters passed to the method. |
+| \`params\` | \`object\` | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
-| \`params.nestedObj\` | \`Object\` | A nested object. |
+| \`params.nestedObj\` | \`object\` | A nested object. |
 | \`params.nestedObj.name\`? | \`string\` | - |
-| \`params.nestedObj.obj\`? | \`Object\` | - |
+| \`params.nestedObj.obj\`? | \`object\` | - |
 | \`params.nestedObj.obj.name\`? | () => \`void\` | - |
 | \`params.nestedObj.value\`? | \`number\` | - |
 | \`params.parent\`? | \`number\` | - |

@@ -20,5 +20,5 @@ export function reflectionType(
 
   return expandObjects
     ? context.partials.declarationType(root)
-    : backTicks('Object');
+    : backTicks('object');
 }

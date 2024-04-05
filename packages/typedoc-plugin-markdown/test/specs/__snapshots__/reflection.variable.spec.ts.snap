@@ -3,7 +3,7 @@
 exports[`Variable Reflection should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
-> **\`const\`** **objectWithSymbol**: \`Object\`
+> **\`const\`** **objectWithSymbol**: \`object\`
 
 Comments variable with symbol
 
@@ -25,7 +25,7 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 "# objectWithSymbol
 
 \`\`\`ts
-const objectWithSymbol: Object;
+const objectWithSymbol: object;
 \`\`\`
 
 Comments variable with symbol
@@ -101,7 +101,7 @@ A simple string variable
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-> **\`const\`** **objectLiteralVariable**: \`Object\`
+> **\`const\`** **objectLiteralVariable**: \`object\`
 
 Comments for objectLiteralVariable
 
@@ -161,7 +161,7 @@ Comments for objectLiteralVariable
 
 ### valueX
 
-> **valueX**: \`Object\`
+> **valueX**: \`object\`
 
 ### valueX.valueA
 
@@ -169,7 +169,7 @@ Comments for objectLiteralVariable
 
 ### valueX.valueY()
 
-> **valueY**: (\`z\`) => \`Object\`
+> **valueY**: (\`z\`) => \`object\`
 
 #### Parameters
 
@@ -177,7 +177,7 @@ Comments for objectLiteralVariable
 
 #### Returns
 
-\`Object\`
+\`object\`
 
 ##### a
 
@@ -189,7 +189,7 @@ Comments for objectLiteralVariable
 
 ##### c
 
-> **c**: \`Object\`
+> **c**: \`object\`
 
 ##### c.a
 
@@ -235,7 +235,7 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 "# objectLiteralVariable
 
 \`\`\`ts
-const objectLiteralVariable: Object;
+const objectLiteralVariable: object;
 \`\`\`
 
 Comments for objectLiteralVariable
@@ -257,9 +257,9 @@ Comments for objectLiteralVariable
 | prop\\|with\\|pipes | \`string\` | 'prop\\|with\\|pipes' |
 | \`valueA\` | \`number\` | 100 |
 | \`valueB\` | \`boolean\` | true |
-| \`valueX\` | \`Object\` | - |
+| \`valueX\` | \`object\` | - |
 | \`valueX.valueA\` | \`number\`[] | - |
-| \`valueX.valueY\` | (\`z\`: \`string\`) => \`Object\` | - |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - |
 | \`valueX.valueZ\` | \`string\` | 'foo' |
 | \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - |
 | \\| | \`string\` | '\\|' |

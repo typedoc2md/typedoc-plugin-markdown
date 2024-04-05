@@ -97,7 +97,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: LiteralType
 
-> **LiteralType**: \`Object\`
+> **LiteralType**: \`object\`
 
 Comments for LiteralType
 
@@ -111,7 +111,7 @@ comment for x
 
 ### y
 
-> **y**: \`Object\`
+> **y**: \`object\`
 
 comment for y
 
@@ -207,7 +207,7 @@ exports[`Type Alias Reflection should compile external literal type: (Output Fil
 "# LiteralType
 
 \`\`\`ts
-type LiteralType: Object;
+type LiteralType: object;
 \`\`\`
 
 Comments for LiteralType
@@ -217,7 +217,7 @@ Comments for LiteralType
 | Member | Type | Description |
 | :------ | :------ | :------ |
 | \`x\` | \`string\` | comment for x |
-| \`y\` | \`Object\` | comment for y |
+| \`y\` | \`object\` | comment for y |
 | \`y.x\` | \`string\` | comment for y.x |
 | \`y.y\` | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`: \`string\`) => \`string\` | comment for y.z |
@@ -342,7 +342,7 @@ Comments for IndexAccessType
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: IntersectionType
 
-> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`Object\`
+> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`object\`
 
 Comments for IntersectionType
 
@@ -362,7 +362,7 @@ exports[`Type Alias Reflection should compile intersection type: (Output File St
 "# IntersectionType
 
 \`\`\`ts
-type IntersectionType: TupleType & ArrayType & Object;
+type IntersectionType: TupleType & ArrayType & object;
 \`\`\`
 
 Comments for IntersectionType
@@ -645,7 +645,7 @@ Union with template strings
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: UnionType
 
-> **UnionType**: \`string\` \\| \`boolean\` \\| \`Object\`
+> **UnionType**: \`string\` \\| \`boolean\` \\| \`object\`
 
 Comments for UnionType
 
@@ -659,7 +659,7 @@ exports[`Type Alias Reflection should compile union type: (Output File Strategy 
 "# UnionType
 
 \`\`\`ts
-type UnionType: string | boolean | Object;
+type UnionType: string | boolean | object;
 \`\`\`
 
 Comments for UnionType

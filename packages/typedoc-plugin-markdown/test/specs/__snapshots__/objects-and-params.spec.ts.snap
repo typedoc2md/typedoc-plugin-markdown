@@ -425,11 +425,11 @@ Some nested params.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \`Object\` | The parameters passed to the method. |
+| \`params\` | \`object\` | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
-| \`params.nestedObj\` | \`Object\` | A nested object. |
+| \`params.nestedObj\` | \`object\` | A nested object. |
 | \`params.nestedObj.name\`? | \`string\` | - |
-| \`params.nestedObj.obj\`? | \`Object\` | - |
+| \`params.nestedObj.obj\`? | \`object\` | - |
 | \`params.nestedObj.obj.name\`? | () => \`void\` | - |
 | \`params.nestedObj.value\`? | \`number\` | - |
 | \`params.parent\`? | \`number\` | - |

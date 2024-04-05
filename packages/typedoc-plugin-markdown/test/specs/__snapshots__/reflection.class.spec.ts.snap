@@ -113,7 +113,7 @@ Comments for BasicClass
 
 ### objecLiteralProp
 
-> **objecLiteralProp**: \`Object\`
+> **objecLiteralProp**: \`object\`
 
 #### someFunction()
 
@@ -174,7 +174,7 @@ new BasicClass(): BasicClass
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`objecLiteralProp\` | \`Object\` | - |
+| \`objecLiteralProp\` | \`object\` | - |
 | \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | Comments for someFunction |
 | \`objecLiteralProp.someProp\` | \`string\` | Comments for someProp |
 | \`someProp\` | \`string\` | Comments for prop1 |

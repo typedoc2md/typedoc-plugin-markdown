@@ -66,7 +66,7 @@ Holds the textmappings object of the theme.
 
 ### packagesMetaData
 
-> **`readonly`** **packagesMetaData**: `Record`\<`string`, `Object`\>
+> **`readonly`** **packagesMetaData**: `Record`\<`string`, `object`\>
 
 Holds meta data for individual packages (if entryPointStrategy equals `packages`).
 
@@ -78,7 +78,7 @@ Theme resources are the main building blocks for the theme context. They are spl
 
 ### templates
 
-> **templates**: `Object`
+> **templates**: `object`
 
 Then `templates` namespace holds the main templates for the theme and are mapped to single pages and configured in the MarkdownTheme.
 
@@ -112,7 +112,7 @@ All templates return a string that is passed back to the renderer. Internally te
 
 ### partials
 
-> **partials**: `Object`
+> **partials**: `object`
 
 Then `partials` namespace holds the partials for the theme and are used by templates to map speficic models to page output.
 
@@ -274,7 +274,7 @@ Renders an constructor member.
 
 ##### declaration()
 
-> **declaration**: (`model`: [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html), `options`: `Object`) => `string`
+> **declaration**: (`model`: [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html), `options`: `object`) => `string`
 
 Renders a standard declaration member.
 
@@ -283,7 +283,7 @@ Renders a standard declaration member.
 | Parameter | Type |
 | :------ | :------ |
 | `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `Object` |
+| `options` | `object` |
 | `options.headingLevel` | `number` |
 | `options.nested`? | `boolean` |
 
@@ -556,14 +556,14 @@ Renders a signature member.
 
 ##### signatureTitle()
 
-> **signatureTitle**: (`signature`: `SignatureReflection`, `opts`?: `Object`) => `string`
+> **signatureTitle**: (`signature`: `SignatureReflection`, `opts`?: `object`) => `string`
 
 ###### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `signature` | `SignatureReflection` |
-| `opts`? | `Object` |
+| `opts`? | `object` |
 | `opts.accessor`? | `string` |
 | `opts.includeType`? | `boolean` |
 
@@ -697,14 +697,14 @@ Renders a signature member.
 
 ##### comment()
 
-> **comment**: (`model`: `Comment`, `options`: `Object`) => `string`
+> **comment**: (`model`: `Comment`, `options`: `object`) => `string`
 
 ###### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model` | `Comment` |
-| `options` | `Object` |
+| `options` | `object` |
 | `options.headingLevel`? | `number` |
 | `options.showSummary`? | `boolean` |
 | `options.showTags`? | `boolean` |
@@ -989,7 +989,7 @@ Takes a generic Type and returns the appropriate partial for it.
 
 ### helpers
 
-> **helpers**: `Object`
+> **helpers**: `object`
 
 Then `helpers` namespace holds the helpers for the theme and are smaller utility functions that return snippets or text or other data transformations.
 
@@ -1070,7 +1070,7 @@ Helpers can return any value types.
 
 #### getPackagesMeta()
 
-> **getPackagesMeta**: (`key`: `string`) => `Object`
+> **getPackagesMeta**: (`key`: `string`) => `object`
 
 ##### Parameters
 
@@ -1080,7 +1080,7 @@ Helpers can return any value types.
 
 ##### Returns
 
-`Object`
+`object`
 
 ###### options
 
