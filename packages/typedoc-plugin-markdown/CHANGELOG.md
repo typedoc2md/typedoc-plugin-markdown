@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.55
+
+### Patch Changes
+
+- Added `flattenOutputFiles` option.
+- Lowercased `Object` keyword.
+
 ## 4.0.0-next.54 (2024-03-21)
 
 ### Patch Changes
