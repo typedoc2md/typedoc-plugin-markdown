@@ -2,9 +2,12 @@
   "extends": "./typedoc.base.json",
   "entryPoints": ["./stubs/*.ts"],
   "outputFileStrategy": "modules",
+  "frontmatterGlobals": {
+    "title": "test"
+  },
   "remarkPlugins": [
     "remark-github",
-    "unified-prettier",
+    ["remark-stringify", { "fence": "~" }],
     ["remark-toc", { "maxDepth": 3 }]
   ]
 }

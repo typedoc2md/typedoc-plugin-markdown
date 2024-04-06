@@ -4,32 +4,34 @@
  * - In addition we don't want Typescript to transpile this file.
  */
 module.exports = {
-  parseContents: async (filePath, plugins = []) => {
+  parseContents: async (filePath, userPlugins = []) => {
     const { remark } = await import('remark');
     const { read, writeSync } = await import('to-vfile');
     const file = await read(filePath);
     const processor = remark();
-    if (plugins.length > 0) {
-      const promises = plugins.map(async (plugin) => {
-        return new Promise((resolve) => {
-          const name = Array.isArray(plugin) ? plugin[0] : plugin;
-          const options = Array.isArray(plugin) ? plugin[1] : {};
-          import(name).then(({ default: pluginFn }) => {
-            resolve({
-              pluginFn,
-              options,
-            });
+    const plugins = [
+      ['remark-frontmatter', ['yaml']],
+      'remark-gfm',
+      ...userPlugins,
+    ];
+    const promises = plugins.map(async (plugin) => {
+      return new Promise((resolve) => {
+        const name = Array.isArray(plugin) ? plugin[0] : plugin;
+        const options = Array.isArray(plugin) ? plugin[1] : {};
+        import(name).then(({ default: pluginFn }) => {
+          resolve({
+            pluginFn,
+            options,
           });
         });
       });
+    });
 
-      const pluginRefs = await Promise.all(promises);
+    const pluginRefs = await Promise.all(promises);
 
-      pluginRefs.forEach((pluginRef) => {
-        processor.use(pluginRef.pluginFn, pluginRef.options);
-      });
-    }
-
+    pluginRefs.forEach((pluginRef) => {
+      processor.use(pluginRef.pluginFn, pluginRef.options);
+    });
     processor.processSync(file);
 
     writeSync(file);

@@ -137,42 +137,50 @@ reallyUgly(javascript);
 `;
 
 exports[`Remark should parse modules index 1`] = `
-"# typedoc-plugin-remark
+"---
+title: test
+---
+
+# typedoc-plugin-remark
 
 ## Modules
 
-- [module-1](module-1.md)
-- [module-2](module-2.md)
+* [module-1](module-1.md)
+* [module-2](module-2.md)
 "
 `;
 
 exports[`Remark should parse modules module page 1`] = `
-"# module-1
+"---
+title: test
+---
+
+# module-1
 
 Comments form module comments
 
 Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/1).
 
-\`\`\`js
-reallyUgly(javascript);
-\`\`\`
+~~~js
+reallyUgly    (
+javascript
+ )
+~~~
 
-\`\`\`css
-.h1 {
-  color: red;
-}
-\`\`\`
+~~~css
+.h1 {     color : red }
+~~~
 
 ## Contents
 
-- [Classes](#classes)
-  - [SomeClass](#someclass)
-- [Interfaces](#interfaces)
-  - [SomeInterface](#someinterface)
-- [Variables](#variables)
-  - [\\_\\_variable_with_underscores\\_\\_](#__variable_with_underscores__)
-- [Functions](#functions)
-  - [some_function()](#some_function)
+* [Classes](#classes)
+  * [SomeClass](#someclass)
+* [Interfaces](#interfaces)
+  * [SomeInterface](#someinterface)
+* [Variables](#variables)
+  * [\\_\\_variable\\_with\\_underscores\\_\\_](#__variable_with_underscores__)
+* [Functions](#functions)
+  * [some\\_function()](#some_function)
 
 ## Classes
 
@@ -206,21 +214,21 @@ reallyUgly(javascript);
 
 ## Variables
 
-### \\_\\_variable_with_underscores\\_\\_
+### \\_\\_variable\\_with\\_underscores\\_\\_
 
-> **\`const\`** **\\_\\_variable_with_underscores\\_\\_**: \`true\` = \`true\`
+> **\`const\`** **\\_\\_variable\\_with\\_underscores\\_\\_**: \`true\` = \`true\`
 
 ## Functions
 
-### some_function()
+### some\\_function()
 
-> **some_function**(\`param\`): \`void\`
+> **some\\_function**(\`param\`): \`void\`
 
 #### Parameters
 
-| Parameter | Type     |
-| :-------- | :------- |
-| \`param\`   | \`string\` |
+| Parameter | Type                  |
+| :-------- | :-------------------- |
+| \`param\`   | \`string\` \\| \`boolean\` |
 
 #### Returns
 

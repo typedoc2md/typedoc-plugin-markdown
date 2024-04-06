@@ -2,7 +2,11 @@
   "entryPoints": ["./stubs/*.ts"],
   "tsconfig": "./stubs/tsconfig.json",
   "out": "./out",
-  "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-plugin-frontmatter",
+    "typedoc-plugin-remark"
+  ],
   "readme": "none",
   "parametersFormat": "table",
   "disableSources": true,

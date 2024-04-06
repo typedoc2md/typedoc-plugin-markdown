@@ -17,7 +17,7 @@
  */
 
 export const __variable_with_underscores__ = true;
-export function some_function(param: string) {}
+export function some_function(param: string | boolean) {}
 
 export interface SomeInterface {
   someProp: string;

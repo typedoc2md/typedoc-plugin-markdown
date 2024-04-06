@@ -4,11 +4,7 @@ import { DeclarationOption, ParameterType } from 'typedoc';
  *
  * Each required plugin should be individually installed.
  *
- * Please note options can be passed to plugins using the format:
- *
- *  ```json
- *  {['plugin-name', { pluginOption:true }]}
- * ```
+ * Please note options can be passed either as an array of strings or an array of string / options.
  *
  * @example  ["unified-prettier","remark-github", ["remark-toc", { "maxDepth": 3 }] ]
  */
