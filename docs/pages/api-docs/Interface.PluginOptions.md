@@ -20,11 +20,11 @@ Determines which members are exported to their own file when `outputFileStrategy
 
 ***
 
-### entryFileName
+### flattenOutputFiles
 
-> **entryFileName**: `string`
+> **flattenOutputFiles**: `boolean`
 
-The file name of the entry page.
+Flatten output files to a single directory.
 
 ***
 
@@ -33,6 +33,14 @@ The file name of the entry page.
 > **fileExtension**: `string`
 
 Specify the file extension for generated output files.
+
+***
+
+### entryFileName
+
+> **entryFileName**: `string`
+
+The file name of the entry page.
 
 ***
 
@@ -49,14 +57,6 @@ The name of a module that should act as the root page for the documentation.
 > **mergeReadme**: `boolean`
 
 Merges the resolved readme into the project index page.
-
-***
-
-### flattenOutputFiles
-
-> **flattenOutputFiles**: `boolean`
-
-Flatten output files to a single directory.
 
 ***
 

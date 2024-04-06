@@ -87,71 +87,6 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
 };
 
 /**
- * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
- *
- * `README` is recognised when browsing folders on repos and Wikis and is the plugin default. `index` might be more suitable for static site generators.
- *
- * The content of this file will be resolved in the following order:
- *
- * 1. The value of the [`entryModule`](#entrymodule) option (if defined).
- * 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
- * 3. The documentation index page.
- *
- * @example "index"
- *
- * @category Output
- *
- */
-export const entryFileName: Partial<DeclarationOption> = {
-  help: 'The file name of the entry page.',
-  type: ParameterType.String,
-  defaultValue: 'README',
-};
-
-/**
- * Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
- *
- * @example ".mdx"
- *
- * @category Output
- */
-export const fileExtension: Partial<DeclarationOption> = {
-  help: 'Specify the file extension for generated output files.',
-  type: ParameterType.String,
-  defaultValue: '.md',
-};
-
-/**
- * This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
- *
- * The module name should be specified (NOT the reference to the file name).
- *
- * Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
- *
- * @example "index"
- *
- * @category Output
- */
-export const entryModule: Partial<DeclarationOption> = {
-  help: 'The name of a module that should act as the root page for the documentation.',
-  type: ParameterType.String,
-};
-
-/**
- * By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
- *
- * This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
- *
- * @category Output
- *
- */
-export const mergeReadme: Partial<DeclarationOption> = {
-  help: 'Merges the resolved readme into the project index page.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
  * By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
  *
  * This option will flatten the output files to a single directory as follows:
@@ -187,6 +122,71 @@ export const mergeReadme: Partial<DeclarationOption> = {
  */
 export const flattenOutputFiles: Partial<DeclarationOption> = {
   help: 'Flatten output files to a single directory.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
+ *
+ * @example ".mdx"
+ *
+ * @category Output
+ */
+export const fileExtension: Partial<DeclarationOption> = {
+  help: 'Specify the file extension for generated output files.',
+  type: ParameterType.String,
+  defaultValue: '.md',
+};
+
+/**
+ * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
+ *
+ * `README` is recognised when browsing folders on repos and Wikis and is the plugin default. `index` might be more suitable for static site generators.
+ *
+ * The content of this file will be resolved in the following order:
+ *
+ * 1. The value of the [`entryModule`](#entrymodule) option (if defined).
+ * 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
+ * 3. The documentation index page.
+ *
+ * @example "index"
+ *
+ * @category Output
+ *
+ */
+export const entryFileName: Partial<DeclarationOption> = {
+  help: 'The file name of the entry page.',
+  type: ParameterType.String,
+  defaultValue: 'README',
+};
+
+/**
+ * This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
+ *
+ * The module name should be specified (NOT the reference to the file name).
+ *
+ * Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
+ *
+ * @example "index"
+ *
+ * @category Output
+ */
+export const entryModule: Partial<DeclarationOption> = {
+  help: 'The name of a module that should act as the root page for the documentation.',
+  type: ParameterType.String,
+};
+
+/**
+ * By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
+ *
+ * This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+ *
+ * @category Output
+ *
+ */
+export const mergeReadme: Partial<DeclarationOption> = {
+  help: 'Merges the resolved readme into the project index page.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };

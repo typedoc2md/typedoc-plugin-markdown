@@ -89,6 +89,70 @@ Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
 
 ___
 
+### flattenOutputFiles
+
+<Callout>Flatten output files to a single directory.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
+
+This option will flatten the output files to a single directory as follows:
+
+Default output:
+
+<FileTree>
+ <FileTree.File name="README.md" />
+ <FileTree.Folder name="module-a" defaultOpen>
+  <FileTree.Folder name="classes" defaultOpen>
+  <FileTree.File name="ClassA.md" />
+  <FileTree.File name="ClassB.md" />
+ </FileTree.Folder>
+ <FileTree.Folder name="functions" defaultOpen>
+   <FileTree.File name="FunctionA.md" />
+   <FileTree.File name="FunctionB.md" />
+ </FileTree.Folder>
+</FileTree.Folder>
+</FileTree>
+
+Flattened output:
+
+<FileTree>
+ <FileTree.File name="README.md" />
+ <FileTree.File name="module-a.Class.ClassA.md" />
+ <FileTree.File name="module-a.Class.ClassB.md" />
+ <FileTree.File name="module-a.Function.functionA.md" />
+ <FileTree.File name="module-a.Function.function.md" />
+</FileTree>
+
+
+```json filename="typedoc.json"
+{
+  "flattenOutputFiles": false
+}
+
+```
+
+___
+
+### fileExtension
+
+<Callout>Specify the file extension for generated output files.</Callout>
+
+> Accepts a string value. Defaults to `".md"`.
+
+Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
+
+
+```json filename="typedoc.json"
+{
+  "fileExtension": ".mdx"
+}
+
+```
+
+___
+
 ### entryFileName
 
 <Callout>The file name of the entry page.</Callout>
@@ -109,24 +173,6 @@ The content of this file will be resolved in the following order:
 ```json filename="typedoc.json"
 {
   "entryFileName": "index"
-}
-
-```
-
-___
-
-### fileExtension
-
-<Callout>Specify the file extension for generated output files.</Callout>
-
-> Accepts a string value. Defaults to `".md"`.
-
-Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
-
-
-```json filename="typedoc.json"
-{
-  "fileExtension": ".mdx"
 }
 
 ```
@@ -169,52 +215,6 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 ```json filename="typedoc.json"
 {
   "mergeReadme": false
-}
-
-```
-
-___
-
-### flattenOutputFiles
-
-<Callout>Flatten output files to a single directory.</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
-
-This option will flatten the output files to a single directory as follows:
-
-Default output:
-
-<FileTree>
- <FileTree.File name="README.md" />
- <FileTree.Folder name="module-a" defaultOpen>
-  <FileTree.Folder name="classes" defaultOpen>
-  <FileTree.File name="ClassA.md" />
-  <FileTree.File name="ClassB.md" />
- </FileTree.Folder>
- <FileTree.Folder name="functions" defaultOpen>
-   <FileTree.File name="FunctionA.md" />
-   <FileTree.File name="FunctionB.md" />
- </FileTree.Folder>
-</FileTree.Folder>
-</FileTree>
-
-Flattened output:
-
-<FileTree>
- <FileTree.File name="README.md" />
- <FileTree.File name="module-a.Class.ClassA.md" />
- <FileTree.File name="module-a.Class.ClassB.md" />
- <FileTree.File name="module-a.Function.functionA.md" />
- <FileTree.File name="module-a.Function.function.md" />
-</FileTree>
-
-
-```json filename="typedoc.json"
-{
-  "flattenOutputFiles": false
 }
 
 ```

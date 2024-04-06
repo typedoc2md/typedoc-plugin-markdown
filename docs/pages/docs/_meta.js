@@ -1,6 +1,6 @@
 export default {
   index: 'Introduction',
-  'v4-migration': 'V4 Migration',
+  'v4-release': '',
   '-- Getting Started': {
     type: 'separator',
     title: 'Getting Started',

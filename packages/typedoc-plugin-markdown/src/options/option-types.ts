@@ -13,11 +13,11 @@ declare module 'typedoc' {
       | 'Interface'
       | 'TypeAlias'
     )[];
-    entryFileName: string;
+    flattenOutputFiles: boolean;
     fileExtension: string;
+    entryFileName: string;
     entryModule: string;
     mergeReadme: boolean;
-    flattenOutputFiles: boolean;
     excludeScopesInPaths: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
@@ -67,14 +67,19 @@ export interface PluginOptions {
   )[];
 
   /**
-   * The file name of the entry page.
+   * Flatten output files to a single directory.
    */
-  entryFileName: string;
+  flattenOutputFiles: boolean;
 
   /**
    * Specify the file extension for generated output files.
    */
   fileExtension: string;
+
+  /**
+   * The file name of the entry page.
+   */
+  entryFileName: string;
 
   /**
    * The name of a module that should act as the root page for the documentation.
@@ -85,11 +90,6 @@ export interface PluginOptions {
    * Merges the resolved readme into the project index page.
    */
   mergeReadme: boolean;
-
-  /**
-   * Flatten output files to a single directory.
-   */
-  flattenOutputFiles: boolean;
 
   /**
    * Exclude writing @ scope directories in paths.

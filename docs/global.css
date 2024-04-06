@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.nextra-toc a[href^='#parameters'],
+.nextra-toc a[href='#parameters'],
+.nextra-toc a[href^='#parameters-'],
 .nextra-toc a[href^='#returns'],
 .nextra-toc a[href^='#source'],
 .nextra-toc a[href^='#overrides'] {
