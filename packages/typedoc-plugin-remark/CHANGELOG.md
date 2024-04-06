@@ -1,5 +1,11 @@
 # typedoc-plugin-remark
 
+## 1.0.0-next.4
+
+### Major Changes
+
+- Updated version
+
 ## 0.0.1-next.3 (2024-04-06)
 
 ### Patch Changes
