@@ -18,7 +18,7 @@ import { TEXT_MAPPING_DEFAULTS } from './text-mappings/text-mapping-defaults';
  *
  * @members
  *
- * Generates an individual file for each exported member. This is the standard behaviour of the HTML theme and the plugin default.
+ * Generates an individual file for each exported module member. This is the standard behaviour of the HTML theme and the plugin default.
  *
  * <FileTree>
  *  <FileTree.File name="README.md" />

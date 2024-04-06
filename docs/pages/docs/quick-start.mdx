@@ -24,9 +24,23 @@ Plugins are loaded by using the TypeDoc [`plugin`](https://typedoc.org/options/c
 
 ## Options
 
-Please see TypeDoc's [Configuring Options](https://typedoc.org/options/configuration/) page for more information on how to set options.
+### Setting Options
 
-Full are full list of additionl options exposed by this plugin, see the [Options](/docs/options) page.
+Please see TypeDoc's [Configuring Options](https://typedoc.org/options/configuration/) page for details on how to set options.
+
+Options can be set via a `typedoc.json` file, or if you would like to inform your IDE about the shape of the exported options the plugin provides, you can use a `typedoc.config.js` file:
+
+```js filename="typedoc.config.js"
+/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
+module.exports = {
+  entryPoints: ['./src/index.ts', './src/secondary-entry.ts'],
+  out: 'doc',
+};
+```
+
+For a full list of additional options exposed by this plugin, see the [Options](/docs/options) page.
+
+### Supported TypeDoc Options
 
 The majority of [TypeDoc's options](https://typedoc.org/options/) are supported, including all [input](https://typedoc.org/options/input/), [comments](https://typedoc.org/options/comments/), [organization](https://typedoc.org/options/organization/), [validation](https://typedoc.org/options/validation/) and [other](https://typedoc.org/options/other/) options.
 [Output](https://typedoc.org/options/output/) options that are specific to the HTML theme are ignored.

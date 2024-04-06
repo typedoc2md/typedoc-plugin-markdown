@@ -1,5 +1,7 @@
 export default {
   'quick-start': '',
   options: '',
-  guides: 'Guides',
+  sidebar: '',
+  'multi-instance': '',
+  'watch-mode': '',
 };

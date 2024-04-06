@@ -1,4 +1,8 @@
 import pjson from '../../../packages/docusaurus-plugin-typedoc/package.json';
+import { Cards } from 'nextra/components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
 
 # docusaurus-plugin-typedoc
 
@@ -9,3 +13,24 @@ import pjson from '../../../packages/docusaurus-plugin-typedoc/package.json';
 - Presets relevant options of typedoc-plugin-markdown.
 - Runs TypeDoc from the Docusaurus CLI.
 - Builds sidebar file.
+
+## Example
+
+The following is a simple example of a VitePress project running TypeDoc.
+
+<Cards num={2}>
+  <Cards.Card
+    title="View on Github"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/docusaurus-plugin-typedoc-example"
+    target="_blank"
+  />
+  <Cards.Card
+    title="View on StackBlitz"
+    icon={<FontAwesomeIcon icon={faBolt} />}
+    arrow={true}
+    href="https://stackblitz.com/~/github.com/tgreyuk/docusaurus-plugin-typedoc-example"
+    target="_blank"
+  />
+</Cards>
