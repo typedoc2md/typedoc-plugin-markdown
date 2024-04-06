@@ -4,8 +4,8 @@
   "out": "./out",
   "plugin": [
     "typedoc-plugin-markdown",
-    "typedoc-plugin-frontmatter",
-    "typedoc-plugin-remark"
+    "typedoc-plugin-remark",
+    "./frontmatter-plugin.cjs"
   ],
   "readme": "none",
   "parametersFormat": "table",

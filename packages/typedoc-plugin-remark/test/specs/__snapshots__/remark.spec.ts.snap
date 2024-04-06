@@ -62,7 +62,11 @@ exports[`Remark should parse globals page without toc 1`] = `
 `;
 
 exports[`Remark should parse members class page 1`] = `
-"# Class: SomeClass
+"---
+title: 'test'
+---
+
+# Class: SomeClass
 
 ## Contents
 
@@ -100,7 +104,11 @@ exports[`Remark should parse members index 1`] = `
 `;
 
 exports[`Remark should parse members module page 1`] = `
-"# module-1
+"---
+title: 'test'
+---
+
+# module-1
 
 Comments form module comments
 
@@ -137,11 +145,7 @@ reallyUgly(javascript);
 `;
 
 exports[`Remark should parse modules index 1`] = `
-"---
-title: test
----
-
-# typedoc-plugin-remark
+"# typedoc-plugin-remark
 
 ## Modules
 
@@ -152,7 +156,7 @@ title: test
 
 exports[`Remark should parse modules module page 1`] = `
 "---
-title: test
+title: "test"
 ---
 
 # module-1
