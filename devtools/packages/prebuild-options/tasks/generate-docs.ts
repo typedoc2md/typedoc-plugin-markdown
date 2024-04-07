@@ -15,7 +15,7 @@ export async function generateDocs(docsConfig: DocsConfig) {
   ];
   out.push('# Options');
   out.push(
-    'These are the additional options that can be added to the TypeDoc configuration.',
+    'Listed on this page are the additional options that can be added to the TypeDoc configuration.',
   );
 
   // DECLARATIONS

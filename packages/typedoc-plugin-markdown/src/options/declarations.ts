@@ -324,11 +324,11 @@ export const useCodeBlocks: Partial<DeclarationOption> = {
  *
  * @Default
  *
- * `Object`
+ * `object`
  *
  * @Expanded
  *
- * \{ `x`: `string` }
+ * \{ `"x"`: `string` }
  *
  * @category UI
  */
@@ -434,7 +434,7 @@ export const indexFormat: Partial<DeclarationOption> = {
  * Default values within curly braces `{}` indicates a placeholder of dynamic text.
  * The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
  *
- * **keys**
+ * **Keys**
  *
  * Keys are categorised with the following namespace conventions:
  *
@@ -445,6 +445,16 @@ export const indexFormat: Partial<DeclarationOption> = {
  * - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
  *
  * Only keys that require translation need to be added to the object.
+ *
+ * **Example**
+ *
+ * ```json filename="typedoc.json"
+ * {
+ *   "textContentMappings": {
+ *     "title.indexPage": "My Project"
+ *    }
+ * }
+ * ```
  *
  * @category UI
  */

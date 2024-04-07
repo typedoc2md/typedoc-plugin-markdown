@@ -51,7 +51,7 @@ Events are more powerful than hooks and allow for more complex customizations an
 ```ts
 export function load(app: MarkdownApplication) {
   app.renderer.on(MarkdownPageEvent.END, (event: MarkdownPageEvent) => {
-    events.content = event.content.replace('foo', 'bar');
+    event.contents = event.contents.replace('foo', 'bar');
   });
 }
 ```
@@ -60,7 +60,7 @@ Please see [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent) and [M
 
 ## Async Jobs
 
-Async jobs are used to perform asynchronous tasks before or after rendering.
+Async jobs are used to perform asynchronous tasks before or after rendering with a provided conext.
 
 ```ts
 export function load(app: MarkdownApplication) {
@@ -80,7 +80,7 @@ If there are some specific customization not achievable with hooks or events the
 
 This implementation follows an adapted version of [TypeDoc's custom theming implementation](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md).
 
-In theory all available templates, partials and helpers can be overriden with custom implementations, but please proceed with caution.
+In theory all available templates, partials and helpers can be overriden with custom implementations.
 
 This code defines a new theme called “customTheme”:
 
@@ -92,10 +92,13 @@ export function load(app) {
 class MyMarkdownTheme extends MarkdownTheme {}
 ```
 
-The theme can then be consumed by the theme option:
+The theme can then be consumed by the theme optiond:
 
-```shell
-typedoc --plugin typedoc-plugin-markdown --theme customTheme
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-mardown", "./local-plugins/my-custom-plugin.js"],
+  "theme": "customTheme"
+}
 ```
 
 The themes can be extended to provide custom partials, helpers and templates by proving a custom render context class.

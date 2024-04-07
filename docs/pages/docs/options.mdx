@@ -2,7 +2,7 @@ import { Callout, FileTree } from 'nextra/components';
 
 # Options
 
-These are the additional options that can be added to the TypeDoc configuration.
+Listed on this page are the additional options that can be added to the TypeDoc configuration.
 
 ## Output Options
 
@@ -417,11 +417,11 @@ This option should be set when a full object representation is preferred.
 
 **Default**
 
-`Object`
+`object`
 
 **Expanded**
 
-\{ `x`: `string` }
+\{ `"x"`: `string` }
 
 
 ```json filename="typedoc.json"
@@ -570,7 +570,7 @@ This option does not attempt to address translating text within code comments.
 Default values within curly braces `{}` indicates a placeholder of dynamic text.
 The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
 
-**keys**
+**Keys**
 
 Keys are categorised with the following namespace conventions:
 
@@ -581,6 +581,16 @@ Keys are categorised with the following namespace conventions:
 - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
 
 Only keys that require translation need to be added to the object.
+
+**Example**
+
+```json filename="typedoc.json"
+{
+  "textContentMappings": {
+    "title.indexPage": "My Project"
+   }
+}
+```
 
 Below is the full list of keys and default values:
 
