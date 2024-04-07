@@ -1,8 +1,11 @@
-import { MarkdownRendererHooks } from '@app/hooks/markdown-renderer-hooks';
-import { generateDocs, render } from '@app/renderer/overrides';
-import { resolvePackages } from '@app/renderer/packages';
-import * as declarations from '@options/declarations';
-import { MarkdownTheme } from '@theme/base';
+import {
+  MarkdownRendererHooks,
+  generateDocs,
+  render,
+  resolvePackages,
+} from '@plugin/app/renderer';
+import * as declarations from '@plugin/options/declarations';
+import { MarkdownTheme } from '@plugin/theme';
 import {
   Application,
   Context,
@@ -72,7 +75,6 @@ export function load(app: Application) {
   });
 
   /**
-   * Add a new {@link MarkdownRendererHooks} property to the {@link MarkdownRenderer} class.
    * This is used to hook into the TypeDoc rendering system.
    */
   Object.defineProperty(app.renderer, 'markdownHooks', {

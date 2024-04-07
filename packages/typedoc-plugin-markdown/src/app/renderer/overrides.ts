@@ -1,5 +1,5 @@
-import { MarkdownPageEvent } from '@app/events/markdown-page-event';
-import { MarkdownRendererEvent } from '@app/events/markdown-renderer-event';
+import { MarkdownPageEvent } from '@plugin/app/events/markdown-page-event';
+import { MarkdownRendererEvent } from '@plugin/app/events/markdown-renderer-event';
 import * as fs from 'fs';
 import * as path from 'path';
 import {

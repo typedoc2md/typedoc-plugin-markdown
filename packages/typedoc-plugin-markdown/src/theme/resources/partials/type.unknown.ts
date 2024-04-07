@@ -1,12 +1,12 @@
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { UnknownType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function unknownType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: UnknownType,
 ): string {
   return escapeChars(model.name);

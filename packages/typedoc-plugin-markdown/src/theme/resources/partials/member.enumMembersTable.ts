@@ -1,9 +1,6 @@
-import { backTicks } from '@theme/lib/markdown';
-import {
-  formatTableDescriptionCol,
-  formatTableTypeCol,
-} from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { removeLineBreaks } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, ReflectionType } from 'typedoc';
 
 /**
@@ -12,27 +9,27 @@ import { DeclarationReflection, ReflectionType } from 'typedoc';
  * @category Member Partials
  */
 export function enumMembersTable(
-  context: MarkdownThemeRenderContext,
-  props: DeclarationReflection[],
+  this: MarkdownThemeContext,
+  model: DeclarationReflection[],
 ): string {
-  const comments = props.map((param) => !!param.comment?.hasVisibleComponent());
+  const comments = model.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
 
   const headers = [
-    context.helpers.getText('kind.enumMember.singular'),
-    context.helpers.getText('label.value'),
+    this.getText('kind.enumMember.singular'),
+    this.getText('label.value'),
   ];
 
   if (hasComments) {
-    headers.push(context.helpers.getText('label.description'));
+    headers.push(this.getText('label.description'));
   }
 
-  const rows = props.map((property: DeclarationReflection) => {
-    const propertyType = context.helpers.getDeclarationType(property);
+  const rows = model.map((property: DeclarationReflection) => {
+    const propertyType = this.helpers.getDeclarationType(property);
     const row: string[] = [];
     const nameColumn: string[] = [];
 
-    if (context.options.getValue('namedAnchors') && property.anchor) {
+    if (this.options.getValue('useHTMLAnchors') && property.anchor) {
       nameColumn.push(
         `<a id="${property.anchor}" name="${property.anchor}"></a>`,
       );
@@ -42,12 +39,12 @@ export function enumMembersTable(
 
     row.push(nameColumn.join(' '));
     if (propertyType) {
-      row.push(formatTableTypeCol(context.partials.someType(propertyType)));
+      row.push(removeLineBreaks(this.partials.someType(propertyType)));
     }
     if (hasComments) {
       const comments = getComments(property);
       if (comments) {
-        row.push(formatTableDescriptionCol(context.partials.comment(comments)));
+        row.push(this.partials.comment(comments, { isTableColumn: true }));
       } else {
         row.push('-');
       }

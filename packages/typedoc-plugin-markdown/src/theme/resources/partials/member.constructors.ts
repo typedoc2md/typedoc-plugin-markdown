@@ -1,6 +1,6 @@
-import { heading } from '@theme/lib/markdown';
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 /**
@@ -9,16 +9,25 @@ import { DeclarationReflection } from 'typedoc';
  * @category Member Partials
  */
 export function constructor(
-  context: MarkdownThemeRenderContext,
-  reflection: DeclarationReflection,
-  headingLevel: number,
+  this: MarkdownThemeContext,
+  model: DeclarationReflection,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
 
-  reflection.signatures?.forEach((signature) => {
+  model.signatures?.forEach((signature) => {
     const params = signature.parameters?.map((param) => param.name).join(', ');
-    md.push(heading(headingLevel, `${escapeChars(signature.name)}(${params})`));
-    md.push(context.partials.signature(signature, headingLevel + 1));
+    md.push(
+      heading(
+        options.headingLevel,
+        `${escapeChars(signature.name)}(${params})`,
+      ),
+    );
+    md.push(
+      this.partials.signature(signature, {
+        headingLevel: options.headingLevel + 1,
+      }),
+    );
   });
 
   return md.join('\n\n');

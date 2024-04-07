@@ -1,11 +1,8 @@
-import { heading, link, table } from '@theme/lib/markdown';
-import {
-  escapeChars,
-  formatTableDescriptionCol,
-  getFirstParagrph,
-  pipe,
-} from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading, link, table } from '@plugin/libs/markdown';
+import { escapeChars, getFirstParagrph } from '@plugin/libs/utils';
+import { PLURAL_KIND_KEY_MAP } from '@plugin/options/text-mappings';
+import { MarkdownThemeContext } from '@plugin/theme';
+import { TextContentMappings } from 'public-api';
 import {
   DeclarationReflection,
   ProjectReflection,
@@ -20,37 +17,42 @@ import {
  * @category Member Partials
  */
 export function reflectionIndex(
-  context: MarkdownThemeRenderContext,
-  reflection: ProjectReflection | DeclarationReflection,
-  headingLevel: number,
+  this: MarkdownThemeContext,
+  model: ProjectReflection | DeclarationReflection,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
 
-  const subHeadingLevel = headingLevel;
+  const getGroup = (group: ReflectionGroup | ReflectionCategory) => {
+    if (this.options.getValue('indexFormat') === 'table') {
+      return getTable(this, group.children);
+    }
+    return getList(this, group.children);
+  };
 
-  if (reflection.categories) {
-    reflection.categories.forEach((categoryGroup) => {
+  const subHeadingLevel = options.headingLevel;
+
+  if (model.categories) {
+    model.categories.forEach((categoryGroup) => {
       md.push(heading(subHeadingLevel, categoryGroup.title) + '\n');
       if (categoryGroup.description) {
-        md.push(
-          context.partials.commentParts(categoryGroup.description) + '\n',
-        );
+        md.push(this.partials.commentParts(categoryGroup.description) + '\n');
       }
-      md.push(getGroup(context, categoryGroup) + '\n');
+      md.push(getGroup(categoryGroup) + '\n');
     });
   } else {
-    const groups = reflection.groups?.filter((group) =>
+    const groups = model.groups?.filter((group) =>
       group.allChildrenHaveOwnDocument(),
     );
 
-    if (context.options.getValue('excludeGroups')) {
+    if (this.options.getValue('excludeGroups')) {
       const children = groups?.reduce((acc, group) => {
         return [...acc, ...group.children];
       }, []);
-      if (context.options.getValue('indexFormat') === 'table') {
-        md.push(getTable(context, children || []));
+      if (this.options.getValue('indexFormat') === 'table') {
+        md.push(getTable(this, children || []));
       } else {
-        md.push(getList(context, children || []));
+        md.push(getList(this, children || []));
       }
     } else {
       groups?.forEach((reflectionGroup) => {
@@ -60,22 +62,22 @@ export function reflectionIndex(
             md.push(heading(subHeadingLevel + 1, categoryGroup.title) + '\n');
             if (categoryGroup.description) {
               md.push(
-                context.partials.commentParts(categoryGroup.description) + '\n',
+                this.partials.commentParts(categoryGroup.description) + '\n',
               );
             }
-            md.push(getGroup(context, categoryGroup) + '\n');
+            md.push(getGroup(categoryGroup) + '\n');
           });
         } else {
+          const kindKey = PLURAL_KIND_KEY_MAP[
+            reflectionGroup.title
+          ] as keyof TextContentMappings;
           md.push(
             heading(
               subHeadingLevel,
-              context.helpers.getTextFromKindString(
-                reflectionGroup.title,
-                true,
-              ),
+              this.getText(kindKey) || reflectionGroup.title,
             ) + '\n',
           );
-          md.push(getGroup(context, reflectionGroup) + '\n');
+          md.push(getGroup(reflectionGroup) + '\n');
         }
       });
     }
@@ -83,26 +85,17 @@ export function reflectionIndex(
   return md.join('\n');
 }
 
-function getGroup(
-  context: MarkdownThemeRenderContext,
-  group: ReflectionGroup | ReflectionCategory,
-) {
-  if (context.options.getValue('indexFormat') === 'table') {
-    return getTable(context, group.children);
-  }
-  return getList(context, group.children);
-}
-
 function getTable(
-  context: MarkdownThemeRenderContext,
+  context: MarkdownThemeContext,
   children: DeclarationReflection[],
 ) {
   const headers = [
     context.options.getValue('excludeGroups')
-      ? context.helpers.getText('label.member')
+      ? context.getText('label.member')
       : ReflectionKind.singularString(children[0].kind),
-    context.helpers.getText('label.description'),
+    context.getText('label.description'),
   ];
+
   const rows: string[][] = [];
 
   children.forEach((child) => {
@@ -110,10 +103,7 @@ function getTable(
 
     if (child.url) {
       row.push(
-        link(
-          escapeChars(child.name),
-          context.helpers.getRelativeUrl(child.url),
-        ),
+        link(escapeChars(child.name), context.getRelativeUrl(child.url)),
       );
     }
 
@@ -121,10 +111,7 @@ function getTable(
 
     if (comment?.summary?.length) {
       row.push(
-        pipe(
-          getFirstParagrph,
-          formatTableDescriptionCol,
-        )(context.partials.commentParts(comment.summary)),
+        getFirstParagrph(context.partials.commentParts(comment.summary)),
       );
     } else {
       row.push('-');
@@ -135,7 +122,7 @@ function getTable(
 }
 
 function getList(
-  context: MarkdownThemeRenderContext,
+  context: MarkdownThemeContext,
   children: DeclarationReflection[],
 ) {
   const filteredChildren = children
@@ -146,11 +133,11 @@ function getList(
           ? `${
               child.signatures
                 ? child.signatures[0].name
-                : context.helpers.getText('kind.constructor.singular')
+                : context.getText('kind.constructor.singular')
             }`
           : child.name;
       return child.url
-        ? `- ${link(escapeChars(name), context.helpers.getRelativeUrl(child.url))}`
+        ? `- ${link(escapeChars(name), context.getRelativeUrl(child.url))}`
         : '';
     });
   return filteredChildren.join('\n');

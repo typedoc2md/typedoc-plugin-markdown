@@ -4,35 +4,11 @@ Describes the options declared by the plugin.
 
 ## Properties
 
-### outputFileStrategy
+### anchorPrefix
 
-> **outputFileStrategy**: `"members"` \| `"modules"`
+> **anchorPrefix**: `string`
 
-Determines how output files are generated.
-
-***
-
-### membersWithOwnFile
-
-> **membersWithOwnFile**: (`"Enum"` \| `"Variable"` \| `"Function"` \| `"Class"` \| `"Interface"` \| `"TypeAlias"`)[]
-
-Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
-
-***
-
-### flattenOutputFiles
-
-> **flattenOutputFiles**: `boolean`
-
-Flatten output files to a single directory.
-
-***
-
-### fileExtension
-
-> **fileExtension**: `string`
-
-Specify the file extension for generated output files.
+Custom anchor prefix
 
 ***
 
@@ -52,67 +28,11 @@ The name of a module that should act as the root page for the documentation.
 
 ***
 
-### mergeReadme
+### enumMembersFormat
 
-> **mergeReadme**: `boolean`
+> **enumMembersFormat**: `"table"` \| `"list"`
 
-Merges the resolved readme into the project index page.
-
-***
-
-### excludeScopesInPaths
-
-> **excludeScopesInPaths**: `boolean`
-
-Exclude writing @ scope directories in paths.
-
-***
-
-### hidePageHeader
-
-> **hidePageHeader**: `boolean`
-
-Do not print page header.
-
-***
-
-### hidePageTitle
-
-> **hidePageTitle**: `boolean`
-
-Do not print page title.
-
-***
-
-### hideBreadcrumbs
-
-> **hideBreadcrumbs**: `boolean`
-
-Do not print breadcrumbs.
-
-***
-
-### hideInPageTOC
-
-> **hideInPageTOC**: `boolean`
-
-Do not render in-page TOC items.
-
-***
-
-### indexPageTitle
-
-> **indexPageTitle**: `string`
-
-The title of project index page.
-
-***
-
-### memberPageTitle
-
-> **memberPageTitle**: `string`
-
-The page title of member pages.
+Specify the render style of enumuration members.
 
 ***
 
@@ -124,11 +44,11 @@ Excludes grouping by kind so all members are rendered and sorted at the same lev
 
 ***
 
-### useCodeBlocks
+### excludeScopesInPaths
 
-> **useCodeBlocks**: `boolean`
+> **excludeScopesInPaths**: `boolean`
 
-Wraps signatures and declarations in code blocks.
+Exclude writing @ scope directories in paths.
 
 ***
 
@@ -148,35 +68,51 @@ Expand parameters in signature parentheses to display type information.
 
 ***
 
-### parametersFormat
+### fileExtension
 
-> **parametersFormat**: `"table"` \| `"list"`
+> **fileExtension**: `string`
 
-Specify the render style of parameter and type parameter groups.
-
-***
-
-### propertiesFormat
-
-> **propertiesFormat**: `"table"` \| `"list"`
-
-Specify the render style of property groups for interfaces and classes.
+Specify the file extension for generated output files.
 
 ***
 
-### enumMembersFormat
+### flattenOutputFiles
 
-> **enumMembersFormat**: `"table"` \| `"list"`
+> **flattenOutputFiles**: `boolean`
 
-Specify the render style of enumuration members.
+Flatten output files to a single directory.
 
 ***
 
-### typeDeclarationFormat
+### hideBreadcrumbs
 
-> **typeDeclarationFormat**: `"table"` \| `"list"`
+> **hideBreadcrumbs**: `boolean`
 
-Specify the render style for type declaration members.
+Do not print breadcrumbs.
+
+***
+
+### hideInPageTOC
+
+> **hideInPageTOC**: `boolean`
+
+Do not render in-page TOC items.
+
+***
+
+### hidePageHeader
+
+> **hidePageHeader**: `boolean`
+
+Do not print page header.
+
+***
+
+### hidePageTitle
+
+> **hidePageTitle**: `boolean`
+
+Do not print page title.
 
 ***
 
@@ -188,27 +124,51 @@ Specify the render format for index items.
 
 ***
 
-### textContentMappings
+### indexPageTitle
 
-> **textContentMappings**: `Partial`\<[`TextContentMappings`](/api-docs/Interface.TextContentMappings.md)\>
+> **indexPageTitle**: `string`
 
-Provides a mechanism to change the content of text used in documentation.
-
-***
-
-### publicPath
-
-> **publicPath**: `string`
-
-Specify the base path for all urls.
+The title of project index page.
 
 ***
 
-### preserveMarkup
+### memberPageTitle
 
-> **preserveMarkup**: `boolean`
+> **memberPageTitle**: `string`
 
-Preserves non-html markup tags in comments.
+The page title of member pages.
+
+***
+
+### membersWithOwnFile
+
+> **membersWithOwnFile**: (`"Enum"` \| `"Variable"` \| `"Function"` \| `"Class"` \| `"Interface"` \| `"TypeAlias"`)[]
+
+Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
+
+***
+
+### mergeReadme
+
+> **mergeReadme**: `boolean`
+
+Merges the resolved readme into the project index page.
+
+***
+
+### outputFileStrategy
+
+> **outputFileStrategy**: `"members"` \| `"modules"`
+
+Determines how output files are generated.
+
+***
+
+### parametersFormat
+
+> **parametersFormat**: `"table"` \| `"list"`
+
+Specify the render style of parameter and type parameter groups.
 
 ***
 
@@ -220,16 +180,48 @@ Preserve anchor casing when generating link to symbols.
 
 ***
 
-### anchorPrefix
+### propertiesFormat
 
-> **anchorPrefix**: `string`
+> **propertiesFormat**: `"table"` \| `"list"`
 
-Custom anchor prefix
+Specify the render style of property groups for interfaces and classes.
 
 ***
 
-### namedAnchors
+### publicPath
 
-> **namedAnchors**: `boolean`
+> **publicPath**: `string`
+
+Specify the base path for all urls.
+
+***
+
+### textContentMappings
+
+> **textContentMappings**: `Partial`\<[`TextContentMappings`](/api-docs/Interface.TextContentMappings.md)\>
+
+Provides a mechanism to change the content of text used in documentation.
+
+***
+
+### typeDeclarationFormat
+
+> **typeDeclarationFormat**: `"table"` \| `"list"`
+
+Specify the render style for type declaration members.
+
+***
+
+### useCodeBlocks
+
+> **useCodeBlocks**: `boolean`
+
+Wraps signatures and declarations in code blocks.
+
+***
+
+### useHTMLAnchors
+
+> **useHTMLAnchors**: `boolean`
 
 Add HTML named anchors to headings and table rows.

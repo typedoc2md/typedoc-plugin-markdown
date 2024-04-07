@@ -1,13 +1,13 @@
-import { italic } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { italic } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { QueryType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function queryType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: QueryType,
 ): string {
-  return `${italic('typeof')} ${context.partials.someType(model.queryType)}`;
+  return `${italic('typeof')} ${this.partials.someType(model.queryType)}`;
 }

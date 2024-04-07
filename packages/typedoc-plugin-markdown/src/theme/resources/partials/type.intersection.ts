@@ -1,14 +1,14 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { IntersectionType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function intersectionType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: IntersectionType,
 ): string {
   return model.types
-    .map((intersectionType) => context.partials.someType(intersectionType))
+    .map((intersectionType) => this.partials.someType(intersectionType))
     .join(' & ');
 }

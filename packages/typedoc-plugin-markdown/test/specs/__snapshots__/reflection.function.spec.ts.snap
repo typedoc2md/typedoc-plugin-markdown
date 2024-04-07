@@ -322,7 +322,7 @@ Function with function parmas
 
 • **paramB**
 
-• **paramB\\.x**: \`1\`
+• **paramB.x**: \`1\`
 
 ## Returns
 
@@ -473,7 +473,7 @@ This is the second signature of a function with multiple signatures.
 
 An object containing the name value.
 
-• **value\\.name**: \`string\`
+• **value.name**: \`string\`
 
 A value of the object.
 
@@ -548,9 +548,9 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 various options
 
-• **\\_\\_namedParameters\\.bar?**: \`number\`= \`43\`
+• **\\_\\_namedParameters.bar?**: \`number\`= \`43\`
 
-• **\\_\\_namedParameters\\.foo?**: \`number\`= \`42\`
+• **\\_\\_namedParameters.foo?**: \`number\`= \`42\`
 
 • **anotherParam**: \`string\`
 
@@ -605,23 +605,23 @@ Some nested params.
 
 The parameters passed to the method.
 
-• **params\\.name**: \`string\`
+• **params.name**: \`string\`
 
 The name of the new group.
 
-• **params\\.nestedObj**
+• **params.nestedObj**
 
 A nested object.
 
-• **params\\.nestedObj\\.name?**: \`string\`
+• **params.nestedObj.name?**: \`string\`
 
-• **params\\.nestedObj\\.obj?**
+• **params.nestedObj.obj?**
 
-• **params\\.nestedObj\\.obj\\.name?**
+• **params.nestedObj.obj.name?**
 
-• **params\\.nestedObj\\.value?**: \`number\`
+• **params.nestedObj.value?**: \`number\`
 
-• **params\\.parent?**: \`number\`
+• **params.parent?**: \`number\`
 
 • **context?**: \`any\`
 

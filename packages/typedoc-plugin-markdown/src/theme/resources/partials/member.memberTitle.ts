@@ -1,7 +1,7 @@
-import { backTicks, strikeThrough } from '@theme/lib/markdown';
-import { escapeChars } from '@theme/lib/utils';
+import { backTicks, strikeThrough } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
 import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../..';
+import { MarkdownThemeContext } from '../../..';
 
 /**
  * Renders the main member title.
@@ -9,46 +9,46 @@ import { MarkdownThemeRenderContext } from '../../..';
  * @category Member Partials
  */
 export function memberTitle(
-  context: MarkdownThemeRenderContext,
-  reflection: DeclarationReflection,
+  this: MarkdownThemeContext,
+  model: DeclarationReflection,
 ): string {
   const md: string[] = [];
   const name: string[] = [];
 
   if (
-    reflection?.kind === ReflectionKind.Class &&
-    reflection.flags?.includes('Abstract')
+    model?.kind === ReflectionKind.Class &&
+    model.flags?.includes('Abstract')
   ) {
     name.push(backTicks('abstract') + ' ');
   }
 
   name.push(
     `${
-      reflection.name.startsWith('[') && reflection.signatures?.length
-        ? backTicks(reflection.name)
-        : escapeChars(reflection.name)
+      model.name.startsWith('[') && model.signatures?.length
+        ? backTicks(model.name)
+        : escapeChars(model.name)
     }`,
   );
 
   if (
-    reflection.signatures?.length ||
-    (reflection.type as ReflectionType)?.declaration?.signatures?.length
+    model.signatures?.length ||
+    (model.type as ReflectionType)?.declaration?.signatures?.length
   ) {
     name.push('()');
   }
 
-  if (reflection.typeParameters?.length) {
-    const typeParameters = reflection.typeParameters
+  if (model.typeParameters?.length) {
+    const typeParameters = model.typeParameters
       .map((typeParameter) => typeParameter.name)
       .join(', ');
     name.push(`${`\\<${typeParameters}\\>`}`);
   }
 
-  if (reflection.flags.isOptional) {
+  if (model.flags.isOptional) {
     name.push('?');
   }
 
-  if (reflection.isDeprecated && reflection.isDeprecated()) {
+  if (model.isDeprecated && model.isDeprecated()) {
     md.push(strikeThrough(name.join('')));
   } else {
     md.push(name.join(''));

@@ -1,9 +1,6 @@
-import { backTicks, strikeThrough, table } from '@theme/lib/markdown';
-import {
-  formatTableDescriptionCol,
-  formatTableTypeCol,
-} from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks, strikeThrough, table } from '@plugin/libs/markdown';
+import { removeLineBreaks } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 /**
@@ -15,61 +12,63 @@ import { DeclarationReflection } from 'typedoc';
  *
  */
 export function declarationsTable(
-  context: MarkdownThemeRenderContext,
-  props: DeclarationReflection[],
-  isEventProps = false,
+  this: MarkdownThemeContext,
+  model: DeclarationReflection[],
+  options?: { isEventProps: boolean },
 ): string {
-  const modifiers = props.map((param) => context.helpers.getModifier(param));
+  const modifiers = model.map((param) =>
+    this.helpers.getModifier(param)?.toString(),
+  );
   const hasModifiers = modifiers.some((value) => Boolean(value));
-  const flags = props.map((param) => context.partials.reflectionFlags(param));
+  const flags = model.map((param) => this.partials.reflectionFlags(param));
   const hasFlags = flags.some((value) => Boolean(value));
-  const hasOverrides = props.some((prop) => Boolean(prop.overwrites));
-  const hasInheritance = props.some((prop) => Boolean(prop.inheritedFrom));
-  const hasComments = props.some(
+  const hasOverrides = model.some((prop) => Boolean(prop.overwrites));
+  const hasInheritance = model.some((prop) => Boolean(prop.inheritedFrom));
+  const hasComments = model.some(
     (prop) => prop.comment?.blockTags?.length || prop?.comment?.summary?.length,
   );
 
   const headers: string[] = [];
 
   headers.push(
-    isEventProps
-      ? context.helpers.getText('kind.event.singular')
-      : context.helpers.getText('kind.property.singular'),
+    options?.isEventProps
+      ? this.getText('kind.event.singular')
+      : this.getText('kind.property.singular'),
   );
 
   if (hasModifiers) {
-    headers.push(context.helpers.getText('label.modifier'));
+    headers.push(this.getText('label.modifier'));
   }
 
   if (hasFlags) {
-    headers.push(context.helpers.getText('label.flags'));
+    headers.push(this.getText('label.flags'));
   }
 
-  headers.push(context.helpers.getText('label.type'));
+  headers.push(this.getText('label.type'));
 
   if (hasComments) {
-    headers.push(context.helpers.getText('label.description'));
+    headers.push(this.getText('label.description'));
   }
 
   if (hasOverrides) {
-    headers.push(context.helpers.getText('label.overrides'));
+    headers.push(this.getText('label.overrides'));
   }
 
   if (hasInheritance) {
-    headers.push(context.helpers.getText('label.inheritedFrom'));
+    headers.push(this.getText('label.inheritedFrom'));
   }
 
   const rows: string[][] = [];
 
-  const declarations = context.helpers.flattenDeclarations(props);
+  const declarations = this.helpers.getFlattenedDeclarations(model);
 
   declarations.forEach((property: DeclarationReflection, index: number) => {
-    const propertyType = context.helpers.getDeclarationType(property);
+    const propertyType = this.helpers.getDeclarationType(property);
     const row: string[] = [];
 
     const nameColumn: string[] = [];
 
-    if (context.options.getValue('namedAnchors') && property.anchor) {
+    if (this.options.getValue('useHTMLAnchors') && property.anchor) {
       nameColumn.push(
         `<a id="${property.anchor}" name="${property.anchor}"></a>`,
       );
@@ -97,12 +96,12 @@ export function declarationsTable(
 
     if (propertyType) {
       const type = (propertyType as any).declaration?.signatures?.length
-        ? context.partials.functionType(
+        ? this.partials.functionType(
             (propertyType as any)?.declaration?.signatures,
-            true,
+            { forceParameterType: true },
           )
-        : context.partials.someType(propertyType);
-      row.push(formatTableTypeCol(type, false));
+        : this.partials.someType(propertyType);
+      row.push(removeLineBreaks(type));
     }
 
     if (hasComments) {
@@ -111,18 +110,22 @@ export function declarationsTable(
         property?.comment?.summary?.length;
       const comments = property?.comment;
       if (hasComment && comments) {
-        row.push(formatTableDescriptionCol(context.partials.comment(comments)));
+        row.push(this.partials.comment(comments, { isTableColumn: true }));
       } else {
         row.push('-');
       }
     }
 
     if (hasOverrides) {
-      row.push(context.partials.inheritance(property, -1) || '-');
+      row.push(
+        this.partials.inheritance(property, { headingLevel: -1 }) || '-',
+      );
     }
 
     if (hasInheritance) {
-      row.push(context.partials.inheritance(property, -1) || '-');
+      row.push(
+        this.partials.inheritance(property, { headingLevel: -1 }) || '-',
+      );
     }
 
     rows.push(row);

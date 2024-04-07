@@ -1,6 +1,6 @@
-import { backTicks } from '@theme/lib/markdown';
-import { camelToTitleCase } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { camelToTitleCase } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { Reflection } from 'typedoc';
 
 /**
@@ -9,8 +9,8 @@ import { Reflection } from 'typedoc';
  * @category Member Partials
  */
 export function reflectionFlags(
-  context: MarkdownThemeRenderContext,
-  reflection: Reflection,
+  this: MarkdownThemeContext,
+  model: Reflection,
 ): string {
   const flagsNotRendered: `@${string}`[] = [
     '@showCategories',
@@ -21,8 +21,8 @@ export function reflectionFlags(
 
   const flags: string[] = [];
 
-  if (reflection.comment) {
-    for (const tag of reflection.comment.modifierTags) {
+  if (model.comment) {
+    for (const tag of model.comment.modifierTags) {
       if (!flagsNotRendered.includes(tag)) {
         flags.push(camelToTitleCase(tag.substring(1)));
       }

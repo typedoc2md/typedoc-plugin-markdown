@@ -1,35 +1,34 @@
-import { backTicks, table } from '@theme/lib/markdown';
-import { formatTableDescriptionCol } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks, italic, table } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { TypeParameterReflection } from 'typedoc';
 
 /**
  * @category Member Partials
  */
 export function typeParametersTable(
-  context: MarkdownThemeRenderContext,
-  typeParameters: TypeParameterReflection[],
+  this: MarkdownThemeContext,
+  model: TypeParameterReflection[],
 ): string {
-  const hasDefault = typeParameters.some((typeParameter) =>
+  const hasDefault = model.some((typeParameter) =>
     Boolean(typeParameter.default),
   );
 
-  const hasComments = typeParameters.some((typeParameter) =>
+  const hasComments = model.some((typeParameter) =>
     Boolean(typeParameter.comment),
   );
 
-  const headers = [context.helpers.getText('kind.typeParameter.singular')];
+  const headers = [this.getText('kind.typeParameter.singular')];
 
   if (hasDefault) {
-    headers.push(context.helpers.getText('label.value'));
+    headers.push(this.getText('label.value'));
   }
 
   if (hasComments) {
-    headers.push(context.helpers.getText('label.description'));
+    headers.push(this.getText('label.description'));
   }
 
   const rows: string[][] = [];
-  typeParameters?.forEach((typeParameter) => {
+  model?.forEach((typeParameter) => {
     const row: string[] = [];
 
     const nameCol: string[] = [];
@@ -37,14 +36,16 @@ export function typeParametersTable(
     nameCol.push(backTicks(typeParameter.name));
 
     if (typeParameter.type) {
-      nameCol.push(`extends ${context.partials.someType(typeParameter.type)}`);
+      nameCol.push(
+        `${italic('extends')} ${this.partials.someType(typeParameter.type)}`,
+      );
     }
 
     row.push(nameCol.join(' '));
 
     if (hasDefault) {
       if (typeParameter.default) {
-        row.push(context.partials.someType(typeParameter.default));
+        row.push(this.partials.someType(typeParameter.default));
       } else {
         row.push('-');
       }
@@ -53,9 +54,9 @@ export function typeParametersTable(
     if (hasComments) {
       if (typeParameter.comment) {
         row.push(
-          formatTableDescriptionCol(
-            context.partials.comment(typeParameter.comment),
-          ),
+          this.partials.comment(typeParameter.comment, {
+            isTableColumn: true,
+          }),
         );
       } else {
         row.push('-');

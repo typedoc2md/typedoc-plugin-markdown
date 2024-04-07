@@ -1,17 +1,17 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { UnionType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function unionType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: UnionType,
 ): string {
-  const useCodeBlocks = context.options.getValue('useCodeBlocks');
+  const useCodeBlocks = this.options.getValue('useCodeBlocks');
   const shouldFormat = useCodeBlocks && model.types.length > 4;
   const md = model.types
-    .map((unionType) => context.partials.someType(unionType))
+    .map((unionType) => this.partials.someType(unionType))
     .join(shouldFormat ? `\n  \\| ` : ` \\| `);
   return shouldFormat ? `\n  \\| ` + md : md;
 }

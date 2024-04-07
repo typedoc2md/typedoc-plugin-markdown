@@ -1,22 +1,20 @@
-import { table } from '@theme/lib/markdown';
-import {
-  escapeChars,
-  formatTableDescriptionCol,
-  formatTableNameCol,
-} from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
-import { DeclarationReflection, SomeType } from 'typedoc';
+import { backTicks, table } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
+import { DeclarationReflection } from 'typedoc';
 
 /**
  * @category Member Partials
  */
 export function typeDeclarationTable(
-  context: MarkdownThemeRenderContext,
-  props: DeclarationReflection[],
+  this: MarkdownThemeContext,
+  model: DeclarationReflection[],
 ): string {
   const headers: string[] = [];
 
-  const declarations = context.helpers.flattenDeclarations(props, true);
+  const declarations = this.helpers.getFlattenedDeclarations(model, {
+    includeSignatures: true,
+  });
 
   const hasComments = declarations.some((declaration) =>
     Boolean(declaration.comment),
@@ -26,16 +24,16 @@ export function typeDeclarationTable(
     Boolean(declaration.defaultValue),
   );
 
-  headers.push(context.helpers.getText('label.member'));
+  headers.push(this.getText('label.member'));
 
-  headers.push(context.helpers.getText('label.type'));
+  headers.push(this.getText('label.type'));
 
   if (hasDefaultValues) {
-    headers.push(context.helpers.getText('label.value'));
+    headers.push(this.getText('label.value'));
   }
 
   if (hasComments) {
-    headers.push(context.helpers.getText('label.description'));
+    headers.push(this.getText('label.description'));
   }
 
   const rows: string[][] = [];
@@ -43,21 +41,13 @@ export function typeDeclarationTable(
   declarations.forEach((declaration: DeclarationReflection, index: number) => {
     const row: string[] = [];
 
-    row.push(formatTableNameCol(declaration.name));
+    row.push(backTicks(declaration.name));
 
-    row.push(
-      context.partials
-        .someType(declaration.type as SomeType)
-        .replace(/\n/g, ' '),
-    );
+    row.push(this.partials.someType(declaration.type));
 
     if (hasDefaultValues) {
       row.push(
-        escapeChars(
-          !declaration.defaultValue || declaration.defaultValue === '...'
-            ? '-'
-            : declaration.defaultValue,
-        ),
+        escapeChars(!declaration.defaultValue ? '-' : declaration.defaultValue),
       );
     }
 
@@ -65,7 +55,7 @@ export function typeDeclarationTable(
       const comments = declaration.comment;
 
       if (comments) {
-        row.push(formatTableDescriptionCol(context.partials.comment(comments)));
+        row.push(this.partials.comment(comments, { isTableColumn: true }));
       } else {
         row.push('-');
       }

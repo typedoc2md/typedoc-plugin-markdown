@@ -1,7 +1,7 @@
 import { ParameterReflection } from 'typedoc';
 
-export function getParameterDefaultValue(parameter: ParameterReflection) {
-  return parameter.defaultValue && parameter.defaultValue !== '...'
-    ? parameter.defaultValue
+export function getParameterDefaultValue(model: ParameterReflection) {
+  return model.defaultValue && model.defaultValue !== '...'
+    ? model.defaultValue
     : 'undefined';
 }

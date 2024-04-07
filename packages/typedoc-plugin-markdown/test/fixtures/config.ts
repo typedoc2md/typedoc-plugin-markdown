@@ -46,7 +46,7 @@ const config: Record<string, Fixture> = {
   },
   modules: {
     only: false,
-    entryPoints: '/modules/**',
+    entryPoints: '/modules/**/*.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       readme: 'none',
@@ -74,7 +74,7 @@ const config: Record<string, Fixture> = {
         membersWithOwnFile: ['Class', 'Interface', 'Enum'],
         categorizeByGroup: false,
         excludeGroups: true,
-        namedAnchors: true,
+        useHTMLAnchors: true,
         indexFormat: 'table',
         indexPageTitle: '{projectName}',
       },
@@ -97,7 +97,7 @@ const config: Record<string, Fixture> = {
     options: [
       {},
       {
-        namedAnchors: true,
+        useHTMLAnchors: true,
         preserveAnchorCasing: true,
         publicPath: '/some-path',
         fileExtension: 'mdx',
@@ -189,11 +189,9 @@ const config: Record<string, Fixture> = {
     only: false,
     entryPoints: '/customize/index.ts',
     outputFileStrategies: ['members'],
-
     commonOptions: {
       disableSources: true,
       readme: 'none',
-      preserveMarkup: true,
     },
     options: [
       {

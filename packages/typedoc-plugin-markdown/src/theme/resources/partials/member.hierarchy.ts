@@ -1,6 +1,6 @@
-import { backTicks, bold, heading, unorderedList } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
-import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
+import { heading, unorderedList } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
+import { DeclarationHierarchy, SomeType } from 'typedoc';
 
 /**
  * Renders an declaration hierachy section.
@@ -8,52 +8,36 @@ import { DeclarationHierarchy, SomeType, Type } from 'typedoc';
  * @category Member Partials
  */
 export function hierarchy(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: DeclarationHierarchy,
-  headingLevel: number,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
   const parent = !model.isTarget
     ? model.types
         .map((hierarchyType) => {
-          return getHierarchyType(
-            hierarchyType,
-            model.isTarget || false,
-            context,
-          );
+          return this.helpers.getHierarchyType(hierarchyType as SomeType, {
+            isTarget: model.isTarget || false,
+          });
         })
         .join('.')
     : null;
   if (model.next) {
     if (parent) {
-      md.push(heading(headingLevel, context.helpers.getText('label.extends')));
+      md.push(heading(options.headingLevel, this.getText('label.extends')));
       md.push(`- ${parent}`);
     } else {
-      md.push(
-        heading(headingLevel, context.helpers.getText('label.extendedBy')),
-      );
+      md.push(heading(options.headingLevel, this.getText('label.extendedBy')));
       const lines: string[] = [];
       model.next.types.forEach((hierarchyType) => {
         lines.push(
-          getHierarchyType(
-            hierarchyType,
-            model.next?.isTarget || false,
-            context,
-          ),
+          this.helpers.getHierarchyType(hierarchyType as SomeType, {
+            isTarget: model.next?.isTarget || false,
+          }),
         );
       });
       md.push(unorderedList(lines));
     }
   }
   return md.join('\n\n');
-}
-
-function getHierarchyType(
-  hierarchyType: Type,
-  isTarget: boolean,
-  context: MarkdownThemeRenderContext,
-) {
-  return isTarget
-    ? bold(backTicks(hierarchyType.toString()))
-    : context.partials.someType(hierarchyType as SomeType);
 }

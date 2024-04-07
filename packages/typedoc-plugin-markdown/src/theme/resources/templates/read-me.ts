@@ -1,10 +1,10 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { CommentDisplayPart, ProjectReflection } from 'typedoc';
 
 /**
  * Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
  */
-export function readme(this: MarkdownThemeRenderContext) {
+export function readme(this: MarkdownThemeContext) {
   const md: string[] = [];
 
   const model = this.page.model as ProjectReflection;

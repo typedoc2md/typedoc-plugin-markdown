@@ -1,11 +1,11 @@
-import { heading } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 /**
  * Template that maps to individual reflection models.
  */
-export function reflection(this: MarkdownThemeRenderContext) {
+export function reflection(this: MarkdownThemeContext) {
   const md: string[] = [];
 
   const model = this.page.model as DeclarationReflection;
@@ -35,9 +35,9 @@ export function reflection(this: MarkdownThemeRenderContext) {
       ReflectionKind.Interface,
     ].includes(model.kind)
   ) {
-    md.push(this.partials.memberWithGroups(model, 2));
+    md.push(this.partials.memberWithGroups(model, { headingLevel: 2 }));
   } else {
-    md.push(this.partials.member(model, 1));
+    md.push(this.partials.member(model, { headingLevel: 1 }));
   }
 
   md.push(this.hook('page.end').join('\n'));

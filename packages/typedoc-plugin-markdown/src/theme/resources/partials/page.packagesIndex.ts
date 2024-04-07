@@ -1,6 +1,6 @@
-import { heading, link, table } from '@theme/lib/markdown';
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading, link, table } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import * as path from 'path';
 import { ProjectReflection } from 'typedoc';
 
@@ -8,39 +8,36 @@ import { ProjectReflection } from 'typedoc';
  * @category Page Partials
  */
 export function packagesIndex(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: ProjectReflection,
 ): string {
   const md: string[] = [];
 
-  md.push(heading(2, context.helpers.getText('label.packages')));
+  md.push(heading(2, this.getText('label.packages')));
 
   const includeVersion = model.children?.some((projectPackage) =>
     Boolean(projectPackage.packageVersion),
   );
 
-  if (context.options.getValue('indexFormat') === 'table') {
-    const headers = [context.helpers.getText('label.name')];
+  if (this.options.getValue('indexFormat') === 'table') {
+    const headers = [this.getText('label.name')];
     if (includeVersion) {
       headers.push('Version');
     }
     headers.push('Description');
 
     const packageRows = model.children?.map((projectPackage) => {
-      const packageMeta = context.helpers.getPackagesMeta(projectPackage.name);
+      const packageMeta = this.getPackageMetaData(projectPackage.name);
 
       const urlTo = Boolean(projectPackage.readme)
-        ? `${path.dirname(projectPackage.url || '')}/${context.options.getValue(
+        ? `${path.dirname(projectPackage.url || '')}/${this.options.getValue(
             'entryFileName',
           )}`
         : projectPackage.url;
 
       const rows = [
         urlTo
-          ? link(
-              escapeChars(projectPackage.name),
-              context.helpers.getRelativeUrl(urlTo),
-            )
+          ? link(escapeChars(projectPackage.name), this.getRelativeUrl(urlTo))
           : escapeChars(projectPackage.name),
       ];
       if (includeVersion) {
@@ -54,14 +51,14 @@ export function packagesIndex(
   } else {
     const packagesList = model.children?.map((projectPackage) => {
       const urlTo = Boolean(projectPackage.readme)
-        ? `${path.dirname(projectPackage.url || '')}/${context.options.getValue(
+        ? `${path.dirname(projectPackage.url || '')}/${this.options.getValue(
             'entryFileName',
           )}`
         : projectPackage.url;
       return urlTo
         ? `- ${link(
             `${escapeChars(projectPackage.name)}${projectPackage.packageVersion ? ` - v${projectPackage.packageVersion}` : ''}`,
-            context.helpers.getRelativeUrl(urlTo),
+            this.getRelativeUrl(urlTo),
           )}`
         : '';
     });

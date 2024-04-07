@@ -1,7 +1,7 @@
-import { MarkdownRendererEvent } from '@app/events/markdown-renderer-event';
-import { MarkdownTheme } from '@theme/base';
+import { MarkdownRendererEvent } from '@plugin/app/events/markdown-renderer-event';
+import { MarkdownTheme } from '@plugin/theme/markdown-theme';
 import { Application, EventHooks, Options, Renderer } from 'typedoc';
-import { MarkdownRendererHooks } from './hooks/markdown-renderer-hooks';
+import { MarkdownRendererHooks } from './renderer/markdown-renderer-hooks';
 
 /**
  * An extended typing of TypeDoc's Application instance.

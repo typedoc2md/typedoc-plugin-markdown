@@ -505,32 +505,6 @@ export const publicPath: Partial<DeclarationOption> = {
 };
 
 /**
- * By default non html tags inside comments are escaped.
- *
- * This option should be used when parsers require the preservation of non-html tags, for example if some custom JSX tags are required to be interpreted in final output.
- *
- * @category Utility
- */
-export const preserveMarkup: Partial<DeclarationOption> = {
-  help: 'Preserves non-html markup tags in comments.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * By default references to symbol anchor links are lowercased.
- *
- * This option can be used for engines that require the preservation of anchor link casing.
- *
- * @category Utility
- */
-export const preserveAnchorCasing: Partial<DeclarationOption> = {
-  help: 'Preserve anchor casing when generating link to symbols.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
  * This option should be used when parsers requiren a custom anchor prefix.
  *
  * @example "markdown-header"
@@ -551,8 +525,21 @@ export const anchorPrefix: Partial<DeclarationOption> = {
  *
  * @category Utility
  */
-export const namedAnchors: Partial<DeclarationOption> = {
+export const useHTMLAnchors: Partial<DeclarationOption> = {
   help: 'Add HTML named anchors to headings and table rows.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default references to symbol anchor links are lowercased.
+ *
+ * This option can be used for engines that require the preservation of anchor link casing.
+ *
+ * @category Utility
+ */
+export const preserveAnchorCasing: Partial<DeclarationOption> = {
+  help: 'Preserve anchor casing when generating link to symbols.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };

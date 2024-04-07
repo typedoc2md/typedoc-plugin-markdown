@@ -1,5 +1,5 @@
-import { backTicks } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { SignatureReflection } from 'typedoc';
 
 /**
@@ -8,24 +8,22 @@ import { SignatureReflection } from 'typedoc';
  * @category Member Partials
  */
 export function indexSignature(
-  context: MarkdownThemeRenderContext,
-  signature: SignatureReflection,
+  this: MarkdownThemeContext,
+  model: SignatureReflection,
 ): string {
   const md = [''];
 
-  const params = signature.parameters
-    ? signature.parameters.map((parameter) => {
+  const params = model.parameters
+    ? model.parameters.map((parameter) => {
         return parameter.type
-          ? `${backTicks(parameter.name)}: ${context.partials.someType(
+          ? `${backTicks(parameter.name)}: ${this.partials.someType(
               parameter.type,
             )}`
           : '';
       })
     : [];
-  if (signature.type) {
-    md.push(
-      `\\[${params.join('')}\\]: ${context.partials.someType(signature.type)}`,
-    );
+  if (model.type) {
+    md.push(`\\[${params.join('')}\\]: ${this.partials.someType(model.type)}`);
   }
   return md.join(' ');
 }

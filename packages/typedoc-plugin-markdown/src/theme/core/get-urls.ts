@@ -1,12 +1,16 @@
-import { MarkdownRenderer } from '@app/application';
-import { OutputFileStrategy } from '@options/option-maps';
-import { MarkdownTheme } from '@theme/base';
+import { MarkdownRenderer } from '@plugin/app/application';
 import {
   getFileNameWithExtension,
   removeFirstScopedDirectory,
   slugifyUrl,
-} from '@theme/lib/utils';
-import { TemplateMapping, UrlMapping, UrlOption } from '@theme/theme-types';
+} from '@plugin/libs/utils';
+import { OutputFileStrategy } from '@plugin/options/option-maps';
+import { MarkdownTheme } from '@plugin/theme/markdown-theme';
+import {
+  TemplateMapping,
+  UrlMapping,
+  UrlOption,
+} from '@plugin/theme/theme-types';
 import * as path from 'path';
 import {
   DeclarationReflection,
@@ -307,7 +311,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
   function getUrlPath(reflection: DeclarationReflection, urlOption: UrlOption) {
     const alias = reflection.name
-      .replace(/^_+/, '')
+      .replace(/^_+|_+$/g, '')
       .replace(/</, '-')
       .replace(/>/, '-');
 
@@ -415,7 +419,7 @@ export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
   }
 
   function getAnchorName(reflection: DeclarationReflection) {
-    const htmlTableAnchors = options.getValue('namedAnchors');
+    const htmlTableAnchors = options.getValue('useHTMLAnchors');
 
     if (!htmlTableAnchors) {
       if (

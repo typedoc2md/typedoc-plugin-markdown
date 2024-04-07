@@ -1,5 +1,5 @@
-import { bold, link } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { bold, link } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import * as path from 'path';
 import {
   DeclarationReflection,
@@ -11,13 +11,13 @@ import {
 /**
  * @category Page Partials
  */
-export function header(context: MarkdownThemeRenderContext): string {
+export function header(this: MarkdownThemeContext): string {
   const getHeader = () => {
     const isPackages =
-      context.options.getValue('entryPointStrategy') ===
+      this.options.getValue('entryPointStrategy') ===
       EntryPointStrategy.Packages;
     if (isPackages) {
-      const packageItem = findPackage(context.page.model as ProjectReflection);
+      const packageItem = findPackage(this.page.model as ProjectReflection);
       if (packageItem) {
         return getPackageHeader();
       }
@@ -26,32 +26,36 @@ export function header(context: MarkdownThemeRenderContext): string {
   };
 
   const getProjectHeader = () => {
-    const fileExtension = context.options.getValue('fileExtension');
-    const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
-    const titleLink = context.options.getValue('titleLink');
+    const fileExtension = this.options.getValue('fileExtension');
+    const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
+    const titleLink = this.options.getValue('titleLink');
 
     const md: string[] = [];
+    const name = this.page.project.name;
+    const version = this.page.project.packageVersion;
 
-    const title = context.helpers.getProjectName(
-      context.helpers.getText('header.title'),
-    );
+    const title = this.getText('header.title')
+      .replace('{projectName}', name)
+      .replace('{version}', version ? `v${version}` : '')
+      .replace(/\s+/g, ' ')
+      .trim();
 
-    const readmeLabel = context.helpers.getText('header.readme');
-    const indexLabel = context.helpers.getText('header.docs');
+    const readmeLabel = this.getText('header.readme');
+    const indexLabel = this.getText('header.docs');
 
     md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
 
     md.push('•');
 
     const preserveReadme =
-      Boolean(context.page.project.readme) &&
-      !context.options.getValue('mergeReadme');
+      Boolean(this.page.project.readme) &&
+      !this.options.getValue('mergeReadme');
 
     const useEntryModule =
-      (context.page.project?.groups &&
+      (this.page.project?.groups &&
         Boolean(
-          context.page.project?.groups[0]?.children.find(
-            (child) => child.name === context.options.getValue('entryModule'),
+          this.page.project?.groups[0]?.children.find(
+            (child) => child.name === this.options.getValue('entryModule'),
           ),
         )) ||
       false;
@@ -62,42 +66,31 @@ export function header(context: MarkdownThemeRenderContext): string {
         ? `readme_${fileExtension}`
         : entryFileName;
 
-      if (context.page.url === readMeUrl) {
+      if (this.page.url === readMeUrl) {
         links.push(readmeLabel);
       } else {
-        links.push(
-          link(readmeLabel, context.helpers.getRelativeUrl(readMeUrl)),
-        );
+        links.push(link(readmeLabel, this.getRelativeUrl(readMeUrl)));
       }
 
       links.push('\\|');
 
-      const indexUrl = useEntryModule
-        ? entryFileName
-        : context.page.project.url;
+      const indexUrl = useEntryModule ? entryFileName : this.page.project.url;
 
-      if (context.page.url === indexUrl) {
+      if (this.page.url === indexUrl) {
         links.push(indexLabel);
       } else {
         if (indexUrl) {
-          links.push(
-            link(indexLabel, context.helpers.getRelativeUrl(indexUrl)),
-          );
+          links.push(link(indexLabel, this.getRelativeUrl(indexUrl)));
         }
       }
 
       md.push(`${links.join(' ')}`);
     } else {
-      if (useEntryModule || context.page.url === context.page.project.url) {
+      if (useEntryModule || this.page.url === this.page.project.url) {
         md.push(indexLabel);
       } else {
-        if (context.page.project.url) {
-          md.push(
-            link(
-              indexLabel,
-              context.helpers.getRelativeUrl(context.page.project.url),
-            ),
-          );
+        if (this.page.project.url) {
+          md.push(link(indexLabel, this.getRelativeUrl(this.page.project.url)));
         }
       }
     }
@@ -107,7 +100,7 @@ export function header(context: MarkdownThemeRenderContext): string {
 
   const getPackageHeader = () => {
     const packageItem = findPackage(
-      context.page.model as ProjectReflection,
+      this.page.model as ProjectReflection,
     ) as ProjectReflection;
 
     if (!packageItem) {
@@ -116,11 +109,11 @@ export function header(context: MarkdownThemeRenderContext): string {
 
     const md: string[] = [];
 
-    const readmeLabel = context.helpers.getText('header.readme');
-    const indexLabel = context.helpers.getText('header.docs');
+    const readmeLabel = this.getText('header.readme');
+    const indexLabel = this.getText('header.docs');
 
-    const fileExtension = context.options.getValue('fileExtension');
-    const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
+    const fileExtension = this.options.getValue('fileExtension');
+    const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
 
     const packageItemName = packageItem.packageVersion
       ? `${packageItem.name} v${packageItem.packageVersion}`
@@ -131,29 +124,25 @@ export function header(context: MarkdownThemeRenderContext): string {
     md.push('•');
 
     const preservePackageReadme =
-      Boolean(packageItem.readme) && !context.options.getValue('mergeReadme');
+      Boolean(packageItem.readme) && !this.options.getValue('mergeReadme');
 
     if (preservePackageReadme) {
       const links: string[] = [];
       const readmeUrl = `${packageItem.name}/${entryFileName}`;
 
-      if (context.page.url === readmeUrl) {
+      if (this.page.url === readmeUrl) {
         links.push(readmeLabel);
       } else {
-        links.push(
-          link(readmeLabel, context.helpers.getRelativeUrl(readmeUrl)),
-        );
+        links.push(link(readmeLabel, this.getRelativeUrl(readmeUrl)));
       }
 
       links.push('\\|');
 
-      if (context.page.url === packageItem.url) {
+      if (this.page.url === packageItem.url) {
         links.push(indexLabel);
       } else {
         if (packageItem.url) {
-          links.push(
-            link(indexLabel, context.helpers.getRelativeUrl(packageItem.url)),
-          );
+          links.push(link(indexLabel, this.getRelativeUrl(packageItem.url)));
         }
       }
       md.push(`${links.join(' ')}`);

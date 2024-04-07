@@ -1,20 +1,20 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
-/**å
+/**
  * @category Member Partials
  */
 export function typeDeclaration(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: DeclarationReflection[],
-  headingLevel: number,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
 
-  if (context.options.getValue('typeDeclarationFormat') === 'table') {
-    md.push(context.partials.typeDeclarationTable(model));
+  if (this.options.getValue('typeDeclarationFormat') === 'table') {
+    md.push(this.partials.typeDeclarationTable(model));
   } else {
-    md.push(context.partials.typeDeclarationList(model, headingLevel));
+    md.push(this.partials.typeDeclarationList(model, options.headingLevel));
   }
 
   return md.join('\n\n');

@@ -1,6 +1,6 @@
-import { heading } from '@theme/lib/markdown';
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import {
   DeclarationReflection,
   ReferenceReflection,
@@ -11,19 +11,18 @@ import {
  * @category Member Partials
  */
 export function member(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: DeclarationReflection,
-  headingLevel: number,
-  nested = false,
+  options: { headingLevel: number; nested?: boolean },
 ): string {
   const md: string[] = [];
 
-  if (context.options.getValue('namedAnchors')) {
+  if (this.options.getValue('useHTMLAnchors')) {
     md.push(`<a id="${model.anchor}" name="${model.anchor}"></a>`);
   }
 
   if (!model.hasOwnDocument && !(model.kind === ReflectionKind.Constructor)) {
-    md.push(heading(headingLevel, context.partials.memberTitle(model)));
+    md.push(heading(options.headingLevel, this.partials.memberTitle(model)));
   }
 
   const getMember = (reflection: DeclarationReflection) => {
@@ -34,15 +33,21 @@ export function member(
         ReflectionKind.Enum,
       ].includes(reflection.kind)
     ) {
-      return context.partials.memberWithGroups(reflection, headingLevel + 1);
+      return this.partials.memberWithGroups(reflection, {
+        headingLevel: options.headingLevel + 1,
+      });
     }
 
     if (reflection.kind === ReflectionKind.Constructor) {
-      return context.partials.constructor(reflection, headingLevel);
+      return this.partials.constructor(reflection, {
+        headingLevel: options.headingLevel,
+      });
     }
 
     if (reflection.kind === ReflectionKind.Accessor) {
-      return context.partials.accessor(reflection, headingLevel + 1);
+      return this.partials.accessor(reflection, {
+        headingLevel: options.headingLevel + 1,
+      });
     }
 
     if (reflection.signatures) {
@@ -55,7 +60,7 @@ export function member(
           if (multipleSignatures) {
             signatureMd.push(
               heading(
-                headingLevel + 1,
+                options.headingLevel + 1,
                 `${escapeChars(signature.name)}(${signature.parameters
                   ?.map((param) => param.name)
                   .join(', ')})`,
@@ -63,11 +68,12 @@ export function member(
             );
           }
           signatureMd.push(
-            context.partials.signature(
-              signature,
-              multipleSignatures ? headingLevel + 2 : headingLevel + 1,
-              nested,
-            ),
+            this.partials.signature(signature, {
+              headingLevel: multipleSignatures
+                ? options.headingLevel + 2
+                : options.headingLevel + 1,
+              nested: options.nested,
+            }),
           );
           return signatureMd.join('\n\n');
         })
@@ -75,12 +81,12 @@ export function member(
     }
 
     if (reflection instanceof ReferenceReflection) {
-      return context.partials.referenceMember(reflection);
+      return this.partials.referenceMember(reflection);
     }
 
-    return context.partials.declaration(reflection, {
-      headingLevel: headingLevel + 1,
-      nested,
+    return this.partials.declaration(reflection, {
+      headingLevel: options.headingLevel + 1,
+      nested: options.nested,
     });
   };
 

@@ -18,7 +18,7 @@ app.renderer.on(MarkdownRendererEvent.BEGIN, (event) => {
 
 ### project
 
-> **`readonly`** **project**: [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)
+> `readonly` **project**: [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)
 
 The project the renderer is currently processing.
 
@@ -26,7 +26,7 @@ The project the renderer is currently processing.
 
 ### outputDirectory
 
-> **`readonly`** **outputDirectory**: `string`
+> `readonly` **outputDirectory**: `string`
 
 The path of the directory the documentation should be written to.
 
@@ -34,7 +34,7 @@ The path of the directory the documentation should be written to.
 
 ### urls?
 
-> **`optional`** **urls**: [`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
+> `optional` **urls**: [`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
 
 A list of all pages that should be generated.
 
@@ -42,7 +42,7 @@ A list of all pages that should be generated.
 
 ### navigation?
 
-> **`optional`** **navigation**: [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]
+> `optional` **navigation**: [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]
 
 The navigation structure of the project that can be utilised by plugins.
 
@@ -50,7 +50,7 @@ The navigation structure of the project that can be utilised by plugins.
 
 ### BEGIN
 
-> **`static`** **`readonly`** **BEGIN**: `"beginRender"` = `'beginRender'`
+> `static` `readonly` **BEGIN**: `"beginRender"` = `'beginRender'`
 
 Triggered before the renderer starts rendering a project.
 
@@ -58,6 +58,6 @@ Triggered before the renderer starts rendering a project.
 
 ### END
 
-> **`static`** **`readonly`** **END**: `"endRender"` = `'endRender'`
+> `static` `readonly` **END**: `"endRender"` = `'endRender'`
 
 Triggered after the renderer has written all documents.

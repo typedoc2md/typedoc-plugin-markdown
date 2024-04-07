@@ -1,19 +1,14 @@
-import { backTicks, table } from '@theme/lib/markdown';
-import {
-  formatTableDescriptionCol,
-  formatTableTypeCol,
-} from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks, table } from '@plugin/libs/markdown';
+import { removeLineBreaks } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 /**
- * Renders parameters section as a table.
- *
  * @category Member Partials
  */
 export function parametersTable(
-  context: MarkdownThemeRenderContext,
-  parameters: ParameterReflection[],
+  this: MarkdownThemeContext,
+  model: ParameterReflection[],
 ): string {
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
@@ -37,9 +32,9 @@ export function parametersTable(
     );
   };
 
-  const showDefaults = hasDefaultValues(parameters);
+  const showDefaults = hasDefaultValues(model);
 
-  const parsedParams = parameters.reduce(
+  const parsedParams = model.reduce(
     (acc: any, current: any) => parseParams(current, acc),
     [],
   );
@@ -47,19 +42,19 @@ export function parametersTable(
   const hasComments = parsedParams.some((param) => Boolean(param.comment));
 
   const headers = [
-    context.helpers.getText('kind.parameter.singular'),
-    context.helpers.getText('label.type'),
+    this.getText('kind.parameter.singular'),
+    this.getText('label.type'),
   ];
 
   if (showDefaults) {
-    headers.push(context.helpers.getText('label.defaultValue'));
+    headers.push(this.getText('label.defaultValue'));
   }
 
   if (hasComments) {
-    headers.push(context.helpers.getText('label.description'));
+    headers.push(this.getText('label.description'));
   }
 
-  const firstOptionalParamIndex = parameters.findIndex(
+  const firstOptionalParamIndex = model.findIndex(
     (parameter) => parameter.flags.isOptional,
   );
 
@@ -81,21 +76,21 @@ export function parametersTable(
     if (parameter.type) {
       const displayType =
         parameter.type instanceof ReflectionType
-          ? context.partials.reflectionType(parameter.type, true)
-          : context.partials.someType(parameter.type);
-      row.push(formatTableTypeCol(displayType, false));
+          ? this.partials.reflectionType(parameter.type, {
+              foreCollpase: true,
+            })
+          : this.partials.someType(parameter.type);
+      row.push(removeLineBreaks(displayType));
     }
 
     if (showDefaults) {
-      row.push(backTicks(context.helpers.getParameterDefaultValue(parameter)));
+      row.push(backTicks(this.helpers.getParameterDefaultValue(parameter)));
     }
 
     if (hasComments) {
       if (parameter.comment) {
         row.push(
-          formatTableDescriptionCol(
-            context.partials.comment(parameter.comment),
-          ),
+          this.partials.comment(parameter.comment, { isTableColumn: true }),
         );
       } else {
         row.push('-');

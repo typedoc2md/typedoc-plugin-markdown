@@ -1,7 +1,7 @@
-import { MarkdownRenderer } from '@app/application';
-import { PLURAL_KIND_KEY_MAP } from '@options/text-mappings';
-import { MarkdownTheme } from '@theme/base';
-import { NavigationItem } from '@theme/theme-types';
+import { MarkdownRenderer } from '@plugin/app/application';
+import { PLURAL_KIND_KEY_MAP } from '@plugin/options/text-mappings';
+import { MarkdownTheme } from '@plugin/theme/markdown-theme';
+import { NavigationItem } from '@plugin/theme/theme-types';
 import * as path from 'path';
 import {
   DeclarationReflection,

@@ -1,5 +1,5 @@
-import { heading, unorderedList } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading, unorderedList } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 /**
@@ -8,40 +8,45 @@ import { DeclarationReflection } from 'typedoc';
  * @category Member Partials
  */
 export function memberWithGroups(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: DeclarationReflection,
-  headingLevel: number,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
 
   if (model.comment) {
-    md.push(context.partials.comment(model.comment, { headingLevel }));
+    md.push(
+      this.partials.comment(model.comment, {
+        headingLevel: options.headingLevel,
+      }),
+    );
   }
 
   if (model.typeHierarchy?.next) {
-    md.push(context.partials.hierarchy(model.typeHierarchy, headingLevel));
+    md.push(
+      this.partials.hierarchy(model.typeHierarchy, {
+        headingLevel: options.headingLevel,
+      }),
+    );
   }
 
   if (model.typeParameters?.length) {
     md.push(
-      heading(
-        headingLevel,
-        context.helpers.getText('kind.typeParameter.plural'),
-      ),
+      heading(options.headingLevel, this.getText('kind.typeParameter.plural')),
     );
-    if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(context.partials.typeParametersTable(model.typeParameters));
+    if (this.options.getValue('parametersFormat') === 'table') {
+      md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
-      md.push(context.partials.typeParametersList(model.typeParameters));
+      md.push(this.partials.typeParametersList(model.typeParameters));
     }
   }
 
   if (model.implementedTypes?.length) {
-    md.push(heading(headingLevel, context.helpers.getText('label.implements')));
+    md.push(heading(options.headingLevel, this.getText('label.implements')));
     md.push(
       unorderedList(
         model.implementedTypes.map((implementedType) =>
-          context.partials.someType(implementedType),
+          this.partials.someType(implementedType),
         ),
       ),
     );
@@ -49,21 +54,29 @@ export function memberWithGroups(
 
   if ('signatures' in model && model.signatures?.length) {
     model.signatures.forEach((signature) => {
-      md.push(context.partials.signature(signature, headingLevel));
+      md.push(
+        this.partials.signature(signature, {
+          headingLevel: options.headingLevel,
+        }),
+      );
     });
   }
 
   if ('indexSignature' in model && model.indexSignature) {
-    md.push(heading(headingLevel, context.helpers.getText('label.indexable')));
-    md.push(context.partials.indexSignature(model.indexSignature));
+    md.push(heading(options.headingLevel, this.getText('label.indexable')));
+    md.push(this.partials.indexSignature(model.indexSignature));
   }
 
   if (model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-    md.push(heading(headingLevel, context.helpers.getText('label.index')));
-    md.push(context.partials.reflectionIndex(model, headingLevel + 1));
+    md.push(heading(options.headingLevel, this.getText('label.index')));
+    md.push(
+      this.partials.reflectionIndex(model, {
+        headingLevel: options.headingLevel + 1,
+      }),
+    );
   }
 
-  md.push(context.partials.body(model, headingLevel));
+  md.push(this.partials.body(model, { headingLevel: options.headingLevel }));
 
   return md.join('\n\n');
 }

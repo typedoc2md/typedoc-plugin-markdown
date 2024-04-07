@@ -1,36 +1,33 @@
-import { bold, heading } from '@theme/lib/markdown';
-import { camelToTitleCase } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { bold, heading } from '@plugin/libs/markdown';
+import { camelToTitleCase, formatTableComments } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { Comment } from 'typedoc';
 
 /**
-
  * @category Comment Partials
  */
 export function comment(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: Comment,
   options: {
     headingLevel?: number;
     showSummary?: boolean;
     showTags?: boolean;
-  } = {
-    headingLevel: undefined,
-    showSummary: true,
-    showTags: true,
-  },
+    isTableColumn?: boolean;
+  } = {},
 ) {
   const opts = {
     headingLevel: undefined,
     showSummary: true,
     showTags: true,
+    isTableColumn: false,
     ...options,
   };
 
   const md: string[] = [];
 
   if (opts.showSummary && model.summary?.length > 0) {
-    md.push(context.partials.commentParts(model.summary));
+    md.push(this.partials.commentParts(model.summary));
   }
 
   if (opts.showTags && model.blockTags?.length) {
@@ -44,11 +41,13 @@ export function comment(
             ? heading(opts.headingLevel, tagText) + '\n'
             : bold(tagText),
         ];
-        tagMd.push(context.partials.commentParts(tag.content));
+        tagMd.push(this.partials.commentParts(tag.content));
         return tagMd.join('\n');
       });
     md.push(tags.join('\n\n'));
   }
 
-  return md.join('\n\n');
+  const output = md.join('\n\n');
+
+  return opts.isTableColumn ? formatTableComments(output) : output;
 }

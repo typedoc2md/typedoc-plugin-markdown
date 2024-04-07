@@ -1,11 +1,21 @@
-import { MarkdownPageEvent } from '@app/events/markdown-page-event';
-import { OutputFileStrategy } from '@options/option-maps';
-import { ReflectionKind } from 'typedoc';
+import { MarkdownPageEvent } from '@plugin/app/events/markdown-page-event';
+import { OutputFileStrategy } from '@plugin/options/option-maps';
+import { Options, ReflectionKind } from 'typedoc';
+
+/**
+ * The model used to define the package metadata when in packages mode.
+ *
+ * @category Theme
+ */
+export interface PackageMetaData {
+  description: string;
+  options: Options;
+}
 
 /**
  * The model used to define the URL mapping structure.
  *
- * @category Custom Theme
+ * @category Theme
  */
 export interface UrlMapping</** @ignore */ Model> {
   url: string;
@@ -16,7 +26,7 @@ export interface UrlMapping</** @ignore */ Model> {
 /**
  * The model used to define the navigation structure.
  *
- * @category Custom Theme
+ * @category Theme
  */
 export interface NavigationItem {
   title: string;

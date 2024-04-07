@@ -1,9 +1,6 @@
 // @ts-check
 import * as fs from 'fs';
-import {
-  MarkdownTheme,
-  MarkdownThemeRenderContext,
-} from 'typedoc-plugin-markdown';
+import { MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown';
 
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
@@ -60,15 +57,11 @@ class MyMarkdownTheme extends MarkdownTheme {
    * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
    */
   getRenderContext(page) {
-    return new MyMarkdownThemeRenderContext(
-      this,
-      page,
-      this.application.options,
-    );
+    return new MyMarkdownThemeContext(this, page, this.application.options);
   }
 }
 
-class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
+class MyMarkdownThemeContext extends MarkdownThemeContext {
   helpers = {
     ...this.helpers,
     /**

@@ -1,12 +1,12 @@
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { InferredType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function inferredType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: InferredType,
 ): string {
   return `infer ${escapeChars(model.name)}`;

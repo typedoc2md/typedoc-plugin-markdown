@@ -1,12 +1,12 @@
-import { backTicks } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { IntrinsicType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function intrinsicType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: IntrinsicType,
 ): string {
   return backTicks(model.name);

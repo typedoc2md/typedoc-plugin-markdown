@@ -1,24 +1,25 @@
-import { backTicks } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ReflectionType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function reflectionType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: ReflectionType,
-  foreCollpase = false,
+  options?: { foreCollpase?: boolean },
 ): string {
   const root = model instanceof ReflectionType ? model.declaration : model;
   if (root.signatures) {
-    return context.partials.functionType(root.signatures);
+    return this.partials.functionType(root.signatures);
   }
 
   const expandObjects =
-    !foreCollpase && (context.options.getValue('expandObjects') as boolean);
+    !options?.foreCollpase &&
+    (this.options.getValue('expandObjects') as boolean);
 
   return expandObjects
-    ? context.partials.declarationType(root)
+    ? this.partials.declarationType(root)
     : backTicks('object');
 }

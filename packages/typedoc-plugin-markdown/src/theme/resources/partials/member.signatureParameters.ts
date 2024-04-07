@@ -1,28 +1,28 @@
-import { backTicks } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ParameterReflection, SomeType } from 'typedoc';
 
 /**
  * @category Member Partials
  */
 export function signatureParameters(
-  context: MarkdownThemeRenderContext,
-  parameters: ParameterReflection[],
+  this: MarkdownThemeContext,
+  model: ParameterReflection[],
 ) {
-  const format = context.options.getValue('useCodeBlocks');
-  const firstOptionalParamIndex = parameters.findIndex(
+  const format = this.options.getValue('useCodeBlocks');
+  const firstOptionalParamIndex = model.findIndex(
     (parameter) => parameter.flags.isOptional,
   );
   return (
     '(' +
-    parameters
+    model
       .map((param, i) => {
         const paramsmd: string[] = [];
         if (param.flags.isRest) {
           paramsmd.push('...');
         }
-        const paramType = context.partials.someType(param.type as SomeType);
-        const showParamType = context.options.getValue('expandParameters');
+        const paramType = this.partials.someType(param.type as SomeType);
+        const showParamType = this.options.getValue('expandParameters');
         const paramItem = [
           `${backTicks(param.name)}${
             param.flags.isOptional ||
@@ -35,7 +35,7 @@ export function signatureParameters(
           paramItem.push(paramType);
         }
         paramsmd.push(
-          `${format && parameters.length > 2 ? `\n   ` : ''}${paramItem.join(': ')}`,
+          `${format && model.length > 2 ? `\n   ` : ''}${paramItem.join(': ')}`,
         );
         return paramsmd.join('');
       })

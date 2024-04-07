@@ -1,12 +1,12 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { NamedTupleMember } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function namedTupleType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: NamedTupleMember,
 ): string {
-  return context.partials.someType(model.element);
+  return this.partials.someType(model.element);
 }

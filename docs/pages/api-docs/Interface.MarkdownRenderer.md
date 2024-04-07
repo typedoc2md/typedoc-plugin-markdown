@@ -40,7 +40,7 @@ app.renderer.postRenderAsyncJobs.push(async (event) => {
 
 ### preRenderAsyncJobs
 
-> **preRenderAsyncJobs**: (`output`: [`MarkdownRendererEvent`](/api-docs/Class.MarkdownRendererEvent.md)) => `Promise`\<`void`\>[]
+> **preRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
 
 #### Overrides
 
@@ -50,7 +50,7 @@ app.renderer.postRenderAsyncJobs.push(async (event) => {
 
 ### postRenderAsyncJobs
 
-> **postRenderAsyncJobs**: (`output`: [`MarkdownRendererEvent`](/api-docs/Class.MarkdownRendererEvent.md)) => `Promise`\<`void`\>[]
+> **postRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
 
 #### Overrides
 

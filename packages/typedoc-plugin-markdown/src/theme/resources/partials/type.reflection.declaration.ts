@@ -1,15 +1,15 @@
-import { backTicks } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, SomeType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function declarationType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: DeclarationReflection,
 ): string {
-  const shouldFormat = context.options.getValue('useCodeBlocks');
+  const shouldFormat = this.options.getValue('useCodeBlocks');
 
   if (model.indexSignature || model.children) {
     let indexSignature = '';
@@ -20,7 +20,7 @@ export function declarationType(
             (param) => `\`[${param.name}: ${param.type}]\``,
           )
         : '';
-      const obj = context.partials.someType(
+      const obj = this.partials.someType(
         declarationIndexSignature.type as SomeType,
       );
       indexSignature = `${key}: ${obj}; `;
@@ -44,12 +44,12 @@ export function declarationType(
 
         name.push(backTicks(obj.name));
 
-        const theType = context.helpers.getDeclarationType(obj) as SomeType;
+        const theType = this.helpers.getDeclarationType(obj) as SomeType;
 
         const typeString =
           obj.defaultValue && obj.defaultValue !== '...'
             ? backTicks(obj.defaultValue)
-            : context.partials.someType(theType);
+            : this.partials.someType(theType);
         if (shouldFormat) {
           return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
         }
@@ -60,10 +60,10 @@ export function declarationType(
       types?.unshift(indexSignature);
     }
     return types
-      ? `\\{${shouldFormat ? '\n' : ''}${types.join('')}  }`
-      : '\\{}';
+      ? `\\{${shouldFormat ? '\n' : ''}${types.join('')} \\}`
+      : '\\{\\}';
   }
-  return '\\{}';
+  return '\\{\\}';
 }
 
 function indentBlock(content: string, format: boolean) {

@@ -1,6 +1,5 @@
 export default {
   index: 'Introduction',
-  'v4-release': 'v4 Release',
   '-- Getting Started': {
     type: 'separator',
     title: 'Getting Started',
@@ -12,4 +11,9 @@ export default {
     title: 'Guides',
   },
   'customizing-output': '',
+  '-- Support': {
+    type: 'separator',
+    title: 'Support',
+  },
+  changelog: '',
 };

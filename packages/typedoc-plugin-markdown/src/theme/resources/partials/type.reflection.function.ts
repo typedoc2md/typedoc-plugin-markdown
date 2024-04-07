@@ -1,27 +1,27 @@
-import { backTicks } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { SignatureReflection, SomeType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function functionType(
-  context: MarkdownThemeRenderContext,
-  signatures: SignatureReflection[],
-  forceParameterType = false,
+  this: MarkdownThemeContext,
+  model: SignatureReflection[],
+  options?: { forceParameterType: boolean },
 ): string {
-  const functions = signatures.map((fn) => {
+  const functions = model.map((fn) => {
     const typeParams = fn.typeParameters
       ? `\\<${fn.typeParameters
           .map((typeParameter) => backTicks(typeParameter.name))
           .join(', ')}\\>`
       : [];
     const showParameterType =
-      forceParameterType || context.options.getValue('expandParameters');
+      options?.forceParameterType || this.options.getValue('expandParameters');
 
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          const paramType = context.partials.someType(param.type as SomeType);
+          const paramType = this.partials.someType(param.type as SomeType);
           const paramItem = [
             `${param.flags.isRest ? '...' : ''}${backTicks(param.name)}${
               param.flags.isOptional ? '?' : ''
@@ -33,7 +33,7 @@ export function functionType(
           return paramItem.join(': ');
         })
       : [];
-    const returns = context.partials.someType(fn.type as SomeType);
+    const returns = this.partials.someType(fn.type as SomeType);
     return typeParams + `(${params.join(', ')}) => ${returns}`;
   });
   return functions.join('');

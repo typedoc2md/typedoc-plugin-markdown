@@ -1,5 +1,5 @@
-import { link } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { link } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ReferenceReflection, ReflectionKind } from 'typedoc';
 
 /**
@@ -8,18 +8,16 @@ import { ReferenceReflection, ReflectionKind } from 'typedoc';
  * @category Member Partials
  */
 export function referenceMember(
-  context: MarkdownThemeRenderContext,
-  props: ReferenceReflection,
+  this: MarkdownThemeContext,
+  model: ReferenceReflection,
 ): string {
-  let referenced = props.tryGetTargetReflectionDeep();
+  let referenced = model.tryGetTargetReflectionDeep();
 
-  const reExportsText = context.helpers.getText('label.reExports');
-  const renamesAndReExportsText = context.helpers.getText(
-    'label.renamesAndReExports',
-  );
+  const reExportsText = this.getText('label.reExports');
+  const renamesAndReExportsText = this.getText('label.renamesAndReExports');
 
   if (!referenced) {
-    return `${reExportsText} ${props.name}`;
+    return `${reExportsText} ${model.name}`;
   }
 
   if (referenced?.kind === ReflectionKind.TypeLiteral && referenced.parent) {
@@ -30,15 +28,15 @@ export function referenceMember(
     return `${reExportsText} ${referenced.name}`;
   }
 
-  if (props.name === referenced.name) {
+  if (model.name === referenced.name) {
     return `${reExportsText} ${link(
       referenced.name,
-      context.helpers.getRelativeUrl(referenced.url),
+      this.getRelativeUrl(referenced.url),
     )}`;
   }
 
   return `${renamesAndReExportsText} ${link(
     referenced.name,
-    context.helpers.getRelativeUrl(referenced.url),
+    this.getRelativeUrl(referenced.url),
   )}`;
 }

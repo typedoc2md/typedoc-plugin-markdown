@@ -1,14 +1,14 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { TupleType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function tupleType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: TupleType,
 ): string {
   return `[${model.elements
-    .map((element) => context.partials.someType(element))
+    .map((element) => this.partials.someType(element))
     .join(', ')}]`;
 }

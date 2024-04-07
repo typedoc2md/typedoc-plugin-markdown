@@ -2,7 +2,7 @@ import { Reflection, ReflectionType, SomeType } from 'typedoc';
 import {
   MarkdownPageEvent,
   MarkdownTheme,
-  MarkdownThemeRenderContext,
+  MarkdownThemeContext,
 } from 'typedoc-plugin-markdown';
 
 export class DocusuaurusTheme extends MarkdownTheme {
@@ -15,7 +15,7 @@ export class DocusuaurusTheme extends MarkdownTheme {
   }
 }
 
-class DocusuaurusThemeThemeRenderContext extends MarkdownThemeRenderContext {
+class DocusuaurusThemeThemeRenderContext extends MarkdownThemeContext {
   // adds space around type arguments as docusaurus generates broken links without it in certain use-cases (see https://github.com/facebook/docusaurus/issues/9518)
   override partials = {
     ...this.partials,

@@ -1,31 +1,35 @@
-import { link } from '@theme/lib/markdown';
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { link } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import * as path from 'path';
 
 /**
  * @category Page Partials
  */
-export function breadcrumbs(context: MarkdownThemeRenderContext): string {
+export function breadcrumbs(this: MarkdownThemeContext): string {
   const md: string[] = [];
 
-  const fileExtension = context.options.getValue('fileExtension');
-  const entryFileName = `${path.parse(context.options.getValue('entryFileName')).name}${fileExtension}`;
+  const fileExtension = this.options.getValue('fileExtension');
+  const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
 
   if (
-    context.page.url === context.page.project.url ||
-    ((context.page.url === entryFileName ||
-      context.page.url === 'readme_.md') &&
-      context.page.url.split(path.sep).length === 1)
+    this.page.url === this.page.project.url ||
+    ((this.page.url === entryFileName || this.page.url === 'readme_.md') &&
+      this.page.url.split(path.sep).length === 1)
   ) {
     return '';
   }
 
-  const homeLabel = context.helpers.getProjectName(
-    context.helpers.getText('breadcrumbs.home'),
-  );
+  const name = this.page.project.name;
+  const version = this.page.project.packageVersion;
 
-  md.push(link(homeLabel, context.helpers.getRelativeUrl(entryFileName)));
+  const homeLabel = this.getText('breadcrumbs.home')
+    .replace('{projectName}', name)
+    .replace('{version}', version ? `v${version}` : '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  md.push(link(homeLabel, this.getRelativeUrl(entryFileName)));
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {
@@ -38,24 +42,20 @@ export function breadcrumbs(context: MarkdownThemeRenderContext): string {
       }
       return model.url;
     };
-    if (model.name !== context.options.getValue('entryModule')) {
+    if (model.name !== this.options.getValue('entryModule')) {
       md.push(
-        link(
-          escapeChars(model.name),
-          context.helpers.getRelativeUrl(getUrl(model)),
-        ),
+        link(escapeChars(model.name), this.getRelativeUrl(getUrl(model))),
       );
     }
   };
 
-  const pageName = escapeChars(context.page.model.name);
+  const pageName = escapeChars(this.page.model.name);
 
   if (
-    context.page.model?.parent?.parent &&
-    (context.page.url !== context.page.project.url ||
-      context.page.url !== entryFileName)
+    this.page.model?.parent?.parent &&
+    (this.page.url !== this.page.project.url || this.page.url !== entryFileName)
   ) {
-    breadcrumb(context.page.model.parent);
+    breadcrumb(this.page.model.parent);
   }
 
   md.push(pageName);

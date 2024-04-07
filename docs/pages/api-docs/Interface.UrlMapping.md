@@ -18,7 +18,7 @@ The model used to define the URL mapping structure.
 
 ### template()
 
-> **template**: (`data`: [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<`Model`\>) => `string`
+> **template**: (`data`) => `string`
 
 #### Parameters
 

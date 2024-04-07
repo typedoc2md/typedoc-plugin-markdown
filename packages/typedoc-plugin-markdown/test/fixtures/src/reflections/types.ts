@@ -177,3 +177,28 @@ export type UnionTypeWithTemplateStrings =
   | `v${number}`
   | `v${number}.${number}`
   | `v${number}.${number}.${number}`;
+
+/**
+ * Comments for object with special characters
+ */
+export type __TypeDeclarationWithSpecialCharacters_<T, U> = {
+  '?': T | U;
+  '<': '<';
+  '>': '>';
+  '\n': '\n';
+  '\\': '\\';
+  '<foo>': '<foo>';
+  '*': '*';
+  '*foo*': '*foo*';
+  '**foo**': '**foo**';
+  _foo_: '_foo_';
+  _x: (_param: T) => U;
+  _: '_';
+  '|': '|';
+  '~': '~';
+  '`': '`';
+  '{prop-with-brackets}': '{prop-with-brackets}';
+  _prop_with_underscore_: '_prop_with_underscore_';
+  '|prop|with|pipes|': '|prop|with|pipes|';
+  '`prop`with`backticks`': '`prop`with`backticks`';
+};

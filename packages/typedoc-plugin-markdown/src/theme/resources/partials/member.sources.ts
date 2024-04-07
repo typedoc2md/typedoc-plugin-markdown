@@ -1,22 +1,22 @@
-import { heading, link } from '@theme/lib/markdown';
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading, link } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
 
 /**
  * @category Member Partials
  */
 export function sources(
-  context: MarkdownThemeRenderContext,
-  reflection: DeclarationReflection | SignatureReflection,
-  headingLevel: number,
+  this: MarkdownThemeContext,
+  model: DeclarationReflection | SignatureReflection,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
 
-  if (headingLevel !== -1) {
-    md.push(heading(headingLevel, context.helpers.getText('label.source')));
+  if (options.headingLevel !== -1) {
+    md.push(heading(options.headingLevel, this.getText('label.source')));
   }
-  reflection.sources?.forEach((source, index) => {
+  model.sources?.forEach((source, index) => {
     if (index === 0) {
       if (source.url) {
         md.push(

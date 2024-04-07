@@ -1,12 +1,12 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { TypeOperatorType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function typeOperatorType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: TypeOperatorType,
 ): string {
-  return `${model.operator} ${context.partials.someType(model.target)}`;
+  return `${model.operator} ${this.partials.someType(model.target)}`;
 }

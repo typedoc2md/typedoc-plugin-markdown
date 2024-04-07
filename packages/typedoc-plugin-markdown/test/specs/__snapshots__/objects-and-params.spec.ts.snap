@@ -45,7 +45,7 @@ Comment for param s
 
 ### optionalProp?
 
-> **\`optional\`** **optionalProp**: \`string\`
+> \`optional\` **optionalProp**: \`string\`
 
 Comments for optional prop
 
@@ -61,7 +61,7 @@ Comments for prop
 
 ### propReturningObjectDeclaration
 
-> **propReturningObjectDeclaration**: \\{\`a\`: \`boolean\`;\`b\`: \`string\`;  }
+> **propReturningObjectDeclaration**: \\{\`a\`: \`boolean\`;\`b\`: \`string\`; \\}
 
 Comments for propReturningObjectDeclaration
 
@@ -77,7 +77,7 @@ Comments for propReturningObjectDeclaration
 
 ### propReturningObjectDeclarations
 
-> **propReturningObjectDeclarations**: \\{\`a\`: \`boolean\`;\`b\`: \`string\`;  } & \\{\`c\`: \`boolean\`;\`d\`: \`string\`;  }
+> **propReturningObjectDeclarations**: \\{\`a\`: \`boolean\`;\`b\`: \`string\`; \\} & \\{\`c\`: \`boolean\`;\`d\`: \`string\`; \\}
 
 Comments for propReturningObjectDeclarations
 
@@ -105,7 +105,7 @@ Comments for propReturningObjectDeclarations
 
 ### propReturningSignatureDeclaration()?
 
-> **\`optional\`** **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
+> \`optional\` **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
 
 Comments for propReturningSignatureDeclaration
 
@@ -123,15 +123,35 @@ Comments for propReturningSignatureDeclarations
 
 ***
 
+### propWithFunction()
+
+> **propWithFunction**: (\`options\`: \\{\`a\`: \`boolean\`;\`b\`: \`string\`; \\}) => \`boolean\`
+
+Comments for propWithFunction
+
+#### Parameters
+
+• **options**
+
+• **options.a**: \`boolean\`
+
+• **options.b**: \`string\`
+
+#### Returns
+
+\`boolean\`
+
+***
+
 ### propWithProps
 
-> **propWithProps**: \\{\`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;\`nestedPropA\`: \`string\`;\`nestedPropB\`: \`boolean\`;\`nestedPropC\`: \\{\`nestedPropCA\`: \`string\`;  };\`nestedPropD\`: () => \`boolean\`;  }
+> **propWithProps**: \\{\`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>;\`nestedPropA\`: \`string\`;\`nestedPropB\`: \`boolean\`;\`nestedPropC\`: \\{\`nestedPropCA\`: \`string\`; \\};\`nestedPropD\`: () => \`boolean\`; \\}
 
 Comments for propWithProps
 
 #### callbacks?
 
-> **\`optional\`** **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
@@ -149,7 +169,7 @@ Comments for nestedPropB
 
 #### nestedPropC
 
-> **nestedPropC**: \\{\`nestedPropCA\`: \`string\`;  }
+> **nestedPropC**: \\{\`nestedPropCA\`: \`string\`; \\}
 
 Comments for nestedPropC
 
@@ -188,17 +208,18 @@ Comments for BasicInterface
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
-| \`propReturningObjectDeclaration\` | \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; } | Comments for propReturningObjectDeclaration |
+| \`propReturningObjectDeclaration\` | \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; \\} | Comments for propReturningObjectDeclaration |
 | \`propReturningObjectDeclaration.a\` | \`boolean\` | - |
 | \`propReturningObjectDeclaration.b\` | \`string\` | - |
-| \`propReturningObjectDeclarations\` | \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; } & \\{ \`c\`: \`boolean\`; \`d\`: \`string\`; } | Comments for propReturningObjectDeclarations |
+| \`propReturningObjectDeclarations\` | \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; \\} & \\{ \`c\`: \`boolean\`; \`d\`: \`string\`; \\} | Comments for propReturningObjectDeclarations |
 | \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration |
 | \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
-| \`propWithProps\` | \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; }; \`nestedPropD\`: () => \`boolean\`; } | Comments for propWithProps |
+| \`propWithFunction\` | (\`options\`: \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; \\}) => \`boolean\` | Comments for propWithFunction |
+| \`propWithProps\` | \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; \\}; \`nestedPropD\`: () => \`boolean\`; \\} | Comments for propWithProps |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
-| \`propWithProps.nestedPropC\` | \\{ \`nestedPropCA\`: \`string\`; } | Comments for nestedPropC |
+| \`propWithProps.nestedPropC\` | \\{ \`nestedPropCA\`: \`string\`; \\} | Comments for nestedPropC |
 | \`propWithProps.nestedPropC.nestedPropCA\` | \`string\` | Comments for nestedPropCA |
 | \`propWithProps.nestedPropD\` | () => \`boolean\` | Comments for nestedPropD |
 "
@@ -207,13 +228,13 @@ Comments for BasicInterface
 exports[`Objects And Params should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{\`prop\`: \`string\`;  }\\>
+> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{\`prop\`: \`string\`; \\}\\>
 
 Comments for function
 
 ## Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{\`prop\`: \`string\`;  }\\>
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{\`prop\`: \`string\`; \\}\\>
 
 Return comments
 
@@ -239,7 +260,7 @@ Comments for function
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{
   \`prop\`: \`string\`;
-  }\\>
+ \\}\\>
 
 Return comments
 
@@ -287,13 +308,13 @@ Return comments
 exports[`Objects And Params should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAnObject()
 
-> **functionReturningAnObject**(): \\{\`x\`: \`1\`;\`y\`: \`2\`;  }
+> **functionReturningAnObject**(): \\{\`x\`: \`1\`;\`y\`: \`2\`; \\}
 
 Comments for function
 
 ## Returns
 
-\\{\`x\`: \`1\`;\`y\`: \`2\`;  }
+\\{\`x\`: \`1\`;\`y\`: \`2\`; \\}
 
 Return comments
 
@@ -359,7 +380,7 @@ y: number = 2;
 exports[`Objects And Params should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithNestedParameters()
 
-> **functionWithNestedParameters**(\`params\`: \\{\`name\`: \`string\`;\`nestedObj\`: \\{\`name\`: \`string\`;\`obj\`: \\{\`name\`: () => \`void\`;  };\`value\`: \`number\`;  };\`parent\`: \`number\`;  }, \`context\`: \`any\`, \`somethingElse\`?: \`string\`): \`boolean\`
+> **functionWithNestedParameters**(\`params\`: \\{\`name\`: \`string\`;\`nestedObj\`: \\{\`name\`: \`string\`;\`obj\`: \\{\`name\`: () => \`void\`; \\};\`value\`: \`number\`; \\};\`parent\`: \`number\`; \\}, \`context\`: \`any\`, \`somethingElse\`?: \`string\`): \`boolean\`
 
 Some nested params.
 
@@ -369,23 +390,23 @@ Some nested params.
 
 The parameters passed to the method.
 
-• **params\\.name**: \`string\`
+• **params.name**: \`string\`
 
 The name of the new group.
 
-• **params\\.nestedObj**
+• **params.nestedObj**
 
 A nested object.
 
-• **params\\.nestedObj\\.name?**: \`string\`
+• **params.nestedObj.name?**: \`string\`
 
-• **params\\.nestedObj\\.obj?**
+• **params.nestedObj.obj?**
 
-• **params\\.nestedObj\\.obj\\.name?**
+• **params.nestedObj.obj.name?**
 
-• **params\\.nestedObj\\.value?**: \`number\`
+• **params.nestedObj.value?**: \`number\`
 
-• **params\\.parent?**: \`number\`
+• **params.parent?**: \`number\`
 
 • **context?**: \`any\`
 
@@ -410,11 +431,11 @@ functionWithNestedParameters(
      name: string;
      obj: {
         name: () => void;
-     };
+       };
      value: number;
-  };
+    };
   parent: number;
-  }, 
+ }, 
    context: any, 
    somethingElse?: string): boolean
 \`\`\`
@@ -445,7 +466,7 @@ Some nested params.
 exports[`Objects And Params should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: IntersectionType
 
-> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \\{\`bar\`: \`number\`;  }
+> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \\{\`bar\`: \`number\`; \\}
 
 Comments for IntersectionType
 
@@ -481,7 +502,7 @@ bar: number;
 exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: LiteralType
 
-> **LiteralType**: \\{\`x\`: \`string\`;\`y\`: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`;  };\`z\`: (\`x\`: \`string\`) => \`string\`;get set \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>;get set \`accessorB\`: \`string\`;\`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>;  }
+> **LiteralType**: \\{\`x\`: \`string\`;\`y\`: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`; \\};\`z\`: (\`x\`: \`string\`) => \`string\`;get set \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>;get set \`accessorB\`: \`string\`;\`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>; \\}
 
 Comments for LiteralType
 
@@ -495,7 +516,7 @@ comment for x
 
 ### y
 
-> **y**: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`;  }
+> **y**: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`; \\}
 
 comment for y
 
@@ -539,11 +560,11 @@ comment for y.z
 
 ### accessorA
 
-> **\`get\`** **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+> \`get\` **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
 Comments for accessorA getter
 
-> **\`set\`** **accessorA**(\`x\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>): \`void\`
+> \`set\` **accessorA**(\`x\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>): \`void\`
 
 Comments for accessorA setter
 
@@ -557,9 +578,9 @@ Comments for accessorA setter
 
 ### accessorB
 
-> **\`get\`** **accessorB**(): \`string\`
+> \`get\` **accessorB**(): \`string\`
 
-> **\`set\`** **accessorB**(\`x\`: \`string\`): \`void\`
+> \`set\` **accessorB**(\`x\`: \`string\`): \`void\`
 
 #### Parameters
 
@@ -593,7 +614,7 @@ type LiteralType: {
      x: string;
      y: boolean | string;
      z: (x: string) => string;
-  };
+    };
   z: (x: string) => string;
   get set accessorA: Promise<string>;
   get set accessorB: string;
@@ -738,7 +759,7 @@ Comments for someFunction
 exports[`Objects And Params should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
-> **\`const\`** **objectWithSymbol**: \\{\`[sym]\`: \`'value'\`;  }
+> \`const\` **objectWithSymbol**: \\{\`[sym]\`: \`'value'\`; \\}
 
 Comments variable with symbol
 
@@ -778,7 +799,7 @@ Comments for symbol
 exports[`Objects And Params should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: UnionType
 
-> **UnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`;  }
+> **UnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`; \\}
 
 Comments for UnionType
 "
@@ -800,55 +821,11 @@ Comments for UnionType
 exports[`Objects And Params should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-> **\`const\`** **objectLiteralVariable**: \\{\`*\`: \`'*'\`;\`**foo**\`: \`'**foo**'\`;\`*foo*\`: \`'*foo*'\`;\`<\`: \`'<'\`;\`<foo\`: \`'<foo'\`;\`<foo>\`: \`'<foo>'\`;\`>\`: \`'>'\`;\`_\`: \`'_'\`;\`_foo_\`: \`'_foo_'\`;\`prop_with_underscore\`: \`'prop_with_underscore'\`;\`prop|with|pipes\`: \`'prop|with|pipes'\`;\`valueA\`: \`100\`;\`valueB\`: \`true\`;\`valueX\`: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`;  };  };\`valueZ\`: \`'foo'\`;  };\`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`;\`|\`: \`'|'\`;\`~\`: \`'~'\`;  }
+> \`const\` **objectLiteralVariable**: \\{\`valueA\`: \`100\`;\`valueB\`: \`true\`;\`valueX\`: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\};\`valueZ\`: \`'foo'\`; \\};\`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`; \\}
 
 Comments for objectLiteralVariable
 
 ## Type declaration
-
-### \\*
-
-> **\\***: \`string\` = \`'*'\`
-
-### \\*\\*foo\\*\\*
-
-> **\\*\\*foo\\*\\***: \`string\` = \`'**foo**'\`
-
-### \\*foo\\*
-
-> **\\*foo\\***: \`string\` = \`'*foo*'\`
-
-### \\<
-
-> **\\<**: \`string\` = \`'<'\`
-
-### \\<foo
-
-> **\\<foo**: \`string\` = \`'<foo'\`
-
-### \\<foo\\>
-
-> **\\<foo\\>**: \`string\` = \`'<foo>'\`
-
-### \\>
-
-> **\\>**: \`string\` = \`'>'\`
-
-### \\_
-
-> **\\_**: \`string\` = \`'_'\`
-
-### \\_foo\\_
-
-> **\\_foo\\_**: \`string\` = \`'_foo_'\`
-
-### prop\\_with\\_underscore
-
-> **prop\\_with\\_underscore**: \`string\` = \`'prop_with_underscore'\`
-
-### prop\\|with\\|pipes
-
-> **prop\\|with\\|pipes**: \`string\` = \`'prop|with|pipes'\`
 
 ### valueA
 
@@ -860,7 +837,7 @@ Comments for objectLiteralVariable
 
 ### valueX
 
-> **valueX**: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`;  };  };\`valueZ\`: \`'foo'\`;  }
+> **valueX**: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\};\`valueZ\`: \`'foo'\`; \\}
 
 ### valueX.valueA
 
@@ -868,7 +845,7 @@ Comments for objectLiteralVariable
 
 ### valueX.valueY()
 
-> **valueY**: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`;  };  }
+> **valueY**: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\}
 
 #### Parameters
 
@@ -876,7 +853,7 @@ Comments for objectLiteralVariable
 
 #### Returns
 
-\\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`;  };  }
+\\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\}
 
 ##### a
 
@@ -888,7 +865,7 @@ Comments for objectLiteralVariable
 
 ##### c
 
-> **c**: \\{\`a\`: \`1\`;\`b\`: \`2\`;  }
+> **c**: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}
 
 ##### c.a
 
@@ -915,14 +892,6 @@ Comments for objectLiteralVariable
 #### Returns
 
 \`string\`
-
-### \\|
-
-> **\\|**: \`string\` = \`'|'\`
-
-### ~
-
-> **~**: \`string\` = \`'~'\`
 "
 `;
 
@@ -931,17 +900,6 @@ exports[`Objects And Params should compile variable assigned to an object litera
 
 \`\`\`ts
 const objectLiteralVariable: {
-  *: '*';
-  **foo**: '**foo**';
-  *foo*: '*foo*';
-  <: '<';
-  <foo: '<foo';
-  <foo>: '<foo>';
-  >: '>';
-  _: '_';
-  _foo_: '_foo_';
-  prop_with_underscore: 'prop_with_underscore';
-  prop|with|pipes: 'prop|with|pipes';
   valueA: 100;
   valueB: true;
   valueX: {
@@ -952,85 +910,17 @@ const objectLiteralVariable: {
         c: {
            a: 1;
            b: 2;
-        };
-     };
+          };
+       };
      valueZ: 'foo';
-  };
+    };
   valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
-  |: '|';
-  ~: '~';
 };
 \`\`\`
 
 Comments for objectLiteralVariable
 
 ## Type declaration
-
-### \\*
-
-\`\`\`ts
-*: string = '*';
-\`\`\`
-
-### \\*\\*foo\\*\\*
-
-\`\`\`ts
-**foo**: string = '**foo**';
-\`\`\`
-
-### \\*foo\\*
-
-\`\`\`ts
-*foo*: string = '*foo*';
-\`\`\`
-
-### \\<
-
-\`\`\`ts
-<: string = '<';
-\`\`\`
-
-### \\<foo
-
-\`\`\`ts
-<foo: string = '<foo';
-\`\`\`
-
-### \\<foo\\>
-
-\`\`\`ts
-<foo>: string = '<foo>';
-\`\`\`
-
-### \\>
-
-\`\`\`ts
->: string = '>';
-\`\`\`
-
-### \\_
-
-\`\`\`ts
-_: string = '_';
-\`\`\`
-
-### \\_foo\\_
-
-\`\`\`ts
-_foo_: string = '_foo_';
-\`\`\`
-
-### prop\\_with\\_underscore
-
-\`\`\`ts
-prop_with_underscore: string = 'prop_with_underscore';
-\`\`\`
-
-### prop\\|with\\|pipes
-
-\`\`\`ts
-prop|with|pipes: string = 'prop|with|pipes';
-\`\`\`
 
 ### valueA
 
@@ -1055,8 +945,8 @@ valueX: {
      c: {
         a: 1;
         b: 2;
-     };
-  };
+       };
+    };
   valueZ: 'foo';
 };
 \`\`\`
@@ -1076,7 +966,7 @@ valueY: (z: string) => {
   c: {
      a: 1;
      b: 2;
-  };
+    };
 };
 \`\`\`
 
@@ -1095,7 +985,7 @@ valueY: (z: string) => {
   c: {
      a: 1;
      b: 2;
-  };
+    };
 }
 \`\`\`
 
@@ -1154,17 +1044,5 @@ valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
 #### Returns
 
 \`string\`
-
-### \\|
-
-\`\`\`ts
-|: string = '|';
-\`\`\`
-
-### ~
-
-\`\`\`ts
-~: string = '~';
-\`\`\`
 "
 `;

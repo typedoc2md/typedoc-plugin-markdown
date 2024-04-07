@@ -5,7 +5,7 @@ import {
 } from 'typedoc';
 
 export function isGroupKind(
-  reflection: DeclarationReflection | SignatureReflection,
+  model: DeclarationReflection | SignatureReflection,
 ) {
   const groupKinds = [
     ReflectionKind.Class,
@@ -15,5 +15,5 @@ export function isGroupKind(
     ReflectionKind.Variable,
     ReflectionKind.TypeAlias,
   ];
-  return groupKinds.includes(reflection.kind);
+  return groupKinds.includes(model.kind);
 }

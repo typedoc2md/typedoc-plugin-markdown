@@ -1,8 +1,28 @@
 import { DOCS_CONFIG } from '@devtools/helpers';
 import { consola } from 'consola';
 import * as fs from 'fs';
+import * as path from 'path';
 
 main();
+copyChangelog();
+
+async function copyChangelog() {
+  const changelog = fs.readFileSync(
+    path.join(
+      __dirname,
+      '../../packages/typedoc-plugin-markdown/CHANGELOG_V4.md',
+    ),
+  );
+  const readmeContents = changelog
+    .toString()
+    .replace(/^>(.*)$/gm, '<Callout>$1</Callout>')
+    .replace(/<!--[\s\S]*?-->/g, '');
+
+  fs.writeFileSync(
+    path.join(__dirname, '../../docs/pages/docs/changelog.mdx'),
+    `import { Callout } from 'nextra/components';\n\n` + readmeContents,
+  );
+}
 
 async function main() {
   const packagesPromises = [

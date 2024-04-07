@@ -1,13 +1,13 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ArrayType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function arrayType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: ArrayType,
 ): string {
-  const theType = context.partials.someType(model.elementType);
+  const theType = this.partials.someType(model.elementType);
   return model.elementType.type === 'union' ? `(${theType})[]` : `${theType}[]`;
 }

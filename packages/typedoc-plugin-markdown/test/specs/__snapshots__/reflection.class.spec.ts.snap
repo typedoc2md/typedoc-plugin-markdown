@@ -22,7 +22,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 ### abstractProp
 
-> **\`abstract\`** **abstractProp**: \`string\`
+> \`abstract\` **abstractProp**: \`string\`
 
 Comments for abstractProp
 
@@ -34,7 +34,7 @@ Comments for abstractProp
 
 ### abstractMethod()
 
-> **\`abstract\`** **abstractMethod**(): \`string\`
+> \`abstract\` **abstractMethod**(): \`string\`
 
 Comments for abstractMethod
 
@@ -200,7 +200,7 @@ Comments for ClassWithAccessors
 
 ### privateProp
 
-> **\`private\`** **privateProp**: \`string\`
+> \`private\` **privateProp**: \`string\`
 
 #### Source
 
@@ -210,11 +210,11 @@ Comments for ClassWithAccessors
 
 ### accessor
 
-> **\`get\`** **accessor**(): \`string\`
+> \`get\` **accessor**(): \`string\`
 
 Comments for getter
 
-> **\`set\`** **accessor**(\`value\`): \`void\`
+> \`set\` **accessor**(\`value\`): \`void\`
 
 Comments for setter
 
@@ -236,7 +236,7 @@ Param comments
 
 ### noGetter
 
-> **\`set\`** **noGetter**(\`x\`): \`void\`
+> \`set\` **noGetter**(\`x\`): \`void\`
 
 #### Parameters
 
@@ -250,7 +250,7 @@ Param comments
 
 ### noSetter
 
-> **\`get\`** **noSetter**(): \`string\`
+> \`get\` **noSetter**(): \`string\`
 
 #### Returns
 
@@ -517,7 +517,7 @@ Comment for ClassWithFlags
 
 \`Internal\`
 
-> **\`private\`** **internalProp**: \`string\`
+> \`private\` **internalProp**: \`string\`
 
 #### Source
 
@@ -545,7 +545,7 @@ Comment for ClassWithFlags
 
 \`Internal\`
 
-> **\`protected\`** **internalMethod**(): \`void\`
+> \`protected\` **internalMethod**(): \`void\`
 
 #### Returns
 
@@ -640,7 +640,7 @@ Comments for ClassWithModifiers
 
 ### privateProp
 
-> **\`private\`** **privateProp**: \`string\`
+> \`private\` **privateProp**: \`string\`
 
 Comments for privateProp
 
@@ -652,7 +652,7 @@ Comments for privateProp
 
 ### protectedProp
 
-> **\`protected\`** **protectedProp**: \`string\`
+> \`protected\` **protectedProp**: \`string\`
 
 Comments for protectedProp
 
@@ -676,7 +676,7 @@ Comments for propWithDefault
 
 ### readonlyProp
 
-> **\`readonly\`** **readonlyProp**: \`string\`
+> \`readonly\` **readonlyProp**: \`string\`
 
 Comments for abstractProperty
 
@@ -688,7 +688,7 @@ Comments for abstractProperty
 
 ### staticProp
 
-> **\`static\`** **staticProp**: \`string\`
+> \`static\` **staticProp**: \`string\`
 
 Comments for staticProp
 
@@ -700,7 +700,7 @@ Comments for staticProp
 
 ### privateMethod()
 
-> **\`private\`** **privateMethod**(): \`void\`
+> \`private\` **privateMethod**(): \`void\`
 
 Comment for privateMethod
 
@@ -732,7 +732,7 @@ Comment for publicMethod
 
 ### staticMethod()
 
-> **\`static\`** **staticMethod**(): \`void\`
+> \`static\` **staticMethod**(): \`void\`
 
 Comment for staticMethod
 
@@ -842,7 +842,7 @@ Comments for ClassWithTypeParameters
 
 Comments for param A
 
-• **B** extends \`string\`
+• **B** *extends* \`string\`
 
 Comments for param B
 
@@ -870,7 +870,7 @@ Comments for ClassWithTypeParameters
 | Type parameter | Value | Description |
 | :------ | :------ | :------ |
 | \`A\` | - | Comments for param A |
-| \`B\` extends \`string\` | - | Comments for param B |
+| \`B\` *extends* \`string\` | - | Comments for param B |
 | \`C\` | \`boolean\` | - |
 
 ## Constructors

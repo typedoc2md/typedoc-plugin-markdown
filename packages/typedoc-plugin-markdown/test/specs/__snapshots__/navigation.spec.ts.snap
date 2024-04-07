@@ -1469,21 +1469,21 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           },
           {
             "title": "_Namespace_A_",
-            "url": "has-namespaces/namespaces/Namespace_A_/index.md",
+            "url": "has-namespaces/namespaces/Namespace_A/index.md",
             "children": [
               {
                 "title": "Namespaces",
                 "children": [
                   {
                     "title": "NestedNamespace",
-                    "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/index.md",
+                    "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
                     "children": [
                       {
                         "title": "Interfaces",
                         "children": [
                           {
                             "title": "NamespaceInterface",
-                            "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
+                            "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
                           }
                         ]
                       }
@@ -1496,7 +1496,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
                 "children": [
                   {
                     "title": "NamespaceInterface",
-                    "url": "has-namespaces/namespaces/Namespace_A_/interfaces/NamespaceInterface.md"
+                    "url": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
                   }
                 ]
               }
@@ -1513,7 +1513,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           },
           {
             "title": "_Enum_A_",
-            "url": "has-namespaces/enumerations/Enum_A_.md"
+            "url": "has-namespaces/enumerations/Enum_A.md"
           }
         ]
       },
@@ -1526,7 +1526,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           },
           {
             "title": "__Class_A_",
-            "url": "has-namespaces/classes/Class_A_.md"
+            "url": "has-namespaces/classes/Class_A.md"
           }
         ]
       },
@@ -1539,7 +1539,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           },
           {
             "title": "_Interface_A_",
-            "url": "has-namespaces/interfaces/Interface_A_.md"
+            "url": "has-namespaces/interfaces/Interface_A.md"
           }
         ]
       },
@@ -1552,7 +1552,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           },
           {
             "title": "_Type_A_",
-            "url": "has-namespaces/type-aliases/Type_A_.md"
+            "url": "has-namespaces/type-aliases/Type_A.md"
           }
         ]
       },
@@ -1561,7 +1561,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "children": [
           {
             "title": "_variable_A_",
-            "url": "has-namespaces/variables/variable_A_.md"
+            "url": "has-namespaces/variables/variable_A.md"
           },
           {
             "title": "variableB",
@@ -1574,7 +1574,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "children": [
           {
             "title": "_function_A_",
-            "url": "has-namespaces/functions/function_A_.md"
+            "url": "has-namespaces/functions/function_A.md"
           },
           {
             "title": "functionB",
@@ -1751,21 +1751,21 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       },
       {
         "title": "_Namespace_A_",
-        "url": "has-namespaces/namespaces/Namespace_A_/index.md",
+        "url": "has-namespaces/namespaces/Namespace_A/index.md",
         "children": [
           {
             "title": "NestedNamespace",
-            "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/index.md",
+            "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
             "children": [
               {
                 "title": "NamespaceInterface",
-                "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
+                "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
               }
             ]
           },
           {
             "title": "NamespaceInterface",
-            "url": "has-namespaces/namespaces/Namespace_A_/interfaces/NamespaceInterface.md"
+            "url": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
           }
         ]
       },
@@ -1775,7 +1775,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       },
       {
         "title": "_Enum_A_",
-        "url": "has-namespaces/enumerations/Enum_A_.md"
+        "url": "has-namespaces/enumerations/Enum_A.md"
       },
       {
         "title": "ClassB",
@@ -1783,7 +1783,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       },
       {
         "title": "__Class_A_",
-        "url": "has-namespaces/classes/Class_A_.md"
+        "url": "has-namespaces/classes/Class_A.md"
       },
       {
         "title": "InterfaceB",
@@ -1791,7 +1791,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       },
       {
         "title": "_Interface_A_",
-        "url": "has-namespaces/interfaces/Interface_A_.md"
+        "url": "has-namespaces/interfaces/Interface_A.md"
       }
     ]
   },
@@ -1861,14 +1861,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           },
           {
             "title": "_Namespace_A_",
-            "url": "has-namespaces/namespaces/Namespace_A_/index.md",
+            "url": "has-namespaces/namespaces/Namespace_A/index.md",
             "children": [
               {
                 "title": "Namespaces",
                 "children": [
                   {
                     "title": "NestedNamespace",
-                    "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace.md"
+                    "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
                   }
                 ]
               }
@@ -1926,11 +1926,11 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
       },
       {
         "title": "_Namespace_A_",
-        "url": "has-namespaces/namespaces/Namespace_A_/index.md",
+        "url": "has-namespaces/namespaces/Namespace_A/index.md",
         "children": [
           {
             "title": "NestedNamespace",
-            "url": "has-namespaces/namespaces/Namespace_A_/namespaces/NestedNamespace.md"
+            "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
           }
         ]
       }
@@ -2122,6 +2122,10 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "UnionTypeWithTemplateStrings",
         "url": "type-aliases/UnionTypeWithTemplateStrings.md"
+      },
+      {
+        "title": "__TypeDeclarationWithSpecialCharacters_",
+        "url": "type-aliases/TypeDeclarationWithSpecialCharacters.md"
       },
       {
         "title": "objectLiteralVariable",

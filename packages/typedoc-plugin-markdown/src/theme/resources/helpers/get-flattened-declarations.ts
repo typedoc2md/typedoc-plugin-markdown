@@ -1,15 +1,10 @@
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
-/**
- * Flattens declarations into a single array, useful for displaying items in tables.
- *
- * @category ok
- */
-export function flattenDeclarations(
-  props: DeclarationReflection[],
-  includeSignatures = false,
+export function getFlattenedDeclarations(
+  model: DeclarationReflection[],
+  options?: { includeSignatures: boolean },
 ): DeclarationReflection[] {
-  const flattenDeclarations = (current: DeclarationReflection) => {
+  const getFlattenedDeclarations = (current: DeclarationReflection) => {
     return (current.type as any)?.declaration?.children?.reduce(
       (acc: DeclarationReflection[], child: DeclarationReflection) => {
         const childObj = {
@@ -29,7 +24,7 @@ export function flattenDeclarations(
     const shouldFlatten = (current.type as any)?.declaration?.children;
     const isAccessor = current.kind === ReflectionKind.Accessor;
 
-    if (includeSignatures) {
+    if (options?.includeSignatures) {
       if (isAccessor) {
         const accessors: any[] = [];
         if (current.getSignature) {
@@ -65,11 +60,11 @@ export function flattenDeclarations(
     }
 
     return shouldFlatten
-      ? [...acc, current, ...flattenDeclarations(current)]
+      ? [...acc, current, ...getFlattenedDeclarations(current)]
       : [...acc, current];
   };
 
-  return props.reduce(
+  return model.reduce(
     (acc: DeclarationReflection[], current: DeclarationReflection) =>
       parseDeclarations(current, acc),
     [],

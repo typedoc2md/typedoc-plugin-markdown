@@ -1,6 +1,8 @@
-import { heading } from '@theme/lib/markdown';
+import { heading } from '@plugin/libs/markdown';
+import { PLURAL_KIND_KEY_MAP } from '@plugin/options/text-mappings';
+import { TextContentMappings } from 'public-api';
 import { ReflectionGroup, ReflectionKind } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../render-context';
+import { MarkdownThemeContext } from '../../markdown-themecontext';
 
 /**
  * Renders a collection of reflection groups.
@@ -8,27 +10,32 @@ import { MarkdownThemeRenderContext } from '../../render-context';
  * @category Container Partials
  */
 export function groups(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: ReflectionGroup[],
-  headingLevel: number,
+  options: { headingLevel: number },
 ) {
   const groupsWithChildren = model?.filter(
     (group) => !group.allChildrenHaveOwnDocument(),
   );
 
   const md: string[] = [];
+
+  const getGroupTitle = (groupTitle: string) => {
+    const key = PLURAL_KIND_KEY_MAP[groupTitle] as keyof TextContentMappings;
+    return this.getText(key) || groupTitle;
+  };
+
   groupsWithChildren?.forEach((group, index: number) => {
     if (group.categories) {
-      md.push(
-        heading(
-          headingLevel,
-          context.helpers.getTextFromKindString(group.title, true),
-        ),
-      );
+      md.push(heading(options.headingLevel, getGroupTitle(group.title)));
       if (group.description) {
-        md.push(context.partials.commentParts(group.description));
+        md.push(this.partials.commentParts(group.description));
       }
-      md.push(context.partials.categories(group.categories, headingLevel + 1));
+      md.push(
+        this.partials.categories(group.categories, {
+          headingLevel: options.headingLevel + 1,
+        }),
+      );
     } else {
       const isPropertiesGroup = group.children.every(
         (child) => child.kind === ReflectionKind.Property,
@@ -38,34 +45,32 @@ export function groups(
         (child) => child.kind === ReflectionKind.EnumMember,
       );
 
-      md.push(
-        heading(
-          headingLevel,
-          context.helpers.getTextFromKindString(group.title, true),
-        ),
-      );
+      md.push(heading(options.headingLevel, getGroupTitle(group.title)));
       if (group.description) {
-        md.push(context.partials.commentParts(group.description));
+        md.push(this.partials.commentParts(group.description));
       }
       if (
         isPropertiesGroup &&
-        context.options.getValue('propertiesFormat') === 'table'
+        this.options.getValue('propertiesFormat') === 'table'
       ) {
         md.push(
-          context.partials.declarationsTable(
-            group.children,
-            context.helpers.getTextFromKindString(group.title, true) ===
-              context.helpers.getText('kind.event.plural'),
-          ),
+          this.partials.declarationsTable(group.children, {
+            isEventProps:
+              getGroupTitle(group.title) === this.getText('kind.event.plural'),
+          }),
         );
       } else if (
         isEnumGroup &&
-        context.options.getValue('enumMembersFormat') === 'table'
+        this.options.getValue('enumMembersFormat') === 'table'
       ) {
-        md.push(context.partials.enumMembersTable(group.children));
+        md.push(this.partials.enumMembersTable(group.children));
       } else {
         if (group.children) {
-          md.push(context.partials.members(group.children, headingLevel + 1));
+          md.push(
+            this.partials.members(group.children, {
+              headingLevel: options.headingLevel + 1,
+            }),
+          );
         }
       }
     }

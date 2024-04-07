@@ -15,7 +15,7 @@ Describes the hooks available to inject output in the markdown theme.
 
 ### page.begin
 
-> **page.begin**: [[`MarkdownThemeRenderContext`](/api-docs/Class.MarkdownThemeRenderContext.md)]
+> **page.begin**: [[`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)]
 
 Applied at the start of the markdown output.
 
@@ -23,7 +23,7 @@ Applied at the start of the markdown output.
 
 ### page.end
 
-> **page.end**: [[`MarkdownThemeRenderContext`](/api-docs/Class.MarkdownThemeRenderContext.md)]
+> **page.end**: [[`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)]
 
 Applied at the end of the markdown output.
 
@@ -31,7 +31,7 @@ Applied at the end of the markdown output.
 
 ### content.begin
 
-> **content.begin**: [[`MarkdownThemeRenderContext`](/api-docs/Class.MarkdownThemeRenderContext.md)]
+> **content.begin**: [[`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)]
 
 Applied before the main markdown content is rendered.
 
@@ -39,7 +39,7 @@ Applied before the main markdown content is rendered.
 
 ### index.page.begin
 
-> **index.page.begin**: [[`MarkdownThemeRenderContext`](/api-docs/Class.MarkdownThemeRenderContext.md)]
+> **index.page.begin**: [[`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)]
 
 Applied at the start of the markdown output on the index page.
 
@@ -47,6 +47,6 @@ Applied at the start of the markdown output on the index page.
 
 ### index.page.end
 
-> **index.page.end**: [[`MarkdownThemeRenderContext`](/api-docs/Class.MarkdownThemeRenderContext.md)]
+> **index.page.end**: [[`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)]
 
 Applied at the end of the markdown output on the index page.

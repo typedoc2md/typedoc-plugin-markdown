@@ -95,7 +95,9 @@ export async function generateDocs(docsConfig: DocsConfig) {
             `<Callout type="warning">Deprecated - ${option.deprecated}</Callout>`,
           );
         } else {
-          out.push(`<Callout>${option.help}</Callout>`);
+          out.push(
+            `<Callout emoji="${getEmoji(categoryName)}">${option.help}</Callout>`,
+          );
         }
         const meta: string[] = [];
         const type = getType(option);
@@ -151,6 +153,16 @@ ${JSON.stringify(
   );
 
   fs.writeFileSync(optionDocPath, out.join('\n\n'));
+}
+
+function getEmoji(categoryName: string) {
+  if (categoryName === 'Output') {
+    return '📁';
+  }
+  if (categoryName === 'UI') {
+    return '💡';
+  }
+  return '⚙️';
 }
 
 function getType(option: any) {

@@ -1,55 +1,50 @@
-import {
-  backTicks,
-  blockQuoteBlock,
-  codeBlock,
-  heading,
-} from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks, blockQuoteBlock, heading } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import {
   DeclarationReflection,
   ReferenceType,
   ReflectionType,
   SignatureReflection,
-  SomeType,
 } from 'typedoc';
 
 /**
  * @category Member Partials
  */
 export function signatureReturns(
-  context: MarkdownThemeRenderContext,
-  signature: SignatureReflection,
-  headingLevel: number,
+  this: MarkdownThemeContext,
+  model: SignatureReflection,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
 
-  const typeDeclaration = (signature.type as any)
+  const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(heading(headingLevel, context.helpers.getText('label.returns')));
+  md.push(heading(options.headingLevel, this.getText('label.returns')));
 
-  md.push(getReturnType(context, typeDeclaration, signature.type));
+  if (typeDeclaration?.signatures) {
+    md.push(backTicks('Function'));
+  } else {
+    md.push(this.helpers.getReturnType(model.type));
+  }
 
-  if (signature.comment?.blockTags.length) {
-    const tags = signature.comment.blockTags
+  if (model.comment?.blockTags.length) {
+    const tags = model.comment.blockTags
       .filter((tag) => tag.tag === '@returns')
-      .map((tag) => context.partials.commentParts(tag.content));
+      .map((tag) => this.partials.commentParts(tag.content));
     md.push(tags.join('\n\n'));
   }
 
-  if (
-    signature.type instanceof ReferenceType &&
-    signature.type.typeArguments?.length
-  ) {
+  if (model.type instanceof ReferenceType && model.type.typeArguments?.length) {
     if (
-      signature.type.typeArguments[0] instanceof ReflectionType &&
-      signature.type.typeArguments[0].declaration.children
+      model.type.typeArguments[0] instanceof ReflectionType &&
+      model.type.typeArguments[0].declaration.children
     ) {
       md.push(
         blockQuoteBlock(
-          context.partials.typeDeclaration(
-            signature.type.typeArguments[0].declaration.children,
-            headingLevel,
+          this.partials.typeDeclaration(
+            model.type.typeArguments[0].declaration.children,
+            { headingLevel: options.headingLevel },
           ),
         ),
       );
@@ -60,7 +55,10 @@ export function signatureReturns(
     typeDeclaration.signatures.forEach((signature) => {
       md.push(
         blockQuoteBlock(
-          context.partials.signature(signature, headingLevel + 1, true),
+          this.partials.signature(signature, {
+            headingLevel: options.headingLevel + 1,
+            nested: true,
+          }),
         ),
       );
     });
@@ -68,32 +66,11 @@ export function signatureReturns(
 
   if (typeDeclaration?.children) {
     md.push(
-      context.partials.typeDeclaration(typeDeclaration.children, headingLevel),
+      this.partials.typeDeclaration(typeDeclaration.children, {
+        headingLevel: options.headingLevel,
+      }),
     );
   }
 
   return md.join('\n\n');
-}
-
-function getReturnType(
-  context: MarkdownThemeRenderContext,
-  typeDeclaration?: DeclarationReflection,
-  type?: SomeType,
-) {
-  if (typeDeclaration?.signatures) {
-    return backTicks('Function');
-  }
-  if (type) {
-    const returnType = context.partials.someType(type);
-    if (context.options.getValue('useCodeBlocks')) {
-      if (
-        type instanceof ReflectionType &&
-        context.options.getValue('expandObjects')
-      ) {
-        return codeBlock(returnType);
-      }
-    }
-    return returnType;
-  }
-  return '';
 }

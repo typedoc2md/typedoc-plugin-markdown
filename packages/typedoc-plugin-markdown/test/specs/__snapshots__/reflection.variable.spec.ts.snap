@@ -3,7 +3,7 @@
 exports[`Variable Reflection should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
-> **\`const\`** **objectWithSymbol**: \`object\`
+> \`const\` **objectWithSymbol**: \`object\`
 
 Comments variable with symbol
 
@@ -17,7 +17,7 @@ Comments for symbol
 
 ## Source
 
-[variables.ts:51](http://source-url)
+[variables.ts:38](http://source-url)
 "
 `;
 
@@ -38,14 +38,14 @@ Comments variable with symbol
 
 ## Source
 
-[variables.ts:51](http://source-url)
+[variables.ts:38](http://source-url)
 "
 `;
 
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: typeOperatorVariable
 
-> **\`const\`** **typeOperatorVariable**: unique \`symbol\`
+> \`const\` **typeOperatorVariable**: unique \`symbol\`
 
 Comments for typeOperatorVariable
 
@@ -73,7 +73,7 @@ Comments for typeOperatorVariable
 exports[`Variable Reflection should compile variable assigned to a string: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: stringVariable
 
-> **\`const\`** **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
+> \`const\` **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
 
 A simple string variable
 
@@ -101,55 +101,11 @@ A simple string variable
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-> **\`const\`** **objectLiteralVariable**: \`object\`
+> \`const\` **objectLiteralVariable**: \`object\`
 
 Comments for objectLiteralVariable
 
 ## Type declaration
-
-### \\*
-
-> **\\***: \`string\` = \`'*'\`
-
-### \\*\\*foo\\*\\*
-
-> **\\*\\*foo\\*\\***: \`string\` = \`'**foo**'\`
-
-### \\*foo\\*
-
-> **\\*foo\\***: \`string\` = \`'*foo*'\`
-
-### \\<
-
-> **\\<**: \`string\` = \`'<'\`
-
-### \\<foo
-
-> **\\<foo**: \`string\` = \`'<foo'\`
-
-### \\<foo\\>
-
-> **\\<foo\\>**: \`string\` = \`'<foo>'\`
-
-### \\>
-
-> **\\>**: \`string\` = \`'>'\`
-
-### \\_
-
-> **\\_**: \`string\` = \`'_'\`
-
-### \\_foo\\_
-
-> **\\_foo\\_**: \`string\` = \`'_foo_'\`
-
-### prop\\_with\\_underscore
-
-> **prop\\_with\\_underscore**: \`string\` = \`'prop_with_underscore'\`
-
-### prop\\|with\\|pipes
-
-> **prop\\|with\\|pipes**: \`string\` = \`'prop|with|pipes'\`
 
 ### valueA
 
@@ -217,14 +173,6 @@ Comments for objectLiteralVariable
 
 \`string\`
 
-### \\|
-
-> **\\|**: \`string\` = \`'|'\`
-
-### ~
-
-> **~**: \`string\` = \`'~'\`
-
 ## Source
 
 [variables.ts:18](http://source-url)
@@ -244,26 +192,13 @@ Comments for objectLiteralVariable
 
 | Member | Type | Value |
 | :------ | :------ | :------ |
-| \`*\` | \`string\` | '\\*' |
-| \`**foo**\` | \`string\` | '\\*\\*foo\\*\\*' |
-| \`*foo*\` | \`string\` | '\\*foo\\*' |
-| \`<\` | \`string\` | '\\<' |
-| \`<foo\` | \`string\` | '\\<foo' |
-| \`<foo>\` | \`string\` | '\\<foo\\>' |
-| \`>\` | \`string\` | '\\>' |
-| \`_\` | \`string\` | '\\_' |
-| \`_foo_\` | \`string\` | '\\_foo\\_' |
-| \`prop_with_underscore\` | \`string\` | 'prop\\_with\\_underscore' |
-| prop\\|with\\|pipes | \`string\` | 'prop\\|with\\|pipes' |
 | \`valueA\` | \`number\` | 100 |
 | \`valueB\` | \`boolean\` | true |
-| \`valueX\` | \`object\` | - |
-| \`valueX.valueA\` | \`number\`[] | - |
-| \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - |
+| \`valueX\` | \`object\` | ... |
+| \`valueX.valueA\` | \`number\`[] | ... |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | ... |
 | \`valueX.valueZ\` | \`string\` | 'foo' |
-| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - |
-| \\| | \`string\` | '\\|' |
-| \`~\` | \`string\` | '~' |
+| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | ... |
 
 ## Source
 

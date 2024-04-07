@@ -104,7 +104,7 @@ function getReturnType(returnTypeParts?: string) {
 }
 
 function writeLibsBarrelsFile(resourceType: string) {
-  const libsPath = path.join(__dirname, '..', 'src', 'theme', 'lib');
+  const libsPath = path.join(__dirname, '..', 'src', 'libs');
   const folder = path.join(libsPath, resourceType);
   const files = fs
     .readdirSync(folder)
@@ -116,8 +116,7 @@ function writeLibsBarrelsFile(resourceType: string) {
     __dirname,
     '..',
     'src',
-    'theme',
-    'lib',
+    'libs',
     resourceType,
     'index.ts',
   );
@@ -156,42 +155,40 @@ async function writeResourcesFile2() {
   fs.rmSync(resourcesFile, { force: true });
 
   const typedocTypes = [
-    'DeclarationReflection',
-    'ProjectReflection',
-    'CommentDisplayPart',
-    'Comment',
-    'SignatureReflection',
-    'ReferenceReflection',
-    'ParameterReflection',
-    'Reflection',
-    'SomeType',
     'ArrayType',
+    'Comment',
+    'CommentDisplayPart',
     'ConditionalType',
+    'ContainerReflection',
+    'DeclarationHierarchy',
+    'DeclarationReflection',
     'IndexedAccessType',
     'InferredType',
     'IntersectionType',
     'IntrinsicType',
     'LiteralType',
     'NamedTupleMember',
+    'ParameterReflection',
+    'ProjectReflection',
     'QueryType',
+    'ReferenceReflection',
     'ReferenceType',
-    'TypeOperatorType',
-    'UnionType',
-    'UnknownType',
-    'TypeParameterReflection',
-    'DeclarationHierarchy',
-    'ContainerReflection',
-    'ReflectionType',
-    'TupleType',
-    'ReflectionKind',
+    'Reflection',
     'ReflectionCategory',
     'ReflectionGroup',
-    'Options',
+    'ReflectionKind',
+    'ReflectionType',
+    'SignatureReflection',
+    'SomeType',
+    'TupleType',
+    'TypeOperatorType',
+    'TypeParameterReflection',
+    'UnionType',
+    'UnknownType',
   ];
 
   const out = `// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
-import { MarkdownThemeRenderContext } from '@theme/render-context';
-import { TextContentMappings } from '@options/option-types';
+import { MarkdownThemeContext } from '@plugin/theme';
 import {${typedocTypes.join(',')}} from 'typedoc';
 
 
@@ -199,9 +196,9 @@ ${getResourceImports('templates')}
 ${getResourceImports('partials')}
 ${getResourceImports('helpers')}
 
-${getResources2('templates')}
+${getResources('templates')}
 ${getResources('partials')}
-${getResources2('helpers')}
+${getResources('helpers')}
 
 `;
 
@@ -234,43 +231,12 @@ function getResources(resourceType: string, binding = true) {
 
   return `
 
-  export const ${resourceType} = (${binding ? `context: MarkdownThemeRenderContext` : ''}) => {
-
+  export const ${resourceType} = (${binding ? `context: MarkdownThemeContext` : ''}) => {
     return {
       ${symbols
         .map((symbol) => {
           return `
           ${symbol.jsDocs}
-          ${symbol.symbolName}: (${symbol.params
-            ?.filter((param) => param.name !== 'this')
-            .map(
-              (param) =>
-                `${param.name}${param.isOptional && !param.hasInitializer ? '?' : ''}:${param.type}${param.hasInitializer ? `=${param.defaultValue}` : ''}`,
-            )
-            .join(',')}) => ${symbol.symbolName}(context,${symbol.params
-            ?.filter((param) => param.name !== 'this')
-            .map((param) => param.name)
-            .join(',')})
-          `;
-        })
-        .join(',\n')}
-      };
-  };`;
-}
-
-function getResources2(resourceType: string, binding = true) {
-  const files = getFiles(resourceType).filter(
-    (file) => file !== 'index' && !file.endsWith('spec'),
-  );
-  const symbols = getSymbols(files, resourceType);
-
-  return `
-
-  export const ${resourceType} = (${binding ? `context: MarkdownThemeRenderContext` : ''}) => {
-    return {
-      ${symbols
-        .map((symbol) => {
-          return `
           ${symbol.symbolName}: (${symbol.params
             ?.filter((param) => param.name !== 'this')
             .map(

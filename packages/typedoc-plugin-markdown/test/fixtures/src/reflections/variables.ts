@@ -16,19 +16,6 @@ export const typeOperatorVariable: unique symbol = Symbol.for('__type__');
  * Comments for objectLiteralVariable
  */
 export const objectLiteralVariable = {
-  '<': '<',
-  '>': '>',
-  '<foo': '<foo',
-  '<foo>': '<foo>',
-  '*': '*',
-  '*foo*': '*foo*',
-  '**foo**': '**foo**',
-  _foo_: '_foo_',
-  _: '_',
-  '|': '|',
-  '~': '~',
-  prop_with_underscore: 'prop_with_underscore',
-  'prop|with|pipes': 'prop|with|pipes',
   valueY: function (unionParam: 'a' | 'b', _undercoreParam_: string) {
     return 'foo';
   },

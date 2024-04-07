@@ -1,9 +1,12 @@
-import { MarkdownRenderer } from '@app/application';
-import { MarkdownPageEvent } from '@app/events/markdown-page-event';
-import { OutputFileStrategy } from '@options/option-maps';
-import { TextContentMappings } from '@options/option-types';
-import { TEXT_MAPPING_DEFAULTS } from '@options/text-mappings';
-import { RenderTemplate } from '@theme/theme-types';
+import { MarkdownRenderer } from '@plugin/app/application';
+import { MarkdownPageEvent } from '@plugin/app/events';
+import { formatMarkdown } from '@plugin/libs/utils';
+import {
+  OutputFileStrategy,
+  TEXT_MAPPING_DEFAULTS,
+  TextContentMappings,
+} from '@plugin/options';
+import { RenderTemplate } from '@plugin/theme';
 import {
   DeclarationReflection,
   ProjectReflection,
@@ -13,7 +16,7 @@ import {
 } from 'typedoc';
 import { getNavigation } from './core/get-navigation';
 import { getUrls } from './core/get-urls';
-import { MarkdownThemeRenderContext } from './render-context';
+import { MarkdownThemeContext } from './markdown-themecontext';
 
 /**
  * The main theme class for the plugin.
@@ -26,42 +29,17 @@ import { MarkdownThemeRenderContext } from './render-context';
  *
  * @usage
  *
- * This code defines a new theme called "customTheme":
- *
  * ```ts
- * import { MarkdownAppication, MarkdownRenderer, MarkdownTheme, MarkdownThemeRenderContext } from "typedoc-plugin-markdown";
- *
- * export function load(app: MarkdownAppication) {
- *   app.renderer.defineTheme("customTheme", MyMarkdownTheme);
+ * export function load(app) {
+ *   app.renderer.defineTheme('customTheme', MyMarkdownTheme);
  * }
  *
  * class MyMarkdownTheme extends MarkdownTheme {
- *
- *   constructor(renderer: MarkdownRenderer) {
- *     super(renderer);
- *   }
- *
- *   // Return a new render context
- *   getRenderContext(page) {
- *    return new MyMarkdownThemeRenderContext(this, page, this.application.options);
- *   }
- *
- *   });
- * }
- * }
- *
- * class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
  *  ...
  * }
  * ```
  *
- * The theme can then be consumed by the `theme` option:
- *
- * ```shell
- * typedoc --plugin typedoc-plugin-markdown --theme customTheme
- * ```
- *
- * @category Custom Theme
+ * @category Theme
  */
 export class MarkdownTheme extends Theme {
   /**
@@ -92,11 +70,7 @@ export class MarkdownTheme extends Theme {
     template: RenderTemplate<MarkdownPageEvent<Reflection>>,
   ) {
     try {
-      return (
-        template(page)
-          .replace(/[\r\n]{3,}/g, '\n\n')
-          .replace(/^\s+|\s+$/g, '') + '\n'
-      );
+      return formatMarkdown(template(page));
     } catch (e) {
       console.log(e);
       this.application.logger.error(`Error rendering page ${page.url}.`);
@@ -110,7 +84,7 @@ export class MarkdownTheme extends Theme {
    * This method can be overridden to provide an alternative theme context.
    */
   getRenderContext(page: MarkdownPageEvent<Reflection>) {
-    return new MarkdownThemeRenderContext(this, page, this.application.options);
+    return new MarkdownThemeContext(this, page, this.application.options);
   }
 
   /**

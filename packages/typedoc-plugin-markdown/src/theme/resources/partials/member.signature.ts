@@ -1,5 +1,5 @@
-import { heading } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ReflectionKind, SignatureReflection } from 'typedoc';
 
 /**
@@ -8,28 +8,30 @@ import { ReflectionKind, SignatureReflection } from 'typedoc';
  * @category Member Partials
  */
 export function signature(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: SignatureReflection,
-  headingLevel: number,
-  nested = false,
-  accessor?: string,
+  options: {
+    headingLevel: number;
+    nested?: boolean;
+    accessor?: string;
+  },
 ): string {
   const md: string[] = [];
 
-  md.push(context.partials.reflectionFlags(model));
+  md.push(this.partials.reflectionFlags(model));
 
-  if (!nested) {
+  if (!options.nested) {
     md.push(
-      context.partials.signatureTitle(model, {
-        accessor,
+      this.partials.signatureTitle(model, {
+        accessor: options.accessor,
       }),
     );
   }
 
   if (model.comment) {
     md.push(
-      context.partials.comment(model.comment, {
-        headingLevel,
+      this.partials.comment(model.comment, {
+        headingLevel: options.headingLevel,
         showTags: false,
       }),
     );
@@ -40,46 +42,55 @@ export function signature(
     model.kind !== ReflectionKind.ConstructorSignature
   ) {
     md.push(
-      heading(
-        headingLevel,
-        context.helpers.getText('kind.typeParameter.plural'),
-      ),
+      heading(options.headingLevel, this.getText('kind.typeParameter.plural')),
     );
-    if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(context.partials.typeParametersTable(model.typeParameters));
+    if (this.options.getValue('parametersFormat') === 'table') {
+      md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
-      md.push(context.partials.typeParametersList(model.typeParameters));
+      md.push(this.partials.typeParametersList(model.typeParameters));
     }
   }
 
   if (model.parameters?.length) {
     md.push(
-      heading(headingLevel, context.helpers.getText('kind.parameter.plural')),
+      heading(options.headingLevel, this.getText('kind.parameter.plural')),
     );
-    if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(context.partials.parametersTable(model.parameters));
+    if (this.options.getValue('parametersFormat') === 'table') {
+      md.push(this.partials.parametersTable(model.parameters));
     } else {
-      md.push(context.partials.parametersList(model.parameters));
+      md.push(this.partials.parametersList(model.parameters));
     }
   }
 
   if (model.type) {
-    md.push(context.partials.signatureReturns(model, headingLevel));
+    md.push(
+      this.partials.signatureReturns(model, {
+        headingLevel: options.headingLevel,
+      }),
+    );
   }
 
-  md.push(context.partials.inheritance(model, headingLevel));
+  md.push(
+    this.partials.inheritance(model, { headingLevel: options.headingLevel }),
+  );
 
   if (model.comment) {
     md.push(
-      context.partials.comment(model.comment, {
-        headingLevel,
+      this.partials.comment(model.comment, {
+        headingLevel: options.headingLevel,
         showSummary: false,
       }),
     );
   }
 
-  if (!nested && model.sources && !context.options.getValue('disableSources')) {
-    md.push(context.partials.sources(model, headingLevel));
+  if (
+    !options.nested &&
+    model.sources &&
+    !this.options.getValue('disableSources')
+  ) {
+    md.push(
+      this.partials.sources(model, { headingLevel: options.headingLevel }),
+    );
   }
 
   return md.join('\n\n');

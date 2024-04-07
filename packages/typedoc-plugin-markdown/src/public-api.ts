@@ -11,18 +11,20 @@
  *
  * Types that are used to define the plugin options.
  *
- * @categoryDescription Custom Theme
+ * @categoryDescription Theme
  *
- * Classes and types that are used to create custom themes.
+ * Classes and types that are used to define the Markdown theme and create custom themes.
  *
  * @module
  */
-
-export { MarkdownApplication, MarkdownRenderer } from '@app/application';
-export { MarkdownPageEvent } from '@app/events/markdown-page-event';
-export { MarkdownRendererEvent } from '@app/events/markdown-renderer-event';
-export { MarkdownRendererHooks } from '@app/hooks/markdown-renderer-hooks';
-export { PluginOptions, TextContentMappings } from '@options/option-types';
-export { MarkdownTheme } from '@theme/base';
-export { MarkdownThemeRenderContext } from '@theme/render-context';
-export { NavigationItem, UrlMapping } from '@theme/theme-types';
+export { MarkdownApplication, MarkdownRenderer } from '@plugin/app/application';
+export { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/app/events';
+export { MarkdownRendererHooks } from '@plugin/app/renderer';
+export { PluginOptions, TextContentMappings } from '@plugin/options';
+export {
+  MarkdownTheme,
+  MarkdownThemeContext,
+  NavigationItem,
+  PackageMetaData,
+  UrlMapping,
+} from '@plugin/theme';

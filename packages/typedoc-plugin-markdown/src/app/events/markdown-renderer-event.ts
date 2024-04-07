@@ -3,8 +3,12 @@
  *
  */
 
-import { MarkdownPageEvent } from '@app/events/markdown-page-event';
-import { NavigationItem, RenderTemplate, UrlMapping } from '@theme/theme-types';
+import { MarkdownPageEvent } from '@plugin/app/events/markdown-page-event';
+import {
+  NavigationItem,
+  RenderTemplate,
+  UrlMapping,
+} from '@plugin/theme/theme-types';
 import * as path from 'path';
 import { Event, ProjectReflection, Reflection } from 'typedoc';
 

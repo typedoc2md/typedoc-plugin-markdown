@@ -61,6 +61,11 @@ export interface BasicInterface {
   };
 
   /**
+   * Comments for propWithFunction
+   */
+  propWithFunction: (options: { a: boolean; b: string }) => boolean;
+
+  /**
    * Comments for propWithProps
    */
   propWithProps: {

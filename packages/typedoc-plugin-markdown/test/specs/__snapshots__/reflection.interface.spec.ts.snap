@@ -53,7 +53,7 @@ Comment for param s
 
 ### optionalProp?
 
-> **\`optional\`** **optionalProp**: \`string\`
+> \`optional\` **optionalProp**: \`string\`
 
 Comments for optional prop
 
@@ -129,7 +129,7 @@ Comments for propReturningObjectDeclarations
 
 ### propReturningSignatureDeclaration()?
 
-> **\`optional\`** **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
+> \`optional\` **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
 
 Comments for propReturningSignatureDeclaration
 
@@ -155,6 +155,30 @@ Comments for propReturningSignatureDeclarations
 
 ***
 
+### propWithFunction()
+
+> **propWithFunction**: (\`options\`) => \`boolean\`
+
+Comments for propWithFunction
+
+#### Parameters
+
+• **options**
+
+• **options.a**: \`boolean\`
+
+• **options.b**: \`string\`
+
+#### Returns
+
+\`boolean\`
+
+#### Source
+
+[interfaces.ts:66](http://source-url)
+
+***
+
 ### propWithProps
 
 > **propWithProps**: \`object\`
@@ -163,7 +187,7 @@ Comments for propWithProps
 
 #### callbacks?
 
-> **\`optional\`** **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
@@ -203,7 +227,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:66](http://source-url)
+[interfaces.ts:71](http://source-url)
 "
 `;
 
@@ -230,6 +254,7 @@ Comments for BasicInterface
 | \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations |
 | \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration |
 | \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
+| \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction |
 | \`propWithProps\` | \`object\` | Comments for propWithProps |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
@@ -279,7 +304,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:109](http://source-url)
+[interfaces.ts:114](http://source-url)
 
 ***
 
@@ -311,7 +336,7 @@ Comment for param s
 
 ### optionalProp?
 
-> **\`optional\`** **optionalProp**: \`string\`
+> \`optional\` **optionalProp**: \`string\`
 
 Comments for optional prop
 
@@ -403,7 +428,7 @@ Comments for propReturningObjectDeclarations
 
 ### propReturningSignatureDeclaration()?
 
-> **\`optional\`** **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
+> \`optional\` **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
 
 Comments for propReturningSignatureDeclaration
 
@@ -437,6 +462,34 @@ Comments for propReturningSignatureDeclarations
 
 ***
 
+### propWithFunction()
+
+> **propWithFunction**: (\`options\`) => \`boolean\`
+
+Comments for propWithFunction
+
+#### Parameters
+
+• **options**
+
+• **options.a**: \`boolean\`
+
+• **options.b**: \`string\`
+
+#### Returns
+
+\`boolean\`
+
+#### Inherited from
+
+[\`BasicInterface\`](BasicInterface.md).[\`propWithFunction\`](BasicInterface.md#propwithfunction)
+
+#### Source
+
+[interfaces.ts:66](http://source-url)
+
+***
+
 ### propWithProps
 
 > **propWithProps**: \`object\`
@@ -445,7 +498,7 @@ Comments for propWithProps
 
 #### callbacks?
 
-> **\`optional\`** **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
@@ -489,7 +542,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:66](http://source-url)
+[interfaces.ts:71](http://source-url)
 "
 `;
 
@@ -517,6 +570,7 @@ Comments for ExtendedInterface
 | \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningObjectDeclarations\` |
 | \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration | [\`BasicInterface\`](BasicInterface.md).\`propReturningSignatureDeclaration\` |
 | \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningSignatureDeclarations\` |
+| \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction | [\`BasicInterface\`](BasicInterface.md).\`propWithFunction\` |
 | \`propWithProps\` | \`object\` | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
@@ -544,7 +598,7 @@ Comments for IndexableInterface
 
 #### Source
 
-[interfaces.ts:117](http://source-url)
+[interfaces.ts:122](http://source-url)
 "
 `;
 
@@ -572,13 +626,13 @@ exports[`Interface Reflection should compile interface with event properties: (O
 
 ### someProp?
 
-> **\`optional\`** **someProp**: \`boolean\`
+> \`optional\` **someProp**: \`boolean\`
 
 Description for prop someProp
 
 #### Source
 
-[interfaces.ts:129](http://source-url)
+[interfaces.ts:134](http://source-url)
 
 ## Events
 
@@ -588,13 +642,13 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:141](http://source-url)
+[interfaces.ts:146](http://source-url)
 
 ***
 
 ### ~~someEvent()?~~
 
-> **\`optional\`** **someEvent**: (\`eventParam\`) => \`void\`
+> \`optional\` **someEvent**: (\`eventParam\`) => \`void\`
 
 Description for event someEvent
 
@@ -614,7 +668,7 @@ Comments for param eventParam
 
 #### Source
 
-[interfaces.ts:136](http://source-url)
+[interfaces.ts:141](http://source-url)
 "
 `;
 
@@ -647,11 +701,11 @@ Comments for InterfaceWithFlags
 
 \`Experimental\`
 
-> **\`optional\`** **expermintalProp**: \`string\`
+> \`optional\` **expermintalProp**: \`string\`
 
 #### Source
 
-[interfaces.ts:149](http://source-url)
+[interfaces.ts:154](http://source-url)
 
 ***
 
@@ -663,7 +717,7 @@ Comments for InterfaceWithFlags
 
 #### Source
 
-[interfaces.ts:151](http://source-url)
+[interfaces.ts:156](http://source-url)
 "
 `;
 
@@ -700,7 +754,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:102](http://source-url)
+[interfaces.ts:107](http://source-url)
 "
 `;
 

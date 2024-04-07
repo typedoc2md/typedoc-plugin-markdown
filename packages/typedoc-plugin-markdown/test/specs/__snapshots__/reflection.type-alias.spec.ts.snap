@@ -31,7 +31,7 @@ Comments for ArrayType
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: ConditionalType\\<T\\>
 
-> **ConditionalType**\\<\`T\`\\>: \`T\` extends \`string\` ? \`"string"\` : \`T\` extends \`number\` ? \`"number"\` : \`T\` extends \`boolean\` ? \`"boolean"\` : \`T\` extends \`undefined\` ? \`"undefined"\` : \`"object"\`
+> **ConditionalType**\\<\`T\`\\>: \`T\` *extends* \`string\` ? \`"string"\` : \`T\` *extends* \`number\` ? \`"number"\` : \`T\` *extends* \`boolean\` ? \`"boolean"\` : \`T\` *extends* \`undefined\` ? \`"undefined"\` : \`"object"\`
 
 Comments for ConditionalType
 
@@ -155,11 +155,11 @@ comment for y.z
 
 ### accessorA
 
-> **\`get\`** **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+> \`get\` **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
 Comments for accessorA getter
 
-> **\`set\`** **accessorA**(\`x\`): \`void\`
+> \`set\` **accessorA**(\`x\`): \`void\`
 
 Comments for accessorA setter
 
@@ -173,9 +173,9 @@ Comments for accessorA setter
 
 ### accessorB
 
-> **\`get\`** **accessorB**(): \`string\`
+> \`get\` **accessorB**(): \`string\`
 
-> **\`set\`** **accessorB**(\`x\`): \`void\`
+> \`set\` **accessorB**(\`x\`): \`void\`
 
 #### Parameters
 
@@ -514,7 +514,7 @@ Comments for ReadonlyMapedType
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: StringLiteralType
 
-> **StringLiteralType**: \`" "\` \\| \`"string"\` \\| \`"string|with|pipes"\` \\| \`\`"string\`with\`backticks"\`\` \\| \`"<foo>"\` \\| \`"*"\`
+> **StringLiteralType**: \`" "\` \\| \`"string"\` \\| \`"string\\|with\\|pipes"\` \\| "string\\\`with\\\`backticks" \\| \`"<foo>"\` \\| \`"*"\`
 
 Comments for StringLiteralType
 
@@ -532,7 +532,7 @@ type StringLiteralType:
   | " "
   | "string"
   | "string|with|pipes"
-  | "stringwithbackticks"
+  | "string\`with\`backticks"
   | "<foo>"
   | "*";
 \`\`\`
@@ -617,7 +617,7 @@ Comments for TypeWithTypeParams
 exports[`Type Alias Reflection should compile union type with template strings: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: UnionTypeWithTemplateStrings
 
-> **UnionTypeWithTemplateStrings**: \`\`\`v\${number}\`\`\` \\| \`\`\`v\${number}.\${number}\`\`\` \\| \`\`\`v\${number}.\${number}.\${number}\`\`\`
+> **UnionTypeWithTemplateStrings**: \\\`v$\\{number\\}\\\` \\| \\\`v$\\{number\\}.$\\{number\\}\\\` \\| \\\`v$\\{number\\}.$\\{number\\}.$\\{number\\}\\\`
 
 Union with template strings
 
@@ -631,7 +631,7 @@ exports[`Type Alias Reflection should compile union type with template strings: 
 "# UnionTypeWithTemplateStrings
 
 \`\`\`ts
-type UnionTypeWithTemplateStrings: v\${number} | v\${number}.\${number} | v\${number}.\${number}.\${number};
+type UnionTypeWithTemplateStrings: \`v\${number}\` | \`v\${number}.\${number}\` | \`v\${number}.\${number}.\${number}\`;
 \`\`\`
 
 Union with template strings

@@ -1,5 +1,5 @@
-import { heading } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 /**
@@ -8,69 +8,75 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
  * @category Member Partials
  */
 export function accessor(
-  context: MarkdownThemeRenderContext,
-  declaration: DeclarationReflection,
-  headingLevel: number,
+  this: MarkdownThemeContext,
+  model: DeclarationReflection,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
 
-  if (declaration.getSignature) {
+  if (model.getSignature) {
     md.push(
-      context.partials.signatureTitle(declaration.getSignature, {
+      this.partials.signatureTitle(model.getSignature, {
         accessor: 'get',
       }),
     );
-    if (declaration.getSignature.comment) {
+    if (model.getSignature.comment) {
       md.push(
-        context.partials.comment(declaration.getSignature.comment, {
-          headingLevel,
+        this.partials.comment(model.getSignature.comment, {
+          headingLevel: options.headingLevel,
         }),
       );
     }
   }
-  if (declaration.setSignature) {
+  if (model.setSignature) {
     md.push(
-      context.partials.signatureTitle(declaration.setSignature, {
+      this.partials.signatureTitle(model.setSignature, {
         accessor: 'set',
       }),
     );
-    if (declaration.setSignature.comment) {
+    if (model.setSignature.comment) {
       md.push(
-        context.partials.comment(declaration.setSignature.comment, {
-          headingLevel,
+        this.partials.comment(model.setSignature.comment, {
+          headingLevel: options.headingLevel,
         }),
       );
     }
   }
 
-  if (declaration.setSignature?.parameters?.length) {
+  if (model.setSignature?.parameters?.length) {
     md.push(
-      heading(headingLevel, context.helpers.getText('kind.parameter.plural')),
+      heading(options.headingLevel, this.getText('kind.parameter.plural')),
     );
-    if (context.options.getValue('parametersFormat') === 'table') {
-      md.push(
-        context.partials.parametersTable(declaration.setSignature.parameters),
-      );
+    if (this.options.getValue('parametersFormat') === 'table') {
+      md.push(this.partials.parametersTable(model.setSignature.parameters));
     } else {
-      md.push(
-        context.partials.parametersList(declaration.setSignature.parameters),
-      );
+      md.push(this.partials.parametersList(model.setSignature.parameters));
     }
   }
 
-  if (declaration.getSignature?.type) {
+  if (model.getSignature?.type) {
     md.push(
-      context.partials.signatureReturns(declaration.getSignature, headingLevel),
+      this.partials.signatureReturns(model.getSignature, {
+        headingLevel: options.headingLevel,
+      }),
     );
   }
 
-  const showSources = declaration?.parent?.kind !== ReflectionKind.TypeLiteral;
+  const showSources = model?.parent?.kind !== ReflectionKind.TypeLiteral;
 
-  if (showSources && !context.options.getValue('disableSources')) {
-    if (declaration.getSignature?.sources) {
-      md.push(context.partials.sources(declaration.getSignature, headingLevel));
-    } else if (declaration.setSignature?.sources) {
-      md.push(context.partials.sources(declaration.setSignature, headingLevel));
+  if (showSources && !this.options.getValue('disableSources')) {
+    if (model.getSignature?.sources) {
+      md.push(
+        this.partials.sources(model.getSignature, {
+          headingLevel: options.headingLevel,
+        }),
+      );
+    } else if (model.setSignature?.sources) {
+      md.push(
+        this.partials.sources(model.setSignature, {
+          headingLevel: options.headingLevel,
+        }),
+      );
     }
   }
 

@@ -14,7 +14,7 @@ exports[`Remark should parse globals page 1`] = `
 
 ### someVariable
 
-> **\`const\`** **someVariable**: \`true\` = \`true\`
+> \`const\` **someVariable**: \`true\` = \`true\`
 
 ## Functions
 
@@ -41,7 +41,7 @@ exports[`Remark should parse globals page without toc 1`] = `
 
 ### someVariable
 
-> **\`const\`** **someVariable**: \`true\` = \`true\`
+> \`const\` **someVariable**: \`true\` = \`true\`
 
 ## Functions
 
@@ -136,7 +136,7 @@ reallyUgly(javascript);
 
 ### Variables
 
-- [\\_\\_variable_with_underscores\\_\\_](variables/variable_with_underscores__.md)
+- [\\_\\_variable_with_underscores\\_\\_](variables/variable_with_underscores.md)
 
 ### Functions
 
@@ -220,7 +220,7 @@ javascript
 
 ### \\_\\_variable\\_with\\_underscores\\_\\_
 
-> **\`const\`** **\\_\\_variable\\_with\\_underscores\\_\\_**: \`true\` = \`true\`
+> \`const\` **\\_\\_variable\\_with\\_underscores\\_\\_**: \`true\` = \`true\`
 
 ## Functions
 

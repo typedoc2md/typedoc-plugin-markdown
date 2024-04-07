@@ -1,6 +1,6 @@
-import { backTicks, bold, codeBlock } from '@theme/lib/markdown';
-import { escapeChars, stripComments } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks, bold, codeBlock } from '@plugin/libs/markdown';
+import { escapeChars, stripComments } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 /**
@@ -9,32 +9,30 @@ import { DeclarationReflection } from 'typedoc';
  * @category Member Partials
  */
 export function declarationTitle(
-  context: MarkdownThemeRenderContext,
-  reflection: DeclarationReflection,
+  this: MarkdownThemeContext,
+  model: DeclarationReflection,
 ): string {
   const md: string[] = [];
 
-  const useCodeBlocks = context.options.getValue('useCodeBlocks');
+  const useCodeBlocks = this.options.getValue('useCodeBlocks');
 
-  const declarationType = context.helpers.getDeclarationType(reflection);
+  const declarationType = this.helpers.getDeclarationType(model);
 
   const prefix: string[] = [];
 
-  if (reflection.flags.length) {
+  if (model.flags.length) {
     prefix.push(
-      reflection.flags
-        .map((flag) => bold(backTicks(flag.toLowerCase())))
-        .join(' '),
+      model.flags?.map((flag) => backTicks(flag.toLowerCase())).join(' '),
     );
   }
 
-  if (reflection.flags.isRest) {
+  if (model.flags.isRest) {
     prefix.push('...');
   }
 
-  const keyword = context.helpers.getKeyword(reflection.kind);
+  const keyword = this.helpers.getKeyword(model.kind);
 
-  if (useCodeBlocks && context.helpers.isGroupKind(reflection) && keyword) {
+  if (useCodeBlocks && keyword) {
     prefix.push(keyword);
   }
 
@@ -44,28 +42,28 @@ export function declarationTitle(
 
   const name: string[] = [];
 
-  if (reflection.getSignature) {
+  if (model.getSignature) {
     name.push(backTicks('get') + ' ');
   }
 
-  if (reflection.setSignature) {
+  if (model.setSignature) {
     name.push(backTicks('set') + ' ');
   }
 
-  const nameParts = reflection.name.split('.');
+  const nameParts = model.name.split('.');
   name.push(
     bold(
       escapeChars(
-        reflection.escapedName?.includes('.')
-          ? reflection.name
+        model.escapedName?.includes('.')
+          ? model.name
           : nameParts[nameParts.length - 1],
       ),
     ),
   );
 
-  if (reflection.typeParameters) {
+  if (model.typeParameters) {
     name.push(
-      `\\<${reflection.typeParameters
+      `\\<${model.typeParameters
         ?.map((typeParameter) => backTicks(typeParameter.name))
         .join(', ')}\\>`,
     );
@@ -78,15 +76,15 @@ export function declarationTitle(
   md.push(name.join(''));
 
   if (declarationType) {
-    md.push(context.partials.someType(declarationType));
+    md.push(this.partials.someType(declarationType));
   }
 
   if (
-    reflection.defaultValue &&
-    reflection.defaultValue !== '...' &&
-    reflection.defaultValue !== reflection.name
+    model.defaultValue &&
+    model.defaultValue !== '...' &&
+    model.defaultValue !== model.name
   ) {
-    md.push(` = \`${stripComments(reflection.defaultValue)}\``);
+    md.push(` = \`${stripComments(model.defaultValue)}\``);
   }
 
   if (useCodeBlocks) {

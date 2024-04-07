@@ -1,11 +1,11 @@
-import { heading } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { heading } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { EntryPointStrategy, ProjectReflection } from 'typedoc';
 
 /**
  * Template that maps to the root project reflection. This will be the index page / documentation root page.
  */
-export function project(this: MarkdownThemeRenderContext) {
+export function project(this: MarkdownThemeContext) {
   const md: string[] = [];
 
   const model = this.page.model as ProjectReflection;
@@ -38,7 +38,7 @@ export function project(this: MarkdownThemeRenderContext) {
   }
 
   if (model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-    md.push(this.partials.reflectionIndex(model, 2));
+    md.push(this.partials.reflectionIndex(model, { headingLevel: 2 }));
   }
 
   const isPackages =
@@ -48,7 +48,7 @@ export function project(this: MarkdownThemeRenderContext) {
   if (isPackages && model.children?.length) {
     md.push(this.partials.packagesIndex(model));
   } else {
-    md.push(this.partials.body(model, 2));
+    md.push(this.partials.body(model, { headingLevel: 2 }));
   }
 
   md.push(this.hook('index.page.end').join('\n'));

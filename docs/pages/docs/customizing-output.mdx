@@ -106,19 +106,35 @@ The themes can be extended to provide custom partials, helpers and templates by 
 ```ts
 class MyMarkdownTheme extends MarkdownTheme {
   getRenderContext(page) {
-    return new MyMarkdownThemeRenderContext(
-      this,
-      page,
-      this.application.options,
-    );
+    return new MyMarkdownThemeContext(this, page, this.application.options);
   }
 }
 
-class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
+class MyMarkdownThemeContext extends MarkdownThemeContext {
+  // customise templates
+  templates = {
+    ...this.templates,
+    reflection: (model) => {
+      return `New template for ${model.name}!`;
+    },
+  };
+
+  // customise partials
   partials = {
     ...this.partials,
-    header: () => {
-      return `Welcome to ${page.project.name} custom header!`;
+    header: (model) => {
+      return `
+# Welcome to custom header for ${this.page.project.name} project and ${model.name} model!
+Use my new helper - ${this.helpers.newHelper()}
+   `;
+    },
+  };
+
+  // customise helpers
+  helpers = {
+    ...this.helpers,
+    newHelper: () => {
+      return 'New helper!';
     },
   };
 }

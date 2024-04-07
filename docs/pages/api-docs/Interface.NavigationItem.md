@@ -12,10 +12,10 @@ The model used to define the navigation structure.
 
 ### url?
 
-> **`optional`** **url**: `null` \| `string`
+> `optional` **url**: `null` \| `string`
 
 ***
 
 ### children?
 
-> **`optional`** **children**: [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]
+> `optional` **children**: [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]

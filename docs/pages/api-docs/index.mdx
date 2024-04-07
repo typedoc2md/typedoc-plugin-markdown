@@ -16,6 +16,18 @@ The Application class is the main entry point for a TypeDoc application and prov
 | [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent.md) | An event emitted at the beginning and end of the rendering process. |
 | [MarkdownRendererHooks](/api-docs/Interface.MarkdownRendererHooks.md) | Describes the hooks available to inject output in the markdown theme. |
 
+## Theme
+
+Classes and types that are used to define the Markdown theme and create custom themes.
+
+| Member | Description |
+| :------ | :------ |
+| [MarkdownTheme](/api-docs/Class.MarkdownTheme.md) | The main theme class for the plugin. |
+| [MarkdownThemeContext](/api-docs/Class.MarkdownThemeContext.md) | The theme context class that is provided as context on the rendering of every page. |
+| [PackageMetaData](/api-docs/Interface.PackageMetaData.md) | The model used to define the package metadata when in packages mode. |
+| [UrlMapping](/api-docs/Interface.UrlMapping.md) | The model used to define the URL mapping structure. |
+| [NavigationItem](/api-docs/Interface.NavigationItem.md) | The model used to define the navigation structure. |
+
 ## Options
 
 Types that are used to define the plugin options.
@@ -24,14 +36,3 @@ Types that are used to define the plugin options.
 | :------ | :------ |
 | [PluginOptions](/api-docs/Interface.PluginOptions.md) | Describes the options declared by the plugin. |
 | [TextContentMappings](/api-docs/Interface.TextContentMappings.md) | Describes the keys available to replace static text. |
-
-## Custom Theme
-
-Classes and types that are used to create custom themes.
-
-| Member | Description |
-| :------ | :------ |
-| [MarkdownTheme](/api-docs/Class.MarkdownTheme.md) | The main theme class for the plugin. |
-| [MarkdownThemeRenderContext](/api-docs/Class.MarkdownThemeRenderContext.md) | The theme context class that is provided as context to every template. |
-| [UrlMapping](/api-docs/Interface.UrlMapping.md) | The model used to define the URL mapping structure. |
-| [NavigationItem](/api-docs/Interface.NavigationItem.md) | The model used to define the navigation structure. |

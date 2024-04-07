@@ -10,39 +10,14 @@ The API follows the implementation of [TypeDoc's custom theming](https://github.
 
 ## Usage
 
-This code defines a new theme called "customTheme":
-
 ```ts
-import { MarkdownAppication, MarkdownRenderer, MarkdownTheme, MarkdownThemeRenderContext } from "typedoc-plugin-markdown";
-
-export function load(app: MarkdownAppication) {
-  app.renderer.defineTheme("customTheme", MyMarkdownTheme);
+export function load(app) {
+  app.renderer.defineTheme('customTheme', MyMarkdownTheme);
 }
 
 class MyMarkdownTheme extends MarkdownTheme {
-
-  constructor(renderer: MarkdownRenderer) {
-    super(renderer);
-  }
-
-  // Return a new render context
-  getRenderContext(page) {
-   return new MyMarkdownThemeRenderContext(this, page, this.application.options);
-  }
-
-  });
-}
-}
-
-class MyMarkdownThemeRenderContext extends MarkdownThemeRenderContext {
  ...
 }
-```
-
-The theme can then be consumed by the `theme` option:
-
-```shell
-typedoc --plugin typedoc-plugin-markdown --theme customTheme
 ```
 
 ## Extends
@@ -53,7 +28,7 @@ typedoc --plugin typedoc-plugin-markdown --theme customTheme
 
 ### getRenderContext()
 
-> **getRenderContext**(`page`: [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>): [`MarkdownThemeRenderContext`](/api-docs/Class.MarkdownThemeRenderContext.md)
+> **getRenderContext**(`page`): [`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)
 
 Creates a new instance of the current theme context.
 
@@ -67,13 +42,13 @@ This method can be overridden to provide an alternative theme context.
 
 #### Returns
 
-[`MarkdownThemeRenderContext`](/api-docs/Class.MarkdownThemeRenderContext.md)
+[`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)
 
 ***
 
 ### getUrls()
 
-> **getUrls**(`project`: [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)): [`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
+> **getUrls**(`project`): [`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
 
 Maps the models of the given project to the desired output files.
 
@@ -97,7 +72,7 @@ This method can be overriden to provide an alternative url structure.
 
 ### getNavigation()
 
-> **getNavigation**(`project`: [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)): [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]
+> **getNavigation**(`project`): [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]
 
 Map the models of the given project to a navigation structure.
 

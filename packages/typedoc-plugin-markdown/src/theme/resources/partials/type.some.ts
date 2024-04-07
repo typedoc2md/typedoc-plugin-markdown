@@ -1,5 +1,5 @@
-import { backTicks } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import {
   ArrayType,
   ConditionalType,
@@ -23,68 +23,65 @@ import {
  *
  * @category Type Partials
  */
-export function someType(
-  context: MarkdownThemeRenderContext,
-  model: SomeType,
-): string {
+export function someType(this: MarkdownThemeContext, model?: SomeType): string {
   if (!model) {
     return '';
   }
 
   if (model instanceof ArrayType) {
-    return context.partials.arrayType(model);
+    return this.partials.arrayType(model);
   }
 
   if (model instanceof ConditionalType) {
-    return context.partials.conditionalType(model);
+    return this.partials.conditionalType(model);
   }
 
   if (model instanceof IndexedAccessType) {
-    return context.partials.indexAccessType(model);
+    return this.partials.indexAccessType(model);
   }
 
   if (model instanceof InferredType) {
-    return context.partials.inferredType(model);
+    return this.partials.inferredType(model);
   }
 
   if (model instanceof IntersectionType && model.types) {
-    return context.partials.intersectionType(model);
+    return this.partials.intersectionType(model);
   }
 
   if (model instanceof IntrinsicType && model.name) {
-    return context.partials.intrinsicType(model);
+    return this.partials.intrinsicType(model);
   }
 
   if (model instanceof QueryType) {
-    return context.partials.queryType(model);
+    return this.partials.queryType(model);
   }
 
   if (model instanceof ReferenceType) {
-    return context.partials.referenceType(model);
+    return this.partials.referenceType(model);
   }
 
   if (model instanceof ReflectionType) {
-    return context.partials.reflectionType(model);
+    return this.partials.reflectionType(model);
   }
 
   if (model instanceof TypeOperatorType) {
-    return context.partials.typeOperatorType(model);
+    return this.partials.typeOperatorType(model);
   }
 
   if (model instanceof TupleType && model.elements) {
-    return context.partials.tupleType(model);
+    return this.partials.tupleType(model);
   }
 
   if (model instanceof UnionType && model.types) {
-    return context.partials.unionType(model);
+    return this.partials.unionType(model);
   }
 
   if (model instanceof UnknownType) {
-    return context.partials.unknownType(model);
+    return this.partials.unknownType(model);
   }
 
   if (model instanceof NamedTupleMember) {
-    return context.partials.namedTupleType(model);
+    return this.partials.namedTupleType(model);
   }
 
   if (model.toString() == 'null') {

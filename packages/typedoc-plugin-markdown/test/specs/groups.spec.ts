@@ -31,7 +31,7 @@ describe(`Groups`, () => {
     expectFileToEqual(
       'groups',
       ['modules', 'members'],
-      'has-namespaces/namespaces/Namespace_A_/index.md',
+      'has-namespaces/namespaces/Namespace_A/index.md',
     );
   });
 

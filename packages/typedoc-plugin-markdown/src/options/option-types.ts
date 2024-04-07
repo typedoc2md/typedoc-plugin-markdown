@@ -4,7 +4,23 @@ import { ManuallyValidatedOption } from 'typedoc';
 
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
-    outputFileStrategy: 'members' | 'modules';
+    anchorPrefix: string;
+    entryFileName: string;
+    entryModule: string;
+    enumMembersFormat: 'list' | 'table';
+    excludeGroups: boolean;
+    excludeScopesInPaths: boolean;
+    expandObjects: boolean;
+    expandParameters: boolean;
+    fileExtension: string;
+    flattenOutputFiles: boolean;
+    hideBreadcrumbs: boolean;
+    hideInPageTOC: boolean;
+    hidePageHeader: boolean;
+    hidePageTitle: boolean;
+    indexFormat: 'list' | 'table';
+    indexPageTitle: string;
+    memberPageTitle: string;
     membersWithOwnFile: (
       | 'Enum'
       | 'Variable'
@@ -13,33 +29,16 @@ declare module 'typedoc' {
       | 'Interface'
       | 'TypeAlias'
     )[];
-    flattenOutputFiles: boolean;
-    fileExtension: string;
-    entryFileName: string;
-    entryModule: string;
     mergeReadme: boolean;
-    excludeScopesInPaths: boolean;
-    hidePageHeader: boolean;
-    hidePageTitle: boolean;
-    hideBreadcrumbs: boolean;
-    hideInPageTOC: boolean;
-    indexPageTitle: string;
-    memberPageTitle: string;
-    excludeGroups: boolean;
-    useCodeBlocks: boolean;
-    expandObjects: boolean;
-    expandParameters: boolean;
+    outputFileStrategy: 'members' | 'modules';
     parametersFormat: 'list' | 'table';
-    propertiesFormat: 'list' | 'table';
-    enumMembersFormat: 'list' | 'table';
-    typeDeclarationFormat: 'list' | 'table';
-    indexFormat: 'list' | 'table';
-    textContentMappings: ManuallyValidatedOption<Partial<TextContentMappings>>;
-    publicPath: string;
-    preserveMarkup: boolean;
     preserveAnchorCasing: boolean;
-    anchorPrefix: string;
-    namedAnchors: boolean;
+    propertiesFormat: 'list' | 'table';
+    publicPath: string;
+    textContentMappings: ManuallyValidatedOption<Partial<TextContentMappings>>;
+    typeDeclarationFormat: 'list' | 'table';
+    useCodeBlocks: boolean;
+    useHTMLAnchors: boolean;
   }
 }
 
@@ -50,9 +49,89 @@ declare module 'typedoc' {
  */
 export interface PluginOptions {
   /**
-   * Determines how output files are generated.
+   * Custom anchor prefix
    */
-  outputFileStrategy: 'members' | 'modules';
+  anchorPrefix: string;
+
+  /**
+   * The file name of the entry page.
+   */
+  entryFileName: string;
+
+  /**
+   * The name of a module that should act as the root page for the documentation.
+   */
+  entryModule: string;
+
+  /**
+   * Specify the render style of enumuration members.
+   */
+  enumMembersFormat: 'list' | 'table';
+
+  /**
+   * Excludes grouping by kind so all members are rendered and sorted at the same level.
+   */
+  excludeGroups: boolean;
+
+  /**
+   * Exclude writing @ scope directories in paths.
+   */
+  excludeScopesInPaths: boolean;
+
+  /**
+   * Expand objects inside declarations.
+   */
+  expandObjects: boolean;
+
+  /**
+   * Expand parameters in signature parentheses to display type information.
+   */
+  expandParameters: boolean;
+
+  /**
+   * Specify the file extension for generated output files.
+   */
+  fileExtension: string;
+
+  /**
+   * Flatten output files to a single directory.
+   */
+  flattenOutputFiles: boolean;
+
+  /**
+   * Do not print breadcrumbs.
+   */
+  hideBreadcrumbs: boolean;
+
+  /**
+   * Do not render in-page TOC items.
+   */
+  hideInPageTOC: boolean;
+
+  /**
+   * Do not print page header.
+   */
+  hidePageHeader: boolean;
+
+  /**
+   * Do not print page title.
+   */
+  hidePageTitle: boolean;
+
+  /**
+   * Specify the render format for index items.
+   */
+  indexFormat: 'list' | 'table';
+
+  /**
+   * The title of project index page.
+   */
+  indexPageTitle: string;
+
+  /**
+   * The page title of member pages.
+   */
+  memberPageTitle: string;
 
   /**
    * Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
@@ -67,84 +146,14 @@ export interface PluginOptions {
   )[];
 
   /**
-   * Flatten output files to a single directory.
-   */
-  flattenOutputFiles: boolean;
-
-  /**
-   * Specify the file extension for generated output files.
-   */
-  fileExtension: string;
-
-  /**
-   * The file name of the entry page.
-   */
-  entryFileName: string;
-
-  /**
-   * The name of a module that should act as the root page for the documentation.
-   */
-  entryModule: string;
-
-  /**
    * Merges the resolved readme into the project index page.
    */
   mergeReadme: boolean;
 
   /**
-   * Exclude writing @ scope directories in paths.
+   * Determines how output files are generated.
    */
-  excludeScopesInPaths: boolean;
-
-  /**
-   * Do not print page header.
-   */
-  hidePageHeader: boolean;
-
-  /**
-   * Do not print page title.
-   */
-  hidePageTitle: boolean;
-
-  /**
-   * Do not print breadcrumbs.
-   */
-  hideBreadcrumbs: boolean;
-
-  /**
-   * Do not render in-page TOC items.
-   */
-  hideInPageTOC: boolean;
-
-  /**
-   * The title of project index page.
-   */
-  indexPageTitle: string;
-
-  /**
-   * The page title of member pages.
-   */
-  memberPageTitle: string;
-
-  /**
-   * Excludes grouping by kind so all members are rendered and sorted at the same level.
-   */
-  excludeGroups: boolean;
-
-  /**
-   * Wraps signatures and declarations in code blocks.
-   */
-  useCodeBlocks: boolean;
-
-  /**
-   * Expand objects inside declarations.
-   */
-  expandObjects: boolean;
-
-  /**
-   * Expand parameters in signature parentheses to display type information.
-   */
-  expandParameters: boolean;
+  outputFileStrategy: 'members' | 'modules';
 
   /**
    * Specify the render style of parameter and type parameter groups.
@@ -152,29 +161,14 @@ export interface PluginOptions {
   parametersFormat: 'list' | 'table';
 
   /**
+   * Preserve anchor casing when generating link to symbols.
+   */
+  preserveAnchorCasing: boolean;
+
+  /**
    * Specify the render style of property groups for interfaces and classes.
    */
   propertiesFormat: 'list' | 'table';
-
-  /**
-   * Specify the render style of enumuration members.
-   */
-  enumMembersFormat: 'list' | 'table';
-
-  /**
-   * Specify the render style for type declaration members.
-   */
-  typeDeclarationFormat: 'list' | 'table';
-
-  /**
-   * Specify the render format for index items.
-   */
-  indexFormat: 'list' | 'table';
-
-  /**
-   * Provides a mechanism to change the content of text used in documentation.
-   */
-  textContentMappings: Partial<TextContentMappings>;
 
   /**
    * Specify the base path for all urls.
@@ -182,24 +176,24 @@ export interface PluginOptions {
   publicPath: string;
 
   /**
-   * Preserves non-html markup tags in comments.
+   * Provides a mechanism to change the content of text used in documentation.
    */
-  preserveMarkup: boolean;
+  textContentMappings: Partial<TextContentMappings>;
 
   /**
-   * Preserve anchor casing when generating link to symbols.
+   * Specify the render style for type declaration members.
    */
-  preserveAnchorCasing: boolean;
+  typeDeclarationFormat: 'list' | 'table';
 
   /**
-   * Custom anchor prefix
+   * Wraps signatures and declarations in code blocks.
    */
-  anchorPrefix: string;
+  useCodeBlocks: boolean;
 
   /**
    * Add HTML named anchors to headings and table rows.
    */
-  namedAnchors: boolean;
+  useHTMLAnchors: boolean;
 }
 
 /**

@@ -513,7 +513,7 @@ A module that contains custom groupings
 
 ## variabelA
 
-> **\`const\`** **variabelA**: \`true\` = \`true\`
+> \`const\` **variabelA**: \`true\` = \`true\`
 
 ***
 
@@ -521,7 +521,7 @@ A module that contains custom groupings
 
 ## variableB1
 
-> **\`const\`** **variableB1**: \`true\` = \`true\`
+> \`const\` **variableB1**: \`true\` = \`true\`
 
 ***
 
@@ -529,7 +529,7 @@ A module that contains custom groupings
 
 ## variableB2
 
-> **\`const\`** **variableB2**: \`true\` = \`true\`
+> \`const\` **variableB2**: \`true\` = \`true\`
 
 ***
 
@@ -537,7 +537,7 @@ A module that contains custom groupings
 
 ## variableC
 
-> **\`const\`** **variableC**: \`true\` = \`true\`
+> \`const\` **variableC**: \`true\` = \`true\`
 
 Default grouping
 "
@@ -724,36 +724,36 @@ A module that contains namespaces
 ### Namespaces
 
 - [NamespaceB](namespaces/NamespaceB/index.md)
-- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md)
+- [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
 
 ### Enumerations
 
 - [EnumB](enumerations/EnumB.md)
-- [\\_Enum\\_A\\_](enumerations/Enum_A_.md)
+- [\\_Enum\\_A\\_](enumerations/Enum_A.md)
 
 ### Classes
 
 - [ClassB](classes/ClassB.md)
-- [\\_\\_Class\\_A\\_](classes/Class_A_.md)
+- [\\_\\_Class\\_A\\_](classes/Class_A.md)
 
 ### Interfaces
 
 - [InterfaceB](interfaces/InterfaceB.md)
-- [\\_Interface\\_A\\_](interfaces/Interface_A_.md)
+- [\\_Interface\\_A\\_](interfaces/Interface_A.md)
 
 ### Type Aliases
 
 - [TypeB](type-aliases/TypeB.md)
-- [\\_Type\\_A\\_](type-aliases/Type_A_.md)
+- [\\_Type\\_A\\_](type-aliases/Type_A.md)
 
 ### Variables
 
-- [\\_variable\\_A\\_](variables/variable_A_.md)
+- [\\_variable\\_A\\_](variables/variable_A.md)
 - [variableB](variables/variableB.md)
 
 ### Functions
 
-- [\\_function\\_A\\_](functions/function_A_.md)
+- [\\_function\\_A\\_](functions/function_A.md)
 - [functionB](functions/functionB.md)
 "
 `;
@@ -774,13 +774,13 @@ A module that contains namespaces
 | Member | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB/index.md) | - |
-| [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
+| [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
 | [EnumB](enumerations/EnumB.md) | - |
-| [\\_Enum\\_A\\_](enumerations/Enum_A_.md) | - |
+| [\\_Enum\\_A\\_](enumerations/Enum_A.md) | - |
 | [ClassB](classes/ClassB.md) | - |
-| [\\_\\_Class\\_A\\_](classes/Class_A_.md) | - |
+| [\\_\\_Class\\_A\\_](classes/Class_A.md) | - |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
-| [\\_Interface\\_A\\_](interfaces/Interface_A_.md) | - |
+| [\\_Interface\\_A\\_](interfaces/Interface_A.md) | - |
 
 <a id="typeb" name="typeb"></a>
 
@@ -802,7 +802,7 @@ A module that contains namespaces
 
 ## \\_variable\\_A\\_
 
-> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
@@ -810,7 +810,7 @@ A module that contains namespaces
 
 ## variableB
 
-> **\`const\`** **variableB**: \`true\` = \`true\`
+> \`const\` **variableB**: \`true\` = \`true\`
 
 ***
 
@@ -854,7 +854,7 @@ A module that contains namespaces
 ### Namespaces
 
 - [NamespaceB](namespaces/NamespaceB.md)
-- [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md)
+- [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
 
 ## Enumerations
 
@@ -916,13 +916,13 @@ A module that contains namespaces
 
 ### \\_variable\\_A\\_
 
-> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
 ### variableB
 
-> **\`const\`** **variableB**: \`true\` = \`true\`
+> \`const\` **variableB**: \`true\` = \`true\`
 
 ## Functions
 
@@ -962,7 +962,7 @@ A module that contains namespaces
 | Member | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB.md) | - |
-| [\\_Namespace\\_A\\_](namespaces/Namespace_A_/index.md) | - |
+| [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
 
 <a id="enumb" name="enumb"></a>
 
@@ -1044,7 +1044,7 @@ A module that contains namespaces
 
 ## \\_variable\\_A\\_
 
-> **\`const\`** **\\_variable\\_A\\_**: \`true\` = \`true\`
+> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
@@ -1052,7 +1052,7 @@ A module that contains namespaces
 
 ## variableB
 
-> **\`const\`** **variableB**: \`true\` = \`true\`
+> \`const\` **variableB**: \`true\` = \`true\`
 
 ***
 

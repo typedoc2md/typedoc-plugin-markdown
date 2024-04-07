@@ -21,6 +21,10 @@ export async function generateModels(declarationsPath: string) {
       (option as any).defaultValue,
   );
 
+  const sortedOptionsConfig = Object.fromEntries(
+    Object.entries(optionsConfig).sort((a, b) => a[0].localeCompare(b[0])),
+  );
+
   const optionsOutput = `
   // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
 
@@ -31,7 +35,7 @@ export async function generateModels(declarationsPath: string) {
 
   declare module 'typedoc' {
     export interface TypeDocOptionMap {
-      ${(Object.entries(optionsConfig) as any)
+      ${(Object.entries(sortedOptionsConfig) as any)
         .map(([name, option]) => `${name}: ${getType(name, option)};`)
         .join('\n')}
     }
@@ -43,7 +47,7 @@ export async function generateModels(declarationsPath: string) {
    * @category Options
    */
   export interface PluginOptions {
-    ${(Object.entries(optionsConfig) as any)
+    ${(Object.entries(sortedOptionsConfig) as any)
       .map(
         ([name, option]) => `
 /**

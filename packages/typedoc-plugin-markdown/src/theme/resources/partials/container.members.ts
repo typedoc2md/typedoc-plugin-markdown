@@ -1,5 +1,5 @@
-import { horizontalRule } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { horizontalRule } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 /**
@@ -8,20 +8,20 @@ import { DeclarationReflection } from 'typedoc';
  * @category Container Partials
  */
 export function members(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: DeclarationReflection[],
-  headingLevel: number,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
   const displayHr = (reflection: DeclarationReflection) => {
-    if (context.options.getValue('outputFileStrategy') === 'modules') {
-      return context.helpers.isGroupKind(reflection);
+    if (this.options.getValue('outputFileStrategy') === 'modules') {
+      return this.helpers.isGroupKind(reflection);
     }
     return true;
   };
   const items = model?.filter((item) => !item.hasOwnDocument);
   items?.forEach((item, index) => {
-    md.push(context.partials.member(item, headingLevel));
+    md.push(this.partials.member(item, { headingLevel: options.headingLevel }));
     if (index < items.length - 1 && displayHr(item)) {
       md.push(horizontalRule());
     }

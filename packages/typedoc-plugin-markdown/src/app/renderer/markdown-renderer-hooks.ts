@@ -1,4 +1,4 @@
-import { MarkdownThemeRenderContext } from 'public-api';
+import { MarkdownThemeContext } from 'public-api';
 
 /**
  * Describes the hooks available to inject output in the markdown theme.
@@ -20,33 +20,33 @@ export interface MarkdownRendererHooks {
    *
    * @group Hooks
    */
-  ['page.begin']: [MarkdownThemeRenderContext];
+  ['page.begin']: [MarkdownThemeContext];
 
   /**
    * Applied at the end of the markdown output.
    *
    * @group Hooks
    */
-  ['page.end']: [MarkdownThemeRenderContext];
+  ['page.end']: [MarkdownThemeContext];
 
   /**
    * Applied before the main markdown content is rendered.
    *
    * @group Hooks
    */
-  ['content.begin']: [MarkdownThemeRenderContext];
+  ['content.begin']: [MarkdownThemeContext];
 
   /**
    * Applied at the start of the markdown output on the index page.
    *
    * @group Hooks
    */
-  ['index.page.begin']: [MarkdownThemeRenderContext];
+  ['index.page.begin']: [MarkdownThemeContext];
 
   /**
    * Applied at the end of the markdown output on the index page.
    *
    * @group Hooks
    */
-  ['index.page.end']: [MarkdownThemeRenderContext];
+  ['index.page.end']: [MarkdownThemeContext];
 }

@@ -1,12 +1,12 @@
-import { backTicks, link } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks, link } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ReferenceType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function referenceType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: ReferenceType,
 ): string {
   if (model.reflection || (model.name && model.typeArguments)) {
@@ -16,21 +16,18 @@ export function referenceType(
       reflection.push(
         link(
           backTicks(model.reflection.name),
-          context.helpers.getRelativeUrl(model.reflection.url),
+          this.getRelativeUrl(model.reflection.url),
         ),
       );
     } else {
       reflection.push(
         model.externalUrl
-          ? link(
-              backTicks(model.name),
-              context.helpers.getRelativeUrl(model.externalUrl),
-            )
+          ? link(backTicks(model.name), this.getRelativeUrl(model.externalUrl))
           : backTicks(model.name),
       );
     }
     if (model.typeArguments && model.typeArguments.length) {
-      reflection.push(context.partials.typeArguments(model.typeArguments));
+      reflection.push(this.partials.typeArguments(model.typeArguments));
     }
     return reflection.join('');
   }

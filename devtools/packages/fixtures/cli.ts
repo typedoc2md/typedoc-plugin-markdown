@@ -84,7 +84,7 @@ function writeMarkdown(
         '-options',
         path.join(__dirname, 'typedoc.cjs'),
         '-logLevel',
-        'None',
+        'Warn',
         '-entryPoints',
         [`${process.cwd()}/test/fixtures/src/${entryPoints}`],
         '-out',

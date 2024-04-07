@@ -34,19 +34,17 @@ Comments for tag written on same line
 
 ## Html And Jsx
 
-A \`<tag>\`\`</tag>\` in comments
-
-Closing \`</element>\` on its own
+A <tag></tag> in comments
 
 A \`<tag>\` in backticks
 
-Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+Another object \`{ x: 1 }\`.
 
 <div style={{backgroundColor: "#fff", padding: 16}}>
-<img style={{display: "block"}} height="48" width="48"/>
+ <img style={{display: "block"}} height="48" width="48"/>
 </div>
 
-Some random {{braces}} in comments \\{\\}.
+Some random {{braces}}.
 
 \`\`\`
 A <tag> in a code block
@@ -131,19 +129,17 @@ Comments for tag written on same line
 
 ## Html And Jsx
 
-A \`<tag>\`\`</tag>\` in comments
-
-Closing \`</element>\` on its own
+A <tag></tag> in comments
 
 A \`<tag>\` in backticks
 
-Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+Another object \`{ x: 1 }\`.
 
 <div style={{backgroundColor: "#fff", padding: 16}}>
-<img style={{display: "block"}} height="48" width="48"/>
+ <img style={{display: "block"}} height="48" width="48"/>
 </div>
 
-Some random {{braces}} in comments \\{\\}.
+Some random {{braces}}.
 
 \`\`\`
 A <tag> in a code block
@@ -228,19 +224,17 @@ Comments for tag written on same line
 
 ## Html And Jsx
 
-A \`<tag>\`\`</tag>\` in comments
-
-Closing \`</element>\` on its own
+A <tag></tag> in comments
 
 A \`<tag>\` in backticks
 
-Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+Another object \`{ x: 1 }\`.
 
 <div style={{backgroundColor: "#fff", padding: 16}}>
-<img style={{display: "block"}} height="48" width="48"/>
+ <img style={{display: "block"}} height="48" width="48"/>
 </div>
 
-Some random {{braces}} in comments \\{\\}.
+Some random {{braces}}.
 
 \`\`\`
 A <tag> in a code block
@@ -280,7 +274,7 @@ This is a simple example on how to use include.
 
 | Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](README.md#samename-1) |
+| \`Member\` | \`0\` | Comment for Member<br /><br />Some <p> html </p> and <tag></tag>.<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](README.md#samename-1) |
 | \`MemberB\` | \`1\` | - |
 
 ## Interfaces
@@ -335,19 +329,19 @@ This is a simple example on how to use include.
 
 ### \\_prop\\_with\\_underscore
 
-> **\`const\`** **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
+> \`const\` **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
 
 ***
 
 ### prop
 
-> **\`const\`** **prop**: \`true\` = \`true\`
+> \`const\` **prop**: \`true\` = \`true\`
 
 ***
 
 ### propb
 
-> **\`const\`** **propb**: \`true\` = \`true\`
+> \`const\` **propb**: \`true\` = \`true\`
 "
 `;
 
@@ -385,19 +379,17 @@ Comments for tag written on same line
 
 ## Html And Jsx
 
-A \`<tag>\`\`</tag>\` in comments
-
-Closing \`</element>\` on its own
+A <tag></tag> in comments
 
 A \`<tag>\` in backticks
 
-Some object \\{ x: 1 \\}. Another object \`{ x: 1 }\`.
+Another object \`{ x: 1 }\`.
 
 <div style={{backgroundColor: "#fff", padding: 16}}>
-<img style={{display: "block"}} height="48" width="48"/>
+ <img style={{display: "block"}} height="48" width="48"/>
 </div>
 
-Some random {{braces}} in comments \\{\\}.
+Some random {{braces}}.
 
 \`\`\`
 A <tag> in a code block
@@ -439,7 +431,7 @@ This is a simple example on how to use include.
 
 | Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| <a id="Member" name="Member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](/some-path/README.mdx#SameName-1) |
+| <a id="Member" name="Member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />Some <p> html </p> and <tag></tag>.<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](/some-path/README.mdx#SameName-1) |
 | <a id="MemberB" name="MemberB"></a> \`MemberB\` | \`1\` | - |
 
 ## Interfaces
@@ -504,7 +496,7 @@ This is a simple example on how to use include.
 
 ### \\_prop\\_with\\_underscore
 
-> **\`const\`** **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
+> \`const\` **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
 
 ***
 
@@ -512,7 +504,7 @@ This is a simple example on how to use include.
 
 ### prop
 
-> **\`const\`** **prop**: \`true\` = \`true\`
+> \`const\` **prop**: \`true\` = \`true\`
 
 ***
 
@@ -520,6 +512,6 @@ This is a simple example on how to use include.
 
 ### propb
 
-> **\`const\`** **propb**: \`true\` = \`true\`
+> \`const\` **propb**: \`true\` = \`true\`
 "
 `;

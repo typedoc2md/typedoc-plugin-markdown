@@ -1,11 +1,11 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { LiteralType } from 'typedoc';
 
 /**
  * @category Type Partials
  */
 export function literalType(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: LiteralType,
 ): string {
   if (typeof model.value === 'bigint') {

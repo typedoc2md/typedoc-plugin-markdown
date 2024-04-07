@@ -1,18 +1,23 @@
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 /**
  * @category Member Partials
  */
 export function typeDeclarationList(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: DeclarationReflection[],
   headingLevel: number,
 ): string {
   const md: string[] = [];
-  const declarations = context.helpers.flattenDeclarations(model, false);
+  const declarations = this.helpers.getFlattenedDeclarations(model);
   declarations?.forEach((declaration: DeclarationReflection) => {
-    md.push(context.partials.member(declaration, headingLevel + 1, true));
+    md.push(
+      this.partials.member(declaration, {
+        headingLevel: headingLevel + 1,
+        nested: true,
+      }),
+    );
   });
 
   return md.join('\n\n');

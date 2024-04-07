@@ -1,5 +1,5 @@
 export default {
-  index: 'Index',
+  index: 'Other Plugins Index',
 
   '-- Utils': {
     type: 'separator',

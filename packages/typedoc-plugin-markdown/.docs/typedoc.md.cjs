@@ -25,7 +25,6 @@ const options = {
   textContentMappings: {
     'title.memberPage': '{name}',
   },
-  expandParameters: true,
   flattenOutputFiles: true,
 };
 module.exports = options;

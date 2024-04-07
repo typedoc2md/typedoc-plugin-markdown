@@ -1,16 +1,14 @@
-import { backTicks, bold } from '@theme/lib/markdown';
-import { escapeChars } from '@theme/lib/utils';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { backTicks, bold } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 /**
- * Renders parameters section as a list.
- *
  * @category Member Partials
  */
 export function parametersList(
-  context: MarkdownThemeRenderContext,
-  parameters: ParameterReflection[],
+  this: MarkdownThemeContext,
+  model: ParameterReflection[],
 ): string {
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
@@ -26,7 +24,7 @@ export function parametersList(
       (acc: any, child: any) => {
         const childObj = {
           ...child,
-          name: `${current.name}\\.${child.name}`,
+          name: `${current.name}.${child.name}`,
         };
         return parseParams(childObj, acc);
       },
@@ -34,12 +32,12 @@ export function parametersList(
     );
   };
 
-  const parsedParams = parameters.reduce(
+  const parsedParams = model.reduce(
     (acc: any, current: any) => parseParams(current, acc),
     [],
   );
 
-  const firstOptionalParamIndex = parameters.findIndex(
+  const firstOptionalParamIndex = model.findIndex(
     (parameter) => parameter.flags.isOptional,
   );
 
@@ -61,19 +59,19 @@ export function parametersList(
     const identifier: string[] = [bold(name)];
 
     if (parameter.type && !(parameter.type instanceof ReflectionType)) {
-      identifier.push(': ' + context.partials.someType(parameter.type));
+      identifier.push(': ' + this.partials.someType(parameter.type));
     }
 
     if (parameter.defaultValue) {
       identifier.push(
-        '= ' + backTicks(context.helpers.getParameterDefaultValue(parameter)),
+        '= ' + backTicks(this.helpers.getParameterDefaultValue(parameter)),
       );
     }
 
     row.push(`• ${rest}${identifier.join('')}`);
 
     if (parameter.comment) {
-      row.push(context.partials.comment(parameter.comment));
+      row.push(this.partials.comment(parameter.comment));
     }
 
     rows.push(row.join('\n\n'));

@@ -1,5 +1,5 @@
-import { link } from '@theme/lib/markdown';
-import { MarkdownThemeRenderContext } from '@theme/render-context';
+import { link } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import * as fs from 'fs';
 import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
 
@@ -7,15 +7,15 @@ import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
  * @category Comment Partials
  */
 export function commentParts(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: CommentDisplayPart[],
 ): string {
   const md: string[] = [];
   const parsedText = (text: string) => {
     const mediaPattern = /media:\/\/([^ ")\]}]+)/g;
     const includePattern = /\[\[include:([^\]]+?)\]\]/g;
-    const includeDirectory = context.options.getValue('includes');
-    const mediaDirectory = context.options.getValue('media');
+    const includeDirectory = this.options.getValue('includes');
+    const mediaDirectory = this.options.getValue('media');
 
     let parsedText = text;
 
@@ -23,8 +23,8 @@ export function commentParts(
       parsedText = parsedText.replace(
         includePattern,
         (match: string, includeFile: string) => {
-          const includeDirectory = context.options.getValue('includes');
-          const includesPath = context.helpers.getRelativeUrl(
+          const includeDirectory = this.options.getValue('includes');
+          const includesPath = this.getRelativeUrl(
             `${includeDirectory}/${includeFile}`,
             true,
           );
@@ -42,7 +42,7 @@ export function commentParts(
       parsedText = parsedText.replace(
         mediaPattern,
         (match: string, mediaFile: string) => {
-          return context.helpers.getRelativeUrl(`media/${mediaFile}`, true);
+          return this.getRelativeUrl(`media/${mediaFile}`, true);
         },
       );
     }
@@ -70,7 +70,7 @@ export function commentParts(
               const wrap = part.tag === '@linkcode' ? '`' : '';
               md.push(
                 url
-                  ? `${link(`${wrap}${part.text}${wrap}`, context.helpers.getRelativeUrl(url))}`
+                  ? `${link(`${wrap}${part.text}${wrap}`, this.getRelativeUrl(url))}`
                   : part.text,
               );
             } else {
@@ -87,10 +87,7 @@ export function commentParts(
         md.push('');
     }
   }
-  return escapeComments(
-    md.join(''),
-    context.options.getValue('preserveMarkup'),
-  );
+  return md.join('');
 }
 
 function getUrl(part: InlineTagDisplayPart) {
@@ -111,63 +108,4 @@ export function isFile(file: string) {
   } catch {
     return false;
   }
-}
-
-function escapeComments(str: string, preserveTags: boolean) {
-  const re = /<(?=(?:[^`]*`[^`]*`)*[^`]*$)[^<]+?>/gi;
-  const codeBlocks: string[] = [];
-  const placeholder = '___CODEBLOCKPLACEHOLDER___';
-
-  // Replace code blocks with placeholders
-  str = str.replace(/(```[\s\S]*?```|`[^`]*?`)/g, (match) => {
-    codeBlocks.push(match);
-    return placeholder;
-  });
-
-  const htmlTags = [
-    'div',
-    'span',
-    'p',
-    'a',
-    'br',
-    'img',
-    'ul',
-    'li',
-    'strike',
-    'em',
-    'strong',
-    'b',
-    'code',
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-  ];
-
-  // Perform escaping outside of code blocks
-  // - Wrap non-html tags in code blocks
-  // - Escape non-JSX curly braces
-  str = str
-    .replace(re, (tags) => {
-      const htmlRe = new RegExp(
-        `<(?!\/?(${htmlTags.join('|')})(>|\\s))[^<]+?>`,
-        'g',
-      );
-      const shouldEscapeTags = !preserveTags && tags.match(htmlRe);
-      return shouldEscapeTags
-        ? tags.replace(/>/g, '>`').replace(/</g, '`<')
-        : tags;
-    })
-    .replace(/(?<!\\)(?<!`)(?<!{)(?<!{{){(?!`)(?!{)(?!{{)/g, '\\{')
-    .replace(/(?<!\\)(?<!`)(?!{)(?!{{)(?<!})}(?!`)(?!{)(?!})/g, '\\}');
-
-  // Replace placeholders with original code blocks
-  str = str.replace(
-    new RegExp(placeholder, 'g'),
-    () => codeBlocks.shift() || '',
-  );
-
-  return str;
 }

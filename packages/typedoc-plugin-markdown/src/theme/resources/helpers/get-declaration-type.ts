@@ -1,14 +1,14 @@
 import { DeclarationReflection } from 'typedoc';
 
-export function getDeclarationType(declaration: DeclarationReflection) {
-  if (declaration.signatures) {
-    return declaration.signatures[0].type;
+export function getDeclarationType(model: DeclarationReflection) {
+  if (model.signatures) {
+    return model.signatures[0].type;
   }
-  if (declaration.getSignature) {
-    return declaration.getSignature.type;
+  if (model.getSignature) {
+    return model.getSignature.type;
   }
-  if (declaration.setSignature) {
-    return declaration.setSignature.type;
+  if (model.setSignature) {
+    return model.setSignature.type;
   }
-  return declaration.type;
+  return model.type;
 }

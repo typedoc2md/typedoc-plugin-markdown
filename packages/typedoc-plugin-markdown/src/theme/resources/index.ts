@@ -1,38 +1,36 @@
 // THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
-import { MarkdownThemeRenderContext } from '@theme/render-context';
-import { TextContentMappings } from '@options/option-types';
+import { MarkdownThemeContext } from '@plugin/theme';
 import {
-  DeclarationReflection,
-  ProjectReflection,
-  CommentDisplayPart,
-  Comment,
-  SignatureReflection,
-  ReferenceReflection,
-  ParameterReflection,
-  Reflection,
-  SomeType,
   ArrayType,
+  Comment,
+  CommentDisplayPart,
   ConditionalType,
+  ContainerReflection,
+  DeclarationHierarchy,
+  DeclarationReflection,
   IndexedAccessType,
   InferredType,
   IntersectionType,
   IntrinsicType,
   LiteralType,
   NamedTupleMember,
+  ParameterReflection,
+  ProjectReflection,
   QueryType,
+  ReferenceReflection,
   ReferenceType,
-  TypeOperatorType,
-  UnionType,
-  UnknownType,
-  TypeParameterReflection,
-  DeclarationHierarchy,
-  ContainerReflection,
-  ReflectionType,
-  TupleType,
-  ReflectionKind,
+  Reflection,
   ReflectionCategory,
   ReflectionGroup,
-  Options,
+  ReflectionKind,
+  ReflectionType,
+  SignatureReflection,
+  SomeType,
+  TupleType,
+  TypeOperatorType,
+  TypeParameterReflection,
+  UnionType,
+  UnknownType,
 } from 'typedoc';
 
 import { project } from './templates/project';
@@ -59,14 +57,15 @@ import { parametersList } from './partials/member.parametersList';
 import { parametersTable } from './partials/member.parametersTable';
 import { declarationsTable } from './partials/member.propertiesTable';
 import { referenceMember } from './partials/member.reference';
-import { reflectionFlags } from './partials/member.reflection.flags';
-import { reflectionIndex } from './partials/member.reflection.index';
+import { reflectionFlags } from './partials/member.reflectionFlags';
+import { reflectionIndex } from './partials/member.reflectionIndex';
 import { signature } from './partials/member.signature';
 import { signatureParameters } from './partials/member.signatureParameters';
 import { signatureReturns } from './partials/member.signatureReturns';
 import { signatureTitle } from './partials/member.signatureTitle';
 import { sources } from './partials/member.sources';
 import { member } from './partials/member';
+import { typeAndParent } from './partials/member.typeAndParent';
 import { typeArguments } from './partials/member.typeArguments';
 import { typeDeclaration } from './partials/member.typeDeclaration';
 import { typeDeclarationList } from './partials/member.typeDeclarationList';
@@ -96,28 +95,37 @@ import { typeOperatorType } from './partials/type.type-operator';
 import { unionType } from './partials/type.union';
 import { unknownType } from './partials/type.unknown';
 
-import { flattenDeclarations } from './helpers/flatten-declarations';
 import { getDeclarationComment } from './helpers/get-declaration-comment';
 import { getDeclarationType } from './helpers/get-declaration-type';
+import { getFlattenedDeclarations } from './helpers/get-flattened-declarations';
+import { getHierarchyType } from './helpers/get-hierarchy-type';
 import { getKeyword } from './helpers/get-keyword';
 import { getModifier } from './helpers/get-modifier';
-import { getPackagesMeta } from './helpers/get-packages-meta';
 import { getParameterDefaultValue } from './helpers/get-parameter-default-value';
-import { getProjectName } from './helpers/get-project-name';
-import { getRelativeUrl } from './helpers/get-relative-url';
-import { getTextFromKindString } from './helpers/get-text-from-kind-string';
-import { getText } from './helpers/get-text';
+import { getReturnType } from './helpers/get-return-type';
 import { isGroupKind } from './helpers/is-group-kind';
 
-export const templates = (context: MarkdownThemeRenderContext) => {
+export const templates = (context: MarkdownThemeContext) => {
   return {
+    /**
+     * Template that maps to the root project reflection. This will be the index page / documentation root page.
+     *
+     */
     project: () => project.apply(context, []) as string,
+    /**
+     * Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
+     *
+     */
     readme: () => readme.apply(context, []) as string,
+    /**
+     * Template that maps to individual reflection models.
+     *
+     */
     reflection: () => reflection.apply(context, []) as string,
   };
 };
 
-export const partials = (context: MarkdownThemeRenderContext) => {
+export const partials = (context: MarkdownThemeContext) => {
   return {
     /**
      *
@@ -130,60 +138,66 @@ export const partials = (context: MarkdownThemeRenderContext) => {
         headingLevel?: number | undefined;
         showSummary?: boolean | undefined;
         showTags?: boolean | undefined;
-      } = {
-        headingLevel: undefined,
-        showSummary: true,
-        showTags: true,
-      },
-    ) => comment(context, model, options),
+        isTableColumn?: boolean | undefined;
+      } = {},
+    ) => comment.apply(context, [model, options]) as string,
     /**
      *
      *
      * @category Comment Partials
      */
-    commentParts: (model: CommentDisplayPart[]) => commentParts(context, model),
+    commentParts: (model: CommentDisplayPart[]) =>
+      commentParts.apply(context, [model]) as string,
     /**
      *
      *
      * @category Container Partials
      */
-    body: (container: ContainerReflection, headingLevel: number) =>
-      body(context, container, headingLevel),
+    body: (model: ContainerReflection, options: { headingLevel: number }) =>
+      body.apply(context, [model, options]) as string,
     /**
      * Renders a collection of reflection categories.
      *
      * @category Container Partials
      */
-    categories: (model: ReflectionCategory[], headingLevel: number) =>
-      categories(context, model, headingLevel),
+    categories: (
+      model: ReflectionCategory[],
+      options: { headingLevel: number },
+    ) => categories.apply(context, [model, options]) as string,
     /**
      * Renders a collection of reflection groups.
      *
      * @category Container Partials
      */
-    groups: (model: ReflectionGroup[], headingLevel: number) =>
-      groups(context, model, headingLevel),
+    groups: (model: ReflectionGroup[], options: { headingLevel: number }) =>
+      groups.apply(context, [model, options]) as string,
     /**
      * Renders a collection of members.
      *
      * @category Container Partials
      */
-    members: (model: DeclarationReflection[], headingLevel: number) =>
-      members(context, model, headingLevel),
+    members: (
+      model: DeclarationReflection[],
+      options: { headingLevel: number },
+    ) => members.apply(context, [model, options]) as string,
     /**
      * Renders an accessor member.
      *
      * @category Member Partials
      */
-    accessor: (declaration: DeclarationReflection, headingLevel: number) =>
-      accessor(context, declaration, headingLevel),
+    accessor: (
+      model: DeclarationReflection,
+      options: { headingLevel: number },
+    ) => accessor.apply(context, [model, options]) as string,
     /**
      * Renders an constructor member.
      *
      * @category Member Partials
      */
-    constructor: (reflection: DeclarationReflection, headingLevel: number) =>
-      constructor(context, reflection, headingLevel),
+    constructor: (
+      model: DeclarationReflection,
+      options: { headingLevel: number },
+    ) => constructor.apply(context, [model, options]) as string,
     /**
      * Renders a standard declaration member.
      *
@@ -195,72 +209,76 @@ export const partials = (context: MarkdownThemeRenderContext) => {
         headingLevel: 2,
         nested: false,
       },
-    ) => declaration(context, model, options),
+    ) => declaration.apply(context, [model, options]) as string,
     /**
      * Remders a declaration title.
      *
      * @category Member Partials
      */
-    declarationTitle: (reflection: DeclarationReflection) =>
-      declarationTitle(context, reflection),
+    declarationTitle: (model: DeclarationReflection) =>
+      declarationTitle.apply(context, [model]) as string,
     /**
      * Renders enum members as a table.
      *
      * @category Member Partials
      */
-    enumMembersTable: (props: DeclarationReflection[]) =>
-      enumMembersTable(context, props),
+    enumMembersTable: (model: DeclarationReflection[]) =>
+      enumMembersTable.apply(context, [model]) as string,
     /**
      * Renders an declaration hierachy section.
      *
      * @category Member Partials
      */
-    hierarchy: (model: DeclarationHierarchy, headingLevel: number) =>
-      hierarchy(context, model, headingLevel),
+    hierarchy: (
+      model: DeclarationHierarchy,
+      options: { headingLevel: number },
+    ) => hierarchy.apply(context, [model, options]) as string,
     /**
      * Renders an index signature block
      *
      * @category Member Partials
      */
-    indexSignature: (signature: SignatureReflection) =>
-      indexSignature(context, signature),
+    indexSignature: (model: SignatureReflection) =>
+      indexSignature.apply(context, [model]) as string,
     /**
      * Renders an inheritance section.
      *
      * @category Member Partials
      */
     inheritance: (
-      reflection: DeclarationReflection | SignatureReflection,
-      headingLevel: number,
-    ) => inheritance(context, reflection, headingLevel),
+      model: DeclarationReflection | SignatureReflection,
+      options: { headingLevel: number },
+    ) => inheritance.apply(context, [model, options]) as string,
     /**
      * Renders the main member title.
      *
      * @category Member Partials
      */
-    memberTitle: (reflection: DeclarationReflection) =>
-      memberTitle(context, reflection),
+    memberTitle: (model: DeclarationReflection) =>
+      memberTitle.apply(context, [model]) as string,
     /**
      * Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
      *
      * @category Member Partials
      */
-    memberWithGroups: (model: DeclarationReflection, headingLevel: number) =>
-      memberWithGroups(context, model, headingLevel),
+    memberWithGroups: (
+      model: DeclarationReflection,
+      options: { headingLevel: number },
+    ) => memberWithGroups.apply(context, [model, options]) as string,
     /**
-     * Renders parameters section as a list.
+     *
      *
      * @category Member Partials
      */
-    parametersList: (parameters: ParameterReflection[]) =>
-      parametersList(context, parameters),
+    parametersList: (model: ParameterReflection[]) =>
+      parametersList.apply(context, [model]) as string,
     /**
-     * Renders parameters section as a table.
+     *
      *
      * @category Member Partials
      */
-    parametersTable: (parameters: ParameterReflection[]) =>
-      parametersTable(context, parameters),
+    parametersTable: (model: ParameterReflection[]) =>
+      parametersTable.apply(context, [model]) as string,
     /**
  * Renders a collection of properties in a table.
 
@@ -270,32 +288,32 @@ There is no association list partial for properties as these are handled as a st
  *
  */
     declarationsTable: (
-      props: DeclarationReflection[],
-      isEventProps: boolean = false,
-    ) => declarationsTable(context, props, isEventProps),
+      model: DeclarationReflection[],
+      options?: { isEventProps: boolean } | undefined,
+    ) => declarationsTable.apply(context, [model, options]) as string,
     /**
      * Renders an reference member.
      *
      * @category Member Partials
      */
-    referenceMember: (props: ReferenceReflection) =>
-      referenceMember(context, props),
+    referenceMember: (model: ReferenceReflection) =>
+      referenceMember.apply(context, [model]) as string,
     /**
      * Renders the flags of a reflection.
      *
      * @category Member Partials
      */
-    reflectionFlags: (reflection: Reflection) =>
-      reflectionFlags(context, reflection),
+    reflectionFlags: (model: Reflection) =>
+      reflectionFlags.apply(context, [model]) as string,
     /**
      * Renders the index section of a reflection.
      *
      * @category Member Partials
      */
     reflectionIndex: (
-      reflection: DeclarationReflection | ProjectReflection,
-      headingLevel: number,
-    ) => reflectionIndex(context, reflection, headingLevel),
+      model: DeclarationReflection | ProjectReflection,
+      options: { headingLevel: number },
+    ) => reflectionIndex.apply(context, [model, options]) as string,
     /**
      * Renders a signature member.
      *
@@ -303,44 +321,48 @@ There is no association list partial for properties as these are handled as a st
      */
     signature: (
       model: SignatureReflection,
-      headingLevel: number,
-      nested: boolean = false,
-      accessor?: string | undefined,
-    ) => signature(context, model, headingLevel, nested, accessor),
+      options: {
+        headingLevel: number;
+        nested?: boolean | undefined;
+        accessor?: string | undefined;
+      },
+    ) => signature.apply(context, [model, options]) as string,
     /**
      *
      *
      * @category Member Partials
      */
-    signatureParameters: (parameters: ParameterReflection[]) =>
-      signatureParameters(context, parameters),
+    signatureParameters: (model: ParameterReflection[]) =>
+      signatureParameters.apply(context, [model]) as string,
     /**
      *
      *
      * @category Member Partials
      */
-    signatureReturns: (signature: SignatureReflection, headingLevel: number) =>
-      signatureReturns(context, signature, headingLevel),
+    signatureReturns: (
+      model: SignatureReflection,
+      options: { headingLevel: number },
+    ) => signatureReturns.apply(context, [model, options]) as string,
     /**
      *
      *
      * @category Member Partials
      */
     signatureTitle: (
-      signature: SignatureReflection,
-      opts?:
+      model: SignatureReflection,
+      options?:
         | { accessor?: string | undefined; includeType?: boolean | undefined }
         | undefined,
-    ) => signatureTitle(context, signature, opts),
+    ) => signatureTitle.apply(context, [model, options]) as string,
     /**
      *
      *
      * @category Member Partials
      */
     sources: (
-      reflection: DeclarationReflection | SignatureReflection,
-      headingLevel: number,
-    ) => sources(context, reflection, headingLevel),
+      model: DeclarationReflection | SignatureReflection,
+      options: { headingLevel: number },
+    ) => sources.apply(context, [model, options]) as string,
     /**
      *
      *
@@ -348,23 +370,33 @@ There is no association list partial for properties as these are handled as a st
      */
     member: (
       model: DeclarationReflection,
-      headingLevel: number,
-      nested: boolean = false,
-    ) => member(context, model, headingLevel, nested),
+      options: { headingLevel: number; nested?: boolean | undefined },
+    ) => member.apply(context, [model, options]) as string,
     /**
-     * å
+     *
      *
      * @category Member Partials
      */
-    typeArguments: (model: SomeType[], foreCollpase: boolean = false) =>
-      typeArguments(context, model, foreCollpase),
+    typeAndParent: (model: ArrayType | ReferenceType) =>
+      typeAndParent.apply(context, [model]) as string,
     /**
-     * å
+     *
      *
      * @category Member Partials
      */
-    typeDeclaration: (model: DeclarationReflection[], headingLevel: number) =>
-      typeDeclaration(context, model, headingLevel),
+    typeArguments: (
+      model: SomeType[],
+      options?: { foreCollpase?: boolean | undefined } | undefined,
+    ) => typeArguments.apply(context, [model, options]) as string,
+    /**
+     *
+     *
+     * @category Member Partials
+     */
+    typeDeclaration: (
+      model: DeclarationReflection[],
+      options: { headingLevel: number },
+    ) => typeDeclaration.apply(context, [model, options]) as string,
     /**
      *
      *
@@ -373,215 +405,213 @@ There is no association list partial for properties as these are handled as a st
     typeDeclarationList: (
       model: DeclarationReflection[],
       headingLevel: number,
-    ) => typeDeclarationList(context, model, headingLevel),
+    ) => typeDeclarationList.apply(context, [model, headingLevel]) as string,
     /**
      *
      *
      * @category Member Partials
      */
-    typeDeclarationTable: (props: DeclarationReflection[]) =>
-      typeDeclarationTable(context, props),
+    typeDeclarationTable: (model: DeclarationReflection[]) =>
+      typeDeclarationTable.apply(context, [model]) as string,
     /**
      *
      *
      * @category Member Partials
      */
-    typeParametersList: (typeParameters: TypeParameterReflection[]) =>
-      typeParametersList(context, typeParameters),
+    typeParametersList: (model: TypeParameterReflection[]) =>
+      typeParametersList.apply(context, [model]) as string,
     /**
      *
      *
      * @category Member Partials
      */
-    typeParametersTable: (typeParameters: TypeParameterReflection[]) =>
-      typeParametersTable(context, typeParameters),
+    typeParametersTable: (model: TypeParameterReflection[]) =>
+      typeParametersTable.apply(context, [model]) as string,
     /**
      *
      *
      * @category Page Partials
      */
-    breadcrumbs: () => breadcrumbs(context),
+    breadcrumbs: () => breadcrumbs.apply(context, []) as string,
     /**
      *
      *
      * @category Page Partials
      */
-    header: () => header(context),
+    header: () => header.apply(context, []) as string,
     /**
      *
      *
      * @category Page Partials
      */
-    packagesIndex: (model: ProjectReflection) => packagesIndex(context, model),
+    packagesIndex: (model: ProjectReflection) =>
+      packagesIndex.apply(context, [model]) as string,
     /**
      *
      *
      * @category Page Partials
      */
-    pageTitle: () => pageTitle(context),
+    pageTitle: () => pageTitle.apply(context, []) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    arrayType: (model: ArrayType) => arrayType(context, model),
+    arrayType: (model: ArrayType) =>
+      arrayType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
     conditionalType: (model: ConditionalType) =>
-      conditionalType(context, model),
+      conditionalType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
     indexAccessType: (model: IndexedAccessType) =>
-      indexAccessType(context, model),
+      indexAccessType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    inferredType: (model: InferredType) => inferredType(context, model),
+    inferredType: (model: InferredType) =>
+      inferredType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
     intersectionType: (model: IntersectionType) =>
-      intersectionType(context, model),
+      intersectionType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    intrinsicType: (model: IntrinsicType) => intrinsicType(context, model),
+    intrinsicType: (model: IntrinsicType) =>
+      intrinsicType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    literalType: (model: LiteralType) => literalType(context, model),
+    literalType: (model: LiteralType) =>
+      literalType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    namedTupleType: (model: NamedTupleMember) => namedTupleType(context, model),
+    namedTupleType: (model: NamedTupleMember) =>
+      namedTupleType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    queryType: (model: QueryType) => queryType(context, model),
+    queryType: (model: QueryType) =>
+      queryType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    referenceType: (model: ReferenceType) => referenceType(context, model),
+    referenceType: (model: ReferenceType) =>
+      referenceType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
     declarationType: (model: DeclarationReflection) =>
-      declarationType(context, model),
+      declarationType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
     functionType: (
-      signatures: SignatureReflection[],
-      forceParameterType: boolean = false,
-    ) => functionType(context, signatures, forceParameterType),
+      model: SignatureReflection[],
+      options?: { forceParameterType: boolean } | undefined,
+    ) => functionType.apply(context, [model, options]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    reflectionType: (model: ReflectionType, foreCollpase: boolean = false) =>
-      reflectionType(context, model, foreCollpase),
+    reflectionType: (
+      model: ReflectionType,
+      options?: { foreCollpase?: boolean | undefined } | undefined,
+    ) => reflectionType.apply(context, [model, options]) as string,
     /**
      * Takes a generic Type and returns the appropriate partial for it.
      *
      * @category Type Partials
      */
-    someType: (model: SomeType) => someType(context, model),
+    someType: (model?: SomeType | undefined) =>
+      someType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    tupleType: (model: TupleType) => tupleType(context, model),
+    tupleType: (model: TupleType) =>
+      tupleType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
     typeOperatorType: (model: TypeOperatorType) =>
-      typeOperatorType(context, model),
+      typeOperatorType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    unionType: (model: UnionType) => unionType(context, model),
+    unionType: (model: UnionType) =>
+      unionType.apply(context, [model]) as string,
     /**
      *
      *
      * @category Type Partials
      */
-    unknownType: (model: UnknownType) => unknownType(context, model),
+    unknownType: (model: UnknownType) =>
+      unknownType.apply(context, [model]) as string,
   };
 };
 
-export const helpers = (context: MarkdownThemeRenderContext) => {
+export const helpers = (context: MarkdownThemeContext) => {
   return {
-    flattenDeclarations: (
-      props: DeclarationReflection[],
-      includeSignatures: boolean = false,
+    getDeclarationComment: (model: DeclarationReflection) =>
+      getDeclarationComment.apply(context, [model]) as any,
+    getDeclarationType: (model: DeclarationReflection) =>
+      getDeclarationType.apply(context, [model]) as SomeType | undefined,
+    getFlattenedDeclarations: (
+      model: DeclarationReflection[],
+      options?: { includeSignatures: boolean } | undefined,
     ) =>
-      flattenDeclarations.apply(context, [
-        props,
-        includeSignatures,
+      getFlattenedDeclarations.apply(context, [
+        model,
+        options,
       ]) as DeclarationReflection[],
-    getDeclarationComment: (declaration: DeclarationReflection) =>
-      getDeclarationComment.apply(context, [declaration]) as any,
-    getDeclarationType: (declaration: DeclarationReflection) =>
-      getDeclarationType.apply(context, [declaration]) as SomeType | undefined,
-    getKeyword: (kind: ReflectionKind) =>
-      getKeyword.apply(context, [kind]) as any,
-    getModifier: (reflection: DeclarationReflection) =>
-      getModifier.apply(context, [reflection]) as
-        | 'abstract'
-        | 'private'
-        | 'readonly'
-        | 'static'
-        | 'protected'
-        | 'public'
-        | 'get'
-        | 'set'
-        | null,
-    getPackagesMeta: (key: string) =>
-      getPackagesMeta.apply(context, [key]) as {
-        description?: string | undefined;
-        options: Options;
-      },
-    getParameterDefaultValue: (parameter: ParameterReflection) =>
-      getParameterDefaultValue.apply(context, [parameter]) as string,
-    getProjectName: (textContent: string) =>
-      getProjectName.apply(context, [textContent]) as string,
-    getRelativeUrl: (url: string, ignorePublicPath: boolean = false) =>
-      getRelativeUrl.apply(context, [url, ignorePublicPath]) as string,
-    getTextFromKindString: (kindString: string, isPlural: boolean = false) =>
-      getTextFromKindString.apply(context, [kindString, isPlural]) as string,
-    getText: (key: keyof TextContentMappings) =>
-      getText.apply(context, [key]) as string,
-    isGroupKind: (reflection: DeclarationReflection | SignatureReflection) =>
-      isGroupKind.apply(context, [reflection]) as boolean,
+    getHierarchyType: (
+      model: SomeType,
+      options?: { isTarget: boolean } | undefined,
+    ) => getHierarchyType.apply(context, [model, options]) as string,
+    getKeyword: (model: ReflectionKind) =>
+      getKeyword.apply(context, [model]) as string,
+    getModifier: (model: DeclarationReflection) =>
+      getModifier.apply(context, [model]) as string | null,
+    getParameterDefaultValue: (model: ParameterReflection) =>
+      getParameterDefaultValue.apply(context, [model]) as string,
+    getReturnType: (model?: SomeType | undefined) =>
+      getReturnType.apply(context, [model]) as string,
+    isGroupKind: (model: DeclarationReflection | SignatureReflection) =>
+      isGroupKind.apply(context, [model]) as boolean,
   };
 };

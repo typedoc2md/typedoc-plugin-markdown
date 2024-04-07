@@ -1,6 +1,6 @@
-import { heading } from '@theme/lib/markdown';
+import { heading } from '@plugin/libs/markdown';
 import { ReflectionCategory } from 'typedoc';
-import { MarkdownThemeRenderContext } from '../../render-context';
+import { MarkdownThemeContext } from '../../markdown-themecontext';
 
 /**
  * Renders a collection of reflection categories.
@@ -8,20 +8,24 @@ import { MarkdownThemeRenderContext } from '../../render-context';
  * @category Container Partials
  */
 export function categories(
-  context: MarkdownThemeRenderContext,
+  this: MarkdownThemeContext,
   model: ReflectionCategory[],
-  headingLevel: number,
+  options: { headingLevel: number },
 ) {
   const md: string[] = [];
   model
     ?.filter((category) => !category.allChildrenHaveOwnDocument())
     .forEach((category) => {
-      md.push(heading(headingLevel, category.title));
+      md.push(heading(options.headingLevel, category.title));
       if (category.description) {
-        md.push(context.partials.commentParts(category.description));
+        md.push(this.partials.commentParts(category.description));
       }
       if (category.children) {
-        md.push(context.partials.members(category.children, headingLevel + 1));
+        md.push(
+          this.partials.members(category.children, {
+            headingLevel: options.headingLevel + 1,
+          }),
+        );
       }
     });
   return md.join('\n\n');
