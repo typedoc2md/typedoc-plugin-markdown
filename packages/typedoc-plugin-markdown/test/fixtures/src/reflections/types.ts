@@ -185,7 +185,8 @@ export type __TypeDeclarationWithSpecialCharacters_<T, U> = {
   '?': T | U;
   '<': '<';
   '>': '>';
-  '\n': '\n';
+  '\\n': '\\n';
+  '\\a': '\\a';
   '\\': '\\';
   '<foo>': '<foo>';
   '*': '*';

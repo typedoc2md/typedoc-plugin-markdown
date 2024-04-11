@@ -1,5 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@plugin/theme/Layout';
+import Layout from '@theme/Layout';
 import React from 'react';
 
 function HomepageHeader() {

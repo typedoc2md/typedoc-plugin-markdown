@@ -24,7 +24,8 @@ export function memberTitle(
 
   name.push(
     `${
-      model.name.startsWith('[') && model.signatures?.length
+      /\\/.test(model.name) ||
+      (model.name.startsWith('[') && model.signatures?.length)
         ? backTicks(model.name)
         : escapeChars(model.name)
     }`,

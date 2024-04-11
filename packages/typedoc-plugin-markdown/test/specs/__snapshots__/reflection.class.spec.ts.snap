@@ -358,7 +358,7 @@ Comments for ClassWithConstructorOverloads
 
 ## Constructors
 
-### new ClassWithConstructorOverloads(x, y)
+### new ClassWithConstructorOverloads()
 
 > **new ClassWithConstructorOverloads**(\`x\`, \`y\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
@@ -378,7 +378,7 @@ Comments for x number
 
 [classes.ts:95](http://source-url)
 
-### new ClassWithConstructorOverloads(x)
+### new ClassWithConstructorOverloads()
 
 > **new ClassWithConstructorOverloads**(\`x\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
@@ -396,7 +396,7 @@ Comments for x string
 
 [classes.ts:100](http://source-url)
 
-### new ClassWithConstructorOverloads(s)
+### new ClassWithConstructorOverloads()
 
 > **new ClassWithConstructorOverloads**(\`s\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
@@ -421,7 +421,7 @@ Comments for ClassWithConstructorOverloads
 
 ## Constructors
 
-### new ClassWithConstructorOverloads(x, y)
+### new ClassWithConstructorOverloads()
 
 \`\`\`ts
 new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads
@@ -442,7 +442,7 @@ new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOve
 
 [classes.ts:95](http://source-url)
 
-### new ClassWithConstructorOverloads(x)
+### new ClassWithConstructorOverloads()
 
 \`\`\`ts
 new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
@@ -462,7 +462,7 @@ new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
 
 [classes.ts:100](http://source-url)
 
-### new ClassWithConstructorOverloads(s)
+### new ClassWithConstructorOverloads()
 
 \`\`\`ts
 new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads

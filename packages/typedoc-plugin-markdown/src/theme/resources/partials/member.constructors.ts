@@ -16,13 +16,7 @@ export function constructor(
   const md: string[] = [];
 
   model.signatures?.forEach((signature) => {
-    const params = signature.parameters?.map((param) => param.name).join(', ');
-    md.push(
-      heading(
-        options.headingLevel,
-        `${escapeChars(signature.name)}(${params})`,
-      ),
-    );
+    md.push(heading(options.headingLevel, `${escapeChars(signature.name)}()`));
     md.push(
       this.partials.signature(signature, {
         headingLevel: options.headingLevel + 1,

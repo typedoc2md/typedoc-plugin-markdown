@@ -51,14 +51,13 @@ export function declarationTitle(
   }
 
   const nameParts = model.name.split('.');
+  const declarationName = model.escapedName?.includes('.')
+    ? model.name
+    : nameParts[nameParts.length - 1];
   name.push(
-    bold(
-      escapeChars(
-        model.escapedName?.includes('.')
-          ? model.name
-          : nameParts[nameParts.length - 1],
-      ),
-    ),
+    /[\\`]/.test(declarationName)
+      ? escapeChars(declarationName)
+      : bold(escapeChars(declarationName)),
   );
 
   if (model.typeParameters) {

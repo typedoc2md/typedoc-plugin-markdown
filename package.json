@@ -20,9 +20,9 @@
     "@changesets/cli": "^2.27.1",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.12.5",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "@typescript-eslint/parser": "^7.5.0",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "consola": "^3.2.3",
     "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
@@ -40,8 +40,8 @@
     "ts-morph": "^22.0.0",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.8",
-    "typedoc": "0.25.12",
-    "typescript": "^5.4.4",
+    "typedoc": "0.25.13",
+    "typescript": "^5.4.5",
     "unified-prettier": "^2.0.1"
   }
 }
