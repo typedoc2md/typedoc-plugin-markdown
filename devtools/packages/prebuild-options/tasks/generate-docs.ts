@@ -163,7 +163,7 @@ function getEmoji(categoryName: string) {
   if (categoryName === 'Output') {
     return '📁';
   }
-  if (categoryName === 'Utils') {
+  if (categoryName === 'Utilities') {
     return '⚙️';
   }
   return '💡';

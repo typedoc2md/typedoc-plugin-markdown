@@ -23,6 +23,7 @@ The release features numerous bug fixes including:
 - Duplication in callback/callable/function properties. ([#581](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/581)).
 - @experimental / @internal annotations ([#556](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/556))
 - Fix events output and strikethough deprecqted items ([#534](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/534))
+- Class static functions are no longer marked ([#533](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/533))
 - @example block not rendered with Headline ([#501](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/501))
 - Correctly resolve packge readme urls from member pages ([#483](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/483))
 - Mark final default parameters as optional ([#396](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/396))

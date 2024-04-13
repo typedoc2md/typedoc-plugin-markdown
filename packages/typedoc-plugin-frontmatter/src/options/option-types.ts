@@ -4,12 +4,12 @@ import { ManuallyValidatedOption } from 'typedoc';
 
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
-    frontmatterGlobals: ManuallyValidatedOption<FrontmatterGlobals>;
-    readmeFrontmatter: ManuallyValidatedOption<ReadmeFrontmatter>;
-    indexFrontmatter: ManuallyValidatedOption<IndexFrontmatter>;
     frontmatterCommentTags: any[];
-    preserveFrontmatterCommentTags: boolean;
+    frontmatterGlobals: ManuallyValidatedOption<FrontmatterGlobals>;
     frontmatterNamingConvention: 'camelCase' | 'snakeCase';
+    indexFrontmatter: ManuallyValidatedOption<IndexFrontmatter>;
+    preserveFrontmatterCommentTags: boolean;
+    readmeFrontmatter: ManuallyValidatedOption<ReadmeFrontmatter>;
   }
 }
 
@@ -20,14 +20,19 @@ declare module 'typedoc' {
  */
 export interface PluginOptions {
   /**
+   * Specify which comment block tags should be added to frontmatter.
+   */
+  frontmatterCommentTags: any[];
+
+  /**
    * Specify static variables to be added to all frontmatter blocks.
    */
   frontmatterGlobals: FrontmatterGlobals;
 
   /**
-   * Specify static variables to be added to the readme page only.
+   * The naming convention that variables should be output as.
    */
-  readmeFrontmatter: ReadmeFrontmatter;
+  frontmatterNamingConvention: 'camelCase' | 'snakeCase';
 
   /**
    * Specify static variables to be added to the index page only.
@@ -35,19 +40,14 @@ export interface PluginOptions {
   indexFrontmatter: IndexFrontmatter;
 
   /**
-   * Specify which comment block tags should be added to frontmatter.
-   */
-  frontmatterCommentTags: any[];
-
-  /**
    * Preserve tags defined in frontmatter block tags in output.
    */
   preserveFrontmatterCommentTags: boolean;
 
   /**
-   * The naming convention that variables should be output as.
+   * Specify static variables to be added to the readme page only.
    */
-  frontmatterNamingConvention: 'camelCase' | 'snakeCase';
+  readmeFrontmatter: ReadmeFrontmatter;
 }
 
 /**

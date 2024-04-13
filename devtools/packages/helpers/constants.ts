@@ -29,14 +29,14 @@ export const DOCS_CONFIG: Record<string, DocsConfig> = {
     optionsPath: 'plugins/github-wiki',
     docsPath: '/plugins/github-wiki',
     declarations: true,
-    presets: true,
+    presets: false,
   },
   ['typedoc-gitlab-wiki-theme']: {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,
     optionsPath: 'plugins/gitlab-wiki',
     docsPath: '/plugins/gitlab-wiki',
     declarations: true,
-    presets: true,
+    presets: false,
   },
   ['typedoc-vitepress-theme']: {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,
