@@ -25,7 +25,7 @@ function writeMetaJsFiles(app) {
      * @param {string} outputDirectory
      * @param {Record<string,string>} defaultValue
      */
-    const metaOut = { index: 'API Index' };
+    const metaOut = { index: 'Index' };
     output.navigation?.forEach((item) => {
       metaOut[item.title] = { type: 'separator', title: item.title };
       if (item.children) {

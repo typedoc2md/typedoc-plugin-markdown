@@ -1,12 +1,8 @@
 import { PluginOptions as TypedocPluginMarkdownOptions } from 'typedoc-plugin-markdown';
+import { PluginOptions as DocusaurusOptions } from './options/option-types';
 
-export interface PluginOptions extends TypedocPluginMarkdownOptions {
+export interface PluginOptions
+  extends TypedocPluginMarkdownOptions,
+    DocusaurusOptions {
   id: string;
-  sidebar: Partial<SidebarOptions>;
-}
-
-export interface SidebarOptions {
-  autoConfiguration: boolean;
-  pretty: boolean;
-  filteredIds: string[];
 }

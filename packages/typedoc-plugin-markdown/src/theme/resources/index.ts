@@ -225,7 +225,7 @@ export const partials = (context: MarkdownThemeContext) => {
     enumMembersTable: (model: DeclarationReflection[]) =>
       enumMembersTable.apply(context, [model]) as string,
     /**
-     * Renders an declaration hierachy section.
+     *
      *
      * @category Member Partials
      */

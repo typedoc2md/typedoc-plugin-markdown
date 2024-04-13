@@ -2,16 +2,23 @@
 
 import { DOCS_CONFIG, DocsConfig, getPackageName } from '@devtools/helpers';
 import { consola } from 'consola';
-import { generateDocs } from './tasks/generate-docs';
-import { generateModels } from './tasks/generate-models';
+import { generateOptionsDocs } from './tasks/generate-docs';
+import { generateOptionsModels } from './tasks/generate-models';
+import { generateOptionsPresets } from './tasks/generate-presets';
 
 main();
 
 async function main() {
   const docsConfig: DocsConfig = DOCS_CONFIG[getPackageName()];
+
   if (docsConfig.declarations) {
-    await generateModels(docsConfig.declarationsPath);
+    await generateOptionsModels(docsConfig);
+    await generateOptionsDocs(docsConfig);
   }
-  await generateDocs(docsConfig);
+
+  if (docsConfig.presets) {
+    await generateOptionsPresets(docsConfig);
+  }
+
   consola.success(`[${getPackageName()}] Prebuild options complete`);
 }

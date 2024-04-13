@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, PageEvent } from 'typedoc';
+import { Application, DeclarationOption } from 'typedoc';
 import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { PluginOptions } from '.';
 import { getPluginOptions } from './options';
+import * as options from './options/declarations';
 import { getSidebar } from './sidebar';
-import { DocusuaurusTheme } from './theme';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -46,21 +46,20 @@ export default async function pluginDocusaurus(
 async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   const { siteDir } = context;
 
-  const options = getPluginOptions(opts);
+  const pluginOpions = getPluginOptions(opts);
 
-  const { id, sidebar, ...optionsPassedToTypeDoc } = options;
+  const { id, sidebar, ...optionsPassedToTypeDoc } = pluginOpions;
 
   const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
 
-  app.renderer.defineTheme('docusaurus', DocusuaurusTheme);
+  Object.entries(options).forEach(([name, option]) => {
+    app.options.addDeclaration({
+      name,
+      ...option,
+    } as DeclarationOption);
+  });
 
   const outputDir = app.options.getValue('out');
-
-  if (context.siteConfig?.markdown?.format !== 'mdx') {
-    app.renderer.on(PageEvent.END, (event: PageEvent) => {
-      event.contents = event.contents?.replace(/\\</g, '<');
-    });
-  }
 
   if (sidebar?.autoConfiguration) {
     const docsPreset = context.siteConfig?.presets?.find((preset: any) =>
@@ -71,11 +70,13 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
       async (output: MarkdownRendererEvent) => {
         if (output.navigation) {
           const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+
           const baseDir = path
             .relative(siteDir, outputDir)
             .split(path.sep)
             .slice(1)
             .join(path.sep);
+
           const sidebarJson = getSidebar(
             output.navigation,
             baseDir,

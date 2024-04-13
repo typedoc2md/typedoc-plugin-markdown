@@ -24,11 +24,13 @@ const config = {
       docusaurusPlugin,
       {
         id: 'api-2',
+        docsRoot: './test',
         tsconfig: './test/stubs/tsconfig.json',
         entryPoints: './test/stubs/src/module-1.ts',
         out: './test/out/global-members',
         readme: 'none',
         sidebar: { pretty: true },
+        fileExtension: '.mdx',
       },
     ],
   ],

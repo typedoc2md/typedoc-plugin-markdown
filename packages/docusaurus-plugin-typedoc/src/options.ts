@@ -1,18 +1,17 @@
-import { Application } from 'typedoc';
+import presets from './options/presets';
+
+export const DEFAULT_SIDEBAR_OPTIONS = {
+  autoConfiguration: true,
+  pretty: false,
+  filteredIds: [],
+};
 
 const DEFAULT_PLUGIN_OPTIONS = {
+  ...presets,
   id: 'default',
-  out: './docs/api',
-  hideBreadcrumbs: true,
-  hidePageHeader: true,
-  entryFileName: 'index.md',
-  theme: 'docusaurus',
   sidebar: {
-    autoConfiguration: true,
-    pretty: false,
-    filteredIds: [],
+    ...DEFAULT_SIDEBAR_OPTIONS,
   },
-  plugin: ['typedoc-plugin-markdown'],
 };
 
 export function getPluginOptions(
@@ -30,10 +29,4 @@ export function getPluginOptions(
     ],
   };
   return options;
-}
-
-export function setOptions(app: Application, options: any) {
-  for (const [key, val] of Object.entries(options)) {
-    app.options.setValue(key as never, val as never);
-  }
 }

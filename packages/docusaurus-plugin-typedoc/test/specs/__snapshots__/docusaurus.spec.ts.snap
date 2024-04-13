@@ -22,13 +22,13 @@ exports[`Docusaurus: Global Members should render docs 1`] = `
 
 ## Classes
 
-- [ClassA](classes/ClassA.md)
-- [ClassB](classes/ClassB.md)
+- [ClassA](classes/ClassA.mdx)
+- [ClassB](classes/ClassB.mdx)
 
 ## Interfaces
 
-- [InterfaceA](interfaces/InterfaceA.md)
-- [InterfaceB](interfaces/InterfaceB.md)
+- [InterfaceA](interfaces/InterfaceA.mdx)
+- [InterfaceB](interfaces/InterfaceB.mdx)
 "
 `;
 

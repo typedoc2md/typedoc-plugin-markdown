@@ -1,3 +1,5 @@
+import { Callout, Steps } from 'nextra/components';
+
 # Quick Start
 
 ## Installation
@@ -9,6 +11,10 @@ npm install typedoc typedoc-plugin-markdown@next docusaurus-plugin-typedoc@next 
 ```
 
 ## Usage
+
+<Steps>
+
+### Add the plugin to `docusaurus.config.js`
 
 Add the plugin to `docusaurus.config.js` and specify the required options.
 
@@ -41,6 +47,17 @@ module.exports = {
 };
 ```
 
-Once built the docs will be available at `/docs/api` (or equivalent out directory) after running the Docusaurus `start` and `build` [cli commands](https://v2.docusaurus.io/docs/cli).
+### Run Docusaurus
+
+You can generate the docs by either:
+
+- Running Docusaurus by using the `start` or `build` [cli commands](https://docusaurus.io/docs/cli#docusaurus-cli-commands).
+- Building the docs independently by running the custom cli command `docusaurus generate-typedoc` and then running Docusaurus at another time.
+
+### View the docs
+
+Once built the docs will be available at `/docs/api` (or equivalent output directory).
 
 e.g. `http://localhost:3000/docs/api`
+
+</Steps>

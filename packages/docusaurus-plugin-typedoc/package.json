@@ -20,8 +20,9 @@
   },
   "scripts": {
     "lint": "eslint ./src --ext .ts",
+    "prebuild": "rm -rf dist && prebuild-options",
     "prepublishOnly": "npm run lint && npm run build",
-    "build": "rm -rf ./dist && tsc",
+    "build": "tsc",
     "pretest": "rm -rf ./test/out && docusaurus generate-typedoc",
     "test": "jest",
     "test:update": "npm run build && npm test -- -u"

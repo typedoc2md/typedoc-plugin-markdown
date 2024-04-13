@@ -3,8 +3,6 @@ import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationHierarchy, SomeType } from 'typedoc';
 
 /**
- * Renders an declaration hierachy section.
- *
  * @category Member Partials
  */
 export function hierarchy(

@@ -50,8 +50,8 @@ Events are more powerful than hooks and allow for more complex customizations an
 
 ```ts
 export function load(app: MarkdownApplication) {
-  app.renderer.on(MarkdownPageEvent.END, (event: MarkdownPageEvent) => {
-    event.contents = event.contents.replace('foo', 'bar');
+  app.renderer.on(MarkdownPageEvent.END, (page: MarkdownPageEvent) => {
+    page.contents = page.contents.replace('foo', 'bar');
   });
 }
 ```
@@ -64,12 +64,12 @@ Async jobs are used to perform asynchronous tasks before or after rendering with
 
 ```ts
 export function load(app: MarkdownApplication) {
-  app.renderer.preRenderAsyncJobs.push(async (event) => {
-    await doSomethingAsync(event);
+  app.renderer.preRenderAsyncJobs.push(async (renderer) => {
+    await doSomethingAsync(renderer);
   });
 
-  app.renderer.postRenderAsyncJobs.push(async (event) => {
-    await doSomethingAsync(event);
+  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
+    await doSomethingAsync(renderer);
   });
 }
 ```
@@ -151,9 +151,9 @@ This can be achieved by utilising `postRenderAsyncJobs` on the renderer.
 ```ts
 export function load(app: MarkdownApplication) {
   app.renderer.postRenderAsyncJobs.push(
-    async (event: MarkdownRendererEvent) => {
+    async (renderer: MarkdownRendererEvent) => {
       // The navigation JSON structure is available on the output.
-      const navigation = event.navigation;
+      const navigation = renderer.navigation;
 
       // This can be parsed to something else or written straight to a file:
       fs.writeFileSync('navigation.json', JSON.stringify(navigation));

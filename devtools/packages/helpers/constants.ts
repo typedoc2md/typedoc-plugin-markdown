@@ -47,9 +47,10 @@ export const DOCS_CONFIG: Record<string, DocsConfig> = {
   },
   ['docusaurus-plugin-typedoc']: {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,
-    optionsPath: '/plugins/docusaurus/options',
+    presetsPath: `${process.cwd()}/src/opions/presets.ts`,
+    optionsPath: '/plugins/docusaurus',
     docsPath: '/plugins/docusaurus',
-    declarations: false,
+    declarations: true,
     presets: false,
   },
 };

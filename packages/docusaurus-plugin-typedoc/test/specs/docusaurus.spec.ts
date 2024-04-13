@@ -23,7 +23,7 @@ describe(`Docusaurus:`, () => {
   describe(`Global Members`, () => {
     test(`should render docs`, () => {
       const contents = fs
-        .readFileSync(path.join(__dirname, '../out/global-members/index.md'))
+        .readFileSync(path.join(__dirname, '../out/global-members/index.mdx'))
         .toString();
       expect(contents).toMatchSnapshot();
     });

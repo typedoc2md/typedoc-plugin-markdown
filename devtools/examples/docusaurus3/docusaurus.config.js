@@ -41,7 +41,9 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  markdown: {
+    format: 'detect',
+  },
   plugins: [
     [
       docusaurusPlugin,
@@ -90,44 +92,11 @@ const config = {
           ),
         ),
         entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/comments/index.ts',
         readme: 'none',
         outputFileStrategy: 'modules',
         entryModule: 'index',
         cleanOutputDir: true,
-      },
-    ],
-    [
-      docusaurusPlugin,
-      {
-        id: 'api-4',
-        out: './docs/api-4',
-        ...require(
-          path.join(
-            __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
-          ),
-        ),
-        entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/packages/*',
-        entryPointStrategy: 'packages',
-        sidebar: { pretty: true },
-      },
-    ],
-    [
-      docusaurusPlugin,
-      {
-        id: 'api-5',
-        out: './docs/api-5',
-        ...require(
-          path.join(
-            __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
-          ),
-        ),
-        entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/**',
-        sidebar: { pretty: true },
       },
     ],
   ],

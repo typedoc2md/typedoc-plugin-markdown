@@ -4,7 +4,7 @@ import * as path from 'path';
 import { Project, VariableStatement } from 'ts-morph';
 import { ParameterType } from 'typedoc';
 
-export async function generateDocs(docsConfig: DocsConfig) {
+export async function generateOptionsDocs(docsConfig: DocsConfig) {
   const project = new Project({
     tsConfigFilePath: 'tsconfig.json',
   });
@@ -20,8 +20,12 @@ export async function generateDocs(docsConfig: DocsConfig) {
 
   // DECLARATIONS
   if (docsConfig.declarations) {
-    const declarationsConfig: any = await import(docsConfig.declarationsPath);
-    const configFileTs = project.getSourceFile(docsConfig.declarationsPath);
+    const declarationsConfig: any = await import(
+      docsConfig.declarationsPath as string
+    );
+    const configFileTs = project.getSourceFile(
+      docsConfig.declarationsPath as string,
+    );
 
     const optionsVariableStatements =
       configFileTs?.getVariableStatements() as VariableStatement[];
@@ -159,10 +163,10 @@ function getEmoji(categoryName: string) {
   if (categoryName === 'Output') {
     return '📁';
   }
-  if (categoryName === 'UI') {
-    return '💡';
+  if (categoryName === 'Utils') {
+    return '⚙️';
   }
-  return '⚙️';
+  return '💡';
 }
 
 function getType(option: any) {

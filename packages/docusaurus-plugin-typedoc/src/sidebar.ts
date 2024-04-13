@@ -38,7 +38,7 @@ function getNavigationItem(
       idParts.push(parsedUrl);
     }
     if (navigationItem.url) {
-      return idParts.join('/').replace(/(.*).md/, '$1');
+      return idParts.join('/').replace(/(.*)\.\w+$/, '$1');
     }
     return null;
   };
