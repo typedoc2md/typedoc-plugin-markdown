@@ -10,8 +10,8 @@ function getNavigationItem(navigationItem: NavigationItem, basePath: string) {
   return {
     title: navigationItem.title,
     sidebarDepth: 0,
-    path: navigationItem.url
-      ? `/${basePath}/${getUrlKey(navigationItem.url as string)}`
+    path: navigationItem.path
+      ? `/${basePath}/${getUrlKey(navigationItem.path as string)}`
       : null,
     children: navigationItem?.children?.map((groupChild) => {
       return getNavigationItem(groupChild, basePath);

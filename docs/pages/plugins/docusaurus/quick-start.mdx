@@ -1,4 +1,4 @@
-import { Callout, Steps } from 'nextra/components';
+import { Callout, Steps, FileTree } from 'nextra/components';
 
 # Quick Start
 
@@ -14,30 +14,45 @@ npm install typedoc typedoc-plugin-markdown@next docusaurus-plugin-typedoc@next 
 
 <Steps>
 
+### Create a Docusaurus project
+
+https://docusaurus.io/docs/installation
+
+A typical project structure might look like this but can be customized to your needs:
+
+<FileTree>
+  <FileTree.Folder name="docusauruss-website" defaultOpen>
+    <FileTree.Folder name="build (static site dir)"></FileTree.Folder>
+    <FileTree.Folder name="docs" defaultOpen>
+      <FileTree.Folder name="api (generated TypeDoc md)"></FileTree.Folder>
+    </FileTree.Folder>
+    <FileTree.File name="docusaurus.config.js" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="sidebars.js" />
+  </FileTree.Folder>
+  <FileTree.File name="package.json" />
+  <FileTree.Folder name="src (source code)"></FileTree.Folder>
+  <FileTree.File name="tsconfig.json" />
+</FileTree>
+
 ### Add the plugin to `docusaurus.config.js`
 
 Add the plugin to `docusaurus.config.js` and specify the required options.
 
 The following options can be passed to the config:
 
-- [typedoc](https://typedoc.org/options) options.
-- [typedoc-plugin-markdown ](/options) options.
-- [Plugin](/integrations/docusaurus/options) options.
-
-TypeDoc options can also be declared:
-
-- Using a `typedoc.json` file.
-- Under the `typedocOptions` key in `tsconfig.json`.
-
-Please note that options declared in this manner will overwrite options declared in `docusaurus.config.js`.
+- typedoc [options](https://typedoc.org/options).
+- typedoc-plugin-markdown [options](/docs/options).
+- docusaurus-plugin-typedoc [options](/plugins/docusaurus/options).
 
 ```js filename="docusaurus.config.js"
 module.exports = {
+  // Add option types
   plugins: [
     [
       'docusaurus-plugin-typedoc',
 
-      // Plugin / TypeDoc options
+      // Options
       {
         entryPoints: ['../src/index.ts'],
         tsconfig: '../tsconfig.json',
@@ -46,6 +61,8 @@ module.exports = {
   ],
 };
 ```
+
+Options can also be declared using a `typedoc.json` file. Please note that options declared with `typedoc.json` will overwrite options declared in `docusaurus.config.js`.
 
 ### Run Docusaurus
 

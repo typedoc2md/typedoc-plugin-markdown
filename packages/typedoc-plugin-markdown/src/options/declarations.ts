@@ -532,6 +532,27 @@ export const useHTMLAnchors: Partial<DeclarationOption> = {
 };
 
 /**
+ * *Please note this options does not effect the rendering of inline code or code blocks (using single/triple backticks).*
+ *
+ * By default all comments writen inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
+ *
+ * This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
+ *
+ * This option would typically be used when source code comes from an external library exposing the following poential issues:
+ *
+ * - Comments contain raw tags that should be interpreted as code examples.
+ * - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
+ * - Although most parsers use XSS filters, this option provides an additional layer of XSS security.
+ *
+ * @category Utility
+ */
+export const sanitizeComments: Partial<DeclarationOption> = {
+  help: 'Sanitize HTML and JSX inside JsDoc comments.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * By default references to symbol anchor links are lowercased.
  *
  * This option can be used for engines that require the preservation of anchor link casing.

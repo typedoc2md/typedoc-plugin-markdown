@@ -14,9 +14,17 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
     `import { Callout, FileTree } from 'nextra/components';`,
   ];
   out.push('# Options');
-  out.push(
-    'Listed on this page are the additional options that can be added to the TypeDoc configuration.',
-  );
+  if (docsConfig.docsPath === '/docs') {
+    out.push(
+      `These options can be used in addition to the core TypeDoc options.`,
+    );
+  } else {
+    out.push(
+      `<Callout type="info">
+  Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.
+</Callout>`,
+    );
+  }
 
   // DECLARATIONS
   if (docsConfig.declarations) {

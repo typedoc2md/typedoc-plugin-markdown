@@ -14,38 +14,29 @@ npm install typedoc typedoc-plugin-markdown@next --save-dev
 
 ## Usage
 
-Plugins are loaded by using the TypeDoc [`plugin`](https://typedoc.org/options/configuration/#plugin) configuration option:
+Plugins are loaded by using the TypeDoc `plugin` configuration option:
+
+```shell
+typedoc --plugin typedoc-plugin-markdown --out ./docs
+```
+
+Or:
 
 ```json filename="typedoc.json"
 {
-  "plugin": ["typedoc-plugin-markdown"]
+  "plugin": ["typedoc-plugin-markdown"],
+  "out": "./docs"
 }
 ```
 
-## Options
-
-### Setting Options
-
-Please see TypeDoc's [Configuring Options](https://typedoc.org/options/configuration/) page for details on how to set options.
-
-Options can be set via a `typedoc.json` file, or if you would like to inform your IDE about the shape of the exported options the plugin provides, you can use a `typedoc.config.js` file:
-
-```js filename="typedoc.config.js"
-/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
-module.exports = {
-  entryPoints: ['./src/index.ts', './src/secondary-entry.ts'],
-  out: 'doc',
-};
+```json filename="package.json"
+{
+  "docs": "typedoc"
+}
 ```
 
-For a full list of additional options exposed by this plugin, see the [Options](/docs/options) page.
+```shell filename="CLI"
+npm run docs
+```
 
-### Supported TypeDoc Options
-
-The majority of [TypeDoc's options](https://typedoc.org/options/) are supported, including all [input](https://typedoc.org/options/input/), [comments](https://typedoc.org/options/comments/), [organization](https://typedoc.org/options/organization/), [validation](https://typedoc.org/options/validation/) and [other](https://typedoc.org/options/other/) options.
-[Output](https://typedoc.org/options/output/) options that are specific to the HTML theme are ignored.
-
-Some typical (and frequently asked about) TypeDoc options that might be useful are:
-
-- Using [disableSources](https://typedoc.org/options/output/#disablesources) to prevent outputting source references.
-- Setting [readme](https://typedoc.org/options/input/#readme) to `none` to exclude the project readme from the docs.
+For more information please see the [Using TypeDoc](/docs/using-typedoc) guide.

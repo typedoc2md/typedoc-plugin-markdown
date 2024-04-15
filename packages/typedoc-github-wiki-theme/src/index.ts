@@ -9,12 +9,11 @@ import {
 import {
   MarkdownPageEvent,
   MarkdownRendererEvent,
-  NavigationItem,
-  PluginOptions,
 } from 'typedoc-plugin-markdown';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import * as options from './options/declarations';
 import presets from './options/presets';
+import { getSidebar } from './sidebar';
 
 export function load(app: Application) {
   Object.entries(options).forEach(([name, option]) => {
@@ -57,18 +56,16 @@ export function load(app: Application) {
       };
       if (sidebarOptions.autoConfiguration && output.navigation) {
         const sidebarHeading = sidebarOptions.heading;
-        const sidebarContent = getSidebar(
-          output.navigation,
-          app.options.getValue('outputFileStrategy'),
-        );
+        const sidebarContent = getSidebar(output.navigation);
         if (sidebarContent.length) {
+          fs.writeFileSync(
+            `${output.outputDirectory}/sidebar.json`,
+            JSON.stringify(output.navigation, null, 2),
+          );
           fs.writeFileSync(
             `${output.outputDirectory}/_Sidebar.md`,
             `## ${sidebarHeading}\n\n${formatContents(
-              getSidebar(
-                output.navigation,
-                app.options.getValue('outputFileStrategy'),
-              ),
+              getSidebar(output.navigation),
             )}`,
           );
         }
@@ -77,63 +74,8 @@ export function load(app: Application) {
   );
 }
 
-export function getSidebar(
-  navigationItems: NavigationItem[],
-  outputFileStrategy: PluginOptions['outputFileStrategy'],
-) {
-  const parseSidebarUrl = (url: string) => '../wiki/' + url.replace('.md', '');
-  const md: string[] = [];
-  const isGlobals = navigationItems?.every((child) => !Boolean(child.url));
-
-  if (isGlobals) {
-    navigationItems.forEach((navigationItem) => {
-      md.push(`### ${navigationItem.title}`);
-      if (navigationItem.children) {
-        const childList = navigationItem.children
-          ?.map(
-            (child) =>
-              `- [${child.title}](${parseSidebarUrl(child.url || '')})`,
-          )
-          .join('\n');
-        md.push(childList);
-      }
-    });
-  } else {
-    if (outputFileStrategy === 'members') {
-      navigationItems.forEach((navigationItem, i) => {
-        md.push(`### ${navigationItem.title}`);
-        if (navigationItem.children) {
-          navigationItem.children.forEach((child) => {
-            md.push(`#### ${child.title}`);
-            if (child.children) {
-              const childList = child.children
-                ?.map(
-                  (innerChild) =>
-                    `- [${innerChild.title}](${
-                      innerChild.url ? parseSidebarUrl(innerChild.url) : ''
-                    })`,
-                )
-                .join('\n');
-              md.push(childList);
-            }
-          });
-        }
-      });
-    } else {
-      const childList = navigationItems
-        ?.map(
-          (navItem) =>
-            `- [${navItem.title}](${navItem.url ? parseSidebarUrl(navItem.url) : ''})`,
-        )
-        .join('\n');
-      md.push(childList);
-    }
-  }
-  return md.join('\n\n');
-}
-
-function formatContents(contents: string) {
+export function formatContents(contents: string) {
   return (
-    contents.replace(/[\r\n]{3,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
+    contents.replace(/[\r\n]{2,}/g, '\n\n').replace(/^\s+|\s+$/g, '') + '\n'
   );
 }

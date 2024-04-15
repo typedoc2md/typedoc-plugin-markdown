@@ -18,7 +18,7 @@
     "test": "npm run test:md && npm run test:mdx && jest",
     "test:update": "npm run build && npm run test -- -u",
     "predocs": "npm run build",
-    "docs": "typedoc --options ./.docs/typedoc.md.cjs && typedoc --options ./.docs/typedoc.html.cjs"
+    "docs": "ts-node ./.scripts/docs.ts && typedoc --options ./.docs/typedoc.md.cjs && typedoc --options ./.docs/typedoc.html.cjs"
   },
   "author": "Thomas Grey",
   "license": "MIT",

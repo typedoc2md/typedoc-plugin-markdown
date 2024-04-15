@@ -3,7 +3,6 @@ import presets from './options/presets';
 export const DEFAULT_SIDEBAR_OPTIONS = {
   autoConfiguration: true,
   pretty: false,
-  filteredIds: [],
 };
 
 const DEFAULT_PLUGIN_OPTIONS = {

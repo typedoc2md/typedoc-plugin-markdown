@@ -11,7 +11,7 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-export function getNavigation(
+export function buildNavigation(
   theme: MarkdownTheme,
   project: ProjectReflection,
 ) {
@@ -76,7 +76,7 @@ export function getNavigation(
     ) {
       children.push({
         title: theme.textContentMappings['label.globals'] as string,
-        url: projectChild.url,
+        path: projectChild.url,
         kind: projectChild.kind,
       });
     }
@@ -92,7 +92,7 @@ export function getNavigation(
       title: projectChild.name,
       kind: projectChild.kind,
       children,
-      ...(projectChildUrl && { url: projectChildUrl }),
+      ...(projectChildUrl && { path: projectChildUrl }),
     });
   }
 
@@ -208,7 +208,7 @@ export function getNavigation(
                   })
                   .filter((cat) => Boolean(cat))
               : getChildrenOrGroups(child, outputFileStrategy);
-          return processChild(acc, child, children as NavigationItem[]);
+          return processChildren(acc, child, children as NavigationItem[]);
         }
       }, []);
   }
@@ -225,7 +225,7 @@ export function getNavigation(
           ?.filter((child) => child.hasOwnDocument)
           .reduce((acc, child) => {
             const children = getChildrenOrGroups(child, outputFileStrategy);
-            return processChild(acc, child, children);
+            return processChildren(acc, child, children);
           }, []) as NavigationItem[];
       }
 
@@ -256,7 +256,7 @@ export function getNavigation(
     return null;
   }
 
-  function processChild(
+  function processChildren(
     acc: NavigationItem[],
     child: DeclarationReflection,
     children: NavigationItem[] | null,
@@ -285,7 +285,7 @@ export function getNavigation(
         currentLevel.push({
           title: titleParts[titleParts.length - 1],
           kind: child.kind,
-          url: child.url,
+          path: child.url,
           ...(children && { children }),
         });
 
@@ -296,7 +296,7 @@ export function getNavigation(
     acc.push({
       title: child.name,
       kind: child.kind,
-      url: child.url,
+      path: child.url,
       ...(children && { children }),
     });
 

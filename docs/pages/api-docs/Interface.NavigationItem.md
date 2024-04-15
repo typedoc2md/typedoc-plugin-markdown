@@ -10,9 +10,9 @@ The model used to define the navigation structure.
 
 ***
 
-### url?
+### path?
 
-> `optional` **url**: `null` \| `string`
+> `optional` **path**: `null` \| `string`
 
 ***
 

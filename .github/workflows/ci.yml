@@ -32,6 +32,6 @@ jobs:
       - name: Lint
         run: npm run lint --workspace typedoc-plugin-markdown
       - name: Build
-        run: npm run build --workspaces --if-present
+        run: npm run build-all
       - name: Test
-        run: npm run test --workspaces --if-present
+        run: npm run test-all

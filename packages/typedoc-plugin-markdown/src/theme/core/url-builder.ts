@@ -26,7 +26,7 @@ import {
  *
  * @param project  The project whose urls should be generated.
  */
-export function getUrls(theme: MarkdownTheme, project: ProjectReflection) {
+export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
   const options = theme.application.options;
   const packagesMeta = (theme.application.renderer as MarkdownRenderer)
     .packagesMeta;

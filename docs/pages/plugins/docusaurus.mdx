@@ -8,15 +8,30 @@ import { faBolt } from '@fortawesome/free-solid-svg-icons';
 
 <PackageDescription pjson={pjson}></PackageDescription>
 
+## Overview
+
+This plugin integrates TypeDoc into the Docusaurus lifecycle and generates static TypeDoc pages in Markdown.
+
 ## Features
 
 - Presets relevant options of typedoc-plugin-markdown.
-- Runs TypeDoc from the Docusaurus CLI.
-- Builds sidebar file.
+- Bootstraps TypeDoc from the Docusaurus CLI.
+- Generates a sidebar file with configurable structure.
+
+## Alternatives
+
+A popular alternative to this plugin is [docusaurus-plugin-typedoc-api](https://www.npmjs.com/package/docusaurus-plugin-typedoc-api).
+
+The main difference is:
+
+- `docusaurus-plugin-typedoc-api` renders dynamic React pages offering a rich and flexible UI and is fully integrated with the Docusaurus ecosystem.
+- `docusaurus-plugin-typedoc` (this plugin) renders static markdown files but is more integrated with the TypeDoc ecosystem and is compatible with other TypeDoc plugins.
+
+In the end it comes down to personal preference and the requirements of your project.
 
 ## Example
 
-The following is a simple example of a VitePress project running TypeDoc.
+The following is a simple example of a Docusaurus project running TypeDoc.
 
 <Cards num={2}>
   <Cards.Card

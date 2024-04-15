@@ -14,8 +14,8 @@ import {
   ReflectionKind,
   Theme,
 } from 'typedoc';
-import { getNavigation } from './core/get-navigation';
-import { getUrls } from './core/get-urls';
+import { buildNavigation } from './core/navigation-builder';
+import { buildUrls } from './core/url-builder';
 import { MarkdownThemeContext } from './markdown-themecontext';
 
 /**
@@ -93,7 +93,7 @@ export class MarkdownTheme extends Theme {
    * This method can be overriden to provide an alternative url structure.
    */
   getUrls(project: ProjectReflection) {
-    return getUrls(this, project);
+    return buildUrls(this, project);
   }
 
   /**
@@ -102,7 +102,7 @@ export class MarkdownTheme extends Theme {
    * This method can be overriden to provide an alternative navigation structure.
    */
   getNavigation(project: ProjectReflection) {
-    return getNavigation(this, project);
+    return buildNavigation(this, project);
   }
 
   /**

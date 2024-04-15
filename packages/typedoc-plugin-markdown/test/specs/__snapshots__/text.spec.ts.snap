@@ -76,7 +76,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
   {
     "title": "module-1",
     "kind": 2,
-    "url": "module-1/README.md",
+    "path": "module-1/README.md",
     "children": [
       {
         "title": "多变的",
@@ -84,7 +84,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
           {
             "title": "SomeInterface",
             "kind": 256,
-            "url": "module-1/interfaces/SomeInterface.md"
+            "path": "module-1/interfaces/SomeInterface.md"
           }
         ]
       }
@@ -93,7 +93,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
   {
     "title": "module-2",
     "kind": 2,
-    "url": "module-2/README.md",
+    "path": "module-2/README.md",
     "children": [
       {
         "title": "CoolVars",
@@ -101,7 +101,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
           {
             "title": "constA",
             "kind": 32,
-            "url": "module-2/variables/constA.md"
+            "path": "module-2/variables/constA.md"
           }
         ]
       }

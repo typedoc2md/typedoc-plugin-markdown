@@ -87,7 +87,6 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
           const sidebarJson = getSidebar(
             output.navigation,
             baseDir,
-            sidebar.filteredIds,
             docsPreset ? docsPreset[1]?.docs?.numberPrefixParser : null,
           );
           fs.writeFileSync(

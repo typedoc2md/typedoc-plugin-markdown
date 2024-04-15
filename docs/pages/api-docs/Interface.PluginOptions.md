@@ -196,6 +196,14 @@ Specify the base path for all urls.
 
 ***
 
+### sanitizeComments
+
+> **sanitizeComments**: `boolean`
+
+Sanitize HTML and JSX inside JsDoc comments.
+
+***
+
 ### textContentMappings
 
 > **textContentMappings**: `Partial`\<[`TextContentMappings`](/api-docs/Interface.TextContentMappings.md)\>

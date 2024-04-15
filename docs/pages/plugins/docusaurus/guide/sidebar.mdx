@@ -1,0 +1,25 @@
+import { Callout } from 'nextra/components';
+
+# Sidebar
+
+A docusaurus sidebar file `typedoc-sidebar.cjs` is published to the relevant output directory along with the generated markdown documentation.
+
+This file should be referenced in sidebars.js using a sidebar slice and can be configured in following way:
+
+```js filename="sidebars.js"
+module.exports = {
+  typedocSidebar: [
+    {
+      type: 'category',
+      label: 'Typedoc API',
+      link: {
+        type: 'doc',
+        id: 'api/index',
+      },
+      items: require('./docs/api/typedoc-sidebar.cjs'),
+    },
+  ],
+};
+```
+
+Please see https://docusaurus.io/docs/sidebar for sidebar documentation.

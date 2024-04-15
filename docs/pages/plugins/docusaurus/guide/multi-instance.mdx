@@ -1,0 +1,30 @@
+import { Callout } from 'nextra/components';
+
+# Multi Instance
+
+It is possible to build multi TypeDoc instances by passing in multiple configs with unique ids:
+
+```js filename="docusaurus.config.js"
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'api-1',
+        entryPoints: ['../api-1/src/index.ts'],
+        tsconfig: '../api-1/tsconfig.json',
+        out: 'api-1',
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'api-2',
+        entryPoints: ['../api-2/src/index.ts'],
+        tsconfig: '../api-2/tsconfig.json',
+        out: 'api-2',
+      },
+    ],
+  ],
+};
+```

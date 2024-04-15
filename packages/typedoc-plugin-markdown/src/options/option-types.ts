@@ -35,6 +35,7 @@ declare module 'typedoc' {
     preserveAnchorCasing: boolean;
     propertiesFormat: 'list' | 'table';
     publicPath: string;
+    sanitizeComments: boolean;
     textContentMappings: ManuallyValidatedOption<Partial<TextContentMappings>>;
     typeDeclarationFormat: 'list' | 'table';
     useCodeBlocks: boolean;
@@ -174,6 +175,11 @@ export interface PluginOptions {
    * Specify the base path for all urls.
    */
   publicPath: string;
+
+  /**
+   * Sanitize HTML and JSX inside JsDoc comments.
+   */
+  sanitizeComments: boolean;
 
   /**
    * Provides a mechanism to change the content of text used in documentation.

@@ -17,8 +17,8 @@ function getNavigationItem(
 
   return {
     text: navigationItem.title,
-    ...(Boolean(navigationItem?.url) && {
-      link: `/${basePath}/${getParsedUrl(navigationItem.url as string)}`,
+    ...(Boolean(navigationItem?.path) && {
+      link: `/${basePath}/${getParsedUrl(navigationItem.path as string)}`,
     }),
     ...(hasChildren && { collapsed: options.collapsed }),
     ...(hasChildren && {

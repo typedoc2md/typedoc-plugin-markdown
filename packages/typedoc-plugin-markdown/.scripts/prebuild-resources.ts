@@ -12,7 +12,7 @@ const resourcesPath = path.join(__dirname, '..', 'src', 'theme', 'resources');
 export async function prebuildResources() {
   writeLibsBarrelsFile('markdown');
   writeLibsBarrelsFile('utils');
-  writeResourcesFile2();
+  writeResourcesFile();
 }
 
 function getFiles(type: string) {
@@ -142,7 +142,7 @@ function writeLibsBarrelsFile(resourceType: string) {
   fs.outputFileSync(barrelsFile, out.join('\n'));
 }
 
-async function writeResourcesFile2() {
+async function writeResourcesFile() {
   const resourcesFile = path.join(
     __dirname,
     '..',

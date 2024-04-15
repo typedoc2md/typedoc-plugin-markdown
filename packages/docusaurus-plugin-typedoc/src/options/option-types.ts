@@ -28,5 +28,4 @@ export interface PluginOptions {
 export interface Sidebar {
   autoConfiguration: boolean;
   pretty: boolean;
-  filteredIds: string[];
 }

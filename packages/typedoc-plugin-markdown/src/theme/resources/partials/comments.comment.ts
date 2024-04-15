@@ -1,5 +1,6 @@
 import { bold, heading } from '@plugin/libs/markdown';
 import { camelToTitleCase, formatTableComments } from '@plugin/libs/utils';
+import { sanitizeComments } from '@plugin/libs/utils/sanitize-comments';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { Comment } from 'typedoc';
 
@@ -49,5 +50,9 @@ export function comment(
 
   const output = md.join('\n\n');
 
-  return opts.isTableColumn ? formatTableComments(output) : output;
+  const parsedOutput = this.options.getValue('sanitizeComments')
+    ? sanitizeComments(output)
+    : output;
+
+  return opts.isTableColumn ? formatTableComments(parsedOutput) : parsedOutput;
 }

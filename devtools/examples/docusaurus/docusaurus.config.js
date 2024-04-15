@@ -143,6 +143,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          sidebarCollapsed: true,
           numberPrefixParser: false,
 
           // Please change this to your repo.
@@ -167,6 +168,9 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      sidebar: {
+        autoCollapseCategories: true,
+      },
       navbar: {
         title: 'My Site',
         logo: {

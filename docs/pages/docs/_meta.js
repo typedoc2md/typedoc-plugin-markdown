@@ -10,6 +10,7 @@ export default {
     type: 'separator',
     title: 'Guides',
   },
+  'using-typedoc': '',
   'customizing-output': '',
   navigation: '',
   '-- Support': {

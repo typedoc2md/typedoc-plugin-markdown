@@ -30,7 +30,7 @@ export interface UrlMapping</** @ignore */ Model> {
  */
 export interface NavigationItem {
   title: string;
-  url?: string | null;
+  path?: string | null;
   kind?: ReflectionKind;
   children?: NavigationItem[];
 }

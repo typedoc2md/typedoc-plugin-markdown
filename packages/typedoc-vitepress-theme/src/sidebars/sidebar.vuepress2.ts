@@ -9,7 +9,7 @@ export = (navigation: NavigationItem[], basePath: string) => {
 function getNavigationItem(navigationItem: NavigationItem, basePath: string) {
   return {
     text: navigationItem.title,
-    link: navigationItem.url ? `/${basePath}/${navigationItem.url}` : null,
+    link: navigationItem.path ? `/${basePath}/${navigationItem.path}` : null,
     collapsible: true,
     children: navigationItem?.children?.map((group) => {
       return getNavigationItem(group, basePath);

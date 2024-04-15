@@ -4,5 +4,8 @@
     "collapsed": false,
     "pretty": true
   },
-  "docsRoot": "./out"
+  "docsRoot": "./out",
+  "navigation": {
+    "includeGroups": true
+  }
 }

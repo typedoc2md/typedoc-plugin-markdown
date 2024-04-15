@@ -3,17 +3,11 @@ import { NavigationItem } from 'typedoc-plugin-markdown';
 export function getSidebar(
   navigation: NavigationItem[],
   basePath: string,
-  filteredIds: string[] = [],
   numberPrefixParser?: any,
 ) {
   return navigation
     .map((navigationItem) =>
-      getNavigationItem(
-        navigationItem,
-        basePath,
-        filteredIds,
-        numberPrefixParser,
-      ),
+      getNavigationItem(navigationItem, basePath, numberPrefixParser),
     )
     .filter((navItem) => Boolean(navItem));
 }
@@ -21,13 +15,12 @@ export function getSidebar(
 function getNavigationItem(
   navigationItem: NavigationItem,
   basePath: string,
-  filteredIds: string[],
   numberPrefixParser?: any,
 ) {
   const parsedUrl =
     numberPrefixParser === false
-      ? navigationItem.url
-      : navigationItem.url?.replace(/\d+\-/g, '');
+      ? navigationItem.path
+      : navigationItem.path?.replace(/\d+\-/g, '');
 
   const getId = () => {
     const idParts: string[] = [];
@@ -37,7 +30,7 @@ function getNavigationItem(
     if (parsedUrl) {
       idParts.push(parsedUrl);
     }
-    if (navigationItem.url) {
+    if (navigationItem.path) {
       return idParts.join('/').replace(/(.*)\.\w+$/, '$1');
     }
     return null;
@@ -48,17 +41,17 @@ function getNavigationItem(
     return {
       type: 'category',
       label: `${navigationItem.title}`,
-      items: getSidebar(
-        navigationItem.children,
-        basePath,
-        filteredIds,
-        numberPrefixParser,
-      ),
-      ...(id && { link: { type: 'doc', id } }),
+      items: getSidebar(navigationItem.children, basePath, numberPrefixParser),
+      ...(id && {
+        link: {
+          type: 'doc',
+          id,
+        },
+      }),
     };
   }
 
-  return id && !filteredIds.includes(id)
+  return id
     ? {
         type: 'doc',
         id,

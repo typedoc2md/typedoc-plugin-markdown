@@ -2,7 +2,7 @@ import { Callout, FileTree } from 'nextra/components';
 
 # Options
 
-Listed on this page are the additional options that can be added to the TypeDoc configuration.
+These options can be used in addition to the core TypeDoc options.
 
 ## Output Options
 
@@ -723,6 +723,34 @@ This option should be used if there are issues with anchoring to symbols within 
 ```json filename="typedoc.json"
 {
   "useHTMLAnchors": false
+}
+
+```
+
+___
+
+### sanitizeComments
+
+<Callout emoji="💡">Sanitize HTML and JSX inside JsDoc comments.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+*Please note this options does not effect the rendering of inline code or code blocks (using single/triple backticks).*
+
+By default all comments writen inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
+
+This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
+
+This option would typically be used when source code comes from an external library exposing the following poential issues:
+
+- Comments contain raw tags that should be interpreted as code examples.
+- Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
+- Although most parsers use XSS filters, this option provides an additional layer of XSS security.
+
+
+```json filename="typedoc.json"
+{
+  "sanitizeComments": false
 }
 
 ```

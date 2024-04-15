@@ -133,6 +133,7 @@ const config: Record<string, Fixture> = {
         preserveAnchorCasing: true,
         publicPath: '/some-path',
         fileExtension: 'mdx',
+        sanitizeComments: true,
       },
     ],
   },

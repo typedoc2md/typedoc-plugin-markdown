@@ -18,6 +18,9 @@ const config = {
         out: './test/out/default',
         readme: 'none',
         cleanOutputDir: true,
+        navigation: {
+          includeGroups: true,
+        },
       },
     ],
     [

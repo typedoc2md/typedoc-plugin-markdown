@@ -1,5 +1,5 @@
 export default {
   'quick-start': '',
   options: '',
-  guide: '',
+  guide: 'Guide',
 };

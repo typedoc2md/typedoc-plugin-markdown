@@ -2,7 +2,9 @@ import { Callout, FileTree } from 'nextra/components';
 
 # Options
 
-Listed on this page are the additional options that can be added to the TypeDoc configuration.
+<Callout type="info">
+  Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.
+</Callout>
 
 ## sidebar
 
@@ -10,34 +12,27 @@ Listed on this page are the additional options that can be added to the TypeDoc 
 
 > Accepts a key/value object.
 
-Please see the [sidebar guide](/plugins/docusaurus/guide#sidebar) for sidebar setup.
 
-In addition to the options below you can configure the structure of the sidebar by utilizing the [`navigation`](https://typedoc.org/options/output/#navigation) core TypeDoc option.
+> *In addition to the sidebar options listed below, you can configure the structure of the sidebar by utilizing the TypeDoc [`navigation options`](https://typedoc.org/options/output/#navigation) `includeGroups`, `includeCategories` and `includeFolders`*.
 
 **sidebar.autoConfiguration**
 
 Set to `false` to disable sidebar generation. Defaults to `true`.
 
-**sidebar.filteredIds**
-
-Ids of pages to be filtered from the sidebar. This would typically be used to filter README or index pages from the sidebar.
-
 **sidebar.pretty**
 
 Pretty format the sidebar JSON.
 
-Below is the full list of keys and default values:
+Please see the [sidebar guide](/plugins/docusaurus/guide/sidebar) for additional information on sidebar setup.
 
-
-```json filename="typedoc.json"
-{
-  "sidebar": {
-    "autoConfiguration": true,
-    "pretty": false,
-    "filteredIds": []
-  }
+```json filename="Example"
+"navigation": {
+  "includeGroups": true,
+  "includeCategories": true
+},
+"sidebar": {
+  "pretty": true
 }
-
 ```
 
 ___

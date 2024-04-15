@@ -1,0 +1,55 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# Using TypeDoc
+
+This plugin is like any other TypeDoc plugin and is fully compatible with the TypeDoc ecosystem, supporting other plugins (not spefically targetting HTML output) and the majority of TypeDoc's options.
+
+## Configuring Options
+
+Please see TypeDoc's [Configuring Options](https://typedoc.org/options/configuration/) page for details on how to set options.
+
+## Option Typings
+
+If you would like to inform your IDE about the shape of the exported options the plugin provides a `PluginOptions` interface that can be imported to a `typedoc.config.js` file with a `@type` annotation:
+
+```js filename="typedoc.config.js"
+/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
+module.exports = {
+  entryPoints: ['./src/index.ts', './src/secondary-entry.ts'],
+  out: 'doc',
+  plugin: ['typedoc-plugin-markdown', 'some-other-plugin'],
+};
+```
+
+For a full list of additional options exposed by this plugin, see the [Options](/docs/options) page.
+
+## TypeDoc Options
+
+### Supported Options
+
+The majority of [TypeDoc's options](https://typedoc.org/options/) are supported, including all [input](https://typedoc.org/options/input/), [comments](https://typedoc.org/options/comments/), [organization](https://typedoc.org/options/organization/), [validation](https://typedoc.org/options/validation/) and [other](https://typedoc.org/options/other/) options.
+These options control the behaviour of TypeDoc when parsing source files and are not specific to any particular theme.
+
+### Ignored Options
+
+[Output](https://typedoc.org/options/output/) options that are specific to the HTML theme are ignored.
+
+The ignored output options are:
+
+- `--cacheBust` ❌
+- `--cname` ❌
+- `--customCss` ❌
+- `--darkHighlightTheme` ❌
+- `--gaID` ❌
+- `--githubPages` ❌
+- `--htmlLang` ❌
+- `--lightHighlightTheme` ❌
+- `--markedOptions` ❌
+- `--searchCategoryBoosts` ❌
+- `--searchGroupBoosts` ❌
+- `--searchInComments` ❌
+- `--sitemapBaseUrl` ❌
+- `--visibilityFilters` ❌
+
+*As of TypeDoc version 0.25.13*
+

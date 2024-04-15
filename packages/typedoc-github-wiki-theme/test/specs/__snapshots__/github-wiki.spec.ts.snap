@@ -16,6 +16,7 @@ exports[`GithubWiki should get default files 1`] = `
   "module-2.Interface.InterfaceA.md",
   "module-2.Interface.InterfaceB.md",
   "module-2.md",
+  "sidebar.json",
 ]
 `;
 
@@ -28,33 +29,8 @@ exports[`GithubWiki should not output single page sidebar 1`] = `
 exports[`GithubWiki should output default sidebar 1`] = `
 "## API
 
-### module-1
-
-#### Namespaces
-
-- [Validation](../wiki/module-1.Namespace.Validation)
-
-#### Classes
-
-- [ClassA](../wiki/module-1.Class.ClassA)
-- [ClassB](../wiki/module-1.Class.ClassB)
-
-#### Interfaces
-
-- [InterfaceA](../wiki/module-1.Interface.InterfaceA)
-- [InterfaceB](../wiki/module-1.Interface.InterfaceB)
-
-### module-2
-
-#### Classes
-
-- [ClassA](../wiki/module-2.Class.ClassA)
-- [ClassB](../wiki/module-2.Class.ClassB)
-
-#### Interfaces
-
-- [InterfaceA](../wiki/module-2.Interface.InterfaceA)
-- [InterfaceB](../wiki/module-2.Interface.InterfaceB)
+- [module-1](../wiki/module-1)
+- [module-2](../wiki/module-2)
 "
 `;
 
