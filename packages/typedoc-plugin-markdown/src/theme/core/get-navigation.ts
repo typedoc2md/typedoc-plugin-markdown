@@ -1,7 +1,6 @@
 import { MarkdownRenderer } from '@plugin/app/application';
-import { PLURAL_KIND_KEY_MAP } from '@plugin/options/text-mappings';
-import { MarkdownTheme } from '@plugin/theme/markdown-theme';
-import { NavigationItem } from '@plugin/theme/theme-types';
+import { OutputFileStrategy, PLURAL_KIND_KEY_MAP } from '@plugin/options';
+import { MarkdownTheme, NavigationItem } from '@plugin/theme';
 import * as path from 'path';
 import {
   DeclarationReflection,
@@ -11,13 +10,14 @@ import {
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
-import { OutputFileStrategy } from '../../options/option-maps';
 
 export function getNavigation(
   theme: MarkdownTheme,
   project: ProjectReflection,
 ) {
   const options = theme.application.options;
+  const navigationOptions = options.getValue('navigation');
+
   const navigation: NavigationItem[] = [];
   const packagesMeta = (theme.application.renderer as MarkdownRenderer)
     .packagesMeta;
@@ -41,6 +41,7 @@ export function getNavigation(
 
   function buildNavigationFromPackage(projectChild: DeclarationReflection) {
     const fileExtension = options.getValue('fileExtension');
+
     const entryFileName = `${path.parse(options.getValue('entryFileName')).name}${fileExtension}`;
 
     const preservePackageReadme =
@@ -76,6 +77,7 @@ export function getNavigation(
       children.push({
         title: theme.textContentMappings['label.globals'] as string,
         url: projectChild.url,
+        kind: projectChild.kind,
       });
     }
     const childGroups = getChildrenOrGroups(projectChild, outputFileStrategy);
@@ -88,6 +90,7 @@ export function getNavigation(
 
     navigation.push({
       title: projectChild.name,
+      kind: projectChild.kind,
       children,
       ...(projectChildUrl && { url: projectChildUrl }),
     });
@@ -98,7 +101,7 @@ export function getNavigation(
   ) {
     const entryModule = options.getValue('entryModule');
 
-    if (project.categories?.length) {
+    if (navigationOptions.includeCategories && project.categories?.length) {
       navigation.push(
         ...project.categories.map((category) => {
           return {
@@ -133,9 +136,12 @@ export function getNavigation(
             const indexModule = projectGroup.children.find(
               (child) => child.name === entryModule,
             );
-            if (children.length) {
+            if (children?.length) {
               navigation.push({
-                title: projectGroup.title,
+                title:
+                  theme.textContentMappings[
+                    PLURAL_KIND_KEY_MAP[projectGroup.title]
+                  ] || projectGroup.title,
                 children: children.filter(
                   (child) => child.title !== entryModule,
                 ),
@@ -160,6 +166,7 @@ export function getNavigation(
         const children = getChildrenOrGroups(child);
         return {
           title: child.name,
+          kind: child.kind,
           url: child.url,
           ...(children && { children }),
         };
@@ -170,7 +177,7 @@ export function getNavigation(
     group: ReflectionGroup,
     outputFileStrategy?: OutputFileStrategy,
   ) {
-    if (group?.categories?.length) {
+    if (navigationOptions.includeCategories && group?.categories?.length) {
       return group.categories?.map((category) => {
         return {
           title: category.title,
@@ -181,29 +188,27 @@ export function getNavigation(
 
     return group.children
       ?.filter((child) => child.hasOwnDocument)
-      .reduce((acc, child) => {
+      .reduce((acc: NavigationItem[], child) => {
         const mapping = theme.getTemplateMapping(
           child.kind,
           outputFileStrategy,
         );
-
         if (Boolean(mapping)) {
-          const children = child.categories?.length
-            ? child.categories
-                ?.map((category) => {
-                  const catChildren = getCategoryGroupChildren(category);
-                  return catChildren.length
-                    ? {
-                        title: category.title,
-                        children: catChildren,
-                      }
-                    : null;
-                })
-
-                .filter((cat) => Boolean(cat))
-            : getChildrenOrGroups(child, outputFileStrategy);
-
-          return processChild(acc, child, children);
+          const children =
+            navigationOptions.includeCategories && child.categories?.length
+              ? child.categories
+                  ?.map((category) => {
+                    const catChildren = getCategoryGroupChildren(category);
+                    return catChildren.length
+                      ? {
+                          title: category.title,
+                          children: catChildren,
+                        }
+                      : null;
+                  })
+                  .filter((cat) => Boolean(cat))
+              : getChildrenOrGroups(child, outputFileStrategy);
+          return processChild(acc, child, children as NavigationItem[]);
         }
       }, []);
   }
@@ -211,17 +216,17 @@ export function getNavigation(
   function getChildrenOrGroups(
     reflection: DeclarationReflection,
     outputFileStrategy?: OutputFileStrategy,
-  ) {
+  ): NavigationItem[] | null {
     if (
       reflection.groups?.some((group) => group.allChildrenHaveOwnDocument())
     ) {
-      if (options.getValue('excludeGroups')) {
+      if (!navigationOptions.includeGroups) {
         return reflection.children
           ?.filter((child) => child.hasOwnDocument)
           .reduce((acc, child) => {
             const children = getChildrenOrGroups(child, outputFileStrategy);
             return processChild(acc, child, children);
-          }, []);
+          }, []) as NavigationItem[];
       }
 
       const isModulesGroup = reflection.groups[0].children.every(
@@ -237,7 +242,7 @@ export function getNavigation(
       return reflection.groups
         ?.map((group) => {
           const groupChildren = getGroupChildren(group, outputFileStrategy);
-          return groupChildren.length
+          return groupChildren?.length
             ? {
                 title:
                   theme.textContentMappings[PLURAL_KIND_KEY_MAP[group.title]] ||
@@ -246,71 +251,55 @@ export function getNavigation(
               }
             : null;
         })
-        .filter((group) => Boolean(group));
+        .filter((group) => Boolean(group)) as NavigationItem[];
     }
     return null;
   }
-}
 
-function processChild(acc, child, children) {
-  const titleParts = child.name.split('/');
-  if (!child.name.startsWith('@') && titleParts.length > 1) {
-    const existing = acc.find(
-      (item: NavigationItem) => item.title === titleParts[0],
-    );
-    if (existing) {
-      return acc.map((item: NavigationItem) => {
-        if (item.title === titleParts[0]) {
-          return {
-            ...item,
-            children: [
-              ...(item.children || []),
-              ...(titleParts.length > 2
-                ? [
-                    {
-                      title: titleParts[1],
-                      children: [
-                        {
-                          title: titleParts[2],
-                          url: child.url,
-                          ...(children && { children }),
-                        },
-                      ],
-                    },
-                  ]
-                : [
-                    {
-                      title: titleParts[1],
-                      url: child.url,
-                      ...(children && { children }),
-                    },
-                  ]),
-            ],
-          };
+  function processChild(
+    acc: NavigationItem[],
+    child: DeclarationReflection,
+    children: NavigationItem[] | null,
+  ) {
+    if (navigationOptions.includeFolders) {
+      const titleParts = child.name.split('/');
+      if (!child.name.startsWith('@') && titleParts.length > 1) {
+        let currentLevel = acc;
+        let currentItem: NavigationItem;
+        for (let i = 0; i < titleParts.length - 1; i++) {
+          currentItem = currentLevel.find(
+            (item: NavigationItem) => item.title === titleParts[i],
+          ) as NavigationItem;
+          if (!currentItem) {
+            currentItem = {
+              title: titleParts[i],
+              children: [],
+            };
+            currentLevel.push(currentItem);
+          }
+          if (currentItem) {
+            currentLevel = currentItem.children as NavigationItem[];
+          }
         }
-        return item;
-      });
+
+        currentLevel.push({
+          title: titleParts[titleParts.length - 1],
+          kind: child.kind,
+          url: child.url,
+          ...(children && { children }),
+        });
+
+        return acc;
+      }
     }
-    return [
-      ...acc,
-      {
-        title: titleParts[0],
-        children: [
-          {
-            title: titleParts[1],
-            url: child.url,
-            ...(children && { children }),
-          },
-        ],
-      },
-    ];
-  }
-  return [
-    ...acc,
-    {
+
+    acc.push({
       title: child.name,
+      kind: child.kind,
       url: child.url,
       ...(children && { children }),
-    },
-  ];
+    });
+
+    return acc;
+  }
 }

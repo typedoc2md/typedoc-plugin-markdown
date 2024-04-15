@@ -51,8 +51,12 @@ const config = {
         ...require(
           path.join(
             __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+            '../../../devtools/packages/fixtures/typedoc.cjs',
           ),
+        ),
+        tsconfig: path.join(
+          __dirname,
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
         entryPoints:
           '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
@@ -62,6 +66,11 @@ const config = {
         sidebar: { pretty: true },
         outputFileStrategy: 'members',
         cleanOutputDir: true,
+        navigation: {
+          includeFolders: true,
+          includeGroups: true,
+          includeCategories: true,
+        },
       },
     ],
     [
@@ -72,15 +81,31 @@ const config = {
         ...require(
           path.join(
             __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+            '../../../devtools/packages/fixtures/typedoc.cjs',
           ),
         ),
-        entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts',
+        tsconfig: path.join(
+          __dirname,
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
+        ),
+        entryPoints: [
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-1',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-2',
+        ],
+        entryPointStrategy: 'expand',
         cleanOutputDir: true,
+        navigation: {
+          includeFolders: false,
+          includeGroups: false,
+          includeCategories: true,
+        },
+        excludeScopesInPaths: true,
+        sidebar: {
+          pretty: true,
+        },
       },
     ],
-    [
+    /*[
       docusaurusPlugin,
       {
         id: 'api-3',
@@ -88,17 +113,28 @@ const config = {
         ...require(
           path.join(
             __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
+            '../../../devtools/packages/fixtures/typedoc.cjs',
           ),
         ),
+        tsconfig: path.join(
+          __dirname,
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
+        ),
         entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/comments/index.ts',
-        readme: 'none',
-        outputFileStrategy: 'modules',
-        entryModule: 'index',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/packages/*',
+        entryPointStrategy: 'packages',
         cleanOutputDir: true,
+        navigation: {
+          includeFolders: true,
+          includeGroups: true,
+          includeCategories: true,
+        },
+        excludeScopesInPaths: true,
+        sidebar: {
+          pretty: true,
+        },
       },
-    ],
+    ],*/
   ],
   presets: [
     [
@@ -150,24 +186,7 @@ const config = {
             label: 'API 2',
             position: 'left',
           },
-          {
-            to: 'docs/api-3/',
-            activeBasePath: 'docs',
-            label: 'API 3',
-            position: 'left',
-          },
-          {
-            to: 'docs/api-4/',
-            activeBasePath: 'docs',
-            label: 'API 4',
-            position: 'left',
-          },
-          {
-            to: 'docs/api-5/',
-            activeBasePath: 'docs',
-            label: 'API 5',
-            position: 'left',
-          },
+
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',

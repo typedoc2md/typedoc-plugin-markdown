@@ -4,12 +4,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 "[
   {
     "title": "@scope/package-1",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "@scope/package-1/interfaces/PackageInterface.md"
           }
         ]
@@ -19,12 +21,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-1b",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "package-1b/interfaces/PackageInterface.md"
           }
         ]
@@ -34,9 +38,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-2",
+    "kind": 2,
     "children": [
       {
         "title": "module-1",
+        "kind": 2,
         "url": "package-2/module-1/index.md",
         "children": [
           {
@@ -44,6 +50,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface1",
+                "kind": 256,
                 "url": "package-2/module-1/interfaces/PackageInterface1.md"
               }
             ]
@@ -52,6 +59,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "package-2/module-2/index.md",
         "children": [
           {
@@ -59,6 +67,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-2/module-2/interfaces/PackageInterface2.md"
               }
             ]
@@ -70,9 +79,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "@scope/package-3",
+    "kind": 2,
     "children": [
       {
         "title": "index",
+        "kind": 2,
         "url": "@scope/package-3/index/index.md",
         "children": [
           {
@@ -80,6 +91,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterfaceForIndexModule",
+                "kind": 256,
                 "url": "@scope/package-3/index/interfaces/PackageInterfaceForIndexModule.md"
               }
             ]
@@ -88,6 +100,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-1",
+        "kind": 2,
         "url": "@scope/package-3/module-1/index.md",
         "children": [
           {
@@ -95,6 +108,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface1",
+                "kind": 256,
                 "url": "@scope/package-3/module-1/interfaces/PackageInterface1.md"
               }
             ]
@@ -103,6 +117,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "@scope/package-3/module-2/index.md",
         "children": [
           {
@@ -110,6 +125,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "@scope/package-3/module-2/interfaces/PackageInterface2.md"
               }
             ]
@@ -121,12 +137,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-4",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "package-4/interfaces/PackageInterface.md"
           }
         ]
@@ -136,9 +154,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-5",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-5/module2/index.md",
         "children": [
           {
@@ -146,6 +166,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-5/module2/interfaces/PackageInterface2.md"
               }
             ]
@@ -157,9 +178,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-6",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-6/module2/index.md",
         "children": [
           {
@@ -167,6 +190,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-6/module2/interfaces/PackageInterface2.md"
               }
             ]
@@ -183,12 +207,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 "[
   {
     "title": "@scope/package-1",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "package-1/interfaces/PackageInterface.md"
           }
         ]
@@ -198,12 +224,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-1b",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "package-1b/interfaces/PackageInterface.md"
           }
         ]
@@ -213,9 +241,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-2",
+    "kind": 2,
     "children": [
       {
         "title": "module-1",
+        "kind": 2,
         "url": "package-2/module-1/index.md",
         "children": [
           {
@@ -223,6 +253,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface1",
+                "kind": 256,
                 "url": "package-2/module-1/interfaces/PackageInterface1.md"
               }
             ]
@@ -231,6 +262,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "package-2/module-2/index.md",
         "children": [
           {
@@ -238,6 +270,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-2/module-2/interfaces/PackageInterface2.md"
               }
             ]
@@ -249,9 +282,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "@scope/package-3",
+    "kind": 2,
     "children": [
       {
         "title": "index",
+        "kind": 2,
         "url": "package-3/index/index.md",
         "children": [
           {
@@ -259,6 +294,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterfaceForIndexModule",
+                "kind": 256,
                 "url": "package-3/index/interfaces/PackageInterfaceForIndexModule.md"
               }
             ]
@@ -267,6 +303,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-1",
+        "kind": 2,
         "url": "package-3/module-1/index.md",
         "children": [
           {
@@ -274,6 +311,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface1",
+                "kind": 256,
                 "url": "package-3/module-1/interfaces/PackageInterface1.md"
               }
             ]
@@ -282,6 +320,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "package-3/module-2/index.md",
         "children": [
           {
@@ -289,6 +328,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-3/module-2/interfaces/PackageInterface2.md"
               }
             ]
@@ -300,12 +340,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-4",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "package-4/interfaces/PackageInterface.md"
           }
         ]
@@ -315,9 +357,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-5",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-5/module2/index.md",
         "children": [
           {
@@ -325,6 +369,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-5/module2/interfaces/PackageInterface2.md"
               }
             ]
@@ -336,9 +381,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-6",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-6/module2/index.md",
         "children": [
           {
@@ -346,6 +393,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-6/module2/interfaces/PackageInterface2.md"
               }
             ]
@@ -362,28 +410,34 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 "[
   {
     "title": "@scope/package-1",
+    "kind": 2,
     "children": [
       {
         "title": "Globals",
-        "url": "@scope/package-1/globals.md"
+        "url": "@scope/package-1/globals.md",
+        "kind": 2
       }
     ],
     "url": "@scope/package-1/index.md"
   },
   {
     "title": "package-1b",
+    "kind": 2,
     "children": [],
     "url": "package-1b/index.md"
   },
   {
     "title": "package-2",
+    "kind": 2,
     "children": [
       {
         "title": "module-1",
+        "kind": 2,
         "url": "package-2/module-1.md"
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "package-2/module-2.md"
       }
     ],
@@ -391,9 +445,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "@scope/package-3",
+    "kind": 2,
     "children": [
       {
         "title": "index",
+        "kind": 2,
         "url": "@scope/package-3/module_index.md",
         "children": [
           {
@@ -401,6 +457,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterfaceForIndexModule",
+                "kind": 256,
                 "url": "@scope/package-3/interfaces/PackageInterfaceForIndexModule.md"
               }
             ]
@@ -409,6 +466,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-1",
+        "kind": 2,
         "url": "@scope/package-3/module-1.md",
         "children": [
           {
@@ -416,6 +474,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface1",
+                "kind": 256,
                 "url": "@scope/package-3/interfaces/PackageInterface1.md"
               }
             ]
@@ -424,6 +483,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "@scope/package-3/module-2.md",
         "children": [
           {
@@ -431,6 +491,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "@scope/package-3/interfaces/PackageInterface2.md"
               }
             ]
@@ -442,12 +503,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-4",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "package-4/interfaces/PackageInterface.md"
           }
         ]
@@ -457,9 +520,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-5",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-5/module2.md"
       }
     ],
@@ -467,9 +532,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-6",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-6/module2.md"
       }
     ],
@@ -482,23 +549,28 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 "[
   {
     "title": "@scope/package-1",
+    "kind": 2,
     "children": [],
     "url": "package-1/index.md"
   },
   {
     "title": "package-1b",
+    "kind": 2,
     "children": [],
     "url": "package-1b/index.md"
   },
   {
     "title": "package-2",
+    "kind": 2,
     "children": [
       {
         "title": "module-1",
+        "kind": 2,
         "url": "package-2/module-1.md"
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "package-2/module-2.md"
       }
     ],
@@ -506,9 +578,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "@scope/package-3",
+    "kind": 2,
     "children": [
       {
         "title": "index",
+        "kind": 2,
         "url": "package-3/module_index.md",
         "children": [
           {
@@ -516,6 +590,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterfaceForIndexModule",
+                "kind": 256,
                 "url": "package-3/interfaces/PackageInterfaceForIndexModule.md"
               }
             ]
@@ -524,6 +599,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-1",
+        "kind": 2,
         "url": "package-3/module-1.md",
         "children": [
           {
@@ -531,6 +607,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface1",
+                "kind": 256,
                 "url": "package-3/interfaces/PackageInterface1.md"
               }
             ]
@@ -539,6 +616,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       },
       {
         "title": "module-2",
+        "kind": 2,
         "url": "package-3/module-2.md",
         "children": [
           {
@@ -546,6 +624,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
             "children": [
               {
                 "title": "PackageInterface2",
+                "kind": 256,
                 "url": "package-3/interfaces/PackageInterface2.md"
               }
             ]
@@ -557,12 +636,14 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-4",
+    "kind": 2,
     "children": [
       {
         "title": "Interfaces",
         "children": [
           {
             "title": "PackageInterface",
+            "kind": 256,
             "url": "package-4/interfaces/PackageInterface.md"
           }
         ]
@@ -572,9 +653,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-5",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-5/module2.md"
       }
     ],
@@ -582,9 +665,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   },
   {
     "title": "package-6",
+    "kind": 2,
     "children": [
       {
         "title": "module2",
+        "kind": 2,
         "url": "package-6/module2.md"
       }
     ],
@@ -597,6 +682,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "@scope/module-1",
+    "kind": 2,
     "url": "@scope/module-1/README.mdx",
     "children": [
       {
@@ -604,6 +690,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
         "children": [
           {
             "title": "ModuleClass",
+            "kind": 128,
             "url": "@scope/module-1/classes/ModuleClass.mdx"
           }
         ]
@@ -612,6 +699,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
   },
   {
     "title": "module-2",
+    "kind": 2,
     "url": "module-2/README.mdx",
     "children": [
       {
@@ -619,6 +707,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
         "children": [
           {
             "title": "ModuleClass",
+            "kind": 128,
             "url": "module-2/classes/ModuleClass.mdx"
           }
         ]
@@ -632,6 +721,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "@scope/module-1",
+    "kind": 2,
     "url": "module-1/index.mdx",
     "children": [
       {
@@ -639,6 +729,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
         "children": [
           {
             "title": "ModuleClass",
+            "kind": 128,
             "url": "module-1/classes/ModuleClass.mdx"
           }
         ]
@@ -647,6 +738,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
   },
   {
     "title": "module-2",
+    "kind": 2,
     "url": "module-2/index.mdx",
     "children": [
       {
@@ -654,6 +746,7 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
         "children": [
           {
             "title": "ModuleClass",
+            "kind": 128,
             "url": "module-2/classes/ModuleClass.mdx"
           }
         ]
@@ -667,10 +760,12 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "@scope/module-1",
+    "kind": 2,
     "url": "@scope/module-1.mdx"
   },
   {
     "title": "module-2",
+    "kind": 2,
     "url": "module-2.mdx"
   }
 ]"
@@ -680,10 +775,12 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 "[
   {
     "title": "@scope/module-1",
+    "kind": 2,
     "url": "module-1.mdx"
   },
   {
     "title": "module-2",
+    "kind": 2,
     "url": "module-2.mdx"
   }
 ]"
@@ -693,6 +790,7 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 "[
   {
     "title": "@scope/namespace",
+    "kind": 2,
     "url": "namespace/README.md",
     "children": [
       {
@@ -700,10 +798,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "EnumA",
+            "kind": 8,
             "url": "namespace/enumerations/EnumA.md"
           },
           {
             "title": "EnumB",
+            "kind": 8,
             "url": "namespace/enumerations/EnumB.md"
           }
         ]
@@ -713,10 +813,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "ClassA",
+            "kind": 128,
             "url": "namespace/classes/ClassA.md"
           },
           {
             "title": "ClassB",
+            "kind": 128,
             "url": "namespace/classes/ClassB.md"
           }
         ]
@@ -726,10 +828,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "InterfaceA",
+            "kind": 256,
             "url": "namespace/interfaces/InterfaceA.md"
           },
           {
             "title": "InterfaceB",
+            "kind": 256,
             "url": "namespace/interfaces/InterfaceB.md"
           }
         ]
@@ -739,10 +843,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "TypeA",
+            "kind": 2097152,
             "url": "namespace/type-aliases/TypeA.md"
           },
           {
             "title": "TypeB",
+            "kind": 2097152,
             "url": "namespace/type-aliases/TypeB.md"
           }
         ]
@@ -754,67 +860,77 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
     "children": [
       {
         "title": "submodules",
-        "url": "module-1/submodules/submodule-1/README.md",
         "children": [
           {
-            "title": "Enumerations",
+            "title": "submodule-1",
+            "kind": 2,
+            "url": "module-1/submodules/submodule-1/README.md",
             "children": [
               {
-                "title": "EnumA",
-                "url": "module-1/submodules/submodule-1/enumerations/EnumA.md"
+                "title": "Enumerations",
+                "children": [
+                  {
+                    "title": "EnumA",
+                    "kind": 8,
+                    "url": "module-1/submodules/submodule-1/enumerations/EnumA.md"
+                  },
+                  {
+                    "title": "EnumB",
+                    "kind": 8,
+                    "url": "module-1/submodules/submodule-1/enumerations/EnumB.md"
+                  }
+                ]
               },
               {
-                "title": "EnumB",
-                "url": "module-1/submodules/submodule-1/enumerations/EnumB.md"
+                "title": "Classes",
+                "children": [
+                  {
+                    "title": "ClassA",
+                    "kind": 128,
+                    "url": "module-1/submodules/submodule-1/classes/ClassA.md"
+                  },
+                  {
+                    "title": "ClassB",
+                    "kind": 128,
+                    "url": "module-1/submodules/submodule-1/classes/ClassB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "InterfaceA",
+                    "kind": 256,
+                    "url": "module-1/submodules/submodule-1/interfaces/InterfaceA.md"
+                  },
+                  {
+                    "title": "InterfaceB",
+                    "kind": 256,
+                    "url": "module-1/submodules/submodule-1/interfaces/InterfaceB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Type Aliases",
+                "children": [
+                  {
+                    "title": "TypeA",
+                    "kind": 2097152,
+                    "url": "module-1/submodules/submodule-1/type-aliases/TypeA.md"
+                  },
+                  {
+                    "title": "TypeB",
+                    "kind": 2097152,
+                    "url": "module-1/submodules/submodule-1/type-aliases/TypeB.md"
+                  }
+                ]
               }
             ]
           },
-          {
-            "title": "Classes",
-            "children": [
-              {
-                "title": "ClassA",
-                "url": "module-1/submodules/submodule-1/classes/ClassA.md"
-              },
-              {
-                "title": "ClassB",
-                "url": "module-1/submodules/submodule-1/classes/ClassB.md"
-              }
-            ]
-          },
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "InterfaceA",
-                "url": "module-1/submodules/submodule-1/interfaces/InterfaceA.md"
-              },
-              {
-                "title": "InterfaceB",
-                "url": "module-1/submodules/submodule-1/interfaces/InterfaceB.md"
-              }
-            ]
-          },
-          {
-            "title": "Type Aliases",
-            "children": [
-              {
-                "title": "TypeA",
-                "url": "module-1/submodules/submodule-1/type-aliases/TypeA.md"
-              },
-              {
-                "title": "TypeB",
-                "url": "module-1/submodules/submodule-1/type-aliases/TypeB.md"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "submodules",
-        "children": [
           {
             "title": "submodule-2",
+            "kind": 2,
             "url": "module-1/submodules/submodule-2/README.md",
             "children": [
               {
@@ -822,10 +938,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
                 "children": [
                   {
                     "title": "EnumA",
+                    "kind": 8,
                     "url": "module-1/submodules/submodule-2/enumerations/EnumA.md"
                   },
                   {
                     "title": "EnumB",
+                    "kind": 8,
                     "url": "module-1/submodules/submodule-2/enumerations/EnumB.md"
                   }
                 ]
@@ -835,10 +953,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
                 "children": [
                   {
                     "title": "ClassA",
+                    "kind": 128,
                     "url": "module-1/submodules/submodule-2/classes/ClassA.md"
                   },
                   {
                     "title": "ClassB",
+                    "kind": 128,
                     "url": "module-1/submodules/submodule-2/classes/ClassB.md"
                   }
                 ]
@@ -848,10 +968,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
                 "children": [
                   {
                     "title": "InterfaceA",
+                    "kind": 256,
                     "url": "module-1/submodules/submodule-2/interfaces/InterfaceA.md"
                   },
                   {
                     "title": "InterfaceB",
+                    "kind": 256,
                     "url": "module-1/submodules/submodule-2/interfaces/InterfaceB.md"
                   }
                 ]
@@ -861,11 +983,152 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
                 "children": [
                   {
                     "title": "TypeA",
+                    "kind": 2097152,
                     "url": "module-1/submodules/submodule-2/type-aliases/TypeA.md"
                   },
                   {
                     "title": "TypeB",
+                    "kind": 2097152,
                     "url": "module-1/submodules/submodule-2/type-aliases/TypeB.md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "submodule-3-with-modules",
+            "children": [
+              {
+                "title": "nested-submodule-1",
+                "kind": 2,
+                "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/README.md",
+                "children": [
+                  {
+                    "title": "Enumerations",
+                    "children": [
+                      {
+                        "title": "EnumA",
+                        "kind": 8,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/enumerations/EnumA.md"
+                      },
+                      {
+                        "title": "EnumB",
+                        "kind": 8,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/enumerations/EnumB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "ClassA",
+                        "kind": 128,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassA.md"
+                      },
+                      {
+                        "title": "ClassB",
+                        "kind": 128,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Interfaces",
+                    "children": [
+                      {
+                        "title": "InterfaceA",
+                        "kind": 256,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/interfaces/InterfaceA.md"
+                      },
+                      {
+                        "title": "InterfaceB",
+                        "kind": 256,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/interfaces/InterfaceB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Type Aliases",
+                    "children": [
+                      {
+                        "title": "TypeA",
+                        "kind": 2097152,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/type-aliases/TypeA.md"
+                      },
+                      {
+                        "title": "TypeB",
+                        "kind": 2097152,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/type-aliases/TypeB.md"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "nested-submodule-2",
+                "kind": 2,
+                "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/README.md",
+                "children": [
+                  {
+                    "title": "Enumerations",
+                    "children": [
+                      {
+                        "title": "EnumA",
+                        "kind": 8,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/enumerations/EnumA.md"
+                      },
+                      {
+                        "title": "EnumB",
+                        "kind": 8,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/enumerations/EnumB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "ClassA",
+                        "kind": 128,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassA.md"
+                      },
+                      {
+                        "title": "ClassB",
+                        "kind": 128,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Interfaces",
+                    "children": [
+                      {
+                        "title": "InterfaceA",
+                        "kind": 256,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/interfaces/InterfaceA.md"
+                      },
+                      {
+                        "title": "InterfaceB",
+                        "kind": 256,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/interfaces/InterfaceB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Type Aliases",
+                    "children": [
+                      {
+                        "title": "TypeA",
+                        "kind": 2097152,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/type-aliases/TypeA.md"
+                      },
+                      {
+                        "title": "TypeB",
+                        "kind": 2097152,
+                        "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/type-aliases/TypeB.md"
+                      }
+                    ]
                   }
                 ]
               }
@@ -877,62 +1140,66 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
   },
   {
     "title": "module-2",
+    "kind": 2,
+    "url": "module-2/README.md",
     "children": [
       {
-        "title": "namespace-2",
-        "url": "module-2/namespace-2/README.md",
+        "title": "Enumerations",
         "children": [
           {
-            "title": "Enumerations",
-            "children": [
-              {
-                "title": "EnumA",
-                "url": "module-2/namespace-2/enumerations/EnumA.md"
-              },
-              {
-                "title": "EnumB",
-                "url": "module-2/namespace-2/enumerations/EnumB.md"
-              }
-            ]
+            "title": "EnumA",
+            "kind": 8,
+            "url": "module-2/enumerations/EnumA.md"
           },
           {
-            "title": "Classes",
-            "children": [
-              {
-                "title": "ClassA",
-                "url": "module-2/namespace-2/classes/ClassA.md"
-              },
-              {
-                "title": "ClassB",
-                "url": "module-2/namespace-2/classes/ClassB.md"
-              }
-            ]
+            "title": "EnumB",
+            "kind": 8,
+            "url": "module-2/enumerations/EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "url": "module-2/classes/ClassA.md"
           },
           {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "InterfaceA",
-                "url": "module-2/namespace-2/interfaces/InterfaceA.md"
-              },
-              {
-                "title": "InterfaceB",
-                "url": "module-2/namespace-2/interfaces/InterfaceB.md"
-              }
-            ]
+            "title": "ClassB",
+            "kind": 128,
+            "url": "module-2/classes/ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "url": "module-2/interfaces/InterfaceA.md"
           },
           {
-            "title": "Type Aliases",
-            "children": [
-              {
-                "title": "TypeA",
-                "url": "module-2/namespace-2/type-aliases/TypeA.md"
-              },
-              {
-                "title": "TypeB",
-                "url": "module-2/namespace-2/type-aliases/TypeB.md"
-              }
-            ]
+            "title": "InterfaceB",
+            "kind": 256,
+            "url": "module-2/interfaces/InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "url": "module-2/type-aliases/TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "url": "module-2/type-aliases/TypeB.md"
           }
         ]
       }
@@ -945,6 +1212,7 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 "[
   {
     "title": "@scope/namespace",
+    "kind": 2,
     "url": "@scope.namespace.md",
     "children": [
       {
@@ -952,10 +1220,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "EnumA",
+            "kind": 8,
             "url": "@scope.namespace.Enumeration.EnumA.md"
           },
           {
             "title": "EnumB",
+            "kind": 8,
             "url": "@scope.namespace.Enumeration.EnumB.md"
           }
         ]
@@ -965,10 +1235,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "ClassA",
+            "kind": 128,
             "url": "@scope.namespace.Class.ClassA.md"
           },
           {
             "title": "ClassB",
+            "kind": 128,
             "url": "@scope.namespace.Class.ClassB.md"
           }
         ]
@@ -978,10 +1250,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "InterfaceA",
+            "kind": 256,
             "url": "@scope.namespace.Interface.InterfaceA.md"
           },
           {
             "title": "InterfaceB",
+            "kind": 256,
             "url": "@scope.namespace.Interface.InterfaceB.md"
           }
         ]
@@ -991,10 +1265,12 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
         "children": [
           {
             "title": "TypeA",
+            "kind": 2097152,
             "url": "@scope.namespace.Type.TypeA.md"
           },
           {
             "title": "TypeB",
+            "kind": 2097152,
             "url": "@scope.namespace.Type.TypeB.md"
           }
         ]
@@ -1002,126 +1278,268 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
     ]
   },
   {
-    "title": "module-1",
+    "title": "module-1/submodules/submodule-1",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-1.md",
     "children": [
       {
-        "title": "submodules",
-        "url": "module-1.submodules.submodule-1.md",
+        "title": "Enumerations",
         "children": [
           {
-            "title": "Enumerations",
-            "children": [
-              {
-                "title": "EnumA",
-                "url": "module-1.submodules.submodule-1.Enumeration.EnumA.md"
-              },
-              {
-                "title": "EnumB",
-                "url": "module-1.submodules.submodule-1.Enumeration.EnumB.md"
-              }
-            ]
+            "title": "EnumA",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-1.Enumeration.EnumA.md"
           },
           {
-            "title": "Classes",
-            "children": [
-              {
-                "title": "ClassA",
-                "url": "module-1.submodules.submodule-1.Class.ClassA.md"
-              },
-              {
-                "title": "ClassB",
-                "url": "module-1.submodules.submodule-1.Class.ClassB.md"
-              }
-            ]
-          },
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "InterfaceA",
-                "url": "module-1.submodules.submodule-1.Interface.InterfaceA.md"
-              },
-              {
-                "title": "InterfaceB",
-                "url": "module-1.submodules.submodule-1.Interface.InterfaceB.md"
-              }
-            ]
-          },
-          {
-            "title": "Type Aliases",
-            "children": [
-              {
-                "title": "TypeA",
-                "url": "module-1.submodules.submodule-1.Type.TypeA.md"
-              },
-              {
-                "title": "TypeB",
-                "url": "module-1.submodules.submodule-1.Type.TypeB.md"
-              }
-            ]
+            "title": "EnumB",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-1.Enumeration.EnumB.md"
           }
         ]
       },
       {
-        "title": "submodules",
+        "title": "Classes",
         "children": [
           {
-            "title": "submodule-2",
-            "url": "module-1.submodules.submodule-2.md",
-            "children": [
-              {
-                "title": "Enumerations",
-                "children": [
-                  {
-                    "title": "EnumA",
-                    "url": "module-1.submodules.submodule-2.Enumeration.EnumA.md"
-                  },
-                  {
-                    "title": "EnumB",
-                    "url": "module-1.submodules.submodule-2.Enumeration.EnumB.md"
-                  }
-                ]
-              },
-              {
-                "title": "Classes",
-                "children": [
-                  {
-                    "title": "ClassA",
-                    "url": "module-1.submodules.submodule-2.Class.ClassA.md"
-                  },
-                  {
-                    "title": "ClassB",
-                    "url": "module-1.submodules.submodule-2.Class.ClassB.md"
-                  }
-                ]
-              },
-              {
-                "title": "Interfaces",
-                "children": [
-                  {
-                    "title": "InterfaceA",
-                    "url": "module-1.submodules.submodule-2.Interface.InterfaceA.md"
-                  },
-                  {
-                    "title": "InterfaceB",
-                    "url": "module-1.submodules.submodule-2.Interface.InterfaceB.md"
-                  }
-                ]
-              },
-              {
-                "title": "Type Aliases",
-                "children": [
-                  {
-                    "title": "TypeA",
-                    "url": "module-1.submodules.submodule-2.Type.TypeA.md"
-                  },
-                  {
-                    "title": "TypeB",
-                    "url": "module-1.submodules.submodule-2.Type.TypeB.md"
-                  }
-                ]
-              }
-            ]
+            "title": "ClassA",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-1.Class.ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-1.Class.ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-1.Interface.InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-1.Interface.InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-1.Type.TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-1.Type.TypeB.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-1/submodules/submodule-2",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-2.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-2.Enumeration.EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-2.Enumeration.EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-2.Class.ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-2.Class.ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-2.Interface.InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-2.Interface.InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-2.Type.TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-2.Type.TypeB.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-1/submodules/submodule-3-with-modules/nested-submodule-1",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Enumeration.EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Enumeration.EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Class.ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Class.ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Interface.InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Interface.InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Type.TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.Type.TypeB.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-1/submodules/submodule-3-with-modules/nested-submodule-2",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Enumeration.EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Enumeration.EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Class.ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Class.ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Interface.InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Interface.InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Type.TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.Type.TypeB.md"
           }
         ]
       }
@@ -1129,62 +1547,66 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
   },
   {
     "title": "module-2",
+    "kind": 2,
+    "url": "module-2.md",
     "children": [
       {
-        "title": "namespace-2",
-        "url": "module-2.namespace-2.md",
+        "title": "Enumerations",
         "children": [
           {
-            "title": "Enumerations",
-            "children": [
-              {
-                "title": "EnumA",
-                "url": "module-2.namespace-2.Enumeration.EnumA.md"
-              },
-              {
-                "title": "EnumB",
-                "url": "module-2.namespace-2.Enumeration.EnumB.md"
-              }
-            ]
+            "title": "EnumA",
+            "kind": 8,
+            "url": "module-2.Enumeration.EnumA.md"
           },
           {
-            "title": "Classes",
-            "children": [
-              {
-                "title": "ClassA",
-                "url": "module-2.namespace-2.Class.ClassA.md"
-              },
-              {
-                "title": "ClassB",
-                "url": "module-2.namespace-2.Class.ClassB.md"
-              }
-            ]
+            "title": "EnumB",
+            "kind": 8,
+            "url": "module-2.Enumeration.EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "url": "module-2.Class.ClassA.md"
           },
           {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "InterfaceA",
-                "url": "module-2.namespace-2.Interface.InterfaceA.md"
-              },
-              {
-                "title": "InterfaceB",
-                "url": "module-2.namespace-2.Interface.InterfaceB.md"
-              }
-            ]
+            "title": "ClassB",
+            "kind": 128,
+            "url": "module-2.Class.ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "url": "module-2.Interface.InterfaceA.md"
           },
           {
-            "title": "Type Aliases",
-            "children": [
-              {
-                "title": "TypeA",
-                "url": "module-2.namespace-2.Type.TypeA.md"
-              },
-              {
-                "title": "TypeB",
-                "url": "module-2.namespace-2.Type.TypeB.md"
-              }
-            ]
+            "title": "InterfaceB",
+            "kind": 256,
+            "url": "module-2.Interface.InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "url": "module-2.Type.TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "url": "module-2.Type.TypeB.md"
           }
         ]
       }
@@ -1197,6 +1619,7 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 "[
   {
     "title": "@scope/namespace",
+    "kind": 2,
     "url": "namespace.md"
   },
   {
@@ -1204,14 +1627,31 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
     "children": [
       {
         "title": "submodules",
-        "url": "module-1/submodules/submodule-1.md"
-      },
-      {
-        "title": "submodules",
         "children": [
           {
+            "title": "submodule-1",
+            "kind": 2,
+            "url": "module-1/submodules/submodule-1.md"
+          },
+          {
             "title": "submodule-2",
+            "kind": 2,
             "url": "module-1/submodules/submodule-2.md"
+          },
+          {
+            "title": "submodule-3-with-modules",
+            "children": [
+              {
+                "title": "nested-submodule-1",
+                "kind": 2,
+                "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-1.md"
+              },
+              {
+                "title": "nested-submodule-2",
+                "kind": 2,
+                "url": "module-1/submodules/submodule-3-with-modules/nested-submodule-2.md"
+              }
+            ]
           }
         ]
       }
@@ -1219,12 +1659,8 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
   },
   {
     "title": "module-2",
-    "children": [
-      {
-        "title": "namespace-2",
-        "url": "module-2/namespace-2.md"
-      }
-    ]
+    "kind": 2,
+    "url": "module-2.md"
   }
 ]"
 `;
@@ -1233,34 +1669,33 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 "[
   {
     "title": "@scope/namespace",
+    "kind": 2,
     "url": "@scope.namespace.md"
   },
   {
-    "title": "module-1",
-    "children": [
-      {
-        "title": "submodules",
-        "url": "module-1.submodules.submodule-1.md"
-      },
-      {
-        "title": "submodules",
-        "children": [
-          {
-            "title": "submodule-2",
-            "url": "module-1.submodules.submodule-2.md"
-          }
-        ]
-      }
-    ]
+    "title": "module-1/submodules/submodule-1",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-1.md"
+  },
+  {
+    "title": "module-1/submodules/submodule-2",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-2.md"
+  },
+  {
+    "title": "module-1/submodules/submodule-3-with-modules/nested-submodule-1",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-1.md"
+  },
+  {
+    "title": "module-1/submodules/submodule-3-with-modules/nested-submodule-2",
+    "kind": 2,
+    "url": "module-1.submodules.submodule-3-with-modules.nested-submodule-2.md"
   },
   {
     "title": "module-2",
-    "children": [
-      {
-        "title": "namespace-2",
-        "url": "module-2.namespace-2.md"
-      }
-    ]
+    "kind": 2,
+    "url": "module-2.md"
   }
 ]"
 `;
@@ -1269,367 +1704,279 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 "[
   {
     "title": "42-module-name",
+    "kind": 2,
     "url": "42-module-name/index.md"
   },
   {
     "title": "<internal>",
+    "kind": 2,
     "url": "-internal-/index.md"
   },
   {
     "title": "basic",
+    "kind": 2,
     "url": "basic/index.md",
     "children": [
       {
-        "title": "Enumerations",
-        "children": [
-          {
-            "title": "EnumA",
-            "url": "basic/enumerations/EnumA.md"
-          },
-          {
-            "title": "EnumB",
-            "url": "basic/enumerations/EnumB.md"
-          }
-        ]
+        "title": "EnumA",
+        "kind": 8,
+        "url": "basic/enumerations/EnumA.md"
       },
       {
-        "title": "Classes",
-        "children": [
-          {
-            "title": "ClassA",
-            "url": "basic/classes/ClassA.md"
-          },
-          {
-            "title": "ClassB",
-            "url": "basic/classes/ClassB.md"
-          }
-        ]
+        "title": "EnumB",
+        "kind": 8,
+        "url": "basic/enumerations/EnumB.md"
       },
       {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "InterfaceA",
-            "url": "basic/interfaces/InterfaceA.md"
-          },
-          {
-            "title": "InterfaceB",
-            "url": "basic/interfaces/InterfaceB.md"
-          }
-        ]
+        "title": "ClassA",
+        "kind": 128,
+        "url": "basic/classes/ClassA.md"
       },
       {
-        "title": "Type Aliases",
-        "children": [
-          {
-            "title": "TypeA",
-            "url": "basic/type-aliases/TypeA.md"
-          },
-          {
-            "title": "TypeB",
-            "url": "basic/type-aliases/TypeB.md"
-          }
-        ]
+        "title": "ClassB",
+        "kind": 128,
+        "url": "basic/classes/ClassB.md"
+      },
+      {
+        "title": "InterfaceA",
+        "kind": 256,
+        "url": "basic/interfaces/InterfaceA.md"
+      },
+      {
+        "title": "InterfaceB",
+        "kind": 256,
+        "url": "basic/interfaces/InterfaceB.md"
+      },
+      {
+        "title": "TypeA",
+        "kind": 2097152,
+        "url": "basic/type-aliases/TypeA.md"
+      },
+      {
+        "title": "TypeB",
+        "kind": 2097152,
+        "url": "basic/type-aliases/TypeB.md"
       }
     ]
   },
   {
     "title": "has-categories",
+    "kind": 2,
     "url": "has-categories/index.md",
     "children": [
       {
-        "title": "Enumerations",
-        "children": [
-          {
-            "title": "Category A",
-            "children": [
-              {
-                "title": "CategoryAEnum1",
-                "url": "has-categories/enumerations/CategoryAEnum1.md"
-              },
-              {
-                "title": "CategoryAEnum2",
-                "url": "has-categories/enumerations/CategoryAEnum2.md"
-              }
-            ]
-          },
-          {
-            "title": "Category B",
-            "children": [
-              {
-                "title": "CategoryBEnum1",
-                "url": "has-categories/enumerations/CategoryBEnum1.md"
-              },
-              {
-                "title": "CategoryBEnum2",
-                "url": "has-categories/enumerations/CategoryBEnum2.md"
-              }
-            ]
-          },
-          {
-            "title": "Other",
-            "children": [
-              {
-                "title": "UnCategorizedEnum",
-                "url": "has-categories/enumerations/UnCategorizedEnum.md"
-              }
-            ]
-          }
-        ]
+        "title": "CategoryAEnum1",
+        "kind": 8,
+        "url": "has-categories/enumerations/CategoryAEnum1.md"
       },
       {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "Category A",
-            "children": [
-              {
-                "title": "CategoryAInterface1",
-                "url": "has-categories/interfaces/CategoryAInterface1.md"
-              },
-              {
-                "title": "CategoryAInterface2",
-                "url": "has-categories/interfaces/CategoryAInterface2.md"
-              }
-            ]
-          },
-          {
-            "title": "Category B",
-            "children": [
-              {
-                "title": "CategoryBInterface1",
-                "url": "has-categories/interfaces/CategoryBInterface1.md"
-              },
-              {
-                "title": "CategoryBInterface2",
-                "url": "has-categories/interfaces/CategoryBInterface2.md"
-              }
-            ]
-          },
-          {
-            "title": "Other",
-            "children": [
-              {
-                "title": "UnCategorizedInterace",
-                "url": "has-categories/interfaces/UnCategorizedInterace.md"
-              }
-            ]
-          }
-        ]
+        "title": "CategoryAEnum2",
+        "kind": 8,
+        "url": "has-categories/enumerations/CategoryAEnum2.md"
+      },
+      {
+        "title": "CategoryBEnum1",
+        "kind": 8,
+        "url": "has-categories/enumerations/CategoryBEnum1.md"
+      },
+      {
+        "title": "CategoryBEnum2",
+        "kind": 8,
+        "url": "has-categories/enumerations/CategoryBEnum2.md"
+      },
+      {
+        "title": "UnCategorizedEnum",
+        "kind": 8,
+        "url": "has-categories/enumerations/UnCategorizedEnum.md"
+      },
+      {
+        "title": "CategoryAInterface1",
+        "kind": 256,
+        "url": "has-categories/interfaces/CategoryAInterface1.md"
+      },
+      {
+        "title": "CategoryAInterface2",
+        "kind": 256,
+        "url": "has-categories/interfaces/CategoryAInterface2.md"
+      },
+      {
+        "title": "CategoryBInterface1",
+        "kind": 256,
+        "url": "has-categories/interfaces/CategoryBInterface1.md"
+      },
+      {
+        "title": "CategoryBInterface2",
+        "kind": 256,
+        "url": "has-categories/interfaces/CategoryBInterface2.md"
+      },
+      {
+        "title": "UnCategorizedInterace",
+        "kind": 256,
+        "url": "has-categories/interfaces/UnCategorizedInterace.md"
       }
     ]
   },
   {
     "title": "has-custom-groups",
+    "kind": 2,
     "url": "has-custom-groups/index.md",
     "children": [
       {
-        "title": "Variables",
-        "children": [
-          {
-            "title": "variableC",
-            "url": "has-custom-groups/variables/variableC.md"
-          }
-        ]
+        "title": "variabelA",
+        "kind": 32,
+        "url": "has-custom-groups/variables/variabelA.md"
       },
       {
-        "title": "CustomGroupA",
-        "children": [
-          {
-            "title": "variabelA",
-            "url": "has-custom-groups/variables/variabelA.md"
-          }
-        ]
+        "title": "variableB1",
+        "kind": 32,
+        "url": "has-custom-groups/variables/variableB1.md"
       },
       {
-        "title": "CustomGroupB",
-        "children": [
-          {
-            "title": "variableB1",
-            "url": "has-custom-groups/variables/variableB1.md"
-          },
-          {
-            "title": "variableB2",
-            "url": "has-custom-groups/variables/variableB2.md"
-          }
-        ]
+        "title": "variableB2",
+        "kind": 32,
+        "url": "has-custom-groups/variables/variableB2.md"
+      },
+      {
+        "title": "variableC",
+        "kind": 32,
+        "url": "has-custom-groups/variables/variableC.md"
       }
     ]
   },
   {
     "title": "has-namespaces",
+    "kind": 2,
     "url": "has-namespaces/index.md",
     "children": [
       {
-        "title": "Namespaces",
+        "title": "NamespaceB",
+        "kind": 4,
+        "url": "has-namespaces/namespaces/NamespaceB/index.md"
+      },
+      {
+        "title": "_Namespace_A_",
+        "kind": 4,
+        "url": "has-namespaces/namespaces/Namespace_A/index.md",
         "children": [
           {
-            "title": "NamespaceB",
-            "url": "has-namespaces/namespaces/NamespaceB/index.md"
-          },
-          {
-            "title": "_Namespace_A_",
-            "url": "has-namespaces/namespaces/Namespace_A/index.md",
+            "title": "NestedNamespace",
+            "kind": 4,
+            "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
             "children": [
               {
-                "title": "Namespaces",
-                "children": [
-                  {
-                    "title": "NestedNamespace",
-                    "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
-                    "children": [
-                      {
-                        "title": "Interfaces",
-                        "children": [
-                          {
-                            "title": "NamespaceInterface",
-                            "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "Interfaces",
-                "children": [
-                  {
-                    "title": "NamespaceInterface",
-                    "url": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
-                  }
-                ]
+                "title": "NamespaceInterface",
+                "kind": 256,
+                "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
               }
             ]
+          },
+          {
+            "title": "NamespaceInterface",
+            "kind": 256,
+            "url": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
           }
         ]
       },
       {
-        "title": "Enumerations",
-        "children": [
-          {
-            "title": "EnumB",
-            "url": "has-namespaces/enumerations/EnumB.md"
-          },
-          {
-            "title": "_Enum_A_",
-            "url": "has-namespaces/enumerations/Enum_A.md"
-          }
-        ]
+        "title": "EnumB",
+        "kind": 8,
+        "url": "has-namespaces/enumerations/EnumB.md"
       },
       {
-        "title": "Classes",
-        "children": [
-          {
-            "title": "ClassB",
-            "url": "has-namespaces/classes/ClassB.md"
-          },
-          {
-            "title": "__Class_A_",
-            "url": "has-namespaces/classes/Class_A.md"
-          }
-        ]
+        "title": "_Enum_A_",
+        "kind": 8,
+        "url": "has-namespaces/enumerations/Enum_A.md"
       },
       {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "InterfaceB",
-            "url": "has-namespaces/interfaces/InterfaceB.md"
-          },
-          {
-            "title": "_Interface_A_",
-            "url": "has-namespaces/interfaces/Interface_A.md"
-          }
-        ]
+        "title": "ClassB",
+        "kind": 128,
+        "url": "has-namespaces/classes/ClassB.md"
       },
       {
-        "title": "Type Aliases",
-        "children": [
-          {
-            "title": "TypeB",
-            "url": "has-namespaces/type-aliases/TypeB.md"
-          },
-          {
-            "title": "_Type_A_",
-            "url": "has-namespaces/type-aliases/Type_A.md"
-          }
-        ]
+        "title": "__Class_A_",
+        "kind": 128,
+        "url": "has-namespaces/classes/Class_A.md"
       },
       {
-        "title": "Variables",
-        "children": [
-          {
-            "title": "_variable_A_",
-            "url": "has-namespaces/variables/variable_A.md"
-          },
-          {
-            "title": "variableB",
-            "url": "has-namespaces/variables/variableB.md"
-          }
-        ]
+        "title": "InterfaceB",
+        "kind": 256,
+        "url": "has-namespaces/interfaces/InterfaceB.md"
       },
       {
-        "title": "Functions",
-        "children": [
-          {
-            "title": "_function_A_",
-            "url": "has-namespaces/functions/function_A.md"
-          },
-          {
-            "title": "functionB",
-            "url": "has-namespaces/functions/functionB.md"
-          }
-        ]
+        "title": "_Interface_A_",
+        "kind": 256,
+        "url": "has-namespaces/interfaces/Interface_A.md"
+      },
+      {
+        "title": "TypeB",
+        "kind": 2097152,
+        "url": "has-namespaces/type-aliases/TypeB.md"
+      },
+      {
+        "title": "_Type_A_",
+        "kind": 2097152,
+        "url": "has-namespaces/type-aliases/Type_A.md"
+      },
+      {
+        "title": "_variable_A_",
+        "kind": 32,
+        "url": "has-namespaces/variables/variable_A.md"
+      },
+      {
+        "title": "variableB",
+        "kind": 32,
+        "url": "has-namespaces/variables/variableB.md"
+      },
+      {
+        "title": "_function_A_",
+        "kind": 64,
+        "url": "has-namespaces/functions/function_A.md"
+      },
+      {
+        "title": "functionB",
+        "kind": 64,
+        "url": "has-namespaces/functions/functionB.md"
       }
     ]
   },
   {
     "title": "has-references",
+    "kind": 2,
     "url": "has-references/index.md",
     "children": [
       {
-        "title": "Functions",
-        "children": [
-          {
-            "title": "defaultFunction",
-            "url": "has-references/functions/defaultFunction.md"
-          }
-        ]
+        "title": "defaultFunction",
+        "kind": 64,
+        "url": "has-references/functions/defaultFunction.md"
       }
     ]
   },
   {
     "title": "has-same-exports",
+    "kind": 2,
     "url": "has-same-exports/index.md",
     "children": [
       {
-        "title": "Classes",
-        "children": [
-          {
-            "title": "SomeClass",
-            "url": "has-same-exports/classes/SomeClass.md"
-          },
-          {
-            "title": "someClass",
-            "url": "has-same-exports/classes/someClass-1.md"
-          }
-        ]
+        "title": "SomeClass",
+        "kind": 128,
+        "url": "has-same-exports/classes/SomeClass.md"
+      },
+      {
+        "title": "someClass",
+        "kind": 128,
+        "url": "has-same-exports/classes/someClass-1.md"
       }
     ]
   },
   {
     "title": "index",
+    "kind": 2,
     "url": "index/index.md",
     "children": [
       {
-        "title": "Classes",
-        "children": [
-          {
-            "title": "SomeClass",
-            "url": "index/classes/SomeClass.md"
-          }
-        ]
+        "title": "SomeClass",
+        "kind": 128,
+        "url": "index/classes/SomeClass.md"
       }
     ]
   }
@@ -1640,44 +1987,54 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 "[
   {
     "title": "42-module-name",
+    "kind": 2,
     "url": "42-module-name/index.md"
   },
   {
     "title": "<internal>",
+    "kind": 2,
     "url": "-internal-/index.md"
   },
   {
     "title": "basic",
+    "kind": 2,
     "url": "basic/index.md",
     "children": [
       {
         "title": "EnumA",
+        "kind": 8,
         "url": "basic/enumerations/EnumA.md"
       },
       {
         "title": "EnumB",
+        "kind": 8,
         "url": "basic/enumerations/EnumB.md"
       },
       {
         "title": "ClassA",
+        "kind": 128,
         "url": "basic/classes/ClassA.md"
       },
       {
         "title": "ClassB",
+        "kind": 128,
         "url": "basic/classes/ClassB.md"
       },
       {
         "title": "InterfaceA",
+        "kind": 256,
         "url": "basic/interfaces/InterfaceA.md"
       },
       {
         "title": "InterfaceB",
+        "kind": 256,
         "url": "basic/interfaces/InterfaceB.md"
       }
     ]
   },
   {
     "title": "has-categories",
+    "kind": 2,
     "url": "has-categories/index.md",
     "children": [
       {
@@ -1685,18 +2042,22 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "children": [
           {
             "title": "CategoryAEnum1",
+            "kind": 8,
             "url": "has-categories/enumerations/CategoryAEnum1.md"
           },
           {
             "title": "CategoryAEnum2",
+            "kind": 8,
             "url": "has-categories/enumerations/CategoryAEnum2.md"
           },
           {
             "title": "CategoryAInterface1",
+            "kind": 256,
             "url": "has-categories/interfaces/CategoryAInterface1.md"
           },
           {
             "title": "CategoryAInterface2",
+            "kind": 256,
             "url": "has-categories/interfaces/CategoryAInterface2.md"
           }
         ]
@@ -1706,18 +2067,22 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "children": [
           {
             "title": "CategoryBEnum1",
+            "kind": 8,
             "url": "has-categories/enumerations/CategoryBEnum1.md"
           },
           {
             "title": "CategoryBEnum2",
+            "kind": 8,
             "url": "has-categories/enumerations/CategoryBEnum2.md"
           },
           {
             "title": "CategoryBInterface1",
+            "kind": 256,
             "url": "has-categories/interfaces/CategoryBInterface1.md"
           },
           {
             "title": "CategoryBInterface2",
+            "kind": 256,
             "url": "has-categories/interfaces/CategoryBInterface2.md"
           }
         ]
@@ -1727,10 +2092,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "children": [
           {
             "title": "UnCategorizedEnum",
+            "kind": 8,
             "url": "has-categories/enumerations/UnCategorizedEnum.md"
           },
           {
             "title": "UnCategorizedInterace",
+            "kind": 256,
             "url": "has-categories/interfaces/UnCategorizedInterace.md"
           }
         ]
@@ -1739,86 +2106,105 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-custom-groups",
+    "kind": 2,
     "url": "has-custom-groups/index.md"
   },
   {
     "title": "has-namespaces",
+    "kind": 2,
     "url": "has-namespaces/index.md",
     "children": [
       {
         "title": "NamespaceB",
+        "kind": 4,
         "url": "has-namespaces/namespaces/NamespaceB/index.md"
       },
       {
         "title": "_Namespace_A_",
+        "kind": 4,
         "url": "has-namespaces/namespaces/Namespace_A/index.md",
         "children": [
           {
             "title": "NestedNamespace",
+            "kind": 4,
             "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
             "children": [
               {
                 "title": "NamespaceInterface",
+                "kind": 256,
                 "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
               }
             ]
           },
           {
             "title": "NamespaceInterface",
+            "kind": 256,
             "url": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
           }
         ]
       },
       {
         "title": "EnumB",
+        "kind": 8,
         "url": "has-namespaces/enumerations/EnumB.md"
       },
       {
         "title": "_Enum_A_",
+        "kind": 8,
         "url": "has-namespaces/enumerations/Enum_A.md"
       },
       {
         "title": "ClassB",
+        "kind": 128,
         "url": "has-namespaces/classes/ClassB.md"
       },
       {
         "title": "__Class_A_",
+        "kind": 128,
         "url": "has-namespaces/classes/Class_A.md"
       },
       {
         "title": "InterfaceB",
+        "kind": 256,
         "url": "has-namespaces/interfaces/InterfaceB.md"
       },
       {
         "title": "_Interface_A_",
+        "kind": 256,
         "url": "has-namespaces/interfaces/Interface_A.md"
       }
     ]
   },
   {
     "title": "has-references",
+    "kind": 2,
     "url": "has-references/index.md"
   },
   {
     "title": "has-same-exports",
+    "kind": 2,
     "url": "has-same-exports/index.md",
     "children": [
       {
         "title": "SomeClass",
+        "kind": 128,
         "url": "has-same-exports/classes/SomeClass.md"
       },
       {
         "title": "someClass",
+        "kind": 128,
         "url": "has-same-exports/classes/someClass-1.md"
       }
     ]
   },
   {
     "title": "index",
+    "kind": 2,
     "url": "index/index.md",
     "children": [
       {
         "title": "SomeClass",
+        "kind": 128,
         "url": "index/classes/SomeClass.md"
       }
     ]
@@ -1830,49 +2216,48 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 "[
   {
     "title": "42-module-name",
+    "kind": 2,
     "url": "42-module-name.md"
   },
   {
     "title": "<internal>",
+    "kind": 2,
     "url": "-internal-.md"
   },
   {
     "title": "basic",
+    "kind": 2,
     "url": "basic.md"
   },
   {
     "title": "has-categories",
+    "kind": 2,
     "url": "has-categories.md"
   },
   {
     "title": "has-custom-groups",
+    "kind": 2,
     "url": "has-custom-groups.md"
   },
   {
     "title": "has-namespaces",
+    "kind": 2,
     "url": "has-namespaces/index.md",
     "children": [
       {
-        "title": "Namespaces",
+        "title": "NamespaceB",
+        "kind": 4,
+        "url": "has-namespaces/namespaces/NamespaceB.md"
+      },
+      {
+        "title": "_Namespace_A_",
+        "kind": 4,
+        "url": "has-namespaces/namespaces/Namespace_A/index.md",
         "children": [
           {
-            "title": "NamespaceB",
-            "url": "has-namespaces/namespaces/NamespaceB.md"
-          },
-          {
-            "title": "_Namespace_A_",
-            "url": "has-namespaces/namespaces/Namespace_A/index.md",
-            "children": [
-              {
-                "title": "Namespaces",
-                "children": [
-                  {
-                    "title": "NestedNamespace",
-                    "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
-                  }
-                ]
-              }
-            ]
+            "title": "NestedNamespace",
+            "kind": 4,
+            "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
           }
         ]
       }
@@ -1880,14 +2265,17 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-references",
+    "kind": 2,
     "url": "has-references.md"
   },
   {
     "title": "has-same-exports",
+    "kind": 2,
     "url": "has-same-exports.md"
   },
   {
     "title": "index",
+    "kind": 2,
     "url": "module_index.md"
   }
 ]"
@@ -1897,39 +2285,48 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 "[
   {
     "title": "42-module-name",
+    "kind": 2,
     "url": "42-module-name.md"
   },
   {
     "title": "<internal>",
+    "kind": 2,
     "url": "-internal-.md"
   },
   {
     "title": "basic",
+    "kind": 2,
     "url": "basic.md"
   },
   {
     "title": "has-categories",
+    "kind": 2,
     "url": "has-categories.md",
     "children": []
   },
   {
     "title": "has-custom-groups",
+    "kind": 2,
     "url": "has-custom-groups.md"
   },
   {
     "title": "has-namespaces",
+    "kind": 2,
     "url": "has-namespaces/index.md",
     "children": [
       {
         "title": "NamespaceB",
+        "kind": 4,
         "url": "has-namespaces/namespaces/NamespaceB.md"
       },
       {
         "title": "_Namespace_A_",
+        "kind": 4,
         "url": "has-namespaces/namespaces/Namespace_A/index.md",
         "children": [
           {
             "title": "NestedNamespace",
+            "kind": 4,
             "url": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
           }
         ]
@@ -1938,14 +2335,17 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   },
   {
     "title": "has-references",
+    "kind": 2,
     "url": "has-references.md"
   },
   {
     "title": "has-same-exports",
+    "kind": 2,
     "url": "has-same-exports.md"
   },
   {
     "title": "index",
+    "kind": 2,
     "url": "module_index.md"
   }
 ]"
@@ -1954,294 +2354,336 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "Accessors",
+    "title": "Enumerations",
     "children": [
       {
-        "title": "ClassWithAccessors",
-        "url": "classes/ClassWithAccessors.md"
+        "title": "BasicEnum",
+        "kind": 8,
+        "url": "enumerations/BasicEnum.md"
+      },
+      {
+        "title": "EnumWithValues",
+        "kind": 8,
+        "url": "enumerations/EnumWithValues.md"
       }
     ]
   },
   {
-    "title": "Basic",
-    "children": [
-      {
-        "title": "BasicClass",
-        "url": "classes/BasicClass.md"
-      }
-    ]
-  },
-  {
-    "title": "Inheritance",
+    "title": "Classes",
     "children": [
       {
         "title": "AbstractClass",
+        "kind": 128,
         "url": "classes/AbstractClass.md"
       },
       {
+        "title": "BasicClass",
+        "kind": 128,
+        "url": "classes/BasicClass.md"
+      },
+      {
+        "title": "CallbacksOptions",
+        "kind": 128,
+        "url": "classes/CallbacksOptions.md"
+      },
+      {
+        "title": "ClassWithAccessors",
+        "kind": 128,
+        "url": "classes/ClassWithAccessors.md"
+      },
+      {
+        "title": "ClassWithConstructorOverloads",
+        "kind": 128,
+        "url": "classes/ClassWithConstructorOverloads.md"
+      },
+      {
+        "title": "ClassWithFlags",
+        "kind": 128,
+        "url": "classes/ClassWithFlags.md"
+      },
+      {
+        "title": "ClassWithModifiers",
+        "kind": 128,
+        "url": "classes/ClassWithModifiers.md"
+      },
+      {
+        "title": "ClassWithTypeParameters",
+        "kind": 128,
+        "url": "classes/ClassWithTypeParameters.md"
+      },
+      {
         "title": "DerivedClassA",
+        "kind": 128,
         "url": "classes/DerivedClassA.md"
       },
       {
         "title": "DerivedClassB",
+        "kind": 128,
         "url": "classes/DerivedClassB.md"
       },
       {
         "title": "DisposableClass",
+        "kind": 128,
         "url": "classes/DisposableClass.md"
       }
     ]
   },
   {
-    "title": "Other",
+    "title": "Interfaces",
     "children": [
       {
-        "title": "BasicEnum",
-        "url": "enumerations/BasicEnum.md"
-      },
-      {
-        "title": "EnumWithValues",
-        "url": "enumerations/EnumWithValues.md"
-      },
-      {
-        "title": "CallbacksOptions",
-        "url": "classes/CallbacksOptions.md"
-      },
-      {
-        "title": "ClassWithFlags",
-        "url": "classes/ClassWithFlags.md"
-      },
-      {
-        "title": "ClassWithModifiers",
-        "url": "classes/ClassWithModifiers.md"
-      },
-      {
         "title": "BasicInterface",
+        "kind": 256,
         "url": "interfaces/BasicInterface.md"
       },
       {
         "title": "CustomEventInterface",
+        "kind": 256,
         "url": "interfaces/CustomEventInterface.md"
       },
       {
         "title": "ExtendedInterface",
+        "kind": 256,
         "url": "interfaces/ExtendedInterface.md"
       },
       {
         "title": "IndexableInterface",
+        "kind": 256,
         "url": "interfaces/IndexableInterface.md"
       },
       {
         "title": "InterfaceWithEventProperties",
+        "kind": 256,
         "url": "interfaces/InterfaceWithEventProperties.md"
       },
       {
         "title": "InterfaceWithFlags",
+        "kind": 256,
         "url": "interfaces/InterfaceWithFlags.md"
       },
       {
         "title": "InterfaceWithTypeParameters",
+        "kind": 256,
         "url": "interfaces/InterfaceWithTypeParameters.md"
-      },
-      {
-        "title": "ArrayOfStuff",
-        "url": "type-aliases/ArrayOfStuff.md"
-      },
-      {
-        "title": "ArrayType",
-        "url": "type-aliases/ArrayType.md"
-      },
-      {
-        "title": "ConditionalType",
-        "url": "type-aliases/ConditionalType.md"
-      },
-      {
-        "title": "ExternalReferenceType",
-        "url": "type-aliases/ExternalReferenceType.md"
-      },
-      {
-        "title": "FunctionType",
-        "url": "type-aliases/FunctionType.md"
-      },
-      {
-        "title": "IndexAccessType",
-        "url": "type-aliases/IndexAccessType.md"
-      },
-      {
-        "title": "IntersectionType",
-        "url": "type-aliases/IntersectionType.md"
-      },
-      {
-        "title": "LiteralType",
-        "url": "type-aliases/LiteralType.md"
-      },
-      {
-        "title": "PartialMappedType",
-        "url": "type-aliases/PartialMappedType.md"
-      },
-      {
-        "title": "PrimitiveType",
-        "url": "type-aliases/PrimitiveType.md"
-      },
-      {
-        "title": "PromiseTypeWithObject",
-        "url": "type-aliases/PromiseTypeWithObject.md"
-      },
-      {
-        "title": "PromiseTypeWithSymbol",
-        "url": "type-aliases/PromiseTypeWithSymbol.md"
-      },
-      {
-        "title": "QueryType",
-        "url": "type-aliases/QueryType.md"
-      },
-      {
-        "title": "ReadonlyMappedType",
-        "url": "type-aliases/ReadonlyMappedType.md"
-      },
-      {
-        "title": "StringLiteralType",
-        "url": "type-aliases/StringLiteralType.md"
-      },
-      {
-        "title": "TupleType",
-        "url": "type-aliases/TupleType.md"
-      },
-      {
-        "title": "TypeWithExternalSymbolLinkMapping",
-        "url": "type-aliases/TypeWithExternalSymbolLinkMapping.md"
-      },
-      {
-        "title": "TypeWithTypeParams",
-        "url": "type-aliases/TypeWithTypeParams.md"
-      },
-      {
-        "title": "UnionType",
-        "url": "type-aliases/UnionType.md"
-      },
-      {
-        "title": "UnionTypeWithTemplateStrings",
-        "url": "type-aliases/UnionTypeWithTemplateStrings.md"
-      },
-      {
-        "title": "__TypeDeclarationWithSpecialCharacters_",
-        "url": "type-aliases/TypeDeclarationWithSpecialCharacters.md"
-      },
-      {
-        "title": "objectLiteralVariable",
-        "url": "variables/objectLiteralVariable.md"
-      },
-      {
-        "title": "objectWithSymbol",
-        "url": "variables/objectWithSymbol.md"
-      },
-      {
-        "title": "someQuery",
-        "url": "variables/someQuery.md"
-      },
-      {
-        "title": "stringVariable",
-        "url": "variables/stringVariable.md"
-      },
-      {
-        "title": "typeOperatorVariable",
-        "url": "variables/typeOperatorVariable.md"
-      },
-      {
-        "title": "basicFunction",
-        "url": "functions/basicFunction.md"
-      },
-      {
-        "title": "functionReturningAFunction",
-        "url": "functions/functionReturningAFunction.md"
-      },
-      {
-        "title": "functionReturningAPromise",
-        "url": "functions/functionReturningAPromise.md"
-      },
-      {
-        "title": "functionReturningAString",
-        "url": "functions/functionReturningAString.md"
-      },
-      {
-        "title": "functionReturningAUnionType",
-        "url": "functions/functionReturningAUnionType.md"
-      },
-      {
-        "title": "functionReturningAnObject",
-        "url": "functions/functionReturningAnObject.md"
-      },
-      {
-        "title": "functionWithComplexParams",
-        "url": "functions/functionWithComplexParams.md"
-      },
-      {
-        "title": "functionWithDefaultParameters",
-        "url": "functions/functionWithDefaultParameters.md"
-      },
-      {
-        "title": "functionWithMultipleSignatures",
-        "url": "functions/functionWithMultipleSignatures.md"
-      },
-      {
-        "title": "functionWithNamedParams",
-        "url": "functions/functionWithNamedParams.md"
-      },
-      {
-        "title": "functionWithNestedParameters",
-        "url": "functions/functionWithNestedParameters.md"
-      },
-      {
-        "title": "functionWithOptionalParameters",
-        "url": "functions/functionWithOptionalParameters.md"
-      },
-      {
-        "title": "functionWithRestParams",
-        "url": "functions/functionWithRestParams.md"
-      },
-      {
-        "title": "functionWithTypeParameters",
-        "url": "functions/functionWithTypeParameters.md"
       }
     ]
   },
   {
-    "title": "Overloads",
+    "title": "Type Aliases",
     "children": [
       {
-        "title": "ClassWithConstructorOverloads",
-        "url": "classes/ClassWithConstructorOverloads.md"
+        "title": "ArrayOfStuff",
+        "kind": 2097152,
+        "url": "type-aliases/ArrayOfStuff.md"
       },
       {
-        "title": "ClassWithTypeParameters",
-        "url": "classes/ClassWithTypeParameters.md"
+        "title": "ArrayType",
+        "kind": 2097152,
+        "url": "type-aliases/ArrayType.md"
+      },
+      {
+        "title": "ConditionalType",
+        "kind": 2097152,
+        "url": "type-aliases/ConditionalType.md"
+      },
+      {
+        "title": "ExternalReferenceType",
+        "kind": 2097152,
+        "url": "type-aliases/ExternalReferenceType.md"
+      },
+      {
+        "title": "FunctionType",
+        "kind": 2097152,
+        "url": "type-aliases/FunctionType.md"
+      },
+      {
+        "title": "IndexAccessType",
+        "kind": 2097152,
+        "url": "type-aliases/IndexAccessType.md"
+      },
+      {
+        "title": "IntersectionType",
+        "kind": 2097152,
+        "url": "type-aliases/IntersectionType.md"
+      },
+      {
+        "title": "LiteralType",
+        "kind": 2097152,
+        "url": "type-aliases/LiteralType.md"
+      },
+      {
+        "title": "PartialMappedType",
+        "kind": 2097152,
+        "url": "type-aliases/PartialMappedType.md"
+      },
+      {
+        "title": "PrimitiveType",
+        "kind": 2097152,
+        "url": "type-aliases/PrimitiveType.md"
+      },
+      {
+        "title": "PromiseTypeWithObject",
+        "kind": 2097152,
+        "url": "type-aliases/PromiseTypeWithObject.md"
+      },
+      {
+        "title": "PromiseTypeWithSymbol",
+        "kind": 2097152,
+        "url": "type-aliases/PromiseTypeWithSymbol.md"
+      },
+      {
+        "title": "QueryType",
+        "kind": 2097152,
+        "url": "type-aliases/QueryType.md"
+      },
+      {
+        "title": "ReadonlyMappedType",
+        "kind": 2097152,
+        "url": "type-aliases/ReadonlyMappedType.md"
+      },
+      {
+        "title": "StringLiteralType",
+        "kind": 2097152,
+        "url": "type-aliases/StringLiteralType.md"
+      },
+      {
+        "title": "TupleType",
+        "kind": 2097152,
+        "url": "type-aliases/TupleType.md"
+      },
+      {
+        "title": "TypeWithExternalSymbolLinkMapping",
+        "kind": 2097152,
+        "url": "type-aliases/TypeWithExternalSymbolLinkMapping.md"
+      },
+      {
+        "title": "TypeWithTypeParams",
+        "kind": 2097152,
+        "url": "type-aliases/TypeWithTypeParams.md"
+      },
+      {
+        "title": "UnionType",
+        "kind": 2097152,
+        "url": "type-aliases/UnionType.md"
+      },
+      {
+        "title": "UnionTypeWithTemplateStrings",
+        "kind": 2097152,
+        "url": "type-aliases/UnionTypeWithTemplateStrings.md"
+      },
+      {
+        "title": "__TypeDeclarationWithSpecialCharacters_",
+        "kind": 2097152,
+        "url": "type-aliases/TypeDeclarationWithSpecialCharacters.md"
+      }
+    ]
+  },
+  {
+    "title": "Variables",
+    "children": [
+      {
+        "title": "objectLiteralVariable",
+        "kind": 32,
+        "url": "variables/objectLiteralVariable.md"
+      },
+      {
+        "title": "objectWithSymbol",
+        "kind": 32,
+        "url": "variables/objectWithSymbol.md"
+      },
+      {
+        "title": "someQuery",
+        "kind": 32,
+        "url": "variables/someQuery.md"
+      },
+      {
+        "title": "stringVariable",
+        "kind": 32,
+        "url": "variables/stringVariable.md"
+      },
+      {
+        "title": "typeOperatorVariable",
+        "kind": 32,
+        "url": "variables/typeOperatorVariable.md"
+      }
+    ]
+  },
+  {
+    "title": "Functions",
+    "children": [
+      {
+        "title": "basicFunction",
+        "kind": 64,
+        "url": "functions/basicFunction.md"
+      },
+      {
+        "title": "functionReturningAFunction",
+        "kind": 64,
+        "url": "functions/functionReturningAFunction.md"
+      },
+      {
+        "title": "functionReturningAPromise",
+        "kind": 64,
+        "url": "functions/functionReturningAPromise.md"
+      },
+      {
+        "title": "functionReturningAString",
+        "kind": 64,
+        "url": "functions/functionReturningAString.md"
+      },
+      {
+        "title": "functionReturningAUnionType",
+        "kind": 64,
+        "url": "functions/functionReturningAUnionType.md"
+      },
+      {
+        "title": "functionReturningAnObject",
+        "kind": 64,
+        "url": "functions/functionReturningAnObject.md"
+      },
+      {
+        "title": "functionWithComplexParams",
+        "kind": 64,
+        "url": "functions/functionWithComplexParams.md"
+      },
+      {
+        "title": "functionWithDefaultParameters",
+        "kind": 64,
+        "url": "functions/functionWithDefaultParameters.md"
+      },
+      {
+        "title": "functionWithMultipleSignatures",
+        "kind": 64,
+        "url": "functions/functionWithMultipleSignatures.md"
+      },
+      {
+        "title": "functionWithNamedParams",
+        "kind": 64,
+        "url": "functions/functionWithNamedParams.md"
+      },
+      {
+        "title": "functionWithNestedParameters",
+        "kind": 64,
+        "url": "functions/functionWithNestedParameters.md"
+      },
+      {
+        "title": "functionWithOptionalParameters",
+        "kind": 64,
+        "url": "functions/functionWithOptionalParameters.md"
+      },
+      {
+        "title": "functionWithRestParams",
+        "kind": 64,
+        "url": "functions/functionWithRestParams.md"
+      },
+      {
+        "title": "functionWithTypeParameters",
+        "kind": 64,
+        "url": "functions/functionWithTypeParameters.md"
       }
     ]
   }
 ]"
 `;
 
-exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[
-  {
-    "title": "Accessors",
-    "children": []
-  },
-  {
-    "title": "Basic",
-    "children": []
-  },
-  {
-    "title": "Inheritance",
-    "children": []
-  },
-  {
-    "title": "Other",
-    "children": []
-  },
-  {
-    "title": "Overloads",
-    "children": []
-  }
-]"
-`;
+exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `"[]"`;

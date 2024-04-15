@@ -27,7 +27,10 @@ const options = {
   excludeInternal: true,
   excludeExternals: true,
   excludePrivate: true,
-  categorizeByGroup: false,
+  navigation: {
+    includeCategories: true,
+    includeGroups: false,
+  },
   externalSymbolLinkMappings: {
     typedoc: {
       ArrayType: 'https://typedoc.org/api/types/Models.ArrayType.html',
@@ -79,7 +82,7 @@ const options = {
       ReflectionGroup:
         'https://typedoc.org/api/classes/Models.ReflectionGroup.html',
       ReflectionKind:
-        'https://typedoc.org/api/classes/Models.ReflectionKind.html',
+        'https://typedoc.org/api/enums/Models.ReflectionKind-1.html',
       ReflectionType:
         'https://typedoc.org/api/classes/Models.ReflectionType.html',
       SignatureReflection:

@@ -75,6 +75,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
 "[
   {
     "title": "module-1",
+    "kind": 2,
     "url": "module-1/README.md",
     "children": [
       {
@@ -82,6 +83,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
         "children": [
           {
             "title": "SomeInterface",
+            "kind": 256,
             "url": "module-1/interfaces/SomeInterface.md"
           }
         ]
@@ -90,6 +92,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
   },
   {
     "title": "module-2",
+    "kind": 2,
     "url": "module-2/README.md",
     "children": [
       {
@@ -97,6 +100,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
         "children": [
           {
             "title": "constA",
+            "kind": 32,
             "url": "module-2/variables/constA.md"
           }
         ]

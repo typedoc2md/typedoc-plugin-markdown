@@ -11,7 +11,11 @@ const config: Record<string, Fixture> = {
       hideBreadcrumbs: true,
     },
     options: [
-      {},
+      {
+        navigation: {
+          includeGroups: true,
+        },
+      },
       {
         readme: 'none',
         parametersFormat: 'table',
@@ -21,6 +25,9 @@ const config: Record<string, Fixture> = {
         useCodeBlocks: true,
         expandParameters: true,
         memberPageTitle: '{name}',
+        navigation: {
+          includeGroups: false,
+        },
       },
     ],
   },
@@ -46,7 +53,7 @@ const config: Record<string, Fixture> = {
   },
   modules: {
     only: false,
-    entryPoints: '/modules/**/*.ts',
+    entryPoints: ['/modules/module-1', '/modules/module-2'],
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       readme: 'none',
@@ -54,8 +61,25 @@ const config: Record<string, Fixture> = {
       hideBreadcrumbs: true,
       disableSources: true,
       excludeScopesInPaths: true,
+      entryPointStrategy: 'expand',
     },
-    options: [{}, { flattenOutputFiles: true }],
+    options: [
+      {
+        navigation: {
+          includeFolders: true,
+          includeGroups: true,
+          includeCategories: true,
+        },
+      },
+      {
+        flattenOutputFiles: true,
+        navigation: {
+          includeFolders: false,
+          includeGroups: true,
+          includeCategories: true,
+        },
+      },
+    ],
   },
   groups: {
     only: false,
@@ -68,15 +92,23 @@ const config: Record<string, Fixture> = {
     options: [
       {
         categorizeByGroup: true,
+        navigation: {
+          includeGroups: false,
+          includeCategories: true,
+        },
       },
       {
         readme: 'none',
         membersWithOwnFile: ['Class', 'Interface', 'Enum'],
-        categorizeByGroup: false,
         excludeGroups: true,
         useHTMLAnchors: true,
         indexFormat: 'table',
         indexPageTitle: '{projectName}',
+        categorizeByGroup: false,
+        navigation: {
+          includeGroups: false,
+          includeCategories: true,
+        },
       },
     ],
   },
@@ -113,6 +145,9 @@ const config: Record<string, Fixture> = {
       name: 'packages-example',
       entryFileName: 'index.md',
       disableSources: true,
+      navigation: {
+        includeGroups: true,
+      },
     },
     options: [
       {},
@@ -147,6 +182,9 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       fileExtension: '.mdx',
       name: '@scope/entryfile',
+      navigation: {
+        includeGroups: true,
+      },
     },
     options: [
       { entryFileName: 'README.md' },
@@ -182,6 +220,9 @@ const config: Record<string, Fixture> = {
         titleLink: 'http://www.google.com',
         options: './test/fixtures/typedoc.text.cjs',
         propertiesFormat: 'table',
+        navigation: {
+          includeGroups: true,
+        },
       },
     ],
   },

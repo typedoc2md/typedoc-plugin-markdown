@@ -1,0 +1,37 @@
+# Navigation
+
+If required, a navigation structure can be provided to the output. This is useful if you want to provide a custom sidebar or navigation bar.
+
+## Usage
+
+The navigation structure is available on the [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent#navigation) and can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
+
+The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
+
+```ts
+export function load(app: MarkdownApplication) {
+  app.renderer.postRenderAsyncJobs.push(
+    async (renderer: MarkdownRendererEvent) => {
+      // The navigation JSON structure is available on the navigation object.
+      const navigation = renderer.navigation;
+
+      // This can be parsed to something else or written straight to a file:
+      fs.writeFileSync('navigation.json', JSON.stringify(navigation));
+    },
+  );
+}
+```
+
+## Options
+
+The navigation implementation utilizes the [`navigation`](https://typedoc.org/options/output/#navigation) core TypeDoc option.
+
+```json
+{
+  "navigation": {
+    "includeFolders": true,
+    "includeGroups": false,
+    "includeCategories": false
+  }
+}
+```

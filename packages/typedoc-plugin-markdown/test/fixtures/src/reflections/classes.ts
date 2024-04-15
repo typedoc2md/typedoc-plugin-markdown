@@ -4,8 +4,6 @@
 
 /**
  * Comments for BasicClass
- *
- * @category Basic
  */
 export class BasicClass {
   /**
@@ -29,10 +27,6 @@ export class BasicClass {
   };
 }
 
-/**
- * @category Inheritance
- */
-
 export abstract class AbstractClass {
   /**
    * Comments for abstractProp
@@ -47,8 +41,6 @@ export abstract class AbstractClass {
 
 /**
  * Comments for DerivedClassA
- *
- * @category Inheritance
  */
 export class DerivedClassA extends AbstractClass {
   abstractProp = 'abstractProp';
@@ -63,8 +55,6 @@ export class DerivedClassA extends AbstractClass {
 
 /**
  * Comments for DerivedClassB
- *
- * @category Inheritance
  */
 export class DerivedClassB extends AbstractClass {
   abstractProp = 'abstractProp';
@@ -73,18 +63,12 @@ export class DerivedClassB extends AbstractClass {
   }
 }
 
-/**
- * @category Inheritance
- */
-
 export class DisposableClass implements Disposable {
   [Symbol.dispose]() {}
 }
 
 /**
  * Comments for ClassWithConstructorOverloads
- *
- * @category Overloads
  */
 export class ClassWithConstructorOverloads {
   /**
@@ -107,15 +91,11 @@ export class ClassWithConstructorOverloads {
  *
  * @param A Comments for param A
  * @param B Comments for param B
- *
- * @category Overloads
  */
 export class ClassWithTypeParameters<A, B extends string, C = boolean> {}
 
 /**
  * Comments for ClassWithAccessors
- *
- * @category Accessors
  */
 export class ClassWithAccessors {
   private privateProp: string;

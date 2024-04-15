@@ -11,6 +11,7 @@ export default {
     title: 'Guides',
   },
   'customizing-output': '',
+  navigation: '',
   '-- Support': {
     type: 'separator',
     title: 'Support',

@@ -70,7 +70,14 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
       async (output: MarkdownRendererEvent) => {
         if (output.navigation) {
           const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
-
+          const sidebarJSONPath = path.resolve(
+            outputDir,
+            'typedoc-sidebar.json',
+          );
+          fs.writeFileSync(
+            sidebarJSONPath,
+            JSON.stringify(output.navigation, null, 2),
+          );
           const baseDir = path
             .relative(siteDir, outputDir)
             .split(path.sep)

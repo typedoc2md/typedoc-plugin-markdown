@@ -47,7 +47,7 @@ function getNavigationItem(
   if (navigationItem.children?.length) {
     return {
       type: 'category',
-      label: navigationItem.title,
+      label: `${navigationItem.title}`,
       items: getSidebar(
         navigationItem.children,
         basePath,
@@ -62,7 +62,7 @@ function getNavigationItem(
     ? {
         type: 'doc',
         id,
-        label: navigationItem.title,
+        label: `${navigationItem.title}`,
       }
     : null;
 }

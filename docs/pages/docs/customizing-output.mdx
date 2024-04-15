@@ -141,23 +141,3 @@ Use my new helper - ${this.helpers.newHelper()}
 ```
 
 Please see the [Custom Theme API](/api-docs#custom-theme) for more information.
-
-## Navigation
-
-If required, a navigation structure can be provided to the output. This is useful if you want to provide a custom sidebar or navigation bar.
-
-This can be achieved by utilising `postRenderAsyncJobs` on the renderer.
-
-```ts
-export function load(app: MarkdownApplication) {
-  app.renderer.postRenderAsyncJobs.push(
-    async (renderer: MarkdownRendererEvent) => {
-      // The navigation JSON structure is available on the output.
-      const navigation = renderer.navigation;
-
-      // This can be parsed to something else or written straight to a file:
-      fs.writeFileSync('navigation.json', JSON.stringify(navigation));
-    },
-  );
-}
-```

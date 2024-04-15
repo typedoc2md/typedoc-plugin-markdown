@@ -18,7 +18,7 @@ class MyMarkdownTheme extends MarkdownTheme {
 
 ## Constructors
 
-### new MarkdownThemeContext(theme, page, options)
+### new MarkdownThemeContext()
 
 > **new MarkdownThemeContext**(`theme`, `page`, `options`): [`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)
 
@@ -379,8 +379,6 @@ Renders enum members as a table.
 ##### hierarchy()
 
 > **hierarchy**: (`model`, `options`) => `string`
-
-Renders an declaration hierachy section.
 
 ###### Parameters
 
@@ -1140,7 +1138,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReflectionKind`]( https://typedoc.org/api/classes/Models.ReflectionKind.html ) |
+| `model` | [`ReflectionKind`]( https://typedoc.org/api/enums/Models.ReflectionKind-1.html ) |
 
 ##### Returns
 

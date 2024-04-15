@@ -77,6 +77,7 @@ function writeMarkdown(
     outputFileStrategy,
     optionDir,
   );
+
   spawn(
     'typedoc',
     [
@@ -85,11 +86,11 @@ function writeMarkdown(
         path.join(__dirname, 'typedoc.cjs'),
         '-logLevel',
         'Warn',
-        '-entryPoints',
-        [`${process.cwd()}/test/fixtures/src/${entryPoints}`],
+
         '-out',
         fullPath,
       ],
+      ...toEntryPoints(entryPoints),
       ...objectToOptions(options),
     ],
     {
@@ -115,18 +116,31 @@ export function writeHtml(key: string, entryPoints: string[]) {
         path.join(__dirname, 'typedoc.cjs'),
         '-logLevel',
         'None',
-        '-entryPoints',
-        `${process.cwd()}/test/fixtures/src/${entryPoints}`,
         '-out',
         fullPath,
         '--readme',
         'none',
+        '--entryPointStrategy',
+        'expand',
       ],
+      ...toEntryPoints(entryPoints),
     ],
     {
       stdio: 'inherit',
     },
   );
+}
+
+function toEntryPoints(entryPoints: string | string[]) {
+  if (Array.isArray(entryPoints)) {
+    return entryPoints.reduce((prev, curr) => {
+      return [
+        ...prev,
+        ...[`--entryPoints`, `${process.cwd()}/test/fixtures/src/${curr}`],
+      ];
+    }, []);
+  }
+  return ['--entryPoints', `${process.cwd()}/test/fixtures/src/${entryPoints}`];
 }
 
 function objectToOptions(obj: any) {
@@ -144,7 +158,7 @@ function objectToOptions(obj: any) {
         return [
           ...prev,
           ...Object.entries(curr[1]).reduce((prev1: any, curr1: any) => {
-            return [...prev1, ...[`-${curr[0]}.${curr1[0]}`, true]];
+            return [...prev1, ...[`-${curr[0]}.${curr1[0]}`, curr1[1]]];
           }, []),
         ];
       }
