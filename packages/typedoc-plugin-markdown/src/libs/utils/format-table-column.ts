@@ -1,4 +1,4 @@
-export function formatTableComments(str: string) {
+export function formatTableColumn(str: string) {
   return str
     .replace(/\|/g, '\\|')
     .replace(/\n(?=(?:[^`]*`[^`]*`)*[^`]*$)/gi, '<br />')

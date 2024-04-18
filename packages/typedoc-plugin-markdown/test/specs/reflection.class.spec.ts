@@ -5,6 +5,22 @@ describe(`Class Reflection`, () => {
     expectFileToEqual('reflections', 'members', 'classes/BasicClass.md');
   });
 
+  test(`should compile class with simple props`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithSimpleProps.md',
+    );
+  });
+
+  test(`should compile class with complex props`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithComplexProps.md',
+    );
+  });
+
   test(`should compile abstract class`, () => {
     expectFileToEqual('reflections', 'members', 'classes/AbstractClass.md');
   });

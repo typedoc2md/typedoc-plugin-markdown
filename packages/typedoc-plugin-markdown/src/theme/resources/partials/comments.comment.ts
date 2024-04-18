@@ -1,5 +1,5 @@
 import { bold, heading } from '@plugin/libs/markdown';
-import { camelToTitleCase, formatTableComments } from '@plugin/libs/utils';
+import { camelToTitleCase, formatTableColumn } from '@plugin/libs/utils';
 import { sanitizeComments } from '@plugin/libs/utils/sanitize-comments';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { Comment } from 'typedoc';
@@ -34,6 +34,11 @@ export function comment(
   if (opts.showTags && model.blockTags?.length) {
     const tags = model.blockTags
       .filter((tag) => tag.tag !== '@returns')
+      .filter(
+        (tag) =>
+          !opts.isTableColumn ||
+          (opts.isTableColumn && tag.tag !== '@defaultValue'),
+      )
       .map((tag) => {
         const tagName = tag.tag.substring(1);
         const tagText = camelToTitleCase(tagName);
@@ -54,5 +59,5 @@ export function comment(
     ? sanitizeComments(output)
     : output;
 
-  return opts.isTableColumn ? formatTableComments(parsedOutput) : parsedOutput;
+  return opts.isTableColumn ? formatTableColumn(parsedOutput) : parsedOutput;
 }

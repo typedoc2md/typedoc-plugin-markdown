@@ -102,6 +102,7 @@ import { getHierarchyType } from './helpers/get-hierarchy-type';
 import { getKeyword } from './helpers/get-keyword';
 import { getModifier } from './helpers/get-modifier';
 import { getParameterDefaultValue } from './helpers/get-parameter-default-value';
+import { getPropertyDefaultValue } from './helpers/get-property-default-value';
 import { getReturnType } from './helpers/get-return-type';
 import { isGroupKind } from './helpers/is-group-kind';
 
@@ -609,6 +610,8 @@ export const helpers = (context: MarkdownThemeContext) => {
       getModifier.apply(context, [model]) as string | null,
     getParameterDefaultValue: (model: ParameterReflection) =>
       getParameterDefaultValue.apply(context, [model]) as string,
+    getPropertyDefaultValue: (model: DeclarationReflection) =>
+      getPropertyDefaultValue.apply(context, [model]) as string | null,
     getReturnType: (model?: SomeType | undefined) =>
       getReturnType.apply(context, [model]) as string,
     isGroupKind: (model: DeclarationReflection | SignatureReflection) =>

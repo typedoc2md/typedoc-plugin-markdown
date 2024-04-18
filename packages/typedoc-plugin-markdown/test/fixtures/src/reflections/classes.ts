@@ -7,12 +7,49 @@
  */
 export class BasicClass {
   /**
-   * Comments for prop1
+   * Comments for prop
    */
-  someProp = 'someProp';
+  prop: string;
   /**
-   *
+   * Comments for method
    */
+  method() {
+    return this.prop;
+  }
+}
+
+/**
+ * Comments for ClassWithSimpleProps
+ */
+export class ClassWithSimpleProps {
+  /**
+   * Comments for propA
+   */
+  propA = 'propAValue';
+  /**
+   * Comments for propB
+   *
+   * @defaultValue 'propBDefaultValue'
+   */
+  propB = 'propBValue';
+  /**
+   * Comments for propB
+   *
+   * @defaultValue 'propCDefaultValue'
+   */
+  propC: string;
+  /**
+   * Comments for propE
+   *
+   * @tag SomeTag
+   */
+  propD: string;
+}
+
+/**
+ * Comments for ClassWithComplexProps
+ */
+export class ClassWithComplexProps {
   objecLiteralProp = {
     /**
      * Comments for someFunction

@@ -2392,6 +2392,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "classes/ClassWithAccessors.md"
       },
       {
+        "title": "ClassWithComplexProps",
+        "kind": 128,
+        "path": "classes/ClassWithComplexProps.md"
+      },
+      {
         "title": "ClassWithConstructorOverloads",
         "kind": 128,
         "path": "classes/ClassWithConstructorOverloads.md"
@@ -2405,6 +2410,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "ClassWithModifiers",
         "kind": 128,
         "path": "classes/ClassWithModifiers.md"
+      },
+      {
+        "title": "ClassWithSimpleProps",
+        "kind": 128,
+        "path": "classes/ClassWithSimpleProps.md"
       },
       {
         "title": "ClassWithTypeParameters",

@@ -1,7 +1,8 @@
 import { backTicks, strikeThrough, table } from '@plugin/libs/markdown';
-import { removeLineBreaks } from '@plugin/libs/utils';
+import { formatTableColumn, removeLineBreaks } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
+import { getPropertyDefaultValue } from '../helpers/get-property-default-value';
 
 /**
  * Renders a collection of properties in a table.
@@ -24,6 +25,9 @@ export function declarationsTable(
   const hasFlags = flags.some((value) => Boolean(value));
   const hasOverrides = model.some((prop) => Boolean(prop.overwrites));
   const hasInheritance = model.some((prop) => Boolean(prop.inheritedFrom));
+  const hasDefaults = model.some((prop) =>
+    Boolean(getPropertyDefaultValue(prop)),
+  );
   const hasComments = model.some(
     (prop) => prop.comment?.blockTags?.length || prop?.comment?.summary?.length,
   );
@@ -45,6 +49,10 @@ export function declarationsTable(
   }
 
   headers.push(this.getText('label.type'));
+
+  if (hasDefaults) {
+    headers.push(this.getText('label.defaultValue'));
+  }
 
   if (hasComments) {
     headers.push(this.getText('label.description'));
@@ -102,6 +110,14 @@ export function declarationsTable(
           )
         : this.partials.someType(propertyType);
       row.push(removeLineBreaks(type));
+    }
+
+    if (hasDefaults) {
+      row.push(
+        formatTableColumn(
+          getPropertyDefaultValue(property) || backTicks('undefined'),
+        ),
+      );
     }
 
     if (hasComments) {

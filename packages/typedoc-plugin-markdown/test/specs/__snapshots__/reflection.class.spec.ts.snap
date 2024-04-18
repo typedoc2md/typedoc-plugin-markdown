@@ -28,7 +28,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:34](http://source-url)
+[classes.ts:71](http://source-url)
 
 ## Methods
 
@@ -44,7 +44,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:39](http://source-url)
+[classes.ts:76](http://source-url)
 "
 `;
 
@@ -90,7 +90,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:39](http://source-url)
+[classes.ts:76](http://source-url)
 "
 `;
 
@@ -111,45 +111,31 @@ Comments for BasicClass
 
 ## Properties
 
-### objecLiteralProp
+### prop
 
-> **objecLiteralProp**: \`object\`
+> **prop**: \`string\`
 
-#### someFunction()
-
-> **someFunction**: (\`a\`) => \`string\`
-
-Comments for someFunction
-
-##### Parameters
-
-• **a**: \`string\`
-
-##### Returns
-
-\`string\`
-
-#### someProp
-
-> **someProp**: \`string\` = \`'someProp'\`
-
-Comments for someProp
-
-#### Source
-
-[classes.ts:16](http://source-url)
-
-***
-
-### someProp
-
-> **someProp**: \`string\` = \`'someProp'\`
-
-Comments for prop1
+Comments for prop
 
 #### Source
 
 [classes.ts:12](http://source-url)
+
+## Methods
+
+### method()
+
+> **method**(): \`string\`
+
+Comments for method
+
+#### Returns
+
+\`string\`
+
+#### Source
+
+[classes.ts:16](http://source-url)
 "
 `;
 
@@ -174,10 +160,25 @@ new BasicClass(): BasicClass
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`objecLiteralProp\` | \`object\` | - |
-| \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | Comments for someFunction |
-| \`objecLiteralProp.someProp\` | \`string\` | Comments for someProp |
-| \`someProp\` | \`string\` | Comments for prop1 |
+| \`prop\` | \`string\` | Comments for prop |
+
+## Methods
+
+### method()
+
+\`\`\`ts
+method(): string
+\`\`\`
+
+Comments for method
+
+#### Returns
+
+\`string\`
+
+#### Source
+
+[classes.ts:16](http://source-url)
 "
 `;
 
@@ -204,7 +205,7 @@ Comments for ClassWithAccessors
 
 #### Source
 
-[classes.ts:101](http://source-url)
+[classes.ts:138](http://source-url)
 
 ## Accessors
 
@@ -230,7 +231,7 @@ Param comments
 
 #### Source
 
-[classes.ts:105](http://source-url)
+[classes.ts:142](http://source-url)
 
 ***
 
@@ -244,7 +245,7 @@ Param comments
 
 #### Source
 
-[classes.ts:121](http://source-url)
+[classes.ts:158](http://source-url)
 
 ***
 
@@ -258,7 +259,7 @@ Param comments
 
 #### Source
 
-[classes.ts:117](http://source-url)
+[classes.ts:154](http://source-url)
 "
 `;
 
@@ -313,7 +314,7 @@ Comments for setter
 
 #### Source
 
-[classes.ts:105](http://source-url)
+[classes.ts:142](http://source-url)
 
 ***
 
@@ -331,7 +332,7 @@ set noGetter(x: string): void
 
 #### Source
 
-[classes.ts:121](http://source-url)
+[classes.ts:158](http://source-url)
 
 ***
 
@@ -347,7 +348,81 @@ get noSetter(): string
 
 #### Source
 
-[classes.ts:117](http://source-url)
+[classes.ts:154](http://source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with complex props: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Class: ClassWithComplexProps
+
+Comments for ClassWithComplexProps
+
+## Constructors
+
+### new ClassWithComplexProps()
+
+> **new ClassWithComplexProps**(): [\`ClassWithComplexProps\`](ClassWithComplexProps.md)
+
+#### Returns
+
+[\`ClassWithComplexProps\`](ClassWithComplexProps.md)
+
+## Properties
+
+### objecLiteralProp
+
+> **objecLiteralProp**: \`object\`
+
+#### someFunction()
+
+> **someFunction**: (\`a\`) => \`string\`
+
+Comments for someFunction
+
+##### Parameters
+
+• **a**: \`string\`
+
+##### Returns
+
+\`string\`
+
+#### someProp
+
+> **someProp**: \`string\` = \`'someProp'\`
+
+Comments for someProp
+
+#### Source
+
+[classes.ts:53](http://source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with complex props: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# ClassWithComplexProps
+
+Comments for ClassWithComplexProps
+
+## Constructors
+
+### new ClassWithComplexProps()
+
+\`\`\`ts
+new ClassWithComplexProps(): ClassWithComplexProps
+\`\`\`
+
+#### Returns
+
+[\`ClassWithComplexProps\`](ClassWithComplexProps.md)
+
+## Properties
+
+| Property | Type | Default value |
+| :------ | :------ | :------ |
+| \`objecLiteralProp\` | \`object\` | \`...\` |
+| \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | \`...\` |
+| \`objecLiteralProp.someProp\` | \`string\` | \`'someProp'\` |
 "
 `;
 
@@ -376,7 +451,7 @@ Comments for x number
 
 #### Source
 
-[classes.ts:79](http://source-url)
+[classes.ts:116](http://source-url)
 
 ### new ClassWithConstructorOverloads()
 
@@ -394,7 +469,7 @@ Comments for x string
 
 #### Source
 
-[classes.ts:84](http://source-url)
+[classes.ts:121](http://source-url)
 
 ### new ClassWithConstructorOverloads()
 
@@ -410,7 +485,7 @@ Comments for x string
 
 #### Source
 
-[classes.ts:85](http://source-url)
+[classes.ts:122](http://source-url)
 "
 `;
 
@@ -440,7 +515,7 @@ new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOve
 
 #### Source
 
-[classes.ts:79](http://source-url)
+[classes.ts:116](http://source-url)
 
 ### new ClassWithConstructorOverloads()
 
@@ -460,7 +535,7 @@ new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
 
 #### Source
 
-[classes.ts:84](http://source-url)
+[classes.ts:121](http://source-url)
 
 ### new ClassWithConstructorOverloads()
 
@@ -480,7 +555,7 @@ new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
 
 #### Source
 
-[classes.ts:85](http://source-url)
+[classes.ts:122](http://source-url)
 "
 `;
 
@@ -509,7 +584,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:180](http://source-url)
+[classes.ts:217](http://source-url)
 
 ***
 
@@ -521,7 +596,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:182](http://source-url)
+[classes.ts:219](http://source-url)
 
 ## Methods
 
@@ -537,7 +612,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:184](http://source-url)
+[classes.ts:221](http://source-url)
 
 ***
 
@@ -553,7 +628,7 @@ Comment for ClassWithFlags
 
 #### Source
 
-[classes.ts:188](http://source-url)
+[classes.ts:225](http://source-url)
 "
 `;
 
@@ -597,7 +672,7 @@ expermintalMethod(): void
 
 #### Source
 
-[classes.ts:184](http://source-url)
+[classes.ts:221](http://source-url)
 
 ***
 
@@ -615,7 +690,7 @@ protected internalMethod(): void
 
 #### Source
 
-[classes.ts:188](http://source-url)
+[classes.ts:225](http://source-url)
 "
 `;
 
@@ -646,7 +721,7 @@ Comments for privateProp
 
 #### Source
 
-[classes.ts:138](http://source-url)
+[classes.ts:175](http://source-url)
 
 ***
 
@@ -658,7 +733,7 @@ Comments for protectedProp
 
 #### Source
 
-[classes.ts:148](http://source-url)
+[classes.ts:185](http://source-url)
 
 ***
 
@@ -670,7 +745,7 @@ Comments for propWithDefault
 
 #### Source
 
-[classes.ts:153](http://source-url)
+[classes.ts:190](http://source-url)
 
 ***
 
@@ -682,7 +757,7 @@ Comments for abstractProperty
 
 #### Source
 
-[classes.ts:143](http://source-url)
+[classes.ts:180](http://source-url)
 
 ***
 
@@ -694,7 +769,7 @@ Comments for staticProp
 
 #### Source
 
-[classes.ts:133](http://source-url)
+[classes.ts:170](http://source-url)
 
 ## Methods
 
@@ -710,7 +785,7 @@ Comment for privateMethod
 
 #### Source
 
-[classes.ts:165](http://source-url)
+[classes.ts:202](http://source-url)
 
 ***
 
@@ -726,7 +801,7 @@ Comment for publicMethod
 
 #### Source
 
-[classes.ts:158](http://source-url)
+[classes.ts:195](http://source-url)
 
 ***
 
@@ -742,7 +817,7 @@ Comment for staticMethod
 
 #### Source
 
-[classes.ts:170](http://source-url)
+[classes.ts:207](http://source-url)
 "
 `;
 
@@ -767,13 +842,13 @@ new ClassWithModifiers(): ClassWithModifiers
 
 ## Properties
 
-| Property | Modifier | Type | Description |
-| :------ | :------ | :------ | :------ |
-| \`privateProp\` | \`private\` | \`string\` | Comments for privateProp |
-| \`protectedProp\` | \`protected\` | \`string\` | Comments for protectedProp |
-| \`publicPropWithDefault\` | \`public\` | \`string\` | Comments for propWithDefault |
-| \`readonlyProp\` | \`readonly\` | \`string\` | Comments for abstractProperty |
-| \`staticProp\` | \`static\` | \`string\` | Comments for staticProp |
+| Property | Modifier | Type | Default value | Description |
+| :------ | :------ | :------ | :------ | :------ |
+| \`privateProp\` | \`private\` | \`string\` | \`undefined\` | Comments for privateProp |
+| \`protectedProp\` | \`protected\` | \`string\` | \`undefined\` | Comments for protectedProp |
+| \`publicPropWithDefault\` | \`public\` | \`string\` | \`'propWithDefault'\` | Comments for propWithDefault |
+| \`readonlyProp\` | \`readonly\` | \`string\` | \`undefined\` | Comments for abstractProperty |
+| \`staticProp\` | \`static\` | \`string\` | \`undefined\` | Comments for staticProp |
 
 ## Methods
 
@@ -791,7 +866,7 @@ Comment for privateMethod
 
 #### Source
 
-[classes.ts:165](http://source-url)
+[classes.ts:202](http://source-url)
 
 ***
 
@@ -809,7 +884,7 @@ Comment for publicMethod
 
 #### Source
 
-[classes.ts:158](http://source-url)
+[classes.ts:195](http://source-url)
 
 ***
 
@@ -827,7 +902,116 @@ Comment for staticMethod
 
 #### Source
 
-[classes.ts:170](http://source-url)
+[classes.ts:207](http://source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with simple props: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Class: ClassWithSimpleProps
+
+Comments for ClassWithSimpleProps
+
+## Constructors
+
+### new ClassWithSimpleProps()
+
+> **new ClassWithSimpleProps**(): [\`ClassWithSimpleProps\`](ClassWithSimpleProps.md)
+
+#### Returns
+
+[\`ClassWithSimpleProps\`](ClassWithSimpleProps.md)
+
+## Properties
+
+### propA
+
+> **propA**: \`string\` = \`'propAValue'\`
+
+Comments for propA
+
+#### Source
+
+[classes.ts:28](http://source-url)
+
+***
+
+### propB
+
+> **propB**: \`string\` = \`'propBValue'\`
+
+Comments for propB
+
+#### Default Value
+
+\`\`\`ts
+'propBDefaultValue'
+\`\`\`
+
+#### Source
+
+[classes.ts:34](http://source-url)
+
+***
+
+### propC
+
+> **propC**: \`string\`
+
+Comments for propB
+
+#### Default Value
+
+\`\`\`ts
+'propCDefaultValue'
+\`\`\`
+
+#### Source
+
+[classes.ts:40](http://source-url)
+
+***
+
+### propD
+
+> **propD**: \`string\`
+
+Comments for propE
+
+#### Tag
+
+SomeTag
+
+#### Source
+
+[classes.ts:46](http://source-url)
+"
+`;
+
+exports[`Class Reflection should compile class with simple props: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# ClassWithSimpleProps
+
+Comments for ClassWithSimpleProps
+
+## Constructors
+
+### new ClassWithSimpleProps()
+
+\`\`\`ts
+new ClassWithSimpleProps(): ClassWithSimpleProps
+\`\`\`
+
+#### Returns
+
+[\`ClassWithSimpleProps\`](ClassWithSimpleProps.md)
+
+## Properties
+
+| Property | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`propA\` | \`string\` | \`'propAValue'\` | Comments for propA |
+| \`propB\` | \`string\` | \`'propBDefaultValue'\` | Comments for propB<br /><br /> |
+| \`propC\` | \`string\` | \`'propCDefaultValue'\` | Comments for propB<br /><br /> |
+| \`propD\` | \`string\` | \`undefined\` | Comments for propE<br /><br />**Tag**<br />SomeTag |
 "
 `;
 
@@ -924,7 +1108,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:46](http://source-url)
+[classes.ts:83](http://source-url)
 
 ***
 
@@ -934,7 +1118,7 @@ Comments for abstractProp
 
 #### Source
 
-[classes.ts:47](http://source-url)
+[classes.ts:84](http://source-url)
 
 ## Methods
 
@@ -954,7 +1138,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:48](http://source-url)
+[classes.ts:85](http://source-url)
 
 ***
 
@@ -968,7 +1152,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:51](http://source-url)
+[classes.ts:88](http://source-url)
 "
 `;
 
@@ -999,10 +1183,10 @@ new DerivedClassA(): DerivedClassA
 
 ## Properties
 
-| Property | Type | Description | Overrides |
-| :------ | :------ | :------ | :------ |
-| \`abstractProp\` | \`string\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).\`abstractProp\` |
-| \`derivedProp\` | \`string\` | - | - |
+| Property | Type | Default value | Description | Overrides |
+| :------ | :------ | :------ | :------ | :------ |
+| \`abstractProp\` | \`string\` | \`'abstractProp'\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).\`abstractProp\` |
+| \`derivedProp\` | \`string\` | \`undefined\` | - | - |
 
 ## Methods
 
@@ -1024,7 +1208,7 @@ Comments for abstractMethod
 
 #### Source
 
-[classes.ts:48](http://source-url)
+[classes.ts:85](http://source-url)
 
 ***
 
@@ -1040,7 +1224,7 @@ derivedMethod(): string
 
 #### Source
 
-[classes.ts:51](http://source-url)
+[classes.ts:88](http://source-url)
 "
 `;
 
@@ -1077,6 +1261,6 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 
 #### Source
 
-[classes.ts:67](http://source-url)
+[classes.ts:104](http://source-url)
 "
 `;
