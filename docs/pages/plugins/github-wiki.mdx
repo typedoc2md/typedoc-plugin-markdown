@@ -1,11 +1,35 @@
 import pjson from '../../../packages/typedoc-github-wiki-theme/package.json';
+import { Cards } from 'nextra/components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 # typedoc-github-wiki-theme
 
-<PackageDescription pjson={pjson}></PackageDescription>
+<PackageDescription pjson={pjson} />
 
 ## Features
 
 - Generates Wiki friendly file names.
 - Updates internal urls to a compatible format.
 - Writes a `_Sidebar.md` file to display sidebar navigation.
+
+## Example
+
+The following is a simple example of a GithubWiki project running TypeDoc.
+
+<Cards num={2}>
+  <Cards.Card
+    title="View Wiki on Github"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/wiki"
+    target="_blank"
+  />
+  <Cards.Card
+    title="View Source on Github"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/04-typedoc-github-wiki-theme"
+    target="_blank"
+  />
+</Cards>

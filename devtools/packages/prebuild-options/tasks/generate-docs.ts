@@ -13,6 +13,7 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
   const out: string[] = [
     `import { Callout, FileTree } from 'nextra/components';`,
   ];
+
   out.push('# Options');
   if (docsConfig.docsPath === '/docs') {
     out.push(
@@ -24,6 +25,21 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
   Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.
 </Callout>`,
     );
+  }
+
+  if (docsConfig.presets) {
+    out.push('## Preset Options');
+    out.push('The following are preset typedoc-plugin-markdown options:');
+    const presetsConfig: any = await import(docsConfig.presetsPath as string);
+    const config = presetsConfig.default;
+    delete config.plugin;
+    const presetsJson = JSON.stringify(config, null, 2);
+
+    out.push(`\`\`\`json"
+${presetsJson}
+\`\`\``);
+    out.push('## Plugin Options');
+    out.push('The following options are exposed by this plugin:');
   }
 
   // DECLARATIONS
@@ -92,7 +108,8 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
     const categories = Object.entries(groupedConfig);
 
     categories.forEach(([categoryName, options]) => {
-      const optionLevel = categories.length === 1 ? '##' : '###';
+      const optionLevel =
+        categories.length === 1 && !Boolean(docsConfig.presets) ? '##' : '###';
       if (categories.length > 1) {
         out.push(`## ${getDocsTitle(categoryName)}`);
       }
