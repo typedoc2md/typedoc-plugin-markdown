@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0-next.8
+
+### Patch Changes
+
+- typedoc-plugin-markdown compaibility fixes:
+
 ## 2.0.0-next.7 (2024-03-21)
 
 ### Patch Changes
