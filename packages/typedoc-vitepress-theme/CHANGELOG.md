@@ -1,5 +1,11 @@
 # typedoc-vitepress-theme
 
+## 1.0.0-next.11
+
+### Patch Changes
+
+- typedoc-plugin-markdown compaibility fixes:
+
 ## 1.0.0-next.10 (2024-03-21)
 
 ### Patch Changes
