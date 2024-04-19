@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.56
+
+### Patch Changes
+
+- Expose 'Default value` column to properties table.
+- Added sanitizeComments option.
+- Navigation structure updates.
+
 ## 4.0.0-next.55 (2024-04-05)
 
 ### Patch Changes
