@@ -220,7 +220,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "path": "package-1/index.md"
+    "path": "package-1/README.md"
   },
   {
     "title": "package-1b",
@@ -237,7 +237,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "path": "package-1b/index.md"
+    "path": "package-1b/README.md"
   },
   {
     "title": "package-2",
@@ -246,7 +246,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module-1",
         "kind": 2,
-        "path": "package-2/module-1/index.md",
+        "path": "package-2/module-1/README.md",
         "children": [
           {
             "title": "Interfaces",
@@ -263,7 +263,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module-2",
         "kind": 2,
-        "path": "package-2/module-2/index.md",
+        "path": "package-2/module-2/README.md",
         "children": [
           {
             "title": "Interfaces",
@@ -278,7 +278,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "path": "package-2/index.md"
+    "path": "package-2/README.md"
   },
   {
     "title": "@scope/package-3",
@@ -287,7 +287,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "index",
         "kind": 2,
-        "path": "package-3/index/index.md",
+        "path": "package-3/index/README.md",
         "children": [
           {
             "title": "Interfaces",
@@ -304,7 +304,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module-1",
         "kind": 2,
-        "path": "package-3/module-1/index.md",
+        "path": "package-3/module-1/README.md",
         "children": [
           {
             "title": "Interfaces",
@@ -321,7 +321,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module-2",
         "kind": 2,
-        "path": "package-3/module-2/index.md",
+        "path": "package-3/module-2/README.md",
         "children": [
           {
             "title": "Interfaces",
@@ -336,7 +336,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "path": "package-3/index.md"
+    "path": "package-3/README.md"
   },
   {
     "title": "package-4",
@@ -353,7 +353,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "path": "package-4/index.md"
+    "path": "package-4/README.md"
   },
   {
     "title": "package-5",
@@ -362,7 +362,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module2",
         "kind": 2,
-        "path": "package-5/module2/index.md",
+        "path": "package-5/module2/README.md",
         "children": [
           {
             "title": "Interfaces",
@@ -386,7 +386,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module2",
         "kind": 2,
-        "path": "package-6/module2/index.md",
+        "path": "package-6/module2/README.md",
         "children": [
           {
             "title": "Interfaces",
@@ -551,13 +551,13 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "title": "@scope/package-1",
     "kind": 2,
     "children": [],
-    "path": "package-1/index.md"
+    "path": "package-1/README.md"
   },
   {
     "title": "package-1b",
     "kind": 2,
     "children": [],
-    "path": "package-1b/index.md"
+    "path": "package-1b/README.md"
   },
   {
     "title": "package-2",
@@ -574,7 +574,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         "path": "package-2/module-2.md"
       }
     ],
-    "path": "package-2/index.md"
+    "path": "package-2/README.md"
   },
   {
     "title": "@scope/package-3",
@@ -583,7 +583,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "index",
         "kind": 2,
-        "path": "package-3/module_index.md",
+        "path": "package-3/index.md",
         "children": [
           {
             "title": "Interfaces",
@@ -632,7 +632,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "path": "package-3/index.md"
+    "path": "package-3/README.md"
   },
   {
     "title": "package-4",
@@ -649,7 +649,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         ]
       }
     ],
-    "path": "package-4/index.md"
+    "path": "package-4/README.md"
   },
   {
     "title": "package-5",
@@ -1986,6 +1986,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "members") (Option Group "2") 1`] = `
 "[
   {
+    "title": "Sidebar Example 1",
+    "path": "http://example.com"
+  },
+  {
+    "title": "Sidebar Example 2",
+    "path": "http://example.com"
+  },
+  {
     "title": "42-module-name",
     "kind": 2,
     "path": "42-module-name/index.md"
@@ -1998,39 +2006,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "basic",
     "kind": 2,
-    "path": "basic/index.md",
-    "children": [
-      {
-        "title": "EnumA",
-        "kind": 8,
-        "path": "basic/enumerations/EnumA.md"
-      },
-      {
-        "title": "EnumB",
-        "kind": 8,
-        "path": "basic/enumerations/EnumB.md"
-      },
-      {
-        "title": "ClassA",
-        "kind": 128,
-        "path": "basic/classes/ClassA.md"
-      },
-      {
-        "title": "ClassB",
-        "kind": 128,
-        "path": "basic/classes/ClassB.md"
-      },
-      {
-        "title": "InterfaceA",
-        "kind": 256,
-        "path": "basic/interfaces/InterfaceA.md"
-      },
-      {
-        "title": "InterfaceB",
-        "kind": 256,
-        "path": "basic/interfaces/InterfaceB.md"
-      }
-    ]
+    "path": "basic/index.md"
   },
   {
     "title": "has-categories",
@@ -2115,63 +2091,98 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-namespaces/index.md",
     "children": [
       {
-        "title": "NamespaceB",
-        "kind": 4,
-        "path": "has-namespaces/namespaces/NamespaceB/index.md"
-      },
-      {
-        "title": "_Namespace_A_",
-        "kind": 4,
-        "path": "has-namespaces/namespaces/Namespace_A/index.md",
+        "title": "Namespaces",
         "children": [
           {
-            "title": "NestedNamespace",
+            "title": "NamespaceB",
             "kind": 4,
-            "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
-            "children": [
-              {
-                "title": "NamespaceInterface",
-                "kind": 256,
-                "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
-              }
-            ]
+            "path": "has-namespaces/namespaces/NamespaceB/index.md"
           },
           {
-            "title": "NamespaceInterface",
-            "kind": 256,
-            "path": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
+            "title": "_Namespace_A_",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/Namespace_A/index.md",
+            "children": [
+              {
+                "title": "Namespaces",
+                "children": [
+                  {
+                    "title": "NestedNamespace",
+                    "kind": 4,
+                    "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
+                    "children": [
+                      {
+                        "title": "Interfaces",
+                        "children": [
+                          {
+                            "title": "NamespaceInterface",
+                            "kind": 256,
+                            "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "NamespaceInterface",
+                    "kind": 256,
+                    "path": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
-        "title": "EnumB",
-        "kind": 8,
-        "path": "has-namespaces/enumerations/EnumB.md"
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "has-namespaces/enumerations/EnumB.md"
+          },
+          {
+            "title": "_Enum_A_",
+            "kind": 8,
+            "path": "has-namespaces/enumerations/Enum_A.md"
+          }
+        ]
       },
       {
-        "title": "_Enum_A_",
-        "kind": 8,
-        "path": "has-namespaces/enumerations/Enum_A.md"
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "has-namespaces/classes/ClassB.md"
+          },
+          {
+            "title": "__Class_A_",
+            "kind": 128,
+            "path": "has-namespaces/classes/Class_A.md"
+          }
+        ]
       },
       {
-        "title": "ClassB",
-        "kind": 128,
-        "path": "has-namespaces/classes/ClassB.md"
-      },
-      {
-        "title": "__Class_A_",
-        "kind": 128,
-        "path": "has-namespaces/classes/Class_A.md"
-      },
-      {
-        "title": "InterfaceB",
-        "kind": 256,
-        "path": "has-namespaces/interfaces/InterfaceB.md"
-      },
-      {
-        "title": "_Interface_A_",
-        "kind": 256,
-        "path": "has-namespaces/interfaces/Interface_A.md"
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "has-namespaces/interfaces/InterfaceB.md"
+          },
+          {
+            "title": "_Interface_A_",
+            "kind": 256,
+            "path": "has-namespaces/interfaces/Interface_A.md"
+          }
+        ]
       }
     ]
   },
@@ -2186,14 +2197,19 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-same-exports/index.md",
     "children": [
       {
-        "title": "SomeClass",
-        "kind": 128,
-        "path": "has-same-exports/classes/SomeClass.md"
-      },
-      {
-        "title": "someClass",
-        "kind": 128,
-        "path": "has-same-exports/classes/someClass-1.md"
+        "title": "Classes",
+        "children": [
+          {
+            "title": "SomeClass",
+            "kind": 128,
+            "path": "has-same-exports/classes/SomeClass.md"
+          },
+          {
+            "title": "someClass",
+            "kind": 128,
+            "path": "has-same-exports/classes/someClass-1.md"
+          }
+        ]
       }
     ]
   },
@@ -2203,9 +2219,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "index/index.md",
     "children": [
       {
-        "title": "SomeClass",
-        "kind": 128,
-        "path": "index/classes/SomeClass.md"
+        "title": "Classes",
+        "children": [
+          {
+            "title": "SomeClass",
+            "kind": 128,
+            "path": "index/classes/SomeClass.md"
+          }
+        ]
       }
     ]
   }
@@ -2284,6 +2305,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "[
   {
+    "title": "Sidebar Example 1",
+    "path": "http://example.com"
+  },
+  {
+    "title": "Sidebar Example 2",
+    "path": "http://example.com"
+  },
+  {
     "title": "42-module-name",
     "kind": 2,
     "path": "42-module-name.md"
@@ -2315,19 +2344,29 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-namespaces/index.md",
     "children": [
       {
-        "title": "NamespaceB",
-        "kind": 4,
-        "path": "has-namespaces/namespaces/NamespaceB.md"
-      },
-      {
-        "title": "_Namespace_A_",
-        "kind": 4,
-        "path": "has-namespaces/namespaces/Namespace_A/index.md",
+        "title": "Namespaces",
         "children": [
           {
-            "title": "NestedNamespace",
+            "title": "NamespaceB",
             "kind": 4,
-            "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
+            "path": "has-namespaces/namespaces/NamespaceB.md"
+          },
+          {
+            "title": "_Namespace_A_",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/Namespace_A/index.md",
+            "children": [
+              {
+                "title": "Namespaces",
+                "children": [
+                  {
+                    "title": "NestedNamespace",
+                    "kind": 4,
+                    "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

@@ -106,9 +106,10 @@ const config: Record<string, Fixture> = {
         indexPageTitle: '{projectName}',
         categorizeByGroup: false,
         navigation: {
-          includeGroups: false,
+          includeGroups: true,
           includeCategories: true,
         },
+        options: './test/fixtures/typedoc.nav-options.cjs',
       },
     ],
   },
@@ -144,14 +145,13 @@ const config: Record<string, Fixture> = {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       entryPointStrategy: 'packages',
       name: 'packages-example',
-      entryFileName: 'index.md',
       disableSources: true,
       navigation: {
         includeGroups: true,
       },
     },
     options: [
-      {},
+      { entryFileName: 'index.md' },
       {
         excludeScopesInPaths: true,
         mergeReadme: true,
@@ -218,8 +218,8 @@ const config: Record<string, Fixture> = {
     options: [
       {
         includeVersion: true,
-        titleLink: 'http://www.google.com',
-        options: './test/fixtures/typedoc.text.cjs',
+        titleLink: 'http://www.example.com',
+        options: './test/fixtures/typedoc.text-options.cjs',
         propertiesFormat: 'table',
         navigation: {
           includeGroups: true,

@@ -115,7 +115,7 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 
 ***
 
-[packages-example v0.0](../../index.md) / [@scope/package-1](../index.md) / PackageInterface
+[packages-example v0.0](../../README.md) / [@scope/package-1](../README.md) / PackageInterface
 
 # Interface: PackageInterface
 
@@ -176,11 +176,11 @@ Some text.
 
 | Name | Version | Description |
 | :------ | :------ | :------ |
-| [@scope/package-1](package-1/index.md) | 1.0.0 | Description for package-1 |
-| [package-1b](package-1b/index.md) | - | - |
-| [package-2](package-2/index.md) | 1.0.0 | - |
-| [@scope/package-3](package-3/index.md) | - | Description for package 3 |
-| [package-4](package-4/index.md) | - | - |
+| [@scope/package-1](package-1/README.md) | 1.0.0 | Description for package-1 |
+| [package-1b](package-1b/README.md) | - | - |
+| [package-2](package-2/README.md) | 1.0.0 | - |
+| [@scope/package-3](package-3/README.md) | - | Description for package 3 |
+| [package-4](package-4/README.md) | - | - |
 | [package-5](package-5/package-5.md) | - | - |
 | [package-6](package-6.md) | - | - |
 "

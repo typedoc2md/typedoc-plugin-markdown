@@ -1,5 +1,5 @@
 import { heading, link, table } from '@plugin/libs/markdown';
-import { escapeChars } from '@plugin/libs/utils';
+import { escapeChars, getFileNameWithExtension } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import * as path from 'path';
 import { ProjectReflection } from 'typedoc';
@@ -19,6 +19,13 @@ export function packagesIndex(
     Boolean(projectPackage.packageVersion),
   );
 
+  const fileExtension = this.options.getValue('fileExtension');
+
+  const entryFileName = getFileNameWithExtension(
+    this.options.getValue('entryFileName'),
+    fileExtension,
+  );
+
   if (this.options.getValue('indexFormat') === 'table') {
     const headers = [this.getText('label.name')];
     if (includeVersion) {
@@ -30,9 +37,7 @@ export function packagesIndex(
       const packageMeta = this.getPackageMetaData(projectPackage.name);
 
       const urlTo = Boolean(projectPackage.readme)
-        ? `${path.dirname(projectPackage.url || '')}/${this.options.getValue(
-            'entryFileName',
-          )}`
+        ? `${path.dirname(projectPackage.url || '')}/${entryFileName}`
         : projectPackage.url;
 
       const rows = [
@@ -51,9 +56,7 @@ export function packagesIndex(
   } else {
     const packagesList = model.children?.map((projectPackage) => {
       const urlTo = Boolean(projectPackage.readme)
-        ? `${path.dirname(projectPackage.url || '')}/${this.options.getValue(
-            'entryFileName',
-          )}`
+        ? `${path.dirname(projectPackage.url || '')}/${entryFileName}`
         : projectPackage.url;
       return urlTo
         ? `- ${link(

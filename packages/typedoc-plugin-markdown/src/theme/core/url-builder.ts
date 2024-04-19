@@ -184,7 +184,10 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
       urls.push({
         url: useEntryModule
           ? `${path.dirname(indexFileName)}/${getFileNameWithExtension('readme_', fileExtension)}`
-          : path.join(path.dirname(indexFileName), packageEntryFileName),
+          : path.join(
+              path.dirname(indexFileName),
+              getFileNameWithExtension(packageEntryFileName, fileExtension),
+            ),
         model: projectChild,
         template: theme.readmeTemplate,
       });

@@ -1,4 +1,3 @@
-const path = require('path');
 const baseOptions = require('../../../../devtools/packages/fixtures/typedoc.cjs');
 module.exports = {
   ...baseOptions,

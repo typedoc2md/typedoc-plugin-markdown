@@ -17,8 +17,20 @@ export function buildNavigation(
 ) {
   const options = theme.application.options;
   const navigationOptions = options.getValue('navigation');
+  const sidebarLinks = options.getValue('sidebarLinks');
+  const navigationLeaves = options.getValue('navigationLeaves');
 
   const navigation: NavigationItem[] = [];
+
+  if (sidebarLinks) {
+    Object.entries(sidebarLinks).forEach(([title, path]) => {
+      navigation.push({
+        title,
+        path,
+      });
+    });
+  }
+
   const packagesMeta = (theme.application.renderer as MarkdownRenderer)
     .packagesMeta;
 
@@ -217,6 +229,13 @@ export function buildNavigation(
     reflection: DeclarationReflection,
     outputFileStrategy?: OutputFileStrategy,
   ): NavigationItem[] | null {
+    const noChildren =
+      [ReflectionKind.Module, ReflectionKind.Namespace].includes(
+        reflection.kind,
+      ) && navigationLeaves.includes(reflection.getFullName());
+    if (noChildren) {
+      return null;
+    }
     if (
       reflection.groups?.some((group) => group.allChildrenHaveOwnDocument())
     ) {

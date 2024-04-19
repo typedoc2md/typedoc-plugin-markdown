@@ -2,7 +2,7 @@ import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Packages`, () => {
   test(`should compile readmes for a packages`, () => {
-    expectFileToEqual('packages', 'members', 'index.md');
+    expectFileToEqual('packages', 'members', ['index.md', 'README.md']);
     expectFileToEqual('packages', 'members', '@scope/package-1/index.md', 1);
   });
 
