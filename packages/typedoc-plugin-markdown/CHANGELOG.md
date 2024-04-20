@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.57
+
+### Patch Changes
+
+- Fix broken links in packages index.
+- Added `navigationModel` option.
+
 ## 4.0.0-next.56
 
 ### Patch Changes
