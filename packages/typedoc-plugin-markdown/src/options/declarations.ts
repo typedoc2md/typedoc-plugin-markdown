@@ -166,7 +166,7 @@ export const entryFileName: Partial<DeclarationOption> = {
  *
  * The module name should be specified (NOT the reference to the file name).
  *
- * Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
+ * Please note a separate modules index page will not be generated, therefore would work better if navigation is present.
  *
  * @example "index"
  *
@@ -178,7 +178,7 @@ export const entryModule: Partial<DeclarationOption> = {
 };
 
 /**
- * By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
+ * By default when a readme file is resolved, a separate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
  *
  * This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
  *
@@ -343,8 +343,6 @@ export const expandObjects: Partial<DeclarationOption> = {
  *
  * This option should be set when a full type representation is preferred.
  *
- * This is the oppisite of TypeDoc's [hideParameterTypesInTitle](https://typedoc.org/options/output/#hideparametertypesintitle) output option.
- *
  * @Default
  *
  * `someFunction(param1, param2)`
@@ -446,16 +444,6 @@ export const indexFormat: Partial<DeclarationOption> = {
  *
  * Only keys that require translation need to be added to the object.
  *
- * **Example**
- *
- * ```json filename="typedoc.json"
- * {
- *   "textContentMappings": {
- *     "title.indexPage": "My Project"
- *    }
- * }
- * ```
- *
  * @category UI
  */
 export const textContentMappings: Partial<DeclarationOption> = {
@@ -505,6 +493,27 @@ export const publicPath: Partial<DeclarationOption> = {
 };
 
 /**
+ * *Please note this options does not effect the rendering of inline code or code blocks (using single/triple backticks).*
+ *
+ * By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
+ *
+ * This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
+ *
+ * This option would typically be used when source code comes from an external library exposing the following poential issues:
+ *
+ * - Comments contain raw tags that should be interpreted as code examples.
+ * - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
+ * - Although most parsers use XSS filters, this option provides an additional layer of XSS security.
+ *
+ * @category Utility
+ */
+export const sanitizeComments: Partial<DeclarationOption> = {
+  help: 'Sanitize HTML and JSX inside JsDoc comments.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * This option should be used when parsers requiren a custom anchor prefix.
  *
  * @example "markdown-header"
@@ -532,27 +541,6 @@ export const useHTMLAnchors: Partial<DeclarationOption> = {
 };
 
 /**
- * *Please note this options does not effect the rendering of inline code or code blocks (using single/triple backticks).*
- *
- * By default all comments writen inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
- *
- * This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
- *
- * This option would typically be used when source code comes from an external library exposing the following poential issues:
- *
- * - Comments contain raw tags that should be interpreted as code examples.
- * - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
- * - Although most parsers use XSS filters, this option provides an additional layer of XSS security.
- *
- * @category Utility
- */
-export const sanitizeComments: Partial<DeclarationOption> = {
-  help: 'Sanitize HTML and JSX inside JsDoc comments.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
  * By default references to symbol anchor links are lowercased.
  *
  * This option can be used for engines that require the preservation of anchor link casing.
@@ -563,4 +551,32 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
   help: 'Preserve anchor casing when generating link to symbols.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * By default navigation is not written to file but can be consumed programmatically. Please see [Navigation Guide](/docs/navigation) for more information.
+ *
+ * `navigationModel.excludeGroups`
+ *
+ * Do not organise navigation by groups.
+ *
+ * `navigationModel.excludeCategories`
+ *
+ * Do not organise navigation by categories.
+ *
+ * `navigationModel.excludeFolders`
+ *
+ *  Excludes unnecessary nesting with complex modules/namespace hierarchies.
+ *
+ * @category Utility
+ *
+ */
+export const navigationModel: Partial<DeclarationOption> = {
+  help: 'Configures how the navigation model will be generated.',
+  type: ParameterType.Flags,
+  defaults: {
+    excludeGroups: false,
+    excludeCategories: false,
+    excludeFolders: false,
+  },
 };

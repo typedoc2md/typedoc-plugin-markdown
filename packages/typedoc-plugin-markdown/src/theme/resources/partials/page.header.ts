@@ -27,9 +27,7 @@ export function header(this: MarkdownThemeContext): string {
 
   const getProjectHeader = () => {
     const fileExtension = this.options.getValue('fileExtension');
-    const navigationLinksOptions = this.options.getValue('navigationLinks');
     const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
-    const titleLink = this.options.getValue('titleLink');
 
     const md: string[] = [];
     const name = this.page.project.name;
@@ -44,7 +42,7 @@ export function header(this: MarkdownThemeContext): string {
     const readmeLabel = this.getText('header.readme');
     const indexLabel = this.getText('header.docs');
 
-    md.push(titleLink ? bold(link(title, titleLink)) : bold(title));
+    md.push(bold(title));
 
     md.push('•');
 
@@ -94,16 +92,6 @@ export function header(this: MarkdownThemeContext): string {
           md.push(link(indexLabel, this.getRelativeUrl(this.page.project.url)));
         }
       }
-    }
-
-    const extraLinks: string[] = [];
-    const navigationLinks = Object.entries(navigationLinksOptions);
-    if (navigationLinks?.length) {
-      md.push('•');
-      navigationLinks.forEach(([key, value]) => {
-        extraLinks.push(link(key, value));
-      });
-      md.push(extraLinks.join(' \\| '));
     }
 
     return `${md.join(' ')}\n\n***\n`;

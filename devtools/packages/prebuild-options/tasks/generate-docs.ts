@@ -1,6 +1,7 @@
 import { DocsConfig } from '@devtools/helpers';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as prettier from 'prettier';
 import { Project, VariableStatement } from 'ts-morph';
 import { ParameterType } from 'typedoc';
 
@@ -17,13 +18,11 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
   out.push('# Options');
   if (docsConfig.docsPath === '/docs') {
     out.push(
-      `These options can be used in addition to the core TypeDoc options.`,
+      `<Callout type="info">These options should be used in conjunction with the core [TypeDoc options](/docs/using-typedoc).</Callout>`,
     );
   } else {
     out.push(
-      `<Callout type="info">
-  Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.
-</Callout>`,
+      `<Callout type="info">Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.</Callout>`,
     );
   }
 
@@ -150,13 +149,14 @@ ${presetsJson}
         }
 
         if (!option.omitExample) {
+          //out.push('**Example**');
           if (
             !option.example &&
             option.type === ParameterType.Mixed &&
             Object.keys(option.defaultValue).length &&
             (!Array.isArray(option.defaultValue) || option.defaultValue?.length)
           ) {
-            out.push('Below is the full list of keys and default values:');
+            //out.push('Below is the full list of keys and default values:');
           }
 
           out.push(`
@@ -181,7 +181,11 @@ ${JSON.stringify(
     'options.mdx',
   );
 
-  fs.writeFileSync(optionDocPath, out.join('\n\n'));
+  const formattedOut = await prettier.format(out.join('\n\n'), {
+    parser: 'mdx',
+  });
+
+  fs.writeFileSync(optionDocPath, formattedOut);
 }
 
 function getEmoji(categoryName: string) {

@@ -1,6 +1,7 @@
 import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
 import * as path from 'path';
 import { PackageDescription } from './components/package-description';
@@ -42,7 +43,7 @@ export default {
     PackageDescription,
   },
 
-  useNextSeoProps() {
+  head: () => {
     const { asPath } = useRouter();
     const title = asPath
       .substring(1)
@@ -51,10 +52,19 @@ export default {
       .filter((part) => Boolean(part))
       .map((part) => part[0]?.toUpperCase() + part.substring(1))
       .join(' • ');
-
-    return {
-      titleTemplate: `${title || 'Introduction'} • typedoc-plugin-markdown`,
-    };
+    const pathname = usePathname();
+    const url = `https://typedoc-plugin-markdown.org${pathname}`;
+    return (
+      <>
+        <link rel="icon" href="/markdown-logo.svg" type="image/png" />
+        <title>
+          typedoc-plugin-markdown •
+          {title || 'Generate TypeScript API documentation as Markdown.'}
+        </title>
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+      </>
+    );
   },
   feedback: { content: null },
   navigation: {

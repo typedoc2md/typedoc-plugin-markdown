@@ -1986,14 +1986,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "members") (Option Group "2") 1`] = `
 "[
   {
-    "title": "Sidebar Example 1",
-    "path": "http://example.com"
-  },
-  {
-    "title": "Sidebar Example 2",
-    "path": "http://example.com"
-  },
-  {
     "title": "42-module-name",
     "kind": 2,
     "path": "42-module-name/index.md"
@@ -2006,7 +1998,54 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "basic",
     "kind": 2,
-    "path": "basic/index.md"
+    "path": "basic/index.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "path": "basic/enumerations/EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "basic/enumerations/EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "path": "basic/classes/ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "basic/classes/ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "path": "basic/interfaces/InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "basic/interfaces/InterfaceB.md"
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "has-categories",
@@ -2304,14 +2343,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "[
-  {
-    "title": "Sidebar Example 1",
-    "path": "http://example.com"
-  },
-  {
-    "title": "Sidebar Example 2",
-    "path": "http://example.com"
-  },
   {
     "title": "42-module-name",
     "kind": 2,

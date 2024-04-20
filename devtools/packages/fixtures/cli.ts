@@ -154,7 +154,6 @@ function objectToOptions(obj: any) {
           }, []),
         ];
       }
-
       if (typeof curr[1] === 'object') {
         return [
           ...prev,

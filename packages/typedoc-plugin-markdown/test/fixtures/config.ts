@@ -11,11 +11,7 @@ const config: Record<string, Fixture> = {
       hideBreadcrumbs: true,
     },
     options: [
-      {
-        navigation: {
-          includeGroups: true,
-        },
-      },
+      {},
       {
         readme: 'none',
         parametersFormat: 'table',
@@ -25,8 +21,8 @@ const config: Record<string, Fixture> = {
         useCodeBlocks: true,
         expandParameters: true,
         memberPageTitle: '{name}',
-        navigation: {
-          includeGroups: false,
+        navigationModel: {
+          excludeGroups: true,
         },
       },
     ],
@@ -64,19 +60,11 @@ const config: Record<string, Fixture> = {
       entryPointStrategy: 'expand',
     },
     options: [
-      {
-        navigation: {
-          includeFolders: true,
-          includeGroups: true,
-          includeCategories: true,
-        },
-      },
+      {},
       {
         flattenOutputFiles: true,
-        navigation: {
-          includeFolders: false,
-          includeGroups: true,
-          includeCategories: true,
+        navigationModel: {
+          excludeFolders: true,
         },
       },
     ],
@@ -92,9 +80,8 @@ const config: Record<string, Fixture> = {
     options: [
       {
         categorizeByGroup: true,
-        navigation: {
-          includeGroups: false,
-          includeCategories: true,
+        navigationModel: {
+          excludeGroups: true,
         },
       },
       {
@@ -105,11 +92,6 @@ const config: Record<string, Fixture> = {
         indexFormat: 'table',
         indexPageTitle: '{projectName}',
         categorizeByGroup: false,
-        navigation: {
-          includeGroups: true,
-          includeCategories: true,
-        },
-        options: './test/fixtures/typedoc.nav-options.cjs',
       },
     ],
   },
@@ -146,9 +128,6 @@ const config: Record<string, Fixture> = {
       entryPointStrategy: 'packages',
       name: 'packages-example',
       disableSources: true,
-      navigation: {
-        includeGroups: true,
-      },
     },
     options: [
       { entryFileName: 'index.md' },
@@ -183,9 +162,6 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       fileExtension: '.mdx',
       name: '@scope/entryfile',
-      navigation: {
-        includeGroups: true,
-      },
     },
     options: [
       { entryFileName: 'README.md' },
@@ -218,12 +194,8 @@ const config: Record<string, Fixture> = {
     options: [
       {
         includeVersion: true,
-        titleLink: 'http://www.example.com',
         options: './test/fixtures/typedoc.text-options.cjs',
         propertiesFormat: 'table',
-        navigation: {
-          includeGroups: true,
-        },
       },
     ],
   },

@@ -40,7 +40,7 @@ export async function generateDocs(project: ProjectReflection, out: string) {
  *
  * This is essentially a copy of the base method with a few tweaks.
  *
- * - Removes uneccessary async calls to load highlighters only required for html theme.
+ * - Removes unnecessary async calls to load highlighters only required for html theme.
  * - Removes hooks logic that are jsx specific.
  * - Adds any logic specific to markdown rendering.
  */
@@ -162,7 +162,7 @@ function nicePath(absPath: string) {
 }
 
 /**
- * Normalizes directory seperators from a given path.
+ * Normalizes directory separators from a given path.
  */
 function normalizePath(path: string) {
   return path.replace(/\\/g, '/');

@@ -16,20 +16,9 @@ export function buildNavigation(
   project: ProjectReflection,
 ) {
   const options = theme.application.options;
-  const navigationOptions = options.getValue('navigation');
-  const sidebarLinks = options.getValue('sidebarLinks');
-  const navigationLeaves = options.getValue('navigationLeaves');
+  const navigationOptions = options.getValue('navigationModel');
 
   const navigation: NavigationItem[] = [];
-
-  if (sidebarLinks) {
-    Object.entries(sidebarLinks).forEach(([title, path]) => {
-      navigation.push({
-        title,
-        path,
-      });
-    });
-  }
 
   const packagesMeta = (theme.application.renderer as MarkdownRenderer)
     .packagesMeta;
@@ -113,7 +102,7 @@ export function buildNavigation(
   ) {
     const entryModule = options.getValue('entryModule');
 
-    if (navigationOptions.includeCategories && project.categories?.length) {
+    if (!navigationOptions.excludeCategories && project.categories?.length) {
       navigation.push(
         ...project.categories.map((category) => {
           return {
@@ -189,7 +178,7 @@ export function buildNavigation(
     group: ReflectionGroup,
     outputFileStrategy?: OutputFileStrategy,
   ) {
-    if (navigationOptions.includeCategories && group?.categories?.length) {
+    if (!navigationOptions.excludeCategories && group?.categories?.length) {
       return group.categories?.map((category) => {
         return {
           title: category.title,
@@ -207,7 +196,7 @@ export function buildNavigation(
         );
         if (Boolean(mapping)) {
           const children =
-            navigationOptions.includeCategories && child.categories?.length
+            !navigationOptions.excludeCategories && child.categories?.length
               ? child.categories
                   ?.map((category) => {
                     const catChildren = getCategoryGroupChildren(category);
@@ -229,17 +218,10 @@ export function buildNavigation(
     reflection: DeclarationReflection,
     outputFileStrategy?: OutputFileStrategy,
   ): NavigationItem[] | null {
-    const noChildren =
-      [ReflectionKind.Module, ReflectionKind.Namespace].includes(
-        reflection.kind,
-      ) && navigationLeaves.includes(reflection.getFullName());
-    if (noChildren) {
-      return null;
-    }
     if (
       reflection.groups?.some((group) => group.allChildrenHaveOwnDocument())
     ) {
-      if (!navigationOptions.includeGroups) {
+      if (navigationOptions.excludeGroups) {
         return reflection.children
           ?.filter((child) => child.hasOwnDocument)
           .reduce((acc, child) => {
@@ -280,7 +262,7 @@ export function buildNavigation(
     child: DeclarationReflection,
     children: NavigationItem[] | null,
   ) {
-    if (navigationOptions.includeFolders) {
+    if (!navigationOptions.excludeFolders) {
       const titleParts = child.name.split('/');
       if (!child.name.startsWith('@') && titleParts.length > 1) {
         let currentLevel = acc;

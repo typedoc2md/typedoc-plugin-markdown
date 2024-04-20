@@ -139,8 +139,10 @@ function getType(
   if (option.type === ParameterType.Array) {
     return 'any[]';
   }
-  if (option.type === ParameterType.Flags) {
-    return 'Record<string, boolean>';
+  if (option.type === ParameterType.Flags && option.defaults) {
+    return `{${Object.keys(option.defaults)
+      .map((key) => `'${key}': boolean`)
+      .join(';')}}`;
   }
   if (option.type === ParameterType.Mixed && option.defaultValue) {
     const usePartial = name === 'textContentMappings';

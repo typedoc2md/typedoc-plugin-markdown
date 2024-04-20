@@ -1,12 +1,55 @@
 import { Callout, FileTree } from 'nextra/components';
+import typedocPackage from 'typedoc/package.json';
 
 # Using TypeDoc
 
-This plugin is like any other TypeDoc plugin and is fully compatible with the TypeDoc ecosystem, supporting other plugins (not spefically targetting HTML output) and the majority of TypeDoc's options.
+This plugin is like any other TypeDoc plugin and is fully compatible with the TypeDoc ecosystem, supporting other plugins (not specifically targetting HTML output) and the majority of TypeDoc's options.
 
-## Configuring Options
+## TypeDoc Options
 
-Please see TypeDoc's [Configuring Options](https://typedoc.org/options/configuration/) page for details on how to set options.
+### Pre-Render Options
+
+Most of [TypeDoc's options](https://typedoc.org/options/) are used internally by TypeDoc to convert a project and define the structure of the models.
+
+These options are output/theme agnostic and can be set in the same as you would with the HTML theme:
+
+- [Configuration](https://typedoc.org/options/configuration/) Yes ✅
+- [Input](https://typedoc.org/options/input/) Yes ✅
+- [Comments](https://typedoc.org/options/comments/) Yes ✅
+- [Organization](https://typedoc.org/options/Organization/) Yes ✅
+- [Validation](https://typedoc.org/options/validation/) Yes ✅
+- [Other](https://typedoc.org/options/other/) Yes ✅
+
+### Output Options
+
+TypeDoc's [Output](https://typedoc.org/options/output/) options are used by the renderer and theme. The majority of these options are specific to HTML output and are not applicable to markdown output.
+
+Below is a list of which TypeDoc Output options are supported or not:
+
+_As of TypeDoc version v{typedocPackage.version}_
+
+- `--out` Yes ✅
+- `--theme` Yes ✅
+- `--cleanOutputDir` Yes ✅
+- `--basePath` Yes ✅
+- `--hideParameterTypesInTitle` No ❌ (see [`--expandParameters`](/docs/options#expandparameters))
+- `--navigation` No ❌ (see [`navigation`](/docs/navigation))
+- `--titleLink` No ❌
+- `--navigationLinks` No ❌
+- `--sidebarLinks` No ❌
+- `--navigationLeaves` No ❌
+- `--lightHighlightTheme` No ❌
+- `--darkHighlightTheme` No ❌
+- `--customCss` No ❌
+- `--markedOptions` No ❌
+- `--cname` No ❌
+- `--sourceLinkExternal` No ❌
+- `--htmlLang` No ❌
+- `--githubPages` No ❌
+- `--cacheBust` No ❌
+- `--gaID` No ❌
+- `--hideGenerator` No ❌
+- `--searchInComments` No ❌
 
 ## Option Typings
 
@@ -20,36 +63,3 @@ module.exports = {
   plugin: ['typedoc-plugin-markdown', 'some-other-plugin'],
 };
 ```
-
-For a full list of additional options exposed by this plugin, see the [Options](/docs/options) page.
-
-## TypeDoc Options
-
-### Supported Options
-
-The majority of [TypeDoc's options](https://typedoc.org/options/) are supported, including all [input](https://typedoc.org/options/input/), [comments](https://typedoc.org/options/comments/), [organization](https://typedoc.org/options/organization/), [validation](https://typedoc.org/options/validation/) and [other](https://typedoc.org/options/other/) options.
-These options control the behaviour of TypeDoc when parsing source files and are not specific to any particular theme.
-
-### Ignored Options
-
-[Output](https://typedoc.org/options/output/) options that are specific to the HTML theme are ignored.
-
-The ignored output options are:
-
-- `--cacheBust` ❌
-- `--cname` ❌
-- `--customCss` ❌
-- `--darkHighlightTheme` ❌
-- `--gaID` ❌
-- `--githubPages` ❌
-- `--htmlLang` ❌
-- `--lightHighlightTheme` ❌
-- `--markedOptions` ❌
-- `--searchCategoryBoosts` ❌
-- `--searchGroupBoosts` ❌
-- `--searchInComments` ❌
-- `--sitemapBaseUrl` ❌
-- `--visibilityFilters` ❌
-
-*As of TypeDoc version 0.25.13*
-

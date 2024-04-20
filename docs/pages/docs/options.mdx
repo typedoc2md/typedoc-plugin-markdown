@@ -1,8 +1,11 @@
-import { Callout, FileTree } from 'nextra/components';
+import { Callout, FileTree } from "nextra/components";
 
 # Options
 
-These options can be used in addition to the core TypeDoc options.
+<Callout type="info">
+  These options should be used in conjunction with the core [TypeDoc
+  options](/docs/using-typedoc).
+</Callout>
 
 ## Output Options
 
@@ -11,7 +14,6 @@ These options can be used in addition to the core TypeDoc options.
 <Callout emoji="📁">Determines how output files are generated.</Callout>
 
 > Accepts either `"members"` or `"modules"`. Defaults to `"members"`.
-
 
 TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
 
@@ -26,23 +28,23 @@ The following keys are available:
 Generates an individual file for each exported module member. This is the standard behaviour of the HTML theme and the plugin default.
 
 <FileTree>
- <FileTree.File name="README.md" />
- <FileTree.Folder name="module-a" defaultOpen>
-  <FileTree.Folder name="classes" defaultOpen>
-  <FileTree.File name="ClassA.md" />
-  <FileTree.File name="ClassB.md" />
- </FileTree.Folder>
- <FileTree.Folder name="functions" defaultOpen>
-   <FileTree.File name="FunctionA.md" />
-   <FileTree.File name="FunctionB.md" />
- </FileTree.Folder>
-</FileTree.Folder>
-<FileTree.Folder name="module-b" defaultOpen>
- <FileTree.Folder name="classes" defaultOpen>
-  <FileTree.File name="ClassA.md" />
-  <FileTree.File name="ClassB.md" />
- </FileTree.Folder>
- </FileTree.Folder>
+  <FileTree.File name="README.md" />
+  <FileTree.Folder name="module-a" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+    <FileTree.Folder name="functions" defaultOpen>
+      <FileTree.File name="FunctionA.md" />
+      <FileTree.File name="FunctionB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+  <FileTree.Folder name="module-b" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
 </FileTree>
 
 **modules**
@@ -50,24 +52,25 @@ Generates an individual file for each exported module member. This is the standa
 Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
 
 <FileTree>
- <FileTree.File name="README.md" />
- <FileTree.File name="module-a.md" />
- <FileTree.File name="module-b.md" />
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.md" />
+  <FileTree.File name="module-b.md" />
 </FileTree>
-
 
 ```json filename="typedoc.json"
 {
   "outputFileStrategy": "members"
 }
-
 ```
 
-___
+---
 
 ### membersWithOwnFile
 
-<Callout emoji="📁">Determines which members are exported to their own file when `outputFileStrategy` equals `members`.</Callout>
+<Callout emoji="📁">
+  Determines which members are exported to their own file when
+  `outputFileStrategy` equals `members`.
+</Callout>
 
 > Accepts an array of the following values `"Enum"` `"Variable"` `"Function"` `"Class"` `"Interface"` `"TypeAlias"`.
 
@@ -75,19 +78,13 @@ This option is useful when only specific types of members should be exported to 
 
 Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
 
-
 ```json filename="typedoc.json"
 {
-  "membersWithOwnFile": [
-    "Class",
-    "Enum",
-    "Interface"
-  ]
+  "membersWithOwnFile": ["Class", "Enum", "Interface"]
 }
-
 ```
 
-___
+---
 
 ### flattenOutputFiles
 
@@ -102,56 +99,54 @@ This option will flatten the output files to a single directory as follows:
 Default output:
 
 <FileTree>
- <FileTree.File name="README.md" />
- <FileTree.Folder name="module-a" defaultOpen>
-  <FileTree.Folder name="classes" defaultOpen>
-  <FileTree.File name="ClassA.md" />
-  <FileTree.File name="ClassB.md" />
- </FileTree.Folder>
- <FileTree.Folder name="functions" defaultOpen>
-   <FileTree.File name="FunctionA.md" />
-   <FileTree.File name="FunctionB.md" />
- </FileTree.Folder>
-</FileTree.Folder>
+  <FileTree.File name="README.md" />
+  <FileTree.Folder name="module-a" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+    <FileTree.Folder name="functions" defaultOpen>
+      <FileTree.File name="FunctionA.md" />
+      <FileTree.File name="FunctionB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
 </FileTree>
 
 Flattened output:
 
 <FileTree>
- <FileTree.File name="README.md" />
- <FileTree.File name="module-a.Class.ClassA.md" />
- <FileTree.File name="module-a.Class.ClassB.md" />
- <FileTree.File name="module-a.Function.functionA.md" />
- <FileTree.File name="module-a.Function.function.md" />
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.Class.ClassA.md" />
+  <FileTree.File name="module-a.Class.ClassB.md" />
+  <FileTree.File name="module-a.Function.functionA.md" />
+  <FileTree.File name="module-a.Function.function.md" />
 </FileTree>
-
 
 ```json filename="typedoc.json"
 {
   "flattenOutputFiles": false
 }
-
 ```
 
-___
+---
 
 ### fileExtension
 
-<Callout emoji="📁">Specify the file extension for generated output files.</Callout>
+<Callout emoji="📁">
+  Specify the file extension for generated output files.
+</Callout>
 
 > Accepts a string value. Defaults to `".md"`.
 
 Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
 
-
 ```json filename="typedoc.json"
 {
   "fileExtension": ".mdx"
 }
-
 ```
 
-___
+---
 
 ### entryFileName
 
@@ -169,19 +164,19 @@ The content of this file will be resolved in the following order:
 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
 3. The documentation index page.
 
-
 ```json filename="typedoc.json"
 {
   "entryFileName": "index"
 }
-
 ```
 
-___
+---
 
 ### entryModule
 
-<Callout emoji="📁">The name of a module that should act as the root page for the documentation.</Callout>
+<Callout emoji="📁">
+  The name of a module that should act as the root page for the documentation.
+</Callout>
 
 > Accepts a string value. Defaults to `"undefined"`.
 
@@ -189,37 +184,35 @@ This option can be used when the root page of the documentation should be a spec
 
 The module name should be specified (NOT the reference to the file name).
 
-Please note a seperate modules index page will not be generated, therefore would work better if navigation is present.
-
+Please note a separate modules index page will not be generated, therefore would work better if navigation is present.
 
 ```json filename="typedoc.json"
 {
   "entryModule": "index"
 }
-
 ```
 
-___
+---
 
 ### mergeReadme
 
-<Callout emoji="📁">Merges the resolved readme into the project index page.</Callout>
+<Callout emoji="📁">
+  Merges the resolved readme into the project index page.
+</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
-By default when a readme file is resolved, a seperate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
+By default when a readme file is resolved, a separate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
 
 This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
-
 
 ```json filename="typedoc.json"
 {
   "mergeReadme": false
 }
-
 ```
 
-___
+---
 
 ### excludeScopesInPaths
 
@@ -235,11 +228,12 @@ The following will be the directory structure for packages named `@scope/package
 
 `false` (default):
 
- <FileTree>
-   <FileTree.Folder name="@scope" defaultOpen>
-      <FileTree.Folder name="package-1" />
-      <FileTree.Folder name="package-2" />
-   </FileTree.Folder>
+{" "}
+<FileTree>
+  <FileTree.Folder name="@scope" defaultOpen>
+    <FileTree.Folder name="package-1" />
+    <FileTree.Folder name="package-2" />
+  </FileTree.Folder>
 </FileTree>
 
 `true`:
@@ -251,15 +245,13 @@ The following will be the directory structure for packages named `@scope/package
 
 Ignored if `flattenOutputFiles` is set to `true`.
 
-
 ```json filename="typedoc.json"
 {
   "excludeScopesInPaths": false
 }
-
 ```
 
-___
+---
 
 ## UI Options
 
@@ -269,15 +261,13 @@ ___
 
 > Accepts a boolean value. Defaults to `false`.
 
-
 ```json filename="typedoc.json"
 {
   "hidePageHeader": false
 }
-
 ```
 
-___
+---
 
 ### hidePageTitle
 
@@ -285,15 +275,13 @@ ___
 
 > Accepts a boolean value. Defaults to `false`.
 
-
 ```json filename="typedoc.json"
 {
   "hidePageTitle": false
 }
-
 ```
 
-___
+---
 
 ### hideBreadcrumbs
 
@@ -301,31 +289,29 @@ ___
 
 > Accepts a boolean value. Defaults to `false`.
 
-
 ```json filename="typedoc.json"
 {
   "hideBreadcrumbs": false
 }
-
 ```
 
-___
+---
 
 ### ~hideInPageTOC~
 
-<Callout type="warning">Deprecated - In-page TOC is now hidden as default.</Callout>
+<Callout type="warning">
+  Deprecated - In-page TOC is now hidden as default.
+</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
-
 
 ```json filename="typedoc.json"
 {
   "hideInPageTOC": false
 }
-
 ```
 
-___
+---
 
 ### ~indexPageTitle~
 
@@ -335,15 +321,13 @@ ___
 
 Provides a mechanism to change the main project index page title.
 
-
 ```json filename="typedoc.json"
 {
   "indexPageTitle": "{ProjectName}"
 }
-
 ```
 
-___
+---
 
 ### ~memberPageTitle~
 
@@ -353,19 +337,20 @@ ___
 
 Provides a mechanism to configure the page title of members.
 
-
 ```json filename="typedoc.json"
 {
   "memberPageTitle": "{kind}: {name}"
 }
-
 ```
 
-___
+---
 
 ### excludeGroups
 
-<Callout emoji="💡">Excludes grouping by kind so all members are rendered and sorted at the same level.</Callout>
+<Callout emoji="💡">
+  Excludes grouping by kind so all members are rendered and sorted at the same
+  level.
+</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -373,15 +358,13 @@ By default members are grouped by kind (eg Classes, Functions etc).
 
 This creates a flat structure where all members are displayed at the same heading level.
 
-
 ```json filename="typedoc.json"
 {
   "excludeGroups": false
 }
-
 ```
 
-___
+---
 
 ### useCodeBlocks
 
@@ -395,15 +378,13 @@ Please note that when this option is set to `true` it is not possible to link to
 
 As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be be used to manually reference types.
 
-
 ```json filename="typedoc.json"
 {
   "useCodeBlocks": false
 }
-
 ```
 
-___
+---
 
 ### expandObjects
 
@@ -423,27 +404,25 @@ This option should be set when a full object representation is preferred.
 
 \{ `"x"`: `string` }
 
-
 ```json filename="typedoc.json"
 {
   "expandObjects": false
 }
-
 ```
 
-___
+---
 
 ### expandParameters
 
-<Callout emoji="💡">Expand parameters in signature parentheses to display type information.</Callout>
+<Callout emoji="💡">
+  Expand parameters in signature parentheses to display type information.
+</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
 By default parameters in signature definitions only display the parameter name so the output is more concise.
 
 This option should be set when a full type representation is preferred.
-
-This is the oppisite of TypeDoc's [hideParameterTypesInTitle](https://typedoc.org/options/output/#hideparametertypesintitle) output option.
 
 **Default**
 
@@ -453,51 +432,49 @@ This is the oppisite of TypeDoc's [hideParameterTypesInTitle](https://typedoc.or
 
 `someFunction(param1: string, param2: boolean)`
 
-
 ```json filename="typedoc.json"
 {
   "expandParameters": false
 }
-
 ```
 
-___
+---
 
 ### parametersFormat
 
-<Callout emoji="💡">Specify the render style of parameter and type parameter groups.</Callout>
+<Callout emoji="💡">
+  Specify the render style of parameter and type parameter groups.
+</Callout>
 
 > Accepts either `"list"` or `"table"`. Defaults to `"list"`.
 
 This option either renders parameters for functions and class methods as a list or in tabular format.
 
-
 ```json filename="typedoc.json"
 {
   "parametersFormat": "list"
 }
-
 ```
 
-___
+---
 
 ### propertiesFormat
 
-<Callout emoji="💡">Specify the render style of property groups for interfaces and classes.</Callout>
+<Callout emoji="💡">
+  Specify the render style of property groups for interfaces and classes.
+</Callout>
 
 > Accepts either `"list"` or `"table"`. Defaults to `"list"`.
 
 This option either renders properties for classes and interfaces as a list or in tabular format.
 
-
 ```json filename="typedoc.json"
 {
   "propertiesFormat": "list"
 }
-
 ```
 
-___
+---
 
 ### enumMembersFormat
 
@@ -507,33 +484,31 @@ ___
 
 This option either renders members of enums as a list or in tabular format.
 
-
 ```json filename="typedoc.json"
 {
   "enumMembersFormat": "list"
 }
-
 ```
 
-___
+---
 
 ### typeDeclarationFormat
 
-<Callout emoji="💡">Specify the render style for type declaration members.</Callout>
+<Callout emoji="💡">
+  Specify the render style for type declaration members.
+</Callout>
 
 > Accepts either `"list"` or `"table"`. Defaults to `"list"`.
 
 This option either renders type declrations as a list or in tabular format.
 
-
 ```json filename="typedoc.json"
 {
   "typeDeclarationFormat": "list"
 }
-
 ```
 
-___
+---
 
 ### indexFormat
 
@@ -545,19 +520,19 @@ This option renders index items either as a simple list or in a table with a des
 
 For a packages index page (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
 
-
 ```json filename="typedoc.json"
 {
   "indexFormat": "list"
 }
-
 ```
 
-___
+---
 
 ### textContentMappings
 
-<Callout emoji="💡">Provides a mechanism to change the content of text used in documentation.</Callout>
+<Callout emoji="💡">
+  Provides a mechanism to change the content of text used in documentation.
+</Callout>
 
 > Accepts a key/value object.
 
@@ -581,19 +556,6 @@ Keys are categorised with the following namespace conventions:
 - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
 
 Only keys that require translation need to be added to the object.
-
-**Example**
-
-```json filename="typedoc.json"
-{
-  "textContentMappings": {
-    "title.indexPage": "My Project"
-   }
-}
-```
-
-Below is the full list of keys and default values:
-
 
 ```json filename="typedoc.json"
 {
@@ -665,10 +627,9 @@ Below is the full list of keys and default values:
     "kind.typeParameter.plural": "Type parameters"
   }
 }
-
 ```
 
-___
+---
 
 ## Utility Options
 
@@ -680,15 +641,39 @@ ___
 
 If undefined all urls will be relative.
 
-
 ```json filename="typedoc.json"
 {
   "publicPath": "http://abc.com"
 }
-
 ```
 
-___
+---
+
+### sanitizeComments
+
+<Callout emoji="💡">Sanitize HTML and JSX inside JsDoc comments.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+_Please note this options does not effect the rendering of inline code or code blocks (using single/triple backticks)._
+
+By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
+
+This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
+
+This option would typically be used when source code comes from an external library exposing the following poential issues:
+
+- Comments contain raw tags that should be interpreted as code examples.
+- Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
+- Although most parsers use XSS filters, this option provides an additional layer of XSS security.
+
+```json filename="typedoc.json"
+{
+  "sanitizeComments": false
+}
+```
+
+---
 
 ### anchorPrefix
 
@@ -698,15 +683,13 @@ ___
 
 This option should be used when parsers requiren a custom anchor prefix.
 
-
 ```json filename="typedoc.json"
 {
   "anchorPrefix": "markdown-header"
 }
-
 ```
 
-___
+---
 
 ### useHTMLAnchors
 
@@ -719,47 +702,19 @@ This option should be used if there are issues with anchoring to symbols within 
 - For markdown parsers that do not automatically assign header ids.
 - When cross referencing symbols that are referenced in a table row.
 
-
 ```json filename="typedoc.json"
 {
   "useHTMLAnchors": false
 }
-
 ```
 
-___
-
-### sanitizeComments
-
-<Callout emoji="💡">Sanitize HTML and JSX inside JsDoc comments.</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-*Please note this options does not effect the rendering of inline code or code blocks (using single/triple backticks).*
-
-By default all comments writen inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
-
-This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
-
-This option would typically be used when source code comes from an external library exposing the following poential issues:
-
-- Comments contain raw tags that should be interpreted as code examples.
-- Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
-- Although most parsers use XSS filters, this option provides an additional layer of XSS security.
-
-
-```json filename="typedoc.json"
-{
-  "sanitizeComments": false
-}
-
-```
-
-___
+---
 
 ### preserveAnchorCasing
 
-<Callout emoji="💡">Preserve anchor casing when generating link to symbols.</Callout>
+<Callout emoji="💡">
+  Preserve anchor casing when generating link to symbols.
+</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -767,12 +722,44 @@ By default references to symbol anchor links are lowercased.
 
 This option can be used for engines that require the preservation of anchor link casing.
 
-
 ```json filename="typedoc.json"
 {
   "preserveAnchorCasing": false
 }
-
 ```
 
-___
+---
+
+### navigationModel
+
+<Callout emoji="💡">
+  Configures how the navigation model will be generated.
+</Callout>
+
+> Defaults to `{"excludeGroups":false,"excludeCategories":false,"excludeFolders":false}`.
+
+By default navigation is not written to file but can be consumed programmatically. Please see [Navigation Guide](/docs/navigation) for more information.
+
+`navigationModel.excludeGroups`
+
+Do not organise navigation by groups.
+
+`navigationModel.excludeCategories`
+
+Do not organise navigation by categories.
+
+`navigationModel.excludeFolders`
+
+Excludes unnecessary nesting with complex modules/namespace hierarchies.
+
+```json filename="typedoc.json"
+{
+  "navigationModel": {
+    "excludeGroups": false,
+    "excludeCategories": false,
+    "excludeFolders": false
+  }
+}
+```
+
+---

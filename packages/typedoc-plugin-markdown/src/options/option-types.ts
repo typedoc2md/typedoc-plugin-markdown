@@ -30,6 +30,11 @@ declare module 'typedoc' {
       | 'TypeAlias'
     )[];
     mergeReadme: boolean;
+    navigationModel: {
+      excludeGroups: boolean;
+      excludeCategories: boolean;
+      excludeFolders: boolean;
+    };
     outputFileStrategy: 'members' | 'modules';
     parametersFormat: 'list' | 'table';
     preserveAnchorCasing: boolean;
@@ -150,6 +155,15 @@ export interface PluginOptions {
    * Merges the resolved readme into the project index page.
    */
   mergeReadme: boolean;
+
+  /**
+   * Configures how the navigation model will be generated.
+   */
+  navigationModel: {
+    excludeGroups: boolean;
+    excludeCategories: boolean;
+    excludeFolders: boolean;
+  };
 
   /**
    * Determines how output files are generated.

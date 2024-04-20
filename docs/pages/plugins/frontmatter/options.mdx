@@ -1,17 +1,19 @@
-import { Callout, FileTree } from 'nextra/components';
+import { Callout, FileTree } from "nextra/components";
 
 # Options
 
 <Callout type="info">
-  Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.
+  Please view options exposed by [typedoc-plugin-markdown](/docs/options) in
+  addition to those listed here.
 </Callout>
 
 ## frontmatterGlobals
 
-<Callout emoji="💡">Specify static variables to be added to all frontmatter blocks.</Callout>
+<Callout emoji="💡">
+  Specify static variables to be added to all frontmatter blocks.
+</Callout>
 
 > Accepts a key/value object.
-
 
 ```yaml filename="YAML"
 ---
@@ -20,7 +22,6 @@ sidebar: true
 ---
 ```
 
-
 ```json filename="typedoc.json"
 {
   "frontmatterGlobals": {
@@ -28,17 +29,17 @@ sidebar: true
     "sidebar": true
   }
 }
-
 ```
 
-___
+---
 
 ## readmeFrontmatter
 
-<Callout emoji="💡">Specify static variables to be added to the readme page only.</Callout>
+<Callout emoji="💡">
+  Specify static variables to be added to the readme page only.
+</Callout>
 
 > Accepts a key/value object.
-
 
 ```json filename="typedoc.json"
 {
@@ -46,17 +47,17 @@ ___
     "onReadme": "true"
   }
 }
-
 ```
 
-___
+---
 
 ## indexFrontmatter
 
-<Callout emoji="💡">Specify static variables to be added to the index page only.</Callout>
+<Callout emoji="💡">
+  Specify static variables to be added to the index page only.
+</Callout>
 
 > Accepts a key/value object.
-
 
 ```json filename="typedoc.json"
 {
@@ -64,14 +65,15 @@ ___
     "onIndex": "true"
   }
 }
-
 ```
 
-___
+---
 
 ## frontmatterCommentTags
 
-<Callout emoji="💡">Specify which comment block tags should be added to frontmatter.</Callout>
+<Callout emoji="💡">
+  Specify which comment block tags should be added to frontmatter.
+</Callout>
 
 > Accepts an Array.
 
@@ -79,13 +81,13 @@ Frontmatter variables can be added by extracting comments from block (@) tags.
 
 Please note tags must be added to the comment blocks of the symbol exported to a page.
 
- ```ansi filename="Block Tags (someModule.ts)"
- /**
- * @author Joe Bloggs
- *
- * @description A description that will be added to frontmatter.
- */
- ```
+```ansi filename="Block Tags (someModule.ts)"
+/**
+* @author Joe Bloggs
+*
+* @description A description that will be added to frontmatter.
+*/
+```
 
 ```yaml filename="YAML (someModule.md)"
 ---
@@ -94,38 +96,35 @@ description: A description that will be added to frontmatter.
 ---
 ```
 
-
 ```json filename="typedoc.json"
 {
-  "frontmatterCommentTags": [
-    "author",
-    "description"
-  ]
+  "frontmatterCommentTags": ["author", "description"]
 }
-
 ```
 
-___
+---
 
 ## preserveFrontmatterCommentTags
 
-<Callout emoji="💡">Preserve tags defined in frontmatter block tags in output.</Callout>
+<Callout emoji="💡">
+  Preserve tags defined in frontmatter block tags in output.
+</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
-
 
 ```json filename="typedoc.json"
 {
   "preserveFrontmatterCommentTags": false
 }
-
 ```
 
-___
+---
 
 ## frontmatterNamingConvention
 
-<Callout emoji="💡">The naming convention that variables should be output as. </Callout>
+<Callout emoji="💡">
+  The naming convention that variables should be output as.{" "}
+</Callout>
 
 > Accepts either `"camelCase"` or `"snakeCase"`. Defaults to `"camelCase"`.
 
@@ -133,12 +132,10 @@ Block tags have to be written in camelCase (see [tsdoc.org](https://tsdoc.org/pa
 
 This option can configure the output style of frontmatter variables when written to YAML.
 
-
 ```json filename="typedoc.json"
 {
   "frontmatterNamingConvention": "camelCase"
 }
-
 ```
 
-___
+---
