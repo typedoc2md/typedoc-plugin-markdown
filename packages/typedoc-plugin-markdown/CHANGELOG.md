@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0-next.58
+
+### Patch Changes
+
+- Fixed navigation type error ([#595](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/595))
+
 ## 4.0.0-next.57
 
 ### Patch Changes
