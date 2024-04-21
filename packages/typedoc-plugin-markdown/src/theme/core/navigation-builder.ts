@@ -268,7 +268,7 @@ export function buildNavigation(
         let currentLevel = acc;
         let currentItem: NavigationItem;
         for (let i = 0; i < titleParts.length - 1; i++) {
-          currentItem = currentLevel.find(
+          currentItem = currentLevel?.find(
             (item: NavigationItem) => item.title === titleParts[i],
           ) as NavigationItem;
           if (!currentItem) {
@@ -279,7 +279,7 @@ export function buildNavigation(
             currentLevel.push(currentItem);
           }
           if (currentItem) {
-            currentLevel = currentItem.children as NavigationItem[];
+            currentLevel = currentItem.children || [];
           }
         }
 

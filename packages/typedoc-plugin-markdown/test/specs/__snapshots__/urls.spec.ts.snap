@@ -356,6 +356,19 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-6/module2/index.md",
   "package-6/module2/interfaces/PackageInterface2.md",
   "package-6.md",
+  "package-7/index.md",
+  "package-7/module-1/classes/ClassA.md",
+  "package-7/module-1/classes/ClassB.md",
+  "package-7/module-1/index.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassA.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassB.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/index.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassA.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassB.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/index.md",
+  "package-7/module-2/classes/ClassA.md",
+  "package-7/module-2/classes/ClassB.md",
+  "package-7/module-2/index.md",
   "packages.md",
 ]
 `;
@@ -389,6 +402,19 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-6/module2/README.md",
   "package-6/module2/interfaces/PackageInterface2.md",
   "package-6.md",
+  "package-7/README.md",
+  "package-7/module-1/README.md",
+  "package-7/module-1/classes/ClassA.md",
+  "package-7/module-1/classes/ClassB.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/README.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassA.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassB.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/README.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassA.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassB.md",
+  "package-7/module-2/README.md",
+  "package-7/module-2/classes/ClassA.md",
+  "package-7/module-2/classes/ClassB.md",
 ]
 `;
 
@@ -415,6 +441,11 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
   "package-5/package-5.md",
   "package-6/module2.md",
   "package-6.md",
+  "package-7/index.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2.md",
+  "package-7/module-1.md",
+  "package-7/module-2.md",
   "packages.md",
 ]
 `;
@@ -440,6 +471,11 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
   "package-5/package-5.md",
   "package-6/module2.md",
   "package-6.md",
+  "package-7/README.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1.md",
+  "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2.md",
+  "package-7/module-1.md",
+  "package-7/module-2.md",
 ]
 `;
 

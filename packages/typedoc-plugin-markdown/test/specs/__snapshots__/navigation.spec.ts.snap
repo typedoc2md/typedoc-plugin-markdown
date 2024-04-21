@@ -199,6 +199,111 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-6.md"
+  },
+  {
+    "title": "package-7",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-7/module-1/index.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "kind": 128,
+                "path": "package-7/module-1/classes/ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "kind": 128,
+                "path": "package-7/module-1/classes/ClassB.md"
+              }
+            ]
+          },
+          {
+            "title": "submodules",
+            "children": [
+              {
+                "title": "submodule-3-with-modules",
+                "children": [
+                  {
+                    "title": "nested-submodule-1",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/index.md",
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "ClassA",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassA.md"
+                          },
+                          {
+                            "title": "ClassB",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassB.md"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "nested-submodule-2",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/index.md",
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "ClassA",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassA.md"
+                          },
+                          {
+                            "title": "ClassB",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassB.md"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-7/module-2/index.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "kind": 128,
+                "path": "package-7/module-2/classes/ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "kind": 128,
+                "path": "package-7/module-2/classes/ClassB.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "path": "package-7/index.md"
   }
 ]"
 `;
@@ -402,6 +507,111 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-6.md"
+  },
+  {
+    "title": "package-7",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-7/module-1/README.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "kind": 128,
+                "path": "package-7/module-1/classes/ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "kind": 128,
+                "path": "package-7/module-1/classes/ClassB.md"
+              }
+            ]
+          },
+          {
+            "title": "submodules",
+            "children": [
+              {
+                "title": "submodule-3-with-modules",
+                "children": [
+                  {
+                    "title": "nested-submodule-1",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/README.md",
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "ClassA",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassA.md"
+                          },
+                          {
+                            "title": "ClassB",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassB.md"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "nested-submodule-2",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/README.md",
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "ClassA",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassA.md"
+                          },
+                          {
+                            "title": "ClassB",
+                            "kind": 128,
+                            "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassB.md"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-7/module-2/README.md",
+        "children": [
+          {
+            "title": "Classes",
+            "children": [
+              {
+                "title": "ClassA",
+                "kind": 128,
+                "path": "package-7/module-2/classes/ClassA.md"
+              },
+              {
+                "title": "ClassB",
+                "kind": 128,
+                "path": "package-7/module-2/classes/ClassB.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "path": "package-7/README.md"
   }
 ]"
 `;
@@ -541,6 +751,23 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-6.md"
+  },
+  {
+    "title": "package-7",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-7/module-1.md"
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-7/module-2.md"
+      }
+    ],
+    "path": "package-7/index.md"
   }
 ]"
 `;
@@ -674,6 +901,23 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-6.md"
+  },
+  {
+    "title": "package-7",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-7/module-1.md"
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-7/module-2.md"
+      }
+    ],
+    "path": "package-7/README.md"
   }
 ]"
 `;

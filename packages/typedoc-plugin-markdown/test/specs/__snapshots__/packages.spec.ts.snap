@@ -27,6 +27,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 - [package-4](package-4/index.md)
 - [package-5](package-5/package-5.md)
 - [package-6](package-6.md)
+- [package-7](package-7/index.md)
 "
 `;
 
@@ -183,6 +184,7 @@ Some text.
 | [package-4](package-4/README.md) | - | - |
 | [package-5](package-5/package-5.md) | - | - |
 | [package-6](package-6.md) | - | - |
+| [package-7](package-7/README.md) | - | - |
 "
 `;
 
