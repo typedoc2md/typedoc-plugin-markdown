@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0-next.30
+
+### Patch Changes
+
+- Correctly handle sidebar ids in Windows ([#597](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/597)).
+
 ## 1.0.0-next.29
 
 ### Patch Changes
