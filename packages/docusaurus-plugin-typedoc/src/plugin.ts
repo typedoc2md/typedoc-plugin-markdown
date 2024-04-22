@@ -41,14 +41,14 @@ export default async function pluginDocusaurus(
 }
 
 /**
- * Initiates a new typedoc Application bootstraped with plugin options
+ * Initiates a new typedoc Application bootstrapped with plugin options
  */
 async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
   const { siteDir } = context;
 
-  const pluginOpions = getPluginOptions(opts);
+  const pluginOptions = getPluginOptions(opts);
 
-  const { id, sidebar, ...optionsPassedToTypeDoc } = pluginOpions;
+  const { id, sidebar, ...optionsPassedToTypeDoc } = pluginOptions;
 
   const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
 
@@ -70,14 +70,6 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
       async (output: MarkdownRendererEvent) => {
         if (output.navigation) {
           const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
-          const sidebarJSONPath = path.resolve(
-            outputDir,
-            'typedoc-sidebar.json',
-          );
-          fs.writeFileSync(
-            sidebarJSONPath,
-            JSON.stringify(output.navigation, null, 2),
-          );
           const baseDir = path
             .relative(siteDir, outputDir)
             .split(path.sep)

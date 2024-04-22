@@ -28,7 +28,7 @@ function getNavigationItem(
       idParts.push(basePath);
     }
     if (parsedUrl) {
-      idParts.push(parsedUrl);
+      idParts.push(parsedUrl.replace(/\\/g, '/'));
     }
     if (navigationItem.path) {
       return idParts.join('/').replace(/(.*)\.\w+$/, '$1');
@@ -53,9 +53,9 @@ function getNavigationItem(
 
   return id
     ? {
-        type: 'doc',
-        id,
-        label: `${navigationItem.title}`,
-      }
+      type: 'doc',
+      id,
+      label: `${navigationItem.title}`,
+    }
     : null;
 }
