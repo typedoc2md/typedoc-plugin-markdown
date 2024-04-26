@@ -3,11 +3,12 @@ import { KIND_DEFAULTS } from './kind-defaults';
 export const TEXT_MAPPING_DEFAULTS = {
   'header.title': '{projectName} {version}',
   'header.readme': 'Readme',
-  'header.docs': 'API',
+  'header.docs': 'Docs',
   'breadcrumbs.home': '{projectName} {version}',
   'title.indexPage': '{projectName} {version}',
   'title.modulePage': '{name}',
   'title.memberPage': '{kind}: {name}',
+  'label.apiIndex': 'API Index',
   'label.defaultValue': 'Default value',
   'label.description': 'Description',
   'label.extendedBy': 'Extended by',

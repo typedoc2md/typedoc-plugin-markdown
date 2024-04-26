@@ -1,5 +1,5 @@
 export default {
-  "index": "Index",
+  "index": "API Index",
   "Application": {
     "type": "separator",
     "title": "Application"

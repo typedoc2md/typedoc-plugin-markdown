@@ -156,6 +156,26 @@ Merges the resolved readme into the project index page.
 
 ***
 
+### navigationModel
+
+> **navigationModel**: `object`
+
+Configures how the navigation model will be generated.
+
+#### excludeGroups
+
+> **excludeGroups**: `boolean`
+
+#### excludeCategories
+
+> **excludeCategories**: `boolean`
+
+#### excludeFolders
+
+> **excludeFolders**: `boolean`
+
+***
+
 ### outputFileStrategy
 
 > **outputFileStrategy**: `"members"` \| `"modules"`

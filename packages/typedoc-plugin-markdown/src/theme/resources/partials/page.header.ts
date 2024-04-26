@@ -1,4 +1,4 @@
-import { bold, link } from '@plugin/libs/markdown';
+import { link } from '@plugin/libs/markdown';
 import { MarkdownThemeContext } from '@plugin/theme';
 import * as path from 'path';
 import {
@@ -42,8 +42,11 @@ export function header(this: MarkdownThemeContext): string {
     const readmeLabel = this.getText('header.readme');
     const indexLabel = this.getText('header.docs');
 
-    md.push(bold(title));
-
+    if (this.page.url === entryFileName) {
+      md.push(title);
+    } else {
+      md.push(link(title, this.getRelativeUrl(entryFileName)));
+    }
     md.push('•');
 
     const preserveReadme =
@@ -75,23 +78,15 @@ export function header(this: MarkdownThemeContext): string {
 
       const indexUrl = useEntryModule ? entryFileName : this.page.project.url;
 
-      if (this.page.url === indexUrl) {
-        links.push(indexLabel);
+      if (this.page.url === readMeUrl) {
+        links.push(link(indexLabel, this.getRelativeUrl(indexUrl || '')));
       } else {
-        if (indexUrl) {
-          links.push(link(indexLabel, this.getRelativeUrl(indexUrl)));
-        }
+        links.push(indexLabel);
       }
 
       md.push(`${links.join(' ')}`);
     } else {
-      if (useEntryModule || this.page.url === this.page.project.url) {
-        md.push(indexLabel);
-      } else {
-        if (this.page.project.url) {
-          md.push(link(indexLabel, this.getRelativeUrl(this.page.project.url)));
-        }
-      }
+      md.push(indexLabel);
     }
 
     return `${md.join(' ')}\n\n***\n`;
@@ -118,7 +113,13 @@ export function header(this: MarkdownThemeContext): string {
       ? `${packageItem.name} v${packageItem.packageVersion}`
       : packageItem.name;
 
-    md.push(bold(packageItemName));
+    const packageEntryFile = `${packageItem.name}/${entryFileName}`;
+
+    if (this.page.url === packageEntryFile) {
+      md.push(packageItemName);
+    } else {
+      md.push(link(packageItemName, this.getRelativeUrl(packageEntryFile)));
+    }
 
     md.push('•');
 
@@ -127,23 +128,23 @@ export function header(this: MarkdownThemeContext): string {
 
     if (preservePackageReadme) {
       const links: string[] = [];
-      const readmeUrl = `${packageItem.name}/${entryFileName}`;
 
-      if (this.page.url === readmeUrl) {
+      if (this.page.url === packageEntryFile) {
         links.push(readmeLabel);
       } else {
-        links.push(link(readmeLabel, this.getRelativeUrl(readmeUrl)));
+        links.push(link(readmeLabel, this.getRelativeUrl(packageEntryFile)));
       }
 
       links.push('\\|');
 
-      if (this.page.url === packageItem.url) {
-        links.push(indexLabel);
+      if (this.page.url === packageEntryFile) {
+        links.push(
+          link(indexLabel, this.getRelativeUrl(packageItem.url || '')),
+        );
       } else {
-        if (packageItem.url) {
-          links.push(link(indexLabel, this.getRelativeUrl(packageItem.url)));
-        }
+        links.push(indexLabel);
       }
+
       md.push(`${links.join(' ')}`);
     } else {
       md.push(indexLabel);

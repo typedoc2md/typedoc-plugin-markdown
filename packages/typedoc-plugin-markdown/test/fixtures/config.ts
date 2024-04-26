@@ -172,6 +172,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   readme: {
+    only: false,
     entryPoints: '/readme/index.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],

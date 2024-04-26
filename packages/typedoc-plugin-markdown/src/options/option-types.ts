@@ -229,6 +229,7 @@ export interface TextContentMappings {
   'title.indexPage': string;
   'title.modulePage': string;
   'title.memberPage': string;
+  'label.apiIndex': string;
   'label.defaultValue': string;
   'label.description': string;
   'label.extendedBy': string;

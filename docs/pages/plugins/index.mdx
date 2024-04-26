@@ -2,24 +2,19 @@ import { Cards } from 'nextra/components';
 import Image from 'next/image';
 import { faFileLines, faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faGitlab,
-  faVuejs,
-} from '@fortawesome/free-brands-svg-icons';
 
-# Related Plugins
+# Child Plugins
 
-Listed here are related plugins that can be used with **typedoc-plugin-markdown** to enhance the documentation experience.
+Listed here are plugins that can be used with **typedoc-plugin-markdown** to enhance the documentation experience.
 
 ## Utils
 
-Utility plugins that can be used to adjust the output of the markdown files.
+Utility plugins that can be used to provide metadata or adjust the output of the markdown files.
 
 <Cards num={2}>
   <Cards.Card
-    title="typedoc-plugin-frontmatter"
-    icon={<FontAwesomeIcon icon={faFileLines} />}
+    title="Frontmatter"
+    icon={<FontAwesomeIcon icon={faBook} />}
     arrow={true}
     href="plugins/frontmatter"
   />
@@ -31,40 +26,42 @@ Utility plugins that can be used to adjust the output of the markdown files.
   />
 </Cards>
 
-## Themes
+## Themes & Integrations
 
-Theme plugins that can be used to adjust the output for specific platforms.
+Plugins that can be used to integrate and target output for specific platforms.
 
 <Cards num={2}>
   <Cards.Card
+    title="docusaurus-plugin-typedoc"
+    icon={
+      <Image
+        src="/docusaurus-logo.svg"
+        alt="Docusaurus"
+        width={26}
+        height={26}
+      />
+    }
+    arrow={true}
+    href="plugins/docusaurus"
+  />
+  <Cards.Card
     title="typedoc-vitepress-theme"
-    icon={<FontAwesomeIcon icon={faVuejs} />}
+    icon={
+      <Image src="/vuepress-logo.png" alt="VuePress" width={26} height={26} />
+    }
     arrow={true}
     href="plugins/vitepress"
   />
   <Cards.Card
     title="typedoc-github-wiki-theme"
-    icon={<FontAwesomeIcon icon={faGithub} />}
+    icon={<Image src="/github-logo.svg" alt="Gitlab" width={26} height={26} />}
     arrow={true}
     href="plugins/github-wiki"
   />
   <Cards.Card
     title="typedoc-gitlab-wiki-theme"
-    icon={<FontAwesomeIcon icon={faGitlab} />}
+    icon={<Image src="/gitlab-logo.png" alt="Gitlab" width={26} height={26} />}
     arrow={true}
     href="plugins/gitlab-wiki"
-  />
-</Cards>
-
-## Integrations
-
-Integration plugins that can be used to integrate with other tools.
-
-<Cards num={2}>
-  <Cards.Card
-    title="docusaurus-plugin-typedoc"
-    icon={<FontAwesomeIcon icon={faBook} />}
-    arrow={true}
-    href="plugins/docusaurus"
   />
 </Cards>

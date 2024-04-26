@@ -1172,6 +1172,20 @@ Please note that partials:
 
 `string`
 
+#### getPropertyDefaultValue()
+
+> **getPropertyDefaultValue**: (`model`) => `null` \| `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`null` \| `string`
+
 #### getReturnType()
 
 > **getReturnType**: (`model`?) => `string`

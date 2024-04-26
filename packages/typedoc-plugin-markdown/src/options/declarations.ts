@@ -178,7 +178,7 @@ export const entryModule: Partial<DeclarationOption> = {
 };
 
 /**
- * By default when a readme file is resolved, a separate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
+ * By default when a readme file is resolved, a separate readme page is created. This option appends the index page to the readme so only a single root page is generated.
  *
  * This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
  *
@@ -225,7 +225,7 @@ export const excludeScopesInPaths: Partial<DeclarationOption> = {
 };
 
 /**
- * @category UI
+ * @category UX
  */
 export const hidePageHeader: Partial<DeclarationOption> = {
   help: 'Do not print page header.',
@@ -234,7 +234,7 @@ export const hidePageHeader: Partial<DeclarationOption> = {
 };
 
 /**
- * @category UI
+ * @category UX
  */
 export const hidePageTitle: Partial<DeclarationOption> = {
   help: 'Do not print page title.',
@@ -243,7 +243,7 @@ export const hidePageTitle: Partial<DeclarationOption> = {
 };
 
 /**
- * @category UI
+ * @category UX
  */
 export const hideBreadcrumbs: Partial<DeclarationOption> = {
   help: 'Do not print breadcrumbs.',
@@ -254,7 +254,7 @@ export const hideBreadcrumbs: Partial<DeclarationOption> = {
 /**
  * @deprecated In-page TOC is now hidden as default.
  *
- * @category UI
+ * @category UX
  */
 export const hideInPageTOC: Partial<DeclarationOption> = {
   help: 'Do not render in-page TOC items.',
@@ -267,7 +267,7 @@ export const hideInPageTOC: Partial<DeclarationOption> = {
  *
  * @deprecated Please use `textContentMappings`.
  *
- * @category UI
+ * @category UX
  *
  */
 export const indexPageTitle: Partial<DeclarationOption> = {
@@ -281,7 +281,7 @@ export const indexPageTitle: Partial<DeclarationOption> = {
  *
  * @deprecated Please use `textContentMappings`.
  *
- * @category UI
+ * @category UX
  */
 export const memberPageTitle: Partial<DeclarationOption> = {
   help: 'The page title of member pages.',
@@ -294,7 +294,7 @@ export const memberPageTitle: Partial<DeclarationOption> = {
  *
  * This creates a flat structure where all members are displayed at the same heading level.
  *
- * @category UI
+ * @category UX
  */
 export const excludeGroups: Partial<DeclarationOption> = {
   help: 'Excludes grouping by kind so all members are rendered and sorted at the same level.',
@@ -309,7 +309,7 @@ export const excludeGroups: Partial<DeclarationOption> = {
  *
  * As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be be used to manually reference types.
  *
- * @category UI
+ * @category UX
  */
 export const useCodeBlocks: Partial<DeclarationOption> = {
   help: 'Wraps signatures and declarations in code blocks.',
@@ -330,7 +330,7 @@ export const useCodeBlocks: Partial<DeclarationOption> = {
  *
  * \{ `"x"`: `string` }
  *
- * @category UI
+ * @category UX
  */
 export const expandObjects: Partial<DeclarationOption> = {
   help: 'Expand objects inside declarations.',
@@ -351,7 +351,7 @@ export const expandObjects: Partial<DeclarationOption> = {
  *
  * `someFunction(param1: string, param2: boolean)`
  *
- * @category UI
+ * @category UX
  */
 export const expandParameters: Partial<DeclarationOption> = {
   help: 'Expand parameters in signature parentheses to display type information.',
@@ -362,7 +362,7 @@ export const expandParameters: Partial<DeclarationOption> = {
 /**
  * This option either renders parameters for functions and class methods as a list or in tabular format.
  *
- * @category UI
+ * @category UX
  */
 export const parametersFormat: Partial<DeclarationOption> = {
   help: 'Specify the render style of parameter and type parameter groups.',
@@ -374,7 +374,7 @@ export const parametersFormat: Partial<DeclarationOption> = {
 /**
  *  This option either renders properties for classes and interfaces as a list or in tabular format.
  *
- * @category UI
+ * @category UX
  *
  */
 export const propertiesFormat: Partial<DeclarationOption> = {
@@ -387,7 +387,7 @@ export const propertiesFormat: Partial<DeclarationOption> = {
 /**
  * This option either renders members of enums as a list or in tabular format.
  *
- * @category UI
+ * @category UX
  */
 export const enumMembersFormat: Partial<DeclarationOption> = {
   help: 'Specify the render style of enumuration members.',
@@ -399,7 +399,7 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
 /**
  * This option either renders type declrations as a list or in tabular format.
  *
- * @category UI
+ * @category UX
  */
 export const typeDeclarationFormat: Partial<DeclarationOption> = {
   help: 'Specify the render style for type declaration members.',
@@ -413,7 +413,7 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
  *
  * For a packages index page (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
  *
- * @category UI
+ * @category UX
  */
 export const indexFormat: Partial<DeclarationOption> = {
   help: 'Specify the render format for index items.',
@@ -439,12 +439,12 @@ export const indexFormat: Partial<DeclarationOption> = {
  * - `header.*` defines text in the page header (if displayed).
  * - `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
  * - `title.*` defines text in main page titles.
- * - `label.*` other text in page content, including headings and table headers.
+ * - `label.*` other text in page content, including content headings and table headers.
  * - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
  *
  * Only keys that require translation need to be added to the object.
  *
- * @category UI
+ * @category UX
  */
 export const textContentMappings: Partial<DeclarationOption> = {
   help: 'Provides a mechanism to change the content of text used in documentation.',

@@ -1,27 +1,17 @@
 export default {
-  index: 'Index',
-
+  index: 'Child Plugins Index',
   '-- Utils': {
     type: 'separator',
     title: 'Utils',
   },
-
-  frontmatter: 'typedoc-plugin-frontmatter',
-  remark: 'typedoc-plugin-remark',
-
-  '-- Themes': {
+  frontmatter: '',
+  remark: 'Remark',
+  '-- Themes & Integrations': {
     type: 'separator',
-    title: 'Themes',
+    title: 'Themes & Integrations',
   },
-
-  vitepress: 'typedoc-vitepress-theme',
-  'github-wiki': 'typedoc-github-wiki-theme',
-  'gitlab-wiki': 'typedoc-gitlab-wiki-theme',
-
-  '-- Integrations': {
-    type: 'separator',
-    title: 'Integrations',
-  },
-
-  docusaurus: 'docusaurus-plugin-typedoc',
+  docusaurus: 'Docusaurus',
+  vitepress: '',
+  'github-wiki': 'Github Wiki',
+  'gitlab-wiki': 'Gitlab Wiki',
 };
