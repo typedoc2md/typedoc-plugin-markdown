@@ -32,7 +32,7 @@ module.exports = {
     pluginRefs.forEach((pluginRef) => {
       processor.use(pluginRef.pluginFn, pluginRef.options);
     });
-    processor.processSync(file);
+    await processor.process(file);
 
     writeSync(file);
   },
