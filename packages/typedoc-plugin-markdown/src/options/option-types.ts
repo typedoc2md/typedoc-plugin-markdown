@@ -15,12 +15,9 @@ declare module 'typedoc' {
     fileExtension: string;
     flattenOutputFiles: boolean;
     hideBreadcrumbs: boolean;
-    hideInPageTOC: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
     indexFormat: 'list' | 'table';
-    indexPageTitle: string;
-    memberPageTitle: string;
     membersWithOwnFile: (
       | 'Enum'
       | 'Variable'
@@ -110,11 +107,6 @@ export interface PluginOptions {
   hideBreadcrumbs: boolean;
 
   /**
-   * Do not render in-page TOC items.
-   */
-  hideInPageTOC: boolean;
-
-  /**
    * Do not print page header.
    */
   hidePageHeader: boolean;
@@ -128,16 +120,6 @@ export interface PluginOptions {
    * Specify the render format for index items.
    */
   indexFormat: 'list' | 'table';
-
-  /**
-   * The title of project index page.
-   */
-  indexPageTitle: string;
-
-  /**
-   * The page title of member pages.
-   */
-  memberPageTitle: string;
 
   /**
    * Determines which members are exported to their own file when `outputFileStrategy` equals `members`.

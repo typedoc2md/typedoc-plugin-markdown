@@ -232,7 +232,7 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# BasicInterface
+"# Interface: BasicInterface
 
 Comments for BasicInterface
 
@@ -547,7 +547,7 @@ Comments for nestedPropD
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ExtendedInterface
+"# Interface: ExtendedInterface
 
 Comments for ExtendedInterface
 
@@ -603,7 +603,7 @@ Comments for IndexableInterface
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# IndexableInterface
+"# Interface: IndexableInterface
 
 Comments for IndexableInterface
 
@@ -673,7 +673,7 @@ Comments for param eventParam
 `;
 
 exports[`Interface Reflection should compile interface with event properties: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# InterfaceWithEventProperties
+"# Interface: InterfaceWithEventProperties
 
 ## Properties
 
@@ -722,7 +722,7 @@ Comments for InterfaceWithFlags
 `;
 
 exports[`Interface Reflection should compile interface with flags: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# InterfaceWithFlags
+"# Interface: InterfaceWithFlags
 
 Comments for InterfaceWithFlags
 
@@ -759,7 +759,7 @@ Comments for prop
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# InterfaceWithTypeParameters\\<A\\>
+"# Interface: InterfaceWithTypeParameters\\<A\\>
 
 Comments for InterfaceWithTypeParameters
 

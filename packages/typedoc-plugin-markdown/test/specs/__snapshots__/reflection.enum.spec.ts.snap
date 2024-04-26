@@ -32,7 +32,7 @@ Comments for MemberB
 `;
 
 exports[`Enum Reflection should compile basic enum: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# BasicEnum
+"# Enumeration: BasicEnum
 
 Comments for enum
 
@@ -73,7 +73,7 @@ Comments for enum
 `;
 
 exports[`Enum Reflection should compile enum with values: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# EnumWithValues
+"# Enumeration: EnumWithValues
 
 Comments for enum
 

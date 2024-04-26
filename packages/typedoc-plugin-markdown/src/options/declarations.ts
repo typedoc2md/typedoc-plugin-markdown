@@ -252,44 +252,6 @@ export const hideBreadcrumbs: Partial<DeclarationOption> = {
 };
 
 /**
- * @deprecated In-page TOC is now hidden as default.
- *
- * @category UX
- */
-export const hideInPageTOC: Partial<DeclarationOption> = {
-  help: 'Do not render in-page TOC items.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * Provides a mechanism to change the main project index page title.
- *
- * @deprecated Please use `textContentMappings`.
- *
- * @category UX
- *
- */
-export const indexPageTitle: Partial<DeclarationOption> = {
-  help: 'The title of project index page.',
-  type: ParameterType.String,
-  defaultValue: '{ProjectName}',
-};
-
-/**
- * Provides a mechanism to configure the page title of members.
- *
- * @deprecated Please use `textContentMappings`.
- *
- * @category UX
- */
-export const memberPageTitle: Partial<DeclarationOption> = {
-  help: 'The page title of member pages.',
-  type: ParameterType.String,
-  defaultValue: '{kind}: {name}',
-};
-
-/**
  * By default members are grouped by kind (eg Classes, Functions etc).
  *
  * This creates a flat structure where all members are displayed at the same heading level.

@@ -20,7 +20,6 @@ const config: Record<string, Fixture> = {
         enumMembersFormat: 'table',
         useCodeBlocks: true,
         expandParameters: true,
-        memberPageTitle: '{name}',
         navigationModel: {
           excludeGroups: true,
         },
@@ -90,7 +89,6 @@ const config: Record<string, Fixture> = {
         excludeGroups: true,
         useHTMLAnchors: true,
         indexFormat: 'table',
-        indexPageTitle: '{projectName}',
         categorizeByGroup: false,
       },
     ],
@@ -135,7 +133,6 @@ const config: Record<string, Fixture> = {
         excludeScopesInPaths: true,
         mergeReadme: true,
         includeVersion: true,
-        indexPageTitle: 'API',
         indexFormat: 'table',
       },
     ],

@@ -14,7 +14,7 @@ Comments for ArrayType
 `;
 
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ArrayType
+"# Type alias: ArrayType
 
 \`\`\`ts
 type ArrayType: string[];
@@ -46,7 +46,7 @@ Comments for ConditionalType
 `;
 
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ConditionalType\\<T\\>
+"# Type alias: ConditionalType\\<T\\>
 
 \`\`\`ts
 type ConditionalType<T>: T extends string ? "string" : T extends number ? "number" : T extends boolean ? "boolean" : T extends undefined ? "undefined" : "object";
@@ -80,7 +80,7 @@ Comments for TypeWithExternalSymbolLinkMapping
 `;
 
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# TypeWithExternalSymbolLinkMapping
+"# Type alias: TypeWithExternalSymbolLinkMapping
 
 \`\`\`ts
 type TypeWithExternalSymbolLinkMapping: Application;
@@ -204,7 +204,7 @@ Comments for someFunction
 `;
 
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# LiteralType
+"# Type alias: LiteralType
 
 \`\`\`ts
 type LiteralType: object;
@@ -248,7 +248,7 @@ Comments for ExternalReferenceType
 `;
 
 exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ExternalReferenceType
+"# Type alias: ExternalReferenceType
 
 \`\`\`ts
 type ExternalReferenceType: ClassWithTypeParameters<"x", "y">;
@@ -286,7 +286,7 @@ Comments for FunctionType
 `;
 
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# FunctionType()
+"# Type alias: FunctionType()
 
 \`\`\`ts
 type FunctionType: (name: string, value: unknown) => void;
@@ -325,7 +325,7 @@ Comments for IndexAccessType
 `;
 
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# IndexAccessType
+"# Type alias: IndexAccessType
 
 \`\`\`ts
 type IndexAccessType: ArrayOfStuff[number];
@@ -359,7 +359,7 @@ Comments for IntersectionType
 `;
 
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# IntersectionType
+"# Type alias: IntersectionType
 
 \`\`\`ts
 type IntersectionType: TupleType & ArrayType & object;
@@ -397,7 +397,7 @@ Comments for PartialMappedType
 `;
 
 exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# PartialMappedType\\<T\\>
+"# Type alias: PartialMappedType\\<T\\>
 
 \`\`\`ts
 type PartialMappedType<T>: { [P in keyof T]?: T[P] };
@@ -431,7 +431,7 @@ Comments for PrimitiveType
 `;
 
 exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# PrimitiveType
+"# Type alias: PrimitiveType
 
 \`\`\`ts
 type PrimitiveType: boolean;
@@ -459,7 +459,7 @@ Comments for query type
 `;
 
 exports[`Type Alias Reflection should compile query type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# QueryType
+"# Type alias: QueryType
 
 \`\`\`ts
 type QueryType: typeof someQuery;
@@ -491,7 +491,7 @@ Comments for ReadonlyMapedType
 `;
 
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ReadonlyMappedType\\<T\\>
+"# Type alias: ReadonlyMappedType\\<T\\>
 
 \`\`\`ts
 type ReadonlyMappedType<T>: { readonly [P in keyof T]: T[P] };
@@ -525,7 +525,7 @@ Comments for StringLiteralType
 `;
 
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# StringLiteralType
+"# Type alias: StringLiteralType
 
 \`\`\`ts
 type StringLiteralType: 
@@ -559,7 +559,7 @@ Comments for TupleType
 `;
 
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# TupleType
+"# Type alias: TupleType
 
 \`\`\`ts
 type TupleType: [string, number];
@@ -593,7 +593,7 @@ Comments for TypeWithTypeParams
 `;
 
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# TypeWithTypeParams\\<T, R\\>
+"# Type alias: TypeWithTypeParams\\<T, R\\>
 
 \`\`\`ts
 type TypeWithTypeParams<T, R>: [T, R];
@@ -628,7 +628,7 @@ Union with template strings
 `;
 
 exports[`Type Alias Reflection should compile union type with template strings: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# UnionTypeWithTemplateStrings
+"# Type alias: UnionTypeWithTemplateStrings
 
 \`\`\`ts
 type UnionTypeWithTemplateStrings: \`v\${number}\` | \`v\${number}.\${number}\` | \`v\${number}.\${number}.\${number}\`;
@@ -656,7 +656,7 @@ Comments for UnionType
 `;
 
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# UnionType
+"# Type alias: UnionType
 
 \`\`\`ts
 type UnionType: string | boolean | object;

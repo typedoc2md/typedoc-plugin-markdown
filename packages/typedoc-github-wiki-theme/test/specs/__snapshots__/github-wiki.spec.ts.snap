@@ -16,7 +16,6 @@ exports[`GithubWiki should get default files 1`] = `
   "module-2.Interface.InterfaceA.md",
   "module-2.Interface.InterfaceB.md",
   "module-2.md",
-  "sidebar.json",
 ]
 `;
 

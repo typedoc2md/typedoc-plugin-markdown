@@ -92,14 +92,6 @@ Do not print breadcrumbs.
 
 ***
 
-### hideInPageTOC
-
-> **hideInPageTOC**: `boolean`
-
-Do not render in-page TOC items.
-
-***
-
 ### hidePageHeader
 
 > **hidePageHeader**: `boolean`
