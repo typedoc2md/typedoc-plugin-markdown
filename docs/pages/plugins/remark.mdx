@@ -8,6 +8,20 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 <PackageDescription pjson={pjson} />
 
+## Installation
+
+```sh npm2yarn
+npm install typedoc-plugin-remark@next --save-dev
+```
+
+## Usage
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"]
+}
+```
+
 ## Examples
 
 <Cards num={2}>
@@ -15,7 +29,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
     title="View on Github"
     icon={<FontAwesomeIcon icon={faGithub} />}
     arrow={true}
-    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/03-typedoc-plugin-remark"
+    href="https://github.com/tgreyuk/typedoc-plugin-markdown-examples/tree/main/examples/09-remark-example#readme"
     target="_blank"
   />
 </Cards>
