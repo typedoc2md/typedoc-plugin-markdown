@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [API](../modules.md)
+"[typedoc-stubs](../index.md) • [Readme](../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../index.md) / basic
+[typedoc-stubs](../modules.md) / basic
 
 # basic
 
@@ -36,7 +36,7 @@ A basic module
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../index.md)
+"[typedoc-stubs](../index.md) • Docs
 
 ***
 
@@ -74,11 +74,11 @@ A basic module
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](index.md) \\| [API](modules.md)
+"[typedoc-stubs](index.md) • [Readme](index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](index.md) / basic
+[typedoc-stubs](modules.md) / basic
 
 # basic
 
@@ -153,7 +153,7 @@ A basic module
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](index.md)
+"[typedoc-stubs](index.md) • Docs
 
 ***
 
@@ -254,11 +254,11 @@ A basic module
 `;
 
 exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](index.md) \\| [API](modules.md)
+"[typedoc-stubs](index.md) • [Readme](index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](index.md) / has-categories
+[typedoc-stubs](modules.md) / has-categories
 
 # has-categories
 
@@ -311,7 +311,7 @@ A module that contains categories
 `;
 
 exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](index.md)
+"[typedoc-stubs](index.md) • Docs
 
 ***
 
@@ -384,11 +384,11 @@ A module that contains categories
 `;
 
 exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [API](../modules.md)
+"[typedoc-stubs](../index.md) • [Readme](../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../index.md) / has-categories
+[typedoc-stubs](../modules.md) / has-categories
 
 # has-categories
 
@@ -431,7 +431,7 @@ A module that contains categories
 `;
 
 exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../index.md)
+"[typedoc-stubs](../index.md) • Docs
 
 ***
 
@@ -471,11 +471,11 @@ A module that contains categories
 `;
 
 exports[`Groups should compile custom groups index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [API](../modules.md)
+"[typedoc-stubs](../index.md) • [Readme](../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../index.md) / has-custom-groups
+[typedoc-stubs](../modules.md) / has-custom-groups
 
 # has-custom-groups
 
@@ -499,7 +499,7 @@ A module that contains custom groupings
 `;
 
 exports[`Groups should compile custom groups index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../index.md)
+"[typedoc-stubs](../index.md) • Docs
 
 ***
 
@@ -544,7 +544,7 @@ Default grouping
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](index.md) \\| API
+"[typedoc-stubs](index.md) • [Readme](index.md) \\| Docs
 
 ***
 
@@ -565,7 +565,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • API
+"typedoc-stubs • Docs
 
 ***
 
@@ -586,7 +586,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](index.md) \\| API
+"[typedoc-stubs](index.md) • [Readme](index.md) \\| Docs
 
 ***
 
@@ -607,7 +607,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • API
+"typedoc-stubs • Docs
 
 ***
 
@@ -628,11 +628,11 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../../../index.md) \\| [API](../../../modules.md)
+"[typedoc-stubs](../../../index.md) • [Readme](../../../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../../../index.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
+[typedoc-stubs](../../../modules.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
 # Namespace: \\_Namespace\\_A\\_
 
@@ -649,7 +649,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../../../index.md)
+"[typedoc-stubs](../../../index.md) • Docs
 
 ***
 
@@ -667,11 +667,11 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../../../index.md) \\| [API](../../../modules.md)
+"[typedoc-stubs](../../../index.md) • [Readme](../../../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../../../index.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
+[typedoc-stubs](../../../modules.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
 # Namespace: \\_Namespace\\_A\\_
 
@@ -688,7 +688,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../../../index.md)
+"[typedoc-stubs](../../../index.md) • Docs
 
 ***
 
@@ -709,11 +709,11 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [API](../modules.md)
+"[typedoc-stubs](../index.md) • [Readme](../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../index.md) / has-namespaces
+[typedoc-stubs](../modules.md) / has-namespaces
 
 # has-namespaces
 
@@ -759,7 +759,7 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../index.md)
+"[typedoc-stubs](../index.md) • Docs
 
 ***
 
@@ -839,11 +839,11 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [API](../modules.md)
+"[typedoc-stubs](../index.md) • [Readme](../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../index.md) / has-namespaces
+[typedoc-stubs](../modules.md) / has-namespaces
 
 # has-namespaces
 
@@ -947,7 +947,7 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../index.md)
+"[typedoc-stubs](../index.md) • Docs
 
 ***
 
@@ -1081,7 +1081,7 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile readme for a project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • Readme \\| [API](modules.md)
+"typedoc-stubs • Readme \\| [Docs](modules.md)
 
 ***
 
@@ -1098,11 +1098,11 @@ Some text.
 `;
 
 exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](index.md) \\| [API](modules.md)
+"[typedoc-stubs](index.md) • [Readme](index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](index.md) / has-references
+[typedoc-stubs](modules.md) / has-references
 
 # has-references
 
@@ -1135,7 +1135,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 `;
 
 exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](index.md)
+"[typedoc-stubs](index.md) • Docs
 
 ***
 
@@ -1176,11 +1176,11 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 `;
 
 exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**typedoc-stubs** • [Readme](../index.md) \\| [API](../modules.md)
+"[typedoc-stubs](../index.md) • [Readme](../index.md) \\| Docs
 
 ***
 
-[typedoc-stubs](../index.md) / has-references
+[typedoc-stubs](../modules.md) / has-references
 
 # has-references
 
@@ -1213,7 +1213,7 @@ Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 `;
 
 exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • [API](../index.md)
+"[typedoc-stubs](../index.md) • Docs
 
 ***
 

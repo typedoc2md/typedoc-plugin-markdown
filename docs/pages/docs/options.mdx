@@ -202,7 +202,7 @@ Please note a separate modules index page will not be generated, therefore would
 
 > Accepts a boolean value. Defaults to `false`.
 
-By default when a readme file is resolved, a separate readme page is created. This option prepends the readme contents into the index page so only a single root page is generated.
+By default when a readme file is resolved, a separate readme page is created. This option appends the index page to the readme so only a single root page is generated.
 
 This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
 
@@ -253,7 +253,7 @@ Ignored if `flattenOutputFiles` is set to `true`.
 
 ---
 
-## UI Options
+## UX Options
 
 ### hidePageHeader
 
@@ -292,54 +292,6 @@ Ignored if `flattenOutputFiles` is set to `true`.
 ```json filename="typedoc.json"
 {
   "hideBreadcrumbs": false
-}
-```
-
----
-
-### ~hideInPageTOC~
-
-<Callout type="warning">
-  Deprecated - In-page TOC is now hidden as default.
-</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-```json filename="typedoc.json"
-{
-  "hideInPageTOC": false
-}
-```
-
----
-
-### ~indexPageTitle~
-
-<Callout type="warning">Deprecated - Please use `textContentMappings`.</Callout>
-
-> Accepts a string value. Defaults to `"{ProjectName}"`.
-
-Provides a mechanism to change the main project index page title.
-
-```json filename="typedoc.json"
-{
-  "indexPageTitle": "{ProjectName}"
-}
-```
-
----
-
-### ~memberPageTitle~
-
-<Callout type="warning">Deprecated - Please use `textContentMappings`.</Callout>
-
-> Accepts a string value. Defaults to `"{kind}: {name}"`.
-
-Provides a mechanism to configure the page title of members.
-
-```json filename="typedoc.json"
-{
-  "memberPageTitle": "{kind}: {name}"
 }
 ```
 
@@ -552,7 +504,7 @@ Keys are categorised with the following namespace conventions:
 - `header.*` defines text in the page header (if displayed).
 - `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
 - `title.*` defines text in main page titles.
-- `label.*` other text in page content, including headings and table headers.
+- `label.*` other text in page content, including content headings and table headers.
 - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
 
 Only keys that require translation need to be added to the object.
@@ -562,11 +514,12 @@ Only keys that require translation need to be added to the object.
   "textContentMappings": {
     "header.title": "{projectName} {version}",
     "header.readme": "Readme",
-    "header.docs": "API",
+    "header.docs": "Docs",
     "breadcrumbs.home": "{projectName} {version}",
     "title.indexPage": "{projectName} {version}",
     "title.modulePage": "{name}",
     "title.memberPage": "{kind}: {name}",
+    "label.apiIndex": "API Index",
     "label.defaultValue": "Default value",
     "label.description": "Description",
     "label.extendedBy": "Extended by",

@@ -29,7 +29,12 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
     .replace(/\s+/g, ' ')
     .trim();
 
-  md.push(link(homeLabel, this.getRelativeUrl(entryFileName)));
+  md.push(
+    link(
+      homeLabel,
+      this.getRelativeUrl(this.page?.project?.url || entryFileName),
+    ),
+  );
 
   const breadcrumb = (model: any) => {
     if (model?.parent?.parent) {

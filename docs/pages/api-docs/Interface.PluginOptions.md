@@ -92,14 +92,6 @@ Do not print breadcrumbs.
 
 ***
 
-### hideInPageTOC
-
-> **hideInPageTOC**: `boolean`
-
-Do not render in-page TOC items.
-
-***
-
 ### hidePageHeader
 
 > **hidePageHeader**: `boolean`
@@ -153,6 +145,26 @@ Determines which members are exported to their own file when `outputFileStrategy
 > **mergeReadme**: `boolean`
 
 Merges the resolved readme into the project index page.
+
+***
+
+### navigationModel
+
+> **navigationModel**: `object`
+
+Configures how the navigation model will be generated.
+
+#### excludeGroups
+
+> **excludeGroups**: `boolean`
+
+#### excludeCategories
+
+> **excludeCategories**: `boolean`
+
+#### excludeFolders
+
+> **excludeFolders**: `boolean`
 
 ***
 

@@ -30,11 +30,6 @@ export function load(app) {
     () => '> **Generated using `page.index.end` hook**',
   );
 
-  app.renderer.markdownHooks.on(
-    'index.content.begin',
-    () => '> `content.index.begin` hook',
-  );
-
   app.renderer.preRenderAsyncJobs.push(async (output) => {
     await new Promise((r) => setTimeout(r, 5));
     fs.writeFileSync(

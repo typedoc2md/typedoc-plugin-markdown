@@ -31,7 +31,7 @@ Comments for function
 `;
 
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionReturningAFunction()
+"# Function: functionReturningAFunction()
 
 \`\`\`ts
 function functionReturningAFunction(): <T>(x: string) => boolean
@@ -91,7 +91,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionReturningAPromise()
+"# Function: functionReturningAPromise()
 
 \`\`\`ts
 function functionReturningAPromise(): Promise<object>
@@ -136,7 +136,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function returning a string: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionReturningAString()
+"# Function: functionReturningAString()
 
 \`\`\`ts
 function functionReturningAString(): string
@@ -176,7 +176,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function returning a union: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionReturningAUnionType()
+"# Function: functionReturningAUnionType()
 
 \`\`\`ts
 function functionReturningAUnionType(): string | boolean | "string1" | "string2"
@@ -230,7 +230,7 @@ Return comments
 `;
 
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionReturningAnObject()
+"# Function: functionReturningAnObject()
 
 \`\`\`ts
 function functionReturningAnObject(): object
@@ -285,7 +285,7 @@ This is some numeric parameter.
 `;
 
 exports[`Function Reflection should compile function with a parameter: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# basicFunction()
+"# Function: basicFunction()
 
 \`\`\`ts
 function basicFunction(someParam: number): number
@@ -335,7 +335,7 @@ Function with function parmas
 `;
 
 exports[`Function Reflection should compile function with complex params: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithComplexParams()
+"# Function: functionWithComplexParams()
 
 \`\`\`ts
 function functionWithComplexParams(paramA: (a: string) => true, paramB: object): boolean
@@ -403,7 +403,7 @@ A parameter with a default null value.
 `;
 
 exports[`Function Reflection should compile function with default parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithDefaultParameters()
+"# Function: functionWithDefaultParameters()
 
 \`\`\`ts
 function functionWithDefaultParameters(
@@ -488,7 +488,7 @@ A value of the object.
 `;
 
 exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithMultipleSignatures()
+"# Function: functionWithMultipleSignatures()
 
 ## functionWithMultipleSignatures(value)
 
@@ -567,7 +567,7 @@ Another param comment
 `;
 
 exports[`Function Reflection should compile function with named params: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithNamedParams()
+"# Function: functionWithNamedParams()
 
 \`\`\`ts
 function functionWithNamedParams(__namedParameters: object, anotherParam: string): void
@@ -640,7 +640,7 @@ The context of the method call.
 `;
 
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithNestedParameters()
+"# Function: functionWithNestedParameters()
 
 \`\`\`ts
 function functionWithNestedParameters(
@@ -739,7 +739,7 @@ An optional parameter.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithOptionalParameters()
+"# Function: functionWithOptionalParameters()
 
 \`\`\`ts
 function functionWithOptionalParameters(
@@ -771,7 +771,7 @@ This is a function with a parameters.
 `;
 
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "2") 2`] = `
-"# functionWithOptionalParameters()
+"# Function: functionWithOptionalParameters()
 
 \`\`\`ts
 function functionWithOptionalParameters(
@@ -826,7 +826,7 @@ Function with reset parmas
 `;
 
 exports[`Function Reflection should compile function with rest params: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithRestParams()
+"# Function: functionWithRestParams()
 
 \`\`\`ts
 function functionWithRestParams(param: string, ...restParams: string[]): boolean
@@ -877,7 +877,7 @@ Comments for T
 `;
 
 exports[`Function Reflection should compile function with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# functionWithTypeParameters()
+"# Function: functionWithTypeParameters()
 
 \`\`\`ts
 function functionWithTypeParameters<T, Item>(): boolean

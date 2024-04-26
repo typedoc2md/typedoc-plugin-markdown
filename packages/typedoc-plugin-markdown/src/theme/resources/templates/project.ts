@@ -38,7 +38,14 @@ export function project(this: MarkdownThemeContext) {
   }
 
   if (model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-    md.push(this.partials.reflectionIndex(model, { headingLevel: 2 }));
+    if (includeReadme) {
+      md.push(heading(2, this.getText('label.apiIndex')));
+    }
+    md.push(
+      this.partials.reflectionIndex(model, {
+        headingLevel: includeReadme ? 3 : 2,
+      }),
+    );
   }
 
   const isPackages =

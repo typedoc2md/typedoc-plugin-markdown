@@ -58,8 +58,7 @@ export default {
       <>
         <link rel="icon" href="/markdown-logo.svg" type="image/png" />
         <title>
-          typedoc-plugin-markdown •
-          {title || 'Generate TypeScript API documentation as Markdown.'}
+          {`typedoc-plugin-markdown • ${title || 'Generate TypeScript API documentation as Markdown.'}`}
         </title>
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title} />
@@ -71,7 +70,5 @@ export default {
     prev: true,
     next: true,
   },
-  footer: {
-    content: <div></div>,
-  },
+  footer: false,
 };

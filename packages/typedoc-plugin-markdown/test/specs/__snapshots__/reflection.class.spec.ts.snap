@@ -49,7 +49,7 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# \`abstract\` AbstractClass
+"# Class: \`abstract\` AbstractClass
 
 ## Extended by
 
@@ -140,7 +140,7 @@ Comments for method
 `;
 
 exports[`Class Reflection should compile basic class: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# BasicClass
+"# Class: BasicClass
 
 Comments for BasicClass
 
@@ -264,7 +264,7 @@ Param comments
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ClassWithAccessors
+"# Class: ClassWithAccessors
 
 Comments for ClassWithAccessors
 
@@ -400,7 +400,7 @@ Comments for someProp
 `;
 
 exports[`Class Reflection should compile class with complex props: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ClassWithComplexProps
+"# Class: ClassWithComplexProps
 
 Comments for ClassWithComplexProps
 
@@ -490,7 +490,7 @@ Comments for x string
 `;
 
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ClassWithConstructorOverloads
+"# Class: ClassWithConstructorOverloads
 
 Comments for ClassWithConstructorOverloads
 
@@ -633,7 +633,7 @@ Comment for ClassWithFlags
 `;
 
 exports[`Class Reflection should compile class with flags: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ClassWithFlags
+"# Class: ClassWithFlags
 
 Comment for ClassWithFlags
 
@@ -822,7 +822,7 @@ Comment for staticMethod
 `;
 
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# \`abstract\` ClassWithModifiers
+"# Class: \`abstract\` ClassWithModifiers
 
 Comments for ClassWithModifiers
 
@@ -988,7 +988,7 @@ SomeTag
 `;
 
 exports[`Class Reflection should compile class with simple props: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ClassWithSimpleProps
+"# Class: ClassWithSimpleProps
 
 Comments for ClassWithSimpleProps
 
@@ -1045,7 +1045,7 @@ Comments for param B
 `;
 
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# ClassWithTypeParameters\\<A, B, C\\>
+"# Class: ClassWithTypeParameters\\<A, B, C\\>
 
 Comments for ClassWithTypeParameters
 
@@ -1157,7 +1157,7 @@ Comments for abstractMethod
 `;
 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# DerivedClassA
+"# Class: DerivedClassA
 
 Comments for DerivedClassA
 

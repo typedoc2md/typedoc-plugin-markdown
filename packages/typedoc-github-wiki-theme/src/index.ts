@@ -59,10 +59,6 @@ export function load(app: Application) {
         const sidebarContent = getSidebar(output.navigation);
         if (sidebarContent.length) {
           fs.writeFileSync(
-            `${output.outputDirectory}/sidebar.json`,
-            JSON.stringify(output.navigation, null, 2),
-          );
-          fs.writeFileSync(
             `${output.outputDirectory}/_Sidebar.md`,
             `## ${sidebarHeading}\n\n${formatContents(
               getSidebar(output.navigation),

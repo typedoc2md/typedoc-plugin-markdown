@@ -46,6 +46,12 @@ Describes the keys available to replace static text.
 
 ***
 
+### label.apiIndex
+
+> **label.apiIndex**: `string`
+
+***
+
 ### label.defaultValue
 
 > **label.defaultValue**: `string`
