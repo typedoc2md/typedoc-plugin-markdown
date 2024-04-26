@@ -67,7 +67,7 @@ export interface PluginOptions {
   entryModule: string;
 
   /**
-   * Specify the render style of enumuration members.
+   * Specify the render style of enumeration members.
    */
   enumMembersFormat: 'list' | 'table';
 

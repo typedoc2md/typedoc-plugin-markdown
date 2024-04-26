@@ -15,7 +15,8 @@
     "build-all": "npm run build --workspaces --if-present",
     "test-all": "npm run test --workspaces --if-present",
     "prerelease": "npm run build-all",
-    "release": "npx changeset publish"
+    "release": "npx changeset publish",
+    "schema": "ts-node ./devtools/scripts/generate-schema/generate-schema.ts"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
@@ -40,6 +41,7 @@
     "remark-toc": "^9.0.0",
     "to-vfile": "^8.0.0",
     "ts-jest": "^29.1.2",
+    "ts-json-schema-generator": "^2.1.1",
     "ts-morph": "^22.0.0",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.8",

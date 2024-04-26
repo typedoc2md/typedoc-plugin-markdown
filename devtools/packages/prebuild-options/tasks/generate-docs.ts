@@ -149,7 +149,6 @@ ${presetsJson}
         }
 
         if (!option.omitExample) {
-          //out.push('**Example**');
           if (
             !option.example &&
             option.type === ParameterType.Mixed &&

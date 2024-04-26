@@ -352,14 +352,14 @@ export const propertiesFormat: Partial<DeclarationOption> = {
  * @category UX
  */
 export const enumMembersFormat: Partial<DeclarationOption> = {
-  help: 'Specify the render style of enumuration members.',
+  help: 'Specify the render style of enumeration members.',
   type: ParameterType.Map,
   map: FormatStyle,
   defaultValue: FormatStyle.List,
 };
 
 /**
- * This option either renders type declrations as a list or in tabular format.
+ * This option either renders type declarations as a list or in tabular format.
  *
  * @category UX
  */
@@ -461,7 +461,7 @@ export const publicPath: Partial<DeclarationOption> = {
  *
  * This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
  *
- * This option would typically be used when source code comes from an external library exposing the following poential issues:
+ * This option would typically be used when source code comes from an external library exposing the following potential issues:
  *
  * - Comments contain raw tags that should be interpreted as code examples.
  * - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
@@ -476,7 +476,7 @@ export const sanitizeComments: Partial<DeclarationOption> = {
 };
 
 /**
- * This option should be used when parsers requiren a custom anchor prefix.
+ * This option should be used when parsers require a custom anchor prefix.
  *
  * @example "markdown-header"
  *
