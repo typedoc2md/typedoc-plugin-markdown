@@ -17,6 +17,5 @@ export default {
     type: 'separator',
     title: 'Support',
   },
-  examples: '',
   changelog: '',
 };

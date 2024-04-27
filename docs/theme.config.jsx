@@ -29,7 +29,7 @@ export default {
   sidebar: {
     defaultMenuCollapseLevel: 1,
   },
-  editLink: { text: 'x' },
+  editLink: { content: '' },
   banner: {
     content: (
       <>

@@ -483,7 +483,7 @@ export const sanitizeComments: Partial<DeclarationOption> = {
  * @category Utility
  */
 export const anchorPrefix: Partial<DeclarationOption> = {
-  help: 'Custom anchor prefix',
+  help: 'Custom anchor prefix when anchoring to in-page symbols.',
   type: ParameterType.String,
   defaultValue: undefined,
 };

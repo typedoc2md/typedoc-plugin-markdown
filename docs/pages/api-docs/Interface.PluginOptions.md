@@ -8,7 +8,7 @@ Describes the options declared by the plugin.
 
 > **anchorPrefix**: `string`
 
-Custom anchor prefix
+Custom anchor prefix when anchoring to in-page symbols.
 
 ***
 
@@ -32,7 +32,7 @@ The name of a module that should act as the root page for the documentation.
 
 > **enumMembersFormat**: `"table"` \| `"list"`
 
-Specify the render style of enumuration members.
+Specify the render style of enumeration members.
 
 ***
 
@@ -113,22 +113,6 @@ Do not print page title.
 > **indexFormat**: `"table"` \| `"list"`
 
 Specify the render format for index items.
-
-***
-
-### indexPageTitle
-
-> **indexPageTitle**: `string`
-
-The title of project index page.
-
-***
-
-### memberPageTitle
-
-> **memberPageTitle**: `string`
-
-The page title of member pages.
 
 ***
 

@@ -52,7 +52,7 @@ declare module 'typedoc' {
  */
 export interface PluginOptions {
   /**
-   * Custom anchor prefix
+   * Custom anchor prefix when anchoring to in-page symbols.
    */
   anchorPrefix: string;
 
