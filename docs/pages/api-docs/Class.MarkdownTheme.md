@@ -22,7 +22,7 @@ class MyMarkdownTheme extends MarkdownTheme {
 
 ## Extends
 
-- [`Theme`](https://typedoc.org/api/classes/Theme.html)
+- [`Theme ↗️`]( https://typedoc.org/api/classes/Theme.html )
 
 ## Methods
 
@@ -38,7 +38,7 @@ This method can be overridden to provide an alternative theme context.
 
 | Parameter | Type |
 | :------ | :------ |
-| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\> |
+| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`Reflection ↗️`]( https://typedoc.org/api/classes/Models.Reflection.html )\> |
 
 #### Returns
 
@@ -48,7 +48,7 @@ This method can be overridden to provide an alternative theme context.
 
 ### getUrls()
 
-> **getUrls**(`project`): [`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
+> **getUrls**(`project`): [`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection ↗️`]( https://typedoc.org/api/classes/Models.Reflection.html )\>[]
 
 Maps the models of the given project to the desired output files.
 
@@ -58,11 +58,11 @@ This method can be overriden to provide an alternative url structure.
 
 | Parameter | Type |
 | :------ | :------ |
-| `project` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| `project` | [`ProjectReflection ↗️`]( https://typedoc.org/api/classes/Models.ProjectReflection.html ) |
 
 #### Returns
 
-[`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
+[`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection ↗️`]( https://typedoc.org/api/classes/Models.Reflection.html )\>[]
 
 #### Overrides
 
@@ -82,7 +82,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 | Parameter | Type |
 | :------ | :------ |
-| `project` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| `project` | [`ProjectReflection ↗️`]( https://typedoc.org/api/classes/Models.ProjectReflection.html ) |
 
 #### Returns
 

@@ -22,7 +22,7 @@ export function referenceType(
     } else {
       reflection.push(
         model.externalUrl
-          ? link(backTicks(model.name), this.getRelativeUrl(model.externalUrl))
+          ? `[${backTicks(model.name + ' ↗️')}]( ${model.externalUrl} )`
           : backTicks(model.name),
       );
     }
@@ -32,6 +32,6 @@ export function referenceType(
     return reflection.join('');
   }
   return model.externalUrl
-    ? `[${backTicks(model.name)}]( ${model.externalUrl} )`
+    ? `[${backTicks(model.name + ' ↗️')}]( ${model.externalUrl} )`
     : backTicks(model.name);
 }

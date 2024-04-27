@@ -228,13 +228,13 @@ Comments for BasicInterface
 exports[`Objects And Params should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{\`"prop"\`: \`string\`; \\}\\>
+> **functionReturningAPromise**(): [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{\`"prop"\`: \`string\`; \\}\\>
 
 Comments for function
 
 ## Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{\`"prop"\`: \`string\`; \\}\\>
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{\`"prop"\`: \`string\`; \\}\\>
 
 Return comments
 
@@ -258,7 +258,7 @@ Comments for function
 
 ## Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\\{
   \`"prop"\`: \`string\`;
  \\}\\>
 
@@ -502,7 +502,7 @@ bar: number;
 exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: LiteralType
 
-> **LiteralType**: \\{\`"x"\`: \`string\`;\`"y"\`: \\{\`"x"\`: \`string\`;\`"y"\`: \`boolean\` \\| \`string\`;\`"z"\`: (\`x\`: \`string\`) => \`string\`; \\};\`"z"\`: (\`x\`: \`string\`) => \`string\`;get set \`"accessorA"\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>;get set \`"accessorB"\`: \`string\`;\`"someFunction"\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>; \\}
+> **LiteralType**: \\{\`"x"\`: \`string\`;\`"y"\`: \\{\`"x"\`: \`string\`;\`"y"\`: \`boolean\` \\| \`string\`;\`"z"\`: (\`x\`: \`string\`) => \`string\`; \\};\`"z"\`: (\`x\`: \`string\`) => \`string\`;get set \`"accessorA"\`: [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>;get set \`"accessorB"\`: \`string\`;\`"someFunction"\`: [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>; \\}
 
 Comments for LiteralType
 
@@ -560,21 +560,21 @@ comment for y.z
 
 ### accessorA
 
-> \`get\` **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+> \`get\` **accessorA**(): [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 Comments for accessorA getter
 
-> \`set\` **accessorA**(\`x\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>): \`void\`
+> \`set\` **accessorA**(\`x\`: [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>): \`void\`
 
 Comments for accessorA setter
 
 #### Parameters
 
-• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+• **x**: [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 #### Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 ### accessorB
 
@@ -600,7 +600,7 @@ Comments for someFunction
 
 #### Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 "
 `;
 
@@ -714,11 +714,11 @@ Comments for accessorA setter
 
 | Parameter | Type |
 | :------ | :------ |
-| \`x\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> |
+| \`x\` | [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\> |
 
 #### Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 ### accessorB
 
@@ -752,7 +752,7 @@ Comments for someFunction
 
 #### Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 "
 `;
 

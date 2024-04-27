@@ -69,7 +69,7 @@ Comments for ConditionalType
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type alias: TypeWithExternalSymbolLinkMapping
 
-> **TypeWithExternalSymbolLinkMapping**: [\`Application\`]( https://typedoc.org/api/classes/Application.html )
+> **TypeWithExternalSymbolLinkMapping**: [\`Application ↗️\`]( https://typedoc.org/api/classes/Application.html )
 
 Comments for TypeWithExternalSymbolLinkMapping
 
@@ -155,7 +155,7 @@ comment for y.z
 
 ### accessorA
 
-> \`get\` **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+> \`get\` **accessorA**(): [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 Comments for accessorA getter
 
@@ -165,11 +165,11 @@ Comments for accessorA setter
 
 #### Parameters
 
-• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+• **x**: [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 #### Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\>
 
 ### accessorB
 
@@ -195,7 +195,7 @@ Comments for someFunction
 
 #### Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
+[\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\>
 
 ## Source
 
@@ -222,11 +222,11 @@ Comments for LiteralType
 | \`y.y\` | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`: \`string\`) => \`string\` | comment for y.z |
 | \`z\` | (\`x\`: \`string\`) => \`string\` | - |
-| \`get accessorA\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> | Comments for accessorA getter |
+| \`get accessorA\` | [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`string\`\\> | Comments for accessorA getter |
 | \`set accessorA\` | \`void\` | Comments for accessorA setter |
 | \`get accessorB\` | \`string\` | - |
 | \`set accessorB\` | \`void\` | - |
-| \`someFunction\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\> | Comments for someFunction |
+| \`someFunction\` | [\`Promise ↗️\`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )\\<\`any\`\\> | Comments for someFunction |
 
 ## Source
 

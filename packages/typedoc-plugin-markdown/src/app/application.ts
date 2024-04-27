@@ -27,7 +27,7 @@ export interface MarkdownApplication extends Application {
 /**
  * An extended typing of TypeDoc's Renderer class.
  *
- * Incoudes updated typings for hooks and async jobs.
+ * Includes updated typings for hooks and async jobs.
  *
  * @usage
  *
