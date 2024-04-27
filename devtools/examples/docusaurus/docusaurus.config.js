@@ -59,18 +59,12 @@ const config = {
           '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
         entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
-        typeDeclarationFormat: 'table',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/comments/index.ts',
         expandObjects: true,
         readme: 'none',
         sidebar: { pretty: true },
-        outputFileStrategy: 'members',
+        outputFileStrategy: 'modules',
         cleanOutputDir: true,
-        navigation: {
-          includeFolders: true,
-          includeGroups: true,
-          includeCategories: true,
-        },
       },
     ],
     [

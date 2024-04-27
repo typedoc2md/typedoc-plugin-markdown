@@ -36,5 +36,12 @@ describe(`Docusaurus:`, () => {
         .toString();
       expect(contents).toMatchSnapshot();
     });
+
+    test(`should render links`, () => {
+      const contents = fs
+        .readFileSync(path.join(__dirname, '../out/links/index.md'))
+        .toString();
+      expect(contents).toMatchSnapshot();
+    });
   });
 });
