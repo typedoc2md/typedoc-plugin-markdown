@@ -7,9 +7,9 @@ A plugin for TypeDoc that enables TypeScript API documentation to be generated i
 ## Installation
 
 ```shell
-  npm install typedoc-plugin-markdown --save-dev
+  npm install typedoc-plugin-markdown@next --save-dev
   ```
 
 ## Documentation
 
-Please visit [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org/docs) for comprehensive documentation, including options and usage guides.
+Please visit the [https://typedoc-plugin-markdown.org/docs](https://typedoc-plugin-markdown.org/docs) for comprehensive documentation, including options and usage guides.

@@ -1,5 +1,5 @@
 /**
- * The public API of the typedoc-plugin-markdown exposes some classes and types that can be used to customize the output of the plugin. Please note this only covers the API relevant to this plugin and not cover the entire [TypeDoc API](https://typedoc.org/api/).
+ * The public API of typedoc-plugin-markdown exposes some classes and types that can be used to customize the output of the plugin. Please note this only covers the API relevant to this plugin and not cover the entire [TypeDoc API](https://typedoc.org/api/).
  *
  * The APIs are typically consumed by writing [local plugins](/docs/customizing-output#local-plugins).
  *

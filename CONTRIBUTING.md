@@ -1,5 +1,7 @@
 # Contributing Guide
 
+> The contributing guide is under development and incomplete.
+
 Thank you showing interest in contributing. Contributions and feedback are very welcome.
 
 Before you start, you might find it helpful to read the TypeDoc's [development guide](https://typedoc.org/guides/development/) to understand the architecture of TypeDoc itself.

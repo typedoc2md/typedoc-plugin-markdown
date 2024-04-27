@@ -27,11 +27,12 @@ async function copyChangelog() {
 async function main() {
   const packagesPromises = [
     'typedoc-plugin-markdown',
-    'typedoc-plugin-frontmatter',
-    'typedoc-plugin-remark',
-    'typedoc-github-wiki-theme',
-    'typedoc-vitepress-theme',
     'docusaurus-plugin-typedoc',
+    'typedoc-github-wiki-theme',
+    'typedoc-plugin-frontmatter',
+    'typedoc-vitepress-theme',
+    'typedoc-gitlab-wiki-theme',
+    'typedoc-plugin-remark',
   ].map(async (packageName) => {
     const packageJson = await import(
       `../../packages/${packageName}/package.json`
@@ -51,10 +52,10 @@ async function main() {
 }
 
 function writeRepositoryReadme(packages: any) {
-  const readme: string[] = ['# Typedoc Plugin Markdown'];
+  const readme: string[] = ['# typedoc-plugin-markdown'];
 
   readme.push(
-    'Welcome to the Typedoc Plugin Markdown project! This project is a collection of packages designed for outputing TypeDoc as Markdown.',
+    'This project is a collection of packages designed for generate TypeScript API documentation as Markdown.',
   );
 
   readme.push('## Documentation');
@@ -84,7 +85,9 @@ function writeRepositoryReadme(packages: any) {
 
   readme.push('## Examples');
 
-  readme.push('Please see .');
+  readme.push(
+    'Please see the [examples repository](https://github.com/tgreyuk/typedoc-plugin-markdown-examples).',
+  );
 
   readme.push('## Contributing');
 
@@ -100,10 +103,14 @@ function writeRepositoryReadme(packages: any) {
 }
 
 function writePackageReadme(packageItem: any) {
+  const ciName =
+    packageItem.name === 'typedoc-plugin-markdown'
+      ? 'ci.yml'
+      : `ci.${packageItem.name}.yml`;
   const readme = [`# ${packageItem.name}`];
   const badges = [
     `![npm](https://img.shields.io/npm/v/${packageItem.name}%2Fnext?\&logo=npm)`,
-    `[![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml/badge.svg?branch=next)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/ci.yml)`,
+    `[![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/${ciName}/badge.svg?branch=next)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/${ciName})`,
   ];
 
   readme.push(badges.join(' '));
@@ -114,7 +121,7 @@ function writePackageReadme(packageItem: any) {
 
   readme.push('## Installation');
   readme.push(`\`\`\`shell
-  npm install ${packageItem.name} --save-dev
+  npm install ${packageItem.name}@next --save-dev
   \`\`\``);
 
   readme.push('## Documentation');
@@ -128,5 +135,5 @@ function writePackageReadme(packageItem: any) {
 }
 
 function docText(docLink?: string) {
-  return `Please visit [typedoc-plugin-markdown.org](${docLink || 'https://typedoc-plugin-markdown.org'}) for comprehensive documentation, including options and usage guides.`;
+  return `Please visit the [${docLink}](${docLink}) for comprehensive documentation, including options and usage guides.`;
 }
