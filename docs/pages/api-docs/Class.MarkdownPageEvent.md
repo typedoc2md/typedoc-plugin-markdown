@@ -5,7 +5,7 @@ An event emitted by before and after the markup of a page is rendered.
 ## Usage
 
 ```ts
-export function load(app: MarkdownAppication) {
+export function load(app: MarkdownApplication) {
   app.renderer.on(MarkdownPageEvent.END, (event: MarkdownPageEvent) => {
    events.contents = event.contents.replace('foo', 'bar');
   });

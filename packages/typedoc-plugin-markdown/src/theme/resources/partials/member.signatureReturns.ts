@@ -1,4 +1,4 @@
-import { backTicks, blockQuoteBlock, heading } from '@plugin/libs/markdown';
+import { backTicks, heading } from '@plugin/libs/markdown';
 import { MarkdownThemeContext } from '@plugin/theme';
 import {
   DeclarationReflection,
@@ -41,11 +41,9 @@ export function signatureReturns(
       model.type.typeArguments[0].declaration.children
     ) {
       md.push(
-        blockQuoteBlock(
-          this.partials.typeDeclaration(
-            model.type.typeArguments[0].declaration.children,
-            { headingLevel: options.headingLevel },
-          ),
+        this.partials.typeDeclaration(
+          model.type.typeArguments[0].declaration.children,
+          { headingLevel: options.headingLevel },
         ),
       );
     }
@@ -54,12 +52,10 @@ export function signatureReturns(
   if (typeDeclaration?.signatures) {
     typeDeclaration.signatures.forEach((signature) => {
       md.push(
-        blockQuoteBlock(
-          this.partials.signature(signature, {
-            headingLevel: options.headingLevel + 1,
-            nested: true,
-          }),
-        ),
+        this.partials.signature(signature, {
+          headingLevel: options.headingLevel + 1,
+          nested: true,
+        }),
       );
     });
   }

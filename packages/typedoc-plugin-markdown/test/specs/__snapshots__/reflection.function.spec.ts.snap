@@ -11,18 +11,17 @@ Comments for function
 
 \`Function\`
 
-> ### Type parameters
->
-> • **T**
->
-> ### Parameters
->
-> • **x**: \`string\`
->
-> ### Returns
->
-> \`boolean\`
->
+### Type parameters
+
+• **T**
+
+### Parameters
+
+• **x**: \`string\`
+
+### Returns
+
+\`boolean\`
 
 ## Source
 
@@ -43,22 +42,21 @@ Comments for function
 
 \`Function\`
 
-> ### Type parameters
->
-> | Type parameter |
-> | :------ |
-> | \`T\` |
->
-> ### Parameters
->
-> | Parameter | Type |
-> | :------ | :------ |
-> | \`x\` | \`string\` |
->
-> ### Returns
->
-> \`boolean\`
->
+### Type parameters
+
+| Type parameter |
+| :------ |
+| \`T\` |
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+### Returns
+
+\`boolean\`
 
 ## Source
 
@@ -79,10 +77,9 @@ Comments for function
 
 Return comments
 
-> ### prop
->
-> > **prop**: \`string\`
->
+### prop
+
+> **prop**: \`string\`
 
 ## Source
 
@@ -105,10 +102,9 @@ Comments for function
 
 Return comments
 
-> | Member | Type |
-> | :------ | :------ |
-> | \`prop\` | \`string\` |
->
+| Member | Type |
+| :------ | :------ |
+| \`prop\` | \`string\` |
 
 ## Source
 

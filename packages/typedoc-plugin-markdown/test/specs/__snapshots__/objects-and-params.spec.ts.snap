@@ -238,10 +238,9 @@ Comments for function
 
 Return comments
 
-> ### prop
->
-> > **prop**: \`string\`
->
+### prop
+
+> **prop**: \`string\`
 "
 `;
 
@@ -264,12 +263,11 @@ Comments for function
 
 Return comments
 
-> ### prop
->
-> \`\`\`ts
-> prop: string;
-> \`\`\`
->
+### prop
+
+\`\`\`ts
+prop: string;
+\`\`\`
 "
 `;
 

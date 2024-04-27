@@ -12,7 +12,7 @@ export default {
   },
   docs: {
     type: 'page',
-    title: 'Docs',
+    title: 'Documentation',
   },
   plugins: {
     title: 'Child Plugins',
