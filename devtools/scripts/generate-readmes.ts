@@ -27,12 +27,12 @@ async function copyChangelog() {
 async function main() {
   const packagesPromises = [
     'typedoc-plugin-markdown',
-    'docusaurus-plugin-typedoc',
-    'typedoc-github-wiki-theme',
     'typedoc-plugin-frontmatter',
-    'typedoc-vitepress-theme',
-    'typedoc-gitlab-wiki-theme',
     'typedoc-plugin-remark',
+    'typedoc-github-wiki-theme',
+    'typedoc-gitlab-wiki-theme',
+    'typedoc-vitepress-theme',
+    'docusaurus-plugin-typedoc',
   ].map(async (packageName) => {
     const packageJson = await import(
       `../../packages/${packageName}/package.json`
@@ -58,10 +58,6 @@ function writeRepositoryReadme(packages: any) {
     'This project is a collection of packages designed for generate TypeScript API documentation as Markdown.',
   );
 
-  readme.push('## Documentation');
-
-  readme.push(docText());
-
   readme.push('## Packages');
   const headers: string[] = [];
   headers.push('| Package | Badges | ');
@@ -82,6 +78,12 @@ function writeRepositoryReadme(packages: any) {
   table.push(...headers, ...rows);
 
   readme.push(table.join('\n'));
+
+  readme.push('## Documentation');
+
+  readme.push(
+    'Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).',
+  );
 
   readme.push('## Examples');
 

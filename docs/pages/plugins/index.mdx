@@ -31,11 +31,32 @@ Utility plugins that can be used to provide metadata or adjust the output of the
 Plugins that can be used to integrate and target output for specific platforms.
 
 <Cards num={2}>
+
+  <Cards.Card
+    title="typedoc-github-wiki-theme"
+    icon={<Image src="/logos/github-logo.svg" alt="Gitlab" width={26} height={26} />}
+    arrow={true}
+    href="plugins/github-wiki"
+  />
+  <Cards.Card
+    title="typedoc-gitlab-wiki-theme"
+    icon={<Image src="/logos/gitlab-logo.png" alt="Gitlab" width={26} height={26} />}
+    arrow={true}
+    href="plugins/gitlab-wiki"
+  />
+    <Cards.Card
+    title="typedoc-vitepress-theme"
+    icon={
+      <Image src="/logos/vuepress-logo.png" alt="VuePress" width={26} height={26} />
+    }
+    arrow={true}
+    href="plugins/vitepress"
+  />
   <Cards.Card
     title="docusaurus-plugin-typedoc"
     icon={
       <Image
-        src="/docusaurus-logo.svg"
+        src="/logos/docusaurus-logo.svg"
         alt="Docusaurus"
         width={26}
         height={26}
@@ -43,25 +64,5 @@ Plugins that can be used to integrate and target output for specific platforms.
     }
     arrow={true}
     href="plugins/docusaurus"
-  />
-  <Cards.Card
-    title="typedoc-vitepress-theme"
-    icon={
-      <Image src="/vuepress-logo.png" alt="VuePress" width={26} height={26} />
-    }
-    arrow={true}
-    href="plugins/vitepress"
-  />
-  <Cards.Card
-    title="typedoc-github-wiki-theme"
-    icon={<Image src="/github-logo.svg" alt="Gitlab" width={26} height={26} />}
-    arrow={true}
-    href="plugins/github-wiki"
-  />
-  <Cards.Card
-    title="typedoc-gitlab-wiki-theme"
-    icon={<Image src="/gitlab-logo.png" alt="Gitlab" width={26} height={26} />}
-    arrow={true}
-    href="plugins/gitlab-wiki"
   />
 </Cards>

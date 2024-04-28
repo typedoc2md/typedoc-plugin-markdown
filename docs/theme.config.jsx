@@ -56,7 +56,7 @@ export default {
     const url = `https://typedoc-plugin-markdown.org${pathname}`;
     return (
       <>
-        <link rel="icon" href="/markdown-logo.svg" type="image/png" />
+        <link rel="icon" href="/logos/markdown-logo.svg" type="image/png" />
         <title>
           {`typedoc-plugin-markdown • ${title || 'Generate TypeScript API documentation as Markdown.'}`}
         </title>
