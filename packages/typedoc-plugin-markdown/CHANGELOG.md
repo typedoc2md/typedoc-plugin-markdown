@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0-next.59
+
+### Patch Changes
+
+- Removed deprecated options.
+- Tweaked link behaviour in page header.
+- Added symbols to external links.
+
 ## 4.0.0-next.58
 
 ### Patch Changes
