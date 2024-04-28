@@ -6,12 +6,17 @@ export default {
   },
   frontmatter: '',
   remark: 'Remark',
-  '-- Themes & Integrations': {
+  '-- Themes': {
     type: 'separator',
-    title: 'Themes & Integrations',
+    title: 'Themes',
   },
-  docusaurus: 'Docusaurus',
-  vitepress: '',
   'github-wiki': 'Github Wiki',
   'gitlab-wiki': 'Gitlab Wiki',
+  vitepress: '',
+
+  '-- Integrations': {
+    type: 'separator',
+    title: 'Integrations',
+  },
+  docusaurus: 'Docusaurus',
 };
