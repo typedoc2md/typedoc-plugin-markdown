@@ -205,7 +205,6 @@ export interface PluginOptions {
  */
 export interface TextContentMappings {
   'header.title': string;
-  'header.readme': string;
   'header.docs': string;
   'breadcrumbs.home': string;
   'title.indexPage': string;

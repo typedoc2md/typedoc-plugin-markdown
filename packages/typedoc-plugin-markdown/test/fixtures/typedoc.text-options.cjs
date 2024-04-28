@@ -3,8 +3,7 @@ module.exports = {
   ...baseOptions,
   textContentMappings: {
     'header.title': 'My API -  {version}',
-    'header.readme': 'My Readme',
-    'header.docs': 'Docs',
+    'header.docs': 'API',
     'title.indexPage': ':tada: Custom Index Title',
     'title.memberPage': '{name}',
     'title.modulePage': '{kind} - {name}',

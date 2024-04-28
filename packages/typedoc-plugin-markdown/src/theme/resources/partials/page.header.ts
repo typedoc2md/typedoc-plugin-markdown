@@ -39,7 +39,6 @@ export function header(this: MarkdownThemeContext): string {
       .replace(/\s+/g, ' ')
       .trim();
 
-    const readmeLabel = this.getText('header.readme');
     const indexLabel = this.getText('header.docs');
 
     if (this.page.url === entryFileName) {
@@ -47,7 +46,6 @@ export function header(this: MarkdownThemeContext): string {
     } else {
       md.push(link(title, this.getRelativeUrl(entryFileName)));
     }
-    md.push('•');
 
     const preserveReadme =
       Boolean(this.page.project.readme) &&
@@ -63,33 +61,24 @@ export function header(this: MarkdownThemeContext): string {
       false;
 
     if (preserveReadme) {
-      const links: string[] = [];
       const readMeUrl = useEntryModule
         ? `readme_${fileExtension}`
         : entryFileName;
 
-      if (this.page.url === readMeUrl) {
-        links.push(readmeLabel);
-      } else {
-        links.push(link(readmeLabel, this.getRelativeUrl(readMeUrl)));
-      }
-
-      links.push('\\|');
-
       const indexUrl = useEntryModule ? entryFileName : this.page.project.url;
 
-      if (this.page.url === readMeUrl) {
-        links.push(link(indexLabel, this.getRelativeUrl(indexUrl || '')));
-      } else {
-        links.push(indexLabel);
+      if (indexLabel) {
+        if (this.page.url === readMeUrl) {
+          md.push(link(indexLabel, this.getRelativeUrl(indexUrl || '')));
+        } else {
+          md.push(indexLabel);
+        }
       }
-
-      md.push(`${links.join(' ')}`);
     } else {
       md.push(indexLabel);
     }
 
-    return `${md.join(' ')}\n\n***\n`;
+    return `${md.join(' • ')}\n\n***\n`;
   };
 
   const getPackageHeader = () => {
@@ -103,7 +92,6 @@ export function header(this: MarkdownThemeContext): string {
 
     const md: string[] = [];
 
-    const readmeLabel = this.getText('header.readme');
     const indexLabel = this.getText('header.docs');
 
     const fileExtension = this.options.getValue('fileExtension');
@@ -121,36 +109,22 @@ export function header(this: MarkdownThemeContext): string {
       md.push(link(packageItemName, this.getRelativeUrl(packageEntryFile)));
     }
 
-    md.push('•');
-
     const preservePackageReadme =
       Boolean(packageItem.readme) && !this.options.getValue('mergeReadme');
 
     if (preservePackageReadme) {
-      const links: string[] = [];
-
-      if (this.page.url === packageEntryFile) {
-        links.push(readmeLabel);
-      } else {
-        links.push(link(readmeLabel, this.getRelativeUrl(packageEntryFile)));
+      if (indexLabel) {
+        if (this.page.url === packageEntryFile) {
+          md.push(link(indexLabel, this.getRelativeUrl(packageItem.url || '')));
+        } else {
+          md.push(indexLabel);
+        }
       }
-
-      links.push('\\|');
-
-      if (this.page.url === packageEntryFile) {
-        links.push(
-          link(indexLabel, this.getRelativeUrl(packageItem.url || '')),
-        );
-      } else {
-        links.push(indexLabel);
-      }
-
-      md.push(`${links.join(' ')}`);
     } else {
       md.push(indexLabel);
     }
 
-    return `${md.join(' ')}\n\n***\n`;
+    return `${md.join(' • ')}\n\n***\n`;
   };
 
   function findPackage(model: DeclarationReflection | ProjectReflection) {

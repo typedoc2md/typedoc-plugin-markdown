@@ -2,7 +2,6 @@ import { KIND_DEFAULTS } from './kind-defaults';
 
 export const TEXT_MAPPING_DEFAULTS = {
   'header.title': '{projectName} {version}',
-  'header.readme': 'Readme',
   'header.docs': 'Docs',
   'breadcrumbs.home': '{projectName} {version}',
   'title.indexPage': '{projectName} {version}',
