@@ -1,5 +1,5 @@
 ---
-"typedoc-plugin-markdown": patch
+'typedoc-plugin-markdown': patch
 ---
 
-- Added footer partial and footer.text mappings
+- Added footer partial and footer.text mappings.
