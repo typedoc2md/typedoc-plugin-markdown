@@ -207,6 +207,7 @@ export interface TextContentMappings {
   'header.title': string;
   'header.docs': string;
   'breadcrumbs.home': string;
+  'footer.text': string;
   'title.indexPage': string;
   'title.modulePage': string;
   'title.memberPage': string;

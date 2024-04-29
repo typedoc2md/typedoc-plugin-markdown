@@ -73,9 +73,10 @@ import { typeDeclarationTable } from './partials/member.typeDeclarationTable';
 import { typeParametersList } from './partials/member.typeParametersList';
 import { typeParametersTable } from './partials/member.typeParametersTable';
 import { breadcrumbs } from './partials/page.breadcrumbs';
+import { footer } from './partials/page.footer';
 import { header } from './partials/page.header';
 import { packagesIndex } from './partials/page.packagesIndex';
-import { pageTitle } from './partials/page.pageTtitle';
+import { pageTitle } from './partials/page.pageTitle';
 import { arrayType } from './partials/type.array';
 import { conditionalType } from './partials/type.conditional';
 import { indexAccessType } from './partials/type.index-access';
@@ -434,6 +435,12 @@ There is no association list partial for properties as these are handled as a st
      * @category Page Partials
      */
     breadcrumbs: () => breadcrumbs.apply(context, []) as string,
+    /**
+     *
+     *
+     * @category Page Partials
+     */
+    footer: () => footer.apply(context, []) as string,
     /**
      *
      *

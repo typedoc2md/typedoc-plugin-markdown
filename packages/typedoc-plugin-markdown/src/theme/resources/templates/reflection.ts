@@ -40,6 +40,8 @@ export function reflection(this: MarkdownThemeContext) {
     md.push(this.partials.member(model, { headingLevel: 1 }));
   }
 
+  md.push(this.partials.footer());
+
   md.push(this.hook('page.end').join('\n'));
 
   return md.join('\n\n');

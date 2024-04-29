@@ -398,11 +398,10 @@ export const indexFormat: Partial<DeclarationOption> = {
  *
  * Keys are categorised with the following namespace conventions:
  *
- * - `header.*` defines text in the page header (if displayed).
- * - `breadcrumbs.*` defines breadcrumbs in page header (if displayed).
- * - `title.*` defines text in main page titles.
- * - `label.*` other text in page content, including content headings and table headers.
- * - `kind.*` defines text mappings to TypeDoc's `ReflectionKind` definitions.
+ * - `header.*`, `breadcrumbs.*`,`footer.*`: Text in main page elements (if displayed).
+ * - `title.*`: Text in main page titles.
+ * - `label.*` Text in page content, including content headings and table headers.
+ * - `kind.*` Text mappings to TypeDoc's `ReflectionKind` definitions.
  *
  * Only keys that require translation need to be added to the object.
  *

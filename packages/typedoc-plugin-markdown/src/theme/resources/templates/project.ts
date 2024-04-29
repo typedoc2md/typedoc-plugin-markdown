@@ -58,6 +58,8 @@ export function project(this: MarkdownThemeContext) {
     md.push(this.partials.body(model, { headingLevel: 2 }));
   }
 
+  md.push(this.partials.footer());
+
   md.push(this.hook('index.page.end').join('\n'));
 
   return md.join('\n\n');

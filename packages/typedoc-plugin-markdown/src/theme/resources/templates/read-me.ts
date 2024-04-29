@@ -21,5 +21,7 @@ export function readme(this: MarkdownThemeContext) {
     md.push(this.partials.commentParts(model.readme as CommentDisplayPart[]));
   }
 
+  md.push(this.partials.footer());
+
   return md.join('\n\n');
 }

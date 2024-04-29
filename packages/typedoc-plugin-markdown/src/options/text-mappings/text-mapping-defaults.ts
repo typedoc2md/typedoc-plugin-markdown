@@ -4,6 +4,7 @@ export const TEXT_MAPPING_DEFAULTS = {
   'header.title': '{projectName} {version}',
   'header.docs': 'Docs',
   'breadcrumbs.home': '{projectName} {version}',
+  'footer.text': '',
   'title.indexPage': '{projectName} {version}',
   'title.modulePage': '{name}',
   'title.memberPage': '{kind}: {name}',
