@@ -17,7 +17,7 @@ import {
 } from 'typedoc';
 
 /**
- * The function that is called by TypeDoc to bootstrap the plugin. https://typedoc.org/guides/development/#plugins.
+ * The x function that is called by TypeDoc to bootstrap the plugin. https://typedoc.org/guides/development/#plugins.
  *
  * Here we expose additional TypeDoc options and make some adjustments.
  *
