@@ -17,8 +17,9 @@
     "test:mdx": "node test/scripts/lint.mdx.mjs",
     "test": "npm run test:md && npm run test:mdx && jest",
     "test:update": "npm run build && npm run test -- -u",
-    "predocs": "npm run build",
-    "docs": "typedoc --options ./.docs/typedoc.md.cjs && typedoc --options ./.docs/typedoc.html.cjs"
+    "support": "npm run schema && npm run docs",
+    "schema": "ts-node ./.scripts/schema/generate-schema.ts",
+    "docs": "npm run build && typedoc --options ./.docs/typedoc.json"
   },
   "author": "Thomas Grey",
   "license": "MIT",

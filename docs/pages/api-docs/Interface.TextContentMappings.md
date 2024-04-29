@@ -10,12 +10,6 @@ Describes the keys available to replace static text.
 
 ***
 
-### header.readme
-
-> **header.readme**: `string`
-
-***
-
 ### header.docs
 
 > **header.docs**: `string`
@@ -25,6 +19,12 @@ Describes the keys available to replace static text.
 ### breadcrumbs.home
 
 > **breadcrumbs.home**: `string`
+
+***
+
+### footer.text
+
+> **footer.text**: `string`
 
 ***
 

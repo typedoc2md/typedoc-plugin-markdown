@@ -9,7 +9,7 @@
       "properties": {
         "anchorPrefix": {
           "type": "string",
-          "description": "[typedoc-plugin-markdown] Custom anchor prefix"
+          "description": "[typedoc-plugin-markdown] Custom anchor prefix when anchoring to in-page symbols."
         },
         "entryFileName": {
           "type": "string",
@@ -167,13 +167,13 @@
             "header.title": {
               "type": "string"
             },
-            "header.readme": {
-              "type": "string"
-            },
             "header.docs": {
               "type": "string"
             },
             "breadcrumbs.home": {
+              "type": "string"
+            },
+            "footer.text": {
               "type": "string"
             },
             "title.indexPage": {
@@ -366,9 +366,9 @@
           "description": "[typedoc-plugin-markdown] Provides a mechanism to change the content of text used in documentation.",
           "default": {
             "header.title": "{projectName} {version}",
-            "header.readme": "Readme",
             "header.docs": "Docs",
             "breadcrumbs.home": "{projectName} {version}",
+            "footer.text": "",
             "title.indexPage": "{projectName} {version}",
             "title.modulePage": "{name}",
             "title.memberPage": "{kind}: {name}",

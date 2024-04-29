@@ -16,7 +16,6 @@
     "test-all": "npm run test --workspaces --if-present",
     "prerelease": "npm run build-all",
     "release": "npx changeset publish",
-    "schema": "ts-node ./devtools/scripts/generate-schema/generate-schema.ts",
     "prepare": "husky"
   },
   "devDependencies": {

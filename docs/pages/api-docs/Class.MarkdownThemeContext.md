@@ -185,6 +185,14 @@ Partials are categorised by their use:
 
 `string`
 
+##### footer()
+
+> **footer**: () => `string`
+
+###### Returns
+
+`string`
+
 ##### header()
 
 > **header**: () => `string`
