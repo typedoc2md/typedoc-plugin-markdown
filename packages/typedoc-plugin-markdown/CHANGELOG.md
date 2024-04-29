@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.0-next.60
+
+### Patch Changes
+
+- Added footer partial and footer.text mappings.
+- remove header readme labell
+
 ## 4.0.0-next.59
 
 ### Patch Changes
