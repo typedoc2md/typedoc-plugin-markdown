@@ -1,17 +1,13 @@
 import { DOCS_CONFIG } from '@devtools/helpers';
 import { consola } from 'consola';
 import * as fs from 'fs';
-import * as path from 'path';
 
 main();
-copyChangelog();
+//copyChangelog();
 
-async function copyChangelog() {
+/*async function copyChangelog() {
   const changelog = fs.readFileSync(
-    path.join(
-      __dirname,
-      '../../packages/typedoc-plugin-markdown/CHANGELOG_V4.md',
-    ),
+    path.join(__dirname, '../../packages/typedoc-plugin-markdown/CHANGELOG.md'),
   );
   const readmeContents = changelog
     .toString()
@@ -22,7 +18,7 @@ async function copyChangelog() {
     path.join(__dirname, '../../docs/pages/docs/changelog.mdx'),
     `import { Callout } from 'nextra/components';\n\n` + readmeContents,
   );
-}
+}*/
 
 async function main() {
   const packagesPromises = [
@@ -65,8 +61,8 @@ function writeRepositoryReadme(packages: any) {
   const table: string[] = [];
   const rows = packages.map((packageItem) => {
     const badges = [
-      `![npm](https://img.shields.io/npm/v/${packageItem.name}%2Fnext?\&logo=npm)`,
-      `![Downloads](https://img.shields.io/npm/dm/${packageItem.name})`,
+      `[![npm](https://img.shields.io/npm/v/${packageItem.name}.svg?logo=npm)](https://www.npmjs.com/package/${packageItem.name})`,
+      `![Downloads](https://img.shields.io/npm/dm/${packageItem.name}?label=↓)`,
     ];
     return (
       [
@@ -88,7 +84,7 @@ function writeRepositoryReadme(packages: any) {
   readme.push('## Examples');
 
   readme.push(
-    'Please see the [examples repository](https://github.com/tgreyuk/typedoc-plugin-markdown-examples).',
+    'Please see the [examples repository](https://github.com/typedoc2md/typedoc-plugin-markdown-examples).',
   );
 
   readme.push('## Contributing');
@@ -111,24 +107,27 @@ function writePackageReadme(packageItem: any) {
       : `ci.${packageItem.name}.yml`;
   const readme = [`# ${packageItem.name}`];
   const badges = [
-    `![npm](https://img.shields.io/npm/v/${packageItem.name}%2Fnext?\&logo=npm)`,
-    `[![Build Status](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/${ciName}/badge.svg?branch=next)](https://github.com/tgreyuk/typedoc-plugin-markdown/actions/workflows/${ciName})`,
+    `[![npm](https://img.shields.io/npm/v/${packageItem.name}.svg?logo=npm)](https://www.npmjs.com/package/${packageItem.name})`,
+    `[![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/${ciName}/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/${ciName})`,
   ];
 
   readme.push(badges.join(' '));
-  readme.push(`${packageItem.description}`);
+  readme.push(`> ${packageItem.description}`);
   const docLink = `https://typedoc-plugin-markdown.org${
     DOCS_CONFIG[packageItem.name].docsPath
   }`;
 
   readme.push('## Installation');
   readme.push(`\`\`\`shell
-  npm install ${packageItem.name}@next --save-dev
+  npm install ${packageItem.name} --save-dev
   \`\`\``);
 
   readme.push('## Documentation');
   const resources = [docText(docLink)];
   readme.push(resources.join('\n'));
+
+  readme.push('## License');
+  readme.push('MIT');
 
   fs.writeFileSync(
     `./packages/${packageItem.name}/README.md`,

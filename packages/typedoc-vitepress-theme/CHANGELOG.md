@@ -33,7 +33,7 @@
 
 ### Patch Changes
 
-- Expose `docsRoot` option ([#540](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/540))
+- Expose `docsRoot` option ([#540](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/540))
 - Updated peer dependencies
   - typedoc-plugin-markdown@4.0.0-next.41
 

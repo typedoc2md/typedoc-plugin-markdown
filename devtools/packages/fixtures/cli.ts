@@ -41,7 +41,7 @@ async function main() {
     const outputFileStrategies: ('members' | 'modules')[] =
       config.outputFileStrategies || ['members', 'modules'];
 
-    writeHtml(key, config.entryPoints);
+    //writeHtml(key, config.entryPoints);
     outputFileStrategies.forEach((outputFileStrategy) => {
       config.options.forEach((optionGroup, index: number) => {
         const options = {

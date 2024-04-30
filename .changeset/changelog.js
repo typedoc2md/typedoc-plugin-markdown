@@ -1,7 +1,7 @@
 const getReleaseLine = async (changeset, _type) => {
   return changeset.summary.replace(
     /\(\#(.+?)\)/g,
-    '([#$1](https://github.com/tgreyuk/typedoc-plugin-markdown/issues/$1))',
+    '([#$1](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/$1))',
   );
 };
 

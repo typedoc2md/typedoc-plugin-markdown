@@ -24,7 +24,7 @@ export default {
     </div>
   ),
   project: {
-    link: 'https://github.com/typedoc2md/typedoc-plugin-markdown/tree/next',
+    link: 'https://github.com/typedoc2md/typedoc-plugin-markdown',
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,
@@ -33,8 +33,10 @@ export default {
   banner: {
     content: (
       <>
-        V4 pre-release documentation 👋{' '}
-        <Link href="/docs/changelog#400">Read more</Link>
+        🎉{' '}
+        <Link href="/docs/migration-guide" className="hover:underline">
+          V4 Released • Find out more!
+        </Link>
       </>
     ),
     dismissible: false,

@@ -7,7 +7,7 @@ import { Callout, Steps, FileTree } from 'nextra/components';
 Install Docusaurus in the root of your project and install the plugin dependencies in the same location as the Docusaurus website directory.
 
 ```sh npm2yarn
-npm install typedoc typedoc-plugin-markdown@next docusaurus-plugin-typedoc@next --save-dev
+npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ https://docusaurus.io/docs/installation
 A typical project structure might look like this but can be customized to your needs:
 
 <FileTree>
-  <FileTree.Folder name="docusauruss-website" defaultOpen>
+  <FileTree.Folder name="docusaurus-website" defaultOpen>
     <FileTree.Folder name="build (static site dir)"></FileTree.Folder>
     <FileTree.Folder name="docs" defaultOpen>
       <FileTree.Folder name="api (generated TypeDoc md)"></FileTree.Folder>

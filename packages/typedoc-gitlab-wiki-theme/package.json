@@ -7,14 +7,14 @@
     "dist/"
   ],
   "bugs": {
-    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+    "url": "https://github.com/typedoc2md/typedoc-plugin-markdown/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
+    "url": "git+https://github.com/typedoc2md/typedoc-plugin-markdown.git",
     "directory": "packages/typedoc-gitlab-wiki-theme"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-gitlab-wiki-theme",
+  "homepage": "https://typedoc-plugin-markdown.org/plugins/gitlab-wiki",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
@@ -32,6 +32,6 @@
   },
   "keywords": [
     "typedoc",
-    "gitlabwiki"
+    "gitlab-wiki"
   ]
 }

@@ -24,21 +24,21 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+    "url": "https://github.com/typedoc2md/typedoc-plugin-markdown/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
+    "url": "git+https://github.com/typedoc2md/typedoc-plugin-markdown.git",
     "directory": "packages/typedoc-plugin-markdown"
   },
   "homepage": "https://typedoc-plugin-markdown.org",
   "keywords": [
-    "markdown",
-    "typescript",
-    "documentation",
     "api",
-    "typedoc-plugin",
-    "typedoc"
+    "documentation",
+    "markdown",
+    "typedoc",
+    "typescript",
+    "typedoc-plugin"
   ],
   "peerDependencies": {
     "typedoc": "0.25.x"

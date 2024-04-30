@@ -7,14 +7,14 @@
     "dist/"
   ],
   "bugs": {
-    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+    "url": "https://github.com/typedoc2md/typedoc-plugin-markdown/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
+    "url": "git+https://github.com/typedoc2md/typedoc-plugin-markdown.git",
     "directory": "packages/docusaurus-plugin-typedoc"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc",
+  "homepage": "http://typedoc.org/plugins/docusaurus",
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.0.0-next.45"
   },
@@ -32,10 +32,7 @@
   "keywords": [
     "docusaurus",
     "typedoc",
-    "plugin",
-    "markdown",
-    "typescript",
-    "api"
+    "plugin"
   ],
   "devDependencies": {
     "@docusaurus/core": "^3.2.1",

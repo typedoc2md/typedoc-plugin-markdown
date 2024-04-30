@@ -7,8 +7,8 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
  *
  * ```ts
  * export function load(app: MarkdownApplication) {
- *   app.renderer.on(MarkdownPageEvent.END, (event: MarkdownPageEvent) => {
- *    events.contents = event.contents.replace('foo', 'bar');
+ *   app.renderer.on(MarkdownPageEvent.BEGIN, (page: MarkdownPageEvent) => {
+ *    page.contents = page.contents.replace('foo', 'bar');
  *   });
  * });
  * ```

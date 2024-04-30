@@ -1,20 +1,20 @@
 {
   "name": "typedoc-vitepress-theme",
   "version": "1.0.0-next.11",
-  "description": "A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible with VitePress.",
+  "description": "A TypeDoc ( + typedoc-plugin-markdown ) theme that generates markdown compatible with VitePress.",
   "main": "./dist/index.js",
   "files": [
     "dist/"
   ],
   "bugs": {
-    "url": "https://github.com/tgreyuk/typedoc-plugin-markdown/issues"
+    "url": "https://github.com/typedoc2md/typedoc-plugin-markdown/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git",
+    "url": "git+https://github.com/typedoc2md/typedoc-plugin-markdown.git",
     "directory": "packages/typedoc-vitepress-theme"
   },
-  "homepage": "https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-vitepress-theme",
+  "homepage": "https://typedoc-plugin-markdown.org/plugins/vitepress",
   "author": "Thomas Grey",
   "scripts": {
     "lint": "eslint ./src --ext .ts",

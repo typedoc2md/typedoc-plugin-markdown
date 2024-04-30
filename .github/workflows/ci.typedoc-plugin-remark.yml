@@ -28,7 +28,7 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: 'npm'
       - name: Install
-        run: npm install
+        run: HUSKY=0 npm install
       - name: Lint
         run: npm run lint --workspace typedoc-plugin-remark
       - name: Build

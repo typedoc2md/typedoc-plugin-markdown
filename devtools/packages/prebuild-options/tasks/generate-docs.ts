@@ -21,9 +21,11 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
       `<Callout type="info">These options should be used in conjunction with the core [TypeDoc options](/docs/using-typedoc).</Callout>`,
     );
   } else {
-    out.push(
-      `<Callout type="info">Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.</Callout>`,
-    );
+    if (docsConfig.presets) {
+      out.push(
+        `<Callout type="info">Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.</Callout>`,
+      );
+    }
   }
 
   if (docsConfig.presets) {
