@@ -66,24 +66,33 @@ exports[`Remark should parse members class page 1`] = `
 title: 'test'
 ---
 
-# Class: SomeClass
+# Class: SomeClass\\<T>
+
+- list item 1
 
 ## Contents
 
+- [Type parameters](#type-parameters)
 - [Constructors](#constructors)
   - [new SomeClass()](#new-someclass)
 - [Properties](#properties)
   - [someProp](#someprop)
 
+## Type parameters
+
+| Type parameter |
+| :------------- |
+| \`T\`            |
+
 ## Constructors
 
 ### new SomeClass()
 
-> **new SomeClass**(): [\`SomeClass\`](SomeClass.md)
+> **new SomeClass**<\`T\`>(): [\`SomeClass\`](SomeClass.md)<\`T\`>
 
 #### Returns
 
-[\`SomeClass\`](SomeClass.md)
+[\`SomeClass\`](SomeClass.md)<\`T\`>
 
 ## Properties
 
@@ -149,8 +158,8 @@ exports[`Remark should parse modules index 1`] = `
 
 ## Modules
 
-* [module-1](module-1.md)
-* [module-2](module-2.md)
++ [module-1](module-1.md)
++ [module-2](module-2.md)
 "
 `;
 
@@ -177,28 +186,36 @@ javascript
 
 ## Contents
 
-* [Classes](#classes)
-  * [SomeClass](#someclass)
-* [Interfaces](#interfaces)
-  * [SomeInterface](#someinterface)
-* [Variables](#variables)
-  * [\\_\\_variable\\_with\\_underscores\\_\\_](#__variable_with_underscores__)
-* [Functions](#functions)
-  * [some\\_function()](#some_function)
++ [Classes](#classes)
+  + [SomeClass\\<T>](#someclasst)
++ [Interfaces](#interfaces)
+  + [SomeInterface\\<T>](#someinterfacet)
++ [Variables](#variables)
+  + [\\_\\_variable\\_with\\_underscores\\_\\_](#__variable_with_underscores__)
++ [Functions](#functions)
+  + [some\\_function()](#some_function)
 
 ## Classes
 
-### SomeClass
+### SomeClass\\<T>
+
++ list item 1
+
+#### Type parameters
+
+| Type parameter |
+| :------------- |
+| \`T\`            |
 
 #### Constructors
 
 ##### new SomeClass()
 
-> **new SomeClass**(): [\`SomeClass\`](module-1.md#someclass)
+> **new SomeClass**<\`T\`>(): [\`SomeClass\`](module-1.md#someclasst)<\`T\`>
 
 ###### Returns
 
-[\`SomeClass\`](module-1.md#someclass)
+[\`SomeClass\`](module-1.md#someclasst)<\`T\`>
 
 #### Properties
 
@@ -208,9 +225,19 @@ javascript
 
 ## Interfaces
 
-### SomeInterface
+### SomeInterface\\<T>
+
+#### Type parameters
+
+| Type parameter |
+| :------------- |
+| \`T\`            |
 
 #### Properties
+
+##### anotherProp
+
+> **anotherProp**: \`T\`
 
 ##### someProp
 

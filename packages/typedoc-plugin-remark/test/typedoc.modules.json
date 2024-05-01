@@ -2,9 +2,6 @@
   "extends": "./typedoc.base.json",
   "entryPoints": ["./stubs/*.ts"],
   "outputFileStrategy": "modules",
-  "remarkPlugins": [
-    "remark-github",
-    ["remark-stringify", { "fence": "~" }],
-    ["remark-toc", { "maxDepth": 3 }]
-  ]
+  "remarkStringifyOptions": { "bullet": "+", "fence": "~" },
+  "remarkPlugins": ["remark-github", ["remark-toc", { "maxDepth": 3 }]]
 }

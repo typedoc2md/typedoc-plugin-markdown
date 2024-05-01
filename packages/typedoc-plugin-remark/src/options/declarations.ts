@@ -18,3 +18,18 @@ export const remarkPlugins: Partial<DeclarationOption> = {
     }
   },
 };
+
+/**
+ * Under the hood, the `remark-stringify` plugin is used to serialize the markdown into final output.
+ *
+ * You can pass in options to the `remark-stringify` plugin using this option.
+ *
+ * Please see https://github.com/remarkjs/remark/tree/main/packages/remark-stringify#options
+ *
+ * @example {  "bullet": "+", "fence": "~" }
+ */
+export const remarkStringifyOptions: Partial<DeclarationOption> = {
+  help: 'Custom options for the remark-stringify plugin.',
+  type: ParameterType.Mixed,
+  defaultValue: {},
+};

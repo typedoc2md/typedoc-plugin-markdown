@@ -4,11 +4,15 @@
  * - In addition we don't want Typescript to transpile this file.
  */
 module.exports = {
-  parseContents: async (filePath, userPlugins = []) => {
+  parseContents: async (
+    filePath,
+    remarkStringifyOptions = {},
+    userPlugins = [],
+  ) => {
     const { remark } = await import('remark');
     const { read, writeSync } = await import('to-vfile');
     const file = await read(filePath);
-    const processor = remark();
+    const processor = remark().data('settings', remarkStringifyOptions);
     const plugins = [
       ['remark-frontmatter', ['yaml']],
       'remark-gfm',

@@ -19,10 +19,14 @@
 export const __variable_with_underscores__ = true;
 export function some_function(param: string | boolean) {}
 
-export interface SomeInterface {
+export interface SomeInterface<T> {
   someProp: string;
+  anotherProp: T;
 }
 
-export class SomeClass {
+/**
+ * - list item 1
+ */
+export class SomeClass<T> {
   someProp: string;
 }

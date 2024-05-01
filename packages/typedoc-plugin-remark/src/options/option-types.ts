@@ -5,6 +5,7 @@ import { ManuallyValidatedOption } from 'typedoc';
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
     remarkPlugins: ManuallyValidatedOption<RemarkPlugins>;
+    remarkStringifyOptions: ManuallyValidatedOption<RemarkStringifyOptions>;
   }
 }
 
@@ -18,6 +19,11 @@ export interface PluginOptions {
    * An array of remark plugin names.
    */
   remarkPlugins: RemarkPlugins;
+
+  /**
+   * Custom options for the remark-stringify plugin.
+   */
+  remarkStringifyOptions: RemarkStringifyOptions;
 }
 
 /**
@@ -26,3 +32,10 @@ export interface PluginOptions {
  * @category Options
  */
 export interface RemarkPlugins {}
+
+/**
+ *
+ *
+ * @category Options
+ */
+export interface RemarkStringifyOptions {}

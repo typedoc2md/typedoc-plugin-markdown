@@ -29,7 +29,14 @@ export function load(app: Application) {
         output.urls?.map(async (urlMapping) => {
           const { parseContents } = await require('./remark.cjs');
           const filePath = `${output.outputDirectory}/${urlMapping.url}`;
-          return await parseContents(filePath, remarkPlugins);
+          const remarkStringifyOptions = app.options.getValue(
+            'remarkStringifyOptions',
+          );
+          return await parseContents(
+            filePath,
+            remarkStringifyOptions,
+            remarkPlugins,
+          );
         }),
       );
       if (remarkPlugins.length) {
