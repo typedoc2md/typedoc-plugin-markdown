@@ -15,7 +15,7 @@ export default {
     title: 'Documentation',
   },
   plugins: {
-    title: 'Child Plugins',
+    title: 'Utils & Themes',
     type: 'page',
   },
   'api-docs': {
