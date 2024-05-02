@@ -4,42 +4,36 @@
 
 > v4 is a major release that includes a number of bug fixes, new features and UI improvements.
 
-### 🏗 Architectural Changes
+### Architectural Changes
 
 - Handlebars as a dependency has been removed.
 - Updated customization model with the ability to set hooks, events and custom theming.
 - Exposed navigation structure.
 
-### 🌟 Features
+### Features
 
 - Updated output file structure.
 - Improved and cleaner UI.
 - A set of updated and additional new options with comprehensive documentation.
 - Exported option types and JSON schema.
 
-### 🚀 Migrating from v3
+### Structural Changes
 
-Migrating from v3 to v4 should be fairly straightforward. These pointers will help you understand the changes and how to update your project.
+- Each module member is now output to its own file by default. See option `--outputFileStrategy`. To achieve the same output as v3 (whereby only Classes, Enums and Interfaces have their own file), set the option `membersWithOwnFile` option.
+- Parameters are output as a list by default. To achieve the same output as v3 (where parameters are output as a table), use option `--parametersFormat=table`.
 
-#### 🏗️ Structural Changes
-
-- Each module member is now output to its own file by default. See [`outputFileStrategy`](/docs/options#outputfilestrategy). To achieve the same output as v3 (whereby only Classes, Enums and Interfaces have their own file), set the [`membersWithOwnFile`](/docs/options#memberswithownfile) option.
-- Parameters are output as a list by default. To achieve the same output as v3 (where parameters are output as a table), use [`parametersFormat=table`](/docs/options#parametersformat).
-
-#### 💥 Breaking Changes
+### Breaking Changes
 
 - Because the file structure has changed you may need to update any cross references to files in your documentation.
 - Setting `theme` to `"markdown"` is no longer required and should be removed.
-- The option `indexTitle` has been removed. Please use the `"title.indexPage"` key with [`textContentMappings`](/docs/options#textcontentmappings).
-- The option `allReflectionsHaveOwnDocument` has been removed (this behaviour is now the default). Please see See [`outputFileStrategy`](/docs/options#outputfilestrategy).
+- The option `indexTitle` has been removed. Please use the `"title.indexPage"` key with option `--textContentMappings`.
+- The option `allReflectionsHaveOwnDocument` has been removed (this behaviour is now the default). Please see option `outputFileStrategy`](/docs/options#outputfilestrategy).
 - The option `entryDocument` has been renamed to `entryFileName` to better reflect its purpose.
 - The option `namedAnchors` has been renamed to `useHTMLAnchors` to better reflect its purpose.
-- The option `hideInPageTOC` has been removed. In-page TOC are no longer included by default. You can include in-page TOCs by using [typedoc-plugin-remark](/plugins/remark) and the [remark-toc](plugins/remark/suggested-plugins#remark-toc) plugin.
-- The option `objectLiteralTypeDeclarationStyle` has been removed. Please use [`typeDeclarationFormat=list`](/docs/options#typedeclarationformat).
+- The option `hideInPageTOC` has been removed. In-page TOC are no longer included by default. You can include in-page TOCs by using `typedoc-plugin-remark` and the `remark-toc` plugin.
+- The option `objectLiteralTypeDeclarationStyle` has been removed. Please use option `--typeDeclarationFormat=list`.
 
-### 🐛 Bug Fixes
-
-The release features numerous bug fixes including:
+### Bug Fixes
 
 - Duplication in callback/callable/function properties. ([#581](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/581)).
 - @experimental / @internal annotations. ([#556](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/556))
@@ -69,15 +63,6 @@ The release features numerous bug fixes including:
 - Properties as Table like function properties. ([#109](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/109))
 - Provide a link/excerpt/screenshot to a demo/example rendered outpout ([#102](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/102))
 
-<!--
-### Special Thanks
+---
 
-A special thanks to several members of the commununity who provided essential feeback, suggested improvements or direct contributions, including (in no particular order):
-
-- @axel7083
-- @balazsorban44
-- @CoderIllusionist
-- @KillyMXI
-- @lorenzolewis
-- @Zamiell
- -->
+Earlier changelog entries can be found in `CHANGELOG_ARCHIVE.md`.

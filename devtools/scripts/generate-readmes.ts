@@ -56,18 +56,19 @@ function writeRepositoryReadme(packages: any) {
 
   readme.push('## Packages');
   const headers: string[] = [];
-  headers.push('| Package | Badges | ');
-  headers.push('| :---| :---|');
+  headers.push('| Package | Version | Downloads | Changelog ');
+  headers.push('| :---| :---| :---| :---|');
   const table: string[] = [];
   const rows = packages.map((packageItem) => {
     const badges = [
       `[![npm](https://img.shields.io/npm/v/${packageItem.name}.svg?logo=npm)](https://www.npmjs.com/package/${packageItem.name})`,
-      `![Downloads](https://img.shields.io/npm/dm/${packageItem.name}?label=↓)`,
+      `![Downloads](https://img.shields.io/npm/dw/${packageItem.name}?label=↓)`,
     ];
     return (
       [
         `[${packageItem.name}](./packages/${packageItem.name}#readme)`,
-        badges.join(' '),
+        ...badges,
+        `[Changelog](./packages/${packageItem.name}/CHANGELOG.md)`,
       ].join(' | ') + ' | '
     );
   });

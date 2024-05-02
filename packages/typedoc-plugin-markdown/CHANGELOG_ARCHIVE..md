@@ -1,456 +1,70 @@
-# Changelog
+# Changelog (Archive)
 
-## 4.0.0-next.60
+## [3.17.1](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.17.0...typedoc-plugin-markdown@3.17.1) (2023-11-06)
 
-### Patch Changes
+### Features
 
-- Added footer partial and footer.text mappings.
-- remove header readme labell
+- Prevent escaping of angle brackets in toc [(#495)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/495)
 
-## 4.0.0-next.59
+## [3.17.0](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.16.0...typedoc-plugin-markdown@3.17.0) (2023-11-01)
 
-### Patch Changes
+### Features
 
-- Removed deprecated options.
-- Tweaked link behaviour in page header.
-- Added symbols to external links.
+- Support MDXv2
 
-## 4.0.0-next.58
+## [3.16.0](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.4...typedoc-plugin-markdown@3.16.0) (2023-08-26)
 
-### Patch Changes
+### Fixes
 
-- Fixed navigation type error ([#595](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/595))
+- TypeDoc 0.25 compatibility fixes.
 
-## 4.0.0-next.57
+## [3.15.4](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.3...typedoc-plugin-markdown@3.15.4) (2022-07-24)
 
-### Patch Changes
+### Fixes
 
-- Fix broken links in packages index.
-- Added `navigationModel` option.
+- Split out comment summary and tags for signatures [(#451)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/451)
 
-## 4.0.0-next.56
+## [3.15.3](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.2...typedoc-plugin-markdown@3.15.3) (2023-04-29)
 
-### Patch Changes
+### Fixes
 
-- Expose 'Default value` column to properties table.
-- Added sanitizeComments option.
-- Navigation structure updates.
+- Updated dependencies
 
-## 4.0.0-next.55 (2024-04-05)
+## [3.15.2](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.15.1...typedoc-plugin-markdown@3.15.2) (2023-04-20)
 
-### Patch Changes
+### Fixes
 
-- Added `flattenOutputFiles` option.
-- Lowercased `Object` keyword.
+- Support `includeVersion' option [(#415)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/415)
 
-## 4.0.0-next.54 (2024-03-21)
+# [3.15.0](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.14.0...typedoc-plugin-markdown@3.15.0) (2023-04-11)
 
-### Patch Changes
-
-- Added `fileExtension` option.
-- Expose `membersWithOwnFile`, `preserveMarkup` and `excludeScopesInPaths` options.
-- Improve signature ui.
-- Exposed additional file options to packages
-- Fix index table format for packages.
-
-## 4.0.0-next.53 (2024-02-07)
-
-### Patch Changes
-
-- Fixed omitted object literal default values.
-
-## 4.0.0-next.52 (2024-02-07)
-
-### Patch Changes
-
-- Expose `useMDXFileExt` option.
-- Fix hooks being called in incorrect order.
-
-## 4.0.0-next.51 (2024-02-07)
-
-### Patch Changes
-
-- Remove blockquotes on signature and declarations.
-- Minor ui tweaks.
-- Expose `expandParameters` option.
-
-## 4.0.0-next.50 (2024-02-01)
-
-### Patch Changes
-
-- Fix "undefined" custom `@group` headings.
-
-## 4.0.0-next.49 (2024-02-01)
-
-### Patch Changes
-
-- Fixed `publicPath` implemention.
-
-## 4.0.0-next.48 (2024-02-01)
-
-### Patch Changes
-
-- Ignore seperate module index when `entryModule` is defined.
-
-## 4.0.0-next.47 (2024-01-31)
-
-### Patch Changes
-
-- Fix params being incorrectly escaped in list format.
-- Removed generator in footer.
-- Fix typing of the defineTheme method.
-
-## 4.0.0-next.46 (2024-01-31)
-
-### Patch Changes
-
-- Allow jsx style curly braces in comments.
-
-## 4.0.0-next.45 (2024-01-31)
-
-### Patch Changes
-
-- Escape curly braces inside comment blocks.
-
-## 4.0.0-next.44 (2024-01-30)
-
-### Patch Changes
-
-- Expose `textContentMappings` to navigation
-- Expose theme hooks similar to default theme.
-- Expose TypedDoc media and include syntax.
-- Expose `@experimental` and `@internal` doc flags
-- Handle symbols with same name when generating urls
-- Expose version to breadcrumbs.home text mapping
-
-## 4.0.0-next.43
-
-### Patch Changes
-
-- Updated documentation
-
-## 4.0.0-next.42
-
-### Patch Changes
-
-- Fixed navigation structure
-- Updated documentation
-
-## 4.0.0-next.41 (2024-01-18)
-
-### Patch Changes
-
-- Fix incorrect anchor slugs on urls
-- Exposed function keyword to code blocks.
-- Fixed some incorrect navigation structures.
-
-## 4.0.0-next.40 (2024-01-12)
-
-### Patch Changes
-
-- Changed named anchors to a boolean
-- Remove page title from merged readme
-- Deprecate hideInPageTOC option
-
-## 4.0.0-next.39 (2024-01-07)
-
-### Patch Changes
-
-- Update ui for @eventProperty tags
-- Added `textContentMappings` option
-
-## 4.0.0-next.38 (2023-12-18)
-
-### Patch Changes
-
-- Packages output file fixes
-
-## 4.0.0-next.37 (2023-12-15)
-
-### Patch Changes
-
-- Enable outputFileStrategy in "packages" mode
-
-## 4.0.0-next.36 (2023-12-03)
-
-### Patch Changes
-
-- Updated breadcrumbs UI
-
-## 4.0.0-next.35 (2023-12-01)
-
-### Patch Changes
-
-- Fixed `mergeReadme` for packages entryPointStrategy
-
-## 4.0.0-next.34 (2023-11-30)
-
-### Patch Changes
-
-- Expose `mergeReadme` option
-
-## 4.0.0-next.33 (2023-11-30)
-
-### Patch Changes
-
-- Exposed `publicPath` option
-
-## 4.0.0-next.32 (2023-11-29)
-
-### Patch Changes
-
-- Generate packages.md even if groups used
-
-## 4.0.0-next.31 (2023-11-24)
-
-### Patch Changes
-
-- Strikethough members marked as deprecated
-- Expose returned declarations for reference types
-
-## 4.0.0-next.30 (2023-11-22)
-
-### Patch Changes
-
-- Update header UI
-
-## 4.0.0-next.29 (2023-11-19)
-
-### Patch Changes
-
-- Fixed paraterTable style on declarations
-- UI updates
-
-## 4.0.0-next.28 (2023-11-18)
-
-### Patch Changes
-
-- Expose `--entryModule` option
-- UI updates to header and breadcrumbs
-- Prevent MDX parsing symbols as markdown links
-
-## 4.0.0-next.27 (2023-11-07)
-
-### Patch Changes
-
-- Preserve slash in module filenames
-
-## 4.0.0-next.26 (2023-11-07)
-
-### Patch Changes
-
-- Support angle brackets, slashes and leading numbers in module names
-
-## 4.0.0-next.25 (2023-10-29)
-
-### Patch Changes
-
-- Fixed missing return types
-- Added --mergeReadme option
-- Tweaked and added specs for reference types
-- Updated default `--indexPageTitle` to {projectName}
-- Renamed `--titleTemplate` -> `--memberPageTitle`
-
-## 4.0.0-next.24 (2023-10-21)
-
-### Patch Changes
-
-- Correctly resolve packge readme urls from member pages ([#483](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/483))
-- Prevent trigger of reversed link syntax rule on index access types ([#484](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/484))
-
-## 4.0.0-next.23 (2023-10-09)
-
-### Patch Changes
-
-- Updated toc implementation
-- Fixed indexPageTitle optio
-
-## 4.0.0-next.22 (2023-09-26)
-
-### Patch Changes
-
-- Updated index filenames and Removed indexFileName option
-
-## 4.0.0-next.21 (2023-09-25)
-
-### Patch Changes
-
-- Several ui improvements
-- Simplified option names
-- Improved documentation
-- Fixed and refactored tests
-
-## 4.0.0-next.20 (2023-08-29)
-
-### Patch Changes
-
-- UI improvements
-- Enable anchor to items inside table
-
-## 4.0.0-next.19 (2023-08-27)
-
-### Patch Changes
-
-- TypeDoc 0.25.0 compatibility fixes
-
-## 4.0.0-next.18 (2023-08-10)
-
-### Patch Changes
-
-- Split out comment summary and tags for signatures
-- Added `titleTemplate` option to replace hideKindPrefix option
-- Fixed incorrect heading title for monorepo packages
-- Disable in-built Prettier formatting
-
-## 4.0.0-next.17 (2023-07-07)
-
-### Patch Changes
-
-- Prettier 3.0 support
-
-## 4.0.0-next.16 (2023-06-13)
-
-### Patch Changes
-
-- Omit number prefixes from index files
-
-## 4.0.0-next.15 (2023-06-13)
-
-### Patch Changes
-
-- Remove namespace from module filenames
-
-## 4.0.0-next.14 (2023-06-12)
-
-### Patch Changes
-
-- Export plugin options
-
-## 4.0.0-next.13 (2023-05-26)
-
-### Patch Changes
-
-- Added ability to easily override templates for custom theming.
-- Correct typo in the option `identifiersAsCodeBlocks`.
-- UI fixes.
-- Expose docs for intersection type literals.
-- Allow HTML inside code blocks.
-
-## 4.0.0-next.12 (2023-05-17)
-
-### Patch Changes
-
-- Ensure unique file names for symbols with same name with `flattenOutputFiles`
-- Added functionality to skip seperate index page and inject into readme.
-
-## 4.0.0-next.11 (2023-05-13)
-
-### Patch Changes
-
-- Simplified fileoutput options - replaced kindsWithOwnFile option with an easier to understand `outputFileStrategy` option (see docs)
-- Extract frontmatter logic into seperate TypeDoc plugin
-- Fix fileoutput for 'packages' entryPointStrategy
-- Tweaked header/breadcrumbs
-- Escape angle brackets in comment blocks unless inside backticks ([#276](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/276))
-- UI tweaks to properties display
-
-## 4.0.0-next.10
-
-### Patch Changes
-
-- Fix pipes not being escaped correctly with union types in properties table
-- Exposed navigation object to renderer
-- General UI updates and fixes
-
-## 4.0.0-next.9
-
-### Patch Changes
-
-- Discover prettier config files
-
-## 4.0.0-next.8
-
-### Patch Changes
-
-- Added `numberPrefixOutput` and `hideKindPrefix` options
-- Support `includeVersion`
-- Decoupled renderer methods
-- Further refactoring and fixes
-
-## 4.0.0-next.7
-
-### Patch Changes
-
-- Added `identifiersAsCodeBlocks`, `propertiesFormat`, `typeDeclarationFormat`, `enumMembersFormat` options.
-- Renamed `reflectionsWithOwnFile`=>`kindsWithOwnFile` and `groupByReflections`=>`groupByKinds`.
-- General ui tweaks and fixes
-
-## 4.0.0-next.6
-
-### Patch Changes
-
-- Refactored fileoutput options (renamed symbolsWithOwnFile=>reflectionsWithOwnFile, groupBySymbols=>groupByReflections)
-
-## 4.0.0-next.5
-
-### Patch Changes
-
-- Fix incorrect heading levels
-- Slugify output filenames
-- Expose `groupBySymbols` option
-
-## 4.0.0-next.4
-
-### Patch Changes
-
-- Mark final default parameters as optional ([#396](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/396))
-
-- Run prettier on output files ([#398](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/398))
-
-- Replace new lines in tables with `<br />` ([#331](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/331))
+### Features
 
 - TypdeDoc 0.24 compatibility fixes.
 
-- Escape curly braces in type declarations
+# [3.14.0](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.6...typedoc-plugin-markdown@3.14.0) (2022-12-02)
 
-## 4.0.0-next.3
+### Features
 
-### Patch Changes
+- Add objectLiteralTypeDeclarationStyle option ([#362](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/362))
+- Beautify parameter table output of destructured params ([#364](https://github.com/typedoc2md/typedoc-plugin-markdown/pull/364))
 
-- Expose referenced type links on declaration
-- UI fixes
+### Fixes
 
-## 4.0.0-next.2
+- Fix missing descriptions for function params ([#357](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/357))
+- Add conditional check to signature comments ([#368](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/368))
 
-### Patch Changes
+## [3.13.6](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.5...typedoc-plugin-markdown@3.13.6) (2022-09-04)
 
-- Fix optional declarations in code blocks
-- Improve hierarchy output
+### Fixes
 
-## 4.0.0-next.1
+- Replace deprecated 'attemptExternalResolution' [(#344)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/344)
 
-### Minor Changes
+## [3.13.5](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.4...typedoc-plugin-markdown@3.13.5) (2022-08-30)
 
-- Expose Frontmatter options ([#384](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/384)), ([#360](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/360))
-- Convert comment `@tags` to headings
-- Export files following module structure as default
-- UI improvemements
+### Fixes
 
-### Patch Changes
-
-- Respect monorepo `readmeFile` configuration ([#383](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/383))
-- Fix incorrect heading levels on project reflections
-
-## 4.0.0-next.0
-
-### Major Changes
-
-Initial release of next version. In summary includes:
-
-- Removal of handlebars.
-- MDX2 support as standard ([(#305)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/305), [(#252)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/252)).
-- Exposes additional output file options ([(#353)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/353), [(#338)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/338), [(#328)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/328), [(#307)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/307)).
-- Several UI improvements.
+- Export media and includes options [(#340)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/340)
 
 ## [3.13.4](https://github.com/typedoc2md/typedoc-plugin-markdown/compare/typedoc-plugin-markdown@3.13.3...typedoc-plugin-markdown@3.13.4) (2022-07-20)
 
