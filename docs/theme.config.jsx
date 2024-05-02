@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
 import * as path from 'path';
 import { PackageDescription } from './components/package-description';
+import { PackageVersion } from './components/package-version';
 
 export default {
   logo: (
@@ -43,6 +44,7 @@ export default {
   },
   components: {
     PackageDescription,
+    PackageVersion,
   },
 
   head: () => {

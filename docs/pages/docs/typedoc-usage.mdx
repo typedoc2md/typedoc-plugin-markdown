@@ -1,42 +1,10 @@
 import { Callout, FileTree } from 'nextra/components';
 
-# Using TypeDoc
+# TypeDoc Usage
 
 This plugin is like any other TypeDoc plugin and is fully compatible with the TypeDoc ecosystem, supporting other plugins (not specifically targetting HTML output) and the majority of TypeDoc's options.
 
 Please refer to TypeDoc's [Configuration Options](https://typedoc.org/options/configuration/) for detailed information on how to configure options.
-
-## Option Typings
-
-You can inform your IDE about the shape of the exported options the plugin provides.
-
-### JSON Files
-
-You can utilize the provided JSON schema at https://typedoc-plugin-markdown.org/schema.json. For simplicity of configuration, this schema consolidates all options from TypeDoc and the plugin.
-
-```json filename="typedoc.json"
-{
-  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
-  "entryPoints": ["./src/index.ts", "./src/secondary-entry.ts"],
-  "out": "docs",
-  "plugin": ["typedoc-plugin-markdown", "some-other-plugin"],
-};
-```
-
-### JavaScript Files
-
-For JavaScript files, the `PluginOptions` interface that can be imported to a `typedoc.config.js` file with a `@type` annotation.
-
-You can use intersection types to combine the TypeDoc options with the plugin options.
-
-```js filename="typedoc.config.js"
-/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
-module.exports = {
-  entryPoints: ['./src/index.ts', './src/secondary-entry.ts'],
-  out: 'doc',
-  plugin: ['typedoc-plugin-markdown', 'some-other-plugin'],
-};
-```
 
 ## Supported TypeDoc Options
 
@@ -81,3 +49,35 @@ Below is a list of which TypeDoc Output options are supported or not:
 - `--gaID` No ❌
 - `--hideGenerator` No ❌
 - `--searchInComments` No ❌
+
+## Option Typings
+
+You can inform your IDE about the shape of the exported options the plugin provides.
+
+### JSON Files
+
+You can utilize the provided JSON schema at https://typedoc-plugin-markdown.org/schema.json. For simplicity of configuration, this schema consolidates all options from TypeDoc and the plugin.
+
+```json filename="typedoc.json"
+{
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "entryPoints": ["./src/index.ts", "./src/secondary-entry.ts"],
+  "out": "docs",
+  "plugin": ["typedoc-plugin-markdown", "some-other-plugin"],
+};
+```
+
+### JavaScript Files
+
+For JavaScript files, the `PluginOptions` interface that can be imported to a `typedoc.config.js` file with a `@type` annotation.
+
+You can use intersection types to combine the TypeDoc options with the plugin options.
+
+```js filename="typedoc.config.js"
+/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
+module.exports = {
+  entryPoints: ['./src/index.ts', './src/secondary-entry.ts'],
+  out: 'doc',
+  plugin: ['typedoc-plugin-markdown', 'some-other-plugin'],
+};
+```

@@ -2,16 +2,13 @@ import { Callout, FileTree } from "nextra/components";
 
 # Options
 
-<Callout type="info">
-  These options should be used in conjunction with the core [TypeDoc
-  options](/docs/using-typedoc).
-</Callout>
+These options should be used in conjunction with core TypeDoc options (see [TypeDoc Usage](/docs/typedoc-usage)).
 
 ## Output Options
 
 ### outputFileStrategy
 
-<Callout emoji="📁">Determines how output files are generated.</Callout>
+<Callout emoji="💡">Determines how output files are generated.</Callout>
 
 > Accepts either `"members"` or `"modules"`. Defaults to `"members"`.
 
@@ -67,7 +64,7 @@ Generates a single file for every Module or Namespace where all members are hois
 
 ### membersWithOwnFile
 
-<Callout emoji="📁">
+<Callout emoji="💡">
   Determines which members are exported to their own file when
   `outputFileStrategy` equals `members`.
 </Callout>
@@ -88,7 +85,7 @@ Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
 
 ### flattenOutputFiles
 
-<Callout emoji="📁">Flatten output files to a single directory.</Callout>
+<Callout emoji="💡">Flatten output files to a single directory.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -132,7 +129,7 @@ Flattened output:
 
 ### fileExtension
 
-<Callout emoji="📁">
+<Callout emoji="💡">
   Specify the file extension for generated output files.
 </Callout>
 
@@ -150,7 +147,7 @@ Typically markdown files are recognised by the `.md` or `.markdown` file extensi
 
 ### entryFileName
 
-<Callout emoji="📁">The file name of the entry page.</Callout>
+<Callout emoji="💡">The file name of the entry page.</Callout>
 
 > Accepts a string value. Defaults to `"README"`.
 
@@ -174,7 +171,7 @@ The content of this file will be resolved in the following order:
 
 ### entryModule
 
-<Callout emoji="📁">
+<Callout emoji="💡">
   The name of a module that should act as the root page for the documentation.
 </Callout>
 
@@ -196,7 +193,7 @@ Please note a separate modules index page will not be generated, therefore would
 
 ### mergeReadme
 
-<Callout emoji="📁">
+<Callout emoji="💡">
   Merges the resolved readme into the project index page.
 </Callout>
 
@@ -216,7 +213,7 @@ This option has no effect when [`readme`](https://typedoc.org/options/input/#rea
 
 ### excludeScopesInPaths
 
-<Callout emoji="📁">Exclude writing @ scope directories in paths.</Callout>
+<Callout emoji="💡">Exclude writing @ scope directories in paths.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 

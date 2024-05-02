@@ -10,12 +10,12 @@ export default {
     type: 'separator',
     title: 'Guides',
   },
-  'using-typedoc': '',
+  'typedoc-usage': '',
   'customizing-output': '',
   navigation: '',
   '-- Support': {
     type: 'separator',
     title: 'Support',
   },
-  'migration-guide': 'Migration Guide v4.0',
+  'migration-guide': 'Migration Guide V4',
 };

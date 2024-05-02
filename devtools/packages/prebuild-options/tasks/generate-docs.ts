@@ -18,7 +18,7 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
   out.push('# Options');
   if (docsConfig.docsPath === '/docs') {
     out.push(
-      `<Callout type="info">These options should be used in conjunction with the core [TypeDoc options](/docs/using-typedoc).</Callout>`,
+      `These options should be used in conjunction with core TypeDoc options (see [TypeDoc Usage](/docs/typedoc-usage)).`,
     );
   } else {
     if (docsConfig.presets) {
@@ -190,12 +190,12 @@ ${JSON.stringify(
 }
 
 function getEmoji(categoryName: string) {
-  if (categoryName === 'Output') {
+  /*if (categoryName === 'Output') {
     return '📁';
   }
   if (categoryName === 'Utilities') {
     return '⚙️';
-  }
+  }*/
   return '💡';
 }
 
