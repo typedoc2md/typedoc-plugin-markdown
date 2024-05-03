@@ -1,0 +1,37 @@
+name: Bug report
+description: Create a bug report.
+labels: [bug]
+body:
+  - type: dropdown
+    attributes:
+      label: What package is the bug related to?
+      multiple: false
+      options:
+        - "typedoc-plugin-markdown"
+        - "typedoc-plugin-frontmatter"
+        - "typdedoc-plugin-remark"
+        - "typedoc-vitepress-theme"
+        - "typedoc-github-wiki-theme"
+        - "typedoc-gitlab-wiki-theme"
+        - "docusaurus-plugin-typedoc"
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe the issue
+      description: Please describe what the issue and provide as many details as possible.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: TypeDoc configuration
+      description: Please provide TypeDoc and plugin versions and your options file or list of options you have set.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: Please describe what the expected behaviour should be.
+    validations:
+      required: false

@@ -1,0 +1,31 @@
+name: Feature request
+description: Create a feature request.
+labels: [enhancement]
+body:
+  - type: dropdown
+    attributes:
+      label: What package is the feature request related to?
+      multiple: false
+      options:
+        - 'typedoc-plugin-markdown'
+        - 'typedoc-plugin-frontmatter'
+        - 'typdedoc-plugin-remark'
+        - 'typedoc-vitepress-theme'
+        - 'typedoc-github-wiki-theme'
+        - 'typedoc-gitlab-wiki-theme'
+        - 'docusaurus-plugin-typedoc'
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Background
+      description: Please describe what the desired new feature is aiming to resolve (provide as many details as possible).
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposed solution
+      description: Please describe what the proposed solution you would like to see.
+    validations:
+      required: false
