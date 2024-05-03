@@ -33,7 +33,7 @@ export function load(app: Application) {
    */
 
   /**
-   * Interate over declaration definitions and to the container.
+   * Iterate over declaration definitions and to the container.
    */
   Object.entries(declarations).forEach(([name, declaration]) => {
     app.options.addDeclaration({
