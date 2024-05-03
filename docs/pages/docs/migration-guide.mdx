@@ -19,7 +19,6 @@ import { Callout } from 'nextra/components';
 - Improved and cleaner UX configurable with options.
 - Exported option types and JSON schema.
 - Exposed navigation structure.
-- Handle events output.
 - Ability to customize static text.
 - Comprehensive documentation and examples repository.
 
@@ -31,6 +30,7 @@ import { Callout } from 'nextra/components';
 
 ## 💥 Breaking Changes
 
+- The output file structure has changed so you may need to update any cross references into your docs from external sources.
 - Setting `theme` to `"markdown"` is not required and should be removed.
 - The option `indexTitle` has been removed. Please use the `"title.indexPage"` key with [`textContentMappings`](/docs/options#textcontentmappings).
 - The option `allReflectionsHaveOwnDocument` has been removed (this behaviour is now the default). Please see See [`outputFileStrategy`](/docs/options#outputfilestrategy).

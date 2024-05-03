@@ -10,17 +10,17 @@ import { PackageVersion } from './components/package-version';
 export default {
   logo: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ width: '36px' }}>
+      <div style={{ width: '26px' }}>
         <FontAwesomeIcon icon={faMarkdown} size="sm" />
       </div>
       <div
         style={{
-          marginLeft: '8px',
-          fontSize: '12px',
+          marginLeft: '6px',
+          fontSize: '13px',
           fontWeight: 'bold',
         }}
       >
-        TYPEDOC-PLUGIN-MARKDOWN
+        typedoc-plugin-markdown
       </div>
     </div>
   ),
