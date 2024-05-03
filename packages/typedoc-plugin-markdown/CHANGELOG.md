@@ -41,7 +41,7 @@
 - Class static functions are no longer marked. ([#533](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/533))
 - @example block not rendered with Headline ([#501](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/501))
 - Support for categories ([#499](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/499))
-- Correctly resolve packge readme urls from member pages. ([#483](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/483))
+- Correctly resolve package readme urls from member pages. ([#483](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/483))
 - Add the ability to add a separate frontmatter for readme file. ([#469](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/469))
 - Items in tables are not linkable. ([#463](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/463))
 - Custom i18n texts. ([#458](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/458))
@@ -61,7 +61,7 @@
 - Navigation support? ([#262](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/262))
 - Sidebar Category Support? ([#213](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/213))
 - Properties as Table like function properties. ([#109](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/109))
-- Provide a link/excerpt/screenshot to a demo/example rendered outpout ([#102](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/102))
+- Provide a link/excerpt/screenshot to a demo/example rendered output ([#102](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/102))
 
 ---
 
