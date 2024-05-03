@@ -4,5 +4,6 @@ export function formatTableColumn(str: string) {
     .replace(/\n(?=(?:[^`]*`[^`]*`)*[^`]*$)/gi, '<br />')
     .replace(/\`\`\`ts/g, '`')
     .replace(/\`\`\`/g, '`')
-    .replace(/\n/g, '');
+    .replace(/\n/g, '')
+    .replace(/(<br \/>\s*)+$/g, '');
 }

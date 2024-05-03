@@ -34,6 +34,7 @@ export class ClassWithSimpleProps {
   propB = 'propBValue';
   /**
    * Comments for propB
+   * on two lines
    *
    * @defaultValue 'propCDefaultValue'
    */
