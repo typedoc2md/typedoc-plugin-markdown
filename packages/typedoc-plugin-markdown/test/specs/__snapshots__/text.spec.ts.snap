@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text should get translations for index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[My API - v0.0](README.md) • API
+"[**My API - v0.0**](README.md) • **API**
 
 ***
 
@@ -19,7 +19,7 @@ Copyright Test
 `;
 
 exports[`Text should get translations for member page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[My API - v0.0](../../README.md) • API
+"[**My API - v0.0**](../../README.md) • **API**
 
 ***
 
@@ -46,7 +46,7 @@ Copyright Test
 `;
 
 exports[`Text should get translations for module page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[My API - v0.0](../README.md) • API
+"[**My API - v0.0**](../README.md) • **API**
 
 ***
 
@@ -67,7 +67,7 @@ Copyright Test
 `;
 
 exports[`Text should get translations for modules page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[My API - v0.0](README.md) • API
+"[**My API - v0.0**](README.md) • **API**
 
 ***
 

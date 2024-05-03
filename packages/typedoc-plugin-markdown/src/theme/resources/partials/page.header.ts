@@ -1,4 +1,4 @@
-import { link } from '@plugin/libs/markdown';
+import { bold, link } from '@plugin/libs/markdown';
 import { MarkdownThemeContext } from '@plugin/theme';
 import * as path from 'path';
 import {
@@ -42,9 +42,9 @@ export function header(this: MarkdownThemeContext): string {
     const indexLabel = this.getText('header.docs');
 
     if (this.page.url === entryFileName) {
-      md.push(title);
+      md.push(bold(title));
     } else {
-      md.push(link(title, this.getRelativeUrl(entryFileName)));
+      md.push(link(bold(title), this.getRelativeUrl(entryFileName)));
     }
 
     const preserveReadme =
@@ -69,13 +69,13 @@ export function header(this: MarkdownThemeContext): string {
 
       if (indexLabel) {
         if (this.page.url === readMeUrl) {
-          md.push(link(indexLabel, this.getRelativeUrl(indexUrl || '')));
+          md.push(link(bold(indexLabel), this.getRelativeUrl(indexUrl || '')));
         } else {
-          md.push(indexLabel);
+          md.push(bold(indexLabel));
         }
       }
     } else {
-      md.push(indexLabel);
+      md.push(bold(indexLabel));
     }
 
     return `${md.join(' • ')}\n\n***\n`;
@@ -101,12 +101,16 @@ export function header(this: MarkdownThemeContext): string {
       ? `${packageItem.name} v${packageItem.packageVersion}`
       : packageItem.name;
 
+    const packagesMeta = this.getPackageMetaData(packageItem.name);
+    const entryModule = packagesMeta.options?.getValue('entryModule');
     const packageEntryFile = `${packageItem.name}/${entryFileName}`;
 
-    if (this.page.url === packageEntryFile) {
-      md.push(packageItemName);
+    if (this.page.url === packageEntryFile || Boolean(entryModule)) {
+      md.push(bold(packageItemName));
     } else {
-      md.push(link(packageItemName, this.getRelativeUrl(packageEntryFile)));
+      md.push(
+        link(bold(packageItemName), this.getRelativeUrl(packageEntryFile)),
+      );
     }
 
     const preservePackageReadme =
@@ -115,13 +119,15 @@ export function header(this: MarkdownThemeContext): string {
     if (preservePackageReadme) {
       if (indexLabel) {
         if (this.page.url === packageEntryFile) {
-          md.push(link(indexLabel, this.getRelativeUrl(packageItem.url || '')));
+          md.push(
+            link(bold(indexLabel), this.getRelativeUrl(packageItem.url || '')),
+          );
         } else {
-          md.push(indexLabel);
+          md.push(bold(indexLabel));
         }
       }
     } else {
-      md.push(indexLabel);
+      md.push(bold(indexLabel));
     }
 
     return `${md.join(' • ')}\n\n***\n`;

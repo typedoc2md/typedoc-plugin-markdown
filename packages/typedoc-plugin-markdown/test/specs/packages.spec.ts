@@ -22,6 +22,7 @@ describe(`Packages`, () => {
   test(`should compile relative entry module package`, () => {
     expectFileToEqual('packages', 'members', 'package-6.md', 1);
   });
+
   test(`should compile member for relative entry module package`, () => {
     expectFileToEqual(
       'packages',

@@ -118,8 +118,6 @@ export function writeHtml(key: string, entryPoints: string[]) {
         'Warn',
         '-out',
         fullPath,
-        '--readme',
-        'none',
       ],
       ...toEntryPoints(entryPoints),
     ],

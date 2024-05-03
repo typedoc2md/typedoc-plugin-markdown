@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Readmes should get merged readme for members: (Output File Strategy "members") (Option Group "1") 1`] = `
-"typedoc-stubs • Docs
+"**typedoc-stubs** • **Docs**
 
 ***
 
@@ -26,7 +26,7 @@ Module commments
 `;
 
 exports[`Readmes should get merged readme for modules: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"typedoc-stubs • Docs
+"**typedoc-stubs** • **Docs**
 
 ***
 
