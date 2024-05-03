@@ -12,7 +12,7 @@
 
 ## Documentation
 
-Please visit the [https://typedoc-plugin-markdown.org/docs](https://typedoc-plugin-markdown.org/docs) for comprehensive documentation, including options and usage guides.
+Please visit the [https://typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org) for comprehensive documentation, including options and usage guides.
 
 ## License
 

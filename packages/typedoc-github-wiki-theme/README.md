@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/typedoc-github-wiki-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-github-wiki-theme) [![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-github-wiki-theme.yml/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-github-wiki-theme.yml)
 
-> A TypeDoc ( + typedoc-plugin-markdown ) theme that generates docs compatible with Github Wiki.
+> A TypeDoc ( + typedoc-plugin-markdown ) theme that generates Markdown compatible with Github Wiki.
 
 ## Installation
 

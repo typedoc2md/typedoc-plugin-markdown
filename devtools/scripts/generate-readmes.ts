@@ -3,22 +3,6 @@ import { consola } from 'consola';
 import * as fs from 'fs';
 
 main();
-//copyChangelog();
-
-/*async function copyChangelog() {
-  const changelog = fs.readFileSync(
-    path.join(__dirname, '../../packages/typedoc-plugin-markdown/CHANGELOG.md'),
-  );
-  const readmeContents = changelog
-    .toString()
-    .replace(/^>(.*)$/gm, '<Callout>$1</Callout>')
-    .replace(/<!--[\s\S]*?-->/g, '');
-
-  fs.writeFileSync(
-    path.join(__dirname, '../../docs/pages/docs/changelog.mdx'),
-    `import { Callout } from 'nextra/components';\n\n` + readmeContents,
-  );
-}*/
 
 async function main() {
   const packagesPromises = [
@@ -114,9 +98,12 @@ function writePackageReadme(packageItem: any) {
 
   readme.push(badges.join(' '));
   readme.push(`> ${packageItem.description}`);
-  const docLink = `https://typedoc-plugin-markdown.org${
-    DOCS_CONFIG[packageItem.name].docsPath
-  }`;
+  const docLink =
+    packageItem.name === 'typedoc-plugin-markdown'
+      ? 'https://typedoc-plugin-markdown.org'
+      : `https://typedoc-plugin-markdown.org${
+          DOCS_CONFIG[packageItem.name].docsPath
+        }`;
 
   readme.push('## Installation');
   readme.push(`\`\`\`shell
