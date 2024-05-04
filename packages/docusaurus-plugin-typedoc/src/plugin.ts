@@ -81,7 +81,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
             .relative(siteDir, outputDir)
             .split(path.sep)
             .slice(1)
-            .join(path.sep);
+            .join('/');
 
           const sidebarJson = getSidebar(
             output.navigation,
