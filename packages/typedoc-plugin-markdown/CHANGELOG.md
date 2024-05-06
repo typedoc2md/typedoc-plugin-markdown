@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.0.1
+
+### Patch Changes
+
+- Remove superfluous newlines from table column descriptions ([#591](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/591)).
+- Handle multiple `@example` tags on same reflection.
+- Fix missing extended by definitions.
+- Escape Symbols with signatures correctly.
+
 ## 4.0.0 (2024-05-03)
 
 > v4 is a major release that includes a number of bug fixes, new features and UI improvements.
