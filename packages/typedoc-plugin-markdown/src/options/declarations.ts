@@ -194,7 +194,7 @@ export const mergeReadme: Partial<DeclarationOption> = {
 /**
  * By default directories are split by scopes when generating file paths.
  *
- * This option will remove reference to `@scope` in the path when generating files and directories. It does not effect the name of the package or module in the output.
+ * This option will remove reference to `@scope` in the path when generating files and directories. It does not affect the name of the package or module in the output.
  *
  * The following will be the directory structure for packages named `@scope/package-1` and `@scope/package-2`:
  *
@@ -454,7 +454,7 @@ export const publicPath: Partial<DeclarationOption> = {
 };
 
 /**
- * *Please note this options does not effect the rendering of inline code or code blocks (using single/triple backticks).*
+ * *Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks).*
  *
  * By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
  *
