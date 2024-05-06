@@ -11,31 +11,42 @@ export function hierarchy(
   options: { headingLevel: number },
 ): string {
   const md: string[] = [];
-  const parent = !model.isTarget
-    ? model.types
-        .map((hierarchyType) => {
-          return this.helpers.getHierarchyType(hierarchyType as SomeType, {
-            isTarget: model.isTarget || false,
-          });
-        })
-        .join('.')
-    : null;
-  if (model.next) {
-    if (parent) {
-      md.push(heading(options.headingLevel, this.getText('label.extends')));
-      md.push(`- ${parent}`);
-    } else {
-      md.push(heading(options.headingLevel, this.getText('label.extendedBy')));
-      const lines: string[] = [];
-      model.next.types.forEach((hierarchyType) => {
-        lines.push(
-          this.helpers.getHierarchyType(hierarchyType as SomeType, {
-            isTarget: model.next?.isTarget || false,
-          }),
+
+  const getHierarchy = (hModel: DeclarationHierarchy) => {
+    const parent = !hModel.isTarget
+      ? hModel.types
+          .map((hierarchyType) => {
+            return this.helpers.getHierarchyType(hierarchyType as SomeType, {
+              isTarget: hModel.isTarget || false,
+            });
+          })
+          .join('.')
+      : null;
+    if (hModel.next) {
+      if (parent) {
+        md.push(heading(options.headingLevel, this.getText('label.extends')));
+        md.push(`- ${parent}`);
+      } else {
+        md.push(
+          heading(options.headingLevel, this.getText('label.extendedBy')),
         );
-      });
-      md.push(unorderedList(lines));
+        const lines: string[] = [];
+        hModel.next.types.forEach((hierarchyType) => {
+          lines.push(
+            this.helpers.getHierarchyType(hierarchyType as SomeType, {
+              isTarget: hModel.next?.isTarget || false,
+            }),
+          );
+        });
+        md.push(unorderedList(lines));
+      }
+      if (hModel.next?.next) {
+        getHierarchy(hModel.next);
+      }
     }
-  }
+  };
+
+  getHierarchy(model);
+
   return md.join('\n\n');
 }

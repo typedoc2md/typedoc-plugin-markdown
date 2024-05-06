@@ -232,3 +232,9 @@ export class ClassWithFlags {
    */
   protected internalMethod() {}
 }
+
+export class BaseClass {}
+export class ChildClassA extends BaseClass {}
+export class ChildClassB extends BaseClass {}
+export class GrandChildClassA extends ChildClassA {}
+export class GrandChildClassB extends ChildClassA {}

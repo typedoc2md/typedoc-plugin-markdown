@@ -82,4 +82,21 @@ describe(`Class Reflection`, () => {
       1,
     );
   });
+
+  test(`should compile hierarchy for BaseClass`, () => {
+    expectFileToEqual('reflections', 'members', 'classes/BaseClass.md', 1);
+  });
+
+  test(`should compile hierarchy for ChildClassA`, () => {
+    expectFileToEqual('reflections', 'members', 'classes/ChildClassA.md', 1);
+  });
+
+  test(`should compile hierarchy for GrandChildClassA`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/GrandChildClassA.md',
+      1,
+    );
+  });
 });

@@ -2691,6 +2691,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "classes/AbstractClass.md"
       },
       {
+        "title": "BaseClass",
+        "kind": 128,
+        "path": "classes/BaseClass.md"
+      },
+      {
         "title": "BasicClass",
         "kind": 128,
         "path": "classes/BasicClass.md"
@@ -2699,6 +2704,16 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "CallbacksOptions",
         "kind": 128,
         "path": "classes/CallbacksOptions.md"
+      },
+      {
+        "title": "ChildClassA",
+        "kind": 128,
+        "path": "classes/ChildClassA.md"
+      },
+      {
+        "title": "ChildClassB",
+        "kind": 128,
+        "path": "classes/ChildClassB.md"
       },
       {
         "title": "ClassWithAccessors",
@@ -2754,6 +2769,16 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "DisposableClass",
         "kind": 128,
         "path": "classes/DisposableClass.md"
+      },
+      {
+        "title": "GrandChildClassA",
+        "kind": 128,
+        "path": "classes/GrandChildClassA.md"
+      },
+      {
+        "title": "GrandChildClassB",
+        "kind": 128,
+        "path": "classes/GrandChildClassB.md"
       }
     ]
   },
