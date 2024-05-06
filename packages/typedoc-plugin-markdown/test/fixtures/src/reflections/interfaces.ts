@@ -16,7 +16,7 @@ export interface BasicInterface {
   /**
    * @deprecated
    *
-   * This prop is deprecte
+   * This prop is deprecated
    *
    * @someTag
    *

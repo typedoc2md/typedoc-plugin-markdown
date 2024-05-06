@@ -17,7 +17,7 @@ Comments for BasicInterface
 
 #### Deprecated
 
-This prop is deprecte
+This prop is deprecated
 
 #### Some Tag
 
@@ -244,7 +244,7 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecated<br /><br />**Some Tag**<br />Comments for some tag |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
@@ -282,7 +282,7 @@ Comments for ExtendedInterface
 
 #### Deprecated
 
-This prop is deprecte
+This prop is deprecated
 
 #### Some Tag
 
@@ -559,7 +559,7 @@ Comments for ExtendedInterface
 
 | Property | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecte<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecated<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
 | \`extendedProp\` | \`string\` | - | - |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |

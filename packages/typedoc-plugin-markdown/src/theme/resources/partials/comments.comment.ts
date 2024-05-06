@@ -2,7 +2,7 @@ import { bold, heading } from '@plugin/libs/markdown';
 import { camelToTitleCase, formatTableColumn } from '@plugin/libs/utils';
 import { sanitizeComments } from '@plugin/libs/utils/sanitize-comments';
 import { MarkdownThemeContext } from '@plugin/theme';
-import { Comment } from 'typedoc';
+import { Comment, CommentTag } from 'typedoc';
 
 /**
  * @category Comment Partials
@@ -32,7 +32,32 @@ export function comment(
   }
 
   if (opts.showTags && model.blockTags?.length) {
-    const tags = model.blockTags
+    const blockTags = model.blockTags.reduce(
+      (previous: CommentTag[], current: CommentTag) => {
+        if (current.tag === '@example') {
+          const prevExampleTag = previous.find((tag) =>
+            ['@example', '@examples'].includes(tag.tag),
+          );
+          if (prevExampleTag) {
+            return previous.map((prevTag) => {
+              if (prevTag === prevExampleTag) {
+                current.content.unshift({ kind: 'text', text: '\n\n' });
+                return {
+                  ...prevTag,
+                  tag: '@examples',
+                  content: [...prevTag.content, ...current.content],
+                };
+              }
+              return prevTag;
+            });
+          }
+        }
+        return [...previous, current];
+      },
+      [],
+    );
+
+    const tags = blockTags
       .filter((tag) => tag.tag !== '@returns')
       .filter(
         (tag) =>

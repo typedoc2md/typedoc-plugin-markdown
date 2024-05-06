@@ -103,3 +103,40 @@ export const SameName = true;
 export const prop = true;
 export const propb = true;
 export const _prop_with_underscore = true;
+
+/**
+ * Function with multiple example tags
+ *
+ * @example
+ * // If there are no code blocks, TypeDoc assumes the whole tag
+ * // should be a code block. This is not valid TSDoc, but is recognized
+ * // by VSCode and enables better JSDoc support.
+ *
+ * factorial(1)
+ *
+ * @example
+ * If there is a code block, then both TypeDoc and VSCode will treat
+ * text outside of the code block as regular text.
+ *
+ * ```ts
+ * factorial(1)
+ * ```
+ */
+export function multipleExampleTags() {
+  return true;
+}
+
+/**
+ * Function with single example tag
+ *
+ * @example
+ * If there is a code block, then both TypeDoc and VSCode will treat
+ * text outside of the code block as regular text.
+ *
+ * ```ts
+ * factorial(1)
+ * ```
+ */
+export function singleExampleTag() {
+  return true;
+}

@@ -92,6 +92,11 @@ This is a simple example on how to use include.
 - [\\_prop\\_with\\_underscore](variables/prop_with_underscore.md)
 - [prop](variables/prop.md)
 - [propb](variables/propb.md)
+
+## Functions
+
+- [multipleExampleTags](functions/multipleExampleTags.md)
+- [singleExampleTag](functions/singleExampleTag.md)
 "
 `;
 
@@ -187,6 +192,11 @@ This is a simple example on how to use include.
 - [\\_prop\\_with\\_underscore](/some-path/variables/prop_with_underscore.mdx)
 - [prop](/some-path/variables/prop.mdx)
 - [propb](/some-path/variables/propb.mdx)
+
+## Functions
+
+- [multipleExampleTags](/some-path/functions/multipleExampleTags.mdx)
+- [singleExampleTag](/some-path/functions/singleExampleTag.mdx)
 "
 `;
 
@@ -342,6 +352,56 @@ This is a simple example on how to use include.
 ### propb
 
 > \`const\` **propb**: \`true\` = \`true\`
+
+## Functions
+
+### multipleExampleTags()
+
+> **multipleExampleTags**(): \`boolean\`
+
+Function with multiple example tags
+
+#### Returns
+
+\`boolean\`
+
+#### Examples
+
+\`\`\`ts
+// If there are no code blocks, TypeDoc assumes the whole tag
+// should be a code block. This is not valid TSDoc, but is recognized
+// by VSCode and enables better JSDoc support.
+
+factorial(1)
+\`\`\`
+
+If there is a code block, then both TypeDoc and VSCode will treat
+text outside of the code block as regular text.
+
+\`\`\`ts
+factorial(1)
+\`\`\`
+
+***
+
+### singleExampleTag()
+
+> **singleExampleTag**(): \`boolean\`
+
+Function with single example tag
+
+#### Returns
+
+\`boolean\`
+
+#### Example
+
+If there is a code block, then both TypeDoc and VSCode will treat
+text outside of the code block as regular text.
+
+\`\`\`ts
+factorial(1)
+\`\`\`
 "
 `;
 
@@ -513,5 +573,59 @@ This is a simple example on how to use include.
 ### propb
 
 > \`const\` **propb**: \`true\` = \`true\`
+
+## Functions
+
+<a id="multipleExampleTags" name="multipleExampleTags"></a>
+
+### multipleExampleTags()
+
+> **multipleExampleTags**(): \`boolean\`
+
+Function with multiple example tags
+
+#### Returns
+
+\`boolean\`
+
+#### Examples
+
+\`\`\`ts
+// If there are no code blocks, TypeDoc assumes the whole tag
+// should be a code block. This is not valid TSDoc, but is recognized
+// by VSCode and enables better JSDoc support.
+
+factorial(1)
+\`\`\`
+
+If there is a code block, then both TypeDoc and VSCode will treat
+text outside of the code block as regular text.
+
+\`\`\`ts
+factorial(1)
+\`\`\`
+
+***
+
+<a id="singleExampleTag" name="singleExampleTag"></a>
+
+### singleExampleTag()
+
+> **singleExampleTag**(): \`boolean\`
+
+Function with single example tag
+
+#### Returns
+
+\`boolean\`
+
+#### Example
+
+If there is a code block, then both TypeDoc and VSCode will treat
+text outside of the code block as regular text.
+
+\`\`\`ts
+factorial(1)
+\`\`\`
 "
 `;
