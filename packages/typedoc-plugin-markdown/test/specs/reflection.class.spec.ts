@@ -73,4 +73,13 @@ describe(`Class Reflection`, () => {
       1,
     );
   });
+
+  test(`should compile class with symbols`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithSymbols.md',
+      1,
+    );
+  });
 });

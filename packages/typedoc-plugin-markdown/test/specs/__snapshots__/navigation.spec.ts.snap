@@ -2731,6 +2731,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "classes/ClassWithSimpleProps.md"
       },
       {
+        "title": "ClassWithSymbols",
+        "kind": 128,
+        "path": "classes/ClassWithSymbols.md"
+      },
+      {
         "title": "ClassWithTypeParameters",
         "kind": 128,
         "path": "classes/ClassWithTypeParameters.md"

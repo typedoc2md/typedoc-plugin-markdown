@@ -101,6 +101,13 @@ export class DerivedClassB extends AbstractClass {
   }
 }
 
+const symbolConst: unique symbol = Symbol('SomeSymbol');
+
+export class ClassWithSymbols {
+  [Symbol.dispose]() {}
+  public static [symbolConst]?: () => void;
+}
+
 export class DisposableClass implements Disposable {
   [Symbol.dispose]() {}
 }

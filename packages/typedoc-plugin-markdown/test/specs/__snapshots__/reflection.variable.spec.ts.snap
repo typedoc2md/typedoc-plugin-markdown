@@ -9,9 +9,9 @@ Comments variable with symbol
 
 ## Type declaration
 
-### [sym]
+### \\[sym\\]
 
-> **[sym]**: \`string\` = \`'value'\`
+> **\\[sym\\]**: \`string\` = \`'value'\`
 
 Comments for symbol
 
