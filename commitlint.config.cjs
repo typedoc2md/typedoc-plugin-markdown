@@ -8,7 +8,7 @@ module.exports = {
       2,
       'always',
       [
-        'global',
+        'all',
         'core',
         'frontmatter',
         'remark',
