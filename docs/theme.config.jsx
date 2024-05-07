@@ -16,7 +16,7 @@ export default {
       <div
         style={{
           marginLeft: '6px',
-          fontSize: '13px',
+          fontSize: '14px',
           fontWeight: 'bold',
         }}
       >

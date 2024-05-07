@@ -385,6 +385,10 @@ export const indexFormat: Partial<DeclarationOption> = {
 };
 
 /**
+ * <Callout type="warning">
+ * **Please note TypeDoc 0.26 will be introducing a native i18n implementation. This option will likely be deprecated in favour of utilizing the native implementation when 0.26 is released.**
+ * </Callout>
+ *
  * This option enables changing static text rendered to the documentation.
  * Useful if an alternative English phrase is preferred or to translate English text to another language.
  * This option does not attempt to address translating text within code comments.
