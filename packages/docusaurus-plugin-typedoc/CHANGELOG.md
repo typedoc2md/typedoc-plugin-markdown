@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Patch Changes
+
+- Handle windows path separators when generating sidebar ids
+
 ## 1.0.0 (2024-05-03)
 
 > v1 is a major release that includes a number of improvements.
