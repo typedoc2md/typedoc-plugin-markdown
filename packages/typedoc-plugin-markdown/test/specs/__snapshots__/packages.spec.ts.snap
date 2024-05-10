@@ -112,7 +112,7 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 `;
 
 exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "2") 1`] = `
-"[**@scope/package-1 v1.0.0**](../../@scope/package-1/README.md) • **Docs**
+"[**@scope/package-1 v1.0.0**](../README.md) • **Docs**
 
 ***
 

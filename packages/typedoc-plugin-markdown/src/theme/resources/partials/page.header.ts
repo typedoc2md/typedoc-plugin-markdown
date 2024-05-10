@@ -1,4 +1,5 @@
 import { bold, link } from '@plugin/libs/markdown';
+import { removeFirstScopedDirectory } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import * as path from 'path';
 import {
@@ -94,6 +95,7 @@ export function header(this: MarkdownThemeContext): string {
 
     const indexLabel = this.getText('header.docs');
 
+    const ignoreScopes = this.options.getValue('excludeScopesInPaths');
     const fileExtension = this.options.getValue('fileExtension');
     const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
 
@@ -103,7 +105,11 @@ export function header(this: MarkdownThemeContext): string {
 
     const packagesMeta = this.getPackageMetaData(packageItem.name);
     const entryModule = packagesMeta.options?.getValue('entryModule');
-    const packageEntryFile = `${packageItem.name}/${entryFileName}`;
+    const packageEntryFile = ignoreScopes
+      ? removeFirstScopedDirectory(
+          `${packageItem.name}${path.sep}${entryFileName}`,
+        )
+      : `${packageItem.name}${path.sep}${entryFileName}`;
 
     if (this.page.url === packageEntryFile || Boolean(entryModule)) {
       md.push(bold(packageItemName));
