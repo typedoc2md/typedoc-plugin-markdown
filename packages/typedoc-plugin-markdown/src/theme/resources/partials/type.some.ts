@@ -88,7 +88,5 @@ export function someType(this: MarkdownThemeContext, model?: SomeType): string {
     return backTicks('null');
   }
 
-  return /\\/.test(model?.toString())
-    ? model?.toString()
-    : backTicks(model?.toString());
+  return backTicks(model?.toString());
 }

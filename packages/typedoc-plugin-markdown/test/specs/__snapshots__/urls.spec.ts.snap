@@ -569,6 +569,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "variables/objectWithSymbol.md",
   "variables/someQuery.md",
   "variables/stringVariable.md",
+  "variables/templateVariableString.md",
   "variables/typeOperatorVariable.md",
 ]
 `;
@@ -643,6 +644,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "variables/objectWithSymbol.md",
   "variables/someQuery.md",
   "variables/stringVariable.md",
+  "variables/templateVariableString.md",
   "variables/typeOperatorVariable.md",
 ]
 `;

@@ -8,6 +8,15 @@
 export const stringVariable = 'stringConstWithDefaultValue';
 
 /**
+ * A template variable string
+ */
+export const templateVariableString = `
+This is a template string
+/* with a comment */
+And a <tag></tag>
+`;
+
+/**
  * Comments for typeOperatorVariable
  */
 export const typeOperatorVariable: unique symbol = Symbol.for('__type__');

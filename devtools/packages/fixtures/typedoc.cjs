@@ -12,4 +12,7 @@ module.exports = {
       URL: 'https://developer.mozilla.org/en-US/docs/Web/API/URL',
     },
   },
+  navigation: {
+    includeGroups: true,
+  },
 };

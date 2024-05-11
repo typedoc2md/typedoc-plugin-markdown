@@ -3000,6 +3000,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "variables/stringVariable.md"
       },
       {
+        "title": "templateVariableString",
+        "kind": 32,
+        "path": "variables/templateVariableString.md"
+      },
+      {
         "title": "typeOperatorVariable",
         "kind": 32,
         "path": "variables/typeOperatorVariable.md"
