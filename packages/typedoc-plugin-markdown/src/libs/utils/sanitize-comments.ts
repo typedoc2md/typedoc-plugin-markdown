@@ -1,5 +1,4 @@
 export function sanitizeComments(str: string) {
-  const re = /<(?=(?:[^`]*`[^`]*`)*[^`]*$)[^<]+?>/gi;
   const codeBlocks: string[] = [];
   const placeholder = '___CODEBLOCKPLACEHOLDER___';
 
@@ -9,9 +8,11 @@ export function sanitizeComments(str: string) {
     return placeholder;
   });
 
-  // Perform escaping outside of code blocks
+  // If line starts with a > treat it as a blockquote
+  // Otherwise escape all <, >, {, and } characters
   str = str
-    .replace(re, (tags) => tags.replace(/>/g, '\\>').replace(/</g, '\\<'))
+    .replace(/(?!^)>/gm, '\\>')
+    .replace(/</g, '\\<')
     .replace(/\{/g, '\\{')
     .replace(/\}/g, '\\}');
 
