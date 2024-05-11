@@ -71,7 +71,9 @@ For JavaScript files, the `PluginOptions` interface can be imported to a `typedo
 
 You can use intersection types to combine the TypeDoc options with the plugin options.
 
-```js filename="typedoc.config.js"
+```js filename="typedoc.config.cjs"
+// @ts-check
+
 /** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
 module.exports = {
   entryPoints: ['./src/index.ts', './src/secondary-entry.ts'],

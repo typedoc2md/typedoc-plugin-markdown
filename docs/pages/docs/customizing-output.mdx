@@ -10,10 +10,15 @@ Plugins export a load function with context of the resolved application.
 
 Here is a basic plugin skeleton:
 
-```ts filename="local-plugins/my-custom-plugin.ts"
+```js filename="local-plugins/my-custom-plugin.mjs"
+// @ts-check
+
 import { MarkdownApplication } from 'typedoc-plugin-markdown';
 
-export function load(app: MarkdownApplication) {
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
   ...
 }
 ```
@@ -22,7 +27,7 @@ The plugin can then be consumed by adding the path to the plugin in the typedoc.
 
 ```json filename="typedoc.json"
 {
-  "plugin": ["typedoc-plugin-markdown", "./local-plugins/my-custom-plugin.js"]
+  "plugin": ["typedoc-plugin-markdown", "./local-plugins/my-custom-plugin.mjs"]
 }
 ```
 
@@ -85,14 +90,14 @@ In theory all available templates, partials and helpers can be overriden with cu
 This code defines a new theme called “customTheme”:
 
 ```ts
-export function load(app) {
+export function load(app: MarkdownApplication) {
   app.renderer.defineTheme('customTheme', MyMarkdownTheme);
 }
 
 class MyMarkdownTheme extends MarkdownTheme {}
 ```
 
-The theme can then be consumed by the theme optiond:
+The theme can then be consumed by the `theme` option:
 
 ```json filename="typedoc.json"
 {

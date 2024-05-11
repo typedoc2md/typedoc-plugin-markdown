@@ -10,16 +10,21 @@ The navigation is returned as `JSON` and can be mapped to a custom structure and
 
 The model can be configured by the [`--navigationModel`](/docs/options#navigationmodel) option.
 
-```ts filename="custom-plugin.ts"
-export function load(app: MarkdownApplication) {
-  app.renderer.postRenderAsyncJobs.push(
-    async (renderer: MarkdownRendererEvent) => {
-      // The navigation JSON structure is available on the navigation object.
-      const navigation = renderer.navigation;
+```ts filename="custom-plugin.mjs"
+// @ts-check
 
-      // This can be parsed to something else or written straight to a file:
-      fs.writeFileSync('navigation.json', JSON.stringify(navigation));
-    },
-  );
+import { MarkdownApplication } from 'typedoc-plugin-markdown';
+
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
+    // The navigation JSON structure is available on the navigation object.
+    const navigation = renderer.navigation;
+
+    // This can be parsed to something else or written straight to a file:
+    fs.writeFileSync('navigation.json', JSON.stringify(navigation));
+  });
 }
 ```
