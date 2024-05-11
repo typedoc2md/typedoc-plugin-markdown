@@ -1,6 +1,7 @@
 import { MarkdownRenderer } from '@plugin/app/application';
 import {
   getFileNameWithExtension,
+  isQuoted,
   removeFirstScopedDirectory,
   slugifyUrl,
 } from '@plugin/libs/utils';
@@ -313,10 +314,7 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
   }
 
   function getUrlPath(reflection: DeclarationReflection, urlOption: UrlOption) {
-    const alias = reflection.name
-      .replace(/^_+|_+$/g, '')
-      .replace(/</, '-')
-      .replace(/>/, '-');
+    const alias = getAlias(reflection.name);
 
     const parentDir = urlOption.parentUrl
       ? path.dirname(urlOption.parentUrl)
@@ -362,6 +360,16 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
       [parentDir, dir(), filename()].filter((part) => Boolean(part)).join('/'),
       fileExtension,
     );
+  }
+
+  function getAlias(name: string) {
+    if (isQuoted(name)) {
+      name = name.replace(/\//g, '_');
+    }
+    return name
+      .replace(/"/g, '')
+      .replace(/^_+|_+$/g, '')
+      .replace(/[<>]/g, '-');
   }
 
   function applyAnchorUrl(
@@ -471,16 +479,18 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
   function flattenFiles(urls: UrlMapping<Reflection>[]) {
     const getUrl = (reflection: Reflection) => {
-      const fullname = reflection.getFullName();
-      const fullnameParts = fullname.replace(/\//g, '.').split('.');
+      const fullName = reflection.getFullName();
+      const fullNameParts = fullName.replace(/\//g, '.').split('.');
       if (reflection.kind !== ReflectionKind.Module) {
-        fullnameParts.splice(
-          fullnameParts.length - 1,
+        fullNameParts.splice(
+          fullNameParts.length - 1,
           0,
           ReflectionKind.singularString(reflection.kind).split(' ')[0],
         );
       }
-      const url = `${fullnameParts.join('.')}.md`;
+      const url = `${fullNameParts.join('.')}${fileExtension}`
+        .replace(/"/g, '')
+        .replace(/^\./g, '');
       reflection.url = url;
       return url;
     };

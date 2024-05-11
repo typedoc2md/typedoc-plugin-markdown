@@ -1033,6 +1033,23 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
 exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
+    "title": "\\"/Test/Module/Name\\"",
+    "kind": 2,
+    "path": "Test_Module_Name/README.md",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "path": "Test_Module_Name/interfaces/InterfaceA.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "@scope/namespace",
     "kind": 2,
     "path": "namespace/README.md",
@@ -1455,6 +1472,23 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "members") (Option Group "2") 1`] = `
 "[
   {
+    "title": "\\"/Test/Module/Name\\"",
+    "kind": 2,
+    "path": "Test.Module.Name.md",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "path": "Test.Module.Name.Interface.InterfaceA.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "@scope/namespace",
     "kind": 2,
     "path": "@scope.namespace.md",
@@ -1862,6 +1896,11 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
+    "title": "\\"/Test/Module/Name\\"",
+    "kind": 2,
+    "path": "Test_Module_Name.md"
+  },
+  {
     "title": "@scope/namespace",
     "kind": 2,
     "path": "namespace.md"
@@ -1911,6 +1950,11 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 
 exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "[
+  {
+    "title": "\\"/Test/Module/Name\\"",
+    "kind": 2,
+    "path": "Test.Module.Name.md"
+  },
   {
     "title": "@scope/namespace",
     "kind": 2,

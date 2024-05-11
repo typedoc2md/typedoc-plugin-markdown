@@ -48,7 +48,11 @@ const config: Record<string, Fixture> = {
   },
   modules: {
     only: false,
-    entryPoints: ['/modules/module-1', '/modules/module-2'],
+    entryPoints: [
+      '/modules/module-1',
+      '/modules/module-2',
+      '/modules/module-3',
+    ],
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       readme: 'none',

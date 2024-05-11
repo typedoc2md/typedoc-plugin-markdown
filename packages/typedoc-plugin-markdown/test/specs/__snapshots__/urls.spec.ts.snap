@@ -43,6 +43,8 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 2`]
 exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 1`] = `
 [
   "README.md",
+  "Test_Module_Name/README.md",
+  "Test_Module_Name/interfaces/InterfaceA.md",
   "module-1/submodules/submodule-1/README.md",
   "module-1/submodules/submodule-1/classes/ClassA.md",
   "module-1/submodules/submodule-1/classes/ClassB.md",
@@ -112,6 +114,8 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 2`
   "@scope.namespace.Type.TypeB.md",
   "@scope.namespace.md",
   "README.md",
+  "Test.Module.Name.Interface.InterfaceA.md",
+  "Test.Module.Name.md",
   "module-1.submodules.submodule-1.Class.ClassA.md",
   "module-1.submodules.submodule-1.Class.ClassB.md",
   "module-1.submodules.submodule-1.Enumeration.EnumA.md",
@@ -163,6 +167,7 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 2`
 exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 1`] = `
 [
   "README.md",
+  "Test_Module_Name.md",
   "module-1/submodules/submodule-1.md",
   "module-1/submodules/submodule-2.md",
   "module-1/submodules/submodule-3-with-modules/nested-submodule-1.md",
@@ -176,6 +181,7 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 2`
 [
   "@scope.namespace.md",
   "README.md",
+  "Test.Module.Name.md",
   "module-1.submodules.submodule-1.md",
   "module-1.submodules.submodule-2.md",
   "module-1.submodules.submodule-3-with-modules.nested-submodule-1.md",

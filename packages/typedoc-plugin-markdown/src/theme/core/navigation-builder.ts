@@ -1,4 +1,5 @@
 import { MarkdownRenderer } from '@plugin/app/application';
+import { isQuoted } from '@plugin/libs/utils';
 import { OutputFileStrategy, PLURAL_KIND_KEY_MAP } from '@plugin/options';
 import { MarkdownTheme, NavigationItem } from '@plugin/theme';
 import * as path from 'path';
@@ -262,7 +263,7 @@ export function buildNavigation(
     child: DeclarationReflection,
     children: NavigationItem[] | null,
   ) {
-    if (!navigationOptions.excludeFolders) {
+    if (!isQuoted(child.name) && !navigationOptions.excludeFolders) {
       const titleParts = child.name.split('/');
       if (!child.name.startsWith('@') && titleParts.length > 1) {
         let currentLevel = acc;
