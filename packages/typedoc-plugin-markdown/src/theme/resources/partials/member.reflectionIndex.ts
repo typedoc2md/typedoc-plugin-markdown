@@ -1,5 +1,5 @@
 import { heading, link, table } from '@plugin/libs/markdown';
-import { escapeChars, getFirstParagrph } from '@plugin/libs/utils';
+import { escapeChars } from '@plugin/libs/utils';
 import { PLURAL_KIND_KEY_MAP } from '@plugin/options/text-mappings';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { TextContentMappings } from 'public-api';
@@ -110,9 +110,7 @@ function getTable(
     const comment = context.helpers.getDeclarationComment(child);
 
     if (comment?.summary?.length) {
-      row.push(
-        getFirstParagrph(context.partials.commentParts(comment.summary)),
-      );
+      row.push(context.partials.commentParts(comment.summary)?.split('\n')[0]);
     } else {
       row.push('-');
     }

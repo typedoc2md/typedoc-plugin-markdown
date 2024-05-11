@@ -213,7 +213,7 @@ export const partials = (context: MarkdownThemeContext) => {
       },
     ) => declaration.apply(context, [model, options]) as string,
     /**
-     * Remders a declaration title.
+     *
      *
      * @category Member Partials
      */

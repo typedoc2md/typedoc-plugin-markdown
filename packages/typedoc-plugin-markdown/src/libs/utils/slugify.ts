@@ -1,4 +1,4 @@
-export function slugifyUrl(url: string) {
+export function slugify(url: string) {
   return url
     .toLowerCase()
     .trim()

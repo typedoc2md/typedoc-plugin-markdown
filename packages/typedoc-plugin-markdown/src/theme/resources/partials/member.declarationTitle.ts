@@ -1,10 +1,9 @@
 import { backTicks, bold, codeBlock } from '@plugin/libs/markdown';
-import { escapeChars, stripComments } from '@plugin/libs/utils';
+import { escapeChars } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 /**
- * Remders a declaration title.
  *
  * @category Member Partials
  */
@@ -83,7 +82,7 @@ export function declarationTitle(
     model.defaultValue !== '...' &&
     model.defaultValue !== model.name
   ) {
-    md.push(` = \`${stripComments(model.defaultValue)}\``);
+    md.push(` = \`${model.defaultValue}\``);
   }
 
   if (useCodeBlocks) {

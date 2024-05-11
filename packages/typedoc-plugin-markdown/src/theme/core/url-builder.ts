@@ -3,7 +3,7 @@ import {
   getFileNameWithExtension,
   isQuoted,
   removeFirstScopedDirectory,
-  slugifyUrl,
+  slugify,
 } from '@plugin/libs/utils';
 import { OutputFileStrategy } from '@plugin/options/option-maps';
 import { MarkdownTheme } from '@plugin/theme/markdown-theme';
@@ -331,9 +331,7 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
       return urlOption.directory
         ? urlOption.directory
-        : `${slugifyUrl(
-            ReflectionKind.singularString(reflection.kind),
-          )}.${alias}`;
+        : `${slugify(ReflectionKind.singularString(reflection.kind))}.${alias}`;
     };
 
     const filename = () => {
