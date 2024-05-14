@@ -2850,6 +2850,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "interfaces/IndexableInterface.md"
       },
       {
+        "title": "InterfaceWithComments",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithComments.md"
+      },
+      {
         "title": "InterfaceWithEventProperties",
         "kind": 256,
         "path": "interfaces/InterfaceWithEventProperties.md"

@@ -284,7 +284,7 @@ This is a simple example on how to use include.
 
 | Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| \`Member\` | \`0\` | Comment for Member<br /><br />Some <p> html </p> and <tag></tag>.<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](README.md#samename-1) |
+| \`Member\` | \`0\` | <p>Comment for Member</p>Some <p>html </p> and <tag></tag>.<p>**Deprecated**</p><p>Deprecated member</p><p>**See**</p><p>[SameName](README.md#samename-1)</p> |
 | \`MemberB\` | \`1\` | - |
 
 ## Interfaces
@@ -491,7 +491,7 @@ This is a simple example on how to use include.
 
 | Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| <a id="Member" name="Member"></a> \`Member\` | \`0\` | Comment for Member<br /><br />Some \\<p\\> html \\</p\\> and \\<tag\\>\\</tag\\>.<br /><br />**Deprecated**<br />Deprecated member<br /><br />**See**<br />[SameName](/some-path/README.mdx#SameName-1) |
+| <a id="Member" name="Member"></a> \`Member\` | \`0\` | <p>Comment for Member</p>Some \\<p\\> html \\</p\\> and \\<tag\\>\\</tag\\>.<p>**Deprecated**</p><p>Deprecated member</p><p>**See**</p><p>[SameName](/some-path/README.mdx#SameName-1)</p> |
 | <a id="MemberB" name="MemberB"></a> \`MemberB\` | \`1\` | - |
 
 ## Interfaces

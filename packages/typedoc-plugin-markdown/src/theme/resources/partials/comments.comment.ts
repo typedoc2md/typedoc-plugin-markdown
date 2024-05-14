@@ -70,7 +70,7 @@ export function comment(
         const tagMd = [
           opts.headingLevel
             ? heading(opts.headingLevel, tagText) + '\n'
-            : bold(tagText),
+            : bold(tagText) + '\n',
         ];
         tagMd.push(this.partials.commentParts(tag.content));
         return tagMd.join('\n');

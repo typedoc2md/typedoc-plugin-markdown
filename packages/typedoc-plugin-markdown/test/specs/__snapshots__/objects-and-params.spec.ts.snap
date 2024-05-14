@@ -204,7 +204,7 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecated<br /><br />**Some Tag**<br />Comments for some tag |
+| ~~\`deprecatedProp\`~~ | \`string\` | <p>**Deprecated**</p><p>This prop is deprecated</p><p>**Some Tag**</p><p>Comments for some tag</p> |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |

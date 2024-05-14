@@ -244,7 +244,7 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecated<br /><br />**Some Tag**<br />Comments for some tag |
+| ~~\`deprecatedProp\`~~ | \`string\` | <p>**Deprecated**</p><p>This prop is deprecated</p><p>**Some Tag**</p><p>Comments for some tag</p> |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
@@ -559,7 +559,7 @@ Comments for ExtendedInterface
 
 | Property | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated**<br />This prop is deprecated<br /><br />**Some Tag**<br />Comments for some tag | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
+| ~~\`deprecatedProp\`~~ | \`string\` | <p>**Deprecated**</p><p>This prop is deprecated</p><p>**Some Tag**</p><p>Comments for some tag</p> | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
 | \`extendedProp\` | \`string\` | - | - |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
@@ -616,6 +616,90 @@ Comments for IndexableInterface
 | Property | Type |
 | :------ | :------ |
 | \`prop\` | \`string\` |
+"
+`;
+
+exports[`Interface Reflection should compile interface with comments: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Interface: InterfaceWithComments\\<A, B, C, D\\>
+
+Comments for interface
+over two lines
+
+And some more comments
+
+## Type parameters
+
+• **A**
+
+This is a parameter.
+
+• **B**
+
+Comments for a parameter.
+This sentence is on a soft new line.
+
+• **C**
+
+This is a parameter.
+
+ Documentation with a double line
+
+• **D**
+
+<p>These are comments with paras</p>
+<p>These are comments with paras</p>
+Other comments
+Comments with <p>paras</p>
+
+<p>These are comments with paras</p>
+
+## Properties
+
+### ~~propertyWithComments~~
+
+> **propertyWithComments**: \`string\`
+
+Some text.
+
+- list item
+- list item
+
+#### Deprecated
+
+This is a deprecated property
+
+#### See
+
+https://example.com
+
+#### Source
+
+[interfaces.ts:192](http://source-url)
+"
+`;
+
+exports[`Interface Reflection should compile interface with comments: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Interface: InterfaceWithComments\\<A, B, C, D\\>
+
+Comments for interface
+over two lines
+
+And some more comments
+
+## Type parameters
+
+| Type parameter | Description |
+| :------ | :------ |
+| \`A\` | This is a parameter. |
+| \`B\` | Comments for a parameter. This sentence is on a soft new line. |
+| \`C\` | <p>This is a parameter.</p><p> Documentation with a double line</p> |
+| \`D\` | <p>These are comments with paras</p><p>These are comments with paras</p> Other comments Comments with <p>paras</p><p>These are comments with paras</p> |
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| ~~\`propertyWithComments\`~~ | \`string\` | <p>Some text.</p><ul><li>list item</li><li>list item</li></ul><p>**Deprecated**</p><p>This is a deprecated property</p><p>**See**</p><p>https://example.com</p> |
 "
 `;
 
@@ -686,7 +770,7 @@ exports[`Interface Reflection should compile interface with event properties: (O
 | Event | Type | Description |
 | :------ | :------ | :------ |
 | \`anotherEvent\` | \`MouseEvent\` | - |
-| ~~\`someEvent?\`~~ | (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\` | Description for event someEvent<br /><br />**Deprecated**<br />Deprectaed comments |
+| ~~\`someEvent?\`~~ | (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\` | <p>Description for event someEvent</p><p>**Deprecated**</p><p>Deprectaed comments</p> |
 "
 `;
 

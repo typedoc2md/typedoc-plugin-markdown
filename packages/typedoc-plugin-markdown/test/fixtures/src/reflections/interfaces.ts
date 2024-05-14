@@ -155,3 +155,39 @@ export interface InterfaceWithFlags {
   /** @internal */
   internalProp: string;
 }
+
+/**
+ * Comments for interface
+ * over two lines
+ *
+ * And some more comments
+ *
+ * @typeParam A This is a parameter.
+ *
+ * @typeParam B Comments for a parameter.
+ * This sentence is on a soft new line.
+ *
+ * @typeParam C This is a parameter.
+ *
+ *  Documentation with a double line
+ *
+ * @typeParam D
+ * <p>These are comments with paras</p>
+ * <p>These are comments with paras</p>
+ * Other comments
+ * Comments with <p>paras</p>
+ *
+ * <p>These are comments with paras</p>
+ */
+export interface InterfaceWithComments<A, B, C, D> {
+  /**
+   * Some text.
+   *
+   * - list item
+   * - list item
+   * @deprecated This is a deprecated property
+   *
+   * @see https://example.com
+   */
+  propertyWithComments: string;
+}

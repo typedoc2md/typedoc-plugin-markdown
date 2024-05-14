@@ -1010,9 +1010,9 @@ new ClassWithSimpleProps(): ClassWithSimpleProps
 | Property | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`propA\` | \`string\` | \`'propAValue'\` | Comments for propA |
-| \`propB\` | \`string\` | \`'propBDefaultValue'\` | Comments for propB |
-| \`propC\` | \`string\` | \`'propCDefaultValue'\` | Comments for propB<br />on two lines |
-| \`propD\` | \`string\` | \`undefined\` | Comments for propE<br /><br />**Tag**<br />SomeTag |
+| \`propB\` | \`string\` | <code>'propBDefaultValue'</code> | <p>Comments for propB</p> |
+| \`propC\` | \`string\` | <code>'propCDefaultValue'</code> | <p>Comments for propB on two lines</p> |
+| \`propD\` | \`string\` | \`undefined\` | <p>Comments for propE</p><p>**Tag**</p><p>SomeTag</p> |
 "
 `;
 

@@ -44,4 +44,12 @@ describe(`Interface Reflection`, () => {
       'interfaces/InterfaceWithFlags.md',
     );
   });
+
+  test(`should compile interface with comments`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'interfaces/InterfaceWithComments.md',
+    );
+  });
 });

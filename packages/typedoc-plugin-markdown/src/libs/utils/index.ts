@@ -8,6 +8,8 @@ export { formatMarkdown } from './format-markdown';
 export { formatTableColumn } from './format-table-column';
 export { getFileNameWithExtension } from './get-file-name-with-extension';
 export { isQuoted } from './is-quoted';
+export { markdownBlocksToHtml } from './markdown-blocks-to-html';
+export { normalizeLineBreaks } from './normalize-line-breaks';
 export { removeFirstScopedDirectory } from './remove-first-scoped-directory';
 export { removeLineBreaks } from './remove-line-breaks';
 export { sanitizeComments } from './sanitize-comments';
