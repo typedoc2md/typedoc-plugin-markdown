@@ -109,15 +109,15 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](/some-path/interfaces/CommentInterface.mdx) - Links to CommentInterface
-- [Links to CommentInterface.prop](/some-path/interfaces/CommentInterface.mdx#prop)
-- [Links to CommentInterface.propb](/some-path/interfaces/CommentInterface.mdx#propb)
-- [CommentEnum.MemberB](/some-path/enumerations/CommentEnum.mdx#MemberB)
-- [SameName:var](/some-path/variables/SameName.mdx)
-- [SameName:interface](/some-path/interfaces/SameName.mdx)
-- [SameName.prop](/some-path/interfaces/SameName.mdx#prop)
-- [prop:var](/some-path/variables/prop.mdx)
-- [_prop_with_underscore:var](/some-path/variables/prop_with_underscore.mdx)
+- [CommentInterface](http:/example.com/Interface.CommentInterface.mdx) - Links to CommentInterface
+- [Links to CommentInterface.prop](http:/example.com/Interface.CommentInterface.mdx#prop)
+- [Links to CommentInterface.propb](http:/example.com/Interface.CommentInterface.mdx#propb)
+- [CommentEnum.MemberB](http:/example.com/Enumeration.CommentEnum.mdx#MemberB)
+- [SameName:var](http:/example.com/Variable.SameName.mdx)
+- [SameName:interface](http:/example.com/Interface.SameName.mdx)
+- [SameName.prop](http:/example.com/Interface.SameName.mdx#prop)
+- [prop:var](http:/example.com/Variable.prop.mdx)
+- [_prop_with_underscore:var](http:/example.com/Variable._prop_with_underscore.mdx)
 
 External links:
 
@@ -178,25 +178,25 @@ This is a simple example on how to use include.
 
 ## Enumerations
 
-- [CommentEnum](/some-path/enumerations/CommentEnum.mdx)
+- [CommentEnum](http:/example.com/Enumeration.CommentEnum.mdx)
 
 ## Interfaces
 
-- [CommentInterface](/some-path/interfaces/CommentInterface.mdx)
-- [CommentInterfaceExtended](/some-path/interfaces/CommentInterfaceExtended.mdx)
-- [SameName](/some-path/interfaces/SameName.mdx)
+- [CommentInterface](http:/example.com/Interface.CommentInterface.mdx)
+- [CommentInterfaceExtended](http:/example.com/Interface.CommentInterfaceExtended.mdx)
+- [SameName](http:/example.com/Interface.SameName.mdx)
 
 ## Variables
 
-- [SameName](/some-path/variables/SameName.mdx)
-- [\\_prop\\_with\\_underscore](/some-path/variables/prop_with_underscore.mdx)
-- [prop](/some-path/variables/prop.mdx)
-- [propb](/some-path/variables/propb.mdx)
+- [SameName](http:/example.com/Variable.SameName.mdx)
+- [\\_prop\\_with\\_underscore](http:/example.com/Variable._prop_with_underscore.mdx)
+- [prop](http:/example.com/Variable.prop.mdx)
+- [propb](http:/example.com/Variable.propb.mdx)
 
 ## Functions
 
-- [multipleExampleTags](/some-path/functions/multipleExampleTags.mdx)
-- [singleExampleTag](/some-path/functions/singleExampleTag.mdx)
+- [multipleExampleTags](http:/example.com/Function.multipleExampleTags.mdx)
+- [singleExampleTag](http:/example.com/Function.singleExampleTag.mdx)
 "
 `;
 
@@ -414,15 +414,15 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](/some-path/README.mdx#CommentInterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](/some-path/README.mdx#prop)
-- [Links to CommentInterface.propb](/some-path/README.mdx#propb)
-- [CommentEnum.MemberB](/some-path/README.mdx#MemberB)
-- [SameName:var](/some-path/README.mdx#SameName-1)
-- [SameName:interface](/some-path/README.mdx#SameName)
-- [SameName.prop](/some-path/README.mdx#prop-2)
-- [prop:var](/some-path/README.mdx#prop-3)
-- [_prop_with_underscore:var](/some-path/README.mdx#_prop_with_underscore)
+- [CommentInterface](http:/example.com/README.mdx#CommentInterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](http:/example.com/README.mdx#prop)
+- [Links to CommentInterface.propb](http:/example.com/README.mdx#propb)
+- [CommentEnum.MemberB](http:/example.com/README.mdx#MemberB)
+- [SameName:var](http:/example.com/README.mdx#SameName-1)
+- [SameName:interface](http:/example.com/README.mdx#SameName)
+- [SameName.prop](http:/example.com/README.mdx#prop-2)
+- [prop:var](http:/example.com/README.mdx#prop-3)
+- [_prop_with_underscore:var](http:/example.com/README.mdx#_prop_with_underscore)
 
 External links:
 
@@ -491,7 +491,7 @@ This is a simple example on how to use include.
 
 | Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| <a id="Member" name="Member"></a> \`Member\` | \`0\` | <p>Comment for Member</p>Some \\<p\\> html \\</p\\> and \\<tag\\>\\</tag\\>.<p>**Deprecated**</p><p>Deprecated member</p><p>**See**</p><p>[SameName](/some-path/README.mdx#SameName-1)</p> |
+| <a id="Member" name="Member"></a> \`Member\` | \`0\` | <p>Comment for Member</p>Some \\<p\\> html \\</p\\> and \\<tag\\>\\</tag\\>.<p>**Deprecated**</p><p>Deprecated member</p><p>**See**</p><p>[SameName](http:/example.com/README.mdx#SameName-1)</p> |
 | <a id="MemberB" name="MemberB"></a> \`MemberB\` | \`1\` | - |
 
 ## Interfaces
@@ -502,7 +502,7 @@ This is a simple example on how to use include.
 
 #### Extended by
 
-- [\`CommentInterfaceExtended\`](/some-path/README.mdx#CommentInterfaceExtended)
+- [\`CommentInterfaceExtended\`](http:/example.com/README.mdx#CommentInterfaceExtended)
 
 #### Properties
 
@@ -519,14 +519,14 @@ This is a simple example on how to use include.
 
 #### Extends
 
-- [\`CommentInterface\`](/some-path/README.mdx#CommentInterface)
+- [\`CommentInterface\`](http:/example.com/README.mdx#CommentInterface)
 
 #### Properties
 
 | Property | Type | Inherited from |
 | :------ | :------ | :------ |
-| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` | [\`CommentInterface\`](/some-path/README.mdx#CommentInterface).[\`prop\`](/some-path/README.mdx#prop) |
-| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` | [\`CommentInterface\`](/some-path/README.mdx#CommentInterface).[\`propb\`](/some-path/README.mdx#propb) |
+| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` | [\`CommentInterface\`](http:/example.com/README.mdx#CommentInterface).[\`prop\`](http:/example.com/README.mdx#prop) |
+| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` | [\`CommentInterface\`](http:/example.com/README.mdx#CommentInterface).[\`propb\`](http:/example.com/README.mdx#propb) |
 | <a id="propc" name="propc"></a> \`propc\` | \`string\` | - |
 
 ***

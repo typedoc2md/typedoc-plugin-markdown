@@ -116,9 +116,10 @@ const config: Record<string, Fixture> = {
       {
         useHTMLAnchors: true,
         preserveAnchorCasing: true,
-        publicPath: '/some-path',
-        fileExtension: 'mdx',
+        publicPath: 'http://example.com',
+        fileExtension: '.mdx',
         sanitizeComments: true,
+        flattenOutputFiles: true,
       },
     ],
   },

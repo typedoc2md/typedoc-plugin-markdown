@@ -58,7 +58,7 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
     buildUrlsFromProject(project);
   }
 
-  return flattenOutputFiles ? flattenFiles(urls) : urls;
+  return urls;
 
   function buildEntryUrls() {
     const preserveReadme =
@@ -235,28 +235,35 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
     );
 
     if (mapping) {
-      const directory = urlOptions.directory || mapping.directory;
-      const urlPath = getUrlPath(reflection, {
-        ...urlOptions,
-        directory,
-      });
+      let url: string;
+      let urlPath = '';
 
-      let url = getUrl(reflection, urlPath, urlOptions);
+      if (flattenOutputFiles) {
+        url = getFlattenedUrl(reflection);
+      } else {
+        const directory = urlOptions.directory || mapping.directory;
+        urlPath = getUrlPath(reflection, {
+          ...urlOptions,
+          directory,
+        });
 
-      if (ignoreScopes) {
-        url = removeFirstScopedDirectory(url);
-      }
+        url = getUrl(reflection, urlPath, urlOptions);
 
-      const duplicateUrls = urls.filter(
-        (urlMapping) =>
-          urlMapping.url.toLowerCase().replace(/-\d+$/, '') ===
-          url.toLowerCase(),
-      );
+        if (ignoreScopes) {
+          url = removeFirstScopedDirectory(url);
+        }
 
-      if (duplicateUrls.length > 0) {
-        const urlParts = url.split('.');
-        urlParts[urlParts.length - 2] += `-${duplicateUrls.length}`;
-        url = urlParts.join('.');
+        const duplicateUrls = urls.filter(
+          (urlMapping) =>
+            urlMapping.url.toLowerCase().replace(/-\d+$/, '') ===
+            url.toLowerCase(),
+        );
+
+        if (duplicateUrls.length > 0) {
+          const urlParts = url.split('.');
+          urlParts[urlParts.length - 2] += `-${duplicateUrls.length}`;
+          url = urlParts.join('.');
+        }
       }
 
       urls.push({
@@ -475,31 +482,20 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
       : getFileNameWithExtension('globals', fileExtension);
   }
 
-  function flattenFiles(urls: UrlMapping<Reflection>[]) {
-    const getUrl = (reflection: Reflection) => {
-      const fullName = reflection.getFullName();
-      const fullNameParts = fullName.replace(/\//g, '.').split('.');
-      if (reflection.kind !== ReflectionKind.Module) {
-        fullNameParts.splice(
-          fullNameParts.length - 1,
-          0,
-          ReflectionKind.singularString(reflection.kind).split(' ')[0],
-        );
-      }
-      const url = `${fullNameParts.join('.')}${fileExtension}`
-        .replace(/"/g, '')
-        .replace(/^\./g, '');
-      reflection.url = url;
-      return url;
-    };
-    return urls.map((urlMapping) => {
-      if (urlMapping.model.kind === ReflectionKind.Project) {
-        return urlMapping;
-      }
-      return {
-        ...urlMapping,
-        url: getUrl(urlMapping.model),
-      };
-    });
+  function getFlattenedUrl(reflection: DeclarationReflection) {
+    const fullName = reflection.getFullName();
+    const fullNameParts = fullName.replace(/\//g, '.').split('.');
+    if (reflection.kind !== ReflectionKind.Module) {
+      fullNameParts.splice(
+        fullNameParts.length - 1,
+        0,
+        ReflectionKind.singularString(reflection.kind).split(' ')[0],
+      );
+    }
+    const url = `${fullNameParts.join('.')}${fileExtension}`
+      .replace(/"/g, '')
+      .replace(/^\./g, '');
+    reflection.url = url;
+    return url;
   }
 }
