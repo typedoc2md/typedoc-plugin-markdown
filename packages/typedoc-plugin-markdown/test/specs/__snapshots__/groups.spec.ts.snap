@@ -32,6 +32,15 @@ A basic module
 
 - [TypeA](type-aliases/TypeA.md)
 - [TypeB](type-aliases/TypeB.md)
+
+### Variables
+
+- [variableA](variables/variableA.md)
+- [variableB](variables/variableB.md)
+
+### Functions
+
+- [functionA](functions/functionA.md)
 "
 `;
 
@@ -50,26 +59,29 @@ A basic module
 
 | Member | Description |
 | :------ | :------ |
-| [EnumA](enumerations/EnumA.md) | - |
+| [EnumA](enumerations/EnumA.md) | EnumA function. |
 | [EnumB](enumerations/EnumB.md) | - |
-| [ClassA](classes/ClassA.md) | - |
+| [ClassA](classes/ClassA.md) | ClassA function. |
 | [ClassB](classes/ClassB.md) | - |
-| [InterfaceA](interfaces/InterfaceA.md) | - |
-| [InterfaceB](interfaces/InterfaceB.md) | - |
+| [InterfaceA](interfaces/InterfaceA.md) | Interface A comments line 1 and comments on a soft line. |
+| [InterfaceB](interfaces/InterfaceB.md) | InterfaceB function. |
+| [TypeA](type-aliases/TypeA.md) | TypeA function. |
+| [TypeB](type-aliases/TypeB.md) | TypeB function. |
+| [functionA](functions/functionA.md) | functionA function. |
 
-<a id="typea" name="typea"></a>
+<a id="variablea" name="variablea"></a>
 
-## TypeA
+## variableA
 
-> **TypeA**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
-<a id="typeb" name="typeb"></a>
+<a id="variableb" name="variableb"></a>
 
-## TypeB
+## variableB
 
-> **TypeB**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 "
 `;
 
@@ -88,6 +100,8 @@ A basic module
 
 ### EnumA
 
+EnumA function.
+
 ***
 
 ### EnumB
@@ -96,15 +110,13 @@ A basic module
 
 ### ClassA
 
+ClassA function.
+
 #### Constructors
 
 ##### new ClassA()
 
-> **new ClassA**(): [\`ClassA\`](basic.md#classa)
-
-###### Returns
-
-[\`ClassA\`](basic.md#classa)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -114,41 +126,62 @@ A basic module
 
 ##### new ClassB()
 
-> **new ClassB**(): [\`ClassB\`](basic.md#classb)
-
-###### Returns
-
-[\`ClassB\`](basic.md#classb)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ## Interfaces
 
 ### InterfaceA
 
+Interface A comments line 1
+and comments on a soft line.
+
+Comments on double new line.
+
 #### Properties
 
 ##### propA
 
-> **propA**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ##### propB
 
-> **propB**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
 ### InterfaceB
 
+InterfaceB function.
+
 ## Type Aliases
 
 ### TypeA
 
-> **TypeA**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
-### TypeB
+### TypeB()
 
-> **TypeB**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
+
+## Variables
+
+### variableA
+
+_DECLARATION_MEMBER_PARTIAL_
+
+***
+
+### variableB
+
+_DECLARATION_MEMBER_PARTIAL_
+
+## Functions
+
+### functionA()
+
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -167,6 +200,8 @@ A basic module
 
 ## EnumA
 
+EnumA function.
+
 ***
 
 <a id="enumb" name="enumb"></a>
@@ -179,17 +214,15 @@ A basic module
 
 ## ClassA
 
+ClassA function.
+
 ### Constructors
 
 <a id="constructors" name="constructors"></a>
 
 #### new ClassA()
 
-> **new ClassA**(): [\`ClassA\`](basic.md#classa)
-
-##### Returns
-
-[\`ClassA\`](basic.md#classa)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -203,11 +236,7 @@ A basic module
 
 #### new ClassB()
 
-> **new ClassB**(): [\`ClassB\`](basic.md#classb)
-
-##### Returns
-
-[\`ClassB\`](basic.md#classb)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -215,19 +244,24 @@ A basic module
 
 ## InterfaceA
 
+Interface A comments line 1
+and comments on a soft line.
+
+Comments on double new line.
+
 ### Properties
 
 <a id="propa" name="propa"></a>
 
 #### propA
 
-> **propA**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 <a id="propb" name="propb"></a>
 
 #### propB
 
-> **propB**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -235,21 +269,47 @@ A basic module
 
 ## InterfaceB
 
+InterfaceB function.
+
 ***
 
 <a id="typea" name="typea"></a>
 
 ## TypeA
 
-> **TypeA**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
 <a id="typeb" name="typeb"></a>
 
-## TypeB
+## TypeB()
 
-> **TypeB**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
+
+***
+
+<a id="variablea" name="variablea"></a>
+
+## variableA
+
+_DECLARATION_MEMBER_PARTIAL_
+
+***
+
+<a id="variableb" name="variableb"></a>
+
+## variableB
+
+_DECLARATION_MEMBER_PARTIAL_
+
+***
+
+<a id="functiona" name="functiona"></a>
+
+## functionA()
+
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -513,7 +573,7 @@ A module that contains custom groupings
 
 ## variabelA
 
-> \`const\` **variabelA**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -521,7 +581,7 @@ A module that contains custom groupings
 
 ## variableB1
 
-> \`const\` **variableB1**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -529,7 +589,7 @@ A module that contains custom groupings
 
 ## variableB2
 
-> \`const\` **variableB2**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -537,9 +597,7 @@ A module that contains custom groupings
 
 ## variableC
 
-> \`const\` **variableC**: \`true\` = \`true\`
-
-Default grouping
+_DECLARATION_MEMBER_PARTIAL_
 "
 `;
 
@@ -781,28 +839,16 @@ A module that contains namespaces
 | [\\_\\_Class\\_A\\_](classes/Class_A.md) | - |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 | [\\_Interface\\_A\\_](interfaces/Interface_A.md) | - |
-
-<a id="typeb" name="typeb"></a>
-
-## TypeB
-
-> **TypeB**: \`string\`
-
-***
-
-<a id="_type_a_" name="_type_a_"></a>
-
-## \\_Type\\_A\\_
-
-> **\\_Type\\_A\\_**: \`string\`
-
-***
+| [TypeB](type-aliases/TypeB.md) | - |
+| [\\_Type\\_A\\_](type-aliases/Type_A.md) | - |
+| [\\_function\\_A\\_](functions/function_A.md) | - |
+| [functionB](functions/functionB.md) | - |
 
 <a id="_variable_a_" name="_variable_a_"></a>
 
 ## \\_variable\\_A\\_
 
-> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -810,31 +856,7 @@ A module that contains namespaces
 
 ## variableB
 
-> \`const\` **variableB**: \`true\` = \`true\`
-
-***
-
-<a id="_function_a_" name="_function_a_"></a>
-
-## \\_function\\_A\\_()
-
-> **\\_function\\_A\\_**(): \`void\`
-
-### Returns
-
-\`void\`
-
-***
-
-<a id="functionb" name="functionb"></a>
-
-## functionB()
-
-> **functionB**(): \`void\`
-
-### Returns
-
-\`void\`
+_DECLARATION_MEMBER_PARTIAL_
 "
 `;
 
@@ -872,11 +894,7 @@ A module that contains namespaces
 
 ##### new ClassB()
 
-> **new ClassB**(): [\`ClassB\`](index.md#classb)
-
-###### Returns
-
-[\`ClassB\`](index.md#classb)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -886,11 +904,7 @@ A module that contains namespaces
 
 ##### new \\_\\_Class\\_A\\_()
 
-> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
-
-###### Returns
-
-[\`__Class_A_\`](index.md#__class_a_)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ## Interfaces
 
@@ -904,45 +918,37 @@ A module that contains namespaces
 
 ### TypeB
 
-> **TypeB**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
 ### \\_Type\\_A\\_
 
-> **\\_Type\\_A\\_**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ## Variables
 
 ### \\_variable\\_A\\_
 
-> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
 ### variableB
 
-> \`const\` **variableB**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ## Functions
 
 ### \\_function\\_A\\_()
 
-> **\\_function\\_A\\_**(): \`void\`
-
-#### Returns
-
-\`void\`
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
 ### functionB()
 
-> **functionB**(): \`void\`
-
-#### Returns
-
-\`void\`
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -986,11 +992,7 @@ A module that contains namespaces
 
 #### new ClassB()
 
-> **new ClassB**(): [\`ClassB\`](index.md#classb)
-
-##### Returns
-
-[\`ClassB\`](index.md#classb)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -1004,11 +1006,7 @@ A module that contains namespaces
 
 #### new \\_\\_Class\\_A\\_()
 
-> **new \\_\\_Class\\_A\\_**(): [\`__Class_A_\`](index.md#__class_a_)
-
-##### Returns
-
-[\`__Class_A_\`](index.md#__class_a_)
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -1028,7 +1026,7 @@ A module that contains namespaces
 
 ## TypeB
 
-> **TypeB**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -1036,7 +1034,7 @@ A module that contains namespaces
 
 ## \\_Type\\_A\\_
 
-> **\\_Type\\_A\\_**: \`string\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -1044,7 +1042,7 @@ A module that contains namespaces
 
 ## \\_variable\\_A\\_
 
-> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -1052,7 +1050,7 @@ A module that contains namespaces
 
 ## variableB
 
-> \`const\` **variableB**: \`true\` = \`true\`
+_DECLARATION_MEMBER_PARTIAL_
 
 ***
 
@@ -1060,11 +1058,7 @@ A module that contains namespaces
 
 ## \\_function\\_A\\_()
 
-> **\\_function\\_A\\_**(): \`void\`
-
-### Returns
-
-\`void\`
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -1072,11 +1066,7 @@ A module that contains namespaces
 
 ## functionB()
 
-> **functionB**(): \`void\`
-
-### Returns
-
-\`void\`
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -1126,11 +1116,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 ### defaultFunction()
 
-> **defaultFunction**(): \`string\`
-
-#### Returns
-
-\`string\`
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -1167,11 +1153,7 @@ Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 ## defaultFunction()
 
-> **defaultFunction**(): \`string\`
-
-### Returns
-
-\`string\`
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -1223,6 +1205,12 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 
 A module that contains references
 
+## Index
+
+| Member | Description |
+| :------ | :------ |
+| [defaultFunction](functions/defaultFunction.md) | - |
+
 <a id="interfacea" name="interfacea"></a>
 
 ## InterfaceA
@@ -1243,18 +1231,6 @@ Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
 
 ## default
 
-Renames and re-exports [defaultFunction](index.md#defaultfunction)
-
-***
-
-<a id="defaultfunction" name="defaultfunction"></a>
-
-## defaultFunction()
-
-> **defaultFunction**(): \`string\`
-
-### Returns
-
-\`string\`
+Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 "
 `;

@@ -596,7 +596,7 @@ There is no association list partial for properties as these are handled as a st
 export const helpers = (context: MarkdownThemeContext) => {
   return {
     getDeclarationComment: (model: DeclarationReflection) =>
-      getDeclarationComment.apply(context, [model]) as any,
+      getDeclarationComment.apply(context, [model]) as Comment | undefined,
     getDeclarationType: (model: DeclarationReflection) =>
       getDeclarationType.apply(context, [model]) as SomeType | undefined,
     getFlattenedDeclarations: (

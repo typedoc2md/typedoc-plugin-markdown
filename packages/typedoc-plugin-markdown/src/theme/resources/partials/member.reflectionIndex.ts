@@ -110,7 +110,12 @@ function getTable(
     const comment = context.helpers.getDeclarationComment(child);
 
     if (comment?.summary?.length) {
-      row.push(context.partials.commentParts(comment.summary)?.split('\n')[0]);
+      row.push(
+        context.partials
+          .commentParts(comment.summary)
+          ?.split('\n\n')[0]
+          .replace(/\n/g, ' '),
+      );
     } else {
       row.push('-');
     }

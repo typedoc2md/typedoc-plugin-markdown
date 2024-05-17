@@ -76,7 +76,11 @@ const config: Record<string, Fixture> = {
     only: false,
     entryPoints: '/groups/**/*.ts',
     commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+      plugin: [
+        path.join(__dirname, 'custom-plugins', 'stub-groups-theme.mjs'),
+        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+      ],
+      theme: 'stub-groups',
       disableSources: true,
       entryFileName: 'index.md',
     },
@@ -89,7 +93,13 @@ const config: Record<string, Fixture> = {
       },
       {
         readme: 'none',
-        membersWithOwnFile: ['Class', 'Interface', 'Enum'],
+        membersWithOwnFile: [
+          'Class',
+          'Interface',
+          'Enum',
+          'TypeAlias',
+          'Function',
+        ],
         excludeGroups: true,
         useHTMLAnchors: true,
         indexFormat: 'table',
