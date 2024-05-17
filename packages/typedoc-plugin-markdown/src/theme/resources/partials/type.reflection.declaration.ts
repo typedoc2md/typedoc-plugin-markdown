@@ -42,7 +42,7 @@ export function declarationType(
           }
         }
 
-        name.push(backTicks(`"${obj.name}"`));
+        name.push(backTicks(obj.name));
 
         const theType = this.helpers.getDeclarationType(obj) as SomeType;
 
