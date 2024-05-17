@@ -7,7 +7,7 @@ declare module 'typedoc' {
     anchorPrefix: string;
     entryFileName: string;
     entryModule: string;
-    enumMembersFormat: 'list' | 'table';
+    enumMembersFormat: 'list' | 'table' | 'htmlTable';
     excludeGroups: boolean;
     excludeScopesInPaths: boolean;
     expandObjects: boolean;
@@ -17,7 +17,7 @@ declare module 'typedoc' {
     hideBreadcrumbs: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
-    indexFormat: 'list' | 'table';
+    indexFormat: 'list' | 'table' | 'htmlTable';
     membersWithOwnFile: (
       | 'Enum'
       | 'Variable'
@@ -33,13 +33,21 @@ declare module 'typedoc' {
       excludeFolders: boolean;
     };
     outputFileStrategy: 'members' | 'modules';
-    parametersFormat: 'list' | 'table';
+    parametersFormat: 'list' | 'table' | 'htmlTable';
     preserveAnchorCasing: boolean;
-    propertiesFormat: 'list' | 'table';
+    propertiesFormat: 'list' | 'table' | 'htmlTable';
     publicPath: string;
     sanitizeComments: boolean;
+    tableColumns: {
+      excludeDefaultsCol: boolean;
+      excludeInheritedFromCol: boolean;
+      excludeModifiersCol: boolean;
+      excludeOverridesCol: boolean;
+      excludeSourcesCol: boolean;
+      leftAlignHeadings: boolean;
+    };
     textContentMappings: ManuallyValidatedOption<Partial<TextContentMappings>>;
-    typeDeclarationFormat: 'list' | 'table';
+    typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
     useCodeBlocks: boolean;
     useHTMLAnchors: boolean;
   }
@@ -69,7 +77,7 @@ export interface PluginOptions {
   /**
    * Specify the render style of enumeration members.
    */
-  enumMembersFormat: 'list' | 'table';
+  enumMembersFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Excludes grouping by kind so all members are rendered and sorted at the same level.
@@ -119,7 +127,7 @@ export interface PluginOptions {
   /**
    * Specify the render format for index items.
    */
-  indexFormat: 'list' | 'table';
+  indexFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
@@ -155,7 +163,7 @@ export interface PluginOptions {
   /**
    * Specify the render style of parameter and type parameter groups.
    */
-  parametersFormat: 'list' | 'table';
+  parametersFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Preserve anchor casing when generating link to symbols.
@@ -165,7 +173,7 @@ export interface PluginOptions {
   /**
    * Specify the render style of property groups for interfaces and classes.
    */
-  propertiesFormat: 'list' | 'table';
+  propertiesFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Specify the base path for all urls.
@@ -178,6 +186,18 @@ export interface PluginOptions {
   sanitizeComments: boolean;
 
   /**
+   * Control header alignment and column visibility in tables.
+   */
+  tableColumns: {
+    excludeDefaultsCol: boolean;
+    excludeInheritedFromCol: boolean;
+    excludeModifiersCol: boolean;
+    excludeOverridesCol: boolean;
+    excludeSourcesCol: boolean;
+    leftAlignHeadings: boolean;
+  };
+
+  /**
    * Provides a mechanism to change the content of text used in documentation.
    */
   textContentMappings: Partial<TextContentMappings>;
@@ -185,7 +205,7 @@ export interface PluginOptions {
   /**
    * Specify the render style for type declaration members.
    */
-  typeDeclarationFormat: 'list' | 'table';
+  typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Wraps signatures and declarations in code blocks.

@@ -395,7 +395,7 @@ This option should be set when a full type representation is preferred.
   Specify the render style of parameter and type parameter groups.
 </Callout>
 
-> Accepts either `"list"` or `"table"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
 
 This option either renders parameters for functions and class methods as a list or in tabular format.
 
@@ -413,7 +413,7 @@ This option either renders parameters for functions and class methods as a list 
   Specify the render style of property groups for interfaces and classes.
 </Callout>
 
-> Accepts either `"list"` or `"table"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
 
 This option either renders properties for classes and interfaces as a list or in tabular format.
 
@@ -429,7 +429,7 @@ This option either renders properties for classes and interfaces as a list or in
 
 <Callout emoji="💡">Specify the render style of enumeration members.</Callout>
 
-> Accepts either `"list"` or `"table"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
 
 This option either renders members of enums as a list or in tabular format.
 
@@ -447,7 +447,7 @@ This option either renders members of enums as a list or in tabular format.
   Specify the render style for type declaration members.
 </Callout>
 
-> Accepts either `"list"` or `"table"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
 
 This option either renders type declarations as a list or in tabular format.
 
@@ -463,7 +463,7 @@ This option either renders type declarations as a list or in tabular format.
 
 <Callout emoji="💡">Specify the render format for index items.</Callout>
 
-> Accepts either `"list"` or `"table"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
 
 This option renders index items either as a simple list or in a table with a description column exposing the comment summary.
 
@@ -472,6 +472,33 @@ For a packages index page (when `--entryPointStrategy` equals `packages`), the p
 ```json filename="typedoc.json"
 {
   "indexFormat": "list"
+}
+```
+
+---
+
+### tableColumns
+
+<Callout emoji="💡">
+  Control header alignment and column visibility in tables.
+</Callout>
+
+>
+
+By default, all available data for symbols are displayed in columns, which can result in very large tables.
+
+This option allows you to control the visibility of columns, prioritizing readability over displaying complete data.
+
+```json filename="typedoc.json"
+{
+  "tableColumns": {
+    "excludeDefaultsCol": false,
+    "excludeInheritedFromCol": false,
+    "excludeModifiersCol": false,
+    "excludeOverridesCol": false,
+    "excludeSourcesCol": false,
+    "leftAlignHeadings": false
+  }
 }
 ```
 
@@ -693,7 +720,7 @@ This option can be used for engines that require the preservation of anchor link
   Configures how the navigation model will be generated.
 </Callout>
 
-> Defaults to `{"excludeGroups":false,"excludeCategories":false,"excludeFolders":false}`.
+>
 
 By default navigation is not written to file but can be consumed programmatically. Please see [Navigation Guide](/docs/navigation) for more information.
 

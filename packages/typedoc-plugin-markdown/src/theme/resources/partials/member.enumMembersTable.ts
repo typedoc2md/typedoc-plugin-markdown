@@ -1,4 +1,4 @@
-import { backTicks } from '@plugin/libs/markdown';
+import { backTicks, htmlTable, table } from '@plugin/libs/markdown';
 import { removeLineBreaks } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, ReflectionType } from 'typedoc';
@@ -12,6 +12,8 @@ export function enumMembersTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
 ): string {
+  const tableColumnsOptions = this.options.getValue('tableColumns');
+
   const comments = model.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
 
@@ -24,7 +26,9 @@ export function enumMembersTable(
     headers.push(this.getText('label.description'));
   }
 
-  const rows = model.map((property: DeclarationReflection) => {
+  const rows: string[][] = [];
+
+  model.forEach((property: DeclarationReflection) => {
     const propertyType = this.helpers.getDeclarationType(property);
     const row: string[] = [];
     const nameColumn: string[] = [];
@@ -38,9 +42,11 @@ export function enumMembersTable(
     nameColumn.push(backTicks(property.name));
 
     row.push(nameColumn.join(' '));
+
     if (propertyType) {
       row.push(removeLineBreaks(this.partials.someType(propertyType)));
     }
+
     if (hasComments) {
       const comments = getComments(property);
       if (comments) {
@@ -49,15 +55,12 @@ export function enumMembersTable(
         row.push('-');
       }
     }
-
-    return `| ${row.join(' | ')} |\n`;
+    rows.push(row);
   });
 
-  const output = `\n| ${headers.join(' | ')} |\n| ${headers
-    .map(() => ':------')
-    .join(' | ')} |\n${rows.join('')}`;
-
-  return output;
+  return this.options.getValue('enumMembersFormat') == 'table'
+    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
+    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
 }
 
 function getComments(property: DeclarationReflection) {

@@ -79,12 +79,24 @@ This is a simple example on how to use include.
 ## Enumerations
 
 - [CommentEnum](enumerations/CommentEnum.md)
+- [EnumMembersTable](enumerations/EnumMembersTable.md)
+
+## Classes
+
+- [BaseClassProperties](classes/BaseClassProperties.md)
+- [ClassPropertiesTable](classes/ClassPropertiesTable.md)
 
 ## Interfaces
 
+- [BaseInterfaceProperties](interfaces/BaseInterfaceProperties.md)
 - [CommentInterface](interfaces/CommentInterface.md)
 - [CommentInterfaceExtended](interfaces/CommentInterfaceExtended.md)
+- [InterfacePropertiesTable](interfaces/InterfacePropertiesTable.md)
 - [SameName](interfaces/SameName.md)
+
+## Type Aliases
+
+- [TypeDeclarationTable](type-aliases/TypeDeclarationTable.md)
 
 ## Variables
 
@@ -96,276 +108,354 @@ This is a simple example on how to use include.
 ## Functions
 
 - [multipleExampleTags](functions/multipleExampleTags.md)
+- [parametersTable](functions/parametersTable.md)
 - [singleExampleTag](functions/singleExampleTag.md)
 "
 `;
 
-exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# typedoc-stubs
+exports[`Comments should get tables for emum: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Enumeration: EnumMembersTable
 
-Comments form module comments
+## Enumeration Members
 
-## Links
-
-Links using \`{@link}\` inline tags.
-
-- [CommentInterface](http:/example.com/Interface.CommentInterface.mdx) - Links to CommentInterface
-- [Links to CommentInterface.prop](http:/example.com/Interface.CommentInterface.mdx#prop)
-- [Links to CommentInterface.propb](http:/example.com/Interface.CommentInterface.mdx#propb)
-- [CommentEnum.MemberB](http:/example.com/Enumeration.CommentEnum.mdx#MemberB)
-- [SameName:var](http:/example.com/Variable.SameName.mdx)
-- [SameName:interface](http:/example.com/Interface.SameName.mdx)
-- [SameName.prop](http:/example.com/Interface.SameName.mdx#prop)
-- [prop:var](http:/example.com/Variable.prop.mdx)
-- [_prop_with_underscore:var](http:/example.com/Variable._prop_with_underscore.mdx)
-
-External links:
-
-- [Google](https://www.google.com)
-- [\`https://www.google.com\`](https://www.google.com)
-
-## Tag A
-
-Comments for a tag
-
-## Tag B
-
-Comments for tag written on same line
-
-## Html And Jsx
-
-A \\<tag\\>\\</tag\\> in comments
-
-A \`<tag>\` in backticks
-
-Another object \`{ x: 1 }\`.
-
-\\<div style=\\{\\{backgroundColor: "#fff", padding: 16\\}\\}\\>
- \\<img style=\\{\\{display: "block"\\}\\} height="48" width="48"/\\>
-\\</div\\>
-
-Some random \\{\\{braces\\}\\}.
-
-\`\`\`
-A <tag> in a code block
-Some <p> html </p> inside codeblock
-\`\`\`
-
-## Media
-
-You can include media in doc comments:
-
-![alt SomeAlt](media/logo.png)
-
-And include other files:
-
-This is a simple example on how to use include.
-
-![My image alt text](media/logo.png)
- [[include:not-found.md]]
-
-## Code Blocks
-
-\`\`\`css
-.class {color:red}
-\`\`\`
-
-\`\`\`html
-<div>x</div> <tag>y</tag>
-\`\`\`
-
-\`single line <code> {block}\`
-
-## Enumerations
-
-- [CommentEnum](http:/example.com/Enumeration.CommentEnum.mdx)
-
-## Interfaces
-
-- [CommentInterface](http:/example.com/Interface.CommentInterface.mdx)
-- [CommentInterfaceExtended](http:/example.com/Interface.CommentInterfaceExtended.mdx)
-- [SameName](http:/example.com/Interface.SameName.mdx)
-
-## Variables
-
-- [SameName](http:/example.com/Variable.SameName.mdx)
-- [\\_prop\\_with\\_underscore](http:/example.com/Variable._prop_with_underscore.mdx)
-- [prop](http:/example.com/Variable.prop.mdx)
-- [propb](http:/example.com/Variable.propb.mdx)
-
-## Functions
-
-- [multipleExampleTags](http:/example.com/Function.multipleExampleTags.mdx)
-- [singleExampleTag](http:/example.com/Function.singleExampleTag.mdx)
+| Enumeration Member | Value | Description |
+| ------ | ------ | ------ |
+| \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. |
 "
 `;
 
-exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"# typedoc-stubs
+exports[`Comments should get tables for emum: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Enumeration: EnumMembersTable
 
-Comments form module comments
+## Enumeration Members
 
-## Links
+<table>
+<tr><th align="left">Enumeration Member</th><th align="left">Value</th><th align="left">Description</th></tr>
+<tr>
+<td>
 
-Links using \`{@link}\` inline tags.
+<a id="member1" name="member1"></a> \`member1\`
 
-- [CommentInterface](README.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](README.md#commentinterface)
-- [Links to CommentInterface.propb](README.md#commentinterface)
-- [CommentEnum.MemberB](README.md#commentenum)
-- [SameName:var](README.md#samename-1)
-- [SameName:interface](README.md#samename)
-- [SameName.prop](README.md#samename)
-- [prop:var](README.md#prop)
-- [_prop_with_underscore:var](README.md#_prop_with_underscore)
+</td>
+<td>
 
-External links:
+\`"member1"\`
 
-- [Google](https://www.google.com)
-- [\`https://www.google.com\`](https://www.google.com)
+</td>
+<td>
 
-## Tag A
+The subroutine recursively parsed the hexadecimal data.
 
-Comments for a tag
+</td>
+</tr>
+</table>
+"
+`;
 
-## Tag B
+exports[`Comments should get tables for parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: parametersTable()
 
-Comments for tag written on same line
+> **parametersTable**\\<\`T\`\\>(\`param1\`, \`param2\`, \`param3\`): \`number\`
 
-## Html And Jsx
+Adds two numbers together.
 
-A <tag></tag> in comments
+## Type parameters
 
-A \`<tag>\` in backticks
+| Type parameter | Value | Description |
+| ------ | ------ | ------ |
+| \`T\` | \`string\` | The type of the numbers to be added. |
 
-Another object \`{ x: 1 }\`.
+## Parameters
 
-<div style={{backgroundColor: "#fff", padding: 16}}>
- <img style={{display: "block"}} height="48" width="48"/>
-</div>
+| Parameter | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| \`param1\` | \`number\` | \`undefined\` | The first param to be added. |
+| \`param2\` | \`number\` | \`undefined\` | The second param to be added. Some additional text for num2. |
+| \`param3\` | \`number\` | \`4\` | The third param to be added. |
 
-Some random {{braces}}.
+## Returns
 
+\`number\`
+"
+`;
+
+exports[`Comments should get tables for properties: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Class: ClassPropertiesTable
+
+## Extends
+
+- [\`BaseClassProperties\`](BaseClassProperties.md)
+
+## Constructors
+
+### new ClassPropertiesTable()
+
+> **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](ClassPropertiesTable.md)
+
+#### Returns
+
+[\`ClassPropertiesTable\`](ClassPropertiesTable.md)
+
+#### Inherited from
+
+[\`BaseClassProperties\`](BaseClassProperties.md).[\`constructor\`](BaseClassProperties.md#constructors)
+
+## Properties
+
+| Property | Modifier | Type | Default value | Description | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - |
+| \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - |
+| \`prop3?\` | \`public\` | \`string\` | \`undefined\` | ### Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - |
+| ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).\`propA\` | - |
+| \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).\`propB\` |
+"
+`;
+
+exports[`Comments should get tables for properties: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Class: ClassPropertiesTable
+
+## Extends
+
+- [\`BaseClassProperties\`](http:/example.com/Class.BaseClassProperties.md)
+
+## Constructors
+
+<a id="Constructors" name="Constructors"></a>
+
+### new ClassPropertiesTable()
+
+> **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](http:/example.com/Class.ClassPropertiesTable.md)
+
+#### Returns
+
+[\`ClassPropertiesTable\`](http:/example.com/Class.ClassPropertiesTable.md)
+
+#### Inherited from
+
+[\`BaseClassProperties\`](http:/example.com/Class.BaseClassProperties.md).[\`constructor\`](http:/example.com/Class.BaseClassProperties.md#Constructors)
+
+## Properties
+
+<table>
+<tr><th align="left">Property</th><th align="left">Type</th><th align="left">Default value</th><th align="left">Description</th></tr>
+<tr>
+<td>
+
+<a id="prop1" name="prop1"></a> \`prop1\`
+
+</td>
+<td>
+
+\`boolean\`
+
+</td>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+The subroutine recursively parsed the hexadecimal data.
+to generate the binary output for input validation.
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="prop2" name="prop2"></a> \`prop2\`
+
+</td>
+<td>
+
+\`RegExp\`
+
+</td>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+Below is a breakdown of the notable performances:
+
+- The CPU executed the instruction set in parallel with the GPU computations.
+- The RAM efficiently cached the frequently accessed data for faster retrieval.
+- The SSD accessed the stored files with lightning speed due to its high read/write capabilities.
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="prop3" name="prop3"></a> \`prop3?\`
+
+</td>
+<td>
+
+\`string\`
+
+</td>
+<td>
+
+\`undefined\`
+
+</td>
+<td>
+
+### Example of Triple Code Block
+
+\`\`\`python
+def greet(name):
+print("Hello, " + name + "!")
 \`\`\`
-A <tag> in a code block
-Some <p> html </p> inside codeblock
-\`\`\`
 
-## Media
+</td>
+</tr>
+<tr>
+<td>
 
-You can include media in doc comments:
+<a id="propA" name="propA"></a> ~~\`propA\`~~
 
-![alt SomeAlt](media/logo.png)
+</td>
+<td>
 
-And include other files:
+\`string\`
 
-This is a simple example on how to use include.
+</td>
+<td>
 
-![My image alt text](media/logo.png)
- [[include:not-found.md]]
+\`'propAValue'\`
 
-## Code Blocks
+</td>
+<td>
 
-\`\`\`css
-.class {color:red}
-\`\`\`
+**Deprecated**
 
-\`\`\`html
-<div>x</div> <tag>y</tag>
-\`\`\`
+</td>
+</tr>
+<tr>
+<td>
 
-\`single line <code> {block}\`
+<a id="propB" name="propB"></a> \`propB\`
 
-## Enumerations
+</td>
+<td>
 
-### CommentEnum
+\`string\`
 
-#### Enumeration Members
+</td>
+<td>
 
-| Enumeration Member | Value | Description |
-| :------ | :------ | :------ |
-| \`Member\` | \`0\` | <p>Comment for Member</p>Some <p>html </p> and <tag></tag>.<p>**Deprecated**</p><p>Deprecated member</p><p>**See**</p><p>[SameName](README.md#samename-1)</p> |
-| \`MemberB\` | \`1\` | - |
+\`undefined\`
 
-## Interfaces
+</td>
+<td>
 
-### CommentInterface
+&hyphen;
 
-#### Extended by
+</td>
+</tr>
+</table>
+"
+`;
 
-- [\`CommentInterfaceExtended\`](README.md#commentinterfaceextended)
+exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type alias: TypeDeclarationTable
 
-#### Properties
+> **TypeDeclarationTable**: \`object\`
 
-| Property | Type |
-| :------ | :------ |
-| \`prop\` | \`string\` |
-| \`propb\` | \`string\` |
+## Type declaration
 
-***
+| Member | Type | Description |
+| ------ | ------ | ------ |
+| \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. |
+| \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. |
+| \`declaration3\` | \`"declaration3"\` | - |
+"
+`;
 
-### CommentInterfaceExtended
+exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type alias: TypeDeclarationTable
 
-#### Extends
+> **TypeDeclarationTable**: \`object\`
 
-- [\`CommentInterface\`](README.md#commentinterface)
+## Type declaration
 
-#### Properties
+<table>
+<tr><th align="left">Member</th><th align="left">Type</th><th align="left">Description</th></tr>
+<tr>
+<td>
 
-| Property | Type | Inherited from |
-| :------ | :------ | :------ |
-| \`prop\` | \`string\` | [\`CommentInterface\`](README.md#commentinterface).\`prop\` |
-| \`propb\` | \`string\` | [\`CommentInterface\`](README.md#commentinterface).\`propb\` |
-| \`propc\` | \`string\` | - |
+\`declaration1\`
 
-***
+</td>
+<td>
 
-### SameName
+\`boolean\`
 
-#### Properties
+</td>
+<td>
 
-| Property | Type |
-| :------ | :------ |
-| \`prop\` | \`string\` |
-| \`propb\` | \`string\` |
+The subroutine recursively parsed the hexadecimal data.
+to generate the binary output for input validation.
 
-## Variables
+</td>
+</tr>
+<tr>
+<td>
 
-### SameName
+\`declaration2\`
 
-> **SameName**: \`true\`
+</td>
+<td>
 
-***
+\`boolean\`
 
-### \\_prop\\_with\\_underscore
+</td>
+<td>
 
-> \`const\` **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
+The subroutine recursively parsed the hexadecimal data.
+to generate the binary output for input validation.
 
-***
+</td>
+</tr>
+<tr>
+<td>
 
-### prop
+\`declaration3\`
 
-> \`const\` **prop**: \`true\` = \`true\`
+</td>
+<td>
 
-***
+\`"declaration3"\`
 
-### propb
+</td>
+<td>
 
-> \`const\` **propb**: \`true\` = \`true\`
+&hyphen;
 
-## Functions
+</td>
+</tr>
+</table>
+"
+`;
 
-### multipleExampleTags()
+exports[`Comments should handle multiple example tags: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: multipleExampleTags()
 
 > **multipleExampleTags**(): \`boolean\`
 
 Function with multiple example tags
 
-#### Returns
+## Returns
 
 \`boolean\`
 
-#### Examples
+## Examples
 
 \`\`\`ts
 // If there are no code blocks, TypeDoc assumes the whole tag
@@ -381,214 +471,21 @@ text outside of the code block as regular text.
 \`\`\`ts
 factorial(1)
 \`\`\`
-
-***
-
-### singleExampleTag()
-
-> **singleExampleTag**(): \`boolean\`
-
-Function with single example tag
-
-#### Returns
-
-\`boolean\`
-
-#### Example
-
-If there is a code block, then both TypeDoc and VSCode will treat
-text outside of the code block as regular text.
-
-\`\`\`ts
-factorial(1)
-\`\`\`
 "
 `;
 
-exports[`Comments should compile comments for module: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"# typedoc-stubs
-
-Comments form module comments
-
-## Links
-
-Links using \`{@link}\` inline tags.
-
-- [CommentInterface](http:/example.com/README.mdx#CommentInterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](http:/example.com/README.mdx#prop)
-- [Links to CommentInterface.propb](http:/example.com/README.mdx#propb)
-- [CommentEnum.MemberB](http:/example.com/README.mdx#MemberB)
-- [SameName:var](http:/example.com/README.mdx#SameName-1)
-- [SameName:interface](http:/example.com/README.mdx#SameName)
-- [SameName.prop](http:/example.com/README.mdx#prop-2)
-- [prop:var](http:/example.com/README.mdx#prop-3)
-- [_prop_with_underscore:var](http:/example.com/README.mdx#_prop_with_underscore)
-
-External links:
-
-- [Google](https://www.google.com)
-- [\`https://www.google.com\`](https://www.google.com)
-
-## Tag A
-
-Comments for a tag
-
-## Tag B
-
-Comments for tag written on same line
-
-## Html And Jsx
-
-A \\<tag\\>\\</tag\\> in comments
-
-A \`<tag>\` in backticks
-
-Another object \`{ x: 1 }\`.
-
-\\<div style=\\{\\{backgroundColor: "#fff", padding: 16\\}\\}\\>
- \\<img style=\\{\\{display: "block"\\}\\} height="48" width="48"/\\>
-\\</div\\>
-
-Some random \\{\\{braces\\}\\}.
-
-\`\`\`
-A <tag> in a code block
-Some <p> html </p> inside codeblock
-\`\`\`
-
-## Media
-
-You can include media in doc comments:
-
-![alt SomeAlt](media/logo.png)
-
-And include other files:
-
-This is a simple example on how to use include.
-
-![My image alt text](media/logo.png)
- [[include:not-found.md]]
-
-## Code Blocks
-
-\`\`\`css
-.class {color:red}
-\`\`\`
-
-\`\`\`html
-<div>x</div> <tag>y</tag>
-\`\`\`
-
-\`single line <code> {block}\`
-
-## Enumerations
-
-<a id="CommentEnum" name="CommentEnum"></a>
-
-### CommentEnum
-
-#### Enumeration Members
-
-| Enumeration Member | Value | Description |
-| :------ | :------ | :------ |
-| <a id="Member" name="Member"></a> \`Member\` | \`0\` | <p>Comment for Member</p>Some \\<p\\> html \\</p\\> and \\<tag\\>\\</tag\\>.<p>**Deprecated**</p><p>Deprecated member</p><p>**See**</p><p>[SameName](http:/example.com/README.mdx#SameName-1)</p> |
-| <a id="MemberB" name="MemberB"></a> \`MemberB\` | \`1\` | - |
-
-## Interfaces
-
-<a id="CommentInterface" name="CommentInterface"></a>
-
-### CommentInterface
-
-#### Extended by
-
-- [\`CommentInterfaceExtended\`](http:/example.com/README.mdx#CommentInterfaceExtended)
-
-#### Properties
-
-| Property | Type |
-| :------ | :------ |
-| <a id="prop" name="prop"></a> \`prop\` | \`string\` |
-| <a id="propb" name="propb"></a> \`propb\` | \`string\` |
-
-***
-
-<a id="CommentInterfaceExtended" name="CommentInterfaceExtended"></a>
-
-### CommentInterfaceExtended
-
-#### Extends
-
-- [\`CommentInterface\`](http:/example.com/README.mdx#CommentInterface)
-
-#### Properties
-
-| Property | Type | Inherited from |
-| :------ | :------ | :------ |
-| <a id="prop-1" name="prop-1"></a> \`prop\` | \`string\` | [\`CommentInterface\`](http:/example.com/README.mdx#CommentInterface).[\`prop\`](http:/example.com/README.mdx#prop) |
-| <a id="propb-1" name="propb-1"></a> \`propb\` | \`string\` | [\`CommentInterface\`](http:/example.com/README.mdx#CommentInterface).[\`propb\`](http:/example.com/README.mdx#propb) |
-| <a id="propc" name="propc"></a> \`propc\` | \`string\` | - |
-
-***
-
-<a id="SameName" name="SameName"></a>
-
-### SameName
-
-#### Properties
-
-| Property | Type |
-| :------ | :------ |
-| <a id="prop-2" name="prop-2"></a> \`prop\` | \`string\` |
-| <a id="propb-2" name="propb-2"></a> \`propb\` | \`string\` |
-
-## Variables
-
-<a id="SameName-1" name="SameName-1"></a>
-
-### SameName
-
-> **SameName**: \`true\`
-
-***
-
-<a id="_prop_with_underscore" name="_prop_with_underscore"></a>
-
-### \\_prop\\_with\\_underscore
-
-> \`const\` **\\_prop\\_with\\_underscore**: \`true\` = \`true\`
-
-***
-
-<a id="prop-3" name="prop-3"></a>
-
-### prop
-
-> \`const\` **prop**: \`true\` = \`true\`
-
-***
-
-<a id="propb-3" name="propb-3"></a>
-
-### propb
-
-> \`const\` **propb**: \`true\` = \`true\`
-
-## Functions
-
-<a id="multipleExampleTags" name="multipleExampleTags"></a>
-
-### multipleExampleTags()
+exports[`Comments should handle single example tags: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: multipleExampleTags()
 
 > **multipleExampleTags**(): \`boolean\`
 
 Function with multiple example tags
 
-#### Returns
+## Returns
 
 \`boolean\`
 
-#### Examples
+## Examples
 
 \`\`\`ts
 // If there are no code blocks, TypeDoc assumes the whole tag
@@ -597,29 +494,6 @@ Function with multiple example tags
 
 factorial(1)
 \`\`\`
-
-If there is a code block, then both TypeDoc and VSCode will treat
-text outside of the code block as regular text.
-
-\`\`\`ts
-factorial(1)
-\`\`\`
-
-***
-
-<a id="singleExampleTag" name="singleExampleTag"></a>
-
-### singleExampleTag()
-
-> **singleExampleTag**(): \`boolean\`
-
-Function with single example tag
-
-#### Returns
-
-\`boolean\`
-
-#### Example
 
 If there is a code block, then both TypeDoc and VSCode will treat
 text outside of the code block as regular text.

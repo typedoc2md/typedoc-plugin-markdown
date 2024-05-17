@@ -11,6 +11,7 @@ export type OutputFileStrategy =
 export const FormatStyle = {
   List: 'list',
   Table: 'table',
+  HtmlTable: 'htmlTable',
 } as const;
 
 export type FormatStyle = (typeof FormatStyle)[keyof typeof FormatStyle];

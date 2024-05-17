@@ -11,6 +11,8 @@ export function packagesIndex(
   this: MarkdownThemeContext,
   model: ProjectReflection,
 ): string {
+  const tableColumnsOptions = this.options.getValue('tableColumns');
+
   const md: string[] = [];
 
   md.push(heading(2, this.getText('label.packages')));
@@ -52,7 +54,9 @@ export function packagesIndex(
 
       return rows;
     });
-    md.push(table(headers, packageRows || []));
+    md.push(
+      table(headers, packageRows || [], tableColumnsOptions.leftAlignHeadings),
+    );
   } else {
     const packagesList = model.children?.map((projectPackage) => {
       const urlTo = Boolean(projectPackage.readme)

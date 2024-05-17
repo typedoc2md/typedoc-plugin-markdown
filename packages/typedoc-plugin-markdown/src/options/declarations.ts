@@ -385,6 +385,26 @@ export const indexFormat: Partial<DeclarationOption> = {
 };
 
 /**
+ * By default, all available data for symbols are displayed in columns, which can result in very large tables.
+ *
+ * This option allows you to control the visibility of columns, prioritizing readability over displaying complete data.
+ *
+ * @category UX
+ */
+export const tableColumns: Partial<DeclarationOption> = {
+  help: 'Control header alignment and column visibility in tables.',
+  type: ParameterType.Flags,
+  defaults: {
+    excludeDefaultsCol: false,
+    excludeInheritedFromCol: false,
+    excludeModifiersCol: false,
+    excludeOverridesCol: false,
+    excludeSourcesCol: false,
+    leftAlignHeadings: false,
+  },
+};
+
+/**
  * <Callout type="warning">
  * **Please note TypeDoc 0.26 will be introducing a native i18n implementation. This option will likely be deprecated in favour of utilizing the native implementation when 0.26 is released.**
  * </Callout>

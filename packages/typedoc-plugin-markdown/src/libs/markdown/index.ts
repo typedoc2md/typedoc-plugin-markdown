@@ -10,6 +10,7 @@ export { bold } from './bold';
 export { codeBlock } from './code-block';
 export { heading } from './heading';
 export { horizontalRule } from './horizontal-rule';
+export { htmlTable } from './html-table';
 export { indentBlock } from './indent-block';
 export { italic } from './italic';
 export { link } from './link';

@@ -12,6 +12,10 @@ const config: Record<string, Fixture> = {
       ],
       hidePageHeader: true,
       hideBreadcrumbs: true,
+      tableColumns: {
+        excludeSourcesCol: true,
+        leftAlignHeadings: true,
+      },
     },
     options: [
       {},
@@ -39,6 +43,9 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       expandObjects: true,
       expandParameters: true,
+      tableColumns: {
+        leftAlignHeadings: true,
+      },
     },
     options: [
       {},
@@ -86,6 +93,9 @@ const config: Record<string, Fixture> = {
       theme: 'stub-groups',
       disableSources: true,
       entryFileName: 'index.md',
+      tableColumns: {
+        leftAlignHeadings: true,
+      },
     },
     options: [
       {
@@ -115,24 +125,38 @@ const config: Record<string, Fixture> = {
     entryPoints: '/comments/index.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      disableSources: true,
       hidePageHeader: true,
       hideBreadcrumbs: true,
-      enumMembersFormat: 'table',
-      propertiesFormat: 'table',
       readme: 'none',
+      disableSources: true,
       media: './test/fixtures/media',
       includes: './test/fixtures/inc',
     },
     options: [
-      {},
+      {
+        enumMembersFormat: 'table',
+        parametersFormat: 'table',
+        propertiesFormat: 'table',
+        typeDeclarationFormat: 'table',
+      },
       {
         useHTMLAnchors: true,
         preserveAnchorCasing: true,
         publicPath: 'http://example.com',
-        fileExtension: '.mdx',
         sanitizeComments: true,
         flattenOutputFiles: true,
+        enumMembersFormat: 'htmlTable',
+        parametersFormat: 'htmlTable',
+        propertiesFormat: 'htmlTable',
+        typeDeclarationFormat: 'htmlTable',
+        tableColumns: {
+          excludeDefaultsCol: true,
+          excludeInheritedFromCol: true,
+          excludeModifiersCol: true,
+          excludeOverridesCol: true,
+          excludeSourcesCol: true,
+          leftAlignHeadings: true,
+        },
       },
     ],
   },
@@ -144,6 +168,9 @@ const config: Record<string, Fixture> = {
       entryPointStrategy: 'packages',
       name: 'packages-example',
       disableSources: true,
+      tableColumns: {
+        leftAlignHeadings: true,
+      },
     },
     options: [
       { entryFileName: 'index.md' },
@@ -206,6 +233,9 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       disableSources: true,
+      tableColumns: {
+        leftAlignHeadings: true,
+      },
     },
     options: [
       {

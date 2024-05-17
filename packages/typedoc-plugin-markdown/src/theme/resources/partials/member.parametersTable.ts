@@ -1,4 +1,4 @@
-import { backTicks, table } from '@plugin/libs/markdown';
+import { backTicks, htmlTable, table } from '@plugin/libs/markdown';
 import { removeLineBreaks } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
@@ -10,6 +10,8 @@ export function parametersTable(
   this: MarkdownThemeContext,
   model: ParameterReflection[],
 ): string {
+  const tableColumnsOptions = this.options.getValue('tableColumns');
+
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
       current.type?.declaration?.kind === ReflectionKind.TypeLiteral &&
@@ -32,7 +34,8 @@ export function parametersTable(
     );
   };
 
-  const showDefaults = hasDefaultValues(model);
+  const showDefaults =
+    !tableColumnsOptions.excludeDefaultsCol && hasDefaultValues(model);
 
   const parsedParams = model.reduce(
     (acc: any, current: any) => parseParams(current, acc),
@@ -99,7 +102,9 @@ export function parametersTable(
     rows.push(row);
   });
 
-  return table(headers, rows);
+  return this.options.getValue('parametersFormat') == 'table'
+    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
+    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
 }
 
 function hasDefaultValues(parameters: ParameterReflection[]) {

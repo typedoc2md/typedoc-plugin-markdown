@@ -44,7 +44,9 @@ export function signature(
     md.push(
       heading(options.headingLevel, this.getText('kind.typeParameter.plural')),
     );
-    if (this.options.getValue('parametersFormat') === 'table') {
+    if (
+      this.options.getValue('parametersFormat').toLowerCase().includes('table')
+    ) {
       md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
       md.push(this.partials.typeParametersList(model.typeParameters));
@@ -55,7 +57,9 @@ export function signature(
     md.push(
       heading(options.headingLevel, this.getText('kind.parameter.plural')),
     );
-    if (this.options.getValue('parametersFormat') === 'table') {
+    if (
+      this.options.getValue('parametersFormat').toLowerCase().includes('table')
+    ) {
       md.push(this.partials.parametersTable(model.parameters));
     } else {
       md.push(this.partials.parametersList(model.parameters));

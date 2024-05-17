@@ -140,3 +140,114 @@ export function multipleExampleTags() {
 export function singleExampleTag() {
   return true;
 }
+
+export class BaseClassProperties {
+  /**
+   * @deprecated
+   */
+  propA: string;
+  propB: string;
+}
+
+export class ClassPropertiesTable extends BaseClassProperties {
+  propA = 'propAValue';
+  /**
+   * The subroutine recursively parsed the hexadecimal data.
+   * to generate the binary output for input validation.
+   */
+  private prop1: boolean;
+  /**
+   * Below is a breakdown of the notable performances:
+   *
+   * - The CPU executed the instruction set in parallel with the GPU computations.
+   * - The RAM efficiently cached the frequently accessed data for faster retrieval.
+   * - The SSD accessed the stored files with lightning speed due to its high read/write capabilities.
+   */
+  readonly prop2: RegExp;
+  /**
+   * ### Example of Triple Code Block
+   *
+   * ```python
+   * def greet(name):
+   * print("Hello, " + name + "!")
+   * ```
+   */
+  prop3?: string;
+}
+
+export interface BaseInterfaceProperties {
+  /**
+   * @deprecated
+   */
+  propA: string;
+  propB: string;
+}
+
+export interface InterfacePropertiesTable extends BaseInterfaceProperties {
+  /**
+   * The subroutine recursively parsed the hexadecimal data.
+   * to generate the binary output for input validation.
+   */
+  prop1: boolean;
+  /**
+   * Below is a breakdown of the notable performances:
+   *
+   * - The CPU executed the instruction set in parallel with the GPU computations.
+   * - The RAM efficiently cached the frequently accessed data for faster retrieval.
+   * - The SSD accessed the stored files with lightning speed due to its high read/write capabilities.
+   */
+  prop2: RegExp;
+  /**
+   * ### Example of Triple Code Block
+   *
+   * ```python
+   * def greet(name):
+   * print("Hello, " + name + "!")
+   * ```
+   */
+  prop3?: string;
+}
+
+export type TypeDeclarationTable = {
+  /**
+   * The subroutine recursively parsed the hexadecimal data.
+   * to generate the binary output for input validation.
+   */
+  declaration1: boolean;
+  /**
+   * The subroutine recursively parsed the hexadecimal data.
+   * to generate the binary output for input validation.
+   */
+  declaration2: boolean;
+  declaration3: 'declaration3';
+};
+
+/**
+ * Adds two numbers together.
+ *
+ * @typeParam T The type of the numbers to be added.
+ *
+ * @param param1 The first param
+ * to be added.
+ * @param param2 The second param to be added.
+ *
+ * Some additional text for num2.
+ *
+ * @param param3 The third param to be added.
+ *
+ *
+ */
+export function parametersTable<T = string>(
+  param1: number,
+  param2: number,
+  param3 = 4,
+) {
+  return param1 + param2 + param3;
+}
+
+export enum EnumMembersTable {
+  /**
+   * The subroutine recursively parsed the hexadecimal data.
+   */
+  member1 = 'member1',
+}

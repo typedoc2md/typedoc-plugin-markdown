@@ -1,5 +1,10 @@
-import { backTicks, strikeThrough, table } from '@plugin/libs/markdown';
-import { formatTableColumn, removeLineBreaks } from '@plugin/libs/utils';
+import {
+  backTicks,
+  htmlTable,
+  strikeThrough,
+  table,
+} from '@plugin/libs/markdown';
+import { removeLineBreaks } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 import { getPropertyDefaultValue } from '../helpers/get-property-default-value';
@@ -17,20 +22,36 @@ export function declarationsTable(
   model: DeclarationReflection[],
   options?: { isEventProps: boolean },
 ): string {
+  const tableColumnsOptions = this.options.getValue('tableColumns');
   const modifiers = model.map((param) =>
     this.helpers.getModifier(param)?.toString(),
   );
-  const hasModifiers = modifiers.some((value) => Boolean(value));
+
+  const hasModifiers =
+    !tableColumnsOptions.excludeModifiersCol &&
+    modifiers.some((value) => Boolean(value));
+
   const flags = model.map((param) => this.partials.reflectionFlags(param));
   const hasFlags = flags.some((value) => Boolean(value));
-  const hasOverrides = model.some((prop) => Boolean(prop.overwrites));
-  const hasInheritance = model.some((prop) => Boolean(prop.inheritedFrom));
+
+  const hasOverrides =
+    !tableColumnsOptions.excludeOverridesCol &&
+    model.some((prop) => Boolean(prop.overwrites));
+
+  const hasInheritance =
+    !tableColumnsOptions.excludeInheritedFromCol &&
+    model.some((prop) => Boolean(prop.inheritedFrom));
+
   const hasDefaults = model.some((prop) =>
     Boolean(getPropertyDefaultValue(prop)),
   );
   const hasComments = model.some(
     (prop) => prop.comment?.blockTags?.length || prop?.comment?.summary?.length,
   );
+
+  const hasSources =
+    !tableColumnsOptions.excludeSourcesCol &&
+    !this.options.getValue('disableSources');
 
   const headers: string[] = [];
 
@@ -64,6 +85,10 @@ export function declarationsTable(
 
   if (hasInheritance) {
     headers.push(this.getText('label.inheritedFrom'));
+  }
+
+  if (hasSources) {
+    headers.push(this.getText('label.source'));
   }
 
   const rows: string[][] = [];
@@ -113,11 +138,7 @@ export function declarationsTable(
     }
 
     if (hasDefaults) {
-      row.push(
-        formatTableColumn(
-          getPropertyDefaultValue(property) || backTicks('undefined'),
-        ),
-      );
+      row.push(getPropertyDefaultValue(property) || backTicks('undefined'));
     }
 
     if (hasComments) {
@@ -134,18 +155,28 @@ export function declarationsTable(
 
     if (hasOverrides) {
       row.push(
-        this.partials.inheritance(property, { headingLevel: -1 }) || '-',
+        property.overwrites
+          ? this.partials.inheritance(property, { headingLevel: -1 })
+          : '-',
       );
     }
 
     if (hasInheritance) {
       row.push(
-        this.partials.inheritance(property, { headingLevel: -1 }) || '-',
+        property.inheritedFrom
+          ? this.partials.inheritance(property, { headingLevel: -1 })
+          : '-',
       );
+    }
+
+    if (hasSources) {
+      row.push(this.partials.sources(property, { headingLevel: -1 }));
     }
 
     rows.push(row);
   });
 
-  return table(headers, rows);
+  return this.options.getValue('propertiesFormat') == 'table'
+    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
+    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
 }

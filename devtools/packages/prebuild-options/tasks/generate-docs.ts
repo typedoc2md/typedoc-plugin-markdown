@@ -135,6 +135,7 @@ ${presetsJson}
           meta.push(type);
         }
         if (
+          option.type !== ParameterType.Flags &&
           option.type !== ParameterType.Array &&
           option.type !== ParameterType.Mixed
         ) {

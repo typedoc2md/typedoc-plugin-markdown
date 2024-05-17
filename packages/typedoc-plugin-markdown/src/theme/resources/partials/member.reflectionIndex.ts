@@ -89,6 +89,8 @@ function getTable(
   context: MarkdownThemeContext,
   children: DeclarationReflection[],
 ) {
+  const tableColumnsOptions = context.options.getValue('tableColumns');
+
   const headers = [
     context.options.getValue('excludeGroups')
       ? context.getText('label.member')
@@ -121,7 +123,7 @@ function getTable(
     }
     rows.push(row);
   });
-  return table(headers, rows);
+  return table(headers, rows, tableColumnsOptions.leftAlignHeadings);
 }
 
 function getList(

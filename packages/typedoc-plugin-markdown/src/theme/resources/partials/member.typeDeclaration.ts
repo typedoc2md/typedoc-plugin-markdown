@@ -11,7 +11,12 @@ export function typeDeclaration(
 ): string {
   const md: string[] = [];
 
-  if (this.options.getValue('typeDeclarationFormat') === 'table') {
+  if (
+    this.options
+      .getValue('typeDeclarationFormat')
+      .toLowerCase()
+      .includes('table')
+  ) {
     md.push(this.partials.typeDeclarationTable(model));
   } else {
     md.push(this.partials.typeDeclarationList(model, options.headingLevel));

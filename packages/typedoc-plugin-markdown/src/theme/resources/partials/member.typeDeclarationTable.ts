@@ -1,4 +1,4 @@
-import { backTicks, table } from '@plugin/libs/markdown';
+import { backTicks, htmlTable, table } from '@plugin/libs/markdown';
 import { escapeChars } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
@@ -10,6 +10,8 @@ export function typeDeclarationTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
 ): string {
+  const tableColumnsOptions = this.options.getValue('tableColumns');
+
   const headers: string[] = [];
 
   const declarations = this.helpers.getFlattenedDeclarations(model, {
@@ -64,5 +66,7 @@ export function typeDeclarationTable(
     rows.push(row);
   });
 
-  return table(headers, rows);
+  return this.options.getValue('typeDeclarationFormat') == 'table'
+    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
+    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
 }

@@ -1,4 +1,4 @@
-import { backTicks, italic, table } from '@plugin/libs/markdown';
+import { backTicks, htmlTable, italic, table } from '@plugin/libs/markdown';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { TypeParameterReflection } from 'typedoc';
 
@@ -9,9 +9,11 @@ export function typeParametersTable(
   this: MarkdownThemeContext,
   model: TypeParameterReflection[],
 ): string {
-  const hasDefault = model.some((typeParameter) =>
-    Boolean(typeParameter.default),
-  );
+  const tableColumnsOptions = this.options.getValue('tableColumns');
+
+  const hasDefault =
+    !tableColumnsOptions.excludeDefaultsCol &&
+    model.some((typeParameter) => Boolean(typeParameter.default));
 
   const hasComments = model.some((typeParameter) =>
     Boolean(typeParameter.comment),
@@ -65,5 +67,7 @@ export function typeParametersTable(
     rows.push(row);
   });
 
-  return table(headers, rows);
+  return this.options.getValue('parametersFormat') == 'table'
+    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
+    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
 }

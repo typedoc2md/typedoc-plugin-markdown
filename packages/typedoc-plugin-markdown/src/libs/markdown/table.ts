@@ -1,10 +1,17 @@
+import { formatTableCell } from '../utils/format-table-cell';
 /**
  * Comments for table
  * @param headers
  * @param rows
  */
-export function table(headers: string[], rows: string[][]) {
+export function table(
+  headers: string[],
+  rows: string[][],
+  headerLeftAlign = false,
+) {
   return `\n| ${headers.join(' | ')} |\n| ${headers
-    .map(() => ':------')
-    .join(' | ')} |\n${rows.map((row) => `| ${row.join(' | ')} |\n`).join('')}`;
+    .map(() => `${headerLeftAlign ? ':' : ''}------`)
+    .join(
+      ' | ',
+    )} |\n${rows.map((row) => `| ${row.map((cell) => formatTableCell(cell)).join(' | ')} |\n`).join('')}`;
 }

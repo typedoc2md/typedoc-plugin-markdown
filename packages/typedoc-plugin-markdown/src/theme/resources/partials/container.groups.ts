@@ -51,7 +51,10 @@ export function groups(
       }
       if (
         isPropertiesGroup &&
-        this.options.getValue('propertiesFormat') === 'table'
+        this.options
+          .getValue('propertiesFormat')
+          .toLowerCase()
+          .includes('table')
       ) {
         md.push(
           this.partials.declarationsTable(group.children, {
@@ -61,7 +64,10 @@ export function groups(
         );
       } else if (
         isEnumGroup &&
-        this.options.getValue('enumMembersFormat') === 'table'
+        this.options
+          .getValue('enumMembersFormat')
+          .toLowerCase()
+          .includes('table')
       ) {
         md.push(this.partials.enumMembersTable(group.children));
       } else {

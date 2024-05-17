@@ -47,7 +47,9 @@ export function accessor(
     md.push(
       heading(options.headingLevel, this.getText('kind.parameter.plural')),
     );
-    if (this.options.getValue('parametersFormat') === 'table') {
+    if (
+      this.options.getValue('parametersFormat').toLowerCase().includes('table')
+    ) {
       md.push(this.partials.parametersTable(model.setSignature.parameters));
     } else {
       md.push(this.partials.parametersList(model.setSignature.parameters));
