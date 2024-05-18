@@ -13,7 +13,7 @@ export function typeDeclarationList(
   const declarations = this.helpers.getFlattenedDeclarations(model);
   declarations?.forEach((declaration: DeclarationReflection) => {
     md.push(
-      this.partials.member(declaration, {
+      this.partials.memberContainer(declaration, {
         headingLevel: headingLevel + 1,
         nested: true,
       }),

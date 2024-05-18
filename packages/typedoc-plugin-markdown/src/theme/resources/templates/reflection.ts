@@ -1,3 +1,4 @@
+import { MarkdownPageEvent } from '@plugin/app/events';
 import { heading } from '@plugin/libs/markdown';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
@@ -5,10 +6,11 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
 /**
  * Template that maps to individual reflection models.
  */
-export function reflection(this: MarkdownThemeContext) {
+export function reflection(
+  this: MarkdownThemeContext,
+  page: MarkdownPageEvent<DeclarationReflection>,
+) {
   const md: string[] = [];
-
-  const model = this.page.model as DeclarationReflection;
 
   md.push(this.hook('page.begin').join('\n'));
 
@@ -33,11 +35,11 @@ export function reflection(this: MarkdownThemeContext) {
       ReflectionKind.Enum,
       ReflectionKind.Class,
       ReflectionKind.Interface,
-    ].includes(model.kind)
+    ].includes(page.model.kind)
   ) {
-    md.push(this.partials.memberWithGroups(model, { headingLevel: 2 }));
+    md.push(this.partials.memberWithGroups(page.model, { headingLevel: 2 }));
   } else {
-    md.push(this.partials.member(model, { headingLevel: 1 }));
+    md.push(this.partials.memberContainer(page.model, { headingLevel: 1 }));
   }
 
   md.push(this.partials.footer());

@@ -294,6 +294,22 @@ Ignored if `flattenOutputFiles` is set to `true`.
 
 ---
 
+### inlineDocuments
+
+<Callout emoji="💡">Inline documents in pages.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default a documents index and separate documents pages are generated when using the `@document` tag.
+
+```json filename="typedoc.json"
+{
+  "inlineDocuments": false
+}
+```
+
+---
+
 ### excludeGroups
 
 <Callout emoji="💡">
@@ -540,74 +556,7 @@ Only keys that require translation need to be added to the object.
 
 ```json filename="typedoc.json"
 {
-  "textContentMappings": {
-    "header.title": "{projectName} {version}",
-    "header.docs": "Docs",
-    "breadcrumbs.home": "{projectName} {version}",
-    "footer.text": "",
-    "title.indexPage": "{projectName} {version}",
-    "title.modulePage": "{name}",
-    "title.memberPage": "{kind}: {name}",
-    "label.apiIndex": "API Index",
-    "label.defaultValue": "Default value",
-    "label.description": "Description",
-    "label.extendedBy": "Extended by",
-    "label.extends": "Extends",
-    "label.flags": "Flags",
-    "label.globals": "Globals",
-    "label.implements": "Implements",
-    "label.implementationOf": "Implementation of",
-    "label.inheritedFrom": "Inherited from",
-    "label.index": "Index",
-    "label.indexable": "Indexable",
-    "label.indexSignature": "Index signature",
-    "label.member": "Member",
-    "label.modifier": "Modifier",
-    "label.name": "Name",
-    "label.overrides": "Overrides",
-    "label.packages": "Packages",
-    "label.reExports": "Re-exports",
-    "label.renamesAndReExports": "Renames and re-exports",
-    "label.returns": "Returns",
-    "label.source": "Source",
-    "label.type": "Type",
-    "label.typeDeclaration": "Type declaration",
-    "label.value": "Value",
-    "kind.accessor.singular": "Accessor",
-    "kind.accessor.plural": "Accessors",
-    "kind.class.singular": "Class",
-    "kind.class.plural": "Classes",
-    "kind.constructor.singular": "Constructor",
-    "kind.constructor.plural": "Constructors",
-    "kind.enum.singular": "Enumeration",
-    "kind.enum.plural": "Enumerations",
-    "kind.enumMember.singular": "Enumeration Member",
-    "kind.enumMember.plural": "Enumeration Members",
-    "kind.event.singular": "Event",
-    "kind.event.plural": "Events",
-    "kind.function.singular": "Function",
-    "kind.function.plural": "Functions",
-    "kind.interface.singular": "Interface",
-    "kind.interface.plural": "Interfaces",
-    "kind.method.singular": "Method",
-    "kind.method.plural": "Methods",
-    "kind.module.singular": "Module",
-    "kind.module.plural": "Modules",
-    "kind.namespace.singular": "Namespace",
-    "kind.namespace.plural": "Namespaces",
-    "kind.variable.singular": "Variable",
-    "kind.variable.plural": "Variables",
-    "kind.parameter.singular": "Parameter",
-    "kind.parameter.plural": "Parameters",
-    "kind.property.singular": "Property",
-    "kind.property.plural": "Properties",
-    "kind.reference.singular": "Reference",
-    "kind.reference.plural": "References",
-    "kind.typeAlias.singular": "Type alias",
-    "kind.typeAlias.plural": "Type Aliases",
-    "kind.typeParameter.singular": "Type parameter",
-    "kind.typeParameter.plural": "Type parameters"
-  }
+  "textContentMappings": {}
 }
 ```
 

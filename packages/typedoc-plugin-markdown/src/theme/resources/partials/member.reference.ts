@@ -13,8 +13,8 @@ export function referenceMember(
 ): string {
   let referenced = model.tryGetTargetReflectionDeep();
 
-  const reExportsText = this.getText('label.reExports');
-  const renamesAndReExportsText = this.getText('label.renamesAndReExports');
+  const reExportsText = this.i18n.theme_re_exports();
+  const renamesAndReExportsText = this.i18n.theme_renames_and_re_exports();
 
   if (!referenced) {
     return `${reExportsText} ${model.name}`;

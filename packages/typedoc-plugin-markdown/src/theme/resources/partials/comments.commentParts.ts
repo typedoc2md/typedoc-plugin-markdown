@@ -11,48 +11,10 @@ export function commentParts(
   model: CommentDisplayPart[],
 ): string {
   const md: string[] = [];
-  const parsedText = (text: string) => {
-    const mediaPattern = /media:\/\/([^ ")\]}]+)/g;
-    const includePattern = /\[\[include:([^\]]+?)\]\]/g;
-    const includeDirectory = this.options.getValue('includes');
-    const mediaDirectory = this.options.getValue('media');
-
-    let parsedText = text;
-
-    if (Boolean(includeDirectory)) {
-      parsedText = parsedText.replace(
-        includePattern,
-        (match: string, includeFile: string) => {
-          const includeDirectory = this.options.getValue('includes');
-          const includesPath = this.getRelativeUrl(
-            `${includeDirectory}/${includeFile}`,
-            true,
-          );
-          if (isFile(includesPath)) {
-            const includeContent = fs.readFileSync(includesPath);
-            return includeContent.toString();
-          } else {
-            return match;
-          }
-        },
-      );
-    }
-
-    if (Boolean(mediaDirectory)) {
-      parsedText = parsedText.replace(
-        mediaPattern,
-        (match: string, mediaFile: string) => {
-          return this.getRelativeUrl(`media/${mediaFile}`, true);
-        },
-      );
-    }
-
-    return parsedText;
-  };
   for (const part of model) {
     switch (part.kind) {
       case 'text':
-        md.push(parsedText(part.text));
+        md.push(part.text);
         break;
       case 'code':
         md.push(part.text);

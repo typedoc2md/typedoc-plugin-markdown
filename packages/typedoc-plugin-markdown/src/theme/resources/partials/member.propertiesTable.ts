@@ -6,7 +6,7 @@ import {
 } from '@plugin/libs/markdown';
 import { removeLineBreaks } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 import { getPropertyDefaultValue } from '../helpers/get-property-default-value';
 
 /**
@@ -57,38 +57,38 @@ export function declarationsTable(
 
   headers.push(
     options?.isEventProps
-      ? this.getText('kind.event.singular')
-      : this.getText('kind.property.singular'),
+      ? this.i18n.theme_event()
+      : this.internationalization.kindSingularString(ReflectionKind.Property),
   );
 
   if (hasModifiers) {
-    headers.push(this.getText('label.modifier'));
+    headers.push(this.i18n.theme_modifier());
   }
 
   if (hasFlags) {
-    headers.push(this.getText('label.flags'));
+    headers.push(this.i18n.theme_flags());
   }
 
-  headers.push(this.getText('label.type'));
+  headers.push(this.i18n.theme_type());
 
   if (hasDefaults) {
-    headers.push(this.getText('label.defaultValue'));
+    headers.push(this.i18n.theme_default_value());
   }
 
   if (hasComments) {
-    headers.push(this.getText('label.description'));
+    headers.push(this.i18n.theme_description());
   }
 
   if (hasOverrides) {
-    headers.push(this.getText('label.overrides'));
+    headers.push(this.i18n.theme_overrides());
   }
 
   if (hasInheritance) {
-    headers.push(this.getText('label.inheritedFrom'));
+    headers.push(this.i18n.theme_inherited_from());
   }
 
   if (hasSources) {
-    headers.push(this.getText('label.source'));
+    headers.push(this.i18n.theme_defined_in());
   }
 
   const rows: string[][] = [];

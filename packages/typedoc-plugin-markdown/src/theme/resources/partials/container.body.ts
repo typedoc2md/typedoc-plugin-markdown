@@ -1,5 +1,9 @@
 import { MarkdownThemeContext } from '@plugin/theme';
-import { ContainerReflection, ReflectionKind } from 'typedoc';
+import {
+  ContainerReflection,
+  DocumentReflection,
+  ReflectionKind,
+} from 'typedoc';
 
 /**
  * @category Container Partials
@@ -43,9 +47,13 @@ export function body(
         }
       }
     } else {
-      if (model.groups) {
+      const groups = model.groups?.filter(
+        (group) => !(group.owningReflection instanceof DocumentReflection),
+      );
+
+      if (groups?.length) {
         md.push(
-          this.partials.groups(model.groups, {
+          this.partials.groups(groups, {
             headingLevel: options.headingLevel,
           }),
         );

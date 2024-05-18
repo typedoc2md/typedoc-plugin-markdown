@@ -18,7 +18,7 @@ export interface BasicInterface {
    *
    * This prop is deprecated
    *
-   * @someTag
+   * @see
    *
    * Comments for some tag
    */

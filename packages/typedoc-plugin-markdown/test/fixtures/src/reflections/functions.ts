@@ -120,8 +120,7 @@ export function functionWithMultipleSignatures(value: string): string;
 export function functionWithMultipleSignatures(value: { name: string }): string;
 
 /**
- * This is the actual implementation, this comment will not be visible in the generated documentation.
- *
+ * Main function comment.
  */
 export function functionWithMultipleSignatures(): string {
   return '';

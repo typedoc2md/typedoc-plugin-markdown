@@ -58,17 +58,24 @@ const config = {
           __dirname,
           '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
-        entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/comments/index.ts',
+        entryPoints: [
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/documents/module-1.ts',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/documents/module-2.ts',
+        ],
         expandObjects: true,
         readme: 'none',
         sidebar: { pretty: true },
         outputFileStrategy: 'members',
         propertiesFormat: 'htmlTable',
         cleanOutputDir: true,
+        projectDocuments: [
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/PROJECT_DOC_1.md',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/docs/project/PROJECT_DOC_2.md',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/docs/project/PROJECT_DOC_3.md',
+        ],
       },
     ],
-    [
+    /*[
       docusaurusPlugin,
       {
         id: 'api-2',
@@ -100,7 +107,7 @@ const config = {
         },
       },
     ],
-    /*[
+   [
       docusaurusPlugin,
       {
         id: 'api-3',

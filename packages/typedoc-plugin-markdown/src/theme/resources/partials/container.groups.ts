@@ -1,7 +1,9 @@
 import { heading } from '@plugin/libs/markdown';
-import { PLURAL_KIND_KEY_MAP } from '@plugin/options/text-mappings';
-import { TextContentMappings } from 'public-api';
-import { ReflectionGroup, ReflectionKind } from 'typedoc';
+import {
+  DeclarationReflection,
+  ReflectionGroup,
+  ReflectionKind,
+} from 'typedoc';
 import { MarkdownThemeContext } from '../../markdown-themecontext';
 
 /**
@@ -21,8 +23,7 @@ export function groups(
   const md: string[] = [];
 
   const getGroupTitle = (groupTitle: string) => {
-    const key = PLURAL_KIND_KEY_MAP[groupTitle] as keyof TextContentMappings;
-    return this.getText(key) || groupTitle;
+    return groupTitle;
   };
 
   groupsWithChildren?.forEach((group, index: number) => {
@@ -57,10 +58,12 @@ export function groups(
           .includes('table')
       ) {
         md.push(
-          this.partials.declarationsTable(group.children, {
-            isEventProps:
-              getGroupTitle(group.title) === this.getText('kind.event.plural'),
-          }),
+          this.partials.declarationsTable(
+            group.children as DeclarationReflection[],
+            {
+              isEventProps: getGroupTitle(group.title) === 'Events',
+            },
+          ),
         );
       } else if (
         isEnumGroup &&
@@ -69,11 +72,15 @@ export function groups(
           .toLowerCase()
           .includes('table')
       ) {
-        md.push(this.partials.enumMembersTable(group.children));
+        md.push(
+          this.partials.enumMembersTable(
+            group.children as DeclarationReflection[],
+          ),
+        );
       } else {
         if (group.children) {
           md.push(
-            this.partials.members(group.children, {
+            this.partials.members(group.children as DeclarationReflection[], {
               headingLevel: options.headingLevel + 1,
             }),
           );

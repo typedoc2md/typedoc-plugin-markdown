@@ -4,6 +4,7 @@ import {
   isQuoted,
   removeFirstScopedDirectory,
   slugify,
+  toPascalCase,
 } from '@plugin/libs/utils';
 import { OutputFileStrategy } from '@plugin/options/option-maps';
 import { MarkdownTheme } from '@plugin/theme/markdown-theme';
@@ -15,7 +16,9 @@ import {
 import * as path from 'path';
 import {
   DeclarationReflection,
+  DocumentReflection,
   EntryPointStrategy,
+  Options,
   ProjectReflection,
   Reflection,
   ReflectionKind,
@@ -27,90 +30,113 @@ import {
  *
  * @param project  The project whose urls should be generated.
  */
-export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
-  const options = theme.application.options;
-  const packagesMeta = (theme.application.renderer as MarkdownRenderer)
-    .packagesMeta;
-  const urls: UrlMapping<Reflection>[] = [];
-  const anchors: Record<string, string[]> = {};
-  const flattenOutputFiles = options.getValue('flattenOutputFiles');
-  const fileExtension = options.getValue('fileExtension');
-  const ignoreScopes = options.getValue('excludeScopesInPaths');
-  const entryFileName = getFileNameWithExtension(
-    options.getValue('entryFileName'),
-    fileExtension,
-  );
+export class UrlBuilder {
+  private options: Options;
+  private packagesMeta: any;
+  private fileExtension: string;
+  private ignoreScopes: boolean;
+  private entryFileName: string;
+  private writeDocuments: boolean;
+  private isPackages: boolean;
+  private flattenOutputFiles: boolean;
+  private urls: UrlMapping<Reflection>[] = [];
+  private anchors: Record<string, string[]> = {};
 
-  const isPackages =
-    options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
+  constructor(
+    public theme: MarkdownTheme,
+    public project: ProjectReflection,
+  ) {
+    this.options = theme.application.options;
 
-  buildEntryUrls();
+    this.packagesMeta = (
+      theme.application.renderer as MarkdownRenderer
+    ).packagesMeta;
 
-  if (isPackages) {
-    if (Object.keys(packagesMeta)?.length === 1) {
-      buildUrlsFromProject(project);
-    } else {
-      project.children?.forEach((projectChild) => {
-        buildUrlsFromPackage(projectChild);
-      });
-    }
-  } else {
-    buildUrlsFromProject(project);
+    this.fileExtension = this.options.getValue('fileExtension');
+    this.ignoreScopes = this.options.getValue('excludeScopesInPaths');
+    this.writeDocuments = !this.options.getValue('inlineDocuments');
+
+    this.entryFileName = getFileNameWithExtension(
+      this.options.getValue('entryFileName'),
+      this.fileExtension,
+    );
+
+    this.isPackages =
+      this.options.getValue('entryPointStrategy') ===
+      EntryPointStrategy.Packages;
+
+    this.flattenOutputFiles = this.options.getValue('flattenOutputFiles');
   }
 
-  return urls;
+  getUrls() {
+    this.buildEntryUrls();
 
-  function buildEntryUrls() {
+    if (this.isPackages) {
+      if (Object.keys(this.packagesMeta)?.length === 1) {
+        this.buildUrlsFromProject(this.project);
+      } else {
+        this.project.children?.forEach((projectChild) => {
+          this.buildUrlsFromPackage(projectChild);
+        });
+      }
+    } else {
+      this.buildUrlsFromProject(this.project);
+    }
+
+    return this.urls;
+  }
+
+  private buildEntryUrls() {
     const preserveReadme =
-      Boolean(project.readme) && !options.getValue('mergeReadme');
+      Boolean(this.project.readme) && !this.options.getValue('mergeReadme');
 
-    const isModulesOnly = project.children?.every(
+    const isModulesOnly = this.project.children?.every(
       (child) => child.kind === ReflectionKind.Module,
     );
     const useEntryModule =
-      project?.groups &&
+      this.project?.groups &&
       Boolean(
-        project?.groups[0]?.children.find(
-          (child) => child.name === options.getValue('entryModule'),
+        this.project?.groups[0]?.children.find(
+          (child) => child.name === this.options.getValue('entryModule'),
         ),
       ) &&
       isModulesOnly;
-    const indexFilename = getIndexFileName(project, isPackages);
+    const indexFilename = this.getIndexFileName(this.project, this.isPackages);
 
-    project.url = preserveReadme
+    this.project.url = preserveReadme
       ? indexFilename
       : useEntryModule
         ? indexFilename
-        : entryFileName;
+        : this.entryFileName;
 
     if (preserveReadme) {
-      urls.push({
+      this.urls.push({
         url: useEntryModule
-          ? getFileNameWithExtension('readme_', fileExtension)
-          : entryFileName,
-        model: project,
-        template: theme.readmeTemplate,
+          ? getFileNameWithExtension('readme_', this.fileExtension)
+          : this.entryFileName,
+        model: this.project,
+        template: this.theme.readmeTemplate,
       });
 
       if (!useEntryModule) {
-        urls.push({
+        this.urls.push({
           url: indexFilename,
-          model: project,
-          template: theme.projectTemplate,
+          model: this.project,
+          template: this.theme.projectTemplate,
         });
       }
     } else {
       if (!useEntryModule) {
-        urls.push({
-          url: entryFileName,
-          model: project,
-          template: theme.projectTemplate,
+        this.urls.push({
+          url: this.entryFileName,
+          model: this.project,
+          template: this.theme.projectTemplate,
         });
       }
     }
   }
 
-  function buildUrlsFromProject(
+  private buildUrlsFromProject(
     project: ProjectReflection | DeclarationReflection,
     parentUrl?: string,
     outputFileStrategy?: OutputFileStrategy,
@@ -119,47 +145,55 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
   ) {
     project.groups?.forEach((projectGroup) => {
       projectGroup.children?.forEach((projectGroupChild) => {
-        buildUrlsFromGroup(projectGroupChild, {
-          ...(parentUrl && { parentUrl }),
-          ...(outputFileStrategy && { outputFileStrategy }),
-          ...(entryModule && { entryModule }),
-          ...(entryFileName && { entryFileName }),
-        });
+        if (
+          this.writeDocuments &&
+          projectGroupChild instanceof DocumentReflection
+        ) {
+          this.buildUrlsForDocuments(projectGroupChild);
+        }
+        if (projectGroupChild instanceof DeclarationReflection) {
+          this.buildUrlsFromGroup(projectGroupChild, {
+            ...(parentUrl && { parentUrl }),
+            ...(outputFileStrategy && { outputFileStrategy }),
+            ...(entryModule && { entryModule }),
+            ...(entryFileName && { entryFileName }),
+          });
+        }
       });
     });
   }
 
-  function buildUrlsFromPackage(projectChild: DeclarationReflection) {
+  private buildUrlsFromPackage(projectChild: DeclarationReflection) {
     const preservePackageReadme =
-      Boolean(projectChild.readme) && !options.getValue('mergeReadme');
+      Boolean(projectChild.readme) && !this.options.getValue('mergeReadme');
 
-    const packagesIndex = getIndexFileName(projectChild);
+    const packagesIndex = this.getIndexFileName(projectChild);
 
-    const packageOptions = packagesMeta[projectChild.name]?.options;
+    const packageOptions = this.packagesMeta[projectChild.name]?.options;
 
     const outputFileStrategy = packageOptions.isSet('outputFileStrategy')
       ? packageOptions.getValue('outputFileStrategy')
-      : options.getValue('outputFileStrategy');
+      : this.options.getValue('outputFileStrategy');
 
     const entryModule = packageOptions.isSet('entryModule')
       ? packageOptions.getValue('entryModule')
-      : options.getValue('entryModule');
+      : this.options.getValue('entryModule');
 
     const packageEntryFileName = packageOptions.isSet('entryFileName')
       ? packageOptions.getValue('entryFileName')
-      : options.getValue('entryFileName');
+      : this.options.getValue('entryFileName');
 
     let fullEntryFileName = getFileNameWithExtension(
       path.join(projectChild.name, packageEntryFileName),
-      fileExtension,
+      this.fileExtension,
     );
 
     let fullIndexFileName = getFileNameWithExtension(
       path.join(projectChild.name, packagesIndex),
-      fileExtension,
+      this.fileExtension,
     );
 
-    if (ignoreScopes) {
+    if (this.ignoreScopes) {
       fullEntryFileName = removeFirstScopedDirectory(fullEntryFileName);
       fullIndexFileName = removeFirstScopedDirectory(fullIndexFileName);
     }
@@ -182,30 +216,33 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
       isModulesOnly;
 
     if (preservePackageReadme) {
-      urls.push({
+      this.urls.push({
         url: useEntryModule
-          ? `${path.dirname(indexFileName)}/${getFileNameWithExtension('readme_', fileExtension)}`
+          ? `${path.dirname(indexFileName)}/${getFileNameWithExtension('readme_', this.fileExtension)}`
           : path.join(
               path.dirname(indexFileName),
-              getFileNameWithExtension(packageEntryFileName, fileExtension),
+              getFileNameWithExtension(
+                packageEntryFileName,
+                this.fileExtension,
+              ),
             ),
         model: projectChild,
-        template: theme.readmeTemplate,
+        template: this.theme.readmeTemplate,
       });
 
       if (!useEntryModule) {
-        urls.push({
+        this.urls.push({
           url: indexFileName,
           model: projectChild,
-          template: theme.projectTemplate,
+          template: this.theme.projectTemplate,
         });
       }
     } else {
       if (!useEntryModule) {
-        urls.push({
+        this.urls.push({
           url: indexFileName,
           model: projectChild,
-          template: theme.projectTemplate,
+          template: this.theme.projectTemplate,
         });
       }
     }
@@ -216,7 +253,7 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
       indexFileName.split(path.sep)?.length > 1
         ? indexFileName
         : `${projectChild.name}/${indexFileName}`;
-    buildUrlsFromProject(
+    this.buildUrlsFromProject(
       projectChild,
       parentUrl,
       outputFileStrategy,
@@ -225,11 +262,58 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
     );
   }
 
-  function buildUrlsFromGroup(
+  private buildUrlsForDocuments(reflection: DocumentReflection) {
+    const mapping: TemplateMapping = this.theme.getTemplateMapping(
+      reflection.kind,
+    );
+
+    if (mapping) {
+      const baseUrl = path.dirname(reflection.parent?.url || '');
+
+      const directory = this.flattenOutputFiles
+        ? ReflectionKind.singularString(reflection.kind)
+        : (mapping.directory as string);
+      const filename = [
+        getFileNameWithExtension(
+          reflection.name.replace(/ /g, '-'),
+          this.fileExtension,
+        ),
+      ];
+      if (
+        reflection?.parent?.kind &&
+        ![ReflectionKind.Module, ReflectionKind.Project].includes(
+          reflection?.parent?.kind,
+        )
+      ) {
+        filename.unshift(
+          toPascalCase(ReflectionKind.singularString(reflection.parent?.kind)),
+        );
+      }
+
+      const urlBase = path.join(baseUrl, directory, filename.join('.'));
+      const url = this.flattenOutputFiles
+        ? urlBase.replace(/\//g, '.')
+        : urlBase;
+
+      this.urls.push({
+        url,
+        model: reflection,
+        template: mapping.template,
+      });
+      reflection.url = url;
+      reflection.hasOwnDocument = true;
+    }
+  }
+
+  private buildUrlsFromGroup(
     reflection: DeclarationReflection,
     urlOptions: UrlOption,
   ) {
-    const mapping: TemplateMapping = theme.getTemplateMapping(
+    if (reflection.kind === ReflectionKind.Document && !this.writeDocuments) {
+      return;
+    }
+
+    const mapping: TemplateMapping = this.theme.getTemplateMapping(
       reflection.kind,
       urlOptions.outputFileStrategy,
     );
@@ -238,35 +322,38 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
       let url: string;
       let urlPath = '';
 
-      if (flattenOutputFiles) {
-        url = getFlattenedUrl(reflection);
+      if (this.flattenOutputFiles) {
+        url = this.getFlattenedUrl(reflection);
       } else {
         const directory = urlOptions.directory || mapping.directory;
-        urlPath = getUrlPath(reflection, {
+        urlPath = this.getUrlPath(reflection, {
           ...urlOptions,
           directory,
         });
 
-        url = getUrl(reflection, urlPath, urlOptions);
+        url = this.getUrl(reflection, urlPath, urlOptions);
 
-        if (ignoreScopes) {
+        if (this.ignoreScopes) {
           url = removeFirstScopedDirectory(url);
         }
 
-        const duplicateUrls = urls.filter(
+        const duplicateUrls = this.urls.filter(
           (urlMapping) =>
             urlMapping.url.toLowerCase() === url.toLowerCase() &&
             urlMapping.url !== url,
         );
 
-        if (duplicateUrls.length > 0) {
+        if (
+          duplicateUrls.length > 0 &&
+          reflection.kind !== ReflectionKind.Document
+        ) {
           const urlParts = url.split('.');
           urlParts[urlParts.length - 2] += `-${duplicateUrls.length}`;
           url = urlParts.join('.');
         }
       }
 
-      urls.push({
+      this.urls.push({
         url: url,
         model: reflection,
         template: mapping.template,
@@ -277,11 +364,11 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
       reflection.groups?.forEach((group) => {
         group.children.forEach((groupChild) => {
-          const mapping = theme.getTemplateMapping(
+          const mapping = this.theme.getTemplateMapping(
             groupChild.kind,
             urlOptions.outputFileStrategy,
           );
-          buildUrlsFromGroup(groupChild, {
+          this.buildUrlsFromGroup(groupChild as DeclarationReflection, {
             parentUrl: urlPath,
             directory: mapping?.directory || null,
             outputFileStrategy: urlOptions.outputFileStrategy,
@@ -289,39 +376,67 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
         });
       });
     } else if (reflection.parent) {
-      applyAnchorUrl(reflection, reflection.parent);
+      this.traverseChildren(reflection, reflection.parent);
     }
   }
 
-  function getUrl(
+  private getUrl(
     reflection: DeclarationReflection,
     urlPath: string,
     urlOptions: UrlOption,
   ) {
     const entryModule =
-      urlOptions.entryModule || options.getValue('entryModule');
+      urlOptions.entryModule || this.options.getValue('entryModule');
 
-    const entryName = urlOptions.entryFileName || entryFileName;
+    const entryName = urlOptions.entryFileName || this.entryFileName;
 
     if (reflection.name === entryModule) {
       return entryName;
     }
 
     if (
-      options.getValue('outputFileStrategy') === OutputFileStrategy.Modules &&
+      this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Modules &&
       reflection.name === 'index' &&
       path.parse(entryName).name === 'index'
     ) {
       return urlPath.replace(
-        getFileNameWithExtension('index', fileExtension),
-        getFileNameWithExtension('module_index', fileExtension),
+        getFileNameWithExtension('index', this.fileExtension),
+        getFileNameWithExtension('module_index', this.fileExtension),
       );
     }
     return urlPath;
   }
 
-  function getUrlPath(reflection: DeclarationReflection, urlOption: UrlOption) {
-    const alias = getAlias(reflection.name);
+  getFlattenedUrl(reflection: DeclarationReflection) {
+    const fullName = reflection.getFullName();
+    const fullNameParts = fullName.replace(/\//g, '.').split('.');
+    if (reflection.kind !== ReflectionKind.Module) {
+      fullNameParts.splice(
+        fullNameParts.length - 1,
+        0,
+        toPascalCase(ReflectionKind.singularString(reflection.kind)),
+      );
+    }
+    const url = `${fullNameParts.join('.')}${this.fileExtension}`
+      .replace(/"/g, '')
+      .replace(/^\./g, '');
+    reflection.url = url;
+    return url;
+  }
+
+  private getAlias(name: string) {
+    if (isQuoted(name)) {
+      name = name.replace(/\//g, '_');
+    }
+    return name
+      .replace(/"/g, '')
+      .replace(/^_+|_+$/g, '')
+      .replace(/[<>]/g, '-');
+  }
+
+  private getUrlPath(reflection: DeclarationReflection, urlOption: UrlOption) {
+    const alias = this.getAlias(reflection.name);
 
     const parentDir = urlOption.parentUrl
       ? path.dirname(urlOption.parentUrl)
@@ -346,8 +461,9 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
         [ReflectionKind.Module, ReflectionKind.Namespace].includes(
           reflection.kind,
         ) &&
-        options.getValue('outputFileStrategy') === OutputFileStrategy.Modules &&
-        !childrenIncludeNamespaces(reflection)
+        this.options.getValue('outputFileStrategy') ===
+          OutputFileStrategy.Modules &&
+        !this.moduleHasSubfolders(reflection)
       ) {
         return null;
       }
@@ -356,76 +472,76 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
           reflection.kind,
         )
       ) {
-        return path.parse(entryFileName).name;
+        return path.parse(this.entryFileName).name;
       }
       return alias;
     };
 
     return getFileNameWithExtension(
       [parentDir, dir(), filename()].filter((part) => Boolean(part)).join('/'),
-      fileExtension,
+      this.fileExtension,
     );
   }
 
-  function getAlias(name: string) {
-    if (isQuoted(name)) {
-      name = name.replace(/\//g, '_');
-    }
-    return name
-      .replace(/"/g, '')
-      .replace(/^_+|_+$/g, '')
-      .replace(/[<>]/g, '-');
-  }
-
-  function applyAnchorUrl(
+  private traverseChildren(
     reflection: DeclarationReflection,
     container: Reflection,
   ) {
     if (container.url) {
-      if (reflection.kind !== ReflectionKind.TypeLiteral) {
-        const anchorPrefix = options.getValue('anchorPrefix');
-        const anchorId = getAnchorId(reflection);
-
-        if (anchorId) {
-          if (!anchors[container.url]) {
-            anchors[container.url] = [];
-          }
-
-          anchors[container.url].push(anchorId);
-
-          const count = anchors[container.url]?.filter(
-            (id) => id === anchorId,
-          )?.length;
-
-          const anchorParts = [anchorId];
-
-          if (count > 1) {
-            anchorParts.push(`-${count - 1}`);
-          }
-
-          if (anchorPrefix) {
-            anchorParts.unshift(`${anchorPrefix}`);
-          }
-
-          reflection.url = container.url + '#' + anchorParts.join('');
-          reflection.anchor = anchorParts.join('');
-          reflection.hasOwnDocument = false;
-        }
-      }
+      this.applyAnchorUrl(reflection, container.url);
     }
     if (reflection.parent) {
       reflection.traverse((child) => {
+        if (this.writeDocuments && child instanceof DocumentReflection) {
+          this.buildUrlsForDocuments(child);
+        }
         if (child instanceof DeclarationReflection) {
-          applyAnchorUrl(child, container);
+          this.traverseChildren(child, container);
         }
       });
     }
   }
 
-  function getAnchorId(reflection: DeclarationReflection) {
-    const preserveAnchorCasing = options.getValue('preserveAnchorCasing');
+  private applyAnchorUrl(
+    reflection: DeclarationReflection,
+    containerUrl: string,
+  ) {
+    if (reflection.kind !== ReflectionKind.TypeLiteral) {
+      const anchorPrefix = this.options.getValue('anchorPrefix');
+      const anchorId = this.getAnchorId(reflection);
 
-    const anchorName = getAnchorName(reflection);
+      if (anchorId) {
+        if (!this.anchors[containerUrl]) {
+          this.anchors[containerUrl] = [];
+        }
+
+        this.anchors[containerUrl].push(anchorId);
+
+        const count = this.anchors[containerUrl]?.filter(
+          (id) => id === anchorId,
+        )?.length;
+
+        const anchorParts = [anchorId];
+
+        if (count > 1) {
+          anchorParts.push(`-${count - 1}`);
+        }
+
+        if (anchorPrefix) {
+          anchorParts.unshift(`${anchorPrefix}`);
+        }
+
+        reflection.url = containerUrl + '#' + anchorParts.join('');
+        reflection.anchor = anchorParts.join('');
+        reflection.hasOwnDocument = false;
+      }
+    }
+  }
+
+  private getAnchorId(reflection: DeclarationReflection) {
+    const preserveAnchorCasing = this.options.getValue('preserveAnchorCasing');
+
+    const anchorName = this.getAnchorName(reflection);
 
     if (anchorName) {
       return preserveAnchorCasing ? anchorName : anchorName.toLowerCase();
@@ -434,15 +550,15 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
     return null;
   }
 
-  function getAnchorName(reflection: DeclarationReflection) {
-    const htmlTableAnchors = options.getValue('useHTMLAnchors');
+  private getAnchorName(reflection: DeclarationReflection) {
+    const htmlTableAnchors = this.options.getValue('useHTMLAnchors');
 
     if (!htmlTableAnchors) {
       if (
         (reflection.kind === ReflectionKind.Property &&
-          options.getValue('propertiesFormat') === 'table') ||
+          this.options.getValue('propertiesFormat') === 'table') ||
         (reflection.kind === ReflectionKind.EnumMember &&
-          options.getValue('enumMembersFormat') === 'table')
+          this.options.getValue('enumMembersFormat') === 'table')
       ) {
         return null;
       }
@@ -461,41 +577,24 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
     return anchorParts.join('');
   }
 
-  function childrenIncludeNamespaces(reflection: DeclarationReflection) {
-    return reflection.children?.some(
-      (child) => child.kind === ReflectionKind.Namespace,
+  private moduleHasSubfolders(reflection: DeclarationReflection) {
+    return reflection.childrenIncludingDocuments?.some((child) =>
+      [ReflectionKind.Namespace, ReflectionKind.Document].includes(child.kind),
     );
   }
 
-  function getIndexFileName(
+  private getIndexFileName(
     reflection: ProjectReflection | DeclarationReflection,
     isPackages = false,
   ) {
     if (isPackages) {
-      return getFileNameWithExtension('packages', fileExtension);
+      return getFileNameWithExtension('packages', this.fileExtension);
     }
     const isModules = reflection.children?.every(
       (child) => child.kind === ReflectionKind.Module,
     );
     return isModules
-      ? getFileNameWithExtension('modules', fileExtension)
-      : getFileNameWithExtension('globals', fileExtension);
-  }
-
-  function getFlattenedUrl(reflection: DeclarationReflection) {
-    const fullName = reflection.getFullName();
-    const fullNameParts = fullName.replace(/\//g, '.').split('.');
-    if (reflection.kind !== ReflectionKind.Module) {
-      fullNameParts.splice(
-        fullNameParts.length - 1,
-        0,
-        ReflectionKind.singularString(reflection.kind).split(' ')[0],
-      );
-    }
-    const url = `${fullNameParts.join('.')}${fileExtension}`
-      .replace(/"/g, '')
-      .replace(/^\./g, '');
-    reflection.url = url;
-    return url;
+      ? getFileNameWithExtension('modules', this.fileExtension)
+      : getFileNameWithExtension('globals', this.fileExtension);
   }
 }

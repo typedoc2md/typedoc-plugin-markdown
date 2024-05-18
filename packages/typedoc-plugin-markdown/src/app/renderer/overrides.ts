@@ -5,6 +5,7 @@ import * as path from 'path';
 import {
   Application,
   DeclarationReflection,
+  DocumentReflection,
   ProjectReflection,
   Reflection,
   Renderer,
@@ -94,7 +95,8 @@ export async function render(
       ?.filter(
         (urlMapping) =>
           urlMapping.model instanceof ProjectReflection ||
-          urlMapping.model instanceof DeclarationReflection,
+          urlMapping.model instanceof DeclarationReflection ||
+          urlMapping.model instanceof DocumentReflection,
       )
       .forEach(async (urlMapping) => {
         const [template, page] = output.createPageEvent(urlMapping);

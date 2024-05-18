@@ -35,7 +35,7 @@ describe(`Comments`, () => {
   test(`should get tables for type declarations`, () => {
     expectFileToEqual('comments', 'members', [
       '/type-aliases/TypeDeclarationTable.md',
-      '/Type.TypeDeclarationTable.md',
+      '/TypeAlias.TypeDeclarationTable.md',
     ]);
   });
 

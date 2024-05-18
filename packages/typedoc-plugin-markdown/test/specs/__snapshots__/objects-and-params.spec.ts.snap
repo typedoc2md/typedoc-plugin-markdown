@@ -5,7 +5,7 @@ exports[`Objects And Params should compile basic interface: (Output File Strateg
 
 Comments for BasicInterface
 
-## Extended by
+## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -19,7 +19,7 @@ Comments for BasicInterface
 
 This prop is deprecated
 
-#### Some Tag
+#### See
 
 Comments for some tag
 
@@ -196,7 +196,7 @@ exports[`Objects And Params should compile basic interface: (Output File Strateg
 
 Comments for BasicInterface
 
-## Extended by
+## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -204,7 +204,7 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **Some Tag** Comments for some tag |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **See** Comments for some tag |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
@@ -462,7 +462,7 @@ Some nested params.
 `;
 
 exports[`Objects And Params should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Type alias: IntersectionType
+"# Type Alias: IntersectionType
 
 > **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \\{\`bar\`: \`number\`; \\}
 
@@ -477,7 +477,7 @@ Comments for IntersectionType
 `;
 
 exports[`Objects And Params should compile intersection type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# Type alias: IntersectionType
+"# Type Alias: IntersectionType
 
 \`\`\`ts
 type IntersectionType: TupleType & ArrayType & {
@@ -498,7 +498,7 @@ bar: number;
 `;
 
 exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Type alias: LiteralType
+"# Type Alias: LiteralType
 
 > **LiteralType**: \\{\`x\`: \`string\`;\`y\`: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`; \\};\`z\`: (\`x\`: \`string\`) => \`string\`;get set \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>;get set \`accessorB\`: \`string\`;\`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>; \\}
 
@@ -603,7 +603,7 @@ Comments for someFunction
 `;
 
 exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# Type alias: LiteralType
+"# Type Alias: LiteralType
 
 \`\`\`ts
 type LiteralType: {
@@ -795,7 +795,7 @@ Comments for symbol
 `;
 
 exports[`Objects And Params should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Type alias: UnionType
+"# Type Alias: UnionType
 
 > **UnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`; \\}
 
@@ -804,7 +804,7 @@ Comments for UnionType
 `;
 
 exports[`Objects And Params should compile union type: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# Type alias: UnionType
+"# Type Alias: UnionType
 
 \`\`\`ts
 type UnionType: string | boolean | {

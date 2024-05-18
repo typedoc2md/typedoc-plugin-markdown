@@ -75,7 +75,6 @@ function getSymbols(files: string[], type: string, thePath = resourcesPath) {
         return `
 /**
  * ${jsDoc.getComment() ? jsDoc.getComment() : ''}
- *
  ${jsDoc
    .getTags()
    .map((tag) => `* ${tag.getText()}`)
@@ -139,7 +138,7 @@ function writeLibsBarrelsFile(resourceType: string) {
     out.push(`export { ${symbols[index].symbolName} } from './${file}';`);
   });
 
-  fs.outputFileSync(barrelsFile, out.join('\n'));
+  fs.outputFileSync(barrelsFile, out.join('\n').trim() + '\n');
 }
 
 async function writeResourcesFile() {
@@ -162,6 +161,7 @@ async function writeResourcesFile() {
     'ContainerReflection',
     'DeclarationHierarchy',
     'DeclarationReflection',
+    'DocumentReflection',
     'IndexedAccessType',
     'InferredType',
     'IntersectionType',
@@ -188,6 +188,7 @@ async function writeResourcesFile() {
   ];
 
   const out = `// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
+import { MarkdownPageEvent } from '@plugin/app/events';
 import { MarkdownThemeContext } from '@plugin/theme';
 import {${typedocTypes.join(',')}} from 'typedoc';
 

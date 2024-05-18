@@ -5,7 +5,7 @@ exports[`Comments should compile comments for module: (Output File Strategy "mem
 
 Comments form module comments
 
-## Links
+> links
 
 Links using \`{@link}\` inline tags.
 
@@ -24,13 +24,10 @@ External links:
 - [Google](https://www.google.com)
 - [\`https://www.google.com\`](https://www.google.com)
 
-## Tag A
+## See
 
-Comments for a tag
-
-## Tag B
-
-Comments for tag written on same line
+ - Comments for a tag
+ - Comments for tag written on same line
 
 ## Html And Jsx
 
@@ -51,20 +48,15 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
-## Media
+> media
 
 You can include media in doc comments:
 
-![alt SomeAlt](media/logo.png)
+![alt SomeAlt](media://logo.png)
 
 And include other files:
 
-This is a simple example on how to use include.
-
-![My image alt text](media/logo.png)
- [[include:not-found.md]]
-
-## Code Blocks
+> codeBlocks
 
 \`\`\`css
 .class {color:red}
@@ -75,6 +67,12 @@ This is a simple example on how to use include.
 \`\`\`
 
 \`single line <code> {block}\`
+
+## Documents
+
+This is a simple example on how to use include.
+
+![My image alt text](media://logo.png)
 
 ## Enumerations
 
@@ -159,15 +157,15 @@ exports[`Comments should get tables for parameters: (Output File Strategy "membe
 
 Adds two numbers together.
 
-## Type parameters
+## Type Parameters
 
-| Type parameter | Value | Description |
+| Type Parameter | Value | Description |
 | ------ | ------ | ------ |
 | \`T\` | \`string\` | The type of the numbers to be added. |
 
 ## Parameters
 
-| Parameter | Type | Default value | Description |
+| Parameter | Type | Default Value | Description |
 | ------ | ------ | ------ | ------ |
 | \`param1\` | \`number\` | \`undefined\` | The first param to be added. |
 | \`param2\` | \`number\` | \`undefined\` | The second param to be added. Some additional text for num2. |
@@ -202,11 +200,11 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Properties
 
-| Property | Modifier | Type | Default value | Description | Overrides | Inherited from |
+| Property | Modifier | Type | Default Value | Description | Overrides | Inherited from |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - |
 | \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - |
-| \`prop3?\` | \`public\` | \`string\` | \`undefined\` | ### Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - |
+| \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - |
 | ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).\`propA\` | - |
 | \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).\`propB\` |
 "
@@ -238,7 +236,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 ## Properties
 
 <table>
-<tr><th align="left">Property</th><th align="left">Type</th><th align="left">Default value</th><th align="left">Description</th></tr>
+<tr><th align="left">Property</th><th align="left">Type</th><th align="left">Default Value</th><th align="left">Description</th></tr>
 <tr>
 <td>
 
@@ -306,7 +304,7 @@ Below is a breakdown of the notable performances:
 </td>
 <td>
 
-### Example of Triple Code Block
+> Example of Triple Code Block
 
 \`\`\`python
 def greet(name):
@@ -364,7 +362,7 @@ print("Hello, " + name + "!")
 `;
 
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Type alias: TypeDeclarationTable
+"# Type Alias: TypeDeclarationTable
 
 > **TypeDeclarationTable**: \`object\`
 
@@ -379,7 +377,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 `;
 
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# Type alias: TypeDeclarationTable
+"# Type Alias: TypeDeclarationTable
 
 > **TypeDeclarationTable**: \`object\`
 

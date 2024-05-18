@@ -1,10 +1,12 @@
 import { DocsConfig } from './models';
 
+export const SRC_PATH = `${process.cwd()}/src`;
 export const PRESETS_PATH = `${process.cwd()}/src/options/presets.ts`;
 
 export const DOCS_CONFIG: Record<string, DocsConfig> = {
   ['typedoc-plugin-markdown']: {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,
+    translatablePath: `${process.cwd()}/src/app/translatable.ts`,
     optionsPath: '/docs',
     docsPath: '/docs',
     declarations: true,

@@ -1,5 +1,6 @@
 export interface DocsConfig {
   declarationsPath?: string;
+  translatablePath?: string;
   presetsPath?: string;
   optionsPath: string;
   docsPath: string;

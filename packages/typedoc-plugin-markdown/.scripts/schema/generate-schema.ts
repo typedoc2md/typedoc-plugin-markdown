@@ -41,7 +41,7 @@ async function main() {
     __dirname,
     '../../../../docs/public/schema.json',
   );
-  console.log(schemaFile);
+
   const schemaString = JSON.stringify(schemaWrapper, null, 2);
   fs.writeFileSync(schemaFile, schemaString);
 }

@@ -57,6 +57,8 @@ A basic module
 
 ## Index
 
+### Members
+
 | Member | Description |
 | :------ | :------ |
 | [EnumA](enumerations/EnumA.md) | EnumA function. |
@@ -629,6 +631,8 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 # typedoc-stubs
 
+## Members
+
 | Member | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name/index.md) | - |
@@ -670,6 +674,8 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 ***
 
 # typedoc-stubs
+
+## Members
 
 | Member | Description |
 | :------ | :------ |
@@ -717,6 +723,8 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ## Index
 
+### Members
+
 | Member | Description |
 | :------ | :------ |
 | [NestedNamespace](namespaces/NestedNamespace/index.md) | - |
@@ -755,6 +763,8 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 # Namespace: \\_Namespace\\_A\\_
 
 ## Index
+
+### Members
 
 | Member | Description |
 | :------ | :------ |
@@ -828,6 +838,8 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 A module that contains namespaces
 
 ## Index
+
+### Members
 
 | Member | Description |
 | :------ | :------ |
@@ -964,6 +976,8 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 A module that contains namespaces
 
 ## Index
+
+### Members
 
 | Member | Description |
 | :------ | :------ |
@@ -1206,6 +1220,8 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 A module that contains references
 
 ## Index
+
+### Members
 
 | Member | Description |
 | :------ | :------ |

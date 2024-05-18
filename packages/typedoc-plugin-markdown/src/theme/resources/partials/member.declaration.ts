@@ -35,6 +35,14 @@ export function declaration(
 
   md.push(this.partials.declarationTitle(model));
 
+  if (model?.documents) {
+    md.push(
+      this.partials.documents(model, {
+        headingLevel: options.headingLevel,
+      }),
+    );
+  }
+
   const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
 
@@ -60,7 +68,7 @@ export function declaration(
       ) {
         if (intersectionType.declaration.children) {
           md.push(
-            heading(opts.headingLevel, this.getText('label.typeDeclaration')),
+            heading(opts.headingLevel, this.i18n.theme_type_declaration()),
           );
 
           md.push(
@@ -77,9 +85,7 @@ export function declaration(
   if (model.type instanceof ReferenceType && model.type.typeArguments?.length) {
     if (model.type.typeArguments[0] instanceof ReflectionType) {
       if (model.type.typeArguments[0].declaration?.children) {
-        md.push(
-          heading(opts.headingLevel, this.getText('label.typeDeclaration')),
-        );
+        md.push(heading(opts.headingLevel, this.i18n.theme_type_declaration()));
         md.push(
           this.partials.typeDeclaration(
             model.type.typeArguments[0].declaration?.children,
@@ -92,7 +98,12 @@ export function declaration(
 
   if (model.typeParameters) {
     md.push(
-      heading(opts.headingLevel, this.getText('kind.typeParameter.plural')),
+      heading(
+        opts.headingLevel,
+        this.internationalization.kindPluralString(
+          ReflectionKind.TypeParameter,
+        ),
+      ),
     );
     if (
       this.options.getValue('parametersFormat').toLowerCase().includes('table')
@@ -104,9 +115,11 @@ export function declaration(
   }
 
   if (typeDeclaration) {
-    if (typeDeclaration?.indexSignature) {
-      md.push(heading(opts.headingLevel, this.getText('label.indexSignature')));
-      md.push(this.partials.indexSignature(typeDeclaration.indexSignature));
+    if (typeDeclaration?.indexSignatures?.length) {
+      md.push(heading(opts.headingLevel, this.i18n.kind_index_signature()));
+      typeDeclaration?.indexSignatures?.forEach((indexSignature) => {
+        md.push(this.partials.indexSignature(indexSignature));
+      });
     }
 
     if (typeDeclaration?.signatures?.length) {
@@ -127,7 +140,7 @@ export function declaration(
       if (!opts.nested && typeDeclaration?.children?.length) {
         if (useHeading) {
           md.push(
-            heading(opts.headingLevel, this.getText('label.typeDeclaration')),
+            heading(opts.headingLevel, this.i18n.theme_type_declaration()),
           );
         }
 
@@ -135,11 +148,14 @@ export function declaration(
           typeDeclaration.categories.forEach((category) => {
             md.push(heading(opts.headingLevel, category.title));
             md.push(
-              this.partials.typeDeclaration(category.children, {
-                headingLevel: useHeading
-                  ? opts.headingLevel + 1
-                  : opts.headingLevel,
-              }),
+              this.partials.typeDeclaration(
+                category.children as DeclarationReflection[],
+                {
+                  headingLevel: useHeading
+                    ? opts.headingLevel + 1
+                    : opts.headingLevel,
+                },
+              ),
             );
           });
         } else {

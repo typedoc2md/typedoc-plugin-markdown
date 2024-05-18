@@ -1,4 +1,4 @@
-import { DocsConfig } from '@devtools/helpers';
+import { DocsConfig, SRC_PATH } from '@devtools/helpers';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as prettier from 'prettier';
@@ -11,36 +11,75 @@ import { DeclarationOption, ParameterType } from 'typedoc';
 export async function generateOptionsModels(docsConfig: DocsConfig) {
   const optionsConfig = await import(docsConfig.declarationsPath as string);
 
-  const mixedTypes = (Object.entries(optionsConfig) as any).filter(
-    ([name, option]) =>
-      option.type === ParameterType.Mixed && option.defaultValue,
-  );
-
-  const containsManuallyValidatedOptions = Object.values(optionsConfig).some(
-    (option) =>
-      (option as any).type === ParameterType.Mixed &&
-      (option as any).defaultValue,
-  );
-
   const sortedOptionsConfig = Object.fromEntries(
     Object.entries(optionsConfig).sort((a, b) => a[0].localeCompare(b[0])),
   );
 
+  await writeTypeDocDeclarations(docsConfig, sortedOptionsConfig);
+  await writeOptionsTypes(docsConfig, sortedOptionsConfig);
+}
+
+async function writeTypeDocDeclarations(
+  docsConfig: DocsConfig,
+  sortedOptionsConfig: any,
+) {
+  const typedocDeclarationsFile = path.join(SRC_PATH, 'defs', 'typedoc.d.ts');
+
+  const manuallyValidatedOptions = Object.entries(sortedOptionsConfig)
+    .filter(
+      ([name, option]) =>
+        (option as any).type === ParameterType.Mixed &&
+        (option as any).defaultValue,
+    )
+    .map(([name, option]) => capitalize(name));
+
+  const out: string[] = [];
+
+  out.push(`// THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
+import { ManuallyValidatedOption } from 'typedoc'`);
+
+  if (manuallyValidatedOptions.length) {
+    manuallyValidatedOptions.forEach((option: any) => {
+      out.push(`import { ${option} } from '../options/option-types';`);
+    });
+  }
+
+  out.push(`declare module 'typedoc' {`);
+  out.push(`export interface TypeDocOptionMap {
+    ${(Object.entries(sortedOptionsConfig) as any)
+      .map(([name, option]) => `${name}: ${getType(name, option)};`)
+      .join('\n')}
+  }`);
+
+  if (docsConfig.translatablePath) {
+    const { translatable } = await import(docsConfig.translatablePath);
+    out.push(`
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  export namespace Internationalization {
+    export interface TranslatableStrings ${getTranslations(translatable)}
+  }`);
+  }
+  out.push(`}`);
+  const formatted = await prettier.format(out.join('\n'), {
+    parser: 'typescript',
+    singleQuote: true,
+    trailingComma: 'all',
+  });
+
+  fs.writeFileSync(typedocDeclarationsFile, formatted);
+}
+
+async function writeOptionsTypes(
+  docsConfig: DocsConfig,
+  sortedOptionsConfig: any,
+) {
+  const mixedTypes = (Object.entries(sortedOptionsConfig) as any).filter(
+    ([name, option]) =>
+      option.type === ParameterType.Mixed && option.defaultValue,
+  );
+
   const optionsOutput = `
   // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
-
-  ${
-    containsManuallyValidatedOptions &&
-    `import { ManuallyValidatedOption } from 'typedoc'`
-  };
-
-  declare module 'typedoc' {
-    export interface TypeDocOptionMap {
-      ${(Object.entries(sortedOptionsConfig) as any)
-        .map(([name, option]) => `${name}: ${getType(name, option)};`)
-        .join('\n')}
-    }
-  }
 
   /**
    * Describes the options declared by the plugin.
@@ -92,6 +131,15 @@ ${name}: ${getType(name, option, true)};`,
   });
 
   fs.writeFileSync(optionsModelFile, formatted);
+}
+
+function getTranslations(inputObject: { [key: string]: string }) {
+  const output: { [key: string]: string[] } = {};
+  for (const [key, value] of Object.entries(inputObject)) {
+    const matches = value.match(/{\d+}/g) || [];
+    output[key] = matches.map(() => 'string');
+  }
+  return JSON.stringify(output).replace(/"/g, '');
 }
 
 function getComments(name: string) {

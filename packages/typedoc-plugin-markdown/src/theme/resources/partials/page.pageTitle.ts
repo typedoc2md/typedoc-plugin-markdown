@@ -1,6 +1,5 @@
-import { SINGULAR_KIND_KEY_MAP } from '@plugin/options/text-mappings';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
-import { MarkdownThemeContext, TextContentMappings } from '../../..';
+import { MarkdownThemeContext } from '../../..';
 
 /**
  * @category Page Partials
@@ -8,28 +7,19 @@ import { MarkdownThemeContext, TextContentMappings } from '../../..';
 export function pageTitle(this: MarkdownThemeContext): string {
   const page = this.page;
   if (page.model?.url === page.project.url) {
-    const titleContent = this.getText('title.indexPage');
-    return titleContent
-      .replace('{projectName}', page.project.name)
-      .replace(
-        '{version}',
-        page.project.packageVersion ? `v${page.project.packageVersion}` : '',
-      )
-      .replace(/\s+/g, ' ')
-      .trim();
+    const titleContent = this.i18n.theme_title_index_page(
+      page.project.name,
+      page.project.packageVersion ? `v${page.project.packageVersion}` : '',
+    );
+    return titleContent.replace(/\s+/g, ' ').trim();
   }
 
   const name = this.partials.memberTitle(page.model as DeclarationReflection);
+  const moduleTitle = this.i18n.theme_title_module_page(name);
+  const memberTitle = this.i18n.theme_title_member_page(
+    this.internationalization.kindSingularString(page.model.kind),
+    name,
+  );
 
-  const textContent =
-    page.model.kind === ReflectionKind.Module
-      ? this.getText('title.modulePage')
-      : this.getText('title.memberPage');
-
-  const kindKey = SINGULAR_KIND_KEY_MAP[
-    ReflectionKind.singularString(page.model.kind)
-  ] as keyof TextContentMappings;
-  return textContent
-    .replace('{name}', name)
-    .replace('{kind}', this.getText(kindKey));
+  return page.model.kind === ReflectionKind.Module ? moduleTitle : memberTitle;
 }

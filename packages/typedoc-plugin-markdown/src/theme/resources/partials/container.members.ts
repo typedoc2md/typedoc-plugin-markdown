@@ -21,7 +21,11 @@ export function members(
   };
   const items = model?.filter((item) => !item.hasOwnDocument);
   items?.forEach((item, index) => {
-    md.push(this.partials.member(item, { headingLevel: options.headingLevel }));
+    md.push(
+      this.partials.memberContainer(item, {
+        headingLevel: options.headingLevel,
+      }),
+    );
     if (index < items.length - 1 && displayHr(item)) {
       md.push(horizontalRule());
     }

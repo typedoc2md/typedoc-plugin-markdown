@@ -20,7 +20,7 @@
 export { MarkdownApplication, MarkdownRenderer } from '@plugin/app/application';
 export { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/app/events';
 export { MarkdownRendererHooks } from '@plugin/app/renderer';
-export { PluginOptions, TextContentMappings } from '@plugin/options';
+export { PluginOptions } from '@plugin/options';
 export {
   MarkdownTheme,
   MarkdownThemeContext,

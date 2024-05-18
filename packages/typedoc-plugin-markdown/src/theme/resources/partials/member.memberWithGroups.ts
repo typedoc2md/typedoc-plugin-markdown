@@ -1,6 +1,6 @@
 import { heading, unorderedList } from '@plugin/libs/markdown';
 import { MarkdownThemeContext } from '@plugin/theme';
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 /**
  * Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
@@ -32,11 +32,14 @@ export function memberWithGroups(
 
   if (model.typeParameters?.length) {
     md.push(
-      heading(options.headingLevel, this.getText('kind.typeParameter.plural')),
+      heading(
+        options.headingLevel,
+        this.internationalization.kindPluralString(
+          ReflectionKind.TypeParameter,
+        ),
+      ),
     );
-    if (
-      this.options.getValue('parametersFormat').toLowerCase().includes('table')
-    ) {
+    if (this.options.getValue('parametersFormat') === 'table') {
       md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
       md.push(this.partials.typeParametersList(model.typeParameters));
@@ -44,7 +47,7 @@ export function memberWithGroups(
   }
 
   if (model.implementedTypes?.length) {
-    md.push(heading(options.headingLevel, this.getText('label.implements')));
+    md.push(heading(options.headingLevel, this.i18n.theme_implements()));
     md.push(
       unorderedList(
         model.implementedTypes.map((implementedType) =>
@@ -64,16 +67,37 @@ export function memberWithGroups(
     });
   }
 
-  if ('indexSignature' in model && model.indexSignature) {
-    md.push(heading(options.headingLevel, this.getText('label.indexable')));
-    md.push(this.partials.indexSignature(model.indexSignature));
+  if (model.indexSignatures?.length) {
+    md.push(heading(options.headingLevel, this.i18n.theme_indexable()));
+    model.indexSignatures.forEach((indexSignature) => {
+      md.push(this.partials.indexSignature(indexSignature));
+    });
   }
 
-  if (model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-    md.push(heading(options.headingLevel, this.getText('label.index')));
+  if (
+    model.documents ||
+    model?.groups?.some((group) => group.allChildrenHaveOwnDocument())
+  ) {
+    const isAbsoluteIndex = model?.groups?.every(
+      (group) => group.owningReflection.kind !== ReflectionKind.Document,
+    );
+    if (isAbsoluteIndex) {
+      md.push(heading(options.headingLevel, this.i18n.theme_index()));
+    }
+
+    if (model.documents) {
+      md.push(
+        this.partials.documents(model, {
+          headingLevel: options.headingLevel,
+        }),
+      );
+    }
+
     md.push(
       this.partials.reflectionIndex(model, {
-        headingLevel: options.headingLevel + 1,
+        headingLevel: isAbsoluteIndex
+          ? options.headingLevel + 1
+          : options.headingLevel,
       }),
     );
   }

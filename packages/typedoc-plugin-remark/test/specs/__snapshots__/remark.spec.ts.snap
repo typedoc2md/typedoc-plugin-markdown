@@ -25,7 +25,7 @@ exports[`Remark should parse globals page 1`] = `
 #### Parameters
 
 | Parameter | Type     |
-| :-------- | :------- |
+| --------- | -------- |
 | \`param\`   | \`string\` |
 
 #### Returns
@@ -52,7 +52,7 @@ exports[`Remark should parse globals page without toc 1`] = `
 #### Parameters
 
 | Parameter | Type     |
-| :-------- | :------- |
+| --------- | -------- |
 | \`param\`   | \`string\` |
 
 #### Returns
@@ -72,16 +72,16 @@ title: 'test'
 
 ## Contents
 
-- [Type parameters](#type-parameters)
+- [Type Parameters](#type-parameters)
 - [Constructors](#constructors)
   - [new SomeClass()](#new-someclass)
 - [Properties](#properties)
   - [someProp](#someprop)
 
-## Type parameters
+## Type Parameters
 
-| Type parameter |
-| :------------- |
+| Type Parameter |
+| -------------- |
 | \`T\`            |
 
 ## Constructors
@@ -201,10 +201,10 @@ javascript
 
 + list item 1
 
-#### Type parameters
+#### Type Parameters
 
-| Type parameter |
-| :------------- |
+| Type Parameter |
+| -------------- |
 | \`T\`            |
 
 #### Constructors
@@ -227,10 +227,10 @@ javascript
 
 ### SomeInterface\\<T>
 
-#### Type parameters
+#### Type Parameters
 
-| Type parameter |
-| :------------- |
+| Type Parameter |
+| -------------- |
 | \`T\`            |
 
 #### Properties
@@ -262,7 +262,7 @@ javascript
 #### Parameters
 
 | Parameter | Type                  |
-| :-------- | :-------------------- |
+| --------- | --------------------- |
 | \`param\`   | \`string\` \\| \`boolean\` |
 
 #### Returns

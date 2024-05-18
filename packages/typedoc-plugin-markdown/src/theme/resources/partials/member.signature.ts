@@ -14,6 +14,7 @@ export function signature(
     headingLevel: number;
     nested?: boolean;
     accessor?: string;
+    multipleSignatures?: boolean;
   },
 ): string {
   const md: string[] = [];
@@ -28,11 +29,21 @@ export function signature(
     );
   }
 
-  if (model.comment) {
+  const modelComments = model.comment || model.parent?.comment;
+
+  if (modelComments) {
     md.push(
-      this.partials.comment(model.comment, {
+      this.partials.comment(modelComments, {
         headingLevel: options.headingLevel,
         showTags: false,
+      }),
+    );
+  }
+
+  if (!options.multipleSignatures && model.parent?.documents) {
+    md.push(
+      this.partials.documents(model?.parent, {
+        headingLevel: options.headingLevel,
       }),
     );
   }
@@ -42,11 +53,14 @@ export function signature(
     model.kind !== ReflectionKind.ConstructorSignature
   ) {
     md.push(
-      heading(options.headingLevel, this.getText('kind.typeParameter.plural')),
+      heading(
+        options.headingLevel,
+        this.internationalization.kindPluralString(
+          ReflectionKind.TypeParameter,
+        ),
+      ),
     );
-    if (
-      this.options.getValue('parametersFormat').toLowerCase().includes('table')
-    ) {
+    if (this.options.getValue('parametersFormat') === 'table') {
       md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
       md.push(this.partials.typeParametersList(model.typeParameters));
@@ -55,11 +69,12 @@ export function signature(
 
   if (model.parameters?.length) {
     md.push(
-      heading(options.headingLevel, this.getText('kind.parameter.plural')),
+      heading(
+        options.headingLevel,
+        this.internationalization.kindPluralString(ReflectionKind.Parameter),
+      ),
     );
-    if (
-      this.options.getValue('parametersFormat').toLowerCase().includes('table')
-    ) {
+    if (this.options.getValue('parametersFormat') === 'table') {
       md.push(this.partials.parametersTable(model.parameters));
     } else {
       md.push(this.partials.parametersList(model.parameters));

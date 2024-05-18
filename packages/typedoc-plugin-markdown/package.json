@@ -32,6 +32,12 @@
     "directory": "packages/typedoc-plugin-markdown"
   },
   "homepage": "https://typedoc-plugin-markdown.org",
+  "peerDependencies": {
+    "typedoc": "beta.x"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
   "keywords": [
     "api",
     "documentation",
@@ -39,8 +45,5 @@
     "typedoc",
     "typescript",
     "typedoc-plugin"
-  ],
-  "peerDependencies": {
-    "typedoc": "0.25.x"
-  }
+  ]
 }

@@ -11,19 +11,19 @@ export function declarationType(
 ): string {
   const shouldFormat = this.options.getValue('useCodeBlocks');
 
-  if (model.indexSignature || model.children) {
-    let indexSignature = '';
-    const declarationIndexSignature = model.indexSignature;
-    if (declarationIndexSignature) {
-      const key = declarationIndexSignature.parameters
-        ? declarationIndexSignature.parameters.map(
-            (param) => `\`[${param.name}: ${param.type}]\``,
-          )
-        : '';
-      const obj = this.partials.someType(
-        declarationIndexSignature.type as SomeType,
-      );
-      indexSignature = `${key}: ${obj}; `;
+  if (model.indexSignatures || model.children) {
+    const indexSignatureMd: string[] = [];
+
+    if (model.indexSignatures?.length) {
+      model.indexSignatures.forEach((indexSignature) => {
+        const key = indexSignature.parameters
+          ? indexSignature.parameters.map(
+              (param) => `\`[${param.name}: ${param.type}]\``,
+            )
+          : '';
+        const obj = this.partials.someType(indexSignature.type as SomeType);
+        indexSignatureMd.push(`${key}: ${obj}; `);
+      });
     }
 
     const children = model.children;
@@ -56,8 +56,10 @@ export function declarationType(
         return `${name.join(' ')}: ${indentBlock(typeString, true)};`;
       });
 
-    if (indexSignature) {
-      types?.unshift(indexSignature);
+    if (indexSignatureMd) {
+      indexSignatureMd.forEach((indexSignature) => {
+        types?.unshift(indexSignature);
+      });
     }
     return types
       ? `\\{${shouldFormat ? '\n' : ''}${types.join('')} \\}`

@@ -27,4 +27,12 @@ describe(`Urls`, () => {
   test(`should gets Urls for modules parts`, () => {
     expectUrlsToEqual('modules', ['members', 'modules']);
   });
+
+  test(`should gets Urls for documents multi modules`, () => {
+    expectUrlsToEqual('documents', ['members', 'modules']);
+  });
+
+  test(`should gets Urls for documents single module`, () => {
+    expectUrlsToEqual('documentsSingleModule', ['members', 'modules']);
+  });
 });

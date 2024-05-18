@@ -23,9 +23,8 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
   const name = this.page.project.name;
   const version = this.page.project.packageVersion;
 
-  const homeLabel = this.getText('breadcrumbs.home')
-    .replace('{projectName}', name)
-    .replace('{version}', version ? `v${version}` : '')
+  const homeLabel = this.i18n
+    .theme_breadcrumbs_home(name, version ? `v${version}` : '')
     .replace(/\s+/g, ' ')
     .trim();
 

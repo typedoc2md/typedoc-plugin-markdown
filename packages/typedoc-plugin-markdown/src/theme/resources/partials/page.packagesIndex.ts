@@ -15,7 +15,7 @@ export function packagesIndex(
 
   const md: string[] = [];
 
-  md.push(heading(2, this.getText('label.packages')));
+  md.push(heading(2, this.i18n.theme_packages()));
 
   const includeVersion = model.children?.some((projectPackage) =>
     Boolean(projectPackage.packageVersion),
@@ -29,11 +29,11 @@ export function packagesIndex(
   );
 
   if (this.options.getValue('indexFormat') === 'table') {
-    const headers = [this.getText('label.name')];
+    const headers = [this.i18n.theme_name()];
     if (includeVersion) {
-      headers.push('Version');
+      headers.push(this.i18n.theme_version());
     }
-    headers.push('Description');
+    headers.push(this.i18n.theme_description());
 
     const packageRows = model.children?.map((projectPackage) => {
       const packageMeta = this.getPackageMetaData(projectPackage.name);

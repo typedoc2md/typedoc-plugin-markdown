@@ -64,11 +64,11 @@ Links using \`{@link}\` inline tags.
 - [Links to CommentInterface.prop](index.md#prop)
 - [Links to CommentInterface.propb](index.md#propb)
 
-#### Extended by
+#### Extended By
 
 - [\`CommentInterfaceExtended\`](index.md#commentinterfaceextended)
 
-#### Type parameters
+#### Type Parameters
 
 • **T**
 

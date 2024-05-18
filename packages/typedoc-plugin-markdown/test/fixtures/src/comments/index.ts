@@ -2,7 +2,7 @@
  *
  * Comments form module comments
  *
- * @links
+ * > links
  *
  * Links using `{@link}` inline tags.
  *
@@ -23,11 +23,11 @@
  *
  * @module
  *
- * @tagA
+ * @see
  *
  * Comments for a tag
  *
- * @tagB Comments for tag written on same line
+ * @see Comments for tag written on same line
  *
  * ## Html And Jsx
  *
@@ -47,7 +47,8 @@
  * A <tag> in a code block
  * Some <p> html </p> inside codeblock
  * ```
- * @media
+ *
+ * > media
  *
  * You can include media in doc comments:
  *
@@ -55,9 +56,7 @@
  *
  * And include other files:
  *
- * [[include:example.md]] [[include:not-found.md]]
- *
- * @codeBlocks
+ * > codeBlocks
  *
  * ```css
  * .class {color:red}
@@ -68,6 +67,8 @@
  * ```
  *
  * `single line <code> {block}`
+ *
+ * @document ../../inc/example.md
  */
 
 export interface CommentInterface {
@@ -165,7 +166,7 @@ export class ClassPropertiesTable extends BaseClassProperties {
    */
   readonly prop2: RegExp;
   /**
-   * ### Example of Triple Code Block
+   * > Example of Triple Code Block
    *
    * ```python
    * def greet(name):
@@ -198,7 +199,7 @@ export interface InterfacePropertiesTable extends BaseInterfaceProperties {
    */
   prop2: RegExp;
   /**
-   * ### Example of Triple Code Block
+   * > Example of Triple Code Block
    *
    * ```python
    * def greet(name):

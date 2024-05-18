@@ -41,8 +41,6 @@ export class ClassWithSimpleProps {
   propC: string;
   /**
    * Comments for propE
-   *
-   * @tag SomeTag
    */
   propD: string;
 }
@@ -168,8 +166,6 @@ export class ClassWithAccessors {
 
 /**
  * Comments for ClassWithModifiers
- *
- * @Modifiers
  */
 export abstract class ClassWithModifiers {
   /**

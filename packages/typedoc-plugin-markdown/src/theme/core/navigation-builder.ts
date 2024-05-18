@@ -1,63 +1,74 @@
 import { MarkdownRenderer } from '@plugin/app/application';
 import { isQuoted } from '@plugin/libs/utils';
-import { OutputFileStrategy, PLURAL_KIND_KEY_MAP } from '@plugin/options';
+import { OutputFileStrategy } from '@plugin/options';
 import { MarkdownTheme, NavigationItem } from '@plugin/theme';
 import * as path from 'path';
 import {
   DeclarationReflection,
+  DocumentReflection,
   EntryPointStrategy,
+  Options,
   ProjectReflection,
   ReflectionCategory,
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
 
-export function buildNavigation(
-  theme: MarkdownTheme,
-  project: ProjectReflection,
-) {
-  const options = theme.application.options;
-  const navigationOptions = options.getValue('navigationModel');
+export class NavigationBuilder {
+  private options: Options;
+  private packagesMeta: any;
+  private navigationOptions: any;
+  private navigation: NavigationItem[] = [];
+  private isPackages: boolean;
 
-  const navigation: NavigationItem[] = [];
-
-  const packagesMeta = (theme.application.renderer as MarkdownRenderer)
-    .packagesMeta;
-
-  const isPackages =
-    options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
-
-  if (isPackages) {
-    if (Object.keys(packagesMeta)?.length === 1) {
-      buildNavigationFromProject(project);
-    } else {
-      project.children?.forEach((projectChild) => {
-        buildNavigationFromPackage(projectChild);
-      });
-    }
-  } else {
-    buildNavigationFromProject(project);
+  constructor(
+    public theme: MarkdownTheme,
+    public project: ProjectReflection,
+  ) {
+    this.options = theme.application.options;
+    this.navigationOptions = this.options.getValue('navigationModel');
+    this.packagesMeta = (
+      theme.application.renderer as MarkdownRenderer
+    ).packagesMeta;
+    this.navigation = [];
+    this.isPackages =
+      this.options.getValue('entryPointStrategy') ===
+      EntryPointStrategy.Packages;
   }
 
-  return navigation;
+  getNavigation() {
+    if (this.isPackages) {
+      if (Object.keys(this.packagesMeta)?.length === 1) {
+        this.buildNavigationFromProject(this.project);
+      } else {
+        this.project.children?.forEach((projectChild) => {
+          this.buildNavigationFromPackage(projectChild);
+        });
+      }
+    } else {
+      this.buildNavigationFromProject(this.project);
+    }
 
-  function buildNavigationFromPackage(projectChild: DeclarationReflection) {
-    const fileExtension = options.getValue('fileExtension');
+    return this.navigation;
+  }
 
-    const entryFileName = `${path.parse(options.getValue('entryFileName')).name}${fileExtension}`;
+  private buildNavigationFromPackage(projectChild: DeclarationReflection) {
+    const fileExtension = this.options.getValue('fileExtension');
+
+    const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
 
     const preservePackageReadme =
-      Boolean(projectChild.readme) && !options.getValue('mergeReadme');
+      Boolean(projectChild.readme) && !this.options.getValue('mergeReadme');
 
-    const packageOptions = packagesMeta[projectChild.name]?.options;
+    const packageOptions = this.packagesMeta[projectChild.name]?.options;
 
     const outputFileStrategy = packageOptions?.isSet('outputFileStrategy')
       ? packageOptions.getValue('outputFileStrategy')
-      : options.getValue('outputFileStrategy');
+      : this.options.getValue('outputFileStrategy');
 
     const entryModule = packageOptions?.isSet('entryModule')
       ? packageOptions.getValue('entryModule')
-      : options.getValue('entryModule');
+      : this.options.getValue('entryModule');
 
     const projectChildUrl = preservePackageReadme
       ? `${path.dirname(projectChild.url as string)}/${entryFileName}`
@@ -77,12 +88,16 @@ export function buildNavigation(
       outputFileStrategy === OutputFileStrategy.Modules
     ) {
       children.push({
-        title: theme.textContentMappings['label.globals'] as string,
+        title:
+          this.theme.application.internationalization.proxy.theme_globals(),
         path: projectChild.url,
         kind: projectChild.kind,
       });
     }
-    const childGroups = getChildrenOrGroups(projectChild, outputFileStrategy);
+    const childGroups = this.getReflectionGroups(
+      projectChild,
+      outputFileStrategy,
+    );
 
     if (childGroups) {
       children.push(
@@ -90,7 +105,7 @@ export function buildNavigation(
       );
     }
 
-    navigation.push({
+    this.navigation.push({
       title: projectChild.name,
       kind: projectChild.kind,
       children,
@@ -98,61 +113,71 @@ export function buildNavigation(
     });
   }
 
-  function buildNavigationFromProject(
+  private buildNavigationFromProject(
     project: ProjectReflection | DeclarationReflection,
   ) {
-    const entryModule = options.getValue('entryModule');
+    const entryModule = this.options.getValue('entryModule');
 
-    if (!navigationOptions.excludeCategories && project.categories?.length) {
-      navigation.push(
+    if (
+      !this.navigationOptions.excludeCategories &&
+      project.categories?.length
+    ) {
+      this.navigation.push(
         ...project.categories.map((category) => {
           return {
             title: category.title,
-            children: getCategoryGroupChildren(category),
+            children: this.getCategoryGroupChildren(category),
           };
         }),
       );
     } else {
       if (project.groups?.length) {
-        const isEntryModule = Boolean(
-          project?.groups[0]?.children.find(
-            (child) => child.name === entryModule,
-          ),
-        );
         const isOnlyModules = project.children?.every(
           (child) => child.kind === ReflectionKind.Module,
         );
-        if (
-          (project.groups.length === 1 && !Boolean(isEntryModule)) ||
-          isOnlyModules
-        ) {
-          const children = getGroupChildren(project.groups[0]);
-          if (children?.length) {
-            navigation.push(
-              ...children.filter((child) => child.title !== entryModule),
-            );
-          }
+        if (isOnlyModules) {
+          project.groups?.forEach((projectGroup) => {
+            if (projectGroup.owningReflection.kind === ReflectionKind.Module) {
+              const children = this.getGroupChildren(projectGroup);
+              if (children?.length) {
+                this.navigation.push(
+                  ...children.filter((child) => child.title !== entryModule),
+                );
+              }
+            } else {
+              this.navigation.push({
+                title: projectGroup.title,
+                children: projectGroup.children.map((child) => {
+                  return {
+                    title: child.name,
+                    kind: child.kind,
+                    path: child.url,
+                  };
+                }),
+              });
+            }
+          });
         } else {
           project.groups?.forEach((projectGroup) => {
-            const children = getGroupChildren(projectGroup);
+            const children = this.getGroupChildren(projectGroup);
             const indexModule = projectGroup.children.find(
               (child) => child.name === entryModule,
             );
             if (children?.length) {
-              navigation.push({
-                title:
-                  theme.textContentMappings[
-                    PLURAL_KIND_KEY_MAP[projectGroup.title]
-                  ] || projectGroup.title,
+              this.navigation.push({
+                title: projectGroup.title,
                 children: children.filter(
                   (child) => child.title !== entryModule,
                 ),
               });
             }
             if (indexModule) {
-              const children = getChildrenOrGroups(indexModule);
+              const children =
+                indexModule instanceof DeclarationReflection
+                  ? this.getReflectionGroups(indexModule)
+                  : [];
               if (children) {
-                navigation.push(...children);
+                this.navigation.push(...children);
               }
             }
           });
@@ -161,11 +186,14 @@ export function buildNavigation(
     }
   }
 
-  function getCategoryGroupChildren(group: ReflectionCategory) {
+  private getCategoryGroupChildren(group: ReflectionCategory) {
     return group.children
       ?.filter((child) => child.hasOwnDocument)
       .map((child) => {
-        const children = getChildrenOrGroups(child);
+        const children =
+          child instanceof DeclarationReflection
+            ? this.getReflectionGroups(child)
+            : [];
         return {
           title: child.name,
           kind: child.kind,
@@ -175,15 +203,18 @@ export function buildNavigation(
       });
   }
 
-  function getGroupChildren(
+  private getGroupChildren(
     group: ReflectionGroup,
     outputFileStrategy?: OutputFileStrategy,
   ) {
-    if (!navigationOptions.excludeCategories && group?.categories?.length) {
+    if (
+      !this.navigationOptions.excludeCategories &&
+      group?.categories?.length
+    ) {
       return group.categories?.map((category) => {
         return {
           title: category.title,
-          children: getCategoryGroupChildren(category),
+          children: this.getCategoryGroupChildren(category),
         };
       });
     }
@@ -191,16 +222,18 @@ export function buildNavigation(
     return group.children
       ?.filter((child) => child.hasOwnDocument)
       .reduce((acc: NavigationItem[], child) => {
-        const mapping = theme.getTemplateMapping(
+        const mapping = this.theme.getTemplateMapping(
           child.kind,
           outputFileStrategy,
         );
         if (Boolean(mapping)) {
           const children =
-            !navigationOptions.excludeCategories && child.categories?.length
+            child instanceof DeclarationReflection &&
+            !this.navigationOptions.excludeCategories &&
+            child.categories?.length
               ? child.categories
                   ?.map((category) => {
-                    const catChildren = getCategoryGroupChildren(category);
+                    const catChildren = this.getCategoryGroupChildren(category);
                     return catChildren.length
                       ? {
                           title: category.title,
@@ -209,25 +242,29 @@ export function buildNavigation(
                       : null;
                   })
                   .filter((cat) => Boolean(cat))
-              : getChildrenOrGroups(child, outputFileStrategy);
-          return processChildren(acc, child, children as NavigationItem[]);
+              : this.getReflectionGroups(child, outputFileStrategy);
+          return this.processChildren(acc, child, children as NavigationItem[]);
         }
       }, []);
   }
 
-  function getChildrenOrGroups(
-    reflection: DeclarationReflection,
+  private getReflectionGroups(
+    reflection: DeclarationReflection | DocumentReflection,
     outputFileStrategy?: OutputFileStrategy,
   ): NavigationItem[] | null {
     if (
+      reflection instanceof DeclarationReflection &&
       reflection.groups?.some((group) => group.allChildrenHaveOwnDocument())
     ) {
-      if (navigationOptions.excludeGroups) {
-        return reflection.children
+      if (this.navigationOptions.excludeGroups) {
+        return reflection.childrenIncludingDocuments
           ?.filter((child) => child.hasOwnDocument)
           .reduce((acc, child) => {
-            const children = getChildrenOrGroups(child, outputFileStrategy);
-            return processChildren(acc, child, children);
+            const children = this.getReflectionGroups(
+              child,
+              outputFileStrategy,
+            );
+            return this.processChildren(acc, child, children);
           }, []) as NavigationItem[];
       }
 
@@ -237,33 +274,39 @@ export function buildNavigation(
 
       if (isModulesGroup) {
         return (
-          getGroupChildren(reflection.groups[0], outputFileStrategy) || null
+          this.getGroupChildren(reflection.groups[0], outputFileStrategy) ||
+          null
         );
       }
 
       return reflection.groups
         ?.map((group) => {
-          const groupChildren = getGroupChildren(group, outputFileStrategy);
-          return groupChildren?.length
-            ? {
-                title:
-                  theme.textContentMappings[PLURAL_KIND_KEY_MAP[group.title]] ||
-                  group.title,
-                children: groupChildren || null,
-              }
-            : null;
+          const groupChildren = this.getGroupChildren(
+            group,
+            outputFileStrategy,
+          );
+          if (groupChildren?.length) {
+            if (group.owningReflection.kind === ReflectionKind.Document) {
+              return groupChildren[0];
+            }
+            return {
+              title: group.title,
+              children: groupChildren,
+            };
+          }
+          return null;
         })
         .filter((group) => Boolean(group)) as NavigationItem[];
     }
     return null;
   }
 
-  function processChildren(
+  private processChildren(
     acc: NavigationItem[],
-    child: DeclarationReflection,
+    child: DeclarationReflection | DocumentReflection,
     children: NavigationItem[] | null,
   ) {
-    if (!isQuoted(child.name) && !navigationOptions.excludeFolders) {
+    if (!isQuoted(child.name) && !this.navigationOptions.excludeFolders) {
       const titleParts = child.name.split('/');
       if (!child.name.startsWith('@') && titleParts.length > 1) {
         let currentLevel = acc;

@@ -129,8 +129,8 @@ const config: Record<string, Fixture> = {
       hideBreadcrumbs: true,
       readme: 'none',
       disableSources: true,
-      media: './test/fixtures/media',
-      includes: './test/fixtures/inc',
+      inlineDocuments: true,
+      //media: './test/fixtures/media',
     },
     options: [
       {
@@ -260,6 +260,58 @@ const config: Record<string, Fixture> = {
           path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
         ],
         theme: 'custom-theme',
+      },
+    ],
+  },
+  documents: {
+    only: false,
+    entryPoints: ['/documents/module-1.ts', '/documents/module-2.ts'],
+    commonOptions: {
+      hidePageHeader: true,
+      plugin: [
+        path.join(__dirname, 'custom-plugins', 'stub-documents-theme.mjs'),
+        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+      ],
+      theme: 'stub-documents',
+      readme: 'none',
+      disableSources: true,
+      projectDocuments: [
+        './test/fixtures/PROJECT_DOC_1.md',
+        './test/fixtures/docs/project/PROJECT_DOC_2.md',
+        './test/fixtures/docs/project/PROJECT_DOC_3.md',
+      ],
+    },
+    options: [
+      {},
+      {
+        indexFormat: 'table',
+        flattenOutputFiles: true,
+      },
+    ],
+  },
+  documentsSingleModule: {
+    only: false,
+    entryPoints: ['/documents/module-1.ts'],
+    commonOptions: {
+      hidePageHeader: true,
+      plugin: [
+        path.join(__dirname, 'custom-plugins', 'stub-documents-theme.mjs'),
+        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+      ],
+      theme: 'stub-documents',
+      readme: 'none',
+      disableSources: true,
+      projectDocuments: [
+        './test/fixtures/PROJECT_DOC_1.md',
+        './test/fixtures/docs/project/PROJECT_DOC_2.md',
+        './test/fixtures/docs/project/PROJECT_DOC_3.md',
+      ],
+    },
+    options: [
+      {},
+      {
+        indexFormat: 'table',
+        inlineDocuments: true,
       },
     ],
   },

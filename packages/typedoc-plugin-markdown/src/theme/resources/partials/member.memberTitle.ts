@@ -24,10 +24,7 @@ export function memberTitle(
 
   name.push(
     `${
-      /\\/.test(model.name) ||
-      (model.name.startsWith('[') && model.signatures?.length)
-        ? backTicks(model.name)
-        : escapeChars(model.name)
+      /\\/.test(model.name) ? backTicks(model.name) : escapeChars(model.name)
     }`,
   );
 

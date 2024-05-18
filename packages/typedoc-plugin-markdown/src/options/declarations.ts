@@ -4,7 +4,6 @@ import {
   MembersWithOwnFile,
   OutputFileStrategy,
 } from './option-maps';
-import { TEXT_MAPPING_DEFAULTS } from './text-mappings/text-mapping-defaults';
 
 /**
  *
@@ -137,6 +136,13 @@ export const fileExtension: Partial<DeclarationOption> = {
   help: 'Specify the file extension for generated output files.',
   type: ParameterType.String,
   defaultValue: '.md',
+  validate(value) {
+    if (!value.startsWith('.')) {
+      throw new Error(
+        '[typedoc-plugin-markdown] "fileExtension" must start with a period.',
+      );
+    }
+  },
 };
 
 /**
@@ -247,6 +253,17 @@ export const hidePageTitle: Partial<DeclarationOption> = {
  */
 export const hideBreadcrumbs: Partial<DeclarationOption> = {
   help: 'Do not print breadcrumbs.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default a documents index and separate documents pages are generated when using the `@document` tag.
+ *
+ * @category UX
+ */
+export const inlineDocuments: Partial<DeclarationOption> = {
+  help: 'Inline documents in pages.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -434,7 +451,7 @@ export const tableColumns: Partial<DeclarationOption> = {
 export const textContentMappings: Partial<DeclarationOption> = {
   help: 'Provides a mechanism to change the content of text used in documentation.',
   type: ParameterType.Mixed,
-  defaultValue: TEXT_MAPPING_DEFAULTS,
+  defaultValue: {},
   validate(value) {
     if (!value || typeof value !== 'object') {
       throw new Error(
@@ -446,18 +463,6 @@ export const textContentMappings: Partial<DeclarationOption> = {
       if (typeof val !== 'string') {
         throw new Error(
           `[typedoc-plugin-markdown] All values of textContentMappings must be strings.`,
-        );
-      }
-    }
-
-    for (const key of Object.keys(value)) {
-      if (!Object.keys(TEXT_MAPPING_DEFAULTS).includes(key)) {
-        throw new Error(
-          `[typedoc-plugin-markdown] "${key}" is not a valid "textContentMappings" key. Valid keys are ${Object.keys(
-            TEXT_MAPPING_DEFAULTS,
-          )
-            .map((key) => `"${key}"`)
-            .join(', ')}.`,
         );
       }
     }

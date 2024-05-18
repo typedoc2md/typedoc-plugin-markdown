@@ -33,9 +33,9 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 | :------ | :------ | :------ |
 | \`someProp?\` | \`boolean\` | Description for prop someProp |
 
-## My Events
+## Events
 
-| Event! | Type |
+| Event | Type |
 | :------ | :------ |
 | \`someEvent\` | \`MouseEvent\` |
 
@@ -52,11 +52,11 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 
 [typedoc-stubs v0.0](../modules.md) / module-1
 
-# Module - module-1
+# module-1 - module-1
 
 ## Index
 
-### 多变的
+### Interfaces
 
 - [SomeInterface](interfaces/SomeInterface.md)
 
@@ -73,9 +73,9 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 
 [typedoc-stubs v0.0](modules.md) / module-2
 
-# Module - module-2
+# module-2 - module-2
 
-## CoolVars
+## Variables
 
 ### constA
 
@@ -95,7 +95,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
     "path": "module-1/README.md",
     "children": [
       {
-        "title": "多变的",
+        "title": "Interfaces",
         "children": [
           {
             "title": "SomeInterface",
@@ -112,7 +112,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
     "path": "module-2/README.md",
     "children": [
       {
-        "title": "CoolVars",
+        "title": "Variables",
         "children": [
           {
             "title": "constA",

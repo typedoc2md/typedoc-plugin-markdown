@@ -1,0 +1,3 @@
+> Namespace Documentation
+
+Document content

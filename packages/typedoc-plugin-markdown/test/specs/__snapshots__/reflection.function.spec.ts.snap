@@ -11,7 +11,7 @@ Comments for function
 
 \`Function\`
 
-### Type parameters
+### Type Parameters
 
 • **T**
 
@@ -42,9 +42,9 @@ Comments for function
 
 \`Function\`
 
-### Type parameters
+### Type Parameters
 
-| Type parameter |
+| Type Parameter |
 | :------ |
 | \`T\` |
 
@@ -415,7 +415,7 @@ This is a function with a parameter that has a default value.
 
 ## Parameters
 
-| Parameter | Type | Default value | Description |
+| Parameter | Type | Default Value | Description |
 | :------ | :------ | :------ | :------ |
 | \`valueA\` | \`string\` | \`'defaultValue'\` | A parameter with a default string value. |
 | \`valueB\` | \`number\` | \`100\` | A parameter with a default numeric value. |
@@ -436,6 +436,8 @@ This is a function with a parameter that has a default value.
 
 exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithMultipleSignatures()
+
+Main function comment.
 
 ## functionWithMultipleSignatures(value)
 
@@ -485,6 +487,8 @@ A value of the object.
 
 exports[`Function Reflection should compile function with multiple signatures: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Function: functionWithMultipleSignatures()
+
+Main function comment.
 
 ## functionWithMultipleSignatures(value)
 
@@ -749,7 +753,7 @@ This is a function with a parameters.
 
 ## Parameters
 
-| Parameter | Type | Default value | Description |
+| Parameter | Type | Default Value | Description |
 | :------ | :------ | :------ | :------ |
 | \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
 | \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
@@ -781,7 +785,7 @@ This is a function with a parameters.
 
 ## Parameters
 
-| Parameter | Type | Default value | Description |
+| Parameter | Type | Default Value | Description |
 | :------ | :------ | :------ | :------ |
 | \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
 | \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
@@ -854,7 +858,7 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 
 Function with type parameters
 
-## Type parameters
+## Type Parameters
 
 • **T**
 
@@ -881,9 +885,9 @@ function functionWithTypeParameters<T, Item>(): boolean
 
 Function with type parameters
 
-## Type parameters
+## Type Parameters
 
-| Type parameter | Value | Description |
+| Type Parameter | Value | Description |
 | :------ | :------ | :------ |
 | \`T\` | - | Comments for T |
 | \`Item\` | \`string\` \\| \`boolean\` | - |

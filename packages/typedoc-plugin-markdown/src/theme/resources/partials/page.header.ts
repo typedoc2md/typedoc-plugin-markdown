@@ -34,13 +34,12 @@ export function header(this: MarkdownThemeContext): string {
     const name = this.page.project.name;
     const version = this.page.project.packageVersion;
 
-    const title = this.getText('header.title')
-      .replace('{projectName}', name)
-      .replace('{version}', version ? `v${version}` : '')
+    const title = this.i18n
+      .theme_header_title(name, version ? `v${version}` : '')
       .replace(/\s+/g, ' ')
       .trim();
 
-    const indexLabel = this.getText('header.docs');
+    const indexLabel = this.i18n.theme_header_docs();
 
     if (this.page.url === entryFileName) {
       md.push(bold(title));
@@ -93,7 +92,7 @@ export function header(this: MarkdownThemeContext): string {
 
     const md: string[] = [];
 
-    const indexLabel = this.getText('header.docs');
+    const indexLabel = this.i18n.theme_header_docs();
 
     const ignoreScopes = this.options.getValue('excludeScopesInPaths');
     const fileExtension = this.options.getValue('fileExtension');

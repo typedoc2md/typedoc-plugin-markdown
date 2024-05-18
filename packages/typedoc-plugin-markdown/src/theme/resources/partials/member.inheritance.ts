@@ -17,7 +17,7 @@ export function inheritance(
   if (model.implementationOf) {
     if (options.headingLevel !== -1) {
       md.push(
-        heading(options.headingLevel, this.getText('label.implementationOf')),
+        heading(options.headingLevel, this.i18n.theme_implementation_of()),
       );
     }
     md.push(this.partials.typeAndParent(model.implementationOf));
@@ -25,15 +25,13 @@ export function inheritance(
 
   if (model.inheritedFrom) {
     if (options.headingLevel !== -1) {
-      md.push(
-        heading(options.headingLevel, this.getText('label.inheritedFrom')),
-      );
+      md.push(heading(options.headingLevel, this.i18n.theme_inherited_from()));
     }
     md.push(this.partials.typeAndParent(model.inheritedFrom));
   }
 
   if (model.overwrites) {
-    const overridesLabel = this.getText('label.overrides');
+    const overridesLabel = this.i18n.theme_overrides();
     if (options.headingLevel !== -1) {
       md.push(heading(options.headingLevel, overridesLabel));
     }

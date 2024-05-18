@@ -45,11 +45,12 @@ export function accessor(
 
   if (model.setSignature?.parameters?.length) {
     md.push(
-      heading(options.headingLevel, this.getText('kind.parameter.plural')),
+      heading(
+        options.headingLevel,
+        this.internationalization.kindPluralString(ReflectionKind.Parameter),
+      ),
     );
-    if (
-      this.options.getValue('parametersFormat').toLowerCase().includes('table')
-    ) {
+    if (this.options.getValue('parametersFormat') === 'table') {
       md.push(this.partials.parametersTable(model.setSignature.parameters));
     } else {
       md.push(this.partials.parametersList(model.setSignature.parameters));

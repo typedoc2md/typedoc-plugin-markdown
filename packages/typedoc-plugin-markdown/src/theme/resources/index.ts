@@ -1,4 +1,5 @@
 // THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
+import { MarkdownPageEvent } from '@plugin/app/events';
 import { MarkdownThemeContext } from '@plugin/theme';
 import {
   ArrayType,
@@ -8,6 +9,7 @@ import {
   ContainerReflection,
   DeclarationHierarchy,
   DeclarationReflection,
+  DocumentReflection,
   IndexedAccessType,
   InferredType,
   IntersectionType,
@@ -33,6 +35,7 @@ import {
   UnknownType,
 } from 'typedoc';
 
+import { document } from './templates/document';
 import { project } from './templates/project';
 import { readme } from './templates/read-me';
 import { reflection } from './templates/reflection';
@@ -45,8 +48,10 @@ import { groups } from './partials/container.groups';
 import { members } from './partials/container.members';
 import { accessor } from './partials/member.accessor';
 import { constructor } from './partials/member.constructors';
+import { memberContainer } from './partials/member.container';
 import { declaration } from './partials/member.declaration';
 import { declarationTitle } from './partials/member.declarationTitle';
+import { documents } from './partials/member.documents';
 import { enumMembersTable } from './partials/member.enumMembersTable';
 import { hierarchy } from './partials/member.hierarchy';
 import { indexSignature } from './partials/member.indexSignature';
@@ -63,6 +68,7 @@ import { signature } from './partials/member.signature';
 import { signatureParameters } from './partials/member.signatureParameters';
 import { signatureReturns } from './partials/member.signatureReturns';
 import { signatureTitle } from './partials/member.signatureTitle';
+import { signatures } from './partials/member.signatures';
 import { sources } from './partials/member.sources';
 import { member } from './partials/member';
 import { typeAndParent } from './partials/member.typeAndParent';
@@ -96,9 +102,12 @@ import { typeOperatorType } from './partials/type.type-operator';
 import { unionType } from './partials/type.union';
 import { unknownType } from './partials/type.unknown';
 
-import { getDeclarationComment } from './helpers/get-declaration-comment';
 import { getDeclarationType } from './helpers/get-declaration-type';
+import { getDescriptionForReflection } from './helpers/get-description-for-reflection';
 import { getFlattenedDeclarations } from './helpers/get-flattened-declarations';
+import { getGroupIndexList } from './helpers/get-group-index-list';
+import { getGroupIndexTable } from './helpers/get-group-index-table';
+import { getGroupIndex } from './helpers/get-group-index';
 import { getHierarchyType } from './helpers/get-hierarchy-type';
 import { getKeyword } from './helpers/get-keyword';
 import { getModifier } from './helpers/get-modifier';
@@ -110,27 +119,31 @@ import { isGroupKind } from './helpers/is-group-kind';
 export const templates = (context: MarkdownThemeContext) => {
   return {
     /**
-     * Template that maps to the root project reflection. This will be the index page / documentation root page.
-     *
+     * Template that maps to a project document.
      */
-    project: () => project.apply(context, []) as string,
+    document: (page: MarkdownPageEvent<DocumentReflection>) =>
+      document.apply(context, [page]) as string,
+    /**
+     * Template that maps to the root project reflection. This will be the index page / documentation root page.
+     */
+    project: (page: MarkdownPageEvent<ProjectReflection>) =>
+      project.apply(context, [page]) as string,
     /**
      * Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
-     *
      */
-    readme: () => readme.apply(context, []) as string,
+    readme: (page: MarkdownPageEvent<ProjectReflection>) =>
+      readme.apply(context, [page]) as string,
     /**
      * Template that maps to individual reflection models.
-     *
      */
-    reflection: () => reflection.apply(context, []) as string,
+    reflection: (page: MarkdownPageEvent<DeclarationReflection>) =>
+      reflection.apply(context, [page]) as string,
   };
 };
 
 export const partials = (context: MarkdownThemeContext) => {
   return {
     /**
-     *
      *
      * @category Comment Partials
      */
@@ -145,13 +158,11 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => comment.apply(context, [model, options]) as string,
     /**
      *
-     *
      * @category Comment Partials
      */
     commentParts: (model: CommentDisplayPart[]) =>
       commentParts.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Container Partials
      */
@@ -159,7 +170,6 @@ export const partials = (context: MarkdownThemeContext) => {
       body.apply(context, [model, options]) as string,
     /**
      * Renders a collection of reflection categories.
-     *
      * @category Container Partials
      */
     categories: (
@@ -168,14 +178,12 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => categories.apply(context, [model, options]) as string,
     /**
      * Renders a collection of reflection groups.
-     *
      * @category Container Partials
      */
     groups: (model: ReflectionGroup[], options: { headingLevel: number }) =>
       groups.apply(context, [model, options]) as string,
     /**
      * Renders a collection of members.
-     *
      * @category Container Partials
      */
     members: (
@@ -184,7 +192,6 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => members.apply(context, [model, options]) as string,
     /**
      * Renders an accessor member.
-     *
      * @category Member Partials
      */
     accessor: (
@@ -193,7 +200,6 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => accessor.apply(context, [model, options]) as string,
     /**
      * Renders an constructor member.
-     *
      * @category Member Partials
      */
     constructor: (
@@ -201,8 +207,15 @@ export const partials = (context: MarkdownThemeContext) => {
       options: { headingLevel: number },
     ) => constructor.apply(context, [model, options]) as string,
     /**
-     * Renders a standard declaration member.
      *
+     * @category Member Partials
+     */
+    memberContainer: (
+      model: DeclarationReflection,
+      options: { headingLevel: number; nested?: boolean | undefined },
+    ) => memberContainer.apply(context, [model, options]) as string,
+    /**
+     * Renders a standard declaration member.
      * @category Member Partials
      */
     declaration: (
@@ -214,20 +227,25 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => declaration.apply(context, [model, options]) as string,
     /**
      *
-     *
      * @category Member Partials
      */
     declarationTitle: (model: DeclarationReflection) =>
       declarationTitle.apply(context, [model]) as string,
     /**
-     * Renders enum members as a table.
      *
+     * @category Member Partials
+     */
+    documents: (
+      model: ProjectReflection | DeclarationReflection | ContainerReflection,
+      options: { headingLevel: number },
+    ) => documents.apply(context, [model, options]) as string,
+    /**
+     * Renders enum members as a table.
      * @category Member Partials
      */
     enumMembersTable: (model: DeclarationReflection[]) =>
       enumMembersTable.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
@@ -237,14 +255,12 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => hierarchy.apply(context, [model, options]) as string,
     /**
      * Renders an index signature block
-     *
      * @category Member Partials
      */
     indexSignature: (model: SignatureReflection) =>
       indexSignature.apply(context, [model]) as string,
     /**
      * Renders an inheritance section.
-     *
      * @category Member Partials
      */
     inheritance: (
@@ -253,14 +269,12 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => inheritance.apply(context, [model, options]) as string,
     /**
      * Renders the main member title.
-     *
      * @category Member Partials
      */
     memberTitle: (model: DeclarationReflection) =>
       memberTitle.apply(context, [model]) as string,
     /**
      * Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
-     *
      * @category Member Partials
      */
     memberWithGroups: (
@@ -269,13 +283,11 @@ export const partials = (context: MarkdownThemeContext) => {
     ) => memberWithGroups.apply(context, [model, options]) as string,
     /**
      *
-     *
      * @category Member Partials
      */
     parametersList: (model: ParameterReflection[]) =>
       parametersList.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
@@ -285,7 +297,6 @@ export const partials = (context: MarkdownThemeContext) => {
  * Renders a collection of properties in a table.
 
 There is no association list partial for properties as these are handled as a standard list of members.
- *
  * @category Member Partials
  *
  */
@@ -295,30 +306,26 @@ There is no association list partial for properties as these are handled as a st
     ) => declarationsTable.apply(context, [model, options]) as string,
     /**
      * Renders an reference member.
-     *
      * @category Member Partials
      */
     referenceMember: (model: ReferenceReflection) =>
       referenceMember.apply(context, [model]) as string,
     /**
      * Renders the flags of a reflection.
-     *
      * @category Member Partials
      */
     reflectionFlags: (model: Reflection) =>
       reflectionFlags.apply(context, [model]) as string,
     /**
-     * Renders the index section of a reflection.
      *
      * @category Member Partials
      */
     reflectionIndex: (
-      model: DeclarationReflection | ProjectReflection,
+      model: ProjectReflection | DeclarationReflection,
       options: { headingLevel: number },
     ) => reflectionIndex.apply(context, [model, options]) as string,
     /**
      * Renders a signature member.
-     *
      * @category Member Partials
      */
     signature: (
@@ -327,17 +334,16 @@ There is no association list partial for properties as these are handled as a st
         headingLevel: number;
         nested?: boolean | undefined;
         accessor?: string | undefined;
+        multipleSignatures?: boolean | undefined;
       },
     ) => signature.apply(context, [model, options]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
     signatureParameters: (model: ParameterReflection[]) =>
       signatureParameters.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
@@ -346,7 +352,6 @@ There is no association list partial for properties as these are handled as a st
       options: { headingLevel: number },
     ) => signatureReturns.apply(context, [model, options]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
@@ -357,7 +362,14 @@ There is no association list partial for properties as these are handled as a st
         | undefined,
     ) => signatureTitle.apply(context, [model, options]) as string,
     /**
-     *
+     * Renders a signature collection.
+     * @category Member Partials
+     */
+    signatures: (
+      model: DeclarationReflection,
+      options: { headingLevel: number; nested?: boolean | undefined },
+    ) => signatures.apply(context, [model, options]) as string,
+    /**
      *
      * @category Member Partials
      */
@@ -367,7 +379,6 @@ There is no association list partial for properties as these are handled as a st
     ) => sources.apply(context, [model, options]) as string,
     /**
      *
-     *
      * @category Member Partials
      */
     member: (
@@ -376,13 +387,11 @@ There is no association list partial for properties as these are handled as a st
     ) => member.apply(context, [model, options]) as string,
     /**
      *
-     *
      * @category Member Partials
      */
     typeAndParent: (model: ArrayType | ReferenceType) =>
       typeAndParent.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
@@ -392,7 +401,6 @@ There is no association list partial for properties as these are handled as a st
     ) => typeArguments.apply(context, [model, options]) as string,
     /**
      *
-     *
      * @category Member Partials
      */
     typeDeclaration: (
@@ -400,7 +408,6 @@ There is no association list partial for properties as these are handled as a st
       options: { headingLevel: number },
     ) => typeDeclaration.apply(context, [model, options]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
@@ -410,13 +417,11 @@ There is no association list partial for properties as these are handled as a st
     ) => typeDeclarationList.apply(context, [model, headingLevel]) as string,
     /**
      *
-     *
      * @category Member Partials
      */
     typeDeclarationTable: (model: DeclarationReflection[]) =>
       typeDeclarationTable.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Member Partials
      */
@@ -424,31 +429,26 @@ There is no association list partial for properties as these are handled as a st
       typeParametersList.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Member Partials
      */
     typeParametersTable: (model: TypeParameterReflection[]) =>
       typeParametersTable.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Page Partials
      */
     breadcrumbs: () => breadcrumbs.apply(context, []) as string,
     /**
-     *
      *
      * @category Page Partials
      */
     footer: () => footer.apply(context, []) as string,
     /**
      *
-     *
      * @category Page Partials
      */
     header: () => header.apply(context, []) as string,
     /**
-     *
      *
      * @category Page Partials
      */
@@ -456,12 +456,10 @@ There is no association list partial for properties as these are handled as a st
       packagesIndex.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Page Partials
      */
     pageTitle: () => pageTitle.apply(context, []) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -469,13 +467,11 @@ There is no association list partial for properties as these are handled as a st
       arrayType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     conditionalType: (model: ConditionalType) =>
       conditionalType.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -483,13 +479,11 @@ There is no association list partial for properties as these are handled as a st
       indexAccessType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     inferredType: (model: InferredType) =>
       inferredType.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -497,13 +491,11 @@ There is no association list partial for properties as these are handled as a st
       intersectionType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     intrinsicType: (model: IntrinsicType) =>
       intrinsicType.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -511,13 +503,11 @@ There is no association list partial for properties as these are handled as a st
       literalType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     namedTupleType: (model: NamedTupleMember) =>
       namedTupleType.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -525,20 +515,17 @@ There is no association list partial for properties as these are handled as a st
       queryType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     referenceType: (model: ReferenceType) =>
       referenceType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     declarationType: (model: DeclarationReflection) =>
       declarationType.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -548,7 +535,6 @@ There is no association list partial for properties as these are handled as a st
     ) => functionType.apply(context, [model, options]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     reflectionType: (
@@ -557,13 +543,11 @@ There is no association list partial for properties as these are handled as a st
     ) => reflectionType.apply(context, [model, options]) as string,
     /**
      * Takes a generic Type and returns the appropriate partial for it.
-     *
      * @category Type Partials
      */
     someType: (model?: SomeType | undefined) =>
       someType.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -571,20 +555,17 @@ There is no association list partial for properties as these are handled as a st
       tupleType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     typeOperatorType: (model: TypeOperatorType) =>
       typeOperatorType.apply(context, [model]) as string,
     /**
      *
-     *
      * @category Type Partials
      */
     unionType: (model: UnionType) =>
       unionType.apply(context, [model]) as string,
     /**
-     *
      *
      * @category Type Partials
      */
@@ -595,10 +576,10 @@ There is no association list partial for properties as these are handled as a st
 
 export const helpers = (context: MarkdownThemeContext) => {
   return {
-    getDeclarationComment: (model: DeclarationReflection) =>
-      getDeclarationComment.apply(context, [model]) as Comment | undefined,
     getDeclarationType: (model: DeclarationReflection) =>
       getDeclarationType.apply(context, [model]) as SomeType | undefined,
+    getDescriptionForReflection: (model: DeclarationReflection) =>
+      getDescriptionForReflection.apply(context, [model]) as string | null,
     getFlattenedDeclarations: (
       model: DeclarationReflection[],
       options?: { includeSignatures: boolean } | undefined,
@@ -607,6 +588,14 @@ export const helpers = (context: MarkdownThemeContext) => {
         model,
         options,
       ]) as DeclarationReflection[],
+    getGroupIndexList: (
+      children: DeclarationReflection[] | DocumentReflection[],
+    ) => getGroupIndexList.apply(context, [children]) as string,
+    getGroupIndexTable: (
+      children: DeclarationReflection[] | DocumentReflection[],
+    ) => getGroupIndexTable.apply(context, [children]) as string,
+    getGroupIndex: (group: ReflectionCategory | ReflectionGroup) =>
+      getGroupIndex.apply(context, [group]) as any,
     getHierarchyType: (
       model: SomeType,
       options?: { isTarget: boolean } | undefined,

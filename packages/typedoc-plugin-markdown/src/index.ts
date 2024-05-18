@@ -43,8 +43,15 @@ export function load(app: Application) {
   });
 
   /**
+   * =========================================
+   * 2. Extend locale with plugin translations
+   * =========================================
+   */
+  //app.internationalization.addTranslations('en', getTranslatable(app));
+
+  /**
    * =================================================
-   * 2. Intercept and modify some TypeDoc core methods
+   * 3. Intercept and modify some TypeDoc core methods
    * =================================================
    *
    * Currently the TypeDoc {@link Renderer} class is quite coupled to the HTML theme so we override a couple of core methods.

@@ -24,12 +24,10 @@ export function hierarchy(
       : null;
     if (hModel.next) {
       if (parent) {
-        md.push(heading(options.headingLevel, this.getText('label.extends')));
+        md.push(heading(options.headingLevel, this.i18n.theme_extends()));
         md.push(`- ${parent}`);
       } else {
-        md.push(
-          heading(options.headingLevel, this.getText('label.extendedBy')),
-        );
+        md.push(heading(options.headingLevel, this.i18n.theme_extended_by()));
         const lines: string[] = [];
         hModel.next.types.forEach((hierarchyType) => {
           lines.push(

@@ -1,6 +1,6 @@
 import { backTicks, htmlTable, italic, table } from '@plugin/libs/markdown';
 import { MarkdownThemeContext } from '@plugin/theme';
-import { TypeParameterReflection } from 'typedoc';
+import { ReflectionKind, TypeParameterReflection } from 'typedoc';
 
 /**
  * @category Member Partials
@@ -19,16 +19,17 @@ export function typeParametersTable(
     Boolean(typeParameter.comment),
   );
 
-  const headers = [this.getText('kind.typeParameter.singular')];
+  const headers = [
+    this.internationalization.kindSingularString(ReflectionKind.TypeParameter),
+  ];
 
   if (hasDefault) {
-    headers.push(this.getText('label.value'));
+    headers.push(this.i18n.theme_value());
   }
 
   if (hasComments) {
-    headers.push(this.getText('label.description'));
+    headers.push(this.i18n.theme_description());
   }
-
   const rows: string[][] = [];
   model?.forEach((typeParameter) => {
     const row: string[] = [];

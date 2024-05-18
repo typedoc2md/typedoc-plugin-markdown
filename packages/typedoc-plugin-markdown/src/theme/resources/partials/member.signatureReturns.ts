@@ -20,7 +20,7 @@ export function signatureReturns(
   const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(heading(options.headingLevel, this.getText('label.returns')));
+  md.push(heading(options.headingLevel, this.i18n.theme_returns()));
 
   if (typeDeclaration?.signatures) {
     md.push(backTicks('Function'));

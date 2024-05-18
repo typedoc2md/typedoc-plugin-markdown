@@ -1,11 +1,10 @@
 import { MarkdownRenderer } from '@plugin/app/application';
 import { MarkdownPageEvent } from '@plugin/app/events';
 import { MarkdownRendererHooks } from '@plugin/app/renderer';
-import { TextContentMappings } from '@plugin/options';
 import { MarkdownTheme, PackageMetaData } from '@plugin/theme';
 import { helpers, partials, templates } from '@plugin/theme/resources';
 import * as path from 'path';
-import { Options, Reflection } from 'typedoc';
+import { Internationalization, Options, Reflection } from 'typedoc';
 
 /**
  * The theme context class that is provided as context on the rendering of every page.
@@ -43,6 +42,9 @@ import { Options, Reflection } from 'typedoc';
  * @category Theme
  */
 export class MarkdownThemeContext {
+  internationalization: Internationalization.Internationalization;
+  i18n: Internationalization.TranslationProxy;
+
   /**
    *
    */
@@ -60,14 +62,10 @@ export class MarkdownThemeContext {
      */
     readonly options: Options,
   ) {
-    this.textContentMappings = this.theme.textContentMappings;
     this.packagesMetaData = (this.theme.owner as MarkdownRenderer).packagesMeta;
+    this.internationalization = theme.application.internationalization;
+    this.i18n = this.internationalization.proxy;
   }
-
-  /**
-   * Holds the textmappings object of the theme.
-   */
-  private textContentMappings: Partial<TextContentMappings>;
 
   /**
    * Holds meta data for individual packages (if entryPointStrategy equals `packages`).
@@ -118,15 +116,6 @@ export class MarkdownThemeContext {
    * @group Resources
    */
   helpers = helpers(this);
-
-  /**
-   * Get text mappings from the theme.
-   *
-   * @param key - The key of the text mappings
-   */
-  getText(key: keyof TextContentMappings): string {
-    return this.textContentMappings[key] as string;
-  }
 
   /**
    * Returns the package meta data for a given package name when entrypointStrategy is set to `packages`.

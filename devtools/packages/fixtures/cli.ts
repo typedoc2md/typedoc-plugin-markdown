@@ -41,7 +41,7 @@ async function main() {
     const outputFileStrategies: ('members' | 'modules')[] =
       config.outputFileStrategies || ['members', 'modules'];
 
-    //writeHtml(key, config.entryPoints);
+    writeHtml(key, config.entryPoints);
     outputFileStrategies.forEach((outputFileStrategy) => {
       config.options.forEach((optionGroup, index: number) => {
         const options = {
@@ -99,6 +99,10 @@ function writeMarkdown(
 }
 
 export function writeHtml(key: string, entryPoints: string[]) {
+  const fixturesRoot = path.join(
+    __dirname,
+    '../../../packages/typedoc-plugin-markdown/test/fixtures',
+  );
   const fullPath = path.join(
     process.cwd(),
     'test',
@@ -117,6 +121,14 @@ export function writeHtml(key: string, entryPoints: string[]) {
         'Warn',
         '-out',
         fullPath,
+        '-readme',
+        'none',
+        '-projectDocuments',
+        path.join(fixturesRoot, 'PROJECT_DOC_1.md'),
+        '-projectDocuments',
+        path.join(fixturesRoot, 'docs/project/PROJECT_DOC_2.md'),
+        '-projectDocuments',
+        path.join(fixturesRoot, 'docs/project/PROJECT_DOC_3.md'),
       ],
       ...toEntryPoints(entryPoints),
     ],

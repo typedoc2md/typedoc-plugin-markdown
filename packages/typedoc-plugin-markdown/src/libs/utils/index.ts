@@ -1,5 +1,3 @@
-
-
 // PLEASE NOTE: THE CONTENTS OF THE FILE BELOW THIS POINT IS AUTO GENERATED!
 
 export { camelToTitleCase } from './camel-to-title-case';
@@ -13,4 +11,5 @@ export { removeFirstScopedDirectory } from './remove-first-scoped-directory';
 export { removeLineBreaks } from './remove-line-breaks';
 export { sanitizeComments } from './sanitize-comments';
 export { slugify } from './slugify';
+export { toPascalCase } from './to-pascal-case';
 export { unEscapeChars } from './un-escape-chars';

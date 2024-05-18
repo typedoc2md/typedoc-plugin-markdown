@@ -45,16 +45,16 @@ export function parametersTable(
   const hasComments = parsedParams.some((param) => Boolean(param.comment));
 
   const headers = [
-    this.getText('kind.parameter.singular'),
-    this.getText('label.type'),
+    this.internationalization.kindSingularString(ReflectionKind.Parameter),
+    this.i18n.theme_type(),
   ];
 
   if (showDefaults) {
-    headers.push(this.getText('label.defaultValue'));
+    headers.push(this.i18n.theme_default_value());
   }
 
   if (hasComments) {
-    headers.push(this.getText('label.description'));
+    headers.push(this.i18n.theme_description());
   }
 
   const firstOptionalParamIndex = model.findIndex(

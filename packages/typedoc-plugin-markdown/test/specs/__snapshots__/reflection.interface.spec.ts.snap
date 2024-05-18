@@ -5,7 +5,7 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
-## Extended by
+## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -19,7 +19,7 @@ Comments for BasicInterface
 
 This prop is deprecated
 
-#### Some Tag
+#### See
 
 Comments for some tag
 
@@ -236,7 +236,7 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
-## Extended by
+## Extended By
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -244,7 +244,7 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **Some Tag** Comments for some tag |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **See** Comments for some tag |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
 | \`optionalProp?\` | \`string\` | Comments for optional prop |
 | \`prop\` | \`string\` | Comments for prop |
@@ -284,7 +284,7 @@ Comments for ExtendedInterface
 
 This prop is deprecated
 
-#### Some Tag
+#### See
 
 Comments for some tag
 
@@ -559,7 +559,7 @@ Comments for ExtendedInterface
 
 | Property | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ |
-| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **Some Tag** Comments for some tag | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
+| ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **See** Comments for some tag | [\`BasicInterface\`](BasicInterface.md).\`deprecatedProp\` |
 | \`extendedProp\` | \`string\` | - | - |
 | \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper | [\`BasicInterface\`](BasicInterface.md).\`functionProp\` |
 | \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).\`optionalProp\` |
@@ -627,7 +627,7 @@ over two lines
 
 And some more comments
 
-## Type parameters
+## Type Parameters
 
 • **A**
 
@@ -686,9 +686,9 @@ over two lines
 
 And some more comments
 
-## Type parameters
+## Type Parameters
 
-| Type parameter | Description |
+| Type Parameter | Description |
 | :------ | :------ |
 | \`A\` | This is a parameter. |
 | \`B\` | Comments for a parameter. This sentence is on a soft new line. |
@@ -824,7 +824,7 @@ exports[`Interface Reflection should compile interface with type parameters: (Ou
 
 Comments for InterfaceWithTypeParameters
 
-## Type parameters
+## Type Parameters
 
 • **A**
 
@@ -847,9 +847,9 @@ exports[`Interface Reflection should compile interface with type parameters: (Ou
 
 Comments for InterfaceWithTypeParameters
 
-## Type parameters
+## Type Parameters
 
-| Type parameter |
+| Type Parameter |
 | :------ |
 | \`A\` |
 

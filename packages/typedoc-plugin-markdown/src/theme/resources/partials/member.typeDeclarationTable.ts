@@ -26,16 +26,16 @@ export function typeDeclarationTable(
     Boolean(declaration.defaultValue),
   );
 
-  headers.push(this.getText('label.member'));
+  headers.push(this.i18n.theme_member());
 
-  headers.push(this.getText('label.type'));
+  headers.push(this.i18n.theme_type());
 
   if (hasDefaultValues) {
-    headers.push(this.getText('label.value'));
+    headers.push(this.i18n.theme_value());
   }
 
   if (hasComments) {
-    headers.push(this.getText('label.description'));
+    headers.push(this.i18n.theme_description());
   }
 
   const rows: string[][] = [];

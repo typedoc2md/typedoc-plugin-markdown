@@ -20,4 +20,16 @@ describe(`Navigation`, () => {
   test(`should gets Navigation Json for modules with parts`, () => {
     expectFileToEqual('modules', ['members', 'modules'], 'sidebar.json');
   });
+
+  test(`should gets Navigation Json for documents multi module`, () => {
+    expectFileToEqual('documents', ['members', 'modules'], 'sidebar.json');
+  });
+
+  test(`should gets Navigation Json for documents single module`, () => {
+    expectFileToEqual(
+      'documentsSingleModule',
+      ['members', 'modules'],
+      'sidebar.json',
+    );
+  });
 });

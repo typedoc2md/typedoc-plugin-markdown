@@ -3,7 +3,7 @@
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: \`abstract\` AbstractClass
 
-## Extended by
+## Extended By
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
@@ -51,7 +51,7 @@ Comments for abstractMethod
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: \`abstract\` AbstractClass
 
-## Extended by
+## Extended By
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
@@ -418,7 +418,7 @@ new ClassWithComplexProps(): ClassWithComplexProps
 
 ## Properties
 
-| Property | Type | Default value |
+| Property | Type | Default Value |
 | :------ | :------ | :------ |
 | \`objecLiteralProp\` | \`object\` | \`...\` |
 | \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | \`...\` |
@@ -699,8 +699,6 @@ exports[`Class Reflection should compile class with modifiers: (Output File Stra
 
 Comments for ClassWithModifiers
 
-## Modifiers
-
 ## Constructors
 
 ### new ClassWithModifiers()
@@ -826,8 +824,6 @@ exports[`Class Reflection should compile class with modifiers: (Output File Stra
 
 Comments for ClassWithModifiers
 
-## Modifiers
-
 ## Constructors
 
 ### new ClassWithModifiers()
@@ -842,7 +838,7 @@ new ClassWithModifiers(): ClassWithModifiers
 
 ## Properties
 
-| Property | Modifier | Type | Default value | Description |
+| Property | Modifier | Type | Default Value | Description |
 | :------ | :------ | :------ | :------ | :------ |
 | \`privateProp\` | \`private\` | \`string\` | \`undefined\` | Comments for privateProp |
 | \`protectedProp\` | \`protected\` | \`string\` | \`undefined\` | Comments for protectedProp |
@@ -978,10 +974,6 @@ on two lines
 
 Comments for propE
 
-#### Tag
-
-SomeTag
-
 #### Source
 
 [classes.ts:1](http://source-url)
@@ -1007,12 +999,12 @@ new ClassWithSimpleProps(): ClassWithSimpleProps
 
 ## Properties
 
-| Property | Type | Default value | Description |
+| Property | Type | Default Value | Description |
 | :------ | :------ | :------ | :------ |
 | \`propA\` | \`string\` | \`'propAValue'\` | Comments for propA |
 | \`propB\` | \`string\` | \`'propBDefaultValue'\` | Comments for propB |
 | \`propC\` | \`string\` | \`'propCDefaultValue'\` | Comments for propB on two lines |
-| \`propD\` | \`string\` | \`undefined\` | Comments for propE **Tag** SomeTag |
+| \`propD\` | \`string\` | \`undefined\` | Comments for propE |
 "
 `;
 
@@ -1045,7 +1037,7 @@ exports[`Class Reflection should compile class with symbols: (Output File Strate
 
 ## Methods
 
-### \`[dispose]\`()
+### \\[dispose\\]()
 
 > **\\[dispose\\]**(): \`void\`
 
@@ -1064,7 +1056,7 @@ exports[`Class Reflection should compile class with type parameters: (Output Fil
 
 Comments for ClassWithTypeParameters
 
-## Type parameters
+## Type Parameters
 
 • **A**
 
@@ -1093,9 +1085,9 @@ exports[`Class Reflection should compile class with type parameters: (Output Fil
 
 Comments for ClassWithTypeParameters
 
-## Type parameters
+## Type Parameters
 
-| Type parameter | Value | Description |
+| Type Parameter | Value | Description |
 | :------ | :------ | :------ |
 | \`A\` | - | Comments for param A |
 | \`B\` *extends* \`string\` | - | Comments for param B |
@@ -1227,7 +1219,7 @@ new DerivedClassA(): DerivedClassA
 
 ## Properties
 
-| Property | Type | Default value | Description | Overrides |
+| Property | Type | Default Value | Description | Overrides |
 | :------ | :------ | :------ | :------ | :------ |
 | \`abstractProp\` | \`string\` | \`'abstractProp'\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).\`abstractProp\` |
 | \`derivedProp\` | \`string\` | \`undefined\` | - | - |
@@ -1291,7 +1283,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 
 ## Methods
 
-### \`[dispose]\`()
+### \\[dispose\\]()
 
 > **\\[dispose\\]**(): \`void\`
 
@@ -1312,7 +1304,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 exports[`Class Reflection should compile hierarchy for BaseClass: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: BaseClass
 
-## Extended by
+## Extended By
 
 - [\`ChildClassA\`](ChildClassA.md)
 - [\`ChildClassB\`](ChildClassB.md)
@@ -1336,7 +1328,7 @@ exports[`Class Reflection should compile hierarchy for ChildClassA: (Output File
 
 - [\`BaseClass\`](BaseClass.md)
 
-## Extended by
+## Extended By
 
 - [\`GrandChildClassA\`](GrandChildClassA.md)
 - [\`GrandChildClassB\`](GrandChildClassB.md)

@@ -8,8 +8,5 @@ export function getFileNameWithExtension(
   fileExtension: string,
 ) {
   const parsedPath = path.parse(fileName);
-  const extension = fileExtension.startsWith('.')
-    ? fileExtension.slice(1)
-    : fileExtension;
-  return path.join(parsedPath.dir, `${parsedPath.name}.${extension}`);
+  return path.join(parsedPath.dir, `${parsedPath.name}${fileExtension}`);
 }

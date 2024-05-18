@@ -1,21 +1,19 @@
 import { MarkdownRenderer } from '@plugin/app/application';
 import { MarkdownPageEvent } from '@plugin/app/events';
+import { getTranslatable } from '@plugin/app/translatable';
 import { formatMarkdown } from '@plugin/libs/utils';
-import {
-  OutputFileStrategy,
-  TEXT_MAPPING_DEFAULTS,
-  TextContentMappings,
-} from '@plugin/options';
+import { OutputFileStrategy } from '@plugin/options';
 import { RenderTemplate } from '@plugin/theme';
 import {
   DeclarationReflection,
+  DocumentReflection,
   ProjectReflection,
   Reflection,
   ReflectionKind,
   Theme,
 } from 'typedoc';
-import { buildNavigation } from './core/navigation-builder';
-import { buildUrls } from './core/url-builder';
+import { NavigationBuilder } from './core/navigation-builder';
+import { UrlBuilder } from './core/url-builder';
 import { MarkdownThemeContext } from './markdown-themecontext';
 
 /**
@@ -47,17 +45,16 @@ export class MarkdownTheme extends Theme {
    *
    * @internal
    */
-  readonly textContentMappings: Partial<TextContentMappings>;
 
   /**
    * @ignore
    */
   constructor(renderer: MarkdownRenderer) {
     super(renderer);
-    this.textContentMappings = {
-      ...TEXT_MAPPING_DEFAULTS,
-      ...(this.application.options.getValue('textContentMappings') || {}),
-    };
+    this.application.internationalization.addTranslations(
+      'en',
+      getTranslatable(this.application),
+    );
   }
 
   /**
@@ -93,7 +90,7 @@ export class MarkdownTheme extends Theme {
    * This method can be overriden to provide an alternative url structure.
    */
   getUrls(project: ProjectReflection) {
-    return buildUrls(this, project);
+    return new UrlBuilder(this, project).getUrls();
   }
 
   /**
@@ -102,7 +99,7 @@ export class MarkdownTheme extends Theme {
    * This method can be overriden to provide an alternative navigation structure.
    */
   getNavigation(project: ProjectReflection) {
-    return buildNavigation(this, project);
+    return new NavigationBuilder(this, project).getNavigation();
   }
 
   /**
@@ -144,6 +141,11 @@ export class MarkdownTheme extends Theme {
         template: this.reflectionTemplate,
         directory: directoryName(ReflectionKind.Namespace),
         kind: ReflectionKind.Namespace,
+      },
+      [ReflectionKind.Document]: {
+        template: this.documentTemplate,
+        directory: directoryName(ReflectionKind.Document),
+        kind: ReflectionKind.Document,
       },
     };
 
@@ -225,21 +227,28 @@ export class MarkdownTheme extends Theme {
   /**
    * @internal
    */
+  documentTemplate = (page: MarkdownPageEvent<DocumentReflection>) => {
+    return this.getRenderContext(page).templates.document(page);
+  };
+
+  /**
+   * @internal
+   */
   readmeTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
-    return this.getRenderContext(page).templates.readme();
+    return this.getRenderContext(page).templates.readme(page);
   };
 
   /**
    * @internal
    */
   projectTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
-    return this.getRenderContext(page).templates.project();
+    return this.getRenderContext(page).templates.project(page);
   };
 
   /**
    * @internal
    */
   reflectionTemplate = (page: MarkdownPageEvent<DeclarationReflection>) => {
-    return this.getRenderContext(page).templates.reflection();
+    return this.getRenderContext(page).templates.reflection(page);
   };
 }

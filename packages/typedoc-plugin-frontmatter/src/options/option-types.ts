@@ -1,18 +1,5 @@
 // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
 
-import { ManuallyValidatedOption } from 'typedoc';
-
-declare module 'typedoc' {
-  export interface TypeDocOptionMap {
-    frontmatterCommentTags: any[];
-    frontmatterGlobals: ManuallyValidatedOption<FrontmatterGlobals>;
-    frontmatterNamingConvention: 'camelCase' | 'snakeCase';
-    indexFrontmatter: ManuallyValidatedOption<IndexFrontmatter>;
-    preserveFrontmatterCommentTags: boolean;
-    readmeFrontmatter: ManuallyValidatedOption<ReadmeFrontmatter>;
-  }
-}
-
 /**
  * Describes the options declared by the plugin.
  *
@@ -62,11 +49,11 @@ export interface FrontmatterGlobals {}
  *
  * @category Options
  */
-export interface ReadmeFrontmatter {}
+export interface IndexFrontmatter {}
 
 /**
  *
  *
  * @category Options
  */
-export interface IndexFrontmatter {}
+export interface ReadmeFrontmatter {}

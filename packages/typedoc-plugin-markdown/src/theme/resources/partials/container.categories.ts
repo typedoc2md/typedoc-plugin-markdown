@@ -1,5 +1,5 @@
 import { heading } from '@plugin/libs/markdown';
-import { ReflectionCategory } from 'typedoc';
+import { DeclarationReflection, ReflectionCategory } from 'typedoc';
 import { MarkdownThemeContext } from '../../markdown-themecontext';
 
 /**
@@ -22,7 +22,7 @@ export function categories(
       }
       if (category.children) {
         md.push(
-          this.partials.members(category.children, {
+          this.partials.members(category.children as DeclarationReflection[], {
             headingLevel: options.headingLevel + 1,
           }),
         );

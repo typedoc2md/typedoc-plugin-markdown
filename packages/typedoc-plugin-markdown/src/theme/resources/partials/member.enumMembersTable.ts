@@ -1,7 +1,7 @@
 import { backTicks, htmlTable, table } from '@plugin/libs/markdown';
 import { removeLineBreaks } from '@plugin/libs/utils';
 import { MarkdownThemeContext } from '@plugin/theme';
-import { DeclarationReflection, ReflectionType } from 'typedoc';
+import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 /**
  * Renders enum members as a table.
@@ -18,12 +18,12 @@ export function enumMembersTable(
   const hasComments = comments.some((value) => Boolean(value));
 
   const headers = [
-    this.getText('kind.enumMember.singular'),
-    this.getText('label.value'),
+    this.internationalization.kindSingularString(ReflectionKind.EnumMember),
+    this.i18n.theme_value(),
   ];
 
   if (hasComments) {
-    headers.push(this.getText('label.description'));
+    headers.push(this.i18n.theme_description());
   }
 
   const rows: string[][] = [];

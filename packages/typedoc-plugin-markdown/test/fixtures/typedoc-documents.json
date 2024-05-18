@@ -1,0 +1,775 @@
+{
+	"id": 0,
+	"name": "typedoc-stubs",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 4,
+			"name": "ModuleWithDocuments1",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 31,
+					"name": "NamespaceWithDocuments",
+					"variant": "declaration",
+					"kind": 4,
+					"flags": {},
+					"children": [
+						{
+							"id": 33,
+							"name": "NamespaceClassWithDocuments",
+							"variant": "declaration",
+							"kind": 128,
+							"flags": {},
+							"children": [
+								{
+									"id": 35,
+									"name": "constructor",
+									"variant": "declaration",
+									"kind": 512,
+									"flags": {},
+									"signatures": [
+										{
+											"id": 36,
+											"name": "new NamespaceClassWithDocuments",
+											"variant": "signature",
+											"kind": 16384,
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"target": 33,
+												"name": "NamespaceClassWithDocuments",
+												"package": "typedoc-stubs",
+												"qualifiedName": "NamespaceWithDocuments.NamespaceClassWithDocuments"
+											}
+										}
+									]
+								}
+							],
+							"documents": [
+								{
+									"id": 34,
+									"name": "CLASS_DOC",
+									"variant": "document",
+									"kind": 8388608,
+									"flags": {},
+									"content": [
+										{
+											"kind": "text",
+											"text": "# Class Documentation"
+										}
+									],
+									"frontmatter": {}
+								}
+							],
+							"childrenIncludingDocuments": [
+								34,
+								35
+							],
+							"groups": [
+								{
+									"title": "Documents",
+									"children": [
+										34
+									]
+								},
+								{
+									"title": "Constructors",
+									"children": [
+										35
+									]
+								}
+							]
+						}
+					],
+					"documents": [
+						{
+							"id": 32,
+							"name": "NAMESPACE_DOC",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Namespace Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"childrenIncludingDocuments": [
+						32,
+						33
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								32
+							]
+						},
+						{
+							"title": "Classes",
+							"children": [
+								33
+							]
+						}
+					]
+				},
+				{
+					"id": 20,
+					"name": "EnumWithDocuments",
+					"variant": "declaration",
+					"kind": 8,
+					"flags": {},
+					"children": [
+						{
+							"id": 22,
+							"name": "EnumMember",
+							"variant": "declaration",
+							"kind": 16,
+							"flags": {},
+							"type": {
+								"type": "literal",
+								"value": 0
+							}
+						}
+					],
+					"documents": [
+						{
+							"id": 21,
+							"name": "ENUM_DOC",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Enum Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"childrenIncludingDocuments": [
+						21,
+						22
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								21
+							]
+						},
+						{
+							"title": "Enumeration Members",
+							"children": [
+								22
+							]
+						}
+					]
+				},
+				{
+					"id": 23,
+					"name": "ClassWithDocuments",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"children": [
+						{
+							"id": 25,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"signatures": [
+								{
+									"id": 26,
+									"name": "new ClassWithDocuments",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": 23,
+										"name": "ClassWithDocuments",
+										"package": "typedoc-stubs"
+									}
+								}
+							]
+						}
+					],
+					"documents": [
+						{
+							"id": 24,
+							"name": "CLASS_DOC",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Class Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"childrenIncludingDocuments": [
+						24,
+						25
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								24
+							]
+						},
+						{
+							"title": "Constructors",
+							"children": [
+								25
+							]
+						}
+					]
+				},
+				{
+					"id": 17,
+					"name": "InterfaceWithDocuments",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"children": [
+						{
+							"id": 19,
+							"name": "prop",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"documents": [
+						{
+							"id": 18,
+							"name": "INTERFACE_DOC",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Interface Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"childrenIncludingDocuments": [
+						18,
+						19
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								18
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								19
+							]
+						}
+					]
+				},
+				{
+					"id": 29,
+					"name": "TypeWithDocuments",
+					"variant": "declaration",
+					"kind": 2097152,
+					"flags": {},
+					"documents": [
+						{
+							"id": 30,
+							"name": "TYPE_DOC",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Type Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								30
+							]
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": "string"
+					}
+				},
+				{
+					"id": 27,
+					"name": "variableWithDocuments",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"documents": [
+						{
+							"id": 28,
+							"name": "VARIABLE_DOC",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Variable Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								28
+							]
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 1
+					},
+					"defaultValue": "1"
+				},
+				{
+					"id": 14,
+					"name": "functionWithDocuments",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"documents": [
+						{
+							"id": 16,
+							"name": "FUNCTION_DOC_1",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Function Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								16
+							]
+						}
+					],
+					"signatures": [
+						{
+							"id": 15,
+							"name": "functionWithDocuments",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Comments for functionWithDocuments"
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 6,
+					"name": "multipleFunctionWithDocuments",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Comments for multipleFunctionWithDocuments"
+							}
+						]
+					},
+					"documents": [
+						{
+							"id": 9,
+							"name": "FUNCTION_DOC_1",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Function Documentation"
+								}
+							],
+							"frontmatter": {}
+						},
+						{
+							"id": 12,
+							"name": "FUNCTION_DOC_2",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Function Documentation"
+								}
+							],
+							"frontmatter": {}
+						},
+						{
+							"id": 7,
+							"name": "FUNCTION_DOC_3",
+							"variant": "document",
+							"kind": 8388608,
+							"flags": {},
+							"content": [
+								{
+									"kind": "text",
+									"text": "# Function Documentation"
+								}
+							],
+							"frontmatter": {}
+						}
+					],
+					"groups": [
+						{
+							"title": "Documents",
+							"children": [
+								9,
+								12,
+								7
+							]
+						}
+					],
+					"signatures": [
+						{
+							"id": 8,
+							"name": "multipleFunctionWithDocuments",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Comments for multipleFunctionWithDocumentsA"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 10,
+									"name": "value",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 11,
+							"name": "multipleFunctionWithDocuments",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Comments for multipleFunctionWithDocumentsB"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 13,
+									"name": "value",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"documents": [
+				{
+					"id": 5,
+					"name": "MODULE_DOC",
+					"variant": "document",
+					"kind": 8388608,
+					"flags": {},
+					"content": [
+						{
+							"kind": "text",
+							"text": "# Module Documentation"
+						}
+					],
+					"frontmatter": {}
+				}
+			],
+			"childrenIncludingDocuments": [
+				5,
+				31,
+				20,
+				23,
+				17,
+				29,
+				27,
+				14,
+				6
+			],
+			"groups": [
+				{
+					"title": "Documents",
+					"children": [
+						5
+					]
+				},
+				{
+					"title": "Namespaces",
+					"children": [
+						31
+					]
+				},
+				{
+					"title": "Enumerations",
+					"children": [
+						20
+					]
+				},
+				{
+					"title": "Classes",
+					"children": [
+						23
+					]
+				},
+				{
+					"title": "Interfaces",
+					"children": [
+						17
+					]
+				},
+				{
+					"title": "Type Aliases",
+					"children": [
+						29
+					]
+				},
+				{
+					"title": "Variables",
+					"children": [
+						27
+					]
+				},
+				{
+					"title": "Functions",
+					"children": [
+						14,
+						6
+					]
+				}
+			]
+		}
+	],
+	"documents": [
+		{
+			"id": 1,
+			"name": "Project Document 1",
+			"variant": "document",
+			"kind": 8388608,
+			"flags": {},
+			"content": [
+				{
+					"kind": "text",
+					"text": "# Project Document 1"
+				}
+			],
+			"frontmatter": {}
+		},
+		{
+			"id": 2,
+			"name": "docs/project/PROJECT_DOC_2",
+			"variant": "document",
+			"kind": 8388608,
+			"flags": {},
+			"content": [
+				{
+					"kind": "text",
+					"text": "# Document 1"
+				}
+			],
+			"frontmatter": {}
+		},
+		{
+			"id": 3,
+			"name": "docs/project/PROJECT_DOC_3",
+			"variant": "document",
+			"kind": 8388608,
+			"flags": {},
+			"content": [
+				{
+					"kind": "text",
+					"text": "# Document 2"
+				}
+			],
+			"frontmatter": {}
+		}
+	],
+	"childrenIncludingDocuments": [
+		1,
+		2,
+		3,
+		4
+	],
+	"groups": [
+		{
+			"title": "Documents",
+			"children": [
+				1,
+				2,
+				3
+			]
+		},
+		{
+			"title": "Modules",
+			"children": [
+				4
+			]
+		}
+	],
+	"packageName": "typedoc-stubs",
+	"symbolIdMap": {
+		"4": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": ""
+		},
+		"6": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "multipleFunctionWithDocuments"
+		},
+		"8": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "multipleFunctionWithDocuments"
+		},
+		"10": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "value"
+		},
+		"11": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "multipleFunctionWithDocuments"
+		},
+		"13": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "value"
+		},
+		"14": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "functionWithDocuments"
+		},
+		"15": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "functionWithDocuments"
+		},
+		"17": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "InterfaceWithDocuments"
+		},
+		"19": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "InterfaceWithDocuments.prop"
+		},
+		"20": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "EnumWithDocuments"
+		},
+		"22": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "EnumWithDocuments.EnumMember"
+		},
+		"23": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "ClassWithDocuments"
+		},
+		"27": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "variableWithDocuments"
+		},
+		"29": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "TypeWithDocuments"
+		},
+		"31": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "NamespaceWithDocuments"
+		},
+		"33": {
+			"sourceFileName": "test/fixtures/src/documents/module-1.ts",
+			"qualifiedName": "NamespaceWithDocuments.NamespaceClassWithDocuments"
+		}
+	}
+}

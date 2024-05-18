@@ -14,7 +14,7 @@ export function sources(
   const md: string[] = [];
 
   if (options.headingLevel !== -1) {
-    md.push(heading(options.headingLevel, this.getText('label.source')));
+    md.push(heading(options.headingLevel, this.i18n.theme_source()));
   }
   model.sources?.forEach((source, index) => {
     if (index === 0) {
