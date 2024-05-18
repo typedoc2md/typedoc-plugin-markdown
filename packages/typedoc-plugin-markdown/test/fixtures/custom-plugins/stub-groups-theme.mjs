@@ -5,10 +5,10 @@ import { MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown';
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
-  app.renderer.defineTheme('stub-groups', StubPartialsTheme);
+  app.renderer.defineTheme('stub-groups', StubTheme);
 }
 
-class StubPartialsTheme extends MarkdownTheme {
+class StubTheme extends MarkdownTheme {
   /**
    * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
    */

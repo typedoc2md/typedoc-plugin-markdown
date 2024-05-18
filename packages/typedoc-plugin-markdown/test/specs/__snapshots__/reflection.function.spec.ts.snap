@@ -25,7 +25,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:164](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -60,7 +60,7 @@ Comments for function
 
 ## Source
 
-[functions.ts:164](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -83,7 +83,7 @@ Return comments
 
 ## Source
 
-[functions.ts:172](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -108,7 +108,7 @@ Return comments
 
 ## Source
 
-[functions.ts:172](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -127,7 +127,7 @@ Return comments
 
 ## Source
 
-[functions.ts:145](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -148,7 +148,7 @@ Return comments
 
 ## Source
 
-[functions.ts:145](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -167,7 +167,7 @@ Return comments
 
 ## Source
 
-[functions.ts:153](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -188,7 +188,7 @@ Return comments
 
 ## Source
 
-[functions.ts:153](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -221,7 +221,7 @@ Return comments
 
 ## Source
 
-[functions.ts:137](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -253,7 +253,7 @@ Return comments
 
 ## Source
 
-[functions.ts:137](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -276,7 +276,7 @@ This is some numeric parameter.
 
 ## Source
 
-[functions.ts:10](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -301,7 +301,7 @@ This is a function that is assigned to a variable.
 
 ## Source
 
-[functions.ts:10](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -326,7 +326,7 @@ Function with function parmas
 
 ## Source
 
-[functions.ts:93](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -353,7 +353,7 @@ Function with function parmas
 
 ## Source
 
-[functions.ts:93](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -394,7 +394,7 @@ A parameter with a default null value.
 
 ## Source
 
-[functions.ts:23](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -430,7 +430,7 @@ This is a function with a parameter that has a default value.
 
 ## Source
 
-[functions.ts:23](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -455,7 +455,7 @@ The name value.
 
 ### Source
 
-[functions.ts:112](http://source-url)
+[functions.ts:1](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -479,7 +479,7 @@ A value of the object.
 
 ### Source
 
-[functions.ts:120](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -506,7 +506,7 @@ This is the first signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:112](http://source-url)
+[functions.ts:1](http://source-url)
 
 ## functionWithMultipleSignatures(value)
 
@@ -529,7 +529,7 @@ This is the second signature of a function with multiple signatures.
 
 ### Source
 
-[functions.ts:120](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -558,7 +558,7 @@ Another param comment
 
 ## Source
 
-[functions.ts:75](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -584,7 +584,7 @@ function functionWithNamedParams(__namedParameters: object, anotherParam: string
 
 ## Source
 
-[functions.ts:75](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -631,7 +631,7 @@ The context of the method call.
 
 ## Source
 
-[functions.ts:54](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -668,7 +668,7 @@ Some nested params.
 
 ## Source
 
-[functions.ts:54](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -699,7 +699,7 @@ An optional parameter.
 
 ## Source
 
-[functions.ts:40](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -730,7 +730,7 @@ An optional parameter.
 
 ## Source
 
-[functions.ts:40](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -762,7 +762,7 @@ This is a function with a parameters.
 
 ## Source
 
-[functions.ts:40](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -794,7 +794,7 @@ This is a function with a parameters.
 
 ## Source
 
-[functions.ts:40](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -817,7 +817,7 @@ Function with reset parmas
 
 ## Source
 
-[functions.ts:86](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -843,7 +843,7 @@ Function with reset parmas
 
 ## Source
 
-[functions.ts:86](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -868,7 +868,7 @@ Comments for T
 
 ## Source
 
-[functions.ts:105](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;
 
@@ -894,6 +894,6 @@ Function with type parameters
 
 ## Source
 
-[functions.ts:105](http://source-url)
+[functions.ts:1](http://source-url)
 "
 `;

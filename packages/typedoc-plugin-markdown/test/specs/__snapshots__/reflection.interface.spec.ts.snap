@@ -25,7 +25,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:25](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -47,7 +47,7 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:36](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -59,7 +59,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:30](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -71,7 +71,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:14](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -91,7 +91,7 @@ Comments for propReturningObjectDeclaration
 
 #### Source
 
-[interfaces.ts:53](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -123,7 +123,7 @@ Comments for propReturningObjectDeclarations
 
 #### Source
 
-[interfaces.ts:58](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -139,7 +139,7 @@ Comments for propReturningSignatureDeclaration
 
 #### Source
 
-[interfaces.ts:41](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -151,7 +151,7 @@ Comments for propReturningSignatureDeclarations
 
 #### Source
 
-[interfaces.ts:46](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -175,7 +175,7 @@ Comments for propWithFunction
 
 #### Source
 
-[interfaces.ts:66](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -227,7 +227,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:71](http://source-url)
+[interfaces.ts:1](http://source-url)
 "
 `;
 
@@ -294,7 +294,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:25](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -304,7 +304,7 @@ Comments for some tag
 
 #### Source
 
-[interfaces.ts:114](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -330,7 +330,7 @@ Comment for param s
 
 #### Source
 
-[interfaces.ts:36](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -346,7 +346,7 @@ Comments for optional prop
 
 #### Source
 
-[interfaces.ts:30](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -362,7 +362,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:14](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -386,7 +386,7 @@ Comments for propReturningObjectDeclaration
 
 #### Source
 
-[interfaces.ts:53](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -422,7 +422,7 @@ Comments for propReturningObjectDeclarations
 
 #### Source
 
-[interfaces.ts:58](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -442,7 +442,7 @@ Comments for propReturningSignatureDeclaration
 
 #### Source
 
-[interfaces.ts:41](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -458,7 +458,7 @@ Comments for propReturningSignatureDeclarations
 
 #### Source
 
-[interfaces.ts:46](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -486,7 +486,7 @@ Comments for propWithFunction
 
 #### Source
 
-[interfaces.ts:66](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -542,7 +542,7 @@ Comments for nestedPropD
 
 #### Source
 
-[interfaces.ts:71](http://source-url)
+[interfaces.ts:1](http://source-url)
 "
 `;
 
@@ -598,7 +598,7 @@ Comments for IndexableInterface
 
 #### Source
 
-[interfaces.ts:122](http://source-url)
+[interfaces.ts:1](http://source-url)
 "
 `;
 
@@ -674,7 +674,7 @@ https://example.com
 
 #### Source
 
-[interfaces.ts:192](http://source-url)
+[interfaces.ts:1](http://source-url)
 "
 `;
 
@@ -716,7 +716,7 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:134](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ## Events
 
@@ -726,7 +726,7 @@ Description for prop someProp
 
 #### Source
 
-[interfaces.ts:146](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -752,7 +752,7 @@ Comments for param eventParam
 
 #### Source
 
-[interfaces.ts:141](http://source-url)
+[interfaces.ts:1](http://source-url)
 "
 `;
 
@@ -789,7 +789,7 @@ Comments for InterfaceWithFlags
 
 #### Source
 
-[interfaces.ts:154](http://source-url)
+[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -801,7 +801,7 @@ Comments for InterfaceWithFlags
 
 #### Source
 
-[interfaces.ts:156](http://source-url)
+[interfaces.ts:1](http://source-url)
 "
 `;
 
@@ -838,7 +838,7 @@ Comments for prop
 
 #### Source
 
-[interfaces.ts:107](http://source-url)
+[interfaces.ts:1](http://source-url)
 "
 `;
 

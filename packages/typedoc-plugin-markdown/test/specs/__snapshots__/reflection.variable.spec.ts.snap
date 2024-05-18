@@ -17,7 +17,7 @@ Comments for symbol
 
 ## Source
 
-[variables.ts:47](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;
 
@@ -38,7 +38,7 @@ Comments variable with symbol
 
 ## Source
 
-[variables.ts:47](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;
 
@@ -51,7 +51,7 @@ Comments for typeOperatorVariable
 
 ## Source
 
-[variables.ts:22](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;
 
@@ -66,7 +66,7 @@ Comments for typeOperatorVariable
 
 ## Source
 
-[variables.ts:22](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;
 
@@ -79,7 +79,7 @@ A simple string variable
 
 ## Source
 
-[variables.ts:8](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;
 
@@ -94,7 +94,7 @@ A simple string variable
 
 ## Source
 
-[variables.ts:8](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;
 
@@ -175,7 +175,7 @@ Comments for objectLiteralVariable
 
 ## Source
 
-[variables.ts:27](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;
 
@@ -202,6 +202,6 @@ Comments for objectLiteralVariable
 
 ## Source
 
-[variables.ts:27](http://source-url)
+[variables.ts:1](http://source-url)
 "
 `;

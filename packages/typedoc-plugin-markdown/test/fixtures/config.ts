@@ -6,7 +6,10 @@ const config: Record<string, Fixture> = {
     only: false,
     entryPoints: '/reflections/index.ts',
     commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+      plugin: [
+        path.join(__dirname, 'custom-plugins', 'normalize-sources.mjs'),
+        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+      ],
       hidePageHeader: true,
       hideBreadcrumbs: true,
     },
