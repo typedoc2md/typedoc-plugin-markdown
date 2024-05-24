@@ -27,8 +27,8 @@ class MyMarkdownTheme extends MarkdownTheme {
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
 | `theme` | [`MarkdownTheme`](/api-docs/Class.MarkdownTheme.md) | The theme instance. |
-| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`Reflection ↗️`]( https://typedoc.org/api/classes/Models.Reflection.html )\> | The current page event. |
-| `options` | [`Options ↗️`]( https://typedoc.org/api/classes/Configuration.Options.html ) | The options provided to the application. |
+| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\> | The current page event. |
+| `options` | [`Options`](https://typedoc.org/api/classes/Configuration.Options.html) | The options provided to the application. |
 
 #### Returns
 
@@ -38,9 +38,21 @@ class MyMarkdownTheme extends MarkdownTheme {
 
 Properties are passed into the constructor and are used to provide context to the theme.
 
+### internationalization
+
+> **internationalization**: `Internationalization`
+
+***
+
+### i18n
+
+> **i18n**: `TranslationProxy`
+
+***
+
 ### page
 
-> `readonly` **page**: [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`Reflection ↗️`]( https://typedoc.org/api/classes/Models.Reflection.html )\>
+> `readonly` **page**: [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>
 
 The current page event.
 
@@ -48,31 +60,13 @@ The current page event.
 
 ### options
 
-> `readonly` **options**: [`Options ↗️`]( https://typedoc.org/api/classes/Configuration.Options.html )
+> `readonly` **options**: [`Options`](https://typedoc.org/api/classes/Configuration.Options.html)
 
 The options provided to the application.
 
 ## Methods
 
 General context aware helper methods not bound to any specific models that can be used by the theme resources.
-
-### getText()
-
-> **getText**(`key`): `string`
-
-Get text mappings from the theme.
-
-#### Parameters
-
-| Parameter | Type | Description |
-| :------ | :------ | :------ |
-| `key` | keyof [`TextContentMappings`](/api-docs/Interface.TextContentMappings.md) | The key of the text mappings |
-
-#### Returns
-
-`string`
-
-***
 
 ### getPackageMetaData()
 
@@ -102,7 +96,7 @@ If public path is set, it will be used as the base URL.
 
 #### Parameters
 
-| Parameter | Type | Default value | Description |
+| Parameter | Type | Default Value | Description |
 | :------ | :------ | :------ | :------ |
 | `url` | `string` | `undefined` | The URL to make relative. |
 | `ignorePublicPath` | `boolean` | `false` | Whether to ignore the public path. |
@@ -123,11 +117,33 @@ Then `templates` namespace holds the main templates for the theme and are mapped
 
 All templates return a string that is passed back to the renderer. Internally templates call partials and helpers.
 
+#### document()
+
+> **document**: (`page`) => `string`
+
+Template that maps to a project document.
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<`DocumentReflection`\> |
+
+##### Returns
+
+`string`
+
 #### project()
 
-> **project**: () => `string`
+> **project**: (`page`) => `string`
 
 Template that maps to the root project reflection. This will be the index page / documentation root page.
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
 
 ##### Returns
 
@@ -135,9 +151,15 @@ Template that maps to the root project reflection. This will be the index page /
 
 #### readme()
 
-> **readme**: () => `string`
+> **readme**: (`page`) => `string`
 
 Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
 
 ##### Returns
 
@@ -145,9 +167,15 @@ Template that specifically maps to the resolved readme file. This template is no
 
 #### reflection()
 
-> **reflection**: () => `string`
+> **reflection**: (`page`) => `string`
 
 Template that maps to individual reflection models.
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `page` | [`MarkdownPageEvent`](/api-docs/Class.MarkdownPageEvent.md)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\> |
 
 ##### Returns
 
@@ -209,7 +237,7 @@ Partials are categorised by their use:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ProjectReflection ↗️`]( https://typedoc.org/api/classes/Models.ProjectReflection.html ) |
+| `model` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
 
 ###### Returns
 
@@ -233,7 +261,7 @@ Partials are categorised by their use:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ContainerReflection ↗️`]( https://typedoc.org/api/classes/Models.ContainerReflection.html ) |
+| `model` | [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -251,7 +279,7 @@ Renders a collection of reflection categories.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReflectionCategory ↗️`]( https://typedoc.org/api/types/Models.ReflectionCategory.html )[] |
+| `model` | [`ReflectionCategory`](https://typedoc.org/api/types/Models.ReflectionCategory.html)[] |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -269,7 +297,7 @@ Renders a collection of reflection groups.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReflectionGroup ↗️`]( https://typedoc.org/api/classes/Models.ReflectionGroup.html )[] |
+| `model` | [`ReflectionGroup`](https://typedoc.org/api/classes/Models.ReflectionGroup.html)[] |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -287,7 +315,7 @@ Renders a collection of members.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[] |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -307,7 +335,7 @@ Renders an accessor member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -325,9 +353,26 @@ Renders an constructor member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
+
+###### Returns
+
+`string`
+
+##### memberContainer()
+
+> **memberContainer**: (`model`, `options`) => `string`
+
+###### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
 
 ###### Returns
 
@@ -343,7 +388,7 @@ Renders a standard declaration member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 | `options.nested`? | `boolean` |
@@ -356,13 +401,27 @@ Renders a standard declaration member.
 
 > **declarationTitle**: (`model`) => `string`
 
-Remders a declaration title.
+###### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+###### Returns
+
+`string`
+
+##### documents()
+
+> **documents**: (`model`, `options`) => `string`
 
 ###### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
 
 ###### Returns
 
@@ -378,7 +437,7 @@ Renders enum members as a table.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[] |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 
 ###### Returns
 
@@ -392,7 +451,7 @@ Renders enum members as a table.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationHierarchy ↗️`]( https://typedoc.org/api/classes/Models.DeclarationHierarchy.html ) |
+| `model` | [`DeclarationHierarchy`](https://typedoc.org/api/classes/Models.DeclarationHierarchy.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -410,7 +469,7 @@ Renders an index signature block
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html ) |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
 
 ###### Returns
 
@@ -426,7 +485,7 @@ Renders an inheritance section.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) \| [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -444,7 +503,7 @@ Renders the main member title.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ###### Returns
 
@@ -460,7 +519,7 @@ Renders a top-level member that contains group and child members such as Classes
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -476,7 +535,7 @@ Renders a top-level member that contains group and child members such as Classes
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ParameterReflection ↗️`]( https://typedoc.org/api/classes/Models.ParameterReflection.html )[] |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
 
 ###### Returns
 
@@ -490,7 +549,7 @@ Renders a top-level member that contains group and child members such as Classes
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ParameterReflection ↗️`]( https://typedoc.org/api/classes/Models.ParameterReflection.html )[] |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
 
 ###### Returns
 
@@ -508,7 +567,7 @@ There is no association list partial for properties as these are handled as a st
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[] |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 | `options`? | `object` |
 | `options.isEventProps`? | `boolean` |
 
@@ -526,7 +585,7 @@ Renders an reference member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReferenceReflection ↗️`]( https://typedoc.org/api/classes/Models.ReferenceReflection.html ) |
+| `model` | [`ReferenceReflection`](https://typedoc.org/api/classes/Models.ReferenceReflection.html) |
 
 ###### Returns
 
@@ -542,7 +601,7 @@ Renders the flags of a reflection.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`Reflection ↗️`]( https://typedoc.org/api/classes/Models.Reflection.html ) |
+| `model` | [`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html) |
 
 ###### Returns
 
@@ -552,13 +611,11 @@ Renders the flags of a reflection.
 
 > **reflectionIndex**: (`model`, `options`) => `string`
 
-Renders the index section of a reflection.
-
 ###### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) \| [`ProjectReflection ↗️`]( https://typedoc.org/api/classes/Models.ProjectReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -576,11 +633,12 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html ) |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 | `options.nested`? | `boolean` |
 | `options.accessor`? | `string` |
+| `options.multipleSignatures`? | `boolean` |
 
 ###### Returns
 
@@ -594,7 +652,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ParameterReflection ↗️`]( https://typedoc.org/api/classes/Models.ParameterReflection.html )[] |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
 
 ###### Returns
 
@@ -608,7 +666,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html ) |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -624,10 +682,29 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html ) |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
 | `options`? | `object` |
 | `options.accessor`? | `string` |
 | `options.includeType`? | `boolean` |
+
+###### Returns
+
+`string`
+
+##### signatures()
+
+> **signatures**: (`model`, `options`) => `string`
+
+Renders a signature collection.
+
+###### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
 
 ###### Returns
 
@@ -641,7 +718,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) \| [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -657,7 +734,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 | `options.nested`? | `boolean` |
@@ -674,7 +751,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReferenceType ↗️`]( https://typedoc.org/api/classes/Models.ReferenceType.html ) \| [`ArrayType ↗️`]( https://typedoc.org/api/types/Models.ArrayType.html ) |
+| `model` | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) \| [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
 
 ###### Returns
 
@@ -688,7 +765,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`SomeType ↗️`]( https://typedoc.org/api/classes/Models.SomeType.html )[] |
+| `model` | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html)[] |
 | `options`? | `object` |
 | `options.foreCollpase`? | `boolean` |
 
@@ -704,7 +781,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[] |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 | `options` | `object` |
 | `options.headingLevel` | `number` |
 
@@ -720,7 +797,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[] |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 | `headingLevel` | `number` |
 
 ###### Returns
@@ -735,7 +812,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[] |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 
 ###### Returns
 
@@ -749,7 +826,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`TypeParameterReflection ↗️`]( https://typedoc.org/api/classes/Models.TypeParameterReflection.html )[] |
+| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)[] |
 
 ###### Returns
 
@@ -763,7 +840,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`TypeParameterReflection ↗️`]( https://typedoc.org/api/classes/Models.TypeParameterReflection.html )[] |
+| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)[] |
 
 ###### Returns
 
@@ -779,7 +856,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`Comment ↗️`]( https://typedoc.org/api/types/Models.Comment.html ) |
+| `model` | [`Comment`](https://typedoc.org/api/types/Models.Comment.html) |
 | `options` | `object` |
 | `options.headingLevel`? | `number` |
 | `options.showSummary`? | `boolean` |
@@ -798,7 +875,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`CommentDisplayPart ↗️`]( https://typedoc.org/api/types/Models.CommentDisplayPart.html )[] |
+| `model` | [`CommentDisplayPart`](https://typedoc.org/api/types/Models.CommentDisplayPart.html)[] |
 
 ###### Returns
 
@@ -814,7 +891,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ArrayType ↗️`]( https://typedoc.org/api/types/Models.ArrayType.html ) |
+| `model` | [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
 
 ###### Returns
 
@@ -828,7 +905,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ConditionalType ↗️`]( https://typedoc.org/api/types/Models.ConditionalType.html ) |
+| `model` | [`ConditionalType`](https://typedoc.org/api/types/Models.ConditionalType.html) |
 
 ###### Returns
 
@@ -842,7 +919,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`IndexedAccessType ↗️`]( https://typedoc.org/api/types/Models.IndexedAccessType.html ) |
+| `model` | [`IndexedAccessType`](https://typedoc.org/api/types/Models.IndexedAccessType.html) |
 
 ###### Returns
 
@@ -856,7 +933,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`InferredType ↗️`]( https://typedoc.org/api/types/Models.InferredType.html ) |
+| `model` | [`InferredType`](https://typedoc.org/api/types/Models.InferredType.html) |
 
 ###### Returns
 
@@ -870,7 +947,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`IntersectionType ↗️`]( https://typedoc.org/api/types/Models.IntersectionType.html ) |
+| `model` | [`IntersectionType`](https://typedoc.org/api/types/Models.IntersectionType.html) |
 
 ###### Returns
 
@@ -884,7 +961,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`IntrinsicType ↗️`]( https://typedoc.org/api/types/Models.IntrinsicType.html ) |
+| `model` | [`IntrinsicType`](https://typedoc.org/api/types/Models.IntrinsicType.html) |
 
 ###### Returns
 
@@ -898,7 +975,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`LiteralType ↗️`]( https://typedoc.org/api/types/Models.LiteralType.html ) |
+| `model` | [`LiteralType`](https://typedoc.org/api/types/Models.LiteralType.html) |
 
 ###### Returns
 
@@ -912,7 +989,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`NamedTupleMember ↗️`]( https://typedoc.org/api/types/Models.NamedTupleMember.html ) |
+| `model` | [`NamedTupleMember`](https://typedoc.org/api/types/Models.NamedTupleMember.html) |
 
 ###### Returns
 
@@ -926,7 +1003,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`QueryType ↗️`]( https://typedoc.org/api/types/Models.QueryType.html ) |
+| `model` | [`QueryType`](https://typedoc.org/api/types/Models.QueryType.html) |
 
 ###### Returns
 
@@ -940,7 +1017,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReferenceType ↗️`]( https://typedoc.org/api/classes/Models.ReferenceType.html ) |
+| `model` | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) |
 
 ###### Returns
 
@@ -954,7 +1031,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ###### Returns
 
@@ -968,7 +1045,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html )[] |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html)[] |
 | `options`? | `object` |
 | `options.forceParameterType`? | `boolean` |
 
@@ -984,7 +1061,7 @@ Renders a signature member.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReflectionType ↗️`]( https://typedoc.org/api/classes/Models.ReflectionType.html ) |
+| `model` | [`ReflectionType`](https://typedoc.org/api/classes/Models.ReflectionType.html) |
 | `options`? | `object` |
 | `options.foreCollpase`? | `boolean` |
 
@@ -1002,7 +1079,7 @@ Takes a generic Type and returns the appropriate partial for it.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model`? | [`SomeType ↗️`]( https://typedoc.org/api/classes/Models.SomeType.html ) |
+| `model`? | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html) |
 
 ###### Returns
 
@@ -1016,7 +1093,7 @@ Takes a generic Type and returns the appropriate partial for it.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`TupleType ↗️`]( https://typedoc.org/api/classes/Models.TupleType.html ) |
+| `model` | [`TupleType`](https://typedoc.org/api/classes/Models.TupleType.html) |
 
 ###### Returns
 
@@ -1030,7 +1107,7 @@ Takes a generic Type and returns the appropriate partial for it.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`TypeOperatorType ↗️`]( https://typedoc.org/api/interfaces/TypeOperatorType.html ) |
+| `model` | [`TypeOperatorType`](https://typedoc.org/api/interfaces/TypeOperatorType.html) |
 
 ###### Returns
 
@@ -1044,7 +1121,7 @@ Takes a generic Type and returns the appropriate partial for it.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`UnionType ↗️`]( https://typedoc.org/api/types/Models.UnionType.html ) |
+| `model` | [`UnionType`](https://typedoc.org/api/types/Models.UnionType.html) |
 
 ###### Returns
 
@@ -1058,7 +1135,7 @@ Takes a generic Type and returns the appropriate partial for it.
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`UnknownType ↗️`]( https://typedoc.org/api/types/Models.UnknownType.html ) |
+| `model` | [`UnknownType`](https://typedoc.org/api/types/Models.UnknownType.html) |
 
 ###### Returns
 
@@ -1078,49 +1155,91 @@ Please note that partials:
 - Can reference other helpers but should not reference partials.
 - Can return strings or other models.
 
-#### getDeclarationComment()
-
-> **getDeclarationComment**: (`model`) => `any`
-
-##### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
-
-##### Returns
-
-`any`
-
 #### getDeclarationType()
 
-> **getDeclarationType**: (`model`) => `undefined` \| [`SomeType ↗️`]( https://typedoc.org/api/classes/Models.SomeType.html )
+> **getDeclarationType**: (`model`) => `undefined` \| [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html)
 
 ##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
-`undefined` \| [`SomeType ↗️`]( https://typedoc.org/api/classes/Models.SomeType.html )
+`undefined` \| [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html)
+
+#### getDescriptionForReflection()
+
+> **getDescriptionForReflection**: (`model`) => `null` \| `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`null` \| `string`
 
 #### getFlattenedDeclarations()
 
-> **getFlattenedDeclarations**: (`model`, `options`?) => [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[]
+> **getFlattenedDeclarations**: (`model`, `options`?) => [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[]
 
 ##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[] |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
 | `options`? | `object` |
 | `options.includeSignatures`? | `boolean` |
 
 ##### Returns
 
-[`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html )[]
+[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[]
+
+#### getGroupIndexList()
+
+> **getGroupIndexList**: (`children`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `children` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] \| `DocumentReflection`[] |
+
+##### Returns
+
+`string`
+
+#### getGroupIndexTable()
+
+> **getGroupIndexTable**: (`children`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `children` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] \| `DocumentReflection`[] |
+
+##### Returns
+
+`string`
+
+#### getGroupIndex()
+
+> **getGroupIndex**: (`group`) => `any`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `group` | [`ReflectionCategory`](https://typedoc.org/api/types/Models.ReflectionCategory.html) \| [`ReflectionGroup`](https://typedoc.org/api/classes/Models.ReflectionGroup.html) |
+
+##### Returns
+
+`any`
 
 #### getHierarchyType()
 
@@ -1130,7 +1249,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`SomeType ↗️`]( https://typedoc.org/api/classes/Models.SomeType.html ) |
+| `model` | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html) |
 | `options`? | `object` |
 | `options.isTarget`? | `boolean` |
 
@@ -1146,7 +1265,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ReflectionKind ↗️`]( https://typedoc.org/api/enums/Models.ReflectionKind-1.html ) |
+| `model` | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
 
 ##### Returns
 
@@ -1160,7 +1279,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
@@ -1174,7 +1293,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ParameterReflection ↗️`]( https://typedoc.org/api/classes/Models.ParameterReflection.html ) |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html) |
 
 ##### Returns
 
@@ -1188,7 +1307,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
@@ -1202,7 +1321,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model`? | [`SomeType ↗️`]( https://typedoc.org/api/classes/Models.SomeType.html ) |
+| `model`? | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html) |
 
 ##### Returns
 
@@ -1216,7 +1335,7 @@ Please note that partials:
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`DeclarationReflection ↗️`]( https://typedoc.org/api/classes/Models.DeclarationReflection.html ) \| [`SignatureReflection ↗️`]( https://typedoc.org/api/classes/Models.SignatureReflection.html ) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
 
 ##### Returns
 

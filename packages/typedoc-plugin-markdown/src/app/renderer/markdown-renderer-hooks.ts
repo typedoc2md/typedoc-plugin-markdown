@@ -3,7 +3,7 @@ import { MarkdownThemeContext } from 'public-api';
 /**
  * Describes the hooks available to inject output in the markdown theme.
  *
- * @usage
+ * ## Usage
  *
  *  ```ts
  *  app.renderer.markdownHooks.on(

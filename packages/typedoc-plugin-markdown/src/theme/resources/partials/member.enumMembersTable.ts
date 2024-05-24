@@ -12,10 +12,14 @@ export function enumMembersTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
 ): string {
-  const tableColumnsOptions = this.options.getValue('tableColumns');
-
+  const tableColumnsOptions = this.options.getValue('tableColumnVisibility');
+  const leftAlignHeadings = this.options.getValue('leftAlignTableHeaders');
   const comments = model.map((param) => !!param.comment?.hasVisibleComponent());
   const hasComments = comments.some((value) => Boolean(value));
+
+  const hasSources =
+    !tableColumnsOptions.hideSources &&
+    !this.options.getValue('disableSources');
 
   const headers = [
     this.internationalization.kindSingularString(ReflectionKind.EnumMember),
@@ -24,6 +28,10 @@ export function enumMembersTable(
 
   if (hasComments) {
     headers.push(this.i18n.theme_description());
+  }
+
+  if (hasSources) {
+    headers.push(this.i18n.theme_defined_in());
   }
 
   const rows: string[][] = [];
@@ -55,12 +63,17 @@ export function enumMembersTable(
         row.push('-');
       }
     }
+
+    if (hasSources) {
+      row.push(this.partials.sources(property, { headingLevel: -1 }));
+    }
+
     rows.push(row);
   });
 
   return this.options.getValue('enumMembersFormat') == 'table'
-    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
-    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
+    ? table(headers, rows, leftAlignHeadings)
+    : htmlTable(headers, rows, leftAlignHeadings);
 }
 
 function getComments(property: DeclarationReflection) {

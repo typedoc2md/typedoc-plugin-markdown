@@ -9,10 +9,11 @@ export function typeParametersTable(
   this: MarkdownThemeContext,
   model: TypeParameterReflection[],
 ): string {
-  const tableColumnsOptions = this.options.getValue('tableColumns');
+  const tableColumnsOptions = this.options.getValue('tableColumnVisibility');
+  const leftAlignHeadings = this.options.getValue('leftAlignTableHeaders');
 
   const hasDefault =
-    !tableColumnsOptions.excludeDefaultsCol &&
+    !tableColumnsOptions.hideDefaults &&
     model.some((typeParameter) => Boolean(typeParameter.default));
 
   const hasComments = model.some((typeParameter) =>
@@ -69,6 +70,6 @@ export function typeParametersTable(
   });
 
   return this.options.getValue('parametersFormat') == 'table'
-    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
-    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
+    ? table(headers, rows, leftAlignHeadings)
+    : htmlTable(headers, rows, leftAlignHeadings);
 }

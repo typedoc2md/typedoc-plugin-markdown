@@ -11,9 +11,10 @@ export function getGroupIndexTable(
   this: MarkdownThemeContext,
   children: DeclarationReflection[] | DocumentReflection[],
 ) {
-  const tableColumnsOptions = this.options.getValue('tableColumns');
+  const leftAlignHeadings = this.options.getValue('leftAlignTableHeaders');
   const headers = [
-    this.options.getValue('excludeGroups')
+    this.options.getValue('excludeGroups') ||
+    this.options.getValue('hideGroupHeadings')
       ? this.i18n.theme_member()
       : ReflectionKind.singularString(children[0].kind),
     this.i18n.theme_description(),
@@ -34,5 +35,5 @@ export function getGroupIndexTable(
 
     rows.push(row);
   });
-  return table(headers, rows, tableColumnsOptions.leftAlignHeadings);
+  return table(headers, rows, leftAlignHeadings);
 }

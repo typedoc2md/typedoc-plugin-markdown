@@ -1,0 +1,152 @@
+import { Callout, FileTree } from "nextra/components";
+
+# Utility Options
+
+## --publicPath
+
+<Callout emoji="💡">Specify the base path for all urls.</Callout>
+
+> Accepts a string value. Defaults to `"undefined"`.
+
+If undefined all urls will be relative.
+
+```json filename="typedoc.json"
+{
+  "publicPath": "http://abc.com"
+}
+```
+
+## --sanitizeComments
+
+<Callout emoji="💡">Sanitize HTML and JSX inside JsDoc comments.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+_Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks)._
+
+By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
+
+This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
+
+This option would typically be used when source code comes from an external library exposing the following potential issues:
+
+- Comments contain raw tags that should be interpreted as code examples.
+- Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
+- Although most parsers use XSS filters, this option provides an additional layer of XSS security.
+
+```json filename="typedoc.json"
+{
+  "sanitizeComments": false
+}
+```
+
+## --anchorPrefix
+
+<Callout emoji="💡">
+  Custom anchor prefix when anchoring to in-page symbols.
+</Callout>
+
+> Accepts a string value. Defaults to `"undefined"`.
+
+This option should be used when parsers require a custom anchor prefix.
+
+```json filename="typedoc.json"
+{
+  "anchorPrefix": "markdown-header"
+}
+```
+
+## --useHTMLAnchors
+
+<Callout emoji="💡">Add HTML named anchors to headings and table rows.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+This option should be used if there are issues with anchoring to symbols within a page.
+
+- For markdown parsers that do not automatically assign header ids.
+- When cross referencing symbols that are referenced in a table row.
+
+```json filename="typedoc.json"
+{
+  "useHTMLAnchors": false
+}
+```
+
+## --preserveAnchorCasing
+
+<Callout emoji="💡">
+  Preserve anchor casing when generating link to symbols.
+</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default references to symbol anchor links are lowercased.
+
+This option can be used for engines that require the preservation of anchor link casing.
+
+```json filename="typedoc.json"
+{
+  "preserveAnchorCasing": false
+}
+```
+
+## --navigationModel
+
+<Callout emoji="💡">
+  Configures how the navigation model will be generated.
+</Callout>
+
+>
+
+By default navigation is not written to file but can be consumed programmatically.
+This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
+
+The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
+
+The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
+
+- `navigationModel.excludeGroups`: do not organise navigation by groups.
+- `navigationModel.excludeCategories`: do not organise navigation by categories.
+- `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
+
+```ts filename="custom-plugin.ts"
+import { MarkdownApplication } from "typedoc-plugin-markdown";
+
+export function load(app: MarkdownApplication) {
+  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
+    // The navigation JSON structure is available on the navigation object.
+    const navigation = renderer.navigation;
+
+    // This can be parsed to something else or written straight to a file:
+    fs.writeFileSync("navigation.json", JSON.stringify(navigation));
+  });
+}
+```
+
+```json filename="typedoc.json"
+{
+  "navigationModel": {
+    "excludeGroups": false,
+    "excludeCategories": false,
+    "excludeFolders": false
+  }
+}
+```
+
+## ~--textContentMappings~
+
+<Callout type="warning">
+  Deprecated: This option has been deprecated in favour of TypeDoc's 0.26
+  localization feature.
+</Callout>
+
+> Accepts a key/value object.
+
+This option enables changing static text rendered to the documentation.
+
+```json filename="typedoc.json"
+{
+  "textContentMappings": {}
+}
+```

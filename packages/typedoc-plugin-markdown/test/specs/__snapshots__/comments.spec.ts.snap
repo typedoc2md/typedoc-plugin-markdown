@@ -116,9 +116,9 @@ exports[`Comments should get tables for emum: (Output File Strategy "members") (
 
 ## Enumeration Members
 
-| Enumeration Member | Value | Description |
-| ------ | ------ | ------ |
-| \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. |
+| Enumeration Member | Value | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+| \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -174,6 +174,10 @@ Adds two numbers together.
 ## Returns
 
 \`number\`
+
+## Source
+
+[index.ts:1](http://source-url)
 "
 `;
 
@@ -200,13 +204,13 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Properties
 
-| Property | Modifier | Type | Default Value | Description | Overrides | Inherited from |
-| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - |
-| \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - |
-| \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - |
-| ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).\`propA\` | - |
-| \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).\`propB\` |
+| Property | Modifier | Type | Default Value | Description | Overrides | Inherited from | Defined in |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
+| \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
+| \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - | [index.ts:1](http://source-url) |
+| ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).\`propA\` | - | [index.ts:1](http://source-url) |
+| \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).\`propB\` | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -368,11 +372,15 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 ## Type declaration
 
-| Member | Type | Description |
-| ------ | ------ | ------ |
-| \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. |
-| \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. |
-| \`declaration3\` | \`"declaration3"\` | - |
+| Member | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+| \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
+| \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
+| \`declaration3\` | \`"declaration3"\` | - | [index.ts:1](http://source-url) |
+
+## Source
+
+[index.ts:1](http://source-url)
 "
 `;
 
@@ -439,6 +447,10 @@ to generate the binary output for input validation.
 </td>
 </tr>
 </table>
+
+## Source
+
+[index.ts:1](http://source-url)
 "
 `;
 
@@ -469,6 +481,10 @@ text outside of the code block as regular text.
 \`\`\`ts
 factorial(1)
 \`\`\`
+
+## Source
+
+[index.ts:1](http://source-url)
 "
 `;
 
@@ -499,5 +515,9 @@ text outside of the code block as regular text.
 \`\`\`ts
 factorial(1)
 \`\`\`
+
+## Source
+
+[index.ts:1](http://source-url)
 "
 `;

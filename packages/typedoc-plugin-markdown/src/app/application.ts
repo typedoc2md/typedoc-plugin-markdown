@@ -8,7 +8,7 @@ import { MarkdownRendererHooks } from './renderer/markdown-renderer-hooks';
  *
  * This is essentially a copy of the main class with the `renderer` property overridden to the custom {@link MarkdownRenderer}.
  *
- * @usage
+ * ## Usage
  *
  * ```ts
  * import {MarkdownApplication} from 'typedoc-plugin-markdown';
@@ -29,7 +29,7 @@ export interface MarkdownApplication extends Application {
  *
  * Includes updated typings for hooks and async jobs.
  *
- * @usage
+ * ## Usage
  *
  * ```ts
  * import { MarkdownApplication } from 'typedoc-plugin-markdown';

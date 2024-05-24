@@ -1,0 +1,244 @@
+import { Callout, FileTree } from "nextra/components";
+
+# Display Options
+
+## --hidePageHeader
+
+<Callout emoji="💡">Do not print page header.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+```json filename="typedoc.json"
+{
+  "hidePageHeader": false
+}
+```
+
+## --hidePageTitle
+
+<Callout emoji="💡">Do not print page title.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+```json filename="typedoc.json"
+{
+  "hidePageTitle": false
+}
+```
+
+## --hideBreadcrumbs
+
+<Callout emoji="💡">Do not print breadcrumbs.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+```json filename="typedoc.json"
+{
+  "hideBreadcrumbs": false
+}
+```
+
+## --hideGroupHeadings
+
+<Callout emoji="💡">
+  Excludes grouping by kind so all members are rendered and sorted at the same
+  level.
+</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default members are grouped by kind (eg Classes, Functions etc).
+
+This creates a flat structure where all members are displayed at the same heading level.
+
+```json filename="typedoc.json"
+{
+  "hideGroupHeadings": false
+}
+```
+
+## --useCodeBlocks
+
+<Callout emoji="💡">Wraps signatures and declarations in code blocks.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+This option can be used to improve readability and aesthetics when defining signatures and declarations.
+
+Please note that when this option is set to `true` it is not possible to link to other references.
+
+As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be be used to manually reference types.
+
+```json filename="typedoc.json"
+{
+  "useCodeBlocks": false
+}
+```
+
+## --expandObjects
+
+<Callout emoji="💡">Expand objects inside declarations.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default objects inside declarations are collapsed to preserve space and improve readability.
+
+This option should be set when a full object representation is preferred.
+
+```json filename="typedoc.json"
+{
+  "expandObjects": false
+}
+```
+
+## --expandParameters
+
+<Callout emoji="💡">
+  Expand parameters in signature parentheses to display type information.
+</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default parameters in signature definitions only display the parameter name so the output is more concise.
+
+This option should be set when a full type representation is preferred.
+
+```json filename="typedoc.json"
+{
+  "expandParameters": false
+}
+```
+
+## --parametersFormat
+
+<Callout emoji="💡">
+  Specify the render style of parameter and type parameter groups.
+</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option specifies the output format for parameters and type parameters of functions and class methods:
+
+- **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
+- **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in tabular format.
+
+```json filename="typedoc.json"
+{
+  "parametersFormat": "list"
+}
+```
+
+## --propertiesFormat
+
+<Callout emoji="💡">
+  Specify the render style of property groups for interfaces and classes.
+</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option specifies the output format for class and interface properties:
+
+- **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+- **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+
+```json filename="typedoc.json"
+{
+  "propertiesFormat": "list"
+}
+```
+
+## --enumMembersFormat
+
+<Callout emoji="💡">Specify the render style of enumeration members.</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option specifies the output format for enumeration members:
+
+- **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
+- **"table"**: members are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
+
+```json filename="typedoc.json"
+{
+  "enumMembersFormat": "list"
+}
+```
+
+## --typeDeclarationFormat
+
+<Callout emoji="💡">
+  Specify the render style for type declaration members.
+</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option specifies the output format for type declaration:
+
+- **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
+- **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
+
+```json filename="typedoc.json"
+{
+  "typeDeclarationFormat": "list"
+}
+```
+
+## --indexFormat
+
+<Callout emoji="💡">Specify the render format for index items.</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option renders index items either as a simple list or in a table with a description column exposing the comment summary.
+
+For a packages index page (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
+
+```json filename="typedoc.json"
+{
+  "indexFormat": "list"
+}
+```
+
+## --tableColumnVisibility
+
+<Callout emoji="💡">
+  Control header alignment and column visibility in tables.
+</Callout>
+
+>
+
+By default, all available data for symbols are displayed in table columns.
+
+This option allows you to control the visibility of columns, prioritizing readability over displaying complete data.
+
+```json filename="typedoc.json"
+{
+  "tableColumnVisibility": {
+    "hideDefaults": false,
+    "hideInherited": false,
+    "hideModifiers": false,
+    "hideOverrides": false,
+    "hideSources": false
+  }
+}
+```
+
+## --leftAlignTableHeaders
+
+<Callout emoji="💡">Left aligns items in table headers</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default table alignment is not specified which means the table headings will typically be centred.
+
+This options can be used to specify left alignment for table headings.
+
+```json filename="typedoc.json"
+{
+  "leftAlignTableHeaders": false
+}
+```

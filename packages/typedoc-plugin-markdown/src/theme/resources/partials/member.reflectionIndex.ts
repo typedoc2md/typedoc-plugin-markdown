@@ -32,7 +32,10 @@ export function reflectionIndex(
         !(group.owningReflection instanceof DocumentReflection),
     );
 
-    if (this.options.getValue('excludeGroups')) {
+    if (
+      this.options.getValue('excludeGroups') ||
+      this.options.getValue('hideGroupHeadings')
+    ) {
       const children = groups?.reduce((acc, group) => {
         return [...acc, ...group.children];
       }, []);

@@ -193,12 +193,12 @@ function getType(
       .join(';')}}`;
   }
   if (option.type === ParameterType.Mixed && option.defaultValue) {
-    const usePartial = name === 'textContentMappings';
+    const useAny = name === 'textContentMappings';
     return isInterface
-      ? usePartial
-        ? `Partial<${capitalize(name)}>`
+      ? useAny
+        ? `Partial<any>`
         : capitalize(name)
-      : usePartial
+      : useAny
         ? `ManuallyValidatedOption<Partial<${capitalize(name)}>>`
         : `ManuallyValidatedOption<${capitalize(name)}>`;
   }

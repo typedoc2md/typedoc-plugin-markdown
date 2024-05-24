@@ -27,7 +27,7 @@ export interface PluginOptions {
   enumMembersFormat: 'list' | 'table' | 'htmlTable';
 
   /**
-   * Excludes grouping by kind so all members are rendered and sorted at the same level.
+   * @deprecated This option has been renamed hideGroupHeadings to better reflect its purpose.
    */
   excludeGroups: boolean;
 
@@ -62,6 +62,11 @@ export interface PluginOptions {
   hideBreadcrumbs: boolean;
 
   /**
+   * Excludes grouping by kind so all members are rendered and sorted at the same level.
+   */
+  hideGroupHeadings: boolean;
+
+  /**
    * Do not print page header.
    */
   hidePageHeader: boolean;
@@ -80,6 +85,11 @@ export interface PluginOptions {
    * Inline documents in pages.
    */
   inlineDocuments: boolean;
+
+  /**
+   * Left aligns items in table headers
+   */
+  leftAlignTableHeaders: boolean;
 
   /**
    * Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
@@ -140,19 +150,18 @@ export interface PluginOptions {
   /**
    * Control header alignment and column visibility in tables.
    */
-  tableColumns: {
-    excludeDefaultsCol: boolean;
-    excludeInheritedFromCol: boolean;
-    excludeModifiersCol: boolean;
-    excludeOverridesCol: boolean;
-    excludeSourcesCol: boolean;
-    leftAlignHeadings: boolean;
+  tableColumnVisibility: {
+    hideDefaults: boolean;
+    hideInherited: boolean;
+    hideModifiers: boolean;
+    hideOverrides: boolean;
+    hideSources: boolean;
   };
 
   /**
-   * Provides a mechanism to change the content of text used in documentation.
+   * @deprecated Provides a mechanism to change the content of text used in documentation.
    */
-  textContentMappings: Partial<TextContentMappings>;
+  textContentMappings: Partial<any>;
 
   /**
    * Specify the render style for type declaration members.

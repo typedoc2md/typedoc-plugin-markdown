@@ -4,7 +4,7 @@ Describes the hooks available to inject output in the markdown theme.
 
 ## Usage
 
-```ts
+ ```ts
  app.renderer.markdownHooks.on(
    'page.end',
    () => `**Generated using \`page.end\` hook**`,

@@ -12,10 +12,10 @@ const config: Record<string, Fixture> = {
       ],
       hidePageHeader: true,
       hideBreadcrumbs: true,
-      tableColumns: {
-        excludeSourcesCol: true,
-        leftAlignHeadings: true,
+      tableColumnVisibility: {
+        hideSources: true,
       },
+      leftAlignTableHeaders: true,
     },
     options: [
       {},
@@ -43,9 +43,7 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       expandObjects: true,
       expandParameters: true,
-      tableColumns: {
-        leftAlignHeadings: true,
-      },
+      leftAlignTableHeaders: true,
     },
     options: [
       {},
@@ -93,9 +91,7 @@ const config: Record<string, Fixture> = {
       theme: 'stub-groups',
       disableSources: true,
       entryFileName: 'index.md',
-      tableColumns: {
-        leftAlignHeadings: true,
-      },
+      leftAlignTableHeaders: true,
     },
     options: [
       {
@@ -113,7 +109,7 @@ const config: Record<string, Fixture> = {
           'TypeAlias',
           'Function',
         ],
-        excludeGroups: true,
+        hideGroupHeadings: true,
         useHTMLAnchors: true,
         indexFormat: 'table',
         categorizeByGroup: false,
@@ -124,13 +120,14 @@ const config: Record<string, Fixture> = {
     only: false,
     entryPoints: '/comments/index.ts',
     commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+      plugin: [
+        path.join(__dirname, 'custom-plugins', 'normalize-sources.mjs'),
+        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+      ],
       hidePageHeader: true,
       hideBreadcrumbs: true,
       readme: 'none',
-      disableSources: true,
       inlineDocuments: true,
-      //media: './test/fixtures/media',
     },
     options: [
       {
@@ -149,14 +146,14 @@ const config: Record<string, Fixture> = {
         parametersFormat: 'htmlTable',
         propertiesFormat: 'htmlTable',
         typeDeclarationFormat: 'htmlTable',
-        tableColumns: {
-          excludeDefaultsCol: true,
-          excludeInheritedFromCol: true,
-          excludeModifiersCol: true,
-          excludeOverridesCol: true,
-          excludeSourcesCol: true,
-          leftAlignHeadings: true,
+        tableColumnVisibility: {
+          hideDefaults: true,
+          hideInherited: true,
+          hideModifiers: true,
+          hideOverrides: true,
+          hideSources: true,
         },
+        leftAlignTableHeaders: true,
       },
     ],
   },
@@ -168,9 +165,7 @@ const config: Record<string, Fixture> = {
       entryPointStrategy: 'packages',
       name: 'packages-example',
       disableSources: true,
-      tableColumns: {
-        leftAlignHeadings: true,
-      },
+      leftAlignTableHeaders: true,
     },
     options: [
       { entryFileName: 'index.md' },
@@ -233,9 +228,7 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       disableSources: true,
-      tableColumns: {
-        leftAlignHeadings: true,
-      },
+      leftAlignTableHeaders: true,
     },
     options: [
       {

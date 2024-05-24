@@ -3,7 +3,7 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
 /**
  * An event emitted by before and after the markup of a page is rendered.
  *
- * @usage
+ * ## Usage
  *
  * ```ts
  * export function load(app: MarkdownApplication) {

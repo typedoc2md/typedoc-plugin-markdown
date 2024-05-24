@@ -10,7 +10,8 @@ export function parametersTable(
   this: MarkdownThemeContext,
   model: ParameterReflection[],
 ): string {
-  const tableColumnsOptions = this.options.getValue('tableColumns');
+  const tableColumnsOptions = this.options.getValue('tableColumnVisibility');
+  const leftAlignHeadings = this.options.getValue('leftAlignTableHeaders');
 
   const parseParams = (current: any, acc: any) => {
     const shouldFlatten =
@@ -35,7 +36,7 @@ export function parametersTable(
   };
 
   const showDefaults =
-    !tableColumnsOptions.excludeDefaultsCol && hasDefaultValues(model);
+    !tableColumnsOptions.hideDefaults && hasDefaultValues(model);
 
   const parsedParams = model.reduce(
     (acc: any, current: any) => parseParams(current, acc),
@@ -103,8 +104,8 @@ export function parametersTable(
   });
 
   return this.options.getValue('parametersFormat') == 'table'
-    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
-    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
+    ? table(headers, rows, leftAlignHeadings)
+    : htmlTable(headers, rows, leftAlignHeadings);
 }
 
 function hasDefaultValues(parameters: ParameterReflection[]) {

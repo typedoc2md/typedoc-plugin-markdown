@@ -15,10 +15,7 @@ import {
  *
  * The following keys are available:
  *
- * @members
- *
- * Generates an individual file for each exported module member. This is the standard behaviour of the HTML theme and the plugin default.
- *
+ * - **"members":** generates an individual file for each exported module member. This is the standard behavior of the HTML theme and the default setting of the plugin.
  * <FileTree>
  *  <FileTree.File name="README.md" />
  *  <FileTree.Folder name="module-a" defaultOpen>
@@ -39,17 +36,14 @@ import {
  *  </FileTree.Folder>
  * </FileTree>
  *
- * @modules
- *
- * Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
- *
+ * - **"modules"**: generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
  * <FileTree>
  *  <FileTree.File name="README.md" />
  *  <FileTree.File name="module-a.md" />
  *  <FileTree.File name="module-b.md" />
  * </FileTree>
  *
- * @category Output
+ * @category File
  */
 export const outputFileStrategy: Partial<DeclarationOption> = {
   help: 'Determines how output files are generated.',
@@ -65,7 +59,7 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
  *
  * @example ["Class", "Enum", "Interface"]
  *
- * @category Output
+ * @category File
  */
 export const membersWithOwnFile: Partial<DeclarationOption> = {
   help: 'Determines which members are exported to their own file when `outputFileStrategy` equals `members`.',
@@ -90,7 +84,7 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
  *
  * This option will flatten the output files to a single directory as follows:
  *
- * Default output:
+ * **Default output:**
  *
  * <FileTree>
  *  <FileTree.File name="README.md" />
@@ -106,7 +100,7 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
  * </FileTree.Folder>
  * </FileTree>
  *
- * Flattened output:
+ * **Flattened output:**
  *
  * <FileTree>
  *  <FileTree.File name="README.md" />
@@ -117,7 +111,7 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
  * </FileTree>
  *
  *
- * @category Output
+ * @category File
  */
 export const flattenOutputFiles: Partial<DeclarationOption> = {
   help: 'Flatten output files to a single directory.',
@@ -130,7 +124,7 @@ export const flattenOutputFiles: Partial<DeclarationOption> = {
  *
  * @example ".mdx"
  *
- * @category Output
+ * @category File
  */
 export const fileExtension: Partial<DeclarationOption> = {
   help: 'Specify the file extension for generated output files.',
@@ -158,7 +152,7 @@ export const fileExtension: Partial<DeclarationOption> = {
  *
  * @example "index"
  *
- * @category Output
+ * @category File
  *
  */
 export const entryFileName: Partial<DeclarationOption> = {
@@ -176,25 +170,11 @@ export const entryFileName: Partial<DeclarationOption> = {
  *
  * @example "index"
  *
- * @category Output
+ * @category File
  */
 export const entryModule: Partial<DeclarationOption> = {
   help: 'The name of a module that should act as the root page for the documentation.',
   type: ParameterType.String,
-};
-
-/**
- * By default when a readme file is resolved, a separate readme page is created. This option appends the index page to the readme so only a single root page is generated.
- *
- * This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
- *
- * @category Output
- *
- */
-export const mergeReadme: Partial<DeclarationOption> = {
-  help: 'Merges the resolved readme into the project index page.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
 };
 
 /**
@@ -204,17 +184,15 @@ export const mergeReadme: Partial<DeclarationOption> = {
  *
  * The following will be the directory structure for packages named `@scope/package-1` and `@scope/package-2`:
  *
- * `false` (default):
- *
- *  <FileTree>
+ * - **`false`**
+ * <FileTree>
  *    <FileTree.Folder name="@scope" defaultOpen>
  *       <FileTree.Folder name="package-1" />
  *       <FileTree.Folder name="package-2" />
  *    </FileTree.Folder>
  * </FileTree>
  *
- * `true`:
- *
+ * - **`true`**
  * <FileTree>
  *   <FileTree.Folder name="package-1" />
  *   <FileTree.Folder name="package-2" />
@@ -222,7 +200,7 @@ export const mergeReadme: Partial<DeclarationOption> = {
  *
  * Ignored if `flattenOutputFiles` is set to `true`.
  *
- * @category Output
+ * @category File
  */
 export const excludeScopesInPaths: Partial<DeclarationOption> = {
   help: 'Exclude writing @ scope directories in paths.',
@@ -231,7 +209,34 @@ export const excludeScopesInPaths: Partial<DeclarationOption> = {
 };
 
 /**
- * @category UX
+ * By default when a readme file is resolved, a separate readme page is created. This option appends the index page to the readme so only a single root page is generated.
+ *
+ * This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+ *
+ * @category File
+ *
+ */
+export const mergeReadme: Partial<DeclarationOption> = {
+  help: 'Merges the resolved readme into the project index page.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default a documents indexes and separate documents pages are generated when using the `@document` tag.
+ *
+ * This option inlines the document into the page rather than generating a separate document page.
+ *
+ * @category File
+ */
+export const inlineDocuments: Partial<DeclarationOption> = {
+  help: 'Inline documents in pages.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * @category Display
  */
 export const hidePageHeader: Partial<DeclarationOption> = {
   help: 'Do not print page header.',
@@ -240,7 +245,7 @@ export const hidePageHeader: Partial<DeclarationOption> = {
 };
 
 /**
- * @category UX
+ * @category Display
  */
 export const hidePageTitle: Partial<DeclarationOption> = {
   help: 'Do not print page title.',
@@ -249,21 +254,10 @@ export const hidePageTitle: Partial<DeclarationOption> = {
 };
 
 /**
- * @category UX
+ * @category Display
  */
 export const hideBreadcrumbs: Partial<DeclarationOption> = {
   help: 'Do not print breadcrumbs.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * By default a documents index and separate documents pages are generated when using the `@document` tag.
- *
- * @category UX
- */
-export const inlineDocuments: Partial<DeclarationOption> = {
-  help: 'Inline documents in pages.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -273,10 +267,21 @@ export const inlineDocuments: Partial<DeclarationOption> = {
  *
  * This creates a flat structure where all members are displayed at the same heading level.
  *
- * @category UX
+ * @category Display
+ */
+export const hideGroupHeadings: Partial<DeclarationOption> = {
+  help: 'Excludes grouping by kind so all members are rendered and sorted at the same level.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * @deprecated
+ *
+ * @hidden
  */
 export const excludeGroups: Partial<DeclarationOption> = {
-  help: 'Excludes grouping by kind so all members are rendered and sorted at the same level.',
+  help: '@deprecated This option has been renamed hideGroupHeadings to better reflect its purpose.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -288,7 +293,7 @@ export const excludeGroups: Partial<DeclarationOption> = {
  *
  * As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be be used to manually reference types.
  *
- * @category UX
+ * @category Display
  */
 export const useCodeBlocks: Partial<DeclarationOption> = {
   help: 'Wraps signatures and declarations in code blocks.',
@@ -301,15 +306,7 @@ export const useCodeBlocks: Partial<DeclarationOption> = {
  *
  * This option should be set when a full object representation is preferred.
  *
- * @Default
- *
- * `object`
- *
- * @Expanded
- *
- * \{ `"x"`: `string` }
- *
- * @category UX
+ * @category Display
  */
 export const expandObjects: Partial<DeclarationOption> = {
   help: 'Expand objects inside declarations.',
@@ -322,15 +319,7 @@ export const expandObjects: Partial<DeclarationOption> = {
  *
  * This option should be set when a full type representation is preferred.
  *
- * @Default
- *
- * `someFunction(param1, param2)`
- *
- * @Expanded
- *
- * `someFunction(param1: string, param2: boolean)`
- *
- * @category UX
+ * @category Display
  */
 export const expandParameters: Partial<DeclarationOption> = {
   help: 'Expand parameters in signature parentheses to display type information.',
@@ -339,9 +328,13 @@ export const expandParameters: Partial<DeclarationOption> = {
 };
 
 /**
- * This option either renders parameters for functions and class methods as a list or in tabular format.
+ * This option specifies the output format for parameters and type parameters of functions and class methods:
  *
- * @category UX
+ * - **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
+ * - **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in tabular format.
+ *
+ * @category Display
  */
 export const parametersFormat: Partial<DeclarationOption> = {
   help: 'Specify the render style of parameter and type parameter groups.',
@@ -351,10 +344,13 @@ export const parametersFormat: Partial<DeclarationOption> = {
 };
 
 /**
- *  This option either renders properties for classes and interfaces as a list or in tabular format.
+ * This option specifies the output format for class and interface properties:
  *
- * @category UX
+ * - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
  *
+ * @category Display
  */
 export const propertiesFormat: Partial<DeclarationOption> = {
   help: 'Specify the render style of property groups for interfaces and classes.',
@@ -364,9 +360,13 @@ export const propertiesFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * This option either renders members of enums as a list or in tabular format.
+ * This option specifies the output format for enumeration members:
  *
- * @category UX
+ * - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: members are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
+ *
+ * @category Display
  */
 export const enumMembersFormat: Partial<DeclarationOption> = {
   help: 'Specify the render style of enumeration members.',
@@ -376,9 +376,13 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * This option either renders type declarations as a list or in tabular format.
+ * This option specifies the output format for type declaration:
  *
- * @category UX
+ * - **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
+ *
+ * @category Display
  */
 export const typeDeclarationFormat: Partial<DeclarationOption> = {
   help: 'Specify the render style for type declaration members.',
@@ -392,7 +396,7 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
  *
  * For a packages index page (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
  *
- * @category UX
+ * @category Display
  */
 export const indexFormat: Partial<DeclarationOption> = {
   help: 'Specify the render format for index items.',
@@ -402,71 +406,35 @@ export const indexFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * By default, all available data for symbols are displayed in columns, which can result in very large tables.
+ * By default, all available data for symbols are displayed in table columns.
  *
  * This option allows you to control the visibility of columns, prioritizing readability over displaying complete data.
  *
- * @category UX
+ * @category Display
  */
-export const tableColumns: Partial<DeclarationOption> = {
+export const tableColumnVisibility: Partial<DeclarationOption> = {
   help: 'Control header alignment and column visibility in tables.',
   type: ParameterType.Flags,
   defaults: {
-    excludeDefaultsCol: false,
-    excludeInheritedFromCol: false,
-    excludeModifiersCol: false,
-    excludeOverridesCol: false,
-    excludeSourcesCol: false,
-    leftAlignHeadings: false,
+    hideDefaults: false,
+    hideInherited: false,
+    hideModifiers: false,
+    hideOverrides: false,
+    hideSources: false,
   },
 };
 
 /**
- * <Callout type="warning">
- * **Please note TypeDoc 0.26 will be introducing a native i18n implementation. This option will likely be deprecated in favour of utilizing the native implementation when 0.26 is released.**
- * </Callout>
+ * By default table alignment is not specified which means the table headings will typically be centred.
  *
- * This option enables changing static text rendered to the documentation.
- * Useful if an alternative English phrase is preferred or to translate English text to another language.
- * This option does not attempt to address translating text within code comments.
+ * This options can be used to specify left alignment for table headings.
  *
- * **Placeholders**
- *
- * Default values within curly braces `{}` indicates a placeholder of dynamic text.
- * The `{version}` placeholder requires the TypeDoc option [`includeVersion`](https://typedoc.org/options/input/#includeversion) to be true.
- *
- * **Keys**
- *
- * Keys are categorised with the following namespace conventions:
- *
- * - `header.*`, `breadcrumbs.*`,`footer.*`: Text in main page elements (if displayed).
- * - `title.*`: Text in main page titles.
- * - `label.*` Text in page content, including content headings and table headers.
- * - `kind.*` Text mappings to TypeDoc's `ReflectionKind` definitions.
- *
- * Only keys that require translation need to be added to the object.
- *
- * @category UX
+ * @category Display
  */
-export const textContentMappings: Partial<DeclarationOption> = {
-  help: 'Provides a mechanism to change the content of text used in documentation.',
-  type: ParameterType.Mixed,
-  defaultValue: {},
-  validate(value) {
-    if (!value || typeof value !== 'object') {
-      throw new Error(
-        '[typedoc-plugin-markdown] textContentMappings must be an object.',
-      );
-    }
-
-    for (const val of Object.values(value)) {
-      if (typeof val !== 'string') {
-        throw new Error(
-          `[typedoc-plugin-markdown] All values of textContentMappings must be strings.`,
-        );
-      }
-    }
-  },
+export const leftAlignTableHeaders: Partial<DeclarationOption> = {
+  help: 'Left aligns items in table headers',
+  type: ParameterType.Boolean,
+  defaultValue: false,
 };
 
 /**
@@ -544,19 +512,31 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 };
 
 /**
- * By default navigation is not written to file but can be consumed programmatically. Please see [Navigation Guide](/docs/navigation) for more information.
+ * By default navigation is not written to file but can be consumed programmatically.
+ * This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
  *
- * `navigationModel.excludeGroups`
+ * The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
  *
- * Do not organise navigation by groups.
+ * The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
  *
- * `navigationModel.excludeCategories`
+ * - `navigationModel.excludeGroups`: do not organise navigation by groups.
+ * - `navigationModel.excludeCategories`: do not organise navigation by categories.
+ * - `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
  *
- * Do not organise navigation by categories.
+ * ```ts filename="custom-plugin.ts"
  *
- * `navigationModel.excludeFolders`
+ * import { MarkdownApplication } from 'typedoc-plugin-markdown';
  *
- *  Excludes unnecessary nesting with complex modules/namespace hierarchies.
+ * export function load(app: MarkdownApplication) {
+ *  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
+ *    // The navigation JSON structure is available on the navigation object.
+ *    const navigation = renderer.navigation;
+ *
+ *    // This can be parsed to something else or written straight to a file:
+ *    fs.writeFileSync('navigation.json', JSON.stringify(navigation));
+ *  });
+ * }
+ * ```
  *
  * @category Utility
  *
@@ -568,5 +548,36 @@ export const navigationModel: Partial<DeclarationOption> = {
     excludeGroups: false,
     excludeCategories: false,
     excludeFolders: false,
+  },
+};
+
+/**
+ *
+ * This option enables changing static text rendered to the documentation.
+ *
+ * @deprecated
+ *
+ * This option has been deprecated in favour of TypeDoc's 0.26 localization feature.
+ *
+ * @category Utility
+ */
+export const textContentMappings: Partial<DeclarationOption> = {
+  help: '@deprecated Provides a mechanism to change the content of text used in documentation.',
+  type: ParameterType.Mixed,
+  defaultValue: {},
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-markdown] textContentMappings must be an object.',
+      );
+    }
+
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string') {
+        throw new Error(
+          `[typedoc-plugin-markdown] All values of textContentMappings must be strings.`,
+        );
+      }
+    }
   },
 };

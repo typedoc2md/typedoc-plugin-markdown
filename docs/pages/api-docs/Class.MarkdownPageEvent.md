@@ -14,13 +14,13 @@ export function load(app: MarkdownApplication) {
 
 ## Extends
 
-- [`Event ↗️`]( https://typedoc.org/api/classes/Event.html )
+- [`Event`](https://typedoc.org/api/classes/Event.html)
 
 ## Properties
 
 ### project
 
-> **project**: [`ProjectReflection ↗️`]( https://typedoc.org/api/classes/Models.ProjectReflection.html )
+> **project**: [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)
 
 The project the renderer is currently processing.
 

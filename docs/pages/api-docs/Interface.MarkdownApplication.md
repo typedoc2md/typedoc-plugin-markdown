@@ -16,7 +16,7 @@ export function load(app: MarkdownApplication) {
 
 ## Extends
 
-- [`Application ↗️`]( https://typedoc.org/api/classes/Application.html )
+- [`Application`](https://typedoc.org/api/classes/Application.html)
 
 ## Properties
 

@@ -10,7 +10,12 @@ export function typeDeclarationTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
 ): string {
-  const tableColumnsOptions = this.options.getValue('tableColumns');
+  const tableColumnsOptions = this.options.getValue('tableColumnVisibility');
+  const leftAlignHeadings = this.options.getValue('leftAlignTableHeaders');
+
+  const hasSources =
+    !tableColumnsOptions.hideSources &&
+    !this.options.getValue('disableSources');
 
   const headers: string[] = [];
 
@@ -38,6 +43,10 @@ export function typeDeclarationTable(
     headers.push(this.i18n.theme_description());
   }
 
+  if (hasSources) {
+    headers.push(this.i18n.theme_defined_in());
+  }
+
   const rows: string[][] = [];
 
   declarations.forEach((declaration: DeclarationReflection, index: number) => {
@@ -63,10 +72,14 @@ export function typeDeclarationTable(
       }
     }
 
+    if (hasSources) {
+      row.push(this.partials.sources(declaration, { headingLevel: -1 }));
+    }
+
     rows.push(row);
   });
 
   return this.options.getValue('typeDeclarationFormat') == 'table'
-    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
-    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
+    ? table(headers, rows, leftAlignHeadings)
+    : htmlTable(headers, rows, leftAlignHeadings);
 }

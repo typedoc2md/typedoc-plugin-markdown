@@ -28,7 +28,8 @@ export function body(
       ReflectionKind.Namespace,
     ];
     if (
-      this.options.getValue('excludeGroups') &&
+      (this.options.getValue('excludeGroups') ||
+        this.options.getValue('hideGroupHeadings')) &&
       containerKinds.includes(model.kind)
     ) {
       if (model.categories?.length) {

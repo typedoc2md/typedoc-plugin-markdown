@@ -10,40 +10,40 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
     tsConfigFilePath: 'tsconfig.json',
   });
 
-  // PRESETS
-  const out: string[] = [
+  const outputPage: string[] = [
     `import { Callout, FileTree } from 'nextra/components';`,
   ];
 
-  out.push('# Options');
+  outputPage.push('# Options');
   if (docsConfig.docsPath === '/docs') {
-    out.push(
-      `These options should be used in conjunction with core TypeDoc options (see [TypeDoc Usage](/docs/typedoc-usage)).`,
+    outputPage.push(
+      `<Callout type="info">These options should be used in conjunction with the core TypeDoc options (see [TypeDoc Usage](/docs/typedoc-usage)).</Callout>`,
     );
   } else {
     if (docsConfig.presets) {
-      out.push(
+      outputPage.push(
         `<Callout type="info">Please view options exposed by [typedoc-plugin-markdown](/docs/options) in addition to those listed here.</Callout>`,
       );
     }
   }
 
   if (docsConfig.presets) {
-    out.push('## Preset Options');
-    out.push('The following are preset typedoc-plugin-markdown options:');
+    outputPage.push('## Preset Options');
+    outputPage.push(
+      'The following are preset typedoc-plugin-markdown options:',
+    );
     const presetsConfig: any = await import(docsConfig.presetsPath as string);
     const config = presetsConfig.default;
     delete config.plugin;
     const presetsJson = JSON.stringify(config, null, 2);
 
-    out.push(`\`\`\`json"
+    outputPage.push(`\`\`\`json"
 ${presetsJson}
 \`\`\``);
-    out.push('## Plugin Options');
-    out.push('The following options are exposed by this plugin:');
+    outputPage.push('## Plugin Options');
+    outputPage.push('The following options are exposed by this plugin:');
   }
 
-  // DECLARATIONS
   if (docsConfig.declarations) {
     const declarationsConfig: any = await import(
       docsConfig.declarationsPath as string
@@ -55,8 +55,8 @@ ${presetsJson}
     const optionsVariableStatements =
       configFileTs?.getVariableStatements() as VariableStatement[];
 
-    const parsedConfig = Object.entries(declarationsConfig).map(
-      ([name, option]: any, i) => {
+    const parsedConfig = Object.entries(declarationsConfig)
+      .map(([name, option]: any, i) => {
         const docs = optionsVariableStatements[i].getJsDocs().map((doc) => {
           return {
             comments: (doc.getComment() as string)
@@ -75,6 +75,9 @@ ${presetsJson}
                 name: tag.getTagName(),
                 comments: tag.getComment(),
               })),
+            hidden: Boolean(
+              doc.getTags().find((tag) => tag.getTagName() === 'hidden'),
+            ),
             omitExample: Boolean(
               doc.getTags().find((tag) => tag.getTagName() === 'omitExample'),
             ),
@@ -98,8 +101,8 @@ ${presetsJson}
           ...option,
           ...(docs ? docs : { category: 'other' }),
         };
-      },
-    );
+      })
+      .filter((option) => !option.hidden);
 
     const groupedConfig: Record<string, any> = groupBy(
       parsedConfig,
@@ -108,27 +111,47 @@ ${presetsJson}
 
     const categories = Object.entries(groupedConfig);
 
-    categories.forEach(([categoryName, options]) => {
+    categories.forEach(async ([categoryName, options]) => {
+      const out: string[] = [
+        categories.length > 1
+          ? `import { Callout, FileTree } from 'nextra/components';`
+          : '',
+      ];
       const optionLevel =
-        categories.length === 1 && !Boolean(docsConfig.presets) ? '##' : '###';
+        categories.length === 1 && !Boolean(docsConfig.presets) ? '##' : '##';
       if (categories.length > 1) {
-        out.push(`## ${getDocsTitle(categoryName)}`);
+        out.push(`# ${getDocsTitle(categoryName)}`);
+        outputPage.push(`## ${getDocsTitle(categoryName)}`);
+        if (docsConfig.categories) {
+          outputPage.push(docsConfig.categories[categoryName.toLowerCase()]);
+        }
       }
+      const optionsLi: string[] = [];
       options.forEach((option) => {
+        optionsLi.push(
+          `- [${
+            Boolean(option.deprecated)
+              ? `~--${option.name}~`
+              : `--${option.name}`
+          }](./options/${categoryName.toLowerCase()}-options.mdx#--${option.name.toLowerCase()})`,
+        );
         out.push(
           `${optionLevel} ${
-            Boolean(option.deprecated) ? `~${option.name}~` : `${option.name}`
+            Boolean(option.deprecated)
+              ? `~--${option.name}~`
+              : `--${option.name}`
           }`,
         );
         if (Boolean(option.deprecated)) {
           out.push(
-            `<Callout type="warning">Deprecated - ${option.deprecated}</Callout>`,
+            `<Callout type="warning">Deprecated: ${option.deprecated}</Callout>`,
           );
         } else {
           out.push(
             `<Callout emoji="${getEmoji(categoryName)}">${option.help}</Callout>`,
           );
         }
+
         const meta: string[] = [];
         const type = getType(option);
         if (type) {
@@ -160,34 +183,68 @@ ${presetsJson}
           ) {
             //out.push('Below is the full list of keys and default values:');
           }
-
-          out.push(`
+        }
+        out.push(`
 \`\`\`json filename="typedoc.json"
 ${JSON.stringify(
   JSON.parse(`{
-  "${option.name}": ${getExampleValue(option)}
-}`),
+          "${option.name}": ${getExampleValue(option)}
+        }`),
   null,
   2,
 )}
-
 \`\`\``);
-        }
-        out.push('___');
       });
+      if (categories.length > 1) {
+        outputPage.push(optionsLi.join('\n'));
+        const catDocPath = path.join(
+          getPagesPath(docsConfig.optionsPath),
+          'options',
+          `${categoryName.toLowerCase()}-options.mdx`,
+        );
+        const formattedOut = await prettier.format(out.join('\n\n'), {
+          parser: 'mdx',
+        });
+        fs.writeFileSync(catDocPath, formattedOut);
+      } else {
+        outputPage.push(out.join('\n\n'));
+      }
     });
+    if (categories.length > 1) {
+      const metaJs = await prettier.format(
+        `export default ${JSON.stringify(
+          categories.reduce((prev, curr) => {
+            return {
+              ...prev,
+              [`${curr[0].toLowerCase()}-options`]: '',
+            };
+          }, {}),
+        )}`,
+        {
+          parser: 'typescript',
+        },
+      );
+
+      const metaJsPath = path.join(
+        getPagesPath(docsConfig.optionsPath),
+        'options',
+        '_meta.js',
+      );
+
+      fs.writeFileSync(metaJsPath, metaJs);
+    }
+
+    const optionDocPath = path.join(
+      getPagesPath(docsConfig.optionsPath),
+      'options.mdx',
+    );
+
+    const formattedOut = await prettier.format(outputPage.join('\n\n'), {
+      parser: 'mdx',
+    });
+
+    fs.writeFileSync(optionDocPath, formattedOut);
   }
-
-  const optionDocPath = path.join(
-    getPagesPath(docsConfig.optionsPath),
-    'options.mdx',
-  );
-
-  const formattedOut = await prettier.format(out.join('\n\n'), {
-    parser: 'mdx',
-  });
-
-  fs.writeFileSync(optionDocPath, formattedOut);
 }
 
 function getEmoji(categoryName: string) {

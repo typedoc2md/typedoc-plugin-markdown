@@ -35,8 +35,8 @@ export default {
     content: (
       <>
         🎉{' '}
-        <Link href="/docs/migration-guide" className="hover:underline">
-          V4 Released • Find out more!
+        <Link href="/docs/CHANGELOG#41-2024-06-21" className="hover:underline">
+          v4.1 released • Find out more!
         </Link>
       </>
     ),

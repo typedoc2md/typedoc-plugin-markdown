@@ -22,24 +22,25 @@ export function declarationsTable(
   model: DeclarationReflection[],
   options?: { isEventProps: boolean },
 ): string {
-  const tableColumnsOptions = this.options.getValue('tableColumns');
+  const tableColumnsOptions = this.options.getValue('tableColumnVisibility');
+  const leftAlignHeadings = this.options.getValue('leftAlignTableHeaders');
   const modifiers = model.map((param) =>
     this.helpers.getModifier(param)?.toString(),
   );
 
   const hasModifiers =
-    !tableColumnsOptions.excludeModifiersCol &&
+    !tableColumnsOptions.hideModifiers &&
     modifiers.some((value) => Boolean(value));
 
   const flags = model.map((param) => this.partials.reflectionFlags(param));
   const hasFlags = flags.some((value) => Boolean(value));
 
   const hasOverrides =
-    !tableColumnsOptions.excludeOverridesCol &&
+    !tableColumnsOptions.hideOverrides &&
     model.some((prop) => Boolean(prop.overwrites));
 
   const hasInheritance =
-    !tableColumnsOptions.excludeInheritedFromCol &&
+    !tableColumnsOptions.hideInherited &&
     model.some((prop) => Boolean(prop.inheritedFrom));
 
   const hasDefaults = model.some((prop) =>
@@ -50,7 +51,7 @@ export function declarationsTable(
   );
 
   const hasSources =
-    !tableColumnsOptions.excludeSourcesCol &&
+    !tableColumnsOptions.hideSources &&
     !this.options.getValue('disableSources');
 
   const headers: string[] = [];
@@ -177,6 +178,6 @@ export function declarationsTable(
   });
 
   return this.options.getValue('propertiesFormat') == 'table'
-    ? table(headers, rows, tableColumnsOptions.leftAlignHeadings)
-    : htmlTable(headers, rows, tableColumnsOptions.leftAlignHeadings);
+    ? table(headers, rows, leftAlignHeadings)
+    : htmlTable(headers, rows, leftAlignHeadings);
 }

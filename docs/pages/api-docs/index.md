@@ -35,4 +35,3 @@ Types that are used to define the plugin options.
 | Member | Description |
 | :------ | :------ |
 | [PluginOptions](/api-docs/Interface.PluginOptions.md) | Describes the options declared by the plugin. |
-| [TextContentMappings](/api-docs/Interface.TextContentMappings.md) | Describes the keys available to replace static text. |

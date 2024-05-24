@@ -13,7 +13,7 @@ import { Internationalization, Options, Reflection } from 'typedoc';
  *
  * This class can be used to customize the theme output by extending the class and overriding the [templates](#templates), [partials](#partials) and [helpers](#helpers).
  *
- * @usage
+ * ## Usage
  *
  * ```ts
  * class MyMarkdownTheme extends MarkdownTheme {

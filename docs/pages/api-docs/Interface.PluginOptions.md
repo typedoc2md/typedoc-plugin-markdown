@@ -30,17 +30,19 @@ The name of a module that should act as the root page for the documentation.
 
 ### enumMembersFormat
 
-> **enumMembersFormat**: `"table"` \| `"list"`
+> **enumMembersFormat**: `"table"` \| `"list"` \| `"htmlTable"`
 
 Specify the render style of enumeration members.
 
 ***
 
-### excludeGroups
+### ~~excludeGroups~~
 
 > **excludeGroups**: `boolean`
 
-Excludes grouping by kind so all members are rendered and sorted at the same level.
+#### Deprecated
+
+This option has been renamed hideGroupHeadings to better reflect its purpose.
 
 ***
 
@@ -92,6 +94,14 @@ Do not print breadcrumbs.
 
 ***
 
+### hideGroupHeadings
+
+> **hideGroupHeadings**: `boolean`
+
+Excludes grouping by kind so all members are rendered and sorted at the same level.
+
+***
+
 ### hidePageHeader
 
 > **hidePageHeader**: `boolean`
@@ -110,9 +120,25 @@ Do not print page title.
 
 ### indexFormat
 
-> **indexFormat**: `"table"` \| `"list"`
+> **indexFormat**: `"table"` \| `"list"` \| `"htmlTable"`
 
 Specify the render format for index items.
+
+***
+
+### inlineDocuments
+
+> **inlineDocuments**: `boolean`
+
+Inline documents in pages.
+
+***
+
+### leftAlignTableHeaders
+
+> **leftAlignTableHeaders**: `boolean`
+
+Left aligns items in table headers
 
 ***
 
@@ -162,7 +188,7 @@ Determines how output files are generated.
 
 ### parametersFormat
 
-> **parametersFormat**: `"table"` \| `"list"`
+> **parametersFormat**: `"table"` \| `"list"` \| `"htmlTable"`
 
 Specify the render style of parameter and type parameter groups.
 
@@ -178,7 +204,7 @@ Preserve anchor casing when generating link to symbols.
 
 ### propertiesFormat
 
-> **propertiesFormat**: `"table"` \| `"list"`
+> **propertiesFormat**: `"table"` \| `"list"` \| `"htmlTable"`
 
 Specify the render style of property groups for interfaces and classes.
 
@@ -200,9 +226,39 @@ Sanitize HTML and JSX inside JsDoc comments.
 
 ***
 
-### textContentMappings
+### tableColumnVisibility
 
-> **textContentMappings**: `Partial`\<[`TextContentMappings`](/api-docs/Interface.TextContentMappings.md)\>
+> **tableColumnVisibility**: `object`
+
+Control header alignment and column visibility in tables.
+
+#### hideDefaults
+
+> **hideDefaults**: `boolean`
+
+#### hideInherited
+
+> **hideInherited**: `boolean`
+
+#### hideModifiers
+
+> **hideModifiers**: `boolean`
+
+#### hideOverrides
+
+> **hideOverrides**: `boolean`
+
+#### hideSources
+
+> **hideSources**: `boolean`
+
+***
+
+### ~~textContentMappings~~
+
+> **textContentMappings**: `Partial`\<`any`\>
+
+#### Deprecated
 
 Provides a mechanism to change the content of text used in documentation.
 
@@ -210,7 +266,7 @@ Provides a mechanism to change the content of text used in documentation.
 
 ### typeDeclarationFormat
 
-> **typeDeclarationFormat**: `"table"` \| `"list"`
+> **typeDeclarationFormat**: `"table"` \| `"list"` \| `"htmlTable"`
 
 Specify the render style for type declaration members.
 

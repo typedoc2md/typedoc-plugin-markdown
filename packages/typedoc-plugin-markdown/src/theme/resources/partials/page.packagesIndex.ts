@@ -11,7 +11,7 @@ export function packagesIndex(
   this: MarkdownThemeContext,
   model: ProjectReflection,
 ): string {
-  const tableColumnsOptions = this.options.getValue('tableColumns');
+  const leftAlignHeadings = this.options.getValue('leftAlignTableHeaders');
 
   const md: string[] = [];
 
@@ -54,9 +54,7 @@ export function packagesIndex(
 
       return rows;
     });
-    md.push(
-      table(headers, packageRows || [], tableColumnsOptions.leftAlignHeadings),
-    );
+    md.push(table(headers, packageRows || [], leftAlignHeadings));
   } else {
     const packagesList = model.children?.map((projectPackage) => {
       const urlTo = Boolean(projectPackage.readme)

@@ -28,13 +28,13 @@ app.renderer.postRenderAsyncJobs.push(async (event) => {
 
 ## Extends
 
-- [`Renderer ↗️`]( https://typedoc.org/api/classes/Renderer.html )
+- [`Renderer`](https://typedoc.org/api/classes/Renderer.html)
 
 ## Properties
 
 ### markdownHooks
 
-> **markdownHooks**: [`EventHooks ↗️`]( https://typedoc.org/api/classes/EventHooks.html )\<[`MarkdownRendererHooks`](/api-docs/Interface.MarkdownRendererHooks.md), `string`\>
+> **markdownHooks**: [`EventHooks`](https://typedoc.org/api/classes/EventHooks.html)\<[`MarkdownRendererHooks`](/api-docs/Interface.MarkdownRendererHooks.md), `string`\>
 
 ***
 

@@ -22,6 +22,5 @@ export default {
     "type": "separator",
     "title": "Options"
   },
-  "Interface.PluginOptions": "PluginOptions",
-  "Interface.TextContentMappings": "TextContentMappings"
+  "Interface.PluginOptions": "PluginOptions"
 }

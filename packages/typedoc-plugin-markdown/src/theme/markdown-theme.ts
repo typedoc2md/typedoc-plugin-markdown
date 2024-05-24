@@ -25,7 +25,7 @@ import { MarkdownThemeContext } from './markdown-themecontext';
  *
  * The API follows the implementation of [TypeDoc's custom theming](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) with some minor adjustments.
  *
- * @usage
+ * ## Usage
  *
  * ```ts
  * export function load(app) {

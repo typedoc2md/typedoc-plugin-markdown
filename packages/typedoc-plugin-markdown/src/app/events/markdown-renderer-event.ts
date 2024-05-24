@@ -15,7 +15,7 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
 /**
  * An event emitted at the beginning and end of the rendering process.
  *
- * @usage
+ * ## Usage
  *
  * ```ts
  * app.renderer.on(MarkdownRendererEvent.BEGIN, (event) => {

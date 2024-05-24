@@ -14,10 +14,12 @@ declare module 'typedoc' {
     fileExtension: string;
     flattenOutputFiles: boolean;
     hideBreadcrumbs: boolean;
+    hideGroupHeadings: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
     indexFormat: 'list' | 'table' | 'htmlTable';
     inlineDocuments: boolean;
+    leftAlignTableHeaders: boolean;
     membersWithOwnFile: (
       | 'Enum'
       | 'Variable'
@@ -38,13 +40,12 @@ declare module 'typedoc' {
     propertiesFormat: 'list' | 'table' | 'htmlTable';
     publicPath: string;
     sanitizeComments: boolean;
-    tableColumns: {
-      excludeDefaultsCol: boolean;
-      excludeInheritedFromCol: boolean;
-      excludeModifiersCol: boolean;
-      excludeOverridesCol: boolean;
-      excludeSourcesCol: boolean;
-      leftAlignHeadings: boolean;
+    tableColumnVisibility: {
+      hideDefaults: boolean;
+      hideInherited: boolean;
+      hideModifiers: boolean;
+      hideOverrides: boolean;
+      hideSources: boolean;
     };
     textContentMappings: ManuallyValidatedOption<Partial<TextContentMappings>>;
     typeDeclarationFormat: 'list' | 'table' | 'htmlTable';

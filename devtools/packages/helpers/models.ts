@@ -6,6 +6,7 @@ export interface DocsConfig {
   docsPath: string;
   declarations: boolean;
   presets: boolean;
+  categories?: Record<string, string>;
 }
 
 export interface OptionDocument {
