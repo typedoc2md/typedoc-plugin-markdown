@@ -1,0 +1,31 @@
+import { Callout } from 'nextra/components';
+
+# 4.1 (June 2024)
+
+<Callout type="info">
+v4.1 introduces [TypeDoc v0.26]() API and feature support and more.
+
+</Callout>
+
+## New Features
+
+This release contains required internal api fixes and theme updates to support TypeDoc 0.26 in addition to some additional table options. New supported features includes:
+
+- **Localization**: Theme support for TypeDoc's 0.26 localization model.
+- **Documents**: Theme support for TypeDoc's 0.26 @documents implementation.
+- **HTML tables**: Pure markdown tables have a limitation whereby they can not contain block markdown elements. To work around this issue a new key `"htmlTable"` is exposed to format options which will wrap comments in an html table cell and all parsing is the responsibility of the host's markdown parser.
+  This means that elements such as code blocks can now render as intended inside table cells. Affected options are `parametersFormat`, `propertiesFormat`, `typeDeclarationFormat` and `enumMembersFormat`.
+- **Column configuration**: The plugin now supports the ability to control what columns are displayed in output with the [`--tableColumnSettings`]() option.
+
+## Non-Breaking Changes
+
+- **Markdown tables**: All line breaks are now stripped from the existing `"table"` key. If you would like to preserve markdown block elements in tabular format please updated to use the `"htmlTable"` key.
+- **Table header alignment**: The plugin now does not define any header alignment by default. This typically results in table headers visually appearing center aligned. If you would prefer left align headers please configure using the [`--tableColumnSettings `]() option.
+- **Text labels**: The `--textContentMappings` option is now only used for configuring static text labels and placeholders where alternative content might be preferred.
+  All other general content labels are now controlled by the TypeDoc localization model.
+
+---
+
+Browse the [GitHub
+changelog](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/CHANGELOG.md)
+for the full list of changes.

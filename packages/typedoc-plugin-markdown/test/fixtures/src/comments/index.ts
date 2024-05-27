@@ -151,6 +151,9 @@ export class BaseClassProperties {
 }
 
 export class ClassPropertiesTable extends BaseClassProperties {
+  /** @experimental */
+  propWithFlag: string;
+
   propA = 'propAValue';
   /**
    * The subroutine recursively parsed the hexadecimal data.
@@ -168,7 +171,7 @@ export class ClassPropertiesTable extends BaseClassProperties {
   /**
    * > Example of Triple Code Block
    *
-   * ```python
+   * ```ts
    * def greet(name):
    * print("Hello, " + name + "!")
    * ```
@@ -201,7 +204,7 @@ export interface InterfacePropertiesTable extends BaseInterfaceProperties {
   /**
    * > Example of Triple Code Block
    *
-   * ```python
+   * ```ts
    * def greet(name):
    * print("Hello, " + name + "!")
    * ```
@@ -221,6 +224,12 @@ export type TypeDeclarationTable = {
    */
   declaration2: boolean;
   declaration3: 'declaration3';
+  declaration4: 100;
+};
+
+export const TypeDeclarationTable = {
+  declaration1: 'declaration3',
+  declaration2: 100,
 };
 
 /**

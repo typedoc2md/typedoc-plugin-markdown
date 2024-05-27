@@ -12,10 +12,11 @@ const config: Record<string, Fixture> = {
       ],
       hidePageHeader: true,
       hideBreadcrumbs: true,
-      tableColumnVisibility: {
+      tableColumnSettings: {
         hideSources: true,
+        leftAlignHeaders: true,
       },
-      leftAlignTableHeaders: true,
+      excludePrivate: false,
     },
     options: [
       {},
@@ -43,7 +44,9 @@ const config: Record<string, Fixture> = {
       disableSources: true,
       expandObjects: true,
       expandParameters: true,
-      leftAlignTableHeaders: true,
+      tableColumnSettings: {
+        leftAlignHeaders: true,
+      },
     },
     options: [
       {},
@@ -57,8 +60,8 @@ const config: Record<string, Fixture> = {
   modules: {
     only: false,
     entryPoints: [
-      '/modules/module-1',
       '/modules/module-2',
+      '/modules/module-1',
       '/modules/module-3',
     ],
     commonOptions: {
@@ -91,7 +94,9 @@ const config: Record<string, Fixture> = {
       theme: 'stub-groups',
       disableSources: true,
       entryFileName: 'index.md',
-      leftAlignTableHeaders: true,
+      tableColumnSettings: {
+        leftAlignHeaders: true,
+      },
     },
     options: [
       {
@@ -127,7 +132,7 @@ const config: Record<string, Fixture> = {
       hidePageHeader: true,
       hideBreadcrumbs: true,
       readme: 'none',
-      inlineDocuments: true,
+      excludePrivate: false,
     },
     options: [
       {
@@ -146,14 +151,15 @@ const config: Record<string, Fixture> = {
         parametersFormat: 'htmlTable',
         propertiesFormat: 'htmlTable',
         typeDeclarationFormat: 'htmlTable',
-        tableColumnVisibility: {
+        tableColumnSettings: {
           hideDefaults: true,
           hideInherited: true,
           hideModifiers: true,
           hideOverrides: true,
           hideSources: true,
+          hideValues: true,
+          leftAlignHeaders: true,
         },
-        leftAlignTableHeaders: true,
       },
     ],
   },
@@ -165,7 +171,9 @@ const config: Record<string, Fixture> = {
       entryPointStrategy: 'packages',
       name: 'packages-example',
       disableSources: true,
-      leftAlignTableHeaders: true,
+      tableColumnSettings: {
+        leftAlignHeaders: true,
+      },
     },
     options: [
       { entryFileName: 'index.md' },
@@ -219,6 +227,7 @@ const config: Record<string, Fixture> = {
         entryFileName: 'index.md',
         disableSources: true,
         mergeReadme: true,
+        includeVersion: true,
       },
     ],
   },
@@ -228,13 +237,17 @@ const config: Record<string, Fixture> = {
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       disableSources: true,
-      leftAlignTableHeaders: true,
+      tableColumnSettings: { leftAlignHeaders: true },
+      includeVersion: true,
+      propertiesFormat: 'table',
+      readme: 'none',
     },
     options: [
       {
-        includeVersion: true,
-        options: './test/fixtures/typedoc.text-options.cjs',
-        propertiesFormat: 'table',
+        options: './test/fixtures/typedoc.text-mappings.cjs',
+      },
+      {
+        options: './test/fixtures/typedoc.text-locales.cjs',
       },
     ],
   },
@@ -304,7 +317,6 @@ const config: Record<string, Fixture> = {
       {},
       {
         indexFormat: 'table',
-        inlineDocuments: true,
       },
     ],
   },

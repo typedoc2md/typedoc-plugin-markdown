@@ -7,11 +7,9 @@ const project = new Project({
   tsConfigFilePath: 'tsconfig.json',
 });
 
-const resourcesPath = path.join(__dirname, '..', 'src', 'theme', 'resources');
+const resourcesPath = path.join(__dirname, '..', 'src', 'theme', 'context');
 
 export async function prebuildResources() {
-  writeLibsBarrelsFile('markdown');
-  writeLibsBarrelsFile('utils');
   writeResourcesFile();
 }
 
@@ -37,23 +35,27 @@ function getSymbols(files: string[], type: string, thePath = resourcesPath) {
       ?.getParameters()
       .filter((parameter) => parameter.getName() !== 'context')
       .map((parameter) => {
-        const typeunions = parameter
-          .getType()
-          .getText()
-          .split('|')
-          .map((unions) => {
-            const union = unions.split('.');
-            const isKeyOf = union[0].startsWith('keyof');
-            if (union[1] && union[1].startsWith('MarkdownPageEvent')) {
-              return `MarkdownPageEvent<${union[union.length - 1]}`;
-            }
-            const typeParts: string[] = [];
-            if (isKeyOf) {
-              typeParts.push('keyof');
-            }
-            typeParts.push(union[union.length - 1]);
-            return typeParts.join(' ');
-          });
+        let parameterTextType = parameter.getType().getText();
+        if (parameterTextType.startsWith('{')) {
+          parameterTextType = parameterTextType.replace(
+            /import\(".*"\)\.([a-zA-Z_][a-zA-Z0-9_]*)/g,
+            '$1',
+          );
+        }
+        const typeunions = parameterTextType.split('|').map((unions) => {
+          const union = unions.split('.');
+          const isKeyOf = union[0].startsWith('keyof');
+          if (union[1] && union[1].startsWith('MarkdownPageEvent')) {
+            return `MarkdownPageEvent<${union[union.length - 1]}`;
+          }
+          const typeParts: string[] = [];
+          if (isKeyOf) {
+            typeParts.push('keyof');
+          }
+          typeParts.push(union[union.length - 1]);
+          return typeParts.join(' ');
+        });
+
         const name = parameter.getName();
         const isOptional = parameter.isOptional();
         const initializer = parameter.getInitializer();
@@ -102,53 +104,14 @@ function getReturnType(returnTypeParts?: string) {
     .join('|');
 }
 
-function writeLibsBarrelsFile(resourceType: string) {
-  const libsPath = path.join(__dirname, '..', 'src', 'libs');
-  const folder = path.join(libsPath, resourceType);
-  const files = fs
-    .readdirSync(folder)
-    .map((partialsFile) => path.parse(partialsFile).name)
-    .filter((file) => file !== 'index' && !file.endsWith('spec'));
-
-  const symbols = getSymbols(files, resourceType, libsPath);
-  const barrelsFile = path.join(
-    __dirname,
-    '..',
-    'src',
-    'libs',
-    resourceType,
-    'index.ts',
-  );
-
-  const barrelsFileComments = fs.existsSync(barrelsFile)
-    ? fs
-        .readFileSync(barrelsFile)
-        .toString()
-        .match(/\/\*[\s\S]*?\*\//)
-    : null;
-
-  const out: string[] = [
-    `${barrelsFileComments ? barrelsFileComments[0] : ''}
-
-// PLEASE NOTE: THE CONTENTS OF THE FILE BELOW THIS POINT IS AUTO GENERATED!
-`,
-  ];
-
-  files.forEach((file, index) => {
-    out.push(`export { ${symbols[index].symbolName} } from './${file}';`);
-  });
-
-  fs.outputFileSync(barrelsFile, out.join('\n').trim() + '\n');
-}
-
 async function writeResourcesFile() {
   const resourcesFile = path.join(
     __dirname,
     '..',
     'src',
     'theme',
-    'resources',
-    'index.ts',
+    'context',
+    'resources.ts',
   );
 
   fs.rmSync(resourcesFile, { force: true });
@@ -188,19 +151,14 @@ async function writeResourcesFile() {
   ];
 
   const out = `// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
-import { MarkdownPageEvent } from '@plugin/app/events';
-import { MarkdownThemeContext } from '@plugin/theme';
+import { MarkdownPageEvent } from 'app/events';
+import { MarkdownThemeContext } from 'theme';
 import {${typedocTypes.join(',')}} from 'typedoc';
-
-
-${getResourceImports('templates')}
-${getResourceImports('partials')}
-${getResourceImports('helpers')}
+import { templates, partials, helpers } from './index';
 
 ${getResources('templates')}
 ${getResources('partials')}
 ${getResources('helpers')}
-
 `;
 
   const formattedOut = await prettier.format(out, {
@@ -208,43 +166,33 @@ ${getResources('helpers')}
     singleQuote: true,
     trailingComma: 'all',
   });
-  fs.writeFileSync(resourcesFile, formattedOut);
-}
-function getResourceImports(resourceType: string) {
-  const files = getFiles(resourceType).filter(
-    (file) => file !== 'index' && !file.endsWith('spec'),
-  );
-  const symbols = getSymbols(files, resourceType);
 
-  return files
-    .map((file, index) => {
-      return `import {${symbols[index].symbolName} } from './${resourceType}/${file}';
-   `;
-    })
-    .join('');
+  fs.writeFileSync(resourcesFile, formattedOut);
 }
 
 function getResources(resourceType: string, binding = true) {
   const files = getFiles(resourceType).filter(
-    (file) => file !== 'index' && !file.endsWith('spec'),
+    (file) => file !== 'index' && file !== '_index' && !file.endsWith('spec'),
   );
   const symbols = getSymbols(files, resourceType);
 
   return `
-
-  export const ${resourceType} = (${binding ? `context: MarkdownThemeContext` : ''}) => {
+  export const resource${resourceType.charAt(0).toUpperCase()}${resourceType.slice(1)} = (${binding ? `context: MarkdownThemeContext` : ''}) => {
     return {
       ${symbols
         .map((symbol) => {
           return `
           ${symbol.jsDocs}
+          /** @ignore **/
           ${symbol.symbolName}: (${symbol.params
             ?.filter((param) => param.name !== 'this')
             .map(
               (param) =>
                 `${param.name}${param.isOptional && !param.hasInitializer ? '?' : ''}:${param.type}${param.hasInitializer ? `=${param.defaultValue}` : ''}`,
             )
-            .join(',')}) => ${symbol.symbolName}.apply(context,[${symbol.params
+            .join(
+              ',',
+            )}) => ${resourceType}.${symbol.symbolName}.apply(context,[${symbol.params
             ?.filter((param) => param.name !== 'this')
             .map((param) => param.name)
             .join(',')}]) as ${symbol.returnType}

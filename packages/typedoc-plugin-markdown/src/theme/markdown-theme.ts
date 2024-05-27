@@ -1,9 +1,10 @@
-import { MarkdownRenderer } from '@plugin/app/application';
-import { MarkdownPageEvent } from '@plugin/app/events';
-import { getTranslatable } from '@plugin/app/translatable';
-import { formatMarkdown } from '@plugin/libs/utils';
-import { OutputFileStrategy } from '@plugin/options';
-import { RenderTemplate } from '@plugin/theme';
+import { MarkdownPageEvent } from 'app/events';
+import { formatMarkdown } from 'libs/utils';
+import { OutputFileStrategy } from 'options/maps';
+import { MarkdownThemeContext } from 'theme';
+import { NavigationBuilder } from 'theme/core/navigation-builder';
+import { UrlBuilder } from 'theme/core/url-builder';
+import { RenderTemplate } from 'theme/types';
 import {
   DeclarationReflection,
   DocumentReflection,
@@ -12,12 +13,11 @@ import {
   ReflectionKind,
   Theme,
 } from 'typedoc';
-import { NavigationBuilder } from './core/navigation-builder';
-import { UrlBuilder } from './core/url-builder';
-import { MarkdownThemeContext } from './markdown-themecontext';
 
 /**
  * The main theme class for the plugin.
+ *
+ * @remarks
  *
  * The class controls how TypeDoc models are mapped to files and templates and extends TypeDoc's base Theme class.
  *
@@ -25,7 +25,7 @@ import { MarkdownThemeContext } from './markdown-themecontext';
  *
  * The API follows the implementation of [TypeDoc's custom theming](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) with some minor adjustments.
  *
- * ## Usage
+ * @example
  *
  * ```ts
  * export function load(app) {
@@ -37,26 +37,8 @@ import { MarkdownThemeContext } from './markdown-themecontext';
  * }
  * ```
  *
- * @category Theme
  */
 export class MarkdownTheme extends Theme {
-  /**
-   * The text content mappings for the theme. This is a combination of the default mappings and any mappings provided in the plugin options.
-   *
-   * @internal
-   */
-
-  /**
-   * @ignore
-   */
-  constructor(renderer: MarkdownRenderer) {
-    super(renderer);
-    this.application.internationalization.addTranslations(
-      'en',
-      getTranslatable(this.application),
-    );
-  }
-
   /**
    * Renders a template and page model to a string.
    *
@@ -69,7 +51,6 @@ export class MarkdownTheme extends Theme {
     try {
       return formatMarkdown(template(page));
     } catch (e) {
-      console.log(e);
       this.application.logger.error(`Error rendering page ${page.url}.`);
       throw new Error(e);
     }
@@ -111,7 +92,9 @@ export class MarkdownTheme extends Theme {
   ) {
     outputFileStrategy =
       outputFileStrategy ||
-      this.application.options.getValue('outputFileStrategy');
+      (this.application.options.getValue(
+        'outputFileStrategy',
+      ) as OutputFileStrategy);
 
     const directoryName = (reflectionKind: ReflectionKind) => {
       const pluralString = ReflectionKind.pluralString(reflectionKind);

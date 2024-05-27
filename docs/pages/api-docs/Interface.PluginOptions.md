@@ -1,12 +1,12 @@
 # PluginOptions
 
-Describes the options declared by the plugin.
-
 ## Properties
 
 ### anchorPrefix
 
-> **anchorPrefix**: `string`
+```ts
+anchorPrefix: string;
+```
 
 Custom anchor prefix when anchoring to in-page symbols.
 
@@ -14,7 +14,9 @@ Custom anchor prefix when anchoring to in-page symbols.
 
 ### entryFileName
 
-> **entryFileName**: `string`
+```ts
+entryFileName: string;
+```
 
 The file name of the entry page.
 
@@ -22,7 +24,9 @@ The file name of the entry page.
 
 ### entryModule
 
-> **entryModule**: `string`
+```ts
+entryModule: string;
+```
 
 The name of a module that should act as the root page for the documentation.
 
@@ -30,7 +34,9 @@ The name of a module that should act as the root page for the documentation.
 
 ### enumMembersFormat
 
-> **enumMembersFormat**: `"table"` \| `"list"` \| `"htmlTable"`
+```ts
+enumMembersFormat: "table" | "list" | "htmlTable";
+```
 
 Specify the render style of enumeration members.
 
@@ -38,7 +44,9 @@ Specify the render style of enumeration members.
 
 ### ~~excludeGroups~~
 
-> **excludeGroups**: `boolean`
+```ts
+excludeGroups: boolean;
+```
 
 #### Deprecated
 
@@ -48,7 +56,9 @@ This option has been renamed hideGroupHeadings to better reflect its purpose.
 
 ### excludeScopesInPaths
 
-> **excludeScopesInPaths**: `boolean`
+```ts
+excludeScopesInPaths: boolean;
+```
 
 Exclude writing @ scope directories in paths.
 
@@ -56,7 +66,9 @@ Exclude writing @ scope directories in paths.
 
 ### expandObjects
 
-> **expandObjects**: `boolean`
+```ts
+expandObjects: boolean;
+```
 
 Expand objects inside declarations.
 
@@ -64,7 +76,9 @@ Expand objects inside declarations.
 
 ### expandParameters
 
-> **expandParameters**: `boolean`
+```ts
+expandParameters: boolean;
+```
 
 Expand parameters in signature parentheses to display type information.
 
@@ -72,7 +86,9 @@ Expand parameters in signature parentheses to display type information.
 
 ### fileExtension
 
-> **fileExtension**: `string`
+```ts
+fileExtension: string;
+```
 
 Specify the file extension for generated output files.
 
@@ -80,7 +96,9 @@ Specify the file extension for generated output files.
 
 ### flattenOutputFiles
 
-> **flattenOutputFiles**: `boolean`
+```ts
+flattenOutputFiles: boolean;
+```
 
 Flatten output files to a single directory.
 
@@ -88,7 +106,9 @@ Flatten output files to a single directory.
 
 ### hideBreadcrumbs
 
-> **hideBreadcrumbs**: `boolean`
+```ts
+hideBreadcrumbs: boolean;
+```
 
 Do not print breadcrumbs.
 
@@ -96,7 +116,9 @@ Do not print breadcrumbs.
 
 ### hideGroupHeadings
 
-> **hideGroupHeadings**: `boolean`
+```ts
+hideGroupHeadings: boolean;
+```
 
 Excludes grouping by kind so all members are rendered and sorted at the same level.
 
@@ -104,7 +126,9 @@ Excludes grouping by kind so all members are rendered and sorted at the same lev
 
 ### hidePageHeader
 
-> **hidePageHeader**: `boolean`
+```ts
+hidePageHeader: boolean;
+```
 
 Do not print page header.
 
@@ -112,7 +136,9 @@ Do not print page header.
 
 ### hidePageTitle
 
-> **hidePageTitle**: `boolean`
+```ts
+hidePageTitle: boolean;
+```
 
 Do not print page title.
 
@@ -120,31 +146,25 @@ Do not print page title.
 
 ### indexFormat
 
-> **indexFormat**: `"table"` \| `"list"` \| `"htmlTable"`
+```ts
+indexFormat: "table" | "list";
+```
 
 Specify the render format for index items.
 
 ***
 
-### inlineDocuments
-
-> **inlineDocuments**: `boolean`
-
-Inline documents in pages.
-
-***
-
-### leftAlignTableHeaders
-
-> **leftAlignTableHeaders**: `boolean`
-
-Left aligns items in table headers
-
-***
-
 ### membersWithOwnFile
 
-> **membersWithOwnFile**: (`"Enum"` \| `"Variable"` \| `"Function"` \| `"Class"` \| `"Interface"` \| `"TypeAlias"`)[]
+```ts
+membersWithOwnFile: (
+  | "Enum"
+  | "Variable"
+  | "Function"
+  | "Class"
+  | "Interface"
+  | "TypeAlias")[];
+```
 
 Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
 
@@ -152,7 +172,9 @@ Determines which members are exported to their own file when `outputFileStrategy
 
 ### mergeReadme
 
-> **mergeReadme**: `boolean`
+```ts
+mergeReadme: boolean;
+```
 
 Merges the resolved readme into the project index page.
 
@@ -160,27 +182,41 @@ Merges the resolved readme into the project index page.
 
 ### navigationModel
 
-> **navigationModel**: `object`
+```ts
+navigationModel: {
+  excludeGroups: boolean;
+  excludeCategories: boolean;
+  excludeFolders: boolean;
+};
+```
 
 Configures how the navigation model will be generated.
 
 #### excludeGroups
 
-> **excludeGroups**: `boolean`
+```ts
+excludeGroups: boolean;
+```
 
 #### excludeCategories
 
-> **excludeCategories**: `boolean`
+```ts
+excludeCategories: boolean;
+```
 
 #### excludeFolders
 
-> **excludeFolders**: `boolean`
+```ts
+excludeFolders: boolean;
+```
 
 ***
 
 ### outputFileStrategy
 
-> **outputFileStrategy**: `"members"` \| `"modules"`
+```ts
+outputFileStrategy: "members" | "modules";
+```
 
 Determines how output files are generated.
 
@@ -188,7 +224,9 @@ Determines how output files are generated.
 
 ### parametersFormat
 
-> **parametersFormat**: `"table"` \| `"list"` \| `"htmlTable"`
+```ts
+parametersFormat: "table" | "list" | "htmlTable";
+```
 
 Specify the render style of parameter and type parameter groups.
 
@@ -196,7 +234,9 @@ Specify the render style of parameter and type parameter groups.
 
 ### preserveAnchorCasing
 
-> **preserveAnchorCasing**: `boolean`
+```ts
+preserveAnchorCasing: boolean;
+```
 
 Preserve anchor casing when generating link to symbols.
 
@@ -204,7 +244,9 @@ Preserve anchor casing when generating link to symbols.
 
 ### propertiesFormat
 
-> **propertiesFormat**: `"table"` \| `"list"` \| `"htmlTable"`
+```ts
+propertiesFormat: "table" | "list" | "htmlTable";
+```
 
 Specify the render style of property groups for interfaces and classes.
 
@@ -212,7 +254,9 @@ Specify the render style of property groups for interfaces and classes.
 
 ### publicPath
 
-> **publicPath**: `string`
+```ts
+publicPath: string;
+```
 
 Specify the base path for all urls.
 
@@ -220,53 +264,132 @@ Specify the base path for all urls.
 
 ### sanitizeComments
 
-> **sanitizeComments**: `boolean`
+```ts
+sanitizeComments: boolean;
+```
 
 Sanitize HTML and JSX inside JsDoc comments.
 
 ***
 
-### tableColumnVisibility
+### tableColumnSettings
 
-> **tableColumnVisibility**: `object`
+```ts
+tableColumnSettings: {
+  hideDefaults: boolean;
+  hideInherited: boolean;
+  hideModifiers: boolean;
+  hideOverrides: boolean;
+  hideSources: boolean;
+  hideValues: boolean;
+  leftAlignHeaders: boolean;
+};
+```
 
 Control header alignment and column visibility in tables.
 
 #### hideDefaults
 
-> **hideDefaults**: `boolean`
+```ts
+hideDefaults: boolean;
+```
 
 #### hideInherited
 
-> **hideInherited**: `boolean`
+```ts
+hideInherited: boolean;
+```
 
 #### hideModifiers
 
-> **hideModifiers**: `boolean`
+```ts
+hideModifiers: boolean;
+```
 
 #### hideOverrides
 
-> **hideOverrides**: `boolean`
+```ts
+hideOverrides: boolean;
+```
 
 #### hideSources
 
-> **hideSources**: `boolean`
+```ts
+hideSources: boolean;
+```
+
+#### hideValues
+
+```ts
+hideValues: boolean;
+```
+
+#### leftAlignHeaders
+
+```ts
+leftAlignHeaders: boolean;
+```
 
 ***
 
-### ~~textContentMappings~~
+### textContentMappings
 
-> **textContentMappings**: `Partial`\<`any`\>
+```ts
+textContentMappings: {
+  header.title: string;
+  header.docs: string;
+  breadcrumbs.home: string;
+  title.indexPage: string;
+  title.memberPage: string;
+  footer.text: string;
+};
+```
 
-#### Deprecated
+Change specific text placeholders in the template.
 
-Provides a mechanism to change the content of text used in documentation.
+#### header.title
+
+```ts
+header.title: string;
+```
+
+#### header.docs
+
+```ts
+header.docs: string;
+```
+
+#### breadcrumbs.home
+
+```ts
+breadcrumbs.home: string;
+```
+
+#### title.indexPage
+
+```ts
+title.indexPage: string;
+```
+
+#### title.memberPage
+
+```ts
+title.memberPage: string;
+```
+
+#### footer.text
+
+```ts
+footer.text: string;
+```
 
 ***
 
 ### typeDeclarationFormat
 
-> **typeDeclarationFormat**: `"table"` \| `"list"` \| `"htmlTable"`
+```ts
+typeDeclarationFormat: "table" | "list" | "htmlTable";
+```
 
 Specify the render style for type declaration members.
 
@@ -274,7 +397,9 @@ Specify the render style for type declaration members.
 
 ### useCodeBlocks
 
-> **useCodeBlocks**: `boolean`
+```ts
+useCodeBlocks: boolean;
+```
 
 Wraps signatures and declarations in code blocks.
 
@@ -282,6 +407,8 @@ Wraps signatures and declarations in code blocks.
 
 ### useHTMLAnchors
 
-> **useHTMLAnchors**: `boolean`
+```ts
+useHTMLAnchors: boolean;
+```
 
 Add HTML named anchors to headings and table rows.

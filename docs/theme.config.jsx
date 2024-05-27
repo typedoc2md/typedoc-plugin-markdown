@@ -35,7 +35,7 @@ export default {
     content: (
       <>
         🎉{' '}
-        <Link href="/docs/CHANGELOG#41-2024-06-21" className="hover:underline">
+        <Link href="/docs/changelog/4.1" className="hover:underline">
           v4.1 released • Find out more!
         </Link>
       </>

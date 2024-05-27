@@ -3,7 +3,7 @@
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: \`abstract\` AbstractClass
 
-## Extended By
+## Extended by
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
@@ -51,7 +51,7 @@ Comments for abstractMethod
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: \`abstract\` AbstractClass
 
-## Extended By
+## Extended by
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
@@ -371,11 +371,11 @@ Comments for ClassWithComplexProps
 
 ### objecLiteralProp
 
-> **objecLiteralProp**: \`object\`
+> **objecLiteralProp**: \`object\` = \`...\`
 
 #### someFunction()
 
-> **someFunction**: (\`a\`) => \`string\`
+> **someFunction**: (\`a\`) => \`string\` = \`...\`
 
 Comments for someFunction
 
@@ -418,7 +418,7 @@ new ClassWithComplexProps(): ClassWithComplexProps
 
 ## Properties
 
-| Property | Type | Default Value |
+| Property | Type | Default value |
 | :------ | :------ | :------ |
 | \`objecLiteralProp\` | \`object\` | \`...\` |
 | \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | \`...\` |
@@ -651,10 +651,10 @@ new ClassWithFlags(): ClassWithFlags
 
 ## Properties
 
-| Property | Modifier | Flags | Type |
-| :------ | :------ | :------ | :------ |
-| \`expermintalProp\` | \`public\` | \`Experimental\` | \`string\` |
-| \`internalProp\` | \`private\` | \`Internal\` | \`string\` |
+| Property | Modifier | Type |
+| :------ | :------ | :------ |
+| \`expermintalProp\` (*Experimental*) | \`public\` | \`string\` |
+| \`internalProp\` (*Internal*) | \`private\` | \`string\` |
 
 ## Methods
 
@@ -838,7 +838,7 @@ new ClassWithModifiers(): ClassWithModifiers
 
 ## Properties
 
-| Property | Modifier | Type | Default Value | Description |
+| Property | Modifier | Type | Default value | Description |
 | :------ | :------ | :------ | :------ | :------ |
 | \`privateProp\` | \`private\` | \`string\` | \`undefined\` | Comments for privateProp |
 | \`protectedProp\` | \`protected\` | \`string\` | \`undefined\` | Comments for protectedProp |
@@ -999,7 +999,7 @@ new ClassWithSimpleProps(): ClassWithSimpleProps
 
 ## Properties
 
-| Property | Type | Default Value | Description |
+| Property | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`propA\` | \`string\` | \`'propAValue'\` | Comments for propA |
 | \`propB\` | \`string\` | \`'propBDefaultValue'\` | Comments for propB |
@@ -1087,7 +1087,7 @@ Comments for ClassWithTypeParameters
 
 ## Type Parameters
 
-| Type Parameter | Value | Description |
+| Type Parameter | Default type | Description |
 | :------ | :------ | :------ |
 | \`A\` | - | Comments for param A |
 | \`B\` *extends* \`string\` | - | Comments for param B |
@@ -1219,7 +1219,7 @@ new DerivedClassA(): DerivedClassA
 
 ## Properties
 
-| Property | Type | Default Value | Description | Overrides |
+| Property | Type | Default value | Description | Overrides |
 | :------ | :------ | :------ | :------ | :------ |
 | \`abstractProp\` | \`string\` | \`'abstractProp'\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).\`abstractProp\` |
 | \`derivedProp\` | \`string\` | \`undefined\` | - | - |
@@ -1304,7 +1304,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 exports[`Class Reflection should compile hierarchy for BaseClass: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: BaseClass
 
-## Extended By
+## Extended by
 
 - [\`ChildClassA\`](ChildClassA.md)
 - [\`ChildClassB\`](ChildClassB.md)
@@ -1328,7 +1328,7 @@ exports[`Class Reflection should compile hierarchy for ChildClassA: (Output File
 
 - [\`BaseClass\`](BaseClass.md)
 
-## Extended By
+## Extended by
 
 - [\`GrandChildClassA\`](GrandChildClassA.md)
 - [\`GrandChildClassB\`](GrandChildClassB.md)

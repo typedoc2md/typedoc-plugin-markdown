@@ -9,7 +9,6 @@ samples
 out
 typedoc-examples
 html
-/devdocs
 /devdocs-html
 
 # dependencies

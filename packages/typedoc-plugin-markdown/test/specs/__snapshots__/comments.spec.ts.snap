@@ -70,9 +70,7 @@ And include other files:
 
 ## Documents
 
-This is a simple example on how to use include.
-
-![My image alt text](media://logo.png)
+- [example](documents/example.md)
 
 ## Enumerations
 
@@ -99,6 +97,7 @@ This is a simple example on how to use include.
 ## Variables
 
 - [SameName](variables/SameName.md)
+- [TypeDeclarationTable](variables/TypeDeclarationTable.md)
 - [\\_prop\\_with\\_underscore](variables/prop_with_underscore.md)
 - [prop](variables/prop.md)
 - [propb](variables/propb.md)
@@ -116,7 +115,7 @@ exports[`Comments should get tables for emum: (Output File Strategy "members") (
 
 ## Enumeration Members
 
-| Enumeration Member | Value | Description | Defined in |
+| Enumeration Member | Value | Description | Source |
 | ------ | ------ | ------ | ------ |
 | \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. | [index.ts:1](http://source-url) |
 "
@@ -159,13 +158,13 @@ Adds two numbers together.
 
 ## Type Parameters
 
-| Type Parameter | Value | Description |
+| Type Parameter | Default type | Description |
 | ------ | ------ | ------ |
 | \`T\` | \`string\` | The type of the numbers to be added. |
 
 ## Parameters
 
-| Parameter | Type | Default Value | Description |
+| Parameter | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | \`param1\` | \`number\` | \`undefined\` | The first param to be added. |
 | \`param2\` | \`number\` | \`undefined\` | The second param to be added. Some additional text for num2. |
@@ -204,13 +203,14 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Properties
 
-| Property | Modifier | Type | Default Value | Description | Overrides | Inherited from | Defined in |
+| Property | Modifier | Type | Default value | Description | Overrides | Inherited from | Source |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
 | \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
 | \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - | [index.ts:1](http://source-url) |
 | ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).\`propA\` | - | [index.ts:1](http://source-url) |
 | \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).\`propB\` | [index.ts:1](http://source-url) |
+| \`propWithFlag\` (*Experimental*) | \`public\` | \`string\` | \`undefined\` | - | - | - | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -240,7 +240,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 ## Properties
 
 <table>
-<tr><th align="left">Property</th><th align="left">Type</th><th align="left">Default Value</th><th align="left">Description</th></tr>
+<tr><th align="left">Property</th><th align="left">Type</th><th align="left">Description</th></tr>
 <tr>
 <td>
 
@@ -250,11 +250,6 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 <td>
 
 \`boolean\`
-
-</td>
-<td>
-
-\`undefined\`
 
 </td>
 <td>
@@ -273,11 +268,6 @@ to generate the binary output for input validation.
 <td>
 
 \`RegExp\`
-
-</td>
-<td>
-
-\`undefined\`
 
 </td>
 <td>
@@ -303,14 +293,9 @@ Below is a breakdown of the notable performances:
 </td>
 <td>
 
-\`undefined\`
-
-</td>
-<td>
-
 > Example of Triple Code Block
 
-\`\`\`python
+\`\`\`ts
 def greet(name):
 print("Hello, " + name + "!")
 \`\`\`
@@ -326,11 +311,6 @@ print("Hello, " + name + "!")
 <td>
 
 \`string\`
-
-</td>
-<td>
-
-\`'propAValue'\`
 
 </td>
 <td>
@@ -352,7 +332,19 @@ print("Hello, " + name + "!")
 </td>
 <td>
 
-\`undefined\`
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="propWithFlag" name="propWithFlag"></a> \`propWithFlag\` (*Experimental*)
+
+</td>
+<td>
+
+\`string\`
 
 </td>
 <td>
@@ -372,11 +364,30 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 ## Type declaration
 
-| Member | Type | Description | Defined in |
+| Member | Type | Description | Source |
 | ------ | ------ | ------ | ------ |
 | \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
 | \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
 | \`declaration3\` | \`"declaration3"\` | - | [index.ts:1](http://source-url) |
+| \`declaration4\` | \`100\` | - | [index.ts:1](http://source-url) |
+
+## Source
+
+[index.ts:1](http://source-url)
+"
+`;
+
+exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "1") 2`] = `
+"# Variable: TypeDeclarationTable
+
+> **TypeDeclarationTable**: \`object\`
+
+## Type declaration
+
+| Member | Type | Value | Source |
+| ------ | ------ | ------ | ------ |
+| \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
+| \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
 
 ## Source
 
@@ -443,6 +454,74 @@ to generate the binary output for input validation.
 <td>
 
 &hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`declaration4\`
+
+</td>
+<td>
+
+\`100\`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+## Source
+
+[index.ts:1](http://source-url)
+"
+`;
+
+exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 2`] = `
+"# Variable: TypeDeclarationTable
+
+> **TypeDeclarationTable**: \`object\`
+
+## Type declaration
+
+<table>
+<tr><th align="left">Member</th><th align="left">Type</th><th align="left">Value</th></tr>
+<tr>
+<td>
+
+\`declaration1\`
+
+</td>
+<td>
+
+\`string\`
+
+</td>
+<td>
+
+'declaration3'
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`declaration2\`
+
+</td>
+<td>
+
+\`number\`
+
+</td>
+<td>
+
+100
 
 </td>
 </tr>

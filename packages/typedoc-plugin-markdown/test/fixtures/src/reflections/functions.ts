@@ -129,8 +129,6 @@ export function functionWithMultipleSignatures(): string {
 /**
  * Comments for function
  *
- * @default {}
- *
  * @returns Return comments
  */
 export function functionReturningAnObject() {

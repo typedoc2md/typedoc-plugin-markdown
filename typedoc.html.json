@@ -1,0 +1,13 @@
+{
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "name": "packages-example",
+  "out": "./devdocs-html",
+  "json": "devdocs-json.json",
+  "readme": "none",
+  "entryPoints": [
+    "./packages/typedoc-plugin-markdown",
+    "./packages/typedoc-plugin-frontmatter"
+  ],
+  "entryPointStrategy": "packages",
+  "projectDocuments": ["./TEST.md"]
+}

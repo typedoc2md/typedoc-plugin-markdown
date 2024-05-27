@@ -1,8 +1,9 @@
-import { MarkdownRenderer } from '@plugin/app/application';
-import { isQuoted } from '@plugin/libs/utils';
-import { OutputFileStrategy } from '@plugin/options';
-import { MarkdownTheme, NavigationItem } from '@plugin/theme';
+import { MarkdownRenderer } from 'app/types';
+import { isQuoted } from 'libs/utils';
+import { OutputFileStrategy } from 'options/maps';
 import * as path from 'path';
+import { MarkdownTheme } from 'theme';
+import { NavigationItem } from 'theme/types';
 import {
   DeclarationReflection,
   DocumentReflection,
@@ -89,7 +90,7 @@ export class NavigationBuilder {
     ) {
       children.push({
         title:
-          this.theme.application.internationalization.proxy.theme_globals(),
+          this.theme.application.internationalization.proxy.kind_plural_module(),
         path: projectChild.url,
         kind: projectChild.kind,
       });
@@ -268,13 +269,20 @@ export class NavigationBuilder {
           }, []) as NavigationItem[];
       }
 
-      const isModulesGroup = reflection.groups[0].children.every(
-        (child) => child.kind === ReflectionKind.Module,
+      const groupsWithoutDocs = reflection.groups?.filter(
+        (group) =>
+          group.title !== ReflectionKind.pluralString(ReflectionKind.Document),
       );
+
+      const isModulesGroup =
+        groupsWithoutDocs?.length &&
+        groupsWithoutDocs[0].children.every(
+          (child) => child.kind === ReflectionKind.Module,
+        );
 
       if (isModulesGroup) {
         return (
-          this.getGroupChildren(reflection.groups[0], outputFileStrategy) ||
+          this.getGroupChildren(groupsWithoutDocs[0], outputFileStrategy) ||
           null
         );
       }

@@ -15,4 +15,9 @@ module.exports = {
   navigation: {
     includeGroups: true,
   },
+  locales: {
+    en: {
+      theme_defined_in: 'Source',
+    },
+  },
 };

@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build",
-    "prebuild": "rm -rf dist && prebuild-options && ts-node ./.scripts/prebuild",
+    "prebuild": "rm -rf dist && barrelsby -c barrelsby.config.json && prebuild-options && ts-node ./.scripts/prebuild",
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run pretest",
     "pretest": "fixtures -c ./test/fixtures/config.ts",
@@ -19,7 +19,9 @@
     "test:update": "npm run build && npm run test -- -u",
     "support": "npm run schema && npm run docs",
     "schema": "ts-node ./.scripts/schema/generate-schema.ts",
-    "docs": "npm run build && typedoc --options ./.docs/typedoc.json"
+    "docs": "npm run build && typedoc --options ./.docs/typedoc.json",
+    "docs:html": "typedoc --options ./.docs/typedoc.html.json",
+    "docs:dev": "npm run build && typedoc"
   },
   "author": "Thomas Grey",
   "license": "MIT",

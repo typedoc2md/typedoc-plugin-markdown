@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text should get translations for index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**My API - v0.0**](README.md) • **API**
+"**My API - v0.0** • **API**
 
 ***
 
@@ -18,12 +18,30 @@ Copyright Test
 "
 `;
 
+exports[`Text should get translations for index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**My API - v0.0 (ko)** • **Docs (ko)**
+
+***
+
+# typedoc-stubs v0.0
+
+## 모듈
+
+- [module-1](module-1/README.md)
+- [module-2](module-2/README.md)
+
+***
+
+Copyright Test (ko)
+"
+`;
+
 exports[`Text should get translations for member page: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[**My API - v0.0**](../../README.md) • **API**
 
 ***
 
-[typedoc-stubs v0.0](../../modules.md) / [module-1](../README.md) / SomeInterface
+[typedoc-stubs v0.0](../../README.md) / [module-1](../README.md) / SomeInterface
 
 # SomeInterface
 
@@ -45,18 +63,45 @@ Copyright Test
 "
 `;
 
+exports[`Text should get translations for member page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[**My API - v0.0 (ko)**](../../README.md) • **Docs (ko)**
+
+***
+
+[typedoc-stubs v0.0](../../README.md) / [module-1](../README.md) / SomeInterface
+
+# 인터페이스: SomeInterface
+
+## 속성
+
+| 속성 | Type (ko) | 설명 |
+| :------ | :------ | :------ |
+| \`someProp?\` | \`boolean\` | Description for prop someProp |
+
+## Events
+
+| 이벤트 | Type (ko) |
+| :------ | :------ |
+| \`someEvent\` | \`MouseEvent\` |
+
+***
+
+Copyright Test (ko)
+"
+`;
+
 exports[`Text should get translations for module page: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[**My API - v0.0**](../README.md) • **API**
 
 ***
 
-[typedoc-stubs v0.0](../modules.md) / module-1
+[typedoc-stubs v0.0](../README.md) / module-1
 
-# module-1 - module-1
+# module-1
 
-## Index
+## TOC
 
-### Interfaces
+### CoolInterfaces
 
 - [SomeInterface](interfaces/SomeInterface.md)
 
@@ -71,11 +116,11 @@ exports[`Text should get translations for modules page: (Output File Strategy "m
 
 ***
 
-[typedoc-stubs v0.0](modules.md) / module-2
+[typedoc-stubs v0.0](README.md) / module-2
 
-# module-2 - module-2
+# module-2
 
-## Variables
+## CoolVars
 
 ### constA
 
@@ -95,7 +140,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
     "path": "module-1/README.md",
     "children": [
       {
-        "title": "Interfaces",
+        "title": "CoolInterfaces",
         "children": [
           {
             "title": "SomeInterface",
@@ -112,7 +157,7 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
     "path": "module-2/README.md",
     "children": [
       {
-        "title": "Variables",
+        "title": "CoolVars",
         "children": [
           {
             "title": "constA",

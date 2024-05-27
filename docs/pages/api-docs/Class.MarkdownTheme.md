@@ -2,13 +2,15 @@
 
 The main theme class for the plugin.
 
+## Remarks
+
 The class controls how TypeDoc models are mapped to files and templates and extends TypeDoc's base Theme class.
 
 You would typically only be interested in overriding the the theme's render context instance.
 
 The API follows the implementation of [TypeDoc's custom theming](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) with some minor adjustments.
 
-## Usage
+## Example
 
 ```ts
 export function load(app) {
@@ -24,11 +26,37 @@ class MyMarkdownTheme extends MarkdownTheme {
 
 - [`Theme`](https://typedoc.org/api/classes/Theme.html)
 
+## Constructors
+
+### new MarkdownTheme()
+
+```ts
+new MarkdownTheme(owner): MarkdownTheme
+```
+
+Create new Component instance.
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `owner` | [`Renderer`](https://typedoc.org/api/classes/Renderer.html) |
+
+#### Returns
+
+[`MarkdownTheme`](/api-docs/Class.MarkdownTheme.md)
+
+#### Inherited from
+
+`Theme.constructor`
+
 ## Methods
 
 ### getRenderContext()
 
-> **getRenderContext**(`page`): [`MarkdownThemeContext`](/api-docs/Class.MarkdownThemeContext.md)
+```ts
+getRenderContext(page): MarkdownThemeContext
+```
 
 Creates a new instance of the current theme context.
 
@@ -48,7 +76,9 @@ This method can be overridden to provide an alternative theme context.
 
 ### getUrls()
 
-> **getUrls**(`project`): [`UrlMapping`](/api-docs/Interface.UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
+```ts
+getUrls(project): UrlMapping<Reflection>[]
+```
 
 Maps the models of the given project to the desired output files.
 
@@ -72,7 +102,9 @@ This method can be overriden to provide an alternative url structure.
 
 ### getNavigation()
 
-> **getNavigation**(`project`): [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]
+```ts
+getNavigation(project): NavigationItem[]
+```
 
 Map the models of the given project to a navigation structure.
 

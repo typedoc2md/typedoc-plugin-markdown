@@ -10,6 +10,7 @@ describe(`Packages`, () => {
     expectFileToEqual('packages', 'members', ['packages.md']);
     expectFileToEqual('packages', 'members', '@scope/package-1/globals.md', 1);
     expectFileToEqual('packages', 'members', 'package-2/modules.md', 1);
+    expectFileToEqual('packages', 'members', '@scope/package-3/index.md', 1);
   });
 
   test(`should compile member page for packages`, () => {

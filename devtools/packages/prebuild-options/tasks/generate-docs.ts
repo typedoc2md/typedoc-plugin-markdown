@@ -160,7 +160,8 @@ ${presetsJson}
         if (
           option.type !== ParameterType.Flags &&
           option.type !== ParameterType.Array &&
-          option.type !== ParameterType.Mixed
+          option.type !== ParameterType.Mixed &&
+          option.type !== ParameterType.Object
         ) {
           meta.push(`Defaults to \`${getDefaultValue(option)}\`.`);
         }
@@ -304,6 +305,9 @@ function getDefaultValue(option) {
     return '';
   }
   if (option.type === ParameterType.Mixed) {
+    return JSON.stringify(option.defaultValue);
+  }
+  if (option.type === ParameterType.Object) {
     return JSON.stringify(option.defaultValue);
   }
   return `"${option.defaultValue}"`;

@@ -37,6 +37,10 @@ describe(`Comments`, () => {
       '/type-aliases/TypeDeclarationTable.md',
       '/TypeAlias.TypeDeclarationTable.md',
     ]);
+    expectFileToEqual('comments', 'members', [
+      '/variables/TypeDeclarationTable.md',
+      '/Variable.TypeDeclarationTable.md',
+    ]);
   });
 
   test(`should get tables for emum`, () => {

@@ -1,19 +1,15 @@
-import { MarkdownRenderer } from '@plugin/app/application';
+import { MarkdownRenderer } from 'app/types';
 import {
   getFileNameWithExtension,
   isQuoted,
   removeFirstScopedDirectory,
   slugify,
   toPascalCase,
-} from '@plugin/libs/utils';
-import { OutputFileStrategy } from '@plugin/options/option-maps';
-import { MarkdownTheme } from '@plugin/theme/markdown-theme';
-import {
-  TemplateMapping,
-  UrlMapping,
-  UrlOption,
-} from '@plugin/theme/theme-types';
+} from 'libs/utils';
+import { OutputFileStrategy } from 'options/maps';
 import * as path from 'path';
+import { MarkdownTheme } from 'theme';
+import { TemplateMapping, UrlMapping, UrlOption } from 'theme/types';
 import {
   DeclarationReflection,
   DocumentReflection,
@@ -36,7 +32,6 @@ export class UrlBuilder {
   private fileExtension: string;
   private ignoreScopes: boolean;
   private entryFileName: string;
-  private writeDocuments: boolean;
   private isPackages: boolean;
   private flattenOutputFiles: boolean;
   private urls: UrlMapping<Reflection>[] = [];
@@ -54,7 +49,6 @@ export class UrlBuilder {
 
     this.fileExtension = this.options.getValue('fileExtension');
     this.ignoreScopes = this.options.getValue('excludeScopesInPaths');
-    this.writeDocuments = !this.options.getValue('inlineDocuments');
 
     this.entryFileName = getFileNameWithExtension(
       this.options.getValue('entryFileName'),
@@ -145,11 +139,8 @@ export class UrlBuilder {
   ) {
     project.groups?.forEach((projectGroup) => {
       projectGroup.children?.forEach((projectGroupChild) => {
-        if (
-          this.writeDocuments &&
-          projectGroupChild instanceof DocumentReflection
-        ) {
-          this.buildUrlsForDocuments(projectGroupChild);
+        if (projectGroupChild instanceof DocumentReflection) {
+          this.buildUrlsForDocument(projectGroupChild);
         }
         if (projectGroupChild instanceof DeclarationReflection) {
           this.buildUrlsFromGroup(projectGroupChild, {
@@ -249,10 +240,15 @@ export class UrlBuilder {
 
     projectChild.url = indexFileName;
 
+    projectChild.documents?.forEach((document) => {
+      this.buildUrlsForDocument(document);
+    });
+
     const parentUrl =
       indexFileName.split(path.sep)?.length > 1
         ? indexFileName
         : `${projectChild.name}/${indexFileName}`;
+
     this.buildUrlsFromProject(
       projectChild,
       parentUrl,
@@ -262,7 +258,7 @@ export class UrlBuilder {
     );
   }
 
-  private buildUrlsForDocuments(reflection: DocumentReflection) {
+  private buildUrlsForDocument(reflection: DocumentReflection) {
     const mapping: TemplateMapping = this.theme.getTemplateMapping(
       reflection.kind,
     );
@@ -279,6 +275,7 @@ export class UrlBuilder {
           this.fileExtension,
         ),
       ];
+
       if (
         reflection?.parent?.kind &&
         ![ReflectionKind.Module, ReflectionKind.Project].includes(
@@ -309,10 +306,6 @@ export class UrlBuilder {
     reflection: DeclarationReflection,
     urlOptions: UrlOption,
   ) {
-    if (reflection.kind === ReflectionKind.Document && !this.writeDocuments) {
-      return;
-    }
-
     const mapping: TemplateMapping = this.theme.getTemplateMapping(
       reflection.kind,
       urlOptions.outputFileStrategy,
@@ -343,10 +336,7 @@ export class UrlBuilder {
             urlMapping.url !== url,
         );
 
-        if (
-          duplicateUrls.length > 0 &&
-          reflection.kind !== ReflectionKind.Document
-        ) {
+        if (duplicateUrls.length > 0) {
           const urlParts = url.split('.');
           urlParts[urlParts.length - 2] += `-${duplicateUrls.length}`;
           url = urlParts.join('.');
@@ -492,8 +482,8 @@ export class UrlBuilder {
     }
     if (reflection.parent) {
       reflection.traverse((child) => {
-        if (this.writeDocuments && child instanceof DocumentReflection) {
-          this.buildUrlsForDocuments(child);
+        if (child instanceof DocumentReflection) {
+          this.buildUrlsForDocument(child);
         }
         if (child instanceof DeclarationReflection) {
           this.traverseChildren(child, container);
@@ -556,7 +546,8 @@ export class UrlBuilder {
     if (!htmlTableAnchors) {
       if (
         (reflection.kind === ReflectionKind.Property &&
-          this.options.getValue('propertiesFormat') === 'table') ||
+          this.options.getValue('propertiesFormat').toLowerCase() ===
+            'table') ||
         (reflection.kind === ReflectionKind.EnumMember &&
           this.options.getValue('enumMembersFormat') === 'table')
       ) {

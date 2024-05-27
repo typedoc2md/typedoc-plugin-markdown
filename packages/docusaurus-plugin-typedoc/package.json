@@ -14,7 +14,7 @@
     "url": "git+https://github.com/typedoc2md/typedoc-plugin-markdown.git",
     "directory": "packages/docusaurus-plugin-typedoc"
   },
-  "homepage": "http://typedoc.org/plugins/docusaurus",
+  "homepage": "http://typedoc-plugin-markdown.org/plugins/docusaurus",
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.0.0"
   },

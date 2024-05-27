@@ -57,18 +57,38 @@ A basic module
 
 ## Index
 
-### Members
+### Enumerations
 
-| Member | Description |
+| Enumeration | Description |
 | :------ | :------ |
 | [EnumA](enumerations/EnumA.md) | EnumA function. |
 | [EnumB](enumerations/EnumB.md) | - |
+
+### Classes
+
+| Class | Description |
+| :------ | :------ |
 | [ClassA](classes/ClassA.md) | ClassA function. |
 | [ClassB](classes/ClassB.md) | - |
+
+### Interfaces
+
+| Interface | Description |
+| :------ | :------ |
 | [InterfaceA](interfaces/InterfaceA.md) | Interface A comments line 1 and comments on a soft line. |
 | [InterfaceB](interfaces/InterfaceB.md) | InterfaceB function. |
+
+### Type Aliases
+
+| Type alias | Description |
+| :------ | :------ |
 | [TypeA](type-aliases/TypeA.md) | TypeA function. |
 | [TypeB](type-aliases/TypeB.md) | TypeB function. |
+
+### Functions
+
+| Function | Description |
+| :------ | :------ |
 | [functionA](functions/functionA.md) | functionA function. |
 
 <a id="variablea" name="variablea"></a>
@@ -631,9 +651,9 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 # typedoc-stubs
 
-## Members
+## Modules
 
-| Member | Description |
+| Module | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name/index.md) | - |
 | [\\<internal\\>](-internal-/index.md) | - |
@@ -675,9 +695,9 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 
 # typedoc-stubs
 
-## Members
+## Modules
 
-| Member | Description |
+| Module | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name.md) | - |
 | [\\<internal\\>](-internal-.md) | - |
@@ -723,11 +743,16 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ## Index
 
-### Members
+### Namespaces
 
-| Member | Description |
+| Namespace | Description |
 | :------ | :------ |
 | [NestedNamespace](namespaces/NestedNamespace/index.md) | - |
+
+### Interfaces
+
+| Interface | Description |
+| :------ | :------ |
 | [NamespaceInterface](interfaces/NamespaceInterface.md) | - |
 "
 `;
@@ -764,9 +789,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ## Index
 
-### Members
+### Namespaces
 
-| Member | Description |
+| Namespace | Description |
 | :------ | :------ |
 | [NestedNamespace](namespaces/NestedNamespace.md) | - |
 
@@ -839,20 +864,45 @@ A module that contains namespaces
 
 ## Index
 
-### Members
+### Namespaces
 
-| Member | Description |
+| Namespace | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB/index.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
+
+### Enumerations
+
+| Enumeration | Description |
+| :------ | :------ |
 | [EnumB](enumerations/EnumB.md) | - |
 | [\\_Enum\\_A\\_](enumerations/Enum_A.md) | - |
+
+### Classes
+
+| Class | Description |
+| :------ | :------ |
 | [ClassB](classes/ClassB.md) | - |
 | [\\_\\_Class\\_A\\_](classes/Class_A.md) | - |
+
+### Interfaces
+
+| Interface | Description |
+| :------ | :------ |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 | [\\_Interface\\_A\\_](interfaces/Interface_A.md) | - |
+
+### Type Aliases
+
+| Type alias | Description |
+| :------ | :------ |
 | [TypeB](type-aliases/TypeB.md) | - |
 | [\\_Type\\_A\\_](type-aliases/Type_A.md) | - |
+
+### Functions
+
+| Function | Description |
+| :------ | :------ |
 | [\\_function\\_A\\_](functions/function_A.md) | - |
 | [functionB](functions/functionB.md) | - |
 
@@ -977,9 +1027,9 @@ A module that contains namespaces
 
 ## Index
 
-### Members
+### Namespaces
 
-| Member | Description |
+| Namespace | Description |
 | :------ | :------ |
 | [NamespaceB](namespaces/NamespaceB.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
@@ -1221,9 +1271,9 @@ A module that contains references
 
 ## Index
 
-### Members
+### Functions
 
-| Member | Description |
+| Function | Description |
 | :------ | :------ |
 | [defaultFunction](functions/defaultFunction.md) | - |
 

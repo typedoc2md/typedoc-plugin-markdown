@@ -1,0 +1,42 @@
+{
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "name": "Developer Documentation",
+  "out": "./devdocs",
+  "readme": "none",
+  "entryPoints": [
+    "./packages/typedoc-plugin-markdown",
+    "./packages/typedoc-plugin-frontmatter"
+  ],
+  "entryPointStrategy": "packages",
+  "plugin": [
+    "./packages/typedoc-plugin-markdown/dist",
+    "typedoc-plugin-remark",
+    "./packages/typedoc-plugin-markdown/.docs/plugins/typedoc-default-values.js"
+  ],
+  "indexFormat": "table",
+  "outputFileStrategy": "members",
+  "excludePrivate": false,
+  "textContentMappings": {
+    "breadcrumbs.home": "Home"
+  },
+  "hidePageHeader": true,
+  "packageOptions": {
+    "includeVersion": true,
+    "excludePrivate": false
+  },
+  "projectDocuments": ["./CONTRIBUTING.md"],
+  "mergeReadme": true,
+  "membersWithOwnFile": ["Class", "Interface", "TypeAlias", "Enum"],
+  "remarkPlugins": [
+    [
+      "remark-toc",
+      {
+        "heading": "Table of Contents",
+        "tight": true,
+        "maxDepth": 2,
+        "skip": "Enumeration Members|Type declaration|Defined in|Parameters|Remarks|See|Returns"
+      }
+    ]
+  ],
+  "hideGroupHeadings": true
+}

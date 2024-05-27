@@ -11,12 +11,12 @@ export default {
     title: 'Guides',
   },
   'typedoc-usage': '',
+  internationalization: '',
   'customizing-output': '',
   '-- Support': {
     type: 'separator',
     title: 'Support',
   },
   versioning: '',
-  CHANGELOG: '',
-  'migration-guide': 'Migration Guide V4',
+  changelog: 'Changelog',
 };

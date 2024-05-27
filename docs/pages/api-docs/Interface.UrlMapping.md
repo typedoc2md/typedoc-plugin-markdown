@@ -6,19 +6,25 @@ The model used to define the URL mapping structure.
 
 ### url
 
-> **url**: `string`
+```ts
+url: string;
+```
 
 ***
 
 ### model
 
-> **model**: `Model`
+```ts
+model: Model;
+```
 
 ***
 
 ### template()
 
-> **template**: (`data`) => `string`
+```ts
+template: (data) => string;
+```
 
 #### Parameters
 

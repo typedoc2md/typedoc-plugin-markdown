@@ -1,37 +1,25 @@
 # API
 
-The public API of typedoc-plugin-markdown exposes some classes and types that can be used to customize the output of the plugin. Please note this only covers the API relevant to this plugin and not cover the entire [TypeDoc API](https://typedoc.org/api/).
+## Classes
 
-The APIs are typically consumed by writing [local plugins](/docs/customizing-output#local-plugins).
-
-## Application
-
-The Application class is the main entry point for a TypeDoc application and provides the mechanism to listen to hooks, events and define new themes.
-
-| Member | Description |
+| Class | Description |
 | :------ | :------ |
-| [MarkdownApplication](/api-docs/Interface.MarkdownApplication.md) | An extended typing of TypeDoc's Application instance. |
-| [MarkdownRenderer](/api-docs/Interface.MarkdownRenderer.md) | An extended typing of TypeDoc's Renderer class. |
 | [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent.md) | An event emitted by before and after the markup of a page is rendered. |
 | [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent.md) | An event emitted at the beginning and end of the rendering process. |
-| [MarkdownRendererHooks](/api-docs/Interface.MarkdownRendererHooks.md) | Describes the hooks available to inject output in the markdown theme. |
-
-## Theme
-
-Classes and types that are used to define the Markdown theme and create custom themes.
-
-| Member | Description |
-| :------ | :------ |
-| [MarkdownTheme](/api-docs/Class.MarkdownTheme.md) | The main theme class for the plugin. |
 | [MarkdownThemeContext](/api-docs/Class.MarkdownThemeContext.md) | The theme context class that is provided as context on the rendering of every page. |
+| [MarkdownTheme](/api-docs/Class.MarkdownTheme.md) | The main theme class for the plugin. |
+
+## Interfaces
+
+| Interface | Description |
+| :------ | :------ |
+| [PluginOptions](/api-docs/Interface.PluginOptions.md) | - |
 | [PackageMetaData](/api-docs/Interface.PackageMetaData.md) | The model used to define the package metadata when in packages mode. |
 | [UrlMapping](/api-docs/Interface.UrlMapping.md) | The model used to define the URL mapping structure. |
 | [NavigationItem](/api-docs/Interface.NavigationItem.md) | The model used to define the navigation structure. |
 
-## Options
+## Functions
 
-Types that are used to define the plugin options.
-
-| Member | Description |
+| Function | Description |
 | :------ | :------ |
-| [PluginOptions](/api-docs/Interface.PluginOptions.md) | Describes the options declared by the plugin. |
+| [load](/api-docs/Function.load.md) | Plugin load |

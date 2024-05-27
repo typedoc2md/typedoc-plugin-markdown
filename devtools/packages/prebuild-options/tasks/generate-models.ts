@@ -4,10 +4,6 @@ import * as path from 'path';
 import * as prettier from 'prettier';
 import { DeclarationOption, ParameterType } from 'typedoc';
 
-/**
- * Creates models for plugin options
- */
-
 export async function generateOptionsModels(docsConfig: DocsConfig) {
   const optionsConfig = await import(docsConfig.declarationsPath as string);
 
@@ -23,7 +19,7 @@ async function writeTypeDocDeclarations(
   docsConfig: DocsConfig,
   sortedOptionsConfig: any,
 ) {
-  const typedocDeclarationsFile = path.join(SRC_PATH, 'defs', 'typedoc.d.ts');
+  const typedocDeclarationsFile = path.join(SRC_PATH, '_typedoc.d.ts');
 
   const manuallyValidatedOptions = Object.entries(sortedOptionsConfig)
     .filter(
@@ -52,11 +48,25 @@ import { ManuallyValidatedOption } from 'typedoc'`);
   }`);
 
   if (docsConfig.translatablePath) {
-    const { translatable } = await import(docsConfig.translatablePath);
     out.push(`
   // eslint-disable-next-line @typescript-eslint/no-namespace
   export namespace Internationalization {
-    export interface TranslatableStrings ${getTranslations(translatable)}
+      export interface TranslatableStrings {
+        theme_default_value: [];
+        theme_default_type: [];
+        theme_description: [];
+        theme_event: [];
+        theme_extends: [];
+        theme_extended_by: [];
+        theme_member: [];
+        theme_member_plural: [];
+        theme_modifier: [];
+        theme_name: [];
+        theme_packages: [];
+        theme_type: [];
+        theme_value: [];
+        theme_version: [];
+    }
   }`);
   }
   out.push(`}`);
@@ -78,13 +88,16 @@ async function writeOptionsTypes(
       option.type === ParameterType.Mixed && option.defaultValue,
   );
 
-  const optionsOutput = `
-  // THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
-
+  const optionsOutput: string[] = [];
+  optionsOutput.push(`
   /**
    * Describes the options declared by the plugin.
    *
-   * @category Options
+   * @privateRemarks
+   *
+   * THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY
+   *
+   * @module
    */
   export interface PluginOptions {
     ${(Object.entries(sortedOptionsConfig) as any)
@@ -117,29 +130,20 @@ ${name}: ${getType(name, option, true)};`,
     `;
     })
     .join('\n')}
-  `;
+  `);
 
   const optionsModelFile = path.join(
     path.dirname(docsConfig.declarationsPath as string),
-    'option-types.ts',
+    'types.ts',
   );
 
-  const formatted = await prettier.format(optionsOutput, {
+  const formatted = await prettier.format(optionsOutput.join('\n\n'), {
     parser: 'typescript',
     singleQuote: true,
     trailingComma: 'all',
   });
 
   fs.writeFileSync(optionsModelFile, formatted);
-}
-
-function getTranslations(inputObject: { [key: string]: string }) {
-  const output: { [key: string]: string[] } = {};
-  for (const [key, value] of Object.entries(inputObject)) {
-    const matches = value.match(/{\d+}/g) || [];
-    output[key] = matches.map(() => 'string');
-  }
-  return JSON.stringify(output).replace(/"/g, '');
 }
 
 function getComments(name: string) {
@@ -208,7 +212,20 @@ function getType(
       .map((value) => `"${value}"`)
       .join(' | ')}`;
   }
+  if (option.type === ParameterType.Object) {
+    const outType = `{${Object.keys(option.defaultValue as any)
+      .map((key) => `'${key}': ${getObjectType(name)};`)
+      .join('')}}`;
+    return isInterface ? outType : `ManuallyValidatedOption<${outType}>`;
+  }
   return 'any';
+}
+
+function getObjectType(name: string) {
+  if (name === 'reflectionFormats') {
+    return "'list'|'table'|'htmlTable'";
+  }
+  return 'string';
 }
 
 function capitalize(str: string) {

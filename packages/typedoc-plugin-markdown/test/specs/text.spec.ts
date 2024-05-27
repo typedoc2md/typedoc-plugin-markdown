@@ -2,7 +2,7 @@ import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Text`, () => {
   test(`should get translations for index page`, () => {
-    expectFileToEqual('text', 'members', ['modules.md']);
+    expectFileToEqual('text', 'members', 'README.md');
   });
 
   test(`should get translations for module page`, () => {
@@ -10,9 +10,11 @@ describe(`Text`, () => {
   });
 
   test(`should get translations for member page`, () => {
-    expectFileToEqual('text', 'members', [
+    expectFileToEqual(
+      'text',
+      'members',
       'module-1/interfaces/SomeInterface.md',
-    ]);
+    );
   });
 
   test(`should get translations for modules page`, () => {

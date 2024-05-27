@@ -66,6 +66,27 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 "
 `;
 
+exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 4`] = `
+"**@scope/package-3** • **Docs**
+
+***
+
+[packages-example](../../packages.md) / @scope/package-3
+
+# @scope/package-3
+
+## Documents
+
+- [Package Document 1](documents/Package-Document-1.md)
+
+## Modules
+
+- [index](index/index.md)
+- [module-1](module-1/index.md)
+- [module-2](module-2/index.md)
+"
+`;
+
 exports[`Packages should compile member for relative entry module package: (Output File Strategy "members") (Option Group "1") 1`] = `
 "**package-6** • **Docs**
 

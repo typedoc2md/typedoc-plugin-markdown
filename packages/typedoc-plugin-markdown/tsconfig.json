@@ -2,15 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "baseUrl": "src",
-    "paths": {
-      "@plugin/app/*": ["./app/*"],
-      "@plugin/libs/*": ["./libs/*"],
-      "@plugin/theme": ["./theme/index.ts"],
-      "@plugin/theme/*": ["./theme/*"],
-      "@plugin/options": ["./options/index.ts"],
-      "@plugin/options/*": ["./options/*"]
-    }
+    "baseUrl": "src"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["./dist", "./test", ".scripts", "**/*.spec.ts"]

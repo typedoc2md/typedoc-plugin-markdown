@@ -213,12 +213,6 @@ Return comments
 
 > **y**: \`number\` = \`2\`
 
-## Default
-
-\`\`\`ts
-{}
-\`\`\`
-
 ## Source
 
 [functions.ts:1](http://source-url)
@@ -244,12 +238,6 @@ Return comments
 | :------ | :------ | :------ |
 | \`x\` | \`number\` | 1 |
 | \`y\` | \`number\` | 2 |
-
-## Default
-
-\`\`\`ts
-{}
-\`\`\`
 
 ## Source
 
@@ -415,7 +403,7 @@ This is a function with a parameter that has a default value.
 
 ## Parameters
 
-| Parameter | Type | Default Value | Description |
+| Parameter | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`valueA\` | \`string\` | \`'defaultValue'\` | A parameter with a default string value. |
 | \`valueB\` | \`number\` | \`100\` | A parameter with a default numeric value. |
@@ -753,7 +741,7 @@ This is a function with a parameters.
 
 ## Parameters
 
-| Parameter | Type | Default Value | Description |
+| Parameter | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
 | \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
@@ -785,7 +773,7 @@ This is a function with a parameters.
 
 ## Parameters
 
-| Parameter | Type | Default Value | Description |
+| Parameter | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
 | \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
@@ -887,7 +875,7 @@ Function with type parameters
 
 ## Type Parameters
 
-| Type Parameter | Value | Description |
+| Type Parameter | Default type | Description |
 | :------ | :------ | :------ |
 | \`T\` | - | Comments for T |
 | \`Item\` | \`string\` \\| \`boolean\` | - |

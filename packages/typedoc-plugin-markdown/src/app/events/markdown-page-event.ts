@@ -3,7 +3,7 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
 /**
  * An event emitted by before and after the markup of a page is rendered.
  *
- * ## Usage
+ * @example
  *
  * ```ts
  * export function load(app: MarkdownApplication) {
@@ -13,35 +13,35 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
  * });
  * ```
  *
- * @category Application
  */
 export class MarkdownPageEvent<
   /** @ignore **/ Model = Reflection,
 > extends Event {
   /**
-   * The project the renderer is currently processing.
+   * The {@linkcode typedoc!ProjectReflection ProjectReflection} instance the renderer is currently processing.
    */
   project!: ProjectReflection;
 
   /**
-   * The model that should be rendered on this page.
+   * The model that that is being rendered on this page.
+   * Either a {@linkcode typedoc!DeclarationReflection DeclarationReflection} or {@linkcode typedoc!ProjectReflection ProjectReflection}.
    */
   readonly model: Model;
 
   /**
-   * The final markdown content of this page.
+   * The final markdown `string` content of the page.
    *
    * Should be rendered by layout templates and can be modified by plugins.
    */
   contents?: string;
 
   /**
-   * The url this page will be located at.
+   * The url `string` of the page.
    */
   url!: string;
 
   /**
-   * The filename the page will be written to.
+   * The complete `string` filename where the file will be written..
    */
   filename!: string;
 

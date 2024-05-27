@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["../src/public-api.ts"],
+  "entryPoints": ["../src/index.ts"],
   "plugin": [
     "typedoc-plugin-markdown",
     "./plugins/typedoc-nextra.mjs",
@@ -9,21 +9,30 @@
   "publicPath": "/api-docs",
   "indexFormat": "table",
   "mergeReadme": true,
-  "leftAlignTableHeaders": true,
   "entryFileName": "index.md",
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
-  "excludeGroups": true,
+  "excludeGroups": false,
+  "expandObjects": true,
   "parametersFormat": "table",
+  "expandParameters": false,
+  "tableColumnSettings": {
+    "hideOverrides": true,
+    "hideModifiers": true,
+    "hideDefaults": true,
+    "hideSources": true,
+    "leftAlignHeaders": true
+  },
+
   "outputFileStrategy": "members",
-  "useCodeBlocks": false,
+  "useCodeBlocks": true,
   "textContentMappings": {
     "title.memberPage": "{name}"
   },
   "flattenOutputFiles": true,
   "sortEntryPoints": false,
   "name": "API",
-  "readme": "none",
+  "readme": "./DEVELOP.md",
   "sort": ["required-first", "source-order"],
   "includeVersion": false,
   "categoryOrder": [

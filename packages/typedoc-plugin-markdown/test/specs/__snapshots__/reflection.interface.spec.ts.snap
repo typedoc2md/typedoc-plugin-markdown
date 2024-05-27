@@ -5,7 +5,7 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
-## Extended By
+## Extended by
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -236,7 +236,7 @@ exports[`Interface Reflection should compile basic interface: (Output File Strat
 
 Comments for BasicInterface
 
-## Extended By
+## Extended by
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -812,10 +812,10 @@ Comments for InterfaceWithFlags
 
 ## Properties
 
-| Property | Flags | Type |
-| :------ | :------ | :------ |
-| \`expermintalProp?\` | \`Experimental\` | \`string\` |
-| \`internalProp\` | \`Internal\` | \`string\` |
+| Property | Type |
+| :------ | :------ |
+| \`expermintalProp?\` (*Experimental*) | \`string\` |
+| \`internalProp\` (*Internal*) | \`string\` |
 "
 `;
 

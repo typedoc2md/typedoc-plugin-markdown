@@ -6,22 +6,30 @@ The model used to define the navigation structure.
 
 ### title
 
-> **title**: `string`
+```ts
+title: string;
+```
 
 ***
 
 ### path?
 
-> `optional` **path**: `null` \| `string`
+```ts
+optional path: null | string;
+```
 
 ***
 
 ### kind?
 
-> `optional` **kind**: [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html)
+```ts
+optional kind: ReflectionKind;
+```
 
 ***
 
 ### children?
 
-> `optional` **children**: [`NavigationItem`](/api-docs/Interface.NavigationItem.md)[]
+```ts
+optional children: NavigationItem[];
+```

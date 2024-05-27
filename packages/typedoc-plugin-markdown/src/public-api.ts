@@ -1,5 +1,5 @@
 /**
- * The public API of typedoc-plugin-markdown exposes some classes and types that can be used to customize the output of the plugin. Please note this only covers the API relevant to this plugin and not cover the entire [TypeDoc API](https://typedoc.org/api/).
+ * The public API of typedoc-plugin-markdown exposes some classes and types that can be used to customize the output of the plugin. If you are interested in the TypeDoc API please visit [https://typedoc.org](https://typedoc.org/api/).
  *
  * The APIs are typically consumed by writing [local plugins](/docs/customizing-output#local-plugins).
  *
@@ -17,14 +17,8 @@
  *
  * @module
  */
-export { MarkdownApplication, MarkdownRenderer } from '@plugin/app/application';
-export { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/app/events';
-export { MarkdownRendererHooks } from '@plugin/app/renderer';
-export { PluginOptions } from '@plugin/options';
-export {
-  MarkdownTheme,
-  MarkdownThemeContext,
-  NavigationItem,
-  PackageMetaData,
-  UrlMapping,
-} from '@plugin/theme';
+
+export { MarkdownPageEvent, MarkdownRendererEvent } from 'app/events';
+export { PluginOptions } from 'options/types';
+export { MarkdownTheme, MarkdownThemeContext } from 'theme';
+export { NavigationItem, PackageMetaData, UrlMapping } from 'theme/types';

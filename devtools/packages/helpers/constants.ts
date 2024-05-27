@@ -6,7 +6,7 @@ export const PRESETS_PATH = `${process.cwd()}/src/options/presets.ts`;
 export const DOCS_CONFIG: Record<string, DocsConfig> = {
   ['typedoc-plugin-markdown']: {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,
-    translatablePath: `${process.cwd()}/src/app/translatable.ts`,
+    translatablePath: `${process.cwd()}/src/internationalization/locales/en.ts`,
     optionsPath: '/docs',
     docsPath: '/docs',
     declarations: true,

@@ -2,7 +2,7 @@
 
 An event emitted by before and after the markup of a page is rendered.
 
-## Usage
+## Example
 
 ```ts
 export function load(app: MarkdownApplication) {
@@ -20,41 +20,52 @@ export function load(app: MarkdownApplication) {
 
 ### project
 
-> **project**: [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)
+```ts
+project: ProjectReflection;
+```
 
-The project the renderer is currently processing.
+The [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) instance the renderer is currently processing.
 
 ***
 
 ### model
 
-> `readonly` **model**: `Model`
+```ts
+readonly model: Model;
+```
 
-The model that should be rendered on this page.
+The model that that is being rendered on this page.
+Either a [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) or [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html).
 
 ***
 
 ### url
 
-> **url**: `string`
+```ts
+url: string;
+```
 
-The url this page will be located at.
+The url `string` of the page.
 
 ***
 
 ### filename
 
-> **filename**: `string`
+```ts
+filename: string;
+```
 
-The filename the page will be written to.
+The complete `string` filename where the file will be written..
 
 ***
 
 ### contents?
 
-> `optional` **contents**: `string`
+```ts
+optional contents: string;
+```
 
-The final markdown content of this page.
+The final markdown `string` content of the page.
 
 Should be rendered by layout templates and can be modified by plugins.
 
@@ -62,7 +73,9 @@ Should be rendered by layout templates and can be modified by plugins.
 
 ### frontmatter?
 
-> `optional` **frontmatter**: `Record`\<`string`, `any`\>
+```ts
+optional frontmatter: Record<string, any>;
+```
 
 The frontmatter of this page represented as a key value object. This property can be utilised by other plugins.
 
@@ -70,7 +83,9 @@ The frontmatter of this page represented as a key value object. This property ca
 
 ### BEGIN
 
-> `static` `readonly` **BEGIN**: `"beginPage"` = `'beginPage'`
+```ts
+static readonly BEGIN: "beginPage" = 'beginPage';
+```
 
 Triggered before a document will be rendered.
 
@@ -78,6 +93,8 @@ Triggered before a document will be rendered.
 
 ### END
 
-> `static` `readonly` **END**: `"endPage"` = `'endPage'`
+```ts
+static readonly END: "endPage" = 'endPage';
+```
 
 Triggered after a document has been rendered, just before it is written to disc.

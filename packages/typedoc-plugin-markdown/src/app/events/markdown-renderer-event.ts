@@ -1,21 +1,10 @@
-/**
- * Extends the RendererEvent from TypeDoc to expose navigation property.
- *
- */
-
-import { MarkdownPageEvent } from '@plugin/app/events/markdown-page-event';
-import {
-  NavigationItem,
-  RenderTemplate,
-  UrlMapping,
-} from '@plugin/theme/theme-types';
+import { MarkdownPageEvent } from 'app/events';
 import * as path from 'path';
+import { NavigationItem, RenderTemplate, UrlMapping } from 'theme/types';
 import { Event, ProjectReflection, Reflection } from 'typedoc';
 
 /**
  * An event emitted at the beginning and end of the rendering process.
- *
- * ## Usage
  *
  * ```ts
  * app.renderer.on(MarkdownRendererEvent.BEGIN, (event) => {
@@ -23,7 +12,6 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
  * });
  * ```
  *
- * @category Application
  */
 export class MarkdownRendererEvent extends Event {
   /**
