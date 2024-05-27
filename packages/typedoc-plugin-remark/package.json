@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-remark",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plugin for TypeDoc ( + typedoc-plugin-markdown ) that enables additional markdown transformations with remark plugins.",
   "main": "./dist/index.js",
   "files": [
