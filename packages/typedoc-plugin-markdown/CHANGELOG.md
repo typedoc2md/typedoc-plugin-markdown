@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.3
+
+### Patch Changes
+
+- Remove superfluous quotes from prop names ([#619](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/619))
+- Fix display of index descriptions in tables ([#618](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618))
+
 ## 4.0.2 (2024-05-15)
 
 ### Patch Changes
