@@ -1,10 +1,13 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
 
 /**
+ * You can provide any compatible [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md) or you can write your own and reference locally.
  *
  * Each required plugin should be individually installed.
  *
- * Please note options can be passed either as an array of strings or an array of string / options.
+ * Options can be passed either as an array of strings or an array of string / options.
+ *
+ * Please note that `remark-frontmatter`, `remark-gfm`, and `remark-mdx` are always included by default.
  *
  * @example  ["unified-prettier","remark-github", ["remark-toc", { "maxDepth": 3 }] ]
  */

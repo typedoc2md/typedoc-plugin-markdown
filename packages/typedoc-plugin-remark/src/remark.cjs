@@ -16,6 +16,7 @@ module.exports = {
     const plugins = [
       ['remark-frontmatter', ['yaml']],
       'remark-gfm',
+      'remark-mdx',
       ...userPlugins,
     ];
     const promises = plugins.map(async (plugin) => {

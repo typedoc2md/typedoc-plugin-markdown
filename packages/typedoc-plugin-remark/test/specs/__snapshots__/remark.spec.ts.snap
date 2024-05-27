@@ -88,11 +88,11 @@ title: 'test'
 
 ### new SomeClass()
 
-> **new SomeClass**<\`T\`>(): [\`SomeClass\`](SomeClass.md)<\`T\`>
+> **new SomeClass**\\<\`T\`>(): [\`SomeClass\`](SomeClass.md)\\<\`T\`>
 
 #### Returns
 
-[\`SomeClass\`](SomeClass.md)<\`T\`>
+[\`SomeClass\`](SomeClass.md)\\<\`T\`>
 
 ## Properties
 
@@ -211,11 +211,11 @@ javascript
 
 ##### new SomeClass()
 
-> **new SomeClass**<\`T\`>(): [\`SomeClass\`](module-1.md#someclasst)<\`T\`>
+> **new SomeClass**\\<\`T\`>(): [\`SomeClass\`](module-1.md#someclasst)\\<\`T\`>
 
 ###### Returns
 
-[\`SomeClass\`](module-1.md#someclasst)<\`T\`>
+[\`SomeClass\`](module-1.md#someclasst)\\<\`T\`>
 
 #### Properties
 
@@ -238,6 +238,10 @@ javascript
 ##### anotherProp
 
 > **anotherProp**: \`T\`
+
+##### somePromise
+
+> **somePromise**: \`Promise\`\\<\`T\`>
 
 ##### someProp
 

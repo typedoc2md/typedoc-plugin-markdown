@@ -22,6 +22,7 @@ export function some_function(param: string | boolean) {}
 export interface SomeInterface<T> {
   someProp: string;
   anotherProp: T;
+  somePromise: Promise<T>;
 }
 
 /**

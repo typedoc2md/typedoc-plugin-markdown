@@ -28,6 +28,7 @@
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
+    "remark-mdx": "^3.0.1",
     "to-vfile": "^8.0.0"
   },
   "peerDependencies": {
