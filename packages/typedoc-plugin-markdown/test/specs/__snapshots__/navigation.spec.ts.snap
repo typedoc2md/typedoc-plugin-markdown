@@ -2268,6 +2268,11 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "someClass",
         "kind": 128,
         "path": "has-same-exports/classes/someClass-1.md"
+      },
+      {
+        "title": "someFunction",
+        "kind": 64,
+        "path": "has-same-exports/functions/someFunction.md"
       }
     ]
   },
@@ -2617,6 +2622,26 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "title": "someClass",
             "kind": 128,
             "path": "has-same-exports/classes/someClass-1.md"
+          }
+        ]
+      },
+      {
+        "title": "group1",
+        "children": [
+          {
+            "title": "someFunction",
+            "kind": 64,
+            "path": "has-same-exports/functions/someFunction.md"
+          }
+        ]
+      },
+      {
+        "title": "group2",
+        "children": [
+          {
+            "title": "someFunction",
+            "kind": 64,
+            "path": "has-same-exports/functions/someFunction.md"
           }
         ]
       }

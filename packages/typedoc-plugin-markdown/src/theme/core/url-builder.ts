@@ -255,8 +255,8 @@ export function buildUrls(theme: MarkdownTheme, project: ProjectReflection) {
 
         const duplicateUrls = urls.filter(
           (urlMapping) =>
-            urlMapping.url.toLowerCase().replace(/-\d+$/, '') ===
-            url.toLowerCase(),
+            urlMapping.url.toLowerCase() === url.toLowerCase() &&
+            urlMapping.url !== url,
         );
 
         if (duplicateUrls.length > 0) {
