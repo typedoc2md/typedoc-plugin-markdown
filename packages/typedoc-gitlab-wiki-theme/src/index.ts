@@ -40,9 +40,9 @@ export function load(app: Application) {
     MarkdownPageEvent.END,
     (page: MarkdownPageEvent<Reflection>) => {
       page.contents = page.contents?.replace(
-        /\[([^\]]+)\]\((?!https?:|\/|\.)([^)]+)\)/g,
+        /\[([^\]]+)\]\((?!https?:)([^)]+)\)/g,
         (match: string, text: string, url: string) => {
-          let relativeUrl = url?.replace(/(.*).md/, '$1');
+          let relativeUrl = url?.replace(/\.md/g, '');
           if (!relativeUrl.startsWith('.') && !relativeUrl.startsWith('/')) {
             relativeUrl = './' + relativeUrl;
           }

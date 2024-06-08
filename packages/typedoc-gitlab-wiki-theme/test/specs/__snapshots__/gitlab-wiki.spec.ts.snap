@@ -39,6 +39,23 @@ exports[`GithubWiki should output index docs 1`] = `
 "
 `;
 
+exports[`GithubWiki should output member docs 1`] = `
+"[typedoc-gitlab-wiki-theme](../../home) / [module-1](../home) / ClassA
+
+# Class: ClassA
+
+## Constructors
+
+### new ClassA()
+
+> **new ClassA**(): [\`ClassA\`](./ClassA)
+
+#### Returns
+
+[\`ClassA\`](./ClassA)
+"
+`;
+
 exports[`GithubWiki should output single modules sidebar 1`] = `
 "## API
 
