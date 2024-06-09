@@ -7,14 +7,14 @@ import { DeclarationReflection } from 'typedoc';
 export function typeDeclarationList(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
-  headingLevel: number,
+  options: { headingLevel: number },
 ): string {
   const md: string[] = [];
   const declarations = this.helpers.getFlattenedDeclarations(model);
-  declarations?.forEach((declaration: DeclarationReflection) => {
+  declarations?.forEach((declaration: DeclarationReflection, i: number) => {
     md.push(
       this.partials.memberContainer(declaration, {
-        headingLevel: headingLevel + 1,
+        headingLevel: options.headingLevel + 1,
         nested: true,
       }),
     );

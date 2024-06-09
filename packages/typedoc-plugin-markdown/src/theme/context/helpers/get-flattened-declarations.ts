@@ -7,6 +7,7 @@ export function getFlattenedDeclarations(
   const getFlattenedDeclarations = (current: DeclarationReflection) => {
     return (current.type as any)?.declaration?.children?.reduce(
       (acc: DeclarationReflection[], child: DeclarationReflection) => {
+        (child as any).originalName = child.name;
         const childObj = {
           ...child,
           name: `${current.name}.${child.name}`,
@@ -22,6 +23,7 @@ export function getFlattenedDeclarations(
     acc: DeclarationReflection[],
   ) => {
     const shouldFlatten = (current.type as any)?.declaration?.children;
+
     const isAccessor = current.kind === ReflectionKind.Accessor;
 
     if (options?.includeSignatures) {

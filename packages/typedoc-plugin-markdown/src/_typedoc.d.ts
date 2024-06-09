@@ -35,6 +35,7 @@ declare module 'typedoc' {
     parametersFormat: 'list' | 'table' | 'htmlTable';
     preserveAnchorCasing: boolean;
     propertiesFormat: 'list' | 'table' | 'htmlTable';
+    propertyMembersFormat: 'list' | 'table' | 'htmlTable';
     publicPath: string;
     sanitizeComments: boolean;
     tableColumnSettings: {

@@ -10,9 +10,7 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
     tsConfigFilePath: 'tsconfig.json',
   });
 
-  const outputPage: string[] = [
-    `import { Callout, FileTree } from 'nextra/components';`,
-  ];
+  const outputPage: string[] = [`import { Callout } from 'nextra/components';`];
 
   outputPage.push('# Options');
   if (docsConfig.docsPath === '/docs') {
@@ -109,6 +107,10 @@ ${presetsJson}
       'category',
     );
 
+    const compiledText = configFileTs?.compilerNode.text;
+
+    const categoryDescriptions = extractCategories(compiledText);
+
     const categories = Object.entries(groupedConfig);
 
     categories.forEach(async ([categoryName, options]) => {
@@ -121,9 +123,14 @@ ${presetsJson}
         categories.length === 1 && !Boolean(docsConfig.presets) ? '##' : '##';
       if (categories.length > 1) {
         out.push(`# ${getDocsTitle(categoryName)}`);
+        if (Object.keys(categoryDescriptions)?.length) {
+          out.push(categoryDescriptions[categoryName]);
+        }
+        out.push();
         outputPage.push(`## ${getDocsTitle(categoryName)}`);
-        if (docsConfig.categories) {
-          outputPage.push(docsConfig.categories[categoryName.toLowerCase()]);
+
+        if (Object.keys(categoryDescriptions)?.length) {
+          outputPage.push(categoryDescriptions[categoryName]);
         }
       }
       const optionsLi: string[] = [];
@@ -344,4 +351,19 @@ function groupBy(array: any[], key: string) {
     (r, v, i, a, k = v[key]) => ((r[k] || (r[k] = [])).push(v), r),
     {},
   );
+}
+
+function extractCategories(input) {
+  const regex =
+    /@categoryDescription\s+(\w+)\s*\n\s*\*\s*([\w\s\S]*?)(?=\n\s*\*)/g;
+  let match;
+  const categories = {};
+
+  while ((match = regex.exec(input)) !== null) {
+    let description = match[2].trim();
+    description = description.replace(/^\*/g, '').trim();
+    categories[match[1]] = description;
+  }
+
+  return categories;
 }

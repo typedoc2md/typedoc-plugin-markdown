@@ -183,7 +183,7 @@ function getResources(resourceType: string, binding = true) {
         .map((symbol) => {
           return `
           ${symbol.jsDocs}
-          /** @ignore **/
+
           ${symbol.symbolName}: (${symbol.params
             ?.filter((param) => param.name !== 'this')
             .map(

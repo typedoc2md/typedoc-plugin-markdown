@@ -1,16 +1,27 @@
 export default {
-  "index": "API Index",
-  "Classes": {
-    "type": "separator",
-    "title": "Classes"
+  index: 'API Index',
+  Documents: {
+    type: 'separator',
+    title: 'Documents',
   },
-  "": "load",
-  "Interfaces": {
-    "type": "separator",
-    "title": "Interfaces"
+  'Document.Local-Plugins': 'Local Plugins',
+  'Document.Customizing-Output': 'Customizing Output',
+  'Document.Navigation': 'Navigation',
+  Classes: {
+    type: 'separator',
+    title: 'Classes',
   },
-  "Functions": {
-    "type": "separator",
-    "title": "Functions"
-  }
-}
+  'Class.MarkdownPageEvent': 'MarkdownPageEvent',
+  'Class.MarkdownRendererEvent': 'MarkdownRendererEvent',
+  'Class.MarkdownThemeContext': 'MarkdownThemeContext',
+  'Class.MarkdownTheme': 'MarkdownTheme',
+  Interfaces: {
+    type: 'separator',
+    title: 'Interfaces',
+  },
+  'Interface.MarkdownRendererHooks': 'MarkdownRendererHooks',
+  'Interface.PluginOptions': 'PluginOptions',
+  'Interface.PackageMetaData': 'PackageMetaData',
+  'Interface.UrlMapping': 'UrlMapping',
+  'Interface.NavigationItem': 'NavigationItem',
+};

@@ -1,5 +1,5 @@
 export default {
-  "file options-options": "",
-  "display options-options": "",
-  "utility options-options": "",
+  "file-options": "",
+  "display-options": "",
+  "utility-options": "",
 };

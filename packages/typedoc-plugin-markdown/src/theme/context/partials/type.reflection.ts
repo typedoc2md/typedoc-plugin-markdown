@@ -8,7 +8,7 @@ import { ReflectionType } from 'typedoc';
 export function reflectionType(
   this: MarkdownThemeContext,
   model: ReflectionType,
-  options?: { foreCollpase?: boolean },
+  options?: { forceCollapse?: boolean },
 ): string {
   const root = model instanceof ReflectionType ? model.declaration : model;
   if (root.signatures) {
@@ -16,7 +16,7 @@ export function reflectionType(
   }
 
   const expandObjects =
-    !options?.foreCollpase &&
+    !options?.forceCollapse &&
     (this.options.getValue('expandObjects') as boolean);
 
   return expandObjects

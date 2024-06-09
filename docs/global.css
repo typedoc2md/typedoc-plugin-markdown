@@ -7,6 +7,7 @@
 .nextra-toc a[href^='#returns'],
 .nextra-toc a[href^='#source'],
 .nextra-toc a[href^='#overrides'],
+.nextra-toc a[href^='#see'],
 .nextra-toc a[href^='#deprecated'] {
   display: none;
 }

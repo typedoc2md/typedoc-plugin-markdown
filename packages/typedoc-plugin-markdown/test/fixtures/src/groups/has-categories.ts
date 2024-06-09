@@ -37,5 +37,11 @@ export enum CategoryBEnum1 {}
  */
 export enum CategoryBEnum2 {}
 
+/**
+ * @category Category C
+ */
+export interface CategoryCInterface1 {}
+export interface CategoryCInterface2 {}
+
 export interface UnCategorizedInterace {}
 export enum UnCategorizedEnum {}

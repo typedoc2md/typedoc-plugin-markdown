@@ -386,7 +386,15 @@ A module that contains categories
 
 #### CategoryBInterface2
 
+### Category C
+
+#### CategoryCInterface1
+
 ### Other
+
+#### CategoryCInterface2
+
+***
 
 #### UnCategorizedInterace
 "
@@ -451,11 +459,23 @@ A module that contains categories
 
 ### CategoryBInterface2
 
+## Category C
+
+<a id="categorycinterface1" name="categorycinterface1"></a>
+
+### CategoryCInterface1
+
 ## Other
 
 <a id="uncategorizedenum" name="uncategorizedenum"></a>
 
 ### UnCategorizedEnum
+
+***
+
+<a id="categorycinterface2" name="categorycinterface2"></a>
+
+### CategoryCInterface2
 
 ***
 
@@ -506,8 +526,13 @@ A module that contains categories
 - [CategoryBInterface1](interfaces/CategoryBInterface1.md)
 - [CategoryBInterface2](interfaces/CategoryBInterface2.md)
 
+#### Category C
+
+- [CategoryCInterface1](interfaces/CategoryCInterface1.md)
+
 #### Other
 
+- [CategoryCInterface2](interfaces/CategoryCInterface2.md)
 - [UnCategorizedInterace](interfaces/UnCategorizedInterace.md)
 "
 `;
@@ -527,7 +552,7 @@ A module that contains categories
 
 ### Category A
 
-| Member | Description |
+| Enumeration, Interface | Description |
 | :------ | :------ |
 | [CategoryAEnum1](enumerations/CategoryAEnum1.md) | - |
 | [CategoryAEnum2](enumerations/CategoryAEnum2.md) | - |
@@ -536,18 +561,25 @@ A module that contains categories
 
 ### Category B
 
-| Member | Description |
+| Enumeration, Interface | Description |
 | :------ | :------ |
 | [CategoryBEnum1](enumerations/CategoryBEnum1.md) | - |
 | [CategoryBEnum2](enumerations/CategoryBEnum2.md) | - |
 | [CategoryBInterface1](interfaces/CategoryBInterface1.md) | - |
 | [CategoryBInterface2](interfaces/CategoryBInterface2.md) | - |
 
+### Category C
+
+| Interface | Description |
+| :------ | :------ |
+| [CategoryCInterface1](interfaces/CategoryCInterface1.md) | - |
+
 ### Other
 
-| Member | Description |
+| Enumeration, Interface | Description |
 | :------ | :------ |
 | [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
+| [CategoryCInterface2](interfaces/CategoryCInterface2.md) | - |
 | [UnCategorizedInterace](interfaces/UnCategorizedInterace.md) | - |
 "
 `;
@@ -718,7 +750,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 [typedoc-stubs](../../../modules.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
-# Namespace: \\_Namespace\\_A\\_
+# \\_Namespace\\_A\\_
 
 ## Index
 
@@ -739,7 +771,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 [typedoc-stubs](../../../index.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
-# Namespace: \\_Namespace\\_A\\_
+# \\_Namespace\\_A\\_
 
 ## Index
 
@@ -764,7 +796,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 [typedoc-stubs](../../../modules.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
-# Namespace: \\_Namespace\\_A\\_
+# \\_Namespace\\_A\\_
 
 ## Index
 
@@ -785,7 +817,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 [typedoc-stubs](../../../index.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
-# Namespace: \\_Namespace\\_A\\_
+# \\_Namespace\\_A\\_
 
 ## Index
 

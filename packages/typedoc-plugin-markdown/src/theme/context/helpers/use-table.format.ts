@@ -2,7 +2,12 @@ import { MarkdownThemeContext } from 'public-api';
 
 export function useTableFormat(
   this: MarkdownThemeContext,
-  key: 'properties' | 'parameters' | 'enums' | 'typeDeclarations',
+  key:
+    | 'properties'
+    | 'parameters'
+    | 'enums'
+    | 'typeDeclarations'
+    | 'propertyMembers',
 ): boolean {
   if (key === 'parameters') {
     return isTable(this.options.getValue('parametersFormat'));
@@ -12,6 +17,9 @@ export function useTableFormat(
   }
   if (key === 'enums') {
     return isTable(this.options.getValue('enumMembersFormat'));
+  }
+  if (key === 'propertyMembers') {
+    return isTable(this.options.getValue('propertyMembersFormat'));
   }
   if (key === 'typeDeclarations') {
     return isTable(this.options.getValue('typeDeclarationFormat'));

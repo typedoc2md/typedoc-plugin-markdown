@@ -2,7 +2,7 @@ module.exports = {
   getSchema: async () => {
     /** @type {import('ts-json-schema-generator/dist/src/Config').Config} */
     const config = {
-      path: './src/options/option-types.ts',
+      path: './src/options/types.ts',
       tsconfig: './.scripts/schema/tsconfig.schema.json',
       type: 'PluginOptions',
       topRef: false,

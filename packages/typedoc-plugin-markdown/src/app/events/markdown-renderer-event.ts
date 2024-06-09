@@ -6,12 +6,13 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
 /**
  * An event emitted at the beginning and end of the rendering process.
  *
+ * @example
+ *
  * ```ts
  * app.renderer.on(MarkdownRendererEvent.BEGIN, (event) => {
  *   console.log(`Render Starting for ${event.project.name}!`);
  * });
  * ```
- *
  */
 export class MarkdownRendererEvent extends Event {
   /**

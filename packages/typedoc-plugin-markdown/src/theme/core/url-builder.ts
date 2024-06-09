@@ -400,6 +400,7 @@ export class UrlBuilder {
 
   getFlattenedUrl(reflection: DeclarationReflection) {
     const fullName = reflection.getFullName();
+
     const fullNameParts = fullName.replace(/\//g, '.').split('.');
     if (reflection.kind !== ReflectionKind.Module) {
       fullNameParts.splice(
@@ -410,7 +411,9 @@ export class UrlBuilder {
     }
     const url = `${fullNameParts.join('.')}${this.fileExtension}`
       .replace(/"/g, '')
+      .replace(/ /g, '-')
       .replace(/^\./g, '');
+
     reflection.url = url;
     return url;
   }

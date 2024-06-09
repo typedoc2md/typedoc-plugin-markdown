@@ -745,7 +745,7 @@ Comments for someFunction
 exports[`Objects And Params should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
-> \`const\` **objectWithSymbol**: \\{\`[sym]\`: \`'value'\`; \\} = \`...\`
+> \`const\` **objectWithSymbol**: \\{\`[sym]\`: \`'value'\`; \\}
 
 Comments variable with symbol
 
@@ -765,7 +765,7 @@ exports[`Objects And Params should compile object with symbol: (Output File Stra
 \`\`\`ts
 const objectWithSymbol: {
   [sym]: 'value';
- } = ...;
+};
 \`\`\`
 
 Comments variable with symbol
@@ -807,7 +807,7 @@ Comments for UnionType
 exports[`Objects And Params should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-> \`const\` **objectLiteralVariable**: \\{\`valueA\`: \`100\`;\`valueB\`: \`true\`;\`valueX\`: \`...\`;\`valueY\`: \`...\`; \\} = \`...\`
+> \`const\` **objectLiteralVariable**: \\{\`valueA\`: \`100\`;\`valueB\`: \`true\`;\`valueX\`: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\};\`valueZ\`: \`'foo'\`; \\};\`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`; \\}
 
 Comments for objectLiteralVariable
 
@@ -823,15 +823,15 @@ Comments for objectLiteralVariable
 
 ### valueX
 
-> **valueX**: \\{\`valueA\`: \`...\`;\`valueY\`: \`...\`;\`valueZ\`: \`'foo'\`; \\} = \`...\`
+> **valueX**: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\};\`valueZ\`: \`'foo'\`; \\}
 
 ### valueX.valueA
 
-> **valueA**: \`number\`[] = \`...\`
+> **valueA**: \`number\`[]
 
 ### valueX.valueY()
 
-> **valueY**: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \`...\`; \\} = \`...\`
+> **valueY**: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\}
 
 #### Parameters
 
@@ -839,7 +839,7 @@ Comments for objectLiteralVariable
 
 #### Returns
 
-\\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \`...\`; \\}
+\\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\}
 
 ##### a
 
@@ -851,7 +851,7 @@ Comments for objectLiteralVariable
 
 ##### c
 
-> **c**: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\} = \`...\`
+> **c**: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}
 
 ##### c.a
 
@@ -867,7 +867,7 @@ Comments for objectLiteralVariable
 
 ### valueY()
 
-> **valueY**: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` = \`...\`
+> **valueY**: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`
 
 #### Parameters
 
@@ -878,6 +878,10 @@ Comments for objectLiteralVariable
 #### Returns
 
 \`string\`
+
+## See
+
+xyz.com
 "
 `;
 
@@ -888,9 +892,20 @@ exports[`Objects And Params should compile variable assigned to an object litera
 const objectLiteralVariable: {
   valueA: 100;
   valueB: true;
-  valueX: ...;
-  valueY: ...;
- } = ...;
+  valueX: {
+     valueA: number[];
+     valueY: (z: string) => {
+        a: 'test';
+        b: z;
+        c: {
+           a: 1;
+           b: 2;
+          };
+       };
+     valueZ: 'foo';
+    };
+  valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
+};
 \`\`\`
 
 Comments for objectLiteralVariable
@@ -913,16 +928,23 @@ valueB: boolean = true;
 
 \`\`\`ts
 valueX: {
-  valueA: ...;
-  valueY: ...;
+  valueA: number[];
+  valueY: (z: string) => {
+     a: 'test';
+     b: z;
+     c: {
+        a: 1;
+        b: 2;
+       };
+    };
   valueZ: 'foo';
- } = ...;
+};
 \`\`\`
 
 ### valueX.valueA
 
 \`\`\`ts
-valueA: number[] = ...;
+valueA: number[];
 \`\`\`
 
 ### valueX.valueY()
@@ -931,8 +953,11 @@ valueA: number[] = ...;
 valueY: (z: string) => {
   a: 'test';
   b: z;
-  c: ...;
- } = ...;
+  c: {
+     a: 1;
+     b: 2;
+    };
+};
 \`\`\`
 
 #### Parameters
@@ -947,7 +972,10 @@ valueY: (z: string) => {
 {
   a: 'test';
   b: z;
-  c: ...;
+  c: {
+     a: 1;
+     b: 2;
+    };
 }
 \`\`\`
 
@@ -969,7 +997,7 @@ b: string = z;
 c: {
   a: 1;
   b: 2;
- } = ...;
+};
 \`\`\`
 
 ##### c.a
@@ -993,7 +1021,7 @@ valueZ: string = 'foo';
 ### valueY()
 
 \`\`\`ts
-valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string = ...;
+valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
 \`\`\`
 
 #### Parameters
@@ -1006,5 +1034,9 @@ valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string = ...;
 #### Returns
 
 \`string\`
+
+## See
+
+xyz.com
 "
 `;

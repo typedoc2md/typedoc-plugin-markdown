@@ -26,6 +26,7 @@ const config: Record<string, Fixture> = {
         propertiesFormat: 'table',
         typeDeclarationFormat: 'table',
         enumMembersFormat: 'table',
+        propertyMembersFormat: 'table',
         useCodeBlocks: true,
         expandParameters: true,
         navigationModel: {
@@ -138,7 +139,8 @@ const config: Record<string, Fixture> = {
       {
         enumMembersFormat: 'table',
         parametersFormat: 'table',
-        propertiesFormat: 'table',
+        propertiesFormat: 'list',
+        propertyMembersFormat: 'table',
         typeDeclarationFormat: 'table',
       },
       {
@@ -151,6 +153,8 @@ const config: Record<string, Fixture> = {
         parametersFormat: 'htmlTable',
         propertiesFormat: 'htmlTable',
         typeDeclarationFormat: 'htmlTable',
+        useCodeBlocks: false,
+        expandObjects: true,
         tableColumnSettings: {
           hideDefaults: true,
           hideInherited: true,
@@ -304,14 +308,10 @@ const config: Record<string, Fixture> = {
         path.join(__dirname, 'custom-plugins', 'stub-documents-theme.mjs'),
         path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
       ],
+      projectDocuments: ['./test/fixtures/PROJECT_DOC_1.md'],
       theme: 'stub-documents',
       readme: 'none',
       disableSources: true,
-      projectDocuments: [
-        './test/fixtures/PROJECT_DOC_1.md',
-        './test/fixtures/docs/project/PROJECT_DOC_2.md',
-        './test/fixtures/docs/project/PROJECT_DOC_3.md',
-      ],
     },
     options: [
       {},

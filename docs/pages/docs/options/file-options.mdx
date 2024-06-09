@@ -2,6 +2,8 @@ import { Callout, FileTree } from "nextra/components";
 
 # File Options
 
+Options that are used to configure how files are output.
+
 ## --outputFileStrategy
 
 <Callout emoji="💡">Determines how output files are generated.</Callout>
@@ -16,8 +18,34 @@ It is also possible to further refine what members are exported to individual fi
 
 The following keys are available:
 
-- **"members":** generates an individual file for each exported module member. This is the standard behavior of the HTML theme and the default setting of the plugin.
-- **"modules"**: generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
+**"members"**
+
+Generates an individual file for each exported module member. This is the standard behavior of the HTML theme and the default setting of the plugin.
+
+```
+  ├── README.md
+  ├── module-a/
+  │   ├── classes/
+  │   │   ├── ClassA.md
+  │   │   └── ClassB.md
+  │   └── functions/
+  │   │   ├── FunctionA.md
+  │   │   └── FunctionB.md
+  └── module-b/
+      └── classes/
+          ├── ClassA.md
+          └── ClassB.md
+```
+
+**"modules"**
+
+Generates a single file for every Module or Namespace where all members are hoisted to a single module file. This creates a flat navigation structure and reduces the amount of files generated.
+
+```
+  ├── README.md
+  ├── module-a.md
+  └── module-b.md
+```
 
 ```json filename="typedoc.json"
 {
@@ -36,7 +64,7 @@ The following keys are available:
 
 This option is useful when only specific types of members should be exported to a single file.
 
-Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
+Ignored when `--outputFileStrategy` is equal to `"modules"`
 
 ```json filename="typedoc.json"
 {
@@ -51,34 +79,6 @@ Ignored when [`outputFileStrategy`](#outputfilestrategy) is equal to `"modules"`
 > Accepts a boolean value. Defaults to `false`.
 
 By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
-
-This option will flatten the output files to a single directory as follows:
-
-**Default output:**
-
-<FileTree>
-  <FileTree.File name="README.md" />
-  <FileTree.Folder name="module-a" defaultOpen>
-    <FileTree.Folder name="classes" defaultOpen>
-      <FileTree.File name="ClassA.md" />
-      <FileTree.File name="ClassB.md" />
-    </FileTree.Folder>
-    <FileTree.Folder name="functions" defaultOpen>
-      <FileTree.File name="FunctionA.md" />
-      <FileTree.File name="FunctionB.md" />
-    </FileTree.Folder>
-  </FileTree.Folder>
-</FileTree>
-
-**Flattened output:**
-
-<FileTree>
-  <FileTree.File name="README.md" />
-  <FileTree.File name="module-a.Class.ClassA.md" />
-  <FileTree.File name="module-a.Class.ClassB.md" />
-  <FileTree.File name="module-a.Function.functionA.md" />
-  <FileTree.File name="module-a.Function.function.md" />
-</FileTree>
 
 ```json filename="typedoc.json"
 {
@@ -156,21 +156,6 @@ This option will remove reference to `@scope` in the path when generating files 
 
 The following will be the directory structure for packages named `@scope/package-1` and `@scope/package-2`:
 
-- **`false`**
-
-  <FileTree>
-    <FileTree.Folder name="@scope" defaultOpen>
-      <FileTree.Folder name="package-1" />
-      <FileTree.Folder name="package-2" />
-    </FileTree.Folder>
-  </FileTree>
-
-- **`true`**
-  <FileTree>
-    <FileTree.Folder name="package-1" />
-    <FileTree.Folder name="package-2" />
-  </FileTree>
-
 Ignored if `flattenOutputFiles` is set to `true`.
 
 ```json filename="typedoc.json"
@@ -190,10 +175,7 @@ Ignored if `flattenOutputFiles` is set to `true`.
 By default when a readme file is resolved, a separate readme page is created.
 This option appends the index page to the readme so only a single root page is generated.
 
-You can additionally configure the generated title with `"textContentMappings": { "title.indexPage" : "My API"}`.
-See [`--textContentMappings`](/docs/options/utility-options#--textcontentmappings).
-
-This option has no effect when [`readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
 
 ```json filename="typedoc.json"
 {

@@ -64,7 +64,7 @@ export function parametersList(
 
     if (parameter.defaultValue) {
       identifier.push(
-        '= ' + backTicks(this.helpers.getParameterDefaultValue(parameter)),
+        ' = ' + backTicks(this.helpers.getParameterDefaultValue(parameter)),
       );
     }
 

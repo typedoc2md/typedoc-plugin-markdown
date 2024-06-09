@@ -66,16 +66,16 @@ function writeRepositoryReadme(packages: any) {
     'Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).',
   );
 
-  readme.push('## Examples');
-
-  readme.push(
-    'Please see the [examples repository](https://github.com/typedoc2md/typedoc-plugin-markdown-examples).',
-  );
-
   readme.push('## Contributing');
 
   readme.push(
     'If you would like to contribute towards this project please read the [contributing guide](./CONTRIBUTING.md).',
+  );
+
+  readme.push('## Examples');
+
+  readme.push(
+    'Please see the [examples repository](https://github.com/typedoc2md/typedoc-plugin-markdown-examples).',
   );
 
   readme.push('## License');

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
 import * as path from 'path';
+import { OptionLink } from './components/option-link';
 import { PackageDescription } from './components/package-description';
 import { PackageVersion } from './components/package-version';
 
@@ -35,7 +36,7 @@ export default {
     content: (
       <>
         🎉{' '}
-        <Link href="/docs/changelog/4.1" className="hover:underline">
+        <Link href="/docs/changelog/v4.1" className="hover:underline">
           v4.1 released • Find out more!
         </Link>
       </>
@@ -45,6 +46,7 @@ export default {
   components: {
     PackageDescription,
     PackageVersion,
+    OptionLink,
   },
 
   head: () => {

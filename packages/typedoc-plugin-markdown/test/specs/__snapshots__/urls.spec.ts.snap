@@ -176,8 +176,6 @@ exports[`Urls should gets Urls for documents single module: outputFileStrategy: 
   "ModuleWithDocuments1/variables/variableWithDocuments.md",
   "README.md",
   "documents/Project-Document-1.md",
-  "documents/docs/project/PROJECT_DOC_2.md",
-  "documents/docs/project/PROJECT_DOC_3.md",
 ]
 `;
 
@@ -206,8 +204,6 @@ exports[`Urls should gets Urls for documents single module: outputFileStrategy: 
   "ModuleWithDocuments1/variables/variableWithDocuments.md",
   "README.md",
   "documents/Project-Document-1.md",
-  "documents/docs/project/PROJECT_DOC_2.md",
-  "documents/docs/project/PROJECT_DOC_3.md",
 ]
 `;
 
@@ -228,8 +224,6 @@ exports[`Urls should gets Urls for documents single module: outputFileStrategy: 
   "ModuleWithDocuments1/namespaces/NamespaceWithDocuments/documents/NAMESPACE_DOC.md",
   "README.md",
   "documents/Project-Document-1.md",
-  "documents/docs/project/PROJECT_DOC_2.md",
-  "documents/docs/project/PROJECT_DOC_3.md",
 ]
 `;
 
@@ -250,8 +244,6 @@ exports[`Urls should gets Urls for documents single module: outputFileStrategy: 
   "ModuleWithDocuments1/namespaces/NamespaceWithDocuments/documents/NAMESPACE_DOC.md",
   "README.md",
   "documents/Project-Document-1.md",
-  "documents/docs/project/PROJECT_DOC_2.md",
-  "documents/docs/project/PROJECT_DOC_3.md",
 ]
 `;
 
@@ -471,6 +463,8 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
   "has-categories/interfaces/CategoryAInterface2.md",
   "has-categories/interfaces/CategoryBInterface1.md",
   "has-categories/interfaces/CategoryBInterface2.md",
+  "has-categories/interfaces/CategoryCInterface1.md",
+  "has-categories/interfaces/CategoryCInterface2.md",
   "has-categories/interfaces/UnCategorizedInterace.md",
   "has-custom-groups/index.md",
   "has-custom-groups/variables/variabelA.md",
@@ -532,6 +526,8 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: me
   "has-categories/interfaces/CategoryAInterface2.md",
   "has-categories/interfaces/CategoryBInterface1.md",
   "has-categories/interfaces/CategoryBInterface2.md",
+  "has-categories/interfaces/CategoryCInterface1.md",
+  "has-categories/interfaces/CategoryCInterface2.md",
   "has-categories/interfaces/UnCategorizedInterace.md",
   "has-custom-groups/index.md",
   "has-namespaces/classes/ClassB.md",

@@ -4,7 +4,13 @@ export function htmlTable(
   leftAlignHeadings = false,
 ) {
   return `<table>
-<tr>${headers.map((header) => `<th${leftAlignHeadings ? ' align="left"' : ''}>${header}</th>`).join('')}</tr>${rows
+<tr>${headers
+    .map(
+      (header) => `
+<th${leftAlignHeadings ? ' align="left"' : ''}>${header}</th>`,
+    )
+    .join('')}
+</tr>${rows
     .map(
       (row) =>
         `

@@ -6,6 +6,9 @@
 
 import { ReflectionKind } from 'typedoc';
 
+/**
+ * Default values for `membersWithOwnFile` option.
+ */
 export const ALLOWED_OWN_FILE_MEMBERS = [
   ReflectionKind[ReflectionKind.Enum],
   ReflectionKind[ReflectionKind.Variable],
@@ -15,6 +18,9 @@ export const ALLOWED_OWN_FILE_MEMBERS = [
   ReflectionKind[ReflectionKind.TypeAlias],
 ];
 
+/**
+ * Default values for `textContentMappings` option.
+ */
 export const TEXT_CONTENT_MAPPINGS = {
   'header.title': '{projectName} {version}',
   'header.docs': 'Docs',

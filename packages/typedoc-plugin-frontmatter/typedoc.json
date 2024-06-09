@@ -1,4 +1,3 @@
 {
-  "extends": ["../../typedoc.base.json"],
-  "entryPoints": ["./src"]
+  "entryPoints": ["./src/app", "./src/options"]
 }

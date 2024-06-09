@@ -736,10 +736,6 @@ Description for prop someProp
 
 Description for event someEvent
 
-#### Deprecated
-
-Deprectaed comments
-
 #### Parameters
 
 • **eventParam**: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
@@ -749,6 +745,10 @@ Comments for param eventParam
 #### Returns
 
 \`void\`
+
+#### Deprecated
+
+Deprectaed comments
 
 #### Source
 

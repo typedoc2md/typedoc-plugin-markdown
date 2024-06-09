@@ -214,7 +214,7 @@ Comments for LiteralType
 
 ## Type declaration
 
-| Member | Type | Description |
+| Name | Type | Description |
 | :------ | :------ | :------ |
 | \`x\` | \`string\` | comment for x |
 | \`y\` | \`object\` | comment for y |
@@ -369,7 +369,7 @@ Comments for IntersectionType
 
 ## Type declaration
 
-| Member | Type |
+| Name | Type |
 | :------ | :------ |
 | \`bar\` | \`number\` |
 

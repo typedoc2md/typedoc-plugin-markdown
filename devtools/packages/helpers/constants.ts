@@ -11,13 +11,6 @@ export const DOCS_CONFIG: Record<string, DocsConfig> = {
     docsPath: '/docs',
     declarations: true,
     presets: false,
-    categories: {
-      file: 'Options that are used to configure how files are output.',
-      display:
-        'Options that are used to configure how the output is structured and displayed .',
-      utility:
-        'Options that are used for general configuration and utility purposes.',
-    },
   },
   ['typedoc-plugin-frontmatter']: {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,

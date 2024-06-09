@@ -12,7 +12,6 @@ import { Event, ProjectReflection, Reflection } from 'typedoc';
  *   });
  * });
  * ```
- *
  */
 export class MarkdownPageEvent<
   /** @ignore **/ Model = Reflection,

@@ -1,7 +1,7 @@
 import { backTicks, htmlTable, table } from 'libs/markdown';
 import { escapeChars } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 /**
  * @category Member Partials
@@ -9,6 +9,7 @@ import { DeclarationReflection } from 'typedoc';
 export function typeDeclarationTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
+  options: { kind?: ReflectionKind },
 ): string {
   const tableColumnsOptions = this.options.getValue('tableColumnSettings');
   const leftAlignHeadings = tableColumnsOptions.leftAlignHeaders;
@@ -23,20 +24,21 @@ export function typeDeclarationTable(
     includeSignatures: true,
   });
 
-  const hasDefaultValues = declarations.some((declaration) =>
-    Boolean(declaration.defaultValue),
+  const hasDefaultValues = declarations.some(
+    (declaration) =>
+      Boolean(declaration.defaultValue) && declaration.defaultValue !== '...',
   );
 
   const hasComments = declarations.some((declaration) =>
     Boolean(declaration.comment),
   );
 
-  headers.push(this.i18n.theme_member());
+  headers.push(this.i18n.theme_name());
 
   headers.push(this.i18n.theme_type());
 
   if (hasDefaultValues) {
-    headers.push(this.i18n.theme_value());
+    headers.push(this.i18n.theme_default_value());
   }
 
   if (hasComments) {
@@ -58,7 +60,11 @@ export function typeDeclarationTable(
 
     if (hasDefaultValues) {
       row.push(
-        escapeChars(!declaration.defaultValue ? '-' : declaration.defaultValue),
+        escapeChars(
+          !declaration.defaultValue || declaration.defaultValue === '...'
+            ? '-'
+            : declaration.defaultValue,
+        ),
       );
     }
 
@@ -79,7 +85,28 @@ export function typeDeclarationTable(
     rows.push(row);
   });
 
-  return this.options.getValue('typeDeclarationFormat') == 'table'
-    ? table(headers, rows, leftAlignHeadings)
-    : htmlTable(headers, rows, leftAlignHeadings);
+  const shouldDisplayHtmlTable = () => {
+    if (
+      options?.kind &&
+      [ReflectionKind.Variable, ReflectionKind.TypeAlias].includes(
+        options?.kind,
+      ) &&
+      this.options.getValue('typeDeclarationFormat') == 'htmlTable'
+    ) {
+      return true;
+    }
+
+    if (
+      options?.kind === ReflectionKind.Property &&
+      this.options.getValue('propertyMembersFormat') == 'htmlTable'
+    ) {
+      return true;
+    }
+
+    return false;
+  };
+
+  return shouldDisplayHtmlTable()
+    ? htmlTable(headers, rows, leftAlignHeadings)
+    : table(headers, rows, leftAlignHeadings);
 }

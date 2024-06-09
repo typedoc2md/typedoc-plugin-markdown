@@ -1,5 +1,5 @@
+import { initialize } from 'app';
 import { Application } from 'typedoc';
-import { initialize } from './app';
 
 /**
  * Plugin load

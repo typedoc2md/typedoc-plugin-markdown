@@ -60,6 +60,7 @@ export function declaration(
       md.push(
         this.partials.comment(model.comment, {
           headingLevel: opts.headingLevel,
+          showTags: false,
         }),
       );
     }
@@ -77,10 +78,9 @@ export function declaration(
           );
 
           md.push(
-            this.partials.typeDeclaration(
-              intersectionType.declaration.children,
-              { headingLevel: opts.headingLevel },
-            ),
+            this.partials.typeDeclaration(intersectionType.declaration, {
+              headingLevel: opts.headingLevel,
+            }),
           );
         }
       }
@@ -93,7 +93,7 @@ export function declaration(
         md.push(heading(opts.headingLevel, this.i18n.theme_type_declaration()));
         md.push(
           this.partials.typeDeclaration(
-            model.type.typeArguments[0].declaration?.children,
+            model.type.typeArguments[0].declaration,
             { headingLevel: opts.headingLevel },
           ),
         );
@@ -152,7 +152,7 @@ export function declaration(
             md.push(heading(opts.headingLevel, category.title));
             md.push(
               this.partials.typeDeclaration(
-                category.children as DeclarationReflection[],
+                category as unknown as DeclarationReflection,
                 {
                   headingLevel: useHeading
                     ? opts.headingLevel + 1
@@ -163,7 +163,7 @@ export function declaration(
           });
         } else {
           md.push(
-            this.partials.typeDeclaration(typeDeclaration.children, {
+            this.partials.typeDeclaration(typeDeclaration, {
               headingLevel: useHeading
                 ? opts.headingLevel
                 : opts.headingLevel - 1,
@@ -172,6 +172,15 @@ export function declaration(
         }
       }
     }
+  }
+
+  if (model.comment) {
+    md.push(
+      this.partials.comment(model.comment, {
+        headingLevel: options.headingLevel,
+        showSummary: false,
+      }),
+    );
   }
 
   md.push(

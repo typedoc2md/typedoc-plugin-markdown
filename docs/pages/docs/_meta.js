@@ -2,7 +2,7 @@ export default {
   index: 'Introduction',
   '-- Getting Started': {
     type: 'separator',
-    title: 'Getting Started',
+    title: 'Guides',
   },
   'quick-start': '',
   options: '',
@@ -11,8 +11,6 @@ export default {
     title: 'Guides',
   },
   'typedoc-usage': '',
-  internationalization: '',
-  'customizing-output': '',
   '-- Support': {
     type: 'separator',
     title: 'Support',

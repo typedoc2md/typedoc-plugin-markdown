@@ -51,9 +51,12 @@ export function declarationTitle(
   }
 
   const nameParts = model.name.split('.');
-  const declarationName = model.escapedName?.includes('.')
-    ? model.name
-    : nameParts[nameParts.length - 1];
+
+  const declarationName =
+    Boolean(model.escapedName) && nameParts.length > 1
+      ? nameParts[nameParts.length - 1]
+      : model.name;
+
   name.push(
     /[\\`]/.test(declarationName)
       ? escapeChars(declarationName)
@@ -78,7 +81,11 @@ export function declarationTitle(
     md.push(this.partials.someType(declarationType));
   }
 
-  if (model.defaultValue && model.defaultValue !== model.name) {
+  if (
+    model.defaultValue &&
+    model.defaultValue !== '...' &&
+    model.defaultValue !== model.name
+  ) {
     md.push(` = \`${model.defaultValue}\``);
   }
 

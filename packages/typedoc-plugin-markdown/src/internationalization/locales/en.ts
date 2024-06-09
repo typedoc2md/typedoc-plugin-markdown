@@ -1,9 +1,8 @@
 import { TranslatableStrings } from 'internationalization/types';
-
+/**
+ * Translations for 'en' locale.
+ */
 export const translatable: TranslatableStrings = {
-  /**
-   * String for default value
-   */
   theme_default_value: 'Default value',
   theme_default_type: 'Default type',
   theme_description: 'Description',
@@ -19,4 +18,5 @@ export const translatable: TranslatableStrings = {
   theme_value: 'Value',
   theme_version: 'Version',
 };
+
 export default translatable;

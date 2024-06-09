@@ -36,7 +36,7 @@ import { ManuallyValidatedOption } from 'typedoc'`);
 
   if (manuallyValidatedOptions.length) {
     manuallyValidatedOptions.forEach((option: any) => {
-      out.push(`import { ${option} } from '../options/option-types';`);
+      out.push(`import { ${option} } from './options/types';`);
     });
   }
 
@@ -90,14 +90,16 @@ async function writeOptionsTypes(
 
   const optionsOutput: string[] = [];
   optionsOutput.push(`
-  /**
-   * Describes the options declared by the plugin.
-   *
+  /*
    * @privateRemarks
    *
    * THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY
    *
    * @module
+   */
+
+  /**
+   * Describes the options declared by the plugin.
    */
   export interface PluginOptions {
     ${(Object.entries(sortedOptionsConfig) as any)

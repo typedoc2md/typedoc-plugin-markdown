@@ -102,7 +102,7 @@ Comments for function
 
 Return comments
 
-| Member | Type |
+| Name | Type |
 | :------ | :------ |
 | \`prop\` | \`string\` |
 
@@ -234,7 +234,7 @@ Comments for function
 
 Return comments
 
-| Member | Type | Value |
+| Name | Type | Default value |
 | :------ | :------ | :------ |
 | \`x\` | \`number\` | 1 |
 | \`y\` | \`number\` | 2 |
@@ -354,27 +354,27 @@ This is a function with a parameter that has a default value.
 
 ## Parameters
 
-• **valueA**: \`string\`= \`'defaultValue'\`
+• **valueA**: \`string\` = \`'defaultValue'\`
 
 A parameter with a default string value.
 
-• **valueB**: \`number\`= \`100\`
+• **valueB**: \`number\` = \`100\`
 
 A parameter with a default numeric value.
 
-• **valueC**: \`number\`= \`Number.NaN\`
+• **valueC**: \`number\` = \`Number.NaN\`
 
 A parameter with a default NaN value.
 
-• **valueD**: \`boolean\`= \`true\`
+• **valueD**: \`boolean\` = \`true\`
 
 A parameter with a default boolean value.
 
-• **valueE**: \`boolean\`= \`true\`
+• **valueE**: \`boolean\` = \`true\`
 
 A parameter with a default null value.
 
-• **valueF**: \`string\`= \`'<foo>'\`
+• **valueF**: \`string\` = \`'<foo>'\`
 
 ## Returns
 
@@ -532,13 +532,13 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 ## Parameters
 
-• **\\_\\_namedParameters**= \`{}\`
+• **\\_\\_namedParameters** = \`{}\`
 
 various options
 
-• **\\_\\_namedParameters.bar?**: \`number\`= \`43\`
+• **\\_\\_namedParameters.bar?**: \`number\` = \`43\`
 
-• **\\_\\_namedParameters.foo?**: \`number\`= \`42\`
+• **\\_\\_namedParameters.foo?**: \`number\` = \`42\`
 
 • **anotherParam**: \`string\`
 
@@ -673,7 +673,7 @@ This is a function with a parameters.
 
 ## Parameters
 
-• **firstParamWithDefault**: \`boolean\`= \`true\`
+• **firstParamWithDefault**: \`boolean\` = \`true\`
 
 • **requiredParam**: \`string\`
 
@@ -683,7 +683,7 @@ A normal parameter.
 
 An optional parameter.
 
-• **paramWithDefault?**: \`number\`= \`0\`
+• **paramWithDefault?**: \`number\` = \`0\`
 
 ## Returns
 
@@ -704,7 +704,7 @@ This is a function with a parameters.
 
 ## Parameters
 
-• **firstParamWithDefault**: \`boolean\`= \`true\`
+• **firstParamWithDefault**: \`boolean\` = \`true\`
 
 • **requiredParam**: \`string\`
 
@@ -714,7 +714,7 @@ A normal parameter.
 
 An optional parameter.
 
-• **paramWithDefault?**: \`number\`= \`0\`
+• **paramWithDefault?**: \`number\` = \`0\`
 
 ## Returns
 

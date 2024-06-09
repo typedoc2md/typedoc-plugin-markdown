@@ -23,6 +23,8 @@ export const typeOperatorVariable: unique symbol = Symbol.for('__type__');
 
 /**
  * Comments for objectLiteralVariable
+ *
+ * @see xyz.com
  */
 export const objectLiteralVariable = {
   valueY: function (unionParam: 'a' | 'b', _undercoreParam_: string) {

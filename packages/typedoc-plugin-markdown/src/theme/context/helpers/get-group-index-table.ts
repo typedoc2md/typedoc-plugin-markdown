@@ -16,10 +16,13 @@ export function getGroupIndexTable(
     'tableColumnSettings',
   ).leftAlignHeaders;
 
-  const headers = [
-    kind ? ReflectionKind.singularString(kind) : this.i18n.theme_member(),
-  ];
+  const childKindStrings = children.map((child) =>
+    ReflectionKind.singularString(child.kind),
+  );
+
+  const headers = [[...new Set(childKindStrings)].join(', ')];
   headers.push(this.i18n.theme_description());
+
   const rows: string[][] = [];
   children.forEach((child) => {
     const row: string[] = [];

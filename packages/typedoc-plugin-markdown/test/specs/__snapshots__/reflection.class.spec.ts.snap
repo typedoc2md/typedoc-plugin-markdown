@@ -371,11 +371,11 @@ Comments for ClassWithComplexProps
 
 ### objecLiteralProp
 
-> **objecLiteralProp**: \`object\` = \`...\`
+> **objecLiteralProp**: \`object\`
 
 #### someFunction()
 
-> **someFunction**: (\`a\`) => \`string\` = \`...\`
+> **someFunction**: (\`a\`) => \`string\`
 
 Comments for someFunction
 

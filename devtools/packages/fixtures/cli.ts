@@ -129,6 +129,8 @@ export function writeHtml(key: string, entryPoints: string[]) {
         path.join(fixturesRoot, 'docs/project/PROJECT_DOC_2.md'),
         '-projectDocuments',
         path.join(fixturesRoot, 'docs/project/PROJECT_DOC_3.md'),
+        //'-plugin',
+        //path.join(__dirname, '../../typedoc-plugins/typedoc-default-values.js'),
       ],
       ...toEntryPoints(entryPoints),
     ],
@@ -171,7 +173,12 @@ function objectToOptions(obj: any) {
       }
       return [...prev, ...[`-${curr[0]}`, curr[1]]];
     },
-    ['-plugin', 'typedoc-plugin-markdown'],
+    [
+      '-plugin',
+      'typedoc-plugin-markdown',
+      //'-plugin',
+      //path.join(__dirname, '../../typedoc-plugins/typedoc-default-values.js'),
+    ],
   );
 }
 

@@ -17,7 +17,6 @@
   "name": "API",
   "readme": "none",
   "sort": ["required-first", "source-order"],
-  "includeVersion": false,
   "categoryOrder": [
     "Application",
     "Theme",

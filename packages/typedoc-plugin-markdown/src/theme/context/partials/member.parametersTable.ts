@@ -81,7 +81,7 @@ export function parametersTable(
       const displayType =
         parameter.type instanceof ReflectionType
           ? this.partials.reflectionType(parameter.type, {
-              foreCollpase: true,
+              forceCollapse: true,
             })
           : this.partials.someType(parameter.type);
       row.push(removeLineBreaks(displayType));

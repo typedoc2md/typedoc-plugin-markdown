@@ -1685,16 +1685,6 @@ exports[`Navigation should gets Navigation Json for documents single module: (Ou
         "title": "Project Document 1",
         "kind": 8388608,
         "path": "documents/Project-Document-1.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_2",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_2.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_3",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_3.md"
       }
     ]
   },
@@ -1870,16 +1860,6 @@ exports[`Navigation should gets Navigation Json for documents single module: (Ou
         "title": "Project Document 1",
         "kind": 8388608,
         "path": "documents/Project-Document-1.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_2",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_2.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_3",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_3.md"
       }
     ]
   },
@@ -2055,16 +2035,6 @@ exports[`Navigation should gets Navigation Json for documents single module: (Ou
         "title": "Project Document 1",
         "kind": 8388608,
         "path": "documents/Project-Document-1.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_2",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_2.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_3",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_3.md"
       }
     ]
   },
@@ -2109,16 +2079,6 @@ exports[`Navigation should gets Navigation Json for documents single module: (Ou
         "title": "Project Document 1",
         "kind": 8388608,
         "path": "documents/Project-Document-1.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_2",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_2.md"
-      },
-      {
-        "title": "docs/project/PROJECT_DOC_3",
-        "kind": 8388608,
-        "path": "documents/docs/project/PROJECT_DOC_3.md"
       }
     ]
   },
@@ -3345,6 +3305,16 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "path": "has-categories/interfaces/CategoryBInterface2.md"
       },
       {
+        "title": "CategoryCInterface1",
+        "kind": 256,
+        "path": "has-categories/interfaces/CategoryCInterface1.md"
+      },
+      {
+        "title": "CategoryCInterface2",
+        "kind": 256,
+        "path": "has-categories/interfaces/CategoryCInterface2.md"
+      },
+      {
         "title": "UnCategorizedInterace",
         "kind": 256,
         "path": "has-categories/interfaces/UnCategorizedInterace.md"
@@ -3668,12 +3638,27 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         ]
       },
       {
+        "title": "Category C",
+        "children": [
+          {
+            "title": "CategoryCInterface1",
+            "kind": 256,
+            "url": "has-categories/interfaces/CategoryCInterface1.md"
+          }
+        ]
+      },
+      {
         "title": "Other",
         "children": [
           {
             "title": "UnCategorizedEnum",
             "kind": 8,
             "url": "has-categories/enumerations/UnCategorizedEnum.md"
+          },
+          {
+            "title": "CategoryCInterface2",
+            "kind": 256,
+            "url": "has-categories/interfaces/CategoryCInterface2.md"
           },
           {
             "title": "UnCategorizedInterace",

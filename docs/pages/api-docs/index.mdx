@@ -1,0 +1,31 @@
+# API
+
+The public API of typedoc-plugin-markdown exposes some classes and types that can be used to customize the output of the plugin.
+If you are interested more generally in the TypeDoc API please visit [https://typedoc.org](https://typedoc.org/api/).
+
+## Documents
+
+| Document | Description |
+| :------ | :------ |
+| [Local Plugins](/api-docs/Document.Local-Plugins.mdx) | How to write local plugins to consume APIs. |
+| [Customizing Output](/api-docs/Document.Customizing-Output.mdx) | How to extend and customize output. |
+| [Navigation](/api-docs/Document.Navigation.mdx) | How to create a custom navigation structure. |
+
+## Classes
+
+| Class | Description |
+| :------ | :------ |
+| [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent.mdx) | An event emitted by before and after the markup of a page is rendered. |
+| [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent.mdx) | An event emitted at the beginning and end of the rendering process. |
+| [MarkdownThemeContext](/api-docs/Class.MarkdownThemeContext.mdx) | The theme context class that is provided as context on the rendering of every page. It is heavily influenced by the equivalent [DefaultThemeRenderContext](https://typedoc.org/api/classes/DefaultThemeRenderContext.html) from the default theme. |
+| [MarkdownTheme](/api-docs/Class.MarkdownTheme.mdx) | The main theme class for the plugin. The class controls how TypeDoc models are mapped to files and templates and extends TypeDoc's base Theme class. |
+
+## Interfaces
+
+| Interface | Description |
+| :------ | :------ |
+| [MarkdownRendererHooks](/api-docs/Interface.MarkdownRendererHooks.mdx) | Describes the hooks available to inject output in the markdown theme. |
+| [PluginOptions](/api-docs/Interface.PluginOptions.mdx) | Describes the options declared by the plugin. |
+| [PackageMetaData](/api-docs/Interface.PackageMetaData.mdx) | The model used to define the package metadata when in packages mode. |
+| [UrlMapping](/api-docs/Interface.UrlMapping.mdx) | The model used to define the URL mapping structure. |
+| [NavigationItem](/api-docs/Interface.NavigationItem.mdx) | The model used to define the navigation structure. |

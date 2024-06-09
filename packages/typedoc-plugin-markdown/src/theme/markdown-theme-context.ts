@@ -12,22 +12,10 @@ import { Internationalization, Options, Reflection } from 'typedoc';
 
 /**
  * The theme context class that is provided as context on the rendering of every page.
- *
- * @remarks
- *
  * It is heavily influenced by the equivalent [DefaultThemeRenderContext](https://typedoc.org/api/classes/DefaultThemeRenderContext.html) from the default theme.
  *
  * This class can be used to customize the theme output by extending the class and overriding the templates, partials and helpers.
  *
- * @example
- *
- * ```ts
- * class MyMarkdownTheme extends MarkdownTheme {
- *   getRenderContext(page) {
- *     return new MyMarkdownThemeContext(this, page, this.application.options);
- *   }
- * }
- * ```
  *
  * @groupDescription Properties
  *
@@ -44,7 +32,6 @@ import { Internationalization, Options, Reflection } from 'typedoc';
  * @privateRemarks
  *
  * In order to create cleaner code, internally individual templates located in the `resources/templates` directory are bound to the this.
- *
  */
 export class MarkdownThemeContext {
   internationalization: Internationalization.Internationalization;
@@ -78,23 +65,43 @@ export class MarkdownThemeContext {
    * This is required for generating package specific documentation.
    */
   private packagesMetaData: Record<string, PackageMetaData>;
-
   /**
-   * @see {@link theme.context.templates templates }
+   *  Then `templates` namespace holds the main templates for the theme and are mapped to single pages and configured in the MarkdownTheme.
+   *
+   * All templates return a string that is passed back to the renderer. Internally templates call partials and helpers.
    *
    * @group Resources
    */
   templates = resourceTemplates(this);
 
-  /**
-   * @see {@link theme.context.partials partials }
+  /** The `partials` namespace holds the partials for the theme and are used by templates to map speficic models to page output.
+   *
+   * Please note that partials::
+   *
+   * - Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
+   * - Can call other partials and helpers.
+   * - Must return a string.
+   *
+   * Partials are categorised by their use:
+   *
+   * - Page Partials: Partials that render core page elements such as header and breadcrumbs.
+   * - Container Partials: Partials that are used to render reflection groups and categories.
+   * - Member Partials: Partials that render specific parts of reflections.
+   * - Comment Partials: Partials that render comments.
+   * - Type Partials: Partials that render specific TypeDoc model types.
    *
    * @group Resources
-   */
+   **/
   partials = resourcePartials(this);
 
   /**
-   * @see {@link theme.context.helpers helpers }
+   * The `helpers` namespace holds the helpers for the theme and are smaller utility functions that return snippets or text or other data transformations.
+   *
+   * Please note that partials:
+   *
+   * - Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
+   * - Can reference other helpers but should not reference partials.
+   * - Can return strings or other models.
    *
    * @group Resources
    */

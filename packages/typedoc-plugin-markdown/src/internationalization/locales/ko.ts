@@ -1,5 +1,8 @@
 import { TranslatableStrings } from 'internationalization/types';
 
+/**
+ * Translations for 'ko' locale.
+ */
 export const translatable: Partial<TranslatableStrings> = {
   theme_default_value: '기본 값',
   theme_default_type: '기본 유형',

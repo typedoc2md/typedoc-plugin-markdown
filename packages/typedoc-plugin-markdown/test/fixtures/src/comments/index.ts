@@ -210,6 +210,10 @@ export interface InterfacePropertiesTable extends BaseInterfaceProperties {
    * ```
    */
   prop3?: string;
+  prop4: {
+    a: string;
+    b: string;
+  };
 }
 
 export type TypeDeclarationTable = {
@@ -223,7 +227,6 @@ export type TypeDeclarationTable = {
    * to generate the binary output for input validation.
    */
   declaration2: boolean;
-  declaration3: 'declaration3';
   declaration4: 100;
 };
 

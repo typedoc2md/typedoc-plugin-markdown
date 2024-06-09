@@ -17,9 +17,17 @@ export function project(
 ) {
   const md: string[] = [];
 
-  const textContentMappings = this.options.getValue('textContentMappings');
+  const isPackages =
+    this.page.project.url === this.page.url &&
+    this.options.getValue('entryPointStrategy') ===
+      EntryPointStrategy.Packages &&
+    this.options.getValue('entryPoints')?.length;
 
-  md.push(this.hook('index.page.begin').join('\n'));
+  if (isPackages) {
+    md.push(this.hook('packages.page.begin').join('\n'));
+  } else {
+    md.push(this.hook('index.page.begin').join('\n'));
+  }
 
   if (!this.options.getValue('hidePageHeader')) {
     md.push(this.partials.header());
@@ -40,49 +48,31 @@ export function project(
     md.push(heading(1, this.partials.pageTitle()));
   }
 
-  md.push(this.hook('content.begin').join('\n'));
+  if (isPackages) {
+    md.push(this.hook('packages.content.begin').join('\n'));
+  } else {
+    md.push(this.hook('index.content.begin').join('\n'));
+  }
 
   if (page.model.comment) {
     md.push(this.partials.comment(page.model.comment, { headingLevel: 2 }));
   }
 
   if (page.model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-    if (includeReadme) {
-      md.push(
-        heading(
-          2,
-          this.helpers.getProjectName(
-            textContentMappings['title.indexPage'],
-            page,
-          ),
-        ),
-      );
-    }
     if (page.model.documents?.length) {
       const group: ReflectionGroup = {
         children: page.model.documents,
       } as ReflectionGroup;
-      md.push(
-        heading(
-          includeReadme ? 3 : 2,
-          ReflectionKind.pluralString(ReflectionKind.Document),
-        ),
-      );
+      md.push(heading(2, ReflectionKind.pluralString(ReflectionKind.Document)));
       md.push(this.helpers.getGroupIndex(group));
     }
 
     md.push(
       this.partials.reflectionIndex(page.model, {
-        headingLevel: includeReadme ? 3 : 2,
+        headingLevel: 2,
       }),
     );
   }
-
-  const isPackages =
-    this.page.project.url === this.page.url &&
-    this.options.getValue('entryPointStrategy') ===
-      EntryPointStrategy.Packages &&
-    this.options.getValue('entryPoints')?.length;
 
   if (isPackages) {
     md.push(this.partials.packagesIndex(page.model));

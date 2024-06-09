@@ -3,7 +3,7 @@
 exports[`Variable Reflection should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
-> \`const\` **objectWithSymbol**: \`object\` = \`...\`
+> \`const\` **objectWithSymbol**: \`object\`
 
 Comments variable with symbol
 
@@ -25,14 +25,14 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 "# Variable: objectWithSymbol
 
 \`\`\`ts
-const objectWithSymbol: object = ...;
+const objectWithSymbol: object;
 \`\`\`
 
 Comments variable with symbol
 
 ## Type declaration
 
-| Member | Type | Value | Description |
+| Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`[sym]\` | \`string\` | 'value' | Comments for symbol |
 
@@ -45,7 +45,7 @@ Comments variable with symbol
 exports[`Variable Reflection should compile type operator variable: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: typeOperatorVariable
 
-> \`const\` **typeOperatorVariable**: unique \`symbol\` = \`...\`
+> \`const\` **typeOperatorVariable**: unique \`symbol\`
 
 Comments for typeOperatorVariable
 
@@ -59,7 +59,7 @@ exports[`Variable Reflection should compile type operator variable: (Output File
 "# Variable: typeOperatorVariable
 
 \`\`\`ts
-const typeOperatorVariable: unique symbol = ...;
+const typeOperatorVariable: unique symbol;
 \`\`\`
 
 Comments for typeOperatorVariable
@@ -101,7 +101,7 @@ A simple string variable
 exports[`Variable Reflection should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-> \`const\` **objectLiteralVariable**: \`object\` = \`...\`
+> \`const\` **objectLiteralVariable**: \`object\`
 
 Comments for objectLiteralVariable
 
@@ -117,15 +117,15 @@ Comments for objectLiteralVariable
 
 ### valueX
 
-> **valueX**: \`object\` = \`...\`
+> **valueX**: \`object\`
 
 ### valueX.valueA
 
-> **valueA**: \`number\`[] = \`...\`
+> **valueA**: \`number\`[]
 
 ### valueX.valueY()
 
-> **valueY**: (\`z\`) => \`object\` = \`...\`
+> **valueY**: (\`z\`) => \`object\`
 
 #### Parameters
 
@@ -145,7 +145,7 @@ Comments for objectLiteralVariable
 
 ##### c
 
-> **c**: \`object\` = \`...\`
+> **c**: \`object\`
 
 ##### c.a
 
@@ -161,7 +161,7 @@ Comments for objectLiteralVariable
 
 ### valueY()
 
-> **valueY**: (\`unionParam\`, \`_undercoreParam_\`) => \`string\` = \`...\`
+> **valueY**: (\`unionParam\`, \`_undercoreParam_\`) => \`string\`
 
 #### Parameters
 
@@ -173,6 +173,10 @@ Comments for objectLiteralVariable
 
 \`string\`
 
+## See
+
+xyz.com
+
 ## Source
 
 [variables.ts:1](http://source-url)
@@ -183,22 +187,26 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 "# Variable: objectLiteralVariable
 
 \`\`\`ts
-const objectLiteralVariable: object = ...;
+const objectLiteralVariable: object;
 \`\`\`
 
 Comments for objectLiteralVariable
 
 ## Type declaration
 
-| Member | Type | Value |
+| Name | Type | Default value |
 | :------ | :------ | :------ |
 | \`valueA\` | \`number\` | 100 |
 | \`valueB\` | \`boolean\` | true |
-| \`valueX\` | \`object\` | ... |
-| \`valueX.valueA\` | \`number\`[] | ... |
-| \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | ... |
+| \`valueX\` | \`object\` | - |
+| \`valueX.valueA\` | \`number\`[] | - |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - |
 | \`valueX.valueZ\` | \`string\` | 'foo' |
-| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | ... |
+| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - |
+
+## See
+
+xyz.com
 
 ## Source
 

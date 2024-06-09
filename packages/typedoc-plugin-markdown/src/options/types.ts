@@ -1,11 +1,13 @@
-/**
- * Describes the options declared by the plugin.
- *
+/*
  * @privateRemarks
  *
  * THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY
  *
  * @module
+ */
+
+/**
+ * Describes the options declared by the plugin.
  */
 export interface PluginOptions {
   /**
@@ -24,7 +26,7 @@ export interface PluginOptions {
   entryModule: string;
 
   /**
-   * Specify the render style of enumeration members.
+   * Sets the format of enumeration members.
    */
   enumMembersFormat: 'list' | 'table' | 'htmlTable';
 
@@ -79,7 +81,7 @@ export interface PluginOptions {
   hidePageTitle: boolean;
 
   /**
-   * Specify the render format for index items.
+   * Sets the format of index items.
    */
   indexFormat: 'list' | 'table';
 
@@ -115,7 +117,7 @@ export interface PluginOptions {
   outputFileStrategy: 'members' | 'modules';
 
   /**
-   * Specify the render style of parameter and type parameter groups.
+   * Sets the format of parameter and type parameter groups.
    */
   parametersFormat: 'list' | 'table' | 'htmlTable';
 
@@ -125,9 +127,14 @@ export interface PluginOptions {
   preserveAnchorCasing: boolean;
 
   /**
-   * Specify the render style of property groups for interfaces and classes.
+   * Sets the format of property groups for interfaces and classes.
    */
   propertiesFormat: 'list' | 'table' | 'htmlTable';
+
+  /**
+   * Sets the format of style for property members for interfaces and classes.
+   */
+  propertyMembersFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Specify the base path for all urls.
@@ -140,7 +147,7 @@ export interface PluginOptions {
   sanitizeComments: boolean;
 
   /**
-   * Control header alignment and column visibility in tables.
+   * Control how table columns are configured and displayed.
    */
   tableColumnSettings: {
     hideDefaults: boolean;
@@ -165,7 +172,7 @@ export interface PluginOptions {
   };
 
   /**
-   * Specify the render style for type declaration members.
+   * Sets the format of style for type declaration members.
    */
   typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
 

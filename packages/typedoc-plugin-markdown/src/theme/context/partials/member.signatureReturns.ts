@@ -41,10 +41,9 @@ export function signatureReturns(
       model.type.typeArguments[0].declaration.children
     ) {
       md.push(
-        this.partials.typeDeclaration(
-          model.type.typeArguments[0].declaration.children,
-          { headingLevel: options.headingLevel },
-        ),
+        this.partials.typeDeclaration(model.type.typeArguments[0].declaration, {
+          headingLevel: options.headingLevel,
+        }),
       );
     }
   }
@@ -62,7 +61,7 @@ export function signatureReturns(
 
   if (typeDeclaration?.children) {
     md.push(
-      this.partials.typeDeclaration(typeDeclaration.children, {
+      this.partials.typeDeclaration(typeDeclaration, {
         headingLevel: options.headingLevel,
       }),
     );

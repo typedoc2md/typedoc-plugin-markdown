@@ -19,6 +19,7 @@ export function header(this: MarkdownThemeContext): string {
     const isPackages =
       this.options.getValue('entryPointStrategy') ===
       EntryPointStrategy.Packages;
+
     if (isPackages) {
       const packageItem = findPackage(this.page.model as ProjectReflection);
       if (packageItem) {

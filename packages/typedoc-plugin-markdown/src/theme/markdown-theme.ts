@@ -16,9 +16,6 @@ import {
 
 /**
  * The main theme class for the plugin.
- *
- * @remarks
- *
  * The class controls how TypeDoc models are mapped to files and templates and extends TypeDoc's base Theme class.
  *
  * You would typically only be interested in overriding the the theme's render context instance.
@@ -36,7 +33,6 @@ import {
  *  ...
  * }
  * ```
- *
  */
 export class MarkdownTheme extends Theme {
   /**
@@ -51,7 +47,7 @@ export class MarkdownTheme extends Theme {
     try {
       return formatMarkdown(template(page));
     } catch (e) {
-      this.application.logger.error(`Error rendering page ${page.url}.`);
+      this.application.logger.error(`Error rendering page ${page.url}. ${e}`);
       throw new Error(e);
     }
   }

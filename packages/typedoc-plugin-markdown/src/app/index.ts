@@ -1,5 +1,7 @@
 /**
- * Contains all the events and overrides of the typedoc Application.
+ * The Application class is the main entry point for a TypeDoc application.
+ *
+ * It provides the mechanism to listen to hooks, events and define new themes.
  *
  * @module
  */

@@ -38,6 +38,7 @@ export function enumMembersTable(
 
   model.forEach((property: DeclarationReflection) => {
     const propertyType = this.helpers.getDeclarationType(property);
+
     const row: string[] = [];
     const nameColumn: string[] = [];
 

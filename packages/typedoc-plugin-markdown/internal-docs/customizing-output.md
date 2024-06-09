@@ -1,0 +1,131 @@
+---
+title: Customizing Output
+description: How to extend and customize output.
+---
+
+# Customizing Output
+
+It is possible to customize the output of the generated markdown files by creating local plugins.
+
+All these concepts follow an adapted version of [TypeDoc's core customization implementation](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md).
+
+## Hooks
+
+Hooks allows strings to be injected into the output in specific locations and are the most basic form form of customization.
+
+```ts filename="custom-theme.ts"
+// Add a hook to insert markdown at the top of the page.
+export function load(app: MarkdownApplication) {
+  app.renderer.markdownHooks.on('page.end', () => `**Generated using \`page.end\` hook**`);
+}
+```
+
+### See
+
+- [MarkdownRendererHooks](https://typedoc-plugin-markdown.org/api-docs/Interface.MarkdownRendererHooks).
+
+## Events
+
+Events are more powerful than hooks and allow for more complex customizations and provide a context that can be used to modify the output.
+
+```ts filename="custom-plugin.ts"
+export function load(app: MarkdownApplication) {
+  app.renderer.on(MarkdownPageEvent.END, (page: MarkdownPageEvent) => {
+    page.contents = page.contents.replace('foo', 'bar');
+  });
+}
+```
+
+### See
+
+- [MarkdownRendererEvent](https://typedoc-plugin-markdown.org/api-docs/Class.MarkdownRendererEvent).
+- [MarkdownPageEvent](https://typedoc-plugin-markdown.org/api-docs/Class.MarkdownPageEvent).
+
+## Async Jobs
+
+Async jobs are used to perform asynchronous tasks before or after rendering with a provided context.
+
+```ts filename="custom-plugin.ts"
+export function load(app: MarkdownApplication) {
+  app.renderer.preRenderAsyncJobs.push(async (renderer) => {
+    await doSomethingAsync(renderer);
+  });
+
+  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
+    await doSomethingAsync(renderer);
+  });
+}
+```
+
+## Custom Theme
+
+If there are some specific customization not achievable with hooks or events then a more advanced customization can be achieved by providing a new theme class which returns a different context class.
+
+This implementation follows an adapted version of [TypeDoc's custom theming implementation](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md).
+
+In theory all available templates, partials and helpers can be overriden with custom implementations.
+
+This code defines a new theme called “customTheme”:
+
+```ts filename="custom-plugin.ts"
+export function load(app: MarkdownApplication) {
+  app.renderer.defineTheme('customTheme', MyMarkdownTheme);
+}
+
+class MyMarkdownTheme extends MarkdownTheme {}
+```
+
+The theme can then be consumed by the `theme` option:
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-mardown", "./local-plugins/my-custom-plugin.js"],
+  "theme": "customTheme"
+}
+```
+
+The themes can be extended to provide custom partials, helpers and templates by proving a custom render context class.
+
+```ts filename="custom-theme.ts"
+class MyMarkdownTheme extends MarkdownTheme {
+  getRenderContext(page) {
+    return new MyMarkdownThemeContext(this, page, this.application.options);
+  }
+}
+
+class MyMarkdownThemeContext extends MarkdownThemeContext {
+  // customise templates
+  templates = {
+    ...this.templates,
+    reflection: (model) => {
+      return `New template for ${model.name}!`;
+    },
+  };
+
+  // customise partials
+  partials = {
+    ...this.partials,
+    header: (model) => {
+      return `
+# Welcome to custom header for ${this.page.project.name} project and ${model.name} model!
+Use my new helper - ${this.helpers.newHelper()}
+   `;
+    },
+  };
+
+  // customise helpers
+  helpers = {
+    ...this.helpers,
+    newHelper: () => {
+      return 'New helper!';
+    },
+  };
+}
+```
+
+Please see the [Custom Theme API](/api-docs#custom-theme) for more information.
+
+### See
+
+- [MarkdownTheme](https://typedoc-plugin-markdown.org/api-docs/Class.MarkdownTheme).
+- [MarkdownThemeContext](https://typedoc-plugin-markdown.org/api-docs/Class.MarkdownThemeContext).

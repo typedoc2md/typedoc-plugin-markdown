@@ -14,8 +14,6 @@ exports[`Customization should insert content from hooks and apply custom theme i
 
 # typedoc-stubs
 
-> \`content.begin\` hook
-
 Module commments
 
 <Tag type="warning">**Experimental** \`my-package\` is under active development.</Tag>

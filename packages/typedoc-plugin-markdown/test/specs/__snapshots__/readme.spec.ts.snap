@@ -17,9 +17,7 @@ Some text.
 
 Module commments
 
-## typedoc-stubs v0.0
-
-### Functions
+## Functions
 
 - [someFunction](functions/someFunction.md)
 "

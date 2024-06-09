@@ -7,13 +7,13 @@ import { ReflectionType, SomeType } from 'typedoc';
 export function typeArguments(
   this: MarkdownThemeContext,
   model: SomeType[],
-  options?: { foreCollpase?: boolean },
+  options?: { forceCollapse?: boolean },
 ): string {
   return `\\<${model
     .map((typeArgument) =>
       typeArgument instanceof ReflectionType
         ? this.partials.reflectionType(typeArgument, {
-            foreCollpase: options?.foreCollpase,
+            forceCollapse: options?.forceCollapse,
           })
         : this.partials.someType(typeArgument),
     )

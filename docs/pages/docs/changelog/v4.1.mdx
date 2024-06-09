@@ -1,0 +1,43 @@
+import { Callout } from 'nextra/components';
+
+# v4.1 (June 2024)
+
+<Callout type="info">
+v4.1 introduces [TypeDoc v0.26]() feature support and API compatibility updates.
+
+</Callout>
+
+## Features
+
+This release contains required internal api fixes and theme updates to support TypeDoc 0.26 in addition to some new table options.
+
+- Theme support for TypeDoc's 0.26 localization model.
+- Theme support for TypeDoc's 0.26 documents implementation.
+- Exposed a new key `"htmlTable"` to formatting options enabling block elements to render as intended inside table cells.
+  Affects all existing formatting options. Fixes
+  [(#618)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618).
+- Added new option <OptionLink type="display" name="propertyMembersFormat" /> to control formatting of object literal property members for classes and interfaces.
+- Supports the ability to control what table columns are rendered with the <OptionLink type="display" name="tableColumnSettings" /> option.
+
+## Non-Breaking Changes
+
+The release contains some minor non-breaking changes from 4.0.
+
+- All line breaks are now stripped from the existing markdown tables with the `"table"` key.
+  If you would like to preserve markdown block elements in tabular format please update to use the `"htmlTable"` key.
+- The plugin now does not define header alignment by default. This typically results in table headers visually appearing center aligned.
+  If you would prefer left align headers please configure using the <OptionLink type="display" name="tableColumnSettings" /> option.
+- The <OptionLink type="utility" name="textContentMappings" /> option is now only used for configuring static text labels and placeholders where alternative content might be preferred.
+  All other general content labels are now controlled by the TypeDoc localization model.
+- The option <OptionLink type="display" name="typeDeclarationFormat" /> is now only responsible for variable and type aliases formats.
+  Please update to use <OptionLink type="display" name="propertyMembersFormat" /> for object literal property members on classes and interfaces.
+
+## Feedback
+
+Feedback on the this release is welcome and encouraged. If you'd like to report a bug, raise a feature request or have any questions, please [open an issue](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/new/choose).
+
+---
+
+Browse the [GitHub
+changelog](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/CHANGELOG.md)
+for the full list of changes.
