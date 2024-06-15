@@ -11,9 +11,9 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
-    "postbuild": "copyfiles --up 1 ./src/**/*.cjs ./dist/",
+    "postbuild": "copyfiles --up 1 ./src/**/*.cjs ./src/**/*.mjs ./dist/",
     "pretest": "ts-node ./test/__scripts__/prepare.ts",
-    "test": "jest",
+    "test": "node ./lint.mdx.mjs && jest",
     "test:update": "npm run build && npm run test -- -u"
   },
   "repository": {

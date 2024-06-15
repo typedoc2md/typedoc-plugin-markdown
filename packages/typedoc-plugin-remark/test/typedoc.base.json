@@ -8,7 +8,7 @@
     "./frontmatter-plugin.cjs"
   ],
   "readme": "none",
-  "parametersFormat": "table",
+  "parametersFormat": "htmlTable",
   "disableSources": true,
   "cleanOutputDir": true,
   "hidePageHeader": true,

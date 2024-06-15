@@ -24,9 +24,34 @@ exports[`Remark should parse globals page 1`] = `
 
 #### Parameters
 
-| Parameter | Type     |
-| --------- | -------- |
-| \`param\`   | \`string\` |
+<table>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+
+\`param\`
+
+</td>
+<td>
+
+\`string\`
+
+</td>
+<td>
+
+Default text content for \`@category\` tag.
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+</td>
+</tr>
+</table>
 
 #### Returns
 
@@ -51,9 +76,34 @@ exports[`Remark should parse globals page without toc 1`] = `
 
 #### Parameters
 
-| Parameter | Type     |
-| --------- | -------- |
-| \`param\`   | \`string\` |
+<table>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+
+\`param\`
+
+</td>
+<td>
+
+\`string\`
+
+</td>
+<td>
+
+Default text content for \`@category\` tag.
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+</td>
+</tr>
+</table>
 
 #### Returns
 
@@ -80,9 +130,18 @@ title: 'test'
 
 ## Type Parameters
 
-| Type Parameter |
-| -------------- |
-| \`T\`            |
+<table>
+<tr>
+<th>Type Parameter</th>
+</tr>
+<tr>
+<td>
+
+\`T\`
+
+</td>
+</tr>
+</table>
 
 ## Constructors
 
@@ -202,10 +261,18 @@ javascript
 + list item 1
 
 #### Type Parameters
+<table>
+<tr>
+<th>Type Parameter</th>
+</tr>
+<tr>
+<td>
 
-| Type Parameter |
-| -------------- |
-| \`T\`            |
+\`T\`
+
+</td>
+</tr>
+</table>
 
 #### Constructors
 
@@ -228,10 +295,18 @@ javascript
 ### SomeInterface\\<T>
 
 #### Type Parameters
+<table>
+<tr>
+<th>Type Parameter</th>
+</tr>
+<tr>
+<td>
 
-| Type Parameter |
-| -------------- |
-| \`T\`            |
+\`T\`
+
+</td>
+</tr>
+</table>
 
 #### Properties
 
@@ -260,10 +335,24 @@ javascript
 > **some\\_function**(\`param\`): \`void\`
 
 #### Parameters
+<table>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+<tr>
+<td>
 
-| Parameter | Type                  |
-| --------- | --------------------- |
-| \`param\`   | \`string\` \\| \`boolean\` |
+\`param\`
+
+</td>
+<td>
+
+\`string\` | \`boolean\`
+
+</td>
+</tr>
+</table>
 
 #### Returns
 

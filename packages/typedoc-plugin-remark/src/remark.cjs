@@ -1,6 +1,6 @@
 /**
  * Parses contents with Remark
- * - The remark eco-system is esm only, therefore we have to import its modules syncronously.
+ * - The remark eco-system is esm only, therefore we have to import its modules synchronously.
  * - In addition we don't want Typescript to transpile this file.
  */
 module.exports = {
@@ -17,6 +17,7 @@ module.exports = {
       ['remark-frontmatter', ['yaml']],
       'remark-gfm',
       'remark-mdx',
+      './normalize-tables.mjs',
       ...userPlugins,
     ];
     const promises = plugins.map(async (plugin) => {
@@ -37,6 +38,7 @@ module.exports = {
     pluginRefs.forEach((pluginRef) => {
       processor.use(pluginRef.pluginFn, pluginRef.options);
     });
+
     await processor.process(file);
 
     writeSync(file);
