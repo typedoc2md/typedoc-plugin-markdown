@@ -60,7 +60,7 @@ export function declaration(
       md.push(
         this.partials.comment(model.comment, {
           headingLevel: opts.headingLevel,
-          showTags: false,
+          showTags: true,
         }),
       );
     }
@@ -172,15 +172,6 @@ export function declaration(
         }
       }
     }
-  }
-
-  if (model.comment) {
-    md.push(
-      this.partials.comment(model.comment, {
-        headingLevel: options.headingLevel,
-        showSummary: false,
-      }),
-    );
   }
 
   md.push(

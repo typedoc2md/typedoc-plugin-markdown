@@ -811,6 +811,10 @@ exports[`Objects And Params should compile variable assigned to an object litera
 
 Comments for objectLiteralVariable
 
+## See
+
+xyz.com
+
 ## Type declaration
 
 ### valueA
@@ -878,10 +882,6 @@ Comments for objectLiteralVariable
 #### Returns
 
 \`string\`
-
-## See
-
-xyz.com
 "
 `;
 
@@ -909,6 +909,10 @@ const objectLiteralVariable: {
 \`\`\`
 
 Comments for objectLiteralVariable
+
+## See
+
+xyz.com
 
 ## Type declaration
 
@@ -1034,9 +1038,5 @@ valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
 #### Returns
 
 \`string\`
-
-## See
-
-xyz.com
 "
 `;

@@ -105,6 +105,10 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 
 Comments for objectLiteralVariable
 
+## See
+
+xyz.com
+
 ## Type declaration
 
 ### valueA
@@ -173,10 +177,6 @@ Comments for objectLiteralVariable
 
 \`string\`
 
-## See
-
-xyz.com
-
 ## Source
 
 [variables.ts:1](http://source-url)
@@ -192,6 +192,10 @@ const objectLiteralVariable: object;
 
 Comments for objectLiteralVariable
 
+## See
+
+xyz.com
+
 ## Type declaration
 
 | Name | Type | Default value |
@@ -203,10 +207,6 @@ Comments for objectLiteralVariable
 | \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - |
 | \`valueX.valueZ\` | \`string\` | 'foo' |
 | \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - |
-
-## See
-
-xyz.com
 
 ## Source
 
