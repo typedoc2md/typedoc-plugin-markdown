@@ -4,10 +4,6 @@
 
 The allowed values of the `--outputFileStrategy` option.
 
-## Contents
-
-* [Enumeration Members](#enumeration-members)
-
 ## Enumeration Members
 
 | Enumeration Member | Value       |

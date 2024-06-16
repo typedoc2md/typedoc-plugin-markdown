@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function typeDeclarationList(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],

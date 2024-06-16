@@ -2,11 +2,6 @@ import { horizontalRule } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection } from 'typedoc';
 
-/**
- * Renders a collection of members.
- *
- * @category Container Partials
- */
 export function members(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],

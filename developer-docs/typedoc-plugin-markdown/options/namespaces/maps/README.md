@@ -4,11 +4,6 @@
 
 Maps a given value to the option type.
 
-## Contents
-
-* [Index](#index)
-  * [Enumerations](#enumerations)
-
 ## Index
 
 ### Enumerations

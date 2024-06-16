@@ -2,9 +2,6 @@ import { backTicks } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ParameterReflection, SomeType } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function signatureParameters(
   this: MarkdownThemeContext,
   model: ParameterReflection[],

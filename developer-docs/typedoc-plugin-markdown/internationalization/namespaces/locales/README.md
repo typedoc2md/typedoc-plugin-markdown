@@ -6,19 +6,16 @@ List of plugin specific translations per locale.
 
 ## Contents
 
-* [Variables](#variables)
-  * [en](#en)
-  * [ko](#ko)
+* [en](#en)
+* [ko](#ko)
 
-## Variables
-
-### en
+## en
 
 > `const` **en**: [`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)
 
 Translations for 'en' locale.
 
-#### Default Value
+### Default Value
 
 ```ts
 {
@@ -39,19 +36,19 @@ Translations for 'en' locale.
 }
 ```
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts:5](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L5)
+[packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts:5](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L5)
 
 ***
 
-### ko
+## ko
 
 > `const` **ko**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)>
 
 Translations for 'ko' locale.
 
-#### Default Value
+### Default Value
 
 ```ts
 {
@@ -72,6 +69,6 @@ Translations for 'ko' locale.
 }
 ```
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L6)
+[packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L6)

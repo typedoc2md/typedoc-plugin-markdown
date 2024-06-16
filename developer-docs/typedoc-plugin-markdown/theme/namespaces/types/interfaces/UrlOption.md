@@ -2,16 +2,6 @@
 
 # Interface: UrlOption
 
-## Contents
-
-* [Properties](#properties)
-  * [parentUrl?](#parenturl)
-  * [directory?](#directory)
-  * [forceDirectory?](#forcedirectory)
-  * [outputFileStrategy?](#outputfilestrategy)
-  * [entryModule?](#entrymodule)
-  * [entryFileName?](#entryfilename)
-
 ## Properties
 
 ### parentUrl?
@@ -20,7 +10,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:44](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L44)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:44](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L44)
 
 ***
 
@@ -30,7 +20,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:45](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L45)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:45](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L45)
 
 ***
 
@@ -40,7 +30,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L46)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L46)
 
 ***
 
@@ -50,7 +40,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L47)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L47)
 
 ***
 
@@ -60,7 +50,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L48)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L48)
 
 ***
 
@@ -70,4 +60,4 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:49](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L49)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:49](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L49)

@@ -7,9 +7,6 @@ import {
   ProjectReflection,
 } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function documents(
   this: MarkdownThemeContext,
   model: ProjectReflection | DeclarationReflection | ContainerReflection,

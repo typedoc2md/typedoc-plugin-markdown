@@ -2,9 +2,6 @@ import { backTicks } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { SignatureReflection, SomeType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function functionType(
   this: MarkdownThemeContext,
   model: SignatureReflection[],

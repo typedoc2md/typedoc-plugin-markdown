@@ -4,8 +4,6 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 /**
  * Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
- *
- * @category Member Partials
  */
 export function memberWithGroups(
   this: MarkdownThemeContext,

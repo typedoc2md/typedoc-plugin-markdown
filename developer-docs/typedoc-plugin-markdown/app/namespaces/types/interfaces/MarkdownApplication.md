@@ -74,30 +74,20 @@ This interface is essentially an extended typing of TypeDoc's [`Application`](ht
     * [Inherited from](#inherited-from-25)
   * [on()](#on)
     * [on(eventMap, context)](#oneventmap-context)
-      * [Inherited from](#inherited-from-26)
     * [on(eventMap, callback, context, priority)](#oneventmap-callback-context-priority)
-      * [Inherited from](#inherited-from-27)
     * [on(name, callback, context, priority)](#onname-callback-context-priority)
-      * [Inherited from](#inherited-from-28)
   * [once()](#once)
     * [once(eventMap, context)](#onceeventmap-context)
-      * [Inherited from](#inherited-from-29)
     * [once(name, callback, context, priority)](#oncename-callback-context-priority)
-      * [Inherited from](#inherited-from-30)
   * [off()](#off)
     * [off(undefined)](#offundefined)
-      * [Inherited from](#inherited-from-31)
     * [off(eventMap, context)](#offeventmap-context)
-      * [Inherited from](#inherited-from-32)
     * [off(name, callback, context)](#offname-callback-context)
-      * [Inherited from](#inherited-from-33)
   * [listenTo()](#listento)
     * [Inherited from](#inherited-from-34)
   * [listenToOnce()](#listentoonce)
     * [listenToOnce(obj, eventMap)](#listentoonceobj-eventmap)
-      * [Inherited from](#inherited-from-35)
     * [listenToOnce(obj, name, callback, priority)](#listentoonceobj-name-callback-priority)
-      * [Inherited from](#inherited-from-36)
   * [stopListening()](#stoplistening)
     * [Inherited from](#inherited-from-37)
   * [trigger()](#trigger)
@@ -131,7 +121,7 @@ The converter used to create the declaration reflections.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:30
+node\_modules/typedoc/dist/lib/application.d.ts:35
 
 ***
 
@@ -147,7 +137,7 @@ The serializer used to generate JSON output.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:38
+node\_modules/typedoc/dist/lib/application.d.ts:43
 
 ***
 
@@ -163,7 +153,7 @@ The deserializer used to restore previously serialized JSON output.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:42
+node\_modules/typedoc/dist/lib/application.d.ts:47
 
 ***
 
@@ -179,7 +169,7 @@ The logger that should be used to output messages.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:46
+node\_modules/typedoc/dist/lib/application.d.ts:51
 
 ***
 
@@ -196,7 +186,7 @@ the `lang` option.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:51
+node\_modules/typedoc/dist/lib/application.d.ts:56
 
 ***
 
@@ -212,7 +202,7 @@ Proxy based shortcuts for internationalization keys.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:55
+node\_modules/typedoc/dist/lib/application.d.ts:60
 
 ***
 
@@ -226,7 +216,7 @@ node\_modules/typedoc/dist/lib/application.d.ts:55
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:56
+node\_modules/typedoc/dist/lib/application.d.ts:61
 
 ***
 
@@ -240,7 +230,7 @@ node\_modules/typedoc/dist/lib/application.d.ts:56
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:57
+node\_modules/typedoc/dist/lib/application.d.ts:62
 
 ***
 
@@ -272,7 +262,7 @@ Re-types the `renderer` instance to [`MarkdownRenderer`](MarkdownRenderer.md).
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-application.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-application.ts#L22)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-application.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-application.ts#L22)
 
 ## Accessors
 
@@ -356,7 +346,7 @@ Return the path to the TypeScript compiler.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:111
+node\_modules/typedoc/dist/lib/application.d.ts:116
 
 ***
 
@@ -374,7 +364,7 @@ node\_modules/typedoc/dist/lib/application.d.ts:111
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:112
+node\_modules/typedoc/dist/lib/application.d.ts:117
 
 ***
 
@@ -395,7 +385,7 @@ May return undefined if entry points fail to be expanded.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:117
+node\_modules/typedoc/dist/lib/application.d.ts:122
 
 ***
 
@@ -417,7 +407,7 @@ An instance of ProjectReflection on success, undefined otherwise.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:123
+node\_modules/typedoc/dist/lib/application.d.ts:128
 
 ***
 
@@ -441,7 +431,7 @@ node\_modules/typedoc/dist/lib/application.d.ts:123
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:124
+node\_modules/typedoc/dist/lib/application.d.ts:129
 
 ***
 
@@ -465,7 +455,7 @@ node\_modules/typedoc/dist/lib/application.d.ts:124
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:125
+node\_modules/typedoc/dist/lib/application.d.ts:130
 
 ***
 
@@ -492,7 +482,7 @@ Render HTML for the given project
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:129
+node\_modules/typedoc/dist/lib/application.d.ts:134
 
 ***
 
@@ -521,7 +511,7 @@ Whether the JSON file could be written successfully.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:136
+node\_modules/typedoc/dist/lib/application.d.ts:141
 
 ***
 
@@ -541,7 +531,7 @@ Print the version number.
 
 #### Defined in
 
-node\_modules/typedoc/dist/lib/application.d.ts:140
+node\_modules/typedoc/dist/lib/application.d.ts:145
 
 ***
 

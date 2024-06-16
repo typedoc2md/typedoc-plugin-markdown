@@ -4,14 +4,7 @@
 
 Translations methods.
 
-## Contents
-
-* [Functions](#functions)
-  * [getTranslatable()](#gettranslatable)
-
-## Functions
-
-### getTranslatable()
+## getTranslatable()
 
 > **getTranslatable**(`app`): `any`
 
@@ -19,16 +12,16 @@ Returns subset of translatable strings for the plugin.
 
 These will then be merged with the main set of TypeDoc string.
 
-#### Parameters
+### Parameters
 
 | Parameter | Type                                                              |
 | --------- | ----------------------------------------------------------------- |
 | `app`     | [`Application`](https://typedoc.org/api/classes/Application.html) |
 
-#### Returns
+### Returns
 
 `any`
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/internationalization/translatable.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L14)
+[packages/typedoc-plugin-markdown/src/internationalization/translatable.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L14)

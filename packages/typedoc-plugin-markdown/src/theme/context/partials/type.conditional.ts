@@ -2,9 +2,6 @@ import { italic } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ConditionalType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function conditionalType(
   this: MarkdownThemeContext,
   model: ConditionalType,

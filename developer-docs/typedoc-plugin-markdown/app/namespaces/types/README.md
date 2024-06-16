@@ -4,11 +4,6 @@
 
 Types used for the app.
 
-## Contents
-
-* [Index](#index)
-  * [Interfaces](#interfaces)
-
 ## Index
 
 ### Interfaces

@@ -2,11 +2,6 @@ import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
 
-/**
- * Renders an inheritance section.
- *
- * @category Member Partials
- */
 export function inheritance(
   this: MarkdownThemeContext,
   model: DeclarationReflection | SignatureReflection,

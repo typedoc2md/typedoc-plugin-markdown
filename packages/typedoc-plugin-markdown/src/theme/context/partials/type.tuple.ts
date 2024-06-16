@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { TupleType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function tupleType(
   this: MarkdownThemeContext,
   model: TupleType,

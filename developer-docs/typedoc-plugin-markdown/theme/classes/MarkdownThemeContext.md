@@ -29,12 +29,68 @@ This class can be used to customize the theme output by extending the class and 
     * [readme()](#readme)
     * [reflection()](#reflection)
   * [partials](#partials)
-    * [Comment Partials](#comment-partials)
-    * [Container Partials](#container-partials)
-    * [Member Partials](#member-partials)
-    * [Page Partials](#page-partials)
-    * [Type Partials](#type-partials)
+    * [comment()](#comment)
+    * [commentParts()](#commentparts)
+    * [body()](#body)
+    * [categories()](#categories)
+    * [groups()](#groups)
+    * [members()](#members)
+    * [accessor()](#accessor)
+    * [constructor()](#constructor)
+    * [memberContainer()](#membercontainer)
+    * [declaration()](#declaration)
+    * [declarationTitle()](#declarationtitle)
+    * [documents()](#documents)
+    * [enumMembersTable()](#enummemberstable)
+    * [hierarchy()](#hierarchy)
+    * [indexSignature()](#indexsignature)
+    * [inheritance()](#inheritance)
+    * [memberTitle()](#membertitle)
+    * [memberWithGroups()](#memberwithgroups)
+    * [parametersList()](#parameterslist)
+    * [parametersTable()](#parameterstable)
+    * [propertiesTable()](#propertiestable)
+    * [referenceMember()](#referencemember)
+    * [reflectionIndex()](#reflectionindex)
+    * [signature()](#signature)
+    * [signatureParameters()](#signatureparameters)
+    * [signatureReturns()](#signaturereturns)
+    * [signatureTitle()](#signaturetitle)
+    * [signatures()](#signatures)
+    * [sources()](#sources)
+    * [member()](#member)
+    * [typeAndParent()](#typeandparent)
+    * [typeArguments()](#typearguments)
+    * [typeDeclaration()](#typedeclaration)
+    * [typeDeclarationList()](#typedeclarationlist)
+    * [typeDeclarationTable()](#typedeclarationtable)
+    * [typeParametersList()](#typeparameterslist)
+    * [typeParametersTable()](#typeparameterstable)
+    * [breadcrumbs()](#breadcrumbs)
+    * [footer()](#footer)
+    * [header()](#header)
+    * [packagesIndex()](#packagesindex)
+    * [pageTitle()](#pagetitle)
+    * [arrayType()](#arraytype)
+    * [conditionalType()](#conditionaltype)
+    * [indexAccessType()](#indexaccesstype)
+    * [inferredType()](#inferredtype)
+    * [intersectionType()](#intersectiontype)
+    * [intrinsicType()](#intrinsictype)
+    * [literalType()](#literaltype)
+    * [namedTupleType()](#namedtupletype)
+    * [queryType()](#querytype)
+    * [referenceType()](#referencetype)
+    * [declarationType()](#declarationtype)
+    * [functionType()](#functiontype)
+    * [reflectionType()](#reflectiontype)
+    * [someType()](#sometype)
+    * [tupleType()](#tupletype)
+    * [typeOperatorType()](#typeoperatortype)
+    * [unionType()](#uniontype)
+    * [unknownType()](#unknowntype)
   * [helpers](#helpers)
+    * [getCommentFlags()](#getcommentflags)
     * [getCommentParts()](#getcommentparts)
     * [getDeclarationType()](#getdeclarationtype)
     * [getDescriptionForReflection()](#getdescriptionforreflection)
@@ -73,7 +129,7 @@ This class can be used to customize the theme output by extending the class and 
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L43)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L43)
 
 ## Properties
 
@@ -85,7 +141,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:37](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L37)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:37](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L37)
 
 ***
 
@@ -95,7 +151,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:38](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L38)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:38](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L38)
 
 ***
 
@@ -107,7 +163,7 @@ The theme instance.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L47)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L47)
 
 ***
 
@@ -119,7 +175,7 @@ The current page event.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L51)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L51)
 
 ***
 
@@ -131,7 +187,7 @@ The options provided to the application.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:55](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L55)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:55](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L55)
 
 ***
 
@@ -145,7 +201,7 @@ This is required for generating package specific documentation.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:67](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L67)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:67](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L67)
 
 ## Methods
 
@@ -169,7 +225,7 @@ Returns the package meta data for a given package name when entrypointStrategy i
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:115](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L115)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:115](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L115)
 
 ***
 
@@ -194,7 +250,7 @@ If public path is set, it will be used as the base URL.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:127](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L127)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:127](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L127)
 
 ***
 
@@ -218,7 +274,7 @@ Hook into the TypeDoc rendering system.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:157](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L157)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:157](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L157)
 
 ## Resources
 
@@ -298,7 +354,7 @@ Template that maps to individual reflection models.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:75](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L75)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:75](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L75)
 
 ***
 
@@ -322,94 +378,896 @@ Partials are categorised by their use:
 * Comment Partials: Partials that render comments.
 * Type Partials: Partials that render specific TypeDoc model types.
 
-#### Comment Partials
+#### comment()
 
-| Name           | Type                             |
-| -------------- | -------------------------------- |
-| `comment`      | (`model`, `options`) => `string` |
-| `commentParts` | (`model`) => `string`            |
+> **comment**: (`model`, `options`) => `string`
 
-#### Container Partials
+##### Parameters
 
-| Name         | Type                             | Description                                    |
-| ------------ | -------------------------------- | ---------------------------------------------- |
-| `body`       | (`model`, `options`) => `string` | -                                              |
-| `categories` | (`model`, `options`) => `string` | Renders a collection of reflection categories. |
-| `groups`     | (`model`, `options`) => `string` | Renders a collection of reflection groups.     |
-| `members`    | (`model`, `options`) => `string` | Renders a collection of members.               |
+| Parameter                | Type                                                           |
+| ------------------------ | -------------------------------------------------------------- |
+| `model`                  | [`Comment`](https://typedoc.org/api/types/Models.Comment.html) |
+| `options`                | `object`                                                       |
+| `options.headingLevel`?  | `number`                                                       |
+| `options.showSummary`?   | `boolean`                                                      |
+| `options.showTags`?      | `boolean`                                                      |
+| `options.isTableColumn`? | `boolean`                                                      |
 
-#### Member Partials
+##### Returns
 
-| Name                   | Type                              | Description                                                                                                                                            |
-| ---------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `accessor`             | (`model`, `options`) => `string`  | Renders an accessor member.                                                                                                                            |
-| `constructor`          | (`model`, `options`) => `string`  | Renders an constructor member.                                                                                                                         |
-| `memberContainer`      | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `declaration`          | (`model`, `options`) => `string`  | Renders a standard declaration member.                                                                                                                 |
-| `declarationTitle`     | (`model`) => `string`             | Comments for declaration                                                                                                                               |
-| `documents`            | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `enumMembersTable`     | (`model`) => `string`             | Renders enum members as a table.                                                                                                                       |
-| `hierarchy`            | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `indexSignature`       | (`model`) => `string`             | Renders an index signature block                                                                                                                       |
-| `inheritance`          | (`model`, `options`) => `string`  | Renders an inheritance section.                                                                                                                        |
-| `memberTitle`          | (`model`) => `string`             | Renders the main member title.                                                                                                                         |
-| `memberWithGroups`     | (`model`, `options`) => `string`  | Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.                                                |
-| `parametersList`       | (`model`) => `string`             | -                                                                                                                                                      |
-| `parametersTable`      | (`model`) => `string`             | -                                                                                                                                                      |
-| `propertiesTable`      | (`model`, `options`?) => `string` | Renders a collection of properties in a table. There is no association list partial for properties as these are handled as a standard list of members. |
-| `referenceMember`      | (`model`) => `string`             | Renders an reference member.                                                                                                                           |
-| `reflectionIndex`      | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `signature`            | (`model`, `options`) => `string`  | Renders a signature member.                                                                                                                            |
-| `signatureParameters`  | (`model`) => `string`             | -                                                                                                                                                      |
-| `signatureReturns`     | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `signatureTitle`       | (`model`, `options`?) => `string` | -                                                                                                                                                      |
-| `signatures`           | (`model`, `options`) => `string`  | Renders a signature collection.                                                                                                                        |
-| `sources`              | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `member`               | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `typeAndParent`        | (`model`) => `string`             | -                                                                                                                                                      |
-| `typeArguments`        | (`model`, `options`?) => `string` | -                                                                                                                                                      |
-| `typeDeclaration`      | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `typeDeclarationList`  | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `typeDeclarationTable` | (`model`, `options`) => `string`  | -                                                                                                                                                      |
-| `typeParametersList`   | (`model`) => `string`             | -                                                                                                                                                      |
-| `typeParametersTable`  | (`model`) => `string`             | -                                                                                                                                                      |
+`string`
 
-#### Page Partials
+#### commentParts()
 
-| Name            | Type                  |
-| --------------- | --------------------- |
-| `breadcrumbs`   | () => `string`        |
-| `footer`        | () => `string`        |
-| `header`        | () => `string`        |
-| `packagesIndex` | (`model`) => `string` |
-| `pageTitle`     | () => `string`        |
+> **commentParts**: (`model`) => `string`
 
-#### Type Partials
+##### Parameters
 
-| Name               | Type                              | Description                                                      |
-| ------------------ | --------------------------------- | ---------------------------------------------------------------- |
-| `arrayType`        | (`model`) => `string`             | -                                                                |
-| `conditionalType`  | (`model`) => `string`             | -                                                                |
-| `indexAccessType`  | (`model`) => `string`             | -                                                                |
-| `inferredType`     | (`model`) => `string`             | -                                                                |
-| `intersectionType` | (`model`) => `string`             | -                                                                |
-| `intrinsicType`    | (`model`) => `string`             | -                                                                |
-| `literalType`      | (`model`) => `string`             | -                                                                |
-| `namedTupleType`   | (`model`) => `string`             | -                                                                |
-| `queryType`        | (`model`) => `string`             | -                                                                |
-| `referenceType`    | (`model`) => `string`             | -                                                                |
-| `declarationType`  | (`model`) => `string`             | -                                                                |
-| `functionType`     | (`model`, `options`?) => `string` | -                                                                |
-| `reflectionType`   | (`model`, `options`?) => `string` | -                                                                |
-| `someType`         | (`model`?) => `string`            | Takes a generic Type and returns the appropriate partial for it. |
-| `tupleType`        | (`model`) => `string`             | -                                                                |
-| `typeOperatorType` | (`model`) => `string`             | -                                                                |
-| `unionType`        | (`model`) => `string`             | -                                                                |
-| `unknownType`      | (`model`) => `string`             | -                                                                |
+| Parameter | Type                                                                                    |
+| --------- | --------------------------------------------------------------------------------------- |
+| `model`   | [`CommentDisplayPart`](https://typedoc.org/api/types/Models.CommentDisplayPart.html)\[] |
+
+##### Returns
+
+`string`
+
+#### body()
+
+> **body**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                     |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| `model`                | [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
+| `options`              | `object`                                                                                 |
+| `options.headingLevel` | `number`                                                                                 |
+
+##### Returns
+
+`string`
+
+#### categories()
+
+> **categories**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                    |
+| ---------------------- | --------------------------------------------------------------------------------------- |
+| `model`                | [`ReflectionCategory`](https://typedoc.org/api/types/Models.ReflectionCategory.html)\[] |
+| `options`              | `object`                                                                                |
+| `options.headingLevel` | `number`                                                                                |
+
+##### Returns
+
+`string`
+
+#### groups()
+
+> **groups**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                |
+| ---------------------- | ----------------------------------------------------------------------------------- |
+| `model`                | [`ReflectionGroup`](https://typedoc.org/api/classes/Models.ReflectionGroup.html)\[] |
+| `options`              | `object`                                                                            |
+| `options.headingLevel` | `number`                                                                            |
+
+##### Returns
+
+`string`
+
+#### members()
+
+> **members**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                            |
+| ---------------------- | ----------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
+| `options`              | `object`                                                                                        |
+| `options.headingLevel` | `number`                                                                                        |
+
+##### Returns
+
+`string`
+
+#### accessor()
+
+> **accessor**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+
+##### Returns
+
+`string`
+
+#### constructor()
+
+> **constructor**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+
+##### Returns
+
+`string`
+
+#### memberContainer()
+
+> **memberContainer**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+| `options.nested`?      | `boolean`                                                                                    |
+
+##### Returns
+
+`string`
+
+#### declaration()
+
+> **declaration**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+| `options.nested`?      | `boolean`                                                                                    |
+
+##### Returns
+
+`string`
+
+#### declarationTitle()
+
+> **declarationTitle**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                         |
+| --------- | -------------------------------------------------------------------------------------------- |
+| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`string`
+
+#### documents()
+
+> **documents**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                                                                                                                                                                                                             |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
+| `options`              | `object`                                                                                                                                                                                                                                                                         |
+| `options.headingLevel` | `number`                                                                                                                                                                                                                                                                         |
+
+##### Returns
+
+`string`
+
+#### enumMembersTable()
+
+> **enumMembersTable**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                            |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
+
+##### Returns
+
+`string`
+
+#### hierarchy()
+
+> **hierarchy**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                       |
+| ---------------------- | ------------------------------------------------------------------------------------------ |
+| `model`                | [`DeclarationHierarchy`](https://typedoc.org/api/classes/Models.DeclarationHierarchy.html) |
+| `options`              | `object`                                                                                   |
+| `options.headingLevel` | `number`                                                                                   |
+
+##### Returns
+
+`string`
+
+#### indexSignature()
+
+> **indexSignature**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------- |
+| `model`   | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+
+##### Returns
+
+`string`
+
+#### inheritance()
+
+> **inheritance**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                                                                                                                     |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options`              | `object`                                                                                                                                                                                 |
+| `options.headingLevel` | `number`                                                                                                                                                                                 |
+
+##### Returns
+
+`string`
+
+#### memberTitle()
+
+> **memberTitle**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                         |
+| --------- | -------------------------------------------------------------------------------------------- |
+| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`string`
+
+#### memberWithGroups()
+
+> **memberWithGroups**: (`model`, `options`) => `string`
+
+Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+
+##### Returns
+
+`string`
+
+#### parametersList()
+
+> **parametersList**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                        |
+| --------- | ------------------------------------------------------------------------------------------- |
+| `model`   | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)\[] |
+
+##### Returns
+
+`string`
+
+#### parametersTable()
+
+> **parametersTable**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                        |
+| --------- | ------------------------------------------------------------------------------------------- |
+| `model`   | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)\[] |
+
+##### Returns
+
+`string`
+
+#### propertiesTable()
+
+> **propertiesTable**: (`model`, `options`?) => `string`
+
+Renders a collection of properties in a table.
+
+There is no association list partial for properties as these are handled as a standard list of members.
+
+##### Parameters
+
+| Parameter               | Type                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| `model`                 | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
+| `options`?              | `object`                                                                                        |
+| `options.isEventProps`? | `boolean`                                                                                       |
+
+##### Returns
+
+`string`
+
+#### referenceMember()
+
+> **referenceMember**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------- |
+| `model`   | [`ReferenceReflection`](https://typedoc.org/api/classes/Models.ReferenceReflection.html) |
+
+##### Returns
+
+`string`
+
+#### reflectionIndex()
+
+> **reflectionIndex**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                                                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| `options`              | `object`                                                                                                                                                                             |
+| `options.headingLevel` | `number`                                                                                                                                                                             |
+
+##### Returns
+
+`string`
+
+#### signature()
+
+> **signature**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter                     | Type                                                                                     |
+| ----------------------------- | ---------------------------------------------------------------------------------------- |
+| `model`                       | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options`                     | `object`                                                                                 |
+| `options.headingLevel`        | `number`                                                                                 |
+| `options.nested`?             | `boolean`                                                                                |
+| `options.accessor`?           | `string`                                                                                 |
+| `options.multipleSignatures`? | `boolean`                                                                                |
+
+##### Returns
+
+`string`
+
+#### signatureParameters()
+
+> **signatureParameters**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                        |
+| --------- | ------------------------------------------------------------------------------------------- |
+| `model`   | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)\[] |
+
+##### Returns
+
+`string`
+
+#### signatureReturns()
+
+> **signatureReturns**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                     |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| `model`                | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options`              | `object`                                                                                 |
+| `options.headingLevel` | `number`                                                                                 |
+
+##### Returns
+
+`string`
+
+#### signatureTitle()
+
+> **signatureTitle**: (`model`, `options`?) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                     |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| `model`                | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options`?             | `object`                                                                                 |
+| `options.accessor`?    | `string`                                                                                 |
+| `options.includeType`? | `boolean`                                                                                |
+
+##### Returns
+
+`string`
+
+#### signatures()
+
+> **signatures**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+| `options.nested`?      | `boolean`                                                                                    |
+
+##### Returns
+
+`string`
+
+#### sources()
+
+> **sources**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                                                                                                                     |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options`              | `object`                                                                                                                                                                                 |
+| `options.headingLevel` | `number`                                                                                                                                                                                 |
+
+##### Returns
+
+`string`
+
+#### member()
+
+> **member**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+| `options.nested`?      | `boolean`                                                                                    |
+
+##### Returns
+
+`string`
+
+#### typeAndParent()
+
+> **typeAndParent**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                                                                               |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`   | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) \| [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
+
+##### Returns
+
+`string`
+
+#### typeArguments()
+
+> **typeArguments**: (`model`, `options`?) => `string`
+
+##### Parameters
+
+| Parameter                | Type                                                                  |
+| ------------------------ | --------------------------------------------------------------------- |
+| `model`                  | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html)\[] |
+| `options`?               | `object`                                                              |
+| `options.forceCollapse`? | `boolean`                                                             |
+
+##### Returns
+
+`string`
+
+#### typeDeclaration()
+
+> **typeDeclaration**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`              | `object`                                                                                     |
+| `options.headingLevel` | `number`                                                                                     |
+
+##### Returns
+
+`string`
+
+#### typeDeclarationList()
+
+> **typeDeclarationList**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter              | Type                                                                                            |
+| ---------------------- | ----------------------------------------------------------------------------------------------- |
+| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
+| `options`              | `object`                                                                                        |
+| `options.headingLevel` | `number`                                                                                        |
+
+##### Returns
+
+`string`
+
+#### typeDeclarationTable()
+
+> **typeDeclarationTable**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter       | Type                                                                                            |
+| --------------- | ----------------------------------------------------------------------------------------------- |
+| `model`         | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
+| `options`       | `object`                                                                                        |
+| `options.kind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html)                  |
+
+##### Returns
+
+`string`
+
+#### typeParametersList()
+
+> **typeParametersList**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                                |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `model`   | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)\[] |
+
+##### Returns
+
+`string`
+
+#### typeParametersTable()
+
+> **typeParametersTable**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                                |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `model`   | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)\[] |
+
+##### Returns
+
+`string`
+
+#### breadcrumbs()
+
+> **breadcrumbs**: () => `string`
+
+##### Returns
+
+`string`
+
+#### footer()
+
+> **footer**: () => `string`
+
+##### Returns
+
+`string`
+
+#### header()
+
+> **header**: () => `string`
+
+##### Returns
+
+`string`
+
+#### packagesIndex()
+
+> **packagesIndex**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                 |
+| --------- | ------------------------------------------------------------------------------------ |
+| `model`   | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+
+##### Returns
+
+`string`
+
+#### pageTitle()
+
+> **pageTitle**: () => `string`
+
+##### Returns
+
+`string`
+
+#### arrayType()
+
+> **arrayType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                               |
+| --------- | ------------------------------------------------------------------ |
+| `model`   | [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
+
+##### Returns
+
+`string`
+
+#### conditionalType()
+
+> **conditionalType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                           |
+| --------- | ------------------------------------------------------------------------------ |
+| `model`   | [`ConditionalType`](https://typedoc.org/api/types/Models.ConditionalType.html) |
+
+##### Returns
+
+`string`
+
+#### indexAccessType()
+
+> **indexAccessType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                               |
+| --------- | ---------------------------------------------------------------------------------- |
+| `model`   | [`IndexedAccessType`](https://typedoc.org/api/types/Models.IndexedAccessType.html) |
+
+##### Returns
+
+`string`
+
+#### inferredType()
+
+> **inferredType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                     |
+| --------- | ------------------------------------------------------------------------ |
+| `model`   | [`InferredType`](https://typedoc.org/api/types/Models.InferredType.html) |
+
+##### Returns
+
+`string`
+
+#### intersectionType()
+
+> **intersectionType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                             |
+| --------- | -------------------------------------------------------------------------------- |
+| `model`   | [`IntersectionType`](https://typedoc.org/api/types/Models.IntersectionType.html) |
+
+##### Returns
+
+`string`
+
+#### intrinsicType()
+
+> **intrinsicType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                       |
+| --------- | -------------------------------------------------------------------------- |
+| `model`   | [`IntrinsicType`](https://typedoc.org/api/types/Models.IntrinsicType.html) |
+
+##### Returns
+
+`string`
+
+#### literalType()
+
+> **literalType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                   |
+| --------- | ---------------------------------------------------------------------- |
+| `model`   | [`LiteralType`](https://typedoc.org/api/types/Models.LiteralType.html) |
+
+##### Returns
+
+`string`
+
+#### namedTupleType()
+
+> **namedTupleType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                             |
+| --------- | -------------------------------------------------------------------------------- |
+| `model`   | [`NamedTupleMember`](https://typedoc.org/api/types/Models.NamedTupleMember.html) |
+
+##### Returns
+
+`string`
+
+#### queryType()
+
+> **queryType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                               |
+| --------- | ------------------------------------------------------------------ |
+| `model`   | [`QueryType`](https://typedoc.org/api/types/Models.QueryType.html) |
+
+##### Returns
+
+`string`
+
+#### referenceType()
+
+> **referenceType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                         |
+| --------- | ---------------------------------------------------------------------------- |
+| `model`   | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) |
+
+##### Returns
+
+`string`
+
+#### declarationType()
+
+> **declarationType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                                         |
+| --------- | -------------------------------------------------------------------------------------------- |
+| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`string`
+
+#### functionType()
+
+> **functionType**: (`model`, `options`?) => `string`
+
+##### Parameters
+
+| Parameter                     | Type                                                                                        |
+| ----------------------------- | ------------------------------------------------------------------------------------------- |
+| `model`                       | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html)\[] |
+| `options`?                    | `object`                                                                                    |
+| `options.forceParameterType`? | `boolean`                                                                                   |
+
+##### Returns
+
+`string`
+
+#### reflectionType()
+
+> **reflectionType**: (`model`, `options`?) => `string`
+
+##### Parameters
+
+| Parameter                | Type                                                                           |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| `model`                  | [`ReflectionType`](https://typedoc.org/api/classes/Models.ReflectionType.html) |
+| `options`?               | `object`                                                                       |
+| `options.forceCollapse`? | `boolean`                                                                      |
+
+##### Returns
+
+`string`
+
+#### someType()
+
+> **someType**: (`model`?) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                               |
+| --------- | ------------------------------------------------------------------ |
+| `model`?  | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html) |
+
+##### Returns
+
+`string`
+
+#### tupleType()
+
+> **tupleType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                 |
+| --------- | -------------------------------------------------------------------- |
+| `model`   | [`TupleType`](https://typedoc.org/api/classes/Models.TupleType.html) |
+
+##### Returns
+
+`string`
+
+#### typeOperatorType()
+
+> **typeOperatorType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                           |
+| --------- | ------------------------------------------------------------------------------ |
+| `model`   | [`TypeOperatorType`](https://typedoc.org/api/interfaces/TypeOperatorType.html) |
+
+##### Returns
+
+`string`
+
+#### unionType()
+
+> **unionType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                               |
+| --------- | ------------------------------------------------------------------ |
+| `model`   | [`UnionType`](https://typedoc.org/api/types/Models.UnionType.html) |
+
+##### Returns
+
+`string`
+
+#### unknownType()
+
+> **unknownType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type                                                                   |
+| --------- | ---------------------------------------------------------------------- |
+| `model`   | [`UnknownType`](https://typedoc.org/api/types/Models.UnknownType.html) |
+
+##### Returns
+
+`string`
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:95](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L95)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:95](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L95)
 
 ***
 
@@ -424,6 +1282,20 @@ Please note that partials:
 * Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
 * Can reference other helpers but should not reference partials.
 * Can return strings or other models.
+
+#### getCommentFlags()
+
+> **getCommentFlags**: (`reflection`) => `string`\[]
+
+##### Parameters
+
+| Parameter    | Type                                                                                                                                                                                     |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `reflection` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+
+##### Returns
+
+`string`\[]
 
 #### getCommentParts()
 
@@ -615,17 +1487,17 @@ Please note that partials:
 
 #### getReflectionFlags()
 
-> **getReflectionFlags**: (`reflection`) => `string`\[]
+> **getReflectionFlags**: (`reflectionFlags`) => `string`
 
 ##### Parameters
 
-| Parameter    | Type                                                                                                                                                                                     |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `reflection` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| Parameter         | Type                                                                             |
+| ----------------- | -------------------------------------------------------------------------------- |
+| `reflectionFlags` | [`ReflectionFlags`](https://typedoc.org/api/classes/Models.ReflectionFlags.html) |
 
 ##### Returns
 
-`string`\[]
+`string`
 
 #### getReturnType()
 
@@ -671,4 +1543,4 @@ Please note that partials:
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:108](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L108)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:108](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L108)

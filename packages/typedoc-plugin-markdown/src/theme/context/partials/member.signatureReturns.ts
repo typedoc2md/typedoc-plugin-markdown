@@ -7,9 +7,6 @@ import {
   SignatureReflection,
 } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function signatureReturns(
   this: MarkdownThemeContext,
   model: SignatureReflection,

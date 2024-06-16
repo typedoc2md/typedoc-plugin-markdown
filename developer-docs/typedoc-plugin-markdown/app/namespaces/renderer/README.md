@@ -6,37 +6,34 @@ Contains override methods to decouple HTML logic from the TypeDoc's Renderer}
 
 ## Contents
 
-* [Functions](#functions)
-  * [generateDocs()](#generatedocs)
-  * [render()](#render)
-  * [resolvePackages()](#resolvepackages)
+* [generateDocs()](#generatedocs)
+* [render()](#render)
+* [resolvePackages()](#resolvepackages)
 
-## Functions
-
-### generateDocs()
+## generateDocs()
 
 > **generateDocs**(`project`, `out`): `Promise`\<`void`>
 
 Replacement of TypeDoc's [Application.generateDocs](../types/interfaces/MarkdownApplication.md#generatedocs) method to decouple HTML logic.
 
-#### Parameters
+### Parameters
 
 | Parameter | Type                                                                                 |
 | --------- | ------------------------------------------------------------------------------------ |
 | `project` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
 | `out`     | `string`                                                                             |
 
-#### Returns
+### Returns
 
 `Promise`\<`void`>
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/renderer.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/renderer.ts#L26)
+[packages/typedoc-plugin-markdown/src/app/renderer.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/renderer.ts#L26)
 
 ***
 
-### render()
+## render()
 
 > **render**(`project`, `outputDirectory`): `Promise`\<`void`>
 
@@ -48,24 +45,24 @@ This is essentially a copy of the base method with a few tweaks.
 * Removes hooks logic that are jsx specific.
 * Adds any logic specific to markdown rendering.
 
-#### Parameters
+### Parameters
 
 | Parameter         | Type                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------ |
 | `project`         | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
 | `outputDirectory` | `string`                                                                             |
 
-#### Returns
+### Returns
 
 `Promise`\<`void`>
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/renderer.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/renderer.ts#L48)
+[packages/typedoc-plugin-markdown/src/app/renderer.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/renderer.ts#L48)
 
 ***
 
-### resolvePackages()
+## resolvePackages()
 
 > **resolvePackages**(`app`, `context`, `packageDir`): `void`
 
@@ -73,7 +70,7 @@ Currently options set for packages are only stored on the converter and are dest
 
 By intercepting the package options set in the converter and storing them on the renderer we can use them later in the theme.
 
-#### Parameters
+### Parameters
 
 | Parameter    | Type                                                              |
 | ------------ | ----------------------------------------------------------------- |
@@ -81,10 +78,10 @@ By intercepting the package options set in the converter and storing them on the
 | `context`    | `Context`                                                         |
 | `packageDir` | `string`                                                          |
 
-#### Returns
+### Returns
 
 `void`
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/renderer.ts:145](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/renderer.ts#L145)
+[packages/typedoc-plugin-markdown/src/app/renderer.ts:145](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/renderer.ts#L145)

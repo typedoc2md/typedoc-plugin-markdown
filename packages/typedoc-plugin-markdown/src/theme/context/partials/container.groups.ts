@@ -6,11 +6,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-/**
- * Renders a collection of reflection groups.
- *
- * @category Container Partials
- */
 export function groups(
   this: MarkdownThemeContext,
   model: ReflectionGroup[],

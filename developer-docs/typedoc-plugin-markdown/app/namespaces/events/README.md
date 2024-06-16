@@ -4,11 +4,6 @@
 
 Contains all the events and overrides of the typedoc Application.
 
-## Contents
-
-* [Index](#index)
-  * [Classes](#classes)
-
 ## Index
 
 ### Classes

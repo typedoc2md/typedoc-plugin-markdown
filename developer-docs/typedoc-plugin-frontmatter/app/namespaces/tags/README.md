@@ -4,38 +4,35 @@
 
 ## Contents
 
-* [Functions](#functions)
-  * [getResolvedTags()](#getresolvedtags)
-  * [getFrontmatterTags()](#getfrontmattertags)
+* [getResolvedTags()](#getresolvedtags)
+* [getFrontmatterTags()](#getfrontmattertags)
 
-## Functions
-
-### getResolvedTags()
+## getResolvedTags()
 
 > **getResolvedTags**(`app`, `comment`?): `object`
 
-#### Parameters
+### Parameters
 
 | Parameter  | Type                                                              |
 | ---------- | ----------------------------------------------------------------- |
 | `app`      | [`Application`](https://typedoc.org/api/classes/Application.html) |
 | `comment`? | [`Comment`](https://typedoc.org/api/types/Models.Comment.html)    |
 
-#### Returns
+### Returns
 
 `object`
 
-#### Defined in
+### Defined in
 
-[app/tags.ts:4](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L4)
+[app/tags.ts:4](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L4)
 
 ***
 
-### getFrontmatterTags()
+## getFrontmatterTags()
 
 > **getFrontmatterTags**(`comment`, `frontmatterTags`, `namingConvention`): `object`
 
-#### Parameters
+### Parameters
 
 | Parameter          | Type                                                                                                          |
 | ------------------ | ------------------------------------------------------------------------------------------------------------- |
@@ -43,10 +40,10 @@
 | `frontmatterTags`  | `string`\[]                                                                                                   |
 | `namingConvention` | [`FrontmatterNamingConvention`](../../../options/namespaces/maps/enumerations/FrontmatterNamingConvention.md) |
 
-#### Returns
+### Returns
 
 `object`
 
-#### Defined in
+### Defined in
 
-[app/tags.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L28)
+[app/tags.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L28)

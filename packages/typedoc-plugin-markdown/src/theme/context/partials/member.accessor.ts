@@ -2,11 +2,6 @@ import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
-/**
- * Renders an accessor member.
- *
- * @category Member Partials
- */
 export function accessor(
   this: MarkdownThemeContext,
   model: DeclarationReflection,

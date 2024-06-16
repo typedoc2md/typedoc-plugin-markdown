@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { UnionType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function unionType(
   this: MarkdownThemeContext,
   model: UnionType,

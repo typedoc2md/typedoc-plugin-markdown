@@ -2,11 +2,6 @@ import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionCategory } from 'typedoc';
 
-/**
- * Renders a collection of reflection categories.
- *
- * @category Container Partials
- */
 export function categories(
   this: MarkdownThemeContext,
   model: ReflectionCategory[],

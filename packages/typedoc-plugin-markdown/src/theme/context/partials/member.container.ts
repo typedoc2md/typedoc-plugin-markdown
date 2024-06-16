@@ -2,9 +2,6 @@ import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function memberContainer(
   this: MarkdownThemeContext,
   model: DeclarationReflection,

@@ -5,9 +5,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function member(
   this: MarkdownThemeContext,
   model: DeclarationReflection,

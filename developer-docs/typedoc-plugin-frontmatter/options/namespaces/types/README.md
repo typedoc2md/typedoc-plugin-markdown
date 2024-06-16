@@ -2,12 +2,6 @@
 
 # types
 
-## Contents
-
-* [Index](#index)
-  * [Options](#options)
-  * [Other](#other)
-
 ## Index
 
 ### Options

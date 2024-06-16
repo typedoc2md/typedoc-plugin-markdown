@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { ReflectionType, SomeType } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function typeArguments(
   this: MarkdownThemeContext,
   model: SomeType[],

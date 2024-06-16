@@ -3,11 +3,6 @@ import { removeLineBreaks } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
-/**
- * Renders enum members as a table.
- *
- * @category Member Partials
- */
 export function enumMembersTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],

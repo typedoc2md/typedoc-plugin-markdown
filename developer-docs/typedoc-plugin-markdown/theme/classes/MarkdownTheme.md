@@ -29,30 +29,20 @@ The API follows the implementation of [TypeDoc's custom theming](https://github.
     * [Inherited from](#inherited-from-3)
   * [on()](#on)
     * [on(eventMap, context)](#oneventmap-context)
-      * [Inherited from](#inherited-from-4)
     * [on(eventMap, callback, context, priority)](#oneventmap-callback-context-priority)
-      * [Inherited from](#inherited-from-5)
     * [on(name, callback, context, priority)](#onname-callback-context-priority)
-      * [Inherited from](#inherited-from-6)
   * [once()](#once)
     * [once(eventMap, context)](#onceeventmap-context)
-      * [Inherited from](#inherited-from-7)
     * [once(name, callback, context, priority)](#oncename-callback-context-priority)
-      * [Inherited from](#inherited-from-8)
   * [off()](#off)
     * [off(undefined)](#offundefined)
-      * [Inherited from](#inherited-from-9)
     * [off(eventMap, context)](#offeventmap-context)
-      * [Inherited from](#inherited-from-10)
     * [off(name, callback, context)](#offname-callback-context)
-      * [Inherited from](#inherited-from-11)
   * [listenTo()](#listento)
     * [Inherited from](#inherited-from-12)
   * [listenToOnce()](#listentoonce)
     * [listenToOnce(obj, eventMap)](#listentoonceobj-eventmap)
-      * [Inherited from](#inherited-from-13)
     * [listenToOnce(obj, name, callback, priority)](#listentoonceobj-name-callback-priority)
-      * [Inherited from](#inherited-from-14)
   * [stopListening()](#stoplistening)
     * [Inherited from](#inherited-from-15)
   * [trigger()](#trigger)
@@ -600,7 +590,7 @@ Renders a template and page model to a string.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L43)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L43)
 
 ***
 
@@ -624,7 +614,7 @@ This method can be overridden to provide an alternative theme context.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L60)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L60)
 
 ***
 
@@ -652,7 +642,7 @@ This method can be overriden to provide an alternative url structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L69)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L69)
 
 ***
 
@@ -676,7 +666,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:78](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L78)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:78](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L78)
 
 ***
 
@@ -699,7 +689,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:85](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L85)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:85](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L85)
 
 ***
 
@@ -721,7 +711,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:209](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L209)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:209](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L209)
 
 ***
 
@@ -743,7 +733,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:216](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L216)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:216](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L216)
 
 ***
 
@@ -765,7 +755,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:223](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L223)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:223](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L223)
 
 ***
 
@@ -787,4 +777,4 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:230](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L230)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:230](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L230)

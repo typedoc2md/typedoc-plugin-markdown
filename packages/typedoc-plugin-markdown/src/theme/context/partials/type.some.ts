@@ -18,11 +18,6 @@ import {
   UnknownType,
 } from 'typedoc';
 
-/**
- * Takes a generic Type and returns the appropriate partial for it.
- *
- * @category Type Partials
- */
 export function someType(this: MarkdownThemeContext, model?: SomeType): string {
   if (!model) {
     return '';

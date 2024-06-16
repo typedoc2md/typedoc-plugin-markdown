@@ -24,27 +24,16 @@ import { generateDocs, render, resolvePackages } from './renderer';
  *
  * @remarks
  *
- * The following initialization steps are taken in this method:
+ * In summary this method:
  *
- * **1. Declare options:**
- *
- * - Iterate over declaration definitions and to the container.
- *
- * **2. Replace default theme:**
- *
- * - Replace the default HTML theme the with the {@link MarkdownTheme}
- *
- * **3. Override TypeDoc methods:**
- *
- * - Intercept and modify some TypeDoc core methods that are coupled to the HTML theme.
- * **4. Configure localization:**
- *
- * - Load the additional translations used by the theme for the selected language.
+ * 1. Adds options declarations
+ * 2. Replaces the default theme with the Markdown theme
+ * 3. Intercepts and modifies some TypeDoc core methods
+ * 4. Configures localization
  *
  * @param app - When loaded TypeDoc provides an instance of the {@link Application} referred to as the `"pluginHost"`.
  *
  * @see https://typedoc.org/guides/development/#plugins.
- *
  */
 export function load(app: Application) {
   /**
@@ -60,9 +49,9 @@ export function load(app: Application) {
   });
 
   /**
-   * =================================================
-   * 2. Replace default theme with the Markdown themes
-   * =================================================
+   * ====================================================
+   * 2. Replace the default theme with the Markdown theme
+   * ====================================================
    */
 
   Object.defineProperty(app.renderer, 'themes', {
@@ -90,9 +79,11 @@ export function load(app: Application) {
   });
 
   /**
-   * ============================
-   * 3. Configure localization
-   * ============================
+   * =========================
+   * 4. Configure localization
+   * =========================
+   *
+   * - Load the additional translations used by the theme for the selected language.
    */
   app.converter.on(Converter.EVENT_BEGIN, () => {
     app.internationalization.addTranslations(
@@ -104,7 +95,7 @@ export function load(app: Application) {
 
   /**
    * ============================
-   * 4. Apply any other behaviour
+   * 5. Apply any other behaviour
    * ============================
    */
 

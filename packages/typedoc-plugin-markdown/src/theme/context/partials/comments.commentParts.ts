@@ -3,9 +3,6 @@ import { link } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
 
-/**
- * @category Comment Partials
- */
 export function commentParts(
   this: MarkdownThemeContext,
   model: CommentDisplayPart[],

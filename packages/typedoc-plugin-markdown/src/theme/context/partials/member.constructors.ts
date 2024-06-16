@@ -3,11 +3,6 @@ import { escapeChars } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection } from 'typedoc';
 
-/**
- * Renders an constructor member.
- *
- * @category Member Partials
- */
 export function constructor(
   this: MarkdownThemeContext,
   model: DeclarationReflection,

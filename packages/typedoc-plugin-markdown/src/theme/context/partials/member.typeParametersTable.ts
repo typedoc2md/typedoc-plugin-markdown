@@ -2,9 +2,6 @@ import { backTicks, htmlTable, italic, table } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ReflectionKind, TypeParameterReflection } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function typeParametersTable(
   this: MarkdownThemeContext,
   model: TypeParameterReflection[],

@@ -3,9 +3,6 @@ import { escapeChars } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function typeDeclarationTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],

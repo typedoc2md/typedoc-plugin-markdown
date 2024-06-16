@@ -3,9 +3,6 @@ import { escapeChars } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function sources(
   this: MarkdownThemeContext,
   model: DeclarationReflection | SignatureReflection,

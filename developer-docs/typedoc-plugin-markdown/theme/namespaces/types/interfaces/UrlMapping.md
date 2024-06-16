@@ -26,7 +26,7 @@ The model used to define the URL mapping structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L19)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L19)
 
 ***
 
@@ -36,7 +36,7 @@ The model used to define the URL mapping structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L20)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L20)
 
 ***
 
@@ -56,4 +56,4 @@ The model used to define the URL mapping structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L21)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L21)

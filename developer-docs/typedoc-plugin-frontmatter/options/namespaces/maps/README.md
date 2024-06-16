@@ -2,11 +2,6 @@
 
 # maps
 
-## Contents
-
-* [Index](#index)
-  * [Enumerations](#enumerations)
-
 ## Index
 
 ### Enumerations

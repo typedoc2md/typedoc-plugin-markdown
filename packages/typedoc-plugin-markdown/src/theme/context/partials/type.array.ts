@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { ArrayType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function arrayType(
   this: MarkdownThemeContext,
   model: ArrayType,

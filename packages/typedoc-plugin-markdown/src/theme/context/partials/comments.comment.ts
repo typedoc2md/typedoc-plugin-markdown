@@ -3,9 +3,6 @@ import { camelToTitleCase, sanitizeComments } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { Comment, CommentTag } from 'typedoc';
 
-/**
- * @category Comment Partials
- */
 export function comment(
   this: MarkdownThemeContext,
   model: Comment,

@@ -3,9 +3,6 @@ import { escapeChars } from 'libs/utils';
 import * as path from 'path';
 import { MarkdownThemeContext } from 'theme';
 
-/**
- * @category Page Partials
- */
 export function breadcrumbs(this: MarkdownThemeContext): string {
   const md: string[] = [];
 

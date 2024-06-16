@@ -3,9 +3,6 @@ import { escapeChars } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function parametersList(
   this: MarkdownThemeContext,
   model: ParameterReflection[],

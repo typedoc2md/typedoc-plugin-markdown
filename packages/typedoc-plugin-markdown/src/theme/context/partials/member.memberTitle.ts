@@ -3,11 +3,6 @@ import { escapeChars } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
-/**
- * Renders the main member title.
- *
- * @category Member Partials
- */
 export function memberTitle(
   this: MarkdownThemeContext,
   model: DeclarationReflection,

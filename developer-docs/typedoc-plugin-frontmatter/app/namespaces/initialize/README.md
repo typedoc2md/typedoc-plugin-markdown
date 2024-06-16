@@ -2,27 +2,20 @@
 
 # initialize
 
-## Contents
-
-* [Functions](#functions)
-  * [load()](#load)
-
-## Functions
-
-### load()
+## load()
 
 > **load**(`app`): `void`
 
-#### Parameters
+### Parameters
 
 | Parameter | Type                                                              |
 | --------- | ----------------------------------------------------------------- |
 | `app`     | [`Application`](https://typedoc.org/api/classes/Application.html) |
 
-#### Returns
+### Returns
 
 `void`
 
-#### Defined in
+### Defined in
 
-[app/initialize.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/app/initialize.ts#L13)
+[app/initialize.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/app/initialize.ts#L13)

@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { LiteralType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function literalType(
   this: MarkdownThemeContext,
   model: LiteralType,

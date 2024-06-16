@@ -4,9 +4,6 @@ import * as path from 'path';
 import { MarkdownThemeContext } from 'theme';
 import { ProjectReflection } from 'typedoc';
 
-/**
- * @category Page Partials
- */
 export function packagesIndex(
   this: MarkdownThemeContext,
   model: ProjectReflection,

@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L25)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L25)
 
 ## Properties
 
@@ -52,7 +52,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L19)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L19)
 
 ***
 
@@ -62,7 +62,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L20)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L20)
 
 ***
 
@@ -72,7 +72,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L21)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L21)
 
 ***
 
@@ -88,7 +88,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L22)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L22)
 
 ***
 
@@ -98,7 +98,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L23)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L23)
 
 ***
 
@@ -108,7 +108,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L26)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L26)
 
 ***
 
@@ -118,7 +118,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:27](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L27)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:27](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L27)
 
 ## Methods
 
@@ -132,7 +132,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L40)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L40)
 
 ***
 
@@ -152,7 +152,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L56)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L56)
 
 ***
 
@@ -172,7 +172,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:117](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L117)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:117](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L117)
 
 ***
 
@@ -192,7 +192,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:190](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L190)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:190](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L190)
 
 ***
 
@@ -213,7 +213,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:207](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L207)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:207](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L207)
 
 ***
 
@@ -234,7 +234,7 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:252](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L252)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:252](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L252)
 
 ***
 
@@ -256,4 +256,4 @@
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:312](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L312)
+[packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts:312](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/core/navigation-builder.ts#L312)

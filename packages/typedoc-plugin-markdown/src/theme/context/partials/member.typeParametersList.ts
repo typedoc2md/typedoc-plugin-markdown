@@ -2,9 +2,6 @@ import { bold, italic } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { TypeParameterReflection } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function typeParametersList(
   this: MarkdownThemeContext,
   model: TypeParameterReflection[],

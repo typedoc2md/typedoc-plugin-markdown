@@ -2,9 +2,6 @@ import { backTicks } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, SomeType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function declarationType(
   this: MarkdownThemeContext,
   model: DeclarationReflection,

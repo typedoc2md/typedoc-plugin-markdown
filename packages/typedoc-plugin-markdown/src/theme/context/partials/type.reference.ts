@@ -2,9 +2,6 @@ import { backTicks, link } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ReferenceType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function referenceType(
   this: MarkdownThemeContext,
   model: ReferenceType,

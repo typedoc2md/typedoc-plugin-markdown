@@ -8,11 +8,6 @@ import {
   ReflectionType,
 } from 'typedoc';
 
-/**
- * Renders a standard declaration member.
- *
- * @category Member Partials
- */
 export function declaration(
   this: MarkdownThemeContext,
   model: DeclarationReflection,

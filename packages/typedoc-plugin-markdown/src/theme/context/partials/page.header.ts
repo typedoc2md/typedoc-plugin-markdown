@@ -9,9 +9,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-/**
- * @category Page Partials
- */
 export function header(this: MarkdownThemeContext): string {
   const textContentMappings = this.options.getValue('textContentMappings');
 

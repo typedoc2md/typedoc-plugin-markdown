@@ -2,10 +2,6 @@
 
 # Enumeration: FrontmatterNamingConvention
 
-## Contents
-
-* [Enumeration Members](#enumeration-members)
-
 ## Enumeration Members
 
 | Enumeration Member | Value         |

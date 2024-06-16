@@ -2,11 +2,6 @@ import { backTicks } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { SignatureReflection } from 'typedoc';
 
-/**
- * Renders an index signature block
- *
- * @category Member Partials
- */
 export function indexSignature(
   this: MarkdownThemeContext,
   model: SignatureReflection,

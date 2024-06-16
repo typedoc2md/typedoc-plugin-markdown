@@ -48,7 +48,7 @@ The project the renderer is currently processing.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L21)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L21)
 
 ***
 
@@ -60,7 +60,7 @@ The path of the directory the documentation should be written to.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L26)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L26)
 
 ***
 
@@ -72,7 +72,7 @@ A list of all pages that should be generated.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L31)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L31)
 
 ***
 
@@ -84,7 +84,7 @@ The navigation structure of the project that can be utilised by plugins.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L36)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L36)
 
 ## Accessors
 
@@ -182,22 +182,22 @@ node\_modules/typedoc/dist/lib/utils/events.d.ts:46
 
 ### BEGIN
 
-> `static` `readonly` **BEGIN**: `"beginRender"` = `'beginRender'`
+> `readonly` `static` **BEGIN**: `"beginRender"` = `'beginRender'`
 
 Triggered before the renderer starts rendering a project.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L42)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L42)
 
 ***
 
 ### END
 
-> `static` `readonly` **END**: `"endRender"` = `'endRender'`
+> `readonly` `static` **END**: `"endRender"` = `'endRender'`
 
 Triggered after the renderer has written all documents.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L48)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-renderer-event.ts#L48)

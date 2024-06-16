@@ -6,19 +6,16 @@ Contains constant default values used in options.
 
 ## Contents
 
-* [Variables](#variables)
-  * [ALLOWED\_OWN\_FILE\_MEMBERS](#allowed_own_file_members)
-  * [TEXT\_CONTENT\_MAPPINGS](#text_content_mappings)
+* [ALLOWED\_OWN\_FILE\_MEMBERS](#allowed_own_file_members)
+* [TEXT\_CONTENT\_MAPPINGS](#text_content_mappings)
 
-## Variables
-
-### ALLOWED\_OWN\_FILE\_MEMBERS
+## ALLOWED\_OWN\_FILE\_MEMBERS
 
 > `const` **ALLOWED\_OWN\_FILE\_MEMBERS**: `string`\[]
 
 Default values for `membersWithOwnFile` option.
 
-#### Default Value
+### Default Value
 
 ```ts
 [
@@ -31,19 +28,19 @@ Default values for `membersWithOwnFile` option.
 ]
 ```
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/constants.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/options/constants.ts#L12)
+[packages/typedoc-plugin-markdown/src/options/constants.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/constants.ts#L12)
 
 ***
 
-### TEXT\_CONTENT\_MAPPINGS
+## TEXT\_CONTENT\_MAPPINGS
 
 > `const` **TEXT\_CONTENT\_MAPPINGS**: `object`
 
 Default values for `textContentMappings` option.
 
-#### Type declaration
+### Type declaration
 
 | Name               | Type     | Default value               |
 | ------------------ | -------- | --------------------------- |
@@ -54,6 +51,6 @@ Default values for `textContentMappings` option.
 | `title.memberPage` | `string` | '\{kind}: \{name}'          |
 | `footer.text`      | `string` | ''                          |
 
-#### Defined in
+### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/constants.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/options/constants.ts#L24)
+[packages/typedoc-plugin-markdown/src/options/constants.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/constants.ts#L24)

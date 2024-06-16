@@ -2,9 +2,6 @@ import { heading, unorderedList } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationHierarchy, SomeType } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function hierarchy(
   this: MarkdownThemeContext,
   model: DeclarationHierarchy,

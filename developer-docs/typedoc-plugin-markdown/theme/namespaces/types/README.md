@@ -2,12 +2,6 @@
 
 # types
 
-## Contents
-
-* [Index](#index)
-  * [Interfaces](#interfaces)
-  * [Type Aliases](#type-aliases)
-
 ## Index
 
 ### Interfaces

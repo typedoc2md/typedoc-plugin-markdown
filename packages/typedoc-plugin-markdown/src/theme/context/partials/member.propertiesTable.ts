@@ -8,9 +8,6 @@ import { getPropertyDefaultValue } from '../helpers/get-property-default-value';
  * Renders a collection of properties in a table.
  *
  * There is no association list partial for properties as these are handled as a standard list of members.
- *
- * @category Member Partials
- *
  */
 export function propertiesTable(
   this: MarkdownThemeContext,

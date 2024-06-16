@@ -6,10 +6,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-/**
- *
- * @category Member Partials
- */
 export function reflectionIndex(
   this: MarkdownThemeContext,
   model: ProjectReflection | DeclarationReflection,

@@ -5,9 +5,6 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-/**
- * @category Container Partials
- */
 export function body(
   this: MarkdownThemeContext,
   model: ContainerReflection,

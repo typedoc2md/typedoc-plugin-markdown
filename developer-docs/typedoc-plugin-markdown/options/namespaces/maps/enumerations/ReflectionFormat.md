@@ -4,10 +4,6 @@
 
 The allowed values for formatting reflections.
 
-## Contents
-
-* [Enumeration Members](#enumeration-members)
-
 ## Enumeration Members
 
 | Enumeration Member | Value         |

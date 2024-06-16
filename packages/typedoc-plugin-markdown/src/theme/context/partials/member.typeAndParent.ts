@@ -2,9 +2,6 @@ import { backTicks, link } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ArrayType, ReferenceType, SignatureReflection } from 'typedoc';
 
-/**
- * @category Member Partials
- */
 export function typeAndParent(
   this: MarkdownThemeContext,
   model: ArrayType | ReferenceType,

@@ -16,7 +16,6 @@ import { Internationalization, Options, Reflection } from 'typedoc';
  *
  * This class can be used to customize the theme output by extending the class and overriding the templates, partials and helpers.
  *
- *
  * @groupDescription Properties
  *
  * Properties are passed into the constructor and are used to provide context to the theme.

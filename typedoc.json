@@ -16,8 +16,8 @@
       "remark-toc",
       {
         "tight": true,
-        "maxDepth": 5,
-        "skip": "Default Value|Defined in|Example|Parameters|Returns|Type declaration"
+        "maxDepth": 4,
+        "skip": "Default Value|Defined in|Example|load|Parameters|Returns|See|Type declaration"
       }
     ]
   ],
@@ -36,6 +36,7 @@
   },
   "projectDocuments": ["./OVERVIEW.md"],
   "hidePageHeader": true,
+  "hideGroupHeadings": true,
   "textContentMappings": {
     "breadcrumbs.home": "Packages Index"
   },

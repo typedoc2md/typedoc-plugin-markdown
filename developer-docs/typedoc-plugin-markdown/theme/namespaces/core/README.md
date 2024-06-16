@@ -4,11 +4,6 @@
 
 Support for the MarkdownTheme core class building URLs and navigation.
 
-## Contents
-
-* [Index](#index)
-  * [Classes](#classes)
-
 ## Index
 
 ### Classes

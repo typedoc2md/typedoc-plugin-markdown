@@ -2,11 +2,6 @@ import { link } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ReferenceReflection, ReflectionKind } from 'typedoc';
 
-/**
- * Renders an reference member.
- *
- * @category Member Partials
- */
 export function referenceMember(
   this: MarkdownThemeContext,
   model: ReferenceReflection,

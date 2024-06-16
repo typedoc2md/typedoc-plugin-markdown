@@ -2,11 +2,6 @@ import { backTicks, heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ReflectionKind, SignatureReflection } from 'typedoc';
 
-/**
- * Renders a signature member.
- *
- * @category Member Partials
- */
 export function signature(
   this: MarkdownThemeContext,
   model: SignatureReflection,

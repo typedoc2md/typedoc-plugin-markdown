@@ -2,11 +2,6 @@
 
 # types
 
-## Contents
-
-* [Index](#index)
-  * [Interfaces](#interfaces)
-
 ## Index
 
 ### Interfaces

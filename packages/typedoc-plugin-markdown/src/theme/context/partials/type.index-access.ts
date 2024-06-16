@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { IndexedAccessType } from 'typedoc';
 
-/**
- * @category Type Partials
- */
 export function indexAccessType(
   this: MarkdownThemeContext,
   model: IndexedAccessType,

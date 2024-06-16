@@ -36,16 +36,21 @@ export function addTableOfContents(
   if (kindsWithToc.includes(event.model?.kind)) {
     const contents = event.contents;
     const contentToLines = contents?.split('\n');
-    const firstHeadingIndex = contentToLines?.findIndex((line) =>
-      line.startsWith('##'),
-    );
-    if (firstHeadingIndex && firstHeadingIndex > 0) {
-      contentToLines?.splice(
-        firstHeadingIndex,
-        0,
-        `\n\n## ${(options as any)?.heading || 'Contents'}\n\n`,
+    const numberOfLinesStartingWithHash = contentToLines?.filter((line) =>
+      line.startsWith('## '),
+    ).length;
+    if (numberOfLinesStartingWithHash > 1) {
+      const firstHeadingIndex = contentToLines?.findIndex((line) =>
+        line.startsWith('## '),
       );
-      event.contents = contentToLines?.join('\n');
+      if (firstHeadingIndex && firstHeadingIndex > 0) {
+        contentToLines?.splice(
+          firstHeadingIndex,
+          0,
+          `\n\n## ${(options as any)?.heading || 'Contents'}\n\n`,
+        );
+        event.contents = contentToLines?.join('\n');
+      }
     }
   }
 }

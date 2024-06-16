@@ -1,9 +1,6 @@
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
-/**
- * @category Page Partials
- */
 export function pageTitle(this: MarkdownThemeContext): string {
   const textContentMappings = this.options.getValue('textContentMappings');
   const page = this.page;
