@@ -2,7 +2,7 @@
 
 # typedoc-plugin-markdown
 
-"typedoc-plugin-markdown" is the core package of this monorepo and is the package that is used to generate the markdown documentation:
+The core package of this monorepo and is the package that is used to generate the markdown documentation.
 
 ## What does the package do?
 
@@ -13,10 +13,10 @@
 
 ## Documents
 
-| Document                                                                    | Description                                                            |
-| --------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [Internationalization Guidance](documents/Internationalization-Guidance.md) | How to edit or add a new locale to custom plugin translatable strings. |
-| [Testing guide](documents/Testing-guide.md)                                 | Guidance of running tests and creating fixtures.                       |
+| Document                                        | Description                                      |
+| ----------------------------------------------- | ------------------------------------------------ |
+| [Getting Started](documents/Getting-Started.md) | Instructions on how to start developing locally. |
+| [Testing](documents/Testing.md)                 | Guidance of running tests and creating fixtures. |
 
 ## Modules
 

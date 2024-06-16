@@ -6,7 +6,7 @@ Before you start, you might find it helpful to read the [TypeDoc development gui
 
 ## Contributions to the public docs
 
-Contribute to the public facing documentation hosted at https://typedoc-plugin-markdown.org is welcome.
+Contributions to the public facing documentation hosted at https://typedoc-plugin-markdown.org welcome.
 
 The site is built on [Nextra](https://nextra.site/docs) and you can edit the mdx files located at [docs folder](https://github.com/typedoc2md/typedoc-plugin-markdown/tree/main/docs) of the repo.
 
@@ -16,24 +16,18 @@ When submitting a PR please use commit message in the format `chore(docs): impro
 
 ## Contributing to the codebase
 
-If you're interested in contributing code, here's how you can get started:
+For contributing to the plugin codebase, please see the [Developer Documentation](./developer-docs/README.md) for detailed information about the codebase and development practices.
 
-1. **Fork and Clone**: Fork the repository and clone it to your local machine.
-   - Use `git clone https://github.com/typedoc2md/typedoc-plugin-markdown.git` to clone your fork.
-2. **Install Dependencies**: Run `npm install` to install the necessary dependencies.
-3. **Create a Branch**: Create a new branch for your work using git checkout -b branch-name.
-4. **Make Your Changes**: For contributing to the plugin codebase, please see the [Developer Documentation](./developer-docs/README.md) for detailed information about the codebase and development practices.
-
-If something does not make sense please do not hesitate to [ask for help](/discussions/categories/help).
+All contributions are welcome and appreciated. If something does not make sense please do not hesitate to [ask for help](/discussions/categories/help).
 
 ## Submitting a Pull Request
 
 Once you're ready to submit your changes:
 
-- **Push your branch**: Push your branch to your forked repository on GitHub.
-- **Create a PR**: Navigate to the original repository and create a PR from your branch to the main branch.
-- **Provide a clear description**: Include a detailed description of your changes, why they're necessary, and any issues they resolve.
-- **Link to relevant issues**: If your PR addresses any open issues, mention them in the description.
+* **Push your branch**: Push your branch to your forked repository on GitHub.
+* **Create a PR**: Navigate to the original repository and create a PR from your branch to the main branch.
+* **Provide a clear description**: Include a detailed description of your changes, why they're necessary, and any issues they resolve.
+* **Link to relevant issues**: If your PR addresses any open issues, mention them in the description.
 
 Please note we follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages.
 

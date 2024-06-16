@@ -8,7 +8,7 @@
   ],
   "categoryOrder": ["File", "Display", "Utility"],
   "projectDocuments": [
-    "./internal-docs/internationalization.md",
-    "./internal-docs/testing.md"
+    "./supporting-docs/getting-started.md",
+    "./supporting-docs/testing.md"
   ]
 }

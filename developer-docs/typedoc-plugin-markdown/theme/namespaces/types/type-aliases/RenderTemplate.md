@@ -22,4 +22,4 @@
 
 ## Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/types.ts:35](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/types.ts#L35)
+[packages/typedoc-plugin-markdown/src/theme/types.ts:35](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/types.ts#L35)

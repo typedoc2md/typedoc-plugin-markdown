@@ -8,8 +8,8 @@ Configures plugin options.
 
 ### Namespaces
 
-| Namespace                                         | Description                                   |
-| ------------------------------------------------- | --------------------------------------------- |
-| [declarations](namespaces/declarations/README.md) | -                                             |
-| [maps](namespaces/maps/README.md)                 | -                                             |
-| [types](namespaces/types/README.md)               | Describes the options declared by the plugin. |
+| Namespace                                         | Description |
+| ------------------------------------------------- | ----------- |
+| [declarations](namespaces/declarations/README.md) | -           |
+| [maps](namespaces/maps/README.md)                 | -           |
+| [types](namespaces/types/README.md)               | -           |

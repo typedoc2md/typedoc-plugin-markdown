@@ -24,7 +24,7 @@
   "entryPointStrategy": "packages",
   "outputFileStrategy": "members",
   "membersWithOwnFile": ["Class", "Interface", "TypeAlias", "Enum"],
-  "readme": "./OVERVIEW.md",
+  "readme": "none",
   "mergeReadme": true,
   "excludePrivate": false,
   "packageOptions": {
@@ -34,6 +34,7 @@
     "sortEntryPoints": false,
     "sort": "source-order"
   },
+  "projectDocuments": ["./OVERVIEW.md"],
   "hidePageHeader": true,
   "textContentMappings": {
     "breadcrumbs.home": "Packages Index"

@@ -42,7 +42,7 @@ If the input string itself contains a backtick, pipe, or backslash (which can re
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts#L7)
+[packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts#L7)
 
 ***
 
@@ -62,7 +62,7 @@ If the input string itself contains a backtick, pipe, or backslash (which can re
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts#L1)
 
 ***
 
@@ -82,7 +82,7 @@ If the input string itself contains a backtick, pipe, or backslash (which can re
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts#L1)
 
 ***
 
@@ -102,7 +102,7 @@ If the input string itself contains a backtick, pipe, or backslash (which can re
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts:3](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts#L3)
+[packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts:3](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts#L3)
 
 ***
 
@@ -125,7 +125,7 @@ Returns a heading in markdown format
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts#L6)
+[packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts#L6)
 
 ***
 
@@ -139,7 +139,7 @@ Returns a heading in markdown format
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts#L1)
 
 ***
 
@@ -161,7 +161,7 @@ Returns a heading in markdown format
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts#L1)
 
 ***
 
@@ -181,7 +181,7 @@ Returns a heading in markdown format
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts#L1)
 
 ***
 
@@ -201,7 +201,7 @@ Returns a heading in markdown format
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts#L1)
 
 ***
 
@@ -224,7 +224,7 @@ The link element
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/link.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/link.ts#L6)
+[packages/typedoc-plugin-markdown/src/libs/markdown/link.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/link.ts#L6)
 
 ***
 
@@ -244,7 +244,7 @@ The link element
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts#L1)
 
 ***
 
@@ -268,7 +268,7 @@ Comments for table
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/table.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/table.ts#L7)
+[packages/typedoc-plugin-markdown/src/libs/markdown/table.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/table.ts#L7)
 
 ***
 
@@ -288,4 +288,4 @@ Comments for table
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts#L1)
+[packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts#L1)

@@ -33,7 +33,7 @@ Default values for `membersWithOwnFile` option.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/constants.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/options/constants.ts#L12)
+[packages/typedoc-plugin-markdown/src/options/constants.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/options/constants.ts#L12)
 
 ***
 
@@ -56,4 +56,4 @@ Default values for `textContentMappings` option.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/constants.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/options/constants.ts#L24)
+[packages/typedoc-plugin-markdown/src/options/constants.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/options/constants.ts#L24)

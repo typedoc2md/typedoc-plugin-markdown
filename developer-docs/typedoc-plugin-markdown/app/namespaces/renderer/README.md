@@ -32,7 +32,7 @@ Replacement of TypeDoc's [Application.generateDocs](../types/interfaces/Markdown
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/renderer.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/renderer.ts#L26)
+[packages/typedoc-plugin-markdown/src/app/renderer.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/renderer.ts#L26)
 
 ***
 
@@ -61,7 +61,7 @@ This is essentially a copy of the base method with a few tweaks.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/renderer.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/renderer.ts#L48)
+[packages/typedoc-plugin-markdown/src/app/renderer.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/renderer.ts#L48)
 
 ***
 
@@ -87,4 +87,4 @@ By intercepting the package options set in the converter and storing them on the
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/renderer.ts:145](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/renderer.ts#L145)
+[packages/typedoc-plugin-markdown/src/app/renderer.ts:145](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/renderer.ts#L145)

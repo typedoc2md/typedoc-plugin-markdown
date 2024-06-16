@@ -18,13 +18,13 @@ This project is a collection of packages designed for generate TypeScript API do
 
 Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).
 
-## Examples
-
-Please see the [examples repository](https://github.com/typedoc2md/typedoc-plugin-markdown-examples).
-
 ## Contributing
 
 If you would like to contribute towards this project please read the [contributing guide](./CONTRIBUTING.md).
+
+## Examples
+
+Please see the [examples repository](https://github.com/typedoc2md/typedoc-plugin-markdown-examples).
 
 ## License
 

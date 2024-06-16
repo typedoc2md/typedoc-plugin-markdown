@@ -2,8 +2,6 @@
 
 # types
 
-Describes the options declared by the plugin.
-
 ## Contents
 
 * [Index](#index)
@@ -22,6 +20,6 @@ Describes the options declared by the plugin.
 
 ### Other
 
-| Interface                                    | Description |
-| -------------------------------------------- | ----------- |
-| [PluginOptions](interfaces/PluginOptions.md) | -           |
+| Interface                                    | Description                                   |
+| -------------------------------------------- | --------------------------------------------- |
+| [PluginOptions](interfaces/PluginOptions.md) | Describes the options declared by the plugin. |

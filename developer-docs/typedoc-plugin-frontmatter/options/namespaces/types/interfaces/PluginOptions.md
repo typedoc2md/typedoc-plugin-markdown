@@ -2,6 +2,8 @@
 
 # Interface: PluginOptions
 
+Describes the options declared by the plugin.
+
 ## Contents
 
 * [Properties](#properties)
@@ -22,7 +24,7 @@ Specify which comment block tags should be added to frontmatter.
 
 #### Defined in
 
-[options/types.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/options/types.ts#L14)
+[options/types.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/options/types.ts#L16)
 
 ***
 
@@ -34,7 +36,7 @@ Specify static variables to be added to all frontmatter blocks.
 
 #### Defined in
 
-[options/types.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/options/types.ts#L19)
+[options/types.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/options/types.ts#L21)
 
 ***
 
@@ -46,7 +48,7 @@ The naming convention that variables should be output as.
 
 #### Defined in
 
-[options/types.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/options/types.ts#L24)
+[options/types.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/options/types.ts#L26)
 
 ***
 
@@ -58,7 +60,7 @@ Specify static variables to be added to the index page only.
 
 #### Defined in
 
-[options/types.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/options/types.ts#L29)
+[options/types.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/options/types.ts#L31)
 
 ***
 
@@ -70,7 +72,7 @@ Preserve tags defined in frontmatter block tags in output.
 
 #### Defined in
 
-[options/types.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/options/types.ts#L34)
+[options/types.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/options/types.ts#L36)
 
 ***
 
@@ -82,4 +84,4 @@ Specify static variables to be added to the readme page only.
 
 #### Defined in
 
-[options/types.ts:39](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/options/types.ts#L39)
+[options/types.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/options/types.ts#L41)

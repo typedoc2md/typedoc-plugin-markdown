@@ -27,7 +27,7 @@
 
 #### Defined in
 
-[app/tags.ts:4](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L4)
+[app/tags.ts:4](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L4)
 
 ***
 
@@ -49,4 +49,4 @@
 
 #### Defined in
 
-[app/tags.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L28)
+[app/tags.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-frontmatter/src/app/tags.ts#L28)

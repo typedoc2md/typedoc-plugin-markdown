@@ -41,7 +41,7 @@ Translations for 'en' locale.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts:5](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L5)
+[packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts:5](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L5)
 
 ***
 
@@ -74,4 +74,4 @@ Translations for 'ko' locale.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L6)
+[packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L6)

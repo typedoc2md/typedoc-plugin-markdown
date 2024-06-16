@@ -1,6 +1,6 @@
 # typedoc-plugin-markdown
 
-"typedoc-plugin-markdown" is the core package of this monorepo and is the package that is used to generate the markdown documentation:
+The core package of this monorepo and is the package that is used to generate the markdown documentation.
 
 ## What does the package do?
 

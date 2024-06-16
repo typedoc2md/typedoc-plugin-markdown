@@ -26,7 +26,7 @@ Applied at the start of the markdown output.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L12)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L12)
 
 ***
 
@@ -38,7 +38,7 @@ Applied at the end of the markdown output.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L19)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L19)
 
 ***
 
@@ -50,7 +50,7 @@ Applied before the main markdown content is rendered.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L26)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L26)
 
 ***
 
@@ -62,7 +62,7 @@ Applied at the start of the markdown output on the index page.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L33)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L33)
 
 ***
 
@@ -74,7 +74,7 @@ Applied before the main markdown content is rendered on the index page.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L40)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L40)
 
 ***
 
@@ -86,7 +86,7 @@ Applied at the start of the markdown output on the packages root page.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L47)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L47)
 
 ***
 
@@ -98,7 +98,7 @@ Applied before the main markdown content is rendered on the packages root page.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L54)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L54)
 
 ***
 
@@ -110,4 +110,4 @@ Applied at the end of the markdown output on the index page.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L61)
+[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L61)

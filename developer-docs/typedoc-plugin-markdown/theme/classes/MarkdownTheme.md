@@ -600,7 +600,7 @@ Renders a template and page model to a string.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L43)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L43)
 
 ***
 
@@ -624,7 +624,7 @@ This method can be overridden to provide an alternative theme context.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L60)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L60)
 
 ***
 
@@ -652,7 +652,7 @@ This method can be overriden to provide an alternative url structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L69)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L69)
 
 ***
 
@@ -676,7 +676,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:78](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L78)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:78](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L78)
 
 ***
 
@@ -699,7 +699,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:85](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L85)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:85](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L85)
 
 ***
 
@@ -721,7 +721,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:209](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L209)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:209](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L209)
 
 ***
 
@@ -743,7 +743,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:216](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L216)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:216](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L216)
 
 ***
 
@@ -765,7 +765,7 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:223](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L223)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:223](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L223)
 
 ***
 
@@ -787,4 +787,4 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:230](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/6040ac7ed52761100f65c71074bb38fe47f3aa71/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L230)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:230](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca82c8abd3682b5495f6a7750ba0ce30ff4e4f1e/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L230)
