@@ -22,6 +22,7 @@ export function addTableOfContents(
     ReflectionKind.Class,
     ReflectionKind.Enum,
     ReflectionKind.Interface,
+    ReflectionKind.Document,
   ];
 
   if (outputFileStrategy === 'modules') {
