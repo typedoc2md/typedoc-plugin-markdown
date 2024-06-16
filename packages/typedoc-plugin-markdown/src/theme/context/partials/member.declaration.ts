@@ -33,7 +33,7 @@ export function declaration(
 
   md.push(
     this.helpers
-      .getReflectionFlags(model)
+      .getCommentFlags(model)
       .map((item) => backTicks(item))
       .join(' '),
   );

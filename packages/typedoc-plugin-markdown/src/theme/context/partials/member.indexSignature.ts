@@ -12,7 +12,6 @@ export function indexSignature(
   model: SignatureReflection,
 ): string {
   const md = [''];
-
   const params = model.parameters
     ? model.parameters.map((parameter) => {
         return parameter.type

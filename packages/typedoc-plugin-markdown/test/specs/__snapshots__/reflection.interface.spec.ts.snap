@@ -860,3 +860,43 @@ Comments for InterfaceWithTypeParameters
 | \`prop\` | \`A\` | Comments for prop |
 "
 `;
+
+exports[`Interface Reflection should compile multiple indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Interface: MultipleIndexableInterface
+
+## Indexable
+
+ \\[\`key\`: \`string\`\\]: \`string\`
+
+ \\[\`index\`: \`number\`\\]: \`string\`
+
+## Properties
+
+### prop
+
+> **prop**: \`string\`
+
+Prop
+
+#### Source
+
+[interfaces.ts:1](http://source-url)
+"
+`;
+
+exports[`Interface Reflection should compile multiple indexable interface: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Interface: MultipleIndexableInterface
+
+## Indexable
+
+ \\[\`key\`: \`string\`\\]: \`string\`
+
+ \\[\`index\`: \`number\`\\]: \`string\`
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`prop\` | \`string\` | Prop |
+"
+`;

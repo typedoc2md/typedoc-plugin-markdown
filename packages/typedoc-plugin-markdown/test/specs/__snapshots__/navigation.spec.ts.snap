@@ -4192,6 +4192,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "InterfaceWithTypeParameters",
         "kind": 256,
         "path": "interfaces/InterfaceWithTypeParameters.md"
+      },
+      {
+        "title": "MultipleIndexableInterface",
+        "kind": 256,
+        "path": "interfaces/MultipleIndexableInterface.md"
       }
     ]
   },

@@ -20,10 +20,10 @@ export function declarationTitle(
 
   const prefix: string[] = [];
 
-  if (model.flags.length) {
-    prefix.push(
-      model.flags?.map((flag) => backTicks(flag.toLowerCase())).join(' '),
-    );
+  const flagsString = this.helpers.getReflectionFlags(model.flags);
+
+  if (flagsString.length) {
+    prefix.push(flagsString);
   }
 
   if (model.flags.isRest) {
@@ -36,8 +36,10 @@ export function declarationTitle(
     prefix.push(keyword);
   }
 
-  if (prefix.length) {
-    md.push(prefix.join(' ') + ' ');
+  const prefixes = prefix.filter((prefix) => prefix.length > 0);
+
+  if (prefixes.length) {
+    md.push(prefixes.join(' ') + ' ');
   }
 
   const name: string[] = [];

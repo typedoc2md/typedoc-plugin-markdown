@@ -138,6 +138,7 @@ async function writeResourcesFile() {
     'ReferenceType',
     'Reflection',
     'ReflectionCategory',
+    'ReflectionFlags',
     'ReflectionGroup',
     'ReflectionKind',
     'ReflectionType',

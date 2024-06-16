@@ -107,10 +107,12 @@ export function propertiesTable(
       nameColumn.push(backTicks(propertyName));
     }
 
-    const flags = this.helpers.getReflectionFlags(property);
+    const commentFlags = this.helpers.getCommentFlags(property);
 
-    if (flags?.length) {
-      nameColumn.push(`(${flags.map((flag) => `*${flag}*`).join(', ')})`);
+    if (commentFlags?.length) {
+      nameColumn.push(
+        `(${commentFlags.map((flag) => `*${flag}*`).join(', ')})`,
+      );
     }
 
     row.push(nameColumn.join(' '));

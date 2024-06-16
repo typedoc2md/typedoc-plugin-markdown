@@ -27,12 +27,11 @@ export function signatureTitle(
     md.push(backTicks(options?.accessor) + ' ');
   }
 
-  if (model.parent && model.parent.flags?.length > 0) {
-    md.push(
-      model.parent.flags
-        .map((flag) => backTicks(flag.toLowerCase()))
-        .join(' ') + ' ',
-    );
+  if (model.parent) {
+    const flagsString = this.helpers.getReflectionFlags(model.parent?.flags);
+    if (flagsString.length) {
+      md.push(this.helpers.getReflectionFlags(model.parent.flags) + ' ');
+    }
   }
 
   if (!['__call', '__type'].includes(model.name)) {

@@ -1,3 +1,4 @@
+export * from './get-comment-flags';
 export * from './get-comment-parts';
 export * from './get-declaration-type';
 export * from './get-description-for-reflection';

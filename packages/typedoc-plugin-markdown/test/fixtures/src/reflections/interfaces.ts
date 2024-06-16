@@ -122,6 +122,20 @@ export interface IndexableInterface {
   prop: string;
 }
 
+export interface MultipleIndexableInterface {
+  /**
+   * First index signature
+   */
+  [key: string]: string;
+  /**
+   * Second index signature
+   */
+  [index: number]: string;
+  /**
+   * Prop
+   */
+  prop: string;
+}
 export interface CustomEventInterface<T> {
   detail: string;
   target: T;

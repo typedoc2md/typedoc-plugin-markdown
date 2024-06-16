@@ -15,11 +15,8 @@ export function memberTitle(
   const md: string[] = [];
   const name: string[] = [];
 
-  if (
-    model?.kind === ReflectionKind.Class &&
-    model.flags?.includes('Abstract')
-  ) {
-    name.push(backTicks('abstract') + ' ');
+  if (model?.kind === ReflectionKind.Class && model.flags?.isAbstract) {
+    name.push(this.helpers.getReflectionFlags(model.flags) + ' ');
   }
 
   name.push(

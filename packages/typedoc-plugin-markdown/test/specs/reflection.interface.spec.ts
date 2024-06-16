@@ -29,6 +29,14 @@ describe(`Interface Reflection`, () => {
     );
   });
 
+  test(`should compile multiple indexable interface`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'interfaces/MultipleIndexableInterface.md',
+    );
+  });
+
   test(`should compile interface with event properties`, () => {
     expectFileToEqual(
       'reflections',

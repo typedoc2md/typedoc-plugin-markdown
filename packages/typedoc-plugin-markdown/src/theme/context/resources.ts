@@ -23,6 +23,7 @@ import {
   ReferenceType,
   Reflection,
   ReflectionCategory,
+  ReflectionFlags,
   ReflectionGroup,
   ReflectionKind,
   ReflectionType,
@@ -558,6 +559,9 @@ There is no association list partial for properties as these are handled as a st
 
 export const resourceHelpers = (context: MarkdownThemeContext) => {
   return {
+    getCommentFlags: (
+      reflection: DeclarationReflection | SignatureReflection,
+    ) => helpers.getCommentFlags.apply(context, [reflection]) as string[],
     getCommentParts: (model: CommentDisplayPart[]) =>
       helpers.getCommentParts.apply(context, [model]) as string,
     getDeclarationType: (model: DeclarationReflection) =>
@@ -605,9 +609,8 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       ]) as string,
     getPropertyDefaultValue: (model: DeclarationReflection) =>
       helpers.getPropertyDefaultValue.apply(context, [model]) as string | null,
-    getReflectionFlags: (
-      reflection: DeclarationReflection | SignatureReflection,
-    ) => helpers.getReflectionFlags.apply(context, [reflection]) as string[],
+    getReflectionFlags: (reflectionFlags: ReflectionFlags) =>
+      helpers.getReflectionFlags.apply(context, [reflectionFlags]) as string,
     getReturnType: (model?: SomeType | undefined) =>
       helpers.getReturnType.apply(context, [model]) as string,
     isGroupKind: (model: DeclarationReflection | SignatureReflection) =>

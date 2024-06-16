@@ -1,24 +1,32 @@
-import { camelToTitleCase } from 'libs/utils';
+import { backTicks } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
-import { DeclarationReflection, SignatureReflection } from 'typedoc';
+import { ReflectionFlags } from 'typedoc';
 
 export function getReflectionFlags(
   this: MarkdownThemeContext,
-  reflection: DeclarationReflection | SignatureReflection,
-): string[] {
-  const flagsNotRendered: `@${string}`[] = [
-    '@showCategories',
-    '@showGroups',
-    '@hideCategories',
-    '@hideGroups',
-  ];
-  const flags: string[] = [];
-  if (reflection.comment) {
-    for (const tag of reflection.comment.modifierTags) {
-      if (!flagsNotRendered.includes(tag)) {
-        flags.push(camelToTitleCase(tag.substring(1)));
-      }
-    }
+  reflectionFlags: ReflectionFlags,
+): string {
+  const result: string[] = [];
+  if (reflectionFlags.isAbstract) {
+    result.push(backTicks('abstract'));
   }
-  return flags;
+  if (reflectionFlags.isConst) {
+    result.push(backTicks('const'));
+  }
+  if (reflectionFlags.isPrivate) {
+    result.push(backTicks('private'));
+  }
+  if (reflectionFlags.isProtected) {
+    result.push(backTicks('protected'));
+  }
+  if (reflectionFlags.isReadonly) {
+    result.push(backTicks('readonly'));
+  }
+  if (reflectionFlags.isStatic) {
+    result.push(backTicks('static'));
+  }
+  if (reflectionFlags.isOptional) {
+    result.push(backTicks('optional'));
+  }
+  return result.join(' ');
 }
