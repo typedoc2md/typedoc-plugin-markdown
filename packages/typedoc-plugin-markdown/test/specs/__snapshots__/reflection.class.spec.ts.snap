@@ -418,11 +418,11 @@ new ClassWithComplexProps(): ClassWithComplexProps
 
 ## Properties
 
-| Property | Type | Default value |
+| Property | Type | Description |
 | :------ | :------ | :------ |
-| \`objecLiteralProp\` | \`object\` | \`...\` |
-| \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | \`...\` |
-| \`objecLiteralProp.someProp\` | \`string\` | \`'someProp'\` |
+| \`objecLiteralProp\` | \`object\` | - |
+| \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | Comments for someFunction |
+| \`objecLiteralProp.someProp\` | \`string\` | Comments for someProp |
 "
 `;
 
@@ -578,9 +578,9 @@ Comment for ClassWithFlags
 
 ### expermintalProp
 
-\`Experimental\`
-
 > **expermintalProp**: \`string\`
+
+**\`Experimental\`**
 
 #### Source
 
@@ -590,9 +590,9 @@ Comment for ClassWithFlags
 
 ### internalProp
 
-\`Internal\`
-
 > \`private\` **internalProp**: \`string\`
+
+**\`Internal\`**
 
 #### Source
 
@@ -602,9 +602,9 @@ Comment for ClassWithFlags
 
 ### expermintalMethod()
 
-\`Experimental\`
-
 > **expermintalMethod**(): \`void\`
+
+**\`Experimental\`**
 
 #### Returns
 
@@ -618,9 +618,9 @@ Comment for ClassWithFlags
 
 ### internalMethod()
 
-\`Internal\`
-
 > \`protected\` **internalMethod**(): \`void\`
+
+**\`Internal\`**
 
 #### Returns
 
@@ -651,20 +651,20 @@ new ClassWithFlags(): ClassWithFlags
 
 ## Properties
 
-| Property | Modifier | Type |
-| :------ | :------ | :------ |
-| \`expermintalProp\` (*Experimental*) | \`public\` | \`string\` |
-| \`internalProp\` (*Internal*) | \`private\` | \`string\` |
+| Property | Modifier | Type | Description |
+| :------ | :------ | :------ | :------ |
+| \`expermintalProp\` | \`public\` | \`string\` | **\`Experimental\`** |
+| \`internalProp\` | \`private\` | \`string\` | **\`Internal\`** |
 
 ## Methods
 
 ### expermintalMethod()
 
-\`Experimental\`
-
 \`\`\`ts
 expermintalMethod(): void
 \`\`\`
+
+**\`Experimental\`**
 
 #### Returns
 
@@ -678,11 +678,11 @@ expermintalMethod(): void
 
 ### internalMethod()
 
-\`Internal\`
-
 \`\`\`ts
 protected internalMethod(): void
 \`\`\`
+
+**\`Internal\`**
 
 #### Returns
 

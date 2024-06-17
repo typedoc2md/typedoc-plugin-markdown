@@ -28,11 +28,12 @@ The JSDoc comments will also be used in the public facing documentation.
   * [expandObjects](#expandobjects)
   * [expandParameters](#expandparameters)
   * [indexFormat](#indexformat)
-  * [enumMembersFormat](#enummembersformat)
   * [parametersFormat](#parametersformat)
-  * [propertiesFormat](#propertiesformat)
-  * [propertyMembersFormat](#propertymembersformat)
+  * [interfacePropertiesFormat](#interfacepropertiesformat)
+  * [classPropertiesFormat](#classpropertiesformat)
+  * [enumMembersFormat](#enummembersformat)
   * [typeDeclarationFormat](#typedeclarationformat)
+  * [propertyMembersFormat](#propertymembersformat)
   * [tableColumnSettings](#tablecolumnsettings)
 * [Utility](#utility)
   * [publicPath](#publicpath)
@@ -101,7 +102,7 @@ Generates a single file for every Module or Namespace where all members are hois
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L66)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L66)
 
 ***
 
@@ -139,7 +140,7 @@ Ignored when `--outputFileStrategy` is equal to `"modules"`
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:82](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L82)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:82](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L82)
 
 ***
 
@@ -161,7 +162,7 @@ By default output files are generated in a directory structure that mirrors the 
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:105](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L105)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:105](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L105)
 
 ***
 
@@ -194,7 +195,7 @@ Typically markdown files are recognised by the `.md` or `.markdown` file extensi
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:118](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L118)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:118](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L118)
 
 ***
 
@@ -230,7 +231,7 @@ The content of this file will be resolved in the following order:
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:147](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L147)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:147](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L147)
 
 ***
 
@@ -261,7 +262,7 @@ Please note a separate modules index page will not be generated, therefore would
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:164](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L164)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:164](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L164)
 
 ***
 
@@ -289,7 +290,7 @@ Ignored if `flattenOutputFiles` is set to `true`.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:180](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L180)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:180](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L180)
 
 ***
 
@@ -314,7 +315,7 @@ This option has no effect when [`--readme`](https://typedoc.org/options/input/#r
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:194](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L194)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:194](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L194)
 
 ## Display
 
@@ -336,7 +337,7 @@ Options that are used to configure how the output is structured and displayed.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:203](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L203)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:203](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L203)
 
 ***
 
@@ -356,7 +357,7 @@ Options that are used to configure how the output is structured and displayed.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:212](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L212)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:212](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L212)
 
 ***
 
@@ -376,7 +377,7 @@ Options that are used to configure how the output is structured and displayed.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:221](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L221)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:221](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L221)
 
 ***
 
@@ -400,7 +401,7 @@ This creates a flat structure where all members are displayed at the same headin
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:234](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L234)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:234](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L234)
 
 ***
 
@@ -426,7 +427,7 @@ As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be be use
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:260](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L260)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:260](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L260)
 
 ***
 
@@ -450,7 +451,7 @@ This option should be set when a full object representation is preferred.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:273](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L273)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:273](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L273)
 
 ***
 
@@ -474,7 +475,7 @@ This option should be set when a full type representation is preferred.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:286](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L286)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:286](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L286)
 
 ***
 
@@ -488,7 +489,7 @@ When table style is selected the following will be the behaviour:
 
 * For a **members index**, a description column will be added to the table with the first paragraph of the comment summary.
 * For a **packages index**, (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
-* For a **documents index** a description column will be added to the table printing the `description` frontmatter if present.
+* For a **documents index** a description column will be added to the table printing the `"description"` frontmatter variable.
 
 #### Default Value
 
@@ -503,7 +504,88 @@ When table style is selected the following will be the behaviour:
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:303](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L303)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:303](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L303)
+
+***
+
+### parametersFormat
+
+> `const` **parametersFormat**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+This option specifies the output format for parameters and type parameters of functions and class methods:
+
+* **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
+* **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+* **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
+
+#### Default Value
+
+```ts
+{
+    help: 'Sets the format of parameter and type parameter groups.',
+    type: ParameterType.Map,
+    map: ReflectionFormat,
+    defaultValue: ReflectionFormat.List,
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:319](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L319)
+
+***
+
+### interfacePropertiesFormat
+
+> `const` **interfacePropertiesFormat**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+This option specifies the output format for interface properties:
+
+* **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+* **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+* **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+
+#### Default Value
+
+```ts
+{
+    help: 'Sets the format of property groups for interfaces.',
+    type: ParameterType.Map,
+    map: ReflectionFormat,
+    defaultValue: ReflectionFormat.List,
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:335](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L335)
+
+***
+
+### classPropertiesFormat
+
+> `const` **classPropertiesFormat**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+This option specifies the output format for class properties:
+
+* **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+* **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+* **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+
+#### Default Value
+
+```ts
+{
+    help: 'Sets the format of property groups for classes.',
+    type: ParameterType.Map,
+    map: ReflectionFormat,
+    defaultValue: ReflectionFormat.List,
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:351](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L351)
 
 ***
 
@@ -530,90 +612,7 @@ This option specifies the output format for enumeration members:
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:319](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L319)
-
-***
-
-### parametersFormat
-
-> `const` **parametersFormat**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
-
-This option specifies the output format for parameters and type parameters of functions and class methods:
-
-* **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
-* **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
-* **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in tabular format
-
-#### Default Value
-
-```ts
-{
-    help: 'Sets the format of parameter and type parameter groups.',
-    type: ParameterType.Map,
-    map: ReflectionFormat,
-    defaultValue: ReflectionFormat.List,
-}
-```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:335](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L335)
-
-***
-
-### propertiesFormat
-
-> `const` **propertiesFormat**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
-
-This option specifies the output format for class and interface properties:
-
-* **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
-* **"table"**: properties are output within a markdown table, condensed into a single paragraph.
-* **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
-
-#### Default Value
-
-```ts
-{
-    help: 'Sets the format of property groups for interfaces and classes.',
-    type: ParameterType.Map,
-    map: ReflectionFormat,
-    defaultValue: ReflectionFormat.List,
-}
-```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:351](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L351)
-
-***
-
-### propertyMembersFormat
-
-> `const` **propertyMembersFormat**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
-
-This option will handle the formatting of object literals assigned as properties in classes or interfaces.
-
-Note this options will only take effect when `propertiesFormat` is set to `list`.
-
-* **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
-* **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
-* **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
-
-#### Default Value
-
-```ts
-{
-    help: 'Sets the format of style for property members for interfaces and classes.',
-    type: ParameterType.Map,
-    map: ReflectionFormat,
-    defaultValue: ReflectionFormat.List,
-}
-```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:369](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L369)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:367](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L367)
 
 ***
 
@@ -640,7 +639,36 @@ This option specifies the output format for type declaration of variables and ty
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:385](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L385)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:383](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L383)
+
+***
+
+### propertyMembersFormat
+
+> `const` **propertyMembersFormat**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+This option will handle the formatting of object literals assigned as properties in classes or interfaces.
+
+Note this options will only take effect when `propertiesFormat` is set to `list`.
+
+* **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
+* **"table"**: members are output within a markdown table, condensed into a single paragraph.
+* **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
+
+#### Default Value
+
+```ts
+{
+    help: 'Sets the format of style for property members for interfaces and classes.',
+    type: ParameterType.Map,
+    map: ReflectionFormat,
+    defaultValue: ReflectionFormat.List,
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:401](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L401)
 
 ***
 
@@ -662,6 +690,7 @@ In addition you can control the alignment of the header text.
     type: ParameterType.Flags,
     defaults: {
         hideDefaults: false,
+        hideFlags: false,
         hideInherited: false,
         hideModifiers: false,
         hideOverrides: false,
@@ -674,7 +703,7 @@ In addition you can control the alignment of the header text.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:401](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L401)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:431](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L431)
 
 ## Utility
 
@@ -704,7 +733,7 @@ If undefined all urls will be relative.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:422](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L422)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:453](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L453)
 
 ***
 
@@ -736,7 +765,7 @@ This option would typically be used when source code comes from an external libr
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:443](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L443)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:474](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L474)
 
 ***
 
@@ -764,7 +793,7 @@ This option should be used when parsers require a custom anchor prefix.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:456](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L456)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:487](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L487)
 
 ***
 
@@ -789,7 +818,7 @@ This option should be used if there are issues with anchoring to symbols within 
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:470](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L470)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:501](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L501)
 
 ***
 
@@ -813,7 +842,7 @@ This option can be used for engines that require the preservation of anchor link
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:483](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L483)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:514](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L514)
 
 ***
 
@@ -863,7 +892,7 @@ export function load(app: MarkdownApplication) {
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:519](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L519)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:550](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L550)
 
 ***
 
@@ -904,4 +933,4 @@ If you are looking for general localization support please see [localization]().
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:543](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/declarations.ts#L543)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:574](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/options/declarations.ts#L574)

@@ -85,8 +85,10 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
       model: ReflectionCategory[],
       options: { headingLevel: number },
     ) => partials.categories.apply(context, [model, options]) as string,
-    groups: (model: ReflectionGroup[], options: { headingLevel: number }) =>
-      partials.groups.apply(context, [model, options]) as string,
+    groups: (
+      model: ReflectionGroup[],
+      options: { headingLevel: number; kind: ReflectionKind },
+    ) => partials.groups.apply(context, [model, options]) as string,
     members: (
       model: DeclarationReflection[],
       options: { headingLevel: number },
@@ -266,9 +268,6 @@ There is no association list partial for properties as these are handled as a st
 
 export const resourceHelpers = (context: MarkdownThemeContext) => {
   return {
-    getCommentFlags: (
-      reflection: DeclarationReflection | SignatureReflection,
-    ) => helpers.getCommentFlags.apply(context, [reflection]) as string[],
     getCommentParts: (model: CommentDisplayPart[]) =>
       helpers.getCommentParts.apply(context, [model]) as string,
     getDeclarationType: (model: DeclarationReflection) =>
@@ -329,6 +328,8 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
         | 'enums'
         | 'typeDeclarations'
         | 'propertyMembers',
-    ) => helpers.useTableFormat.apply(context, [key]) as boolean,
+      reflectionKind?: ReflectionKind | undefined,
+    ) =>
+      helpers.useTableFormat.apply(context, [key, reflectionKind]) as boolean,
   };
 };

@@ -17,14 +17,16 @@ An event emitted by before and after the markup of a page is rendered.
   * [frontmatter?](#frontmatter)
 * [Accessors](#accessors)
   * [name](#name)
+    * [Inherited from](#inherited-from)
   * [isPropagationStopped](#ispropagationstopped)
+    * [Inherited from](#inherited-from-1)
 * [Methods](#methods)
   * [stopPropagation()](#stoppropagation)
-    * [Inherited from](#inherited-from)
-  * [preventDefault()](#preventdefault)
-    * [Inherited from](#inherited-from-1)
-  * [isDefaultPrevented()](#isdefaultprevented)
     * [Inherited from](#inherited-from-2)
+  * [preventDefault()](#preventdefault)
+    * [Inherited from](#inherited-from-3)
+  * [isDefaultPrevented()](#isdefaultprevented)
+    * [Inherited from](#inherited-from-4)
 * [Events](#events)
   * [BEGIN](#begin)
   * [END](#end)
@@ -59,7 +61,7 @@ The [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflecti
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L22)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L22)
 
 ***
 
@@ -72,7 +74,7 @@ Either a [`DeclarationReflection`](https://typedoc.org/api/classes/Models.Declar
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L28)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L28)
 
 ***
 
@@ -86,7 +88,7 @@ Should be rendered by layout templates and can be modified by plugins.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:35](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L35)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:35](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L35)
 
 ***
 
@@ -98,7 +100,7 @@ The url `string` of the page.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L40)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L40)
 
 ***
 
@@ -110,7 +112,7 @@ The complete `string` filename where the file will be written..
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:45](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L45)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:45](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L45)
 
 ***
 
@@ -122,7 +124,7 @@ The frontmatter of this page represented as a key value object. This property ca
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L50)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L50)
 
 ## Accessors
 
@@ -135,6 +137,10 @@ Return the event name.
 #### Returns
 
 `string`
+
+#### Inherited from
+
+`Event.name`
 
 #### Defined in
 
@@ -151,6 +157,10 @@ Has [Event.stopPropagation](MarkdownPageEvent.md#stoppropagation) been called?
 #### Returns
 
 `boolean`
+
+#### Inherited from
+
+`Event.isPropagationStopped`
 
 #### Defined in
 
@@ -226,7 +236,7 @@ Triggered before a document will be rendered.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:62](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L62)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:62](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L62)
 
 ***
 
@@ -238,4 +248,4 @@ Triggered after a document has been rendered, just before it is written to disc.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:68](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L68)
+[packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts:68](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/app/events/markdown-page-event.ts#L68)

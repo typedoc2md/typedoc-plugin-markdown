@@ -8,5 +8,7 @@ export function getPropertyDefaultValue(model: DeclarationReflection) {
   if (defaultValueTag) {
     return defaultValueTag?.content.map((content) => content.text).join('');
   }
-  return model.defaultValue ? backTicks(model.defaultValue) : null;
+  return model.defaultValue && model.defaultValue !== '...'
+    ? backTicks(model.defaultValue)
+    : null;
 }

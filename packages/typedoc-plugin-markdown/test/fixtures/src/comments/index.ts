@@ -151,7 +151,11 @@ export class BaseClassProperties {
 }
 
 export class ClassPropertiesTable extends BaseClassProperties {
-  /** @experimental */
+  /**
+   * Experimental flag comments
+   *
+   * @experimental
+   */
   propWithFlag: string;
 
   propA = 'propAValue';

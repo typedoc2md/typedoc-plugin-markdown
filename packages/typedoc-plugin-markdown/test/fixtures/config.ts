@@ -23,7 +23,8 @@ const config: Record<string, Fixture> = {
       {
         readme: 'none',
         parametersFormat: 'table',
-        propertiesFormat: 'table',
+        classPropertiesFormat: 'table',
+        interfacePropertiesFormat: 'table',
         typeDeclarationFormat: 'table',
         enumMembersFormat: 'table',
         propertyMembersFormat: 'table',
@@ -140,6 +141,7 @@ const config: Record<string, Fixture> = {
         enumMembersFormat: 'table',
         parametersFormat: 'table',
         propertiesFormat: 'list',
+        classPropertiesFormat: 'table',
         propertyMembersFormat: 'table',
         typeDeclarationFormat: 'table',
       },
@@ -256,7 +258,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   customize: {
-    only: false,
+    only: true,
     entryPoints: '/customize/index.ts',
     outputFileStrategies: ['members'],
     commonOptions: {

@@ -11,6 +11,16 @@
           "type": "string",
           "description": "[typedoc-plugin-markdown] Custom anchor prefix when anchoring to in-page symbols."
         },
+        "classPropertiesFormat": {
+          "type": "string",
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
+          "description": "[typedoc-plugin-markdown] Sets the format of property groups for classes.",
+          "default": "list"
+        },
         "entryFileName": {
           "type": "string",
           "description": "[typedoc-plugin-markdown] The file name of the entry page.",
@@ -24,14 +34,16 @@
           "type": "string",
           "enum": [
             "list",
-            "table"
+            "table",
+            "htmlTable"
           ],
-          "description": "[typedoc-plugin-markdown] Specify the render style of enumeration members.",
+          "description": "[typedoc-plugin-markdown] Sets the format of enumeration members.",
           "default": "list"
         },
         "excludeGroups": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Excludes grouping by kind so all members are rendered and sorted at the same level."
+          "deprecated": "This option has been renamed hideGroupHeadings to better reflect its purpose.",
+          "description": "[typedoc-plugin-markdown] undefined"
         },
         "excludeScopesInPaths": {
           "type": "boolean",
@@ -58,6 +70,10 @@
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Do not print breadcrumbs."
         },
+        "hideGroupHeadings": {
+          "type": "boolean",
+          "description": "[typedoc-plugin-markdown] Excludes grouping by kind so all members are rendered and sorted at the same level."
+        },
         "hidePageHeader": {
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Do not print page header."
@@ -72,7 +88,17 @@
             "list",
             "table"
           ],
-          "description": "[typedoc-plugin-markdown] Specify the render format for index items.",
+          "description": "[typedoc-plugin-markdown] Sets the format of index items.",
+          "default": "list"
+        },
+        "interfacePropertiesFormat": {
+          "type": "string",
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
+          "description": "[typedoc-plugin-markdown] Sets the format of property groups for interfaces.",
           "default": "list"
         },
         "membersWithOwnFile": {
@@ -135,9 +161,10 @@
           "type": "string",
           "enum": [
             "list",
-            "table"
+            "table",
+            "htmlTable"
           ],
-          "description": "[typedoc-plugin-markdown] Specify the render style of parameter and type parameter groups.",
+          "description": "[typedoc-plugin-markdown] Sets the format of parameter and type parameter groups.",
           "default": "list"
         },
         "preserveAnchorCasing": {
@@ -148,9 +175,20 @@
           "type": "string",
           "enum": [
             "list",
-            "table"
+            "table",
+            "htmlTable"
           ],
-          "description": "[typedoc-plugin-markdown] Specify the render style of property groups for interfaces and classes.",
+          "description": "[typedoc-plugin-markdown] Sets the format of property groups for interfaces and classes.",
+          "default": "list"
+        },
+        "propertyMembersFormat": {
+          "type": "string",
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
+          "description": "[typedoc-plugin-markdown] Sets the format of style for property members for interfaces and classes.",
           "default": "list"
         },
         "publicPath": {
@@ -160,6 +198,42 @@
         "sanitizeComments": {
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Sanitize HTML and JSX inside JsDoc comments."
+        },
+        "tableColumnSettings": {
+          "type": "object",
+          "properties": {
+            "hideDefaults": {
+              "type": "boolean"
+            },
+            "hideInherited": {
+              "type": "boolean"
+            },
+            "hideModifiers": {
+              "type": "boolean"
+            },
+            "hideOverrides": {
+              "type": "boolean"
+            },
+            "hideSources": {
+              "type": "boolean"
+            },
+            "hideValues": {
+              "type": "boolean"
+            },
+            "leftAlignHeaders": {
+              "type": "boolean"
+            }
+          },
+          "description": "[typedoc-plugin-markdown] Control how table columns are configured and displayed.",
+          "default": {
+            "hideDefaults": false,
+            "hideInherited": false,
+            "hideModifiers": false,
+            "hideOverrides": false,
+            "hideSources": false,
+            "hideValues": false,
+            "leftAlignHeaders": false
+          }
         },
         "textContentMappings": {
           "type": "object",
@@ -173,273 +247,34 @@
             "breadcrumbs.home": {
               "type": "string"
             },
-            "footer.text": {
-              "type": "string"
-            },
             "title.indexPage": {
-              "type": "string"
-            },
-            "title.modulePage": {
               "type": "string"
             },
             "title.memberPage": {
               "type": "string"
             },
-            "label.apiIndex": {
-              "type": "string"
-            },
-            "label.defaultValue": {
-              "type": "string"
-            },
-            "label.description": {
-              "type": "string"
-            },
-            "label.extendedBy": {
-              "type": "string"
-            },
-            "label.extends": {
-              "type": "string"
-            },
-            "label.flags": {
-              "type": "string"
-            },
-            "label.globals": {
-              "type": "string"
-            },
-            "label.implements": {
-              "type": "string"
-            },
-            "label.implementationOf": {
-              "type": "string"
-            },
-            "label.inheritedFrom": {
-              "type": "string"
-            },
-            "label.index": {
-              "type": "string"
-            },
-            "label.indexable": {
-              "type": "string"
-            },
-            "label.indexSignature": {
-              "type": "string"
-            },
-            "label.member": {
-              "type": "string"
-            },
-            "label.modifier": {
-              "type": "string"
-            },
-            "label.name": {
-              "type": "string"
-            },
-            "label.overrides": {
-              "type": "string"
-            },
-            "label.packages": {
-              "type": "string"
-            },
-            "label.reExports": {
-              "type": "string"
-            },
-            "label.renamesAndReExports": {
-              "type": "string"
-            },
-            "label.returns": {
-              "type": "string"
-            },
-            "label.source": {
-              "type": "string"
-            },
-            "label.type": {
-              "type": "string"
-            },
-            "label.typeDeclaration": {
-              "type": "string"
-            },
-            "label.value": {
-              "type": "string"
-            },
-            "kind.accessor.singular": {
-              "type": "string"
-            },
-            "kind.accessor.plural": {
-              "type": "string"
-            },
-            "kind.class.singular": {
-              "type": "string"
-            },
-            "kind.class.plural": {
-              "type": "string"
-            },
-            "kind.constructor.singular": {
-              "type": "string"
-            },
-            "kind.constructor.plural": {
-              "type": "string"
-            },
-            "kind.enum.singular": {
-              "type": "string"
-            },
-            "kind.enum.plural": {
-              "type": "string"
-            },
-            "kind.enumMember.singular": {
-              "type": "string"
-            },
-            "kind.enumMember.plural": {
-              "type": "string"
-            },
-            "kind.event.singular": {
-              "type": "string"
-            },
-            "kind.event.plural": {
-              "type": "string"
-            },
-            "kind.function.singular": {
-              "type": "string"
-            },
-            "kind.function.plural": {
-              "type": "string"
-            },
-            "kind.interface.singular": {
-              "type": "string"
-            },
-            "kind.interface.plural": {
-              "type": "string"
-            },
-            "kind.method.singular": {
-              "type": "string"
-            },
-            "kind.method.plural": {
-              "type": "string"
-            },
-            "kind.module.singular": {
-              "type": "string"
-            },
-            "kind.module.plural": {
-              "type": "string"
-            },
-            "kind.namespace.singular": {
-              "type": "string"
-            },
-            "kind.namespace.plural": {
-              "type": "string"
-            },
-            "kind.variable.singular": {
-              "type": "string"
-            },
-            "kind.variable.plural": {
-              "type": "string"
-            },
-            "kind.parameter.singular": {
-              "type": "string"
-            },
-            "kind.parameter.plural": {
-              "type": "string"
-            },
-            "kind.property.singular": {
-              "type": "string"
-            },
-            "kind.property.plural": {
-              "type": "string"
-            },
-            "kind.reference.singular": {
-              "type": "string"
-            },
-            "kind.reference.plural": {
-              "type": "string"
-            },
-            "kind.typeAlias.singular": {
-              "type": "string"
-            },
-            "kind.typeAlias.plural": {
-              "type": "string"
-            },
-            "kind.typeParameter.singular": {
-              "type": "string"
-            },
-            "kind.typeParameter.plural": {
+            "footer.text": {
               "type": "string"
             }
           },
-          "description": "[typedoc-plugin-markdown] Provides a mechanism to change the content of text used in documentation.",
+          "description": "[typedoc-plugin-markdown] Change specific text placeholders in the template.",
           "default": {
             "header.title": "{projectName} {version}",
             "header.docs": "Docs",
             "breadcrumbs.home": "{projectName} {version}",
-            "footer.text": "",
             "title.indexPage": "{projectName} {version}",
-            "title.modulePage": "{name}",
             "title.memberPage": "{kind}: {name}",
-            "label.apiIndex": "API Index",
-            "label.defaultValue": "Default value",
-            "label.description": "Description",
-            "label.extendedBy": "Extended by",
-            "label.extends": "Extends",
-            "label.flags": "Flags",
-            "label.globals": "Globals",
-            "label.implements": "Implements",
-            "label.implementationOf": "Implementation of",
-            "label.inheritedFrom": "Inherited from",
-            "label.index": "Index",
-            "label.indexable": "Indexable",
-            "label.indexSignature": "Index signature",
-            "label.member": "Member",
-            "label.modifier": "Modifier",
-            "label.name": "Name",
-            "label.overrides": "Overrides",
-            "label.packages": "Packages",
-            "label.reExports": "Re-exports",
-            "label.renamesAndReExports": "Renames and re-exports",
-            "label.returns": "Returns",
-            "label.source": "Source",
-            "label.type": "Type",
-            "label.typeDeclaration": "Type declaration",
-            "label.value": "Value",
-            "kind.accessor.singular": "Accessor",
-            "kind.accessor.plural": "Accessors",
-            "kind.class.singular": "Class",
-            "kind.class.plural": "Classes",
-            "kind.constructor.singular": "Constructor",
-            "kind.constructor.plural": "Constructors",
-            "kind.enum.singular": "Enumeration",
-            "kind.enum.plural": "Enumerations",
-            "kind.enumMember.singular": "Enumeration Member",
-            "kind.enumMember.plural": "Enumeration Members",
-            "kind.event.singular": "Event",
-            "kind.event.plural": "Events",
-            "kind.function.singular": "Function",
-            "kind.function.plural": "Functions",
-            "kind.interface.singular": "Interface",
-            "kind.interface.plural": "Interfaces",
-            "kind.method.singular": "Method",
-            "kind.method.plural": "Methods",
-            "kind.module.singular": "Module",
-            "kind.module.plural": "Modules",
-            "kind.namespace.singular": "Namespace",
-            "kind.namespace.plural": "Namespaces",
-            "kind.variable.singular": "Variable",
-            "kind.variable.plural": "Variables",
-            "kind.parameter.singular": "Parameter",
-            "kind.parameter.plural": "Parameters",
-            "kind.property.singular": "Property",
-            "kind.property.plural": "Properties",
-            "kind.reference.singular": "Reference",
-            "kind.reference.plural": "References",
-            "kind.typeAlias.singular": "Type alias",
-            "kind.typeAlias.plural": "Type Aliases",
-            "kind.typeParameter.singular": "Type parameter",
-            "kind.typeParameter.plural": "Type parameters"
+            "footer.text": ""
           }
         },
         "typeDeclarationFormat": {
           "type": "string",
           "enum": [
             "list",
-            "table"
+            "table",
+            "htmlTable"
           ],
-          "description": "[typedoc-plugin-markdown] Specify the render style for type declaration members.",
+          "description": "[typedoc-plugin-markdown] Sets the format of style for type declaration members.",
           "default": "list"
         },
         "useCodeBlocks": {

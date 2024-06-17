@@ -16,6 +16,11 @@ export interface PluginOptions {
   anchorPrefix: string;
 
   /**
+   * Sets the format of property groups for classes.
+   */
+  classPropertiesFormat: 'list' | 'table' | 'htmlTable';
+
+  /**
    * The file name of the entry page.
    */
   entryFileName: string;
@@ -84,6 +89,11 @@ export interface PluginOptions {
    * Sets the format of index items.
    */
   indexFormat: 'list' | 'table';
+
+  /**
+   * Sets the format of property groups for interfaces.
+   */
+  interfacePropertiesFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Determines which members are exported to their own file when `outputFileStrategy` equals `members`.

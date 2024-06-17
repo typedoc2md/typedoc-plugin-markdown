@@ -296,7 +296,7 @@ export const expandParameters: Partial<DeclarationOption> = {
  *
  * - For a **members index**, a description column will be added to the table with the first paragraph of the comment summary.
  * - For a **packages index**, (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
- * - For a **documents index** a description column will be added to the table printing the `description` frontmatter if present.
+ * - For a **documents index** a description column will be added to the table printing the `"description"` frontmatter variable.
  *
  * @category Display
  */
@@ -305,6 +305,54 @@ export const indexFormat: Partial<DeclarationOption> = {
   type: ParameterType.Map,
   map: IndexFormat,
   defaultValue: IndexFormat.List,
+};
+
+/**
+ * This option specifies the output format for parameters and type parameters of functions and class methods:
+ *
+ * - **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
+ * - **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
+ *
+ * @category Display
+ */
+export const parametersFormat: Partial<DeclarationOption> = {
+  help: 'Sets the format of parameter and type parameter groups.',
+  type: ParameterType.Map,
+  map: ReflectionFormat,
+  defaultValue: ReflectionFormat.List,
+};
+
+/**
+ * This option specifies the output format for interface properties:
+ *
+ * - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+ *
+ * @category Display
+ */
+export const interfacePropertiesFormat: Partial<DeclarationOption> = {
+  help: 'Sets the format of property groups for interfaces.',
+  type: ParameterType.Map,
+  map: ReflectionFormat,
+  defaultValue: ReflectionFormat.List,
+};
+
+/**
+ * This option specifies the output format for class properties:
+ *
+ * - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+ *
+ * @category Display
+ */
+export const classPropertiesFormat: Partial<DeclarationOption> = {
+  help: 'Sets the format of property groups for classes.',
+  type: ParameterType.Map,
+  map: ReflectionFormat,
+  defaultValue: ReflectionFormat.List,
 };
 
 /**
@@ -324,32 +372,16 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * This option specifies the output format for parameters and type parameters of functions and class methods:
+ * This option specifies the output format for type declaration of variables and type aliases.
  *
- * - **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
- * - **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
- * - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in tabular format
- *
- * @category Display
- */
-export const parametersFormat: Partial<DeclarationOption> = {
-  help: 'Sets the format of parameter and type parameter groups.',
-  type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
-};
-
-/**
- * This option specifies the output format for class and interface properties:
- *
- * - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: properties are output within a markdown table, condensed into a single paragraph.
- * - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+ * - **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
  *
  * @category Display
  */
-export const propertiesFormat: Partial<DeclarationOption> = {
-  help: 'Sets the format of property groups for interfaces and classes.',
+export const typeDeclarationFormat: Partial<DeclarationOption> = {
+  help: 'Sets the format of style for type declaration members.',
   type: ParameterType.Map,
   map: ReflectionFormat,
   defaultValue: ReflectionFormat.List,
@@ -360,9 +392,9 @@ export const propertiesFormat: Partial<DeclarationOption> = {
  *
  * Note this options will only take effect when `propertiesFormat` is set to `list`.
  *
- * - **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
- * - **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
+ * - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: members are output within a markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
  *
  * @category Display
  */
@@ -374,16 +406,14 @@ export const propertyMembersFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * This option specifies the output format for type declaration of variables and type aliases.
+ * @hidden
  *
- * - **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
- * - **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
+ * @deprecated This option has been deprecated in favour of `--interfacePropertiesFormat` and `--classPropertiesFormat`.
  *
  * @category Display
  */
-export const typeDeclarationFormat: Partial<DeclarationOption> = {
-  help: 'Sets the format of style for type declaration members.',
+export const propertiesFormat: Partial<DeclarationOption> = {
+  help: 'Sets the format of property groups for interfaces and classes.',
   type: ParameterType.Map,
   map: ReflectionFormat,
   defaultValue: ReflectionFormat.List,

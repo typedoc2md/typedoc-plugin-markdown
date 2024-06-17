@@ -16,7 +16,11 @@ This release contains required internal api fixes and theme updates to support T
 - Exposed a new key `"htmlTable"` to formatting options enabling block elements to render as intended inside table cells.
   Affects all existing formatting options. Fixes
   [(#618)](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618).
-- Added new option <OptionLink type="display" name="propertyMembersFormat" /> to control formatting of object literal property members for classes and interfaces.
+- Added new formatting options
+  <OptionLink type="display" name="classPropertiesFormat" />,
+  <OptionLink type="display" name="interfacePropertiesFormat" /> and
+  <OptionLink type="display" name="propertyMembersFormat" /> to further control
+  formatting of different declaration structures.
 - Supports the ability to control what table columns are rendered with the <OptionLink type="display" name="tableColumnSettings" /> option.
 
 ## Non-Breaking Changes

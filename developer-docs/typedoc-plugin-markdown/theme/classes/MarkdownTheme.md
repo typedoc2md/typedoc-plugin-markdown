@@ -20,13 +20,16 @@ The API follows the implementation of [TypeDoc's custom theming](https://github.
     * [Inherited from](#inherited-from-1)
 * [Accessors](#accessors)
   * [application](#application)
+    * [Inherited from](#inherited-from-2)
   * [owner](#owner)
+    * [Inherited from](#inherited-from-3)
   * [\_listenId](#_listenid)
+    * [Inherited from](#inherited-from-4)
 * [Methods](#methods)
   * [initialize()](#initialize)
-    * [Inherited from](#inherited-from-2)
+    * [Inherited from](#inherited-from-5)
   * [bubble()](#bubble)
-    * [Inherited from](#inherited-from-3)
+    * [Inherited from](#inherited-from-6)
   * [on()](#on)
     * [on(eventMap, context)](#oneventmap-context)
     * [on(eventMap, callback, context, priority)](#oneventmap-callback-context-priority)
@@ -39,14 +42,14 @@ The API follows the implementation of [TypeDoc's custom theming](https://github.
     * [off(eventMap, context)](#offeventmap-context)
     * [off(name, callback, context)](#offname-callback-context)
   * [listenTo()](#listento)
-    * [Inherited from](#inherited-from-12)
+    * [Inherited from](#inherited-from-15)
   * [listenToOnce()](#listentoonce)
     * [listenToOnce(obj, eventMap)](#listentoonceobj-eventmap)
     * [listenToOnce(obj, name, callback, priority)](#listentoonceobj-name-callback-priority)
   * [stopListening()](#stoplistening)
-    * [Inherited from](#inherited-from-15)
+    * [Inherited from](#inherited-from-18)
   * [trigger()](#trigger)
-    * [Inherited from](#inherited-from-16)
+    * [Inherited from](#inherited-from-19)
   * [render()](#render)
     * [Overrides](#overrides)
   * [getRenderContext()](#getrendercontext)
@@ -129,6 +132,10 @@ Return the application / root component instance.
 
 [`Application`](https://typedoc.org/api/classes/Application.html)
 
+#### Inherited from
+
+`Theme.application`
+
 #### Defined in
 
 node\_modules/typedoc/dist/lib/utils/component.d.ts:61
@@ -145,6 +152,10 @@ Return the owner of this component.
 
 `O`
 
+#### Inherited from
+
+`Theme.owner`
+
 #### Defined in
 
 node\_modules/typedoc/dist/lib/utils/component.d.ts:65
@@ -160,6 +171,10 @@ A unique id that identifies this instance.
 #### Returns
 
 `any`
+
+#### Inherited from
+
+`Theme._listenId`
 
 #### Defined in
 
@@ -567,9 +582,9 @@ node\_modules/typedoc/dist/lib/utils/events.d.ts:122
 
 ### render()
 
-`Internal`
-
 > **render**(`page`, `template`): `string`
+
+`Internal`
 
 Renders a template and page model to a string.
 
@@ -590,7 +605,7 @@ Renders a template and page model to a string.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L43)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L43)
 
 ***
 
@@ -614,7 +629,7 @@ This method can be overridden to provide an alternative theme context.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L60)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L60)
 
 ***
 
@@ -642,7 +657,7 @@ This method can be overriden to provide an alternative url structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L69)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L69)
 
 ***
 
@@ -666,15 +681,15 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:78](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L78)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:78](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L78)
 
 ***
 
 ### getTemplateMapping()
 
-`Internal`
-
 > **getTemplateMapping**(`kind`, `outputFileStrategy`?): `any`
+
+`Internal`
 
 #### Parameters
 
@@ -689,15 +704,15 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:85](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L85)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:85](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L85)
 
 ***
 
 ### documentTemplate()
 
-`Internal`
-
 > **documentTemplate**(`page`): `string`
+
+`Internal`
 
 #### Parameters
 
@@ -711,15 +726,15 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:209](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L209)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:209](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L209)
 
 ***
 
 ### readmeTemplate()
 
-`Internal`
-
 > **readmeTemplate**(`page`): `string`
+
+`Internal`
 
 #### Parameters
 
@@ -733,15 +748,15 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:216](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L216)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:216](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L216)
 
 ***
 
 ### projectTemplate()
 
-`Internal`
-
 > **projectTemplate**(`page`): `string`
+
+`Internal`
 
 #### Parameters
 
@@ -755,15 +770,15 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:223](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L223)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:223](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L223)
 
 ***
 
 ### reflectionTemplate()
 
-`Internal`
-
 > **reflectionTemplate**(`page`): `string`
+
+`Internal`
 
 #### Parameters
 
@@ -777,4 +792,4 @@ This method can be overriden to provide an alternative navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:230](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L230)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:230](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L230)

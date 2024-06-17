@@ -1,4 +1,4 @@
-import { backTicks, heading } from 'libs/markdown';
+import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { ReflectionKind, SignatureReflection } from 'typedoc';
 
@@ -13,13 +13,6 @@ export function signature(
   },
 ): string {
   const md: string[] = [];
-
-  md.push(
-    this.helpers
-      .getCommentFlags(model)
-      .map((item) => backTicks(item))
-      .join(' '),
-  );
 
   if (!options.nested) {
     md.push(

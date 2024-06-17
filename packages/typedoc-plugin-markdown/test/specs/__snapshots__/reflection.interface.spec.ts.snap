@@ -783,9 +783,9 @@ Comments for InterfaceWithFlags
 
 ### expermintalProp?
 
-\`Experimental\`
-
 > \`optional\` **expermintalProp**: \`string\`
+
+**\`Experimental\`**
 
 #### Source
 
@@ -795,9 +795,11 @@ Comments for InterfaceWithFlags
 
 ### internalProp
 
-\`Internal\`
-
 > **internalProp**: \`string\`
+
+**\`Internal\`**
+
+Comments for internalProp
 
 #### Source
 
@@ -812,10 +814,10 @@ Comments for InterfaceWithFlags
 
 ## Properties
 
-| Property | Type |
-| :------ | :------ |
-| \`expermintalProp?\` (*Experimental*) | \`string\` |
-| \`internalProp\` (*Internal*) | \`string\` |
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| \`expermintalProp?\` | \`string\` | **\`Experimental\`** |
+| \`internalProp\` | \`string\` | **\`Internal\`** Comments for internalProp |
 "
 `;
 

@@ -60,6 +60,10 @@ export function accessor(
     );
   }
 
+  md.push(
+    this.partials.inheritance(model, { headingLevel: options.headingLevel }),
+  );
+
   const showSources = model?.parent?.kind !== ReflectionKind.TypeLiteral;
 
   if (showSources && !this.options.getValue('disableSources')) {
@@ -74,6 +78,10 @@ export function accessor(
         this.partials.sources(model.setSignature, {
           headingLevel: options.headingLevel,
         }),
+      );
+    } else {
+      md.push(
+        this.partials.sources(model, { headingLevel: options.headingLevel }),
       );
     }
   }

@@ -6,72 +6,11 @@ Describes the options declared by the plugin.
 
 ## Properties
 
-### frontmatterCommentTags
-
-> **frontmatterCommentTags**: `any`\[]
-
-Specify which comment block tags should be added to frontmatter.
-
-#### Defined in
-
-[options/types.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/options/types.ts#L16)
-
-***
-
-### frontmatterGlobals
-
-> **frontmatterGlobals**: [`FrontmatterGlobals`](FrontmatterGlobals.md)
-
-Specify static variables to be added to all frontmatter blocks.
-
-#### Defined in
-
-[options/types.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/options/types.ts#L21)
-
-***
-
-### frontmatterNamingConvention
-
-> **frontmatterNamingConvention**: `"camelCase"` | `"snakeCase"`
-
-The naming convention that variables should be output as.
-
-#### Defined in
-
-[options/types.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/options/types.ts#L26)
-
-***
-
-### indexFrontmatter
-
-> **indexFrontmatter**: [`IndexFrontmatter`](IndexFrontmatter.md)
-
-Specify static variables to be added to the index page only.
-
-#### Defined in
-
-[options/types.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/options/types.ts#L31)
-
-***
-
-### preserveFrontmatterCommentTags
-
-> **preserveFrontmatterCommentTags**: `boolean`
-
-Preserve tags defined in frontmatter block tags in output.
-
-#### Defined in
-
-[options/types.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/options/types.ts#L36)
-
-***
-
-### readmeFrontmatter
-
-> **readmeFrontmatter**: [`ReadmeFrontmatter`](ReadmeFrontmatter.md)
-
-Specify static variables to be added to the readme page only.
-
-#### Defined in
-
-[options/types.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-frontmatter/src/options/types.ts#L41)
+| Property                         | Type                                          | Description                                                      |
+| -------------------------------- | --------------------------------------------- | ---------------------------------------------------------------- |
+| `frontmatterCommentTags`         | `any`\[]                                      | Specify which comment block tags should be added to frontmatter. |
+| `frontmatterGlobals`             | [`FrontmatterGlobals`](FrontmatterGlobals.md) | Specify static variables to be added to all frontmatter blocks.  |
+| `frontmatterNamingConvention`    | `"camelCase"` \| `"snakeCase"`                | The naming convention that variables should be output as.        |
+| `indexFrontmatter`               | [`IndexFrontmatter`](IndexFrontmatter.md)     | Specify static variables to be added to the index page only.     |
+| `preserveFrontmatterCommentTags` | `boolean`                                     | Preserve tags defined in frontmatter block tags in output.       |
+| `readmeFrontmatter`              | [`ReadmeFrontmatter`](ReadmeFrontmatter.md)   | Specify static variables to be added to the readme page only.    |

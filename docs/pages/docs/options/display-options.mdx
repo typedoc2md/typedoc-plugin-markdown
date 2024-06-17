@@ -123,11 +123,67 @@ When table style is selected the following will be the behaviour:
 
 - For a **members index**, a description column will be added to the table with the first paragraph of the comment summary.
 - For a **packages index**, (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
-- For a **documents index** a description column will be added to the table printing the `description` frontmatter if present.
+- For a **documents index** a description column will be added to the table printing the `"description"` frontmatter variable.
 
 ```json filename="typedoc.json"
 {
   "indexFormat": "list"
+}
+```
+
+## --parametersFormat
+
+<Callout emoji="💡">
+  Sets the format of parameter and type parameter groups.
+</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option specifies the output format for parameters and type parameters of functions and class methods:
+
+- **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
+- **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
+
+```json filename="typedoc.json"
+{
+  "parametersFormat": "list"
+}
+```
+
+## --interfacePropertiesFormat
+
+<Callout emoji="💡">Sets the format of property groups for interfaces.</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option specifies the output format for interface properties:
+
+- **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+- **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+
+```json filename="typedoc.json"
+{
+  "interfacePropertiesFormat": "list"
+}
+```
+
+## --classPropertiesFormat
+
+<Callout emoji="💡">Sets the format of property groups for classes.</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option specifies the output format for class properties:
+
+- **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
+- **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
+
+```json filename="typedoc.json"
+{
+  "classPropertiesFormat": "list"
 }
 ```
 
@@ -149,68 +205,6 @@ This option specifies the output format for enumeration members:
 }
 ```
 
-## --parametersFormat
-
-<Callout emoji="💡">
-  Sets the format of parameter and type parameter groups.
-</Callout>
-
-> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
-
-This option specifies the output format for parameters and type parameters of functions and class methods:
-
-- **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
-- **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
-- **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in tabular format
-
-```json filename="typedoc.json"
-{
-  "parametersFormat": "list"
-}
-```
-
-## --propertiesFormat
-
-<Callout emoji="💡">
-  Sets the format of property groups for interfaces and classes.
-</Callout>
-
-> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
-
-This option specifies the output format for class and interface properties:
-
-- **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
-- **"table"**: properties are output within a markdown table, condensed into a single paragraph.
-- **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
-
-```json filename="typedoc.json"
-{
-  "propertiesFormat": "list"
-}
-```
-
-## --propertyMembersFormat
-
-<Callout emoji="💡">
-  Sets the format of style for property members for interfaces and classes.
-</Callout>
-
-> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
-
-This option will handle the formatting of object literals assigned as properties in classes or interfaces.
-
-Note this options will only take effect when `propertiesFormat` is set to `list`.
-
-- **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
-- **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
-- **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
-
-```json filename="typedoc.json"
-{
-  "propertyMembersFormat": "list"
-}
-```
-
 ## --typeDeclarationFormat
 
 <Callout emoji="💡">
@@ -228,6 +222,28 @@ This option specifies the output format for type declaration of variables and ty
 ```json filename="typedoc.json"
 {
   "typeDeclarationFormat": "list"
+}
+```
+
+## --propertyMembersFormat
+
+<Callout emoji="💡">
+  Sets the format of style for property members for interfaces and classes.
+</Callout>
+
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+
+This option will handle the formatting of object literals assigned as properties in classes or interfaces.
+
+Note this options will only take effect when `propertiesFormat` is set to `list`.
+
+- **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
+- **"table"**: members are output within a markdown table, condensed into a single paragraph.
+- **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
+
+```json filename="typedoc.json"
+{
+  "propertyMembersFormat": "list"
 }
 ```
 

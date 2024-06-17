@@ -1,4 +1,4 @@
-import { backTicks, heading } from 'libs/markdown';
+import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import {
   DeclarationReflection,
@@ -25,13 +25,6 @@ export function declaration(
     nested: false,
     ...options,
   };
-
-  md.push(
-    this.helpers
-      .getCommentFlags(model)
-      .map((item) => backTicks(item))
-      .join(' '),
-  );
 
   md.push(this.partials.declarationTitle(model));
 

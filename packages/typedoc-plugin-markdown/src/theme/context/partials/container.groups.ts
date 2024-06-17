@@ -9,7 +9,7 @@ import {
 export function groups(
   this: MarkdownThemeContext,
   model: ReflectionGroup[],
-  options: { headingLevel: number },
+  options: { headingLevel: number; kind: ReflectionKind },
 ) {
   const groupsWithChildren = model?.filter(
     (group) => !group.allChildrenHaveOwnDocument(),
@@ -46,8 +46,10 @@ export function groups(
       if (group.description) {
         md.push(this.partials.commentParts(group.description));
       }
-
-      if (isPropertiesGroup && this.helpers.useTableFormat('properties')) {
+      if (
+        isPropertiesGroup &&
+        this.helpers.useTableFormat('properties', options.kind)
+      ) {
         md.push(
           this.partials.propertiesTable(
             group.children as DeclarationReflection[],

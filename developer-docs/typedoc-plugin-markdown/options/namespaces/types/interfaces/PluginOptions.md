@@ -6,426 +6,54 @@ Describes the options declared by the plugin.
 
 ## Properties
 
-### anchorPrefix
-
-> **anchorPrefix**: `string`
-
-Custom anchor prefix when anchoring to in-page symbols.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L16)
-
-***
-
-### entryFileName
-
-> **entryFileName**: `string`
-
-The file name of the entry page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L21)
-
-***
-
-### entryModule
-
-> **entryModule**: `string`
-
-The name of a module that should act as the root page for the documentation.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L26)
-
-***
-
-### enumMembersFormat
-
-> **enumMembersFormat**: `"table"` | `"list"` | `"htmlTable"`
-
-Sets the format of enumeration members.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L31)
-
-***
-
-### ~~excludeGroups~~
-
-> **excludeGroups**: `boolean`
-
-#### Deprecated
-
-This option has been renamed hideGroupHeadings to better reflect its purpose.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L36)
-
-***
-
-### excludeScopesInPaths
-
-> **excludeScopesInPaths**: `boolean`
-
-Exclude writing @ scope directories in paths.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L41)
-
-***
-
-### expandObjects
-
-> **expandObjects**: `boolean`
-
-Expand objects inside declarations.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L46)
-
-***
-
-### expandParameters
-
-> **expandParameters**: `boolean`
-
-Expand parameters in signature parentheses to display type information.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L51)
-
-***
-
-### fileExtension
-
-> **fileExtension**: `string`
-
-Specify the file extension for generated output files.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L56)
-
-***
-
-### flattenOutputFiles
-
-> **flattenOutputFiles**: `boolean`
-
-Flatten output files to a single directory.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L61)
-
-***
-
-### hideBreadcrumbs
-
-> **hideBreadcrumbs**: `boolean`
-
-Do not print breadcrumbs.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L66)
-
-***
-
-### hideGroupHeadings
-
-> **hideGroupHeadings**: `boolean`
-
-Excludes grouping by kind so all members are rendered and sorted at the same level.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L71)
-
-***
-
-### hidePageHeader
-
-> **hidePageHeader**: `boolean`
-
-Do not print page header.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:76](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L76)
-
-***
-
-### hidePageTitle
-
-> **hidePageTitle**: `boolean`
-
-Do not print page title.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:81](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L81)
-
-***
-
-### indexFormat
-
-> **indexFormat**: `"table"` | `"list"`
-
-Sets the format of index items.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:86](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L86)
-
-***
-
-### membersWithOwnFile
-
-> **membersWithOwnFile**: (`"Enum"` | `"Variable"` | `"Function"` | `"Class"` | `"Interface"` | `"TypeAlias"`)\[]
-
-Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:91](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L91)
-
-***
-
-### mergeReadme
-
-> **mergeReadme**: `boolean`
-
-Merges the resolved readme into the project index page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:103](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L103)
-
-***
-
-### navigationModel
-
-> **navigationModel**: `object`
-
-Configures how the navigation model will be generated.
-
-#### excludeGroups
-
-> **excludeGroups**: `boolean`
-
-#### excludeCategories
-
-> **excludeCategories**: `boolean`
-
-#### excludeFolders
-
-> **excludeFolders**: `boolean`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:108](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L108)
-
-***
-
-### outputFileStrategy
-
-> **outputFileStrategy**: `"members"` | `"modules"`
-
-Determines how output files are generated.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:117](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L117)
-
-***
-
-### parametersFormat
-
-> **parametersFormat**: `"table"` | `"list"` | `"htmlTable"`
-
-Sets the format of parameter and type parameter groups.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:122](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L122)
-
-***
-
-### preserveAnchorCasing
-
-> **preserveAnchorCasing**: `boolean`
-
-Preserve anchor casing when generating link to symbols.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:127](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L127)
-
-***
-
-### propertiesFormat
-
-> **propertiesFormat**: `"table"` | `"list"` | `"htmlTable"`
-
-Sets the format of property groups for interfaces and classes.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:132](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L132)
-
-***
-
-### propertyMembersFormat
-
-> **propertyMembersFormat**: `"table"` | `"list"` | `"htmlTable"`
-
-Sets the format of style for property members for interfaces and classes.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:137](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L137)
-
-***
-
-### publicPath
-
-> **publicPath**: `string`
-
-Specify the base path for all urls.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:142](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L142)
-
-***
-
-### sanitizeComments
-
-> **sanitizeComments**: `boolean`
-
-Sanitize HTML and JSX inside JsDoc comments.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:147](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L147)
-
-***
-
-### tableColumnSettings
-
-> **tableColumnSettings**: `object`
-
-Control how table columns are configured and displayed.
-
-#### hideDefaults
-
-> **hideDefaults**: `boolean`
-
-#### hideInherited
-
-> **hideInherited**: `boolean`
-
-#### hideModifiers
-
-> **hideModifiers**: `boolean`
-
-#### hideOverrides
-
-> **hideOverrides**: `boolean`
-
-#### hideSources
-
-> **hideSources**: `boolean`
-
-#### hideValues
-
-> **hideValues**: `boolean`
-
-#### leftAlignHeaders
-
-> **leftAlignHeaders**: `boolean`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:152](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L152)
-
-***
-
-### textContentMappings
-
-> **textContentMappings**: `object`
-
-Change specific text placeholders in the template.
-
-#### header.title
-
-> **header.title**: `string`
-
-#### header.docs
-
-> **header.docs**: `string`
-
-#### breadcrumbs.home
-
-> **breadcrumbs.home**: `string`
-
-#### title.indexPage
-
-> **title.indexPage**: `string`
-
-#### title.memberPage
-
-> **title.memberPage**: `string`
-
-#### footer.text
-
-> **footer.text**: `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:165](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L165)
-
-***
-
-### typeDeclarationFormat
-
-> **typeDeclarationFormat**: `"table"` | `"list"` | `"htmlTable"`
-
-Sets the format of style for type declaration members.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:177](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L177)
-
-***
-
-### useCodeBlocks
-
-> **useCodeBlocks**: `boolean`
-
-Wraps signatures and declarations in code blocks.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:182](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L182)
-
-***
-
-### useHTMLAnchors
-
-> **useHTMLAnchors**: `boolean`
-
-Add HTML named anchors to headings and table rows.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/types.ts:187](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/options/types.ts#L187)
+| Property                               | Type                                                                                         | Description                                                                                         |
+| -------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `anchorPrefix`                         | `string`                                                                                     | Custom anchor prefix when anchoring to in-page symbols.                                             |
+| `classPropertiesFormat`                | `"table"` \| `"list"` \| `"htmlTable"`                                                       | Sets the format of property groups for classes.                                                     |
+| `entryFileName`                        | `string`                                                                                     | The file name of the entry page.                                                                    |
+| `entryModule`                          | `string`                                                                                     | The name of a module that should act as the root page for the documentation.                        |
+| `enumMembersFormat`                    | `"table"` \| `"list"` \| `"htmlTable"`                                                       | Sets the format of enumeration members.                                                             |
+| ~~`excludeGroups`~~                    | `boolean`                                                                                    | **Deprecated** This option has been renamed hideGroupHeadings to better reflect its purpose.        |
+| `excludeScopesInPaths`                 | `boolean`                                                                                    | Exclude writing @ scope directories in paths.                                                       |
+| `expandObjects`                        | `boolean`                                                                                    | Expand objects inside declarations.                                                                 |
+| `expandParameters`                     | `boolean`                                                                                    | Expand parameters in signature parentheses to display type information.                             |
+| `fileExtension`                        | `string`                                                                                     | Specify the file extension for generated output files.                                              |
+| `flattenOutputFiles`                   | `boolean`                                                                                    | Flatten output files to a single directory.                                                         |
+| `hideBreadcrumbs`                      | `boolean`                                                                                    | Do not print breadcrumbs.                                                                           |
+| `hideGroupHeadings`                    | `boolean`                                                                                    | Excludes grouping by kind so all members are rendered and sorted at the same level.                 |
+| `hidePageHeader`                       | `boolean`                                                                                    | Do not print page header.                                                                           |
+| `hidePageTitle`                        | `boolean`                                                                                    | Do not print page title.                                                                            |
+| `indexFormat`                          | `"table"` \| `"list"`                                                                        | Sets the format of index items.                                                                     |
+| `interfacePropertiesFormat`            | `"table"` \| `"list"` \| `"htmlTable"`                                                       | Sets the format of property groups for interfaces.                                                  |
+| `membersWithOwnFile`                   | (`"Enum"` \| `"Variable"` \| `"Function"` \| `"Class"` \| `"Interface"` \| `"TypeAlias"`)\[] | Determines which members are exported to their own file when `outputFileStrategy` equals `members`. |
+| `mergeReadme`                          | `boolean`                                                                                    | Merges the resolved readme into the project index page.                                             |
+| `navigationModel`                      | `object`                                                                                     | Configures how the navigation model will be generated.                                              |
+| `navigationModel.excludeGroups`        | `boolean`                                                                                    | -                                                                                                   |
+| `navigationModel.excludeCategories`    | `boolean`                                                                                    | -                                                                                                   |
+| `navigationModel.excludeFolders`       | `boolean`                                                                                    | -                                                                                                   |
+| `outputFileStrategy`                   | `"members"` \| `"modules"`                                                                   | Determines how output files are generated.                                                          |
+| `parametersFormat`                     | `"table"` \| `"list"` \| `"htmlTable"`                                                       | Sets the format of parameter and type parameter groups.                                             |
+| `preserveAnchorCasing`                 | `boolean`                                                                                    | Preserve anchor casing when generating link to symbols.                                             |
+| `propertiesFormat`                     | `"table"` \| `"list"` \| `"htmlTable"`                                                       | Sets the format of property groups for interfaces and classes.                                      |
+| `propertyMembersFormat`                | `"table"` \| `"list"` \| `"htmlTable"`                                                       | Sets the format of style for property members for interfaces and classes.                           |
+| `publicPath`                           | `string`                                                                                     | Specify the base path for all urls.                                                                 |
+| `sanitizeComments`                     | `boolean`                                                                                    | Sanitize HTML and JSX inside JsDoc comments.                                                        |
+| `tableColumnSettings`                  | `object`                                                                                     | Control how table columns are configured and displayed.                                             |
+| `tableColumnSettings.hideDefaults`     | `boolean`                                                                                    | -                                                                                                   |
+| `tableColumnSettings.hideFlags`        | `boolean`                                                                                    | -                                                                                                   |
+| `tableColumnSettings.hideInherited`    | `boolean`                                                                                    | -                                                                                                   |
+| `tableColumnSettings.hideModifiers`    | `boolean`                                                                                    | -                                                                                                   |
+| `tableColumnSettings.hideOverrides`    | `boolean`                                                                                    | -                                                                                                   |
+| `tableColumnSettings.hideSources`      | `boolean`                                                                                    | -                                                                                                   |
+| `tableColumnSettings.hideValues`       | `boolean`                                                                                    | -                                                                                                   |
+| `tableColumnSettings.leftAlignHeaders` | `boolean`                                                                                    | -                                                                                                   |
+| `textContentMappings`                  | `object`                                                                                     | Change specific text placeholders in the template.                                                  |
+| `textContentMappings.header.title`     | `string`                                                                                     | -                                                                                                   |
+| `textContentMappings.header.docs`      | `string`                                                                                     | -                                                                                                   |
+| `textContentMappings.breadcrumbs.home` | `string`                                                                                     | -                                                                                                   |
+| `textContentMappings.title.indexPage`  | `string`                                                                                     | -                                                                                                   |
+| `textContentMappings.title.memberPage` | `string`                                                                                     | -                                                                                                   |
+| `textContentMappings.footer.text`      | `string`                                                                                     | -                                                                                                   |
+| `typeDeclarationFormat`                | `"table"` \| `"list"` \| `"htmlTable"`                                                       | Sets the format of style for type declaration members.                                              |
+| `useCodeBlocks`                        | `boolean`                                                                                    | Wraps signatures and declarations in code blocks.                                                   |
+| `useHTMLAnchors`                       | `boolean`                                                                                    | Add HTML named anchors to headings and table rows.                                                  |

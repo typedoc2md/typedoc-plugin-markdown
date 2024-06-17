@@ -8,9 +8,6 @@ The model used to define the URL mapping structure.
 
 * [Type Parameters](#type-parameters)
 * [Properties](#properties)
-  * [url](#url)
-  * [model](#model)
-  * [template()](#template)
 
 ## Type Parameters
 
@@ -20,40 +17,8 @@ The model used to define the URL mapping structure.
 
 ## Properties
 
-### url
-
-> **url**: `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L19)
-
-***
-
-### model
-
-> **model**: `Model`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L20)
-
-***
-
-### template()
-
-> **template**: (`data`) => `string`
-
-#### Parameters
-
-| Parameter | Type                                                                                            |
-| --------- | ----------------------------------------------------------------------------------------------- |
-| `data`    | [`MarkdownPageEvent`](../../../../app/namespaces/events/classes/MarkdownPageEvent.md)\<`Model`> |
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L21)
+| Property   | Type                                                                                                                  |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| `url`      | `string`                                                                                                              |
+| `model`    | `Model`                                                                                                               |
+| `template` | (`data`: [`MarkdownPageEvent`](../../../../app/namespaces/events/classes/MarkdownPageEvent.md)\<`Model`>) => `string` |

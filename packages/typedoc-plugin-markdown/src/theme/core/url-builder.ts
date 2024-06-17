@@ -551,8 +551,16 @@ export class UrlBuilder {
         (reflection.kind === ReflectionKind.Property &&
           this.options.getValue('propertiesFormat').toLowerCase() ===
             'table') ||
+        (reflection.kind === ReflectionKind.Property &&
+          reflection.parent?.kind === ReflectionKind.Class &&
+          this.options.getValue('classPropertiesFormat').toLowerCase() ===
+            'table') ||
+        (reflection.kind === ReflectionKind.Property &&
+          reflection.parent?.kind === ReflectionKind.Interface &&
+          this.options.getValue('interfacePropertiesFormat').toLowerCase() ===
+            'table') ||
         (reflection.kind === ReflectionKind.EnumMember &&
-          this.options.getValue('enumMembersFormat') === 'table')
+          this.options.getValue('enumMembersFormat').toLowerCase() === 'table')
       ) {
         return null;
       }

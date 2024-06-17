@@ -1,4 +1,4 @@
-import { bold, heading } from 'libs/markdown';
+import { backTicks, bold, heading } from 'libs/markdown';
 import { camelToTitleCase, sanitizeComments } from 'libs/utils';
 import { MarkdownThemeContext } from 'theme';
 import { Comment, CommentTag } from 'typedoc';
@@ -23,10 +23,33 @@ export function comment(
 
   const md: string[] = [];
 
-  if (opts.showSummary && model.summary?.length > 0) {
-    md.push(this.helpers.getCommentParts(model.summary));
+  //Add flags and summary
+  if (opts.showSummary) {
+    // Add flags
+    const flagsNotRendered: `@${string}`[] = [
+      '@showCategories',
+      '@showGroups',
+      '@hideCategories',
+      '@hideGroups',
+    ];
+
+    const flags: string[] = [];
+
+    for (const tag of model.modifierTags) {
+      if (!flagsNotRendered.includes(tag)) {
+        flags.push(bold(backTicks(camelToTitleCase(tag.substring(1)))));
+      }
+    }
+
+    md.push(flags.join(' '));
+
+    // Add summary
+    if (model.summary?.length > 0) {
+      md.push(this.helpers.getCommentParts(model.summary));
+    }
   }
 
+  // Add Tags
   if (opts.showTags && model.blockTags?.length) {
     const blockTags = model.blockTags.reduce(
       (previous: CommentTag[], current: CommentTag) => {

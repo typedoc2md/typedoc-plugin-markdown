@@ -23,11 +23,7 @@ export function project(
       EntryPointStrategy.Packages &&
     this.options.getValue('entryPoints')?.length;
 
-  if (isPackages) {
-    md.push(this.hook('packages.page.begin').join('\n'));
-  } else {
-    md.push(this.hook('index.page.begin').join('\n'));
-  }
+  md.push(this.hook('index.page.begin').join('\n'));
 
   if (!this.options.getValue('hidePageHeader')) {
     md.push(this.partials.header());
@@ -48,11 +44,7 @@ export function project(
     md.push(heading(1, this.partials.pageTitle()));
   }
 
-  if (isPackages) {
-    md.push(this.hook('packages.content.begin').join('\n'));
-  } else {
-    md.push(this.hook('index.content.begin').join('\n'));
-  }
+  md.push(this.hook('content.begin').join('\n'));
 
   if (page.model.comment) {
     md.push(this.partials.comment(page.model.comment, { headingLevel: 2 }));

@@ -3,6 +3,7 @@ import { ManuallyValidatedOption } from 'typedoc';
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
     anchorPrefix: string;
+    classPropertiesFormat: 'list' | 'table' | 'htmlTable';
     entryFileName: string;
     entryModule: string;
     enumMembersFormat: 'list' | 'table' | 'htmlTable';
@@ -17,6 +18,7 @@ declare module 'typedoc' {
     hidePageHeader: boolean;
     hidePageTitle: boolean;
     indexFormat: 'list' | 'table';
+    interfacePropertiesFormat: 'list' | 'table' | 'htmlTable';
     membersWithOwnFile: (
       | 'Enum'
       | 'Variable'

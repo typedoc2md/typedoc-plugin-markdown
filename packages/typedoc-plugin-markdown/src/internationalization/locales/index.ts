@@ -5,6 +5,8 @@
  */
 
 import en from './en';
+import jp from './jp';
 import ko from './ko';
+import zh from './zh';
 
-export { en, ko };
+export { en, jp, ko, zh };

@@ -4,60 +4,11 @@
 
 ## Properties
 
-### parentUrl?
-
-> `optional` **parentUrl**: `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:44](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L44)
-
-***
-
-### directory?
-
-> `optional` **directory**: `null` | `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:45](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L45)
-
-***
-
-### forceDirectory?
-
-> `optional` **forceDirectory**: `boolean`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L46)
-
-***
-
-### outputFileStrategy?
-
-> `optional` **outputFileStrategy**: [`OutputFileStrategy`](../../../../options/namespaces/maps/enumerations/OutputFileStrategy.md)
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L47)
-
-***
-
-### entryModule?
-
-> `optional` **entryModule**: `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L48)
-
-***
-
-### entryFileName?
-
-> `optional` **entryFileName**: `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/types.ts:49](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/theme/types.ts#L49)
+| Property              | Type                                                                                           |
+| --------------------- | ---------------------------------------------------------------------------------------------- |
+| `parentUrl?`          | `string`                                                                                       |
+| `directory?`          | `null` \| `string`                                                                             |
+| `forceDirectory?`     | `boolean`                                                                                      |
+| `outputFileStrategy?` | [`OutputFileStrategy`](../../../../options/namespaces/maps/enumerations/OutputFileStrategy.md) |
+| `entryModule?`        | `string`                                                                                       |
+| `entryFileName?`      | `string`                                                                                       |

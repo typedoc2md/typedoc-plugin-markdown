@@ -11,29 +11,12 @@
     "./devtools/typedoc-plugins/typedoc-default-values.js",
     "./packages/typedoc-plugin-remark/dist"
   ],
-  "remarkPlugins": [
-    [
-      "remark-toc",
-      {
-        "tight": true,
-        "maxDepth": 4,
-        "skip": "Default Value|Defined in|Example|load|Parameters|Returns|See|Type declaration"
-      }
-    ]
-  ],
   "entryPointStrategy": "packages",
   "outputFileStrategy": "members",
   "membersWithOwnFile": ["Class", "Interface", "TypeAlias", "Enum"],
   "readme": "none",
   "mergeReadme": true,
   "excludePrivate": false,
-  "packageOptions": {
-    "includeVersion": true,
-    "excludePrivate": false,
-    "readme": "./OVERVIEW.md",
-    "sortEntryPoints": false,
-    "sort": "source-order"
-  },
   "projectDocuments": ["./OVERVIEW.md"],
   "hidePageHeader": true,
   "hideGroupHeadings": true,
@@ -45,9 +28,20 @@
   "parametersFormat": "table",
   "enumMembersFormat": "table",
   "typeDeclarationFormat": "table",
+  "interfacePropertiesFormat": "table",
   "indexFormat": "table",
   "tableColumnSettings": { "hideSources": true },
   "sanitizeComments": true,
+  "remarkPlugins": [
+    [
+      "remark-toc",
+      {
+        "tight": true,
+        "maxDepth": 4,
+        "skip": "Default Value|Defined in|Example|load|Parameters|Returns|See|Type declaration"
+      }
+    ]
+  ],
   "externalSymbolLinkMappings": {
     "typedoc": {
       "ArrayType": "https://typedoc.org/api/types/Models.ArrayType.html",
@@ -96,5 +90,12 @@
       "UnionType": "https://typedoc.org/api/types/Models.UnionType.html",
       "UrlMapping": "https://typedoc.org/api/classes/UrlMapping.html"
     }
+  },
+  "packageOptions": {
+    "includeVersion": true,
+    "excludePrivate": false,
+    "readme": "./OVERVIEW.md",
+    "sortEntryPoints": false,
+    "sort": "source-order"
   }
 }

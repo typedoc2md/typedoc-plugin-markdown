@@ -16,8 +16,16 @@ export function propertiesTable(
 ): string {
   const tableColumnsOptions = this.options.getValue('tableColumnSettings');
   const leftAlignHeadings = tableColumnsOptions.leftAlignHeaders;
-  const modifiers = model.map((param) =>
-    this.helpers.getModifier(param)?.toString(),
+  const declarations = this.helpers.getFlattenedDeclarations(model);
+
+  const modifiers = declarations.map((prop) =>
+    this.helpers.getModifier(prop)?.toString(),
+  );
+
+  const comments = declarations.map((prop) =>
+    prop.comment
+      ? this.partials.comment(prop.comment, { isTableColumn: true })
+      : '',
   );
 
   const hasModifiers =
@@ -36,9 +44,7 @@ export function propertiesTable(
     !tableColumnsOptions.hideDefaults &&
     model.some((prop) => Boolean(getPropertyDefaultValue(prop)));
 
-  const hasComments = model.some(
-    (prop) => prop.comment?.blockTags?.length || prop?.comment?.summary?.length,
-  );
+  const hasComments = comments.some((value) => Boolean(value));
 
   const hasSources =
     !tableColumnsOptions.hideSources &&
@@ -80,8 +86,6 @@ export function propertiesTable(
 
   const rows: string[][] = [];
 
-  const declarations = this.helpers.getFlattenedDeclarations(model);
-
   declarations.forEach((property: DeclarationReflection, index: number) => {
     const propertyType = this.helpers.getDeclarationType(property);
     const row: string[] = [];
@@ -102,14 +106,6 @@ export function propertiesTable(
       nameColumn.push(strikeThrough(backTicks(propertyName)));
     } else {
       nameColumn.push(backTicks(propertyName));
-    }
-
-    const commentFlags = this.helpers.getCommentFlags(property);
-
-    if (commentFlags?.length) {
-      nameColumn.push(
-        `(${commentFlags.map((flag) => `*${flag}*`).join(', ')})`,
-      );
     }
 
     row.push(nameColumn.join(' '));
@@ -133,12 +129,9 @@ export function propertiesTable(
     }
 
     if (hasComments) {
-      const hasComment =
-        property.comment?.blockTags?.length ||
-        property?.comment?.summary?.length;
-      const comments = property?.comment;
-      if (hasComment && comments) {
-        row.push(this.partials.comment(comments, { isTableColumn: true }));
+      const commentText = comments[index];
+      if (commentText?.length) {
+        row.push(commentText);
       } else {
         row.push('-');
       }

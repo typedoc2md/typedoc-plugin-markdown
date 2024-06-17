@@ -53,6 +53,7 @@ export function body(
         md.push(
           this.partials.groups(groups, {
             headingLevel: options.headingLevel,
+            kind: model.kind,
           }),
         );
       }

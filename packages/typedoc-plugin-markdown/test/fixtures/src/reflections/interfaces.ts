@@ -166,7 +166,12 @@ export interface InterfaceWithEventProperties {
 export interface InterfaceWithFlags {
   /** @experimental */
   expermintalProp?: string;
-  /** @internal */
+  /**
+   * @internal
+   *
+   * Comments for internalProp
+   *
+   */
   internalProp: string;
 }
 

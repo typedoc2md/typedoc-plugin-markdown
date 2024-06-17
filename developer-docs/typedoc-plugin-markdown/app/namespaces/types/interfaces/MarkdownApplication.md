@@ -8,70 +8,57 @@ This interface is essentially an extended typing of TypeDoc's [`Application`](ht
 
 * [Extends](#extends)
 * [Properties](#properties)
-  * [converter](#converter)
-    * [Inherited from](#inherited-from)
-  * [serializer](#serializer)
-    * [Inherited from](#inherited-from-1)
-  * [deserializer](#deserializer)
-    * [Inherited from](#inherited-from-2)
-  * [logger](#logger)
-    * [Inherited from](#inherited-from-3)
-  * [internationalization](#internationalization)
-    * [Inherited from](#inherited-from-4)
-  * [i18n](#i18n)
-    * [Inherited from](#inherited-from-5)
-  * [options](#options)
-    * [Inherited from](#inherited-from-6)
-  * [files](#files)
-    * [Inherited from](#inherited-from-7)
-  * [componentName](#componentname)
-    * [Inherited from](#inherited-from-8)
-  * [renderer](#renderer)
-    * [Overrides](#overrides)
 * [Accessors](#accessors)
   * [lang](#lang)
+    * [Inherited from](#inherited-from)
   * [skipErrorChecking](#skiperrorchecking)
+    * [Inherited from](#inherited-from-1)
   * [entryPointStrategy](#entrypointstrategy)
+    * [Inherited from](#inherited-from-2)
   * [entryPoints](#entrypoints)
+    * [Inherited from](#inherited-from-3)
   * [application](#application)
+    * [Inherited from](#inherited-from-4)
   * [owner](#owner)
+    * [Inherited from](#inherited-from-5)
   * [\_listenId](#_listenid)
+    * [Inherited from](#inherited-from-6)
 * [Methods](#methods)
   * [getTypeScriptPath()](#gettypescriptpath)
-    * [Inherited from](#inherited-from-9)
+    * [Inherited from](#inherited-from-7)
   * [getTypeScriptVersion()](#gettypescriptversion)
-    * [Inherited from](#inherited-from-10)
+    * [Inherited from](#inherited-from-8)
   * [getEntryPoints()](#getentrypoints)
-    * [Inherited from](#inherited-from-11)
+    * [Inherited from](#inherited-from-9)
   * [convert()](#convert)
-    * [Inherited from](#inherited-from-12)
+    * [Inherited from](#inherited-from-10)
   * [convertAndWatch()](#convertandwatch)
-    * [Inherited from](#inherited-from-13)
+    * [Inherited from](#inherited-from-11)
   * [validate()](#validate)
-    * [Inherited from](#inherited-from-14)
+    * [Inherited from](#inherited-from-12)
   * [generateDocs()](#generatedocs)
-    * [Inherited from](#inherited-from-15)
+    * [Inherited from](#inherited-from-13)
   * [generateJson()](#generatejson)
-    * [Inherited from](#inherited-from-16)
+    * [Inherited from](#inherited-from-14)
   * [toString()](#tostring)
-    * [Inherited from](#inherited-from-17)
+    * [Inherited from](#inherited-from-15)
   * [initialize()](#initialize)
-    * [Inherited from](#inherited-from-18)
+    * [Inherited from](#inherited-from-16)
   * [bubble()](#bubble)
-    * [Inherited from](#inherited-from-19)
+    * [Inherited from](#inherited-from-17)
   * [getComponent()](#getcomponent)
-    * [Inherited from](#inherited-from-20)
+    * [Inherited from](#inherited-from-18)
   * [getComponents()](#getcomponents)
-    * [Inherited from](#inherited-from-21)
+    * [Inherited from](#inherited-from-19)
   * [hasComponent()](#hascomponent)
-    * [Inherited from](#inherited-from-22)
+    * [Inherited from](#inherited-from-20)
   * [addComponent()](#addcomponent)
     * [Type Parameters](#type-parameters)
-    * [Inherited from](#inherited-from-23)
+    * [Inherited from](#inherited-from-21)
   * [removeComponent()](#removecomponent)
-    * [Inherited from](#inherited-from-24)
+    * [Inherited from](#inherited-from-22)
   * [removeAllComponents()](#removeallcomponents)
-    * [Inherited from](#inherited-from-25)
+    * [Inherited from](#inherited-from-23)
   * [on()](#on)
     * [on(eventMap, context)](#oneventmap-context)
     * [on(eventMap, callback, context, priority)](#oneventmap-callback-context-priority)
@@ -84,14 +71,14 @@ This interface is essentially an extended typing of TypeDoc's [`Application`](ht
     * [off(eventMap, context)](#offeventmap-context)
     * [off(name, callback, context)](#offname-callback-context)
   * [listenTo()](#listento)
-    * [Inherited from](#inherited-from-34)
+    * [Inherited from](#inherited-from-32)
   * [listenToOnce()](#listentoonce)
     * [listenToOnce(obj, eventMap)](#listentoonceobj-eventmap)
     * [listenToOnce(obj, name, callback, priority)](#listentoonceobj-name-callback-priority)
   * [stopListening()](#stoplistening)
-    * [Inherited from](#inherited-from-37)
+    * [Inherited from](#inherited-from-35)
   * [trigger()](#trigger)
-    * [Inherited from](#inherited-from-38)
+    * [Inherited from](#inherited-from-36)
 
 ## Example
 
@@ -109,176 +96,66 @@ export function load(app: MarkdownApplication) {
 
 ## Properties
 
-### converter
-
-> **converter**: `Converter`
-
-The converter used to create the declaration reflections.
-
-#### Inherited from
-
-`Application.converter`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:35
-
-***
-
-### serializer
-
-> **serializer**: `Serializer`
-
-The serializer used to generate JSON output.
-
-#### Inherited from
-
-`Application.serializer`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:43
-
-***
-
-### deserializer
-
-> **deserializer**: `Deserializer`
-
-The deserializer used to restore previously serialized JSON output.
-
-#### Inherited from
-
-`Application.deserializer`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:47
-
-***
-
-### logger
-
-> **logger**: `Logger`
-
-The logger that should be used to output messages.
-
-#### Inherited from
-
-`Application.logger`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:51
-
-***
-
-### internationalization
-
-> **internationalization**: `Internationalization`
-
-Internationalization module which supports translating according to
-the `lang` option.
-
-#### Inherited from
-
-`Application.internationalization`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:56
-
-***
-
-### i18n
-
-> **i18n**: `TranslationProxy`
-
-Proxy based shortcuts for internationalization keys.
-
-#### Inherited from
-
-`Application.i18n`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:60
-
-***
-
-### options
-
-> **options**: [`Options`](https://typedoc.org/api/classes/Configuration.Options.html)
-
-#### Inherited from
-
-`Application.options`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:61
-
-***
-
-### files
-
-> **files**: `FileRegistry`
-
-#### Inherited from
-
-`Application.files`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/application.d.ts:62
-
-***
-
-### componentName
-
-> **componentName**: `string`
-
-The name of this component as set by the `@Component` decorator.
-
-#### Inherited from
-
-`Application.componentName`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/utils/component.d.ts:48
-
-***
-
-### renderer
-
-> **renderer**: [`MarkdownRenderer`](MarkdownRenderer.md)
-
-Re-types the `renderer` instance to [`MarkdownRenderer`](MarkdownRenderer.md).
-
-#### Overrides
-
-`Application.renderer`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-application.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-application.ts#L22)
+| Property               | Type                                                                    | Description                                                                            | Overrides              | Inherited from                     |
+| ---------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ---------------------- | ---------------------------------- |
+| `converter`            | `Converter`                                                             | The converter used to create the declaration reflections.                              | -                      | `Application.converter`            |
+| `serializer`           | `Serializer`                                                            | The serializer used to generate JSON output.                                           | -                      | `Application.serializer`           |
+| `deserializer`         | `Deserializer`                                                          | The deserializer used to restore previously serialized JSON output.                    | -                      | `Application.deserializer`         |
+| `logger`               | `Logger`                                                                | The logger that should be used to output messages.                                     | -                      | `Application.logger`               |
+| `internationalization` | `Internationalization`                                                  | Internationalization module which supports translating according to the `lang` option. | -                      | `Application.internationalization` |
+| `i18n`                 | `TranslationProxy`                                                      | Proxy based shortcuts for internationalization keys.                                   | -                      | `Application.i18n`                 |
+| `options`              | [`Options`](https://typedoc.org/api/classes/Configuration.Options.html) | -                                                                                      | -                      | `Application.options`              |
+| `files`                | `FileRegistry`                                                          | -                                                                                      | -                      | `Application.files`                |
+| `componentName`        | `string`                                                                | The name of this component as set by the `@Component` decorator.                       | -                      | `Application.componentName`        |
+| `renderer`             | [`MarkdownRenderer`](MarkdownRenderer.md)                               | Re-types the `renderer` instance to [`MarkdownRenderer`](MarkdownRenderer.md).         | `Application.renderer` | -                                  |
 
 ## Accessors
 
 ### lang
 
+#### Inherited from
+
+`Application.lang`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/application.d.ts:64
+
 ***
 
 ### skipErrorChecking
+
+#### Inherited from
+
+`Application.skipErrorChecking`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/application.d.ts:66
 
 ***
 
 ### entryPointStrategy
 
+#### Inherited from
+
+`Application.entryPointStrategy`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/application.d.ts:68
+
 ***
 
 ### entryPoints
+
+#### Inherited from
+
+`Application.entryPoints`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/application.d.ts:70
 
 ***
 
@@ -291,6 +168,10 @@ Return the application / root component instance.
 #### Returns
 
 [`Application`](https://typedoc.org/api/classes/Application.html)
+
+#### Inherited from
+
+`Application.application`
 
 #### Defined in
 
@@ -308,6 +189,10 @@ Return the owner of this component.
 
 `O`
 
+#### Inherited from
+
+`Application.owner`
+
 #### Defined in
 
 node\_modules/typedoc/dist/lib/utils/component.d.ts:65
@@ -323,6 +208,10 @@ A unique id that identifies this instance.
 #### Returns
 
 `any`
+
+#### Inherited from
+
+`Application._listenId`
 
 #### Defined in
 

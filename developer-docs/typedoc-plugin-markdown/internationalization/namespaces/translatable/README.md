@@ -24,4 +24,4 @@ These will then be merged with the main set of TypeDoc string.
 
 ### Defined in
 
-[packages/typedoc-plugin-markdown/src/internationalization/translatable.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L14)
+[packages/typedoc-plugin-markdown/src/internationalization/translatable.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L14)

@@ -6,96 +6,13 @@ Describes the hooks available to inject output in the markdown theme.
 
 ## Hooks
 
-### page.begin
-
-> **page.begin**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied at the start of the markdown output.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L12)
-
-***
-
-### page.end
-
-> **page.end**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied at the end of the markdown output.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L19)
-
-***
-
-### content.begin
-
-> **content.begin**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied before the main markdown content is rendered.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L26)
-
-***
-
-### index.page.begin
-
-> **index.page.begin**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied at the start of the markdown output on the index page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L33)
-
-***
-
-### index.content.begin
-
-> **index.content.begin**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied before the main markdown content is rendered on the index page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L40)
-
-***
-
-### packages.page.begin
-
-> **packages.page.begin**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied at the start of the markdown output on the packages root page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L47)
-
-***
-
-### packages.content.begin
-
-> **packages.content.begin**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied before the main markdown content is rendered on the packages root page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L54)
-
-***
-
-### index.page.end
-
-> **index.page.end**: \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)]
-
-Applied at the end of the markdown output on the index page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer-hooks.ts#L61)
+| Property                 | Type                                                                           | Description                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| `page.begin`             | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied at the start of the markdown output.                                    |
+| `page.end`               | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied at the end of the markdown output.                                      |
+| `content.begin`          | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied before the main markdown content is rendered.                           |
+| `index.page.begin`       | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied at the start of the markdown output on the index page.                  |
+| `index.content.begin`    | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied before the main markdown content is rendered on the index page.         |
+| `packages.page.begin`    | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied at the start of the markdown output on the packages root page.          |
+| `packages.content.begin` | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied before the main markdown content is rendered on the packages root page. |
+| `index.page.end`         | \[[`MarkdownThemeContext`](../../../../theme/classes/MarkdownThemeContext.md)] | Applied at the end of the markdown output on the index page.                    |

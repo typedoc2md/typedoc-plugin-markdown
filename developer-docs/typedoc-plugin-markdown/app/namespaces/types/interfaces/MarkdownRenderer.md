@@ -8,55 +8,51 @@ An extended typing of TypeDoc's [`Renderer`](https://typedoc.org/api/classes/Ren
 
 * [Extends](#extends)
 * [Properties](#properties)
-  * [theme?](#theme)
-    * [Inherited from](#inherited-from)
-  * [hooks](#hooks)
-    * [Inherited from](#inherited-from-1)
-  * [renderStartTime](#renderstarttime)
-    * [Inherited from](#inherited-from-2)
-  * [componentName](#componentname)
-    * [Inherited from](#inherited-from-3)
-  * [markdownHooks](#markdownhooks)
-  * [packagesMeta](#packagesmeta)
-  * [defineTheme()](#definetheme)
-    * [Overrides](#overrides)
-  * [preRenderAsyncJobs](#prerenderasyncjobs)
-    * [Overrides](#overrides-1)
-  * [postRenderAsyncJobs](#postrenderasyncjobs)
-    * [Overrides](#overrides-2)
 * [Accessors](#accessors)
   * [themeName](#themename)
+    * [Inherited from](#inherited-from)
   * [cleanOutputDir](#cleanoutputdir)
+    * [Inherited from](#inherited-from-1)
   * [cname](#cname)
+    * [Inherited from](#inherited-from-2)
   * [githubPages](#githubpages)
+    * [Inherited from](#inherited-from-3)
   * [cacheBust](#cachebust)
+    * [Inherited from](#inherited-from-4)
   * [lightTheme](#lighttheme)
+    * [Inherited from](#inherited-from-5)
   * [darkTheme](#darktheme)
+    * [Inherited from](#inherited-from-6)
   * [highlightLanguages](#highlightlanguages)
+    * [Inherited from](#inherited-from-7)
   * [pretty](#pretty)
+    * [Inherited from](#inherited-from-8)
   * [application](#application)
+    * [Inherited from](#inherited-from-9)
   * [owner](#owner)
+    * [Inherited from](#inherited-from-10)
   * [\_listenId](#_listenid)
+    * [Inherited from](#inherited-from-11)
 * [Methods](#methods)
   * [render()](#render)
-    * [Inherited from](#inherited-from-4)
+    * [Inherited from](#inherited-from-12)
   * [initialize()](#initialize)
-    * [Inherited from](#inherited-from-5)
+    * [Inherited from](#inherited-from-13)
   * [bubble()](#bubble)
-    * [Inherited from](#inherited-from-6)
+    * [Inherited from](#inherited-from-14)
   * [getComponent()](#getcomponent)
-    * [Inherited from](#inherited-from-7)
+    * [Inherited from](#inherited-from-15)
   * [getComponents()](#getcomponents)
-    * [Inherited from](#inherited-from-8)
+    * [Inherited from](#inherited-from-16)
   * [hasComponent()](#hascomponent)
-    * [Inherited from](#inherited-from-9)
+    * [Inherited from](#inherited-from-17)
   * [addComponent()](#addcomponent)
     * [Type Parameters](#type-parameters)
-    * [Inherited from](#inherited-from-10)
+    * [Inherited from](#inherited-from-18)
   * [removeComponent()](#removecomponent)
-    * [Inherited from](#inherited-from-11)
+    * [Inherited from](#inherited-from-19)
   * [removeAllComponents()](#removeallcomponents)
-    * [Inherited from](#inherited-from-12)
+    * [Inherited from](#inherited-from-20)
   * [on()](#on)
     * [on(eventMap, context)](#oneventmap-context)
     * [on(eventMap, callback, context, priority)](#oneventmap-callback-context-priority)
@@ -69,14 +65,14 @@ An extended typing of TypeDoc's [`Renderer`](https://typedoc.org/api/classes/Ren
     * [off(eventMap, context)](#offeventmap-context)
     * [off(name, callback, context)](#offname-callback-context)
   * [listenTo()](#listento)
-    * [Inherited from](#inherited-from-21)
+    * [Inherited from](#inherited-from-29)
   * [listenToOnce()](#listentoonce)
     * [listenToOnce(obj, eventMap)](#listentoonceobj-eventmap)
     * [listenToOnce(obj, name, callback, priority)](#listentoonceobj-name-callback-priority)
   * [stopListening()](#stoplistening)
-    * [Inherited from](#inherited-from-24)
+    * [Inherited from](#inherited-from-32)
   * [trigger()](#trigger)
-    * [Inherited from](#inherited-from-25)
+    * [Inherited from](#inherited-from-33)
 
 ## Example
 
@@ -106,190 +102,125 @@ app.renderer.postRenderAsyncJobs.push(async (output: MarkdownRendererEvent)) => 
 
 ## Properties
 
-### theme?
-
-> `optional` **theme**: [`Theme`](https://typedoc.org/api/classes/Theme.html)
-
-The theme that is used to render the documentation.
-
-#### Inherited from
-
-`Renderer.theme`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/output/renderer.d.ts:149
-
-***
-
-### hooks
-
-> **hooks**: [`EventHooks`](https://typedoc.org/api/classes/EventHooks.html)\<`RendererHooks`, `JsxElement`>
-
-Hooks which will be called when rendering pages.
-Note:
-
-* Hooks added during output will be discarded at the end of rendering.
-* Hooks added during a page render will be discarded at the end of that page's render.
-
-See RendererHooks for a description of each available hook, and when it will be called.
-
-#### Inherited from
-
-`Renderer.hooks`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/output/renderer.d.ts:158
-
-***
-
-### renderStartTime
-
-> **renderStartTime**: `number`
-
-#### Inherited from
-
-`Renderer.renderStartTime`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/output/renderer.d.ts:170
-
-***
-
-### componentName
-
-> **componentName**: `string`
-
-The name of this component as set by the `@Component` decorator.
-
-#### Inherited from
-
-`Renderer.componentName`
-
-#### Defined in
-
-node\_modules/typedoc/dist/lib/utils/component.d.ts:48
-
-***
-
-### markdownHooks
-
-> **markdownHooks**: [`EventHooks`](https://typedoc.org/api/classes/EventHooks.html)\<[`MarkdownRendererHooks`](MarkdownRendererHooks.md), `string`>
-
-Replaces the event hooks typings the [`MarkdownRendererHooks`](MarkdownRendererHooks.md) used by the plugin.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts#L36)
-
-***
-
-### packagesMeta
-
-`Internal`
-
-> **packagesMeta**: `Record`\<`string`, `object`>
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts:38](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts#L38)
-
-***
-
-### defineTheme()
-
-`Internal`
-
-> **defineTheme**: (`name`, `theme`) => `void`
-
-#### Parameters
-
-| Parameter | Type                                                                          |
-| --------- | ----------------------------------------------------------------------------- |
-| `name`    | `string`                                                                      |
-| `theme`   | (`renderer`) => [`MarkdownTheme`](../../../../theme/classes/MarkdownTheme.md) |
-
-#### Returns
-
-`void`
-
-#### Overrides
-
-`Renderer.defineTheme`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts#L40)
-
-***
-
-### preRenderAsyncJobs
-
-> **preRenderAsyncJobs**: (`output`) => `Promise`\<`void`>\[]
-
-Re-types the returned argument argument to [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md).
-
-#### Overrides
-
-`Renderer.preRenderAsyncJobs`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts:47](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts#L47)
-
-***
-
-### postRenderAsyncJobs
-
-> **postRenderAsyncJobs**: (`output`) => `Promise`\<`void`>\[]
-
-Re-types the returned argument argument to [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md).
-
-#### Overrides
-
-`Renderer.postRenderAsyncJobs`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/12bf51d00a65a847fc03f2dc9341a184b33a3504/packages/typedoc-plugin-markdown/src/app/types/markdown-renderer.ts#L51)
+| Property              | Flags      | Type                                                                                                                            | Description                                                                                                                                                                                                                                                                                                  | Overrides                      | Inherited from             |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ | -------------------------- |
+| `theme?`              |            | [`Theme`](https://typedoc.org/api/classes/Theme.html)                                                                           | The theme that is used to render the documentation.                                                                                                                                                                                                                                                          | -                              | `Renderer.theme`           |
+| `hooks`               |            | [`EventHooks`](https://typedoc.org/api/classes/EventHooks.html)\<`RendererHooks`, `JsxElement`>                                 | Hooks which will be called when rendering pages. Note: - Hooks added during output will be discarded at the end of rendering. - Hooks added during a page render will be discarded at the end of that page's render. See RendererHooks for a description of each available hook, and when it will be called. | -                              | `Renderer.hooks`           |
+| `renderStartTime`     |            | `number`                                                                                                                        | -                                                                                                                                                                                                                                                                                                            | -                              | `Renderer.renderStartTime` |
+| `componentName`       |            | `string`                                                                                                                        | The name of this component as set by the `@Component` decorator.                                                                                                                                                                                                                                             | -                              | `Renderer.componentName`   |
+| `markdownHooks`       |            | [`EventHooks`](https://typedoc.org/api/classes/EventHooks.html)\<[`MarkdownRendererHooks`](MarkdownRendererHooks.md), `string`> | Replaces the event hooks typings the [`MarkdownRendererHooks`](MarkdownRendererHooks.md) used by the plugin.                                                                                                                                                                                                 | -                              | -                          |
+| `packagesMeta`        | `Internal` | `Record`\<`string`, `object`>                                                                                                   | -                                                                                                                                                                                                                                                                                                            | -                              | -                          |
+| `defineTheme`         | `Internal` | (`name`: `string`, `theme`: (`renderer`) => [`MarkdownTheme`](../../../../theme/classes/MarkdownTheme.md)) => `void`            | -                                                                                                                                                                                                                                                                                                            | `Renderer.defineTheme`         | -                          |
+| `preRenderAsyncJobs`  |            | (`output`) => `Promise`\<`void`>\[]                                                                                             | Re-types the returned argument argument to [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md).                                                                                                                                                                                         | `Renderer.preRenderAsyncJobs`  | -                          |
+| `postRenderAsyncJobs` |            | (`output`) => `Promise`\<`void`>\[]                                                                                             | Re-types the returned argument argument to [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md).                                                                                                                                                                                         | `Renderer.postRenderAsyncJobs` | -                          |
 
 ## Accessors
 
 ### themeName
 
+#### Inherited from
+
+`Renderer.themeName`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:160
+
 ***
 
 ### cleanOutputDir
+
+#### Inherited from
+
+`Renderer.cleanOutputDir`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:161
 
 ***
 
 ### cname
 
+#### Inherited from
+
+`Renderer.cname`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:162
+
 ***
 
 ### githubPages
+
+#### Inherited from
+
+`Renderer.githubPages`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:163
 
 ***
 
 ### cacheBust
 
+#### Inherited from
+
+`Renderer.cacheBust`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:165
+
 ***
 
 ### lightTheme
+
+#### Inherited from
+
+`Renderer.lightTheme`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:166
 
 ***
 
 ### darkTheme
 
+#### Inherited from
+
+`Renderer.darkTheme`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:167
+
 ***
 
 ### highlightLanguages
 
+#### Inherited from
+
+`Renderer.highlightLanguages`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:168
+
 ***
 
 ### pretty
+
+#### Inherited from
+
+`Renderer.pretty`
+
+#### Defined in
+
+node\_modules/typedoc/dist/lib/output/renderer.d.ts:169
 
 ***
 
@@ -302,6 +233,10 @@ Return the application / root component instance.
 #### Returns
 
 [`Application`](https://typedoc.org/api/classes/Application.html)
+
+#### Inherited from
+
+`Renderer.application`
 
 #### Defined in
 
@@ -319,6 +254,10 @@ Return the owner of this component.
 
 `O`
 
+#### Inherited from
+
+`Renderer.owner`
+
 #### Defined in
 
 node\_modules/typedoc/dist/lib/utils/component.d.ts:65
@@ -334,6 +273,10 @@ A unique id that identifies this instance.
 #### Returns
 
 `any`
+
+#### Inherited from
+
+`Renderer._listenId`
 
 #### Defined in
 

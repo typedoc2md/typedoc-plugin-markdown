@@ -1,4 +1,5 @@
 import { MarkdownThemeContext } from 'public-api';
+import { ReflectionKind } from 'typedoc';
 
 export function useTableFormat(
   this: MarkdownThemeContext,
@@ -8,12 +9,22 @@ export function useTableFormat(
     | 'enums'
     | 'typeDeclarations'
     | 'propertyMembers',
+  reflectionKind?: ReflectionKind,
 ): boolean {
   if (key === 'parameters') {
     return isTable(this.options.getValue('parametersFormat'));
   }
   if (key === 'properties') {
-    return isTable(this.options.getValue('propertiesFormat'));
+    if (isTable(this.options.getValue('propertiesFormat'))) {
+      return true;
+    }
+    if (reflectionKind === ReflectionKind.Class) {
+      return isTable(this.options.getValue('classPropertiesFormat'));
+    }
+    if (reflectionKind === ReflectionKind.Interface) {
+      return isTable(this.options.getValue('interfacePropertiesFormat'));
+    }
+    return false;
   }
   if (key === 'enums') {
     return isTable(this.options.getValue('enumMembersFormat'));
