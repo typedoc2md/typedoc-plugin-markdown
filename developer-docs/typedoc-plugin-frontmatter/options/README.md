@@ -2,7 +2,7 @@
 
 # options
 
-Configures plugin options.
+Contains all the option declarations and types used in the plugin.
 
 ## Index
 
@@ -12,4 +12,3 @@ Configures plugin options.
 | ------------------------------------------------- | ----------- |
 | [declarations](namespaces/declarations/README.md) | -           |
 | [maps](namespaces/maps/README.md)                 | -           |
-| [types](namespaces/types/README.md)               | -           |

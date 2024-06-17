@@ -1,12 +1,16 @@
 {
   "entryPoints": [
-    "./src/app",
+    "./src/index.ts",
+    "./src/renderer",
+    "./src/events",
     "./src/options",
     "./src/internationalization",
     "./src/theme",
-    "./src/libs"
+    "./src/libs",
+    "./src/types"
   ],
-  "categoryOrder": ["File", "Display", "Utility"],
+  "exclude": ["./src/public-api.ts"],
+  "categoryOrder": ["File", "Display", "Utility", "Methods", "Locales"],
   "projectDocuments": [
     "./supporting-docs/getting-started.md",
     "./supporting-docs/testing.md"

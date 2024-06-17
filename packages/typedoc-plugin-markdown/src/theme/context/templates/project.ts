@@ -1,4 +1,4 @@
-import { MarkdownPageEvent } from 'app/events';
+import { MarkdownPageEvent } from '@plugin/events';
 import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import {

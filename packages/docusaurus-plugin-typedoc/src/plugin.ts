@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Application, DeclarationOption, PageEvent } from 'typedoc';
 import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
-import { PluginOptions } from '.';
+import { PluginOptions } from './models';
 import { getPluginOptions } from './options';
 import * as options from './options/declarations';
 import { getSidebar } from './sidebar';

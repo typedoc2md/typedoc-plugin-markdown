@@ -1,4 +1,4 @@
-import { Sidebar } from './options/models';
+import { Sidebar } from './types';
 
 export const DEFAULT_SIDEBAR_OPTIONS: Sidebar = {
   autoConfiguration: true,

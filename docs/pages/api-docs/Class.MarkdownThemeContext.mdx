@@ -27,24 +27,6 @@ This class can be used to customize the theme output by extending the class and 
 
 General context aware helper methods not bound to any specific models that can be used by the theme resources.
 
-### getPackageMetaData()
-
-> **getPackageMetaData**(`packageName`): [`PackageMetaData`](/api-docs/Interface.PackageMetaData.mdx)
-
-Returns the package meta data for a given package name when entrypointStrategy is set to `packages`.
-
-#### Parameters
-
-| Parameter | Type | Description |
-| :------ | :------ | :------ |
-| `packageName` | `string` | The package name as per `name` field from `package.json`. |
-
-#### Returns
-
-[`PackageMetaData`](/api-docs/Interface.PackageMetaData.mdx)
-
-***
-
 ### getRelativeUrl()
 
 > **getRelativeUrl**(`url`, `ignorePublicPath`): `string`
@@ -192,645 +174,11 @@ Partials are categorised by their use:
 - Comment Partials: Partials that render comments.
 - Type Partials: Partials that render specific TypeDoc model types.
 
-#### Page Partials
-
-##### breadcrumbs()
-
-> **breadcrumbs**: () => `string`
-
-###### Returns
-
-`string`
-
-##### footer()
-
-> **footer**: () => `string`
-
-###### Returns
-
-`string`
-
-##### header()
-
-> **header**: () => `string`
-
-###### Returns
-
-`string`
-
-##### packagesIndex()
-
-> **packagesIndex**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
-
-###### Returns
-
-`string`
-
-##### pageTitle()
-
-> **pageTitle**: () => `string`
-
-###### Returns
-
-`string`
-
-#### Container Partials
-
-##### body()
-
-> **body**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### categories()
-
-> **categories**: (`model`, `options`) => `string`
-
-Renders a collection of reflection categories.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ReflectionCategory`](https://typedoc.org/api/types/Models.ReflectionCategory.html)[] |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### groups()
-
-> **groups**: (`model`, `options`) => `string`
-
-Renders a collection of reflection groups.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ReflectionGroup`](https://typedoc.org/api/classes/Models.ReflectionGroup.html)[] |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### members()
-
-> **members**: (`model`, `options`) => `string`
-
-Renders a collection of members.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-#### Member Partials
-
-##### accessor()
-
-> **accessor**: (`model`, `options`) => `string`
-
-Renders an accessor member.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### constructor()
-
-> **constructor**: (`model`, `options`) => `string`
-
-Renders an constructor member.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### memberContainer()
-
-> **memberContainer**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-| `options.nested`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### declaration()
-
-> **declaration**: (`model`, `options`) => `string`
-
-Renders a standard declaration member.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-| `options.nested`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### declarationTitle()
-
-> **declarationTitle**: (`model`) => `string`
-
-Comments for declaration
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-
-###### Returns
-
-`string`
-
-##### documents()
-
-> **documents**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### enumMembersTable()
-
-> **enumMembersTable**: (`model`) => `string`
-
-Renders enum members as a table.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
-
-###### Returns
-
-`string`
-
-##### hierarchy()
-
-> **hierarchy**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationHierarchy`](https://typedoc.org/api/classes/Models.DeclarationHierarchy.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### indexSignature()
-
-> **indexSignature**: (`model`) => `string`
-
-Renders an index signature block
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
-
-###### Returns
-
-`string`
-
-##### inheritance()
-
-> **inheritance**: (`model`, `options`) => `string`
-
-Renders an inheritance section.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### memberTitle()
-
-> **memberTitle**: (`model`) => `string`
-
-Renders the main member title.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-
-###### Returns
-
-`string`
-
-##### memberWithGroups()
-
-> **memberWithGroups**: (`model`, `options`) => `string`
-
-Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### parametersList()
-
-> **parametersList**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
-
-###### Returns
-
-`string`
-
-##### parametersTable()
-
-> **parametersTable**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
-
-###### Returns
-
-`string`
-
-##### propertiesTable()
-
-> **propertiesTable**: (`model`, `options`?) => `string`
-
-Renders a collection of properties in a table.
-
-There is no association list partial for properties as these are handled as a standard list of members.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
-| `options`? | `object` |
-| `options.isEventProps`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### referenceMember()
-
-> **referenceMember**: (`model`) => `string`
-
-Renders an reference member.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ReferenceReflection`](https://typedoc.org/api/classes/Models.ReferenceReflection.html) |
-
-###### Returns
-
-`string`
-
-##### reflectionIndex()
-
-> **reflectionIndex**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### signature()
-
-> **signature**: (`model`, `options`) => `string`
-
-Renders a signature member.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-| `options.nested`? | `boolean` |
-| `options.accessor`? | `string` |
-| `options.multipleSignatures`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### signatureParameters()
-
-> **signatureParameters**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
-
-###### Returns
-
-`string`
-
-##### signatureReturns()
-
-> **signatureReturns**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### signatureTitle()
-
-> **signatureTitle**: (`model`, `options`?) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
-| `options`? | `object` |
-| `options.accessor`? | `string` |
-| `options.includeType`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### signatures()
-
-> **signatures**: (`model`, `options`) => `string`
-
-Renders a signature collection.
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-| `options.nested`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### sources()
-
-> **sources**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### member()
-
-> **member**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-| `options.nested`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### typeAndParent()
-
-> **typeAndParent**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) \| [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
-
-###### Returns
-
-`string`
-
-##### typeArguments()
-
-> **typeArguments**: (`model`, `options`?) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html)[] |
-| `options`? | `object` |
-| `options.forceCollapse`? | `boolean` |
-
-###### Returns
-
-`string`
-
-##### typeDeclaration()
-
-> **typeDeclaration**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### typeDeclarationList()
-
-> **typeDeclarationList**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
-| `options` | `object` |
-| `options.headingLevel` | `number` |
-
-###### Returns
-
-`string`
-
-##### typeDeclarationTable()
-
-> **typeDeclarationTable**: (`model`, `options`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
-| `options` | `object` |
-| `options.kind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
-
-###### Returns
-
-`string`
-
-##### typeParametersList()
-
-> **typeParametersList**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)[] |
-
-###### Returns
-
-`string`
-
-##### typeParametersTable()
-
-> **typeParametersTable**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)[] |
-
-###### Returns
-
-`string`
-
-#### Comment Partials
-
-##### comment()
+#### comment()
 
 > **comment**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
@@ -841,185 +189,782 @@ Renders a signature collection.
 | `options.showTags`? | `boolean` |
 | `options.isTableColumn`? | `boolean` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### commentParts()
+#### commentParts()
 
 > **commentParts**: (`model`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model` | [`CommentDisplayPart`](https://typedoc.org/api/types/Models.CommentDisplayPart.html)[] |
 
-###### Returns
+##### Returns
 
 `string`
 
-#### Type Partials
+#### body()
 
-##### arrayType()
+> **body**: (`model`, `options`) => `string`
 
-> **arrayType**: (`model`) => `string`
-
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
+| `model` | [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### conditionalType()
+#### categories()
 
-> **conditionalType**: (`model`) => `string`
+> **categories**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`ConditionalType`](https://typedoc.org/api/types/Models.ConditionalType.html) |
+| `model` | [`ReflectionCategory`](https://typedoc.org/api/types/Models.ReflectionCategory.html)[] |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### indexAccessType()
+#### groups()
 
-> **indexAccessType**: (`model`) => `string`
+> **groups**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`IndexedAccessType`](https://typedoc.org/api/types/Models.IndexedAccessType.html) |
+| `model` | [`ReflectionGroup`](https://typedoc.org/api/classes/Models.ReflectionGroup.html)[] |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.kind` | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### inferredType()
+#### members()
 
-> **inferredType**: (`model`) => `string`
+> **members**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`InferredType`](https://typedoc.org/api/types/Models.InferredType.html) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### intersectionType()
+#### accessor()
 
-> **intersectionType**: (`model`) => `string`
+> **accessor**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`IntersectionType`](https://typedoc.org/api/types/Models.IntersectionType.html) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### intrinsicType()
+#### constructor()
 
-> **intrinsicType**: (`model`) => `string`
+> **constructor**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`IntrinsicType`](https://typedoc.org/api/types/Models.IntrinsicType.html) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### literalType()
+#### memberContainer()
 
-> **literalType**: (`model`) => `string`
+> **memberContainer**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`LiteralType`](https://typedoc.org/api/types/Models.LiteralType.html) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### namedTupleType()
+#### declaration()
 
-> **namedTupleType**: (`model`) => `string`
+> **declaration**: (`model`, `options`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `model` | [`NamedTupleMember`](https://typedoc.org/api/types/Models.NamedTupleMember.html) |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
 
-###### Returns
-
-`string`
-
-##### queryType()
-
-> **queryType**: (`model`) => `string`
-
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`QueryType`](https://typedoc.org/api/types/Models.QueryType.html) |
-
-###### Returns
+##### Returns
 
 `string`
 
-##### referenceType()
+#### declarationTitle()
 
-> **referenceType**: (`model`) => `string`
+> **declarationTitle**: (`model`) => `string`
 
-###### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `model` | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) |
-
-###### Returns
-
-`string`
-
-##### declarationType()
-
-> **declarationType**: (`model`) => `string`
-
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### functionType()
+#### documents()
+
+> **documents**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### enumMembersTable()
+
+> **enumMembersTable**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+
+##### Returns
+
+`string`
+
+#### hierarchy()
+
+> **hierarchy**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationHierarchy`](https://typedoc.org/api/classes/Models.DeclarationHierarchy.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### indexSignature()
+
+> **indexSignature**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+
+##### Returns
+
+`string`
+
+#### inheritance()
+
+> **inheritance**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### memberTitle()
+
+> **memberTitle**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`string`
+
+#### memberWithGroups()
+
+> **memberWithGroups**: (`model`, `options`) => `string`
+
+Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### parametersList()
+
+> **parametersList**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
+
+##### Returns
+
+`string`
+
+#### parametersTable()
+
+> **parametersTable**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
+
+##### Returns
+
+`string`
+
+#### propertiesTable()
+
+> **propertiesTable**: (`model`, `options`?) => `string`
+
+Renders a collection of properties in a table.
+
+There is no association list partial for properties as these are handled as a standard list of members.
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options`? | `object` |
+| `options.isEventProps`? | `boolean` |
+
+##### Returns
+
+`string`
+
+#### referenceMember()
+
+> **referenceMember**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ReferenceReflection`](https://typedoc.org/api/classes/Models.ReferenceReflection.html) |
+
+##### Returns
+
+`string`
+
+#### reflectionIndex()
+
+> **reflectionIndex**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### signature()
+
+> **signature**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
+| `options.accessor`? | `string` |
+| `options.multipleSignatures`? | `boolean` |
+
+##### Returns
+
+`string`
+
+#### signatureParameters()
+
+> **signatureParameters**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/Models.ParameterReflection.html)[] |
+
+##### Returns
+
+`string`
+
+#### signatureReturns()
+
+> **signatureReturns**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### signatureTitle()
+
+> **signatureTitle**: (`model`, `options`?) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options`? | `object` |
+| `options.accessor`? | `string` |
+| `options.includeType`? | `boolean` |
+
+##### Returns
+
+`string`
+
+#### signatures()
+
+> **signatures**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
+
+##### Returns
+
+`string`
+
+#### sources()
+
+> **sources**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### member()
+
+> **member**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
+
+##### Returns
+
+`string`
+
+#### typeAndParent()
+
+> **typeAndParent**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) \| [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
+
+##### Returns
+
+`string`
+
+#### typeArguments()
+
+> **typeArguments**: (`model`, `options`?) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html)[] |
+| `options`? | `object` |
+| `options.forceCollapse`? | `boolean` |
+
+##### Returns
+
+`string`
+
+#### typeDeclaration()
+
+> **typeDeclaration**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### typeDeclarationList()
+
+> **typeDeclarationList**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options` | `object` |
+| `options.headingLevel` | `number` |
+
+##### Returns
+
+`string`
+
+#### typeDeclarationTable()
+
+> **typeDeclarationTable**: (`model`, `options`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options` | `object` |
+| `options.kind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
+
+##### Returns
+
+`string`
+
+#### typeParametersList()
+
+> **typeParametersList**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)[] |
+
+##### Returns
+
+`string`
+
+#### typeParametersTable()
+
+> **typeParametersTable**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/Models.TypeParameterReflection.html)[] |
+
+##### Returns
+
+`string`
+
+#### breadcrumbs()
+
+> **breadcrumbs**: () => `string`
+
+##### Returns
+
+`string`
+
+#### footer()
+
+> **footer**: () => `string`
+
+##### Returns
+
+`string`
+
+#### header()
+
+> **header**: () => `string`
+
+##### Returns
+
+`string`
+
+#### packagesIndex()
+
+> **packagesIndex**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+
+##### Returns
+
+`string`
+
+#### pageTitle()
+
+> **pageTitle**: () => `string`
+
+##### Returns
+
+`string`
+
+#### arrayType()
+
+> **arrayType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ArrayType`](https://typedoc.org/api/types/Models.ArrayType.html) |
+
+##### Returns
+
+`string`
+
+#### conditionalType()
+
+> **conditionalType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ConditionalType`](https://typedoc.org/api/types/Models.ConditionalType.html) |
+
+##### Returns
+
+`string`
+
+#### indexAccessType()
+
+> **indexAccessType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`IndexedAccessType`](https://typedoc.org/api/types/Models.IndexedAccessType.html) |
+
+##### Returns
+
+`string`
+
+#### inferredType()
+
+> **inferredType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`InferredType`](https://typedoc.org/api/types/Models.InferredType.html) |
+
+##### Returns
+
+`string`
+
+#### intersectionType()
+
+> **intersectionType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`IntersectionType`](https://typedoc.org/api/types/Models.IntersectionType.html) |
+
+##### Returns
+
+`string`
+
+#### intrinsicType()
+
+> **intrinsicType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`IntrinsicType`](https://typedoc.org/api/types/Models.IntrinsicType.html) |
+
+##### Returns
+
+`string`
+
+#### literalType()
+
+> **literalType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`LiteralType`](https://typedoc.org/api/types/Models.LiteralType.html) |
+
+##### Returns
+
+`string`
+
+#### namedTupleType()
+
+> **namedTupleType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`NamedTupleMember`](https://typedoc.org/api/types/Models.NamedTupleMember.html) |
+
+##### Returns
+
+`string`
+
+#### queryType()
+
+> **queryType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`QueryType`](https://typedoc.org/api/types/Models.QueryType.html) |
+
+##### Returns
+
+`string`
+
+#### referenceType()
+
+> **referenceType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`ReferenceType`](https://typedoc.org/api/classes/Models.ReferenceType.html) |
+
+##### Returns
+
+`string`
+
+#### declarationType()
+
+> **declarationType**: (`model`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`string`
+
+#### functionType()
 
 > **functionType**: (`model`, `options`?) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
@@ -1027,15 +972,15 @@ Renders a signature collection.
 | `options`? | `object` |
 | `options.forceParameterType`? | `boolean` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### reflectionType()
+#### reflectionType()
 
 > **reflectionType**: (`model`, `options`?) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
@@ -1043,79 +988,77 @@ Renders a signature collection.
 | `options`? | `object` |
 | `options.forceCollapse`? | `boolean` |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### someType()
+#### someType()
 
 > **someType**: (`model`?) => `string`
 
-Takes a generic Type and returns the appropriate partial for it.
-
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model`? | [`SomeType`](https://typedoc.org/api/classes/Models.SomeType.html) |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### tupleType()
+#### tupleType()
 
 > **tupleType**: (`model`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model` | [`TupleType`](https://typedoc.org/api/classes/Models.TupleType.html) |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### typeOperatorType()
+#### typeOperatorType()
 
 > **typeOperatorType**: (`model`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model` | [`TypeOperatorType`](https://typedoc.org/api/interfaces/TypeOperatorType.html) |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### unionType()
+#### unionType()
 
 > **unionType**: (`model`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model` | [`UnionType`](https://typedoc.org/api/types/Models.UnionType.html) |
 
-###### Returns
+##### Returns
 
 `string`
 
-##### unknownType()
+#### unknownType()
 
 > **unknownType**: (`model`) => `string`
 
-###### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `model` | [`UnknownType`](https://typedoc.org/api/types/Models.UnknownType.html) |
 
-###### Returns
+##### Returns
 
 `string`
 
@@ -1323,17 +1266,17 @@ Please note that partials:
 
 #### getReflectionFlags()
 
-> **getReflectionFlags**: (`reflection`) => `string`[]
+> **getReflectionFlags**: (`reflectionFlags`) => `string`
 
 ##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
-| `reflection` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
+| `reflectionFlags` | [`ReflectionFlags`](https://typedoc.org/api/classes/Models.ReflectionFlags.html) |
 
 ##### Returns
 
-`string`[]
+`string`
 
 #### getReturnType()
 
@@ -1365,13 +1308,14 @@ Please note that partials:
 
 #### useTableFormat()
 
-> **useTableFormat**: (`key`) => `boolean`
+> **useTableFormat**: (`key`, `reflectionKind`?) => `boolean`
 
 ##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | `key` | `"parameters"` \| `"properties"` \| `"enums"` \| `"typeDeclarations"` \| `"propertyMembers"` |
+| `reflectionKind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
 
 ##### Returns
 

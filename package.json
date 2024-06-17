@@ -13,7 +13,6 @@
   "scripts": {
     "docs": "ts-node ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs",
     "devdocs": "npm run build --workspace typedoc-plugin-markdown && typedoc",
-    "devdocs:html": "typedoc --options typedoc-html.json",
     "build-all": "npm run build --workspaces --if-present",
     "test-all": "npm run test --workspaces --if-present",
     "prerelease": "npm run build-all",

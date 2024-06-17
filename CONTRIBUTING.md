@@ -2,6 +2,18 @@
 
 Thank you for showing interest in contributing to this project. This guide provides some basic guidelines for doing so.
 
+## Contents
+
+- [Contributing Guide](#contributing-guide)
+  - [Contents](#contents)
+  - [Introduction](#introduction)
+  - [Contributions to the public docs](#contributions-to-the-public-docs)
+  - [Contributing to the codebase](#contributing-to-the-codebase)
+  - [Submitting a Pull Request](#submitting-a-pull-request)
+  - [Contributors](#contributors)
+
+## Introduction
+
 Before you start, you might find it helpful to read the [TypeDoc development guide](https://typedoc.org/guides/development/) to understand the architecture of TypeDoc itself.
 
 ## Contributions to the public docs
@@ -24,10 +36,10 @@ All contributions are welcome and appreciated. If something does not make sense 
 
 Once you're ready to submit your changes:
 
-* **Push your branch**: Push your branch to your forked repository on GitHub.
-* **Create a PR**: Navigate to the original repository and create a PR from your branch to the main branch.
-* **Provide a clear description**: Include a detailed description of your changes, why they're necessary, and any issues they resolve.
-* **Link to relevant issues**: If your PR addresses any open issues, mention them in the description.
+- **Push your branch**: Push your branch to your forked repository on GitHub.
+- **Create a PR**: Navigate to the original repository and create a PR from your branch to the main branch.
+- **Provide a clear description**: Include a detailed description of your changes, why they're necessary, and any issues they resolve.
+- **Link to relevant issues**: If your PR addresses any open issues, mention them in the description.
 
 Please note we follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages.
 

@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as options from '../../src/options/declarations';
+import { declarations } from '../../src/options';
 
 main();
 
@@ -12,7 +12,8 @@ async function main() {
     const property = schema.properties[key];
     if (typeof property === 'object' && property !== null) {
       property.description = `[typedoc-plugin-markdown] ${property.description}`;
-      property.default = options[key].defaultValue || options[key].defaults;
+      property.default =
+        declarations[key].defaultValue || declarations[key].defaults;
       if (property.required) {
         delete property.required;
       }

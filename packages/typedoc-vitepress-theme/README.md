@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-  npm install typedoc-vitepress-theme --save-dev
+  npm install typedoc typedoc-vitepress-theme --save-dev
   ```
 
 ## Documentation

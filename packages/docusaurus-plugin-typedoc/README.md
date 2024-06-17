@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-  npm install docusaurus-plugin-typedoc --save-dev
+  npm install typedoc docusaurus-plugin-typedoc --save-dev
   ```
 
 ## Documentation

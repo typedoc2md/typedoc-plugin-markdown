@@ -1,4 +1,4 @@
-export default {
+export const presets = {
   out: './docs/api',
   hideBreadcrumbs: true,
   hidePageHeader: true,

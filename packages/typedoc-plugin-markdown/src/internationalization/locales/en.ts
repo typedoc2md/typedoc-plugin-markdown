@@ -1,6 +1,8 @@
-import { TranslatableStrings } from 'internationalization/types';
+import { TranslatableStrings } from '@plugin/types';
 /**
  * Translations for 'en' locale.
+ *
+ * @category Locales
  */
 export const translatable: TranslatableStrings = {
   theme_default_value: 'Default value',

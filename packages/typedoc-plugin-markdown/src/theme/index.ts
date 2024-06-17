@@ -1,9 +1,7 @@
 /**
- * This is the built-in Markdown theme.
+ * Contains all functionality relevant to the theme.
  *
  * @module
  */
-export * as core from './core';
 export * from './markdown-theme';
 export * from './markdown-theme-context';
-export * as types from './types';

@@ -1,4 +1,4 @@
-import presets from './options/presets';
+import { presets } from './options/presets';
 
 export const DEFAULT_SIDEBAR_OPTIONS = {
   autoConfiguration: true,

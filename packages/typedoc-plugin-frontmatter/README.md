@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-  npm install typedoc-plugin-frontmatter --save-dev
+  npm install typedoc typedoc-plugin-frontmatter --save-dev
   ```
 
 ## Documentation

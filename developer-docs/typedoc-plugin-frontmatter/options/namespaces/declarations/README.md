@@ -40,7 +40,7 @@ sidebar: true
 
 ### Defined in
 
-[options/declarations.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L15)
+[options/declarations.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L15)
 
 ***
 
@@ -66,7 +66,7 @@ sidebar: true
 
 ### Defined in
 
-[options/declarations.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L24)
+[options/declarations.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L24)
 
 ***
 
@@ -92,7 +92,7 @@ sidebar: true
 
 ### Defined in
 
-[options/declarations.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L33)
+[options/declarations.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L33)
 
 ***
 
@@ -136,7 +136,7 @@ description: A description that will be added to frontmatter.
 
 ### Defined in
 
-[options/declarations.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L61)
+[options/declarations.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L61)
 
 ***
 
@@ -156,7 +156,7 @@ description: A description that will be added to frontmatter.
 
 ### Defined in
 
-[options/declarations.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L66)
+[options/declarations.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L66)
 
 ***
 
@@ -181,4 +181,4 @@ This option can configure the output style of frontmatter variables when written
 
 ### Defined in
 
-[options/declarations.ts:77](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L77)
+[options/declarations.ts:77](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L77)

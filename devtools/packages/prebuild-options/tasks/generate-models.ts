@@ -4,6 +4,12 @@ import * as path from 'path';
 import * as prettier from 'prettier';
 import { DeclarationOption, ParameterType } from 'typedoc';
 
+const ignoreTypes = [
+  'textContentMappings',
+  'remarkPlugins',
+  'remarkStringifyOptions',
+];
+
 export async function generateOptionsModels(docsConfig: DocsConfig) {
   const optionsConfig = await import(docsConfig.declarationsPath as string);
 
@@ -36,7 +42,11 @@ import { ManuallyValidatedOption } from 'typedoc'`);
 
   if (manuallyValidatedOptions.length) {
     manuallyValidatedOptions.forEach((option: any) => {
-      out.push(`import { ${option} } from './options/types';`);
+      if (
+        !ignoreTypes.map((t) => t.toLowerCase()).includes(option.toLowerCase())
+      ) {
+        out.push(`import { ${option} } from './types/options';`);
+      }
     });
   }
 
@@ -91,13 +101,8 @@ async function writeOptionsTypes(
   const optionsOutput: string[] = [];
   optionsOutput.push(`
   /*
-   * @privateRemarks
-   *
    * THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY
-   *
-   * @module
    */
-
   /**
    * Describes the options declared by the plugin.
    */
@@ -114,12 +119,11 @@ ${name}: ${getType(name, option, true)};`,
   }
 
   ${mixedTypes
-    ?.map(([name, option]) => {
+    ?.filter(([name]) => !ignoreTypes.includes(name))
+    .map(([name, option]) => {
       return `
   /**
    * ${getComments(name)}
-   *
-   * @category Options
    */
   export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
@@ -134,10 +138,7 @@ ${name}: ${getType(name, option, true)};`,
     .join('\n')}
   `);
 
-  const optionsModelFile = path.join(
-    path.dirname(docsConfig.declarationsPath as string),
-    'types.ts',
-  );
+  const optionsModelFile = path.join(process.cwd(), 'src/types/options.ts');
 
   const formatted = await prettier.format(optionsOutput.join('\n\n'), {
     parser: 'typescript',
@@ -199,13 +200,15 @@ function getType(
       .join(';')}}`;
   }
   if (option.type === ParameterType.Mixed && option.defaultValue) {
-    const useAny = name === 'textContentMappings';
+    // hack - need to fix this
+
+    const useAny = ignoreTypes.includes(name);
     return isInterface
       ? useAny
-        ? `Partial<any>`
+        ? 'any'
         : capitalize(name)
       : useAny
-        ? `ManuallyValidatedOption<Partial<${capitalize(name)}>>`
+        ? `ManuallyValidatedOption<Partial<any>>`
         : `ManuallyValidatedOption<${capitalize(name)}>`;
   }
 

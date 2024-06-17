@@ -17,12 +17,9 @@
     "test:mdx": "node test/scripts/lint.mdx.mjs",
     "test": "npm run test:md && npm run test:mdx && jest",
     "test:update": "npm run build && npm run test -- -u",
-    "support": "npm run schema && npm run docs",
+    "playground": "npm run build && typedoc --options ./playground/typedoc.json",
     "schema": "ts-node ./.scripts/schema/generate-schema.ts",
-    "docs": "npm run build && typedoc --options ./.docs/typedoc.json",
-    "docs:html": "typedoc --options ./.docs/typedoc.html.json",
-    "docs:dev": "npm run build && typedoc",
-    "playground": "npm run build && typedoc --options ./playground/typedoc.json"
+    "docs": "npm run build && typedoc --options ./.docs/typedoc.json"
   },
   "author": "Thomas Grey",
   "license": "MIT",

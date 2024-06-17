@@ -26,8 +26,6 @@ import { DEFAULT_SIDEBAR_OPTIONS } from '../options';
  *    "docsRoot": "./docs",
  * }
  * ```
- *
- * @omitExample
  */
 export const docsRoot = {
   help: 'The path to the VitePress project root.',

@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-  npm install typedoc-plugin-remark --save-dev
+  npm install typedoc typedoc-plugin-remark --save-dev
   ```
 
 ## Documentation

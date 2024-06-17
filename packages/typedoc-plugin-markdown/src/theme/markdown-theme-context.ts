@@ -1,13 +1,16 @@
-import { MarkdownPageEvent } from 'app/events';
-import { MarkdownRenderer, MarkdownRendererHooks } from 'app/types';
-import * as path from 'path';
-import { MarkdownTheme } from 'theme';
+import { MarkdownPageEvent } from '@plugin/events';
+import { MarkdownTheme } from '@plugin/theme';
 import {
   resourceHelpers,
   resourcePartials,
   resourceTemplates,
-} from 'theme/context/resources';
-import { PackageMetaData } from 'theme/types';
+} from '@plugin/theme/context/resources';
+import {
+  MarkdownRenderer,
+  MarkdownRendererHooks,
+  PackageMetaData,
+} from '@plugin/types';
+import * as path from 'path';
 import { Internationalization, Options, Reflection } from 'typedoc';
 
 /**
@@ -110,6 +113,8 @@ export class MarkdownThemeContext {
    * Returns the package meta data for a given package name when entrypointStrategy is set to `packages`.
    *
    * @param packageName - The package name as per `name` field from `package.json`.
+   *
+   * @internal
    */
   getPackageMetaData(packageName: string): PackageMetaData {
     return this.packagesMetaData[packageName];

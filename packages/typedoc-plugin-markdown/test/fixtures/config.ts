@@ -258,7 +258,7 @@ const config: Record<string, Fixture> = {
     ],
   },
   customize: {
-    only: true,
+    only: false,
     entryPoints: '/customize/index.ts',
     outputFileStrategies: ['members'],
     commonOptions: {

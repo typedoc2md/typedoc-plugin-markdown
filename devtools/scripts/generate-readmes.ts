@@ -107,7 +107,7 @@ function writePackageReadme(packageItem: any) {
 
   readme.push('## Installation');
   readme.push(`\`\`\`shell
-  npm install ${packageItem.name} --save-dev
+  npm install typedoc ${packageItem.name} --save-dev
   \`\`\``);
 
   readme.push('## Documentation');

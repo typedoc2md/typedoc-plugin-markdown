@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { NavigationItem } from 'typedoc-plugin-markdown';
-import { Sidebar } from '../options/models';
+import { Sidebar } from '../types';
 
 export = (navigation: NavigationItem[], basePath: string, options: Sidebar) => {
   return navigation.map((navigationItem) => {
@@ -11,7 +11,7 @@ export = (navigation: NavigationItem[], basePath: string, options: Sidebar) => {
 function getNavigationItem(
   navigationItem: NavigationItem,
   basePath: string,
-  options: Sidebar,
+  options: any,
 ) {
   const hasChildren = navigationItem?.children?.length;
 

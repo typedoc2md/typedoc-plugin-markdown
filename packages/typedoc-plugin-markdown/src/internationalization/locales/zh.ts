@@ -1,6 +1,8 @@
-import { TranslatableStrings } from 'internationalization/types';
+import { TranslatableStrings } from '@plugin/types';
 /**
  * Translations for 'zh' locale.
+ *
+ * @category Locales
  */
 export const translatable: Partial<TranslatableStrings> = {
   theme_default_value: '默认值',

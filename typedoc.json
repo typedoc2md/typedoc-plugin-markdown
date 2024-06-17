@@ -4,7 +4,12 @@
   "out": "./developer-docs",
   "entryPoints": [
     "./packages/typedoc-plugin-markdown",
-    "./packages/typedoc-plugin-frontmatter"
+    "./packages/typedoc-plugin-frontmatter",
+    "./packages/typedoc-plugin-remark",
+    "./packages/typedoc-github-wiki-theme",
+    "./packages/typedoc-gitlab-wiki-theme",
+    "./packages/typedoc-vitepress-theme",
+    "./packages/docusaurus-plugin-typedoc"
   ],
   "plugin": [
     "./packages/typedoc-plugin-markdown/dist",
@@ -28,7 +33,6 @@
   "parametersFormat": "table",
   "enumMembersFormat": "table",
   "typeDeclarationFormat": "table",
-  "interfacePropertiesFormat": "table",
   "indexFormat": "table",
   "tableColumnSettings": { "hideSources": true },
   "sanitizeComments": true,
@@ -38,7 +42,7 @@
       {
         "tight": true,
         "maxDepth": 4,
-        "skip": "Default Value|Defined in|Example|load|Parameters|Returns|See|Type declaration"
+        "skip": "Default Value|Defined in|Example|Overrides|Parameters|Returns|See|Type declaration"
       }
     ]
   ],
@@ -96,6 +100,7 @@
     "excludePrivate": false,
     "readme": "./OVERVIEW.md",
     "sortEntryPoints": false,
-    "sort": "source-order"
+    "sort": "source-order",
+    "excludeExternals": true
   }
 }

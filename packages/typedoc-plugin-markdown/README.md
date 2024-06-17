@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-  npm install typedoc-plugin-markdown --save-dev
+  npm install typedoc typedoc-plugin-markdown --save-dev
   ```
 
 ## Documentation

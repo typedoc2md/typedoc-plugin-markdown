@@ -2,16 +2,9 @@
 
 # theme
 
-This is the built-in Markdown theme.
+Contains all functionality relevant to the theme.
 
 ## Index
-
-### Namespaces
-
-| Namespace                           | Description                                                            |
-| ----------------------------------- | ---------------------------------------------------------------------- |
-| [core](namespaces/core/README.md)   | Support for the MarkdownTheme core class building URLs and navigation. |
-| [types](namespaces/types/README.md) | -                                                                      |
 
 ### Classes
 

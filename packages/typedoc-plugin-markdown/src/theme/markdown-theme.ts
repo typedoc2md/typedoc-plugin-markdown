@@ -1,16 +1,16 @@
-import { MarkdownPageEvent } from 'app/events';
-import { formatMarkdown } from 'libs/utils';
-import { OutputFileStrategy } from 'options/maps';
-import { MarkdownThemeContext } from 'theme';
-import { NavigationBuilder } from 'theme/core/navigation-builder';
-import { UrlBuilder } from 'theme/core/url-builder';
-import { RenderTemplate } from 'theme/types';
+import { MarkdownPageEvent } from '@plugin/events';
+import { formatMarkdown } from '@plugin/libs/utils';
+import { OutputFileStrategy } from '@plugin/options/maps';
+import { MarkdownThemeContext } from '@plugin/theme';
+import { getNavigation, getUrls } from '@plugin/theme/base';
+import { RenderTemplate } from '@plugin/types';
 import {
   DeclarationReflection,
   DocumentReflection,
   ProjectReflection,
   Reflection,
   ReflectionKind,
+  Renderer,
   Theme,
 } from 'typedoc';
 
@@ -35,6 +35,10 @@ import {
  * ```
  */
 export class MarkdownTheme extends Theme {
+  constructor(renderer: Renderer) {
+    super(renderer);
+  }
+
   /**
    * Renders a template and page model to a string.
    *
@@ -63,20 +67,16 @@ export class MarkdownTheme extends Theme {
 
   /**
    * Maps the models of the given project to the desired output files.
-   *
-   * This method can be overriden to provide an alternative url structure.
    */
   getUrls(project: ProjectReflection) {
-    return new UrlBuilder(this, project).getUrls();
+    return getUrls(this, project);
   }
 
   /**
    * Map the models of the given project to a navigation structure.
-   *
-   * This method can be overriden to provide an alternative navigation structure.
    */
   getNavigation(project: ProjectReflection) {
-    return new NavigationBuilder(this, project).getNavigation();
+    return getNavigation(this, project);
   }
 
   /**

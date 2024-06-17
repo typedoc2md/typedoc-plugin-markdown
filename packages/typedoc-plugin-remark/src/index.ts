@@ -1,3 +1,9 @@
+/**
+ * The plugin entrypoint and bootstrapping of the plugin.
+ *
+ * @module
+ */
+
 import { Application, DeclarationOption, RendererEvent } from 'typedoc';
 import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
 import * as options from './options/declarations';

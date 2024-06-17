@@ -9,8 +9,11 @@
  * @module
  */
 
-export { MarkdownPageEvent, MarkdownRendererEvent } from 'app/events';
-export { MarkdownRendererHooks } from 'app/types';
-export { PluginOptions } from 'options/types';
-export { MarkdownTheme, MarkdownThemeContext } from 'theme';
-export { NavigationItem, PackageMetaData, UrlMapping } from 'theme/types';
+export { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/events';
+export { MarkdownTheme, MarkdownThemeContext } from '@plugin/theme';
+export {
+  MarkdownRendererHooks,
+  NavigationItem,
+  PluginOptions,
+  UrlMapping,
+} from '@plugin/types';

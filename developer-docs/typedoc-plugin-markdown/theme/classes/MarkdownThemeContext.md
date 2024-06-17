@@ -90,7 +90,6 @@ This class can be used to customize the theme output by extending the class and 
     * [unionType()](#uniontype)
     * [unknownType()](#unknowntype)
   * [helpers](#helpers)
-    * [getCommentFlags()](#getcommentflags)
     * [getCommentParts()](#getcommentparts)
     * [getDeclarationType()](#getdeclarationtype)
     * [getDescriptionForReflection()](#getdescriptionforreflection)
@@ -117,11 +116,11 @@ This class can be used to customize the theme output by extending the class and 
 
 #### Parameters
 
-| Parameter | Type                                                                                                                                                     | Description                              |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `theme`   | [`MarkdownTheme`](MarkdownTheme.md)                                                                                                                      | The theme instance.                      |
-| `page`    | [`MarkdownPageEvent`](../../app/namespaces/events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)> | The current page event.                  |
-| `options` | [`Options`](https://typedoc.org/api/classes/Configuration.Options.html)                                                                                  | The options provided to the application. |
+| Parameter | Type                                                                                                                                      | Description                              |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `theme`   | [`MarkdownTheme`](MarkdownTheme.md)                                                                                                       | The theme instance.                      |
+| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)> | The current page event.                  |
+| `options` | [`Options`](https://typedoc.org/api/classes/Configuration.Options.html)                                                                   | The options provided to the application. |
 
 #### Returns
 
@@ -129,7 +128,7 @@ This class can be used to customize the theme output by extending the class and 
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L42)
+[theme/markdown-theme-context.ts:45](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L45)
 
 ## Properties
 
@@ -141,7 +140,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L36)
+[theme/markdown-theme-context.ts:39](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L39)
 
 ***
 
@@ -151,7 +150,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:37](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L37)
+[theme/markdown-theme-context.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L40)
 
 ***
 
@@ -163,19 +162,19 @@ The theme instance.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L46)
+[theme/markdown-theme-context.ts:49](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L49)
 
 ***
 
 ### page
 
-> `readonly` **page**: [`MarkdownPageEvent`](../../app/namespaces/events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)>
+> `readonly` **page**: [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)>
 
 The current page event.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L50)
+[theme/markdown-theme-context.ts:53](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L53)
 
 ***
 
@@ -187,13 +186,13 @@ The options provided to the application.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L54)
+[theme/markdown-theme-context.ts:57](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L57)
 
 ***
 
 ### packagesMetaData
 
-> `private` **packagesMetaData**: `Record`\<`string`, [`PackageMetaData`](../namespaces/types/interfaces/PackageMetaData.md)>
+> `private` **packagesMetaData**: `Record`\<`string`, [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)>
 
 Holds meta data for individual packages (if entryPointStrategy equals `packages`).
 
@@ -201,7 +200,7 @@ This is required for generating package specific documentation.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L66)
+[theme/markdown-theme-context.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L69)
 
 ## Methods
 
@@ -209,7 +208,9 @@ General context aware helper methods not bound to any specific models that can b
 
 ### getPackageMetaData()
 
-> **getPackageMetaData**(`packageName`): [`PackageMetaData`](../namespaces/types/interfaces/PackageMetaData.md)
+> **getPackageMetaData**(`packageName`): [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
+
+**`Internal`**
 
 Returns the package meta data for a given package name when entrypointStrategy is set to `packages`.
 
@@ -221,11 +222,11 @@ Returns the package meta data for a given package name when entrypointStrategy i
 
 #### Returns
 
-[`PackageMetaData`](../namespaces/types/interfaces/PackageMetaData.md)
+[`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:114](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L114)
+[theme/markdown-theme-context.ts:119](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L119)
 
 ***
 
@@ -250,7 +251,7 @@ If public path is set, it will be used as the base URL.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:126](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L126)
+[theme/markdown-theme-context.ts:131](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L131)
 
 ***
 
@@ -258,15 +259,15 @@ If public path is set, it will be used as the base URL.
 
 > **hook**(`name`): `string`\[]
 
-`Internal`
+**`Internal`**
 
 Hook into the TypeDoc rendering system.
 
 #### Parameters
 
-| Parameter | Type                                                                                            |
-| --------- | ----------------------------------------------------------------------------------------------- |
-| `name`    | keyof [`MarkdownRendererHooks`](../../app/namespaces/types/interfaces/MarkdownRendererHooks.md) |
+| Parameter | Type                                                                             |
+| --------- | -------------------------------------------------------------------------------- |
+| `name`    | keyof [`MarkdownRendererHooks`](../../types/interfaces/MarkdownRendererHooks.md) |
 
 #### Returns
 
@@ -274,7 +275,7 @@ Hook into the TypeDoc rendering system.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:156](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L156)
+[theme/markdown-theme-context.ts:161](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L161)
 
 ## Resources
 
@@ -296,9 +297,9 @@ Template that maps to a project document.
 
 ##### Parameters
 
-| Parameter | Type                                                                                                   |
-| --------- | ------------------------------------------------------------------------------------------------------ |
-| `page`    | [`MarkdownPageEvent`](../../app/namespaces/events/classes/MarkdownPageEvent.md)\<`DocumentReflection`> |
+| Parameter | Type                                                                                    |
+| --------- | --------------------------------------------------------------------------------------- |
+| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<`DocumentReflection`> |
 
 ##### Returns
 
@@ -312,9 +313,9 @@ Template that maps to the root project reflection. This will be the index page /
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                                                   |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `page`    | [`MarkdownPageEvent`](../../app/namespaces/events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)> |
+| Parameter | Type                                                                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)> |
 
 ##### Returns
 
@@ -328,9 +329,9 @@ Template that specifically maps to the resolved readme file. This template is no
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                                                   |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `page`    | [`MarkdownPageEvent`](../../app/namespaces/events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)> |
+| Parameter | Type                                                                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)> |
 
 ##### Returns
 
@@ -344,9 +345,9 @@ Template that maps to individual reflection models.
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                                                           |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `page`    | [`MarkdownPageEvent`](../../app/namespaces/events/classes/MarkdownPageEvent.md)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)> |
+| Parameter | Type                                                                                                                                                            |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)> |
 
 ##### Returns
 
@@ -354,7 +355,7 @@ Template that maps to individual reflection models.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:74](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L74)
+[theme/markdown-theme-context.ts:77](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L77)
 
 ***
 
@@ -1268,7 +1269,7 @@ There is no association list partial for properties as these are handled as a st
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:94](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L94)
+[theme/markdown-theme-context.ts:97](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L97)
 
 ***
 
@@ -1283,20 +1284,6 @@ Please note that partials:
 * Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
 * Can reference other helpers but should not reference partials.
 * Can return strings or other models.
-
-#### getCommentFlags()
-
-> **getCommentFlags**: (`reflection`) => `string`
-
-##### Parameters
-
-| Parameter    | Type                                                                                                                                                                                     |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `reflection` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/Models.SignatureReflection.html) |
-
-##### Returns
-
-`string`
 
 #### getCommentParts()
 
@@ -1463,10 +1450,10 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter                | Type                                                                                                                                                     |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `stringWithPlaceholders` | `string`                                                                                                                                                 |
-| `page`                   | [`MarkdownPageEvent`](../../app/namespaces/events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)> |
+| Parameter                | Type                                                                                                                                      |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `stringWithPlaceholders` | `string`                                                                                                                                  |
+| `page`                   | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)> |
 
 ##### Returns
 
@@ -1545,4 +1532,4 @@ Please note that partials:
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts:107](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/3222766cbd19cef92f31d344e58bbe5b67a3a528/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L107)
+[theme/markdown-theme-context.ts:110](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/352ce41370cee18034e72b7c2f3874bbfe56f96f/packages/typedoc-plugin-markdown/src/theme/markdown-theme-context.ts#L110)

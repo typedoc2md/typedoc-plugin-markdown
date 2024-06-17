@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { Comment } from 'typedoc';
-import { getFrontmatterTags } from '../../dist/app/tags';
 import { FrontmatterNamingConvention } from '../../dist/options/maps';
+import { getFrontmatterTags } from '../../dist/tags';
 
 describe(`Options:`, () => {
   beforeAll(async () => {});

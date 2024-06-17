@@ -1,3 +1,8 @@
+/**
+ * The plugin entrypoint and bootstrapping of the plugin.
+ *
+ * @module
+ */
 import * as fs from 'fs';
 import {
   Application,
@@ -12,7 +17,7 @@ import {
 } from 'typedoc-plugin-markdown';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import * as options from './options/declarations';
-import presets from './options/presets';
+import { presets } from './options/presets';
 import { getSidebar } from './sidebar';
 
 export function load(app: Application) {

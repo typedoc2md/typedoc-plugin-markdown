@@ -2,8 +2,6 @@
  *
  * Comments form module comments
  *
- * @links
- *
  * Links using `{@link}` inline tags.
  *
  * - {@link CommentInterface} - Links to CommentInterface

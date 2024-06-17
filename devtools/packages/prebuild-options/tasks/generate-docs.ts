@@ -30,8 +30,8 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
     outputPage.push(
       'The following are preset typedoc-plugin-markdown options:',
     );
-    const presetsConfig: any = await import(docsConfig.presetsPath as string);
-    const config = presetsConfig.default;
+    const { presets }: any = await import(docsConfig.presetsPath as string);
+    const config = presets;
     delete config.plugin;
     const presetsJson = JSON.stringify(config, null, 2);
 

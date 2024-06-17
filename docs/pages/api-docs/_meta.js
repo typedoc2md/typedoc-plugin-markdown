@@ -21,7 +21,6 @@ export default {
   },
   'Interface.MarkdownRendererHooks': 'MarkdownRendererHooks',
   'Interface.PluginOptions': 'PluginOptions',
-  'Interface.PackageMetaData': 'PackageMetaData',
   'Interface.UrlMapping': 'UrlMapping',
   'Interface.NavigationItem': 'NavigationItem',
 };

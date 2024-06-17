@@ -18,6 +18,7 @@ export function addTableOfContents(
   const outputFileStrategy = app.options.getValue('outputFileStrategy');
 
   const kindsWithToc = [
+    ReflectionKind.Module,
     ReflectionKind.Namespace,
     ReflectionKind.Class,
     ReflectionKind.Enum,

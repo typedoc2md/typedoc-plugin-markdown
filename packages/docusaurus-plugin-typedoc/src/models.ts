@@ -1,5 +1,5 @@
 import { PluginOptions as TypedocPluginMarkdownOptions } from 'typedoc-plugin-markdown';
-import { PluginOptions as DocusaurusOptions } from './options/types';
+import { PluginOptions as DocusaurusOptions } from './types';
 
 export interface PluginOptions
   extends TypedocPluginMarkdownOptions,

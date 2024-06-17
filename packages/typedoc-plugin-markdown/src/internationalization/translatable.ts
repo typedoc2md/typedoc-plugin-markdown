@@ -3,18 +3,22 @@
  *
  * @module
  */
-import { locales } from 'internationalization';
+import { en, jp, ko, zh } from 'internationalization';
 import { Application } from 'typedoc';
 
 /**
  * Returns subset of translatable strings for the plugin.
  *
  * These will then be merged with the main set of TypeDoc string.
+ *
+ * @category Methods
  */
 export function getTranslatable(app: Application) {
   const LOCALES = {
-    en: locales.en,
-    ko: locales.ko,
+    en,
+    jp,
+    ko,
+    zh,
   };
   return {
     ...LOCALES['en'],

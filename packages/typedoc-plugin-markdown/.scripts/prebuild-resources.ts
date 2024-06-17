@@ -152,7 +152,7 @@ async function writeResourcesFile() {
   ];
 
   const out = `// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
-import { MarkdownPageEvent } from 'app/events';
+import { MarkdownPageEvent } from '@plugin/events';
 import { MarkdownThemeContext } from 'theme';
 import {${typedocTypes.join(',')}} from 'typedoc';
 import { templates, partials, helpers } from './index';

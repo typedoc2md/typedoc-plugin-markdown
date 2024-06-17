@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-  npm install typedoc-github-wiki-theme --save-dev
+  npm install typedoc typedoc-github-wiki-theme --save-dev
   ```
 
 ## Documentation

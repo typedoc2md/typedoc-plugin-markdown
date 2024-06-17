@@ -3,6 +3,5 @@
  *
  * @module
  */
-export * as locales from './locales';
-export * as translatable from './translatable';
-export * as types from './types';
+export * from './locales';
+export * from './translatable';

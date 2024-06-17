@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
-import { MarkdownPageEvent } from 'app/events';
+import { MarkdownPageEvent } from '@plugin/events';
 import { MarkdownThemeContext } from 'theme';
 import {
   ArrayType,

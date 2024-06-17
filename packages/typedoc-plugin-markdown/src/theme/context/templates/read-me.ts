@@ -1,4 +1,4 @@
-import { MarkdownPageEvent } from 'app/events';
+import { MarkdownPageEvent } from '@plugin/events';
 import { MarkdownThemeContext } from 'theme';
 import { CommentDisplayPart, ProjectReflection } from 'typedoc';
 

@@ -1,4 +1,4 @@
-import { MarkdownPageEvent } from 'app/events';
+import { MarkdownPageEvent } from '@plugin/events';
 import { Reflection } from 'typedoc';
 
 export function getProjectName(
