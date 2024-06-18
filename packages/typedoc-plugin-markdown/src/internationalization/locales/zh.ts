@@ -11,6 +11,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_event: '事件',
   theme_extends: '扩展',
   theme_extended_by: '被扩展',
+  theme_globals: '全局变量',
   theme_member: '成员',
   theme_member_plural: '成员们',
   theme_modifier: '修饰符',

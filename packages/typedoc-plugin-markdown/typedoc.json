@@ -12,7 +12,7 @@
   "exclude": ["./src/public-api.ts"],
   "categoryOrder": ["File", "Display", "Utility", "Methods", "Locales"],
   "projectDocuments": [
-    "./supporting-docs/getting-started.md",
-    "./supporting-docs/testing.md"
+    "./supporting-docs/internal/getting-started.md",
+    "./supporting-docs/internal/test-and-validation.md"
   ]
 }

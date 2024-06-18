@@ -1,16 +1,6 @@
 # MarkdownPageEvent
 
-An event emitted by before and after the markup of a page is rendered.
-
-## Example
-
-```ts
-export function load(app: MarkdownApplication) {
-  app.renderer.on(MarkdownPageEvent.BEGIN, (page: MarkdownPageEvent) => {
-   page.contents = page.contents.replace('foo', 'bar');
-  });
-});
-```
+An event emitted before and after the markdown of a page is rendered.
 
 ## Extends
 

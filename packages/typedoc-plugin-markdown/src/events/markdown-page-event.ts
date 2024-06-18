@@ -1,17 +1,9 @@
 import { Event, ProjectReflection, Reflection } from 'typedoc';
 
 /**
- * An event emitted by before and after the markup of a page is rendered.
+ * An event emitted before and after the markdown of a page is rendered.
  *
- * @example
- *
- * ```ts
- * export function load(app: MarkdownApplication) {
- *   app.renderer.on(MarkdownPageEvent.BEGIN, (page: MarkdownPageEvent) => {
- *    page.contents = page.contents.replace('foo', 'bar');
- *   });
- * });
- * ```
+ * @event
  */
 export class MarkdownPageEvent<
   /** @ignore **/ Model = Reflection,

@@ -9,22 +9,29 @@ If you are interested more generally in the TypeDoc API please visit [https://ty
 | :------ | :------ |
 | [Local Plugins](/api-docs/Document.Local-Plugins.mdx) | How to write local plugins to consume APIs. |
 | [Customizing Output](/api-docs/Document.Customizing-Output.mdx) | How to extend and customize output. |
-| [Navigation](/api-docs/Document.Navigation.mdx) | How to create a custom navigation structure. |
+| [Utilizing Navigation](/api-docs/Document.Utilizing-Navigation.mdx) | How to create a custom navigation structure. |
 
-## Classes
+## Events
 
 | Class | Description |
 | :------ | :------ |
-| [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent.mdx) | An event emitted by before and after the markup of a page is rendered. |
+| [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent.mdx) | An event emitted before and after the markdown of a page is rendered. |
 | [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent.mdx) | An event emitted at the beginning and end of the rendering process. |
-| [MarkdownThemeContext](/api-docs/Class.MarkdownThemeContext.mdx) | The theme context class that is provided as context on the rendering of every page. It is heavily influenced by the equivalent [DefaultThemeRenderContext](https://typedoc.org/api/classes/DefaultThemeRenderContext.html) from the default theme. |
-| [MarkdownTheme](/api-docs/Class.MarkdownTheme.mdx) | The main theme class for the plugin. The class controls how TypeDoc models are mapped to files and templates and extends TypeDoc's base Theme class. |
+
+## Theme Classes
+
+| Class | Description |
+| :------ | :------ |
+| [MarkdownTheme](/api-docs/Class.MarkdownTheme.mdx) | The main theme class for the plugin. |
+| [MarkdownThemeContext](/api-docs/Class.MarkdownThemeContext.mdx) | The theme context class that is provided as context on the rendering of every page. |
 
 ## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
+| [MarkdownApplication](/api-docs/Interface.MarkdownApplication.mdx) | This interface is essentially an extended typing of TypeDoc's [`Application`](https://typedoc.org/api/classes/Application.html) instance.`` |
 | [MarkdownRendererHooks](/api-docs/Interface.MarkdownRendererHooks.mdx) | Describes the hooks available to inject output in the markdown theme. |
+| [MarkdownRenderer](/api-docs/Interface.MarkdownRenderer.mdx) | An extended typing of TypeDoc's [`Renderer`](https://typedoc.org/api/classes/Renderer.html) class that includes updated typings for hooks and async jobs. |
 | [PluginOptions](/api-docs/Interface.PluginOptions.mdx) | Describes the options declared by the plugin. |
 | [UrlMapping](/api-docs/Interface.UrlMapping.mdx) | The model used to define the URL mapping structure. |
 | [NavigationItem](/api-docs/Interface.NavigationItem.mdx) | The model used to define the navigation structure. |

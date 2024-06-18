@@ -2,7 +2,7 @@ import { MarkdownPageEvent } from '@plugin/events';
 import { formatMarkdown } from '@plugin/libs/utils';
 import { OutputFileStrategy } from '@plugin/options/maps';
 import { MarkdownThemeContext } from '@plugin/theme';
-import { getNavigation, getUrls } from '@plugin/theme/base';
+import { NavigationBuilder, UrlBuilder } from '@plugin/theme/base';
 import { RenderTemplate } from '@plugin/types';
 import {
   DeclarationReflection,
@@ -16,23 +16,14 @@ import {
 
 /**
  * The main theme class for the plugin.
+ *
  * The class controls how TypeDoc models are mapped to files and templates and extends TypeDoc's base Theme class.
  *
  * You would typically only be interested in overriding the the theme's render context instance.
  *
  * The API follows the implementation of [TypeDoc's custom theming](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) with some minor adjustments.
  *
- * @example
- *
- * ```ts
- * export function load(app) {
- *   app.renderer.defineTheme('customTheme', MyMarkdownTheme);
- * }
- *
- * class MyMarkdownTheme extends MarkdownTheme {
- *  ...
- * }
- * ```
+ * @group Theme Classes
  */
 export class MarkdownTheme extends Theme {
   constructor(renderer: Renderer) {
@@ -69,14 +60,14 @@ export class MarkdownTheme extends Theme {
    * Maps the models of the given project to the desired output files.
    */
   getUrls(project: ProjectReflection) {
-    return getUrls(this, project);
+    return new UrlBuilder(this, project).getUrls();
   }
 
   /**
    * Map the models of the given project to a navigation structure.
    */
   getNavigation(project: ProjectReflection) {
-    return getNavigation(this, project);
+    return new NavigationBuilder(this, project).getNavigation();
   }
 
   /**

@@ -2,7 +2,7 @@
 
 The core package of this monorepo and is the package that is used to generate the markdown documentation.
 
-## What does the package do?
+## What Does the Package Do?
 
 - Extends some methods on the TypeDoc renderer to make compatible with Markdown output.
 - Exposes some additional options to TypeDoc.

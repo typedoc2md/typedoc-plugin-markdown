@@ -5,22 +5,17 @@
  */
 import * as fs from 'fs';
 import * as path from 'path';
+import { DeclarationOption, Options, OptionsReader } from 'typedoc';
 import {
-  Application,
-  DeclarationOption,
-  Options,
-  OptionsReader,
-} from 'typedoc';
-import {
+  MarkdownApplication,
   MarkdownPageEvent,
-  MarkdownRendererEvent,
 } from 'typedoc-plugin-markdown';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options';
 import * as options from './options/declarations';
 import { presets } from './options/presets';
 import { getSidebar } from './sidebars/sidebars';
 
-export function load(app: Application) {
+export function load(app: MarkdownApplication) {
   Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
       name,
@@ -55,34 +50,29 @@ export function load(app: Application) {
     );
   });
 
-  app.renderer.postRenderAsyncJobs.push(
-    async (output: MarkdownRendererEvent) => {
-      const sidebarOptions = {
-        ...DEFAULT_SIDEBAR_OPTIONS,
-        ...app.options.getValue('sidebar'),
-      };
-      if (sidebarOptions.autoConfiguration && output.navigation) {
-        const outDir = app.options.getValue('out');
-        const sidebarPath = path.resolve(outDir, 'typedoc-sidebar.json');
-        const basePath = path.relative(
-          app.options.getValue('docsRoot'),
-          outDir,
-        );
+  app.renderer.postRenderAsyncJobs.push(async (output) => {
+    const sidebarOptions = {
+      ...DEFAULT_SIDEBAR_OPTIONS,
+      ...app.options.getValue('sidebar'),
+    };
+    if (sidebarOptions.autoConfiguration && output.navigation) {
+      const outDir = app.options.getValue('out');
+      const sidebarPath = path.resolve(outDir, 'typedoc-sidebar.json');
+      const basePath = path.relative(app.options.getValue('docsRoot'), outDir);
 
-        const sidebarJson = getSidebar(
-          output.navigation,
-          basePath,
-          sidebarOptions,
-        );
-        fs.writeFileSync(
-          sidebarPath,
-          sidebarOptions.pretty
-            ? JSON.stringify(sidebarJson, null, 2)
-            : JSON.stringify(sidebarJson),
-        );
-      }
-    },
-  );
+      const sidebarJson = getSidebar(
+        output.navigation,
+        basePath,
+        sidebarOptions,
+      );
+      fs.writeFileSync(
+        sidebarPath,
+        sidebarOptions.pretty
+          ? JSON.stringify(sidebarJson, null, 2)
+          : JSON.stringify(sidebarJson),
+      );
+    }
+  });
 }
 
 function slugifyAnchor(anchor: string) {

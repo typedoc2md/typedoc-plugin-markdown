@@ -129,11 +129,12 @@ export const fileExtension: Partial<DeclarationOption> = {
 };
 
 /**
- * The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
+ * The `entryFileName` in this context is the root page of the documentation and each module directory.
+ * This is essentially the equivalent to `index.html` for web pages.
  *
  * `README` is recognised when browsing folders on repos and Wikis and is the plugin default. `index` might be more suitable for static site generators.
  *
- * The content of this file will be resolved in the following order:
+ * The content of root documentation file will be resolved in the following order:
  *
  * 1. The value of the [`entryModule`](#entrymodule) option (if defined).
  * 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
@@ -209,8 +210,8 @@ export const hidePageHeader: Partial<DeclarationOption> = {
 /**
  * @category Display
  */
-export const hidePageTitle: Partial<DeclarationOption> = {
-  help: 'Do not print page title.',
+export const hideBreadcrumbs: Partial<DeclarationOption> = {
+  help: 'Do not print breadcrumbs.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -218,8 +219,8 @@ export const hidePageTitle: Partial<DeclarationOption> = {
 /**
  * @category Display
  */
-export const hideBreadcrumbs: Partial<DeclarationOption> = {
-  help: 'Do not print breadcrumbs.',
+export const hidePageTitle: Partial<DeclarationOption> = {
+  help: 'Do not print page title.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -517,6 +518,40 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 };
 
 /**
+ * Defines placeholder text in main template that can be customized. Includes the main page header and breadcrumbs (if displayed),
+ * page titles and page footer.
+ *
+ * Default values within curly braces {} indicates a placeholder of dynamic text.
+ *
+ * - The `{projectName}` placeholder writes project's name .
+ * - The `{kind}` writes the reflection kind of the page.
+ * - The `{version}` placeholder writes package version (if includeVersion is `true`).
+ *
+ * If you are looking for general localization support please see [localization]().
+ *
+ * @category Utility
+ */
+export const textContentMappings: Partial<DeclarationOption> = {
+  help: 'Change specific text placeholders in the template.',
+  type: ParameterType.Object,
+  defaultValue: TEXT_CONTENT_MAPPINGS,
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-markdown] textContentMappings must be an object.',
+      );
+    }
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string') {
+        throw new Error(
+          `[typedoc-plugin-markdown] All values of textContentMappings must be strings.`,
+        );
+      }
+    }
+  },
+};
+
+/**
  * By default navigation is not written to file but can be consumed programmatically.
  * This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
  *
@@ -553,39 +588,5 @@ export const navigationModel: Partial<DeclarationOption> = {
     excludeGroups: false,
     excludeCategories: false,
     excludeFolders: false,
-  },
-};
-
-/**
- * Defines placeholder text in main template that can be customized. Includes the main page header and breadcrumbs (if displayed),
- * page titles and page footer.
- *
- * Default values within curly braces {} indicates a placeholder of dynamic text.
- *
- * - The `{projectName}` placeholder writes project's name .
- * - The `{kind}` writes the reflection kind of the page.
- * - The `{version}` placeholder writes package version (if includeVersion is `true`).
- *
- * If you are looking for general localization support please see [localization]().
- *
- * @category Utility
- */
-export const textContentMappings: Partial<DeclarationOption> = {
-  help: 'Change specific text placeholders in the template.',
-  type: ParameterType.Object,
-  defaultValue: TEXT_CONTENT_MAPPINGS,
-  validate(value) {
-    if (!value || typeof value !== 'object') {
-      throw new Error(
-        '[typedoc-plugin-markdown] textContentMappings must be an object.',
-      );
-    }
-    for (const val of Object.values(value)) {
-      if (typeof val !== 'string') {
-        throw new Error(
-          `[typedoc-plugin-markdown] All values of textContentMappings must be strings.`,
-        );
-      }
-    }
   },
 };

@@ -4,4 +4,4 @@
  * @module
  */
 export * from './markdown-theme';
-export * from './markdown-theme-context';
+export * from './markdown-themeContext';

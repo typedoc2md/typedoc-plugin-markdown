@@ -1,2 +1,2 @@
-export * from './get-navigation';
-export * from './get-urls';
+export * from './navigation-builder';
+export * from './url-builder';

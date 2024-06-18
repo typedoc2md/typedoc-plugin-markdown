@@ -1,0 +1,39 @@
+# MarkdownRenderer
+
+An extended typing of TypeDoc's [`Renderer`](https://typedoc.org/api/classes/Renderer.html) class that includes updated typings for hooks and async jobs.
+
+## Extends
+
+- [`Renderer`](https://typedoc.org/api/classes/Renderer.html)
+
+## Properties
+
+### markdownHooks
+
+> **markdownHooks**: [`EventHooks`](https://typedoc.org/api/classes/EventHooks.html)\<[`MarkdownRendererHooks`](/api-docs/Interface.MarkdownRendererHooks.mdx), `string`\>
+
+Replaces the event hooks typings the [`MarkdownRendererHooks`](/api-docs/Interface.MarkdownRendererHooks.mdx) used by the plugin.
+
+***
+
+### preRenderAsyncJobs
+
+> **preRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
+
+Re-types the returned argument argument to [`MarkdownRendererEvent`](/api-docs/Class.MarkdownRendererEvent.mdx).
+
+#### Overrides
+
+`Renderer.preRenderAsyncJobs`
+
+***
+
+### postRenderAsyncJobs
+
+> **postRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
+
+Re-types the returned argument argument to [`MarkdownRendererEvent`](/api-docs/Class.MarkdownRendererEvent.mdx).
+
+#### Overrides
+
+`Renderer.postRenderAsyncJobs`

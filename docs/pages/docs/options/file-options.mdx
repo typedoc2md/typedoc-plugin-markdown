@@ -108,11 +108,12 @@ Typically markdown files are recognised by the `.md` or `.markdown` file extensi
 
 > Accepts a string value. Defaults to `"README"`.
 
-The entry page is the root page of the documentation, equivalent to `index.html` for web pages.
+The `entryFileName` in this context is the root page of the documentation and each module directory.
+This is essentially the equivalent to `index.html` for web pages.
 
 `README` is recognised when browsing folders on repos and Wikis and is the plugin default. `index` might be more suitable for static site generators.
 
-The content of this file will be resolved in the following order:
+The content of root documentation file will be resolved in the following order:
 
 1. The value of the [`entryModule`](#entrymodule) option (if defined).
 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).

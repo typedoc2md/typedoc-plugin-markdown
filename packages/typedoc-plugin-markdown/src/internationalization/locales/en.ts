@@ -11,6 +11,7 @@ export const translatable: TranslatableStrings = {
   theme_event: 'Event',
   theme_extends: 'Extends',
   theme_extended_by: 'Extended by',
+  theme_globals: 'Globals',
   theme_member: 'Member',
   theme_member_plural: 'Members',
   theme_modifier: 'Modifier',

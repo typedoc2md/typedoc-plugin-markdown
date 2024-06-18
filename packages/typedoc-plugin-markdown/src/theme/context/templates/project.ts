@@ -19,9 +19,7 @@ export function project(
 
   const isPackages =
     this.page.project.url === this.page.url &&
-    this.options.getValue('entryPointStrategy') ===
-      EntryPointStrategy.Packages &&
-    this.options.getValue('entryPoints')?.length;
+    this.options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
 
   md.push(this.hook('index.page.begin').join('\n'));
 
@@ -64,12 +62,12 @@ export function project(
         headingLevel: 2,
       }),
     );
-  }
-
-  if (isPackages) {
-    md.push(this.partials.packagesIndex(page.model));
   } else {
-    md.push(this.partials.body(page.model, { headingLevel: 2 }));
+    if (isPackages) {
+      md.push(this.partials.packagesIndex(page.model));
+    } else {
+      md.push(this.partials.body(page.model, { headingLevel: 2 }));
+    }
   }
 
   md.push(this.partials.footer());

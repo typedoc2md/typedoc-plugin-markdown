@@ -12,6 +12,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_event: 'イベント',
   theme_extends: '拡張',
   theme_extended_by: 'によって拡張された',
+  theme_globals: 'グローバル変数',
   theme_member: 'メンバー',
   theme_member_plural: 'メンバー',
   theme_modifier: '修飾子',

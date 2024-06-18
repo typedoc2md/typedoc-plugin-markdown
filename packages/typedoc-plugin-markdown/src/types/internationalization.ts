@@ -14,6 +14,7 @@ export interface TranslatableStrings {
   theme_event: string;
   theme_extends: string;
   theme_extended_by: string;
+  theme_globals: string;
   theme_member: string;
   theme_member_plural: string;
   theme_modifier: string;

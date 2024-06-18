@@ -3,7 +3,6 @@
  *
  * @module
  */
-
 import { MarkdownTheme } from '@plugin/theme';
 import { getTranslatable } from 'internationalization/translatable';
 import { declarations } from 'options';
@@ -19,23 +18,22 @@ import {
   Renderer,
   Theme,
 } from 'typedoc';
-
 /**
- * The function that is called by TypeDoc to bootstrap the plugin. https://typedoc.org/guides/development/#plugins.
+ * The function that is called by TypeDoc to bootstrap the plugin.
  *
  * Here we expose additional TypeDoc options and make some adjustments.
  *
  * This method is not intended to be consumed in any other context that via the `plugin` option.
+ *
+ * @see https://typedoc.org/guides/development/#plugins.
  */
 export function load(app: Application) {
   /**
    * ====================
    * 1. Bootstrap Options
-   * ====================
-   */
-
-  /**
+   *
    * Iterate over declaration definitions and to the container.
+   * ====================
    */
   Object.entries(declarations).forEach(([name, declaration]) => {
     app.options.addDeclaration({

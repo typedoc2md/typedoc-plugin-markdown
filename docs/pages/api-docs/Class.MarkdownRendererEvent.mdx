@@ -2,14 +2,6 @@
 
 An event emitted at the beginning and end of the rendering process.
 
-## Example
-
-```ts
-app.renderer.on(MarkdownRendererEvent.BEGIN, (event) => {
-  console.log(`Render Starting for ${event.project.name}!`);
-});
-```
-
 ## Extends
 
 - [`Event`](https://typedoc.org/api/classes/Event.html)
@@ -50,7 +42,7 @@ The path of the directory the documentation should be written to.
 
 ### urls?
 
-> `optional` **urls**: [`UrlMapping`](/api-docs/Interface.UrlMapping.mdx)\<[`Reflection`](https://typedoc.org/api/classes/Models.Reflection.html)\>[]
+> `optional` **urls**: [`UrlMapping`](/api-docs/Interface.UrlMapping.mdx)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\>[]
 
 A list of all pages that should be generated.
 

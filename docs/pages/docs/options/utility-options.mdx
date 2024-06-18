@@ -93,6 +93,36 @@ This option can be used for engines that require the preservation of anchor link
 }
 ```
 
+## --textContentMappings
+
+<Callout emoji="💡">Change specific text placeholders in the template.</Callout>
+
+>
+
+Defines placeholder text in main template that can be customized. Includes the main page header and breadcrumbs (if displayed),
+page titles and page footer.
+
+Default values within curly braces {} indicates a placeholder of dynamic text.
+
+- The `{projectName}` placeholder writes project's name .
+- The `{kind}` writes the reflection kind of the page.
+- The `{version}` placeholder writes package version (if includeVersion is `true`).
+
+If you are looking for general localization support please see [localization]().
+
+```json filename="typedoc.json"
+{
+  "textContentMappings": {
+    "header.title": "{projectName} {version}",
+    "header.docs": "Docs",
+    "breadcrumbs.home": "{projectName} {version}",
+    "title.indexPage": "{projectName} {version}",
+    "title.memberPage": "{kind}: {name}",
+    "footer.text": ""
+  }
+}
+```
+
 ## --navigationModel
 
 <Callout emoji="💡">
@@ -132,36 +162,6 @@ export function load(app: MarkdownApplication) {
     "excludeGroups": false,
     "excludeCategories": false,
     "excludeFolders": false
-  }
-}
-```
-
-## --textContentMappings
-
-<Callout emoji="💡">Change specific text placeholders in the template.</Callout>
-
->
-
-Defines placeholder text in main template that can be customized. Includes the main page header and breadcrumbs (if displayed),
-page titles and page footer.
-
-Default values within curly braces {} indicates a placeholder of dynamic text.
-
-- The `{projectName}` placeholder writes project's name .
-- The `{kind}` writes the reflection kind of the page.
-- The `{version}` placeholder writes package version (if includeVersion is `true`).
-
-If you are looking for general localization support please see [localization]().
-
-```json filename="typedoc.json"
-{
-  "textContentMappings": {
-    "header.title": "{projectName} {version}",
-    "header.docs": "Docs",
-    "breadcrumbs.home": "{projectName} {version}",
-    "title.indexPage": "{projectName} {version}",
-    "title.memberPage": "{kind}: {name}",
-    "footer.text": ""
   }
 }
 ```

@@ -3,94 +3,18 @@
 exports[`Docusaurus: Defaults should render docs 1`] = `
 "# docusaurus-plugin-typedoc
 
-## Enumerations
+## Modules
 
-### CommentEnum
-
-#### Enumeration Members
-
-##### Member
-
-> **Member**: \`0\`
-
-##### MemberB
-
-> **MemberB**: \`1\`
-
-## Interfaces
-
-### CommentInterface\\<T\\>
-
-Comments form module comments
-
-Links using \`{@link}\` inline tags.
-
-- [CommentInterface](index.md#commentinterfacet-1) - Links to CommentInterface
-- [Links to CommentInterface.prop](index.md#prop-2)
-- [Links to CommentInterface.propb](index.md#propb-2)
-
-#### Extended by
-
-- [\`CommentInterfaceExtended\`](index.md#commentinterfaceextended-1)
-
-#### Type Parameters
-
-• **T**
-
-#### Properties
-
-##### prop
-
-> **prop**: \`string\`
-
-##### propb
-
-> **propb**: \`T\`
-
-***
-
-### CommentInterfaceExtended
-
-Comments form module comments
-
-Links using \`{@link}\` inline tags.
-
-- [CommentInterface](index.md#commentinterfacet-1) - Links to CommentInterface
-- [Links to CommentInterface.prop](index.md#prop-2)
-- [Links to CommentInterface.propb](index.md#propb-2)
-
-#### Extends
-
-- [\`CommentInterface\`](index.md#commentinterfacet-1) \\<[\`CommentEnum\`](index.md#commentenum-1)\\>
-
-#### Properties
-
-##### prop
-
-> **prop**: \`string\`
-
-###### Inherited from
-
-[\`CommentInterface\`](index.md#commentinterfacet-1) . [\`prop\`](index.md#prop-2)
-
-##### propb
-
-> **propb**: [\`CommentEnum\`](index.md#commentenum-1)
-
-###### Inherited from
-
-[\`CommentInterface\`](index.md#commentinterfacet-1) . [\`propb\`](index.md#propb-2)
-
-##### propc
-
-> **propc**: \`string\`
+- [links](links/index.md)
+- [module-1](module-1/index.md)
+- [module-2](module-2/index.md)
 "
 `;
 
 exports[`Docusaurus: Defaults should render sidebar 1`] = `
 "// @ts-check
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
-const typedocSidebar = { items: [{"type":"category","label":"links","items":[{"type":"category","label":"Enumerations","items":[{"type":"doc","id":"out/default/links/enumerations/CommentEnum","label":"CommentEnum"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/links/interfaces/CommentInterface","label":"CommentInterface"},{"type":"doc","id":"out/default/links/interfaces/CommentInterfaceExtended","label":"CommentInterfaceExtended"}]}],"link":{"type":"doc","id":"out/default/links/index"}},{"type":"category","label":"module-1","items":[{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/module-1/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/module-1/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/module-1/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/module-1/interfaces/InterfaceB","label":"InterfaceB"}]}],"link":{"type":"doc","id":"out/default/module-1/index"}},{"type":"category","label":"module-2","items":[{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/module-2/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/module-2/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/module-2/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/module-2/interfaces/InterfaceB","label":"InterfaceB"}]}],"link":{"type":"doc","id":"out/default/module-2/index"}},{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/interfaces/InterfaceB","label":"InterfaceB"}]},{"type":"category","label":"links","items":[{"type":"category","label":"Enumerations","items":[{"type":"doc","id":"out/default/links/enumerations/CommentEnum","label":"CommentEnum"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/links/interfaces/CommentInterface","label":"CommentInterface"},{"type":"doc","id":"out/default/links/interfaces/CommentInterfaceExtended","label":"CommentInterfaceExtended"}]}],"link":{"type":"doc","id":"out/default/links/index"}},{"type":"category","label":"module-1","items":[{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/module-1/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/module-1/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/module-1/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/module-1/interfaces/InterfaceB","label":"InterfaceB"}]}],"link":{"type":"doc","id":"out/default/module-1/index"}},{"type":"category","label":"module-2","items":[{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/module-2/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/module-2/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/module-2/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/module-2/interfaces/InterfaceB","label":"InterfaceB"}]}],"link":{"type":"doc","id":"out/default/module-2/index"}},{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/interfaces/InterfaceB","label":"InterfaceB"}]}]};
+const typedocSidebar = { items: [{"type":"category","label":"links","items":[{"type":"category","label":"Enumerations","items":[{"type":"doc","id":"out/default/links/enumerations/CommentEnum","label":"CommentEnum"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/links/interfaces/CommentInterface","label":"CommentInterface"},{"type":"doc","id":"out/default/links/interfaces/CommentInterfaceExtended","label":"CommentInterfaceExtended"}]}],"link":{"type":"doc","id":"out/default/links/index"}},{"type":"category","label":"module-1","items":[{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/module-1/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/module-1/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/module-1/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/module-1/interfaces/InterfaceB","label":"InterfaceB"}]}],"link":{"type":"doc","id":"out/default/module-1/index"}},{"type":"category","label":"module-2","items":[{"type":"category","label":"Classes","items":[{"type":"doc","id":"out/default/module-2/classes/ClassA","label":"ClassA"},{"type":"doc","id":"out/default/module-2/classes/ClassB","label":"ClassB"}]},{"type":"category","label":"Interfaces","items":[{"type":"doc","id":"out/default/module-2/interfaces/InterfaceA","label":"InterfaceA"},{"type":"doc","id":"out/default/module-2/interfaces/InterfaceB","label":"InterfaceB"}]}],"link":{"type":"doc","id":"out/default/module-2/index"}}]};
 module.exports = typedocSidebar.items;"
 `;
 
@@ -134,13 +58,13 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](index.md#commentinterfacet-1) - Links to CommentInterface
-- [Links to CommentInterface.prop](index.md#prop-2)
-- [Links to CommentInterface.propb](index.md#propb-2)
+- [CommentInterface](index.md#commentinterfacet) - Links to CommentInterface
+- [Links to CommentInterface.prop](index.md#prop)
+- [Links to CommentInterface.propb](index.md#propb)
 
 #### Extended by
 
-- [\`CommentInterfaceExtended\`](index.md#commentinterfaceextended-1)
+- [\`CommentInterfaceExtended\`](index.md#commentinterfaceextended)
 
 #### Type Parameters
 
@@ -164,13 +88,13 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](index.md#commentinterfacet-1) - Links to CommentInterface
-- [Links to CommentInterface.prop](index.md#prop-2)
-- [Links to CommentInterface.propb](index.md#propb-2)
+- [CommentInterface](index.md#commentinterfacet) - Links to CommentInterface
+- [Links to CommentInterface.prop](index.md#prop)
+- [Links to CommentInterface.propb](index.md#propb)
 
 #### Extends
 
-- [\`CommentInterface\`](index.md#commentinterfacet-1) \\<[\`CommentEnum\`](index.md#commentenum-1)\\>
+- [\`CommentInterface\`](index.md#commentinterfacet) \\<[\`CommentEnum\`](index.md#commentenum)\\>
 
 #### Properties
 
@@ -180,15 +104,15 @@ Links using \`{@link}\` inline tags.
 
 ###### Inherited from
 
-[\`CommentInterface\`](index.md#commentinterfacet-1) . [\`prop\`](index.md#prop-2)
+[\`CommentInterface\`](index.md#commentinterfacet) . [\`prop\`](index.md#prop)
 
 ##### propb
 
-> **propb**: [\`CommentEnum\`](index.md#commentenum-1)
+> **propb**: [\`CommentEnum\`](index.md#commentenum)
 
 ###### Inherited from
 
-[\`CommentInterface\`](index.md#commentinterfacet-1) . [\`propb\`](index.md#propb-2)
+[\`CommentInterface\`](index.md#commentinterfacet) . [\`propb\`](index.md#propb)
 
 ##### propc
 
@@ -200,280 +124,6 @@ exports[`Docusaurus: Global Members should render sidebar 1`] = `
 "// @ts-check
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const typedocSidebar = { items: [
-  {
-    "type": "category",
-    "label": "links",
-    "items": [
-      {
-        "type": "category",
-        "label": "Enumerations",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/links/enumerations/CommentEnum",
-            "label": "CommentEnum"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Interfaces",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/links/interfaces/CommentInterface",
-            "label": "CommentInterface"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/links/interfaces/CommentInterfaceExtended",
-            "label": "CommentInterfaceExtended"
-          }
-        ]
-      }
-    ],
-    "link": {
-      "type": "doc",
-      "id": "out/global-members/links/index"
-    }
-  },
-  {
-    "type": "category",
-    "label": "module-1",
-    "items": [
-      {
-        "type": "category",
-        "label": "Classes",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/classes/ClassA",
-            "label": "ClassA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/classes/ClassB",
-            "label": "ClassB"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Interfaces",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/interfaces/InterfaceA",
-            "label": "InterfaceA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/interfaces/InterfaceB",
-            "label": "InterfaceB"
-          }
-        ]
-      }
-    ],
-    "link": {
-      "type": "doc",
-      "id": "out/global-members/module-1/index"
-    }
-  },
-  {
-    "type": "category",
-    "label": "module-2",
-    "items": [
-      {
-        "type": "category",
-        "label": "Classes",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/classes/ClassA",
-            "label": "ClassA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/classes/ClassB",
-            "label": "ClassB"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Interfaces",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/interfaces/InterfaceA",
-            "label": "InterfaceA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/interfaces/InterfaceB",
-            "label": "InterfaceB"
-          }
-        ]
-      }
-    ],
-    "link": {
-      "type": "doc",
-      "id": "out/global-members/module-2/index"
-    }
-  },
-  {
-    "type": "category",
-    "label": "Classes",
-    "items": [
-      {
-        "type": "doc",
-        "id": "out/global-members/classes/ClassA",
-        "label": "ClassA"
-      },
-      {
-        "type": "doc",
-        "id": "out/global-members/classes/ClassB",
-        "label": "ClassB"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Interfaces",
-    "items": [
-      {
-        "type": "doc",
-        "id": "out/global-members/interfaces/InterfaceA",
-        "label": "InterfaceA"
-      },
-      {
-        "type": "doc",
-        "id": "out/global-members/interfaces/InterfaceB",
-        "label": "InterfaceB"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "links",
-    "items": [
-      {
-        "type": "category",
-        "label": "Enumerations",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/links/enumerations/CommentEnum",
-            "label": "CommentEnum"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Interfaces",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/links/interfaces/CommentInterface",
-            "label": "CommentInterface"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/links/interfaces/CommentInterfaceExtended",
-            "label": "CommentInterfaceExtended"
-          }
-        ]
-      }
-    ],
-    "link": {
-      "type": "doc",
-      "id": "out/global-members/links/index"
-    }
-  },
-  {
-    "type": "category",
-    "label": "module-1",
-    "items": [
-      {
-        "type": "category",
-        "label": "Classes",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/classes/ClassA",
-            "label": "ClassA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/classes/ClassB",
-            "label": "ClassB"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Interfaces",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/interfaces/InterfaceA",
-            "label": "InterfaceA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-1/interfaces/InterfaceB",
-            "label": "InterfaceB"
-          }
-        ]
-      }
-    ],
-    "link": {
-      "type": "doc",
-      "id": "out/global-members/module-1/index"
-    }
-  },
-  {
-    "type": "category",
-    "label": "module-2",
-    "items": [
-      {
-        "type": "category",
-        "label": "Classes",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/classes/ClassA",
-            "label": "ClassA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/classes/ClassB",
-            "label": "ClassB"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Interfaces",
-        "items": [
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/interfaces/InterfaceA",
-            "label": "InterfaceA"
-          },
-          {
-            "type": "doc",
-            "id": "out/global-members/module-2/interfaces/InterfaceB",
-            "label": "InterfaceB"
-          }
-        ]
-      }
-    ],
-    "link": {
-      "type": "doc",
-      "id": "out/global-members/module-2/index"
-    }
-  },
   {
     "type": "category",
     "label": "Classes",
