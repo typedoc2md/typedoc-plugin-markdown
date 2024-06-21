@@ -12,7 +12,7 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[types/theme.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L29)
+[types/theme.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L29)
 
 ***
 
@@ -22,7 +22,7 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[types/theme.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L30)
+[types/theme.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L30)
 
 ***
 
@@ -32,7 +32,7 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[types/theme.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L31)
+[types/theme.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L31)
 
 ***
 
@@ -42,4 +42,4 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[types/theme.ts:32](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L32)
+[types/theme.ts:32](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L32)

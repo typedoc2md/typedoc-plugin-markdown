@@ -129,7 +129,7 @@ This class can be used to customize the theme output by extending the class and 
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L48)
+[theme/markdown-themeContext.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L48)
 
 ## Properties
 
@@ -141,7 +141,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L42)
+[theme/markdown-themeContext.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L42)
 
 ***
 
@@ -151,7 +151,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L43)
+[theme/markdown-themeContext.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L43)
 
 ***
 
@@ -163,7 +163,7 @@ The theme instance.
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:52](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L52)
+[theme/markdown-themeContext.ts:52](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L52)
 
 ***
 
@@ -175,7 +175,7 @@ The current page event.
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L56)
+[theme/markdown-themeContext.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L56)
 
 ***
 
@@ -187,7 +187,7 @@ The options provided to the application.
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L60)
+[theme/markdown-themeContext.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L60)
 
 ***
 
@@ -201,7 +201,7 @@ This is required for generating package specific documentation.
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:72](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L72)
+[theme/markdown-themeContext.ts:72](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L72)
 
 ## Methods
 
@@ -227,7 +227,7 @@ Returns the package meta data for a given package name when entrypointStrategy i
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:122](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L122)
+[theme/markdown-themeContext.ts:122](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L122)
 
 ***
 
@@ -252,7 +252,7 @@ If public path is set, it will be used as the base URL.
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:134](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L134)
+[theme/markdown-themeContext.ts:134](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L134)
 
 ***
 
@@ -276,7 +276,7 @@ Hook into the TypeDoc rendering system.
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:164](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L164)
+[theme/markdown-themeContext.ts:164](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L164)
 
 ## Resources
 
@@ -356,7 +356,7 @@ Template that maps to individual reflection models.
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:80](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L80)
+[theme/markdown-themeContext.ts:80](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L80)
 
 ***
 
@@ -1270,7 +1270,7 @@ There is no association list partial for properties as these are handled as a st
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:100](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L100)
+[theme/markdown-themeContext.ts:100](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L100)
 
 ***
 
@@ -1533,4 +1533,4 @@ Please note that partials:
 
 #### Defined in
 
-[theme/markdown-themeContext.ts:113](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L113)
+[theme/markdown-themeContext.ts:113](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L113)

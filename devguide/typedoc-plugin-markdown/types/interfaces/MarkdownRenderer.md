@@ -28,7 +28,7 @@ Replaces the event hooks typings the [`MarkdownRendererHooks`](MarkdownRendererH
 
 #### Defined in
 
-[types/markdown-renderer.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L13)
+[types/markdown-renderer.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L13)
 
 ***
 
@@ -40,7 +40,7 @@ Replaces the event hooks typings the [`MarkdownRendererHooks`](MarkdownRendererH
 
 #### Defined in
 
-[types/markdown-renderer.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L15)
+[types/markdown-renderer.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L15)
 
 ***
 
@@ -67,7 +67,7 @@ Replaces the event hooks typings the [`MarkdownRendererHooks`](MarkdownRendererH
 
 #### Defined in
 
-[types/markdown-renderer.ts:17](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L17)
+[types/markdown-renderer.ts:17](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L17)
 
 ***
 
@@ -83,7 +83,7 @@ Re-types the returned argument argument to [`MarkdownRendererEvent`](../../event
 
 #### Defined in
 
-[types/markdown-renderer.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L24)
+[types/markdown-renderer.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L24)
 
 ***
 
@@ -99,4 +99,4 @@ Re-types the returned argument argument to [`MarkdownRendererEvent`](../../event
 
 #### Defined in
 
-[types/markdown-renderer.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L28)
+[types/markdown-renderer.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L28)

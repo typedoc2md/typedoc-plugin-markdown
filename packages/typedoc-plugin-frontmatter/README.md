@@ -4,12 +4,6 @@
 
 > A plugin for TypeDoc ( + typedoc-plugin-markdown ) that prepends configurable frontmatter to page content.
 
-## Installation
-
-```shell
-  npm install typedoc typedoc-plugin-frontmatter --save-dev
-  ```
-
 ## Documentation
 
 Please visit the [https://typedoc-plugin-markdown.org/plugins/frontmatter](https://typedoc-plugin-markdown.org/plugins/frontmatter) for comprehensive documentation, including options and usage guides.

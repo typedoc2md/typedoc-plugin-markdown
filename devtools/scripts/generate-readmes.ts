@@ -105,10 +105,12 @@ function writePackageReadme(packageItem: any) {
           DOCS_CONFIG[packageItem.name].docsPath
         }`;
 
-  readme.push('## Installation');
-  readme.push(`\`\`\`shell
-  npm install typedoc ${packageItem.name} --save-dev
-  \`\`\``);
+  if (packageItem.name === 'typedoc-plugin-markdown') {
+    readme.push('## Installation');
+    readme.push(`\`\`\`shell
+npm install typedoc typedoc-plugin-markdown --save-dev
+\`\`\``);
+  }
 
   readme.push('## Documentation');
   const resources = [docText(docLink)];

@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[types/options.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-vitepress-theme/src/types/options.ts#L23)
+[types/options.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L23)
 
 ***
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[types/options.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-vitepress-theme/src/types/options.ts#L24)
+[types/options.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L24)
 
 ***
 
@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[types/options.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-vitepress-theme/src/types/options.ts#L25)
+[types/options.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L25)
 
 ***
 
@@ -40,4 +40,4 @@
 
 #### Defined in
 
-[types/options.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-vitepress-theme/src/types/options.ts#L26)
+[types/options.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L26)

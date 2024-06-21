@@ -42,7 +42,7 @@ Please note that `remark-frontmatter`, `remark-gfm`, and `remark-mdx` are always
 
 ### Defined in
 
-[options/declarations.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-remark/src/options/declarations.ts#L14)
+[options/declarations.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/options/declarations.ts#L14)
 
 ***
 
@@ -74,4 +74,4 @@ Please see [https://github.com/remarkjs/remark/tree/main/packages/remark-stringi
 
 ### Defined in
 
-[options/declarations.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-remark/src/options/declarations.ts#L34)
+[options/declarations.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/options/declarations.ts#L34)

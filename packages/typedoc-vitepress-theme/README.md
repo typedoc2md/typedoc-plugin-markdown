@@ -4,12 +4,6 @@
 
 > A TypeDoc ( + typedoc-plugin-markdown ) theme that generates Markdown compatible with VitePress.
 
-## Installation
-
-```shell
-  npm install typedoc typedoc-vitepress-theme --save-dev
-  ```
-
 ## Documentation
 
 Please visit the [https://typedoc-plugin-markdown.org/plugins/vitepress](https://typedoc-plugin-markdown.org/plugins/vitepress) for comprehensive documentation, including options and usage guides.

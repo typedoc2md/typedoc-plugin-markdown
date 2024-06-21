@@ -40,7 +40,7 @@ These will then be merged with the main set of TypeDoc string.
 
 #### Defined in
 
-[internationalization/translatable.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L16)
+[internationalization/translatable.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L16)
 
 ## Locales
 
@@ -74,7 +74,7 @@ Translations for 'en' locale.
 
 #### Defined in
 
-[internationalization/locales/en.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L7)
+[internationalization/locales/en.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L7)
 
 ***
 
@@ -108,7 +108,7 @@ Translations for 'jp' locale.
 
 #### Defined in
 
-[internationalization/locales/jp.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts#L8)
+[internationalization/locales/jp.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts#L8)
 
 ***
 
@@ -142,7 +142,7 @@ Translations for 'ko' locale.
 
 #### Defined in
 
-[internationalization/locales/ko.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L7)
+[internationalization/locales/ko.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L7)
 
 ***
 
@@ -176,4 +176,4 @@ Translations for 'zh' locale.
 
 #### Defined in
 
-[internationalization/locales/zh.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/internationalization/locales/zh.ts#L7)
+[internationalization/locales/zh.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/zh.ts#L7)

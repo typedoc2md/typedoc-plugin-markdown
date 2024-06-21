@@ -4,12 +4,6 @@
 
 > A plugin for TypeDoc ( + typedoc-plugin-markdown ) that enables additional markdown transformations with remark plugins.
 
-## Installation
-
-```shell
-  npm install typedoc typedoc-plugin-remark --save-dev
-  ```
-
 ## Documentation
 
 Please visit the [https://typedoc-plugin-markdown.org/plugins/remark](https://typedoc-plugin-markdown.org/plugins/remark) for comprehensive documentation, including options and usage guides.

@@ -4,12 +4,6 @@
 
 > A TypeDoc ( + typedoc-plugin-markdown ) theme that generates Markdown compatible with Gitlab Wiki.
 
-## Installation
-
-```shell
-  npm install typedoc typedoc-gitlab-wiki-theme --save-dev
-  ```
-
 ## Documentation
 
 Please visit the [https://typedoc-plugin-markdown.org/plugins/gitlab-wiki](https://typedoc-plugin-markdown.org/plugins/gitlab-wiki) for comprehensive documentation, including options and usage guides.

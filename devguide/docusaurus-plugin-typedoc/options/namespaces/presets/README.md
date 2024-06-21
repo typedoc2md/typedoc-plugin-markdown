@@ -18,4 +18,4 @@
 
 ### Defined in
 
-[docusaurus-plugin-typedoc/src/options/presets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/docusaurus-plugin-typedoc/src/options/presets.ts#L1)
+[docusaurus-plugin-typedoc/src/options/presets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/options/presets.ts#L1)

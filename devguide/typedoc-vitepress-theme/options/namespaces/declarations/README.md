@@ -15,16 +15,14 @@ If TypeDoc is run from outside of the VitePress project root directory, then `do
 
 e.g. the following file structure:
 
-\<FileTree>
-\<FileTree.File name="package.json" />
-\<FileTree.File name="typedoc.json" />
-\<FileTree.Folder name="docs" defaultOpen>
-\<FileTree.Folder name=".vitepress" defaultOpen>\</FileTree.Folder>
-\<FileTree.Folder name="typedoc-api" defaultOpen>
-\<FileTree.File name="index.md" />
-\</FileTree.Folder>
-\</FileTree.Folder>
-\</FileTree>
+```
+  ├── package.json
+  ├── typedoc.json
+  └── docs/
+      └── .vitepress/
+      └── typedoc-api/
+          └── index.md
+```
 
 Requires the following config:
 
@@ -45,7 +43,7 @@ Requires the following config:
 
 ### Defined in
 
-[options/declarations.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-vitepress-theme/src/options/declarations.ts#L30)
+[options/declarations.ts:28](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/options/declarations.ts#L28)
 
 ***
 
@@ -81,4 +79,4 @@ Pretty format the sidebar JSON.
 
 ### Defined in
 
-[options/declarations.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-vitepress-theme/src/options/declarations.ts#L56)
+[options/declarations.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/options/declarations.ts#L54)

@@ -4,12 +4,6 @@
 
 > A TypeDoc ( + typedoc-plugin-markdown ) theme that generates Markdown compatible with Github Wiki.
 
-## Installation
-
-```shell
-  npm install typedoc typedoc-github-wiki-theme --save-dev
-  ```
-
 ## Documentation
 
 Please visit the [https://typedoc-plugin-markdown.org/plugins/github-wiki](https://typedoc-plugin-markdown.org/plugins/github-wiki) for comprehensive documentation, including options and usage guides.

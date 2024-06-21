@@ -29,7 +29,8 @@
     "readme": "./OVERVIEW.md",
     "sortEntryPoints": false,
     "sort": "source-order",
-    "excludeExternals": true
+    "excludeExternals": true,
+    "gitRevision": "main"
   },
 
   // typedoc-plugin-markdown options

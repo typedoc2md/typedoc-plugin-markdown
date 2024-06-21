@@ -12,7 +12,7 @@ Used internally when building the URL mapping.
 
 #### Defined in
 
-[types/theme.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L48)
+[types/theme.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L48)
 
 ***
 
@@ -22,7 +22,7 @@ Used internally when building the URL mapping.
 
 #### Defined in
 
-[types/theme.ts:49](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L49)
+[types/theme.ts:49](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L49)
 
 ***
 
@@ -32,7 +32,7 @@ Used internally when building the URL mapping.
 
 #### Defined in
 
-[types/theme.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L50)
+[types/theme.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L50)
 
 ***
 
@@ -42,7 +42,7 @@ Used internally when building the URL mapping.
 
 #### Defined in
 
-[types/theme.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L51)
+[types/theme.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L51)
 
 ***
 
@@ -52,7 +52,7 @@ Used internally when building the URL mapping.
 
 #### Defined in
 
-[types/theme.ts:52](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L52)
+[types/theme.ts:52](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L52)
 
 ***
 
@@ -62,4 +62,4 @@ Used internally when building the URL mapping.
 
 #### Defined in
 
-[types/theme.ts:53](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L53)
+[types/theme.ts:53](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L53)

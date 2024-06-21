@@ -12,7 +12,7 @@ Defines how reflections are mapped to urls.
 
 #### Defined in
 
-[types/theme.ts:39](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L39)
+[types/theme.ts:39](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L39)
 
 ***
 
@@ -22,7 +22,7 @@ Defines how reflections are mapped to urls.
 
 #### Defined in
 
-[types/theme.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L40)
+[types/theme.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L40)
 
 ***
 
@@ -32,4 +32,4 @@ Defines how reflections are mapped to urls.
 
 #### Defined in
 
-[types/theme.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/theme.ts#L41)
+[types/theme.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L41)

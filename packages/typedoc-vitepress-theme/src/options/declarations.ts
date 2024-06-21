@@ -7,16 +7,14 @@ import { DEFAULT_SIDEBAR_OPTIONS } from '../options';
  *
  * e.g. the following file structure:
  *
- * <FileTree>
- *  <FileTree.File name="package.json" />
- *  <FileTree.File name="typedoc.json" />
- *  <FileTree.Folder name="docs" defaultOpen>
- *    <FileTree.Folder name=".vitepress" defaultOpen></FileTree.Folder>
- *      <FileTree.Folder name="typedoc-api" defaultOpen>
- *        <FileTree.File name="index.md" />
- *      </FileTree.Folder>
- *    </FileTree.Folder>
- * </FileTree>
+ * ```
+ *   ├── package.json
+ *   ├── typedoc.json
+ *   └── docs/
+ *       └── .vitepress/
+ *       └── typedoc-api/
+ *           └── index.md
+ * ```
  *
  * Requires the following config:
  *

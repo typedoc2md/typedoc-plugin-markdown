@@ -20,4 +20,4 @@ The plugin entrypoint and bootstrapping of the plugin.
 
 ### Defined in
 
-[index.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-vitepress-theme/src/index.ts#L18)
+[index.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/index.ts#L18)

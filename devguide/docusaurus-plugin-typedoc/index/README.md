@@ -38,4 +38,4 @@
 
 ### Defined in
 
-[docusaurus-plugin-typedoc/src/plugin.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/docusaurus-plugin-typedoc/src/plugin.ts#L13)
+[docusaurus-plugin-typedoc/src/plugin.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/plugin.ts#L13)

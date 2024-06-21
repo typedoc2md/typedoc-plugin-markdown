@@ -28,4 +28,4 @@ Please see the [sidebar guide](/plugins/docusaurus/guide/sidebar) for additional
 
 ### Defined in
 
-[docusaurus-plugin-typedoc/src/options/declarations.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/docusaurus-plugin-typedoc/src/options/declarations.ts#L16)
+[docusaurus-plugin-typedoc/src/options/declarations.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/options/declarations.ts#L16)

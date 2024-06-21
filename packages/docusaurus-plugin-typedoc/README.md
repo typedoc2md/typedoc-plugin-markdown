@@ -4,12 +4,6 @@
 
 > A Docusaurus plugin to integrate TypeDoc ( + typedoc-plugin-markdown ) into a Docusaurus project.
 
-## Installation
-
-```shell
-  npm install typedoc docusaurus-plugin-typedoc --save-dev
-  ```
-
 ## Documentation
 
 Please visit the [https://typedoc-plugin-markdown.org/plugins/docusaurus](https://typedoc-plugin-markdown.org/plugins/docusaurus) for comprehensive documentation, including options and usage guides.

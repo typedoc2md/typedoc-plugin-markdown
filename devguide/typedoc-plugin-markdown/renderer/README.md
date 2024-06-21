@@ -29,7 +29,7 @@ Replacement of TypeDoc's Application.generateDocs method to decouple HTML logic.
 
 ### Defined in
 
-[renderer/overrides.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/renderer/overrides.ts#L16)
+[renderer/overrides.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/renderer/overrides.ts#L16)
 
 ***
 
@@ -58,7 +58,7 @@ This is essentially a copy of the base method with a few tweaks.
 
 ### Defined in
 
-[renderer/overrides.ts:38](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/renderer/overrides.ts#L38)
+[renderer/overrides.ts:38](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/renderer/overrides.ts#L38)
 
 ***
 
@@ -84,4 +84,4 @@ By intercepting the package options set in the converter and storing them on the
 
 ### Defined in
 
-[renderer/packages.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/renderer/packages.ts#L11)
+[renderer/packages.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/renderer/packages.ts#L11)

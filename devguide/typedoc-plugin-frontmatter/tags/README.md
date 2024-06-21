@@ -26,7 +26,7 @@ Functionality to map options to tags.
 
 ### Defined in
 
-[tags.ts:9](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-frontmatter/src/tags.ts#L9)
+[tags.ts:9](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L9)
 
 ***
 
@@ -48,4 +48,4 @@ Functionality to map options to tags.
 
 ### Defined in
 
-[tags.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-frontmatter/src/tags.ts#L33)
+[tags.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L33)

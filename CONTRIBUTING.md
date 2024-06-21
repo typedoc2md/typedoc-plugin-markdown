@@ -4,11 +4,11 @@
 
 ## Contents
 
-- [Introduction](#introduction)
-- [Contributing to the public docs](#contributing-to-the-public-docs)
-- [Contributing to the codebase](#contributing-to-the-codebase)
-- [Submitting a PR](#submitting-a-pr)
-- [Acknowledgements](#acknowledgements)
+* [Introduction](#introduction)
+* [Contributing to the public docs](#contributing-to-the-public-docs)
+* [Contributing to the codebase](#contributing-to-the-codebase)
+* [Submitting a PR](#submitting-a-pr)
+* [Acknowledgements](#acknowledgements)
 
 ## Introduction
 
@@ -34,10 +34,10 @@ For contributing to the plugin codebase, please see the [Developer Guide](./devg
 
 Once you're ready to submit your changes:
 
-- **Push your branch**: Push your branch to your forked repository on GitHub.
-- **Create a PR**: Navigate to the original repository and create a PR from your branch to the main branch.
-- **Provide a clear description**: Include a detailed description of your changes, why they're necessary, and any issues they resolve.
-- **Link to relevant issues**: If your PR addresses any open issues, mention them in the description.
+* **Push your branch**: Push your branch to your forked repository on GitHub.
+* **Create a PR**: Navigate to the original repository and create a PR from your branch to the main branch.
+* **Provide a clear description**: Include a detailed description of your changes, why they're necessary, and any issues they resolve.
+* **Link to relevant issues**: If your PR addresses any open issues, mention them in the description.
 
 Please note we follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages.
 

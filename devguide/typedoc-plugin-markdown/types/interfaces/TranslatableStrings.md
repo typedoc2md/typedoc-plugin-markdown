@@ -12,7 +12,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L11)
+[types/internationalization.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L11)
 
 ***
 
@@ -22,7 +22,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L12)
+[types/internationalization.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L12)
 
 ***
 
@@ -32,7 +32,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L13)
+[types/internationalization.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L13)
 
 ***
 
@@ -42,7 +42,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L14)
+[types/internationalization.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L14)
 
 ***
 
@@ -52,7 +52,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L15)
+[types/internationalization.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L15)
 
 ***
 
@@ -62,7 +62,17 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L16)
+[types/internationalization.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L16)
+
+***
+
+### theme\_globals
+
+> **theme\_globals**: `string`
+
+#### Defined in
+
+[types/internationalization.ts:17](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L17)
 
 ***
 
@@ -72,7 +82,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:17](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L17)
+[types/internationalization.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L18)
 
 ***
 
@@ -82,7 +92,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L18)
+[types/internationalization.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L19)
 
 ***
 
@@ -92,7 +102,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L19)
+[types/internationalization.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L20)
 
 ***
 
@@ -102,7 +112,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L20)
+[types/internationalization.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L21)
 
 ***
 
@@ -112,7 +122,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L21)
+[types/internationalization.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L22)
 
 ***
 
@@ -122,7 +132,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L22)
+[types/internationalization.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L23)
 
 ***
 
@@ -132,7 +142,7 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L23)
+[types/internationalization.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L24)
 
 ***
 
@@ -142,4 +152,4 @@ The model of translatable strings specific to the Markdown theme.
 
 #### Defined in
 
-[types/internationalization.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L24)
+[types/internationalization.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/internationalization.ts#L25)

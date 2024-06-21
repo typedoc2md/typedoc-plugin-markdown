@@ -28,4 +28,4 @@ Re-types the `renderer` instance to [`MarkdownRenderer`](MarkdownRenderer.md).
 
 #### Defined in
 
-[types/markdown-application.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/7934b23566f374f44fe6de5fd9240ab185bf799f/packages/typedoc-plugin-markdown/src/types/markdown-application.ts#L11)
+[types/markdown-application.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-application.ts#L11)
