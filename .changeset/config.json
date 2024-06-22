@@ -8,7 +8,7 @@
   "fixed": [],
   "linked": [],
   "access": "public",
-  "baseBranch": "main",
+  "baseBranch": "release",
   "updateInternalDependencies": "minor",
   "ignore": [
     "@devtools/*",
