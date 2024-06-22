@@ -13,18 +13,10 @@ export enum OutputFileStrategy {
 }
 
 /**
- * The allowed values for formatting reflections.
+ * The allowed values for formatting reflections and indexes.
  */
-export enum ReflectionFormat {
+export enum DisplayFormat {
   List = 'list',
   Table = 'table',
   HtmlTable = 'htmlTable',
-}
-
-/**
- * The allowed values for formatting indexes.
- */
-export enum IndexFormat {
-  List = 'list',
-  Table = 'table',
 }

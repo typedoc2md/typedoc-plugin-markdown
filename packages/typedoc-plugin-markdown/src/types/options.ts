@@ -83,7 +83,7 @@ export interface PluginOptions {
   /**
    * Sets the format of index items.
    */
-  indexFormat: 'list' | 'table';
+  indexFormat: 'list' | 'table' | 'htmlTable';
 
   /**
    * Sets the format of property groups for interfaces.

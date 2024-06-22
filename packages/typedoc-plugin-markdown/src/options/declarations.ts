@@ -21,7 +21,7 @@
  */
 import { DeclarationOption, ParameterType } from 'typedoc';
 import { ALLOWED_OWN_FILE_MEMBERS, TEXT_CONTENT_MAPPINGS } from './constants';
-import { IndexFormat, OutputFileStrategy, ReflectionFormat } from './maps';
+import { DisplayFormat, OutputFileStrategy } from './maps';
 
 /**
  * TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
@@ -350,8 +350,8 @@ export const expandParameters: Partial<DeclarationOption> = {
 export const indexFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of index items.',
   type: ParameterType.Map,
-  map: IndexFormat,
-  defaultValue: IndexFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**
@@ -366,8 +366,8 @@ export const indexFormat: Partial<DeclarationOption> = {
 export const parametersFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of parameter and type parameter groups.',
   type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**
@@ -382,8 +382,8 @@ export const parametersFormat: Partial<DeclarationOption> = {
 export const interfacePropertiesFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of property groups for interfaces.',
   type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**
@@ -398,8 +398,8 @@ export const interfacePropertiesFormat: Partial<DeclarationOption> = {
 export const classPropertiesFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of property groups for classes.',
   type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**
@@ -414,8 +414,8 @@ export const classPropertiesFormat: Partial<DeclarationOption> = {
 export const enumMembersFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of enumeration members.',
   type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**
@@ -430,8 +430,8 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
 export const typeDeclarationFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of style for type declaration members.',
   type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**
@@ -448,8 +448,8 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
 export const propertyMembersFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of style for property members for interfaces and classes.',
   type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**
@@ -462,8 +462,8 @@ export const propertyMembersFormat: Partial<DeclarationOption> = {
 export const propertiesFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of property groups for interfaces and classes.',
   type: ParameterType.Map,
-  map: ReflectionFormat,
-  defaultValue: ReflectionFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
 };
 
 /**

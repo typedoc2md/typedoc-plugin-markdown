@@ -17,7 +17,7 @@ declare module 'typedoc' {
     hideGroupHeadings: boolean;
     hidePageHeader: boolean;
     hidePageTitle: boolean;
-    indexFormat: 'list' | 'table';
+    indexFormat: 'list' | 'table' | 'htmlTable';
     interfacePropertiesFormat: 'list' | 'table' | 'htmlTable';
     membersWithOwnFile: (
       | 'Enum'
