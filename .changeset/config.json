@@ -8,7 +8,7 @@
   "fixed": [],
   "linked": [],
   "access": "public",
-  "baseBranch": "release",
+  "baseBranch": "main",
   "updateInternalDependencies": "minor",
-  "ignore": ["@devtools/*", "packages/*", "!packages/typedoc-plugin-markdown"]
+  "ignore": ["@devtools/*"]
 }
