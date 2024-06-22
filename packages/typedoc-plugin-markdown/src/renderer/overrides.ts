@@ -76,52 +76,42 @@ export async function render(
 
   this.preRenderAsyncJobs = [];
 
-  if (!output.isDefaultPrevented()) {
-    this.application.logger.verbose(
-      `There are ${output.urls?.length} pages to write.`,
-    );
+  this.application.logger.verbose(
+    `There are ${output.urls?.length} pages to write.`,
+  );
 
-    output.urls
-      ?.filter(
-        (urlMapping) =>
-          urlMapping.model instanceof ProjectReflection ||
-          urlMapping.model instanceof DeclarationReflection ||
-          urlMapping.model instanceof DocumentReflection,
-      )
-      .forEach(async (urlMapping) => {
-        const [template, page] = output.createPageEvent(urlMapping);
+  output.urls
+    ?.filter(
+      (urlMapping) =>
+        urlMapping.model instanceof ProjectReflection ||
+        urlMapping.model instanceof DeclarationReflection ||
+        urlMapping.model instanceof DocumentReflection,
+    )
+    .forEach(async (urlMapping) => {
+      const [template, page] = output.createPageEvent(urlMapping);
 
-        this.trigger(MarkdownPageEvent.BEGIN, page);
+      this.trigger(MarkdownPageEvent.BEGIN, page);
 
-        if (page.isDefaultPrevented()) {
-          return false;
-        }
+      if (page.model instanceof Reflection) {
+        page.contents = this.theme!.render(page, template);
+      } else {
+        throw new Error('Should be unreachable');
+      }
 
-        if (page.model instanceof Reflection) {
-          page.contents = this.theme!.render(page, template);
-        } else {
-          throw new Error('Should be unreachable');
-        }
+      this.trigger(MarkdownPageEvent.END, page);
 
-        this.trigger(MarkdownPageEvent.END, page);
+      try {
+        writeFileSync(page.filename, page.contents as string);
+      } catch (error) {
+        this.application.logger.error(`Could not write ${page.filename}`);
+      }
+    });
 
-        if (page.isDefaultPrevented()) {
-          return false;
-        }
+  await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
 
-        try {
-          writeFileSync(page.filename, page.contents as string);
-        } catch (error) {
-          this.application.logger.error(`Could not write ${page.filename}`);
-        }
-      });
+  this.postRenderAsyncJobs = [];
 
-    await Promise.all(this.postRenderAsyncJobs.map((job) => job(output)));
-
-    this.postRenderAsyncJobs = [];
-
-    this.trigger(MarkdownRendererEvent.END, output);
-  }
+  this.trigger(MarkdownRendererEvent.END, output);
 
   this.theme = void 0;
 }

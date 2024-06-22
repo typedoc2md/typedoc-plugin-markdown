@@ -76,16 +76,19 @@ export function comment(
       [],
     );
 
+    const filteredBlockTags = ['@returns', '@module'];
+
     const tags = blockTags
-      .filter((tag) => tag.tag !== '@returns')
+      .filter((tag) => !filteredBlockTags.includes(tag.tag))
       .filter(
         (tag) =>
           !opts.isTableColumn ||
           (opts.isTableColumn && tag.tag !== '@defaultValue'),
       )
       .map((tag) => {
-        const tagName = tag.tag.substring(1);
-        const tagText = camelToTitleCase(tagName);
+        const tagText = this.internationalization.translateTagName(
+          tag.tag as `@${string}`,
+        );
         const tagMd = [
           opts.headingLevel
             ? heading(opts.headingLevel, tagText) + '\n'

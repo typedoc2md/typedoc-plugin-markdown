@@ -21,7 +21,7 @@ An event emitted before and after the markdown of a page is rendered.
 
 ## Extends
 
-* [`Event`](https://typedoc.org/api/classes/Event.html)
+* `Event`
 
 ## Type Parameters
 

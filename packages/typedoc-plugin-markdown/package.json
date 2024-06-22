@@ -32,7 +32,7 @@
   },
   "homepage": "https://typedoc-plugin-markdown.org",
   "peerDependencies": {
-    "typedoc": "beta.x"
+    "typedoc": "0.26.x"
   },
   "engines": {
     "node": ">= 18"

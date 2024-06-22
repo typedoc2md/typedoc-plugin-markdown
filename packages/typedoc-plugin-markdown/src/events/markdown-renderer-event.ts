@@ -1,7 +1,7 @@
 import { MarkdownPageEvent } from '@plugin/events';
 import { NavigationItem, RenderTemplate, UrlMapping } from '@plugin/types';
 import * as path from 'path';
-import { Event, ProjectReflection, Reflection } from 'typedoc';
+import { ProjectReflection, Reflection } from 'typedoc';
 
 /**
  * An event emitted at the beginning and end of the rendering process.

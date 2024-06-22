@@ -1,27 +1,14 @@
 // @ts-check
-import { Converter } from 'typedoc';
+import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
 
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
-  app.converter.on(
-    Converter.EVENT_CREATE_DECLARATION,
-    (context, reflection) => {
-      if (reflection.sources) {
-        reflection.sources = reflection.sources?.map((source) => ({
-          ...source,
-          line: '1',
-        }));
-      }
-    },
-  );
-  app.converter.on(Converter.EVENT_CREATE_SIGNATURE, (context, reflection) => {
-    if (reflection.sources) {
-      reflection.sources = reflection.sources?.map((source) => ({
-        ...source,
-        line: '1',
-      }));
-    }
+  app.renderer.on(MarkdownPageEvent.END, (page) => {
+    page.contents = page.contents.replace(
+      /\[([a-zA-Z0-9_]+\.ts):\d+\]/g,
+      '[$1:1]',
+    );
   });
 }

@@ -1,4 +1,4 @@
-import { Event, ProjectReflection, Reflection } from 'typedoc';
+import { ProjectReflection, Reflection } from 'typedoc';
 
 /**
  * An event emitted before and after the markdown of a page is rendered.

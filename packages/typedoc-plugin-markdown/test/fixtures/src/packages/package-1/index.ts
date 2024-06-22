@@ -3,7 +3,7 @@
  *
  * Some more comments for package-1
  *
- * @packageDocumentation
+ * @module
  */
 
 export interface PackageInterface {
