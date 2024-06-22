@@ -2,7 +2,7 @@
 
 This page should help you understand the versioning rules of the plugin and its compatibility with TypeDoc.
 
-## Versioning Rules
+## Package Version
 
 Please note that TypeDoc is still released within the 0.x.x range and may include breaking changes within each minor version release.
 
@@ -13,23 +13,13 @@ For this reason we follow a slightly amended version of semver:
   Any option changes will attempt to be made in a backwards compatible manor.
 - **Major** versions will be made if significant and breaking changes to the plugin are made.
 
+## Node Version
+
+We will follow the Node.js version specified in the TypeDoc `package.json` file.
+
 ## Compatibility Table
 
-| typedoc-plugin-markdown | TypeDoc | Release Date |
-| ----------------------- | ------- | ------------ |
-| 4.1.x                   | 0.26.x  | 2024-06-22   |
-| 4.0.x                   | 0.25.x  | 2024-05-03   |
-
-## Specifying Version Ranges
-
-You may prefer to fix versions or use a tilde (~) when declaring `typedoc-plugin-markdown` and `TypeDoc` versions in your `package.json` file.
-The tilde allows only patch updates within the specified minor version.
-
-```json filename="package.json"
-{
-  "devDependencies": {
-    "typedoc": "~0.26.0",
-    "typedoc-plugin-markdown": "~4.1.0"
-  }
-}
-```
+| typedoc-plugin-markdown | TypeDoc | Node Version | Release Date |
+| ----------------------- | ------- | ------------ | ------------ |
+| 4.1.x                   | 0.26.x  | >= 18        | 2024-06-22   |
+| 4.0.x                   | 0.25.x  | >= 16        | 2024-05-03   |
