@@ -56,6 +56,21 @@ export const indexFrontmatter: Partial<DeclarationOption> = {
  * ---
  * ```
  *
+ * In addition any non standard tags should be added to a `tsdoc.json` file and added next to your `tsconfig.json` file.
+ *
+ * ```json filename="tsdoc.json"
+ * {
+ *   "$schema": "https://developer.microsoft.com/en-us/json-schemas/tsdoc/v0/tsdoc.schema.json",
+ *   "extends": ["typedoc/tsdoc.json"],
+ *   "tagDefinitions": [
+ *       {
+ *           "tagName": "@author",
+ *           "syntaxKind": "modifier"
+ *       }
+ *   ]
+ * }
+ * ```
+ *
  * @example ["author", "description"]
  */
 export const frontmatterCommentTags: Partial<DeclarationOption> = {

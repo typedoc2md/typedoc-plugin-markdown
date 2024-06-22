@@ -1,8 +1,8 @@
 # Changelog
 
-## 4.1.0
+## 4.1.0 (2024-06-22)
 
-### Minor Changes
+### Features
 
 - Theme support for TypeDoc’s 0.26 localization model.
 - Theme support for TypeDoc’s 0.26 documents implementation.

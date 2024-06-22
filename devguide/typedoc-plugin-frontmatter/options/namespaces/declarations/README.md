@@ -119,6 +119,21 @@ description: A description that will be added to frontmatter.
 ---
 ```
 
+In addition any non standard tags should be added to a `tsdoc.json` file and added next to your `tsconfig.json` file.
+
+```json filename="tsdoc.json"
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/tsdoc/v0/tsdoc.schema.json",
+  "extends": ["typedoc/tsdoc.json"],
+  "tagDefinitions": [
+      {
+          "tagName": "@author",
+          "syntaxKind": "modifier"
+      }
+  ]
+}
+```
+
 ### Example
 
 ```ts
@@ -136,7 +151,7 @@ description: A description that will be added to frontmatter.
 
 ### Defined in
 
-[options/declarations.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L61)
+[options/declarations.ts:76](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L76)
 
 ***
 
@@ -156,7 +171,7 @@ description: A description that will be added to frontmatter.
 
 ### Defined in
 
-[options/declarations.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L66)
+[options/declarations.ts:81](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L81)
 
 ***
 
@@ -181,4 +196,4 @@ This option can configure the output style of frontmatter variables when written
 
 ### Defined in
 
-[options/declarations.ts:77](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L77)
+[options/declarations.ts:92](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L92)

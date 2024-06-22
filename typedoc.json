@@ -24,7 +24,7 @@
   "excludePrivate": false,
   "readme": "./packages/README.md",
   "packageOptions": {
-    "includeVersion": true,
+    "includeVersion": false,
     "excludePrivate": false,
     "readme": "./OVERVIEW.md",
     "sortEntryPoints": false,
