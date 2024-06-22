@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.2
+
+### Patch Changes
+
+- Add toc from remark-tocs to document reflections
+- Normalize tables output
+
 ## 1.0.1 (2024-05-27)
 
 ### Patch Changes
