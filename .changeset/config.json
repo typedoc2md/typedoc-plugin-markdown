@@ -12,10 +12,10 @@
   "updateInternalDependencies": "minor",
   "ignore": [
     "@devtools/*",
-    "docusaurus-plugin-typedoc",
-    "typedoc-github-wiki-theme",
-    "typedoc-plugin-frontmatter",
-    "typedoc-plugin-remark",
-    "typedoc-vitepress-theme"
+    "packages/docusaurus-plugin-typedoc",
+    "packages/typedoc-github-wiki-theme",
+    "packages/typedoc-plugin-frontmatter",
+    "packages/typedoc-plugin-remark",
+    "packages/typedoc-vitepress-theme"
   ]
 }
