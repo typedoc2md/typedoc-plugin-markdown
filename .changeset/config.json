@@ -10,12 +10,5 @@
   "access": "public",
   "baseBranch": "release",
   "updateInternalDependencies": "minor",
-  "ignore": [
-    "@devtools/*",
-    "packages/docusaurus-plugin-typedoc",
-    "packages/typedoc-github-wiki-theme",
-    "packages/typedoc-plugin-frontmatter",
-    "packages/typedoc-plugin-remark",
-    "packages/typedoc-vitepress-theme"
-  ]
+  "ignore": ["@devtools/*", "packages/*", "!packages/typedoc-plugin-markdown"]
 }
