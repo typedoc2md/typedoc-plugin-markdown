@@ -1,5 +1,20 @@
 # Changelog
 
+## 4.1.0
+
+### Minor Changes
+
+- Theme support for TypeDoc’s 0.26 localization model.
+- Theme support for TypeDoc’s 0.26 documents implementation.
+- Exposed a new key "htmlTable" to formatting options enabling block elements to render as intended inside table cells. Affects all existing formatting options. Fixes ([#618](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618)).
+- Added new formatting options --classPropertiesFormat, --interfacePropertiesFormat and --propertyMembersFormat to further control formatting of different declaration structures.
+- Supports the ability to control what table columns are rendered with the --tableColumnSettings option.
+
+### Patch Changes
+
+- Handle duplicate files when tagged in same group ([#625](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/625))
+- Fix issues with tables and block tags ([#618](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618))
+
 ## 4.0.3 (2024-05-27)
 
 ### Patch Changes

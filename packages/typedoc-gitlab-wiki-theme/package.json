@@ -28,7 +28,7 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.0.0"
+    "typedoc-plugin-markdown": ">=4.1.0"
   },
   "keywords": [
     "typedoc",
