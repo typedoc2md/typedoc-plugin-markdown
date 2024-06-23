@@ -76,7 +76,7 @@ export function comment(
       [],
     );
 
-    const filteredBlockTags = ['@returns', '@module'];
+    const filteredBlockTags = ['@returns'];
 
     const tags = blockTags
       .filter((tag) => !filteredBlockTags.includes(tag.tag))

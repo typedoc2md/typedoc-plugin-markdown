@@ -17,11 +17,9 @@ export async function generateDocs(project: ProjectReflection, out: string) {
   const start = Date.now();
   await this.renderer.render(project, out);
   if (this.logger.hasErrors()) {
-    this.logger.error(
-      'Documentation could not be generated due to the errors above.',
-    );
+    this.logger.error(this.i18n.docs_could_not_be_generated());
   } else {
-    this.logger.info(`Documentation generated at ${nicePath(out)}`);
+    this.logger.info(this.i18n.docs_generated_at_0(nicePath(out)));
     this.logger.verbose(`Markdown rendering took ${Date.now() - start}ms`);
   }
 }
