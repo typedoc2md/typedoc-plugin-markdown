@@ -2,7 +2,7 @@ export default {
   index: 'Introduction',
   '-- Getting Started': {
     type: 'separator',
-    title: 'Guides',
+    title: 'Getting Started',
   },
   'quick-start': '',
   options: '',

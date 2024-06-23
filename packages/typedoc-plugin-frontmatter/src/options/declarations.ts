@@ -64,7 +64,7 @@ export const indexFrontmatter: Partial<DeclarationOption> = {
  *   "extends": ["typedoc/tsdoc.json"],
  *   "tagDefinitions": [
  *       {
- *           "tagName": "@author",
+ *           "tagName": "@customTag",
  *           "syntaxKind": "modifier"
  *       }
  *   ]
