@@ -80,6 +80,37 @@ Ignored when `--outputFileStrategy` is equal to `"modules"`
 
 By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
 
+This option will flatten the output files to a single directory as follows:
+
+Default output:
+
+```
+  ├── README.md
+  ├── module-a/
+  │   ├── classes/
+  │   │   ├── ClassA.md
+  │   │   └── ClassB.md
+  │   └── functions/
+  │   │   ├── FunctionA.md
+  │   │   └── FunctionB.md
+  └── module-b/
+      └── classes/
+          ├── ClassA.md
+          └── ClassB.md
+```
+
+Flattened output:
+
+```
+  ├── README.md
+  ├── module-a.Class.ClassA.md
+  ├── module-a.Class.ClassB.md
+  ├── module-a.Function.functionA.md
+  ├── module-a.Function.functionB.md
+  ├── module-b.Class.ClassA.md
+  └── module-b.Class.ClassB.md
+```
+
 ```json filename="typedoc.json"
 {
   "flattenOutputFiles": false
@@ -156,6 +187,21 @@ By default directories are split by scopes when generating file paths.
 This option will remove reference to `@scope` in the path when generating files and directories. It does not affect the name of the package or module in the output.
 
 The following will be the directory structure for packages named `@scope/package-1` and `@scope/package-2`:
+
+Output when set to `false` (default):
+
+```
+  └──@scope/
+      ├── package-1/
+      └── package-2/
+```
+
+Output when set to `true`:
+
+```
+  ├── package-1/
+  └── package-2/
+```
 
 Ignored if `flattenOutputFiles` is set to `true`.
 

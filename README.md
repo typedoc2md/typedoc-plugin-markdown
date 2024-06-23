@@ -2,6 +2,10 @@
 
 This project is a collection of packages designed for generate TypeScript API documentation as Markdown.
 
+## Documentation
+
+Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).
+
 ## Packages
 
 | Package | Version | Downloads | Changelog 
@@ -13,10 +17,6 @@ This project is a collection of packages designed for generate TypeScript API do
 [typedoc-gitlab-wiki-theme](./packages/typedoc-gitlab-wiki-theme#readme) | [![npm](https://img.shields.io/npm/v/typedoc-gitlab-wiki-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme) | ![Downloads](https://img.shields.io/npm/dw/typedoc-gitlab-wiki-theme?label=↓) | [Changelog](./packages/typedoc-gitlab-wiki-theme/CHANGELOG.md) | 
 [typedoc-vitepress-theme](./packages/typedoc-vitepress-theme#readme) | [![npm](https://img.shields.io/npm/v/typedoc-vitepress-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-vitepress-theme) | ![Downloads](https://img.shields.io/npm/dw/typedoc-vitepress-theme?label=↓) | [Changelog](./packages/typedoc-vitepress-theme/CHANGELOG.md) | 
 [docusaurus-plugin-typedoc](./packages/docusaurus-plugin-typedoc#readme) | [![npm](https://img.shields.io/npm/v/docusaurus-plugin-typedoc.svg?logo=npm)](https://www.npmjs.com/package/docusaurus-plugin-typedoc) | ![Downloads](https://img.shields.io/npm/dw/docusaurus-plugin-typedoc?label=↓) | [Changelog](./packages/docusaurus-plugin-typedoc/CHANGELOG.md) | 
-
-## Documentation
-
-Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).
 
 ## Contributing
 

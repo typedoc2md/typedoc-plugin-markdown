@@ -38,6 +38,12 @@ function writeRepositoryReadme(packages: any) {
     'This project is a collection of packages designed for generate TypeScript API documentation as Markdown.',
   );
 
+  readme.push('## Documentation');
+
+  readme.push(
+    'Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).',
+  );
+
   readme.push('## Packages');
   const headers: string[] = [];
   headers.push('| Package | Version | Downloads | Changelog ');
@@ -59,12 +65,6 @@ function writeRepositoryReadme(packages: any) {
   table.push(...headers, ...rows);
 
   readme.push(table.join('\n'));
-
-  readme.push('## Documentation');
-
-  readme.push(
-    'Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).',
-  );
 
   readme.push('## Contributing');
 
