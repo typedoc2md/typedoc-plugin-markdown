@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, DeclarationOption, PageEvent } from 'typedoc';
+import { Application, DeclarationOption } from 'typedoc';
 import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
 import { PluginOptions } from './models';
 import { getPluginOptions } from './options';
@@ -57,13 +57,6 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
       name,
       ...option,
     } as DeclarationOption);
-  });
-
-  // attempt to handle docusaurus linkify bug https://github.com/facebook/docusaurus/issues/9048
-  app.renderer.on(PageEvent.END, (event: PageEvent) => {
-    event.contents = event.contents
-      ?.replace(/\)\.\[/g, ') . [')
-      .replace(/\\<\[/g, ' \\<[');
   });
 
   const outputDir = app.options.getValue('out');

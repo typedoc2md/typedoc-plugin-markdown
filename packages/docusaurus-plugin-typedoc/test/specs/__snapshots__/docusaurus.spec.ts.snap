@@ -94,7 +94,7 @@ Links using \`{@link}\` inline tags.
 
 #### Extends
 
-- [\`CommentInterface\`](index.md#commentinterfacet) \\<[\`CommentEnum\`](index.md#commentenum)\\>
+- [\`CommentInterface\`](index.md#commentinterfacet)\\<[\`CommentEnum\`](index.md#commentenum)\\>
 
 #### Properties
 
@@ -104,7 +104,7 @@ Links using \`{@link}\` inline tags.
 
 ###### Inherited from
 
-[\`CommentInterface\`](index.md#commentinterfacet) . [\`prop\`](index.md#prop)
+[\`CommentInterface\`](index.md#commentinterfacet).[\`prop\`](index.md#prop)
 
 ##### propb
 
@@ -112,7 +112,7 @@ Links using \`{@link}\` inline tags.
 
 ###### Inherited from
 
-[\`CommentInterface\`](index.md#commentinterfacet) . [\`propb\`](index.md#propb)
+[\`CommentInterface\`](index.md#commentinterfacet).[\`propb\`](index.md#propb)
 
 ##### propc
 
