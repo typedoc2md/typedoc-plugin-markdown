@@ -28,7 +28,7 @@ export function signatureReturns(
   if (model.comment?.blockTags.length) {
     const tags = model.comment.blockTags
       .filter((tag) => tag.tag === '@returns')
-      .map((tag) => this.partials.commentParts(tag.content));
+      .map((tag) => this.helpers.getCommentParts(tag.content));
     md.push(tags.join('\n\n'));
   }
 

@@ -94,7 +94,7 @@ export function comment(
             ? heading(opts.headingLevel, tagText) + '\n'
             : bold(tagText) + '\n',
         ];
-        tagMd.push(this.partials.commentParts(tag.content));
+        tagMd.push(this.helpers.getCommentParts(tag.content));
         return tagMd.join('\n');
       });
     md.push(tags.join('\n\n'));

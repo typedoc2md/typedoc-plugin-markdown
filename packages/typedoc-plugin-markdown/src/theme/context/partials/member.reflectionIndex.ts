@@ -17,7 +17,7 @@ export function reflectionIndex(
     model.categories.forEach((categoryGroup) => {
       md.push(heading(options.headingLevel, categoryGroup.title) + '\n');
       if (categoryGroup.description) {
-        md.push(this.partials.commentParts(categoryGroup.description) + '\n');
+        md.push(this.helpers.getCommentParts(categoryGroup.description) + '\n');
       }
       md.push(this.helpers.getGroupIndex(categoryGroup) + '\n');
     });
@@ -36,7 +36,7 @@ export function reflectionIndex(
           );
           if (categoryGroup.description) {
             md.push(
-              this.partials.commentParts(categoryGroup.description) + '\n',
+              this.helpers.getCommentParts(categoryGroup.description) + '\n',
             );
           }
           md.push(this.helpers.getGroupIndex(categoryGroup) + '\n');

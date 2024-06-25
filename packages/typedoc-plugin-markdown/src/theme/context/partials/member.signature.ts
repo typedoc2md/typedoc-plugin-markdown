@@ -86,9 +86,9 @@ export function signature(
     this.partials.inheritance(model, { headingLevel: options.headingLevel }),
   );
 
-  if (model.comment) {
+  if (modelComments) {
     md.push(
-      this.partials.comment(model.comment, {
+      this.partials.comment(modelComments, {
         headingLevel: options.headingLevel,
         showSummary: false,
       }),

@@ -21,7 +21,7 @@ export function project(
     this.page.project.url === this.page.url &&
     this.options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
 
-  md.push(this.hook('index.page.begin').join('\n'));
+  md.push(this.hook('index.page.begin', this).join('\n'));
 
   if (!this.options.getValue('hidePageHeader')) {
     md.push(this.partials.header());
@@ -35,14 +35,14 @@ export function project(
     this.options.getValue('mergeReadme') && Boolean(page.model.readme);
 
   if (includeReadme && page.model.readme) {
-    md.push(this.partials.commentParts(page.model.readme));
+    md.push(this.helpers.getCommentParts(page.model.readme));
   }
 
   if (!this.options.getValue('hidePageTitle') && !includeReadme) {
     md.push(heading(1, this.partials.pageTitle()));
   }
 
-  md.push(this.hook('content.begin').join('\n'));
+  md.push(this.hook('content.begin', this).join('\n'));
 
   if (page.model.comment) {
     md.push(this.partials.comment(page.model.comment, { headingLevel: 2 }));
@@ -72,7 +72,7 @@ export function project(
 
   md.push(this.partials.footer());
 
-  md.push(this.hook('index.page.end').join('\n'));
+  md.push(this.hook('index.page.end', this).join('\n'));
 
   return md.join('\n\n');
 }

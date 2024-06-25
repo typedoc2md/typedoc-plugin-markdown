@@ -262,6 +262,10 @@ This is some numeric parameter.
 
 \`number\`
 
+## See
+
+http://abc.com
+
 ## Source
 
 [functions.ts:1](http://source-url)
@@ -286,6 +290,10 @@ This is a function that is assigned to a variable.
 ## Returns
 
 \`number\`
+
+## See
+
+http://abc.com
 
 ## Source
 

@@ -77,8 +77,6 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
         isTableColumn?: boolean | undefined;
       } = {},
     ) => partials.comment.apply(context, [model, options]) as string,
-    commentParts: (model: CommentDisplayPart[]) =>
-      partials.commentParts.apply(context, [model]) as string,
     body: (model: ContainerReflection, options: { headingLevel: number }) =>
       partials.body.apply(context, [model, options]) as string,
     categories: (

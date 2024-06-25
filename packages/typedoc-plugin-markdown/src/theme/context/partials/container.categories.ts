@@ -13,7 +13,7 @@ export function categories(
     .forEach((category) => {
       md.push(heading(options.headingLevel, category.title));
       if (category.description) {
-        md.push(this.partials.commentParts(category.description));
+        md.push(this.helpers.getCommentParts(category.description));
       }
       if (category.children) {
         md.push(

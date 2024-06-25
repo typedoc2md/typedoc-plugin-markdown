@@ -19,7 +19,7 @@ export function document(
     md.push(this.partials.breadcrumbs());
   }
 
-  md.push(this.partials.commentParts(page.model.content));
+  md.push(this.helpers.getCommentParts(page.model.content));
 
   md.push(this.partials.footer());
 

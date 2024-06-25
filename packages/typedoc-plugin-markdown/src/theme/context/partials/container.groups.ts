@@ -26,7 +26,7 @@ export function groups(
     if (group.categories) {
       md.push(heading(options.headingLevel, getGroupTitle(group.title)));
       if (group.description) {
-        md.push(this.partials.commentParts(group.description));
+        md.push(this.helpers.getCommentParts(group.description));
       }
       md.push(
         this.partials.categories(group.categories, {
@@ -44,7 +44,7 @@ export function groups(
 
       md.push(heading(options.headingLevel, getGroupTitle(group.title)));
       if (group.description) {
-        md.push(this.partials.commentParts(group.description));
+        md.push(this.helpers.getCommentParts(group.description));
       }
       if (
         isPropertiesGroup &&

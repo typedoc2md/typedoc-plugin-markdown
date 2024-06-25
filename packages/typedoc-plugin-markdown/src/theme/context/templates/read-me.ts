@@ -21,7 +21,7 @@ export function readme(
 
   if (Boolean(page.model.readme)) {
     md.push(
-      this.partials.commentParts(page.model.readme as CommentDisplayPart[]),
+      this.helpers.getCommentParts(page.model.readme as CommentDisplayPart[]),
     );
   }
 

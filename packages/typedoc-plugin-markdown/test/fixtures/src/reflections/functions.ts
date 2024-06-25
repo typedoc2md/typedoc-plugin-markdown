@@ -6,6 +6,8 @@
  * This is a function that is assigned to a variable.
  *
  * @param someParam  This is some numeric parameter.
+ *
+ * @see http://abc.com
  */
 export const basicFunction = (someParam: number) => {
   return 0;

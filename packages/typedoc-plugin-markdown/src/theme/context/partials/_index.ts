@@ -1,5 +1,4 @@
 export * from './comments.comment';
-export * from './comments.commentParts';
 export * from './container.body';
 export * from './container.categories';
 export * from './container.groups';

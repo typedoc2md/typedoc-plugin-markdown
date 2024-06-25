@@ -5,11 +5,7 @@ import {
   resourcePartials,
   resourceTemplates,
 } from '@plugin/theme/context/resources';
-import {
-  MarkdownRenderer,
-  MarkdownRendererHooks,
-  PackageMetaData,
-} from '@plugin/types';
+import { MarkdownRenderer, PackageMetaData } from '@plugin/types';
 import * as path from 'path';
 import { Internationalization, Options, Reflection } from 'typedoc';
 
@@ -161,6 +157,7 @@ export class MarkdownThemeContext {
    *
    * @internal
    */
-  hook = (name: keyof MarkdownRendererHooks) =>
-    (this.theme.owner as MarkdownRenderer).markdownHooks.emit(name, this);
+  hook: MarkdownRenderer['markdownHooks']['emit'] = (...params) => {
+    return (this.theme.owner as MarkdownRenderer).markdownHooks.emit(...params);
+  };
 }
