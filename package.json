@@ -20,14 +20,14 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.5",
+    "@changesets/cli": "^2.27.6",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.7",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
+    "@types/node": "^20.14.8",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
     "barrelsby": "^2.8.1",
     "consola": "^3.2.3",
     "copyfiles": "^2.4.1",
@@ -47,10 +47,10 @@
     "to-vfile": "^8.0.0",
     "ts-jest": "^29.1.5",
     "ts-json-schema-generator": "^2.3.0",
-    "ts-morph": "^22.0.0",
+    "ts-morph": "^23.0.0",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10",
-    "typedoc": "^0.26.1",
+    "typedoc": "^0.26.2",
     "typescript": "^5.5.2",
     "unified-prettier": "^2.0.1"
   }
