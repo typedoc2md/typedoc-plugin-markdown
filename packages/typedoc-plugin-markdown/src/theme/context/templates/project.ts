@@ -57,6 +57,10 @@ export function project(
       md.push(this.helpers.getGroupIndex(group));
     }
 
+    if (page.model.children?.some((child) => child.kind !== ReflectionKind.Module)) {
+      md.push(this.partials.body(page.model, { headingLevel: 2 }));
+    }
+
     md.push(
       this.partials.reflectionIndex(page.model, {
         headingLevel: 2,
