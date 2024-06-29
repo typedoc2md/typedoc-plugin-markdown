@@ -41,6 +41,14 @@ export class MarkdownPageEvent<
    */
   frontmatter?: Record<string, any>;
 
+  // required for typing purposes but not used
+  /** @hidden */
+  pageHeadings: any;
+  /** @hidden */
+  pageSections: any;
+  /** @hidden */
+  startNewSection: any;
+
   /**
    * Triggered before a document will be rendered.
    * @event

@@ -7,7 +7,6 @@ import { RenderTemplate } from '@plugin/types';
 import {
   DeclarationReflection,
   DocumentReflection,
-  PageEvent,
   ProjectReflection,
   Reflection,
   ReflectionKind,
@@ -37,8 +36,8 @@ export class MarkdownTheme extends Theme {
    * @internal
    */
   render(
-    page: PageEvent<Reflection>,
-    template: RenderTemplate<PageEvent<Reflection>>,
+    page: MarkdownPageEvent<Reflection>,
+    template: RenderTemplate<MarkdownPageEvent<Reflection>>,
   ) {
     try {
       return formatMarkdown(template(page));
