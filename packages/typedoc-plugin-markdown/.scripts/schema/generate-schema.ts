@@ -11,7 +11,7 @@ async function main() {
   for (const key in schema.properties) {
     const property = schema.properties[key];
     if (typeof property === 'object' && property !== null) {
-      property.description = `[typedoc-plugin-markdown] ${property.description}`;
+      property.description = `[typedoc-plugin-markdown] ${property.description || (property as any)?.deprecated}`;
       property.default =
         declarations[key].defaultValue || declarations[key].defaults;
       if (property.required) {

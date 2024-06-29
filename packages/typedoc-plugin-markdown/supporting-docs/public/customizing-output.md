@@ -48,7 +48,7 @@ You would typically use this event to modify urls or navigation structure.
  */
 export function load(app) {
   app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {
-    renderer.urls = event.urls.map((urlMapping) => {
+    renderer.urls = renderer.urls?.map((urlMapping) => {
       const newUrl = urlMapping.url.replace('foo', 'bar');
       urlMapping.url = newUrl;
       urlMapping.model.url = newUrl; // also required

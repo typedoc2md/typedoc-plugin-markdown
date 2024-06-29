@@ -43,7 +43,7 @@
         "excludeGroups": {
           "type": "boolean",
           "deprecated": "This option has been renamed hideGroupHeadings to better reflect its purpose.",
-          "description": "[typedoc-plugin-markdown] undefined"
+          "description": "[typedoc-plugin-markdown] This option has been renamed hideGroupHeadings to better reflect its purpose."
         },
         "excludeScopesInPaths": {
           "type": "boolean",
@@ -86,7 +86,8 @@
           "type": "string",
           "enum": [
             "list",
-            "table"
+            "table",
+            "htmlTable"
           ],
           "description": "[typedoc-plugin-markdown] Sets the format of index items.",
           "default": "list"
