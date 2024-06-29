@@ -28,7 +28,7 @@ export class NavigationBuilder {
     this.options = theme.application.options;
     this.navigationOptions = this.options.getValue('navigationModel');
     this.packagesMeta = (
-      theme.application.renderer as MarkdownRenderer
+      theme.application.renderer as unknown as MarkdownRenderer
     ).packagesMeta;
     this.navigation = [];
     this.isPackages =

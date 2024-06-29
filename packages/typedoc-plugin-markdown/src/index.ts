@@ -16,7 +16,6 @@ import {
   DeclarationOption,
   EventHooks,
   Renderer,
-  Theme,
 } from 'typedoc';
 /**
  * The function that is called by TypeDoc to bootstrap the plugin.
@@ -57,7 +56,7 @@ export function load(app: Application) {
    * Replace the default HTML theme the with the MarkdownTheme
    */
   Object.defineProperty(app.renderer, 'themes', {
-    value: new Map<string, new (renderer: Renderer) => Theme>([
+    value: new Map<string, new (renderer: Renderer) => MarkdownTheme>([
       ['default', MarkdownTheme],
     ]),
   });

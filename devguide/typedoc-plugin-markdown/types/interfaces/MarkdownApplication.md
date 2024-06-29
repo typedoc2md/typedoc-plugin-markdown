@@ -2,7 +2,7 @@
 
 # Interface: MarkdownApplication
 
-This interface is essentially an extended typing of TypeDoc's [`Application`](https://typedoc.org/api/classes/Application.html) instance.\`\`
+The MarkdownApplication extends TypeDoc's Application instance with a custom renderer.
 
 ## Contents
 
@@ -18,9 +18,9 @@ This interface is essentially an extended typing of TypeDoc's [`Application`](ht
 
 ### renderer
 
-> **renderer**: [`MarkdownRenderer`](MarkdownRenderer.md)
+> **renderer**: [`MarkdownRenderer`](MarkdownRenderer.md) & [`Renderer`](https://typedoc.org/api/classes/Renderer.html)
 
-Re-types the `renderer` instance to [`MarkdownRenderer`](MarkdownRenderer.md).
+The renderer used to generate the documentation output.
 
 #### Overrides
 
@@ -28,4 +28,4 @@ Re-types the `renderer` instance to [`MarkdownRenderer`](MarkdownRenderer.md).
 
 #### Defined in
 
-[types/markdown-application.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-application.ts#L11)
+[packages/typedoc-plugin-markdown/src/types/markdown-application.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-application.ts#L8)

@@ -1,12 +1,39 @@
 // @ts-check
 import * as fs from 'fs';
-import { MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown';
+import {
+  MarkdownPageEvent,
+  MarkdownRendererEvent,
+  MarkdownTheme,
+  MarkdownThemeContext,
+} from 'typedoc-plugin-markdown';
 
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
   app.renderer.defineTheme('custom-theme', MyMarkdownTheme);
+
+  app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {
+    fs.writeFileSync(
+      `${renderer.outputDirectory}/renderer-event-begin.txt`,
+      'renderer-event-begin success',
+    );
+  });
+
+  app.renderer.on(MarkdownRendererEvent.END, (renderer) => {
+    fs.writeFileSync(
+      `${renderer.outputDirectory}/renderer-event-end.txt`,
+      'renderer-event-end success',
+    );
+  });
+
+  app.renderer.on(MarkdownPageEvent.BEGIN, (page) => {
+    page.contents = 'PAGE_BEGIN\n';
+  });
+
+  app.renderer.on(MarkdownPageEvent.END, (page) => {
+    page.contents = page.contents + '\nPAGE_END\n';
+  });
 
   app.renderer.markdownHooks.on('page.begin', () => '> `page.begin` hook');
 
@@ -30,19 +57,19 @@ export function load(app) {
     () => '> **Generated using `page.index.end` hook**',
   );
 
-  app.renderer.preRenderAsyncJobs.push(async (output) => {
+  app.renderer.preRenderAsyncJobs.push(async (renderer) => {
     await new Promise((r) => setTimeout(r, 5));
     fs.writeFileSync(
-      `${output.outputDirectory}/pre-render.txt`,
-      'pre render success',
+      `${renderer.outputDirectory}/pre-render-async-job.txt`,
+      'pre-render-async-job success',
     );
   });
 
-  app.renderer.postRenderAsyncJobs.push(async (output) => {
+  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
     await new Promise((r) => setTimeout(r, 5));
     fs.writeFileSync(
-      `${output.outputDirectory}/post-render.txt`,
-      'post render success',
+      `${renderer.outputDirectory}/post-render-async-job.txt`,
+      'post-render-async-job success',
     );
   });
 }

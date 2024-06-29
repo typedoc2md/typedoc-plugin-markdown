@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Customization should action post-render-async jobs: (Output File Strategy "members") (Option Group "1") 1`] = `"post render success"`;
+exports[`Customization should action post-render-async jobs: (Output File Strategy "members") (Option Group "1") 1`] = `"post-render-async-job success"`;
 
-exports[`Customization should action pre-render-async jobs: (Output File Strategy "members") (Option Group "1") 1`] = `"post render success"`;
+exports[`Customization should action pre-render-async jobs: (Output File Strategy "members") (Option Group "1") 1`] = `"post-render-async-job success"`;
+
+exports[`Customization should action renderer-event-begin jobs: (Output File Strategy "members") (Option Group "1") 1`] = `"renderer-event-begin success"`;
+
+exports[`Customization should action renderer-event-end jobs: (Output File Strategy "members") (Option Group "1") 1`] = `"renderer-event-end success"`;
 
 exports[`Customization should insert content from hooks and apply custom theme index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"> \`page.index.begin\` hook
+"PAGE_BEGIN
+> \`page.index.begin\` hook
 
 <div style="display:flex; align-items:center;">
   <img alt="My logo" src="https://placehold.co/100x50" style="margin-right: .5em;" />
@@ -27,11 +32,14 @@ Some other comments
 - [someFunction](functions/someFunction.md)
 
 > **Generated using \`page.index.end\` hook**
+
+PAGE_END
 "
 `;
 
 exports[`Customization should insert content from hooks and apply custom theme member page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"> \`page.begin\` hook
+"PAGE_BEGIN
+> \`page.begin\` hook
 
 <div style="display:flex; align-items:center;">
   <img alt="My logo" src="https://placehold.co/100x50" style="margin-right: .5em;" />
@@ -51,5 +59,7 @@ exports[`Customization should insert content from hooks and apply custom theme m
 \`void\`
 
 **Generated using \`page.end\` hook**
+
+PAGE_END
 "
 `;

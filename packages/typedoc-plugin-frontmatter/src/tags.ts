@@ -3,10 +3,11 @@
  *
  * @module
  */
-import { Application, Comment, CommentTag } from 'typedoc';
+import { Comment, CommentTag } from 'typedoc';
+import { MarkdownApplication } from 'typedoc-plugin-markdown';
 import { FrontmatterNamingConvention } from './options/maps';
 
-export function getResolvedTags(app: Application, comment?: Comment) {
+export function getResolvedTags(app: MarkdownApplication, comment?: Comment) {
   if (!comment) return {};
   const frontmatterTags = app.options.getValue('frontmatterCommentTags');
   const namingConvention = app.options.getValue(

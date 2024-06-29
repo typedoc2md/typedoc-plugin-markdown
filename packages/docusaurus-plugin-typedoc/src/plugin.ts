@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { Application, DeclarationOption } from 'typedoc';
-import { MarkdownRendererEvent } from 'typedoc-plugin-markdown';
+import { MarkdownApplication } from 'typedoc-plugin-markdown';
 import { PluginOptions } from './models';
 import { getPluginOptions } from './options';
 import * as options from './options/declarations';
@@ -50,7 +50,9 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const { id, sidebar, ...optionsPassedToTypeDoc } = pluginOptions;
 
-  const app = await Application.bootstrapWithPlugins(optionsPassedToTypeDoc);
+  const app = (await Application.bootstrapWithPlugins(
+    optionsPassedToTypeDoc,
+  )) as unknown as MarkdownApplication;
 
   Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
@@ -66,35 +68,33 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
       Boolean(preset[1]?.docs),
     );
 
-    app.renderer.postRenderAsyncJobs.push(
-      async (output: MarkdownRendererEvent) => {
-        if (output.navigation) {
-          const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
-          const baseDir = path
-            .relative(siteDir, outputDir)
-            .split(path.sep)
-            .slice(1)
-            .join('/');
+    app.renderer.postRenderAsyncJobs.push(async (output) => {
+      if (output.navigation) {
+        const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+        const baseDir = path
+          .relative(siteDir, outputDir)
+          .split(path.sep)
+          .slice(1)
+          .join('/');
 
-          const sidebarJson = getSidebar(
-            output.navigation,
-            baseDir,
-            docsPreset ? docsPreset[1]?.docs?.numberPrefixParser : null,
-          );
-          fs.writeFileSync(
-            sidebarPath,
-            `// @ts-check
+        const sidebarJson = getSidebar(
+          output.navigation,
+          baseDir,
+          docsPreset ? docsPreset[1]?.docs?.numberPrefixParser : null,
+        );
+        fs.writeFileSync(
+          sidebarPath,
+          `// @ts-check
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const typedocSidebar = { items: ${JSON.stringify(
-              sidebarJson,
-              null,
-              sidebar.pretty ? 2 : 0,
-            )}};
+            sidebarJson,
+            null,
+            sidebar.pretty ? 2 : 0,
+          )}};
 module.exports = typedocSidebar.items;`,
-          );
-        }
-      },
-    );
+        );
+      }
+    });
   }
 
   const project = await app.convert();

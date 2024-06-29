@@ -70,7 +70,7 @@ Custom anchor prefix when anchoring to in-page symbols.
 
 #### Defined in
 
-[types/options.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L11)
+[packages/typedoc-plugin-markdown/src/types/options.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L11)
 
 ***
 
@@ -82,7 +82,7 @@ Sets the format of property groups for classes.
 
 #### Defined in
 
-[types/options.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L16)
+[packages/typedoc-plugin-markdown/src/types/options.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L16)
 
 ***
 
@@ -94,7 +94,7 @@ The file name of the entry page.
 
 #### Defined in
 
-[types/options.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L21)
+[packages/typedoc-plugin-markdown/src/types/options.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L21)
 
 ***
 
@@ -106,7 +106,7 @@ The name of a module that should act as the root page for the documentation.
 
 #### Defined in
 
-[types/options.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L26)
+[packages/typedoc-plugin-markdown/src/types/options.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L26)
 
 ***
 
@@ -118,7 +118,7 @@ Sets the format of enumeration members.
 
 #### Defined in
 
-[types/options.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L31)
+[packages/typedoc-plugin-markdown/src/types/options.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L31)
 
 ***
 
@@ -132,7 +132,7 @@ This option has been renamed hideGroupHeadings to better reflect its purpose.
 
 #### Defined in
 
-[types/options.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L36)
+[packages/typedoc-plugin-markdown/src/types/options.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L36)
 
 ***
 
@@ -144,7 +144,7 @@ Exclude writing @ scope directories in paths.
 
 #### Defined in
 
-[types/options.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L41)
+[packages/typedoc-plugin-markdown/src/types/options.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L41)
 
 ***
 
@@ -156,7 +156,7 @@ Expand objects inside declarations.
 
 #### Defined in
 
-[types/options.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L46)
+[packages/typedoc-plugin-markdown/src/types/options.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L46)
 
 ***
 
@@ -168,7 +168,7 @@ Expand parameters in signature parentheses to display type information.
 
 #### Defined in
 
-[types/options.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L51)
+[packages/typedoc-plugin-markdown/src/types/options.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L51)
 
 ***
 
@@ -180,7 +180,7 @@ Specify the file extension for generated output files.
 
 #### Defined in
 
-[types/options.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L56)
+[packages/typedoc-plugin-markdown/src/types/options.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L56)
 
 ***
 
@@ -192,7 +192,7 @@ Flatten output files to a single directory.
 
 #### Defined in
 
-[types/options.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L61)
+[packages/typedoc-plugin-markdown/src/types/options.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L61)
 
 ***
 
@@ -204,7 +204,7 @@ Do not print breadcrumbs.
 
 #### Defined in
 
-[types/options.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L66)
+[packages/typedoc-plugin-markdown/src/types/options.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L66)
 
 ***
 
@@ -216,7 +216,7 @@ Excludes grouping by kind so all members are rendered and sorted at the same lev
 
 #### Defined in
 
-[types/options.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L71)
+[packages/typedoc-plugin-markdown/src/types/options.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L71)
 
 ***
 
@@ -228,7 +228,7 @@ Do not print page header.
 
 #### Defined in
 
-[types/options.ts:76](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L76)
+[packages/typedoc-plugin-markdown/src/types/options.ts:76](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L76)
 
 ***
 
@@ -240,19 +240,19 @@ Do not print page title.
 
 #### Defined in
 
-[types/options.ts:81](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L81)
+[packages/typedoc-plugin-markdown/src/types/options.ts:81](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L81)
 
 ***
 
 ### indexFormat
 
-> **indexFormat**: `"table"` | `"list"`
+> **indexFormat**: `"table"` | `"list"` | `"htmlTable"`
 
 Sets the format of index items.
 
 #### Defined in
 
-[types/options.ts:86](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L86)
+[packages/typedoc-plugin-markdown/src/types/options.ts:86](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L86)
 
 ***
 
@@ -264,7 +264,7 @@ Sets the format of property groups for interfaces.
 
 #### Defined in
 
-[types/options.ts:91](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L91)
+[packages/typedoc-plugin-markdown/src/types/options.ts:91](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L91)
 
 ***
 
@@ -276,7 +276,7 @@ Determines which members are exported to their own file when `outputFileStrategy
 
 #### Defined in
 
-[types/options.ts:96](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L96)
+[packages/typedoc-plugin-markdown/src/types/options.ts:96](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L96)
 
 ***
 
@@ -288,7 +288,7 @@ Merges the resolved readme into the project index page.
 
 #### Defined in
 
-[types/options.ts:108](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L108)
+[packages/typedoc-plugin-markdown/src/types/options.ts:108](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L108)
 
 ***
 
@@ -312,7 +312,7 @@ Configures how the navigation model will be generated.
 
 #### Defined in
 
-[types/options.ts:113](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L113)
+[packages/typedoc-plugin-markdown/src/types/options.ts:113](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L113)
 
 ***
 
@@ -324,7 +324,7 @@ Determines how output files are generated.
 
 #### Defined in
 
-[types/options.ts:122](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L122)
+[packages/typedoc-plugin-markdown/src/types/options.ts:122](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L122)
 
 ***
 
@@ -336,7 +336,7 @@ Sets the format of parameter and type parameter groups.
 
 #### Defined in
 
-[types/options.ts:127](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L127)
+[packages/typedoc-plugin-markdown/src/types/options.ts:127](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L127)
 
 ***
 
@@ -348,7 +348,7 @@ Preserve anchor casing when generating link to symbols.
 
 #### Defined in
 
-[types/options.ts:132](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L132)
+[packages/typedoc-plugin-markdown/src/types/options.ts:132](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L132)
 
 ***
 
@@ -360,7 +360,7 @@ Sets the format of property groups for interfaces and classes.
 
 #### Defined in
 
-[types/options.ts:137](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L137)
+[packages/typedoc-plugin-markdown/src/types/options.ts:137](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L137)
 
 ***
 
@@ -372,7 +372,7 @@ Sets the format of style for property members for interfaces and classes.
 
 #### Defined in
 
-[types/options.ts:142](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L142)
+[packages/typedoc-plugin-markdown/src/types/options.ts:142](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L142)
 
 ***
 
@@ -384,7 +384,7 @@ Specify the base path for all urls.
 
 #### Defined in
 
-[types/options.ts:147](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L147)
+[packages/typedoc-plugin-markdown/src/types/options.ts:147](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L147)
 
 ***
 
@@ -396,7 +396,7 @@ Sanitize HTML and JSX inside JsDoc comments.
 
 #### Defined in
 
-[types/options.ts:152](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L152)
+[packages/typedoc-plugin-markdown/src/types/options.ts:152](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L152)
 
 ***
 
@@ -436,7 +436,7 @@ Control how table columns are configured and displayed.
 
 #### Defined in
 
-[types/options.ts:157](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L157)
+[packages/typedoc-plugin-markdown/src/types/options.ts:157](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L157)
 
 ***
 
@@ -472,7 +472,7 @@ Change specific text placeholders in the template.
 
 #### Defined in
 
-[types/options.ts:170](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L170)
+[packages/typedoc-plugin-markdown/src/types/options.ts:170](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L170)
 
 ***
 
@@ -484,7 +484,7 @@ Sets the format of style for type declaration members.
 
 #### Defined in
 
-[types/options.ts:182](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L182)
+[packages/typedoc-plugin-markdown/src/types/options.ts:182](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L182)
 
 ***
 
@@ -496,7 +496,7 @@ Wraps signatures and declarations in code blocks.
 
 #### Defined in
 
-[types/options.ts:187](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L187)
+[packages/typedoc-plugin-markdown/src/types/options.ts:187](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L187)
 
 ***
 
@@ -508,4 +508,4 @@ Add HTML named anchors to headings and table rows.
 
 #### Defined in
 
-[types/options.ts:192](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L192)
+[packages/typedoc-plugin-markdown/src/types/options.ts:192](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/options.ts#L192)

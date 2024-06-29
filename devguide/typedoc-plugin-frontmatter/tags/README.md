@@ -15,10 +15,10 @@ Functionality to map options to tags.
 
 ### Parameters
 
-| Parameter  | Type                                                              |
-| ---------- | ----------------------------------------------------------------- |
-| `app`      | [`Application`](https://typedoc.org/api/classes/Application.html) |
-| `comment`? | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)  |
+| Parameter  | Type                                                                                           |
+| ---------- | ---------------------------------------------------------------------------------------------- |
+| `app`      | [`MarkdownApplication`](../../typedoc-plugin-markdown/types/interfaces/MarkdownApplication.md) |
+| `comment`? | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)                               |
 
 ### Returns
 
@@ -26,7 +26,7 @@ Functionality to map options to tags.
 
 ### Defined in
 
-[tags.ts:9](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L9)
+[tags.ts:10](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L10)
 
 ***
 
@@ -48,4 +48,4 @@ Functionality to map options to tags.
 
 ### Defined in
 
-[tags.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L33)
+[tags.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L34)

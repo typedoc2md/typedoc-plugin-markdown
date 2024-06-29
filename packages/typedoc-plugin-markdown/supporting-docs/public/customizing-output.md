@@ -6,9 +6,9 @@ description: How to extend and customize output.
 # Customizing Output
 
 It is possible to customize the output of the generated markdown files by creating local plugins.
-All these concepts follow an adapted version of [TypeDoc's core customization implementation](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md).
-
 See the [Local Plugins](/api-docs/Document.Local-Plugins) guide for implementation details.
+
+All these concepts follow an adapted version of [TypeDoc's Custom Theme](https://typedoc.org/api/documents/Renderer.Custom_Themes.html).
 
 ## Hooks
 
@@ -47,20 +47,14 @@ You would typically use this event to modify urls or navigation structure.
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
-  app.renderer.on(
-    MarkdownRendererEvent.BEGIN,
-    /**
-     * @param {import('typedoc-plugin-markdown').MarkdownRendererEvent} renderer
-     */
-    (renderer) => {
-      renderer.urls = event.urls.map((urlMapping) => {
-        const newUrl = urlMapping.url.replace('foo', 'bar');
-        urlMapping.url = newUrl;
-        urlMapping.model.url = newUrl; // also required
-        return urlMapping;
-      });
-    },
-  );
+  app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {
+    renderer.urls = event.urls.map((urlMapping) => {
+      const newUrl = urlMapping.url.replace('foo', 'bar');
+      urlMapping.url = newUrl;
+      urlMapping.model.url = newUrl; // also required
+      return urlMapping;
+    });
+  });
 }
 ```
 
@@ -81,15 +75,9 @@ You would typically use this event to modify content of a page.
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
-  app.renderer.on(
-    MarkdownPageEvent.BEGIN,
-    /**
-     * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
-     */
-    (page) => {
-      page.contents = page.contents.replace('foo', 'bar');
-    },
-  );
+  app.renderer.on(MarkdownPageEvent.BEGIN, (page) => {
+    page.contents = page.contents.replace('foo', 'bar');
+  });
 }
 ```
 

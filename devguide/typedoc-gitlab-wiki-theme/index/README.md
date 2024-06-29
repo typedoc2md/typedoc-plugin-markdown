@@ -10,9 +10,9 @@ The plugin entrypoint and bootstrapping of the plugin.
 
 ### Parameters
 
-| Parameter | Type                                                              |
-| --------- | ----------------------------------------------------------------- |
-| `app`     | [`Application`](https://typedoc.org/api/classes/Application.html) |
+| Parameter | Type                                                                                           |
+| --------- | ---------------------------------------------------------------------------------------------- |
+| `app`     | [`MarkdownApplication`](../../typedoc-plugin-markdown/types/interfaces/MarkdownApplication.md) |
 
 ### Returns
 
@@ -20,4 +20,4 @@ The plugin entrypoint and bootstrapping of the plugin.
 
 ### Defined in
 
-[index.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-gitlab-wiki-theme/src/index.ts#L23)
+[index.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-gitlab-wiki-theme/src/index.ts#L18)

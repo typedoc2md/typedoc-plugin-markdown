@@ -30,7 +30,7 @@ The project the renderer is currently processing.
 
 #### Defined in
 
-[events/markdown-renderer-event.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L15)
+[packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L15)
 
 ***
 
@@ -42,7 +42,7 @@ The path of the directory the documentation should be written to.
 
 #### Defined in
 
-[events/markdown-renderer-event.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L20)
+[packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L20)
 
 ***
 
@@ -54,7 +54,7 @@ A list of all pages that should be generated.
 
 #### Defined in
 
-[events/markdown-renderer-event.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L25)
+[packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L25)
 
 ***
 
@@ -66,7 +66,7 @@ The navigation structure of the project that can be utilised by plugins.
 
 #### Defined in
 
-[events/markdown-renderer-event.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L30)
+[packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L30)
 
 ## Events
 
@@ -78,7 +78,7 @@ Triggered before the renderer starts rendering a project.
 
 #### Defined in
 
-[events/markdown-renderer-event.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L36)
+[packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L36)
 
 ***
 
@@ -90,4 +90,4 @@ Triggered after the renderer has written all documents.
 
 #### Defined in
 
-[events/markdown-renderer-event.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L42)
+[packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-renderer-event.ts#L42)

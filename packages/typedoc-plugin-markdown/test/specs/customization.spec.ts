@@ -10,10 +10,18 @@ describe(`Customization`, () => {
   });
 
   test(`should action pre-render-async jobs`, () => {
-    expectFileToEqual('customize', 'members', ['post-render.txt']);
+    expectFileToEqual('customize', 'members', ['post-render-async-job.txt']);
   });
 
   test(`should action post-render-async jobs`, () => {
-    expectFileToEqual('customize', 'members', ['post-render.txt']);
+    expectFileToEqual('customize', 'members', ['post-render-async-job.txt']);
+  });
+
+  test(`should action renderer-event-begin jobs`, () => {
+    expectFileToEqual('customize', 'members', ['renderer-event-begin.txt']);
+  });
+
+  test(`should action renderer-event-end jobs`, () => {
+    expectFileToEqual('customize', 'members', ['renderer-event-end.txt']);
   });
 });

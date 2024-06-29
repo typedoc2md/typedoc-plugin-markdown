@@ -82,10 +82,6 @@ export function signature(
     );
   }
 
-  md.push(
-    this.partials.inheritance(model, { headingLevel: options.headingLevel }),
-  );
-
   if (modelComments) {
     md.push(
       this.partials.comment(modelComments, {
@@ -94,6 +90,10 @@ export function signature(
       }),
     );
   }
+
+  md.push(
+    this.partials.inheritance(model, { headingLevel: options.headingLevel }),
+  );
 
   if (
     !options.nested &&

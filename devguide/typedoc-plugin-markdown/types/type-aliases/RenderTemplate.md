@@ -24,4 +24,4 @@ Defines the template type to use for rendering.
 
 ## Defined in
 
-[types/theme.ts:59](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L59)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:59](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L59)

@@ -1,14 +1,7 @@
 import { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/events';
 import * as fs from 'fs';
 import * as path from 'path';
-import {
-  Application,
-  DeclarationReflection,
-  DocumentReflection,
-  ProjectReflection,
-  Reflection,
-  Renderer,
-} from 'typedoc';
+import { Application, ProjectReflection, Reflection, Renderer } from 'typedoc';
 
 /**
  * Replacement of TypeDoc's {@link Application.generateDocs} method to decouple HTML logic.
@@ -74,24 +67,23 @@ export async function render(
 
   this.preRenderAsyncJobs = [];
 
+  this.trigger(MarkdownRendererEvent.BEGIN, output);
+
   this.application.logger.verbose(
     `There are ${output.urls?.length} pages to write.`,
   );
 
   output.urls
-    ?.filter(
-      (urlMapping) =>
-        urlMapping.model instanceof ProjectReflection ||
-        urlMapping.model instanceof DeclarationReflection ||
-        urlMapping.model instanceof DocumentReflection,
-    )
+    ?.filter((urlMapping) => urlMapping.model instanceof Reflection)
     .forEach(async (urlMapping) => {
       const [template, page] = output.createPageEvent(urlMapping);
+
+      page.contents = '';
 
       this.trigger(MarkdownPageEvent.BEGIN, page);
 
       if (page.model instanceof Reflection) {
-        page.contents = this.theme!.render(page, template);
+        page.contents = page.contents + this.theme!.render(page, template);
       } else {
         throw new Error('Should be unreachable');
       }
@@ -101,7 +93,9 @@ export async function render(
       try {
         writeFileSync(page.filename, page.contents as string);
       } catch (error) {
-        this.application.logger.error(`Could not write ${page.filename}`);
+        this.application.logger.error(
+          this.application.i18n.could_not_write_0(page.filename),
+        );
       }
     });
 

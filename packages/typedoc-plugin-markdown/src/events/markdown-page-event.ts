@@ -42,12 +42,6 @@ export class MarkdownPageEvent<
   frontmatter?: Record<string, any>;
 
   /**
-   * This is required for typing purposes but is unused in the Markdown theme.
-   * @hidden
-   */
-  pageHeadings: any;
-
-  /**
    * Triggered before a document will be rendered.
    * @event
    */

@@ -36,7 +36,7 @@ export function load(app: MarkdownApplication) {
     })(),
   );
 
-  app.renderer.on(MarkdownPageEvent.END, (page: MarkdownPageEvent) => {
+  app.renderer.on(MarkdownPageEvent.END, (page) => {
     page.contents = page.contents?.replace(
       /\[([^\]]+)\]\((?!https?:|\/|\.)([^)]*#?[^)]*)\)/g,
       (match: string, text: string, url: string) => {

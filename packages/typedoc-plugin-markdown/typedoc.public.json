@@ -1,12 +1,24 @@
 {
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+
   "entryPoints": ["./src/public-api.ts"],
   "out": "../../docs/pages/api-docs",
   "plugin": [
     "typedoc-plugin-markdown",
     "../../devtools/typedoc-plugins/typedoc-nextra.mjs",
     "../../devtools/typedoc-plugins/typedoc-ignore-typeparam.mjs",
+    "../../devtools/typedoc-plugins/typedoc-ignore-extends.mjs",
     "../../devtools/typedoc-plugins/typedoc-symbols.mjs"
   ],
+  "sortEntryPoints": false,
+  "name": "API",
+  "sort": ["required-first", "source-order"],
+  "includeVersion": false,
+  "disableSources": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+
   "outputFileStrategy": "members",
   "fileExtension": ".mdx",
   "publicPath": "/api-docs",
@@ -15,7 +27,7 @@
   "entryFileName": "index.md",
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
-  "excludeGroups": false,
+  "hideGroupHeadings": false,
   "expandObjects": false,
   "parametersFormat": "table",
   "expandParameters": false,
@@ -32,14 +44,6 @@
     "title.memberPage": "{name}"
   },
   "flattenOutputFiles": true,
-  "sortEntryPoints": false,
-  "name": "API",
-  "sort": ["required-first", "source-order"],
-  "includeVersion": false,
-  "disableSources": true,
-  "excludeInternal": true,
-  "excludeExternals": true,
-  "excludePrivate": true,
   "navigation": {
     "includeCategories": true,
     "includeGroups": false

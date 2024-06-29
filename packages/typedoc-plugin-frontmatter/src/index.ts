@@ -5,17 +5,19 @@
  */
 import * as path from 'path';
 import {
-  Application,
   DeclarationOption,
   DeclarationReflection,
   ProjectReflection,
 } from 'typedoc';
-import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
+import {
+  MarkdownApplication,
+  MarkdownPageEvent,
+} from 'typedoc-plugin-markdown';
 import * as yaml from 'yaml';
 import { declarations } from './options';
 import { getResolvedTags } from './tags';
 
-export function load(app: Application) {
+export function load(app: MarkdownApplication) {
   Object.entries(declarations).forEach(([name, option]) => {
     app.options.addDeclaration({
       name,
@@ -23,42 +25,39 @@ export function load(app: Application) {
     } as DeclarationOption);
   });
 
-  app.renderer.on(
-    MarkdownPageEvent.BEGIN,
-    (page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>) => {
-      const entryFileName = app.options.getValue('entryFileName') as any;
+  app.renderer.on(MarkdownPageEvent.BEGIN, (page) => {
+    const entryFileName = app.options.getValue('entryFileName') as any;
 
-      const frontmatterGlobals = app.options.getValue(
-        'frontmatterGlobals',
-      ) as any;
+    const frontmatterGlobals = app.options.getValue(
+      'frontmatterGlobals',
+    ) as any;
 
-      const readmeFrontmatter = app.options.getValue('readmeFrontmatter');
-      const indexFrontmatter = app.options.getValue('indexFrontmatter');
-      const resolvedFrontmatterTags = getResolvedTags(app, page.model?.comment);
+    const readmeFrontmatter = app.options.getValue('readmeFrontmatter');
+    const indexFrontmatter = app.options.getValue('indexFrontmatter');
+    const resolvedFrontmatterTags = getResolvedTags(app, page.model?.comment);
 
+    page.frontmatter = {
+      ...(page.frontmatter || {}),
+      ...frontmatterGlobals,
+      ...resolvedFrontmatterTags,
+    };
+
+    if (path.parse(page.url).name === path.parse(entryFileName).name) {
       page.frontmatter = {
-        ...(page.frontmatter || {}),
-        ...frontmatterGlobals,
-        ...resolvedFrontmatterTags,
+        ...page.frontmatter,
+        ...readmeFrontmatter,
       };
+    }
 
-      if (path.parse(page.url).name === path.parse(entryFileName).name) {
-        page.frontmatter = {
-          ...page.frontmatter,
-          ...readmeFrontmatter,
-        };
-      }
-
-      if (
-        path.parse(page.url).name === path.parse(page.project?.url || '').name
-      ) {
-        page.frontmatter = {
-          ...page.frontmatter,
-          ...indexFrontmatter,
-        };
-      }
-    },
-  );
+    if (
+      path.parse(page.url).name === path.parse(page.project?.url || '').name
+    ) {
+      page.frontmatter = {
+        ...page.frontmatter,
+        ...indexFrontmatter,
+      };
+    }
+  });
 
   app.renderer.on(
     MarkdownPageEvent.END,

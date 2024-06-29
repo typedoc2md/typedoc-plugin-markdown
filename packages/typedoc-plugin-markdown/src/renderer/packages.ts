@@ -21,7 +21,7 @@ export function resolvePackages(
     ? JSON.parse(packageJsonContents)
     : {};
 
-  const renderer = app.renderer as MarkdownRenderer;
+  const renderer = app.renderer as unknown as MarkdownRenderer;
 
   renderer.packagesMeta = {
     ...(renderer.packagesMeta || {}),

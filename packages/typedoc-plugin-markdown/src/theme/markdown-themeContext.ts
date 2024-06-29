@@ -55,7 +55,9 @@ export class MarkdownThemeContext {
      */
     readonly options: Options,
   ) {
-    this.packagesMetaData = (this.theme.owner as MarkdownRenderer).packagesMeta;
+    this.packagesMetaData = (
+      this.theme.owner as unknown as MarkdownRenderer
+    ).packagesMeta;
     this.internationalization = theme.application.internationalization;
     this.i18n = this.internationalization.proxy;
   }
@@ -158,6 +160,8 @@ export class MarkdownThemeContext {
    * @internal
    */
   hook: MarkdownRenderer['markdownHooks']['emit'] = (...params) => {
-    return (this.theme.owner as MarkdownRenderer).markdownHooks.emit(...params);
+    return (this.theme.owner as unknown as MarkdownRenderer).markdownHooks.emit(
+      ...params,
+    );
   };
 }

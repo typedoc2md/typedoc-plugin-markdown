@@ -4,14 +4,9 @@
  * @module
  */
 import * as fs from 'fs';
+import { DeclarationOption, Options, OptionsReader, Reflection } from 'typedoc';
 import {
-  Application,
-  DeclarationOption,
-  Options,
-  OptionsReader,
-  Reflection,
-} from 'typedoc';
-import {
+  MarkdownApplication,
   MarkdownPageEvent,
   MarkdownRendererEvent,
 } from 'typedoc-plugin-markdown';
@@ -20,7 +15,7 @@ import * as options from './options/declarations';
 import { presets } from './options/presets';
 import { getSidebar } from './sidebar';
 
-export function load(app: Application) {
+export function load(app: MarkdownApplication) {
   Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
       name,

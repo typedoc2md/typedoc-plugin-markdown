@@ -369,7 +369,7 @@ typedoc-plugin-markdown/dist/types/options.d.ts:64
 
 ### indexFormat
 
-> **indexFormat**: `"table"` | `"list"`
+> **indexFormat**: `"table"` | `"list"` | `"htmlTable"`
 
 Sets the format of index items.
 

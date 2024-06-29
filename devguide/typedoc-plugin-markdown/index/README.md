@@ -30,4 +30,4 @@ This method is not intended to be consumed in any other context that via the `pl
 
 ### Defined in
 
-[index.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/index.ts#L30)
+[packages/typedoc-plugin-markdown/src/index.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/index.ts#L29)

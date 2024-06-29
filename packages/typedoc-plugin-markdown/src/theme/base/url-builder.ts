@@ -48,7 +48,7 @@ export class UrlBuilder {
     this.options = theme.application.options;
 
     this.packagesMeta = (
-      theme.application.renderer as MarkdownRenderer
+      theme.application.renderer as unknown as MarkdownRenderer
     ).packagesMeta;
 
     this.fileExtension = this.options.getValue('fileExtension');
