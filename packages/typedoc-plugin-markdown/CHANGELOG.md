@@ -5,7 +5,6 @@
 ### Patch Changes
 
 - normalize window paths when "publicPath" is set ([#639](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/639))
-- allow htmlTable format key for indexes ([#618](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618))
 
 ## 4.1.0 (2024-06-22)
 
