@@ -1,4 +1,4 @@
-import { heading, link, table } from 'libs/markdown';
+import { heading, htmlTable, link, table } from 'libs/markdown';
 import { escapeChars, getFileNameWithExtension } from 'libs/utils';
 import * as path from 'path';
 import { MarkdownThemeContext } from 'theme';
@@ -27,7 +27,7 @@ export function packagesIndex(
     fileExtension,
   );
 
-  if (this.options.getValue('indexFormat') === 'table') {
+  if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
     const headers = [this.i18n.theme_name()];
     if (includeVersion) {
       headers.push(this.i18n.theme_version());
@@ -53,7 +53,11 @@ export function packagesIndex(
 
       return rows;
     });
-    md.push(table(headers, packageRows || [], leftAlignHeadings));
+    const output =
+      this.options.getValue('indexFormat') === 'htmlTable'
+        ? htmlTable(headers, packageRows || [], leftAlignHeadings)
+        : table(headers, packageRows || [], leftAlignHeadings);
+    md.push(output);
   } else {
     const packagesList = model.children?.map((projectPackage) => {
       const urlTo = Boolean(projectPackage.readme)

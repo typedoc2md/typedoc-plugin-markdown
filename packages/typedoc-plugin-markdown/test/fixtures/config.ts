@@ -296,7 +296,7 @@ const config: Record<string, Fixture> = {
     options: [
       {},
       {
-        indexFormat: 'table',
+        indexFormat: 'htmlTable',
         flattenOutputFiles: true,
       },
     ],

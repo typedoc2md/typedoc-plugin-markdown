@@ -319,6 +319,89 @@ exports[`Documents Project should compile index page for project: (Output File S
 "
 `;
 
+exports[`Documents Project should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# typedoc-stubs
+
+## Documents
+
+<table>
+<tr>
+<th>Document</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+
+[Project Document 1](Document.Project-Document-1.md)
+
+</td>
+<td>
+
+A description of the document
+
+</td>
+</tr>
+<tr>
+<td>
+
+[docs/project/PROJECT\\_DOC\\_2](Document.docs.project.PROJECT_DOC_2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[docs/project/PROJECT\\_DOC\\_3](Document.docs.project.PROJECT_DOC_3.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+## Modules
+
+<table>
+<tr>
+<th>Module</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+
+[ModuleWithDocuments1](ModuleWithDocuments1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ModuleWithDocuments2](ModuleWithDocuments2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+"
+`;
+
 exports[`Documents Project should compile index page for project: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "# typedoc-stubs
 
@@ -332,5 +415,88 @@ exports[`Documents Project should compile index page for project: (Output File S
 
 - [ModuleWithDocuments1](ModuleWithDocuments1/README.md)
 - [ModuleWithDocuments2](ModuleWithDocuments2/README.md)
+"
+`;
+
+exports[`Documents Project should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"# typedoc-stubs
+
+## Documents
+
+<table>
+<tr>
+<th>Document</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+
+[Project Document 1](Document.Project-Document-1.md)
+
+</td>
+<td>
+
+A description of the document
+
+</td>
+</tr>
+<tr>
+<td>
+
+[docs/project/PROJECT\\_DOC\\_2](Document.docs.project.PROJECT_DOC_2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[docs/project/PROJECT\\_DOC\\_3](Document.docs.project.PROJECT_DOC_3.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+## Modules
+
+<table>
+<tr>
+<th>Module</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+
+[ModuleWithDocuments1](ModuleWithDocuments1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ModuleWithDocuments2](ModuleWithDocuments2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 "
 `;

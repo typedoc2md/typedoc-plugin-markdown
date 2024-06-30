@@ -1,4 +1,4 @@
-import { link, table } from 'libs/markdown';
+import { htmlTable, link, table } from 'libs/markdown';
 import { escapeChars } from 'libs/utils';
 import { MarkdownThemeContext } from 'public-api';
 import {
@@ -10,7 +10,6 @@ import {
 export function getGroupIndexTable(
   this: MarkdownThemeContext,
   children: DeclarationReflection[] | DocumentReflection[],
-  kind?: ReflectionKind,
 ) {
   const leftAlignHeadings = this.options.getValue(
     'tableColumnSettings',
@@ -38,5 +37,8 @@ export function getGroupIndexTable(
 
     rows.push(row);
   });
-  return table(headers, rows, leftAlignHeadings);
+
+  return this.options.getValue('indexFormat') === 'htmlTable'
+    ? htmlTable(headers, rows, leftAlignHeadings)
+    : table(headers, rows, leftAlignHeadings);
 }

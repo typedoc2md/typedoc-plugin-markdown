@@ -289,8 +289,7 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
     ) => helpers.getGroupIndexList.apply(context, [children]) as string,
     getGroupIndexTable: (
       children: DeclarationReflection[] | DocumentReflection[],
-      kind?: ReflectionKind | undefined,
-    ) => helpers.getGroupIndexTable.apply(context, [children, kind]) as string,
+    ) => helpers.getGroupIndexTable.apply(context, [children]) as string,
     getGroupIndex: (group: ReflectionCategory | ReflectionGroup) =>
       helpers.getGroupIndex.apply(context, [group]) as any,
     getHierarchyType: (

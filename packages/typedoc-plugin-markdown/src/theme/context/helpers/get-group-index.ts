@@ -6,7 +6,7 @@ import {
 } from 'typedoc';
 
 export function getGroupIndex(group: ReflectionGroup | ReflectionCategory) {
-  if (this.options.getValue('indexFormat') === 'table') {
+  if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
     return this.helpers.getGroupIndexTable(
       group.children as DeclarationReflection[] | DocumentReflection[],
       group instanceof ReflectionGroup ? group.owningReflection?.kind : null,

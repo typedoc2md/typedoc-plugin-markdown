@@ -3,7 +3,7 @@ import { expectFileToEqual } from '@devtools/testing';
 describe(`Documents`, () => {
   describe(`Project`, () => {
     test(`should compile index page for project`, () => {
-      expectFileToEqual('documents', ['modules', 'members'], 'README.md', 1);
+      expectFileToEqual('documents', ['modules', 'members'], 'README.md');
     });
 
     test(`should compile a project document`, () => {
