@@ -114,7 +114,7 @@ Triggered before a document will be rendered.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts#L48)
+[packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts#L56)
 
 ***
 
@@ -126,4 +126,4 @@ Triggered after a document has been rendered, just before it is written to disc.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts#L54)
+[packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts:62](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/events/markdown-page-event.ts#L62)

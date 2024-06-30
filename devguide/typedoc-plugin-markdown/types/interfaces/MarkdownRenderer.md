@@ -20,7 +20,7 @@ The MarkdownRenderer extends TypeDoc's Renderer instance with custom hooks and a
 
 ## Extends
 
-* `OmitProperties`\<[`Renderer`](https://typedoc.org/api/classes/Renderer.html), `"preRenderAsyncJobs"` | `"postRenderAsyncJobs"`>
+* [`Renderer`](https://typedoc.org/api/classes/Renderer.html)
 
 ## Properties
 
@@ -43,11 +43,11 @@ Define a new theme that can be used to render output.
 
 #### Overrides
 
-`OmitProperties.defineTheme`
+`Renderer.defineTheme`
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L54)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L48)
 
 ***
 
@@ -57,7 +57,7 @@ Define a new theme that can be used to render output.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:59](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L59)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:53](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L53)
 
 ***
 
@@ -69,9 +69,13 @@ A list of async jobs which must be completed before rendering output.
 
 Note: This array is cleared after calling the contained functions on each call.
 
+#### Overrides
+
+`Renderer.preRenderAsyncJobs`
+
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L66)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L60)
 
 ***
 
@@ -84,9 +88,13 @@ These functions will be called after all documents have been written to the file
 
 Note: This array is cleared after calling the contained functions on each call.
 
+#### Overrides
+
+`Renderer.postRenderAsyncJobs`
+
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:74](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L74)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:68](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L68)
 
 ***
 
@@ -98,7 +106,7 @@ Note: This array is cleared after calling the contained functions on each call.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:77](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L77)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L71)
 
 ## Methods
 
@@ -127,11 +135,11 @@ app.renderer.on(MarkdownPageEvent.BEGIN, (renderer) => {});
 
 ##### Overrides
 
-`OmitProperties.on`
+`Renderer.on`
 
 ##### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L26)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L20)
 
 #### on(event, callback)
 
@@ -156,8 +164,8 @@ app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {});
 
 ##### Overrides
 
-`OmitProperties.on`
+`Renderer.on`
 
 ##### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L41)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:35](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L35)

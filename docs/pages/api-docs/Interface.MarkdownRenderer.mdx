@@ -2,6 +2,10 @@
 
 The MarkdownRenderer extends TypeDoc's Renderer instance with custom hooks and async jobs.
 
+## Extends
+
+- [`Renderer`](https://typedoc.org/api/classes/Renderer.html)
+
 ## Methods
 
 ### on()
@@ -29,7 +33,7 @@ app.renderer.on(MarkdownPageEvent.BEGIN, (renderer) => {});
 
 ##### Overrides
 
-`OmitProperties.on`
+`Renderer.on`
 
 #### on(event, callback)
 
@@ -54,7 +58,7 @@ app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {});
 
 ##### Overrides
 
-`OmitProperties.on`
+`Renderer.on`
 
 ## Properties
 
@@ -77,7 +81,7 @@ Define a new theme that can be used to render output.
 
 #### Overrides
 
-`OmitProperties.defineTheme`
+`Renderer.defineTheme`
 
 ***
 
@@ -95,6 +99,10 @@ A list of async jobs which must be completed before rendering output.
 
 Note: This array is cleared after calling the contained functions on each call.
 
+#### Overrides
+
+`Renderer.preRenderAsyncJobs`
+
 ***
 
 ### postRenderAsyncJobs
@@ -105,3 +113,7 @@ A list of async jobs which must be completed after rendering output files but be
 These functions will be called after all documents have been written to the filesystem.
 
 Note: This array is cleared after calling the contained functions on each call.
+
+#### Overrides
+
+`Renderer.postRenderAsyncJobs`

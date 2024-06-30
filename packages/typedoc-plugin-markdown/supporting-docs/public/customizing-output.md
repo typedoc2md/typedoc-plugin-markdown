@@ -34,34 +34,6 @@ export function load(app) {
 
 Events are more powerful than hooks and allow for more complex customizations and provide a context that can be used to modify the output.
 
-### Renderer Events
-
-Renderer events are emitted at the beginning (before pages are rendered) and end (after pages are rendered) of the rendering process.
-You would typically use this event to modify urls or navigation structure.
-
-#### Example
-
-```ts filename="custom-plugin.mjs"
-// @ts-check
-/**
- * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
- */
-export function load(app) {
-  app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {
-    renderer.urls = renderer.urls?.map((urlMapping) => {
-      const newUrl = urlMapping.url.replace('foo', 'bar');
-      urlMapping.url = newUrl;
-      urlMapping.model.url = newUrl; // also required
-      return urlMapping;
-    });
-  });
-}
-```
-
-#### See
-
-- [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent).
-
 ### Page Events
 
 Page events emitted before and after the markdown of each page is rendered.
@@ -84,6 +56,29 @@ export function load(app) {
 #### See
 
 - [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent).
+
+### Renderer Events
+
+Renderer events are emitted at the beginning (before pages are rendered) and end (after pages are rendered) of the rendering process.
+You could typically use this event to modify urls or navigation structure.
+
+#### Example
+
+```ts filename="custom-plugin.mjs"
+// @ts-check
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {
+    ...
+  });
+}
+```
+
+#### See
+
+- [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent).
 
 ## Async Jobs
 

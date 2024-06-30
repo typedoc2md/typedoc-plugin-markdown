@@ -3,16 +3,10 @@ import { EventHooks, Options, Renderer } from 'typedoc';
 import { MarkdownTheme } from '..';
 import { MarkdownRendererHooks } from './markdown-renderer-hooks';
 
-type OmitProperties<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
 /**
  * The MarkdownRenderer extends TypeDoc's Renderer instance with custom hooks and async jobs.
  */
-export interface MarkdownRenderer
-  extends OmitProperties<
-    Renderer,
-    'preRenderAsyncJobs' | 'postRenderAsyncJobs'
-  > {
+export interface MarkdownRenderer extends Renderer {
   /**
    * @param event - Triggered before or after a document will be rendered.
    * @param callback - Receives the {@link MarkdownPageEvent} object as an argument.

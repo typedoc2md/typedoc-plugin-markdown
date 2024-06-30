@@ -7,7 +7,6 @@
     "typedoc-plugin-markdown",
     "../../devtools/typedoc-plugins/typedoc-nextra.mjs",
     "../../devtools/typedoc-plugins/typedoc-ignore-typeparam.mjs",
-    "../../devtools/typedoc-plugins/typedoc-ignore-extends.mjs",
     "../../devtools/typedoc-plugins/typedoc-symbols.mjs"
   ],
   "sortEntryPoints": false,
