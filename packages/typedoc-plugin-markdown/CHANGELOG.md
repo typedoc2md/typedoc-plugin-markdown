@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.1.1
+## 4.1.1 (2024-06-30)
 
 ### Patch Changes
 
