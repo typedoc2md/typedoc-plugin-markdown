@@ -50,6 +50,12 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const { id, sidebar, ...optionsPassedToTypeDoc } = pluginOptions;
 
+  const outputDir = path.join(siteDir, pluginOptions.out);
+
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
   const app = (await Application.bootstrapWithPlugins(
     optionsPassedToTypeDoc,
   )) as unknown as MarkdownApplication;
@@ -60,8 +66,6 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
       ...option,
     } as DeclarationOption);
   });
-
-  const outputDir = app.options.getValue('out');
 
   if (sidebar?.autoConfiguration) {
     const docsPreset = context.siteConfig?.presets?.find((preset: any) =>
