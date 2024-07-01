@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+### Patch Changes
+
+- Create output directory if it doesn't exist ([#641](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/641))
+
 ## 1.0.1 (2024-05-07)
 
 ### Patch Changes
