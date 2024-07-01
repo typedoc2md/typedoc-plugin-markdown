@@ -66,12 +66,27 @@ This option should be used when parsers require a custom anchor prefix.
 
 This option should be used if there are issues with anchoring to symbols within a page.
 
-- For markdown parsers that do not automatically assign header ids.
+- For Markdown parsers that do not automatically assign header ids.
 - When cross referencing symbols that are referenced in a table row.
 
 ```json filename="typedoc.json"
 {
   "useHTMLAnchors": false
+}
+```
+
+## --useHTMLEncodedBrackets
+
+<Callout emoji="💡">Use HTML encoded entities for angle brackets.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
+However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies across different Markdown processors.
+
+```json filename="typedoc.json"
+{
+  "useHTMLEncodedBrackets": false
 }
 ```
 

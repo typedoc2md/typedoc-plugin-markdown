@@ -257,6 +257,19 @@ const config: Record<string, Fixture> = {
       },
     ],
   },
+  utils: {
+    only: false,
+    entryPoints: '/utils/index.ts',
+    commonOptions: {
+      hidePageHeader: true,
+      hideBreadcrumbs: true,
+      disableSources: true,
+      readme: 'none',
+      expandObjects: true,
+      useHTMLEncodedBrackets: true,
+    },
+    options: [{}, { useCodeBlocks: true }],
+  },
   customize: {
     only: false,
     entryPoints: '/customize/index.ts',

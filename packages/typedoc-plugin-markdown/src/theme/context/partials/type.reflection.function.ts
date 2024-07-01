@@ -1,5 +1,5 @@
-import { backTicks } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks } from '@plugin/libs/markdown';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { SignatureReflection, SomeType } from 'typedoc';
 
 export function functionType(
@@ -9,9 +9,9 @@ export function functionType(
 ): string {
   const functions = model.map((fn) => {
     const typeParams = fn.typeParameters
-      ? `\\<${fn.typeParameters
+      ? `${this.helpers.getAngleBracket('<')}${fn.typeParameters
           .map((typeParameter) => backTicks(typeParameter.name))
-          .join(', ')}\\>`
+          .join(', ')}${this.helpers.getAngleBracket('>')}`
       : [];
     const showParameterType =
       options?.forceParameterType || this.options.getValue('expandParameters');

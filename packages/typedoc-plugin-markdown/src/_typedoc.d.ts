@@ -60,6 +60,7 @@ declare module 'typedoc' {
     typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
     useCodeBlocks: boolean;
     useHTMLAnchors: boolean;
+    useHTMLEncodedBrackets: boolean;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-namespace

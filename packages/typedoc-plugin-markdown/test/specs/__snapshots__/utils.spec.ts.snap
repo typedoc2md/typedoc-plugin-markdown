@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Utils should get class with brackets: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Class: ClassWithChars&lt;T&gt;
+
+## Type Parameters
+
+• **T**
+
+## Constructors
+
+### new ClassWithChars()
+
+> **new ClassWithChars**&lt;\`T\`&gt;(): [\`ClassWithChars\`](ClassWithChars.md)&lt;\`T\`&gt;
+
+#### Returns
+
+[\`ClassWithChars\`](ClassWithChars.md)&lt;\`T\`&gt;
+
+## Properties
+
+### prop
+
+> **prop**: \`T\`
+"
+`;
+
+exports[`Utils should get class with brackets: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Class: ClassWithChars&lt;T&gt;
+
+## Type Parameters
+
+• **T**
+
+## Constructors
+
+### new ClassWithChars()
+
+\`\`\`ts
+new ClassWithChars<T>(): ClassWithChars<T>
+\`\`\`
+
+#### Returns
+
+[\`ClassWithChars\`](ClassWithChars.md)&lt;\`T\`&gt;
+
+## Properties
+
+### prop
+
+\`\`\`ts
+prop: T;
+\`\`\`
+"
+`;
+
+exports[`Utils should get interface with brackets: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Interface: InterfaceWithChars&lt;T&gt;
+
+## Type Parameters
+
+• **T**
+
+## Properties
+
+### &lt;
+
+> **&lt;**: \`string\`
+
+***
+
+### &lt;tag&gt;
+
+> **&lt;tag&gt;**: \`string\`
+
+***
+
+### &gt;
+
+> **&gt;**: \`string\`
+
+***
+
+### prop
+
+> **prop**: \`T\`
+"
+`;
+
+exports[`Utils should get interface with brackets: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Interface: InterfaceWithChars&lt;T&gt;
+
+## Type Parameters
+
+• **T**
+
+## Properties
+
+### &lt;
+
+\`\`\`ts
+<: string;
+\`\`\`
+
+***
+
+### &lt;tag&gt;
+
+\`\`\`ts
+<tag>: string;
+\`\`\`
+
+***
+
+### &gt;
+
+\`\`\`ts
+>: string;
+\`\`\`
+
+***
+
+### prop
+
+\`\`\`ts
+prop: T;
+\`\`\`
+"
+`;
+
+exports[`Utils should get variable with brackets: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Variable: variableWithChars
+
+> \`const\` **variableWithChars**: \\{\`<x>\`: \`'>'\`;\`<y>\`: \`'<'\`;\`<z>\`: \`'<tag>'\`; \\}
+
+## Type declaration
+
+### &lt;x&gt;
+
+> **&lt;x&gt;**: \`string\` = \`'>'\`
+
+### &lt;y&gt;
+
+> **&lt;y&gt;**: \`string\` = \`'<'\`
+
+### &lt;z&gt;
+
+> **&lt;z&gt;**: \`string\` = \`'<tag>'\`
+"
+`;
+
+exports[`Utils should get variable with brackets: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Variable: variableWithChars
+
+\`\`\`ts
+const variableWithChars: {
+  <x>: '>';
+  <y>: '<';
+  <z>: '<tag>';
+};
+\`\`\`
+
+## Type declaration
+
+### &lt;x&gt;
+
+\`\`\`ts
+<x>: string = '>';
+\`\`\`
+
+### &lt;y&gt;
+
+\`\`\`ts
+<y>: string = '<';
+\`\`\`
+
+### &lt;z&gt;
+
+\`\`\`ts
+<z>: string = '<tag>';
+\`\`\`
+"
+`;

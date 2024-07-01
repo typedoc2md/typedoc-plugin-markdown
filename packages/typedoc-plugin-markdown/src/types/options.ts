@@ -190,4 +190,9 @@ export interface PluginOptions {
    * Add HTML named anchors to headings and table rows.
    */
   useHTMLAnchors: boolean;
+
+  /**
+   * Use HTML encoded entities for angle brackets.
+   */
+  useHTMLEncodedBrackets: boolean;
 }

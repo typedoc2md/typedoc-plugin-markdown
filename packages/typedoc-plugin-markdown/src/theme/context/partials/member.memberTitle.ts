@@ -1,6 +1,7 @@
-import { backTicks, strikeThrough } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks, strikeThrough } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { encodeAngleBrackets } from '@plugin/libs/utils/encode-angle-brackets';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 export function memberTitle(
@@ -14,10 +15,12 @@ export function memberTitle(
     name.push(this.helpers.getReflectionFlags(model.flags) + ' ');
   }
 
+  const modelName = this.options.getValue('useHTMLEncodedBrackets')
+    ? encodeAngleBrackets(model.name)
+    : model.name;
+
   name.push(
-    `${
-      /\\/.test(model.name) ? backTicks(model.name) : escapeChars(model.name)
-    }`,
+    `${/\\/.test(model.name) ? backTicks(model.name) : escapeChars(modelName)}`,
   );
 
   if (
@@ -31,7 +34,9 @@ export function memberTitle(
     const typeParameters = model.typeParameters
       .map((typeParameter) => typeParameter.name)
       .join(', ');
-    name.push(`${`\\<${typeParameters}\\>`}`);
+    name.push(
+      `${`${this.helpers.getAngleBracket('<')}${typeParameters}${this.helpers.getAngleBracket('>')}`}`,
+    );
   }
 
   if (model.flags.isOptional) {

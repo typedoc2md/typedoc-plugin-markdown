@@ -266,6 +266,8 @@ There is no association list partial for properties as these are handled as a st
 
 export const resourceHelpers = (context: MarkdownThemeContext) => {
   return {
+    getAngleBracket: (bracket: '<' | '>') =>
+      helpers.getAngleBracket.apply(context, [bracket]) as string,
     getCommentParts: (model: CommentDisplayPart[]) =>
       helpers.getCommentParts.apply(context, [model]) as string,
     getDeclarationType: (model: DeclarationReflection) =>

@@ -1,6 +1,6 @@
-import { backTicks, bold, codeBlock } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks, bold, codeBlock } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { SignatureReflection } from 'typedoc';
 
 export function signatureTitle(
@@ -37,9 +37,9 @@ export function signatureTitle(
 
   if (model.typeParameters) {
     md.push(
-      `\\<${model.typeParameters
+      `${this.helpers.getAngleBracket('<')}${model.typeParameters
         .map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}\\>`,
+        .join(', ')}${this.helpers.getAngleBracket('>')}`,
     );
   }
 

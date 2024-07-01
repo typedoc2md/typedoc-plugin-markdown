@@ -1,6 +1,7 @@
-import { backTicks, bold, codeBlock } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks, bold, codeBlock } from '@plugin/libs/markdown';
+import { escapeChars } from '@plugin/libs/utils';
+import { encodeAngleBrackets } from '@plugin/libs/utils/encode-angle-brackets';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { DeclarationReflection } from 'typedoc';
 
 export function declarationTitle(
@@ -54,17 +55,21 @@ export function declarationTitle(
       ? nameParts[nameParts.length - 1]
       : model.name;
 
+  const displayDeclarationName = this.options.getValue('useHTMLEncodedBrackets')
+    ? encodeAngleBrackets(declarationName)
+    : declarationName;
+
   name.push(
     /[\\`]/.test(declarationName)
-      ? escapeChars(declarationName)
-      : bold(escapeChars(declarationName)),
+      ? escapeChars(displayDeclarationName)
+      : bold(escapeChars(displayDeclarationName)),
   );
 
   if (model.typeParameters) {
     name.push(
-      `\\<${model.typeParameters
+      `${this.helpers.getAngleBracket('<')}${model.typeParameters
         ?.map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}\\>`,
+        .join(', ')}${this.helpers.getAngleBracket('>')}`,
     );
   }
 

@@ -140,7 +140,7 @@ export const flattenOutputFiles: Partial<DeclarationOption> = {
 };
 
 /**
- * Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
+ * Typically Markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain Markdown parsers.
  *
  * @example ".mdx"
  *
@@ -358,7 +358,7 @@ export const indexFormat: Partial<DeclarationOption> = {
  * This option specifies the output format for parameters and type parameters of functions and class methods:
  *
  * - **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
- * - **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+ * - **"table"**: parameters are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
  *
  * @category Display
@@ -374,7 +374,7 @@ export const parametersFormat: Partial<DeclarationOption> = {
  * This option specifies the output format for interface properties:
  *
  * - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+ * - **"table"**: properties are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
  *
  * @category Display
@@ -390,7 +390,7 @@ export const interfacePropertiesFormat: Partial<DeclarationOption> = {
  * This option specifies the output format for class properties:
  *
  * - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+ * - **"table"**: properties are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
  *
  * @category Display
@@ -406,7 +406,7 @@ export const classPropertiesFormat: Partial<DeclarationOption> = {
  * This option specifies the output format for enumeration members:
  *
  * - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: members are output within a markdown table, condensed into a single paragraph.
+ * - **"table"**: members are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
  *
  * @category Display
@@ -422,7 +422,7 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
  * This option specifies the output format for type declaration of variables and type aliases.
  *
  * - **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
+ * - **"table"**: declarations are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
  *
  * @category Display
@@ -440,7 +440,7 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
  * Note this options will only take effect when `propertiesFormat` is set to `list`.
  *
  * - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: members are output within a markdown table, condensed into a single paragraph.
+ * - **"table"**: members are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
  *
  * @category Display
@@ -539,13 +539,25 @@ export const anchorPrefix: Partial<DeclarationOption> = {
 /**
  * This option should be used if there are issues with anchoring to symbols within a page.
  *
- * - For markdown parsers that do not automatically assign header ids.
+ * - For Markdown parsers that do not automatically assign header ids.
  * - When cross referencing symbols that are referenced in a table row.
  *
  * @category Utility
  */
 export const useHTMLAnchors: Partial<DeclarationOption> = {
   help: 'Add HTML named anchors to headings and table rows.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
+ * However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies across different Markdown processors.
+ *
+ * @category Utility
+ */
+export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
+  help: 'Use HTML encoded entities for angle brackets.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };

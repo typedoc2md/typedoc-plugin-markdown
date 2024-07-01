@@ -1,4 +1,4 @@
-import { Callout, FileTree } from 'nextra/components';
+import { Callout, FileTree } from "nextra/components";
 
 # Display Options
 
@@ -115,7 +115,7 @@ This option should be set when a full type representation is preferred.
 
 <Callout emoji="💡">Sets the format of index items.</Callout>
 
-> Accepts one of `"list"` | `"table"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
 
 This option renders index items either as a simple unordered list or in a table.
 
@@ -142,7 +142,7 @@ When table style is selected the following will be the behaviour:
 This option specifies the output format for parameters and type parameters of functions and class methods:
 
 - **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
-- **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+- **"table"**: parameters are output within a Markdown table, condensed into a single paragraph.
 - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
 
 ```json filename="typedoc.json"
@@ -160,7 +160,7 @@ This option specifies the output format for parameters and type parameters of fu
 This option specifies the output format for interface properties:
 
 - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
-- **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+- **"table"**: properties are output within a Markdown table, condensed into a single paragraph.
 - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
 
 ```json filename="typedoc.json"
@@ -178,7 +178,7 @@ This option specifies the output format for interface properties:
 This option specifies the output format for class properties:
 
 - **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
-- **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+- **"table"**: properties are output within a Markdown table, condensed into a single paragraph.
 - **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
 
 ```json filename="typedoc.json"
@@ -196,7 +196,7 @@ This option specifies the output format for class properties:
 This option specifies the output format for enumeration members:
 
 - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
-- **"table"**: members are output within a markdown table, condensed into a single paragraph.
+- **"table"**: members are output within a Markdown table, condensed into a single paragraph.
 - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
 
 ```json filename="typedoc.json"
@@ -216,7 +216,7 @@ This option specifies the output format for enumeration members:
 This option specifies the output format for type declaration of variables and type aliases.
 
 - **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
-- **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
+- **"table"**: declarations are output within a Markdown table, condensed into a single paragraph.
 - **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
 
 ```json filename="typedoc.json"
@@ -238,7 +238,7 @@ This option will handle the formatting of object literals assigned as properties
 Note this options will only take effect when `propertiesFormat` is set to `list`.
 
 - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
-- **"table"**: members are output within a markdown table, condensed into a single paragraph.
+- **"table"**: members are output within a Markdown table, condensed into a single paragraph.
 - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
 
 ```json filename="typedoc.json"

@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownThemeContext } from '@plugin/theme';
 import { ReflectionType, SomeType } from 'typedoc';
 
 export function typeArguments(
@@ -6,7 +6,7 @@ export function typeArguments(
   model: SomeType[],
   options?: { forceCollapse?: boolean },
 ): string {
-  return `\\<${model
+  return `${this.helpers.getAngleBracket('<')}${model
     .map((typeArgument) =>
       typeArgument instanceof ReflectionType
         ? this.partials.reflectionType(typeArgument, {
@@ -14,5 +14,5 @@ export function typeArguments(
           })
         : this.partials.someType(typeArgument),
     )
-    .join(', ')}\\>`;
+    .join(', ')}${this.helpers.getAngleBracket('>')}`;
 }
