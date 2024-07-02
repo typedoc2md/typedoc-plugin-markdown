@@ -6,6 +6,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "copyfiles -u 3 ../packages/typedoc-plugin-markdown/CHANGELOG.md pages/docs",
+    "predev": "npm run prepare",
+    "prebuild": "npm run prepare",
     "dev": "next",
     "build": "next build",
     "start": "next start"
@@ -26,6 +29,7 @@
   "devDependencies": {
     "@types/node": "^20.14.2",
     "autoprefixer": "^10.4.19",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.4.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4"

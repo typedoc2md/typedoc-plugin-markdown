@@ -40,6 +40,7 @@ The JSDoc comments will also be used in the public facing documentation.
   * [sanitizeComments](#sanitizecomments)
   * [anchorPrefix](#anchorprefix)
   * [useHTMLAnchors](#usehtmlanchors)
+  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
   * [preserveAnchorCasing](#preserveanchorcasing)
   * [textContentMappings](#textcontentmappings)
   * [navigationModel](#navigationmodel)
@@ -201,7 +202,7 @@ Flattened output:
 
 > `const` **fileExtension**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
 
-Typically markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain markdown parsers.
+Typically Markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain Markdown parsers.
 
 #### Example
 
@@ -562,7 +563,7 @@ When table style is selected the following will be the behaviour:
 This option specifies the output format for parameters and type parameters of functions and class methods:
 
 * **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
-* **"table"**: parameters are output within a markdown table, condensed into a single paragraph.
+* **"table"**: parameters are output within a Markdown table, condensed into a single paragraph.
 * **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
 
 #### Default Value
@@ -589,7 +590,7 @@ This option specifies the output format for parameters and type parameters of fu
 This option specifies the output format for interface properties:
 
 * **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
-* **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+* **"table"**: properties are output within a Markdown table, condensed into a single paragraph.
 * **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
 
 #### Default Value
@@ -616,7 +617,7 @@ This option specifies the output format for interface properties:
 This option specifies the output format for class properties:
 
 * **"list"**: properties are output in linear blocks with headings, suitable for more detailed comments.
-* **"table"**: properties are output within a markdown table, condensed into a single paragraph.
+* **"table"**: properties are output within a Markdown table, condensed into a single paragraph.
 * **"htmlTable"**: properties are output in an HTML table, enabling block elements to render in tabular format.
 
 #### Default Value
@@ -643,7 +644,7 @@ This option specifies the output format for class properties:
 This option specifies the output format for enumeration members:
 
 * **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
-* **"table"**: members are output within a markdown table, condensed into a single paragraph.
+* **"table"**: members are output within a Markdown table, condensed into a single paragraph.
 * **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
 
 #### Default Value
@@ -670,7 +671,7 @@ This option specifies the output format for enumeration members:
 This option specifies the output format for type declaration of variables and type aliases.
 
 * **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
-* **"table"**: declarations are output within a markdown table, condensed into a single paragraph.
+* **"table"**: declarations are output within a Markdown table, condensed into a single paragraph.
 * **"htmlTable"**: declarations are output in an HTML table, enabling block elements to render in tabular format.
 
 #### Default Value
@@ -699,7 +700,7 @@ This option will handle the formatting of object literals assigned as properties
 Note this options will only take effect when `propertiesFormat` is set to `list`.
 
 * **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
-* **"table"**: members are output within a markdown table, condensed into a single paragraph.
+* **"table"**: members are output within a Markdown table, condensed into a single paragraph.
 * **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
 
 #### Default Value
@@ -849,7 +850,7 @@ This option should be used when parsers require a custom anchor prefix.
 
 This option should be used if there are issues with anchoring to symbols within a page.
 
-* For markdown parsers that do not automatically assign header ids.
+* For Markdown parsers that do not automatically assign header ids.
 * When cross referencing symbols that are referenced in a table row.
 
 #### Default Value
@@ -865,6 +866,29 @@ This option should be used if there are issues with anchoring to symbols within 
 #### Defined in
 
 [packages/typedoc-plugin-markdown/src/options/declarations.ts:547](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L547)
+
+***
+
+### useHTMLEncodedBrackets
+
+> `const` **useHTMLEncodedBrackets**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
+However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies across different Markdown processors.
+
+#### Default Value
+
+```ts
+{
+    help: 'Use HTML encoded entities for angle brackets.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:559](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L559)
 
 ***
 
@@ -888,7 +912,7 @@ This option can be used for engines that require the preservation of anchor link
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:560](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L560)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:572](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L572)
 
 ***
 
@@ -929,7 +953,7 @@ If you are looking for general localization support please see [localization]().
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:580](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L580)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:592](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L592)
 
 ***
 
@@ -979,4 +1003,4 @@ export function load(app: MarkdownApplication) {
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:630](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L630)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:642](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L642)

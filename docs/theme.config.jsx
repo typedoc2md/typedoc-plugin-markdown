@@ -1,6 +1,5 @@
 import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
 import * as path from 'path';
@@ -32,23 +31,11 @@ export default {
     defaultMenuCollapseLevel: 1,
   },
   editLink: { content: '' },
-  banner: {
-    content: (
-      <>
-        🎉{' '}
-        <Link href="/docs/changelog/v4.1" className="hover:underline">
-          v4.1 released • Find out more!
-        </Link>
-      </>
-    ),
-    dismissible: false,
-  },
   components: {
     PackageDescription,
     PackageVersion,
     OptionLink,
   },
-
   head: () => {
     const { asPath } = useRouter();
     const title = asPath

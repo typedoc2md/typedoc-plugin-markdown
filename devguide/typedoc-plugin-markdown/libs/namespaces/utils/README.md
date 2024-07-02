@@ -7,6 +7,7 @@ General utility pure functions.
 ## Contents
 
 * [camelToTitleCase()](#cameltotitlecase)
+* [encodeAngleBrackets()](#encodeanglebrackets)
 * [escapeChars()](#escapechars)
 * [formatMarkdown()](#formatmarkdown)
 * [formatTableCell()](#formattablecell)
@@ -37,6 +38,26 @@ General utility pure functions.
 ### Defined in
 
 [packages/typedoc-plugin-markdown/src/libs/utils/camel-to-title-case.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/camel-to-title-case.ts#L1)
+
+***
+
+## encodeAngleBrackets()
+
+> **encodeAngleBrackets**(`str`): `string`
+
+### Parameters
+
+| Parameter | Type     |
+| --------- | -------- |
+| `str`     | `string` |
+
+### Returns
+
+`string`
+
+### Defined in
+
+[packages/typedoc-plugin-markdown/src/libs/utils/encode-angle-brackets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/encode-angle-brackets.ts#L1)
 
 ***
 

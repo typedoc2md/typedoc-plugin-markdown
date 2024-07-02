@@ -16,5 +16,6 @@ export default {
     title: 'Support',
   },
   versioning: '',
-  changelog: 'Changelog',
+  'v4-migration-guide': 'v4 Migration Guide',
+  CHANGELOG: 'v4 Changelog',
 };

@@ -92,6 +92,8 @@ Describes the options declared by the plugin.
     * [Inherited from](#inherited-from-31)
   * [useHTMLAnchors](#usehtmlanchors)
     * [Inherited from](#inherited-from-32)
+  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
+    * [Inherited from](#inherited-from-33)
 
 ## Extends
 
@@ -700,3 +702,19 @@ Add HTML named anchors to headings and table rows.
 #### Defined in
 
 typedoc-plugin-markdown/dist/types/options.d.ts:151
+
+***
+
+### useHTMLEncodedBrackets
+
+> **useHTMLEncodedBrackets**: `boolean`
+
+Use HTML encoded entities for angle brackets.
+
+#### Inherited from
+
+[`PluginOptions`](../../../typedoc-plugin-markdown/types/interfaces/PluginOptions.md).[`useHTMLEncodedBrackets`](../../../typedoc-plugin-markdown/types/interfaces/PluginOptions.md#usehtmlencodedbrackets)
+
+#### Defined in
+
+typedoc-plugin-markdown/dist/types/options.d.ts:155

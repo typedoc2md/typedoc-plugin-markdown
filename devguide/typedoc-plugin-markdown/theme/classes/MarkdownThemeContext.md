@@ -91,6 +91,7 @@ This class can be used to customize the theme output by extending the class and 
     * [unionType()](#uniontype)
     * [unknownType()](#unknowntype)
   * [helpers](#helpers)
+    * [getAngleBracket()](#getanglebracket)
     * [getCommentParts()](#getcommentparts)
     * [getDeclarationType()](#getdeclarationtype)
     * [getDescriptionForReflection()](#getdescriptionforreflection)
@@ -1277,6 +1278,20 @@ Please note that partials:
 * Can reference other helpers but should not reference partials.
 * Can return strings or other models.
 
+#### getAngleBracket()
+
+> **getAngleBracket**: (`bracket`) => `string`
+
+##### Parameters
+
+| Parameter | Type           |
+| --------- | -------------- |
+| `bracket` | `"<"` \| `">"` |
+
+##### Returns
+
+`string`
+
 #### getCommentParts()
 
 > **getCommentParts**: (`model`) => `string`
@@ -1351,14 +1366,13 @@ Please note that partials:
 
 #### getGroupIndexTable()
 
-> **getGroupIndexTable**: (`children`, `kind`?) => `string`
+> **getGroupIndexTable**: (`children`) => `string`
 
 ##### Parameters
 
 | Parameter  | Type                                                                                                                       |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `children` | `DocumentReflection`\[] \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-| `kind`?    | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html)                                             |
 
 ##### Returns
 
