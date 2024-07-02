@@ -6,22 +6,11 @@ This guide provides some high-level steps with some typical development tasks.
 
 ## Contents
 
-* [Setup](#setup)
 * [Development Playground](#development-playground)
   * [Run Playground Docs](#run-playground-docs)
   * [View Playground Docs](#view-playground-docs)
   * [Perform a Simple Task](#perform-a-simple-task)
 * [Next Steps](#next-steps)
-
-## Setup
-
-Please see [Machine Setup]() for general setup instructions.
-
-If you are setup, you can start by navigating to the package directory.
-
-```shell
-cd packages/typedoc-plugin-markdown
-```
 
 ## Development Playground
 
@@ -29,7 +18,13 @@ To get started you can create a simple task of running a playground and editing 
 
 ### Run Playground Docs
 
-Run the playground from the project root.
+Start by navigating to the package directory:
+
+```shell
+cd packages/typedoc-plugin-markdown
+```
+
+Run the playground from the project root:
 
 ```shell
 npm run playground

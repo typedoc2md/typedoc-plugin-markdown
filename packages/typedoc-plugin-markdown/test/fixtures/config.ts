@@ -17,6 +17,7 @@ const config: Record<string, Fixture> = {
         leftAlignHeaders: true,
       },
       excludePrivate: false,
+      blockTagsPreserveOrder: ['@deprecated', '@see'],
     },
     options: [
       {},
@@ -49,6 +50,7 @@ const config: Record<string, Fixture> = {
       tableColumnSettings: {
         leftAlignHeaders: true,
       },
+      blockTagsPreserveOrder: ['@deprecated', '@see'],
     },
     options: [
       {},
@@ -166,6 +168,7 @@ const config: Record<string, Fixture> = {
           hideValues: true,
           leftAlignHeaders: true,
         },
+        blockTagsPreserveOrder: ['@example'],
       },
     ],
   },

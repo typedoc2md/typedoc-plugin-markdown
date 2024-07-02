@@ -29,6 +29,7 @@ export function signature(
       this.partials.comment(modelComments, {
         headingLevel: options.headingLevel,
         showTags: false,
+        showSummary: true,
       }),
     );
   }
@@ -86,6 +87,7 @@ export function signature(
     md.push(
       this.partials.comment(modelComments, {
         headingLevel: options.headingLevel,
+        showTags: true,
         showSummary: false,
       }),
     );

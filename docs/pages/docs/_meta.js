@@ -15,7 +15,7 @@ export default {
     type: 'separator',
     title: 'Support',
   },
+  'migration-guide': 'Migration Guide (v4)',
   versioning: '',
-  'v4-migration-guide': 'v4 Migration Guide',
-  CHANGELOG: 'v4 Changelog',
+  CHANGELOG: 'Changelog',
 };

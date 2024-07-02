@@ -13,62 +13,64 @@ Describes the options declared by the plugin.
     * [Inherited from](#inherited-from)
   * [anchorPrefix](#anchorprefix)
     * [Inherited from](#inherited-from-1)
-  * [classPropertiesFormat](#classpropertiesformat)
+  * [blockTagsPreserveOrder](#blocktagspreserveorder)
     * [Inherited from](#inherited-from-2)
-  * [entryFileName](#entryfilename)
+  * [classPropertiesFormat](#classpropertiesformat)
     * [Inherited from](#inherited-from-3)
-  * [entryModule](#entrymodule)
+  * [entryFileName](#entryfilename)
     * [Inherited from](#inherited-from-4)
-  * [enumMembersFormat](#enummembersformat)
+  * [entryModule](#entrymodule)
     * [Inherited from](#inherited-from-5)
+  * [enumMembersFormat](#enummembersformat)
+    * [Inherited from](#inherited-from-6)
   * [~~excludeGroups~~](#excludegroups)
     * [Deprecated](#deprecated)
-    * [Inherited from](#inherited-from-6)
-  * [excludeScopesInPaths](#excludescopesinpaths)
     * [Inherited from](#inherited-from-7)
-  * [expandObjects](#expandobjects)
+  * [excludeScopesInPaths](#excludescopesinpaths)
     * [Inherited from](#inherited-from-8)
-  * [expandParameters](#expandparameters)
+  * [expandObjects](#expandobjects)
     * [Inherited from](#inherited-from-9)
-  * [fileExtension](#fileextension)
+  * [expandParameters](#expandparameters)
     * [Inherited from](#inherited-from-10)
-  * [flattenOutputFiles](#flattenoutputfiles)
+  * [fileExtension](#fileextension)
     * [Inherited from](#inherited-from-11)
-  * [hideBreadcrumbs](#hidebreadcrumbs)
+  * [flattenOutputFiles](#flattenoutputfiles)
     * [Inherited from](#inherited-from-12)
-  * [hideGroupHeadings](#hidegroupheadings)
+  * [hideBreadcrumbs](#hidebreadcrumbs)
     * [Inherited from](#inherited-from-13)
-  * [hidePageHeader](#hidepageheader)
+  * [hideGroupHeadings](#hidegroupheadings)
     * [Inherited from](#inherited-from-14)
-  * [hidePageTitle](#hidepagetitle)
+  * [hidePageHeader](#hidepageheader)
     * [Inherited from](#inherited-from-15)
-  * [indexFormat](#indexformat)
+  * [hidePageTitle](#hidepagetitle)
     * [Inherited from](#inherited-from-16)
-  * [interfacePropertiesFormat](#interfacepropertiesformat)
+  * [indexFormat](#indexformat)
     * [Inherited from](#inherited-from-17)
-  * [membersWithOwnFile](#memberswithownfile)
+  * [interfacePropertiesFormat](#interfacepropertiesformat)
     * [Inherited from](#inherited-from-18)
-  * [mergeReadme](#mergereadme)
+  * [membersWithOwnFile](#memberswithownfile)
     * [Inherited from](#inherited-from-19)
+  * [mergeReadme](#mergereadme)
+    * [Inherited from](#inherited-from-20)
   * [navigationModel](#navigationmodel)
     * [excludeGroups](#excludegroups-1)
     * [excludeCategories](#excludecategories)
     * [excludeFolders](#excludefolders)
-    * [Inherited from](#inherited-from-20)
-  * [outputFileStrategy](#outputfilestrategy)
     * [Inherited from](#inherited-from-21)
-  * [parametersFormat](#parametersformat)
+  * [outputFileStrategy](#outputfilestrategy)
     * [Inherited from](#inherited-from-22)
-  * [preserveAnchorCasing](#preserveanchorcasing)
+  * [parametersFormat](#parametersformat)
     * [Inherited from](#inherited-from-23)
-  * [propertiesFormat](#propertiesformat)
+  * [preserveAnchorCasing](#preserveanchorcasing)
     * [Inherited from](#inherited-from-24)
-  * [propertyMembersFormat](#propertymembersformat)
+  * [propertiesFormat](#propertiesformat)
     * [Inherited from](#inherited-from-25)
-  * [publicPath](#publicpath)
+  * [propertyMembersFormat](#propertymembersformat)
     * [Inherited from](#inherited-from-26)
-  * [sanitizeComments](#sanitizecomments)
+  * [publicPath](#publicpath)
     * [Inherited from](#inherited-from-27)
+  * [sanitizeComments](#sanitizecomments)
+    * [Inherited from](#inherited-from-28)
   * [tableColumnSettings](#tablecolumnsettings)
     * [hideDefaults](#hidedefaults)
     * [hideInherited](#hideinherited)
@@ -77,7 +79,7 @@ Describes the options declared by the plugin.
     * [hideSources](#hidesources)
     * [hideValues](#hidevalues)
     * [leftAlignHeaders](#leftalignheaders)
-    * [Inherited from](#inherited-from-28)
+    * [Inherited from](#inherited-from-29)
   * [textContentMappings](#textcontentmappings)
     * [header.title](#headertitle)
     * [header.docs](#headerdocs)
@@ -85,15 +87,15 @@ Describes the options declared by the plugin.
     * [title.indexPage](#titleindexpage)
     * [title.memberPage](#titlememberpage)
     * [footer.text](#footertext)
-    * [Inherited from](#inherited-from-29)
-  * [typeDeclarationFormat](#typedeclarationformat)
     * [Inherited from](#inherited-from-30)
-  * [useCodeBlocks](#usecodeblocks)
+  * [typeDeclarationFormat](#typedeclarationformat)
     * [Inherited from](#inherited-from-31)
-  * [useHTMLAnchors](#usehtmlanchors)
+  * [useCodeBlocks](#usecodeblocks)
     * [Inherited from](#inherited-from-32)
-  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
+  * [useHTMLAnchors](#usehtmlanchors)
     * [Inherited from](#inherited-from-33)
+  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
+    * [Inherited from](#inherited-from-34)
 
 ## Extends
 
@@ -143,6 +145,22 @@ typedoc-plugin-markdown/dist/types/options.d.ts:8
 
 ***
 
+### blockTagsPreserveOrder
+
+> **blockTagsPreserveOrder**: `string`\[]
+
+Specifies comment block tags that should preserve their position in relation to the comment summary.
+
+#### Inherited from
+
+[`PluginOptions`](../../../typedoc-plugin-markdown/types/interfaces/PluginOptions.md).[`blockTagsPreserveOrder`](../../../typedoc-plugin-markdown/types/interfaces/PluginOptions.md#blocktagspreserveorder)
+
+#### Defined in
+
+typedoc-plugin-markdown/dist/types/options.d.ts:12
+
+***
+
 ### classPropertiesFormat
 
 > **classPropertiesFormat**: `"table"` | `"list"` | `"htmlTable"`
@@ -155,7 +173,7 @@ Sets the format of property groups for classes.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:12
+typedoc-plugin-markdown/dist/types/options.d.ts:16
 
 ***
 
@@ -171,7 +189,7 @@ The file name of the entry page.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:16
+typedoc-plugin-markdown/dist/types/options.d.ts:20
 
 ***
 
@@ -187,7 +205,7 @@ The name of a module that should act as the root page for the documentation.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:20
+typedoc-plugin-markdown/dist/types/options.d.ts:24
 
 ***
 
@@ -203,7 +221,7 @@ Sets the format of enumeration members.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:24
+typedoc-plugin-markdown/dist/types/options.d.ts:28
 
 ***
 
@@ -221,7 +239,7 @@ This option has been renamed hideGroupHeadings to better reflect its purpose.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:28
+typedoc-plugin-markdown/dist/types/options.d.ts:32
 
 ***
 
@@ -237,7 +255,7 @@ Exclude writing @ scope directories in paths.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:32
+typedoc-plugin-markdown/dist/types/options.d.ts:36
 
 ***
 
@@ -253,7 +271,7 @@ Expand objects inside declarations.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:36
+typedoc-plugin-markdown/dist/types/options.d.ts:40
 
 ***
 
@@ -269,7 +287,7 @@ Expand parameters in signature parentheses to display type information.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:40
+typedoc-plugin-markdown/dist/types/options.d.ts:44
 
 ***
 
@@ -285,7 +303,7 @@ Specify the file extension for generated output files.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:44
+typedoc-plugin-markdown/dist/types/options.d.ts:48
 
 ***
 
@@ -301,7 +319,7 @@ Flatten output files to a single directory.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:48
+typedoc-plugin-markdown/dist/types/options.d.ts:52
 
 ***
 
@@ -317,7 +335,7 @@ Do not print breadcrumbs.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:52
+typedoc-plugin-markdown/dist/types/options.d.ts:56
 
 ***
 
@@ -333,7 +351,7 @@ Excludes grouping by kind so all members are rendered and sorted at the same lev
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:56
+typedoc-plugin-markdown/dist/types/options.d.ts:60
 
 ***
 
@@ -349,7 +367,7 @@ Do not print page header.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:60
+typedoc-plugin-markdown/dist/types/options.d.ts:64
 
 ***
 
@@ -365,7 +383,7 @@ Do not print page title.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:64
+typedoc-plugin-markdown/dist/types/options.d.ts:68
 
 ***
 
@@ -381,7 +399,7 @@ Sets the format of index items.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:68
+typedoc-plugin-markdown/dist/types/options.d.ts:72
 
 ***
 
@@ -397,7 +415,7 @@ Sets the format of property groups for interfaces.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:72
+typedoc-plugin-markdown/dist/types/options.d.ts:76
 
 ***
 
@@ -413,7 +431,7 @@ Determines which members are exported to their own file when `outputFileStrategy
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:76
+typedoc-plugin-markdown/dist/types/options.d.ts:80
 
 ***
 
@@ -429,7 +447,7 @@ Merges the resolved readme into the project index page.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:80
+typedoc-plugin-markdown/dist/types/options.d.ts:84
 
 ***
 
@@ -457,7 +475,7 @@ Configures how the navigation model will be generated.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:84
+typedoc-plugin-markdown/dist/types/options.d.ts:88
 
 ***
 
@@ -473,7 +491,7 @@ Determines how output files are generated.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:92
+typedoc-plugin-markdown/dist/types/options.d.ts:96
 
 ***
 
@@ -489,7 +507,7 @@ Sets the format of parameter and type parameter groups.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:96
+typedoc-plugin-markdown/dist/types/options.d.ts:100
 
 ***
 
@@ -505,7 +523,7 @@ Preserve anchor casing when generating link to symbols.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:100
+typedoc-plugin-markdown/dist/types/options.d.ts:104
 
 ***
 
@@ -521,7 +539,7 @@ Sets the format of property groups for interfaces and classes.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:104
+typedoc-plugin-markdown/dist/types/options.d.ts:108
 
 ***
 
@@ -537,7 +555,7 @@ Sets the format of style for property members for interfaces and classes.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:108
+typedoc-plugin-markdown/dist/types/options.d.ts:112
 
 ***
 
@@ -553,7 +571,7 @@ Specify the base path for all urls.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:112
+typedoc-plugin-markdown/dist/types/options.d.ts:116
 
 ***
 
@@ -569,7 +587,7 @@ Sanitize HTML and JSX inside JsDoc comments.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:116
+typedoc-plugin-markdown/dist/types/options.d.ts:120
 
 ***
 
@@ -613,7 +631,7 @@ Control how table columns are configured and displayed.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:120
+typedoc-plugin-markdown/dist/types/options.d.ts:124
 
 ***
 
@@ -653,7 +671,7 @@ Change specific text placeholders in the template.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:132
+typedoc-plugin-markdown/dist/types/options.d.ts:136
 
 ***
 
@@ -669,7 +687,7 @@ Sets the format of style for type declaration members.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:143
+typedoc-plugin-markdown/dist/types/options.d.ts:147
 
 ***
 
@@ -685,7 +703,7 @@ Wraps signatures and declarations in code blocks.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:147
+typedoc-plugin-markdown/dist/types/options.d.ts:151
 
 ***
 
@@ -701,7 +719,7 @@ Add HTML named anchors to headings and table rows.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:151
+typedoc-plugin-markdown/dist/types/options.d.ts:155
 
 ***
 
@@ -717,4 +735,4 @@ Use HTML encoded entities for angle brackets.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:155
+typedoc-plugin-markdown/dist/types/options.d.ts:159

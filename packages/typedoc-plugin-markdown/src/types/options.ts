@@ -11,6 +11,11 @@ export interface PluginOptions {
   anchorPrefix: string;
 
   /**
+   * Specifies comment block tags that should preserve their position in relation to the comment summary.
+   */
+  blockTagsPreserveOrder: string[];
+
+  /**
    * Sets the format of property groups for classes.
    */
   classPropertiesFormat: 'list' | 'table' | 'htmlTable';

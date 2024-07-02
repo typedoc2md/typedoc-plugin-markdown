@@ -42,6 +42,27 @@ export function getCommentParts(
             break;
         }
         break;
+      case 'relative-link':
+        switch (typeof part.target) {
+          case 'number':
+            {
+              const reflection = this.page.project.files.resolve(part.target);
+              if (typeof reflection === 'object' && reflection.url) {
+                md.push(this.getRelativeUrl(reflection.url));
+                break;
+              }
+              const fileName = this.page.project.files.getName(part.target);
+              if (fileName) {
+                md.push(this.getRelativeUrl(`_media/${fileName}`));
+                break;
+              }
+            }
+            break;
+          case 'undefined':
+            md.push(part.text);
+            break;
+        }
+        break;
       default:
         md.push('');
     }

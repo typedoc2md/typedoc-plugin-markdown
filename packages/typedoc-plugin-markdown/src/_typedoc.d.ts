@@ -3,6 +3,7 @@ import { ManuallyValidatedOption } from 'typedoc';
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
     anchorPrefix: string;
+    blockTagsPreserveOrder: string[];
     classPropertiesFormat: 'list' | 'table' | 'htmlTable';
     entryFileName: string;
     entryModule: string;

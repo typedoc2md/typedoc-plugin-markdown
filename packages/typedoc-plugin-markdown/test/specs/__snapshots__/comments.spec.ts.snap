@@ -24,6 +24,17 @@ External links:
 - [Google](https://www.google.com)
 - [\`https://www.google.com\`](https://www.google.com)
 
+Relative Links:
+
+- [Relative Document](_media/PROJECT_DOC_1.md)
+- [Relative Link](../../../groups/members/opts-1/index.md)
+
+Relative Image Links:
+
+<img src="_media/logo.png" alt="Logo" />
+
+![Logo](_media/logo.svg)
+
 ## See
 
  - Comments for a tag
@@ -48,14 +59,6 @@ A <tag> in a code block
 Some <p> html </p> inside codeblock
 \`\`\`
 
-> media
-
-You can include media in doc comments:
-
-![alt SomeAlt](media://logo.png)
-
-And include other files:
-
 > codeBlocks
 
 \`\`\`css
@@ -67,10 +70,6 @@ And include other files:
 \`\`\`
 
 \`single line <code> {block}\`
-
-## Documents
-
-- [example](documents/example.md)
 
 ## Enumerations
 
@@ -93,6 +92,7 @@ And include other files:
 ## Type Aliases
 
 - [TypeDeclarationTable](type-aliases/TypeDeclarationTable.md)
+- [typeWithBlockTags](type-aliases/typeWithBlockTags.md)
 
 ## Variables
 
@@ -104,9 +104,112 @@ And include other files:
 
 ## Functions
 
+- [functionWithBlockTags](functions/functionWithBlockTags.md)
 - [multipleExampleTags](functions/multipleExampleTags.md)
 - [parametersTable](functions/parametersTable.md)
 - [singleExampleTag](functions/singleExampleTag.md)
+"
+`;
+
+exports[`Comments should get function with block tags: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithBlockTags()
+
+> **functionWithBlockTags**(\`x\`, \`y\`): \`void\`
+
+Function with block tags summary
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| \`x\` | \`string\` |
+| \`y\` | \`string\` |
+
+## Returns
+
+\`void\`
+
+## Example
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+## See
+
+abc.com
+
+## Remarks
+
+Other block tags
+
+## Source
+
+[index.ts:1](http://source-url)
+"
+`;
+
+exports[`Comments should get function with block tags: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: functionWithBlockTags()
+
+> **functionWithBlockTags**(\`x\`, \`y\`): \`void\`
+
+Function with block tags summary
+
+## Example
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+## Parameters
+
+<table>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+</tr>
+<tr>
+<td>
+
+\`x\`
+
+</td>
+<td>
+
+\`string\`
+
+</td>
+</tr>
+<tr>
+<td>
+
+\`y\`
+
+</td>
+<td>
+
+\`string\`
+
+</td>
+</tr>
+</table>
+
+## Returns
+
+\`void\`
+
+## See
+
+abc.com
+
+## Remarks
+
+Other block tags
+
+## Source
+
+[index.ts:1](http://source-url)
 "
 `;
 
@@ -526,6 +629,79 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 </td>
 </tr>
 </table>
+
+## Source
+
+[index.ts:1](http://source-url)
+"
+`;
+
+exports[`Comments should get variable with block tags: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type Alias: typeWithBlockTags
+
+> **typeWithBlockTags**: \`object\`
+
+Variable with block tags summary
+
+## Type declaration
+
+| Name | Type | Source |
+| ------ | ------ | ------ |
+| \`x\` | \`string\` | [index.ts:1](http://source-url) |
+
+## Example
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+## Remarks
+
+Other block tags
+
+## Source
+
+[index.ts:1](http://source-url)
+"
+`;
+
+exports[`Comments should get variable with block tags: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type Alias: typeWithBlockTags
+
+> **typeWithBlockTags**: \\{\`x\`: \`string\`; \\}
+
+Variable with block tags summary
+
+## Example
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+## Type declaration
+
+<table>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+</tr>
+<tr>
+<td>
+
+\`x\`
+
+</td>
+<td>
+
+\`string\`
+
+</td>
+</tr>
+</table>
+
+## Remarks
+
+Other block tags
 
 ## Source
 

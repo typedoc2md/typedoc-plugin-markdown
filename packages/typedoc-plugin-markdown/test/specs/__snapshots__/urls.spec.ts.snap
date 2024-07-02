@@ -948,3 +948,61 @@ exports[`Urls should gets Urls for single package entry points: outputFileStrate
   "packages.md",
 ]
 `;
+
+exports[`Urls should gets Urls with media assets: outputFileStrategy: members 1`] = `
+[
+  "README.md",
+  "_media/PROJECT_DOC_1.md",
+  "_media/logo.png",
+  "_media/logo.svg",
+  "classes/BaseClassProperties.md",
+  "classes/ClassPropertiesTable.md",
+  "enumerations/CommentEnum.md",
+  "enumerations/EnumMembersTable.md",
+  "functions/functionWithBlockTags.md",
+  "functions/multipleExampleTags.md",
+  "functions/parametersTable.md",
+  "functions/singleExampleTag.md",
+  "interfaces/BaseInterfaceProperties.md",
+  "interfaces/CommentInterface.md",
+  "interfaces/CommentInterfaceExtended.md",
+  "interfaces/InterfacePropertiesTable.md",
+  "interfaces/SameName.md",
+  "type-aliases/TypeDeclarationTable.md",
+  "type-aliases/typeWithBlockTags.md",
+  "variables/SameName.md",
+  "variables/TypeDeclarationTable.md",
+  "variables/prop.md",
+  "variables/prop_with_underscore.md",
+  "variables/propb.md",
+]
+`;
+
+exports[`Urls should gets Urls with media assets: outputFileStrategy: members 2`] = `
+[
+  "Class.BaseClassProperties.md",
+  "Class.ClassPropertiesTable.md",
+  "Enumeration.CommentEnum.md",
+  "Enumeration.EnumMembersTable.md",
+  "Function.functionWithBlockTags.md",
+  "Function.multipleExampleTags.md",
+  "Function.parametersTable.md",
+  "Function.singleExampleTag.md",
+  "Interface.BaseInterfaceProperties.md",
+  "Interface.CommentInterface.md",
+  "Interface.CommentInterfaceExtended.md",
+  "Interface.InterfacePropertiesTable.md",
+  "Interface.SameName.md",
+  "README.md",
+  "TypeAlias.TypeDeclarationTable.md",
+  "TypeAlias.typeWithBlockTags.md",
+  "Variable.SameName.md",
+  "Variable.TypeDeclarationTable.md",
+  "Variable._prop_with_underscore.md",
+  "Variable.prop.md",
+  "Variable.propb.md",
+  "_media/PROJECT_DOC_1.md",
+  "_media/logo.png",
+  "_media/logo.svg",
+]
+`;

@@ -252,6 +252,10 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 
 This is a function that is assigned to a variable.
 
+## See
+
+http://abc.com
+
 ## Parameters
 
 • **someParam**: \`number\`
@@ -261,10 +265,6 @@ This is some numeric parameter.
 ## Returns
 
 \`number\`
-
-## See
-
-http://abc.com
 
 ## Source
 
@@ -281,6 +281,10 @@ function basicFunction(someParam: number): number
 
 This is a function that is assigned to a variable.
 
+## See
+
+http://abc.com
+
 ## Parameters
 
 | Parameter | Type | Description |
@@ -290,10 +294,6 @@ This is a function that is assigned to a variable.
 ## Returns
 
 \`number\`
-
-## See
-
-http://abc.com
 
 ## Source
 

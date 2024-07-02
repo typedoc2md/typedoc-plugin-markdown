@@ -39,19 +39,18 @@ export function declaration(
   const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
 
-  if (
-    !typeDeclaration?.signatures?.every((signature) =>
-      Boolean(signature.comment),
-    )
-  ) {
-    if (model.comment) {
-      md.push(
-        this.partials.comment(model.comment, {
-          headingLevel: opts.headingLevel,
-          showTags: true,
-        }),
-      );
-    }
+  const showComments = !typeDeclaration?.signatures?.every((signature) =>
+    Boolean(signature.comment),
+  );
+
+  if (showComments && model.comment) {
+    md.push(
+      this.partials.comment(model.comment, {
+        headingLevel: opts.headingLevel,
+        showSummary: true,
+        showTags: false,
+      }),
+    );
   }
 
   if (model.type instanceof IntersectionType) {
@@ -160,6 +159,16 @@ export function declaration(
         }
       }
     }
+  }
+
+  if (showComments && model.comment) {
+    md.push(
+      this.partials.comment(model.comment, {
+        headingLevel: opts.headingLevel,
+        showSummary: false,
+        showTags: true,
+      }),
+    );
   }
 
   md.push(

@@ -21,6 +21,17 @@
  * - {@link https://www.google.com Google}
  * - {@linkcode https://www.google.com}
  *
+ * Relative Links:
+ *
+ * - [Relative Document](../../PROJECT_DOC_1.md)
+ * - [Relative Link](../../../groups/members/opts-1/index.md)
+ *
+ * Relative Image Links:
+ *
+ * <img src="../../media/logo.png" alt="Logo" />
+ *
+ * ![Logo](../../media/logo.svg)
+ *
  * @module
  *
  * @see
@@ -48,14 +59,6 @@
  * Some <p> html </p> inside codeblock
  * ```
  *
- * > media
- *
- * You can include media in doc comments:
- *
- * ![alt SomeAlt](media://logo.png)
- *
- * And include other files:
- *
  * > codeBlocks
  *
  * ```css
@@ -67,8 +70,6 @@
  * ```
  *
  * `single line <code> {block}`
- *
- * @document ../../inc/example.md
  */
 
 export interface CommentInterface {
@@ -268,3 +269,31 @@ export enum EnumMembersTable {
    */
   member1 = 'member1',
 }
+
+/**
+ * Function with block tags summary
+ *
+ * @example
+ * const x = 1;
+ *
+ * @see abc.com
+ *
+ * @remarks
+ *
+ * Other block tags
+ */
+export function functionWithBlockTags(x: string, y: string) {}
+
+/**
+ * Variable with block tags summary
+ *
+ * @example
+ * const x = 1;
+ *
+ * @remarks
+ *
+ * Other block tags
+ */
+export type typeWithBlockTags = {
+  x: string;
+};

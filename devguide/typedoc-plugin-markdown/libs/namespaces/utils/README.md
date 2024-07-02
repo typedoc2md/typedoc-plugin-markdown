@@ -13,7 +13,6 @@ General utility pure functions.
 * [formatTableCell()](#formattablecell)
 * [getFileNameWithExtension()](#getfilenamewithextension)
 * [isQuoted()](#isquoted)
-* [normalizeLineBreaks()](#normalizelinebreaks)
 * [removeFirstScopedDirectory()](#removefirstscopeddirectory)
 * [removeLineBreaks()](#removelinebreaks)
 * [sanitizeComments()](#sanitizecomments)
@@ -165,26 +164,6 @@ Returns a filename with extension while normalizing both the input name and inpu
 ### Defined in
 
 [packages/typedoc-plugin-markdown/src/libs/utils/is-quoted.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/is-quoted.ts#L1)
-
-***
-
-## normalizeLineBreaks()
-
-> **normalizeLineBreaks**(`str`): `string`
-
-### Parameters
-
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
-
-### Returns
-
-`string`
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/normalize-line-breaks.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/normalize-line-breaks.ts#L1)
 
 ***
 

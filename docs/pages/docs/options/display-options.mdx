@@ -111,6 +111,27 @@ This option should be set when a full type representation is preferred.
 }
 ```
 
+## --blockTagsPreserveOrder
+
+<Callout emoji="💡">
+  Specifies comment block tags that should preserve their position in relation
+  to the comment summary.
+</Callout>
+
+> Accepts an array of string values.
+
+By default block tags (such as `@example`, `@remarks`, `@deprecated`) are rendered after "Parameters", "Returns" and "Type declaration" sections for signatures and declarations.
+
+The rationale is that comment block tags often contain more detailed, supplementary information and are typically secondary to understanding the primary use of the symbol,
+
+Use this option to preserve the position of the tag content with the comment summary.
+
+```json filename="typedoc.json"
+{
+  "blockTagsPreserveOrder": ["@example", "@deprecated"]
+}
+```
+
 ## --indexFormat
 
 <Callout emoji="💡">Sets the format of index items.</Callout>
@@ -255,8 +276,7 @@ Note this options will only take effect when `propertiesFormat` is set to `list`
 
 >
 
-By default, all available data for symbols are displayed in table columns.
-For some reflections this can result in several columns.
+By default, all available data for symbols are displayed in table columns which can result in several columns in certain use-cases.
 
 This option allows you to control the visibility of columns, prioritizing readability over displaying complete data.
 In addition you can control the alignment of the header text.

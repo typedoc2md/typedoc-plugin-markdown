@@ -120,23 +120,23 @@ ${name}: ${getType(name, option, true)};`,
   }
 
   ${mixedTypes
-    ?.filter(([name]) => !ignoreTypes.includes(name))
-    .map(([name, option]) => {
-      return `
+      ?.filter(([name]) => !ignoreTypes.includes(name))
+      .map(([name, option]) => {
+        return `
   /**
    * ${getComments(name)}
    */
   export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
-        .map(
-          ([key, value]) =>
-            `'${key}'${value === undefined ? '?' : ''}: ${getValueType(value)}`,
-        )
-        .join(';')}
+            .map(
+              ([key, value]) =>
+                `'${key}'${value === undefined ? '?' : ''}: ${getValueType(value)}`,
+            )
+            .join(';')}
   }
     `;
-    })
-    .join('\n')}
+      })
+      .join('\n')}
   `);
 
   const optionsModelFile = path.join(process.cwd(), 'src/types/options.ts');
@@ -175,7 +175,7 @@ function getType(
   option: Partial<DeclarationOption>,
   isInterface = false,
 ) {
-  if (option.type === ParameterType.Array && option.defaultValue) {
+  if (option.type === ParameterType.Array && option.defaultValue?.length) {
     return `(${option.defaultValue
       .toString()
       .split(',')
@@ -193,7 +193,7 @@ function getType(
     return 'string';
   }
   if (option.type === ParameterType.Array) {
-    return 'any[]';
+    return 'string[]';
   }
   if (option.type === ParameterType.Flags && option.defaults) {
     return `{${Object.keys(option.defaults)

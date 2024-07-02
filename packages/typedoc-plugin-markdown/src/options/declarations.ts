@@ -337,6 +337,32 @@ export const expandParameters: Partial<DeclarationOption> = {
 };
 
 /**
+ * By default block tags (such as `@example`, `@remarks`, `@deprecated`) are rendered after "Parameters", "Returns" and "Type declaration" sections for signatures and declarations.
+ *
+ * The rationale is that comment block tags often contain more detailed, supplementary information and are typically secondary to understanding the primary use of the symbol,
+ *
+ * Use this option to preserve the position of the tag content with the comment summary.
+ *
+ * @example ["@example", "@deprecated"]
+ *
+ * @category Display
+ */
+export const blockTagsPreserveOrder: Partial<DeclarationOption> = {
+  help: 'Specifies comment block tags that should preserve their position in relation to the comment summary.',
+  type: ParameterType.Array,
+  defaultValue: [],
+  validate(value, i18n) {
+    if (
+      !value.every(
+        (tag) => typeof tag === 'string' && /^@[a-zA-Z][a-zA-Z0-9]*$/.test(tag),
+      )
+    ) {
+      throw new Error(i18n.option_0_values_must_be_array_of_tags('blockTags'));
+    }
+  },
+};
+
+/**
  * This option renders index items either as a simple unordered list or in a table.
  *
  * When table style is selected the following will be the behaviour:
@@ -467,8 +493,7 @@ export const propertiesFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * By default, all available data for symbols are displayed in table columns.
- * For some reflections this can result in several columns.
+ * By default, all available data for symbols are displayed in table columns which can result in several columns in certain use-cases.
  *
  * This option allows you to control the visibility of columns, prioritizing readability over displaying complete data.
  * In addition you can control the alignment of the header text.

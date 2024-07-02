@@ -49,4 +49,18 @@ describe(`Comments`, () => {
       '/Enumeration.EnumMembersTable.md',
     ]);
   });
+
+  test(`should get function with block tags`, () => {
+    expectFileToEqual('comments', 'members', [
+      '/functions/functionWithBlockTags.md',
+      '/Function.functionWithBlockTags.md',
+    ]);
+  });
+
+  test(`should get variable with block tags`, () => {
+    expectFileToEqual('comments', 'members', [
+      '/type-aliases/typeWithBlockTags.md',
+      '/TypeAlias.typeWithBlockTags.md',
+    ]);
+  });
 });

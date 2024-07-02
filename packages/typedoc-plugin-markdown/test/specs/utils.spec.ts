@@ -10,6 +10,6 @@ describe(`Utils`, () => {
   });
 
   test(`should get variable with brackets`, () => {
-    expectFileToEqual('utils', 'members', 'variables/VariableWithChars.md');
+    expectFileToEqual('utils', 'members', 'variables/variableWithChars.md');
   });
 });

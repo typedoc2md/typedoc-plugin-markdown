@@ -154,9 +154,7 @@ ${presetsJson}
             `<Callout type="warning">Deprecated: ${option.deprecated}</Callout>`,
           );
         } else {
-          out.push(
-            `<Callout emoji="${getEmoji(categoryName)}">${option.help}</Callout>`,
-          );
+          out.push(`<Callout emoji="${getEmoji()}">${option.help}</Callout>`);
         }
 
         const meta: string[] = [];
@@ -255,23 +253,21 @@ ${JSON.stringify(
   }
 }
 
-function getEmoji(categoryName: string) {
-  /*if (categoryName === 'Output') {
-    return '📁';
-  }
-  if (categoryName === 'Utilities') {
-    return '⚙️';
-  }*/
+function getEmoji() {
   return '💡';
 }
 
 function getType(option: any) {
-  if (option.type === ParameterType.Array && option.defaultValue) {
+  if (option.type === ParameterType.Array && option.defaultValue?.length) {
     return `Accepts an array of the following values ${option.defaultValue
       .toString()
       .split(',')
       .map((item) => `\`"${item}"\``)
       .join(' ')}.`;
+  }
+
+  if (option.type === ParameterType.Array) {
+    return 'Accepts an array of string values.';
   }
 
   if (option.type === ParameterType.String) {

@@ -49,8 +49,15 @@ export function comment(
     }
   }
 
+  const blockTagsPreserveOrder = this.options.getValue(
+    'blockTagsPreserveOrder',
+  ) as string[];
+
+  const showTags =
+    opts.showTags || (opts.showSummary && blockTagsPreserveOrder.length > 0);
+
   // Add Tags
-  if (opts.showTags && model.blockTags?.length) {
+  if (showTags && model.blockTags?.length > 0) {
     const blockTags = model.blockTags.reduce(
       (previous: CommentTag[], current: CommentTag) => {
         if (current.tag === '@example') {
@@ -80,6 +87,14 @@ export function comment(
 
     const tags = blockTags
       .filter((tag) => !filteredBlockTags.includes(tag.tag))
+      .filter((tag) => {
+        if (!opts.isTableColumn && blockTagsPreserveOrder.length) {
+          return opts.showSummary
+            ? blockTagsPreserveOrder.includes(tag.tag)
+            : !blockTagsPreserveOrder.includes(tag.tag);
+        }
+        return true;
+      })
       .filter(
         (tag) =>
           !opts.isTableColumn ||

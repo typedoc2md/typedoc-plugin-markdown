@@ -11,6 +11,14 @@
           "type": "string",
           "description": "[typedoc-plugin-markdown] Custom anchor prefix when anchoring to in-page symbols."
         },
+        "blockTagsPreserveOrder": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "[typedoc-plugin-markdown] Specifies comment block tags that should preserve their position in relation to the comment summary.",
+          "default": []
+        },
         "classPropertiesFormat": {
           "type": "string",
           "enum": [
@@ -285,6 +293,10 @@
         "useHTMLAnchors": {
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Add HTML named anchors to headings and table rows."
+        },
+        "useHTMLEncodedBrackets": {
+          "type": "boolean",
+          "description": "[typedoc-plugin-markdown] Use HTML encoded entities for angle brackets."
         }
       },
       "description": "Describes the options declared by the plugin.",

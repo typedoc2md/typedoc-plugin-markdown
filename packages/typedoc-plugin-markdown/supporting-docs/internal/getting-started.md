@@ -7,23 +7,19 @@ description: How to start developing locally.
 
 This guide provides some high-level steps with some typical development tasks.
 
-## Setup
-
-Please see [Machine Setup](../../README.md) for general setup instructions.
-
-If you are setup, you can start by navigating to the package directory.
-
-```shell
-cd packages/typedoc-plugin-markdown
-```
-
 ## Development Playground
 
 To get started you can create a simple task of running a playground and editing a template.
 
 ### Run Playground Docs
 
-Run the playground from the project root.
+Start by navigating to the package directory:
+
+```shell
+cd packages/typedoc-plugin-markdown
+```
+
+Run the playground from the project root:
 
 ```shell
 npm run playground

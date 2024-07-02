@@ -35,4 +35,8 @@ describe(`Urls`, () => {
   test(`should gets Urls for documents single module`, () => {
     expectUrlsToEqual('documentsSingleModule', ['members', 'modules']);
   });
+
+  test(`should gets Urls with media assets`, () => {
+    expectUrlsToEqual('comments', ['members']);
+  });
 });
