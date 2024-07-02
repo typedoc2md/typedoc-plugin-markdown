@@ -6,7 +6,6 @@ export * from './format-table-cell';
 export * from './get-file-name-with-extension';
 export * from './index';
 export * from './is-quoted';
-export * from './normalize-line-breaks';
 export * from './remove-first-scoped-directory';
 export * from './remove-line-breaks';
 export * from './sanitize-comments';

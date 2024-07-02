@@ -12,7 +12,7 @@ export function getDescriptionForReflection(
     return this.helpers
       .getCommentParts(comment.summary)
       ?.split('\n\n')[0]
-      .replace(/\n/g, ' ');
+      .replace(/\r?\n/g, ' ');
   }
   return null;
 }
