@@ -1,13 +1,12 @@
 # Changelog
 
-## 4.1.2
+## 4.1.2 (2024-07-05)
 
 ### Patch Changes
 
 - Exposed "blockTagsPreserveOrder" option to configure ordering of comment block tags ([#627](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/627)).
 - Exposed "useHTMLEncodedBrackets" option for alternative angle bracket escaping([#564](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/564)).
 - Support TypeDoc 0.26 relative links implementation ([#645](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/645)).
-- Allow "htmlTable" format key for indexes ([#618](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618)).
 
 ## 4.1.1 (2024-06-30)
 
