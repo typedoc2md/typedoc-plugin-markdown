@@ -11,7 +11,7 @@ export function getDescriptionForReflection(
   if (comment?.summary?.length) {
     return this.helpers
       .getCommentParts(comment.summary)
-      ?.split('\n\n')[0]
+      ?.split(/(\r?\n){2}/)[0]
       .replace(/\r?\n/g, ' ');
   }
   return null;

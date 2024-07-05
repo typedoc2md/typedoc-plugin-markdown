@@ -15,50 +15,6 @@ A basic module
 
 ### Enumerations
 
-- [EnumA](enumerations/EnumA.md)
-- [EnumB](enumerations/EnumB.md)
-
-### Classes
-
-- [ClassA](classes/ClassA.md)
-- [ClassB](classes/ClassB.md)
-
-### Interfaces
-
-- [InterfaceA](interfaces/InterfaceA.md)
-- [InterfaceB](interfaces/InterfaceB.md)
-
-### Type Aliases
-
-- [TypeA](type-aliases/TypeA.md)
-- [TypeB](type-aliases/TypeB.md)
-
-### Variables
-
-- [variableA](variables/variableA.md)
-- [variableB](variables/variableB.md)
-
-### Functions
-
-- [functionA](functions/functionA.md)
-"
-`;
-
-exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"[**typedoc-stubs**](../index.md) • **Docs**
-
-***
-
-[typedoc-stubs](../index.md) / basic
-
-# basic
-
-A basic module
-
-## Index
-
-### Enumerations
-
 | Enumeration | Description |
 | :------ | :------ |
 | [EnumA](enumerations/EnumA.md) | EnumA function. |
@@ -85,11 +41,197 @@ A basic module
 | [TypeA](type-aliases/TypeA.md) | TypeA function. |
 | [TypeB](type-aliases/TypeB.md) | TypeB function. |
 
+### Variables
+
+| Variable | Description |
+| :------ | :------ |
+| [variableA](variables/variableA.md) | - |
+| [variableB](variables/variableB.md) | - |
+
 ### Functions
 
 | Function | Description |
 | :------ | :------ |
-| [functionA](functions/functionA.md) | functionA function. |
+| [functionA](functions/functionA.md) | - |
+"
+`;
+
+exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[**typedoc-stubs**](../index.md) • **Docs**
+
+***
+
+[typedoc-stubs](../index.md) / basic
+
+# basic
+
+A basic module
+
+## Index
+
+### Enumerations
+
+<table>
+<tr>
+<th align="left">Enumeration</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[EnumA](enumerations/EnumA.md)
+
+</td>
+<td>
+
+EnumA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[EnumB](enumerations/EnumB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Classes
+
+<table>
+<tr>
+<th align="left">Class</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[ClassA](classes/ClassA.md)
+
+</td>
+<td>
+
+ClassA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ClassB](classes/ClassB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Interfaces
+
+<table>
+<tr>
+<th align="left">Interface</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[InterfaceA](interfaces/InterfaceA.md)
+
+</td>
+<td>
+
+Interface A comments line 1
+and comments on a soft line.
+
+Comments on double new line.
+
+\`\`\`typescript
+const a = new InterfaceA();
+\`\`\`
+
+**Remarks**
+
+Block tag content.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[InterfaceB](interfaces/InterfaceB.md)
+
+</td>
+<td>
+
+InterfaceB function.
+
+</td>
+</tr>
+</table>
+
+### Type Aliases
+
+<table>
+<tr>
+<th align="left">Type alias</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[TypeA](type-aliases/TypeA.md)
+
+</td>
+<td>
+
+TypeA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[TypeB](type-aliases/TypeB.md)
+
+</td>
+<td>
+
+TypeB function.
+
+</td>
+</tr>
+</table>
+
+### Functions
+
+<table>
+<tr>
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[functionA](functions/functionA.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 <a id="variablea" name="variablea"></a>
 
@@ -158,6 +300,14 @@ Interface A comments line 1
 and comments on a soft line.
 
 Comments on double new line.
+
+\`\`\`typescript
+const a = new InterfaceA();
+\`\`\`
+
+#### Remarks
+
+Block tag content.
 
 #### Properties
 
@@ -270,6 +420,14 @@ Interface A comments line 1
 and comments on a soft line.
 
 Comments on double new line.
+
+\`\`\`typescript
+const a = new InterfaceA();
+\`\`\`
+
+### Remarks
+
+Block tag content.
 
 ### Properties
 
@@ -502,38 +660,52 @@ A module that contains categories
 
 #### Category A
 
-- [CategoryAEnum1](enumerations/CategoryAEnum1.md)
-- [CategoryAEnum2](enumerations/CategoryAEnum2.md)
+| Enumeration | Description |
+| :------ | :------ |
+| [CategoryAEnum1](enumerations/CategoryAEnum1.md) | - |
+| [CategoryAEnum2](enumerations/CategoryAEnum2.md) | - |
 
 #### Category B
 
-- [CategoryBEnum1](enumerations/CategoryBEnum1.md)
-- [CategoryBEnum2](enumerations/CategoryBEnum2.md)
+| Enumeration | Description |
+| :------ | :------ |
+| [CategoryBEnum1](enumerations/CategoryBEnum1.md) | - |
+| [CategoryBEnum2](enumerations/CategoryBEnum2.md) | - |
 
 #### Other
 
-- [UnCategorizedEnum](enumerations/UnCategorizedEnum.md)
+| Enumeration | Description |
+| :------ | :------ |
+| [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
 
 ### Interfaces
 
 #### Category A
 
-- [CategoryAInterface1](interfaces/CategoryAInterface1.md)
-- [CategoryAInterface2](interfaces/CategoryAInterface2.md)
+| Interface | Description |
+| :------ | :------ |
+| [CategoryAInterface1](interfaces/CategoryAInterface1.md) | - |
+| [CategoryAInterface2](interfaces/CategoryAInterface2.md) | - |
 
 #### Category B
 
-- [CategoryBInterface1](interfaces/CategoryBInterface1.md)
-- [CategoryBInterface2](interfaces/CategoryBInterface2.md)
+| Interface | Description |
+| :------ | :------ |
+| [CategoryBInterface1](interfaces/CategoryBInterface1.md) | - |
+| [CategoryBInterface2](interfaces/CategoryBInterface2.md) | - |
 
 #### Category C
 
-- [CategoryCInterface1](interfaces/CategoryCInterface1.md)
+| Interface | Description |
+| :------ | :------ |
+| [CategoryCInterface1](interfaces/CategoryCInterface1.md) | - |
 
 #### Other
 
-- [CategoryCInterface2](interfaces/CategoryCInterface2.md)
-- [UnCategorizedInterace](interfaces/UnCategorizedInterace.md)
+| Interface | Description |
+| :------ | :------ |
+| [CategoryCInterface2](interfaces/CategoryCInterface2.md) | - |
+| [UnCategorizedInterace](interfaces/UnCategorizedInterace.md) | - |
 "
 `;
 
@@ -552,35 +724,183 @@ A module that contains categories
 
 ### Category A
 
-| Enumeration, Interface | Description |
-| :------ | :------ |
-| [CategoryAEnum1](enumerations/CategoryAEnum1.md) | - |
-| [CategoryAEnum2](enumerations/CategoryAEnum2.md) | - |
-| [CategoryAInterface1](interfaces/CategoryAInterface1.md) | - |
-| [CategoryAInterface2](interfaces/CategoryAInterface2.md) | - |
+<table>
+<tr>
+<th align="left">Enumeration, Interface</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[CategoryAEnum1](enumerations/CategoryAEnum1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[CategoryAEnum2](enumerations/CategoryAEnum2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[CategoryAInterface1](interfaces/CategoryAInterface1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[CategoryAInterface2](interfaces/CategoryAInterface2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 ### Category B
 
-| Enumeration, Interface | Description |
-| :------ | :------ |
-| [CategoryBEnum1](enumerations/CategoryBEnum1.md) | - |
-| [CategoryBEnum2](enumerations/CategoryBEnum2.md) | - |
-| [CategoryBInterface1](interfaces/CategoryBInterface1.md) | - |
-| [CategoryBInterface2](interfaces/CategoryBInterface2.md) | - |
+<table>
+<tr>
+<th align="left">Enumeration, Interface</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[CategoryBEnum1](enumerations/CategoryBEnum1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[CategoryBEnum2](enumerations/CategoryBEnum2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[CategoryBInterface1](interfaces/CategoryBInterface1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[CategoryBInterface2](interfaces/CategoryBInterface2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 ### Category C
 
-| Interface | Description |
-| :------ | :------ |
-| [CategoryCInterface1](interfaces/CategoryCInterface1.md) | - |
+<table>
+<tr>
+<th align="left">Interface</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[CategoryCInterface1](interfaces/CategoryCInterface1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 ### Other
 
-| Enumeration, Interface | Description |
-| :------ | :------ |
-| [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
-| [CategoryCInterface2](interfaces/CategoryCInterface2.md) | - |
-| [UnCategorizedInterace](interfaces/UnCategorizedInterace.md) | - |
+<table>
+<tr>
+<th align="left">Enumeration, Interface</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[UnCategorizedEnum](enumerations/UnCategorizedEnum.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[CategoryCInterface2](interfaces/CategoryCInterface2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[UnCategorizedInterace](interfaces/UnCategorizedInterace.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 "
 `;
 
@@ -599,16 +919,22 @@ A module that contains custom groupings
 
 ### Variables
 
-- [variableC](variables/variableC.md)
+| Variable | Description |
+| :------ | :------ |
+| [variableC](variables/variableC.md) | Default grouping |
 
 ### CustomGroupA
 
-- [variabelA](variables/variabelA.md)
+| Variable | Description |
+| :------ | :------ |
+| [variabelA](variables/variabelA.md) | - |
 
 ### CustomGroupB
 
-- [variableB1](variables/variableB1.md)
-- [variableB2](variables/variableB2.md)
+| Variable | Description |
+| :------ | :------ |
+| [variableB1](variables/variableB1.md) | - |
+| [variableB2](variables/variableB2.md) | - |
 "
 `;
 
@@ -664,27 +990,6 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 ## Modules
 
-- [42-module-name](42-module-name/index.md)
-- [\\<internal\\>](-internal-/index.md)
-- [basic](basic/index.md)
-- [has-categories](has-categories/index.md)
-- [has-custom-groups](has-custom-groups/index.md)
-- [has-namespaces](has-namespaces/index.md)
-- [has-references](has-references/index.md)
-- [has-same-exports](has-same-exports/index.md)
-- [index](index/index.md)
-"
-`;
-
-exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**typedoc-stubs** • **Docs**
-
-***
-
-# typedoc-stubs
-
-## Modules
-
 | Module | Description |
 | :------ | :------ |
 | [42-module-name](42-module-name/index.md) | - |
@@ -699,8 +1004,8 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 "
 `;
 
-exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](index.md) • **Docs**
+exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "2") 1`] = `
+"**typedoc-stubs** • **Docs**
 
 ***
 
@@ -708,20 +1013,125 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 
 ## Modules
 
-- [42-module-name](42-module-name.md)
-- [\\<internal\\>](-internal-.md)
-- [basic](basic.md)
-- [has-categories](has-categories.md)
-- [has-custom-groups](has-custom-groups.md)
-- [has-namespaces](has-namespaces/index.md)
-- [has-references](has-references.md)
-- [has-same-exports](has-same-exports.md)
-- [index](module_index.md)
+<table>
+<tr>
+<th align="left">Module</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[42-module-name](42-module-name/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\<internal\\>](-internal-/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[basic](basic/index.md)
+
+</td>
+<td>
+
+A basic module
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-categories](has-categories/index.md)
+
+</td>
+<td>
+
+A module that contains categories
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-custom-groups](has-custom-groups/index.md)
+
+</td>
+<td>
+
+A module that contains custom groupings
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-namespaces](has-namespaces/index.md)
+
+</td>
+<td>
+
+A module that contains namespaces
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-references](has-references/index.md)
+
+</td>
+<td>
+
+A module that contains references
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-same-exports](has-same-exports/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[index](index/index.md)
+
+</td>
+<td>
+
+A module named index
+
+</td>
+</tr>
+</table>
 "
 `;
 
-exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
-"**typedoc-stubs** • **Docs**
+exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs**](index.md) • **Docs**
 
 ***
 
@@ -743,33 +1153,138 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 "
 `;
 
+exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"**typedoc-stubs** • **Docs**
+
+***
+
+# typedoc-stubs
+
+## Modules
+
+<table>
+<tr>
+<th align="left">Module</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[42-module-name](42-module-name.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\<internal\\>](-internal-.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[basic](basic.md)
+
+</td>
+<td>
+
+A basic module
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-categories](has-categories.md)
+
+</td>
+<td>
+
+A module that contains categories
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-custom-groups](has-custom-groups.md)
+
+</td>
+<td>
+
+A module that contains custom groupings
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-namespaces](has-namespaces/index.md)
+
+</td>
+<td>
+
+A module that contains namespaces
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-references](has-references.md)
+
+</td>
+<td>
+
+A module that contains references
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-same-exports](has-same-exports.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[index](module_index.md)
+
+</td>
+<td>
+
+A module named index
+
+</td>
+</tr>
+</table>
+"
+`;
+
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[**typedoc-stubs**](../../../index.md) • **Docs**
 
 ***
 
 [typedoc-stubs](../../../modules.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
-
-# \\_Namespace\\_A\\_
-
-## Index
-
-### Namespaces
-
-- [NestedNamespace](namespaces/NestedNamespace/index.md)
-
-### Interfaces
-
-- [NamespaceInterface](interfaces/NamespaceInterface.md)
-"
-`;
-
-exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "2") 1`] = `
-"[**typedoc-stubs**](../../../index.md) • **Docs**
-
-***
-
-[typedoc-stubs](../../../index.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
 
 # \\_Namespace\\_A\\_
 
@@ -789,6 +1304,61 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 "
 `;
 
+exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[**typedoc-stubs**](../../../index.md) • **Docs**
+
+***
+
+[typedoc-stubs](../../../index.md) / [has-namespaces](../../index.md) / \\_Namespace\\_A\\_
+
+# \\_Namespace\\_A\\_
+
+## Index
+
+### Namespaces
+
+<table>
+<tr>
+<th align="left">Namespace</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[NestedNamespace](namespaces/NestedNamespace/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Interfaces
+
+<table>
+<tr>
+<th align="left">Interface</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[NamespaceInterface](interfaces/NamespaceInterface.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+"
+`;
+
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[**typedoc-stubs**](../../../index.md) • **Docs**
 
@@ -802,7 +1372,9 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ### Namespaces
 
-- [NestedNamespace](namespaces/NestedNamespace.md)
+| Namespace | Description |
+| :------ | :------ |
+| [NestedNamespace](namespaces/NestedNamespace.md) | - |
 
 ## Interfaces
 
@@ -823,9 +1395,24 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ### Namespaces
 
-| Namespace | Description |
-| :------ | :------ |
-| [NestedNamespace](namespaces/NestedNamespace.md) | - |
+<table>
+<tr>
+<th align="left">Namespace</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[NestedNamespace](namespaces/NestedNamespace.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 <a id="namespaceinterface" name="namespaceinterface"></a>
 
@@ -839,56 +1426,6 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 ***
 
 [typedoc-stubs](../modules.md) / has-namespaces
-
-# has-namespaces
-
-A module that contains namespaces
-
-## Index
-
-### Namespaces
-
-- [NamespaceB](namespaces/NamespaceB/index.md)
-- [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
-
-### Enumerations
-
-- [EnumB](enumerations/EnumB.md)
-- [\\_Enum\\_A\\_](enumerations/Enum_A.md)
-
-### Classes
-
-- [ClassB](classes/ClassB.md)
-- [\\_\\_Class\\_A\\_](classes/Class_A.md)
-
-### Interfaces
-
-- [InterfaceB](interfaces/InterfaceB.md)
-- [\\_Interface\\_A\\_](interfaces/Interface_A.md)
-
-### Type Aliases
-
-- [TypeB](type-aliases/TypeB.md)
-- [\\_Type\\_A\\_](type-aliases/Type_A.md)
-
-### Variables
-
-- [\\_variable\\_A\\_](variables/variable_A.md)
-- [variableB](variables/variableB.md)
-
-### Functions
-
-- [\\_function\\_A\\_](functions/function_A.md)
-- [functionB](functions/functionB.md)
-"
-`;
-
-exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"[**typedoc-stubs**](../index.md) • **Docs**
-
-***
-
-[typedoc-stubs](../index.md) / has-namespaces
 
 # has-namespaces
 
@@ -931,12 +1468,232 @@ A module that contains namespaces
 | [TypeB](type-aliases/TypeB.md) | - |
 | [\\_Type\\_A\\_](type-aliases/Type_A.md) | - |
 
+### Variables
+
+| Variable | Description |
+| :------ | :------ |
+| [\\_variable\\_A\\_](variables/variable_A.md) | - |
+| [variableB](variables/variableB.md) | - |
+
 ### Functions
 
 | Function | Description |
 | :------ | :------ |
 | [\\_function\\_A\\_](functions/function_A.md) | - |
 | [functionB](functions/functionB.md) | - |
+"
+`;
+
+exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[**typedoc-stubs**](../index.md) • **Docs**
+
+***
+
+[typedoc-stubs](../index.md) / has-namespaces
+
+# has-namespaces
+
+A module that contains namespaces
+
+## Index
+
+### Namespaces
+
+<table>
+<tr>
+<th align="left">Namespace</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[NamespaceB](namespaces/NamespaceB/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Enumerations
+
+<table>
+<tr>
+<th align="left">Enumeration</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[EnumB](enumerations/EnumB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\_Enum\\_A\\_](enumerations/Enum_A.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Classes
+
+<table>
+<tr>
+<th align="left">Class</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[ClassB](classes/ClassB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\_\\_Class\\_A\\_](classes/Class_A.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Interfaces
+
+<table>
+<tr>
+<th align="left">Interface</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[InterfaceB](interfaces/InterfaceB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\_Interface\\_A\\_](interfaces/Interface_A.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Type Aliases
+
+<table>
+<tr>
+<th align="left">Type alias</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[TypeB](type-aliases/TypeB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\_Type\\_A\\_](type-aliases/Type_A.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
+
+### Functions
+
+<table>
+<tr>
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[\\_function\\_A\\_](functions/function_A.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[functionB](functions/functionB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 <a id="_variable_a_" name="_variable_a_"></a>
 
@@ -969,8 +1726,10 @@ A module that contains namespaces
 
 ### Namespaces
 
-- [NamespaceB](namespaces/NamespaceB.md)
-- [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
+| Namespace | Description |
+| :------ | :------ |
+| [NamespaceB](namespaces/NamespaceB.md) | - |
+| [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
 
 ## Enumerations
 
@@ -1061,10 +1820,36 @@ A module that contains namespaces
 
 ### Namespaces
 
-| Namespace | Description |
-| :------ | :------ |
-| [NamespaceB](namespaces/NamespaceB.md) | - |
-| [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
+<table>
+<tr>
+<th align="left">Namespace</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[NamespaceB](namespaces/NamespaceB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 <a id="enumb" name="enumb"></a>
 
@@ -1268,7 +2053,9 @@ A module that contains references
 
 ### Functions
 
-- [defaultFunction](functions/defaultFunction.md)
+| Function | Description |
+| :------ | :------ |
+| [defaultFunction](functions/defaultFunction.md) | - |
 
 ## References
 
@@ -1305,9 +2092,24 @@ A module that contains references
 
 ### Functions
 
-| Function | Description |
-| :------ | :------ |
-| [defaultFunction](functions/defaultFunction.md) | - |
+<table>
+<tr>
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>
+
+[defaultFunction](functions/defaultFunction.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</table>
 
 <a id="interfacea" name="interfacea"></a>
 

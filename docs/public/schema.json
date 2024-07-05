@@ -21,7 +21,11 @@
         },
         "classPropertiesFormat": {
           "type": "string",
-          "enum": ["list", "table", "htmlTable"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of property groups for classes.",
           "default": "list"
         },
@@ -36,7 +40,11 @@
         },
         "enumMembersFormat": {
           "type": "string",
-          "enum": ["list", "table", "htmlTable"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of enumeration members.",
           "default": "list"
         },
@@ -84,13 +92,21 @@
         },
         "indexFormat": {
           "type": "string",
-          "enum": ["list", "table"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of index items.",
           "default": "list"
         },
         "interfacePropertiesFormat": {
           "type": "string",
-          "enum": ["list", "table", "htmlTable"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of property groups for interfaces.",
           "default": "list"
         },
@@ -143,13 +159,20 @@
         },
         "outputFileStrategy": {
           "type": "string",
-          "enum": ["members", "modules"],
+          "enum": [
+            "members",
+            "modules"
+          ],
           "description": "[typedoc-plugin-markdown] Determines how output files are generated.",
           "default": "members"
         },
         "parametersFormat": {
           "type": "string",
-          "enum": ["list", "table", "htmlTable"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of parameter and type parameter groups.",
           "default": "list"
         },
@@ -159,13 +182,21 @@
         },
         "propertiesFormat": {
           "type": "string",
-          "enum": ["list", "table", "htmlTable"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of property groups for interfaces and classes.",
           "default": "list"
         },
         "propertyMembersFormat": {
           "type": "string",
-          "enum": ["list", "table", "htmlTable"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of style for property members for interfaces and classes.",
           "default": "list"
         },
@@ -247,7 +278,11 @@
         },
         "typeDeclarationFormat": {
           "type": "string",
-          "enum": ["list", "table", "htmlTable"],
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
           "description": "[typedoc-plugin-markdown] Sets the format of style for type declaration members.",
           "default": "list"
         },

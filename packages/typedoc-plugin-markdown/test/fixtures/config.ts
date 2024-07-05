@@ -108,6 +108,7 @@ const config: Record<string, Fixture> = {
         navigationModel: {
           excludeGroups: true,
         },
+        indexFormat: 'table',
       },
       {
         readme: 'none',
@@ -120,7 +121,7 @@ const config: Record<string, Fixture> = {
         ],
         hideGroupHeadings: true,
         useHTMLAnchors: true,
-        indexFormat: 'table',
+        indexFormat: 'htmlTable',
         categorizeByGroup: false,
       },
     ],

@@ -573,7 +573,7 @@ This option renders index items either as a simple unordered list or in a table.
 
 When table style is selected the following will be the behaviour:
 
-* For a **members index**, a description column will be added to the table with the first paragraph of the comment summary.
+* For a **members index**, a description column will be added with key `table` - the first paragraph of the comment summary, or key `htmlTable` - the entire comment contents.
 * For a **packages index**, (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
 * For a **documents index** a description column will be added to the table printing the `"description"` frontmatter variable.
 

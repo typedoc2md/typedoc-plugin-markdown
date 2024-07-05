@@ -9,6 +9,14 @@
  * and comments on a soft line.
  *
  * Comments on double new line.
+ *
+ * ```typescript
+ * const a = new InterfaceA();
+ * ```
+ *
+ * @remarks
+ *
+ * Block tag content.
  */
 export interface InterfaceA {
   propA: string;
