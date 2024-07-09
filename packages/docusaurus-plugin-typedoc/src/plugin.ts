@@ -6,6 +6,7 @@ import { PluginOptions } from './models';
 import { getPluginOptions } from './options';
 import * as options from './options/declarations';
 import { getSidebar } from './sidebar';
+import { adjustBaseDirectory } from './utils/adjust-basedir';
 
 // store list of plugin ids when running multiple instances
 const apps: string[] = [];
@@ -75,11 +76,18 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
     app.renderer.postRenderAsyncJobs.push(async (output) => {
       if (output.navigation) {
         const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
-        const baseDir = path
+
+        let baseDir = path
           .relative(siteDir, outputDir)
           .split(path.sep)
           .slice(1)
           .join('/');
+
+        const docsPresetPath = docsPreset ? docsPreset[1]?.docs?.path : null;
+
+        if (Boolean(docsPresetPath)) {
+          baseDir = adjustBaseDirectory(baseDir, docsPresetPath);
+        }
 
         const sidebarJson = getSidebar(
           output.navigation,
