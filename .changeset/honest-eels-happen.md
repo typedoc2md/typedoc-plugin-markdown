@@ -1,5 +1,5 @@
 ---
-'typedoc-plugin-markdown': patch
+'typedoc-plugin-markdown': minor
 ---
 
 - Exposed "modulesFileName" option (#647)
