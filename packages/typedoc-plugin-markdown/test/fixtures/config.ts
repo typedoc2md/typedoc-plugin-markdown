@@ -70,7 +70,6 @@ const config: Record<string, Fixture> = {
     ],
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      readme: 'none',
       hidePageHeader: true,
       hideBreadcrumbs: true,
       disableSources: true,
@@ -84,6 +83,7 @@ const config: Record<string, Fixture> = {
         navigationModel: {
           excludeFolders: true,
         },
+        modulesFileName: 'documentation.md',
       },
     ],
   },

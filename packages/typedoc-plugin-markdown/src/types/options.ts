@@ -113,6 +113,11 @@ export interface PluginOptions {
   mergeReadme: boolean;
 
   /**
+   * The file name of the separate modules / index page.
+   */
+  modulesFileName: string;
+
+  /**
    * Configures how the navigation model will be generated.
    */
   navigationModel: {

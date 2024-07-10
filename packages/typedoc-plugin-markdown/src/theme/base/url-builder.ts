@@ -598,6 +598,10 @@ export class UrlBuilder {
     reflection: ProjectReflection | DeclarationReflection,
     isPackages = false,
   ) {
+    const modulesFileName = this.options.getValue('modulesFileName');
+    if (modulesFileName) {
+      return getFileNameWithExtension(modulesFileName, this.fileExtension);
+    }
     if (isPackages) {
       return getFileNameWithExtension('packages', this.fileExtension);
     }

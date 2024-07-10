@@ -183,6 +183,21 @@ export const entryFileName: Partial<DeclarationOption> = {
 };
 
 /**
+ * Please note this option is not applicable when `--readme` is set to "none" or `--mergeReadme` is set to "true".
+ *
+ * @example "documentation"
+ *
+ * @defaultValue "modules | packages | globals"
+ *
+ * @category File
+ *
+ */
+export const modulesFileName: Partial<DeclarationOption> = {
+  help: 'The file name of the separate modules / index page.',
+  type: ParameterType.String,
+};
+
+/**
  * This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
  *
  * The module name should be specified (NOT the reference to the file name).

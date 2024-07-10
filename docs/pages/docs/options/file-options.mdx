@@ -156,6 +156,22 @@ The content of root documentation file will be resolved in the following order:
 }
 ```
 
+## --modulesFileName
+
+<Callout emoji="💡">
+  The file name of the separate modules / index page.
+</Callout>
+
+> Accepts a string value. Defaults to `"modules | packages | globals"`.
+
+Please note this option is not applicable when `--readme` is set to "none" or `--mergeReadme` is set to "true".
+
+```json filename="typedoc.json"
+{
+  "modulesFileName": "documentation"
+}
+```
+
 ## --entryModule
 
 <Callout emoji="💡">
