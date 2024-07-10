@@ -1,18 +1,18 @@
 # Changelog
 
-## 4.2.0
+## 4.2.0 (2024-07-10)
 
 ### Minor Changes
 
 - Exposed "modulesFileName" option ([#647](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/647))
 - Write `.nojekyll` file if TypeDocs "githubPages" option is true ([#650](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/650))
+- Exposed "blockTagsPreserveOrder" option to configure ordering of comment block tags ([#627](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/627)).
+- Exposed "useHTMLEncodedBrackets" option for alternative angle bracket escaping([#564](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/564)).
 
 ## 4.1.2 (2024-07-05)
 
 ### Patch Changes
 
-- Exposed "blockTagsPreserveOrder" option to configure ordering of comment block tags ([#627](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/627)).
-- Exposed "useHTMLEncodedBrackets" option for alternative angle bracket escaping([#564](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/564)).
 - Support TypeDoc 0.26 relative links implementation ([#645](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/645)).
 
 ## 4.1.1 (2024-06-30)

@@ -52,25 +52,27 @@ Describes the options declared by the plugin.
     * [Inherited from](#inherited-from-19)
   * [mergeReadme](#mergereadme)
     * [Inherited from](#inherited-from-20)
+  * [modulesFileName](#modulesfilename)
+    * [Inherited from](#inherited-from-21)
   * [navigationModel](#navigationmodel)
     * [excludeGroups](#excludegroups-1)
     * [excludeCategories](#excludecategories)
     * [excludeFolders](#excludefolders)
-    * [Inherited from](#inherited-from-21)
-  * [outputFileStrategy](#outputfilestrategy)
     * [Inherited from](#inherited-from-22)
-  * [parametersFormat](#parametersformat)
+  * [outputFileStrategy](#outputfilestrategy)
     * [Inherited from](#inherited-from-23)
-  * [preserveAnchorCasing](#preserveanchorcasing)
+  * [parametersFormat](#parametersformat)
     * [Inherited from](#inherited-from-24)
-  * [propertiesFormat](#propertiesformat)
+  * [preserveAnchorCasing](#preserveanchorcasing)
     * [Inherited from](#inherited-from-25)
-  * [propertyMembersFormat](#propertymembersformat)
+  * [propertiesFormat](#propertiesformat)
     * [Inherited from](#inherited-from-26)
-  * [publicPath](#publicpath)
+  * [propertyMembersFormat](#propertymembersformat)
     * [Inherited from](#inherited-from-27)
-  * [sanitizeComments](#sanitizecomments)
+  * [publicPath](#publicpath)
     * [Inherited from](#inherited-from-28)
+  * [sanitizeComments](#sanitizecomments)
+    * [Inherited from](#inherited-from-29)
   * [tableColumnSettings](#tablecolumnsettings)
     * [hideDefaults](#hidedefaults)
     * [hideInherited](#hideinherited)
@@ -79,7 +81,7 @@ Describes the options declared by the plugin.
     * [hideSources](#hidesources)
     * [hideValues](#hidevalues)
     * [leftAlignHeaders](#leftalignheaders)
-    * [Inherited from](#inherited-from-29)
+    * [Inherited from](#inherited-from-30)
   * [textContentMappings](#textcontentmappings)
     * [header.title](#headertitle)
     * [header.docs](#headerdocs)
@@ -87,15 +89,15 @@ Describes the options declared by the plugin.
     * [title.indexPage](#titleindexpage)
     * [title.memberPage](#titlememberpage)
     * [footer.text](#footertext)
-    * [Inherited from](#inherited-from-30)
-  * [typeDeclarationFormat](#typedeclarationformat)
     * [Inherited from](#inherited-from-31)
-  * [useCodeBlocks](#usecodeblocks)
+  * [typeDeclarationFormat](#typedeclarationformat)
     * [Inherited from](#inherited-from-32)
-  * [useHTMLAnchors](#usehtmlanchors)
+  * [useCodeBlocks](#usecodeblocks)
     * [Inherited from](#inherited-from-33)
-  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
+  * [useHTMLAnchors](#usehtmlanchors)
     * [Inherited from](#inherited-from-34)
+  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
+    * [Inherited from](#inherited-from-35)
 
 ## Extends
 
@@ -451,6 +453,22 @@ typedoc-plugin-markdown/dist/types/options.d.ts:84
 
 ***
 
+### modulesFileName
+
+> **modulesFileName**: `string`
+
+The file name of the separate modules / index page.
+
+#### Inherited from
+
+[`PluginOptions`](../../../typedoc-plugin-markdown/types/interfaces/PluginOptions.md).[`modulesFileName`](../../../typedoc-plugin-markdown/types/interfaces/PluginOptions.md#modulesfilename)
+
+#### Defined in
+
+typedoc-plugin-markdown/dist/types/options.d.ts:88
+
+***
+
 ### navigationModel
 
 > **navigationModel**: `object`
@@ -475,7 +493,7 @@ Configures how the navigation model will be generated.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:88
+typedoc-plugin-markdown/dist/types/options.d.ts:92
 
 ***
 
@@ -491,7 +509,7 @@ Determines how output files are generated.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:96
+typedoc-plugin-markdown/dist/types/options.d.ts:100
 
 ***
 
@@ -507,7 +525,7 @@ Sets the format of parameter and type parameter groups.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:100
+typedoc-plugin-markdown/dist/types/options.d.ts:104
 
 ***
 
@@ -523,7 +541,7 @@ Preserve anchor casing when generating link to symbols.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:104
+typedoc-plugin-markdown/dist/types/options.d.ts:108
 
 ***
 
@@ -539,7 +557,7 @@ Sets the format of property groups for interfaces and classes.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:108
+typedoc-plugin-markdown/dist/types/options.d.ts:112
 
 ***
 
@@ -555,7 +573,7 @@ Sets the format of style for property members for interfaces and classes.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:112
+typedoc-plugin-markdown/dist/types/options.d.ts:116
 
 ***
 
@@ -571,7 +589,7 @@ Specify the base path for all urls.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:116
+typedoc-plugin-markdown/dist/types/options.d.ts:120
 
 ***
 
@@ -587,7 +605,7 @@ Sanitize HTML and JSX inside JsDoc comments.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:120
+typedoc-plugin-markdown/dist/types/options.d.ts:124
 
 ***
 
@@ -631,7 +649,7 @@ Control how table columns are configured and displayed.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:124
+typedoc-plugin-markdown/dist/types/options.d.ts:128
 
 ***
 
@@ -671,7 +689,7 @@ Change specific text placeholders in the template.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:136
+typedoc-plugin-markdown/dist/types/options.d.ts:140
 
 ***
 
@@ -687,7 +705,7 @@ Sets the format of style for type declaration members.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:147
+typedoc-plugin-markdown/dist/types/options.d.ts:151
 
 ***
 
@@ -703,7 +721,7 @@ Wraps signatures and declarations in code blocks.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:151
+typedoc-plugin-markdown/dist/types/options.d.ts:155
 
 ***
 
@@ -719,7 +737,7 @@ Add HTML named anchors to headings and table rows.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:155
+typedoc-plugin-markdown/dist/types/options.d.ts:159
 
 ***
 
@@ -735,4 +753,4 @@ Use HTML encoded entities for angle brackets.
 
 #### Defined in
 
-typedoc-plugin-markdown/dist/types/options.d.ts:159
+typedoc-plugin-markdown/dist/types/options.d.ts:163
