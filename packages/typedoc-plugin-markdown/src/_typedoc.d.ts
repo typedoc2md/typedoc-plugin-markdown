@@ -29,6 +29,7 @@ declare module 'typedoc' {
       | 'TypeAlias'
     )[];
     mergeReadme: boolean;
+    modulesFileName: string;
     navigationModel: {
       excludeGroups: boolean;
       excludeCategories: boolean;

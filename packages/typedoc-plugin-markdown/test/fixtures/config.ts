@@ -70,7 +70,6 @@ const config: Record<string, Fixture> = {
     ],
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      readme: 'none',
       hidePageHeader: true,
       hideBreadcrumbs: true,
       disableSources: true,
@@ -84,6 +83,7 @@ const config: Record<string, Fixture> = {
         navigationModel: {
           excludeFolders: true,
         },
+        modulesFileName: 'documentation.md',
       },
     ],
   },
@@ -108,6 +108,7 @@ const config: Record<string, Fixture> = {
         navigationModel: {
           excludeGroups: true,
         },
+        indexFormat: 'table',
       },
       {
         readme: 'none',
@@ -120,7 +121,7 @@ const config: Record<string, Fixture> = {
         ],
         hideGroupHeadings: true,
         useHTMLAnchors: true,
-        indexFormat: 'table',
+        indexFormat: 'htmlTable',
         categorizeByGroup: false,
       },
     ],
@@ -218,10 +219,11 @@ const config: Record<string, Fixture> = {
       name: '@scope/entryfile',
     },
     options: [
-      { entryFileName: 'README.md' },
+      { entryFileName: 'README.md', githubPages: true },
       {
         readme: 'none',
         excludeScopesInPaths: true,
+        githubPages: false,
       },
     ],
   },

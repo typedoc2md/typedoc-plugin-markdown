@@ -183,6 +183,21 @@ export const entryFileName: Partial<DeclarationOption> = {
 };
 
 /**
+ * Please note this option is not applicable when `--readme` is set to "none" or `--mergeReadme` is set to "true".
+ *
+ * @example "documentation"
+ *
+ * @defaultValue "modules | packages | globals"
+ *
+ * @category File
+ *
+ */
+export const modulesFileName: Partial<DeclarationOption> = {
+  help: 'The file name of the separate modules / index page.',
+  type: ParameterType.String,
+};
+
+/**
  * This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
  *
  * The module name should be specified (NOT the reference to the file name).
@@ -367,7 +382,7 @@ export const blockTagsPreserveOrder: Partial<DeclarationOption> = {
  *
  * When table style is selected the following will be the behaviour:
  *
- * - For a **members index**, a description column will be added to the table with the first paragraph of the comment summary.
+ * - For a **members index**, a description column will be added with key `table` - the first paragraph of the comment summary, or key `htmlTable` - the entire comment contents.
  * - For a **packages index**, (when `--entryPointStrategy` equals `packages`), the package.json description will be displayed with an additional "Version" column (when `--includeVersion` equals true).
  * - For a **documents index** a description column will be added to the table printing the `"description"` frontmatter variable.
  *

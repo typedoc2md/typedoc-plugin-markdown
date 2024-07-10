@@ -50,6 +50,21 @@ export async function render(
     return;
   }
 
+  if (
+    this.application.options.isSet('githubPages') &&
+    this.application.options.getValue('githubPages') === true
+  ) {
+    try {
+      fs.writeFileSync(path.join(outputDirectory, '.nojekyll'), '');
+    } catch (error) {
+      this.application.logger.warn(
+        this.application.i18n.could_not_write_0(
+          path.join(outputDirectory, '.nojekyll'),
+        ),
+      );
+    }
+  }
+
   this.prepareTheme();
 
   const output = new MarkdownRendererEvent(

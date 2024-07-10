@@ -67,6 +67,7 @@ ${presetsJson}
                   tag.getTagName() !== 'deprecated' &&
                   tag.getTagName() !== 'category' &&
                   tag.getTagName() !== 'omitExample' &&
+                  tag.getTagName() !== 'defaultValue' &&
                   tag.getTagName() !== 'example',
               )
               .map((tag) => ({
@@ -86,6 +87,10 @@ ${presetsJson}
             deprecated: doc
               .getTags()
               .find((tag) => tag.getTagName() === 'deprecated')
+              ?.getComment(),
+            default: doc
+              .getTags()
+              .find((tag) => tag.getTagName() === 'defaultValue')
               ?.getComment(),
             category:
               doc
@@ -298,21 +303,30 @@ function getType(option: any) {
 }
 
 function getDefaultValue(option) {
+  if (Boolean(option.default)) {
+    return option.default;
+  }
+
   if (option.type === ParameterType.Boolean) {
     return option.defaultValue;
   }
+
   if (option.type === ParameterType.Flags) {
     return JSON.stringify(option.defaults);
   }
+
   if (option.type === ParameterType.Array) {
     return '';
   }
+
   if (option.type === ParameterType.Mixed) {
     return JSON.stringify(option.defaultValue);
   }
+
   if (option.type === ParameterType.Object) {
     return JSON.stringify(option.defaultValue);
   }
+
   return `"${option.defaultValue}"`;
 }
 
