@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.2.0
+
+### Minor Changes
+
+- Exposed "modulesFileName" option ([#647](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/647))
+- Write `.nojekyll` file if TypeDocs "githubPages" option is true ([#650](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/650))
+
 ## 4.1.2 (2024-07-05)
 
 ### Patch Changes
