@@ -219,10 +219,11 @@ const config: Record<string, Fixture> = {
       name: '@scope/entryfile',
     },
     options: [
-      { entryFileName: 'README.md' },
+      { entryFileName: 'README.md', githubPages: true },
       {
         readme: 'none',
         excludeScopesInPaths: true,
+        githubPages: false,
       },
     ],
   },

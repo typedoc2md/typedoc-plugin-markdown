@@ -249,6 +249,7 @@ exports[`Urls should gets Urls for documents single module: outputFileStrategy: 
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: members 1`] = `
 [
+  ".nojekyll",
   "@scope/module-1/README.mdx",
   "@scope/module-1/classes/ModuleClass.mdx",
   "README.mdx",
@@ -272,6 +273,7 @@ exports[`Urls should gets Urls for entry module: outputFileStrategy: members 2`]
 
 exports[`Urls should gets Urls for entry module: outputFileStrategy: modules 1`] = `
 [
+  ".nojekyll",
   "@scope/module-1.mdx",
   "README.mdx",
   "module-2.mdx",
