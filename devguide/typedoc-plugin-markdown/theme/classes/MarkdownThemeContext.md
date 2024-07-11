@@ -92,9 +92,10 @@ This class can be used to customize the theme output by extending the class and 
     * [unknownType()](#unknowntype)
   * [helpers](#helpers)
     * [getAngleBracket()](#getanglebracket)
+    * [getCommentForReflection()](#getcommentforreflection)
     * [getCommentParts()](#getcommentparts)
     * [getDeclarationType()](#getdeclarationtype)
-    * [getDescriptionForReflection()](#getdescriptionforreflection)
+    * [getDescriptionForComment()](#getdescriptionforcomment)
     * [getFlattenedDeclarations()](#getflatteneddeclarations)
     * [getGroupIndexList()](#getgroupindexlist)
     * [getGroupIndexTable()](#getgroupindextable)
@@ -1292,6 +1293,20 @@ Please note that partials:
 
 `string`
 
+#### getCommentForReflection()
+
+> **getCommentForReflection**: (`model`) => `undefined` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)
+
+##### Parameters
+
+| Parameter | Type                                                                                         |
+| --------- | -------------------------------------------------------------------------------------------- |
+| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+
+##### Returns
+
+`undefined` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)
+
 #### getCommentParts()
 
 > **getCommentParts**: (`model`) => `string`
@@ -1320,15 +1335,15 @@ Please note that partials:
 
 `undefined` | [`SomeType`](https://typedoc.org/api/classes/SomeType.html)
 
-#### getDescriptionForReflection()
+#### getDescriptionForComment()
 
-> **getDescriptionForReflection**: (`model`) => `null` | `string`
+> **getDescriptionForComment**: (`comment`) => `null` | `string`
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| Parameter | Type                                                             |
+| --------- | ---------------------------------------------------------------- |
+| `comment` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html) |
 
 ##### Returns
 
