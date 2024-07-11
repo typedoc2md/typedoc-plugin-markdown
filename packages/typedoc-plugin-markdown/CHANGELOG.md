@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.1
+
+### Patch Changes
+
+- Fix missing index descriptions for signatures ([#618](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/618))
+
 ## 4.2.0 (2024-07-10)
 
 ### Minor Changes
