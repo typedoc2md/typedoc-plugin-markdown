@@ -52,7 +52,7 @@ A basic module
 
 | Function | Description |
 | :------ | :------ |
-| [functionA](functions/functionA.md) | - |
+| [functionA](functions/functionA.md) | Create a function. |
 "
 `;
 
@@ -227,7 +227,9 @@ TypeB function.
 </td>
 <td>
 
-&hyphen;
+Create a function.
+
+More summary.
 
 </td>
 </tr>

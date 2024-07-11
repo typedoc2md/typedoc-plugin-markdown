@@ -36,14 +36,17 @@ export function getGroupIndexTable(
       if (child instanceof DocumentReflection) {
         return child.frontmatter.description as string;
       }
-      if (!child.comment) {
+
+      const comment = this.helpers.getCommentForReflection(child);
+
+      if (!comment) {
         return '';
       }
       return isHtmlTable
-        ? this.partials.comment(child.comment, {
+        ? this.partials.comment(comment, {
             isTableColumn: true,
           })
-        : this.helpers.getDescriptionForReflection(child);
+        : this.helpers.getDescriptionForComment(comment);
     };
 
     row.push(description() || '-');

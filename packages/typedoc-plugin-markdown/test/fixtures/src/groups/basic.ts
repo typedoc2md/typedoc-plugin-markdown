@@ -49,8 +49,13 @@ export type TypeA = string;
  */
 export type TypeB = (str: string, offset?: number) => any;
 /**
- * functionA function.
+ * Create a function.
+ *
+ * More summary.
+ *
+ * @param rules - rules.
+ * @param options - options.
  */
-export function functionA() {}
+export function functionA(rules: any, options?: any) {}
 export const variableA = '';
 export const variableB = '';
