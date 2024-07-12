@@ -616,7 +616,7 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 };
 
 /**
- * Defines placeholder text in main template that can be customized. Includes the main page header and breadcrumbs (if displayed),
+ * Defines placeholder text in the template that can be customized. Includes the main page header and breadcrumbs (if displayed),
  * page titles and page footer.
  *
  * Default values within curly braces {} indicates a placeholder of dynamic text.
@@ -625,7 +625,7 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
  * - The `{kind}` writes the reflection kind of the page.
  * - The `{version}` placeholder writes package version (if includeVersion is `true`).
  *
- * If you are looking for general localization support please see [localization]().
+ * If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locale`](https://typedoc.org/options/output/#locale) options.
  *
  * @category Utility
  */
