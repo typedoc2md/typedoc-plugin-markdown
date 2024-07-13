@@ -4,20 +4,6 @@ import { Callout, FileTree } from "nextra/components";
 
 Options that are used for general configuration and utility purposes.
 
-## --publicPath
-
-<Callout emoji="💡">Specify the base path for all urls.</Callout>
-
-> Accepts a string value. Defaults to `"undefined"`.
-
-If undefined all urls will be relative.
-
-```json filename="typedoc.json"
-{
-  "publicPath": "http://abc.com"
-}
-```
-
 ## --sanitizeComments
 
 <Callout emoji="💡">Sanitize HTML and JSX inside JsDoc comments.</Callout>
@@ -30,7 +16,7 @@ By default all comments written inside JsDoc comments will be passed to the outp
 
 This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
 
-This option would typically be used when source code comes from an external library exposing the following potential issues:
+This option would typically be used when source code comes from an external source exposing the following potential issues:
 
 - Comments contain raw tags that should be interpreted as code examples.
 - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
@@ -39,6 +25,50 @@ This option would typically be used when source code comes from an external libr
 ```json filename="typedoc.json"
 {
   "sanitizeComments": false
+}
+```
+
+## --textContentMappings
+
+<Callout emoji="💡">Change specific text placeholders in the template.</Callout>
+
+>
+
+Defines placeholder text that can be customized. Includes the main page header and breadcrumbs (if displayed),
+page titles and page footer.
+
+Default values within curly braces {} indicates a placeholder of dynamic text.
+
+- The `{projectName}` placeholder writes project's name .
+- The `{kind}` writes the reflection kind of the page.
+- The `{version}` placeholder writes package version (if includeVersion is `true`).
+
+If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
+
+```json filename="typedoc.json"
+{
+  "textContentMappings": {
+    "header.title": "{projectName} {version}",
+    "header.docs": "Docs",
+    "breadcrumbs.home": "{projectName} {version}",
+    "title.indexPage": "{projectName} {version}",
+    "title.memberPage": "{kind}: {name}",
+    "footer.text": ""
+  }
+}
+```
+
+## --publicPath
+
+<Callout emoji="💡">Specify the base path for all urls.</Callout>
+
+> Accepts a string value. Defaults to `"undefined"`.
+
+If undefined all urls will be relative.
+
+```json filename="typedoc.json"
+{
+  "publicPath": "http://abc.com"
 }
 ```
 
@@ -58,23 +88,6 @@ This option should be used when parsers require a custom anchor prefix.
 }
 ```
 
-## --useHTMLAnchors
-
-<Callout emoji="💡">Add HTML named anchors to headings and table rows.</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-This option should be used if there are issues with anchoring to symbols within a page.
-
-- For Markdown parsers that do not automatically assign header ids.
-- When cross referencing symbols that are referenced in a table row.
-
-```json filename="typedoc.json"
-{
-  "useHTMLAnchors": false
-}
-```
-
 ## --useHTMLEncodedBrackets
 
 <Callout emoji="💡">Use HTML encoded entities for angle brackets.</Callout>
@@ -82,11 +95,28 @@ This option should be used if there are issues with anchoring to symbols within 
 > Accepts a boolean value. Defaults to `false`.
 
 By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
-However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies across different Markdown processors.
+However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies with some Markdown processors.
 
 ```json filename="typedoc.json"
 {
   "useHTMLEncodedBrackets": false
+}
+```
+
+## --useHTMLAnchors
+
+<Callout emoji="💡">Add HTML named anchors to headings and table rows.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+This option should be used if there are issues when anchoring to symbols within a page.
+
+- For Markdown parsers that do not automatically assign header ids.
+- When cross referencing symbols that are referenced in a table row.
+
+```json filename="typedoc.json"
+{
+  "useHTMLAnchors": false
 }
 ```
 
@@ -108,36 +138,6 @@ This option can be used for engines that require the preservation of anchor link
 }
 ```
 
-## --textContentMappings
-
-<Callout emoji="💡">Change specific text placeholders in the template.</Callout>
-
->
-
-Defines placeholder text in the template that can be customized. Includes the main page header and breadcrumbs (if displayed),
-page titles and page footer.
-
-Default values within curly braces {} indicates a placeholder of dynamic text.
-
-- The `{projectName}` placeholder writes project's name .
-- The `{kind}` writes the reflection kind of the page.
-- The `{version}` placeholder writes package version (if includeVersion is `true`).
-
-If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locale`](https://typedoc.org/options/output/#locale) options.
-
-```json filename="typedoc.json"
-{
-  "textContentMappings": {
-    "header.title": "{projectName} {version}",
-    "header.docs": "Docs",
-    "breadcrumbs.home": "{projectName} {version}",
-    "title.indexPage": "{projectName} {version}",
-    "title.memberPage": "{kind}: {name}",
-    "footer.text": ""
-  }
-}
-```
-
 ## --navigationModel
 
 <Callout emoji="💡">
@@ -153,23 +153,13 @@ The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on t
 
 The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
 
+The available properties are:
+
 - `navigationModel.excludeGroups`: do not organise navigation by groups.
 - `navigationModel.excludeCategories`: do not organise navigation by categories.
 - `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
 
-```ts filename="custom-plugin.ts"
-import { MarkdownApplication } from "typedoc-plugin-markdown";
-
-export function load(app: MarkdownApplication) {
-  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
-    // The navigation JSON structure is available on the navigation object.
-    const navigation = renderer.navigation;
-
-    // This can be parsed to something else or written straight to a file:
-    fs.writeFileSync("navigation.json", JSON.stringify(navigation));
-  });
-}
-```
+See [Utilizing Navigation](https://typedoc-plugin-markdown.org/api-docs/Document.Utilizing-Navigation) API docs.
 
 ```json filename="typedoc.json"
 {

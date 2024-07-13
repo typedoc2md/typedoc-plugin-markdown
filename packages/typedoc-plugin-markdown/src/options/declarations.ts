@@ -24,11 +24,11 @@ import { ALLOWED_OWN_FILE_MEMBERS, TEXT_CONTENT_MAPPINGS } from './constants';
 import { DisplayFormat, OutputFileStrategy } from './maps';
 
 /**
- * TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
+ * TypeDoc creates documentation according to exports derived from the given [`--entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) TypeDoc configuration.
  *
- * This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
+ * This option provides some flexibility as to how output files are generated.
  *
- * It is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#memberswithownfile) option.
+ * It is also possible to further refine what members are exported to individual files with the `membersWithOwnFile` option.
  *
  * The following keys are available:
  *
@@ -167,8 +167,8 @@ export const fileExtension: Partial<DeclarationOption> = {
  *
  * The content of root documentation file will be resolved in the following order:
  *
- * 1. The value of the [`entryModule`](#entrymodule) option (if defined).
- * 2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
+ * 1. The value of the `--entryModule` option (if defined).
+ * 2. The resolved Readme file (skipped if the [`--readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
  * 3. The documentation index page.
  *
  * @example "index"
@@ -183,7 +183,7 @@ export const entryFileName: Partial<DeclarationOption> = {
 };
 
 /**
- * Please note this option is not applicable when `--readme` is set to "none" or `--mergeReadme` is set to "true".
+ * Please note this option is not applicable when [`--readme`](https://typedoc.org/options/input/#readme) is set to "none" or `--mergeReadme` is set to "true".
  *
  * @example "documentation"
  *
@@ -478,7 +478,7 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
 /**
  * This option will handle the formatting of object literals assigned as properties in classes or interfaces.
  *
- * Note this options will only take effect when `propertiesFormat` is set to `list`.
+ * Note this options will only take effect when the property declaration is rendered in a `list` format.
  *
  * - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
  * - **"table"**: members are output within a Markdown table, condensed into a single paragraph.
@@ -530,26 +530,13 @@ export const tableColumnSettings: Partial<DeclarationOption> = {
 };
 
 /**
- * If undefined all urls will be relative.
- *
- * @example "http://abc.com"
- *
- * @category Utility
- */
-export const publicPath: Partial<DeclarationOption> = {
-  help: 'Specify the base path for all urls.',
-  type: ParameterType.String,
-  defaultValue: undefined,
-};
-
-/**
  * *Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks).*
  *
  * By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
  *
  * This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
  *
- * This option would typically be used when source code comes from an external library exposing the following potential issues:
+ * This option would typically be used when source code comes from an external source exposing the following potential issues:
  *
  * - Comments contain raw tags that should be interpreted as code examples.
  * - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
@@ -564,59 +551,7 @@ export const sanitizeComments: Partial<DeclarationOption> = {
 };
 
 /**
- * This option should be used when parsers require a custom anchor prefix.
- *
- * @example "markdown-header"
- *
- * @category Utility
- */
-export const anchorPrefix: Partial<DeclarationOption> = {
-  help: 'Custom anchor prefix when anchoring to in-page symbols.',
-  type: ParameterType.String,
-  defaultValue: undefined,
-};
-
-/**
- * This option should be used if there are issues with anchoring to symbols within a page.
- *
- * - For Markdown parsers that do not automatically assign header ids.
- * - When cross referencing symbols that are referenced in a table row.
- *
- * @category Utility
- */
-export const useHTMLAnchors: Partial<DeclarationOption> = {
-  help: 'Add HTML named anchors to headings and table rows.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
- * However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies across different Markdown processors.
- *
- * @category Utility
- */
-export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
-  help: 'Use HTML encoded entities for angle brackets.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * By default references to symbol anchor links are lowercased.
- *
- * This option can be used for engines that require the preservation of anchor link casing.
- *
- * @category Utility
- */
-export const preserveAnchorCasing: Partial<DeclarationOption> = {
-  help: 'Preserve anchor casing when generating link to symbols.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * Defines placeholder text in the template that can be customized. Includes the main page header and breadcrumbs (if displayed),
+ * Defines placeholder text that can be customized. Includes the main page header and breadcrumbs (if displayed),
  * page titles and page footer.
  *
  * Default values within curly braces {} indicates a placeholder of dynamic text.
@@ -625,7 +560,7 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
  * - The `{kind}` writes the reflection kind of the page.
  * - The `{version}` placeholder writes package version (if includeVersion is `true`).
  *
- * If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locale`](https://typedoc.org/options/output/#locale) options.
+ * If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
  *
  * @category Utility
  */
@@ -650,6 +585,71 @@ export const textContentMappings: Partial<DeclarationOption> = {
 };
 
 /**
+ * If undefined all urls will be relative.
+ *
+ * @example "http://abc.com"
+ *
+ * @category Utility
+ */
+export const publicPath: Partial<DeclarationOption> = {
+  help: 'Specify the base path for all urls.',
+  type: ParameterType.String,
+  defaultValue: undefined,
+};
+
+/**
+ * This option should be used when parsers require a custom anchor prefix.
+ *
+ * @example "markdown-header"
+ *
+ * @category Utility
+ */
+export const anchorPrefix: Partial<DeclarationOption> = {
+  help: 'Custom anchor prefix when anchoring to in-page symbols.',
+  type: ParameterType.String,
+  defaultValue: undefined,
+};
+
+/**
+ * By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
+ * However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies with some Markdown processors.
+ *
+ * @category Utility
+ */
+export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
+  help: 'Use HTML encoded entities for angle brackets.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * This option should be used if there are issues when anchoring to symbols within a page.
+ *
+ * - For Markdown parsers that do not automatically assign header ids.
+ * - When cross referencing symbols that are referenced in a table row.
+ *
+ * @category Utility
+ */
+export const useHTMLAnchors: Partial<DeclarationOption> = {
+  help: 'Add HTML named anchors to headings and table rows.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default references to symbol anchor links are lowercased.
+ *
+ * This option can be used for engines that require the preservation of anchor link casing.
+ *
+ * @category Utility
+ */
+export const preserveAnchorCasing: Partial<DeclarationOption> = {
+  help: 'Preserve anchor casing when generating link to symbols.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * By default navigation is not written to file but can be consumed programmatically.
  * This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
  *
@@ -657,24 +657,13 @@ export const textContentMappings: Partial<DeclarationOption> = {
  *
  * The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
  *
+ * The available properties are:
+ *
  * - `navigationModel.excludeGroups`: do not organise navigation by groups.
  * - `navigationModel.excludeCategories`: do not organise navigation by categories.
  * - `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
  *
- * ```ts filename="custom-plugin.ts"
- *
- * import { MarkdownApplication } from 'typedoc-plugin-markdown';
- *
- * export function load(app: MarkdownApplication) {
- *  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
- *    // The navigation JSON structure is available on the navigation object.
- *    const navigation = renderer.navigation;
- *
- *    // This can be parsed to something else or written straight to a file:
- *    fs.writeFileSync('navigation.json', JSON.stringify(navigation));
- *  });
- * }
- * ```
+ * See [Utilizing Navigation](https://typedoc-plugin-markdown.org/api-docs/Document.Utilizing-Navigation) API docs.
  *
  * @category Utility
  *

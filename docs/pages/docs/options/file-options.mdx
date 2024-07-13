@@ -10,11 +10,11 @@ Options that are used to configure how files are output.
 
 > Accepts either `"members"` or `"modules"`. Defaults to `"members"`.
 
-TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
+TypeDoc creates documentation according to exports derived from the given [`--entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) TypeDoc configuration.
 
-This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
+This option provides some flexibility as to how output files are generated.
 
-It is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#memberswithownfile) option.
+It is also possible to further refine what members are exported to individual files with the `membersWithOwnFile` option.
 
 The following keys are available:
 
@@ -146,8 +146,8 @@ This is essentially the equivalent to `index.html` for web pages.
 
 The content of root documentation file will be resolved in the following order:
 
-1. The value of the [`entryModule`](#entrymodule) option (if defined).
-2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
+1. The value of the `--entryModule` option (if defined).
+2. The resolved Readme file (skipped if the [`--readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
 3. The documentation index page.
 
 ```json filename="typedoc.json"
@@ -164,7 +164,7 @@ The content of root documentation file will be resolved in the following order:
 
 > Accepts a string value. Defaults to `"modules | packages | globals"`.
 
-Please note this option is not applicable when `--readme` is set to "none" or `--mergeReadme` is set to "true".
+Please note this option is not applicable when [`--readme`](https://typedoc.org/options/input/#readme) is set to "none" or `--mergeReadme` is set to "true".
 
 ```json filename="typedoc.json"
 {
