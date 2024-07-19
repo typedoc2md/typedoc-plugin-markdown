@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Comments should compile @links with anchors: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"- [CommentInterface](README.md#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](README.md#prop)
+- [Links to CommentInterface.propb](README.md#propb-1)
+- [CommentEnum.MemberB](README.md#commentenum)
+- [SameName:var](README.md#samename-1)
+- [SameName:interface](README.md#samename)
+- [SameName.prop](README.md#prop-2)
+- [prop:var](README.md#prop-3)
+- [_prop_with_underscore:var](README.md#_prop_with_underscore)
+- [TypeWithGenerics](README.md#typewithgenericsc-d)"
+`;
+
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# typedoc-stubs
 
@@ -18,6 +31,7 @@ Links using \`{@link}\` inline tags.
 - [SameName.prop](interfaces/SameName.md#prop)
 - [prop:var](variables/prop.md)
 - [_prop_with_underscore:var](variables/prop_with_underscore.md)
+- [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 
 External links:
 
@@ -92,6 +106,7 @@ Some <p> html </p> inside codeblock
 ## Type Aliases
 
 - [TypeDeclarationTable](type-aliases/TypeDeclarationTable.md)
+- [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 - [typeWithBlockTags](type-aliases/typeWithBlockTags.md)
 
 ## Variables

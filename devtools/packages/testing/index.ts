@@ -6,6 +6,7 @@ export function expectFileToEqual(
   outputFileStrategy: 'modules' | 'members' | ('modules' | 'members')[],
   file: string | string[],
   limit?: number,
+  range?: Array<number>,
 ) {
   const outputFileStrategies = Array.isArray(outputFileStrategy)
     ? outputFileStrategy
@@ -23,7 +24,10 @@ export function expectFileToEqual(
             optionDir,
             isArray ? file[index] : file,
           );
-          const actual = fs.readFileSync(fullPath).toString();
+          let actual = fs.readFileSync(fullPath).toString();
+          if (range) {
+            actual = actual.split('\n').slice(range[0], range[1]).join('\n');
+          }
           expect(actual).toMatchSnapshot(
             `(Output File Strategy "${outputFileStrategy}") (Option Group "${
               index + 1

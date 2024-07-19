@@ -582,7 +582,7 @@ export class UrlBuilder {
       anchorParts.push(
         reflection.typeParameters
           .map((typeParameter) => typeParameter.name)
-          .join(''),
+          .join('-'),
       );
     }
     return anchorParts.join('');

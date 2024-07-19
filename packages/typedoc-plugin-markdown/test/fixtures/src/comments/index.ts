@@ -15,6 +15,7 @@
  * - {@link SameName.prop}
  * - {@link prop:var}
  * - {@link _prop_with_underscore:var}
+ * - {@link TypeWithGenerics}
  *
  * External links:
  *
@@ -96,6 +97,8 @@ export enum CommentEnum {
   Member,
   MemberB,
 }
+
+export type TypeWithGenerics<C, D> = C | D;
 
 export interface SameName {
   prop: string;

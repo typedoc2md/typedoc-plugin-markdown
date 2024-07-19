@@ -5,6 +5,10 @@ describe(`Comments`, () => {
     expectFileToEqual('comments', ['members'], ['README.md']);
   });
 
+  test(`should compile @links with anchors`, () => {
+    expectFileToEqual('comments', ['modules'], ['README.md'], 1, [8, 18]);
+  });
+
   test(`should handle single example tags`, () => {
     expectFileToEqual(
       'comments',
