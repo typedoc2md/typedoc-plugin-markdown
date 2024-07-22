@@ -119,6 +119,8 @@ Some <p> html </p> inside codeblock
 
 ## Functions
 
+- [constFunction](functions/constFunction.md)
+- [constFunctionWithReturns](functions/constFunctionWithReturns.md)
 - [functionWithBlockTags](functions/functionWithBlockTags.md)
 - [multipleExampleTags](functions/multipleExampleTags.md)
 - [parametersTable](functions/parametersTable.md)
@@ -724,6 +726,60 @@ Other block tags
 "
 `;
 
+exports[`Comments should handle const function with returns: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: constFunctionWithReturns()
+
+> **constFunctionWithReturns**(\`text\`): \`boolean\`
+
+constFunctionWithReturns comments
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| \`text\` | \`string\` | Some param |
+
+## Returns
+
+\`boolean\`
+
+## Remarks
+
+Some remarks
+
+## Source
+
+[index.ts:1](http://source-url)
+"
+`;
+
+exports[`Comments should handle const function: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: constFunction()
+
+> **constFunction**(\`text\`): \`boolean\`
+
+constFunction comments
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| \`text\` | \`string\` | Some param |
+
+## Returns
+
+\`boolean\`
+
+## Remarks
+
+Some remarks
+
+## Source
+
+[index.ts:1](http://source-url)
+"
+`;
+
 exports[`Comments should handle multiple example tags: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: multipleExampleTags()
 
@@ -759,25 +815,19 @@ factorial(1)
 `;
 
 exports[`Comments should handle single example tags: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: multipleExampleTags()
+"# Function: singleExampleTag()
 
-> **multipleExampleTags**(): \`boolean\`
+> **singleExampleTag**(): \`boolean\`
 
-Function with multiple example tags
+Function with single example tag
 
 ## Returns
 
 \`boolean\`
 
-## Examples
+Return comments
 
-\`\`\`ts
-// If there are no code blocks, TypeDoc assumes the whole tag
-// should be a code block. This is not valid TSDoc, but is recognized
-// by VSCode and enables better JSDoc support.
-
-factorial(1)
-\`\`\`
+## Example
 
 If there is a code block, then both TypeDoc and VSCode will treat
 text outside of the code block as regular text.

@@ -22,7 +22,22 @@ export function signature(
     );
   }
 
-  const modelComments = model.comment || model.parent?.comment;
+  let modelComments = model.comment || model.parent?.comment;
+
+  if (
+    modelComments &&
+    model.parent?.comment?.summary &&
+    !options.multipleSignatures
+  ) {
+    modelComments = Object.assign(modelComments, {
+      summary: model.parent.comment.summary,
+    });
+  }
+  if (modelComments && model.parent?.comment?.blockTags) {
+    modelComments = Object.assign(modelComments, {
+      blockTags: model.parent.comment.blockTags,
+    });
+  }
 
   if (modelComments) {
     md.push(

@@ -13,7 +13,7 @@ describe(`Comments`, () => {
     expectFileToEqual(
       'comments',
       ['members'],
-      ['/functions/multipleExampleTags.md'],
+      ['/functions/singleExampleTag.md'],
     );
   });
 
@@ -22,6 +22,18 @@ describe(`Comments`, () => {
       'comments',
       ['members'],
       ['/functions/multipleExampleTags.md'],
+    );
+  });
+
+  test(`should handle const function`, () => {
+    expectFileToEqual('comments', ['members'], ['/functions/constFunction.md']);
+  });
+
+  test(`should handle const function with returns`, () => {
+    expectFileToEqual(
+      'comments',
+      ['members'],
+      ['/functions/constFunctionWithReturns.md'],
     );
   });
 

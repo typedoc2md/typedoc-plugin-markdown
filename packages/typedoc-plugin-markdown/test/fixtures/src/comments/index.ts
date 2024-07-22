@@ -141,10 +141,36 @@ export function multipleExampleTags() {
  * ```ts
  * factorial(1)
  * ```
+ *
+ * @returns Return comments
  */
 export function singleExampleTag() {
   return true;
 }
+
+/**
+ * constFunction comments
+ *
+ * @param text Some param
+ *
+ * @remarks Some remarks
+ */
+export const constFunction = (text: string) => {
+  return true;
+};
+
+/**
+ * constFunctionWithReturns comments
+ *
+ * @param text Some param
+ *
+ * @returns Return comments
+ *
+ * @remarks Some remarks
+ */
+export const constFunctionWithReturns = (text: string) => {
+  return true;
+};
 
 export class BaseClassProperties {
   /**
