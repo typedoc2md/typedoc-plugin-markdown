@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-typedoc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Docusaurus plugin to integrate TypeDoc ( + typedoc-plugin-markdown ) into a Docusaurus project.",
   "main": "dist/index.js",
   "files": [

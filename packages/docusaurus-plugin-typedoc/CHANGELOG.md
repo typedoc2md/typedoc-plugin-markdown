@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4
+
+### Patch Changes
+
+- Fix base sidebar ids in windows ([#657](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/657))
+
 ## 1.0.3 (2024-07-10)
 
 ### Patch Changes
