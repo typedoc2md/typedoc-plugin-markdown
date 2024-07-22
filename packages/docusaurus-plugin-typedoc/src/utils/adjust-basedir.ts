@@ -32,5 +32,5 @@ export function adjustBaseDirectory(originalPath: string, subPath: string) {
     newPath = newPath.slice(1);
   }
 
-  return newPath;
+  return newPath.replace(/\\/g, '/');
 }
