@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.2.2
+
+### Patch Changes
+
+- Correctly resolve comment summary for const functions ([#656](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/656))
+- Fix anchor links containing generics ([#655](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/655))
+
 ## 4.2.1 (2024-07-11)
 
 ### Patch Changes
