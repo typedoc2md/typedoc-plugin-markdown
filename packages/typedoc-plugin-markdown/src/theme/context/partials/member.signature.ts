@@ -34,9 +34,10 @@ export function signature(
     });
   }
   if (modelComments && model.parent?.comment?.blockTags) {
-    modelComments = Object.assign(modelComments, {
-      blockTags: model.parent.comment.blockTags,
-    });
+    modelComments.blockTags = [
+      ...(model.parent?.comment?.blockTags || []),
+      ...(model.comment?.blockTags || []),
+    ];
   }
 
   if (modelComments) {
