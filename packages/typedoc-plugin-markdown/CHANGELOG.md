@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.3
+
+### Patch Changes
+
+- Fix missing return comments for const functions ([#656](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/656))
+
 ## 4.2.2 (2024-07-22)
 
 ### Patch Changes
