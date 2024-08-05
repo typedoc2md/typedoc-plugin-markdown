@@ -234,3 +234,31 @@ export class ChildClassA extends BaseClass {}
 export class ChildClassB extends BaseClass {}
 export class GrandChildClassA extends ChildClassA {}
 export class GrandChildClassB extends ChildClassA {}
+
+export class ClassWithPropCategories {
+  /**@category CatA */
+  prop1: string;
+  /**@category CatB */
+  prop2: string;
+
+  constructor(opts) {
+    this.prop1 = opts.a;
+    this.prop2 = opts.b;
+  }
+
+  method1(): void {}
+  method2(): void {}
+}
+
+export class ClassWithoutPropCategories {
+  prop1: string;
+  prop2: string;
+
+  constructor(opts) {
+    this.prop1 = opts.a;
+    this.prop2 = opts.b;
+  }
+
+  method1(): void {}
+  method2(): void {}
+}

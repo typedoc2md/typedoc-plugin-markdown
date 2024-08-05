@@ -99,4 +99,22 @@ describe(`Class Reflection`, () => {
       1,
     );
   });
+
+  test(`should compile class with prop categories`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithPropCategories.md',
+      1,
+    );
+  });
+
+  test(`should compile class without prop categories`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithoutPropCategories.md',
+      1,
+    );
+  });
 });

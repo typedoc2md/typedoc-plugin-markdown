@@ -1,6 +1,10 @@
 import { heading } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
-import { DeclarationReflection, ReflectionCategory } from 'typedoc';
+import {
+  DeclarationReflection,
+  ReflectionCategory,
+  ReflectionKind,
+} from 'typedoc';
 
 export function categories(
   this: MarkdownThemeContext,
@@ -11,13 +15,16 @@ export function categories(
   model
     ?.filter((category) => !category.allChildrenHaveOwnDocument())
     .forEach((category) => {
-      md.push(heading(options.headingLevel, category.title));
-      if (category.description) {
-        md.push(this.helpers.getCommentParts(category.description));
-      }
-      if (category.children) {
+      const categoryChildren = category.children?.filter(
+        (child) => child.kind !== ReflectionKind.Constructor,
+      );
+      if (categoryChildren.length) {
+        md.push(heading(options.headingLevel, category.title));
+        if (category.description) {
+          md.push(this.helpers.getCommentParts(category.description));
+        }
         md.push(
-          this.partials.members(category.children as DeclarationReflection[], {
+          this.partials.members(categoryChildren as DeclarationReflection[], {
             headingLevel: options.headingLevel + 1,
           }),
         );

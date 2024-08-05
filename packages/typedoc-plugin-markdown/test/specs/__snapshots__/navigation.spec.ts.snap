@@ -4109,6 +4109,12 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "classes/ClassWithModifiers.md"
       },
       {
+        "title": "ClassWithPropCategories",
+        "kind": 128,
+        "path": "classes/ClassWithPropCategories.md",
+        "children": []
+      },
+      {
         "title": "ClassWithSimpleProps",
         "kind": 128,
         "path": "classes/ClassWithSimpleProps.md"
@@ -4122,6 +4128,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "ClassWithTypeParameters",
         "kind": 128,
         "path": "classes/ClassWithTypeParameters.md"
+      },
+      {
+        "title": "ClassWithoutPropCategories",
+        "kind": 128,
+        "path": "classes/ClassWithoutPropCategories.md"
       },
       {
         "title": "DerivedClassA",

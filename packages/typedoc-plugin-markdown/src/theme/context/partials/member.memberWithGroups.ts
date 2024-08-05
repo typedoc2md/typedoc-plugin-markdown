@@ -55,6 +55,23 @@ export function memberWithGroups(
     );
   }
 
+  if (model.kind === ReflectionKind.Class && model.categories?.length) {
+    model.groups
+      ?.filter((group) => group.title === this.i18n.kind_plural_constructor())
+      .forEach((group) => {
+        md.push(
+          heading(options.headingLevel, this.i18n.kind_plural_constructor()),
+        );
+        group.children.forEach((child) => {
+          md.push(
+            this.partials.constructor(child as DeclarationReflection, {
+              headingLevel: options.headingLevel + 1,
+            }),
+          );
+        });
+      });
+  }
+
   if ('signatures' in model && model.signatures?.length) {
     model.signatures.forEach((signature) => {
       md.push(
