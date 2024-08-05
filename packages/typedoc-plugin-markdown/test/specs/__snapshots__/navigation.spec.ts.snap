@@ -4084,6 +4084,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "classes/ChildClassB.md"
       },
       {
+        "title": "ClassWithAccessorKeywords",
+        "kind": 128,
+        "path": "classes/ClassWithAccessorKeywords.md"
+      },
+      {
         "title": "ClassWithAccessors",
         "kind": 128,
         "path": "classes/ClassWithAccessors.md"

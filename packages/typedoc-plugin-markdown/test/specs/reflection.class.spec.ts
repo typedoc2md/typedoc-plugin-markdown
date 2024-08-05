@@ -117,4 +117,13 @@ describe(`Class Reflection`, () => {
       1,
     );
   });
+
+  test(`should compile class with accessor keywords`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithAccessorKeywords.md',
+      1,
+    );
+  });
 });

@@ -262,3 +262,23 @@ export class ClassWithoutPropCategories {
   method1(): void {}
   method2(): void {}
 }
+
+export class ClassWithAccessorKeywords {
+  /**
+   * Accessor comments
+   *
+   * @example
+   * ```ts
+   * const x = 1;
+   * ```
+   */
+
+  public accessor accessor1: string;
+
+  /**
+   * Accessor comments
+   *
+   * @remarks Remark comments
+   */
+  public accessor accessor2: string;
+}

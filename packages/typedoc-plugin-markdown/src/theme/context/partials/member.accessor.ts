@@ -60,6 +60,14 @@ export function accessor(
     );
   }
 
+  if (model.comment?.blockTags?.length) {
+    md.push(
+      this.partials.comment(model.comment, {
+        headingLevel: options.headingLevel,
+      }),
+    );
+  }
+
   md.push(
     this.partials.inheritance(model, { headingLevel: options.headingLevel }),
   );

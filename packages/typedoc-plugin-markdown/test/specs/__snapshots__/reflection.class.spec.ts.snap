@@ -182,6 +182,51 @@ Comments for method
 "
 `;
 
+exports[`Class Reflection should compile class with accessor keywords: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Class: ClassWithAccessorKeywords
+
+## Constructors
+
+### new ClassWithAccessorKeywords()
+
+> **new ClassWithAccessorKeywords**(): [\`ClassWithAccessorKeywords\`](ClassWithAccessorKeywords.md)
+
+#### Returns
+
+[\`ClassWithAccessorKeywords\`](ClassWithAccessorKeywords.md)
+
+## Accessors
+
+### accessor1
+
+Accessor comments
+
+#### Example
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+#### Source
+
+[classes.ts:1](http://source-url)
+
+***
+
+### accessor2
+
+Accessor comments
+
+#### Remarks
+
+Remark comments
+
+#### Source
+
+[classes.ts:1](http://source-url)
+"
+`;
+
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithAccessors
 

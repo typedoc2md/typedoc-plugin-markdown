@@ -118,7 +118,7 @@ export function writeHtml(key: string, entryPoints: string[]) {
         '-options',
         path.join(__dirname, 'typedoc.cjs'),
         '-logLevel',
-        'Warn',
+        'None',
         '-out',
         fullPath,
         '-readme',

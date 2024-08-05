@@ -88,7 +88,11 @@ export function comment(
     const tags = blockTags
       .filter((tag) => !filteredBlockTags.includes(tag.tag))
       .filter((tag) => {
-        if (!opts.isTableColumn && blockTagsPreserveOrder.length) {
+        if (
+          !opts.isTableColumn &&
+          !(opts.showSummary && opts.showTags) &&
+          blockTagsPreserveOrder.length
+        ) {
           return opts.showSummary
             ? blockTagsPreserveOrder.includes(tag.tag)
             : !blockTagsPreserveOrder.includes(tag.tag);
