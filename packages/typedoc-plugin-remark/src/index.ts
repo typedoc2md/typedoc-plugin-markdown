@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * The plugin entrypoint and bootstrapping of the plugin.
  *

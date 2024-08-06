@@ -19,5 +19,5 @@ export function unEscapeChars(str: string) {
     .replace(/\\\|/g, '|')
     .replace(/\\\]/g, ']')
     .replace(/\\\[/g, '[')
-    .replace(/\[([^\[\]]*)\]\((.*?)\)/gm, '$1');
+    .replace(/\[([^[\]]*)\]\((.*?)\)/gm, '$1');
 }

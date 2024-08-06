@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "lint": "eslint ./src --ext .ts",
+    "lint": "eslint ./src",
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",

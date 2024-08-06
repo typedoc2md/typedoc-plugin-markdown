@@ -65,7 +65,6 @@ declare module 'typedoc' {
     useHTMLEncodedBrackets: boolean;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-namespace
   export namespace Internationalization {
     export interface TranslatableStrings {
       theme_default_value: [];

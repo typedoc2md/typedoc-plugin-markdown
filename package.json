@@ -15,6 +15,7 @@
     "devdocs": "npm run build --workspace typedoc-plugin-markdown && typedoc",
     "build-all": "npm run build --workspaces --if-present",
     "test-all": "npm run test --workspaces --if-present",
+    "lint-all": "npm run lint --workspaces --if-present",
     "prerelease": "npm run build-all",
     "release": "npx changeset publish",
     "prepare": "husky"
@@ -23,11 +24,11 @@
     "@changesets/cli": "^2.27.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.8.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
     "barrelsby": "^2.8.1",
     "consola": "^3.2.3",
     "copyfiles": "^2.4.1",
@@ -52,6 +53,7 @@
     "tsc-alias": "^1.8.10",
     "typedoc": "^0.26.5",
     "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1",
     "unified-prettier": "^2.0.1"
   }
 }

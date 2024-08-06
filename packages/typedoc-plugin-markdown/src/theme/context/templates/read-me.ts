@@ -19,7 +19,7 @@ export function readme(
     md.push(this.partials.breadcrumbs());
   }
 
-  if (Boolean(page.model.readme)) {
+  if (page.model.readme) {
     md.push(
       this.helpers.getCommentParts(page.model.readme as CommentDisplayPart[]),
     );

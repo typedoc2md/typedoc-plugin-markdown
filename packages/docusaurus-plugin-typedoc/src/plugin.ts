@@ -49,6 +49,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
   const pluginOptions = getPluginOptions(opts);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { id, sidebar, ...optionsPassedToTypeDoc } = pluginOptions;
 
   const outputDir = path.join(siteDir, pluginOptions.out);
@@ -85,7 +86,7 @@ async function generateTypedoc(context: any, opts: Partial<PluginOptions>) {
 
         const docsPresetPath = docsPreset ? docsPreset[1]?.docs?.path : null;
 
-        if (Boolean(docsPresetPath)) {
+        if (docsPresetPath) {
           baseDir = adjustBaseDirectory(baseDir, docsPresetPath);
         }
 

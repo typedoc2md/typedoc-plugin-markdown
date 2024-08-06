@@ -22,7 +22,7 @@ function getNavigationItem(
   const parsedUrl =
     numberPrefixParser === false
       ? navigationItemPath
-      : navigationItemPath?.replace(/\d+\-/g, '');
+      : navigationItemPath?.replace(/\d+-/g, '');
 
   const getId = () => {
     const idParts: string[] = [];

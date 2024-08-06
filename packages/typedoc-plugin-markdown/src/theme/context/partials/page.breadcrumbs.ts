@@ -36,7 +36,7 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
     }
 
     const getUrl = (model: any) => {
-      if (Boolean(model.readme)) {
+      if (model.readme) {
         return `${path.dirname(model.url)}/${entryFileName}`;
       }
       return model.url;

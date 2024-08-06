@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * Parses contents with Remark
  * - The remark eco-system is esm only, therefore we have to import its modules synchronously.

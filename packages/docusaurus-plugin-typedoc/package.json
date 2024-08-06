@@ -19,7 +19,7 @@
     "typedoc-plugin-markdown": ">=4.0.0"
   },
   "scripts": {
-    "lint": "eslint ./src --ext .ts",
+    "lint": "eslint ./src",
     "prebuild": "rm -rf dist && prebuild-options",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "tsc",

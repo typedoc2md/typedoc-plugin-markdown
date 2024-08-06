@@ -104,7 +104,7 @@ export function declaration(
     }
   }
 
-  if (Boolean(typeDeclaration)) {
+  if (typeDeclaration) {
     if (typeDeclaration?.indexSignatures?.length) {
       md.push(heading(opts.headingLevel, this.i18n.kind_index_signature()));
       typeDeclaration?.indexSignatures?.forEach((indexSignature) => {

@@ -65,7 +65,7 @@ export function header(this: MarkdownThemeContext): string {
 
       const indexUrl = useEntryModule ? entryFileName : this.page.project.url;
 
-      if (Boolean(indexLabel.length)) {
+      if (indexLabel.length) {
         if (this.page.url === readMeUrl) {
           md.push(link(bold(indexLabel), this.getRelativeUrl(indexUrl || '')));
         } else {
@@ -73,7 +73,7 @@ export function header(this: MarkdownThemeContext): string {
         }
       }
     } else {
-      if (Boolean(indexLabel.length)) {
+      if (indexLabel.length) {
         md.push(bold(indexLabel));
       }
     }
@@ -122,7 +122,7 @@ export function header(this: MarkdownThemeContext): string {
       Boolean(packageItem.readme) && !this.options.getValue('mergeReadme');
 
     if (preservePackageReadme) {
-      if (Boolean(indexLabel.length)) {
+      if (indexLabel.length) {
         if (this.page.url === packageEntryFile) {
           md.push(
             link(bold(indexLabel), this.getRelativeUrl(packageItem.url || '')),
@@ -132,7 +132,7 @@ export function header(this: MarkdownThemeContext): string {
         }
       }
     } else {
-      if (Boolean(indexLabel.length)) {
+      if (indexLabel.length) {
         md.push(bold(indexLabel));
       }
     }

@@ -48,7 +48,7 @@ export function typeDeclarationTable(
 
   const rows: string[][] = [];
 
-  declarations.forEach((declaration: DeclarationReflection, index: number) => {
+  declarations.forEach((declaration: DeclarationReflection) => {
     const row: string[] = [];
 
     row.push(backTicks(declaration.name));

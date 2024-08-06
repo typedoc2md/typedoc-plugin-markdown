@@ -59,7 +59,7 @@ import { ManuallyValidatedOption } from 'typedoc'`);
 
   if (docsConfig.translatablePath) {
     out.push(`
-  // eslint-disable-next-line @typescript-eslint/no-namespace
+
   export namespace Internationalization {
       export interface TranslatableStrings {
         theme_default_value: [];
@@ -120,23 +120,23 @@ ${name}: ${getType(name, option, true)};`,
   }
 
   ${mixedTypes
-      ?.filter(([name]) => !ignoreTypes.includes(name))
-      .map(([name, option]) => {
-        return `
+    ?.filter(([name]) => !ignoreTypes.includes(name))
+    .map(([name, option]) => {
+      return `
   /**
    * ${getComments(name)}
    */
   export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
-            .map(
-              ([key, value]) =>
-                `'${key}'${value === undefined ? '?' : ''}: ${getValueType(value)}`,
-            )
-            .join(';')}
+        .map(
+          ([key, value]) =>
+            `'${key}'${value === undefined ? '?' : ''}: ${getValueType(value)}`,
+        )
+        .join(';')}
   }
     `;
-      })
-      .join('\n')}
+    })
+    .join('\n')}
   `);
 
   const optionsModelFile = path.join(process.cwd(), 'src/types/options.ts');

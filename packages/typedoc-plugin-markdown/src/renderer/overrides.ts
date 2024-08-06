@@ -1,10 +1,10 @@
 import { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/events';
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, ProjectReflection, Reflection, Renderer } from 'typedoc';
+import { ProjectReflection, Reflection } from 'typedoc';
 
 /**
- * Replacement of TypeDoc's {@link Application.generateDocs} method to decouple HTML logic.
+ * Replacement of TypeDoc's Application.generateDocs method to decouple HTML logic.
  */
 export async function generateDocs(project: ProjectReflection, out: string) {
   const start = Date.now();
@@ -18,7 +18,7 @@ export async function generateDocs(project: ProjectReflection, out: string) {
 }
 
 /**
- * Replacement of TypeDoc's {@link Renderer.render} method to decouple HTML logic.
+ * Replacement of TypeDoc's Renderer.render method to decouple HTML logic.
  *
  * This is essentially a copy of the base method with a few tweaks.
  *
@@ -35,7 +35,7 @@ export async function render(
   if (this.cleanOutputDir) {
     try {
       fs.rmSync(outputDirectory, { recursive: true, force: true });
-    } catch (error) {
+    } catch {
       this.application.logger.warn('Could not empty the output directory.');
       return;
     }
@@ -43,7 +43,7 @@ export async function render(
 
   try {
     fs.mkdirSync(outputDirectory, { recursive: true });
-  } catch (error) {
+  } catch {
     this.application.logger.error(
       `Could not create output directory ${outputDirectory}.`,
     );
@@ -56,7 +56,7 @@ export async function render(
   ) {
     try {
       fs.writeFileSync(path.join(outputDirectory, '.nojekyll'), '');
-    } catch (error) {
+    } catch {
       this.application.logger.warn(
         this.application.i18n.could_not_write_0(
           path.join(outputDirectory, '.nojekyll'),
@@ -107,7 +107,7 @@ export async function render(
 
       try {
         writeFileSync(page.filename, page.contents as string);
-      } catch (error) {
+      } catch {
         this.application.logger.error(
           this.application.i18n.could_not_write_0(page.filename),
         );

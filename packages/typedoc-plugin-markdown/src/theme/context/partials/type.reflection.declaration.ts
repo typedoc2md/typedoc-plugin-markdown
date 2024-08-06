@@ -30,7 +30,7 @@ export function declarationType(
       children.map((obj) => {
         const name: string[] = [];
 
-        if (Boolean(obj.getSignature || Boolean(obj.setSignature))) {
+        if (obj.getSignature || Boolean(obj.setSignature)) {
           if (obj.getSignature) {
             name.push('get');
           }
@@ -49,9 +49,9 @@ export function declarationType(
             : this.partials.someType(theType);
 
         if (shouldFormat) {
-          return `  ${name.join(' ')}: ${indentBlock(typeString, true)};\n`;
+          return `  ${name.join(' ')}: ${indentBlock(typeString)};\n`;
         }
-        return `${name.join(' ')}: ${indentBlock(typeString, true)};`;
+        return `${name.join(' ')}: ${indentBlock(typeString)};`;
       });
 
     if (indexSignatureMd) {
@@ -66,7 +66,7 @@ export function declarationType(
   return '\\{\\}';
 }
 
-function indentBlock(content: string, format: boolean) {
+function indentBlock(content: string) {
   const lines = content.split(`${'\n'}`);
   return lines
     .filter((line) => Boolean(line.length))

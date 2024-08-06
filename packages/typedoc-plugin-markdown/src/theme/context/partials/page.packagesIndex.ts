@@ -37,7 +37,7 @@ export function packagesIndex(
     const packageRows = model.children?.map((projectPackage) => {
       const packageMeta = this.getPackageMetaData(projectPackage.name);
 
-      const urlTo = Boolean(projectPackage.readme)
+      const urlTo = projectPackage.readme
         ? `${path.dirname(projectPackage.url || '')}/${entryFileName}`
         : projectPackage.url;
 
@@ -60,7 +60,7 @@ export function packagesIndex(
     md.push(output);
   } else {
     const packagesList = model.children?.map((projectPackage) => {
-      const urlTo = Boolean(projectPackage.readme)
+      const urlTo = projectPackage.readme
         ? `${path.dirname(projectPackage.url || '')}/${entryFileName}`
         : projectPackage.url;
       return urlTo

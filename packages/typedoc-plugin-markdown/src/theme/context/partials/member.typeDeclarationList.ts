@@ -8,7 +8,7 @@ export function typeDeclarationList(
 ): string {
   const md: string[] = [];
   const declarations = this.helpers.getFlattenedDeclarations(model);
-  declarations?.forEach((declaration: DeclarationReflection, i: number) => {
+  declarations?.forEach((declaration: DeclarationReflection) => {
     md.push(
       this.partials.memberContainer(declaration, {
         headingLevel: options.headingLevel + 1,

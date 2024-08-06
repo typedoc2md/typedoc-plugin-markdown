@@ -226,7 +226,7 @@ export class NavigationBuilder {
           child.kind,
           outputFileStrategy,
         );
-        if (Boolean(mapping)) {
+        if (mapping) {
           const children =
             child instanceof DeclarationReflection &&
             !this.navigationOptions.excludeCategories &&
