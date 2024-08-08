@@ -103,7 +103,7 @@ export function header(this: MarkdownThemeContext): string {
       : packageItem.name;
 
     const packagesMeta = this.getPackageMetaData(packageItem.name);
-    const entryModule = packagesMeta.options?.getValue('entryModule');
+    const entryModule = packagesMeta?.options?.getValue('entryModule');
     const packageEntryFile = ignoreScopes
       ? removeFirstScopedDirectory(
           `${packageItem.name}${path.sep}${entryFileName}`,

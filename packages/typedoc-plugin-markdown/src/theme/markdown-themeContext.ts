@@ -117,7 +117,7 @@ export class MarkdownThemeContext {
    *
    * @internal
    */
-  getPackageMetaData(packageName: string): PackageMetaData {
+  getPackageMetaData(packageName: string): PackageMetaData | undefined {
     return this.packagesMetaData[packageName];
   }
 
