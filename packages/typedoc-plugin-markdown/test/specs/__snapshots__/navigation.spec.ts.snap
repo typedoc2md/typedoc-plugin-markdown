@@ -3593,22 +3593,22 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "CategoryAEnum1",
             "kind": 8,
-            "url": "has-categories/enumerations/CategoryAEnum1.md"
+            "path": "has-categories/enumerations/CategoryAEnum1.md"
           },
           {
             "title": "CategoryAEnum2",
             "kind": 8,
-            "url": "has-categories/enumerations/CategoryAEnum2.md"
+            "path": "has-categories/enumerations/CategoryAEnum2.md"
           },
           {
             "title": "CategoryAInterface1",
             "kind": 256,
-            "url": "has-categories/interfaces/CategoryAInterface1.md"
+            "path": "has-categories/interfaces/CategoryAInterface1.md"
           },
           {
             "title": "CategoryAInterface2",
             "kind": 256,
-            "url": "has-categories/interfaces/CategoryAInterface2.md"
+            "path": "has-categories/interfaces/CategoryAInterface2.md"
           }
         ]
       },
@@ -3618,22 +3618,22 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "CategoryBEnum1",
             "kind": 8,
-            "url": "has-categories/enumerations/CategoryBEnum1.md"
+            "path": "has-categories/enumerations/CategoryBEnum1.md"
           },
           {
             "title": "CategoryBEnum2",
             "kind": 8,
-            "url": "has-categories/enumerations/CategoryBEnum2.md"
+            "path": "has-categories/enumerations/CategoryBEnum2.md"
           },
           {
             "title": "CategoryBInterface1",
             "kind": 256,
-            "url": "has-categories/interfaces/CategoryBInterface1.md"
+            "path": "has-categories/interfaces/CategoryBInterface1.md"
           },
           {
             "title": "CategoryBInterface2",
             "kind": 256,
-            "url": "has-categories/interfaces/CategoryBInterface2.md"
+            "path": "has-categories/interfaces/CategoryBInterface2.md"
           }
         ]
       },
@@ -3643,7 +3643,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "CategoryCInterface1",
             "kind": 256,
-            "url": "has-categories/interfaces/CategoryCInterface1.md"
+            "path": "has-categories/interfaces/CategoryCInterface1.md"
           }
         ]
       },
@@ -3653,17 +3653,17 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "UnCategorizedEnum",
             "kind": 8,
-            "url": "has-categories/enumerations/UnCategorizedEnum.md"
+            "path": "has-categories/enumerations/UnCategorizedEnum.md"
           },
           {
             "title": "CategoryCInterface2",
             "kind": 256,
-            "url": "has-categories/interfaces/CategoryCInterface2.md"
+            "path": "has-categories/interfaces/CategoryCInterface2.md"
           },
           {
             "title": "UnCategorizedInterace",
             "kind": 256,
-            "url": "has-categories/interfaces/UnCategorizedInterace.md"
+            "path": "has-categories/interfaces/UnCategorizedInterace.md"
           }
         ]
       }

@@ -197,7 +197,7 @@ export class NavigationBuilder {
         return {
           title: child.name,
           kind: child.kind,
-          url: child.url,
+          path: child.url,
           ...(children && { children }),
         };
       });
