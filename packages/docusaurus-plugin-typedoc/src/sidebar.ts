@@ -17,10 +17,12 @@ function getNavigationItem(
   basePath: string,
   numberPrefixParser?: any,
 ) {
+  const navigationItemPath = navigationItem.path || (navigationItem as any).url;
+
   const parsedUrl =
     numberPrefixParser === false
-      ? navigationItem.path
-      : navigationItem.path?.replace(/\d+\-/g, '');
+      ? navigationItemPath
+      : navigationItemPath?.replace(/\d+\-/g, '');
 
   const getId = () => {
     const idParts: string[] = [];
@@ -30,7 +32,7 @@ function getNavigationItem(
     if (parsedUrl) {
       idParts.push(parsedUrl.replace(/\\/g, '/'));
     }
-    if (navigationItem.path) {
+    if (navigationItemPath) {
       return idParts.join('/').replace(/(.*)\.\w+$/, '$1');
     }
     return null;
@@ -53,9 +55,9 @@ function getNavigationItem(
 
   return id
     ? {
-      type: 'doc',
-      id,
-      label: `${navigationItem.title}`,
-    }
+        type: 'doc',
+        id,
+        label: `${navigationItem.title}`,
+      }
     : null;
 }
