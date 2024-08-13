@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.2.4
+
+### Patch Changes
+
+- Expose comments to reflections with the accessor keyword ([#664](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/664))
+- Omit constructors from category groups ([#661](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/661))
+- Update categories structure in navigation to match interface model
+
 ## 4.2.3 (2024-07-24)
 
 ### Patch Changes
