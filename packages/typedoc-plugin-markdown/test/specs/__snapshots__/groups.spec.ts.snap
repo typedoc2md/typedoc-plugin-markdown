@@ -72,10 +72,13 @@ A basic module
 ### Enumerations
 
 <table>
+<thead>
 <tr>
 <th align="left">Enumeration</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -100,15 +103,19 @@ EnumA function.
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Classes
 
 <table>
+<thead>
 <tr>
 <th align="left">Class</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -133,15 +140,19 @@ ClassA function.
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Interfaces
 
 <table>
+<thead>
 <tr>
 <th align="left">Interface</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -177,15 +188,19 @@ InterfaceB function.
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Type Aliases
 
 <table>
+<thead>
 <tr>
 <th align="left">Type alias</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -210,15 +225,19 @@ TypeB function.
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Functions
 
 <table>
+<thead>
 <tr>
 <th align="left">Function</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -233,6 +252,7 @@ More summary.
 
 </td>
 </tr>
+</tbody>
 </table>
 
 <a id="variablea" name="variablea"></a>
@@ -727,10 +747,13 @@ A module that contains categories
 ### Category A
 
 <table>
+<thead>
 <tr>
 <th align="left">Enumeration, Interface</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -779,15 +802,19 @@ A module that contains categories
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Category B
 
 <table>
+<thead>
 <tr>
 <th align="left">Enumeration, Interface</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -836,15 +863,19 @@ A module that contains categories
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Category C
 
 <table>
+<thead>
 <tr>
 <th align="left">Interface</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -857,15 +888,19 @@ A module that contains categories
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Other
 
 <table>
+<thead>
 <tr>
 <th align="left">Enumeration, Interface</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -902,6 +937,7 @@ A module that contains categories
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
@@ -1016,10 +1052,13 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 ## Modules
 
 <table>
+<thead>
 <tr>
 <th align="left">Module</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1128,6 +1167,7 @@ A module named index
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
@@ -1165,10 +1205,13 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 ## Modules
 
 <table>
+<thead>
 <tr>
 <th align="left">Module</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1277,6 +1320,7 @@ A module named index
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
@@ -1320,10 +1364,13 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 ### Namespaces
 
 <table>
+<thead>
 <tr>
 <th align="left">Namespace</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1336,15 +1383,19 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Interfaces
 
 <table>
+<thead>
 <tr>
 <th align="left">Interface</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1357,6 +1408,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
@@ -1398,10 +1450,13 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 ### Namespaces
 
 <table>
+<thead>
 <tr>
 <th align="left">Namespace</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1414,6 +1469,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 </td>
 </tr>
+</tbody>
 </table>
 
 <a id="namespaceinterface" name="namespaceinterface"></a>
@@ -1502,10 +1558,13 @@ A module that contains namespaces
 ### Namespaces
 
 <table>
+<thead>
 <tr>
 <th align="left">Namespace</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1530,15 +1589,19 @@ A module that contains namespaces
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Enumerations
 
 <table>
+<thead>
 <tr>
 <th align="left">Enumeration</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1563,15 +1626,19 @@ A module that contains namespaces
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Classes
 
 <table>
+<thead>
 <tr>
 <th align="left">Class</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1596,15 +1663,19 @@ A module that contains namespaces
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Interfaces
 
 <table>
+<thead>
 <tr>
 <th align="left">Interface</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1629,15 +1700,19 @@ A module that contains namespaces
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Type Aliases
 
 <table>
+<thead>
 <tr>
 <th align="left">Type alias</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1662,15 +1737,19 @@ A module that contains namespaces
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ### Functions
 
 <table>
+<thead>
 <tr>
 <th align="left">Function</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1695,6 +1774,7 @@ A module that contains namespaces
 
 </td>
 </tr>
+</tbody>
 </table>
 
 <a id="_variable_a_" name="_variable_a_"></a>
@@ -1823,10 +1903,13 @@ A module that contains namespaces
 ### Namespaces
 
 <table>
+<thead>
 <tr>
 <th align="left">Namespace</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -1851,6 +1934,7 @@ A module that contains namespaces
 
 </td>
 </tr>
+</tbody>
 </table>
 
 <a id="enumb" name="enumb"></a>
@@ -2095,10 +2179,13 @@ A module that contains references
 ### Functions
 
 <table>
+<thead>
 <tr>
 <th align="left">Function</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -2111,6 +2198,7 @@ A module that contains references
 
 </td>
 </tr>
+</tbody>
 </table>
 
 <a id="interfacea" name="interfacea"></a>

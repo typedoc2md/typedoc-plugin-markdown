@@ -182,10 +182,13 @@ const x = 1;
 ## Parameters
 
 <table>
+<thead>
 <tr>
 <th align="left">Parameter</th>
 <th align="left">Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -210,6 +213,7 @@ const x = 1;
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Returns
@@ -247,11 +251,14 @@ exports[`Comments should get tables for emum: (Output File Strategy "members") (
 ## Enumeration Members
 
 <table>
+<thead>
 <tr>
 <th align="left">Enumeration Member</th>
 <th align="left">Value</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -269,6 +276,7 @@ The subroutine recursively parsed the hexadecimal data.
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
@@ -364,11 +372,14 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 ## Properties
 
 <table>
+<thead>
 <tr>
 <th align="left">Property</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -483,6 +494,7 @@ Experimental flag comments
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
@@ -532,11 +544,14 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 ## Type declaration
 
 <table>
+<thead>
 <tr>
 <th align="left">Name</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -590,6 +605,7 @@ to generate the binary output for input validation.
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Source
@@ -606,11 +622,14 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 ## Type declaration
 
 <table>
+<thead>
 <tr>
 <th align="left">Name</th>
 <th align="left">Type</th>
 <th align="left">Default value</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -645,6 +664,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Source
@@ -698,10 +718,13 @@ const x = 1;
 ## Type declaration
 
 <table>
+<thead>
 <tr>
 <th align="left">Name</th>
 <th align="left">Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -714,6 +737,7 @@ const x = 1;
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Remarks

@@ -4,13 +4,16 @@ export function htmlTable(
   leftAlignHeadings = false,
 ) {
   return `<table>
+<thead>
 <tr>${headers
     .map(
       (header) => `
 <th${leftAlignHeadings ? ' align="left"' : ''}>${header}</th>`,
     )
     .join('')}
-</tr>${rows
+</tr>
+</thead>
+<tbody>${rows
     .map(
       (row) =>
         `
@@ -28,5 +31,6 @@ ${cell === '-' ? '&hyphen;' : cell}
 </tr>`,
     )
     .join('')}
+</tbody>
 </table>`;
 }

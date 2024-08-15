@@ -325,10 +325,13 @@ exports[`Documents Project should compile index page for project: (Output File S
 ## Documents
 
 <table>
+<thead>
 <tr>
 <th>Document</th>
 <th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -365,15 +368,19 @@ A description of the document
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Modules
 
 <table>
+<thead>
 <tr>
 <th>Module</th>
 <th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -398,6 +405,7 @@ A description of the document
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
@@ -424,10 +432,13 @@ exports[`Documents Project should compile index page for project: (Output File S
 ## Documents
 
 <table>
+<thead>
 <tr>
 <th>Document</th>
 <th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -464,15 +475,19 @@ A description of the document
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Modules
 
 <table>
+<thead>
 <tr>
 <th>Module</th>
 <th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -497,6 +512,7 @@ A description of the document
 
 </td>
 </tr>
+</tbody>
 </table>
 "
 `;
