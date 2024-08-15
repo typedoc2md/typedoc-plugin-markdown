@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated table formatting with typedoc-plugin-markdown "htmlTable" key.
+
 ## 1.0.2 (2024-06-22)
 
 ### Patch Changes
