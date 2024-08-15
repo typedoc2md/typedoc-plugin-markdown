@@ -224,6 +224,16 @@ Remark comments
 #### Source
 
 [classes.ts:1](http://source-url)
+
+***
+
+### accessor3
+
+Accessor comments
+
+#### Source
+
+[classes.ts:1](http://source-url)
 "
 `;
 

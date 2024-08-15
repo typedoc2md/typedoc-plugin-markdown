@@ -272,7 +272,6 @@ export class ClassWithAccessorKeywords {
    * const x = 1;
    * ```
    */
-
   public accessor accessor1: string;
 
   /**
@@ -281,4 +280,9 @@ export class ClassWithAccessorKeywords {
    * @remarks Remark comments
    */
   public accessor accessor2: string;
+
+  /**
+   * Accessor comments
+   */
+  public accessor accessor3: string;
 }

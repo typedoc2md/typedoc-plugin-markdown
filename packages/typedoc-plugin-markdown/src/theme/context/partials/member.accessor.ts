@@ -60,7 +60,7 @@ export function accessor(
     );
   }
 
-  if (model.comment?.blockTags?.length) {
+  if (model.comment) {
     md.push(
       this.partials.comment(model.comment, {
         headingLevel: options.headingLevel,
