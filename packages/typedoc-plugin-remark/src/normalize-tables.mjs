@@ -9,7 +9,7 @@ export default function () {
   this.compiler = (tree) => {
     let content = compiler(tree);
     content = content
-      .replace(/^\s*(<\/?(table|tr|th|td)>)/gm, (match, p1) => p1)
+      .replace(/^\s*(<\/?(table|thead|tbody|tr|th|td)>)/gm, (match, p1) => p1)
       .replace(
         /<td>\s*([\s\S]*?)\s*<\/td>/gm,
         (match, p1) =>

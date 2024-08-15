@@ -25,11 +25,14 @@ exports[`Remark should parse globals page 1`] = `
 #### Parameters
 
 <table>
+<thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -51,6 +54,7 @@ const x = 1;
 
 </td>
 </tr>
+</tbody>
 </table>
 
 #### Returns
@@ -77,11 +81,14 @@ exports[`Remark should parse globals page without toc 1`] = `
 #### Parameters
 
 <table>
+<thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -103,6 +110,7 @@ const x = 1;
 
 </td>
 </tr>
+</tbody>
 </table>
 
 #### Returns
@@ -131,9 +139,12 @@ title: 'test'
 ## Type Parameters
 
 <table>
+<thead>
 <tr>
 <th>Type Parameter</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -141,6 +152,7 @@ title: 'test'
 
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Constructors
@@ -262,9 +274,12 @@ javascript
 
 #### Type Parameters
 <table>
+<thead>
 <tr>
 <th>Type Parameter</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -272,6 +287,7 @@ javascript
 
 </td>
 </tr>
+</tbody>
 </table>
 
 #### Constructors
@@ -296,9 +312,12 @@ javascript
 
 #### Type Parameters
 <table>
+<thead>
 <tr>
 <th>Type Parameter</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -306,6 +325,7 @@ javascript
 
 </td>
 </tr>
+</tbody>
 </table>
 
 #### Properties
@@ -336,10 +356,13 @@ javascript
 
 #### Parameters
 <table>
+<thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -352,6 +375,7 @@ javascript
 
 </td>
 </tr>
+</tbody>
 </table>
 
 #### Returns
