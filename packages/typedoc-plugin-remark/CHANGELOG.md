@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.3
+## 1.0.3 (2024-08-15)
 
 ### Patch Changes
 
