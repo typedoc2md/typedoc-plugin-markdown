@@ -39,11 +39,7 @@ export function declaration(
   const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
 
-  const showComments = !typeDeclaration?.signatures?.every((signature) =>
-    Boolean(signature.comment),
-  );
-
-  if (showComments && model.comment) {
+  if (model.comment) {
     md.push(
       this.partials.comment(model.comment, {
         headingLevel: opts.headingLevel,
@@ -161,7 +157,7 @@ export function declaration(
     }
   }
 
-  if (showComments && model.comment) {
+  if (model.comment) {
     md.push(
       this.partials.comment(model.comment, {
         headingLevel: opts.headingLevel,

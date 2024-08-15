@@ -488,11 +488,21 @@ bar: number;
 exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: LiteralType
 
-> **LiteralType**: \\{\`x\`: \`string\`;\`y\`: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`; \\};\`z\`: (\`x\`: \`string\`) => \`string\`;get set \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>;get set \`accessorB\`: \`string\`;\`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>; \\}
+> **LiteralType**: \\{\`someFunctionWithArrow\`: () => \`string\`;\`x\`: \`string\`;\`y\`: \\{\`x\`: \`string\`;\`y\`: \`boolean\` \\| \`string\`;\`z\`: (\`x\`: \`string\`) => \`string\`; \\};\`z\`: (\`x\`: \`string\`) => \`string\`;get set \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>;get set \`accessorB\`: \`string\`;\`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>; \\}
 
 Comments for LiteralType
 
 ## Type declaration
+
+### someFunctionWithArrow()
+
+> **someFunctionWithArrow**: () => \`string\`
+
+Comments for someFunctionWithArrow
+
+#### Returns
+
+\`string\`
 
 ### x
 
@@ -595,6 +605,7 @@ exports[`Objects And Params should compile literal type: (Output File Strategy "
 
 \`\`\`ts
 type LiteralType: {
+  someFunctionWithArrow: () => string;
   x: string;
   y: {
      x: string;
@@ -611,6 +622,18 @@ type LiteralType: {
 Comments for LiteralType
 
 ## Type declaration
+
+### someFunctionWithArrow()
+
+\`\`\`ts
+someFunctionWithArrow: () => string;
+\`\`\`
+
+Comments for someFunctionWithArrow
+
+#### Returns
+
+\`string\`
 
 ### x
 

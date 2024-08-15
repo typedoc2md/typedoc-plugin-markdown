@@ -130,6 +130,10 @@ export type LiteralType = {
    */
   someFunction(param: string): Promise<any>;
   /**
+   * Comments for someFunctionWithArrow
+   */
+  someFunctionWithArrow: () => string;
+  /**
    * Comments for accessorA getter
    */
   get accessorA(): Promise<string>;

@@ -103,6 +103,16 @@ Comments for LiteralType
 
 ## Type declaration
 
+### someFunctionWithArrow()
+
+> **someFunctionWithArrow**: () => \`string\`
+
+Comments for someFunctionWithArrow
+
+#### Returns
+
+\`string\`
+
 ### x
 
 > **x**: \`string\`
@@ -216,6 +226,7 @@ Comments for LiteralType
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| \`someFunctionWithArrow\` | () => \`string\` | Comments for someFunctionWithArrow |
 | \`x\` | \`string\` | comment for x |
 | \`y\` | \`object\` | comment for y |
 | \`y.x\` | \`string\` | comment for y.x |
