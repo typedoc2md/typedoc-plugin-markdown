@@ -29,6 +29,7 @@ const config: Record<string, Fixture> = {
         typeDeclarationFormat: 'table',
         enumMembersFormat: 'table',
         propertyMembersFormat: 'table',
+        indexFormat: 'table',
         useCodeBlocks: true,
         expandParameters: true,
         navigationModel: {
