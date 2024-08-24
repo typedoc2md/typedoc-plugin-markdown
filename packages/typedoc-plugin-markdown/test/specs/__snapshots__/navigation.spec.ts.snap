@@ -633,7 +633,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-1b",
     "kind": 2,
-    "children": [],
     "path": "package-1b/index.md"
   },
   {
@@ -759,7 +758,29 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module-1",
         "kind": 2,
-        "path": "package-7/module-1.md"
+        "path": "package-7/module-1.md",
+        "children": [
+          {
+            "title": "submodules",
+            "children": [
+              {
+                "title": "submodule-3-with-modules",
+                "children": [
+                  {
+                    "title": "nested-submodule-1",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1.md"
+                  },
+                  {
+                    "title": "nested-submodule-2",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "module-2",
@@ -777,13 +798,11 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "@scope/package-1",
     "kind": 2,
-    "children": [],
     "path": "package-1/README.md"
   },
   {
     "title": "package-1b",
     "kind": 2,
-    "children": [],
     "path": "package-1b/README.md"
   },
   {
@@ -909,7 +928,29 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "module-1",
         "kind": 2,
-        "path": "package-7/module-1.md"
+        "path": "package-7/module-1.md",
+        "children": [
+          {
+            "title": "submodules",
+            "children": [
+              {
+                "title": "submodule-3-with-modules",
+                "children": [
+                  {
+                    "title": "nested-submodule-1",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1.md"
+                  },
+                  {
+                    "title": "nested-submodule-2",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "module-2",
@@ -3973,8 +4014,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "has-categories",
     "kind": 2,
-    "path": "has-categories.md",
-    "children": []
+    "path": "has-categories.md"
   },
   {
     "title": "has-custom-groups",
@@ -4116,8 +4156,7 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
       {
         "title": "ClassWithPropCategories",
         "kind": 128,
-        "path": "classes/ClassWithPropCategories.md",
-        "children": []
+        "path": "classes/ClassWithPropCategories.md"
       },
       {
         "title": "ClassWithSimpleProps",

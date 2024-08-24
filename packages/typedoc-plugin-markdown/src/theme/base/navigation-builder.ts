@@ -49,7 +49,23 @@ export class NavigationBuilder {
       this.buildNavigationFromProject(this.project);
     }
 
+    this.removeEmptyChildren(this.navigation);
+
     return this.navigation;
+  }
+
+  private removeEmptyChildren(navigation: NavigationItem[]): void {
+    navigation.forEach((navItem) => {
+      if (navItem.children) {
+        this.removeEmptyChildren(navItem.children);
+        navItem.children = navItem.children.filter(
+          (child) => Object.keys(child).length > 0,
+        );
+        if (navItem.children.length === 0) {
+          delete navItem.children;
+        }
+      }
+    });
   }
 
   private buildNavigationFromPackage(projectChild: DeclarationReflection) {
@@ -252,10 +268,7 @@ export class NavigationBuilder {
     reflection: DeclarationReflection | DocumentReflection,
     outputFileStrategy?: OutputFileStrategy,
   ): NavigationItem[] | null {
-    if (
-      reflection instanceof DeclarationReflection &&
-      reflection.groups?.some((group) => group.allChildrenHaveOwnDocument())
-    ) {
+    if (reflection instanceof DeclarationReflection) {
       if (this.navigationOptions.excludeGroups) {
         return reflection.childrenIncludingDocuments
           ?.filter((child) => child.hasOwnDocument)
