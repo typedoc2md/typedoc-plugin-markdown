@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.2.6
+
+### Patch Changes
+
+- Expose missing entrypoints to navigation ([#663](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/663))
+- Fix missing function descriptions in indexes
+
 ## 4.2.5 (2024-08-15)
 
 ### Patch Changes
