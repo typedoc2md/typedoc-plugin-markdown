@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.2.6
+## 4.2.6 (2024-08-25)
 
 ### Patch Changes
 
