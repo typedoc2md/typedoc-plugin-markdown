@@ -211,6 +211,10 @@ This is required for generating package specific documentation.
 
 > **hook**: \<`K`>(`event`, ...`args`) => `string`\[]
 
+**`Internal`**
+
+Hook into the TypeDoc rendering system.
+
 Emits an event to all currently subscribed listeners.
 
 #### Type Parameters
@@ -240,7 +244,7 @@ General context aware helper methods not bound to any specific models that can b
 
 ### getPackageMetaData()
 
-> **getPackageMetaData**(`packageName`): [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
+> **getPackageMetaData**(`packageName`): `undefined` | [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
 
 **`Internal`**
 
@@ -254,7 +258,7 @@ Returns the package meta data for a given package name when entrypointStrategy i
 
 #### Returns
 
-[`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
+`undefined` | [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
 
 #### Defined in
 

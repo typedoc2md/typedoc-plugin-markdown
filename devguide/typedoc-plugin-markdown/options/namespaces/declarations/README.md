@@ -38,13 +38,13 @@ The JSDoc comments will also be used in the public facing documentation.
   * [propertyMembersFormat](#propertymembersformat)
   * [tableColumnSettings](#tablecolumnsettings)
 * [Utility](#utility)
-  * [publicPath](#publicpath)
   * [sanitizeComments](#sanitizecomments)
-  * [anchorPrefix](#anchorprefix)
-  * [useHTMLAnchors](#usehtmlanchors)
-  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
-  * [preserveAnchorCasing](#preserveanchorcasing)
   * [textContentMappings](#textcontentmappings)
+  * [publicPath](#publicpath)
+  * [anchorPrefix](#anchorprefix)
+  * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
+  * [useHTMLAnchors](#usehtmlanchors)
+  * [preserveAnchorCasing](#preserveanchorcasing)
   * [navigationModel](#navigationmodel)
 
 ## File
@@ -55,11 +55,11 @@ Options that are used to configure how files are output.
 
 > `const` **outputFileStrategy**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
 
-TypeDoc creates documentation according to exports derived from the given [`entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) configuration.
+TypeDoc creates documentation according to exports derived from the given [`--entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) TypeDoc configuration.
 
-This option does not alter the way TypeDoc interprets the `entryPointsStrategy` but rather provides some flexibility as to how output files are generated.
+This option provides some flexibility as to how output files are generated.
 
-It is also possible to further refine what members are exported to individual files with the [`membersWithOwnFile`](#memberswithownfile) option.
+It is also possible to further refine what members are exported to individual files with the `membersWithOwnFile` option.
 
 The following keys are available:
 
@@ -244,8 +244,8 @@ This is essentially the equivalent to `index.html` for web pages.
 
 The content of root documentation file will be resolved in the following order:
 
-1. The value of the [`entryModule`](#entrymodule) option (if defined).
-2. The resolved Readme file (skipped if the [`readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
+1. The value of the `--entryModule` option (if defined).
+2. The resolved Readme file (skipped if the [`--readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
 3. The documentation index page.
 
 #### Example
@@ -274,7 +274,7 @@ The content of root documentation file will be resolved in the following order:
 
 > `const` **modulesFileName**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
 
-Please note this option is not applicable when `--readme` is set to "none" or `--mergeReadme` is set to "true".
+Please note this option is not applicable when [`--readme`](https://typedoc.org/options/input/#readme) is set to "none" or `--mergeReadme` is set to "true".
 
 #### Example
 
@@ -769,7 +769,7 @@ This option specifies the output format for type declaration of variables and ty
 
 This option will handle the formatting of object literals assigned as properties in classes or interfaces.
 
-Note this options will only take effect when `propertiesFormat` is set to `list`.
+Note this options will only take effect when the property declaration is rendered in a `list` format.
 
 * **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
 * **"table"**: members are output within a Markdown table, condensed into a single paragraph.
@@ -827,6 +827,79 @@ In addition you can control the alignment of the header text.
 
 Options that are used for general configuration and utility purposes.
 
+### sanitizeComments
+
+> `const` **sanitizeComments**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+*Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks).*
+
+By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
+
+This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
+
+This option would typically be used when source code comes from an external source exposing the following potential issues:
+
+* Comments contain raw tags that should be interpreted as code examples.
+* Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
+* Although most parsers use XSS filters, this option provides an additional layer of XSS security.
+
+#### Default Value
+
+```ts
+{
+    help: 'Sanitize HTML and JSX inside JsDoc comments.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:547](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L547)
+
+***
+
+### textContentMappings
+
+> `const` **textContentMappings**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+Defines placeholder text that can be customized. Includes the main page header and breadcrumbs (if displayed),
+page titles and page footer.
+
+Default values within curly braces \{} indicates a placeholder of dynamic text.
+
+* The `{projectName}` placeholder writes project's name .
+* The `{kind}` writes the reflection kind of the page.
+* The `{version}` placeholder writes package version (if includeVersion is `true`).
+
+If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
+
+#### Default Value
+
+```ts
+{
+    help: 'Change specific text placeholders in the template.',
+    type: ParameterType.Object,
+    defaultValue: TEXT_CONTENT_MAPPINGS,
+    validate(value) {
+        if (!value || typeof value !== 'object') {
+            throw new Error('[typedoc-plugin-markdown] textContentMappings must be an object.');
+        }
+        for (const val of Object.values(value)) {
+            if (typeof val !== 'string') {
+                throw new Error(`[typedoc-plugin-markdown] All values of textContentMappings must be strings.`);
+            }
+        }
+    },
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:567](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L567)
+
+***
+
 ### publicPath
 
 > `const` **publicPath**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
@@ -851,39 +924,7 @@ If undefined all urls will be relative.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:539](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L539)
-
-***
-
-### sanitizeComments
-
-> `const` **sanitizeComments**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
-
-*Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks).*
-
-By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
-
-This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
-
-This option would typically be used when source code comes from an external library exposing the following potential issues:
-
-* Comments contain raw tags that should be interpreted as code examples.
-* Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
-* Although most parsers use XSS filters, this option provides an additional layer of XSS security.
-
-#### Default Value
-
-```ts
-{
-    help: 'Sanitize HTML and JSX inside JsDoc comments.',
-    type: ParameterType.Boolean,
-    defaultValue: false,
-}
-```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:560](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L560)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:594](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L594)
 
 ***
 
@@ -911,7 +952,30 @@ This option should be used when parsers require a custom anchor prefix.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:573](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L573)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:607](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L607)
+
+***
+
+### useHTMLEncodedBrackets
+
+> `const` **useHTMLEncodedBrackets**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+
+By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
+However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies with some Markdown processors.
+
+#### Default Value
+
+```ts
+{
+    help: 'Use HTML encoded entities for angle brackets.',
+    type: ParameterType.Boolean,
+    defaultValue: false,
+}
+```
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:619](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L619)
 
 ***
 
@@ -919,7 +983,7 @@ This option should be used when parsers require a custom anchor prefix.
 
 > `const` **useHTMLAnchors**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
 
-This option should be used if there are issues with anchoring to symbols within a page.
+This option should be used if there are issues when anchoring to symbols within a page.
 
 * For Markdown parsers that do not automatically assign header ids.
 * When cross referencing symbols that are referenced in a table row.
@@ -936,30 +1000,7 @@ This option should be used if there are issues with anchoring to symbols within 
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:587](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L587)
-
-***
-
-### useHTMLEncodedBrackets
-
-> `const` **useHTMLEncodedBrackets**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
-
-By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
-However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies across different Markdown processors.
-
-#### Default Value
-
-```ts
-{
-    help: 'Use HTML encoded entities for angle brackets.',
-    type: ParameterType.Boolean,
-    defaultValue: false,
-}
-```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:599](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L599)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:633](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L633)
 
 ***
 
@@ -983,48 +1024,7 @@ This option can be used for engines that require the preservation of anchor link
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:612](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L612)
-
-***
-
-### textContentMappings
-
-> `const` **textContentMappings**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
-
-Defines placeholder text in main template that can be customized. Includes the main page header and breadcrumbs (if displayed),
-page titles and page footer.
-
-Default values within curly braces \{} indicates a placeholder of dynamic text.
-
-* The `{projectName}` placeholder writes project's name .
-* The `{kind}` writes the reflection kind of the page.
-* The `{version}` placeholder writes package version (if includeVersion is `true`).
-
-If you are looking for general localization support please see [localization]().
-
-#### Default Value
-
-```ts
-{
-    help: 'Change specific text placeholders in the template.',
-    type: ParameterType.Object,
-    defaultValue: TEXT_CONTENT_MAPPINGS,
-    validate(value) {
-        if (!value || typeof value !== 'object') {
-            throw new Error('[typedoc-plugin-markdown] textContentMappings must be an object.');
-        }
-        for (const val of Object.values(value)) {
-            if (typeof val !== 'string') {
-                throw new Error(`[typedoc-plugin-markdown] All values of textContentMappings must be strings.`);
-            }
-        }
-    },
-}
-```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:632](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L632)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:646](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L646)
 
 ***
 
@@ -1039,24 +1039,13 @@ The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on t
 
 The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
 
+The available properties are:
+
 * `navigationModel.excludeGroups`: do not organise navigation by groups.
 * `navigationModel.excludeCategories`: do not organise navigation by categories.
 * `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
 
-```ts filename="custom-plugin.ts"
-
-import { MarkdownApplication } from 'typedoc-plugin-markdown';
-
-export function load(app: MarkdownApplication) {
- app.renderer.postRenderAsyncJobs.push(async (renderer) => {
-   // The navigation JSON structure is available on the navigation object.
-   const navigation = renderer.navigation;
-
-   // This can be parsed to something else or written straight to a file:
-   fs.writeFileSync('navigation.json', JSON.stringify(navigation));
- });
-}
-```
+See [Utilizing Navigation](https://typedoc-plugin-markdown.org/api-docs/Document.Utilizing-Navigation) API docs.
 
 #### Default Value
 
@@ -1074,4 +1063,4 @@ export function load(app: MarkdownApplication) {
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:682](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L682)
+[packages/typedoc-plugin-markdown/src/options/declarations.ts:671](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L671)

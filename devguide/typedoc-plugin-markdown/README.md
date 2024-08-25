@@ -33,6 +33,6 @@ The core package of this monorepo and is the package that is used to generate th
 | [events](events/README.md)                             | Contains the events classes used by the plugin.                      |
 | [options](options/README.md)                           | Contains all the option declarations and types used in the plugin.   |
 | [internationalization](internationalization/README.md) | Exposes additional i18n keys and translations used by the theme.     |
-| [theme](theme/README.md)                               | Contains all functionality relevant to the theme.                    |
+| [theme](theme/README.md)                               | Contains all functionality relevant to the markdown theme.           |
 | [libs](libs/README.md)                                 | General pure library functions to be consumed across the plugin.     |
 | [types](types/README.md)                               | All plugin types are exported from this module.                      |

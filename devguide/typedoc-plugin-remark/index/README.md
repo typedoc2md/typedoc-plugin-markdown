@@ -20,4 +20,4 @@ The plugin entrypoint and bootstrapping of the plugin.
 
 ### Defined in
 
-[index.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/index.ts#L12)
+[index.ts:13](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/index.ts#L13)

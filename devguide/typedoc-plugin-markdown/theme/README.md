@@ -2,7 +2,7 @@
 
 # theme
 
-Contains all functionality relevant to the theme.
+Contains all functionality relevant to the markdown theme.
 
 ## Index
 
