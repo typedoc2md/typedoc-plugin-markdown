@@ -1,0 +1,25 @@
+name: Question
+description: Ask a question.
+labels: [question]
+body:
+  - type: dropdown
+    attributes:
+      label: What package is your question related to?
+      multiple: false
+      options:
+        - 'typedoc-plugin-markdown'
+        - 'typedoc-plugin-frontmatter'
+        - 'typdedoc-plugin-remark'
+        - 'typedoc-vitepress-theme'
+        - 'typedoc-github-wiki-theme'
+        - 'typedoc-gitlab-wiki-theme'
+        - 'docusaurus-plugin-typedoc'
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What would you like to ask?
+      description: Ask a question or start a conversation.
+    validations:
+      required: true

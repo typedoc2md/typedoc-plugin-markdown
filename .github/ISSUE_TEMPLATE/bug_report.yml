@@ -7,20 +7,20 @@ body:
       label: What package is the bug related to?
       multiple: false
       options:
-        - "typedoc-plugin-markdown"
-        - "typedoc-plugin-frontmatter"
-        - "typdedoc-plugin-remark"
-        - "typedoc-vitepress-theme"
-        - "typedoc-github-wiki-theme"
-        - "typedoc-gitlab-wiki-theme"
-        - "docusaurus-plugin-typedoc"
+        - 'typedoc-plugin-markdown'
+        - 'typedoc-plugin-frontmatter'
+        - 'typdedoc-plugin-remark'
+        - 'typedoc-vitepress-theme'
+        - 'typedoc-github-wiki-theme'
+        - 'typedoc-gitlab-wiki-theme'
+        - 'docusaurus-plugin-typedoc'
       default: 0
     validations:
       required: true
   - type: textarea
     attributes:
       label: Describe the issue
-      description: Please describe what the issue and provide as many details as possible.
+      description: Please describe what the issue and provide as many details as possible. If the issue is regarding data, please also confirm that issue is not reproducible with the default HTML theme.
     validations:
       required: true
   - type: textarea
