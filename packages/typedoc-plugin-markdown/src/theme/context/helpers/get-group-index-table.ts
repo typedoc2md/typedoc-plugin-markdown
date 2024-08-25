@@ -37,7 +37,7 @@ export function getGroupIndexTable(
         return child.frontmatter.description as string;
       }
 
-      const comment = this.helpers.getCommentForReflection(child);
+      const comment = child.comment || child.signatures?.[0]?.comment;
 
       if (!comment) {
         return '';

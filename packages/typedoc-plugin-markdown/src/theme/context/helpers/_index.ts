@@ -1,5 +1,4 @@
 export * from './get-angle-bracket';
-export * from './get-comment-for-reflection';
 export * from './get-comment-parts';
 export * from './get-declaration-type';
 export * from './get-description-for-comment';

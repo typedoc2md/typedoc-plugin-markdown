@@ -268,10 +268,6 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
   return {
     getAngleBracket: (bracket: '<' | '>') =>
       helpers.getAngleBracket.apply(context, [bracket]) as string,
-    getCommentForReflection: (model: DeclarationReflection) =>
-      helpers.getCommentForReflection.apply(context, [model]) as
-        | Comment
-        | undefined,
     getCommentParts: (model: CommentDisplayPart[]) =>
       helpers.getCommentParts.apply(context, [model]) as string,
     getDeclarationType: (model: DeclarationReflection) =>

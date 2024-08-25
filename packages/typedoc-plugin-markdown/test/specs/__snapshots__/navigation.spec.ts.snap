@@ -4409,6 +4409,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "functions/basicFunction.md"
       },
       {
+        "title": "basicFunctionWithReturns",
+        "kind": 64,
+        "path": "functions/basicFunctionWithReturns.md"
+      },
+      {
         "title": "functionReturningAFunction",
         "kind": 64,
         "path": "functions/functionReturningAFunction.md"

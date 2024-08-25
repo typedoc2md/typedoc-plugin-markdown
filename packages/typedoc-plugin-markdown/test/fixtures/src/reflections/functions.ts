@@ -14,6 +14,15 @@ export const basicFunction = (someParam: number) => {
 };
 
 /**
+ * This is a function that is assigned to a variable.
+ *
+ * @returns This is a return value
+ */
+export const basicFunctionWithReturns = () => {
+  return 0;
+};
+
+/**
  * This is a function with a parameter that has a default value.
  *
  * @param valueA  A parameter with a default string value.

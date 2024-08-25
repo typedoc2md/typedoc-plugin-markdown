@@ -108,6 +108,7 @@ Module commments
 | Function | Description |
 | :------ | :------ |
 | [basicFunction](functions/basicFunction.md) | This is a function that is assigned to a variable. |
+| [basicFunctionWithReturns](functions/basicFunctionWithReturns.md) | This is a function that is assigned to a variable. |
 | [functionReturningAFunction](functions/functionReturningAFunction.md) | Comments for function |
 | [functionReturningAPromise](functions/functionReturningAPromise.md) | Comments for function |
 | [functionReturningAString](functions/functionReturningAString.md) | Comments for function |
@@ -115,7 +116,7 @@ Module commments
 | [functionReturningAnObject](functions/functionReturningAnObject.md) | Comments for function |
 | [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function parmas |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
-| [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | This is the first signature of a function with multiple signatures. |
+| [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |
 | [functionWithNamedParams](functions/functionWithNamedParams.md) | - |
 | [functionWithNestedParameters](functions/functionWithNestedParameters.md) | Some nested params. |
 | [functionWithOptionalParameters](functions/functionWithOptionalParameters.md) | This is a function with a parameters. |
