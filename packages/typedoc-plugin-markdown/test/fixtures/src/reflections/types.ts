@@ -103,7 +103,7 @@ export type LiteralType = {
   /**
    * comment for x
    */
-  x: string;
+  x?: string;
   /**
    * comment for y
    */
@@ -115,7 +115,7 @@ export type LiteralType = {
     /**
      * comment for y.y
      */
-    y: boolean | string;
+    y?: boolean | string;
     /**
      * comment for y.z
      */

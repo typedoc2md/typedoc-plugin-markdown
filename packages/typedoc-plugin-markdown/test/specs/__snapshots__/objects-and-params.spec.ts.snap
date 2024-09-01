@@ -504,9 +504,9 @@ Comments for someFunctionWithArrow
 
 \`string\`
 
-### x
+### x?
 
-> **x**: \`string\`
+> \`optional\` **x**: \`string\`
 
 comment for x
 
@@ -522,9 +522,9 @@ comment for y
 
 comment for y.x
 
-### y.y
+### y.y?
 
-> **y**: \`boolean\` \\| \`string\`
+> \`optional\` **y**: \`boolean\` \\| \`string\`
 
 comment for y.y
 
@@ -635,10 +635,10 @@ Comments for someFunctionWithArrow
 
 \`string\`
 
-### x
+### x?
 
 \`\`\`ts
-x: string;
+optional x: string;
 \`\`\`
 
 comment for x
@@ -663,10 +663,10 @@ x: string;
 
 comment for y.x
 
-### y.y
+### y.y?
 
 \`\`\`ts
-y: boolean | string;
+optional y: boolean | string;
 \`\`\`
 
 comment for y.y
