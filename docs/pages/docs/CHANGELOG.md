@@ -1,5 +1,28 @@
 # Changelog
 
+## 4.2.6 (2024-08-25)
+
+### Patch Changes
+
+- Expose missing entrypoints to navigation ([#663](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/663))
+- Fix missing function descriptions in indexes
+
+## 4.2.5 (2024-08-15)
+
+### Patch Changes
+
+- Expose comment for arrow functions in type declarations ([#670](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/670))
+- Tables generated with the "htmlTable" key will include `<thead>` and `<tbody>` elements to fix MDX compatibility issues ([#671](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/671))
+- Expose missing descriptions with accessor keyword ([#664](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/664))
+
+## 4.2.4 (2024-08-13)
+
+### Patch Changes
+
+- Expose comments to reflections with the accessor keyword ([#664](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/664))
+- Omit constructors from category groups ([#661](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/661))
+- Update categories structure in navigation to match interface model
+
 ## 4.2.3 (2024-07-24)
 
 ### Patch Changes

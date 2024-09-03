@@ -92,7 +92,6 @@ This class can be used to customize the theme output by extending the class and 
     * [unknownType()](#unknowntype)
   * [helpers](#helpers)
     * [getAngleBracket()](#getanglebracket)
-    * [getCommentForReflection()](#getcommentforreflection)
     * [getCommentParts()](#getcommentparts)
     * [getDeclarationType()](#getdeclarationtype)
     * [getDescriptionForComment()](#getdescriptionforcomment)
@@ -1296,20 +1295,6 @@ Please note that partials:
 ##### Returns
 
 `string`
-
-#### getCommentForReflection()
-
-> **getCommentForReflection**: (`model`) => `undefined` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)
-
-##### Parameters
-
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-
-##### Returns
-
-`undefined` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)
 
 #### getCommentParts()
 

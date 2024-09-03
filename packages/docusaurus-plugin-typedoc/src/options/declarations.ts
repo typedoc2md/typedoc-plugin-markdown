@@ -10,7 +10,7 @@ import { DEFAULT_SIDEBAR_OPTIONS } from '../options';
  *
  * Pretty format the sidebar JSON.
  *
- * Please see the [sidebar guide](/plugins/docusaurus/guide/sidebar) for additional information on sidebar setup.
+ * Please see the [sidebar guide](https:/typedoc-plugin-markdown.org/plugins/docusaurus/sidebar) for additional information on sidebar setup.
  *
  */
 export const sidebar = {
