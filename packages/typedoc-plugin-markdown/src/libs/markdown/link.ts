@@ -4,5 +4,5 @@
  * @param url The url to link to
  */
 export function link(label: string, url: string | null) {
-  return url ? `[${label}](${url})` : '';
+  return url ? `[${label.trim()}](${url})` : '';
 }
