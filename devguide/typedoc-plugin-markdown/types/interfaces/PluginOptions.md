@@ -15,7 +15,6 @@ Describes the options declared by the plugin.
   * [entryModule](#entrymodule)
   * [enumMembersFormat](#enummembersformat)
   * [~~excludeGroups~~](#excludegroups)
-    * [Deprecated](#deprecated)
   * [excludeScopesInPaths](#excludescopesinpaths)
   * [expandObjects](#expandobjects)
   * [expandParameters](#expandparameters)
@@ -30,10 +29,10 @@ Describes the options declared by the plugin.
   * [membersWithOwnFile](#memberswithownfile)
   * [mergeReadme](#mergereadme)
   * [modulesFileName](#modulesfilename)
-  * [navigationModel](#navigationmodel)
-    * [excludeGroups](#excludegroups-1)
-    * [excludeCategories](#excludecategories)
-    * [excludeFolders](#excludefolders)
+  * [~~navigationModel~~](#navigationmodel)
+    * [~~excludeGroups~~](#excludegroups-1)
+    * [~~excludeCategories~~](#excludecategories)
+    * [~~excludeFolders~~](#excludefolders)
   * [outputFileStrategy](#outputfilestrategy)
   * [parametersFormat](#parametersformat)
   * [preserveAnchorCasing](#preserveanchorcasing)
@@ -319,23 +318,25 @@ The file name of the separate modules / index page.
 
 ***
 
-### navigationModel
+### ~~navigationModel~~
 
 > **navigationModel**: `object`
 
-Configures how the navigation model will be generated.
-
-#### excludeGroups
+#### ~~excludeGroups~~
 
 > **excludeGroups**: `boolean`
 
-#### excludeCategories
+#### ~~excludeCategories~~
 
 > **excludeCategories**: `boolean`
 
-#### excludeFolders
+#### ~~excludeFolders~~
 
 > **excludeFolders**: `boolean`
+
+#### Deprecated
+
+This option has been deprecated in favour of TypeDoc `navigation` option.
 
 #### Defined in
 

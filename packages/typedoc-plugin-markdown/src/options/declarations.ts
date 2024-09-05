@@ -650,26 +650,12 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 };
 
 /**
- * By default navigation is not written to file but can be consumed programmatically.
- * This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
+ * @deprecated
  *
- * The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
- *
- * The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
- *
- * The available properties are:
- *
- * - `navigationModel.excludeGroups`: do not organise navigation by groups.
- * - `navigationModel.excludeCategories`: do not organise navigation by categories.
- * - `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
- *
- * See [Utilizing Navigation](https://typedoc-plugin-markdown.org/api-docs/Document.Utilizing-Navigation) API docs.
- *
- * @category Utility
- *
+ * @hidden
  */
 export const navigationModel: Partial<DeclarationOption> = {
-  help: 'Configures how the navigation model will be generated.',
+  help: '@deprecated This option has been deprecated in favour of TypeDoc `navigation` option.',
   type: ParameterType.Flags,
   defaults: {
     excludeGroups: false,

@@ -56,7 +56,7 @@
       {
         "tight": true,
         "maxDepth": 4,
-        "skip": "Default Value|Defined in|Example|Overrides|Parameters|Returns|See|Type declaration"
+        "skip": "Default Value|Defined in|Example|Overrides|Parameters|Returns|See|Type declaration|Inherited from|Deprecated"
       }
     ]
   ]

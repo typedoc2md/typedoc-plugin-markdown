@@ -28,7 +28,7 @@ export function load(app) {
 
 ### See
 
-- [MarkdownRendererHooks](https://typedoc-plugin-markdown.org/api-docs/Interface.MarkdownRendererHooks).
+- {@link MarkdownRendererHooks}
 
 ## Events
 
@@ -168,5 +168,5 @@ Use my new helper - ${this.helpers.newHelper()}
 
 ### See
 
-- [MarkdownTheme](/api-docs/Class.MarkdownTheme).
-- [MarkdownThemeContext](/api-docs/Class.MarkdownThemeContext).
+- {@link MarkdownTheme}
+- {@link MarkdownThemeContext}

@@ -12,10 +12,10 @@ This is a simple monorepo managed by [npm workspaces](https://docs.npmjs.com/cli
 
 Please view individual packages for further insights:
 
-* [ typedoc-plugin-markdown](typedoc-plugin-markdown/README.md) is the core package and is the package that is used to generate the markdown documentation.
-* [ typedoc-plugin-frontmatter](typedoc-plugin-frontmatter/README.md) and [ typedoc-plugin-remark](typedoc-plugin-remark/README.md) provide metadata or adjust the output.
-* [ typedoc-github-wiki-theme](typedoc-github-wiki-theme/README.md), [ typedoc-gitlab-wiki-theme](typedoc-gitlab-wiki-theme/README.md),
-  [ typedoc-vitepress-theme](typedoc-vitepress-theme/README.md) and [ docusaurus-plugin-typedoc](docusaurus-plugin-typedoc/README.md) target specific implementations.
+* [typedoc-plugin-markdown](typedoc-plugin-markdown/README.md) is the core package and is the package that is used to generate the markdown documentation.
+* [typedoc-plugin-frontmatter](typedoc-plugin-frontmatter/README.md) and [typedoc-plugin-remark](typedoc-plugin-remark/README.md) provide metadata or adjust the output.
+* [typedoc-github-wiki-theme](typedoc-github-wiki-theme/README.md), [typedoc-gitlab-wiki-theme](typedoc-gitlab-wiki-theme/README.md),
+  [typedoc-vitepress-theme](typedoc-vitepress-theme/README.md) and [docusaurus-plugin-typedoc](docusaurus-plugin-typedoc/README.md) target specific implementations.
 
 ## Machine Setup
 

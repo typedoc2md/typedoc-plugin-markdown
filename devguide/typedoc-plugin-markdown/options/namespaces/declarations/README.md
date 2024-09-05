@@ -45,7 +45,6 @@ The JSDoc comments will also be used in the public facing documentation.
   * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
   * [useHTMLAnchors](#usehtmlanchors)
   * [preserveAnchorCasing](#preserveanchorcasing)
-  * [navigationModel](#navigationmodel)
 
 ## File
 
@@ -1025,42 +1024,3 @@ This option can be used for engines that require the preservation of anchor link
 #### Defined in
 
 [packages/typedoc-plugin-markdown/src/options/declarations.ts:646](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L646)
-
-***
-
-### navigationModel
-
-> `const` **navigationModel**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
-
-By default navigation is not written to file but can be consumed programmatically.
-This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
-
-The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
-
-The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
-
-The available properties are:
-
-* `navigationModel.excludeGroups`: do not organise navigation by groups.
-* `navigationModel.excludeCategories`: do not organise navigation by categories.
-* `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
-
-See [Utilizing Navigation](https://typedoc-plugin-markdown.org/api-docs/Document.Utilizing-Navigation) API docs.
-
-#### Default Value
-
-```ts
-{
-    help: 'Configures how the navigation model will be generated.',
-    type: ParameterType.Flags,
-    defaults: {
-        excludeGroups: false,
-        excludeCategories: false,
-        excludeFolders: false,
-    },
-}
-```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/declarations.ts:671](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/declarations.ts#L671)

@@ -10,69 +10,38 @@ Describes the options declared by the plugin.
 * [Properties](#properties)
   * [id](#id)
   * [sidebar](#sidebar)
-    * [Inherited from](#inherited-from)
   * [anchorPrefix](#anchorprefix)
-    * [Inherited from](#inherited-from-1)
   * [blockTagsPreserveOrder](#blocktagspreserveorder)
-    * [Inherited from](#inherited-from-2)
   * [classPropertiesFormat](#classpropertiesformat)
-    * [Inherited from](#inherited-from-3)
   * [entryFileName](#entryfilename)
-    * [Inherited from](#inherited-from-4)
   * [entryModule](#entrymodule)
-    * [Inherited from](#inherited-from-5)
   * [enumMembersFormat](#enummembersformat)
-    * [Inherited from](#inherited-from-6)
   * [~~excludeGroups~~](#excludegroups)
-    * [Deprecated](#deprecated)
-    * [Inherited from](#inherited-from-7)
   * [excludeScopesInPaths](#excludescopesinpaths)
-    * [Inherited from](#inherited-from-8)
   * [expandObjects](#expandobjects)
-    * [Inherited from](#inherited-from-9)
   * [expandParameters](#expandparameters)
-    * [Inherited from](#inherited-from-10)
   * [fileExtension](#fileextension)
-    * [Inherited from](#inherited-from-11)
   * [flattenOutputFiles](#flattenoutputfiles)
-    * [Inherited from](#inherited-from-12)
   * [hideBreadcrumbs](#hidebreadcrumbs)
-    * [Inherited from](#inherited-from-13)
   * [hideGroupHeadings](#hidegroupheadings)
-    * [Inherited from](#inherited-from-14)
   * [hidePageHeader](#hidepageheader)
-    * [Inherited from](#inherited-from-15)
   * [hidePageTitle](#hidepagetitle)
-    * [Inherited from](#inherited-from-16)
   * [indexFormat](#indexformat)
-    * [Inherited from](#inherited-from-17)
   * [interfacePropertiesFormat](#interfacepropertiesformat)
-    * [Inherited from](#inherited-from-18)
   * [membersWithOwnFile](#memberswithownfile)
-    * [Inherited from](#inherited-from-19)
   * [mergeReadme](#mergereadme)
-    * [Inherited from](#inherited-from-20)
   * [modulesFileName](#modulesfilename)
-    * [Inherited from](#inherited-from-21)
-  * [navigationModel](#navigationmodel)
-    * [excludeGroups](#excludegroups-1)
-    * [excludeCategories](#excludecategories)
-    * [excludeFolders](#excludefolders)
-    * [Inherited from](#inherited-from-22)
+  * [~~navigationModel~~](#navigationmodel)
+    * [~~excludeGroups~~](#excludegroups-1)
+    * [~~excludeCategories~~](#excludecategories)
+    * [~~excludeFolders~~](#excludefolders)
   * [outputFileStrategy](#outputfilestrategy)
-    * [Inherited from](#inherited-from-23)
   * [parametersFormat](#parametersformat)
-    * [Inherited from](#inherited-from-24)
   * [preserveAnchorCasing](#preserveanchorcasing)
-    * [Inherited from](#inherited-from-25)
   * [propertiesFormat](#propertiesformat)
-    * [Inherited from](#inherited-from-26)
   * [propertyMembersFormat](#propertymembersformat)
-    * [Inherited from](#inherited-from-27)
   * [publicPath](#publicpath)
-    * [Inherited from](#inherited-from-28)
   * [sanitizeComments](#sanitizecomments)
-    * [Inherited from](#inherited-from-29)
   * [tableColumnSettings](#tablecolumnsettings)
     * [hideDefaults](#hidedefaults)
     * [hideInherited](#hideinherited)
@@ -81,7 +50,6 @@ Describes the options declared by the plugin.
     * [hideSources](#hidesources)
     * [hideValues](#hidevalues)
     * [leftAlignHeaders](#leftalignheaders)
-    * [Inherited from](#inherited-from-30)
   * [textContentMappings](#textcontentmappings)
     * [header.title](#headertitle)
     * [header.docs](#headerdocs)
@@ -89,15 +57,10 @@ Describes the options declared by the plugin.
     * [title.indexPage](#titleindexpage)
     * [title.memberPage](#titlememberpage)
     * [footer.text](#footertext)
-    * [Inherited from](#inherited-from-31)
   * [typeDeclarationFormat](#typedeclarationformat)
-    * [Inherited from](#inherited-from-32)
   * [useCodeBlocks](#usecodeblocks)
-    * [Inherited from](#inherited-from-33)
   * [useHTMLAnchors](#usehtmlanchors)
-    * [Inherited from](#inherited-from-34)
   * [useHTMLEncodedBrackets](#usehtmlencodedbrackets)
-    * [Inherited from](#inherited-from-35)
 
 ## Extends
 
@@ -469,23 +432,25 @@ typedoc-plugin-markdown/dist/types/options.d.ts:88
 
 ***
 
-### navigationModel
+### ~~navigationModel~~
 
 > **navigationModel**: `object`
 
-Configures how the navigation model will be generated.
-
-#### excludeGroups
+#### ~~excludeGroups~~
 
 > **excludeGroups**: `boolean`
 
-#### excludeCategories
+#### ~~excludeCategories~~
 
 > **excludeCategories**: `boolean`
 
-#### excludeFolders
+#### ~~excludeFolders~~
 
 > **excludeFolders**: `boolean`
+
+#### Deprecated
+
+This option has been deprecated in favour of TypeDoc `navigation` option.
 
 #### Inherited from
 

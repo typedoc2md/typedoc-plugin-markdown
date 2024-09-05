@@ -137,36 +137,3 @@ This option can be used for engines that require the preservation of anchor link
   "preserveAnchorCasing": false
 }
 ```
-
-## --navigationModel
-
-<Callout emoji="💡">
-  Configures how the navigation model will be generated.
-</Callout>
-
->
-
-By default navigation is not written to file but can be consumed programmatically.
-This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
-
-The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
-
-The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
-
-The available properties are:
-
-- `navigationModel.excludeGroups`: do not organise navigation by groups.
-- `navigationModel.excludeCategories`: do not organise navigation by categories.
-- `navigationModel.excludeFolders`: excludes unnecessary nesting with complex hierarchies.
-
-See [Utilizing Navigation](https://typedoc-plugin-markdown.org/api-docs/Document.Utilizing-Navigation) API docs.
-
-```json filename="typedoc.json"
-{
-  "navigationModel": {
-    "excludeGroups": false,
-    "excludeCategories": false,
-    "excludeFolders": false
-  }
-}
-```

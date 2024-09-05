@@ -118,7 +118,7 @@ export interface PluginOptions {
   modulesFileName: string;
 
   /**
-   * Configures how the navigation model will be generated.
+   * @deprecated This option has been deprecated in favour of TypeDoc `navigation` option.
    */
   navigationModel: {
     excludeGroups: boolean;

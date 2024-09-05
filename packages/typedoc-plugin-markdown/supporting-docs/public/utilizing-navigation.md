@@ -5,11 +5,17 @@ description: How to create a custom navigation structure.
 
 # Utilizing Navigation
 
-If required, a navigation model can be provided to the output. This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
+By default navigation is not present but can be consumed programmatically. This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
 
 ## Usage
 
-The navigation model can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
+### Configuration
+
+You can configure the navigation structure by utilizing the TypeDoc [--navigation](https://typedoc.org/options/output/#navigation) option, which should provide the same structure navigation as the default HTML theme.
+
+### Consuming navigation JSON
+
+The navigation can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
 
 The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
 
@@ -31,3 +37,8 @@ export function load(app) {
   });
 }
 ```
+
+## See
+
+- {@link MarkdownRendererEvent}
+- {@link NavigationItem}
