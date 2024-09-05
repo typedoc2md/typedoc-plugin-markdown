@@ -17,7 +17,11 @@ import {
 export class NavigationBuilder {
   private options: Options;
   private packagesMeta: any;
-  private navigationOptions: any;
+  private navigationOptions: {
+    excludeCategories: boolean;
+    excludeGroups: boolean;
+    excludeFolders: boolean;
+  };
   private navigation: NavigationItem[] = [];
   private isPackages: boolean;
 
@@ -26,7 +30,7 @@ export class NavigationBuilder {
     public project: ProjectReflection,
   ) {
     this.options = theme.application.options;
-    this.navigationOptions = this.options.getValue('navigationModel');
+    this.navigationOptions = this.getNavigationOptions();
     this.packagesMeta = (
       theme.application.renderer as unknown as MarkdownRenderer
     ).packagesMeta;
@@ -52,6 +56,18 @@ export class NavigationBuilder {
     this.removeEmptyChildren(this.navigation);
 
     return this.navigation;
+  }
+
+  private getNavigationOptions() {
+    if (this.options.isSet('navigation')) {
+      const navigationOptions = this.options.getValue('navigation');
+      return {
+        excludeCategories: !navigationOptions.includeCategories,
+        excludeGroups: !navigationOptions.includeGroups,
+        excludeFolders: !navigationOptions.includeFolders,
+      };
+    }
+    return this.options.getValue('navigationModel');
   }
 
   private removeEmptyChildren(navigation: NavigationItem[]): void {
@@ -153,24 +169,46 @@ export class NavigationBuilder {
         );
         if (isOnlyModules) {
           project.groups?.forEach((projectGroup) => {
-            if (projectGroup.owningReflection.kind === ReflectionKind.Module) {
-              const children = this.getGroupChildren(projectGroup);
+            const children = this.getGroupChildren(projectGroup);
+            if (
+              projectGroup.title ===
+              this.theme.application.internationalization.proxy.kind_plural_module()
+            ) {
               if (children?.length) {
                 this.navigation.push(
                   ...children.filter((child) => child.title !== entryModule),
                 );
               }
             } else {
-              this.navigation.push({
-                title: projectGroup.title,
-                children: projectGroup.children.map((child) => {
-                  return {
-                    title: child.name,
-                    kind: child.kind,
-                    path: child.url,
-                  };
-                }),
-              });
+              if (this.navigationOptions.excludeGroups) {
+                if (children?.length) {
+                  this.navigation.push(
+                    ...children.filter((child) => child.title !== entryModule),
+                  );
+                }
+              } else {
+                if (
+                  projectGroup.owningReflection.kind === ReflectionKind.Document
+                ) {
+                  this.navigation.push({
+                    title: projectGroup.title,
+                    children: projectGroup.children.map((child) => {
+                      return {
+                        title: child.name,
+                        kind: child.kind,
+                        path: child.url,
+                      };
+                    }),
+                  });
+                } else {
+                  this.navigation.push({
+                    title: projectGroup.title,
+                    children: children?.filter(
+                      (child) => child.title !== entryModule,
+                    ),
+                  });
+                }
+              }
             }
           });
         } else {

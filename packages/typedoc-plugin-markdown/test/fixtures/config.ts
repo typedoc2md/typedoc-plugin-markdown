@@ -341,6 +341,36 @@ const config: Record<string, Fixture> = {
       },
     ],
   },
+  navigation: {
+    only: false,
+    entryPoints: [
+      '/navigation/module-1/index.ts',
+      '/navigation/module-2/index.ts',
+    ],
+    commonOptions: {
+      hidePageHeader: true,
+      readme: 'none',
+      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+    },
+    options: [
+      {
+        navigation: {
+          includeCategories: false,
+          includeGroups: false,
+          includeFolders: false,
+        },
+        categorizeByGroup: true,
+      },
+      {
+        navigation: {
+          includeCategories: true,
+          includeGroups: true,
+          includeFolders: true,
+        },
+        categorizeByGroup: false,
+      },
+    ],
+  },
 };
 
 export default config;

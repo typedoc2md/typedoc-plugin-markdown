@@ -963,6 +963,149 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
 ]"
 `;
 
+exports[`Navigation should get with and without groups and categories: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "Module1",
+    "kind": 2,
+    "path": "Module1/README.md",
+    "children": [
+      {
+        "title": "SomeInterface1",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface1.md"
+      },
+      {
+        "title": "SomeInterface2",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface2.md"
+      },
+      {
+        "title": "SomeInterface3",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface3.md"
+      }
+    ]
+  },
+  {
+    "title": "Module2",
+    "kind": 2,
+    "path": "Module2/README.md",
+    "children": [
+      {
+        "title": "SomeInterface",
+        "kind": 256,
+        "path": "Module2/interfaces/SomeInterface.md"
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should get with and without groups and categories: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "Group 1",
+    "children": [
+      {
+        "title": "Module1",
+        "kind": 2,
+        "path": "Module1/README.md",
+        "children": [
+          {
+            "title": "Category 1",
+            "children": [
+              {
+                "title": "SomeInterface1",
+                "kind": 256,
+                "path": "Module1/interfaces/SomeInterface1.md"
+              },
+              {
+                "title": "SomeInterface2",
+                "kind": 256,
+                "path": "Module1/interfaces/SomeInterface2.md"
+              }
+            ]
+          },
+          {
+            "title": "Category 2",
+            "children": [
+              {
+                "title": "SomeInterface3",
+                "kind": 256,
+                "path": "Module1/interfaces/SomeInterface3.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Group 2",
+    "children": [
+      {
+        "title": "Module2",
+        "kind": 2,
+        "path": "Module2/README.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "SomeInterface",
+                "kind": 256,
+                "path": "Module2/interfaces/SomeInterface.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should get with and without groups and categories: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "Module1",
+    "kind": 2,
+    "path": "Module1.md"
+  },
+  {
+    "title": "Module2",
+    "kind": 2,
+    "path": "Module2.md"
+  }
+]"
+`;
+
+exports[`Navigation should get with and without groups and categories: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"[
+  {
+    "title": "Group 1",
+    "children": [
+      {
+        "title": "Module1",
+        "kind": 2,
+        "path": "Module1.md"
+      }
+    ]
+  },
+  {
+    "title": "Group 2",
+    "children": [
+      {
+        "title": "Module2",
+        "kind": 2,
+        "path": "Module2.md"
+      }
+    ]
+  }
+]"
+`;
+
 exports[`Navigation should gets Navigation Json for documents multi module: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {

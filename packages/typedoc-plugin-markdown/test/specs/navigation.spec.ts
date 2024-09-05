@@ -1,6 +1,10 @@
 import { expectFileToEqual } from '@devtools/testing';
 
 describe(`Navigation`, () => {
+  test(`should get with and without groups and categories`, () => {
+    expectFileToEqual('navigation', ['members', 'modules'], 'sidebar.json');
+  });
+
   test(`should gets Navigation Json for single entry point`, () => {
     expectFileToEqual('reflections', ['members', 'modules'], 'sidebar.json', 1);
   });

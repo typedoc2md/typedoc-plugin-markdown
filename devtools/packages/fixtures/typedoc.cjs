@@ -12,9 +12,6 @@ module.exports = {
       URL: 'https://developer.mozilla.org/en-US/docs/Web/API/URL',
     },
   },
-  navigation: {
-    includeGroups: true,
-  },
   locales: {
     en: {
       theme_defined_in: 'Source',
