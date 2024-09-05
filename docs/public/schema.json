@@ -154,7 +154,8 @@
               "type": "boolean"
             }
           },
-          "description": "[typedoc-plugin-markdown] Configures how the navigation model will be generated.",
+          "deprecated": "This option has been deprecated in favour of TypeDoc `navigation` option.",
+          "description": "[typedoc-plugin-markdown] This option has been deprecated in favour of TypeDoc `navigation` option.",
           "default": {
             "excludeGroups": false,
             "excludeCategories": false,
