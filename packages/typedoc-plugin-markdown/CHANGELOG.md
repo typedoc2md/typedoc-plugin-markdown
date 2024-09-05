@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.2.7
+## 4.2.7 (2024-09-05)
 
 ### Patch Changes
 
