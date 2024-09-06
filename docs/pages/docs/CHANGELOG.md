@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.2.7 (2024-09-05)
+
+### Patch Changes
+
+- Correctly handle top level custom groups in navigation ([#685](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/685))
+- Fix missing index descriptions for some signatures ([#670](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/670))
+- Add '?' for optional type declarations in tables
+
 ## 4.2.6 (2024-08-25)
 
 ### Patch Changes
