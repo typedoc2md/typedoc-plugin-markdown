@@ -8,7 +8,7 @@ export interface PluginOptions {
   /**
    * Specify which comment block tags should be added to frontmatter.
    */
-  frontmatterCommentTags: any[];
+  frontmatterCommentTags: string[];
 
   /**
    * Specify static variables to be added to all frontmatter blocks.

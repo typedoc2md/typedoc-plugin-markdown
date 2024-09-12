@@ -5,7 +5,7 @@ import { IndexFrontmatter } from './types/options';
 import { ReadmeFrontmatter } from './types/options';
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
-    frontmatterCommentTags: any[];
+    frontmatterCommentTags: string[];
     frontmatterGlobals: ManuallyValidatedOption<FrontmatterGlobals>;
     frontmatterNamingConvention: 'camelCase' | 'snakeCase';
     indexFrontmatter: ManuallyValidatedOption<IndexFrontmatter>;

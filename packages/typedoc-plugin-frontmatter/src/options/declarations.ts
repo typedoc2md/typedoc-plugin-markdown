@@ -54,22 +54,7 @@ export const indexFrontmatter: Partial<DeclarationOption> = {
  * author: Joe Bloggs
  * description: A description that will be added to frontmatter.
  * ---
- * ```
- *
- * In addition any non standard tags should be added to a `tsdoc.json` file and added next to your `tsconfig.json` file.
- *
- * ```json filename="tsdoc.json"
- * {
- *   "$schema": "https://developer.microsoft.com/en-us/json-schemas/tsdoc/v0/tsdoc.schema.json",
- *   "extends": ["typedoc/tsdoc.json"],
- *   "tagDefinitions": [
- *       {
- *           "tagName": "@customTag",
- *           "syntaxKind": "modifier"
- *       }
- *   ]
- * }
- * ```
+ * ````
  *
  * @example ["author", "description"]
  */

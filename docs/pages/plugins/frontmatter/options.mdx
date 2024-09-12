@@ -64,7 +64,7 @@ sidebar: true
   Specify which comment block tags should be added to frontmatter.
 </Callout>
 
-> Accepts an Array.
+> Accepts an array of string values.
 
 Frontmatter variables can be added by extracting comments from block (@) tags.
 
@@ -83,21 +83,6 @@ Please note tags must be added to the comment blocks of the symbol exported to a
 author: Joe Bloggs
 description: A description that will be added to frontmatter.
 ---
-```
-
-In addition any non standard tags should be added to a `tsdoc.json` file and added next to your `tsconfig.json` file.
-
-```json filename="tsdoc.json"
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/tsdoc/v0/tsdoc.schema.json",
-  "extends": ["typedoc/tsdoc.json"],
-  "tagDefinitions": [
-    {
-      "tagName": "@customTag",
-      "syntaxKind": "modifier"
-    }
-  ]
-}
 ```
 
 ```json filename="typedoc.json"

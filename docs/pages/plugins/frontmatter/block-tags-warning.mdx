@@ -1,0 +1,46 @@
+# Block Tags Warning
+
+If using a custom tag, TypeDoc (since 0.26) will generate the following warning:
+
+```shell
+[warning] Encountered an unknown block tag @description
+```
+
+To suppress this warning you have two options.
+
+#### 1. Using the `--blockTags` TypeDoc option:
+
+You can extend the tag defaults by using a JavaScript configuration file:
+
+```ts
+import { OptionDefaults } from 'typedoc';
+
+const config = {
+  blockTags: [...OptionDefaults.blockTags, '@description', '@author'],
+};
+```
+
+See https://typedoc.org/options/comments/#blocktags.
+
+#### 2. Adding a `tsdoc.json` file:
+
+You add a `tsdoc.json` file next to your `tsconfig.json` file and include the `@source` tag name.
+
+```json
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/tsdoc/v0/tsdoc.schema.json",
+  "extends": ["typedoc/tsdoc.json"],
+  "tagDefinitions": [
+    {
+      "tagName": "@description",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@author",
+      "syntaxKind": "block"
+    }
+  ]
+}
+```
+
+See https://typedoc.org/options/configuration/#tsconfig.
