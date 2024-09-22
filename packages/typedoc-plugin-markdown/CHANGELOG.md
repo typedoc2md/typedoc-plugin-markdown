@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.8
+
+### Patch Changes
+
+- Fix missing slash when public path is prefixed with http ([#688](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/688))
+
 ## 4.2.7 (2024-09-05)
 
 ### Patch Changes
