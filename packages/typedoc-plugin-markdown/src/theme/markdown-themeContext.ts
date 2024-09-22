@@ -138,7 +138,10 @@ export class MarkdownThemeContext {
       const publicPath = this.options.getValue('publicPath');
 
       if (publicPath && !ignorePublicPath) {
-        return encodeURI(path.join(publicPath, url).replace(/\\/g, '/'));
+        return encodeURI(`${publicPath.replace(/\/$/, '')}/${url}`).replace(
+          /\\/g,
+          '/',
+        );
       }
 
       const baseUrl = path.relative(

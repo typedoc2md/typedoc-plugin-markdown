@@ -152,7 +152,7 @@ const config: Record<string, Fixture> = {
       {
         useHTMLAnchors: true,
         preserveAnchorCasing: true,
-        publicPath: 'http://example.com',
+        publicPath: 'https://example.com',
         sanitizeComments: true,
         flattenOutputFiles: true,
         enumMembersFormat: 'htmlTable',
