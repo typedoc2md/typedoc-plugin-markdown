@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.2.8
+## 4.2.8 (2024-09-22)
 
 ### Patch Changes
 
