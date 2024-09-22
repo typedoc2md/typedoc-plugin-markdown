@@ -54,10 +54,12 @@ export function project(
         children: page.model.documents,
       } as ReflectionGroup;
       md.push(heading(2, ReflectionKind.pluralString(ReflectionKind.Document)));
-      md.push(this.helpers.getGroupIndex(group));
+      md.push(this.partials.groupIndex(group));
     }
 
-    if (page.model.children?.some((child) => child.kind !== ReflectionKind.Module)) {
+    if (
+      page.model.children?.some((child) => child.kind !== ReflectionKind.Module)
+    ) {
       md.push(this.partials.body(page.model, { headingLevel: 2 }));
     }
 

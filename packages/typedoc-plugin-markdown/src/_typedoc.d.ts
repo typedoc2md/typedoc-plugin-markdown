@@ -35,7 +35,7 @@ declare module 'typedoc' {
       excludeCategories: boolean;
       excludeFolders: boolean;
     };
-    outputFileStrategy: 'members' | 'modules';
+    outputFileStrategy: 'categories' | 'groups' | 'members' | 'modules';
     parametersFormat: 'list' | 'table' | 'htmlTable';
     preserveAnchorCasing: boolean;
     propertiesFormat: 'list' | 'table' | 'htmlTable';
@@ -67,6 +67,8 @@ declare module 'typedoc' {
 
   export namespace Internationalization {
     export interface TranslatableStrings {
+      theme_category: [];
+      theme_categories: [];
       theme_default_value: [];
       theme_default_type: [];
       theme_description: [];

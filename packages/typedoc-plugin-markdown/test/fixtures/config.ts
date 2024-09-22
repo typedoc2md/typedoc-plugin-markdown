@@ -295,6 +295,104 @@ const config: Record<string, Fixture> = {
       },
     ],
   },
+  groupsOutput: {
+    only: true,
+    entryPoints: ['/groups/has-custom-groups.ts', '/groups/has-namespaces.ts'],
+    outputFileStrategies: ['groups'],
+    commonOptions: {
+      disableSources: true,
+      readme: 'none',
+      categorizeByGroup: false,
+      indexFormat: 'table',
+      name: 'groups-out',
+      /*membersWithOwnFile: [
+        'Class',
+        'Interface',
+        'Enum',
+        'TypeAlias',
+        'Function',
+      ],*/
+    },
+    options: [
+      {
+        plugin: [
+          path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
+        ],
+      },
+    ],
+  },
+  groupsSingleModuleOutput: {
+    only: true,
+    entryPoints: ['/groups/has-custom-groups.ts'],
+    outputFileStrategies: ['groups'],
+    commonOptions: {
+      disableSources: true,
+      readme: 'none',
+      categorizeByGroup: false,
+      indexFormat: 'table',
+      name: 'groups-out-single-module',
+    },
+    options: [
+      {
+        plugin: [
+          path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
+        ],
+      },
+    ],
+  },
+  categoriesOutput: {
+    only: true,
+    entryPoints: [
+      '/categories/module-1.ts',
+      '/categories/module-2.ts',
+      '/categories/module-3.ts',
+    ],
+    outputFileStrategies: ['categories'],
+    commonOptions: {
+      disableSources: true,
+      readme: 'none',
+      categorizeByGroup: false,
+      indexFormat: 'table',
+      name: 'categories-out',
+      /*membersWithOwnFile: [
+        'Class',
+        'Interface',
+        'Enum',
+        'TypeAlias',
+        'Function',
+      ],*/
+    },
+    options: [
+      {
+        plugin: [
+          path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
+        ],
+      },
+    ],
+  },
+  categoriesSingleModuleOutput: {
+    only: true,
+    entryPoints: ['/categories/module-1.ts'],
+    outputFileStrategies: ['categories'],
+    commonOptions: {
+      disableSources: true,
+      readme: 'none',
+      categorizeByGroup: false,
+      name: 'categories-out-single-module',
+    },
+    options: [
+      {
+        indexFormat: 'table',
+        plugin: [
+          path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
+        ],
+      },
+    ],
+  },
   documents: {
     only: false,
     entryPoints: ['/documents/module-1.ts', '/documents/module-2.ts'],

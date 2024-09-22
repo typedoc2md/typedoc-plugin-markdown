@@ -10,7 +10,14 @@ export function load(app) {
     fs.writeFileSync(
       `${output.outputDirectory}/urls.json`,
       JSON.stringify(
-        output.urls.map((url) => url.url),
+        output.urls?.map((url) => ({
+          url: url.url,
+          model: {
+            id: url.model?.id,
+            name: url.model?.name,
+            kind: url.model?.kind,
+          },
+        })),
         null,
         2,
       ),

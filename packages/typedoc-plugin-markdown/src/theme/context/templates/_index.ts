@@ -1,3 +1,4 @@
+export * from './category';
 export * from './document';
 export * from './index';
 export * from './project';

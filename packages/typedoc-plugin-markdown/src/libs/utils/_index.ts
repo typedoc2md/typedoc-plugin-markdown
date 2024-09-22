@@ -3,6 +3,7 @@ export * from './encode-angle-brackets';
 export * from './escape-chars';
 export * from './format-markdown';
 export * from './format-table-cell';
+export * from './get-directory-name';
 export * from './get-file-name-with-extension';
 export * from './index';
 export * from './is-quoted';
