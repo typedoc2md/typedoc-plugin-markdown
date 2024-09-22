@@ -129,7 +129,7 @@ export interface PluginOptions {
   /**
    * Determines how output files are generated.
    */
-  outputFileStrategy: 'members' | 'modules';
+  outputFileStrategy: 'categories' | 'groups' | 'members' | 'modules';
 
   /**
    * Sets the format of parameter and type parameter groups.

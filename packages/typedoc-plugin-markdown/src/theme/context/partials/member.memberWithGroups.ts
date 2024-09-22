@@ -1,3 +1,4 @@
+import { OutputFileStrategy } from '@plugin/options/maps';
 import { heading, unorderedList } from 'libs/markdown';
 import { MarkdownThemeContext } from 'theme';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
@@ -93,9 +94,15 @@ export function memberWithGroups(
     model.documents ||
     model?.groups?.some((group) => group.allChildrenHaveOwnDocument())
   ) {
-    const isAbsoluteIndex = model?.groups?.every(
-      (group) => group.owningReflection.kind !== ReflectionKind.Document,
-    );
+    const isAbsoluteIndex =
+      this.options.getValue('outputFileStrategy') !==
+        OutputFileStrategy.Categories &&
+      this.options.getValue('outputFileStrategy') !==
+        OutputFileStrategy.Groups &&
+      model?.groups?.every(
+        (group) => group.owningReflection.kind !== ReflectionKind.Document,
+      );
+
     if (isAbsoluteIndex) {
       md.push(heading(options.headingLevel, this.i18n.theme_index()));
     }
@@ -107,14 +114,19 @@ export function memberWithGroups(
         }),
       );
     }
-
-    md.push(
-      this.partials.reflectionIndex(model, {
-        headingLevel: isAbsoluteIndex
-          ? options.headingLevel + 1
-          : options.headingLevel,
-      }),
-    );
+    if (
+      this.options.getValue('outputFileStrategy') !==
+        OutputFileStrategy.Categories &&
+      this.options.getValue('outputFileStrategy') !== OutputFileStrategy.Groups
+    ) {
+      md.push(
+        this.partials.reflectionIndex(model, {
+          headingLevel: isAbsoluteIndex
+            ? options.headingLevel + 1
+            : options.headingLevel,
+        }),
+      );
+    }
   }
 
   md.push(this.partials.body(model, { headingLevel: options.headingLevel }));

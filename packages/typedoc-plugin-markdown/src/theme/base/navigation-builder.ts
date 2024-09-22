@@ -277,7 +277,7 @@ export class NavigationBuilder {
       ?.filter((child) => child.hasOwnDocument)
       .reduce((acc: NavigationItem[], child) => {
         const mapping = this.theme.getTemplateMapping(
-          child.kind,
+          child,
           outputFileStrategy,
         );
         if (mapping) {

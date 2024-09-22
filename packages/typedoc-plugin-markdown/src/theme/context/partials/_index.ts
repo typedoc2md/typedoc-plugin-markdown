@@ -1,6 +1,7 @@
 export * from './comments.comment';
 export * from './container.body';
 export * from './container.categories';
+export * from './container.categoryIndex';
 export * from './container.groups';
 export * from './container.members';
 export * from './index';
@@ -11,6 +12,7 @@ export * from './member.declaration';
 export * from './member.declarationTitle';
 export * from './member.documents';
 export * from './member.enumMembersTable';
+export * from './member.groupIndex';
 export * from './member.hierarchy';
 export * from './member.indexSignature';
 export * from './member.inheritance';

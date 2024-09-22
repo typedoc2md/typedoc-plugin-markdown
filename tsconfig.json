@@ -7,10 +7,10 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": false,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "removeComments": false,
     "sourceMap": false,
     "strictNullChecks": true,
-    "target": "es2021",
-  },
+    "target": "es2021"
+  }
 }

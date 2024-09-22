@@ -51,6 +51,8 @@ export interface UrlOption {
   outputFileStrategy?: OutputFileStrategy;
   entryModule?: string;
   entryFileName?: string;
+  category?: string;
+  group?: string;
 }
 
 /**

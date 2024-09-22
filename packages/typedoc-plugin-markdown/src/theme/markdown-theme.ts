@@ -1,18 +1,22 @@
 import { MarkdownPageEvent } from '@plugin/events';
-import { formatMarkdown } from '@plugin/libs/utils';
+import { formatMarkdown, slugify } from '@plugin/libs/utils';
+import { getDirectoryName } from '@plugin/libs/utils/get-directory-name';
 import { OutputFileStrategy } from '@plugin/options/maps';
 import { MarkdownThemeContext } from '@plugin/theme';
 import { NavigationBuilder, UrlBuilder } from '@plugin/theme/base';
-import { RenderTemplate } from '@plugin/types';
+import { RenderTemplate, UrlMapping } from '@plugin/types';
 import {
   DeclarationReflection,
   DocumentReflection,
   ProjectReflection,
   Reflection,
+  ReflectionCategory,
+  ReflectionGroup,
   ReflectionKind,
   Renderer,
   Theme,
 } from 'typedoc';
+import { NavigationBuilder2 } from './base/navigation-builder-2';
 
 /**
  * The main theme class for the plugin.
@@ -66,6 +70,9 @@ export class MarkdownTheme extends Theme {
   /**
    * Map the models of the given project to a navigation structure.
    */
+  getNavigation2(urls: UrlMapping<Reflection>[]) {
+    return new NavigationBuilder2(this, urls).getNewNavigation();
+  }
   getNavigation(project: ProjectReflection) {
     return new NavigationBuilder(this, project).getNavigation();
   }
@@ -74,7 +81,7 @@ export class MarkdownTheme extends Theme {
    * @internal
    */
   getTemplateMapping(
-    kind: ReflectionKind,
+    reflection: DeclarationReflection | DocumentReflection,
     outputFileStrategy?: OutputFileStrategy,
   ) {
     outputFileStrategy =
@@ -83,24 +90,42 @@ export class MarkdownTheme extends Theme {
         'outputFileStrategy',
       ) as OutputFileStrategy);
 
-    const directoryName = (reflectionKind: ReflectionKind) => {
-      const pluralString = ReflectionKind.pluralString(reflectionKind);
-      return pluralString.replace(/[\s_-]+/g, '-').toLowerCase();
-    };
-
     const membersWithOwnFile =
       this.application.options.getValue('membersWithOwnFile');
 
+    if (
+      outputFileStrategy === OutputFileStrategy.Categories &&
+      reflection instanceof ReflectionCategory
+    ) {
+      return {
+        template: this.sectionTemplate,
+        directory: slugify(reflection.title),
+        kind: null,
+      };
+    }
+
+    if (
+      outputFileStrategy === OutputFileStrategy.Groups &&
+      reflection instanceof ReflectionGroup
+    ) {
+      return {
+        template: this.sectionTemplate,
+        directory: slugify(reflection.title),
+        kind: null,
+      };
+    }
+
     const memberMapping = (
-      template: (pageEvent: MarkdownPageEvent<any>) => string,
+      template: (pageEvent: MarkdownPageEvent) => string,
       kind: ReflectionKind,
     ) => {
       return {
         template,
-        directory: directoryName(kind),
+        directory: getDirectoryName(ReflectionKind.pluralString(kind)),
         kind: kind,
       };
     };
+
     const mappings = {
       [ReflectionKind.Module]: {
         template: this.reflectionTemplate,
@@ -109,12 +134,16 @@ export class MarkdownTheme extends Theme {
       },
       [ReflectionKind.Namespace]: {
         template: this.reflectionTemplate,
-        directory: directoryName(ReflectionKind.Namespace),
+        directory: getDirectoryName(
+          ReflectionKind.pluralString(ReflectionKind.Namespace),
+        ),
         kind: ReflectionKind.Namespace,
       },
       [ReflectionKind.Document]: {
         template: this.documentTemplate,
-        directory: directoryName(ReflectionKind.Document),
+        directory: getDirectoryName(
+          ReflectionKind.pluralString(ReflectionKind.Document),
+        ),
         kind: ReflectionKind.Document,
       },
     };
@@ -191,7 +220,7 @@ export class MarkdownTheme extends Theme {
       );
     }
 
-    return mappings[kind];
+    return mappings[reflection.kind];
   }
 
   /**
@@ -220,5 +249,12 @@ export class MarkdownTheme extends Theme {
    */
   reflectionTemplate = (page: MarkdownPageEvent<DeclarationReflection>) => {
     return this.getRenderContext(page).templates.reflection(page);
+  };
+
+  /**
+   * @internal
+   */
+  sectionTemplate = (page: MarkdownPageEvent<Reflection>) => {
+    return this.getRenderContext(page).templates.section(page);
   };
 }

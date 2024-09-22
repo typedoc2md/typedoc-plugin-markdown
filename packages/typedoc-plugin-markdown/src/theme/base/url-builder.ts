@@ -21,6 +21,8 @@ import {
   Options,
   ProjectReflection,
   Reflection,
+  ReflectionCategory,
+  ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
 
@@ -80,7 +82,6 @@ export class UrlBuilder {
     } else {
       this.buildUrlsFromProject(this.project);
     }
-
     return this.urls;
   }
 
@@ -141,26 +142,59 @@ export class UrlBuilder {
     entryModule?: string,
     entryFileName?: string,
   ) {
+    const groupProps = {
+      ...(parentUrl && { parentUrl }),
+      ...(outputFileStrategy && { outputFileStrategy }),
+      ...(entryModule && { entryModule }),
+      ...(entryFileName && { entryFileName }),
+    };
+
+    const isModulesOnly = project.children?.every(
+      (child) => child.kind === ReflectionKind.Module,
+    );
+
     if (project.documents) {
       project.documents.forEach((document) => {
         this.buildUrlsForDocument(document);
       });
     }
-    project.groups?.forEach((projectGroup) => {
-      projectGroup.children?.forEach((projectGroupChild) => {
-        if (projectGroupChild instanceof DocumentReflection) {
-          this.buildUrlsForDocument(projectGroupChild);
-        }
-        if (projectGroupChild instanceof DeclarationReflection) {
-          this.buildUrlsFromGroup(projectGroupChild, {
-            ...(parentUrl && { parentUrl }),
-            ...(outputFileStrategy && { outputFileStrategy }),
-            ...(entryModule && { entryModule }),
-            ...(entryFileName && { entryFileName }),
-          });
-        }
+
+    if (
+      this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Categories &&
+      project.categories
+    ) {
+      project.categories.forEach((category) => {
+        this.buildUrlsFromGroup(
+          category as unknown as DeclarationReflection,
+          groupProps,
+        );
       });
-    });
+    } else {
+      if (
+        this.options.getValue('outputFileStrategy') ===
+          OutputFileStrategy.Groups &&
+        !isModulesOnly
+      ) {
+        project.groups?.forEach((group) => {
+          this.buildUrlsFromGroup(
+            group as unknown as DeclarationReflection,
+            groupProps,
+          );
+        });
+      } else {
+        project.groups?.forEach((projectGroup) => {
+          projectGroup.children?.forEach((projectGroupChild) => {
+            if (projectGroupChild instanceof DocumentReflection) {
+              this.buildUrlsForDocument(projectGroupChild);
+            }
+            if (projectGroupChild instanceof DeclarationReflection) {
+              this.buildUrlsFromGroup(projectGroupChild, groupProps);
+            }
+          });
+        });
+      }
+    }
   }
 
   private buildUrlsFromPackage(projectChild: DeclarationReflection) {
@@ -268,9 +302,7 @@ export class UrlBuilder {
   }
 
   private buildUrlsForDocument(reflection: DocumentReflection) {
-    const mapping: TemplateMapping = this.theme.getTemplateMapping(
-      reflection.kind,
-    );
+    const mapping: TemplateMapping = this.theme.getTemplateMapping(reflection);
 
     if (mapping) {
       const baseUrl = path.dirname(reflection.parent?.url || '');
@@ -278,6 +310,7 @@ export class UrlBuilder {
       const directory = this.flattenOutputFiles
         ? ReflectionKind.singularString(reflection.kind)
         : (mapping.directory as string);
+
       const filename = [
         getFileNameWithExtension(
           reflection.name.replace(/ /g, '-'),
@@ -315,8 +348,27 @@ export class UrlBuilder {
     reflection: DeclarationReflection,
     urlOptions: UrlOption,
   ) {
+    if (
+      (this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Categories &&
+        reflection instanceof ReflectionCategory) ||
+      (this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Groups &&
+        reflection instanceof ReflectionGroup)
+    ) {
+      reflection.name = reflection.title;
+    }
+
+    if (
+      this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Groups &&
+      reflection instanceof ReflectionGroup
+    ) {
+      reflection.name = reflection.title;
+    }
+
     const mapping: TemplateMapping = this.theme.getTemplateMapping(
-      reflection.kind,
+      reflection,
       urlOptions.outputFileStrategy,
     );
 
@@ -361,19 +413,67 @@ export class UrlBuilder {
       reflection.url = url;
       reflection.hasOwnDocument = true;
 
-      reflection.groups?.forEach((group) => {
-        group.children.forEach((groupChild) => {
-          const mapping = this.theme.getTemplateMapping(
-            groupChild.kind,
-            urlOptions.outputFileStrategy,
+      if (
+        this.options.getValue('outputFileStrategy') ===
+          OutputFileStrategy.Categories &&
+        reflection.categories
+      ) {
+        reflection.categories.forEach((category) => {
+          (category as any).parent = reflection;
+          this.buildUrlsFromGroup(
+            category as unknown as DeclarationReflection,
+            {
+              parentUrl: urlPath,
+              directory: null,
+              outputFileStrategy: urlOptions.outputFileStrategy,
+              category: category.title,
+            },
           );
-          this.buildUrlsFromGroup(groupChild as DeclarationReflection, {
+        });
+      }
+      if (
+        this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Groups
+      ) {
+        reflection.groups?.forEach((group) => {
+          (group as any).parent = reflection;
+          this.buildUrlsFromGroup(group as unknown as DeclarationReflection, {
             parentUrl: urlPath,
-            directory: mapping?.directory || null,
             outputFileStrategy: urlOptions.outputFileStrategy,
           });
         });
-      });
+      }
+
+      if (reflection.categories?.length) {
+        reflection.categories?.forEach((category) => {
+          category.children.forEach((groupChild) => {
+            const mapping = this.theme.getTemplateMapping(
+              groupChild,
+              urlOptions.outputFileStrategy,
+            );
+            this.buildUrlsFromGroup(groupChild as DeclarationReflection, {
+              parentUrl: urlPath,
+              category: category.title,
+              directory: mapping?.directory || null,
+              outputFileStrategy: urlOptions.outputFileStrategy,
+            });
+          });
+        });
+      } else {
+        reflection.groups?.forEach((group) => {
+          group.children.forEach((groupChild) => {
+            const mapping = this.theme.getTemplateMapping(
+              groupChild,
+              urlOptions.outputFileStrategy,
+            );
+            this.buildUrlsFromGroup(groupChild as DeclarationReflection, {
+              parentUrl: urlPath,
+              directory: mapping?.directory || null,
+              outputFileStrategy: urlOptions.outputFileStrategy,
+            });
+          });
+        });
+      }
     } else if (reflection.parent) {
       this.traverseChildren(reflection, reflection.parent);
     }
@@ -411,7 +511,7 @@ export class UrlBuilder {
     const fullName = reflection.getFullName();
 
     const fullNameParts = fullName.replace(/\//g, '.').split('.');
-    if (reflection.kind !== ReflectionKind.Module) {
+    if (reflection.kind && reflection.kind !== ReflectionKind.Module) {
       fullNameParts.splice(
         fullNameParts.length - 1,
         0,
@@ -434,7 +534,8 @@ export class UrlBuilder {
     return name
       .replace(/"/g, '')
       .replace(/^_+|_+$/g, '')
-      .replace(/[<>]/g, '-');
+      .replace(/[<>]/g, '-')
+      .replace(/\s+/g, '-');
   }
 
   private getUrlPath(reflection: DeclarationReflection, urlOption: UrlOption) {
@@ -445,16 +546,31 @@ export class UrlBuilder {
       : null;
 
     const dir = () => {
+      if (!reflection.kind) {
+        return null;
+      }
+
       if (reflection.kind === ReflectionKind.Namespace) {
-        return `${urlOption.directory}/${alias}`;
+        const baseDir =
+          this.options.getValue('outputFileStrategy') ===
+            OutputFileStrategy.Categories && urlOption.category
+            ? `${slugify(urlOption.category)}/${urlOption.directory}`
+            : urlOption.directory;
+        return `${baseDir}/${alias}`;
       }
 
       if (reflection.kind === ReflectionKind.Module) {
         return alias;
       }
 
+      const baseDir =
+        this.options.getValue('outputFileStrategy') ===
+          OutputFileStrategy.Categories && urlOption.category
+          ? `${slugify(urlOption.category)}/${urlOption.directory}`
+          : urlOption.directory;
+
       return urlOption.directory
-        ? urlOption.directory
+        ? baseDir
         : `${slugify(ReflectionKind.singularString(reflection.kind))}.${alias}`;
     };
 

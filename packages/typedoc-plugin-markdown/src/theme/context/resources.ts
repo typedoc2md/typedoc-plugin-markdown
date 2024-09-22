@@ -63,6 +63,12 @@ export const resourceTemplates = (context: MarkdownThemeContext) => {
 
     reflection: (page: MarkdownPageEvent<DeclarationReflection>) =>
       templates.reflection.apply(context, [page]) as string,
+    /**
+     * Template that maps to individual sections (categories or groups).
+     */
+
+    section: (page: MarkdownPageEvent<Reflection>) =>
+      templates.section.apply(context, [page]) as string,
   };
 };
 
@@ -84,6 +90,8 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
       model: ReflectionCategory[],
       options: { headingLevel: number },
     ) => partials.categories.apply(context, [model, options]) as string,
+    categoryIndex: (model: ReflectionCategory[]) =>
+      partials.categoryIndex.apply(context, [model]) as string,
     groups: (
       model: ReflectionGroup[],
       options: { headingLevel: number; kind: ReflectionKind },
@@ -119,6 +127,10 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
     ) => partials.documents.apply(context, [model, options]) as string,
     enumMembersTable: (model: DeclarationReflection[]) =>
       partials.enumMembersTable.apply(context, [model]) as string,
+    groupIndex: (
+      model: ReflectionCategory | ReflectionGroup,
+      options?: { filterKinds: ReflectionKind[] } | undefined,
+    ) => partials.groupIndex.apply(context, [model, options]) as string,
     hierarchy: (
       model: DeclarationHierarchy,
       options: { headingLevel: number },
@@ -275,10 +287,6 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getDeclarationType.apply(context, [model]) as
         | SomeType
         | undefined,
-    getDescriptionForComment: (comment: Comment) =>
-      helpers.getDescriptionForComment.apply(context, [comment]) as
-        | string
-        | null,
     getFlattenedDeclarations: (
       model: DeclarationReflection[],
       options?: { includeSignatures: boolean } | undefined,
@@ -287,14 +295,6 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
         model,
         options,
       ]) as DeclarationReflection[],
-    getGroupIndexList: (
-      children: DeclarationReflection[] | DocumentReflection[],
-    ) => helpers.getGroupIndexList.apply(context, [children]) as string,
-    getGroupIndexTable: (
-      children: DeclarationReflection[] | DocumentReflection[],
-    ) => helpers.getGroupIndexTable.apply(context, [children]) as string,
-    getGroupIndex: (group: ReflectionCategory | ReflectionGroup) =>
-      helpers.getGroupIndex.apply(context, [group]) as any,
     getHierarchyType: (
       model: SomeType,
       options?: { isTarget: boolean } | undefined,
@@ -319,6 +319,16 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getReflectionFlags.apply(context, [reflectionFlags]) as string,
     getReturnType: (model?: SomeType | undefined) =>
       helpers.getReturnType.apply(context, [model]) as string,
+    /**
+     * Returns the first paragraph from given comment parts
+     */
+
+    getShortDescription: (
+      commentDisplayParts?: CommentDisplayPart[] | undefined,
+    ) =>
+      helpers.getShortDescription.apply(context, [
+        commentDisplayParts,
+      ]) as string,
     isGroupKind: (model: DeclarationReflection | SignatureReflection) =>
       helpers.isGroupKind.apply(context, [model]) as boolean,
     useTableFormat: (

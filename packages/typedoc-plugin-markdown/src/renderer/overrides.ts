@@ -1,7 +1,7 @@
 import { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/events';
 import * as fs from 'fs';
 import * as path from 'path';
-import { ProjectReflection, Reflection } from 'typedoc';
+import { ProjectReflection } from 'typedoc';
 
 /**
  * Replacement of TypeDoc's Application.generateDocs method to decouple HTML logic.
@@ -88,31 +88,25 @@ export async function render(
     `There are ${output.urls?.length} pages to write.`,
   );
 
-  output.urls
-    ?.filter((urlMapping) => urlMapping.model instanceof Reflection)
-    .forEach(async (urlMapping) => {
-      const [template, page] = output.createPageEvent(urlMapping);
+  output.urls?.forEach(async (urlMapping) => {
+    const [template, page] = output.createPageEvent(urlMapping);
 
-      page.contents = '';
+    page.contents = '';
 
-      this.trigger(MarkdownPageEvent.BEGIN, page);
+    this.trigger(MarkdownPageEvent.BEGIN, page);
 
-      if (page.model instanceof Reflection) {
-        page.contents = page.contents + this.theme!.render(page, template);
-      } else {
-        throw new Error('Should be unreachable');
-      }
+    page.contents = page.contents + this.theme!.render(page, template);
 
-      this.trigger(MarkdownPageEvent.END, page);
+    this.trigger(MarkdownPageEvent.END, page);
 
-      try {
-        writeFileSync(page.filename, page.contents as string);
-      } catch {
-        this.application.logger.error(
-          this.application.i18n.could_not_write_0(page.filename),
-        );
-      }
-    });
+    try {
+      writeFileSync(page.filename, page.contents as string);
+    } catch {
+      this.application.logger.error(
+        this.application.i18n.could_not_write_0(page.filename),
+      );
+    }
+  });
 
   // copy resolved files to media directory
   const media = path.join(outputDirectory, '_media');

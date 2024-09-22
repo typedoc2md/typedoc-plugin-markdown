@@ -1,4 +1,5 @@
 #!/usr/bin/env ts-node
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { getPackageName } from '@devtools/helpers';
 import { spawn } from 'child_process';
@@ -24,8 +25,8 @@ async function main() {
     return config.only;
   });
 
-  const fixturesToBuild = filtered.length ? filtered : fixtures;
-
+  //const fixturesToBuild = filtered.length ? filtered : fixtures;
+  const fixturesToBuild = fixtures;
   const fixtureCount = fixturesToBuild.reduce(
     (prev, curr) =>
       prev +
@@ -38,10 +39,10 @@ async function main() {
   );
 
   fixturesToBuild.forEach(([key, config]) => {
-    const outputFileStrategies: ('members' | 'modules')[] =
+    const outputFileStrategies: ('members' | 'modules' | 'categories')[] =
       config.outputFileStrategies || ['members', 'modules'];
 
-    //writeHtml(key, config.entryPoints);
+    writeHtml(key, config.entryPoints);
     outputFileStrategies.forEach((outputFileStrategy) => {
       config.options.forEach((optionGroup, index: number) => {
         const options = {
@@ -64,7 +65,7 @@ async function main() {
 function writeMarkdown(
   key: string,
   entryPoints: string[],
-  outputFileStrategy: 'members' | 'modules',
+  outputFileStrategy: 'members' | 'modules' | 'categories',
   options: any,
   optionDir: string,
 ) {
@@ -85,7 +86,7 @@ function writeMarkdown(
         '-options',
         path.join(__dirname, 'typedoc.cjs'),
         '-logLevel',
-        'None',
+        'Warn',
         '-out',
         fullPath,
       ],

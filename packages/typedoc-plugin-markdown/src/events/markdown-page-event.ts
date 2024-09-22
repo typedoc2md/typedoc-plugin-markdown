@@ -15,7 +15,6 @@ export class MarkdownPageEvent<
 
   /**
    * The model that that is being rendered on this page.
-   * Either a {@linkcode typedoc!DeclarationReflection DeclarationReflection} or {@linkcode typedoc!ProjectReflection ProjectReflection}.
    */
   readonly model: Model;
 
