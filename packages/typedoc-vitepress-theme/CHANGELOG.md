@@ -2,7 +2,7 @@
 
 ## 1.0.2
 
-### Patch Changes
+### Patch Changes (2024-09-30)
 
 - Fix sidebar links when "out" and "docsRoot" are the same value ([#695](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/695))
 
