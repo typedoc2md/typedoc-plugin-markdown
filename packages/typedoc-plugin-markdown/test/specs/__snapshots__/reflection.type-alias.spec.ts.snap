@@ -237,7 +237,7 @@ Comments for LiteralType
 | \`set accessorA\` | \`void\` | Comments for accessorA setter |
 | \`get accessorB\` | \`string\` | - |
 | \`set accessorB\` | \`void\` | - |
-| \`someFunction\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\> | Comments for someFunction |
+| \`someFunction()\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\> | Comments for someFunction |
 
 ## Source
 

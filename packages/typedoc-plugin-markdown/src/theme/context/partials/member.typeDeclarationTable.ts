@@ -51,8 +51,14 @@ export function typeDeclarationTable(
   declarations.forEach((declaration: DeclarationReflection) => {
     const row: string[] = [];
 
+    const name: string[] = [declaration.name];
+
+    if (declaration.signatures?.length) {
+      name.push('()');
+    }
+
     const optional = declaration.flags.isOptional ? '?' : '';
-    row.push(`${backTicks(declaration.name)}${optional}`);
+    row.push(`${backTicks(name.join(''))}${optional}`);
 
     row.push(this.partials.someType(declaration.type));
 
