@@ -1,7 +1,6 @@
 {
-  "extends": [
-    "../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs"
-  ],
+  "extends": ["../../packages/fixtures/typedoc.cjs"],
+  "tsconfig": "../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json",
   "entryPoints": [
     "../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts"
   ],

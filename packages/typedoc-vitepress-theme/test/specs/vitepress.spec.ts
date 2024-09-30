@@ -35,4 +35,13 @@ describe(`VitePress`, () => {
       .toString();
     expect(contents).toMatchSnapshot();
   });
+
+  test(`should generate typedoc sidebar with duplicate out and docsRoots`, async () => {
+    const contents = fs
+      .readFileSync(
+        path.join(__dirname, '../out/sidebar-options-2/typedoc-sidebar.json'),
+      )
+      .toString();
+    expect(contents).toMatchSnapshot();
+  });
 });

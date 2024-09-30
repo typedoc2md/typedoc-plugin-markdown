@@ -1,7 +1,6 @@
 {
   "entryPoints": ["./stubs/*.ts"],
   "tsconfig": "./stubs/tsconfig.json",
-  "out": "./out",
   "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"],
   "readme": "none",
   "disableSources": true,

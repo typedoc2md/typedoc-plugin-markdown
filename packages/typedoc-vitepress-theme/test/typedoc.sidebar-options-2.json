@@ -1,0 +1,4 @@
+{
+  "extends": "./typedoc.base.json",
+  "docsRoot": "./out/sidebar-options-2"
+}

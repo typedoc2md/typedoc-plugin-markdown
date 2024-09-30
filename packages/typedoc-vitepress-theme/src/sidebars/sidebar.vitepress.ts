@@ -15,10 +15,21 @@ function getNavigationItem(
 ) {
   const hasChildren = navigationItem?.children?.length;
 
+  const linkParts: string[] = [];
+
+  if (navigationItem?.path) {
+    if (basePath.length) {
+      linkParts.push(basePath);
+    }
+    linkParts.push(
+      getParsedUrl(navigationItem.path as string).replace(/\\/g, '/'),
+    );
+  }
+
   return {
     text: navigationItem.title,
-    ...(Boolean(navigationItem?.path) && {
-      link: `/${basePath}/${getParsedUrl(navigationItem.path as string).replace(/\\/g, '/')}`,
+    ...(linkParts.length && {
+      link: `/${linkParts.join('/')}`,
     }),
     ...(hasChildren && { collapsed: options.collapsed }),
     ...(hasChildren && {
