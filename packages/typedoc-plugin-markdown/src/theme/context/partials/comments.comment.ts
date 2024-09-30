@@ -10,6 +10,7 @@ export function comment(
     headingLevel?: number;
     showSummary?: boolean;
     showTags?: boolean;
+    showReturns?: boolean;
     isTableColumn?: boolean;
   } = {},
 ) {
@@ -17,6 +18,7 @@ export function comment(
     headingLevel: undefined,
     showSummary: true,
     showTags: true,
+    showReturns: false,
     isTableColumn: false,
     ...options,
   };
@@ -83,7 +85,7 @@ export function comment(
       [],
     );
 
-    const filteredBlockTags = ['@returns'];
+    const filteredBlockTags = opts.showReturns ? [] : ['@returns'];
 
     const tags = blockTags
       .filter((tag) => !filteredBlockTags.includes(tag.tag))

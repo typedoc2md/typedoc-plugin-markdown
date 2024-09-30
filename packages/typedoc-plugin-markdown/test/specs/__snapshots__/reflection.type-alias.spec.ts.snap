@@ -625,6 +625,42 @@ Comments for TypeWithTypeParams
 "
 `;
 
+exports[`Type Alias Reflection should compile type with returns: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type Alias: TypeWithReturns
+
+> **TypeWithReturns**: \`string\`
+
+Comments for TypeWithReturns
+
+## Returns
+
+- return comments.
+
+## Source
+
+[types.ts:1](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile type with returns: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type Alias: TypeWithReturns
+
+\`\`\`ts
+type TypeWithReturns: string;
+\`\`\`
+
+Comments for TypeWithReturns
+
+## Returns
+
+- return comments.
+
+## Source
+
+[types.ts:1](http://source-url)
+"
+`;
+
 exports[`Type Alias Reflection should compile union type with template strings: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UnionTypeWithTemplateStrings
 

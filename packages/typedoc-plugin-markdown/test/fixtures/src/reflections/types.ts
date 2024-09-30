@@ -207,3 +207,11 @@ export type __TypeDeclarationWithSpecialCharacters_<T, U> = {
   '|prop|with|pipes|': '|prop|with|pipes|';
   '`prop`with`backticks`': '`prop`with`backticks`';
 };
+
+/**
+ * Comments for TypeWithReturns
+ *
+ * @returns
+ * - return comments.
+ */
+export type TypeWithReturns = string;

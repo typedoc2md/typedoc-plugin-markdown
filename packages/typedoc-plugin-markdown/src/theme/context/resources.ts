@@ -74,6 +74,7 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
         headingLevel?: number | undefined;
         showSummary?: boolean | undefined;
         showTags?: boolean | undefined;
+        showReturns?: boolean | undefined;
         isTableColumn?: boolean | undefined;
       } = {},
     ) => partials.comment.apply(context, [model, options]) as string,

@@ -163,6 +163,7 @@ export function declaration(
         headingLevel: opts.headingLevel,
         showSummary: false,
         showTags: true,
+        showReturns: true,
       }),
     );
   }

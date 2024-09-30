@@ -4487,6 +4487,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "type-aliases/TypeWithExternalSymbolLinkMapping.md"
       },
       {
+        "title": "TypeWithReturns",
+        "kind": 2097152,
+        "path": "type-aliases/TypeWithReturns.md"
+      },
+      {
         "title": "TypeWithTypeParams",
         "kind": 2097152,
         "path": "type-aliases/TypeWithTypeParams.md"

@@ -112,4 +112,12 @@ describe(`Type Alias Reflection`, () => {
       'type-aliases/UnionTypeWithTemplateStrings.md',
     );
   });
+
+  test(`should compile type with returns`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/TypeWithReturns.md',
+    );
+  });
 });

@@ -87,6 +87,7 @@ Module commments
 | [StringLiteralType](type-aliases/StringLiteralType.md) | Comments for StringLiteralType |
 | [TupleType](type-aliases/TupleType.md) | Comments for TupleType |
 | [TypeWithExternalSymbolLinkMapping](type-aliases/TypeWithExternalSymbolLinkMapping.md) | Comments for TypeWithExternalSymbolLinkMapping |
+| [TypeWithReturns](type-aliases/TypeWithReturns.md) | Comments for TypeWithReturns |
 | [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md) | Comments for TypeWithTypeParams |
 | [UnionType](type-aliases/UnionType.md) | Comments for UnionType |
 | [UnionTypeWithTemplateStrings](type-aliases/UnionTypeWithTemplateStrings.md) | Union with template strings |
