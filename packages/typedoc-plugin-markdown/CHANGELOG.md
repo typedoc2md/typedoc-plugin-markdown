@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.2.9
+
+### Patch Changes
+
+- Expose `@return` block tags on declarations ([#694](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/694))
+- Add parentheses on function names in type declaration table views ([#696](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/696))
+
 ## 4.2.8 (2024-09-22)
 
 ### Patch Changes
