@@ -3,7 +3,7 @@
   "plugin": [
     "typedoc-plugin-markdown",
     "typedoc-plugin-frontmatter",
-    "./custom-plugin"
+    "./custom-plugin.js"
   ],
   "frontmatterGlobals": {
     "layout": "blog",
