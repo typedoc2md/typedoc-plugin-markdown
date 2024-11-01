@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.10
+
+### Patch Changes
+
+- Enhanced the formatting and structure of accessor output ([#711](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/711))
+
 ## 4.2.9 (2024-10-01)
 
 ### Patch Changes
