@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.2.10
+## 4.2.10 (2024-11-01)
 
 ### Patch Changes
 
