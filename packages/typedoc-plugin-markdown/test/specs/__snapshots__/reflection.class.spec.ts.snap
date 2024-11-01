@@ -266,23 +266,31 @@ Comments for ClassWithAccessors
 
 ### accessor
 
-> \`get\` **accessor**(): \`string\`
+#### Get Signature
+
+> **get** **accessor**(): \`string\`
 
 Comments for getter
 
-> \`set\` **accessor**(\`value\`): \`void\`
+##### Returns
+
+\`string\`
+
+#### Set Signature
+
+> **set** **accessor**(\`value\`): \`void\`
 
 Comments for setter
 
-#### Parameters
+##### Parameters
 
 • **value**: \`string\`
 
 Param comments
 
-#### Returns
+##### Returns
 
-\`string\`
+\`void\`
 
 #### Source
 
@@ -292,11 +300,17 @@ Param comments
 
 ### noGetter
 
-> \`set\` **noGetter**(\`x\`): \`void\`
+#### Set Signature
 
-#### Parameters
+> **set** **noGetter**(\`x\`): \`void\`
+
+##### Parameters
 
 • **x**: \`string\`
+
+##### Returns
+
+\`void\`
 
 #### Source
 
@@ -306,9 +320,11 @@ Param comments
 
 ### noSetter
 
-> \`get\` **noSetter**(): \`string\`
+#### Get Signature
 
-#### Returns
+> **get** **noSetter**(): \`string\`
+
+##### Returns
 
 \`string\`
 
@@ -345,11 +361,19 @@ new ClassWithAccessors(): ClassWithAccessors
 
 ### accessor
 
+#### Get Signature
+
 \`\`\`ts
 get accessor(): string
 \`\`\`
 
 Comments for getter
+
+##### Returns
+
+\`string\`
+
+#### Set Signature
 
 \`\`\`ts
 set accessor(value: string): void
@@ -357,15 +381,15 @@ set accessor(value: string): void
 
 Comments for setter
 
-#### Parameters
+##### Parameters
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`value\` | \`string\` | Param comments |
 
-#### Returns
+##### Returns
 
-\`string\`
+\`void\`
 
 #### Source
 
@@ -375,15 +399,21 @@ Comments for setter
 
 ### noGetter
 
+#### Set Signature
+
 \`\`\`ts
 set noGetter(x: string): void
 \`\`\`
 
-#### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | \`x\` | \`string\` |
+
+##### Returns
+
+\`void\`
 
 #### Source
 
@@ -393,11 +423,13 @@ set noGetter(x: string): void
 
 ### noSetter
 
+#### Get Signature
+
 \`\`\`ts
 get noSetter(): string
 \`\`\`
 
-#### Returns
+##### Returns
 
 \`string\`
 

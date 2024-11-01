@@ -11,6 +11,12 @@ export function accessor(
 
   if (model.getSignature) {
     md.push(
+      heading(
+        options.headingLevel,
+        this.internationalization.proxy.kind_get_signature(),
+      ),
+    );
+    md.push(
       this.partials.signatureTitle(model.getSignature, {
         accessor: 'get',
       }),
@@ -18,46 +24,60 @@ export function accessor(
     if (model.getSignature.comment) {
       md.push(
         this.partials.comment(model.getSignature.comment, {
-          headingLevel: options.headingLevel,
+          headingLevel: options.headingLevel + 1,
+        }),
+      );
+    }
+    if (model.getSignature?.type) {
+      md.push(
+        this.partials.signatureReturns(model.getSignature, {
+          headingLevel: options.headingLevel + 1,
         }),
       );
     }
   }
   if (model.setSignature) {
     md.push(
+      heading(
+        options.headingLevel,
+        this.internationalization.proxy.kind_set_signature(),
+      ),
+    );
+    md.push(
       this.partials.signatureTitle(model.setSignature, {
         accessor: 'set',
       }),
     );
+
     if (model.setSignature.comment) {
       md.push(
         this.partials.comment(model.setSignature.comment, {
-          headingLevel: options.headingLevel,
+          headingLevel: options.headingLevel + 1,
         }),
       );
     }
-  }
 
-  if (model.setSignature?.parameters?.length) {
-    md.push(
-      heading(
-        options.headingLevel,
-        this.internationalization.kindPluralString(ReflectionKind.Parameter),
-      ),
-    );
-    if (this.helpers.useTableFormat('parameters')) {
-      md.push(this.partials.parametersTable(model.setSignature.parameters));
-    } else {
-      md.push(this.partials.parametersList(model.setSignature.parameters));
+    if (model.setSignature?.parameters?.length) {
+      md.push(
+        heading(
+          options.headingLevel + 1,
+          this.internationalization.kindPluralString(ReflectionKind.Parameter),
+        ),
+      );
+      if (this.helpers.useTableFormat('parameters')) {
+        md.push(this.partials.parametersTable(model.setSignature.parameters));
+      } else {
+        md.push(this.partials.parametersList(model.setSignature.parameters));
+      }
     }
-  }
 
-  if (model.getSignature?.type) {
-    md.push(
-      this.partials.signatureReturns(model.getSignature, {
-        headingLevel: options.headingLevel,
-      }),
-    );
+    if (model.setSignature?.type) {
+      md.push(
+        this.partials.signatureReturns(model.setSignature, {
+          headingLevel: options.headingLevel + 1,
+        }),
+      );
+    }
   }
 
   if (model.comment) {

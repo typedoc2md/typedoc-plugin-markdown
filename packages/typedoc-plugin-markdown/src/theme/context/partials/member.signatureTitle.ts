@@ -21,7 +21,7 @@ export function signatureTitle(
   }
 
   if (options?.accessor) {
-    md.push(backTicks(options?.accessor) + ' ');
+    md.push(bold(options?.accessor) + ' ');
   }
 
   if (model.parent) {

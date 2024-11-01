@@ -556,35 +556,51 @@ comment for y.z
 
 ### accessorA
 
-> \`get\` **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+#### Get Signature
+
+> **get** **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
 Comments for accessorA getter
 
-> \`set\` **accessorA**(\`x\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>): \`void\`
-
-Comments for accessorA setter
-
-#### Parameters
-
-• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
-
-#### Returns
+##### Returns
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
+#### Set Signature
+
+> **set** **accessorA**(\`x\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>): \`void\`
+
+Comments for accessorA setter
+
+##### Parameters
+
+• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+##### Returns
+
+\`void\`
+
 ### accessorB
 
-> \`get\` **accessorB**(): \`string\`
+#### Get Signature
 
-> \`set\` **accessorB**(\`x\`: \`string\`): \`void\`
+> **get** **accessorB**(): \`string\`
 
-#### Parameters
+##### Returns
+
+\`string\`
+
+#### Set Signature
+
+> **set** **accessorB**(\`x\`: \`string\`): \`void\`
+
+##### Parameters
 
 • **x**: \`string\`
 
-#### Returns
+##### Returns
 
-\`string\`
+\`void\`
 
 ### someFunction()
 
@@ -707,11 +723,19 @@ z: (x: string) => string;
 
 ### accessorA
 
+#### Get Signature
+
 \`\`\`ts
 get accessorA(): Promise<string>
 \`\`\`
 
 Comments for accessorA getter
+
+##### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+#### Set Signature
 
 \`\`\`ts
 set accessorA(x: Promise<string>): void
@@ -719,35 +743,43 @@ set accessorA(x: Promise<string>): void
 
 Comments for accessorA setter
 
-#### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | \`x\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> |
 
-#### Returns
+##### Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+\`void\`
 
 ### accessorB
+
+#### Get Signature
 
 \`\`\`ts
 get accessorB(): string
 \`\`\`
 
+##### Returns
+
+\`string\`
+
+#### Set Signature
+
 \`\`\`ts
 set accessorB(x: string): void
 \`\`\`
 
-#### Parameters
+##### Parameters
 
 | Parameter | Type |
 | :------ | :------ |
 | \`x\` | \`string\` |
 
-#### Returns
+##### Returns
 
-\`string\`
+\`void\`
 
 ### someFunction()
 
