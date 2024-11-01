@@ -41,11 +41,11 @@ Module commments
 | [ClassWithConstructorOverloads](classes/ClassWithConstructorOverloads.md) | Comments for ClassWithConstructorOverloads |
 | [ClassWithFlags](classes/ClassWithFlags.md) | Comment for ClassWithFlags |
 | [ClassWithModifiers](classes/ClassWithModifiers.md) | Comments for ClassWithModifiers |
+| [ClassWithoutPropCategories](classes/ClassWithoutPropCategories.md) | - |
 | [ClassWithPropCategories](classes/ClassWithPropCategories.md) | - |
 | [ClassWithSimpleProps](classes/ClassWithSimpleProps.md) | Comments for ClassWithSimpleProps |
 | [ClassWithSymbols](classes/ClassWithSymbols.md) | - |
 | [ClassWithTypeParameters](classes/ClassWithTypeParameters.md) | Comments for ClassWithTypeParameters |
-| [ClassWithoutPropCategories](classes/ClassWithoutPropCategories.md) | - |
 | [DerivedClassA](classes/DerivedClassA.md) | Comments for DerivedClassA |
 | [DerivedClassB](classes/DerivedClassB.md) | Comments for DerivedClassB |
 | [DisposableClass](classes/DisposableClass.md) | - |
@@ -70,6 +70,7 @@ Module commments
 
 | Type alias | Description |
 | :------ | :------ |
+| [\\_\\_TypeDeclarationWithSpecialCharacters\\_](type-aliases/TypeDeclarationWithSpecialCharacters.md) | Comments for object with special characters |
 | [ArrayOfStuff](type-aliases/ArrayOfStuff.md) | - |
 | [ArrayType](type-aliases/ArrayType.md) | Comments for ArrayType |
 | [ConditionalType](type-aliases/ConditionalType.md) | Comments for ConditionalType |
@@ -91,7 +92,6 @@ Module commments
 | [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md) | Comments for TypeWithTypeParams |
 | [UnionType](type-aliases/UnionType.md) | Comments for UnionType |
 | [UnionTypeWithTemplateStrings](type-aliases/UnionTypeWithTemplateStrings.md) | Union with template strings |
-| [\\_\\_TypeDeclarationWithSpecialCharacters\\_](type-aliases/TypeDeclarationWithSpecialCharacters.md) | Comments for object with special characters |
 
 ## Variables
 
@@ -111,10 +111,10 @@ Module commments
 | [basicFunction](functions/basicFunction.md) | This is a function that is assigned to a variable. |
 | [basicFunctionWithReturns](functions/basicFunctionWithReturns.md) | This is a function that is assigned to a variable. |
 | [functionReturningAFunction](functions/functionReturningAFunction.md) | Comments for function |
+| [functionReturningAnObject](functions/functionReturningAnObject.md) | Comments for function |
 | [functionReturningAPromise](functions/functionReturningAPromise.md) | Comments for function |
 | [functionReturningAString](functions/functionReturningAString.md) | Comments for function |
 | [functionReturningAUnionType](functions/functionReturningAUnionType.md) | Comments for function |
-| [functionReturningAnObject](functions/functionReturningAnObject.md) | Comments for function |
 | [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function parmas |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
 | [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |

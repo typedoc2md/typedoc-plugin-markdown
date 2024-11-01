@@ -1030,8 +1030,8 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 
 | Module | Description |
 | :------ | :------ |
-| [42-module-name](42-module-name/index.md) | - |
 | [\\<internal\\>](-internal-/index.md) | - |
+| [42-module-name](42-module-name/index.md) | - |
 | [basic](basic/index.md) | A basic module |
 | [has-categories](has-categories/index.md) | A module that contains categories |
 | [has-custom-groups](has-custom-groups/index.md) | A module that contains custom groupings |
@@ -1062,7 +1062,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 <tr>
 <td>
 
-[42-module-name](42-module-name/index.md)
+[\\<internal\\>](-internal-/index.md)
 
 </td>
 <td>
@@ -1074,7 +1074,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 <tr>
 <td>
 
-[\\<internal\\>](-internal-/index.md)
+[42-module-name](42-module-name/index.md)
 
 </td>
 <td>
@@ -1183,8 +1183,8 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 
 | Module | Description |
 | :------ | :------ |
-| [42-module-name](42-module-name.md) | - |
 | [\\<internal\\>](-internal-.md) | - |
+| [42-module-name](42-module-name.md) | - |
 | [basic](basic.md) | A basic module |
 | [has-categories](has-categories.md) | A module that contains categories |
 | [has-custom-groups](has-custom-groups.md) | A module that contains custom groupings |
@@ -1215,7 +1215,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 <tr>
 <td>
 
-[42-module-name](42-module-name.md)
+[\\<internal\\>](-internal-.md)
 
 </td>
 <td>
@@ -1227,7 +1227,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 <tr>
 <td>
 
-[\\<internal\\>](-internal-.md)
+[42-module-name](42-module-name.md)
 
 </td>
 <td>
@@ -1495,36 +1495,36 @@ A module that contains namespaces
 
 | Namespace | Description |
 | :------ | :------ |
-| [NamespaceB](namespaces/NamespaceB/index.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
+| [NamespaceB](namespaces/NamespaceB/index.md) | - |
 
 ### Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
-| [EnumB](enumerations/EnumB.md) | - |
 | [\\_Enum\\_A\\_](enumerations/Enum_A.md) | - |
+| [EnumB](enumerations/EnumB.md) | - |
 
 ### Classes
 
 | Class | Description |
 | :------ | :------ |
-| [ClassB](classes/ClassB.md) | - |
 | [\\_\\_Class\\_A\\_](classes/Class_A.md) | - |
+| [ClassB](classes/ClassB.md) | - |
 
 ### Interfaces
 
 | Interface | Description |
 | :------ | :------ |
-| [InterfaceB](interfaces/InterfaceB.md) | - |
 | [\\_Interface\\_A\\_](interfaces/Interface_A.md) | - |
+| [InterfaceB](interfaces/InterfaceB.md) | - |
 
 ### Type Aliases
 
 | Type alias | Description |
 | :------ | :------ |
-| [TypeB](type-aliases/TypeB.md) | - |
 | [\\_Type\\_A\\_](type-aliases/Type_A.md) | - |
+| [TypeB](type-aliases/TypeB.md) | - |
 
 ### Variables
 
@@ -1568,7 +1568,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[NamespaceB](namespaces/NamespaceB/index.md)
+[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
 
 </td>
 <td>
@@ -1580,7 +1580,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
+[NamespaceB](namespaces/NamespaceB/index.md)
 
 </td>
 <td>
@@ -1605,7 +1605,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[EnumB](enumerations/EnumB.md)
+[\\_Enum\\_A\\_](enumerations/Enum_A.md)
 
 </td>
 <td>
@@ -1617,7 +1617,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[\\_Enum\\_A\\_](enumerations/Enum_A.md)
+[EnumB](enumerations/EnumB.md)
 
 </td>
 <td>
@@ -1642,7 +1642,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[ClassB](classes/ClassB.md)
+[\\_\\_Class\\_A\\_](classes/Class_A.md)
 
 </td>
 <td>
@@ -1654,7 +1654,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[\\_\\_Class\\_A\\_](classes/Class_A.md)
+[ClassB](classes/ClassB.md)
 
 </td>
 <td>
@@ -1679,7 +1679,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[InterfaceB](interfaces/InterfaceB.md)
+[\\_Interface\\_A\\_](interfaces/Interface_A.md)
 
 </td>
 <td>
@@ -1691,7 +1691,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[\\_Interface\\_A\\_](interfaces/Interface_A.md)
+[InterfaceB](interfaces/InterfaceB.md)
 
 </td>
 <td>
@@ -1716,7 +1716,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[TypeB](type-aliases/TypeB.md)
+[\\_Type\\_A\\_](type-aliases/Type_A.md)
 
 </td>
 <td>
@@ -1728,7 +1728,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[\\_Type\\_A\\_](type-aliases/Type_A.md)
+[TypeB](type-aliases/TypeB.md)
 
 </td>
 <td>
@@ -1810,28 +1810,18 @@ A module that contains namespaces
 
 | Namespace | Description |
 | :------ | :------ |
-| [NamespaceB](namespaces/NamespaceB.md) | - |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
+| [NamespaceB](namespaces/NamespaceB.md) | - |
 
 ## Enumerations
 
-### EnumB
-
-***
-
 ### \\_Enum\\_A\\_
 
-## Classes
-
-### ClassB
-
-#### Constructors
-
-##### new ClassB()
-
-_SIGNATURE_MEMBER_PARTIAL_
-
 ***
+
+### EnumB
+
+## Classes
 
 ### \\_\\_Class\\_A\\_
 
@@ -1841,23 +1831,33 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 _SIGNATURE_MEMBER_PARTIAL_
 
-## Interfaces
-
-### InterfaceB
-
 ***
+
+### ClassB
+
+#### Constructors
+
+##### new ClassB()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## Interfaces
 
 ### \\_Interface\\_A\\_
 
+***
+
+### InterfaceB
+
 ## Type Aliases
 
-### TypeB
+### \\_Type\\_A\\_
 
 _DECLARATION_MEMBER_PARTIAL_
 
 ***
 
-### \\_Type\\_A\\_
+### TypeB
 
 _DECLARATION_MEMBER_PARTIAL_
 
@@ -1913,7 +1913,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[NamespaceB](namespaces/NamespaceB.md)
+[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
 
 </td>
 <td>
@@ -1925,7 +1925,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
+[NamespaceB](namespaces/NamespaceB.md)
 
 </td>
 <td>
@@ -1937,29 +1937,15 @@ A module that contains namespaces
 </tbody>
 </table>
 
-<a id="enumb" name="enumb"></a>
-
-## EnumB
-
-***
-
 <a id="_enum_a_" name="_enum_a_"></a>
 
 ## \\_Enum\\_A\\_
 
 ***
 
-<a id="classb" name="classb"></a>
+<a id="enumb" name="enumb"></a>
 
-## ClassB
-
-### Constructors
-
-<a id="constructors" name="constructors"></a>
-
-#### new ClassB()
-
-_SIGNATURE_MEMBER_PARTIAL_
+## EnumB
 
 ***
 
@@ -1969,7 +1955,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### Constructors
 
-<a id="constructors-1" name="constructors-1"></a>
+<a id="constructors" name="constructors"></a>
 
 #### new \\_\\_Class\\_A\\_()
 
@@ -1977,9 +1963,17 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="interfaceb" name="interfaceb"></a>
+<a id="classb" name="classb"></a>
 
-## InterfaceB
+## ClassB
+
+### Constructors
+
+<a id="constructors-1" name="constructors-1"></a>
+
+#### new ClassB()
+
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
@@ -1989,17 +1983,23 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="typeb" name="typeb"></a>
+<a id="interfaceb" name="interfaceb"></a>
 
-## TypeB
-
-_DECLARATION_MEMBER_PARTIAL_
+## InterfaceB
 
 ***
 
 <a id="_type_a_" name="_type_a_"></a>
 
 ## \\_Type\\_A\\_
+
+_DECLARATION_MEMBER_PARTIAL_
+
+***
+
+<a id="typeb" name="typeb"></a>
+
+## TypeB
 
 _DECLARATION_MEMBER_PARTIAL_
 
@@ -2067,6 +2067,10 @@ A module that contains references
 
 ## References
 
+### default
+
+Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+
 ### InterfaceA
 
 Re-exports [InterfaceA](basic.md#interfacea)
@@ -2074,10 +2078,6 @@ Re-exports [InterfaceA](basic.md#interfacea)
 ### RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](basic.md#interfaceb)
-
-### default
-
-Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 ## Functions
 
@@ -2098,6 +2098,12 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 A module that contains references
 
+<a id="default" name="default"></a>
+
+## default
+
+Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+
 <a id="interfacea" name="interfacea"></a>
 
 ## InterfaceA
@@ -2109,12 +2115,6 @@ Re-exports [InterfaceA](basic.md#interfacea)
 ## RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](basic.md#interfaceb)
-
-<a id="default" name="default"></a>
-
-## default
-
-Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
 <a id="defaultfunction" name="defaultfunction"></a>
 
@@ -2145,6 +2145,12 @@ A module that contains references
 
 ## References
 
+### default
+
+Renames and re-exports [defaultFunction](functions/defaultFunction.md)
+
+***
+
 ### InterfaceA
 
 Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
@@ -2154,12 +2160,6 @@ Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 ### RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
-
-***
-
-### default
-
-Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 "
 `;
 
@@ -2201,6 +2201,14 @@ A module that contains references
 </tbody>
 </table>
 
+<a id="default" name="default"></a>
+
+## default
+
+Renames and re-exports [defaultFunction](functions/defaultFunction.md)
+
+***
+
 <a id="interfacea" name="interfacea"></a>
 
 ## InterfaceA
@@ -2214,13 +2222,5 @@ Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 ## RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
-
-***
-
-<a id="default" name="default"></a>
-
-## default
-
-Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 "
 `;

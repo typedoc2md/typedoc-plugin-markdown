@@ -1112,11 +1112,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "documents/Project-Document-1.md"
-      },
-      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_2.md"
@@ -1125,6 +1120,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_3.md"
+      },
+      {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "documents/Project-Document-1.md"
       }
     ]
   },
@@ -1423,11 +1423,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "Document.Project-Document-1.md"
-      },
-      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_2.md"
@@ -1436,6 +1431,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_3.md"
+      },
+      {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "Document.Project-Document-1.md"
       }
     ]
   },
@@ -1734,11 +1734,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "documents/Project-Document-1.md"
-      },
-      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_2.md"
@@ -1747,6 +1742,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_3.md"
+      },
+      {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "documents/Project-Document-1.md"
       }
     ]
   },
@@ -1800,11 +1800,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "Document.Project-Document-1.md"
-      },
-      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_2.md"
@@ -1813,6 +1808,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_3.md"
+      },
+      {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "Document.Project-Document-1.md"
       }
     ]
   },
@@ -3367,14 +3367,14 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
   {
-    "title": "42-module-name",
-    "kind": 2,
-    "path": "42-module-name/index.md"
-  },
-  {
     "title": "<internal>",
     "kind": 2,
     "path": "-internal-/index.md"
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name/index.md"
   },
   {
     "title": "basic",
@@ -3538,11 +3538,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-namespaces/index.md",
     "children": [
       {
-        "title": "NamespaceB",
-        "kind": 4,
-        "path": "has-namespaces/namespaces/NamespaceB/index.md"
-      },
-      {
         "title": "_Namespace_A_",
         "kind": 4,
         "path": "has-namespaces/namespaces/Namespace_A/index.md",
@@ -3567,9 +3562,9 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         ]
       },
       {
-        "title": "EnumB",
-        "kind": 8,
-        "path": "has-namespaces/enumerations/EnumB.md"
+        "title": "NamespaceB",
+        "kind": 4,
+        "path": "has-namespaces/namespaces/NamespaceB/index.md"
       },
       {
         "title": "_Enum_A_",
@@ -3577,9 +3572,9 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "path": "has-namespaces/enumerations/Enum_A.md"
       },
       {
-        "title": "ClassB",
-        "kind": 128,
-        "path": "has-namespaces/classes/ClassB.md"
+        "title": "EnumB",
+        "kind": 8,
+        "path": "has-namespaces/enumerations/EnumB.md"
       },
       {
         "title": "__Class_A_",
@@ -3587,9 +3582,9 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "path": "has-namespaces/classes/Class_A.md"
       },
       {
-        "title": "InterfaceB",
-        "kind": 256,
-        "path": "has-namespaces/interfaces/InterfaceB.md"
+        "title": "ClassB",
+        "kind": 128,
+        "path": "has-namespaces/classes/ClassB.md"
       },
       {
         "title": "_Interface_A_",
@@ -3597,14 +3592,19 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "path": "has-namespaces/interfaces/Interface_A.md"
       },
       {
-        "title": "TypeB",
-        "kind": 2097152,
-        "path": "has-namespaces/type-aliases/TypeB.md"
+        "title": "InterfaceB",
+        "kind": 256,
+        "path": "has-namespaces/interfaces/InterfaceB.md"
       },
       {
         "title": "_Type_A_",
         "kind": 2097152,
         "path": "has-namespaces/type-aliases/Type_A.md"
+      },
+      {
+        "title": "TypeB",
+        "kind": 2097152,
+        "path": "has-namespaces/type-aliases/TypeB.md"
       },
       {
         "title": "_variable_A_",
@@ -3646,14 +3646,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-same-exports/index.md",
     "children": [
       {
-        "title": "SomeClass",
-        "kind": 128,
-        "path": "has-same-exports/classes/SomeClass.md"
-      },
-      {
         "title": "someClass",
         "kind": 128,
-        "path": "has-same-exports/classes/someClass-1.md"
+        "path": "has-same-exports/classes/someClass.md"
+      },
+      {
+        "title": "SomeClass",
+        "kind": 128,
+        "path": "has-same-exports/classes/SomeClass-1.md"
       },
       {
         "title": "someFunction",
@@ -3680,14 +3680,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "members") (Option Group "2") 1`] = `
 "[
   {
-    "title": "42-module-name",
-    "kind": 2,
-    "path": "42-module-name/index.md"
-  },
-  {
     "title": "<internal>",
     "kind": 2,
     "path": "-internal-/index.md"
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name/index.md"
   },
   {
     "title": "basic",
@@ -3867,11 +3867,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Namespaces",
         "children": [
           {
-            "title": "NamespaceB",
-            "kind": 4,
-            "path": "has-namespaces/namespaces/NamespaceB/index.md"
-          },
-          {
             "title": "_Namespace_A_",
             "kind": 4,
             "path": "has-namespaces/namespaces/Namespace_A/index.md",
@@ -3909,6 +3904,11 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
                 ]
               }
             ]
+          },
+          {
+            "title": "NamespaceB",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/NamespaceB/index.md"
           }
         ]
       },
@@ -3916,14 +3916,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Enumerations",
         "children": [
           {
-            "title": "EnumB",
-            "kind": 8,
-            "path": "has-namespaces/enumerations/EnumB.md"
-          },
-          {
             "title": "_Enum_A_",
             "kind": 8,
             "path": "has-namespaces/enumerations/Enum_A.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "has-namespaces/enumerations/EnumB.md"
           }
         ]
       },
@@ -3931,14 +3931,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Classes",
         "children": [
           {
-            "title": "ClassB",
-            "kind": 128,
-            "path": "has-namespaces/classes/ClassB.md"
-          },
-          {
             "title": "__Class_A_",
             "kind": 128,
             "path": "has-namespaces/classes/Class_A.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "has-namespaces/classes/ClassB.md"
           }
         ]
       },
@@ -3946,14 +3946,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Interfaces",
         "children": [
           {
-            "title": "InterfaceB",
-            "kind": 256,
-            "path": "has-namespaces/interfaces/InterfaceB.md"
-          },
-          {
             "title": "_Interface_A_",
             "kind": 256,
             "path": "has-namespaces/interfaces/Interface_A.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "has-namespaces/interfaces/InterfaceB.md"
           }
         ]
       },
@@ -3961,14 +3961,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Type Aliases",
         "children": [
           {
-            "title": "TypeB",
-            "kind": 2097152,
-            "path": "has-namespaces/type-aliases/TypeB.md"
-          },
-          {
             "title": "_Type_A_",
             "kind": 2097152,
             "path": "has-namespaces/type-aliases/Type_A.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "path": "has-namespaces/type-aliases/TypeB.md"
           }
         ]
       },
@@ -4015,14 +4015,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Classes",
         "children": [
           {
-            "title": "SomeClass",
-            "kind": 128,
-            "path": "has-same-exports/classes/SomeClass.md"
-          },
-          {
             "title": "someClass",
             "kind": 128,
-            "path": "has-same-exports/classes/someClass-1.md"
+            "path": "has-same-exports/classes/someClass.md"
+          },
+          {
+            "title": "SomeClass",
+            "kind": 128,
+            "path": "has-same-exports/classes/SomeClass-1.md"
           }
         ]
       },
@@ -4071,14 +4071,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "[
   {
-    "title": "42-module-name",
-    "kind": 2,
-    "path": "42-module-name.md"
-  },
-  {
     "title": "<internal>",
     "kind": 2,
     "path": "-internal-.md"
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name.md"
   },
   {
     "title": "basic",
@@ -4101,11 +4101,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-namespaces/index.md",
     "children": [
       {
-        "title": "NamespaceB",
-        "kind": 4,
-        "path": "has-namespaces/namespaces/NamespaceB.md"
-      },
-      {
         "title": "_Namespace_A_",
         "kind": 4,
         "path": "has-namespaces/namespaces/Namespace_A/index.md",
@@ -4116,6 +4111,11 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
           }
         ]
+      },
+      {
+        "title": "NamespaceB",
+        "kind": 4,
+        "path": "has-namespaces/namespaces/NamespaceB.md"
       }
     ]
   },
@@ -4140,14 +4140,14 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 exports[`Navigation should gets Navigation Json for multiple entry points: (Output File Strategy "modules") (Option Group "2") 1`] = `
 "[
   {
-    "title": "42-module-name",
-    "kind": 2,
-    "path": "42-module-name.md"
-  },
-  {
     "title": "<internal>",
     "kind": 2,
     "path": "-internal-.md"
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name.md"
   },
   {
     "title": "basic",
@@ -4173,11 +4173,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "Namespaces",
         "children": [
           {
-            "title": "NamespaceB",
-            "kind": 4,
-            "path": "has-namespaces/namespaces/NamespaceB.md"
-          },
-          {
             "title": "_Namespace_A_",
             "kind": 4,
             "path": "has-namespaces/namespaces/Namespace_A/index.md",
@@ -4193,6 +4188,11 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
                 ]
               }
             ]
+          },
+          {
+            "title": "NamespaceB",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/NamespaceB.md"
           }
         ]
       }
@@ -4297,6 +4297,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "classes/ClassWithModifiers.md"
       },
       {
+        "title": "ClassWithoutPropCategories",
+        "kind": 128,
+        "path": "classes/ClassWithoutPropCategories.md"
+      },
+      {
         "title": "ClassWithPropCategories",
         "kind": 128,
         "path": "classes/ClassWithPropCategories.md"
@@ -4315,11 +4320,6 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "ClassWithTypeParameters",
         "kind": 128,
         "path": "classes/ClassWithTypeParameters.md"
-      },
-      {
-        "title": "ClassWithoutPropCategories",
-        "kind": 128,
-        "path": "classes/ClassWithoutPropCategories.md"
       },
       {
         "title": "DerivedClassA",
@@ -4401,6 +4401,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
   {
     "title": "Type Aliases",
     "children": [
+      {
+        "title": "__TypeDeclarationWithSpecialCharacters_",
+        "kind": 2097152,
+        "path": "type-aliases/TypeDeclarationWithSpecialCharacters.md"
+      },
       {
         "title": "ArrayOfStuff",
         "kind": 2097152,
@@ -4505,11 +4510,6 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "UnionTypeWithTemplateStrings",
         "kind": 2097152,
         "path": "type-aliases/UnionTypeWithTemplateStrings.md"
-      },
-      {
-        "title": "__TypeDeclarationWithSpecialCharacters_",
-        "kind": 2097152,
-        "path": "type-aliases/TypeDeclarationWithSpecialCharacters.md"
       }
     ]
   },
@@ -4567,6 +4567,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "functions/functionReturningAFunction.md"
       },
       {
+        "title": "functionReturningAnObject",
+        "kind": 64,
+        "path": "functions/functionReturningAnObject.md"
+      },
+      {
         "title": "functionReturningAPromise",
         "kind": 64,
         "path": "functions/functionReturningAPromise.md"
@@ -4580,11 +4585,6 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "functionReturningAUnionType",
         "kind": 64,
         "path": "functions/functionReturningAUnionType.md"
-      },
-      {
-        "title": "functionReturningAnObject",
-        "kind": 64,
-        "path": "functions/functionReturningAnObject.md"
       },
       {
         "title": "functionWithComplexParams",

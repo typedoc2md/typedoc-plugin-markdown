@@ -106,16 +106,16 @@ Some <p> html </p> inside codeblock
 ## Type Aliases
 
 - [TypeDeclarationTable](type-aliases/TypeDeclarationTable.md)
-- [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 - [typeWithBlockTags](type-aliases/typeWithBlockTags.md)
+- [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 
 ## Variables
 
-- [SameName](variables/SameName.md)
-- [TypeDeclarationTable](variables/TypeDeclarationTable.md)
 - [\\_prop\\_with\\_underscore](variables/prop_with_underscore.md)
 - [prop](variables/prop.md)
 - [propb](variables/propb.md)
+- [SameName](variables/SameName.md)
+- [TypeDeclarationTable](variables/TypeDeclarationTable.md)
 
 ## Functions
 
