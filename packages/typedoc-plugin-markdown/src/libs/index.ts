@@ -3,5 +3,5 @@
  *
  * @module
  */
-export * as markdown from './markdown';
-export * as utils from './utils';
+export * as markdown from './markdown/index.js';
+export * as utils from './utils/index.js';

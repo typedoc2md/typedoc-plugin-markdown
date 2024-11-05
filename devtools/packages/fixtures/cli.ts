@@ -1,18 +1,27 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env tsx
 
-import { getPackageName } from '@devtools/helpers';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+import { getPackageName } from '@devtools/helpers/index.js';
 import { spawn } from 'child_process';
 import { consola } from 'consola';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import * as path from 'path';
-import { Fixture } from './models';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { Fixture } from './models.js';
+
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = dirname(__filename);
 
 const timeStart = new Date().getTime();
 
 main();
 
 async function main() {
-  fs.removeSync(path.join(process.cwd(), 'test', 'fixtures', 'out'));
+  const outPath = path.join(process.cwd(), 'test', 'fixtures', 'out');
+
+  fs.removeSync(outPath);
 
   const config: Record<string, Fixture> = await import(
     path.join(process.cwd(), process.argv[3])
@@ -41,7 +50,7 @@ async function main() {
     const outputFileStrategies: ('members' | 'modules')[] =
       config.outputFileStrategies || ['members', 'modules'];
 
-    //writeHtml(key, config.entryPoints);
+    writeHtml(key, config.entryPoints);
     outputFileStrategies.forEach((outputFileStrategy) => {
       config.options.forEach((optionGroup, index: number) => {
         const options = {

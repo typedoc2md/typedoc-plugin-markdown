@@ -1,5 +1,5 @@
-import { backTicks } from 'libs/markdown';
-import { MarkdownThemeContext } from 'public-api';
+import { backTicks } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { SomeType } from 'typedoc';
 
 export function getHierarchyType(

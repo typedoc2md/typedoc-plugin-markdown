@@ -1,5 +1,5 @@
-import { link } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { link } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ReferenceReflection, ReflectionKind } from 'typedoc';
 
 export function referenceMember(

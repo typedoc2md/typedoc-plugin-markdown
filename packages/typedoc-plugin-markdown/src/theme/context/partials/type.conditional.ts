@@ -1,5 +1,5 @@
-import { italic } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { italic } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ConditionalType } from 'typedoc';
 
 export function conditionalType(

@@ -3,7 +3,7 @@
  *
  * @module
  */
-import { en, jp, ko, zh } from 'internationalization';
+import { en, jp, ko, zh } from 'internationalization/index.js';
 import { Application } from 'typedoc';
 
 /**

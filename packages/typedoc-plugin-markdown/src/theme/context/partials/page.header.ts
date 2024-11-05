@@ -1,7 +1,7 @@
-import { bold, link } from 'libs/markdown';
-import { removeFirstScopedDirectory } from 'libs/utils';
+import { bold, link } from '@plugin/libs/markdown/index.js';
+import { removeFirstScopedDirectory } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import * as path from 'path';
-import { MarkdownThemeContext } from 'theme';
 import {
   DeclarationReflection,
   EntryPointStrategy,

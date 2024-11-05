@@ -1,5 +1,5 @@
-import { MarkdownPageEvent } from '@plugin/events';
-import { OutputFileStrategy } from '@plugin/options/maps';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { OutputFileStrategy } from '@plugin/options/maps.js';
 import { Options, ReflectionKind } from 'typedoc';
 
 /**

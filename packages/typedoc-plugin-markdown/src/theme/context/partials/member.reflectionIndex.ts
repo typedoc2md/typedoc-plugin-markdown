@@ -1,5 +1,5 @@
-import { heading } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { heading } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   DeclarationReflection,
   ProjectReflection,

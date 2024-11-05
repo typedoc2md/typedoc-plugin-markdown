@@ -9,8 +9,11 @@
  * @module
  */
 
-export { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/events';
-export { MarkdownTheme, MarkdownThemeContext } from '@plugin/theme';
+export {
+  MarkdownPageEvent,
+  MarkdownRendererEvent,
+} from '@plugin/events/index.js';
+export { MarkdownTheme, MarkdownThemeContext } from '@plugin/theme/index.js';
 export {
   MarkdownApplication,
   MarkdownRenderer,
@@ -18,4 +21,4 @@ export {
   NavigationItem,
   PluginOptions,
   UrlMapping,
-} from '@plugin/types';
+} from '@plugin/types/index.js';

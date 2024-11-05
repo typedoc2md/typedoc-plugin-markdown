@@ -8,9 +8,9 @@
  * @module
  */
 
-import en from './en';
-import jp from './jp';
-import ko from './ko';
-import zh from './zh';
+import en from './en.js';
+import jp from './jp.js';
+import ko from './ko.js';
+import zh from './zh.js';
 
 export { en, jp, ko, zh };

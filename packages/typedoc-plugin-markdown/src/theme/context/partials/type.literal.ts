@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { LiteralType } from 'typedoc';
 
 export function literalType(

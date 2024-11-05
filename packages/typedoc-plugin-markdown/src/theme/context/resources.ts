@@ -1,6 +1,6 @@
 // THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
-import { MarkdownPageEvent } from '@plugin/events';
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   ArrayType,
   Comment,
@@ -35,7 +35,7 @@ import {
   UnionType,
   UnknownType,
 } from 'typedoc';
-import { templates, partials, helpers } from './index';
+import { templates, partials, helpers } from './index.js';
 
 export const resourceTemplates = (context: MarkdownThemeContext) => {
   return {

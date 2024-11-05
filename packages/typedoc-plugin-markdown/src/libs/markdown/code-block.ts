@@ -1,4 +1,4 @@
-import { unEscapeChars } from '../utils/un-escape-chars';
+import { unEscapeChars } from '@plugin/libs/utils/index.js';
 
 export function codeBlock(content: string) {
   const trimLastLine = (content: string) => {

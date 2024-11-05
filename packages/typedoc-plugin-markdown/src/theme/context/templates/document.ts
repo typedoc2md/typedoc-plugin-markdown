@@ -1,5 +1,5 @@
-import { MarkdownPageEvent } from '@plugin/events';
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DocumentReflection } from 'typedoc';
 
 /**

@@ -1,9 +1,9 @@
-import { MarkdownPageEvent } from '@plugin/events';
-import { formatMarkdown } from '@plugin/libs/utils';
-import { OutputFileStrategy } from '@plugin/options/maps';
-import { MarkdownThemeContext } from '@plugin/theme';
-import { NavigationBuilder, UrlBuilder } from '@plugin/theme/base';
-import { RenderTemplate } from '@plugin/types';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { formatMarkdown } from '@plugin/libs/utils/index.js';
+import { OutputFileStrategy } from '@plugin/options/maps.js';
+import { NavigationBuilder, UrlBuilder } from '@plugin/theme/base/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { RenderTemplate } from '@plugin/types/index.js';
 import {
   DeclarationReflection,
   DocumentReflection,

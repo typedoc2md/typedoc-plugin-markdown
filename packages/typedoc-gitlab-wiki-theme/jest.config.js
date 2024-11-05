@@ -1,6 +1,6 @@
-const base = require('../../jest.config.base.js');
+import base from '../../jest.config.base.js';
 
-module.exports = {
+export default {
   ...base,
-  displayName: 'typedoc-gitlab-wiki-theme',
+  displayName: 'typedoc-gitlab-wiki',
 };

@@ -1,6 +1,6 @@
-import { htmlTable, link, table } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'public-api';
+import { htmlTable, link, table } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   DeclarationReflection,
   DocumentReflection,
@@ -40,7 +40,7 @@ export function getGroupIndexTable(
       const comment = child.comment || child.signatures?.[0]?.comment;
 
       if (!comment) {
-        return '';
+        return null;
       }
       return isHtmlTable
         ? this.partials.comment(comment, {
@@ -49,7 +49,7 @@ export function getGroupIndexTable(
         : this.helpers.getDescriptionForComment(comment);
     };
 
-    row.push(description() || '-');
+    row.push(description()?.trim() || '-');
 
     rows.push(row);
   });

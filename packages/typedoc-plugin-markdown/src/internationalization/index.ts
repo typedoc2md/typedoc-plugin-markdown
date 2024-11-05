@@ -7,5 +7,5 @@
  *
  * @module
  */
-export * from './locales';
-export * from './translatable';
+export * from './locales/index.js';
+export * from './translatable.js';

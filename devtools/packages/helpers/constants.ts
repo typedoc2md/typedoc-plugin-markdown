@@ -1,4 +1,4 @@
-import { DocsConfig } from './models';
+import { DocsConfig } from './models.js';
 
 export const SRC_PATH = `${process.cwd()}/src`;
 export const PRESETS_PATH = `${process.cwd()}/src/options/presets.ts`;

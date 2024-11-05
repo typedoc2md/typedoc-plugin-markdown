@@ -1,6 +1,9 @@
-import { backTicks, bold, heading } from 'libs/markdown';
-import { camelToTitleCase, sanitizeComments } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks, bold, heading } from '@plugin/libs/markdown/index.js';
+import {
+  camelToTitleCase,
+  sanitizeComments,
+} from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { Comment, CommentTag } from 'typedoc';
 
 export function comment(
@@ -85,7 +88,10 @@ export function comment(
       [],
     );
 
-    const filteredBlockTags = opts.showReturns ? [] : ['@returns'];
+    const filteredBlockTags = [
+      ...this.options.getValue('notRenderedTags'),
+      ...(opts.showReturns ? [] : ['@returns']),
+    ];
 
     const tags = blockTags
       .filter((tag) => !filteredBlockTags.includes(tag.tag))

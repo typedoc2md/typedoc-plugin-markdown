@@ -1,6 +1,6 @@
-import { backTicks, htmlTable, table } from 'libs/markdown';
-import { removeLineBreaks } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks, htmlTable, table } from '@plugin/libs/markdown/index.js';
+import { removeLineBreaks } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 export function parametersTable(

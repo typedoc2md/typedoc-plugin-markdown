@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from '@plugin/theme';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ReflectionType, SomeType } from 'typedoc';
 
 export function typeArguments(

@@ -1,8 +1,12 @@
-import { backTicks, htmlTable, strikeThrough, table } from 'libs/markdown';
-import { removeLineBreaks } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import {
+  backTicks,
+  htmlTable,
+  strikeThrough,
+  table,
+} from '@plugin/libs/markdown/index.js';
+import { removeLineBreaks } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
-import { getPropertyDefaultValue } from '../helpers/get-property-default-value';
 
 /**
  * Renders a collection of properties in a table.
@@ -42,9 +46,9 @@ export function propertiesTable(
 
   const hasDefaults =
     !tableColumnsOptions.hideDefaults &&
-    model.some((prop) => Boolean(getPropertyDefaultValue(prop)));
+    model.some((prop) => Boolean(this.helpers.getPropertyDefaultValue(prop)));
 
-  const hasComments = comments.some((value) => Boolean(value));
+  const hasComments = comments.some((value) => Boolean(value.trim()));
 
   const hasSources =
     !tableColumnsOptions.hideSources &&
@@ -125,12 +129,15 @@ export function propertiesTable(
     }
 
     if (hasDefaults) {
-      row.push(getPropertyDefaultValue(property) || backTicks('undefined'));
+      row.push(
+        this.helpers.getPropertyDefaultValue(property) ||
+          backTicks('undefined'),
+      );
     }
 
     if (hasComments) {
       const commentText = comments[index];
-      if (commentText?.length) {
+      if (commentText?.trim()?.length) {
         row.push(commentText);
       } else {
         row.push('-');

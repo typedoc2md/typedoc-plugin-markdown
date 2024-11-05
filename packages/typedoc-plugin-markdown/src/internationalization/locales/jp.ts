@@ -1,4 +1,4 @@
-import { TranslatableStrings } from '@plugin/types';
+import { TranslatableStrings } from '@plugin/types/index.js';
 
 /**
  * Translations for 'jp' locale.
@@ -10,6 +10,8 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_default_type: 'デフォルトタイプ',
   theme_description: '説明',
   theme_event: 'イベント',
+  theme_re_exports: '再エクスポート',
+  theme_renames_and_re_exports: 'リネームと再エクスポート',
   theme_extends: '拡張',
   theme_extended_by: 'によって拡張された',
   theme_globals: 'グローバル変数',

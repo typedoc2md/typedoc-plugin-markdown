@@ -1,6 +1,6 @@
-import { backTicks, bold } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks, bold } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 export function parametersList(

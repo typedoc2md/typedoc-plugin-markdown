@@ -1,7 +1,7 @@
-import { isQuoted } from '@plugin/libs/utils';
-import { OutputFileStrategy } from '@plugin/options/maps';
-import { MarkdownTheme } from '@plugin/theme';
-import { MarkdownRenderer, NavigationItem } from '@plugin/types';
+import { isQuoted } from '@plugin/libs/utils/index.js';
+import { OutputFileStrategy } from '@plugin/options/maps.js';
+import { MarkdownTheme } from '@plugin/theme/index.js';
+import { MarkdownRenderer, NavigationItem } from '@plugin/types/index.js';
 import * as path from 'path';
 import {
   DeclarationReflection,

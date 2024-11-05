@@ -2,7 +2,10 @@
   "name": "typedoc-plugin-remark",
   "version": "1.0.3",
   "description": "A plugin for TypeDoc ( + typedoc-plugin-markdown ) that enables additional markdown transformations with remark plugins.",
-  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "type": "module",
   "files": [
     "dist/"
   ],
@@ -11,8 +14,8 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
-    "postbuild": "copyfiles --up 1 ./src/**/*.cjs ./src/**/*.mjs ./dist/",
-    "pretest": "ts-node ./test/__scripts__/prepare.ts",
+    "postbuild": "copyfiles --up 1 ./src/**/*.mjs ./dist/",
+    "pretest": "tsx ./test/__scripts__/prepare.ts",
     "test": "node ./lint.mdx.mjs && jest",
     "test:update": "npm run build && npm run test -- -u"
   },

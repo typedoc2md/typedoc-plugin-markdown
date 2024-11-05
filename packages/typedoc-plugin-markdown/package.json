@@ -2,14 +2,17 @@
   "name": "typedoc-plugin-markdown",
   "version": "4.2.10",
   "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
-  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "type": "module",
   "files": [
     "dist/"
   ],
   "scripts": {
     "lint": "eslint ./src",
     "prepublishOnly": "npm run lint && npm run build",
-    "prebuild": "rm -rf dist && barrelsby -c barrelsby.config.json && prebuild-options && ts-node ./.scripts/prebuild",
+    "prebuild": "rm -rf dist && prebuild-options && tsx ./.scripts/prebuild",
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run pretest",
     "pretest": "fixtures -c ./test/fixtures/config.ts",
@@ -31,9 +34,7 @@
     "directory": "packages/typedoc-plugin-markdown"
   },
   "homepage": "https://typedoc-plugin-markdown.org",
-  "peerDependencies": {
-    "typedoc": "0.26.x"
-  },
+  "peerDependencies": {},
   "engines": {
     "node": ">= 18"
   },

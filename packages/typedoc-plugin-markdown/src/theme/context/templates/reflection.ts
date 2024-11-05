@@ -1,6 +1,6 @@
-import { MarkdownPageEvent } from '@plugin/events';
-import { heading } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { heading } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 /**

@@ -1,4 +1,4 @@
-import { TranslatableStrings } from '@plugin/types';
+import { TranslatableStrings } from '@plugin/types/index.js';
 /**
  * Translations for 'ko' locale.
  *
@@ -9,6 +9,8 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_default_type: '기본 유형',
   theme_description: '설명',
   theme_event: '이벤트',
+  theme_re_exports: '다시 내보내진 원본:',
+  theme_renames_and_re_exports: '새 이름으로 내보내진 원본:',
   theme_extends: '확장',
   theme_extended_by: '에 의해 확장됨',
   theme_globals: '전역',

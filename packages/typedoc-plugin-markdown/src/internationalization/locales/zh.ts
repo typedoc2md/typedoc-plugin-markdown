@@ -1,4 +1,4 @@
-import { TranslatableStrings } from '@plugin/types';
+import { TranslatableStrings } from '@plugin/types/index.js';
 /**
  * Translations for 'zh' locale.
  *
@@ -9,6 +9,8 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_default_type: '默认类型',
   theme_description: '描述',
   theme_event: '事件',
+  theme_re_exports: '重新导出',
+  theme_renames_and_re_exports: '重命名并重新导出',
   theme_extends: '继承',
   theme_extended_by: '继承于',
   theme_globals: '全局变量',

@@ -1,5 +1,5 @@
-import { horizontalRule } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { horizontalRule } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection } from 'typedoc';
 
 export function members(

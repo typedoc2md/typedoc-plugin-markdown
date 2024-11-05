@@ -5,7 +5,7 @@
  */
 import { Comment, CommentTag } from 'typedoc';
 import { MarkdownApplication } from 'typedoc-plugin-markdown';
-import { FrontmatterNamingConvention } from './options/maps';
+import { FrontmatterNamingConvention } from './options/maps.js';
 
 export function getResolvedTags(app: MarkdownApplication, comment?: Comment) {
   if (!comment) return {};

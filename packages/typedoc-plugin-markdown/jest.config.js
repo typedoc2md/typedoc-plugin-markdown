@@ -1,7 +1,6 @@
-const base = require('../../jest.config.base.js');
-const path = require('path');
+import base from '../../jest.config.base.js';
 
-module.exports = {
+export default {
   ...base,
   displayName: 'typedoc-plugin-markdown',
 };

@@ -3,5 +3,5 @@
  *
  * @module
  */
-export * from './markdown-theme';
-export * from './markdown-themeContext';
+export * from './markdown-theme.js';
+export * from './markdown-themeContext.js';

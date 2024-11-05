@@ -12,6 +12,16 @@ module.exports = {
       URL: 'https://developer.mozilla.org/en-US/docs/Web/API/URL',
     },
   },
+  /*outputs: [
+    {
+      name: 'html',
+      path: './docs-html',
+    },
+    {
+      name: 'markdown',
+      path: './docs-markdown',
+    },
+  ],*/
   locales: {
     en: {
       theme_defined_in: 'Source',

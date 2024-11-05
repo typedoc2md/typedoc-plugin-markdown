@@ -1,5 +1,5 @@
-import { heading } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { heading } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   DeclarationReflection,
   ReflectionGroup,
@@ -42,6 +42,10 @@ export function groups(
         (child) => child.kind === ReflectionKind.EnumMember,
       );
 
+      const isReferencesGroup = group.children.every(
+        (child) => child.kind === ReflectionKind.Reference,
+      );
+
       md.push(heading(options.headingLevel, getGroupTitle(group.title)));
       if (group.description) {
         md.push(this.helpers.getCommentParts(group.description));
@@ -64,6 +68,8 @@ export function groups(
             group.children as DeclarationReflection[],
           ),
         );
+      } else if (isReferencesGroup && this.helpers.useTableFormat('enums')) {
+        md.push('REFERENCES');
       } else {
         if (group.children) {
           md.push(

@@ -3,9 +3,9 @@
  *
  * @module
  */
-export * from './internationalization';
-export * from './markdown-application';
-export * from './markdown-renderer';
-export * from './markdown-renderer-hooks';
-export * from './options';
-export * from './theme';
+export * from './internationalization.js';
+export * from './markdown-application.js';
+export * from './markdown-renderer-hooks.js';
+export * from './markdown-renderer.js';
+export * from './options.js';
+export * from './theme.js';

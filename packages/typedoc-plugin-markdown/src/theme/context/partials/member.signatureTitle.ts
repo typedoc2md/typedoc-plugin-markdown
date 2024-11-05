@@ -1,7 +1,7 @@
-import { backTicks, bold, codeBlock } from '@plugin/libs/markdown';
-import { escapeChars } from '@plugin/libs/utils';
-import { MarkdownThemeContext } from '@plugin/theme';
-import { SignatureReflection } from 'typedoc';
+import { backTicks, bold, codeBlock } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { ReflectionKind, SignatureReflection } from 'typedoc';
 
 export function signatureTitle(
   this: MarkdownThemeContext,
@@ -32,7 +32,12 @@ export function signatureTitle(
   }
 
   if (!['__call', '__type'].includes(model.name)) {
-    md.push(bold(escapeChars(model.name)));
+    const name: string[] = [];
+    if (model.kind === ReflectionKind.ConstructorSignature) {
+      name.push('new');
+    }
+    name.push(escapeChars(model.name));
+    md.push(bold(name.join(' ')));
   }
 
   if (model.typeParameters) {

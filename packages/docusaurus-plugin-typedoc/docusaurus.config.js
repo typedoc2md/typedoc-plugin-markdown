@@ -14,7 +14,7 @@ const config = {
       docusaurusPlugin,
       {
         tsconfig: './test/stubs/tsconfig.json',
-        entryPoints: './test/stubs/src/*',
+        entryPoints: ['./test/stubs/src/*'],
         out: './test/out/default',
         readme: 'none',
         cleanOutputDir: true,
@@ -28,7 +28,7 @@ const config = {
       {
         id: 'api-2',
         tsconfig: './test/stubs/tsconfig.json',
-        entryPoints: './test/stubs/src/module-1.ts',
+        entryPoints: ['./test/stubs/src/module-1.ts'],
         out: './test/out/global-members',
         readme: 'none',
         sidebar: { pretty: true },
@@ -43,7 +43,7 @@ const config = {
       {
         id: 'api-3',
         tsconfig: './test/stubs/tsconfig.json',
-        entryPoints: './test/stubs/src/links.ts',
+        entryPoints: ['./test/stubs/src/links.ts'],
         out: './test/out/links',
         readme: 'none',
         sidebar: { pretty: true },

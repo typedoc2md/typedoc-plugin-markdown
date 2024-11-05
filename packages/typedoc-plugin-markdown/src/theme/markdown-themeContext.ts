@@ -1,11 +1,11 @@
-import { MarkdownPageEvent } from '@plugin/events';
-import { MarkdownTheme } from '@plugin/theme';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
 import {
   resourceHelpers,
   resourcePartials,
   resourceTemplates,
-} from '@plugin/theme/context/resources';
-import { MarkdownRenderer, PackageMetaData } from '@plugin/types';
+} from '@plugin/theme/context/resources.js';
+import { MarkdownTheme } from '@plugin/theme/index.js';
+import { MarkdownRenderer, PackageMetaData } from '@plugin/types/index.js';
 import * as path from 'path';
 import { Internationalization, Options, Reflection } from 'typedoc';
 

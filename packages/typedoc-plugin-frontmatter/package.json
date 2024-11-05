@@ -2,7 +2,10 @@
   "name": "typedoc-plugin-frontmatter",
   "version": "1.0.0",
   "description": "A plugin for TypeDoc ( + typedoc-plugin-markdown ) that prepends configurable frontmatter to page content.",
-  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "type": "module",
   "files": [
     "dist/"
   ],
@@ -12,7 +15,7 @@
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
     "build-and-test": "npm run build && npm run test",
-    "pretest": "ts-node ./test/__scripts__/prepare.ts",
+    "pretest": "tsx ./test/__scripts__/prepare.ts",
     "test": "jest",
     "test:update": "npm run build && npm run test -- -u"
   },

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { DocsConfig, SRC_PATH } from '@devtools/helpers';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -45,7 +46,7 @@ import { ManuallyValidatedOption } from 'typedoc'`);
       if (
         !ignoreTypes.map((t) => t.toLowerCase()).includes(option.toLowerCase())
       ) {
-        out.push(`import { ${option} } from './types/options';`);
+        out.push(`import { ${option} } from './types/options.js';`);
       }
     });
   }
@@ -66,6 +67,8 @@ import { ManuallyValidatedOption } from 'typedoc'`);
         theme_default_type: [];
         theme_description: [];
         theme_event: [];
+        theme_re_exports: [];
+        theme_renames_and_re_exports: [];
         theme_extends: [];
         theme_extended_by: [];
         theme_globals: [];

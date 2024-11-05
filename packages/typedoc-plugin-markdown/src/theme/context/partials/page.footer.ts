@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 
 export function footer(this: MarkdownThemeContext): string {
   const textContentMappings = this.options.getValue('textContentMappings');

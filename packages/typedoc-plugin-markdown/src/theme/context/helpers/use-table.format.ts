@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from 'public-api';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ReflectionKind } from 'typedoc';
 
 export function useTableFormat(

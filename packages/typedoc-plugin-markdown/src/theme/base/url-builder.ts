@@ -4,15 +4,15 @@ import {
   removeFirstScopedDirectory,
   slugify,
   toPascalCase,
-} from '@plugin/libs/utils';
-import { OutputFileStrategy } from '@plugin/options/maps';
-import { MarkdownTheme } from '@plugin/theme';
+} from '@plugin/libs/utils/index.js';
+import { OutputFileStrategy } from '@plugin/options/maps.js';
+import { MarkdownTheme } from '@plugin/theme/index.js';
 import {
   MarkdownRenderer,
   TemplateMapping,
   UrlMapping,
   UrlOption,
-} from '@plugin/types';
+} from '@plugin/types/index.js';
 import * as path from 'path';
 import {
   DeclarationReflection,
@@ -494,10 +494,10 @@ export class UrlBuilder {
     }
     if (reflection.parent) {
       reflection.traverse((child) => {
-        if (child instanceof DocumentReflection) {
+        if (child.isDocument()) {
           this.buildUrlsForDocument(child);
         }
-        if (child instanceof DeclarationReflection) {
+        if (child.isDeclaration()) {
           this.traverseChildren(child, container);
         }
       });

@@ -27,6 +27,6 @@
  *
  * @module
  */
-export * as constants from './constants';
-export * as declarations from './declarations';
-export * as maps from './maps';
+export * as constants from './constants.js';
+export * as declarations from './declarations.js';
+export * as maps from './maps.js';

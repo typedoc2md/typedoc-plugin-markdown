@@ -1,9 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-empty */
 import { DocsConfig } from '@devtools/helpers';
 import * as fs from 'fs';
 import * as path from 'path';
+import { dirname } from 'path';
 import * as prettier from 'prettier';
 import { Project, VariableStatement } from 'ts-morph';
 import { ParameterType } from 'typedoc';
+import { fileURLToPath } from 'url';
+
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = dirname(__filename);
 
 export async function generateOptionsDocs(docsConfig: DocsConfig) {
   const project = new Project({
@@ -53,9 +60,14 @@ ${presetsJson}
     const optionsVariableStatements =
       configFileTs?.getVariableStatements() as VariableStatement[];
 
-    const parsedConfig = Object.entries(declarationsConfig)
-      .map(([name, option]: any, i) => {
-        const docs = optionsVariableStatements[i].getJsDocs().map((doc) => {
+    const parsedConfig = optionsVariableStatements
+      .map((variableStatement) => {
+        const name = (
+          variableStatement.compilerNode.declarationList.declarations[0]
+            .name as any
+        ).escapedText;
+        const option = declarationsConfig[name];
+        const docs = variableStatement.getJsDocs().map((doc) => {
           return {
             comments: (doc.getComment() as string)
               ?.replace(/\\\//g, '/')
@@ -125,7 +137,7 @@ ${presetsJson}
           : '',
       ];
       const optionLevel =
-        categories.length === 1 && !Boolean(docsConfig.presets) ? '##' : '##';
+        categories.length === 1 && !docsConfig.presets ? '##' : '##';
       if (categories.length > 1) {
         out.push(`# ${getDocsTitle(categoryName)}`);
         if (Object.keys(categoryDescriptions)?.length) {
@@ -142,19 +154,15 @@ ${presetsJson}
       options.forEach((option) => {
         optionsLi.push(
           `- [${
-            Boolean(option.deprecated)
-              ? `~--${option.name}~`
-              : `--${option.name}`
+            option.deprecated ? `~--${option.name}~` : `--${option.name}`
           }](./options/${categoryName.toLowerCase()}-options.mdx#--${option.name.toLowerCase()})`,
         );
         out.push(
           `${optionLevel} ${
-            Boolean(option.deprecated)
-              ? `~--${option.name}~`
-              : `--${option.name}`
+            option.deprecated ? `~--${option.name}~` : `--${option.name}`
           }`,
         );
-        if (Boolean(option.deprecated)) {
+        if (option.deprecated) {
           out.push(
             `<Callout type="warning">Deprecated: ${option.deprecated}</Callout>`,
           );
@@ -195,15 +203,18 @@ ${presetsJson}
             //out.push('Below is the full list of keys and default values:');
           }
         }
+
+        let exampleJson = {};
+
+        try {
+          exampleJson = JSON.parse(`{
+            "${option.name}": ${getExampleValue(option)}
+          }`);
+        } catch (e) {}
+
         out.push(`
 \`\`\`json filename="typedoc.json"
-${JSON.stringify(
-  JSON.parse(`{
-          "${option.name}": ${getExampleValue(option)}
-        }`),
-  null,
-  2,
-)}
+${JSON.stringify(exampleJson, null, 2)}
 \`\`\``);
       });
       if (categories.length > 1) {
@@ -303,7 +314,7 @@ function getType(option: any) {
 }
 
 function getDefaultValue(option) {
-  if (Boolean(option.default)) {
+  if (option.default) {
     return option.default;
   }
 

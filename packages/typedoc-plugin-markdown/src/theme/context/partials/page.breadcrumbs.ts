@@ -1,7 +1,7 @@
-import { link } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
+import { link } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import * as path from 'path';
-import { MarkdownThemeContext } from 'theme';
 
 export function breadcrumbs(this: MarkdownThemeContext): string {
   const md: string[] = [];

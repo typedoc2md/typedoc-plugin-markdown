@@ -1,4 +1,4 @@
-import { formatTableCell } from '../utils/format-table-cell';
+import { formatTableCell } from '@plugin/libs/utils/index.js';
 /**
  * Comments for table
  * @param headers

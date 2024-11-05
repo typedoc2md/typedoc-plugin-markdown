@@ -237,9 +237,9 @@ Comments for multipleFunctionWithDocuments
 
 #### Documents
 
+- [FUNCTION\\_DOC\\_3](documents/Function.FUNCTION_DOC_3.md)
 - [FUNCTION\\_DOC\\_1](documents/Function.FUNCTION_DOC_1.md)
 - [FUNCTION\\_DOC\\_2](documents/Function.FUNCTION_DOC_2.md)
-- [FUNCTION\\_DOC\\_3](documents/Function.FUNCTION_DOC_3.md)
 
 #### multipleFunctionWithDocuments(value)
 
@@ -308,9 +308,9 @@ exports[`Documents Project should compile index page for project: (Output File S
 
 ## Documents
 
+- [Project Document 1](documents/Project-Document-1.md)
 - [docs/project/PROJECT\\_DOC\\_2](documents/docs/project/PROJECT_DOC_2.md)
 - [docs/project/PROJECT\\_DOC\\_3](documents/docs/project/PROJECT_DOC_3.md)
-- [Project Document 1](documents/Project-Document-1.md)
 
 ## Modules
 
@@ -335,6 +335,18 @@ exports[`Documents Project should compile index page for project: (Output File S
 <tr>
 <td>
 
+[Project Document 1](Document.Project-Document-1.md)
+
+</td>
+<td>
+
+A description of the document
+
+</td>
+</tr>
+<tr>
+<td>
+
 [docs/project/PROJECT\\_DOC\\_2](Document.docs.project.PROJECT_DOC_2.md)
 
 </td>
@@ -353,18 +365,6 @@ exports[`Documents Project should compile index page for project: (Output File S
 <td>
 
 &hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-[Project Document 1](Document.Project-Document-1.md)
-
-</td>
-<td>
-
-A description of the document
 
 </td>
 </tr>
@@ -415,9 +415,9 @@ exports[`Documents Project should compile index page for project: (Output File S
 
 ## Documents
 
+- [Project Document 1](documents/Project-Document-1.md)
 - [docs/project/PROJECT\\_DOC\\_2](documents/docs/project/PROJECT_DOC_2.md)
 - [docs/project/PROJECT\\_DOC\\_3](documents/docs/project/PROJECT_DOC_3.md)
-- [Project Document 1](documents/Project-Document-1.md)
 
 ## Modules
 
@@ -442,6 +442,18 @@ exports[`Documents Project should compile index page for project: (Output File S
 <tr>
 <td>
 
+[Project Document 1](Document.Project-Document-1.md)
+
+</td>
+<td>
+
+A description of the document
+
+</td>
+</tr>
+<tr>
+<td>
+
 [docs/project/PROJECT\\_DOC\\_2](Document.docs.project.PROJECT_DOC_2.md)
 
 </td>
@@ -460,18 +472,6 @@ exports[`Documents Project should compile index page for project: (Output File S
 <td>
 
 &hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-[Project Document 1](Document.Project-Document-1.md)
-
-</td>
-<td>
-
-A description of the document
 
 </td>
 </tr>

@@ -2065,6 +2065,12 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 A module that contains references
 
+## Functions
+
+### defaultFunction()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
 ## References
 
 ### default
@@ -2078,12 +2084,6 @@ Re-exports [InterfaceA](basic.md#interfacea)
 ### RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](basic.md#interfaceb)
-
-## Functions
-
-### defaultFunction()
-
-_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -2097,6 +2097,14 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 # has-references
 
 A module that contains references
+
+<a id="defaultfunction" name="defaultfunction"></a>
+
+## defaultFunction()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
 
 <a id="default" name="default"></a>
 
@@ -2115,12 +2123,6 @@ Re-exports [InterfaceA](basic.md#interfacea)
 ## RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](basic.md#interfaceb)
-
-<a id="defaultfunction" name="defaultfunction"></a>
-
-## defaultFunction()
-
-_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 

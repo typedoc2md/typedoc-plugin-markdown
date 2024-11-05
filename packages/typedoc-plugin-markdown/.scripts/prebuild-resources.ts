@@ -1,7 +1,12 @@
-import * as fs from 'fs-extra';
+import * as fs from 'fs';
 import * as path from 'path';
+import { dirname } from 'path';
 import * as prettier from 'prettier';
 import { Project } from 'ts-morph';
+import { fileURLToPath } from 'url';
+
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = dirname(__filename);
 
 const project = new Project({
   tsConfigFilePath: 'tsconfig.json',
@@ -152,10 +157,10 @@ async function writeResourcesFile() {
   ];
 
   const out = `// THIS FILE IS AUTO GENERATED. DO NOT EDIT DIRECTLY.
-import { MarkdownPageEvent } from '@plugin/events';
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {${typedocTypes.join(',')}} from 'typedoc';
-import { templates, partials, helpers } from './index';
+import { templates, partials, helpers } from './index.js';
 
 ${getResources('templates')}
 ${getResources('partials')}

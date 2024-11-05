@@ -1,5 +1,5 @@
-import { backTicks } from '@plugin/libs/markdown';
-import { MarkdownThemeContext } from '@plugin/theme';
+import { backTicks } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { SignatureReflection, SomeType } from 'typedoc';
 
 export function functionType(

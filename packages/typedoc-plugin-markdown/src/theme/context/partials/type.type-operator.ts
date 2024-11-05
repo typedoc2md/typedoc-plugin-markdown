@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { TypeOperatorType } from 'typedoc';
 
 export function typeOperatorType(

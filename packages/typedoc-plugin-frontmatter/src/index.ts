@@ -14,8 +14,8 @@ import {
   MarkdownPageEvent,
 } from 'typedoc-plugin-markdown';
 import * as yaml from 'yaml';
-import { declarations } from './options';
-import { getResolvedTags } from './tags';
+import { declarations } from './options/index.js';
+import { getResolvedTags } from './tags.js';
 
 export function load(app: MarkdownApplication) {
   Object.entries(declarations).forEach(([name, option]) => {

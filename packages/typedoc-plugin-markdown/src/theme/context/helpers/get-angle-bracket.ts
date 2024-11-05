@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from '@plugin/theme';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 
 export function getAngleBracket(
   this: MarkdownThemeContext,

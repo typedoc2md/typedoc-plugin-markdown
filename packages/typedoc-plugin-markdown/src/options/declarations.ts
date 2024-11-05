@@ -20,8 +20,11 @@
  * @module
  */
 import { DeclarationOption, ParameterType } from 'typedoc';
-import { ALLOWED_OWN_FILE_MEMBERS, TEXT_CONTENT_MAPPINGS } from './constants';
-import { DisplayFormat, OutputFileStrategy } from './maps';
+import {
+  ALLOWED_OWN_FILE_MEMBERS,
+  TEXT_CONTENT_MAPPINGS,
+} from './constants.js';
+import { DisplayFormat, OutputFileStrategy } from './maps.js';
 
 /**
  * TypeDoc creates documentation according to exports derived from the given [`--entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) TypeDoc configuration.

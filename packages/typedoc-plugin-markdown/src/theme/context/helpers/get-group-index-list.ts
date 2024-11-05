@@ -1,6 +1,6 @@
-import { link } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'public-api';
+import { link } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, DocumentReflection } from 'typedoc';
 
 export function getGroupIndexList(

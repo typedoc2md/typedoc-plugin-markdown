@@ -1,4 +1,4 @@
-import { backTicks } from 'libs/markdown';
+import { backTicks } from '@plugin/libs/markdown/index.js';
 import { DeclarationReflection } from 'typedoc';
 
 export function getPropertyDefaultValue(model: DeclarationReflection) {

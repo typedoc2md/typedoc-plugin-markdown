@@ -1,5 +1,5 @@
-import { backTicks, link } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { backTicks, link } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ReferenceType } from 'typedoc';
 
 export function referenceType(

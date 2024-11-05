@@ -1,7 +1,7 @@
+import { MarkdownRenderer } from '@plugin/types/index.js';
 import * as fs from 'fs';
 import * as path from 'path';
 import { Application, Context } from 'typedoc';
-import { MarkdownRenderer } from 'types';
 
 /**
  * Currently options set for packages are only stored on the converter and are destroyed before being passed to the Renderer.

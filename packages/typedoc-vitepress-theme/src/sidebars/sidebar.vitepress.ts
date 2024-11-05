@@ -1,8 +1,12 @@
 import * as path from 'path';
 import { NavigationItem } from 'typedoc-plugin-markdown';
-import { Sidebar } from '../types';
+import { Sidebar } from '../types/index.js';
 
-export = (navigation: NavigationItem[], basePath: string, options: Sidebar) => {
+export default (
+  navigation: NavigationItem[],
+  basePath: string,
+  options: Sidebar,
+) => {
   return navigation.map((navigationItem) => {
     return getNavigationItem(navigationItem, basePath, options);
   });

@@ -3,5 +3,5 @@
  *
  * @module
  */
-export * as declarations from './declarations';
-export * as maps from './maps';
+export * as declarations from './declarations.js';
+export * as maps from './maps.js';

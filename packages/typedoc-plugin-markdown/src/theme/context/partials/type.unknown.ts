@@ -1,5 +1,5 @@
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { UnknownType } from 'typedoc';
 
 export function unknownType(

@@ -1,6 +1,6 @@
-import { heading } from 'libs/markdown';
-import { escapeChars } from 'libs/utils';
-import { MarkdownThemeContext } from 'theme';
+import { heading } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection } from 'typedoc';
 
 export function signatures(

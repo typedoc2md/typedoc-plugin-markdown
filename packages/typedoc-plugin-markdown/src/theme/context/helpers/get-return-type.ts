@@ -1,5 +1,5 @@
-import { codeBlock } from 'libs/markdown';
-import { MarkdownThemeContext } from 'public-api';
+import { codeBlock } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ReflectionType, SomeType } from 'typedoc';
 
 export function getReturnType(this: MarkdownThemeContext, model?: SomeType) {

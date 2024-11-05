@@ -1,7 +1,6 @@
-import { backTicks, strikeThrough } from '@plugin/libs/markdown';
-import { escapeChars } from '@plugin/libs/utils';
-import { encodeAngleBrackets } from '@plugin/libs/utils/encode-angle-brackets';
-import { MarkdownThemeContext } from '@plugin/theme';
+import { backTicks, strikeThrough } from '@plugin/libs/markdown/index.js';
+import { encodeAngleBrackets, escapeChars } from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 export function memberTitle(

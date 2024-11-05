@@ -10,10 +10,10 @@ import {
   MarkdownApplication,
   MarkdownPageEvent,
 } from 'typedoc-plugin-markdown';
-import { DEFAULT_SIDEBAR_OPTIONS } from './options';
-import * as options from './options/declarations';
-import { presets } from './options/presets';
-import { getSidebar } from './sidebars/sidebars';
+import { DEFAULT_SIDEBAR_OPTIONS } from './options.js';
+import * as options from './options/declarations.js';
+import { presets } from './options/presets.js';
+import { getSidebar } from './sidebars/sidebars.js';
 
 export function load(app: MarkdownApplication) {
   Object.entries(options).forEach(([name, option]) => {

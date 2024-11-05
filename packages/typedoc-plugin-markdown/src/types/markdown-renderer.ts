@@ -1,7 +1,10 @@
-import { MarkdownPageEvent, MarkdownRendererEvent } from '@plugin/events';
+import {
+  MarkdownPageEvent,
+  MarkdownRendererEvent,
+} from '@plugin/events/index.js';
+import { MarkdownTheme } from '@plugin/theme/index.js';
 import { EventHooks, Options, Renderer } from 'typedoc';
-import { MarkdownTheme } from '..';
-import { MarkdownRendererHooks } from './markdown-renderer-hooks';
+import { MarkdownRendererHooks } from './markdown-renderer-hooks.js';
 
 /**
  * The MarkdownRenderer extends TypeDoc's Renderer instance with custom hooks and async jobs.

@@ -1,6 +1,6 @@
-import { MarkdownPageEvent } from '@plugin/events';
-import { heading } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { heading } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   EntryPointStrategy,
   ProjectReflection,
@@ -57,7 +57,9 @@ export function project(
       md.push(this.helpers.getGroupIndex(group));
     }
 
-    if (page.model.children?.some((child) => child.kind !== ReflectionKind.Module)) {
+    if (
+      page.model.children?.some((child) => child.kind !== ReflectionKind.Module)
+    ) {
       md.push(this.partials.body(page.model, { headingLevel: 2 }));
     }
 

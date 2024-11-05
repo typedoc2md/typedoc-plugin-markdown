@@ -1,5 +1,5 @@
-import { heading, unorderedList } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
+import { heading, unorderedList } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 /**

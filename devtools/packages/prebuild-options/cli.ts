@@ -1,9 +1,9 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env tsx
 
 import { DOCS_CONFIG, DocsConfig, getPackageName } from '@devtools/helpers';
 import { consola } from 'consola';
-import { generateOptionsDocs } from './tasks/generate-docs';
-import { generateOptionsModels } from './tasks/generate-models';
+import { generateOptionsDocs } from './tasks/generate-docs.js';
+import { generateOptionsModels } from './tasks/generate-models.js';
 
 main();
 

@@ -4,5 +4,5 @@
  * @module
  */
 
-export * as declarations from './declarations';
-export * as helpers from './helpers';
+export * as declarations from './declarations.js';
+export * as helpers from './helpers.js';

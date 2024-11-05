@@ -20,64 +20,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "path": "@scope/package-1/index.md"
   },
   {
-    "title": "package-1b",
-    "kind": 2,
-    "children": [
-      {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "PackageInterface",
-            "kind": 256,
-            "path": "package-1b/interfaces/PackageInterface.md"
-          }
-        ]
-      }
-    ],
-    "path": "package-1b/index.md"
-  },
-  {
-    "title": "package-2",
-    "kind": 2,
-    "children": [
-      {
-        "title": "module-1",
-        "kind": 2,
-        "path": "package-2/module-1/index.md",
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "package-2/module-1/interfaces/PackageInterface1.md"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "package-2/module-2/index.md",
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "package-2/module-2/interfaces/PackageInterface2.md"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "path": "package-2/index.md"
-  },
-  {
     "title": "@scope/package-3",
     "kind": 2,
     "children": [
@@ -134,6 +76,64 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "@scope/package-3/index.md"
+  },
+  {
+    "title": "package-1b",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "kind": 256,
+            "path": "package-1b/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "path": "package-1b/index.md"
+  },
+  {
+    "title": "package-2",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-2/module-1/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface1",
+                "kind": 256,
+                "path": "package-2/module-1/interfaces/PackageInterface1.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-2/module-2/index.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "kind": 256,
+                "path": "package-2/module-2/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "path": "package-2/index.md"
   },
   {
     "title": "package-4",
@@ -328,64 +328,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "path": "package-1/README.md"
   },
   {
-    "title": "package-1b",
-    "kind": 2,
-    "children": [
-      {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "PackageInterface",
-            "kind": 256,
-            "path": "package-1b/interfaces/PackageInterface.md"
-          }
-        ]
-      }
-    ],
-    "path": "package-1b/README.md"
-  },
-  {
-    "title": "package-2",
-    "kind": 2,
-    "children": [
-      {
-        "title": "module-1",
-        "kind": 2,
-        "path": "package-2/module-1/README.md",
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "package-2/module-1/interfaces/PackageInterface1.md"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "package-2/module-2/README.md",
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "package-2/module-2/interfaces/PackageInterface2.md"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "path": "package-2/README.md"
-  },
-  {
     "title": "@scope/package-3",
     "kind": 2,
     "children": [
@@ -442,6 +384,64 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-3/README.md"
+  },
+  {
+    "title": "package-1b",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "PackageInterface",
+            "kind": 256,
+            "path": "package-1b/interfaces/PackageInterface.md"
+          }
+        ]
+      }
+    ],
+    "path": "package-1b/README.md"
+  },
+  {
+    "title": "package-2",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-2/module-1/README.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface1",
+                "kind": 256,
+                "path": "package-2/module-1/interfaces/PackageInterface1.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-2/module-2/README.md",
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "kind": 256,
+                "path": "package-2/module-2/interfaces/PackageInterface2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "path": "package-2/README.md"
   },
   {
     "title": "package-4",
@@ -631,28 +631,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "path": "@scope/package-1/index.md"
   },
   {
-    "title": "package-1b",
-    "kind": 2,
-    "path": "package-1b/index.md"
-  },
-  {
-    "title": "package-2",
-    "kind": 2,
-    "children": [
-      {
-        "title": "module-1",
-        "kind": 2,
-        "path": "package-2/module-1.md"
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "package-2/module-2.md"
-      }
-    ],
-    "path": "package-2/index.md"
-  },
-  {
     "title": "@scope/package-3",
     "kind": 2,
     "children": [
@@ -709,6 +687,28 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "@scope/package-3/index.md"
+  },
+  {
+    "title": "package-1b",
+    "kind": 2,
+    "path": "package-1b/index.md"
+  },
+  {
+    "title": "package-2",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-2/module-1.md"
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-2/module-2.md"
+      }
+    ],
+    "path": "package-2/index.md"
   },
   {
     "title": "package-4",
@@ -801,28 +801,6 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "path": "package-1/README.md"
   },
   {
-    "title": "package-1b",
-    "kind": 2,
-    "path": "package-1b/README.md"
-  },
-  {
-    "title": "package-2",
-    "kind": 2,
-    "children": [
-      {
-        "title": "module-1",
-        "kind": 2,
-        "path": "package-2/module-1.md"
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "package-2/module-2.md"
-      }
-    ],
-    "path": "package-2/README.md"
-  },
-  {
     "title": "@scope/package-3",
     "kind": 2,
     "children": [
@@ -879,6 +857,28 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-3/README.md"
+  },
+  {
+    "title": "package-1b",
+    "kind": 2,
+    "path": "package-1b/README.md"
+  },
+  {
+    "title": "package-2",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-2/module-1.md"
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-2/module-2.md"
+      }
+    ],
+    "path": "package-2/README.md"
   },
   {
     "title": "package-4",
@@ -1112,6 +1112,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "documents/Project-Document-1.md"
+      },
+      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_2.md"
@@ -1120,11 +1125,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_3.md"
-      },
-      {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "documents/Project-Document-1.md"
       }
     ]
   },
@@ -1278,9 +1278,9 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
             "path": "ModuleWithDocuments1/functions/multipleFunctionWithDocuments.md",
             "children": [
               {
-                "title": "FUNCTION_DOC_1",
+                "title": "FUNCTION_DOC_3",
                 "kind": 8388608,
-                "path": "ModuleWithDocuments1/functions/documents/FUNCTION_DOC_1.md"
+                "path": "ModuleWithDocuments1/functions/documents/FUNCTION_DOC_3.md"
               }
             ]
           }
@@ -1404,9 +1404,9 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
             "path": "ModuleWithDocuments2/functions/multipleFunctionWithDocuments.md",
             "children": [
               {
-                "title": "FUNCTION_DOC_1",
+                "title": "FUNCTION_DOC_3",
                 "kind": 8388608,
-                "path": "ModuleWithDocuments2/functions/documents/FUNCTION_DOC_1.md"
+                "path": "ModuleWithDocuments2/functions/documents/FUNCTION_DOC_3.md"
               }
             ]
           }
@@ -1423,6 +1423,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "Document.Project-Document-1.md"
+      },
+      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_2.md"
@@ -1431,11 +1436,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_3.md"
-      },
-      {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "Document.Project-Document-1.md"
       }
     ]
   },
@@ -1589,9 +1589,9 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
             "path": "ModuleWithDocuments1.Function.multipleFunctionWithDocuments.md",
             "children": [
               {
-                "title": "FUNCTION_DOC_1",
+                "title": "FUNCTION_DOC_3",
                 "kind": 8388608,
-                "path": "ModuleWithDocuments1.multipleFunctionWithDocuments.Document.FUNCTION_DOC_1.md"
+                "path": "ModuleWithDocuments1.multipleFunctionWithDocuments.Document.FUNCTION_DOC_3.md"
               }
             ]
           }
@@ -1715,9 +1715,9 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
             "path": "ModuleWithDocuments2.Function.multipleFunctionWithDocuments.md",
             "children": [
               {
-                "title": "FUNCTION_DOC_1",
+                "title": "FUNCTION_DOC_3",
                 "kind": 8388608,
-                "path": "ModuleWithDocuments2.multipleFunctionWithDocuments.Document.FUNCTION_DOC_1.md"
+                "path": "ModuleWithDocuments2.multipleFunctionWithDocuments.Document.FUNCTION_DOC_3.md"
               }
             ]
           }
@@ -1734,6 +1734,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "documents/Project-Document-1.md"
+      },
+      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_2.md"
@@ -1742,11 +1747,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "documents/docs/project/PROJECT_DOC_3.md"
-      },
-      {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "documents/Project-Document-1.md"
       }
     ]
   },
@@ -1800,6 +1800,11 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
     "title": "Documents",
     "children": [
       {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "Document.Project-Document-1.md"
+      },
+      {
         "title": "docs/project/PROJECT_DOC_2",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_2.md"
@@ -1808,11 +1813,6 @@ exports[`Navigation should gets Navigation Json for documents multi module: (Out
         "title": "docs/project/PROJECT_DOC_3",
         "kind": 8388608,
         "path": "Document.docs.project.PROJECT_DOC_3.md"
-      },
-      {
-        "title": "Project Document 1",
-        "kind": 8388608,
-        "path": "Document.Project-Document-1.md"
       }
     ]
   },
@@ -2022,9 +2022,9 @@ exports[`Navigation should gets Navigation Json for documents single module: (Ou
             "path": "ModuleWithDocuments1/functions/multipleFunctionWithDocuments.md",
             "children": [
               {
-                "title": "FUNCTION_DOC_1",
+                "title": "FUNCTION_DOC_3",
                 "kind": 8388608,
-                "path": "ModuleWithDocuments1/functions/documents/FUNCTION_DOC_1.md"
+                "path": "ModuleWithDocuments1/functions/documents/FUNCTION_DOC_3.md"
               }
             ]
           }
@@ -2197,9 +2197,9 @@ exports[`Navigation should gets Navigation Json for documents single module: (Ou
             "path": "ModuleWithDocuments1/functions/multipleFunctionWithDocuments.md",
             "children": [
               {
-                "title": "FUNCTION_DOC_1",
+                "title": "FUNCTION_DOC_3",
                 "kind": 8388608,
-                "path": "ModuleWithDocuments1/functions/documents/FUNCTION_DOC_1.md"
+                "path": "ModuleWithDocuments1/functions/documents/FUNCTION_DOC_3.md"
               }
             ]
           }

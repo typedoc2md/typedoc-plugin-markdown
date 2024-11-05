@@ -1,5 +1,9 @@
-import { MarkdownPageEvent } from '@plugin/events';
-import { NavigationItem, RenderTemplate, UrlMapping } from '@plugin/types';
+import { MarkdownPageEvent } from '@plugin/events/index.js';
+import {
+  NavigationItem,
+  RenderTemplate,
+  UrlMapping,
+} from '@plugin/types/index.js';
 import * as path from 'path';
 import { ProjectReflection, Reflection } from 'typedoc';
 

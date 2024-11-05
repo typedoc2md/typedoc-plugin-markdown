@@ -3,5 +3,5 @@
  *
  * @module
  */
-export * from './markdown-page-event';
-export * from './markdown-renderer-event';
+export * from './markdown-page-event.js';
+export * from './markdown-renderer-event.js';

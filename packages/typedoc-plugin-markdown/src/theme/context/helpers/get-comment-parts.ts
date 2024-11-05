@@ -1,6 +1,6 @@
+import { link } from '@plugin/libs/markdown/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import * as fs from 'fs';
-import { link } from 'libs/markdown';
-import { MarkdownThemeContext } from 'theme';
 import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
 
 export function getCommentParts(
@@ -44,20 +44,27 @@ export function getCommentParts(
         break;
       case 'relative-link':
         switch (typeof part.target) {
-          case 'number':
-            {
-              const reflection = this.page.project.files.resolve(part.target);
-              if (typeof reflection === 'object' && reflection.url) {
-                md.push(this.getRelativeUrl(reflection.url));
-                break;
-              }
+          case 'number': {
+            const refl = this.page.project.files.resolve(
+              part.target,
+              this.page.model.project,
+            );
+            let url: string | undefined;
+            if (typeof refl === 'object' && refl.url) {
+              url = this.getRelativeUrl(refl.url);
+            } else {
               const fileName = this.page.project.files.getName(part.target);
               if (fileName) {
-                md.push(this.getRelativeUrl(`_media/${fileName}`));
-                break;
+                url = this.getRelativeUrl(`_media/${fileName}`);
               }
             }
-            break;
+
+            if (url) {
+              md.push(url);
+              break;
+            }
+          }
+          // fall through
           case 'undefined':
             md.push(part.text);
             break;

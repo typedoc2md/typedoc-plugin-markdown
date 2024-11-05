@@ -1,4 +1,4 @@
-import { escapeChars } from '../utils';
+import { escapeChars } from '@plugin/libs/utils/index.js';
 
 /**
  * Wraps a string in backticks.

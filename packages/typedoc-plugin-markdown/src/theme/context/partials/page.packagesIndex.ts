@@ -1,7 +1,15 @@
-import { heading, htmlTable, link, table } from 'libs/markdown';
-import { escapeChars, getFileNameWithExtension } from 'libs/utils';
+import {
+  heading,
+  htmlTable,
+  link,
+  table,
+} from '@plugin/libs/markdown/index.js';
+import {
+  escapeChars,
+  getFileNameWithExtension,
+} from '@plugin/libs/utils/index.js';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import * as path from 'path';
-import { MarkdownThemeContext } from 'theme';
 import { ProjectReflection } from 'typedoc';
 
 export function packagesIndex(

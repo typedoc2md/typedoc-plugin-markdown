@@ -1,4 +1,4 @@
-import { MarkdownThemeContext } from 'theme';
+import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { NamedTupleMember } from 'typedoc';
 
 export function namedTupleType(

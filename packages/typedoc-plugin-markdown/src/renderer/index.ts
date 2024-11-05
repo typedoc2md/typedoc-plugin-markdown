@@ -4,5 +4,5 @@
  * @module
  */
 
-export * from './overrides';
-export * from './packages';
+export * from './packages.js';
+export * from './render.js';

@@ -71,6 +71,8 @@ declare module 'typedoc' {
       theme_default_type: [];
       theme_description: [];
       theme_event: [];
+      theme_re_exports: [];
+      theme_renames_and_re_exports: [];
       theme_extends: [];
       theme_extended_by: [];
       theme_globals: [];

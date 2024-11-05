@@ -1,2 +1,2 @@
-export * from './navigation-builder';
-export * from './url-builder';
+export * from './navigation-builder.js';
+export * from './url-builder.js';
