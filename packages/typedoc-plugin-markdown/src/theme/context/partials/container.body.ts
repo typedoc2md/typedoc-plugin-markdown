@@ -1,6 +1,7 @@
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   ContainerReflection,
+  DeclarationReflection,
   DocumentReflection,
   ReflectionKind,
 } from 'typedoc';
@@ -37,8 +38,16 @@ export function body(
         );
       } else {
         if (model.children) {
+          const groupChildren = model.groups
+            ?.filter(
+              (group) =>
+                !(group.owningReflection instanceof DocumentReflection),
+            )
+            .reduce((acc, group) => {
+              return [...acc, ...group.children];
+            }, []);
           md.push(
-            this.partials.members(model.children, {
+            this.partials.members(groupChildren as DeclarationReflection[], {
               headingLevel: options.headingLevel,
             }),
           );

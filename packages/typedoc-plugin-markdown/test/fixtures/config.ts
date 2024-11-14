@@ -121,6 +121,7 @@ const config: Record<string, Fixture> = {
           'Function',
         ],
         hideGroupHeadings: true,
+        groupOrder: ['Functions', 'Interfaces', '*'],
         useHTMLAnchors: true,
         indexFormat: 'htmlTable',
         categorizeByGroup: false,

@@ -3695,32 +3695,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "basic/index.md",
     "children": [
       {
-        "title": "Enumerations",
+        "title": "Functions",
         "children": [
           {
-            "title": "EnumA",
-            "kind": 8,
-            "path": "basic/enumerations/EnumA.md"
-          },
-          {
-            "title": "EnumB",
-            "kind": 8,
-            "path": "basic/enumerations/EnumB.md"
-          }
-        ]
-      },
-      {
-        "title": "Classes",
-        "children": [
-          {
-            "title": "ClassA",
-            "kind": 128,
-            "path": "basic/classes/ClassA.md"
-          },
-          {
-            "title": "ClassB",
-            "kind": 128,
-            "path": "basic/classes/ClassB.md"
+            "title": "functionA",
+            "kind": 64,
+            "path": "basic/functions/functionA.md"
           }
         ]
       },
@@ -3740,6 +3720,36 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         ]
       },
       {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "path": "basic/classes/ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "basic/classes/ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "path": "basic/enumerations/EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "basic/enumerations/EnumB.md"
+          }
+        ]
+      },
+      {
         "title": "Type Aliases",
         "children": [
           {
@@ -3751,16 +3761,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "title": "TypeB",
             "kind": 2097152,
             "path": "basic/type-aliases/TypeB.md"
-          }
-        ]
-      },
-      {
-        "title": "Functions",
-        "children": [
-          {
-            "title": "functionA",
-            "kind": 64,
-            "path": "basic/functions/functionA.md"
           }
         ]
       }
@@ -3864,6 +3864,66 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-namespaces/index.md",
     "children": [
       {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "_function_A_",
+            "kind": 64,
+            "path": "has-namespaces/functions/function_A.md"
+          },
+          {
+            "title": "functionB",
+            "kind": 64,
+            "path": "has-namespaces/functions/functionB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "_Interface_A_",
+            "kind": 256,
+            "path": "has-namespaces/interfaces/Interface_A.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "has-namespaces/interfaces/InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "__Class_A_",
+            "kind": 128,
+            "path": "has-namespaces/classes/Class_A.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "has-namespaces/classes/ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "_Enum_A_",
+            "kind": 8,
+            "path": "has-namespaces/enumerations/Enum_A.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "has-namespaces/enumerations/EnumB.md"
+          }
+        ]
+      },
+      {
         "title": "Namespaces",
         "children": [
           {
@@ -3871,6 +3931,16 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "kind": 4,
             "path": "has-namespaces/namespaces/Namespace_A/index.md",
             "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "NamespaceInterface",
+                    "kind": 256,
+                    "path": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
+                  }
+                ]
+              },
               {
                 "title": "Namespaces",
                 "children": [
@@ -3892,16 +3962,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
                     ]
                   }
                 ]
-              },
-              {
-                "title": "Interfaces",
-                "children": [
-                  {
-                    "title": "NamespaceInterface",
-                    "kind": 256,
-                    "path": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md"
-                  }
-                ]
               }
             ]
           },
@@ -3909,51 +3969,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "title": "NamespaceB",
             "kind": 4,
             "path": "has-namespaces/namespaces/NamespaceB/index.md"
-          }
-        ]
-      },
-      {
-        "title": "Enumerations",
-        "children": [
-          {
-            "title": "_Enum_A_",
-            "kind": 8,
-            "path": "has-namespaces/enumerations/Enum_A.md"
-          },
-          {
-            "title": "EnumB",
-            "kind": 8,
-            "path": "has-namespaces/enumerations/EnumB.md"
-          }
-        ]
-      },
-      {
-        "title": "Classes",
-        "children": [
-          {
-            "title": "__Class_A_",
-            "kind": 128,
-            "path": "has-namespaces/classes/Class_A.md"
-          },
-          {
-            "title": "ClassB",
-            "kind": 128,
-            "path": "has-namespaces/classes/ClassB.md"
-          }
-        ]
-      },
-      {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "_Interface_A_",
-            "kind": 256,
-            "path": "has-namespaces/interfaces/Interface_A.md"
-          },
-          {
-            "title": "InterfaceB",
-            "kind": 256,
-            "path": "has-namespaces/interfaces/InterfaceB.md"
           }
         ]
       },
@@ -3969,21 +3984,6 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "title": "TypeB",
             "kind": 2097152,
             "path": "has-namespaces/type-aliases/TypeB.md"
-          }
-        ]
-      },
-      {
-        "title": "Functions",
-        "children": [
-          {
-            "title": "_function_A_",
-            "kind": 64,
-            "path": "has-namespaces/functions/function_A.md"
-          },
-          {
-            "title": "functionB",
-            "kind": 64,
-            "path": "has-namespaces/functions/functionB.md"
           }
         ]
       }

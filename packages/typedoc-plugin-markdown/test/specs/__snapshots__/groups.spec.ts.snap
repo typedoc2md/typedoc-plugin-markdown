@@ -69,12 +69,12 @@ A basic module
 
 ## Index
 
-### Enumerations
+### Functions
 
 <table>
 <thead>
 <tr>
-<th align="left">Enumeration</th>
+<th align="left">Function</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -82,61 +82,14 @@ A basic module
 <tr>
 <td>
 
-[EnumA](enumerations/EnumA.md)
+[functionA](functions/functionA.md)
 
 </td>
 <td>
 
-EnumA function.
+Create a function.
 
-</td>
-</tr>
-<tr>
-<td>
-
-[EnumB](enumerations/EnumB.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### Classes
-
-<table>
-<thead>
-<tr>
-<th align="left">Class</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-[ClassA](classes/ClassA.md)
-
-</td>
-<td>
-
-ClassA function.
-
-</td>
-</tr>
-<tr>
-<td>
-
-[ClassB](classes/ClassB.md)
-
-</td>
-<td>
-
-&hyphen;
+More summary.
 
 </td>
 </tr>
@@ -191,6 +144,80 @@ InterfaceB function.
 </tbody>
 </table>
 
+### Classes
+
+<table>
+<thead>
+<tr>
+<th align="left">Class</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[ClassA](classes/ClassA.md)
+
+</td>
+<td>
+
+ClassA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ClassB](classes/ClassB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Enumerations
+
+<table>
+<thead>
+<tr>
+<th align="left">Enumeration</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[EnumA](enumerations/EnumA.md)
+
+</td>
+<td>
+
+EnumA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[EnumB](enumerations/EnumB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Type Aliases
 
 <table>
@@ -222,33 +249,6 @@ TypeA function.
 <td>
 
 TypeB function.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### Functions
-
-<table>
-<thead>
-<tr>
-<th align="left">Function</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-[functionA](functions/functionA.md)
-
-</td>
-<td>
-
-Create a function.
-
-More summary.
 
 </td>
 </tr>
@@ -390,45 +390,9 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-<a id="enuma" name="enuma"></a>
+<a id="functiona" name="functiona"></a>
 
-## EnumA
-
-EnumA function.
-
-***
-
-<a id="enumb" name="enumb"></a>
-
-## EnumB
-
-***
-
-<a id="classa" name="classa"></a>
-
-## ClassA
-
-ClassA function.
-
-### Constructors
-
-<a id="constructors" name="constructors"></a>
-
-#### new ClassA()
-
-_SIGNATURE_MEMBER_PARTIAL_
-
-***
-
-<a id="classb" name="classb"></a>
-
-## ClassB
-
-### Constructors
-
-<a id="constructors-1" name="constructors-1"></a>
-
-#### new ClassB()
+## functionA()
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -475,6 +439,50 @@ InterfaceB function.
 
 ***
 
+<a id="classa" name="classa"></a>
+
+## ClassA
+
+ClassA function.
+
+### Constructors
+
+<a id="constructors" name="constructors"></a>
+
+#### new ClassA()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="classb" name="classb"></a>
+
+## ClassB
+
+### Constructors
+
+<a id="constructors-1" name="constructors-1"></a>
+
+#### new ClassB()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="enuma" name="enuma"></a>
+
+## EnumA
+
+EnumA function.
+
+***
+
+<a id="enumb" name="enumb"></a>
+
+## EnumB
+
+***
+
 <a id="typea" name="typea"></a>
 
 ## TypeA
@@ -504,14 +512,6 @@ _DECLARATION_MEMBER_PARTIAL_
 ## variableB
 
 _DECLARATION_MEMBER_PARTIAL_
-
-***
-
-<a id="functiona" name="functiona"></a>
-
-## functionA()
-
-_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -1361,31 +1361,6 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 ## Index
 
-### Namespaces
-
-<table>
-<thead>
-<tr>
-<th align="left">Namespace</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-[NestedNamespace](namespaces/NestedNamespace/index.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ### Interfaces
 
 <table>
@@ -1400,6 +1375,31 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 <td>
 
 [NamespaceInterface](interfaces/NamespaceInterface.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Namespaces
+
+<table>
+<thead>
+<tr>
+<th align="left">Namespace</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[NestedNamespace](namespaces/NestedNamespace/index.md)
 
 </td>
 <td>
@@ -1555,12 +1555,12 @@ A module that contains namespaces
 
 ## Index
 
-### Namespaces
+### Functions
 
 <table>
 <thead>
 <tr>
-<th align="left">Namespace</th>
+<th align="left">Function</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -1568,7 +1568,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
+[\\_function\\_A\\_](functions/function_A.md)
 
 </td>
 <td>
@@ -1580,81 +1580,7 @@ A module that contains namespaces
 <tr>
 <td>
 
-[NamespaceB](namespaces/NamespaceB/index.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### Enumerations
-
-<table>
-<thead>
-<tr>
-<th align="left">Enumeration</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-[\\_Enum\\_A\\_](enumerations/Enum_A.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-[EnumB](enumerations/EnumB.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### Classes
-
-<table>
-<thead>
-<tr>
-<th align="left">Class</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-[\\_\\_Class\\_A\\_](classes/Class_A.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-[ClassB](classes/ClassB.md)
+[functionB](functions/functionB.md)
 
 </td>
 <td>
@@ -1703,6 +1629,117 @@ A module that contains namespaces
 </tbody>
 </table>
 
+### Classes
+
+<table>
+<thead>
+<tr>
+<th align="left">Class</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[\\_\\_Class\\_A\\_](classes/Class_A.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ClassB](classes/ClassB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Enumerations
+
+<table>
+<thead>
+<tr>
+<th align="left">Enumeration</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[\\_Enum\\_A\\_](enumerations/Enum_A.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[EnumB](enumerations/EnumB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Namespaces
+
+<table>
+<thead>
+<tr>
+<th align="left">Namespace</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[NamespaceB](namespaces/NamespaceB/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Type Aliases
 
 <table>
@@ -1729,43 +1766,6 @@ A module that contains namespaces
 <td>
 
 [TypeB](type-aliases/TypeB.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### Functions
-
-<table>
-<thead>
-<tr>
-<th align="left">Function</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-[\\_function\\_A\\_](functions/function_A.md)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-[functionB](functions/functionB.md)
 
 </td>
 <td>
@@ -1937,15 +1937,31 @@ A module that contains namespaces
 </tbody>
 </table>
 
-<a id="_enum_a_" name="_enum_a_"></a>
+<a id="_function_a_" name="_function_a_"></a>
 
-## \\_Enum\\_A\\_
+## \\_function\\_A\\_()
+
+_SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="enumb" name="enumb"></a>
+<a id="functionb" name="functionb"></a>
 
-## EnumB
+## functionB()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="_interface_a_" name="_interface_a_"></a>
+
+## \\_Interface\\_A\\_
+
+***
+
+<a id="interfaceb" name="interfaceb"></a>
+
+## InterfaceB
 
 ***
 
@@ -1977,15 +1993,15 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="_interface_a_" name="_interface_a_"></a>
+<a id="_enum_a_" name="_enum_a_"></a>
 
-## \\_Interface\\_A\\_
+## \\_Enum\\_A\\_
 
 ***
 
-<a id="interfaceb" name="interfaceb"></a>
+<a id="enumb" name="enumb"></a>
 
-## InterfaceB
+## EnumB
 
 ***
 
@@ -2018,22 +2034,6 @@ _DECLARATION_MEMBER_PARTIAL_
 ## variableB
 
 _DECLARATION_MEMBER_PARTIAL_
-
-***
-
-<a id="_function_a_" name="_function_a_"></a>
-
-## \\_function\\_A\\_()
-
-_SIGNATURE_MEMBER_PARTIAL_
-
-***
-
-<a id="functionb" name="functionb"></a>
-
-## functionB()
-
-_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
