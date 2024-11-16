@@ -179,17 +179,16 @@ export interface PluginOptions {
    */
   textContentMappings: {
     'header.title': string;
-    'header.docs': string;
     'breadcrumbs.home': string;
     'title.indexPage': string;
     'title.memberPage': string;
-    'footer.text': string;
+    'title.modulePage': string;
   };
 
   /**
    * Sets the format of style for type declaration members.
    */
-  typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
+  typeDeclarationFormat: 'list' | 'source' | 'table' | 'htmlTable';
 
   /**
    * Wraps signatures and declarations in code blocks.

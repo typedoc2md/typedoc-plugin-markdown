@@ -1,5 +1,4 @@
 import { heading } from '@plugin/libs/markdown/index.js';
-import { escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection } from 'typedoc';
 
@@ -31,14 +30,12 @@ export function signatures(
     );
   }
 
-  model.signatures?.forEach((signature) => {
+  model.signatures?.forEach((signature, i) => {
     if (multipleSignatures) {
       md.push(
         heading(
           options.headingLevel + 1,
-          `${escapeChars(signature.name)}(${signature.parameters
-            ?.map((param) => param.name)
-            .join(', ')})`,
+          `${this.i18n.kind_call_signature()} ${i + 1}`,
         ),
       );
     }

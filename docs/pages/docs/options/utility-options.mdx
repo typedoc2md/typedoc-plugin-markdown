@@ -28,36 +28,6 @@ This option would typically be used when source code comes from an external sour
 }
 ```
 
-## --textContentMappings
-
-<Callout emoji="💡">Change specific text placeholders in the template.</Callout>
-
->
-
-Defines placeholder text that can be customized. Includes the main page header and breadcrumbs (if displayed),
-page titles and page footer.
-
-Default values within curly braces {} indicates a placeholder of dynamic text.
-
-- The `{projectName}` placeholder writes project's name .
-- The `{kind}` writes the reflection kind of the page.
-- The `{version}` placeholder writes package version (if includeVersion is `true`).
-
-If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
-
-```json filename="typedoc.json"
-{
-  "textContentMappings": {
-    "header.title": "{projectName} {version}",
-    "header.docs": "Docs",
-    "breadcrumbs.home": "{projectName} {version}",
-    "title.indexPage": "{projectName} {version}",
-    "title.memberPage": "{kind}: {name}",
-    "footer.text": ""
-  }
-}
-```
-
 ## --publicPath
 
 <Callout emoji="💡">Specify the base path for all urls.</Callout>
@@ -135,5 +105,48 @@ This option can be used for engines that require the preservation of anchor link
 ```json filename="typedoc.json"
 {
   "preserveAnchorCasing": false
+}
+```
+
+## --textContentMappings
+
+<Callout emoji="💡">Change specific text placeholders in the template.</Callout>
+
+>
+
+Defines placeholder text that can be customized. Includes the main page header, breadcrumbs (if displayed) and main page titles.
+
+Values can be strings that accept placeholders inside curly brace `{}`, or functions that provide placeholders as arguments.
+
+Default values within curly braces {} indicates a placeholder of dynamic text.
+
+- The `{projectName}` placeholder writes project's name.
+- The `{version}` placeholder writes package version (if includeVersion is `true`).
+- The `{kind}` placeholder writes the reflection kind of the page.
+- The `{name}` placeholder writes the reflection name.
+- The `{group}` place holder writes the group title
+- The `{category}` placeholder writes the group title
+
+**Available keys**
+
+| Key                | Available Placeholders/Args         | Description                                                 |
+| ------------------ | ----------------------------------- | ----------------------------------------------------------- |
+| `header.title`     | `projectName`, `version`            | Writes the project's name.                                  |
+| `breadcrumbs.home` | `projectName`, `version`            | Writes the reflection kind of the page.                     |
+| `title.indexPage`  | `projectName`, `version`            | Writes the package version (if `includeVersion` is `true`). |
+| `title.modulePage` | `kind`, `name`                      | Writes the package version (if `includeVersion` is `true`). |
+| `title.memberPage` | `kind`, `name`, `group`, `category` | Writes the group and name of the member page dynamically.   |
+
+If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
+
+```json filename="typedoc.json"
+{
+  "textContentMappings": {
+    "header.title": "{projectName} {version}",
+    "breadcrumbs.home": "{projectName} {version}",
+    "title.indexPage": "{projectName} {version}",
+    "title.memberPage": "{kind}: {name}",
+    "title.modulePage": "{name}"
+  }
 }
 ```

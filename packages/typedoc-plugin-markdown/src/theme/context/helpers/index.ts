@@ -1,5 +1,6 @@
 export * from './get-angle-bracket.js';
 export * from './get-comment-parts.js';
+export * from './get-compiler-source.js';
 export * from './get-declaration-type.js';
 export * from './get-description-for-comment.js';
 export * from './get-flattened-declarations.js';

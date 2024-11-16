@@ -24,7 +24,11 @@ import {
   ALLOWED_OWN_FILE_MEMBERS,
   TEXT_CONTENT_MAPPINGS,
 } from './constants.js';
-import { DisplayFormat, OutputFileStrategy } from './maps.js';
+import {
+  DisplayFormat,
+  OutputFileStrategy,
+  TypeDeclarationFormat,
+} from './maps.js';
 
 /**
  * TypeDoc creates documentation according to exports derived from the given [`--entryPointsStrategy`](https://typedoc.org/options/input/#entrypointstrategy) TypeDoc configuration.
@@ -474,8 +478,8 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
 export const typeDeclarationFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of style for type declaration members.',
   type: ParameterType.Map,
-  map: DisplayFormat,
-  defaultValue: DisplayFormat.List,
+  map: TypeDeclarationFormat,
+  defaultValue: TypeDeclarationFormat.List,
 };
 
 /**
@@ -554,40 +558,6 @@ export const sanitizeComments: Partial<DeclarationOption> = {
 };
 
 /**
- * Defines placeholder text that can be customized. Includes the main page header and breadcrumbs (if displayed),
- * page titles and page footer.
- *
- * Default values within curly braces {} indicates a placeholder of dynamic text.
- *
- * - The `{projectName}` placeholder writes project's name .
- * - The `{kind}` writes the reflection kind of the page.
- * - The `{version}` placeholder writes package version (if includeVersion is `true`).
- *
- * If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
- *
- * @category Utility
- */
-export const textContentMappings: Partial<DeclarationOption> = {
-  help: 'Change specific text placeholders in the template.',
-  type: ParameterType.Object,
-  defaultValue: TEXT_CONTENT_MAPPINGS,
-  validate(value) {
-    if (!value || typeof value !== 'object') {
-      throw new Error(
-        '[typedoc-plugin-markdown] textContentMappings must be an object.',
-      );
-    }
-    for (const val of Object.values(value)) {
-      if (typeof val !== 'string') {
-        throw new Error(
-          `[typedoc-plugin-markdown] All values of textContentMappings must be strings.`,
-        );
-      }
-    }
-  },
-};
-
-/**
  * If undefined all urls will be relative.
  *
  * @example "http://abc.com"
@@ -650,6 +620,56 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
   help: 'Preserve anchor casing when generating link to symbols.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * Defines placeholder text that can be customized. Includes the main page header, breadcrumbs (if displayed) and main page titles.
+ *
+ * Values can be strings that accept placeholders inside curly brace `{}`, or functions that provide placeholders as arguments.
+ *
+ * Default values within curly braces {} indicates a placeholder of dynamic text.
+ *
+ * - The `{projectName}` placeholder writes project's name.
+ * - The `{version}` placeholder writes package version (if includeVersion is `true`).
+ * - The `{kind}` placeholder writes the reflection kind of the page.
+ * - The `{name}` placeholder writes the reflection name.
+ * - The `{group}` place holder writes the group title
+ * - The `{category}` placeholder writes the group title
+
+ *
+ * **Available keys**
+ *
+ * | Key                   | Available Placeholders/Args | Description                                                                |
+ * |-----------------------|----------------------------|----------------------------------------------------------------------------|
+ * | `header.title`        | `projectName`, `version`   | Writes the project's name.                                                 |
+ * | `breadcrumbs.home`    | `projectName`, `version`                  | Writes the reflection kind of the page.                                    |
+ * | `title.indexPage`    | `projectName`, `version`               | Writes the package version (if `includeVersion` is `true`).                |
+ * | `title.modulePage`   | `kind`, `name`               | Writes the package version (if `includeVersion` is `true`).                |
+ * | `title.memberPage`    | `kind`, `name`, `group`, `category`           | Writes the group and name of the member page dynamically.                  |
+ *
+ * If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
+ *
+ * @category Utility
+ */
+export const textContentMappings: Partial<DeclarationOption> = {
+  help: 'Change specific text placeholders in the template.',
+  type: ParameterType.Object,
+  defaultValue: TEXT_CONTENT_MAPPINGS,
+  configFileOnly: true,
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-markdown] textContentMappings must be an object.',
+      );
+    }
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string' && typeof val !== 'function') {
+        throw new Error(
+          `[typedoc-plugin-markdown] All values of textContentMappings must be strings or functions.`,
+        );
+      }
+    }
+  },
 };
 
 /**

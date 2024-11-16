@@ -7,6 +7,7 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
   const md: string[] = [];
 
   const textContentMappings = this.options.getValue('textContentMappings');
+  const breadcrumbsHome = textContentMappings['breadcrumbs.home'] as any;
   const fileExtension = this.options.getValue('fileExtension');
   const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
 
@@ -18,10 +19,16 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
     return '';
   }
 
-  const homeLabel = this.helpers.getProjectName(
-    textContentMappings['breadcrumbs.home'],
-    this.page,
-  );
+  let homeLabel = '';
+
+  if (typeof breadcrumbsHome === 'string') {
+    homeLabel = this.helpers.getProjectName(breadcrumbsHome, this.page);
+  } else {
+    homeLabel = breadcrumbsHome({
+      name: this.page?.project?.name,
+      version: this.page?.project?.packageVersion,
+    });
+  }
 
   md.push(
     link(

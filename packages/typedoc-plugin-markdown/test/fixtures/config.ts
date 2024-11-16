@@ -58,6 +58,7 @@ const config: Record<string, Fixture> = {
       {
         parametersFormat: 'table',
         propertiesFormat: 'table',
+        typeDeclarationFormat: 'source',
         useCodeBlocks: true,
       },
     ],

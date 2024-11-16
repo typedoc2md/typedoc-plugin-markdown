@@ -22,7 +22,9 @@ export function signature(
     );
   }
 
-  let modelComments = model.comment || model.parent?.comment;
+  let modelComments = options.multipleSignatures
+    ? model.comment
+    : model.comment || model.parent?.comment;
 
   if (
     modelComments &&
@@ -33,6 +35,7 @@ export function signature(
       summary: model.parent.comment.summary,
     });
   }
+
   if (modelComments && model.parent?.comment?.blockTags) {
     modelComments.blockTags = [
       ...(model.parent?.comment?.blockTags || []),

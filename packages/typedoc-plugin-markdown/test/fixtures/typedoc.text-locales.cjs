@@ -6,14 +6,14 @@ const baseOptions = require('../../../../devtools/packages/fixtures/typedoc.cjs'
 module.exports = {
   ...baseOptions,
   textContentMappings: {
-    'header.title': 'My API - {version} (ko)',
-    'header.docs': 'Docs (ko)',
-    'footer.text': 'Copyright Test (ko)',
+    'header.title': 'My API - {version} (jp)',
+    'header.docs': 'Docs (jp)',
+    'footer.text': 'Copyright Test (jp)',
   },
-  lang: 'ko',
+  lang: 'jp',
   locales: {
-    ko: {
-      theme_type: 'Type (ko)',
+    jp: {
+      theme_type: 'Type (jp)',
     },
   },
 };

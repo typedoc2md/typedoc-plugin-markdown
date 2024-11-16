@@ -10,7 +10,7 @@ module.exports = {
     'header.docs': 'API',
     'footer.text': 'Copyright Test',
     'title.indexPage': ':tada: Custom Index Title',
-    'title.memberPage': '{name}',
+    'title.memberPage': (args) => `${args.group}: ${args.name}`,
   },
   locales: {
     en: {

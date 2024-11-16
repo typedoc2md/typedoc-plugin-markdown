@@ -157,6 +157,7 @@ export class UrlBuilder {
             ...(outputFileStrategy && { outputFileStrategy }),
             ...(entryModule && { entryModule }),
             ...(entryFileName && { entryFileName }),
+            group: projectGroup.title,
           });
         }
       });
@@ -356,6 +357,7 @@ export class UrlBuilder {
         url: url,
         model: reflection,
         template: mapping.template,
+        group: urlOptions.group,
       });
 
       reflection.url = url;
@@ -371,6 +373,7 @@ export class UrlBuilder {
             parentUrl: urlPath,
             directory: mapping?.directory || null,
             outputFileStrategy: urlOptions.outputFileStrategy,
+            group: group.title,
           });
         });
       });

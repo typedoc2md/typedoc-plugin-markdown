@@ -18,6 +18,7 @@ export interface PackageMetaData {
 export interface UrlMapping</** @ignore */ Model> {
   url: string;
   model: Model;
+  group?: string;
   template: (data: MarkdownPageEvent<Model>) => string;
 }
 
@@ -51,6 +52,7 @@ export interface UrlOption {
   outputFileStrategy?: OutputFileStrategy;
   entryModule?: string;
   entryFileName?: string;
+  group?: string;
 }
 
 /**

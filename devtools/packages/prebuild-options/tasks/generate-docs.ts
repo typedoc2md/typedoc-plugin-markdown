@@ -211,11 +211,12 @@ ${presetsJson}
             "${option.name}": ${getExampleValue(option)}
           }`);
         } catch (e) {}
-
-        out.push(`
+        if (!option.omitExample) {
+          out.push(`
 \`\`\`json filename="typedoc.json"
 ${JSON.stringify(exampleJson, null, 2)}
 \`\`\``);
+        }
       });
       if (categories.length > 1) {
         outputPage.push(optionsLi.join('\n'));

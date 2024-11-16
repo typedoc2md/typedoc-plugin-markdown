@@ -38,9 +38,13 @@ export function signatureReturns(
       model.type.typeArguments[0].declaration.children
     ) {
       md.push(
-        this.partials.typeDeclaration(model.type.typeArguments[0].declaration, {
-          headingLevel: options.headingLevel,
-        }),
+        this.partials.typeDeclaration(
+          model.type.typeArguments[0].declaration as any,
+          {
+            headingLevel: options.headingLevel,
+            allowSource: false,
+          },
+        ),
       );
     }
   }

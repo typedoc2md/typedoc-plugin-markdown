@@ -90,7 +90,7 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
     ) => partials.groups.apply(context, [model, options]) as string,
     members: (
       model: DeclarationReflection[],
-      options: { headingLevel: number },
+      options: { headingLevel: number; groupTitle?: string | undefined },
     ) => partials.members.apply(context, [model, options]) as string,
     accessor: (
       model: DeclarationReflection,
@@ -102,7 +102,11 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
     ) => partials.constructor.apply(context, [model, options]) as string,
     memberContainer: (
       model: DeclarationReflection,
-      options: { headingLevel: number; nested?: boolean | undefined },
+      options: {
+        headingLevel: number;
+        nested?: boolean | undefined;
+        groupTitle?: string | undefined;
+      },
     ) => partials.memberContainer.apply(context, [model, options]) as string,
     declaration: (
       model: DeclarationReflection,
@@ -200,13 +204,15 @@ There is no association list partial for properties as these are handled as a st
     ) => partials.typeArguments.apply(context, [model, options]) as string,
     typeDeclaration: (
       model: DeclarationReflection,
-      options: { headingLevel: number },
+      options: { headingLevel: number; allowSource?: boolean | undefined },
     ) => partials.typeDeclaration.apply(context, [model, options]) as string,
     typeDeclarationList: (
       model: DeclarationReflection[],
       options: { headingLevel: number },
     ) =>
       partials.typeDeclarationList.apply(context, [model, options]) as string,
+    typeDeclarationSource: (model: DeclarationReflection) =>
+      partials.typeDeclarationSource.apply(context, [model]) as string,
     typeDeclarationTable: (
       model: DeclarationReflection[],
       options: { kind?: ReflectionKind | undefined },
@@ -271,6 +277,10 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getAngleBracket.apply(context, [bracket]) as string,
     getCommentParts: (model: CommentDisplayPart[]) =>
       helpers.getCommentParts.apply(context, [model]) as string,
+    getCompilerSource: (reflection: Reflection) =>
+      helpers.getCompilerSource.apply(context, [reflection]) as
+        | string
+        | undefined,
     getDeclarationType: (model: DeclarationReflection) =>
       helpers.getDeclarationType.apply(context, [model]) as
         | SomeType

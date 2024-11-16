@@ -5,7 +5,7 @@ import { DeclarationReflection } from 'typedoc';
 export function members(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
-  options: { headingLevel: number },
+  options: { headingLevel: number; groupTitle?: string },
 ): string {
   const md: string[] = [];
   const displayHr = (reflection: DeclarationReflection) => {
@@ -19,6 +19,7 @@ export function members(
     md.push(
       this.partials.memberContainer(item, {
         headingLevel: options.headingLevel,
+        groupTitle: options.groupTitle,
       }),
     );
     if (index < items.length - 1 && displayHr(item)) {

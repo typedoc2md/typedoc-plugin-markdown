@@ -20,6 +20,11 @@ export class MarkdownPageEvent<
   readonly model: Model;
 
   /**
+   * The group that the reflection belongs too
+   */
+  group?: string;
+
+  /**
    * The final markdown `string` content of the page.
    *
    * Should be rendered by layout templates and can be modified by plugins.

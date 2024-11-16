@@ -1,5 +1,24 @@
 # Changelog
 
+## 4.2.10 (2024-11-01)
+
+### Patch Changes
+
+- Enhanced the formatting and structure of accessor output ([#711](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/711))
+
+## 4.2.9 (2024-10-01)
+
+### Patch Changes
+
+- Expose `@return` block tags on declarations ([#694](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/694))
+- Add parentheses on function names in type declaration table views ([#696](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/696))
+
+## 4.2.8 (2024-09-22)
+
+### Patch Changes
+
+- Fix missing slash when public path is prefixed with http ([#688](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/688))
+
 ## 4.2.7 (2024-09-05)
 
 ### Patch Changes

@@ -110,6 +110,7 @@ Module commments
 | :------ | :------ |
 | [basicFunction](functions/basicFunction.md) | This is a function that is assigned to a variable. |
 | [basicFunctionWithReturns](functions/basicFunctionWithReturns.md) | This is a function that is assigned to a variable. |
+| [curriedFunction](functions/curriedFunction.md) | Comments for main curriedFunction |
 | [functionReturningAFunction](functions/functionReturningAFunction.md) | Comments for function |
 | [functionReturningAnObject](functions/functionReturningAnObject.md) | Comments for function |
 | [functionReturningAPromise](functions/functionReturningAPromise.md) | Comments for function |

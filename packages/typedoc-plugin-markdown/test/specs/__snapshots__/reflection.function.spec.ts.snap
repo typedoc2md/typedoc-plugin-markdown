@@ -1,5 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Function Reflection should compile curried function: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: curriedFunction()
+
+Comments for main curriedFunction
+
+## Call Signature 1
+
+> **curriedFunction**(\`searchElement\`): \\<\`Value\`\\>(\`iterable\`) => \`boolean\`
+
+Comments for current function 1
+
+### Parameters
+
+• **searchElement**: \`unknown\`
+
+### Returns
+
+\`Function\`
+
+#### Type Parameters
+
+• **Value**
+
+#### Parameters
+
+• **iterable**: \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
+
+Comments for iterable arg
+
+#### Returns
+
+\`boolean\`
+
+### Source
+
+[functions.ts:1](http://source-url)
+
+## Call Signature 2
+
+> **curriedFunction**\\<\`Value\`\\>(\`searchElement\`, \`iterable\`): \`string\`
+
+### Type Parameters
+
+• **Value**
+
+### Parameters
+
+• **searchElement**: \`unknown\`
+
+• **iterable**: \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
+
+### Returns
+
+\`string\`
+
+### Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile curried function: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: curriedFunction()
+
+Comments for main curriedFunction
+
+## Call Signature 1
+
+\`\`\`ts
+function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value, any, any>) => boolean
+\`\`\`
+
+Comments for current function 1
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`searchElement\` | \`unknown\` |
+
+### Returns
+
+\`Function\`
+
+#### Type Parameters
+
+| Type Parameter |
+| :------ |
+| \`Value\` |
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`iterable\` | \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\> | Comments for iterable arg |
+
+#### Returns
+
+\`boolean\`
+
+### Source
+
+[functions.ts:1](http://source-url)
+
+## Call Signature 2
+
+\`\`\`ts
+function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value, any, any>): string
+\`\`\`
+
+### Type Parameters
+
+| Type Parameter |
+| :------ |
+| \`Value\` |
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`searchElement\` | \`unknown\` |
+| \`iterable\` | \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\> |
+
+### Returns
+
+\`string\`
+
+### Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAFunction()
 
@@ -435,7 +568,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 
 Main function comment.
 
-## functionWithMultipleSignatures(value)
+## Call Signature 1
 
 > **functionWithMultipleSignatures**(\`value\`): \`string\`
 
@@ -455,7 +588,7 @@ The name value.
 
 [functions.ts:1](http://source-url)
 
-## functionWithMultipleSignatures(value)
+## Call Signature 2
 
 > **functionWithMultipleSignatures**(\`value\`): \`string\`
 
@@ -486,7 +619,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 
 Main function comment.
 
-## functionWithMultipleSignatures(value)
+## Call Signature 1
 
 \`\`\`ts
 function functionWithMultipleSignatures(value: string): string
@@ -508,7 +641,7 @@ This is the first signature of a function with multiple signatures.
 
 [functions.ts:1](http://source-url)
 
-## functionWithMultipleSignatures(value)
+## Call Signature 2
 
 \`\`\`ts
 function functionWithMultipleSignatures(value: object): string

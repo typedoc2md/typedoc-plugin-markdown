@@ -20,3 +20,13 @@ export enum DisplayFormat {
   Table = 'table',
   HtmlTable = 'htmlTable',
 }
+
+/**
+ * The allowed values for formatting type declarations.
+ */
+export enum TypeDeclarationFormat {
+  List = 'list',
+  Source = 'source',
+  Table = 'table',
+  HtmlTable = 'htmlTable',
+}

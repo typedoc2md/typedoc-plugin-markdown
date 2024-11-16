@@ -42,11 +42,8 @@ export function groups(
         (child) => child.kind === ReflectionKind.EnumMember,
       );
 
-      const isReferencesGroup = group.children.every(
-        (child) => child.kind === ReflectionKind.Reference,
-      );
-
       md.push(heading(options.headingLevel, getGroupTitle(group.title)));
+
       if (group.description) {
         md.push(this.helpers.getCommentParts(group.description));
       }
@@ -68,13 +65,12 @@ export function groups(
             group.children as DeclarationReflection[],
           ),
         );
-      } else if (isReferencesGroup && this.helpers.useTableFormat('enums')) {
-        md.push('REFERENCES');
       } else {
         if (group.children) {
           md.push(
             this.partials.members(group.children as DeclarationReflection[], {
               headingLevel: options.headingLevel + 1,
+              groupTitle: group.title,
             }),
           );
         }

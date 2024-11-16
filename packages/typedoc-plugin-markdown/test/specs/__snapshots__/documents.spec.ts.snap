@@ -241,7 +241,7 @@ Comments for multipleFunctionWithDocuments
 - [FUNCTION\\_DOC\\_1](documents/Function.FUNCTION_DOC_1.md)
 - [FUNCTION\\_DOC\\_2](documents/Function.FUNCTION_DOC_2.md)
 
-#### multipleFunctionWithDocuments(value)
+#### Call Signature 1
 
 _SIGNATURE_TITLE_PARTIAL_
 
@@ -253,7 +253,7 @@ _PARAMETERS_LIST_PARTIAL_
 
 _SIGNATURE_RETURNS_PARTIAL_
 
-#### multipleFunctionWithDocuments(value)
+#### Call Signature 2
 
 _SIGNATURE_TITLE_PARTIAL_
 

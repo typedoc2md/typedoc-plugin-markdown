@@ -31,6 +31,7 @@ export * from './member.typeAndParent.js';
 export * from './member.typeArguments.js';
 export * from './member.typeDeclaration.js';
 export * from './member.typeDeclarationList.js';
+export * from './member.typeDeclarationSource.js';
 export * from './member.typeDeclarationTable.js';
 export * from './member.typeParametersList.js';
 export * from './member.typeParametersTable.js';

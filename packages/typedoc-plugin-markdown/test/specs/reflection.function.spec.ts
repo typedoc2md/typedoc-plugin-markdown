@@ -61,6 +61,10 @@ describe(`Function Reflection`, () => {
     );
   });
 
+  test(`should compile curried function`, () => {
+    expectFileToEqual('reflections', 'members', 'functions/curriedFunction.md');
+  });
+
   test(`should compile function returning a string`, () => {
     expectFileToEqual(
       'reflections',

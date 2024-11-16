@@ -66,6 +66,7 @@ import { ManuallyValidatedOption } from 'typedoc'`);
         theme_default_value: [];
         theme_default_type: [];
         theme_description: [];
+        theme_documentation: [];
         theme_event: [];
         theme_re_exports: [];
         theme_renames_and_re_exports: [];

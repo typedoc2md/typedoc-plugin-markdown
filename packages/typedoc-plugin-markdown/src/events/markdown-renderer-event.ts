@@ -68,6 +68,7 @@ export class MarkdownRendererEvent extends Event {
       MarkdownPageEvent.BEGIN,
       mapping.model,
     );
+    event.group = mapping.group;
     event.project = this.project;
     event.url = mapping.url;
     event.filename = path.join(this.outputDirectory, mapping.url);

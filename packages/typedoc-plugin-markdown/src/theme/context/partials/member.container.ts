@@ -5,7 +5,7 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
 export function memberContainer(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
-  options: { headingLevel: number; nested?: boolean },
+  options: { headingLevel: number; nested?: boolean; groupTitle?: string },
 ): string {
   const md: string[] = [];
 

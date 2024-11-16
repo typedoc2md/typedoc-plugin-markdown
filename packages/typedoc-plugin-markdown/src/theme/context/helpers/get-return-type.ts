@@ -7,8 +7,8 @@ export function getReturnType(this: MarkdownThemeContext, model?: SomeType) {
     const returnType = this.partials.someType(model);
     if (
       this.options.getValue('useCodeBlocks') &&
-      model instanceof ReflectionType &&
-      this.options.getValue('expandObjects')
+      this.options.getValue('expandObjects') &&
+      model instanceof ReflectionType
     ) {
       return codeBlock(returnType);
     }

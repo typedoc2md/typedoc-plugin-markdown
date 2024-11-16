@@ -19,20 +19,20 @@ Copyright Test
 `;
 
 exports[`Text should get translations for index page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**My API - v0.0 (ko)** • **Docs (ko)**
+"**My API - v0.0 (jp)** • **Docs (jp)**
 
 ***
 
 # typedoc-stubs v0.0
 
-## 모듈
+## モジュール
 
 - [module-1](module-1/README.md)
 - [module-2](module-2/README.md)
 
 ***
 
-Copyright Test (ko)
+Copyright Test (jp)
 "
 `;
 
@@ -43,7 +43,7 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 [typedoc-stubs v0.0](../../README.md) / [module-1](../README.md) / SomeInterface
 
-# SomeInterface
+# CoolInterfaces: SomeInterface
 
 ## Properties
 
@@ -64,29 +64,29 @@ Copyright Test
 `;
 
 exports[`Text should get translations for member page: (Output File Strategy "members") (Option Group "2") 1`] = `
-"[**My API - v0.0 (ko)**](../../README.md) • **Docs (ko)**
+"[**My API - v0.0 (jp)**](../../README.md) • **Docs (jp)**
 
 ***
 
 [typedoc-stubs v0.0](../../README.md) / [module-1](../README.md) / SomeInterface
 
-# 인터페이스: SomeInterface
+# インターフェイス: SomeInterface
 
-## 속성
+## プロパティ
 
-| 속성 | Type (ko) | 설명 |
+| プロパティ | Type (jp) | 説明 |
 | :------ | :------ | :------ |
 | \`someProp?\` | \`boolean\` | Description for prop someProp |
 
 ## Events
 
-| 이벤트 | Type (ko) |
+| イベント | Type (jp) |
 | :------ | :------ |
 | \`someEvent\` | \`MouseEvent\` |
 
 ***
 
-Copyright Test (ko)
+Copyright Test (jp)
 "
 `;
 
@@ -104,6 +104,14 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 ### CoolInterfaces
 
 - [SomeInterface](interfaces/SomeInterface.md)
+
+### Components
+
+- [button](functions/button.md)
+
+### Events
+
+- [onClick](variables/onClick.md)
 
 ***
 
@@ -146,6 +154,26 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
             "title": "SomeInterface",
             "kind": 256,
             "path": "module-1/interfaces/SomeInterface.md"
+          }
+        ]
+      },
+      {
+        "title": "Components",
+        "children": [
+          {
+            "title": "button",
+            "kind": 64,
+            "path": "module-1/functions/button.md"
+          }
+        ]
+      },
+      {
+        "title": "Events",
+        "children": [
+          {
+            "title": "onClick",
+            "kind": 32,
+            "path": "module-1/variables/onClick.md"
           }
         ]
       }

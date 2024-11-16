@@ -53,13 +53,12 @@ declare module 'typedoc' {
     };
     textContentMappings: ManuallyValidatedOption<{
       'header.title': string;
-      'header.docs': string;
       'breadcrumbs.home': string;
       'title.indexPage': string;
       'title.memberPage': string;
-      'footer.text': string;
+      'title.modulePage': string;
     }>;
-    typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
+    typeDeclarationFormat: 'list' | 'source' | 'table' | 'htmlTable';
     useCodeBlocks: boolean;
     useHTMLAnchors: boolean;
     useHTMLEncodedBrackets: boolean;
@@ -70,6 +69,7 @@ declare module 'typedoc' {
       theme_default_value: [];
       theme_default_type: [];
       theme_description: [];
+      theme_documentation: [];
       theme_event: [];
       theme_re_exports: [];
       theme_renames_and_re_exports: [];

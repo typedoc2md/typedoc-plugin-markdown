@@ -9,6 +9,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_default_value: 'デフォルト値',
   theme_default_type: 'デフォルトタイプ',
   theme_description: '説明',
+  theme_documentation: 'ドキュメント',
   theme_event: 'イベント',
   theme_re_exports: '再エクスポート',
   theme_renames_and_re_exports: 'リネームと再エクスポート',

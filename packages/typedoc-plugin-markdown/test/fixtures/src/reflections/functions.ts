@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * @module
  */
@@ -143,7 +144,10 @@ export function functionWithMultipleSignatures(): string {
  * @returns Return comments
  */
 export function functionReturningAnObject() {
-  return { x: 1, y: 2 };
+  return {
+    x: 1,
+    y: 2,
+  };
 }
 
 /**
@@ -177,13 +181,28 @@ export function functionReturningAFunction() {
  * Comments for function
  * @returns Return comments
  */
-export function functionReturningAPromise(): Promise<{ prop: string }> {
+export function functionReturningAPromise(): Promise<{
+  prop: string;
+}> {
   return new Promise(() => {
     return {
-      /**
-       * Comment for prop
-       */
       prop: 'prop',
     };
   });
 }
+
+/**
+ * Comments for main curriedFunction
+ */
+export let curriedFunction: {
+  /**
+   * Comments for current function 1
+   */
+  (searchElement: unknown): <Value>(
+    /**
+     * Comments for iterable arg
+     */
+    iterable: Iterable<Value>,
+  ) => boolean;
+  <Value>(searchElement: unknown, iterable: Iterable<Value>): string;
+};

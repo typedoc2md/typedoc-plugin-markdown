@@ -11,6 +11,7 @@ import {
 
 export function header(this: MarkdownThemeContext): string {
   const textContentMappings = this.options.getValue('textContentMappings');
+  const headerTitle = textContentMappings['header.title'] as any;
 
   const getHeader = () => {
     const isPackages =
@@ -32,12 +33,22 @@ export function header(this: MarkdownThemeContext): string {
 
     const md: string[] = [];
 
-    const title = this.helpers.getProjectName(
-      textContentMappings['header.title'],
-      this.page,
-    );
+    let title = '';
 
-    const indexLabel = textContentMappings['header.docs'];
+    if (typeof headerTitle === 'string') {
+      title = this.helpers.getProjectName(
+        textContentMappings['header.title'],
+        this.page,
+      );
+    } else {
+      title = headerTitle({
+        name: this.page?.project?.name,
+        version: this.page?.project?.packageVersion,
+      });
+    }
+
+    const indexLabel =
+      textContentMappings['header.docs'] || this.i18n.theme_documentation();
 
     if (this.page.url === entryFileName) {
       md.push(bold(title));
@@ -92,7 +103,8 @@ export function header(this: MarkdownThemeContext): string {
 
     const md: string[] = [];
 
-    const indexLabel = textContentMappings['header.docs'];
+    const indexLabel =
+      textContentMappings['header.docs'] || this.i18n.theme_documentation();
 
     const ignoreScopes = this.options.getValue('excludeScopesInPaths');
     const fileExtension = this.options.getValue('fileExtension');

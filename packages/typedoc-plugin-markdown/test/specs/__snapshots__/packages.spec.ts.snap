@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Packages should compile index for a single package: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**@scope/package-1 v1.0.0** • [**Docs**](packages.md)
+"**@scope/package-1 v1.0.0** • [**Documentation**](packages.md)
 
 ***
 
@@ -12,7 +12,7 @@ Readme content
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**packages-example**](index.md) • **Docs**
+"[**packages-example**](index.md) • **Documentation**
 
 ***
 
@@ -32,7 +32,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"[**@scope/package-1 v1.0.0**](index.md) • **Docs**
+"[**@scope/package-1 v1.0.0**](index.md) • **Documentation**
 
 ***
 
@@ -51,7 +51,7 @@ Some more comments for package-1
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 3`] = `
-"[**package-2 v1.0.0**](index.md) • **Docs**
+"[**package-2 v1.0.0**](index.md) • **Documentation**
 
 ***
 
@@ -67,7 +67,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 `;
 
 exports[`Packages should compile index page for packages: (Output File Strategy "members") (Option Group "1") 4`] = `
-"**@scope/package-3** • **Docs**
+"**@scope/package-3** • **Documentation**
 
 ***
 
@@ -88,7 +88,7 @@ exports[`Packages should compile index page for packages: (Output File Strategy 
 `;
 
 exports[`Packages should compile member for relative entry module package: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-6** • **Docs**
+"**package-6** • **Documentation**
 
 ***
 
@@ -99,7 +99,7 @@ exports[`Packages should compile member for relative entry module package: (Outp
 `;
 
 exports[`Packages should compile member page for a single package: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**@scope/package-1 v1.0.0**](../README.md) • **Docs**
+"[**@scope/package-1 v1.0.0**](../README.md) • **Documentation**
 
 ***
 
@@ -116,7 +116,7 @@ exports[`Packages should compile member page for a single package: (Output File 
 `;
 
 exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**@scope/package-1 v1.0.0**](../index.md) • **Docs**
+"[**@scope/package-1 v1.0.0**](../index.md) • **Documentation**
 
 ***
 
@@ -133,7 +133,7 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 `;
 
 exports[`Packages should compile member page for packages: (Output File Strategy "members") (Option Group "2") 1`] = `
-"[**@scope/package-1 v1.0.0**](../README.md) • **Docs**
+"[**@scope/package-1 v1.0.0**](../README.md) • **Documentation**
 
 ***
 
@@ -150,7 +150,7 @@ exports[`Packages should compile member page for packages: (Output File Strategy
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**packages-example** • [**Docs**](packages.md)
+"**packages-example** • [**Documentation**](packages.md)
 
 ***
 
@@ -167,7 +167,7 @@ Some text.
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "1") 2`] = `
-"**@scope/package-1 v1.0.0** • [**Docs**](globals.md)
+"**@scope/package-1 v1.0.0** • [**Documentation**](globals.md)
 
 ***
 
@@ -180,7 +180,7 @@ Readme content
 `;
 
 exports[`Packages should compile readmes for a packages: (Output File Strategy "members") (Option Group "2") 1`] = `
-"**packages-example v0.0** • **Docs**
+"**packages-example v0.0** • **Documentation**
 
 ***
 
@@ -210,7 +210,7 @@ Some text.
 `;
 
 exports[`Packages should compile relative entry module package: (Output File Strategy "members") (Option Group "1") 1`] = `
-"**package-6** • **Docs**
+"**package-6** • **Documentation**
 
 ***
 
