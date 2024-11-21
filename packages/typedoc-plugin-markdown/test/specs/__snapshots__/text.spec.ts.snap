@@ -105,14 +105,6 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 
 - [SomeInterface](interfaces/SomeInterface.md)
 
-### Components
-
-- [button](functions/button.md)
-
-### Events
-
-- [onClick](variables/onClick.md)
-
 ***
 
 Copyright Test
@@ -154,26 +146,6 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
             "title": "SomeInterface",
             "kind": 256,
             "path": "module-1/interfaces/SomeInterface.md"
-          }
-        ]
-      },
-      {
-        "title": "Components",
-        "children": [
-          {
-            "title": "button",
-            "kind": 64,
-            "path": "module-1/functions/button.md"
-          }
-        ]
-      },
-      {
-        "title": "Events",
-        "children": [
-          {
-            "title": "onClick",
-            "kind": 32,
-            "path": "module-1/variables/onClick.md"
           }
         ]
       }

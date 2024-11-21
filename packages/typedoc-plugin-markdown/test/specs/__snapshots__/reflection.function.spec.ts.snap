@@ -5,7 +5,7 @@ exports[`Function Reflection should compile curried function: (Output File Strat
 
 Comments for main curriedFunction
 
-## Call Signature 1
+## Call Signature
 
 > **curriedFunction**(\`searchElement\`): \\<\`Value\`\\>(\`iterable\`) => \`boolean\`
 
@@ -37,7 +37,7 @@ Comments for iterable arg
 
 [functions.ts:1](http://source-url)
 
-## Call Signature 2
+## Call Signature
 
 > **curriedFunction**\\<\`Value\`\\>(\`searchElement\`, \`iterable\`): \`string\`
 
@@ -66,7 +66,7 @@ exports[`Function Reflection should compile curried function: (Output File Strat
 
 Comments for main curriedFunction
 
-## Call Signature 1
+## Call Signature
 
 \`\`\`ts
 function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value, any, any>) => boolean
@@ -104,7 +104,7 @@ Comments for current function 1
 
 [functions.ts:1](http://source-url)
 
-## Call Signature 2
+## Call Signature
 
 \`\`\`ts
 function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value, any, any>): string
@@ -568,7 +568,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 
 Main function comment.
 
-## Call Signature 1
+## Call Signature
 
 > **functionWithMultipleSignatures**(\`value\`): \`string\`
 
@@ -588,7 +588,7 @@ The name value.
 
 [functions.ts:1](http://source-url)
 
-## Call Signature 2
+## Call Signature
 
 > **functionWithMultipleSignatures**(\`value\`): \`string\`
 
@@ -619,7 +619,7 @@ exports[`Function Reflection should compile function with multiple signatures: (
 
 Main function comment.
 
-## Call Signature 1
+## Call Signature
 
 \`\`\`ts
 function functionWithMultipleSignatures(value: string): string
@@ -641,7 +641,7 @@ This is the first signature of a function with multiple signatures.
 
 [functions.ts:1](http://source-url)
 
-## Call Signature 2
+## Call Signature
 
 \`\`\`ts
 function functionWithMultipleSignatures(value: object): string

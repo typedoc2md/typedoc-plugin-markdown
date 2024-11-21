@@ -30,13 +30,10 @@ export function signatures(
     );
   }
 
-  model.signatures?.forEach((signature, i) => {
+  model.signatures?.forEach((signature) => {
     if (multipleSignatures) {
       md.push(
-        heading(
-          options.headingLevel + 1,
-          `${this.i18n.kind_call_signature()} ${i + 1}`,
-        ),
+        heading(options.headingLevel + 1, this.i18n.kind_call_signature()),
       );
     }
     md.push(
