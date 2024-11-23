@@ -86,6 +86,7 @@ Module commments
 | [QueryType](type-aliases/QueryType.md) | Comments for query type |
 | [ReadonlyMappedType](type-aliases/ReadonlyMappedType.md) | Comments for ReadonlyMapedType |
 | [StringLiteralType](type-aliases/StringLiteralType.md) | Comments for StringLiteralType |
+| [Stuff](type-aliases/Stuff.md) | - |
 | [TupleType](type-aliases/TupleType.md) | Comments for TupleType |
 | [TypeWithExternalSymbolLinkMapping](type-aliases/TypeWithExternalSymbolLinkMapping.md) | Comments for TypeWithExternalSymbolLinkMapping |
 | [TypeWithReturns](type-aliases/TypeWithReturns.md) | Comments for TypeWithReturns |
@@ -116,6 +117,8 @@ Module commments
 | [functionReturningAPromise](functions/functionReturningAPromise.md) | Comments for function |
 | [functionReturningAString](functions/functionReturningAString.md) | Comments for function |
 | [functionReturningAUnionType](functions/functionReturningAUnionType.md) | Comments for function |
+| [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md) | Comments for array of stuff? |
+| [functionWithArrayOfStuff](functions/functionWithArrayOfStuff.md) | Comments for array of stuff |
 | [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function parmas |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
 | [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |

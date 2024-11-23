@@ -434,6 +434,98 @@ http://abc.com
 "
 `;
 
+exports[`Function Reflection should compile function with array of stuff optional: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithArrayOfOptionalStuff()
+
+> **functionWithArrayOfOptionalStuff**(\`a\`): \`void\`
+
+Comments for array of stuff?
+
+## Parameters
+
+• **a**: [[\`Stuff\`](../type-aliases/Stuff.md)?]
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with array of stuff optional: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: functionWithArrayOfOptionalStuff()
+
+\`\`\`ts
+function functionWithArrayOfOptionalStuff(a: [Stuff?]): void
+\`\`\`
+
+Comments for array of stuff?
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`a\` | [[\`Stuff\`](../type-aliases/Stuff.md)?] |
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with array of stuff: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithArrayOfStuff()
+
+> **functionWithArrayOfStuff**(\`a\`): \`void\`
+
+Comments for array of stuff
+
+## Parameters
+
+• **a**: [[\`Stuff\`](../type-aliases/Stuff.md)]
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with array of stuff: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: functionWithArrayOfStuff()
+
+\`\`\`ts
+function functionWithArrayOfStuff(a: [Stuff]): void
+\`\`\`
+
+Comments for array of stuff
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`a\` | [[\`Stuff\`](../type-aliases/Stuff.md)] |
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
 exports[`Function Reflection should compile function with complex params: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithComplexParams()
 

@@ -206,3 +206,14 @@ export let curriedFunction: {
   ) => boolean;
   <Value>(searchElement: unknown, iterable: Iterable<Value>): string;
 };
+
+export type Stuff = { a: string; b: string };
+/**
+ * Comments for array of stuff
+ */
+export const functionWithArrayOfStuff = (a: [Stuff]) => {};
+
+/**
+ * Comments for array of stuff?
+ */
+export const functionWithArrayOfOptionalStuff = (a: [Stuff?]) => {};

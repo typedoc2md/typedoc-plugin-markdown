@@ -4482,6 +4482,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "type-aliases/StringLiteralType.md"
       },
       {
+        "title": "Stuff",
+        "kind": 2097152,
+        "path": "type-aliases/Stuff.md"
+      },
+      {
         "title": "TupleType",
         "kind": 2097152,
         "path": "type-aliases/TupleType.md"
@@ -4590,6 +4595,16 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "functionReturningAUnionType",
         "kind": 64,
         "path": "functions/functionReturningAUnionType.md"
+      },
+      {
+        "title": "functionWithArrayOfOptionalStuff",
+        "kind": 64,
+        "path": "functions/functionWithArrayOfOptionalStuff.md"
+      },
+      {
+        "title": "functionWithArrayOfStuff",
+        "kind": 64,
+        "path": "functions/functionWithArrayOfStuff.md"
       },
       {
         "title": "functionWithComplexParams",

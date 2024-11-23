@@ -8,6 +8,7 @@ import {
   IntersectionType,
   IntrinsicType,
   NamedTupleMember,
+  OptionalType,
   QueryType,
   ReferenceType,
   ReflectionType,
@@ -77,6 +78,10 @@ export function someType(this: MarkdownThemeContext, model?: SomeType): string {
 
   if (model instanceof NamedTupleMember) {
     return this.partials.namedTupleType(model);
+  }
+
+  if (model instanceof OptionalType) {
+    return this.partials.someType(model.elementType) + '?';
   }
 
   if (model.toString() == 'null') {

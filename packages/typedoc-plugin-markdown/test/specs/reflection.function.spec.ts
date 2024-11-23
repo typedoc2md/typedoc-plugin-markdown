@@ -120,4 +120,20 @@ describe(`Function Reflection`, () => {
       'functions/functionWithComplexParams.md',
     );
   });
+
+  test(`should compile function with array of stuff`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithArrayOfStuff.md',
+    );
+  });
+
+  test(`should compile function with array of stuff optional`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithArrayOfOptionalStuff.md',
+    );
+  });
 });
