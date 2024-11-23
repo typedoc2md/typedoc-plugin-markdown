@@ -61,12 +61,7 @@ export function load(app: Application) {
     await render(app.renderer, project, out);
   });
 
-  app.outputs.setDefaultOutput(() => {
-    return {
-      name: 'markdown',
-      path: app.options.getValue('out'),
-    };
-  });
+  app.outputs.setDefaultOutputName('markdown');
 
   /**
    * =============================
