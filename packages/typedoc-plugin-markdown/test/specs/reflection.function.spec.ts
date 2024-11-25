@@ -136,4 +136,12 @@ describe(`Function Reflection`, () => {
       'functions/functionWithArrayOfOptionalStuff.md',
     );
   });
+
+  test(`should compile function with union params`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithUnionParams.md',
+    );
+  });
 });

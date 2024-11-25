@@ -27,7 +27,7 @@ import {
 import {
   DisplayFormat,
   OutputFileStrategy,
-  TypeDeclarationFormat,
+  TypeDeclarationVisibility,
 } from './maps.js';
 
 /**
@@ -478,8 +478,23 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
 export const typeDeclarationFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of style for type declaration members.',
   type: ParameterType.Map,
-  map: TypeDeclarationFormat,
-  defaultValue: TypeDeclarationFormat.List,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
+};
+
+/**
+ * Configures the visibility level for type declaration documentation.
+ *
+ * - **"expanded"**: Displays all available documentation as text, including nested type declarations.
+ * - **"compact"**: Omits separate documentation blocks for nested type declarations.
+ *
+ * @category Display
+ */
+export const typeDeclarationVisibility: Partial<DeclarationOption> = {
+  help: 'Set the visibility level for type declaration documentation.',
+  type: ParameterType.Map,
+  map: TypeDeclarationVisibility,
+  defaultValue: TypeDeclarationVisibility.Expanded,
 };
 
 /**

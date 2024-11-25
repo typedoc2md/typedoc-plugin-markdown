@@ -41,7 +41,7 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ## Constructors
 
-### new ModuleClass()
+### Constructor
 
 > **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.mdx)
 
@@ -62,7 +62,7 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ## Constructors
 
-### new ModuleClass()
+### Constructor
 
 > **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.mdx)
 

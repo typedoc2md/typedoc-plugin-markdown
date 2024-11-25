@@ -321,7 +321,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Constructors
 
-### new ClassPropertiesTable()
+### Constructor
 
 > **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](ClassPropertiesTable.md)
 
@@ -357,7 +357,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 <a id="Constructors" name="Constructors"></a>
 
-### new ClassPropertiesTable()
+### Constructor
 
 > **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](https://example.com/Class.ClassPropertiesTable.md)
 
@@ -617,7 +617,7 @@ to generate the binary output for input validation.
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 2`] = `
 "# Variable: TypeDeclarationTable
 
-> **TypeDeclarationTable**: \\{\`declaration1\`: \`'declaration3'\`;\`declaration2\`: \`100\`; \\}
+> **TypeDeclarationTable**: \\{\`declaration1\`: \`string\`;\`declaration2\`: \`number\`; \\}
 
 ## Type declaration
 

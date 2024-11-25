@@ -125,29 +125,31 @@ comment for x
 
 comment for y
 
-### y.x
+#### y.x
 
 > **x**: \`string\`
 
 comment for y.x
 
-### y.y?
+#### y.y?
 
 > \`optional\` **y**: \`boolean\` \\| \`string\`
 
 comment for y.y
 
-### y.z()
+#### y.z()
 
 > **z**: (\`x\`) => \`string\`
 
 comment for y.z
 
-#### Parameters
+##### Parameters
 
-• **x**: \`string\`
+###### x
 
-#### Returns
+\`string\`
+
+##### Returns
 
 \`string\`
 
@@ -157,7 +159,9 @@ comment for y.z
 
 #### Parameters
 
-• **x**: \`string\`
+##### x
+
+\`string\`
 
 #### Returns
 
@@ -183,7 +187,9 @@ Comments for accessorA setter
 
 ##### Parameters
 
-• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+###### x
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
 ##### Returns
 
@@ -205,7 +211,9 @@ Comments for accessorA setter
 
 ##### Parameters
 
-• **x**: \`string\`
+###### x
+
+\`string\`
 
 ##### Returns
 
@@ -217,7 +225,9 @@ Comments for someFunction
 
 #### Parameters
 
-• **param**: \`string\`
+##### param
+
+\`string\`
 
 #### Returns
 
@@ -298,9 +308,13 @@ Comments for FunctionType
 
 ## Parameters
 
-• **name**: \`string\`
+### name
 
-• **value**: \`unknown\`
+\`string\`
+
+### value
+
+\`unknown\`
 
 ## Returns
 
@@ -708,7 +722,7 @@ Union with template strings
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UnionType
 
-> **UnionType**: \`string\` \\| \`boolean\` \\| \`object\`
+> **UnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`; \\}
 
 Comments for UnionType
 
@@ -722,10 +736,70 @@ exports[`Type Alias Reflection should compile union type: (Output File Strategy 
 "# Type Alias: UnionType
 
 \`\`\`ts
-type UnionType: string | boolean | object;
+type UnionType: string | boolean | {
+  z: string;
+};
 \`\`\`
 
 Comments for UnionType
+
+## Source
+
+[types.ts:1](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile useful union type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type Alias: UsefulUnionType
+
+> **UsefulUnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`; \\}
+
+Comments for useful UnionType
+
+## Type declaration
+
+\`string\`
+
+\`boolean\`
+
+\\{\`z\`: \`string\`; \\}
+
+### z
+
+> **z**: \`string\`
+
+Comments for z
+
+## Source
+
+[types.ts:1](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile useful union type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type Alias: UsefulUnionType
+
+\`\`\`ts
+type UsefulUnionType: string | boolean | {
+  z: string;
+};
+\`\`\`
+
+Comments for useful UnionType
+
+## Type declaration
+
+\`string\`
+
+\`boolean\`
+
+\\{
+  \`z\`: \`string\`;
+ \\}
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`z\` | \`string\` | Comments for z |
 
 ## Source
 

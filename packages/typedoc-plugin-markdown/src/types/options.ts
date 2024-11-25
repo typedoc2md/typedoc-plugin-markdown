@@ -188,7 +188,12 @@ export interface PluginOptions {
   /**
    * Sets the format of style for type declaration members.
    */
-  typeDeclarationFormat: 'list' | 'source' | 'table' | 'htmlTable';
+  typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
+
+  /**
+   * Set the visibility level for type declaration documentation.
+   */
+  typeDeclarationVisibility: 'compact' | 'expanded';
 
   /**
    * Wraps signatures and declarations in code blocks.

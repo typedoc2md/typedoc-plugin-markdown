@@ -58,7 +58,8 @@ declare module 'typedoc' {
       'title.memberPage': string;
       'title.modulePage': string;
     }>;
-    typeDeclarationFormat: 'list' | 'source' | 'table' | 'htmlTable';
+    typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
+    typeDeclarationVisibility: 'compact' | 'expanded';
     useCodeBlocks: boolean;
     useHTMLAnchors: boolean;
     useHTMLEncodedBrackets: boolean;

@@ -33,7 +33,9 @@ Comments for functionProper
 
 #### Parameters
 
-• **s**: \`string\`
+##### s
+
+\`string\`
 
 Comment for param s
 
@@ -131,11 +133,15 @@ Comments for propWithFunction
 
 #### Parameters
 
-• **options**
+##### options
 
-• **options.a**: \`boolean\`
+###### options.a
 
-• **options.b**: \`string\`
+\`boolean\`
+
+###### options.b
+
+\`string\`
 
 #### Returns
 
@@ -173,7 +179,7 @@ Comments for nestedPropB
 
 Comments for nestedPropC
 
-#### nestedPropC.nestedPropCA
+##### nestedPropC.nestedPropCA
 
 > **nestedPropCA**: \`string\`
 
@@ -306,13 +312,13 @@ Return comments
 exports[`Objects And Params should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAnObject()
 
-> **functionReturningAnObject**(): \\{\`x\`: \`1\`;\`y\`: \`2\`; \\}
+> **functionReturningAnObject**(): \\{\`x\`: \`number\`;\`y\`: \`number\`; \\}
 
 Comments for function
 
 ## Returns
 
-\\{\`x\`: \`1\`;\`y\`: \`2\`; \\}
+\\{\`x\`: \`number\`;\`y\`: \`number\`; \\}
 
 Return comments
 
@@ -331,8 +337,8 @@ exports[`Objects And Params should compile function returning an object: (Output
 
 \`\`\`ts
 function functionReturningAnObject(): {
-  x: 1;
-  y: 2;
+  x: number;
+  y: number;
 }
 \`\`\`
 
@@ -342,18 +348,23 @@ Comments for function
 
 \`\`\`ts
 {
-  x: 1;
-  y: 2;
+  x: number;
+  y: number;
 }
 \`\`\`
 
 Return comments
 
+### x
+
 \`\`\`ts
-{
-  x: 1,
-  y: 2,
-};
+x: number = 1;
+\`\`\`
+
+### y
+
+\`\`\`ts
+y: number = 2;
 \`\`\`
 "
 `;
@@ -367,33 +378,51 @@ Some nested params.
 
 ## Parameters
 
-• **params**
+### params
 
 The parameters passed to the method.
 
-• **params.name**: \`string\`
+#### params.name
+
+\`string\`
 
 The name of the new group.
 
-• **params.nestedObj**
+#### params.nestedObj
+
+\\{\`name\`: \`string\`;\`obj\`: \\{\`name\`: () => \`void\`; \\};\`value\`: \`number\`; \\}
 
 A nested object.
 
-• **params.nestedObj.name?**: \`string\`
+#### params.nestedObj.name
 
-• **params.nestedObj.obj?**
+\`string\`
 
-• **params.nestedObj.obj.name?**
+#### params.nestedObj.obj
 
-• **params.nestedObj.value?**: \`number\`
+\\{\`name\`: () => \`void\`; \\}
 
-• **params.parent?**: \`number\`
+#### params.nestedObj.obj.name
 
-• **context?**: \`any\`
+() => \`void\`
+
+#### params.nestedObj.value
+
+\`number\`
+
+#### params.parent
+
+\`number\`
+
+### context
+
+\`any\`
 
 The context of the method call.
 
-• **somethingElse?**: \`string\`
+### somethingElse?
+
+\`string\`
 
 ## Returns
 
@@ -427,11 +456,11 @@ Some nested params.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \`object\` | The parameters passed to the method. |
+| \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent\`: \`number\`; \\} | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
-| \`params.nestedObj\` | \`object\` | A nested object. |
+| \`params.nestedObj\` | \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\} | A nested object. |
 | \`params.nestedObj.name\`? | \`string\` | - |
-| \`params.nestedObj.obj\`? | \`object\` | - |
+| \`params.nestedObj.obj\`? | \\{ \`name\`: () => \`void\`; \\} | - |
 | \`params.nestedObj.obj.name\`? | () => \`void\` | - |
 | \`params.nestedObj.value\`? | \`number\` | - |
 | \`params.parent\`? | \`number\` | - |
@@ -472,10 +501,10 @@ Comments for IntersectionType
 
 ## Type declaration
 
+### bar
+
 \`\`\`ts
-ArrayType & {
-  bar: number;
-};
+bar: number;
 \`\`\`
 "
 `;
@@ -511,29 +540,31 @@ comment for x
 
 comment for y
 
-### y.x
+#### y.x
 
 > **x**: \`string\`
 
 comment for y.x
 
-### y.y?
+#### y.y?
 
 > \`optional\` **y**: \`boolean\` \\| \`string\`
 
 comment for y.y
 
-### y.z()
+#### y.z()
 
 > **z**: (\`x\`: \`string\`) => \`string\`
 
 comment for y.z
 
-#### Parameters
+##### Parameters
 
-• **x**: \`string\`
+###### x
 
-#### Returns
+\`string\`
+
+##### Returns
 
 \`string\`
 
@@ -543,7 +574,9 @@ comment for y.z
 
 #### Parameters
 
-• **x**: \`string\`
+##### x
+
+\`string\`
 
 #### Returns
 
@@ -569,7 +602,9 @@ Comments for accessorA setter
 
 ##### Parameters
 
-• **x**: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+###### x
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
 
 ##### Returns
 
@@ -591,7 +626,9 @@ Comments for accessorA setter
 
 ##### Parameters
 
-• **x**: \`string\`
+###### x
+
+\`string\`
 
 ##### Returns
 
@@ -603,7 +640,9 @@ Comments for someFunction
 
 #### Parameters
 
-• **param**: \`string\`
+##### param
+
+\`string\`
 
 #### Returns
 
@@ -634,60 +673,120 @@ Comments for LiteralType
 
 ## Type declaration
 
+### someFunctionWithArrow()
+
+\`\`\`ts
+() => string
+\`\`\`
+
+Comments for someFunctionWithArrow
+
+### x?
+
+\`\`\`ts
+optional x: string;
+\`\`\`
+
+comment for x
+
+### y
+
 \`\`\`ts
 {
-  /**
-   * comment for x
-   */
-  x?: string;
-  /**
-   * comment for y
-   */
-  y: {
-    /**
-     * comment for y.x
-     */
-    x: string;
-    /**
-     * comment for y.y
-     */
-    y?: boolean | string;
-    /**
-     * comment for y.z
-     */
-    z: (x: string) => string;
-  } /**
-   * comment for z
-   */;
+  x: string;
+  y: boolean | string;
   z: (x: string) => string;
-  /**
-   * Comments for someFunction
-   * @param param
-   */
-  someFunction(param: string): Promise<any>;
-  /**
-   * Comments for someFunctionWithArrow
-   */
-  someFunctionWithArrow: () => string;
-  /**
-   * Comments for accessorA getter
-   */
-  get accessorA(): Promise<string>;
-  /**
-   * Comments for accessorA setter
-   */
-  set accessorA(x);
-  set accessorB(x: string);
-  get accessorB();
-};
+}
 \`\`\`
+
+comment for y
+
+### z()
+
+\`\`\`ts
+(x: string) => string
+\`\`\`
+
+### accessorA
+
+#### Get Signature
+
+\`\`\`ts
+get accessorA(): Promise<string>
+\`\`\`
+
+Comments for accessorA getter
+
+##### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+#### Set Signature
+
+\`\`\`ts
+set accessorA(x: Promise<string>): void
+\`\`\`
+
+Comments for accessorA setter
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> |
+
+##### Returns
+
+\`void\`
+
+### accessorB
+
+#### Get Signature
+
+\`\`\`ts
+get accessorB(): string
+\`\`\`
+
+##### Returns
+
+\`string\`
+
+#### Set Signature
+
+\`\`\`ts
+set accessorB(x: string): void
+\`\`\`
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+##### Returns
+
+\`void\`
+
+### someFunction()
+
+Comments for someFunction
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`param\` | \`string\` |  |
+
+#### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
 "
 `;
 
 exports[`Objects And Params should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
-> \`const\` **objectWithSymbol**: \\{\`[sym]\`: \`'value'\`; \\}
+> \`const\` **objectWithSymbol**: \\{\`[sym]\`: \`string\`; \\}
 
 Comments variable with symbol
 
@@ -706,7 +805,7 @@ exports[`Objects And Params should compile object with symbol: (Output File Stra
 
 \`\`\`ts
 const objectWithSymbol: {
-  [sym]: 'value';
+  [sym]: string;
 };
 \`\`\`
 
@@ -714,14 +813,13 @@ Comments variable with symbol
 
 ## Type declaration
 
+### \\[sym\\]
+
 \`\`\`ts
-{
-  /**
-   * Comments for symbol
-   */
-  [sym]: 'value',
-};
+[sym]: string = 'value';
 \`\`\`
+
+Comments for symbol
 "
 `;
 
@@ -750,7 +848,7 @@ Comments for UnionType
 exports[`Objects And Params should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-> \`const\` **objectLiteralVariable**: \\{\`valueA\`: \`100\`;\`valueB\`: \`true\`;\`valueX\`: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\};\`valueZ\`: \`'foo'\`; \\};\`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`; \\}
+> \`const\` **objectLiteralVariable**: \\{\`valueA\`: \`number\`;\`valueB\`: \`boolean\`;\`valueX\`: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`; \\}; \\};\`valueZ\`: \`string\`; \\};\`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`; \\}
 
 Comments for objectLiteralVariable
 
@@ -764,51 +862,59 @@ xyz.com
 
 > **valueA**: \`number\` = \`100\`
 
+Comments for valueA
+
 ### valueB
 
 > **valueB**: \`boolean\` = \`true\`
 
 ### valueX
 
-> **valueX**: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\};\`valueZ\`: \`'foo'\`; \\}
+> **valueX**: \\{\`valueA\`: \`number\`[];\`valueY\`: (\`z\`: \`string\`) => \\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`; \\}; \\};\`valueZ\`: \`string\`; \\}
 
-### valueX.valueA
+Comments for valueX
+
+#### valueX.valueA
 
 > **valueA**: \`number\`[]
 
-### valueX.valueY()
+Comment for valueX.valueA
 
-> **valueY**: (\`z\`: \`string\`) => \\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\}
+#### valueX.valueY()
 
-#### Parameters
+> **valueY**: (\`z\`: \`string\`) => \\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`; \\}; \\}
 
-• **z**: \`string\`
+##### Parameters
 
-#### Returns
+###### z
 
-\\{\`a\`: \`'test'\`;\`b\`: \`z\`;\`c\`: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}; \\}
+\`string\`
 
-##### a
+##### Returns
+
+\\{\`a\`: \`string\`;\`b\`: \`string\`;\`c\`: \\{\`a\`: \`number\`;\`b\`: \`number\`; \\}; \\}
+
+###### a
 
 > **a**: \`string\` = \`'test'\`
 
-##### b
+###### b
 
 > **b**: \`string\` = \`z\`
 
-##### c
+###### c
 
-> **c**: \\{\`a\`: \`1\`;\`b\`: \`2\`; \\}
+> **c**: \\{\`a\`: \`number\`;\`b\`: \`number\`; \\}
 
-##### c.a
+###### c.a
 
 > **a**: \`number\` = \`1\`
 
-##### c.b
+###### c.b
 
 > **b**: \`number\` = \`2\`
 
-### valueX.valueZ
+#### valueX.valueZ
 
 > **valueZ**: \`string\` = \`'foo'\`
 
@@ -818,9 +924,13 @@ xyz.com
 
 #### Parameters
 
-• **unionParam**: \`"a"\` \\| \`"b"\`
+##### unionParam
 
-• **\\_undercoreParam\\_**: \`string\`
+\`"a"\` | \`"b"\`
+
+##### \\_undercoreParam\\_
+
+\`string\`
 
 #### Returns
 
@@ -833,19 +943,19 @@ exports[`Objects And Params should compile variable assigned to an object litera
 
 \`\`\`ts
 const objectLiteralVariable: {
-  valueA: 100;
-  valueB: true;
+  valueA: number;
+  valueB: boolean;
   valueX: {
      valueA: number[];
      valueY: (z: string) => {
-        a: 'test';
-        b: z;
+        a: string;
+        b: string;
         c: {
-           a: 1;
-           b: 2;
+           a: number;
+           b: number;
           };
        };
-     valueZ: 'foo';
+     valueZ: string;
     };
   valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
 };
@@ -859,21 +969,43 @@ xyz.com
 
 ## Type declaration
 
+### valueA
+
+\`\`\`ts
+valueA: number = 100;
+\`\`\`
+
+Comments for valueA
+
+### valueB
+
+\`\`\`ts
+valueB: boolean = true;
+\`\`\`
+
+### valueX
+
 \`\`\`ts
 {
-  valueY: function (unionParam: 'a' | 'b', _undercoreParam_: string) {
-    return 'foo';
-  },
-  valueX: {
-    valueZ: 'foo',
-    valueY: (z: string) => {
-      return { a: 'test', b: z, c: { a: 1, b: 2 } };
-    },
-    valueA: [100, 200, 300],
-  },
-  valueA: 100,
-  valueB: true,
-};
+  valueA: number[];
+  valueY: (z: string) => {
+     a: string;
+     b: string;
+     c: {
+        a: number;
+        b: number;
+       };
+    };
+  valueZ: string;
+}
+\`\`\`
+
+Comments for valueX
+
+### valueY()
+
+\`\`\`ts
+(unionParam: "a" | "b", _undercoreParam_: string) => string
 \`\`\`
 "
 `;

@@ -19,7 +19,11 @@ import {
   UnknownType,
 } from 'typedoc';
 
-export function someType(this: MarkdownThemeContext, model?: SomeType): string {
+export function someType(
+  this: MarkdownThemeContext,
+  model?: SomeType,
+  options?: { forceCollapse?: boolean },
+): string {
   if (!model) {
     return '';
   }
@@ -57,7 +61,9 @@ export function someType(this: MarkdownThemeContext, model?: SomeType): string {
   }
 
   if (model instanceof ReflectionType) {
-    return this.partials.reflectionType(model);
+    return this.partials.reflectionType(model, {
+      forceCollapse: options?.forceCollapse,
+    });
   }
 
   if (model instanceof TypeOperatorType) {

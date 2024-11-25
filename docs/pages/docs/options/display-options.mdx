@@ -232,7 +232,7 @@ This option specifies the output format for enumeration members:
   Sets the format of style for type declaration members.
 </Callout>
 
-> Accepts one of `"list"` | `"source"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
 
 This option specifies the output format for type declaration of variables and type aliases.
 
@@ -243,6 +243,25 @@ This option specifies the output format for type declaration of variables and ty
 ```json filename="typedoc.json"
 {
   "typeDeclarationFormat": "list"
+}
+```
+
+## --typeDeclarationVisibility
+
+<Callout emoji="💡">
+  Set the visibility level for type declaration documentation.
+</Callout>
+
+> Accepts either `"compact"` or `"expanded"`. Defaults to `"expanded"`.
+
+Configures the visibility level for type declaration documentation.
+
+- **"expanded"**: Displays all available documentation as text, including nested type declarations.
+- **"compact"**: Omits separate documentation blocks for nested type declarations.
+
+```json filename="typedoc.json"
+{
+  "typeDeclarationVisibility": "expanded"
 }
 ```
 

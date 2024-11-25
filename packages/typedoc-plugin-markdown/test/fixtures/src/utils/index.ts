@@ -6,7 +6,7 @@ export interface InterfaceWithChars<T> {
 }
 
 export class ClassWithChars<T> {
-  prop: T;
+  prop!: T;
 }
 
 export const variableWithChars = {

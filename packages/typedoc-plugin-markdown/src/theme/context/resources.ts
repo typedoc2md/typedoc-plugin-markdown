@@ -143,8 +143,10 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
       model: DeclarationReflection,
       options: { headingLevel: number },
     ) => partials.memberWithGroups.apply(context, [model, options]) as string,
-    parametersList: (model: ParameterReflection[]) =>
-      partials.parametersList.apply(context, [model]) as string,
+    parametersList: (
+      model: ParameterReflection[],
+      options: { headingLevel: number },
+    ) => partials.parametersList.apply(context, [model, options]) as string,
     parametersTable: (model: ParameterReflection[]) =>
       partials.parametersTable.apply(context, [model]) as string,
     /**
@@ -206,13 +208,21 @@ There is no association list partial for properties as these are handled as a st
       model: DeclarationReflection,
       options: { headingLevel: number; allowSource?: boolean | undefined },
     ) => partials.typeDeclaration.apply(context, [model, options]) as string,
+    typeDeclarationContainer: (
+      model: DeclarationReflection,
+      typeDeclaration: DeclarationReflection,
+      opts: { headingLevel: number; nested?: boolean | undefined },
+    ) =>
+      partials.typeDeclarationContainer.apply(context, [
+        model,
+        typeDeclaration,
+        opts,
+      ]) as string,
     typeDeclarationList: (
       model: DeclarationReflection[],
       options: { headingLevel: number },
     ) =>
       partials.typeDeclarationList.apply(context, [model, options]) as string,
-    typeDeclarationSource: (model: DeclarationReflection) =>
-      partials.typeDeclarationSource.apply(context, [model]) as string,
     typeDeclarationTable: (
       model: DeclarationReflection[],
       options: { kind?: ReflectionKind | undefined },
@@ -258,8 +268,10 @@ There is no association list partial for properties as these are handled as a st
       model: ReflectionType,
       options?: { forceCollapse?: boolean | undefined } | undefined,
     ) => partials.reflectionType.apply(context, [model, options]) as string,
-    someType: (model?: SomeType | undefined) =>
-      partials.someType.apply(context, [model]) as string,
+    someType: (
+      model?: SomeType | undefined,
+      options?: { forceCollapse?: boolean | undefined } | undefined,
+    ) => partials.someType.apply(context, [model, options]) as string,
     tupleType: (model: TupleType) =>
       partials.tupleType.apply(context, [model]) as string,
     typeOperatorType: (model: TypeOperatorType) =>
@@ -277,10 +289,6 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getAngleBracket.apply(context, [bracket]) as string,
     getCommentParts: (model: CommentDisplayPart[]) =>
       helpers.getCommentParts.apply(context, [model]) as string,
-    getCompilerSource: (reflection: Reflection) =>
-      helpers.getCompilerSource.apply(context, [reflection]) as
-        | string
-        | undefined,
     getDeclarationType: (model: DeclarationReflection) =>
       helpers.getDeclarationType.apply(context, [model]) as
         | SomeType
@@ -329,6 +337,8 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getReflectionFlags.apply(context, [reflectionFlags]) as string,
     getReturnType: (model?: SomeType | undefined) =>
       helpers.getReturnType.apply(context, [model]) as string,
+    hasUsefulTypeDetails: (type: SomeType) =>
+      helpers.hasUsefulTypeDetails.apply(context, [type]) as boolean,
     isGroupKind: (model: DeclarationReflection | SignatureReflection) =>
       helpers.isGroupKind.apply(context, [model]) as boolean,
     useTableFormat: (

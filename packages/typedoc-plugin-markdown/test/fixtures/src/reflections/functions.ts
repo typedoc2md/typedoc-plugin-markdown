@@ -191,6 +191,43 @@ export function functionReturningAPromise(): Promise<{
   });
 }
 
+const foo = {
+  /**
+   * a comments
+   */
+  a: '',
+  /**
+   * b comments
+   */
+  b: '',
+};
+
+type Foo = typeof foo;
+
+export function functionWithUnionParams(
+  /**
+   * Comments for primitiveUnions
+   */
+  primitiveUnions: string | number,
+  /**
+   * Comments for objectUnions
+   */
+  objectUnions: {
+    /**
+     * Comments for a
+     */
+    a: string;
+    b: 1;
+  },
+  mixedUnions: string | Foo,
+  /**
+   * Comments for noUnions
+   */
+  noUnions: string,
+) {
+  return void 0;
+}
+
 /**
  * Comments for main curriedFunction
  */

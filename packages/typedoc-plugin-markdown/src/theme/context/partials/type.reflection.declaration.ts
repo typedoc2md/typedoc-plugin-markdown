@@ -43,10 +43,7 @@ export function declarationType(
 
         const theType = this.helpers.getDeclarationType(obj) as SomeType;
 
-        const typeString =
-          obj.defaultValue && obj.defaultValue !== '...'
-            ? backTicks(obj.defaultValue)
-            : this.partials.someType(theType);
+        const typeString = this.partials.someType(theType);
 
         if (shouldFormat) {
           return `  ${name.join(' ')}: ${indentBlock(typeString)};\n`;

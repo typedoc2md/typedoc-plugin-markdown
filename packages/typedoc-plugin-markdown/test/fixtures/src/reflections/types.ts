@@ -1,5 +1,5 @@
 import { Application } from 'typedoc';
-import { ClassWithTypeParameters } from './classes';
+import { ClassWithTypeParameters } from './classes.js';
 
 /**
  * Comments for PrimitiveType
@@ -15,6 +15,19 @@ export type ArrayType = string[];
  * Comments for UnionType
  */
 export type UnionType = string | boolean | { z: string };
+
+/**
+ * Comments for useful UnionType
+ */
+export type UsefulUnionType =
+  | string
+  | boolean
+  | {
+      /**
+       * Comments for z
+       */
+      z: string;
+    };
 
 /**
  * Comments for StringLiteralType

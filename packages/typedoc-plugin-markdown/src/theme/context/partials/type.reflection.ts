@@ -13,8 +13,7 @@ export function reflectionType(
   }
 
   const expandObjects =
-    !options?.forceCollapse &&
-    (this.options.getValue('expandObjects') as boolean);
+    options?.forceCollapse || this.options.getValue('expandObjects');
 
   return expandObjects
     ? this.partials.declarationType(root)

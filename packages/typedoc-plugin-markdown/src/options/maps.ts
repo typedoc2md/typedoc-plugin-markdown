@@ -22,11 +22,9 @@ export enum DisplayFormat {
 }
 
 /**
- * The allowed values for formatting type declarations.
+ * The allowed values for formatting reflections and indexes.
  */
-export enum TypeDeclarationFormat {
-  List = 'list',
-  Source = 'source',
-  Table = 'table',
-  HtmlTable = 'htmlTable',
+export enum TypeDeclarationVisibility {
+  Compact = 'compact',
+  Expanded = 'expanded',
 }

@@ -13,7 +13,9 @@ Comments for current function 1
 
 ### Parameters
 
-• **searchElement**: \`unknown\`
+#### searchElement
+
+\`unknown\`
 
 ### Returns
 
@@ -25,7 +27,9 @@ Comments for current function 1
 
 #### Parameters
 
-• **iterable**: \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
+##### iterable
+
+\`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
 
 Comments for iterable arg
 
@@ -47,9 +51,13 @@ Comments for iterable arg
 
 ### Parameters
 
-• **searchElement**: \`unknown\`
+#### searchElement
 
-• **iterable**: \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
+\`unknown\`
+
+#### iterable
+
+\`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
 
 ### Returns
 
@@ -150,7 +158,9 @@ Comments for function
 
 ### Parameters
 
-• **x**: \`string\`
+#### x
+
+\`string\`
 
 ### Returns
 
@@ -391,7 +401,9 @@ http://abc.com
 
 ## Parameters
 
-• **someParam**: \`number\`
+### someParam
+
+\`number\`
 
 This is some numeric parameter.
 
@@ -443,7 +455,9 @@ Comments for array of stuff?
 
 ## Parameters
 
-• **a**: [[\`Stuff\`](../type-aliases/Stuff.md)?]
+### a
+
+[[\`Stuff\`](../type-aliases/Stuff.md)?]
 
 ## Returns
 
@@ -489,7 +503,9 @@ Comments for array of stuff
 
 ## Parameters
 
-• **a**: [[\`Stuff\`](../type-aliases/Stuff.md)]
+### a
+
+[[\`Stuff\`](../type-aliases/Stuff.md)]
 
 ## Returns
 
@@ -535,11 +551,15 @@ Function with function parmas
 
 ## Parameters
 
-• **paramA**
+### paramA
 
-• **paramB**
+(\`a\`) => \`true\`
 
-• **paramB.x**: \`1\`
+### paramB
+
+#### paramB.x
+
+\`1\`
 
 ## Returns
 
@@ -565,7 +585,7 @@ Function with function parmas
 | Parameter | Type |
 | :------ | :------ |
 | \`paramA\` | (\`a\`: \`string\`) => \`true\` |
-| \`paramB\` | \`object\` |
+| \`paramB\` | \\{ \`x\`: \`1\`; \\} |
 | \`paramB.x\` | \`1\` |
 
 ## Returns
@@ -587,27 +607,39 @@ This is a function with a parameter that has a default value.
 
 ## Parameters
 
-• **valueA**: \`string\` = \`'defaultValue'\`
+### valueA
+
+\`string\` = \`'defaultValue'\`
 
 A parameter with a default string value.
 
-• **valueB**: \`number\` = \`100\`
+### valueB
+
+\`number\` = \`100\`
 
 A parameter with a default numeric value.
 
-• **valueC**: \`number\` = \`Number.NaN\`
+### valueC
+
+\`number\` = \`Number.NaN\`
 
 A parameter with a default NaN value.
 
-• **valueD**: \`boolean\` = \`true\`
+### valueD
+
+\`boolean\` = \`true\`
 
 A parameter with a default boolean value.
 
-• **valueE**: \`boolean\` = \`true\`
+### valueE
+
+\`boolean\` = \`true\`
 
 A parameter with a default null value.
 
-• **valueF**: \`string\` = \`'<foo>'\`
+### valueF
+
+\`string\` = \`'<foo>'\`
 
 ## Returns
 
@@ -668,7 +700,9 @@ This is the first signature of a function with multiple signatures.
 
 ### Parameters
 
-• **value**: \`string\`
+#### value
+
+\`string\`
 
 The name value.
 
@@ -688,11 +722,13 @@ This is the second signature of a function with multiple signatures.
 
 ### Parameters
 
-• **value**
+#### value
 
 An object containing the name value.
 
-• **value.name**: \`string\`
+##### value.name
+
+\`string\`
 
 A value of the object.
 
@@ -745,7 +781,7 @@ This is the second signature of a function with multiple signatures.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`value\` | \`object\` | An object containing the name value. |
+| \`value\` | \\{ \`name\`: \`string\`; \\} | An object containing the name value. |
 | \`value.name\` | \`string\` | A value of the object. |
 
 ### Returns
@@ -765,15 +801,21 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 ## Parameters
 
-• **\\_\\_namedParameters** = \`{}\`
+### \\_\\_namedParameters
 
 various options
 
-• **\\_\\_namedParameters.bar?**: \`number\` = \`43\`
+#### __namedParameters.bar
 
-• **\\_\\_namedParameters.foo?**: \`number\` = \`42\`
+\`number\` = \`43\`
 
-• **anotherParam**: \`string\`
+#### __namedParameters.foo
+
+\`number\` = \`42\`
+
+### anotherParam
+
+\`string\`
 
 Another param comment
 
@@ -798,7 +840,7 @@ function functionWithNamedParams(__namedParameters: object, anotherParam: string
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`__namedParameters\` | \`object\` | various options |
+| \`__namedParameters\` | \\{ \`bar\`: \`number\`; \`foo\`: \`number\`; \\} | various options |
 | \`__namedParameters.bar\`? | \`number\` | - |
 | \`__namedParameters.foo\`? | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
@@ -822,33 +864,51 @@ Some nested params.
 
 ## Parameters
 
-• **params**
+### params
 
 The parameters passed to the method.
 
-• **params.name**: \`string\`
+#### params.name
+
+\`string\`
 
 The name of the new group.
 
-• **params.nestedObj**
+#### params.nestedObj
+
+\`object\`
 
 A nested object.
 
-• **params.nestedObj.name?**: \`string\`
+#### params.nestedObj.name
 
-• **params.nestedObj.obj?**
+\`string\`
 
-• **params.nestedObj.obj.name?**
+#### params.nestedObj.obj
 
-• **params.nestedObj.value?**: \`number\`
+\`object\`
 
-• **params.parent?**: \`number\`
+#### params.nestedObj.obj.name
 
-• **context?**: \`any\`
+() => \`void\`
+
+#### params.nestedObj.value
+
+\`number\`
+
+#### params.parent
+
+\`number\`
+
+### context
+
+\`any\`
 
 The context of the method call.
 
-• **somethingElse?**: \`string\`
+### somethingElse?
+
+\`string\`
 
 ## Returns
 
@@ -876,11 +936,11 @@ Some nested params.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \`object\` | The parameters passed to the method. |
+| \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \`object\`; \`parent\`: \`number\`; \\} | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
-| \`params.nestedObj\` | \`object\` | A nested object. |
+| \`params.nestedObj\` | \\{ \`name\`: \`string\`; \`obj\`: \`object\`; \`value\`: \`number\`; \\} | A nested object. |
 | \`params.nestedObj.name\`? | \`string\` | - |
-| \`params.nestedObj.obj\`? | \`object\` | - |
+| \`params.nestedObj.obj\`? | \\{ \`name\`: () => \`void\`; \\} | - |
 | \`params.nestedObj.obj.name\`? | () => \`void\` | - |
 | \`params.nestedObj.value\`? | \`number\` | - |
 | \`params.parent\`? | \`number\` | - |
@@ -906,17 +966,25 @@ This is a function with a parameters.
 
 ## Parameters
 
-• **firstParamWithDefault**: \`boolean\` = \`true\`
+### firstParamWithDefault
 
-• **requiredParam**: \`string\`
+\`boolean\` = \`true\`
+
+### requiredParam
+
+\`string\`
 
 A normal parameter.
 
-• **optionalParam?**: \`string\`
+### optionalParam?
+
+\`string\`
 
 An optional parameter.
 
-• **paramWithDefault?**: \`number\` = \`0\`
+### paramWithDefault?
+
+\`number\` = \`0\`
 
 ## Returns
 
@@ -937,17 +1005,25 @@ This is a function with a parameters.
 
 ## Parameters
 
-• **firstParamWithDefault**: \`boolean\` = \`true\`
+### firstParamWithDefault
 
-• **requiredParam**: \`string\`
+\`boolean\` = \`true\`
+
+### requiredParam
+
+\`string\`
 
 A normal parameter.
 
-• **optionalParam?**: \`string\`
+### optionalParam?
+
+\`string\`
 
 An optional parameter.
 
-• **paramWithDefault?**: \`number\` = \`0\`
+### paramWithDefault?
+
+\`number\` = \`0\`
 
 ## Returns
 
@@ -1032,9 +1108,13 @@ Function with reset parmas
 
 ## Parameters
 
-• **param**: \`string\`
+### param
 
-• ...**restParams**: \`string\`[]
+\`string\`
+
+### restParams
+
+...\`string\`[]
 
 ## Returns
 
@@ -1116,6 +1196,100 @@ Function with type parameters
 ## Returns
 
 \`boolean\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with union params: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithUnionParams()
+
+> **functionWithUnionParams**(\`primitiveUnions\`, \`objectUnions\`, \`mixedUnions\`, \`noUnions\`): \`undefined\`
+
+## Parameters
+
+### primitiveUnions
+
+\`string\` | \`number\`
+
+### objectUnions
+
+Comments for objectUnions
+
+#### objectUnions.a
+
+\`string\`
+
+Comments for a
+
+#### objectUnions.b
+
+\`1\`
+
+### mixedUnions
+
+\`string\`
+
+\\{\`a\`: \`string\`;\`b\`: \`string\`; \\}
+
+#### mixedUnions.a
+
+\`string\` = \`''\`
+
+a comments
+
+#### mixedUnions.b
+
+\`string\` = \`''\`
+
+b comments
+
+### noUnions
+
+\`string\`
+
+Comments for noUnions
+
+## Returns
+
+\`undefined\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with union params: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: functionWithUnionParams()
+
+\`\`\`ts
+function functionWithUnionParams(
+   primitiveUnions: string | number, 
+   objectUnions: object, 
+   mixedUnions: string | {
+  a: string;
+  b: string;
+ }, 
+   noUnions: string): undefined
+\`\`\`
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`primitiveUnions\` | \`string\` \\| \`number\` | Comments for primitiveUnions |
+| \`objectUnions\` | \\{ \`a\`: \`string\`; \`b\`: \`1\`; \\} | Comments for objectUnions |
+| \`objectUnions.a\` | \`string\` | Comments for a |
+| \`objectUnions.b\` | \`1\` | - |
+| \`mixedUnions\` | \`string\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\} | - |
+| \`noUnions\` | \`string\` | Comments for noUnions |
+
+## Returns
+
+\`undefined\`
 
 ## Source
 

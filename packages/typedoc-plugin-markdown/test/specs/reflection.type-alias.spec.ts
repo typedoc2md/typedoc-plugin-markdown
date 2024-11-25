@@ -17,6 +17,14 @@ describe(`Type Alias Reflection`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/UnionType.md');
   });
 
+  test(`should compile useful union type`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/UsefulUnionType.md',
+    );
+  });
+
   test(`should compile string literal type`, () => {
     expectFileToEqual(
       'reflections',

@@ -132,7 +132,7 @@ title: 'test'
 
 - [Type Parameters](#type-parameters)
 - [Constructors](#constructors)
-  - [new SomeClass()](#new-someclass)
+  - [Constructor](#constructor)
 - [Properties](#properties)
   - [someProp](#someprop)
 
@@ -157,7 +157,7 @@ title: 'test'
 
 ## Constructors
 
-### new SomeClass()
+### Constructor
 
 > **new SomeClass**\\<\`T\`>(): [\`SomeClass\`](SomeClass.md)\\<\`T\`>
 
@@ -292,7 +292,7 @@ javascript
 
 #### Constructors
 
-##### new SomeClass()
+##### Constructor
 
 > **new SomeClass**\\<\`T\`>(): [\`SomeClass\`](module-1.md#someclasst)\\<\`T\`>
 

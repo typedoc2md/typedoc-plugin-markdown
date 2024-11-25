@@ -1,5 +1,10 @@
-import { Fixture } from '@devtools/fixtures/models';
+import { Fixture } from '@devtools/fixtures/models.js';
 import * as path from 'path';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const config: Record<string, Fixture> = {
   reflections: {
@@ -58,7 +63,7 @@ const config: Record<string, Fixture> = {
       {
         parametersFormat: 'table',
         propertiesFormat: 'table',
-        typeDeclarationFormat: 'source',
+        typeDeclarationVisibility: 'compact',
         useCodeBlocks: true,
       },
     ],

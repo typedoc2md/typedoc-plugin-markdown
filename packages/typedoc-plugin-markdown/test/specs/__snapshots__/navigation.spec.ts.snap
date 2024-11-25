@@ -4515,6 +4515,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "UnionTypeWithTemplateStrings",
         "kind": 2097152,
         "path": "type-aliases/UnionTypeWithTemplateStrings.md"
+      },
+      {
+        "title": "UsefulUnionType",
+        "kind": 2097152,
+        "path": "type-aliases/UsefulUnionType.md"
       }
     ]
   },
@@ -4645,6 +4650,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "functionWithTypeParameters",
         "kind": 64,
         "path": "functions/functionWithTypeParameters.md"
+      },
+      {
+        "title": "functionWithUnionParams",
+        "kind": 64,
+        "path": "functions/functionWithUnionParams.md"
       }
     ]
   }

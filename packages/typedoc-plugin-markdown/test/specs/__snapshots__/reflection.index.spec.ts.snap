@@ -16,7 +16,7 @@ Some text.
 exports[`Reflection Indexes should compile reflection indexes: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# typedoc-stubs
 
-Module commments
+Module comments
 
 ## Enumerations
 
@@ -93,6 +93,7 @@ Module commments
 | [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md) | Comments for TypeWithTypeParams |
 | [UnionType](type-aliases/UnionType.md) | Comments for UnionType |
 | [UnionTypeWithTemplateStrings](type-aliases/UnionTypeWithTemplateStrings.md) | Union with template strings |
+| [UsefulUnionType](type-aliases/UsefulUnionType.md) | Comments for useful UnionType |
 
 ## Variables
 
@@ -127,5 +128,6 @@ Module commments
 | [functionWithOptionalParameters](functions/functionWithOptionalParameters.md) | This is a function with a parameters. |
 | [functionWithRestParams](functions/functionWithRestParams.md) | Function with reset parmas |
 | [functionWithTypeParameters](functions/functionWithTypeParameters.md) | Function with type parameters |
+| [functionWithUnionParams](functions/functionWithUnionParams.md) | - |
 "
 `;

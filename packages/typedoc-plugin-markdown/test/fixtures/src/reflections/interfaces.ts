@@ -2,7 +2,7 @@
  * @module
  */
 
-import { CallbacksOptions } from './classes';
+import { CallbacksOptions } from './classes.js';
 
 /**
  * Comments for BasicInterface

@@ -4,7 +4,7 @@
  * @module
  */
 
-import { InterfaceA, InterfaceB } from './basic';
+import { InterfaceA, InterfaceB } from './basic.js';
 
 export function defaultFunction() {
   return '';

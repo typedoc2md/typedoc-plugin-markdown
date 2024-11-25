@@ -6,6 +6,7 @@ import {
   ReferenceType,
   ReflectionKind,
   ReflectionType,
+  UnionType,
 } from 'typedoc';
 
 export function declaration(
@@ -38,6 +39,11 @@ export function declaration(
 
   const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
+
+  const hasTypeDeclaration =
+    Boolean(typeDeclaration) ||
+    (model.type instanceof UnionType &&
+      model.type?.types.some((type) => type instanceof ReflectionType));
 
   if (model.comment) {
     md.push(
@@ -100,63 +106,39 @@ export function declaration(
     }
   }
 
-  if (typeDeclaration) {
-    if (typeDeclaration?.indexSignatures?.length) {
-      md.push(heading(opts.headingLevel, this.i18n.kind_index_signature()));
-      typeDeclaration?.indexSignatures?.forEach((indexSignature) => {
-        md.push(this.partials.indexSignature(indexSignature));
-      });
-    }
+  if (hasTypeDeclaration) {
+    if (model.type instanceof UnionType) {
+      if (this.helpers.hasUsefulTypeDetails(model.type)) {
+        md.push(heading(opts.headingLevel, this.i18n.theme_type_declaration()));
 
-    if (typeDeclaration?.signatures?.length) {
-      typeDeclaration.signatures.forEach((signature) => {
-        md.push(
-          this.partials.signature(signature, {
-            headingLevel: opts.headingLevel,
-            nested: true,
-          }),
-        );
-      });
-    }
-
-    if (typeDeclaration?.children?.length) {
-      const useHeading =
-        model.kind !== ReflectionKind.Property ||
-        this.helpers.useTableFormat('properties');
-      if (!opts.nested && typeDeclaration?.children?.length) {
-        if (useHeading) {
-          md.push(
-            heading(opts.headingLevel, this.i18n.theme_type_declaration()),
-          );
-        }
-
-        if (typeDeclaration.categories) {
-          typeDeclaration.categories.forEach((category) => {
-            md.push(heading(opts.headingLevel, category.title));
+        model.type.types.forEach((type) => {
+          if (type instanceof ReflectionType) {
+            md.push(this.partials.someType(type, { forceCollapse: true }));
             md.push(
-              this.partials.typeDeclaration(
-                category as unknown as DeclarationReflection,
-                {
-                  headingLevel: useHeading
-                    ? opts.headingLevel + 1
-                    : opts.headingLevel,
-                },
+              this.partials.typeDeclarationContainer(
+                model,
+                type.declaration,
+                options,
               ),
             );
-          });
-        } else {
-          md.push(
-            this.partials.typeDeclaration(typeDeclaration, {
-              headingLevel: useHeading
-                ? opts.headingLevel
-                : opts.headingLevel - 1,
-            }),
-          );
-        }
+          } else {
+            md.push(`${this.partials.someType(type)}`);
+          }
+        });
       }
+    } else {
+      const useHeading =
+        typeDeclaration?.children?.length &&
+        (model.kind !== ReflectionKind.Property ||
+          this.helpers.useTableFormat('properties'));
+      if (useHeading) {
+        md.push(heading(opts.headingLevel, this.i18n.theme_type_declaration()));
+      }
+      md.push(
+        this.partials.typeDeclarationContainer(model, typeDeclaration, options),
+      );
     }
   }
-
   if (model.comment) {
     md.push(
       this.partials.comment(model.comment, {

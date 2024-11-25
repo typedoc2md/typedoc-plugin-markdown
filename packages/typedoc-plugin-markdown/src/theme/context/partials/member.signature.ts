@@ -90,7 +90,11 @@ export function signature(
     if (this.helpers.useTableFormat('parameters')) {
       md.push(this.partials.parametersTable(model.parameters));
     } else {
-      md.push(this.partials.parametersList(model.parameters));
+      md.push(
+        this.partials.parametersList(model.parameters, {
+          headingLevel: options.headingLevel,
+        }),
+      );
     }
   }
 

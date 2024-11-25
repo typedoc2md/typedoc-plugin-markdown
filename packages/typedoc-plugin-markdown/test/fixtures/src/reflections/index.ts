@@ -1,12 +1,12 @@
 /**
- * Module commments
+ * Module comments
  *
  * @module
  */
 
-export * from './classes';
-export * from './enums';
-export * from './functions';
-export * from './interfaces';
-export * from './types';
-export * from './variables';
+export * from './classes.js';
+export * from './enums.js';
+export * from './functions.js';
+export * from './interfaces.js';
+export * from './types.js';
+export * from './variables.js';

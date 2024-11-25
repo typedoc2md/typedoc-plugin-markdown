@@ -115,6 +115,8 @@ xyz.com
 
 > **valueA**: \`number\` = \`100\`
 
+Comments for valueA
+
 ### valueB
 
 > **valueB**: \`boolean\` = \`true\`
@@ -123,43 +125,49 @@ xyz.com
 
 > **valueX**: \`object\`
 
-### valueX.valueA
+Comments for valueX
+
+#### valueX.valueA
 
 > **valueA**: \`number\`[]
 
-### valueX.valueY()
+Comment for valueX.valueA
+
+#### valueX.valueY()
 
 > **valueY**: (\`z\`) => \`object\`
 
-#### Parameters
+##### Parameters
 
-• **z**: \`string\`
+###### z
 
-#### Returns
+\`string\`
+
+##### Returns
 
 \`object\`
 
-##### a
+###### a
 
 > **a**: \`string\` = \`'test'\`
 
-##### b
+###### b
 
 > **b**: \`string\` = \`z\`
 
-##### c
+###### c
 
 > **c**: \`object\`
 
-##### c.a
+###### c.a
 
 > **a**: \`number\` = \`1\`
 
-##### c.b
+###### c.b
 
 > **b**: \`number\` = \`2\`
 
-### valueX.valueZ
+#### valueX.valueZ
 
 > **valueZ**: \`string\` = \`'foo'\`
 
@@ -169,9 +177,13 @@ xyz.com
 
 #### Parameters
 
-• **unionParam**: \`"a"\` \\| \`"b"\`
+##### unionParam
 
-• **\\_undercoreParam\\_**: \`string\`
+\`"a"\` | \`"b"\`
+
+##### \\_undercoreParam\\_
+
+\`string\`
 
 #### Returns
 
@@ -198,15 +210,15 @@ xyz.com
 
 ## Type declaration
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| \`valueA\` | \`number\` | 100 |
-| \`valueB\` | \`boolean\` | true |
-| \`valueX\` | \`object\` | - |
-| \`valueX.valueA\` | \`number\`[] | - |
-| \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - |
-| \`valueX.valueZ\` | \`string\` | 'foo' |
-| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| \`valueA\` | \`number\` | 100 | Comments for valueA |
+| \`valueB\` | \`boolean\` | true | - |
+| \`valueX\` | \`object\` | - | Comments for valueX |
+| \`valueX.valueA\` | \`number\`[] | - | Comment for valueX.valueA |
+| \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - | - |
+| \`valueX.valueZ\` | \`string\` | 'foo' | - |
+| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - | - |
 
 ## Source
 

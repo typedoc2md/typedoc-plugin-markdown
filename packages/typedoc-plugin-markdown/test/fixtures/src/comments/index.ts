@@ -176,8 +176,8 @@ export class BaseClassProperties {
   /**
    * @deprecated
    */
-  propA: string;
-  propB: string;
+  propA!: string;
+  propB!: string;
 }
 
 export class ClassPropertiesTable extends BaseClassProperties {
@@ -186,14 +186,14 @@ export class ClassPropertiesTable extends BaseClassProperties {
    *
    * @experimental
    */
-  propWithFlag: string;
+  propWithFlag!: string;
 
   propA = 'propAValue';
   /**
    * The subroutine recursively parsed the hexadecimal data.
    * to generate the binary output for input validation.
    */
-  private prop1: boolean;
+  private prop1!: boolean;
   /**
    * Below is a breakdown of the notable performances:
    *
@@ -201,7 +201,7 @@ export class ClassPropertiesTable extends BaseClassProperties {
    * - The RAM efficiently cached the frequently accessed data for faster retrieval.
    * - The SSD accessed the stored files with lightning speed due to its high read/write capabilities.
    */
-  readonly prop2: RegExp;
+  readonly prop2!: RegExp;
   /**
    * > Example of Triple Code Block
    *

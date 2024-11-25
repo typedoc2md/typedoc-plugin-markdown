@@ -9,7 +9,7 @@ export class BasicClass {
   /**
    * Comments for prop
    */
-  prop: string;
+  prop!: string;
   /**
    * Comments for method
    */
@@ -38,11 +38,11 @@ export class ClassWithSimpleProps {
    *
    * @defaultValue 'propCDefaultValue'
    */
-  propC: string;
+  propC!: string;
   /**
    * Comments for propE
    */
-  propD: string;
+  propD!: string;
 }
 
 /**
@@ -80,7 +80,7 @@ export abstract class AbstractClass {
  */
 export class DerivedClassA extends AbstractClass {
   abstractProp = 'abstractProp';
-  derivedProp: string;
+  derivedProp!: string;
   abstractMethod() {
     return 'abstractMethod';
   }
@@ -141,7 +141,7 @@ export class ClassWithTypeParameters<A, B extends string, C = boolean> {}
  * Comments for ClassWithAccessors
  */
 export class ClassWithAccessors {
-  private privateProp: string;
+  private privateProp!: string;
   /**
    * Comments for getter
    */
@@ -176,17 +176,17 @@ export abstract class ClassWithModifiers {
   /**
    * Comments for privateProp
    */
-  private privateProp: string;
+  private privateProp!: string;
 
   /**
    * Comments for abstractProperty
    */
-  readonly readonlyProp: string;
+  readonly readonlyProp!: string;
 
   /**
    * Comments for protectedProp
    */
-  protected protectedProp: string;
+  protected protectedProp!: string;
 
   /**
    * Comments for propWithDefault
@@ -218,9 +218,9 @@ export class CallbacksOptions<P = DisposableClass, A = ClassWithModifiers> {}
  */
 export class ClassWithFlags {
   /** @experimental */
-  expermintalProp: string;
+  expermintalProp!: string;
   /** @internal */
-  private internalProp: string;
+  private internalProp!: string;
   /** @experimental */
   expermintalMethod() {}
   /**
@@ -241,7 +241,7 @@ export class ClassWithPropCategories {
   /**@category CatB */
   prop2: string;
 
-  constructor(opts) {
+  constructor(opts: { a: string; b: string }) {
     this.prop1 = opts.a;
     this.prop2 = opts.b;
   }
@@ -254,7 +254,7 @@ export class ClassWithoutPropCategories {
   prop1: string;
   prop2: string;
 
-  constructor(opts) {
+  constructor(opts: { a: string; b: string }) {
     this.prop1 = opts.a;
     this.prop2 = opts.b;
   }
@@ -272,17 +272,17 @@ export class ClassWithAccessorKeywords {
    * const x = 1;
    * ```
    */
-  public accessor accessor1: string;
+  public accessor accessor1!: string;
 
   /**
    * Accessor comments
    *
    * @remarks Remark comments
    */
-  public accessor accessor2: string;
+  public accessor accessor2!: string;
 
   /**
    * Accessor comments
    */
-  public accessor accessor3: string;
+  public accessor accessor3!: string;
 }

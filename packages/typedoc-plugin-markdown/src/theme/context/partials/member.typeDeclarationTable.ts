@@ -1,7 +1,8 @@
 import { backTicks, htmlTable, table } from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/index.js';
+import { TypeDeclarationVisibility } from '@plugin/options/maps.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 
 export function typeDeclarationTable(
   this: MarkdownThemeContext,
@@ -11,15 +12,21 @@ export function typeDeclarationTable(
   const tableColumnsOptions = this.options.getValue('tableColumnSettings');
   const leftAlignHeadings = tableColumnsOptions.leftAlignHeaders;
 
+  const isCompact =
+    this.options.getValue('typeDeclarationVisibility') ===
+    TypeDeclarationVisibility.Compact;
+
   const hasSources =
     !tableColumnsOptions.hideSources &&
     !this.options.getValue('disableSources');
 
   const headers: string[] = [];
 
-  const declarations = this.helpers.getFlattenedDeclarations(model, {
-    includeSignatures: true,
-  });
+  const declarations = isCompact
+    ? model
+    : this.helpers.getFlattenedDeclarations(model, {
+        includeSignatures: true,
+      });
 
   const hasDefaultValues = declarations.some(
     (declaration) =>
@@ -58,9 +65,18 @@ export function typeDeclarationTable(
     }
 
     const optional = declaration.flags.isOptional ? '?' : '';
+
     row.push(`${backTicks(name.join(''))}${optional}`);
 
-    row.push(this.partials.someType(declaration.type));
+    if (isCompact && declaration.type instanceof ReflectionType) {
+      row.push(
+        this.partials.reflectionType(declaration.type, {
+          forceCollapse: isCompact,
+        }),
+      );
+    } else {
+      row.push(this.partials.someType(declaration.type));
+    }
 
     if (hasDefaultValues) {
       row.push(

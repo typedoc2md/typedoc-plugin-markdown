@@ -67,7 +67,11 @@ export function accessor(
       if (this.helpers.useTableFormat('parameters')) {
         md.push(this.partials.parametersTable(model.setSignature.parameters));
       } else {
-        md.push(this.partials.parametersList(model.setSignature.parameters));
+        md.push(
+          this.partials.parametersList(model.setSignature.parameters, {
+            headingLevel: options.headingLevel + 1,
+          }),
+        );
       }
     }
 

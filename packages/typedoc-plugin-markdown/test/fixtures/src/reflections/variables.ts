@@ -31,13 +31,22 @@ export const objectLiteralVariable = {
   valueY: function (unionParam: 'a' | 'b', _undercoreParam_: string) {
     return 'foo';
   },
+  /**
+   * Comments for valueX
+   */
   valueX: {
     valueZ: 'foo',
     valueY: (z: string) => {
       return { a: 'test', b: z, c: { a: 1, b: 2 } };
     },
+    /**
+     * Comment for valueX.valueA
+     */
     valueA: [100, 200, 300],
   },
+  /**
+   * Comments for valueA
+   */
   valueA: 100,
   valueB: true,
 };

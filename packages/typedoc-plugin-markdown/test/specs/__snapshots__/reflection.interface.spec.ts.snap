@@ -37,7 +37,9 @@ Comments for functionProper
 
 #### Parameters
 
-• **s**: \`string\`
+##### s
+
+\`string\`
 
 Comment for param s
 
@@ -163,11 +165,15 @@ Comments for propWithFunction
 
 #### Parameters
 
-• **options**
+##### options
 
-• **options.a**: \`boolean\`
+###### options.a
 
-• **options.b**: \`string\`
+\`boolean\`
+
+###### options.b
+
+\`string\`
 
 #### Returns
 
@@ -209,7 +215,7 @@ Comments for nestedPropB
 
 Comments for nestedPropC
 
-#### nestedPropC.nestedPropCA
+##### nestedPropC.nestedPropCA
 
 > **nestedPropCA**: \`string\`
 
@@ -316,7 +322,9 @@ Comments for functionProper
 
 #### Parameters
 
-• **s**: \`string\`
+##### s
+
+\`string\`
 
 Comment for param s
 
@@ -470,11 +478,15 @@ Comments for propWithFunction
 
 #### Parameters
 
-• **options**
+##### options
 
-• **options.a**: \`boolean\`
+###### options.a
 
-• **options.b**: \`string\`
+\`boolean\`
+
+###### options.b
+
+\`string\`
 
 #### Returns
 
@@ -520,7 +532,7 @@ Comments for nestedPropB
 
 Comments for nestedPropC
 
-#### nestedPropC.nestedPropCA
+##### nestedPropC.nestedPropCA
 
 > **nestedPropCA**: \`string\`
 
@@ -742,7 +754,9 @@ Deprectaed comments
 
 #### Parameters
 
-• **eventParam**: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
+##### eventParam
+
+[\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>
 
 Comments for param eventParam
 
