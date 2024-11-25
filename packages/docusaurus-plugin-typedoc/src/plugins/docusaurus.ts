@@ -50,7 +50,7 @@ async function generateTypedoc(context: any, opts: Partial<any>) {
       '--plugin',
       'typedoc-plugin-markdown',
       '--plugin',
-      'docusaurus-plugin-typedoc',
+      'docusaurus-plugin-typedoc/typedoc',
     ],
     {
       stdio: 'inherit',

@@ -3,7 +3,8 @@
   "version": "1.0.5",
   "description": "A Docusaurus plugin to integrate TypeDoc ( + typedoc-plugin-markdown ) into a Docusaurus project.",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./typedoc": "./dist/plugins/typedoc.js"
   },
   "type": "module",
   "files": [

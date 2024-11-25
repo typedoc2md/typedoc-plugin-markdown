@@ -16,7 +16,7 @@
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run pretest",
     "pretest": "fixtures -c ./test/fixtures/config.ts",
-    "validate": "node test/scripts/lint.md.mjs && node test/scripts/lint.mdx.mjs",
+    "validate": "tsx test/scripts/lint.md.mjs && tsx test/scripts/lint.mdx.mjs",
     "test": "npm run validate && jest",
     "test:update": "npm run build && npm run test -- -u",
     "playground": "npm run build && typedoc --options ./playground/typedoc.json",
