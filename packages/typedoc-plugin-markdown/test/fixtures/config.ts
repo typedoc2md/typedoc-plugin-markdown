@@ -281,8 +281,16 @@ const config: Record<string, Fixture> = {
       readme: 'none',
       expandObjects: true,
       useHTMLEncodedBrackets: true,
+      parametersFormat: 'table',
     },
-    options: [{}, { useCodeBlocks: true }],
+    options: [
+      {},
+      {
+        useCodeBlocks: true,
+        formatWithPrettier: true,
+        prettierConfigFile: './test/fixtures/prettier-config/.prettierrc.json',
+      },
+    ],
   },
   customize: {
     only: false,

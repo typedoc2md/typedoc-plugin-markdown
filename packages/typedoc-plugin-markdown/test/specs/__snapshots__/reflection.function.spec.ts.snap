@@ -23,7 +23,9 @@ Comments for current function 1
 
 #### Type Parameters
 
-• **Value**
+##### Value
+
+\\-
 
 #### Parameters
 
@@ -47,7 +49,9 @@ Comments for iterable arg
 
 ### Type Parameters
 
-• **Value**
+#### Value
+
+\\-
 
 ### Parameters
 
@@ -154,7 +158,9 @@ Comments for function
 
 ### Type Parameters
 
-• **T**
+#### T
+
+\\-
 
 ### Parameters
 
@@ -1161,11 +1167,13 @@ Function with type parameters
 
 ## Type Parameters
 
-• **T**
+### T
 
 Comments for T
 
-• **Item** = \`string\` \\| \`boolean\`
+### Item
+
+Default type \`string\` \\| \`boolean\`
 
 ## Returns
 

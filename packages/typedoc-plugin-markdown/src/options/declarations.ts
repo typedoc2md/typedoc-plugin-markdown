@@ -552,6 +552,42 @@ export const tableColumnSettings: Partial<DeclarationOption> = {
 };
 
 /**
+ * `typedoc-plugin-markdown` plugin generates well-formatted code, however, integrating the popular formatting package [Prettier](https://prettier.io/) can provide additional enhancements, such as:
+ *
+ * - Formats code inside fenced blocks using the respective Prettier configuration for that language.
+ * - Aligns markdown table cells.
+ * - Removes unnecessary escape characters.
+ * - Wraps long lines of text to fit within a configurable line width.
+ *
+ * Please note that Prettier is not a dependency of this plugin and must be installed in your project for this option to work.
+ *
+ * If Prettier is not already installed please `npm i prettier --save-dev` to use this option.
+ *
+ * @category Utility
+ */
+export const formatWithPrettier: Partial<DeclarationOption> = {
+  help: 'Apply additional output formatting with Prettier.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default Prettier uses the options resolved from a discovered Prettier [configuration file](https://prettier.io/docs/en/configuration.html).
+ *
+ * Use this option to specify a separate Prettier configuration file in a custom location.
+ *
+ * Please note this option is only applicable when `formatWithPrettier` is set to `true`.
+ *
+ * @example "./path/to/.prettierrc.json"
+ *
+ * @category Utility
+ */
+export const prettierConfigFile: Partial<DeclarationOption> = {
+  help: 'Specify a custom Prettier configuration file location.',
+  type: ParameterType.Path,
+};
+
+/**
  * *Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks).*
  *
  * By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..

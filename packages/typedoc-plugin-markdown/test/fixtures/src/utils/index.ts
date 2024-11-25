@@ -14,3 +14,23 @@ export const variableWithChars = {
   ['<y>']: '<',
   ['<z>']: '<tag>',
 };
+
+/**
+ * ```ts
+ * reallyUgly    (
+ * javascript
+ *  )
+ * ```
+ *
+ * ```ts
+ * const originalSingleQuote = 'hello'
+ * const originalDoubleQuote = "hello"
+ * ```
+ *
+ *```css
+ *.h1 {     color : red }
+ *```
+ */
+export function some_prettier_function(param: string) {
+  return param;
+}

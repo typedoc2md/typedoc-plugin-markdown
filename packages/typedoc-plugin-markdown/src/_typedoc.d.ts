@@ -14,6 +14,7 @@ declare module 'typedoc' {
     expandParameters: boolean;
     fileExtension: string;
     flattenOutputFiles: boolean;
+    formatWithPrettier: boolean;
     hideBreadcrumbs: boolean;
     hideGroupHeadings: boolean;
     hidePageHeader: boolean;
@@ -38,6 +39,7 @@ declare module 'typedoc' {
     outputFileStrategy: 'members' | 'modules';
     parametersFormat: 'list' | 'table' | 'htmlTable';
     preserveAnchorCasing: boolean;
+    prettierConfigFile: string;
     propertiesFormat: 'list' | 'table' | 'htmlTable';
     propertyMembersFormat: 'list' | 'table' | 'htmlTable';
     publicPath: string;

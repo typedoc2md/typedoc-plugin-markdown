@@ -132,8 +132,8 @@ export class ClassWithConstructorOverloads {
 /**
  * Comments for ClassWithTypeParameters
  *
- * @param A Comments for param A
  * @param B Comments for param B
+ * @param C Comments for param C
  */
 export class ClassWithTypeParameters<A, B extends string, C = boolean> {}
 

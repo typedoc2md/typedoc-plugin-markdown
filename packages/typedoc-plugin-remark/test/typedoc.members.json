@@ -1,9 +1,5 @@
 {
   "extends": "./typedoc.base.json",
   "entryPoints": ["./stubs/*.ts"],
-  "remarkPlugins": [
-    "remark-github",
-    "unified-prettier",
-    ["remark-toc", { "maxDepth": 3 }]
-  ]
+  "remarkPlugins": ["remark-github", ["remark-toc", { "maxDepth": 3 }]]
 }

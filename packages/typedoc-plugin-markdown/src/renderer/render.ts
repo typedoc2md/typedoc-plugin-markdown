@@ -49,7 +49,7 @@ export async function render(
 
   await executeJobs(renderer.preRenderAsyncJobs, output);
 
-  renderPages(renderer, output);
+  await renderPages(renderer, output);
 
   copyMediaFiles(project, outputDirectory);
 
@@ -116,7 +116,10 @@ function initializeTheme(renderer: Renderer): MarkdownTheme {
 }
 
 // Helper to render all pages
-function renderPages(renderer: Renderer, output: MarkdownRendererEvent) {
+async function renderPages(renderer: Renderer, output: MarkdownRendererEvent) {
+  const formatWithPrettier =
+    renderer.application.options.getValue('formatWithPrettier');
+
   renderer.application.logger.verbose(
     `There are ${output.urls?.length} pages to write.`,
   );
@@ -132,12 +135,20 @@ function renderPages(renderer: Renderer, output: MarkdownRendererEvent) {
     renderer.trigger(MarkdownPageEvent.BEGIN, page);
 
     if (page.model instanceof Reflection) {
-      page.contents = page.contents + renderer.theme!.render(page, template);
+      const markdownFromTheme = renderer.theme!.render(page, template);
+
+      if (formatWithPrettier) {
+        page.contents =
+          page.contents +
+          (await formatWithPrettierIfAvailable(renderer, markdownFromTheme));
+      } else {
+        page.contents = page.contents + markdownFromTheme;
+      }
 
       renderer.trigger(MarkdownPageEvent.END, page);
 
       try {
-        writeFileSync(page.filename, page.contents);
+        writeFileSync(page.filename, page.contents || '');
       } catch {
         renderer.application.logger.error(
           renderer.application.i18n.could_not_write_0(page.filename),
@@ -146,6 +157,56 @@ function renderPages(renderer: Renderer, output: MarkdownRendererEvent) {
     } else {
       throw new Error('Unreachable code encountered.');
     }
+  }
+}
+
+async function formatWithPrettierIfAvailable(renderer: Renderer, code: string) {
+  const prettier = await getPrettier();
+  if (!prettier) {
+    renderer.application.logger.warn(
+      '[typedoc-plugin-markdown] Prettier formatting skipped as Prettier must be installed for the `formatWithPrettier` option to work. Please npm i prettier --save-dev.',
+    );
+    return code;
+  }
+
+  // Check Prettier version
+  const version = prettier.version;
+
+  // Ensure compatibility with a specific version (if needed)
+  const [major] = version.split('.');
+  if (Number(major) < 3) {
+    renderer.application.logger.warn(
+      '[typedoc-plugin-markdown] Prettier formatting skipped as Prettier must be above version 3 for the `formatWithPrettier` option to work.',
+    );
+    return code;
+  }
+
+  const prettierConfigPath =
+    renderer.application.options.getValue('prettierConfigFile') ||
+    process.cwd();
+
+  // Resolve Prettier configuration
+  const config = await prettier.resolveConfig(prettierConfigPath);
+
+  // Format code using Prettier
+  const formattedCode = prettier.format(code, {
+    ...config,
+    parser: 'markdown',
+  });
+
+  renderer.application.logger.verbose(
+    '[typedoc-plugin-markdown] Markdown formatted with Prettier.',
+  );
+
+  return formattedCode;
+}
+
+async function getPrettier() {
+  try {
+    //@ts-error - prettier is optional and doesn't have to be installed
+    return await import('prettier');
+  } catch {
+    return null;
   }
 }
 

@@ -66,6 +66,11 @@ export interface PluginOptions {
   flattenOutputFiles: boolean;
 
   /**
+   * Apply additional output formatting with Prettier.
+   */
+  formatWithPrettier: boolean;
+
+  /**
    * Do not print breadcrumbs.
    */
   hideBreadcrumbs: boolean;
@@ -140,6 +145,11 @@ export interface PluginOptions {
    * Preserve anchor casing when generating link to symbols.
    */
   preserveAnchorCasing: boolean;
+
+  /**
+   * Specify a custom Prettier configuration file location.
+   */
+  prettierConfigFile: string;
 
   /**
    * Sets the format of property groups for interfaces and classes.

@@ -4,6 +4,49 @@ import { Callout, FileTree } from "nextra/components";
 
 Options that are used for general configuration and utility purposes.
 
+## --formatWithPrettier
+
+<Callout emoji="💡">Apply additional output formatting with Prettier.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+`typedoc-plugin-markdown` plugin generates well-formatted code, however, integrating the popular formatting package [Prettier](https://prettier.io/) can provide additional enhancements, such as:
+
+- Formats code inside fenced blocks using the respective Prettier configuration for that language.
+- Aligns markdown table cells.
+- Removes unnecessary escape characters.
+- Wraps long lines of text to fit within a configurable line width.
+
+Please note that Prettier is not a dependency of this plugin and must be installed in your project for this option to work.
+
+If Prettier is not already installed please `npm i prettier --save-dev` to use this option.
+
+```json filename="typedoc.json"
+{
+  "formatWithPrettier": false
+}
+```
+
+## --prettierConfigFile
+
+<Callout emoji="💡">
+  Specify a custom Prettier configuration file location.
+</Callout>
+
+> Defaults to `"undefined"`.
+
+By default Prettier uses the options resolved from a discovered Prettier [configuration file](https://prettier.io/docs/en/configuration.html).
+
+Use this option to specify a separate Prettier configuration file in a custom location.
+
+Please note this option is only applicable when `formatWithPrettier` is set to `true`.
+
+```json filename="typedoc.json"
+{
+  "prettierConfigFile": "./path/to/.prettierrc.json"
+}
+```
+
 ## --sanitizeComments
 
 <Callout emoji="💡">Sanitize HTML and JSX inside JsDoc comments.</Callout>

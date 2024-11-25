@@ -1238,15 +1238,21 @@ Comments for ClassWithTypeParameters
 
 ## Type Parameters
 
-• **A**
+### A
 
-Comments for param A
+\\-
 
-• **B** *extends* \`string\`
+### B
+
+*extends*: \`string\`
 
 Comments for param B
 
-• **C** = \`boolean\`
+### C
+
+Default type \`boolean\`
+
+Comments for param C
 
 ## Constructors
 
@@ -1269,9 +1275,9 @@ Comments for ClassWithTypeParameters
 
 | Type Parameter | Default type | Description |
 | :------ | :------ | :------ |
-| \`A\` | - | Comments for param A |
+| \`A\` | - | - |
 | \`B\` *extends* \`string\` | - | Comments for param B |
-| \`C\` | \`boolean\` | - |
+| \`C\` | \`boolean\` | Comments for param C |
 
 ## Constructors
 

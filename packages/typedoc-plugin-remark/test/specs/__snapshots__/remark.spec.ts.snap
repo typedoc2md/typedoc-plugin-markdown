@@ -5,10 +5,10 @@ exports[`Remark should parse globals page 1`] = `
 
 ## CustomTOC
 
-- [Variables](#variables)
-  - [someVariable](#somevariable)
-- [Functions](#functions)
-  - [some_function()](#some_function)
+* [Variables](#variables)
+  * [someVariable](#somevariable)
+* [Functions](#functions)
+  * [some\\_function()](#some_function)
 
 ## Variables
 
@@ -18,12 +18,11 @@ exports[`Remark should parse globals page 1`] = `
 
 ## Functions
 
-### some_function()
+### some\\_function()
 
-> **some_function**(\`param\`): \`void\`
+> **some\\_function**(\`param\`): \`void\`
 
 #### Parameters
-
 <table>
 <thead>
 <tr>
@@ -47,10 +46,6 @@ exports[`Remark should parse globals page 1`] = `
 <td>
 
 Default text content for \`@category\` tag.
-
-\`\`\`ts
-const x = 1;
-\`\`\`
 
 </td>
 </tr>
@@ -74,12 +69,11 @@ exports[`Remark should parse globals page without toc 1`] = `
 
 ## Functions
 
-### some_function()
+### some\\_function()
 
-> **some_function**(\`param\`): \`void\`
+> **some\\_function**(\`param\`): \`void\`
 
 #### Parameters
-
 <table>
 <thead>
 <tr>
@@ -104,10 +98,6 @@ exports[`Remark should parse globals page without toc 1`] = `
 
 Default text content for \`@category\` tag.
 
-\`\`\`ts
-const x = 1;
-\`\`\`
-
 </td>
 </tr>
 </tbody>
@@ -121,23 +111,22 @@ const x = 1;
 
 exports[`Remark should parse members class page 1`] = `
 "---
-title: 'test'
+title: "test"
 ---
 
 # Class: SomeClass\\<T>
 
-- list item 1
+* list item 1
 
 ## Contents
 
-- [Type Parameters](#type-parameters)
-- [Constructors](#constructors)
-  - [Constructor](#constructor)
-- [Properties](#properties)
-  - [someProp](#someprop)
+* [Type Parameters](#type-parameters)
+* [Constructors](#constructors)
+  * [Constructor](#constructor)
+* [Properties](#properties)
+  * [someProp](#someprop)
 
 ## Type Parameters
-
 <table>
 <thead>
 <tr>
@@ -178,14 +167,14 @@ exports[`Remark should parse members index 1`] = `
 
 ## Modules
 
-- [module-1](module-1/README.md)
-- [module-2](module-2/README.md)
+* [module-1](module-1/README.md)
+* [module-2](module-2/README.md)
 "
 `;
 
 exports[`Remark should parse members module page 1`] = `
 "---
-title: 'test'
+title: "test"
 ---
 
 # module-1
@@ -194,33 +183,19 @@ Comments form module comments
 
 Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/1).
 
-\`\`\`js
-reallyUgly(javascript);
-\`\`\`
-
-\`\`\`css
-.h1 {
-  color: red;
-}
-\`\`\`
-
 ## Index
 
 ### Classes
 
-- [SomeClass](classes/SomeClass.md)
+* [SomeClass](classes/SomeClass.md)
 
 ### Interfaces
 
-- [SomeInterface](interfaces/SomeInterface.md)
-
-### Variables
-
-- [\\_\\_variable_with_underscores\\_\\_](variables/variable_with_underscores.md)
+* [SomeInterface](interfaces/SomeInterface.md)
 
 ### Functions
 
-- [some_function](functions/some_function.md)
+* [some\\_function](functions/some_function.md)
 "
 `;
 
@@ -245,24 +220,12 @@ Comments form module comments
 
 Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/1).
 
-~~~js
-reallyUgly    (
-javascript
- )
-~~~
-
-~~~css
-.h1 {     color : red }
-~~~
-
 ## Contents
 
 + [Classes](#classes)
   + [SomeClass\\<T>](#someclasst)
 + [Interfaces](#interfaces)
   + [SomeInterface\\<T>](#someinterfacet)
-+ [Variables](#variables)
-  + [\\_\\_variable\\_with\\_underscores\\_\\_](#__variable_with_underscores__)
 + [Functions](#functions)
   + [some\\_function()](#some_function)
 
@@ -341,12 +304,6 @@ javascript
 ##### someProp
 
 > **someProp**: \`string\`
-
-## Variables
-
-### \\_\\_variable\\_with\\_underscores\\_\\_
-
-> \`const\` **\\_\\_variable\\_with\\_underscores\\_\\_**: \`true\` = \`true\`
 
 ## Functions
 

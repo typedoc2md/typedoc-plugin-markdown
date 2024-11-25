@@ -40,7 +40,11 @@ export function memberWithGroups(
     if (this.helpers.useTableFormat('parameters')) {
       md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
-      md.push(this.partials.typeParametersList(model.typeParameters));
+      md.push(
+        this.partials.typeParametersList(model.typeParameters, {
+          headingLevel: options.headingLevel,
+        }),
+      );
     }
   }
 

@@ -228,8 +228,10 @@ There is no association list partial for properties as these are handled as a st
       options: { kind?: ReflectionKind | undefined },
     ) =>
       partials.typeDeclarationTable.apply(context, [model, options]) as string,
-    typeParametersList: (model: TypeParameterReflection[]) =>
-      partials.typeParametersList.apply(context, [model]) as string,
+    typeParametersList: (
+      model: TypeParameterReflection[],
+      options: { headingLevel: number },
+    ) => partials.typeParametersList.apply(context, [model, options]) as string,
     typeParametersTable: (model: TypeParameterReflection[]) =>
       partials.typeParametersTable.apply(context, [model]) as string,
     breadcrumbs: () => partials.breadcrumbs.apply(context, []) as string,

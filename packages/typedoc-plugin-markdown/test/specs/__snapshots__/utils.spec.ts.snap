@@ -5,7 +5,9 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 
 ## Type Parameters
 
-• **T**
+| Type Parameter |
+| ------ |
+| \`T\` |
 
 ## Constructors
 
@@ -30,7 +32,9 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 
 ## Type Parameters
 
-• **T**
+| Type Parameter |
+| -------------- |
+| \`T\`            |
 
 ## Constructors
 
@@ -59,7 +63,9 @@ exports[`Utils should get interface with brackets: (Output File Strategy "member
 
 ## Type Parameters
 
-• **T**
+| Type Parameter |
+| ------ |
+| \`T\` |
 
 ## Properties
 
@@ -92,7 +98,9 @@ exports[`Utils should get interface with brackets: (Output File Strategy "member
 
 ## Type Parameters
 
-• **T**
+| Type Parameter |
+| -------------- |
+| \`T\`            |
 
 ## Properties
 
@@ -102,7 +110,7 @@ exports[`Utils should get interface with brackets: (Output File Strategy "member
 <: string;
 \`\`\`
 
-***
+---
 
 ### &lt;tag&gt;
 
@@ -110,7 +118,7 @@ exports[`Utils should get interface with brackets: (Output File Strategy "member
 <tag>: string;
 \`\`\`
 
-***
+---
 
 ### &gt;
 
@@ -118,13 +126,79 @@ exports[`Utils should get interface with brackets: (Output File Strategy "member
 >: string;
 \`\`\`
 
-***
+---
 
 ### prop
 
 \`\`\`ts
 prop: T;
 \`\`\`
+"
+`;
+
+exports[`Utils should get prettified function: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: some\\_prettier\\_function()
+
+> **some\\_prettier\\_function**(\`param\`): \`string\`
+
+\`\`\`ts
+reallyUgly    (
+javascript
+ )
+\`\`\`
+
+\`\`\`ts
+const originalSingleQuote = 'hello'
+const originalDoubleQuote = "hello"
+\`\`\`
+
+\`\`\`css
+.h1 {     color : red }
+\`\`\`
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| \`param\` | \`string\` |
+
+## Returns
+
+\`string\`
+"
+`;
+
+exports[`Utils should get prettified function: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: some_prettier_function()
+
+\`\`\`ts
+function some_prettier_function(param): string;
+\`\`\`
+
+\`\`\`ts
+reallyUgly(javascript);
+\`\`\`
+
+\`\`\`ts
+const originalSingleQuote = "hello";
+const originalDoubleQuote = "hello";
+\`\`\`
+
+\`\`\`css
+.h1 {
+  color: red;
+}
+\`\`\`
+
+## Parameters
+
+| Parameter | Type     |
+| --------- | -------- |
+| \`param\`   | \`string\` |
+
+## Returns
+
+\`string\`
 "
 `;
 
