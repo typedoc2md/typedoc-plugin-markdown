@@ -328,10 +328,12 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
     getProjectName: (
       stringWithPlaceholders: string,
       page: MarkdownPageEvent<Reflection>,
+      includeVersion: boolean = true,
     ) =>
       helpers.getProjectName.apply(context, [
         stringWithPlaceholders,
         page,
+        includeVersion,
       ]) as string,
     getPropertyDefaultValue: (model: DeclarationReflection) =>
       helpers.getPropertyDefaultValue.apply(context, [model]) as string | null,

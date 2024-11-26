@@ -1,6 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { declarations } from '../../src/options';
+
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = dirname(__filename);
 
 main();
 

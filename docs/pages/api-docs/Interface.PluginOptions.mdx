@@ -102,6 +102,14 @@ Flatten output files to a single directory.
 
 ***
 
+### formatWithPrettier
+
+> **formatWithPrettier**: `boolean`
+
+Apply additional output formatting with Prettier.
+
+***
+
 ### hideBreadcrumbs
 
 > **hideBreadcrumbs**: `boolean`
@@ -162,7 +170,7 @@ Determines which members are exported to their own file when `outputFileStrategy
 
 > **mergeReadme**: `boolean`
 
-Merges the resolved readme into the project index page.
+Appends the documentation index page to the readme page.
 
 ***
 
@@ -204,6 +212,26 @@ Determines how output files are generated.
 
 ***
 
+### pageTitleTemplates
+
+> **pageTitleTemplates**: `object`
+
+Change specific text placeholders in the template.
+
+#### index
+
+> **index**: `string` \| (`name`) => `string`
+
+#### member
+
+> **member**: `string` \| (`name`) => `string`
+
+#### module
+
+> **module**: `string` \| (`name`) => `string`
+
+***
+
 ### parametersFormat
 
 > **parametersFormat**: `"table"` \| `"list"` \| `"htmlTable"`
@@ -217,6 +245,14 @@ Sets the format of parameter and type parameter groups.
 > **preserveAnchorCasing**: `boolean`
 
 Preserve anchor casing when generating link to symbols.
+
+***
+
+### prettierConfigFile
+
+> **prettierConfigFile**: `string`
+
+Specify a custom Prettier configuration file location.
 
 ***
 
@@ -294,29 +330,25 @@ Control how table columns are configured and displayed.
 
 Change specific text placeholders in the template.
 
-#### header.title
+##### header.title
 
 > **title**: `string`
 
-#### header.docs
-
-> **docs**: `string`
-
-#### breadcrumbs.home
+##### breadcrumbs.home
 
 > **home**: `string`
 
-#### title.indexPage
+##### title.indexPage
 
 > **indexPage**: `string`
 
-#### title.memberPage
+##### title.memberPage
 
 > **memberPage**: `string`
 
-#### footer.text
+##### title.modulePage
 
-> **text**: `string`
+> **modulePage**: `string`
 
 ***
 
@@ -325,6 +357,14 @@ Change specific text placeholders in the template.
 > **typeDeclarationFormat**: `"table"` \| `"list"` \| `"htmlTable"`
 
 Sets the format of style for type declaration members.
+
+***
+
+### typeDeclarationVisibility
+
+> **typeDeclarationVisibility**: `"compact"` \| `"verbose"`
+
+Set the visibility level for type declaration documentation.
 
 ***
 

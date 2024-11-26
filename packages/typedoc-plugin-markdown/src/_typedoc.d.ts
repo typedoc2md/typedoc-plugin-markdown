@@ -37,6 +37,15 @@ declare module 'typedoc' {
       excludeFolders: boolean;
     };
     outputFileStrategy: 'members' | 'modules';
+    pageTitleTemplates: {
+      index:
+        | string
+        | ((name: { projectName: string; version: string }) => string);
+      member:
+        | string
+        | ((name: { name: string; kind: string; group: string }) => string);
+      module: string | ((name: { name: string; kind: string }) => string);
+    };
     parametersFormat: 'list' | 'table' | 'htmlTable';
     preserveAnchorCasing: boolean;
     prettierConfigFile: string;
@@ -61,7 +70,7 @@ declare module 'typedoc' {
       'title.modulePage': string;
     }>;
     typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
-    typeDeclarationVisibility: 'compact' | 'expanded';
+    typeDeclarationVisibility: 'compact' | 'verbose';
     useCodeBlocks: boolean;
     useHTMLAnchors: boolean;
     useHTMLEncodedBrackets: boolean;
@@ -72,7 +81,6 @@ declare module 'typedoc' {
       theme_default_value: [];
       theme_default_type: [];
       theme_description: [];
-      theme_documentation: [];
       theme_event: [];
       theme_re_exports: [];
       theme_renames_and_re_exports: [];

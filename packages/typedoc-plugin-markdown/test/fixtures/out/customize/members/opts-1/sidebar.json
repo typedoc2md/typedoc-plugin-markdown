@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Functions",
+    "children": [
+      {
+        "title": "someFunction",
+        "kind": 64,
+        "path": "functions/someFunction.md"
+      }
+    ]
+  }
+]

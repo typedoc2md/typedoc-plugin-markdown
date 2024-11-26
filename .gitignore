@@ -6,8 +6,8 @@ dist
 
 # testing
 samples
-out
 typedoc-examples
+out
 html
 /devdocs-html
 

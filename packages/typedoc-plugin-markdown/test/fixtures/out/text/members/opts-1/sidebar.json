@@ -1,0 +1,36 @@
+[
+  {
+    "title": "module-1",
+    "kind": 2,
+    "path": "module-1/README.md",
+    "children": [
+      {
+        "title": "インターフェイス",
+        "children": [
+          {
+            "title": "SomeInterface",
+            "kind": 256,
+            "path": "module-1/interfaces/SomeInterface.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "kind": 2,
+    "path": "module-2/README.md",
+    "children": [
+      {
+        "title": "変数",
+        "children": [
+          {
+            "title": "constA",
+            "kind": 32,
+            "path": "module-2/variables/constA.md"
+          }
+        ]
+      }
+    ]
+  }
+]

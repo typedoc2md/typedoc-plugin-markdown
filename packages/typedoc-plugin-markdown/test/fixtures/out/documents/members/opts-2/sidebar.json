@@ -1,0 +1,308 @@
+[
+  {
+    "title": "Documents",
+    "children": [
+      {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "Document.Project-Document-1.md"
+      },
+      {
+        "title": "docs/project/PROJECT_DOC_2",
+        "kind": 8388608,
+        "path": "Document.docs.project.PROJECT_DOC_2.md"
+      },
+      {
+        "title": "docs/project/PROJECT_DOC_3",
+        "kind": 8388608,
+        "path": "Document.docs.project.PROJECT_DOC_3.md"
+      }
+    ]
+  },
+  {
+    "title": "ModuleWithDocuments1",
+    "kind": 2,
+    "path": "ModuleWithDocuments1.md",
+    "children": [
+      {
+        "title": "MODULE_DOC",
+        "kind": 8388608,
+        "path": "ModuleWithDocuments1.Document.MODULE_DOC.md"
+      },
+      {
+        "title": "Namespaces",
+        "children": [
+          {
+            "title": "NamespaceWithDocuments",
+            "kind": 4,
+            "path": "ModuleWithDocuments1.Namespace.NamespaceWithDocuments.md",
+            "children": [
+              {
+                "title": "NAMESPACE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.NamespaceWithDocuments.Document.NAMESPACE_DOC.md"
+              },
+              {
+                "title": "Classes",
+                "children": [
+                  {
+                    "title": "NamespaceClassWithDocuments",
+                    "kind": 128,
+                    "path": "ModuleWithDocuments1.NamespaceWithDocuments.Class.NamespaceClassWithDocuments.md",
+                    "children": [
+                      {
+                        "title": "CLASS_DOC",
+                        "kind": 8388608,
+                        "path": "ModuleWithDocuments1.NamespaceWithDocuments.NamespaceClassWithDocuments.Document.CLASS_DOC.md"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumWithDocuments",
+            "kind": 8,
+            "path": "ModuleWithDocuments1.Enumeration.EnumWithDocuments.md",
+            "children": [
+              {
+                "title": "ENUM_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.EnumWithDocuments.Document.ENUM_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassWithDocuments",
+            "kind": 128,
+            "path": "ModuleWithDocuments1.Class.ClassWithDocuments.md",
+            "children": [
+              {
+                "title": "CLASS_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.ClassWithDocuments.Document.CLASS_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceWithDocuments",
+            "kind": 256,
+            "path": "ModuleWithDocuments1.Interface.InterfaceWithDocuments.md",
+            "children": [
+              {
+                "title": "INTERFACE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.InterfaceWithDocuments.Document.INTERFACE_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeWithDocuments",
+            "kind": 2097152,
+            "path": "ModuleWithDocuments1.TypeAlias.TypeWithDocuments.md",
+            "children": [
+              {
+                "title": "TYPE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.TypeWithDocuments.Document.TYPE_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "variableWithDocuments",
+            "kind": 32,
+            "path": "ModuleWithDocuments1.Variable.variableWithDocuments.md",
+            "children": [
+              {
+                "title": "VARIABLE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.variableWithDocuments.Document.VARIABLE_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "functionWithDocuments",
+            "kind": 64,
+            "path": "ModuleWithDocuments1.Function.functionWithDocuments.md",
+            "children": [
+              {
+                "title": "FUNCTION_DOC_1",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.functionWithDocuments.Document.FUNCTION_DOC_1.md"
+              }
+            ]
+          },
+          {
+            "title": "multipleFunctionWithDocuments",
+            "kind": 64,
+            "path": "ModuleWithDocuments1.Function.multipleFunctionWithDocuments.md",
+            "children": [
+              {
+                "title": "FUNCTION_DOC_3",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.multipleFunctionWithDocuments.Document.FUNCTION_DOC_3.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "ModuleWithDocuments2",
+    "kind": 2,
+    "path": "ModuleWithDocuments2.md",
+    "children": [
+      {
+        "title": "MODULE_DOC",
+        "kind": 8388608,
+        "path": "ModuleWithDocuments2.Document.MODULE_DOC.md"
+      },
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumWithDocuments",
+            "kind": 8,
+            "path": "ModuleWithDocuments2.Enumeration.EnumWithDocuments.md",
+            "children": [
+              {
+                "title": "ENUM_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments2.EnumWithDocuments.Document.ENUM_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassWithDocuments",
+            "kind": 128,
+            "path": "ModuleWithDocuments2.Class.ClassWithDocuments.md",
+            "children": [
+              {
+                "title": "CLASS_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments2.ClassWithDocuments.Document.CLASS_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceWithDocuments",
+            "kind": 256,
+            "path": "ModuleWithDocuments2.Interface.InterfaceWithDocuments.md",
+            "children": [
+              {
+                "title": "INTERFACE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments2.InterfaceWithDocuments.Document.INTERFACE_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeWithDocuments",
+            "kind": 2097152,
+            "path": "ModuleWithDocuments2.TypeAlias.TypeWithDocuments.md",
+            "children": [
+              {
+                "title": "TYPE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments2.TypeWithDocuments.Document.TYPE_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "variableWithDocuments",
+            "kind": 32,
+            "path": "ModuleWithDocuments2.Variable.variableWithDocuments.md",
+            "children": [
+              {
+                "title": "VARIABLE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments2.variableWithDocuments.Document.VARIABLE_DOC.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "functionWithDocuments",
+            "kind": 64,
+            "path": "ModuleWithDocuments2.Function.functionWithDocuments.md",
+            "children": [
+              {
+                "title": "FUNCTION_DOC_1",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments2.functionWithDocuments.Document.FUNCTION_DOC_1.md"
+              }
+            ]
+          },
+          {
+            "title": "multipleFunctionWithDocuments",
+            "kind": 64,
+            "path": "ModuleWithDocuments2.Function.multipleFunctionWithDocuments.md",
+            "children": [
+              {
+                "title": "FUNCTION_DOC_3",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments2.multipleFunctionWithDocuments.Document.FUNCTION_DOC_3.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -10,7 +10,7 @@ Options that are used for general configuration and utility purposes.
 
 > Accepts a boolean value. Defaults to `false`.
 
-`typedoc-plugin-markdown` plugin generates well-formatted code, however, integrating the popular formatting package [Prettier](https://prettier.io/) can provide additional enhancements, such as:
+This plugin generates well-formatted Markdown, however, integrating the popular formatting package [Prettier](https://prettier.io/) can provide additional enhancements, such as:
 
 - Formats code inside fenced blocks using the respective Prettier configuration for that language.
 - Aligns markdown table cells.
@@ -19,7 +19,7 @@ Options that are used for general configuration and utility purposes.
 
 Please note that Prettier is not a dependency of this plugin and must be installed in your project for this option to work.
 
-If Prettier is not already installed please `npm i prettier --save-dev` to use this option.
+`npm i prettier --save-dev` to use this option.
 
 ```json filename="typedoc.json"
 {
@@ -39,7 +39,7 @@ By default Prettier uses the options resolved from a discovered Prettier [config
 
 Use this option to specify a separate Prettier configuration file in a custom location.
 
-Please note this option is only applicable when `formatWithPrettier` is set to `true`.
+Please note this option is only applicable when `formatWithPrettier` is set to `"true"`.
 
 ```json filename="typedoc.json"
 {
@@ -151,45 +151,48 @@ This option can be used for engines that require the preservation of anchor link
 }
 ```
 
-## --textContentMappings
+## --pageTitleTemplates
 
 <Callout emoji="💡">Change specific text placeholders in the template.</Callout>
 
 >
 
-Defines placeholder text that can be customized. Includes the main page header, breadcrumbs (if displayed) and main page titles.
+Customizes the page titles for index, module, and member pages in the documentation.
 
-Values can be strings that accept placeholders inside curly brace `{}`, or functions that provide placeholders as arguments.
+The option is provided as an object with keys corresponding to the page type.
 
-Default values within curly braces {} indicates a placeholder of dynamic text.
+The Values of each key can be either:
 
-- The `{projectName}` placeholder writes project's name.
-- The `{version}` placeholder writes package version (if includeVersion is `true`).
-- The `{kind}` placeholder writes the reflection kind of the page.
-- The `{name}` placeholder writes the reflection name.
-- The `{group}` place holder writes the group title
-- The `{category}` placeholder writes the group title
+- A function accepting input arguments.
+- A strings supporting placeholders.
 
-**Available keys**
+Available placeholders / arguments:
 
-| Key                | Available Placeholders/Args         | Description                                                 |
-| ------------------ | ----------------------------------- | ----------------------------------------------------------- |
-| `header.title`     | `projectName`, `version`            | Writes the project's name.                                  |
-| `breadcrumbs.home` | `projectName`, `version`            | Writes the reflection kind of the page.                     |
-| `title.indexPage`  | `projectName`, `version`            | Writes the package version (if `includeVersion` is `true`). |
-| `title.modulePage` | `kind`, `name`                      | Writes the package version (if `includeVersion` is `true`). |
-| `title.memberPage` | `kind`, `name`, `group`, `category` | Writes the group and name of the member page dynamically.   |
+- `{projectName}` - the project's name resolved by TypeDoc.
+- `{version}` - the project version resolved by TypeDoc (when includeVersion is `true`).
+- `{kind}` - the reflection kind of the item.
+- `{group}` - the group title that the item belongs to.
 
-If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
+Available keys:
+
+- The `index` key (main documentation index page) accepts the `projectName` and `version` placeholder/args.
+- The `module` key (module and namespace pages) accepts the `kind` and `name` placeholder/args.
+- The `member` key (individual module member pages) accepts the `kind`, `name`, and `group` placeholder/args.
+
+```js filename="typedoc.cjs"
+pageTitleTemplates: {
+ index: (args) => `${args.projectName}: ${args.version}`,
+ module: (args) => args.name,
+ member: (args) => `${args.kind}: ${args.name}`,
+}
+```
 
 ```json filename="typedoc.json"
 {
-  "textContentMappings": {
-    "header.title": "{projectName} {version}",
-    "breadcrumbs.home": "{projectName} {version}",
-    "title.indexPage": "{projectName} {version}",
-    "title.memberPage": "{kind}: {name}",
-    "title.modulePage": "{name}"
+  "pageTitleTemplates": {
+    "index": "{projectName} {version}",
+    "member": "{kind}: {name}",
+    "module": "{name}"
   }
 }
 ```

@@ -39,8 +39,8 @@
     "leftAlignHeaders": true
   },
   "useCodeBlocks": false,
-  "textContentMappings": {
-    "title.memberPage": "{name}"
+  "pageTitleTemplates": {
+    "member": "{name}"
   },
   "flattenOutputFiles": true,
   "navigation": {

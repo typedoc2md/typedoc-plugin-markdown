@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Interfaces",
+    "children": [
+      {
+        "title": "PackageInterface",
+        "kind": 256,
+        "path": "interfaces/PackageInterface.md"
+      }
+    ]
+  }
+]

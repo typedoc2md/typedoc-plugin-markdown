@@ -63,18 +63,13 @@ export function load(app: Application) {
 
   app.outputs.setDefaultOutputName('markdown');
 
-  /**
-   * =============================
-   * 2. Configure Hooks
-   * =============================
-   */
   Object.defineProperty(app.renderer, 'markdownHooks', {
     value: new EventHooks<MarkdownRendererHooks, string>(),
   });
 
   /**
    * =========================
-   * 4. Configure localization
+   * 3. Configure localization
    * =========================
    */
 

@@ -22,6 +22,7 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
 import {
   ALLOWED_OWN_FILE_MEMBERS,
+  DEFAULT_PAGE_TITLES,
   TEXT_CONTENT_MAPPINGS,
 } from './constants.js';
 import {
@@ -205,6 +206,21 @@ export const modulesFileName: Partial<DeclarationOption> = {
 };
 
 /**
+ * By default when a readme file is resolved, a separate readme page is created.
+ *
+ * This option appends the documentation main/index page to the readme page so only a single root page is generated.
+ *
+ * This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+ *
+ * @category File
+ */
+export const mergeReadme: Partial<DeclarationOption> = {
+  help: 'Appends the documentation index page to the readme page.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
  * This option can be used when the root page of the documentation should be a specific module (typically a module named `index`).
  *
  * The module name should be specified (NOT the reference to the file name).
@@ -248,20 +264,6 @@ export const entryModule: Partial<DeclarationOption> = {
  */
 export const excludeScopesInPaths: Partial<DeclarationOption> = {
   help: 'Exclude writing @ scope directories in paths.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
- * By default when a readme file is resolved, a separate readme page is created.
- * This option appends the index page to the readme so only a single root page is generated.
- *
- * This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
- *
- * @category File
- */
-export const mergeReadme: Partial<DeclarationOption> = {
-  help: 'Merges the resolved readme into the project index page.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -467,6 +469,24 @@ export const enumMembersFormat: Partial<DeclarationOption> = {
 };
 
 /**
+ * This option will handle the formatting of object literals assigned as properties in classes or interfaces.
+ *
+ * Note this options will only take effect when the property declaration is rendered in a `list` format.
+ *
+ * - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
+ * - **"table"**: members are output within a Markdown table, condensed into a single paragraph.
+ * - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
+ *
+ * @category Display
+ */
+export const propertyMembersFormat: Partial<DeclarationOption> = {
+  help: 'Sets the format of style for property members for interfaces and classes.',
+  type: ParameterType.Map,
+  map: DisplayFormat,
+  defaultValue: DisplayFormat.List,
+};
+
+/**
  * This option specifies the output format for type declaration of variables and type aliases.
  *
  * - **"list"**: declarations are output in linear blocks with headings, suitable for more detailed comments.
@@ -483,10 +503,10 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
 };
 
 /**
- * Configures the visibility level for type declaration documentation.
+ * Configures the visibility level for type declaration documentation. Applies to both list and table formats.
  *
- * - **"expanded"**: Displays all available documentation as text, including nested type declarations.
- * - **"compact"**: Omits separate documentation blocks for nested type declarations.
+ * - **"verbose"**: Provides full documentation details for all type declarations, including nested types.
+ * - **"compact"**: Summarizes nested types as JSON, reducing verbosity while retaining key information.
  *
  * @category Display
  */
@@ -494,25 +514,7 @@ export const typeDeclarationVisibility: Partial<DeclarationOption> = {
   help: 'Set the visibility level for type declaration documentation.',
   type: ParameterType.Map,
   map: TypeDeclarationVisibility,
-  defaultValue: TypeDeclarationVisibility.Expanded,
-};
-
-/**
- * This option will handle the formatting of object literals assigned as properties in classes or interfaces.
- *
- * Note this options will only take effect when the property declaration is rendered in a `list` format.
- *
- * - **"list"**: members are output in linear blocks with headings, suitable for more detailed comments.
- * - **"table"**: members are output within a Markdown table, condensed into a single paragraph.
- * - **"htmlTable"**: members are output in an HTML table, enabling block elements to render in tabular format.
- *
- * @category Display
- */
-export const propertyMembersFormat: Partial<DeclarationOption> = {
-  help: 'Sets the format of style for property members for interfaces and classes.',
-  type: ParameterType.Map,
-  map: DisplayFormat,
-  defaultValue: DisplayFormat.List,
+  defaultValue: TypeDeclarationVisibility.Verbose,
 };
 
 /**
@@ -552,7 +554,7 @@ export const tableColumnSettings: Partial<DeclarationOption> = {
 };
 
 /**
- * `typedoc-plugin-markdown` plugin generates well-formatted code, however, integrating the popular formatting package [Prettier](https://prettier.io/) can provide additional enhancements, such as:
+ * This plugin generates well-formatted Markdown, however, integrating the popular formatting package [Prettier](https://prettier.io/) can provide additional enhancements, such as:
  *
  * - Formats code inside fenced blocks using the respective Prettier configuration for that language.
  * - Aligns markdown table cells.
@@ -561,7 +563,7 @@ export const tableColumnSettings: Partial<DeclarationOption> = {
  *
  * Please note that Prettier is not a dependency of this plugin and must be installed in your project for this option to work.
  *
- * If Prettier is not already installed please `npm i prettier --save-dev` to use this option.
+ * `npm i prettier --save-dev` to use this option.
  *
  * @category Utility
  */
@@ -576,7 +578,7 @@ export const formatWithPrettier: Partial<DeclarationOption> = {
  *
  * Use this option to specify a separate Prettier configuration file in a custom location.
  *
- * Please note this option is only applicable when `formatWithPrettier` is set to `true`.
+ * Please note this option is only applicable when `formatWithPrettier` is set to `"true"`.
  *
  * @example "./path/to/.prettierrc.json"
  *
@@ -674,31 +676,9 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 };
 
 /**
- * Defines placeholder text that can be customized. Includes the main page header, breadcrumbs (if displayed) and main page titles.
+ * @hidden
  *
- * Values can be strings that accept placeholders inside curly brace `{}`, or functions that provide placeholders as arguments.
- *
- * Default values within curly braces {} indicates a placeholder of dynamic text.
- *
- * - The `{projectName}` placeholder writes project's name.
- * - The `{version}` placeholder writes package version (if includeVersion is `true`).
- * - The `{kind}` placeholder writes the reflection kind of the page.
- * - The `{name}` placeholder writes the reflection name.
- * - The `{group}` place holder writes the group title
- * - The `{category}` placeholder writes the group title
-
- *
- * **Available keys**
- *
- * | Key                   | Available Placeholders/Args | Description                                                                |
- * |-----------------------|----------------------------|----------------------------------------------------------------------------|
- * | `header.title`        | `projectName`, `version`   | Writes the project's name.                                                 |
- * | `breadcrumbs.home`    | `projectName`, `version`                  | Writes the reflection kind of the page.                                    |
- * | `title.indexPage`    | `projectName`, `version`               | Writes the package version (if `includeVersion` is `true`).                |
- * | `title.modulePage`   | `kind`, `name`               | Writes the package version (if `includeVersion` is `true`).                |
- * | `title.memberPage`    | `kind`, `name`, `group`, `category`           | Writes the group and name of the member page dynamically.                  |
- *
- * If you are looking for general localization support please see TypeDoc's [`--lang`](https://typedoc.org/options/output/#lang) and [`--locales`](https://typedoc.org/options/output/#locales) options.
+ * @deprecated This option has been deprecated in favour of `--pageTitleTemplates`.
  *
  * @category Utility
  */
@@ -706,6 +686,60 @@ export const textContentMappings: Partial<DeclarationOption> = {
   help: 'Change specific text placeholders in the template.',
   type: ParameterType.Object,
   defaultValue: TEXT_CONTENT_MAPPINGS,
+  configFileOnly: true,
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-markdown] textContentMappings must be an object.',
+      );
+    }
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string') {
+        throw new Error(
+          `[typedoc-plugin-markdown] All values of textContentMappings must be strings.`,
+        );
+      }
+    }
+  },
+};
+
+/**
+ * Customizes the page titles for index, module, and member pages in the documentation.
+ *
+ * The option is provided as an object with keys corresponding to the page type.
+ *
+ * The Values of each key can be either:
+ *
+ * - A function accepting input arguments.
+ * - A strings supporting placeholders.
+ *
+ * Available placeholders / arguments:
+ *
+ * - `{projectName}` - the project's name resolved by TypeDoc.
+ * - `{version}` - the project version  resolved by TypeDoc (when includeVersion is `true`).
+ * - `{kind}` - the reflection kind of the item.
+ * - `{group}` - the group title that the item belongs to.
+ *
+ * Available keys:
+ *
+ * - The `index` key (main documentation index page) accepts the `projectName` and `version` placeholder/args.
+ * - The `module` key (module and namespace pages) accepts the `kind` and `name` placeholder/args.
+ * - The `member` key (individual module member pages) accepts the `kind`, `name`, and `group` placeholder/args.
+ *
+ * ```js filename="typedoc.cjs"
+ * pageTitleTemplates: {
+ *  index: (args) => `${args.projectName}: ${args.version}`,
+ *  module: (args) => args.name,
+ *  member: (args) => `${args.kind}: ${args.name}`,
+ * }
+ * ```
+ *
+ * @category Utility
+ */
+export const pageTitleTemplates: Partial<DeclarationOption> = {
+  help: 'Change specific text placeholders in the template.',
+  type: ParameterType.Object,
+  defaultValue: DEFAULT_PAGE_TITLES,
   configFileOnly: true,
   validate(value) {
     if (!value || typeof value !== 'object') {

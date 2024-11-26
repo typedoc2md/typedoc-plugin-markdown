@@ -1,0 +1,36 @@
+[
+  {
+    "title": "@scope/module-1",
+    "kind": 2,
+    "path": "module-1/index.mdx",
+    "children": [
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ModuleClass",
+            "kind": 128,
+            "path": "module-1/classes/ModuleClass.mdx"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "kind": 2,
+    "path": "module-2/index.mdx",
+    "children": [
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ModuleClass",
+            "kind": 128,
+            "path": "module-2/classes/ModuleClass.mdx"
+          }
+        ]
+      }
+    ]
+  }
+]

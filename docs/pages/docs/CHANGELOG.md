@@ -1,5 +1,25 @@
 # Changelog
 
+## 4.3 Pre-release (2024-11-26)
+
+This release introduces support for TypeDoc 0.27 and some additional UX features and improvements in addition to some bug fixes.
+
+### TypeDoc 0.27 Support
+
+This release supports the TypeDoc 0.27 release. Please see https://github.com/TypeStrong/typedoc/blob/beta/CHANGELOG.md for full changelog.
+
+There are two TypeDoc breaking changes that might effect users of this plugin:
+
+- All CommonJs plugins will need to be refactored to ESM.
+- TypeScript <5.0 is no longer supported.
+
+### UX Changes
+
+- There are some changes to list views parameters and type parameters to separate with markdown headings to improve readability and discoverability.
+- Page headings have been simplified to simply display project title as per default theme.
+
+### Features
+
 ## 4.2.10 (2024-11-01)
 
 ### Patch Changes

@@ -20,7 +20,7 @@ export class MarkdownPageEvent<
   readonly model: Model;
 
   /**
-   * The group that the reflection belongs too
+   * The group title of the group reflection belongs to.
    */
   group?: string;
 

@@ -8,7 +8,6 @@ export const translatable: TranslatableStrings = {
   theme_default_value: 'Default value',
   theme_default_type: 'Default type',
   theme_description: 'Description',
-  theme_documentation: 'Documentation',
   theme_event: 'Event',
   theme_re_exports: 'Re-exports',
   theme_renames_and_re_exports: 'Renames and re-exports',

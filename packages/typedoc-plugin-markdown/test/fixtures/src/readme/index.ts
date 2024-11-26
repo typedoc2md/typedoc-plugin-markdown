@@ -1,5 +1,5 @@
 /**
- * Module commments
+ * Module comments for documentation.
  *
  * @module
  */

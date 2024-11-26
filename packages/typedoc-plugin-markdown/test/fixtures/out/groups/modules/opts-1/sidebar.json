@@ -1,0 +1,66 @@
+[
+  {
+    "title": "<internal>",
+    "kind": 2,
+    "path": "-internal-.md"
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name.md"
+  },
+  {
+    "title": "basic",
+    "kind": 2,
+    "path": "basic.md"
+  },
+  {
+    "title": "has-categories",
+    "kind": 2,
+    "path": "has-categories.md"
+  },
+  {
+    "title": "has-custom-groups",
+    "kind": 2,
+    "path": "has-custom-groups.md"
+  },
+  {
+    "title": "has-namespaces",
+    "kind": 2,
+    "path": "has-namespaces/index.md",
+    "children": [
+      {
+        "title": "_Namespace_A_",
+        "kind": 4,
+        "path": "has-namespaces/namespaces/Namespace_A/index.md",
+        "children": [
+          {
+            "title": "NestedNamespace",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md"
+          }
+        ]
+      },
+      {
+        "title": "NamespaceB",
+        "kind": 4,
+        "path": "has-namespaces/namespaces/NamespaceB.md"
+      }
+    ]
+  },
+  {
+    "title": "has-references",
+    "kind": 2,
+    "path": "has-references.md"
+  },
+  {
+    "title": "has-same-exports",
+    "kind": 2,
+    "path": "has-same-exports.md"
+  },
+  {
+    "title": "index",
+    "kind": 2,
+    "path": "module_index.md"
+  }
+]

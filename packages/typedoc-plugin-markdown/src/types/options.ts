@@ -113,7 +113,7 @@ export interface PluginOptions {
   )[];
 
   /**
-   * Merges the resolved readme into the project index page.
+   * Appends the documentation index page to the readme page.
    */
   mergeReadme: boolean;
 
@@ -135,6 +135,19 @@ export interface PluginOptions {
    * Determines how output files are generated.
    */
   outputFileStrategy: 'members' | 'modules';
+
+  /**
+   * Change specific text placeholders in the template.
+   */
+  pageTitleTemplates: {
+    index:
+      | string
+      | ((name: { projectName: string; version: string }) => string);
+    member:
+      | string
+      | ((name: { name: string; kind: string; group: string }) => string);
+    module: string | ((name: { name: string; kind: string }) => string);
+  };
 
   /**
    * Sets the format of parameter and type parameter groups.
@@ -203,7 +216,7 @@ export interface PluginOptions {
   /**
    * Set the visibility level for type declaration documentation.
    */
-  typeDeclarationVisibility: 'compact' | 'expanded';
+  typeDeclarationVisibility: 'compact' | 'verbose';
 
   /**
    * Wraps signatures and declarations in code blocks.

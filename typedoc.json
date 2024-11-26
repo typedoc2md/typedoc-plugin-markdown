@@ -15,9 +15,9 @@
   ],
 
   "plugin": [
-    "./packages/typedoc-plugin-markdown/dist",
-    "./packages/typedoc-plugin-remark/dist",
-    "./devtools/typedoc-plugins/typedoc-default-values.js",
+    "./packages/typedoc-plugin-markdown/dist/index.js",
+    "./packages/typedoc-plugin-remark/dist/index.js",
+    "./devtools/typedoc-plugins/typedoc-default-values.mjs",
     "./devtools/typedoc-plugins/typedoc-symbols.mjs"
   ],
   "entryPointStrategy": "packages",
@@ -39,8 +39,8 @@
   "membersWithOwnFile": ["Class", "Interface", "TypeAlias", "Enum"],
   "hidePageHeader": true,
   "hideGroupHeadings": true,
-  "textContentMappings": {
-    "breadcrumbs.home": "Home"
+  "pageTitleTemplates": {
+    "index": "API Index"
   },
   "expandObjects": false,
   "useCodeBlocks": false,
@@ -56,7 +56,7 @@
       {
         "tight": true,
         "maxDepth": 4,
-        "skip": "Default Value|Defined in|Example|Overrides|Parameters|Returns|See|Type declaration|Inherited from|Deprecated"
+        "skip": "Default Value|Defined in|Example|Overrides|Parameters|Returns|See|Type declaration|Inherited from|Deprecated|Packages|Modules"
       }
     ]
   ]

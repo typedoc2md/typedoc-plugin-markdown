@@ -11,7 +11,7 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 
 ## Constructors
 
-### Constructor
+### new ClassWithChars()
 
 > **new ClassWithChars**&lt;\`T\`&gt;(): [\`ClassWithChars\`](ClassWithChars.md)&lt;\`T\`&gt;
 
@@ -38,7 +38,7 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 
 ## Constructors
 
-### Constructor
+### new ClassWithChars()
 
 \`\`\`ts
 new ClassWithChars<T>(): ClassWithChars<T>

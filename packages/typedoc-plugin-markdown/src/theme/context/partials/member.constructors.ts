@@ -1,4 +1,5 @@
 import { heading } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/escape-chars.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection } from 'typedoc';
 
@@ -10,7 +11,9 @@ export function constructor(
   const md: string[] = [];
 
   model.signatures?.forEach((signature) => {
-    md.push(heading(options.headingLevel, this.i18n.kind_constructor()));
+    md.push(
+      heading(options.headingLevel, `new ${escapeChars(signature.name)}()`),
+    );
     md.push(
       this.partials.signature(signature, {
         headingLevel: options.headingLevel + 1,

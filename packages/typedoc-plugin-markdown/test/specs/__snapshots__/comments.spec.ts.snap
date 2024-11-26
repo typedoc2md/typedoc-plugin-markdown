@@ -321,7 +321,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Constructors
 
-### Constructor
+### new ClassPropertiesTable()
 
 > **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](ClassPropertiesTable.md)
 
@@ -357,7 +357,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 <a id="Constructors" name="Constructors"></a>
 
-### Constructor
+### new ClassPropertiesTable()
 
 > **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](https://example.com/Class.ClassPropertiesTable.md)
 

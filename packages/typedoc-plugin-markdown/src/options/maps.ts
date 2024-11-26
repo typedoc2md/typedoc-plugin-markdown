@@ -26,5 +26,5 @@ export enum DisplayFormat {
  */
 export enum TypeDeclarationVisibility {
   Compact = 'compact',
-  Expanded = 'expanded',
+  Verbose = 'verbose',
 }

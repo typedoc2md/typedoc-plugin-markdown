@@ -3,9 +3,17 @@ import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 export function pageTitle(this: MarkdownThemeContext): string {
   const textContentMappings = this.options.getValue('textContentMappings');
-  const indexPageTitle = textContentMappings['title.indexPage'] as any;
-  const modulePageTitle = textContentMappings['title.modulePage'] as any;
-  const memberPageTitle = textContentMappings['title.memberPage'] as any;
+  const pageTitleTemplates = this.options.getValue('pageTitleTemplates');
+  const hasCustomPageTitle = this.options.isSet('pageTitleTemplates');
+  const indexPageTitle: any = hasCustomPageTitle
+    ? pageTitleTemplates['index']
+    : textContentMappings['title.indexPage'];
+  const modulePageTitle: any = hasCustomPageTitle
+    ? pageTitleTemplates['module']
+    : textContentMappings['title.modulePage'];
+  const memberPageTitle: any = hasCustomPageTitle
+    ? pageTitleTemplates['member']
+    : textContentMappings['title.memberPage'];
 
   const page = this.page;
 
@@ -14,7 +22,7 @@ export function pageTitle(this: MarkdownThemeContext): string {
       return this.helpers.getProjectName(indexPageTitle, page);
     }
     return indexPageTitle({
-      name: page?.project?.name,
+      projectName: page?.project?.name,
       version: page?.project?.packageVersion,
     });
   }

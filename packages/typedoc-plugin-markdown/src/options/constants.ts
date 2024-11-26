@@ -28,3 +28,9 @@ export const TEXT_CONTENT_MAPPINGS = {
   'title.memberPage': '{kind}: {name}',
   'title.modulePage': '{name}',
 };
+
+export const DEFAULT_PAGE_TITLES = {
+  index: '{projectName} {version}',
+  member: '{kind}: {name}',
+  module: '{name}',
+};

@@ -65,7 +65,7 @@ exports[`GithubWiki should output member docs 1`] = `
 
 ## Constructors
 
-### Constructor
+### new ClassA()
 
 > **new ClassA**(): [\`ClassA\`](../wiki/module-1.Class.ClassA)
 

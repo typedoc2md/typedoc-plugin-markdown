@@ -1,5 +1,28 @@
 # Changelog
 
+## 4.3 Pre-release (2024-11-26)
+
+This release introduces support for TypeDoc 0.27 and some additional UX features and improvements in addition to some bug fixes.
+
+### TypeDoc 0.27 Support
+
+Please see for full [changelog](https://typedoc.org/documents/CHANGELOG.html#v0270-2024-11-27). Note many items only relate to the HTML theme output.
+
+There are two TypeDoc breaking changes that might effect users of this plugin:
+
+- TypeDoc has converted to ESM and therefore all public and local CommonJs plugins will need to be refactored to ESM.
+- TypeScript <5.0 is no longer supported.
+
+It is now possible to output HTML and Markdown in the same process.
+
+### UX Changes
+
+- There are UX changes to parameters list views to separate params with markdown headings to improve readability and discoverability.
+- Improved structure of curried and overloaded signatures.
+- Page headings have been simplified to simply display project title as per default theme.
+
+### Features
+
 ## 4.2.10 (2024-11-01)
 
 ### Patch Changes

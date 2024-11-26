@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Documents",
+    "children": [
+      {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "documents/Project-Document-1.md"
+      }
+    ]
+  },
+  {
+    "title": "ModuleWithDocuments1",
+    "kind": 2,
+    "path": "ModuleWithDocuments1/README.md",
+    "children": [
+      {
+        "title": "MODULE_DOC",
+        "kind": 8388608,
+        "path": "ModuleWithDocuments1/documents/MODULE_DOC.md"
+      },
+      {
+        "title": "Namespaces",
+        "children": [
+          {
+            "title": "NamespaceWithDocuments",
+            "kind": 4,
+            "path": "ModuleWithDocuments1/namespaces/NamespaceWithDocuments/README.md",
+            "children": [
+              {
+                "title": "NAMESPACE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1/namespaces/NamespaceWithDocuments/documents/NAMESPACE_DOC.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

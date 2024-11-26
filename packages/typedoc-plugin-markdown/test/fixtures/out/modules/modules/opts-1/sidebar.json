@@ -1,0 +1,52 @@
+[
+  {
+    "title": "\"/Test/Module/Name\"",
+    "kind": 2,
+    "path": "Test_Module_Name.md"
+  },
+  {
+    "title": "@scope/namespace",
+    "kind": 2,
+    "path": "namespace.md"
+  },
+  {
+    "title": "module-1",
+    "children": [
+      {
+        "title": "submodules",
+        "children": [
+          {
+            "title": "submodule-1",
+            "kind": 2,
+            "path": "module-1/submodules/submodule-1.md"
+          },
+          {
+            "title": "submodule-2",
+            "kind": 2,
+            "path": "module-1/submodules/submodule-2.md"
+          },
+          {
+            "title": "submodule-3-with-modules",
+            "children": [
+              {
+                "title": "nested-submodule-1",
+                "kind": 2,
+                "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1.md"
+              },
+              {
+                "title": "nested-submodule-2",
+                "kind": 2,
+                "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2.md"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "kind": 2,
+    "path": "module-2.md"
+  }
+]

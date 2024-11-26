@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Module1",
+    "kind": 2,
+    "path": "Module1/README.md",
+    "children": [
+      {
+        "title": "SomeInterface1",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface1.md"
+      },
+      {
+        "title": "SomeInterface2",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface2.md"
+      },
+      {
+        "title": "SomeInterface3",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface3.md"
+      }
+    ]
+  },
+  {
+    "title": "Module2",
+    "kind": 2,
+    "path": "Module2/README.md",
+    "children": [
+      {
+        "title": "SomeInterface",
+        "kind": 256,
+        "path": "Module2/interfaces/SomeInterface.md"
+      }
+    ]
+  }
+]

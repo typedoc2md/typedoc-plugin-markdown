@@ -11,7 +11,6 @@ export interface TranslatableStrings {
   theme_default_value: string;
   theme_default_type: string;
   theme_description: string;
-  theme_documentation: string;
   theme_event: string;
   theme_re_exports: string;
   theme_renames_and_re_exports: string;

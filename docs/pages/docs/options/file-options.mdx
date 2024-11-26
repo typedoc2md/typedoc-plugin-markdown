@@ -172,6 +172,26 @@ Please note this option is not applicable when [`--readme`](https://typedoc.org/
 }
 ```
 
+## --mergeReadme
+
+<Callout emoji="💡">
+  Appends the documentation index page to the readme page.
+</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default when a readme file is resolved, a separate readme page is created.
+
+This option appends the documentation main/index page to the readme page so only a single root page is generated.
+
+This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+
+```json filename="typedoc.json"
+{
+  "mergeReadme": false
+}
+```
+
 ## --entryModule
 
 <Callout emoji="💡">
@@ -224,24 +244,5 @@ Ignored if `flattenOutputFiles` is set to `true`.
 ```json filename="typedoc.json"
 {
   "excludeScopesInPaths": false
-}
-```
-
-## --mergeReadme
-
-<Callout emoji="💡">
-  Merges the resolved readme into the project index page.
-</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-By default when a readme file is resolved, a separate readme page is created.
-This option appends the index page to the readme so only a single root page is generated.
-
-This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
-
-```json filename="typedoc.json"
-{
-  "mergeReadme": false
 }
 ```

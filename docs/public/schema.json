@@ -74,6 +74,10 @@
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Flatten output files to a single directory."
         },
+        "formatWithPrettier": {
+          "type": "boolean",
+          "description": "[typedoc-plugin-markdown] Apply additional output formatting with Prettier."
+        },
         "hideBreadcrumbs": {
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Do not print breadcrumbs."
@@ -135,7 +139,7 @@
         },
         "mergeReadme": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Merges the resolved readme into the project index page."
+          "description": "[typedoc-plugin-markdown] Appends the documentation index page to the readme page."
         },
         "modulesFileName": {
           "type": "string",
@@ -171,6 +175,132 @@
           "description": "[typedoc-plugin-markdown] Determines how output files are generated.",
           "default": "members"
         },
+        "pageTitleTemplates": {
+          "type": "object",
+          "properties": {
+            "index": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$comment": "(name: { projectName: string; version: string }) => string",
+                  "type": "object",
+                  "properties": {
+                    "namedArgs": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "object",
+                          "properties": {
+                            "projectName": {
+                              "type": "string"
+                            },
+                            "version": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "projectName",
+                            "version"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                }
+              ]
+            },
+            "member": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$comment": "(name: { name: string; kind: string; group: string }) => string",
+                  "type": "object",
+                  "properties": {
+                    "namedArgs": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            },
+                            "group": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "kind",
+                            "group"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                }
+              ]
+            },
+            "module": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$comment": "(name: { name: string; kind: string }) => string",
+                  "type": "object",
+                  "properties": {
+                    "namedArgs": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "kind"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "[typedoc-plugin-markdown] Change specific text placeholders in the template.",
+          "default": {
+            "index": "{projectName} {version}",
+            "member": "{kind}: {name}",
+            "module": "{name}"
+          }
+        },
         "parametersFormat": {
           "type": "string",
           "enum": [
@@ -184,6 +314,10 @@
         "preserveAnchorCasing": {
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Preserve anchor casing when generating link to symbols."
+        },
+        "prettierConfigFile": {
+          "type": "string",
+          "description": "[typedoc-plugin-markdown] Specify a custom Prettier configuration file location."
         },
         "propertiesFormat": {
           "type": "string",
@@ -255,9 +389,6 @@
             "header.title": {
               "type": "string"
             },
-            "header.docs": {
-              "type": "string"
-            },
             "breadcrumbs.home": {
               "type": "string"
             },
@@ -267,18 +398,17 @@
             "title.memberPage": {
               "type": "string"
             },
-            "footer.text": {
+            "title.modulePage": {
               "type": "string"
             }
           },
           "description": "[typedoc-plugin-markdown] Change specific text placeholders in the template.",
           "default": {
             "header.title": "{projectName} {version}",
-            "header.docs": "Docs",
             "breadcrumbs.home": "{projectName} {version}",
             "title.indexPage": "{projectName} {version}",
             "title.memberPage": "{kind}: {name}",
-            "footer.text": ""
+            "title.modulePage": "{name}"
           }
         },
         "typeDeclarationFormat": {
@@ -290,6 +420,15 @@
           ],
           "description": "[typedoc-plugin-markdown] Sets the format of style for type declaration members.",
           "default": "list"
+        },
+        "typeDeclarationVisibility": {
+          "type": "string",
+          "enum": [
+            "compact",
+            "verbose"
+          ],
+          "description": "[typedoc-plugin-markdown] Set the visibility level for type declaration documentation.",
+          "default": "verbose"
         },
         "useCodeBlocks": {
           "type": "boolean",

@@ -66,7 +66,6 @@ import { ManuallyValidatedOption } from 'typedoc'`);
         theme_default_value: [];
         theme_default_type: [];
         theme_description: [];
-        theme_documentation: [];
         theme_event: [];
         theme_re_exports: [];
         theme_renames_and_re_exports: [];
@@ -134,7 +133,7 @@ ${name}: ${getType(name, option, true)};`,
       ${Object.entries(option.defaultValue as any)
         .map(
           ([key, value]) =>
-            `'${key}'${value === undefined ? '?' : ''}: ${getValueType(value)}`,
+            `'${key}'${value === undefined ? '?' : ''}: ${getValueType(key, value)}`,
         )
         .join(';')}
   }
@@ -161,7 +160,14 @@ function getComments(name: string) {
   return '';
 }
 
-function getValueType(value: any) {
+function getValueType(key: string, value: any) {
+  if (key === 'pageTitleTemplates') {
+    return `{
+    index: string | ((args: { name: string }) => string);
+    member: string;
+    module: string;
+  }`;
+  }
   if (value === true || value === false) {
     return 'boolean';
   }
@@ -179,6 +185,13 @@ function getType(
   option: Partial<DeclarationOption>,
   isInterface = false,
 ) {
+  if (name === 'pageTitleTemplates') {
+    return `{
+    index: string | ((name: { projectName: string; version: string }) => string);
+    member: string | ((name: { name: string; kind: string; group: string }) => string);
+    module: string | ((name: { name: string, kind: string }) => string);
+  }`;
+  }
   if (option.type === ParameterType.Array && option.defaultValue?.length) {
     return `(${option.defaultValue
       .toString()

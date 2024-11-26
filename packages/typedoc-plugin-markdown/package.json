@@ -14,13 +14,13 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options && tsx ./.scripts/prebuild",
     "build": "tsc && tsc-alias",
-    "build-and-run": "npm run build && npm run pretest",
-    "pretest": "fixtures -c ./test/fixtures/config.ts",
-    "validate": "tsx test/scripts/lint.md.mjs && tsx test/scripts/lint.mdx.mjs",
+    "build-and-run": "npm run build && npm run fixtures",
+    "fixtures": "node test/__scripts__/build-fixtures.mjs -c test/fixtures/config.mjs",
+    "validate": "node test/__scripts__/lint/lint.md.mjs && tsx test/__scripts__/lint/lint.mdx.mjs",
     "test": "npm run validate && jest",
-    "test:update": "npm run build && npm run test -- -u",
+    "test:update": "npm run build && npm run fixtures && npm run test -- -u",
     "playground": "npm run build && typedoc --options ./playground/typedoc.json",
-    "schema": "ts-node ./.scripts/schema/generate-schema.ts",
+    "schema": "tsx ./.scripts/schema/generate-schema.ts",
     "docs": "npm run build && typedoc --options ./typedoc.public.json"
   },
   "author": "Thomas Grey",
@@ -34,7 +34,9 @@
     "directory": "packages/typedoc-plugin-markdown"
   },
   "homepage": "https://typedoc-plugin-markdown.org",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "typedoc": "0.27.x"
+  },
   "engines": {
     "node": ">= 18"
   },

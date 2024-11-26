@@ -16,15 +16,13 @@ on:
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
+      fail-fast: false
       matrix:
-        node: ['20']
+        node: ['18']
     name: Node ${{ matrix.node }}
     steps:
-      - name: Set Swap Space
-        uses: pierotofy/set-swap-space@master
-        with:
-          swap-size-gb: 10
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Set up Node

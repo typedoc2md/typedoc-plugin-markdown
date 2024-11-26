@@ -1,0 +1,436 @@
+[
+  {
+    "title": "\"/Test/Module/Name\"",
+    "kind": 2,
+    "path": "Test_Module_Name/README.md",
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "path": "Test_Module_Name/interfaces/InterfaceA.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "@scope/namespace",
+    "kind": 2,
+    "path": "namespace/README.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "path": "namespace/enumerations/EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "namespace/enumerations/EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "path": "namespace/classes/ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "namespace/classes/ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "path": "namespace/interfaces/InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "namespace/interfaces/InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "path": "namespace/type-aliases/TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "path": "namespace/type-aliases/TypeB.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-1",
+    "children": [
+      {
+        "title": "submodules",
+        "children": [
+          {
+            "title": "submodule-1",
+            "kind": 2,
+            "path": "module-1/submodules/submodule-1/README.md",
+            "children": [
+              {
+                "title": "Enumerations",
+                "children": [
+                  {
+                    "title": "EnumA",
+                    "kind": 8,
+                    "path": "module-1/submodules/submodule-1/enumerations/EnumA.md"
+                  },
+                  {
+                    "title": "EnumB",
+                    "kind": 8,
+                    "path": "module-1/submodules/submodule-1/enumerations/EnumB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Classes",
+                "children": [
+                  {
+                    "title": "ClassA",
+                    "kind": 128,
+                    "path": "module-1/submodules/submodule-1/classes/ClassA.md"
+                  },
+                  {
+                    "title": "ClassB",
+                    "kind": 128,
+                    "path": "module-1/submodules/submodule-1/classes/ClassB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "InterfaceA",
+                    "kind": 256,
+                    "path": "module-1/submodules/submodule-1/interfaces/InterfaceA.md"
+                  },
+                  {
+                    "title": "InterfaceB",
+                    "kind": 256,
+                    "path": "module-1/submodules/submodule-1/interfaces/InterfaceB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Type Aliases",
+                "children": [
+                  {
+                    "title": "TypeA",
+                    "kind": 2097152,
+                    "path": "module-1/submodules/submodule-1/type-aliases/TypeA.md"
+                  },
+                  {
+                    "title": "TypeB",
+                    "kind": 2097152,
+                    "path": "module-1/submodules/submodule-1/type-aliases/TypeB.md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "submodule-2",
+            "kind": 2,
+            "path": "module-1/submodules/submodule-2/README.md",
+            "children": [
+              {
+                "title": "Enumerations",
+                "children": [
+                  {
+                    "title": "EnumA",
+                    "kind": 8,
+                    "path": "module-1/submodules/submodule-2/enumerations/EnumA.md"
+                  },
+                  {
+                    "title": "EnumB",
+                    "kind": 8,
+                    "path": "module-1/submodules/submodule-2/enumerations/EnumB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Classes",
+                "children": [
+                  {
+                    "title": "ClassA",
+                    "kind": 128,
+                    "path": "module-1/submodules/submodule-2/classes/ClassA.md"
+                  },
+                  {
+                    "title": "ClassB",
+                    "kind": 128,
+                    "path": "module-1/submodules/submodule-2/classes/ClassB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "InterfaceA",
+                    "kind": 256,
+                    "path": "module-1/submodules/submodule-2/interfaces/InterfaceA.md"
+                  },
+                  {
+                    "title": "InterfaceB",
+                    "kind": 256,
+                    "path": "module-1/submodules/submodule-2/interfaces/InterfaceB.md"
+                  }
+                ]
+              },
+              {
+                "title": "Type Aliases",
+                "children": [
+                  {
+                    "title": "TypeA",
+                    "kind": 2097152,
+                    "path": "module-1/submodules/submodule-2/type-aliases/TypeA.md"
+                  },
+                  {
+                    "title": "TypeB",
+                    "kind": 2097152,
+                    "path": "module-1/submodules/submodule-2/type-aliases/TypeB.md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "submodule-3-with-modules",
+            "children": [
+              {
+                "title": "nested-submodule-1",
+                "kind": 2,
+                "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/README.md",
+                "children": [
+                  {
+                    "title": "Enumerations",
+                    "children": [
+                      {
+                        "title": "EnumA",
+                        "kind": 8,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/enumerations/EnumA.md"
+                      },
+                      {
+                        "title": "EnumB",
+                        "kind": 8,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/enumerations/EnumB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "ClassA",
+                        "kind": 128,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassA.md"
+                      },
+                      {
+                        "title": "ClassB",
+                        "kind": 128,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/classes/ClassB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Interfaces",
+                    "children": [
+                      {
+                        "title": "InterfaceA",
+                        "kind": 256,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/interfaces/InterfaceA.md"
+                      },
+                      {
+                        "title": "InterfaceB",
+                        "kind": 256,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/interfaces/InterfaceB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Type Aliases",
+                    "children": [
+                      {
+                        "title": "TypeA",
+                        "kind": 2097152,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/type-aliases/TypeA.md"
+                      },
+                      {
+                        "title": "TypeB",
+                        "kind": 2097152,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-1/type-aliases/TypeB.md"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "nested-submodule-2",
+                "kind": 2,
+                "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/README.md",
+                "children": [
+                  {
+                    "title": "Enumerations",
+                    "children": [
+                      {
+                        "title": "EnumA",
+                        "kind": 8,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/enumerations/EnumA.md"
+                      },
+                      {
+                        "title": "EnumB",
+                        "kind": 8,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/enumerations/EnumB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "ClassA",
+                        "kind": 128,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassA.md"
+                      },
+                      {
+                        "title": "ClassB",
+                        "kind": 128,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/classes/ClassB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Interfaces",
+                    "children": [
+                      {
+                        "title": "InterfaceA",
+                        "kind": 256,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/interfaces/InterfaceA.md"
+                      },
+                      {
+                        "title": "InterfaceB",
+                        "kind": 256,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/interfaces/InterfaceB.md"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Type Aliases",
+                    "children": [
+                      {
+                        "title": "TypeA",
+                        "kind": 2097152,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/type-aliases/TypeA.md"
+                      },
+                      {
+                        "title": "TypeB",
+                        "kind": 2097152,
+                        "path": "module-1/submodules/submodule-3-with-modules/nested-submodule-2/type-aliases/TypeB.md"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "kind": 2,
+    "path": "module-2/README.md",
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "path": "module-2/enumerations/EnumA.md"
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "module-2/enumerations/EnumB.md"
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "path": "module-2/classes/ClassA.md"
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "module-2/classes/ClassB.md"
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "path": "module-2/interfaces/InterfaceA.md"
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "module-2/interfaces/InterfaceB.md"
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "path": "module-2/type-aliases/TypeA.md"
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "path": "module-2/type-aliases/TypeB.md"
+          }
+        ]
+      }
+    ]
+  }
+]

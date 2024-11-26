@@ -7,7 +7,7 @@ import { EventHooks, Options, Renderer } from 'typedoc';
 import { MarkdownRendererHooks } from './markdown-renderer-hooks.js';
 
 /**
- * The MarkdownRenderer extends TypeDoc's Renderer instance with custom hooks and async jobs.
+ * The MarkdownRenderer extends TypeDoc's {@link typedoc!Renderer Renderer} instance with custom hooks and async jobs.
  */
 export interface MarkdownRenderer extends Renderer {
   /**

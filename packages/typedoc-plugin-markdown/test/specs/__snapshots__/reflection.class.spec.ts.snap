@@ -10,7 +10,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 ## Constructors
 
-### Constructor
+### new AbstractClass()
 
 > **new AbstractClass**(): [\`AbstractClass\`](AbstractClass.md)
 
@@ -58,7 +58,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 ## Constructors
 
-### Constructor
+### new AbstractClass()
 
 \`\`\`ts
 new AbstractClass(): AbstractClass
@@ -101,7 +101,7 @@ Comments for BasicClass
 
 ## Constructors
 
-### Constructor
+### new BasicClass()
 
 > **new BasicClass**(): [\`BasicClass\`](BasicClass.md)
 
@@ -146,7 +146,7 @@ Comments for BasicClass
 
 ## Constructors
 
-### Constructor
+### new BasicClass()
 
 \`\`\`ts
 new BasicClass(): BasicClass
@@ -187,7 +187,7 @@ exports[`Class Reflection should compile class with accessor keywords: (Output F
 
 ## Constructors
 
-### Constructor
+### new ClassWithAccessorKeywords()
 
 > **new ClassWithAccessorKeywords**(): [\`ClassWithAccessorKeywords\`](ClassWithAccessorKeywords.md)
 
@@ -244,7 +244,7 @@ Comments for ClassWithAccessors
 
 ## Constructors
 
-### Constructor
+### new ClassWithAccessors()
 
 > **new ClassWithAccessors**(): [\`ClassWithAccessors\`](ClassWithAccessors.md)
 
@@ -345,7 +345,7 @@ Comments for ClassWithAccessors
 
 ## Constructors
 
-### Constructor
+### new ClassWithAccessors()
 
 \`\`\`ts
 new ClassWithAccessors(): ClassWithAccessors
@@ -450,7 +450,7 @@ Comments for ClassWithComplexProps
 
 ## Constructors
 
-### Constructor
+### new ClassWithComplexProps()
 
 > **new ClassWithComplexProps**(): [\`ClassWithComplexProps\`](ClassWithComplexProps.md)
 
@@ -499,7 +499,7 @@ Comments for ClassWithComplexProps
 
 ## Constructors
 
-### Constructor
+### new ClassWithComplexProps()
 
 \`\`\`ts
 new ClassWithComplexProps(): ClassWithComplexProps
@@ -526,7 +526,7 @@ Comments for ClassWithConstructorOverloads
 
 ## Constructors
 
-### Constructor
+### new ClassWithConstructorOverloads()
 
 > **new ClassWithConstructorOverloads**(\`x\`, \`y\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
@@ -550,7 +550,7 @@ Comments for x number
 
 [classes.ts:1](http://source-url)
 
-### Constructor
+### new ClassWithConstructorOverloads()
 
 > **new ClassWithConstructorOverloads**(\`x\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
@@ -570,7 +570,7 @@ Comments for x string
 
 [classes.ts:1](http://source-url)
 
-### Constructor
+### new ClassWithConstructorOverloads()
 
 > **new ClassWithConstructorOverloads**(\`s\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
@@ -597,7 +597,7 @@ Comments for ClassWithConstructorOverloads
 
 ## Constructors
 
-### Constructor
+### new ClassWithConstructorOverloads()
 
 \`\`\`ts
 new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads
@@ -618,7 +618,7 @@ new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOve
 
 [classes.ts:1](http://source-url)
 
-### Constructor
+### new ClassWithConstructorOverloads()
 
 \`\`\`ts
 new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
@@ -638,7 +638,7 @@ new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
 
 [classes.ts:1](http://source-url)
 
-### Constructor
+### new ClassWithConstructorOverloads()
 
 \`\`\`ts
 new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
@@ -667,7 +667,7 @@ Comment for ClassWithFlags
 
 ## Constructors
 
-### Constructor
+### new ClassWithFlags()
 
 > **new ClassWithFlags**(): [\`ClassWithFlags\`](ClassWithFlags.md)
 
@@ -740,7 +740,7 @@ Comment for ClassWithFlags
 
 ## Constructors
 
-### Constructor
+### new ClassWithFlags()
 
 \`\`\`ts
 new ClassWithFlags(): ClassWithFlags
@@ -802,7 +802,7 @@ Comments for ClassWithModifiers
 
 ## Constructors
 
-### Constructor
+### new ClassWithModifiers()
 
 > **new ClassWithModifiers**(): [\`ClassWithModifiers\`](ClassWithModifiers.md)
 
@@ -927,7 +927,7 @@ Comments for ClassWithModifiers
 
 ## Constructors
 
-### Constructor
+### new ClassWithModifiers()
 
 \`\`\`ts
 new ClassWithModifiers(): ClassWithModifiers
@@ -1008,7 +1008,7 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 
 ## Constructors
 
-### Constructor
+### new ClassWithPropCategories()
 
 > **new ClassWithPropCategories**(\`opts\`): [\`ClassWithPropCategories\`](ClassWithPropCategories.md)
 
@@ -1089,7 +1089,7 @@ Comments for ClassWithSimpleProps
 
 ## Constructors
 
-### Constructor
+### new ClassWithSimpleProps()
 
 > **new ClassWithSimpleProps**(): [\`ClassWithSimpleProps\`](ClassWithSimpleProps.md)
 
@@ -1167,7 +1167,7 @@ Comments for ClassWithSimpleProps
 
 ## Constructors
 
-### Constructor
+### new ClassWithSimpleProps()
 
 \`\`\`ts
 new ClassWithSimpleProps(): ClassWithSimpleProps
@@ -1193,7 +1193,7 @@ exports[`Class Reflection should compile class with symbols: (Output File Strate
 
 ## Constructors
 
-### Constructor
+### new ClassWithSymbols()
 
 > **new ClassWithSymbols**(): [\`ClassWithSymbols\`](ClassWithSymbols.md)
 
@@ -1256,7 +1256,7 @@ Comments for param C
 
 ## Constructors
 
-### Constructor
+### new ClassWithTypeParameters()
 
 > **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
 
@@ -1281,7 +1281,7 @@ Comments for ClassWithTypeParameters
 
 ## Constructors
 
-### Constructor
+### new ClassWithTypeParameters()
 
 \`\`\`ts
 new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
@@ -1298,7 +1298,7 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 
 ## Constructors
 
-### Constructor
+### new ClassWithoutPropCategories()
 
 > **new ClassWithoutPropCategories**(\`opts\`): [\`ClassWithoutPropCategories\`](ClassWithoutPropCategories.md)
 
@@ -1383,7 +1383,7 @@ Comments for DerivedClassA
 
 ## Constructors
 
-### Constructor
+### new DerivedClassA()
 
 > **new DerivedClassA**(): [\`DerivedClassA\`](DerivedClassA.md)
 
@@ -1468,7 +1468,7 @@ Comments for DerivedClassA
 
 ## Constructors
 
-### Constructor
+### new DerivedClassA()
 
 \`\`\`ts
 new DerivedClassA(): DerivedClassA
@@ -1538,7 +1538,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 
 ## Constructors
 
-### Constructor
+### new DisposableClass()
 
 > **new DisposableClass**(): [\`DisposableClass\`](DisposableClass.md)
 
@@ -1576,7 +1576,7 @@ exports[`Class Reflection should compile hierarchy for BaseClass: (Output File S
 
 ## Constructors
 
-### Constructor
+### new BaseClass()
 
 > **new BaseClass**(): [\`BaseClass\`](BaseClass.md)
 
@@ -1600,7 +1600,7 @@ exports[`Class Reflection should compile hierarchy for ChildClassA: (Output File
 
 ## Constructors
 
-### Constructor
+### new ChildClassA()
 
 > **new ChildClassA**(): [\`ChildClassA\`](ChildClassA.md)
 
@@ -1623,7 +1623,7 @@ exports[`Class Reflection should compile hierarchy for GrandChildClassA: (Output
 
 ## Constructors
 
-### Constructor
+### new GrandChildClassA()
 
 > **new GrandChildClassA**(): [\`GrandChildClassA\`](GrandChildClassA.md)
 

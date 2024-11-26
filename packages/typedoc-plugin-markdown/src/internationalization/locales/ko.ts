@@ -8,7 +8,6 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_default_value: '기본 값',
   theme_default_type: '기본 유형',
   theme_description: '설명',
-  theme_documentation: '문서',
   theme_event: '이벤트',
   theme_re_exports: '다시 내보내진 원본:',
   theme_renames_and_re_exports: '새 이름으로 내보내진 원본:',
