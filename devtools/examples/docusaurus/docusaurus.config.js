@@ -51,7 +51,7 @@ const config = {
         ...require(
           path.join(
             __dirname,
-            '../../../devtools/packages/fixtures/typedoc.cjs',
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
           ),
         ),
         tsconfig: path.join(
@@ -76,7 +76,7 @@ const config = {
         ...require(
           path.join(
             __dirname,
-            '../../../devtools/packages/fixtures/typedoc.cjs',
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
           ),
         ),
         tsconfig: path.join(
@@ -108,7 +108,7 @@ const config = {
         ...require(
           path.join(
             __dirname,
-            '../../../devtools/packages/fixtures/typedoc.cjs',
+            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
           ),
         ),
         tsconfig: path.join(
