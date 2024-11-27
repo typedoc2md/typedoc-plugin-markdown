@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- typedoc@0.27 / typedoc-plugin-markdown@4.3 support
+
 ## 1.0.2
 
 ### Patch Changes (2024-09-30)
