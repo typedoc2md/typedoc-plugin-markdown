@@ -1,6 +1,6 @@
 {
   "name": "typedoc-gitlab-wiki-theme",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A TypeDoc ( + typedoc-plugin-markdown ) theme that generates Markdown compatible with Gitlab Wiki.",
   "exports": {
     ".": "./dist/index.js"
