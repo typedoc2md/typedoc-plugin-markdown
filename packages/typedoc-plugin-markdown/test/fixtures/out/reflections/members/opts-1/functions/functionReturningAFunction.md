@@ -10,9 +10,7 @@ Comments for function
 
 ### Type Parameters
 
-#### T
-
-\-
+• **T**
 
 ### Parameters
 

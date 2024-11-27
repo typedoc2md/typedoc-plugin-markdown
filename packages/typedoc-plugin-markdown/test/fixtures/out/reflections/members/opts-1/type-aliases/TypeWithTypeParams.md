@@ -6,13 +6,9 @@ Comments for TypeWithTypeParams
 
 ## Type Parameters
 
-### T
+• **T**
 
-\-
-
-### R
-
-\-
+• **R**
 
 ## Source
 

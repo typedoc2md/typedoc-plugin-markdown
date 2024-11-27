@@ -6,6 +6,4 @@ Comments for PartialMappedType
 
 ## Type Parameters
 
-### T
-
-\-
+• **T**

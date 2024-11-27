@@ -14,9 +14,7 @@ Links using `{@link}` inline tags.
 
 ## Type Parameters
 
-### T
-
-\-
+• **T**
 
 ## Properties
 

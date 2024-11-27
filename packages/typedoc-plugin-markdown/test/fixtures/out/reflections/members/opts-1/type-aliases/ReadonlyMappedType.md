@@ -6,9 +6,7 @@ Comments for ReadonlyMapedType
 
 ## Type Parameters
 
-### T
-
-\-
+• **T**
 
 ## Source
 

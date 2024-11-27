@@ -6,9 +6,7 @@ Comments for ConditionalType
 
 ## Type Parameters
 
-### T
-
-\-
+• **T**
 
 ## Source
 

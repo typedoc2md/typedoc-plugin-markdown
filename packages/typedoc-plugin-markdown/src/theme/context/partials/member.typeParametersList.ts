@@ -1,40 +1,33 @@
-import { heading, italic } from '@plugin/libs/markdown/index.js';
+import { bold, italic } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { TypeParameterReflection } from 'typedoc';
 
 export function typeParametersList(
   this: MarkdownThemeContext,
   model: TypeParameterReflection[],
-  options: { headingLevel: number },
 ): string {
   const rows: string[] = [];
   model?.forEach((typeParameter) => {
     const row: string[] = [];
 
-    row.push(heading(options.headingLevel + 1, typeParameter.name));
-
-    const nameCol: string[] = [];
+    const nameCol: string[] = [bold(typeParameter.name)];
 
     if (typeParameter.type) {
       nameCol.push(
-        `${italic('extends')}: ${this.partials.someType(typeParameter.type)}`,
+        `${italic('extends')} ${this.partials.someType(typeParameter.type)}`,
       );
     }
 
     if (typeParameter.default) {
       nameCol.push(
-        `${this.i18n.theme_default_type()} ${this.partials.someType(typeParameter.default)}`,
+        `= ${this.partials.someType(typeParameter.default, { forceCollapse: true })}`,
       );
     }
 
-    row.push(nameCol.join(''));
+    row.push('• ' + nameCol.join(' '));
 
     if (typeParameter.comment) {
       row.push(this.partials.comment(typeParameter.comment));
-    } else {
-      if (nameCol.join('').length === 0) {
-        row.push('\\-');
-      }
     }
 
     rows.push(row.join('\n\n'));

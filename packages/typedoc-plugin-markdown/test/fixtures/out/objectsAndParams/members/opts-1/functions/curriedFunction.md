@@ -20,9 +20,7 @@ Comments for current function 1
 
 #### Type Parameters
 
-##### Value
-
-\-
+• **Value**
 
 #### Parameters
 
@@ -42,9 +40,7 @@ Comments for iterable arg
 
 ### Type Parameters
 
-#### Value
-
-\-
+• **Value**
 
 ### Parameters
 

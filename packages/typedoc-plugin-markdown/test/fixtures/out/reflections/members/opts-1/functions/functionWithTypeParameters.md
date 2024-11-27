@@ -6,13 +6,11 @@ Function with type parameters
 
 ## Type Parameters
 
-### T
+• **T**
 
 Comments for T
 
-### Item
-
-Default type `string` \| `boolean`
+• **Item** = `string` \| `boolean`
 
 ## Returns
 

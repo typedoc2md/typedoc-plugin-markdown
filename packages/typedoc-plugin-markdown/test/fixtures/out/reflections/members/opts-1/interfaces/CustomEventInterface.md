@@ -2,9 +2,7 @@
 
 ## Type Parameters
 
-### T
-
-\-
+• **T**
 
 ## Properties
 

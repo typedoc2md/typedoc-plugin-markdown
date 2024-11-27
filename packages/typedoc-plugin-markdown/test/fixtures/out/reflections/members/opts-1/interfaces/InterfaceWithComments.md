@@ -7,22 +7,22 @@ And some more comments
 
 ## Type Parameters
 
-### A
+• **A**
 
 This is a parameter.
 
-### B
+• **B**
 
 Comments for a parameter.
 This sentence is on a soft new line.
 
-### C
+• **C**
 
 This is a parameter.
 
  Documentation with a double line
 
-### D
+• **D**
 
 <p>These are comments with paras</p>
 <p>These are comments with paras</p>

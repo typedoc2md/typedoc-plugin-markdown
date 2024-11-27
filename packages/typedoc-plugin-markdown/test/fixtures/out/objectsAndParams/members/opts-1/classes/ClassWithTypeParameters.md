@@ -4,19 +4,13 @@ Comments for ClassWithTypeParameters
 
 ## Type Parameters
 
-### A
+• **A**
 
-\-
-
-### B
-
-*extends*: `string`
+• **B** *extends* `string`
 
 Comments for param B
 
-### C
-
-Default type `boolean`
+• **C** = `boolean`
 
 Comments for param C
 

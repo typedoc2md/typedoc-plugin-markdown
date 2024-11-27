@@ -170,13 +170,9 @@ Comments for method
 
 #### Type Parameters
 
-##### P
+• **P** = [`DisposableClass`](globals.md#disposableclass)
 
-Default type [`DisposableClass`](globals.md#disposableclass)
-
-##### A
-
-Default type [`ClassWithModifiers`](globals.md#classwithmodifiers)
+• **A** = [`ClassWithModifiers`](globals.md#classwithmodifiers)
 
 #### Constructors
 
@@ -952,19 +948,13 @@ Comments for ClassWithTypeParameters
 
 #### Type Parameters
 
-##### A
+• **A**
 
-\-
-
-##### B
-
-*extends*: `string`
+• **B** *extends* `string`
 
 Comments for param B
 
-##### C
-
-Default type `boolean`
+• **C** = `boolean`
 
 Comments for param C
 
@@ -1422,9 +1412,7 @@ Comments for nestedPropD
 
 #### Type Parameters
 
-##### T
-
-\-
+• **T**
 
 #### Properties
 
@@ -1741,22 +1729,22 @@ And some more comments
 
 #### Type Parameters
 
-##### A
+• **A**
 
 This is a parameter.
 
-##### B
+• **B**
 
 Comments for a parameter.
 This sentence is on a soft new line.
 
-##### C
+• **C**
 
 This is a parameter.
 
  Documentation with a double line
 
-##### D
+• **D**
 
 <p>These are comments with paras</p>
 <p>These are comments with paras</p>
@@ -1878,9 +1866,7 @@ Comments for InterfaceWithTypeParameters
 
 #### Type Parameters
 
-##### A
-
-\-
+• **A**
 
 #### Properties
 
@@ -1926,13 +1912,9 @@ Comments for object with special characters
 
 #### Type Parameters
 
-##### T
+• **T**
 
-\-
-
-##### U
-
-\-
+• **U**
 
 #### Type declaration
 
@@ -2062,9 +2044,7 @@ Comments for ConditionalType
 
 #### Type Parameters
 
-##### T
-
-\-
+• **T**
 
 #### Source
 
@@ -2292,9 +2272,7 @@ Comments for PartialMappedType
 
 #### Type Parameters
 
-##### T
-
-\-
+• **T**
 
 #### Source
 
@@ -2366,9 +2344,7 @@ Comments for ReadonlyMapedType
 
 #### Type Parameters
 
-##### T
-
-\-
+• **T**
 
 #### Source
 
@@ -2456,13 +2432,9 @@ Comments for TypeWithTypeParams
 
 #### Type Parameters
 
-##### T
+• **T**
 
-\-
-
-##### R
-
-\-
+• **R**
 
 #### Source
 
@@ -2750,9 +2722,7 @@ Comments for current function 1
 
 ###### Type Parameters
 
-###### Value
-
-\-
+• **Value**
 
 ###### Parameters
 
@@ -2776,9 +2746,7 @@ Comments for iterable arg
 
 ##### Type Parameters
 
-###### Value
-
-\-
+• **Value**
 
 ##### Parameters
 
@@ -2812,9 +2780,7 @@ Comments for function
 
 ##### Type Parameters
 
-###### T
-
-\-
+• **T**
 
 ##### Parameters
 
@@ -3264,13 +3230,11 @@ Function with type parameters
 
 #### Type Parameters
 
-##### T
+• **T**
 
 Comments for T
 
-##### Item
-
-Default type `string` \| `boolean`
+• **Item** = `string` \| `boolean`
 
 #### Returns
 

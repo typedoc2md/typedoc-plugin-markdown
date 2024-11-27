@@ -2,13 +2,9 @@
 
 ## Type Parameters
 
-### P
+• **P** = [`DisposableClass`](DisposableClass.md)
 
-Default type [`DisposableClass`](DisposableClass.md)
-
-### A
-
-Default type [`ClassWithModifiers`](ClassWithModifiers.md)
+• **A** = [`ClassWithModifiers`](ClassWithModifiers.md)
 
 ## Constructors
 

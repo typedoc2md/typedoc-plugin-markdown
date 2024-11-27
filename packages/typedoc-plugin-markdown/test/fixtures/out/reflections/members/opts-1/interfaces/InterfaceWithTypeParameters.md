@@ -4,9 +4,7 @@ Comments for InterfaceWithTypeParameters
 
 ## Type Parameters
 
-### A
-
-\-
+• **A**
 
 ## Properties
 

@@ -6,13 +6,9 @@ Comments for object with special characters
 
 ## Type Parameters
 
-### T
+• **T**
 
-\-
-
-### U
-
-\-
+• **U**
 
 ## Type declaration
 
