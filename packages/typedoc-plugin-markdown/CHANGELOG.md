@@ -1,42 +1,35 @@
 # Changelog
 
-## 4.3.0
-
-### Minor Changes
-
-- Implemented typedoc 0.27 compatibility support.
-- Exposed "typeDeclarationVisibility" option to provide a "compact" output structure ([#703](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/703)).
-- Exposed "pageTitleTemplates" option that accepts a string with placeholder or function arguments to control page titles ([#715](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/715)).
-- Exposed formatting with prettier options "formatWithPrettier" and "prettierConfigFile" that enables additional formatting of output if Prettier is installed on a project.
-
-### Patch Changes
-
-- Improved structure of curried and overloaded signatures ([#714](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/714)) ([#718](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/718))
-- The "hideGroupHeadings" option respects group order ([#716](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/716))
-- Handle Optional types correctly ([#719](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/719)).
-
-## 4.3 Pre-release (2024-11-26)
+## 4.3.0 (2024-11-27)
 
 This release introduces support for TypeDoc 0.27 and some additional UX features and improvements in addition to some bug fixes.
 
 ### TypeDoc 0.27 Support
 
-Please see for full [changelog](https://typedoc.org/documents/CHANGELOG.html#v0270-2024-11-27). Note many items only relate to the HTML theme output.
+Please see for full [TypeDoc changelog](https://typedoc.org/documents/CHANGELOG.html#v0270-2024-11-27) for additional information.
 
 There are two TypeDoc breaking changes that might effect users of this plugin:
 
 - TypeDoc has converted to ESM and therefore all public and local CommonJs plugins will need to be refactored to ESM.
 - TypeScript <5.0 is no longer supported.
 
-It is now possible to output HTML and Markdown in the same process.
-
 ### UX Changes
 
-- There are UX changes to parameters list views to separate params with markdown headings to improve readability and discoverability.
+- Parameters list views have been updated to separate params with markdown headings to improve readability when parameters have detailed explanations examples, or sub-properties. If parameters are straightforward and few in number switching to `parametersFormat=table` might be preferable.
 - Improved structure of curried and overloaded signatures.
 - Page headings have been simplified to simply display project title as per default theme.
 
 ### Features
+
+- Exposed formatting with prettier options "formatWithPrettier" and "prettierConfigFile" that enables additional formatting of Markdown if Prettier is installed on a project.
+- Exposed "typeDeclarationVisibility" option to provide a "compact" output structure ([#703](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/703)).
+- Exposed "pageTitleTemplates" option that accepts a string with placeholder or function arguments to control page titles ([#715](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/715)).
+
+### Patch Changes
+
+- Improved structure of curried and overloaded signatures ([#714](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/714)) ([#718](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/718))
+- The "hideGroupHeadings" option respects group order ([#716](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/716))
+- Handle Optional types correctly ([#719](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/719)).
 
 ## 4.2.10 (2024-11-01)
 
