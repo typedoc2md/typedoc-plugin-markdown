@@ -31,7 +31,7 @@
   "author": "Thomas Grey",
   "license": "MIT",
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.1.0"
+    "typedoc-plugin-markdown": ">=4.3.0"
   },
   "keywords": [
     "typedoc",
