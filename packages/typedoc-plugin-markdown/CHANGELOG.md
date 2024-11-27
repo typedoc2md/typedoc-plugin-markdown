@@ -1,5 +1,20 @@
 # Changelog
 
+## 4.3.0
+
+### Minor Changes
+
+- Implemented typedoc 0.27 compatibility support.
+- Exposed "typeDeclarationVisibility" option to provide a "compact" output structure ([#703](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/703)).
+- Exposed "pageTitleTemplates" option that accepts a string with placeholder or function arguments to control page titles ([#715](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/715)).
+- Exposed formatting with prettier options "formatWithPrettier" and "prettierConfigFile" that enables additional formatting of output if Prettier is installed on a project.
+
+### Patch Changes
+
+- Improved structure of curried and overloaded signatures ([#714](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/714)) ([#718](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/718))
+- The "hideGroupHeadings" option respects group order ([#716](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/716))
+- Handle Optional types correctly ([#719](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/719)).
+
 ## 4.3 Pre-release (2024-11-26)
 
 This release introduces support for TypeDoc 0.27 and some additional UX features and improvements in addition to some bug fixes.

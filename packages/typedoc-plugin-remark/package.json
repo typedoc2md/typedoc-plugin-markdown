@@ -35,7 +35,7 @@
     "to-vfile": "^8.0.0"
   },
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.1.0"
+    "typedoc-plugin-markdown": ">=4.3.0"
   },
   "keywords": [
     "typedoc",
