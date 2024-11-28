@@ -1,6 +1,5 @@
-import { spawn } from 'child_process';
+import { spawn, spawnSync } from 'child_process';
 import { consola } from 'consola';
-import fs from 'fs-extra';
 import pLimit from 'p-limit';
 import * as path from 'path';
 import { dirname } from 'path';
@@ -9,17 +8,17 @@ import { fileURLToPath } from 'url';
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
 
-const limit = pLimit(5);
+const args = process.argv.slice(2);
+
+const isCI = args.includes('-isCI');
+
+const limit = pLimit(10);
 
 const timeStart = new Date().getTime();
 
 main();
 
 async function main() {
-  const outPath = path.join(process.cwd(), 'test', 'fixtures', 'out');
-
-  fs.removeSync(outPath);
-
   const config = await import(path.join(process.cwd(), process.argv[3]));
 
   const fixtures = Object.entries(config.default);
@@ -93,38 +92,28 @@ function writeMarkdown(
     optionDir,
   );
 
-  const mdProcess = spawn(
-    'typedoc',
-    [
-      ...[
-        '-options',
-        path.join(__dirname, '..', 'fixtures', 'typedoc.cjs'),
-        '-logLevel',
-        'None',
-        '-out',
-        fullPath,
-      ],
-      ...toEntryPoints(entryPoints),
-      ...objectToOptions(options),
+  const cmdArgs = [
+    ...[
+      '-options',
+      path.join(__dirname, '..', 'fixtures', 'typedoc.cjs'),
+      '-logLevel',
+      'None',
+      '-out',
+      fullPath,
     ],
-    {
+    ...toEntryPoints(entryPoints),
+    ...objectToOptions(options),
+  ];
+
+  if (isCI) {
+    spawnSync('typedoc', cmdArgs, {
       stdio: 'pipe',
-    },
-  );
-
-  mdProcess.on('close', (code) => {
-    if (code !== 0) {
-      consola.error(
-        `[${getPackageName()}] ${key} Fixture "${key}" exited with code ${code}.`,
-      );
-    }
-  });
-
-  mdProcess.on('error', (err) => {
-    consola.error(
-      `[${getPackageName()}] Fixture "${key}" error occurred ${err.message}`,
-    );
-  });
+    });
+  } else {
+    spawn('typedoc', cmdArgs, {
+      stdio: 'pipe',
+    });
+  }
 }
 
 export function writeHtml(key, entryPoints) {

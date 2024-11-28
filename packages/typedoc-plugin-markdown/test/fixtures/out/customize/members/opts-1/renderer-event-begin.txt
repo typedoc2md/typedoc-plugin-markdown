@@ -1,1 +1,0 @@
-renderer-event-begin success

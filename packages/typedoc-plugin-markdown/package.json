@@ -17,8 +17,8 @@
     "build-and-run": "npm run build && npm run fixtures",
     "fixtures": "node test/__scripts__/build-fixtures.mjs -c test/fixtures/config.mjs",
     "validate": "node test/__scripts__/lint/lint.md.mjs && tsx test/__scripts__/lint/lint.mdx.mjs",
-    "test": "npm run validate && jest",
-    "test:update": "npm run build && npm run fixtures && npm run test -- -u",
+    "test": "npm run fixtures -- -isCI && npm run validate && jest",
+    "test:update": "npm run build-and-run && npm run test -- -u",
     "playground": "npm run build && typedoc --options ./playground/typedoc.json",
     "schema": "tsx ./.scripts/schema/generate-schema.ts",
     "docs": "npm run build && typedoc --options ./typedoc.public.json"
