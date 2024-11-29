@@ -16,6 +16,7 @@ import {
   IntrinsicType,
   LiteralType,
   NamedTupleMember,
+  OptionalType,
   ParameterReflection,
   ProjectReflection,
   QueryType,
@@ -254,6 +255,8 @@ There is no association list partial for properties as these are handled as a st
       partials.literalType.apply(context, [model]) as string,
     namedTupleType: (model: NamedTupleMember) =>
       partials.namedTupleType.apply(context, [model]) as string,
+    optionalType: (model: OptionalType) =>
+      partials.optionalType.apply(context, [model]) as string,
     queryType: (model: QueryType) =>
       partials.queryType.apply(context, [model]) as string,
     referenceType: (model: ReferenceType) =>

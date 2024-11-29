@@ -87,7 +87,7 @@ export function someType(
   }
 
   if (model instanceof OptionalType) {
-    return this.partials.someType(model.elementType) + '?';
+    return this.partials.optionalType(model);
   }
 
   if (model.toString() == 'null') {

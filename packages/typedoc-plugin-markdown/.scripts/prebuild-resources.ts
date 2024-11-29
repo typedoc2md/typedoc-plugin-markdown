@@ -136,6 +136,7 @@ async function writeResourcesFile() {
     'IntrinsicType',
     'LiteralType',
     'NamedTupleMember',
+    'OptionalType',
     'ParameterReflection',
     'ProjectReflection',
     'QueryType',

@@ -446,7 +446,7 @@ http://abc.com
 "
 `;
 
-exports[`Function Reflection should compile function with array of stuff optional: (Output File Strategy "members") (Option Group "1") 1`] = `
+exports[`Function Reflection should compile function with array of optional stuff: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithArrayOfOptionalStuff()
 
 > **functionWithArrayOfOptionalStuff**(\`a\`): \`void\`
@@ -469,7 +469,7 @@ Comments for array of stuff?
 "
 `;
 
-exports[`Function Reflection should compile function with array of stuff optional: (Output File Strategy "members") (Option Group "2") 1`] = `
+exports[`Function Reflection should compile function with array of optional stuff: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Function: functionWithArrayOfOptionalStuff()
 
 \`\`\`ts
@@ -531,6 +531,54 @@ Comments for array of stuff
 | Parameter | Type |
 | :------ | :------ |
 | \`a\` | [[\`Stuff\`](../type-aliases/Stuff.md)] |
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with array of union stuff: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionWithArrayOfUnionStuff()
+
+> **functionWithArrayOfUnionStuff**(\`a\`): \`void\`
+
+Comments for array of union stuff
+
+## Parameters
+
+### a
+
+[(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?]
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with array of union stuff: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: functionWithArrayOfUnionStuff()
+
+\`\`\`ts
+function functionWithArrayOfUnionStuff(a: [(null | Stuff)?]): void
+\`\`\`
+
+Comments for array of union stuff
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`a\` | [(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?] |
 
 ## Returns
 

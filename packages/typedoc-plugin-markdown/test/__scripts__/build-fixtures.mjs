@@ -117,10 +117,7 @@ function writeMarkdown(
 }
 
 export function writeHtml(key, entryPoints) {
-  const fixturesRoot = path.join(
-    __dirname,
-    '../../../packages/typedoc-plugin-markdown/test/fixtures',
-  );
+  const fixturesRoot = path.join(__dirname, '..', 'fixtures');
   const fullPath = path.join(
     process.cwd(),
     'test',
@@ -134,9 +131,9 @@ export function writeHtml(key, entryPoints) {
     [
       ...[
         '-options',
-        path.join(__dirname, 'typedoc.cjs'),
+        path.join(__dirname, '..', 'fixtures', 'typedoc.cjs'),
         '-logLevel',
-        'None',
+        'Warn',
         '-out',
         fullPath,
         '-readme',

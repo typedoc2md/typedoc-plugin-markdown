@@ -4612,6 +4612,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "functions/functionWithArrayOfStuff.md"
       },
       {
+        "title": "functionWithArrayOfUnionStuff",
+        "kind": 64,
+        "path": "functions/functionWithArrayOfUnionStuff.md"
+      },
+      {
         "title": "functionWithComplexParams",
         "kind": 64,
         "path": "functions/functionWithComplexParams.md"

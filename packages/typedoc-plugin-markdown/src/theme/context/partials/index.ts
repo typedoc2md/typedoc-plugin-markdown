@@ -48,6 +48,7 @@ export * from './type.intersection.js';
 export * from './type.intrinsic.js';
 export * from './type.literal.js';
 export * from './type.named-tuple.js';
+export * from './type.optional.js';
 export * from './type.query.js';
 export * from './type.reference.js';
 export * from './type.reflection.declaration.js';

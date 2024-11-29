@@ -245,10 +245,18 @@ export let curriedFunction: {
 };
 
 export type Stuff = { a: string; b: string };
+
 /**
  * Comments for array of stuff
  */
 export const functionWithArrayOfStuff = (a: [Stuff]) => {};
+
+/**
+ * Comments for array of union stuff
+ */
+export const functionWithArrayOfUnionStuff = (
+  a: [(null | undefined | Stuff)?],
+) => {};
 
 /**
  * Comments for array of stuff?

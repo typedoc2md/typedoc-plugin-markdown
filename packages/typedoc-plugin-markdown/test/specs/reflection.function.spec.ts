@@ -129,11 +129,19 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with array of stuff optional`, () => {
+  test(`should compile function with array of optional stuff`, () => {
     expectFileToEqual(
       'reflections',
       'members',
       'functions/functionWithArrayOfOptionalStuff.md',
+    );
+  });
+
+  test(`should compile function with array of union stuff`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithArrayOfUnionStuff.md',
     );
   });
 

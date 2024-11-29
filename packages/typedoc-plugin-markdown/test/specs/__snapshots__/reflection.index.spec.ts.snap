@@ -120,6 +120,7 @@ Module comments
 | [functionReturningAUnionType](functions/functionReturningAUnionType.md) | Comments for function |
 | [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md) | Comments for array of stuff? |
 | [functionWithArrayOfStuff](functions/functionWithArrayOfStuff.md) | Comments for array of stuff |
+| [functionWithArrayOfUnionStuff](functions/functionWithArrayOfUnionStuff.md) | Comments for array of union stuff |
 | [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function parmas |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
 | [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |
