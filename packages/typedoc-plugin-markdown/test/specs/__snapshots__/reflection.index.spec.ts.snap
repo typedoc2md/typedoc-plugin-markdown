@@ -71,7 +71,7 @@ Module comments
 | Type alias | Description |
 | :------ | :------ |
 | [\\_\\_TypeDeclarationWithSpecialCharacters\\_](type-aliases/TypeDeclarationWithSpecialCharacters.md) | Comments for object with special characters |
-| [ArrayOfStuff](type-aliases/ArrayOfStuff.md) | - |
+| [ArrayOfObjectsType](type-aliases/ArrayOfObjectsType.md) | - |
 | [ArrayType](type-aliases/ArrayType.md) | Comments for ArrayType |
 | [ConditionalType](type-aliases/ConditionalType.md) | Comments for ConditionalType |
 | [ExternalReferenceType](type-aliases/ExternalReferenceType.md) | Comments for ExternalReferenceType |

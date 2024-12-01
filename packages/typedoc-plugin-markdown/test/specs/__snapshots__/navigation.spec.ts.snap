@@ -4407,9 +4407,9 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "type-aliases/TypeDeclarationWithSpecialCharacters.md"
       },
       {
-        "title": "ArrayOfStuff",
+        "title": "ArrayOfObjectsType",
         "kind": 2097152,
-        "path": "type-aliases/ArrayOfStuff.md"
+        "path": "type-aliases/ArrayOfObjectsType.md"
       },
       {
         "title": "ArrayType",

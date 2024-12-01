@@ -1,6 +1,7 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
+  ArrayType,
   DeclarationReflection,
   IntersectionType,
   ReferenceType,
@@ -37,8 +38,15 @@ export function declaration(
     );
   }
 
-  const typeDeclaration = (model.type as any)
+  let typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
+
+  if (
+    model.type instanceof ArrayType &&
+    model.type?.elementType instanceof ReflectionType
+  ) {
+    typeDeclaration = model.type?.elementType?.declaration;
+  }
 
   const hasTypeDeclaration =
     Boolean(typeDeclaration) ||

@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Type Alias Reflection should compile array of objects type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type Alias: ArrayOfObjectsType
+
+> **ArrayOfObjectsType**: \`object\`[]
+
+## Type declaration
+
+### age
+
+> **age**: \`number\`
+
+### name
+
+> **name**: \`string\`
+
+Comments for name
+
+## Source
+
+[types.ts:1](http://source-url)
+"
+`;
+
+exports[`Type Alias Reflection should compile array of objects type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type Alias: ArrayOfObjectsType
+
+\`\`\`ts
+type ArrayOfObjectsType: object[];
+\`\`\`
+
+## Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`age\` | \`number\` | - |
+| \`name\` | \`string\` | Comments for name |
+
+## Source
+
+[types.ts:1](http://source-url)
+"
+`;
+
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: ArrayType
 
@@ -355,7 +398,7 @@ Comments for FunctionType
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: IndexAccessType
 
-> **IndexAccessType**: [\`ArrayOfStuff\`](ArrayOfStuff.md)\\[\`number\`\\]
+> **IndexAccessType**: [\`ArrayOfObjectsType\`](ArrayOfObjectsType.md)\\[\`number\`\\]
 
 Comments for IndexAccessType
 
@@ -369,7 +412,7 @@ exports[`Type Alias Reflection should compile index access type: (Output File St
 "# Type Alias: IndexAccessType
 
 \`\`\`ts
-type IndexAccessType: ArrayOfStuff[number];
+type IndexAccessType: ArrayOfObjectsType[number];
 \`\`\`
 
 Comments for IndexAccessType

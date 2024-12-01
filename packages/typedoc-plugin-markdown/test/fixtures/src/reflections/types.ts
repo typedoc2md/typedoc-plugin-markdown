@@ -158,12 +158,18 @@ export type LiteralType = {
   get accessorB();
 };
 
-export type ArrayOfStuff = { name: string; age: number }[];
+export type ArrayOfObjectsType = {
+  /**
+   * Comments for name
+   */
+  name: string;
+  age: number;
+}[];
 
 /**
  * Comments for IndexAccessType
  */
-export type IndexAccessType = ArrayOfStuff[number];
+export type IndexAccessType = ArrayOfObjectsType[number];
 
 /**
  * Comments for promise type returning object

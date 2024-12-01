@@ -13,6 +13,14 @@ describe(`Type Alias Reflection`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/ArrayType.md');
   });
 
+  test(`should compile array of objects type`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/ArrayOfObjectsType.md',
+    );
+  });
+
   test(`should compile union type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/UnionType.md');
   });
