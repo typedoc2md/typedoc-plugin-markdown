@@ -34,31 +34,51 @@ export function parametersList(
     row.push(heading(options.headingLevel + 1, name));
 
     if (parameter.type instanceof UnionType && parameter.type?.types) {
-      const containsReflectionUnion = parameter.type.types.some(
-        (type) => type instanceof ReflectionType,
-      );
-
       const unions: string[] = [];
 
+      if (parameter.comment) {
+        row.push(this.partials.comment(parameter.comment));
+      }
+
       parameter.type?.types.forEach((type) => {
+        const hasUsefulTypeDetails = this.helpers.hasUsefulTypeDetails(type);
         if (type instanceof ReflectionType) {
-          unions.push(this.partials.someType(type, { forceCollapse: true }));
-          unions.push(getReflectionType(this, options, parameter, type));
+          const typeOut = this.partials.someType(type, {
+            forceCollapse: true,
+          });
+          if (hasUsefulTypeDetails) {
+            const usefulDetails: string[] = [];
+            usefulDetails.push('\n\n');
+            usefulDetails.push(typeOut);
+            usefulDetails.push(
+              getReflectionType(this, options, parameter, type),
+            );
+            usefulDetails.push('\n\n');
+            unions.push(usefulDetails.join('\n\n'));
+          } else {
+            unions.push(typeOut);
+          }
         } else {
-          unions.push(this.partials.someType(type));
+          unions.push(this.partials.someType(type, { forceCollapse: true }));
         }
       });
-      if (containsReflectionUnion) {
-        row.push(unions.join('\n\n'));
-      } else {
-        row.push(unions.join(' | '));
-      }
+      row.push(
+        unions
+          .join(' | ')
+          .split('\n')
+          .map((ln) => ln.trim())
+          .join('\n'),
+      );
     } else {
       if (parameter.type instanceof ReflectionType) {
         if (parameter.type.declaration?.signatures) {
-          row.push(this.partials.someType(parameter.type));
+          row.push(
+            this.partials.someType(parameter.type, { forceCollapse: true }),
+          );
         }
-        row.push(getReflectionType(this, options, parameter, parameter.type));
+        row.push(
+          `${'\n\n'}${getReflectionType(this, options, parameter, parameter.type)}`,
+        );
       } else {
         row.push(getOtherType(this, parameter));
       }
@@ -73,11 +93,16 @@ export function parametersList(
 function getOtherType(
   context: MarkdownThemeContext,
   parameter: ParameterReflection,
+  skipHeading = false,
 ) {
   const rest = parameter.flags.isRest ? '...' : '';
   const identifier: string[] = [];
   const md: string[] = [];
-  identifier.push(context.partials.someType(parameter.type));
+  if (!skipHeading) {
+    identifier.push(
+      context.partials.someType(parameter.type, { forceCollapse: true }),
+    );
+  }
   if (parameter.defaultValue) {
     identifier.push(
       ' = ' + backTicks(context.helpers.getParameterDefaultValue(parameter)),
@@ -96,17 +121,20 @@ function getReflectionType(
   parameter: ParameterReflection,
   type: SomeType,
 ) {
-  const flatten = flattenParams({
-    name: parameter.name,
-    type,
-  });
+  const flatten = flattenParams(
+    {
+      name: parameter.name,
+      type,
+    },
+    true,
+  );
   const block: string[] = [];
   const typeMd: string[] = [];
   if (parameter.comment) {
     block.push(context.partials.comment(parameter.comment));
   }
   flatten?.forEach((flat) => {
-    typeMd.push(heading(options.headingLevel + 2, flat.name));
+    typeMd.push('\n' + heading(options.headingLevel + 2, flat.name));
     typeMd.push(getOtherType(context, flat));
   });
   block.push(typeMd.join('\n\n'));
@@ -114,11 +142,11 @@ function getReflectionType(
   return block.join('\n\n');
 }
 
-function flattenParams(current: any) {
+function flattenParams(current: any, skip = false) {
   return current.type?.declaration?.children?.reduce((acc: any, child: any) => {
     const childObj = {
       ...child,
-      name: `${current.name}.${child.name}`,
+      name: skip ? child.name : `${current.name}.${child.name}`,
     };
     return parseParams(childObj, acc);
   }, []);

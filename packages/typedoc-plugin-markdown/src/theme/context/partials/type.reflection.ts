@@ -16,6 +16,6 @@ export function reflectionType(
     options?.forceCollapse || this.options.getValue('expandObjects');
 
   return expandObjects
-    ? this.partials.declarationType(root)
+    ? this.partials.declarationType(root, options)
     : backTicks('object');
 }

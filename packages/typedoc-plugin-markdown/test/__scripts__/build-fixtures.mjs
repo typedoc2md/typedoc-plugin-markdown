@@ -133,7 +133,7 @@ export function writeHtml(key, entryPoints) {
         '-options',
         path.join(__dirname, '..', 'fixtures', 'typedoc.cjs'),
         '-logLevel',
-        'Warn',
+        'None',
         '-out',
         fullPath,
         '-readme',

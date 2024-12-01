@@ -135,11 +135,11 @@ Comments for propWithFunction
 
 ##### options
 
-###### options.a
+###### a
 
 \`boolean\`
 
-###### options.b
+###### b
 
 \`string\`
 
@@ -382,35 +382,35 @@ Some nested params.
 
 The parameters passed to the method.
 
-#### params.name
+#### name
 
 \`string\`
 
 The name of the new group.
 
-#### params.nestedObj
+#### nestedObj
 
 \\{\`name\`: \`string\`;\`obj\`: \\{\`name\`: () => \`void\`; \\};\`value\`: \`number\`; \\}
 
 A nested object.
 
-#### params.nestedObj.name
+#### nestedObj.name
 
 \`string\`
 
-#### params.nestedObj.obj
+#### nestedObj.obj
 
 \\{\`name\`: () => \`void\`; \\}
 
-#### params.nestedObj.obj.name
+#### nestedObj.obj.name
 
 () => \`void\`
 
-#### params.nestedObj.value
+#### nestedObj.value
 
 \`number\`
 
-#### params.parent
+#### parent
 
 \`number\`
 

@@ -605,7 +605,7 @@ Function with function parmas
 
 ### paramB
 
-#### paramB.x
+#### x
 
 \`1\`
 
@@ -774,7 +774,7 @@ This is the second signature of a function with multiple signatures.
 
 An object containing the name value.
 
-##### value.name
+##### name
 
 \`string\`
 
@@ -853,11 +853,11 @@ exports[`Function Reflection should compile function with named params: (Output 
 
 various options
 
-#### __namedParameters.bar
+#### bar
 
 \`number\` = \`43\`
 
-#### __namedParameters.foo
+#### foo
 
 \`number\` = \`42\`
 
@@ -916,35 +916,35 @@ Some nested params.
 
 The parameters passed to the method.
 
-#### params.name
+#### name
 
 \`string\`
 
 The name of the new group.
 
-#### params.nestedObj
+#### nestedObj
 
-\`object\`
+\\{\`name\`: \`string\`;\`obj\`: \\{\`name\`: () => \`void\`; \\};\`value\`: \`number\`; \\}
 
 A nested object.
 
-#### params.nestedObj.name
+#### nestedObj.name
 
 \`string\`
 
-#### params.nestedObj.obj
+#### nestedObj.obj
 
-\`object\`
+\\{\`name\`: () => \`void\`; \\}
 
-#### params.nestedObj.obj.name
+#### nestedObj.obj.name
 
 () => \`void\`
 
-#### params.nestedObj.value
+#### nestedObj.value
 
 \`number\`
 
-#### params.parent
+#### parent
 
 \`number\`
 
@@ -984,9 +984,9 @@ Some nested params.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \`object\`; \`parent\`: \`number\`; \\} | The parameters passed to the method. |
+| \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent\`: \`number\`; \\} | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
-| \`params.nestedObj\` | \\{ \`name\`: \`string\`; \`obj\`: \`object\`; \`value\`: \`number\`; \\} | A nested object. |
+| \`params.nestedObj\` | \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\} | A nested object. |
 | \`params.nestedObj.name\`? | \`string\` | - |
 | \`params.nestedObj.obj\`? | \\{ \`name\`: () => \`void\`; \\} | - |
 | \`params.nestedObj.obj.name\`? | () => \`void\` | - |
@@ -1260,39 +1260,57 @@ exports[`Function Reflection should compile function with union params: (Output 
 
 ### primitiveUnions
 
+Comments for primitiveUnions
+
 \`string\` | \`number\`
 
 ### objectUnions
 
-Comments for objectUnions
+Comments for objectUnionsUseful
 
-#### objectUnions.a
-
-\`string\`
-
-Comments for a
-
-#### objectUnions.b
-
-\`1\`
+\\{\`a\`: \`string\`;\`b\`: \`1\`; \\} | \\{\`a\`: \`number\`;\`b\`: \`1\`;\`c\`: \\{\`x\`: \`string\`; \\}; \\}
 
 ### mixedUnions
 
-\`string\`
+Comments for mixedUnions
+
+\`string\` | \`number\` |
 
 \\{\`a\`: \`string\`;\`b\`: \`string\`; \\}
 
-#### mixedUnions.a
+Comments for mixedUnions
+
+#### a
 
 \`string\` = \`''\`
 
 a comments
 
-#### mixedUnions.b
+#### b
 
 \`string\` = \`''\`
 
 b comments
+
+|
+
+\\{\`a\`: \\{\`y\`: \`string\`;\`z\`: \`string\`; \\}; \\}
+
+Comments for mixedUnions
+
+#### a
+
+\\{\`y\`: \`string\`;\`z\`: \`string\`; \\}
+
+Comments for a
+
+#### a.y
+
+\`string\`
+
+#### a.z
+
+\`string\`
 
 ### noUnions
 
@@ -1316,10 +1334,24 @@ exports[`Function Reflection should compile function with union params: (Output 
 \`\`\`ts
 function functionWithUnionParams(
    primitiveUnions: string | number, 
-   objectUnions: object, 
-   mixedUnions: string | {
+   objectUnions: {
+  a: string;
+  b: 1;
+ } | {
+  a: number;
+  b: 1;
+  c: {
+     x: string;
+    };
+ }, 
+   mixedUnions: string | number | {
   a: string;
   b: string;
+ } | {
+  a: {
+     y: string;
+     z: string;
+    };
  }, 
    noUnions: string): undefined
 \`\`\`
@@ -1329,10 +1361,8 @@ function functionWithUnionParams(
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`primitiveUnions\` | \`string\` \\| \`number\` | Comments for primitiveUnions |
-| \`objectUnions\` | \\{ \`a\`: \`string\`; \`b\`: \`1\`; \\} | Comments for objectUnions |
-| \`objectUnions.a\` | \`string\` | Comments for a |
-| \`objectUnions.b\` | \`1\` | - |
-| \`mixedUnions\` | \`string\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\} | - |
+| \`objectUnions\` | \\{ \`a\`: \`string\`; \`b\`: \`1\`; \\} \\| \\{ \`a\`: \`number\`; \`b\`: \`1\`; \`c\`: \\{ \`x\`: \`string\`; \\}; \\} | Comments for objectUnionsUseful |
+| \`mixedUnions\` | \`string\` \\| \`number\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\} \\| \\{ \`a\`: \\{ \`y\`: \`string\`; \`z\`: \`string\`; \\}; \\} | Comments for mixedUnions |
 | \`noUnions\` | \`string\` | Comments for noUnions |
 
 ## Returns

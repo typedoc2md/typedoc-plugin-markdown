@@ -210,16 +210,34 @@ export function functionWithUnionParams(
    */
   primitiveUnions: string | number,
   /**
-   * Comments for objectUnions
+   * Comments for objectUnionsUseful
    */
-  objectUnions: {
-    /**
-     * Comments for a
-     */
-    a: string;
-    b: 1;
-  },
-  mixedUnions: string | Foo,
+  objectUnions:
+    | {
+        a: string;
+        b: 1;
+      }
+    | {
+        a: number;
+        b: 1;
+        c: { x: string };
+      },
+  /**
+   * Comments for mixedUnions
+   */
+  mixedUnions:
+    | string
+    | Foo
+    | number
+    | {
+        /**
+         * Comments for a
+         */
+        a: {
+          y: string;
+          z: string;
+        };
+      },
   /**
    * Comments for noUnions
    */

@@ -261,8 +261,10 @@ There is no association list partial for properties as these are handled as a st
       partials.queryType.apply(context, [model]) as string,
     referenceType: (model: ReferenceType) =>
       partials.referenceType.apply(context, [model]) as string,
-    declarationType: (model: DeclarationReflection) =>
-      partials.declarationType.apply(context, [model]) as string,
+    declarationType: (
+      model: DeclarationReflection,
+      options?: { forceCollapse?: boolean | undefined } | undefined,
+    ) => partials.declarationType.apply(context, [model, options]) as string,
     functionType: (
       model: SignatureReflection[],
       options?: { forceParameterType: boolean } | undefined,

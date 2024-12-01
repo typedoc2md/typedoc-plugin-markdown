@@ -5,6 +5,7 @@ import { DeclarationReflection, SomeType } from 'typedoc';
 export function declarationType(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
+  options?: { forceCollapse?: boolean },
 ): string {
   const shouldFormat = this.options.getValue('useCodeBlocks');
 
@@ -43,7 +44,7 @@ export function declarationType(
 
         const theType = this.helpers.getDeclarationType(obj) as SomeType;
 
-        const typeString = this.partials.someType(theType);
+        const typeString = this.partials.someType(theType, options);
 
         if (shouldFormat) {
           return `  ${name.join(' ')}: ${indentBlock(typeString)};\n`;

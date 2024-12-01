@@ -1016,11 +1016,11 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 
 ##### opts
 
-###### opts.a
+###### a
 
 \`string\`
 
-###### opts.b
+###### b
 
 \`string\`
 
@@ -1300,11 +1300,11 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 
 ##### opts
 
-###### opts.a
+###### a
 
 \`string\`
 
-###### opts.b
+###### b
 
 \`string\`
 
