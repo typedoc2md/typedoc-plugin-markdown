@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.3.1
+
+### Patch Changes
+
+- Expose type declarations to array types.
+- Correctly wrap array of unions in parenthesis ([#719](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/719)).
+- Omit inline parameter declarations when not useful ([#720](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/720)).
+
 ## 4.3.0 (2024-11-27)
 
 This release introduces support for TypeDoc 0.27 and some additional UX features and improvements in addition to some bug fixes.
