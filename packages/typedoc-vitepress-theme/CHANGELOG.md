@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+### Patch Changes
+
+- Updated anchor slugs to correctly handle all use-cases.
+
 ## 1.1.0 (2024-11-27)
 
 ### Minor Changes
