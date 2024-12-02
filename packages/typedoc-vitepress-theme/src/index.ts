@@ -14,6 +14,7 @@ import { DEFAULT_SIDEBAR_OPTIONS } from './options.js';
 import * as options from './options/declarations.js';
 import { presets } from './options/presets.js';
 import { getSidebar } from './sidebars/sidebars.js';
+import { slugifyAnchor } from './utils/utils.js';
 
 export function load(app: MarkdownApplication) {
   Object.entries(options).forEach(([name, option]) => {
@@ -73,13 +74,4 @@ export function load(app: MarkdownApplication) {
       );
     }
   });
-}
-
-function slugifyAnchor(anchor: string) {
-  return anchor
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_-]+/g, '-')
-    .replace(/^-+|-+$/g, '');
 }
