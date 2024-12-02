@@ -107,11 +107,11 @@ function writeMarkdown(
 
   if (isCI) {
     spawnSync('typedoc', cmdArgs, {
-      stdio: 'pipe',
+      stdio: 'inherit',
     });
   } else {
     spawn('typedoc', cmdArgs, {
-      stdio: 'pipe',
+      stdio: 'inherit',
     });
   }
 }
