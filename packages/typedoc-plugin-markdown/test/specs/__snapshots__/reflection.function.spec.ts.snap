@@ -924,7 +924,7 @@ The name of the new group.
 
 #### nestedObj
 
-\\{\`name\`: \`string\`;\`obj\`: \\{\`name\`: () => \`void\`; \\};\`value\`: \`number\`; \\}
+\\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}
 
 A nested object.
 
@@ -934,7 +934,7 @@ A nested object.
 
 #### nestedObj.obj
 
-\\{\`name\`: () => \`void\`; \\}
+\\{ \`name\`: () => \`void\`; \\}
 
 #### nestedObj.obj.name
 
@@ -1268,7 +1268,7 @@ Comments for primitiveUnions
 
 Comments for objectUnionsUseful
 
-\\{\`a\`: \`string\`;\`b\`: \`1\`; \\} | \\{\`a\`: \`number\`;\`b\`: \`1\`;\`c\`: \\{\`x\`: \`string\`; \\}; \\}
+\\{ \`a\`: \`string\`; \`b\`: \`1\`; \\} | \\{ \`a\`: \`number\`; \`b\`: \`1\`; \`c\`: \\{ \`x\`: \`string\`; \\}; \\}
 
 ### mixedUnions
 
@@ -1276,7 +1276,7 @@ Comments for mixedUnions
 
 \`string\` | \`number\` |
 
-\\{\`a\`: \`string\`;\`b\`: \`string\`; \\}
+\\{ \`a\`: \`string\`; \`b\`: \`string\`; \\}
 
 Comments for mixedUnions
 
@@ -1294,13 +1294,13 @@ b comments
 
 |
 
-\\{\`a\`: \\{\`y\`: \`string\`;\`z\`: \`string\`; \\}; \\}
+\\{ \`a\`: \\{ \`y\`: \`string\`; \`z\`: \`string\`; \\}; \\}
 
 Comments for mixedUnions
 
 #### a
 
-\\{\`y\`: \`string\`;\`z\`: \`string\`; \\}
+\\{ \`y\`: \`string\`; \`z\`: \`string\`; \\}
 
 Comments for a
 

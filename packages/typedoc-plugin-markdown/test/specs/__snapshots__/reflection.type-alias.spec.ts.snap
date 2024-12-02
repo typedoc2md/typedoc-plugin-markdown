@@ -765,7 +765,7 @@ Union with template strings
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UnionType
 
-> **UnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`; \\}
+> **UnionType**: \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
 
 Comments for UnionType
 
@@ -795,7 +795,7 @@ Comments for UnionType
 exports[`Type Alias Reflection should compile useful union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UsefulUnionType
 
-> **UsefulUnionType**: \`string\` \\| \`boolean\` \\| \\{\`z\`: \`string\`; \\}
+> **UsefulUnionType**: \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
 
 Comments for useful UnionType
 
@@ -805,7 +805,7 @@ Comments for useful UnionType
 
 \`boolean\`
 
-\\{\`z\`: \`string\`; \\}
+\\{ \`z\`: \`string\`; \\}
 
 ### z
 

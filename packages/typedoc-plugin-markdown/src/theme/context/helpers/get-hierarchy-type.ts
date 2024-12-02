@@ -6,7 +6,7 @@ export function getHierarchyType(
   this: MarkdownThemeContext,
   model: SomeType,
   options?: { isTarget: boolean },
-) {
+): string {
   return options?.isTarget
     ? backTicks(model.toString())
     : this.partials.someType(model);

@@ -4,7 +4,7 @@ import { Comment } from 'typedoc';
 export function getDescriptionForComment(
   this: MarkdownThemeContext,
   comment: Comment,
-) {
+): string | null {
   if (comment?.summary?.length) {
     return this.helpers
       .getCommentParts(comment.summary)

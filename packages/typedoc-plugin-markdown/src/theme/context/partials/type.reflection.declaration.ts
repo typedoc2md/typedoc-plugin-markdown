@@ -58,7 +58,7 @@ export function declarationType(
       });
     }
     return types
-      ? `\\{${shouldFormat ? '\n' : ''}${types.join('')} \\}`
+      ? `\\{${shouldFormat ? `\n${types.join('')}` : ` ${types.join(' ')}`} \\}`
       : '\\{\\}';
   }
   return '\\{\\}';

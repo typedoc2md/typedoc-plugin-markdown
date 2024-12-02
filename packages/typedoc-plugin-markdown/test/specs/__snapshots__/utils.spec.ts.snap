@@ -205,7 +205,7 @@ const originalDoubleQuote = "hello";
 exports[`Utils should get variable with brackets: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: variableWithChars
 
-> \`const\` **variableWithChars**: \\{\`<x>\`: \`string\`;\`<y>\`: \`string\`;\`<z>\`: \`string\`; \\}
+> \`const\` **variableWithChars**: \\{ \`<x>\`: \`string\`; \`<y>\`: \`string\`; \`<z>\`: \`string\`; \\}
 
 ## Type declaration
 

@@ -541,7 +541,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Type Alias: TypeDeclarationTable
 
-> **TypeDeclarationTable**: \\{\`declaration1\`: \`boolean\`;\`declaration2\`: \`boolean\`;\`declaration4\`: \`100\`; \\}
+> **TypeDeclarationTable**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration4\`: \`100\`; \\}
 
 ## Type declaration
 
@@ -619,7 +619,7 @@ to generate the binary output for input validation.
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 2`] = `
 "# Variable: TypeDeclarationTable
 
-> **TypeDeclarationTable**: \\{\`declaration1\`: \`string\`;\`declaration2\`: \`number\`; \\}
+> **TypeDeclarationTable**: \\{ \`declaration1\`: \`string\`; \`declaration2\`: \`number\`; \\}
 
 ## Type declaration
 
@@ -707,7 +707,7 @@ Other block tags
 exports[`Comments should get variable with block tags: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Type Alias: typeWithBlockTags
 
-> **typeWithBlockTags**: \\{\`x\`: \`string\`; \\}
+> **typeWithBlockTags**: \\{ \`x\`: \`string\`; \\}
 
 Variable with block tags summary
 

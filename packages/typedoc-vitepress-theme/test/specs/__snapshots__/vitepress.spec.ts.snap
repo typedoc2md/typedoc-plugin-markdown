@@ -92,6 +92,6 @@ exports[`VitePress should output docs with vitepress theme 1`] = `
 exports[`VitePress should output members that require anchor slugification 1`] = `
 "# Interface: InterfaceA
 
-See [InterfaceB._prop_with_underscore_](InterfaceB.md#prop-with-underscore)
+See [InterfaceB.\\_prop\\_with\\_underscore\\_](InterfaceB.md#prop-with-underscore)
 "
 `;
