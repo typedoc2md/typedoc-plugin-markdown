@@ -1,4 +1,5 @@
-import { link } from '@plugin/libs/markdown/index.js';
+import { backTicks, link } from '@plugin/libs/markdown/index.js';
+import { escapeChars } from '@plugin/libs/utils/escape-chars.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import * as fs from 'fs';
 import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
@@ -26,14 +27,21 @@ export function getCommentParts(
           case '@linkplain': {
             if (part.target) {
               const url = getUrl(part);
-              const wrap = part.tag === '@linkcode' ? '`' : '';
-              md.push(
-                url
-                  ? `${link(`${wrap}${part.text}${wrap}`, this.getRelativeUrl(url))}`
-                  : part.text,
-              );
+              if (url) {
+                if (part.tag === '@linkcode') {
+                  md.push(
+                    `${link(backTicks(part.text), this.getRelativeUrl(url))}`,
+                  );
+                } else {
+                  md.push(
+                    `${link(escapeChars(part.text), this.getRelativeUrl(url))}`,
+                  );
+                }
+              } else {
+                md.push(escapeChars(part.text));
+              }
             } else {
-              md.push(part.text);
+              md.push(escapeChars(part.text));
             }
             break;
           }

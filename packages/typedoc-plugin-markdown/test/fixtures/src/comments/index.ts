@@ -8,7 +8,8 @@
  *
  * - {@link CommentInterface} - Links to CommentInterface
  * - {@link CommentInterface.prop | Links to CommentInterface.prop}
- * - {@link CommentInterface.propb | Links to CommentInterface.propb}
+ * - {@linkcode CommentInterface.propb | Links to CommentInterface.propb}
+ * - {@link CommentInterface._prop_with_underscore_ | Links to CommentInterface._prop_with_underscore_}
  * - {@link CommentEnum.MemberB}
  * - {@link SameName:var}
  * - {@link SameName:interface}
@@ -16,6 +17,7 @@
  * - {@link prop:var}
  * - {@link _prop_with_underscore:var}
  * - {@link TypeWithGenerics}
+ * - {@link NotFound}
  *
  * External links:
  *
@@ -76,6 +78,7 @@
 export interface CommentInterface {
   prop: string;
   propb: string;
+  _prop_with_underscore_: string;
 }
 
 export interface CommentInterfaceExtended extends CommentInterface {

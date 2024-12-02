@@ -3,14 +3,14 @@
 exports[`Comments should compile @links with anchors: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "- [CommentInterface](README.md#commentinterface) - Links to CommentInterface
 - [Links to CommentInterface.prop](README.md#prop)
-- [Links to CommentInterface.propb](README.md#propb-1)
+- [\`Links to CommentInterface.propb\`](README.md#propb-1)
+- [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](README.md#_prop_with_underscore_)
 - [CommentEnum.MemberB](README.md#commentenum)
 - [SameName:var](README.md#samename-1)
 - [SameName:interface](README.md#samename)
 - [SameName.prop](README.md#prop-2)
 - [prop:var](README.md#prop-3)
-- [_prop_with_underscore:var](README.md#_prop_with_underscore)
-- [TypeWithGenerics](README.md#typewithgenericsc-d)"
+- [\\_prop\\_with\\_underscore:var](README.md#_prop_with_underscore)"
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
@@ -24,14 +24,16 @@ Links using \`{@link}\` inline tags.
 
 - [CommentInterface](interfaces/CommentInterface.md) - Links to CommentInterface
 - [Links to CommentInterface.prop](interfaces/CommentInterface.md#prop)
-- [Links to CommentInterface.propb](interfaces/CommentInterface.md#propb)
+- [\`Links to CommentInterface.propb\`](interfaces/CommentInterface.md#propb)
+- [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](interfaces/CommentInterface.md#_prop_with_underscore_)
 - [CommentEnum.MemberB](enumerations/CommentEnum.md)
 - [SameName:var](variables/SameName.md)
 - [SameName:interface](interfaces/SameName.md)
 - [SameName.prop](interfaces/SameName.md#prop)
 - [prop:var](variables/prop.md)
-- [_prop_with_underscore:var](variables/prop_with_underscore.md)
+- [\\_prop\\_with\\_underscore:var](variables/prop_with_underscore.md)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
+- NotFound
 
 External links:
 
