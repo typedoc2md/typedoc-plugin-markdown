@@ -21,6 +21,7 @@ const config = {
         disableSources: true,
         hidePageHeader: true,
         hideBreadcrumbs: true,
+        plugin: ['./frontmatter-plugin.mjs'],
       },
     ],
     [

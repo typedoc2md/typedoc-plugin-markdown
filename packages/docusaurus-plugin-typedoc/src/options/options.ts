@@ -35,10 +35,11 @@ export function getPluginOptions(
     },
     plugin: [
       ...new Set([
-        ...['typedoc-plugin-markdown', 'docusaurus-plugin-typedoc'],
+        ...['typedoc-plugin-markdown', 'docusaurus-plugin-typedoc/typedoc'],
         ...(opts.plugin || []),
       ]),
     ],
   };
+
   return options;
 }

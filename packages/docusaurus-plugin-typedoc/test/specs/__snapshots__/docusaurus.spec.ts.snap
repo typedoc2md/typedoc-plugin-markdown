@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Docusaurus: Defaults should render docs 1`] = `
-"# docusaurus-plugin-typedoc
+"---
+title: "test"
+---
+
+# docusaurus-plugin-typedoc
 
 ## Modules
 

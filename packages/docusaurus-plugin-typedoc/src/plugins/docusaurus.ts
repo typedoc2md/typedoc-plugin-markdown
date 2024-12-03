@@ -41,16 +41,15 @@ async function generateTypedoc(context: any, opts: Partial<any>) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
+  const { plugin, ...options } = getPluginOptions(context, opts);
+
   // spawn typedoc process and pass docusaurus.config options as a string
   spawnSync(
     'typedoc',
     [
+      ...plugin.flatMap((plugin) => ['--plugin', plugin]),
       '--docusaurusConfigOptions',
-      `${JSON.stringify(getPluginOptions(context, opts))}`,
-      '--plugin',
-      'typedoc-plugin-markdown',
-      '--plugin',
-      'docusaurus-plugin-typedoc/typedoc',
+      `${JSON.stringify(options)}`,
     ],
     {
       stdio: 'inherit',
