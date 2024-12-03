@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+### Patch Changes
+
+- Allow additional plugins to be loaded via the "plugin" key.
+
 ## 1.1.0 (2024-11-27)
 
 ### Minor Changes
