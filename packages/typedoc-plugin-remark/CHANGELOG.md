@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+### Patch Changes
+
+- Resolve local plugins from `process.cwd()`.
+
 ## 1.1.0 (2024-11-27)
 
 ### Minor Changes
