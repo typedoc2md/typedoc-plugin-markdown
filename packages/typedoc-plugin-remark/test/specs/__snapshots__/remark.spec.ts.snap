@@ -183,6 +183,10 @@ Comments form module comments
 
 Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/1).
 
+\`\`\`js
+const x = 1
+\`\`\`
+
 ## Index
 
 ### Classes
@@ -219,6 +223,10 @@ title: "test"
 Comments form module comments
 
 Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/1).
+
+~~~js playground
+const x = 1
+~~~
 
 ## Contents
 

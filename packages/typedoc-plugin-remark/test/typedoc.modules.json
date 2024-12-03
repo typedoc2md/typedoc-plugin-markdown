@@ -3,5 +3,9 @@
   "entryPoints": ["./stubs/*.ts"],
   "outputFileStrategy": "modules",
   "remarkStringifyOptions": { "bullet": "+", "fence": "~" },
-  "remarkPlugins": ["remark-github", ["remark-toc", { "maxDepth": 3 }]]
+  "remarkPlugins": [
+    "remark-github",
+    ["remark-toc", { "maxDepth": 3 }],
+    "./test/local-plugin.mjs"
+  ]
 }

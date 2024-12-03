@@ -3,6 +3,10 @@
  *
  * Thanks \@tgrey please see issue #1.
  *
+ * ```js
+ * const x = 1
+ * ```
+ *
  * @module
  */
 

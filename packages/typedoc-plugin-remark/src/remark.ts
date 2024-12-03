@@ -1,11 +1,7 @@
+import * as path from 'path';
 import { remark } from 'remark';
 import { read, writeSync } from 'to-vfile';
 
-/**
- * Parses contents with Remark
- * - The remark eco-system is esm only, therefore we have to import its modules synchronously.
- * - In addition we don't want Typescript to transpile this file.
- */
 export async function parseContents(
   filePath: string,
   remarkStringifyOptions = {},
@@ -23,8 +19,14 @@ export async function parseContents(
   const promises = plugins.map(async (plugin) => {
     return new Promise((resolve) => {
       const name = Array.isArray(plugin) ? plugin[0] : plugin;
+      const isLocalPath =
+        name !== './normalize-tables.mjs' &&
+        /^\.{1,2}\/|^\//.test(name as string);
+      const fullPath = isLocalPath
+        ? path.resolve(process.cwd(), name as string)
+        : name;
       const options = Array.isArray(plugin) ? plugin[1] : {};
-      import(name as string).then(({ default: pluginFn }) => {
+      import(fullPath as string).then(({ default: pluginFn }) => {
         resolve({
           pluginFn,
           options,

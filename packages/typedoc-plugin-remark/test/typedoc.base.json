@@ -5,7 +5,7 @@
   "plugin": [
     "typedoc-plugin-markdown",
     "typedoc-plugin-remark",
-    "./frontmatter-plugin.cjs"
+    "./frontmatter-plugin.mjs"
   ],
   "readme": "none",
   "parametersFormat": "htmlTable",
