@@ -23,8 +23,6 @@ import { render } from './renderer/render.js';
  * Here we expose additional TypeDoc options and make some adjustments.
  *
  * This method is not intended to be consumed in any other context that via the `plugin` option.
- *
- * @see https://typedoc.org/guides/development/#plugins.
  */
 export function load(app: Application) {
   /**

@@ -150,12 +150,15 @@ ${presetsJson}
           outputPage.push(categoryDescriptions[categoryName]);
         }
       }
-      const optionsLi: string[] = [];
+      const optionsTable: string[] = [];
+      optionsTable.push('| Option | Description |');
+      optionsTable.push('|--------|------------|');
+
       options.forEach((option) => {
-        optionsLi.push(
-          `- [${
-            option.deprecated ? `~--${option.name}~` : `--${option.name}`
-          }](./options/${categoryName.toLowerCase()}-options.mdx#--${option.name.toLowerCase()})`,
+        optionsTable.push(
+          `| [\`${option.name}\`](./options/${categoryName.toLowerCase()}-options.mdx#--${option.name.toLowerCase()}) | ${
+            option.help
+          } |`,
         );
         out.push(
           `${optionLevel} ${
@@ -219,7 +222,7 @@ ${JSON.stringify(exampleJson, null, 2)}
         }
       });
       if (categories.length > 1) {
-        outputPage.push(optionsLi.join('\n'));
+        outputPage.push(optionsTable.join('\n'));
         const catDocPath = path.join(
           getPagesPath(docsConfig.optionsPath),
           'options',

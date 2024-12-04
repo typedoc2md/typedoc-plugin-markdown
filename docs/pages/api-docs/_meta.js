@@ -13,12 +13,6 @@ export default {
   },
   'Class.MarkdownPageEvent': 'MarkdownPageEvent',
   'Class.MarkdownRendererEvent': 'MarkdownRendererEvent',
-  'Theme Classes': {
-    type: 'separator',
-    title: 'Theme Classes',
-  },
-  'Class.MarkdownTheme': 'MarkdownTheme',
-  'Class.MarkdownThemeContext': 'MarkdownThemeContext',
   Interfaces: {
     type: 'separator',
     title: 'Interfaces',

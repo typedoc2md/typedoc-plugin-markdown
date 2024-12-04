@@ -33,6 +33,8 @@ import { Internationalization, Options, Reflection } from 'typedoc';
  * In order to create cleaner code, internally individual templates located in the `resources/templates` directory are bound to the this.
  *
  * @group Theme Classes
+ *
+ * @hidden
  */
 export class MarkdownThemeContext {
   internationalization: Internationalization.Internationalization;

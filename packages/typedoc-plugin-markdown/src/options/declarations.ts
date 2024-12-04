@@ -88,7 +88,7 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
  * @category File
  */
 export const membersWithOwnFile: Partial<DeclarationOption> = {
-  help: 'Determines which members are exported to their own file when `outputFileStrategy` equals `members`.',
+  help: 'Determines which members are exported to their own file.',
   type: ParameterType.Array,
   validate(values) {
     const validValues = ALLOWED_OWN_FILE_MEMBERS;
@@ -303,7 +303,7 @@ export const hidePageTitle: Partial<DeclarationOption> = {
  * @category Display
  */
 export const hideGroupHeadings: Partial<DeclarationOption> = {
-  help: 'Excludes grouping by kind so all members are rendered and sorted at the same level.',
+  help: 'Excludes grouping by kind so all members are rendered at the same level.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -372,7 +372,7 @@ export const expandParameters: Partial<DeclarationOption> = {
  * @category Display
  */
 export const blockTagsPreserveOrder: Partial<DeclarationOption> = {
-  help: 'Specifies comment block tags that should preserve their position in relation to the comment summary.',
+  help: 'Specifies comment block tags that should preserve their position.',
   type: ParameterType.Array,
   defaultValue: [],
   validate(value, i18n) {

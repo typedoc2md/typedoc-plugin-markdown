@@ -12,22 +12,22 @@
 
 This release introduces support for TypeDoc 0.27 and some additional UX features and improvements in addition to some bug fixes.
 
-### TypeDoc 0.27 Support
+### Architectural Changes
 
-Please see for full [TypeDoc changelog](https://typedoc.org/documents/CHANGELOG.html#v0270-2024-11-27) for additional information.
+Please see the full [TypeDoc changelog](https://typedoc.org/documents/CHANGELOG.html#v0270-2024-11-27) for additional information.
 
 There are two TypeDoc breaking changes that might effect users of this plugin:
 
 - TypeDoc has converted to ESM and therefore all public and local CommonJs plugins will need to be refactored to ESM.
 - TypeScript <5.0 is no longer supported.
 
-### UX Changes
+### Structural Changes
 
 - Parameters list views have been updated to separate params with markdown headings to improve readability when parameters have detailed explanations examples, or sub-properties. If parameters are straightforward and few in number switching to `parametersFormat=table` might be preferable.
 - Improved structure of curried and overloaded signatures.
 - Page headings have been simplified to simply display project title as per default theme.
 
-### Features
+### New Features
 
 - Exposed formatting with prettier options "formatWithPrettier" and "prettierConfigFile" that enables additional formatting of Markdown if Prettier is installed on a project.
 - Exposed "typeDeclarationVisibility" option to provide a "compact" output structure ([#703](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/703)).

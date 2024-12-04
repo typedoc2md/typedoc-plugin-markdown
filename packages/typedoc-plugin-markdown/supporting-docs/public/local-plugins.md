@@ -34,4 +34,4 @@ Note plugins must be consumed as ESM.
 
 ## See
 
-- https://typedoc.org/guides/development/#plugins
+- [Writing a TypeDoc plugin](https://typedoc.org/documents/Development.Plugins.html)

@@ -11,7 +11,7 @@ export interface PluginOptions {
   anchorPrefix: string;
 
   /**
-   * Specifies comment block tags that should preserve their position in relation to the comment summary.
+   * Specifies comment block tags that should preserve their position.
    */
   blockTagsPreserveOrder: string[];
 
@@ -76,7 +76,7 @@ export interface PluginOptions {
   hideBreadcrumbs: boolean;
 
   /**
-   * Excludes grouping by kind so all members are rendered and sorted at the same level.
+   * Excludes grouping by kind so all members are rendered at the same level.
    */
   hideGroupHeadings: boolean;
 
@@ -101,7 +101,7 @@ export interface PluginOptions {
   interfacePropertiesFormat: 'list' | 'table' | 'htmlTable';
 
   /**
-   * Determines which members are exported to their own file when `outputFileStrategy` equals `members`.
+   * Determines which members are exported to their own file.
    */
   membersWithOwnFile: (
     | 'Enum'
