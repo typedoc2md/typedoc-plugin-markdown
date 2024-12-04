@@ -1,19 +1,18 @@
-[Home](../README.md) / docusaurus-plugin-typedoc
+[Developer Guide](../README.md) / docusaurus-plugin-typedoc
 
-# typedoc-vitepress-theme
+# docusaurus-plugin-typedoc
 
-"typedoc-vitepress-theme" is a "theme" in the sense that it targets output for VitePress.
+"docusaurus-plugin-typedoc" is a Docusaurus plugin that bootstraps TypeDoc within the Docusaurus eco-system.
 
 ## Contents
 
 * [What Does the Package Do?](#what-does-the-package-do)
-* [Modules](#modules)
 
 ## What Does the Package Do?
 
-* Exposes some additional options to TypeDoc.
-* Presets relevant typedoc-plugin-markdown options.
-* Generates a sidebar json file.
+* Presets relevant options of typedoc-plugin-markdown.
+* Bootstraps TypeDoc from the Docusaurus CLI.
+* Generates a sidebar file with configurable structure.
 
 ## Modules
 

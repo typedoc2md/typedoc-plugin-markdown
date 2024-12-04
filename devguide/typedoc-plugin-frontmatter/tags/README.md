@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-frontmatter](../README.md) / tags
+[Developer Guide](../../README.md) / [typedoc-plugin-frontmatter](../README.md) / tags
 
 # tags
 

@@ -17,7 +17,6 @@
   "excludeInternal": true,
   "excludeExternals": true,
   "excludePrivate": true,
-
   "outputFileStrategy": "members",
   "fileExtension": ".mdx",
   "publicPath": "/api-docs",

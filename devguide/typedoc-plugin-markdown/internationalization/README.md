@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-markdown](../README.md) / internationalization
+[Developer Guide](../../README.md) / [typedoc-plugin-markdown](../README.md) / internationalization
 
 # internationalization
 
@@ -58,6 +58,8 @@ Translations for 'en' locale.
     theme_default_type: 'Default type',
     theme_description: 'Description',
     theme_event: 'Event',
+    theme_re_exports: 'Re-exports',
+    theme_renames_and_re_exports: 'Renames and re-exports',
     theme_extends: 'Extends',
     theme_extended_by: 'Extended by',
     theme_globals: 'Globals',
@@ -92,6 +94,8 @@ Translations for 'jp' locale.
     theme_default_type: 'デフォルトタイプ',
     theme_description: '説明',
     theme_event: 'イベント',
+    theme_re_exports: '再エクスポート',
+    theme_renames_and_re_exports: 'リネームと再エクスポート',
     theme_extends: '拡張',
     theme_extended_by: 'によって拡張された',
     theme_globals: 'グローバル変数',
@@ -126,6 +130,8 @@ Translations for 'ko' locale.
     theme_default_type: '기본 유형',
     theme_description: '설명',
     theme_event: '이벤트',
+    theme_re_exports: '다시 내보내진 원본:',
+    theme_renames_and_re_exports: '새 이름으로 내보내진 원본:',
     theme_extends: '확장',
     theme_extended_by: '에 의해 확장됨',
     theme_globals: '전역',
@@ -160,6 +166,8 @@ Translations for 'zh' locale.
     theme_default_type: '默认类型',
     theme_description: '描述',
     theme_event: '事件',
+    theme_re_exports: '重新导出',
+    theme_renames_and_re_exports: '重命名并重新导出',
     theme_extends: '继承',
     theme_extended_by: '继承于',
     theme_globals: '全局变量',

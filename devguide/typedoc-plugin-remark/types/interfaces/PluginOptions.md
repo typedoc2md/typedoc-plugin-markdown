@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-plugin-remark](../../README.md) / [types](../README.md) / PluginOptions
+[Developer Guide](../../../README.md) / [typedoc-plugin-remark](../../README.md) / [types](../README.md) / PluginOptions
 
 # Interface: PluginOptions
 

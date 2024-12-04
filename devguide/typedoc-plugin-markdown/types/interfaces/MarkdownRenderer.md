@@ -1,8 +1,8 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / MarkdownRenderer
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / MarkdownRenderer
 
 # Interface: MarkdownRenderer
 
-The MarkdownRenderer extends TypeDoc's Renderer instance with custom hooks and async jobs.
+The MarkdownRenderer extends TypeDoc's [Renderer](https://typedoc.org/api/classes/Renderer.html) instance with custom hooks and async jobs.
 
 ## Contents
 
@@ -15,8 +15,8 @@ The MarkdownRenderer extends TypeDoc's Renderer instance with custom hooks and a
   * [packagesMeta](#packagesmeta)
 * [Methods](#methods)
   * [on()](#on)
-    * [on(event, callback)](#onevent-callback)
-    * [on(event, callback)](#onevent-callback-1)
+    * [Call Signature](#call-signature)
+    * [Call Signature](#call-signature-1)
 
 ## Extends
 
@@ -47,7 +47,7 @@ Define a new theme that can be used to render output.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:48](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L48)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L51)
 
 ***
 
@@ -57,7 +57,7 @@ Define a new theme that can be used to render output.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:53](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L53)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L56)
 
 ***
 
@@ -69,13 +69,23 @@ A list of async jobs which must be completed before rendering output.
 
 Note: This array is cleared after calling the contained functions on each call.
 
+#### Parameters
+
+| Parameter | Type                                                                     |
+| --------- | ------------------------------------------------------------------------ |
+| `output`  | [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md) |
+
+#### Returns
+
+`Promise`\<`void`>
+
 #### Overrides
 
 `Renderer.preRenderAsyncJobs`
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L60)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:63](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L63)
 
 ***
 
@@ -88,13 +98,23 @@ These functions will be called after all documents have been written to the file
 
 Note: This array is cleared after calling the contained functions on each call.
 
+#### Parameters
+
+| Parameter | Type                                                                     |
+| --------- | ------------------------------------------------------------------------ |
+| `output`  | [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md) |
+
+#### Returns
+
+`Promise`\<`void`>
+
 #### Overrides
 
 `Renderer.postRenderAsyncJobs`
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:68](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L68)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L71)
 
 ***
 
@@ -106,13 +126,13 @@ Note: This array is cleared after calling the contained functions on each call.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L71)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:74](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L74)
 
 ## Methods
 
 ### on()
 
-#### on(event, callback)
+#### Call Signature
 
 > **on**(`event`, `callback`): `void`
 
@@ -139,9 +159,9 @@ app.renderer.on(MarkdownPageEvent.BEGIN, (renderer) => {});
 
 ##### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L20)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L23)
 
-#### on(event, callback)
+#### Call Signature
 
 > **on**(`event`, `callback`): `void`
 
@@ -168,4 +188,4 @@ app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {});
 
 ##### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:35](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L35)
+[packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:38](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L38)

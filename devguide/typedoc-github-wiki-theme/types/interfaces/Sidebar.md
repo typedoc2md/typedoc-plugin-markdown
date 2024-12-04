@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-github-wiki-theme](../../README.md) / [types](../README.md) / Sidebar
+[Developer Guide](../../../README.md) / [typedoc-github-wiki-theme](../../README.md) / [types](../README.md) / Sidebar
 
 # Interface: Sidebar
 

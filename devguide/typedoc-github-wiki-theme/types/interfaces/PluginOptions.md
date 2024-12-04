@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-github-wiki-theme](../../README.md) / [types](../README.md) / PluginOptions
+[Developer Guide](../../../README.md) / [typedoc-github-wiki-theme](../../README.md) / [types](../README.md) / PluginOptions
 
 # Interface: PluginOptions
 

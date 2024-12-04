@@ -1,7 +1,0 @@
-{
-  "entryPoints": ["./src/*"],
-  "tsconfig": "./tsconfig.json",
-  "out": "./docs",
-  "readme": "none",
-  "plugin": ["typedoc-plugin-markdown"]
-}

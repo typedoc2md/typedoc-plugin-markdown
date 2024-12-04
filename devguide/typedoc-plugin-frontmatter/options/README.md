@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-frontmatter](../README.md) / options
+[Developer Guide](../../README.md) / [typedoc-plugin-frontmatter](../README.md) / options
 
 # options
 

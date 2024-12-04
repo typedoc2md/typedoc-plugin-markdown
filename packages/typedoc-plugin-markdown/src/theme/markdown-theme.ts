@@ -25,7 +25,7 @@ import {
  *
  * @group Theme Classes
  *
- * @hidden
+ * @internal
  */
 export class MarkdownTheme extends Theme {
   constructor(renderer: Renderer) {

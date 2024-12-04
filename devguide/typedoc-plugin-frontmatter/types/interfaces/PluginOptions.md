@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-plugin-frontmatter](../../README.md) / [types](../README.md) / PluginOptions
+[Developer Guide](../../../README.md) / [typedoc-plugin-frontmatter](../../README.md) / [types](../README.md) / PluginOptions
 
 # Interface: PluginOptions
 
@@ -8,7 +8,7 @@ Describes the options declared by the plugin.
 
 ### frontmatterCommentTags
 
-> **frontmatterCommentTags**: `any`\[]
+> **frontmatterCommentTags**: `string`\[]
 
 Specify which comment block tags should be added to frontmatter.
 

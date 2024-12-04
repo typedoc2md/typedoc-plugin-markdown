@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-markdown](../README.md) / events
+[Developer Guide](../../README.md) / [typedoc-plugin-markdown](../README.md) / events
 
 # events
 

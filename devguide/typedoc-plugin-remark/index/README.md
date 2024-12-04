@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-remark](../README.md) / index
+[Developer Guide](../../README.md) / [typedoc-plugin-remark](../README.md) / index
 
 # index
 

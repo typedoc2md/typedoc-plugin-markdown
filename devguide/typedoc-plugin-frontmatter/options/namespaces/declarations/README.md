@@ -1,4 +1,4 @@
-[Home](../../../../README.md) / [typedoc-plugin-frontmatter](../../../README.md) / [options](../../README.md) / declarations
+[Developer Guide](../../../../README.md) / [typedoc-plugin-frontmatter](../../../README.md) / [options](../../README.md) / declarations
 
 # declarations
 
@@ -119,26 +119,7 @@ description: A description that will be added to frontmatter.
 ---
 ```
 
-In addition any non standard tags should be added to a `tsdoc.json` file and added next to your `tsconfig.json` file.
-
-```json filename="tsdoc.json"
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/tsdoc/v0/tsdoc.schema.json",
-  "extends": ["typedoc/tsdoc.json"],
-  "tagDefinitions": [
-      {
-          "tagName": "@customTag",
-          "syntaxKind": "modifier"
-      }
-  ]
-}
-```
-
-### Example
-
-```ts
-["author", "description"]
-```
+@example \["author", "description"]
 
 ### Default Value
 
@@ -151,7 +132,7 @@ In addition any non standard tags should be added to a `tsdoc.json` file and add
 
 ### Defined in
 
-[options/declarations.ts:76](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L76)
+[options/declarations.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L61)
 
 ***
 
@@ -171,7 +152,7 @@ In addition any non standard tags should be added to a `tsdoc.json` file and add
 
 ### Defined in
 
-[options/declarations.ts:81](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L81)
+[options/declarations.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L66)
 
 ***
 
@@ -196,4 +177,4 @@ This option can configure the output style of frontmatter variables when written
 
 ### Defined in
 
-[options/declarations.ts:92](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L92)
+[options/declarations.ts:77](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L77)

@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / UrlMapping
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / UrlMapping
 
 # Interface: UrlMapping\<Model>
 
@@ -10,6 +10,7 @@ The model used to define the URL mapping structure.
 * [Properties](#properties)
   * [url](#url)
   * [model](#model)
+  * [group?](#group)
   * [template()](#template)
 
 ## Type Parameters
@@ -40,6 +41,16 @@ The model used to define the URL mapping structure.
 
 ***
 
+### group?
+
+> `optional` **group**: `string`
+
+#### Defined in
+
+[packages/typedoc-plugin-markdown/src/types/theme.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L21)
+
+***
+
 ### template()
 
 > **template**: (`data`) => `string`
@@ -56,4 +67,4 @@ The model used to define the URL mapping structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L21)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L22)

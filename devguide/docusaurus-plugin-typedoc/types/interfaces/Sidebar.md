@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [docusaurus-plugin-typedoc](../../README.md) / [types](../README.md) / Sidebar
+[Developer Guide](../../../README.md) / [docusaurus-plugin-typedoc](../../README.md) / [types](../README.md) / Sidebar
 
 # Interface: Sidebar
 
@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[docusaurus-plugin-typedoc/src/types/options.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L18)
+[docusaurus-plugin-typedoc/src/types/options.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L23)
 
 ***
 
@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[docusaurus-plugin-typedoc/src/types/options.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L19)
+[docusaurus-plugin-typedoc/src/types/options.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L24)

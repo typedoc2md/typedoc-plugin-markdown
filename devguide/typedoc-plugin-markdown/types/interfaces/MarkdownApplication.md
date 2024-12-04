@@ -1,8 +1,8 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / MarkdownApplication
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / MarkdownApplication
 
 # Interface: MarkdownApplication
 
-The MarkdownApplication extends TypeDoc's Application instance with a custom renderer.
+The MarkdownApplication extends TypeDoc's [Application](https://typedoc.org/api/classes/Application.html) instance with a custom renderer.
 
 ## Contents
 
@@ -20,7 +20,7 @@ The MarkdownApplication extends TypeDoc's Application instance with a custom ren
 
 > **renderer**: [`MarkdownRenderer`](MarkdownRenderer.md) & [`Renderer`](https://typedoc.org/api/classes/Renderer.html)
 
-The renderer used to generate the documentation output.
+The renderer used to generate the HTML documentation output.
 
 #### Overrides
 

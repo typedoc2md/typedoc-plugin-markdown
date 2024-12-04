@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / PackageMetaData
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / PackageMetaData
 
 # Interface: PackageMetaData
 

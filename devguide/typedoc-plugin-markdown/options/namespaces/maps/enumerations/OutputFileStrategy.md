@@ -1,4 +1,4 @@
-[Home](../../../../../README.md) / [typedoc-plugin-markdown](../../../../README.md) / [options](../../../README.md) / [maps](../README.md) / OutputFileStrategy
+[Developer Guide](../../../../../README.md) / [typedoc-plugin-markdown](../../../../README.md) / [options](../../../README.md) / [maps](../README.md) / OutputFileStrategy
 
 # Enumeration: OutputFileStrategy
 

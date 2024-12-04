@@ -11,8 +11,5 @@
   ],
   "exclude": ["./src/public-api.ts"],
   "categoryOrder": ["File", "Display", "Utility", "Methods", "Locales"],
-  "projectDocuments": [
-    "./supporting-docs/internal/getting-started.md",
-    "./supporting-docs/internal/test-and-validation.md"
-  ]
+  "projectDocuments": ["./supporting-docs/internal/test-and-validation.md"]
 }

@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / RenderTemplate
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / RenderTemplate
 
 # Type Alias: RenderTemplate()\<T>
 
@@ -24,4 +24,4 @@ Defines the template type to use for rendering.
 
 ## Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:59](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L59)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L61)

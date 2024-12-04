@@ -1,4 +1,4 @@
-[Home](../../../../../README.md) / [typedoc-plugin-markdown](../../../../README.md) / [options](../../../README.md) / [maps](../README.md) / DisplayFormat
+[Developer Guide](../../../../../README.md) / [typedoc-plugin-markdown](../../../../README.md) / [options](../../../README.md) / [maps](../README.md) / DisplayFormat
 
 # Enumeration: DisplayFormat
 

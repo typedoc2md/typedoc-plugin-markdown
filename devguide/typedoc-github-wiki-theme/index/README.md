@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-github-wiki-theme](../README.md) / index
+[Developer Guide](../../README.md) / [typedoc-github-wiki-theme](../README.md) / index
 
 # index
 

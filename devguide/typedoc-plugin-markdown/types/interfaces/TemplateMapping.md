@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / TemplateMapping
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / TemplateMapping
 
 # Interface: TemplateMapping
 
@@ -12,7 +12,7 @@ Defines how reflections are mapped to urls.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:39](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L39)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L40)
 
 ***
 
@@ -22,7 +22,7 @@ Defines how reflections are mapped to urls.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L40)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L41)
 
 ***
 
@@ -32,4 +32,4 @@ Defines how reflections are mapped to urls.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L41)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L42)

@@ -1,6 +1,8 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [theme](../README.md) / MarkdownTheme
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [theme](../README.md) / MarkdownTheme
 
 # Class: MarkdownTheme
+
+**`Internal`**
 
 The main theme class for the plugin.
 
@@ -52,7 +54,7 @@ The API follows the implementation of [TypeDoc's custom theming](https://github.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L29)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L31)
 
 ## Methods
 
@@ -81,7 +83,7 @@ Renders a template and page model to a string.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:38](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L38)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L40)
 
 ***
 
@@ -105,7 +107,7 @@ This method can be overridden to provide an alternative theme context.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:55](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L55)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:57](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L57)
 
 ***
 
@@ -131,7 +133,7 @@ Maps the models of the given project to the desired output files.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:62](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L62)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:64](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L64)
 
 ***
 
@@ -153,7 +155,7 @@ Map the models of the given project to a navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:69](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L69)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L71)
 
 ***
 
@@ -176,7 +178,7 @@ Map the models of the given project to a navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:76](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L76)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:78](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L78)
 
 ***
 
@@ -198,7 +200,7 @@ Map the models of the given project to a navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:200](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L200)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:202](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L202)
 
 ***
 
@@ -220,7 +222,7 @@ Map the models of the given project to a navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:207](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L207)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:209](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L209)
 
 ***
 
@@ -242,7 +244,7 @@ Map the models of the given project to a navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:214](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L214)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:216](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L216)
 
 ***
 
@@ -264,4 +266,4 @@ Map the models of the given project to a navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:221](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L221)
+[packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:223](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L223)

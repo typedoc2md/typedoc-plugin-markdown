@@ -1,4 +1,4 @@
-[Home](../../README.md) / [docusaurus-plugin-typedoc](../README.md) / options
+[Developer Guide](../../README.md) / [docusaurus-plugin-typedoc](../README.md) / options
 
 # options
 

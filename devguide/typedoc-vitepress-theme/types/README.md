@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-vitepress-theme](../README.md) / types
+[Developer Guide](../../README.md) / [typedoc-vitepress-theme](../README.md) / types
 
 # types
 

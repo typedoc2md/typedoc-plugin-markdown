@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-markdown](../README.md) / index
+[Developer Guide](../../README.md) / [typedoc-plugin-markdown](../README.md) / index
 
 # index
 
@@ -24,10 +24,6 @@ This method is not intended to be consumed in any other context that via the `pl
 
 `void`
 
-### See
-
-[https://typedoc.org/guides/development/#plugins](https://typedoc.org/guides/development/#plugins).
-
 ### Defined in
 
-[packages/typedoc-plugin-markdown/src/index.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/index.ts#L29)
+[packages/typedoc-plugin-markdown/src/index.ts:27](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/index.ts#L27)

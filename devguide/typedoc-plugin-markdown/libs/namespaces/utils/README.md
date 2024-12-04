@@ -1,4 +1,4 @@
-[Home](../../../../README.md) / [typedoc-plugin-markdown](../../../README.md) / [libs](../../README.md) / utils
+[Developer Guide](../../../../README.md) / [typedoc-plugin-markdown](../../../README.md) / [libs](../../README.md) / utils
 
 # utils
 

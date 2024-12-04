@@ -1,4 +1,4 @@
-[Home](../../README.md) / [docusaurus-plugin-typedoc](../README.md) / index
+[Developer Guide](../../README.md) / [docusaurus-plugin-typedoc](../README.md) / index
 
 # index
 
@@ -31,11 +31,11 @@
 
 `Promise`\<`object`>
 
-| Name        | Type     | Default value |
-| ----------- | -------- | ------------- |
-| `name`      | `string` | PLUGIN\_NAME  |
-| `extendCli` | `void`   | -             |
+| Name          | Type     | Default value               |
+| ------------- | -------- | --------------------------- |
+| `name`        | `string` | 'docusaurus-plugin-typedoc' |
+| `extendCli()` | `void`   | -                           |
 
 ### Defined in
 
-[docusaurus-plugin-typedoc/src/plugin.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/plugin.ts#L14)
+[docusaurus-plugin-typedoc/src/plugins/docusaurus.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/plugins/docusaurus.ts#L8)

@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-gitlab-wiki-theme](../README.md) / options
+[Developer Guide](../../README.md) / [typedoc-gitlab-wiki-theme](../README.md) / options
 
 # options
 

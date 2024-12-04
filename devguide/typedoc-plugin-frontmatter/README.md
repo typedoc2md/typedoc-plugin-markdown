@@ -1,4 +1,4 @@
-[Home](../README.md) / typedoc-plugin-frontmatter
+[Developer Guide](../README.md) / typedoc-plugin-frontmatter
 
 # typedoc-plugin-frontmatter
 
@@ -7,7 +7,6 @@
 ## Contents
 
 * [What Does the Package Do?](#what-does-the-package-do)
-* [Modules](#modules)
 
 ## What Does the Package Do?
 

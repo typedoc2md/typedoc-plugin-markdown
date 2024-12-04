@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-markdown](../README.md) / renderer
+[Developer Guide](../../README.md) / [typedoc-plugin-markdown](../README.md) / renderer
 
 # renderer
 
@@ -6,61 +6,8 @@ Includes functionality and override methods on the TypeDoc Renderer.
 
 ## Contents
 
-* [generateDocs()](#generatedocs)
-* [render()](#render)
 * [resolvePackages()](#resolvepackages)
-
-## generateDocs()
-
-> **generateDocs**(`project`, `out`): `Promise`\<`void`>
-
-Replacement of TypeDoc's Application.generateDocs method to decouple HTML logic.
-
-### Parameters
-
-| Parameter | Type                                                                                 |
-| --------- | ------------------------------------------------------------------------------------ |
-| `project` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
-| `out`     | `string`                                                                             |
-
-### Returns
-
-`Promise`\<`void`>
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/renderer/overrides.ts:9](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/renderer/overrides.ts#L9)
-
-***
-
-## render()
-
-> **render**(`project`, `outputDirectory`): `Promise`\<`void`>
-
-Replacement of TypeDoc's Renderer.render method to decouple HTML logic.
-
-This is essentially a copy of the base method with a few tweaks.
-
-* Removes unnecessary async calls to load highlighters only required for html theme.
-* Removes hooks logic that are jsx specific.
-* Adds any logic specific to markdown rendering.
-
-### Parameters
-
-| Parameter         | Type                                                                                 |
-| ----------------- | ------------------------------------------------------------------------------------ |
-| `project`         | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
-| `outputDirectory` | `string`                                                                             |
-
-### Returns
-
-`Promise`\<`void`>
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/renderer/overrides.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/renderer/overrides.ts#L29)
-
-***
+* [render()](#render)
 
 ## resolvePackages()
 
@@ -85,3 +32,33 @@ By intercepting the package options set in the converter and storing them on the
 ### Defined in
 
 [packages/typedoc-plugin-markdown/src/renderer/packages.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/renderer/packages.ts#L11)
+
+***
+
+## render()
+
+> **render**(`renderer`, `project`, `outputDirectory`): `Promise`\<`void`>
+
+The render method for the Markdown plugin
+
+This is essentially a copy the default theme render method with some adjustments.
+
+* Removes unnecessary async calls to load highlighters only required for html theme.
+* Removes hooks logic that are jsx specific.
+* Adds any logic specific to markdown rendering.
+
+### Parameters
+
+| Parameter         | Type                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------ |
+| `renderer`        | [`Renderer`](https://typedoc.org/api/classes/Renderer.html)                          |
+| `project`         | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| `outputDirectory` | `string`                                                                             |
+
+### Returns
+
+`Promise`\<`void`>
+
+### Defined in
+
+[packages/typedoc-plugin-markdown/src/renderer/render.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/renderer/render.ts#L24)

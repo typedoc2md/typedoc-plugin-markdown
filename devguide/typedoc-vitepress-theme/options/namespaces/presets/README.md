@@ -1,4 +1,4 @@
-[Home](../../../../README.md) / [typedoc-vitepress-theme](../../../README.md) / [options](../../README.md) / presets
+[Developer Guide](../../../../README.md) / [typedoc-vitepress-theme](../../../README.md) / [options](../../README.md) / presets
 
 # presets
 

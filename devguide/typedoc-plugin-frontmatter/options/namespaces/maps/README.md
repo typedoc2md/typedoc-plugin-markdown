@@ -1,4 +1,4 @@
-[Home](../../../../README.md) / [typedoc-plugin-frontmatter](../../../README.md) / [options](../../README.md) / maps
+[Developer Guide](../../../../README.md) / [typedoc-plugin-frontmatter](../../../README.md) / [options](../../README.md) / maps
 
 # maps
 

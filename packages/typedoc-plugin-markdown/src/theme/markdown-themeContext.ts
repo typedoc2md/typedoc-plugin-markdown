@@ -34,7 +34,7 @@ import { Internationalization, Options, Reflection } from 'typedoc';
  *
  * @group Theme Classes
  *
- * @hidden
+ * @internal
  */
 export class MarkdownThemeContext {
   internationalization: Internationalization.Internationalization;

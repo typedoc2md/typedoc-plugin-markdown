@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-gitlab-wiki-theme](../README.md) / types
+[Developer Guide](../../README.md) / [typedoc-gitlab-wiki-theme](../README.md) / types
 
 # types
 

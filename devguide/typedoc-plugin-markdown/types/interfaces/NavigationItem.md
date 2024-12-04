@@ -1,4 +1,4 @@
-[Home](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / NavigationItem
+[Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / NavigationItem
 
 # Interface: NavigationItem
 
@@ -12,7 +12,7 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L29)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L30)
 
 ***
 
@@ -22,7 +22,7 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:30](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L30)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L31)
 
 ***
 
@@ -32,7 +32,7 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:31](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L31)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:32](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L32)
 
 ***
 
@@ -42,4 +42,4 @@ The model used to define the navigation structure.
 
 #### Defined in
 
-[packages/typedoc-plugin-markdown/src/types/theme.ts:32](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L32)
+[packages/typedoc-plugin-markdown/src/types/theme.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L33)

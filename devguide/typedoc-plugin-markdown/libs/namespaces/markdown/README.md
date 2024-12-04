@@ -1,8 +1,6 @@
-[Home](../../../../README.md) / [typedoc-plugin-markdown](../../../README.md) / [libs](../../README.md) / markdown
+[Developer Guide](../../../../README.md) / [typedoc-plugin-markdown](../../../README.md) / [libs](../../README.md) / markdown
 
 # markdown
-
-Helpers to render markdown elements.
 
 ## Contents
 

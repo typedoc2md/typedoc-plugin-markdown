@@ -1,4 +1,4 @@
-[Home](../../../../README.md) / [docusaurus-plugin-typedoc](../../../README.md) / [options](../../README.md) / presets
+[Developer Guide](../../../../README.md) / [docusaurus-plugin-typedoc](../../../README.md) / [options](../../README.md) / presets
 
 # presets
 
@@ -10,11 +10,11 @@
 
 | Name              | Type        | Default value | Description |
 | ----------------- | ----------- | ------------- | ----------- |
+| `plugin`          | `string`\[] | -             |             |
 | `out`             | `string`    | './docs/api'  | -           |
 | `hideBreadcrumbs` | `boolean`   | true          | -           |
 | `hidePageHeader`  | `boolean`   | true          | -           |
 | `entryFileName`   | `string`    | 'index.md'    | -           |
-| `plugin`          | `string`\[] | -             |             |
 
 ### Defined in
 

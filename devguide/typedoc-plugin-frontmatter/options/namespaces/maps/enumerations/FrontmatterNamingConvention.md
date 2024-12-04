@@ -1,4 +1,4 @@
-[Home](../../../../../README.md) / [typedoc-plugin-frontmatter](../../../../README.md) / [options](../../../README.md) / [maps](../README.md) / FrontmatterNamingConvention
+[Developer Guide](../../../../../README.md) / [typedoc-plugin-frontmatter](../../../../README.md) / [options](../../../README.md) / [maps](../README.md) / FrontmatterNamingConvention
 
 # Enumeration: FrontmatterNamingConvention
 

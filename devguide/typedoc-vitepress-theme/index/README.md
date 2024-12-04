@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-vitepress-theme](../README.md) / index
+[Developer Guide](../../README.md) / [typedoc-vitepress-theme](../README.md) / index
 
 # index
 
@@ -20,4 +20,4 @@ The plugin entrypoint and bootstrapping of the plugin.
 
 ### Defined in
 
-[index.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/index.ts#L18)
+[index.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/index.ts#L19)

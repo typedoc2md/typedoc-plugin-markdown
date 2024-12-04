@@ -1,4 +1,4 @@
-[Home](../../README.md) / [typedoc-plugin-remark](../README.md) / types
+[Developer Guide](../../README.md) / [typedoc-plugin-remark](../README.md) / types
 
 # types
 

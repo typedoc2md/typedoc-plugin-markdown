@@ -1,4 +1,4 @@
-[Home](../README.md) / typedoc-plugin-markdown
+[Developer Guide](../README.md) / typedoc-plugin-markdown
 
 # typedoc-plugin-markdown
 
@@ -8,7 +8,6 @@ The core package of this monorepo and is the package that is used to generate th
 
 * [What Does the Package Do?](#what-does-the-package-do)
 * [Documents](#documents)
-* [Modules](#modules)
 
 ## What Does the Package Do?
 
@@ -21,7 +20,6 @@ The core package of this monorepo and is the package that is used to generate th
 
 | Document                                                | Description                                                         |
 | ------------------------------------------------------- | ------------------------------------------------------------------- |
-| [Getting Started](documents/Getting-Started.md)         | How to start developing locally.                                    |
 | [Test and Validation](documents/Test-and-Validation.md) | Guidance on running tests, creating fixtures and validating output. |
 
 ## Modules

@@ -1,4 +1,4 @@
-[Home](../README.md) / typedoc-gitlab-wiki-theme
+[Developer Guide](../README.md) / typedoc-gitlab-wiki-theme
 
 # typedoc-gitlab-wiki-theme
 
@@ -7,7 +7,6 @@
 ## Contents
 
 * [What Does the Package Do?](#what-does-the-package-do)
-* [Modules](#modules)
 
 ## What Does the Package Do?
 
