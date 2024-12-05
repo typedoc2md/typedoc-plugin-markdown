@@ -10,8 +10,13 @@ import { PackageVersion } from './components/package-version';
 export default {
   logo: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ width: '26px' }}>
-        <FontAwesomeIcon icon={faMarkdown} size="sm" />
+      <div style={{ width: '26px', height: '18px' }}>
+        <FontAwesomeIcon
+          icon={faMarkdown}
+          width={'26px'}
+          size="sm"
+          style={{ width: '100%', height: '100%' }}
+        />
       </div>
       <div
         style={{
