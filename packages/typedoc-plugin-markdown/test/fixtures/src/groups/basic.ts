@@ -17,6 +17,8 @@
  * @remarks
  *
  * Block tag content.
+ *
+ * - {@link InterfaceB.propA}
  */
 export interface InterfaceA {
   propA: string;
@@ -25,8 +27,13 @@ export interface InterfaceA {
 
 /**
  * InterfaceB function.
+ *
+ * - {@link InterfaceA.propA}
  */
-export interface InterfaceB {}
+export interface InterfaceB {
+  propA: string;
+  propB: string;
+}
 /**
  * EnumA function.
  */
@@ -39,23 +46,17 @@ export class ClassA {}
 export class ClassB {}
 /**
  * TypeA function.
+ *
+ * {@link TypeB#propB}
  */
 export type TypeA = string;
 /**
  * TypeB function.
- *
- * @param str - A string to tokenize.
- * @param offset - Initial offset. Used when composing lexers.
  */
-export type TypeB = (str: string, offset?: number) => any;
+export type TypeB = { propA: string; propB?: number };
 /**
- * Create a function.
- *
- * More summary.
- *
- * @param rules - rules.
- * @param options - options.
+ * Comments for functionA
  */
-export function functionA(rules: any, options?: any) {}
+export function functionA() {}
 export const variableA = '';
 export const variableB = '';

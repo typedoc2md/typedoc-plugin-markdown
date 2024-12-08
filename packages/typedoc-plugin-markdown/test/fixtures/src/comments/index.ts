@@ -11,12 +11,9 @@
  * - {@linkcode CommentInterface.propb | Links to CommentInterface.propb}
  * - {@link CommentInterface._prop_with_underscore_ | Links to CommentInterface._prop_with_underscore_}
  * - {@link CommentEnum.MemberB}
- * - {@link SameName:var}
- * - {@link SameName:interface}
  * - {@link SameName.prop}
- * - {@link prop:var}
- * - {@link _prop_with_underscore:var}
  * - {@link TypeWithGenerics}
+ * - {@link TypeDeclarationTable#declaration1 | Links to declaration1}
  * - {@link NotFound}
  *
  * External links:

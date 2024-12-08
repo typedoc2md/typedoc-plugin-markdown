@@ -363,22 +363,48 @@ export class UrlBuilder {
       reflection.url = url;
       reflection.hasOwnDocument = true;
 
-      reflection.groups?.forEach((group) => {
-        group.children.forEach((groupChild) => {
-          const mapping = this.theme.getTemplateMapping(
-            groupChild.kind,
-            urlOptions.outputFileStrategy,
-          );
-          this.buildUrlsFromGroup(groupChild as DeclarationReflection, {
-            parentUrl: urlPath,
-            directory: mapping?.directory || null,
-            outputFileStrategy: urlOptions.outputFileStrategy,
-            group: group.title,
+      if (reflection.groups) {
+        reflection.groups?.forEach((group) => {
+          group.children.forEach((groupChild) => {
+            const mapping = this.theme.getTemplateMapping(
+              groupChild.kind,
+              urlOptions.outputFileStrategy,
+            );
+            this.buildUrlsFromGroup(groupChild as DeclarationReflection, {
+              parentUrl: urlPath,
+              directory: mapping?.directory || null,
+              outputFileStrategy: urlOptions.outputFileStrategy,
+              group: group.title,
+            });
           });
         });
-      });
+      } else {
+        reflection.traverse((child) => {
+          this.applyAnchorUrl(child as any, reflection.url || '');
+        });
+      }
     } else if (reflection.parent) {
       this.traverseChildren(reflection, reflection.parent);
+    }
+  }
+
+  private traverseChildren(
+    reflection: DeclarationReflection,
+    container: Reflection,
+  ) {
+    if (container.url) {
+      this.applyAnchorUrl(reflection, container.url);
+    }
+
+    if (reflection.parent) {
+      reflection.traverse((child) => {
+        if (child.isDocument()) {
+          this.buildUrlsForDocument(child);
+        }
+        if (child.isDeclaration()) {
+          this.traverseChildren(child, container);
+        }
+      });
     }
   }
 
@@ -488,57 +514,45 @@ export class UrlBuilder {
     );
   }
 
-  private traverseChildren(
-    reflection: DeclarationReflection,
-    container: Reflection,
-  ) {
-    if (container.url) {
-      this.applyAnchorUrl(reflection, container.url);
-    }
-    if (reflection.parent) {
-      reflection.traverse((child) => {
-        if (child.isDocument()) {
-          this.buildUrlsForDocument(child);
-        }
-        if (child.isDeclaration()) {
-          this.traverseChildren(child, container);
-        }
-      });
-    }
-  }
-
   private applyAnchorUrl(
     reflection: DeclarationReflection,
     containerUrl: string,
   ) {
-    if (reflection.kind !== ReflectionKind.TypeLiteral) {
-      const anchorPrefix = this.options.getValue('anchorPrefix');
-      const anchorId = this.getAnchorId(reflection);
+    const anchorPrefix = this.options.getValue('anchorPrefix');
+    const anchorId = this.getAnchorId(reflection);
 
-      if (anchorId) {
-        if (!this.anchors[containerUrl]) {
-          this.anchors[containerUrl] = [];
-        }
+    if (anchorId) {
+      if (!this.anchors[containerUrl]) {
+        this.anchors[containerUrl] = [];
+      }
 
-        this.anchors[containerUrl].push(anchorId);
+      this.anchors[containerUrl].push(anchorId);
 
-        const count = this.anchors[containerUrl]?.filter(
-          (id) => id === anchorId,
-        )?.length;
+      const count = this.anchors[containerUrl]?.filter(
+        (id) => id === anchorId,
+      )?.length;
 
-        const anchorParts = [anchorId];
+      const anchorParts = [anchorId];
 
-        if (count > 1) {
-          anchorParts.push(`-${count - 1}`);
-        }
+      if (count > 1) {
+        anchorParts.push(`-${count - 1}`);
+      }
 
-        if (anchorPrefix) {
-          anchorParts.unshift(`${anchorPrefix}`);
-        }
+      if (anchorPrefix) {
+        anchorParts.unshift(`${anchorPrefix}`);
+      }
 
-        reflection.url = containerUrl + '#' + anchorParts.join('');
-        reflection.anchor = anchorParts.join('');
-        reflection.hasOwnDocument = false;
+      reflection.url = containerUrl + '#' + anchorParts.join('');
+      reflection.anchor = anchorParts.join('');
+      reflection.hasOwnDocument = false;
+
+      if (
+        this.options.getValue('outputFileStrategy') ===
+        OutputFileStrategy.Members
+      ) {
+        reflection.traverse((child) => {
+          this.applyAnchorUrl(child as DeclarationReflection, containerUrl);
+        });
       }
     }
   }
@@ -556,12 +570,18 @@ export class UrlBuilder {
   }
 
   private getAnchorName(reflection: DeclarationReflection) {
+    if ([ReflectionKind.TypeParameter].includes(reflection.kind)) {
+      return null;
+    }
     const htmlTableAnchors = this.options.getValue('useHTMLAnchors');
 
     if (!htmlTableAnchors) {
       if (
         (reflection.kind === ReflectionKind.Property &&
           this.options.getValue('propertiesFormat').toLowerCase() ===
+            'table') ||
+        (reflection.kind === ReflectionKind.Property &&
+          this.options.getValue('typeDeclarationFormat').toLowerCase() ===
             'table') ||
         (reflection.kind === ReflectionKind.Property &&
           reflection.parent?.kind === ReflectionKind.Class &&

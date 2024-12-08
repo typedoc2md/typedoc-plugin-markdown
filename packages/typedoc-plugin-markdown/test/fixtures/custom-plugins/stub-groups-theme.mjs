@@ -20,9 +20,6 @@ class StubTheme extends MarkdownTheme {
 class MyMarkdownThemeContext extends MarkdownThemeContext {
   partials = {
     ...this.partials,
-    declaration: () => {
-      return `_DECLARATION_MEMBER_PARTIAL_`;
-    },
     signature: () => {
       return `_SIGNATURE_MEMBER_PARTIAL_`;
     },

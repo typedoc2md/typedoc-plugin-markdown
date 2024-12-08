@@ -140,7 +140,6 @@ const config = {
     only: false,
     entryPoints: '/comments/index.ts',
     commonOptions: {
-      useTsLinkResolution: false,
       plugin: [
         path.join(__dirname, 'custom-plugins', 'normalize-sources.mjs'),
         path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
@@ -149,6 +148,7 @@ const config = {
       hideBreadcrumbs: true,
       readme: 'none',
       excludePrivate: false,
+      useHTMLAnchors: true,
     },
     options: [
       {
@@ -160,7 +160,6 @@ const config = {
         typeDeclarationFormat: 'table',
       },
       {
-        useHTMLAnchors: true,
         preserveAnchorCasing: true,
         publicPath: 'https://example.com',
         sanitizeComments: true,

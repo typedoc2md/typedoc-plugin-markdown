@@ -52,7 +52,7 @@ A basic module
 
 | Function | Description |
 | :------ | :------ |
-| [functionA](functions/functionA.md) | Create a function. |
+| [functionA](functions/functionA.md) | Comments for functionA |
 "
 `;
 
@@ -87,9 +87,7 @@ A basic module
 </td>
 <td>
 
-Create a function.
-
-More summary.
+Comments for functionA
 
 </td>
 </tr>
@@ -127,6 +125,8 @@ const a = new InterfaceA();
 
 Block tag content.
 
+- [InterfaceB.propA](interfaces/InterfaceB.md#propa)
+
 </td>
 </tr>
 <tr>
@@ -138,6 +138,8 @@ Block tag content.
 <td>
 
 InterfaceB function.
+
+- [InterfaceA.propA](interfaces/InterfaceA.md#propa)
 
 </td>
 </tr>
@@ -238,6 +240,8 @@ EnumA function.
 
 TypeA function.
 
+[TypeB#propB](type-aliases/TypeB.md#propb)
+
 </td>
 </tr>
 <tr>
@@ -255,19 +259,19 @@ TypeB function.
 </tbody>
 </table>
 
-<a id="variablea" name="variablea"></a>
+<a id="variablea"></a>
 
 ## variableA
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableA**: \`""\` = \`''\`
 
 ***
 
-<a id="variableb" name="variableb"></a>
+<a id="variableb"></a>
 
 ## variableB
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB**: \`""\` = \`''\`
 "
 `;
 
@@ -331,15 +335,17 @@ const a = new InterfaceA();
 
 Block tag content.
 
+- [InterfaceB.propA](basic.md#propa-1)
+
 #### Properties
 
 ##### propA
 
-_DECLARATION_MEMBER_PARTIAL_
+> **propA**: \`string\`
 
 ##### propB
 
-_DECLARATION_MEMBER_PARTIAL_
+> **propB**: \`string\`
 
 ***
 
@@ -347,29 +353,57 @@ _DECLARATION_MEMBER_PARTIAL_
 
 InterfaceB function.
 
+- [InterfaceA.propA](basic.md#propa)
+
+#### Properties
+
+##### propA
+
+> **propA**: \`string\`
+
+##### propB
+
+> **propB**: \`string\`
+
 ## Type Aliases
 
 ### TypeA
 
-_DECLARATION_MEMBER_PARTIAL_
+> **TypeA**: \`string\`
+
+TypeA function.
+
+[TypeB#propB](basic.md#propb-2)
 
 ***
 
-### TypeB()
+### TypeB
 
-_DECLARATION_MEMBER_PARTIAL_
+> **TypeB**: \`object\`
+
+TypeB function.
+
+#### Type declaration
+
+##### propA
+
+> **propA**: \`string\`
+
+##### propB?
+
+> \`optional\` **propB**: \`number\`
 
 ## Variables
 
 ### variableA
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableA**: \`""\` = \`''\`
 
 ***
 
 ### variableB
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB**: \`""\` = \`''\`
 
 ## Functions
 
@@ -390,7 +424,7 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-<a id="functiona" name="functiona"></a>
+<a id="functiona"></a>
 
 ## functionA()
 
@@ -398,7 +432,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="interfacea" name="interfacea"></a>
+<a id="interfacea"></a>
 
 ## InterfaceA
 
@@ -415,31 +449,49 @@ const a = new InterfaceA();
 
 Block tag content.
 
+- [InterfaceB.propA](basic.md#propa-1)
+
 ### Properties
 
-<a id="propa" name="propa"></a>
+<a id="propa"></a>
 
 #### propA
 
-_DECLARATION_MEMBER_PARTIAL_
+> **propA**: \`string\`
 
-<a id="propb" name="propb"></a>
+<a id="propb"></a>
 
 #### propB
 
-_DECLARATION_MEMBER_PARTIAL_
+> **propB**: \`string\`
 
 ***
 
-<a id="interfaceb" name="interfaceb"></a>
+<a id="interfaceb"></a>
 
 ## InterfaceB
 
 InterfaceB function.
 
+- [InterfaceA.propA](basic.md#propa)
+
+### Properties
+
+<a id="propa-1"></a>
+
+#### propA
+
+> **propA**: \`string\`
+
+<a id="propb-1"></a>
+
+#### propB
+
+> **propB**: \`string\`
+
 ***
 
-<a id="classa" name="classa"></a>
+<a id="classa"></a>
 
 ## ClassA
 
@@ -447,7 +499,7 @@ ClassA function.
 
 ### Constructors
 
-<a id="constructors" name="constructors"></a>
+<a id="constructors"></a>
 
 #### new ClassA()
 
@@ -455,13 +507,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="classb" name="classb"></a>
+<a id="classb"></a>
 
 ## ClassB
 
 ### Constructors
 
-<a id="constructors-1" name="constructors-1"></a>
+<a id="constructors-1"></a>
 
 #### new ClassB()
 
@@ -469,7 +521,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="enuma" name="enuma"></a>
+<a id="enuma"></a>
 
 ## EnumA
 
@@ -477,41 +529,61 @@ EnumA function.
 
 ***
 
-<a id="enumb" name="enumb"></a>
+<a id="enumb"></a>
 
 ## EnumB
 
 ***
 
-<a id="typea" name="typea"></a>
+<a id="typea"></a>
 
 ## TypeA
 
-_DECLARATION_MEMBER_PARTIAL_
+> **TypeA**: \`string\`
+
+TypeA function.
+
+[TypeB#propB](basic.md#propb-2)
 
 ***
 
-<a id="typeb" name="typeb"></a>
+<a id="typeb"></a>
 
-## TypeB()
+## TypeB
 
-_DECLARATION_MEMBER_PARTIAL_
+> **TypeB**: \`object\`
+
+TypeB function.
+
+### Type declaration
+
+<a id="propa-2"></a>
+
+#### propA
+
+> **propA**: \`string\`
+
+<a id="propb-2"></a>
+
+#### propB?
+
+> \`optional\` **propB**: \`number\`
 
 ***
 
-<a id="variablea" name="variablea"></a>
+<a id="variablea"></a>
 
 ## variableA
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableA**: \`""\` = \`''\`
 
 ***
 
-<a id="variableb" name="variableb"></a>
+<a id="variableb"></a>
 
 ## variableB
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB**: \`""\` = \`''\`
 "
 `;
 
@@ -593,73 +665,73 @@ A module that contains categories
 
 ## Category A
 
-<a id="categoryaenum1" name="categoryaenum1"></a>
+<a id="categoryaenum1"></a>
 
 ### CategoryAEnum1
 
 ***
 
-<a id="categoryaenum2" name="categoryaenum2"></a>
+<a id="categoryaenum2"></a>
 
 ### CategoryAEnum2
 
 ***
 
-<a id="categoryainterface1" name="categoryainterface1"></a>
+<a id="categoryainterface1"></a>
 
 ### CategoryAInterface1
 
 ***
 
-<a id="categoryainterface2" name="categoryainterface2"></a>
+<a id="categoryainterface2"></a>
 
 ### CategoryAInterface2
 
 ## Category B
 
-<a id="categorybenum1" name="categorybenum1"></a>
+<a id="categorybenum1"></a>
 
 ### CategoryBEnum1
 
 ***
 
-<a id="categorybenum2" name="categorybenum2"></a>
+<a id="categorybenum2"></a>
 
 ### CategoryBEnum2
 
 ***
 
-<a id="categorybinterface1" name="categorybinterface1"></a>
+<a id="categorybinterface1"></a>
 
 ### CategoryBInterface1
 
 ***
 
-<a id="categorybinterface2" name="categorybinterface2"></a>
+<a id="categorybinterface2"></a>
 
 ### CategoryBInterface2
 
 ## Category C
 
-<a id="categorycinterface1" name="categorycinterface1"></a>
+<a id="categorycinterface1"></a>
 
 ### CategoryCInterface1
 
 ## Other
 
-<a id="uncategorizedenum" name="uncategorizedenum"></a>
+<a id="uncategorizedenum"></a>
 
 ### UnCategorizedEnum
 
 ***
 
-<a id="categorycinterface2" name="categorycinterface2"></a>
+<a id="categorycinterface2"></a>
 
 ### CategoryCInterface2
 
 ***
 
-<a id="uncategorizedinterace" name="uncategorizedinterace"></a>
+<a id="uncategorizedinterace"></a>
 
 ### UnCategorizedInterace
 "
@@ -987,35 +1059,37 @@ exports[`Groups should compile custom groups index page: (Output File Strategy "
 
 A module that contains custom groupings
 
-<a id="variabela" name="variabela"></a>
+<a id="variabela"></a>
 
 ## variabelA
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variabelA**: \`true\` = \`true\`
 
 ***
 
-<a id="variableb1" name="variableb1"></a>
+<a id="variableb1"></a>
 
 ## variableB1
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB1**: \`true\` = \`true\`
 
 ***
 
-<a id="variableb2" name="variableb2"></a>
+<a id="variableb2"></a>
 
 ## variableB2
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB2**: \`true\` = \`true\`
 
 ***
 
-<a id="variablec" name="variablec"></a>
+<a id="variablec"></a>
 
 ## variableC
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableC**: \`true\` = \`true\`
+
+Default grouping
 "
 `;
 
@@ -1472,7 +1546,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 </tbody>
 </table>
 
-<a id="namespaceinterface" name="namespaceinterface"></a>
+<a id="namespaceinterface"></a>
 
 ## NamespaceInterface
 "
@@ -1777,19 +1851,19 @@ A module that contains namespaces
 </tbody>
 </table>
 
-<a id="_variable_a_" name="_variable_a_"></a>
+<a id="_variable_a_"></a>
 
 ## \\_variable\\_A\\_
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
-<a id="variableb" name="variableb"></a>
+<a id="variableb"></a>
 
 ## variableB
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB**: \`true\` = \`true\`
 "
 `;
 
@@ -1853,25 +1927,25 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### \\_Type\\_A\\_
 
-_DECLARATION_MEMBER_PARTIAL_
+> **\\_Type\\_A\\_**: \`string\`
 
 ***
 
 ### TypeB
 
-_DECLARATION_MEMBER_PARTIAL_
+> **TypeB**: \`string\`
 
 ## Variables
 
 ### \\_variable\\_A\\_
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
 ### variableB
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB**: \`true\` = \`true\`
 
 ## Functions
 
@@ -1937,7 +2011,7 @@ A module that contains namespaces
 </tbody>
 </table>
 
-<a id="_function_a_" name="_function_a_"></a>
+<a id="_function_a_"></a>
 
 ## \\_function\\_A\\_()
 
@@ -1945,7 +2019,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="functionb" name="functionb"></a>
+<a id="functionb"></a>
 
 ## functionB()
 
@@ -1953,25 +2027,25 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="_interface_a_" name="_interface_a_"></a>
+<a id="_interface_a_"></a>
 
 ## \\_Interface\\_A\\_
 
 ***
 
-<a id="interfaceb" name="interfaceb"></a>
+<a id="interfaceb"></a>
 
 ## InterfaceB
 
 ***
 
-<a id="__class_a_" name="__class_a_"></a>
+<a id="__class_a_"></a>
 
 ## \\_\\_Class\\_A\\_
 
 ### Constructors
 
-<a id="constructors" name="constructors"></a>
+<a id="constructors"></a>
 
 #### new \\_\\_Class\\_A\\_()
 
@@ -1979,13 +2053,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="classb" name="classb"></a>
+<a id="classb"></a>
 
 ## ClassB
 
 ### Constructors
 
-<a id="constructors-1" name="constructors-1"></a>
+<a id="constructors-1"></a>
 
 #### new ClassB()
 
@@ -1993,47 +2067,47 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="_enum_a_" name="_enum_a_"></a>
+<a id="_enum_a_"></a>
 
 ## \\_Enum\\_A\\_
 
 ***
 
-<a id="enumb" name="enumb"></a>
+<a id="enumb"></a>
 
 ## EnumB
 
 ***
 
-<a id="_type_a_" name="_type_a_"></a>
+<a id="_type_a_"></a>
 
 ## \\_Type\\_A\\_
 
-_DECLARATION_MEMBER_PARTIAL_
+> **\\_Type\\_A\\_**: \`string\`
 
 ***
 
-<a id="typeb" name="typeb"></a>
+<a id="typeb"></a>
 
 ## TypeB
 
-_DECLARATION_MEMBER_PARTIAL_
+> **TypeB**: \`string\`
 
 ***
 
-<a id="_variable_a_" name="_variable_a_"></a>
+<a id="_variable_a_"></a>
 
 ## \\_variable\\_A\\_
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
 ***
 
-<a id="variableb" name="variableb"></a>
+<a id="variableb"></a>
 
 ## variableB
 
-_DECLARATION_MEMBER_PARTIAL_
+> \`const\` **variableB**: \`true\` = \`true\`
 "
 `;
 
@@ -2098,7 +2172,7 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 A module that contains references
 
-<a id="defaultfunction" name="defaultfunction"></a>
+<a id="defaultfunction"></a>
 
 ## defaultFunction()
 
@@ -2106,19 +2180,19 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="default" name="default"></a>
+<a id="default"></a>
 
 ## default
 
 Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
 
-<a id="interfacea" name="interfacea"></a>
+<a id="interfacea"></a>
 
 ## InterfaceA
 
 Re-exports [InterfaceA](basic.md#interfacea)
 
-<a id="renamedinterfaceb" name="renamedinterfaceb"></a>
+<a id="renamedinterfaceb"></a>
 
 ## RenamedInterfaceB
 
@@ -2203,7 +2277,7 @@ A module that contains references
 </tbody>
 </table>
 
-<a id="default" name="default"></a>
+<a id="default"></a>
 
 ## default
 
@@ -2211,7 +2285,7 @@ Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 
 ***
 
-<a id="interfacea" name="interfacea"></a>
+<a id="interfacea"></a>
 
 ## InterfaceA
 
@@ -2219,7 +2293,7 @@ Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 
 ***
 
-<a id="renamedinterfaceb" name="renamedinterfaceb"></a>
+<a id="renamedinterfaceb"></a>
 
 ## RenamedInterfaceB
 

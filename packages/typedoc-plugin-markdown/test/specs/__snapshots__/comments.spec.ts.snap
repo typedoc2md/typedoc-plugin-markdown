@@ -3,14 +3,14 @@
 exports[`Comments should compile @links with anchors: (Output File Strategy "modules") (Option Group "1") 1`] = `
 "- [CommentInterface](README.md#commentinterface) - Links to CommentInterface
 - [Links to CommentInterface.prop](README.md#prop)
-- [\`Links to CommentInterface.propb\`](README.md#propb-1)
+- [\`Links to CommentInterface.propb\`](README.md#propb-3)
 - [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](README.md#_prop_with_underscore_)
-- [CommentEnum.MemberB](README.md#commentenum)
-- [SameName:var](README.md#samename-1)
-- [SameName:interface](README.md#samename)
+- [CommentEnum.MemberB](README.md#memberb)
 - [SameName.prop](README.md#prop-2)
-- [prop:var](README.md#prop-3)
-- [\\_prop\\_with\\_underscore:var](README.md#_prop_with_underscore)"
+- [TypeWithGenerics](README.md#typewithgenericsc-d)
+- [Links to declaration1](README.md#declaration1)
+- NotFound
+"
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
@@ -26,13 +26,10 @@ Links using \`{@link}\` inline tags.
 - [Links to CommentInterface.prop](interfaces/CommentInterface.md#prop)
 - [\`Links to CommentInterface.propb\`](interfaces/CommentInterface.md#propb)
 - [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](interfaces/CommentInterface.md#_prop_with_underscore_)
-- [CommentEnum.MemberB](enumerations/CommentEnum.md)
-- [SameName:var](variables/SameName.md)
-- [SameName:interface](interfaces/SameName.md)
+- [CommentEnum.MemberB](enumerations/CommentEnum.md#memberb)
 - [SameName.prop](interfaces/SameName.md#prop)
-- [prop:var](variables/prop.md)
-- [\\_prop\\_with\\_underscore:var](variables/prop_with_underscore.md)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
+- [Links to declaration1](type-aliases/TypeDeclarationTable.md#declaration1)
 - NotFound
 
 External links:
@@ -243,7 +240,7 @@ exports[`Comments should get tables for emum: (Output File Strategy "members") (
 
 | Enumeration Member | Value | Description | Source |
 | ------ | ------ | ------ | ------ |
-| \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. | [index.ts:1](http://source-url) |
+| <a id="member1"></a> \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -264,7 +261,7 @@ exports[`Comments should get tables for emum: (Output File Strategy "members") (
 <tr>
 <td>
 
-<a id="member1" name="member1"></a> \`member1\`
+<a id="member1"></a> \`member1\`
 
 </td>
 <td>
@@ -323,6 +320,8 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Constructors
 
+<a id="constructors"></a>
+
 ### new ClassPropertiesTable()
 
 > **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](ClassPropertiesTable.md)
@@ -339,12 +338,12 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 | Property | Modifier | Type | Default value | Description | Overrides | Inherited from | Source |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
-| \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
-| \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - | [index.ts:1](http://source-url) |
-| ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).\`propA\` | - | [index.ts:1](http://source-url) |
-| \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).\`propB\` | [index.ts:1](http://source-url) |
-| \`propWithFlag\` | \`public\` | \`string\` | \`undefined\` | **\`Experimental\`** Experimental flag comments | - | - | [index.ts:1](http://source-url) |
+| <a id="prop1"></a> \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
+| <a id="prop2"></a> \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
+| <a id="prop3"></a> \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - | [index.ts:1](http://source-url) |
+| <a id="propa"></a> ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).[\`propA\`](BaseClassProperties.md#propa) | - | [index.ts:1](http://source-url) |
+| <a id="propb"></a> \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).[\`propB\`](BaseClassProperties.md#propb) | [index.ts:1](http://source-url) |
+| <a id="propwithflag"></a> \`propWithFlag\` | \`public\` | \`string\` | \`undefined\` | **\`Experimental\`** Experimental flag comments | - | - | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -357,7 +356,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Constructors
 
-<a id="Constructors" name="Constructors"></a>
+<a id="Constructors"></a>
 
 ### new ClassPropertiesTable()
 
@@ -385,7 +384,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 <tr>
 <td>
 
-<a id="prop1" name="prop1"></a> \`prop1\`
+<a id="prop1"></a> \`prop1\`
 
 </td>
 <td>
@@ -403,7 +402,7 @@ to generate the binary output for input validation.
 <tr>
 <td>
 
-<a id="prop2" name="prop2"></a> \`prop2\`
+<a id="prop2"></a> \`prop2\`
 
 </td>
 <td>
@@ -424,7 +423,7 @@ Below is a breakdown of the notable performances:
 <tr>
 <td>
 
-<a id="prop3" name="prop3"></a> \`prop3?\`
+<a id="prop3"></a> \`prop3?\`
 
 </td>
 <td>
@@ -446,7 +445,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propA" name="propA"></a> ~~\`propA\`~~
+<a id="propA"></a> ~~\`propA\`~~
 
 </td>
 <td>
@@ -463,7 +462,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propB" name="propB"></a> \`propB\`
+<a id="propB"></a> \`propB\`
 
 </td>
 <td>
@@ -480,7 +479,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propWithFlag" name="propWithFlag"></a> \`propWithFlag\`
+<a id="propWithFlag"></a> \`propWithFlag\`
 
 </td>
 <td>
@@ -510,9 +509,9 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 | Name | Type | Description | Source |
 | ------ | ------ | ------ | ------ |
-| \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
-| \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
-| \`declaration4\` | \`100\` | - | [index.ts:1](http://source-url) |
+| <a id="declaration1"></a> \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
+| <a id="declaration2"></a> \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
+| <a id="declaration4"></a> \`declaration4\` | \`100\` | - | [index.ts:1](http://source-url) |
 
 ## Source
 
@@ -529,8 +528,8 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 | Name | Type | Default value | Source |
 | ------ | ------ | ------ | ------ |
-| \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
-| \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
+| <a id="declaration1"></a> \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
+| <a id="declaration2"></a> \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
 
 ## Source
 
@@ -557,7 +556,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 <tr>
 <td>
 
-\`declaration1\`
+<a id="declaration1"></a> \`declaration1\`
 
 </td>
 <td>
@@ -575,7 +574,7 @@ to generate the binary output for input validation.
 <tr>
 <td>
 
-\`declaration2\`
+<a id="declaration2"></a> \`declaration2\`
 
 </td>
 <td>
@@ -593,7 +592,7 @@ to generate the binary output for input validation.
 <tr>
 <td>
 
-\`declaration4\`
+<a id="declaration4"></a> \`declaration4\`
 
 </td>
 <td>
@@ -635,7 +634,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 <tr>
 <td>
 
-\`declaration1\`
+<a id="declaration1"></a> \`declaration1\`
 
 </td>
 <td>
@@ -652,7 +651,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 <tr>
 <td>
 
-\`declaration2\`
+<a id="declaration2"></a> \`declaration2\`
 
 </td>
 <td>
@@ -686,7 +685,7 @@ Variable with block tags summary
 
 | Name | Type | Source |
 | ------ | ------ | ------ |
-| \`x\` | \`string\` | [index.ts:1](http://source-url) |
+| <a id="x"></a> \`x\` | \`string\` | [index.ts:1](http://source-url) |
 
 ## Example
 
@@ -730,7 +729,7 @@ const x = 1;
 <tr>
 <td>
 
-\`x\`
+<a id="x"></a> \`x\`
 
 </td>
 <td>

@@ -14,7 +14,7 @@ export function memberContainer(
     model.url &&
     this.options.getValue('useHTMLAnchors')
   ) {
-    md.push(`<a id="${model.anchor}" name="${model.anchor}"></a>`);
+    md.push(`<a id="${model.anchor}"></a>`);
   }
 
   if (

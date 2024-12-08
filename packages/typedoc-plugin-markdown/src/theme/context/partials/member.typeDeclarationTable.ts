@@ -58,6 +58,12 @@ export function typeDeclarationTable(
   declarations.forEach((declaration: DeclarationReflection) => {
     const row: string[] = [];
 
+    const nameColumn: string[] = [];
+
+    if (this.options.getValue('useHTMLAnchors') && declaration.anchor) {
+      nameColumn.push(`<a id="${declaration.anchor}"></a>`);
+    }
+
     const name: string[] = [declaration.name];
 
     if (declaration.signatures?.length) {
@@ -66,7 +72,9 @@ export function typeDeclarationTable(
 
     const optional = declaration.flags.isOptional ? '?' : '';
 
-    row.push(`${backTicks(name.join(''))}${optional}`);
+    nameColumn.push(`${backTicks(name.join(''))}${optional}`);
+
+    row.push(nameColumn.join(' '));
 
     if (isCompact && declaration.type instanceof ReflectionType) {
       row.push(
