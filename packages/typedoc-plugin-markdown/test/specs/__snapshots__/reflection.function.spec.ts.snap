@@ -210,19 +210,15 @@ Comments for function
 exports[`Function Reflection should compile function returning a promise: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAPromise()
 
-> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`object\`\\>
+> **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{ \`prop\`: \`string\`; \\}\\>
 
 Comments for function
 
 ## Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`object\`\\>
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{ \`prop\`: \`string\`; \\}\\>
 
 Return comments
-
-### prop
-
-> **prop**: \`string\`
 
 ## Source
 
@@ -234,20 +230,20 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 "# Function: functionReturningAPromise()
 
 \`\`\`ts
-function functionReturningAPromise(): Promise<object>
+function functionReturningAPromise(): Promise<{
+  prop: string;
+}>
 \`\`\`
 
 Comments for function
 
 ## Returns
 
-[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`object\`\\>
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{
+  \`prop\`: \`string\`;
+ \\}\\>
 
 Return comments
-
-| Name | Type |
-| :------ | :------ |
-| \`prop\` | \`string\` |
 
 ## Source
 

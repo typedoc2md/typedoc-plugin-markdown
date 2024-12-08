@@ -7,8 +7,8 @@ import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
 export function load(app) {
   app.renderer.on(MarkdownPageEvent.END, (page) => {
     page.contents = page.contents?.replace(
-      /\[([a-zA-Z0-9_]+\.ts):\d+\]/g,
-      '[$1:1]',
+      /\[(?:.*\/)?([a-zA-Z0-9_]+\.ts):\d+\]\(http:\/\/source-url\)/g,
+      '[$1:1](http://source-url)',
     );
   });
 }

@@ -7,12 +7,13 @@ export function typeArguments(
   options?: { forceCollapse?: boolean },
 ): string {
   return `${this.helpers.getAngleBracket('<')}${model
-    .map((typeArgument) =>
-      typeArgument instanceof ReflectionType
-        ? this.partials.reflectionType(typeArgument, {
-            forceCollapse: options?.forceCollapse,
-          })
-        : this.partials.someType(typeArgument),
-    )
+    .map((typeArgument) => {
+      if (typeArgument instanceof ReflectionType) {
+        return this.partials.reflectionType(typeArgument, {
+          forceCollapse: options?.forceCollapse,
+        });
+      }
+      return this.partials.someType(typeArgument);
+    })
     .join(', ')}${this.helpers.getAngleBracket('>')}`;
 }

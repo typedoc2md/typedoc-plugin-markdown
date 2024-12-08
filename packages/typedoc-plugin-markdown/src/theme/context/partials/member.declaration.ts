@@ -4,7 +4,6 @@ import {
   ArrayType,
   DeclarationReflection,
   IntersectionType,
-  ReferenceType,
   ReflectionKind,
   ReflectionType,
   UnionType,
@@ -82,20 +81,6 @@ export function declaration(
         }
       }
     });
-  }
-
-  if (model.type instanceof ReferenceType && model.type.typeArguments?.length) {
-    if (model.type.typeArguments[0] instanceof ReflectionType) {
-      if (model.type.typeArguments[0].declaration?.children) {
-        md.push(heading(opts.headingLevel, this.i18n.theme_type_declaration()));
-        md.push(
-          this.partials.typeDeclaration(
-            model.type.typeArguments[0].declaration,
-            { headingLevel: opts.headingLevel },
-          ),
-        );
-      }
-    }
   }
 
   if (model.typeParameters) {

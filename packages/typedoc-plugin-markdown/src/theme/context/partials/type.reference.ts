@@ -24,7 +24,11 @@ export function referenceType(
       );
     }
     if (model.typeArguments && model.typeArguments.length) {
-      reflection.push(this.partials.typeArguments(model.typeArguments));
+      reflection.push(
+        this.partials.typeArguments(model.typeArguments, {
+          forceCollapse: true,
+        }),
+      );
     }
     return reflection.join('');
   }

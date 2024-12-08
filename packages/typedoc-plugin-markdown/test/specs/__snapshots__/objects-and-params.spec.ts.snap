@@ -243,10 +243,6 @@ Comments for function
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{ \`prop\`: \`string\`; \\}\\>
 
 Return comments
-
-### prop
-
-> **prop**: \`string\`
 "
 `;
 
@@ -268,12 +264,6 @@ Comments for function
  \\}\\>
 
 Return comments
-
-### prop
-
-\`\`\`ts
-prop: string;
-\`\`\`
 "
 `;
 
