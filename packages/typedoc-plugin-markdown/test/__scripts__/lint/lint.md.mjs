@@ -1,6 +1,6 @@
 import { consola } from 'consola';
 import { glob } from 'glob';
-import markdownlint from 'markdownlint';
+import { lint } from 'markdownlint/sync';
 
 const timeStart = new Date().getTime();
 
@@ -42,7 +42,7 @@ export async function lintMarkdown() {
       MD052: false,
     },
   };
-  markdownlint(options, (err, result) => {
+  lint(options, (err, result) => {
     const resultString = err || (result || '').toString();
     if (resultString) {
       consola.error('Error linting Markdown' + '\n' + resultString + '\n');
