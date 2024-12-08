@@ -335,7 +335,7 @@ export const useCodeBlocks: Partial<DeclarationOption> = {
 };
 
 /**
- * By default objects inside declarations are collapsed to preserve space and improve readability.
+ * By default when objects have associated documentation, object declarations are collapsed to preserve space and improve readability.
  *
  * This option should be set when a full object representation is preferred.
  *
