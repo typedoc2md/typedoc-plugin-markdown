@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.3.2 (2024-12-08)
+
+### Patch Changes
+
+- Enable `{@link}` resolution on type alias properties ([#732](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/732)).
+- Remove superfluous name attribute when "useHtmlAnchors" is true..
+- Escape characters inside `@link` tags.
+- Fixed spacing around inline object declarations.
+- Always expose type arguments of reference types as per default theme ([#733](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/733)).
+
 ## 4.3.1 (2024-12-01)
 
 ### Patch Changes

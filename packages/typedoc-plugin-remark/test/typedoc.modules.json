@@ -7,5 +7,8 @@
     "remark-github",
     ["remark-toc", { "maxDepth": 3 }],
     "./test/local-plugin.mjs"
-  ]
+  ],
+  "defaultRemarkPlugins": {
+    "mdx": false
+  }
 }

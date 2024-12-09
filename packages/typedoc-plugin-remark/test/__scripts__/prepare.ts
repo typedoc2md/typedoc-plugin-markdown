@@ -14,6 +14,7 @@ const fixtures = [
   { options: 'typedoc.members.json', outDir: 'members' },
   { options: 'typedoc.globals.json', outDir: 'globals' },
   { options: 'typedoc.globals-notoc.json', outDir: 'globals-notoc' },
+  { options: 'typedoc.globals-mdx.json', outDir: 'globals-mdx' },
 ];
 
 // write fixtures

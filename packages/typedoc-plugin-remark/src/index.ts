@@ -6,9 +6,10 @@
 
 import { Application, DeclarationOption, RendererEvent } from 'typedoc';
 import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
+import { addTableOfContents } from './helpers/add-toc.js';
+import { getDefaultPlugins } from './helpers/get-default-plugins.js';
 import * as options from './options/declarations.js';
-import { addTableOfContents } from './options/helpers.js';
-import { parseContents } from './remark.js';
+import { parse } from './parse.js';
 
 export function load(app: Application) {
   Object.entries(options).forEach(([name, option]) => {
@@ -30,24 +31,27 @@ export function load(app: Application) {
   });
 
   app.renderer.postRenderAsyncJobs.push(async (output: RendererEvent) => {
-    const remarkPlugins = app.options.getValue('remarkPlugins') as any;
+    const defaultPlugins = getDefaultPlugins(
+      app.options.getValue('defaultRemarkPlugins'),
+    );
+    const userPlugins = app.options.getValue('remarkPlugins') as string[];
+    const remarkStringifyOptions = app.options.getValue(
+      'remarkStringifyOptions',
+    );
     if (output.urls?.length) {
       await Promise.all(
         output.urls?.map(async (urlMapping) => {
           const filePath = `${output.outputDirectory}/${urlMapping.url}`;
-          const remarkStringifyOptions = app.options.getValue(
-            'remarkStringifyOptions',
-          );
-          return await parseContents(
+          return await parse(
             filePath,
+            [...defaultPlugins, ...userPlugins],
             remarkStringifyOptions,
-            remarkPlugins,
           );
         }),
       );
-      if (remarkPlugins.length) {
+      if (userPlugins.length) {
         app.logger.info(
-          `Output parsed using remark plugin(s) [${remarkPlugins
+          `Output parsed using remark plugin(s) [${userPlugins
             .map((plugin) => `"${Array.isArray(plugin) ? plugin[0] : plugin}"`)
             .join(', ')}]`,
         );

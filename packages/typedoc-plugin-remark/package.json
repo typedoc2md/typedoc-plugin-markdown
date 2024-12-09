@@ -14,9 +14,8 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
-    "postbuild": "copyfiles --up 1 ./src/**/*.mjs ./dist/",
     "pretest": "tsx ./test/__scripts__/prepare.ts",
-    "test": "node ./lint.mdx.mjs && jest",
+    "test": "jest",
     "test:update": "npm run build && npm run test -- -u"
   },
   "repository": {
@@ -31,7 +30,7 @@
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
-    "remark-mdx": "^3.0.1",
+    "remark-mdx": "^3.1.0",
     "to-vfile": "^8.0.0"
   },
   "peerDependencies": {

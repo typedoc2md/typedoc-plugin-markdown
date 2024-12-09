@@ -2,5 +2,8 @@
   "extends": "./typedoc.base.json",
   "entryPoints": ["./stubs/module-2.ts"],
   "outputFileStrategy": "modules",
-  "remarkPlugins": ["remark-github"]
+  "remarkPlugins": ["remark-github"],
+  "defaultRemarkPlugins": {
+    "mdx": false
+  }
 }

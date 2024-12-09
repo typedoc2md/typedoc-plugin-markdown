@@ -1,10 +1,11 @@
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { Application, DeclarationReflection, ReflectionKind } from 'typedoc';
+import { RemarkPlugin } from '../types/remark-plugin.js';
 
 export function addTableOfContents(
   event: any,
-  remarkPlugins: any[],
+  remarkPlugins: RemarkPlugin[],
   remarkPluginsNames: string[],
-  app: any,
+  app: Application,
 ) {
   const tocPluginIndex = remarkPluginsNames.findIndex(
     (name) => name === 'remark-toc',

@@ -52,4 +52,13 @@ describe(`Remark`, () => {
       .toString();
     expect(contents).toMatchSnapshot();
   });
+
+  test(`should parse mdx`, async () => {
+    const contents = fs
+      .readFileSync(
+        path.join(__dirname, '../out/globals-mdx/functions/some_function.mdx'),
+      )
+      .toString();
+    expect(contents).toMatchSnapshot();
+  });
 });

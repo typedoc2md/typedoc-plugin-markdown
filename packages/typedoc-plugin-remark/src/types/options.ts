@@ -6,7 +6,12 @@
  */
 export interface PluginOptions {
   /**
-   * An array of remark plugin names.
+   * A set of flags that control the enabling or disabling of remark plugins that are loaded by default.
+   */
+  defaultRemarkPlugins: { gfm: boolean; frontmatter: boolean; mdx: boolean };
+
+  /**
+   * An array of remark plugin names to be executed.
    */
   remarkPlugins: any;
 

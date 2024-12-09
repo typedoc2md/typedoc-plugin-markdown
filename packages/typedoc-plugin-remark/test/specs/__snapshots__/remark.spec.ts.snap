@@ -23,6 +23,7 @@ exports[`Remark should parse globals page 1`] = `
 > **some\\_function**(\`param\`): \`void\`
 
 #### Parameters
+
 <table>
 <thead>
 <tr>
@@ -74,6 +75,7 @@ exports[`Remark should parse globals page without toc 1`] = `
 > **some\\_function**(\`param\`): \`void\`
 
 #### Parameters
+
 <table>
 <thead>
 <tr>
@@ -109,6 +111,49 @@ Default text content for \`@category\` tag.
 "
 `;
 
+exports[`Remark should parse mdx 1`] = `
+"---
+title: "test"
+---
+
+# Function: some\\_function()
+
+> **some\\_function**(\`param\`): \`void\`
+
+## Parameters
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        \`param\`
+      </td>
+
+      <td>
+        \`string\`
+      </td>
+
+      <td>
+        Default text content for \`@category\` tag.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Returns
+
+\`void\`
+"
+`;
+
 exports[`Remark should parse members class page 1`] = `
 "---
 title: "test"
@@ -127,6 +172,7 @@ title: "test"
   * [someProp](#someprop)
 
 ## Type Parameters
+
 <table>
 <thead>
 <tr>
@@ -148,11 +194,11 @@ title: "test"
 
 ### new SomeClass()
 
-> **new SomeClass**\\<\`T\`>(): [\`SomeClass\`](SomeClass.md)\\<\`T\`>
+> **new SomeClass**<\`T\`>(): [\`SomeClass\`](SomeClass.md)<\`T\`>
 
 #### Returns
 
-[\`SomeClass\`](SomeClass.md)\\<\`T\`>
+[\`SomeClass\`](SomeClass.md)<\`T\`>
 
 ## Properties
 
@@ -244,6 +290,7 @@ const x = 1
 + list item 1
 
 #### Type Parameters
+
 <table>
 <thead>
 <tr>
@@ -265,11 +312,11 @@ const x = 1
 
 ##### new SomeClass()
 
-> **new SomeClass**\\<\`T\`>(): [\`SomeClass\`](module-1.md#someclasst)\\<\`T\`>
+> **new SomeClass**<\`T\`>(): [\`SomeClass\`](module-1.md#someclasst)<\`T\`>
 
 ###### Returns
 
-[\`SomeClass\`](module-1.md#someclasst)\\<\`T\`>
+[\`SomeClass\`](module-1.md#someclasst)<\`T\`>
 
 #### Properties
 
@@ -282,6 +329,7 @@ const x = 1
 ### SomeInterface\\<T>
 
 #### Type Parameters
+
 <table>
 <thead>
 <tr>
@@ -307,7 +355,7 @@ const x = 1
 
 ##### somePromise
 
-> **somePromise**: \`Promise\`\\<\`T\`>
+> **somePromise**: \`Promise\`<\`T\`>
 
 ##### someProp
 
@@ -320,6 +368,7 @@ const x = 1
 > **some\\_function**(\`param\`): \`void\`
 
 #### Parameters
+
 <table>
 <thead>
 <tr>

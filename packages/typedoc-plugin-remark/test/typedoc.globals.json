@@ -5,5 +5,8 @@
   "remarkPlugins": [
     "remark-github",
     ["remark-toc", { "maxDepth": 3, "heading": "CustomTOC" }]
-  ]
+  ],
+  "defaultRemarkPlugins": {
+    "mdx": false
+  }
 }
