@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+### Minor Changes
+
+- Exposed "defaultRemarkPlugins" option to configure which remark plugins are loaded by default ([#735](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/735)).
+
 ## 1.1.1 (2024-12-03)
 
 ### Patch Changes
