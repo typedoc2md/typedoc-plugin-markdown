@@ -13,8 +13,8 @@
  * - {@link CommentEnum.MemberB}
  * - {@link SameName.prop}
  * - {@link TypeWithGenerics}
- * - {@link TypeDeclarationTable#declaration1 | Links to declaration1}
- * - {@link NotFound}
+ * - {@link TypeDeclarationType}
+ * - {@link TypeDeclarationType#declaration1 | Links to declaration1}
  *
  * External links:
  *
@@ -24,7 +24,6 @@
  * Relative Links:
  *
  * - [Relative Document](../../PROJECT_DOC_1.md)
- * - [Relative Link](../../../groups/members/opts-1/index.md)
  *
  * Relative Image Links:
  *
@@ -250,7 +249,7 @@ export interface InterfacePropertiesTable extends BaseInterfaceProperties {
   };
 }
 
-export type TypeDeclarationTable = {
+export type TypeDeclarationType = {
   /**
    * The subroutine recursively parsed the hexadecimal data.
    * to generate the binary output for input validation.
@@ -264,7 +263,7 @@ export type TypeDeclarationTable = {
   declaration4: 100;
 };
 
-export const TypeDeclarationTable = {
+export const TypeDeclarationConst = {
   declaration1: 'declaration3',
   declaration2: 100,
 };

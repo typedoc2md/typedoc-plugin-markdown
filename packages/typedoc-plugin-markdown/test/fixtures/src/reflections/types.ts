@@ -101,6 +101,13 @@ export type ReadonlyMappedType<T> = {
 
 /**
  * Comments for FunctionType
+ *
+ * - Test link resolution for:
+ *
+ * - {@linkcode LiteralType} and uses {@link LiteralType#x}
+ * - {@linkcode BasicInterface} and uses {@link BasicInterface#prop}
+ * - {@linkcode BasicClass} and uses {@link BasicClass#prop}
+ * - {@linkcode BasicEnum} and uses {@link BasicEnum#MemberA}
  */
 export type FunctionType = (name: string, value: unknown) => void;
 

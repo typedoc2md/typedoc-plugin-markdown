@@ -97,7 +97,7 @@ function writeMarkdown(
       '-options',
       path.join(__dirname, '..', 'fixtures', 'typedoc.cjs'),
       '-logLevel',
-      'None',
+      'Warn',
       '-out',
       fullPath,
     ],

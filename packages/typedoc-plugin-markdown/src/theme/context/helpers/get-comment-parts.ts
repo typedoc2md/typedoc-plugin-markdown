@@ -53,13 +53,13 @@ export function getCommentParts(
       case 'relative-link':
         switch (typeof part.target) {
           case 'number': {
-            const refl = this.page.project.files.resolve(
+            const reflection = this.page.project.files.resolve(
               part.target,
               this.page.model.project,
             );
             let url: string | undefined;
-            if (typeof refl === 'object' && refl.url) {
-              url = this.getRelativeUrl(refl.url);
+            if (typeof reflection === 'object' && reflection.url) {
+              url = this.getRelativeUrl(reflection.url);
             } else {
               const fileName = this.page.project.files.getName(part.target);
               if (fileName) {

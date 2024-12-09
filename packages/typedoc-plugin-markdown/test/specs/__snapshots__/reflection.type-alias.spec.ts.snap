@@ -349,6 +349,13 @@ exports[`Type Alias Reflection should compile function type: (Output File Strate
 
 Comments for FunctionType
 
+- Test link resolution for:
+
+- [\`LiteralType\`](LiteralType.md) and uses [LiteralType#x](LiteralType.md#x)
+- [\`BasicInterface\`](../interfaces/BasicInterface.md) and uses [BasicInterface#prop](../interfaces/BasicInterface.md#prop)
+- [\`BasicClass\`](../classes/BasicClass.md) and uses [BasicClass#prop](../classes/BasicClass.md#prop)
+- [\`BasicEnum\`](../enumerations/BasicEnum.md) and uses [BasicEnum#MemberA](../enumerations/BasicEnum.md#membera)
+
 ## Parameters
 
 ### name
@@ -377,6 +384,13 @@ type FunctionType: (name: string, value: unknown) => void;
 \`\`\`
 
 Comments for FunctionType
+
+- Test link resolution for:
+
+- [\`LiteralType\`](LiteralType.md) and uses [LiteralType#x](LiteralType.md)
+- [\`BasicInterface\`](../interfaces/BasicInterface.md) and uses [BasicInterface#prop](../interfaces/BasicInterface.md)
+- [\`BasicClass\`](../classes/BasicClass.md) and uses [BasicClass#prop](../classes/BasicClass.md)
+- [\`BasicEnum\`](../enumerations/BasicEnum.md) and uses [BasicEnum#MemberA](../enumerations/BasicEnum.md)
 
 ## Parameters
 

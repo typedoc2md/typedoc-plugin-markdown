@@ -50,16 +50,16 @@ describe(`Comments`, () => {
 
   test(`should get tables for type declarations`, () => {
     expectFileToEqual('comments', 'members', [
-      '/type-aliases/TypeDeclarationTable.md',
-      '/TypeAlias.TypeDeclarationTable.md',
+      '/type-aliases/TypeDeclarationType.md',
+      '/TypeAlias.TypeDeclarationType.md',
     ]);
     expectFileToEqual('comments', 'members', [
-      '/variables/TypeDeclarationTable.md',
-      '/Variable.TypeDeclarationTable.md',
+      '/variables/TypeDeclarationConst.md',
+      '/Variable.TypeDeclarationConst.md',
     ]);
   });
 
-  test(`should get tables for emum`, () => {
+  test(`should get tables for enum`, () => {
     expectFileToEqual('comments', 'members', [
       '/enumerations/EnumMembersTable.md',
       '/Enumeration.EnumMembersTable.md',

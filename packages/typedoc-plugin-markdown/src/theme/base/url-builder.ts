@@ -542,18 +542,19 @@ export class UrlBuilder {
         anchorParts.unshift(`${anchorPrefix}`);
       }
 
-      reflection.url = containerUrl + '#' + anchorParts.join('');
+      reflection.url =
+        reflection.kind === ReflectionKind.TypeLiteral
+          ? containerUrl
+          : containerUrl + '#' + anchorParts.join('');
       reflection.anchor = anchorParts.join('');
       reflection.hasOwnDocument = false;
-
-      if (
-        this.options.getValue('outputFileStrategy') ===
-        OutputFileStrategy.Members
-      ) {
-        reflection.traverse((child) => {
-          this.applyAnchorUrl(child as DeclarationReflection, containerUrl);
-        });
-      }
+    }
+    if (
+      this.options.getValue('outputFileStrategy') === OutputFileStrategy.Members
+    ) {
+      reflection.traverse((child) => {
+        this.applyAnchorUrl(child as DeclarationReflection, containerUrl);
+      });
     }
   }
 
@@ -578,21 +579,33 @@ export class UrlBuilder {
     if (!htmlTableAnchors) {
       if (
         (reflection.kind === ReflectionKind.Property &&
-          this.options.getValue('propertiesFormat').toLowerCase() ===
-            'table') ||
+          this.options
+            .getValue('propertiesFormat')
+            .toLowerCase()
+            .includes('table')) ||
         (reflection.kind === ReflectionKind.Property &&
-          this.options.getValue('typeDeclarationFormat').toLowerCase() ===
-            'table') ||
+          reflection.parent?.kind === ReflectionKind.TypeLiteral &&
+          this.options
+            .getValue('typeDeclarationFormat')
+            .toLowerCase()
+            .includes('table')) ||
         (reflection.kind === ReflectionKind.Property &&
           reflection.parent?.kind === ReflectionKind.Class &&
-          this.options.getValue('classPropertiesFormat').toLowerCase() ===
-            'table') ||
+          this.options
+            .getValue('classPropertiesFormat')
+            .toLowerCase()
+            .includes('table')) ||
         (reflection.kind === ReflectionKind.Property &&
           reflection.parent?.kind === ReflectionKind.Interface &&
-          this.options.getValue('interfacePropertiesFormat').toLowerCase() ===
-            'table') ||
+          this.options
+            .getValue('interfacePropertiesFormat')
+            .toLowerCase()
+            .includes('table')) ||
         (reflection.kind === ReflectionKind.EnumMember &&
-          this.options.getValue('enumMembersFormat').toLowerCase() === 'table')
+          this.options
+            .getValue('enumMembersFormat')
+            .toLowerCase()
+            .includes('table'))
       ) {
         return null;
       }

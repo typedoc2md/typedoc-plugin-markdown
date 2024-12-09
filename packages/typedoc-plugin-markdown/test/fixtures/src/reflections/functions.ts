@@ -191,7 +191,7 @@ export function functionReturningAPromise(): Promise<{
   });
 }
 
-const foo = {
+const someConst = {
   /**
    * a comments
    */
@@ -202,7 +202,7 @@ const foo = {
   b: '',
 };
 
-type Foo = typeof foo;
+type SomeType = typeof someConst;
 
 export function functionWithUnionParams(
   /**
@@ -227,7 +227,7 @@ export function functionWithUnionParams(
    */
   mixedUnions:
     | string
-    | Foo
+    | SomeType
     | number
     | {
         /**

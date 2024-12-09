@@ -15,7 +15,7 @@
     "prebuild": "rm -rf dist && prebuild-options && tsx ./.scripts/prebuild",
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run fixtures",
-    "fixtures": "node test/__scripts__/build-fixtures.mjs -c test/fixtures/config.mjs",
+    "fixtures": "rm -rf ./test/fixtures/out && node test/__scripts__/build-fixtures.mjs -c test/fixtures/config.mjs",
     "validate": "node test/__scripts__/lint/lint.md.mjs && tsx test/__scripts__/lint/lint.mdx.mjs",
     "pretest": "npm run fixtures -- -isCI",
     "test": "npm run validate && jest",

@@ -8,8 +8,8 @@ exports[`Comments should compile @links with anchors: (Output File Strategy "mod
 - [CommentEnum.MemberB](README.md#memberb)
 - [SameName.prop](README.md#prop-2)
 - [TypeWithGenerics](README.md#typewithgenericsc-d)
+- [TypeDeclarationType](README.md#typedeclarationtype)
 - [Links to declaration1](README.md#declaration1)
-- NotFound
 "
 `;
 
@@ -29,8 +29,8 @@ Links using \`{@link}\` inline tags.
 - [CommentEnum.MemberB](enumerations/CommentEnum.md#memberb)
 - [SameName.prop](interfaces/SameName.md#prop)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
-- [Links to declaration1](type-aliases/TypeDeclarationTable.md#declaration1)
-- NotFound
+- [TypeDeclarationType](type-aliases/TypeDeclarationType.md)
+- [Links to declaration1](type-aliases/TypeDeclarationType.md#declaration1)
 
 External links:
 
@@ -40,7 +40,6 @@ External links:
 Relative Links:
 
 - [Relative Document](_media/PROJECT_DOC_1.md)
-- [Relative Link](../../../groups/members/opts-1/index.md)
 
 Relative Image Links:
 
@@ -104,7 +103,7 @@ Some <p> html </p> inside codeblock
 
 ## Type Aliases
 
-- [TypeDeclarationTable](type-aliases/TypeDeclarationTable.md)
+- [TypeDeclarationType](type-aliases/TypeDeclarationType.md)
 - [typeWithBlockTags](type-aliases/typeWithBlockTags.md)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 
@@ -114,7 +113,7 @@ Some <p> html </p> inside codeblock
 - [prop](variables/prop.md)
 - [propb](variables/propb.md)
 - [SameName](variables/SameName.md)
-- [TypeDeclarationTable](variables/TypeDeclarationTable.md)
+- [TypeDeclarationConst](variables/TypeDeclarationConst.md)
 
 ## Functions
 
@@ -233,7 +232,7 @@ Other block tags
 "
 `;
 
-exports[`Comments should get tables for emum: (Output File Strategy "members") (Option Group "1") 1`] = `
+exports[`Comments should get tables for enum: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Enumeration: EnumMembersTable
 
 ## Enumeration Members
@@ -244,7 +243,7 @@ exports[`Comments should get tables for emum: (Output File Strategy "members") (
 "
 `;
 
-exports[`Comments should get tables for emum: (Output File Strategy "members") (Option Group "2") 1`] = `
+exports[`Comments should get tables for enum: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Enumeration: EnumMembersTable
 
 ## Enumeration Members
@@ -501,9 +500,9 @@ Experimental flag comments
 `;
 
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Type Alias: TypeDeclarationTable
+"# Type Alias: TypeDeclarationType
 
-> **TypeDeclarationTable**: \`object\`
+> **TypeDeclarationType**: \`object\`
 
 ## Type declaration
 
@@ -520,9 +519,9 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 `;
 
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "1") 2`] = `
-"# Variable: TypeDeclarationTable
+"# Variable: TypeDeclarationConst
 
-> **TypeDeclarationTable**: \`object\`
+> \`const\` **TypeDeclarationConst**: \`object\`
 
 ## Type declaration
 
@@ -538,9 +537,9 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 `;
 
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# Type Alias: TypeDeclarationTable
+"# Type Alias: TypeDeclarationType
 
-> **TypeDeclarationTable**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration4\`: \`100\`; \\}
+> **TypeDeclarationType**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration4\`: \`100\`; \\}
 
 ## Type declaration
 
@@ -616,9 +615,9 @@ to generate the binary output for input validation.
 `;
 
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 2`] = `
-"# Variable: TypeDeclarationTable
+"# Variable: TypeDeclarationConst
 
-> **TypeDeclarationTable**: \\{ \`declaration1\`: \`string\`; \`declaration2\`: \`number\`; \\}
+> \`const\` **TypeDeclarationConst**: \\{ \`declaration1\`: \`string\`; \`declaration2\`: \`number\`; \\}
 
 ## Type declaration
 
