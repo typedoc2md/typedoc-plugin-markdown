@@ -59,3 +59,5 @@ export function load(app: Application) {
     }
   });
 }
+
+export { PluginOptions } from './types/options.js';

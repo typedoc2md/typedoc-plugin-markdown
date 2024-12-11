@@ -4,6 +4,6 @@ declare module 'typedoc' {
   export interface TypeDocOptionMap {
     defaultRemarkPlugins: { gfm: boolean; frontmatter: boolean; mdx: boolean };
     remarkPlugins: ManuallyValidatedOption<Partial<any>>;
-    remarkStringifyOptions: ManuallyValidatedOption<Partial<any>>;
+    remarkStringifyOptions: ManuallyValidatedOption<Record<string, any>>;
   }
 }

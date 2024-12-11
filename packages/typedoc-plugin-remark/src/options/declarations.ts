@@ -15,7 +15,9 @@ export const remarkPlugins: Partial<DeclarationOption> = {
   defaultValue: [],
   validate(value) {
     if (!Array.isArray(value)) {
-      throw new Error('remarkPlugins must be an array.');
+      throw new Error(
+        '[typedoc-plugin-remark] remarkPlugins must be an array.',
+      );
     }
   },
 };
@@ -48,6 +50,13 @@ export const defaultRemarkPlugins: Partial<DeclarationOption> = {
  */
 export const remarkStringifyOptions: Partial<DeclarationOption> = {
   help: 'Custom options for the remark-stringify plugin.',
-  type: ParameterType.Mixed,
+  type: ParameterType.Object,
   defaultValue: {},
+  validate(value) {
+    if (typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-remark] remarkStringifyOptions must be an object.',
+      );
+    }
+  },
 };

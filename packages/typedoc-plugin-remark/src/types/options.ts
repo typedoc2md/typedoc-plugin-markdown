@@ -18,5 +18,5 @@ export interface PluginOptions {
   /**
    * Custom options for the remark-stringify plugin.
    */
-  remarkStringifyOptions: any;
+  remarkStringifyOptions: Record<string, any>;
 }
