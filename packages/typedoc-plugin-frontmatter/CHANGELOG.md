@@ -8,9 +8,7 @@
 
 ## 1.1.1 (2024-12-11)
 
-### Patch Changes
-
-- Export PluginOptions for external use ([#737](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/737))
+- Empty release due to unintended publication.
 
 ## 1.1.0 (2024-11-27)
 
