@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+### Patch Changes
+
+- Export PluginOptions for external use ([#737](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/737))
+
 ## 1.2.0 (2024-12-09)
 
 ### Minor Changes
