@@ -10,8 +10,8 @@ consola.start(`Building test fixtures...`);
 fs.removeSync(`./test/out`);
 
 const fixtures = [
-  { options: 'typedoc-options.json', outDir: 'options' },
-  { options: 'typedoc-options-2.json', outDir: 'options-2' },
+  { options: 'typedoc-options.cjs', outDir: 'options' },
+  { options: 'typedoc-options-2.cjs', outDir: 'options-2' },
   { options: 'typedoc-base.json', outDir: 'no-data' },
 ];
 

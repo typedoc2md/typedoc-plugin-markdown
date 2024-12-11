@@ -14,8 +14,15 @@ import { FrontmatterNamingConvention } from './maps.js';
  */
 export const frontmatterGlobals: Partial<DeclarationOption> = {
   help: 'Specify static variables to be added to all frontmatter blocks.',
-  type: ParameterType.Mixed,
+  type: ParameterType.Object,
   defaultValue: {},
+  validate(value) {
+    if (typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-frontmatter] frontmatterGlobals must be an object.',
+      );
+    }
+  },
 };
 
 /**
@@ -23,8 +30,15 @@ export const frontmatterGlobals: Partial<DeclarationOption> = {
  */
 export const readmeFrontmatter: Partial<DeclarationOption> = {
   help: 'Specify static variables to be added to the readme page only.',
-  type: ParameterType.Mixed,
+  type: ParameterType.Object,
   defaultValue: {},
+  validate(value) {
+    if (typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-frontmatter] readmeFrontmatter must be an object.',
+      );
+    }
+  },
 };
 
 /**
@@ -32,8 +46,15 @@ export const readmeFrontmatter: Partial<DeclarationOption> = {
  */
 export const indexFrontmatter: Partial<DeclarationOption> = {
   help: 'Specify static variables to be added to the index page only.',
-  type: ParameterType.Mixed,
+  type: ParameterType.Object,
   defaultValue: {},
+  validate(value) {
+    if (typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-frontmatter] indexFrontmatter must be an object.',
+      );
+    }
+  },
 };
 
 /**

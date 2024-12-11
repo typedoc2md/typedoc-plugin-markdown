@@ -28,10 +28,7 @@ export function load(app: MarkdownApplication) {
   app.renderer.on(MarkdownPageEvent.BEGIN, (page) => {
     const entryFileName = app.options.getValue('entryFileName') as any;
 
-    const frontmatterGlobals = app.options.getValue(
-      'frontmatterGlobals',
-    ) as any;
-
+    const frontmatterGlobals = app.options.getValue('frontmatterGlobals');
     const readmeFrontmatter = app.options.getValue('readmeFrontmatter');
     const indexFrontmatter = app.options.getValue('indexFrontmatter');
     const resolvedFrontmatterTags = getResolvedTags(app, page.model?.comment);

@@ -236,9 +236,13 @@ function getType(
       .join(' | ')}`;
   }
   if (option.type === ParameterType.Object) {
-    const outType = `{${Object.keys(option.defaultValue as any)
-      .map((key) => `'${key}': ${getObjectType(name)};`)
-      .join('')}}`;
+    const outType =
+      typeof option.defaultValue === 'object' &&
+      Object.keys(option.defaultValue as object).length === 0
+        ? 'Record<string, any>'
+        : `{${Object.keys(option.defaultValue as any)
+            .map((key) => `'${key}': ${getObjectType(name)};`)
+            .join('')}}`;
     return isInterface ? outType : `ManuallyValidatedOption<${outType}>`;
   }
   return 'any';

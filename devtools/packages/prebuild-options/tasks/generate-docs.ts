@@ -302,7 +302,10 @@ function getType(option: any) {
     return 'Accepts an Array.';
   }
 
-  if (option.type === ParameterType.Mixed && option.defaultValue) {
+  if (
+    [ParameterType.Mixed, ParameterType.Object].includes(option.type) &&
+    option.defaultValue
+  ) {
     return Array.isArray(option.defaultValue)
       ? 'Accepts an Array.'
       : 'Accepts a key/value object.';

@@ -13,7 +13,7 @@ export interface PluginOptions {
   /**
    * Specify static variables to be added to all frontmatter blocks.
    */
-  frontmatterGlobals: FrontmatterGlobals;
+  frontmatterGlobals: Record<string, any>;
 
   /**
    * The naming convention that variables should be output as.
@@ -23,7 +23,7 @@ export interface PluginOptions {
   /**
    * Specify static variables to be added to the index page only.
    */
-  indexFrontmatter: IndexFrontmatter;
+  indexFrontmatter: Record<string, any>;
 
   /**
    * Preserve tags defined in frontmatter block tags in output.
@@ -33,20 +33,5 @@ export interface PluginOptions {
   /**
    * Specify static variables to be added to the readme page only.
    */
-  readmeFrontmatter: ReadmeFrontmatter;
+  readmeFrontmatter: Record<string, any>;
 }
-
-/**
- *
- */
-export interface FrontmatterGlobals {}
-
-/**
- *
- */
-export interface IndexFrontmatter {}
-
-/**
- *
- */
-export interface ReadmeFrontmatter {}
