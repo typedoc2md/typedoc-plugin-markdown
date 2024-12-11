@@ -67,3 +67,5 @@ export function load(app: MarkdownApplication) {
     },
   );
 }
+
+export { PluginOptions } from './types/options.js';
