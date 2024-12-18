@@ -1330,20 +1330,26 @@ exports[`Function Reflection should compile function with union params: (Output 
 \`\`\`ts
 function functionWithUnionParams(
    primitiveUnions: string | number, 
-   objectUnions: {
+   objectUnions: 
+  | {
   a: string;
   b: 1;
- } | {
+ }
+  | {
   a: number;
   b: 1;
   c: {
      x: string;
     };
  }, 
-   mixedUnions: string | number | {
+   mixedUnions: 
+  | string
+  | number
+  | {
   a: string;
   b: string;
- } | {
+ }
+  | {
   a: {
      y: string;
      z: string;
@@ -1357,8 +1363,8 @@ function functionWithUnionParams(
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`primitiveUnions\` | \`string\` \\| \`number\` | Comments for primitiveUnions |
-| \`objectUnions\` | \\{ \`a\`: \`string\`; \`b\`: \`1\`; \\} \\| \\{ \`a\`: \`number\`; \`b\`: \`1\`; \`c\`: \\{ \`x\`: \`string\`; \\}; \\} | Comments for objectUnionsUseful |
-| \`mixedUnions\` | \`string\` \\| \`number\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\} \\| \\{ \`a\`: \\{ \`y\`: \`string\`; \`z\`: \`string\`; \\}; \\} | Comments for mixedUnions |
+| \`objectUnions\` | \\| \\{ \`a\`: \`string\`; \`b\`: \`1\`; \\} \\| \\{ \`a\`: \`number\`; \`b\`: \`1\`; \`c\`: \\{ \`x\`: \`string\`; \\}; \\} | Comments for objectUnionsUseful |
+| \`mixedUnions\` | \\| \`string\` \\| \`number\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\} \\| \\{ \`a\`: \\{ \`y\`: \`string\`; \`z\`: \`string\`; \\}; \\} | Comments for mixedUnions |
 | \`noUnions\` | \`string\` | Comments for noUnions |
 
 ## Returns

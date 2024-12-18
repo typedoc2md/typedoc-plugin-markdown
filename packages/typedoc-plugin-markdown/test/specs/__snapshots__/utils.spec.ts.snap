@@ -168,6 +168,13 @@ const originalDoubleQuote = "hello"
 "
 `;
 
+exports[`Utils should get prettified function: (Output File Strategy "members") (Option Group "1") 2`] = `
+"# Type Alias: SomePrettierTypeAlias
+
+> **SomePrettierTypeAlias**: \`string\` \\| \\{ \`x\`: \`1\`; \\} \\| \`boolean\` \\| \\{ \`y\`: \`2\`; \\}
+"
+`;
+
 exports[`Utils should get prettified function: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Function: some_prettier_function()
 
@@ -199,6 +206,23 @@ const originalDoubleQuote = "hello";
 ## Returns
 
 \`string\`
+"
+`;
+
+exports[`Utils should get prettified function: (Output File Strategy "members") (Option Group "2") 2`] = `
+"# Type Alias: SomePrettierTypeAlias
+
+\`\`\`ts
+type SomePrettierTypeAlias =
+  | string
+  | {
+      x: 1;
+    }
+  | boolean
+  | {
+      y: 2;
+    };
+\`\`\`
 "
 `;
 

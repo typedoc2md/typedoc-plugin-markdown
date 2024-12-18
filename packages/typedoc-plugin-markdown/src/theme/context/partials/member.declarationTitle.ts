@@ -1,7 +1,7 @@
 import { backTicks, bold, codeBlock } from '@plugin/libs/markdown/index.js';
 import { encodeAngleBrackets, escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 export function declarationTitle(
   this: MarkdownThemeContext,
@@ -73,7 +73,9 @@ export function declarationTitle(
   }
 
   if (declarationType) {
-    name.push(': ');
+    const delimiter =
+      useCodeBlocks && model.kind === ReflectionKind.TypeAlias ? ' = ' : ': ';
+    name.push(delimiter);
   }
 
   md.push(name.join(''));

@@ -27,7 +27,7 @@ exports[`Type Alias Reflection should compile array of objects type: (Output Fil
 "# Type Alias: ArrayOfObjectsType
 
 \`\`\`ts
-type ArrayOfObjectsType: object[];
+type ArrayOfObjectsType = object[];
 \`\`\`
 
 ## Type declaration
@@ -60,7 +60,7 @@ exports[`Type Alias Reflection should compile array type: (Output File Strategy 
 "# Type Alias: ArrayType
 
 \`\`\`ts
-type ArrayType: string[];
+type ArrayType = string[];
 \`\`\`
 
 Comments for ArrayType
@@ -92,7 +92,7 @@ exports[`Type Alias Reflection should compile conditional type: (Output File Str
 "# Type Alias: ConditionalType\\<T\\>
 
 \`\`\`ts
-type ConditionalType<T>: T extends string ? "string" : T extends number ? "number" : T extends boolean ? "boolean" : T extends undefined ? "undefined" : "object";
+type ConditionalType<T> = T extends string ? "string" : T extends number ? "number" : T extends boolean ? "boolean" : T extends undefined ? "undefined" : "object";
 \`\`\`
 
 Comments for ConditionalType
@@ -126,7 +126,7 @@ exports[`Type Alias Reflection should compile external link symbol type: (Output
 "# Type Alias: TypeWithExternalSymbolLinkMapping
 
 \`\`\`ts
-type TypeWithExternalSymbolLinkMapping: Application;
+type TypeWithExternalSymbolLinkMapping = Application;
 \`\`\`
 
 Comments for TypeWithExternalSymbolLinkMapping
@@ -286,7 +286,7 @@ exports[`Type Alias Reflection should compile external literal type: (Output Fil
 "# Type Alias: LiteralType
 
 \`\`\`ts
-type LiteralType: object;
+type LiteralType = object;
 \`\`\`
 
 Comments for LiteralType
@@ -331,7 +331,7 @@ exports[`Type Alias Reflection should compile external reference type: (Output F
 "# Type Alias: ExternalReferenceType
 
 \`\`\`ts
-type ExternalReferenceType: ClassWithTypeParameters<"x", "y">;
+type ExternalReferenceType = ClassWithTypeParameters<"x", "y">;
 \`\`\`
 
 Comments for ExternalReferenceType
@@ -380,7 +380,7 @@ exports[`Type Alias Reflection should compile function type: (Output File Strate
 "# Type Alias: FunctionType()
 
 \`\`\`ts
-type FunctionType: (name: string, value: unknown) => void;
+type FunctionType = (name: string, value: unknown) => void;
 \`\`\`
 
 Comments for FunctionType
@@ -426,7 +426,7 @@ exports[`Type Alias Reflection should compile index access type: (Output File St
 "# Type Alias: IndexAccessType
 
 \`\`\`ts
-type IndexAccessType: ArrayOfObjectsType[number];
+type IndexAccessType = ArrayOfObjectsType[number];
 \`\`\`
 
 Comments for IndexAccessType
@@ -460,7 +460,7 @@ exports[`Type Alias Reflection should compile intersection type: (Output File St
 "# Type Alias: IntersectionType
 
 \`\`\`ts
-type IntersectionType: TupleType & ArrayType & object;
+type IntersectionType = TupleType & ArrayType & object;
 \`\`\`
 
 Comments for IntersectionType
@@ -498,7 +498,7 @@ exports[`Type Alias Reflection should compile partial mapped type: (Output File 
 "# Type Alias: PartialMappedType\\<T\\>
 
 \`\`\`ts
-type PartialMappedType<T>: { [P in keyof T]?: T[P] };
+type PartialMappedType<T> = { [P in keyof T]?: T[P] };
 \`\`\`
 
 Comments for PartialMappedType
@@ -532,7 +532,7 @@ exports[`Type Alias Reflection should compile primitive type: (Output File Strat
 "# Type Alias: PrimitiveType
 
 \`\`\`ts
-type PrimitiveType: boolean;
+type PrimitiveType = boolean;
 \`\`\`
 
 Comments for PrimitiveType
@@ -560,7 +560,7 @@ exports[`Type Alias Reflection should compile query type: (Output File Strategy 
 "# Type Alias: QueryType
 
 \`\`\`ts
-type QueryType: typeof someQuery;
+type QueryType = typeof someQuery;
 \`\`\`
 
 Comments for query type
@@ -592,7 +592,7 @@ exports[`Type Alias Reflection should compile readonly mapped type: (Output File
 "# Type Alias: ReadonlyMappedType\\<T\\>
 
 \`\`\`ts
-type ReadonlyMappedType<T>: { readonly [P in keyof T]: T[P] };
+type ReadonlyMappedType<T> = { readonly [P in keyof T]: T[P] };
 \`\`\`
 
 Comments for ReadonlyMapedType
@@ -626,7 +626,7 @@ exports[`Type Alias Reflection should compile string literal type: (Output File 
 "# Type Alias: StringLiteralType
 
 \`\`\`ts
-type StringLiteralType: 
+type StringLiteralType = 
   | " "
   | "string"
   | "string|with|pipes"
@@ -660,7 +660,7 @@ exports[`Type Alias Reflection should compile string tuple type: (Output File St
 "# Type Alias: TupleType
 
 \`\`\`ts
-type TupleType: [string, number];
+type TupleType = [string, number];
 \`\`\`
 
 Comments for TupleType
@@ -694,7 +694,7 @@ exports[`Type Alias Reflection should compile type parameter type: (Output File 
 "# Type Alias: TypeWithTypeParams\\<T, R\\>
 
 \`\`\`ts
-type TypeWithTypeParams<T, R>: [T, R];
+type TypeWithTypeParams<T, R> = [T, R];
 \`\`\`
 
 Comments for TypeWithTypeParams
@@ -733,7 +733,7 @@ exports[`Type Alias Reflection should compile type with returns: (Output File St
 "# Type Alias: TypeWithReturns
 
 \`\`\`ts
-type TypeWithReturns: string;
+type TypeWithReturns = string;
 \`\`\`
 
 Comments for TypeWithReturns
@@ -765,7 +765,10 @@ exports[`Type Alias Reflection should compile union type with template strings: 
 "# Type Alias: UnionTypeWithTemplateStrings
 
 \`\`\`ts
-type UnionTypeWithTemplateStrings: \`v\${number}\` | \`v\${number}.\${number}\` | \`v\${number}.\${number}.\${number}\`;
+type UnionTypeWithTemplateStrings = 
+  | \`v\${number}\`
+  | \`v\${number}.\${number}\`
+  | \`v\${number}.\${number}.\${number}\`;
 \`\`\`
 
 Union with template strings
@@ -793,7 +796,10 @@ exports[`Type Alias Reflection should compile union type: (Output File Strategy 
 "# Type Alias: UnionType
 
 \`\`\`ts
-type UnionType: string | boolean | {
+type UnionType = 
+  | string
+  | boolean
+  | {
   z: string;
 };
 \`\`\`
@@ -837,7 +843,10 @@ exports[`Type Alias Reflection should compile useful union type: (Output File St
 "# Type Alias: UsefulUnionType
 
 \`\`\`ts
-type UsefulUnionType: string | boolean | {
+type UsefulUnionType = 
+  | string
+  | boolean
+  | {
   z: string;
 };
 \`\`\`

@@ -20,4 +20,12 @@ describe(`Utils`, () => {
       'functions/some_prettier_function.md',
     );
   });
+
+  test(`should get prettified function`, () => {
+    expectFileToEqual(
+      'utils',
+      'members',
+      'type-aliases/SomePrettierTypeAlias.md',
+    );
+  });
 });

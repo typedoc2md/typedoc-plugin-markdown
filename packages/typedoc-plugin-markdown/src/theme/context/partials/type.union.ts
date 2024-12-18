@@ -6,11 +6,12 @@ export function unionType(
   model: UnionType,
 ): string {
   const useCodeBlocks = this.options.getValue('useCodeBlocks');
-  const shouldFormat = useCodeBlocks && model.types.length > 4;
-  const md = model.types
-    .map((unionType) =>
-      this.partials.someType(unionType, { forceCollapse: true }),
-    )
-    .join(shouldFormat ? `\n  \\| ` : ` \\| `);
+  const typesOut = model.types.map((unionType) =>
+    this.partials.someType(unionType, { forceCollapse: true }),
+  );
+  const shouldFormat =
+    useCodeBlocks &&
+    (typesOut?.join('').length > 70 || typesOut?.join('').includes('\n'));
+  const md = typesOut.join(shouldFormat ? `\n  \\| ` : ` \\| `);
   return shouldFormat ? `\n  \\| ` + md : md;
 }

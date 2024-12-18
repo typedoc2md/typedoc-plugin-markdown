@@ -482,7 +482,7 @@ exports[`Objects And Params should compile intersection type: (Output File Strat
 "# Type Alias: IntersectionType
 
 \`\`\`ts
-type IntersectionType: TupleType & ArrayType & {
+type IntersectionType = TupleType & ArrayType & {
   bar: number;
 };
 \`\`\`
@@ -644,7 +644,7 @@ exports[`Objects And Params should compile literal type: (Output File Strategy "
 "# Type Alias: LiteralType
 
 \`\`\`ts
-type LiteralType: {
+type LiteralType = {
   someFunctionWithArrow: () => string;
   x: string;
   y: {
@@ -826,7 +826,10 @@ exports[`Objects And Params should compile union type: (Output File Strategy "me
 "# Type Alias: UnionType
 
 \`\`\`ts
-type UnionType: string | boolean | {
+type UnionType = 
+  | string
+  | boolean
+  | {
   z: string;
 };
 \`\`\`
