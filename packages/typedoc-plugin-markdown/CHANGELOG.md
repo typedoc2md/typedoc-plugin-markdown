@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.3.3
+## 4.3.3 (2024-12-18)
 
 ### Patch Changes
 
