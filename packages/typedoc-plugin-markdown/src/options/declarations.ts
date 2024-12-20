@@ -730,6 +730,7 @@ export const textContentMappings: Partial<DeclarationOption> = {
  * pageTitleTemplates: {
  *  index: (args) => `${args.projectName}: ${args.version}`,
  *  module: (args) => args.name,
+ *  category: (args) => args.name`,
  *  member: (args) => `${args.kind}: ${args.name}`,
  * }
  * ```

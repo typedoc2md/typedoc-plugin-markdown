@@ -30,7 +30,7 @@ Links using \`{@link}\` inline tags.
 - [SameName.prop](interfaces/SameName.md#prop)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 - [TypeDeclarationType](type-aliases/TypeDeclarationType.md)
-- [Links to declaration1](type-aliases/TypeDeclarationType.md#declaration1)
+- Links to declaration1
 
 External links:
 
@@ -508,9 +508,9 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 | Name | Type | Description | Source |
 | ------ | ------ | ------ | ------ |
-| <a id="declaration1"></a> \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
-| <a id="declaration2"></a> \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
-| <a id="declaration4"></a> \`declaration4\` | \`100\` | - | [index.ts:1](http://source-url) |
+| \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
+| \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
+| \`declaration4\` | \`100\` | - | [index.ts:1](http://source-url) |
 
 ## Source
 
@@ -527,8 +527,8 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 | Name | Type | Default value | Source |
 | ------ | ------ | ------ | ------ |
-| <a id="declaration1"></a> \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
-| <a id="declaration2"></a> \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
+| \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
+| \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
 
 ## Source
 
@@ -555,7 +555,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 <tr>
 <td>
 
-<a id="declaration1"></a> \`declaration1\`
+\`declaration1\`
 
 </td>
 <td>
@@ -573,7 +573,7 @@ to generate the binary output for input validation.
 <tr>
 <td>
 
-<a id="declaration2"></a> \`declaration2\`
+\`declaration2\`
 
 </td>
 <td>
@@ -591,7 +591,7 @@ to generate the binary output for input validation.
 <tr>
 <td>
 
-<a id="declaration4"></a> \`declaration4\`
+\`declaration4\`
 
 </td>
 <td>
@@ -633,7 +633,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 <tr>
 <td>
 
-<a id="declaration1"></a> \`declaration1\`
+\`declaration1\`
 
 </td>
 <td>
@@ -650,7 +650,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 <tr>
 <td>
 
-<a id="declaration2"></a> \`declaration2\`
+\`declaration2\`
 
 </td>
 <td>
@@ -684,7 +684,7 @@ Variable with block tags summary
 
 | Name | Type | Source |
 | ------ | ------ | ------ |
-| <a id="x"></a> \`x\` | \`string\` | [index.ts:1](http://source-url) |
+| \`x\` | \`string\` | [index.ts:1](http://source-url) |
 
 ## Example
 
@@ -728,7 +728,7 @@ const x = 1;
 <tr>
 <td>
 
-<a id="x"></a> \`x\`
+\`x\`
 
 </td>
 <td>

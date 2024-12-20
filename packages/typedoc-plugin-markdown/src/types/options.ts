@@ -134,7 +134,7 @@ export interface PluginOptions {
   /**
    * Determines how output files are generated.
    */
-  outputFileStrategy: 'members' | 'modules';
+  outputFileStrategy: 'categories' | 'members' | 'modules';
 
   /**
    * Change specific text placeholders in the template.

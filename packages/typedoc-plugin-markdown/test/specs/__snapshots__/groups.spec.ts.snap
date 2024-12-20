@@ -240,7 +240,7 @@ EnumA function.
 
 TypeA function.
 
-[TypeB#propB](type-aliases/TypeB.md#propb)
+TypeB#propB
 
 </td>
 </tr>
@@ -424,9 +424,45 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-<a id="functiona"></a>
+<a id="enuma"></a>
 
-## functionA()
+## EnumA
+
+EnumA function.
+
+***
+
+<a id="enumb"></a>
+
+## EnumB
+
+***
+
+<a id="classa"></a>
+
+## ClassA
+
+ClassA function.
+
+### Constructors
+
+<a id="constructors"></a>
+
+#### new ClassA()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="classb"></a>
+
+## ClassB
+
+### Constructors
+
+<a id="constructors-1"></a>
+
+#### new ClassB()
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -491,50 +527,6 @@ InterfaceB function.
 
 ***
 
-<a id="classa"></a>
-
-## ClassA
-
-ClassA function.
-
-### Constructors
-
-<a id="constructors"></a>
-
-#### new ClassA()
-
-_SIGNATURE_MEMBER_PARTIAL_
-
-***
-
-<a id="classb"></a>
-
-## ClassB
-
-### Constructors
-
-<a id="constructors-1"></a>
-
-#### new ClassB()
-
-_SIGNATURE_MEMBER_PARTIAL_
-
-***
-
-<a id="enuma"></a>
-
-## EnumA
-
-EnumA function.
-
-***
-
-<a id="enumb"></a>
-
-## EnumB
-
-***
-
 <a id="typea"></a>
 
 ## TypeA
@@ -584,6 +576,14 @@ TypeB function.
 ## variableB
 
 > \`const\` **variableB**: \`""\` = \`''\`
+
+***
+
+<a id="functiona"></a>
+
+## functionA()
+
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 
@@ -834,8 +834,6 @@ A module that contains categories
 </td>
 <td>
 
-&hyphen;
-
 </td>
 </tr>
 <tr>
@@ -845,8 +843,6 @@ A module that contains categories
 
 </td>
 <td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -858,8 +854,6 @@ A module that contains categories
 </td>
 <td>
 
-&hyphen;
-
 </td>
 </tr>
 <tr>
@@ -869,8 +863,6 @@ A module that contains categories
 
 </td>
 <td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -895,8 +887,6 @@ A module that contains categories
 </td>
 <td>
 
-&hyphen;
-
 </td>
 </tr>
 <tr>
@@ -906,8 +896,6 @@ A module that contains categories
 
 </td>
 <td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -919,8 +907,6 @@ A module that contains categories
 </td>
 <td>
 
-&hyphen;
-
 </td>
 </tr>
 <tr>
@@ -930,8 +916,6 @@ A module that contains categories
 
 </td>
 <td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -955,8 +939,6 @@ A module that contains categories
 
 </td>
 <td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -2011,31 +1993,15 @@ A module that contains namespaces
 </tbody>
 </table>
 
-<a id="_function_a_"></a>
+<a id="_enum_a_"></a>
 
-## \\_function\\_A\\_()
-
-_SIGNATURE_MEMBER_PARTIAL_
+## \\_Enum\\_A\\_
 
 ***
 
-<a id="functionb"></a>
+<a id="enumb"></a>
 
-## functionB()
-
-_SIGNATURE_MEMBER_PARTIAL_
-
-***
-
-<a id="_interface_a_"></a>
-
-## \\_Interface\\_A\\_
-
-***
-
-<a id="interfaceb"></a>
-
-## InterfaceB
+## EnumB
 
 ***
 
@@ -2067,15 +2033,15 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="_enum_a_"></a>
+<a id="_interface_a_"></a>
 
-## \\_Enum\\_A\\_
+## \\_Interface\\_A\\_
 
 ***
 
-<a id="enumb"></a>
+<a id="interfaceb"></a>
 
-## EnumB
+## InterfaceB
 
 ***
 
@@ -2108,6 +2074,22 @@ _SIGNATURE_MEMBER_PARTIAL_
 ## variableB
 
 > \`const\` **variableB**: \`true\` = \`true\`
+
+***
+
+<a id="_function_a_"></a>
+
+## \\_function\\_A\\_()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="functionb"></a>
+
+## functionB()
+
+_SIGNATURE_MEMBER_PARTIAL_
 "
 `;
 

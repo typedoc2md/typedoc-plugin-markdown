@@ -159,6 +159,7 @@ export class NavigationBuilder {
           return {
             title: category.title,
             children: this.getCategoryGroupChildren(category),
+            url: (category as unknown as DeclarationReflection).url,
           };
         }),
       );
@@ -269,6 +270,7 @@ export class NavigationBuilder {
         return {
           title: category.title,
           children: this.getCategoryGroupChildren(category),
+          path: (category as unknown as DeclarationReflection).url,
         };
       });
     }
@@ -277,7 +279,7 @@ export class NavigationBuilder {
       ?.filter((child) => child.hasOwnDocument)
       .reduce((acc: NavigationItem[], child) => {
         const mapping = this.theme.getTemplateMapping(
-          child.kind,
+          child,
           outputFileStrategy,
         );
         if (mapping) {
@@ -288,10 +290,14 @@ export class NavigationBuilder {
               ? child.categories
                   ?.map((category) => {
                     const catChildren = this.getCategoryGroupChildren(category);
-                    return catChildren.length
+                    const categoryUrl = (
+                      category as unknown as DeclarationReflection
+                    ).url;
+                    return categoryUrl || catChildren.length
                       ? {
                           title: category.title,
                           children: catChildren,
+                          path: categoryUrl,
                         }
                       : null;
                   })

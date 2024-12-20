@@ -389,6 +389,57 @@ const config = {
       },
     ],
   },
+  categoriesOutput: {
+    only: false,
+    entryPoints: [
+      '/categories/module-1.ts',
+      '/categories/module-2.ts',
+      '/categories/module-3.ts',
+    ],
+    outputFileStrategies: ['categories'],
+    commonOptions: {
+      disableSources: true,
+      readme: 'none',
+      categorizeByGroup: false,
+      indexFormat: 'table',
+      name: 'categories-out',
+      membersWithOwnFile: [
+        'Class',
+        'Interface',
+        'Enum',
+        'TypeAlias',
+        'Function',
+      ],
+    },
+    options: [
+      {
+        plugin: [
+          path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
+        ],
+      },
+    ],
+  },
+  categoriesSingleModuleOutput: {
+    only: false,
+    entryPoints: ['/categories/module-1.ts'],
+    outputFileStrategies: ['categories'],
+    commonOptions: {
+      disableSources: true,
+      readme: 'none',
+      categorizeByGroup: false,
+      name: 'categories-out-single-module',
+    },
+    options: [
+      {
+        indexFormat: 'table',
+        plugin: [
+          path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
+        ],
+      },
+    ],
+  },
 };
 
 export default config;

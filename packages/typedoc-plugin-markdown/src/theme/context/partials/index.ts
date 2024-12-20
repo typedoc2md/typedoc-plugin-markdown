@@ -1,6 +1,7 @@
 export * from './comments.comment.js';
 export * from './container.body.js';
 export * from './container.categories.js';
+export * from './container.categoryIndex.js';
 export * from './container.groups.js';
 export * from './container.members.js';
 export * from './member.accessor.js';
@@ -10,6 +11,7 @@ export * from './member.declaration.js';
 export * from './member.declarationTitle.js';
 export * from './member.documents.js';
 export * from './member.enumMembersTable.js';
+export * from './member.groupIndex.js';
 export * from './member.hierarchy.js';
 export * from './member.indexSignature.js';
 export * from './member.inheritance.js';

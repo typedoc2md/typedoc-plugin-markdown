@@ -183,6 +183,7 @@ Available keys:
 pageTitleTemplates: {
  index: (args) => `${args.projectName}: ${args.version}`,
  module: (args) => args.name,
+ category: (args) => args.name`,
  member: (args) => `${args.kind}: ${args.name}`,
 }
 ```
@@ -191,6 +192,7 @@ pageTitleTemplates: {
 {
   "pageTitleTemplates": {
     "index": "{projectName} {version}",
+    "category": "{name}",
     "member": "{kind}: {name}",
     "module": "{name}"
   }

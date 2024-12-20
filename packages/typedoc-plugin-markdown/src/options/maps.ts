@@ -8,6 +8,7 @@
  * The allowed values of the `--outputFileStrategy` option.
  */
 export enum OutputFileStrategy {
+  Categories = 'categories',
   Members = 'members',
   Modules = 'modules',
 }
