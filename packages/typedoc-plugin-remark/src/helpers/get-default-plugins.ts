@@ -1,4 +1,4 @@
-import { RemarkPlugin } from '../types/remark-plugin.js';
+import { RemarkPlugin } from '../types/options.js';
 
 export function getDefaultPlugins(defaultPluginsFlag: {
   gfm: boolean;

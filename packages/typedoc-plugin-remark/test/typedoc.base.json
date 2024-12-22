@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["./stubs/*.ts"],
+  "entryPoints": ["./stubs/module-1.ts", "./stubs/module-2.ts"],
   "tsconfig": "./stubs/tsconfig.json",
   "out": "./out",
   "plugin": [

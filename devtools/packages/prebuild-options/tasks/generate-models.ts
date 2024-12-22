@@ -5,11 +5,7 @@ import * as path from 'path';
 import * as prettier from 'prettier';
 import { DeclarationOption, ParameterType } from 'typedoc';
 
-const ignoreTypes = [
-  'textContentMappings',
-  'remarkPlugins',
-  'remarkStringifyOptions',
-];
+const ignoreTypes = ['textContentMappings', 'remarkStringifyOptions'];
 
 export async function generateOptionsModels(docsConfig: DocsConfig) {
   const optionsConfig = await import(docsConfig.declarationsPath as string);
@@ -34,7 +30,7 @@ async function writeTypeDocDeclarations(
         (option as any).type === ParameterType.Mixed &&
         (option as any).defaultValue,
     )
-    .map(([name, option]) => capitalize(name));
+    .map(([name, option]) => capitalize(name, false));
 
   const out: string[] = [];
 
@@ -126,17 +122,20 @@ ${name}: ${getType(name, option, true)};`,
     ?.filter(([name]) => !ignoreTypes.includes(name))
     .map(([name, option]) => {
       return `
-  /**
-   * ${getComments(name)}
-   */
-  export interface ${capitalize(name)} {
+    ${
+      // this is a hack need to fix properly
+      name === 'remarkPlugins'
+        ? 'export type RemarkPlugin = string | [string, Record<string, any>];'
+        : `export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
         .map(
           ([key, value]) =>
             `'${key}'${value === undefined ? '?' : ''}: ${getValueType(key, value)}`,
         )
         .join(';')}
-  }
+  }`
+    }
+
     `;
     })
     .join('\n')}
@@ -255,6 +254,9 @@ function getObjectType(name: string) {
   return 'string';
 }
 
-function capitalize(str: string) {
+function capitalize(str: string, includeArray = true) {
+  if (str.endsWith('s')) {
+    str = `${str.slice(0, -1)}${includeArray ? '[]' : ''}`;
+  }
   return str.charAt(0).toUpperCase() + str.slice(1);
 }

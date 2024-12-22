@@ -14,6 +14,7 @@
     "prepublishOnly": "npm run lint && npm run build",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
+    "build-and-run": "npm run build && npm run pretest",
     "pretest": "tsx ./test/__scripts__/prepare.ts",
     "test": "jest",
     "test:update": "npm run build && npm run test -- -u"
@@ -31,7 +32,8 @@
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
     "remark-mdx": "^3.1.0",
-    "to-vfile": "^8.0.0"
+    "to-vfile": "^8.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.3.0"

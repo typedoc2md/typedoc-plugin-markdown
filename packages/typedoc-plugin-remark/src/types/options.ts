@@ -13,10 +13,12 @@ export interface PluginOptions {
   /**
    * An array of remark plugin names to be executed.
    */
-  remarkPlugins: any;
+  remarkPlugins: RemarkPlugin[];
 
   /**
    * Custom options for the remark-stringify plugin.
    */
   remarkStringifyOptions: Record<string, any>;
 }
+
+export type RemarkPlugin = string | [string, Record<string, any>];

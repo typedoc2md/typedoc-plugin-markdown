@@ -1,6 +1,5 @@
 {
   "extends": "./typedoc.base.json",
-  "entryPoints": ["./stubs/*.ts"],
   "remarkPlugins": ["remark-github", ["remark-toc", { "maxDepth": 3 }]],
   "defaultRemarkPlugins": {
     "mdx": false

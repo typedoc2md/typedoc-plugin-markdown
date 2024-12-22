@@ -4,12 +4,15 @@
  * @module
  */
 
+import * as path from 'path';
 import { Application, DeclarationOption, RendererEvent } from 'typedoc';
-import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
-import { addTableOfContents } from './helpers/add-toc.js';
+import { fileURLToPath } from 'url';
 import { getDefaultPlugins } from './helpers/get-default-plugins.js';
 import * as options from './options/declarations.js';
 import { parse } from './parse.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export function load(app: Application) {
   Object.entries(options).forEach(([name, option]) => {
@@ -19,18 +22,8 @@ export function load(app: Application) {
     } as DeclarationOption);
   });
 
-  app.renderer.on(MarkdownPageEvent.END, (event: MarkdownPageEvent) => {
-    const remarkPlugins = app.options.getValue('remarkPlugins') as [];
-    const remarkPluginsNames = remarkPlugins.map((plugin) =>
-      Array.isArray(plugin) ? plugin[0] : plugin,
-    ) as string[];
-
-    if (remarkPluginsNames.includes('remark-toc')) {
-      addTableOfContents(event, remarkPlugins, remarkPluginsNames, app);
-    }
-  });
-
   app.renderer.postRenderAsyncJobs.push(async (output: RendererEvent) => {
+    const remarkPlugins = app.options.getValue('remarkPlugins') as [];
     const defaultPlugins = getDefaultPlugins(
       app.options.getValue('defaultRemarkPlugins'),
     );
@@ -38,9 +31,28 @@ export function load(app: Application) {
     const remarkStringifyOptions = app.options.getValue(
       'remarkStringifyOptions',
     );
+    const remarkPluginsNames = remarkPlugins.map((plugin) =>
+      Array.isArray(plugin) ? plugin[0] : plugin,
+    ) as string[];
+
     if (output.urls?.length) {
       await Promise.all(
         output.urls?.map(async (urlMapping) => {
+          if (remarkPluginsNames.includes('remark-toc')) {
+            const tocPluginIndex = remarkPluginsNames.findIndex(
+              (name) => name === 'remark-toc',
+            );
+            const tocPlugin = remarkPlugins[tocPluginIndex];
+            const tocOptions = Array.isArray(tocPlugin) ? tocPlugin[1] : {};
+            defaultPlugins.push([
+              path.join(__dirname, 'plugins', 'add-toc.js'),
+              {
+                reflection: urlMapping.model,
+                typedocOptions: app.options,
+                tocOptions,
+              },
+            ]);
+          }
           const filePath = `${output.outputDirectory}/${urlMapping.url}`;
           return await parse(
             filePath,

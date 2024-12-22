@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { remark } from 'remark';
 import { read, writeSync } from 'to-vfile';
-import { RemarkPlugin } from './types/remark-plugin.js';
+import { RemarkPlugin } from './types/options.js';
 
 export async function parse(
   filePath: string,

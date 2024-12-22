@@ -12,9 +12,10 @@ fs.removeSync(`./test/out`);
 const fixtures = [
   { options: 'typedoc.modules.json', outDir: 'modules' },
   { options: 'typedoc.members.json', outDir: 'members' },
+  { options: 'typedoc.toc.json', outDir: 'toc' },
   { options: 'typedoc.globals.json', outDir: 'globals' },
-  { options: 'typedoc.globals-notoc.json', outDir: 'globals-notoc' },
   { options: 'typedoc.globals-mdx.json', outDir: 'globals-mdx' },
+  { options: 'typedoc.globals-notoc.json', outDir: 'globals-notoc' },
 ];
 
 // write fixtures
