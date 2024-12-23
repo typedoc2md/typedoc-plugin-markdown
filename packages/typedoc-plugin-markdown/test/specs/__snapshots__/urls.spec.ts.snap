@@ -819,6 +819,9 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "functions/functionWithRestParams.md",
   "functions/functionWithTypeParameters.md",
   "functions/functionWithUnionParams.md",
+  "functions/tupleTypeFunction.md",
+  "functions/tupleTypeFunctionInlineExplicit.md",
+  "functions/tupleTypeFunctionOptional.md",
   "globals.md",
   "interfaces/BasicInterface.md",
   "interfaces/CustomEventInterface.md",
@@ -832,6 +835,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/ArrayOfObjectsType.md",
   "type-aliases/ArrayType.md",
   "type-aliases/ConditionalType.md",
+  "type-aliases/ExplicitTypeDefOptions.md",
   "type-aliases/ExternalReferenceType.md",
   "type-aliases/FunctionType.md",
   "type-aliases/IndexAccessType.md",
@@ -847,6 +851,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/Stuff.md",
   "type-aliases/TupleType.md",
   "type-aliases/TypeDeclarationWithSpecialCharacters.md",
+  "type-aliases/TypeDefOptions.md",
   "type-aliases/TypeWithExternalSymbolLinkMapping.md",
   "type-aliases/TypeWithReturns.md",
   "type-aliases/TypeWithTypeParams.md",
@@ -859,6 +864,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "variables/stringVariable.md",
   "variables/templateVariableString.md",
   "variables/typeOperatorVariable.md",
+  "variables/typedef.md",
 ]
 `;
 
@@ -909,6 +915,9 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "functions/functionWithRestParams.md",
   "functions/functionWithTypeParameters.md",
   "functions/functionWithUnionParams.md",
+  "functions/tupleTypeFunction.md",
+  "functions/tupleTypeFunctionInlineExplicit.md",
+  "functions/tupleTypeFunctionOptional.md",
   "interfaces/BasicInterface.md",
   "interfaces/CustomEventInterface.md",
   "interfaces/ExtendedInterface.md",
@@ -921,6 +930,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/ArrayOfObjectsType.md",
   "type-aliases/ArrayType.md",
   "type-aliases/ConditionalType.md",
+  "type-aliases/ExplicitTypeDefOptions.md",
   "type-aliases/ExternalReferenceType.md",
   "type-aliases/FunctionType.md",
   "type-aliases/IndexAccessType.md",
@@ -936,6 +946,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "type-aliases/Stuff.md",
   "type-aliases/TupleType.md",
   "type-aliases/TypeDeclarationWithSpecialCharacters.md",
+  "type-aliases/TypeDefOptions.md",
   "type-aliases/TypeWithExternalSymbolLinkMapping.md",
   "type-aliases/TypeWithReturns.md",
   "type-aliases/TypeWithTypeParams.md",
@@ -948,6 +959,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "variables/stringVariable.md",
   "variables/templateVariableString.md",
   "variables/typeOperatorVariable.md",
+  "variables/typedef.md",
 ]
 `;
 

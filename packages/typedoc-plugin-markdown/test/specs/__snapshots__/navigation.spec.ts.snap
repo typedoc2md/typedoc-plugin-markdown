@@ -4422,6 +4422,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "type-aliases/ConditionalType.md"
       },
       {
+        "title": "ExplicitTypeDefOptions",
+        "kind": 2097152,
+        "path": "type-aliases/ExplicitTypeDefOptions.md"
+      },
+      {
         "title": "ExternalReferenceType",
         "kind": 2097152,
         "path": "type-aliases/ExternalReferenceType.md"
@@ -4492,6 +4497,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "path": "type-aliases/TupleType.md"
       },
       {
+        "title": "TypeDefOptions",
+        "kind": 2097152,
+        "path": "type-aliases/TypeDefOptions.md"
+      },
+      {
         "title": "TypeWithExternalSymbolLinkMapping",
         "kind": 2097152,
         "path": "type-aliases/TypeWithExternalSymbolLinkMapping.md"
@@ -4550,6 +4560,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "templateVariableString",
         "kind": 32,
         "path": "variables/templateVariableString.md"
+      },
+      {
+        "title": "typedef",
+        "kind": 32,
+        "path": "variables/typedef.md"
       },
       {
         "title": "typeOperatorVariable",
@@ -4660,6 +4675,21 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "functionWithUnionParams",
         "kind": 64,
         "path": "functions/functionWithUnionParams.md"
+      },
+      {
+        "title": "tupleTypeFunction",
+        "kind": 64,
+        "path": "functions/tupleTypeFunction.md"
+      },
+      {
+        "title": "tupleTypeFunctionInlineExplicit",
+        "kind": 64,
+        "path": "functions/tupleTypeFunctionInlineExplicit.md"
+      },
+      {
+        "title": "tupleTypeFunctionOptional",
+        "kind": 64,
+        "path": "functions/tupleTypeFunctionOptional.md"
       }
     ]
   }

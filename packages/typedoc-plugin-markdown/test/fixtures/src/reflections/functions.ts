@@ -280,3 +280,38 @@ export const functionWithArrayOfUnionStuff = (
  * Comments for array of stuff?
  */
 export const functionWithArrayOfOptionalStuff = (a: [Stuff?]) => {};
+
+export const typedef = {
+  /**
+   * Comments for a
+   */
+  a: '',
+  b: '',
+};
+
+/**
+ * @inline
+ */
+export type TypeDefOptions = typeof typedef;
+
+/**
+ * @inline
+ */
+export type ExplicitTypeDefOptions = {
+  a: string;
+  b: string;
+};
+
+export const tupleTypeFunction = (
+  /**
+   * opts comments
+   */
+  opts: [TypeDefOptions],
+) => {};
+export const tupleTypeFunctionOptional = (
+  opts: [(TypeDefOptions | null | undefined)?],
+) => {};
+
+export const tupleTypeFunctionInlineExplicit = (
+  opts: [ExplicitTypeDefOptions],
+) => {};

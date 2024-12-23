@@ -646,7 +646,7 @@ Comments for StringLiteralType
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TupleType
 
-> **TupleType**: [\`string\`, \`number\`]
+> **TupleType**: \\[\`string\`, \`number\`\\]
 
 Comments for TupleType
 
@@ -674,7 +674,7 @@ Comments for TupleType
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TypeWithTypeParams\\<T, R\\>
 
-> **TypeWithTypeParams**\\<\`T\`, \`R\`\\>: [\`T\`, \`R\`]
+> **TypeWithTypeParams**\\<\`T\`, \`R\`\\>: \\[\`T\`, \`R\`\\]
 
 Comments for TypeWithTypeParams
 

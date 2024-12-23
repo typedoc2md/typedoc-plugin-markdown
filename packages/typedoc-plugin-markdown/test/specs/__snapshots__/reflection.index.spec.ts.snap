@@ -74,6 +74,7 @@ Module comments
 | [ArrayOfObjectsType](type-aliases/ArrayOfObjectsType.md) | - |
 | [ArrayType](type-aliases/ArrayType.md) | Comments for ArrayType |
 | [ConditionalType](type-aliases/ConditionalType.md) | Comments for ConditionalType |
+| [ExplicitTypeDefOptions](type-aliases/ExplicitTypeDefOptions.md) | - |
 | [ExternalReferenceType](type-aliases/ExternalReferenceType.md) | Comments for ExternalReferenceType |
 | [FunctionType](type-aliases/FunctionType.md) | Comments for FunctionType |
 | [IndexAccessType](type-aliases/IndexAccessType.md) | Comments for IndexAccessType |
@@ -88,6 +89,7 @@ Module comments
 | [StringLiteralType](type-aliases/StringLiteralType.md) | Comments for StringLiteralType |
 | [Stuff](type-aliases/Stuff.md) | - |
 | [TupleType](type-aliases/TupleType.md) | Comments for TupleType |
+| [TypeDefOptions](type-aliases/TypeDefOptions.md) | - |
 | [TypeWithExternalSymbolLinkMapping](type-aliases/TypeWithExternalSymbolLinkMapping.md) | Comments for TypeWithExternalSymbolLinkMapping |
 | [TypeWithReturns](type-aliases/TypeWithReturns.md) | Comments for TypeWithReturns |
 | [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md) | Comments for TypeWithTypeParams |
@@ -104,6 +106,7 @@ Module comments
 | [someQuery](variables/someQuery.md) | - |
 | [stringVariable](variables/stringVariable.md) | A simple string variable |
 | [templateVariableString](variables/templateVariableString.md) | A template variable string |
+| [typedef](variables/typedef.md) | - |
 | [typeOperatorVariable](variables/typeOperatorVariable.md) | Comments for typeOperatorVariable |
 
 ## Functions
@@ -130,5 +133,8 @@ Module comments
 | [functionWithRestParams](functions/functionWithRestParams.md) | Function with reset parmas |
 | [functionWithTypeParameters](functions/functionWithTypeParameters.md) | Function with type parameters |
 | [functionWithUnionParams](functions/functionWithUnionParams.md) | - |
+| [tupleTypeFunction](functions/tupleTypeFunction.md) | - |
+| [tupleTypeFunctionInlineExplicit](functions/tupleTypeFunctionInlineExplicit.md) | - |
+| [tupleTypeFunctionOptional](functions/tupleTypeFunctionOptional.md) | - |
 "
 `;

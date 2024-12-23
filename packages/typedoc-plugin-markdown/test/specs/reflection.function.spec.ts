@@ -152,4 +152,28 @@ describe(`Function Reflection`, () => {
       'functions/functionWithUnionParams.md',
     );
   });
+
+  test(`should compile function with tuple type params`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/tupleTypeFunction.md',
+    );
+  });
+
+  test(`should compile function with tuple type optional params`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/tupleTypeFunctionOptional.md',
+    );
+  });
+
+  test(`should compile function with explicit inline tuple type optional params`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/tupleTypeFunctionInlineExplicit.md',
+    );
+  });
 });

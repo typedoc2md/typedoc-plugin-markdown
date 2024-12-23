@@ -453,7 +453,7 @@ Comments for array of stuff?
 
 ### a
 
-[[\`Stuff\`](../type-aliases/Stuff.md)?]
+\\[[\`Stuff\`](../type-aliases/Stuff.md)?\\]
 
 ## Returns
 
@@ -478,7 +478,7 @@ Comments for array of stuff?
 
 | Parameter | Type |
 | :------ | :------ |
-| \`a\` | [[\`Stuff\`](../type-aliases/Stuff.md)?] |
+| \`a\` | \\[[\`Stuff\`](../type-aliases/Stuff.md)?\\] |
 
 ## Returns
 
@@ -501,7 +501,7 @@ Comments for array of stuff
 
 ### a
 
-[[\`Stuff\`](../type-aliases/Stuff.md)]
+\\[[\`Stuff\`](../type-aliases/Stuff.md)\\]
 
 ## Returns
 
@@ -526,7 +526,7 @@ Comments for array of stuff
 
 | Parameter | Type |
 | :------ | :------ |
-| \`a\` | [[\`Stuff\`](../type-aliases/Stuff.md)] |
+| \`a\` | \\[[\`Stuff\`](../type-aliases/Stuff.md)\\] |
 
 ## Returns
 
@@ -549,7 +549,7 @@ Comments for array of union stuff
 
 ### a
 
-[(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?]
+\\[(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?\\]
 
 ## Returns
 
@@ -574,7 +574,7 @@ Comments for array of union stuff
 
 | Parameter | Type |
 | :------ | :------ |
-| \`a\` | [(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?] |
+| \`a\` | \\[(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?\\] |
 
 ## Returns
 
@@ -724,6 +724,53 @@ This is a function with a parameter that has a default value.
 ## Returns
 
 \`string\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with explicit inline tuple type optional params: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: tupleTypeFunctionInlineExplicit()
+
+> **tupleTypeFunctionInlineExplicit**(\`opts\`): \`void\`
+
+## Parameters
+
+### opts
+
+\\[\\{ \`a\`: \`string\`; \`b\`: \`string\`; \\}\\]
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with explicit inline tuple type optional params: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: tupleTypeFunctionInlineExplicit()
+
+\`\`\`ts
+function tupleTypeFunctionInlineExplicit(opts: [{
+  a: string;
+  b: string;
+ }]): void
+\`\`\`
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`opts\` | \\[\\{ \`a\`: \`string\`; \`b\`: \`string\`; \\}\\] |
+
+## Returns
+
+\`void\`
 
 ## Source
 
@@ -1189,6 +1236,104 @@ Function with reset parmas
 ## Returns
 
 \`boolean\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with tuple type optional params: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: tupleTypeFunctionOptional()
+
+> **tupleTypeFunctionOptional**(\`opts\`): \`void\`
+
+## Parameters
+
+### opts
+
+\\[(\`null\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\})?\\]
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with tuple type optional params: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: tupleTypeFunctionOptional()
+
+\`\`\`ts
+function tupleTypeFunctionOptional(opts: [(
+  | null
+  | {
+  a: string;
+  b: string;
+ })?]): void
+\`\`\`
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`opts\` | \\[( \\| \`null\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\})?\\] |
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with tuple type params: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: tupleTypeFunction()
+
+> **tupleTypeFunction**(\`opts\`): \`void\`
+
+## Parameters
+
+### opts
+
+\\[\\{ \`a\`: \`string\`; \`b\`: \`string\`; \\}\\]
+
+opts comments
+
+## Returns
+
+\`void\`
+
+## Source
+
+[functions.ts:1](http://source-url)
+"
+`;
+
+exports[`Function Reflection should compile function with tuple type params: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: tupleTypeFunction()
+
+\`\`\`ts
+function tupleTypeFunction(opts: [{
+  a: string;
+  b: string;
+ }]): void
+\`\`\`
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`opts\` | \\[\\{ \`a\`: \`string\`; \`b\`: \`string\`; \\}\\] | opts comments |
+
+## Returns
+
+\`void\`
 
 ## Source
 
