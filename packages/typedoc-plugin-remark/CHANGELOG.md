@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.2
+## 1.2.2 (2024-12-23)
 
 ### Patch Changes
 
