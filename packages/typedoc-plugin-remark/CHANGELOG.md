@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.2
+
+### Patch Changes
+
+- Remove heading count restriction when adding toc placeholder heading (for usage with remark-toc).
+
 ## 1.2.1 (2024-12-11)
 
 ### Patch Changes
