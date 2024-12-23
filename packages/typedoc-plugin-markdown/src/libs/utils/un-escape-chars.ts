@@ -13,7 +13,11 @@ export function unEscapeChars(str: string) {
     .replace(/\\_/g, '_')
     .replace(/\\{/g, '{')
     .replace(/\\}/g, '}')
-    .replace(/(?<!\\)`/g, '')
+    .replace(/``.*?``|(?<!\\)`/g, (match) =>
+      match.startsWith('``') ? match : '',
+    )
+    .replace(/`` /g, '')
+    .replace(/ ``/g, '')
     .replace(/\\`/g, '`')
     .replace(/\\\*/g, '*')
     .replace(/\\\|/g, '|')

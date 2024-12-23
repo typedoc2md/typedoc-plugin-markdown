@@ -600,7 +600,7 @@ Comments for IndexableInterface
 
 ## Indexable
 
- \\[\`s\`: \`string\`\\]: \`string\`
+\\[\`s\`: \`string\`\\]: \`string\`
 
 ## Properties
 
@@ -621,7 +621,9 @@ Comments for IndexableInterface
 
 ## Indexable
 
- \\[\`s\`: \`string\`\\]: \`string\`
+\`\`\`ts
+[s: string]: string
+\`\`\`
 
 ## Properties
 
@@ -882,9 +884,9 @@ exports[`Interface Reflection should compile multiple indexable interface: (Outp
 
 ## Indexable
 
- \\[\`key\`: \`string\`\\]: \`string\`
+\\[\`key\`: \`string\`\\]: \`string\`
 
- \\[\`index\`: \`number\`\\]: \`string\`
+\\[\`index\`: \`number\`\\]: \`string\`
 
 ## Properties
 
@@ -905,9 +907,13 @@ exports[`Interface Reflection should compile multiple indexable interface: (Outp
 
 ## Indexable
 
- \\[\`key\`: \`string\`\\]: \`string\`
+\`\`\`ts
+[key: string]: string
+\`\`\`
 
- \\[\`index\`: \`number\`\\]: \`string\`
+\`\`\`ts
+[index: number]: string
+\`\`\`
 
 ## Properties
 

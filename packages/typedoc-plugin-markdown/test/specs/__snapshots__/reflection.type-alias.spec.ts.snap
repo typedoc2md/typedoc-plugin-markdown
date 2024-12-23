@@ -612,7 +612,7 @@ Comments for ReadonlyMapedType
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: StringLiteralType
 
-> **StringLiteralType**: \`" "\` \\| \`"string"\` \\| "string\\|with\\|pipes" \\| "string\\\`with\\\`backticks" \\| \`"<foo>"\` \\| \`"*"\`
+> **StringLiteralType**: \`" "\` \\| \`"string"\` \\| "string\\|with\\|pipes" \\| \`\` "string\`with\`backticks" \`\` \\| \`"<foo>"\` \\| \`"*"\`
 
 Comments for StringLiteralType
 
@@ -751,7 +751,7 @@ Comments for TypeWithReturns
 exports[`Type Alias Reflection should compile union type with template strings: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UnionTypeWithTemplateStrings
 
-> **UnionTypeWithTemplateStrings**: \\\`v$\\{number\\}\\\` \\| \\\`v$\\{number\\}.$\\{number\\}\\\` \\| \\\`v$\\{number\\}.$\\{number\\}.$\\{number\\}\\\`
+> **UnionTypeWithTemplateStrings**: \`\` \`v\${number}\` \`\` \\| \`\` \`v\${number}.\${number}\` \`\` \\| \`\` \`v\${number}.\${number}.\${number}\` \`\`
 
 Union with template strings
 

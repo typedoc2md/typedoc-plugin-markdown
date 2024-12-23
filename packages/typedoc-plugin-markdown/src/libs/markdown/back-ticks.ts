@@ -2,8 +2,16 @@ import { escapeChars } from '@plugin/libs/utils/index.js';
 
 /**
  * Wraps a string in backticks.
- * If the input string itself contains a backtick, pipe, or backslash (which can result in unwanted side effects) the string is escaped instead.
  */
 export function backTicks(text: string) {
-  return /(`|\||\\)/g.test(text) ? escapeChars(text) : `\`${text}\``;
+  // If the input string itself contains a pipe, or backslash (which can result in unwanted side effects) the string is escaped instead.
+  if (/(\||\\)/g.test(text)) {
+    return escapeChars(text);
+  }
+  // If the input string itself contains a backtick, the string is wrapped in double backticks.
+  if (/`/g.test(text)) {
+    return `\`\` ${text} \`\``;
+  }
+  // Otherwise, the string is wrapped in single backticks.
+  return `\`${text}\``;
 }

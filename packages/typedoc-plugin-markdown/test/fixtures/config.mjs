@@ -275,7 +275,7 @@ const config = {
   },
   utils: {
     only: false,
-    entryPoints: '/utils/index.ts',
+    entryPoints: '/utils/*.ts',
     commonOptions: {
       hidePageHeader: true,
       hideBreadcrumbs: true,

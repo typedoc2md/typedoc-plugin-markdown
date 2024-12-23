@@ -1,5 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Utils should format index signature type: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type Alias: LongIndexSignature
+
+> **LongIndexSignature**: \\{\\}
+
+## Index Signature
+
+\\[\`key\`: \`\` \`git·\${string}·\${string} \${string}\` \`\` \\| \`\` \`remote·\${string}·\${string} \${string}\` \`\`\\]: \`\` \`dev git·\${string}·\${string}\` \`\` \\| \`\` \`dev remote·\${string}·\${string}\` \`\` \\| \`\` \`prod git·\${string}·\${string}\` \`\` \\| \`\` \`prod remote·\${string}·\${string}\` \`\`
+"
+`;
+
+exports[`Utils should format index signature type: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type Alias: LongIndexSignature
+
+\`\`\`ts
+type LongIndexSignature = {};
+\`\`\`
+
+## Index Signature
+
+\`\`\`ts
+[key:
+  | \`git·\${string}·\${string} \${string}\`
+  | \`remote·\${string}·\${string} \${string}\`]:
+  | \`dev git·\${string}·\${string}\`
+  | \`dev remote·\${string}·\${string}\`
+  | \`prod git·\${string}·\${string}\`
+  | \`prod remote·\${string}·\${string}\`
+\`\`\`
+"
+`;
+
+exports[`Utils should format type with constructor overrides: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Class: Cache
+
+## Extends
+
+- \`LRUCache\`&lt;\`CacheFetchContext\`, \`CacheFetchContext\`, \`CacheFetchContext\`&gt;
+
+## Constructors
+
+### new Cache()
+
+> **new Cache**(): [\`Cache\`](Cache.md)
+
+#### Returns
+
+[\`Cache\`](Cache.md)
+
+#### Overrides
+
+\`LRUCache< CacheFetchContext, CacheFetchContext, CacheFetchContext >.constructor\`
+"
+`;
+
+exports[`Utils should format type with constructor overrides: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Class: Cache
+
+## Extends
+
+- \`LRUCache\`&lt;\`CacheFetchContext\`, \`CacheFetchContext\`, \`CacheFetchContext\`&gt;
+
+## Constructors
+
+### new Cache()
+
+\`\`\`ts
+new Cache(): Cache
+\`\`\`
+
+#### Returns
+
+[\`Cache\`](Cache.md)
+
+#### Overrides
+
+\`\`\`ts
+LRUCache<
+  CacheFetchContext,
+  CacheFetchContext,
+  CacheFetchContext
+>.constructor
+\`\`\`
+"
+`;
+
 exports[`Utils should get class with brackets: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithChars&lt;T&gt;
 

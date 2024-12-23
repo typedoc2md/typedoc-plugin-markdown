@@ -1,4 +1,5 @@
-import { backTicks, link } from '@plugin/libs/markdown/index.js';
+import { backTicks, codeBlock, link } from '@plugin/libs/markdown/index.js';
+import { removeLineBreaks } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ArrayType, ReferenceType, SignatureReflection } from 'typedoc';
 
@@ -15,11 +16,11 @@ export function typeAndParent(
   }
 
   if (model instanceof ReferenceType && model.reflection) {
-    const refl =
+    const reflection =
       model.reflection instanceof SignatureReflection
         ? model.reflection.parent
         : model.reflection;
-    const parent = refl?.parent;
+    const parent = reflection?.parent;
     if (parent) {
       const resultWithParent: string[] = [];
       if (parent?.url) {
@@ -29,15 +30,18 @@ export function typeAndParent(
       } else {
         resultWithParent.push(backTicks(parent?.name));
       }
-      if (refl?.url) {
+      if (reflection?.url) {
         resultWithParent.push(
-          link(backTicks(refl.name), this.getRelativeUrl(refl.url)),
+          link(backTicks(reflection.name), this.getRelativeUrl(reflection.url)),
         );
       } else {
-        resultWithParent.push(backTicks(refl?.name));
+        resultWithParent.push(backTicks(reflection?.name));
       }
       return resultWithParent.join('.');
     }
   }
-  return backTicks(model.toString());
+  if (this.options.getValue('useCodeBlocks')) {
+    return codeBlock(model.toString());
+  }
+  return backTicks(removeLineBreaks(model.toString()));
 }
