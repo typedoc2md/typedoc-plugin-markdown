@@ -43,13 +43,15 @@ export function load(app: Application) {
               (name) => name === 'remark-toc',
             );
             const tocPlugin = remarkPlugins[tocPluginIndex];
-            const tocOptions = Array.isArray(tocPlugin) ? tocPlugin[1] : {};
+            const remarkTocOptions = Array.isArray(tocPlugin)
+              ? tocPlugin[1]
+              : {};
             defaultPlugins.push([
               path.join(__dirname, 'plugins', 'add-toc.js'),
               {
                 reflection: urlMapping.model,
                 typedocOptions: app.options,
-                tocOptions,
+                remarkTocOptions,
               },
             ]);
           }

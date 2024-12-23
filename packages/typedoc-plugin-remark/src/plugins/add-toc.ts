@@ -4,14 +4,17 @@ import { Node } from 'unist';
 import { visit } from 'unist-util-visit';
 
 /**
- * This plugin is used internally to add a toc heading as required to be present in the page when using the remark-toc plugin.
+ * This plugin internally adds a TOC heading to document as required by remark-toc.
  */
-export default function (options: any) {
-  const { reflection, typedocOptions, tocOptions } = options;
+export default function (options: {
+  reflection: DeclarationReflection;
+  typedocOptions: Options;
+  remarkTocOptions: { heading: string };
+}) {
+  const { reflection, typedocOptions, remarkTocOptions } = options;
 
   return (tree: Node) => {
-    // If the current page is already an index page, do nothing.
-    if (isIndexPage(reflection, typedocOptions)) {
+    if (!shouldAddToc(reflection, typedocOptions)) {
       return tree;
     }
     visit(
@@ -25,7 +28,7 @@ export default function (options: any) {
             children: [
               {
                 type: 'text',
-                value: tocOptions?.heading || 'Contents',
+                value: remarkTocOptions?.heading || 'Contents',
               },
             ],
           };
@@ -39,24 +42,37 @@ export default function (options: any) {
 
 /**
  * Determine if the current page is already an index page.
- * - Reflection is a project and all children are modules.
- * - Reflection is a module and outputFileStrategy is equal to "members".
+ *
+ * Returns false if
+ *
+ * - The reflection is a module or project and outputFileStrategy is equal to "members".
+ * - The reflection is a project and all children are modules.
+ * - The reflection kind is not in the list of allowed kinds.
+ * -
  */
-function isIndexPage(
+function shouldAddToc(
   reflection: DeclarationReflection,
   typedocOptions: Options,
 ) {
   if (
-    reflection.kind === ReflectionKind.Project &&
-    reflection.children?.every((child) => child.kind === ReflectionKind.Module)
-  ) {
-    return true;
-  }
-  if (
     [ReflectionKind.Project, ReflectionKind.Module].includes(reflection.kind) &&
     typedocOptions?.getValue('outputFileStrategy') === 'members'
   ) {
-    return true;
+    return false;
   }
-  return false;
+  if (
+    reflection.kind === ReflectionKind.Project &&
+    reflection.children?.every((child) => child.kind === ReflectionKind.Module)
+  ) {
+    return false;
+  }
+  return [
+    ReflectionKind.Project,
+    ReflectionKind.Module,
+    ReflectionKind.Namespace,
+    ReflectionKind.Class,
+    ReflectionKind.Enum,
+    ReflectionKind.Interface,
+    ReflectionKind.Document,
+  ].includes(reflection.kind);
 }

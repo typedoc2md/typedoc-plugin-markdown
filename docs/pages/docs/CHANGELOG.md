@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.3.3 (2024-12-18)
+
+### Patch Changes
+
+- Correctly handle anchor resolutions with table formats.
+- Fix invalid typescript syntax for type aliases inside declaration code blocks when "useCodeBlocks" is true ([#741](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/741)).
+
 ## 4.3.2 (2024-12-08)
 
 ### Patch Changes

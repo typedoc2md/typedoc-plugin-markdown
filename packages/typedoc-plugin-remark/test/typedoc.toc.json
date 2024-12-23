@@ -3,5 +3,7 @@
   "tsconfig": "./stubs/tsconfig.json",
   "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
   "remarkPlugins": [["remark-toc", { "maxDepth": 3 }]],
-  "readme": "none"
+  "readme": "none",
+  "disableSources": true,
+  "hidePageHeader": true
 }
