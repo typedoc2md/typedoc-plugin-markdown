@@ -3,6 +3,8 @@
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: BasicInterface
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for BasicInterface
 
 ## Extended by
@@ -15,6 +17,8 @@ Comments for BasicInterface
 
 > **deprecatedProp**: \`string\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 #### Deprecated
 
 This prop is deprecated
@@ -23,15 +27,13 @@ This prop is deprecated
 
 Comments for some tag
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### functionProp()
 
 > **functionProp**: (\`s\`) => \`boolean\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for functionProper
 
@@ -47,21 +49,15 @@ Comment for param s
 
 \`boolean\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### optionalProp?
 
 > \`optional\` **optionalProp**: \`string\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for optional prop
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -69,17 +65,17 @@ Comments for optional prop
 
 > **prop**: \`string\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for prop
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 
 ***
 
 ### propReturningObjectDeclaration
 
 > **propReturningObjectDeclaration**: \`object\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningObjectDeclaration
 
@@ -91,15 +87,13 @@ Comments for propReturningObjectDeclaration
 
 > **b**: \`string\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propReturningObjectDeclarations
 
 > **propReturningObjectDeclarations**: \`object\` & \`object\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningObjectDeclarations
 
@@ -123,15 +117,13 @@ Comments for propReturningObjectDeclarations
 
 > **d**: \`string\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propReturningSignatureDeclaration()?
 
 > \`optional\` **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningSignatureDeclaration
 
@@ -139,27 +131,23 @@ Comments for propReturningSignatureDeclaration
 
 \`string\` \\| \`number\` \\| \`boolean\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propReturningSignatureDeclarations
 
 > **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for propReturningSignatureDeclarations
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 
 ***
 
 ### propWithFunction()
 
 > **propWithFunction**: (\`options\`) => \`boolean\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propWithFunction
 
@@ -179,15 +167,13 @@ Comments for propWithFunction
 
 \`boolean\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propWithProps
 
 > **propWithProps**: \`object\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propWithProps
 
@@ -230,15 +216,13 @@ Comments for nestedPropD
 ##### Returns
 
 \`boolean\`
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile basic interface: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: BasicInterface
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for BasicInterface
 
@@ -274,6 +258,8 @@ Comments for BasicInterface
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: ExtendedInterface
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for ExtendedInterface
 
 ## Extends
@@ -285,6 +271,8 @@ Comments for ExtendedInterface
 ### ~~deprecatedProp~~
 
 > **deprecatedProp**: \`string\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 #### Deprecated
 
@@ -298,25 +286,21 @@ Comments for some tag
 
 [\`BasicInterface\`](BasicInterface.md).[\`deprecatedProp\`](BasicInterface.md#deprecatedprop)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### extendedProp
 
 > **extendedProp**: \`string\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 ***
 
 ### functionProp()
 
 > **functionProp**: (\`s\`) => \`boolean\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for functionProper
 
@@ -336,15 +320,13 @@ Comment for param s
 
 [\`BasicInterface\`](BasicInterface.md).[\`functionProp\`](BasicInterface.md#functionprop)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### optionalProp?
 
 > \`optional\` **optionalProp**: \`string\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for optional prop
 
@@ -352,15 +334,13 @@ Comments for optional prop
 
 [\`BasicInterface\`](BasicInterface.md).[\`optionalProp\`](BasicInterface.md#optionalprop)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### prop
 
 > **prop**: \`string\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for prop
 
@@ -368,15 +348,13 @@ Comments for prop
 
 [\`BasicInterface\`](BasicInterface.md).[\`prop\`](BasicInterface.md#prop)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propReturningObjectDeclaration
 
 > **propReturningObjectDeclaration**: \`object\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningObjectDeclaration
 
@@ -392,15 +370,13 @@ Comments for propReturningObjectDeclaration
 
 [\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclaration\`](BasicInterface.md#propreturningobjectdeclaration)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propReturningObjectDeclarations
 
 > **propReturningObjectDeclarations**: \`object\` & \`object\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningObjectDeclarations
 
@@ -428,15 +404,13 @@ Comments for propReturningObjectDeclarations
 
 [\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclarations\`](BasicInterface.md#propreturningobjectdeclarations)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propReturningSignatureDeclaration()?
 
 > \`optional\` **propReturningSignatureDeclaration**: () => \`string\` \\| \`number\` \\| \`boolean\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningSignatureDeclaration
 
@@ -448,15 +422,13 @@ Comments for propReturningSignatureDeclaration
 
 [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclaration\`](BasicInterface.md#propreturningsignaturedeclaration)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propReturningSignatureDeclarations
 
 > **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningSignatureDeclarations
 
@@ -464,15 +436,13 @@ Comments for propReturningSignatureDeclarations
 
 [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclarations\`](BasicInterface.md#propreturningsignaturedeclarations)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propWithFunction()
 
 > **propWithFunction**: (\`options\`) => \`boolean\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propWithFunction
 
@@ -496,15 +466,13 @@ Comments for propWithFunction
 
 [\`BasicInterface\`](BasicInterface.md).[\`propWithFunction\`](BasicInterface.md#propwithfunction)
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
-
 ***
 
 ### propWithProps
 
 > **propWithProps**: \`object\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for propWithProps
 
@@ -551,15 +519,13 @@ Comments for nestedPropD
 #### Inherited from
 
 [\`BasicInterface\`](BasicInterface.md).[\`propWithProps\`](BasicInterface.md#propwithprops)
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile extended interface: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: ExtendedInterface
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for ExtendedInterface
 
@@ -596,6 +562,8 @@ Comments for ExtendedInterface
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: IndexableInterface
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for IndexableInterface
 
 ## Indexable
@@ -608,14 +576,14 @@ Comments for IndexableInterface
 
 > **prop**: \`string\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
+**Defined in**: [interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile indexable interface: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: IndexableInterface
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for IndexableInterface
 
@@ -635,6 +603,8 @@ Comments for IndexableInterface
 
 exports[`Interface Reflection should compile interface with comments: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: InterfaceWithComments\\<A, B, C, D\\>
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for interface
 over two lines
@@ -673,6 +643,8 @@ Comments with <p>paras</p>
 
 > **propertyWithComments**: \`string\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Some text.
 
 - list item
@@ -685,15 +657,13 @@ This is a deprecated property
 #### See
 
 https://example.com
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile interface with comments: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: InterfaceWithComments\\<A, B, C, D\\>
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for interface
 over two lines
@@ -720,17 +690,17 @@ And some more comments
 exports[`Interface Reflection should compile interface with event properties: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: InterfaceWithEventProperties
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 ## Properties
 
 ### someProp?
 
 > \`optional\` **someProp**: \`boolean\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Description for prop someProp
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 
 ## Events
 
@@ -738,15 +708,15 @@ Description for prop someProp
 
 > **anotherEvent**: \`MouseEvent\`
 
-#### Source
-
-[interfaces.ts:1](http://source-url)
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 ***
 
 ### ~~someEvent()?~~
 
 > \`optional\` **someEvent**: (\`eventParam\`) => \`void\`
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Description for event someEvent
 
@@ -765,15 +735,13 @@ Comments for param eventParam
 #### Returns
 
 \`void\`
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile interface with event properties: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: InterfaceWithEventProperties
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 ## Properties
 
@@ -793,6 +761,8 @@ exports[`Interface Reflection should compile interface with event properties: (O
 exports[`Interface Reflection should compile interface with flags: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: InterfaceWithFlags
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for InterfaceWithFlags
 
 ## Properties
@@ -801,11 +771,9 @@ Comments for InterfaceWithFlags
 
 > \`optional\` **expermintalProp**: \`string\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 **\`Experimental\`**
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 
 ***
 
@@ -813,18 +781,18 @@ Comments for InterfaceWithFlags
 
 > **internalProp**: \`string\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 **\`Internal\`**
 
 Comments for internalProp
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile interface with flags: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: InterfaceWithFlags
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for InterfaceWithFlags
 
@@ -840,6 +808,8 @@ Comments for InterfaceWithFlags
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: InterfaceWithTypeParameters\\<A\\>
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for InterfaceWithTypeParameters
 
 ## Type Parameters
@@ -852,16 +822,16 @@ Comments for InterfaceWithTypeParameters
 
 > **prop**: \`A\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Comments for prop
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: InterfaceWithTypeParameters\\<A\\>
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 Comments for InterfaceWithTypeParameters
 
@@ -882,6 +852,8 @@ Comments for InterfaceWithTypeParameters
 exports[`Interface Reflection should compile multiple indexable interface: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: MultipleIndexableInterface
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 ## Indexable
 
 \\[\`key\`: \`string\`\\]: \`string\`
@@ -894,16 +866,16 @@ exports[`Interface Reflection should compile multiple indexable interface: (Outp
 
 > **prop**: \`string\`
 
+**Defined in**: [interfaces.ts:1](http://source-url)
+
 Prop
-
-#### Source
-
-[interfaces.ts:1](http://source-url)
 "
 `;
 
 exports[`Interface Reflection should compile multiple indexable interface: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Interface: MultipleIndexableInterface
+
+**Defined in**: [interfaces.ts:1](http://source-url)
 
 ## Indexable
 

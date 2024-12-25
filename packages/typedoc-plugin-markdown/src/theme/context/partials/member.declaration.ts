@@ -29,6 +29,14 @@ export function declaration(
 
   md.push(this.partials.declarationTitle(model));
 
+  if (
+    !opts.nested &&
+    model.sources &&
+    !this.options.getValue('disableSources')
+  ) {
+    md.push(this.partials.sources(model));
+  }
+
   if (model?.documents) {
     md.push(
       this.partials.documents(model, {
@@ -146,14 +154,6 @@ export function declaration(
   md.push(
     this.partials.inheritance(model, { headingLevel: opts.headingLevel }),
   );
-
-  if (
-    !opts.nested &&
-    model.sources &&
-    !this.options.getValue('disableSources')
-  ) {
-    md.push(this.partials.sources(model, { headingLevel: opts.headingLevel }));
-  }
 
   return md.join('\n\n');
 }

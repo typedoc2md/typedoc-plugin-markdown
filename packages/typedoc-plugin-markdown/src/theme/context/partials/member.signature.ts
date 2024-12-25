@@ -22,6 +22,14 @@ export function signature(
     );
   }
 
+  if (
+    !options.nested &&
+    model.sources &&
+    !this.options.getValue('disableSources')
+  ) {
+    md.push(this.partials.sources(model));
+  }
+
   let modelComments = options.multipleSignatures
     ? model.comment
     : model.comment || model.parent?.comment;
@@ -119,16 +127,6 @@ export function signature(
   md.push(
     this.partials.inheritance(model, { headingLevel: options.headingLevel }),
   );
-
-  if (
-    !options.nested &&
-    model.sources &&
-    !this.options.getValue('disableSources')
-  ) {
-    md.push(
-      this.partials.sources(model, { headingLevel: options.headingLevel }),
-    );
-  }
 
   return md.join('\n\n');
 }

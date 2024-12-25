@@ -193,7 +193,7 @@ There is no association list partial for properties as these are handled as a st
     ) => partials.signatures.apply(context, [model, options]) as string,
     sources: (
       model: DeclarationReflection | SignatureReflection,
-      options: { headingLevel: number },
+      options?: { hideLabel: boolean } | undefined,
     ) => partials.sources.apply(context, [model, options]) as string,
     member: (
       model: DeclarationReflection,

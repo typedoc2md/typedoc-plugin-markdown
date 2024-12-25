@@ -131,6 +131,8 @@ exports[`Comments should get function with block tags: (Output File Strategy "me
 
 > **functionWithBlockTags**(\`x\`, \`y\`): \`void\`
 
+**Defined in**: [index.ts:1](http://source-url)
+
 Function with block tags summary
 
 ## Parameters
@@ -157,10 +159,6 @@ abc.com
 ## Remarks
 
 Other block tags
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -168,6 +166,8 @@ exports[`Comments should get function with block tags: (Output File Strategy "me
 "# Function: functionWithBlockTags()
 
 > **functionWithBlockTags**(\`x\`, \`y\`): \`void\`
+
+**Defined in**: [index.ts:1](http://source-url)
 
 Function with block tags summary
 
@@ -225,19 +225,17 @@ abc.com
 ## Remarks
 
 Other block tags
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
 exports[`Comments should get tables for enum: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Enumeration: EnumMembersTable
 
+**Defined in**: [index.ts:1](http://source-url)
+
 ## Enumeration Members
 
-| Enumeration Member | Value | Description | Source |
+| Enumeration Member | Value | Description | Defined in |
 | ------ | ------ | ------ | ------ |
 | <a id="member1"></a> \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. | [index.ts:1](http://source-url) |
 "
@@ -245,6 +243,8 @@ exports[`Comments should get tables for enum: (Output File Strategy "members") (
 
 exports[`Comments should get tables for enum: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Enumeration: EnumMembersTable
+
+**Defined in**: [index.ts:1](http://source-url)
 
 ## Enumeration Members
 
@@ -284,6 +284,8 @@ exports[`Comments should get tables for parameters: (Output File Strategy "membe
 
 > **parametersTable**\\<\`T\`\\>(\`param1\`, \`param2\`, \`param3\`): \`number\`
 
+**Defined in**: [index.ts:1](http://source-url)
+
 Adds two numbers together.
 
 ## Type Parameters
@@ -303,15 +305,13 @@ Adds two numbers together.
 ## Returns
 
 \`number\`
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
 exports[`Comments should get tables for properties: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassPropertiesTable
+
+**Defined in**: [index.ts:1](http://source-url)
 
 ## Extends
 
@@ -335,7 +335,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 ## Properties
 
-| Property | Modifier | Type | Default value | Description | Overrides | Inherited from | Source |
+| Property | Modifier | Type | Default value | Description | Overrides | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | <a id="prop1"></a> \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
 | <a id="prop2"></a> \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
@@ -348,6 +348,8 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 exports[`Comments should get tables for properties: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassPropertiesTable
+
+**Defined in**: [index.ts:1](http://source-url)
 
 ## Extends
 
@@ -504,17 +506,15 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 > **TypeDeclarationType**: \`object\`
 
+**Defined in**: [index.ts:1](http://source-url)
+
 ## Type declaration
 
-| Name | Type | Description | Source |
+| Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
 | <a id="declaration1"></a> \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
 | <a id="declaration2"></a> \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
 | <a id="declaration4"></a> \`declaration4\` | \`100\` | - | [index.ts:1](http://source-url) |
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -523,16 +523,14 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 > \`const\` **TypeDeclarationConst**: \`object\`
 
+**Defined in**: [index.ts:1](http://source-url)
+
 ## Type declaration
 
-| Name | Type | Default value | Source |
+| Name | Type | Default value | Defined in |
 | ------ | ------ | ------ | ------ |
 | <a id="declaration1"></a> \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
 | <a id="declaration2"></a> \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -540,6 +538,8 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 "# Type Alias: TypeDeclarationType
 
 > **TypeDeclarationType**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration4\`: \`100\`; \\}
+
+**Defined in**: [index.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -607,10 +607,6 @@ to generate the binary output for input validation.
 </tr>
 </tbody>
 </table>
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -618,6 +614,8 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 "# Variable: TypeDeclarationConst
 
 > \`const\` **TypeDeclarationConst**: \\{ \`declaration1\`: \`string\`; \`declaration2\`: \`number\`; \\}
+
+**Defined in**: [index.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -666,10 +664,6 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 </tr>
 </tbody>
 </table>
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -678,11 +672,13 @@ exports[`Comments should get variable with block tags: (Output File Strategy "me
 
 > **typeWithBlockTags**: \`object\`
 
+**Defined in**: [index.ts:1](http://source-url)
+
 Variable with block tags summary
 
 ## Type declaration
 
-| Name | Type | Source |
+| Name | Type | Defined in |
 | ------ | ------ | ------ |
 | <a id="x"></a> \`x\` | \`string\` | [index.ts:1](http://source-url) |
 
@@ -695,10 +691,6 @@ const x = 1;
 ## Remarks
 
 Other block tags
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -706,6 +698,8 @@ exports[`Comments should get variable with block tags: (Output File Strategy "me
 "# Type Alias: typeWithBlockTags
 
 > **typeWithBlockTags**: \\{ \`x\`: \`string\`; \\}
+
+**Defined in**: [index.ts:1](http://source-url)
 
 Variable with block tags summary
 
@@ -743,10 +737,6 @@ const x = 1;
 ## Remarks
 
 Other block tags
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -754,6 +744,8 @@ exports[`Comments should handle const function with returns: (Output File Strate
 "# Function: constFunctionWithReturns()
 
 > **constFunctionWithReturns**(\`text\`): \`boolean\`
+
+**Defined in**: [index.ts:1](http://source-url)
 
 constFunctionWithReturns comments
 
@@ -772,10 +764,6 @@ Return comments
 ## Remarks
 
 Some remarks
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -783,6 +771,8 @@ exports[`Comments should handle const function: (Output File Strategy "members")
 "# Function: constFunction()
 
 > **constFunction**(\`text\`): \`boolean\`
+
+**Defined in**: [index.ts:1](http://source-url)
 
 constFunction comments
 
@@ -799,10 +789,6 @@ constFunction comments
 ## Remarks
 
 Some remarks
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -810,6 +796,8 @@ exports[`Comments should handle multiple example tags: (Output File Strategy "me
 "# Function: multipleExampleTags()
 
 > **multipleExampleTags**(): \`boolean\`
+
+**Defined in**: [index.ts:1](http://source-url)
 
 Function with multiple example tags
 
@@ -833,10 +821,6 @@ text outside of the code block as regular text.
 \`\`\`ts
 factorial(1)
 \`\`\`
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;
 
@@ -844,6 +828,8 @@ exports[`Comments should handle single example tags: (Output File Strategy "memb
 "# Function: singleExampleTag()
 
 > **singleExampleTag**(): \`boolean\`
+
+**Defined in**: [index.ts:1](http://source-url)
 
 Function with single example tag
 
@@ -861,9 +847,5 @@ text outside of the code block as regular text.
 \`\`\`ts
 factorial(1)
 \`\`\`
-
-## Source
-
-[index.ts:1](http://source-url)
 "
 `;

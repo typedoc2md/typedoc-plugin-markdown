@@ -1,4 +1,4 @@
-import { heading, link } from '@plugin/libs/markdown/index.js';
+import { bold, link } from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, SignatureReflection } from 'typedoc';
@@ -6,13 +6,14 @@ import { DeclarationReflection, SignatureReflection } from 'typedoc';
 export function sources(
   this: MarkdownThemeContext,
   model: DeclarationReflection | SignatureReflection,
-  options: { headingLevel: number },
+  options?: { hideLabel: boolean },
 ): string {
   const md: string[] = [];
 
-  if (options.headingLevel !== -1) {
-    md.push(heading(options.headingLevel, this.i18n.theme_defined_in()));
+  if (!options?.hideLabel) {
+    md.push(`${bold(this.i18n.theme_defined_in())}:`);
   }
+
   model.sources?.forEach((source, index) => {
     if (index === 0) {
       if (source.url) {
@@ -24,5 +25,6 @@ export function sources(
       }
     }
   });
-  return md.join('\n\n');
+
+  return md.join(' ');
 }

@@ -159,7 +159,7 @@ export function propertiesTable(
     }
 
     if (hasSources) {
-      row.push(this.partials.sources(property, { headingLevel: -1 }));
+      row.push(this.partials.sources(property, { hideLabel: true }));
     }
 
     rows.push(row);

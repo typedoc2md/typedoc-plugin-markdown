@@ -9,6 +9,8 @@ Comments for main curriedFunction
 
 > **curriedFunction**(\`searchElement\`): \\<\`Value\`\\>(\`iterable\`) => \`boolean\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 Comments for current function 1
 
 ### Parameters
@@ -37,13 +39,11 @@ Comments for iterable arg
 
 \`boolean\`
 
-### Source
-
-[functions.ts:1](http://source-url)
-
 ## Call Signature
 
 > **curriedFunction**\\<\`Value\`\\>(\`searchElement\`, \`iterable\`): \`string\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ### Type Parameters
 
@@ -62,10 +62,6 @@ Comments for iterable arg
 ### Returns
 
 \`string\`
-
-### Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -79,6 +75,8 @@ Comments for main curriedFunction
 \`\`\`ts
 function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value, any, any>) => boolean
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for current function 1
 
@@ -108,15 +106,13 @@ Comments for current function 1
 
 \`boolean\`
 
-### Source
-
-[functions.ts:1](http://source-url)
-
 ## Call Signature
 
 \`\`\`ts
 function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value, any, any>): string
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ### Type Parameters
 
@@ -134,10 +130,6 @@ function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value
 ### Returns
 
 \`string\`
-
-### Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -145,6 +137,8 @@ exports[`Function Reflection should compile function returning a function: (Outp
 "# Function: functionReturningAFunction()
 
 > **functionReturningAFunction**(): \\<\`T\`\\>(\`x\`) => \`boolean\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for function
 
@@ -165,10 +159,6 @@ Comments for function
 ### Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -178,6 +168,8 @@ exports[`Function Reflection should compile function returning a function: (Outp
 \`\`\`ts
 function functionReturningAFunction(): <T>(x: string) => boolean
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for function
 
@@ -200,10 +192,6 @@ Comments for function
 ### Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -212,6 +200,8 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 
 > **functionReturningAPromise**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{ \`prop\`: \`string\`; \\}\\>
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 Comments for function
 
 ## Returns
@@ -219,10 +209,6 @@ Comments for function
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{ \`prop\`: \`string\`; \\}\\>
 
 Return comments
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -235,6 +221,8 @@ function functionReturningAPromise(): Promise<{
 }>
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 Comments for function
 
 ## Returns
@@ -244,10 +232,6 @@ Comments for function
  \\}\\>
 
 Return comments
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -256,6 +240,8 @@ exports[`Function Reflection should compile function returning a string: (Output
 
 > **functionReturningAString**(): \`string\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 Comments for function
 
 ## Returns
@@ -263,10 +249,6 @@ Comments for function
 \`string\`
 
 Return comments
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -277,6 +259,8 @@ exports[`Function Reflection should compile function returning a string: (Output
 function functionReturningAString(): string
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 Comments for function
 
 ## Returns
@@ -284,10 +268,6 @@ Comments for function
 \`string\`
 
 Return comments
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -296,6 +276,8 @@ exports[`Function Reflection should compile function returning a union: (Output 
 
 > **functionReturningAUnionType**(): \`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 Comments for function
 
 ## Returns
@@ -303,10 +285,6 @@ Comments for function
 \`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
 
 Return comments
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -317,6 +295,8 @@ exports[`Function Reflection should compile function returning a union: (Output 
 function functionReturningAUnionType(): string | boolean | "string1" | "string2"
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 Comments for function
 
 ## Returns
@@ -324,10 +304,6 @@ Comments for function
 \`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
 
 Return comments
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -335,6 +311,8 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 "# Function: functionReturningAnObject()
 
 > **functionReturningAnObject**(): \`object\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for function
 
@@ -351,10 +329,6 @@ Return comments
 ### y
 
 > **y**: \`number\` = \`2\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -364,6 +338,8 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 \`\`\`ts
 function functionReturningAnObject(): object
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for function
 
@@ -377,10 +353,6 @@ Return comments
 | :------ | :------ | :------ |
 | \`x\` | \`number\` | 1 |
 | \`y\` | \`number\` | 2 |
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -388,6 +360,8 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 "# Function: basicFunction()
 
 > **basicFunction**(\`someParam\`): \`number\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 This is a function that is assigned to a variable.
 
@@ -406,10 +380,6 @@ This is some numeric parameter.
 ## Returns
 
 \`number\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -419,6 +389,8 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 \`\`\`ts
 function basicFunction(someParam: number): number
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 This is a function that is assigned to a variable.
 
@@ -435,10 +407,6 @@ http://abc.com
 ## Returns
 
 \`number\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -446,6 +414,8 @@ exports[`Function Reflection should compile function with array of optional stuf
 "# Function: functionWithArrayOfOptionalStuff()
 
 > **functionWithArrayOfOptionalStuff**(\`a\`): \`void\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for array of stuff?
 
@@ -458,10 +428,6 @@ Comments for array of stuff?
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -471,6 +437,8 @@ exports[`Function Reflection should compile function with array of optional stuf
 \`\`\`ts
 function functionWithArrayOfOptionalStuff(a: [Stuff?]): void
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for array of stuff?
 
@@ -483,10 +451,6 @@ Comments for array of stuff?
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -494,6 +458,8 @@ exports[`Function Reflection should compile function with array of stuff: (Outpu
 "# Function: functionWithArrayOfStuff()
 
 > **functionWithArrayOfStuff**(\`a\`): \`void\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for array of stuff
 
@@ -506,10 +472,6 @@ Comments for array of stuff
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -519,6 +481,8 @@ exports[`Function Reflection should compile function with array of stuff: (Outpu
 \`\`\`ts
 function functionWithArrayOfStuff(a: [Stuff]): void
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for array of stuff
 
@@ -531,10 +495,6 @@ Comments for array of stuff
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -542,6 +502,8 @@ exports[`Function Reflection should compile function with array of union stuff: 
 "# Function: functionWithArrayOfUnionStuff()
 
 > **functionWithArrayOfUnionStuff**(\`a\`): \`void\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for array of union stuff
 
@@ -554,10 +516,6 @@ Comments for array of union stuff
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -567,6 +525,8 @@ exports[`Function Reflection should compile function with array of union stuff: 
 \`\`\`ts
 function functionWithArrayOfUnionStuff(a: [(null | Stuff)?]): void
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Comments for array of union stuff
 
@@ -579,10 +539,6 @@ Comments for array of union stuff
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -590,6 +546,8 @@ exports[`Function Reflection should compile function with complex params: (Outpu
 "# Function: functionWithComplexParams()
 
 > **functionWithComplexParams**(\`paramA\`, \`paramB\`): \`boolean\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Function with function parmas
 
@@ -608,10 +566,6 @@ Function with function parmas
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -621,6 +575,8 @@ exports[`Function Reflection should compile function with complex params: (Outpu
 \`\`\`ts
 function functionWithComplexParams(paramA: (a: string) => true, paramB: object): boolean
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Function with function parmas
 
@@ -635,10 +591,6 @@ Function with function parmas
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -646,6 +598,8 @@ exports[`Function Reflection should compile function with default parameters: (O
 "# Function: functionWithDefaultParameters()
 
 > **functionWithDefaultParameters**(\`valueA\`, \`valueB\`, \`valueC\`, \`valueD\`, \`valueE\`, \`valueF\`): \`string\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 This is a function with a parameter that has a default value.
 
@@ -688,10 +642,6 @@ A parameter with a default null value.
 ## Returns
 
 \`string\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -707,6 +657,8 @@ function functionWithDefaultParameters(
    valueE: boolean, 
    valueF: string): string
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 This is a function with a parameter that has a default value.
 
@@ -724,10 +676,6 @@ This is a function with a parameter that has a default value.
 ## Returns
 
 \`string\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -735,6 +683,8 @@ exports[`Function Reflection should compile function with explicit inline tuple 
 "# Function: tupleTypeFunctionInlineExplicit()
 
 > **tupleTypeFunctionInlineExplicit**(\`opts\`): \`void\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ## Parameters
 
@@ -745,10 +695,6 @@ exports[`Function Reflection should compile function with explicit inline tuple 
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -762,6 +708,8 @@ function tupleTypeFunctionInlineExplicit(opts: [{
  }]): void
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 ## Parameters
 
 | Parameter | Type |
@@ -771,10 +719,6 @@ function tupleTypeFunctionInlineExplicit(opts: [{
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -786,6 +730,8 @@ Main function comment.
 ## Call Signature
 
 > **functionWithMultipleSignatures**(\`value\`): \`string\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 This is the first signature of a function with multiple signatures.
 
@@ -801,13 +747,11 @@ The name value.
 
 \`string\`
 
-### Source
-
-[functions.ts:1](http://source-url)
-
 ## Call Signature
 
 > **functionWithMultipleSignatures**(\`value\`): \`string\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 This is the second signature of a function with multiple signatures.
 
@@ -826,10 +770,6 @@ A value of the object.
 ### Returns
 
 \`string\`
-
-### Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -844,6 +784,8 @@ Main function comment.
 function functionWithMultipleSignatures(value: string): string
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 This is the first signature of a function with multiple signatures.
 
 ### Parameters
@@ -856,15 +798,13 @@ This is the first signature of a function with multiple signatures.
 
 \`string\`
 
-### Source
-
-[functions.ts:1](http://source-url)
-
 ## Call Signature
 
 \`\`\`ts
 function functionWithMultipleSignatures(value: object): string
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 This is the second signature of a function with multiple signatures.
 
@@ -878,10 +818,6 @@ This is the second signature of a function with multiple signatures.
 ### Returns
 
 \`string\`
-
-### Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -889,6 +825,8 @@ exports[`Function Reflection should compile function with named params: (Output 
 "# Function: functionWithNamedParams()
 
 > **functionWithNamedParams**(\`__namedParameters\`, \`anotherParam\`): \`void\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ## Parameters
 
@@ -913,10 +851,6 @@ Another param comment
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -926,6 +860,8 @@ exports[`Function Reflection should compile function with named params: (Output 
 \`\`\`ts
 function functionWithNamedParams(__namedParameters: object, anotherParam: string): void
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ## Parameters
 
@@ -939,10 +875,6 @@ function functionWithNamedParams(__namedParameters: object, anotherParam: string
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -950,6 +882,8 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 "# Function: functionWithNestedParameters()
 
 > **functionWithNestedParameters**(\`params\`, \`context\`, \`somethingElse\`?): \`boolean\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Some nested params.
 
@@ -1004,10 +938,6 @@ The context of the method call.
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1020,6 +950,8 @@ function functionWithNestedParameters(
    context: any, 
    somethingElse?: string): boolean
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Some nested params.
 
@@ -1041,10 +973,6 @@ Some nested params.
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1053,6 +981,8 @@ exports[`Function Reflection should compile function with optional parameters: (
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 This is a function with a parameters.
 
 ## Parameters
@@ -1080,10 +1010,6 @@ An optional parameter.
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1092,6 +1018,8 @@ exports[`Function Reflection should compile function with optional parameters: (
 
 > **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 This is a function with a parameters.
 
 ## Parameters
@@ -1119,10 +1047,6 @@ An optional parameter.
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1137,6 +1061,8 @@ function functionWithOptionalParameters(
    paramWithDefault?: number): void
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 This is a function with a parameters.
 
 ## Parameters
@@ -1151,10 +1077,6 @@ This is a function with a parameters.
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1169,6 +1091,8 @@ function functionWithOptionalParameters(
    paramWithDefault?: number): void
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 This is a function with a parameters.
 
 ## Parameters
@@ -1183,10 +1107,6 @@ This is a function with a parameters.
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1194,6 +1114,8 @@ exports[`Function Reflection should compile function with rest params: (Output F
 "# Function: functionWithRestParams()
 
 > **functionWithRestParams**(\`param\`, ...\`restParams\`): \`boolean\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Function with reset parmas
 
@@ -1210,10 +1132,6 @@ Function with reset parmas
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1223,6 +1141,8 @@ exports[`Function Reflection should compile function with rest params: (Output F
 \`\`\`ts
 function functionWithRestParams(param: string, ...restParams: string[]): boolean
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Function with reset parmas
 
@@ -1236,10 +1156,6 @@ Function with reset parmas
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1247,6 +1163,8 @@ exports[`Function Reflection should compile function with tuple type optional pa
 "# Function: tupleTypeFunctionOptional()
 
 > **tupleTypeFunctionOptional**(\`opts\`): \`void\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ## Parameters
 
@@ -1257,10 +1175,6 @@ exports[`Function Reflection should compile function with tuple type optional pa
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1276,6 +1190,8 @@ function tupleTypeFunctionOptional(opts: [(
  })?]): void
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 ## Parameters
 
 | Parameter | Type |
@@ -1285,10 +1201,6 @@ function tupleTypeFunctionOptional(opts: [(
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1296,6 +1208,8 @@ exports[`Function Reflection should compile function with tuple type params: (Ou
 "# Function: tupleTypeFunction()
 
 > **tupleTypeFunction**(\`opts\`): \`void\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ## Parameters
 
@@ -1308,10 +1222,6 @@ opts comments
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1325,6 +1235,8 @@ function tupleTypeFunction(opts: [{
  }]): void
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 ## Parameters
 
 | Parameter | Type | Description |
@@ -1334,10 +1246,6 @@ function tupleTypeFunction(opts: [{
 ## Returns
 
 \`void\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1345,6 +1253,8 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 "# Function: functionWithTypeParameters()
 
 > **functionWithTypeParameters**\\<\`T\`, \`Item\`\\>(): \`boolean\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Function with type parameters
 
@@ -1359,10 +1269,6 @@ Comments for T
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1372,6 +1278,8 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 \`\`\`ts
 function functionWithTypeParameters<T, Item>(): boolean
 \`\`\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 Function with type parameters
 
@@ -1385,10 +1293,6 @@ Function with type parameters
 ## Returns
 
 \`boolean\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1396,6 +1300,8 @@ exports[`Function Reflection should compile function with union params: (Output 
 "# Function: functionWithUnionParams()
 
 > **functionWithUnionParams**(\`primitiveUnions\`, \`objectUnions\`, \`mixedUnions\`, \`noUnions\`): \`undefined\`
+
+**Defined in**: [functions.ts:1](http://source-url)
 
 ## Parameters
 
@@ -1462,10 +1368,6 @@ Comments for noUnions
 ## Returns
 
 \`undefined\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;
 
@@ -1503,6 +1405,8 @@ function functionWithUnionParams(
    noUnions: string): undefined
 \`\`\`
 
+**Defined in**: [functions.ts:1](http://source-url)
+
 ## Parameters
 
 | Parameter | Type | Description |
@@ -1515,9 +1419,5 @@ function functionWithUnionParams(
 ## Returns
 
 \`undefined\`
-
-## Source
-
-[functions.ts:1](http://source-url)
 "
 `;

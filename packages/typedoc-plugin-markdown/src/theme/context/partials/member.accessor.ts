@@ -100,21 +100,11 @@ export function accessor(
 
   if (showSources && !this.options.getValue('disableSources')) {
     if (model.getSignature?.sources) {
-      md.push(
-        this.partials.sources(model.getSignature, {
-          headingLevel: options.headingLevel,
-        }),
-      );
+      md.push(this.partials.sources(model.getSignature));
     } else if (model.setSignature?.sources) {
-      md.push(
-        this.partials.sources(model.setSignature, {
-          headingLevel: options.headingLevel,
-        }),
-      );
+      md.push(this.partials.sources(model.setSignature));
     } else {
-      md.push(
-        this.partials.sources(model, { headingLevel: options.headingLevel }),
-      );
+      md.push(this.partials.sources(model));
     }
   }
 

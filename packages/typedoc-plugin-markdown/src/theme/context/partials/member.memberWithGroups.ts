@@ -12,6 +12,10 @@ export function memberWithGroups(
 ): string {
   const md: string[] = [];
 
+  if (model.sources && !this.options.getValue('disableSources')) {
+    md.push(this.partials.sources(model));
+  }
+
   if (model.comment) {
     md.push(
       this.partials.comment(model.comment, {

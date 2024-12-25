@@ -107,7 +107,7 @@ export function typeDeclarationTable(
     }
 
     if (hasSources) {
-      row.push(this.partials.sources(declaration, { headingLevel: -1 }));
+      row.push(this.partials.sources(declaration, { hideLabel: true }));
     }
 
     rows.push(row);

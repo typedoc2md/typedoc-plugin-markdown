@@ -5,6 +5,8 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 
 > \`const\` **objectWithSymbol**: \`object\`
 
+**Defined in**: [variables.ts:1](http://source-url)
+
 Comments variable with symbol
 
 ## Type declaration
@@ -14,10 +16,6 @@ Comments variable with symbol
 > **\\[sym\\]**: \`string\` = \`'value'\`
 
 Comments for symbol
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
 
@@ -28,6 +26,8 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 const objectWithSymbol: object;
 \`\`\`
 
+**Defined in**: [variables.ts:1](http://source-url)
+
 Comments variable with symbol
 
 ## Type declaration
@@ -35,10 +35,6 @@ Comments variable with symbol
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | \`[sym]\` | \`string\` | 'value' | Comments for symbol |
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
 
@@ -47,11 +43,9 @@ exports[`Variable Reflection should compile type operator variable: (Output File
 
 > \`const\` **typeOperatorVariable**: unique \`symbol\`
 
+**Defined in**: [variables.ts:1](http://source-url)
+
 Comments for typeOperatorVariable
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
 
@@ -62,11 +56,9 @@ exports[`Variable Reflection should compile type operator variable: (Output File
 const typeOperatorVariable: unique symbol;
 \`\`\`
 
+**Defined in**: [variables.ts:1](http://source-url)
+
 Comments for typeOperatorVariable
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
 
@@ -75,11 +67,9 @@ exports[`Variable Reflection should compile variable assigned to a string: (Outp
 
 > \`const\` **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
 
+**Defined in**: [variables.ts:1](http://source-url)
+
 A simple string variable
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
 
@@ -90,11 +80,9 @@ exports[`Variable Reflection should compile variable assigned to a string: (Outp
 const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultValue';
 \`\`\`
 
+**Defined in**: [variables.ts:1](http://source-url)
+
 A simple string variable
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
 
@@ -102,6 +90,8 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 "# Variable: objectLiteralVariable
 
 > \`const\` **objectLiteralVariable**: \`object\`
+
+**Defined in**: [variables.ts:1](http://source-url)
 
 Comments for objectLiteralVariable
 
@@ -188,10 +178,6 @@ Comment for valueX.valueA
 #### Returns
 
 \`string\`
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
 
@@ -201,6 +187,8 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 \`\`\`ts
 const objectLiteralVariable: object;
 \`\`\`
+
+**Defined in**: [variables.ts:1](http://source-url)
 
 Comments for objectLiteralVariable
 
@@ -219,9 +207,5 @@ xyz.com
 | \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - | - |
 | \`valueX.valueZ\` | \`string\` | 'foo' | - |
 | \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - | - |
-
-## Source
-
-[variables.ts:1](http://source-url)
 "
 `;
