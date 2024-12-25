@@ -1,6 +1,10 @@
 /**
  * A module that contains custom groupings
  *
+ * @groupDescription CustomGroupA
+ *
+ * Group description for CustomGroupA
+ *
  * @module
  */
 

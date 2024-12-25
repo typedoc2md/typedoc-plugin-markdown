@@ -30,6 +30,11 @@ export function reflectionIndex(
     groups?.forEach((reflectionGroup) => {
       if (reflectionGroup.categories) {
         md.push(heading(options.headingLevel, reflectionGroup.title) + '\n');
+        if (reflectionGroup.description) {
+          md.push(
+            this.helpers.getCommentParts(reflectionGroup.description) + '\n',
+          );
+        }
         reflectionGroup.categories.forEach((categoryGroup) => {
           md.push(
             heading(options.headingLevel + 1, categoryGroup.title) + '\n',
@@ -43,6 +48,11 @@ export function reflectionIndex(
         });
       } else {
         md.push(heading(options.headingLevel, reflectionGroup.title) + '\n');
+        if (reflectionGroup.description) {
+          md.push(
+            this.helpers.getCommentParts(reflectionGroup.description) + '\n',
+          );
+        }
         md.push(this.helpers.getGroupIndex(reflectionGroup) + '\n');
       }
     });

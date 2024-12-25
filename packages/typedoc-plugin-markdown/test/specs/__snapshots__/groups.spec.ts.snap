@@ -1035,6 +1035,8 @@ A module that contains custom groupings
 
 ### CustomGroupA
 
+Group description for CustomGroupA
+
 | Variable | Description |
 | :------ | :------ |
 | [variabelA](variables/variabelA.md) | - |
