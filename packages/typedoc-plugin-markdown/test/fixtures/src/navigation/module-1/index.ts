@@ -1,5 +1,8 @@
 /**
  * @group Group 1
+ *
+ * @deprecated
+ *
  * @module Module1
  */
 

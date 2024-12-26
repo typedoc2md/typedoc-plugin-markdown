@@ -124,6 +124,8 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
     ) => partials.documents.apply(context, [model, options]) as string,
     enumMembersTable: (model: DeclarationReflection[]) =>
       partials.enumMembersTable.apply(context, [model]) as string,
+    groupIndex: (group: ReflectionCategory | ReflectionGroup) =>
+      partials.groupIndex.apply(context, [group]) as string,
     hierarchy: (
       model: DeclarationHierarchy,
       options: { headingLevel: number },
@@ -310,14 +312,6 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
         model,
         options,
       ]) as DeclarationReflection[],
-    getGroupIndexList: (
-      children: DeclarationReflection[] | DocumentReflection[],
-    ) => helpers.getGroupIndexList.apply(context, [children]) as string,
-    getGroupIndexTable: (
-      children: DeclarationReflection[] | DocumentReflection[],
-    ) => helpers.getGroupIndexTable.apply(context, [children]) as string,
-    getGroupIndex: (group: ReflectionCategory | ReflectionGroup) =>
-      helpers.getGroupIndex.apply(context, [group]) as any,
     getHierarchyType: (
       model: SomeType,
       options?: { isTarget: boolean } | undefined,

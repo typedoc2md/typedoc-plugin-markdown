@@ -19,7 +19,7 @@ export function reflectionIndex(
       if (categoryGroup.description) {
         md.push(this.helpers.getCommentParts(categoryGroup.description) + '\n');
       }
-      md.push(this.helpers.getGroupIndex(categoryGroup) + '\n');
+      md.push(this.partials.groupIndex(categoryGroup) + '\n');
     });
   } else {
     const groups = model.groups?.filter(
@@ -44,7 +44,7 @@ export function reflectionIndex(
               this.helpers.getCommentParts(categoryGroup.description) + '\n',
             );
           }
-          md.push(this.helpers.getGroupIndex(categoryGroup) + '\n');
+          md.push(this.partials.groupIndex(categoryGroup) + '\n');
         });
       } else {
         md.push(heading(options.headingLevel, reflectionGroup.title) + '\n');
@@ -53,7 +53,7 @@ export function reflectionIndex(
             this.helpers.getCommentParts(reflectionGroup.description) + '\n',
           );
         }
-        md.push(this.helpers.getGroupIndex(reflectionGroup) + '\n');
+        md.push(this.partials.groupIndex(reflectionGroup) + '\n');
       }
     });
   }

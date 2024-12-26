@@ -10,6 +10,7 @@ export * from './member.declaration.js';
 export * from './member.declarationTitle.js';
 export * from './member.documents.js';
 export * from './member.enumMembersTable.js';
+export * from './member.groupIndex.js';
 export * from './member.hierarchy.js';
 export * from './member.indexSignature.js';
 export * from './member.inheritance.js';

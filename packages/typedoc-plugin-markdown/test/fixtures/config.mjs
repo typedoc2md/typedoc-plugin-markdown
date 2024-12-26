@@ -270,6 +270,7 @@ const config = {
       },
       {
         options: './test/fixtures/typedoc.text-2.cjs',
+        indexFormat: 'table',
       },
     ],
   },

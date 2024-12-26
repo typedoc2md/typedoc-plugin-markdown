@@ -197,6 +197,7 @@ export class NavigationBuilder {
                         title: child.name,
                         kind: child.kind,
                         path: child.url,
+                        isDeprecated: child.isDeprecated(),
                       };
                     }),
                   });
@@ -389,6 +390,7 @@ export class NavigationBuilder {
           title: titleParts[titleParts.length - 1],
           kind: child.kind,
           path: child.url,
+          isDeprecated: child.isDeprecated(),
           ...(children && { children }),
         });
 
@@ -400,6 +402,7 @@ export class NavigationBuilder {
       title: child.name,
       kind: child.kind,
       path: child.url,
+      isDeprecated: child.isDeprecated(),
       ...(children && { children }),
     });
 

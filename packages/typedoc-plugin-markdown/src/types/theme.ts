@@ -30,6 +30,7 @@ export interface NavigationItem {
   title: string;
   path?: string | null;
   kind?: ReflectionKind;
+  isDeprecated?: boolean;
   children?: NavigationItem[];
 }
 

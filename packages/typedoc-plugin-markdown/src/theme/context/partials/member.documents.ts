@@ -20,7 +20,7 @@ export function documents(
     docGroups.forEach((reflectionGroup) => {
       md.push(heading(options.headingLevel, reflectionGroup.title));
       docGroups.forEach((reflectionGroup) => {
-        md.push(this.helpers.getGroupIndex(reflectionGroup));
+        md.push(this.partials.groupIndex(reflectionGroup));
       });
     });
   }
